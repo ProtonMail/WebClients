@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-05-17 04:46-0400\n"
+"PO-Revision-Date: 2018-07-10 17:05\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:61
 msgctxt "1 of 2 contacts successfully imported."
@@ -67,12 +67,12 @@ msgstr "<p>Через ваше подключение было создано с
 "                <p>Поэтому нам необходима дополнительная проверка, чтобы убедиться, что вы человек, а не спам-бот.</p>\n"
 "                <p>Поскольку Tor или бесплатные VPN часто используется спамерами, эта проверка могла быть вызвана использованием вами выходного узла Tor или VPN.</p>"
 
-#: ./src/templates/address/addressKeysView.tpl.html:38
+#: ./src/templates/address/addressKeysView.tpl.html:47
 msgctxt "Action"
 msgid "-"
 msgstr "-"
 
-#: ./src/app/message/factories/messageActions.js:179
+#: ./src/app/message/factories/messageActions.js:185
 msgctxt "Action"
 msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
@@ -117,8 +117,8 @@ msgctxt "Action"
 msgid "<i class=\"fa fa-align-right\"></i>"
 msgstr "<i class=\"fa fa-align-right\"></i>"
 
-#: ./src/templates/directives/composer/composerInputMeta.tpl.html:61
-#: ./src/templates/message/message.tpl.html:161
+#: ./src/templates/directives/composer/composerInputMeta.tpl.html:50
+#: ./src/templates/message/message.tpl.html:163
 msgctxt "Action"
 msgid "<i class=\"fa fa-angle-down\"></i>"
 msgstr "<i class=\"fa fa-angle-down\"></i>"
@@ -217,17 +217,17 @@ msgctxt "Action"
 msgid "<i class=\"fa fa-long-arrow-left\"></i>"
 msgstr "<i class=\"fa fa-long-arrow-left\"></i>"
 
-#: ./src/templates/message/message.tpl.html:154
+#: ./src/templates/message/message.tpl.html:156
 msgctxt "Action"
 msgid "<i class=\"fa fa-mail-forward\"></i>"
 msgstr "<i class=\"fa fa-mail-forward\"></i>"
 
-#: ./src/templates/message/message.tpl.html:137
+#: ./src/templates/message/message.tpl.html:139
 msgctxt "Action"
 msgid "<i class=\"fa fa-mail-reply\"></i>"
 msgstr "<i class=\"fa fa-mail-reply\"></i>"
 
-#: ./src/templates/message/message.tpl.html:146
+#: ./src/templates/message/message.tpl.html:148
 msgctxt "Action"
 msgid "<i class=\"fa fa-mail-reply-all\"></i>"
 msgstr "<i class=\"fa fa-mail-reply-all\"></i>"
@@ -238,10 +238,21 @@ msgctxt "Action"
 msgid "<i class=\"fa fa-minus composerHeader-btn-icon\"></i>"
 msgstr "<i class=\"fa fa-minus composerHeader-btn-icon\"></i>"
 
+#: ./src/templates/squire/squireToolbar.tpl.html:132
+msgctxt "Action"
+msgid "<i class=\"fa fa-quote-right\"></i>"
+msgstr ""
+
 #: ./src/templates/directives/composer/composer-header.tpl.html:44
 msgctxt "Action"
 msgid "<i class=\"fa fa-times composerHeader-btn-icon\"></i>"
 msgstr "<i class=\"fa fa-times composerHeader-btn-icon\"></i>"
+
+#: ./src/templates/address/addressKeysView.tpl.html:108
+#: ./src/templates/address/addressKeysView.tpl.html:131
+msgctxt "Action"
+msgid "<i class=\"fa fa-times\"></i>"
+msgstr ""
 
 #: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/views/domains.tpl.html:124
@@ -288,13 +299,13 @@ msgid "<small><i class=\"fa fa-filter\"></i> <i class=\"fa fa-angle-down\"></i><
 msgstr "<small><i class=\"fa fa-filter\"></i> <i class=\"fa fa-angle-down\"></i></small>"
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:120
+#: ./src/templates/message/message.tpl.html:122
 msgctxt "Action"
 msgid "<small><i class=\"fa fa-folder\"></i> <i class=\"fa fa-angle-down\"></i></small>"
 msgstr "<small><i class=\"fa fa-folder\"></i> <i class=\"fa fa-angle-down\"></i></small>"
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:128
+#: ./src/templates/message/message.tpl.html:130
 msgctxt "Action"
 msgid "<small><i class=\"fa fa-tag\"></i> <i class=\"fa fa-angle-down\"></i></small>"
 msgstr "<small><i class=\"fa fa-tag\"></i> <i class=\"fa fa-angle-down\"></i></small>"
@@ -367,12 +378,12 @@ msgctxt "Action"
 msgid "Add Address"
 msgstr "Добавить адрес"
 
-#: ./src/templates/filter/modal.tpl.html:107
+#: ./src/templates/filter/modal.tpl.html:113
 msgctxt "Action"
 msgid "Add Condition"
 msgstr "Добавить условие"
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:111
+#: ./src/templates/directives/contact/contactItem.tpl.html:110
 msgctxt "Action"
 msgid "Add Entry"
 msgstr "Добавить запись"
@@ -425,13 +436,13 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr "Добавить фильтры"
 
-#: ./src/templates/filter/modal.tpl.html:172
+#: ./src/templates/filter/modal.tpl.html:178
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
 msgstr "Добавить папку"
 
-#: ./src/templates/filter/modal.tpl.html:125
+#: ./src/templates/filter/modal.tpl.html:131
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -470,7 +481,7 @@ msgctxt "Action"
 msgid "Addresses"
 msgstr "Адреса"
 
-#: ./src/templates/views/security.tpl.html:54
+#: ./src/templates/views/security.tpl.html:74
 msgctxt "Action"
 msgid "Advanced"
 msgstr "Расширенные"
@@ -530,14 +541,14 @@ msgstr "Автоматически"
 #: ./src/templates/ui/header/headerNoAuth.tpl.html:16
 msgctxt "Action"
 msgid "Back to login"
-msgstr ""
+msgstr "Назад к форме входа"
 
 #: ./src/templates/ui/header/headerNoAuth.tpl.html:10
 msgctxt "Action"
 msgid "Back to protonmail.com"
 msgstr "Вернуться на protonmail.com"
 
-#: ./src/templates/views/security.tpl.html:53
+#: ./src/templates/views/security.tpl.html:73
 msgctxt "Action"
 msgid "Basic"
 msgstr "Простые"
@@ -555,7 +566,7 @@ msgstr "Купить"
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:26
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:20
 #: ./src/templates/composer/composerEncrypt.tpl.html:67
-#: ./src/templates/composer/composerExpiration.tpl.html:53
+#: ./src/templates/composer/composerExpiration.tpl.html:54
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:19
 #: ./src/templates/contact/contactMergerModal.tpl.html:26
 #: ./src/templates/contact/contactModal.tpl.html:14
@@ -565,7 +576,7 @@ msgstr "Купить"
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:34
-#: ./src/templates/filter/modal.tpl.html:218
+#: ./src/templates/filter/modal.tpl.html:224
 #: ./src/templates/modals/activateOrganization.tpl.html:24
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -576,6 +587,8 @@ msgstr "Купить"
 #: ./src/templates/modals/decryptImportKey.tpl.html:19
 #: ./src/templates/modals/deleteAccount.tpl.html:39
 #: ./src/templates/modals/donate.tpl.html:38
+#: ./src/templates/modals/expirationModal.tpl.html:49
+#: ./src/templates/modals/exportKeyModal.tpl.html:16
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
 #: ./src/templates/modals/generate.tpl.html:76
 #: ./src/templates/modals/generateOrganization.tpl.html:32
@@ -588,6 +601,8 @@ msgstr "Купить"
 #: ./src/templates/modals/reactivate.tpl.html:16
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:76
+#: ./src/templates/modals/squire/addFile.tpl.html:27
+#: ./src/templates/modals/squire/addLink.tpl.html:27
 #: ./src/templates/modals/switchPasswordMode.tpl.html:73
 #: ./src/templates/modals/trustPublicKey.tpl.html:38
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:37
@@ -595,7 +610,7 @@ msgstr "Купить"
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
 #: ./src/templates/user/signupPayForm.tpl.html:140
 #: ./src/templates/views/outside.reply.tpl.html:31
-#: ./src/templates/views/reset-login-password.tpl.html:107
+#: ./src/templates/views/reset-login-password.tpl.html:127
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:16
 msgctxt "Action"
@@ -617,7 +632,7 @@ msgctxt "Action"
 msgid "Change mailbox password"
 msgstr "Изменить пароль почтового ящика"
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:162
+#: ./src/templates/directives/contact/contactItem.tpl.html:161
 msgctxt "Action"
 msgid "Change order"
 msgstr "Изменить порядок"
@@ -668,7 +683,7 @@ msgstr "Нажмите здесь, чтобы повторить попытку"
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:3
 #: ./src/templates/dashboard/customVpnModal.tpl.html:3
 #: ./src/templates/filter/filterAddressModal.tpl.html:4
-#: ./src/templates/filter/modal.tpl.html:4
+#: ./src/templates/filter/modal.tpl.html:7
 #: ./src/templates/modals/abuseFraudModal.tpl.html:3
 #: ./src/templates/modals/activateOrganization.tpl.html:3
 #: ./src/templates/modals/addAddress.tpl.html:3
@@ -697,6 +712,7 @@ msgstr "Нажмите здесь, чтобы повторить попытку"
 #: ./src/templates/modals/domain/verification.tpl.html:39
 #: ./src/templates/modals/donate.tpl.html:12
 #: ./src/templates/modals/donate.tpl.html:44
+#: ./src/templates/modals/expirationModal.tpl.html:3
 #: ./src/templates/modals/exportKeyModal.tpl.html:3
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:3
 #: ./src/templates/modals/feedback.tpl.html:18
@@ -718,6 +734,8 @@ msgstr "Нажмите здесь, чтобы повторить попытку"
 #: ./src/templates/modals/releaseNotes.tpl.html:23
 #: ./src/templates/modals/releaseNotes.tpl.html:3
 #: ./src/templates/modals/setupOrganization.tpl.html:3
+#: ./src/templates/modals/squire/addFile.tpl.html:9
+#: ./src/templates/modals/squire/addLink.tpl.html:9
 #: ./src/templates/modals/support.tpl.html:14
 #: ./src/templates/modals/support.tpl.html:3
 #: ./src/templates/modals/switchPasswordMode.tpl.html:3
@@ -757,11 +775,11 @@ msgid "Compose"
 msgstr "Новое письмо"
 
 #: ./src/templates/directives/contact/contactEmailDropdown.tpl.html:11
-#: ./src/templates/directives/contact/contactItem.tpl.html:93
+#: ./src/templates/directives/contact/contactItem.tpl.html:92
 #: ./src/templates/message/messageAddressActionMenu.tpl.html:8
 msgctxt "Action"
 msgid "Compose to"
-msgstr "Написать"
+msgstr "Написать письмо"
 
 #: ./src/templates/ui/navigation/navigation.tpl.html:19
 msgctxt "Action"
@@ -801,8 +819,9 @@ msgstr "По дате: от старых к новым"
 
 #: ./src/app/address/directives/addressBtnActions.js:8
 #: ./src/app/members/directives/memberEditBtn.js:6
+#: ./src/templates/address/addressKeysView.tpl.html:209
 #: ./src/templates/elements/moveElement.tpl.html:26
-#: ./src/templates/message/message.tpl.html:192
+#: ./src/templates/message/message.tpl.html:194
 #: ./src/templates/modals/deleteAccount.tpl.html:38
 #: ./src/templates/ui/toolbarMobile.tpl.html:50
 #: ./src/templates/views/labels.tpl.html:63
@@ -822,8 +841,8 @@ msgid "Deselect all"
 msgstr "Снять выделение со всех"
 
 #: ./src/app/address/directives/addressBtnActions.js:6
-#: ./src/app/settings/controllers/security.js:264
-#: ./src/app/settings/controllers/security.js:31
+#: ./src/app/settings/controllers/security.js:30
+#: ./src/app/settings/controllers/security.js:51
 msgctxt "Action"
 msgid "Disable"
 msgstr "Отключить"
@@ -834,7 +853,7 @@ msgid "Disable Two-Factor Authentication"
 msgstr "Отключить двухфакторную аутентификацию"
 
 #. notification settings option
-#: ./src/app/settings/controllers/security.js:250
+#: ./src/app/settings/controllers/security.js:31
 #: ./src/templates/views/account.tpl.html:286
 #: ./src/templates/views/account.tpl.html:62
 #: ./src/templates/views/account.tpl.html:86
@@ -875,7 +894,7 @@ msgstr "Готово"
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:28
 #: ./src/templates/views/payments.tpl.html:90
 #: ./src/templates/views/pgp.tpl.html:9
-#: ./src/templates/views/security.tpl.html:46
+#: ./src/templates/views/security.tpl.html:66
 msgctxt "Action"
 msgid "Download"
 msgstr "Скачать"
@@ -953,6 +972,11 @@ msgctxt "Action"
 msgid "Enabled"
 msgstr "Включено"
 
+#: ./src/templates/payment/featuresList.tpl.html:46
+msgctxt "Action"
+msgid "Encrypted contacts"
+msgstr ""
+
 #: ./src/app/composer/directives/btnSendMessage.js:19
 msgctxt "Action"
 msgid "Encrypting"
@@ -968,7 +992,8 @@ msgctxt "Action"
 msgid "Enter key manually instead"
 msgstr "Ввести ключ вручную"
 
-#: ./src/templates/address/addressKeysView.tpl.html:70
+#: ./src/app/address/services/deleteKeyProcess.js:32
+#: ./src/templates/message/message.tpl.html:213
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
@@ -1028,7 +1053,7 @@ msgstr "Получить новый 2-летний тариф"
 #: ./src/templates/views/login.tpl.html:5
 msgctxt "Action"
 msgid "Having trouble? Try an older version"
-msgstr "Проблемы? Попробуйте более старую версию"
+msgstr "Проблемы? Попробуйте версию постарее"
 
 #: ./src/templates/ui/navigation/navigationUser.tpl.html:22
 msgctxt "Action"
@@ -1041,7 +1066,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr "Скрыть"
 
-#: ./src/templates/message/message.tpl.html:223
+#: ./src/templates/message/message.tpl.html:225
 msgctxt "Action"
 msgid "Hide details"
 msgstr "Скрыть подробности"
@@ -1062,26 +1087,21 @@ msgid "I have a question"
 msgstr "У меня есть вопрос"
 
 #: ./src/templates/contact/importContactModal.tpl.html:15
+#: ./src/templates/modals/generate.tpl.html:78
 msgctxt "Action"
 msgid "Import"
 msgstr "Импортировать"
+
+#: ./src/templates/address/addressKeysView.tpl.html:40
+msgctxt "Action"
+msgid "Import Key"
+msgstr ""
 
 #. Import contacts button in no result placeholder
 #: ./src/templates/contact/contactNoResult.tpl.html:9
 msgctxt "Action"
 msgid "Import contacts"
 msgstr "Импортировать контакты"
-
-#: ./src/templates/squire/addFilePopover.tpl.html:30
-#: ./src/templates/squire/addFilePopover.tpl.html:40
-msgctxt "Action"
-msgid "Insert File"
-msgstr "Прикрепить файл"
-
-#: ./src/templates/squire/addFilePopover.tpl.html:46
-msgctxt "Action"
-msgid "Insert URL"
-msgstr "Вставить URL-адрес"
 
 #. learn more link
 #: ./src/templates/modals/domain/dkim.tpl.html:16
@@ -1117,11 +1137,6 @@ msgctxt "Action"
 msgid "Log out"
 msgstr "Bыйти"
 
-#: ./src/templates/views/security.tpl.html:30
-msgctxt "Action"
-msgid "Log out all other sessions"
-msgstr "Завершить все другие сессии"
-
 #: ./src/app/members/directives/memberEditBtn.js:8
 #: ./src/templates/authentication/loginForm.tpl.html:44
 #: ./src/templates/authentication/loginTwoFactorForm.tpl.html:25
@@ -1139,6 +1154,11 @@ msgctxt "Action"
 msgid "Make Admin"
 msgstr "Сделать администратором"
 
+#: ./src/templates/address/addressKeysView.tpl.html:176
+msgctxt "Action"
+msgid "Make Primary"
+msgstr ""
+
 #: ./src/app/members/directives/memberEditBtn.js:11
 msgctxt "Action"
 msgid "Make Private"
@@ -1149,11 +1169,6 @@ msgstr "Сделать конфиденциальным"
 msgctxt "Action"
 msgid "Make default"
 msgstr "Сделать обычным"
-
-#: ./src/templates/address/addressKeysView.tpl.html:86
-msgctxt "Action"
-msgid "Make primary"
-msgstr "Сделать основным"
 
 #. link to domains
 #: ./src/templates/dashboard/overviewSection.tpl.html:18
@@ -1176,17 +1191,27 @@ msgctxt "Action"
 msgid "Mark as read"
 msgstr "Отметить как прочитанное"
 
-#: ./src/templates/message/message.tpl.html:186
+#: ./src/templates/message/message.tpl.html:188
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr "Отметить как спам"
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:11
-#: ./src/templates/message/message.tpl.html:179
+#: ./src/templates/message/message.tpl.html:181
 #: ./src/templates/ui/toolbarMobile.tpl.html:17
 msgctxt "Action"
 msgid "Mark as unread"
 msgstr "Отметить как непрочитанное"
+
+#: ./src/templates/address/addressKeysView.tpl.html:197
+msgctxt "Action"
+msgid "Mark compromised"
+msgstr ""
+
+#: ./src/templates/address/addressKeysView.tpl.html:185
+msgctxt "Action"
+msgid "Mark obsolete"
+msgstr ""
 
 #. contacts toolbar menu option
 #: ./src/templates/contact/contactDisplayModal.tpl.html:14
@@ -1203,7 +1228,7 @@ msgid "Move to archive"
 msgstr "Переместить в Архив"
 
 #: ./src/templates/elements/moveElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:169
+#: ./src/templates/message/message.tpl.html:171
 #: ./src/templates/ui/toolbarMobile.tpl.html:38
 msgctxt "Action"
 msgid "Move to inbox"
@@ -1216,7 +1241,7 @@ msgid "Move to spam"
 msgstr "Переместить к спаму"
 
 #: ./src/templates/elements/moveElement.tpl.html:2
-#: ./src/templates/message/message.tpl.html:175
+#: ./src/templates/message/message.tpl.html:177
 #: ./src/templates/ui/toolbarMobile.tpl.html:34
 msgctxt "Action"
 msgid "Move to trash"
@@ -1235,6 +1260,11 @@ msgstr "Нужна помощь?"
 msgctxt "Action"
 msgid "Need more users?"
 msgstr "Нужно больше пользователей?"
+
+#: ./src/templates/address/addressKeysView.tpl.html:33
+msgctxt "Action"
+msgid "New Key"
+msgstr ""
 
 #: ./src/templates/modals/changePassword.tpl.html:41
 #: ./src/templates/modals/domain/address.tpl.html:46
@@ -1256,6 +1286,7 @@ msgctxt "Action"
 msgid "Next tip"
 msgstr "Следующий совет"
 
+#: ./src/app/contact/factories/contactSpam.js:15
 #: ./src/app/user/directives/signupLink.js:8
 msgctxt "Action"
 msgid "No"
@@ -1283,7 +1314,7 @@ msgctxt "Action"
 msgid "Pay annually"
 msgstr "Ежегодный платёж"
 
-#: ./src/templates/message/message.tpl.html:215
+#: ./src/templates/message/message.tpl.html:217
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -1295,8 +1326,7 @@ msgctxt "Action"
 msgid "Private"
 msgstr "Конфиденциальный"
 
-#: ./src/templates/address/addressKeysView.tpl.html:32
-#: ./src/templates/modals/exportKeyModal.tpl.html:16
+#: ./src/templates/modals/exportKeyModal.tpl.html:17
 msgctxt "Action"
 msgid "Private key"
 msgstr "Закрытый ключ"
@@ -1307,17 +1337,18 @@ msgctxt "Action"
 msgid "ProtonMail Shop"
 msgstr "Магазин ProtonMail"
 
+#: ./src/templates/views/reset-login-password.tpl.html:54
 #: ./src/templates/views/reset-login-password.tpl.html:7
 msgctxt "Action"
 msgid "ProtonMail username to reset"
 msgstr "Имя пользователя ProtonMail для сброса"
 
-#: ./src/templates/modals/exportKeyModal.tpl.html:17
+#: ./src/templates/modals/exportKeyModal.tpl.html:18
 msgctxt "Action"
 msgid "Public key"
 msgstr "Публичный ключ"
 
-#: ./src/templates/address/addressKeysView.tpl.html:78
+#: ./src/templates/address/addressKeysView.tpl.html:146
 msgctxt "Action"
 msgid "Reactivate"
 msgstr "Активировать повторно"
@@ -1340,22 +1371,17 @@ msgstr "Обновить статус домена"
 #: ./src/app/utils/services/lazyLoader.js:11
 msgctxt "Action"
 msgid "Reload ProtonMail"
-msgstr ""
+msgstr "Перезагрузить ProtonMail"
 
 #: ./src/app/members/directives/memberEditBtn.js:7
 msgctxt "Action"
 msgid "Remove"
 msgstr "Удалить"
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:102
+#: ./src/templates/directives/contact/contactItem.tpl.html:101
 msgctxt "Action"
 msgid "Remove Entry"
 msgstr "Удалить запись"
-
-#: ./src/templates/squire/addLinkPopover.tpl.html:30
-msgctxt "Action"
-msgid "Remove link"
-msgstr "Удалить ссылку"
 
 #: ./src/templates/views/outside.message.tpl.html:5
 msgctxt "Action"
@@ -1368,7 +1394,7 @@ msgctxt "Action"
 msgid "Report bug"
 msgstr "Сообщить об ошибке"
 
-#: ./src/templates/views/reset-login-password.tpl.html:108
+#: ./src/templates/views/reset-login-password.tpl.html:128
 msgctxt "Action"
 msgid "Reset"
 msgstr "Сбросить"
@@ -1382,19 +1408,19 @@ msgstr "Сброс ключей"
 #. button to reset login password
 #. button to reset password
 #: ./src/templates/views/reset-login-password.tpl.html:37
-#: ./src/templates/views/reset-login-password.tpl.html:64
+#: ./src/templates/views/reset-login-password.tpl.html:84
 msgctxt "Action"
 msgid "Reset Password"
 msgstr "Сбросить пароль"
 
-#: ./src/templates/views/reset-login-password.tpl.html:51
+#: ./src/templates/views/reset-login-password.tpl.html:70
 msgctxt "Action"
 msgid "Reset code"
 msgstr "Код сброса"
 
 #. button to reset password
 #: ./src/templates/authentication/modals/helpLoginModal.tpl.html:10
-#: ./src/templates/views/reset-login-password.tpl.html:149
+#: ./src/templates/views/reset-login-password.tpl.html:169
 msgctxt "Action"
 msgid "Reset password"
 msgstr "Сбросить пароль"
@@ -1412,7 +1438,7 @@ msgstr "Восстановить ключи"
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:8
 msgctxt "Action"
 msgid "Restore administrator privileges"
-msgstr "Восстановить привилегии администратора"
+msgstr "Восстановить полномочия администратора"
 
 #: ./src/templates/user/signupPayForm.tpl.html:134
 msgctxt "Action"
@@ -1424,6 +1450,11 @@ msgctxt "Action"
 msgid "Revoke Admin"
 msgstr "Лишить администраторских прав"
 
+#: ./src/templates/views/security.tpl.html:30
+msgctxt "Action"
+msgid "Revoke all other sessions"
+msgstr ""
+
 #. Save button for updating default identity on account page
 #. contact details
 #: ./src/templates/contact/contactDetails.tpl.html:6
@@ -1433,7 +1464,7 @@ msgstr "Лишить администраторских прав"
 #: ./src/templates/dashboard/customVpnModal.tpl.html:20
 #: ./src/templates/directives/composer/composer.tpl.html:123
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:219
+#: ./src/templates/filter/modal.tpl.html:225
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -1448,7 +1479,7 @@ msgctxt "Action"
 msgid "Save"
 msgstr "Сохранить"
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:163
+#: ./src/templates/directives/contact/contactItem.tpl.html:162
 msgctxt "Action"
 msgid "Save order"
 msgstr "Сохранить порядок"
@@ -1492,6 +1523,12 @@ msgctxt "Action"
 msgid "Send"
 msgstr "Отправить"
 
+#: ./src/app/composer/services/validateMessage.js:22
+#: ./src/templates/modals/expirationModal.tpl.html:55
+msgctxt "Action"
+msgid "Send anyway"
+msgstr ""
+
 #: ./src/templates/formUtils/codeVerificator.tpl.html:21
 msgctxt "Action"
 msgid "Send new code"
@@ -1503,7 +1540,7 @@ msgid "Sending"
 msgstr "Отправка"
 
 #: ./src/templates/composer/composerEncrypt.tpl.html:72
-#: ./src/templates/composer/composerExpiration.tpl.html:58
+#: ./src/templates/composer/composerExpiration.tpl.html:59
 #: ./src/templates/vpn/openVpnSection.tpl.html:47
 msgctxt "Action"
 msgid "Set"
@@ -1530,7 +1567,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr "Показать все"
 
-#: ./src/templates/message/message.tpl.html:222
+#: ./src/templates/message/message.tpl.html:224
 msgctxt "Action"
 msgid "Show details"
 msgstr "Показать подробности"
@@ -1562,8 +1599,8 @@ msgstr "Показать непрочитанные"
 
 #: ./src/app/user/directives/signupLink.js:6
 msgctxt "Action"
-msgid "Sign up for free"
-msgstr "Бесплатная регистрация"
+msgid "Sign up"
+msgstr ""
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:62
 msgctxt "Action"
@@ -1625,7 +1662,7 @@ msgctxt "Action"
 msgid "This message contains remote content"
 msgstr "Это сообщение содержит внешнее содержимое"
 
-#: ./src/templates/directives/composer/composerInputMeta.tpl.html:46
+#: ./src/templates/directives/composer/composerInputMeta.tpl.html:35
 msgctxt "Action"
 msgid "To"
 msgstr "Кому"
@@ -1633,22 +1670,22 @@ msgstr "Кому"
 #: ./src/templates/modals/trustPublicKey.tpl.html:40
 msgctxt "Action"
 msgid "Trust Key"
-msgstr ""
+msgstr "Доверять ключу"
 
 #: ./src/templates/message/messageAddressActionMenu.tpl.html:37
 msgctxt "Action"
 msgid "Trust Public Keys"
-msgstr ""
+msgstr "Доверять публичным ключам"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
 msgctxt "Action"
 msgid "Try again"
-msgstr "Попробовать ещё раз"
+msgstr "Попробовать снова"
 
 #: ./src/templates/ui/navigation/navigationUser.tpl.html:17
 msgctxt "Action"
 msgid "Tutorial"
-msgstr "Инструкция"
+msgstr "Учебник"
 
 #: ./src/templates/views/unlock.tpl.html:34
 msgctxt "Action"
@@ -1665,11 +1702,6 @@ msgctxt "Action"
 msgid "Update"
 msgstr "Обновить"
 
-#: ./src/templates/squire/addLinkPopover.tpl.html:37
-msgctxt "Action"
-msgid "Update link"
-msgstr "Обновить ссылку"
-
 #. link to dashboard
 #: ./src/templates/dashboard/overviewSection.tpl.html:23
 #: ./src/templates/dashboard/overviewSection.tpl.html:42
@@ -1684,12 +1716,17 @@ msgstr "Улучшить"
 #: ./src/templates/partials/conversation-placeholder.tpl.html:18
 msgctxt "Action"
 msgid "Upgrade account"
-msgstr "Улучшить аккаунт"
+msgstr "Улучшить учётную запись"
 
 #: ./src/templates/contact/contactEncrypted.tpl.html:11
 msgctxt "Action"
 msgid "Upgrade now"
 msgstr "Улучшить сейчас"
+
+#: ./src/templates/vpn/vpnView.tpl.html:13
+msgctxt "Action"
+msgid "Upgrade plan now"
+msgstr ""
 
 #: ./src/templates/directives/core/sidebarProgress.tpl.html:4
 msgctxt "Action"
@@ -1724,7 +1761,7 @@ msgctxt "Action"
 msgid "Verify"
 msgstr "Подтвердить"
 
-#: ./src/templates/views/reset-login-password.tpl.html:76
+#: ./src/templates/views/reset-login-password.tpl.html:96
 msgctxt "Action"
 msgid "Verifying reset code"
 msgstr "Проверка кода сброса"
@@ -1734,22 +1771,22 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr "Посмотреть клавиши быстрого доступа"
 
-#: ./src/templates/message/message.tpl.html:206
+#: ./src/templates/message/message.tpl.html:208
 msgctxt "Action"
 msgid "View headers"
 msgstr "Просмотр заголовков"
 
-#: ./src/templates/message/message.tpl.html:207
+#: ./src/templates/message/message.tpl.html:209
 msgctxt "Action"
 msgid "View original"
 msgstr "Показать оригинал"
 
-#: ./src/templates/message/message.tpl.html:201
+#: ./src/templates/message/message.tpl.html:203
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr "Просмотреть как обработанный HTML"
 
-#: ./src/templates/message/message.tpl.html:197
+#: ./src/templates/message/message.tpl.html:199
 msgctxt "Action"
 msgid "View source code"
 msgstr "Показать исходный код"
@@ -1759,11 +1796,12 @@ msgctxt "Action"
 msgid "What is this?"
 msgstr "Что это такое?"
 
-#: ./src/templates/views/security.tpl.html:45
+#: ./src/templates/views/security.tpl.html:65
 msgctxt "Action"
 msgid "Wipe"
 msgstr "Стереть"
 
+#: ./src/app/contact/factories/contactSpam.js:14
 #: ./src/app/user/directives/signupStepLink.js:4
 msgctxt "Action"
 msgid "Yes"
@@ -1824,6 +1862,11 @@ msgctxt "Action in contact details"
 msgid "Show custom fields"
 msgstr "Показать произвольные поля"
 
+#: ./src/templates/views/security.tpl.html:45
+msgctxt "Action in the active sessions table"
+msgid "Revoke"
+msgstr ""
+
 #: ./src/templates/notifications/retry.tpl.html:8
 msgctxt "Action notification error trying to connect to the API"
 msgid "Retry now"
@@ -1844,13 +1887,13 @@ msgctxt "Action to not set PGP encryption on import contact"
 msgid "Yes"
 msgstr "Да"
 
-#: ./src/templates/message/messageDisplayError.tpl.html:23
-#: ./src/templates/message/messageDisplayError.tpl.html:6
+#: ./src/templates/message/messageDisplayError.tpl.html:14
+#: ./src/templates/message/messageDisplayError.tpl.html:4
 msgctxt "Action to reload the current state"
 msgid "Try again"
 msgstr "Попробовать снова"
 
-#: ./src/templates/message/messageDisplayError.tpl.html:12
+#: ./src/templates/message/messageDisplayError.tpl.html:9
 msgctxt "Action to report an error for the message"
 msgid "Report problem"
 msgstr "Сообщить о проблеме"
@@ -1884,42 +1927,42 @@ msgctxt "Add a new domain label"
 msgid "Set"
 msgstr "Задать"
 
-#: ./src/app/conversation/factories/actionConversation.js:40
-#: ./src/app/message/factories/messageActions.js:46
+#: ./src/app/conversation/factories/actionConversation.js:41
+#: ./src/app/message/factories/messageActions.js:47
 msgctxt "App folder"
 msgid "Archive"
 msgstr "Архив"
 
-#: ./src/app/conversation/factories/actionConversation.js:35
 #: ./src/app/conversation/factories/actionConversation.js:36
-#: ./src/app/message/factories/messageActions.js:41
+#: ./src/app/conversation/factories/actionConversation.js:37
 #: ./src/app/message/factories/messageActions.js:42
+#: ./src/app/message/factories/messageActions.js:43
 msgctxt "App folder"
 msgid "Drafts"
 msgstr "Черновики"
 
-#: ./src/app/conversation/factories/actionConversation.js:33
-#: ./src/app/message/factories/messageActions.js:39
+#: ./src/app/conversation/factories/actionConversation.js:34
+#: ./src/app/message/factories/messageActions.js:40
 msgctxt "App folder"
 msgid "Inbox"
 msgstr "Входящие"
 
-#: ./src/app/conversation/factories/actionConversation.js:37
 #: ./src/app/conversation/factories/actionConversation.js:38
-#: ./src/app/message/factories/messageActions.js:43
+#: ./src/app/conversation/factories/actionConversation.js:39
 #: ./src/app/message/factories/messageActions.js:44
+#: ./src/app/message/factories/messageActions.js:45
 msgctxt "App folder"
 msgid "Sent"
 msgstr "Отправленные"
 
-#: ./src/app/conversation/factories/actionConversation.js:34
-#: ./src/app/message/factories/messageActions.js:40
+#: ./src/app/conversation/factories/actionConversation.js:35
+#: ./src/app/message/factories/messageActions.js:41
 msgctxt "App folder"
 msgid "Spam"
 msgstr "Спам"
 
-#: ./src/app/conversation/factories/actionConversation.js:39
-#: ./src/app/message/factories/messageActions.js:45
+#: ./src/app/conversation/factories/actionConversation.js:40
+#: ./src/app/message/factories/messageActions.js:46
 msgctxt "App folder"
 msgid "Trash"
 msgstr "Корзина"
@@ -1930,7 +1973,10 @@ msgid "The selected message has an encrypted subject.\n"
 "                ProtonMail does not support sending an encrypted subject.\n"
 "                Do you want to use \"{{ encryptedSubject }}\" instead of the original unencrypted subject\n"
 "                 \"{{ Subject }}\"?"
-msgstr ""
+msgstr "У выбранного сообщения зашифровано поле \"Тема\".\n"
+"                На ProtonMail не поддерживается отправка зашифрованного поля \"Тема\". \n"
+"                Вы хотите использовать \"{{ encryptedSubject }}\" вместо исходной незашифрованной темы\n"
+"                 \"{{ Subject }}\"?"
 
 #: ./src/templates/attachments/attachmentElement.tpl.html:20
 msgctxt "Attachment modifier tooltip"
@@ -1938,7 +1984,10 @@ msgid "<span class=\"fa-stack fa-lg\">\n"
 "                    <i class=\"fa listAttachments-modifier-shadow fa-unlock fa-stack-2x\"></i>\n"
 "                    <i class=\"fa fa-unlock fa-stack-2x\"></i>\n"
 "                </span>"
-msgstr ""
+msgstr "<span class=\"fa-stack fa-lg\">\n"
+"                    <i class=\"fa listAttachments-modifier-shadow fa-unlock fa-stack-2x\"></i>\n"
+"                    <i class=\"fa fa-unlock fa-stack-2x\"></i>\n"
+"                </span>"
 
 #: ./src/templates/attachments/attachmentElement.tpl.html:12
 msgctxt "Attachment modifier tooltip"
@@ -1946,7 +1995,10 @@ msgid "<span class=\"fa-stack fa-lg\">\n"
 "                    <i class=\"fa listAttachments-modifier-shadow fa-warning fa-stack-2x\"></i>\n"
 "                    <i class=\"fa fa-warning pt-fa-bg-white fa-stack-2x\"></i>\n"
 "                </span>"
-msgstr ""
+msgstr "<span class=\"fa-stack fa-lg\">\n"
+"                    <i class=\"fa listAttachments-modifier-shadow fa-warning fa-stack-2x\"></i>\n"
+"                    <i class=\"fa fa-warning pt-fa-bg-white fa-stack-2x\"></i>\n"
+"                </span>"
 
 #: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:50
 msgctxt "Auto-reply duration description"
@@ -1983,6 +2035,11 @@ msgstr "Текст автоответчика не может быть пуст�
 msgctxt "Back button in the contact sidebar"
 msgid "Back to mail"
 msgstr "Вернуться к почте"
+
+#: ./src/templates/views/security.tpl.html:44
+msgctxt "Badge in the active sessions table"
+msgid "Current session"
+msgstr ""
 
 #. Make sure this string is short please
 #: ./src/templates/dashboard/totalRows.tpl.html:33
@@ -2042,25 +2099,35 @@ msgctxt "Button"
 msgid "+ Add ProtonVPN"
 msgstr "+ Добавить ProtonVPN"
 
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:85
+msgctxt "Button"
+msgid "Remove"
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:63
+msgctxt "Button"
+msgid "Set Primary"
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:92
+msgctxt "Button"
+msgid "Trust"
+msgstr ""
+
 #: ./src/app/dashboard/directives/selectPlan.js:5
 msgctxt "Button to select plan on the dashboard"
-msgid "Downgrade to Free"
-msgstr "Понизить до Free"
+msgid "Switch to Free"
+msgstr ""
 
 #: ./src/app/dashboard/directives/selectPlan.js:6
 msgctxt "Button to select plan on the dashboard"
-msgid "Downgrade to Plus"
-msgstr "Понизить до Plus"
+msgid "Switch to Plus"
+msgstr ""
 
 #: ./src/app/dashboard/directives/selectPlan.js:7
 msgctxt "Button to select plan on the dashboard"
 msgid "Switch to Professional"
 msgstr "Перейти на Professional"
-
-#: ./src/app/dashboard/directives/selectPlan.js:26
-msgctxt "Button to select plan on the dashboard"
-msgid "Switch to Visionary"
-msgstr "Перейти на Visionary"
 
 #: ./src/app/dashboard/directives/selectPlan.js:12
 msgctxt "Button to select plan on the dashboard"
@@ -2092,22 +2159,27 @@ msgctxt "Button to select plan on the dashboard"
 msgid "Upgrade to Professional"
 msgstr "Улучшить до Professional"
 
-#: ./src/app/settings/controllers/security.js:192
+#: ./src/app/dashboard/directives/selectPlan.js:26
+msgctxt "Button to select plan on the dashboard"
+msgid "Upgrade to Visionary"
+msgstr ""
+
+#: ./src/app/settings/controllers/security.js:32
 msgctxt "Clear user's logs (security)"
 msgid "Logs cleared"
 msgstr "Логи очищены"
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:9
+#: ./src/app/command/factories/autocompleteCommandModel.js:10
 msgctxt "Command palette action"
 msgid "Add folder"
 msgstr "Добавить папку"
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:10
+#: ./src/app/command/factories/autocompleteCommandModel.js:11
 msgctxt "Command palette action"
 msgid "Add label"
 msgstr "Добавить ярлык"
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:11
+#: ./src/app/command/factories/autocompleteCommandModel.js:12
 msgctxt "Command palette action"
 msgid "Remove label"
 msgstr "Удалить ярлык"
@@ -2161,40 +2233,153 @@ msgctxt "Composer Mode"
 msgid "Plain Text"
 msgstr "Простой текст"
 
-#: ./src/templates/squire/addLinkPopover.tpl.html:11
-msgctxt "Composer, add Link popover"
-msgid "Edit the link"
-msgstr "Изменить ссылку"
+#: ./src/app/squire/modals/addFileModal.js:7
+msgctxt "Composer, add File"
+msgid "Add file"
+msgstr ""
 
-#: ./src/templates/squire/addLinkPopover.tpl.html:20
-msgctxt "Composer, add Link popover"
+#: ./src/app/squire/modals/addFileModal.js:8
+msgctxt "Composer, add File"
+msgid "Delete"
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:49
+msgctxt "Composer, add File"
+msgid "Error loading image"
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:38
+msgctxt "Composer, add File"
+msgid "If your URL is correct, you'll see an image preview here. Large images may take a few minutes to\n"
+"                    appear."
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:9
+msgctxt "Composer, add File"
+msgid "Image URL"
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:29
+msgctxt "Composer, add File"
+msgid "Image preview"
+msgstr ""
+
+#: ./src/app/squire/modals/addFileModal.js:6
+msgctxt "Composer, add File"
+msgid "Insert"
+msgstr ""
+
+#: ./src/app/squire/modals/addFileModal.js:5
+msgctxt "Composer, add File"
+msgid "Insert image"
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:46
+msgctxt "Composer, add File"
+msgid "Loading image"
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:3
+msgctxt "Composer, add File"
+msgid "Web address"
+msgstr ""
+
+#: ./src/app/squire/directives/addLink.js:24
+msgctxt "Composer, add Link"
+msgid "Add a phone number"
+msgstr ""
+
+#: ./src/app/squire/directives/addLink.js:22
+msgctxt "Composer, add Link"
+msgid "Add a web address"
+msgstr ""
+
+#: ./src/app/squire/directives/addLink.js:23
+msgctxt "Composer, add Link"
+msgid "Add an email address"
+msgstr ""
+
+#: ./src/app/squire/modals/addLinkModal.js:12
+#: ./src/app/squire/modals/addLinkModal.js:7
+msgctxt "Composer, add Link"
+msgid "Delete"
+msgstr ""
+
+#: ./src/app/squire/modals/addLinkModal.js:10
+msgctxt "Composer, add Link"
+msgid "Edit link"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:51
+msgctxt "Composer, add Link"
+msgid "Email address"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:2
+msgctxt "Composer, add Link"
+msgid "In the first box, put the link/email/phone number the text\n"
+"        should go to. In the second box, put the text you want to appear."
+msgstr ""
+
+#: ./src/app/squire/modals/addLinkModal.js:6
+msgctxt "Composer, add Link"
+msgid "Insert"
+msgstr ""
+
+#: ./src/app/squire/modals/addLinkModal.js:5
+msgctxt "Composer, add Link"
+msgid "Insert link"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:16
+msgctxt "Composer, add Link"
 msgid "Link URL"
-msgstr "Адрес ссылки"
+msgstr ""
 
-#: ./src/templates/squire/addLinkPopover.tpl.html:14
-msgctxt "Composer, add Link popover"
+#: ./src/templates/squire/addLink.tpl.html:63
+msgctxt "Composer, add Link"
+msgid "Link label"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:57
+msgctxt "Composer, add Link"
+msgid "Phone number"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:36
+msgctxt "Composer, add Link"
 msgid "Text to display"
-msgstr "Текст для отображения"
+msgstr ""
 
-#: ./src/templates/squire/addLinkPopover.tpl.html:19
-msgctxt "Composer, add Link popover"
+#: ./src/app/squire/directives/addLink.js:9
+msgctxt "Composer, add Link"
+msgid "To what URL should this link go?"
+msgstr ""
+
+#: ./src/app/squire/directives/addLink.js:10
+msgctxt "Composer, add Link"
+msgid "To what email address should this link?"
+msgstr ""
+
+#: ./src/app/squire/directives/addLink.js:15
+msgctxt "Composer, add Link"
+msgid "To what phone number should this link?"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:8
+msgctxt "Composer, add Link"
 msgid "URL link"
-msgstr "URL-ссылка"
+msgstr ""
 
-#: ./src/templates/squire/addFilePopover.tpl.html:10
-msgctxt "Composer, add file popover"
-msgid "Insert an image"
-msgstr "Вставить изображение"
+#: ./src/app/squire/modals/addLinkModal.js:11
+msgctxt "Composer, add Link"
+msgid "Update"
+msgstr ""
 
-#: ./src/templates/squire/addFilePopover.tpl.html:13
-msgctxt "Composer, add file popover"
-msgid "URL image"
-msgstr "URL изображения"
-
-#: ./src/templates/squire/addFilePopover.tpl.html:14
-msgctxt "Composer, add file popover"
-msgid "URL to image"
-msgstr "URL к изображению"
+#: ./src/templates/squire/addLink.tpl.html:45
+msgctxt "Composer, add Link"
+msgid "Web address"
+msgstr ""
 
 #: ./src/app/composer/directives/composerAskEmbedded.js:4
 msgctxt "Composer, message drag and drop images"
@@ -2255,12 +2440,46 @@ msgctxt "Condition for custom filter"
 msgid "matches"
 msgstr "совпадает с"
 
+#: ./src/app/address/directives/addressKeysView.js:43
+msgctxt "Confirm message"
+msgid "Are you sure you want to delete this key pair? Messages that have been encrypted with this key can"
+msgstr ""
+
+#: ./src/app/address/directives/addressKeysView.js:25
+msgctxt "Confirm message"
+msgid "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails."
+msgstr ""
+
+#: ./src/app/address/services/deleteKeyProcess.js:25
+msgctxt "Confirm message"
+msgid "Deleting your keys is irreversible. \n"
+"        To be able to access any message encrypted with this key, you might want to make a back up of this key for later use.\n"
+"        Do you want to export this key?"
+msgstr ""
+
+#: ./src/app/address/services/deleteKeyProcess.js:17
+msgctxt "Confirm message"
+msgid "This feature is intended for advanced users only!\n"
+"        After deleting this key, you will not be able to decrypt any message that is encrypted with this key.\n"
+"        It may lead to data loss. Are you sure you want to continue?"
+msgstr ""
+
+#: ./src/app/address/directives/addressKeysView.js:32
+msgctxt "Confirm message"
+msgid "This key has not been activated. It is only possible to export the public key. Do you want to export the public key?"
+msgstr ""
+
 #: ./src/app/settings/directives/encryptionView.js:16
 msgctxt "Confirm modal title"
 msgid "Automatic sign outgoing messages?"
 msgstr "Подписывать ли исходящие сообщения автоматически?"
 
-#: ./src/app/address/directives/addressKeysView.js:24
+#: ./src/app/address/directives/addressKeysView.js:31
+msgctxt "Confirm modal title"
+msgid "Download Public Key"
+msgstr ""
+
+#: ./src/app/address/directives/addressKeysView.js:30
 msgctxt "Confirm modal title"
 msgid "Import private key"
 msgstr "Импортировать закрытый ключ"
@@ -2283,7 +2502,7 @@ msgstr "Предпросмотр контакта"
 #: ./src/app/contact/directives/contactKeyPinning.js:8
 msgctxt "Contact item label"
 msgid "Trusted Keys"
-msgstr ""
+msgstr "Доверяемые ключи"
 
 #: ./src/templates/contact/contactModal.tpl.html:6
 msgctxt "Contact modal title"
@@ -2372,7 +2591,12 @@ msgstr "Включено"
 #: ./src/templates/directives/contact/contactPgp.tpl.html:23
 msgctxt "Danger"
 msgid "Address Verification with Trusted Keys is enabled for this address.\n"
-"        To be able to send to this address, first trust the primary public key."
+"        To be able to send to this address, first trust public keys that can be used for sending."
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPgp.tpl.html:27
+msgctxt "Danger"
+msgid "This address is disabled. To be able to send to this address, the owner must first enable the address."
 msgstr ""
 
 #: ./src/templates/dashboard/visionaryColumn.tpl.html:3
@@ -2553,8 +2777,8 @@ msgctxt "Dashboard, custom theme input"
 msgid "Paste your CSS code here (limited to 200,000 characters)"
 msgstr "Вставьте ваш код CSS сюда (ограничение - 200,000 знаков)"
 
-#: ./src/app/settings/controllers/security.js:247
-#: ./src/app/settings/controllers/security.js:263
+#: ./src/app/settings/controllers/security.js:29
+#: ./src/app/settings/controllers/security.js:49
 msgctxt "Dashboard/security"
 msgid "Logging preference updated"
 msgstr "Настройки логов обновлены"
@@ -2719,7 +2943,7 @@ msgctxt "Default autoresponder message without signature (no regards, etcetera)"
 msgid "<div>I'm out of the office with limited access to my email.</div>"
 msgstr "<div>Я отсутствую на рабочем месте и не имею полного доступа к почте.</div>"
 
-#: ./src/app/contact/factories/contactDetailsModel.js:14
+#: ./src/app/contact/factories/contactDetailsModel.js:15
 #: ./src/app/contact/factories/contactEncryption.js:123
 #: ./src/app/contact/factories/contactSchema.js:10
 msgctxt "Default display name vcard"
@@ -2783,7 +3007,7 @@ msgctxt "Delete all contacts button in the sidebar"
 msgid "Delete All"
 msgstr "Удалить всё"
 
-#: ./src/app/settings/controllers/security.js:80
+#: ./src/app/settings/controllers/security.js:41
 msgctxt "Disable 2FA"
 msgid "Two-factor authentication disabled"
 msgstr "Двухфакторная аутентификация отключена"
@@ -2875,7 +3099,12 @@ msgctxt "Duration/repetition of autoresponder"
 msgid "Repeat weekly"
 msgstr "Повторять еженедельно"
 
-#: ./src/app/message/factories/messageModel.js:26
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:104
+msgctxt "Empty table message"
+msgid "All available keys are trusted"
+msgstr ""
+
+#: ./src/app/message/factories/messageModel.js:28
 msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr "Зашифрованные заголовки"
@@ -2937,7 +3166,7 @@ msgctxt "Error"
 msgid "Cannot generate a zip of your attachments."
 msgstr "Невозможно создать zip-архив с вашими вложениями."
 
-#: ./src/app/address/directives/addressKeysView.js:31
+#: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Error"
 msgid "Cannot read private key"
 msgstr "Невозможно прочитать закрытый ключ"
@@ -2952,7 +3181,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr "Контакт не содержит адрес электронной почты"
 
-#: ./src/app/composer/services/validateMessage.js:43
+#: ./src/app/composer/services/validateMessage.js:58
 msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "Обратитесь к администратору вашей организации, чтобы решить это."
@@ -3043,7 +3272,7 @@ msgctxt "Error"
 msgid "Error during query addresses"
 msgstr "Ошибка во время запроса адресов"
 
-#: ./src/app/settings/controllers/security.js:226
+#: ./src/app/settings/controllers/security.js:46
 msgctxt "Error"
 msgid "Error during revoke request"
 msgstr "Ошибка во время запроса отзыва"
@@ -3053,12 +3282,7 @@ msgctxt "Error"
 msgid "Error during the encryption"
 msgstr "Ошибка во время шифрования"
 
-#: ./src/app/user/services/attachSignupSubscription.js:16
-msgctxt "Error"
-msgid "Error during the generation of new organization keys"
-msgstr "Ошибка во время создания новых ключей для организации"
-
-#: ./src/app/settings/controllers/security.js:171
+#: ./src/app/settings/controllers/security.js:50
 msgctxt "Error"
 msgid "Error during the initialization of logs"
 msgstr "Ошибка во время инициализации журналов"
@@ -3078,7 +3302,7 @@ msgctxt "Error"
 msgid "Error privatizing the user"
 msgstr "Ошибка при приватизации пользователя"
 
-#: ./src/app/address/directives/addressKeysView.js:33
+#: ./src/app/address/directives/addressKeysView.js:57
 msgctxt "Error"
 msgid "Error reactivating key. Please try again"
 msgstr "Ошибка повторной активации ключа. Пожалуйста, попробуйте ещё раз"
@@ -3128,10 +3352,20 @@ msgctxt "Error"
 msgid "Error updating the vpn option"
 msgstr "Ошибка при обновлении настройки VPN"
 
+#: ./src/app/commons/services/ptClipboard.js:5
+msgctxt "Error"
+msgid "Error while copying"
+msgstr ""
+
 #: ./src/app/settings/directives/encryptionView.js:15
 msgctxt "Error"
 msgid "Error while updating setting"
 msgstr "Ошибка при обновлении настройки"
+
+#: ./src/app/ui/directives/autocompleteEmails.js:29
+msgctxt "Error"
+msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
+msgstr ""
 
 #: ./src/app/address/factories/reactivateKeys.js:24
 msgctxt "Error"
@@ -3141,7 +3375,7 @@ msgstr "Не удалось повторно активировать ключ"
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:25
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:6
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:15
-#: ./src/templates/filter/modal.tpl.html:20
+#: ./src/templates/filter/modal.tpl.html:24
 #: ./src/templates/formUtils/cardView.tpl.html:18
 #: ./src/templates/formUtils/cardView.tpl.html:44
 #: ./src/templates/formUtils/cardView.tpl.html:55
@@ -3153,11 +3387,19 @@ msgstr "Не удалось повторно активировать ключ"
 #: ./src/templates/modals/setupOrganization.tpl.html:17
 #: ./src/templates/organization/organizationFormName.tpl.html:21
 #: ./src/templates/payment/giftCodeInput.tpl.html:13
+#: ./src/templates/squire/addFile.tpl.html:22
+#: ./src/templates/squire/addLink.tpl.html:29
+#: ./src/templates/squire/addLink.tpl.html:76
 msgctxt "Error"
 msgid "Field required"
 msgstr "Обязательное поле"
 
-#: ./src/templates/views/reset-login-password.tpl.html:48
+#: ./src/app/attachments/services/AttachmentEvent.js:6
+msgctxt "Error"
+msgid "ICS parsing error:"
+msgstr ""
+
+#: ./src/templates/views/reset-login-password.tpl.html:51
 msgctxt "Error"
 msgid "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it."
 msgstr "ВАЖНО: Не закрывайте эту страницу и не уходите с неё. Вам потребуется ввести код сброса в поле ниже, как только вы его получите."
@@ -3165,7 +3407,7 @@ msgstr "ВАЖНО: Не закрывайте эту страницу и не у
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:10
 msgctxt "Error"
 msgid "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!"
-msgstr "ВАЖНО: Скачивание ваших закрытых ключей и их рассылка или хранение их на незащищённых носителях может запутать безопасность вашей учётной записи!"
+msgstr "ВАЖНО: Скачивание ваших закрытых ключей и их рассылка или хранение их на незащищённых носителях может подвергнуть опасности защиту вашей учётной записи!"
 
 #: ./src/app/contact/directives/contactPhotoForm.js:5
 msgctxt "Error"
@@ -3203,7 +3445,7 @@ msgctxt "Error"
 msgid "Invalid coupon code"
 msgstr "Неправильный код купона"
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:149
+#: ./src/templates/directives/contact/contactItem.tpl.html:148
 #: ./src/templates/directives/contact/contactPinnedKeys.tpl.html:39
 #: ./src/templates/directives/core/bugModalView.tpl.html:62
 #: ./src/templates/filter/filterAddressModal.tpl.html:27
@@ -3212,7 +3454,7 @@ msgctxt "Error"
 msgid "Invalid email"
 msgstr "Неправильный адрес эл. почты"
 
-#: ./src/app/composer/services/validateMessage.js:14
+#: ./src/app/composer/services/validateMessage.js:29
 msgctxt "Error"
 msgid "Invalid email(s): {{total}}"
 msgstr "Некорректных эл. писем: {{total}}"
@@ -3296,7 +3538,7 @@ msgctxt "Error"
 msgid "No Internet connection found."
 msgstr "Нет соединения с Интернетом."
 
-#: ./src/app/composer/services/validateMessage.js:37
+#: ./src/app/composer/services/validateMessage.js:52
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr "Для составления сообщения нет адреса с доступными ключами."
@@ -3327,7 +3569,12 @@ msgctxt "Error"
 msgid "Non-integer API version requested."
 msgstr "Запрошено нецелочисленное значение версии API."
 
-#: ./src/app/organization/factories/organizationKeysModel.js:29
+#: ./src/templates/squire/addFile.tpl.html:23
+msgctxt "Error"
+msgid "Not a valid URL"
+msgstr ""
+
+#: ./src/app/organization/factories/organizationKeysModel.js:30
 msgctxt "Error"
 msgid "Organization keys already active"
 msgstr "Ключи организации уже активны"
@@ -3337,7 +3584,7 @@ msgctxt "Error"
 msgid "Organization keys change successful"
 msgstr "Ключи организации успешно изменены"
 
-#: ./src/app/organization/factories/organizationKeysModel.js:30
+#: ./src/app/organization/factories/organizationKeysModel.js:31
 msgctxt "Error"
 msgid "Organization keys request failed"
 msgstr "Запрос ключей организации не удался"
@@ -3356,7 +3603,7 @@ msgstr "Пароли не совпадают"
 #: ./src/app/members/services/membersValidator.js:36
 msgctxt "Error"
 msgid "Permission denied, administrator privileges have been restricted."
-msgstr "Отказано в доступе, права администратора ограничены."
+msgstr "Отказано в доступе, полномочия администратора ограничены."
 
 #: ./src/app/address/factories/addressModel.js:54
 msgctxt "Error"
@@ -3368,12 +3615,12 @@ msgctxt "Error"
 msgid "Please enter a password for this email."
 msgstr "Пожалуйста, введите пароль для этой почты."
 
-#: ./src/app/composer/services/validateMessage.js:21
+#: ./src/app/composer/services/validateMessage.js:36
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "Пожалуйста, введите как минимум одного получателя."
 
-#: ./src/app/authentication/controllers/login.js:401
+#: ./src/app/authentication/controllers/login.js:397
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Пожалуйста, введите двухфакторный код доступа"
@@ -3396,9 +3643,9 @@ msgstr "Неправильный адрес резервной эл. почты"
 #: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:15
 msgctxt "Error"
 msgid "Request timed out, please try again."
-msgstr "Истекло время запроса, пожалуйста, попробуйте снова."
+msgstr "Время ожидания ответа на запрос истекло. Пожалуйста, попробуйте ещё раз."
 
-#: ./src/templates/views/reset-login-password.tpl.html:60
+#: ./src/templates/views/reset-login-password.tpl.html:80
 msgctxt "Error"
 msgid "Reset code is required"
 msgstr "Требуется указать код сброса"
@@ -3451,12 +3698,12 @@ msgstr "Текст или шаблон уже включены"
 #: ./src/templates/payment/donation.tpl.html:90
 msgctxt "Error"
 msgid "Thank you for your willingness to donate. The maximum we can accept in single donations is 999 999 at this moment. Thank you"
-msgstr "Благодарим за готовность пожертвовать. Максимально допустимая сумма пожертвования на данный момент 999 999. Спасибо"
+msgstr "Благодарим за готовность пожертвовать. В настоящее время максимально допустимая сумма одного пожертвования составляет 999 999. Спасибо"
 
 #: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:12
 msgctxt "Error"
 msgid "The ProtonMail API is offline:"
-msgstr "ProtonMail API оффлайн:"
+msgstr "API ProtonMail отключён:"
 
 #: ./src/app/attachments/services/attachmentDownloader.js:37
 msgctxt "Error"
@@ -3472,7 +3719,7 @@ msgstr "Код слишком длинный, должно быть не бол�
 msgctxt "Error"
 msgid "The code must contain at least 6\n"
 "                characters"
-msgstr ""
+msgstr "Код должен состоять из не менее чем 6 знаков"
 
 #: ./src/templates/views/account.tpl.html:35
 msgctxt "Error"
@@ -3489,20 +3736,20 @@ msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr "Максимальный срок действия составляет 4 недели."
 
-#: ./src/app/composer/services/validateMessage.js:16
+#: ./src/app/composer/services/validateMessage.js:31
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr "Максимальная длина сообщения составляет 16 000 000 символов."
 
-#: ./src/app/composer/services/validateMessage.js:22
+#: ./src/app/composer/services/validateMessage.js:37
 msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
 msgstr "Максимальная длина строки-темы &mdash; {{size}}."
 
-#: ./src/app/ui/directives/autocompleteEmails.js:17
+#: ./src/app/ui/directives/autocompleteEmails.js:22
 msgctxt "Error"
-msgid "The maximum number (%1) of Recipients is %2."
-msgstr "Максимальное количество (%1) из %2 получателей."
+msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
+msgstr ""
 
 #: ./src/templates/user/usernameDomain.tpl.html:44
 msgctxt "Error"
@@ -3526,7 +3773,7 @@ msgstr "Невозможно сбросить тему"
 #: ./src/app/settings/controllers/payments.js:99
 msgctxt "Error"
 msgid "Unable to save your changes, please try again."
-msgstr "Не удалось сохранить ваши изменения. Пожалуйста, попробуйте снова."
+msgstr "Невозможно сохранить ваши изменения. Пожалуйста, попробуйте снова."
 
 #: ./src/app/settings/factories/settingsMailApi.js:4
 msgctxt "Error"
@@ -3536,7 +3783,7 @@ msgstr "Невозможно сохранить изменения, ваша п�
 #: ./src/app/attachments/services/attachmentApi.js:182
 msgctxt "Error"
 msgid "Unable to upload file. Please try again"
-msgstr "Не удаётся загрузить файл, пожалуйста, попробуйте ещё раз"
+msgstr "Невозможно загрузить файл. Пожалуйста, попробуйте ещё раз"
 
 #: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:11
 msgctxt "Error"
@@ -3575,6 +3822,7 @@ msgstr "Неправильное имя пользователя"
 
 #: ./src/templates/user/usernameDomain.tpl.html:41
 #: ./src/templates/views/reset-login-password.tpl.html:19
+#: ./src/templates/views/reset-login-password.tpl.html:66
 msgctxt "Error"
 msgid "Username required"
 msgstr "Требуется имя пользователя"
@@ -3591,7 +3839,7 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "Подтверждение не удалось. Пожалуйста, повторите попытку через час."
 
-#: ./src/app/composer/services/validateMessage.js:8
+#: ./src/app/composer/services/validateMessage.js:23
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr "Подождите окончания закачки вложения, либо отмените закачку."
@@ -3599,12 +3847,12 @@ msgstr "Подождите окончания закачки вложения, �
 #: ./src/app/squire/services/editorDropzone.js:10
 msgctxt "Error"
 msgid "We do not support embedded SVG files inside the signature"
-msgstr ""
+msgstr "Внедрённые в подпись SVG-файлы не поддерживаются"
 
 #: ./src/app/settings/controllers/domains.js:282
 msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
-msgstr "Неверный проверочный код. Пожалуйста, убедитесь, что правильно скопировали код и попробуйте снова. Вступление изменений в силу может занять до 24 часов."
+msgstr "Неверный код подтверждения. Пожалуйста, убедитесь, что правильно скопировали код и попробуйте снова. Вступление изменений в силу может занять до 24 часов."
 
 #: ./src/templates/user/usernameDomain.tpl.html:42
 msgctxt "Error"
@@ -3622,9 +3870,9 @@ msgstr "Вы находитесь в приватном режиме или от
 #: ./src/app/utils/services/lazyLoader.js:6
 msgctxt "Error"
 msgid "You are using an outdated version of ProtonMail, please refresh the page."
-msgstr ""
+msgstr "Вы пользуетесь устаревшей версией ProtonMail, пожалуйста, обновите страницу."
 
-#: ./src/app/composer/services/validateMessage.js:36
+#: ./src/app/composer/services/validateMessage.js:51
 msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr "Здесь вы можете создавать свои ключи"
@@ -3633,7 +3881,8 @@ msgstr "Здесь вы можете создавать свои ключи"
 msgctxt "Error"
 msgid "You have enabled Address Verification with Trusted Keys for {{ emails }}, but no active encryption keys have been Trusted.\n"
 "                 You must Trust the primary key in order to send a message to this address."
-msgstr ""
+msgstr "Вы включили проверку адреса доверяемыми ключами для {{ emails }}, но ни один из активных ключей шифрования не является доверяемым.\n"
+"Вы должны включить режим доверия основному ключу, чтобы отправлять сообщения на этот адрес."
 
 #: ./src/templates/contact/contactSelectorForm.tpl.html:15
 msgctxt "Error"
@@ -3660,12 +3909,12 @@ msgctxt "Error"
 msgid "You have used all users in your plan. Please upgrade your plan to add a new user."
 msgstr "Вы достигли максимального числа участников, предусмотренного вашим тарифом. Пожалуйста, расширьте ваш тариф прежде, чем добавлять нового пользователя."
 
-#: ./src/app/composer/services/validateMessage.js:28
+#: ./src/app/composer/services/validateMessage.js:43
 msgctxt "Error"
 msgid "You have {{total}} recipients. The maximum number is 25."
 msgstr "Получателей задано: {{total}}. Максимальное количество &mdash; 25."
 
-#: ./src/app/organization/factories/organizationKeysModel.js:24
+#: ./src/app/organization/factories/organizationKeysModel.js:25
 msgctxt "Error"
 msgid "You must privatize all sub-accounts before generating new organization keys"
 msgstr "Вы должны приватизировать все подчинённые учётные записи прежде, чем создавать новые ключи организации"
@@ -3693,7 +3942,7 @@ msgstr "Ваша учётная запись имеет просроченный
 #: ./src/app/attachments/services/attachmentDownloader.js:29
 msgctxt "Error"
 msgid "Your browser lacks features needed to download encrypted attachments directly."
-msgstr ""
+msgstr "В вашем браузере нет возможностей, нужных для прямого скачивания зашифрованных вложений."
 
 #: ./src/app/address/factories/reactivateKeys.js:17
 msgctxt "Error"
@@ -3783,12 +4032,12 @@ msgctxt "Error message"
 msgid "%s is not a valid PGP key."
 msgstr "%s не является правильным PGP-ключом."
 
-#: ./src/app/keys/factories/importPrivateKey.js:101
+#: ./src/app/keys/factories/importPrivateKey.js:110
 msgctxt "Error message"
 msgid "Invalid private key file."
 msgstr "Неправильный файл закрытого ключа."
 
-#: ./src/app/keys/factories/importPrivateKey.js:24
+#: ./src/app/keys/factories/importPrivateKey.js:33
 msgctxt "Error message"
 msgid "Uploaded key does match selected key."
 msgstr "Загруженный ключ совпадает с выбранным."
@@ -3809,7 +4058,6 @@ msgid "Organization request failed"
 msgstr "Запрос организации не удался"
 
 #: ./src/app/organization/factories/organizationModel.js:20
-#: ./src/app/user/services/attachSignupSubscription.js:21
 msgctxt "Error organization creation"
 msgid "Error during organization request"
 msgstr "Ошибка во время запроса данных организации"
@@ -3861,35 +4109,35 @@ msgctxt "Filter message"
 msgid "Subject"
 msgstr "Теме"
 
-#: ./src/templates/filter/modal.tpl.html:48
+#: ./src/templates/filter/modal.tpl.html:53
 msgctxt "Filter modal condition"
 msgid "If"
 msgstr "Если"
 
-#: ./src/templates/filter/modal.tpl.html:90
+#: ./src/templates/filter/modal.tpl.html:95
 msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr "Текст или шаблон"
 
-#: ./src/templates/filter/modal.tpl.html:113
+#: ./src/templates/filter/modal.tpl.html:119
 msgctxt "Filter modal label"
 msgid "Apply labels"
-msgstr ""
+msgstr "Назначить ярлыки"
 
-#: ./src/templates/filter/modal.tpl.html:178
+#: ./src/templates/filter/modal.tpl.html:184
 msgctxt "Filter modal label"
 msgid "Mark as"
-msgstr ""
+msgstr "Отметить как"
 
-#: ./src/templates/filter/modal.tpl.html:131
+#: ./src/templates/filter/modal.tpl.html:137
 msgctxt "Filter modal label"
 msgid "Move to"
-msgstr ""
+msgstr "Переместить в"
 
-#: ./src/templates/filter/modal.tpl.html:201
+#: ./src/templates/filter/modal.tpl.html:207
 msgctxt "Filter modal label"
 msgid "Send auto reply"
-msgstr ""
+msgstr "Отправить автоответ"
 
 #: ./src/app/filter/factories/filterModal.js:53
 msgctxt "Filter modal operators"
@@ -3901,7 +4149,7 @@ msgctxt "Filter modal operators"
 msgid "OR"
 msgstr "ИЛИ"
 
-#: ./src/templates/filter/modal.tpl.html:9
+#: ./src/templates/filter/modal.tpl.html:12
 msgctxt "Filter modal title"
 msgid "Custom Filter"
 msgstr "Пользовательский фильтр"
@@ -3931,7 +4179,7 @@ msgctxt "Filter modal type"
 msgid "the subject"
 msgstr "тема"
 
-#: ./src/templates/filter/modal.tpl.html:84
+#: ./src/templates/filter/modal.tpl.html:89
 msgctxt "Filter modal value OR value"
 msgid "or"
 msgstr "или"
@@ -4000,7 +4248,7 @@ msgctxt "Full day name"
 msgid "Wednesday"
 msgstr "Среда"
 
-#: ./src/app/user/modals/generateModal.js:21
+#: ./src/app/user/modals/generateModal.js:18
 msgctxt "Generate key modal"
 msgid "Key created for {{email}}"
 msgstr "Создан ключ для {{email}}"
@@ -4023,7 +4271,7 @@ msgstr "Имя"
 #: ./src/templates/modals/trustPublicKey.tpl.html:19
 msgctxt "Header"
 msgid "Public Key Information:"
-msgstr ""
+msgstr "Информация о публичном ключе:"
 
 #: ./src/templates/views/members.tpl.html:294
 msgctxt "Help"
@@ -4133,7 +4381,7 @@ msgstr "Выбрать все элементы"
 #: ./src/app/utils/services/hotkeys.js:18
 msgctxt "Hotkey description"
 msgid "Show hotkeys available"
-msgstr "Показать горячие клавиши"
+msgstr "Показать сочетания клавиш"
 
 #: ./src/app/utils/services/hotkeys.js:27
 msgctxt "Hotkey description"
@@ -4181,7 +4429,7 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* Мы рекомендуем сначала добавить резервный адрес электронной почты. Иначе, вы не сможете восстановить вашу учётную запись, если что-то пойдёт не так."
 
-#: ./src/app/conversation/factories/actionConversation.js:360
+#: ./src/app/conversation/factories/actionConversation.js:359
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
 msgid_plural "{{number}} conversations moved to {{folder}}"
@@ -4436,7 +4684,7 @@ msgstr "<p><i class=\"fa fa-info-circle\"></i> Перетаскивайте ко
 #: ./src/templates/modals/feedback.tpl.html:14
 msgctxt "Info"
 msgid "<strong>This will only be shown once.</strong> ProtonMail is a global effort. Your feedback is very important in our mission to make encryption available for everyone. Thank You!"
-msgstr "<strong>Это будет отображено один раз.</strong> ProtonMail разрабатывается глобальным усилием. Ваш отзыв очень важен в нашей миссии, сделать шифрование доступное каждому. Спасибо!"
+msgstr "<strong>Это сообщение будет отображено только один раз.</strong> ProtonMail разрабатывается глобальным усилием. Обратная связь с вами очень важна в нашей миссии сделать шифрование доступным для всех. Спасибо!"
 
 #: ./src/templates/user/defaultSignature.tpl.html:51
 #: ./src/templates/user/pmSignatureToggle.tpl.html:10
@@ -4450,7 +4698,7 @@ msgid "A draft selected is open in a composer, this action will close the compos
 msgstr "Выбранный черновик открыт в редакторе. Это действие закроет редактор и удалит сообщение."
 
 #. reset warning 2/3
-#: ./src/templates/views/reset-login-password.tpl.html:84
+#: ./src/templates/views/reset-login-password.tpl.html:104
 msgctxt "Info"
 msgid "ALL YOUR DATA WILL BE LOST!"
 msgstr "ВСЕ ВАШИ ДАННЫЕ БУДУТ УТЕРЯНЫ!"
@@ -4497,10 +4745,10 @@ msgctxt "Info"
 msgid "Address updated"
 msgstr "Адрес обновлён"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:52
+#: ./src/templates/directives/contact/contactPgp.tpl.html:55
 msgctxt "Info"
 msgid "All uploaded keys are expired or revoked! Encryption is automatically disabled."
-msgstr ""
+msgstr "У всех загруженных ключей либо истекли сроки действия, либо эти ключи были отозваны! Шифрование было автоматически отключено."
 
 #: ./src/templates/views/account.tpl.html:37
 msgctxt "Info"
@@ -4512,8 +4760,7 @@ msgctxt "Info"
 msgid "Annually"
 msgstr "Ежегодно"
 
-#: ./src/app/settings/controllers/security.js:181
-#: ./src/app/settings/controllers/security.js:242
+#: ./src/app/settings/controllers/security.js:28
 msgctxt "Info"
 msgid "Are you sure you want to clear all your logs?"
 msgstr "Вы уверены, что хотите очистить все свои логи авторизации?"
@@ -4563,7 +4810,7 @@ msgctxt "Info"
 msgid "Are you sure you want to disable this address?"
 msgstr "Вы уверены, что хотите отключить этот адрес?"
 
-#: ./src/app/settings/controllers/security.js:136
+#: ./src/app/settings/controllers/security.js:36
 msgctxt "Info"
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr "Вы уверены, что хотите отключить двухфакторную аутентификацию?"
@@ -4581,7 +4828,7 @@ msgstr "Вы уверены, что хотите навсегда удалить
 #: ./src/app/members/services/memberActions.js:32
 msgctxt "Info"
 msgid "Are you sure you want to remove administrative privileges from this user?"
-msgstr "Вы уверены, что хотите забрать административные привилегии у этого пользователя?"
+msgstr "Вы уверены, что хотите удалить административные полномочия у этого пользователя?"
 
 #: ./src/app/elements/directives/advancedFilterElement.js:52
 #: ./src/app/elements/services/removeElement.js:15
@@ -4609,7 +4856,7 @@ msgctxt "Info"
 msgid "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar."
 msgstr "Прежде чем вы сможете получать электронную почту на адреса вашего пользовательского домена в ProtonMail, нужно добавить следующие записи MX в DNS. Обычно это можно сделать в панели управления регистратора доменных имён."
 
-#: ./src/app/user/modals/generateModal.js:24
+#: ./src/app/user/modals/generateModal.js:21
 msgctxt "Info"
 msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
 msgstr "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования. 4096-битные ключи работают только на высокопроизводительных компьютерах. Для большинства же пользователей мы рекомендуем использовать 2048-битные ключи."
@@ -4688,14 +4935,14 @@ msgstr "Щёлкните \"ИНФОРМАЦИЯ\", чтобы увидеть о�
 #: ./src/templates/contact/contactPlaceholder.tpl.html:7
 msgctxt "Info"
 msgid "Click on a contact to view or edit details."
-msgstr ""
+msgstr "Нажмите на контакт, чтобы увидеть или изменить его данные."
 
 #. safari attachment instructions
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:16
 #: ./src/templates/partials/safari.warning.tpl.html:16
 msgctxt "Info"
 msgid "Click your attachment once to decrypt it. Once decryption finishes you will see a download arrow icon appear."
-msgstr "Щёлкните один раз на вложение, чтобы расшифровать его. Когда расшифровка завершится, вы увидите иконку загрузки со стрелкой."
+msgstr "Щёлкните один раз по вложению, чтобы расшифровать его. Когда расшифровка завершится, вы увидите появившийся значок со стрелкой (для скачивания)."
 
 #: ./src/app/settings/controllers/appearance.js:63
 msgctxt "Info"
@@ -4711,6 +4958,16 @@ msgstr "Чтобы сообщить о важных проблемах безо�
 msgctxt "Info"
 msgid "Conversation Grouping automatically groups messages in the same conversation together."
 msgstr "Группировка сообщений автоматически группирует сообщения одной беседы в цепочку."
+
+#: ./src/app/commons/services/ptClipboard.js:4
+msgctxt "Info"
+msgid "Copied to clipboard"
+msgstr ""
+
+#: ./src/app/commons/directives/copy.js:4
+msgctxt "Info"
+msgid "Copy to your clipboard"
+msgstr ""
 
 #: ./src/templates/views/members.tpl.html:14
 msgctxt "Info"
@@ -4737,7 +4994,7 @@ msgctxt "Info"
 msgid "Custom filter deleted"
 msgstr "Пользовательский фильтр удалён"
 
-#: ./src/templates/filter/modal.tpl.html:26
+#: ./src/templates/filter/modal.tpl.html:31
 msgctxt "Info"
 msgid "Custom filters work on all new emails, including incoming emails as well as sent emails"
 msgstr "Пользовательские фильтры применяются ко всем новым письмам, включая входящие и отправляемые"
@@ -4811,7 +5068,7 @@ msgctxt "Info"
 msgid "Drop file or click here"
 msgstr "Перетащите файл или нажмите здесь"
 
-#: ./src/app/composer/controllers/composeMessage.js:179
+#: ./src/app/composer/controllers/composeMessage.js:184
 msgctxt "Info"
 msgid "Email was already sent"
 msgstr "Письмо уже было отправлено"
@@ -4829,9 +5086,9 @@ msgstr "Введите код активации:"
 #: ./src/app/organization/modals/activateOrganizationModal.js:23
 msgctxt "Info"
 msgid "Enter the Organization Password to restore administrator privileges. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Learn more</a>"
-msgstr "Введите пароль организации для восстановления привилегий администратора. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Подробнее</a>"
+msgstr "Введите пароль организации для восстановления полномочий администратора. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Подробнее</a>"
 
-#: ./src/templates/views/security.tpl.html:66
+#: ./src/templates/views/security.tpl.html:86
 msgctxt "Info"
 msgid "Fetching logs..."
 msgstr "Получение логов..."
@@ -4839,7 +5096,7 @@ msgstr "Получение логов..."
 #: ./src/templates/partials/wizard.tpl.html:30
 msgctxt "Info"
 msgid "Folders and labels are a powerful tool to manage your inbox."
-msgstr ""
+msgstr "Папки и ярлыки &mdash; мощный инструмент управления поступающей к вам почтой."
 
 #: ./src/app/formUtils/directives/cvcTooltip.js:8
 msgctxt "Info"
@@ -4912,7 +5169,7 @@ msgstr "Если данный домен активно принимает по�
 #: ./src/templates/partials/wizard.tpl.html:44
 msgctxt "Info"
 msgid "If you have questions or need help, please visit <a href=\"https://protonmail.com/support\" target=\"_blank\">our support page</a> to find troubleshooting guides and contact our support team. If you find a bug in ProtonMail, please let us know! You can send us a bug report by clicking <em>Report bug</em> <strong>(1)</strong>"
-msgstr ""
+msgstr "Если у вас есть вопросы или нужна помощь, посетите, пожалуйста, <a href=\"https://protonmail.com/support\" target=\"_blank\">нашу страницу поддержки</a>, чтобы найти руководства по устранению проблем и связаться с нашей группой тех. поддержки. Если вы нашли ошибку в ProtonMail, пожалуйста, дайте нам знать! Вы можете отправить нам отчёт об ошибках, нажав <em>Сообщить об ошибке</em> <strong>(1)</strong>"
 
 #: ./src/templates/modals/domain/dmarc.tpl.html:12
 msgctxt "Info"
@@ -4957,7 +5214,7 @@ msgctxt "Info"
 msgid "It can take up to a day for DNS changes to update."
 msgstr "Вступление в силу настроек DNS может занять до 1 дня."
 
-#: ./src/templates/views/reset-login-password.tpl.html:118
+#: ./src/templates/views/reset-login-password.tpl.html:138
 msgctxt "Info"
 msgid "Keep this password safe--it cannot be recovered."
 msgstr "Храните этот пароль в надёжном месте, т.к. он не может быть восстановлен."
@@ -4994,15 +5251,20 @@ msgid "Location"
 msgstr "Местоположение"
 
 #. authentication log record
-#: ./src/templates/views/security.tpl.html:81
+#: ./src/templates/views/security.tpl.html:101
 msgctxt "Info"
 msgid "Login failure (password)"
 msgstr "Неудачный вход (неверный пароль)"
 
-#: ./src/templates/views/security.tpl.html:61
+#: ./src/templates/views/security.tpl.html:81
 msgctxt "Info"
 msgid "Logs include authentication attempts for all Proton services that use your ProtonMail credentials."
 msgstr "В логах перечислены попытки авторизации во всех службах Proton, использующих ваши учётные данные ProtonMail."
+
+#: ./src/app/composer/controllers/composeMessage.js:600
+msgctxt "Info"
+msgid "Message discarded"
+msgstr ""
 
 #: ./src/templates/user/signupPayForm.tpl.html:37
 msgctxt "Info"
@@ -5029,7 +5291,7 @@ msgstr "Контакты не найдены"
 #: ./src/app/filter/directives/emailBlockList.js:13
 msgctxt "Info"
 msgid "No emails in the {{ filterName }}, click {{ add }} to add addresses to the {{ filterName }}"
-msgstr ""
+msgstr "Адресов в {{ filterName }} не найдено, нажмите {{ add }}, чтобы добавить адреса в {{ filterName }}"
 
 #: ./src/templates/views/payments.tpl.html:66
 msgctxt "Info"
@@ -5041,20 +5303,20 @@ msgctxt "Info"
 msgid "No labels"
 msgstr "Нет ярлыков"
 
-#: ./src/templates/views/security.tpl.html:64
+#: ./src/templates/views/security.tpl.html:84
 msgctxt "Info"
 msgid "No logs yet"
 msgstr "Логов доступа нет"
 
-#: ./src/app/composer/services/validateMessage.js:35
+#: ./src/app/composer/services/validateMessage.js:50
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr "Тема не задана. Всё равно отправить?"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:40
+#: ./src/templates/directives/contact/contactPgp.tpl.html:43
 msgctxt "Info"
 msgid "Only change these settings if you are using PGP with non-ProtonMail recipients."
-msgstr ""
+msgstr "Изменяйте эти настройки только в том случае, если применяете PGP для переписки с получателями вне ProtonMail."
 
 #: ./src/app/vpn/factories/changeVPNNameModal.js:10
 msgctxt "Info"
@@ -5070,7 +5332,7 @@ msgstr "Пароль OpenVPN изменён"
 #: ./src/app/filter/directives/customFilterList.js:69
 msgctxt "Info"
 msgid "Order saved"
-msgstr "Заказ сохранён"
+msgstr "Порядок сохранён"
 
 #: ./src/app/members/services/memberActions.js:55
 msgctxt "Info"
@@ -5106,7 +5368,7 @@ msgstr "В вашей организации есть другие админи�
 #: ./src/templates/modals/generateOrganization.tpl.html:28
 msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
-msgstr "В вашей организации есть другие администраторы. Вы должны сообщить им новый пароль восстановления ключа, чтобы они могли повторно активировать свои администраторские привилегии в полном объёме."
+msgstr "В вашей организации есть другие администраторы. Вы должны сообщить им новый пароль восстановления ключа, чтобы они могли повторно активировать свои администраторские полномочия в полном объёме."
 
 #: ./src/templates/directives/contact/contactPgp.tpl.html:2
 msgctxt "Info"
@@ -5142,10 +5404,15 @@ msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
 msgstr "Платежи недоступны в данный момент. Попробуйте позже, пожалуйста"
 
+#: ./src/app/composer/controllers/composeMessage.js:583
+msgctxt "Info"
+msgid "Permanently delete this draft?"
+msgstr ""
+
 #: ./src/templates/modals/setupOrganization.tpl.html:14
 msgctxt "Info"
 msgid "Pick a name for your Organization."
-msgstr "Выберите имя для вашей организации."
+msgstr "Задайте имя вашей организации."
 
 #: ./src/templates/modals/domain/mx.tpl.html:14
 msgctxt "Info"
@@ -5170,7 +5437,7 @@ msgstr "Проверьте вашу почту и введите код ниже
 #: ./src/templates/formUtils/codeVerificator.tpl.html:15
 msgctxt "Info"
 msgid "Please check your mobile and enter the code below:"
-msgstr ""
+msgstr "Проверьте ваш мобильный телефон и введите код ниже:"
 
 #: ./src/app/members/services/membersValidator.js:16
 msgctxt "Info"
@@ -5185,12 +5452,12 @@ msgstr "Пожалуйста, включите многопользовател�
 #: ./src/app/attachments/services/attachmentDownloader.js:24
 msgctxt "Info"
 msgid "Please right-click on the attachment and select Save/Download As."
-msgstr ""
+msgstr "Пожалуйста, щёлкните правой кнопкой мыши по вложению и выберите \"Сохранить/Скачать как\"."
 
 #: ./src/app/attachments/services/attachmentDownloader.js:19
 msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
-msgstr ""
+msgstr "Пожалуйста, нажмите и удерживайте вложение, затем выберите \"Открыть в новой вкладке\"."
 
 #: ./src/app/members/services/memberActions.js:80
 msgctxt "Info"
@@ -5241,7 +5508,7 @@ msgstr "Теперь ProtonMail поддерживает адреса эл. по
 #: ./src/templates/bridge/bridgePaidPanel.tpl.html:2
 msgctxt "Info"
 msgid "ProtonMail supports IMAP/SMTP via the ProtonMail Bridge application. Thunderbird, Microsoft Outlook, and Apple Mail are officially supported on both Windows and MacOS."
-msgstr "ProtonMail поддерживает IMAP/SMTP через приложение ProtonMail Bridge. Thunderbird, Microsoft Outlook и Apple Mail официально поддерживаются на Windows и MacOS."
+msgstr "ProtonMail поддерживает IMAP/SMTP через приложение ProtonMail Bridge. Thunderbird, Microsoft Outlook и Apple Mail официально поддерживаются и на Windows, и на MacOS."
 
 #: ./src/templates/views/appearance.tpl.html:39
 msgctxt "Info"
@@ -5259,7 +5526,7 @@ msgid "Reset Password"
 msgstr "Сброс пароля"
 
 #. reset warning 1/3
-#: ./src/templates/views/reset-login-password.tpl.html:83
+#: ./src/templates/views/reset-login-password.tpl.html:103
 msgctxt "Info"
 msgid "Resetting your password will also reset your encryption keys, so you will be unable to read your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Learn More</a>."
 msgstr "Сбросив свой пароль, вы также сбросите ваши ключи шифрования и больше не сможете прочитать свои существующие сообщения. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Подробнее</a>."
@@ -5287,7 +5554,7 @@ msgctxt "Info"
 msgid "Safari does not fully support downloading encrypted attachments."
 msgstr "Safari не полностью поддерживает скачивание зашифрованных вложений."
 
-#: ./src/templates/vpn/vpnView.tpl.html:48
+#: ./src/templates/vpn/vpnView.tpl.html:52
 msgctxt "Info"
 msgid "Same as ProtonMail login password"
 msgstr "Такой же, как и пароль для входа в ProtonMail"
@@ -5321,13 +5588,13 @@ msgstr "Подпись обновлена"
 #: ./src/app/members/services/memberActions.js:79
 msgctxt "Info"
 msgid "Status Updated"
-msgstr "Статус обновлён"
+msgstr "Состояние обновлено"
 
 #: ./src/app/filter/directives/customFilterList.js:214
 #: ./src/app/filter/directives/customFilterList.js:229
 msgctxt "Info"
 msgid "Status updated"
-msgstr "Статус обновлён"
+msgstr "Состояние обновлено"
 
 #: ./src/templates/modals/pay.tpl.html:113
 msgctxt "Info"
@@ -5337,7 +5604,7 @@ msgstr "Отправить"
 #: ./src/templates/attachments/eventsAttachments.tpl.html:14
 msgctxt "Info"
 msgid "Summary"
-msgstr "Суммарно"
+msgstr "Сводка"
 
 #: ./src/templates/user/signupUserForm.tpl.html:20
 msgctxt "Info"
@@ -5369,7 +5636,7 @@ msgctxt "Info"
 msgid "Theme saved"
 msgstr "Тема сохранена"
 
-#: ./src/templates/views/reset-login-password.tpl.html:162
+#: ./src/templates/views/reset-login-password.tpl.html:182
 #: ./src/templates/views/setup.tpl.html:77
 #: ./src/templates/views/signup.tpl.html:15
 msgctxt "Info"
@@ -5480,7 +5747,7 @@ msgctxt "Info"
 msgid "To fight spam, please verify you are human."
 msgstr "Для борьбы со спамом, пожалуйста, подтвердите что вы человек."
 
-#: ./src/templates/filter/modal.tpl.html:13
+#: ./src/templates/filter/modal.tpl.html:16
 msgctxt "Info"
 msgid "To find out how to write Sieve filters, <a target=\"_blank\" href=\"https://protonmail.com/support/knowledge-base/sieve/\">click here</a>."
 msgstr "Чтобы узнать о написании фильтров Sieve, <a target=\"_blank\" href=\"https://protonmail.com/support/knowledge-base/sieve/\">щёлкните здесь</a>."
@@ -5492,10 +5759,10 @@ msgctxt "Info"
 msgid "To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions."
 msgstr "Для оплаты наличными, пожалуйста, напишите нам на адрес <strong>contact@protonmail.ch</strong> для получения инструкций."
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:28
+#: ./src/templates/directives/contact/contactPgp.tpl.html:31
 msgctxt "Info"
 msgid "To use Address Verification, you must enable Trusted Keys and trust one or more available public keys, including the primary key for this address. This prevents the encryption keys from being faked."
-msgstr ""
+msgstr "Чтобы применять проверку адреса, вы должны включить доверяемые ключи и доверять одному или более из доступных публичных ключей, в том числе основному ключу для этого адреса. Это предотвращает подделку ключей шифрования."
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:29
 msgctxt "Info"
@@ -5512,7 +5779,7 @@ msgctxt "Info"
 msgid "Upgrade to a paid account to also send emails from your @pm.me address."
 msgstr "Перейдите на платный тариф, чтобы также отправлять письма и с вашего адреса @pm.me."
 
-#: ./src/templates/vpn/vpnView.tpl.html:34
+#: ./src/templates/vpn/vpnView.tpl.html:38
 msgctxt "Info"
 msgid "Use the following credentials to log into the <a href=\"https://protonvpn.com/download\" target=\"_blank\">ProtonVPN native clients</a>."
 msgstr "Используйте следующие учётные данные для входа в <a href=\"https://protonvpn.com/download\" target=\"_blank\">клиенты ProtonVPN</a>."
@@ -5540,7 +5807,7 @@ msgstr "Пользователь обновлён"
 #: ./src/templates/user/usernameDomain.tpl.html:37
 msgctxt "Info"
 msgid "Username available"
-msgstr "Имя пользователя свободно"
+msgstr "Имя пользователя доступно"
 
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:12
 msgctxt "Info"
@@ -5616,15 +5883,15 @@ msgctxt "Info"
 msgid "We will send a reset code to your <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"This is the optional email you used when first creating an account. This is the same as your notification email that is used for sending alerts about new messages.\">recovery email</a> to reset your password."
 msgstr "Мы отправим код сброса на ваш <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"Дополнительный адрес электронной почты, который вы использовали во время создания учётной записи. Это тот же самый адрес эл. почты, который используется для оповещения о новых сообщениях.\">резервный адрес электронной почты</a> для сброса пароля."
 
-#: ./src/templates/views/reset-login-password.tpl.html:45
+#: ./src/templates/views/reset-login-password.tpl.html:48
 msgctxt "Info"
-msgid "We've sent a reset code to your <strong>recovery email</strong>. Enter it below to continue."
-msgstr "Мы отправили одноразовый код сброса на вашу <strong>резервную эл. почту</strong>. Для продолжения введите его ниже."
+msgid "We've sent a reset code to your <strong>recovery email</strong>, valid for one hour or until you request a new code. Enter it below to continue."
+msgstr ""
 
 #: ./src/templates/modals/feedback.tpl.html:9
 msgctxt "Info"
 msgid "What do you think of ProtonMail version 3.0?"
-msgstr "Что вы думаете о ProtonMail версии 3.0?"
+msgstr "Ваше мнение о ProtonMail версии 3.0?"
 
 #: ./src/templates/attachments/eventsAttachments.tpl.html:28
 msgctxt "Info"
@@ -5641,27 +5908,32 @@ msgctxt "Info"
 msgid "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
 msgstr "Без активации вы не сможете создавать новых пользователей, добавлять адреса к существующим пользователям или получать доступ к неконфиденциальным учётным записям."
 
+#: ./src/templates/vpn/vpnView.tpl.html:12
+msgctxt "Info"
+msgid "You are using ProtonVPN Free. Upgrade to ProtonVPN Plus to get faster speeds and better privacy."
+msgstr ""
+
 #: ./src/templates/partials/wizard.tpl.html:33
 msgctxt "Info"
 msgid "You can add and remove folders from selected emails by clicking the folders button <strong>(2)</strong>."
-msgstr ""
+msgstr "Вы можете назначать (добавлять и удалять) папки для выбранных писем, нажимая кнопку \"Папки\" <strong>(2)</strong>."
 
 #: ./src/templates/partials/wizard.tpl.html:32
 msgctxt "Info"
 msgid "You can add and remove labels from selected emails by clicking the labels button <strong>(1)</strong>."
-msgstr ""
+msgstr "Вы можете добавлять и удалять ярлыки для выбранных писем, нажимая кнопку \"Ярлыки\" <strong>(1)</strong>."
 
 #: ./src/templates/partials/wizard.tpl.html:34
 msgctxt "Info"
 msgid "You can also add, delete, and edit them by clicking on <em>Folders / Labels</em> <strong>(3)</strong>."
-msgstr ""
+msgstr "Вы также можете добавлять, удалять, и изменять их, нажимая на <em>Папки / Ярлыки</em> <strong>(3)</strong>."
 
 #: ./src/app/attachments/services/attachmentDownloader.js:42
 msgctxt "Info"
 msgid "You can decrypt the file with a program such as {{link}} if you have the corresponding private key."
 msgstr "Вы сможете расшифровать файл программой вроде {{link}} , если у вас есть соответствующий закрытый ключ."
 
-#: ./src/templates/views/security.tpl.html:60
+#: ./src/templates/views/security.tpl.html:80
 msgctxt "Info"
 msgid "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
 msgstr "Вы можете включить логи аутентификации, чтобы видеть в какое время и с какого IP-адреса производился доступ к учётной записи. Мы будем записывать IP-адреса, которые имели доступ к учётной записи, а также время посещения и неудачные попытки входа."
@@ -5676,7 +5948,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Теперь вы также можете получать сообщения на свой адрес @pm.me (сокращённое название от \"ProtonMail me\" или \"Private Message me\")."
 
-#: ./src/app/settings/controllers/account.js:111
+#: ./src/app/settings/controllers/account.js:112
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Вы получили новое сообщение"
@@ -5714,17 +5986,17 @@ msgstr "У вас нет сохранённых способов оплаты."
 #: ./src/templates/views/members.tpl.html:324
 msgctxt "Info"
 msgid "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
-msgstr "Вы должны активировать ключи организации. Без активации вы не сможете добавлять новых пользователей, адреса для уже существующих пользователей или получать доступ к неконфиденциальным пользовательским аккаунтам."
+msgstr "Вы должны активировать ключи организации. Без активации вы не сможете добавлять новых пользователей, адреса для уже существующих пользователей или получать доступ к неконфиденциальным пользовательским учётным записям."
 
 #: ./src/app/organization/modals/activateOrganizationModal.js:7
 msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
-msgstr "Вы должны активировать приватные ключи организации с паролем резервного копирования, предоставленным администратором вашей организации."
+msgstr "Вы должны активировать закрытый ключ своей организации запасным паролем ключа организации, предоставленным администратором вашей организации."
 
 #: ./src/app/members/services/memberActions.js:39
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
-msgstr "Для полной активации администраторских привилегий, предоставьте этому пользователю пароль организации."
+msgstr "Вы должны предоставить этому пользователю пароль организации, чтобы активировать администраторские полномочия в полном объёме."
 
 #: ./src/templates/modals/pay.tpl.html:53
 msgctxt "Info"
@@ -5741,24 +6013,24 @@ msgstr "Вам будет предложено сохранить вложени
 #: ./src/templates/payment/paypalView.tpl.html:3
 msgctxt "Info"
 msgid "You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue."
-msgstr "Для завершения этой транзакции вам понадобится войти в свой аккаунт PayPal. Для этого мы откроем Вам новую вкладку. Если вы пользуетесь блокировщиками всплывающих окон, пожалуйста, временно отключите их, прежде чем продолжить."
+msgstr "Для завершения этой транзакции вам понадобится войти в свой аккаунт PayPal. Для этого мы откроем вам новую вкладку. Если вы пользуетесь блокировщиками всплывающих окон, пожалуйста временно отключите их, прежде чем продолжить."
 
 #: ./src/templates/modals/payment/modal.tpl.html:36
 msgctxt "Info"
 msgid "You're upgrading your account. Once we successfully process payment, we'll immediately upgrade your account. Thanks for choosing to become a paying customer!"
-msgstr "Вы повышаете свою учётную запись. Как только мы успешно обработаем платёж, мы немедленно повысим вашу учётную запись. Спасибо за то, что выбрали платный тариф!"
+msgstr "Вы расширяете свою учётную запись. Как только мы успешно обработаем платёж, мы немедленно расширим вашу учётную запись. Спасибо за то, что выбрали платный тариф!"
 
-#: ./src/templates/vpn/vpnView.tpl.html:13
+#: ./src/templates/vpn/vpnView.tpl.html:17
 msgctxt "Info"
 msgid "Your ProtonVPN account request has been received. You're already on the waitlist, we'll contact you once capacity becomes available."
 msgstr "Ваш запрос на учётную запись ProtonVPN получен. Вы уже в списке ожидания, мы свяжемся с вами, как только станут доступны необходимые ресурсы."
 
-#: ./src/templates/vpn/vpnView.tpl.html:12
+#: ./src/templates/vpn/vpnView.tpl.html:16
 msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
-msgstr "Ваш VPN аккаунт ещё не был активирован, перейдите на <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> для регистрации и активации вашего аккаунта."
+msgstr "Ваша учётная запись VPN ещё не была активирована, перейдите на <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> для регистрации и активации вашей учётной записи."
 
-#: ./src/app/composer/services/validateMessage.js:48
+#: ./src/app/composer/services/validateMessage.js:63
 #: ./src/templates/views/payments.tpl.html:64
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
@@ -5769,7 +6041,7 @@ msgctxt "Info"
 msgid "Your account is being updated, this may take up to 30 seconds."
 msgstr "Ваша учётная запись обновляется, это может занять до 30 секунд."
 
-#: ./src/templates/vpn/vpnView.tpl.html:11
+#: ./src/templates/vpn/vpnView.tpl.html:15
 msgctxt "Info"
 msgid "Your account is currently not eligible for ProtonVPN access. If you are part of an Organization, please contact your account administrator."
 msgstr "Ваша учётная запись в настоящее время не имеет прав на доступ к ProtonVPN. Если вы являетесь частью организации, пожалуйста, обратитесь к администратору организации."
@@ -5782,7 +6054,7 @@ msgstr "Ваша учётная запись или организация им�
 #: ./src/app/user/services/manageUser.js:20
 msgctxt "Info"
 msgid "Your admin privileges have been revoked."
-msgstr "Ваши привилегии администратора были отменены."
+msgstr "Ваши полномочия администратора были отозваны."
 
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:13
 #: ./src/templates/partials/safari.warning.tpl.html:13
@@ -5803,7 +6075,16 @@ msgstr "Теперь вам доступны новые возможности."
 #: ./src/templates/modals/setupOrganization.tpl.html:39
 msgctxt "Info"
 msgid "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe."
-msgstr "Пароль вашей организации может быть предоставлен другим пользователям, которым вы захотите предоставить права администратора. Он, также, является кодом аварийного восстановления доступа к вашей организации в случае, если вы вдруг потеряете доступ к учётной записи. Пожалуйста, сохраните данный пароль и держите его в безопасном месте."
+msgstr "Пароль вашей организации может быть предоставлен другим пользователям, которым вы захотите предоставить права администратора. Он также является кодом аварийного восстановления доступа к вашей организации в случае, если вы вдруг потеряете доступ к своей учётной записи. Пожалуйста, сохраните данный пароль и держите его в безопасном месте."
+
+#: ./src/templates/attachments/listAttachments.tpl.html:11
+msgctxt "Info"
+msgid "embedded image"
+msgid_plural "embedded images"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:20
 msgctxt "Info"
@@ -5829,6 +6110,11 @@ msgstr "из"
 msgctxt "Info"
 msgid "used"
 msgstr "используется"
+
+#: ./src/app/contact/factories/contactSpam.js:8
+msgctxt "Info"
+msgid "{{ name }} is also in your contacts. Remove them from your contacts?"
+msgstr ""
 
 #: ./src/templates/views/members.tpl.html:76
 msgctxt "Info"
@@ -5866,6 +6152,11 @@ msgstr[3] "Выбрано {{$count}} сообщений"
 msgctxt "Info"
 msgid "{{n}} keys reactivated"
 msgstr "{{n}} ключей активировано повторно"
+
+#: ./src/templates/views/security.tpl.html:51
+msgctxt "Info about active sessions"
+msgid "Unless you explicitly logout or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity."
+msgstr ""
 
 #: ./src/app/composer/directives/composerTime.js:5
 msgctxt "Info display in the composer footer"
@@ -5955,7 +6246,7 @@ msgstr "Нужно больше подключений?"
 #: ./src/templates/formUtils/codeVerificator.tpl.html:18
 msgctxt "Input for the code sent"
 msgid "Verification code"
-msgstr ""
+msgstr "Код подтверждения"
 
 #: ./src/templates/views/payments.tpl.html:104
 msgctxt "Invoice status display as badge"
@@ -5970,7 +6261,7 @@ msgstr "Оплачено"
 #: ./src/templates/views/payments.tpl.html:101
 msgctxt "Invoice status display as badge"
 msgid "Unpaid"
-msgstr "Неоплачено"
+msgstr "Не оплачено"
 
 #: ./src/templates/views/payments.tpl.html:103
 msgctxt "Invoice status display as badge"
@@ -6002,15 +6293,25 @@ msgctxt "Invoice type display as badge"
 msgid "Subscription"
 msgstr "Тариф"
 
-#: ./src/app/contact/directives/contactPublicKeys.js:267
+#: ./src/app/contact/directives/contactPublicKeys.js:272
 msgctxt "Key details"
 msgid "Created on {{created}}, {{bits}} bits (can be used for sending and signature verification)"
 msgstr "Создан {{created}}, {{bits}} бит (может использоваться для отправки почты и проверки подписи)"
 
-#: ./src/app/contact/directives/contactPublicKeys.js:273
+#: ./src/app/contact/directives/contactPublicKeys.js:278
 msgctxt "Key details"
 msgid "Created on {{created}}, {{bits}} bits (only used for signature verification)"
 msgstr "Создан {{created}}, {{bits}} бит (применяется только для проверки подписи)"
+
+#: ./src/templates/address/addressKeysView.tpl.html:123
+msgctxt "Key state badge"
+msgid "Compromised"
+msgstr ""
+
+#: ./src/templates/address/addressKeysView.tpl.html:100
+msgctxt "Key state badge"
+msgid "Obsolete"
+msgstr ""
 
 #: ./src/templates/views/labels.tpl.html:53
 msgctxt "Label"
@@ -6045,12 +6346,12 @@ msgctxt "Label"
 msgid "Admin VPN Connections:"
 msgstr "VPN-подключения администратора:"
 
-#: ./src/templates/filter/modal.tpl.html:146
+#: ./src/templates/filter/modal.tpl.html:152
 msgctxt "Label"
 msgid "Archive"
 msgstr "Архив"
 
-#: ./src/templates/settings/encryptionView.tpl.html:53
+#: ./src/templates/settings/encryptionView.tpl.html:54
 msgctxt "Label"
 msgid "Automatically attach public key"
 msgstr "Автоматически присоединять публичный ключ"
@@ -6101,7 +6402,7 @@ msgctxt "Label"
 msgid "Days"
 msgstr "Дни"
 
-#: ./src/templates/settings/encryptionView.tpl.html:77
+#: ./src/templates/settings/encryptionView.tpl.html:79
 msgctxt "Label"
 msgid "Default PGP Scheme"
 msgstr "Схема PGP по умолчанию"
@@ -6121,7 +6422,7 @@ msgctxt "Label"
 msgid "Download App"
 msgstr "Скачать приложение"
 
-#: ./src/templates/vpn/vpnView.tpl.html:66
+#: ./src/templates/vpn/vpnView.tpl.html:70
 msgctxt "Label"
 msgid "Download ProtonVPN"
 msgstr "Скачать ProtonVPN"
@@ -6186,7 +6487,7 @@ msgctxt "Label"
 msgid "Follow us"
 msgstr "Подпишитесь"
 
-#: ./src/templates/vpn/vpnView.tpl.html:82
+#: ./src/templates/vpn/vpnView.tpl.html:86
 msgctxt "Label"
 msgid "Get Support for ProtonVPN"
 msgstr "Поддержка ProtonVPN"
@@ -6208,7 +6509,7 @@ msgctxt "Label"
 msgid "Highest security"
 msgstr "Наивысший уровень защиты"
 
-#: ./src/templates/filter/modal.tpl.html:139
+#: ./src/templates/filter/modal.tpl.html:145
 msgctxt "Label"
 msgid "Inbox"
 msgstr "Входящие"
@@ -6279,7 +6580,7 @@ msgstr "Пароль организации:"
 #: ./src/templates/modals/member.tpl.html:50
 #: ./src/templates/modals/switchPasswordMode.tpl.html:13
 #: ./src/templates/vpn/openVpnSection.tpl.html:33
-#: ./src/templates/vpn/vpnView.tpl.html:45
+#: ./src/templates/vpn/vpnView.tpl.html:49
 msgctxt "Label"
 msgid "Password"
 msgstr "Пароль"
@@ -6287,17 +6588,17 @@ msgstr "Пароль"
 #: ./src/templates/modals/deleteAccount.tpl.html:24
 msgctxt "Label"
 msgid "Please provide an email address in case we need to contact you (optional):"
-msgstr "Пожалуйста, укажите адрес электронной почты для обратной связи, в случае необходимости (необязательно):"
+msgstr "Пожалуйста, укажите адрес электронной почты для случая, если нам понадобится связаться с вами (необязательно):"
 
 #: ./src/templates/modals/deleteAccount.tpl.html:20
 msgctxt "Label"
 msgid "Please tell us why you are leaving:"
 msgstr "Пожалуйста, сообщите нам, почему вы уходите:"
 
-#: ./src/templates/settings/encryptionView.tpl.html:128
+#: ./src/templates/settings/encryptionView.tpl.html:131
 msgctxt "Label"
 msgid "Prompt to trust keys"
-msgstr ""
+msgstr "Спрашивать о доверии ключам"
 
 #: ./src/templates/views/account.tpl.html:331
 msgctxt "Label"
@@ -6309,7 +6610,7 @@ msgctxt "Label"
 msgid "Proton Newsletter (5-6 per year)"
 msgstr "Рассылка новостей Proton (5-6 раз в год)"
 
-#: ./src/templates/vpn/vpnView.tpl.html:37
+#: ./src/templates/vpn/vpnView.tpl.html:41
 msgctxt "Label"
 msgid "Proton Username"
 msgstr "Имя пользователя в Proton"
@@ -6319,12 +6620,12 @@ msgctxt "Label"
 msgid "ProtonMail Signature"
 msgstr "Подпись ProtonMail"
 
-#: ./src/templates/vpn/vpnView.tpl.html:74
+#: ./src/templates/vpn/vpnView.tpl.html:78
 msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr "Домашняя страница ProtonVPN"
 
-#: ./src/templates/filter/modal.tpl.html:185
+#: ./src/templates/filter/modal.tpl.html:191
 msgctxt "Label"
 msgid "Read"
 msgstr "Читать"
@@ -6354,12 +6655,12 @@ msgctxt "Label"
 msgid "Signature"
 msgstr "Подпись"
 
-#: ./src/templates/filter/modal.tpl.html:153
+#: ./src/templates/filter/modal.tpl.html:159
 msgctxt "Label"
 msgid "Spam"
 msgstr "Спам"
 
-#: ./src/templates/filter/modal.tpl.html:192
+#: ./src/templates/filter/modal.tpl.html:198
 msgctxt "Label"
 msgid "Starred"
 msgstr "Избранное"
@@ -6379,7 +6680,7 @@ msgctxt "Label"
 msgid "Time zone"
 msgstr "Часовой пояс"
 
-#: ./src/templates/filter/modal.tpl.html:160
+#: ./src/templates/filter/modal.tpl.html:166
 msgctxt "Label"
 msgid "Trash"
 msgstr "Корзина"
@@ -6581,7 +6882,7 @@ msgctxt "Link"
 msgid "Add another address"
 msgstr "Добавить другой адрес"
 
-#: ./src/templates/vpn/vpnView.tpl.html:69
+#: ./src/templates/vpn/vpnView.tpl.html:73
 msgctxt "Link"
 msgid "Download Page"
 msgstr "Страница для скачивания"
@@ -6591,7 +6892,7 @@ msgctxt "Link"
 msgid "Download bridge"
 msgstr "Скачать Bridge"
 
-#: ./src/templates/vpn/vpnView.tpl.html:77
+#: ./src/templates/vpn/vpnView.tpl.html:81
 msgctxt "Link"
 msgid "Homepage"
 msgstr "Домашняя страница"
@@ -6602,7 +6903,7 @@ msgid "Include moved messages"
 msgstr "Включая перемещённые сообщения"
 
 #: ./src/templates/filter/spamLists.tpl.html:17
-#: ./src/templates/settings/encryptionView.tpl.html:115
+#: ./src/templates/settings/encryptionView.tpl.html:118
 #: ./src/templates/settings/encryptionView.tpl.html:17
 msgctxt "Link"
 msgid "Learn More"
@@ -6615,12 +6916,13 @@ msgstr "Узнать больше"
 #: ./src/templates/contact/contactError.tpl.html:13
 #: ./src/templates/contact/contactError.tpl.html:7
 #: ./src/templates/dashboard/customVpnModal.tpl.html:10
-#: ./src/templates/directives/contact/contactPgp.tpl.html:31
-#: ./src/templates/directives/contact/contactPgp.tpl.html:43
-#: ./src/templates/directives/contact/contactPgp.tpl.html:55
+#: ./src/templates/directives/contact/contactPgp.tpl.html:34
+#: ./src/templates/directives/contact/contactPgp.tpl.html:46
+#: ./src/templates/directives/contact/contactPgp.tpl.html:58
 #: ./src/templates/directives/core/bugModalView.tpl.html:98
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:9
 #: ./src/templates/modals/confirm.tpl.html:13
+#: ./src/templates/modals/expirationModal.tpl.html:43
 #: ./src/templates/views/account.tpl.html:128
 #: ./src/templates/views/account.tpl.html:159
 #: ./src/templates/views/account.tpl.html:206
@@ -6656,7 +6958,7 @@ msgctxt "Link"
 msgid "Reactivate keys"
 msgstr "Повторная активация ключей"
 
-#: ./src/templates/vpn/vpnView.tpl.html:85
+#: ./src/templates/vpn/vpnView.tpl.html:89
 msgctxt "Link"
 msgid "Support Page"
 msgstr "Страница поддержки"
@@ -6664,7 +6966,7 @@ msgstr "Страница поддержки"
 #: ./src/templates/vpn/openVpnSection.tpl.html:12
 msgctxt "Link"
 msgid "What is the difference between ProtonVPN and OpenVPN logins?"
-msgstr "Какова разница между логинами ProtonVPN и OpenVPN?"
+msgstr "Какова разница между входными именами ProtonVPN и OpenVPN?"
 
 #: ./src/templates/user/humanVerification.tpl.html:38
 msgctxt "Link"
@@ -6691,12 +6993,12 @@ msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr "Пожалуйста, добавьте пользовательский домен прежде, чем настраивать адреса."
 
-#: ./src/app/authentication/controllers/login.js:361
+#: ./src/app/authentication/controllers/login.js:357
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr "Пожалуйста, введите свои имя пользователя и пароль"
 
-#: ./src/app/authentication/controllers/login.js:369
+#: ./src/app/authentication/controllers/login.js:365
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr "Ваш пароль отсутствует"
@@ -6704,27 +7006,27 @@ msgstr "Ваш пароль отсутствует"
 #: ./src/app/authentication/directives/loginPasswordInput.js:16
 msgctxt "Login modal"
 msgid "Enter your current password:"
-msgstr ""
+msgstr "Введите свой текущий пароль:"
 
 #: ./src/app/authentication/directives/loginPasswordInput.js:12
 msgctxt "Login modal"
 msgid "Enter your login password:"
-msgstr ""
+msgstr "Введите свой пароль для входа:"
 
 #: ./src/app/authentication/directives/loginPasswordInput.js:11
 msgctxt "Login modal"
 msgid "Login password"
-msgstr ""
+msgstr "Пароль для входа"
 
 #: ./src/app/authentication/directives/loginPasswordInput.js:15
 msgctxt "Login modal"
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: ./src/app/contact/factories/contactUI.js:25
 msgctxt "MIME type"
 msgid "Automatic"
-msgstr ""
+msgstr "Автоматический"
 
 #: ./src/app/contact/factories/contactUI.js:30
 msgctxt "MIME type"
@@ -6761,6 +7063,14 @@ msgctxt "Merge contacts"
 msgid "Merge"
 msgstr "Объединить"
 
+#: ./src/app/user/factories/generateKeyModel.js:16
+msgctxt "Message"
+msgid "An RSA key with bit size {{ bits }} is already active for this address.\n"
+"Generating another key will cause slower account loading and deletion of this key can cause issues.\n"
+"If you are generating a new key because your old key is compromised, please mark that key as compromised first.\n"
+"Are you sure you want to continue?"
+msgstr ""
+
 #: ./src/app/message/services/messageBuilder.js:186
 msgctxt "Message"
 msgid "Fw:"
@@ -6769,92 +7079,83 @@ msgstr "Fw:"
 #: ./src/app/message/services/messageBuilder.js:283
 msgctxt "Message"
 msgid "On {{date}}, {{name}} {{address}} wrote:"
-msgstr "{{date}}, {{name}} {{address}} написал(а):"
+msgstr "{{date}}, {{name}} {{address}} пишет:"
 
 #: ./src/app/message/services/messageBuilder.js:185
 msgctxt "Message"
 msgid "Re:"
 msgstr "Re:"
 
-#: ./src/app/message/factories/messageModel.js:107
+#: ./src/app/message/factories/messageModel.js:109
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr "Пустое сообщение"
 
-#: ./src/templates/message/messageDisplayError.tpl.html:4
+#: ./src/templates/message/messageDisplayError.tpl.html:3
 msgctxt "Message decryption error"
-msgid "Decryption error"
-msgstr "Ошибка расшифровки"
-
-#: ./src/templates/message/messageDisplayError.tpl.html:5
-msgctxt "Message decryption error"
-msgid "Decryption of this message's encryption content failed."
-msgstr "Не удалось расшифровать содержимое зашифрованного сообщения."
-
-#: ./src/app/message/factories/messageModel.js:94
-msgctxt "Message encryption status"
-msgid "Encrypted"
+msgid "Decryption error: Decryption of this message's encryption content failed."
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:56
+#: ./src/app/message/factories/messageModel.js:96
 msgctxt "Message encryption status"
-msgid "End-to-end encrypted"
+msgid "Encrypted message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:57
+#: ./src/app/message/factories/messageModel.js:58
 msgctxt "Message encryption status"
-msgid "End-to-end encrypted from verified ProtonMail User"
+msgid "End-to-end encrypted message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:65
+#: ./src/app/message/factories/messageModel.js:59
 msgctxt "Message encryption status"
-msgid "PGP-encrypted"
+msgid "End-to-end encrypted message from verified address"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:66
-msgctxt "Message encryption status"
-msgid "PGP-encrypted from verified sender"
-msgstr ""
-
-#: ./src/app/message/factories/messageModel.js:71
-msgctxt "Message encryption status"
-msgid "PGP-signed from verified sender"
-msgstr ""
-
-#: ./src/app/message/factories/messageModel.js:62
 #: ./src/app/message/factories/messageModel.js:67
-#: ./src/app/message/factories/messageModel.js:72
-#: ./src/app/message/factories/messageModel.js:85
-#: ./src/app/message/factories/messageModel.js:91
+msgctxt "Message encryption status"
+msgid "PGP-encrypted message"
+msgstr ""
+
+#: ./src/app/message/factories/messageModel.js:68
+msgctxt "Message encryption status"
+msgid "PGP-encrypted message from verified address"
+msgstr ""
+
+#: ./src/app/message/factories/messageModel.js:73
+msgctxt "Message encryption status"
+msgid "PGP-signed message from verified address"
+msgstr ""
+
+#: ./src/app/message/factories/messageModel.js:64
+#: ./src/app/message/factories/messageModel.js:69
+#: ./src/app/message/factories/messageModel.js:74
+#: ./src/app/message/factories/messageModel.js:87
+#: ./src/app/message/factories/messageModel.js:93
 msgctxt "Message encryption status"
 msgid "Sender verification failed"
-msgstr ""
+msgstr "Проверка отправителя не удалась"
 
-#: ./src/app/message/factories/messageModel.js:104
+#: ./src/app/message/factories/messageModel.js:106
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail with zero access encryption"
 msgstr "Отправлено ProtonMail с применением шифрования нулевого доступа"
 
-#: ./src/app/message/factories/messageModel.js:83
-#: ./src/app/message/factories/messageModel.js:84
+#: ./src/app/message/factories/messageModel.js:85
+#: ./src/app/message/factories/messageModel.js:86
 msgctxt "Message encryption status"
 msgid "Sent by you with end-to-end encryption"
-msgstr ""
+msgstr "Отправлено вами с применением сквозного шифрования"
 
-#: ./src/app/message/factories/messageModel.js:89
-#: ./src/app/message/factories/messageModel.js:90
-msgctxt "Message encryption status"
-msgid "Sent by you with zero access encryption"
-msgstr ""
-
-#: ./src/app/message/factories/messageModel.js:70
+#: ./src/app/message/factories/messageModel.js:72
+#: ./src/app/message/factories/messageModel.js:91
+#: ./src/app/message/factories/messageModel.js:92
 msgctxt "Message encryption status"
 msgid "Stored with zero access encryption"
-msgstr ""
+msgstr "Хранится под шифрованием с нулевым доступом"
 
-#: ./src/app/message/factories/messageModel.js:76
+#: ./src/app/message/factories/messageModel.js:78
 msgctxt "Message encryption status"
-msgid "Unencrypted"
+msgid "Unencrypted message"
 msgstr ""
 
 #: ./src/templates/message/messageExpiration.tpl.html:4
@@ -6865,29 +7166,24 @@ msgstr "Это сообщение исчезнет через"
 #: ./src/templates/contact/contactBeforeToLeaveModal.tpl.html:9
 msgctxt "Message for contact modal"
 msgid "There are unsaved changes to the contact you are editing. Do you want to save changes?"
-msgstr ""
+msgstr "В редактируемом контакте есть несохранённые изменения. Хотите сохранить их?"
 
 #: ./src/templates/contact/contactAskEncryption.tpl.html:8
 msgctxt "Message for encryption contact modal"
 msgid "The email <span style=\"font-weight: bold;\">{{ ::ctrl.email }}</span> has PGP keys set. Do you want to enable PGP encryption for this contact?"
 msgstr "У адреса эл. почты <span style=\"font-weight: bold;\">{{ ::ctrl.email }}</span> есть назначенные PGP-ключи. Хотите ли вы включить PGP-шифрование для этого контакта?"
 
-#: ./src/templates/message/messageDisplayError.tpl.html:21
+#: ./src/templates/message/messageDisplayError.tpl.html:13
 msgctxt "Message network error"
-msgid "Network error"
-msgstr "Ошибка сети"
+msgid "Network error: Please check your connection and try again."
+msgstr ""
 
-#: ./src/templates/message/messageDisplayError.tpl.html:22
-msgctxt "Message network error"
-msgid "Please check your connection and try again."
-msgstr "Проверьте подключение и повторите попытку."
-
-#: ./src/templates/message/messageDisplayError.tpl.html:11
+#: ./src/templates/message/messageDisplayError.tpl.html:8
 msgctxt "Message network error"
 msgid "Sanitization error"
-msgstr "Ошибка стерилизации"
+msgstr "Ошибка стерилизации сообщения"
 
-#: ./src/templates/message/message.tpl.html:70
+#: ./src/templates/message/message.tpl.html:72
 msgctxt "Message recipient label"
 msgid "To"
 msgstr "Кому"
@@ -6900,7 +7196,7 @@ msgstr "От"
 #: ./src/templates/modals/trustPublicKey.tpl.html:13
 msgctxt "Modal message"
 msgid "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified."
-msgstr ""
+msgstr "Нажатие \"Доверять ключу\" свяжет данный публичный ключ с этим отправителем, и эл. письма с этого адреса будут автоматически криптографически проверяться."
 
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:14
 msgctxt "Modal setup 2FA"
@@ -6932,7 +7228,7 @@ msgctxt "More Toggles"
 msgid "Sign message"
 msgstr "Подписать сообщение"
 
-#: ./src/templates/message/message.tpl.html:75
+#: ./src/templates/message/message.tpl.html:77
 msgctxt "No recipients to display in the message header"
 msgid "Undisclosed Recipients"
 msgstr "Неизвестные получатели"
@@ -7012,12 +7308,12 @@ msgctxt "Notification error trying to connect to the API"
 msgid "Servers are unreachable."
 msgstr "Сервера недоступны."
 
-#: ./src/app/utils/services/eventManager.js:159
+#: ./src/app/utils/services/eventManager.js:166
 msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr "Новое письмо от {{sender}}"
 
-#: ./src/app/composer/controllers/composeMessage.js:326
+#: ./src/app/composer/controllers/composeMessage.js:331
 msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
 msgstr "Достигнут предел количества окон редактора"
@@ -7054,44 +7350,49 @@ msgctxt "Option"
 msgid "Right to Left"
 msgstr "Справа налево"
 
-#: ./src/app/search/factories/searchModel.js:17
+#: ./src/app/search/factories/searchModel.js:8
+msgctxt "Option for search panel"
+msgid "All"
+msgstr ""
+
+#: ./src/app/search/factories/searchModel.js:19
 msgctxt "Option for search panel"
 msgid "All Mail"
 msgstr "Все письма"
 
-#: ./src/app/search/factories/searchModel.js:16
+#: ./src/app/search/factories/searchModel.js:18
 msgctxt "Option for search panel"
 msgid "Archive"
 msgstr "Архив"
 
-#: ./src/app/search/factories/searchModel.js:10
 #: ./src/app/search/factories/searchModel.js:12
+#: ./src/app/search/factories/searchModel.js:14
 msgctxt "Option for search panel"
 msgid "Drafts"
 msgstr "Черновики"
 
-#: ./src/app/search/factories/searchModel.js:8
+#: ./src/app/search/factories/searchModel.js:10
 msgctxt "Option for search panel"
 msgid "Inbox"
 msgstr "Входящие"
 
-#: ./src/app/search/factories/searchModel.js:13
-#: ./src/app/search/factories/searchModel.js:14
+#: ./src/app/search/factories/searchModel.js:15
+#: ./src/app/search/factories/searchModel.js:16
 msgctxt "Option for search panel"
 msgid "Sent"
 msgstr "Отправленные"
 
-#: ./src/app/search/factories/searchModel.js:9
+#: ./src/app/search/factories/searchModel.js:11
 msgctxt "Option for search panel"
 msgid "Spam"
 msgstr "Спам"
 
-#: ./src/app/search/factories/searchModel.js:11
+#: ./src/app/search/factories/searchModel.js:13
 msgctxt "Option for search panel"
 msgid "Starred"
 msgstr "Избранное"
 
-#: ./src/app/search/factories/searchModel.js:15
+#: ./src/app/search/factories/searchModel.js:17
 msgctxt "Option for search panel"
 msgid "Trash"
 msgstr "Корзина"
@@ -7385,22 +7686,22 @@ msgctxt "Reset password"
 msgid "Recovery email"
 msgstr "Адрес резервной эл. почты"
 
-#: ./src/templates/views/reset-login-password.tpl.html:131
+#: ./src/templates/views/reset-login-password.tpl.html:151
 msgctxt "Reset your login"
 msgid "Confirm new password"
 msgstr "Подтвердите новый пароль"
 
-#: ./src/templates/views/reset-login-password.tpl.html:143
+#: ./src/templates/views/reset-login-password.tpl.html:163
 msgctxt "Reset your login"
 msgid "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages."
 msgstr "НЕ забывайте данный пароль. Если Вы его забудете, то не сможете авторизовываться или расшифровывать свои сообщения."
 
-#: ./src/templates/views/reset-login-password.tpl.html:144
+#: ./src/templates/views/reset-login-password.tpl.html:164
 msgctxt "Reset your login"
 msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Сохраните пароль где-нибудь в надёжном месте. Нажмите на значок <i class=\"fa fa-eye\"></i>, чтобы проверить правильность ввода пароля."
 
-#: ./src/templates/views/reset-login-password.tpl.html:121
+#: ./src/templates/views/reset-login-password.tpl.html:141
 msgctxt "Reset your password"
 msgid "Choose a new password"
 msgstr "Задайте новый пароль"
@@ -7420,12 +7721,11 @@ msgctxt "Restore administrator panel"
 msgid "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:"
 msgstr "По причине смены пароля ваши полномочия администратора организации были ограничены. Указанные действия более не разрешены:"
 
-#: ./src/templates/vpn/vpnView.tpl.html:21
+#: ./src/templates/vpn/vpnView.tpl.html:25
 msgctxt "Select your type of OS"
 msgid "Select your client below to get started with ProtonVPN"
 msgstr "Выберите клиент ниже, чтобы начать работу с ProtonVPN"
 
-#: ./src/app/composer/services/encryptMessage.js:18
 #: ./src/app/composer/services/sendMessage.js:21
 msgctxt "Send message"
 msgid "Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, {{link}}click here"
@@ -7554,22 +7854,22 @@ msgstr "П"
 #: ./src/app/utils/factories/dateUtils.js:61
 msgctxt "Single letter code Saturday"
 msgid "S"
-msgstr "Сб"
+msgstr "С"
 
 #: ./src/app/utils/factories/dateUtils.js:67
 msgctxt "Single letter code Sunday"
 msgid "S"
-msgstr "Вс"
+msgstr "В"
 
 #: ./src/app/utils/factories/dateUtils.js:49
 msgctxt "Single letter code Thursday"
 msgid "T"
-msgstr "Чт"
+msgstr "Ч"
 
 #: ./src/app/utils/factories/dateUtils.js:37
 msgctxt "Single letter code Tuesday"
 msgid "T"
-msgstr "Вт"
+msgstr "В"
 
 #: ./src/app/utils/factories/dateUtils.js:43
 msgctxt "Single letter code Wednesday"
@@ -7589,12 +7889,12 @@ msgstr "Зашифрованное поле \"Тема\""
 #: ./src/templates/directives/contact/contactPgp.tpl.html:21
 msgctxt "Subtitle advanced settings"
 msgid "Address Verification with Trusted Keys (optional)"
-msgstr ""
+msgstr "Проверка адреса доверяемыми ключами (необязательно)"
 
 #: ./src/templates/directives/contact/contactPgp.tpl.html:17
 msgctxt "Subtitle advanced settings"
 msgid "Configure External PGP (optional)"
-msgstr ""
+msgstr "Настроить внешний PGP (необязательно)"
 
 #: ./src/app/contact/factories/contactEditor.js:227
 msgctxt "Success"
@@ -7635,10 +7935,25 @@ msgctxt "Success"
 msgid "Domain created"
 msgstr "Доменное имя создано"
 
-#: ./src/app/settings/controllers/account.js:323
+#: ./src/app/settings/controllers/account.js:324
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Настройки отправки почты обновлены"
+
+#: ./src/app/address/directives/addressKeysView.js:51
+msgctxt "Success"
+msgid "Encryption and signature verification disabled"
+msgstr ""
+
+#: ./src/app/address/directives/addressKeysView.js:49
+msgctxt "Success"
+msgid "Encryption disabled"
+msgstr ""
+
+#: ./src/app/address/directives/addressKeysView.js:56
+msgctxt "Success"
+msgid "Encryption enabled"
+msgstr ""
 
 #: ./src/app/settings/directives/encryptionView.js:14
 msgctxt "Success"
@@ -7655,6 +7970,11 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Подарочный код применён"
 
+#: ./src/app/address/services/deleteKeyProcess.js:33
+msgctxt "Success"
+msgid "Key deleted"
+msgstr ""
+
 #: ./src/app/address/directives/reactivateKeysBtn.js:13
 msgctxt "Success"
 msgid "Keys reactivated"
@@ -7665,20 +7985,30 @@ msgctxt "Success"
 msgid "Label updated"
 msgstr "Ярлык обновлён"
 
-#: ./src/app/settings/controllers/security.js:227
+#: ./src/app/settings/controllers/security.js:44
 msgctxt "Success"
 msgid "Other sessions revoked"
 msgstr "Другие сессии аннулированы"
 
-#: ./src/app/address/directives/addressKeysView.js:32
+#: ./src/app/address/directives/addressKeysView.js:48
 msgctxt "Success"
 msgid "Primary key changed"
 msgstr "Основной ключ изменён"
+
+#: ./src/app/settings/controllers/security.js:45
+msgctxt "Success"
+msgid "Session revoked"
+msgstr ""
 
 #: ./src/app/elements/directives/movedSelect.js:14
 msgctxt "Success"
 msgid "Setting updated"
 msgstr "Настройка обновлена"
+
+#: ./src/app/address/directives/addressKeysView.js:50
+msgctxt "Success"
+msgid "Signature verification enabled"
+msgstr ""
 
 #: ./src/app/contact/factories/contactEditor.js:197
 #: ./src/app/contact/factories/contactEditor.js:213
@@ -7725,6 +8055,41 @@ msgstr "Оппортунистический"
 msgctxt "TLS type"
 msgid "Require"
 msgstr "Обязательный"
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:32
+msgctxt "Table Header"
+msgid "Actions"
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:22
+msgctxt "Table Header"
+msgid "Created"
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:20
+msgctxt "Table Header"
+msgid "Encryption"
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:25
+msgctxt "Table Header"
+msgid "Expires"
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:6
+msgctxt "Table Header"
+msgid "Fingerprint"
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:13
+msgctxt "Table Header"
+msgid "Primary"
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:29
+msgctxt "Table Header"
+msgid "Type"
+msgstr ""
 
 #: ./src/app/ui/directives/toggle.js:9
 msgctxt "Text displays in the toggle component, make it shorter as possible"
@@ -7819,8 +8184,9 @@ msgstr "Профиль"
 
 #. Table heading
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:52
-#: ./src/templates/filter/modal.tpl.html:110
+#: ./src/templates/address/addressKeysView.tpl.html:14
+#: ./src/templates/address/addressKeysView.tpl.html:61
+#: ./src/templates/filter/modal.tpl.html:116
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:201
 #: ./src/templates/views/domains.tpl.html:52
@@ -7875,10 +8241,10 @@ msgctxt "Title"
 msgid "Address Priority"
 msgstr "Приоритет адресов"
 
-#: ./src/templates/settings/encryptionView.tpl.html:102
+#: ./src/templates/settings/encryptionView.tpl.html:105
 msgctxt "Title"
 msgid "Address Verification (optional)"
-msgstr ""
+msgstr "Проверка адреса (необязательно)"
 
 #. table heading
 #: ./src/templates/dashboard/overviewSection.tpl.html:31
@@ -7889,7 +8255,7 @@ msgctxt "Title"
 msgid "Addresses"
 msgstr "Адреса"
 
-#: ./src/app/composer/services/validateMessage.js:42
+#: ./src/app/composer/services/validateMessage.js:57
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:43
 #: ./src/app/ui/factories/pageTitlesModel.js:47
 #: ./src/templates/views/members.tpl.html:114
@@ -7973,10 +8339,10 @@ msgid "Attachments"
 msgstr "Вложения"
 
 #. logs page heading
-#: ./src/templates/views/security.tpl.html:38
+#: ./src/templates/views/security.tpl.html:58
 msgctxt "Title"
 msgid "Authentication Logs"
-msgstr "Логи авторизации"
+msgstr "Логи аутентификации"
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:28
 msgctxt "Title"
@@ -8087,7 +8453,7 @@ msgctxt "Title"
 msgid "Change Role"
 msgstr "Изменить роль"
 
-#: ./src/app/settings/controllers/security.js:180
+#: ./src/app/settings/controllers/security.js:27
 msgctxt "Title"
 msgid "Clear"
 msgstr "Очистить"
@@ -8110,10 +8476,15 @@ msgctxt "Title"
 msgid "Composer mode"
 msgstr "Режим редактора"
 
-#: ./src/templates/filter/modal.tpl.html:30
+#: ./src/templates/filter/modal.tpl.html:35
 msgctxt "Title"
 msgid "Conditions"
 msgstr "Условия"
+
+#: ./src/app/contact/factories/contactSpam.js:6
+msgctxt "Title"
+msgid "Confirm"
+msgstr ""
 
 #: ./src/templates/composer/composerEncrypt.tpl.html:28
 msgctxt "Title"
@@ -8286,6 +8657,7 @@ msgctxt "Title"
 msgid "Decrypt message"
 msgstr "Расшифровка сообщения"
 
+#: ./src/app/composer/controllers/composeMessage.js:582
 #: ./src/app/contact/factories/contactEditor.js:276
 #: ./src/app/elements/services/removeElement.js:14
 msgctxt "Title"
@@ -8349,7 +8721,7 @@ msgctxt "Title"
 msgid "Desktop notifications"
 msgstr "Уведомления на рабочем столе"
 
-#: ./src/app/settings/controllers/security.js:135
+#: ./src/app/settings/controllers/security.js:35
 msgctxt "Title"
 msgid "Disable Two-Factor Authentication"
 msgstr "Отключить двухфакторную аутентификацию"
@@ -8489,7 +8861,7 @@ msgstr "Произошла ошибка"
 #. Table heading
 #: ./src/templates/views/invoices.tpl.html:18
 #: ./src/templates/views/invoices.tpl.html:48
-#: ./src/templates/views/security.tpl.html:72
+#: ./src/templates/views/security.tpl.html:92
 msgctxt "Title"
 msgid "Event"
 msgstr "Событие"
@@ -8497,7 +8869,7 @@ msgstr "Событие"
 #: ./src/templates/views/payments.tpl.html:22
 msgctxt "Title"
 msgid "Expiration"
-msgstr "Срок окончания"
+msgstr "Срок действия"
 
 #: ./src/templates/composer/composerExpiration.tpl.html:3
 msgctxt "Title"
@@ -8533,7 +8905,7 @@ msgstr "Фильтры"
 
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:12
-#: ./src/templates/address/addressKeysView.tpl.html:49
+#: ./src/templates/address/addressKeysView.tpl.html:58
 msgctxt "Title"
 msgid "Fingerprint"
 msgstr "Отпечаток"
@@ -8553,17 +8925,17 @@ msgctxt "Title"
 msgid "From"
 msgstr "От"
 
-#: ./src/templates/views/reset-login-password.tpl.html:176
+#: ./src/templates/views/reset-login-password.tpl.html:196
 msgctxt "Title"
 msgid "Generating keys"
 msgstr "Создание ключей"
 
-#: ./src/templates/views/reset-login-password.tpl.html:160
+#: ./src/templates/views/reset-login-password.tpl.html:180
 msgctxt "Title"
 msgid "Generating keys..."
 msgstr "Создание ключей..."
 
-#: ./src/templates/vpn/vpnView.tpl.html:19
+#: ./src/templates/vpn/vpnView.tpl.html:23
 msgctxt "Title"
 msgid "Getting started with ProtonVPN"
 msgstr "Начало работы с ProtonVPN"
@@ -8632,8 +9004,11 @@ msgctxt "Title"
 msgid "Identity"
 msgstr "Псевдоним"
 
-#. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:14
+#: ./src/app/attachments/factories/attachmentModel.js:33
+msgctxt "Title"
+msgid "Image"
+msgstr ""
+
 #: ./src/templates/contact/importContactModal.tpl.html:6
 msgctxt "Title"
 msgid "Import"
@@ -8666,6 +9041,11 @@ msgctxt "Title"
 msgid "Key Activation"
 msgstr "Активация ключа"
 
+#: ./src/app/address/services/deleteKeyProcess.js:24
+msgctxt "Title"
+msgid "Key backup"
+msgstr ""
+
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:6
 msgctxt "Title"
 msgid "Key password"
@@ -8684,7 +9064,7 @@ msgstr "Длина ключа"
 
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:13
-#: ./src/templates/address/addressKeysView.tpl.html:50
+#: ./src/templates/address/addressKeysView.tpl.html:59
 msgctxt "Title"
 msgid "Key type"
 msgstr "Тип ключа"
@@ -8741,7 +9121,7 @@ msgctxt "Title"
 msgid "Location"
 msgstr "Местоположение"
 
-#: ./src/templates/views/reset-login-password.tpl.html:184
+#: ./src/templates/views/reset-login-password.tpl.html:204
 msgctxt "Title"
 msgid "Logging in to your account"
 msgstr "Вход в вашу учётную запись"
@@ -8766,7 +9146,7 @@ msgstr "Пароль почтового ящика"
 #: ./src/templates/partials/wizard.tpl.html:27
 msgctxt "Title"
 msgid "Manage your email with folders and labels"
-msgstr ""
+msgstr "Управляйте своей электронной почтой с помощью папок и ярлыков"
 
 #: ./src/app/contact/factories/contactMerger.js:18
 msgctxt "Title"
@@ -8796,7 +9176,7 @@ msgstr "Мой тариф"
 #. table heading
 #. table heading for the domains page table listing of addresses
 #: ./src/templates/contact/contactList.tpl.html:14
-#: ./src/templates/filter/modal.tpl.html:16
+#: ./src/templates/filter/modal.tpl.html:19
 #: ./src/templates/views/domains.tpl.html:192
 #: ./src/templates/views/members.tpl.html:141
 msgctxt "Title"
@@ -8814,12 +9194,17 @@ msgctxt "Title"
 msgid "Navigation"
 msgstr "Навигация"
 
-#: ./src/app/composer/controllers/composeMessage.js:452
+#: ./src/app/address/directives/addressKeysView.js:59
+msgctxt "Title"
+msgid "New Address Key ({{ email }})"
+msgstr ""
+
+#: ./src/app/composer/controllers/composeMessage.js:457
 msgctxt "Title"
 msgid "New message"
 msgstr "Новое сообщение"
 
-#: ./src/templates/views/reset-login-password.tpl.html:120
+#: ./src/templates/views/reset-login-password.tpl.html:140
 msgctxt "Title"
 msgid "New password:"
 msgstr "Новый пароль:"
@@ -8834,10 +9219,15 @@ msgctxt "Title"
 msgid "No messages"
 msgstr "Нет сообщений"
 
-#: ./src/app/composer/services/validateMessage.js:34
+#: ./src/app/composer/services/validateMessage.js:49
 msgctxt "Title"
 msgid "No subject"
 msgstr "Без темы"
+
+#: ./src/templates/modals/expirationModal.tpl.html:10
+msgctxt "Title"
+msgid "Not all recipients support message expiration"
+msgstr ""
 
 #. Desktop notification
 #: ./src/templates/modals/label.tpl.html:75
@@ -9028,7 +9418,7 @@ msgctxt "Title"
 msgid "ProtonMail's Terms and Conditions"
 msgstr "Условия и положения ProtonMail"
 
-#: ./src/templates/vpn/vpnView.tpl.html:28
+#: ./src/templates/vpn/vpnView.tpl.html:32
 #: ./src/templates/vpn/vpnView.tpl.html:6
 msgctxt "Title"
 msgid "ProtonVPN"
@@ -9039,7 +9429,7 @@ msgctxt "Title"
 msgid "ProtonVPN Plus 2-year plan"
 msgstr "2-летний тариф ProtonVPN Plus"
 
-#: ./src/templates/vpn/vpnView.tpl.html:58
+#: ./src/templates/vpn/vpnView.tpl.html:62
 msgctxt "Title"
 msgid "ProtonVPN Resources"
 msgstr "ProtonVPN Ресурсы"
@@ -9059,7 +9449,7 @@ msgctxt "Title"
 msgid "Recipient"
 msgstr "Получатель"
 
-#: ./src/templates/directives/composer/composerInputMeta.tpl.html:4
+#: ./src/templates/directives/composer/composerInputMeta.tpl.html:5
 msgctxt "Title"
 msgid "Recipients"
 msgstr "Получатели"
@@ -9069,7 +9459,7 @@ msgctxt "Title"
 msgid "Recovery email (optional)"
 msgstr "Адрес резервной эл. почты (необязателен)"
 
-#: ./src/templates/views/reset-login-password.tpl.html:188
+#: ./src/templates/views/reset-login-password.tpl.html:208
 msgctxt "Title"
 msgid "Redirecting"
 msgstr "Перенаправление"
@@ -9092,15 +9482,15 @@ msgstr "Сообщить об ошибке"
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:3
 msgctxt "Title"
 msgid "Request timed out, please try again."
-msgstr "Истекло время запроса, пожалуйста, попробуйте снова."
+msgstr "Время ожидания ответа на запрос истекло. Пожалуйста, попробуйте ещё раз."
 
-#: ./src/templates/views/reset-login-password.tpl.html:117
-#: ./src/templates/views/reset-login-password.tpl.html:47
+#: ./src/templates/views/reset-login-password.tpl.html:137
+#: ./src/templates/views/reset-login-password.tpl.html:50
 msgctxt "Title"
 msgid "Reset Password"
 msgstr "Сброс пароля"
 
-#: ./src/templates/views/reset-login-password.tpl.html:50
+#: ./src/templates/views/reset-login-password.tpl.html:69
 msgctxt "Title"
 msgid "Reset code:"
 msgstr "Код сброса:"
@@ -9111,8 +9501,8 @@ msgctxt "Title"
 msgid "Reset/notification email"
 msgstr "Адрес эл. почты для сброса/уведомлений"
 
-#: ./src/templates/views/reset-login-password.tpl.html:170
-#: ./src/templates/views/reset-login-password.tpl.html:180
+#: ./src/templates/views/reset-login-password.tpl.html:190
+#: ./src/templates/views/reset-login-password.tpl.html:200
 msgctxt "Title"
 msgid "Resetting your password"
 msgstr "Сброс вашего пароля"
@@ -9125,7 +9515,7 @@ msgstr "Сброс вашего пароля означает, что вы бо�
 #: ./src/app/organization/modals/activateOrganizationModal.js:21
 msgctxt "Title"
 msgid "Restore Administrator Privileges"
-msgstr "Восстановить привилегии администратора"
+msgstr "Восстановить полномочия администратора"
 
 #. table heading
 #: ./src/templates/views/members.tpl.html:144
@@ -9136,7 +9526,7 @@ msgstr "Роль"
 #: ./src/templates/user/humanVerification.tpl.html:44
 msgctxt "Title"
 msgid "SMS"
-msgstr "СМС"
+msgstr "SMS"
 
 #: ./src/templates/modals/domain/spf.tpl.html:10
 msgctxt "Title"
@@ -9220,9 +9610,9 @@ msgstr "Задать отображаемое имя и подпись"
 #: ./src/templates/views/setup.tpl.html:9
 msgctxt "Title"
 msgid "Set up your account"
-msgstr "Настроить учётную запись"
+msgstr "Настройте свою учётную запись"
 
-#: ./src/app/user/modals/generateModal.js:23
+#: ./src/app/user/modals/generateModal.js:20
 msgctxt "Title"
 msgid "Setting up your Addresses"
 msgstr "Настройка ваших адресов"
@@ -9230,12 +9620,12 @@ msgstr "Настройка ваших адресов"
 #: ./src/templates/modals/setupOrganization.tpl.html:7
 msgctxt "Title"
 msgid "Setting up your Keys"
-msgstr "Настройка ключей"
+msgstr "Настройка ваших ключей"
 
 #: ./src/templates/modals/setupOrganization.tpl.html:6
 msgctxt "Title"
 msgid "Setting up your Organization"
-msgstr "Настройка организации"
+msgstr "Настройка вашей организации"
 
 #. Folder name
 #: ./src/templates/partials/sidebar-responsive.tpl.html:24
@@ -9269,6 +9659,11 @@ msgctxt "Title"
 msgid "Signup"
 msgstr "Регистрация"
 
+#: ./src/app/user/factories/generateKeyModel.js:14
+msgctxt "Title"
+msgid "Similar Key Already Active!"
+msgstr ""
+
 #: ./src/app/sidebar/factories/sidebarModel.js:43
 #: ./src/app/ui/factories/pageTitlesModel.js:55
 msgctxt "Title"
@@ -9293,13 +9688,13 @@ msgstr "Начиная с"
 
 #. table heading
 #. table heading for the domains page table listing of addresses
-#: ./src/templates/address/addressKeysView.tpl.html:51
+#: ./src/templates/address/addressKeysView.tpl.html:60
 #: ./src/templates/modals/generate.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:194
 #: ./src/templates/views/payments.tpl.html:76
 msgctxt "Title"
 msgid "Status"
-msgstr "Статус"
+msgstr "Состояние"
 
 #: ./src/templates/dashboard/overviewSection.tpl.html:50
 msgctxt "Title"
@@ -9339,7 +9734,7 @@ msgctxt "Title"
 msgid "Threadlist"
 msgstr "Список тем"
 
-#: ./src/templates/views/security.tpl.html:74
+#: ./src/templates/views/security.tpl.html:94
 msgctxt "Title"
 msgid "Time"
 msgstr "Время"
@@ -9348,7 +9743,7 @@ msgstr "Время"
 #. printed message info
 #: ./src/app/message/directives/messageContacts.js:6
 #: ./src/app/message/filters/recipients.js:11
-#: ./src/templates/directives/composer/composerInputMeta.tpl.html:46
+#: ./src/templates/directives/composer/composerInputMeta.tpl.html:35
 #: ./src/templates/views/message.print.tpl.html:31
 #: ./src/templates/views/outside.message.tpl.html:22
 msgctxt "Title"
@@ -9384,7 +9779,7 @@ msgstr "Корзина"
 #: ./src/templates/modals/trustPublicKey.tpl.html:6
 msgctxt "Title"
 msgid "Trust Public Key (Address Verification)"
-msgstr ""
+msgstr "Доверие публичному ключу (Проверка адреса)"
 
 #. two factor page heading
 #: ./src/templates/authentication/loginTwoFactorForm.tpl.html:14
@@ -9440,17 +9835,22 @@ msgstr "История пользователя"
 #: ./src/templates/authentication/loginForm.tpl.html:14
 msgctxt "Title"
 msgid "User login"
-msgstr "Логин пользователя"
+msgstr "Имя пользователя"
 
 #: ./src/templates/dashboard/overviewSection.tpl.html:6
 msgctxt "Title"
 msgid "Username"
-msgstr "Пользователь"
+msgstr "Имя пользователя"
 
 #: ./src/templates/user/usernameDomain.tpl.html:2
 msgctxt "Title"
 msgid "Username and domain"
 msgstr "Имя пользователя и домен"
+
+#: ./src/templates/views/reset-login-password.tpl.html:53
+msgctxt "Title"
+msgid "Username:"
+msgstr ""
 
 #: ./src/app/ui/factories/pageTitlesModel.js:58
 msgctxt "Title"
@@ -9469,7 +9869,7 @@ msgstr "VPN"
 #: ./src/templates/modals/domain/verification.tpl.html:22
 msgctxt "Title"
 msgid "Value / Data / Points to"
-msgstr "Значение / Данные / Указывать на"
+msgstr "Значение / Данные / Указывает на"
 
 #: ./src/templates/domains/domainsMenuStep.tpl.html:12
 #: ./src/templates/modals/domain/verification.tpl.html:10
@@ -9477,8 +9877,9 @@ msgctxt "Title"
 msgid "Verify"
 msgstr "Подтверждение"
 
+#: ./src/app/address/services/deleteKeyProcess.js:16
 #: ./src/app/user/directives/signupUserForm.js:6
-#: ./src/templates/views/reset-login-password.tpl.html:82
+#: ./src/templates/views/reset-login-password.tpl.html:102
 msgctxt "Title"
 msgid "Warning"
 msgstr "Предупреждение"
@@ -9498,15 +9899,20 @@ msgctxt "Title"
 msgid "Welcome to your new encrypted email account"
 msgstr "Добро пожаловать в ваш новый зашифрованный почтовый ящик"
 
-#: ./src/templates/filter/modal.tpl.html:61
+#: ./src/templates/filter/modal.tpl.html:66
 msgctxt "Title"
 msgid "With Attachments"
 msgstr "С вложениями"
 
-#: ./src/templates/filter/modal.tpl.html:70
+#: ./src/templates/filter/modal.tpl.html:75
 msgctxt "Title"
 msgid "Without Attachments"
 msgstr "Без вложений"
+
+#: ./src/app/address/directives/addressKeysView.js:38
+msgctxt "Title"
+msgid "You can generate a new encryption key if you think your previous key has been compromised. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
+msgstr ""
 
 #: ./src/templates/modals/welcome.tpl.html:15
 msgctxt "Title"
@@ -9548,14 +9954,19 @@ msgctxt "Title for the vpn modal"
 msgid "ProtonVPN Plans"
 msgstr "Тарифы ProtonVPN"
 
+#: ./src/app/squire/services/pasteImage.js:6
+msgctxt "Title pasted image"
+msgid "Pasted-image"
+msgstr ""
+
 #. reset warning 3/3
-#: ./src/templates/views/reset-login-password.tpl.html:86
+#: ./src/templates/views/reset-login-password.tpl.html:106
 msgctxt "To continue, type DANGER below:"
 msgid "To continue, type"
 msgstr "Для продолжения введите"
 
 #. reset warning 3/3
-#: ./src/templates/views/reset-login-password.tpl.html:88
+#: ./src/templates/views/reset-login-password.tpl.html:108
 msgctxt "To continue, type DANGER below:"
 msgid "below:"
 msgstr "ниже:"
@@ -9563,7 +9974,7 @@ msgstr "ниже:"
 #: ./src/templates/views/account.tpl.html:102
 msgctxt "To enable desktop notifications, click here"
 msgid "To enable desktop notifications,"
-msgstr "Чтобы включить уведомления для рабочего стола,"
+msgstr "Чтобы включить уведомления на рабочем столе,"
 
 #: ./src/templates/elements/ptStar.tpl.html:3
 msgctxt "Toggle Star message/conversation"
@@ -9574,6 +9985,41 @@ msgstr "Добавить в избранное"
 msgctxt "Toggle Star message/conversation"
 msgid "Unstar"
 msgstr "Убрать из избранного"
+
+#: ./src/templates/address/addressKeysView.tpl.html:80
+msgctxt "Tooltip"
+msgid "Active"
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:54
+msgctxt "Tooltip"
+msgid "Download"
+msgstr ""
+
+#: ./src/templates/address/addressKeysView.tpl.html:74
+msgctxt "Tooltip"
+msgid "Primary"
+msgstr ""
+
+#: ./src/templates/settings/encryptionView.tpl.html:60
+msgctxt "Tooltip automatically attach public key"
+msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and sent encrypted messages to you."
+msgstr ""
+
+#: ./src/app/authentication/factories/activeSessionsModel.js:6
+msgctxt "Tooltip display per session"
+msgid "Created on {{ date }}"
+msgstr ""
+
+#: ./src/templates/settings/encryptionView.tpl.html:137
+msgctxt "Tooltip prompt to trust keys"
+msgid "When receiving an internal message from a sender that has no trusted keys in your contacts, show a banner asking if you want to enable trusted keys."
+msgstr ""
+
+#: ./src/templates/settings/encryptionView.tpl.html:36
+msgctxt "Tooltip sign external messages"
+msgid "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
+msgstr ""
 
 #: ./src/templates/views/account.tpl.html:73
 msgctxt "Tooltip to explain daily email notifications"
@@ -9593,7 +10039,7 @@ msgstr "Попробуйте ещё раз."
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:10
 msgctxt "Two-factor code field"
 msgid "Enter two-factor passcode:"
-msgstr ""
+msgstr "Введите код доступа двухфакторной аутентификации:"
 
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:15
 msgctxt "Two-factor code field"
@@ -9688,7 +10134,7 @@ msgctxt "User role"
 msgid "Member"
 msgstr "Участник"
 
-#: ./src/app/user/directives/identitySection.js:16
+#: ./src/app/user/directives/identitySection.js:15
 msgctxt "User's signature"
 msgid "Name / Signature saved"
 msgstr "Имя / подпись сохранены"
@@ -9893,17 +10339,37 @@ msgctxt "VCard key name"
 msgid "Work"
 msgstr "Рабочий"
 
+#: ./src/templates/composer/composerExpiration.tpl.html:51
+msgctxt "Warning"
+msgid "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message."
+msgstr ""
+
+#: ./src/templates/modals/expirationModal.tpl.html:16
+msgctxt "Warning"
+msgid "Please add a password for the following recipients"
+msgstr ""
+
+#: ./src/templates/modals/expirationModal.tpl.html:29
+msgctxt "Warning"
+msgid "Please disable PGP Sending for the following recipients"
+msgstr ""
+
 #: ./src/app/composer/services/autoPinPrimaryKeys.js:21
 msgctxt "Warning"
 msgid "The verification of {{ emails }} has failed: the contact is not signed correctly.\n"
 "                    You must re-sign the contact in order to send a message to this address or edit the contact. This can also happen when\n"
 "                    you have recovered your password and reset your keys."
-msgstr ""
+msgstr "Проверка {{ emails }} не прошла: контакт не подписан правильно. Вы должны повторно подписать контакт, чтобы отправлять сообщения на этот адрес или редактировать контакт. Это также может происходить, когда вы восстановили свой пароль и сбросили свои ключи."
 
 #: ./src/app/user/directives/signupUserForm.js:7
 msgctxt "Warning"
 msgid "Warning: You did not set a recovery email so account recovery is impossible if you forget your password. Proceed without recovery email?"
 msgstr "Предупреждение: вы не задали адрес эл. почты для восстановления доступа, и поэтому он невозможен в случае, если вы забудете свой пароль. Продолжить без адреса для восстановления?"
+
+#: ./src/templates/modals/expirationModal.tpl.html:42
+msgctxt "Warning"
+msgid "You can also send anyway without expiration to these recipients."
+msgstr ""
 
 #: ./src/templates/modals/feedback.tpl.html:10
 msgctxt "Write a feedback about ProtonMail"
@@ -9920,15 +10386,17 @@ msgctxt "action"
 msgid "Create label"
 msgstr "Создать ярлык"
 
-#: ./src/templates/views/reset-login-password.tpl.html:38
+#. Make sure this string is short please
+#: ./src/templates/views/reset-login-password.tpl.html:40
 msgctxt "action"
 msgid "Forgot username?"
 msgstr "Забыли имя пользователя?"
 
-#: ./src/templates/address/addressKeysView.tpl.html:29
-msgctxt "address key bit size tooltip"
-msgid "The ability to change key type will be coming in a future ProtonMail release"
-msgstr "Возможность изменять тип ключа будет доступна в будущем обновлении ProtonMail"
+#. Make sure this string is short please
+#: ./src/templates/views/reset-login-password.tpl.html:41
+msgctxt "action"
+msgid "Have a reset code?"
+msgstr ""
 
 #: ./src/app/ui/directives/atomLoader.js:4
 msgctxt "atom text loader"
@@ -9940,17 +10408,17 @@ msgctxt "atom text loader"
 msgid "Enabling IMAP (coming soon).<br />This may take a few minutes, please wait."
 msgstr "Включение IMAP (в ближайшее время).<br />Это может занять несколько минут, пожалуйста, подождите."
 
-#: ./src/templates/views/security.tpl.html:90
+#: ./src/templates/views/security.tpl.html:110
 msgctxt "auth log entry"
 msgid "Login failure (two-factor)"
 msgstr "Неудачный вход (2ФА)"
 
-#: ./src/templates/views/security.tpl.html:84
+#: ./src/templates/views/security.tpl.html:104
 msgctxt "auth log entry"
 msgid "Login success"
 msgstr "Успешный вход"
 
-#: ./src/templates/views/security.tpl.html:87
+#: ./src/templates/views/security.tpl.html:107
 msgctxt "auth log entry"
 msgid "Logout"
 msgstr "Выход"
@@ -10112,6 +10580,31 @@ msgctxt "info link to Addresses/Users in Signatures page"
 msgid "New Addresses can be added on"
 msgstr "Новые адреса могут быть добавлены в"
 
+#: ./src/templates/address/addressKeysView.tpl.html:123
+msgctxt "key flag info"
+msgid "Compromised"
+msgstr ""
+
+#: ./src/templates/address/addressKeysView.tpl.html:92
+msgctxt "key flag info"
+msgid "Disabled"
+msgstr ""
+
+#: ./src/templates/address/addressKeysView.tpl.html:197
+msgctxt "key flag info"
+msgid "Mark compromised"
+msgstr ""
+
+#: ./src/templates/address/addressKeysView.tpl.html:185
+msgctxt "key flag info"
+msgid "Mark obsolete"
+msgstr ""
+
+#: ./src/templates/address/addressKeysView.tpl.html:100
+msgctxt "key flag info"
+msgid "Obsolete"
+msgstr ""
+
 #: ./src/templates/modals/generate.tpl.html:64
 msgctxt "key generation progrss"
 msgid "Done"
@@ -10164,30 +10657,30 @@ msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Добавлено к избранному: {{total}} {{type}}"
 
-#: ./src/templates/views/reset-login-password.tpl.html:102
+#: ./src/templates/views/reset-login-password.tpl.html:122
 msgctxt "reset password"
 msgid "If you are resetting the Login password only, old messages can be recovered later if you know your existing Mailbox Password. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "Если вы сбрасываете только пароль для входа, то старые сообщения могут быть восстановлены позже, если вы знаете пароль к почтовому ящику. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Подробнее</a>."
 
-#: ./src/templates/views/reset-login-password.tpl.html:95
+#: ./src/templates/views/reset-login-password.tpl.html:115
 msgctxt "reset password"
 msgid "If you remember your old password later, you can recover your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "Если позже вы вспомните свой старый пароль, то сможете восстановить свои существующие сообщения. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Подробнее</a>."
 
-#: ./src/templates/views/reset-login-password.tpl.html:101
+#: ./src/templates/views/reset-login-password.tpl.html:121
 msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will make old messages unreadable."
 msgstr "Сброс пароля для входа или для почтового ящика сделает старые сообщения нечитаемыми."
 
-#: ./src/templates/views/reset-login-password.tpl.html:100
+#: ./src/templates/views/reset-login-password.tpl.html:120
 msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will switch you to <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Single Password Mode</a>."
 msgstr "Сброс пароля для входа или для почтового ящика переключит вас в <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">режим одного пароля</a>."
 
-#: ./src/templates/settings/encryptionView.tpl.html:110
+#: ./src/templates/settings/encryptionView.tpl.html:113
 msgctxt "settings warning"
 msgid "Address Verification is an advanced security feature. Only turn this on if you know what it does."
-msgstr ""
+msgstr "Проверка адреса &mdash; это расширенная мера безопасности. Включайте её только тогда, когда знаете, что она делает."
 
 #: ./src/templates/settings/encryptionView.tpl.html:12
 msgctxt "settings warning"
@@ -10325,32 +10818,6 @@ msgstr "-45%"
 msgid "2-years"
 msgstr "2-летний"
 
-#: ./src/templates/ui/autoCompleteEmailsIcon.tpl.html:1
-msgid "<i class=\"fa encryptionIcon\" ng-show=\"!(email.encrypt && email.isPinned && !email.isEO)\n"
-"          && (email.encrypt || email.sign || email.loadCryptInfo || email.isEO)\" ng-class=\"{\n"
-"                'encryptionIcon fa-lock': email.encrypt || email.isEO,\n"
-"                'encryptionIcon fa-pencil': !email.encrypt && email.sign,\n"
-"                'encryptionIcon fa-spinner fa-pulse': email.loadCryptInfo,\n"
-"                'pgp-encryption-icon': email.isPgp\n"
-"            }\"></i>\n\n"
-"    <svg viewbox=\"0 0 374.8 337.1\" ng-show=\"email.encrypt && email.isPinned && !email.isEO\" class=\"encryptionIcon\" ng-class=\"{\n"
-"        'pgp-encryption-icon': email.isPgp\n"
-"    }\">\n"
-"        <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#svg-lock-signed\"/>\n"
-"    </svg>"
-msgstr "<i class=\"fa encryptionIcon\" ng-show=\"!(email.encrypt && email.isPinned && !email.isEO)\n"
-"          && (email.encrypt || email.sign || email.loadCryptInfo || email.isEO)\" ng-class=\"{\n"
-"                'encryptionIcon fa-lock': email.encrypt || email.isEO,\n"
-"                'encryptionIcon fa-pencil': !email.encrypt && email.sign,\n"
-"                'encryptionIcon fa-spinner fa-pulse': email.loadCryptInfo,\n"
-"                'pgp-encryption-icon': email.isPgp\n"
-"            }\"></i>\n\n"
-"    <svg viewbox=\"0 0 374.8 337.1\" ng-show=\"email.encrypt && email.isPinned && !email.isEO\" class=\"encryptionIcon\" ng-class=\"{\n"
-"        'pgp-encryption-icon': email.isPgp\n"
-"    }\">\n"
-"        <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#svg-lock-signed\"/>\n"
-"    </svg>"
-
 #: ./src/templates/filter/emailBlockList.tpl.html:16
 msgid "<i class=\"fa fa-arrows-h\"></i>"
 msgstr "<i class=\"fa fa-arrows-h\"></i>"
@@ -10359,22 +10826,6 @@ msgstr "<i class=\"fa fa-arrows-h\"></i>"
 #: ./src/templates/contact/contactSelectorForm.tpl.html:49
 msgid "<i class=\"fa fa-close\"></i>"
 msgstr "<i class=\"fa fa-close\"></i>"
-
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:8
-msgid "<i class=\"fa fa-info-circle\" pt-tooltip-translate=\"The primary key is used to encrypt outgoing messages.\">\n"
-"                    </i>\n"
-"                    Primary"
-msgstr "<i class=\"fa fa-info-circle\" pt-tooltip-translate=\"Основной ключ применяется для шифрования исходящих сообщений.\">\n"
-"                    </i>\n"
-"                    Основной"
-
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:13
-msgid "<i class=\"fa fa-info-circle\" pt-tooltip-translate=\"This contact currently has access to this key to decrypt and sign.\">\n"
-"                    </i>\n"
-"                    Activated"
-msgstr "<i class=\"fa fa-info-circle\" pt-tooltip-translate=\"У этого контакта сейчас есть доступ к этому ключу для расшифровки и подписи.\">\n"
-"                    </i>\n"
-"                    Активирован"
 
 #: ./src/templates/directives/composer/composer.tpl.html:90
 msgid "<i class=\"fa fa-lock\"></i>"
@@ -10397,12 +10848,8 @@ msgstr "<use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#svg-lock
 msgid "A new version of ProtonMail is available. Please refresh this page."
 msgstr "Доступна новая версия ProtonMail. Пожалуйста, обновите страницу."
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:21
-msgid "Actions"
-msgstr "Действия"
-
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:66
+#: ./src/templates/address/addressKeysView.tpl.html:80
 msgid "Active"
 msgstr "Активный"
 
@@ -10424,20 +10871,14 @@ msgstr "Добавить несколько адресов эл. почты"
 msgid "Address"
 msgstr "Адрес"
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:119
+#: ./src/templates/directives/contact/contactItem.tpl.html:118
 msgid "Advanced settings"
 msgstr "Дополнительные настройки"
 
 #. form option
-#: ./src/app/search/factories/searchModel.js:31
-#: ./src/app/search/factories/searchModel.js:49
 #: ./src/templates/search/searchForm.tpl.html:124
 msgid "All"
 msgstr "Все"
-
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:84
-msgid "All available keys are trusted"
-msgstr "Все доступные ключи &mdash; доверенные"
 
 #: ./src/app/organization/modals/setupOrganizationModal.js:43
 msgid "Allocated to admin"
@@ -10462,21 +10903,13 @@ msgstr "Ежегодно"
 msgid "Archive"
 msgstr "Архив"
 
-#: ./src/app/address/directives/addressKeysView.js:21
-msgid "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails."
-msgstr "Вы действительно хотите импортировать закрытый ключ? Импорт созданного небезопасным способом или ставшего известным закрытого ключа может навредить безопасности ваших писем."
-
 #: ./src/templates/modals/trustPublicKey.tpl.html:29
 msgid "Associated addresses:"
 msgstr "Соответствующие адреса:"
 
 #: ./src/app/contact/factories/contactUI.js:103
 msgid "Automatic indicates that the format in the composer is used to send to this user. Plain Text indicates that the message will always be converted to plain text on send."
-msgstr ""
-
-#: ./src/templates/settings/encryptionView.tpl.html:36
-msgid "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
-msgstr "Автоматически подписывать все ваши исходящие сообщения, чтобы пользователи могли проверять их подлинность. Это происходит совместно со схемой PGP по умолчанию, которая выбирается ниже."
+msgstr "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
 
 #: ./src/templates/views/members.tpl.html:73
 msgid "Available VPN connections"
@@ -10486,7 +10919,7 @@ msgstr "Доступные VPN-подключения"
 msgid "Available domains"
 msgstr "Доступные домены"
 
-#: ./src/app/message/directives/messagePublicKeyPinning.js:23
+#: ./src/app/message/directives/messagePublicKeyPinning.js:10
 msgid "Banner permanently hidden"
 msgstr "Запрос постоянно скрыт"
 
@@ -10498,7 +10931,7 @@ msgstr "Бит"
 msgid "Browser"
 msgstr "Браузер"
 
-#: ./src/app/composer/controllers/composeMessage.js:126
+#: ./src/app/composer/controllers/composeMessage.js:131
 #: ./src/app/routes.js:444
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Прерываясь сейчас, вы потеряете всё написанное в этом сообщении. Вы можете сохранить черновик, если захотите вернуться к нему позднее."
@@ -10559,32 +10992,22 @@ msgstr "Подтвердите пароль восстановления"
 msgid "Contact re-signed"
 msgstr "Контакт подписан повторно"
 
-#: ./src/app/commons/directives/copy.js:5
-#: ./src/app/message/directives/messageAddressActionMenu.js:14
-msgid "Copied to clipboard"
-msgstr "Скопирован в буфер обмена"
-
-#: ./src/templates/directives/contact/contactItem.tpl.html:88
+#: ./src/templates/directives/contact/contactItem.tpl.html:87
 msgid "Copy address"
 msgstr "Копировать адрес"
 
 #: ./src/templates/vpn/openVpnSection.tpl.html:23
 msgid "Copy login"
-msgstr ""
+msgstr "Скопировать логин"
 
 #: ./src/templates/vpn/openVpnSection.tpl.html:40
 msgid "Copy password"
-msgstr ""
-
-#: ./src/app/commons/directives/copy.js:4
-msgid "Copy to your clipboard"
-msgstr "Копировать в буфер обмена"
+msgstr "Скопировать пароль"
 
 #: ./src/templates/contact/contactAddressInput.tpl.html:22
 msgid "Country"
 msgstr "Страна"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:18
 #: ./src/templates/message/trustPublicKeyInfo.tpl.html:6
 msgid "Created"
 msgstr "Создан"
@@ -10617,7 +11040,6 @@ msgid "Default"
 msgstr "По умолчанию"
 
 #. contacts toolbar menu option
-#: ./src/app/composer/controllers/composeMessage.js:567
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 msgid "Delete"
 msgstr "Удалить"
@@ -10636,6 +11058,8 @@ msgstr "Цифровая подпись проверена"
 
 #. address state badge
 #. form option
+#. key state badge
+#: ./src/templates/address/addressKeysView.tpl.html:92
 #: ./src/templates/views/account.tpl.html:202
 #: ./src/templates/views/domains.tpl.html:212
 #: ./src/templates/views/members.tpl.html:253
@@ -10661,7 +11085,7 @@ msgstr "Вы хотите повторно подписать контакт?"
 
 #: ./src/app/composer/services/autoPinPrimaryKeys.js:11
 msgid "Do you want to trust the primary key?"
-msgstr ""
+msgstr "Вы хотите доверять основному ключу?"
 
 #: ./src/app/settings/controllers/domains.js:161
 msgid "Domain deleted"
@@ -10676,7 +11100,6 @@ msgid "Done"
 msgstr "Готово"
 
 #: ./src/templates/attachments/attachmentElement.tpl.html:6
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:41
 #: ./src/templates/vpn/vpnRessources.tpl.html:13
 #: ./src/templates/vpn/vpnRessources.tpl.html:20
 #: ./src/templates/vpn/vpnRessources.tpl.html:27
@@ -10685,16 +11108,12 @@ msgstr "Готово"
 msgid "Download"
 msgstr "Скачать"
 
-#: ./src/app/address/directives/addressKeysView.js:25
-msgid "Download Public Key"
-msgstr "Скачать публичный ключ"
-
 #: ./src/app/composer/directives/composerAttachmentsItem.js:3
 msgid "Download the attachment"
 msgstr "Скачать вложение"
 
 #: ./src/app/message/directives/foldersMessage.js:24
-#: ./src/templates/message/message.tpl.html:34
+#: ./src/templates/message/message.tpl.html:36
 msgid "Draft"
 msgstr "Черновик"
 
@@ -10742,13 +11161,13 @@ msgstr "Введите здесь слово 'ОСТОРОЖНО'."
 
 #: ./src/templates/views/setup.tpl.html:41
 msgid "Enter your existing Proton password"
-msgstr ""
+msgstr "Введите свой действующий пароль Proton"
 
 #: ./src/templates/modals/reactivate.tpl.html:9
 msgid "Enter your login password:"
 msgstr "Введите свой пароль для входа:"
 
-#: ./src/app/message/factories/messageModel.js:230
+#: ./src/app/message/factories/messageModel.js:246
 msgid "Error encrypting message"
 msgstr "Ошибка шифрования сообщения"
 
@@ -10756,15 +11175,10 @@ msgstr "Ошибка шифрования сообщения"
 msgid "Error while adding the public key to the contacts"
 msgstr "Ошибка при добавлении публичного ключа к контактам"
 
-#: ./src/app/message/directives/messageAddressActionMenu.js:15
-msgid "Error while copying"
-msgstr "Ошибка при копировании"
-
-#: ./src/app/message/directives/messagePublicKeyPinning.js:24
+#: ./src/app/message/directives/messagePublicKeyPinning.js:11
 msgid "Error while updating setting"
 msgstr "Ошибка при обновлении настройки"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:19
 #: ./src/templates/message/trustPublicKeyInfo.tpl.html:7
 msgid "Expires"
 msgstr "Истекает"
@@ -10786,7 +11200,6 @@ msgstr "Обратная связь"
 msgid "Filter folders"
 msgstr "Фильтр папок"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:6
 #: ./src/templates/message/trustPublicKeyInfo.tpl.html:5
 msgid "Fingerprint"
 msgstr "Отпечаток"
@@ -10830,7 +11243,7 @@ msgstr "ЧЧ:ММ"
 msgid "Hint"
 msgstr "Подсказка"
 
-#: ./src/app/settings/controllers/account.js:295
+#: ./src/app/settings/controllers/account.js:296
 msgid "Hotkeys preferences updated"
 msgstr "Настройки сочетаний клавиш обновлены"
 
@@ -10838,8 +11251,8 @@ msgstr "Настройки сочетаний клавиш обновлены"
 msgid "Image URL"
 msgstr "URL-адрес изображения"
 
-#: ./src/app/settings/controllers/account.js:262
-#: ./src/app/settings/controllers/account.js:271
+#: ./src/app/settings/controllers/account.js:263
+#: ./src/app/settings/controllers/account.js:272
 msgid "Image preferences updated"
 msgstr "Настройки изображений обновлены"
 
@@ -10856,7 +11269,7 @@ msgid "In trash"
 msgstr "В Корзине"
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:67
+#: ./src/templates/address/addressKeysView.tpl.html:86
 msgid "Inactive"
 msgstr "Неактивен"
 
@@ -10868,10 +11281,6 @@ msgstr "Входящие"
 #: ./src/templates/dashboard/professionalColumn.tpl.html:18
 msgid "Info"
 msgstr "Информация"
-
-#: ./src/templates/squire/addLinkPopover.tpl.html:42
-msgid "Insert link"
-msgstr "Вставить ссылку"
 
 #: ./src/app/core/controllers/signup.js:79
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
@@ -10927,10 +11336,6 @@ msgstr "Пароль почтового ящика"
 #: ./src/templates/views/appearance.tpl.html:24
 msgid "Maximized"
 msgstr "Развёрнутый"
-
-#: ./src/app/composer/controllers/composeMessage.js:585
-msgid "Message discarded"
-msgstr "Сообщение отменено"
 
 #: ./src/templates/views/outside.unlock.tpl.html:14
 msgid "Message password"
@@ -11011,9 +11416,9 @@ msgstr "Название ОС"
 msgid "OS version"
 msgstr "Версия ОС"
 
-#: ./src/app/settings/controllers/account.js:180
+#: ./src/app/settings/controllers/account.js:181
 msgid "Operation timed out for security reasons, please try again"
-msgstr "Эта операция является ограниченной по времени. Пожалуйста, попробуйте снова"
+msgstr "Из соображений безопасности эта операция является ограниченной по времени. Пожалуйста, попробуйте снова"
 
 #. DMARC status badge
 #: ./src/templates/modals/domain/dmarc.tpl.html:9
@@ -11076,10 +11481,6 @@ msgstr "Пароль"
 msgid "Password updated"
 msgstr "Пароль обновлён"
 
-#: ./src/app/composer/controllers/composeMessage.js:568
-msgid "Permanently delete this draft?"
-msgstr "Удалить этот черновик навсегда?"
-
 #: ./src/templates/views/invoices.tpl.html:29
 #: ./src/templates/views/invoices.tpl.html:59
 msgid "Plan subscription"
@@ -11101,7 +11502,7 @@ msgstr "Пожалуйста, введите пароль восстановле
 msgid "Please give the address and temporary password to the new member so they can log in."
 msgstr "Пожалуйста, дайте адрес и временный пароль новому участнику, чтобы он мог войти."
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:63
+#: ./src/templates/directives/contact/contactPgp.tpl.html:66
 msgid "Please upload a valid encryption key first before enabling encryption"
 msgstr "Пожалуйста, сначала загрузите исправный ключ шифрования, прежде, чем включать шифрование"
 
@@ -11117,14 +11518,14 @@ msgstr "Почтовый ящик"
 msgid "Postal code"
 msgstr "Почтовый индекс"
 
-#: ./src/app/settings/controllers/account.js:143
-#: ./src/app/settings/controllers/account.js:163
-#: ./src/app/settings/controllers/account.js:253
+#: ./src/app/settings/controllers/account.js:144
+#: ./src/app/settings/controllers/account.js:164
+#: ./src/app/settings/controllers/account.js:254
 msgid "Preference saved"
 msgstr "Настройка сохранена"
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:65
+#: ./src/templates/address/addressKeysView.tpl.html:74
 msgid "Primary"
 msgstr "Основной"
 
@@ -11132,7 +11533,7 @@ msgstr "Основной"
 msgid "Primary Admin"
 msgstr "Основной администратор"
 
-#: ./src/app/address/directives/addressKeysView.js:147
+#: ./src/app/address/directives/addressKeysView.js:217
 msgid "Private key imported"
 msgid_plural "{{$count}} Private keys imported"
 msgstr[0] "Закрытый ключ импортирован"
@@ -11140,7 +11541,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] "Импортировано {{$count}} закрытых ключей"
 
-#: ./src/app/address/directives/addressKeysView.js:155
+#: ./src/app/address/directives/addressKeysView.js:225
 msgid "Private key reactivated"
 msgstr "Закрытый ключ повторно активирован"
 
@@ -11167,7 +11568,7 @@ msgstr "Предоставляет дополнительную защиту о�
 
 #: ./src/app/message/directives/messagePublicKeyFound.js:17
 msgid "Public Key trusted"
-msgstr "Доверенный публичный ключ"
+msgstr "Доверяемый публичный ключ"
 
 #: ./src/templates/message/messageResign.tpl.html:7
 msgid "RE-SIGN"
@@ -11187,7 +11588,7 @@ msgstr "Рекомендуется"
 msgid "Recovery email"
 msgstr "Адрес резервной эл. почты"
 
-#: ./src/app/settings/controllers/account.js:128
+#: ./src/app/settings/controllers/account.js:129
 msgid "Recovery/Notification email saved"
 msgstr "Адрес эл. почты для восстановления доступа/уведомлений сохранён"
 
@@ -11231,7 +11632,7 @@ msgid "Send all your traffic through the Tor network with a single click"
 msgstr "Отправляет весь ваш трафик через сеть Tor одним щелчком"
 
 #: ./src/app/message/directives/foldersMessage.js:28
-#: ./src/templates/message/message.tpl.html:35
+#: ./src/templates/message/message.tpl.html:37
 msgid "Sent"
 msgstr "Отправленные"
 
@@ -11243,7 +11644,7 @@ msgstr "Отправлено:"
 #. DMARC status badge
 #: ./src/templates/modals/domain/dmarc.tpl.html:8
 msgid "Set"
-msgstr "Настроено"
+msgstr "Задано"
 
 #: ./src/templates/views/setup.tpl.html:85
 #: ./src/templates/views/setup.tpl.html:97
@@ -11263,17 +11664,17 @@ msgid "Street address"
 msgstr "Адрес улицы"
 
 #: ./src/templates/directives/composer/composerSubject.tpl.html:2
-#: ./src/templates/message/message.tpl.html:107
+#: ./src/templates/message/message.tpl.html:109
 msgid "Subject"
 msgstr "Тема"
 
 #: ./src/templates/message/messagePublicKeyFound.tpl.html:10
 msgid "TRUST KEY"
-msgstr ""
+msgstr "ДОВЕРЯТЬ КЛЮЧУ"
 
 #: ./src/templates/message/messagePublicKeyPinning.tpl.html:8
 msgid "TRUST KEYS"
-msgstr ""
+msgstr "ДОВЕРЯТЬ КЛЮЧАМ"
 
 #: ./src/templates/views/account.tpl.html:100
 msgid "Test notification"
@@ -11283,25 +11684,17 @@ msgstr "Проверить уведомление"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "Подпись сообщения не может быть проверена, поскольку неправильна подпись контакта."
 
-#: ./src/app/contact/directives/contactPublicKeys.js:417
+#: ./src/app/contact/directives/contactPublicKeys.js:425
 msgid "The public key with fingerprint %s updated."
 msgstr "Публичный ключ с отпечатком %s обновлён."
 
-#: ./src/app/contact/directives/contactPublicKeys.js:409
+#: ./src/app/contact/directives/contactPublicKeys.js:417
 msgid "The public key with fingerprint %s was replaced with a revoked key."
 msgstr "Публичный ключ с отпечатком %s был заменён на отозванный ключ."
-
-#: ./src/templates/settings/encryptionView.tpl.html:59
-msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and sent encrypted messages to you."
-msgstr "Таким способом можно автоматически добавлять ваш публичный ключ к каждому отправляемому вами сообщению. Получатели могут использовать это, чтобы проверять подлинность ваших сообщений и отправлять зашифрованные сообщения вам."
 
 #: ./src/app/settings/controllers/domains.js:182
 msgid "This feature is only available for ProtonMail Professional plans or higher"
 msgstr "Эта возможность доступна только в тарифах ProtonMail уровня \"Professional\" или выше"
-
-#: ./src/app/address/directives/addressKeysView.js:26
-msgid "This key has not been activated. It is only possible to export the public key. Do you want to export the public key?"
-msgstr "Этот ключ не был активирован. Возможно только экспортировать публичный ключ. Вы хотите сделать это?"
 
 #: ./src/app/contact/directives/contactPublicKeys.js:217
 msgid "This key is expired."
@@ -11318,7 +11711,7 @@ msgstr "К этому сообщению присоединён неизвест
 #: ./src/templates/message/messagePublicKeyFound.tpl.html:5
 #: ./src/templates/message/messagePublicKeyPinning.tpl.html:3
 msgid "This message is signed by a public key that has not been trusted yet."
-msgstr ""
+msgstr "Это сообщение подписано публичным ключом, который пока не является доверяемым."
 
 #: ./src/templates/search/searchForm.tpl.html:69
 #: ./src/templates/views/outside.reply.tpl.html:18
@@ -11339,15 +11732,11 @@ msgstr "Корзина"
 msgid "Two-factor passcode"
 msgstr "Код 2ФА"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:20
-msgid "Type"
-msgstr "Тип"
-
 #: ./src/templates/command/autocompleteCommand.tpl.html:4
 msgid "Type a command"
 msgstr "Введите команду"
 
-#: ./src/app/keys/factories/importPrivateKey.js:57
+#: ./src/app/keys/factories/importPrivateKey.js:66
 msgid "Unsupported key"
 msgstr "Неподдерживаемый ключ"
 
@@ -11355,7 +11744,7 @@ msgstr "Неподдерживаемый ключ"
 msgid "Use for encryption"
 msgstr "Использовать для шифрования"
 
-#: ./src/app/contact/directives/contactPublicKeys.js:233
+#: ./src/app/contact/directives/contactPublicKeys.js:238
 msgid "User IDs mismatch. This key is assigned to %1."
 msgid_plural "User IDs mismatch. The emails %1 are assigned to this key."
 msgstr[0] "Идентификаторы пользователя не совпадают. Этот ключ назначен для %1."
@@ -11371,10 +11760,6 @@ msgstr "Применение этого ключа для шифрования �
 #: ./src/app/dashboard/directives/subscriptionSection.js:11
 msgid "VPN connections"
 msgstr "VPN-подключения"
-
-#: ./src/templates/settings/encryptionView.tpl.html:134
-msgid "When receiving an internal message from a sender that has no pinned keys in your contacts, show a banner asking if you want to enable key pinning."
-msgstr "При получении внутреннего сообщения от отправителя, у которого нет привязанных ключей в ваших контактах, показать запрос насчёт включения привязывания ключей."
 
 #. form option
 #: ./src/templates/search/searchForm.tpl.html:131
