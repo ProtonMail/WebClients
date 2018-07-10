@@ -6050,6 +6050,13 @@ msgctxt "Info"
 msgid "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe."
 msgstr ""
 
+#: ./src/templates/attachments/listAttachments.tpl.html:11
+msgctxt "Info"
+msgid "embedded image"
+msgid_plural "embedded images"
+msgstr[0] ""
+msgstr[1] ""
+
 #: ./src/templates/pmMe/pmMeView.tpl.html:20
 msgctxt "Info"
 msgid "is activated on your account."
@@ -7267,7 +7274,7 @@ msgctxt "Notification error trying to connect to the API"
 msgid "Servers are unreachable."
 msgstr ""
 
-#: ./src/app/utils/services/eventManager.js:159
+#: ./src/app/utils/services/eventManager.js:166
 msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr ""
