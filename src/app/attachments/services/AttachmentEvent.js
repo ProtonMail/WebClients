@@ -1,7 +1,7 @@
 import ICAL from 'ical.js';
 
 /* @ngInject */
-function AttachmentEvent(attachmentDownloader, gettextCatalog, notification, AppModel) {
+function AttachmentEvent(attachmentDownloader, gettextCatalog) {
     const I18N = {
         ICS_PARSING_ERROR: gettextCatalog.getString('ICS parsing error:', null, 'Error')
     };
@@ -14,7 +14,10 @@ function AttachmentEvent(attachmentDownloader, gettextCatalog, notification, App
         return attachmentDownloader
             .downloadString(event, model)
             .then(getIcalEvent(event))
-            .catch((err) => AppModel.is('onLine') && notification.error(err));
+            .catch((error) => {
+                console.error(error); // We display the error in the console to not polluate the UX
+                return false; // If it fails we just remove invalid events on the UI
+            });
     };
 
     const load = (events, model) => {
