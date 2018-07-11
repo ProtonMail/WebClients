@@ -1,3 +1,17 @@
+# [3.14.0] - 2018-07-11
+
+[![ProtonMail v3.14 has been released!](assets/img/v3-14.jpg)](https://protonmail.com/blog/protonmail-v3-14-release-notes/)
+
+[ProtonMail 3.14](https://protonmail.com/blog/protonmail-v3-14-release-notes/)
+
+- PGP Support
+- address verification
+- manage address keys
+- expiration messages modal
+- detect non existing PM addresses
+- add multiple recipients from the composer (to, cc, bcc)
+- option to remove contact if mark as spam
+
 # [3.13.0] - 2018-03-29
 
 [![ProtonMail v3.13 has been released!](assets/img/v3-13.jpg)](https://protonmail.com/blog/protonmail-v3-13-release-notes/)
