@@ -1,9 +1,16 @@
-# [3.13.1] - 2018-04-23
+# [3.14.0] - 2018-07-11
 
-## Fixed
+[![ProtonMail v3.14 has been released!](assets/img/v3-14.jpg)](https://protonmail.com/blog/protonmail-v3-14-release-notes/)
 
-- Autoresponder page shows 2 editors instead of 1
-- Draft issue: we add a temporary delay to make sure we have the last version of the message body
+[ProtonMail 3.14](https://protonmail.com/blog/protonmail-v3-14-release-notes/)
+
+- PGP Support
+- address verification
+- manage address keys
+- expiration messages modal
+- detect non existing PM addresses
+- add multiple recipients from the composer (to, cc, bcc)
+- option to remove contact if mark as spam
 
 # [3.13.0] - 2018-03-29
 
