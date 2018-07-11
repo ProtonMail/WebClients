@@ -4,13 +4,26 @@
 
 [ProtonMail 3.14](https://protonmail.com/blog/protonmail-v3-14-release-notes/)
 
+## Added
+
 - PGP Support
 - address verification
 - manage address keys
-- expiration messages modal
-- detect non existing PM addresses
-- add multiple recipients from the composer (to, cc, bcc)
-- option to remove contact if mark as spam
+- add multiple recipients from the composer
+
+## Changed
+
+- expiring messages
+- ProtonMail addresses in the composer
+- remove a contact on mark as spam
+
+## Fixed
+
+- some issues with importing contacts
+- copy/paste images in the composer
+- wrong date in some cases when using search
+- some images were not loaded from certain newsletters
+- additional bug fixes
 
 # [3.13.0] - 2018-03-29
 
