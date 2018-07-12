@@ -2212,6 +2212,16 @@ msgctxt "Composer Mode"
 msgid "Plain Text"
 msgstr ""
 
+#: ./src/templates/directives/composer/composerAskEmbedded.tpl.html:8
+msgctxt "Composer Tooltip"
+msgid "as attachment"
+msgstr ""
+
+#: ./src/templates/directives/composer/composerAskEmbedded.tpl.html:16
+msgctxt "Composer Tooltip"
+msgid "inline"
+msgstr ""
+
 #: ./src/app/squire/modals/addFileModal.js:7
 msgctxt "Composer, add File"
 msgid "Add file"
@@ -3110,7 +3120,7 @@ msgid "Address creation failed"
 msgstr ""
 
 #: ./src/app/address/factories/addressModel.js:37
-#: ./src/app/settings/controllers/domains.js:344
+#: ./src/app/settings/controllers/domains.js:341
 msgctxt "Error"
 msgid "Administrator privileges must be activated"
 msgstr ""
@@ -3189,7 +3199,7 @@ msgctxt "Error"
 msgid "Decryption of this message's encryption content failed."
 msgstr ""
 
-#: ./src/app/domains/factories/domainModel.js:7
+#: ./src/app/domains/factories/domainApi.js:5
 msgctxt "Error"
 msgid "Domain request failed"
 msgstr ""
@@ -3812,9 +3822,9 @@ msgctxt "Error"
 msgid "VPN request failed"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:272
-#: ./src/app/settings/controllers/domains.js:301
-#: ./src/app/settings/controllers/domains.js:451
+#: ./src/app/settings/controllers/domains.js:269
+#: ./src/app/settings/controllers/domains.js:298
+#: ./src/app/settings/controllers/domains.js:448
 msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
@@ -3829,7 +3839,7 @@ msgctxt "Error"
 msgid "We do not support embedded SVG files inside the signature"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:282
+#: ./src/app/settings/controllers/domains.js:279
 msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
 msgstr ""
@@ -4749,7 +4759,7 @@ msgid "Are you sure you want to delete all your contacts?"
 msgstr ""
 
 #: ./src/app/address/factories/addressModel.js:49
-#: ./src/app/settings/controllers/domains.js:155
+#: ./src/app/settings/controllers/domains.js:153
 msgctxt "Info"
 msgid "Are you sure you want to delete this address?"
 msgstr ""
@@ -7894,7 +7904,7 @@ msgid_plural "Contacts deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/settings/controllers/domains.js:234
+#: ./src/app/settings/controllers/domains.js:231
 msgctxt "Success"
 msgid "Domain created"
 msgstr ""
@@ -8654,7 +8664,7 @@ msgctxt "Title"
 msgid "Delete all"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:154
+#: ./src/app/settings/controllers/domains.js:152
 msgctxt "Title"
 msgid "Delete domain"
 msgstr ""
@@ -10881,7 +10891,7 @@ msgstr ""
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:193
+#: ./src/app/settings/controllers/domains.js:190
 msgid "Catch-all address updated"
 msgstr ""
 
@@ -11032,11 +11042,11 @@ msgstr ""
 msgid "Do you want to trust the primary key?"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:161
+#: ./src/app/settings/controllers/domains.js:159
 msgid "Domain deleted"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:293
+#: ./src/app/settings/controllers/domains.js:290
 msgid "Domain verified"
 msgstr ""
 
@@ -11635,7 +11645,7 @@ msgstr ""
 msgid "The public key with fingerprint %s was replaced with a revoked key."
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:182
+#: ./src/app/settings/controllers/domains.js:179
 msgid "This feature is only available for ProtonMail Professional plans or higher"
 msgstr ""
 
@@ -11724,10 +11734,6 @@ msgstr ""
 msgid "advanced"
 msgstr ""
 
-#: ./src/templates/directives/composer/composerAskEmbedded.tpl.html:8
-msgid "as attachment"
-msgstr ""
-
 #: ./src/templates/autoresponder/subjectPrefix.tpl.html:1
 msgid "auto"
 msgstr ""
@@ -11756,10 +11762,6 @@ msgid "file attached"
 msgid_plural "files attached"
 msgstr[0] ""
 msgstr[1] ""
-
-#: ./src/templates/directives/composer/composerAskEmbedded.tpl.html:15
-msgid "inline"
-msgstr ""
 
 #: ./src/app/dashboard/directives/totalPlan.js:6
 msgid "month"
