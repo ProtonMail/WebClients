@@ -49,7 +49,9 @@ function SignaturesController(
         });
 
         on('domainsChange', (e, { data: newDomains }) => {
-            $scope.domains = newDomains;
+            $scope.$applyAsync(() => {
+                $scope.domains = newDomains;
+            });
         });
     };
 

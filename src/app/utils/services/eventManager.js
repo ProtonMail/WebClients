@@ -195,22 +195,12 @@ function eventManager(
         }
     }
 
-    function manageMembers(members) {
-        members && dispatch('members', members);
+    function manageMembers(members = []) {
+        members.length && dispatch('members', members);
     }
 
-    function manageDomains(domains) {
-        if (angular.isDefined(domains)) {
-            _.each(domains, (domain) => {
-                if (domain.Action === DELETE) {
-                    $rootScope.$emit('deleteDomain', domain.ID);
-                } else if (domain.Action === CREATE) {
-                    $rootScope.$emit('createDomain', domain.ID, domain.Domain);
-                } else if (domain.Action === UPDATE) {
-                    $rootScope.$emit('updateDomain', domain.ID, domain.Domain);
-                }
-            });
-        }
+    function manageDomains(domains = []) {
+        domains.length && dispatch('domains', domains);
     }
 
     function manageOrganization(organization) {

@@ -17,7 +17,7 @@ function pmDomainModel(authentication, dispatchers, domainApi) {
         }
 
         return Promise.all(promises).then((result) => {
-            const list = result.reduce((acc, { data = {} } = {}) => {
+            const list = result.reduce((acc, data = {}) => {
                 acc.push(...data.Domains);
                 return acc;
             }, []);
