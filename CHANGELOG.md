@@ -6,24 +6,25 @@
 
 ## Added
 
-- PGP Support
-- address verification
-- manage address keys
-- add multiple recipients from the composer
+- PGP support
+- Address verification
+- Manage address keys
+- Add multiple recipients from the composer
+- New session management options
 
 ## Changed
 
-- expiring messages
+- Expiring messages
 - ProtonMail addresses in the composer
-- remove a contact on mark as spam
+- Remove a contact on mark as spam
 
 ## Fixed
 
-- some issues with importing contacts
-- copy/paste images in the composer
-- wrong date in some cases when using search
-- some images were not loaded from certain newsletters
-- additional bug fixes
+- Some issues with importing contacts
+- Copy/paste images in the composer
+- Wrong date in some cases when using search
+- Some images were not loaded from certain newsletters
+- Additional bug fixes
 
 # [3.13.0] - 2018-03-29
 
