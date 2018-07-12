@@ -147,8 +147,6 @@ function DomainsController(
      * @param {Object} domain
      */
     $scope.deleteDomain = (domain) => {
-        const index = $scope.domains.indexOf(domain);
-
         confirmModal.activate({
             params: {
                 title: gettextCatalog.getString('Delete domain', null, 'Title'),
@@ -159,7 +157,6 @@ function DomainsController(
                         .then(eventManager.call)
                         .then(() => {
                             notification.success(gettextCatalog.getString('Domain deleted', null));
-                            $scope.domains.splice(index, 1); // Remove domain in interface
                             confirmModal.deactivate();
                         });
 
@@ -230,7 +227,7 @@ function DomainsController(
                     const promise = domainApi
                         .create({ Name })
                         .then((data) => eventManager.call().then(() => data))
-                        .then(({ data = {} } = {}) => {
+                        .then((data) => {
                             notification.success(gettextCatalog.getString('Domain created', null, 'Success'));
                             domainModal.deactivate();
                             // open the next step
@@ -264,7 +261,7 @@ function DomainsController(
 
     const verifyDomain = async ({ ID }) => {
         try {
-            const { data = {} } = await domainApi.get(ID);
+            const data = (await domainApi.get(ID)) || {};
             const { VerifyState } = data.Domain || {};
 
             if (VerifyState === 0) {
@@ -441,7 +438,7 @@ function DomainsController(
                     const promise = domainApi
                         .get(domain.ID)
                         .then((data) => eventManager.call().then(() => data))
-                        .then(({ data = {} } = {}) => {
+                        .then((data) => {
                             $scope.domains[index] = data.Domain;
                             dmarcModal.deactivate();
                         })

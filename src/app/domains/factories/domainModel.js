@@ -1,91 +1,52 @@
 import _ from 'lodash';
+import updateCollection from '../../utils/helpers/updateCollection';
 
 /* @ngInject */
-function domainModel(dispatchers, domainApi, gettextCatalog) {
-    let domains = [];
+function domainModel(dispatchers, domainApi) {
+    const CACHE = { domains: [] };
     const { dispatcher, on } = dispatchers(['domainsChange']);
-    const errorMessage = gettextCatalog.getString('Domain request failed', null, 'Error');
-    const query = () => angular.copy(domains);
+    const query = () => CACHE.domains.slice();
     const get = (ID) => _.find(query(), { ID });
 
-    function set(newDomains) {
-        domains = newDomains;
-    }
-    function catchall(ID, AddressID) {
-        return domainApi
-            .catchall(ID, { AddressID })
-            .then(({ data = {} } = {}) => {
-                const domain = _.find(domains, { ID });
+    const set = (newDomains = []) => {
+        CACHE.domains = newDomains.slice();
+        dispatcher.domainsChange('', query());
+    };
 
-                domain.CatchAll = AddressID;
-                return data;
-            })
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || errorMessage);
-            });
-    }
+    const catchall = async (ID, AddressID) => {
+        const data = (await domainApi.catchall(ID, { AddressID })) || {};
+        const domain = _.find(CACHE.domains, { ID });
 
-    async function fetchAddresses(domain = {}) {
-        try {
-            const { data = {} } = await domainApi.addresses(domain.ID);
-            const { Addresses = [] } = data;
+        domain.CatchAll = AddressID;
 
-            domain.Addresses = Addresses;
+        return data;
+    };
 
-            return domain;
-        } catch (err) {
-            const { data = {} } = err || {};
+    const fetchAddresses = async (domain = {}) => {
+        const { Addresses = [] } = (await domainApi.addresses(domain.ID)) || {};
 
-            throw new Error(data.Error || errorMessage);
-        }
-    }
+        domain.Addresses = Addresses;
 
-    async function fetch() {
-        try {
-            const { data = {} } = await domainApi.query();
-            const { Domains = [] } = data;
+        return domain;
+    };
 
-            set(await Promise.all(Domains.map(fetchAddresses)));
+    const fetch = async () => {
+        const { Domains = [] } = (await domainApi.query()) || {};
 
-            return query();
-        } catch (err) {
-            const { data = {} } = err || {};
+        set(await Promise.all(Domains.map(fetchAddresses)));
 
-            throw new Error(data.Error || errorMessage);
-        }
-    }
+        return query();
+    };
 
-    const clear = () => (domains.length = 0);
+    const clear = () => (CACHE.domains.length = 0);
 
-    on('deleteDomain', (event, ID) => {
-        const index = _.findIndex(domains, { ID });
+    const manageCache = (events) => {
+        const { collection = [] } = updateCollection(CACHE.domains, events, 'Domain');
+        set(collection);
+    };
 
-        if (index > -1) {
-            domains.splice(index, 1);
-            dispatcher.domainsChange('', domains);
-        }
-    });
-
-    on('createDomain', (event, ID, domain) => {
-        const index = _.findIndex(domains, { ID });
-
-        if (index === -1) {
-            domains.push(domain);
-        } else {
-            _.extend(domains[index], domain);
-        }
-        dispatcher.domainsChange('', domains);
-    });
-
-    on('updateDomain', (event, ID, domain) => {
-        const index = _.findIndex(domains, { ID });
-
-        if (index === -1) {
-            domains.push(domain);
-        } else {
-            _.extend(domains[index], domain);
-        }
-        dispatcher.domainsChange('', domains);
+    on('app.event', (e, { type, data = {} }) => {
+        type === 'domains' && manageCache(data);
     });
 
     on('logout', () => {
