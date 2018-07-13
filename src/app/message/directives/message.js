@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { SEND_TYPES, ENCRYPTED_STATUS } from '../../constants';
+import { SEND_TYPES } from '../../constants';
 import displaySignatureStatus from '../../../helpers/displaySignatureStatus';
 
 const CLASSNAME = {
@@ -121,7 +121,7 @@ function message(
                             );
                         };
 
-                        const recipients = _.map(scope.message.ToList.concat(scope.message.CCList, scope.message.BCCList), 'Address');
+                        const recipients = scope.message.emailsToString();
                         const parsedHeaders = scope.message.ParsedHeaders; // || { };
                         const encryptionList = parseRecipientHeader(
                             parsedHeaders['X-Pm-Recipient-Encryption'] || '',
@@ -237,7 +237,7 @@ function message(
                     const type = tools.typeView();
 
                     if (message && canBeOpen(message)) {
-                        if (message.IsEncrypted === ENCRYPTED_STATUS.PGP_MIME) {
+                        if (message.isPGPMIME()) {
                             // we need to reload the attachments too: otherwise the attachments disappear from the message
                             await message.loadPGPAttachments();
                         }
