@@ -181,6 +181,7 @@ export const ENCRYPTED_STATUS = {
     STORED_ENC: 5,
     PGP_INLINE: 7,
     PGP_MIME: 8,
+    PGP_MIME_SIGNED: 9,
     AUTOREPLY: 10
 };
 
@@ -315,6 +316,7 @@ export const KNOWLEDGE_BASE = {
 export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
 
 export const MIME_TYPES = {
+    MIME: 'multipart/mixed',
     PLAINTEXT: 'text/plain',
     DEFAULT: 'text/html'
 };

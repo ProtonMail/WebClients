@@ -303,6 +303,10 @@ function messageModel(
             return { message: content, attachments: convertedAttachments, verified, encryptedSubject };
         }
 
+        isPGPMIME() {
+            return PGPMIME_TYPES.includes(this.IsEncrypted) || this.MIMEType === MIME_TYPES.MIME;
+        }
+
         decryptBody() {
             const privateKeys = authentication.getPrivateKeys(this.AddressID);
 
@@ -342,7 +346,7 @@ function messageModel(
                             const verified =
                                 !pubKeys.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
 
-                            if (PGPMIME_TYPES.includes(this.IsEncrypted) || this.MIMEType === 'multipart/mixed') {
+                            if (this.isPGPMIME()) {
                                 return this.parse(data, verified);
                             }
 
