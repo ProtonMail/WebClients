@@ -38,7 +38,7 @@ function mailUtils(sanitize) {
         }
 
         if (searchObject.subject) {
-            message.Subject = sanitize.input(searchObject.subject);
+            message.Subject = decodeURIComponent(sanitize.input(searchObject.subject));
         }
 
         if (searchObject.cc) {
@@ -50,7 +50,7 @@ function mailUtils(sanitize) {
         }
 
         if (searchObject.body) {
-            message.DecryptedBody = sanitize.message(searchObject.body);
+            message.DecryptedBody = decodeURIComponent(sanitize.message(searchObject.body));
         }
 
         return message;
