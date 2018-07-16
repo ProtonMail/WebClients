@@ -18,11 +18,16 @@ function contactEditor(
     contactImportEncryption
 ) {
     const { dispatcher, on } = dispatchers(['contacts', 'progressBar']);
-    /*
-    * Add contacts
-    * @param {Array} contacts
-    * @return {Promise}
-    */
+
+    const I18N = {
+        GENERAL_CONTACT_ERROR: gettextCatalog.getString('Error creating a contact', null, 'error message')
+    };
+    /**
+     * Add contacts
+     * @param {Array} contacts
+     * @param {String} [mode] - pass in 'import' to trigger the contactLoaderModal and show creation progress
+     * @return {Promise}
+     */
     function create({ contacts = [], mode }) {
         const preCreation = mode === 'import' ? contactImportEncryption.process(contacts) : Promise.resolve(contacts);
         const promise = preCreation.then(Contact.add).then((data) => {
@@ -47,6 +52,29 @@ function contactEditor(
         }
 
         return promise;
+    }
+
+    /**
+     * Add a single contact using create, but transforming the result of create into a proper error
+     * if create encounters an error. The purpose is to make create easier to use for creating a single contact.
+     * @param {Object} contact the contact to be created
+     * @return {Promise}
+     * @throws Error if creation caused an error
+     */
+    async function createSingular({ contact }) {
+        const {
+            created: [creationResult],
+            errors: [errorResult] = []
+        } = await create({ contacts: [contact] });
+        if (errorResult || !creationResult) {
+            const { code, error = I18N.GENERAL_CONTACT_ERROR } = errorResult || {};
+            const exception = new Error(error);
+            if (code) {
+                exception.Code = code;
+            }
+            throw exception;
+        }
+        return creationResult;
     }
 
     /**
@@ -118,7 +146,7 @@ function contactEditor(
         actions.forEach((action) => {
             action.then((result) => {
                 // When a group has finished, update the progress.
-                progress += Math.floor(result.total * 100 / total);
+                progress += Math.floor((result.total * 100) / total);
                 dispatcher.progressBar('contactsProgressBar', { progress });
                 return result;
             });
@@ -202,11 +230,11 @@ function contactEditor(
         return promise;
     }
 
-    /*
-        * Edit the unencrypted part of a contact
-        * @param {Object} contact
-        * @return {Promise}
-        */
+    /**
+     * Edit the unencrypted part of a contact
+     * @param {Object} contact
+     * @return {Promise}
+     */
     function updateUnencrypted({ contact = {} }) {
         const promise = Contact.updateUnencrypted(contact).then(({ Contact, cards }) => {
             dispatcher.contacts('contactUpdated', { contact: Contact, cards });
@@ -217,10 +245,12 @@ function contactEditor(
         networkActivityTracker.track(promise);
         return promise;
     }
-    /*
-        * Delete contact(s)
-        * @param {Array} selectContacts
-        */
+
+    /**
+     * Delete contact(s)
+     * @param {Array} contactIDs The contactIDs to delete
+     * @param {boolean} confirm whether to ask for confirmation before deleting
+     */
     function remove({ contactIDs = [], confirm = true }) {
         const success =
             contactIDs === 'all'
@@ -313,7 +343,7 @@ function contactEditor(
         type === 'addContact' && add(data);
     });
 
-    return { init: angular.noop, create, update, updateUnencrypted, remove, merge };
+    return { init: angular.noop, create, createSingular, update, updateUnencrypted, remove, merge };
 }
 
 export default contactEditor;

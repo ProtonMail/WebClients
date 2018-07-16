@@ -32,7 +32,7 @@ function messageSenderSettings(
     const getNewContact = ({ Address, Name }) => {
         const contact = angular.copy(contactSchema.contactAPI);
         contact.vCard.add('email', Address, { group: 'item1' });
-        contact.vCard.set('fn', Name, { type: 'x-fn' });
+        contact.vCard.set('fn', Name || Address, { type: 'x-fn' });
         return contact;
     };
 
@@ -88,7 +88,7 @@ function messageSenderSettings(
 
                         const partialUpdate = contact.ID
                             ? contactEditor.updateUnencrypted({ contact })
-                            : contactEditor.create({ contacts: [contact] });
+                            : contactEditor.createSingular({ contact });
                         const updatePromise = partialUpdate
                             .then(() => sendPreferences.get([normalizedEmail]))
                             .then(({ [normalizedEmail]: { pinned, scheme } }) => {
