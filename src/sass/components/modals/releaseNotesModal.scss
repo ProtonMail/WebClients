@@ -3,8 +3,7 @@
         max-width: 100%;
     }
     h1 {
-        color: $gray !important;
-        border-bottom: 1px dashed $gray;
+        border-bottom: 1px solid $default-color;
         margin-bottom: 10px;
     }
     .modal-header {
@@ -20,7 +19,7 @@
     .group {
         font-size: 13px !important;
         line-height: 13px !important;
-        color: #fff !important;
+
         padding: 3px 5px;
         text-transform: uppercase;
         display: inline-block;
@@ -29,12 +28,14 @@
 
     .features {
         background-color: $feature;
+        color: $white !important;
     }
     .bugs {
         background-color: $bug;
+        color: $white !important;
     }
     .others {
-        background-color: $blue-gray;
+        background-color: $warning;
     }
 
     .change {
