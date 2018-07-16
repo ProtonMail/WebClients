@@ -4753,7 +4753,7 @@ msgctxt "Info"
 msgid "Are you sure you want to clear all your logs?"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:265
+#: ./src/app/contact/factories/contactEditor.js:295
 msgctxt "Info"
 msgid "Are you sure you want to delete all your contacts?"
 msgstr ""
@@ -4764,7 +4764,7 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this address?"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:266
+#: ./src/app/contact/factories/contactEditor.js:296
 msgctxt "Info"
 msgid "Are you sure you want to delete this contact?"
 msgid_plural "Are you sure you want to delete the selected contacts?"
@@ -7043,7 +7043,7 @@ msgctxt "Message"
 msgid ""
 "An RSA key with bit size {{ bits }} is already active for this address.\n"
 "Generating another key will cause slower account loading and deletion of this key can cause issues.\n"
-"If you are generating a new key because your old key is compromised, please mark that key as compromised first.\n"
+"If you are generating a new key because your old key is compromised, please mark that key as compromised.\n"
 "Are you sure you want to continue?"
 msgstr ""
 
@@ -7872,7 +7872,7 @@ msgctxt "Subtitle advanced settings"
 msgid "Configure External PGP (optional)"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:227
+#: ./src/app/contact/factories/contactEditor.js:257
 msgctxt "Success"
 msgid "All contacts deleted"
 msgstr ""
@@ -7897,7 +7897,7 @@ msgctxt "Success"
 msgid "Code applied"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:228
+#: ./src/app/contact/factories/contactEditor.js:258
 msgctxt "Success"
 msgid "Contact deleted"
 msgid_plural "Contacts deleted"
@@ -7984,8 +7984,8 @@ msgctxt "Success"
 msgid "Signature verification enabled"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:197
-#: ./src/app/contact/factories/contactEditor.js:213
+#: ./src/app/contact/factories/contactEditor.js:225
+#: ./src/app/contact/factories/contactEditor.js:241
 msgctxt "Success message"
 msgid "Contact edited"
 msgstr ""
@@ -8632,7 +8632,7 @@ msgid "Decrypt message"
 msgstr ""
 
 #: ./src/app/composer/controllers/composeMessage.js:582
-#: ./src/app/contact/factories/contactEditor.js:276
+#: ./src/app/contact/factories/contactEditor.js:306
 #: ./src/app/elements/services/removeElement.js:14
 msgctxt "Title"
 msgid "Delete"
@@ -8658,7 +8658,7 @@ msgctxt "Title"
 msgid "Delete address"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:275
+#: ./src/app/contact/factories/contactEditor.js:305
 #: ./src/app/elements/directives/advancedFilterElement.js:51
 msgctxt "Title"
 msgid "Delete all"
@@ -10514,6 +10514,11 @@ msgstr ""
 #: ./src/app/labels/directives/dropdownLabels.js:15
 msgctxt "dropdown label"
 msgid "Labels Saved"
+msgstr ""
+
+#: ./src/app/contact/factories/contactEditor.js:23
+msgctxt "error message"
+msgid "Error creating a contact"
 msgstr ""
 
 #: ./src/app/utils/filters/humanSize.js:17
