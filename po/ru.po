@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-07-10 17:05\n"
+"PO-Revision-Date: 2018-07-16 09:11\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:61
 msgctxt "1 of 2 contacts successfully imported."
@@ -241,7 +241,7 @@ msgstr "<i class=\"fa fa-minus composerHeader-btn-icon\"></i>"
 #: ./src/templates/squire/squireToolbar.tpl.html:132
 msgctxt "Action"
 msgid "<i class=\"fa fa-quote-right\"></i>"
-msgstr ""
+msgstr "<i class=\"fa fa-quote-right\"></i>"
 
 #: ./src/templates/directives/composer/composer-header.tpl.html:44
 msgctxt "Action"
@@ -252,7 +252,7 @@ msgstr "<i class=\"fa fa-times composerHeader-btn-icon\"></i>"
 #: ./src/templates/address/addressKeysView.tpl.html:131
 msgctxt "Action"
 msgid "<i class=\"fa fa-times\"></i>"
-msgstr ""
+msgstr "<i class=\"fa fa-times\"></i>"
 
 #: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/views/domains.tpl.html:124
@@ -975,7 +975,7 @@ msgstr "Включено"
 #: ./src/templates/payment/featuresList.tpl.html:46
 msgctxt "Action"
 msgid "Encrypted contacts"
-msgstr ""
+msgstr "Зашифрованные контакты"
 
 #: ./src/app/composer/directives/btnSendMessage.js:19
 msgctxt "Action"
@@ -1095,7 +1095,7 @@ msgstr "Импортировать"
 #: ./src/templates/address/addressKeysView.tpl.html:40
 msgctxt "Action"
 msgid "Import Key"
-msgstr ""
+msgstr "Импортировать ключ"
 
 #. Import contacts button in no result placeholder
 #: ./src/templates/contact/contactNoResult.tpl.html:9
@@ -1157,7 +1157,7 @@ msgstr "Сделать администратором"
 #: ./src/templates/address/addressKeysView.tpl.html:176
 msgctxt "Action"
 msgid "Make Primary"
-msgstr ""
+msgstr "Сделать основным"
 
 #: ./src/app/members/directives/memberEditBtn.js:11
 msgctxt "Action"
@@ -1206,12 +1206,12 @@ msgstr "Отметить как непрочитанное"
 #: ./src/templates/address/addressKeysView.tpl.html:197
 msgctxt "Action"
 msgid "Mark compromised"
-msgstr ""
+msgstr "Пометить скомпрометированным"
 
 #: ./src/templates/address/addressKeysView.tpl.html:185
 msgctxt "Action"
 msgid "Mark obsolete"
-msgstr ""
+msgstr "Пометить устаревшим"
 
 #. contacts toolbar menu option
 #: ./src/templates/contact/contactDisplayModal.tpl.html:14
@@ -1264,7 +1264,7 @@ msgstr "Нужно больше пользователей?"
 #: ./src/templates/address/addressKeysView.tpl.html:33
 msgctxt "Action"
 msgid "New Key"
-msgstr ""
+msgstr "Новый ключ"
 
 #: ./src/templates/modals/changePassword.tpl.html:41
 #: ./src/templates/modals/domain/address.tpl.html:46
@@ -1453,7 +1453,7 @@ msgstr "Лишить администраторских прав"
 #: ./src/templates/views/security.tpl.html:30
 msgctxt "Action"
 msgid "Revoke all other sessions"
-msgstr ""
+msgstr "Прервать все другие сессии"
 
 #. Save button for updating default identity on account page
 #. contact details
@@ -1527,7 +1527,7 @@ msgstr "Отправить"
 #: ./src/templates/modals/expirationModal.tpl.html:55
 msgctxt "Action"
 msgid "Send anyway"
-msgstr ""
+msgstr "Всё равно отправить"
 
 #: ./src/templates/formUtils/codeVerificator.tpl.html:21
 msgctxt "Action"
@@ -1600,7 +1600,7 @@ msgstr "Показать непрочитанные"
 #: ./src/app/user/directives/signupLink.js:6
 msgctxt "Action"
 msgid "Sign up"
-msgstr ""
+msgstr "Регистрация"
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:62
 msgctxt "Action"
@@ -1726,7 +1726,7 @@ msgstr "Улучшить сейчас"
 #: ./src/templates/vpn/vpnView.tpl.html:13
 msgctxt "Action"
 msgid "Upgrade plan now"
-msgstr ""
+msgstr "Расширить тариф сейчас"
 
 #: ./src/templates/directives/core/sidebarProgress.tpl.html:4
 msgctxt "Action"
@@ -1865,7 +1865,7 @@ msgstr "Показать произвольные поля"
 #: ./src/templates/views/security.tpl.html:45
 msgctxt "Action in the active sessions table"
 msgid "Revoke"
-msgstr ""
+msgstr "Прервать"
 
 #: ./src/templates/notifications/retry.tpl.html:8
 msgctxt "Action notification error trying to connect to the API"
@@ -2039,7 +2039,7 @@ msgstr "Вернуться к почте"
 #: ./src/templates/views/security.tpl.html:44
 msgctxt "Badge in the active sessions table"
 msgid "Current session"
-msgstr ""
+msgstr "Текущая сессия"
 
 #. Make sure this string is short please
 #: ./src/templates/dashboard/totalRows.tpl.html:33
@@ -2102,27 +2102,27 @@ msgstr "+ Добавить ProtonVPN"
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:85
 msgctxt "Button"
 msgid "Remove"
-msgstr ""
+msgstr "Удалить"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:63
 msgctxt "Button"
 msgid "Set Primary"
-msgstr ""
+msgstr "Сделать основным"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:92
 msgctxt "Button"
 msgid "Trust"
-msgstr ""
+msgstr "Доверять"
 
 #: ./src/app/dashboard/directives/selectPlan.js:5
 msgctxt "Button to select plan on the dashboard"
 msgid "Switch to Free"
-msgstr ""
+msgstr "Перейти на Free"
 
 #: ./src/app/dashboard/directives/selectPlan.js:6
 msgctxt "Button to select plan on the dashboard"
 msgid "Switch to Plus"
-msgstr ""
+msgstr "Перейти на Plus"
 
 #: ./src/app/dashboard/directives/selectPlan.js:7
 msgctxt "Button to select plan on the dashboard"
@@ -2162,7 +2162,7 @@ msgstr "Улучшить до Professional"
 #: ./src/app/dashboard/directives/selectPlan.js:26
 msgctxt "Button to select plan on the dashboard"
 msgid "Upgrade to Visionary"
-msgstr ""
+msgstr "Улучшить до Visionary"
 
 #: ./src/app/settings/controllers/security.js:32
 msgctxt "Clear user's logs (security)"
@@ -2236,150 +2236,150 @@ msgstr "Простой текст"
 #: ./src/app/squire/modals/addFileModal.js:7
 msgctxt "Composer, add File"
 msgid "Add file"
-msgstr ""
+msgstr "Добавить файл"
 
 #: ./src/app/squire/modals/addFileModal.js:8
 msgctxt "Composer, add File"
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: ./src/templates/squire/addFile.tpl.html:49
 msgctxt "Composer, add File"
 msgid "Error loading image"
-msgstr ""
+msgstr "Ошибка загрузки изображения"
 
 #: ./src/templates/squire/addFile.tpl.html:38
 msgctxt "Composer, add File"
 msgid "If your URL is correct, you'll see an image preview here. Large images may take a few minutes to\n"
 "                    appear."
-msgstr ""
+msgstr "Если ваша ссылка правильна, то здесь вы увидите образец изображения. Загрузка изображений большого размера может занимать несколько минут."
 
 #: ./src/templates/squire/addFile.tpl.html:9
 msgctxt "Composer, add File"
 msgid "Image URL"
-msgstr ""
+msgstr "URL-адрес изображения"
 
 #: ./src/templates/squire/addFile.tpl.html:29
 msgctxt "Composer, add File"
 msgid "Image preview"
-msgstr ""
+msgstr "Предпросмотр"
 
 #: ./src/app/squire/modals/addFileModal.js:6
 msgctxt "Composer, add File"
 msgid "Insert"
-msgstr ""
+msgstr "Вставить"
 
 #: ./src/app/squire/modals/addFileModal.js:5
 msgctxt "Composer, add File"
 msgid "Insert image"
-msgstr ""
+msgstr "Вставить изображение"
 
 #: ./src/templates/squire/addFile.tpl.html:46
 msgctxt "Composer, add File"
 msgid "Loading image"
-msgstr ""
+msgstr "Загрузка изображения"
 
 #: ./src/templates/squire/addFile.tpl.html:3
 msgctxt "Composer, add File"
 msgid "Web address"
-msgstr ""
+msgstr "Веб-адрес"
 
 #: ./src/app/squire/directives/addLink.js:24
 msgctxt "Composer, add Link"
 msgid "Add a phone number"
-msgstr ""
+msgstr "Добавить номер телефона"
 
 #: ./src/app/squire/directives/addLink.js:22
 msgctxt "Composer, add Link"
 msgid "Add a web address"
-msgstr ""
+msgstr "Добавить веб-адрес"
 
 #: ./src/app/squire/directives/addLink.js:23
 msgctxt "Composer, add Link"
 msgid "Add an email address"
-msgstr ""
+msgstr "Добавить адрес эл. почты"
 
 #: ./src/app/squire/modals/addLinkModal.js:12
 #: ./src/app/squire/modals/addLinkModal.js:7
 msgctxt "Composer, add Link"
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: ./src/app/squire/modals/addLinkModal.js:10
 msgctxt "Composer, add Link"
 msgid "Edit link"
-msgstr ""
+msgstr "Изменить ссылку"
 
 #: ./src/templates/squire/addLink.tpl.html:51
 msgctxt "Composer, add Link"
 msgid "Email address"
-msgstr ""
+msgstr "Адрес эл. почты"
 
 #: ./src/templates/squire/addLink.tpl.html:2
 msgctxt "Composer, add Link"
 msgid "In the first box, put the link/email/phone number the text\n"
 "        should go to. In the second box, put the text you want to appear."
-msgstr ""
+msgstr "В первое поле введите ссылку / адрес эл. почты / № телефона. Во второе поле &mdash; текст-описание для показа."
 
 #: ./src/app/squire/modals/addLinkModal.js:6
 msgctxt "Composer, add Link"
 msgid "Insert"
-msgstr ""
+msgstr "Вставить"
 
 #: ./src/app/squire/modals/addLinkModal.js:5
 msgctxt "Composer, add Link"
 msgid "Insert link"
-msgstr ""
+msgstr "Вставить ссылку"
 
 #: ./src/templates/squire/addLink.tpl.html:16
 msgctxt "Composer, add Link"
 msgid "Link URL"
-msgstr ""
+msgstr "Адрес ссылки"
 
 #: ./src/templates/squire/addLink.tpl.html:63
 msgctxt "Composer, add Link"
 msgid "Link label"
-msgstr ""
+msgstr "Подсказка к ссылке"
 
 #: ./src/templates/squire/addLink.tpl.html:57
 msgctxt "Composer, add Link"
 msgid "Phone number"
-msgstr ""
+msgstr "Hомер телефона"
 
 #: ./src/templates/squire/addLink.tpl.html:36
 msgctxt "Composer, add Link"
 msgid "Text to display"
-msgstr ""
+msgstr "Текст для отображения"
 
 #: ./src/app/squire/directives/addLink.js:9
 msgctxt "Composer, add Link"
 msgid "To what URL should this link go?"
-msgstr ""
+msgstr "На какой адрес должна вести эта ссылка?"
 
 #: ./src/app/squire/directives/addLink.js:10
 msgctxt "Composer, add Link"
 msgid "To what email address should this link?"
-msgstr ""
+msgstr "На какой адрес эл. почты должна указывать эта ссылка?"
 
 #: ./src/app/squire/directives/addLink.js:15
 msgctxt "Composer, add Link"
 msgid "To what phone number should this link?"
-msgstr ""
+msgstr "На какой № телефона должна указывать эта ссылка?"
 
 #: ./src/templates/squire/addLink.tpl.html:8
 msgctxt "Composer, add Link"
 msgid "URL link"
-msgstr ""
+msgstr "URL-ссылка"
 
 #: ./src/app/squire/modals/addLinkModal.js:11
 msgctxt "Composer, add Link"
 msgid "Update"
-msgstr ""
+msgstr "Обновить"
 
 #: ./src/templates/squire/addLink.tpl.html:45
 msgctxt "Composer, add Link"
 msgid "Web address"
-msgstr ""
+msgstr "Веб-адрес"
 
 #: ./src/app/composer/directives/composerAskEmbedded.js:4
 msgctxt "Composer, message drag and drop images"
@@ -2443,31 +2443,35 @@ msgstr "совпадает с"
 #: ./src/app/address/directives/addressKeysView.js:43
 msgctxt "Confirm message"
 msgid "Are you sure you want to delete this key pair? Messages that have been encrypted with this key can"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить эту ключевую пару? Сообщения, которые были зашифрованы этим ключом, могут"
 
 #: ./src/app/address/directives/addressKeysView.js:25
 msgctxt "Confirm message"
 msgid "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails."
-msgstr ""
+msgstr "Вы действительно хотите импортировать закрытый ключ? Импорт созданного небезопасным способом или ставшего известным закрытого ключа может навредить безопасности ваших писем."
 
 #: ./src/app/address/services/deleteKeyProcess.js:25
 msgctxt "Confirm message"
 msgid "Deleting your keys is irreversible. \n"
 "        To be able to access any message encrypted with this key, you might want to make a back up of this key for later use.\n"
 "        Do you want to export this key?"
-msgstr ""
+msgstr "Удаление ваших ключей необратимо. \n"
+"        Чтобы иметь возможность доступа к любому зашифрованному этим ключом сообщению, вам может пригодиться запасная копия этого ключа, сделанная на будущее.\n"
+"        Вы хотите экспортировать этот ключ?"
 
 #: ./src/app/address/services/deleteKeyProcess.js:17
 msgctxt "Confirm message"
 msgid "This feature is intended for advanced users only!\n"
 "        After deleting this key, you will not be able to decrypt any message that is encrypted with this key.\n"
 "        It may lead to data loss. Are you sure you want to continue?"
-msgstr ""
+msgstr "Эта возможность предназначена только для опытных пользователей!\n"
+"        После удаления этого ключа вы не сможете расшифровать любые зашифрованные с его помощью сообщения.\n"
+"        Это может привести к потере данных. Вы уверены, что хотите продолжить?"
 
 #: ./src/app/address/directives/addressKeysView.js:32
 msgctxt "Confirm message"
 msgid "This key has not been activated. It is only possible to export the public key. Do you want to export the public key?"
-msgstr ""
+msgstr "Этот ключ не был активирован. Возможно только экспортировать публичный ключ. Вы хотите сделать это?"
 
 #: ./src/app/settings/directives/encryptionView.js:16
 msgctxt "Confirm modal title"
@@ -2477,7 +2481,7 @@ msgstr "Подписывать ли исходящие сообщения авт
 #: ./src/app/address/directives/addressKeysView.js:31
 msgctxt "Confirm modal title"
 msgid "Download Public Key"
-msgstr ""
+msgstr "Скачать публичный ключ"
 
 #: ./src/app/address/directives/addressKeysView.js:30
 msgctxt "Confirm modal title"
@@ -2592,12 +2596,12 @@ msgstr "Включено"
 msgctxt "Danger"
 msgid "Address Verification with Trusted Keys is enabled for this address.\n"
 "        To be able to send to this address, first trust public keys that can be used for sending."
-msgstr ""
+msgstr "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
 
 #: ./src/templates/directives/contact/contactPgp.tpl.html:27
 msgctxt "Danger"
 msgid "This address is disabled. To be able to send to this address, the owner must first enable the address."
-msgstr ""
+msgstr "Этот адрес отключён. Чтобы иметь возможность отправки на этот адрес, сначала он должен быть включён его владельцем."
 
 #: ./src/templates/dashboard/visionaryColumn.tpl.html:3
 msgctxt "Dashboard free plan title"
@@ -3102,7 +3106,7 @@ msgstr "Повторять еженедельно"
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:104
 msgctxt "Empty table message"
 msgid "All available keys are trusted"
-msgstr ""
+msgstr "Все доступные ключи &mdash; доверяемые"
 
 #: ./src/app/message/factories/messageModel.js:28
 msgctxt "Encrypted Headers filename"
@@ -3355,7 +3359,7 @@ msgstr "Ошибка при обновлении настройки VPN"
 #: ./src/app/commons/services/ptClipboard.js:5
 msgctxt "Error"
 msgid "Error while copying"
-msgstr ""
+msgstr "Ошибка при копировании"
 
 #: ./src/app/settings/directives/encryptionView.js:15
 msgctxt "Error"
@@ -3365,7 +3369,7 @@ msgstr "Ошибка при обновлении настройки"
 #: ./src/app/ui/directives/autocompleteEmails.js:29
 msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
-msgstr ""
+msgstr "Не удалось получить сведения о ключах адресов {{emails}}. Эти адреса удалены из списка получателей. Пожалуйста, попробуйте ещё раз."
 
 #: ./src/app/address/factories/reactivateKeys.js:24
 msgctxt "Error"
@@ -3397,7 +3401,7 @@ msgstr "Обязательное поле"
 #: ./src/app/attachments/services/AttachmentEvent.js:6
 msgctxt "Error"
 msgid "ICS parsing error:"
-msgstr ""
+msgstr "Ошибка разбора ICS:"
 
 #: ./src/templates/views/reset-login-password.tpl.html:51
 msgctxt "Error"
@@ -3572,7 +3576,7 @@ msgstr "Запрошено нецелочисленное значение ве�
 #: ./src/templates/squire/addFile.tpl.html:23
 msgctxt "Error"
 msgid "Not a valid URL"
-msgstr ""
+msgstr "URL-адрес не является допустимым"
 
 #: ./src/app/organization/factories/organizationKeysModel.js:30
 msgctxt "Error"
@@ -3749,7 +3753,7 @@ msgstr "Максимальная длина строки-темы &mdash; {{size
 #: ./src/app/ui/directives/autocompleteEmails.js:22
 msgctxt "Error"
 msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
-msgstr ""
+msgstr "Максимальное количество &mdash; ({{total}}) из {{limit}} получателей."
 
 #: ./src/templates/user/usernameDomain.tpl.html:44
 msgctxt "Error"
@@ -4962,12 +4966,12 @@ msgstr "Группировка сообщений автоматически г�
 #: ./src/app/commons/services/ptClipboard.js:4
 msgctxt "Info"
 msgid "Copied to clipboard"
-msgstr ""
+msgstr "Скопировано в буфер обмена"
 
 #: ./src/app/commons/directives/copy.js:4
 msgctxt "Info"
 msgid "Copy to your clipboard"
-msgstr ""
+msgstr "Копировать в ваш буфер обмена"
 
 #: ./src/templates/views/members.tpl.html:14
 msgctxt "Info"
@@ -5264,7 +5268,7 @@ msgstr "В логах перечислены попытки авторизаци
 #: ./src/app/composer/controllers/composeMessage.js:600
 msgctxt "Info"
 msgid "Message discarded"
-msgstr ""
+msgstr "Сообщение отменено"
 
 #: ./src/templates/user/signupPayForm.tpl.html:37
 msgctxt "Info"
@@ -5407,7 +5411,7 @@ msgstr "Платежи недоступны в данный момент. Поп
 #: ./src/app/composer/controllers/composeMessage.js:583
 msgctxt "Info"
 msgid "Permanently delete this draft?"
-msgstr ""
+msgstr "Удалить этот черновик навсегда?"
 
 #: ./src/templates/modals/setupOrganization.tpl.html:14
 msgctxt "Info"
@@ -5829,7 +5833,7 @@ msgstr "Ошибка подтверждения"
 #: ./src/templates/contact/contactError.tpl.html:12
 msgctxt "Info"
 msgid "Verification of this content’s signature failed"
-msgstr "Ошибка подтверждения подписи содержимого"
+msgstr "Ошибка проверки подписи содержимого"
 
 #: ./src/templates/layout/pre.tpl.html:4
 msgctxt "Info"
@@ -5886,7 +5890,7 @@ msgstr "Мы отправим код сброса на ваш <a class=\"bold\" 
 #: ./src/templates/views/reset-login-password.tpl.html:48
 msgctxt "Info"
 msgid "We've sent a reset code to your <strong>recovery email</strong>, valid for one hour or until you request a new code. Enter it below to continue."
-msgstr ""
+msgstr "Мы отправили код сброса на ваш <strong>резервный адрес электронной почты</strong>. Код действителен на протяжении часа, либо до запроса вами нового кода. Для продолжения введите код ниже."
 
 #: ./src/templates/modals/feedback.tpl.html:9
 msgctxt "Info"
@@ -5911,7 +5915,7 @@ msgstr "Без активации вы не сможете создавать н
 #: ./src/templates/vpn/vpnView.tpl.html:12
 msgctxt "Info"
 msgid "You are using ProtonVPN Free. Upgrade to ProtonVPN Plus to get faster speeds and better privacy."
-msgstr ""
+msgstr "Вы используете ProtonVPN Free. Расширьте тариф до ProtonVPN Plus для получения более быстрых скоростей и лучшей конфиденциальности."
 
 #: ./src/templates/partials/wizard.tpl.html:33
 msgctxt "Info"
@@ -6081,10 +6085,10 @@ msgstr "Пароль вашей организации может быть пр�
 msgctxt "Info"
 msgid "embedded image"
 msgid_plural "embedded images"
-msgstr[0] ""
+msgstr[0] "встроенное изображение"
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
+msgstr[3] "встроенные изображения"
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:20
 msgctxt "Info"
@@ -6114,7 +6118,7 @@ msgstr "используется"
 #: ./src/app/contact/factories/contactSpam.js:8
 msgctxt "Info"
 msgid "{{ name }} is also in your contacts. Remove them from your contacts?"
-msgstr ""
+msgstr "{{ name }} также есть в ваших контактах. Удалить это из ваших контактов?"
 
 #: ./src/templates/views/members.tpl.html:76
 msgctxt "Info"
@@ -6156,7 +6160,7 @@ msgstr "{{n}} ключей активировано повторно"
 #: ./src/templates/views/security.tpl.html:51
 msgctxt "Info about active sessions"
 msgid "Unless you explicitly logout or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity."
-msgstr ""
+msgstr "До тех пор, пока вы явным образом не выйдете либо не измените свой пароль, сессии могут существовать до 6 месяцев. Срок действия сессий истекает после 2 недель бездействия."
 
 #: ./src/app/composer/directives/composerTime.js:5
 msgctxt "Info display in the composer footer"
@@ -6306,12 +6310,12 @@ msgstr "Создан {{created}}, {{bits}} бит (применяется тол
 #: ./src/templates/address/addressKeysView.tpl.html:123
 msgctxt "Key state badge"
 msgid "Compromised"
-msgstr ""
+msgstr "Скомпрометирован"
 
 #: ./src/templates/address/addressKeysView.tpl.html:100
 msgctxt "Key state badge"
 msgid "Obsolete"
-msgstr ""
+msgstr "Устаревший"
 
 #: ./src/templates/views/labels.tpl.html:53
 msgctxt "Label"
@@ -7069,7 +7073,10 @@ msgid "An RSA key with bit size {{ bits }} is already active for this address.\n
 "Generating another key will cause slower account loading and deletion of this key can cause issues.\n"
 "If you are generating a new key because your old key is compromised, please mark that key as compromised first.\n"
 "Are you sure you want to continue?"
-msgstr ""
+msgstr "Для этого адреса уже активен RSA-ключ длиной {{ bits }} бит.\n"
+"Создание ещё одного ключа вызовет замедление загрузки учётной записи и удаление этого ключа может вызвать проблемы.\n"
+"Если вы создаёте новый ключ по причине компрометации старого, то сначала отметьте тот ключ как скомпрометированный.\n"
+"Вы уверены, что хотите продолжить?"
 
 #: ./src/app/message/services/messageBuilder.js:186
 msgctxt "Message"
@@ -7094,37 +7101,37 @@ msgstr "Пустое сообщение"
 #: ./src/templates/message/messageDisplayError.tpl.html:3
 msgctxt "Message decryption error"
 msgid "Decryption error: Decryption of this message's encryption content failed."
-msgstr ""
+msgstr "Ошибка расшифровки: не удалось расшифровать содержимое этого зашифрованного сообщения."
 
 #: ./src/app/message/factories/messageModel.js:96
 msgctxt "Message encryption status"
 msgid "Encrypted message"
-msgstr ""
+msgstr "Зашифрованное сообщение"
 
 #: ./src/app/message/factories/messageModel.js:58
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message"
-msgstr ""
+msgstr "Сообщение, зашифрованное сквозным методом"
 
 #: ./src/app/message/factories/messageModel.js:59
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message from verified address"
-msgstr ""
+msgstr "Сообщение, зашифрованное сквозным методом; с проверенного адреса"
 
 #: ./src/app/message/factories/messageModel.js:67
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message"
-msgstr ""
+msgstr "Сообщение, зашифрованное PGP"
 
 #: ./src/app/message/factories/messageModel.js:68
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message from verified address"
-msgstr ""
+msgstr "Сообщение, зашифрованное PGP; с проверенного адреса"
 
 #: ./src/app/message/factories/messageModel.js:73
 msgctxt "Message encryption status"
 msgid "PGP-signed message from verified address"
-msgstr ""
+msgstr "Сообщение, подписанное PGP; с проверенного адреса"
 
 #: ./src/app/message/factories/messageModel.js:64
 #: ./src/app/message/factories/messageModel.js:69
@@ -7156,7 +7163,7 @@ msgstr "Хранится под шифрованием с нулевым дос�
 #: ./src/app/message/factories/messageModel.js:78
 msgctxt "Message encryption status"
 msgid "Unencrypted message"
-msgstr ""
+msgstr "Незашифрованное сообщение"
 
 #: ./src/templates/message/messageExpiration.tpl.html:4
 msgctxt "Message expiration label"
@@ -7176,7 +7183,7 @@ msgstr "У адреса эл. почты <span style=\"font-weight: bold;\">{{ :
 #: ./src/templates/message/messageDisplayError.tpl.html:13
 msgctxt "Message network error"
 msgid "Network error: Please check your connection and try again."
-msgstr ""
+msgstr "Ошибка сети: пожалуйста, проверьте своё подключение и попробуйте снова."
 
 #: ./src/templates/message/messageDisplayError.tpl.html:8
 msgctxt "Message network error"
@@ -7353,7 +7360,7 @@ msgstr "Справа налево"
 #: ./src/app/search/factories/searchModel.js:8
 msgctxt "Option for search panel"
 msgid "All"
-msgstr ""
+msgstr "Все"
 
 #: ./src/app/search/factories/searchModel.js:19
 msgctxt "Option for search panel"
@@ -7943,17 +7950,17 @@ msgstr "Настройки отправки почты обновлены"
 #: ./src/app/address/directives/addressKeysView.js:51
 msgctxt "Success"
 msgid "Encryption and signature verification disabled"
-msgstr ""
+msgstr "Шифрование и проверка подписей отключены"
 
 #: ./src/app/address/directives/addressKeysView.js:49
 msgctxt "Success"
 msgid "Encryption disabled"
-msgstr ""
+msgstr "Шифрование отключено"
 
 #: ./src/app/address/directives/addressKeysView.js:56
 msgctxt "Success"
 msgid "Encryption enabled"
-msgstr ""
+msgstr "Шифрование включено"
 
 #: ./src/app/settings/directives/encryptionView.js:14
 msgctxt "Success"
@@ -7973,7 +7980,7 @@ msgstr "Подарочный код применён"
 #: ./src/app/address/services/deleteKeyProcess.js:33
 msgctxt "Success"
 msgid "Key deleted"
-msgstr ""
+msgstr "Ключ удалён"
 
 #: ./src/app/address/directives/reactivateKeysBtn.js:13
 msgctxt "Success"
@@ -7988,7 +7995,7 @@ msgstr "Ярлык обновлён"
 #: ./src/app/settings/controllers/security.js:44
 msgctxt "Success"
 msgid "Other sessions revoked"
-msgstr "Другие сессии аннулированы"
+msgstr "Другие сессии прерваны"
 
 #: ./src/app/address/directives/addressKeysView.js:48
 msgctxt "Success"
@@ -7998,7 +8005,7 @@ msgstr "Основной ключ изменён"
 #: ./src/app/settings/controllers/security.js:45
 msgctxt "Success"
 msgid "Session revoked"
-msgstr ""
+msgstr "Сессия прервана"
 
 #: ./src/app/elements/directives/movedSelect.js:14
 msgctxt "Success"
@@ -8008,7 +8015,7 @@ msgstr "Настройка обновлена"
 #: ./src/app/address/directives/addressKeysView.js:50
 msgctxt "Success"
 msgid "Signature verification enabled"
-msgstr ""
+msgstr "Проверка подписей включена"
 
 #: ./src/app/contact/factories/contactEditor.js:197
 #: ./src/app/contact/factories/contactEditor.js:213
@@ -8059,37 +8066,37 @@ msgstr "Обязательный"
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:32
 msgctxt "Table Header"
 msgid "Actions"
-msgstr ""
+msgstr "Действия"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:22
 msgctxt "Table Header"
 msgid "Created"
-msgstr ""
+msgstr "Создан"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:20
 msgctxt "Table Header"
 msgid "Encryption"
-msgstr ""
+msgstr "Шифрование"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:25
 msgctxt "Table Header"
 msgid "Expires"
-msgstr ""
+msgstr "Истекает"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:6
 msgctxt "Table Header"
 msgid "Fingerprint"
-msgstr ""
+msgstr "Отпечаток"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:13
 msgctxt "Table Header"
 msgid "Primary"
-msgstr ""
+msgstr "Основной"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:29
 msgctxt "Table Header"
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: ./src/app/ui/directives/toggle.js:9
 msgctxt "Text displays in the toggle component, make it shorter as possible"
@@ -8484,7 +8491,7 @@ msgstr "Условия"
 #: ./src/app/contact/factories/contactSpam.js:6
 msgctxt "Title"
 msgid "Confirm"
-msgstr ""
+msgstr "Подтвердить"
 
 #: ./src/templates/composer/composerEncrypt.tpl.html:28
 msgctxt "Title"
@@ -9007,7 +9014,7 @@ msgstr "Псевдоним"
 #: ./src/app/attachments/factories/attachmentModel.js:33
 msgctxt "Title"
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
 #: ./src/templates/contact/importContactModal.tpl.html:6
 msgctxt "Title"
@@ -9044,7 +9051,7 @@ msgstr "Активация ключа"
 #: ./src/app/address/services/deleteKeyProcess.js:24
 msgctxt "Title"
 msgid "Key backup"
-msgstr ""
+msgstr "Запасная копия ключа"
 
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:6
 msgctxt "Title"
@@ -9197,7 +9204,7 @@ msgstr "Навигация"
 #: ./src/app/address/directives/addressKeysView.js:59
 msgctxt "Title"
 msgid "New Address Key ({{ email }})"
-msgstr ""
+msgstr "Новый ключ адреса ({{ email }})"
 
 #: ./src/app/composer/controllers/composeMessage.js:457
 msgctxt "Title"
@@ -9227,7 +9234,7 @@ msgstr "Без темы"
 #: ./src/templates/modals/expirationModal.tpl.html:10
 msgctxt "Title"
 msgid "Not all recipients support message expiration"
-msgstr ""
+msgstr "Срок действия сообщения поддерживается, но не у всех получателей"
 
 #. Desktop notification
 #: ./src/templates/modals/label.tpl.html:75
@@ -9662,7 +9669,7 @@ msgstr "Регистрация"
 #: ./src/app/user/factories/generateKeyModel.js:14
 msgctxt "Title"
 msgid "Similar Key Already Active!"
-msgstr ""
+msgstr "Похожий ключ уже активен!"
 
 #: ./src/app/sidebar/factories/sidebarModel.js:43
 #: ./src/app/ui/factories/pageTitlesModel.js:55
@@ -9850,7 +9857,7 @@ msgstr "Имя пользователя и домен"
 #: ./src/templates/views/reset-login-password.tpl.html:53
 msgctxt "Title"
 msgid "Username:"
-msgstr ""
+msgstr "Имя пользователя:"
 
 #: ./src/app/ui/factories/pageTitlesModel.js:58
 msgctxt "Title"
@@ -9912,7 +9919,7 @@ msgstr "Без вложений"
 #: ./src/app/address/directives/addressKeysView.js:38
 msgctxt "Title"
 msgid "You can generate a new encryption key if you think your previous key has been compromised. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
-msgstr ""
+msgstr "Вы можете создать новый ключ шифрования, если считаете, что ваш предыдущий ключ был скомпрометирован. 4096-битные ключи работают только на высокопроизводительных компьютерах. Для большинства пользователей мы рекомендуем 2048-битные ключи."
 
 #: ./src/templates/modals/welcome.tpl.html:15
 msgctxt "Title"
@@ -9957,7 +9964,7 @@ msgstr "Тарифы ProtonVPN"
 #: ./src/app/squire/services/pasteImage.js:6
 msgctxt "Title pasted image"
 msgid "Pasted-image"
-msgstr ""
+msgstr "Вставленное изображение"
 
 #. reset warning 3/3
 #: ./src/templates/views/reset-login-password.tpl.html:106
@@ -9989,37 +9996,37 @@ msgstr "Убрать из избранного"
 #: ./src/templates/address/addressKeysView.tpl.html:80
 msgctxt "Tooltip"
 msgid "Active"
-msgstr ""
+msgstr "Активный"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:54
 msgctxt "Tooltip"
 msgid "Download"
-msgstr ""
+msgstr "Скачать"
 
 #: ./src/templates/address/addressKeysView.tpl.html:74
 msgctxt "Tooltip"
 msgid "Primary"
-msgstr ""
+msgstr "Основной"
 
 #: ./src/templates/settings/encryptionView.tpl.html:60
 msgctxt "Tooltip automatically attach public key"
 msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and sent encrypted messages to you."
-msgstr ""
+msgstr "Таким способом можно автоматически добавлять ваш публичный ключ к каждому отправляемому вами сообщению. Получатели могут использовать это, чтобы проверять подлинность ваших сообщений и отправлять зашифрованные сообщения вам."
 
 #: ./src/app/authentication/factories/activeSessionsModel.js:6
 msgctxt "Tooltip display per session"
 msgid "Created on {{ date }}"
-msgstr ""
+msgstr "Создана {{ date }}"
 
 #: ./src/templates/settings/encryptionView.tpl.html:137
 msgctxt "Tooltip prompt to trust keys"
 msgid "When receiving an internal message from a sender that has no trusted keys in your contacts, show a banner asking if you want to enable trusted keys."
-msgstr ""
+msgstr "При получении внутреннего сообщения от отправителя, у которого нет доверяемых ключей в ваших контактах, показать запрос насчёт включения доверяемых ключей."
 
 #: ./src/templates/settings/encryptionView.tpl.html:36
 msgctxt "Tooltip sign external messages"
 msgid "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
-msgstr ""
+msgstr "Автоматически подписывать все ваши исходящие сообщения, чтобы пользователи могли проверять их подлинность. Это происходит совместно со схемой PGP по умолчанию, которая выбирается ниже."
 
 #: ./src/templates/views/account.tpl.html:73
 msgctxt "Tooltip to explain daily email notifications"
@@ -10342,17 +10349,17 @@ msgstr "Рабочий"
 #: ./src/templates/composer/composerExpiration.tpl.html:51
 msgctxt "Warning"
 msgid "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message."
-msgstr ""
+msgstr "Если вы отправляете это сообщение пользователю вне ProtonMail, то убедитесь, пожалуйста, что задали пароль для своего сообщения."
 
 #: ./src/templates/modals/expirationModal.tpl.html:16
 msgctxt "Warning"
 msgid "Please add a password for the following recipients"
-msgstr ""
+msgstr "Пожалуйста, добавьте пароль для следующих получателей"
 
 #: ./src/templates/modals/expirationModal.tpl.html:29
 msgctxt "Warning"
 msgid "Please disable PGP Sending for the following recipients"
-msgstr ""
+msgstr "Пожалуйста, отключите PGP-отправку для следующих получателей"
 
 #: ./src/app/composer/services/autoPinPrimaryKeys.js:21
 msgctxt "Warning"
@@ -10369,7 +10376,7 @@ msgstr "Предупреждение: вы не задали адрес эл. п
 #: ./src/templates/modals/expirationModal.tpl.html:42
 msgctxt "Warning"
 msgid "You can also send anyway without expiration to these recipients."
-msgstr ""
+msgstr "Вы всё равно можете отправить без срока действия этим получателям."
 
 #: ./src/templates/modals/feedback.tpl.html:10
 msgctxt "Write a feedback about ProtonMail"
@@ -10396,7 +10403,7 @@ msgstr "Забыли имя пользователя?"
 #: ./src/templates/views/reset-login-password.tpl.html:41
 msgctxt "action"
 msgid "Have a reset code?"
-msgstr ""
+msgstr "Есть код сброса?"
 
 #: ./src/app/ui/directives/atomLoader.js:4
 msgctxt "atom text loader"
@@ -10583,27 +10590,27 @@ msgstr "Новые адреса могут быть добавлены в"
 #: ./src/templates/address/addressKeysView.tpl.html:123
 msgctxt "key flag info"
 msgid "Compromised"
-msgstr ""
+msgstr "Скомпрометирован"
 
 #: ./src/templates/address/addressKeysView.tpl.html:92
 msgctxt "key flag info"
 msgid "Disabled"
-msgstr ""
+msgstr "Отключён"
 
 #: ./src/templates/address/addressKeysView.tpl.html:197
 msgctxt "key flag info"
 msgid "Mark compromised"
-msgstr ""
+msgstr "Пометить скомпрометированным"
 
 #: ./src/templates/address/addressKeysView.tpl.html:185
 msgctxt "key flag info"
 msgid "Mark obsolete"
-msgstr ""
+msgstr "Пометить устаревшим"
 
 #: ./src/templates/address/addressKeysView.tpl.html:100
 msgctxt "key flag info"
 msgid "Obsolete"
-msgstr ""
+msgstr "Устаревший"
 
 #: ./src/templates/modals/generate.tpl.html:64
 msgctxt "key generation progrss"
