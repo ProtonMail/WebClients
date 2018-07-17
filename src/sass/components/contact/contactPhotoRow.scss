@@ -1,5 +1,6 @@
 .contactPhotoRow-container {
     display: flex;
+    position: relative;
 }
 
 .contactPhotoRow-image {
@@ -9,8 +10,22 @@
 }
 
 .contactPhotoRow-image,
-.contactPhotoRow-edit-button {
+.contactPhotoRow-edit-button,
+.contactPhotoRow-load-button,
+.contactPhotoRow-clear-button {
     margin-right: 10px;
 }
 
+.contactPhotoRow-icon {
+    position: absolute;
+    color: $danger;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    vertical-align:middle;
+}
+
 .contactPhotoRow-hide-clear-button .contactPhotoRow-clear-button { display: none }
+.contactPhotoRow-container:not(.contactPhotoRow-image-blocked) .contactPhotoRow-load-button { display: none }
+.contactPhotoRow-container:not(.contactPhotoRow-image-blocked) .contactPhotoRow-icon { display: none }
