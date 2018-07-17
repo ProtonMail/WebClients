@@ -136,6 +136,18 @@ function bugReportApi(
         return Report.crash(crashData).catch(angular.noop);
     };
 
-    return { getForm, report, getClient, crash, toFormData };
+    const phishing = (message) => {
+        const { ID: MessageID, MIMEType } = message;
+        const Body = message.getDecryptedBody();
+        // NOTE MIMEType can equals 'multipart/mixed'
+
+        return Report.phishing({
+            MessageID,
+            Body,
+            MIMEType: MIMEType === 'text/plain' ? 'text/plain' : 'text/html' // Accept only 'text/plain' / 'text/html'
+        });
+    };
+
+    return { getForm, report, getClient, crash, toFormData, phishing };
 }
 export default bugReportApi;

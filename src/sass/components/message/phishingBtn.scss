@@ -1,0 +1,18 @@
+.phishingBtn-container:hover .phishingBtn-icon {
+    fill: $default-color-hover;
+}
+
+// Context
+.pm_dropdown > button.phishingBtn-container {
+    display: flex;
+    align-items: center;
+}
+
+.pm_dropdown > button .fa.phishingBtn-icon {
+    display: flex;
+    align-items: center;
+    fill: $default-color;
+}
+
+.phishingBtn-reported,
+.pm_dropdown > button.phishingBtn-reported { display: none }

@@ -1,6 +1,6 @@
 <section class="messageExtra-container">
     <message-expiration ng-if="message.ExpirationTime > 0" class="messageExtra-container-warning"></message-expiration>
-    <message-spam-score class="messageExtra-container-error" ng-if="message.SpamScore === 100 || message.SpamScore === 101" data-score="{{ ::message.SpamScore }}"></message-spam-score>
+    <message-spam-score class="messageExtra-container-error" ng-if="message.SpamScore === 100 || message.SpamScore === 101 || message.SpamScore === 102" data-score="{{ ::message.SpamScore }}"></message-spam-score>
     <message-mime-parsing ng-if="message.MIMEParsingFailed" class="messageExtra-container-error"></message-mime-parsing>
     <message-display-error ng-if="message.hasError" class="messageExtra-container-error"></message-display-error>
     <unsubscribe-panel ng-if="!unsubscribed && message.getListUnsubscribe()"></unsubscribe-panel>

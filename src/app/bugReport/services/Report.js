@@ -3,13 +3,25 @@ import _ from 'lodash';
 /* @ngInject */
 function Report($http, url, gettextCatalog) {
     const requestURL = url.build('reports');
-    const ERROR_REPORT = gettextCatalog.getString('Error communicating with the server', null, 'Report bug request');
+    const I18N = {
+        ERROR_REPORT: gettextCatalog.getString('Error communicating with the server', null, 'Report bug request'),
+        ERROR_PHISHING: gettextCatalog.getString(
+            'The phishing request failed, try again',
+            null,
+            'Report phishing request'
+        )
+    };
     const handleSuccess = ({ data = {} } = {}) => data;
     const handleError = (errorMessage) => ({ data = {} } = {}) => {
         throw new Error(data.Error || errorMessage);
     };
 
     const crash = (data) => $http.post(requestURL('crash'), data);
+    const phishing = (data) =>
+        $http
+            .post(requestURL('phishing'), data)
+            .then(handleSuccess)
+            .catch(handleError(I18N.ERROR_PHISHING));
     const bug = (data) => {
         const config =
             data instanceof FormData
@@ -24,7 +36,7 @@ function Report($http, url, gettextCatalog) {
         return $http
             .post(requestURL('bug'), data, config)
             .then(handleSuccess)
-            .catch(handleError(ERROR_REPORT));
+            .catch(handleError(I18N.ERROR_REPORT));
     };
 
     const uploadScreenshot = (image, form) =>
@@ -55,6 +67,6 @@ function Report($http, url, gettextCatalog) {
             });
         });
 
-    return { crash, bug, uploadScreenshot };
+    return { crash, bug, phishing, uploadScreenshot };
 }
 export default Report;
