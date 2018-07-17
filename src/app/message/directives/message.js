@@ -122,7 +122,7 @@ function message(
                         };
 
                         const recipients = scope.message.emailsToString();
-                        const parsedHeaders = scope.message.ParsedHeaders; // || { };
+                        const parsedHeaders = scope.message.getParsedHeaders();
                         const encryptionList = parseRecipientHeader(
                             parsedHeaders['X-Pm-Recipient-Encryption'] || '',
                             recipients

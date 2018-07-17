@@ -121,6 +121,7 @@ function messageModel(
 
             return this;
         }
+
         isDraft() {
             return this.Type === 1;
         }
@@ -216,9 +217,22 @@ function messageModel(
             return toText(this.getDecryptedBody(), true, true).replace(/\u200B/g, '');
         }
 
-        getListUnsubscribe() {
+        getParsedHeaders(parameter) {
             const { ParsedHeaders = {} } = this;
-            return ParsedHeaders['List-Unsubscribe'] || '';
+
+            if (parameter) {
+                return ParsedHeaders[parameter];
+            }
+
+            return ParsedHeaders;
+        }
+
+        getListUnsubscribe() {
+            return this.getParsedHeaders('List-Unsubscribe') || '';
+        }
+
+        getListUnsubscribePost() {
+            return this.getParsedHeaders('List-Unsubscribe-Post') || '';
         }
 
         close() {
