@@ -1,6 +1,9 @@
 /* @ngInject */
-function bugReportModel(bugReportApi, bugModal, dispatchers) {
+function bugReportModel(bugReportApi, bugModal, dispatchers, gettextCatalog, networkActivityTracker, notification) {
     const { on } = dispatchers();
+    const I18N = {
+        phishingReported: gettextCatalog.getString('Phishing reported', null, 'Success notification')
+    };
 
     on('bugReport', (e, { type, data = {} }) => {
         type === 'new' && open(data);
@@ -34,6 +37,14 @@ function bugReportModel(bugReportApi, bugModal, dispatchers) {
         bugModal.activate(getModalParam(content));
     }
 
-    return { init: angular.noop };
+    const reportPhishing = async (message) => {
+        const promise = bugReportApi.phishing(message);
+
+        networkActivityTracker.track(promise);
+        await promise;
+        notification.success(I18N.phishingReported);
+    };
+
+    return { init: angular.noop, reportPhishing };
 }
 export default bugReportModel;

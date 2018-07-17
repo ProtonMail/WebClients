@@ -106,6 +106,7 @@ $vpn: #6BB16F;
 $default-color:             #555;
 $default-color-medium:      lighten($default-color, 10);
 $default-color-light:       lighten($default-color, 55);
+$default-color-hover:       #333;
 //==  Component Specific
 $main-color:                set-invert-color($tertiary, $default-color);
 $composer-color:            set-invert-color($composer-background, $default-color);
