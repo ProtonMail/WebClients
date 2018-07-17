@@ -318,6 +318,8 @@ function cache(
                     return [];
                 }
 
+                refreshStateLimit(data);
+
                 _.each(data.Conversations, (conversation) => {
                     conversation.loaded = true; // Mark these conversations as loaded
                     storeTime(conversation.ID, loc, conversation.ContextTime); // Store time value
@@ -339,7 +341,6 @@ function cache(
 
                     // Store conversations
                     storeConversations(data.Conversations);
-                    refreshStateLimit(data);
                     api.clearDispatcher();
                     // Return conversations ordered
                     return api.orderConversation(data.Conversations.slice(0, ELEMENTS_PER_PAGE), loc);
@@ -384,6 +385,8 @@ function cache(
                 }
                 const { Messages = [], Limit = 0 } = data;
 
+                refreshStateLimit(data);
+
                 _.each(Messages, (message) => {
                     const { ToList = [], CCList = [], BCCList = [] } = message;
                     message.loaded = true;
@@ -404,10 +407,9 @@ function cache(
                     pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
                     // Return messages ordered
                     api.clearDispatcher();
-                    refreshStateLimit(data);
                     return api.orderMessage(Messages.slice(0, ELEMENTS_PER_PAGE));
                 }
-                refreshStateLimit(data);
+
                 api.clearDispatcher();
                 return Messages.slice(0, ELEMENTS_PER_PAGE);
             })
