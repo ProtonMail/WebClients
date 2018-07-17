@@ -3,6 +3,7 @@ import { openWindow, parseURL } from '../../../helpers/browser';
 
 /* @ngInject */
 function unsubscribeModel(
+    $http,
     authentication,
     dispatchers,
     addressesModel,
@@ -13,6 +14,7 @@ function unsubscribeModel(
 ) {
     const LIST = [];
     const UNSUBSCRIBE_REGEX = /<(.*?)>/g;
+    const UNSUBSCRIBE_ONE_CLICK = 'List-Unsubscribe=One-Click';
 
     const { dispatcher, on } = dispatchers(['message']);
 
@@ -53,14 +55,20 @@ function unsubscribeModel(
         return simpleSend(message).then(() => notification.success(successMessage));
     }
 
+    const postRequest = (value = '') => $http.post(value);
+
     function unsubscribe(message = {}) {
         const list = message.getListUnsubscribe();
+        const oneClick = message.getListUnsubscribePost() === UNSUBSCRIBE_ONE_CLICK;
         const matches = (list.match(UNSUBSCRIBE_REGEX) || []).map((m) => m.replace('<', '').replace('>', ''));
         const addressID = message.AddressID;
 
         _.each(matches, (value = '') => {
+            const startsWithHttp = value.startsWith('http');
+
             value.startsWith('mailto:') && sendMessage(value, addressID);
-            value.startsWith('http') && openWindow(value);
+            startsWithHttp && oneClick && postRequest(value);
+            startsWithHttp && !oneClick && openWindow(value);
         });
 
         LIST.push(list);
