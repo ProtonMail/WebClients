@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 
-const { exec } = require('./helpers/command');
-const { title, success, error } = require('./helpers/log');
+const execa = require('execa');
+const Listr = require('listr');
+const UpdaterRenderer = require('listr-update-renderer');
+
+const { error } = require('./helpers/log');
 const { externalFiles, vendor_files } = require('../env/conf.build');
 
 const fileExist = (file) => `[ -e ${file} ]`;
 
 const checkDependencies = async (list = [], key) => {
     const col = list.map((file) => {
-        return exec(`${fileExist(file)}`)
+        return execa
+            .shell(`${fileExist(file)}`, { shell: '/bin/bash' })
             .then(() => ({ file }))
             .catch((e) => ({ e, file }));
     });
@@ -18,21 +22,33 @@ const checkDependencies = async (list = [], key) => {
     if (errors.length) {
         throw new Error(`[${key}] File not found \n ${errors.join('\n')}`);
     }
-    success(`[${key}] All dependencies exist`);
 };
 
-(async () => {
-    try {
-        title(`Check installed dependencies we build`);
+const list = Object.keys(vendor_files).filter((key) => !/fonts|sass/.test(key));
 
-        await checkDependencies(externalFiles.openpgp, 'openpgp');
-        const list = Object.keys(vendor_files).filter((key) => !/fonts|sass/.test(key));
-
-        for (key of list) {
-            await checkDependencies(vendor_files[key], key);
+const taskList = list.reduce(
+    (acc, key) => {
+        acc.push({
+            title: `Verify dependencies for: ${key}`,
+            task() {
+                return checkDependencies(vendor_files[key], key);
+            }
+        });
+        return acc;
+    },
+    [
+        {
+            title: 'Verify dependencies for: openpgp',
+            task() {
+                return checkDependencies(externalFiles.openpgp, 'openpgp');
+            }
         }
-        process.exit(0);
-    } catch (e) {
-        error(e);
-    }
-})();
+    ]
+);
+
+const tasks = new Listr(taskList, {
+    renderer: UpdaterRenderer,
+    collapse: false,
+    concurent: true
+});
+tasks.run().catch(error);

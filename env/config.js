@@ -77,17 +77,16 @@ const buildHost = () => {
     const host = isProdBranch() ? API_TARGETS.prod : process.env.NODE_ENV_API || apiUrl();
     return host.replace(/\api$/, '');
 };
+
 const getHostURL = (encoded) => {
-    // on local env is undefined
-    const host = buildHost();
-    const url = `${host}assets/host.png`;
+    const url = '/assets/host.png';
 
     if (encoded) {
         const encoder = (input) => `%${input.charCodeAt(0).toString(16)}`;
         return url
             .split('/')
             .map((chunk) => {
-                if (['/', 'https:'].includes(chunk)) {
+                if (chunk === '/') {
                     return chunk;
                 }
                 return chunk
@@ -116,9 +115,11 @@ const getConfig = (env = process.env.NODE_ENV) => {
 
 module.exports = {
     AUTOPREFIXER_CONFIG,
+    getHostURL,
     getConfig,
     isDistRelease,
     getI18nMatchFile: i18nLoader.getI18nMatchFile,
+    getStatsConfig,
     argv,
     getEnv,
     getHostURL
