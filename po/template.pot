@@ -637,7 +637,7 @@ msgctxt "Action"
 msgid "Change password"
 msgstr ""
 
-#: ./src/templates/contact/contactPhotoRow.tpl.html:4
+#: ./src/templates/contact/contactPhotoRow.tpl.html:6
 #: ./src/templates/directives/core/bugModalView.tpl.html:101
 msgctxt "Action"
 msgid "Clear"
@@ -806,7 +806,7 @@ msgstr ""
 #: ./src/app/members/directives/memberEditBtn.js:6
 #: ./src/templates/address/addressKeysView.tpl.html:209
 #: ./src/templates/elements/moveElement.tpl.html:26
-#: ./src/templates/message/message.tpl.html:194
+#: ./src/templates/message/message.tpl.html:195
 #: ./src/templates/modals/deleteAccount.tpl.html:38
 #: ./src/templates/ui/toolbarMobile.tpl.html:50
 #: ./src/templates/views/labels.tpl.html:63
@@ -885,6 +885,7 @@ msgid "Download"
 msgstr ""
 
 #: ./src/app/members/directives/memberEditBtn.js:4
+#: ./src/templates/contact/contactPhotoRow.tpl.html:5
 #: ./src/templates/dashboard/addonRow.tpl.html:8
 #: ./src/templates/views/labels.tpl.html:58
 #: ./src/templates/vpn/openVpnSection.tpl.html:26
@@ -897,11 +898,6 @@ msgstr ""
 #: ./src/templates/user/defaultSignature.tpl.html:60
 msgctxt "Action"
 msgid "Edit other signatures"
-msgstr ""
-
-#: ./src/templates/contact/contactPhotoRow.tpl.html:3
-msgctxt "Action"
-msgid "Edit photo"
 msgstr ""
 
 #: ./src/app/address/directives/addressBtnActions.js:5
@@ -978,7 +974,7 @@ msgid "Enter key manually instead"
 msgstr ""
 
 #: ./src/app/address/services/deleteKeyProcess.js:32
-#: ./src/templates/message/message.tpl.html:213
+#: ./src/templates/message/message.tpl.html:214
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
@@ -1051,7 +1047,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:225
+#: ./src/templates/message/message.tpl.html:226
 msgctxt "Action"
 msgid "Hide details"
 msgstr ""
@@ -1101,6 +1097,7 @@ msgctxt "Action"
 msgid "Learn more"
 msgstr ""
 
+#: ./src/templates/contact/contactPhotoRow.tpl.html:4
 #: ./src/templates/message/displayContentBtn.tpl.html:10
 msgctxt "Action"
 msgid "Load"
@@ -1299,7 +1296,7 @@ msgctxt "Action"
 msgid "Pay annually"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:217
+#: ./src/templates/message/message.tpl.html:218
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -1377,6 +1374,11 @@ msgstr ""
 #: ./src/templates/ui/navigation/navigationReport.tpl.html:7
 msgctxt "Action"
 msgid "Report bug"
+msgstr ""
+
+#: ./src/templates/message/phishingBtn.tpl.html:7
+msgctxt "Action"
+msgid "Report phishing"
 msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:128
@@ -1552,7 +1554,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:224
+#: ./src/templates/message/message.tpl.html:225
 msgctxt "Action"
 msgid "Show details"
 msgstr ""
@@ -1756,22 +1758,22 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:208
+#: ./src/templates/message/message.tpl.html:209
 msgctxt "Action"
 msgid "View headers"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:209
+#: ./src/templates/message/message.tpl.html:210
 msgctxt "Action"
 msgid "View original"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:203
+#: ./src/templates/message/message.tpl.html:204
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:199
+#: ./src/templates/message/message.tpl.html:200
 msgctxt "Action"
 msgid "View source code"
 msgstr ""
@@ -2513,6 +2515,26 @@ msgstr ""
 #: ./src/templates/contact/contactModal.tpl.html:7
 msgctxt "Contact modal title"
 msgid "Edit contact"
+msgstr ""
+
+#: ./src/templates/contact/contactPhotoRow.tpl.html:6
+msgctxt "Contact photo action"
+msgid "Clear"
+msgstr ""
+
+#: ./src/templates/contact/contactPhotoRow.tpl.html:5
+msgctxt "Contact photo action"
+msgid "Edit"
+msgstr ""
+
+#: ./src/templates/contact/contactPhotoRow.tpl.html:4
+msgctxt "Contact photo action"
+msgid "Load"
+msgstr ""
+
+#: ./src/templates/contact/contactPhotoRow.tpl.html:3
+msgctxt "Contact photo icon"
+msgid "Image blocked"
 msgstr ""
 
 #: ./src/templates/payment/paymentForm.tpl.html:79
@@ -5677,6 +5699,11 @@ msgctxt "Info"
 msgid "This message is from a mailing list."
 msgstr ""
 
+#: ./src/app/message/directives/messageSpamScore.js:14
+msgctxt "Info"
+msgid "This message may be a phishing attempt. Please check the sender and contents to make sure they are legitimate. {{startLink}}Learn more{{endLink}}."
+msgstr ""
+
 #: ./src/templates/composer/composerExpiration.tpl.html:9
 msgctxt "Info"
 msgid "This message will expire in"
@@ -7149,6 +7176,11 @@ msgctxt "Message for encryption contact modal"
 msgid "The email <span style=\"font-weight: bold;\">{{ ::ctrl.email }}</span> has PGP keys set. Do you want to enable PGP encryption for this contact?"
 msgstr ""
 
+#: ./src/app/bugReport/factories/bugReportModel.js:14
+msgctxt "Message for report phishing modal"
+msgid "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full."
+msgstr ""
+
 #: ./src/templates/message/messageDisplayError.tpl.html:13
 msgctxt "Message network error"
 msgid "Network error: Please check your connection and try again."
@@ -7652,9 +7684,14 @@ msgctxt "Remove element"
 msgid "{{total}} {{item}} removed"
 msgstr ""
 
-#: ./src/app/bugReport/services/Report.js:6
+#: ./src/app/bugReport/services/Report.js:7
 msgctxt "Report bug request"
 msgid "Error communicating with the server"
+msgstr ""
+
+#: ./src/app/bugReport/services/Report.js:8
+msgctxt "Report phishing request"
+msgid "The phishing request failed, try again"
 msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:22
@@ -8005,7 +8042,12 @@ msgctxt "Success message when sending feedback"
 msgid "Thanks for your feedback!"
 msgstr ""
 
-#: ./src/app/message/factories/unsubscribeModel.js:19
+#: ./src/app/bugReport/factories/bugReportModel.js:19
+msgctxt "Success notification"
+msgid "Phishing reported"
+msgstr ""
+
+#: ./src/app/message/factories/unsubscribeModel.js:21
 msgctxt "Success notification"
 msgid "Unsubscribed"
 msgstr ""
@@ -9903,6 +9945,11 @@ msgctxt "Title for contact modal"
 msgid "Save Changes?"
 msgstr ""
 
+#: ./src/app/bugReport/factories/bugReportModel.js:13
+msgctxt "Title for report phishing modal"
+msgid "Confirm phishing report"
+msgstr ""
+
 #: ./src/app/contact/modals/contactLoaderModal.js:68
 msgctxt "Title for the contacts exporter modal"
 msgid "Exporting Contacts"
@@ -11127,7 +11174,7 @@ msgstr ""
 msgid "Enter your login password:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:246
+#: ./src/app/message/factories/messageModel.js:260
 msgid "Error encrypting message"
 msgstr ""
 
