@@ -11,6 +11,7 @@
 - Manage address keys
 - Add multiple recipients from the composer
 - New session management options
+- New option for reporting phishing messages
 
 ## Changed
 
