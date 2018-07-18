@@ -75,6 +75,9 @@ cf [Component Generator](https://github.com/ProtonMail/componentGenerator)
 
 Each `deploy-<NAME>` will be available at `<NAME>.protonmail.com`.
 
+
+> `npm run deployProd` will deploy the bundle for both prod, old, dev and tor
+
 ### CLI Flags
 
 - `--branch` : Deploy branch dest

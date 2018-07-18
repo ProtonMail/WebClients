@@ -1,6 +1,7 @@
 const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
 const execRaw = require('child_process').exec;
+const toCLI = (cmd) => (Array.isArray(cmd) ? cmd.join(' && ') : cmd);
 
 const execVerbose = (command) => {
     return new Promise((resolve, reject) => {
@@ -12,7 +13,7 @@ const execVerbose = (command) => {
         };
 
         const build = execRaw(
-            command,
+            toCLI(command),
             {
                 shell: '/bin/bash',
                 maxBuffer: 1000 * 1000 * 10 // 10 MB
@@ -26,7 +27,7 @@ const execVerbose = (command) => {
 
 module.exports = {
     execVerbose,
-    exec(cmd) {
-        return exec(cmd, { shell: '/bin/bash' });
+    exec(command) {
+        return exec(toCLI(command), { shell: '/bin/bash' });
     }
 };
