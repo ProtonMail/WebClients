@@ -1,4 +1,4 @@
-import { PHOTO_PLACEHOLDER_URL, REGEX_URL } from '../../constants';
+import { REMOTE, PHOTO_PLACEHOLDER_URL, REGEX_URL } from '../../constants';
 
 /* @ngInject */
 function contactPhotoRow(contactPhotoModal, mailSettingsModel) {
@@ -68,7 +68,7 @@ function contactPhotoRow(contactPhotoModal, mailSettingsModel) {
                 action && actions[action]();
             };
 
-            scope.showImage = mailSettingsModel.get('ShowImages');
+            scope.showImage = mailSettingsModel.get('ShowImages') & REMOTE;
 
             element.on('click', onClick);
 
