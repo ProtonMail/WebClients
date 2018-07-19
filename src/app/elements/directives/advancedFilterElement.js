@@ -51,7 +51,7 @@ function advancedFilterElement(
         const title = gettextCatalog.getString('Delete all', null, 'Title');
         const message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
 
-        if (['drafts', 'spam', 'trash', 'folder'].indexOf(mailbox) === -1) {
+        if (['drafts', 'spam', 'trash', 'folder', 'label'].indexOf(mailbox) === -1) {
             return;
         }
 
@@ -60,7 +60,8 @@ function advancedFilterElement(
             drafts: 'emptyDraft',
             spam: 'emptySpam',
             trash: 'emptyTrash',
-            folder: 'emptyLabel'
+            folder: 'emptyLabel',
+            label: 'emptyLabel'
         };
 
         confirmModal.activate({
@@ -134,9 +135,11 @@ function advancedFilterElement(
 
             const bindClass = () => {
                 const labelID = $stateParams.label;
-                const action = labelID && labelsModel.read(labelID, 'folders') ? 'add' : 'remove';
+                const folderAction = labelID && labelsModel.read(labelID, 'folders') ? 'add' : 'remove';
+                const labelAction = labelID && labelsModel.read(labelID, 'labels') ? 'add' : 'remove';
 
-                el[0].classList[action]('advancedFilterElement-state-folder');
+                el[0].classList[folderAction]('advancedFilterElement-state-folder');
+                el[0].classList[labelAction]('advancedFilterElement-state-label');
             };
 
             on('$stateChangeSuccess', bindClass);
