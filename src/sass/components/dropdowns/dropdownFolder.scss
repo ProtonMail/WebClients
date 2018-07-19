@@ -50,6 +50,15 @@
 
 .dropdown-folder-create.pm_button { margin: .5rem -10px }
 
+.dropdown-folder-create-value {
+    color: $black;
+}
+
+.dropdown-folder-create-value:not(:empty)::after,
+.dropdown-folder-create-value:not(:empty)::before {
+    content: '"'
+}
+
 /* scrollbox */
 .dropdown-folder-scrollbox-group-item-button {
 	background: transparent;

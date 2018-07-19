@@ -25,14 +25,15 @@
             </li>
             <li
                 class="scrollbox-container-group-item-empty"
-                ng-show="filteredLabels.length === 0"
+                ng-if="filteredLabels.length === 0"
                 translate translate-context="Info">no folder found</li>
         </ul>
     </div>
     <div class="dropdown-folder-create">
-        <button
-            class="dropdown-folder-create-button"
-            translate-context="Action"
-            translate>Create a new folder</button>
+        <button class="dropdown-folder-create-button">
+            <span
+                translate-context="Action"
+                translate>Create a new folder</span>
+            <i class="dropdown-folder-create-value">{{searchValue}}</i></button>
     </div>
 </div>
