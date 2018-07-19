@@ -92,7 +92,10 @@ function dropdownFolders(labelsModel, $rootScope, actionConversation, labelModal
                 if (event.target.classList.contains('dropdown-folder-create-button')) {
                     labelModal.activate({
                         params: {
-                            label: { Exclusive: 1 },
+                            label: {
+                                Name: scope.searchValue,
+                                Exclusive: 1
+                            },
                             close() {
                                 labelModal.deactivate();
                             }
