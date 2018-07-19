@@ -7,7 +7,7 @@ import { inlineCss } from '../../../helpers/domHelper';
 
 const MAX_ENC_HEADER_LENGTH = 1024;
 const PGPMIME_TYPES = [ENCRYPTED_STATUS.PGP_MIME, ENCRYPTED_STATUS.PGP_MIME_SIGNED];
-const { PLAINTEXT } = MIME_TYPES;
+const { PLAINTEXT, DEFAULT } = MIME_TYPES;
 
 /* @ngInject */
 function messageModel(
@@ -262,6 +262,15 @@ function messageModel(
                 });
         }
 
+        /**
+         * This function parses MIME format into attachments, content, encryptedSubject. The attachment automatically
+         * inherit the verified status from the message verified status, as they are included in the body. For more
+         * information see: https://tools.ietf.org/html/rfc2045, https://tools.ietf.org/html/rfc2046 and
+         * https://tools.ietf.org/html/rfc2387.
+         * @param content
+         * @param verified
+         * @returns {Promise.<*>}
+         */
         async parse(content = '', verified = VERIFICATION_STATUS.NOT_VERIFIED) {
             const data = await parseMail(content);
             // cf. https://github.com/autocrypt/memoryhole subject can be in the MIME headers
@@ -304,6 +313,7 @@ function messageModel(
             const convertedAttachments = attachmentConverter(this, attachments, verified);
 
             if (html) {
+                this.MIMEType = DEFAULT;
                 return { message: html, attachments: convertedAttachments, verified, encryptedSubject };
             }
             this.MIMEType = PLAINTEXT;
