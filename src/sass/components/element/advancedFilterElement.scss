@@ -2,6 +2,7 @@
 .advancedFilterElement-btn-spam { display: none !important }
 .advancedFilterElement-btn-trash { display: none !important }
 .advancedFilterElement-btn-folder { display: none !important }
+.advancedFilterElement-btn-label { display: none !important }
 
 .advancedFilterElement-state-drafts {
     .advancedFilterElement-btn-drafts { display: inline-block !important }
@@ -14,6 +15,9 @@
 }
 .advancedFilterElement-state-folder {
     .advancedFilterElement-btn-folder { display: inline-block !important }
+}
+.advancedFilterElement-state-label {
+    .advancedFilterElement-btn-label { display: inline-block !important }
 }
 
 [class*="advancedFilterElement-btn"] { overflow: hidden }
