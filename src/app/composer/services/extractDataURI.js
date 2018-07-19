@@ -1,4 +1,5 @@
 import { flow, map, filter } from 'lodash/fp';
+
 import { MIME_TYPES } from '../../constants';
 
 const { PLAINTEXT } = MIME_TYPES;
@@ -12,21 +13,14 @@ function extractDataURI(attachmentModel, embedded) {
      */
     function dataURItoBlob(dataURI = '') {
         const [mime = '', byte = ''] = dataURI.split(',');
-        // convert base64 to raw binary data held in a string
-        // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
-        const byteString = atob(byte);
+
         // separate out the mime component
         const mimeString = mime.split(':')[1].split(';')[0];
         // write the bytes of the string to an ArrayBuffer
-        const ab = new ArrayBuffer(byteString.length);
-        const dw = new DataView(ab);
-
-        for (let i = 0; i < byteString.length; i++) {
-            dw.setUint8(i, byteString.charCodeAt(i));
-        }
+        const data = openpgp.util.b64_to_Uint8Array(byte);
 
         // write the ArrayBuffer to a blob, and you're done
-        return new Blob([ab], { type: mimeString });
+        return new Blob([data], { type: mimeString });
     }
 
     /**
