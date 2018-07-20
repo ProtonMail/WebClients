@@ -782,7 +782,7 @@ msgctxt "Action"
 msgid "Create Account"
 msgstr ""
 
-#: ./src/templates/labels/dropdownFolders.tpl.html:33
+#: ./src/templates/labels/dropdownFolders.tpl.html:34
 msgctxt "Action"
 msgid "Create a new folder"
 msgstr ""
@@ -792,12 +792,12 @@ msgctxt "Action"
 msgid "Customize"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:71
+#: ./src/templates/elements/advancedFilterElement.tpl.html:80
 msgctxt "Action"
 msgid "Date: New to old"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:80
+#: ./src/templates/elements/advancedFilterElement.tpl.html:89
 msgctxt "Action"
 msgid "Date: Old to new"
 msgstr ""
@@ -918,6 +918,11 @@ msgstr ""
 #: ./src/templates/elements/advancedFilterElement.tpl.html:44
 msgctxt "Action"
 msgid "Empty folder"
+msgstr ""
+
+#: ./src/templates/elements/advancedFilterElement.tpl.html:53
+msgctxt "Action"
+msgid "Empty label"
 msgstr ""
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:26
@@ -1549,7 +1554,7 @@ msgctxt "Action"
 msgid "Show"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:88
+#: ./src/templates/elements/advancedFilterElement.tpl.html:97
 msgctxt "Action"
 msgid "Show all"
 msgstr ""
@@ -1569,7 +1574,7 @@ msgctxt "Action"
 msgid "Show non-trashed messages"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:106
+#: ./src/templates/elements/advancedFilterElement.tpl.html:115
 msgctxt "Action"
 msgid "Show read"
 msgstr ""
@@ -1579,7 +1584,7 @@ msgctxt "Action"
 msgid "Show trashed messages"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:97
+#: ./src/templates/elements/advancedFilterElement.tpl.html:106
 msgctxt "Action"
 msgid "Show unread"
 msgstr ""
@@ -1589,12 +1594,12 @@ msgctxt "Action"
 msgid "Sign up"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:62
+#: ./src/templates/elements/advancedFilterElement.tpl.html:71
 msgctxt "Action"
 msgid "Size: Large to small"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:53
+#: ./src/templates/elements/advancedFilterElement.tpl.html:62
 msgctxt "Action"
 msgid "Size: Small to large"
 msgstr ""
@@ -2431,12 +2436,12 @@ msgctxt "Condition for custom filter"
 msgid "matches"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:43
+#: ./src/app/address/directives/addressKeysView.js:44
 msgctxt "Confirm message"
 msgid "Are you sure you want to delete this key pair? Messages that have been encrypted with this key can"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:25
+#: ./src/app/address/directives/addressKeysView.js:26
 msgctxt "Confirm message"
 msgid "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails."
 msgstr ""
@@ -2457,7 +2462,7 @@ msgid ""
 "        It may lead to data loss. Are you sure you want to continue?"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:32
+#: ./src/app/address/directives/addressKeysView.js:33
 msgctxt "Confirm message"
 msgid "This key has not been activated. It is only possible to export the public key. Do you want to export the public key?"
 msgstr ""
@@ -2467,12 +2472,12 @@ msgctxt "Confirm modal title"
 msgid "Automatic sign outgoing messages?"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:31
+#: ./src/app/address/directives/addressKeysView.js:32
 msgctxt "Confirm modal title"
 msgid "Download Public Key"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:30
+#: ./src/app/address/directives/addressKeysView.js:31
 msgctxt "Confirm modal title"
 msgid "Import private key"
 msgstr ""
@@ -3178,7 +3183,7 @@ msgctxt "Error"
 msgid "Cannot generate a zip of your attachments."
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:37
+#: ./src/app/address/directives/addressKeysView.js:38
 msgctxt "Error"
 msgid "Cannot read private key"
 msgstr ""
@@ -3313,7 +3318,7 @@ msgctxt "Error"
 msgid "Error privatizing the user"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:57
+#: ./src/app/address/directives/addressKeysView.js:58
 msgctxt "Error"
 msgid "Error reactivating key. Please try again"
 msgstr ""
@@ -7951,17 +7956,17 @@ msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:51
+#: ./src/app/address/directives/addressKeysView.js:52
 msgctxt "Success"
 msgid "Encryption and signature verification disabled"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:49
+#: ./src/app/address/directives/addressKeysView.js:50
 msgctxt "Success"
 msgid "Encryption disabled"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:56
+#: ./src/app/address/directives/addressKeysView.js:57
 msgctxt "Success"
 msgid "Encryption enabled"
 msgstr ""
@@ -8001,7 +8006,7 @@ msgctxt "Success"
 msgid "Other sessions revoked"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:48
+#: ./src/app/address/directives/addressKeysView.js:49
 msgctxt "Success"
 msgid "Primary key changed"
 msgstr ""
@@ -8016,7 +8021,7 @@ msgctxt "Success"
 msgid "Setting updated"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:50
+#: ./src/app/address/directives/addressKeysView.js:51
 msgctxt "Success"
 msgid "Signature verification enabled"
 msgstr ""
@@ -9210,7 +9215,7 @@ msgctxt "Title"
 msgid "Navigation"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:59
+#: ./src/app/address/directives/addressKeysView.js:60
 msgctxt "Title"
 msgid "New Address Key ({{ email }})"
 msgstr ""
@@ -9925,7 +9930,7 @@ msgctxt "Title"
 msgid "Without Attachments"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:38
+#: ./src/app/address/directives/addressKeysView.js:39
 msgctxt "Title"
 msgid "You can generate a new encryption key if you think your previous key has been compromised. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
 msgstr ""
@@ -11215,7 +11220,7 @@ msgstr ""
 msgid "Folder deleted"
 msgstr ""
 
-#: ./src/app/elements/directives/advancedFilterElement.js:80
+#: ./src/app/elements/directives/advancedFilterElement.js:81
 msgid "Folder emptied"
 msgstr ""
 
@@ -11540,13 +11545,13 @@ msgstr ""
 msgid "Primary Admin"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:217
+#: ./src/app/address/directives/addressKeysView.js:218
 msgid "Private key imported"
 msgid_plural "{{$count}} Private keys imported"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/address/directives/addressKeysView.js:225
+#: ./src/app/address/directives/addressKeysView.js:226
 msgid "Private key reactivated"
 msgstr ""
 
