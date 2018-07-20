@@ -29,7 +29,14 @@ export const findParent = (node, cb) => {
  * @param {String} html
  * @returns {String}
  */
-export const inlineCss = (html = '') => juice(html, OPTIONS);
+export const inlineCss = (html = '') => {
+    try {
+        return juice(html, OPTIONS);
+    } catch (err) {
+        console.error(err);
+        return html;
+    }
+};
 
 /**
  * Set an element to be hidden.
