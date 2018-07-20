@@ -158,6 +158,12 @@ export const PASSWORD_MODE = {
     ONE_MODE: 1
 };
 
+export const SPAM_SCORE = {
+    PM_SPOOFED: 100,
+    DMARC_FAILED: 101,
+    PHISHING: 102
+};
+
 export const CONTACT_MODE = {
     ENCRYPTED_AND_SIGNED: 3,
     SIGNED: 2,
