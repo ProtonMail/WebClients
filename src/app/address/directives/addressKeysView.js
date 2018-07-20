@@ -4,6 +4,7 @@ import { readFile } from '../../../helpers/fileHelper';
 
 /* @ngInject */
 function addressKeysView(
+    dispatchers,
     downloadFile,
     gettextCatalog,
     importPrivateKey,
@@ -192,7 +193,7 @@ function addressKeysView(
         templateUrl: require('../../../templates/address/addressKeysView.tpl.html'),
         link(scope, element) {
             const unsubscribe = [];
-
+            const { dispatcher } = dispatchers(['closeDropdown']);
             const importKeyAddress = element[0].querySelector('.import-private-key-address');
             const importKeyId = element[0].querySelector('.import-private-key-id');
             const importKeyFile = element[0].querySelector('.import-private-key-file');
@@ -334,6 +335,8 @@ function addressKeysView(
                 if (actionFunc) {
                     actionFunc(address, key);
                 }
+
+                dispatcher.closeDropdown('close');
             };
             unsubscribe.push(onEvent(importKeyFile, 'change', importKeyChange));
             unsubscribe.push(onEvent(element[0], 'click', clickDelegate));
