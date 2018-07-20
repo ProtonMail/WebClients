@@ -5,7 +5,7 @@ const warn = (msg) => {
     console.log(`${chalk.magenta('⚠')} ${chalk.magenta(msg)}.`);
     console.log();
 };
-const success = (msg, { time }) => {
+const success = (msg, { time } = {}) => {
     const txt = chalk.green(` ${chalk.bold('✓')} ${msg} `);
     const message = [txt, time && `(${time})`].filter(Boolean).join('');
     console.log();
