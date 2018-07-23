@@ -70,7 +70,7 @@ Are you sure you want to continue?`,
      * @returns {Promise}
      */
     const generate = async ({ numBits, passphrase, organizationKey, memberMap = {}, address, primary = true }) => {
-        const { Keys } = addressesModel.getByID(address.ID);
+        const { Keys = [] } = addressesModel.getByID(address.ID, authentication.user, true) || {};
         const algorithms = Keys.reduce((acc, { PublicKey, Flags }) => {
             if (Flags !== KEY_FLAGS.DISABLED) {
                 const [k] = pmcw.getKeys(PublicKey);
