@@ -383,7 +383,7 @@ function filterModal(
              * @param  {Array}  labels
              * @return {Array}
              */
-            const bindFileInto = ({ FileInto = [], Move = '' } = {}, labels = []) => {
+            const bindActions = ({ FileInto = [], Move = '' } = {}, labels = []) => {
                 return _.uniq([Move].filter(Boolean).concat(FileInto, labels));
             };
 
@@ -450,16 +450,16 @@ function filterModal(
                         const labels = _.filter(clone.Simple.Actions.Labels, ({ Selected }) => Selected === true).map(
                             ({ Name }) => Name
                         );
-                        const fileInto = bindFileInto(clone.Simple.Actions, labels);
+                        const fileInto = bindActions(clone.Simple.Actions, labels);
                         clone.Simple.Actions.FileInto = fileInto;
                         delete clone.Simple.Actions.Labels;
                     } else {
                         delete clone.Simple.Actions.Labels;
                     }
 
-                    clone.Simple.Actions.FileInto = bindFileInto(clone.Simple.Actions);
+                    clone.Simple.Actions.FileInto = bindActions(clone.Simple.Actions);
                     delete clone.Simple.Actions.Move;
-                    delete clone.Simple.Actions.Vacation;
+                    // delete clone.Simple.Actions.Vacation;
                 }
 
                 networkActivityTracker.track(requestUpdate(clone));
