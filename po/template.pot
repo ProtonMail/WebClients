@@ -5663,12 +5663,12 @@ msgctxt "Info"
 msgid "This conversation contains trashed messages."
 msgstr ""
 
-#: ./src/app/message/directives/messageSpamScore.js:9
+#: ./src/app/message/directives/messageSpamScore.js:13
 msgctxt "Info"
 msgid "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!"
 msgstr ""
 
-#: ./src/app/message/directives/messageSpamScore.js:4
+#: ./src/app/message/directives/messageSpamScore.js:8
 msgctxt "Info"
 msgid "This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!"
 msgstr ""
@@ -5704,7 +5704,7 @@ msgctxt "Info"
 msgid "This message is from a mailing list."
 msgstr ""
 
-#: ./src/app/message/directives/messageSpamScore.js:14
+#: ./src/app/message/directives/messageSpamScore.js:18
 msgctxt "Info"
 msgid "This message may be a phishing attempt. Please check the sender and contents to make sure they are legitimate. {{startLink}}Learn more{{endLink}}."
 msgstr ""
