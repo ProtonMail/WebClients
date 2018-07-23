@@ -30,7 +30,7 @@ module.exports = {
         hot: true,
         stats: 'minimal',
         host: '0.0.0.0',
-        port: 8080,
+        port: process.env.NODE_ENV_PORT,
         public: 'localhost',
         historyApiFallback: true,
         disableHostCheck: true,
