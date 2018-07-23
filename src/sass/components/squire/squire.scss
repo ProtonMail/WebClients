@@ -50,8 +50,9 @@
     outline: none;
     resize: none;
     border: none;
-    padding: 1rem 10px 1rem 10px;
-    font-size: .9rem /* Use browser default settigns */
+    padding: 1rem 10px;
+    font-size: .9rem; /* Use browser default settigns */
+    font-family: monospace;
 }
 
 .editor-container {
