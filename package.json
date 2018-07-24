@@ -22,7 +22,7 @@
     "babel-preset-env": "^1.6.1",
     "cache-loader": "^1.2.0",
     "chalk": "^2.3.0",
-    "component-generator": "github:ProtonMail/componentGenerator#master",
+    "component-generator": "github:ProtonMail/componentGenerator#1da309c75aa685b645b3e2f8d703c712d6727c4f",
     "copy-webpack-plugin": "^4.4.2",
     "cqc": "^0.6.0",
     "cross-env": "^5.1.1",
@@ -165,6 +165,7 @@
     "pretty": "prettier --write $(find src/app -type f -name '*.js')",
     "precommit": "./tasks/metrics.sh",
     "create": "appComponent",
+    "create:test": "appComponent --test",
     "cypress:open": "./tasks/lazyInstallVendor e2e && cypress open"
   },
   "lint-staged": {
