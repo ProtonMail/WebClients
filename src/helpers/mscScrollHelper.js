@@ -14,7 +14,7 @@ const createMscScroller = ({ margin, scrollBy }) => {
          * NOTE: You need to listen to the whileScrolling callback from ng-scrollbars.
          * @param {Number} top
          */
-        setScrollPosition: (top) => {
+        setScrollPosition(top) {
             model.scroll = -top;
         },
         /**
@@ -23,11 +23,13 @@ const createMscScroller = ({ margin, scrollBy }) => {
          * @param {Number} scrollerHeight The height of the scrollbar.
          * @returns {number} The new scroll position.
          */
-        scroll: (targetTop, scrollerHeight) => {
+        scroll(targetTop, scrollerHeight) {
             const relativeY = targetTop - model.scroll;
-            if (relativeY - (margin / 2) <= 0 && model.scroll > 0) {
+            if (relativeY - margin / 2 <= 0 && model.scroll > 0) {
                 return Math.max(model.scroll - scrollBy, 0);
-            } else if (relativeY - scrollerHeight + margin > 0) {
+            }
+
+            if (relativeY - scrollerHeight + margin > 0) {
                 return model.scroll + scrollBy;
             }
         }

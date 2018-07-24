@@ -168,6 +168,7 @@ function messageModel(
         disableSave() {
             return this.disableSend();
         }
+
         disableDiscard() {
             return this.disableSend();
         }

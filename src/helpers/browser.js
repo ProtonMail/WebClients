@@ -34,7 +34,8 @@ export const isFileSaverSupported = () => 'download' in document.createElement('
 export const prngAvailable = () => {
     if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
         return true;
-    } else if (
+    }
+    if (
         typeof window !== 'undefined' &&
         typeof window.msCrypto === 'object' &&
         typeof window.msCrypto.getRandomValues === 'function'

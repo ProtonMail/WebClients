@@ -126,13 +126,17 @@ angular
             if (isUnlock && $rootScope.isLoggedIn) {
                 $log.debug('appjs:(isUnlock && $rootScope.isLoggedIn)');
                 return;
-            } else if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
+            }
+
+            if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
                 // If already logged in and unlocked and on the unlock page: redirect to inbox
                 $log.debug('appjs:($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock)');
                 event.preventDefault();
                 $state.go('secured.inbox');
                 return;
-            } else if (
+            }
+
+            if (
                 isLogin ||
                 isSub ||
                 isSupport ||

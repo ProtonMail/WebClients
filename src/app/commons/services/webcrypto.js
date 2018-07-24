@@ -2,7 +2,9 @@
 function webcrypto() {
     if (window.crypto && window.crypto.getRandomValues) {
         return window.crypto;
-    } else if (window.msCrypto && window.msCrypto.getRandomValues) {
+    }
+
+    if (window.msCrypto && window.msCrypto.getRandomValues) {
         return window.msCrypto;
     }
 

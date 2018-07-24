@@ -8,6 +8,7 @@
     "es6": true
   },
   "globals": {
+    "isNaN": true,
     "require": true,
     "FastClick": true,
     "angular": true,
@@ -77,6 +78,9 @@
     "import/named": 2,
     "import/namespace": 2,
     "import/default": 2,
-    "import/export": 2
+    "import/export": 2,
+    "operator-linebreak": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-restricted-globals": ["error", "event"]
   }
 }

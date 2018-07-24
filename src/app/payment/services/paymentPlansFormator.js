@@ -18,8 +18,9 @@ function paymentPlansFormator(gettextCatalog) {
         `${totalFolders} ${I18N.FOLDERS} / ${totalLabels} ${I18N.LABELS}`;
 
     return (Currency, Cycle) => ({ data = {} } = {}) => {
+        const plans = data.Plans;
         // Add free plan
-        data.Plans.unshift({
+        plans.unshift({
             Type: 1,
             Cycle,
             Currency,
@@ -33,7 +34,7 @@ function paymentPlansFormator(gettextCatalog) {
             TwoFactor: 0
         });
 
-        data.Plans.forEach((plan) => {
+        plans.forEach((plan) => {
             switch (plan.Name) {
                 case 'free':
                     plan.sending = msgPerDay(150);
@@ -71,8 +72,10 @@ function paymentPlansFormator(gettextCatalog) {
             }
         });
 
-        data.Plans = data.Plans;
-        return data;
+        return {
+            ...data,
+            Plans: plans
+        };
     };
 }
 export default paymentPlansFormator;
