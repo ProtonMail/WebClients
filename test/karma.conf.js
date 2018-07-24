@@ -15,8 +15,7 @@ module.exports = (config) => {
             '!../build/openpgp.worker.min.js',
             '../build/openpgp.min.js',
             '../node_modules/angular-mocks/angular-mocks.js',
-            '../src/templates/**/*.html',
-            'specs/**/*.js'
+            'specs/index.js'
         ],
 
         webpack: {
@@ -32,10 +31,7 @@ module.exports = (config) => {
         // list of files to exclude
         preprocessors: {
             'templates.js': ['webpack'],
-            '../src/app/*.js': ['webpack'],
-            '../src/app/**/*.js': ['webpack'],
-            '../src/app/**/**/*.js': ['webpack'],
-            'specs/**/*.js': ['webpack', 'coverage']
+            'specs/index.js': ['webpack', 'coverage']
         },
 
         // optionally, configure the reporter
