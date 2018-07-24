@@ -6141,14 +6141,14 @@ msgid_plural "{{$count}} contacts selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/ui/directives/numberElementSelected.js:21
+#: ./src/app/ui/directives/numberElementSelected.js:23
 msgctxt "Info"
 msgid "{{$count}} conversation selected"
 msgid_plural "{{$count}} conversations selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/ui/directives/numberElementSelected.js:30
+#: ./src/app/ui/directives/numberElementSelected.js:32
 msgctxt "Info"
 msgid "{{$count}} message selected"
 msgid_plural "{{$count}} messages selected"
@@ -11179,7 +11179,7 @@ msgstr ""
 msgid "Enter your login password:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:260
+#: ./src/app/message/factories/messageModel.js:261
 msgid "Error encrypting message"
 msgstr ""
 
