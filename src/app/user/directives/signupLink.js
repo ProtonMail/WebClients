@@ -10,7 +10,7 @@ function signupLink(gettextCatalog) {
 
     return {
         replace: true,
-        template: '<a style="background-image: u\\r\\l(\'#hostURL2#\')"></a>',
+        template: '<a></a>',
         link(scope, el, { key = 'default' }) {
             const [lang] = gettextCatalog.getCurrentLanguage().split('_');
             el[0].textContent = getI18n()[key];
