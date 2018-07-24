@@ -11,8 +11,12 @@ function messageSpamScore(gettextCatalog) {
             'Info'
         ),
         [DMARC_FAILED]: gettextCatalog.getString(
-            "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!",
-            null,
+            "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded! {{startLink}}Learn more{{endLink}}.",
+            {
+                startLink:
+                    '<a href="https://protonmail.com/support/knowledge-base/email-has-failed-its-domains-authentication-requirements-warning/" target="_blank">',
+                endLink: '</a>'
+            },
             'Info'
         ),
         [PHISHING]: gettextCatalog.getString(
