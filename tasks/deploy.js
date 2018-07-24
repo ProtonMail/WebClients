@@ -149,7 +149,7 @@ const getTasks = (branch, { isCI, flowType = 'single' }) => {
             title: `Create sub-bundle for deploy-${key}`,
             enabled: () => !isCI && /prod-a$/.test(branch),
             task() {
-                return buildCustomApp(host, `deploy-${key}`, {
+                return buildCustomApp(`deploy-${key}`, {
                     start: i === 0,
                     end: i === arr.length - 1
                 });
