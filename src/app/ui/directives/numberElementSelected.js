@@ -17,7 +17,9 @@ function numberElementSelected(gettextCatalog, tools, $state) {
                         {},
                         'Info'
                     );
-                } else if (type === 'conversation') {
+                }
+
+                if (type === 'conversation') {
                     return gettextCatalog.getPlural(
                         number,
                         '{{$count}} conversation selected',

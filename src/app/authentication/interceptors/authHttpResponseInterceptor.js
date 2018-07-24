@@ -81,14 +81,17 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
                 }
 
                 return handleTryAgain(rejection);
-            } else if (rejection.status === 401) {
+            }
+            if (rejection.status === 401) {
                 const handle401 = $injector.get('handle401');
                 return handle401(rejection);
-            } else if (rejection.status === 403) {
+            }
+            if (rejection.status === 403) {
                 const unlockUser = $injector.get('unlockUser');
                 const $http = $injector.get('$http');
                 return unlockUser().then(() => $http(rejection.config));
-            } else if (rejection.status === 504) {
+            }
+            if (rejection.status === 504) {
                 notification = notifyError(NOTIFS.timeout);
                 AppModel.set('requestTimeout', true);
             } else if ([408, 503].indexOf(rejection.status) > -1) {

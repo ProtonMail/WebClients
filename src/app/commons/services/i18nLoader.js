@@ -36,7 +36,7 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, $injector) {
             return formatLocale(queryParams.get('language'));
         } catch (e) {
             // Match: xx_XX xx-XX xx 1192
-            const [, locale] = location.search.match(/language=(([a-z]{2,}(_|-)[A-Z]{2,})|([a-z]{2,}))/) || [];
+            const [, locale] = window.location.search.match(/language=(([a-z]{2,}(_|-)[A-Z]{2,})|([a-z]{2,}))/) || [];
             return formatLocale(locale);
         }
     };
