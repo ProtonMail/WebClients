@@ -23,12 +23,10 @@ function addressWithoutKeysManager(addressWithoutKeys, authentication, generateM
                         onSuccess() {
                             $injector.get('eventManager').call();
                             resolve(addresses);
-                            organizationKeysModel.clear();
                             generateModal.deactivate();
                         },
                         close() {
                             reject(new Error('generateModal:close'));
-                            organizationKeysModel.clear();
                             generateModal.deactivate();
                         }
                     }
