@@ -24,7 +24,7 @@ const then = now - 11;
 fs.utimesSync(PATH_CONFIG, then, then);
 env.argv.debug && console.log(`${JSON.stringify(CONFIG, null, 2)}`);
 
-if (process.env.NODE_ENV !== 'dist') {
+if (process.env.NODE_ENV !== 'dist' && process.env.NODE_ENV_MODE !== 'config') {
     portfinder.getPortPromise().then((port) => {
         process.env.NODE_ENV_PORT = port;
         const server = (ip = 'localhost') => chalk.yellow(`http://${ip}:${port}`);
