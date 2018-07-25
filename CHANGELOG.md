@@ -1,3 +1,14 @@
+# [3.14.1] - 2018-07-25
+
+## Changed
+
+- Improve recipients modal title
+
+## Fixed
+
+- Add learn more link for This email has failed its domain's authentication requirements
+- Login redirection was not working
+
 # [3.14.0] - 2018-07-11
 
 [![ProtonMail v3.14 has been released!](assets/img/v3-14.jpg)](https://protonmail.com/blog/protonmail-v3-14-release-notes/)
