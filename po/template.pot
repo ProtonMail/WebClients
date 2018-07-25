@@ -69,267 +69,9 @@ msgid_plural "{{number}} messages moved to {{folder}}"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/templates/views/appearance.tpl.html:72
-msgctxt "Action"
-msgid ""
-"<a href=\"#\" class=\"dead\"><i class=\"fa fa fa-eye\"></i></a>\n"
-"                            <a href=\"#\" class=\"dead\"><i class=\"fa fa fa-eye-slash\"></i></a>"
-msgstr ""
-
-#: ./src/templates/views/appearance.tpl.html:79
-msgctxt "Action"
-msgid ""
-"<a href=\"#\" class=\"dead\"><i class=\"fa fa fa-eye-slash\"></i></a>\n"
-"                            <a href=\"#\" class=\"dead\"><i class=\"fa fa fa-eye\"></i></a>"
-msgstr ""
-
-#: ./src/templates/squire/moreToggle.tpl.html:2
-msgctxt "Action"
-msgid ""
-"<button type=\"button\" class=\"squireDropdown-item-label squireToolbar-action-modeEditor\"></button>\n"
-"        <i class=\"fa fa-caret-down\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:112
-msgctxt "Action"
-msgid "<i class=\"fa fa-align-center\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:103
-msgctxt "Action"
-msgid "<i class=\"fa fa-align-left\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:121
-msgctxt "Action"
-msgid "<i class=\"fa fa-align-right\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/composer/composerInputMeta.tpl.html:50
-#: ./src/templates/message/message.tpl.html:163
-msgctxt "Action"
-msgid "<i class=\"fa fa-angle-down\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:3
-msgctxt "Action"
-msgid "<i class=\"fa fa-bold\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/paginator.tpl.html:3
-#: ./src/templates/directives/paginatorScope.tpl.html:2
-#: ./src/templates/elements/navElements.tpl.html:2
-msgctxt "Action"
-msgid "<i class=\"fa fa-chevron-left\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/paginator.tpl.html:26
-#: ./src/templates/directives/paginatorScope.tpl.html:16
-#: ./src/templates/elements/navElements.tpl.html:9
-msgctxt "Action"
-msgid "<i class=\"fa fa-chevron-right\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/composer/composer-header.tpl.html:34
-msgctxt "Action"
-msgid "<i class=\"fa fa-compress composerHeader-btn-icon\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:84
-msgctxt "Action"
-msgid "<i class=\"fa fa-eraser\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/composer/composer-header.tpl.html:24
-msgctxt "Action"
-msgid "<i class=\"fa fa-expand composerHeader-btn-icon\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/composer/composer.tpl.html:116
-msgctxt "Action"
-msgid ""
-"<i class=\"fa fa-floppy-o\"></i>\n"
-"                <span ng-show=\"message.maximized === true\" translate=\"\" translate-context=\"Action\">Save</span>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:52
-msgctxt "Action"
-msgid ""
-"<i class=\"fa fa-font\" aria-hidden=\"true\"></i>\n"
-"            <i class=\"fa fa-angle-down\"></i>\n"
-"            <i class=\"squireToolbar-triangle-with-shadow\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireSelectColor.tpl.html:3
-msgctxt "Action"
-msgid ""
-"<i class=\"fa fa-font\" aria-hidden=\"true\"></i>\n"
-"        <mark></mark>\n"
-"        <i class=\"fa fa-angle-down\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:74
-msgctxt "Action"
-msgid "<i class=\"fa fa-image\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:12
-msgctxt "Action"
-msgid "<i class=\"fa fa-italic\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:64
-msgctxt "Action"
-msgid "<i class=\"fa fa-link\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:41
-msgctxt "Action"
-msgid "<i class=\"fa fa-list-ol\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:32
-msgctxt "Action"
-msgid "<i class=\"fa fa-list-ul\"></i>"
-msgstr ""
-
 #: ./src/templates/user/signupPayForm.tpl.html:128
 msgctxt "Action"
 msgid "<i class=\"fa fa-lock\"></i> Submit"
-msgstr ""
-
-#: ./src/templates/ui/toolbarDesktop.tpl.html:5
-msgctxt "Action"
-msgid "<i class=\"fa fa-long-arrow-left\"></i>"
-msgstr ""
-
-#: ./src/templates/message/message.tpl.html:156
-msgctxt "Action"
-msgid "<i class=\"fa fa-mail-forward\"></i>"
-msgstr ""
-
-#: ./src/templates/message/message.tpl.html:139
-msgctxt "Action"
-msgid "<i class=\"fa fa-mail-reply\"></i>"
-msgstr ""
-
-#: ./src/templates/message/message.tpl.html:148
-msgctxt "Action"
-msgid "<i class=\"fa fa-mail-reply-all\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/composer/composer-header.tpl.html:14
-#: ./src/templates/directives/composer/composer-header.tpl.html:4
-msgctxt "Action"
-msgid "<i class=\"fa fa-minus composerHeader-btn-icon\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:132
-msgctxt "Action"
-msgid "<i class=\"fa fa-quote-right\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/composer/composer-header.tpl.html:44
-msgctxt "Action"
-msgid "<i class=\"fa fa-times composerHeader-btn-icon\"></i>"
-msgstr ""
-
-#: ./src/templates/address/addressKeysView.tpl.html:108
-#: ./src/templates/address/addressKeysView.tpl.html:131
-msgctxt "Action"
-msgid "<i class=\"fa fa-times\"></i>"
-msgstr ""
-
-#: ./src/templates/contact/contactMerger.tpl.html:41
-#: ./src/templates/views/domains.tpl.html:124
-msgctxt "Action"
-msgid "<i class=\"fa fa-trash-o\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/composer/composer.tpl.html:105
-msgctxt "Action"
-msgid ""
-"<i class=\"fa fa-trash-o\"></i>\n"
-"                <span ng-show=\"!!message.maximized\" translate=\"\" translate-context=\"Action\">Discard</span>"
-msgstr ""
-
-#: ./src/templates/squire/squireToolbar.tpl.html:21
-msgctxt "Action"
-msgid "<i class=\"fa fa-underline\"></i>"
-msgstr ""
-
-#: ./src/templates/contact/contactMerger.tpl.html:49
-msgctxt "Action"
-msgid "<i class=\"fa fa-undo\"></i>"
-msgstr ""
-
-#: ./src/templates/contact/contactMerger.tpl.html:33
-msgctxt "Action"
-msgid "<i class=\"fa fa-vcard-o\"></i>"
-msgstr ""
-
-#: ./src/templates/ui/chooseLayoutBtns.tpl.html:2
-msgctxt "Action"
-msgid "<img src=\"/assets/img/columnview.svg\">"
-msgstr ""
-
-#: ./src/templates/ui/chooseLayoutBtns.tpl.html:10
-msgctxt "Action"
-msgid "<img src=\"/assets/img/rowview.svg\">"
-msgstr ""
-
-#. Tooltip
-#: ./src/templates/message/filterButton.tpl.html:2
-msgctxt "Action"
-msgid "<small><i class=\"fa fa-filter\"></i> <i class=\"fa fa-angle-down\"></i></small>"
-msgstr ""
-
-#. Tooltip
-#: ./src/templates/message/message.tpl.html:122
-msgctxt "Action"
-msgid "<small><i class=\"fa fa-folder\"></i> <i class=\"fa fa-angle-down\"></i></small>"
-msgstr ""
-
-#. Tooltip
-#: ./src/templates/message/message.tpl.html:130
-msgctxt "Action"
-msgid "<small><i class=\"fa fa-tag\"></i> <i class=\"fa fa-angle-down\"></i></small>"
-msgstr ""
-
-#: ./src/templates/directives/paginator.tpl.html:9
-msgctxt "Action"
-msgid ""
-"<small>{{ ::page }}</small>\n"
-"            <i class=\"fa fa-angle-down\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/paginatorScope.tpl.html:6
-msgctxt "Action"
-msgid ""
-"<small>{{ page }}</small>\n"
-"            <i class=\"fa fa-angle-down\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireSelectFontSize.tpl.html:3
-msgctxt "Action"
-msgid ""
-"<span class=\"value\">14</span>\n"
-"            <i class=\"fa fa-angle-down\"></i>"
-msgstr ""
-
-#: ./src/templates/squire/squireSelectFontFamily.tpl.html:3
-msgctxt "Action"
-msgid ""
-"<span class=\"value\">Arial</span>\n"
-"            <i class=\"fa fa-angle-down\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/composer/composer.tpl.html:75
-msgctxt "Action"
-msgid ""
-"<svg height=\"14\" width=\"14\" viewbox=\"0 0 14 14\">\n"
-"                <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#svg-expiration\"/>\n"
-"            </svg>"
 msgstr ""
 
 #: ./src/app/organization/directives/organizationBtnActions.js:7
@@ -402,6 +144,11 @@ msgstr ""
 #: ./src/templates/contact/contactNoResult.tpl.html:7
 msgctxt "Action"
 msgid "Add contact"
+msgstr ""
+
+#: ./src/templates/directives/composer/composerInputMeta.tpl.html:35
+msgctxt "Action"
+msgid "Add contacts"
 msgstr ""
 
 #. payment modal add coupon button
@@ -481,6 +228,21 @@ msgctxt "Action"
 msgid "Advanced settings"
 msgstr ""
 
+#: ./src/templates/squire/squireToolbar.tpl.html:112
+msgctxt "Action"
+msgid "Align center"
+msgstr ""
+
+#: ./src/templates/squire/squireToolbar.tpl.html:103
+msgctxt "Action"
+msgid "Align left"
+msgstr ""
+
+#: ./src/templates/squire/squireToolbar.tpl.html:121
+msgctxt "Action"
+msgid "Align right"
+msgstr ""
+
 #: ./src/app/elements/directives/elementsSelector.js:21
 msgctxt "Action"
 msgid "All Read"
@@ -523,6 +285,11 @@ msgctxt "Action"
 msgid "Auto"
 msgstr ""
 
+#: ./src/templates/ui/toolbarDesktop.tpl.html:5
+msgctxt "Action"
+msgid "Back to list"
+msgstr ""
+
 #: ./src/templates/ui/header/headerNoAuth.tpl.html:16
 msgctxt "Action"
 msgid "Back to login"
@@ -538,11 +305,21 @@ msgctxt "Action"
 msgid "Basic"
 msgstr ""
 
+#: ./src/templates/squire/squireToolbar.tpl.html:3
+msgctxt "Action"
+msgid "Bold"
+msgstr ""
+
 #: ./src/templates/blackFriday/blackFridayFree.tpl.html:15
 #: ./src/templates/blackFriday/blackFridayFree.tpl.html:22
 #: ./src/templates/blackFriday/blackFridayFree.tpl.html:8
 msgctxt "Action"
 msgid "Buy"
+msgstr ""
+
+#: ./src/templates/directives/composer/composerInputMeta.tpl.html:50
+msgctxt "Action"
+msgid "CC BCC"
 msgstr ""
 
 #. cancel reset process
@@ -607,6 +384,27 @@ msgctxt "Action"
 msgid "Change address priority"
 msgstr ""
 
+#: ./src/templates/squire/squireSelectColor.tpl.html:3
+msgctxt "Action"
+msgid "Change color"
+msgstr ""
+
+#: ./src/templates/squire/squireSelectFontFamily.tpl.html:3
+msgctxt "Action"
+msgid "Change font"
+msgstr ""
+
+#: ./src/templates/squire/squireSelectFontSize.tpl.html:3
+msgctxt "Action"
+msgid "Change font size"
+msgstr ""
+
+#: ./src/templates/ui/chooseLayoutBtns.tpl.html:10
+#: ./src/templates/ui/chooseLayoutBtns.tpl.html:2
+msgctxt "Action"
+msgid "Change layout"
+msgstr ""
+
 #: ./src/templates/views/account.tpl.html:124
 msgctxt "Action"
 msgid "Change login password"
@@ -643,6 +441,11 @@ msgctxt "Action"
 msgid "Clear"
 msgstr ""
 
+#: ./src/templates/squire/squireToolbar.tpl.html:84
+msgctxt "Action"
+msgid "Clear all formatting"
+msgstr ""
+
 #: ./src/templates/payment/paypalView.tpl.html:6
 msgctxt "Action"
 msgid "Click here to try again"
@@ -667,6 +470,7 @@ msgstr ""
 #: ./src/templates/contact/importContactModal.tpl.html:3
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:3
 #: ./src/templates/dashboard/customVpnModal.tpl.html:3
+#: ./src/templates/directives/composer/composer-header.tpl.html:44
 #: ./src/templates/filter/filterAddressModal.tpl.html:4
 #: ./src/templates/filter/modal.tpl.html:7
 #: ./src/templates/modals/abuseFraudModal.tpl.html:3
@@ -766,6 +570,11 @@ msgctxt "Action"
 msgid "Compose to"
 msgstr ""
 
+#: ./src/templates/contact/contactMerger.tpl.html:33
+msgctxt "Action"
+msgid "Contact details"
+msgstr ""
+
 #: ./src/templates/ui/navigation/navigation.tpl.html:19
 msgctxt "Action"
 msgid "Contacts"
@@ -787,6 +596,12 @@ msgctxt "Action"
 msgid "Create a new folder"
 msgstr ""
 
+#. Tooltip
+#: ./src/templates/message/filterButton.tpl.html:2
+msgctxt "Action"
+msgid "Custom Filter"
+msgstr ""
+
 #: ./src/templates/views/payments.tpl.html:54
 msgctxt "Action"
 msgid "Customize"
@@ -805,14 +620,21 @@ msgstr ""
 #: ./src/app/address/directives/addressBtnActions.js:8
 #: ./src/app/members/directives/memberEditBtn.js:6
 #: ./src/templates/address/addressKeysView.tpl.html:209
+#: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/elements/moveElement.tpl.html:26
 #: ./src/templates/message/message.tpl.html:195
 #: ./src/templates/modals/deleteAccount.tpl.html:38
 #: ./src/templates/ui/toolbarMobile.tpl.html:50
+#: ./src/templates/views/domains.tpl.html:124
 #: ./src/templates/views/labels.tpl.html:63
 #: ./src/templates/views/payments.tpl.html:38
 msgctxt "Action"
 msgid "Delete"
+msgstr ""
+
+#: ./src/templates/directives/composer/composer.tpl.html:105
+msgctxt "Action"
+msgid "Delete draft"
 msgstr ""
 
 #: ./src/templates/views/account.tpl.html:354
@@ -945,9 +767,19 @@ msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
 msgstr ""
 
+#: ./src/templates/address/addressKeysView.tpl.html:108
+msgctxt "Action"
+msgid "Enable encryption"
+msgstr ""
+
 #: ./src/app/members/directives/memberEditBtn.js:12
 msgctxt "Action"
 msgid "Enable multi-user support"
+msgstr ""
+
+#: ./src/templates/address/addressKeysView.tpl.html:131
+msgctxt "Action"
+msgid "Enable signature verification"
 msgstr ""
 
 #. notification settings option
@@ -976,6 +808,21 @@ msgstr ""
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:12
 msgctxt "Action"
 msgid "Enter key manually instead"
+msgstr ""
+
+#: ./src/templates/directives/composer/composer-header.tpl.html:34
+msgctxt "Action"
+msgid "Exit fullscreen"
+msgstr ""
+
+#: ./src/templates/directives/composer/composer-header.tpl.html:14
+msgctxt "Action"
+msgid "Expand"
+msgstr ""
+
+#: ./src/templates/directives/composer/composer.tpl.html:75
+msgctxt "Action"
+msgid "Expiration time"
 msgstr ""
 
 #: ./src/app/address/services/deleteKeyProcess.js:32
@@ -1017,6 +864,16 @@ msgstr ""
 #: ./src/templates/authentication/modals/helpLoginModal.tpl.html:13
 msgctxt "Action"
 msgid "Forgot username?"
+msgstr ""
+
+#: ./src/templates/message/message.tpl.html:156
+msgctxt "Action"
+msgid "Forward"
+msgstr ""
+
+#: ./src/templates/directives/composer/composer-header.tpl.html:24
+msgctxt "Action"
+msgid "Fullscreen"
 msgstr ""
 
 #: ./src/templates/modals/generate.tpl.html:77
@@ -1087,6 +944,27 @@ msgstr ""
 #: ./src/templates/contact/contactNoResult.tpl.html:9
 msgctxt "Action"
 msgid "Import contacts"
+msgstr ""
+
+#: ./src/templates/squire/squireToolbar.tpl.html:74
+msgctxt "Action"
+msgid "Insert image"
+msgstr ""
+
+#: ./src/templates/squire/squireToolbar.tpl.html:64
+msgctxt "Action"
+msgid "Insert link"
+msgstr ""
+
+#: ./src/templates/squire/squireToolbar.tpl.html:12
+msgctxt "Action"
+msgid "Italic"
+msgstr ""
+
+#. Tooltip
+#: ./src/templates/message/message.tpl.html:130
+msgctxt "Action"
+msgid "Label as"
 msgstr ""
 
 #. learn more link
@@ -1178,6 +1056,11 @@ msgctxt "Action"
 msgid "Mark as read"
 msgstr ""
 
+#: ./src/templates/views/appearance.tpl.html:72
+msgctxt "Action"
+msgid "Mark as read / Mark as unread"
+msgstr ""
+
 #: ./src/templates/message/message.tpl.html:188
 msgctxt "Action"
 msgid "Mark as spam"
@@ -1188,6 +1071,11 @@ msgstr ""
 #: ./src/templates/ui/toolbarMobile.tpl.html:17
 msgctxt "Action"
 msgid "Mark as unread"
+msgstr ""
+
+#: ./src/templates/views/appearance.tpl.html:79
+msgctxt "Action"
+msgid "Mark as unread / Mark as read"
 msgstr ""
 
 #: ./src/templates/address/addressKeysView.tpl.html:197
@@ -1206,6 +1094,23 @@ msgstr ""
 #: ./src/templates/contact/contactToolbar.tpl.html:31
 msgctxt "Action"
 msgid "Merge"
+msgstr ""
+
+#: ./src/templates/directives/composer/composer-header.tpl.html:4
+msgctxt "Action"
+msgid "Minimize"
+msgstr ""
+
+#: ./src/templates/message/message.tpl.html:163
+#: ./src/templates/squire/moreToggle.tpl.html:2
+msgctxt "Action"
+msgid "More"
+msgstr ""
+
+#. Tooltip
+#: ./src/templates/message/message.tpl.html:122
+msgctxt "Action"
+msgid "Move to"
 msgstr ""
 
 #: ./src/templates/elements/moveElement.tpl.html:14
@@ -1253,6 +1158,9 @@ msgctxt "Action"
 msgid "New Key"
 msgstr ""
 
+#: ./src/templates/directives/paginator.tpl.html:26
+#: ./src/templates/directives/paginatorScope.tpl.html:16
+#: ./src/templates/elements/navElements.tpl.html:9
 #: ./src/templates/modals/changePassword.tpl.html:41
 #: ./src/templates/modals/domain/address.tpl.html:46
 #: ./src/templates/modals/domain/dkim.tpl.html:36
@@ -1291,6 +1199,17 @@ msgctxt "Action"
 msgid "OK"
 msgstr ""
 
+#: ./src/templates/squire/squireToolbar.tpl.html:41
+msgctxt "Action"
+msgid "Ordered list"
+msgstr ""
+
+#: ./src/templates/directives/paginator.tpl.html:9
+#: ./src/templates/directives/paginatorScope.tpl.html:6
+msgctxt "Action"
+msgid "Page number"
+msgstr ""
+
 #: ./src/app/payment/directives/payInvoiceBtn.js:4
 msgctxt "Action"
 msgid "Pay"
@@ -1299,6 +1218,13 @@ msgstr ""
 #: ./src/templates/payment/paymentForm.tpl.html:17
 msgctxt "Action"
 msgid "Pay annually"
+msgstr ""
+
+#: ./src/templates/directives/paginator.tpl.html:3
+#: ./src/templates/directives/paginatorScope.tpl.html:2
+#: ./src/templates/elements/navElements.tpl.html:2
+msgctxt "Action"
+msgid "Previous"
 msgstr ""
 
 #: ./src/templates/message/message.tpl.html:218
@@ -1335,6 +1261,11 @@ msgctxt "Action"
 msgid "Public key"
 msgstr ""
 
+#: ./src/templates/squire/squireToolbar.tpl.html:132
+msgctxt "Action"
+msgid "Quote"
+msgstr ""
+
 #: ./src/templates/address/addressKeysView.tpl.html:146
 msgctxt "Action"
 msgid "Reactivate"
@@ -1368,6 +1299,16 @@ msgstr ""
 #: ./src/templates/directives/contact/contactItem.tpl.html:101
 msgctxt "Action"
 msgid "Remove Entry"
+msgstr ""
+
+#: ./src/templates/message/message.tpl.html:139
+msgctxt "Action"
+msgid "Reply"
+msgstr ""
+
+#: ./src/templates/message/message.tpl.html:148
+msgctxt "Action"
+msgid "Reply all"
 msgstr ""
 
 #: ./src/templates/views/outside.message.tpl.html:5
@@ -1454,6 +1395,7 @@ msgstr ""
 #: ./src/templates/contact/contactPhotoModal.tpl.html:19
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:42
 #: ./src/templates/dashboard/customVpnModal.tpl.html:20
+#: ./src/templates/directives/composer/composer.tpl.html:116
 #: ./src/templates/directives/composer/composer.tpl.html:123
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
 #: ./src/templates/filter/modal.tpl.html:225
@@ -1609,6 +1551,11 @@ msgctxt "Action"
 msgid "Sort"
 msgstr ""
 
+#: ./src/templates/views/labels.tpl.html:15
+msgctxt "Action"
+msgid "Sort alphabetically"
+msgstr ""
+
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:32
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:21
 #: ./src/templates/modals/activateOrganization.tpl.html:26
@@ -1644,6 +1591,11 @@ msgctxt "Action"
 msgid "Switch to two-password mode"
 msgstr ""
 
+#: ./src/templates/squire/squireToolbar.tpl.html:52
+msgctxt "Action"
+msgid "Text options"
+msgstr ""
+
 #: ./src/app/message/directives/displayContentBtn.js:4
 msgctxt "Action"
 msgid "This message contains embedded images"
@@ -1652,11 +1604,6 @@ msgstr ""
 #: ./src/app/message/directives/displayContentBtn.js:5
 msgctxt "Action"
 msgid "This message contains remote content"
-msgstr ""
-
-#: ./src/templates/directives/composer/composerInputMeta.tpl.html:35
-msgctxt "Action"
-msgid "To"
 msgstr ""
 
 #: ./src/templates/modals/trustPublicKey.tpl.html:40
@@ -1679,9 +1626,24 @@ msgctxt "Action"
 msgid "Tutorial"
 msgstr ""
 
+#: ./src/templates/squire/squireToolbar.tpl.html:21
+msgctxt "Action"
+msgid "Underline"
+msgstr ""
+
+#: ./src/templates/contact/contactMerger.tpl.html:49
+msgctxt "Action"
+msgid "Undo"
+msgstr ""
+
 #: ./src/templates/views/unlock.tpl.html:34
 msgctxt "Action"
 msgid "Unlock"
+msgstr ""
+
+#: ./src/templates/squire/squireToolbar.tpl.html:32
+msgctxt "Action"
+msgid "Unordered list"
 msgstr ""
 
 #: ./src/app/message/directives/unsubscribePanel.js:6
@@ -1895,18 +1857,14 @@ msgctxt "Action to save contact details and switch to the new page"
 msgid "Save"
 msgstr ""
 
-#: ./src/templates/ui/toolbarDesktop.tpl.html:19
-msgctxt "Action toolbar"
-msgid ""
-"<i class=\"fa fa-folder\"></i>\n"
-"                <i class=\"fa fa-angle-down\"></i>"
-msgstr ""
-
 #: ./src/templates/ui/toolbarDesktop.tpl.html:36
 msgctxt "Action toolbar"
-msgid ""
-"<i class=\"fa fa-tag\"></i>\n"
-"                <i class=\"fa fa-angle-down\"></i>"
+msgid "Label as"
+msgstr ""
+
+#: ./src/templates/ui/toolbarDesktop.tpl.html:19
+msgctxt "Action toolbar"
+msgid "Move to"
 msgstr ""
 
 #: ./src/templates/modals/domain/domain.tpl.html:17
@@ -1968,22 +1926,14 @@ msgid ""
 "                 \"{{ Subject }}\"?"
 msgstr ""
 
-#: ./src/templates/attachments/attachmentElement.tpl.html:20
-msgctxt "Attachment modifier tooltip"
-msgid ""
-"<span class=\"fa-stack fa-lg\">\n"
-"                    <i class=\"fa listAttachments-modifier-shadow fa-unlock fa-stack-2x\"></i>\n"
-"                    <i class=\"fa fa-unlock fa-stack-2x\"></i>\n"
-"                </span>"
-msgstr ""
-
 #: ./src/templates/attachments/attachmentElement.tpl.html:12
 msgctxt "Attachment modifier tooltip"
-msgid ""
-"<span class=\"fa-stack fa-lg\">\n"
-"                    <i class=\"fa listAttachments-modifier-shadow fa-warning fa-stack-2x\"></i>\n"
-"                    <i class=\"fa fa-warning pt-fa-bg-white fa-stack-2x\"></i>\n"
-"                </span>"
+msgid "Sender verification failed"
+msgstr ""
+
+#: ./src/templates/attachments/attachmentElement.tpl.html:20
+msgctxt "Attachment modifier tooltip"
+msgid "Unencrypted PGP/Inline attachment"
 msgstr ""
 
 #: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:50
@@ -2221,12 +2171,12 @@ msgstr ""
 
 #: ./src/templates/directives/composer/composerAskEmbedded.tpl.html:8
 msgctxt "Composer Tooltip"
-msgid "as attachment"
+msgid "Attachments"
 msgstr ""
 
 #: ./src/templates/directives/composer/composerAskEmbedded.tpl.html:16
 msgctxt "Composer Tooltip"
-msgid "inline"
+msgid "inline image"
 msgstr ""
 
 #: ./src/app/squire/modals/addFileModal.js:7
@@ -2524,17 +2474,17 @@ msgstr ""
 
 #: ./src/templates/contact/contactPhotoRow.tpl.html:6
 msgctxt "Contact photo action"
-msgid "Clear"
+msgid "Clear image"
 msgstr ""
 
 #: ./src/templates/contact/contactPhotoRow.tpl.html:5
 msgctxt "Contact photo action"
-msgid "Edit"
+msgid "Edit image"
 msgstr ""
 
 #: ./src/templates/contact/contactPhotoRow.tpl.html:4
 msgctxt "Contact photo action"
-msgid "Load"
+msgid "Load remote image"
 msgstr ""
 
 #: ./src/templates/contact/contactPhotoRow.tpl.html:3
@@ -3081,9 +3031,7 @@ msgstr ""
 
 #: ./src/templates/attachments/btnDownloadAttachments.tpl.html:1
 msgctxt "Download attachments"
-msgid ""
-"<i class=\"fa fa-cog fa-spin btnDownloadAttachments-icon-loader\"></i>\n"
-"    <i class=\"fa fa-download btnDownloadAttachments-icon-download\"></i>"
+msgid "Download all"
 msgstr ""
 
 #: ./src/templates/blackFriday/blackFridayFree.tpl.html:26
@@ -5665,7 +5613,7 @@ msgstr ""
 
 #: ./src/app/message/directives/messageSpamScore.js:13
 msgctxt "Info"
-msgid "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!"
+msgid "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded! {{startLink}}Learn more{{endLink}}."
 msgstr ""
 
 #: ./src/app/message/directives/messageSpamScore.js:8
@@ -5704,7 +5652,7 @@ msgctxt "Info"
 msgid "This message is from a mailing list."
 msgstr ""
 
-#: ./src/app/message/directives/messageSpamScore.js:18
+#: ./src/app/message/directives/messageSpamScore.js:22
 msgctxt "Info"
 msgid "This message may be a phishing attempt. Please check the sender and contents to make sure they are legitimate. {{startLink}}Learn more{{endLink}}."
 msgstr ""
@@ -6320,13 +6268,6 @@ msgctxt "Key state badge"
 msgid "Obsolete"
 msgstr ""
 
-#: ./src/templates/views/labels.tpl.html:53
-msgctxt "Label"
-msgid ""
-"<label class=\"labelsState-toggle-label\" translate-context=\"Label\" translate=\"\">Notification</label>\n"
-"                                <toggle data-status=\"label.notify\" data-on=\"ON\" data-off=\"OFF\" data-name=\"changeNotifyLabel\" data-id=\"{{ label.ID }}\"></toggle>"
-msgstr ""
-
 #: ./src/templates/modals/member.tpl.html:78
 msgctxt "Label"
 msgid "Account storage"
@@ -6447,6 +6388,11 @@ msgstr ""
 #: ./src/templates/views/appearance.tpl.html:99
 msgctxt "Label"
 msgid "Enable Conversation Grouping"
+msgstr ""
+
+#: ./src/templates/views/labels.tpl.html:53
+msgctxt "Label"
+msgid "Enable/disable desktop and mobile notifications"
 msgstr ""
 
 #: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:79
@@ -6879,11 +6825,6 @@ msgctxt "Link"
 msgid "(What is this?)"
 msgstr ""
 
-#: ./src/templates/partials/conversation-placeholder.tpl.html:11
-msgctxt "Link"
-msgid "<img src=\"/assets/img/welcome/mobile.jpg\">"
-msgstr ""
-
 #: ./src/templates/pmMe/pmMeView.tpl.html:22
 msgctxt "Link"
 msgid "Add another address"
@@ -6910,6 +6851,7 @@ msgid "Include moved messages"
 msgstr ""
 
 #: ./src/templates/filter/spamLists.tpl.html:17
+#: ./src/templates/partials/conversation-placeholder.tpl.html:11
 #: ./src/templates/settings/encryptionView.tpl.html:118
 #: ./src/templates/settings/encryptionView.tpl.html:17
 msgctxt "Link"
@@ -10012,11 +9954,6 @@ msgctxt "Toggle Star message/conversation"
 msgid "Unstar"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:80
-msgctxt "Tooltip"
-msgid "Active"
-msgstr ""
-
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:54
 msgctxt "Tooltip"
 msgid "Download"
@@ -10024,12 +9961,27 @@ msgstr ""
 
 #: ./src/templates/address/addressKeysView.tpl.html:74
 msgctxt "Tooltip"
-msgid "Primary"
+msgid "ProtonMail users will use this key by default for sending"
+msgstr ""
+
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:9
+msgctxt "Tooltip"
+msgid "The primary key is used to encrypt outgoing messages."
+msgstr ""
+
+#: ./src/templates/address/addressKeysView.tpl.html:80
+msgctxt "Tooltip"
+msgid "You have locally decrypted this key allowing it be used to decrypt messages"
 msgstr ""
 
 #: ./src/templates/settings/encryptionView.tpl.html:60
 msgctxt "Tooltip automatically attach public key"
 msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and sent encrypted messages to you."
+msgstr ""
+
+#: ./src/templates/settings/encryptionView.tpl.html:81
+msgctxt "Tooltip default pgp scheme"
+msgid "Select the default PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info."
 msgstr ""
 
 #: ./src/app/authentication/factories/activeSessionsModel.js:6
@@ -10484,7 +10436,7 @@ msgstr ""
 
 #: ./src/templates/views/domains.tpl.html:115
 msgctxt "button to configure the domain"
-msgid "<i class=\"fa fa-magic\"></i>"
+msgid "Wizard"
 msgstr ""
 
 #: ./src/app/commons/directives/appCopyright.js:3
@@ -10598,29 +10550,29 @@ msgctxt "info link to Addresses/Users in Signatures page"
 msgid "New Addresses can be added on"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:123
+#: ./src/templates/address/addressKeysView.tpl.html:185
 msgctxt "key flag info"
-msgid "Compromised"
-msgstr ""
-
-#: ./src/templates/address/addressKeysView.tpl.html:92
-msgctxt "key flag info"
-msgid "Disabled"
+msgid "Disables encryption with this key"
 msgstr ""
 
 #: ./src/templates/address/addressKeysView.tpl.html:197
 msgctxt "key flag info"
-msgid "Mark compromised"
+msgid "Disables signature verification and encryption with this key"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:185
+#: ./src/templates/address/addressKeysView.tpl.html:123
 msgctxt "key flag info"
-msgid "Mark obsolete"
+msgid "Signatures produced by this key are treated as invalid and this key cannot be used for encryption"
+msgstr ""
+
+#: ./src/templates/address/addressKeysView.tpl.html:92
+msgctxt "key flag info"
+msgid "This address has been disabled"
 msgstr ""
 
 #: ./src/templates/address/addressKeysView.tpl.html:100
 msgctxt "key flag info"
-msgid "Obsolete"
+msgid "This key cannot be used for encryption"
 msgstr ""
 
 #: ./src/templates/modals/generate.tpl.html:64
@@ -10802,58 +10754,24 @@ msgctxt "topUp modal"
 msgid "Credits added"
 msgstr ""
 
-#: ./src/templates/elements/labelsElement.tpl.html:11
-msgid "&hellip;"
+#: ./src/templates/payment/tosubscribeOverview.tpl.html:17
+msgid "1-year plan, 20% off"
 msgstr ""
 
-#: ./src/templates/dashboard/totalRows.tpl.html:19
-#: ./src/templates/dashboard/totalRows.tpl.html:6
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:17
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:93
-msgid "-20%"
+#: ./src/templates/payment/tosubscribeOverview.tpl.html:18
+msgid "2-year plan, 33% off"
 msgstr ""
 
 #: ./src/templates/dashboard/totalRows.tpl.html:34
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:18
-msgid "-33%"
-msgstr ""
-
-#: ./src/templates/dashboard/totalRows.tpl.html:20
-msgid "-36%"
+msgid "2-year subscription discount"
 msgstr ""
 
 #: ./src/templates/dashboard/totalRows.tpl.html:35
-msgid "-45%"
+msgid "2-year subscription with VPN discount"
 msgstr ""
 
 #: ./src/app/dashboard/directives/subscriptionSection.js:20
 msgid "2-years"
-msgstr ""
-
-#: ./src/templates/filter/emailBlockList.tpl.html:16
-msgid "<i class=\"fa fa-arrows-h\"></i>"
-msgstr ""
-
-#: ./src/templates/contact/contactSelectorForm.tpl.html:43
-#: ./src/templates/contact/contactSelectorForm.tpl.html:49
-msgid "<i class=\"fa fa-close\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/composer/composer.tpl.html:90
-msgid "<i class=\"fa fa-lock\"></i>"
-msgstr ""
-
-#: ./src/templates/directives/composer/composer.tpl.html:62
-#: ./src/templates/views/outside.reply.tpl.html:38
-msgid "<i class=\"fa fa-paperclip\"></i>"
-msgstr ""
-
-#: ./src/templates/filter/emailBlockList.tpl.html:22
-msgid "<i class=\"fa fa-times text-red\"></i>"
-msgstr ""
-
-#: ./src/templates/contact/contactEncrypted.tpl.html:4
-msgid "<use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#svg-lock-signed\"></use>"
 msgstr ""
 
 #: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:9
@@ -10874,7 +10792,7 @@ msgid "Add additional email addresses to your account such as username2@protonma
 msgstr ""
 
 #: ./src/templates/contact/contactSelectorForm.tpl.html:5
-msgid "Add multiple emails"
+msgid "Add multiple recipients"
 msgstr ""
 
 #: ./src/templates/contact/contactAddressInput.tpl.html:2
@@ -10905,6 +10823,14 @@ msgstr ""
 msgid "Also Archive"
 msgstr ""
 
+#: ./src/templates/dashboard/totalRows.tpl.html:19
+msgid "Annual subscription discount"
+msgstr ""
+
+#: ./src/templates/dashboard/totalRows.tpl.html:20
+msgid "Annual subscription with VPN discount"
+msgstr ""
+
 #: ./src/app/dashboard/directives/subscriptionSection.js:19
 #: ./src/templates/views/invoices.tpl.html:29
 #: ./src/templates/views/invoices.tpl.html:59
@@ -10917,6 +10843,11 @@ msgstr ""
 
 #: ./src/templates/modals/trustPublicKey.tpl.html:29
 msgid "Associated addresses:"
+msgstr ""
+
+#: ./src/templates/directives/composer/composer.tpl.html:62
+#: ./src/templates/views/outside.reply.tpl.html:38
+msgid "Attachments"
 msgstr ""
 
 #: ./src/app/contact/factories/contactUI.js:103
@@ -11149,6 +11080,14 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
+#: ./src/templates/contact/contactEncrypted.tpl.html:4
+msgid "Encrypted data with verified digital signature"
+msgstr ""
+
+#: ./src/templates/directives/composer/composer.tpl.html:90
+msgid "Encryption"
+msgstr ""
+
 #: ./src/app/message/directives/messageContactsIcon.js:38
 #: ./src/app/message/directives/messageContactsIcon.js:39
 #: ./src/app/message/directives/messageContactsIcon.js:40
@@ -11298,6 +11237,10 @@ msgstr ""
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
 msgstr ""
 
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:16
+msgid "It is allowed to encrypt with this key"
+msgstr ""
+
 #: ./src/templates/modals/reactivate.tpl.html:12
 msgid "Key password"
 msgstr ""
@@ -11369,8 +11312,20 @@ msgstr ""
 msgid "Monthly"
 msgstr ""
 
+#: ./src/templates/dashboard/totalRows.tpl.html:6
+msgid "Monthly subscription with VPN discount"
+msgstr ""
+
 #: ./src/templates/elements/advancedFilterElement.tpl.html:7
 msgid "More"
+msgstr ""
+
+#: ./src/templates/elements/labelsElement.tpl.html:11
+msgid "More labels"
+msgstr ""
+
+#: ./src/templates/filter/emailBlockList.tpl.html:16
+msgid "Move item to the other list"
 msgstr ""
 
 #: ./src/templates/modals/label.tpl.html:29
@@ -11606,8 +11561,17 @@ msgstr ""
 msgid "Redirecting"
 msgstr ""
 
+#: ./src/templates/contact/contactSelectorForm.tpl.html:43
+#: ./src/templates/contact/contactSelectorForm.tpl.html:49
+msgid "Remove"
+msgstr ""
+
 #: ./src/templates/directives/contact/contactPinnedKeys.tpl.html:33
 msgid "Remove Entry"
+msgstr ""
+
+#: ./src/templates/filter/emailBlockList.tpl.html:22
+msgid "Remove item from the list"
 msgstr ""
 
 #: ./src/templates/modals/domain/address.tpl.html:7
@@ -11706,6 +11670,10 @@ msgstr ""
 msgid "This feature is only available for ProtonMail Professional plans or higher"
 msgstr ""
 
+#: ./src/templates/address/addressKeysView.tpl.html:86
+msgid "This key is encrypted with an old password and cannot be used to decrypt messages"
+msgstr ""
+
 #: ./src/app/contact/directives/contactPublicKeys.js:217
 msgid "This key is expired."
 msgstr ""
@@ -11768,6 +11736,10 @@ msgstr ""
 
 #: ./src/app/dashboard/directives/subscriptionSection.js:11
 msgid "VPN connections"
+msgstr ""
+
+#: ./src/templates/payment/tosubscribeOverview.tpl.html:93
+msgid "VPN discount, 20% off"
 msgstr ""
 
 #. form option
