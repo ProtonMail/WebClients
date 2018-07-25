@@ -99,6 +99,9 @@
 	cursor: pointer;
 }
 
+.dropdown-folder-create-button > * {
+	pointer-events: none;
+}
 
 .appConfigBody-is-mobile {
 	.dropdown-folder-scrollbox-group-item  {
