@@ -81,6 +81,7 @@ function ComposeMessageController(
             await validateMessage.checkSubject(message);
             await validateMessage.checkExpiration(message);
         } catch (e) {
+            dispatcher.editorListener('send.failed', { message });
             return;
         }
 
