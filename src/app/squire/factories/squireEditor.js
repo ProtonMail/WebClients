@@ -190,9 +190,13 @@ function squireEditor(dispatchers, editorModel, sanitize) {
         const ghost = editor.insertHTML;
         editor.insertHTML = async (html, isPaste) => {
             if (isPaste) {
-                const $img = angular.element(html).filter('IMG');
+                const fragment = SQUIRE_CONFIG.sanitizeToDOMFragment(html, isPaste, editor);
+                // Not using {first,last}ElementChild for IE11.
+                const firstElement = fragment.childNodes && fragment.childNodes[0];
+                const lastElement = fragment.childNodes && fragment.childNodes[fragment.childNodes.length - 1];
 
-                if ($img.length === 1 && $img.is('IMG')) {
+                // Check if it is just one image being pasted.
+                if (firstElement && firstElement === lastElement && firstElement.tagName === 'IMG') {
                     /*
                         Interceptor for Chrome/FF/Safari etc. as they work as we want.
                         we need this when you copy an image from an URL -> (option copy image) and paste it here.
@@ -201,8 +205,7 @@ function squireEditor(dispatchers, editorModel, sanitize) {
                     if (!isWeirdBrowsers) {
                         return;
                     }
-
-                    const src = $img.attr('src');
+                    const src = firstElement.src;
                     const file = await blobURLtoBlob(src);
                     return editor.fireEvent('paste.image', { file });
                 }
