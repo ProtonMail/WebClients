@@ -1,5 +1,12 @@
 # [3.14.1] - 2018-07-25
 
+## Fixed
+
+- Fix paste links in old browsers
+- Fix SMS input on signup page
+
+# [3.14.1] - 2018-07-25
+
 ## Changed
 
 - Improve recipients modal title
