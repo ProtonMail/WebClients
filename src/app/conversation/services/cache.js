@@ -936,13 +936,15 @@ function cache(
      * Load missing conversations detected from create / update message event
      * @return {Promise}
      */
-    const loadMissingConversations = async () => {
+    const loadMissingConversations = async (deletedList = []) => {
+        const deletedIds = deletedList.map(({ ID }) => ID);
         const promises = flow(
+            filter((id) => !_.includes(deletedIds, id)),
             uniq,
             map(getConversation)
         )(missingConversations);
-        await Promise.all(promises);
         missingConversations.length = 0;
+        await Promise.all(promises);
     };
 
     /**
@@ -1006,7 +1008,7 @@ function cache(
         // NOTE Message events must be treated before Conversation events to calculate the Time per Conversation (see manageTimes())
         return formatCreate(Flow.Message.create)
             .then(() => formatUpdate(Flow.Message.update))
-            .then(() => loadMissingConversations())
+            .then(() => loadMissingConversations(Flow.delete))
             .then(() => formatCreate(Flow.Conversation.create))
             .then(() => formatUpdate(Flow.Conversation.update))
             .then(() => formatDelete(Flow.delete))
