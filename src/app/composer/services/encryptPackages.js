@@ -4,8 +4,11 @@ import { SEND_TYPES } from '../../constants';
 
 /* @ngInject */
 function encryptPackages(pmcw, authentication, AttachmentLoader) {
-    const arrayToBase64 = _.flowRight(pmcw.encode_base64, pmcw.arrayToBinaryString);
-    const packToBase64 = ({ data }) => arrayToBase64(data);
+    const arrayToBase64 = _.flowRight(
+        pmcw.encode_base64,
+        pmcw.arrayToBinaryString
+    );
+    const packToBase64 = ({ data }) => ({ Key: arrayToBase64(data), Algorithm: 'aes256' });
     const encryptKeyPacket = ({ sessionKeys = [], publicKeys = [], passwords = [] }) => {
         const promises = _.map(sessionKeys, (sessionKey) =>
             pmcw
@@ -130,7 +133,12 @@ function encryptPackages(pmcw, authentication, AttachmentLoader) {
 
         // rebuild the data without the send keypackets
         packets.asymmetric = packets.asymmetric.slice(0, ownPublicKeys.length);
-        const combineMessage = _.flowRight(pmcw.getMessage, pmcw.concatArrays, _.flatten, _.values);
+        const combineMessage = _.flowRight(
+            pmcw.getMessage,
+            pmcw.concatArrays,
+            _.flatten,
+            _.values
+        );
         const bodyMessage = combineMessage(packets);
         message.Body = bodyMessage.armor();
 
