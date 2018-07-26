@@ -45,8 +45,7 @@ function deleteAccountModal(
             this.twoFactorCode = '';
             this.submit = () => {
                 if ($scope.deleteForm.$invalid) {
-                    notification.error(I18N.invalidForm);
-                    return;
+                    return notification.error(I18N.invalidForm);
                 }
 
                 const username = authentication.user.Name;
@@ -66,8 +65,8 @@ function deleteAccountModal(
                     Description: this.feedback
                 };
 
-                const promise = report(params, this.isAdmin)
-                    .then(() => deleteUser({ Password: this.password, TwoFactorCode: this.twoFactorCode }))
+                const promise = deleteUser({ Password: this.password, TwoFactorCode: this.twoFactorCode })
+                    .then(() => report(params, this.isAdmin))
                     .then(() => $state.go('login'));
 
                 networkActivityTracker.track(promise);
