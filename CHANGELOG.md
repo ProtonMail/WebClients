@@ -1,4 +1,14 @@
-# [3.14.1] - 2018-07-25
+# [3.14.3] - 2018-07-26
+
+## Fixed
+
+- Clean missing conversations: "Conversation doesn't exist"
+- Disallow phishing reports of the message cant be decrypted
+- Avoid to have SAVE and SEND request in the same time
+- "Create a new folder" was not working properly
+- Issue when trying to send a message without a subject
+
+# [3.14.2] - 2018-07-25
 
 ## Fixed
 
