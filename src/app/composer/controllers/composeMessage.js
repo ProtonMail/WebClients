@@ -90,6 +90,7 @@ function ComposeMessageController(
 
         const promise = validateMessage
             .validate(message)
+            .then(() => composerRequestModel.chain(message)) // Avoid to have SAVE and SEND request in the same time
             .then(eventManager.stop)
             .then(() => extractDataURI(message))
             .then(() => attachPublicKey.attach(message))
