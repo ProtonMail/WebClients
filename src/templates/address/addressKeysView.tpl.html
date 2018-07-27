@@ -32,14 +32,12 @@
                     <div class="pm_buttons link" data-display-mode="address">
                         <button class="pm_button link"
                                 data-action="newKey"
-                                data-address-id="{{ ::address.addressID }}"
                                 translate-context="Action"
                                 translate>New Key</button>
                             <a class="pm_buttons pm_button pm_trigger fa fa-angle-down" dropdown></a>
                         <div class="pm_dropdown wide right default-padding">
                             <button class="pm_button link"
                                     data-action="importKey"
-                                    data-address-id="{{ ::address.addressID }}"
                                     translate-context="Action"
                                     translate>Import Key</button>
                         </div>
@@ -109,8 +107,8 @@
                                                 type="button"
                                                 class="pm_button link"
                                                 data-action="markValid"
-                                                data-address-id="{{ ::address.addressID }}"
-                                                data-key-index="{{ ::$index }}"
+                                                data-address-id="{{ address.addressID }}"
+                                                data-key-index="{{ $index }}"
                                                 pt-tooltip-translate-context="Action"
                                                 pt-tooltip-translate="Enable encryption"
                                                 pt-placement="top">
@@ -132,8 +130,8 @@
                                                 type="button"
                                                 class="pm_button link"
                                                 data-action="markObsolete"
-                                                data-address-id="{{ ::address.addressID }}"
-                                                data-key-index="{{ ::$index }}"
+                                                data-address-id="{{ address.addressID }}"
+                                                data-key-index="{{ $index }}"
                                                 pt-tooltip-translate-context="Action"
                                                 pt-tooltip-translate="Enable signature verification"
                                                 pt-placement="top">
@@ -147,16 +145,16 @@
                                                     class="pm_buttons pm_button"
                                                     ng-if="!key.decrypted"
                                                     data-action="reactivateKey"
-                                                    data-address-id="{{ ::address.addressID }}"
-                                                    data-key-index="{{ ::$index }}"
+                                                    data-address-id="{{ address.addressID }}"
+                                                    data-key-index="{{ $index }}"
                                                     translate-context="Action"
                                                     translate>Reactivate</button>
                                             <button type="button"
                                                     class="pm_buttons pm_button"
                                                     ng-if="!isSubUser && key.decrypted"
                                                     data-action="exportKey"
-                                                    data-address-id="{{ ::address.addressID }}"
-                                                    data-key-index="{{ ::$index }}"
+                                                    data-address-id="{{ address.addressID }}"
+                                                    data-key-index="{{ $index }}"
                                                     translate-context="Action">
                                                 Export
                                             </button><a
@@ -168,8 +166,8 @@
                                                         class="pm_button link"
                                                         ng-show="!isSubUser && !key.decrypted"
                                                         data-action="exportKey"
-                                                        data-address-id="{{ ::address.addressID }}"
-                                                        data-key-index="{{ ::$index }}"
+                                                        data-address-id="{{ address.addressID }}"
+                                                        data-key-index="{{ $index }}"
                                                         translate-context="Action">
                                                     Export
                                                 </button>
@@ -178,8 +176,8 @@
                                                         ng-show="!$first && key.decrypted && key.Flags === 3 && address.status !== 0"
                                                         data-display-mode="address"
                                                         data-action="makePrimaryKey"
-                                                        data-address-id="{{ ::address.addressID }}"
-                                                        data-key-index="{{ ::$index }}"
+                                                        data-address-id="{{ address.addressID }}"
+                                                        data-key-index="{{ $index }}"
                                                         translate-context="Action"
                                                         translate>Make Primary</button>
                                                 <button type="button"
@@ -188,9 +186,9 @@
                                                         pt-tooltip-translate="Disables encryption with this key"
                                                         data-action="markObsolete"
                                                         data-display-mode="address"
-                                                        data-address-id="{{ ::address.addressID }}"
+                                                        data-address-id="{{ address.addressID }}"
                                                         ng-if="!$first && key.Flags > 1 && address.status !== 0"
-                                                        data-key-index="{{ ::$index }}"
+                                                        data-key-index="{{ $index }}"
                                                         translate-context="Action" translate>
                                                     Mark obsolete
                                                 </button>
@@ -200,8 +198,8 @@
                                                         pt-tooltip-translate="Disables signature verification and encryption with this key"
                                                         data-action="markCompromised"
                                                         data-display-mode="address"
-                                                        data-address-id="{{ ::address.addressID }}"
-                                                        data-key-index="{{ ::$index }}"
+                                                        data-address-id="{{ address.addressID }}"
+                                                        data-key-index="{{ $index }}"
                                                         ng-if="!$first && key.Flags !== 0"
                                                         translate-context="Action" translate>
                                                     Mark compromised
@@ -210,8 +208,8 @@
                                                         class="pm_button link"
                                                         data-action="deleteKey"
                                                         data-display-mode="address"
-                                                        data-address-id="{{ ::address.addressID }}"
-                                                        data-key-index="{{ ::$index }}"
+                                                        data-address-id="{{ address.addressID }}"
+                                                        data-key-index="{{ $index }}"
                                                         translate-context="Action"
                                                         translate>Delete</button>
 
