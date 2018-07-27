@@ -63,7 +63,6 @@ function attachmentApi(
         data.append('MessageID', message.ID);
         data.append('ContentID', tempPacket.ContentID);
         data.append('MIMEType', packets.MIMEType);
-        data.append('Inline', packets.Inline);
         data.append('KeyPackets', new Blob([packets.keys]));
         data.append('DataPacket', new Blob([packets.data]));
         if (packets.signature) {
@@ -125,7 +124,7 @@ function attachmentApi(
         dispatcher(1, true, true);
 
         xhr.upload.onprogress = (event) => {
-            const progress = event.loaded / event.total * 99;
+            const progress = (event.loaded / event.total) * 99;
             dispatcher(progress, true);
         };
 
@@ -201,8 +200,7 @@ function attachmentApi(
 
             const msg = pmcw.getMessage(packets.keys);
 
-            pmcw
-                .decryptSessionKey({ message: msg, privateKeys: keys })
+            pmcw.decryptSessionKey({ message: msg, privateKeys: keys })
                 .then((sessionKey) => ({
                     REQUEST_ID,
                     sessionKey,
