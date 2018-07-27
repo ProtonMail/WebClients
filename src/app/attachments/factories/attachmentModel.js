@@ -374,12 +374,11 @@ function attachmentModel(
             filename: file.name || `${I18N.IMAGE} ${message.Attachments.length + 1}`,
             uploading: true,
             Size: file.size,
-            ContentID: cid,
-            Inline: file.inline || 0
+            ContentID: cid
         };
 
         // force update the embedded counter
-        if (tempPacket.Inline) {
+        if (file.inline) {
             message.NumEmbedded++;
             // CID doesn't exist when the user add an attachment
             tempPacket.ContentID = cid || embedded.generateCid(file.upload.uuid, message.From.Email);
