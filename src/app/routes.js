@@ -85,6 +85,9 @@ export default angular
                     },
                     user(User) {
                         return User.get();
+                    },
+                    addresses(Address) {
+                        return Address.query();
                     }
                 }
             })

@@ -31,7 +31,7 @@ function addressesModel(Address, authentication, dispatchers, formatKeys) {
      * @return {Promise}
      */
     const fetch = (user = authentication.user) => {
-        return Address.query().then(({ Addresses = [] }) => {
+        return Address.query().then((Addresses = []) => {
             const copy = Addresses.slice();
 
             set(copy, user);

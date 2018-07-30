@@ -98,6 +98,7 @@ function Address($http, url, gettextCatalog) {
         $http
             .get(requestUrl())
             .then(handleResult)
+            .then((data) => data.Addresses)
             .catch(filterError(I18N.ERROR_QUERY));
     const get = (addressID) =>
         $http
