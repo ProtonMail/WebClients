@@ -13,40 +13,24 @@ function publicKeyStore($rootScope, addressesModel, keyCache, pmcw, contactEmail
     const normalizeEmail = (email) => email.toLowerCase();
 
     /**
-     * Filters the given list of key by fingerprint using an object representing the blacklist
-     * @param {Array} keys An array of openpgp keys
-     * @param {Object} blacklist An object that contains keys for each fingerprint that is blacklisted
-     * @param An array of openpgp.js keys filtered by the given blacklist
-     * @return {Array} The openpgp.js keys filtered by the passed in blacklist
-     */
-    const filterFingerprints = (keys, blacklist) => {
-        return keys.filter(({ primaryKey }) => {
-            return !blacklist[primaryKey.getFingerprint()];
-        });
-    };
-
-    /**
      * Retrieve the public keys of a email address from cache. This returns either a map from email -> public keys
      * or null in case there is no such value
-     * @param string email
-     * @return {} Map email -> public keys OR NULL
+     * @param email String
+     * @return Object Map email -> public keys OR NULL
      */
-    const fromCache = (email, verificationOnly) => {
+    const fromCache = (email) => {
         const normEmail = normalizeEmail(email);
         if (!_.has(CACHE.EMAIL_PUBLIC_KEY, normEmail)) {
             return null;
         }
 
-        const { timestamp, pubKeys, compromisedKeys } = CACHE.EMAIL_PUBLIC_KEY[normEmail];
+        const { timestamp, pubKeys } = CACHE.EMAIL_PUBLIC_KEY[normEmail];
 
         if (timestamp + CACHE_TIMEOUT < Date.now()) {
             delete CACHE.EMAIL_PUBLIC_KEY[normEmail];
             return null;
         }
 
-        if (verificationOnly) {
-            return { [email]: filterFingerprints(pubKeys, compromisedKeys) };
-        }
         return { [email]: pubKeys };
     };
 
@@ -94,11 +78,11 @@ function publicKeyStore($rootScope, addressesModel, keyCache, pmcw, contactEmail
         // In case the pgp packet list contains multiple keys, only first one is taken.
         const publicKeys = emailKeys.reduce((acc, emailKey) => {
             const [k = null] = contactKey.parseKey(emailKey);
-            k && acc.push(k);
+            k && acc.push({ key: k, compromised: !!compromisedKeys[k.primaryKey.getFingerprint()] });
             return acc;
         }, []);
 
-        return [contactEmail.ContactID, publicKeys, compromisedKeys];
+        return [contactEmail.ContactID, publicKeys];
     };
 
     const isOwnAddress = (email) =>
@@ -107,10 +91,9 @@ function publicKeyStore($rootScope, addressesModel, keyCache, pmcw, contactEmail
     /**
      * Retrieves the pinned keys from the ProtonMail API
      * @param email The mail for which to return the pinned keys
-     * @param verificationOnly True if we should remove compromised keys from the result
      * @return {Promise} A promise returning a map from email to a list of armored keys.
      */
-    const fromApi = async (email, verificationOnly) => {
+    const fromApi = async (email) => {
         _.map(addressesModel.get(), 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
         const normEmail = email.toLowerCase();
         // fetch keys from contacts and from api
@@ -118,16 +101,12 @@ function publicKeyStore($rootScope, addressesModel, keyCache, pmcw, contactEmail
         if (!isOwnAddress(normEmail)) {
             const contactResult = await fromContacts(normEmail);
             if (contactResult) {
-                const [contactID, contactKeyList, compromisedKeys] = contactResult;
+                const [contactID, contactKeyList] = contactResult;
                 CACHE.EMAIL_PUBLIC_KEY[normEmail] = {
                     timestamp: Date.now(),
                     pubKeys: contactKeyList,
-                    compromisedKeys,
                     contactID
                 };
-                if (verificationOnly) {
-                    return { [email]: filterFingerprints(contactKeyList, compromisedKeys) };
-                }
                 return { [email]: contactKeyList };
             }
             // only verify with pinned keys.
@@ -135,40 +114,30 @@ function publicKeyStore($rootScope, addressesModel, keyCache, pmcw, contactEmail
         }
         const { Keys } = addressesModel.get().find(({ Email }) => Email === email);
 
-        const { pubKeys, compromisedKeys } = Keys.reduce(
-            (acc, { PrivateKey, Flags }) => {
-                const [k] = pmcw.getKeys(PrivateKey);
-                acc.pubKeys.push(k.toPublic());
-                if (!(Flags & KEY_FLAGS.ENABLE_VERIFICATION)) {
-                    acc.compromisedKeys[k.primaryKey.getFingerprint()] = true;
-                }
-                return acc;
-            },
-            { pubKeys: [], compromisedKeys: {} }
-        );
-        CACHE.EMAIL_PUBLIC_KEY[normEmail] = { timestamp: Date.now(), pubKeys, compromisedKeys };
-        if (verificationOnly) {
-            return { [email]: filterFingerprints(pubKeys, compromisedKeys) };
-        }
+        const pubKeys = Keys.reduce((acc, { PrivateKey, Flags }) => {
+            const [k] = pmcw.getKeys(PrivateKey);
+            acc.push({ key: k.toPublic(), compromised: !(Flags & KEY_FLAGS.ENABLE_VERIFICATION) });
+            return acc;
+        }, []);
+        CACHE.EMAIL_PUBLIC_KEY[normEmail] = { timestamp: Date.now(), pubKeys };
         return { [email]: pubKeys };
     };
     /**
      * Retrieves the pinned keys for each given email address.
      * @param {Array} emails An array of emails for which we want to retrieve the pinned keys
-     * @param {Boolean} verificationOnly Whether we want to remove any compromised keys from the result
      * @returns {Promise} A promise returning a map from email to a list of openpgp.js keys.
      */
-    const get = async (emails = [], verificationOnly = false) => {
+    const get = async (emails = []) => {
         // retrieve the normalized emails from cache -> remove any null values -> combine them in one object
         const cachedKeys = emails.reduce((acc, email) => {
-            const cache = fromCache(email, verificationOnly);
+            const cache = fromCache(email);
             if (cache) {
                 acc[email] = cache[email];
             }
             return acc;
         }, {});
         const uncachedEmails = _.filter(emails, (email) => !_.has(cachedKeys, email));
-        return Promise.all(_.map(uncachedEmails, (email) => fromApi(email, verificationOnly)))
+        return Promise.all(_.map(uncachedEmails, (email) => fromApi(email)))
             .then((apiKeys) => _.extend({}, ..._.filter(apiKeys)))
             .then((apiKeys) => _.extend({}, cachedKeys, apiKeys));
     };

@@ -347,13 +347,15 @@ function messageModel(
                     return Promise.resolve(null);
                 }
 
-                return publicKeyStore.get([sender], true).then((keys) => {
-                    return [].concat(..._.values(keys));
-                });
+                return publicKeyStore.get([sender]).then(({ [sender]: list }) => list);
             };
 
             return getPubKeys(sender)
-                .then((pubKeys) => {
+                .then((list) => {
+                    const pubKeys = list.reduce((acc, { key, compromised }) => {
+                        !compromised && acc.push(key);
+                        return acc;
+                    }, []);
                     return pmcw
                         .decryptMessageLegacy({
                             message,
@@ -369,7 +371,7 @@ function messageModel(
                             const signedInvalid = VERIFICATION_STATUS.SIGNED_AND_INVALID;
                             const signedPubkey = VERIFICATION_STATUS.SIGNED_NO_PUB_KEY;
                             const verified =
-                                !pubKeys.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
+                                !list.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
 
                             if (this.isPGPMIME()) {
                                 return this.parse(data, verified);
