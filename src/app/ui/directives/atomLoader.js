@@ -3,7 +3,7 @@ function atomLoader(dispatchers, gettextCatalog) {
     const translations = {
         decrypting: gettextCatalog.getString('Decrypting', null, 'atom text loader'),
         upgradingKeys: gettextCatalog.getString(
-            'Enabling IMAP (coming soon).<br />This may take a few minutes, please wait.',
+            'Enabling calendar (coming soon).<br />This may take a few minutes, please wait.',
             null,
             'atom text loader'
         )
