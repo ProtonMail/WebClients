@@ -66,7 +66,7 @@ function vcard(notification, sanitize) {
         _.reduce(vcards, (acc, vCard) => acc + clean(vCard).toString(VCARD_VERSION) + '\r\n', '');
     const from = (vcfString = '') => {
         try {
-            return vCard.parse(vcfString).map((vcard) => clean(vcard));
+            return vCard.parse(vcfString).map((vcard) => clean(convertCustoms(vcard)));
         } catch (e) {
             notification.error(e);
         }
@@ -206,9 +206,8 @@ function vcard(notification, sanitize) {
     }
 
     /**
-     * Handle xablabel custom property and convert it to the vCard 4 format
+     * Handle x-ablabel custom property and convert it to the vCard 4 format
      * Usually, vcards coming from Apple
-     * NOTE not used for now
      * @param  {Array} vcards
      * @return {Array}
      */
@@ -228,10 +227,10 @@ function vcard(notification, sanitize) {
                     return acc;
                 }
 
-                const property1 = _.find(group, (prop) => prop.getField().toLowerCase() === 'xablabel');
+                const property1 = _.find(group, (prop) => prop.getField().toLowerCase() === 'x-ablabel');
 
                 if (property1) {
-                    const property2 = _.find(group, (prop) => prop.getField().toLowerCase() !== 'xablabel');
+                    const property2 = _.find(group, (prop) => prop.getField().toLowerCase() !== 'x-ablabel');
                     const key = property2.getField();
                     const value = property2.valueOf();
                     const params = property2.getParams() || {};
