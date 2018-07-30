@@ -59,12 +59,15 @@ export function pickAttachements(message = {}, action = 'new') {
 
 /**
  * Find the current sender for a message
- * @param  {Object} options.Addresses  From the user
+ * @param  {Object} options.addresses
  * @param  {String} options.AddressID
  * @return {Object}
  */
-export function findSender({ Addresses = [] } = {}, { AddressID = '' } = {}) {
-    const enabledAddresses = flow(filter({ Status: 1 }), sortBy('Order'))(Addresses);
+export function findSender(addresses = [], { AddressID = '' } = {}) {
+    const enabledAddresses = flow(
+        filter({ Status: 1 }),
+        sortBy('Order')
+    )(addresses);
 
     let sender = enabledAddresses[0];
 
@@ -319,7 +322,7 @@ function messageBuilder(
      * @param {Message} message
      */
     function setDefaultsParams(message) {
-        const sender = findSender(message);
+        const sender = findSender(addressesModel.get(), message);
 
         _.defaults(message, {
             Type: DRAFT,
