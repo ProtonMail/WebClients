@@ -51,13 +51,14 @@ function advancedFilterElement(
         const title = gettextCatalog.getString('Delete all', null, 'Title');
         const message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
 
-        if (['drafts', 'spam', 'trash', 'folder', 'label'].indexOf(mailbox) === -1) {
+        if (['drafts', 'allDrafts', 'spam', 'trash', 'folder', 'label'].indexOf(mailbox) === -1) {
             return;
         }
 
         const labelID = $stateParams.label || MAILBOX_IDENTIFIERS[mailbox];
         const MAP_ACTIONS = {
             drafts: 'emptyDraft',
+            allDrafts: 'emptyAllDraft',
             spam: 'emptySpam',
             trash: 'emptyTrash',
             folder: 'emptyLabel',

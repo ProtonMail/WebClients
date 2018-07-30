@@ -1,4 +1,5 @@
 .advancedFilterElement-btn-drafts { display: none !important }
+.advancedFilterElement-btn-all-drafts { display: none !important }
 .advancedFilterElement-btn-spam { display: none !important }
 .advancedFilterElement-btn-trash { display: none !important }
 .advancedFilterElement-btn-folder { display: none !important }
@@ -6,6 +7,9 @@
 
 .advancedFilterElement-state-drafts {
     .advancedFilterElement-btn-drafts { display: inline-block !important }
+}
+.advancedFilterElement-state-all-drafts {
+    .advancedFilterElement-btn-all-drafts { display: inline-block !important }
 }
 .advancedFilterElement-state-spam {
     .advancedFilterElement-btn-spam { display: inline-block !important }
