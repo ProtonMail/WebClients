@@ -1,5 +1,6 @@
 <div class="pm_buttons advancedFilterElement-container" ng-class="{
-    'advancedFilterElement-state-drafts': ('secured.drafts.**' | includedByState) || ('secured.allDrafts.**' | includedByState),
+    'advancedFilterElement-state-drafts': ('secured.drafts.**' | includedByState),
+    'advancedFilterElement-state-all-drafts': ('secured.allDrafts.**' | includedByState),
     'advancedFilterElement-state-spam': ('secured.spam.**' | includedByState),
     'advancedFilterElement-state-trash': ('secured.trash.**' | includedByState)
 }">
@@ -12,6 +13,15 @@
             class="advancedFilterElement-btn-drafts"
             data-action="empty"
             data-action-arg="drafts">
+            <div>
+                <i class="fa fa-times-circle-o"></i>
+                <span translate translate-context="Action">Empty drafts</span>
+            </div>
+        </button>
+        <button
+            class="advancedFilterElement-btn-all-drafts"
+            data-action="empty"
+            data-action-arg="allDrafts">
             <div>
                 <i class="fa fa-times-circle-o"></i>
                 <span translate translate-context="Action">Empty drafts</span>

@@ -149,6 +149,12 @@ function messageApi($http, url) {
     const emptyDraft = () => emptyLabel(MAILBOX_IDENTIFIERS.drafts);
 
     /**
+     * Delete all messages in the all draft folder
+     * @return {Promise}
+     */
+    const emptyAllDraft = () => emptyLabel(MAILBOX_IDENTIFIERS.allDrafts);
+
+    /**
      * Delete all messages in the spam folder
      * @return {Promise}
      */
@@ -179,6 +185,7 @@ function messageApi($http, url) {
         undelete,
         label,
         emptyDraft,
+        emptyAllDraft,
         emptySpam,
         emptyTrash,
         emptyLabel,
