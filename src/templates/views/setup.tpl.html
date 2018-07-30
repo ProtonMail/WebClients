@@ -23,7 +23,7 @@
                     <strong ng-bind="username"></strong>
                     <em class="usernameDomain">@</em>
                     <span class="pm_select inline bigger">
-                        <select class="selectDomain" ng-model="domain" ng-options="domain.label for domain in domains"></select>
+                        <select class="selectDomain" ng-model="model.domain" ng-options="domain as domain.label for domain in domains track by domain.id"></select>
                         <i class="fa fa-angle-down"></i>
                     </span>
                 </div>

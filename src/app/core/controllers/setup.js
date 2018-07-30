@@ -25,8 +25,7 @@ function SetupController(
     $scope.vpnEnabled = (user.VPN || {}).Status;
 
     // Populate the domains <select>
-    $scope.domains = domains.map((value) => ({ label: value, value }));
-    $scope.domain = $scope.domains[0];
+    $scope.domains = domains.map((value, i) => ({ label: value, value, id: i }));
 
     // Username
     $scope.username = user.Name;
@@ -36,7 +35,8 @@ function SetupController(
     // Passwords
     $scope.model = {
         password: '',
-        passwordConfirm: ''
+        passwordConfirm: '',
+        domain: $scope.domains[0]
     };
 
     $scope.submit = () => {
@@ -82,7 +82,7 @@ function SetupController(
         $scope.filling = false;
 
         if (!addresses.length) {
-            return Address.setup({ Domain: $scope.domain.value }).then(({ data = {} } = {}) => {
+            return Address.setup({ Domain: $scope.model.domain.value }).then(({ data = {} } = {}) => {
                 return [data.Address];
             });
         }
