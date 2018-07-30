@@ -130,29 +130,35 @@ function messageApi($http, url) {
     const undelete = (params = {}) => $http.put(requestURL('undelete'), params);
 
     /**
+     * Delete all messages with a label
+     * @param  {String} Label
+     * @return {Promise}
+     */
+    const emptyLabel = (Label, AddressID) =>
+        $http.delete(requestURL('empty'), {
+            params: {
+                Label,
+                AddressID
+            }
+        });
+
+    /**
      * Delete all messages in the draft folder
      * @return {Promise}
      */
-    const emptyDraft = () => $http.delete(requestURL('draft'));
+    const emptyDraft = () => emptyLabel(MAILBOX_IDENTIFIERS.drafts);
 
     /**
      * Delete all messages in the spam folder
      * @return {Promise}
      */
-    const emptySpam = () => $http.delete(requestURL('spam'));
+    const emptySpam = () => emptyLabel(MAILBOX_IDENTIFIERS.spam);
 
     /**
      * Delete all messages in the trash folder
      * @return {Promise}
      */
-    const emptyTrash = () => $http.delete(requestURL('trash'));
-
-    /**
-     * Delete all messages with a label
-     * @param  {String} Label
-     * @return {Promise}
-     */
-    const emptyLabel = (Label) => $http.delete(requestURL('empty'), { params: { Label } });
+    const emptyTrash = () => emptyLabel(MAILBOX_IDENTIFIERS.trash);
 
     return {
         send,
