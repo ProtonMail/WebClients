@@ -356,7 +356,7 @@ describe('Find the sender', () => {
     describe('No addresses message', () => {
         let output;
         beforeEach(() => {
-            output = findSender({ AddressID: 1 });
+            output = findSender([], { AddressID: 1 });
         });
 
         it('should return an empty object', () => {
@@ -367,7 +367,8 @@ describe('Find the sender', () => {
     describe('Addresses but no match', () => {
         let output;
         beforeEach(() => {
-            output = findSender({ Addresses: [{ Status: 2 }] }, { AddressID: 1 });
+            const addresses = [{ Status: 2 }];
+            output = findSender(addresses, { AddressID: 1 });
         });
 
         it('should return an empty object', () => {
@@ -379,8 +380,8 @@ describe('Find the sender', () => {
         let output;
         const match = { Status: 1, Order: 1, ID: 2 };
         beforeEach(() => {
-            const Addresses = [{ Status: 2 }, match, { Status: 1, Order: 2, ID: 3 }];
-            output = findSender({ Addresses }, { AddressID: 1 });
+            const addresses = [{ Status: 2 }, match, { Status: 1, Order: 2, ID: 3 }];
+            output = findSender(addresses, { AddressID: 1 });
         });
 
         it('should return the first address', () => {
@@ -392,8 +393,8 @@ describe('Find the sender', () => {
         let output;
         const match = { Status: 1, Order: 1, ID: 2 };
         beforeEach(() => {
-            const Addresses = [{ Status: 2, ID: 1, Order: 0 }, { Status: 1, Order: 2, ID: 3 }, match];
-            output = findSender({ Addresses }, { AddressID: 1 });
+            const addresses = [{ Status: 2, ID: 1, Order: 0 }, { Status: 1, Order: 2, ID: 3 }, match];
+            output = findSender(addresses, { AddressID: 1 });
         });
 
         it('should return the first address ordered', () => {
@@ -406,8 +407,8 @@ describe('Find the sender', () => {
         const match = { Status: 1, Order: 1, ID: 2 };
         const matchMessage = { Status: 1, Order: 2, ID: 1 };
         beforeEach(() => {
-            const Addresses = [{ Status: 2 }, matchMessage, match];
-            output = findSender({ Addresses }, { AddressID: 1 });
+            const addresses = [{ Status: 2 }, matchMessage, match];
+            output = findSender(addresses, { AddressID: 1 });
         });
 
         it('should return the matching ID from message', () => {

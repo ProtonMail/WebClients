@@ -42,12 +42,14 @@ function upgradeKeys(
         return Promise.resolve(0);
     }
 
-    const collectUserKeys = ({ Keys = [], Addresses = [] } = {}) => {
+    const collectUserKeys = ({ Keys = [] } = {}) => {
+        const addresses = $injector.get('addressesModel').get();
+
         return Keys.reduce(
             (acc, key) => {
                 acc.keys.push(key);
                 let foundKey = null;
-                Addresses.forEach((address) => {
+                addresses.forEach((address) => {
                     foundKey = _.find(address.Keys, { Fingerprint: key.Fingerprint });
                     if (foundKey) {
                         acc.emails[key.ID] = address.Email;
@@ -55,7 +57,7 @@ function upgradeKeys(
                 });
 
                 if (!foundKey) {
-                    acc.emails[key.ID] = Addresses[0].Email;
+                    acc.emails[key.ID] = addresses[0].Email;
                 }
                 return acc;
             },
@@ -63,8 +65,9 @@ function upgradeKeys(
         );
     };
 
-    const collectAddressKeys = ({ Addresses = [] } = {}) => {
-        return Addresses.reduce(
+    const collectAddressKeys = () => {
+        const addresses = $injector.get('addressesModel').get();
+        return addresses.reduce(
             (acc, { Keys = [], Email } = {}) => {
                 Keys.forEach((key) => {
                     acc.keys.push(key);
@@ -85,7 +88,7 @@ function upgradeKeys(
      */
     function manageUserKeys(password = '', oldSaltedPassword = '', user = {}) {
         const keysUser = collectUserKeys(user);
-        const keysAddresses = collectAddressKeys(user);
+        const keysAddresses = collectAddressKeys();
         const inputKeys = [].concat(keysUser.keys, keysAddresses.keys);
         const emailAddresses = _.extend({}, keysUser.emails, keysAddresses.emails);
 
