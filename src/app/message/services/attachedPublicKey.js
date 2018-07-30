@@ -34,7 +34,7 @@ function attachedPublicKey(
      * Format:
      *     - XXXX <xxx@xxxx.xxx>
      *     - xxx@xxxx.xxx
-     * @param  {String} target
+     * @param  {String} email
      * @return {Object}        { name: String, adr:String }
      */
     const extractAddress = (email) => {
@@ -49,7 +49,7 @@ function attachedPublicKey(
         return Promise.all([sendInfo, trustedKeys]).then(([sendPref, publicKeys]) =>
             addresses
                 .filter(({ adr }) =>
-                    publicKeys[adr].every((key) => key.primaryKey.getFingerprint() !== keyInfo.fingerprint)
+                    publicKeys[adr].every(({ key }) => key.primaryKey.getFingerprint() !== keyInfo.fingerprint)
                 )
                 .map((address) => {
                     if (keyInfo.expires !== null && keyInfo.expires < Date.now()) {

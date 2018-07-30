@@ -22,7 +22,10 @@ function SignatureVerifier(dispatchers, pmcw, addressesModel, publicKeyStore) {
      * @returns {*}
      */
     const addressIDtoEmail = (addressID) => {
-        const { Email } = flow(filter({ Status: 1, Receive: 1 }), find({ ID: addressID }))(addressesModel.get());
+        const { Email } = flow(
+            filter({ Status: 1, Receive: 1 }),
+            find({ ID: addressID })
+        )(addressesModel.get());
 
         return Email;
     };
@@ -35,7 +38,7 @@ function SignatureVerifier(dispatchers, pmcw, addressesModel, publicKeyStore) {
         // The Sender object is empty for drafts
         const email = message.Sender.Address || addressIDtoEmail(message.AddressID);
 
-        return publicKeyStore.get([email], true).then((keys) => _.flatten(_.values(keys), true));
+        return publicKeyStore.get([email], true).then(({ [email]: list }) => list);
     };
 
     /**
@@ -50,10 +53,11 @@ function SignatureVerifier(dispatchers, pmcw, addressesModel, publicKeyStore) {
 
     /**
      * Returns the signature status for each of the signatures when after verifying them with the decryptedAttachment
-     * @param message
-     * @param publicKeys
-     * @param signatures
-     * @param decryptedAttachment
+     * @param {Object} message
+     * @param {Array} publicKeys
+     * @param {Array} signatures
+     * @param {Object} attachment
+     * @param {Uint8Array} decryptedAttachment
      * @returns {Promise.<*[]>}
      */
     const verifyAllSignatures = (message, publicKeys, signatures, attachment, decryptedAttachment) => {
@@ -93,7 +97,11 @@ function SignatureVerifier(dispatchers, pmcw, addressesModel, publicKeyStore) {
             return CACHE[ID];
         }
 
-        const publicKeys = await getPublicKeys(message);
+        const keyObjects = await getPublicKeys(message);
+        const publicKeys = keyObjects.reduce((acc, { key, compromised }) => {
+            !compromised && acc.push(key);
+            return acc;
+        }, []);
         const statusPerSig = await verifyAllSignatures(
             message,
             publicKeys,
@@ -107,7 +115,7 @@ function SignatureVerifier(dispatchers, pmcw, addressesModel, publicKeyStore) {
             NOT_SIGNED
         );
         const verified =
-            (!publicKeys || !publicKeys.length) && pmcryptoVerified === SIGNED_AND_INVALID
+            (!keyObjects || !keyObjects.length) && pmcryptoVerified === SIGNED_AND_INVALID
                 ? SIGNED_NO_PUB_KEY
                 : pmcryptoVerified;
         put(ID, verified);
