@@ -10,7 +10,8 @@ function SetupController(
     domains,
     networkActivityTracker,
     setupKeys,
-    user
+    user,
+    addresses
 ) {
     let passwordCopy;
 
@@ -30,7 +31,7 @@ function SetupController(
     // Username
     $scope.username = user.Name;
     // Address creation needed?
-    $scope.chooseDomain = !user.Addresses.length;
+    $scope.chooseDomain = !addresses.length;
 
     // Passwords
     $scope.model = {
@@ -64,8 +65,15 @@ function SetupController(
             return Promise.resolve();
         }
 
+        /**
+         * If there exists addresses, use the first one. This is make sure we are testing
+         * the correct credentials for a sub-user with a custom domain with VPN.
+         * If no addresses exist, assume it doesn't have a custom domain.
+         */
+        const Username = addresses.length ? addresses[0].Email : user.Name;
+
         return authentication.loginWithCredentials({
-            Username: user.Name,
+            Username,
             Password: passwordCopy
         });
     }
@@ -73,18 +81,17 @@ function SetupController(
     async function setupAddress() {
         $scope.filling = false;
 
-        if (!user.Addresses.length) {
+        if (!addresses.length) {
             return Address.setup({ Domain: $scope.domain.value }).then(({ data = {} } = {}) => {
-                user.Addresses = [data.Address];
-                return user;
+                return [data.Address];
             });
         }
-        return user;
+        return addresses;
     }
 
-    function generateKeys() {
+    function generateKeys(addresses) {
         $scope.genKeys = true;
-        return setupKeys.generate(user.Addresses, passwordCopy);
+        return setupKeys.generate(addresses, passwordCopy);
     }
 
     function installKeys(data = {}) {
