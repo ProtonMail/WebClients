@@ -242,6 +242,7 @@ function setupKeys(passwords, pmcw, webcrypto, Key, memberApi) {
         generateAddresses,
         generate,
         decryptMemberKey,
+        decryptMemberToken,
         memberSetup,
         memberKey,
         setup,
