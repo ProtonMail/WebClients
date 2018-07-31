@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { RECIPIENT_TYPE, PACKAGE_TYPE, CONTACT_ERROR, KEY_FLAGS } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
-import { getGroup } from '../../../helpers/vcard';
+import { getGroup, groupMatcher } from '../../../helpers/vcard';
 
 /* @ngInject */
 function sendPreferences(
@@ -272,7 +272,7 @@ function sendPreferences(
             return { [email]: await getDefaultInfo(email, keyData, defaultMimeType, eoEnabled, globalSign) };
         }
 
-        const matchesGroup = (prop) => prop.getGroup().toLowerCase() === group.toLowerCase();
+        const matchesGroup = groupMatcher(group.toLowerCase());
         const emailKeys = _.filter(keyList, matchesGroup);
         const encryptFlag = _.find(encryptFlagList, matchesGroup);
         const signFlag = _.find(signFlagList, matchesGroup);

@@ -9,6 +9,7 @@ function contactItem(
     messageModel,
     addressesModel,
     contactEncryptionModal,
+    contactEncryptionSaver,
     keyCache,
     networkActivityTracker
 ) {
@@ -87,8 +88,10 @@ function contactItem(
                                     scope.$applyAsync(() => {
                                         model.Email = { ...scope.UI.items[index], settings: undefined };
                                         scope.UI.items[index].settings = model;
+                                        networkActivityTracker.track(
+                                            contactEncryptionSaver.save(scope.model, scope.state.ID, index)
+                                        );
                                         contactEncryptionModal.deactivate();
-                                        scope.form.$setDirty();
                                     });
                                 },
                                 close: () => contactEncryptionModal.deactivate(),

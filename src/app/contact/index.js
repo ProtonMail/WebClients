@@ -37,6 +37,7 @@ import contactMergerFactory from './factories/contactMerger';
 import contactSchema from './factories/contactSchema';
 import contactKeyAssigner from './factories/contactKeyAssigner';
 import contactEncryption from './factories/contactEncryption';
+import contactEncryptionSaver from './factories/contactEncryptionSaver';
 import contactTransformLabel from './factories/contactTransformLabel';
 import contactUI from './factories/contactUI';
 import contactSelectorModel from './factories/contactSelectorModel';
@@ -99,6 +100,7 @@ export default angular
     .factory('contactTransformLabel', contactTransformLabel)
     .factory('contactUI', contactUI)
     .factory('contactEncryption', contactEncryption)
+    .factory('contactEncryptionSaver', contactEncryptionSaver)
     .factory('contactSelectorModel', contactSelectorModel)
     .factory('contactSpam', contactSpam)
     .factory('contactKeyAssigner', contactKeyAssigner)
