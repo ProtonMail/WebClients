@@ -23,18 +23,30 @@ export const toBase64 = async (file, isValid = () => true) => {
 };
 
 /**
- * Read the content of a blob and returns its value as a string
+ * Read the content of a blob and returns its value as a buffer
  * @param  {Blob} file
  * @return {Promise}
  */
-export const readFile = async (file) => {
-    const reader = new FileReader();
+export const readFileAsBuffer = (file) => {
     return new Promise((resolve, reject) => {
+        const reader = new FileReader();
         reader.onload = () => resolve(reader.result);
         reader.onerror = reject;
         reader.onabort = reject;
-        reader.readAsBinaryString(file);
+        reader.readAsArrayBuffer(file);
     });
+};
+
+/**
+ * Read the content of a blob and returns its value as a string.
+ * Not using readAsBinaryString because it's deprecated.
+ * @param  {Blob} file
+ * @return {Promise}
+ */
+export const readFileAsString = async (file) => {
+    const arrayBuffer = await readFileAsBuffer(file);
+    // eslint-disable-next-line new-cap
+    return pmcrypto.arrayToBinaryString(new Uint8Array(arrayBuffer));
 };
 
 /**

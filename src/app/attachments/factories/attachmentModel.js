@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { flow, filter, map, reduce } from 'lodash/fp';
 
 import { MIME_TYPES } from '../../constants';
-import { readFile } from '../../../helpers/fileHelper';
+import { readFileAsString } from '../../../helpers/fileHelper';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -107,7 +107,7 @@ function attachmentModel(
             queueEntry.file.type !== 'application/pgp-keys'
         ) {
             try {
-                const data = await readFile(queueEntry.file);
+                const data = await readFileAsString(queueEntry.file);
                 // check if it's valid key data
                 pmcw.getKeys(data);
                 // add new mimetype

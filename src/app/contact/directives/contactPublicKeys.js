@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { RECIPIENT_TYPE, KEY_FLAGS } from '../../constants';
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 import { removeEmailAlias } from '../../../helpers/string';
+import { readFileAsString } from '../../../helpers/fileHelper';
 
 /* @ngInject */
 function contactPublicKeys(
@@ -194,16 +195,6 @@ function contactPublicKeys(
                 });
             scope.visibleItems = () => scope.UI.items.filter(({ hide }) => !hide);
 
-            const readFile = async (file) => {
-                const reader = new FileReader();
-                return new Promise((resolve, reject) => {
-                    reader.addEventListener('load', () => resolve(reader.result), false);
-                    reader.addEventListener('error', () => reject(reader), false);
-
-                    reader.readAsBinaryString(file);
-                });
-            };
-
             const listToString = (separator, list) =>
                 list.slice(0, -2).join(', ') + list.slice(list.length - 2, list.length).join(` ${separator} `);
 
@@ -374,13 +365,14 @@ function contactPublicKeys(
                 }
 
                 const promise = Promise.all(
-                    _.map(target.files, (file) =>
-                        readFile(file)
-                            .then(getInfo)
-                            .catch(() => {
-                                return { error: file.name };
-                            })
-                    )
+                    _.map(target.files, async (file) => {
+                        try {
+                            const key = await readFileAsString(file);
+                            return getInfo(key);
+                        } catch (e) {
+                            return { error: file.name };
+                        }
+                    })
                 )
                     .then((keys) => {
                         const invalidKeys = _.filter(_.map(keys, 'error'));

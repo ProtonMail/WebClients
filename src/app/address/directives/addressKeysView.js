@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { KEY_FLAGS, KEY_FILE_EXTENSION } from '../../constants';
-import { readFile } from '../../../helpers/fileHelper';
+import { readFileAsString } from '../../../helpers/fileHelper';
 
 /* @ngInject */
 function addressKeysView(
@@ -204,7 +204,7 @@ function addressKeysView(
                     return;
                 }
                 reactivateKeyModal.deactivate();
-                const promise = Promise.all(_.map(importKeyFile.files, readFile))
+                const promise = Promise.all(_.map(importKeyFile.files, readFileAsString))
                     .then((file) =>
                         importPrivateKey.importKey(file.join('\n'), importKeyAddress.value, importKeyId.value)
                     )
