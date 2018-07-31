@@ -44,7 +44,7 @@ function forgeRequestParameters($stateParams, $filter, mailSettingsModel) {
         }
 
         if (mailbox === 'search') {
-            params.Address = $stateParams.address;
+            params.AddressID = $stateParams.address;
             params.LabelID = $stateParams.label;
             params.Keyword = getKeyBoard();
             params.To = $stateParams.to;
