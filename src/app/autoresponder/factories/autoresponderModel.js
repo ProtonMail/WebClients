@@ -36,6 +36,18 @@ function autoresponderModel(
         DAY: 24 * 60 * 60
     };
 
+    /**
+     * Transform the DaysSelected array coming from the API to an object where
+     * each day corresponds to a key with true or false.
+     * @param {Array} DaysSelected
+     */
+    const transformDaysSelected = (DaysSelected = []) => {
+        return DaysSelected.reduce((previous, value) => {
+            previous[value] = true;
+            return previous;
+        }, _.extend({}, [...new Array(7)].map(() => false)));
+    };
+
     // this object indicates the differences between the mailSettingsModel.AutoResponder and the unsaved changes
     let changedAutoresponder = {};
 
@@ -53,7 +65,16 @@ function autoresponderModel(
             // To ensure a new object.
             return { ...getDefaultAutoResponder() };
         }
-        return { IsEnabled, StartTime, EndTime, DaysSelected, Repeat, Subject, Message, Zone };
+        return {
+            IsEnabled,
+            StartTime,
+            EndTime,
+            DaysSelected: transformDaysSelected(DaysSelected),
+            Repeat,
+            Subject,
+            Message,
+            Zone
+        };
     };
     const get = () => _.extend({}, getBaseResponder(), getChangedAutoresponder());
     const dispatch = (type, data) => dispatcher.autoresponder(type, data);
@@ -79,15 +100,7 @@ function autoresponderModel(
             /*
                 only applicable for daily. Day 0 means Sunday and so on
             */
-            DaysSelected: {
-                0: true,
-                1: true,
-                2: true,
-                3: true,
-                4: true,
-                5: true,
-                6: true
-            },
+            DaysSelected: transformDaysSelected([0, 1, 2, 3, 4, 5, 6]),
             Repeat: constants.FIXED_INTERVAL,
             Subject: autoresponderLanguage.DEFAULT_SUBJECT_PREFIX,
             Message: null,
