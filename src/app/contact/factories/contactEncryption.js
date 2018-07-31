@@ -1,12 +1,18 @@
 import _ from 'lodash';
 
 import { orderByPref, uniqGroups } from '../../../helpers/vcard';
-import { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, CONTACT_ERROR } from '../../constants';
+import {
+    CONTACT_MODE,
+    CONTACTS_LIMIT_ENCRYPTION,
+    MAIN_KEY,
+    VCARD_VERSION,
+    CONTACT_ERROR,
+    VCARD_KEY_FIELDS
+} from '../../constants';
 
-const KEY_FIELDS = ['key', 'x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-scheme', 'x-pm-tls', 'x-pm-dane'];
 const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
-const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(KEY_FIELDS);
-const GROUP_FIELDS = ['email'].concat(KEY_FIELDS);
+const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(VCARD_KEY_FIELDS);
+const GROUP_FIELDS = ['email'].concat(VCARD_KEY_FIELDS);
 const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
 const {
     TYPE3_CONTACT_VERIFICATION,
@@ -235,7 +241,7 @@ function contactEncryption($injector, $rootScope, chunk, gettextCatalog, pmcw, v
                         chunkedContacts.map(({ ID, Cards = [] }) => {
                             return extractCards({ cards: Cards, privateKeys, publicKeys }).then((data) => {
                                 count++;
-                                const progress = Math.floor(count * 100 / total);
+                                const progress = Math.floor((count * 100) / total);
                                 $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
 
                                 return buildContact(ID, data, Cards);
@@ -269,7 +275,7 @@ function contactEncryption($injector, $rootScope, chunk, gettextCatalog, pmcw, v
                         chunkedContacts.map((contact) => {
                             return prepareCards({ data: contact.vCard, publicKeys, privateKeys }).then((Cards) => {
                                 count++;
-                                const progress = Math.floor(count * 50 / total);
+                                const progress = Math.floor((count * 50) / total);
 
                                 $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
 

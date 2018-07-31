@@ -152,6 +152,15 @@ export const VCARD_TYPES = [
     'agent',
     'emergency'
 ];
+export const VCARD_KEY_FIELDS = [
+    'key',
+    'x-pm-mimetype',
+    'x-pm-encrypt',
+    'x-pm-sign',
+    'x-pm-scheme',
+    'x-pm-tls',
+    'x-pm-dane'
+];
 
 export const PASSWORD_MODE = {
     TWO_MODE: 2,

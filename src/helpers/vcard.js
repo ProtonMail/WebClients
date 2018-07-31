@@ -3,12 +3,15 @@ import _ from 'lodash';
 import { normalizeEmail } from './string';
 
 export const getGroup = (emailList, email) => {
-    const prop = _.find(emailList, (prop) => normalizeEmail(prop.valueOf()) === email);
+    const normalEmail = normalizeEmail(email);
+    const prop = _.find(emailList, (prop) => normalizeEmail(prop.valueOf()) === normalEmail);
     if (!prop) {
         return;
     }
     return prop.getGroup();
 };
+
+export const groupMatcher = (group) => (prop) => prop.getGroup().toLowerCase() === group.toLowerCase();
 
 /**
  * Order properties by preference parameter
