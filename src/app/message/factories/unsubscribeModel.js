@@ -10,6 +10,7 @@ function unsubscribeModel(
     gettextCatalog,
     messageModel,
     notification,
+    requestFormData,
     simpleSend
 ) {
     const LIST = [];
@@ -55,7 +56,17 @@ function unsubscribeModel(
         return simpleSend(message).then(() => notification.success(successMessage));
     }
 
-    const postRequest = (value = '') => $http.post(value);
+    /**
+     * Perform an HTTPS POST request to send the key/value pair in the List-Unsubscribe-Post header as the request body.
+     * https://tools.ietf.org/html/rfc8058
+     * @param  {String} url endpoint
+     * @return {Promise}
+     */
+    const postRequest = (url = '') => {
+        const data = new FormData();
+        data.append('List-Unsubscribe', 'One-Click');
+        return requestFormData('POST', url, data);
+    };
 
     function unsubscribe(message = {}) {
         const list = message.getListUnsubscribe();
@@ -67,8 +78,8 @@ function unsubscribeModel(
             const startsWithHttp = value.startsWith('http');
 
             value.startsWith('mailto:') && sendMessage(value, addressID);
-            startsWithHttp && oneClick && postRequest(value);
             startsWithHttp && !oneClick && openWindow(value);
+            startsWithHttp && oneClick && postRequest(value); // NOTE Present with MailChimp message but has CORB issue
         });
 
         LIST.push(list);

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function Report($http, url, gettextCatalog) {
+function Report($http, url, gettextCatalog, requestFormData) {
     const requestURL = url.build('reports');
     const I18N = {
         ERROR_REPORT: gettextCatalog.getString('Error communicating with the server', null, 'Report bug request'),
@@ -23,20 +23,12 @@ function Report($http, url, gettextCatalog) {
             .then(handleSuccess)
             .catch(handleError(I18N.ERROR_PHISHING));
     const bug = (data) => {
-        const config =
+        const request =
             data instanceof FormData
-                ? {
-                      transformRequest: angular.identity,
-                      headers: {
-                          'Content-Type': undefined
-                      }
-                  }
-                : undefined;
+                ? requestFormData('POST', requestURL('bug'), data)
+                : $http.post(requestURL('bug'), data);
 
-        return $http
-            .post(requestURL('bug'), data, config)
-            .then(handleSuccess)
-            .catch(handleError(I18N.ERROR_REPORT));
+        return request.then(handleSuccess).catch(handleError(I18N.ERROR_REPORT));
     };
 
     const uploadScreenshot = (image, form) =>
