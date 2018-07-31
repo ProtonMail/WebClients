@@ -1,5 +1,5 @@
 import { toFile } from '../../../src/helpers/imageHelper';
-import { toBase64, readFile } from '../../../src/helpers/fileHelper';
+import { toBase64, readFileAsString, readFileAsBuffer } from '../../../src/helpers/fileHelper';
 import img from '../../media/img';
 
 describe('toBase64', async () => {
@@ -49,15 +49,20 @@ describe('readFile', async () => {
         file = await toFile(img, filename);
     });
 
+    it('should be a an array buffer', async () => {
+        const output = await readFileAsBuffer(file);
+        expect(output instanceof ArrayBuffer).toBeTruthy();
+    });
+
     it('should be a string !base 64', async () => {
-        const output = await readFile(file);
+        const output = await readFileAsString(file);
         expect(typeof output).toBe('string');
         expect(output.startsWith('data:')).toBe(false);
     });
 
     it('should throw an error if the file is not defined', async () => {
         try {
-            await readFile(null);
+            await readFileAsString(null);
         } catch (e) {
             expect(typeof e.stack).toBe('string');
         }

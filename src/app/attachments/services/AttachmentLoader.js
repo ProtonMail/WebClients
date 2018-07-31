@@ -1,3 +1,5 @@
+import { readFileAsBuffer } from '../../../helpers/fileHelper';
+
 /* @ngInject */
 function AttachmentLoader(
     dispatchers,
@@ -11,8 +13,14 @@ function AttachmentLoader(
     Eo,
     secureSessionStorage,
     attachmentApi,
-    SignatureVerifier
+    SignatureVerifier,
+    gettextCatalog
 ) {
+    const I18N = {
+        encrypt: gettextCatalog.getString('Failed to encrypt attachment. Please try again.', null, 'Error'),
+        missing: gettextCatalog.getString('You did not provide a file.', null, 'Error')
+    };
+
     const { dispatcher } = dispatchers(['attachmentLoader']);
     const cache = $cacheFactory('attachments');
     const getCacheKey = ({ ID }) => `attachment.${ID}`;
@@ -70,8 +78,7 @@ function AttachmentLoader(
             .catch((err) => ($log.error(err), err));
     };
 
-    const encrypt = (attachment, publicKeys, privateKeys, { name, type, size, inline } = {}) => {
-        const data = new Uint8Array(attachment);
+    const encrypt = (data, publicKeys, privateKeys, { name, type, size, inline } = {}) => {
         return pmcw
             .encryptMessage({
                 passwords: [],
@@ -98,23 +105,16 @@ function AttachmentLoader(
     };
 
     // read the file locally, and encrypt it. return the encrypted file.
-    function load(file, pubKeys, privKey) {
-        const deferred = $q.defer();
-        const reader = new FileReader();
-
+    async function load(file, pubKeys, privKey) {
         if (!file) {
-            return deferred.reject(new TypeError('You did not provide a file'));
+            throw new TypeError(I18N.missing);
         }
-
-        reader.onloadend = () => {
-            encrypt(reader.result, pubKeys, privKey, file)
-                .then(deferred.resolve)
-                .catch(() => deferred.reject('Failed to encrypt attachment. Please try again.'));
-        };
-
-        reader.readAsArrayBuffer(file);
-
-        return deferred.promise;
+        try {
+            const result = await readFileAsBuffer(file);
+            return encrypt(new Uint8Array(result), pubKeys, privKey, file);
+        } catch (e) {
+            throw new Error(I18N.encrypt);
+        }
     }
 
     /**
