@@ -105,6 +105,12 @@ function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguag
                     }
                 });
 
+                on('mailSettings', (event, { type = '' }) => {
+                    if (type === 'updated') {
+                        autoresponderModel.load();
+                    }
+                });
+
                 on('autoresponder.toggle', (e, { status }) => {
                     // First check that the autoresponder enabled will change.
                     if (!autoresponderModel.willUpdate(status)) {
