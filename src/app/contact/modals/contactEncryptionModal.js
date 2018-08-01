@@ -19,6 +19,7 @@ function contactEncryptionModal(pmModal) {
             this.class = 'contact-encryption-modal';
             this.internalKeys = params.internalKeys;
 
+            this.directSave = params.directSave;
             this.cancel = () => params.close();
             this.save = () => params.save(this.model);
         }
