@@ -12,6 +12,9 @@ import {
 
 const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
 const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(VCARD_KEY_FIELDS);
+
+// Fields that are forced to be included in the encrypted data
+const ENCRYPTED_FIELDS = ['uid'];
 const GROUP_FIELDS = ['email'].concat(VCARD_KEY_FIELDS);
 const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
 const {
@@ -70,13 +73,14 @@ function contactEncryption($injector, $rootScope, chunk, gettextCatalog, pmcw, v
         let itemCounter = 0;
         const properties = vcard.extractProperties(data);
         const groups = uniqGroups(properties);
+        const defaultUID = generateUID();
 
         function getGroupName() {
             itemCounter++;
 
             const groupName = `item${itemCounter}`;
 
-            if (_.includes(groups, groupName)) {
+            if (groups.includes(groupName)) {
                 return getGroupName();
             }
 
@@ -87,17 +91,18 @@ function contactEncryption($injector, $rootScope, chunk, gettextCatalog, pmcw, v
             vcard.extractProperties(data),
             (acc, property) => {
                 const key = property.getField();
-                const isClear = _.includes(CLEAR_FIELDS, key);
-                const isSigned = _.includes(SIGNED_FIELDS, key);
+                const isClear = CLEAR_FIELDS.includes(key);
+                const isSigned = SIGNED_FIELDS.includes(key);
+                const isEncrypted = ENCRYPTED_FIELDS.includes(key);
 
-                if (_.includes(GROUP_FIELDS, key) && !property.group) {
+                if (GROUP_FIELDS.includes(key) && !property.group) {
                     property.group = getGroupName();
                 }
 
                 isClear && acc.clearText.push(property);
                 isSigned && acc.toSign.push(property);
 
-                if (!isClear && !isSigned) {
+                if ((!isClear && !isSigned) || isEncrypted) {
                     acc.toEncryptAndSign.push(property);
                 }
 
@@ -107,6 +112,11 @@ function contactEncryption($injector, $rootScope, chunk, gettextCatalog, pmcw, v
         );
 
         if (toEncryptAndSign.length > 0) {
+            const encSignedFields = toEncryptAndSign.map((prop) => prop.getField());
+
+            if (encSignedFields.indexOf('uid') === -1) {
+                toEncryptAndSign.push(new vCard.Property('uid', defaultUID));
+            }
             const data = vcard.build(toEncryptAndSign).toString(VCARD_VERSION);
 
             promises.push(
@@ -119,10 +129,10 @@ function contactEncryption($injector, $rootScope, chunk, gettextCatalog, pmcw, v
         }
 
         if (toSign.length > 0) {
-            const signedFields = _.map(toSign, '_field');
+            const signedFields = toSign.map((prop) => prop.getField());
 
             if (signedFields.indexOf('uid') === -1) {
-                toSign.push(new vCard.Property('uid', generateUID()));
+                toSign.push(new vCard.Property('uid', defaultUID));
             }
 
             if (signedFields.indexOf('fn') === -1) {
