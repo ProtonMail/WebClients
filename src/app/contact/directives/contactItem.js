@@ -80,20 +80,25 @@ function contactItem(
                         const model = hasChangedEmail ? {} : { ...settings };
                         delete model.Email;
 
+                        const directSave = !!scope.state.ID;
+                        const save = (model) => {
+                            scope.$applyAsync(() => {
+                                model.Email = { ...scope.UI.items[index], settings: undefined };
+                                scope.UI.items[index].settings = model;
+                                directSave &&
+                                    networkActivityTracker.track(
+                                        contactEncryptionSaver.save(scope.model, scope.state.ID, index)
+                                    );
+                                contactEncryptionModal.deactivate();
+                            });
+                        };
+
                         contactEncryptionModal.activate({
                             params: {
                                 email: scope.UI.items[index].value,
                                 model,
-                                save: (model) => {
-                                    scope.$applyAsync(() => {
-                                        model.Email = { ...scope.UI.items[index], settings: undefined };
-                                        scope.UI.items[index].settings = model;
-                                        networkActivityTracker.track(
-                                            contactEncryptionSaver.save(scope.model, scope.state.ID, index)
-                                        );
-                                        contactEncryptionModal.deactivate();
-                                    });
-                                },
+                                save,
+                                directSave,
                                 close: () => contactEncryptionModal.deactivate(),
                                 internalKeys,
                                 form: scope.form

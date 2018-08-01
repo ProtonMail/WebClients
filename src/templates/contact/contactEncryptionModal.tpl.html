@@ -21,8 +21,14 @@
                     tabindex="1"
                     ng-click="ctrl.save()"
                     ng-disabled="ctrl.internalKeys.RecipientType !== 1 && !ctrl.model.Key[0].value && ctrl.model.Encrypt[0].value"
-                    translate-context="Action"
-                    translate>Save</button>
+                    >
+                <span ng-if="ctrl.directSave" translate-context="Action" translate>
+                    Save
+                </span>
+                <span ng-if="!ctrl.directSave" translate-context="Action" translate>
+                    Done
+                </span>
+            </button>
         </div>
     </div>
     <div class="modal-overlay"></div>
