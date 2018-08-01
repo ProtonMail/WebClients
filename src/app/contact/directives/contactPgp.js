@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { PACKAGE_TYPE, RECIPIENT_TYPE, MIME_TYPES, KEY_FLAGS } from '../../constants';
+import { PACKAGE_TYPE, RECIPIENT_TYPE, MIME_TYPES, KEY_FLAGS, CONTACT_SETTINGS_DEFAULT } from '../../constants';
 
 /* @ngInject */
 function contactPgp(dispatchers, pmcw, mailSettingsModel, tooltipModel) {
@@ -59,20 +59,28 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel, tooltipModel) {
             const hasScheme = () => scope.model.Scheme && scope.model.Scheme.length > 0 && !internalUser;
             const schemeValue = () => scope.model.Scheme[0].value.value;
             const isScheme = (scheme) =>
-                hasScheme() && (schemeValue() === scheme || (schemeValue() === 'null' && defaultScheme === scheme));
+                hasScheme() &&
+                (schemeValue() === scheme || (schemeValue() === CONTACT_SETTINGS_DEFAULT && defaultScheme === scheme));
             const isPGPInline = () => isScheme('pgp-inline');
             const isPGPMime = () => isScheme('pgp-mime');
 
+            /**
+             * Fix the mime type such that it corresponds with the encryption scheme. Also makes sure the mimetype
+             * is one of the allowed mime types.
+             * @param {Boolean} encrypt
+             * @param {Boolean} sign
+             */
             const fixMimeType = (encrypt, sign) => {
-                if (!scope.model || !scope.model.MIMEType) {
+                if (!scope.model || !scope.model.MIMEType || !scope.model.MIMEType[0]) {
                     return;
                 }
                 if (
                     ((encrypt || sign) && !internalUser) ||
                     (scope.model.MIMEType[0] && scope.model.MIMEType[0].value.value !== MIME_TYPES.PLAINTEXT)
                 ) {
-                    if (!isScheme('pgp-inline')) {
-                        scope.model.MIMEType[0].value = { name: 'Normal', value: 'null' };
+                    // If not pgp-inline, keep the mimetype, if encryption/signing is disabled: keep the mime type.
+                    if (!isScheme('pgp-inline') || (!encrypt && !sign)) {
+                        scope.model.MIMEType[0].value = { name: 'Normal', value: CONTACT_SETTINGS_DEFAULT };
                     } else {
                         scope.model.MIMEType[0].value = { name: 'Plain text', value: MIME_TYPES.PLAINTEXT };
                     }

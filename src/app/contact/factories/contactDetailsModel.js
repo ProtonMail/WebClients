@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { VCARD_KEYS } from '../../constants';
+import { VCARD_KEYS, CONTACT_SETTINGS_DEFAULT } from '../../constants';
 import { orderByPref } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
 
@@ -202,7 +202,7 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
                                 const vCardArgs = getParams(entry, setting.length > 1 && index + 1);
                                 delete vCardArgs.type;
                                 const entryValue = settingValue(entry.value);
-                                if (entryValue === 'null') {
+                                if (entryValue === CONTACT_SETTINGS_DEFAULT) {
                                     return;
                                 }
                                 const encryptProperty = new vCard.Property(
