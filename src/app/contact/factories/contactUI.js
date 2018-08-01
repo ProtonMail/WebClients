@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { PACKAGE_TYPE, KNOWLEDGE_BASE } from '../../constants';
+import { PACKAGE_TYPE, KNOWLEDGE_BASE, CONTACT_SETTINGS_DEFAULT } from '../../constants';
 /* @ngInject */
 function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
     const EMAIL_TYPE = ['email', 'home', 'work', 'other'];
@@ -78,7 +78,7 @@ function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
                     UI.mode = 'select';
                     // Doesn't need to be translated: is universal.
                     UI.options = [
-                        { value: 'null', name: I18N.noScheme + ` (${defaultValue})` },
+                        { value: CONTACT_SETTINGS_DEFAULT, name: I18N.noScheme + ` (${defaultValue})` },
                         { value: 'pgp-mime', name: 'PGP/MIME' },
                         { value: 'pgp-inline', name: 'PGP/Inline' }
                     ];
@@ -97,7 +97,7 @@ function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
                 UI.iconClass = 'fa-paint-brush';
                 UI.mode = 'select';
                 UI.options = [
-                    { value: 'null', name: I18N.htmlMimeType },
+                    { value: CONTACT_SETTINGS_DEFAULT, name: I18N.htmlMimeType },
                     { value: 'text/plain', name: I18N.plaintextMimeType }
                 ];
                 UI.infoTooltip = gettextCatalog.getString(
@@ -129,7 +129,7 @@ function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
                     UI.iconClass = 'fa-shield';
                     UI.mode = 'select';
                     UI.options = [
-                        { value: 'null', name: I18N.default + ` (${defaultValue})` },
+                        { value: CONTACT_SETTINGS_DEFAULT, name: I18N.default + ` (${defaultValue})` },
                         { value: 'required', name: I18N.requireTLS },
                         { value: 'opportunistic', name: I18N.optionalTLS }
                     ];
