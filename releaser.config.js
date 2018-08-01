@@ -4,7 +4,11 @@ module.exports = {
     upstream: 'ProtonMail/Angular',
     dir: '.',
     labels: {
-        external: [{ match: 'Feature', name: 'Added' }, { match: 'Bug 🐞', name: 'Fixed' }],
+        external: [
+            { match: 'Feature', name: 'Added' },
+            { match: 'Bug', name: 'Fixed' },
+            { match: 'Improvement', name: 'Improved' }
+        ],
         local: [{ match: /Hotfix [-~]? ?/, name: 'Changed' }]
     },
     render: {
