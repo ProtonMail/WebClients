@@ -2,6 +2,7 @@ import service from '../../../../src/app/message/services/transformRemote';
 
 describe('transformRemote service', () => {
     const REMOTE_URL = '/remote.jpg';
+    const INLINE_EMBEDDED_URL = 'data:image/png;base64,iVBORw0KGgoA';
     const MailSettings = {
         ShowImages: 0
     };
@@ -23,6 +24,8 @@ describe('transformRemote service', () => {
 
     const DOM = `
         <img proton-src="${REMOTE_URL}">
+        <img proton-src="${INLINE_EMBEDDED_URL}">
+        <img proton-src="cid:embedded.jpg">
     `;
 
     const dom = (html) => {
@@ -41,9 +44,21 @@ describe('transformRemote service', () => {
             });
 
             it('should add src for remote img', () => {
-                const img = output.querySelectorAll('img');
-                const remoteImg = img[0];
-                expect(remoteImg.getAttribute('src')).toEqual(REMOTE_URL);
+                const imgs = output.querySelectorAll('img');
+                const img = imgs[0];
+                expect(img.getAttribute('src')).toEqual(REMOTE_URL);
+            });
+
+            it('should not add src for inline embedded img', () => {
+                const imgs = output.querySelectorAll('img');
+                const img = imgs[1];
+                expect(img.getAttribute('src')).toBeNull();
+            });
+
+            it('should not add src for embedded img', () => {
+                const imgs = output.querySelectorAll('img');
+                const img = imgs[2];
+                expect(img.getAttribute('src')).toBeNull();
             });
         });
     };
@@ -69,9 +84,21 @@ describe('transformRemote service', () => {
             });
 
             it('should not add src for remote img', () => {
-                const img = output.querySelectorAll('img');
-                const remoteImg = img[0];
-                expect(remoteImg.getAttribute('src')).toBeNull();
+                const imgs = output.querySelectorAll('img');
+                const img = imgs[0];
+                expect(img.getAttribute('src')).toBeNull();
+            });
+
+            it('should not add src for inline embedded image', () => {
+                const imgs = output.querySelectorAll('img');
+                const img = imgs[1];
+                expect(img.getAttribute('src')).toBeNull();
+            });
+
+            it('should not add src for embedded image', () => {
+                const imgs = output.querySelectorAll('img');
+                const img2 = imgs[2];
+                expect(img2.getAttribute('src')).toBeNull();
             });
         });
     };

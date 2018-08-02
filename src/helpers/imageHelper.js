@@ -116,3 +116,17 @@ export const downSize = (base64str, maxSize, mimeType = 'image/jpeg', encoderOpt
 
     return toImage(base64str).then(({ height, width }) => process(base64str, height > width ? height : width));
 };
+
+/**
+ * Returns true if the URL is an inline embedded image.
+ * @param {String} src
+ * @returns {boolean}
+ */
+export const isInlineEmbedded = (src = '') => src.startsWith('data:');
+
+/**
+ * Returns true if the URL is an embedded image.
+ * @param {String} src
+ * @returns {boolean}
+ */
+export const isEmbedded = (src = '') => src.startsWith('cid:');

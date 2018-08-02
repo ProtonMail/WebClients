@@ -3,18 +3,23 @@ import service from '../../../../src/app/message/services/transformEmbedded';
 describe('transformEmbedded service', () => {
     const EMBEDDED_NAME = 'embedded name';
     const EMBEDDED_URL = 'embedded url';
+    const INLINE_EMBEDDED_URL = 'data:image/png;base64,iVBORw0KGgoA';
     const MailSettings = {
         ShowImages: 0
     };
     const embeddedService = {
         getAttachment(msg, src) {
-            if (src === '/embedded.jpg') {
+            if (src === 'cid:embedded.jpg') {
                 return {
                     Name: EMBEDDED_NAME
                 };
             }
         },
-        getUrl() {
+        getUrl(node) {
+            const src = node.getAttribute('data-embedded-img') || '';
+            if (src.startsWith('data:')) {
+                return src;
+            }
             return EMBEDDED_URL;
         }
     };
@@ -32,8 +37,9 @@ describe('transformEmbedded service', () => {
     const factory = service(embeddedService, $stateService, mailSettingsModel);
 
     const DOM = `
-        <img proton-src="/embedded.jpg">
+        <img proton-src="cid:embedded.jpg">
         <img proton-src="/remote.jpg">
+        <img proton-src="${INLINE_EMBEDDED_URL}">
     `;
 
     const dom = (html) => {
@@ -63,6 +69,14 @@ describe('transformEmbedded service', () => {
                 const img = output.querySelectorAll('img');
                 const remoteImg = img[1];
                 expect(remoteImg.getAttribute('src')).toBeNull();
+            });
+
+            it('should add src for inline embedded img', () => {
+                const img = output.querySelectorAll('img');
+                const embeddedImg = img[2];
+                expect(embeddedImg.getAttribute('class')).toEqual('proton-embedded');
+                expect(embeddedImg.getAttribute('src')).toEqual(INLINE_EMBEDDED_URL);
+                expect(embeddedImg.getAttribute('referrerpolicy')).toEqual('no-referrer');
             });
         });
     };
@@ -115,6 +129,15 @@ describe('transformEmbedded service', () => {
                 const img = output.querySelectorAll('img');
                 const remoteImg = img[1];
                 expect(remoteImg.getAttribute('src')).toBeNull();
+            });
+
+            it('should not add src for inline embedded img', () => {
+                const img = output.querySelectorAll('img');
+                const embeddedImg = img[2];
+                expect(embeddedImg.getAttribute('class')).toEqual('proton-embedded');
+                expect(embeddedImg.getAttribute('src')).toBeNull();
+                expect(embeddedImg.getAttribute('alt')).toBeNull();
+                expect(embeddedImg.getAttribute('referrerpolicy')).toEqual('no-referrer');
             });
         });
     };

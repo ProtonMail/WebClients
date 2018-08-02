@@ -23,6 +23,7 @@ function embeddedImgLoader($log, dispatchers, embedded) {
         /**
          * Filter img and don't build promises if
          *     - src contains `cid:`
+         *     - src contains `data:`
          *     - src is empty
          * Prevent Uncaught (in promise) TypeError: Illegal invocation
          * @type {Array}
@@ -30,6 +31,7 @@ function embeddedImgLoader($log, dispatchers, embedded) {
         const { map, list } = [].slice
             .call($list)
             .filter((img) => img.src.indexOf('cid:') === -1)
+            .filter((img) => img.src.indexOf('data:') === -1)
             .reduce(
                 (acc, img) => {
                     const src = embedded.getUrl(img);

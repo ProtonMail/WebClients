@@ -10,7 +10,7 @@ function transformRemote($state, $rootScope, mailSettingsModel) {
     const REGEXP_FIXER = (() => {
         const str = ATTRIBUTES.map((key) => {
             if (key === 'proton-src') {
-                return `${key}=(?!"cid)`;
+                return `${key}=(?!"(cid|data):)`;
             }
             return key;
         }).join('|');
@@ -53,8 +53,11 @@ function transformRemote($state, $rootScope, mailSettingsModel) {
             if (node.hasAttribute('proton-src')) {
                 const src = node.getAttribute('proton-src');
 
-                // We don't want to unescape attachments as we are going to proces them later
+                // We don't want to unescape attachments or inline embedded as we are going to process them later
                 if (src.indexOf('cid:') !== -1) {
+                    return acc;
+                }
+                if (src.indexOf('data:') !== -1) {
                     return acc;
                 }
             }
