@@ -35,7 +35,7 @@ function vcard(notification, sanitize) {
                     const group = prop.getGroup();
                     if (group) {
                         // Rename group to prevent conflicts where properties from different vcards have the same group.
-                        groups[group] = groups[group] || `item${groupId++}`;
+                        groups[group] = groups[group] || `item${++groupId}`;
                         prop.group = groups[group];
                     }
                     const field = prop.getField();

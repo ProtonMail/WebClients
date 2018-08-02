@@ -76,9 +76,9 @@ describe('vcard factory', () => {
             const [a, b] = newContact.get('email');
 
             expect(a.valueOf()).toEqual('foo@bar.com');
-            expect(a.getGroup()).toEqual('item0');
+            expect(a.getGroup()).toEqual('item1');
             expect(b.valueOf()).toEqual('bar@foo.com');
-            expect(b.getGroup()).toEqual('item1');
+            expect(b.getGroup()).toEqual('item2');
         });
     });
 });

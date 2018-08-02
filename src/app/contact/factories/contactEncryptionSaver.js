@@ -46,9 +46,12 @@ function contactEncryptionSaver(contactDetailsModel, Contact) {
         const matchSourceGroup = groupMatcher(sourceGroup);
         VCARD_KEY_FIELDS.forEach((name) => {
             const sourceProperties = toList(sourceCard.get(name) || []).filter(matchSourceGroup);
+            sourceProperties.forEach((prop) => (prop.group = targetGroup));
+
             const targetProperties = toList(targetCard.get(name) || [])
                 .filter(matchNoTargetGroup)
                 .concat(sourceProperties);
+
             targetCard.remove(name);
             targetProperties.forEach((prop) => targetCard.addProperty(prop));
         });
