@@ -23,6 +23,7 @@ import './search/services/searchValue.spec';
 import './helpers/urlHelpers.spec';
 import './helpers/string.spec';
 import './helpers/imageHelper.spec';
+import './helpers/linkifyHelper.spec';
 import './helpers/mail.spec';
 import './helpers/fileHelper.spec';
 import './helpers/autoLink.spec';
