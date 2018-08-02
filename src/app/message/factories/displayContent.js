@@ -1,3 +1,4 @@
+import linkit from '../../../helpers/linkifyHelper';
 import { MIME_TYPES } from '../../constants';
 
 const { PLAINTEXT } = MIME_TYPES;
@@ -33,9 +34,7 @@ function displayContent($rootScope, $q, $filter, prepareContent, sanitize) {
         if (content.type === 'html') {
             content.body = prepareContent(content.body, message);
         } else {
-            content.body = $filter('linky')(content.body, '_blank', {
-                rel: 'noreferrer nofollow noopener'
-            });
+            content.body = linkit(content.body);
         }
 
         return content;
