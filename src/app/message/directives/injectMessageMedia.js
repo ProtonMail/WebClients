@@ -128,7 +128,9 @@ function injectMessageMedia(dispatchers, displayImages, displayEmbedded) {
             // Remove proton- from the selector to know which selector to use
             const attribute = selector.substring(7);
             // We don't want to parse embedded images
-            const $list = [].slice.call(node.querySelectorAll(`[${selector}]:not([${selector}^="cid:"])`));
+            const $list = [].slice.call(
+                node.querySelectorAll(`[${selector}]:not([${selector}^="cid:"]):not([${selector}^="data:"])`)
+            );
             alltheThings($list, {
                 selector,
                 attribute,

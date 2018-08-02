@@ -1,4 +1,5 @@
 import { EMBEDDED } from '../../constants';
+import { isInlineEmbedded, isEmbedded } from '../../../helpers/imageHelper';
 
 /* @ngInject */
 function transformEmbedded(embedded, $state, mailSettingsModel) {
@@ -29,10 +30,14 @@ function transformEmbedded(embedded, $state, mailSettingsModel) {
                  * or is not a valid image.
                  * So remove the element from the DOM because it will not display anything useful anyway.
                  */
-                if (src.startsWith('cid:')) {
+                if (isEmbedded(src)) {
                     image.parentElement.removeChild(image);
                 }
-                return;
+                // If it's not an inline embedded image, it's either an embedded image or a remote image. So stop here.
+                // Otherwise, continue so that the inline image is detected as an embedded image.
+                if (!isInlineEmbedded(src)) {
+                    return;
+                }
             }
 
             if (show) {
@@ -53,7 +58,10 @@ function transformEmbedded(embedded, $state, mailSettingsModel) {
             }
 
             message.showEmbedded = false;
-            image.setAttribute('alt', attachment.Name);
+            // Inline embedded images does not have an attachment.
+            if (attachment) {
+                image.setAttribute('alt', attachment.Name);
+            }
         });
 
         return html;

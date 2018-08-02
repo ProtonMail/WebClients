@@ -1,4 +1,6 @@
 /* @ngInject */
+import { isInlineEmbedded } from '../../../helpers/imageHelper';
+
 function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) {
     const REGEXP_CID_START = /^cid:/g;
 
@@ -49,6 +51,11 @@ function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) 
      * @return {String}
      */
     const getUrl = (node) => {
+        // If it's an inline embedded img, just return the src because that contains the img data.
+        const src = node.getAttribute('data-embedded-img') || '';
+        if (isInlineEmbedded(src)) {
+            return src;
+        }
         const cid = embeddedUtils.srcToCID(node);
         const { url = '' } = embeddedStore.getBlob(cid);
         return url;
