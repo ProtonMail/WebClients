@@ -198,6 +198,10 @@ function addressKeysView(
             const importKeyId = element[0].querySelector('.import-private-key-id');
             const importKeyFile = element[0].querySelector('.import-private-key-file');
 
+            if (authentication.isPrivate()) {
+                element[0].classList.add('addressKeysView-is-private');
+            }
+
             const importKeyChange = () => {
                 if (importKeyFile.files.length === 0) {
                     importKeyFile.value = '';

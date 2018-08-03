@@ -359,6 +359,10 @@ function authentication(
             return this.user.Subscribed & 4;
         },
 
+        isPrivate() {
+            return this.user.Private === 1;
+        },
+
         isSecured() {
             return this.isLoggedIn() && angular.isDefined(this.getPassword());
         },
