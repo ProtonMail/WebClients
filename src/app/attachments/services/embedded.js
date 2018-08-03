@@ -1,6 +1,6 @@
-/* @ngInject */
 import { isInlineEmbedded } from '../../../helpers/imageHelper';
 
+/* @ngInject */
 function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) {
     const REGEXP_CID_START = /^cid:/g;
 
