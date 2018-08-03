@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import updateCollection from '../../utils/helpers/updateCollection';
 
-import { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE, STATUS } from '../../constants';
+import { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE } from '../../constants';
 
 /* @ngInject */
 function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication, formatKeys) {
@@ -95,8 +95,7 @@ function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, aut
         CACHE = _.sortBy(fullMembers, 'Name');
 
         dispatcher.members('update', {
-            list: CACHE,
-            operations
+            list: CACHE
         });
     };
 
