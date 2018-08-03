@@ -4,6 +4,7 @@ jobs:
      docker:
        - image: circleci/node:10.3.0-stretch-browsers
      steps:
+       - run: sudo apt-get install -y gawk
        - checkout
        - restore_cache:
            key: npm-deps-{{ checksum "package.json" }}-{{ checksum "tasks/lazyInstallVendor" }}
@@ -14,5 +15,6 @@ jobs:
            paths:
              - node_modules
        - run: npm run config
+       - run: ./tasks/checkInjector.sh --lint
        - run: npm run lint
        - run: npm test
