@@ -47,3 +47,7 @@
 .addressKeysView-container.address [data-display-mode="user"] {
     display: none !important;
 }
+
+.addressKeysView-container.address:not(.addressKeysView-is-private) .addressKeysView-action-column {
+    display: none;
+}
