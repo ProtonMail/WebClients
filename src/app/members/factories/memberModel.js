@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import updateCollection from '../../utils/helpers/updateCollection';
 
 import { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE, STATUS } from '../../constants';
 
@@ -79,32 +80,19 @@ function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, aut
      * @param  {Array}  members List of updates relative to members
      * @return {void}
      */
-    const manageCache = (members = []) => {
-        const operations = _.reduce(
-            members,
-            (acc, { Action, Member, ID }) => {
-                acc[Action].push({ ID, Member });
-                return acc;
-            },
-            { [STATUS.DELETE]: [], [STATUS.CREATE]: [], [STATUS.UPDATE]: [] }
+    const manageCache = async (members = []) => {
+        const { collection, todo } = updateCollection(CACHE, members, 'Member');
+        const toFetch = [].concat(todo.create, todo.update).map(({ ID }) => ID);
+        const fullMembers = await Promise.all(
+            collection.map((member) => {
+                if (toFetch.includes(member.ID)) {
+                    return fetchAddresses(member);
+                }
+                return member;
+            })
         );
 
-        operations[STATUS.DELETE].forEach(({ ID }) => {
-            const index = _.findIndex(CACHE, { ID });
-            index > -1 && CACHE.splice(index, 1);
-        });
-
-        operations[STATUS.CREATE].forEach(({ Member }) => {
-            CACHE.push(Member);
-        });
-
-        operations[STATUS.UPDATE].forEach(({ ID, Member }) => {
-            const index = _.findIndex(CACHE, { ID });
-            index === -1 && CACHE.push(Member);
-            index > -1 && _.extend(CACHE[index], Member);
-        });
-
-        CACHE = _.sortBy(CACHE, 'Name');
+        CACHE = _.sortBy(fullMembers, 'Name');
 
         dispatcher.members('update', {
             list: CACHE,
