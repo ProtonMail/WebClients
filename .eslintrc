@@ -57,7 +57,7 @@
     "new-cap": ["error", { "properties": true, "capIsNewExceptionPattern": "^Awesomplete."  }],
     "no-mixed-operators": ["error", {"groups": [["&", "|", "^", "~", "<<", ">>", ">>>"], ["&&", "||"]]}],
     "no-return-assign": "off",
-    "max-len": ["error", { "ignoreComments": true, code: 120, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true }],
+    "max-len": ["error", { "ignoreComments": true, "code": 120, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true }],
     "consistent-return": "off",
     "default-case": "off",
     "no-plusplus": "off",
