@@ -85,10 +85,14 @@ function contactItem(
                             scope.$applyAsync(() => {
                                 model.Email = { ...scope.UI.items[index], settings: undefined };
                                 scope.UI.items[index].settings = model;
-                                directSave &&
-                                    networkActivityTracker.track(
-                                        contactEncryptionSaver.save(scope.model, scope.state.ID, index)
-                                    );
+
+                                if (directSave) {
+                                    const promise = contactEncryptionSaver.save(scope.model, scope.state.ID, index);
+
+                                    networkActivityTracker.track(promise);
+                                    scope.form.$setPristine();
+                                }
+
                                 contactEncryptionModal.deactivate();
                             });
                         };
