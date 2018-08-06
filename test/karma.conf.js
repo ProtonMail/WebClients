@@ -19,6 +19,7 @@ module.exports = (config) => {
         ],
 
         webpack: {
+            mode: 'development',
             module: {
                 rules: [
                     ...require('../webpack.tasks/js.loader'),

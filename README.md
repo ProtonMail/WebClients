@@ -13,6 +13,8 @@ We are currently working with our community to localize ProtonMail from English 
 - `npm install`
 - `npm start`
 
+> To run the app without babel `npm run start:raw`
+
 ### dependencies
   - Node.js >= v8
   - npm 5

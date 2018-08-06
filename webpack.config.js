@@ -23,6 +23,7 @@ process.on('unhandledRejection', (reason, p) => {
 module.exports = {
     stats: 'minimal',
     devtool: !env.isDistRelease() ? 'cheap-module-eval-source-map' : false, // Done via UglifyJS
+    mode: !env.isDistRelease() ? 'development' : 'production',
     watchOptions: {
         ignored: [/node_modules/, 'i18n/*.json', /\*\.(gif|jpeg|jpg|ico|png)/]
     },
