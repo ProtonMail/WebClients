@@ -1,9 +1,13 @@
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
 function bugReportModel(
+    $injector,
     bugReportApi,
     bugModal,
     confirmModal,
     dispatchers,
+    eventManager,
     gettextCatalog,
     networkActivityTracker,
     notification
@@ -74,13 +78,17 @@ function bugReportModel(
     };
 
     /**
-     * Report phishing by sending the message to the API
+     * Report phishing and move the message to SPAM
      * @param  {messageModel}  message
      * @return {Promise}
      */
     const reportPhishing = async (message) => {
         await confirmPhishing();
-        const promise = bugReportApi.phishing(message);
+        const messageApi = $injector.get('messageApi'); // Use injector to not add messageApi in app.js
+        const promise = Promise.all([
+            bugReportApi.phishing(message),
+            messageApi.label({ LabelID: MAILBOX_IDENTIFIERS.spam, IDs: [message.ID] })
+        ]).then(eventManager.call);
         networkActivityTracker.track(promise);
         await promise;
         notification.success(I18N.phishingReported);
