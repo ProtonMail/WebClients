@@ -238,7 +238,7 @@ function filterModal(
                                 ctrl.folders = ctrl.folders.concat(newFolders);
 
                                 // Select the last new folder
-                                if (newFolders) {
+                                if (newFolders.length) {
                                     ctrl.filter.Simple.Actions.Move = _.last(ctrl.folders).Name;
                                 }
                             });
