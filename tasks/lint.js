@@ -1,18 +1,14 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
+const execa = require('execa');
+const { error } = require('./helpers/log');
 const { spawn } = require('child_process');
 
-const stripAnsi = require('strip-ansi');
-const { exec, execVerbose } = require('./helpers/command');
-const { title, success, error } = require('./helpers/log');
-
 const getListFiles = async () => {
-    const { stdout = '' } = await exec(`find src/{app,helpers} -type f -name '*.js'`);
-    return stripAnsi(stdout)
-        .split('\n')
-        .filter(Boolean);
+    const { stdout = '' } = await execa.shell("find src/{app,helpers} -type f -name '*.js'", { shell: '/bin/bash' });
+    return stdout.split('\n');
 };
 
 const toChunk = (col, size = 150) => {
@@ -33,7 +29,7 @@ const toChunk = (col, size = 150) => {
 
 const lint = (files, args = []) =>
     new Promise((resolve, reject) => {
-        const child = spawn(`./node_modules/.bin/eslint`, files.concat('--quiet').concat(args), { stdio: 'inherit' });
+        const child = spawn('./node_modules/.bin/eslint', files.concat('--quiet').concat(args), { stdio: 'inherit' });
         child.on('close', resolve);
         child.on('error', reject);
     });

@@ -1,5 +1,49 @@
 const env = require('../env/config');
 
+const hasTranspile = !('transpile' in env.argv);
+
+/**
+ * Mode no transpilation is available for Chrome/Firefox
+ * Default always transpile
+ */
+const jsLoader = () => {
+    const list = ['source-map-loader'];
+
+    if (!hasTranspile) {
+        return list;
+    }
+
+    list.push({
+        loader: 'babel-loader',
+        options: {
+            cacheDirectory: true,
+            presets: [
+                [
+                    'env',
+                    {
+                        targets: {
+                            browsers: ['ie 11']
+                        }
+                    }
+                ]
+            ],
+            plugins: [require('babel-plugin-transform-object-rest-spread'), require('babel-plugin-transform-runtime')],
+            env: {
+                dev: {
+                    plugins: [require('babel-plugin-lodash')]
+                },
+                dist: {
+                    plugins: [require('babel-plugin-angularjs-annotate'), require('babel-plugin-lodash')]
+                },
+                test: {
+                    plugins: ['istanbul']
+                }
+            }
+        }
+    });
+    return list;
+};
+
 const pipe = [
     {
         test: /\.js$/,
@@ -9,37 +53,7 @@ const pipe = [
     {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-            'source-map-loader',
-            {
-                loader: 'babel-loader',
-                options: {
-                    cacheDirectory: true,
-                    presets: [
-                        [
-                            'env',
-                            {
-                                targets: {
-                                    browsers: ['last 2 version', 'ie 11']
-                                }
-                            }
-                        ]
-                    ],
-                    plugins: [require('babel-plugin-transform-object-rest-spread'), require('babel-plugin-transform-runtime')],
-                    env: {
-                        dev: {
-                            plugins: [require('babel-plugin-lodash')]
-                        },
-                        dist: {
-                            plugins: [require('babel-plugin-angularjs-annotate'), require('babel-plugin-lodash')]
-                        },
-                        test: {
-                            plugins: ['istanbul']
-                        }
-                    }
-                }
-            }
-        ]
+        use: jsLoader()
     },
     {
         test: /\.js$/,
