@@ -200,7 +200,7 @@ function messageModel(
         }
 
         setDecryptedBody(input = '', purify = true) {
-            this.DecryptedBody = !purify ? input : sanitize.message(inlineCss(input));
+            this.DecryptedBody = !purify ? input : inlineCss(sanitize.message(input)); // Keep this order: sanitize first, then inline CSS
         }
 
         getDecryptedBody() {
