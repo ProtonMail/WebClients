@@ -85,6 +85,7 @@ export const CONTACTS_LIMIT_ENCRYPTION = 20;
 export const CONTACTS_LIMIT_UPLOAD = 50;
 export const CONTACT_SETTINGS_DEFAULT = 'DEFAULT_VALUE';
 export const VCARD_VERSION = '4.0';
+export const AES256 = 'aes256';
 export const VCARD_KEYS = [
     'fn',
     'email',
