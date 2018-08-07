@@ -144,7 +144,7 @@ const getTasks = (branch, { isCI, flowType = 'single' }) => {
     }
 
     // Keep prod-b as the latest one as it's the only one with a diff config
-    ['old', 'dev', 'tor', 'prod-b'].forEach((key, i, arr) => {
+    ['dev', 'tor', 'prod-b'].forEach((key, i, arr) => {
         list.push({
             title: `Create sub-bundle for deploy-${key}`,
             enabled: () => !isCI && /prod-a$/.test(branch),
