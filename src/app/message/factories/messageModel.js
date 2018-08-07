@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { ENCRYPTED_STATUS, VERIFICATION_STATUS, MIME_TYPES } from '../../constants';
+import { ENCRYPTED_STATUS, VERIFICATION_STATUS, MIME_TYPES, AES256 } from '../../constants';
 import { toText } from '../../../helpers/parserHTML';
 import { parseMail } from '../../../helpers/mail';
 import { inlineCss } from '../../../helpers/domHelper';
@@ -132,7 +132,7 @@ function messageModel(
 
         generateReplyToken() {
             // Use a base64-encoded AES256 session key as the reply token
-            return pmcw.generateSessionKey('aes256').then((key) => pmcw.encode_base64(pmcw.arrayToBinaryString(key)));
+            return pmcw.generateSessionKey(AES256).then((key) => pmcw.encode_base64(pmcw.arrayToBinaryString(key)));
         }
 
         encryptionType() {

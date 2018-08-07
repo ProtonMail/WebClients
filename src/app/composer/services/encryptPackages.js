@@ -1,6 +1,5 @@
 import _ from 'lodash';
-
-import { SEND_TYPES } from '../../constants';
+import { SEND_TYPES, AES256 } from '../../constants';
 
 /* @ngInject */
 function encryptPackages(pmcw, authentication, AttachmentLoader) {
@@ -8,7 +7,9 @@ function encryptPackages(pmcw, authentication, AttachmentLoader) {
         pmcw.encode_base64,
         pmcw.arrayToBinaryString
     );
-    const packToBase64 = ({ data }) => ({ Key: arrayToBase64(data), Algorithm: 'aes256' });
+    const packToBase64 = ({ data, algorithm: Algorithm = AES256 }) => {
+        return { Key: arrayToBase64(data), Algorithm };
+    };
     const encryptKeyPacket = ({ sessionKeys = [], publicKeys = [], passwords = [] }) => {
         const promises = _.map(sessionKeys, (sessionKey) =>
             pmcw
@@ -75,8 +76,8 @@ function encryptPackages(pmcw, authentication, AttachmentLoader) {
      */
     const generateSessionKey = async () => {
         return {
-            algorithm: 'aes256',
-            data: await pmcw.generateSessionKey('aes256')
+            algorithm: AES256,
+            data: await pmcw.generateSessionKey(AES256)
         };
     };
 
