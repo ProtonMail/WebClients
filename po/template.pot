@@ -607,12 +607,12 @@ msgctxt "Action"
 msgid "Customize"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:80
+#: ./src/templates/elements/advancedFilterElement.tpl.html:90
 msgctxt "Action"
 msgid "Date: New to old"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:89
+#: ./src/templates/elements/advancedFilterElement.tpl.html:99
 msgctxt "Action"
 msgid "Date: Old to new"
 msgstr ""
@@ -690,7 +690,7 @@ msgctxt "Action"
 msgid "Donate"
 msgstr ""
 
-#: ./src/templates/contact/contactEncryptionModal.tpl.html:20
+#: ./src/templates/contact/contactEncryptionModal.tpl.html:28
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:29
 msgctxt "Action"
 msgid "Done"
@@ -732,27 +732,28 @@ msgctxt "Action"
 msgid "Email our support team"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:17
+#: ./src/templates/elements/advancedFilterElement.tpl.html:18
+#: ./src/templates/elements/advancedFilterElement.tpl.html:27
 msgctxt "Action"
 msgid "Empty drafts"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:44
+#: ./src/templates/elements/advancedFilterElement.tpl.html:54
 msgctxt "Action"
 msgid "Empty folder"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:53
+#: ./src/templates/elements/advancedFilterElement.tpl.html:63
 msgctxt "Action"
 msgid "Empty label"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:26
+#: ./src/templates/elements/advancedFilterElement.tpl.html:36
 msgctxt "Action"
 msgid "Empty spam"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:35
+#: ./src/templates/elements/advancedFilterElement.tpl.html:45
 msgctxt "Action"
 msgid "Empty trash"
 msgstr ""
@@ -1391,6 +1392,7 @@ msgstr ""
 #. Save button for updating default identity on account page
 #. contact details
 #: ./src/templates/contact/contactDetails.tpl.html:6
+#: ./src/templates/contact/contactEncryptionModal.tpl.html:25
 #: ./src/templates/contact/contactModal.tpl.html:21
 #: ./src/templates/contact/contactPhotoModal.tpl.html:19
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:42
@@ -1496,7 +1498,7 @@ msgctxt "Action"
 msgid "Show"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:97
+#: ./src/templates/elements/advancedFilterElement.tpl.html:107
 msgctxt "Action"
 msgid "Show all"
 msgstr ""
@@ -1516,7 +1518,7 @@ msgctxt "Action"
 msgid "Show non-trashed messages"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:115
+#: ./src/templates/elements/advancedFilterElement.tpl.html:125
 msgctxt "Action"
 msgid "Show read"
 msgstr ""
@@ -1526,7 +1528,7 @@ msgctxt "Action"
 msgid "Show trashed messages"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:106
+#: ./src/templates/elements/advancedFilterElement.tpl.html:116
 msgctxt "Action"
 msgid "Show unread"
 msgstr ""
@@ -1536,12 +1538,12 @@ msgctxt "Action"
 msgid "Sign up"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:71
+#: ./src/templates/elements/advancedFilterElement.tpl.html:81
 msgctxt "Action"
 msgid "Size: Large to small"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:62
+#: ./src/templates/elements/advancedFilterElement.tpl.html:72
 msgctxt "Action"
 msgid "Size: Small to large"
 msgstr ""
@@ -1917,7 +1919,7 @@ msgctxt "App folder"
 msgid "Trash"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:194
+#: ./src/app/message/services/messageBuilder.js:197
 msgctxt "Ask user to use encrypted subject"
 msgid ""
 "The selected message has an encrypted subject.\n"
@@ -2911,7 +2913,7 @@ msgid "<div>I'm out of the office with limited access to my email.</div>"
 msgstr ""
 
 #: ./src/app/contact/factories/contactDetailsModel.js:15
-#: ./src/app/contact/factories/contactEncryption.js:123
+#: ./src/app/contact/factories/contactEncryption.js:139
 #: ./src/app/contact/factories/contactSchema.js:10
 msgctxt "Default display name vcard"
 msgid "Unknown"
@@ -3326,6 +3328,11 @@ msgctxt "Error"
 msgid "Error while updating setting"
 msgstr ""
 
+#: ./src/app/attachments/services/AttachmentLoader.js:20
+msgctxt "Error"
+msgid "Failed to encrypt attachment. Please try again."
+msgstr ""
+
 #: ./src/app/ui/directives/autocompleteEmails.js:29
 msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
@@ -3446,7 +3453,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr ""
 
-#: ./src/app/routes.js:115
+#: ./src/app/routes.js:118
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr ""
@@ -3518,7 +3525,7 @@ msgid "No files were selected"
 msgstr ""
 
 #: ./src/app/keys/factories/changeMailboxPassword.js:115
-#: ./src/app/keys/factories/upgradeKeys.js:124
+#: ./src/app/keys/factories/upgradeKeys.js:127
 msgctxt "Error"
 msgid "No keys to update"
 msgstr ""
@@ -3727,7 +3734,7 @@ msgctxt "Error"
 msgid "Unable to get organization keys"
 msgstr ""
 
-#: ./src/app/routes.js:174
+#: ./src/app/routes.js:177
 msgctxt "Error"
 msgid "Unable to reset theme"
 msgstr ""
@@ -3745,7 +3752,7 @@ msgctxt "Error"
 msgid "Unable to save your changes, your signature is too large."
 msgstr ""
 
-#: ./src/app/attachments/services/attachmentApi.js:182
+#: ./src/app/attachments/services/attachmentApi.js:181
 msgctxt "Error"
 msgid "Unable to upload file. Please try again"
 msgstr ""
@@ -3842,6 +3849,11 @@ msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr ""
 
+#: ./src/app/attachments/services/AttachmentLoader.js:21
+msgctxt "Error"
+msgid "You did not provide a file."
+msgstr ""
+
 #: ./src/app/composer/services/autoPinPrimaryKeys.js:13
 msgctxt "Error"
 msgid ""
@@ -3924,7 +3936,7 @@ msgctxt "Error"
 msgid "{{username}} is your username. To create {{email}}, please go to Settings -> pm.me"
 msgstr ""
 
-#: ./src/app/attachments/services/attachmentApi.js:242
+#: ./src/app/attachments/services/attachmentApi.js:240
 msgctxt "Error delete attachment"
 msgid "Error during the remove request"
 msgstr ""
@@ -3992,7 +4004,7 @@ msgctxt "Error label modal"
 msgid "Invalid label name"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:22
+#: ./src/app/contact/directives/contactPublicKeys.js:23
 msgctxt "Error message"
 msgid "%s is not a valid PGP key."
 msgstr ""
@@ -4842,7 +4854,7 @@ msgctxt "Info"
 msgid "Blacklist"
 msgstr ""
 
-#: ./src/templates/directives/core/bugModalView.tpl.html:108
+#: ./src/templates/directives/core/bugModalView.tpl.html:105
 msgctxt "Info"
 msgid "Bug reports are not end-to-end encrypted, please do not send any sensitive information."
 msgstr ""
@@ -4910,7 +4922,7 @@ msgctxt "Info"
 msgid "Compose mode saved"
 msgstr ""
 
-#: ./src/templates/directives/core/bugModalView.tpl.html:109
+#: ./src/templates/directives/core/bugModalView.tpl.html:106
 msgctxt "Info"
 msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> for critical security issues."
 msgstr ""
@@ -5584,7 +5596,7 @@ msgctxt "Info"
 msgid "The ultimate internet privacy package, combining the most popular ProtonMail and ProtonVPN plans. By buying both together with our special 2-year plan, you can save 45% off of the regular monthly price."
 msgstr ""
 
-#: ./src/app/routes.js:173
+#: ./src/app/routes.js:176
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr ""
@@ -6248,12 +6260,12 @@ msgctxt "Invoice type display as badge"
 msgid "Subscription"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:272
+#: ./src/app/contact/directives/contactPublicKeys.js:263
 msgctxt "Key details"
 msgid "Created on {{created}}, {{bits}} bits (can be used for sending and signature verification)"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:278
+#: ./src/app/contact/directives/contactPublicKeys.js:269
 msgctxt "Key details"
 msgid "Created on {{created}}, {{bits}} bits (only used for signature verification)"
 msgstr ""
@@ -7021,17 +7033,17 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:186
+#: ./src/app/message/services/messageBuilder.js:189
 msgctxt "Message"
 msgid "Fw:"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:283
+#: ./src/app/message/services/messageBuilder.js:286
 msgctxt "Message"
 msgid "On {{date}}, {{name}} {{address}} wrote:"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:185
+#: ./src/app/message/services/messageBuilder.js:188
 msgctxt "Message"
 msgid "Re:"
 msgstr ""
@@ -7123,7 +7135,7 @@ msgctxt "Message for encryption contact modal"
 msgid "The email <span style=\"font-weight: bold;\">{{ ::ctrl.email }}</span> has PGP keys set. Do you want to enable PGP encryption for this contact?"
 msgstr ""
 
-#: ./src/app/bugReport/factories/bugReportModel.js:14
+#: ./src/app/bugReport/factories/bugReportModel.js:18
 msgctxt "Message for report phishing modal"
 msgid "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full."
 msgstr ""
@@ -7836,12 +7848,12 @@ msgctxt "Single letter code Wednesday"
 msgid "W"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:23
+#: ./src/app/contact/directives/contactPublicKeys.js:24
 msgctxt "String separator"
 msgid "and"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:190
+#: ./src/app/message/services/messageBuilder.js:193
 msgctxt "Subject"
 msgid "Encrypted Subject"
 msgstr ""
@@ -7989,12 +8001,12 @@ msgctxt "Success message when sending feedback"
 msgid "Thanks for your feedback!"
 msgstr ""
 
-#: ./src/app/bugReport/factories/bugReportModel.js:19
+#: ./src/app/bugReport/factories/bugReportModel.js:23
 msgctxt "Success notification"
 msgid "Phishing reported"
 msgstr ""
 
-#: ./src/app/message/factories/unsubscribeModel.js:21
+#: ./src/app/message/factories/unsubscribeModel.js:22
 msgctxt "Success notification"
 msgid "Unsubscribed"
 msgstr ""
@@ -9892,7 +9904,7 @@ msgctxt "Title for contact modal"
 msgid "Save Changes?"
 msgstr ""
 
-#: ./src/app/bugReport/factories/bugReportModel.js:13
+#: ./src/app/bugReport/factories/bugReportModel.js:17
 msgctxt "Title for report phishing modal"
 msgid "Confirm phishing report"
 msgstr ""
@@ -10084,22 +10096,22 @@ msgctxt "Type of label for a message/conversation"
 msgid "In trash"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:191
+#: ./src/app/message/services/messageBuilder.js:194
 msgctxt "Use encrypted subject as subject"
 msgid "Yes"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:192
+#: ./src/app/message/services/messageBuilder.js:195
 msgctxt "Use unencrypted subject as subject"
 msgid "No"
 msgstr ""
 
-#: ./src/app/members/factories/memberModel.js:11
+#: ./src/app/members/factories/memberModel.js:12
 msgctxt "User role"
 msgid "Admin"
 msgstr ""
 
-#: ./src/app/members/factories/memberModel.js:12
+#: ./src/app/members/factories/memberModel.js:13
 msgctxt "User role"
 msgid "Member"
 msgstr ""
@@ -10376,7 +10388,7 @@ msgstr ""
 
 #: ./src/app/ui/directives/atomLoader.js:5
 msgctxt "atom text loader"
-msgid "Enabling IMAP (coming soon).<br />This may take a few minutes, please wait."
+msgid "Enabling calendar (coming soon).<br />This may take a few minutes, please wait."
 msgstr ""
 
 #: ./src/templates/views/security.tpl.html:110
@@ -10875,7 +10887,7 @@ msgid "Browser"
 msgstr ""
 
 #: ./src/app/composer/controllers/composeMessage.js:133
-#: ./src/app/routes.js:444
+#: ./src/app/routes.js:447
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr ""
 
@@ -11159,7 +11171,7 @@ msgstr ""
 msgid "Folder deleted"
 msgstr ""
 
-#: ./src/app/elements/directives/advancedFilterElement.js:81
+#: ./src/app/elements/directives/advancedFilterElement.js:82
 msgid "Folder emptied"
 msgstr ""
 
@@ -11316,7 +11328,7 @@ msgstr ""
 msgid "Monthly subscription with VPN discount"
 msgstr ""
 
-#: ./src/templates/elements/advancedFilterElement.tpl.html:7
+#: ./src/templates/elements/advancedFilterElement.tpl.html:8
 msgid "More"
 msgstr ""
 
@@ -11500,13 +11512,13 @@ msgstr ""
 msgid "Primary Admin"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:218
+#: ./src/app/address/directives/addressKeysView.js:222
 msgid "Private key imported"
 msgid_plural "{{$count}} Private keys imported"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/address/directives/addressKeysView.js:226
+#: ./src/app/address/directives/addressKeysView.js:230
 msgid "Private key reactivated"
 msgstr ""
 
@@ -11658,11 +11670,11 @@ msgstr ""
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:425
+#: ./src/app/contact/directives/contactPublicKeys.js:417
 msgid "The public key with fingerprint %s updated."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:417
+#: ./src/app/contact/directives/contactPublicKeys.js:409
 msgid "The public key with fingerprint %s was replaced with a revoked key."
 msgstr ""
 
@@ -11674,11 +11686,11 @@ msgstr ""
 msgid "This key is encrypted with an old password and cannot be used to decrypt messages"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:217
+#: ./src/app/contact/directives/contactPublicKeys.js:208
 msgid "This key is expired."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:215
+#: ./src/app/contact/directives/contactPublicKeys.js:206
 msgid "This key is revoked."
 msgstr ""
 
@@ -11722,7 +11734,7 @@ msgstr ""
 msgid "Use for encryption"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:238
+#: ./src/app/contact/directives/contactPublicKeys.js:229
 msgid "User IDs mismatch. This key is assigned to %1."
 msgid_plural "User IDs mismatch. The emails %1 are assigned to this key."
 msgstr[0] ""
