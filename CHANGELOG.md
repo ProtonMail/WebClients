@@ -1,3 +1,31 @@
+# [3.14.4] - 2018-08-07
+
+## Added
+
+- Improvements for unsubscribe feature
+- Add empty all draft action
+
+## Fixed
+
+- Save contact changes from advanced modal issue
+- Fixed issue with some messages not rendering properly
+- Fixed custom filter folder selection
+- Fixed email address detection between "< >" for plain text messages
+- Fix for some inline images that weren't loading properly
+- Fixed overlapping of icons/labels on Firefox
+- Fixed issue with importing keys on IE11
+- Fixed login for VPN only user logging in for the first time
+- Fixed detection of custom fields when importing .vcf file 
+
+## Changed
+
+- Report phishing now also sends the message to spam
+- Hide action column on keys page for non private users
+- Display of days selection on Auto-rply screen
+- Verifying with compromised keys gives a correct warning
+- Reviewed bug modal design
+- Changed the handling of feedbacks when deleting an account
+
 # [3.14.3] - 2018-07-26
 
 ## Fixed
