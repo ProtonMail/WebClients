@@ -10,6 +10,7 @@ const {
     NO_STAT_MACHINE,
     API_TARGETS,
     AUTOPREFIXER_CONFIG,
+    SENTRY_CONFIG,
     TOR_URL
 } = require('./config.constants');
 
@@ -22,16 +23,36 @@ const isWebClient = () => {
     }
 };
 
+const hasEnv = () => Object.keys(SENTRY_CONFIG).length;
 const isProdBranch = (branch = process.env.NODE_ENV_BRANCH) => /-prod/.test(branch);
 const isTorBranch = (branch = process.env.NODE_ENV_BRANCH) => /-tor$/.test(branch);
+const typeofBranch = (branch = process.env.NODE_ENV_BRANCH) => {
+    const [, type] = (branch || '').match(/deploy-(\w+)/) || [];
+    if (/dev|beta|prod/.test(type)) {
+        return type;
+    }
+
+    if (isTorBranch(branch)) {
+        return 'prod';
+    }
+
+    if (type === 'alpha') {
+        return 'red';
+    }
+
+    if (type) {
+        return 'blue';
+    }
+    return 'dev';
+};
 
 const getStatsConfig = (deployBranch = '') => {
     const [, host = 'dev', subhost = 'a'] = deployBranch.split('-');
     return extend({}, STATS_CONFIG[host], STATS_ID[subhost]) || NO_STAT_MACHINE;
 };
 
-const getDefaultApiTarget = () => {
-    if (isWebClient()) {
+const getDefaultApiTarget = (defaultType = 'dev') => {
+    if (isWebClient() || !hasEnv()) {
         return 'prod';
     }
 
@@ -48,7 +69,7 @@ const getDefaultApiTarget = () => {
         return 'build';
     }
 
-    return 'dev';
+    return defaultType;
 };
 
 const isDistRelease = () => {
@@ -78,6 +99,23 @@ const buildHost = () => {
     return host.replace(/\api$/, '');
 };
 
+/**
+ * Get correct sentry URL config for the current env
+ * - on dev it's based on the API you specify
+ * - on deploy it's based on the branch name
+ * @return {String}
+ */
+const sentryURL = () => {
+    if (process.env.NODE_ENV === 'dist') {
+        const env = typeofBranch(argv.branch);
+        process.env.NODE_ENV_SENTRY = env;
+        return SENTRY_CONFIG[env];
+    }
+    const env = getDefaultApiTarget(argv.api);
+    process.env.NODE_ENV_SENTRY = env;
+    return SENTRY_CONFIG[env];
+};
+
 const getHostURL = (encoded) => {
     const url = '/assets/host.png';
 
@@ -103,13 +141,13 @@ const getConfig = (env = process.env.NODE_ENV) => {
     const CONFIG = extend({}, CONFIG_DEFAULT, {
         debug: env === 'dist' ? false : 'debug-app' in argv ? argv['debug-app'] : true,
         apiUrl: apiUrl(argv.api, argv.branch),
+        sentryUrl: sentryURL(),
         app_version: argv['app-version'] || CONFIG_DEFAULT.app_version,
         api_version: `${argv['api-version'] || CONFIG_DEFAULT.api_version}`,
         articleLink: argv.article || CONFIG_DEFAULT.articleLink,
         changelogPath: env === 'dist' ? CONFIG_DEFAULT.changelogPath : 'changelog.tpl.html',
         statsConfig: getStatsConfig(argv.branch)
     });
-
     return extend({ CONFIG }, { branch: argv.branch });
 };
 
@@ -122,5 +160,7 @@ module.exports = {
     getStatsConfig,
     argv,
     getEnv,
-    getHostURL
+    getHostURL,
+    hasEnv,
+    isWebClient
 };

@@ -2,6 +2,7 @@ import { CLIENT_TYPE } from '../../constants';
 
 /* @ngInject */
 function feedbackModal(pmModal, Report, notification, networkActivityTracker, gettextCatalog) {
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/feedback.tpl.html'),

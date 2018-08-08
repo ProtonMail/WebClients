@@ -13,7 +13,10 @@ const success = (msg, { time } = {}) => {
     console.log(message);
 };
 
-const title = (msg) => console.log('~', chalk.bgYellow(chalk.black(msg)), '~');
+const title = (msg) => {
+    console.log('~', chalk.bgYellow(chalk.black(msg)), '~');
+    console.log();
+};
 
 const json = (data) => {
     console.log();
@@ -22,7 +25,10 @@ const json = (data) => {
 };
 
 const error = (e) => {
-    console.log(chalk.magentaBright(' ⚠ '), chalk.red(e.message));
+    console.log();
+    console.log(chalk.red(' ⚠'), chalk.red(e.message));
+    console.log();
+    console.log();
     process.exit(1);
 };
 
