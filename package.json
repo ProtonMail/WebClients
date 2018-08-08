@@ -129,6 +129,7 @@
     "prettier": "^1.13.2",
     "push.js": "0.0.8",
     "qrcodejs2": "0.0.2",
+    "raven-js": "^3.23.3",
     "releaser": "github:ProtonMail/releaser.git",
     "sieve.js": "github:ProtonMail/sieve.js.git#v1.0.1",
     "squire-rte": "github:ProtonMail/Squire.git#hotfix",
@@ -179,6 +180,9 @@
     "*.js": [
       "prettier --write",
       "git add"
+    ],
+    "env/env.json": [
+      "tasks/checkEnv.js"
     ]
   },
   "engines": {

@@ -81,8 +81,20 @@ const buildCustomApp = async (branch, { start, end } = {}) => {
     await push(branch);
 };
 
+const checkEnv = async () => {
+    try {
+        await execa.shell('[ -e ./env/env.json ]', { shell: '/bin/bash' });
+    } catch (e) {
+        throw new Error('You must have env.json to deploy. Cf the wiki');
+    }
+};
+
 const getTasks = (branch, { isCI, flowType = 'single' }) => {
     const list = [
+        {
+            title: 'Check env',
+            task: () => checkEnv()
+        },
         {
             title: 'Check dependencies',
             task: () => execa('./tasks/checkDependencies.js')
@@ -177,6 +189,7 @@ process.env.NODE_ENV_API = CONFIG.apiUrl;
 
 !isCI && console.log(`➙ Branch: ${chalk.bgYellow(chalk.black(branch))}`);
 console.log(`➙ API: ${chalk.bgYellow(chalk.black(CONFIG.apiUrl))}`);
+console.log(`➙ SENTRY: ${chalk.bgYellow(chalk.black(process.env.NODE_ENV_SENTRY))}`);
 console.log('');
 
 env.argv.debug && json(CONFIG);

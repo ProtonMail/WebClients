@@ -1,3 +1,11 @@
+const ENV = (() => {
+    try {
+        return require('./env.json');
+    } catch (e) {
+        return {};
+    }
+})();
+
 const AUTOPREFIXER_CONFIG = {
     browsers: ['last 2 versions', 'iOS >= 8', 'Safari >= 8']
 };
@@ -14,16 +22,22 @@ const STATS_ID = {
 };
 
 const API_TARGETS = {
-    blue: 'https://protonmail.blue/api',
-    beta: 'https://beta.protonmail.com/api',
     prod: 'https://mail.protonmail.com/api',
-    dev: 'https://dev.protonmail.com/api',
     local: 'https://protonmail.dev/api',
     localhost: 'https://localhost/api',
     host: 'https://mail.protonmail.host/api',
     vagrant: 'https://172.28.128.3/api',
     build: '/api'
 };
+
+Object.keys(ENV).forEach((key) => {
+    if (ENV[key].api) {
+        API_TARGETS[key] = ENV[key].api;
+    }
+});
+
+const SENTRY_CONFIG = Object.keys(ENV)
+    .reduce((acc, env) => (acc[env] = ENV[env].sentry, acc), {});
 
 const PROD_STAT_MACHINE = {
     isEnabled: false,
@@ -58,5 +72,6 @@ module.exports = {
     PROD_STAT_MACHINE,
     HOST_STAT_MACHINE,
     NO_STAT_MACHINE,
-    STATS_CONFIG
+    STATS_CONFIG,
+    SENTRY_CONFIG
 };

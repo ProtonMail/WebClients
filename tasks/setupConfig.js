@@ -25,13 +25,23 @@ fs.utimesSync(PATH_CONFIG, then, then);
 env.argv.debug && console.log(`${JSON.stringify(CONFIG, null, 2)}`);
 
 if (process.env.NODE_ENV !== 'dist' && process.env.NODE_ENV_MODE !== 'config') {
+
+    if (!env.hasEnv() && !env.isWebClient()) {
+        console.log();
+        console.log(dedent`
+            ${chalk.bgMagenta('⚠ No env.json detected')}
+            ➙ Please check the wiki to create it
+        `);
+        console.log();
+    }
+
     portfinder.getPortPromise().then((port) => {
         process.env.NODE_ENV_PORT = port;
         const server = (ip = 'localhost') => chalk.yellow(`http://${ip}:${port}`);
         console.log(dedent`
             ${chalk.green('✓')} Generate configuration
-            ~ ${chalk.bgYellow(chalk.black(`API: ${CONFIG.apiUrl}`))} ~
-
+            ➙ Api: ${chalk.bgYellow(chalk.black(CONFIG.apiUrl))}
+            ➙ Sentry: ${chalk.yellow(process.env.NODE_ENV_SENTRY)}
             ➙ Dev server: ${server()}
             ➙ Dev server: ${server(localIp())}
         `);

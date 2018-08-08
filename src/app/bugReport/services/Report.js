@@ -1,7 +1,6 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function Report($http, url, gettextCatalog, requestFormData) {
+
     const requestURL = url.build('reports');
     const I18N = {
         ERROR_REPORT: gettextCatalog.getString('Error communicating with the server', null, 'Report bug request'),
@@ -11,17 +10,20 @@ function Report($http, url, gettextCatalog, requestFormData) {
             'Report phishing request'
         )
     };
+
     const handleSuccess = ({ data = {} } = {}) => data;
     const handleError = (errorMessage) => ({ data = {} } = {}) => {
         throw new Error(data.Error || errorMessage);
     };
 
-    const crash = (data) => $http.post(requestURL('crash'), data);
-    const phishing = (data) =>
-        $http
+
+    const phishing = (data) => {
+        return $http
             .post(requestURL('phishing'), data)
             .then(handleSuccess)
             .catch(handleError(I18N.ERROR_PHISHING));
+    };
+
     const bug = (data) => {
         const request =
             data instanceof FormData
@@ -34,9 +36,9 @@ function Report($http, url, gettextCatalog, requestFormData) {
     const uploadScreenshot = (image, form) =>
         new Promise((resolve, reject) => {
             /*
-            We should use $http, but before we need to fix the interceptor
-            to remove some headers before uploading an image to imgur.
-         */
+                We should use $http, but before we need to fix the interceptor
+                to remove some headers before uploading an image to imgur.
+             */
             $.ajax({
                 url: 'https://api.imgur.com/3/image',
                 headers: {
@@ -47,11 +49,10 @@ function Report($http, url, gettextCatalog, requestFormData) {
                 dataType: 'json',
                 success({ data = {} } = {}) {
                     if (data.link) {
-                        return resolve(
-                            _.extend({}, form, {
-                                Description: `${form.Description}\n\n\n\n${data.link}`
-                            })
-                        );
+                        return resolve({
+                            ...form,
+                            Description: `${form.Description}\n\n\n\n${data.link}`
+                        });
                     }
                     reject();
                 },
@@ -59,6 +60,7 @@ function Report($http, url, gettextCatalog, requestFormData) {
             });
         });
 
-    return { crash, bug, phishing, uploadScreenshot };
+
+    return { bug, uploadScreenshot, phishing };
 }
 export default Report;

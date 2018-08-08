@@ -1,5 +1,5 @@
 import _ from 'lodash';
-
+import Raven from 'raven-js';
 import {
     ROW_MODE,
     COLUMN_MODE,
@@ -8,14 +8,17 @@ import {
     CLIENT_TYPE,
     MAX_SIZE_SCREENSHOT
 } from '../../constants';
+import CONFIG from '../../config';
 import { getOS, getBrowser, getDevice } from '../../../helpers/browser';
 import { toBase64 } from '../../../helpers/fileHelper';
 import { downSize, toBlob } from '../../../helpers/imageHelper';
 
+Raven.config(CONFIG.sentryUrl).install();
+Raven.setTagsContext({ appVersion: CONFIG.app_version });
+
 /* @ngInject */
 function bugReportApi(
     Report,
-    CONFIG,
     $state,
     addressesModel,
     authentication,
@@ -37,7 +40,7 @@ function bugReportApi(
     const getViewLayout = (type) => MAP_MODE.layout[type] || 'unknown';
     const getViewMode = (type) => MAP_MODE.view[type] || 'undefined';
 
-    const getClient = ({ ViewLayout = '', ViewMode = '' } = {}) => {
+    const getClient = ({ ViewLayout = '', ViewMode = '' } = authentication.user) => {
         const os = getOS();
         const browser = getBrowser();
         const device = getDevice();
@@ -64,13 +67,14 @@ function bugReportApi(
         const { Name = '' } = authentication.user;
         const [{ Email = '' } = {}] = _.sortBy(addressesModel.get(), 'Order');
 
-        return _.extend(getClient(authentication.user), {
+        return {
+            ...getClient(),
             Resolution: `${window.innerHeight} x ${window.innerWidth}`,
             Title: `[Angular] Bug [${$state.$current.name}]`,
             Description: '',
             Username: Name,
             Email
-        });
+        };
     };
 
     const resize = (file) => {
@@ -129,11 +133,14 @@ function bugReportApi(
         return promise;
     };
 
-    const crash = (error) => {
-        const crashData = _.extend(getClient(authentication.user), {
+    const crash = async (error) => {
+        const crashData = {
+            ...getClient(),
             Debug: { state: $state.$current.name, error }
-        });
-        return Report.crash(crashData).catch(angular.noop);
+        };
+        Raven.setUserContext();
+        Raven.setUserContext(crashData);
+        Raven.captureException(error, { appVersion: CONFIG.app_version });
     };
 
     const phishing = (message) => {
