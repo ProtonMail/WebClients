@@ -18,12 +18,12 @@ function transformBlockquotes(gettextCatalog) {
 
     return (html) => {
         const blockquotes = [].slice.call(html.querySelectorAll(quotes));
-        const parent = html.textContent.trim();
+        const parent = html.textContent;
         let found = false;
 
         blockquotes.forEach((blockquote) => {
             if (!found) {
-                const child = blockquote.textContent.trim();
+                const child = blockquote.textContent;
                 const [before = '', after = ''] = parent.split(child);
 
                 if (child.length < parent.length && before.length && !after.length) {
