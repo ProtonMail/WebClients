@@ -6,7 +6,6 @@ import { MAILBOX_IDENTIFIERS } from '../../constants';
 /* @ngInject */
 function actionConversation(
     $rootScope,
-    authentication,
     cache,
     contactSpam,
     conversationApi,
@@ -244,54 +243,57 @@ function actionConversation(
         cache.events(events);
     }
 
-    /**
-     * Apply labels on a list of conversations
-     * @param {Array} ids
-     * @param {Array} labels
-     * @param {Boolean} alsoArchive
-     */
-    function label(ids, labels, alsoArchive) {
+    const getLabelsId = (list = [], cb = angular.noop) => {
+        return (
+            flow(
+                filter(cb),
+                map(({ ID }) => ID)
+            )(list) || []
+        );
+    };
+
+    const getRules = (element, labels = [], alsoArchive) => {
+        const labelIDs = element.ConversationID ? element.LabelIDs : element.Labels.map(({ ID }) => ID);
         const currentLocation = tools.currentLocation();
         const isStateAllowedRemove =
             _.includes(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
+        // Selected can equals to true / false / null
+        const LabelIDsAdded = getLabelsId(labels, ({ ID, Selected }) => Selected === true && !labelIDs.includes(ID));
+        const LabelIDsRemoved = getLabelsId(labels, ({ ID, Selected }) => Selected === false && labelIDs.includes(ID));
+
+        if (alsoArchive) {
+            LabelIDsAdded.push(MAILBOX_IDENTIFIERS.archive);
+            isStateAllowedRemove && LabelIDsRemoved.push(currentLocation);
+        }
+
+        return { LabelIDsAdded, LabelIDsRemoved };
+    };
+
+    /**
+     * Apply labels on a list of conversations
+     * @param {Array} ids list of conversation ID
+     * @param {Array} labels
+     * @param {Boolean} alsoArchive
+     * @return {Promise}
+     */
+    function label(ids = [], labels = [], alsoArchive = false) {
         const REMOVE = 0;
         const ADD = 1;
-        const current = tools.currentLocation();
         const process = (events) => {
             cache.events(events);
             // Send request to archive conversations
-            alsoArchive === true && conversationApi.archive(ids);
+            alsoArchive && conversationApi.archive(ids);
         };
-
-        const getLabelsId = (list = [], cb = angular.noop) => {
-            return flow(filter(cb), map(({ ID }) => ID))(list) || [];
-        };
-
-        // Selected can equals to true / false / null
-        const toApplyLabels = getLabelsId(labels, ({ Selected }) => Selected === true);
-        const toRemoveLabels = getLabelsId(labels, ({ Selected }) => Selected === false);
-        const toApply = [].concat(toApplyLabels);
-        const toRemove = [].concat(toRemoveLabels);
-
-        if (alsoArchive === true) {
-            toApply.push(MAILBOX_IDENTIFIERS.archive);
-            isStateAllowedRemove && toRemove.push(current);
-        }
 
         const events = flow(
             map((id) => cache.getConversationCached(id)),
             filter(Boolean),
-            reduce((acc, { ID, ContextNumUnread }) => {
+            reduce((acc, conversation) => {
+                const { ID, ContextNumUnread } = conversation;
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
-                    const toApply = [].concat(toApplyLabels);
-                    const toRemove = [].concat(toRemoveLabels);
-
-                    if (alsoArchive === true) {
-                        toApply.push(MAILBOX_IDENTIFIERS.archive);
-                        isStateAllowedRemove && toRemove.push(current);
-                    }
+                    const { LabelIDsAdded, LabelIDsRemoved } = getRules(message, labels, alsoArchive);
 
                     acc.push({
                         Action: 3,
@@ -299,11 +301,13 @@ function actionConversation(
                         Message: {
                             ID: message.ID,
                             Unread: message.Unread,
-                            LabelIDsAdded: toApply,
-                            LabelIDsRemoved: toRemove
+                            LabelIDsAdded,
+                            LabelIDsRemoved
                         }
                     });
                 });
+
+                const { LabelIDsAdded, LabelIDsRemoved } = getRules(conversation, labels, alsoArchive);
 
                 acc.push({
                     Action: 3,
@@ -312,26 +316,30 @@ function actionConversation(
                         ID,
                         ContextNumUnread,
                         Selected: false,
-                        LabelIDsAdded: toApply,
-                        LabelIDsRemoved: toRemove
+                        LabelIDsAdded,
+                        LabelIDsRemoved
                     }
                 });
                 return acc;
             }, [])
         )(ids);
 
-        const getPromises = (list, starter = [], flag = ADD) => {
-            return _.reduce(
-                list,
-                (acc, labelID) => {
-                    acc.push(conversationApi[flag === ADD ? 'label' : 'unlabel'](labelID, ids));
-                    return acc;
-                },
-                starter
-            );
+        const getPromises = (events, flag = ADD) => {
+            const mapLabelIDs = events.filter(({ Conversation }) => Conversation).reduce((acc, { Conversation }) => {
+                Conversation[flag === ADD ? 'LabelIDsAdded' : 'LabelIDsRemoved'].forEach((labelID) => {
+                    acc[labelID] = acc[labelID] || [];
+                    acc[labelID].push(Conversation.ID);
+                });
+                return acc;
+            }, {});
+
+            return Object.keys(mapLabelIDs).map((labelID) => {
+                return conversationApi[flag === ADD ? 'label' : 'unlabel'](labelID, mapLabelIDs[labelID]);
+            });
         };
 
-        const promise = Promise.all(getPromises(toRemove, getPromises(toApply), REMOVE));
+        const promise = Promise.all(getPromises(events), getPromises(events, REMOVE));
+
         cache.addToDispatcher(promise);
 
         if (tools.cacheContext()) {
@@ -340,6 +348,8 @@ function actionConversation(
 
         promise.then(() => process(events));
         networkActivityTracker.track(promise);
+
+        return promise;
     }
 
     /**
@@ -438,9 +448,10 @@ function actionConversation(
                         contactSpam(Senders.map(({ Address = '' }) => Address).filter(Boolean));
                     }
 
-                    const labelIDsRemoved = flow(filter(({ ID }) => _.includes(folderIDs, ID)), map(({ ID }) => ID))(
-                        conversation.Labels
-                    );
+                    const labelIDsRemoved = flow(
+                        filter(({ ID }) => _.includes(folderIDs, ID)),
+                        map(({ ID }) => ID)
+                    )(conversation.Labels);
 
                     acc.push({
                         Action: 3,
