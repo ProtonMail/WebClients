@@ -14,6 +14,7 @@ function messageModel(
     $q,
     $timeout,
     $rootScope,
+    embeddedUtils,
     pmcw,
     gettextCatalog,
     authentication,
@@ -186,7 +187,8 @@ function messageModel(
         }
 
         countEmbedded() {
-            return this.Attachments.filter(({ Headers = {} }) => Headers['content-disposition'] === 'inline').length;
+            const body = this.getDecryptedBody();
+            return embeddedUtils.extractEmbedded(this.attachments, body).length;
         }
 
         addAttachments(list = []) {

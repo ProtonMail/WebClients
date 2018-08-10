@@ -15,14 +15,7 @@ function embeddedParser(
     $timeout,
     mailSettingsModel
 ) {
-    const DIV = document.createElement('DIV');
     const EMBEDDED_CLASSNAME = 'proton-embedded';
-
-    /**
-     * Flush the container HTML and return the container
-     * @return {Node} Empty DIV
-     */
-    const getBodyParser = () => ((DIV.innerHTML = ''), DIV);
 
     const actionDirection = {
         blob(nodes, cid, url) {
@@ -55,17 +48,14 @@ function embeddedParser(
      * @return {String}                       Parsed HTML
      */
     const escapeHTML = (message, direction, body) => {
-        const testDiv = getBodyParser();
-
-        // Escape  cid-errors
-        testDiv.innerHTML = body.replace(/src="cid/g, 'data-src="cid');
+        const testDiv = embeddedUtils.getBodyParser(body);
 
         Object.keys(embeddedStore.cid.get(message)).forEach((cid) => {
-            const { url = '' } = embeddedStore.getBlob(cid);
-            const selector = `img[src="${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"], img[data-src="cid:${cid}"]`;
-            const nodes = [].slice.call(testDiv.querySelectorAll(selector));
+            const nodes = embeddedUtils.findEmbedded(cid, testDiv);
 
             if (nodes.length) {
+                const { url = '' } = embeddedStore.getBlob(cid);
+
                 (actionDirection[direction] || angular.noop)(nodes, cid, url);
             }
         });

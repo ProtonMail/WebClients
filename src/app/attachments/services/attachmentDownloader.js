@@ -230,8 +230,9 @@ function attachmentDownloader(
      * @return {Array}         Array of promises
      */
     const formatDownloadAll = (message) => {
-        const notEmbedded = (message.Attachments || []).filter((att) => !embeddedUtils.isEmbedded(att));
-
+        const body = message.getDecryptedBody();
+        const embeddedAttachments = embeddedUtils.extractEmbedded(message.Attachments, body);
+        const notEmbedded = _.difference(embeddedAttachments, message.Attachments || []);
         const { list } = notEmbedded.reduce(
             (acc, att) => {
                 if (!acc.map[att.Name]) {

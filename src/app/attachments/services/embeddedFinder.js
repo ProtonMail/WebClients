@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function embeddedFinder(embeddedStore, embeddedUtils) {
     const find = (message) => {
@@ -10,10 +8,11 @@ function embeddedFinder(embeddedStore, embeddedUtils) {
             return false;
         }
 
-        _.each(list, (attachment) => {
-            if (embeddedUtils.isEmbedded(attachment)) {
-                embeddedStore.cid.add(message, attachment);
-            }
+        const body = message.getDecryptedBody();
+        const embeddedAttachments = embeddedUtils.extractEmbedded(list, body);
+
+        embeddedAttachments.forEach((attachment) => {
+            embeddedStore.cid.add(message, attachment);
         });
 
         return embeddedStore.cid.contains(message);

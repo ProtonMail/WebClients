@@ -9,7 +9,7 @@ function embeddedUtils(attachmentFileFormat, tools) {
      * Flush the container HTML and return the container
      * @return {Node} Empty DIV
      */
-    const getBodyParser = () => ((DIV.innerHTML = ''), DIV);
+    const getBodyParser = (body = '') => ((DIV.innerHTML = body.replace(/src="cid/g, 'data-src="cid')), DIV); // Escape  cid-errors
 
     /**
      * Removes enclosing quotes ("", '', &lt;&gt;) from a string
@@ -43,16 +43,54 @@ function embeddedUtils(attachmentFileFormat, tools) {
     };
 
     /**
-     * Content-disposition is inconsistent, it can be attachment too
+     * `content-disposition` is inconsistent, it can be attachment too
+     * `content-id` can be defined for normal attachment too
      * Headers is empty for an attachment
      * @param  {Object} Headers
      * @return {Boolean}
      */
     const isInline = (Headers = {}) => !!Headers['content-id'];
 
-    function isEmbedded({ Headers = {}, MIMEType = '' }) {
-        return isInline(Headers) && attachmentFileFormat.isEmbedded(MIMEType);
-    }
+    /**
+     * Find embedded element in div
+     * @param {String} cid
+     * @param {HTMLElement} testDiv
+     * @return {Array}
+     */
+    const findEmbedded = (cid, testDiv) => {
+        const selector = `img[src="${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"], img[data-src="cid:${cid}"]`;
+        return [].slice.call(testDiv.querySelectorAll(selector));
+    };
+
+    /**
+     * Check if an attachment is embedded
+     * @param {Object} attachment
+     * @return {Boolean}
+     */
+    const isEmbedded = ({ Headers = {}, MIMEType = '' }, body) => {
+        const testDiv = getBodyParser(body);
+        const cid = readCID(Headers);
+        const nodes = findEmbedded(cid, testDiv);
+
+        return nodes.length && attachmentFileFormat.isEmbedded(MIMEType);
+    };
+
+    /**
+     * Extract embedded attachment from body
+     * @param {Array} attachments
+     * @param {String} body
+     * @return {Array}
+     */
+    const extractEmbedded = (attachments = [], body = '') => {
+        const testDiv = getBodyParser(body);
+
+        return attachments.filter(({ Headers = {} }) => {
+            const cid = readCID(Headers);
+            const nodes = findEmbedded(cid, testDiv);
+
+            return nodes.length;
+        });
+    };
 
     const getAttachementName = (Headers = {}) => {
         if (Headers['content-disposition'] !== 'inline') {
@@ -106,8 +144,10 @@ function embeddedUtils(attachmentFileFormat, tools) {
     };
 
     return {
+        findEmbedded,
         isInline,
         isEmbedded,
+        extractEmbedded,
         getAttachementName,
         generateCid,
         srcToCID,
