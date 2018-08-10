@@ -37,6 +37,7 @@ function postMessage(
      * @param {Object} pgpAttachments A set of pgp attachments (which are not actually stored on the BE, but in the body)
      */
     const makeNative = (message, pgpAttachments) => {
+        const body = message.getDecryptedBody();
         const promises = _.map(pgpAttachments, async (attachment) => {
             // message parameter doesn't really matter in this case as the attachment should be in the cache
             const data = await AttachmentLoader.get(attachment);
@@ -44,7 +45,7 @@ function postMessage(
             const cid = embeddedUtils.readCID(attachment.Headers);
             file.name = attachment.Name;
             if (cid) {
-                file.inline = Number(embeddedUtils.isEmbedded(attachment));
+                file.inline = Number(embeddedUtils.isEmbedded(attachment, body));
             }
             const { attachment: nativeAttachment } = await attachmentModel.create(
                 file,

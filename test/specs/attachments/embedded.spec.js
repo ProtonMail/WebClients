@@ -81,7 +81,7 @@ describe('embedded service', () => {
 
     it('should not parse embedded images and set src when they are escaped with proton-', async () => {
         const message = getMessage({
-            body: '<img class="proton-embedded" proton-src="cid:-9e96b583@protonmail.com" alt="embedded.jpg" >',
+            body: '<img class="proton-embedded" proton-src="cid:-9e96b583@protonmail.com" alt="embedded.jpg">',
             attachments: EMBEDDED_ATTACHMENTS
         });
         const body = await embeddedService.parser(message);
