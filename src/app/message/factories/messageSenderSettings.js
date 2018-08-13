@@ -70,7 +70,7 @@ function messageSenderSettings(
             }
 
             const contactDetails = contactDetailsModel.extract({ vcard: contact.vCard, field: 'EMAIL' });
-            const item = contactDetails.find(({ value }) => value === normalizedEmail);
+            const item = contactDetails.find(({ value }) => normalizeEmail(value) === normalizedEmail);
             const model = { ...item.settings };
             delete model.Email;
 
