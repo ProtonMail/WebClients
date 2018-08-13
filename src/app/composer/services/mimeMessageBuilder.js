@@ -5,7 +5,10 @@ import mimemessage from 'mimemessage';
 function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
     const RFC2045_LIMIT = 76;
 
-    const arrayToBase64 = _.flowRight(pmcw.encode_base64, pmcw.arrayToBinaryString);
+    const arrayToBase64 = _.flowRight(
+        pmcw.encode_base64,
+        pmcw.arrayToBinaryString
+    );
     const wrapline = (line, escape = '', limit = RFC2045_LIMIT) => {
         const lineCount = Math.ceil(line.length / limit);
         const result = Array.from({ length: lineCount }, (_, i) => line.substring(limit * i, limit * (i + 1)));
@@ -30,18 +33,37 @@ function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
     // Needed because the default library produces really short boundaries + we want to match the structure with the BE
     const generateBoundary = () => `---------------------${random128bitHex()}`;
 
+    /**
+     * Remove '; name=' and '; filename=' values
+     * @param {String} value
+     */
+    const extractContentValue = (value = '') => {
+        const semicolonIndex = value.indexOf(';');
+
+        if (semicolonIndex === -1) {
+            return value;
+        }
+
+        return value.substr(0, semicolonIndex);
+    };
+
     const buildAttachments = (attachments) => {
         return _.map(attachments, ({ attachment, data }) => {
+            const attachmentName = JSON.stringify(attachment.Name);
             const entity = mimemessage.factory({
-                contentType: `${attachment.MIMEType}; name=${JSON.stringify(attachment.Name)}`,
+                contentType: `${attachment.MIMEType}; name=${attachmentName};`,
                 contentTransferEncoding: 'base64',
                 body: wraplines(arrayToBase64(data))
             });
-            const headers = _.extend({}, attachment.Headers);
-            headers['content-disposition'] = headers['content-disposition'] || 'attachment';
+
+            const headers = {
+                'content-type': extractContentValue(attachment.Headers['content-type']),
+                'content-disposition': extractContentValue(attachment.Headers['content-disposition']) || 'attachment'
+            };
+
             _.each(headers, (value, key) => {
-                if ((key === 'content-type' || key === 'content-disposition') && value.indexOf('; filename=') === -1) {
-                    return entity.header(key, `${value}; filename=${JSON.stringify(attachment.Name)}`);
+                if (key === 'content-type' || key === 'content-disposition') {
+                    return entity.header(key, `${value}; filename=${attachmentName}; name=${attachmentName};`);
                 }
 
                 entity.header(key, value);
