@@ -59,7 +59,7 @@ function dropdownLabels(
 
                     scope.labelName = '';
                     scope.labels = labelsModel.get('labels');
-                    scope.alsoArchive = Boolean(mailSettingsModel.get('AlsoArchive'));
+                    scope.alsoArchive = false;
 
                     scope.labels.forEach((label) => {
                         const count = messagesLabels[label.ID] || 0;
@@ -103,10 +103,6 @@ function dropdownLabels(
             dropdown.on('click', onClickDropdown);
 
             scope.color = ({ Color: color = 'inherit' } = {}) => ({ color });
-
-            scope.changeAlsoArchive = () => {
-                settingsMailApi.updateAlsoArchive({ AlsoArchive: +scope.alsoArchive });
-            };
 
             scope.$on('$destroy', () => {
                 dropdown.off('click', onClickDropdown);

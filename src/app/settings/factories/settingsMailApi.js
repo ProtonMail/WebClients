@@ -31,7 +31,6 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
     const updateViewLayout = (data) => handleResponse($http.put(requestURL('viewlayout'), data));
     const updateSwipeLeft = (data) => handleResponse($http.put(requestURL('swipeleft'), data));
     const updateSwipeRight = (data) => handleResponse($http.put(requestURL('swiperight'), data));
-    const updateAlsoArchive = (data) => handleResponse($http.put(requestURL('alsoarchive'), data));
     const updateHotkeys = (data) => handleResponse($http.put(requestURL('hotkeys'), data));
     const updatePMSignature = (data) => handleResponse($http.put(requestURL('pmsignature'), data));
     const updateAutowildcard = (data) => handleResponse($http.put(requestURL('autowildcard'), data));
@@ -60,7 +59,6 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
         updateViewLayout,
         updateSwipeLeft,
         updateSwipeRight,
-        updateAlsoArchive,
         updateHotkeys,
         updatePMSignature,
         updateAutowildcard,
