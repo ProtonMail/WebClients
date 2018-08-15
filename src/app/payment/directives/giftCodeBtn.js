@@ -1,6 +1,7 @@
 /* @ngInject */
-function giftCodeBtn($rootScope, giftCodeModal) {
-    const dispatch = (type) => $rootScope.$emit('signup', { type });
+function giftCodeBtn(dispatchers, giftCodeModal) {
+    const { dispatcher } = dispatchers(['signup']);
+    const dispatch = (type) => dispatcher.signup(type);
 
     return {
         templateUrl: require('../../../templates/payment/giftCodeBtn.tpl.html'),

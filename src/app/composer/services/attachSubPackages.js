@@ -2,8 +2,9 @@ import _ from 'lodash';
 import { SEND_TYPES } from '../../constants';
 
 /* @ngInject */
-function attachSubPackages($rootScope, pmcw, srp) {
-    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', message);
+function attachSubPackages(dispatchers, pmcw, srp) {
+    const { dispatcher } = dispatchers(['actionMessage']);
+    const dispatchMessageAction = (message) => dispatcher.actionMessage('update', message);
 
     /**
      * Package for a ProtonMail user.

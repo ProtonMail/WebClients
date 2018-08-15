@@ -1,12 +1,11 @@
 /* @ngInject */
-function composerEncrypt(notification, gettextCatalog, $rootScope) {
+function composerEncrypt(dispatchers, notification, gettextCatalog) {
+    const { dispatcher } = dispatchers(['composer.update']);
+    const dispatch = (type, message) => dispatcher['composer.update'](type, { message, type: 'encryption' });
     const MESSAGES = {
         noPassword: gettextCatalog.getString('Please enter a password for this email.', null, 'Error'),
         noMatchPassword: gettextCatalog.getString('Message passwords do not match.', null, 'Error')
     };
-
-    const dispatch = (type, message) =>
-        $rootScope.$emit('composer.update', { type, data: { message, type: 'encryption' } });
 
     return {
         replace: true,
@@ -16,6 +15,7 @@ function composerEncrypt(notification, gettextCatalog, $rootScope) {
         templateUrl: require('../../../templates/composer/composerEncrypt.tpl.html'),
         link(scope, el) {
             const $cancel = el.find('.composerEncrypt-btn-cancel');
+
             scope.model = {
                 password: '',
                 confirm: '',

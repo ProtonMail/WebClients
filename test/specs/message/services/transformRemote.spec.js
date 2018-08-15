@@ -1,6 +1,10 @@
 import service from '../../../../src/app/message/services/transformRemote';
+import dispatchersService from '../../../../src/app/commons/services/dispatchers';
 
 describe('transformRemote service', () => {
+    let factory;
+    let rootScope;
+
     const REMOTE_URL = '/remote.jpg';
     const INLINE_EMBEDDED_URL = 'data:image/png;base64,iVBORw0KGgoA';
     const MailSettings = {
@@ -10,17 +14,17 @@ describe('transformRemote service', () => {
         is() {
         }
     };
-    const $rootScope = {
-        $emit() {
-        }
-    };
+
     const mailSettingsModel = {
         get(key = 'all') {
             return key === 'all' ? MailSettings : MailSettings[key];
         }
     };
 
-    const factory = service($state, $rootScope, mailSettingsModel);
+    beforeEach(angular.mock.inject(($injector) => {
+        rootScope = $injector.get('$rootScope');
+        factory = service($state, dispatchersService(rootScope), mailSettingsModel);
+    }));
 
     const DOM = `
         <img proton-src="${REMOTE_URL}">

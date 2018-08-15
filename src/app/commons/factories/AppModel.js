@@ -1,7 +1,9 @@
 /* @ngInject */
-function AppModel($rootScope) {
+function AppModel(dispatchers) {
     const MODEL = {};
-    const dispatch = (type, data = {}) => $rootScope.$emit('AppModel', { type, data });
+    const { dispatcher } = dispatchers(['AppModel']);
+    /* eslint new-cap: "off" */
+    const dispatch = (type, data = {}) => dispatcher.AppModel(type, data);
 
     const set = (key = '', value) => {
         const previous = MODEL[key];

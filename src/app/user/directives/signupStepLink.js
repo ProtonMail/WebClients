@@ -1,5 +1,5 @@
 /* @ngInject */
-const signupStepLink = (gettextCatalog, $rootScope) => ({
+const signupStepLink = (dispatchers, gettextCatalog) => ({
     replace: true,
     template: `<a href="#" class="link signupStepLink-container">${gettextCatalog.getString(
         'Yes',
@@ -7,13 +7,11 @@ const signupStepLink = (gettextCatalog, $rootScope) => ({
         'Action'
     )}</a>`,
     link(scope, el, { value = 1 }) {
+        const { dispatcher } = dispatchers(['signup']);
         const onClick = (e) => {
             e.preventDefault();
             e.stopPropagation();
-            $rootScope.$emit('signup', {
-                type: 'goto.step',
-                data: { value: +value }
-            });
+            dispatcher.signup('goto.step', { value: +value });
         };
 
         el.on('click', onClick);

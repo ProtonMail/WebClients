@@ -4,6 +4,7 @@ import { ENCRYPTION_DEFAULT } from '../../constants';
 
 /* @ngInject */
 function generateModal(
+    dispatchers,
     pmModal,
     networkActivityTracker,
     notification,
@@ -29,7 +30,9 @@ function generateModal(
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/generate.tpl.html'),
         /* @ngInject */
-        controller: function(params, $scope) {
+        controller: function(params) {
+            const { on, unsubscribe } = dispatchers();
+
             this.size = ENCRYPTION_DEFAULT; // To match the [radio] value
             this.process = false;
             this.title = params.title || I18N.title;
@@ -43,7 +46,7 @@ function generateModal(
             this.cancel = () => params.close();
             this.addresses = _.map(params.addresses, (adr) => ((adr.state = STATE.QUEUED), adr));
 
-            $scope.$on('updateUser', () => {
+            on('updateUser', () => {
                 !addressWithoutKeys.fromUser().length && this.cancel();
             });
 
@@ -76,6 +79,10 @@ function generateModal(
                     });
 
                 networkActivityTracker.track(promise);
+            };
+
+            this.$onDestroy = () => {
+                unsubscribe();
             };
         }
     });

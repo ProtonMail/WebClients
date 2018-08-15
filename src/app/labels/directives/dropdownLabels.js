@@ -2,8 +2,9 @@ import _ from 'lodash';
 
 /* @ngInject */
 function dropdownLabels(
-    $rootScope,
     $timeout,
+    AppModel,
+    dispatchers,
     labelsModel,
     mailSettingsModel,
     eventManager,
@@ -15,7 +16,8 @@ function dropdownLabels(
         LABELS_SAVED: gettextCatalog.getString('Labels Saved', null, 'dropdown label'),
         LABEL_SAVED: gettextCatalog.getString('Label Saved', null, 'dropdown label')
     };
-    const close = () => $rootScope.$emit('closeDropdown');
+    const { dispatcher } = dispatchers(['closeDropdown']);
+    const close = () => dispatcher.closeDropdown();
 
     const mapLabelsMessage = (elements = []) => {
         return _.reduce(
@@ -77,7 +79,7 @@ function dropdownLabels(
             const onSubmit = (e) => {
                 e.stopPropagation();
                 scope.$applyAsync(() => {
-                    $rootScope.numberElementChecked = 0;
+                    AppModel.set('numberElementChecked', 0);
                     scope.saveLabels(scope.labels, scope.alsoArchive);
                     close();
                     notification.success(NOTIFS.LABELS_SAVED);

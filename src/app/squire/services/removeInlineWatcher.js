@@ -1,5 +1,5 @@
 /* @ngInject */
-function removeInlineWatcher($state, $rootScope) {
+function removeInlineWatcher(dispatchers) {
     const getCIDs = (input, message, { latest, dispatch }) => {
         // Extract CID per embedded image (with compat mode for old embedded)
         const cids = (input.match(/(rel=("([^"]|"")*"))|(data-embedded-img=("([^"]|"")*"))/g) || [])
@@ -37,7 +37,8 @@ function removeInlineWatcher($state, $rootScope) {
     function removerEmbeddedWatcher(action) {
         const latest = { CID: [] };
         const key = ['attachment.upload', action].filter(Boolean).join('.');
-        const dispatch = (data) => $rootScope.$emit(key, { type: 'remove.all', data });
+        const { dispatcher } = dispatchers([key]);
+        const dispatch = (data) => dispatcher[key]('remove.all', data);
 
         return (message, editor) => {
             const input = editor.getHTML() || '';

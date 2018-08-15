@@ -25,7 +25,7 @@ function eventListener(CONFIG, analytics, dispatchers, pageTitlesModel) {
         analytics.trackPage({ title, referrer, url: location.href });
     });
 
-    on('signup', (event, { type, data }) => {
+    on('signup', (e, { type, data }) => {
         if (type === 'user.subscription.finished') {
             const plan = data.plan || { Name: 'free' };
 

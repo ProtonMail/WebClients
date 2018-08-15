@@ -63,8 +63,8 @@ angular
     })
     .run((
         $rootScope,
-        $state,
         logoutManager, // Keep the logoutManager here to lunch it
+        AppModel,
         authentication,
         networkActivityTracker,
         tools,
@@ -79,7 +79,7 @@ angular
         window.addEventListener('orientationchange', tools.mobileResponsive);
         tools.mobileResponsive();
 
-        $rootScope.showWelcome = true;
+        AppModel.set('showWelcome', true);
 
         // SVG Polyfill for IE11 @todo lazy load
         window.svg4everybody();

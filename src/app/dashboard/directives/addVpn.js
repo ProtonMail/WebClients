@@ -1,5 +1,5 @@
 /* @ngInject */
-function addVpn($rootScope, gettextCatalog) {
+function addVpn(dispatchers, gettextCatalog) {
     const ADD_PROTONVPN = gettextCatalog.getString('+ Add ProtonVPN', null, 'Button');
     return {
         restrict: 'E',
@@ -12,14 +12,12 @@ function addVpn($rootScope, gettextCatalog) {
                             </div>
                         </button>`,
         link(scope, element, { plan }) {
+            const { dispatcher } = dispatchers(['dashboard']);
             const value = plan === 'free' ? 'vpnbasic' : 'vpnplus';
             const onClick = () => {
-                $rootScope.$emit('dashboard', { type: 'change.addon', data: { addon: 'vpn', plan: 'free', value } });
-                $rootScope.$emit('dashboard', { type: 'change.addon', data: { addon: 'vpn', plan: 'plus', value } });
-                $rootScope.$emit('dashboard', {
-                    type: 'change.addon',
-                    data: { addon: 'vpn', plan: 'professional', value }
-                });
+                dispatcher.dashboard('change.addon', { addon: 'vpn', plan: 'free', value });
+                dispatcher.dashboard('change.addon', { addon: 'vpn', plan: 'plus', value });
+                dispatcher.dashboard('change.addon', { addon: 'vpn', plan: 'professional', value });
             };
 
             element.on('click', onClick);

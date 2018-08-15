@@ -3,13 +3,14 @@ function removeElement(
     gettextCatalog,
     AppModel,
     actionConversation,
+    dispatchers,
     messageActions,
     confirmModal,
     $state,
-    $rootScope,
     notification,
     tools
 ) {
+    const { dispatcher } = dispatchers(['composer.update']);
     const I18N = {
         TITLE: gettextCatalog.getString('Delete', null, 'Title'),
         MESSAGE: gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info'),
@@ -106,17 +107,14 @@ function removeElement(
 
                     if (isDraftOpen) {
                         drafts.forEach((message) => {
-                            $rootScope.$emit('composer.update', {
-                                type: 'close.message',
-                                data: { message }
-                            });
+                            dispatcher['composer.update']('close.message', { message });
                         });
                     }
 
                     notification.success(I18N.success(ids.length, I18N.TYPES[context](ids.length)));
 
-                    $rootScope.showWelcome = false;
-                    $rootScope.numberElementChecked = 0;
+                    AppModel.set('showWelcome', false);
+                    AppModel.set('numberElementChecked', 0);
                     redirectUser();
                 }
             }

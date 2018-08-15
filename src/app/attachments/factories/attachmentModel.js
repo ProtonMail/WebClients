@@ -40,7 +40,7 @@ function attachmentModel(
      * Dispatch an event for the sending button
      * @param  {Message} message
      */
-    const dispatchMessageAction = (message) => dispatcher.actionMessage('', message);
+    const dispatchMessageAction = (message) => dispatcher.actionMessage('update', message);
 
     /**
      * Create a map [<REQUEST>] = <upload>

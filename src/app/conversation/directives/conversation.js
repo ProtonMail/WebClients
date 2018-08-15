@@ -8,10 +8,9 @@ function conversation(
     $rootScope,
     $state,
     $stateParams,
+    AppModel,
     actionConversation,
     conversationListeners,
-    messageActions,
-    authentication,
     messageScroll,
     cache,
     tools,
@@ -80,7 +79,12 @@ function conversation(
         templateUrl: require('../../../templates/partials/conversation.tpl.html'),
         link(scope) {
             let messagesCached = [];
-            const { on, unsubscribe, dispatcher } = dispatchers(['message.open', 'elements', 'composer.load']);
+            const { on, unsubscribe, dispatcher } = dispatchers([
+                'message.open',
+                'elements',
+                'composer.load',
+                'messageActions'
+            ]);
 
             const scrollToPosition = getScrollToPosition();
             let unsubscribeActions = angular.noop;
@@ -89,8 +93,8 @@ function conversation(
             scope.labels = labelsModel.get();
             scope.showTrashed = false;
             scope.showNonTrashed = false;
-            $rootScope.numberElementSelected = 1;
-            $rootScope.showWelcome = false;
+            AppModel.set('numberElementSelected', 1);
+            AppModel.set('showWelcome', false);
             scope.inTrash = $state.includes('secured.trash.**');
             scope.inSpam = $state.includes('secured.spam.**');
             scope.getElements = () => [scope.conversation];
@@ -112,7 +116,7 @@ function conversation(
                 });
             };
 
-            on('refreshConversation', (event, conversationIDs) => {
+            on('refreshConversation', (event, { data: conversationIDs }) => {
                 if (conversationIDs.indexOf(scope.conversation.ID) > -1) {
                     refreshConversation();
                 }
@@ -151,15 +155,12 @@ function conversation(
                  * Move item only when we didn't select anything
                  * -> Prevent x2 move with marked item by elementsCtrl
                  */
-                if ($rootScope.numberElementChecked) {
+                if (AppModel.get('numberElementChecked')) {
                     return;
                 }
 
                 if (scope.markedMessage) {
-                    return $rootScope.$emit('messageActions', {
-                        type: 'move',
-                        data: { ids: [scope.markedMessage.ID], labelID }
-                    });
+                    return dispatcher.messageActions('move', { ids: [scope.markedMessage.ID], labelID });
                 }
                 actionConversation.move([scope.conversation.ID], labelID);
             });

@@ -231,7 +231,7 @@ function message(
                 }
             });
 
-            on('message.refresh', async (event, messageIDs) => {
+            on('message.refresh', async (event, { data: messageIDs }) => {
                 if (messageIDs.indexOf(scope.message.ID) > -1) {
                     const message = cache.getMessageCached(scope.message.ID);
                     const type = tools.typeView();

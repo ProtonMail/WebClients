@@ -1,7 +1,7 @@
 import { INVITE_MAIL } from '../../constants';
 
 /* @ngInject */
-function signupUserForm(confirmModal, gettextCatalog, signupModel, $rootScope) {
+function signupUserForm(confirmModal, dispatchers, gettextCatalog, signupModel) {
     const I18N = {
         TITLE: gettextCatalog.getString('Warning', null, 'Title'),
         MESSAGE: gettextCatalog.getString(
@@ -20,17 +20,15 @@ function signupUserForm(confirmModal, gettextCatalog, signupModel, $rootScope) {
         },
         templateUrl: require('../../../templates/user/signupUserForm.tpl.html'),
         link(scope, el) {
+            const { dispatcher } = dispatchers(['signup']);
             const send = () => {
                 // Save variables to prevent extensions/etc
                 // from modifying them during setup process
                 signupModel.store(scope.account);
                 signupModel.set('Type', INVITE_MAIL);
 
-                $rootScope.$emit('signup', {
-                    type: 'userform.submit',
-                    data: {
-                        form: scope.account
-                    }
+                dispatcher.signup('userform.submit', {
+                    form: scope.account
                 });
             };
 

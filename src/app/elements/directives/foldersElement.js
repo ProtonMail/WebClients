@@ -53,7 +53,7 @@ function foldersElement($state, dispatchers, gettextCatalog, $compile, mailboxId
         },
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
-            const build = (event, { LabelIDs = [], Labels = [] }) => {
+            const build = ({ LabelIDs = [], Labels = [] }) => {
                 if ((LabelIDs.length || Labels.length) && isAllowedState()) {
                     const labelIDs = Labels.length ? _.map(Labels, ({ ID }) => ID) : LabelIDs;
                     const tpl = $compile(getTemplateLabels(labelIDs))(scope);
@@ -61,9 +61,13 @@ function foldersElement($state, dispatchers, gettextCatalog, $compile, mailboxId
                 }
             };
 
-            on('foldersElement.' + scope.conversation.ID, build);
+            on('foldersElement', (event, { data: element }) => {
+                if (element.ID === scope.conversation.ID) {
+                    build(element);
+                }
+            });
 
-            build(undefined, scope.conversation);
+            build(scope.conversation);
 
             scope.$on('$destroy', unsubscribe);
         }

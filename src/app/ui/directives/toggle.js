@@ -1,5 +1,5 @@
 /* @ngInject */
-function toggle(gettextCatalog, $rootScope) {
+function toggle(gettextCatalog, dispatchers) {
     const I18N = {
         YES: gettextCatalog.getString(
             'Yes',
@@ -21,6 +21,8 @@ function toggle(gettextCatalog, $rootScope) {
             name: '@' // event name called
         },
         link(scope, element, { on = 'YES', off = 'NO' }) {
+            const { dispatcher } = dispatchers([scope.name]);
+
             scope.on = I18N[on];
             scope.off = I18N[off];
 
@@ -28,7 +30,7 @@ function toggle(gettextCatalog, $rootScope) {
                 scope.$applyAsync(() => {
                     scope.status = !scope.status;
                     if (scope.name) {
-                        $rootScope.$emit(scope.name, { status: scope.status, id: scope.id });
+                        dispatcher[scope.name]('', { status: scope.status, id: scope.id });
                     }
                 });
             }

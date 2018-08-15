@@ -1,7 +1,7 @@
 /* @ngInject */
 function contactImporter(
-    $rootScope,
     contactSchema,
+    dispatchers,
     importContactModal,
     notification,
     vcard,
@@ -14,12 +14,9 @@ function contactImporter(
         invalid: gettextCatalog.getString('Invalid file type', null, 'Error'),
         parsingCSV: gettextCatalog.getString('Cannot convert the file', null, 'Error')
     };
-
+    const { dispatcher } = dispatchers(['contact']);
     const dispatch = (data = []) =>
-        $rootScope.$emit('contacts', {
-            type: 'createContact',
-            data: { contacts: contactSchema.prepareContacts(data), mode: 'import' }
-        });
+        dispatcher.contacts('createContact', { contacts: contactSchema.prepareContacts(data), mode: 'import' });
 
     const importVCF = async (reader) => dispatch(vcard.from(reader.result));
 

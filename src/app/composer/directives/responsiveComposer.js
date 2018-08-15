@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function responsiveComposer($rootScope, mailSettingsModel) {
+function responsiveComposer(AppModel, mailSettingsModel) {
     const latestState = {};
 
     /**
@@ -27,8 +27,8 @@ function responsiveComposer($rootScope, mailSettingsModel) {
         latestState.isSmall = isSmall;
 
         scope.$applyAsync(() => {
-            $rootScope.small = height < 700 && height >= 600;
-            $rootScope.mini = height < 600;
+            AppModel.set('small', height < 700 && height >= 600);
+            AppModel.set('mini', height < 600);
 
             isSmall && scope.maximize(scope.message);
             !isSmall && mailSettingsModel.get('ComposerMode') === 0 && scope.normalize(scope.message);

@@ -5,7 +5,7 @@ import { SUCCESS, DRAFT_NOT_EXIST } from '../constants/index';
 
 /* @ngInject */
 function postMessage(
-    $rootScope,
+    dispatchers,
     messageRequest,
     cache,
     notify,
@@ -24,7 +24,8 @@ function postMessage(
         SAVE_MESSAGE_SUCCESS: gettextCatalog.getString('Message saved', null, 'Record message')
     };
     const unicodeTagView = $filter('unicodeTagView');
-    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', { data: message });
+    const { dispatcher } = dispatchers(['actionMessage']);
+    const dispatchMessageAction = (message) => dispatcher.actionMessage('update', message);
 
     const isPGPAttachment = ({ Encrypted }) => Encrypted === ENCRYPTED_STATUS.PGP_MIME;
 

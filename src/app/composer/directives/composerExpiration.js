@@ -3,14 +3,14 @@ import _ from 'lodash';
 import { MAX_EXPIRATION_TIME } from '../../constants';
 
 /* @ngInject */
-function composerExpiration(notification, gettextCatalog, $rootScope) {
+function composerExpiration(dispatchers, notification, gettextCatalog) {
+    const { dispatcher } = dispatchers(['composer.update']);
     const MESSAGES = {
         maxEpiration: gettextCatalog.getString('The maximum expiration is 4 weeks.', null, 'Error'),
         invalid: gettextCatalog.getString('Invalid expiration time.', null, 'Error')
     };
 
-    const dispatch = (type, message) =>
-        $rootScope.$emit('composer.update', { type, data: { message, type: 'expiration' } });
+    const dispatch = (type, message) => dispatcher['composer.update'](type, { message, type: 'expiration' });
 
     const formatOption = (size) => _.range(size).map((value) => ({ label: `${value}`, value }));
 

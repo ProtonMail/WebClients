@@ -2,11 +2,12 @@ import { MAILBOX_IDENTIFIERS } from '../../constants';
 import { combineHeaders, splitMail } from '../../../helpers/mail';
 
 /* @ngInject */
-function actionMessage($rootScope, downloadFile, openStatePostMessage, mimeMessageBuilder, networkActivityTracker) {
-    const dispatcher = (message = {}) => (action = '', mailbox = '') => {
-        $rootScope.$emit('messageActions', {
-            type: action,
-            data: { ids: [message.ID], labelID: MAILBOX_IDENTIFIERS[mailbox] }
+function actionMessage(dispatchers, downloadFile, openStatePostMessage, mimeMessageBuilder, networkActivityTracker) {
+    const { dispatcher } = dispatchers(['messageActions']);
+    const disp = (message = {}) => (action = '', mailbox = '') => {
+        dispatcher.messageActions(action, {
+            ids: [message.ID],
+            labelID: MAILBOX_IDENTIFIERS[mailbox]
         });
     };
 
@@ -41,7 +42,7 @@ function actionMessage($rootScope, downloadFile, openStatePostMessage, mimeMessa
 
     return {
         link(scope, el, { actionMessage, actionMessageType = '' }) {
-            const dispatch = dispatcher(scope.message);
+            const dispatch = disp(scope.message);
             function onClick() {
                 switch (actionMessage) {
                     case 'unread':

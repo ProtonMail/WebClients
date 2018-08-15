@@ -5,8 +5,8 @@ import { getGroup, groupMatcher } from '../../../helpers/vcard';
 
 /* @ngInject */
 function sendPreferences(
+    dispatchers,
     pmcw,
-    $rootScope,
     addressesModel,
     contactEmails,
     Contact,
@@ -16,7 +16,7 @@ function sendPreferences(
 ) {
     // We cache all the information coming from the Contacts, so we can avoid accessing the contacts multiple times.
     const CACHE = {};
-
+    const { on } = dispatchers();
     const normalizeEmail = (email) => email.toLowerCase();
     const usesDefaults = (contactEmail) => !contactEmail || contactEmail.Defaults;
 
@@ -423,7 +423,7 @@ function sendPreferences(
 
     const contactUpdated = ({ ID }) => delete CACHE.EXTRACTED_INFO[ID];
 
-    $rootScope.$on('contacts', (event, { type, data: { events = [], contact = {} } = {} }) => {
+    on('contacts', (event, { type, data: { events = [], contact = {} } = {} }) => {
         type === 'contactEvents' && contactEvents(events);
         type === 'contactUpdated' && contactUpdated(contact);
     });
@@ -434,7 +434,7 @@ function sendPreferences(
 
     clearCache();
 
-    $rootScope.$on('logout', () => {
+    on('logout', () => {
         clearCache();
     });
 

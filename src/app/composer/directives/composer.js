@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSettingsModel) {
+function composer(AppModel, attachmentFileFormat, dispatchers, mailSettingsModel) {
     const CLASS_DRAGGABLE = 'composer-draggable';
     const CLASS_DRAGGABLE_EDITOR = 'composer-draggable-editor';
 
@@ -20,6 +20,8 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
         templateUrl: require('../../../templates/directives/composer/composer.tpl.html'),
         link(scope, el) {
             const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'editorListener']);
+            const updateMini = (value) => (scope.mini = value);
+            const updateSmall = (value) => (scope.small = value);
 
             const focusComposer = (event, data = {}) => {
                 dispatcher['composer.update'](`focus.${event}`, data);
@@ -154,6 +156,22 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
 
             on('editor.draggable', onAction(scope, el[0]));
             on('attachment.upload', onAction(scope, el[0]));
+            on('AppModel', (event, { type, data = {} }) => {
+                if (type === 'mini') {
+                    scope.$applyAsync(() => {
+                        updateMini(data.value);
+                    });
+                }
+
+                if (type === 'small') {
+                    scope.$applyAsync(() => {
+                        updateSmall(data.value);
+                    });
+                }
+            });
+
+            updateMini(AppModel.get('mini'));
+            updateSmall(AppModel.get('small'));
 
             scope.$on('$destroy', () => {
                 el[0].removeEventListener('dragenter', onDragEnter);

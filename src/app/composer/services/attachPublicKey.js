@@ -1,5 +1,6 @@
 /* @ngInject */
-function attachPublicKey($rootScope, authentication, attachmentModel, pmcw) {
+function attachPublicKey(authentication, attachmentModel, dispatchers, pmcw) {
+    const { dispatcher } = dispatchers(['attachment.upload']);
     const fileFromKeyInfo = (message, { publicKeyArmored, fingerprint }) => {
         const file = new Blob([publicKeyArmored], { type: 'application/pgp-keys' });
         file.name = `publickey - ${message.From.Email} - 0x${fingerprint.slice(0, 8).toUpperCase()}.asc`;
@@ -22,7 +23,7 @@ function attachPublicKey($rootScope, authentication, attachmentModel, pmcw) {
 
     const removePublicKey = async (message) => {
         const list = message.Attachments.filter(({ isPublicKey = false }) => isPublicKey);
-        $rootScope.$emit('attachment.upload', { type: 'remove.all', data: { message, list } });
+        dispatcher['attachment.upload']('remove.all', { message, list });
     };
 
     return { attach: attachPublicKey, remove: removePublicKey };

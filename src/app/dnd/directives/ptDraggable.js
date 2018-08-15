@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function ptDraggable($rootScope, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNotification) {
+function ptDraggable(AppModel, dispatchers, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNotification) {
     const { CLASSNAME, DROPZONE_ATTR_ID } = PTDNDCONSTANTS;
     let getSelected = angular.noop;
 
@@ -66,6 +66,7 @@ function ptDraggable($rootScope, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNo
 
     return {
         link(scope, el) {
+            const { dispatcher } = dispatchers(['dnd']);
             getSelected = scope.getElements;
             const id = ptDndUtils.generateUniqId();
 
@@ -76,13 +77,13 @@ function ptDraggable($rootScope, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNo
                 model: scope.conversation,
                 type: scope.conversation.ConversationID ? 'message' : 'conversation',
                 hookDragStart(target, event) {
-                    const value = $rootScope.numberElementChecked;
+                    const value = AppModel.get('numberElementChecked');
 
                     if (scope.conversation.Selected) {
                         // To keep the $scope up to date as we cannot display the notifcation after the digest
                         return scope.$applyAsync(() => {
                             scope.conversation.Selected = true;
-                            $rootScope.numberElementChecked = value;
+                            AppModel.set('numberElementChecked', value);
                             this.onDragStart(target, event, getSelected());
                         });
                     }
@@ -91,20 +92,17 @@ function ptDraggable($rootScope, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNo
                      * Same behavior as gmail
                      * - 3 selected, select a 4th item, only select it and unselect others. On dragend, re-select the 3 others
                      */
-                    $rootScope.$emit('dnd', {
-                        type: 'hook.dragstart',
-                        data: {
-                            before: {
-                                number: value,
-                                ids: _.map(getSelected(), 'ID')
-                            }
+                    dispatcher.dnd('hook.dragstart', {
+                        before: {
+                            number: value,
+                            ids: _.map(getSelected(), 'ID')
                         }
                     });
 
                     // To keep the $scope up to date as we cannot display the notifcation after the digest
                     scope.$applyAsync(() => {
                         scope.conversation.Selected = true;
-                        $rootScope.numberElementChecked = 1;
+                        AppModel.set('numberElementChecked', 1);
                         this.onDragStart(target, event, [scope.conversation]);
                     });
                 }

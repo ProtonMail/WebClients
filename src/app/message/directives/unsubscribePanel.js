@@ -1,5 +1,5 @@
 /* @ngInject */
-function unsubscribePanel($rootScope, addressesModel, confirmModal, gettextCatalog, unsubscribeModel) {
+function unsubscribePanel(addressesModel, confirmModal, dispatchers, gettextCatalog, unsubscribeModel) {
     const I18N = {
         notice: gettextCatalog.getString('This message is from a mailing list.', null, 'Info'),
         kb: gettextCatalog.getString('Learn more', null, 'Info'),
@@ -13,6 +13,7 @@ function unsubscribePanel($rootScope, addressesModel, confirmModal, gettextCatal
             );
         }
     };
+    const { dispatcher } = dispatchers(['message']);
 
     const confirmFirst = (message) => {
         const { Email } = addressesModel.getByID(message.AddressID);
@@ -23,7 +24,7 @@ function unsubscribePanel($rootScope, addressesModel, confirmModal, gettextCatal
                 message: I18N.message(Email),
                 confirm() {
                     confirmModal.deactivate();
-                    $rootScope.$emit('message', { type: 'unsubscribe', data: { message } });
+                    dispatcher.message('unsubscribe', { message });
                 },
                 cancel() {
                     confirmModal.deactivate();
@@ -52,7 +53,7 @@ function unsubscribePanel($rootScope, addressesModel, confirmModal, gettextCatal
                 if (unsubscribeModel.beginsWith(scope.message, 'mailto:')) {
                     confirmFirst(scope.message);
                 } else {
-                    $rootScope.$emit('message', { type: 'unsubscribe', data: { message: scope.message } });
+                    dispatcher.message('unsubscribe', { message: scope.message });
                 }
             };
 

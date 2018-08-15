@@ -18,7 +18,7 @@ function attachmentModelOutside($log, AttachmentLoader, dispatchers, embedded, n
      * Dispatch an event for the sending button
      * @param  {Message} message
      */
-    const dispatchMessageAction = (message) => dispatcher.actionMessage('', message);
+    const dispatchMessageAction = (message) => dispatcher.actionMessage('update', message);
 
     on(EVENT_NAME, (e, { type, data }) => {
         switch (type) {

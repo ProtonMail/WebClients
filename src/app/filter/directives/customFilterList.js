@@ -29,7 +29,7 @@ function customFilterList(
 
             networkActivityTracker.track(promise);
 
-            on('changeCustomFilterStatus', (event, { id, status }) => {
+            on('changeCustomFilterStatus', (event, { data: { id, status } }) => {
                 const filter = _.find(scope.customFilters, { ID: id });
 
                 if (filter) {
@@ -85,31 +85,18 @@ function customFilterList(
 
             scope.$on('$destroy', unsubscribe);
 
-            scope.$on('deleteFilter', (event, filterId) => {
-                if (!scope.itemMoved) {
+            on('filter', (event, { type, data: { ID: filterId, Filter: filter } }) => {
+                if (scope.itemMoved) {
+                    return;
+                }
+                if (type === 'delete') {
                     const index = _.findIndex(scope.customFilters, { ID: filterId });
 
                     if (index !== -1) {
                         scope.customFilters.splice(index, 1);
                     }
                 }
-            });
-
-            scope.$on('createFilter', (event, filterId, filter) => {
-                if (!scope.itemMoved) {
-                    const index = _.findIndex(scope.customFilters, { ID: filterId });
-
-                    if (index === -1) {
-                        scope.customFilters.push(filter);
-                    } else {
-                        // We need to override everything so it loses the simple tag if the filter is not simple anymore
-                        scope.customFilters[index] = filter;
-                    }
-                }
-            });
-
-            scope.$on('updateFilter', (event, filterId, filter) => {
-                if (!scope.itemMoved) {
+                if (type === 'create' || type === 'update') {
                     const index = _.findIndex(scope.customFilters, { ID: filterId });
 
                     if (index === -1) {

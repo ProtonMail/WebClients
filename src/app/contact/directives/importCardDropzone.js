@@ -1,7 +1,8 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function importCardDropzone(notification, gettextCatalog, $rootScope) {
+function importCardDropzone(dispatchers, notification, gettextCatalog) {
+    const { dispatcher } = dispatchers(['importCardDropzone']);
     const I18N = {
         dictDefaultMessage: gettextCatalog.getString('Drop file or click here', null, 'Info'),
         dictInvalidFileType: gettextCatalog.getString('Invalid file type', null, 'Error')
@@ -35,7 +36,7 @@ function importCardDropzone(notification, gettextCatalog, $rootScope) {
                     return notification.error(I18N.dictInvalidFileType);
                 }
 
-                $rootScope.$emit('importCardDropzone', { data: [file] });
+                dispatcher.importCardDropzone('import', [file]);
                 scope.$applyAsync(() => {
                     el[0].classList.add(CLASS_HAS_FILE);
                     scope.fileDropped = file.name;

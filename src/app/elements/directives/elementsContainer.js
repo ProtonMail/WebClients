@@ -1,18 +1,16 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function elementsContainer($rootScope) {
+function elementsContainer(dispatchers) {
     return {
         restrict: 'A',
         link(scope, el) {
+            const { dispatcher } = dispatchers(['elements']);
             const onClick = _.debounce(({ target }) => {
                 // Prevent click onto the select checkbox
                 if (target && !/ptSelectConversation|customMaskInput/.test(target.className)) {
-                    $rootScope.$emit('elements', {
-                        type: 'open',
-                        data: {
-                            element: scope.conversation
-                        }
+                    dispatcher.elements('open', {
+                        element: scope.conversation
                     });
                 }
             }, 300);

@@ -4,8 +4,9 @@ import { MIME_TYPES } from '../../constants';
 const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
-function displayContent($rootScope, $q, $filter, prepareContent, sanitize) {
-    const read = ({ ID }) => $rootScope.$emit('messageActions', { type: 'read', data: { ids: [ID] } });
+function displayContent(dispatchers, prepareContent, sanitize) {
+    const { dispatcher } = dispatchers(['messageActions']);
+    const read = ({ ID }) => dispatcher.messageActions('read', { ids: [ID] });
 
     async function decrypt(message) {
         message.decrypting = true;

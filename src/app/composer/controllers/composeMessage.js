@@ -14,13 +14,11 @@ function ComposeMessageController(
     $timeout,
     addressesModel,
     AppModel,
-    authentication,
     cache,
     composerFromModel,
     composerRequestModel,
     confirmModal,
     dispatchers,
-    $rootScope,
     embedded,
     encryptMessage,
     eventManager,
@@ -43,6 +41,7 @@ function ComposeMessageController(
     const { dispatcher, on, unsubscribe } = dispatchers([
         'composer.update',
         'messageActions',
+        'actionMessage',
         'editorListener',
         'elements'
     ]);
@@ -159,9 +158,9 @@ function ComposeMessageController(
     });
 
     // When the user delete a conversation and a message is a part of this conversation
-    on('deleteConversation', (event, ID) => {
+    on('deleteConversation', (event, { data: messageID }) => {
         _.each($scope.messages, (message) => {
-            if (ID === message.ID) {
+            if (messageID === message.ID) {
                 // Close the composer
                 $scope.close(message, false, false);
             }
@@ -192,7 +191,7 @@ function ComposeMessageController(
     });
 
     // When a message is updated we try to update the message
-    on('message.refresh', (event, messageIDs) => {
+    on('message.refresh', (event, { data: messageIDs }) => {
         $scope.messages.forEach((message) => {
             const { ID } = message;
             if (messageIDs.indexOf(ID) > -1) {
@@ -460,7 +459,7 @@ function ComposeMessageController(
     };
 
     function dispatchMessageAction(message) {
-        $rootScope.$emit('actionMessage', { data: message });
+        dispatcher.actionMessage('update', message);
     }
 
     /**

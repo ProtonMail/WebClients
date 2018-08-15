@@ -2,15 +2,15 @@ import _ from 'lodash';
 
 /* @ngInject */
 function encryptMessage(
-    $rootScope,
-    gettextCatalog,
+    dispatchers,
     postMessage,
     sendPreferences,
     encryptPackages,
     attachSubPackages,
     generateTopPackages
 ) {
-    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', { data: message });
+    const { dispatcher } = dispatchers(['actionMessage']);
+    const dispatchMessageAction = (message) => dispatcher.actionMessage('update', message);
 
     const generatePackages = (message, emails, sendPref) => {
         return generateTopPackages(message, sendPref)

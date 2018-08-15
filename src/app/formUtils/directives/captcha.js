@@ -1,8 +1,9 @@
 import { IFRAME_SECURE_ORIGIN } from '../../constants';
 
 /* @ngInject */
-function captcha($rootScope, url, $httpParamSerializer) {
+function captcha(dispatchers, url, $httpParamSerializer) {
     const APP_HOST = url.host();
+    const { dispatcher } = dispatchers(['humanVerification']);
 
     // Change this to our captcha key, configurable in Angular?
     const captchaMessage = {
@@ -28,10 +29,7 @@ function captcha($rootScope, url, $httpParamSerializer) {
         const data = event.data;
 
         if (data.type === 'pm_captcha') {
-            $rootScope.$emit('humanVerification', {
-                type: 'captcha',
-                data
-            });
+            dispatcher.humanVerification('captcha', data);
         }
 
         if (data.type === 'pm_height') {

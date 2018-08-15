@@ -1,5 +1,6 @@
 import service from '../../../../src/app/labels/directives/createLabel';
 import { generateModuleName } from '../../../utils/helpers';
+import dispatchersService from '../../../../src/app/commons/services/dispatchers';
 
 describe('CreateLabel directive', () => {
 
@@ -17,6 +18,7 @@ describe('CreateLabel directive', () => {
 
     angular.module(MODULE, ['templates-app'])
         .factory('labelModal', () => labelModal)
+        .factory('dispatchers', dispatchersService)
         .directive('createLabel', service);
 
     beforeEach(angular.mock.module(MODULE));
