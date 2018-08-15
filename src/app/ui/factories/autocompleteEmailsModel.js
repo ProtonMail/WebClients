@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { flow, filter, take, map, sortBy } from 'lodash/fp';
+import { flow, filter, take, map, orderBy } from 'lodash/fp';
 import { REGEX_EMAIL, EMAIL_FORMATING, AUTOCOMPLETE_DOMAINS, AWESOMEPLETE_MAX_ITEMS } from '../../constants';
 
 const { OPEN_TAG_AUTOCOMPLETE, CLOSE_TAG_AUTOCOMPLETE } = EMAIL_FORMATING;
@@ -80,12 +80,12 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
         const input = value.toLowerCase();
 
         const collection = flow(
-            map(({ Name, Email }) => {
+            map(({ Name, Email, LastUsedTime }) => {
                 const value = Email;
                 const label = formatLabel(Name, Email);
-                return { label, value, Name };
+                return { label, value, Name, LastUsedTime };
             }),
-            sortBy('label'),
+            orderBy(['LastUsedTime', 'label'], ['desc', 'asc']),
             filter(({ label }) => label.toLowerCase().includes(input)),
             take(AWESOMEPLETE_MAX_ITEMS)
         )($injector.get('contactEmails').get());
@@ -232,10 +232,12 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
             });
         };
 
-        previousList.forEach(({ Address = '', Name = '' }) => addEmail({
-            Name: Name || Address,
-            Address
-        }));
+        previousList.forEach(({ Address = '', Name = '' }) =>
+            addEmail({
+                Name: Name || Address,
+                Address
+            })
+        );
 
         return {
             filterContact,
