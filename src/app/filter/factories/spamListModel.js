@@ -7,7 +7,7 @@ const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
 const PAGE_SIZE = 100;
 
 /* @ngInject */
-function spamListModel($q, dispatchers, incomingModel) {
+function spamListModel(dispatchers, incomingModel) {
     let MAIN_CACHE = getDefault();
 
     const { dispatcher, on } = dispatchers(['filters']);
