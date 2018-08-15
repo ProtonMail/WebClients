@@ -12,7 +12,7 @@ function addressKeysViewModel(keyInfo, pmcw, authentication) {
                 return acc;
             }, []);
         }
-        return authentication.getPrivateKeys(ID).filter(({ primaryKey }) => primaryKey.isDecrypted);
+        return authentication.getPrivateKeys(ID).filter((k) => k.isDecrypted());
     };
     /**
      * From a group of addresses, massage the data in the way that the address keys view directive expects
@@ -34,7 +34,7 @@ function addressKeysViewModel(keyInfo, pmcw, authentication) {
             }
 
             const decryptedKeys = getDecryptedKeys(ID);
-            const fingerprints = decryptedKeys.map((k) => k.primaryKey.getFingerprint());
+            const fingerprints = decryptedKeys.map((k) => pmcw.getFingerprint(k));
 
             const algType = keyAlgorithm.describe(Keys[0]);
             const address = {

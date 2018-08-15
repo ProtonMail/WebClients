@@ -1,7 +1,9 @@
 import { ContactUpdateError } from '../../../helpers/errors';
+import { createCancellationToken } from '../../../helpers/promiseHelper';
 
 /* @ngInject */
 function contactEditor(
+    $rootScope,
     $state,
     eventManager,
     Contact,
@@ -15,7 +17,8 @@ function contactEditor(
     gettextCatalog,
     networkActivityTracker,
     notification,
-    contactImportEncryption
+    contactImportEncryption,
+    contactProgressReporter
 ) {
     const { dispatcher, on } = dispatchers(['contacts', 'progressBar']);
 
@@ -29,21 +32,37 @@ function contactEditor(
      * @return {Promise}
      */
     function create({ contacts = [], mode }) {
+        const cancellationToken = createCancellationToken();
         const preCreation = mode === 'import' ? contactImportEncryption.process(contacts) : Promise.resolve(contacts);
-        const promise = preCreation.then(Contact.add).then((data) => {
-            const { created, errors, total } = data;
-            return eventManager.call().then(() => {
+
+        const promise = preCreation
+            .then((contacts) => {
+                // enable the progress bar only for import so we can still use the contacts stack while importing
+                return Contact.add(contacts, cancellationToken, mode === 'import');
+            })
+            .then((data) => {
+                const { created, errors, total } = data;
                 dispatcher.contacts('contactCreated', { created, total, errors, mode });
                 return data;
+            })
+            .catch((error) => {
+                if (error.isCancellationError) {
+                    return;
+                }
+                throw error;
             });
-        });
 
         if (mode === 'import') {
             contactLoaderModal.activate({
                 params: {
                     mode: 'import',
-                    close() {
-                        contactLoaderModal.deactivate();
+                    async close() {
+                        cancellationToken.cancel();
+                        try {
+                            await promise;
+                        } finally {
+                            contactLoaderModal.deactivate();
+                        }
                     }
                 }
             });
@@ -142,12 +161,10 @@ function contactEditor(
      * @param {Number} total
      */
     function mergeProgressAnnouncer({ actions = [], total = 0 }) {
-        let progress = 0;
+        const reporter = contactProgressReporter(0, 100, total);
         actions.forEach((action) => {
             action.then((result) => {
-                // When a group has finished, update the progress.
-                progress += Math.floor((result.total * 100) / total);
-                dispatcher.progressBar('contactsProgressBar', { progress });
+                reporter(result.total);
                 return result;
             });
         });

@@ -147,11 +147,11 @@ function sendPreferences(
         const sendKeys = _.map(Keys.filter(encryptionEnabled), 'PublicKey');
         const sendKeyObjects = sendKeys.map(pmcw.getKeys).filter(([k = false]) => !!k);
         const [pinnedKey] = pmcw.getKeys(base64ToArray(base64Keys[0]));
-        const pinnedFingerprint = pinnedKey.primaryKey.getFingerprint();
+        const pinnedFingerprint = pmcw.getFingerprint(pinnedKey);
 
         return (
             sendKeyObjects.length === 0 ||
-            sendKeyObjects.map(([k]) => k.primaryKey.getFingerprint()).includes(pinnedFingerprint)
+            sendKeyObjects.map(([k]) => pmcw.getFingerprint(k)).includes(pinnedFingerprint)
         );
     };
 

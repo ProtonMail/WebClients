@@ -12,8 +12,6 @@ module.exports = (config) => {
             '../build/vendorLazy.js',
             '../build/vendorLazy2.js',
             'templates.js',
-            '!../build/openpgp.worker.min.js',
-            '../build/openpgp.min.js',
             '../node_modules/angular-mocks/angular-mocks.js',
             'specs/index.js'
         ],

@@ -55,8 +55,8 @@ function attachedPublicKey(
 
         return Promise.all([sendInfo, trustedKeys]).then(([sendPref, publicKeys]) =>
             addresses
-                .filter(({ adr }) =>
-                    publicKeys[adr].every(({ key }) => key.primaryKey.getFingerprint() !== keyInfo.fingerprint)
+                .filter(({ adr }) => publicKeys[adr].every(({ key }) =>
+                    pmcw.getFingerprint(key) !== keyInfo.fingerprint)
                 )
                 .map((address) => {
                     if (keyInfo.expires !== null && keyInfo.expires < Date.now()) {
@@ -68,7 +68,7 @@ function attachedPublicKey(
                     if (sendPref[address.adr].publickeys.length === 0) {
                         return _.extend({}, address, { encrypt: true });
                     }
-                    if (sendPref[address.adr].publickeys[0].primaryKey.created > keyInfo.created) {
+                    if (sendPref[address.adr].publickeys[0].getCreationTime() > keyInfo.created) {
                         return _.extend({}, address, { encrypt: false });
                     }
                     return _.extend({}, address, { encrypt: sendPref[address.adr].encrypt });
@@ -131,14 +131,7 @@ function attachedPublicKey(
             return false;
         }
 
-        const packetKeyId = signature.packets[0].issuerKeyId.bytes;
-        const publicKey = publicKeys.find(
-            ({
-                primaryKey: {
-                    keyid: { bytes }
-                }
-            }) => bytes === packetKeyId
-        );
+        const publicKey = pmcw.getMatchingKey(signature, publicKeys);
         return publicKey.armor();
     };
 

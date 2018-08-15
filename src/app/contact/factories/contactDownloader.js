@@ -1,7 +1,8 @@
 import { CANCEL_REQUEST, EXPORT_CONTACTS_LIMIT } from '../../constants';
+import { createCancellationToken } from '../../../helpers/promiseHelper';
 
 /* @ngInject */
-function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, downloadFile, vcard, $q) {
+function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, downloadFile, vcard) {
     const getFileName = (id, [card]) => {
         let nameProperty = card.get('fn');
 
@@ -16,22 +17,19 @@ function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, dow
         return 'proton.vcf';
     };
 
-    const get = async (id, timeout) => {
+    const get = async (id, cancellationToken) => {
         if (id !== 'all') {
-            const { vCard } = await Contact.get(id, timeout);
+            const { vCard } = await Contact.get(id, cancellationToken.getCancelEvent());
             return [vCard];
         }
-        const list = await Contact.exportAll(EXPORT_CONTACTS_LIMIT, timeout);
+        const list = await Contact.exportAll(EXPORT_CONTACTS_LIMIT, cancellationToken);
         return list.map(({ vCard }) => vCard);
     };
 
     return async (id = 'all') => {
-        let deferred = $q.defer();
+        const cancellationToken = createCancellationToken();
         const close = () => {
-            if (deferred) {
-                deferred.resolve(CANCEL_REQUEST);
-                return _rAF(() => (deferred = null));
-            }
+            cancellationToken.cancel(CANCEL_REQUEST);
             contactLoaderModal.deactivate();
         };
 
@@ -44,13 +42,11 @@ function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, dow
         });
 
         try {
-            const data = await get(id, deferred.promise);
-            deferred = null;
+            const data = await get(id, cancellationToken);
             const blob = new Blob([vcard.to(data)], { type: 'data:attachment/vcard;' });
             contactLoaderModal.deactivate();
             downloadFile(blob, getFileName(id, data));
         } catch (e) {
-            deferred = null;
             contactLoaderModal.deactivate();
         }
     };
