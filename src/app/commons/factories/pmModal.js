@@ -13,6 +13,8 @@ function pmModal(
     $templateCache
 ) {
     const $body = $('#body');
+    // The highest z-Index for the last modals used. Used to ensure that modals are sort by time (latest modal on top)
+    let zIndex = 11000;
 
     function manageHotkeys(bind = true) {
         if (mailSettingsModel.get('Hotkeys')) {
@@ -70,6 +72,7 @@ function pmModal(
 
         function attach(html, locals) {
             element = angular.element(html);
+            element.css('z-index', zIndex++);
             if (element.length === 0) {
                 throw new Error('The template contains no elements; you need to wrap text nodes');
             }
@@ -98,6 +101,7 @@ function pmModal(
             if (!element) {
                 return $q.when();
             }
+            zIndex--;
 
             unsubscribe();
 

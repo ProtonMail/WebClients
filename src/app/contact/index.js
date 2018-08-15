@@ -32,6 +32,7 @@ import contactEmails from './factories/contactEmails';
 import contactImporter from './factories/contactImporter';
 import contactImportEncryption from './factories/contactImportEncryption';
 import contactKey from './factories/contactKey';
+import contactProgressReporter from './factories/contactProgressReporter';
 import contactMerger from './directives/contactMerger';
 import contactMergerFactory from './factories/contactMerger';
 import contactSchema from './factories/contactSchema';
@@ -96,6 +97,7 @@ export default angular
     .factory('contactImportEncryption', contactImportEncryption)
     .factory('contactKey', contactKey)
     .factory('contactMerger', contactMergerFactory)
+    .factory('contactProgressReporter', contactProgressReporter)
     .factory('contactSchema', contactSchema)
     .factory('contactTransformLabel', contactTransformLabel)
     .factory('contactUI', contactUI)

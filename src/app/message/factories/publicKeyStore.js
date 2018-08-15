@@ -70,8 +70,8 @@ function publicKeyStore($rootScope, addressesModel, keyCache, pmcw, contactEmail
         } = await keyCache.get([email]);
         const compromisedKeys = Keys.reduce((acc, { PublicKey, Flags }) => {
             if (!(Flags & KEY_FLAGS.ENABLE_VERIFICATION)) {
-                const [{ primaryKey }] = pmcw.getKeys(PublicKey);
-                acc[primaryKey.getFingerprint()] = true;
+                const [key] = pmcw.getKeys(PublicKey);
+                acc[pmcw.getFingerprint(key)] = true;
             }
             return acc;
         }, {});

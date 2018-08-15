@@ -35,7 +35,7 @@ module.exports = {
             'cssuseragent/cssua.js',
             'asmcrypto.js/asmcrypto.js',
             'babel-polyfill/dist/polyfill.js',
-            'pmcrypto/build/pmcrypto.js',
+            'pmcrypto/dist/pmcrypto-browser.js',
             'dompurify/dist/purify.js',
             'bootstrap-sass/assets/javascripts/bootstrap.js'
         ].map(bindPrefix),

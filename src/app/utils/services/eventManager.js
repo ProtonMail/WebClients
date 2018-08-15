@@ -29,6 +29,7 @@ function eventManager(
         index: 0,
         milliseconds: INTERVAL_EVENT_TIMER
     };
+    const CACHE = {};
     const closeNotifications = () => MODEL.notification && MODEL.notification.close();
     const setTimer = (timer = INTERVAL_EVENT_TIMER) => (MODEL.milliseconds = timer);
     const manageID = (id = MODEL.ID) => (MODEL.ID = id);
@@ -46,15 +47,41 @@ function eventManager(
         const { data = {} } = error;
 
         if (data.Error) {
-            return Events.getLatestID().then(({ data = {} }) => manageID(data.EventID));
+            return Events.getLatestID().then(({ data = {} }) => {
+                manageID(data.EventID);
+            });
         }
 
         throw error;
     }
 
+    /**
+     * Gets the next event depending on the current state. If the next event is already being fetched, return
+     * the cached promise that is fetching the next event.
+     * @returns {*}
+     */
     function get() {
+        if (MODEL.ID && CACHE[MODEL.ID]) {
+            return CACHE[MODEL.ID];
+        }
         if (MODEL.ID) {
-            return Events.get(MODEL.ID).catch(handleError);
+            // Do some caching: otherwise importing 5000 vcards chokes the eventManager
+            // make id immutable
+            const id = MODEL.ID;
+            CACHE[id] = Events.get(id)
+                .catch(handleError)
+                .then(
+                    (data) => {
+                        delete CACHE[id];
+                        return data;
+                    },
+                    (error) => {
+                        delete CACHE[id];
+                        throw error;
+                    }
+                );
+
+            return CACHE[id];
         }
         return Events.getLatestID().catch(handleError);
     }

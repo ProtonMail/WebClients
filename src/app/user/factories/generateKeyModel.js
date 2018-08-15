@@ -74,7 +74,7 @@ Are you sure you want to continue?`,
         const algorithms = Keys.reduce((acc, { PublicKey, Flags }) => {
             if (Flags !== KEY_FLAGS.DISABLED) {
                 const [k] = pmcw.getKeys(PublicKey);
-                acc.push(k.primaryKey.getAlgorithmInfo());
+                acc.push(k.getAlgorithmInfo());
             }
             return acc;
         }, []);

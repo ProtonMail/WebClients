@@ -11,7 +11,9 @@ export const getGroup = (emailList, email) => {
     return prop.getGroup();
 };
 
-export const groupMatcher = (group) => (prop) => prop.getGroup().toLowerCase() === group.toLowerCase();
+export const groupMatcher = (group) => (prop) => {
+    return typeof prop.getGroup() === 'undefined' || prop.getGroup().toLowerCase() === group.toLowerCase();
+};
 
 /**
  * Order properties by preference parameter

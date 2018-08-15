@@ -9,6 +9,7 @@ import {
     CONTACT_ERROR,
     VCARD_KEY_FIELDS
 } from '../../constants';
+import { createCancellationToken } from '../../../helpers/promiseHelper';
 
 const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
 const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(VCARD_KEY_FIELDS);
@@ -25,7 +26,16 @@ const {
 } = CONTACT_ERROR;
 
 /* @ngInject */
-function contactEncryption($injector, $rootScope, chunk, gettextCatalog, pmcw, vcard, contactKeyAssigner) {
+function contactEncryption(
+    $injector,
+    $rootScope,
+    chunk,
+    gettextCatalog,
+    pmcw,
+    vcard,
+    contactKeyAssigner,
+    contactProgressReporter
+) {
     const getErrors = (data = []) => _.map(data, 'error').filter(Boolean);
 
     const buildContact = (ID, data = [], cards) => {
@@ -231,72 +241,112 @@ function contactEncryption($injector, $rootScope, chunk, gettextCatalog, pmcw, v
     }
 
     /**
-     * Decrypt the custom datas
-     * NOTE It's very important to chain the promises for the encryption to not overcharge pmcw
-     * @param {Array} contacts
-     * @return {Promise}
+     * Creates a chunkhandler by applying transform to each element in each chunk concurrently and mapping them back into
+     * a chunked list.
+     * @param {Callback} handler
+     * @returns {function(*)}
      */
-    function decrypt(contacts = []) {
+    const chunkHandler = (handler) => (chunkedContacts) => {
+        /**
+         * Processes all elements in chunk by calling the hander on them.
+         * The result (an array of return values of handler) is concatenated to the list of previous chunked result:
+         * creating a chunked list.
+         * @param chunk
+         * @returns {function(*): Promise<>}
+         */
+        const processChunk = (chunk) => (previousContacts) => {
+            return Promise.all(chunk.map(handler)).then((newContacts) => previousContacts.concat(newContacts));
+        };
+        /**
+         * Call process chunk on each set of chunked contact sequentially
+         */
+        return chunkedContacts.reduce((promise, chunk) => {
+            return promise.then(processChunk(chunk));
+        }, Promise.resolve([]));
+    };
+
+    /**
+     * Transform each contact by applying transform to each of the contacts passed in. This works similar to map,
+     * but instead it is optimized to enhance the speed for multiple cores.
+     * @param {Array} contacts
+     * @param {Callback} transform
+     * @param {Integer} progressSpeed
+     * @param {Object} cancellationToken
+     * @param {Boolean} progressBar
+     * @returns {*}
+     */
+    function transformContactsConcurrent({
+        contacts,
+        transform,
+        progressSpeed = 100,
+        cancellationToken = createCancellationToken(),
+        progressBar = false
+    }) {
         const authentication = $injector.get('authentication');
         const privateKeys = authentication.getPrivateKeys(MAIN_KEY);
         const publicKeys = authentication.getPublicKeys(MAIN_KEY);
         const total = contacts.length;
-        let count = 0;
+        const reporter = progressBar ? contactProgressReporter(0, progressSpeed, total) : () => {};
 
-        return _.reduce(
-            chunk(contacts, CONTACTS_LIMIT_ENCRYPTION),
-            (promise, chunkedContacts) => {
-                return promise.then((previousContacts = []) => {
-                    return Promise.all(
-                        chunkedContacts.map(({ ID, Cards = [] }) => {
-                            return extractCards({ cards: Cards, privateKeys, publicKeys }).then((data) => {
-                                count++;
-                                const progress = Math.floor((count * 100) / total);
-                                $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
+        /**
+         * Call the given transform function on one of the contacts that is passed in,
+         * trigger the progressBar updates for our modal and check if we cancelled the request in the modal already
+         * @param data The contact data
+         * @returns {*}
+         */
+        const handler = (data) => {
+            return transform(data, publicKeys, privateKeys).then((data) => {
+                cancellationToken.check();
+                reporter();
 
-                                return buildContact(ID, data, Cards);
-                            });
-                        })
-                    ).then((newContacts) => previousContacts.concat(newContacts));
-                }, []);
-            },
-            Promise.resolve()
+                return data;
+            });
+        };
+
+        const concurrency = pmcw.getMaxConcurrency();
+        const chunkedContacts = chunk(contacts, Math.ceil(CONTACTS_LIMIT_ENCRYPTION / concurrency));
+
+        const doubleChunkedContacts = chunk(chunkedContacts, Math.ceil(chunkedContacts.length / concurrency));
+        const handleChunkedContacts = chunkHandler(handler);
+
+        return Promise.all(doubleChunkedContacts.map(handleChunkedContacts)).then((chunks) =>
+            chunks.reduce((acc, val) => acc.concat(val), [])
         );
+    }
+
+    /**
+     * Decrypt the custom datas
+     * NOTE It's very important to chain the promises for the encryption to not overcharge pmcw
+     * @param {Array} contacts
+     * @param {Object} cancellationToken
+     * @param {Boolean} progressBar
+     * @return {Promise}
+     */
+    function decrypt(contacts = [], cancellationToken = createCancellationToken(), progressBar = false) {
+        const transform = ({ ID, Cards }, publicKeys, privateKeys) => {
+            return extractCards({ cards: Cards, privateKeys, publicKeys }).then((data) =>
+                buildContact(ID, data, Cards)
+            );
+        };
+        return transformContactsConcurrent({ contacts, transform, progressSpeed: 100, cancellationToken, progressBar });
     }
 
     /**
      * Encrypt the custom datas
      * NOTE It's very important to chain the promises for the encryption to not overcharge pmcw
      * @param {Array} contacts
+     * @param {Object} cancellationToken
+     * @param {Boolean} progressBar
      * @return {Promise}
      */
-    function encrypt(contacts = []) {
-        const authentication = $injector.get('authentication');
-        const privateKeys = [authentication.getPrivateKeys(MAIN_KEY)[0]];
-        const publicKeys = [authentication.getPublicKeys(MAIN_KEY)[0]];
-        const total = contacts.length;
-        let count = 0;
+    function encrypt(contacts = [], cancellationToken = createCancellationToken(), progressBar = false) {
+        const transform = (contact, [publicKey], [privateKey]) => {
+            return prepareCards({ data: contact.vCard, publicKeys: [publicKey], privateKeys: [privateKey] }).then(
+                (Cards) => ({ Cards })
+            );
+        };
 
-        return _.reduce(
-            chunk(contacts, CONTACTS_LIMIT_ENCRYPTION),
-            (promise, chunkedContacts) => {
-                return promise.then((previousContacts = []) => {
-                    return Promise.all(
-                        chunkedContacts.map((contact) => {
-                            return prepareCards({ data: contact.vCard, publicKeys, privateKeys }).then((Cards) => {
-                                count++;
-                                const progress = Math.floor((count * 50) / total);
-
-                                $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
-
-                                return { Cards };
-                            });
-                        })
-                    ).then((newContacts) => previousContacts.concat(newContacts));
-                });
-            },
-            Promise.resolve()
-        );
+        return transformContactsConcurrent({ contacts, transform, progressSpeed: 50, cancellationToken, progressBar });
     }
 
     return { decrypt, encrypt };

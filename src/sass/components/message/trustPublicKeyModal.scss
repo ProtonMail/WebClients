@@ -37,6 +37,9 @@
     .pm_table .bits {
         width: 70px;
     }
+    .pm_table .fingerprint {
+        max-width: 0;
+    }
 
     h4.modal-title code {
         display: inline-block;

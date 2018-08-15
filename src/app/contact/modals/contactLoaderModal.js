@@ -45,7 +45,8 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
             'Import failed. Please check the import file or try again.',
             null,
             'Error during importation'
-        )
+        ),
+        cancelling: gettextCatalog.getString('Import cancelled. Rolling back.', null, 'Cancelled during importation')
     };
 
     I18N.modal = {
@@ -175,7 +176,11 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
 
             this.title = getModalI18n(params.mode, 'title');
             this.info = getModalI18n(params.mode, 'info');
-            this.close = params.close;
+            this.close = () => {
+                const $label = document.querySelector(`.${LABEL_CLASS}`);
+                $label.textContent = I18N.cancelling;
+                params.close();
+            };
             this.$onDestroy = () => {
                 unsubscribe();
             };

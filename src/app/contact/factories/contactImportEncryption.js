@@ -62,6 +62,7 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
      */
     const process = (contacts) => {
         let allDecision = null;
+        const sendPreferences = $injector.get('sendPreferences');
         const askUserForEncryption = async (email) => {
             if (allDecision !== null) {
                 return allDecision;
@@ -73,22 +74,28 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
             return encrypt;
         };
 
+        /**
+         * Process the contact by normalizing all groups of emails and potentially asking the user to enable encryption
+         * if keys are available
+         * @param contact
+         */
         const processContact = (contact) =>
             normalize(contact).then(() => {
                 const emailList = toList(contact.vCard.get('email'));
                 const keyList = toList(contact.vCard.get('key'));
                 const encryptList = toList(contact.vCard.get('x-pm-encrypt'));
                 return asyncSequentialMap(emailList, async (emailProp) => {
-                    const sendPreferences = $injector.get('sendPreferences');
-                    const info = await sendPreferences.get([emailProp.valueOf()]);
-                    if (info.scheme === PACKAGE_TYPE.SEND_PM) {
-                        // internal user: skip
-                        return;
-                    }
-
+                    // first do filtering that does not require the API
                     const group = emailProp.getGroup();
                     const encrypts = encryptList.filter((prop) => prop.getGroup() === group);
+                    // short circuit as soon as we know we should not ask the user to enable encryption.
+                    if (encrypts.length > 0) {
+                        return;
+                    }
                     const keys = keyList.filter((prop) => prop.getGroup() === group);
+                    if (keys.length === 0) {
+                        return;
+                    }
                     const keyObjects = await Promise.all(
                         keys
                             .map(contactKey.parseKey)
@@ -102,9 +109,16 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
                             })
                     );
 
-                    if (keyObjects.filter((k) => k).length === 0 || encrypts.length > 0) {
+                    if (!keyObjects.some((k) => k)) {
                         return;
                     }
+
+                    const info = await sendPreferences.get([emailProp.valueOf()]);
+                    if (info.scheme === PACKAGE_TYPE.SEND_PM) {
+                        // internal user: skip
+                        return;
+                    }
+
                     // a key is set but no matching encrypt flag
                     const encrypt = await askUserForEncryption(emailProp.valueOf());
                     if (encrypt) {
