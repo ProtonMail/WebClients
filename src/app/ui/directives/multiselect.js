@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function multiselect($rootScope) {
+function multiselect(dispatchers) {
     return {
         replace: true,
         restrict: 'E',
@@ -11,6 +11,7 @@ function multiselect($rootScope) {
         },
         templateUrl: require('../../../templates/ui/multiselect.tpl.html'),
         link(scope, elem, { name, disabled }) {
+            const { dispatcher } = dispatchers(['multiselect']);
             const unsubscribe = [];
 
             scope.disabled = disabled === 'true';
@@ -19,7 +20,7 @@ function multiselect($rootScope) {
                 if (target.classList.contains('multiselectLabel') || target.classList.contains('multiselectCheckbox')) {
                     scope.$applyAsync(() => {
                         if (name) {
-                            $rootScope.$emit('multiselect', { name, type: 'update', data: { value: scope.selected } });
+                            dispatcher.multiselect('update', { value: scope.selected, name });
                         }
                     });
                 }

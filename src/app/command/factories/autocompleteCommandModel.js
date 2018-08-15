@@ -4,7 +4,7 @@ import { AWESOMEPLETE_MAX_ITEMS } from '../../constants';
 import { ucFirst } from '../../../helpers/string';
 
 /* @ngInject */
-function autocompleteCommandModel(hotkeys, labelsModel, $rootScope, gettextCatalog, $stateParams) {
+function autocompleteCommandModel(dispatchers, hotkeys, labelsModel, gettextCatalog, $stateParams) {
     let scopedList = [];
     const I18N = {
         'Add folder': gettextCatalog.getString('Add folder', null, 'Command palette action'),
@@ -12,6 +12,7 @@ function autocompleteCommandModel(hotkeys, labelsModel, $rootScope, gettextCatal
         'Remove label': gettextCatalog.getString('Remove label', null, 'Command palette action')
     };
 
+    const { dispatcher } = dispatchers(['app.commands']);
     const COMMANDS = formatCommands(hotkeys.keys());
     const reset = () => (scopedList.length = 0);
 
@@ -140,10 +141,7 @@ function autocompleteCommandModel(hotkeys, labelsModel, $rootScope, gettextCatal
             return COMMANDS.map[`hotkey-${key}`]();
         }
 
-        $rootScope.$emit('app.commands', {
-            type: `${type}.${value}`,
-            data: formatObjTriggered(type, value, key)
-        });
+        dispatcher['app.commands'](`${type}.${value}`, formatObjTriggered(type, value, key));
 
         reset(); // Clear the scopedList as we don't need it anymore
     };

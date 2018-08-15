@@ -2,7 +2,7 @@ import { COLUMN_MODE, ROW_MODE } from '../../constants';
 
 /* @ngInject */
 function chooseLayoutBtns(
-    $rootScope,
+    dispatchers,
     networkActivityTracker,
     tools,
     settingsMailApi,
@@ -10,6 +10,7 @@ function chooseLayoutBtns(
     gettextCatalog,
     mailSettingsModel
 ) {
+    const { dispatcher } = dispatchers(['settings']);
     const getLayout = (mode) => {
         const { ViewLayout } = mailSettingsModel.get();
 
@@ -27,7 +28,7 @@ function chooseLayoutBtns(
 
         if (angular.isDefined(newLayout)) {
             const promise = settingsMailApi.updateViewLayout({ ViewLayout: newLayout }).then(() => {
-                $rootScope.$emit('settings', { type: 'viewLayout.updated', data: { viewLayout: newLayout } });
+                dispatcher.settings('viewLayout.updated', { viewLayout: newLayout });
                 tools.mobileResponsive();
                 notification.success(gettextCatalog.getString('Layout saved', null));
             });

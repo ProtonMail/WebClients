@@ -29,7 +29,7 @@ function contactModal($state, dispatchers, gettextCatalog, notification, pmModal
                 }
             });
 
-            on('networkActivity', (e, type) => {
+            on('networkActivity', (e, { type }) => {
                 if (type === 'load') {
                     $scope.$applyAsync(() => {
                         this.networkActivity = true;

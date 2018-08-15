@@ -1,14 +1,12 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function createLabel($rootScope, labelModal) {
+function createLabel(dispatchers, labelModal) {
+    const { dispatcher } = dispatchers(['messageActions']);
     const dispatch = (message, label = {}) => {
-        $rootScope.$emit('messageActions', {
-            type: 'label',
-            data: {
-                messages: [message],
-                labels: [_.extend({}, label, { Selected: true })]
-            }
+        dispatcher.messageActions('label', {
+            messages: [message],
+            labels: [_.extend({}, label, { Selected: true })]
         });
     };
 

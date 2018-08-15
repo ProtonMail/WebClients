@@ -1,7 +1,7 @@
 import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function messageDisplayError($rootScope) {
+function messageDisplayError(dispatchers) {
     const CLASS_NAME = {
         REPORT: 'messageDisplayError-btn-report'
     };
@@ -11,19 +11,17 @@ function messageDisplayError($rootScope) {
         restrict: 'E',
         templateUrl: require('../../../templates/message/messageDisplayError.tpl.html'),
         link(scope, el) {
+            const { dispatcher } = dispatchers(['bugReport']);
             const onClick = (e) => {
                 if (e.target.classList.contains(CLASS_NAME.REPORT)) {
                     e.preventDefault();
-                    $rootScope.$emit('bugReport', {
-                        type: 'new',
-                        data: {
-                            content: dedentTpl`
+                    dispatcher.bugReport('new', {
+                        content: dedentTpl`
 
 
-                                === Debug stacktrace for the support ===
-                                ${scope.message.errorInfo.stack}
-                            `
-                        }
+                            === Debug stacktrace for the support ===
+                            ${scope.message.errorInfo.stack}
+                        `
                     });
                 }
             };

@@ -3,15 +3,14 @@ import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 
 /* @ngInject */
 function messagePublicKeyFound(
+    dispatchers,
     trustPublicKeyModal,
     pmcw,
     networkActivityTracker,
     attachedPublicKey,
     gettextCatalog,
     notification,
-    eventManager,
-    cache,
-    $rootScope
+    eventManager
 ) {
     const I18N = {
         SUCCES_MESSAGE: gettextCatalog.getString('Public Key trusted'),
@@ -23,6 +22,7 @@ function messagePublicKeyFound(
         restrict: 'E',
         templateUrl: require('../../../templates/message/messagePublicKeyFound.tpl.html'),
         link(scope, el) {
+            const { dispatcher } = dispatchers(['message']);
             const element = el[0];
 
             const trust = () => {
@@ -57,9 +57,8 @@ function messagePublicKeyFound(
                                             .call()
                                             // trigger re-verification, checking if the current banner should still be shown etcetera.
                                             .then(() =>
-                                                $rootScope.$emit('message', {
-                                                    type: 'reload',
-                                                    data: { conversationID: scope.message.ConversationID }
+                                                dispatcher.message('reload', {
+                                                    conversationID: scope.message.ConversationID
                                                 })
                                             )
                                             .then(() => notification.success(I18N.SUCCES_MESSAGE));

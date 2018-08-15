@@ -5,10 +5,10 @@ import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
 function actionConversation(
-    $rootScope,
     cache,
     contactSpam,
     conversationApi,
+    dispatchers,
     eventManager,
     gettextCatalog,
     networkActivityTracker,
@@ -17,6 +17,7 @@ function actionConversation(
     labelsModel,
     $filter
 ) {
+    const { dispatcher } = dispatchers(['deleteConversation']);
     const unicodeTagView = $filter('unicodeTagView');
     const basicFolders = [
         MAILBOX_IDENTIFIERS.inbox,
@@ -57,7 +58,7 @@ function actionConversation(
 
         const events = ids.reduce((acc, ID) => {
             const messages = cache.queryMessagesCached(ID);
-            $rootScope.$broadcast('deleteConversation', ID); // Close composer
+            dispatcher.deleteConversation('delete', ID); // Close composer
             _.each(messages, ({ ID }) => acc.push({ Action: 0, ID }));
             acc.push({ Action: 0, ID });
             return acc;

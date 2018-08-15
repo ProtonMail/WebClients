@@ -4,8 +4,7 @@ import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
 function actionDnd(
-    $rootScope,
-    $state,
+    AppModel,
     dispatchers,
     ptDndModel,
     actionConversation,
@@ -81,7 +80,7 @@ function actionDnd(
 
         if (type === 'dropsuccess') {
             const { model, type } = ptDndModel.draggable.get(data.itemId);
-            const list = $rootScope.numberElementChecked && selectedList ? selectedList : [model];
+            const list = AppModel.get('numberElementChecked') && selectedList ? selectedList : [model];
             const ids = _.map(list, 'ID');
             selectedList = undefined;
 

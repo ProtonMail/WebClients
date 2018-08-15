@@ -1,12 +1,13 @@
 /* @ngInject */
-function contactNoResult($rootScope) {
+function contactNoResult(dispatchers) {
+    const { dispatcher } = dispatchers(['contacts']);
     const MAP = {
         add: 'addContact',
         import: 'importContacts'
     };
     function onClick(event) {
         const action = event.target.getAttribute('data-action');
-        MAP[action] && $rootScope.$emit('contacts', { type: MAP[action] });
+        MAP[action] && dispatcher.contacts(MAP[action]);
     }
 
     return {

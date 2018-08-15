@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function ptSelectMultipleElements($rootScope, dispatchers) {
+function ptSelectMultipleElements($rootScope, AppModel, dispatchers) {
     const CACHE = {};
     const countChecked = (conversations) => _.filter(conversations, { Selected: true }).length;
 
@@ -23,7 +23,7 @@ function ptSelectMultipleElements($rootScope, dispatchers) {
                 scope.conversations[index].Selected = previous.conversation.Selected;
             }
 
-            $rootScope.numberElementChecked = countChecked(scope.conversations);
+            AppModel.set('numberElementChecked', countChecked(scope.conversations));
         };
     }
 
@@ -39,7 +39,7 @@ function ptSelectMultipleElements($rootScope, dispatchers) {
                     CACHE.number = data.before.number;
                     CACHE.ids = data.before.ids;
 
-                    $rootScope.numberElementChecked = 1;
+                    AppModel.set('numberElementChecked', 1);
                     _.each(scope.conversations, (item) => {
                         item.Selected = false;
                     });
@@ -57,7 +57,7 @@ function ptSelectMultipleElements($rootScope, dispatchers) {
 
                 scope.$applyAsync(() => {
                     scope.conversations[index].Selected = isChecked;
-                    $rootScope.numberElementChecked = countChecked(scope.conversations);
+                    AppModel.set('numberElementChecked', countChecked(scope.conversations));
 
                     if (shiftKey && previous) {
                         const from = Math.min(index, previous.index);
@@ -68,7 +68,7 @@ function ptSelectMultipleElements($rootScope, dispatchers) {
                         target.checked = previous.conversation.Selected;
                     }
 
-                    $rootScope.showWelcome = false;
+                    AppModel.set('showWelcome', false);
 
                     previous = {
                         index,
@@ -85,11 +85,11 @@ function ptSelectMultipleElements($rootScope, dispatchers) {
                                 item.Selected = CACHE.ids.indexOf(item.ID) !== -1;
                             }
                             // Auto check drag item, we uncheck it at the end
-                            if ($rootScope.numberElementChecked === 1 && !CACHE.number) {
+                            if (AppModel.get('numberElementChecked') === 1 && !CACHE.number) {
                                 item.Selected = false;
                             }
                         });
-                        $rootScope.numberElementChecked = CACHE.number || countChecked(scope.conversations);
+                        AppModel.set('numberElementChecked', CACHE.number || countChecked(scope.conversations));
 
                         delete CACHE.number;
                         delete CACHE.ids;

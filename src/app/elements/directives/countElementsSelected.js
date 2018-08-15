@@ -1,11 +1,12 @@
 /* @ngInject */
-function countElementsSelected($rootScope) {
+function countElementsSelected(dispatchers) {
     return {
         replace: true,
         templateUrl: require('../../../templates/elements/countElementsSelected.tpl.html'),
         link(scope, element) {
+            const { dispatcher } = dispatchers(['selectElements']);
             const $btn = element.find('.countElementsSelected-btn-unselect');
-            const onClick = () => $rootScope.$emit('selectElements', { type: 'all', data: { isChecked: false } });
+            const onClick = () => dispatcher.selectElements('all', { isChecked: false });
 
             $btn.on('click', onClick);
 

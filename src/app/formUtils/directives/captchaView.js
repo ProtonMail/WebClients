@@ -1,9 +1,10 @@
 /* @ngInject */
-function captchaView($httpParamSerializer, $rootScope, url) {
+function captchaView($httpParamSerializer, dispatchers, url) {
     return {
         restrict: 'E',
         templateUrl: require('../../../templates/formUtils/captchaView.tpl.html'),
         link(scope, element, { token }) {
+            const { dispatcher } = dispatchers(['captcha.token']);
             const iframe = element[0].querySelector('iframe');
             const client = 'web';
             const host = url.host();
@@ -30,7 +31,7 @@ function captchaView($httpParamSerializer, $rootScope, url) {
                 }
 
                 if (data.type === 'pm_captcha') {
-                    $rootScope.$emit('captcha.token', data.token);
+                    dispatcher['captcha.token'](data.token);
                 }
 
                 if (data.type === 'pm_height') {

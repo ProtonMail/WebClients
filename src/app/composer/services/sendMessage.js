@@ -4,6 +4,7 @@ import { STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
 function sendMessage(
+    dispatchers,
     messageModel,
     gettextCatalog,
     embedded,
@@ -12,7 +13,6 @@ function sendMessage(
     messageRequest,
     notification,
     cache,
-    $rootScope,
     attachmentApi,
     SignatureVerifier
 ) {
@@ -26,8 +26,8 @@ function sendMessage(
             'Send message'
         )
     };
-
-    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', { data: message });
+    const { dispatcher } = dispatchers(['actionMessage', 'composer.update', 'message.open']);
+    const dispatchMessageAction = (message) => dispatcher.actionMessage('update', message);
 
     const prepare = async (message, parameters) => {
         message.encrypting = true;
@@ -92,13 +92,10 @@ function sendMessage(
     const pipe = async (message, parameters = {}) => {
         const { Parent, Sent = {} } = await send(message, parameters);
 
-        $rootScope.$emit('composer.update', {
-            type: 'send.success',
-            data: {
-                message, // Because we need the ref to close the compose... today
-                discard: false,
-                save: false
-            }
+        dispatcher['composer.update']('send.success', {
+            message, // Because we need the ref to close the compose... today
+            discard: false,
+            save: false
         });
 
         const conversation = cache.getConversationCached(Sent.ConversationID);
@@ -135,11 +132,8 @@ function sendMessage(
         cache.events(events, false, true);
 
         _.delay(() => {
-            $rootScope.$emit('message.open', {
-                type: 'save.success',
-                data: {
-                    message: messageModel(Sent)
-                }
+            dispatcher['message.open']('save.success', {
+                message: messageModel(Sent)
             });
         }, 500);
     };

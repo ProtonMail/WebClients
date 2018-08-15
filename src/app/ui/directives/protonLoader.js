@@ -6,7 +6,7 @@ const protonLoader = (dispatchers) => ({
     link(scope, el) {
         const { on, unsubscribe } = dispatchers();
 
-        on('networkActivity', (e, type) => {
+        on('networkActivity', (e, { type }) => {
             type === 'load' && _rAF(() => el[0].classList.add('show'));
             type === 'close' && _rAF(() => el[0].classList.remove('show'));
         });

@@ -1,31 +1,21 @@
 /* @ngInject */
-function verificationModal(pmModal, $rootScope) {
+function verificationModal(dispatchers, pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/domain/verification.tpl.html'),
         /* @ngInject */
         controller: function(params) {
+            const { dispatcher } = dispatchers(['domainModal']);
+
             this.domain = params.domain;
             this.step = params.step;
-            this.open = function(name) {
-                $rootScope.$broadcast(name, params.domain);
+            this.open = (type) => dispatcher.domainModal(type, { domain: params.domain });
+            this.submit = params.submit;
+            this.next = () => {
+                params.close();
+                params.next();
             };
-            this.submit = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.submit();
-                }
-            };
-            this.next = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                    params.next();
-                }
-            };
-            this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
-            };
+            this.close = params.close;
         }
     });
 }

@@ -1,10 +1,11 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function i18nLoader(CONFIG, $rootScope, gettextCatalog, $injector) {
+function i18nLoader(CONFIG, dispatchers, gettextCatalog, $injector) {
     const CACHE = {};
     const upperCaseLocale = (locale = '') => (locale === 'en' ? 'us' : locale).toUpperCase();
-    const dispatch = (type, data = {}) => $rootScope.$emit('i18n', { type, data });
+    const { dispatcher } = dispatchers(['i18n']);
+    const dispatch = (type, data = {}) => dispatcher.i18n(type, data);
 
     /**
      * Format the locale to a valid format for gettext

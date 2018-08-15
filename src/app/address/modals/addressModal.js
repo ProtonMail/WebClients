@@ -4,7 +4,7 @@ function addressModal(
     addressesModel,
     authentication,
     pmModal,
-    $rootScope,
+    dispatchers,
     $state,
     networkActivityTracker,
     notification,
@@ -29,6 +29,8 @@ function addressModal(
         SUCCESS_ADD: gettextCatalog.getString('Address added', null, 'Info')
     };
 
+    const { dispatcher } = dispatchers(['domainModal']);
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/addAddress.tpl.html'),
@@ -49,7 +51,7 @@ function addressModal(
             this.showAddMember = organization.HasKeys === 1 && $state.is('secured.domains');
             this.addMember = params.addMember;
             this.cancel = params.cancel;
-            this.open = (name) => $rootScope.$broadcast(name, params.domain);
+            this.open = (type) => dispatcher.domainModal(type, { domain: params.domain });
             this.submit = () => {
                 if (this.member.Private === 0 && !organizationKey) {
                     return notification.error(I18N.ERROR_DECRYPT_ORG_KEY);

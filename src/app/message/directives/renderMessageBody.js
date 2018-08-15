@@ -1,5 +1,5 @@
 /* @ngInject */
-function renderMessageBody(networkActivityTracker, $rootScope, $sce) {
+function renderMessageBody(dispatchers, networkActivityTracker, $sce) {
     /**
      * Dispatch an action to render the loader only if
      *     - the body is empty
@@ -21,6 +21,7 @@ function renderMessageBody(networkActivityTracker, $rootScope, $sce) {
 
     return {
         link(scope, el) {
+            const { dispatcher } = dispatchers(['message.open']);
             // Render the loader
             dispatch(scope.body);
 
@@ -43,12 +44,9 @@ function renderMessageBody(networkActivityTracker, $rootScope, $sce) {
                  */
                 if (animationName === 'nodeInserted') {
                     scope.$applyAsync(() => {
-                        $rootScope.$emit('message.open', {
-                            type: 'render',
-                            data: {
-                                message: scope.message,
-                                index: scope.index
-                            }
+                        dispatcher['message.open']('render', {
+                            message: scope.message,
+                            index: scope.index
                         });
                     });
                 }

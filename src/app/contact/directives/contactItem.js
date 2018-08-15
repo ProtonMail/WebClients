@@ -157,7 +157,7 @@ function contactItem(
 
             scope.UI = contactUI.initialize(datas, type, state);
             if (scope.UI.mode === 'toggle') {
-                on(scope.UI.inputName + '.toggle', (target, { status: value }) => {
+                on(scope.UI.inputName + '.toggle', (target, { data: { status: value } }) => {
                     scope.model[type][0].value = value;
                     ngFormController.$setDirty();
                     scope.change();

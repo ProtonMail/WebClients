@@ -1,17 +1,15 @@
 /* @ngInject */
-const progressionBtn = ($rootScope) => ({
+const progressionBtn = (dispatchers) => ({
     replace: true,
     template: '<button type="button" class="progressionBtn-btn"><i class="fa fa-times"></i></button>',
     link(scope, el, { action = '' }) {
+        const { dispatcher } = dispatchers(['attachment.upload']);
         el[0].setAttribute('data-label', action);
 
         const onClick = (e) => {
             e.stopPropagation();
             el[0].disabled = true;
-            $rootScope.$emit('attachment.upload', {
-                type: action,
-                data: scope.model
-            });
+            dispatcher['attachment.upload'](action, scope.model);
         };
 
         el.on('click', onClick);

@@ -1,13 +1,14 @@
 /* @ngInject */
-const messageComposeTo = ($rootScope, messageModel) => ({
+const messageComposeTo = (dispatchers, messageModel) => ({
     replace: true,
     template: '<button class="fa fa-pencil messageComposeTo-container" pt-tooltip-translate="Compose to"></button>',
     link(scope, el, { key }) {
+        const { dispatcher } = dispatchers(['composer.new']);
         const onClick = () => {
             const message = messageModel();
             const model = key ? scope.message[key] : scope.email;
             message.ToList = [model];
-            $rootScope.$emit('composer.new', { type: 'new', data: { message } });
+            dispatcher['composer.new']('new', { message });
         };
 
         el.on('click', onClick);

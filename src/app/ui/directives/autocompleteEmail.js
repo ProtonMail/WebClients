@@ -1,7 +1,7 @@
 import { REGEX_EMAIL } from '../../constants';
 
 /* @ngInject */
-function autocompleteEmail($rootScope, autocompleteEmailsModel, autocompleteBuilder) {
+function autocompleteEmail(autocompleteEmailsModel, autocompleteBuilder, dispatchers) {
     /**
      * Get the selected input value configuration
      * @param  {Object} model Factory autocompleteEmailsModel
@@ -21,7 +21,8 @@ function autocompleteEmail($rootScope, autocompleteEmailsModel, autocompleteBuil
     };
 
     const link = (scope, el, { awesomplete, attr }) => {
-        const dispatch = (type, data) => $rootScope.$emit('autocompleteEmail', { type, data });
+        const { dispatcher } = dispatchers(['autocompleteEmail']);
+        const dispatch = (type, data) => dispatcher.autocompleteEmail(type, data);
 
         // Model for this autocomplete
         const model = autocompleteEmailsModel();

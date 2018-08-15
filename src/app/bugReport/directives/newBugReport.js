@@ -1,13 +1,11 @@
 /* @ngInject */
-const newBugReport = ($rootScope) => ({
+const newBugReport = (dispatchers) => ({
     replace: true,
     templateUrl: require('../../../templates/bugReport/newBugReport.tpl.html'),
     link(scope, el) {
+        const { dispatcher } = dispatchers(['bugReport']);
         const onClick = () => {
-            $rootScope.$emit('bugReport', {
-                type: 'new',
-                data: {}
-            });
+            dispatcher.bugReport('new');
         };
         el.on('click', onClick);
 

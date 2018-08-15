@@ -1,5 +1,5 @@
 /* @ngInject */
-const donationExternalSubmit = ($rootScope) => ({
+const donationExternalSubmit = (dispatchers) => ({
     compile(el) {
         el[0].classList.add('donationExternalSubmit-container');
 
@@ -7,11 +7,9 @@ const donationExternalSubmit = ($rootScope) => ({
          * This directive will be useless (maybe) with the new modal as we don't recreate the wheel. (tpl)donationExternalSubmit
          */
         return (scope, el) => {
+            const { dispatcher } = dispatchers(['payments']);
             const onClick = () => {
-                $rootScope.$emit('payments', {
-                    type: 'donation.input.submit',
-                    data: {}
-                });
+                dispatcher.payments('donation.input.submit');
             };
 
             el.on('click', onClick);

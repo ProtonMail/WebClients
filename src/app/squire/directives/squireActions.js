@@ -2,8 +2,9 @@ import _ from 'lodash';
 import { hasTouch } from '../../../helpers/browser';
 
 /* @ngInject */
-const squireActions = ($rootScope) => ({
+const squireActions = (dispatchers) => ({
     link(scope, el, { squireActions, squireActionsType = 'mousedown' }) {
+        const { dispatcher } = dispatchers(['squire.editor']);
         const onMouseDown = (e) => {
             const target = e.target;
             // This is to be enable scrolling with the mouse click, for example on the dropdown.
@@ -33,7 +34,7 @@ const squireActions = ($rootScope) => ({
                 };
             }
 
-            $rootScope.$emit('squire.editor', emitOptions);
+            dispatcher['squire.editor'](emitOptions.type, emitOptions.data);
         };
 
         /**

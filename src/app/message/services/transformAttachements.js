@@ -1,18 +1,16 @@
 /* @ngInject */
-function transformAttachements(embedded, $rootScope) {
+function transformAttachements(dispatchers, embedded, $rootScope) {
+    const { dispatcher } = dispatchers(['embedded.injected', 'message.embedded']);
     return (body, message, { action }) => {
         /**
          * Usefull when we inject the content into the message (load:manual)
          */
         action &&
-            $rootScope.$emit('message.open', {
-                type: 'embedded.injected',
-                data: {
-                    action: 'user.inject.load',
-                    map: {},
-                    message,
-                    body: body.innerHTML
-                }
+            dispatcher['message.open']('embedded.injected', {
+                action: 'user.inject.load',
+                map: {},
+                message,
+                body: body.innerHTML
             });
 
         /*
@@ -24,12 +22,9 @@ function transformAttachements(embedded, $rootScope) {
              * I think this normally doesn't happen because we clear the cache after each conversation is closed.
              */
         $rootScope.$applyAsync(() =>
-            embedded.parser(message, { direction: 'blob', text: body.innerHTML }).then(() =>
-                $rootScope.$emit('message.embedded', {
-                    type: 'loaded',
-                    data: { message, body, action }
-                })
-            )
+            embedded
+                .parser(message, { direction: 'blob', text: body.innerHTML })
+                .then(() => dispatcher['message.embedded']('loaded', { message, body, action }))
         );
 
         return body;

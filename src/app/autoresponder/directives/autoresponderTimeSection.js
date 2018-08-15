@@ -26,9 +26,9 @@ function autoresponderTimeSection(autoresponderModel, dateUtils, dispatchers) {
                 }
             });
 
-            on('multiselect', (event, { type, name, data = {} }) => {
+            on('multiselect', (event, { type, data: { name, value } }) => {
                 if (type === 'update' && name === 'autoresponder.DaysSelected') {
-                    autoresponderModel.set({ DaysSelected: data.value });
+                    autoresponderModel.set({ DaysSelected: value });
                 }
             });
 

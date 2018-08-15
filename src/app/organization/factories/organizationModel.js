@@ -52,7 +52,7 @@ function organizationModel(
     const set = (data = {}, key = 'organization') => {
         CACHE[key] = data;
         if (key === 'organization') {
-            dispatcher.organizationChange('', data);
+            dispatcher.organizationChange('update', data);
         }
     };
 

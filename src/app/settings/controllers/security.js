@@ -3,10 +3,8 @@ import _ from 'lodash';
 /* @ngInject */
 function SecurityController(
     $log,
-    $rootScope,
     $scope,
     activeSessionsModel,
-    authentication,
     confirmModal,
     dispatchers,
     downloadFile,
@@ -21,7 +19,7 @@ function SecurityController(
     sharedSecretModal,
     twoFAIntroModal
 ) {
-    const { on, unsubscribe } = dispatchers();
+    const { dispatcher, on, unsubscribe } = dispatchers(['paginatorScope']);
     const I18N = {
         clear: {
             title: gettextCatalog.getString('Clear', null, 'Title'),
@@ -66,7 +64,7 @@ function SecurityController(
 
     const setCurrentPage = (p) => {
         $scope.currentLogPage = p;
-        $rootScope.$emit('paginatorScope', { type: 'logs', page: p });
+        dispatcher.paginatorScope({ type: 'logs', page: p });
     };
 
     function recoveryCodes(codes) {

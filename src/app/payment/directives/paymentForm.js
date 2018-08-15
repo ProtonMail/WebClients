@@ -4,22 +4,18 @@ import { PLANS_TYPE } from '../../constants';
 
 /* @ngInject */
 function paymentForm(
+    dispatchers,
     notification,
-    gettextCatalog,
     eventManager,
     cardModel,
     paymentModel,
     paymentUtils,
     dashboardModel,
-    organizationModel,
-    paymentModalModel,
-    $rootScope
+    paymentModalModel
 ) {
-    const dispatcher = (plan) => (type, data = {}) => {
-        $rootScope.$emit('modal.payment', {
-            type,
-            data: _.extend({ plan }, data)
-        });
+    const { dispatcher } = dispatchers(['modal.payment']);
+    const disp = (plan) => (type, data = {}) => {
+        dispatcher['modal.payment'](type, _.extend({ plan }, data));
     };
 
     const formatPlanIDs = (planIDs = []) => _.countBy(planIDs, (planID) => planID);
@@ -85,7 +81,7 @@ function paymentForm(
         link(scope, el) {
             const ctrl = scope.ctrl;
             const params = paymentModalModel.get();
-            const dispatch = dispatcher(params.plan);
+            const dispatch = disp(params.plan);
 
             ctrl.card = {};
             ctrl.cancel = params.cancel;

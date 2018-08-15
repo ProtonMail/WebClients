@@ -3,30 +3,19 @@ import { MAILBOX_IDENTIFIERS, ROW_MODE, COLUMN_MODE, CONVERSATION_VIEW_MODE } fr
 /* @ngInject */
 function ElementsController(
     $log,
-    $q,
-    $rootScope,
     dispatchers,
     $scope,
     $state,
     $stateParams,
-    $window,
     actionConversation,
     AttachmentLoader,
-    authentication,
     labelsModel,
     limitElementsModel,
     cache,
-    cacheCounters,
-    confirmModal,
     embedded,
-    eventManager,
     firstLoadState,
-    gettextCatalog,
     mailSettingsModel,
-    Label,
-    networkActivityTracker,
     paginationModel,
-    messageActions,
     AppModel,
     markedScroll,
     forgeRequestParameters,
@@ -40,6 +29,7 @@ function ElementsController(
     const id = setInterval(() => {
         dispatcher.elements('refresh.time');
     }, MINUTE);
+    const updateNumberElementChecked = (value) => ($scope.numberElementChecked = value);
 
     $scope.elementsLoaded = false;
     $scope.limitReached = false;
@@ -49,6 +39,7 @@ function ElementsController(
      */
     function initialization() {
         // Variables
+        updateNumberElementChecked(AppModel.get('numberElementChecked'));
         $scope.markedElement = undefined;
         $scope.mailbox = tools.currentMailbox();
         $scope.conversationsPerPage = NumMessagePerPage;
@@ -79,8 +70,7 @@ function ElementsController(
         unbindWatcherElements = $scope.$watch(
             'conversations',
             () => {
-                $rootScope.numberElementSelected = getElementsSelected().length;
-                $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
+                AppModel.set('numberElementSelected', getElementsSelected().length);
             },
             true
         );
@@ -140,7 +130,7 @@ function ElementsController(
             case 'placeholder': {
                 const idDefined = $scope.idDefined();
                 const shouldDisplay =
-                    isColumnsMode && (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
+                    isColumnsMode && (!idDefined || (idDefined && AppModel.get('numberElementChecked') > 0));
                 test = shouldDisplay && !AppModel.is('mobile');
                 break;
             }
@@ -238,7 +228,7 @@ function ElementsController(
             $scope.markedElement &&
                 $scope.$applyAsync(() => {
                     $scope.markedElement.Selected = !$scope.markedElement.Selected;
-                    $rootScope.numberElementChecked = _.filter($scope.conversations, { Selected: true }).length;
+                    AppModel.set('numberElementChecked', _.filter($scope.conversations, { Selected: true }).length);
                 });
         });
 
@@ -256,13 +246,21 @@ function ElementsController(
             });
         });
 
+        on('AppModel', (event, { type, data = {} }) => {
+            if (type === 'numberElementChecked') {
+                $scope.$applyAsync(() => {
+                    updateNumberElementChecked(data.value);
+                });
+            }
+        });
+
         $scope.$on('applyLabels', (event, LabelID) => {
             $scope.applyLabels(LabelID);
         });
 
         $scope.$on('move', (e, mailbox) => {
             const idDefined = $scope.idDefined();
-            const isScope = !idDefined || (idDefined && $rootScope.numberElementChecked > 0);
+            const isScope = !idDefined || (idDefined && AppModel.get('numberElementChecked') > 0);
             /**
              * Move item only when nothing is opened
              * and we have a selection
@@ -485,7 +483,7 @@ function ElementsController(
      * @return {Boolean}
      */
     $scope.active = (element) => {
-        if ($rootScope.numberElementChecked === 0 && angular.isDefined($state.params.id)) {
+        if (AppModel.get('numberElementChecked') === 0 && angular.isDefined($state.params.id)) {
             return $state.params.id === element.ConversationID || $state.params.id === element.ID;
         }
 
@@ -526,7 +524,7 @@ function ElementsController(
             return false;
         }
 
-        return !$rootScope.numberElementChecked && !angular.isDefined($state.params.id);
+        return AppModel.get('numberElementChecked') === 0 && !angular.isDefined($state.params.id);
     };
 
     $scope.isCacheContext = () => tools.cacheContext();
@@ -557,7 +555,7 @@ function ElementsController(
 
         _.each($scope.conversations, (element) => actions[value](element));
 
-        $rootScope.numberElementChecked = _.filter($scope.conversations, { Selected: true }).length;
+        AppModel.set('numberElementChecked', _.filter($scope.conversations, { Selected: true }).length);
     };
 
     function isStarred({ LabelIDs = [], Labels = [] }) {
@@ -671,7 +669,7 @@ function ElementsController(
             return;
         }
 
-        $rootScope.numberElementChecked = 0;
+        AppModel.set('numberElementChecked', 0);
 
         if (type === 'conversation') {
             actionConversation.move(ids, labelID);

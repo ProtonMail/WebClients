@@ -15,7 +15,7 @@ function manageUser(
     pmcw,
     decryptUser
 ) {
-    const { on } = dispatchers();
+    const { dispatcher, on } = dispatchers(['organizationChange', 'updateUser']);
     const I18N = {
         REVOKE_ADMIN_RELOAD: gettextCatalog.getString('Your admin privileges have been revoked.', null, 'Info'),
         REVOKE_ADMIN_RELOAD_INFO: gettextCatalog.getString(
@@ -84,7 +84,7 @@ function manageUser(
 
         await upgradeAddresses(user, keys, dirtyAddresses);
         _.extend($rootScope.user, authentication.user);
-        $rootScope.$broadcast('updateUser');
+        dispatcher.updateUser();
     };
 
     const generateKeys = (user, Members, keys) => {
@@ -113,7 +113,7 @@ function manageUser(
 
         if (User.Role === FREE_USER_ROLE) {
             // Necessary because there is no deletion event for organizations
-            $rootScope.$emit('organizationChange', { data: { PlanName: 'free', HasKeys: 0 } });
+            dispatcher.organizationChange('update', { data: { PlanName: 'free', HasKeys: 0 } });
         }
 
         // Revoke admin, we reload the app to clear the context

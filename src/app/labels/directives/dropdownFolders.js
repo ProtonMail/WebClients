@@ -1,7 +1,8 @@
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function dropdownFolders(labelsModel, $rootScope, actionConversation, labelModal, gettextCatalog) {
+function dropdownFolders(AppModel, labelsModel, dispatchers, actionConversation, labelModal, gettextCatalog) {
+    const { dispatcher } = dispatchers(['closeDropdown', 'messageActions']);
     const mailboxes = [
         {
             Name: gettextCatalog.getString('Inbox', null),
@@ -29,7 +30,7 @@ function dropdownFolders(labelsModel, $rootScope, actionConversation, labelModal
         }
     ];
 
-    const close = () => $rootScope.$emit('closeDropdown');
+    const close = () => dispatcher.closeDropdown();
 
     function moveTo(elements = [], type = '', labelID = '') {
         const elementIDs = elements.map(({ ID }) => ID);
@@ -37,7 +38,7 @@ function dropdownFolders(labelsModel, $rootScope, actionConversation, labelModal
         if (type === 'conversation') {
             actionConversation.move(elementIDs, labelID);
         } else if (type === 'message') {
-            $rootScope.$emit('messageActions', { type: 'move', data: { ids: elementIDs, labelID } });
+            dispatcher.messageActions('move', { ids: elementIDs, labelID });
         }
     }
 
@@ -83,7 +84,7 @@ function dropdownFolders(labelsModel, $rootScope, actionConversation, labelModal
                         const folderID = event.target.getAttribute('data-folder-id');
                         const elements = scope.getElements();
                         const type = getType(elements);
-                        $rootScope.numberElementChecked = 0;
+                        AppModel.set('numberElementChecked', 0);
                         moveTo(elements, type, folderID);
                         close();
                     });

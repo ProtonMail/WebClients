@@ -5,11 +5,11 @@ import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 
 /* @ngInject */
-function publicKeyStore($rootScope, addressesModel, keyCache, pmcw, contactEmails, Contact, contactKey) {
+function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmails, Contact, contactKey) {
     const CACHE = {};
     const CACHE_TIMEOUT = TIME.HOUR;
     const usesDefaults = (contactEmail) => !contactEmail || contactEmail.Defaults;
-
+    const { on } = dispatchers();
     const normalizeEmail = (email) => email.toLowerCase();
 
     /**
@@ -160,7 +160,7 @@ function publicKeyStore($rootScope, addressesModel, keyCache, pmcw, contactEmail
     const contactUpdated = ({ ContactEmails }) =>
         ContactEmails.forEach(({ Email }) => delete CACHE.EMAIL_PUBLIC_KEY[Email]);
 
-    $rootScope.$on('contacts', (event, { type, data: { events = [], contact = {} } = {} }) => {
+    on('contacts', (event, { type, data: { events = [], contact = {} } = {} }) => {
         type === 'contactEvents' && contactEvents(events);
         type === 'contactUpdated' && contactUpdated(contact);
     });
@@ -171,7 +171,7 @@ function publicKeyStore($rootScope, addressesModel, keyCache, pmcw, contactEmail
 
     clearCache();
 
-    $rootScope.$on('logout', () => {
+    on('logout', () => {
         clearCache();
     });
 

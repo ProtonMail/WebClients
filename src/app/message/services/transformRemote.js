@@ -2,7 +2,8 @@ import { flow, filter, reduce } from 'lodash/fp';
 import { REMOTE, WHITELIST } from '../../constants';
 
 /* @ngInject */
-function transformRemote($state, $rootScope, mailSettingsModel) {
+function transformRemote($state, dispatchers, mailSettingsModel) {
+    const { dispatcher } = dispatchers(['message.open']);
     const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map(
         (name) => `proton-${name}`
     );
@@ -87,10 +88,7 @@ function transformRemote($state, $rootScope, mailSettingsModel) {
                 const list = prepareInjection(html);
                 const hasSVG = /svg/.test(html.innerHTML);
                 if (list.length || hasSVG) {
-                    $rootScope.$emit('message.open', {
-                        type: 'remote.injected',
-                        data: { action, list, message, hasSVG }
-                    });
+                    dispatcher['message.open']('remote.injected', { action, list, message, hasSVG });
                 }
             } else {
                 html.innerHTML = content.replace(new RegExp(REGEXP_FIXER, 'g'), (match, $1) => $1.substring(7));

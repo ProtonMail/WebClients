@@ -2,8 +2,9 @@ import _ from 'lodash';
 import { ERROR_SILENT } from '../../constants';
 
 /* @ngInject */
-function networkActivityTracker($filter, errorReporter, $rootScope, notification) {
+function networkActivityTracker($filter, errorReporter, dispatchers, notification) {
     let promises = [];
+    const { dispatcher } = dispatchers(['networkActivity']);
     const unicodeTagView = $filter('unicodeTagView');
 
     /**
@@ -13,7 +14,7 @@ function networkActivityTracker($filter, errorReporter, $rootScope, notification
      * @param  {String} action
      * @return {void}
      */
-    const dispatch = (action) => $rootScope.$emit('networkActivity', action);
+    const dispatch = (action) => dispatcher.networkActivity(action);
 
     /**
      * Check if we have some promises currently running

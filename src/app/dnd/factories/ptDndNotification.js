@@ -1,7 +1,7 @@
 import { isIE11, isEdge, isFirefox } from '../../../helpers/browser';
 
 /* @ngInject */
-function ptDndNotification(PTDNDCONSTANTS, gettextCatalog, $rootScope) {
+function ptDndNotification(AppModel, PTDNDCONSTANTS, gettextCatalog) {
     const { CLASSNAME } = PTDNDCONSTANTS;
 
     /**
@@ -54,7 +54,7 @@ function ptDndNotification(PTDNDCONSTANTS, gettextCatalog, $rootScope) {
     });
 
     const onDragStart = (e, eventData, type) => {
-        $notif.textContent = getMessage($rootScope.numberElementChecked || 1, type);
+        $notif.textContent = getMessage(AppModel.get('numberElementChecked') || 1, type);
 
         if (!testIE11 && !testEdge && !testFirefox) {
             const img = new Image();

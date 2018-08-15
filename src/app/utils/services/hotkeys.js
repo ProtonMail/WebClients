@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { flow, filter, each } from 'lodash/fp';
 
 /* @ngInject */
-function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, gettextCatalog) {
+function hotkeys(hotkeyModal, $state, $injector, dispatchers, gettextCatalog) {
     const I18N = {
         OPEN_COMPOSER: gettextCatalog.getString('Open the composer', null, 'Hotkey description'),
         CREATE_REPLY: gettextCatalog.getString('Create a reply', null, 'Hotkey description'),
@@ -33,18 +33,39 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         UP: 'keyup'
     };
 
+    const { dispatcher } = dispatchers([
+        'composer.new',
+        'hotkeys',
+        'replyConversation',
+        'replyAllConversation',
+        'forwardConversation',
+        'selectElements',
+        'toggleStar',
+        'openMarked',
+        'selectMark',
+        'markPrevious',
+        'markNext',
+        'left',
+        'right',
+        'read',
+        'unread',
+        'move',
+        'newElement',
+        'oldElement'
+    ]);
+
     const action = (cb) => () => (cb(), false);
     const redirect = (state) => () => $state.go(state);
-    const emit = (action, data = {}) => () => {
+    const emit = (action, { type, data = {} } = {}) => () => {
         if (action === 'composer.new') {
-            data.data.message = $injector.get('messageModel')();
+            data.message = $injector.get('messageModel')();
         }
-        $rootScope.$emit(action, data);
+        dispatcher[action](type, data);
     };
-    const broadcast = (action, data = {}) => () => $rootScope.$broadcast(action, data);
+    const broadcast = (action, data = {}) => () => dispatcher[action](data);
 
     const openMarked = (event) => {
-        $rootScope.$broadcast('openMarked');
+        dispatcher.openMarked();
 
         // This function is bind to the Enter key, we need to prevent the
         // browser from executing the default action otherwise it will

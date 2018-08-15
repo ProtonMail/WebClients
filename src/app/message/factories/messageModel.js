@@ -13,7 +13,7 @@ const { PLAINTEXT, DEFAULT } = MIME_TYPES;
 function messageModel(
     $q,
     $timeout,
-    $rootScope,
+    dispatchers,
     embeddedUtils,
     pmcw,
     gettextCatalog,
@@ -109,6 +109,7 @@ function messageModel(
 
     const emptyMessage = gettextCatalog.getString('Message empty', null, 'Message content if empty');
     const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
+    const { dispatcher } = dispatchers(['message']);
 
     class Message {
         constructor(msg) {
@@ -493,7 +494,7 @@ function messageModel(
 
                 this.hasError = false;
 
-                $rootScope.$emit('message', { type: 'decrypted', data: { message: this } });
+                dispatcher.message('decrypted', { message: this });
 
                 return this.getDecryptedBody();
             } catch (err) {

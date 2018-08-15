@@ -9,11 +9,9 @@ const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = STATUS;
 /* @ngInject */
 function cache(
     $interval,
-    $q,
-    $rootScope,
-    $state,
     $stateParams,
     conversationApi,
+    dispatchers,
     firstLoadState,
     gettextCatalog,
     messageModel,
@@ -27,7 +25,7 @@ function cache(
     const api = {};
     let messagesCached = []; // In this array we store the messages cached
     let conversationsCached = []; // In this array we store the conversations cached
-    const dispatcher = [];
+    const disp = [];
     const timeCached = {};
     const missingConversations = [];
 
@@ -37,11 +35,21 @@ function cache(
         errorConversations: gettextCatalog.getString('No conversations available', null, 'Error')
     };
 
-    const dispatchElements = (type, data = {}) => $rootScope.$emit('elements', { type, data });
+    const { dispatcher, on } = dispatchers([
+        'elements',
+        'message.expiration',
+        'updatePageName',
+        'refreshConversation',
+        'message.refresh',
+        'foldersElement',
+        'foldersMessage',
+        'labelsElement'
+    ]);
+    const dispatchElements = (type, data = {}) => dispatcher.elements(type, data);
 
-    api.addToDispatcher = (action) => dispatcher.push(action);
-    api.clearDispatcher = () => (dispatcher.length = 0);
-    api.getDispatcher = () => Promise.all(dispatcher);
+    api.addToDispatcher = (action) => disp.push(action);
+    api.clearDispatcher = () => (disp.length = 0);
+    api.getDispatcher = () => Promise.all(disp);
 
     $interval(expiration, 1000, 0, false);
 
@@ -113,9 +121,9 @@ function cache(
 
         manageTimes(ConversationID);
 
-        $rootScope.$emit('labelsElement.' + message.ID, message);
-        $rootScope.$emit('foldersMessage.' + message.ID, message);
-        $rootScope.$emit('foldersElement.' + message.ID, message);
+        dispatcher.labelsElement('', message);
+        dispatcher.foldersMessage('', message);
+        dispatcher.foldersElement('', message);
 
         const { loaded } = _.find(conversationsCached, { ID: ConversationID }) || {};
 
@@ -191,16 +199,16 @@ function cache(
             delete current.LabelIDsAdded;
             delete current.LabelIDsRemoved;
             manageTimes(current.ID);
-            $rootScope.$emit('labelsElement.' + current.ID, current);
-            $rootScope.$emit('foldersElement.' + current.ID, current);
+            dispatcher.labelsElement('', current);
+            dispatcher.foldersElement('', current);
             return;
         }
 
         _.extend(conversation, extractContextDatas(conversation, conversation));
         conversationsCached.push(conversation);
         manageTimes(conversation.ID);
-        $rootScope.$emit('labelsElement.' + conversation.ID, conversation);
-        $rootScope.$emit('foldersElement.' + conversation.ID, conversation);
+        dispatcher.labelsElement('', conversation);
+        dispatcher.foldersElement('', conversation);
     }
 
     /**
@@ -351,7 +359,7 @@ function cache(
             })
             .catch(({ data = {} } = {}) => {
                 api.clearDispatcher();
-                $rootScope.$emit('elements', { type: 'error', data: { code: data.Code, error: data.Error } });
+                dispatchElements('error', { code: data.Code, error: data.Error });
                 throw new Error(data.Error || I18N.errorConversations);
             });
 
@@ -362,7 +370,7 @@ function cache(
 
     function refreshStateLimit({ Limit: limit, Total: total }) {
         cacheCounters.currentState(limit);
-        $rootScope.$emit('elements', { type: 'setLimit', data: { limit, total } });
+        dispatchElements('setLimit', { limit, total });
     }
 
     /**
@@ -415,7 +423,7 @@ function cache(
             })
             .catch(({ data = {} } = {}) => {
                 api.clearDispatcher();
-                $rootScope.$emit('elements', { type: 'error', data: { code: data.Code, error: data.Error } });
+                dispatchElements('error', { code: data.Code, error: data.Error });
                 throw new Error(data.Error || I18N.errorMessages);
             });
 
@@ -1024,9 +1032,9 @@ function cache(
      */
     api.callRefresh = (messageIDs = [], conversationIDs = []) => {
         dispatchElements('refresh');
-        $rootScope.$emit('updatePageName');
-        $rootScope.$emit('refreshConversation', conversationIDs);
-        $rootScope.$emit('message.refresh', messageIDs);
+        dispatcher.updatePageName();
+        dispatcher.refreshConversation('refresh', conversationIDs);
+        dispatcher['message.refresh']('refresh', messageIDs);
         dispatchElements('refresh.time');
     };
 
@@ -1056,7 +1064,7 @@ function cache(
         );
 
         messagesCached = list;
-        removeList.length && $rootScope.$emit('message.expiration', removeList);
+        removeList.length && dispatcher['message.expiration']();
     }
 
     /**
@@ -1116,7 +1124,7 @@ function cache(
         return callApi();
     };
 
-    $rootScope.$on('logout', () => {
+    on('logout', () => {
         api.reset();
         cacheCounters.reset();
     });

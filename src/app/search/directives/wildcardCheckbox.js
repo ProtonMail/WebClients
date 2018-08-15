@@ -1,5 +1,5 @@
 /* @ngInject */
-function wildcardCheckbox($rootScope, gettextCatalog, mailSettingsModel) {
+function wildcardCheckbox(dispatchers, gettextCatalog, mailSettingsModel) {
     const I18N = {
         info: gettextCatalog.getString('Do not require exact match', null, 'Label'),
         learn: gettextCatalog.getString('Learn more', null, 'Link')
@@ -19,13 +19,11 @@ function wildcardCheckbox($rootScope, gettextCatalog, mailSettingsModel) {
         </label>
         `,
         link(scope) {
+            const { dispatcher } = dispatchers(['settings']);
             const { AutoWildcardSearch } = mailSettingsModel.get();
             scope.wildcard = Boolean(AutoWildcardSearch);
             scope.onClick = () =>
-                $rootScope.$emit('settings', {
-                    type: 'autowildcard.update',
-                    data: { AutoWildcardSearch: scope.wildcard ? 1 : 0 }
-                });
+                dispatcher.settings('autowildcard.update', { AutoWildcardSearch: scope.wildcard ? 1 : 0 });
         }
     };
 }

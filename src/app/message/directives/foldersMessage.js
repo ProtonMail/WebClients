@@ -37,7 +37,7 @@ function foldersMessage(dispatchers, gettextCatalog, $compile, mailboxIdentifers
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
 
-            const build = (event, { LabelIDs, Type }) => {
+            const build = ({ LabelIDs, Type }) => {
                 let template = '';
                 Array.isArray(LabelIDs) && (template += getTemplateLabels(LabelIDs));
                 angular.isNumber(Type) && (template += getTemplateType(Type));
@@ -46,9 +46,13 @@ function foldersMessage(dispatchers, gettextCatalog, $compile, mailboxIdentifers
                 el.empty().append($compile(template)(scope));
             };
 
-            on('foldersMessage.' + scope.message.ID, build);
+            on('foldersMessage', (event, { data: element }) => {
+                if (element.ID === scope.message.ID) {
+                    build(element);
+                }
+            });
 
-            build(undefined, scope.message);
+            build(scope.message);
 
             scope.$on('$destroy', unsubscribe);
         }

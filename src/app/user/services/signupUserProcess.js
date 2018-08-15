@@ -4,6 +4,7 @@ import { UNPAID_STATE, WIZARD_ENABLED } from '../../constants';
 function signupUserProcess(
     $location,
     $rootScope,
+    dispatchers,
     gettextCatalog,
     settingsApi,
     signupModel,
@@ -15,7 +16,8 @@ function signupUserProcess(
     notification
 ) {
     const CACHE = {};
-    const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
+    const { dispatcher } = dispatchers(['signup']);
+    const dispatch = (type, data = {}) => dispatcher.signup(type, data);
 
     const I18N = {
         ERROR_ADDRESS_CREATION: gettextCatalog.getString('Something went wrong during address creation', null, 'Error'),

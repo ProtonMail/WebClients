@@ -92,7 +92,7 @@ function AppearanceController(
         return promise;
     };
 
-    function changeViewMode(event, { status }) {
+    function changeViewMode(event, { data: { status } }) {
         const ViewMode = status ? CONVERSATION_VIEW_MODE : MESSAGE_VIEW_MODE; // Be careful, BE is reversed
 
         dispatcher.appearance('changingViewMode');

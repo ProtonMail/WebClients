@@ -2,9 +2,10 @@ import _ from 'lodash';
 import { INVITE_URL } from '../../constants';
 
 /* @ngInject */
-function signupModel(User, $state, $stateParams, $location, Payment, networkActivityTracker, $rootScope) {
+function signupModel(User, $state, $stateParams, $location, dispatchers, Payment, networkActivityTracker) {
     const CACHE = {};
-    const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
+    const { dispatcher } = dispatchers(['signup']);
+    const dispatch = (type, data = {}) => dispatcher.signup(type, data);
 
     const get = (key, type = 'model') => {
         const item = angular.copy(CACHE[type]);

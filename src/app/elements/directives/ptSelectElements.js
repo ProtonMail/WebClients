@@ -1,10 +1,11 @@
 /* @ngInject */
-const ptSelectElements = ($rootScope) => ({
+const ptSelectElements = (dispatchers) => ({
     link(scope, el) {
+        const { dispatcher } = dispatchers(['selectElements']);
         function onChange({ target }) {
             const isChecked = target.checked;
             const action = target.value;
-            $rootScope.$emit('selectElements', { type: action, data: { isChecked } });
+            dispatcher.selectElements(action, { isChecked });
             // No keyX event if a checkbox is focused
             _rAF(() => target.blur());
         }

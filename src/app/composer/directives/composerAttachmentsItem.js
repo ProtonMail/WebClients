@@ -1,9 +1,10 @@
 /* @ngInject */
-function composerAttachmentsItem($rootScope, gettextCatalog, attachmentDownloader) {
+function composerAttachmentsItem(dispatchers, gettextCatalog, attachmentDownloader) {
     const getTitle = (name) => gettextCatalog.getString(`Download the attachment ${name}`);
-    const dispatcher = (isOutside) => (type, data = {}) => {
-        const event = `attachment.upload${isOutside ? '.outside' : ''}`.trim();
-        $rootScope.$emit(event, { type, data });
+    const { dispatcher } = dispatchers(['attachment.upload', 'attachment.upload.outside']);
+    const disp = (isOutside) => (type, data = {}) => {
+        const event = `attachment.upload${isOutside ? '.outside' : ''}`;
+        dispatcher[event](type, data);
     };
 
     return {
@@ -11,7 +12,7 @@ function composerAttachmentsItem($rootScope, gettextCatalog, attachmentDownloade
         template:
             '<a class="composerAttachmentsItem-container"><progress-upload data-model="attachment"></progress-upload></a>',
         link(scope, el, { isOutside = false }) {
-            const dispatch = dispatcher(isOutside);
+            const dispatch = disp(isOutside);
             el[0].title = getTitle(scope.attachment.packet.filename);
 
             const onClick = (e) => {

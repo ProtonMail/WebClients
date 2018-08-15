@@ -36,39 +36,34 @@ function DomainsController(
 
     const { on, unsubscribe } = dispatchers([], true);
 
-    $scope.$on('domain', (event, domain) => {
+    on('domainModal', (event, { type, data = {} }) => {
         $scope.closeModals();
-        $scope.addDomain(domain);
-    });
 
-    $scope.$on('spf', (event, domain) => {
-        $scope.closeModals();
-        $scope.spf(domain);
-    });
-
-    $scope.$on('address', (event, domain) => {
-        $scope.closeModals();
-        $scope.addAddresses(domain);
-    });
-
-    $scope.$on('mx', (event, domain) => {
-        $scope.closeModals();
-        $scope.mx(domain);
-    });
-
-    $scope.$on('dkim', (event, domain) => {
-        $scope.closeModals();
-        $scope.dkim(domain);
-    });
-
-    $scope.$on('verification', (event, domain) => {
-        $scope.closeModals();
-        $scope.verification(domain);
-    });
-
-    $scope.$on('dmarc', (event, domain) => {
-        $scope.closeModals();
-        $scope.dmarc(domain);
+        switch (type) {
+            case 'domain':
+                $scope.addDomain(data.domain);
+                break;
+            case 'spf':
+                $scope.spf(data.domain);
+                break;
+            case 'address':
+                $scope.addAddresses(data.domain);
+                break;
+            case 'mx':
+                $scope.mx(data.domain);
+                break;
+            case 'dkim':
+                $scope.dkim(data.domain);
+                break;
+            case 'verification':
+                $scope.verification(data.domain);
+                break;
+            case 'dmarc':
+                $scope.dmarc(data.domain);
+                break;
+            default:
+                break;
+        }
     });
 
     $scope.$on('$destroy', () => {

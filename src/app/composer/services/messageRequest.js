@@ -4,13 +4,14 @@ import { STATUS } from '../../constants';
 import { SUCCESS, DRAFT_NOT_EXIST, MESSAGE_ALREADY_SEND } from '../constants/index';
 
 /* @ngInject */
-function messageRequest($rootScope, messageApi, gettextCatalog) {
+function messageRequest(dispatchers, messageApi, gettextCatalog) {
     const I18N = {
         ERROR_REQUEST_DRAFT: gettextCatalog.getString('Saving draft failed, please  try again', null, 'Error'),
         ERROR_SENDING: gettextCatalog.getString('Cannot send message', null, 'Error')
     };
 
-    const dispatch = (type, data = {}) => $rootScope.$emit('composer.update', { type, data });
+    const { dispatcher } = dispatchers(['composer.update']);
+    const dispatch = (type, data = {}) => dispatcher['composer.update'](type, data);
 
     function getSendError(data) {
         // The API can return the error via a 4X or via 2X...

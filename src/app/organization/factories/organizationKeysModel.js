@@ -4,9 +4,7 @@ import { PAID_ADMIN_ROLE } from '../../constants';
 function organizationKeysModel(
     organizationApi,
     dispatchers,
-    $rootScope,
     authentication,
-    formatKey,
     pmcw,
     memberModel,
     notification,
@@ -16,7 +14,7 @@ function organizationKeysModel(
     gettextCatalog,
     activateOrganizationModal
 ) {
-    const { on } = dispatchers();
+    const { dispatcher, on } = dispatchers(['organizationChange']);
 
     let CACHE = { keyStatus: 0 };
     const ALLOWED_STATES = ['signatures', 'domains', 'members'].map((n) => `secured.${n}`);
@@ -142,7 +140,7 @@ function organizationKeysModel(
                     set('keyStatus', 0);
                     set('organizationKey', pkg);
                     activateOrganizationModal.deactivate();
-                    $rootScope.$emit('organizationChange', { data: organization });
+                    dispatcher.organizationChange('update', { data: organization });
                 },
                 cancel() {
                     activateOrganizationModal.deactivate();

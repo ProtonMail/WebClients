@@ -1088,8 +1088,8 @@ export default angular
                     AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', false);
                 },
-                onExit(AppModel, $rootScope) {
-                    $rootScope.showWelcome = false;
+                onExit(AppModel) {
+                    AppModel.set('showWelcome', false);
                 }
             });
 

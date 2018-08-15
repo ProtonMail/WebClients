@@ -14,8 +14,9 @@ import {
 const ENCRYPTED_MODES = [CONTACT_MODE.ENCRYPTED, CONTACT_MODE.ENCRYPTED_AND_SIGNED];
 
 /* @ngInject */
-function Contact($http, $rootScope, url, chunk, contactEncryption, sanitize, eventManager, contactProgressReporter) {
+function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, eventManager, contactProgressReporter) {
     const requestURL = url.build('contacts');
+    const { dispatcher } = dispatchers(['contacts']);
 
     /**
      * Clean contact datas
@@ -236,7 +237,7 @@ function Contact($http, $rootScope, url, chunk, contactEncryption, sanitize, eve
             .encrypt(contacts, cancellationToken, progressBar)
             .then((result = []) => uploadContacts(result, contacts.length, progressBar, cancellationToken))
             .then((data) => {
-                $rootScope.$emit('contacts', { type: 'contactsUpdated' });
+                dispatcher.contacts('contactsUpdated');
                 return data;
             });
     }

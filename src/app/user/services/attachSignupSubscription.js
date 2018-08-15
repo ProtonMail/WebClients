@@ -1,16 +1,7 @@
 /* @ngInject */
-function attachSignupSubscription(
-    $rootScope,
-    signupModel,
-    authentication,
-    setupKeys,
-    organizationApi,
-    gettextCatalog,
-    eventManager,
-    notification,
-    Payment
-) {
-    const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
+function attachSignupSubscription(dispatchers, signupModel, authentication, eventManager, notification, Payment) {
+    const { dispatcher } = dispatchers(['signup']);
+    const dispatch = (type, data = {}) => dispatcher.signup(type, data);
     const processPlan = async () => {
         const { Name, Amount, Currency, Cycle, ID } = signupModel.get('temp.plan') || {};
 

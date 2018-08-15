@@ -23,7 +23,7 @@ function LabelsController(
         folderUpdated: gettextCatalog.getString('Folder updated', null, 'Success')
     };
 
-    const changeNotify = (event, { id, status }) => {
+    const changeNotify = (event, { data: { id, status } }) => {
         const { Name, Color, Display, Exclusive } = _.find($scope.labels, { ID: id });
         const promise = Label.update({ ID: id, Name, Color, Display, Exclusive, Notify: status ? 1 : 0 })
             .then(eventManager.call)

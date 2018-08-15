@@ -13,18 +13,26 @@ function eventManager(
     authentication,
     cachePages,
     desktopNotifications,
+    dispatchers,
     Events,
     gettextCatalog,
     mailSettingsModel,
     notify,
-    subscriptionModel,
     userSettingsModel,
     vpnSettingsModel
 ) {
     const FIBONACCI = [1, 1, 2, 3, 5, 8];
     const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = MAILBOX_IDENTIFIERS;
     const { DELETE, CREATE, UPDATE } = STATUS;
-    const dispatch = (type, data = {}) => $rootScope.$emit('app.event', { type, data });
+    const { dispatcher } = dispatchers([
+        'app.event',
+        'contacts',
+        'messages.counter',
+        'resetContactEmails',
+        'filter',
+        'updateUser'
+    ]);
+    const dispatch = (type, data = {}) => dispatcher['app.event'](type, data);
     const MODEL = {
         index: 0,
         milliseconds: INTERVAL_EVENT_TIMER
@@ -86,8 +94,7 @@ function eventManager(
         return Events.getLatestID().catch(handleError);
     }
 
-    const manageContacts = (events = []) =>
-        events.length && $rootScope.$emit('contacts', { type: 'contactEvents', data: { events } });
+    const manageContacts = (events = []) => events.length && dispatcher.contacts('contactEvents', { events });
 
     function manageMailSettings(mailSettings) {
         if (angular.isDefined(mailSettings)) {
@@ -123,7 +130,7 @@ function eventManager(
                 }
             });
 
-            $rootScope.$emit('messages.counter');
+            dispatcher['messages.counter']();
         }
     }
 
@@ -238,7 +245,7 @@ function eventManager(
         if (angular.isArray(filters)) {
             _.each(filters, (filter) => {
                 if (filter.Action === DELETE) {
-                    $rootScope.$broadcast('deleteFilter', filter.ID);
+                    dispatcher.filter('delete', { ID: filter.ID });
                 } else if (filter.Action === CREATE) {
                     const simple = Sieve.fromTree(filter.Filter.Tree);
                     if (_.isEqual(filter.Filter.Tree, Sieve.toTree(simple))) {
@@ -246,7 +253,7 @@ function eventManager(
                     } else {
                         delete filter.Filter.Simple;
                     }
-                    $rootScope.$broadcast('createFilter', filter.ID, filter.Filter);
+                    dispatcher.filter('create', { ID: filter.ID, Filter: filter.Filter });
                 } else if (filter.Action === UPDATE) {
                     const simple = Sieve.fromTree(filter.Filter.Tree);
                     if (_.isEqual(filter.Filter.Tree, Sieve.toTree(simple))) {
@@ -254,7 +261,7 @@ function eventManager(
                     } else {
                         delete filter.Filter.Simple;
                     }
-                    $rootScope.$broadcast('updateFilter', filter.ID, filter.Filter);
+                    dispatcher.filter('update', { ID: filter.ID, Filter: filter.Filter });
                 }
             });
         }
@@ -292,14 +299,14 @@ function eventManager(
         $injector.get('cacheCounters').query();
 
         return authentication.fetchUserInfo().then(() => {
-            $rootScope.$broadcast('updateUser');
+            dispatcher.updateUser();
             $injector.get('labelsModel').refresh();
         });
     }
 
     function refreshContact() {
-        $rootScope.$emit('resetContactEmails');
-        $rootScope.$emit('contacts', { type: 'resetContacts' });
+        dispatcher.resetContactEmails();
+        dispatcher.contacts('resetContacts');
     }
 
     const manage = async (data) => {

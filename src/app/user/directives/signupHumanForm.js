@@ -1,5 +1,5 @@
 /* @ngInject */
-function signupHumanForm($rootScope) {
+function signupHumanForm(dispatchers) {
     return {
         replace: true,
         scope: {
@@ -7,14 +7,12 @@ function signupHumanForm($rootScope) {
         },
         templateUrl: require('../../../templates/user/signupHumanForm.tpl.html'),
         link(scope, el) {
+            const { dispatcher } = dispatchers(['signup']);
             const onSubmit = (e) => {
                 e.preventDefault();
 
-                $rootScope.$emit('signup', {
-                    type: 'humanform.submit',
-                    data: {
-                        form: scope.account
-                    }
+                dispatcher.signup('humanform.submit', {
+                    form: scope.account
                 });
             };
 

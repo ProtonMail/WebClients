@@ -1,7 +1,7 @@
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function messageView($stateParams, $state, dispatchers, $rootScope, conversationListeners, cache, hotkeys) {
+function messageView($stateParams, $state, AppModel, dispatchers, $rootScope, conversationListeners, cache, hotkeys) {
     function back() {
         const name = $state.$current.name;
         const route = name.replace('.element', '');
@@ -13,7 +13,7 @@ function messageView($stateParams, $state, dispatchers, $rootScope, conversation
         replace: true,
         templateUrl: require('../../../templates/message/messageView.tpl.html'),
         link(scope) {
-            const { on, unsubscribe } = dispatchers();
+            const { dispatcher, on, unsubscribe } = dispatchers(['messageActions']);
 
             const messageID = $stateParams.id;
             let unsubscribeActions = angular.noop;
@@ -22,7 +22,7 @@ function messageView($stateParams, $state, dispatchers, $rootScope, conversation
                 scope.$applyAsync(() => {
                     message.openMe = true;
                     scope.message = message;
-                    $rootScope.numberElementSelected = 1;
+                    AppModel.set('numberElementSelected', 1);
 
                     unsubscribeActions = conversationListeners(scope.message);
                     on('message.expiration', back);
@@ -38,14 +38,11 @@ function messageView($stateParams, $state, dispatchers, $rootScope, conversation
                  * Move item only when we didn't select anything
                  * -> Prevent x2 move with marked item by elementsCtrl
                  */
-                if ($rootScope.numberElementChecked) {
+                if (AppModel.get('numberElementChecked')) {
                     return;
                 }
 
-                $rootScope.$emit('messageActions', {
-                    type: 'move',
-                    data: { ids: [scope.message.ID], labelID }
-                });
+                dispatcher.messageActions('move', { ids: [scope.message.ID], labelID });
             });
 
             scope.$on('$destroy', () => {

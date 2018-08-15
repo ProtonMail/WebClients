@@ -32,7 +32,7 @@ function labelsElement(dispatchers, labelsModel, authentication, $state) {
             const { dispatcher, on, unsubscribe } = dispatchers(['messageActions']);
             const moreToggle = moreVisibility(el[0].querySelector('.labelsElement-more'));
 
-            const build = (e, { LabelIDs = [], Labels = [] }) => {
+            const build = ({ LabelIDs = [], Labels = [] }) => {
                 moreToggle.hide();
                 // Check if there is custom labels
                 if (LabelIDs.length || Labels.length) {
@@ -66,9 +66,13 @@ function labelsElement(dispatchers, labelsModel, authentication, $state) {
                 }
             };
 
-            on('labelsElement.' + scope.element.ID, build);
+            on('labelsElement', (event, { data: element }) => {
+                if (element.ID === scope.element.ID) {
+                    build(element);
+                }
+            });
 
-            build(undefined, scope.element);
+            build(scope.element);
             scope.color = ({ Color: color = 'inherit' } = {}) => ({ color });
 
             el.on('click', onClick);
