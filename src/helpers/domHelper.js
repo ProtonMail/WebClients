@@ -59,5 +59,5 @@ export const forceRedraw = (el) => {
     el.style.display = '';
 };
 
-export const escapeSrc = (value = '') => value.replace(/src=/g, 'data-src');
-export const unescapeSrc = (value = '') => value.replace(/data-src=/g, 'src');
+export const escapeSrc = (value = '') => value.replace(/src=/g, 'data-src=');
+export const unescapeSrc = (value = '') => value.replace(/data-src=/g, 'src=');
