@@ -295,7 +295,10 @@ function messageActions(
         };
 
         const filterLabelsID = (list = [], cb = angular.noop) => {
-            return flow(filter(cb), map(({ ID }) => ID))(list);
+            return flow(
+                filter(cb),
+                map(({ ID }) => ID)
+            )(list);
         };
 
         const mapPromisesLabels = (list = [], Action) => {
@@ -331,7 +334,6 @@ function messageActions(
                         ID: message.ID,
                         Unread: message.Unread,
                         ConversationID: message.ConversationID,
-                        Selected: false,
                         LabelIDsAdded: toApply,
                         LabelIDsRemoved: toRemove
                     }
