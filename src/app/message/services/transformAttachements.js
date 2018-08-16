@@ -1,6 +1,6 @@
 /* @ngInject */
 function transformAttachements(dispatchers, embedded, $rootScope) {
-    const { dispatcher } = dispatchers(['embedded.injected', 'message.embedded']);
+    const { dispatcher } = dispatchers(['embedded.injected', 'message.embedded', 'message.open']);
     return (body, message, { action }) => {
         /**
          * Usefull when we inject the content into the message (load:manual)
