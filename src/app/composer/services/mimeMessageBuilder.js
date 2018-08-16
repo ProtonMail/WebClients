@@ -51,7 +51,7 @@ function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
         return _.map(attachments, ({ attachment, data }) => {
             const attachmentName = JSON.stringify(attachment.Name);
             const entity = mimemessage.factory({
-                contentType: `${attachment.MIMEType}; name=${attachmentName};`,
+                contentType: `${attachment.MIMEType}; name=${attachmentName}`,
                 contentTransferEncoding: 'base64',
                 body: wraplines(arrayToBase64(data))
             });
@@ -63,7 +63,7 @@ function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
 
             _.each(headers, (value, key) => {
                 if (key === 'content-type' || key === 'content-disposition') {
-                    return entity.header(key, `${value}; filename=${attachmentName}; name=${attachmentName};`);
+                    return entity.header(key, `${value}; filename=${attachmentName}; name=${attachmentName}`);
                 }
 
                 entity.header(key, value);
