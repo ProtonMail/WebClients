@@ -316,7 +316,6 @@ function actionConversation(
                     Conversation: {
                         ID,
                         ContextNumUnread,
-                        Selected: false,
                         LabelIDsAdded,
                         LabelIDsRemoved
                     }
