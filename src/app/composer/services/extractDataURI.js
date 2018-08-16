@@ -1,4 +1,5 @@
 import { flow, map, filter } from 'lodash/fp';
+import { escapeSrc, unescapeSrc } from '../../../helpers/domHelper';
 
 import { MIME_TYPES } from '../../constants';
 
@@ -36,7 +37,7 @@ function extractDataURI(attachmentModel, embedded) {
         const content = message.getDecryptedBody();
         const testDiv = document.createElement('DIV');
 
-        testDiv.innerHTML = content;
+        testDiv.innerHTML = escapeSrc(content);
 
         const images = testDiv.querySelectorAll('img');
 
@@ -66,7 +67,7 @@ function extractDataURI(attachmentModel, embedded) {
 
         await Promise.all(promises);
 
-        message.setDecryptedBody(testDiv.innerHTML);
+        message.setDecryptedBody(unescapeSrc(testDiv.innerHTML));
         return message;
     }
 
