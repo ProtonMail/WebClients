@@ -116,6 +116,10 @@ function squireToolbar(editorState, editorModel) {
                             parent.dataset.squirePreventClose !== undefined)
                 );
             const clickAnywhereClose = ({ target }) => {
+                // Special case for Safari. It generates a random click event on the BODY. Ignore those.
+                if (target.tagName === 'BODY') {
+                    return;
+                }
                 if (target.dataset.squireActions || isInsidePopup(target)) {
                     return;
                 }
