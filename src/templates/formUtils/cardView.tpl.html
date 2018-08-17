@@ -3,7 +3,7 @@
         <label for="fullname" translate translate-context="Label">Name on card</label>
         <div class="input-icon">
             <i class="fa fa-user"></i>
-            <input type="text" autofocus id="fullname" name="fullname" ng-model="card.fullname" placeholder="Thomas Anderson" required />
+            <input type="text" autofocus id="fullname" name="fullname" ng-model="card.fullname" placeholder-translate-context="Example user" placeholder-translate="Thomas Anderson" required />
             <div ng-messages="form.fullname.$error">
                 <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
             </div>

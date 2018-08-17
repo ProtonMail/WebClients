@@ -1,22 +1,26 @@
 <div class="composerAskEmbdded-container">
 
     <div class="composerAskEmbdded-details">
-        <button type="button" data-action="cancel" class=" composerAskEmbdded-btn-cancel">cancel <i class="fa fa-close"></i></button>
-        <h4 class="composerAskEmbdded-title">No images detected</h4>
+        <button type="button" data-action="cancel" class=" composerAskEmbdded-btn-cancel" translate translate-context="Action">Cancel <i class="fa fa-close"></i></button>
+        <h4 class="composerAskEmbdded-title" translate translate-context="Composer, Attachment">No images detected</h4>
         <div class="mobile-display-column">
-            <span>Insert images</span>
+            <span translate translate-context="Composer, Attachment">Insert images</span>
             <button
                 type="button"
                 class="pm_button primary composerAskEmbdded-btn-attachment"
                 data-action="attachment"
+                translate
+                translate-context="Composer, Attachment"
                 pt-tooltip-translate-context="Composer Tooltip"
                 pt-tooltip-translate="Attachments"
                 pt-placement="top">as attachment</button>
-                <span>or</span>
+                <span translate translate-context="Composer, Attachment">or</span>
             <button
                 type="button"
                 class="pm_button primary composerAskEmbdded-btn-inline"
                 data-action="inline"
+                translate
+                translate-context="Composer, Attachment"
                 pt-tooltip-translate-context="Composer Tooltip"
                 pt-tooltip-translate="inline image"
                 pt-placement="top">inline</button>
