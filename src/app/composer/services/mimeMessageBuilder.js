@@ -58,18 +58,18 @@ function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
                 extractContentValue(attachment.Headers['content-disposition']) || 'attachment';
             const entity = mimemessage.factory({
                 contentType: `${contentTypeValue}; filename=${attachmentName}; name=${attachmentName}`,
-                contentDisposition: `${contentDispositionValue}; filename=${attachmentName}; name=${attachmentName}`,
                 contentTransferEncoding: 'base64',
                 body: wraplines(arrayToBase64(data))
             });
 
-            _.each(attachment.Headers, (value, key) => {
-                if (key === 'content-type' || key === 'content-disposition') {
-                    return;
-                }
+            entity.header(
+                'content-disposition',
+                `${contentDispositionValue}; filename=${attachmentName}; name=${attachmentName}`
+            );
 
-                entity.header(key, value);
-            });
+            if (attachment.Headers['content-id']) {
+                entity.header('content-id', attachment.Headers['content-id']);
+            }
 
             return entity;
         });
