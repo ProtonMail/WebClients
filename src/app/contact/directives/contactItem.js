@@ -1,5 +1,5 @@
-import _ from 'lodash';
 import { normalizeEmail } from '../../../helpers/string';
+import { isOwnAddress } from '../../../helpers/address';
 
 /* @ngInject */
 function contactItem(
@@ -178,8 +178,12 @@ function contactItem(
                 return '';
             };
 
-            scope.isOwnAddress = (email) =>
-                _.map(addressesModel.get(), 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
+            scope.isOwnAddress = (email) => {
+                const address = addressesModel.getByEmail(email);
+                const keys = keyCache.getUserAddressesKeys(address);
+
+                return isOwnAddress(address, keys);
+            };
 
             scope.change = () =>
                 scope.$applyAsync(() => {

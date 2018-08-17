@@ -1,3 +1,5 @@
+import { normalizeEmail } from '../../../helpers/string';
+
 /* @ngInject */
 function messageResign(contactEmails, Contact, dispatchers, networkActivityTracker, gettextCatalog, notification) {
     const I18N = {
@@ -10,7 +12,6 @@ function messageResign(contactEmails, Contact, dispatchers, networkActivityTrack
         templateUrl: require('../../../templates/message/messageResign.tpl.html'),
         link(scope, el) {
             const { dispatcher } = dispatchers(['contacts']);
-            const normalizeEmail = (email) => email.toLowerCase();
             const resign = () => {
                 const normalizedEmail = normalizeEmail(scope.message.SenderAddress);
                 const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);

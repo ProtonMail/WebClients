@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { SEND_TYPES, VERIFICATION_STATUS, EMAIL_FORMATING, KEY_FLAGS } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
+import { normalizeEmail } from '../../../helpers/string';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -23,7 +24,6 @@ function attachedPublicKey(
     Contact,
     networkActivityTracker
 ) {
-    const normalizeEmail = (email) => email.toLowerCase();
     const asDataUri = (publicKey) => {
         const data = pmcw.stripArmor(publicKey);
         return 'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
@@ -335,7 +335,8 @@ function attachedPublicKey(
     return {
         extractAddresses,
         extractFromEmail,
-        attachPublicKey
+        attachPublicKey,
+        createContactWithKey
     };
 }
 export default attachedPublicKey;

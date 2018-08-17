@@ -1,6 +1,9 @@
 import _ from 'lodash';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
+import { normalizeEmail } from '../../../helpers/string';
+
+const DEFAULT_CONTACT_GROUP = 'item1';
 
 /* @ngInject */
 function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal, gettextCatalog) {
@@ -26,12 +29,39 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
                 'Warning'
             ) + LEARN_MORE
     };
-    const normalizeEmail = (email) => email.toLowerCase();
 
-    const pinPrimaryKeys = (emails, keys) => {
+    /**
+     * Create default contact if contactEmail doesn't exist
+     * @param {Array} emails
+     * @return {Promise}
+     */
+    const createDefaultContacts = (emails) => {
+        return Promise.all(
+            emails.map((email) => {
+                const normalizedEmail = normalizeEmail(email);
+                const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
+
+                if (!contactEmail) {
+                    /* eslint new-cap: "off" */
+                    const card = new vCard();
+
+                    card.set('fn', normalizedEmail);
+                    card.set('email', normalizedEmail, { group: DEFAULT_CONTACT_GROUP });
+
+                    return Contact.add([{ vCard: card }]);
+                }
+
+                return Promise.resolve();
+            })
+        );
+    };
+
+    const pinPrimaryKeys = async (emails, keys) => {
+        await createDefaultContacts(emails);
         const contactIds = emails.reduce((acc, email) => {
             const normalizedEmail = normalizeEmail(email);
             const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
+
             if (!_.has(acc, contactEmail.ContactID)) {
                 acc[contactEmail.ContactID] = [];
             }
@@ -46,8 +76,9 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
                         const emailList = toList(contact.vCard.get('email'));
                         const group = getGroup(emailList, normalizedEmail);
                         const data = pmcw.stripArmor(keys[email].Keys[0].PublicKey);
-                        const base64 =
-                            'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
+                        const base64 = `data:application/pgp-keys;base64,${pmcw.encode_base64(
+                            pmcw.arrayToBinaryString(data)
+                        )}`;
                         contact.vCard.add('key', base64, { group });
                     });
                     return Contact.update(contact);

@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { CONTACT_ERROR, TIME, KEY_FLAGS } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
+import { normalizeEmail } from '../../../helpers/string';
 
 /* @ngInject */
 function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmails, Contact, contactKey) {
@@ -10,7 +11,6 @@ function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmai
     const CACHE_TIMEOUT = TIME.HOUR;
     const usesDefaults = (contactEmail) => !contactEmail || contactEmail.Defaults;
     const { on } = dispatchers();
-    const normalizeEmail = (email) => email.toLowerCase();
 
     /**
      * Retrieve the public keys of a email address from cache. This returns either a map from email -> public keys
@@ -94,7 +94,6 @@ function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmai
      * @return {Promise} A promise returning a map from email to a list of armored keys.
      */
     const fromApi = async (email) => {
-        _.map(addressesModel.get(), 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
         const normEmail = email.toLowerCase();
         // fetch keys from contacts and from api
         // we don't support key pinning on own addresses.

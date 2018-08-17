@@ -10,36 +10,6 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
     const CACHE = {};
 
     /**
-     * Tries to get the user keys from the local user. Will return the user keys in the `/keys` format if the email
-     * is a local email address. Otherwise it returns null
-     * @param email
-     * @return Object keys { RecipientType: number, MIMEType: string, Keys: list }
-     */
-    const getUserAddressesKeys = (email) => {
-        const addresses = addressesModel.get();
-        const address = addresses.find(({ Email }) => Email === email);
-        // Not our address: return undefined
-        if (!address) {
-            return;
-        }
-        const { Receive, Keys: addressKeys } = address;
-
-        const keys = addressKeys.map(({ PublicKey, decrypted }) => {
-            return {
-                Send: decrypted && Receive,
-                PublicKey
-            };
-        });
-
-        // Do not save in the cache: we use the addressesModel cache instead.
-        return {
-            RecipientType: Receive ? RECIPIENT_TYPE.TYPE_INTERNAL : RECIPIENT_TYPE.TYPE_NO_RECEIVE,
-            MIMEType: mailSettingsModel.get('ReceiveMIMEType'),
-            Keys: keys
-        };
-    };
-
-    /**
      * Get the keys for an email address from the API.
      * @param {String} email
      * @returns {Promise<{RecipientType, MIMEType, Keys}>}
@@ -65,18 +35,50 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
     };
 
     /**
+     * Tries to get the user keys from the local user.
+     * Will return the user keys in the `/keys` format if the email is a local email address.
+     * Otherwise it returns null
+     * @param {Object} address
+     * @return {Object} keys { RecipientType: number, MIMEType: string, Keys: list }
+     */
+    const getUserAddressesKeys = (address) => {
+        // Not our address: return undefined
+        if (!address) {
+            return;
+        }
+
+        const { Receive, Keys: addressKeys = [] } = address;
+        const Keys = addressKeys.map(({ PublicKey, decrypted }) => {
+            return {
+                Send: decrypted && Receive,
+                PublicKey
+            };
+        });
+
+        // Do not save in the cache: we use the addressesModel cache instead.
+        return {
+            RecipientType: Receive ? RECIPIENT_TYPE.TYPE_INTERNAL : RECIPIENT_TYPE.TYPE_NO_RECEIVE,
+            MIMEType: mailSettingsModel.get('ReceiveMIMEType'),
+            Keys
+        };
+    };
+
+    /**
      * Get keys for an email address.
      * Either use the cached data, cached http request, or make a new http request.
      * @param {String} email
      * @returns {Promise<{RecipientType, MIMEType, Keys}>}
      */
     const getKeysPerEmail = async (email) => {
-        const keys = getUserAddressesKeys(email);
-        if (keys) {
+        const address = addressesModel.getByEmail(email) || {};
+        const keys = getUserAddressesKeys(address);
+
+        if (address.Receive && keys) {
             return keys;
         }
 
         const { data: cachedData, time: cachedTime = 0, promise: cachedPromise } = CACHE[email] || {};
+
         if (cachedData && cachedTime + TIMEOUT > Date.now()) {
             return cachedData;
         }
@@ -128,7 +130,7 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
         return result.RecipientType === RECIPIENT_TYPE.TYPE_NO_RECEIVE;
     };
 
-    return { get, getKeysPerEmail, isInvalid };
+    return { get, getKeysPerEmail, isInvalid, getUserAddressesKeys };
 }
 
 export default keyCache;

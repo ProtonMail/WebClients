@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import { ADDRESS_TYPE } from '../../constants';
 import updateCollection from '../../utils/helpers/updateCollection';
+import { removeEmailAlias } from '../../../helpers/string';
 
 const { PREMIUM } = ADDRESS_TYPE;
 
@@ -91,7 +92,7 @@ function addressesModel(Address, authentication, dispatchers, formatKeys) {
 
     const get = () => getByUser();
     const clear = () => (CACHE = {});
-    const hasPmMe = () => _.find(CACHE[authentication.user.ID], { Type: PREMIUM });
+    const hasPmMe = (user = authentication.user) => _.find(CACHE[user.ID], { Type: PREMIUM });
 
     /**
      * Update addresses from events
@@ -101,6 +102,16 @@ function addressesModel(Address, authentication, dispatchers, formatKeys) {
     const update = (events = []) => {
         const { collection } = updateCollection(CACHE[authentication.user.ID], events, 'Address');
         return set(collection);
+    };
+
+    /**
+     * Get address from email
+     * Remove + alias and transform to lower case
+     * @param {String} email
+     * @param {Object} user optional
+     */
+    const getByEmail = (email = '', user = authentication.user) => {
+        return _.find(CACHE[user.ID], { Email: removeEmailAlias(email) });
     };
 
     /**
@@ -124,6 +135,7 @@ function addressesModel(Address, authentication, dispatchers, formatKeys) {
         get,
         getFirst,
         getByUser,
+        getByEmail,
         getByID,
         getActive,
         set,
