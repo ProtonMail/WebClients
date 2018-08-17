@@ -3,7 +3,6 @@ import _ from 'lodash';
 /* @ngInject */
 function identitySection(
     addressesModel,
-    authentication,
     editorModel,
     gettextCatalog,
     notification,
@@ -44,8 +43,10 @@ function identitySection(
                 scope.address = { DisplayName, Signature: signature };
             };
 
-            const updateAddresses = (addresses = addressesModel.get()) => {
-                CACHE.addresses = addresses.slice();
+            const updateAddresses = () => {
+                const { active = [] } = addressesModel.getActive(undefined, { Send: 1 });
+
+                CACHE.addresses = active.slice();
                 el[0].classList[CACHE.addresses.length > 1 ? 'add' : 'remove'](MULTIPLE_ADDRESS_CLASS);
             };
 
@@ -75,9 +76,9 @@ function identitySection(
                 }
             });
 
-            on('addressesModel', (e, { type = '', data = {} }) => {
+            on('addressesModel', (e, { type = '' }) => {
                 if (type === 'addresses.updated') {
-                    updateAddresses(data.addresses);
+                    updateAddresses();
                 }
             });
 

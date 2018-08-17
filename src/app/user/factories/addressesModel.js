@@ -103,6 +103,20 @@ function addressesModel(Address, authentication, dispatchers, formatKeys) {
         return set(collection);
     };
 
+    /**
+     * Get active / disabled addresses
+     * @param {User} user
+     * @param {Object} params to extend criteria
+     * @return {Object} { active: [], disabled: [] }
+     */
+    const getActive = (user = authentication.user, params = {}) => {
+        const addresses = CACHE[user.ID];
+        const active = _.filter(addresses, { Status: 1, Receive: 1, ...params });
+        const disabled = _.difference(addresses, active);
+
+        return { active, disabled };
+    };
+
     on('logout', () => clear());
 
     return {
@@ -111,6 +125,7 @@ function addressesModel(Address, authentication, dispatchers, formatKeys) {
         getFirst,
         getByUser,
         getByID,
+        getActive,
         set,
         update,
         hasPmMe

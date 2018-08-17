@@ -1,12 +1,12 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function addressesSelector(addressesModel, dispatchers) {
-    const buildOptions = () =>
-        _.map(
-            addressesModel.get(),
+    const buildOptions = () => {
+        const { active = [] } = addressesModel.getActive(undefined, { Send: 1 });
+        return active.map(
             ({ ID = '', Email = '' }) => `<option class="addressesSelector-option" value="${ID}">${Email}</option>`
         );
+    };
+
     return {
         scope: {},
         replace: true,
