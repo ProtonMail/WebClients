@@ -157,7 +157,8 @@
                                                     data-action="exportKey"
                                                     data-address-id="{{ address.addressID }}"
                                                     data-key-index="{{ $index }}"
-                                                    translate-context="Action">
+                                                    translate-context="Action"
+                                                    translate>
                                                 Export
                                             </button><a
                                                 class="pm_buttons pm_button pm_trigger fa fa-angle-down"
@@ -170,7 +171,8 @@
                                                         data-action="exportKey"
                                                         data-address-id="{{ address.addressID }}"
                                                         data-key-index="{{ $index }}"
-                                                        translate-context="Action">
+                                                        translate-context="Action"
+                                                        translate>
                                                     Export
                                                 </button>
                                                 <button type="button"
@@ -191,7 +193,8 @@
                                                         data-address-id="{{ address.addressID }}"
                                                         ng-if="!$first && key.Flags > 1 && address.status !== 0"
                                                         data-key-index="{{ $index }}"
-                                                        translate-context="Action" translate>
+                                                        translate-context="Action"
+                                                        translate>
                                                     Mark obsolete
                                                 </button>
                                                 <button type="button"
@@ -203,7 +206,8 @@
                                                         data-address-id="{{ address.addressID }}"
                                                         data-key-index="{{ $index }}"
                                                         ng-if="!$first && key.Flags !== 0"
-                                                        translate-context="Action" translate>
+                                                        translate-context="Action"
+                                                        translate>
                                                     Mark compromised
                                                 </button>
                                                 <button type="button"
