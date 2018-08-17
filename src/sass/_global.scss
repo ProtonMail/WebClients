@@ -214,3 +214,9 @@ html.protonmail {
 		&:-ms-input-placeholder { color: rgba(255,255,255,.75) }
 	}
 }
+
+input,
+textarea,
+select {
+    background: $white;
+}
