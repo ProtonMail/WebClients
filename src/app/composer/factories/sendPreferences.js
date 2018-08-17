@@ -2,6 +2,8 @@ import _ from 'lodash';
 import { RECIPIENT_TYPE, PACKAGE_TYPE, CONTACT_ERROR, KEY_FLAGS } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup, groupMatcher } from '../../../helpers/vcard';
+import { normalizeEmail } from '../../../helpers/string';
+import { isOwnAddress, isFallbackAddress } from '../../../helpers/address';
 
 /* @ngInject */
 function sendPreferences(
@@ -17,7 +19,6 @@ function sendPreferences(
     // We cache all the information coming from the Contacts, so we can avoid accessing the contacts multiple times.
     const CACHE = {};
     const { on } = dispatchers();
-    const normalizeEmail = (email) => email.toLowerCase();
     const usesDefaults = (contactEmail) => !contactEmail || contactEmail.Defaults;
 
     const isInternalUser = async (email) => {
@@ -26,11 +27,6 @@ function sendPreferences(
             [normalizedEmail]: { RecipientType }
         } = await keyCache.get([normalizedEmail]);
         return RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
-    };
-
-    const isOwnAddress = (email) => {
-        const normalizedEmail = normalizeEmail(email);
-        return addressesModel.get().some(({ Email }) => Email === normalizedEmail);
     };
 
     const toSchemeConstant = (value) => {
@@ -81,15 +77,18 @@ function sendPreferences(
         const isInternal = await isInternalUser(email);
         const settingsScheme = mailSettingsModel.get('PGPScheme');
         const settingsMime = settingsScheme === PACKAGE_TYPE.SEND_PGP_MIME ? 'multipart/mixed' : 'text/plain';
-        const ownAddress = isOwnAddress(email);
+        const address = addressesModel.getByEmail(email);
+        const ownAddress = isOwnAddress(address, Keys);
 
         if (isInternal && Keys.length) {
+            const fallbackAddress = isFallbackAddress(address, Keys);
+
             return {
                 encrypt: true,
                 sign: true,
                 mimetype: defaultMimeType,
                 publickeys: pmcw.getKeys(Keys[0].PublicKey),
-                primaryPinned: true,
+                primaryPinned: !fallbackAddress,
                 scheme: PACKAGE_TYPE.SEND_PM,
                 pinned: ownAddress,
                 ownAddress,
@@ -139,9 +138,10 @@ function sendPreferences(
      * @param Keys
      * @returns {boolean}
      */
-    const isPrimaryPinned = (base64Keys, { Keys }) => {
+    const isPrimaryPinned = (base64Keys, { Keys }, email) => {
         if (base64Keys.length === 0) {
-            return true;
+            const address = addressesModel.getByEmail(email);
+            return isFallbackAddress(address, Keys);
         }
 
         const sendKeys = _.map(Keys.filter(encryptionEnabled), 'PublicKey');
@@ -169,18 +169,20 @@ function sendPreferences(
      * @param defaultMimeType
      * @param eoEnabled
      * @param globalSign
-     * @returns {{}}
+     * @param {String} email
+     * @returns {Object}
      */
     const extractInfo = async (
         { encryptFlag, signFlag, mimetype, emailKeys, scheme, isVerified },
         keyData,
         defaultMimeType,
         eoEnabled,
-        globalSign
+        globalSign,
+        email
     ) => {
         const info = {};
         const isInternal = keyData.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
-        const primaryPinned = isInternal ? isPrimaryPinned(emailKeys, keyData) : true;
+        const primaryPinned = isInternal ? isPrimaryPinned(emailKeys, keyData, email) : true;
         const pmKey = isInternal ? pmcw.getKeys(keyData.Keys[0].PublicKey) : [];
         // In case the pgp packet list contains multiple keys, only the first one is taken.
         const keyObjs = await Promise.all(
@@ -299,7 +301,7 @@ function sendPreferences(
         CACHE.EXTRACTED_INFO[contactEmail.ContactID] = CACHE[contactEmail.ContactID] || {};
         CACHE.EXTRACTED_INFO[contactEmail.ContactID][normalizedEmail] = data;
 
-        return { [email]: await extractInfo(data, keyData, defaultMimeType, eoEnabled, globalSign) };
+        return { [email]: await extractInfo(data, keyData, defaultMimeType, eoEnabled, globalSign, email) };
     };
 
     /**
@@ -331,7 +333,8 @@ function sendPreferences(
                 keyData,
                 defaultMimeType,
                 eoEnabled,
-                globalSign
+                globalSign,
+                email
             )
         };
     };
@@ -350,14 +353,18 @@ function sendPreferences(
     };
 
     const getInfo = (email, keyData, defaultMimeType, eoEnabled, globalSign) => {
-        if (isOwnAddress(email)) {
+        const address = addressesModel.getByEmail(email);
+
+        if (isOwnAddress(address, keyData.Keys)) {
             return getDefaultInfo(email, keyData, defaultMimeType, eoEnabled, globalSign).then((info) => ({
                 [email]: info
             }));
         }
+
         if (inCache([email])) {
             return getCacheInfo(email, keyData, defaultMimeType, eoEnabled, globalSign);
         }
+
         return getApiInfo(email, keyData, defaultMimeType, eoEnabled, globalSign);
     };
 

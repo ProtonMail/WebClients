@@ -11,7 +11,6 @@ const { PLAINTEXT, DEFAULT } = MIME_TYPES;
 
 /* @ngInject */
 function messageModel(
-    $q,
     $timeout,
     dispatchers,
     embeddedUtils,

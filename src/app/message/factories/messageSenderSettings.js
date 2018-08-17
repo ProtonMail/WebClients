@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import { toList } from '../../../helpers/arrayHelper';
 import { CONTACT_ERROR, SEND_TYPES } from '../../constants';
+import { normalizeEmail } from '../../../helpers/string';
 
 /* @ngInject */
 function messageSenderSettings(
@@ -56,7 +57,6 @@ function messageSenderSettings(
     };
 
     const showSettings = (scope) => {
-        const normalizeEmail = (email) => email.toLowerCase();
         const normalizedEmail = normalizeEmail(scope.message.SenderAddress);
         const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
 
