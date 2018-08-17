@@ -16,7 +16,7 @@ function SignaturesController(
     const { on, unsubscribe } = dispatchers();
 
     $scope.isSubUser = authentication.user.subuser;
-    const { active, disabled } = addressModel.getActive();
+    const { active, disabled } = addressesModel.getActive();
     $scope.activeAddresses = active;
     $scope.disabledAddresses = disabled;
     $scope.itemMoved = false;
@@ -62,7 +62,7 @@ function SignaturesController(
     on('updateUser', () => {
         if ($scope.itemMoved === false) {
             $scope.$applyAsync(() => {
-                const { active, disabled } = addressModel.getActive();
+                const { active, disabled } = addressesModel.getActive();
                 $scope.activeAddresses = active;
                 $scope.disabledAddresses = disabled;
             });
@@ -83,7 +83,7 @@ function SignaturesController(
     on('addressModel', (e, { type }) => {
         if (type === 'generateKey.success') {
             $scope.$applyAsync(() => {
-                const { active, disabled } = addressModel.getActive();
+                const { active, disabled } = addressesModel.getActive();
                 $scope.activeAddresses = active;
                 $scope.disabledAddresses = disabled;
             });

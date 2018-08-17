@@ -1,15 +1,5 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function addressesSection(addressModel, addressesModel, dispatchers, userType) {
-    const getAddresses = () => {
-        const { active, disabled } = addressModel.getActive();
-
-        disabled.push(..._.filter(active, { Send: 0 }));
-
-        return { active: _.filter(active, { Send: 1 }), disabled };
-    };
-
     return {
         scope: {},
         replace: true,
@@ -19,7 +9,7 @@ function addressesSection(addressModel, addressesModel, dispatchers, userType) {
             const { on, unsubscribe } = dispatchers();
             const updateAddresses = () => {
                 scope.$applyAsync(() => {
-                    const { active, disabled } = getAddresses();
+                    const { active, disabled } = addressesModel.getActive(undefined, { Send: 1 });
 
                     scope.activeAddresses = active;
                     scope.disabledAddresses = disabled;

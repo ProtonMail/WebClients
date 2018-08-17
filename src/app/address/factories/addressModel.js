@@ -16,7 +16,6 @@ function addressModel(
     domainModel,
     memberModel,
     addressModal,
-    signatureModel,
     membersValidator,
     memberModal,
     eventManager,
@@ -277,17 +276,8 @@ function addressModel(
         networkActivityTracker.track(promise);
     };
 
-    const getActive = () => {
-        const addresses = _.sortBy(addressesModel.get(), 'Order');
-        const active = _.filter(addresses, { Status: 1, Receive: 1 });
-        const disabled = _.difference(addresses, active);
-
-        return { active, disabled };
-    };
-
     const makeDefault = (address) => {
-        const { active, disabled } = getActive();
-        const addresses = [].concat(active, disabled);
+        const addresses = addressesModel.get();
         const index = _.findIndex(addresses, { ID: address.ID });
 
         addresses.splice(index, 1);
@@ -304,7 +294,6 @@ function addressModel(
         enable,
         generate,
         setup,
-        getActive,
         makeDefault,
         remove,
         saveOrder
