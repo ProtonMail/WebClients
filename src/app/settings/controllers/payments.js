@@ -6,10 +6,10 @@ function PaymentsController(
     $scope,
     $state,
     gettextCatalog,
-    $q,
     authentication,
     cardModal,
     customizeInvoiceModal,
+    dispatchers,
     payModal,
     confirmModal,
     invoices,
@@ -21,21 +21,23 @@ function PaymentsController(
     Payment,
     paymentModel
 ) {
-    $scope.methods = methods;
-    $scope.subscribed = authentication.user.Subscribed;
-    $scope.invoices = invoices.data.Invoices;
-    $scope.total = invoices.data.Total;
-    $scope.delinquent = authentication.user.Delinquent >= UNPAID_STATE.DELINQUENT;
-    $scope.invoiceOwner = 0;
-    $scope.role = authentication.user.Role;
+    const { on, unsubscribe } = dispatchers();
 
-    $scope.$on('updateUser', () => {
+    const updateUser = () => {
         $scope.subscribed = authentication.user.Subscribed;
         $scope.delinquent = authentication.user.Delinquent >= UNPAID_STATE.DELINQUENT;
+        $scope.role = authentication.user.Role;
+    };
 
-        if (authentication.user.Role !== $scope.role) {
-            $state.go('secured.payments');
-        }
+    $scope.methods = methods;
+    $scope.invoiceOwner = 0;
+    $scope.invoices = invoices.data.Invoices;
+    $scope.total = invoices.data.Total;
+
+    on('updateUser', () => {
+        $scope.$applyAsync(() => {
+            updateUser();
+        });
     });
 
     $scope.changeInvoices = (owner) => {
@@ -174,7 +176,7 @@ function PaymentsController(
         };
 
         networkActivityTracker.track(
-            $q.all(promises).then((result) => {
+            Promise.all(promises).then((result) => {
                 const methods = result.methods.data.PaymentMethods;
                 const status = result.status.data;
 
@@ -203,5 +205,11 @@ function PaymentsController(
             })
         );
     };
+
+    updateUser();
+
+    $scope.$on('$destroy', () => {
+        unsubscribe();
+    });
 }
 export default PaymentsController;

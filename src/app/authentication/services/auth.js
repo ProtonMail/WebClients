@@ -499,7 +499,6 @@ function authentication(
 
                     $rootScope.isLoggedIn = true;
                     this.user = user;
-                    $rootScope.user = user;
 
                     const plainMailboxPass = tempStorage.getItem('plainMailboxPass');
                     tempStorage.removeItem('plainMailboxPass');
