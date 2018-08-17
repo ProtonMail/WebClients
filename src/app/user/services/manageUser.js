@@ -83,7 +83,6 @@ function manageUser(
         });
 
         await upgradeAddresses(user, keys, dirtyAddresses);
-        _.extend($rootScope.user, authentication.user);
         dispatcher.updateUser();
     };
 

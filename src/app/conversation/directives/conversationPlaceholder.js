@@ -1,20 +1,28 @@
 /* @ngInject */
-const conversationPlaceholder = (AppModel, dispatchers) => ({
+const conversationPlaceholder = (AppModel, authentication, dispatchers) => ({
     replace: true,
     templateUrl: require('../../../templates/partials/conversation-placeholder.tpl.html'),
     link(scope) {
         const { on, unsubscribe } = dispatchers();
-        const update = (value = false) => (scope.showWelcome = value);
+        const updateWelcome = (value = false) => (scope.showWelcome = value);
+        const updateUser = () => (scope.user = angular.copy(authentication.user));
 
         on('AppModel', (event, { type, data = {} }) => {
             if (type === 'showWelcome') {
                 scope.$applyAsync(() => {
-                    update(data.value);
+                    updateWelcome(data.value);
                 });
             }
         });
 
-        update(AppModel.get('showWelcome'));
+        on('updateUser', () => {
+            scope.$applyAsync(() => {
+                updateUser();
+            });
+        });
+
+        updateWelcome(AppModel.get('showWelcome'));
+        updateUser();
 
         scope.$on('$destroy', () => {
             unsubscribe();
