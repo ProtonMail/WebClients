@@ -47,8 +47,8 @@ function LabelsController(
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
         orderChanged() {
-            const order = _.map($scope.labels, 'ID');
-            $scope.saveLabelOrder(order);
+            const newOrder = _.map($scope.labels, 'ID');
+            $scope.saveLabelOrder(newOrder);
         }
     };
 
@@ -105,7 +105,8 @@ function LabelsController(
 
     $scope.sortLabels = () => {
         $scope.labels = labelsModel.sort();
-        $scope.saveLabelOrder(_.map($scope.labels, 'ID'));
+        const newOrder = _.map($scope.labels, 'ID');
+        $scope.saveLabelOrder(newOrder);
     };
 
     function getTitleDeleteLabel({ Exclusive }) {
@@ -161,7 +162,9 @@ function LabelsController(
     };
 
     $scope.saveLabelOrder = (LabelIDs) => {
-        const promise = Label.order({ LabelIDs })
+        // why uniq is required: 'as-sortable' has a bug when we update the list and if the user DnD in the same time (#7345)
+        // uniq avoid API error but not this kind of error: "Duplicates in a repeater are not allowed. Use 'track by' expression to specify unique keys."
+        const promise = Label.order({ LabelIDs: _.uniq(LabelIDs) })
             .then(eventManager.call)
             .then(() => {
                 notification.success(gettextCatalog.getString('Label order saved', null));
