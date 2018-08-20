@@ -544,7 +544,7 @@ export default angular
                 views: {
                     'main@': {
                         templateUrl: require('../templates/views/pgp.tpl.html'),
-                        controller($scope, $rootScope, messageID, downloadFile) {
+                        controller($scope, messageID, downloadFile) {
                             function viewPgp(event) {
                                 $scope.$applyAsync(() => {
                                     $scope.content = event.data;
@@ -592,7 +592,7 @@ export default angular
                 views: {
                     'main@': {
                         templateUrl: require('../templates/views/message.print.tpl.html'),
-                        controller($scope, $rootScope, $sce, messageID) {
+                        controller($scope, $sce, messageID) {
                             $scope.loading = true;
 
                             if (window.opener) {
@@ -607,6 +607,7 @@ export default angular
                                 const message = JSON.parse(event.data);
 
                                 if (message.ID === messageID) {
+                                    document.title = message.Subject || message.ID;
                                     $scope.$applyAsync(() => {
                                         $scope.content = $sce.trustAsHtml(message.content);
                                         $scope.message = message;
