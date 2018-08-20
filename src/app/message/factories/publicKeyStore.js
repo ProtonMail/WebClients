@@ -85,19 +85,19 @@ function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmai
         return [contactEmail.ContactID, publicKeys];
     };
 
-    const isOwnAddress = (email) =>
-        _.map(addressesModel.get(), 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
-
     /**
      * Retrieves the pinned keys from the ProtonMail API
      * @param email The mail for which to return the pinned keys
      * @return {Promise} A promise returning a map from email to a list of armored keys.
      */
     const fromApi = async (email) => {
-        const normEmail = email.toLowerCase();
+        const normEmail = normalizeEmail(email);
+
+        const address = addressesModel.getByEmail(email);
+
         // fetch keys from contacts and from api
         // we don't support key pinning on own addresses.
-        if (!isOwnAddress(normEmail)) {
+        if (!address) {
             const contactResult = await fromContacts(normEmail);
             if (contactResult) {
                 const [contactID, contactKeyList] = contactResult;
@@ -111,7 +111,8 @@ function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmai
             // only verify with pinned keys.
             return { [email]: [] };
         }
-        const { Keys } = addressesModel.get().find(({ Email }) => Email === email);
+
+        const { Keys } = address;
 
         const pubKeys = Keys.reduce((acc, { PrivateKey, Flags }) => {
             const [k] = pmcw.getKeys(PrivateKey);

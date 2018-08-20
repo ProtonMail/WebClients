@@ -111,7 +111,8 @@ function addressesModel(Address, authentication, dispatchers, formatKeys) {
      * @param {Object} user optional
      */
     const getByEmail = (email = '', user = authentication.user) => {
-        return _.find(CACHE[user.ID], { Email: removeEmailAlias(email) });
+        const addresses = CACHE[user.ID] || [];
+        return addresses.find(({ Email }) => removeEmailAlias(Email) === removeEmailAlias(email));
     };
 
     /**
