@@ -1,7 +1,8 @@
 import _ from 'lodash';
+import transformEscape from '../helpers/transformEscape';
 
 /* @ngInject */
-function prepareContent($injector, transformAttachements, transformRemote, transformEscape, transformEmbedded) {
+function prepareContent($injector, transformAttachements, transformRemote, transformEmbedded) {
     const filters = [
         'transformLinks',
         'transformEmbedded',
@@ -26,7 +27,7 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
         return filters.filter(({ name }) => !blacklist.includes(name));
     };
 
-    function createParser(content, message, { isBlacklisted = false, action }) {
+    function createParser(content, { isBlacklisted = false, action }) {
         const div = document.createElement('div');
 
         if (isBlacklisted) {
@@ -35,7 +36,7 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
         }
 
         // Escape All the things !
-        return transformEscape(div, message, {
+        return transformEscape(div, {
             action,
             content,
             isDocument: typeof content !== 'string'
@@ -51,7 +52,7 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
 
     return (content, message, { blacklist = [], action } = {}) => {
         const transformers = getTransformers(blacklist);
-        const div = createParser(content, message, {
+        const div = createParser(content, {
             action,
             isBlacklisted: _.includes(blacklist, 'transformRemote')
         });

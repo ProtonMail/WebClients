@@ -1,8 +1,8 @@
-import service from '../../../../src/app/message/services/transformEscape';
+import transformEscape from '../../../../src/app/message/helpers/transformEscape';
 
-describe('transformEscape service', () => {
+describe('transformEscape', () => {
     let getAttribute;
-    const factory = service();
+
     const USER_INJECT = 'user.inject';
     const DOM = `<section>
     <svg width="5cm" height="4cm" version="1.1"
@@ -40,11 +40,11 @@ describe('transformEscape service', () => {
   <a href="http://www.google.nl/?url=a"></a>
   <a href="http://www.google.nl/?src=a&srcset=dew"></a>
 </div>`;
-    const CODE_HTML = `<pre><code><img src="polo.fr"></code></pre>`;
-    const CODE_HTML_ESCAPED = `<pre><code><img proton-src="polo.fr"></code></pre>`;
-    const CODE_TEXT = `<pre><code>{ background: url('monique.jpg') }</code></pre>`;
-    const TEXT = `<p>salut monique est ceque tu as un src="lol" dans la poche ?</p><span>src=</span>`;
-    const EDGE_CASE = `<div id="ymail_android_signature"><a href="https://overview.mail.yahoo.com/mobile/?.src=Android">Sent from Yahoo Mail on Android</a></div>`;
+    const CODE_HTML = '<pre><code><img src="polo.fr"></code></pre>';
+    const CODE_HTML_ESCAPED = '<pre><code><img proton-src="polo.fr"></code></pre>';
+    const CODE_TEXT = '<pre><code>{ background: url(\'monique.jpg\') }</code></pre>';
+    const TEXT = '<p>salut monique est ceque tu as un src="lol" dans la poche ?</p><span>src=</span>';
+    const EDGE_CASE = '<div id="ymail_android_signature"><a href="https://overview.mail.yahoo.com/mobile/?.src=Android">Sent from Yahoo Mail on Android</a></div>';
     const EDGE_CASE_2 = `
         webEngineView->setUrl("
         <span>webEngineView->setUrl("</span>
@@ -52,8 +52,8 @@ describe('transformEscape service', () => {
         <pre>webEngineView->setUrl("</pre>
         <code>webEngineView->setUrl(".</code>`;
 
-    const EX_URL = `<div style="background: url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>`;
-    const EX_URL_CLEAN = `<div style="background: proton-url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>`;
+    const EX_URL = '<div style="background: url(\'https://i.imgur.com/WScAnHr.jpg\')">ddewdwed</div>';
+    const EX_URL_CLEAN = '<div style="background: proton-url(\'https://i.imgur.com/WScAnHr.jpg\')">ddewdwed</div>';
     const BACKGROUND_URL = `
         <div style="background: url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
         <div style="color: red; background: #ffffff url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
@@ -115,8 +115,8 @@ describe('transformEscape service', () => {
     describe('Escape <pre>', () => {
         describe('No syntax hightlighting', () => {
             beforeEach(() => {
-                output = factory(document.createElement('DIV'), null, {
-                    content: CODE_HTML,
+                output = transformEscape(document.createElement('DIV'), {
+                    content: CODE_HTML
                 });
             });
 
@@ -125,8 +125,8 @@ describe('transformEscape service', () => {
             });
 
             it('should not escape text inside a <code> tag', () => {
-                const demo = factory(document.createElement('DIV'), null, {
-                    content: CODE_TEXT,
+                const demo = transformEscape(document.createElement('DIV'), {
+                    content: CODE_TEXT
                 });
                 expect(demo.innerHTML).toBe(CODE_TEXT);
             });
@@ -134,8 +134,8 @@ describe('transformEscape service', () => {
 
         describe('Syntax hightlighting', () => {
             beforeEach(() => {
-                output = factory(document.createElement('DIV'), null, {
-                    content: CODE_HTML_HIGHLIGHT,
+                output = transformEscape(document.createElement('DIV'), {
+                    content: CODE_HTML_HIGHLIGHT
                 });
             });
 
@@ -147,8 +147,8 @@ describe('transformEscape service', () => {
 
     describe('Escape everything with proton-', () => {
         beforeEach(() => {
-            output = factory(document.createElement('DIV'), null, {
-                content: DOM,
+            output = transformEscape(document.createElement('DIV'), {
+                content: DOM
             });
             getAttribute = (attribute) => {
                 return [].slice.call(output.querySelectorAll(`[${attribute}]`));
@@ -222,8 +222,8 @@ describe('transformEscape service', () => {
 
     describe('No escape inside URL', () => {
         beforeEach(() => {
-            output = factory(document.createElement('DIV'), null, {
-                content: HTML_LINKS,
+            output = transformEscape(document.createElement('DIV'), {
+                content: HTML_LINKS
             });
         });
 
@@ -234,8 +234,8 @@ describe('transformEscape service', () => {
 
     describe('No escape TXT', () => {
         beforeEach(() => {
-            output = factory(document.createElement('DIV'), null, {
-                content: TEXT,
+            output = transformEscape(document.createElement('DIV'), {
+                content: TEXT
             });
         });
 
@@ -246,8 +246,8 @@ describe('transformEscape service', () => {
 
     describe('No escape EDGE_CASE', () => {
         beforeEach(() => {
-            output = factory(document.createElement('DIV'), null, {
-                content: EDGE_CASE,
+            output = transformEscape(document.createElement('DIV'), {
+                content: EDGE_CASE
             });
         });
 
@@ -258,7 +258,7 @@ describe('transformEscape service', () => {
 
     describe('No escape EDGE_CASE2', () => {
         beforeEach(() => {
-            output = factory(document.createElement('DIV'), null, {
+            output = transformEscape(document.createElement('DIV'), {
                 content: EDGE_CASE_2
             });
         });
@@ -270,10 +270,10 @@ describe('transformEscape service', () => {
 
     describe('No double escape', () => {
         beforeEach(() => {
-            output = factory(document.createElement('DIV'), null, {
+            output = transformEscape(document.createElement('DIV'), {
                 content: DOM
             });
-            output = factory(document.createElement('DIV'), null, {
+            output = transformEscape(document.createElement('DIV'), {
                 content: output.innerHTML
             });
         });
@@ -292,7 +292,7 @@ describe('transformEscape service', () => {
         };
 
         it('should escape all', () => {
-            const html = factory(document.createElement('DIV'), null, {
+            const html = transformEscape(document.createElement('DIV'), {
                 content: BACKGROUND_URL
             });
             const list = getList(html);
@@ -303,7 +303,7 @@ describe('transformEscape service', () => {
         });
 
         it('should escape all encoded url', () => {
-            const html = factory(document.createElement('DIV'), null, {
+            const html = transformEscape(document.createElement('DIV'), {
                 content: BACKGROUND_URL_ESCAPED
             });
             const list = getList(html);
@@ -313,14 +313,14 @@ describe('transformEscape service', () => {
             });
         });
         it('should escape encoded url with escape \\r', () => {
-            const html = factory(document.createElement('DIV'), null, {
+            const html = transformEscape(document.createElement('DIV'), {
                 content: BACKGROUND_URL_ESCAPED_WTF
             });
             expect(html.innerHTML).toMatch(/proton-/);
         });
 
         it('should escape encoded url with escape standard wtf', () => {
-            const html = factory(document.createElement('DIV'), null, {
+            const html = transformEscape(document.createElement('DIV'), {
                 content: BACKGROUND_URL_ESCAPED_WTF2
             });
             const list = getList(html);
@@ -331,7 +331,7 @@ describe('transformEscape service', () => {
         });
 
         it('should escape octal and hex encoded urls with escape', () => {
-            const html = factory(document.createElement('DIV'), null, {
+            const html = transformEscape(document.createElement('DIV'), {
                 content: BACKGROUND_URL_OCTAL_HEX_ENCODING
             });
             const list = getList(html);
@@ -342,7 +342,7 @@ describe('transformEscape service', () => {
         });
 
         it('should not break the HTML', () => {
-            const html = factory(document.createElement('DIV'), null, {
+            const html = transformEscape(document.createElement('DIV'), {
                 content: EX_URL
             });
             expect(html.innerHTML).toEqual(EX_URL_CLEAN);
@@ -351,9 +351,9 @@ describe('transformEscape service', () => {
 
     describe('no scape BACKGROUND_URL -> user.inject', () => {
         beforeEach(() => {
-            output = factory(document.createElement('DIV'), null, {
+            output = transformEscape(document.createElement('DIV'), {
                 content: BACKGROUND_URL,
-                action: USER_INJECT,
+                action: USER_INJECT
             });
         });
 
@@ -362,9 +362,9 @@ describe('transformEscape service', () => {
         });
 
         it('should not break the HTML', () => {
-            const html = factory(document.createElement('DIV'), null, {
+            const html = transformEscape(document.createElement('DIV'), {
                 content: EX_URL,
-                action: USER_INJECT,
+                action: USER_INJECT
             });
             expect(html.innerHTML).not.toMatch(/proton-/);
         });
@@ -372,7 +372,7 @@ describe('transformEscape service', () => {
 
     describe('Ǹot escape BACKGROUND_URL', () => {
         beforeEach(() => {
-            output = factory(document.createElement('DIV'), null, {
+            output = transformEscape(document.createElement('DIV'), {
                 content: BACKGROUND_URL_SAFE
             });
         });

@@ -188,7 +188,9 @@ function messageModel(
 
         countEmbedded() {
             const body = this.getDecryptedBody();
-            return embeddedUtils.extractEmbedded(this.attachments, body).length;
+            const testDiv = embeddedUtils.getBodyParser(body);
+
+            return embeddedUtils.extractEmbedded(this.Attachments, testDiv).length;
         }
 
         addAttachments(list = []) {

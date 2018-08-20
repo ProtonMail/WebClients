@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { ENCRYPTED_STATUS } from '../../constants';
 
 /* @ngInject */
-function composerAttachments(gettextCatalog, dispatchers) {
+function composerAttachments(embeddedUtils, gettextCatalog, dispatchers) {
     const CLASS_CLOSED = 'composerAttachments-close';
     const CLASS_HIDDEN = 'composerAttachments-hidden';
     const labelHeader = {
@@ -55,22 +55,25 @@ function composerAttachments(gettextCatalog, dispatchers) {
      * @return {Array}       Packets
      */
     const formatAttachments = (scope, list = []) => {
-        return list
-            .filter(({ Encrypted }) => Encrypted !== ENCRYPTED_STATUS.PGP_MIME)
-            .map(({ ID, Headers = {}, Name, Size }) => {
-                const Inline = +(Headers['content-disposition'] === 'inline');
-                return {
-                    id: ID,
-                    packet: {
-                        filename: Name,
-                        uploading: false,
-                        Size,
-                        Inline
-                    },
-                    messageID: scope.message.ID,
-                    message: scope.message
-                };
-            });
+        const body = scope.message.getDecryptedBody();
+        const testDiv = embeddedUtils.getBodyParser(body);
+        const embeddedAttachments = embeddedUtils.extractEmbedded(list, testDiv);
+        return list.filter(({ Encrypted }) => Encrypted !== ENCRYPTED_STATUS.PGP_MIME).map((attachment) => {
+            const { ID, Name, Size } = attachment;
+            const Inline = embeddedAttachments.indexOf(attachment) > -1;
+
+            return {
+                id: ID,
+                packet: {
+                    filename: Name,
+                    uploading: false,
+                    Size,
+                    Inline
+                },
+                messageID: scope.message.ID,
+                message: scope.message
+            };
+        });
     };
 
     const isMessage = ({ ID }, { message = {}, messageID }) => {

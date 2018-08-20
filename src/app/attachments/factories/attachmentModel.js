@@ -309,6 +309,7 @@ function attachmentModel(
                     // Attachment removed, may remove embedded ref from the editor too
                     dispatch('remove.embedded', state);
                 }
+
                 message.removeAttachment(attachment);
                 dispatch('remove.success', state);
                 cleanMap(state);
@@ -382,6 +383,7 @@ function attachmentModel(
             message.NumEmbedded++;
             // CID doesn't exist when the user add an attachment
             tempPacket.ContentID = cid || embedded.generateCid(file.upload.uuid, message.From.Email);
+            tempPacket.Inline = 1;
         }
 
         const privateKeys = authentication.getPrivateKeys(message.AddressID);

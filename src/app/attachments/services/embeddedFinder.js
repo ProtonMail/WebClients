@@ -1,6 +1,6 @@
 /* @ngInject */
 function embeddedFinder(embeddedStore, embeddedUtils) {
-    const find = (message) => {
+    const find = (message, testDiv) => {
         const list = message.getAttachments();
         message.NumEmbedded = 0;
 
@@ -8,8 +8,7 @@ function embeddedFinder(embeddedStore, embeddedUtils) {
             return false;
         }
 
-        const body = message.getDecryptedBody();
-        const embeddedAttachments = embeddedUtils.extractEmbedded(list, body);
+        const embeddedAttachments = embeddedUtils.extractEmbedded(list, testDiv);
 
         embeddedAttachments.forEach((attachment) => {
             embeddedStore.cid.add(message, attachment);
