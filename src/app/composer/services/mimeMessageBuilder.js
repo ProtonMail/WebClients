@@ -82,9 +82,8 @@ function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
             body: wraplines(pmcw.encode_utf8_base64(html || ' '))
         });
 
-        const inlineAttachments = _.filter(attachments, ({ attachment: { Headers } }) =>
-            embeddedUtils.isInline(Headers)
-        );
+        const testDiv = embeddedUtils.getBodyParser(html);
+        const inlineAttachments = embeddedUtils.extractEmbedded(attachments, testDiv);
         const attachmentEntities = buildAttachments(inlineAttachments);
 
         // add the attachments
@@ -181,10 +180,11 @@ function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
      */
     const build = (plaintext, html, attachments) => {
         const bodyEntity = buildBodyEntity(plaintext, html, attachments);
+        const testDiv = embeddedUtils.getBodyParser(html);
         const normalAttachments =
             html === false
                 ? attachments
-                : _.filter(attachments, ({ attachment: { Headers } }) => !embeddedUtils.isInline(Headers));
+                : _.difference(attachments, embeddedUtils.extractEmbedded(attachments, testDiv));
         const attachmentEntities = buildAttachments(normalAttachments);
         const body = [bodyEntity].concat(attachmentEntities);
 

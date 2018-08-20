@@ -1,4 +1,5 @@
 import { toUnsignedString } from '../../../helpers/string';
+import transformEscape from '../../message/helpers/transformEscape';
 
 /* @ngInject */
 function embeddedUtils(attachmentFileFormat, tools) {
@@ -7,9 +8,10 @@ function embeddedUtils(attachmentFileFormat, tools) {
 
     /**
      * Flush the container HTML and return the container
+     * @param {String} content
      * @return {Node} Empty DIV
      */
-    const getBodyParser = (body = '') => ((DIV.innerHTML = body.replace(/src="cid/g, 'data-src="cid')), DIV); // Escape  cid-errors
+    const getBodyParser = (content = '') => transformEscape(DIV, { content, action: '', isDocument: false });
 
     /**
      * Removes enclosing quotes ("", '', &lt;&gt;) from a string
@@ -43,31 +45,29 @@ function embeddedUtils(attachmentFileFormat, tools) {
     };
 
     /**
-     * `content-disposition` is inconsistent, it can be attachment too
-     * `content-id` can be defined for normal attachment too
-     * Headers is empty for an attachment
-     * @param  {Object} Headers
-     * @return {Boolean}
-     */
-    const isInline = (Headers = {}) => !!Headers['content-id'];
-
-    /**
      * Find embedded element in div
      * @param {String} cid
      * @param {HTMLElement} testDiv
      * @return {Array}
      */
     const findEmbedded = (cid, testDiv) => {
-        const selector = `img[src="${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"], img[data-src="cid:${cid}"]`;
-        return [].slice.call(testDiv.querySelectorAll(selector));
+        const selector = [
+            `img[src="${cid}"]`,
+            `img[src="cid:${cid}"]`,
+            `img[data-embedded-img="${cid}"]`,
+            `img[data-src="cid:${cid}"]`,
+            `img[proton-src="cid:${cid}"]`
+        ];
+        return [].slice.call(testDiv.querySelectorAll(selector.join(', ')));
     };
 
     /**
      * Check if an attachment is embedded
      * @param {Object} attachment
+     * @param {String} body
      * @return {Boolean}
      */
-    const isEmbedded = ({ Headers = {}, MIMEType = '' }, body) => {
+    const isEmbedded = ({ Headers = {}, MIMEType = '' }, body = '') => {
         const testDiv = getBodyParser(body);
         const cid = readCID(Headers);
         const nodes = findEmbedded(cid, testDiv);
@@ -78,12 +78,10 @@ function embeddedUtils(attachmentFileFormat, tools) {
     /**
      * Extract embedded attachment from body
      * @param {Array} attachments
-     * @param {String} body
+     * @param {Node} testDiv
      * @return {Array}
      */
-    const extractEmbedded = (attachments = [], body = '') => {
-        const testDiv = getBodyParser(body);
-
+    const extractEmbedded = (attachments = [], testDiv) => {
         return attachments.filter(({ Headers = {} }) => {
             const cid = readCID(Headers);
             const nodes = findEmbedded(cid, testDiv);
@@ -145,7 +143,6 @@ function embeddedUtils(attachmentFileFormat, tools) {
 
     return {
         findEmbedded,
-        isInline,
         isEmbedded,
         extractEmbedded,
         getAttachementName,

@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { flow, filter, map } from 'lodash/fp';
+import { unescapeSrc } from '../../../helpers/domHelper';
 
 import { EMBEDDED, ENCRYPTED_STATUS } from '../../constants';
 
@@ -9,8 +10,6 @@ function embeddedParser(
     embeddedFinder,
     embeddedUtils,
     AttachmentLoader,
-    attachmentFileFormat,
-    $state,
     invalidSignature,
     $timeout,
     mailSettingsModel
@@ -20,6 +19,9 @@ function embeddedParser(
     const actionDirection = {
         blob(nodes, cid, url) {
             _.each(nodes, (node) => {
+                if (node.getAttribute('proton-src')) {
+                    return;
+                }
                 node.src = url;
                 node.setAttribute('data-embedded-img', cid);
                 node.removeAttribute('data-src');
@@ -45,11 +47,10 @@ function embeddedParser(
      * Parse the content to inject the generated blob src
      * @param  {Resource} message             Message
      * @param  {String} direction             Parsing to execute, blob || cid
+     * @param  {Node} testDiv
      * @return {String}                       Parsed HTML
      */
-    const escapeHTML = (message, direction, body) => {
-        const testDiv = embeddedUtils.getBodyParser(body);
-
+    const escapeHTML = (message, direction, testDiv) => {
         Object.keys(embeddedStore.cid.get(message)).forEach((cid) => {
             const nodes = embeddedUtils.findEmbedded(cid, testDiv);
 
@@ -60,23 +61,19 @@ function embeddedParser(
             }
         });
 
-        /**
-         * Prevent this error (#3330):
-         * NET::ERR_UNKNOWN_URL_SCHEME because src="cid:xxxx" is not valid HTML
-         */
-        return testDiv.innerHTML.replace(/data-src/g, 'src');
+        return unescapeSrc(testDiv.innerHTML);
     };
 
     const removeEmbeddedHTML = (message, Headers = {}, content = '') => {
-        if (embeddedUtils.isInline(Headers)) {
-            const cid = embeddedUtils.readCID(Headers);
+        const cid = embeddedUtils.readCID(Headers);
+        const tempDOM = $(`<div>${content || message.getDecryptedBody()}</div>`);
+        const nodes = tempDOM.find(
+            `img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`
+        );
 
-            const tempDOM = $(`<div>${content || message.getDecryptedBody()}</div>`);
-            message.NumEmbedded--;
-            const nodes = tempDOM.find(
-                `img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`
-            );
-            nodes.length && nodes.remove();
+        if (nodes.length) {
+            nodes.remove();
+            message.NumEmbedded -= nodes.length;
             message.setDecryptedBody(tempDOM.html(), true);
         }
 

@@ -35,7 +35,8 @@ function toggleModeEditor(dispatchers, embeddedUtils, attachmentModel, textToHtm
 
     const hasInlineAttachments = (message) => {
         const body = message.getDecryptedBody();
-        const embeddedAttachments = embeddedUtils.extractEmbedded(message.Attachments, body);
+        const testDiv = embeddedUtils.getBodyParser(body);
+        const embeddedAttachments = embeddedUtils.extractEmbedded(message.Attachments, testDiv);
 
         return embeddedAttachments.length;
     };
@@ -69,7 +70,8 @@ function toggleModeEditor(dispatchers, embeddedUtils, attachmentModel, textToHtm
 
     const toPlainText = (message, htmlValue) => {
         const body = message.getDecryptedBody();
-        const list = embeddedUtils.extractEmbedded(message.Attachments, body);
+        const testDiv = embeddedUtils.getBodyParser(body);
+        const list = embeddedUtils.extractEmbedded(message.Attachments, testDiv);
         dispatcher['attachment.upload']('remove.all', { message, list });
         CACHE.ATTACHMENTS_PROCESSING[message.ID] = CACHE.ATTACHMENTS_PROCESSING[message.ID] || {};
         const map = list.reduce((acc, { ID }) => ((acc[ID] = true), acc), {});

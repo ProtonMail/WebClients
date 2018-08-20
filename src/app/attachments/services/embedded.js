@@ -1,8 +1,10 @@
 import { isInlineEmbedded } from '../../../helpers/imageHelper';
+import { escapeSrc } from '../../../helpers/domHelper';
 
 /* @ngInject */
 function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) {
     const REGEXP_CID_START = /^cid:/g;
+    const testDiv = document.createElement('DIV');
 
     /**
      * Parse a message in order to
@@ -17,7 +19,9 @@ function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) 
     const parser = (message, { direction = 'blob', text = '', isOutside = false } = {}) => {
         const content = text || message.getDecryptedBody();
 
-        if (!embeddedFinder.find(message)) {
+        testDiv.innerHTML = escapeSrc(content); // We don't use embeddedUtils.getBodyParser because the content is already cleaned
+
+        if (!embeddedFinder.find(message, testDiv)) {
             /**
              * cf #5088 we need to escape the body again if we forgot to set the password First.
              * Prevent unescaped HTML.
@@ -25,7 +29,7 @@ function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) 
              * Don't do it everytime because it's "slow" and we don't want to slow down the process.
              */
             if (isOutside) {
-                return Promise.resolve(embeddedParser.escapeHTML(message, direction, content));
+                return Promise.resolve(embeddedParser.escapeHTML(message, direction, testDiv));
             }
 
             return Promise.resolve(content);
@@ -33,7 +37,7 @@ function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) 
 
         return embeddedParser
             .decrypt(message)
-            .then(() => embeddedParser.escapeHTML(message, direction, content))
+            .then(() => embeddedParser.escapeHTML(message, direction, testDiv))
             .catch((error) => {
                 console.error(error);
                 throw error;
@@ -69,7 +73,9 @@ function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) 
      */
     const getAttachment = (message, src) => {
         const cid = src.replace(REGEXP_CID_START, '');
-        const contains = embeddedFinder.find(message);
+        const body = message.getDecryptedBody();
+        const testDiv = embeddedUtils.getBodyParser(body);
+        const contains = embeddedFinder.find(message, testDiv);
 
         if (contains) {
             return embeddedStore.cid.get(message)[cid] || {};
