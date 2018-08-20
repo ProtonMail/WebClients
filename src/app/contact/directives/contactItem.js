@@ -180,9 +180,9 @@ function contactItem(
 
             scope.isOwnAddress = (email) => {
                 const address = addressesModel.getByEmail(email);
-                const keys = keyCache.getUserAddressesKeys(address);
+                const { Keys } = keyCache.getUserAddressesKeys(address) || {};
 
-                return isOwnAddress(address, keys);
+                return isOwnAddress(address, Keys);
             };
 
             scope.change = () =>

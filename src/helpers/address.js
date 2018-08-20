@@ -4,7 +4,7 @@
  * @param {Array} keys
  * @return {Boolean}
  */
-export const isFallbackAddress = ({ Receive = 0 } = {}, keys = []) => !Receive && keys.length;
+export const isFallbackAddress = (address, keys = []) => address && !address.Receive && keys.length;
 
 /**
  * Is own address
