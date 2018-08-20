@@ -230,10 +230,8 @@ function attachmentDownloader(
      * @return {Array}         Array of promises
      */
     const formatDownloadAll = (message) => {
-        const body = message.getDecryptedBody();
-        const embeddedAttachments = embeddedUtils.extractEmbedded(message.Attachments, body);
-        const notEmbedded = _.difference(embeddedAttachments, message.Attachments || []);
-        const { list } = notEmbedded.reduce(
+        const { Attachments = [] } = message;
+        const { list } = Attachments.reduce(
             (acc, att) => {
                 if (!acc.map[att.Name]) {
                     acc.map[att.Name] = { index: 0 };
