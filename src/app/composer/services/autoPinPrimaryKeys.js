@@ -31,11 +31,27 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
     };
 
     /**
+     * Attach a given key to an email address in a vcard
+     * @param {vCard} card
+     * @param {String} email
+     * @param {Object} keys
+     */
+    const addKeyToVCard = (card, email, keys) => {
+        const normalizedEmail = normalizeEmail(email);
+        const emailList = toList(card.get('email'));
+        const group = getGroup(emailList, normalizedEmail);
+        const data = pmcw.stripArmor(keys[email].Keys[0].PublicKey);
+        const base64 = `data:application/pgp-keys;base64,${pmcw.encode_base64(pmcw.arrayToBinaryString(data))}`;
+
+        card.add('key', base64, { group });
+    };
+
+    /**
      * Create default contact if contactEmail doesn't exist
      * @param {Array} emails
      * @return {Promise}
      */
-    const createDefaultContacts = (emails) => {
+    const createDefaultContacts = (emails, keys) => {
         return Promise.all(
             emails.map((email) => {
                 const normalizedEmail = normalizeEmail(email);
@@ -48,17 +64,19 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
                     card.set('fn', normalizedEmail);
                     card.set('email', normalizedEmail, { group: DEFAULT_CONTACT_GROUP });
 
-                    return Contact.add([{ vCard: card }]);
+                    addKeyToVCard(card, email, keys);
+
+                    return Contact.add([{ vCard: card }]).then(() => false);
                 }
 
-                return Promise.resolve();
+                return Promise.resolve(email);
             })
-        );
+        ).then((list) => list.filter((i) => i));
     };
 
     const pinPrimaryKeys = async (emails, keys) => {
-        await createDefaultContacts(emails);
-        const contactIds = emails.reduce((acc, email) => {
+        const existingEmails = await createDefaultContacts(emails, keys);
+        const contactIds = existingEmails.reduce((acc, email) => {
             const normalizedEmail = normalizeEmail(email);
             const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
 
@@ -72,14 +90,7 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
             Object.keys(contactIds).map((contactID) => {
                 return Contact.get(contactID).then((contact) => {
                     contactIds[contactID].forEach((email) => {
-                        const normalizedEmail = normalizeEmail(email);
-                        const emailList = toList(contact.vCard.get('email'));
-                        const group = getGroup(emailList, normalizedEmail);
-                        const data = pmcw.stripArmor(keys[email].Keys[0].PublicKey);
-                        const base64 = `data:application/pgp-keys;base64,${pmcw.encode_base64(
-                            pmcw.arrayToBinaryString(data)
-                        )}`;
-                        contact.vCard.add('key', base64, { group });
+                        addKeyToVCard(contact.vCard, email, keys);
                     });
                     return Contact.update(contact);
                 });
@@ -103,9 +114,8 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
                     title: resign ? I18N.PROMPT_TITLE_RESIGN : I18N.PROMPT_TITLE,
                     message: resign ? I18N.promptResignMessage(emails) : I18N.promptMessage(emails),
                     cancel: () => resolve(false),
-                    confirm: () => {
-                        resolve(true);
-                        confirmModal.deactivate();
+                    confirm() {
+                        confirmModal.deactivate().then(() => resolve(true));
                     }
                 }
             })
