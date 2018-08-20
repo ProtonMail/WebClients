@@ -21,7 +21,7 @@ function toggle(gettextCatalog, dispatchers) {
             name: '@' // event name called
         },
         link(scope, element, { on = 'YES', off = 'NO' }) {
-            const { dispatcher } = dispatchers([scope.name]);
+            const { dispatcher } = scope.name ? dispatchers([scope.name]) : {};
 
             scope.on = I18N[on];
             scope.off = I18N[off];
@@ -29,7 +29,7 @@ function toggle(gettextCatalog, dispatchers) {
             function onClick() {
                 scope.$applyAsync(() => {
                     scope.status = !scope.status;
-                    if (scope.name) {
+                    if (dispatcher) {
                         dispatcher[scope.name]('', { status: scope.status, id: scope.id });
                     }
                 });
