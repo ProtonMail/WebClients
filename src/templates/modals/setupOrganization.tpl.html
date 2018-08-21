@@ -73,8 +73,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
-            <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()">
+            <button type="button" class="pm_button disabled-if-network-activity" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button type="submit" class="pm_button primary pull-right disabled-if-network-activity">
                 <span ng-hide="ctrl.isLastStep()" translate translate-context="Action">Next</span>
                 <span ng-show="ctrl.isLastStep()" translate translate-context="Action">Finish</span>
             </button>

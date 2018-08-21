@@ -9,9 +9,8 @@ function contactModal($state, dispatchers, gettextCatalog, notification, pmModal
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/contact/contactModal.tpl.html'),
         /* @ngInject */
-        controller: function(params, $scope) {
+        controller: function(params) {
             const { dispatcher, on, unsubscribe } = dispatchers(['contacts']);
-            this.networkActivity = false;
 
             on('contacts', (event, { type = '', data = {} }) => {
                 if (type === 'contactCreated') {
@@ -26,20 +25,6 @@ function contactModal($state, dispatchers, gettextCatalog, notification, pmModal
                         $state.go('secured.contacts.details', { id: created[0].ID });
                         params.close();
                     }
-                }
-            });
-
-            on('networkActivity', (e, { type }) => {
-                if (type === 'load') {
-                    $scope.$applyAsync(() => {
-                        this.networkActivity = true;
-                    });
-                }
-
-                if (type === 'close') {
-                    $scope.$applyAsync(() => {
-                        this.networkActivity = false;
-                    });
                 }
             });
 

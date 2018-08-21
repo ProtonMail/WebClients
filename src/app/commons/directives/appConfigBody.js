@@ -12,7 +12,8 @@ function appConfigBody(AppModel, dispatchers, mailSettingsModel) {
         modalOpen: className('modalOpen'),
         showSidebar: className('showSidebar'),
         commandPalette: className('commandPalette'),
-        rows: className('rows')
+        rows: className('rows'),
+        networkActivity: className('networkActivity')
     };
 
     return {

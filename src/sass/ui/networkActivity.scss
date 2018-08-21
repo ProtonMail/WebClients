@@ -1,0 +1,21 @@
+.appConfigBody-networkActivity .disabled-if-network-activity {
+    pointer-events: none;
+}
+
+.appConfigBody-networkActivity .disabled-if-network-activity.pm_button {
+    opacity: .5;
+    cursor: default;
+    box-shadow: inset 0 0 5rem 0 rgba(0, 0, 0, 0.06);
+}
+
+.appConfigBody-networkActivity .disabled-if-network-activity.primary {
+    background: lighten($primary, 2%);
+}
+
+.appConfigBody-networkActivity .disabled-if-network-activity.success {
+    background: lighten($green, 2%);
+}
+
+.appConfigBody-networkActivity .disabled-if-network-activity.error {
+    background: lighten($red, 2%);
+}

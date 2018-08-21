@@ -62,11 +62,8 @@ angular
         notificationProvider.template(require('../templates/notifications/base.tpl.html'));
     })
     .run((
-        $rootScope,
         logoutManager, // Keep the logoutManager here to lunch it
         AppModel,
-        authentication,
-        networkActivityTracker,
         tools,
         lazyLoader
     ) => {
@@ -83,7 +80,6 @@ angular
 
         // SVG Polyfill for IE11 @todo lazy load
         window.svg4everybody();
-        $rootScope.networkActivity = networkActivityTracker;
     })
 
     .config(($httpProvider, CONFIG) => {

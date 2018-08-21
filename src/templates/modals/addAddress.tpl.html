@@ -55,8 +55,8 @@
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
-            <button class="pm_button primary" ng-disabled="networkActivity.loading()" translate translate-context="Action">Save</button>
+            <button type="button" class="pm_button disabled-if-network-activity" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button class="pm_button primary disabled-if-network-activity" translate translate-context="Action">Save</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
