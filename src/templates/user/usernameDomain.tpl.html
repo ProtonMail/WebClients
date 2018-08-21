@@ -40,8 +40,8 @@
     <div ng-messages="form.username.$error" ng-if="form.username.$dirty" class="signUpProcess-about-error">
         <p ng-message="required" class="alert alert-danger" translate translate-context="Error">Username required</p>
         <p ng-message="tooMuch" class="alert alert-danger" translate translate-context="Error">You are doing this too much, please try again later</p>
+        <p ng-message="valid" class="alert alert-danger" translate translate-context="Error">Username invalid</p>
         <p ng-message="alreadyTaken" class="alert alert-danger" translate translate-context="Error">Username already taken</p>
         <p ng-message="uniqueError" class="alert alert-danger" translate translate-context="Error">The request failed</p>
-        <p ng-message="valid" class="alert alert-danger" translate translate-context="Error">Username invalid</p>
     </div>
 </div>
