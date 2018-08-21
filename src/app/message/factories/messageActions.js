@@ -536,16 +536,7 @@ function messageActions(
         cache.addToDispatcher(promise);
 
         if (!context) {
-            promise
-                .then(() => {
-                    // Update the cache to trigger an update (UI)
-                    _.each(ids, (id) => {
-                        const msg = cache.getMessageCached(id) || {};
-                        msg.Unread = 1;
-                        cache.updateMessage(msg);
-                    });
-                })
-                .then(() => eventManager.call());
+            promise.then(eventManager.call);
             return networkActivityTracker.track(promise);
         }
 

@@ -58,7 +58,7 @@ function cache(
      * @param {Array} conversations
      */
     function storeConversations(conversations = []) {
-        conversations.forEach(updateConversation);
+        conversations.forEach((conversation) => updateConversation(conversation));
     }
 
     /**
@@ -76,7 +76,7 @@ function cache(
      * @param {Array} messages
      */
     function storeMessages(messages = []) {
-        messages.forEach(updateMessage);
+        messages.forEach((message) => updateMessage(message));
     }
 
     /**
@@ -107,7 +107,7 @@ function cache(
                 }
 
                 if (msg.ID === message.ID) {
-                    const m = _.extend({}, msg, message);
+                    const m = { ...msg, ...message };
                     // It can be 0
                     m.Type = message.Type;
                     return m;
@@ -828,7 +828,7 @@ function cache(
      * @param {Object} event
      * @return {Promise}
      */
-    api.updateFlagMessage = async (event, isSend) => {
+    api.updateFlagMessage = (event, isSend) => {
         const current = _.find(messagesCached, { ID: event.ID });
 
         if (!current) {
@@ -884,7 +884,7 @@ function cache(
                 const oldLabel = _.find(old.Labels || [], { ID: label.ID });
 
                 if (oldLabel) {
-                    return _.extend({}, oldLabel, label);
+                    return { ...oldLabel, ...label };
                 }
 
                 return label;
