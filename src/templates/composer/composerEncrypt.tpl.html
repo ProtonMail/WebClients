@@ -5,64 +5,60 @@
             <i class="fa fa-info-circle"></i>
         </a>
     </header>
-
-    <div ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}" class="clearfix">
-        <label
-            for="outsidePw"
-            class="text-muted col-1-3" translate translate-context="Title">Message Password</label>
-        <div class="col-2-3">
-            <input style="display: none;" type="password" name="foilautofill"/>
-            <input
-                type="password"
-                autocomplete="off"
-                name="outsidePw"
-                id="outsidePw"
-                ng-model="model.password"
-                placeholder-translate="Password"
-                class="composer-options-input"
-                required>
+    <div class="alert">
+        <div ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}" class="clearfix">
+            <label
+                for="outsidePw"
+                class="text-muted col-1-3" translate translate-context="Title">Message Password</label>
+            <div class="col-2-3">
+                <input style="display: none;" type="password" name="foilautofill"/>
+                <input
+                    type="password"
+                    autocomplete="off"
+                    name="outsidePw"
+                    id="outsidePw"
+                    ng-model="model.password"
+                    placeholder-translate="Password"
+                    class="composer-options-input"
+                    required>
+            </div>
+        </div>
+        <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}" class="clearfix">
+            <label
+                for="outsidePwConfirm"
+                class="text-muted col-1-3" translate translate-context="Title">Confirm Password</label>
+            <div class="col-2-3">
+                <input style="display: none;" type="password" name="foilautofill">
+                <input
+                    type="password"
+                    autocomplete="off"
+                    name="outsidePwConfirm"
+                    id="outsidePwConfirm"
+                    ng-model="model.confirm"
+                    placeholder-translate="Confirm password"
+                    class="composer-options-input"
+                    required>
+            </div>
+        </div>
+        <div class="clearfix">
+            <label
+                for="outsidePwHint"
+                class="text-muted col-1-3">
+                <span translate translate-context="Title">Password Hint</span> (<em>Optional</em>)
+            </label>
+            <div class="col-2-3">
+                <input
+                    type="text"
+                    class="composer-options-input"
+                    autocomplete="off"
+                    name="outsidePwHint"
+                    id="outsidePwHint"
+                    ng-model="model.hint"
+                    placeholder-translate="Hint">
+            </div>
         </div>
     </div>
-
-    <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}" class="clearfix">
-        <label
-            for="outsidePwConfirm"
-            class="text-muted col-1-3" translate translate-context="Title">Confirm Password</label>
-        <div class="col-2-3">
-            <input style="display: none;" type="password" name="foilautofill">
-            <input
-                type="password"
-                autocomplete="off"
-                name="outsidePwConfirm"
-                id="outsidePwConfirm"
-                ng-model="model.confirm"
-                placeholder-translate="Confirm password"
-                class="composer-options-input"
-                required>
-        </div>
-    </div>
-
-    <div class="clearfix">
-        <label
-            for="outsidePwHint"
-            class="text-muted col-1-3">
-            <span translate translate-context="Title">Password Hint</span> (<em>Optional</em>)
-        </label>
-        <div class="col-2-3">
-            <input
-                type="text"
-                class="composer-options-input"
-                autocomplete="off"
-                name="outsidePwHint"
-                id="outsidePwHint"
-                ng-model="model.hint"
-                placeholder-translate="Hint">
-        </div>
-    </div>
-
-    <p class="clear">
-        <i class="help-block" translate translate-context="Info">Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</i>
-    </p>
+    <p class="clear alert alert-warning" translate translate-context="Info">Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</p>
     <footer class="text-right">
         <button
             type="button"
