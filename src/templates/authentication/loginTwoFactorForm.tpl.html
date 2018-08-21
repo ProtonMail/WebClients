@@ -22,7 +22,7 @@
 
     <div class="loginForm-actions">
         <div class="loginForm-actions-column">
-            <button id="login_btn_2fa" type="submit" tabindex="3" class="loginForm-actions-main  pm_button primary pull-right" ng-disabled="networkActivity.loading() || loginTwoFactorForm.$invalid" translate-context="Action" translate>Login</button>
+            <button id="login_btn_2fa" type="submit" tabindex="3" class="loginForm-actions-main  pm_button primary pull-right disabled-if-network-activity" ng-disabled="loginTwoFactorForm.$invalid" translate-context="Action" translate>Login</button>
             <a class="pm_button link pull-left" ng-click="displayHelpModal()" translate-context="Action" translate-comment="link for login help" translate>Need help?</a>
         </div>
     </div>

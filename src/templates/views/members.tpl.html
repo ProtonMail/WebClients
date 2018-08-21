@@ -310,13 +310,11 @@
                         <p ng-if="keyStatus === 0">
                             <organization-btn-actions
                                 data-action="changePassword"
-                                ng-disabled="networkActivity.loading()"
-                                class="pm_button primary"></organization-btn-actions>
+                                class="pm_button primary disabled-if-network-activity"></organization-btn-actions>
 
                             <organization-btn-actions
                                 data-action="changeKeys"
-                                ng-disabled="networkActivity.loading()"
-                                class="pm_button primary"></organization-btn-actions>
+                                class="pm_button primary disabled-if-network-activity"></organization-btn-actions>
 
                             <a class="pm_button link" href="https://protonmail.com/support/knowledge-base/organization-key/" target="_blank" translate translate-context="Link">Learn more</a>
                         </p>
@@ -325,8 +323,7 @@
                             <p>
                                 <organization-btn-actions
                                     data-action="activateKeys"
-                                    ng-disabled="networkActivity.loading()"
-                                    class="pm_button primary"></organization-btn-actions>
+                                    class="pm_button primary disabled-if-network-activity"></organization-btn-actions>
                             </p>
                         </div>
                         <div ng-if="keyStatus === 2">
@@ -334,13 +331,11 @@
                             <p>
                                 <organization-btn-actions
                                     data-action="resetKeys"
-                                    ng-disabled="networkActivity.loading()"
-                                    class="pm_button"></organization-btn-actions>
+                                    class="pm_button disabled-if-network-activity"></organization-btn-actions>
 
                                 <organization-btn-actions
                                     data-action="restoreKeys"
-                                    ng-disabled="networkActivity.loading()"
-                                    class="pm_button primary"></organization-btn-actions>
+                                    class="pm_button primary disabled-if-network-activity"></organization-btn-actions>
                             </p>
                         </div>
                         <div class="pm_table" ng-if="keyStatus === 0">

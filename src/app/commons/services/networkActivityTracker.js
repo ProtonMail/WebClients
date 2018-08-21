@@ -2,19 +2,9 @@ import _ from 'lodash';
 import { ERROR_SILENT } from '../../constants';
 
 /* @ngInject */
-function networkActivityTracker($filter, errorReporter, dispatchers, notification) {
+function networkActivityTracker($filter, AppModel, errorReporter, notification) {
     let promises = [];
-    const { dispatcher } = dispatchers(['networkActivity']);
     const unicodeTagView = $filter('unicodeTagView');
-
-    /**
-     * Dispatch an action in order to toggle the activityTracker component
-     *     - To show: 'load'
-     *     - To hide: 'close'
-     * @param  {String} action
-     * @return {void}
-     */
-    const dispatch = (action) => dispatcher.networkActivity(action);
 
     /**
      * Check if we have some promises currently running
@@ -32,7 +22,7 @@ function networkActivityTracker($filter, errorReporter, dispatchers, notificatio
 
         // Display the loader
         if (!promises.length) {
-            dispatch('load');
+            AppModel.set('networkActivity', true);
         }
 
         promises = _.union(promises, [promise]);
@@ -73,7 +63,7 @@ function networkActivityTracker($filter, errorReporter, dispatchers, notificatio
 
             // Nothing in the queue hide the loader
             if (!promises.length) {
-                dispatch('close');
+                AppModel.set('networkActivity', false);
             }
         }
 
@@ -89,6 +79,6 @@ function networkActivityTracker($filter, errorReporter, dispatchers, notificatio
         return promises;
     };
 
-    return { loading, clear, track, dispatch };
+    return { loading, clear, track };
 }
 export default networkActivityTracker;

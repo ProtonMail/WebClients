@@ -221,12 +221,12 @@
         </div>
 
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
+            <button type="button" class="pm_button disabled-if-network-activity" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
             <button
                 type="button"
                 ng-click="ctrl.save()"
-                class="pm_button primary pull-right"
-                ng-disabled="networkActivity.loading() || ctrl.valid() === false"
+                class="pm_button primary pull-right disabled-if-network-activity"
+                ng-disabled="ctrl.valid() === false"
                 translate
                 translate-context="Action">Save</button>
         </div>

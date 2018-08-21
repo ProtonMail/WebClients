@@ -12,17 +12,15 @@
         </div>
         <div class="modal-footer text-right">
             <button
-                class="pm_button pull-left"
+                class="pm_button pull-left disabled-if-network-activity"
                 ng-click="ctrl.cancel()"
-                ng-disabled="ctrl.networkActivity"
                 translate-context="Action"
                 translate>Cancel</button>
 
             <button
-                class="pm_button primary"
+                class="pm_button primary disabled-if-network-activity"
                 tabindex="1"
                 ng-click="ctrl.submit()"
-                ng-disabled="ctrl.networkActivity"
                 translate-context="Action"
                 translate>Save</button>
         </div>

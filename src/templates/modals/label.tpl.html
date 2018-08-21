@@ -81,15 +81,13 @@
         </div>
         <footer class="modal-footer">
             <button
-                class="pm_button labelModal-btn-cancel"
+                class="pm_button labelModal-btn-cancel disabled-if-network-activity"
                 type="reset"
                 ng-click="ctrl.cancel()"
-                ng-disabled="networkActivity.loading()"
                 translate
                 translate-context="Action">Cancel</button>
             <button
-                class="pm_button primary pull-right labelModal-btn-save"
-                ng-disabled="networkActivity.loading()"
+                class="pm_button primary pull-right labelModal-btn-save disabled-if-network-activity"
                 translate
                 translate-context="Action">Save</button>
         </footer>

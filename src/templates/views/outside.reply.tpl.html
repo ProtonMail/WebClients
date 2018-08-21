@@ -29,19 +29,17 @@
     <footer class="text-right">
 
         <button
-            class="pm_button pull-left"
-            ng-disabled="networkActivity.loading()"
+            class="pm_button pull-left disabled-if-network-activity"
             ng-click="cancel()"
             translate-context="Action"
             translate>Cancel</button>
 
         <button
-            class="pm_button needsclick"
-            ng-disabled="networkActivity.loading()"
+            class="pm_button needsclick disabled-if-network-activity"
             data-action-compose="::message"
             data-action-compose-type="addFile"
             pt-tooltip-translate="Attachments"><i class="fa fa-paperclip"></i>
         </button>
-        <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()" translate-context="Action" translate>Send</button>
+        <button class="pm_button primary disabled-if-network-activity" ng-click="send()" translate-context="Action" translate>Send</button>
     </footer>
 </div>

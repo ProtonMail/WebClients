@@ -13,8 +13,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="reset" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
-                <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading() || ctrl.mode === 'display'" translate translate-context="Action">Submit</button>
+                <button type="reset" class="pm_button disabled-if-network-activity" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+                <button type="submit" class="pm_button primary pull-right disabled-if-network-activity" ng-disabled="ctrl.mode === 'display'" translate translate-context="Action">Submit</button>
             </div>
         </form>
     </div>

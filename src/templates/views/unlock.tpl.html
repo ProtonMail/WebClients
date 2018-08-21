@@ -33,9 +33,8 @@
             <div class="loginForm-actions-column">
                 <button
                     id="unlock_btn"
-                    class="loginForm-actions-main pm_button primary pull-right"
+                    class="loginForm-actions-main pm_button primary pull-right disabled-if-network-activity"
                     type="submit"
-                    ng-disabled="networkActivity.loading()"
                     translate-context="Action"
                     translate>Unlock</button>
                 <button

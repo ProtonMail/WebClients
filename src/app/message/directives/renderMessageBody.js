@@ -1,5 +1,5 @@
 /* @ngInject */
-function renderMessageBody(dispatchers, networkActivityTracker, $sce) {
+function renderMessageBody(AppModel, dispatchers, $sce) {
     /**
      * Dispatch an action to render the loader only if
      *     - the body is empty
@@ -11,10 +11,10 @@ function renderMessageBody(dispatchers, networkActivityTracker, $sce) {
     const dispatch = (body = '', action = 'load') => {
         switch (action) {
             case 'load':
-                (body.length > 10000 || !body) && networkActivityTracker.dispatch('load');
+                (body.length > 10000 || !body) && AppModel.set('networkActivity', true);
                 break;
             default:
-                networkActivityTracker.dispatch('close');
+                AppModel.set('networkActivity', false);
                 break;
         }
     };
@@ -68,7 +68,7 @@ function renderMessageBody(dispatchers, networkActivityTracker, $sce) {
 
                 unsubscribe();
                 // Close the loader
-                networkActivityTracker.dispatch('close');
+                AppModel.set('networkActivity', false);
             });
         }
     };
