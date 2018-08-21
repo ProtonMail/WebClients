@@ -7,6 +7,8 @@ function mailSettingsModel(dispatchers) {
     let CACHE = {};
     const get = (key = 'all') => angular.copy(key === 'all' ? CACHE : CACHE[key]);
     const clear = () => (CACHE = {});
+    const draftsIncluded = () => CACHE.ShowMoved & 1;
+    const sentIncluded = () => CACHE.ShowMoved & 2;
     const set = (key = 'all', value) => {
         if (key === 'all') {
             _.extend(CACHE, value);
@@ -19,6 +21,6 @@ function mailSettingsModel(dispatchers) {
 
     on('logout', clear);
 
-    return { get, set };
+    return { get, set, draftsIncluded, sentIncluded };
 }
 export default mailSettingsModel;

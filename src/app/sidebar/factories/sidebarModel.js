@@ -1,14 +1,10 @@
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function sidebarModel(tools, cacheCounters, gettextCatalog, mailSettingsModel) {
-    const { ShowMoved } = mailSettingsModel.get();
-    const draftsIncluded = () => ShowMoved & 1;
-    const sentIncluded = () => ShowMoved & 2;
-
+function sidebarModel(tools, cacheCounters, gettextCatalog, mailSettingsModel, dynamicStates) {
     const getStateConfig = () => {
-        const defaultDrafts = draftsIncluded() ? 'secured.allDrafts' : 'secured.drafts';
-        const defaultSent = sentIncluded() ? 'secured.allSent' : 'secured.sent';
+        const defaultDrafts = dynamicStates.getDraftsState();
+        const defaultSent = dynamicStates.getSentState();
 
         return {
             inbox: {
@@ -67,11 +63,11 @@ function sidebarModel(tools, cacheCounters, gettextCatalog, mailSettingsModel) {
 
     const renameMailbox = (mailbox) => {
         if (mailbox === 'sent') {
-            return sentIncluded() ? 'allSent' : 'sent';
+            return dynamicStates.getSentState('');
         }
 
         if (mailbox === 'drafts') {
-            return draftsIncluded() ? 'allDrafts' : 'drafts';
+            return dynamicStates.getDraftsState('');
         }
 
         return mailbox;
