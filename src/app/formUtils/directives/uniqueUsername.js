@@ -1,9 +1,10 @@
 /* @ngInject */
-function uniqueUsername($stateParams, gettextCatalog, User) {
+function uniqueUsername($stateParams, User) {
     const clean = (input = '') => input.toLowerCase().replace(/\.|-|_/, '');
 
     const validator = (ngModel) => (username) => {
         const usernameCleaned = clean(username);
+
         delete ngModel.$error.alreadyTaken;
         delete ngModel.$error.tooMuch;
         delete ngModel.$error.uniqueError;
