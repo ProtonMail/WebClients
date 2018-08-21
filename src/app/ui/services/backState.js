@@ -1,13 +1,30 @@
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
+const prefix = (states) => states.map((name = '') => `secured.${name}`);
+const DRAFTS_STATES = prefix(['allDrafts', 'drafts']);
+const SENT_STATES = prefix(['allSent', 'sent']);
+const DYNAMIC_STATES = [].concat(DRAFTS_STATES, SENT_STATES);
+const DEFAULT_SECURED_STATE = 'secured.inbox';
+
 /* @ngInject */
-function backState(dispatchers, $state, tools, mailSettingsModel) {
+function backState(dispatchers, $state, tools, mailSettingsModel, dynamicStates) {
     /**
      * Keep a trace of the previous box state to let the user back to mail
      * Action present in the settings and contact sidebar
      */
     const CACHE = {};
     const cleanState = (state = '') => state.replace('.element', '');
+    const getDynamicState = () => {
+        if (DRAFTS_STATES.includes(CACHE.state)) {
+            return dynamicStates.getDraftsState();
+        }
+
+        if (SENT_STATES.includes(CACHE.state)) {
+            return dynamicStates.getSentState();
+        }
+
+        return DEFAULT_SECURED_STATE;
+    };
 
     const { on } = dispatchers();
 
@@ -21,6 +38,12 @@ function backState(dispatchers, $state, tools, mailSettingsModel) {
         }
     });
 
+    on('mailSettings', (event, { type }) => {
+        if (type === 'updated' && DYNAMIC_STATES.includes(CACHE.state)) {
+            CACHE.state = getDynamicState();
+        }
+    });
+
     function back() {
         const { ViewMode } = mailSettingsModel.get();
         // We can change the mode, prevent issue if an element was opened
@@ -29,7 +52,7 @@ function backState(dispatchers, $state, tools, mailSettingsModel) {
         }
 
         if ($state.includes('secured.**')) {
-            return $state.go('secured.inbox');
+            return $state.go(DEFAULT_SECURED_STATE);
         }
 
         return $state.go('login');
