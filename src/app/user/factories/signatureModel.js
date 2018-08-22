@@ -30,13 +30,19 @@ function signatureModel(
 
     /**
      * Signature can be null, we sanitize it if it's defined -> a string
+     * In case the editor is empty, it returns <div><br /></div> so we consider it as an empty string
      * @param  {String} signature
      * @return {String}
      */
     const formatSignature = (signature) => {
+        if (signature === '<div><br /></div>') {
+            return '';
+        }
+
         if (signature) {
             return sanitize.message(signature.replace(/\n/g, '<br />'));
         }
+
         return signature;
     };
 
