@@ -77,8 +77,9 @@ function messageSenderSettings(
             contactEncryptionModal.activate({
                 params: {
                     email: normalizedEmail,
+                    contact,
                     model,
-                    save: (model) => {
+                    save(model) {
                         model.Email = item.settings.Email;
                         item.settings = model;
                         item.type = 'email';

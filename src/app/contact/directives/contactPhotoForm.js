@@ -1,4 +1,6 @@
+import { CONTACT_IMG_SIZE } from '../../constants';
 import { resizeImage } from '../../../helpers/imageHelper';
+
 /* @ngInject */
 function contactPhotoForm(gettextCatalog, notification) {
     const I18N = {
@@ -9,15 +11,13 @@ function contactPhotoForm(gettextCatalog, notification) {
         replace: true,
         templateUrl: require('../../../templates/contact/contactPhotoForm.tpl.html'),
         link(scope, element) {
-            // We estimate to have a light image by setting 65px
-            const maxWidth = 65; // px
             const $input = element[0].querySelector('.contactPhotoModal-input-file');
             const onChange = ({ target }) => {
                 const file = target.files[0];
                 const reader = new FileReader();
 
                 reader.onloadend = () => {
-                    resizeImage(reader.result, maxWidth, 'image/jpeg', 0.7)
+                    resizeImage(reader.result, CONTACT_IMG_SIZE, 'image/jpeg', 0.7)
                         .then((base64str) => {
                             scope.$applyAsync(() => {
                                 scope.ctrl.uri = base64str;

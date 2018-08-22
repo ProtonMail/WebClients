@@ -1,0 +1,71 @@
+<header class="contactActionHeader-container contactActionHeader-container">
+   <h1
+       class="contactActionHeader-title"
+       translate
+       translate-context="Title">Contact Details</h1>
+
+   <nav class="contactActionHeader-item-left">
+       <button
+           type="button"
+           data-action="downloadContact"
+           class="contactDetails-download pm_button fa fa-download"
+           ng-hide="contactForm.$dirty && mode === 'edition'"
+           pt-tooltip-translate="Export contact in vCard format"
+           pt-tooltip-translate-context="Info"></button>
+       <button
+           ng-if="mode !== 'edition'"
+           class="save pm_button primary main"
+           data-action="toggleMode"
+           translate-context="Action"
+           translate-comment="contact details"
+           translate>Edit</button>
+        <button
+            ng-if="mode === 'edition'"
+            class="save pm_button main"
+            type="button"
+            data-action="toggleMode"
+            translate-context="Action"
+            translate-comment="contact details"
+            translate>Cancel</button>
+        <button
+            class="save pm_button primary main"
+            ng-if="mode === 'edition'"
+            ng-disabled="contactForm.$pristine"
+            translate-context="Action"
+            translate-comment="contact details"
+            translate>Save</button>
+   </nav>
+
+   <nav class="contactActionHeader-item-right lowResolution">
+       <button
+            type="button"
+            class="contactDetails-back pm_button fa fa-arrow-left"
+            pt-tooltip-translate="Back to the contact list"
+            pt-tooltip-translate-context="Info"
+            data-action="back"></button>
+       <button
+            type="button"
+            class="contactDetails-download notMobile pm_button fa fa-download"
+            data-action="downloadContact"
+            pt-tooltip-translate="Export contact in vCard format"
+            pt-tooltip-translate-context="Info"></button>
+       <button
+            type="button"
+            class="contactDetails-delete pm_button fa fa-trash"
+            pt-tooltip-translate="Delete contact"
+            pt-tooltip-translate-context="Info"
+            data-action="deleteContact"></button>
+       <button
+            ng-if="mode === 'edition'"
+            ng-disabled="contactForm.$pristine"
+            pt-tooltip-translate="Save contact"
+            pt-tooltip-translate-context="Info"
+            class="save pm_button primary main fa fa-save"></button>
+        <button
+            class="save pm_button primary main fa fa-pencil"
+            ng-if="mode !== 'edition'"
+            data-action="toggleMode"
+            pt-tooltip-translate="Edit contact"
+            pt-tooltip-translate-context="Tooltip"></button>
+   </nav>
+</header>

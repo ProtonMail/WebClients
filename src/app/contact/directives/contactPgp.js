@@ -4,11 +4,25 @@ import { PACKAGE_TYPE, RECIPIENT_TYPE, MIME_TYPES, KEY_FLAGS, CONTACT_SETTINGS_D
 
 /* @ngInject */
 function contactPgp(dispatchers, pmcw, mailSettingsModel, tooltipModel) {
+    /**
+     * Extract the value from a vCard field
+     * @param  {List} item        list of items
+     * @param  {void} defaultType Default type you want to return for the value
+     */
+    const getValue = (item, defaultType) => {
+        const [{ value } = {}] = item || [];
+        if (typeof value === 'boolean') {
+            return value;
+        }
+        return value || defaultType;
+    };
+
     return {
         replace: true,
         templateUrl: require('../../../templates/directives/contact/contactPgp.tpl.html'),
         restrict: 'E',
         scope: {
+            contact: '=',
             model: '=',
             form: '=',
             email: '@',
@@ -53,14 +67,16 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel, tooltipModel) {
                 );
             };
 
-            const getEncrypt = () => scope.model.Encrypt && scope.model.Encrypt.length && scope.model.Encrypt[0].value;
-            const getSign = () => scope.model.Sign && scope.model.Sign.length && scope.model.Sign[0].value;
+            const getEncrypt = () => getValue(scope.model.Encrypt);
+            const getSign = () => getValue(scope.model.Sign);
 
-            const hasScheme = () => scope.model.Scheme && scope.model.Scheme.length > 0 && !internalUser;
-            const schemeValue = () => scope.model.Scheme[0].value.value;
-            const isScheme = (scheme) =>
-                hasScheme() &&
-                (schemeValue() === scheme || (schemeValue() === CONTACT_SETTINGS_DEFAULT && defaultScheme === scheme));
+            const hasScheme = () => (scope.model.Scheme || []).length && !internalUser;
+            const schemeValue = () => getValue(scope.model.Scheme, {}).value;
+            const isScheme = (scheme) => {
+                const val = schemeValue();
+                const isDefault = val === CONTACT_SETTINGS_DEFAULT && defaultScheme === scheme;
+                return hasScheme() && (val === scheme || isDefault);
+            };
             const isPGPInline = () => isScheme('pgp-inline');
             const isPGPMime = () => isScheme('pgp-mime');
 
@@ -71,15 +87,14 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel, tooltipModel) {
              * @param {Boolean} sign
              */
             const fixMimeType = (encrypt, sign) => {
-                if (!scope.model || !scope.model.MIMEType || !scope.model.MIMEType[0]) {
+                if (!scope.model || !(scope.model.MIMEType || []).length) {
                     return;
                 }
-                if (
-                    ((encrypt || sign) && !internalUser) ||
-                    (scope.model.MIMEType[0] && scope.model.MIMEType[0].value.value !== MIME_TYPES.PLAINTEXT)
-                ) {
+
+                const isPlainText = getValue(scope.model.MIMEType, {}).value !== MIME_TYPES.PLAINTEXT;
+                if (((encrypt || sign) && !internalUser) || isPlainText) {
                     // If not pgp-inline, keep the mimetype, if encryption/signing is disabled: keep the mime type.
-                    if (!isScheme('pgp-inline') || (!encrypt && !sign)) {
+                    if (!isPGPInline() || (!encrypt && !sign)) {
                         scope.model.MIMEType[0].value = { name: 'Normal', value: CONTACT_SETTINGS_DEFAULT };
                     } else {
                         scope.model.MIMEType[0].value = { name: 'Plain text', value: MIME_TYPES.PLAINTEXT };

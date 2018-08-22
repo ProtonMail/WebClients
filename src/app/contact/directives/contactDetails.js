@@ -25,24 +25,6 @@ function contactDetails(
     const HAS_ERROR_ENCRYPTED = 'contactDetails-encrypted-error';
     const HAS_ERROR_VERIFICATION_ENCRYPTED = 'contactDetails-encrypted-verification-error';
 
-    const MAP_FIELDS = {
-        Name: 'FN',
-        Emails: 'EMAIL',
-        Tels: 'TEL',
-        Adrs: 'ADR',
-        Notes: 'NOTE',
-        Photos: 'PHOTO'
-    };
-
-    const MAP_EVENT = {
-        deleteContact({ ID }) {
-            return { type: 'deleteContacts', data: { contactIDs: [ID] } };
-        },
-        downloadContact({ ID }) {
-            return { type: 'exportContacts', data: { contactID: ID } };
-        }
-    };
-
     const I18N = {
         invalidForm: gettextCatalog.getString(
             'This form is invalid',
@@ -51,30 +33,26 @@ function contactDetails(
         )
     };
 
-    const getFieldKey = (type = '') => MAP_FIELDS[type] || type.toUpperCase();
-
     return {
         restrict: 'E',
         replace: true,
-        scope: { contact: '=', modal: '=' },
+        priority: 200,
+        scope: {
+            contact: '=',
+            modal: '=',
+            mode: '='
+        },
         templateUrl: require('../../../templates/contact/contactDetails.tpl.html'),
         link(scope, element) {
             const { on, unsubscribe, dispatcher } = dispatchers(['contacts']);
 
-            const dispatch = (type, data = {}) => {
-                const opt = (MAP_EVENT[type] || _.noop)(data) || { type, data };
-                dispatcher.contacts(opt.type, opt.data);
-            };
-
             const updateType = (types = []) => {
                 if ([ENCRYPTED_AND_SIGNED, SIGNED, ENCRYPTED].some((type) => types.indexOf(type) !== -1)) {
-                    element.addClass(ENCRYPTED_AND_SIGNED_CLASS);
-                    return;
+                    return element.addClass(ENCRYPTED_AND_SIGNED_CLASS);
                 }
                 element.removeClass(ENCRYPTED_AND_SIGNED_CLASS);
             };
 
-            const onSubmit = () => saveContact();
             const isFree = !subscriptionModel.hasPaid('mail') && !memberModel.isMember();
             const properties = vcard.extractProperties(scope.contact.vCard);
             const hasEmail = _.filter(properties, (property) => property.getField() === 'email').length;
@@ -90,29 +68,6 @@ function contactDetails(
                 isFree
             };
 
-            on('contacts', (event, { type = '', data = {} }) => {
-                if (scope.modal && type === 'submitContactForm') {
-                    onSubmit();
-                }
-
-                if (type === 'contactUpdated' && data.contact.ID === scope.contact.ID) {
-                    updateType(data.cards.map(({ Type }) => Type));
-                }
-            });
-
-            on('hotkeys', (e, { type = '' }) => {
-                if (type === 'save' && !AppModel.get('activeComposer')) {
-                    saveContact();
-                }
-            });
-
-            on('$stateChangeStart', (event, toState, toParams) => {
-                if (!scope.modal && scope.contactForm.$dirty) {
-                    event.preventDefault();
-                    saveBeforeToLeave(toState, toParams);
-                }
-            });
-
             // If the contact is signed we display an icon
             updateType(scope.contact.types);
 
@@ -124,14 +79,10 @@ function contactDetails(
                     element.addClass(HAS_ERROR_VERIFICATION);
             }
 
-            element.on('click', onClick);
-            element.on('submit', onSubmit);
-
-            // Functions
             function saveBeforeToLeave(toState, toParams) {
                 contactBeforeToLeaveModal.activate({
                     params: {
-                        save() {
+                        confirm() {
                             contactBeforeToLeaveModal.deactivate();
 
                             if (saveContact()) {
@@ -142,23 +93,9 @@ function contactDetails(
                             contactBeforeToLeaveModal.deactivate();
                             scope.contactForm.$setPristine(true);
                             $state.go(toState.name, toParams);
-                        },
-                        cancel() {
-                            contactBeforeToLeaveModal.deactivate();
                         }
                     }
                 });
-            }
-
-            function onClick({ target }) {
-                const action = target.getAttribute('data-action');
-
-                if (!action) {
-                    return;
-                }
-
-                action === 'back' && $state.go('secured.contacts');
-                dispatch(action, scope.contact);
             }
 
             function isValidForm() {
@@ -188,30 +125,57 @@ function contactDetails(
 
                 if (scope.contact.ID) {
                     contact.ID = scope.contact.ID;
-                    dispatch('updateContact', { contact });
+                    // Close edition mode
+                    const callback = () => {
+                        dispatcher.contacts('action.input', {
+                            action: 'toggleMode',
+                            current: scope.mode,
+                            refresh: true,
+                            contact
+                        });
+                    };
+                    dispatcher.contacts('updateContact', { contact, callback });
                 } else {
-                    dispatch('createContact', { contacts: [contact] });
+                    dispatcher.contacts('createContact', { contacts: [contact] });
                 }
 
                 scope.contactForm.$setSubmitted(true);
                 scope.contactForm.$setPristine(true);
+
                 return true;
             }
 
-            scope.get = (type) => {
-                const vcard = scope.contact.vCard;
-
-                if (type) {
-                    return contactDetailsModel.extract({
-                        vcard,
-                        field: getFieldKey(type)
-                    });
+            on('contacts', (event, { type = '', data = {} }) => {
+                if (scope.modal && type === 'submitContactForm') {
+                    saveContact();
                 }
-            };
+
+                if (type === 'contactBeforeToLeaveModal' && data.choice === 'confirm') {
+                    saveContact();
+                }
+
+                if (type === 'contactUpdated' && data.contact.ID === scope.contact.ID) {
+                    updateType(data.cards.map(({ Type }) => Type));
+                }
+            });
+
+            on('hotkeys', (e, { type = '' }) => {
+                if (type === 'save' && !AppModel.get('activeComposer')) {
+                    saveContact();
+                }
+            });
+
+            on('$stateChangeStart', (event, toState, toParams) => {
+                if (!scope.modal && scope.contactForm.$dirty) {
+                    event.preventDefault();
+                    saveBeforeToLeave(toState, toParams);
+                }
+            });
+
+            element.on('submit', saveContact);
 
             scope.$on('$destroy', () => {
-                element.off('click', onClick);
-                element.off('submit', onSubmit);
+                element.off('submit', saveContact);
                 unsubscribe();
 
                 /*

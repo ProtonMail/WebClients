@@ -1,0 +1,38 @@
+.contactActionHeader-container, .contactActionHeader-container * { box-sizing: border-box }
+
+.contactActionHeader-container {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    min-height: 72px;
+    box-shadow: 0px 1px 0 rgba($border, .3);
+}
+
+.contactActionHeader-title {
+    font-size: 1.6em;
+    font-weight: 200;
+}
+
+[class*="contactActionHeader-item-"] { margin-left: auto }
+.contactActionHeader-item-left {
+    position: relative;
+    display: flex;
+}
+
+.contactActionHeader-item-left > button { margin-right: 5px }
+
+.contactActionHeader-item-right { order: 1 }
+
+.appConfigBody-is-tablet .contactDetails-nav,
+.appConfigBody-is-mobile .contactDetails-nav {
+    padding-right: 10px;
+}
+
+.appConfigBody-is-tablet [class*="contactActionHeader-item-"] > button,
+.appConfigBody-is-mobile [class*="contactActionHeader-item-"] > button { margin-right: 5px }
+
+.appConfigBody-is-tablet [class*="contactActionHeader-item-"],
+.appConfigBody-is-mobile [class*="contactActionHeader-item-"] { display: none }
+
+/* Hide nav if inside a modal */
+.pm_modal .contactActionHeader-container { display: none }

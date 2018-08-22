@@ -35,6 +35,7 @@ function contactTransformLabel(gettextCatalog) {
         tel: gettextCatalog.getString('Phone', null, 'VCard key name'),
         title: gettextCatalog.getString('Title', null, 'VCard key name'),
         tz: gettextCatalog.getString('Timezone', null, 'VCard key name'),
+        'x-mobile': gettextCatalog.getString('Mobile', null, 'VCard key name'),
         uid: 'UID',
         url: 'URL',
         work: gettextCatalog.getString('Work', null, 'VCard key name'),

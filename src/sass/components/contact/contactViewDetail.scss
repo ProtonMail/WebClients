@@ -1,0 +1,60 @@
+.contactViewDetail-container, .contactViewDetail-container * { box-sizing: border-box }
+
+.contactViewDetail-header { padding: 0 1em }
+
+.contactViewDetail-group {
+    position: relative;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(172,176,191,.3);
+    border-radius: 3px;
+}
+
+.contactViewDetail-signed-icon {
+    position: absolute;
+    margin: 0 auto;
+    top: -9px;
+    left: 0;
+    right: 0;
+    width: 20px;
+    border-right: 2px solid $white;
+    border-left: 2px solid $white;
+    display: block;
+    background: $white;
+    text-align: center;
+    fill: $primary;
+    color: darken($primary, 10);
+}
+
+.contactViewDetail-list {
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.contactViewDetail-item {
+    display: flex;
+}
+.contactViewDetail-list + .contactViewDetail-list { margin-top: 1.3rem; }
+.contactViewDetail-item + .contactViewDetail-item {
+    margin-top: 1rem;
+}
+
+.contactViewDetail-icon {
+    width: 50px;
+    text-align: center;
+}
+
+.contactViewDetail-type {
+    width: 20%;
+    max-width: 250px
+}
+
+.contactViewDetail-item:not(.contactViewDetail-item-start) {
+    .contactViewDetail-icon { visibility: hidden; }
+}
+
+.appConfigBody-is-mobile {
+    .contactViewDetail-container,
+    .contactViewDetail-content { height: 100%; }
+    .contactViewDetail-content { overflow-y: auto; }
+}

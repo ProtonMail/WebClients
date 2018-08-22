@@ -57,7 +57,10 @@ function contactCache(
     const isHydrated = () => CACHE.hydrated;
 
     function selected(ID = $stateParams.id) {
-        const selected = flow(filter(({ selected }) => selected), map('ID'))(get());
+        const selected = flow(
+            filter(({ selected }) => selected),
+            map('ID')
+        )(get());
 
         if (!selected.length && ID) {
             return [ID];
@@ -299,6 +302,8 @@ function contactCache(
         clear();
     });
 
-    return { hydrate, isHydrated, clear, get, total, paginate, load, find, getItem };
+    const getContact = (ID) => CACHE.map.all[ID];
+
+    return { hydrate, isHydrated, clear, get, total, paginate, load, find, getItem, getContact };
 }
 export default contactCache;

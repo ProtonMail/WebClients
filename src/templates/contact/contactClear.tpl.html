@@ -1,20 +1,23 @@
 <section class="contactClear-container">
     <section class="contactDetails-fields-container">
         <legend class="contactDetails-fields-ico">
-            <i class="fa fa-check contactEncrypted-signed-icon" pt-tooltip-translate="Digital signature verified"></i>
+            <i
+                class="fa fa-check contactEncrypted-signed-icon"
+                pt-tooltip-translate="Digital signature verified"
+                pt-tooltip-translate-context="Tooltip"></i>
         </legend>
         <contact-error></contact-error>
         <contact-item
+            data-contact="contact"
             data-form="contactForm"
             data-model="model"
             data-state="state"
-            data-datas="get('Name')"
             data-type="Name"></contact-item>
         <contact-item
+            data-contact="contact"
             data-form="contactForm"
             data-model="model"
             data-state="state"
-            data-datas="get('Emails')"
             data-type="Emails"></contact-item>
     </section>
 </section>

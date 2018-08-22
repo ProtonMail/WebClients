@@ -53,9 +53,19 @@ import contactMergerModal from './modals/contactMergerModal';
 import contactModal from './modals/contactModal';
 import importContactModal from './modals/importContactModal';
 import importCardDropzone from './directives/importCardDropzone';
+import contactViewDetail from './directives/contactViewDetail';
+import contactViewItem from './directives/contactViewItem';
+import contactViewType from './filters/contactViewType';
+import contactActionHeader from './directives/contactActionHeader';
+import contactEncryptionSettings from './services/contactEncryptionSettings';
 
 export default angular
     .module('proton.contact', ['vs-repeat'])
+    .factory('contactEncryptionSettings', contactEncryptionSettings)
+    .directive('contactActionHeader', contactActionHeader)
+    .filter('contactViewType', contactViewType)
+    .directive('contactViewItem', contactViewItem)
+    .directive('contactViewDetail', contactViewDetail)
     .directive('importCardDropzone', importCardDropzone)
     .run((contactEditor, contactMerger) => {
         contactEditor.init();

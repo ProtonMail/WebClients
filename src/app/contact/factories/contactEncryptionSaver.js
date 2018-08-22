@@ -77,7 +77,6 @@ function contactEncryptionSaver(contactDetailsModel, Contact) {
      */
     const save = async (model, ID, index) => {
         const contact = await Contact.get(ID);
-
         const { vCard } = contactDetailsModel.prepare({ model });
         const group = findGroup(contact.vCard, vCard, index);
 
@@ -88,7 +87,6 @@ function contactEncryptionSaver(contactDetailsModel, Contact) {
             // overwrite everything: could not find a good match
             overwriteEmails(contact.vCard, vCard);
         }
-
         await Contact.updateUnencrypted(contact);
     };
 

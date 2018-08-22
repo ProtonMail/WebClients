@@ -199,7 +199,10 @@
 @import "components/attachments/attendeeItem.scss";
 
 //== Contact
+@import "components/contact/contactActionHeader";
+@import "components/contact/contactViewItem";
 @import "components/contact/contactArrowsSort";
+@import "components/contact/contactViewDetail";
 @import "components/contact/contactError";
 @import "components/contact/importCardDropzone";
 @import "components/contact/contactDetails";
@@ -274,6 +277,9 @@
 
 //== VPN
 @import "components/vpn/openVpnSection";
+
+//== Utils
+@import "components/utils/discardModal";
 
 //== Modals
 @import "components/modals/index";

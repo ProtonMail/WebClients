@@ -1,0 +1,36 @@
+.contactNav-container {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    min-height: 72px;
+    box-shadow: 0px 1px 0 rgba($border, .3);
+}
+
+.contactNav-title {
+    font-size: 1.6em;
+    font-weight: 200;
+}
+
+[class*="contactNav-item-"] { margin-left: auto }
+.contactNav-item-left {
+    position: relative;
+    display: flex;
+}
+
+.contactNav-item-left > button { margin-right: 5px }
+
+.contactNav-item-right { order: 1 }
+
+.appConfigBody-is-tablet .contactDetails-nav,
+.appConfigBody-is-mobile .contactDetails-nav {
+    padding-right: 10px;
+}
+
+.appConfigBody-is-tablet [class*="contactNav-item-"] > button,
+.appConfigBody-is-mobile [class*="contactNav-item-"] > button { margin-right: 5px }
+
+.appConfigBody-is-tablet [class*="contactNav-item-"],
+.appConfigBody-is-mobile [class*="contactNav-item-"] { display: none }
+
+/* Hide nav if inside a modal */
+.pm_modal .contactNav-container { display: none }

@@ -34,7 +34,7 @@ function DomainsController(
 ) {
     $controller('SignaturesController', { $scope, authentication, pmcw });
 
-    const { on, unsubscribe } = dispatchers([], true);
+    const { on, unsubscribe } = dispatchers();
 
     on('domainModal', (event, { type, data = {} }) => {
         $scope.closeModals();
