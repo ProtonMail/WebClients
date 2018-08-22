@@ -10,7 +10,8 @@ function SetupController(
     domains,
     networkActivityTracker,
     setupKeys,
-    user,
+    user, // Injected by router
+    vpn, // Injected by router
     addresses
 ) {
     let passwordCopy;
@@ -22,7 +23,7 @@ function SetupController(
     $scope.getUserInfo = false;
     $scope.finishCreation = false;
     $scope.generating = false;
-    $scope.vpnEnabled = (user.VPN || {}).Status;
+    $scope.vpnEnabled = vpn.Status;
 
     // Populate the domains <select>
     $scope.domains = domains.map((value, i) => ({ label: value, value, id: i }));

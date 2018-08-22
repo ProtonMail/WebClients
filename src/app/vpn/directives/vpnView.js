@@ -1,5 +1,5 @@
 /* @ngInject */
-function vpnView(dispatchers, addressesModel, authentication, memberModel, vpnModel) {
+function vpnView(dispatchers, addressesModel, authentication, memberModel, vpnSettingsModel) {
     const getFirstEmail = () => {
         const addresses = addressesModel.get();
         return addresses.length ? addresses[0].Email : '';
@@ -13,10 +13,8 @@ function vpnView(dispatchers, addressesModel, authentication, memberModel, vpnMo
             const { on, unsubscribe } = dispatchers();
 
             const update = () => {
-                const { Status } = vpnModel.get();
-
                 scope.VPNLogin = memberModel.isMember() ? getFirstEmail() : authentication.user.Name;
-                scope.vpnStatus = Status;
+                scope.vpnStatus = vpnSettingsModel.get('Status');
                 scope.hasPaidVpn = authentication.hasPaidVpn();
             };
 

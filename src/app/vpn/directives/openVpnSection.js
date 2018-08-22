@@ -1,5 +1,5 @@
 /* @ngInject */
-function openVpnSection(vpnModel, changeVPNNameModal, changeVPNPasswordModal) {
+function openVpnSection(changeVPNNameModal, changeVPNPasswordModal, vpnSettingsModel) {
     const SHOW_PASSWORD_CLASS = 'openVpnSection-show-password';
     const togglePassword = (element) => element.classList.toggle(SHOW_PASSWORD_CLASS);
     const changeName = (scope) => {
@@ -38,7 +38,7 @@ function openVpnSection(vpnModel, changeVPNNameModal, changeVPNPasswordModal) {
         scope: {},
         templateUrl: require('../../../templates/vpn/openVpnSection.tpl.html'),
         link(scope, el) {
-            const { Name, Password } = vpnModel.get();
+            const { Name, Password } = vpnSettingsModel.get();
 
             scope.VPNName = Name;
             scope.VPNPassword = Password;

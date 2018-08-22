@@ -5,7 +5,7 @@ function changeVPNPasswordModal(
     eventManager,
     gettextCatalog,
     networkActivityTracker,
-    vpnSettingsApi
+    vpnSettingsModel
 ) {
     const successMessage = gettextCatalog.getString('OpenVPN password updated', null, 'Info');
 
@@ -19,7 +19,7 @@ function changeVPNPasswordModal(
             self.passwordDefined = params.password;
             self.submit = () => {
                 const { VPNPassword } = self;
-                const promise = vpnSettingsApi
+                const promise = vpnSettingsModel
                     .updatePassword({ VPNPassword })
                     .then(() => eventManager.call())
                     .then(() => (notification.success(successMessage), params.close(VPNPassword)));
