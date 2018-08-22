@@ -296,8 +296,7 @@ function authentication(
                     '/auth',
                     {
                         Username: creds.Username,
-                        ClientID: CONFIG.clientID,
-                        ClientSecret: CONFIG.clientSecret
+                        ClientID: CONFIG.clientID
                     },
                     creds,
                     initialInfoResponse

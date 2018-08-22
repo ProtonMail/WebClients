@@ -294,8 +294,7 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
     function authInfo(Username) {
         return authApi.info({
             Username,
-            ClientID: CONFIG.clientID,
-            ClientSecret: CONFIG.clientSecret
+            ClientID: CONFIG.clientID
         });
     }
 
@@ -303,7 +302,7 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
      * Check the validity of a user
      * @param  {String} method          HTTP methods
      * @param  {String} endpoint        URL
-     * @param  {Object} req             {Username:<String>, ClientID:<String>, ClientSecret:<String>}
+     * @param  {Object} req             {Username:<String>, ClientID:<String>}
      * @param  {Object} creds           {Username:<String>, Password:<String>, TwoFactorCode:<Null>}
      * @param  {void} initialInfoResp
      * @param  {Object} headers
