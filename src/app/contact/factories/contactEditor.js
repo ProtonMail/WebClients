@@ -1,9 +1,10 @@
+import _ from 'lodash';
+
 import { ContactUpdateError } from '../../../helpers/errors';
 import { createCancellationToken } from '../../../helpers/promiseHelper';
 
 /* @ngInject */
 function contactEditor(
-    $rootScope,
     $state,
     eventManager,
     Contact,
@@ -23,15 +24,18 @@ function contactEditor(
     const { dispatcher, on } = dispatchers(['contacts', 'progressBar']);
 
     const I18N = {
-        GENERAL_CONTACT_ERROR: gettextCatalog.getString('Error creating a contact', null, 'error message')
+        GENERAL_CONTACT_ERROR: gettextCatalog.getString('Error creating a contact', null, 'error message'),
+        EDIT_SUCCESS: gettextCatalog.getString('Contact edited', null, 'Success message')
     };
+
     /**
      * Add contacts
      * @param {Array} contacts
      * @param {String} [mode] - pass in 'import' to trigger the contactLoaderModal and show creation progress
+     * @param {Function} callback callback to trigger once it's done
      * @return {Promise}
      */
-    function create({ contacts = [], mode }) {
+    function create({ contacts = [], mode, callback = _.noop }) {
         const cancellationToken = createCancellationToken();
         const preCreation = mode === 'import' ? contactImportEncryption.process(contacts) : Promise.resolve(contacts);
 
@@ -43,6 +47,7 @@ function contactEditor(
             .then((data) => {
                 const { created, errors, total } = data;
                 dispatcher.contacts('contactCreated', { created, total, errors, mode });
+                callback(data);
                 return data;
             })
             .catch((error) => {
@@ -235,13 +240,20 @@ function contactEditor(
     /**
      * Update a contact, show the success dialog and call the event manager.
      * @param {Object} contact
+     * @param {Function} callback callback to trigger once it's done
      * @return {Promise}
      */
-    function update({ contact = {} }) {
-        const promise = updateContact(contact).then(() => {
-            notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
-            return eventManager.call();
-        });
+    function update({ contact = {}, callback = _.noop }) {
+        const adr = contact.vCard && contact.vCard.get('adr');
+        if (adr) {
+            // Remove empty lines from the end
+            contact.vCard.set('adr', _.dropRightWhile(adr.valueOf(), (adr) => !adr));
+        }
+
+        const promise = updateContact(contact)
+            .then(() => notification.success(I18N.EDIT_SUCCESS))
+            .then(eventManager.call)
+            .then(callback);
 
         networkActivityTracker.track(promise);
         return promise;
@@ -255,8 +267,8 @@ function contactEditor(
     function updateUnencrypted({ contact = {} }) {
         const promise = Contact.updateUnencrypted(contact).then(({ Contact, cards }) => {
             dispatcher.contacts('contactUpdated', { contact: Contact, cards });
-            notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
-            return eventManager.call();
+            notification.success(I18N.EDIT_SUCCESS);
+            eventManager.call();
         });
 
         networkActivityTracker.track(promise);

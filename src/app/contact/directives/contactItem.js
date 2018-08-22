@@ -1,115 +1,83 @@
-import { normalizeEmail } from '../../../helpers/string';
-import { isOwnAddress } from '../../../helpers/address';
-
 /* @ngInject */
-function contactItem(
-    dispatchers,
-    contactTransformLabel,
-    contactUI,
-    messageModel,
-    addressesModel,
-    contactEncryptionModal,
-    contactEncryptionSaver,
-    keyCache,
-    networkActivityTracker
-) {
+function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetailsModel) {
     const AS_SORTABLE_DISABLED = 'as-sortable-disabled';
     const addX = (value = '') => (value.startsWith('x') ? value : `X-${value}`);
+
+    const MAP_FIELDS = {
+        Name: 'FN',
+        Emails: 'EMAIL',
+        Tels: 'TEL',
+        Adrs: 'ADR',
+        Notes: 'NOTE',
+        Photos: 'PHOTO'
+    };
+    const getFieldKey = (type = '') => MAP_FIELDS[type] || type.toUpperCase();
+
+    const getInfo = ({ vCard: vcard }, type) => {
+        return contactDetailsModel.extract({
+            vcard,
+            field: getFieldKey(type)
+        });
+    };
 
     return {
         restrict: 'E',
         require: '^form',
+        priority: 90,
         templateUrl: require('../../../templates/directives/contact/contactItem.tpl.html'),
         scope: {
+            contact: '=',
             form: '=',
             model: '=',
             state: '=',
-            getDatas: '&datas',
             type: '@type'
         },
         link(scope, element, attr, ngFormController) {
             const { on, unsubscribe, dispatcher } = dispatchers(['contacts', 'contact.item', 'composer.new']);
-            const datas = scope.getDatas();
+            const list = element.find('.contactItem-container');
             const type = scope.type;
             const state = scope.state;
-            const list = element.find('.contactItem-container');
+            const datas = getInfo(scope.contact, type);
 
+            // Drag and Drop configuration
+            scope.itemContactDragControlListeners = {
+                containment: '.contactDetails-container',
+                containerPositioning: 'relative',
+                accept(sourceItemHandleScope, destSortableScope) {
+                    return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
+                },
+                dragStart() {
+                    scope.itemMoved = true;
+                },
+                dragEnd() {
+                    scope.itemMoved = false;
+                },
+                orderChanged() {
+                    ngFormController.$setDirty();
+                }
+            };
             scope.config = { isFocusedAddress: false };
+            scope.UI = contactUI.initialize(datas, type, state);
 
             list.addClass(`contactItem-container-${scope.type}`);
             list.addClass(AS_SORTABLE_DISABLED);
+
+            const ACTIONS = {
+                add,
+                remove: (index) => remove(scope.UI.items[index]),
+                toggleSortable() {
+                    scope.$applyAsync(() => {
+                        scope.UI.sortableState = !scope.UI.sortableState;
+                        list.toggleClass(AS_SORTABLE_DISABLED);
+                    });
+                }
+            };
 
             function onClick(e) {
                 e.stopPropagation();
                 const action = e.target.getAttribute('data-action');
                 const index = parseInt(e.target.getAttribute('data-index'), 10);
-                switch (action) {
-                    case 'advanced':
-                        advanced(index);
-                        break;
-                    case 'add':
-                        add();
-                        break;
-                    case 'composeTo':
-                        composeTo(e.target.getAttribute('data-email'));
-                        break;
-                    case 'remove':
-                        remove(scope.UI.items[index]);
-                        break;
-                    case 'toggleSortable':
-                        scope.$applyAsync(() => {
-                            scope.UI.sortableState = !scope.UI.sortableState;
-                            list.toggleClass(AS_SORTABLE_DISABLED);
-                        });
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-            function advanced(index) {
-                const itemObject = scope.UI.items[index];
-                const emailAddress = itemObject.value;
-                const promise = keyCache
-                    .get([emailAddress])
-                    .then(({ [emailAddress]: result }) => result)
-                    .then((internalKeys) => {
-                        const { settings = {} } = itemObject;
-                        const { Email: { value: oldEmail = '' } = {} } = settings;
-                        const hasChangedEmail = !oldEmail || normalizeEmail(emailAddress) !== normalizeEmail(oldEmail);
-                        const model = hasChangedEmail ? {} : { ...settings };
-                        delete model.Email;
-
-                        const directSave = !!scope.state.ID;
-                        const save = (model) => {
-                            scope.$applyAsync(() => {
-                                model.Email = { ...scope.UI.items[index], settings: undefined };
-                                scope.UI.items[index].settings = model;
-
-                                if (directSave) {
-                                    const promise = contactEncryptionSaver.save(scope.model, scope.state.ID, index);
-
-                                    networkActivityTracker.track(promise);
-                                    scope.form.$setPristine();
-                                }
-
-                                contactEncryptionModal.deactivate();
-                            });
-                        };
-
-                        contactEncryptionModal.activate({
-                            params: {
-                                email: scope.UI.items[index].value,
-                                model,
-                                save,
-                                directSave,
-                                close: () => contactEncryptionModal.deactivate(),
-                                internalKeys,
-                                form: scope.form
-                            }
-                        });
-                    });
-                networkActivityTracker.track(promise);
+                ACTIONS[action] && ACTIONS[action](index);
             }
 
             function add() {
@@ -131,31 +99,6 @@ function contactItem(
                 scope.change();
             }
 
-            function composeTo(Address) {
-                const message = messageModel();
-                message.ToList = [{ Address, Name: Address }];
-                dispatcher['composer.new']('new', { message });
-            }
-
-            // Drag and Drop configuration
-            scope.itemContactDragControlListeners = {
-                containment: '.contactDetails-container',
-                containerPositioning: 'relative',
-                accept(sourceItemHandleScope, destSortableScope) {
-                    return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
-                },
-                dragStart() {
-                    scope.itemMoved = true;
-                },
-                dragEnd() {
-                    scope.itemMoved = false;
-                },
-                orderChanged() {
-                    ngFormController.$setDirty();
-                }
-            };
-
-            scope.UI = contactUI.initialize(datas, type, state);
             if (scope.UI.mode === 'toggle') {
                 on(scope.UI.inputName + '.toggle', (target, { data: { status: value } }) => {
                     scope.model[type][0].value = value;
@@ -176,13 +119,6 @@ function contactItem(
                 }
 
                 return '';
-            };
-
-            scope.isOwnAddress = (email) => {
-                const address = addressesModel.getByEmail(email);
-                const { Keys } = keyCache.getUserAddressesKeys(address) || {};
-
-                return isOwnAddress(address, Keys);
             };
 
             scope.change = () =>

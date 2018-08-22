@@ -1,0 +1,58 @@
+<li
+    class="contactViewItem-container"
+    data-field="{{::type}}">
+
+    <i class="fa fa-phone contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-envelope contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-user contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-home contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-address-card contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-sticky-note contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-photo contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-birthday-cake contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-anchor contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-genderless contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-user-o contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-user-circle-o contactViewDetail-icon" aria-hidden="true"></i>
+    <i class="fa fa-tag contactViewDetail-icon" aria-hidden="true"></i>
+
+    <span class="contactViewDetail-type">{{::info.type | contactViewType:type }}</span>
+    <a
+        ng-if="type === 'email'"
+        pt-tooltip-translate="Compose a new message to this email"
+        pt-tooltip-translate-context="Tooltip"
+        href="mailto:{{info.value}}"
+        class="contactViewItem-value-email">{{::info.value}}</a>
+
+    <a
+        ng-if="type === 'tel'"
+        href="tel:{{info.value}}"
+        class="contactViewItem-value-tel">{{::info.value}}</a>
+    <span
+        ng-if="type !== 'adr' && type !== 'email' && type !== 'tel' && type !== 'photo'"
+        class="contactViewItem-value-txt">{{::info.value}}</span>
+
+    <img
+        class="contactViewItem-value-img"
+        ng-if="type === 'photo'"
+        ng-src="{{::info.value}}"
+        alt="avatar">
+
+    <address
+        ng-if="type === 'adr'"
+        class="contactViewItem-value-adr">
+        <ul class="contactViewItem-list">
+            <li
+                class="contactViewItem-item"
+                ng-repeat="detail in ::formatAddress(info.value) track by $index">{{::detail}}</li>
+        </ul>
+    </address>
+
+    <button
+        ng-if="type === 'email' && !isOwnAddress(info.value)"
+        type="button"
+        class="fa fa-gear contactViewItem-btn-settings"
+        ng-click="settings(info)"
+        pt-tooltip-translate="Advanced settings"
+        pt-tooltip-translate-context="Action"></button>
+</li>

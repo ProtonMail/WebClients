@@ -1,0 +1,48 @@
+<section class="contactViewDetail-container">
+
+    <contact-action-header
+        class="contactViewDetail-header"
+        data-mode="mode"
+        data-contact="contact"></contact-action-header>
+
+    <div class="contactViewDetail-content">
+        <div class="contactViewDetail-group">
+            <i
+                class="fa fa-check contactViewDetail-signed-icon"
+                pt-tooltip-translate="Digital signature verified"
+                pt-tooltip-translate-context="Tooltip"></i>
+
+            <ul
+                class="contactViewDetail-list"
+                ng-repeat="(type, value) in model.clear track by type">
+
+                <contact-view-item
+                    ng-class="{'contactViewDetail-item-start': !$index}"
+                    ng-repeat="info in ::value track by $id(info) | orderBy:'-params.pref'"
+                    class="contactViewDetail-item"></contact-view-item>
+            </ul>
+        </div>
+
+        <div class="contactViewDetail-group" ng-if="model.hasEncrypted">
+            <svg
+                viewBox="0 0 374.8 337.1"
+                class="contactViewDetail-signed-icon"
+                pt-tooltip-translate="Encrypted data with verified digital signature"
+                pt-tooltip-translate-context="Tooltip">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-lock-signed"></use>
+            </svg>
+
+            <ul
+                class="contactViewDetail-list"
+                ng-repeat="(type, value) in model.encrypted track by type">
+
+                <contact-view-item
+                    ng-class="{'contactViewDetail-item-start': !$index}"
+                    ng-repeat="info in ::value track by $id(info) | orderBy:'-params.pref'""
+                    class="contactViewDetail-item"></contact-view-item>
+
+            </ul>
+        </div>
+    </div>
+
+</section>

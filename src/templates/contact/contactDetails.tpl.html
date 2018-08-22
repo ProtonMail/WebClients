@@ -1,17 +1,11 @@
 <form class="contactDetails-container" name="contactForm" novalidate>
-    <nav class="contactDetails-nav">
-        <h1 class="contactDetails-nav-title" translate translate-context="Title">Contact Details</h1>
-        <div class="contactDetails-nav-left">
-            <button ng-hide="contactForm.$dirty" type="button" class="contactDetails-download pm_button fa fa-download" data-action="downloadContact" pt-tooltip-translate="Export contact in vCard format"></button>
-            <button ng-disabled="contactForm.$pristine" class="save pm_button primary main" translate-context="Action" translate-comment="contact details" translate>Save</button>
-        </div>
-        <div class="contactDetails-nav-right lowResolution">
-            <button type="button" class="contactDetails-back pm_button fa fa-arrow-left" data-action="back"></button>
-            <button type="button" class="contactDetails-download notMobile pm_button fa fa-download" data-action="downloadContact" pt-tooltip-translate="Export contact in vCard format"></button>
-            <button type="button" class="contactDetails-delete pm_button fa fa-trash" data-action="deleteContact"></button>
-            <button ng-disabled="contactForm.$pristine" class="save pm_button primary main fa fa-save"></button>
-        </div>
-    </nav>
+
+    <contact-action-header
+        class="contactDetails-header"
+        data-mode="mode"
+        data-form="contactForm"
+        data-contact="contact"></contact-action-header>
+
     <div class="contactDetails-details" tabindex="1">
         <contact-clear class="contactDetails-clear"></contact-clear>
         <contact-encrypted class="contactDetails-encrypted"></contact-encrypted>

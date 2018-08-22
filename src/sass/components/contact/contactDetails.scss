@@ -2,32 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
 }
-
-.contactDetails-nav {
-    height: 72px;
-    min-height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    box-shadow: 0px 1px 0 rgba($border, .3);
-}
-
-.contactDetails-nav-title {
-    font-size: 1.6em;
-    font-weight: 200;
-    margin-right: auto;
-}
-
-.contactDetails-nav-left {
-    position: relative;
-    display: flex;
-}
-
-.contactDetails-nav-left > button { margin-right: 5px }
-
-.contactDetails-nav-right { order: 1 }
 
 
 .contactDetails-details {
@@ -36,6 +11,8 @@
 }
 
 .contactDetails-details > * { flex: 1 }
+
+.contactDetails-header { padding: 0 1em }
 
 .contactDetails-fields-container {
     position: relative;
@@ -103,9 +80,6 @@
 
 .contactDetails-container .contactDetails-details { padding-top: 20px }
 
-/* Hide nav if inside a modal */
-.pm_modal .contactDetails-nav { display: none }
-
 .contactDetails-container .as-sortable-dragging {
     border-radius: $border-radius;
     overflow: hidden;
@@ -118,18 +92,7 @@
     border: none;
  }
 
-.appConfigBody-is-tablet .contactDetails-nav,
-.appConfigBody-is-mobile .contactDetails-nav {
-    padding-right: 10px;
-}
 
-.appConfigBody-is-tablet [class*='contactDetails-nav'] > button,
-.appConfigBody-is-mobile [class*='contactDetails-nav'] > button { margin-right: 5px }
-
-.appConfigBody-is-tablet .contactDetails-nav-left,
-.appConfigBody-is-mobile .contactDetails-nav-left {
-    display: none
-}
 
 .appConfigBody-is-tablet {
     .contactDetails-details { flex-direction: row }
@@ -172,8 +135,7 @@
 
 // Errors handling
 
-.contactDetails-container .contactError-container { display: none }
-
+.contactDetails-container .contactError-container ,
 .contactDetails-container  .contactError-container [class*='-item-'] { display: none }
 
 /* contactClear / encrypted error display */

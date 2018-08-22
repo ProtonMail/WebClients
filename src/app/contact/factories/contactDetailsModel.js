@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { VCARD_KEYS, CONTACT_SETTINGS_DEFAULT } from '../../constants';
 import { orderByPref } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
+import { getKeys, BOOL_FIELDS, getHumanFields, isPersonalsKey, FIELDS, toHumanKey } from '../../../helpers/vCardFields';
 
 /* @ngInject */
 function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalog) {
@@ -15,51 +16,6 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
         unknown: gettextCatalog.getString('Unknown', null, 'Default display name vcard')
     };
 
-    const FIELDS = {
-        AVOID: ['version', 'n', 'prodid', 'abuid'],
-        FN: ['fn'],
-        EMAIL: ['email'],
-        TEL: ['tel'],
-        ADR: ['adr'],
-        NOTE: ['note'],
-        KEY: ['key'],
-        X_PM_ENCRYPT: ['x-pm-encrypt'],
-        X_PM_SIGN: ['x-pm-sign'],
-        X_PM_SCHEME: ['x-pm-scheme'],
-        X_PM_MIMETYPE: ['x-pm-mimetype'],
-        X_PM_TLS: ['x-pm-tls'],
-        PHOTO: ['photo'],
-        PERSONALS: [
-            'kind',
-            'source',
-            'xml',
-            'nickname',
-            'bday',
-            'anniversary',
-            'gender',
-            'impp',
-            'lang',
-            'tz',
-            'geo',
-            'title',
-            'role',
-            'logo',
-            'org',
-            'member',
-            'related',
-            'categories',
-            'rev',
-            'sound',
-            'uid',
-            'clientpidmap',
-            'url',
-            'fburl',
-            'caladruri',
-            'caluri'
-        ]
-    };
-
-    const BOOL_FIELDS = ['x-pm-encrypt', 'x-pm-sign'];
     const MAP_KEYS = VCARD_KEYS.reduce((acc, key) => {
         acc[key] = contactTransformLabel.toLang(key);
         return acc;
@@ -108,31 +64,6 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
         }
         return true;
     };
-
-    function getKeys(field = '', vcard = {}) {
-        if (field === 'CUSTOMS') {
-            return _.difference(
-                Object.keys(vcard.data),
-                [].concat(
-                    FIELDS.AVOID,
-                    FIELDS.FN,
-                    FIELDS.EMAIL,
-                    FIELDS.TEL,
-                    FIELDS.ADR,
-                    FIELDS.NOTE,
-                    FIELDS.PHOTO,
-                    FIELDS.PERSONALS,
-                    FIELDS.KEY,
-                    FIELDS.X_PM_ENCRYPT,
-                    FIELDS.X_PM_SCHEME,
-                    FIELDS.X_PM_MIMETYPE,
-                    FIELDS.X_PM_SIGN,
-                    FIELDS.X_PM_TLS
-                )
-            );
-        }
-        return FIELDS[field];
-    }
 
     /**
      * Get property type (extract the first one)
@@ -258,9 +189,12 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
         return params;
     }
 
-    function extract({ vcard = {}, field = '', type = undefined }) {
+    function extract({ vcard = {}, field = '', type }) {
+        const keys = getKeys(field, vcard);
+        const listKeys = keys || (isPersonalsKey(field) ? getKeys('PERSONALS', vcard) : []);
+
         const results = _.reduce(
-            getKeys(field, vcard),
+            listKeys,
             (acc, key) => {
                 const property = vcard.get(key);
 
@@ -271,7 +205,9 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
                 const value = property.valueOf();
 
                 if (Array.isArray(value)) {
-                    _.each(orderByPref(value), (prop) => acc.push(buildProperty(prop, type)));
+                    _.each(orderByPref(value), (prop) => {
+                        acc.push(buildProperty(prop, type));
+                    });
                     return acc;
                 }
 
@@ -315,6 +251,82 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
 
         return results;
     }
-    return { extract, prepare, unescapeValue, escapeValue };
+
+    /**
+     * Extract Human friendly keys from a vCard (name, adr etc.)
+     * @param  {vCard} vcard
+     * @param  {Function} filter Advanced filter if we need to remove more keys
+     * @return {Array}
+     */
+    const extractHumans = (vcard, filter = _.identity) => {
+        const fields = getHumanFields(vcard);
+        const getType = (key) => (/^(email|fn)$/.test(key) ? 'clear' : 'encrypted');
+
+        const { clear, encrypted, personalsList } = fields.reduce(
+            (acc, field) => {
+                if (isPersonalsKey(field)) {
+                    acc.personalsList.push(field);
+                    return acc;
+                }
+
+                acc[getType(field)][field] = extract({
+                    field: field.toUpperCase(),
+                    vcard
+                });
+                return acc;
+            },
+            {
+                clear: Object.create(null),
+                encrypted: Object.create(null),
+                personalsList: []
+            }
+        );
+
+        if (personalsList.length) {
+            const list = extract({
+                field: personalsList[0].toUpperCase(),
+                vcard
+            });
+
+            const map = list.filter(filter).reduce((acc, obj) => ((acc[obj.key] = [obj]), acc), Object.create(null));
+            return {
+                clear,
+                encrypted: { ...encrypted, ...map }
+            };
+        }
+
+        return { clear, encrypted };
+    };
+
+    /**
+     * Get a label for the group. First try to convert the custom type to lang. If the custom type doesn't exist,
+     * try to convert the field itself. If that doesn't exist, just use the field.
+     * @param {string} key
+     * @param {string} type
+     * @returns {string}
+     */
+    const getLabel = (key = '', type = key) => {
+        return contactTransformLabel.toLangExplicit(type) || contactTransformLabel.toLangExplicit(key) || key;
+    };
+
+    const extractAll = (vcard) => {
+        return Object.keys(FIELDS).reduce((acc, field) => {
+            const model = extract({ vcard, field });
+
+            if (model.length && !/^x_|^avoid$/i.test(field)) {
+                acc[toHumanKey(field)] = model.map((item) => {
+                    const label = getLabel(item.key);
+                    return {
+                        ...item,
+                        label,
+                        type: contactTransformLabel.toVCard(label)
+                    };
+                });
+            }
+            return acc;
+        }, Object.create(null));
+    };
+
+    return { extract, prepare, unescapeValue, escapeValue, extractHumans, extractAll };
 }
 export default contactDetailsModel;

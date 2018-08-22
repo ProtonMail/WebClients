@@ -1,0 +1,35 @@
+<div class="pm_modal small {{ctrl.class}} discardModal-container" role="dialog">
+    <div class="modal-dialog">
+        <button
+            type="button"
+            ng-click="ctrl.cancel()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
+
+        <div class="modal-content">
+            <header class="modal-header">
+                <h4 class="modal-title">{{ ::ctrl.i18n.title }}</h4>
+            </header>
+
+            <div class="modal-body">
+                <p class="alert no-margin-bottom">{{ ::ctrl.i18n.message }}</p>
+            </div>
+        </div>
+
+        <footer class="modal-footer text-right">
+            <button
+                class="pm_button pull-left"
+                ng-click="ctrl.discard()"
+                ng-disabled="ctrl.networkActivity">{{ ::ctrl.i18n.button.discard }}</button>
+
+            <button
+                class="pm_button primary"
+                tabindex="1"
+                ng-click="ctrl.submit()"
+                ng-disabled="ctrl.networkActivity">{{ ::ctrl.i18n.button.confirm }}</button>
+        </footer>
+    </div>
+    <div class="modal-overlay"></div>
+</div>

@@ -4,9 +4,9 @@
 }
 
 .contactPhotoRow-image {
+    display: block;
+    max-width: 128px;
     cursor: pointer;
-    max-height: 65px;
-    max-width: 65px;
 }
 
 .contactPhotoRow-image,

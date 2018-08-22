@@ -5,9 +5,13 @@
 }
 
 .contactRightPanel-container .loader { margin: auto }
-.contactRightPanel-container:not(.contactRightPanel-placeholder-hidden) .contactRightPanel-content { display: none }
+.contactRightPanel-container:not(.contactRightPanel-placeholder-hidden) .contactRightPanel-content,
 .contactRightPanel-placeholder-hidden .contactPlaceholder-container { display: none }
 
 .contactRightPanel-content {
     height: 100%;
+}
+
+[class*="contactRightPanel-item"] + .contactRightPanel-loader {
+    display: none
 }

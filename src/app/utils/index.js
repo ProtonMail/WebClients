@@ -32,9 +32,11 @@ import lazyLoader from './services/lazyLoader';
 import sanitize from './services/sanitize';
 import mailtoHandler from './directives/mailtoHandler';
 import mailUtils from './services/mailUtils';
+import discardModal from './modals/discardModal';
 
 export default angular
     .module('proton.utils', [])
+    .factory('discardModal', discardModal)
     .factory('mailUtils', mailUtils)
     .directive('mailtoHandler', mailtoHandler)
     .service('lazyLoader', lazyLoader)

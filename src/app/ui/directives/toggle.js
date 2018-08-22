@@ -20,8 +20,9 @@ function toggle(gettextCatalog, dispatchers) {
             status: '=', // status value
             name: '@' // event name called
         },
-        link(scope, element, { on = 'YES', off = 'NO' }) {
-            const { dispatcher } = scope.name ? dispatchers([scope.name]) : {};
+        link(scope, element, { on = 'YES', off = 'NO', action }) {
+            const name = scope.name || action || 'toggle';
+            const { dispatcher } = dispatchers([name]);
 
             scope.on = I18N[on];
             scope.off = I18N[off];
@@ -29,8 +30,8 @@ function toggle(gettextCatalog, dispatchers) {
             function onClick() {
                 scope.$applyAsync(() => {
                     scope.status = !scope.status;
-                    if (dispatcher) {
-                        dispatcher[scope.name]('', { status: scope.status, id: scope.id });
+                    if (name) {
+                        dispatcher[name]('', { status: scope.status, id: scope.id });
                     }
                 });
             }

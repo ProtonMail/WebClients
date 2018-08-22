@@ -324,6 +324,30 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
      */
     const groups = () => $http.get(requestURL('groups'));
 
-    return { hydrate, all, get, getMultiple, add, update, updateUnencrypted, remove, clear, exportAll, groups, load };
+    /**
+     * Get full Contact
+     * @param {String} contactID
+     * @return {Promise}
+     */
+    async function decrypt(Contact) {
+        const [contact] = await contactEncryption.decrypt([Contact]);
+        return contact;
+    }
+
+    return {
+        hydrate,
+        all,
+        get,
+        getMultiple,
+        add,
+        update,
+        updateUnencrypted,
+        remove,
+        clear,
+        exportAll,
+        groups,
+        decrypt,
+        load
+    };
 }
 export default Contact;

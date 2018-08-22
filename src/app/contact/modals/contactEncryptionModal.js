@@ -1,7 +1,13 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function contactEncryptionModal(pmModal) {
+function contactEncryptionModal(pmModal, gettextCatalog) {
+    const I18N = {
+        title({ email }) {
+            return gettextCatalog.getString('Advanced settings ({{email}})', { email }, 'Title');
+        }
+    };
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/contact/contactEncryptionModal.tpl.html'),
@@ -13,10 +19,10 @@ function contactEncryptionModal(pmModal) {
                     return item;
                 })
             );
-            this.title = `Advanced settings (${params.email})`;
+            this.title = I18N.title(params);
             this.email = params.email;
+            this.contact = params.contact;
             this.form = params.form;
-            this.class = 'contact-encryption-modal';
             this.internalKeys = params.internalKeys;
 
             this.directSave = params.directSave;

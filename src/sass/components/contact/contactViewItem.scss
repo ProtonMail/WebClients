@@ -1,0 +1,72 @@
+.contactViewItem-container, .contactViewItem-container * { box-sizing: border-box }
+
+$mapFields: (
+    tel: phone,
+    fn: user,
+    adr: home,
+    org: address-card,
+    note: sticky-note,
+    photo: photo,
+    url: anchor,
+    gender: genderless,
+    nickname: user-o,
+    role: user-circle-o,
+    email: envelope
+);
+
+@each $field, $icon in $mapFields {
+  .contactViewItem-container:not([data-field="#{$field}"]) .fa-#{$icon},
+  .contactViewItem-container[data-field="#{$field}"] .fa-tag { display: none }
+}
+
+.contactViewItem-container:not([data-field="anniversary"]):not([data-field="bday"]) .fa-birthday-cake,
+.contactViewItem-container[data-field="anniversary"] .fa-tag,
+.contactViewItem-container[data-field="bday"] .fa-tag { display: none }
+
+
+.contactViewItem-container a {
+    color: $primary;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.contactViewItem-container a:focus,
+.contactViewItem-container a:hover {
+    color: darken($primary, 10);
+    text-decoration: underline
+}
+
+.contactViewItem-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-style: normal
+}
+
+[class*="contactViewItem-value"] {
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+[data-field="note"] .contactViewItem-value-txt {font-style: italic;}
+
+[class*="contactViewItem-btn"] {
+    background: transparent;
+    border: 0;
+    padding: .5rem;
+    line-height: 1;
+    height: auto
+
+}
+
+.contactViewItem-btn-settings:focus {
+    outline: auto
+}
+.contactViewItem-btn-settings {
+    margin-left: auto;
+    margin-top: -14px; /* half of its size to center it with the email */
+}
+.contactViewItem-value-img {
+     max-width: 128px;
+     max-height: 128px
+}

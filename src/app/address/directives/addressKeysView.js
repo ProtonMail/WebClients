@@ -103,7 +103,7 @@ function addressKeysView(
 
     const exportKey = ({ email }, { PublicKey, PrivateKey, decrypted }) => {
         if (!decrypted) {
-            confirmModal.activate({
+            return confirmModal.activate({
                 params: {
                     title: I18N.DOWNLOAD_PUBLIC,
                     message: I18N.DOWNLOAD_PUBLIC_MESSAGE,
@@ -114,8 +114,8 @@ function addressKeysView(
                     cancel: confirmModal.deactivate
                 }
             });
-            return;
         }
+
         exportKeyModal.activate({
             params: {
                 exportPublic() {

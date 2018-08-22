@@ -119,6 +119,8 @@ $modalMargin: 2rem;
                 line-height: 36px;
                 font-weight: 400;
                 color: $text;
+                text-overflow: ellipsis;
+                overflow: hidden;
                 em {
                     font-style: normal;
                     color: $gray;
