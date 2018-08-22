@@ -6,7 +6,6 @@ import { CONVERSATION_VIEW_MODE, INTERVAL_EVENT_TIMER, MAILBOX_IDENTIFIERS, STAT
 function eventManager(
     $cookies,
     $injector,
-    $rootScope,
     $state,
     $timeout,
     AppModel,
@@ -18,8 +17,7 @@ function eventManager(
     gettextCatalog,
     mailSettingsModel,
     notify,
-    userSettingsModel,
-    vpnSettingsModel
+    userSettingsModel
 ) {
     const FIBONACCI = [1, 1, 2, 3, 5, 8];
     const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = MAILBOX_IDENTIFIERS;
@@ -110,7 +108,7 @@ function eventManager(
 
     function manageVpnSettings(vpnSettings) {
         if (angular.isDefined(vpnSettings)) {
-            vpnSettingsModel.set('all', vpnSettings);
+            $injector.get('vpnSettingsModel').set('all', vpnSettings);
         }
     }
 

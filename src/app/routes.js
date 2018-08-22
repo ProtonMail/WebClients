@@ -88,6 +88,9 @@ export default angular
                     },
                     addresses(Address) {
                         return Address.query();
+                    },
+                    vpn(user, vpnSettingsModel) {
+                        return vpnSettingsModel.fetch();
                     }
                 }
             })
@@ -803,8 +806,8 @@ export default angular
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
                     },
-                    vpn(user, vpnModel, networkActivityTracker) {
-                        return networkActivityTracker.track(vpnModel.fetch());
+                    vpn(user, vpnSettingsModel, networkActivityTracker) {
+                        return networkActivityTracker.track(vpnSettingsModel.fetch());
                     }
                 },
                 onEnter(AppModel) {

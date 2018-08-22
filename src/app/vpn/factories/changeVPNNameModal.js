@@ -5,7 +5,7 @@ function changeVPNNameModal(
     eventManager,
     gettextCatalog,
     networkActivityTracker,
-    vpnSettingsApi
+    vpnSettingsModel
 ) {
     const successMessage = gettextCatalog.getString('OpenVPN login updated', null, 'Info');
 
@@ -18,7 +18,7 @@ function changeVPNNameModal(
             self.VPNName = params.name || '';
             self.submit = () => {
                 const { VPNName } = self;
-                const promise = vpnSettingsApi
+                const promise = vpnSettingsModel
                     .updateName({ VPNName })
                     .then(() => eventManager.call())
                     .then(() => (notification.success(successMessage), params.close(VPNName)));
