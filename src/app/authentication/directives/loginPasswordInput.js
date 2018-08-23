@@ -64,7 +64,10 @@ const loginPasswordInput = (userSettingsModel, srp, networkActivityTracker, gett
             loginPasswordLabel.textContent = getText(userPasswordMode, 'label');
             loginPasswordInput.placeholder = getText(userPasswordMode, 'placeholder');
 
-            loginPasswordInput.focus();
+            scope.$applyAsync(() => {
+                // Force sync with the model to avoid #7329
+                loginPasswordInput.focus();
+            });
         }
     };
 };
