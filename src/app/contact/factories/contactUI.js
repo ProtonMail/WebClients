@@ -194,7 +194,14 @@ function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
             UI.allowMultiple = true;
             datas.forEach((data) => {
                 if (data.value || UI.unique) {
-                    add(UI, data.key, removeX(data.type) || removeX(data.key), data.value, {}, data.settings);
+                    add(
+                        UI,
+                        data.key,
+                        removeX(data.type) || removeX(data.key),
+                        getValue(data.value, UI),
+                        {},
+                        data.settings
+                    );
                 }
             });
         }
@@ -207,6 +214,19 @@ function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
         UI.inputName = `name_${UI.placeholder.replace(/\W+|_/g, '')}`;
 
         return UI;
+    }
+
+    /**
+     * Helper to get value from UI parameters
+     * @param {*} value
+     * @param {Object} UI attach to the value
+     * @return {*}
+     */
+    function getValue(value, { mode, options }) {
+        if (mode === 'select') {
+            return _.find(options, value);
+        }
+        return value;
     }
 
     function populate(UI, type) {

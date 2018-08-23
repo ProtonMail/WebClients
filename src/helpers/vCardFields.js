@@ -11,11 +11,11 @@ export const FIELDS = {
     ADR: ['adr'],
     NOTE: ['note'],
     KEY: ['key'],
-    X_PM_ENCRYPT: ['x-pm-encrypt'],
-    X_PM_SIGN: ['x-pm-sign'],
-    X_PM_SCHEME: ['x-pm-scheme'],
-    X_PM_MIMETYPE: ['x-pm-mimetype'],
-    X_PM_TLS: ['x-pm-tls'],
+    'X-PM-ENCRYPT': ['x-pm-encrypt'],
+    'X-PM-SIGN': ['x-pm-sign'],
+    'X-PM-SCHEME': ['x-pm-scheme'],
+    'X-PM-MIMETYPE': ['x-pm-mimetype'],
+    'X-PM-TLS': ['x-pm-tls'],
     PHOTO: ['photo'],
     PERSONALS: [
         'kind',
@@ -57,11 +57,11 @@ const STANDARD_KEYS = [].concat(
     FIELDS.PHOTO,
     FIELDS.PERSONALS,
     FIELDS.KEY,
-    FIELDS.X_PM_ENCRYPT,
-    FIELDS.X_PM_SCHEME,
-    FIELDS.X_PM_MIMETYPE,
-    FIELDS.X_PM_SIGN,
-    FIELDS.X_PM_TLS
+    FIELDS['X-PM-ENCRYPT'],
+    FIELDS['X-PM-SCHEME'],
+    FIELDS['X-PM-MIMETYPE'],
+    FIELDS['X-PM-SIGN'],
+    FIELDS['X-PM-TLS']
 );
 
 const HUMAN_KEYS = [].concat(

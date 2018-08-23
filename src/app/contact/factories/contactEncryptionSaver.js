@@ -3,7 +3,8 @@ import { groupMatcher, getGroup } from '../../../helpers/vcard';
 import { VCARD_KEY_FIELDS } from '../../constants';
 
 /* @ngInject */
-function contactEncryptionSaver(contactDetailsModel, Contact) {
+function contactEncryptionSaver(contactDetailsModel, Contact, dispatchers) {
+    const { dispatcher } = dispatchers(['contacts']);
     /**
      * Finds the group of the email in the `oldCard` by looking at the email at index `newIndex` in `newCard`
      * @param {vCard} oldCard
@@ -87,7 +88,8 @@ function contactEncryptionSaver(contactDetailsModel, Contact) {
             // overwrite everything: could not find a good match
             overwriteEmails(contact.vCard, vCard);
         }
-        await Contact.updateUnencrypted(contact);
+        const { Contact: data, cards } = await Contact.updateUnencrypted(contact);
+        dispatcher.contacts('contactUpdated', { contact: data, cards });
     };
 
     return { save };

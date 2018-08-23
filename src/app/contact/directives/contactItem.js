@@ -9,7 +9,11 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
         Tels: 'TEL',
         Adrs: 'ADR',
         Notes: 'NOTE',
-        Photos: 'PHOTO'
+        Photos: 'PHOTO',
+        Scheme: 'X-PM-SCHEME',
+        Sign: 'X-PM-SIGN',
+        Encrypt: 'X-PM-ENCRYPT',
+        MIMEType: 'X-PM-MIMETYPE'
     };
     const getFieldKey = (type = '') => MAP_FIELDS[type] || type.toUpperCase();
 
