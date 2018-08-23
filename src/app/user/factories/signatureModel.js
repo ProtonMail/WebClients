@@ -1,9 +1,7 @@
 /* @ngInject */
 function signatureModel(
     addressesModel,
-    authentication,
     Address,
-    AppModel,
     sanitize,
     settingsMailApi,
     eventManager,
