@@ -27,7 +27,7 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
         if (Array.isArray(value)) {
             return value.map(processEscape);
         }
-        return processEscape(value);
+        return processEscape(String(value));
     };
 
     const cleanValue = (value = '', key = '') => {
@@ -219,9 +219,9 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
         );
 
         if (field === 'EMAIL') {
-            const schemeList = extract({ vcard, field: 'X_PM_SCHEME' });
+            const schemeList = extract({ vcard, field: 'X-PM-SCHEME' });
             _.each(schemeList, (item) => (item.value = { value: item.value }));
-            const mimeList = extract({ vcard, field: 'X_PM_MIMETYPE' });
+            const mimeList = extract({ vcard, field: 'X-PM-MIMETYPE' });
             _.each(mimeList, (item) => (item.value = { value: item.value }));
             _.each(results, (email) => {
                 const filter = (entries) =>
@@ -229,17 +229,17 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
                         entries,
                         ({ params: { group = '' } }) => group.toLowerCase() === email.params.group.toLowerCase()
                     );
-                const schemeList = filter(extract({ vcard, field: 'X_PM_SCHEME', type: 'x-pm-scheme' }));
+                const schemeList = filter(extract({ vcard, field: 'X-PM-SCHEME', type: 'x-pm-scheme' }));
                 _.each(schemeList, (item) => (item.value = { value: item.value }));
 
-                const mimeList = filter(extract({ vcard, field: 'X_PM_MIMETYPE', type: 'x-pm-mimetype' }));
+                const mimeList = filter(extract({ vcard, field: 'X-PM-MIMETYPE', type: 'x-pm-mimetype' }));
                 _.each(mimeList, (item) => (item.value = { value: item.value }));
 
                 email.settings = {
                     Key: filter(extract({ vcard, field: 'KEY', type: 'key' })),
-                    Encrypt: filter(extract({ vcard, field: 'X_PM_ENCRYPT', type: 'x-pm-encrypt' })),
-                    Sign: filter(extract({ vcard, field: 'X_PM_SIGN', type: 'x-pm-sign' })),
-                    TLS: filter(extract({ vcard, field: 'X_PM_TLS', type: 'x-pm-tls' })),
+                    Encrypt: filter(extract({ vcard, field: 'X-PM-ENCRYPT', type: 'x-pm-encrypt' })),
+                    Sign: filter(extract({ vcard, field: 'X-PM-SIGN', type: 'x-pm-sign' })),
+                    TLS: filter(extract({ vcard, field: 'X-PM-TLS', type: 'x-pm-tls' })),
                     // Include the original email to detect changes
                     Email: { ...email },
                     Scheme: schemeList,
@@ -313,7 +313,7 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
         return Object.keys(FIELDS).reduce((acc, field) => {
             const model = extract({ vcard, field });
 
-            if (model.length && !/^x_|^avoid$/i.test(field)) {
+            if (model.length && !/^x-|^avoid$/i.test(field)) {
                 acc[toHumanKey(field)] = model.map((item) => {
                     const label = getLabel(item.key);
                     return {
