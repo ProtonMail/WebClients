@@ -20,11 +20,6 @@ We are currently working with our community to localize ProtonMail from English 
   - npm 5
   - git
 
-### About npm install
-
-This command will run as a hook postinstall,
-  - `tasks/privateDependencies.sh`: Custom vendor
-
 ### Error with Mac
 
 You need to install a few dep in order to be able to deploy
