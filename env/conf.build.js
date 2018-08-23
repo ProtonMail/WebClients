@@ -61,7 +61,6 @@ module.exports = {
             'blob.js/Blob.js',
             'file-saver/FileSaver.js',
             'qrcodejs2/qrcode.min.js',
-            'pt.mailparser/mailparser.js',
             'markdown-it/dist/markdown-it.min.js',
             'clipboard/dist/clipboard.js',
             'angular-vs-repeat/dist/angular-vs-repeat.js',

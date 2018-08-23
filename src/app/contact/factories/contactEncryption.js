@@ -26,7 +26,16 @@ const {
 } = CONTACT_ERROR;
 
 /* @ngInject */
-function contactEncryption($injector, chunk, gettextCatalog, pmcw, vcard, contactKeyAssigner, contactProgressReporter) {
+function contactEncryption(
+    $injector,
+    $rootScope,
+    chunk,
+    gettextCatalog,
+    pmcw,
+    vcard,
+    contactKeyAssigner,
+    contactProgressReporter
+) {
     const getErrors = (data = []) => _.map(data, 'error').filter(Boolean);
 
     const buildContact = (ID, data = [], cards) => {

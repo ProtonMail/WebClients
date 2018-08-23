@@ -126,7 +126,7 @@
     "oclazyload": "^1.1.0",
     "papaparse": "^4.3.6",
     "pikaday": "^1.6.1",
-    "pmcrypto": "github:ProtonMail/pmcrypto.git#v3.2.0",
+    "pmcrypto": "github:ProtonMail/pmcrypto.git#v3.3.1",
     "prettier": "^1.13.2",
     "push.js": "0.0.8",
     "qrcodejs2": "0.0.2",
@@ -141,7 +141,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "./tasks/privateDependencies.sh && ./tasks/checkDependencies.js",
+    "postinstall": "./tasks/checkDependencies.js",
     "lint": "./tasks/lint.js",
     "e2e": "./tasks/lazyInstallVendor e2e && cypress run",
     "vendor": "cross-env NODE_ENV=dev tasks/buildVendor.js",

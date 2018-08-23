@@ -1,4 +1,6 @@
 import { toList } from './arrayHelper';
+// TODO migrate to import instead of window variable.
+const { MailParser } = pmcrypto;
 
 /**
  * Parse a mail into an object format, splitting, headers, html, text/plain and attachments. The result is defined

@@ -2,12 +2,10 @@ import _ from 'lodash';
 
 import { ENCRYPTED_STATUS, VERIFICATION_STATUS, MIME_TYPES, AES256 } from '../../constants';
 import { toText } from '../../../helpers/parserHTML';
-import { parseMail } from '../../../helpers/mail';
 import { inlineCss } from '../../../helpers/domHelper';
 
-const MAX_ENC_HEADER_LENGTH = 1024;
 const PGPMIME_TYPES = [ENCRYPTED_STATUS.PGP_MIME, ENCRYPTED_STATUS.PGP_MIME_SIGNED];
-const { PLAINTEXT, DEFAULT } = MIME_TYPES;
+const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function messageModel(
@@ -267,73 +265,34 @@ function messageModel(
                 });
         }
 
-        /**
-         * This function parses MIME format into attachments, content, encryptedSubject. The attachment automatically
-         * inherit the verified status from the message verified status, as they are included in the body. For more
-         * information see: https://tools.ietf.org/html/rfc2045, https://tools.ietf.org/html/rfc2046 and
-         * https://tools.ietf.org/html/rfc2387.
-         * @param content
-         * @param verified
-         * @returns {Promise.<*>}
-         */
-        async parse(content = '', verified = VERIFICATION_STATUS.NOT_VERIFIED) {
-            const data = await parseMail(content);
-            // cf. https://github.com/autocrypt/memoryhole subject can be in the MIME headers
-            const { attachments = [], text = '', html = '', subject: mimeSubject = false } = data;
-
-            const result = await Promise.all(
-                attachments.map(async (att) => {
-                    const { headers } = await parseMail(att.content);
-                    // cf. https://github.com/autocrypt/memoryhole
-                    if (
-                        _.has(att, 'fileName') ||
-                        att.contentType !== 'text/rfc822-headers' ||
-                        att.content.length > MAX_ENC_HEADER_LENGTH
-                    ) {
-                        return;
-                    }
-                    // probably some encrypted headers, not sure about the subjects yet. We don't want to attach them on reply
-                    // the headers for this current message shouldn't be carried over to the next message.
-                    att.generatedFileName = `${ENCRYPTED_HEADERS_FILENAME}.txt`;
-                    att.contentDisposition = 'attachment';
-                    // check for subject headers and from headers to match the current message with the right sender.
-                    if (!_.has(headers, 'subject') || !_.has(headers, 'from')) {
-                        return;
-                    }
-                    const sender = headers.from
-                        .split('<')
-                        .pop()
-                        .replace('>', '')
-                        .trim()
-                        .toLowerCase();
-                    if (sender !== this.Sender.Address.toLowerCase()) {
-                        return;
-                    }
-                    // found the encrypted subject:
-                    return headers.subject;
-                })
-            );
-
-            const [encryptedSubject = mimeSubject] = _.filter(result);
-            const convertedAttachments = attachmentConverter(this, attachments, verified);
-
-            if (html) {
-                this.MIMEType = DEFAULT;
-                return { message: html, attachments: convertedAttachments, verified, encryptedSubject };
-            }
-            this.MIMEType = PLAINTEXT;
-            if (text) {
-                return { message: text, attachments: convertedAttachments, verified, encryptedSubject };
-            }
-            if (convertedAttachments.length) {
-                return { message: emptyMessage, attachments: convertedAttachments, verified, encryptedSubject };
-            }
-            this.MIMEParsingFailed = true;
-            return { message: content, attachments: convertedAttachments, verified, encryptedSubject };
-        }
-
         isPGPMIME() {
             return PGPMIME_TYPES.includes(this.IsEncrypted) || this.MIMEType === MIME_TYPES.MIME;
+        }
+
+        async decryptMIME({ message, privateKeys, publicKeys, date }) {
+            const headerFilename = ENCRYPTED_HEADERS_FILENAME;
+            const sender = this.Sender.Address;
+            const result = await pmcw.decryptMIMEMessage({
+                message,
+                privateKeys,
+                publicKeys,
+                date,
+                headerFilename,
+                sender
+            });
+            try {
+                // extract the message body and attachments
+                const { body = emptyMessage, mimetype = PLAINTEXT } = (await result.getBody()) || {};
+                this.MIMEType = mimetype;
+
+                const verified = await result.verify();
+                const attachments = attachmentConverter(this, await result.getAttachments(), verified);
+                const encryptedSubject = await result.getEncryptedSubject();
+                return { message: body, attachments, verified, encryptedSubject };
+            } catch (e) {
+                this.MIMEParsingFailed = true;
+                return { message, attachments: [], verified: 0 };
+            }
         }
 
         decryptBody() {
@@ -360,6 +319,14 @@ function messageModel(
                         !compromised && acc.push(key);
                         return acc;
                     }, []);
+                    if (this.isPGPMIME()) {
+                        return this.decryptMIME({
+                            message,
+                            privateKeys,
+                            publicKeys: pubKeys,
+                            date: new Date(this.Time * 1000)
+                        });
+                    }
                     return pmcw
                         .decryptMessageLegacy({
                             message,
