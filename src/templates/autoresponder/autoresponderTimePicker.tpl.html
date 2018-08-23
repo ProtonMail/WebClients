@@ -1,17 +1,19 @@
 <div class="col-3-4">
 
-    <date-time-picker ng-if="repeat === constants.FIXED_INTERVAL"
-                      data-date-picker-key="{{ ::datePickerKey }}"
-                      data-label-id="{{ ::labelId }}"
-                      data-timestamp="{{ ::timestamp }}"
-                      data-zone="{{ ::zone }}"
-                      data-disable-input="{{ ::disableInput }}"
-                      data-form="form"></date-time-picker>
+    <date-time-picker
+        ng-if="repeat === constants.FIXED_INTERVAL"
+        data-date-picker-key="{{ ::datePickerKey }}"
+        data-label-id="{{ ::labelId }}"
+        data-timestamp="{{ ::timestamp }}"
+        data-zone="{{ ::zone }}"
+        data-disable-input="{{ ::disableInput }}"
+        data-form="form"></date-time-picker>
 
     <div class="pm_grid no-padding no-margin datetimepicker" ng-if="repeat === constants.DAILY">
         <div class="col-1-2">
-            <time-picker data-event-key="{{ ::datePickerKey }}"
-                         ng-model="timestamp"></time-picker>
+            <time-picker
+                data-event-key="{{ ::datePickerKey }}"
+                ng-model="timestamp"></time-picker>
         </div>
         <div class="col-1-1 text-red" ng-messages="form[datePickerKey].$error">
             <p ng-message="required" translate-context="Error input" translate>
@@ -20,19 +22,21 @@
         </div>
     </div>
 
-    <weekday-time-picker ng-if="repeat === constants.WEEKLY"
-                         data-date-picker-key="{{ ::datePickerKey }}"
-                         data-label-id="{{ ::labelId }}"
-                         data-timestamp="{{ ::timestamp }}"
-                         data-disable-input="{{ ::disableInput }}"
-                         data-form="form"></weekday-time-picker>
+    <weekday-time-picker
+        ng-if="repeat === constants.WEEKLY"
+        data-date-picker-key="{{ ::datePickerKey }}"
+        data-label-id="{{ ::labelId }}"
+        data-timestamp="{{ ::timestamp }}"
+        data-disable-input="{{ ::disableInput }}"
+        data-form="form"></weekday-time-picker>
 
-    <monthday-time-picker ng-if="repeat === constants.MONTHLY"
-                          data-date-picker-key="{{ ::datePickerKey }}"
-                          data-label-id="{{ ::labelId }}"
-                          data-timestamp="{{ ::timestamp }}"
-                          data-disable-input="{{ ::disableInput }}"
-                          data-form="form"></monthday-time-picker>
+    <monthday-time-picker
+        ng-if="repeat === constants.MONTHLY"
+        data-date-picker-key="{{ ::datePickerKey }}"
+        data-label-id="{{ ::labelId }}"
+        data-timestamp="{{ ::timestamp }}"
+        data-disable-input="{{ ::disableInput }}"
+        data-form="form"></monthday-time-picker>
 
 
 </div>

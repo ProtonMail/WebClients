@@ -1,0 +1,72 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const fs = require('fs');
+const Listr = require('listr');
+const UpdaterRenderer = require('listr-update-renderer');
+
+const getLang = (lang) => {
+    const dir = path.relative(__dirname, '..');
+    return path.resolve(`node_modules/moment/locale/${lang}.js`);
+};
+
+const getTasks = () => [
+    {
+        title: 'Load locales + format',
+        task(ctx) {
+            ctx.locales = require('../po/lang.json').map(({ key, lang }) => {
+                // ukrainian support for moment is uk
+                if (key === 'ua') {
+                    return { key: 'uk', lang };
+                }
+                return { key, lang };
+            });
+        }
+    },
+    {
+        title: 'Extract locales for moment',
+        task(ctx) {
+            const { list } = ctx.locales.reduce(
+                (acc, { key, lang }) => {
+                    const data = {
+                        [key]: fs.existsSync(getLang(key)),
+                        [lang]: fs.existsSync(getLang(lang))
+                    };
+
+                    acc.map[key] = data;
+
+                    if (data[key]) {
+                        acc.list.push(key);
+                        return acc;
+                    }
+                    if (data[lang]) {
+                        acc.list.push(lang);
+                        return acc;
+                    }
+
+                    !data[key] && acc.nope.push(key);
+                    !data[lang] && acc.nope.push(lang);
+
+                    return acc;
+                },
+                // en-gb is our default format for the app
+                { map: {}, list: ['en-gb', 'en-nz'], nope: [] }
+            );
+            ctx.list = list;
+        }
+    },
+    {
+        title: 'Write cache po/lang-moment.json',
+        task(ctx) {
+            const list = JSON.stringify(ctx.list);
+            fs.writeFileSync(path.resolve('po/lang-moment.json'), list);
+        }
+    }
+];
+
+const tasks = new Listr(getTasks(), {
+    renderer: UpdaterRenderer,
+    collapse: false
+});
+
+tasks.run();

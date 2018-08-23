@@ -1,8 +1,5 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function autoresponderTimeSection(autoresponderModel, dateUtils, dispatchers) {
-    const days = _.map(dateUtils.getSortedWeekdays(), (day) => ({ value: day.value, label: day.shortLabel }));
     return {
         replace: true,
         restrict: 'E',
@@ -13,7 +10,7 @@ function autoresponderTimeSection(autoresponderModel, dateUtils, dispatchers) {
         link(scope, elem, { mock }) {
             const { on, unsubscribe } = dispatchers();
 
-            scope.days = days;
+            scope.days = dateUtils.getDays('short');
             scope.constants = autoresponderModel.constants;
 
             scope.timezones = autoresponderModel.timezones;

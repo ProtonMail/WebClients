@@ -1,7 +1,10 @@
 import _ from 'lodash';
 
+import CONFIG from '../../config';
+
 /* @ngInject */
-function i18nLoader(CONFIG, dispatchers, gettextCatalog, $injector) {
+function i18nLoader(dispatchers, gettextCatalog, $injector) {
+
     const CACHE = {};
     const upperCaseLocale = (locale = '') => (locale === 'en' ? 'us' : locale).toUpperCase();
     const { dispatcher } = dispatchers(['i18n']);
@@ -108,7 +111,7 @@ function i18nLoader(CONFIG, dispatchers, gettextCatalog, $injector) {
         const normalizedNavLocale = navigatorLocale.toLowerCase().replace('_', '-');
 
         if (navigatorLocaleData !== null) {
-            const possibleLocales = moment.locales().filter((val) => val.lastIndexOf(baseLocale, 0) === 0);
+            const possibleLocales = CONFIG.momentLocales.filter((val) => val.lastIndexOf(baseLocale, 0) === 0);
 
             possibleLocales.sort(localeRanker(navigatorLocaleData));
 
@@ -125,7 +128,6 @@ function i18nLoader(CONFIG, dispatchers, gettextCatalog, $injector) {
 
     const localizePikaday = () => {
         // Because we will lazy load these modules
-        const dateUtils = $injector.get('dateUtils');
         const pikadayConfiguration = $injector.get('pikadayConfiguration');
 
         /*
@@ -135,13 +137,12 @@ function i18nLoader(CONFIG, dispatchers, gettextCatalog, $injector) {
             This is because pikaday expects this order.
             The actual order of the days is set by the firstday parameter.
          */
-        const americanDays = _.sortBy(dateUtils.I18N.days.slice(), (day) => day.value);
         const locale = {
             previousMonth: gettextCatalog.getString('Previous Month', null, 'Pikaday'),
             nextMonth: gettextCatalog.getString('Next Month', null, 'Pikaday'),
-            months: dateUtils.I18N.months,
-            weekdays: americanDays.map((day) => day.longLabel),
-            weekdaysShort: americanDays.map((day) => day.shortLabel)
+            months: moment.months(),
+            weekdays: moment.weekdays(true),
+            weekdaysShort: moment.weekdaysShort(true)
         };
 
         pikadayConfiguration.update({

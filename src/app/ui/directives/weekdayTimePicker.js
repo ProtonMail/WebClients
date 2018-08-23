@@ -1,9 +1,5 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function weekdayTimePicker(dateUtils, dispatchers, datetimeErrorCombiner, timepickerModel) {
-    const days = dateUtils.getSortedWeekdays();
-
+function weekdayTimePicker(dispatchers, datetimeErrorCombiner, timepickerModel) {
     const getWeekDay = (timestamp) => Math.floor(timestamp / (24 * 3600)) % 7;
     const getTime = (timestamp) => timestamp % (24 * 3600);
 
@@ -20,6 +16,7 @@ function weekdayTimePicker(dateUtils, dispatchers, datetimeErrorCombiner, timepi
             elem[0].querySelector('.timepicker').setAttribute('data-event-key', timePickerKey);
 
             return (scope, elem, { datePickerKey, timestamp, disableInput, labelId }) => {
+                const days = moment.weekdays();
                 const { on, unsubscribe, dispatcher } = dispatchers(['timepicker']);
                 const dispatchHelper = (type, data) => dispatcher.timepicker(type, data);
 
@@ -35,15 +32,13 @@ function weekdayTimePicker(dateUtils, dispatchers, datetimeErrorCombiner, timepi
 
                 scope.combineErrors = datetimeErrorCombiner.create(timePickerKey, scope);
 
-                // functions
                 function calcInternalVariables() {
                     if (scope.timestamp === null) {
                         scope.model.time = null;
                         scope.model.weekday = null;
                         return;
                     }
-
-                    scope.model.weekday = _.find(scope.days, { value: getWeekDay(scope.timestamp) });
+                    scope.model.weekday = days[getWeekDay(scope.timestamp)];
                     scope.model.time = getTime(scope.timestamp);
                 }
 
@@ -61,8 +56,6 @@ function weekdayTimePicker(dateUtils, dispatchers, datetimeErrorCombiner, timepi
                     scope.timestamp = scope.model.weekday.value * 24 * 3600 + scope.model.time;
                     dispatchHelper('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
                 }
-
-                // initialization
 
                 scope.model = { time: null, weekday: null };
                 scope.data = { timestamp: null, zone: 'UTC' };

@@ -4,9 +4,16 @@
             <label for="enable" translate-context="Label" translate>Enable</label>
         </div>
         <div class="col-3-4">
-            <toggle ng-disabled="mock" name="autoresponder.toggle" status="model.IsEnabled" on="ON" off="OFF" ng-if="!mock"></toggle>
+            <toggle
+                ng-disabled="mock"
+                name="autoresponder.toggle"
+                status="model.IsEnabled"
+                on="ON"
+                off="OFF"
+                ng-if="!mock"></toggle>
         </div>
     </div>
+
     <div class="clearfix" ng-if="model.IsEnabled">
         <div class="col-1-4">
             <label for="select-duration" translate-context="Label" translate>Duration</label>
@@ -15,8 +22,9 @@
             <div class="pm_grid no-padding no-margin">
                 <div class="col-1-2">
                     <div class="pm_select">
-                        <durationselect data-repeat="{{ ::model.Repeat }}"
-                                        data-disable-input="{{ ::mock }}"></durationselect>
+                        <durationselect
+                            data-repeat="{{ ::model.Repeat }}"
+                            data-disable-input="{{ ::mock }}"></durationselect>
                         <i class="fa fa-angle-down"></i>
                     </div>
                 </div>
@@ -53,40 +61,51 @@
             </p>
         </div>
     </div>
+
     <div class="clearfix" ng-if="model.Repeat === constants.DAILY && model.IsEnabled">
         <div class="col-1-4">
             <label translate-context="Label" translate>Days</label>
         </div>
         <div class="col-3-4">
-            <multiselect name="autoresponder.DaysSelected" id="enabledDays" data-options="days" data-selected="model.DaysSelected" data-disabled="{{ ::mock }}"></multiselect>
+            <multiselect
+                name="autoresponder.DaysSelected"
+                id="enabledDays"
+                data-options="days"
+                data-selected="model.DaysSelected"
+                data-disabled="{{ ::mock }}"></multiselect>
         </div>
     </div>
+
     <div class="clearfix" ng-if="model.Repeat !== constants.FOREVER && model.IsEnabled">
         <div class="col-1-4">
             <label translate-context="Label" translate for="startTime">Start time</label>
         </div>
-        <autoresponder-time-picker data-date-picker-key="datetimepickerStartTime"
-                                   id="datetimepickerStartTime"
-                                   data-label-id="StartTime"
-                                   data-repeat="{{ ::model.Repeat }}"
-                                   data-zone="{{ ::model.Zone }}"
-                                   data-timestamp="{{ ::model.StartTime }}"
-                                   data-disable-input="{{ ::mock }}"
-                                   data-form="form"></autoresponder-time-picker>
+        <autoresponder-time-picker
+             data-date-picker-key="datetimepickerStartTime"
+            id="datetimepickerStartTime"
+            data-label-id="StartTime"
+            data-repeat="{{ ::model.Repeat }}"
+            data-zone="{{ ::model.Zone }}"
+            data-timestamp="{{ ::model.StartTime }}"
+            data-disable-input="{{ ::mock }}"
+            data-form="form"></autoresponder-time-picker>
     </div>
+
     <div class="clearfix" ng-if="model.Repeat !== constants.FOREVER && model.IsEnabled">
         <div class="col-1-4">
             <label translate-context="Label" translate for="endTime">End time</label>
         </div>
-        <autoresponder-time-picker data-date-picker-key="datetimepickerEndTime"
-                                   id="datetimepickerEndTime"
-                                   data-label-id="EndTime"
-                                   data-repeat="{{ ::model.Repeat }}"
-                                   data-zone="{{ ::model.Zone }}"
-                                   data-timestamp="{{ ::model.EndTime }}"
-                                   data-disable-input="{{ ::mock }}"
-                                   data-form="form"></autoresponder-time-picker>
+        <autoresponder-time-picker
+            data-date-picker-key="datetimepickerEndTime"
+            id="datetimepickerEndTime"
+            data-label-id="EndTime"
+            data-repeat="{{ ::model.Repeat }}"
+            data-zone="{{ ::model.Zone }}"
+            data-timestamp="{{ ::model.EndTime }}"
+            data-disable-input="{{ ::mock }}"
+            data-form="form"></autoresponder-time-picker>
     </div>
+
     <div class="clearfix" ng-if="model.Repeat !== constants.FOREVER && model.IsEnabled">
         <div class="col-1-4">
             <label for="time-zone" translate-context="Label" translate>Time zone</label>
@@ -95,8 +114,9 @@
             <div class="pm_grid  no-padding no-margin">
                 <div class="col-1-2">
                     <div class="pm_select">
-                        <zoneselect data-zone="{{ ::model.Zone }}"
-                                    data-disable-input="{{ ::mock }}"></zoneselect>
+                        <zoneselect
+                            data-zone="{{ ::model.Zone }}"
+                            data-disable-input="{{ ::mock }}"></zoneselect>
                         <i class="fa fa-angle-down"></i>
                     </div>
                 </div>
