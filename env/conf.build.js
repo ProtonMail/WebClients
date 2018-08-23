@@ -40,8 +40,6 @@ module.exports = {
             'bootstrap-sass/assets/javascripts/bootstrap.js'
         ].map(bindPrefix),
         jsLazy: [
-            'moment/min/moment-with-locales.js',
-            'moment-timezone/builds/moment-timezone-with-data.js',
             'papaparse/papaparse.js',
             'ng-sortable/dist/ng-sortable.js',
             'pikaday/pikaday.js',

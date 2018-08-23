@@ -13,5 +13,6 @@ module.exports = {
     clientSecret: '4957cc9a2e0a2a49d02475c9d013478d',
     articleLink: 'https://protonmail.com/blog/protonmail-v3-14-release-notes/',
     changelogPath: 'assets/changelog.tpl.html',
-    translations: i18nLoader.get('list')
+    translations: i18nLoader.get('list'),
+    momentLocales: require('../po/lang-moment.json')
 };

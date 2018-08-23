@@ -1,18 +1,27 @@
 <div class="pm_grid no-padding no-margin datetimepicker">
     <div class="col-4-8">
         <div class="pm_select">
-            <select class="week-day-selector always-show-ng-invalid"
-                    ng-model="model.weekday"
-                    ng-options="day.longLabel for day in days track by day.value"
-                    ng-disabled="disableInput"
-                    name="{{::datePickerKey}}" required>
-                <option value="" disabled translate-context="Label select weekday" translate>Select weekday</option>
+            <select
+                class="week-day-selector always-show-ng-invalid"
+                ng-model="model.weekday"
+                ng-options="day for day in days track by day"
+                ng-disabled="disableInput"
+                name="{{::datePickerKey}}"
+                required>
+                <option
+                    value=""
+                    disabled
+                    translate-context="Label select weekday"
+                    translate>Select weekday</option>
             </select>
             <i class="fa fa-angle-down"></i>
         </div>
     </div>
     <div class="col-4-8 timepicker-container">
-        <time-picker class="timepicker" ng-model="model.time" data-event-key="{{ ::timePickerKey }}"></time-picker>
+        <time-picker
+            class="timepicker"
+            ng-model="model.time"
+            data-event-key="{{ ::timePickerKey }}"></time-picker>
     </div>
 
     <div class="col-1-1 text-red" ng-messages="combineErrors()">
