@@ -3,7 +3,15 @@ import _ from 'lodash';
 import { VCARD_KEYS, CONTACT_SETTINGS_DEFAULT } from '../../constants';
 import { orderByPref } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
-import { getKeys, BOOL_FIELDS, getHumanFields, isPersonalsKey, FIELDS, toHumanKey } from '../../../helpers/vCardFields';
+import {
+    getKeys,
+    BOOL_FIELDS,
+    getHumanFields,
+    isPersonalsKey,
+    FIELDS,
+    toHumanKey,
+    isSingle
+} from '../../../helpers/vCardFields';
 
 /* @ngInject */
 function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalog) {
@@ -217,6 +225,10 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
             },
             []
         );
+
+        if (isSingle(field) && results.length) {
+            return results[0];
+        }
 
         if (field === 'EMAIL') {
             const schemeList = extract({ vcard, field: 'X-PM-SCHEME' });
