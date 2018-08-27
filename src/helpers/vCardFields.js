@@ -79,9 +79,19 @@ const KEY_MAP = {
     PERSONALS: 'Personals'
 };
 
+const SINGLE_KEYS = [].concat(
+    FIELDS['X-PM-ENCRYPT'],
+    FIELDS['X-PM-SCHEME'],
+    FIELDS['X-PM-MIMETYPE'],
+    FIELDS['X-PM-SIGN'],
+    FIELDS['X-PM-TLS']
+);
+
 export const toHumanKey = (key) => {
     return KEY_MAP[key] || `${ucFirst(key.toLowerCase())}s`;
 };
+
+export const isSingle = (key) => SINGLE_KEYS.includes(key);
 
 /**
  * Get keys available for a field or non standards keys
