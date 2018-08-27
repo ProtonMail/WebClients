@@ -92,7 +92,7 @@ function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, aut
             })
         );
 
-        CACHE = _.sortBy(fullMembers, 'Name');
+        CACHE = _.sortBy(fullMembers, ({ Name = '' }) => Name.toLowerCase());
 
         dispatcher.members('update', {
             list: CACHE
