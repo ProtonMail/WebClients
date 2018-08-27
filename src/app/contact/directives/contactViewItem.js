@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import { isOwnAddress } from '../../../helpers/address';
 
 /* @ngInject */
@@ -18,19 +16,23 @@ function contactViewItem(contactEncryptionSettings, contactDetailsModel, keyCach
             };
 
             scope.settings = async function advanced(item) {
-                const model = await contactEncryptionSettings(
-                    { ...item },
-                    {
-                        config: contactDetailsModel.extractAll(scope.contact.vCard),
-                        contact: scope.contact,
-                        index: 0
-                    }
-                ).catch(_.noop);
+                try {
+                    const model = await contactEncryptionSettings(
+                        { ...item },
+                        {
+                            config: contactDetailsModel.extractAll(scope.contact.vCard),
+                            contact: scope.contact,
+                            index: 0
+                        }
+                    );
 
-                // Ensure we sync the view
-                scope.$applyAsync(() => {
-                    item.settings = model;
-                });
+                    // Ensure we sync the view
+                    scope.$applyAsync(() => {
+                        item.settings = model;
+                    });
+                } catch (e) {
+                    // noop
+                }
             };
         }
     };
