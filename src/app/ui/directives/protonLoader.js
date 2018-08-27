@@ -1,3 +1,5 @@
+const SHOW_CLASS = 'show';
+
 /* @ngInject */
 const protonLoader = (dispatchers) => ({
     replace: true,
@@ -7,9 +9,9 @@ const protonLoader = (dispatchers) => ({
         const { on, unsubscribe } = dispatchers();
 
         on('AppModel', (e, { type, data = {} }) => {
-            if (type === 'networkActivity') {
+            if (type === 'networkActivity' || type === 'loggingOut') {
                 const method = data.value ? 'add' : 'remove';
-                _rAF(() => el[0].classList[method]('show'));
+                _rAF(() => el[0].classList[method](SHOW_CLASS));
             }
         });
 

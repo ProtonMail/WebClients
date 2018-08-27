@@ -3,7 +3,7 @@ import { UNPAID_STATE, WIZARD_ENABLED } from '../../constants';
 /* @ngInject */
 function signupUserProcess(
     $location,
-    $rootScope,
+    AppModel,
     dispatchers,
     gettextCatalog,
     settingsApi,
@@ -68,9 +68,9 @@ function signupUserProcess(
                 return authentication.setAuthCookie(data);
             })
             .then(() => {
-                $rootScope.isLoggedIn = authentication.isLoggedIn();
-                $rootScope.isLocked = authentication.isLocked();
-                $rootScope.isSecure = authentication.isSecured();
+                AppModel.set('isLoggedIn', authentication.isLoggedIn());
+                AppModel.set('isLocked', authentication.isLocked());
+                AppModel.set('isSecure', authentication.isSecured());
             });
     }
 
@@ -85,9 +85,9 @@ function signupUserProcess(
             return setupKeys.setup(CACHE.setupPayload, signupModel.getPassword()).then(() => {
                 authentication.savePassword(CACHE.setupPayload.mailboxPassword);
 
-                $rootScope.isLoggedIn = authentication.isLoggedIn();
-                $rootScope.isLocked = authentication.isLocked();
-                $rootScope.isSecure = authentication.isSecured();
+                AppModel.set('isLoggedIn', authentication.isLoggedIn());
+                AppModel.set('isLocked', authentication.isLocked());
+                AppModel.set('isSecure', authentication.isSecured());
                 return data;
             });
         } catch (err) {

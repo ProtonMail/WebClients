@@ -8,13 +8,11 @@ const MAP_ADDONS = { member: MEMBER, address: ADDRESS, domain: DOMAIN, space: SP
 /* @ngInject */
 function addonRow(
     $filter,
-    $rootScope,
     customProPlanModal,
     dashboardConfiguration,
     dashboardModel,
     dashboardOptions,
     dispatchers,
-    gettextCatalog,
     subscriptionModel,
     customProPlanModel
 ) {

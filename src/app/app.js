@@ -104,7 +104,7 @@ angular
         $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
         $httpProvider.defaults.headers.get.Pragma = 'no-cache';
     })
-    .run(($rootScope, $location, $state, authentication, $log, dispatchers, networkActivityTracker, AppModel) => {
+    .run(($state, authentication, $log, dispatchers, networkActivityTracker, AppModel) => {
         const { on } = dispatchers();
 
         on('$stateChangeStart', (event, toState) => {
@@ -121,15 +121,14 @@ angular
             const isReset = toState.name.includes('reset');
             const isPrinter = toState.name === 'printer';
             const isPgp = toState.name === 'pgp';
+            const { isLoggedIn, isLocked } = AppModel.query();
 
-            if (isUnlock && $rootScope.isLoggedIn) {
-                $log.debug('appjs:(isUnlock && $rootScope.isLoggedIn)');
+            if (isUnlock && isLoggedIn) {
                 return;
             }
 
-            if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
+            if (isLoggedIn && !isLocked && isUnlock) {
                 // If already logged in and unlocked and on the unlock page: redirect to inbox
-                $log.debug('appjs:($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock)');
                 event.preventDefault();
                 $state.go('secured.inbox');
                 return;

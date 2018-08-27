@@ -1,7 +1,7 @@
 import { DRAFT } from '../../constants';
 
 /* @ngInject */
-function conversationListeners($rootScope, dispatchers) {
+function conversationListeners(dispatchers) {
     const { dispatcher, on, unsubscribe } = dispatchers(['composer.new']);
     const composerMapActions = {
         replyConversation: 'reply',

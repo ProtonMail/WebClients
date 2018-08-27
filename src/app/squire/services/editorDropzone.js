@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function editorDropzone($rootScope, gettextCatalog, attachmentFileFormat, squireExecAction, notification) {
+function editorDropzone(gettextCatalog, attachmentFileFormat, squireExecAction, notification) {
     const SVG_MIME = 'image/svg+xml';
     const CLASS_DRAGGABLE = 'editorDropzone-enter';
 

@@ -1,17 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function eventsAttachments(
-    $state,
-    $rootScope,
-    pmcw,
-    attachmentDownloader,
-    AppModel,
-    AttachmentEvent,
-    networkActivityTracker,
-    dispatchers,
-    downloadFile
-) {
+function eventsAttachments(attachmentDownloader, AttachmentEvent, networkActivityTracker, dispatchers, downloadFile) {
     const LOAD_CLASSNAME = 'eventsAttachments-load';
     const HIDDEN_CLASSNAME = 'eventsAttachments-hidden';
 

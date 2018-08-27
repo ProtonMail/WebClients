@@ -1,7 +1,7 @@
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function messageView($stateParams, $state, AppModel, dispatchers, $rootScope, conversationListeners, cache, hotkeys) {
+function messageView($stateParams, $state, AppModel, dispatchers, conversationListeners, cache, hotkeys) {
     function back() {
         const name = $state.$current.name;
         const route = name.replace('.element', '');

@@ -103,8 +103,8 @@ export default angular
                         templateUrl: require('../templates/views/unlock.tpl.html')
                     }
                 },
-                onEnter: ($rootScope, AppModel) => {
-                    $rootScope.isLoggedIn = true;
+                onEnter: (AppModel) => {
+                    AppModel.set('isLoggedIn', true);
                     AppModel.set('domoArigato', true);
                 }
             })
@@ -116,11 +116,11 @@ export default angular
                         templateUrl: require('../templates/layout/pre.tpl.html')
                     }
                 },
-                onEnter($state, $stateParams, $rootScope, notification, Invite, gettextCatalog, AppModel) {
+                onEnter($state, $stateParams, notification, Invite, gettextCatalog, AppModel) {
                     const { token: inviteToken, selector: inviteSelector } = $stateParams;
                     const errorMessage = gettextCatalog.getString('Invalid invite link', null, 'Error');
 
-                    $rootScope.loggingOut = false;
+                    AppModel.set('loggingOut', false);
 
                     Invite.check(inviteToken, inviteSelector, INVITE_MAIL)
                         .then(({ data = {} } = {}) => {
@@ -525,7 +525,7 @@ export default angular
                         return premiumDomainModel.fetch();
                     }
                 },
-                onEnter($rootScope, authentication) {
+                onEnter(authentication) {
                     // This will redirect to a login step if necessary
                     authentication.redirectIfNecessary();
                 }
@@ -1107,8 +1107,9 @@ export default angular
                 url: '/{id}',
                 views: elementView,
                 params: { id: null, messageID: null, welcome: null },
-                onExit($rootScope) {
-                    $rootScope.$emit('unmarkMessages');
+                onExit(dispatchers) {
+                    const { dispatcher } = dispatchers(['unmarkMessages']);
+                    dispatcher.unmarkMessages();
                 }
             });
         });

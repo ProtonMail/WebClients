@@ -13,7 +13,6 @@ const noRecipients = (message) => !getRecipients(message).length;
 function message(
     $state,
     dispatchers,
-    $rootScope,
     mailSettingsModel,
     cache,
     displayContent,

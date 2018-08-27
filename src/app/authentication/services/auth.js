@@ -5,30 +5,23 @@ import { OAUTH_KEY, FREE_USER_ROLE, MAILBOX_PASSWORD_KEY } from '../../constants
 /* @ngInject */
 function authentication(
     $http,
-    $location,
     $log,
     $q,
-    $rootScope,
     $state,
     $injector,
     $exceptionHandler,
     authApi,
     checkKeysFormat,
     CONFIG,
-    errorReporter,
-    gettextCatalog,
     upgradePassword,
-    Key,
     networkActivityTracker,
     pmcw,
     secureSessionStorage,
     User,
     passwords,
     srp,
-    setupKeys,
     AppModel,
     tempStorage,
-    sanitize,
     upgradeKeys,
     decryptUser
 ) {
@@ -269,7 +262,7 @@ function authentication(
                     $log.debug('headers change', $http.defaults.headers);
 
                     saveAuthData(result.data);
-                    $rootScope.isLocked = false;
+                    AppModel.set('isLocked', false);
 
                     return result;
                 })
@@ -398,7 +391,7 @@ function authentication(
                 }
             };
 
-            $rootScope.loggingOut = true;
+            AppModel.set('loggingOut', true);
 
             if (callApi && uid) {
                 authApi.revoke().then(process, process);
@@ -425,11 +418,11 @@ function authentication(
                 // Clean onbeforeunload listener
                 window.onbeforeunload = undefined;
                 // Disable animation
-                $rootScope.loggingOut = false;
+                AppModel.set('loggingOut', false);
                 // Re-initialize variables
-                $rootScope.isLoggedIn = this.isLoggedIn();
-                $rootScope.isLocked = this.isLocked();
-                $rootScope.isSecure = this.isSecured();
+                AppModel.set('isLoggedIn', this.isLoggedIn());
+                AppModel.set('isLocked', this.isLocked());
+                AppModel.set('isSecure', this.isSecured());
                 AppModel.set('domoArigato', false);
                 AppModel.set('loggedIn', false);
                 $injector.get('contactEmails').clear();
@@ -496,7 +489,7 @@ function authentication(
                         user.DisplayName = user.Name;
                     }
 
-                    $rootScope.isLoggedIn = true;
+                    AppModel.set('isLoggedIn', true);
                     this.user = user;
 
                     const plainMailboxPass = tempStorage.getItem('plainMailboxPass');

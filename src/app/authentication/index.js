@@ -25,11 +25,11 @@ import activeSessionsModel from './factories/activeSessionsModel';
 export default angular
     .module('proton.authentication', ['proton.utils', 'proton.keys'])
     // Global functions
-    .run(($rootScope, authentication) => {
+    .run((AppModel, authentication) => {
         authentication.detectAuthenticationState();
-        $rootScope.isLoggedIn = authentication.isLoggedIn();
-        $rootScope.isLocked = authentication.isLocked();
-        $rootScope.isSecure = authentication.isSecured();
+        AppModel.set('isLoggedIn', authentication.isLoggedIn());
+        AppModel.set('isLocked', authentication.isLocked());
+        AppModel.set('isSecure', authentication.isSecured());
     })
     .controller('LoginController', LoginController)
     .directive('loginForm', loginForm)

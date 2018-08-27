@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function mailboxIdentifersTemplate($rootScope, labelsModel) {
+function mailboxIdentifersTemplate(labelsModel) {
     const CLEANER = document.createElement('div');
     const contains = (key, labels) => _.includes(labels, MAILBOX_IDENTIFIERS[key]);
 
