@@ -1,19 +1,17 @@
 /* @ngInject */
 function SupportController(
-    $rootScope,
+    AppModel,
     $scope,
     $state,
     $log,
     authentication,
     tempStorage,
-    User,
     tools,
     notification,
     gettextCatalog,
     confirmModal,
     Reset,
     setupKeys,
-    Key,
     networkActivityTracker
 ) {
     function resetState() {
@@ -148,7 +146,7 @@ function SupportController(
                 Password: $scope.params.password
             })
             .then(({ data }) => {
-                $rootScope.isLoggedIn = true;
+                AppModel.set('isLoggedIn', true);
                 return data;
             });
     }

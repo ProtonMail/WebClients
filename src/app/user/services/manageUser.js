@@ -5,7 +5,6 @@ import { MAIN_KEY, FREE_USER_ROLE, PAID_ADMIN_ROLE } from '../../constants';
 /* @ngInject */
 function manageUser(
     $exceptionHandler,
-    $rootScope,
     addressesModel,
     addressWithoutKeysManager,
     authentication,

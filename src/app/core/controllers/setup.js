@@ -2,10 +2,10 @@ import { WIZARD_ENABLED, UNPAID_STATE } from '../../constants';
 
 /* @ngInject */
 function SetupController(
-    $rootScope,
     $scope,
     $state,
     Address,
+    AppModel,
     authentication,
     domains,
     networkActivityTracker,
@@ -105,9 +105,9 @@ function SetupController(
         return setupKeys.setup(data, passwordCopy).then(() => {
             $scope.$applyAsync(() => {
                 authentication.savePassword(data.mailboxPassword);
-                $rootScope.isLoggedIn = authentication.isLoggedIn();
-                $rootScope.isLocked = authentication.isLocked();
-                $rootScope.isSecure = authentication.isSecured();
+                AppModel.set('isLoggedIn', authentication.isLoggedIn());
+                AppModel.set('isLocked', authentication.isLocked());
+                AppModel.set('isSecure', authentication.isSecured());
             });
         });
     }

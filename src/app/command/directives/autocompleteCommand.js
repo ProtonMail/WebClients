@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function autocompleteCommand($rootScope, autocompleteBuilder, autocompleteCommandModel, AppModel) {
+function autocompleteCommand(autocompleteBuilder, autocompleteCommandModel, AppModel) {
     const BACKSPACE_KEY = 8;
     const ESCAPE_KEY = 27;
     const SPACE_KEY = 32;

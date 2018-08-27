@@ -2,13 +2,10 @@ import { hasSessionStorage, hasCookie } from '../../../helpers/browser';
 
 /* @ngInject */
 function LoginController(
-    $rootScope,
     $state,
-    $stateParams,
     $scope,
     $log,
     $timeout,
-    $http,
     $location,
     CONFIG,
     dispatchers,
@@ -46,11 +43,10 @@ function LoginController(
     }
 
     /**
-     * Set $rootScope.isLoggedIn
      * Needed to handle back button from unlock state
      */
     function setLoggedIn() {
-        $rootScope.isLoggedIn = !$state.is('login');
+        AppModel.set('isLoggedIn', !$state.is('login'));
     }
 
     /**
@@ -166,8 +162,8 @@ function LoginController(
                 // Continues loading up the app
                 authentication.saveAuthData({ UID });
 
-                $rootScope.isSecure = true;
-                $rootScope.isLoggedIn = true;
+                AppModel.set('isSecure', true);
+                AppModel.set('isLoggedIn', true);
 
                 // Redirect to inbox
                 $state.go('secured.inbox');
@@ -181,8 +177,7 @@ function LoginController(
                 return;
             }
 
-            srp
-                .info($scope.creds.username)
+            srp.info($scope.creds.username)
                 .then((resp) => {
                     if (resp.data.TwoFactor === 0) {
                         // user does not have two factor enabled, we will proceed to the auth call
@@ -260,7 +255,7 @@ function LoginController(
                             authentication
                                 .setAuthCookie(result.data)
                                 .then(() => {
-                                    $rootScope.isLoggedIn = true;
+                                    AppModel.set('isLoggedIn', true);
 
                                     $state.go('login.setup');
                                 })
@@ -269,7 +264,7 @@ function LoginController(
                                     $state.go('login');
                                 });
                         } else if (result.data && result.data.AccessToken) {
-                            $rootScope.isLoggedIn = true;
+                            AppModel.set('isLoggedIn', true);
                             const creds = {
                                 username,
                                 password,
@@ -312,9 +307,9 @@ function LoginController(
                 $log.debug('unlockWithPassword:resp' + resp);
                 return authentication.setAuthCookie(authResponse).then((resp) => {
                     $log.debug('setAuthCookie:resp' + resp);
-                    $rootScope.isLoggedIn = authentication.isLoggedIn();
-                    $rootScope.isLocked = authentication.isLocked();
-                    $rootScope.isSecure = authentication.isSecured();
+                    AppModel.set('isLoggedIn', authentication.isLoggedIn());
+                    AppModel.set('isLocked', authentication.isLocked());
+                    AppModel.set('isSecure', authentication.isSecured());
 
                     $state.go('secured.inbox');
                 });
@@ -415,7 +410,7 @@ function LoginController(
     };
 
     $scope.reset = () => {
-        $rootScope.isLoggedIn = false;
+        AppModel.set('isLoggedIn', false);
         $state.go('support.reset-password');
     };
 

@@ -1,6 +1,5 @@
 /* @ngInject */
 function downgrade(
-    $rootScope,
     confirmModal,
     eventManager,
     gettextCatalog,

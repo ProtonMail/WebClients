@@ -6,7 +6,6 @@ const { DEFAULT } = MIME_TYPES;
 /* @ngInject */
 function OutsideController(
     $interval,
-    $rootScope,
     $scope,
     $state,
     $stateParams,

@@ -14,17 +14,7 @@ import {
 const ENCRYPTED_MODES = [CONTACT_MODE.ENCRYPTED, CONTACT_MODE.ENCRYPTED_AND_SIGNED];
 
 /* @ngInject */
-function Contact(
-    $http,
-    $rootScope,
-    dispatchers,
-    url,
-    chunk,
-    contactEncryption,
-    sanitize,
-    eventManager,
-    contactProgressReporter
-) {
+function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, eventManager, contactProgressReporter) {
     const requestURL = url.build('contacts');
     const { dispatcher } = dispatchers(['contacts']);
 

@@ -12,8 +12,9 @@ function AppModel(dispatchers) {
     };
     const is = (key = '') => !!MODEL[key];
     const get = (key = '') => MODEL[key];
+    const query = () => angular.copy(MODEL);
     const store = (key = '', value) => (MODEL[key] = value);
 
-    return { is, set, store, get };
+    return { is, set, store, get, query };
 }
 export default AppModel;

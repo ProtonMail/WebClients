@@ -4,12 +4,9 @@ import { CUSTOM_DOMAIN_ADDRESS } from '../../constants';
 /* @ngInject */
 function DomainsController(
     $controller,
-    $q,
-    $rootScope,
     $scope,
     $state,
     gettextCatalog,
-    Address,
     addressModal,
     addressesModel,
     addressesModal,
@@ -19,10 +16,8 @@ function DomainsController(
     dmarcModal,
     domainApi,
     domainModel,
-    organizationModel,
     domainModal,
     eventManager,
-    generateOrganizationModal,
     memberModal,
     mxModal,
     networkActivityTracker,

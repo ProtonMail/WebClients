@@ -2,7 +2,6 @@ import _ from 'lodash';
 
 /* @ngInject */
 function SecuredController(
-    $rootScope,
     $scope,
     $state,
     addressWithoutKeysManager,
@@ -29,8 +28,8 @@ function SecuredController(
         $scope.isFree = isFree;
     };
     setUserType();
-    $rootScope.isLoggedIn = true; // Shouldn't be there
-    $rootScope.isLocked = false; // Shouldn't be there
+    AppModel.set('isLoggedIn', true); // Shouldn't be there
+    AppModel.set('isLocked', false); // Shouldn't be there
 
     resurrecter.init();
     const bindAppValue = (key, { value }) => $scope.$applyAsync(() => ($scope[key] = value));

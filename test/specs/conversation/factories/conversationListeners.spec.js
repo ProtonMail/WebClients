@@ -30,7 +30,7 @@ describe('conversationListeners factory', () => {
     beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
         const dispatchers = dispatchersService(rootScope);
-        factory = service(rootScope, dispatchers);
+        factory = service(dispatchers);
     }));
 
     describe('Add subscriber with a draft', () => {

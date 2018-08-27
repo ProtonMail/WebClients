@@ -63,11 +63,12 @@
 }
 
 /* context */
+/* 'login' class is applyied on body when !isLoggedIn */
 /* not authenticated */
-.headerNoAuth-container.isLoggedIn [class*='__noAuth'] { display: none }
+body:not(.login) .headerNoAuth-container [class*='__noAuth'] { display: none }
 /* not authenticated */
-.headerNoAuth-container:not(.isLoggedIn) [class*='__Auth'] { display: none }
-.headerNoAuth-container:not(.isLoggedIn) [class*='__noAuth'] { display: flex }
+.login .headerNoAuth-container [class*='__Auth'] { display: none }
+.login .headerNoAuth-container [class*='__noAuth'] { display: flex }
 
 body#signup .headerNoAuth-item-signup__noAuth { display: none }
 

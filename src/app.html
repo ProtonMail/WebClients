@@ -32,14 +32,7 @@
     <meta name="theme-color" content="#333366">
     <meta name="apple-itunes-app" content="app-id=979659905"/>
 </head>
-<body ng-class="{
-    locked: (isLoggedIn && isLocked) || ('login'|isState) || ('login.unlock'|isState) || ('eo.unlock'|isState) || ('eo.message'|isState) || ('reset'|isState) || ('eo.reply'|isState) || ('reset'|isState),
-    login:!isLoggedIn,
-    unlock:isLocked,
-    secure:isSecure,
-    light: ('support.reset-password'|isState) || ('signup'|isState) || ('login.setup'|isState) || ('pre-invite'|isState) || ('support.message'|isState),
-    scroll: ('signup'|isState) || ('login.setup'|isState) || ('secured.print'|isState)
-}" data-app-config-body>
+<body data-app-config-body>
 
 <custom-theme ng-if="(isLoggedIn && !isLocked)"></custom-theme>
 

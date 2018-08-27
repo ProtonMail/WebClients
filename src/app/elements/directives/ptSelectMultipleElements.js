@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function ptSelectMultipleElements($rootScope, AppModel, dispatchers) {
+function ptSelectMultipleElements(AppModel, dispatchers) {
     const CACHE = {};
     const countChecked = (conversations) => _.filter(conversations, { Selected: true }).length;
 
