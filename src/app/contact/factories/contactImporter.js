@@ -14,7 +14,7 @@ function contactImporter(
         invalid: gettextCatalog.getString('Invalid file type', null, 'Error'),
         parsingCSV: gettextCatalog.getString('Cannot convert the file', null, 'Error')
     };
-    const { dispatcher } = dispatchers(['contact']);
+    const { dispatcher } = dispatchers(['contacts']);
     const dispatch = (data = []) =>
         dispatcher.contacts('createContact', { contacts: contactSchema.prepareContacts(data), mode: 'import' });
 
