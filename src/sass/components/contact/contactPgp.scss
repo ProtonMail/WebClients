@@ -114,7 +114,7 @@ contact-public-keys .hide-actions {
     /*
      * Hide when not all keys are expired, there are no keys, or encryption is not enabled.
      */
-    &:not(.pgp-expired), &.pgp-no-keys, &:not(pgp-encrypt)  {
+    &:not(.pgp-expired), &.pgp-no-keys, &:not(.pgp-encrypt)  {
         .expired-key-message {
             display: none;
         }
