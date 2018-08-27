@@ -31,7 +31,10 @@ function composerFromModel(
      */
     function get({ xOriginalTo, AddressID }) {
         const plusAddress = plusAliasModel.getAddress(xOriginalTo);
-        const addresses = flow(filter({ Status: 1, Receive: 1 }), sortBy('Order'))(addressesModel.get());
+        const addresses = flow(
+            filter({ Status: 1, Receive: 1 }),
+            sortBy('Order')
+        )(addressesModel.get());
 
         if (plusAddress) {
             // It's important to unshift the plus address to be found first with find()
@@ -61,24 +64,25 @@ function composerFromModel(
 
     const isPmMeAddress = ({ Email = '' } = {}) => Email.endsWith(`@${premiumDomainModel.first()}`);
     const findOrFirst = (addresses = [], ID) => _.find(addresses, { ID }) || _.first(addresses);
+    const canSend = ({ Send }) => Send === 1;
 
     /**
      * Return the address selected in the FROM select
      * @param  {Array} addresses
      * @param  {String} ID AddressID
-     * @return {Object}
+     * @return {Object} address
      */
     function find(addresses = [], ID) {
         const address = findOrFirst(addresses, ID);
 
         if (!authentication.hasPaidMail() && isPmMeAddress(address)) {
-            const onlySend = _.find(addresses, { Send: 1 });
+            const found = _.find(addresses, (address) => canSend(address) && !isPmMeAddress(address));
 
             if (!localStorage.getItem(PM_ADDRESS_ITEM)) {
-                displayWarning(onlySend.Email);
+                displayWarning(found.Email);
             }
 
-            return onlySend;
+            return found;
         }
 
         return address;
