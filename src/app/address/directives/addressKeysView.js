@@ -20,9 +20,20 @@ function addressKeysView(
     eventManager,
     generateModal,
     authentication,
-    deleteKeyProcess
+    deleteKeyProcess,
+    selectAddressModal
 ) {
     const I18N = {
+        SELECT_ADDRESS_TO_ADD_KEY: gettextCatalog.getString(
+            'Select an address to which the new key will be attached',
+            null,
+            'Info'
+        ),
+        SELECT_ADDRESS_TO_IMPORT_KEY: gettextCatalog.getString(
+            'Select an address to which the imported key will be attached',
+            null,
+            'Info'
+        ),
         IMPORT_MESSAGE: gettextCatalog.getString(
             'Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.',
             null,
@@ -242,7 +253,30 @@ function addressKeysView(
                 networkActivityTracker.track(promise);
             };
 
-            const importKey = ({ email }) => {
+            const selectAddress = (info) => {
+                return new Promise((resolve, reject) => {
+                    selectAddressModal.activate({
+                        params: {
+                            info,
+                            addressID: 'addressID',
+                            label: 'email',
+                            addresses: scope.addresses,
+                            async submit(address) {
+                                await selectAddressModal.deactivate();
+                                resolve(address);
+                            },
+                            async cancel() {
+                                await selectAddressModal.deactivate();
+                                reject();
+                            }
+                        }
+                    });
+                });
+            };
+
+            const importKey = async () => {
+                const { email } = await selectAddress(I18N.SELECT_ADDRESS_TO_IMPORT_KEY);
+
                 confirmModal.activate({
                     params: {
                         title: I18N.IMPORT_TITLE,
@@ -261,18 +295,14 @@ function addressKeysView(
 
             /**
              * Triggers a process that allows the user to generate a new key for the given address
-             * @param {Object} address
              */
-            const newKey = ({ email = '', addressID = '' } = {}) => {
+            const newKey = async () => {
+                const { email: Email, addressID: ID } = await selectAddress(I18N.SELECT_ADDRESS_TO_ADD_KEY);
+
                 generateModal.activate({
                     params: {
-                        addresses: [
-                            {
-                                Email: email,
-                                ID: addressID
-                            }
-                        ],
-                        title: I18N.generateKeyTitle(email),
+                        addresses: [{ Email, ID }],
+                        title: I18N.generateKeyTitle(Email),
                         message: I18N.GENERATE_KEY_MESSAGE,
                         class: 'generateNewKey',
                         password: authentication.getPassword(),
@@ -327,6 +357,7 @@ function addressKeysView(
 
             const clickDelegate = ({ target: { nodeName, dataset } }) => {
                 const { action = false, addressId = null, keyIndex = null } = dataset;
+
                 if (nodeName !== 'BUTTON' || !action) {
                     return;
                 }

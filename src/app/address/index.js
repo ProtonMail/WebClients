@@ -9,6 +9,7 @@ import addressKeysViewModel from './factories/addressKeysViewModel';
 import addressModal from './modals/addressModal';
 import addressesModal from './modals/addressesModal';
 import setupAddressModal from './modals/setupAddressModal';
+import selectAddressModal from './modals/selectAddressModal';
 import addressWithoutKeysManager from './services/addressWithoutKeysManager';
 import deleteKeyProcess from './services/deleteKeyProcess';
 
@@ -25,5 +26,6 @@ export default angular
     .factory('addressModal', addressModal)
     .factory('addressesModal', addressesModal)
     .factory('setupAddressModal', setupAddressModal)
+    .factory('selectAddressModal', selectAddressModal)
     .factory('addressWithoutKeysManager', addressWithoutKeysManager)
     .factory('deleteKeyProcess', deleteKeyProcess).name;
