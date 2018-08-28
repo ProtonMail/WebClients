@@ -28,8 +28,6 @@
     }
 }
 
-.addressKeysView-email-container { }
-
 .addressKeysView-toggle,
 .addressKeysView-email {
     float: left;
@@ -48,6 +46,7 @@
     display: none !important;
 }
 
-.addressKeysView-container.address:not(.addressKeysView-is-private) .addressKeysView-action-column {
+.addressKeysView-container.user .addressKeysView-main-actions,
+.addressKeysView-container.address:not(.addressKeysView-is-private) .addressKeysView-main-actions {
     display: none;
 }

@@ -4,6 +4,10 @@
         <input type="hidden" class="import-private-key-address">
         <input type="hidden" class="import-private-key-id">
     </form>
+    <p class="addressKeysView-main-actions">
+        <button data-action="newKey" type="button" class="pm_button primary" translate-context="Action" translate>Add new key</button>
+        <button data-action="importKey" type="button" class="pm_button" translate-context="Action" translate>Import key</button>
+    </p>
     <table class="bordered absorbing">
         <thead>
             <tr>
@@ -11,7 +15,6 @@
                 <th data-display-mode="user" class="key-size absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>User</th>
                 <th class="finger-print absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>Fingerprint</th>
                 <th translate-context="Title" translate-comment="table heading" translate>Key type</th>
-                <th class="actions text-center addressKeysView-action-column" translate-context="Title" translate-comment="table heading" translate>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -27,24 +30,6 @@
                 </td>
                 <td>
                     {{ address.algType }}
-                </td>
-                <td class="text-center addressKeysView-action-column">
-                    <div class="pm_buttons link" data-display-mode="address">
-                        <button class="pm_button link"
-                                data-action="newKey"
-                                data-address-id="{{ address.addressID }}"
-                                translate-context="Action"
-                                translate>New Key</button>
-                            <a class="pm_buttons pm_button pm_trigger fa fa-angle-down" dropdown></a>
-                        <div class="pm_dropdown wide right default-padding">
-                            <button class="pm_button link"
-                                    data-action="importKey"
-                                    data-address-id="{{ address.addressID }}"
-                                    translate-context="Action"
-                                    translate>Import Key</button>
-                        </div>
-                    </div>
-                    <span data-display-mode="user" translate translate-context="Action">-</span>
                 </td>
             </tr>
             <tr class="hasTable"
