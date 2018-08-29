@@ -38,4 +38,9 @@ Arrival-Date: Fri,  9 Feb 2018 08:19:25`
                 .toBe(output);
         });
     });
+
+    it('should escape when there are no links matched', () => {
+        expect(linkit('<hello>'))
+            .toBe('&lt;hello&gt;');
+    });
 });
