@@ -21,7 +21,7 @@ function displayContent(dispatchers, prepareContent, sanitize) {
     }
 
     function clean(content = {}) {
-        // Don't sanitize if plain text
+        // Don't sanitize if plain text. The linkit helper will do that. It can't receive escaped input because it will not find link to highlight properly.
         if (content.type === 'plain') {
             return content;
         }
