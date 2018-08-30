@@ -17,7 +17,7 @@ import payment from './models/payment';
 import reset from './models/reset';
 import user from './models/user';
 import notification from './providers/notification';
-import url from './providers/url';
+import url from './services/url';
 import dispatchers from './services/dispatchers';
 import errorReporter from './services/errorReporter';
 import i18nLoader from './services/i18nLoader';
@@ -51,7 +51,7 @@ export default angular
     .factory('Reset', reset)
     .factory('User', user)
     .provider('notification', notification)
-    .provider('url', url)
+    .factory('url', url)
     .factory('dispatchers', dispatchers)
     .factory('errorReporter', errorReporter)
     .factory('i18nLoader', i18nLoader)
