@@ -60,8 +60,7 @@ angular
         routes
     ])
     .constant('CONFIG', CONFIG)
-    .config((urlProvider, CONFIG, notificationProvider) => {
-        urlProvider.setBaseUrl(CONFIG.apiUrl);
+    .config((notificationProvider) => {
         notificationProvider.template(require('../templates/notifications/base.tpl.html'));
     })
     .run((
