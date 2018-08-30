@@ -28,6 +28,7 @@
          }
     }
 
+    button,
     span {
         position: absolute;
         width: ($toggleWidth / 2);
@@ -50,7 +51,7 @@
         &.on,
         &.off {
             z-index: 3;
-            cursor: pointer;
+            border: none;
         }
         &.on {
             border-radius: 2rem 0 0 2rem;
