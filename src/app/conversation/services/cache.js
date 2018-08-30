@@ -368,9 +368,9 @@ function cache(
         return promise;
     }
 
-    function refreshStateLimit({ Limit: limit, Total: total }) {
-        cacheCounters.currentState(limit);
-        dispatchElements('setLimit', { limit, total });
+    function refreshStateLimit({ Limit, Total }) {
+        cacheCounters.currentState(Limit);
+        dispatchElements('setLimit', { Limit, Total });
     }
 
     /**
