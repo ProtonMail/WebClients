@@ -41,11 +41,6 @@ body {
         overflow: auto;
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
-
-        &:focus {
-            /* hotkey remove browser focus styling */
-            outline: none;
-        }
     }
     #conversation-list-rows {
         height: 100%;

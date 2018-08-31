@@ -6,9 +6,6 @@ input[type=range].pm_range {
   margin: 1rem 0;
   width: 100%;
 }
-input[type=range].pm_range:focus {
-  outline: none;
-}
 input[type=range].pm_range::-webkit-slider-runnable-track {
   width: 100%;
   height: $rangeThickness;
