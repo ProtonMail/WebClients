@@ -84,7 +84,8 @@ module.exports = {
             'nouislider/distribute/nouislider.css',
             'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
             'codemirror/lib/codemirror.css',
-            'codemirror/addon/lint/lint.css'
+            'codemirror/addon/lint/lint.css',
+            'normalize.css/normalize.css'
         ].map(bindPrefix),
 
         fonts: ['components-font-awesome/fonts/*'].map(bindPrefix),

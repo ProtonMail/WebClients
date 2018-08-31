@@ -1,3 +1,4 @@
+@import "../../node_modules/normalize.css/normalize.css";
 @import "../../node_modules/components-font-awesome/css/font-awesome.css";
 @import "../../node_modules/ng-sortable/dist/ng-sortable.css";
 @import "../../node_modules/angular-notify/dist/angular-notify.css";
@@ -9,10 +10,8 @@
 @import "../../node_modules/codemirror/lib/codemirror.css";
 @import "../../node_modules/codemirror/addon/lint/lint.css";
 
-
 //=== 🚀 Setup ==============================//
 //== Base
-@import "_reset";
 @import "_addon.scss";
 @import "_functions";
 @import "_variables";
