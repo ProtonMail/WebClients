@@ -25,7 +25,7 @@
                         <div>
                             <span class="ellipsis" title="{{ filter.Name }}">{{ filter.Name }}</span>
                         </div>
-                        <toggle class="settingsFilters-sort-toggle" data-status="filter.Status" data-on="ON" data-off="OFF" data-name="changeCustomFilterStatus" data-id="{{ filter.ID }}"></toggle>
+                        <toggle class="settingsFilters-sort-toggle small" data-status="filter.Status" data-name="changeCustomFilterStatus" data-id="{{ filter.ID }}"></toggle>
                         <div>
                             <button class="pm_button link" ng-show="isSimple(filter)" ng-click="editCustomFilter(filter)">Edit</button>
                             <button class="pm_button link" ng-click="editCustomFilter(filter, true)">Edit sieve</button>

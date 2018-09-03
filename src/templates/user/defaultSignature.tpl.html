@@ -44,8 +44,6 @@
                 ng-if="!protonSignature.isMandatory"
                 class="defaultSignature-toggle small pull-right"
                 data-status="protonSignature.isActive"
-                data-on="ON"
-                data-off="OFF"
                 data-name="changePMSignature"></toggle>
             <p ng-bind-html="protonSignature.content"></p>
             <p class="alert alert-info" ng-if="protonSignature.isMandatory" translate translate-context="Info">

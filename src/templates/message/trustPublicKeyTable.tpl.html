@@ -30,8 +30,8 @@
                     </div>
                 </td>
                 <td>
-                    <toggle ng-if="row.adr && !row.expired" class="small" data-on="ON" data-off="OFF" data-status="row.encrypt"></toggle>
-                    <toggle ng-if="row.adr && row.expired" class="disabled small" data-on="ON" data-off="OFF" data-status="row.encrypt"></toggle>
+                    <toggle ng-if="row.adr && !row.expired" class="small" data-status="row.encrypt"></toggle>
+                    <toggle ng-if="row.adr && row.expired" class="disabled small" data-status="row.encrypt"></toggle>
                 </td>
             </tr>
             </tbody>
