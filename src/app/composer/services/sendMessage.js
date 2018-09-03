@@ -4,6 +4,7 @@ import { STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
 function sendMessage(
+    composerRequestModel,
     dispatchers,
     messageModel,
     gettextCatalog,
@@ -86,6 +87,9 @@ function sendMessage(
         await attachmentUpdates;
         message.encrypting = false;
         dispatchMessageAction(message);
+        // Avoid to have SAVE and SEND request in the same time
+        // Make sure to keep that just before the send message API request
+        await composerRequestModel.chain(message);
         return messageRequest.send(parameters);
     };
 

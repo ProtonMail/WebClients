@@ -1,13 +1,13 @@
 /* @ngInject */
-function composerRequestModel($q) {
+function composerRequestModel() {
     const MAP_REQUEST = {};
 
     /**
      * Get the list of requests for a composer
-     * @param  {Number} key uid
+     * @param  {Number} uid
      * @return {Array}
      */
-    const read = (key) => MAP_REQUEST[`key.${key}`] || [];
+    const read = (uid) => MAP_REQUEST[`key.${uid}`] || [];
 
     /**
      * Clear map for a message
@@ -26,6 +26,7 @@ function composerRequestModel($q) {
      */
     const save = (message, promise) => {
         const key = `key.${message.uid}`;
+
         MAP_REQUEST[key] = MAP_REQUEST[key] || [];
         MAP_REQUEST[key].push(promise);
     };
@@ -33,11 +34,11 @@ function composerRequestModel($q) {
     /**
      * Resolve all the previous promises and allow chaining
      * @param  {Number}   options.uid
-     * @return {Array}              $q.all
+     * @return {Promise}
      */
     const chain = ({ uid }) => {
         const list = read(uid).map(({ promise }) => promise);
-        return $q.all(list);
+        return Promise.all(list);
     };
 
     return { save, clear, chain };

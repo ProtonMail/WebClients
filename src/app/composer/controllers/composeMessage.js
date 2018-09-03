@@ -7,7 +7,6 @@ const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function ComposeMessageController(
-    $filter,
     $scope,
     $state,
     $stateParams,
@@ -20,7 +19,6 @@ function ComposeMessageController(
     confirmModal,
     dispatchers,
     embedded,
-    encryptMessage,
     eventManager,
     extractDataURI,
     attachPublicKey,
@@ -29,11 +27,9 @@ function ComposeMessageController(
     mailSettingsModel,
     messageBuilder,
     messageModel,
-    messageRequest,
     networkActivityTracker,
     notification,
     outsidersMap,
-    plusAliasModel,
     postMessage,
     sendMessage,
     validateMessage
@@ -89,7 +85,6 @@ function ComposeMessageController(
 
         const promise = validateMessage
             .validate(message)
-            .then(() => composerRequestModel.chain(message)) // Avoid to have SAVE and SEND request in the same time
             .then(eventManager.stop)
             .then(() => extractDataURI(message))
             .then(() => attachPublicKey.attach(message))
