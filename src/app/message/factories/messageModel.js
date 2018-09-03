@@ -185,6 +185,9 @@ function messageModel(
         }
 
         countEmbedded() {
+            if (this.isPlainText()) {
+                return 0;
+            }
             const body = this.getDecryptedBody();
             const testDiv = embeddedUtils.getBodyParser(body);
 
