@@ -288,9 +288,16 @@ function messageModel(
                 const { body = emptyMessage, mimetype = PLAINTEXT } = (await result.getBody()) || {};
                 this.MIMEType = mimetype;
 
-                const verified = await result.verify();
+                const pmcryptoVerified = await result.verify();
+
+                const verified =
+                    !publicKeys.length && pmcryptoVerified === VERIFICATION_STATUS.SIGNED_AND_INVALID
+                        ? VERIFICATION_STATUS.SIGNED_NO_PUB_KEY
+                        : pmcryptoVerified;
+
                 const attachments = attachmentConverter(this, await result.getAttachments(), verified);
                 const encryptedSubject = await result.getEncryptedSubject();
+
                 return { message: body, attachments, verified, encryptedSubject };
             } catch (e) {
                 this.MIMEParsingFailed = true;
@@ -346,10 +353,6 @@ function messageModel(
                             const signedPubkey = VERIFICATION_STATUS.SIGNED_NO_PUB_KEY;
                             const verified =
                                 !list.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
-
-                            if (this.isPGPMIME()) {
-                                return this.parse(data, verified);
-                            }
 
                             return { message: data, attachments: [], verified };
                         });
