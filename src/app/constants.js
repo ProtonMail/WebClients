@@ -38,6 +38,7 @@ export const MAX_VPN = 500;
 export const MAX_MEMBER = 100;
 export const HUGE_MEMBER = 5000;
 export const TIMEOUT = 30 * 1000; // timeout in milliseconds
+export const TEMP_STORAGE_LIFETIME = 60 * 1000;
 export const BASE_SIZE = 1024; // define the base used for byte
 export const KEY_VERSION = 3;
 export const INBOX = 0;
