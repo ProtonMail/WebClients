@@ -255,7 +255,6 @@ function postMessage(
     const save = async (message, { notification, autosaving, encrypt }) => {
         try {
             const parameters = await makeParams(message, autosaving);
-
             const [{ ID } = {}] = await composerRequestModel.chain(message);
 
             if (ID) {
