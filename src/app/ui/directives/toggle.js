@@ -1,16 +1,5 @@
 /* @ngInject */
-function toggle(gettextCatalog, dispatchers) {
-    const I18N = {
-        YES: gettextCatalog.getString(
-            'Yes',
-            null,
-            'Text displays in the toggle component, make it shorter as possible'
-        ),
-        NO: gettextCatalog.getString('No', null, 'Text displays in the toggle component, make it shorter as possible'),
-        ON: gettextCatalog.getString('ON', null, 'Text displays in the toggle component, make it shorter as possible'),
-        OFF: gettextCatalog.getString('OFF', null, 'Text displays in the toggle component, make it shorter as possible')
-    };
-
+function toggle(dispatchers) {
     return {
         restrict: 'E',
         replace: true,
@@ -18,27 +7,30 @@ function toggle(gettextCatalog, dispatchers) {
         scope: {
             id: '@', // ID if uniq logic needed
             status: '=', // status value
-            name: '@' // event name called
+            name: '@', // event name called
+            type: '@' // event type
         },
-        link(scope, element, { on = 'YES', off = 'NO', action }) {
+        link(scope, el, { action }) {
+            const $checkbox = el.find('.pm_toggle-checkbox');
             const name = scope.name || action || 'toggle';
+            const type = scope.type || '';
             const { dispatcher } = dispatchers([name]);
+            const onChange = () => {
+                if (name) {
+                    dispatcher[name](type, {
+                        status: scope.status,
+                        id: scope.id
+                    });
+                }
+            };
 
-            scope.on = I18N[on];
-            scope.off = I18N[off];
+            $checkbox.on('change', onChange);
 
-            function onClick() {
-                scope.$applyAsync(() => {
-                    scope.status = !scope.status;
-                    if (name) {
-                        dispatcher[name]('', { status: scope.status, id: scope.id });
-                    }
-                });
-            }
+            // Make sure to pass a boolean to the ng-model checkbox
+            scope.status = Boolean(scope.status);
 
-            element.on('click', onClick);
             scope.$on('$destroy', () => {
-                element.off('click', onClick);
+                $checkbox.off('change', onChange);
             });
         }
     };

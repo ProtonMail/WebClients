@@ -1,106 +1,85 @@
 .pm_toggle {
-    position: relative;
-    width: $toggleWidth;
-    border-radius: 2rem;
-    height: 2rem;
+    display: flex;
+    flex-direction: column;
     line-height: 2rem;
-    background: $light;
-    box-shadow: 0 0 0 1px $border;
+    position: relative;
 
-    &.small{
+    &.small {
         transform: scale(.8);
+    }
+
+    &.tiny {
+        transform: scale(.5);
+    }
+
+    &.small,
+    &.tiny {
         transform-origin: right center;
     }
 
     &.disabled {
         pointer-events: none;
+        opacity: .8;
+    }
+}
 
-        &.on {
-            span.on {
-                background-color: $primary-light;
-            }
-        }
+.pm_toggle-checkbox {
+    opacity: 0;
+    position: absolute;
+}
 
-        &.off {
-             span.off {
-                 background-color: $primary-light;
-             }
-         }
+.pm_toggle-label {
+    background-color: $gray-light;
+    cursor: pointer;
+    display: inline-block;
+    height: 2rem;
+    position: relative;
+    transition: background-color .12s ease-in;
+    vertical-align: bottom;
+    width: $toggleWidth;
+    border-radius: $border-radius-large;
+
+    &:hover {
+        background-color: $gray;
     }
 
-    button,
-    span {
+    &::before {
         position: absolute;
-        width: ($toggleWidth / 2);
+        font-family: FontAwesome;
+        content: '\f00d';
+        color: $white;
+        left: 2.9rem;
+    }
+
+    &::after {
+        background-color: $white;
+        border-radius: $border-radius;
+        bottom: .2rem;
+        content: '';
         display: block;
-        bottom: 0;
-        top: 0;
-        z-index: 1;
-        height: 2rem;
-        line-height: 2rem;
-        text-align: center;
-        font-size: .9em;
-
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -o-user-select: none;
-        user-select: none;
-        transition: left .25s ease, opacity .25s ease;
-
-        &.on,
-        &.off {
-            z-index: 3;
-            border: none;
-        }
-        &.on {
-            border-radius: 2rem 0 0 2rem;
-            left: 0;
-            right: auto;
-        }
-        &.off {
-            border-radius: 0 2rem 2rem 0;
-            right: 0;
-            left: auto;
-        }
-        &.knob {
-            border-radius: 2rem;
-            z-index: 2;
-            background: $white;
-            border: 1px solid $border;
-            margin: -1px;
-        }
+        left: .2rem;
+        position: absolute;
+        top: .2rem;
+        transition: left .12s ease-in;
+        width: 2rem;
     }
-    &.on {
-        .knob {
-            left: 0;
-        }
-        .on {
-            background-color: $primary;
-            border-radius: 2rem;
-            color: $white;
-        }
-        .off {
-            opacity: .35;
-            &:hover {
-                opacity: 1;
-            }
-        }
+}
+
+.pm_toggle-checkbox:checked+.pm_toggle-label {
+    background-color: $primary;
+
+    &:hover {
+        background-color: darken($primary, 10%);
     }
-    &.off {
-        .knob {
-            left: ($toggleWidth / 2);
-        }
-        .on {
-            opacity: .35;
-            &:hover {
-                opacity: 1;
-            }
-        }
-        .off {
-            background-color: $primary;
-            border-radius: 2rem;
-            color: $white;
-        }
+
+    &::before {
+        left: .7rem;
+        content: '\f00c';
+    }
+
+    &::after {
+        left: calc(100% - 2.2rem);
+        top: .2rem;
+        width: 2rem;
     }
 }
