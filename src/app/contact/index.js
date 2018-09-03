@@ -37,6 +37,7 @@ import contactMerger from './directives/contactMerger';
 import contactMergerFactory from './factories/contactMerger';
 import contactSchema from './factories/contactSchema';
 import contactKeyAssigner from './factories/contactKeyAssigner';
+import contactKeyManager from './factories/contactKeyManager';
 import contactEncryption from './factories/contactEncryption';
 import contactEncryptionSaver from './factories/contactEncryptionSaver';
 import contactTransformLabel from './factories/contactTransformLabel';
@@ -58,9 +59,21 @@ import contactViewItem from './directives/contactViewItem';
 import contactViewType from './filters/contactViewType';
 import contactActionHeader from './directives/contactActionHeader';
 import contactEncryptionSettings from './services/contactEncryptionSettings';
+import contactMimetypeSelector from './directives/contactMimetypeSelector';
+import contactEncryptionModel from './factories/contactEncryptionModel';
+import contactEncryptToggle from './directives/contactEncryptToggle';
+import contactSignToggle from './directives/contactSignToggle';
+import contactSchemeSelector from './directives/contactSchemeSelector';
+import contactPgpModel from './factories/contactPgpModel';
 
 export default angular
     .module('proton.contact', ['vs-repeat'])
+    .factory('contactPgpModel', contactPgpModel)
+    .directive('contactSchemeSelector', contactSchemeSelector)
+    .directive('contactSignToggle', contactSignToggle)
+    .directive('contactEncryptToggle', contactEncryptToggle)
+    .factory('contactEncryptionModel', contactEncryptionModel)
+    .directive('contactMimetypeSelector', contactMimetypeSelector)
     .factory('contactEncryptionSettings', contactEncryptionSettings)
     .directive('contactActionHeader', contactActionHeader)
     .filter('contactViewType', contactViewType)
@@ -116,6 +129,7 @@ export default angular
     .factory('contactSelectorModel', contactSelectorModel)
     .factory('contactSpam', contactSpam)
     .factory('contactKeyAssigner', contactKeyAssigner)
+    .factory('contactKeyManager', contactKeyManager)
     .filter('contact', contactFilter)
     .filter('spam', spam)
     .factory('contactAskEncryption', contactAskEncryption)

@@ -14,7 +14,7 @@
 
     &.small,
     &.tiny {
-        transform-origin: right center;
+        transform-origin: left center;
     }
 
     &.disabled {
@@ -35,13 +35,8 @@
     height: 2rem;
     position: relative;
     transition: background-color .12s ease-in;
-    vertical-align: bottom;
     width: $toggleWidth;
     border-radius: $border-radius-large;
-
-    &:hover {
-        background-color: $gray;
-    }
 
     &::before {
         position: absolute;
@@ -69,10 +64,6 @@
 .pm_toggle-checkbox:checked+.pm_toggle-label {
     background-color: $primary;
 
-    &:hover {
-        background-color: darken($primary, 10%);
-    }
-
     &::before {
         left: .7rem;
         content: '\f00c';
@@ -82,4 +73,14 @@
         left: calc(100% - 2.2rem);
         width: 2rem;
     }
+}
+
+.pm_toggle-label:hover,
+.pm_toggle-checkbox:focus+.pm_toggle-label {
+    background-color: $gray;
+}
+
+.pm_toggle-checkbox:checked+.pm_toggle-label:hover,
+.pm_toggle-checkbox:checked:focus+.pm_toggle-label {
+    background-color: darken($primary, 10%);
 }

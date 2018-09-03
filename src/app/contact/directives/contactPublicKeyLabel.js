@@ -1,11 +1,12 @@
 /* @ngInject */
-function contactPublicKeyLabel(gettextCatalog) {
+function contactPublicKeyLabel() {
     return {
         restrict: 'E',
+        replace: true,
+        scope: {},
         templateUrl: require('../../../templates/directives/contact/contactPublicKeyLabel.tpl.html'),
-        link(scope, el, { valueTranslate }) {
-            scope.value = gettextCatalog.getString(valueTranslate);
-            scope.uploadShow = scope.showButton === 'true';
+        link(scope, el, { textTranslate }) {
+            scope.text = textTranslate;
         }
     };
 }

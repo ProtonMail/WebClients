@@ -29,4 +29,5 @@ import './helpers/fileHelper.spec';
 import './helpers/autoLink.spec';
 import './helpers/parserHTML.spec';
 import './helpers/address.spec';
+import './helpers/vcard.spec';
 import './commons/services/url.spec';

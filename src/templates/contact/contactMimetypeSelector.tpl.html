@@ -1,0 +1,10 @@
+<div class="contactMimetypeSelector-container">
+    <label for="contactMimetypeSelector" class="contactMimetypeSelector-label">
+        <span translate-context="Label for contact MIMEType selector" translate>Format</span>
+        <i class="fa fa-info-circle" pt-tooltip-translate-contact="Info for contact MIMEType selector" pt-tooltip-translate="Automatic indicates that the format in the composer is used to send to this user. Plain Text indicates that the message will always be converted to plain text on send."></i>
+    </label>
+    <span class="pm_select">
+        <select id="contactMimetypeSelector" ng-model="mimetype" ng-options="option.label for option in options track by option.value" ng-change="onChange()"></select>
+        <i class="fa fa-angle-down"></i>
+    </span>
+</div>

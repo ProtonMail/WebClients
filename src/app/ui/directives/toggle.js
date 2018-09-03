@@ -8,7 +8,7 @@ function toggle(dispatchers) {
             id: '@', // ID if uniq logic needed
             status: '=', // status value
             name: '@', // event name called
-            type: '@' // event type
+            type: '@' // type send with the event
         },
         link(scope, el, { action }) {
             const $checkbox = el.find('.pm_toggle-checkbox');

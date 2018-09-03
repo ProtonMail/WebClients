@@ -1,29 +1,33 @@
-import _ from 'lodash';
-
-import { RECIPIENT_TYPE, KEY_FLAGS } from '../../constants';
-import keyAlgorithm from '../../keys/helper/keyAlgorithm';
-import { removeEmailAlias } from '../../../helpers/string';
-import { readFileAsString } from '../../../helpers/fileHelper';
+import { RECIPIENT_TYPE } from '../../constants';
+import { listToString } from '../../../helpers/arrayHelper';
+import { toggle } from '../../../helpers/domHelper';
 
 /* @ngInject */
 function contactPublicKeys(
-    confirmModal,
-    contactUI,
-    readDataUrl,
-    pmcw,
-    downloadFile,
+    keyCompression,
+    contactKey,
+    contactKeyManager,
+    tooltipModel,
     gettextCatalog,
     notification,
     dispatchers,
-    keyCache,
     networkActivityTracker
 ) {
     const AS_SORTABLE_DISABLED = 'as-sortable-disabled';
+    const ALL_KEYS_TRUSTED = 'all-keys-trusted';
 
-    const INVALID_KEY = gettextCatalog.getString('%s is not a valid PGP key.', null, 'Error message');
-    const LANG_AND = gettextCatalog.getString('and', null, 'String separator');
-    const toggle = (elem, className, value) =>
-        elem.classList.contains(className) === value || elem.classList.toggle(className);
+    const I18N = {
+        invalidKeyMessage(keys) {
+            return gettextCatalog.getPlural(
+                keys.length,
+                '{{keys}} is not a valid PGP key.',
+                '{{keys}} are not valid PGP keys.',
+                { keys: listToString(keys, I18N.LANG_AND) },
+                'Error message'
+            );
+        },
+        LANG_AND: gettextCatalog.getString('and', null, 'String separator')
+    };
 
     return {
         restrict: 'E',
@@ -32,418 +36,165 @@ function contactPublicKeys(
         scope: {
             form: '=',
             model: '=',
-            state: '=',
             email: '@',
-            getDatas: '&datas',
-            type: '@type',
             internalKeys: '='
         },
         link(scope, element, attr, ngFormController) {
-            const { dispatcher } = dispatchers(['composer.new', 'contact.item']);
-            const datas = scope.getDatas();
-            const type = scope.type;
-            const state = scope.state;
+            const { dispatcher, on, unsubscribe } = dispatchers(['composer.new', 'advancedSetting']);
+            const email = scope.email;
+            const keys = scope.model;
             const list = element.find('.contactItem-container');
             const isInternal = scope.internalKeys.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
+            // keyManager is responsible for managing the UI and BE objects on the scope.
+            const keyManager = contactKeyManager(scope, {
+                keys,
+                isInternal,
+                email,
+                onChange() {
+                    ngFormController.$setDirty();
+                    toggle(element[0], ALL_KEYS_TRUSTED, !scope.BE.hasUntrusted && scope.BE.items.length > 0);
+                    dispatcher.advancedSetting('updateKeys', { keys: scope.UI.items.map(({ value }) => value) });
+                }
+            });
 
             list.addClass(`contactItem-container-${scope.type}`);
             list.addClass(AS_SORTABLE_DISABLED);
 
+            /**
+             * Triggers an upload dialog to upload a new key to your key set
+             * @param target
+             */
+            const add = () => {
+                element.find('.upload-helper').click();
+                tooltipModel.hideAll();
+            };
+
+            /**
+             * Remove the passed in key from the trusted keys
+             * @param {Object} item
+             */
+            const remove = (item) => {
+                keyManager.remove(item);
+                tooltipModel.hideAll();
+            };
+
+            /**
+             * Enables or disables key trusting (=pinning) depending on the current state. Only useable for internal
+             * contacts.
+             */
+            const toggleKeyPinning = (keyPinningEnabled) => {
+                if (keyPinningEnabled) {
+                    keyManager.moveAllToTrusted();
+                    return;
+                }
+                keyManager.removeAll();
+            };
+
             const ACTIONS = {
                 add,
-                upload,
-                download,
+                download: keyManager.download,
                 remove,
-                makePrimary,
-                removeAll
+                makePrimary: keyManager.makePrimary
             };
 
             const BE_ACTIONS = {
-                addVirtual,
-                addAllUntrustedKeys,
-                downloadUntrusted: download,
-                toggleKeyPinning
+                moveToTrusted(target, item) {
+                    keyManager.moveToTrusted(target, item);
+                    tooltipModel.hideAll();
+                },
+                moveAllToTrusted: keyManager.moveAllToTrusted,
+                downloadUntrusted: keyManager.download
             };
 
+            /**
+             * Handles any on click event in the contact public keys, trigger automatically the action described on the
+             * element by `data-action`.
+             * @param target
+             */
             function onClick({ target }) {
                 const action = target.getAttribute('data-action');
                 const index = parseInt(target.getAttribute('data-index'), 10);
-                if (_.has(ACTIONS, action)) {
-                    ACTIONS[action](target, scope.UI.items[index], index);
+                if (ACTIONS[action]) {
+                    ACTIONS[action](scope.UI.items[index], index);
                 }
-                if (_.has(BE_ACTIONS, action)) {
-                    BE_ACTIONS[action](target, scope.BE.items[index], index);
+                if (BE_ACTIONS[action]) {
+                    BE_ACTIONS[action](scope.BE.items[index], index);
                 }
             }
 
-            function upload(target) {
-                $(target)
-                    .parent()
-                    .find('.upload-helper')
-                    .click();
-                $(target).blur();
-            }
+            /**
+             * Sequentially triggers compression. Needs to be sequential because confirm modals cannot be called in parallel
+             * @param {Array} validKeys
+             * @returns {Promise<Array>}
+             */
+            const compressKeys = (validKeys) => {
+                return validKeys.reduce(async (compressPromise, keyInfo) => {
+                    // Don't user networkActivityTracker here, we would be tracking stuff double
+                    const compressedKeys = await compressPromise;
 
-            function removeAll() {
-                scope.$applyAsync(() => {
-                    scope.UI.items = [];
-                    scope.change();
-                });
-            }
+                    // This can show a modal so we don't want to show the spinner here
+                    const compressedKey = await keyCompression.compressKey(keyInfo.publicKeyArmored);
 
-            function makePrimary(target, item, index) {
-                scope.$applyAsync(() => {
-                    scope.UI.items.splice(index, 1);
-                    scope.UI.items.unshift(item);
-                });
-            }
-
-            function download(target, item) {
-                const [, base64] = item.value.split(',');
-                const data = pmcw.binaryStringToArray(pmcw.decode_base64(base64));
-                const [key] = pmcw.getKeys(data);
-                const blob = new Blob([key.armor()], { type: 'data:text/plain;charset=utf-8;' });
-                const filename = `publickey - ${scope.email} - 0x${item.fingerprint.slice(0, 8).toUpperCase()}.asc`;
-
-                downloadFile(blob, filename);
-            }
-
-            function toggleKeyPinning() {
-                if (scope.keyPinningEnabled) {
-                    removeAll();
-                    return;
-                }
-                addAllUntrustedKeys();
-            }
-
-            function add() {
-                element.find('.upload-helper').click();
-                $('.tooltip').tooltip('hide');
-            }
-            function addNewField() {
-                if (scope.UI.items.length === 1 && !scope.UI.items[0].value) {
-                    return;
-                }
-                const populated = contactUI.populate(scope.UI, type);
-                ngFormController.$setDirty();
-                contactUI.add(scope.UI, populated.key, populated.type, '');
-            }
-
-            function remove(target, item) {
-                // Hide all the tooltip
-                $('.tooltip')
-                    .not(this)
-                    .hide();
-
-                item.value = '';
-                delete item.invalidMessage;
-                delete item.fingerprint;
-
-                if (scope.UI.items.length > 1) {
-                    contactUI.remove(scope.UI, item);
-                }
-
-                ngFormController.$setDirty();
-                scope.change();
-                $('.tooltip').tooltip('hide');
-            }
-
-            // Drag and Drop configuration
-            scope.itemContactDragControlListeners = {
-                containment: '.contactDetails-container',
-                containerPositioning: 'relative',
-                accept(sourceItemHandleScope, destSortableScope) {
-                    return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
-                },
-                dragStart() {
-                    scope.itemMoved = true;
-                },
-                dragEnd() {
-                    scope.itemMoved = false;
-                },
-                orderChanged() {
-                    ngFormController.$setDirty();
-                }
-            };
-
-            scope.UI = contactUI.initialize(datas, type, state);
-            scope.change = () =>
-                scope.$applyAsync(() => {
-                    if (isInternal) {
-                        _.each(scope.UI.items, (item) => {
-                            item.verificationOnly = !scope.BE.items.some(
-                                (bItem) => item.fingerprint === bItem.fingerprint && !bItem.verificationOnly
-                            );
-                            item.customKey = !scope.BE.items.some((bItem) => item.fingerprint === bItem.fingerprint);
-                        });
-                        // make sure the verification keys are at the bottom.
-                        scope.UI.items = scope.UI.items
-                            .filter(({ verificationOnly = false }) => !verificationOnly)
-                            .concat(scope.UI.items.filter(({ verificationOnly = false }) => verificationOnly));
+                    if (keyInfo.publicKeyArmored !== compressedKey) {
+                        compressedKeys.push(
+                            await networkActivityTracker.track(contactKey.keyInfo(compressedKey, email))
+                        );
                     } else {
-                        // make sure the verification keys are at the bottom.
-                        scope.UI.items = scope.UI.items
-                            .filter(({ isExpired = false }) => !isExpired)
-                            .concat(scope.UI.items.filter(({ isExpired = false }) => isExpired));
+                        compressedKeys.push(keyInfo);
                     }
-                    scope.model[type] = scope.UI.items;
-                    scope.keyPinningEnabled =
-                        scope.UI.items.length > 1 || (scope.UI.items.length === 1 && scope.UI.items[0].value !== '');
-                    dispatcher['contact.item']('change', { items: scope.UI.items, type: scope.type });
-                    updateBEKeys();
-                    toggle(element[0], 'all-keys-trusted', !scope.BE.hasUntrusted && scope.BE.items.length > 0);
-                });
-            scope.visibleItems = () => scope.UI.items.filter(({ hide }) => !hide);
-
-            const listToString = (separator, list) =>
-                list.slice(0, -2).join(', ') + list.slice(list.length - 2, list.length).join(` ${separator} `);
-
-            const expiredKey = (keyInfo) => {
-                if (!keyInfo.isExpired) {
-                    return false;
-                }
-                if (keyInfo.revocationSignatures.length) {
-                    return gettextCatalog.getString('This key is revoked.');
-                }
-                return gettextCatalog.getString('This key is expired.');
+                    return compressedKeys;
+                }, Promise.resolve([]));
             };
 
-            const invalidUserId = ([{ users = [] }]) => {
-                // we don't normalize anything here because enigmail / pgp also doesn't normalize it.
-                const userids = users.reduce((acc, { userId = {} }) => {
-                    // userId can be set to null
-                    userId && acc.push(userId.userid);
-                    return acc;
-                }, []);
-
-                const keyemails = _.map(userids, (userid) => {
-                    const match = /<([^>]*)>/.exec(userid);
-                    return match ? match[1] : userid;
-                });
-
-                if (_.intersection(_.map(keyemails, removeEmailAlias), [removeEmailAlias(scope.email)]).length) {
-                    return false;
-                }
-
-                const assigned = listToString(LANG_AND, keyemails);
-                const template = gettextCatalog.getPlural(
-                    keyemails.length,
-                    'User IDs mismatch. This key is assigned to %1.',
-                    'User IDs mismatch. The emails %1 are assigned to this key.'
-                );
-                return template.replace('%1', assigned);
-            };
-
-            const invalidMessage = (keyInfo, value) => {
-                const keys = pmcw.getKeys(value);
-                const messages = _.filter([expiredKey(keyInfo), invalidUserId(keys)]);
-                if (messages.length === 0) {
-                    return false;
-                }
-                return messages.join(' ');
-            };
-
-            const getInfo = (key) => {
-                const promises = [pmcw.keyInfo(key), pmcw.isExpiredKey(pmcw.getKeys(key)[0])];
-                return Promise.all(promises).then(([result, isExpired]) => {
-                    const data = typeof key === 'string' ? pmcw.stripArmor(key) : key;
-                    result.key =
-                        'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
-                    result.isExpired = isExpired;
-                    result.invalidMessage = invalidMessage(result, key);
-
-                    return result;
-                });
-            };
-
-            const getDetails = (index, keyInfo) => {
-                const created = keyInfo.created.toLocaleDateString();
-                const bits = keyInfo.bitSize;
-                if (!keyInfo.verificationOnly) {
-                    return gettextCatalog.getString(
-                        'Created on {{created}}, {{bits}} bits (can be used for sending and signature verification)',
-                        { created, bits },
-                        'Key details'
-                    );
-                }
-                return gettextCatalog.getString(
-                    'Created on {{created}}, {{bits}} bits (only used for signature verification)',
-                    { created, bits },
-                    'Key details'
-                );
-            };
-
-            const setPublicKey = (index, keyInfo) => {
-                scope.UI.items[index].value = keyInfo.key;
-                scope.UI.items[index].fingerprint = keyInfo.fingerprint;
-                scope.UI.items[index].algType = keyAlgorithm.describe(keyInfo);
-                scope.UI.items[index].created = keyInfo.created.toLocaleDateString();
-                scope.UI.items[index].expires = isFinite(keyInfo.expires) ? keyInfo.expires.toLocaleDateString() : '-';
-                scope.UI.items[index].isExpired = keyInfo.isExpired;
-                scope.UI.items[index].details = getDetails(index, keyInfo);
-                scope.UI.items[index].invalidMessage = keyInfo.invalidMessage;
-            };
-
-            const promises = scope.UI.items.reduce((acc, { value }, index) => {
-                if (value) {
-                    acc.push(
-                        readDataUrl(value)
-                            .then(getInfo)
-                            .then((keyInfo) => setPublicKey(index, keyInfo))
-                    );
-                }
-                return acc;
-            }, []);
-            Promise.all(promises).then(scope.change);
-
-            function addVirtual(target, item) {
-                scope.$applyAsync(() => {
-                    addNewField();
-                    setPublicKey(scope.UI.items.length - 1, item.info);
-                    scope.change();
-                    $('.tooltip').tooltip('hide');
-                });
-            }
-
-            function addAllUntrustedKeys() {
-                scope.$applyAsync(() => {
-                    const untrustedKeys = _.filter(scope.BE.items, ({ hide }) => !hide);
-                    _.each(untrustedKeys, (item) => {
-                        addNewField();
-                        setPublicKey(scope.UI.items.length - 1, item.info);
-                    });
-                    scope.change();
-                });
-            }
-
-            scope.BE = { hide: true, items: [], hasUntrusted: false };
-
-            const promise = keyCache
-                .get([scope.email])
-                .then(({ [scope.email]: { Keys } }) =>
-                    Promise.all(
-                        Keys.map(({ PublicKey, Flags }) =>
-                            getInfo(PublicKey).then((info) => ({
-                                ...info,
-                                verificationOnly: !(Flags & KEY_FLAGS.ENABLE_ENCRYPTION)
-                            }))
-                        )
-                    )
-                )
-                .then((infos) =>
-                    infos.map((info, index) => ({
-                        value: info.key,
-                        fingerprint: info.fingerprint,
-                        algType: keyAlgorithm.describe(info),
-                        details: getDetails(index, info),
-                        bits: info.bitSize,
-                        created: info.created.toLocaleDateString(),
-                        hide: false,
-                        verificationOnly: info.verificationOnly,
-                        info
-                    }))
-                )
-                .then((items) =>
-                    scope.$applyAsync(() => {
-                        scope.BE.items = items;
-                        scope.change();
-                    })
-                );
-
-            networkActivityTracker.track(promise);
-
-            function updateBEKeys() {
-                scope.BE.items.forEach((item) => {
-                    item.hide = _.some(scope.UI.items, ({ fingerprint }) => fingerprint === item.fingerprint);
-                });
-                scope.BE.hasUntrusted = _.some(scope.BE.items, ({ hide }) => !hide);
-            }
-
-            const onChange = ({ target }) => {
+            /**
+             * Triggered when a new file is selected in the input file element. This triggers adding the file to the
+             * advanced settings.
+             * @param {Element} target The html element the file is selected in
+             * @returns {Promise.<void>}
+             */
+            const onChange = async ({ target }) => {
                 if (!$(target).is('input[type=file]') || !target.files || target.files.length === 0) {
                     return;
                 }
 
-                const promise = Promise.all(
-                    _.map(target.files, async (file) => {
-                        try {
-                            const key = await readFileAsString(file);
-                            return getInfo(key);
-                        } catch (e) {
-                            return { error: file.name };
-                        }
-                    })
-                )
-                    .then((keys) => {
-                        const invalidKeys = _.filter(_.map(keys, 'error'));
-                        if (invalidKeys.length) {
-                            notification.error(INVALID_KEY.replace('%s', listToString(LANG_AND, invalidKeys)));
-                        }
-                        return _.filter(keys, ({ error = false }) => !error);
-                    })
-                    .then((keys) => {
-                        const knownKeys = keys.filter(({ fingerprint }) =>
-                            scope.UI.items.map(({ fingerprint }) => fingerprint).includes(fingerprint)
-                        );
-                        const newKeys = keys.filter(
-                            ({ fingerprint }) =>
-                                !scope.UI.items.map(({ fingerprint }) => fingerprint).includes(fingerprint)
-                        );
-                        return [knownKeys, newKeys];
-                    })
-                    .then(([knownKeys, newKeys]) => {
-                        if (knownKeys.length === 0 && newKeys.length === 0) {
-                            target.value = '';
-                            return;
-                        }
-                        scope.$applyAsync(() => {
-                            knownKeys.forEach((key) => {
-                                const index = scope.UI.items.findIndex(
-                                    ({ fingerprint }) => key.fingerprint === fingerprint
-                                );
-                                if (index < 0) {
-                                    return;
-                                }
-                                if (!scope.UI.items[index].isExpired && key.revocationSignatures.length) {
-                                    notification.info(
-                                        gettextCatalog
-                                            .getString(
-                                                'The public key with fingerprint %s was replaced with a revoked key.'
-                                            )
-                                            .replace('%s', key.fingerprint.substring(0, 10))
-                                    );
-                                } else {
-                                    notification.info(
-                                        gettextCatalog
-                                            .getString('The public key with fingerprint %s updated.')
-                                            .replace('%s', key.fingerprint.substring(0, 10))
-                                    );
-                                }
-                                setPublicKey(index, key);
-                            });
-                            if (newKeys.length && scope.UI.items.length === 1 && scope.UI.items[0].value === '') {
-                                setPublicKey(0, newKeys[0]);
-                                newKeys.splice(0, 1);
+                try {
+                    // target.files does not support map, so convert it to a real array first.
+                    const keys = await networkActivityTracker.track(keyManager.getInfos([...target.files]));
+
+                    const { invalidKeys, validKeys } = keys.reduce(
+                        (acc, key) => {
+                            if (key.error) {
+                                acc.invalidKeys.push(key);
+                            } else {
+                                acc.validKeys.push(key);
                             }
+                            return acc;
+                        },
+                        { invalidKeys: [], validKeys: [] }
+                    );
 
-                            _.each(newKeys, (keyInfo) => {
-                                addNewField();
-                                setPublicKey(scope.UI.items.length - 1, keyInfo);
-                            });
-                            scope.change();
-                            target.value = '';
-                        });
-                    })
-                    .catch(() => (target.value = ''));
+                    invalidKeys.length && notification.error(I18N.invalidKeyMessage(invalidKeys));
 
-                networkActivityTracker.track(promise);
+                    // both can handle empty lists
+                    const compressedKeys = await compressKeys(validKeys);
+                    keyManager.addKeys(compressedKeys);
+                } finally {
+                    target.value = '';
+                }
             };
 
             element.on('click', onClick);
             element.on('change', onChange);
 
+            on('advancedSettings', (e, { type, data }) => {
+                if (type === 'toggleKeyPinning') {
+                    toggleKeyPinning(data.status);
+                }
+            });
+
             scope.$on('$destroy', () => {
                 element.off('click', onClick);
+                unsubscribe();
             });
         }
     };

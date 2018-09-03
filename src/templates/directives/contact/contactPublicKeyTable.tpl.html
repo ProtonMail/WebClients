@@ -4,7 +4,6 @@
             <tr>
                 <th class="invalid-key-column"></th>
                 <th translate-context="Table Header" translate>Fingerprint</th>
-                <th class="download-action"></th>
                 <th class="primary" ng-if="enableDelete">
                     <i class="fa fa-info-circle"
                        pt-tooltip-translate="The primary key is used to encrypt outgoing messages."
@@ -35,8 +34,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in items"
-                ng-if="!item.hide && item.value">
+            <tr ng-repeat="item in items" ng-if="!item.hide">
                 <td class="invalid-key-column">
                     <i class="fa fa-warning"
                        ng-if="item.invalidMessage"
@@ -50,21 +48,13 @@
                         </code>
                     </span>
                 </td>
-                <td class="download-action">
-                    <button
-                        class="fa fa-download"
-                        data-index="{{ $index }}"
-                        data-action="{{ enableDelete ? 'download' : 'downloadUntrusted' }}"
-                        pt-tooltip-translate="Download"
-                        pt-tooltip-translate-context="Tooltip"
-                    ></button>
-                </td>
                 <td class="primary">
                     <button
                         data-action="makePrimary"
                         data-index="{{ $index }}"
                         ng-if="!item.verificationOnly && $index > 0 && !item.isExpired && enableDelete"
                         translate-context="Button"
+                        translate-comment="Make sure the string is short"
                         translate>
                         Set Primary
                     </button>
@@ -82,24 +72,31 @@
                     {{ item.algType }}
                 </td>
                 <td class="actions">
+                    <button
+                        class="fa fa-download pm_button link"
+                        data-index="{{ $index }}"
+                        data-action="{{ enableDelete ? 'download' : 'downloadUntrusted' }}"
+                        pt-tooltip-translate="Download"
+                        pt-tooltip-translate-context="Tooltip"
+                    ></button>
                     <button ng-if="enableDelete"
-                            class="pm_button link"
+                            class="fa fa-trash pm_button link"
                             data-action="remove"
                             data-index="{{ $index }}"
-                            translate-context="Button"
-                            translate
-                    >Remove</button>
+                            pt-tooltip-translate="Remove"
+                            pt-tooltip-translate-context="Tooltip"
+                    ></button>
                     <button ng-if="enableTrust"
-                            class="pm_button link"
-                            data-action="addVirtual"
+                            class="fa fa-check pm_button link"
+                            data-action="moveToTrusted"
                             data-index="{{ $index }}"
-                            translate-context="Button"
-                            translate
-                    >Trust</button>
+                            pt-tooltip-translate="Trust"
+                            pt-tooltip-translate-context="Tooltip"
+                    ></button>
                 </td>
             </tr>
             <tr class="empty-table">
-                <td colspan="7">
+                <td colspan="6">
                     <i class="fa fa-lg fa-thumbs-o-up"></i>
                     <span
                         translate-context="Empty table message"

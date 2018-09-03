@@ -37,12 +37,6 @@
 
             <div class="contactItem-aside">
                 <div class="contactItem-inputs">
-                    <toggle
-                        class="small"
-                        ng-if="UI.mode === 'toggle'"
-                        data-name="{{ ::UI.inputName }}.toggle"
-                        data-status="item.value"
-                        data-index="{{ $index }}"></toggle>
                     <div class="pm_select" ng-if="UI.mode === 'select'">
                         <select
                             name="{{ ::UI.inputName }}"

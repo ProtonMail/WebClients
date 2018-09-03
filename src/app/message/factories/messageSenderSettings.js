@@ -1,11 +1,9 @@
-import _ from 'lodash';
-
-import { toList } from '../../../helpers/arrayHelper';
 import { CONTACT_ERROR, SEND_TYPES } from '../../constants';
 import { normalizeEmail } from '../../../helpers/string';
 
 /* @ngInject */
 function messageSenderSettings(
+    contactEncryptionModel,
     contactEmails,
     contactSchema,
     Contact,
@@ -37,73 +35,48 @@ function messageSenderSettings(
         return contact;
     };
 
-    const removeGroup = (vcard, group) =>
-        _.forEach(vcard.data, (properties, key) => {
-            const filteredProperties = toList(properties).filter((prop) => prop.group !== group);
-            vcard.remove(key);
-            filteredProperties.forEach((prop) => vcard.addProperty(prop));
-        });
+    const updateContact = async (scope, contact, normalizedEmail) => {
+        const partialUpdate = contact.ID
+            ? contactEditor.updateUnencrypted({ contact })
+            : contactEditor.createSingular({ contact });
+        await partialUpdate;
+        const {
+            [normalizedEmail]: { pinned, scheme }
+        } = await sendPreferences.get([normalizedEmail]);
 
-    const mergeContact = (contactOne, contactTwo, email) => {
-        const emails = toList(contactOne.get('email'));
-        const emailProp = emails.find((prop) => prop.valueOf() === email);
-        // remove non grouped attributes
-        removeGroup(contactTwo, undefined);
-        _.forEach(contactTwo.data, (properties) =>
-            toList(properties).forEach((property) => (property.group = emailProp.group))
-        );
-        removeGroup(contactOne, emailProp.group);
-        _.forEach(contactTwo.data, (properties) => toList(properties).forEach((prop) => contactOne.addProperty(prop)));
+        scope.message.promptKeyPinning = !pinned && mailSettingsModel.get('PromptPin') && scheme === SEND_TYPES.SEND_PM;
+        dispatcher.message('reload', { conversationID: scope.message.ConversationID });
     };
 
-    const showSettings = (scope) => {
+    const showSettings = async (scope) => {
         const normalizedEmail = normalizeEmail(scope.message.SenderAddress);
         const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
-
         const contactPromise = contactEmail ? getContact(contactEmail) : getNewContact(scope.message.Sender);
         const getData = Promise.all([keyCache.get([normalizedEmail]), contactPromise]);
+
         networkActivityTracker.track(getData);
 
-        getData.then(([{ [normalizedEmail]: keys }, contact]) => {
-            if (contact === false) {
-                return;
+        const [{ [normalizedEmail]: keys }, contact] = await getData;
+
+        if (contact === false) {
+            return;
+        }
+
+        const model = contactEncryptionModel.prepare(contact.vCard, normalizedEmail);
+
+        contactEncryptionModal.activate({
+            params: {
+                email: normalizedEmail,
+                model,
+                internalKeys: keys,
+                async save(model) {
+                    contact.vCard = contactDetailsModel.build(contact.vCard, normalizedEmail, model);
+                    contactEncryptionModal.deactivate();
+
+                    networkActivityTracker.track(updateContact(scope, contact, normalizedEmail));
+                },
+                close: contactEncryptionModal.deactivate
             }
-
-            const contactDetails = contactDetailsModel.extract({ vcard: contact.vCard, field: 'EMAIL' });
-            const item = contactDetails.find(({ value }) => normalizeEmail(value) === normalizedEmail);
-            const model = { ...item.settings };
-            delete model.Email;
-
-            contactEncryptionModal.activate({
-                params: {
-                    email: normalizedEmail,
-                    contact,
-                    model,
-                    save(model) {
-                        model.Email = item.settings.Email;
-                        item.settings = model;
-                        item.type = 'email';
-                        const { vCard: newvcard } = contactDetailsModel.prepare({ model: { Emails: [item] } });
-                        mergeContact(contact.vCard, newvcard, normalizedEmail);
-                        contactEncryptionModal.deactivate();
-
-                        const partialUpdate = contact.ID
-                            ? contactEditor.updateUnencrypted({ contact })
-                            : contactEditor.createSingular({ contact });
-                        const updatePromise = partialUpdate
-                            .then(() => sendPreferences.get([normalizedEmail]))
-                            .then(({ [normalizedEmail]: { pinned, scheme } }) => {
-                                scope.message.promptKeyPinning =
-                                    !pinned && mailSettingsModel.get('PromptPin') && scheme === SEND_TYPES.SEND_PM;
-
-                                dispatcher.message('reload', { conversationID: scope.message.ConversationID });
-                            });
-                        networkActivityTracker.track(updatePromise);
-                    },
-                    close: () => contactEncryptionModal.deactivate(),
-                    internalKeys: keys
-                }
-            });
         });
     };
 

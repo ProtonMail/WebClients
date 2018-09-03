@@ -58,6 +58,15 @@ export const remove = (arr, item) => {
 export const toList = (v = []) => (Array.isArray(v) ? v : [v]);
 
 /**
+ * Convert list to string with commas and a different separator for the last separator.
+ * @param {Array} list
+ * @param {String} separator The last separator to use
+ * @returns {String}
+ */
+export const listToString = (list = [], separator = 'and') => {
+    return list.length <= 1 ? list.join('') : `${list.slice(0, -1).join(', ')} ${separator} ${list.slice(-1)}`;
+};
+/**
  * Sync the list by reusing the objects in oldList
  * @param String id
  * @param {Array} oldList

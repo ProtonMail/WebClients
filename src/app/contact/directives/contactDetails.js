@@ -54,7 +54,7 @@ function contactDetails(
             };
 
             const isFree = !subscriptionModel.hasPaid('mail') && !memberModel.isMember();
-            const properties = vcard.extractProperties(scope.contact.vCard);
+            const properties = vcard.extractAllProperties(scope.contact.vCard);
             const hasEmail = _.filter(properties, (property) => property.getField() === 'email').length;
 
             // Focus the details

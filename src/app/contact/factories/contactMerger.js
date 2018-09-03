@@ -34,7 +34,7 @@ function contactMerger(
         }
 
         return _.reduce(
-            vcard.extractProperties(vCard),
+            vcard.extractAllProperties(vCard),
             (acc, property) => {
                 if (property.getField() === 'email') {
                     acc.push(property.valueOf());

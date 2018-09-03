@@ -2,7 +2,6 @@ import _ from 'lodash';
 
 /* @ngInject */
 function contactSchema(gettextCatalog) {
-    /* eslint new-cap: "off" */
     const contactAPI = { vCard: new vCard() };
     const group = ['Tel', 'Adr', 'Note'];
     const personnal = ['Bday', 'Title', 'Org', 'Nickname'];

@@ -1,7 +1,7 @@
 import { isOwnAddress } from '../../../helpers/address';
 
 /* @ngInject */
-function contactViewItem(contactEncryptionSettings, contactDetailsModel, keyCache, addressesModel) {
+function contactViewItem(contactEncryptionSettings, keyCache, addressesModel) {
     return {
         replace: true,
         restrict: 'E',
@@ -17,14 +17,7 @@ function contactViewItem(contactEncryptionSettings, contactDetailsModel, keyCach
 
             scope.settings = async function advanced(item) {
                 try {
-                    const model = await contactEncryptionSettings(
-                        { ...item },
-                        {
-                            config: contactDetailsModel.extractAll(scope.contact.vCard),
-                            contact: scope.contact,
-                            index: 0
-                        }
-                    );
+                    const model = await contactEncryptionSettings({ ...item }, scope.contact);
 
                     // Ensure we sync the view
                     scope.$applyAsync(() => {

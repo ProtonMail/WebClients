@@ -1,13 +1,12 @@
 import _ from 'lodash';
 
-import { SEND_TYPES, VERIFICATION_STATUS, EMAIL_FORMATING, KEY_FLAGS } from '../../constants';
+import { SEND_TYPES, VERIFICATION_STATUS, EMAIL_FORMATING, KEY_FLAGS, LARGE_KEY_SIZE } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
-const MAX_KEY_SIZE = 50 * 1024;
 const MAX_KEY_COUNTS = 5;
 
 /* @ngInject */
@@ -218,7 +217,7 @@ function attachedPublicKey(
         }
 
         const candidates = message.Attachments.filter(
-            ({ Name, Size }) => Name.toLowerCase().substring(Name.length - 4) === '.asc' && Size < MAX_KEY_SIZE
+            ({ Name, Size }) => Name.toLowerCase().substring(Name.length - 4) === '.asc' && Size < LARGE_KEY_SIZE
         );
 
         if (candidates.length > MAX_KEY_COUNTS) {
@@ -254,7 +253,6 @@ function attachedPublicKey(
 
     const createContactWithKey = (publicKey, address) => {
         const group = 'item1';
-        /* eslint new-cap: "off" */
         const card = new vCard();
         card.set('fn', address.name || address.adr);
         card.set('email', address.adr, { group });
