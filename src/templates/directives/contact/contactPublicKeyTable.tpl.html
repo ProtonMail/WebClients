@@ -50,6 +50,8 @@
                 </td>
                 <td class="primary">
                     <button
+                        class="pm_button link small"
+                        type="button"
                         data-action="makePrimary"
                         data-index="{{ $index }}"
                         ng-if="!item.verificationOnly && $index > 0 && !item.isExpired && enableDelete"
@@ -73,6 +75,7 @@
                 </td>
                 <td class="actions">
                     <button
+                        type="button"
                         class="fa fa-download pm_button link"
                         data-index="{{ $index }}"
                         data-action="{{ enableDelete ? 'download' : 'downloadUntrusted' }}"
@@ -80,18 +83,20 @@
                         pt-tooltip-translate-context="Tooltip"
                     ></button>
                     <button ng-if="enableDelete"
-                            class="fa fa-trash pm_button link"
-                            data-action="remove"
-                            data-index="{{ $index }}"
-                            pt-tooltip-translate="Remove"
-                            pt-tooltip-translate-context="Tooltip"
+                        type="button"
+                        class="fa fa-trash pm_button link"
+                        data-action="remove"
+                        data-index="{{ $index }}"
+                        pt-tooltip-translate="Remove"
+                        pt-tooltip-translate-context="Tooltip"
                     ></button>
                     <button ng-if="enableTrust"
-                            class="fa fa-check pm_button link"
-                            data-action="moveToTrusted"
-                            data-index="{{ $index }}"
-                            pt-tooltip-translate="Trust"
-                            pt-tooltip-translate-context="Tooltip"
+                        type="button"
+                        class="fa fa-check pm_button link"
+                        data-action="moveToTrusted"
+                        data-index="{{ $index }}"
+                        pt-tooltip-translate="Trust"
+                        pt-tooltip-translate-context="Tooltip"
                     ></button>
                 </td>
             </tr>
