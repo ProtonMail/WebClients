@@ -49,6 +49,7 @@
         content: '\f00d';
         color: $white;
         left: 2.9rem;
+        top: .2rem;
     }
 
     &::after {
@@ -79,7 +80,6 @@
 
     &::after {
         left: calc(100% - 2.2rem);
-        top: .2rem;
         width: 2rem;
     }
 }
