@@ -27,7 +27,7 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel) {
     return {
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
-            const { mobile, tablet, isSecure, isLocked } = AppModel.query();
+            const { mobile, tablet, isSecure, isLocked, isLoggedIn } = AppModel.query();
 
             const updateRows = () => {
                 const { ViewLayout } = mailSettingsModel.get();
@@ -75,6 +75,7 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel) {
                 toggleClass('locked', included(LOCKED_STATES) || (isLoggedIn && isLocked));
             });
 
+            toggleClass('login', !isLoggedIn);
             toggleClass(mapClassNames.mobile, mobile);
             toggleClass(mapClassNames.tablet, tablet);
             toggleClass(mapClassNames.isSecure, isSecure);
