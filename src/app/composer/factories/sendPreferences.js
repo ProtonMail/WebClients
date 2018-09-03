@@ -141,7 +141,7 @@ function sendPreferences(
     const isPrimaryPinned = (base64Keys, { Keys }, email) => {
         if (base64Keys.length === 0) {
             const address = addressesModel.getByEmail(email);
-            return isFallbackAddress(address, Keys);
+            return !isFallbackAddress(address, Keys);
         }
 
         const sendKeys = _.map(Keys.filter(encryptionEnabled), 'PublicKey');
