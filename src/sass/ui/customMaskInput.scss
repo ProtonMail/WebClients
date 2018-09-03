@@ -25,7 +25,7 @@
 }
 
 .customMaskInput-mask {
-    width: 16px;
+    width: 16px !important;
     height: 16px !important;
     min-width: 16px; /*IE10*/
     background-color: $white;
