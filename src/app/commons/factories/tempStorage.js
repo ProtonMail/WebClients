@@ -1,3 +1,5 @@
+import { TEMP_STORAGE_LIFETIME } from '../../constants';
+
 /* @ngInject */
 function tempStorage($timeout) {
     // This is a very simple storage object wrapper which unlinks the reference to the data after retrieval
@@ -32,7 +34,7 @@ function tempStorage($timeout) {
             return null;
         },
 
-        setItem(key, value, lifetime = 10000) {
+        setItem(key, value, lifetime = TEMP_STORAGE_LIFETIME) {
             if (angular.isString(key)) {
                 cancelTimeout(key);
                 data[key] = value;
