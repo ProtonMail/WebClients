@@ -63,6 +63,7 @@ $mapFields: (
     outline: auto
 }
 .contactViewItem-btn-settings {
+    cursor: pointer;
     margin-left: auto;
     margin-top: -14px; /* half of its size to center it with the email */
 }
