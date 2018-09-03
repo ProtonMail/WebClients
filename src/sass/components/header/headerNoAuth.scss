@@ -62,9 +62,9 @@
     color: currentColor;
 }
 
-/* context */
 /* 'login' class is applyied on body when !isLoggedIn */
-/* not authenticated */
+
+/* authenticated */
 body:not(.login) .headerNoAuth-container [class*='__noAuth'] { display: none }
 /* not authenticated */
 .login .headerNoAuth-container [class*='__Auth'] { display: none }
