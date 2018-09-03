@@ -56,12 +56,7 @@ const STANDARD_KEYS = [].concat(
     FIELDS.NOTE,
     FIELDS.PHOTO,
     FIELDS.PERSONALS,
-    FIELDS.KEY,
-    FIELDS['X-PM-ENCRYPT'],
-    FIELDS['X-PM-SCHEME'],
-    FIELDS['X-PM-MIMETYPE'],
-    FIELDS['X-PM-SIGN'],
-    FIELDS['X-PM-TLS']
+    FIELDS.KEY
 );
 
 const HUMAN_KEYS = [].concat(
@@ -79,7 +74,8 @@ const KEY_MAP = {
     PERSONALS: 'Personals'
 };
 
-const SINGLE_KEYS = [].concat(
+export const ADVANCED_SENDING_KEYS = [].concat(
+    FIELDS.KEY,
     FIELDS['X-PM-ENCRYPT'],
     FIELDS['X-PM-SCHEME'],
     FIELDS['X-PM-MIMETYPE'],
@@ -91,8 +87,6 @@ export const toHumanKey = (key) => {
     return KEY_MAP[key] || `${ucFirst(key.toLowerCase())}s`;
 };
 
-export const isSingle = (key) => SINGLE_KEYS.includes(key);
-
 /**
  * Get keys available for a field or non standards keys
  * @param  {String} field Type of fields (CUSTOMS to list non-standard)
@@ -102,7 +96,7 @@ export const isSingle = (key) => SINGLE_KEYS.includes(key);
 export function getKeys(field = '', vcard = {}) {
     // Return non standard keys
     if (field === 'CUSTOMS') {
-        return _.difference(Object.keys(vcard.data), STANDARD_KEYS);
+        return _.difference(Object.keys(vcard.data), STANDARD_KEYS.concat(ADVANCED_SENDING_KEYS));
     }
     return FIELDS[field];
 }

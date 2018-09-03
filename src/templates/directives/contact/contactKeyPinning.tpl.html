@@ -1,19 +1,9 @@
-<ul class="contactItem-container as-sortable-disabled">
-    <li class="contactItem-row">
-        <div class="contactItem-sortable-wrapper">
-            <label class="contactItem-label">
-                <input class="contactItem-label-input" type="text" value="" readonly="readonly">
-                <i class="fa itemIcon fa-thumb-tack"></i>
-            </label>
-
-            <div class="contactItem-aside">
-                <div class="contactItem-inputs">
-                    <toggle class="small" data-action="toggleKeyPinning" data-status="keyPinningEnabled"></toggle>
-                </div>
-                <div class="contactItem-actions">
-
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+<div class="contactKeyPinning-container">
+    <label class="contactKeyPinning-label" translate-context="Label" translate>Trusted keys</label>
+    <toggle
+        class="small"
+        data-id="contactKeyPinning"
+        data-status="keyPinningEnabled"
+        data-name="advancedSettings"
+        data-type="toggleKeyPinning"></toggle>
+</div>

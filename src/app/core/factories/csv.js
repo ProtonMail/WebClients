@@ -22,7 +22,6 @@ function csv(csvFormat) {
                 }
 
                 return acc;
-                /* eslint new-cap: "off" */
             },
             new vCard()
         );

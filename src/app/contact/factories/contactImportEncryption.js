@@ -28,7 +28,7 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
         );
 
     const groupGenerator = (contact) => {
-        const properties = vcard.extractProperties(contact.vCard);
+        const properties = vcard.extractAllProperties(contact.vCard);
         const groups = uniqGroups(properties);
 
         let itemCounter = 0;

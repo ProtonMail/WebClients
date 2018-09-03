@@ -1,7 +1,6 @@
 contact-public-keys .pm_table {
 
     margin-top: 0px;
-    margin-left: 30px;
 
     table {
         min-width: 550px;
@@ -92,11 +91,6 @@ contact-public-keys button, .public-key-controls button {
     -webkit-appearance: none;
     background: none;
 }
-contact-public-keys .hide-actions {
-    .actions {
-        display: none;
-    }
-}
 
 .contact-pgp-container {
     /*
@@ -168,82 +162,82 @@ contact-public-keys .hide-actions {
     &:not(.pgp-address-disabled) .disabled-address {
         display: none;
     }
-
-    .encryption-title {
-        margin-bottom: 20px;
-    }
-
 }
 
-.pgp-internal {
-    .pgp-external-only {
-        display: none;
-    }
-}
+.pgp-internal .pgp-external-only { display: none }
+.pgp-external .pgp-internal-only { display: none }
 
-.pgp-external {
-    .pgp-internal-only {
-        display: none;
-    }
-}
-
-contact-public-keys .contactItem-input {
-    flex-grow: 1;
-}
-
-contact-public-keys .pm_toggle {
-    cursor: pointer;
-
-    span {
-        pointer-events: none;
-    }
-}
-
-.public-key-title label {
-    display: inline-block;
-    height: 36px;
-
-    i {
-        width: 22px;
-        padding-left: 10px;
-    }
-}
-
-.contact-pgp-container .contact-disabled ul {
+.pgp-no-keys .contactEncryptToggle-container,
+.pgp-external.pgp-encrypt .contactMimetypeSelector-container,
+.pgp-external.pgp-sign .contactMimetypeSelector-container,
+.pgp-encrypt .contactSignToggle-container {
     opacity: 0.75;
     pointer-events: none;
 
-    .contact-item-info {
+    .fa {
         pointer-events: all;
     }
 }
 
-contact-public-key-label.no-upload-button .contactItem-input {
-    display: none;
-}
+.contactEncryptToggle-warning-icon { color: $orange }
+.contact-pgp-container:not(.pgp-no-keys) .contactEncryptToggle-warning-icon { display: none }
+
+.contactPublicKeyLabel-container.no-upload-button .contactPublicKeyLabel-button { display: none }
 
 .public-key-button {
     margin-left: 7px;
 }
 
 .public-key-controls {
-    position: relative;
-    height: 20px;
-
-    button {
-        position: absolute;
-        text-decoration: underline;
-    }
-
-    button:last-child {
-        right: 0;
-    }
+    display: flex;
+    justify-content: flex-end;
 }
 
-contact-public-keys .publicKeys-label {
-    margin-left: 10px;
+.encryption-title {
+    margin-bottom: 1rem;
+}
 
-    i {
-        width: 20px;
+.contactMimetypeSelector-container,
+.contactSchemeSelector-container,
+.contactEncryptToggle-container,
+.contactSignToggle-container,
+.contactKeyPinning-container {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.contactMimetypeSelector-label,
+.contactSchemeSelector-label,
+.contactEncryptToggle-label,
+.contactSignToggle-label,
+.contactKeyPinning-label {
+    width: 30%;
+}
+
+.contactMimetypeSelector-container .pm_select,
+.contactSchemeSelector-container .pm_select {
+    flex-grow: 1;
+}
+
+.contactPublicKeyLabel-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.appConfigBody-is-mobile {
+    .contactMimetypeSelector-container,
+    .contactSchemeSelector-container,
+    .contactEncryptToggle-container,
+    .contactSignToggle-container,
+    .contactKeyPinning-container {
+        flex-direction: column;
+    }
+
+    .contactMimetypeSelector-label,
+    .contactSchemeSelector-label,
+    .contactEncryptToggle-label,
+    .contactSignToggle-label,
+    .contactKeyPinning-label {
+        width: 100%;
     }
 }

@@ -3,15 +3,71 @@ import _ from 'lodash';
 import parseDate from '../../../helpers/vcardDateParser';
 import isUniqField from '../../../helpers/vcardUniqueFields';
 import { VCARD_VERSION, VCARD_TYPES } from '../../constants';
+import { orderByPref } from '../../../helpers/vcard';
 
 /* @ngInject */
 function vcard(notification, sanitize) {
     const makeUniq = (properties = []) => _.uniqBy(properties, (property) => property.valueOf());
 
     /**
+     * Check if a property is empty
+     * @param {vCard.Property} property
+     * @return {Boolean}
+     */
+    const isEmpty = (property) => {
+        if (Array.isArray(property)) {
+            return property.filter(isEmpty).length;
+        }
+
+        if (property) {
+            return property.isEmpty();
+        }
+
+        return true;
+    };
+
+    const pushProperty = (collection = [], property, group) => {
+        if (group && property.getGroup() !== group) {
+            return;
+        }
+
+        collection.push(property);
+    };
+
+    /**
+     * Extract specific properties
+     * @param {vCard} vcard
+     * @param {Array} fields
+     * @param {String} options.group
+     * @return {Array} properties
+     */
+    const extractProperties = (vcard = new vCard(), fields = [], { group } = {}) => {
+        return fields.reduce((acc, key) => {
+            const property = vcard.get(key);
+
+            if (isEmpty(property)) {
+                return acc;
+            }
+
+            const value = property.valueOf();
+
+            if (Array.isArray(value)) {
+                orderByPref(value).forEach((prop) => {
+                    pushProperty(acc, prop, group);
+                });
+                return acc;
+            }
+
+            pushProperty(acc, property, group);
+
+            return acc;
+        }, []);
+    };
+
+    /**
      * Merge multiple vCards into one
-     * @param vCards
-     * @returns {*}
+     * @param {Array} vCards
+     * @returns {vCard} newCard
      */
     const merge = (vCards = []) => {
         if (vCards.length === 0) {
@@ -30,7 +86,7 @@ function vcard(notification, sanitize) {
             vCards,
             (acc, vcard = {}) => {
                 const groups = {};
-                const props = extractProperties(vcard);
+                const props = extractAllProperties(vcard);
                 _.each(props, (prop) => {
                     const group = prop.getGroup();
                     if (group) {
@@ -91,8 +147,7 @@ function vcard(notification, sanitize) {
      * @return {vCard}
      */
     function clean(vcard = new vCard()) {
-        /* eslint new-cap: "off" */
-        const properties = extractProperties(vcard);
+        const properties = extractAllProperties(vcard);
 
         return _.reduce(
             properties,
@@ -188,11 +243,11 @@ function vcard(notification, sanitize) {
     }
 
     /**
-     * get all Properties for a specific vCard
+     * Get all Properties for a specific vCard
      * @param  {vCard} vcard
      * @return {Array}
      */
-    function extractProperties(vcard = new vCard()) {
+    function extractAllProperties(vcard = new vCard()) {
         return _.reduce(
             Object.keys(vcard.data),
             (acc, key) => {
@@ -214,7 +269,7 @@ function vcard(notification, sanitize) {
 
     /* eslint no-unused-vars: "off" */
     function convertCustoms(vcard = new vCard()) {
-        const groups = _.groupBy(extractProperties(vcard), (property) => property.getGroup() || 'nogroup');
+        const groups = _.groupBy(extractAllProperties(vcard), (property) => property.getGroup() || 'nogroup');
 
         return _.reduce(
             Object.keys(groups),
@@ -256,7 +311,7 @@ function vcard(notification, sanitize) {
         return target;
     }
 
-    return { from, to, extractProperties, merge, build, isValidType };
+    return { from, to, extractProperties, extractAllProperties, merge, build, isValidType, isEmpty };
 }
 
 export default vcard;

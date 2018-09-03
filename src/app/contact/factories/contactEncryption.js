@@ -72,7 +72,7 @@ function contactEncryption($injector, chunk, gettextCatalog, pmcw, vcard, contac
         const promises = [];
         await assignKeyToGroup(data);
         let itemCounter = 0;
-        const properties = vcard.extractProperties(data);
+        const properties = vcard.extractAllProperties(data);
         const groups = uniqGroups(properties);
         const defaultUID = generateUID();
 
@@ -89,7 +89,7 @@ function contactEncryption($injector, chunk, gettextCatalog, pmcw, vcard, contac
         }
 
         const { toEncryptAndSign, toSign, clearText } = _.reduce(
-            vcard.extractProperties(data),
+            vcard.extractAllProperties(data),
             (acc, property) => {
                 const key = property.getField();
                 const isClear = CLEAR_FIELDS.includes(key);
@@ -202,7 +202,6 @@ function contactEncryption($injector, chunk, gettextCatalog, pmcw, vcard, contac
                             return { data };
                         })
                         .catch(() => {
-                            /* eslint new-cap: "off" */
                             return { error: TYPE3_CONTACT_DECRYPTION, data: new vCard().toString(VCARD_VERSION) };
                         });
                 case SIGNED:
@@ -220,7 +219,6 @@ function contactEncryption($injector, chunk, gettextCatalog, pmcw, vcard, contac
                         });
                 case ENCRYPTED:
                     return pmcw.decryptMessage({ message: pmcw.getMessage(Data), privateKeys, armor }).catch(() => {
-                        /* eslint new-cap: "off" */
                         return { error: TYPE1_CONTACT, data: new vCard().toString(VCARD_VERSION) };
                     });
                 case CLEAR_TEXT:

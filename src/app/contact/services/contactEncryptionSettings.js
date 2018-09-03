@@ -1,67 +1,46 @@
 import { normalizeEmail } from '../../../helpers/string';
 
 /* @ngInject */
-function contactEncryptionSettings(keyCache, contactEncryptionModal, contactEncryptionSaver, networkActivityTracker) {
+function contactEncryptionSettings(
+    keyCache,
+    contactEncryptionModal,
+    contactEncryptionModel,
+    contactEncryptionSaver,
+    networkActivityTracker
+) {
     /**
      * Get keys and format the model for the modal
      * @param  {String} email
-     * @param  {Object} settings Settings (Keys, Scheme, Sign...)
+     * @param  {contact} settings Settings (Keys, Scheme, Sign...)
      * @return {Object}
      */
-    const loadConfig = async (email, settings = {}) => {
+    const loadConfig = async (email, contact) => {
         const keys = await keyCache.getKeysPerEmail(email);
-        const { Email: { value: oldEmail = '' } = {} } = settings;
-        const isDiff = !oldEmail || normalizeEmail(email) !== normalizeEmail(oldEmail);
-        const model = { ...(!isDiff && settings) };
-        delete model.Email;
-        return { keys, model };
+        return { keys, model: contactEncryptionModel.prepare(contact.vCard, normalizeEmail(email)) };
     };
 
     /**
      * Load Contact encryption settings modal for an email
      *      ⚠ Once done we mutate item to update settings. ⚠
      * @param  {Object} item             Item from a vcard for an Email
-     * @param  {Object} options.config   item.settings or an export of the config from the model
-     * @param  {Object} options.contact  The contact
-     * @param  {Number} index            Position of the item inside the list
-     * @param  {Object} form             Form
+     * @param  {Object} contact          The contact
      * @return {Promise}                 return the new model with { Keys, Sign etc.}
      */
-    const get = async (item, { config, contact, index = 0, form }) => {
-        const { value: email, settings } = item;
-        const { model, keys: internalKeys } = await networkActivityTracker.track(loadConfig(email, settings));
+    const get = async (item, contact) => {
+        const { value: email } = item;
+        const { model, keys: internalKeys } = await networkActivityTracker.track(loadConfig(email, contact));
 
         return new Promise((resolve, reject) => {
             const directSave = !!contact.ID;
             contactEncryptionModal.activate({
                 params: {
                     internalKeys,
-                    form,
                     email,
                     model,
-                    contact,
                     directSave,
                     save(model) {
-                        model.Email = { ...item, settings: undefined };
-                        item.settings = model;
-
-                        // Update settings from the modal
-                        const Emails = config.Emails.map((item) => {
-                            if (item.value === model.Email.value) {
-                                return { ...item, settings: model };
-                            }
-                            return item;
-                        });
-
                         if (directSave) {
-                            const promise = contactEncryptionSaver.save(
-                                {
-                                    ...config,
-                                    Emails
-                                },
-                                contact.ID,
-                                index
-                            );
+                            const promise = contactEncryptionSaver.save(model, contact.ID, email);
                             networkActivityTracker.track(promise);
                         }
                         resolve(model);

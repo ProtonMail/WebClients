@@ -1,23 +1,25 @@
 /* @ngInject */
-function contactKeyPinning(contactPgpModel, dispatchers) {
+function contactSignToggle(dispatchers) {
     return {
+        scope: {
+            model: '='
+        },
         replace: true,
         restrict: 'E',
-        scope: {},
-        templateUrl: require('../../../templates/directives/contact/contactKeyPinning.tpl.html'),
+        templateUrl: require('../../../templates/contact/contactSignToggle.tpl.html'),
         link(scope) {
             const { on, unsubscribe } = dispatchers();
-            const set = (keys = []) => (scope.keyPinningEnabled = keys.length > 0);
+            const set = (value) => (scope.value = value);
 
             on('advancedSetting', (e, { type, data = {} }) => {
-                if (type === 'updateKeys') {
+                if (type === 'update') {
                     scope.$applyAsync(() => {
-                        set(data.keys);
+                        set(data.model.Sign);
                     });
                 }
             });
 
-            set(contactPgpModel.get('Keys'));
+            set(scope.model);
 
             scope.$on('$destroy', () => {
                 unsubscribe();
@@ -25,4 +27,4 @@ function contactKeyPinning(contactPgpModel, dispatchers) {
         }
     };
 }
-export default contactKeyPinning;
+export default contactSignToggle;

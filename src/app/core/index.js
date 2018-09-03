@@ -31,6 +31,7 @@ import verificationModal from './factories/verificationModal';
 import welcomeModal from './factories/welcomeModal';
 import windowModel from './factories/windowModel';
 import SidebarController from './controllers/sidebar';
+import confirm from './services/confirm';
 
 export default angular
     .module('proton.core', ['proton.utils'])
@@ -70,4 +71,5 @@ export default angular
     .factory('vcard', vcard)
     .factory('verificationModal', verificationModal)
     .factory('welcomeModal', welcomeModal)
-    .factory('windowModel', windowModel).name;
+    .factory('windowModel', windowModel)
+    .factory('confirm', confirm).name;

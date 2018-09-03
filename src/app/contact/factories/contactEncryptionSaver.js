@@ -1,97 +1,69 @@
-import { toList } from '../../../helpers/arrayHelper';
-import { groupMatcher, getGroup } from '../../../helpers/vcard';
-import { VCARD_KEY_FIELDS } from '../../constants';
+import { getGroup } from '../../../helpers/vcard';
+import { CONTACT_SETTINGS_DEFAULT } from '../../constants';
+import { ADVANCED_SENDING_KEYS } from '../../../helpers/vCardFields';
 
 /* @ngInject */
-function contactEncryptionSaver(contactDetailsModel, Contact, dispatchers) {
+function contactEncryptionSaver(Contact, contactEncryptionModel, dispatchers, vcard) {
+    const vcardService = vcard;
     const { dispatcher } = dispatchers(['contacts']);
+    const FIELDS_MAP = contactEncryptionModel.getMap();
+
     /**
-     * Finds the group of the email in the `oldCard` by looking at the email at index `newIndex` in `newCard`
-     * @param {vCard} oldCard
-     * @param {vCard} newCard
-     * @param {Integer} newIndex
-     * @returns {String|Undefined} The group or undefined if not a good match could be found to overwrite.
+     * Build new vCard with properties set in contactEncryptionModal
+     * @param {vCard} vcard
+     * @param {String} normalizedEmail
+     * @param {Object} model
+     * @return {vCard} newCard
      */
-    const findGroup = (oldCard, newCard, newIndex) => {
-        // find the actual email address
-        const properties = toList(newCard.get('email'));
-        const values = properties.map((property) => property.valueOf());
-        const email = values[newIndex];
+    const build = (vcard, normalizedEmail, model) => {
+        const allProperties = vcardService.extractAllProperties(vcard);
+        const emailProperties = allProperties.filter((property) => property.getField() === 'email');
+        const group = getGroup(emailProperties, normalizedEmail);
+        const properties = allProperties.filter((property) => {
+            const field = property.getField();
+            const propertyGroup = property.getGroup();
 
-        // if we have multiple of these emails: just save all of them.
-        if (!email || values.indexOf(email) !== values.lastIndexOf(email)) {
-            return;
-        }
-        const oldProperties = toList(oldCard.get('email'));
-        const oldValues = oldProperties.map((property) => property.valueOf());
-        const index = oldValues.indexOf(email);
-
-        // Not found in the original list: just save all emails
-        if (index < 0 || index !== values.lastIndexOf(email)) {
-            return;
-        }
-        return oldProperties[index].getGroup();
-    };
-    /**
-     * Overwrite all encryption settings for a certain group in the `targetCard`. Uses the applicable information from
-     * `sourceCard`.
-     * @param {String} targetGroup The group for which to overwrite the settings
-     * @param {vCard} targetCard The card where we want to write the settings to
-     * @param {vCard} sourceCard The card from which the new settings should be fetched
-     */
-    const overwriteGroup = (targetGroup, targetCard, sourceCard) => {
-        const matchTargetGroup = groupMatcher(targetGroup);
-        const matchNoTargetGroup = (x) => !matchTargetGroup(x);
-        const email = toList(targetCard.get('email')).find(matchTargetGroup);
-        const sourceGroup = getGroup(toList(sourceCard.get('email')), email.valueOf());
-        const matchSourceGroup = groupMatcher(sourceGroup);
-        VCARD_KEY_FIELDS.forEach((name) => {
-            const sourceProperties = toList(sourceCard.get(name) || []).filter(matchSourceGroup);
-            sourceProperties.forEach((prop) => (prop.group = targetGroup));
-
-            const targetProperties = toList(targetCard.get(name) || [])
-                .filter(matchNoTargetGroup)
-                .concat(sourceProperties);
-
-            targetCard.remove(name);
-            targetProperties.forEach((prop) => targetCard.addProperty(prop));
+            return propertyGroup !== group || !ADVANCED_SENDING_KEYS.includes(field);
         });
-    };
-    /**
-     *
-     * @param {vCard} targetCard
-     * @param {vCard} sourceCard
-     */
-    const overwriteEmails = (targetCard, sourceCard) => {
-        VCARD_KEY_FIELDS.concat('email').forEach((name) => {
-            const properties = toList(sourceCard.get(name) || []);
-            targetCard.remove(name);
-            properties.forEach((prop) => targetCard.addProperty(prop));
+
+        ADVANCED_SENDING_KEYS.forEach((field) => {
+            if (field === 'key') {
+                model.Keys.forEach((value, index) => {
+                    properties.push(new vCard.Property(field, String(value), { group, pref: index + 1 }));
+                });
+            }
+
+            const value = model[FIELDS_MAP[field]];
+
+            if (typeof value !== 'undefined' && value !== CONTACT_SETTINGS_DEFAULT) {
+                properties.push(new vCard.Property(field, String(value), { group }));
+            }
         });
+
+        return properties.reduce((acc, property) => {
+            acc.addProperty(property);
+            return acc;
+        }, new vCard());
     };
+
     /**
      * Save the contact encryption settings for email at index `index`.
      * @param {Object} model The model that encodes all the current information set
      * @param {String} ID The ID of the contact
-     * @param {Integer} index The index of the address that has been modified in terms of encryption settings
+     * @param {String} email
      * @returns {Promise.<void>}
      */
-    const save = async (model, ID, index) => {
+    const save = async (model, ID, email) => {
         const contact = await Contact.get(ID);
-        const { vCard } = contactDetailsModel.prepare({ model });
-        const group = findGroup(contact.vCard, vCard, index);
+        const newCard = build(contact.vCard, email, model);
+        const { Contact: data, cards } = await Contact.updateUnencrypted({
+            ID,
+            vCard: newCard
+        });
 
-        if (group) {
-            // overwrite a single group when found the original address
-            overwriteGroup(group, contact.vCard, vCard, index);
-        } else {
-            // overwrite everything: could not find a good match
-            overwriteEmails(contact.vCard, vCard);
-        }
-        const { Contact: data, cards } = await Contact.updateUnencrypted(contact);
         dispatcher.contacts('contactUpdated', { contact: data, cards });
     };
 
-    return { save };
+    return { save, build };
 }
 export default contactEncryptionSaver;

@@ -54,7 +54,7 @@
     "padded-blocks": ["off", "always"],
     "arrow-body-style": ["off", "as-needed"],
     "no-use-before-define": ["error", { "functions": false, "classes": true }],
-    "new-cap": ["error", { "properties": true, "capIsNewExceptionPattern": "^Awesomplete."  }],
+    "new-cap": ["error", { "properties": true, "capIsNewExceptionPattern": "^Awesomplete.", "newIsCapExceptions": ["vCard"] }],
     "no-mixed-operators": ["error", {"groups": [["&", "|", "^", "~", "<<", ">>", ">>>"], ["&&", "||"]]}],
     "no-return-assign": "off",
     "max-len": ["error", { "ignoreComments": true, "code": 120, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true }],

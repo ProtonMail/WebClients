@@ -1,51 +1,49 @@
 <contact-key-pinning ng-if="internalKeys.RecipientType === 1"></contact-key-pinning>
 
 <contact-public-key-label class="no-upload-button"
-                          ng-if="UI.items[0].value && BE.items.length"
-                          data-value-translate="Available Public Keys"
+                          ng-if="UI.items.length && BE.items.length"
+                          data-text-translate="Available Public Keys"
 ></contact-public-key-label>
 
 <contact-public-key-label class="no-upload-button"
-                          ng-if="!UI.items[0].value && BE.items.length"
-                          data-value-translate="Public Keys"
+                          ng-if="!UI.items.length && BE.items.length"
+                          data-text-translate="Public Keys"
 ></contact-public-key-label>
 
 <contact-public-key-table
     ng-if="internalKeys.RecipientType === 1"
-    ng-class="{ 'hide-actions': !UI.items[0].value }"
     data-items="BE.items"
     data-primary-key="protonFingerprint"
-    data-enable-trust="{{ !!UI.items[0].value }}"
+    data-enable-trust="true"
     data-enable-delete="false"></contact-public-key-table>
 
-<div class="public-key-controls" ng-if="!!UI.items[0].value && BE.hasUntrusted">
-    <button data-action="addAllUntrustedKeys">Add all</button>
+<div class="public-key-controls" ng-if="UI.items.length && BE.hasUntrusted">
+    <button class="pm_button link" type="button" data-action="moveAllToTrusted" translate-context="Action" translate>Add all</button>
 </div>
 
 <contact-public-key-label
-    ng-if="!!BE.items.length && UI.items[0].value"
+    ng-if="!!BE.items.length && UI.items.length"
     id="trusted-public-keys-label"
     class="no-upload-button"
-    data-value-translate="Trusted Public Keys"
+    data-text-translate="Trusted Public Keys"
 ></contact-public-key-label>
 
 <contact-public-key-label
     ng-if="!BE.items.length"
     id="public-keys-label"
-    ng-class="{ 'no-upload-button': !!UI.items[0].value }"
-    data-value-translate="Public Keys"
+    ng-class="{ 'no-upload-button': UI.items.length }"
+    data-text-translate="Public Keys"
 ></contact-public-key-label>
 
 <contact-public-key-table
-    ng-if="!!UI.items[0].value"
+    ng-if="UI.items.length"
     data-items="UI.items"
     data-primary-key="protonFingerprint"
     data-enable-trust="false"
     data-enable-delete="true"></contact-public-key-table>
-<div
-    class="public-key-controls"
-    ng-if="!!UI.items[0].value">
-    <button data-action="add">Add Key</button>
+
+<div class="public-key-controls" ng-if="UI.items.length">
+    <button class="pm_button link" type="button" data-action="add" translate-context="Action" translate>Add key</button>
 </div>
 
 <input type="file" class="upload-helper" multiple accept=".txt,.asc">

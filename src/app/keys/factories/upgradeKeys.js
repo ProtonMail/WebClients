@@ -3,17 +3,7 @@ import _ from 'lodash';
 import { PAID_ADMIN_ROLE, MAILBOX_PASSWORD_KEY } from '../../constants';
 
 /* @ngInject */
-function upgradeKeys(
-    $log,
-    $injector,
-    gettextCatalog,
-    Key,
-    networkActivityTracker,
-    organizationApi,
-    passwords,
-    pmcw,
-    secureSessionStorage
-) {
+function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, passwords, pmcw, secureSessionStorage) {
     /**
      * Reformat organization keys
      * @param  {String} password

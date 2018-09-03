@@ -52,11 +52,6 @@ function addressKeysView(
             null,
             'Title'
         ),
-        DELETE_KEY_TITLE: gettextCatalog.getString(
-            'Are you sure you want to delete this key pair? Messages that have been encrypted with this key can',
-            null,
-            'Confirm message'
-        ),
         PRIVATE_KEY_PRIMARY: gettextCatalog.getString('Primary key changed', null, 'Success'),
         PRIVATE_KEY_ENCRYPTION_DISABLED: gettextCatalog.getString('Encryption disabled', null, 'Success'),
         PRIVATE_KEY_SIGNATURE_ENABLED: gettextCatalog.getString('Signature verification enabled', null, 'Success'),

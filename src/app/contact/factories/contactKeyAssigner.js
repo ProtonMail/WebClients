@@ -10,7 +10,11 @@ function contactKeyAssigner(pmcw, contactKey) {
             .replace(/\+[^@]*@/, '')
             .replace(/[._-](?=[^@]*@)/g, '');
 
-    const getKeyInfo = _.flowRight(pmcw.keyInfo, pmcw.binaryStringToArray, pmcw.decode_base64);
+    const getKeyInfo = _.flowRight(
+        pmcw.keyInfo,
+        pmcw.binaryStringToArray,
+        pmcw.decode_base64
+    );
 
     const getEmailsByGroup = (data) => {
         const prop = data.get('email') || [];

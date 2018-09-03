@@ -58,7 +58,6 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
                 const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
 
                 if (!contactEmail) {
-                    /* eslint new-cap: "off" */
                     const card = new vCard();
 
                     card.set('fn', normalizedEmail);

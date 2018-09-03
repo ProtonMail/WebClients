@@ -61,3 +61,13 @@ export const forceRedraw = (el) => {
 
 export const escapeSrc = (value = '') => value.replace(/src=/g, 'data-src=');
 export const unescapeSrc = (value = '') => value.replace(/data-src=/g, 'src=');
+
+/**
+ * Toggle class on element depending on conditon
+ * @param {DOMNode} element
+ * @param {String} className
+ * @param {Boolean} value
+ */
+export const toggle = (element, className, value) => {
+    element.classList.contains(className) === value || element.classList.toggle(className);
+};

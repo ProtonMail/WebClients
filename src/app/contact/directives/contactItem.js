@@ -33,14 +33,12 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
             contact: '=',
             form: '=',
             model: '=',
-            state: '=',
             type: '@type'
         },
         link(scope, element, attr, ngFormController) {
             const { on, unsubscribe, dispatcher } = dispatchers(['contacts', 'contact.item', 'composer.new']);
             const list = element.find('.contactItem-container');
             const type = scope.type;
-            const state = scope.state;
             const datas = getInfo(scope.contact, type);
 
             // Drag and Drop configuration
@@ -61,7 +59,7 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
                 }
             };
             scope.config = { isFocusedAddress: false };
-            scope.UI = contactUI.initialize(datas, type, state);
+            scope.UI = contactUI.initialize(datas, type);
 
             list.addClass(`contactItem-container-${scope.type}`);
             list.addClass(AS_SORTABLE_DISABLED);
@@ -101,14 +99,6 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
                 contactUI.remove(scope.UI, item);
                 ngFormController.$setDirty();
                 scope.change();
-            }
-
-            if (scope.UI.mode === 'toggle') {
-                on(scope.UI.inputName + '.toggle', (target, { data: { status: value } }) => {
-                    scope.model[type][0].value = value;
-                    ngFormController.$setDirty();
-                    scope.change();
-                });
             }
 
             scope.getAddressValue = (item) => {

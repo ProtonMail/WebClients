@@ -5,6 +5,7 @@ import checkKeysFormat from './factories/checkKeysFormat';
 import exportKeyModal from './factories/exportKeyModal';
 import decryptImportKeyModal from './factories/decryptImportKeyModal';
 import importPrivateKey from './factories/importPrivateKey';
+import keyCompression from './factories/keyCompression';
 import reactivateKeyModal from './factories/reactivateKeyModal';
 import exportPrivateKeyModal from './factories/exportPrivateKeyModal';
 import setupKeys from './factories/setupKeys';
@@ -22,6 +23,7 @@ export default angular
     .factory('changePasswordModal', changePasswordModal)
     .factory('checkKeysFormat', checkKeysFormat)
     .factory('importPrivateKey', importPrivateKey)
+    .factory('keyCompression', keyCompression)
     .factory('reactivateKeyModal', reactivateKeyModal)
     .factory('decryptImportKeyModal', decryptImportKeyModal)
     .factory('exportKeyModal', exportKeyModal)

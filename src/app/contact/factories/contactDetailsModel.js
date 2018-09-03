@@ -1,24 +1,13 @@
 import _ from 'lodash';
 
 import { VCARD_KEYS, CONTACT_SETTINGS_DEFAULT } from '../../constants';
-import { orderByPref } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
-import {
-    getKeys,
-    BOOL_FIELDS,
-    getHumanFields,
-    isPersonalsKey,
-    FIELDS,
-    toHumanKey,
-    isSingle
-} from '../../../helpers/vCardFields';
+import { unescapeValue, escapeValue, cleanValue } from '../../../helpers/vcard';
+import { getKeys, getHumanFields, isPersonalsKey, FIELDS, toHumanKey } from '../../../helpers/vCardFields';
 
 /* @ngInject */
-function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalog) {
-    const ESCAPE_REGEX = /:|,|;/gi;
-    const UNESCAPE_REGEX = /\\:|\\,|\\;/gi;
-    const BACKSLASH_SEMICOLON_REGEX = /\\;/gi;
-    const SPECIAL_CHARACTER_REGEX = /🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼/gi;
+function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalog, vcard) {
+    const vcardService = vcard;
 
     const I18N = {
         unknown: gettextCatalog.getString('Unknown', null, 'Default display name vcard')
@@ -29,33 +18,6 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
         return acc;
     }, {});
 
-    const unescapeValue = (value = '') => value.replace(UNESCAPE_REGEX, (val) => val.substr(1));
-    const processEscape = (value = '') => value.replace(ESCAPE_REGEX, (val) => `\\${val}`);
-    const escapeValue = (value = '') => {
-        if (Array.isArray(value)) {
-            return value.map(processEscape);
-        }
-        return processEscape(String(value));
-    };
-
-    const cleanValue = (value = '', key = '') => {
-        // ADR and N contains several value separeted by semicolon
-        if (key === 'adr' || key === 'n') {
-            // https://github.com/ProtonMail/Angular/issues/6298
-            // To avoid problem with the split on ; we need to replace \; first and then re-inject the \;
-            // There is no negative lookbehind in JS regex
-            return value
-                .replace(BACKSLASH_SEMICOLON_REGEX, '🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼')
-                .split(';')
-                .map((value) => value.replace(SPECIAL_CHARACTER_REGEX, '\\;'))
-                .map(unescapeValue);
-        }
-        if (BOOL_FIELDS.includes(key)) {
-            return value.toLowerCase().trim() !== 'false';
-        }
-        return unescapeValue(value);
-    };
-
     const buildProperty = (property = {}, type = undefined) => {
         const key = property.getField();
         return {
@@ -64,13 +26,6 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
             key,
             params: property.getParams()
         };
-    };
-
-    const checkProperty = (property) => {
-        if (!Array.isArray(property)) {
-            return property && !property.isEmpty();
-        }
-        return true;
     };
 
     /**
@@ -197,71 +152,11 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
         return params;
     }
 
-    function extract({ vcard = {}, field = '', type }) {
+    function extract({ vcard = new vCard(), field = '', type }) {
         const keys = getKeys(field, vcard);
         const listKeys = keys || (isPersonalsKey(field) ? getKeys('PERSONALS', vcard) : []);
 
-        const results = _.reduce(
-            listKeys,
-            (acc, key) => {
-                const property = vcard.get(key);
-
-                if (!checkProperty(property)) {
-                    return acc;
-                }
-
-                const value = property.valueOf();
-
-                if (Array.isArray(value)) {
-                    _.each(orderByPref(value), (prop) => {
-                        acc.push(buildProperty(prop, type));
-                    });
-                    return acc;
-                }
-
-                acc.push(buildProperty(property, type));
-
-                return acc;
-            },
-            []
-        );
-
-        if (isSingle(field) && results.length) {
-            return results[0];
-        }
-
-        if (field === 'EMAIL') {
-            const schemeList = extract({ vcard, field: 'X-PM-SCHEME' });
-            _.each(schemeList, (item) => (item.value = { value: item.value }));
-            const mimeList = extract({ vcard, field: 'X-PM-MIMETYPE' });
-            _.each(mimeList, (item) => (item.value = { value: item.value }));
-            _.each(results, (email) => {
-                const filter = (entries) =>
-                    _.filter(
-                        entries,
-                        ({ params: { group = '' } }) => group.toLowerCase() === email.params.group.toLowerCase()
-                    );
-                const schemeList = filter(extract({ vcard, field: 'X-PM-SCHEME', type: 'x-pm-scheme' }));
-                _.each(schemeList, (item) => (item.value = { value: item.value }));
-
-                const mimeList = filter(extract({ vcard, field: 'X-PM-MIMETYPE', type: 'x-pm-mimetype' }));
-                _.each(mimeList, (item) => (item.value = { value: item.value }));
-
-                email.settings = {
-                    Key: filter(extract({ vcard, field: 'KEY', type: 'key' })),
-                    Encrypt: filter(extract({ vcard, field: 'X-PM-ENCRYPT', type: 'x-pm-encrypt' })),
-                    Sign: filter(extract({ vcard, field: 'X-PM-SIGN', type: 'x-pm-sign' })),
-                    TLS: filter(extract({ vcard, field: 'X-PM-TLS', type: 'x-pm-tls' })),
-                    // Include the original email to detect changes
-                    Email: { ...email },
-                    Scheme: schemeList,
-                    MIMEType: mimeList
-                };
-            });
-            return results;
-        }
-
-        return results;
+        return vcardService.extractProperties(vcard, listKeys).map((property) => buildProperty(property, type));
     }
 
     /**

@@ -209,7 +209,7 @@ $pad: 20px;
 
 }
 
-body.appConfigBody-is-mobile {
+.appConfigBody-is-mobile {
 	.pm_grid {
 		&.flex:not(.flex-mobileShrink) {
 			flex-direction: column;
