@@ -42,10 +42,11 @@ function extractDataURI(attachmentModel, embedded) {
         const images = testDiv.querySelectorAll('img');
 
         const promises = flow(
+            map((image) => ({ image, src: image.dataset.src })),
             filter(({ src }) => /data:image/.test(src)), // only data:uri image
             filter(({ src }) => src.includes(',')), // remove invalid data:uri
-            map((image) => {
-                const cid = embedded.generateCid(image.src, message.From.Email);
+            map(({ src, image }) => {
+                const cid = embedded.generateCid(src, message.From.Email);
                 const setEmbeddedImg = () => {
                     image.setAttribute('data-embedded-img', cid);
 
@@ -56,7 +57,7 @@ function extractDataURI(attachmentModel, embedded) {
                     return setEmbeddedImg();
                 }
 
-                const file = dataURItoBlob(image.src);
+                const file = dataURItoBlob(src);
 
                 file.name = image.alt || 'image' + Date.now();
                 file.inline = 1;

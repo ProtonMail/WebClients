@@ -171,6 +171,21 @@ function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
     };
 
     /**
+     * Extracts the non-inline attachments from the given html.
+     * @param html
+     * @param attachments
+     * @return {Array<Attachment>} Array of attachments
+     */
+    const getNormalAttachments = (html, attachments) => {
+        if (html === false) {
+            return attachments;
+        }
+        const testDiv = embeddedUtils.getBodyParser(html);
+        const embeddedAttachments = embeddedUtils.extractEmbedded(attachments, testDiv);
+        return _.difference(attachments, embeddedAttachments);
+    };
+
+    /**
      * Builds a multipart message from the given plaintext, html bodies and attachments.
      * The html body is not necessary to create a valid mime body
      * @param {String|false} plaintext if the body should not contain plaintext should be false
@@ -180,11 +195,7 @@ function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
      */
     const build = (plaintext, html, attachments) => {
         const bodyEntity = buildBodyEntity(plaintext, html, attachments);
-        const testDiv = embeddedUtils.getBodyParser(html);
-        const normalAttachments =
-            html === false
-                ? attachments
-                : _.difference(attachments, embeddedUtils.extractEmbedded(attachments, testDiv));
+        const normalAttachments = getNormalAttachments(html, attachments);
         const attachmentEntities = buildAttachments(normalAttachments);
         const body = [bodyEntity].concat(attachmentEntities);
 
