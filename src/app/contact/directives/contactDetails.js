@@ -1,10 +1,9 @@
 import _ from 'lodash';
 import { flow, values, reduce } from 'lodash/fp';
 
-import { CONTACT_MODE, CONTACT_ERROR } from '../../constants';
+import { CONTACT_MODE } from '../../constants';
 
 const { ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
-const { TYPE3_CONTACT_VERIFICATION, TYPE2_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION } = CONTACT_ERROR;
 
 /* @ngInject */
 function contactDetails(
@@ -21,9 +20,6 @@ function contactDetails(
     vcard
 ) {
     const ENCRYPTED_AND_SIGNED_CLASS = 'contactDetails-encrypted-and-signed';
-    const HAS_ERROR_VERIFICATION = 'contactDetails-verification-error';
-    const HAS_ERROR_ENCRYPTED = 'contactDetails-encrypted-error';
-    const HAS_ERROR_VERIFICATION_ENCRYPTED = 'contactDetails-encrypted-verification-error';
 
     const I18N = {
         invalidForm: gettextCatalog.getString(
@@ -71,21 +67,13 @@ function contactDetails(
             // If the contact is signed we display an icon
             updateType(scope.contact.types);
 
-            if (scope.contact.errors) {
-                scope.contact.errors.indexOf(TYPE3_CONTACT_VERIFICATION) !== -1 &&
-                    element.addClass(HAS_ERROR_VERIFICATION_ENCRYPTED);
-                scope.contact.errors.indexOf(TYPE3_CONTACT_DECRYPTION) !== -1 && element.addClass(HAS_ERROR_ENCRYPTED);
-                scope.contact.errors.indexOf(TYPE2_CONTACT_VERIFICATION) !== -1 &&
-                    element.addClass(HAS_ERROR_VERIFICATION);
-            }
-
             function saveBeforeToLeave(toState, toParams) {
                 contactBeforeToLeaveModal.activate({
                     params: {
                         confirm() {
                             contactBeforeToLeaveModal.deactivate();
 
-                            if (saveContact()) {
+                            if (saveContact({ toState, toParams })) {
                                 $state.go(toState.name, toParams);
                             }
                         },
@@ -115,7 +103,7 @@ function contactDetails(
              * Send event to create / update contact
              * @return {Boolean}
              */
-            function saveContact() {
+            function saveContact(state = {}) {
                 if (!isValidForm()) {
                     notification.error(I18N.invalidForm);
                     return false;
@@ -136,7 +124,7 @@ function contactDetails(
                     };
                     dispatcher.contacts('updateContact', { contact, callback });
                 } else {
-                    dispatcher.contacts('createContact', { contacts: [contact] });
+                    dispatcher.contacts('createContact', { contacts: [contact], state });
                 }
 
                 scope.contactForm.$setSubmitted(true);
@@ -157,6 +145,11 @@ function contactDetails(
                 if (type === 'contactUpdated' && data.contact.ID === scope.contact.ID) {
                     updateType(data.cards.map(({ Type }) => Type));
                 }
+
+                // Only when we create a new contact
+                if (type === 'advancedSettings.set') {
+                    scope.advancedSettingsCard = data.vCard;
+                }
             });
 
             on('hotkeys', (e, { type = '' }) => {
@@ -166,7 +159,7 @@ function contactDetails(
             });
 
             on('$stateChangeStart', (event, toState, toParams) => {
-                if (!scope.modal && scope.contactForm.$dirty) {
+                if (scope.contactForm.$dirty) {
                     event.preventDefault();
                     saveBeforeToLeave(toState, toParams);
                 }

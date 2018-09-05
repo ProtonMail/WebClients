@@ -133,28 +133,12 @@
     }
 }
 
-// Errors handling
-
-.contactDetails-container .contactError-container ,
-.contactDetails-container  .contactError-container [class*='-item-'] { display: none }
-
-/* contactClear / encrypted error display */
-
-.contactDetails-verification-error .contactClear-container .contactError-container,
-.contactDetails-encrypted-verification-error .contactEncrypted-container .contactError-container,
-.contactDetails-encrypted-error .contactEncrypted-container .contactError-container {
-    display: flex
-}
-
-/* encryption error display */
-.contactDetails-encrypted-error .contactEncrypted-container  .contactError-container .contactError-item-encrypted {
-    display: flex;
-}
-
 /* verification error display */
-.contactDetails-verification-error  .contactClear-container .contactError-item-verification,
-.contactDetails-encrypted-verification-error .contactEncrypted-container  .contactError-container .contactError-item-verification {
-    display: flex;
+
+.contactDetails-container:not([class*="contactErrorType-"]) .contactError-container,
+.contactDetails-container[class*="contactErrorType-"] .contactClear-container .contactError-item-encrypted,
+.contactDetails-container[class*="contactErrorType-"] .contactEncrypted-container .contactError-item-verification {
+     display: none;
 }
 
 
@@ -162,7 +146,11 @@
 .contactDetails-encrypted-error .fa-lock  {
     color: $exp;
 }
-
+.contactDetails-container[class*="contactErrorType-"] {
+    .contactDetails-fields-container {
+        border-color: $exp;
+    }
+}
 .contactDetails-verification-error .contactClear-container .contactDetails-fields-container,
 .contactDetails-encrypted-verification-error .contactEncrypted-container .contactDetails-fields-container,
 .contactDetails-encrypted-error .contactEncrypted-container .contactDetails-fields-container {

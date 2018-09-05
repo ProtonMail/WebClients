@@ -9,20 +9,19 @@
     color: $white;
     border: none;
     border-radius: $border-radius;
-    padding: 5px
+    padding: .5rem
 }
 
-
-.contactError-container > [class*='-item-'] {
+[class*="contactError-item-"] {
     position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
-    padding: 10px 0 10px 30px;
+    padding: .7rem .7rem .7rem 2.2rem;
 }
 
-.contactError-container > [class*='-item-']::before {
+[class*="contactError-item-"]::before {
     position: absolute;
     left: 0;
     top: 0;
@@ -36,15 +35,15 @@
     content: "\f071"
 }
 
-.contactError-container > [class*='-item-'] h2 {
+[class*="contactError-item-"] h2 {
     font-size: 1em;
 }
 
-.contactError-container > [class*='-item-'] p {
+[class*="contactError-item-"] p {
     margin: 0;
 }
 
-.contactError-container > [class*='-item-'] a {
+[class*="contactError-item-"] a {
     color: $white;
     text-decoration: underline;
 }
@@ -52,4 +51,33 @@
 .contactError-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-top: .5rem !important;
+}
+
+.contactError-item-verification {
+    display: flex;
+    flex-direction: row;
+
+}
+
+[class*="contactError-action-"] {
+    width: auto;
+    margin-left: auto;
+}
+
+.contactError-action-reactivateKeys {
+    margin-left: 0;
+}
+
+[class*="contactError-action-"]:not(:focus),
+[class*="contactError-action-"]:not(:hover) {
+    background: $white
+}
+
+[class*="contactError-action-"]:focus,
+[class*="contactError-action-"]:hover {
+    background: $exp;
+    color: $white;
+    border-color: currentColor;
 }

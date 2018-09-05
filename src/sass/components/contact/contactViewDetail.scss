@@ -1,5 +1,9 @@
 .contactViewDetail-container, .contactViewDetail-container * { box-sizing: border-box }
 
+.contactViewDetail-container {
+    position: relative;
+}
+
 .contactViewDetail-header { padding: 0 1em }
 
 .contactViewDetail-group {
@@ -8,6 +12,10 @@
     padding: 1rem;
     border: 1px solid rgba(172,176,191,.3);
     border-radius: 3px;
+}
+
+.contactViewDetail-group.contactViewDetail-isFree {
+    padding: 3rem 1rem
 }
 
 .contactViewDetail-signed-icon {
@@ -57,4 +65,19 @@
     .contactViewDetail-container,
     .contactViewDetail-content { height: 100%; }
     .contactViewDetail-content { overflow-y: auto; }
+}
+
+
+/* verification error display */
+.contactViewDetail-container:not([class*="contactErrorType-"]) .contactError-container,
+.contactViewDetail-group[data-type="encrypted"] .contactError-item-verification,
+.contactViewDetail-group[data-type="clear"] .contactError-item-encrypted {
+    display: none
+}
+.contactViewDetail-container[class*="contactErrorType-"] .contactViewDetail-group {
+    border-color: $exp;
+}
+.contactViewDetail-container[class*="contactErrorType-"] .contactViewDetail-group .contactViewDetail-signed-icon {
+    color: $exp;
+    fill: lighten($exp, 10%);
 }

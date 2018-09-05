@@ -1,9 +1,11 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passwords, pmcw) {
+function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passwords, pmcw, dispatchers) {
     const FAILED_DECRYPTION_PASSWORD = 1;
     const FAILED_KEY_REACTIVATE = 2;
+
+    const { dispatcher } = dispatchers(['keys']);
 
     const I18N = {
         success: {
@@ -78,7 +80,7 @@ function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passw
         );
     };
 
-    return async (keys = [], oldPassword) => {
+    return async (keys = [], oldPassword, contact) => {
         const { data = {} } = await Key.salts();
         const salts = _.reduce(
             keys,
@@ -129,15 +131,17 @@ function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passw
         const promises = salts.map(reactivateKey);
         const result = await Promise.all(promises);
 
-        // Finished, call the event manager.
         eventManager.call();
 
         // Summarize the results and get the texts to return.
         const summary = getSummary(result);
-        return {
+        const output = {
             success: getText(I18N.success, summary.success, promises),
             failed: getErrorText(summary.failed)
         };
+        dispatcher.keys('reactivate', { output, contact });
+
+        return output;
     };
 }
 

@@ -118,6 +118,12 @@
                         ng-if="!UI.infoLink && UI.infoTooltip && $index === 0"
                         pt-tooltip="{{ ::UI.infoTooltip }}"></i>
 
+                    <advanced-settings-btn
+                        class="contactItem-btn-settings"
+                        ng-if="UI.inputType === 'email' && item.value"
+                        data-contact="contact"
+                        data-model="item"></advanced-settings-btn>
+
                 </div>
 
                 <div class="contactItem-validation" ng-messages="form[UI.inputName+$index].$error" role="alert">

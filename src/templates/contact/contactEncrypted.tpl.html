@@ -1,14 +1,22 @@
 <section class="contactEncrypted-container">
     <section class="contactDetails-fields-container">
         <legend class="contactDetails-fields-ico">
-            <svg viewBox="0 0 374.8 337.1" pt-tooltip-translate="Encrypted data with verified digital signature">
+            <svg
+                viewBox="0 0 374.8 337.1"
+                pt-tooltip-translate="Encrypted data with verified digital signature"
+                pt-tooltip-translate-context="Tooltip contact">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-lock-signed"></use>
             </svg>
         </legend>
         <div>
             <div ng-if="state.isFree" class="contactDetails-fields-locked" >
                 <div class="contactDetails-fields-locked-notice">
-                    <p><a class="pm_button primary" ui-sref="secured.dashboard({ scroll: true })" translate translate-context="Action">Upgrade now</a></p>
+                    <p>
+                        <a
+                            class="pm_button primary contactEncrypted-action-redirect"
+                            ui-sref="secured.dashboard({ scroll: true })"
+                            translate
+                            translate-context="Action">Upgrade now</a></p>
                     <p translate translate-context="Info">This feature is only available for paid users.</p>
                 </div>
             </div>

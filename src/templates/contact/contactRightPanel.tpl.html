@@ -1,15 +1,18 @@
 <div class="contactRightPanel-container contactRightPanel-placeholder-hidden">
+
     <contact-placeholder></contact-placeholder>
 
     <div class="contactRightPanel-content">
         <contact-view-detail
             class="contactRightPanel-item-view"
             ng-if="contact && mode === 'view'"
+            data-contact-error-type
             data-mode="mode"
             data-contact="contact"></contact-view-detail>
         <contact-details
             class="contactRightPanel-item-details"
             ng-if="contact && mode === 'edition'"
+            data-contact-error-type
             data-mode="mode"
             data-contact="contact"></contact-details>
         <loader-tag class="contactRightPanel-loader"></loader-tag>

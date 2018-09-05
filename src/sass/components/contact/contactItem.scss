@@ -10,7 +10,7 @@
     padding-top: 10px;
     margin-bottom: 10px;
 
-    &:before {
+    &::before {
         content: "";
         position: absolute;
         height: 1px;
@@ -360,7 +360,7 @@ contact-pgp contact-item ul.contactItem-container {
 
 .contactItem-container .copy-button,
 .contactItem-compose,
-.contactItem-row .fa-gear {
+.contactItem-btn-settings {
     position: absolute;
     left: -30px;
     top: 10px;
@@ -376,12 +376,13 @@ contact-pgp contact-item ul.contactItem-container {
     box-shadow:  -10px 0px 20px -5px #FFF;
 }
 
-.contactItem-row .fa-gear {
-    top: 11px;
-    left: -50px;
+.contactItem-btn-settings {
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
 }
 
-.pm_modal .contactItem-row .fa-gear {
+.pm_modal .contactItem-row .advancedSettingsBtn-container {
     left: -30px;
 }
 
