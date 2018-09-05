@@ -47,7 +47,7 @@ function forgeRequestParameters($stateParams, $filter, mailSettingsModel) {
             params.AddressID = $stateParams.address;
             params.LabelID = $stateParams.label;
             params.Keyword = getKeyBoard();
-            params.Recipient = $stateParams.to;
+            params.Recipients = $stateParams.to;
             params.From = $stateParams.from;
             params.Subject = $stateParams.subject;
             params.Begin = $stateParams.begin;
