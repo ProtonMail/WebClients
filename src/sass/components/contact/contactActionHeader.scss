@@ -36,3 +36,8 @@
 
 /* Hide nav if inside a modal */
 .pm_modal .contactActionHeader-container { display: none }
+
+.contactActionHeader-container[data-mode-type="edition"] [data-display-if]:not([data-display-if="edition"]),
+.contactActionHeader-container[data-mode-type="view"] [data-display-if]:not([data-display-if="view"]) {
+    display: none
+}

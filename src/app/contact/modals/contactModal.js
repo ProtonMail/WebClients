@@ -22,7 +22,8 @@ function contactModal($state, dispatchers, gettextCatalog, notification, pmModal
 
                     if (created.length) {
                         notification.success(I18N.contactAdded);
-                        $state.go('secured.contacts.details', { id: created[0].ID });
+                        const { toState: { name = 'secured.contacts.details' } = {}, toParams } = data.state || {};
+                        $state.go(name, toParams || { id: created[0].ID });
                         params.close();
                     }
                 }

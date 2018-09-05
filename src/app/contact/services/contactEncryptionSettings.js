@@ -16,7 +16,8 @@ function contactEncryptionSettings(
      */
     const loadConfig = async (email, contact) => {
         const keys = await keyCache.getKeysPerEmail(email);
-        return { keys, model: contactEncryptionModel.prepare(contact.vCard, normalizeEmail(email)) };
+        const model = contactEncryptionModel.prepare(contact.vCard, normalizeEmail(email));
+        return { keys, model };
     };
 
     /**
@@ -26,12 +27,22 @@ function contactEncryptionSettings(
      * @param  {Object} contact          The contact
      * @return {Promise}                 return the new model with { Keys, Sign etc.}
      */
-    const get = async (item, contact) => {
-        const { value: email } = item;
+    const get = async ({ value: email } = {}, contact) => {
         const { model, keys: internalKeys } = await networkActivityTracker.track(loadConfig(email, contact));
 
         return new Promise((resolve, reject) => {
             const directSave = !!contact.ID;
+
+            const getData = (model) => {
+                if (directSave) {
+                    const promise = contactEncryptionSaver.save(model, contact.ID, email);
+                    networkActivityTracker.track(promise);
+                    return { model };
+                }
+                const vCard = contactEncryptionSaver.build(contact.vCard, email, model);
+                return { model, vCard };
+            };
+
             contactEncryptionModal.activate({
                 params: {
                     internalKeys,
@@ -39,11 +50,7 @@ function contactEncryptionSettings(
                     model,
                     directSave,
                     save(model) {
-                        if (directSave) {
-                            const promise = contactEncryptionSaver.save(model, contact.ID, email);
-                            networkActivityTracker.track(promise);
-                        }
-                        resolve(model);
+                        resolve(getData(model));
                         contactEncryptionModal.deactivate();
                     },
                     close() {

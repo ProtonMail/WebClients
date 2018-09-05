@@ -1,15 +1,53 @@
 <div class="contactError-container">
-    <section class="contactError-item-encrypted">
-        <h2 translate-context="Info" translate-comment="errors for contact" translate>Decryption error</h2>
-        <p translate-context="Info" translate-comment="errors for contact" translate>Decryption of this content failed</p>
+    <div class="contactError-item-encrypted">
+        <h2
+            translate-context="Info"
+            translate-comment="errors for contact"
+            translate>Decryption error</h2>
+
+        <p
+            translate-context="Info"
+            translate-comment="errors for contact"
+            translate>Decryption of this content failed</p>
         <p class="contactError-row">
-            <a ui-sref="secured.keys" translate-context="Link" translate>Reactivate keys</a>
-            <a href="https://protonmail.com/support/knowledge-base/encrypted-contacts/" target="_blank" translate-context="Link" translate>Learn more</a>
+            <reactivate-keys-btn
+                type="button"
+                data-contact="contact"
+                data-action="reactivateKeys"
+                class="contactError-action-reactivateKeys"
+                data-mode="contact"></reactivate-keys-btn>
+            <a
+                href="https://protonmail.com/support/knowledge-base/encrypted-contacts/"
+                title="Encrypted Contacts"
+                target="_blank"
+                translate-context="Link"
+                translate>Learn more</a>
         </p>
-    </section>
-    <section class="contactError-item-verification">
-        <h2 translate-context="Info" translate-comment="errors for contact" translate>Verification error</h2>
-        <p translate-context="Info" translate-comment="errors for contact" translate>Verification of this content’s signature failed</p>
-        <p><a href="https://protonmail.com/support/knowledge-base/encrypted-contacts/" target="_blank" translate-context="Link" translate>Learn more</a></p>
-    </section>
+    </div>
+
+    <div class="contactError-item-verification">
+        <div class="contactError-content">
+            <h2
+                translate-context="Info"
+                translate-comment="errors for contact"
+                translate>Verification error</h2>
+            <p
+                translate-context="Info"
+                translate-comment="errors for contact"
+                translate>Verification of this content’s signature failed</p>
+            <p><a
+                    href="https://protonmail.com/support/knowledge-base/encrypted-contacts/"
+                    title="Encrypted Contacts"
+                    target="_blank"
+                    translate-context="Link"
+                    translate>Learn more</a></p>
+        </div>
+
+        <button
+            pt-tooltip-translate="Save the contact with your current keys"
+            pt-tooltip-translate-context="Tooltip"
+            type="button"
+            data-action="resign"
+            class="pm_button contactError-action-resign">Re-Sign</button>
+    </div>
 </div>

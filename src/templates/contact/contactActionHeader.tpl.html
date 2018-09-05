@@ -1,4 +1,4 @@
-<header class="contactActionHeader-container contactActionHeader-container">
+<header class="contactActionHeader-container" data-mode-type="{{mode}}">
    <h1
        class="contactActionHeader-title"
        translate
@@ -9,18 +9,18 @@
            type="button"
            data-action="downloadContact"
            class="contactDetails-download pm_button fa fa-download"
-           ng-hide="contactForm.$dirty && mode === 'edition'"
+           ng-hide="contactForm.$dirty"
            pt-tooltip-translate="Export contact in vCard format"
            pt-tooltip-translate-context="Info"></button>
        <button
-           ng-if="mode !== 'edition'"
            class="save pm_button primary main"
            data-action="toggleMode"
+           data-display-if="view"
            translate-context="Action"
            translate-comment="contact details"
            translate>Edit</button>
         <button
-            ng-if="mode === 'edition'"
+            data-display-if="edition"
             class="save pm_button main"
             type="button"
             data-action="toggleMode"
@@ -29,7 +29,7 @@
             translate>Cancel</button>
         <button
             class="save pm_button primary main"
-            ng-if="mode === 'edition'"
+            data-display-if="edition"
             ng-disabled="contactForm.$pristine"
             translate-context="Action"
             translate-comment="contact details"
@@ -56,14 +56,14 @@
             pt-tooltip-translate-context="Info"
             data-action="deleteContact"></button>
        <button
-            ng-if="mode === 'edition'"
+            data-display-if="view"
             ng-disabled="contactForm.$pristine"
             pt-tooltip-translate="Save contact"
             pt-tooltip-translate-context="Info"
             class="save pm_button primary main fa fa-save"></button>
         <button
             class="save pm_button primary main fa fa-pencil"
-            ng-if="mode !== 'edition'"
+            data-display-if="view"
             data-action="toggleMode"
             pt-tooltip-translate="Edit contact"
             pt-tooltip-translate-context="Tooltip"></button>

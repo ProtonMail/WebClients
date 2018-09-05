@@ -25,6 +25,7 @@ $mapFields: (
 
 
 .contactViewItem-container a {
+    max-width: 60%;
     color: $primary;
     text-decoration: none;
     text-overflow: ellipsis;
@@ -56,17 +57,8 @@ $mapFields: (
     padding: .5rem;
     line-height: 1;
     height: auto
-
 }
 
-.contactViewItem-btn-settings:focus {
-    outline: auto
-}
-.contactViewItem-btn-settings {
-    cursor: pointer;
-    margin-left: auto;
-    margin-top: -14px; /* half of its size to center it with the email */
-}
 .contactViewItem-value-img {
      max-width: 128px;
      max-height: 128px

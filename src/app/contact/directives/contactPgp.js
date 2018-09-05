@@ -62,7 +62,7 @@ function contactPgp(dispatchers, contactPgpModel) {
             contactPgpModel.init(scope.model, scope.email, scope.internalKeys);
             const internalUser = contactPgpModel.isInternalUser();
             const disabledUser = contactPgpModel.isDisabledUser();
-            const keys = contactPgpModel.get('Keys');
+            const keys = contactPgpModel.get('Keys') || [];
             const unarmoredKeys = contactPgpModel.getRawInternalKeys();
 
             toggle(element, 'pgp-external', !internalUser);

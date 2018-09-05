@@ -1,5 +1,5 @@
 /* @ngInject */
-function contactViewDetail(contactDetailsModel, dispatchers) {
+function contactViewDetail(contactDetailsModel, dispatchers, userType) {
     return {
         scope: {
             contact: '=',
@@ -11,6 +11,7 @@ function contactViewDetail(contactDetailsModel, dispatchers) {
         link(scope) {
             const { on, unsubscribe } = dispatchers();
 
+            scope.isFree = userType().isFree;
             scope.model = contactDetailsModel.extractHumans(scope.contact.vCard, ({ key }) => key !== 'uid');
             scope.model.hasEncrypted = !!Object.keys(scope.model.encrypted).length;
 

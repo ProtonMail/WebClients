@@ -1,4 +1,5 @@
 import _ from 'lodash';
+
 /* @ngInject */
 function reactivateKeysBtn(
     authentication,
@@ -36,8 +37,10 @@ function reactivateKeysBtn(
 
     return {
         replace: true,
-        scope: {},
-        template: `<button class="reactivateUserKeysBtn-container pm_button">${I18N.reactivateContact}</button>`,
+        scope: {
+            contact: '='
+        },
+        template: `<button class="reactivateKeysBtn-container pm_button">${I18N.reactivateContact}</button>`,
         restrict: 'E',
         link(scope, el, { mode }) {
             if (mode === 'address') {
@@ -50,10 +53,12 @@ function reactivateKeysBtn(
                         submit(password) {
                             const keys = getKeys(mode); // Get the keys dynamically since they can change.
                             oldPasswordModal.deactivate();
-                            const promise = reactivateKeys(keys, password).then(({ success, failed }) => {
-                                success && notification.success(success);
-                                failed && notification.error(failed);
-                            });
+                            const promise = reactivateKeys(keys, password, scope.contact).then(
+                                ({ success, failed }) => {
+                                    success && notification.success(success);
+                                    failed && notification.error(failed);
+                                }
+                            );
 
                             networkActivityTracker.track(promise);
                         },

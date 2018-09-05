@@ -5,13 +5,15 @@
         data-mode="mode"
         data-contact="contact"></contact-action-header>
 
+
     <div class="contactViewDetail-content">
-        <div class="contactViewDetail-group">
+        <div class="contactViewDetail-group" data-type="clear">
             <i
                 class="fa fa-check contactViewDetail-signed-icon"
                 pt-tooltip-translate="Digital signature verified"
                 pt-tooltip-translate-context="Tooltip"></i>
 
+            <contact-error></contact-error>
             <ul
                 class="contactViewDetail-list"
                 ng-repeat="(type, value) in model.clear track by type">
@@ -23,7 +25,11 @@
             </ul>
         </div>
 
-        <div class="contactViewDetail-group" ng-if="model.hasEncrypted">
+        <div
+            class="contactViewDetail-group"
+            ng-class="{'contactViewDetail-isFree': isFree}"
+            ng-if="model.hasEncrypted"
+            data-type="encrypted">
             <svg
                 viewBox="0 0 374.8 337.1"
                 class="contactViewDetail-signed-icon"
@@ -32,6 +38,14 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-lock-signed"></use>
             </svg>
 
+            <div ng-if="isFree" class="contactDetails-fields-locked" >
+                <div class="contactDetails-fields-locked-notice">
+                    <p><a class="pm_button primary" ui-sref="secured.dashboard({ scroll: true })" translate translate-context="Action">Upgrade now</a></p>
+                    <p translate translate-context="Info">This feature is only available for paid users.</p>
+                </div>
+            </div>
+
+            <contact-error></contact-error>
             <ul
                 class="contactViewDetail-list"
                 ng-repeat="(type, value) in model.encrypted track by type">

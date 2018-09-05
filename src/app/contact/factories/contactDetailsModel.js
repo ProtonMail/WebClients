@@ -1,7 +1,6 @@
 import _ from 'lodash';
 
-import { VCARD_KEYS, CONTACT_SETTINGS_DEFAULT } from '../../constants';
-import { normalizeEmail } from '../../../helpers/string';
+import { VCARD_KEYS } from '../../constants';
 import { unescapeValue, escapeValue, cleanValue } from '../../../helpers/vcard';
 import { getKeys, getHumanFields, isPersonalsKey, FIELDS, toHumanKey } from '../../../helpers/vCardFields';
 
@@ -77,7 +76,7 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
             switch (key) {
                 case 'Emails':
                     child.forEach((item, index) => {
-                        const { value: email = '', settings = {}, type } = item;
+                        const { value: email = '', type } = item;
                         if (!email) {
                             return;
                         }
@@ -86,29 +85,20 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
                         emailProperty.group = `item${index + 1}`;
                         params.vCard.addProperty(emailProperty);
 
-                        const { value: settingsEmail = '' } = settings.Email || {};
-                        const settingsToSave =
-                            normalizeEmail(settingsEmail) === normalizeEmail(email) ? { ...settings } : {};
-                        delete settingsToSave.Email;
-
-                        _.each(settingsToSave, (setting) => {
-                            setting.forEach((entry, index) => {
-                                const vCardArgs = getParams(entry, setting.length > 1 && index + 1);
-                                delete vCardArgs.type;
-                                const entryValue = settingValue(entry.value);
-                                if (entryValue === CONTACT_SETTINGS_DEFAULT) {
-                                    return;
-                                }
+                        // If we create a new contact and edit advanced settings
+                        if (scope.advancedSettingsCard) {
+                            const data = scope.advancedSettingsCard.data;
+                            Object.keys(data).forEach((key) => {
+                                const prop = data[key];
                                 const encryptProperty = new vCard.Property(
-                                    entry.type,
-                                    escapeValue(entryValue),
-                                    vCardArgs
+                                    prop.getField(),
+                                    settingValue(escapeValue(prop.valueOf()))
                                 );
 
                                 encryptProperty.group = emailProperty.group;
                                 params.vCard.addProperty(encryptProperty);
                             });
-                        });
+                        }
                     });
                     break;
                 case 'Tels':

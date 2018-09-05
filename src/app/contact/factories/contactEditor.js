@@ -35,7 +35,7 @@ function contactEditor(
      * @param {Function} callback callback to trigger once it's done
      * @return {Promise}
      */
-    function create({ contacts = [], mode, callback = _.noop }) {
+    function create({ contacts = [], mode, state, callback = _.noop }) {
         const cancellationToken = createCancellationToken();
         const preCreation = mode === 'import' ? contactImportEncryption.process(contacts) : Promise.resolve(contacts);
 
@@ -46,7 +46,7 @@ function contactEditor(
             })
             .then((data) => {
                 const { created, errors, total } = data;
-                dispatcher.contacts('contactCreated', { created, total, errors, mode });
+                dispatcher.contacts('contactCreated', { created, total, errors, mode, state });
                 callback(data);
                 return data;
             })

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import { normalizeEmail } from '../../../helpers/string';
 import { ADVANCED_SENDING_KEYS, FIELDS } from '../../../helpers/vCardFields';
 import { cleanValue } from '../../../helpers/vcard';
@@ -19,7 +21,7 @@ function contactEncryptionModel(mailSettingsModel, vcard) {
      * @param {Array} properties
      * @return {Object} model { Encrypt: true, Sign: false, Keys: [], ... }
      */
-    const buildModel = (properties) => {
+    const buildModel = (properties = []) => {
         // Use reduceRight() to use the first property of each field
         return properties.reduceRight(
             (acc, property) => {
@@ -33,7 +35,6 @@ function contactEncryptionModel(mailSettingsModel, vcard) {
                 }
 
                 const key = FIELDS_MAP[field];
-
                 acc[key] = cleanValue(value, field);
 
                 return acc;
@@ -57,10 +58,20 @@ function contactEncryptionModel(mailSettingsModel, vcard) {
     const prepare = (vcard, normalizedEmail) => {
         const emails = vcardService.extractProperties(vcard, FIELDS.EMAIL);
         const emailProperty = emails.find((property) => normalizeEmail(property.valueOf()) === normalizedEmail);
-        const group = emailProperty.getGroup();
-        const properties = vcardService.extractProperties(vcard, ADVANCED_SENDING_KEYS, { group });
 
-        return buildModel(properties);
+        if (emailProperty) {
+            const group = emailProperty.getGroup();
+            const properties = vcardService.extractProperties(vcard, ADVANCED_SENDING_KEYS, { group });
+            return buildModel(properties);
+        }
+
+        // When we create a contact we don't have the email yet but we can have encryption settings
+        const hasEncryptionSettings = Object.keys(vcard.data).length && !emailProperty;
+        if (hasEncryptionSettings) {
+            return buildModel(_.values(vcard.data));
+        }
+
+        return buildModel();
     };
 
     const getMap = () => FIELDS_MAP;

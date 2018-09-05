@@ -1,3 +1,5 @@
+import dedent from '../../../helpers/dedent';
+
 // Adapted from https://github.com/rubenv/angular-gettext/blob/master/src/directive.js
 function generateDirective(attrName) {
     function normalizeAttributeName(attributeName) {
@@ -95,8 +97,27 @@ function generateDirective(attrName) {
                                     return;
                                 }
 
-                                // Swap in the translation
-                                element[0].setAttribute(attrName, translated);
+                                // Osef if it's a comment
+                                if (element[0].nodeType === 8) {
+                                    return;
+                                }
+
+                                try {
+                                    // Swap in the translation
+                                    element[0].setAttribute(attrName, translated);
+                                } catch (e) {
+                                    console.error(
+                                        dedent`
+                                        [translateAttribute] Can't set the attribute ${attrName}\n
+                                        - nodeName: ${(element[0] || {}).nodeName || ''}
+                                        - template: ${(element[0] || {}).data || ''}
+
+                                        - translation: ${translated}
+                                        - before: ${oldContents || ''}
+                                    `,
+                                        element
+                                    );
+                                }
                             }
 
                             if (attribute) {

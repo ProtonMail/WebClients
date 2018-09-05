@@ -47,12 +47,4 @@
                 ng-repeat="detail in ::formatAddress(info.value) track by $index">{{::detail}}</li>
         </ul>
     </address>
-
-    <button
-        ng-if="type === 'email' && !isOwnAddress(info.value)"
-        type="button"
-        class="fa fa-gear contactViewItem-btn-settings"
-        ng-click="settings(info)"
-        pt-tooltip-translate="Advanced settings"
-        pt-tooltip-translate-context="Action"></button>
 </li>

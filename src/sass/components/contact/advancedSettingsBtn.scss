@@ -1,0 +1,16 @@
+.advancedSettingsBtn-container, .advancedSettingsBtn-container * { box-sizing: border-box }
+
+.advancedSettingsBtn-btn {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: .5rem;
+    line-height: 1;
+    height: auto
+}
+
+
+.advancedSettingsBtn-btn:focus,
+.advancedSettingsBtn-btn:hover {
+    color: $dark;
+}

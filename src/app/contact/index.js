@@ -65,15 +65,19 @@ import contactEncryptToggle from './directives/contactEncryptToggle';
 import contactSignToggle from './directives/contactSignToggle';
 import contactSchemeSelector from './directives/contactSchemeSelector';
 import contactPgpModel from './factories/contactPgpModel';
+import contactErrorType from './directives/contactErrorType';
+import advancedSettingsBtn from './directives/advancedSettingsBtn';
 
 export default angular
     .module('proton.contact', ['vs-repeat'])
+    .directive('advancedSettingsBtn', advancedSettingsBtn)
     .factory('contactPgpModel', contactPgpModel)
     .directive('contactSchemeSelector', contactSchemeSelector)
     .directive('contactSignToggle', contactSignToggle)
     .directive('contactEncryptToggle', contactEncryptToggle)
     .factory('contactEncryptionModel', contactEncryptionModel)
     .directive('contactMimetypeSelector', contactMimetypeSelector)
+    .directive('contactErrorType', contactErrorType)
     .factory('contactEncryptionSettings', contactEncryptionSettings)
     .directive('contactActionHeader', contactActionHeader)
     .filter('contactViewType', contactViewType)
