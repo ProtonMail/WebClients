@@ -25,6 +25,7 @@ function contactPgp(dispatchers, contactPgpModel) {
                         contactPgpModel.allKeysExpired(data.keys).then((keysExpired) => {
                             toggle(element, 'pgp-expired', !data.keys.length || keysExpired);
                             toggle(element, 'pgp-no-keys', !data.keys.length);
+                            toggle(element, 'pgp-encrypt', contactPgpModel.get('Encrypt'));
                             toggle(
                                 element,
                                 'pgp-no-primary',
