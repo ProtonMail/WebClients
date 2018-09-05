@@ -11,6 +11,9 @@ function ptDndUtils() {
             .substring(7)}`;
     }
 
+    // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
+    const isElement = (node) => node.nodeType === 1;
+
     /**
      * Try to find the node that initiate the dragEvent
      * @param  {Node} node the event.target node
@@ -19,7 +22,7 @@ function ptDndUtils() {
     function getDragInitiatorNode(node) {
         let currentNode = node;
         while (currentNode.parentNode) {
-            if (currentNode.getAttribute('draggable') === 'true') {
+            if (isElement(currentNode) && currentNode.getAttribute('draggable') === 'true') {
                 return currentNode;
             }
             currentNode = currentNode.parentNode;
