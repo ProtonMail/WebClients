@@ -38,27 +38,6 @@ button {
 	color: inherit;
 }
 
-a[href],
-area[href],
-input:not([disabled]),
-select:not([disabled]),
-textarea:not([disabled]),
-button:not([disabled]),
-iframe,
-[tabindex],
-[contentEditable=true] {
-    &:not([tabindex='-1']) {
-		&:active {
-			/* activable elements */
-			outline: none;
-		}
-
-		&:focus {
-			/* focussable elements */
-		}
-	}
-}
-
 code,
 kbd,
 pre,
