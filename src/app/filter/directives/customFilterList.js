@@ -201,7 +201,7 @@ function customFilterList(
                         notification.success(gettextCatalog.getString('Status updated', null, 'Info'));
                     })
                     .catch(({ data = {} } = {}) => {
-                        filter.Status = 0;
+                        filter.Status = false; // Has to be a Boolean to work with the toggle directive
                         throw new Error(data.Error);
                     });
 
@@ -217,7 +217,7 @@ function customFilterList(
                         return data;
                     })
                     .catch(({ data = {} } = {}) => {
-                        filter.Status = 1;
+                        filter.Status = true; // Has to be a Boolean to work with the toggle directive
                         throw new Error(data.Error);
                     });
 
@@ -227,13 +227,12 @@ function customFilterList(
             };
 
             function changeCustomFilterStatus(filter, status) {
-                filter.Status = status ? 1 : 0;
-
-                if (filter.Status === 0) {
-                    scope.disableCustomFilter(filter);
-                } else if (filter.Status === 1) {
+                if (status) {
                     scope.enableCustomFilter(filter);
+                    return;
                 }
+
+                scope.disableCustomFilter(filter);
             }
         }
     };
