@@ -1,3 +1,5 @@
+import { isHTML } from '../../../helpers/string';
+
 /* @ngInject */
 function notification() {
     const CONFIG = {
@@ -18,6 +20,7 @@ function notification() {
             const action = (type) => (input, options = {}) => {
                 const message = input instanceof Error ? input.message : input;
                 options.classes = `${options.classes || ''} ${CONFIG.classNames[type]}`.trim();
+                isHTML(message) && !options.messageTemplate && (options.messageTemplate = message);
                 type === 'error' && (options.duration = 10000);
                 notify({ message, ...options });
             };

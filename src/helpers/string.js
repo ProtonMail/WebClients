@@ -62,3 +62,14 @@ export const unescapeCSSEncoding = (str) => {
 export const ucFirst = (input = '') => {
     return input.charAt(0).toUpperCase() + input.slice(1);
 };
+
+/**
+ * Test if the string contains HTML data
+ * It doesn't have loading resources side effects
+ * @param {String} str
+ * @return {Boolean}
+ */
+export const isHTML = (str) => {
+    const doc = new DOMParser().parseFromString(str, 'text/html');
+    return Array.from(doc.body.childNodes).some((node) => node.nodeType === 1);
+};
