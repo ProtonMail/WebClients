@@ -1,4 +1,4 @@
-import { removeEmailAlias, toUnsignedString, unescapeCSSEncoding, ucFirst } from '../../../src/helpers/string';
+import { removeEmailAlias, toUnsignedString, unescapeCSSEncoding, ucFirst, isHTML } from '../../../src/helpers/string';
 
 const EMAILS = {
     'dew@foo.bar': 'dew@foo.bar',
@@ -109,3 +109,46 @@ describe('ucFirst', () => {
     });
 });
 
+describe('isHTML', () => {
+    [
+        {
+            name: 'an empty string',
+            input: '',
+            output: false
+        },
+        {
+            name: 'a simple string',
+            input: 'panda',
+            output: false
+        },
+        {
+            name: 'a string with <',
+            input: 'panda < tiger',
+            output: false
+        },
+        {
+            name: 'a string with end block',
+            input: 'panda </div>',
+            output: false
+        },
+        {
+            name: 'a string with start block',
+            input: 'panda <div> tiger',
+            output: true
+        },
+        {
+            name: 'a wrapped string',
+            input: '<div>panda</div>',
+            output: true
+        },
+        {
+            name: 'a string with link',
+            input: 'panda <a>link</a>',
+            output: true
+        }
+    ].forEach(({ input, output, name }) => {
+        it(`should ${output ? '' : 'not '}detect HTML content in ${name}`, () => {
+            expect(isHTML(input)).toBe(output);
+        });
+    });
+});
