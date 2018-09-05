@@ -221,6 +221,29 @@ select {
     background: $white;
 }
 
+a[href],
+area[href],
+input:not([disabled]),
+select:not([disabled]),
+textarea:not([disabled]),
+button:not([disabled]),
+iframe,
+[tabindex],
+[contentEditable=true] {
+    &:not([tabindex='-1']):active {
+		/* activable elements */
+		outline: none;
+	}
+}
+
+button, 
+input[type=button],
+input[type=reset],
+input[type=submit],
+[role=button] {
+	cursor: pointer;
+}
+
 .no-outline {
 	outline: none;
 }
