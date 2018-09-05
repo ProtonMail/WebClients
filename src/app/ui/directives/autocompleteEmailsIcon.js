@@ -24,10 +24,9 @@ function autocompleteEmailsIcon(tooltipModel, encryptionStatus, dispatchers) {
 
             // Ensure the tooltip is updated once the model updates.
             on('autocompleteEmails', (event, { type, data: { messageID } }) => {
-                if (type !== 'refresh' && messageID !== scope.message.ID) {
-                    return;
+                if (type === 'refresh' && messageID === scope.message.ID) {
+                    refreshTooltip(scope.email);
                 }
-                refreshTooltip(scope.email);
             });
 
             scope.$on('$destroy', () => {
