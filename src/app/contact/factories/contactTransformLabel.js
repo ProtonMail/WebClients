@@ -35,7 +35,8 @@ function contactTransformLabel(gettextCatalog) {
         tel: gettextCatalog.getString('Phone', null, 'VCard key name'),
         title: gettextCatalog.getString('Title', null, 'VCard key name'),
         tz: gettextCatalog.getString('Timezone', null, 'VCard key name'),
-        'x-mobile': gettextCatalog.getString('Mobile', null, 'VCard key name'),
+        mobile: gettextCatalog.getString('Mobile', null, 'VCard key name'),
+        personal: gettextCatalog.getString('Personal', null, 'VCard key name'),
         uid: 'UID',
         url: 'URL',
         work: gettextCatalog.getString('Work', null, 'VCard key name'),
@@ -56,10 +57,14 @@ function contactTransformLabel(gettextCatalog) {
     /**
      * Transform vCard label to language if a reference is found
      * or Uppercase the first letter
-     * @param  {String} label
+     * @param  {String} input
      * @return {String}
      */
-    const toLang = (label = '') => MAP[label.toLowerCase()] || `${label.charAt(0).toUpperCase()}${label.slice(1)}`;
+    const toLang = (input = '') => {
+        const label = input.toLowerCase();
+        const value = label.startsWith('x-') ? label.slice(2) : label;
+        return MAP[value] || `${label.charAt(0).toUpperCase()}${label.slice(1)}`;
+    };
 
     /**
      * Transform displayed label to key
