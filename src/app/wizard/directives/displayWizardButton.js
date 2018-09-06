@@ -7,10 +7,7 @@ const displayWizardButton = (dispatchers) => ({
          * the attribute [data-display-position]
          */
         const onClick = () =>
-            dispatcher.tourActions({
-                action: displayWizardButton || 'tourStart',
-                position: +displayPosition
-            });
+            dispatcher.tourActions(displayWizardButton || 'tourStart', { position: +displayPosition });
 
         el.on('click', onClick);
 

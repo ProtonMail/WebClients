@@ -59,11 +59,11 @@ function wizard(
              *   - touchNext: Display the next slide
              *   - touchGo: Going to a slide by its position
              */
-            on('tourActions', (e, { action, position }) => {
-                action === 'tourStart' && tourStart();
-                action === 'tourEnd' && tourEnd();
-                action === 'tourNext' && tourNext();
-                action === 'tourGo' && tourGo(position);
+            on('tourActions', (e, { type, data = {} }) => {
+                type === 'tourStart' && tourStart();
+                type === 'tourEnd' && tourEnd();
+                type === 'tourNext' && tourNext();
+                type === 'tourGo' && tourGo(data.position);
             });
 
             on('$stateChangeSuccess', () => {
