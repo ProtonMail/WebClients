@@ -5,11 +5,9 @@ function autoresponderModel(
     autoresponderLanguage,
     eventManager,
     dispatchers,
-    gettextCatalog,
     mailSettingsModel,
     networkActivityTracker,
     notification,
-    settingsApi,
     settingsMailApi,
     signatureBuilder
 ) {
@@ -252,7 +250,7 @@ function autoresponderModel(
         }
     });
 
-    on('autoresponder.isEnabled', (event, { status }) => {
+    on('autoresponder.isEnabled', (event, { data: { status } }) => {
         set({ IsEnabled: status });
     });
 
