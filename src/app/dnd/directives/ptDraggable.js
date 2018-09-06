@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { isElement } from '../../../helpers/domHelper';
 
 /* @ngInject */
 function ptDraggable(AppModel, dispatchers, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNotification) {
@@ -35,7 +36,7 @@ function ptDraggable(AppModel, dispatchers, ptDndModel, ptDndUtils, PTDNDCONSTAN
     document.addEventListener('dragenter', ({ target }) => {
         // Filter by type for Firefox
         if (
-            target.nodeType !== 1 ||
+            !isElement(target) ||
             target.classList.contains(CLASSNAME.DRAG_HOVER) ||
             !target.hasAttribute(DROPZONE_ATTR_ID)
         ) {
@@ -48,13 +49,13 @@ function ptDraggable(AppModel, dispatchers, ptDndModel, ptDndUtils, PTDNDCONSTAN
     });
 
     document.addEventListener('dragleave', ({ target }) => {
-        if (target.nodeType === 1 && target.classList.contains(CLASSNAME.DRAG_HOVER)) {
+        if (isElement(target) && target.classList.contains(CLASSNAME.DRAG_HOVER)) {
             target.classList.remove(CLASSNAME.DRAG_HOVER);
         }
     });
 
     document.addEventListener('dragend', (e) => {
-        e.target.classList.remove(CLASSNAME.DRAG_START);
+        isElement(e.target) && e.target.classList.remove(CLASSNAME.DRAG_START);
         document.body.classList.remove(CLASSNAME.BODY);
         angular
             .element(document.querySelectorAll(`.${CLASSNAME.DROPZONE_HOVER}`))

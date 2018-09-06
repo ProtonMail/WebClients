@@ -71,3 +71,11 @@ export const unescapeSrc = (value = '') => value.replace(/data-src=/g, 'src=');
 export const toggle = (element, className, value) => {
     element.classList.contains(className) === value || element.classList.toggle(className);
 };
+
+/**
+ * Returns whether the element is a node.
+ * See {@link https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType}
+ * @param {DOMNode} node
+ * @returns {boolean}
+ */
+export const isElement = (node) => node && node.nodeType === 1;
