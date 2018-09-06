@@ -114,7 +114,6 @@ function hotkeys(hotkeyModal, $state, $injector, dispatchers, gettextCatalog) {
     const markPrevious = action(broadcast('markPrevious'));
     const markNext = action(broadcast('markNext'));
     const escape = action(emit('hotkeys', { type: 'escape' }));
-    // const escape = action(broadcast('escape'));
     const left = action(broadcast('left'));
     const right = action(broadcast('right'));
     const read = action(broadcast('read'));

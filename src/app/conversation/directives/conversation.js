@@ -188,10 +188,10 @@ function conversation(
                 });
             };
 
-            scope.$on('newElement', onNextPrevElement('UP'));
-            scope.$on('oldElement', onNextPrevElement('DOWN'));
+            on('newElement', onNextPrevElement('UP'));
+            on('oldElement', onNextPrevElement('DOWN'));
 
-            scope.$on('markPrevious', () => {
+            on('markPrevious', () => {
                 unsubscribeActions();
                 if (scope.markedMessage) {
                     const index = scope.messages.indexOf(scope.markedMessage);
@@ -206,7 +206,7 @@ function conversation(
                 }
             });
 
-            scope.$on('markNext', () => {
+            on('markNext', () => {
                 unsubscribeActions();
                 if (scope.markedMessage) {
                     const index = scope.messages.indexOf(scope.markedMessage);
@@ -238,10 +238,10 @@ function conversation(
             hotkeys.unbind(['down', 'up']);
 
             // Restore them to allow custom keyboard navigation
-            scope.$on('left', () => hotkeys.bind(['down', 'up']));
-            scope.$on('openMarked', openMarked());
+            on('left', () => hotkeys.bind(['down', 'up']));
+            on('openMarked', openMarked());
 
-            scope.$on('right', () => {
+            on('right', () => {
                 unsubscribeActions();
                 !scope.markedMessage &&
                     scope.$applyAsync(() => {
@@ -253,7 +253,7 @@ function conversation(
                     });
             });
 
-            scope.$on('escape', () => {
+            on('escape', () => {
                 back();
             });
 
