@@ -60,9 +60,9 @@ function encryptionView(
                 mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'pgp-inline' : 'pgp-mime';
 
             const { on, unsubscribe } = dispatchers();
-            on('encryptSettings.attachPublic', (event, { status }) => {
+            on('encryptSettings.attachPublic', (event, { data: { status } }) => {
                 askSign(status).then((enableSign) => {
-                    const promises = [settingsMailApi.updateAttachPublic({ AttachPublicKey: status ? 1 : 0 })];
+                    const promises = [settingsMailApi.updateAttachPublic({ AttachPublicKey: +status })];
                     if (enableSign) {
                         promises.push(settingsMailApi.updateSign({ Sign: 1 }).then(() => (scope.sign = 1)));
                     }
@@ -72,16 +72,16 @@ function encryptionView(
                     networkActivityTracker.track(promise);
                 });
             });
-            on('encryptSettings.sign', (event, { status }) => {
+            on('encryptSettings.sign', (event, { data: { status } }) => {
                 const promise = settingsMailApi
-                    .updateSign({ Sign: status ? 1 : 0 })
+                    .updateSign({ Sign: +status })
                     .then(() => notification.success(I18N.SUCCES_MESSAGE))
                     .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));
                 networkActivityTracker.track(promise);
             });
-            on('encryptSettings.promptpin', (event, { status }) => {
+            on('encryptSettings.promptpin', (event, { data: { status } }) => {
                 const promise = settingsMailApi
-                    .updatePromptPin({ PromptPin: status ? 1 : 0 })
+                    .updatePromptPin({ PromptPin: +status })
                     .then(() => notification.success(I18N.SUCCES_MESSAGE))
                     .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));
                 networkActivityTracker.track(promise);
