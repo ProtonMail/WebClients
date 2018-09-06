@@ -10,11 +10,11 @@ function messageSenderSettings(
     keyCache,
     networkActivityTracker,
     autoPinPrimaryKeys,
-    contactDetailsModel,
     contactEncryptionModal,
     sendPreferences,
     contactEditor,
     mailSettingsModel,
+    contactEncryptionSaver,
     dispatchers
 ) {
     const { dispatcher } = dispatchers(['message']);
@@ -70,7 +70,7 @@ function messageSenderSettings(
                 model,
                 internalKeys: keys,
                 async save(model) {
-                    contact.vCard = contactDetailsModel.build(contact.vCard, normalizedEmail, model);
+                    contact.vCard = contactEncryptionSaver.build(contact.vCard, normalizedEmail, model);
                     contactEncryptionModal.deactivate();
 
                     networkActivityTracker.track(updateContact(scope, contact, normalizedEmail));
