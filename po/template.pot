@@ -197,7 +197,7 @@ msgctxt "Action"
 msgid "Add label"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:8
+#: ./src/templates/address/addressKeysView.tpl.html:9
 msgctxt "Action"
 msgid "Add new key"
 msgstr ""
@@ -660,7 +660,7 @@ msgstr ""
 
 #: ./src/app/address/directives/addressBtnActions.js:8
 #: ./src/app/members/directives/memberEditBtn.js:6
-#: ./src/templates/address/addressKeysView.tpl.html:198
+#: ./src/templates/address/addressKeysView.tpl.html:199
 #: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/elements/moveElement.tpl.html:26
 #: ./src/templates/message/message.tpl.html:195
@@ -811,7 +811,7 @@ msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:93
+#: ./src/templates/address/addressKeysView.tpl.html:94
 msgctxt "Action"
 msgid "Enable encryption"
 msgstr ""
@@ -821,7 +821,7 @@ msgctxt "Action"
 msgid "Enable multi-user support"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:116
+#: ./src/templates/address/addressKeysView.tpl.html:117
 msgctxt "Action"
 msgid "Enable signature verification"
 msgstr ""
@@ -870,8 +870,8 @@ msgid "Expiration time"
 msgstr ""
 
 #: ./src/app/address/services/deleteKeyProcess.js:32
-#: ./src/templates/address/addressKeysView.tpl.html:139
-#: ./src/templates/address/addressKeysView.tpl.html:153
+#: ./src/templates/address/addressKeysView.tpl.html:140
+#: ./src/templates/address/addressKeysView.tpl.html:154
 #: ./src/templates/message/message.tpl.html:214
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
@@ -990,7 +990,7 @@ msgctxt "Action"
 msgid "Import contacts"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:9
+#: ./src/templates/address/addressKeysView.tpl.html:10
 msgctxt "Action"
 msgid "Import key"
 msgstr ""
@@ -1068,7 +1068,7 @@ msgctxt "Action"
 msgid "Make Admin"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:163
+#: ./src/templates/address/addressKeysView.tpl.html:164
 msgctxt "Action"
 msgid "Make Primary"
 msgstr ""
@@ -1127,12 +1127,12 @@ msgctxt "Action"
 msgid "Mark as unread / Mark as read"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:185
+#: ./src/templates/address/addressKeysView.tpl.html:186
 msgctxt "Action"
 msgid "Mark compromised"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:172
+#: ./src/templates/address/addressKeysView.tpl.html:173
 msgctxt "Action"
 msgid "Mark obsolete"
 msgstr ""
@@ -1311,7 +1311,7 @@ msgctxt "Action"
 msgid "Quote"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:131
+#: ./src/templates/address/addressKeysView.tpl.html:132
 msgctxt "Action"
 msgid "Reactivate"
 msgstr ""
@@ -2072,7 +2072,7 @@ msgctxt "Bubbule info in appearance sent and drafts folders"
 msgid "Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder."
 msgstr ""
 
-#: ./src/app/bugReport/services/bugReportApi.js:121
+#: ./src/app/bugReport/services/bugReportApi.js:124
 msgctxt "Bug report successfully"
 msgid "Bug reported"
 msgstr ""
@@ -6354,12 +6354,12 @@ msgctxt "Key details"
 msgid "Created on {{created}}, {{bits}} bits (cannot be used for sending)"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:108
+#: ./src/templates/address/addressKeysView.tpl.html:109
 msgctxt "Key state badge"
 msgid "Compromised"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:85
+#: ./src/templates/address/addressKeysView.tpl.html:86
 msgctxt "Key state badge"
 msgid "Obsolete"
 msgstr ""
@@ -8136,7 +8136,7 @@ msgstr ""
 
 #. Table heading
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:46
+#: ./src/templates/address/addressKeysView.tpl.html:47
 #: ./src/templates/filter/modal.tpl.html:116
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:201
@@ -8473,7 +8473,7 @@ msgctxt "Title"
 msgid "Contact List"
 msgstr ""
 
-#: ./src/templates/views/keysView.tpl.html:22
+#: ./src/templates/views/keysView.tpl.html:19
 msgctxt "Title"
 msgid "Contact encryption keys"
 msgstr ""
@@ -8747,7 +8747,7 @@ msgid "Edit label"
 msgstr ""
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:14
+#: ./src/templates/address/addressKeysView.tpl.html:15
 #: ./src/templates/contact/contactList.tpl.html:25
 #: ./src/templates/user/humanVerification.tpl.html:33
 msgctxt "Title"
@@ -8860,8 +8860,8 @@ msgid "Filters"
 msgstr ""
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:16
-#: ./src/templates/address/addressKeysView.tpl.html:43
+#: ./src/templates/address/addressKeysView.tpl.html:17
+#: ./src/templates/address/addressKeysView.tpl.html:44
 msgctxt "Title"
 msgid "Fingerprint"
 msgstr ""
@@ -9019,8 +9019,8 @@ msgid "Key size"
 msgstr ""
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:17
-#: ./src/templates/address/addressKeysView.tpl.html:44
+#: ./src/templates/address/addressKeysView.tpl.html:18
+#: ./src/templates/address/addressKeysView.tpl.html:45
 msgctxt "Title"
 msgid "Key type"
 msgstr ""
@@ -9649,7 +9649,7 @@ msgstr ""
 
 #. table heading
 #. table heading for the domains page table listing of addresses
-#: ./src/templates/address/addressKeysView.tpl.html:45
+#: ./src/templates/address/addressKeysView.tpl.html:46
 #: ./src/templates/modals/generate.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:194
 #: ./src/templates/views/payments.tpl.html:76
@@ -9782,7 +9782,7 @@ msgid "Upgrade"
 msgstr ""
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:15
+#: ./src/templates/address/addressKeysView.tpl.html:16
 #: ./src/templates/modals/domain/address.tpl.html:30
 msgctxt "Title"
 msgid "User"
@@ -9983,7 +9983,7 @@ msgctxt "Tooltip"
 msgid "Encrypted data with verified digital signature"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:59
+#: ./src/templates/address/addressKeysView.tpl.html:60
 msgctxt "Tooltip"
 msgid "ProtonMail users will use this key by default for sending"
 msgstr ""
@@ -10008,7 +10008,7 @@ msgctxt "Tooltip"
 msgid "Trust"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:65
+#: ./src/templates/address/addressKeysView.tpl.html:66
 msgctxt "Tooltip"
 msgid "You have locally decrypted this key allowing it be used to decrypt messages"
 msgstr ""
@@ -10578,27 +10578,27 @@ msgctxt "info link to Addresses/Users in Signatures page"
 msgid "New Addresses can be added on"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:172
+#: ./src/templates/address/addressKeysView.tpl.html:173
 msgctxt "key flag info"
 msgid "Disables encryption with this key"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:185
+#: ./src/templates/address/addressKeysView.tpl.html:186
 msgctxt "key flag info"
 msgid "Disables signature verification and encryption with this key"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:108
+#: ./src/templates/address/addressKeysView.tpl.html:109
 msgctxt "key flag info"
 msgid "Signatures produced by this key are treated as invalid and this key cannot be used for encryption"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:77
+#: ./src/templates/address/addressKeysView.tpl.html:78
 msgctxt "key flag info"
 msgid "This address has been disabled"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:85
+#: ./src/templates/address/addressKeysView.tpl.html:86
 msgctxt "key flag info"
 msgid "This key cannot be used for encryption"
 msgstr ""
@@ -10807,7 +10807,7 @@ msgid "A new version of ProtonMail is available. Please refresh this page."
 msgstr ""
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:65
+#: ./src/templates/address/addressKeysView.tpl.html:66
 msgid "Active"
 msgstr ""
 
@@ -11018,7 +11018,7 @@ msgstr ""
 #. address state badge
 #. form option
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:77
+#: ./src/templates/address/addressKeysView.tpl.html:78
 #: ./src/templates/views/account.tpl.html:202
 #: ./src/templates/views/domains.tpl.html:212
 #: ./src/templates/views/members.tpl.html:253
@@ -11227,7 +11227,7 @@ msgid "In trash"
 msgstr ""
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:71
+#: ./src/templates/address/addressKeysView.tpl.html:72
 msgid "Inactive"
 msgstr ""
 
@@ -11499,7 +11499,7 @@ msgid "Preference saved"
 msgstr ""
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:59
+#: ./src/templates/address/addressKeysView.tpl.html:60
 msgid "Primary"
 msgstr ""
 
@@ -11665,7 +11665,7 @@ msgstr ""
 msgid "This feature is only available for ProtonMail Professional plans or higher"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:71
+#: ./src/templates/address/addressKeysView.tpl.html:72
 msgid "This key is encrypted with an old password and cannot be used to decrypt messages"
 msgstr ""
 
