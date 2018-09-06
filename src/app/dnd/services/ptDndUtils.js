@@ -1,3 +1,5 @@
+import { isElement } from '../../../helpers/domHelper';
+
 /* @ngInject */
 function ptDndUtils() {
     /**
@@ -10,9 +12,6 @@ function ptDndUtils() {
             .toString(36)
             .substring(7)}`;
     }
-
-    // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
-    const isElement = (node) => node.nodeType === 1;
 
     /**
      * Try to find the node that initiate the dragEvent
