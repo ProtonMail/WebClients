@@ -595,7 +595,7 @@ export default angular
                 views: {
                     'main@': {
                         templateUrl: require('../templates/views/message.print.tpl.html'),
-                        controller($scope, $sce, messageID) {
+                        controller($scope, $sce, messageID, messageModel) {
                             $scope.loading = true;
 
                             if (window.opener) {
@@ -607,7 +607,7 @@ export default angular
                             }
 
                             function printMessage(event) {
-                                const message = JSON.parse(event.data);
+                                const message = messageModel(JSON.parse(event.data));
 
                                 if (message.ID === messageID) {
                                     document.title = message.Subject || message.ID;
