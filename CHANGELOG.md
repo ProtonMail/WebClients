@@ -1,3 +1,12 @@
+# [3.14.6] - 2018-09-06
+
+## Fixed
+- Address Keys buttons aligned in one line
+- Star icon was pushed to bottom
+- Keyboard shortcuts didn't work
+- The Tutorial was not closing for new users
+- Some toggles were not properly saving
+
 # [3.14.5] - 2018-09-05
 
 ## Added
