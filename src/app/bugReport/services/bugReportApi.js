@@ -13,10 +13,11 @@ import { getOS, getBrowser, getDevice } from '../../../helpers/browser';
 import { toBase64 } from '../../../helpers/fileHelper';
 import { downSize, toBlob } from '../../../helpers/imageHelper';
 
-Raven.config(CONFIG.sentry.sentry).install();
-Raven.setTagsContext({
-    appVersion: CONFIG.app_version,
+Raven.config(CONFIG.sentry.sentry, {
     release: CONFIG.sentry.release
+}).install();
+Raven.setTagsContext({
+    appVersion: CONFIG.app_version
 });
 
 /* @ngInject */
