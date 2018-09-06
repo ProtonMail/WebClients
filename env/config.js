@@ -23,6 +23,15 @@ const isWebClient = () => {
     }
 };
 
+const getBuildCommit = () => {
+    try {
+        const origin = execSync('git rev-parse HEAD');
+        return origin.toString();
+    } catch (e) {
+        return '';
+    }
+};
+
 const hasEnv = () => Object.keys(SENTRY_CONFIG).length;
 const isProdBranch = (branch = process.env.NODE_ENV_BRANCH) => /-prod/.test(branch);
 const isTorBranch = (branch = process.env.NODE_ENV_BRANCH) => /-tor$/.test(branch);
@@ -110,7 +119,14 @@ const sentryConfig = () => {
     if (process.env.NODE_ENV === 'dist') {
         const env = typeofBranch(argv.branch);
         process.env.NODE_ENV_SENTRY = env;
-        return SENTRY_CONFIG[env];
+
+        // For production the release is the version else the hash where we ran the build
+        const release = env === 'prod' ? CONFIG_DEFAULT.app_version : getBuildCommit();
+
+        return {
+            ...SENTRY_CONFIG[env],
+            release
+        };
     }
     const env = getDefaultApiTarget(argv.api);
     process.env.NODE_ENV_SENTRY = env;
