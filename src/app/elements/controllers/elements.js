@@ -211,19 +211,19 @@ function ElementsController(
             })
         );
 
-        $scope.$on('left', () => {
+        on('left', () => {
             redirectUser();
             isOpened = false;
         });
 
-        $scope.$on(
+        on(
             'right',
             onElement(() => {
                 openElement($scope.markedElement);
             })
         );
 
-        $scope.$on('selectMark', () => {
+        on('selectMark', () => {
             // Can be undefined when we switch to another state
             $scope.markedElement &&
                 $scope.$applyAsync(() => {
@@ -254,11 +254,11 @@ function ElementsController(
             }
         });
 
-        $scope.$on('applyLabels', (event, LabelID) => {
+        on('applyLabels', (event, LabelID) => {
             $scope.applyLabels(LabelID);
         });
 
-        $scope.$on('move', (e, mailbox) => {
+        on('move', (e, mailbox) => {
             const idDefined = $scope.idDefined();
             const isScope = !idDefined || (idDefined && AppModel.get('numberElementChecked') > 0);
             /**
@@ -275,11 +275,11 @@ function ElementsController(
             }
         });
 
-        $scope.$on('read', () => {
+        on('read', () => {
             $scope.read();
         });
 
-        $scope.$on('unread', () => {
+        on('unread', () => {
             $scope.unread();
         });
 
@@ -384,14 +384,14 @@ function ElementsController(
                 });
         }
 
-        $scope.$on('markPrevious', markPrevious);
-        $scope.$on('markNext', markNext);
+        on('markPrevious', markPrevious);
+        on('markNext', markNext);
 
-        $scope.$on('newElement', () => {
+        on('newElement', () => {
             newElement();
         });
 
-        $scope.$on('oldElement', () => {
+        on('oldElement', () => {
             oldElement();
         });
 
