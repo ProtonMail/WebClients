@@ -100,12 +100,13 @@ const buildHost = () => {
 };
 
 /**
- * Get correct sentry URL config for the current env
+ * Get correct sentry UR/releaseL config for the current env
+ * release can be undefined if we don't have a release available
  * - on dev it's based on the API you specify
  * - on deploy it's based on the branch name
  * @return {String}
  */
-const sentryURL = () => {
+const sentryConfig = () => {
     if (process.env.NODE_ENV === 'dist') {
         const env = typeofBranch(argv.branch);
         process.env.NODE_ENV_SENTRY = env;
@@ -141,7 +142,7 @@ const getConfig = (env = process.env.NODE_ENV) => {
     const CONFIG = extend({}, CONFIG_DEFAULT, {
         debug: env === 'dist' ? false : 'debug-app' in argv ? argv['debug-app'] : true,
         apiUrl: apiUrl(argv.api, argv.branch),
-        sentryUrl: sentryURL(),
+        sentry: sentryConfig(),
         app_version: argv['app-version'] || CONFIG_DEFAULT.app_version,
         api_version: `${argv['api-version'] || CONFIG_DEFAULT.api_version}`,
         articleLink: argv.article || CONFIG_DEFAULT.articleLink,

@@ -21,23 +21,27 @@ const STATS_ID = {
     }
 };
 
+const ENV_CONFIG = Object.keys(ENV).reduce(
+    (acc, key) => {
+        const { api, ...sentry } = ENV[key];
+        acc.sentry[key] = sentry;
+        api && (acc.api[key] = api);
+        return acc;
+    },
+    { sentry: {}, api: {} }
+);
+
 const API_TARGETS = {
     prod: 'https://mail.protonmail.com/api',
     local: 'https://protonmail.dev/api',
     localhost: 'https://localhost/api',
     host: 'https://mail.protonmail.host/api',
     vagrant: 'https://172.28.128.3/api',
-    build: '/api'
+    build: '/api',
+    ...ENV_CONFIG.api
 };
 
-Object.keys(ENV).forEach((key) => {
-    if (ENV[key].api) {
-        API_TARGETS[key] = ENV[key].api;
-    }
-});
-
-const SENTRY_CONFIG = Object.keys(ENV)
-    .reduce((acc, env) => (acc[env] = ENV[env].sentry, acc), {});
+const SENTRY_CONFIG = ENV_CONFIG.sentry;
 
 const PROD_STAT_MACHINE = {
     isEnabled: false,
