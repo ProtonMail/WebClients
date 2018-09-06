@@ -593,13 +593,13 @@ body.appConfigBody-is-mobile {
                 }
                 .labels {
                     position: absolute;
-                    right: 50px;
+                    right: 23px;
                     bottom: 5px;
                     z-index: 5;
                 }
                 .time {
                     position: absolute;
-                    right: 10px;
+                    right: 23px;
                     top: 5px;
                     background: $tertiary;
                     max-width: 45%;
@@ -618,8 +618,8 @@ body.appConfigBody-is-mobile {
                 }
                 .status {
                     position: absolute;
-                    right: 10px;
-                    bottom: 5px;
+                    right: 6px;
+                    top: 5px;
                     .fa {
                         display: inline-block;
                         text-align: right;
