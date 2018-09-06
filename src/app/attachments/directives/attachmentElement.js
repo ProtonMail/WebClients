@@ -1,4 +1,5 @@
 import _ from 'lodash';
+
 import { VERIFICATION_STATUS } from '../../constants';
 
 /* @ngInject */
