@@ -1,3 +1,9 @@
+# [3.14.10] - 2018-09-07
+
+## Fixed
+
+- Unread counter was not working in custom folders / labels
+
 # [3.14.9] - 2018-09-07
 
 ## Changed
