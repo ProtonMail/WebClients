@@ -1,3 +1,15 @@
+# [3.14.7] - 2018-09-07
+
+## Fixed
+
+- Keyboard shortcuts were not working properly
+- Fixed minor modal issues
+
+## Changed
+
+- Save button only visible in edit mode for contact
+- Review signature structure
+
 # [3.14.6] - 2018-09-06
 
 ## Fixed
