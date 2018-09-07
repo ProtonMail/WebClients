@@ -62,7 +62,6 @@ function hotkeys(hotkeyModal, $state, $injector, dispatchers, gettextCatalog) {
         }
         dispatcher[action](type, data);
     };
-    const broadcast = (action, data = {}) => () => dispatcher[action](data);
 
     const openMarked = (event) => {
         dispatcher.openMarked();
@@ -110,20 +109,20 @@ function hotkeys(hotkeyModal, $state, $injector, dispatchers, gettextCatalog) {
     const slash = action(emit('hotkeys', { type: 'slash' }));
     const toggleStar = action(emit('toggleStar'));
 
-    const selectMark = action(broadcast('selectMark'));
-    const markPrevious = action(broadcast('markPrevious'));
-    const markNext = action(broadcast('markNext'));
+    const selectMark = action(emit('selectMark'));
+    const markPrevious = action(emit('markPrevious'));
+    const markNext = action(emit('markNext'));
     const escape = action(emit('hotkeys', { type: 'escape' }));
-    const left = action(broadcast('left'));
-    const right = action(broadcast('right'));
-    const read = action(broadcast('read'));
-    const unread = action(broadcast('unread'));
-    const inbox = action(broadcast('move', 'inbox'));
-    const trash = action(broadcast('move', 'trash'));
-    const archive = action(broadcast('move', 'archive'));
-    const spam = action(broadcast('move', 'spam'));
-    const newElement = action(broadcast('newElement'));
-    const oldElement = action(broadcast('oldElement'));
+    const left = action(emit('left'));
+    const right = action(emit('right'));
+    const read = action(emit('read'));
+    const unread = action(emit('unread'));
+    const inbox = action(emit('hotkeys', { type: 'move', data: { to: 'inbox' } }));
+    const trash = action(emit('hotkeys', { type: 'move', data: { to: 'trash' } }));
+    const archive = action(emit('hotkeys', { type: 'move', data: { to: 'archive' } }));
+    const spam = action(emit('hotkeys', { type: 'move', data: { to: 'spam' } }));
+    const newElement = action(emit('newElement'));
+    const oldElement = action(emit('oldElement'));
 
     const keys = [
         {

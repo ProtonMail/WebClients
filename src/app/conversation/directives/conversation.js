@@ -121,6 +121,7 @@ function conversation(
                     refreshConversation();
                 }
             });
+
             on('message.expiration', () => {
                 scope.$applyAsync(() => refreshConversation());
             });
@@ -146,23 +147,28 @@ function conversation(
                 unsubscribeActions();
             });
 
-            scope.$on('move', (e, mailbox) => {
-                unsubscribeActions();
+            on('hotkeys', (e, { type, data: { to } }) => {
+                if (type === 'move') {
+                    unsubscribeActions();
 
-                const labelID = MAILBOX_IDENTIFIERS[mailbox];
+                    const labelID = MAILBOX_IDENTIFIERS[to];
 
-                /**
-                 * Move item only when we didn't select anything
-                 * -> Prevent x2 move with marked item by elementsCtrl
-                 */
-                if (AppModel.get('numberElementChecked')) {
-                    return;
+                    /**
+                     * Move item only when we didn't select anything
+                     * -> Prevent x2 move with marked item by elementsCtrl
+                     */
+                    if (AppModel.get('numberElementChecked')) {
+                        return;
+                    }
+
+                    if (scope.markedMessage) {
+                        return dispatcher.messageActions('move', { ids: [scope.markedMessage.ID], labelID });
+                    }
+                    actionConversation.move([scope.conversation.ID], labelID);
                 }
-
-                if (scope.markedMessage) {
-                    return dispatcher.messageActions('move', { ids: [scope.markedMessage.ID], labelID });
+                if (type === 'escape') {
+                    back();
                 }
-                actionConversation.move([scope.conversation.ID], labelID);
             });
 
             const onNextPrevElement = (type) => () => {
@@ -251,10 +257,6 @@ function conversation(
 
                         hotkeys.bind(['down', 'up']);
                     });
-            });
-
-            on('escape', () => {
-                back();
             });
 
             /**

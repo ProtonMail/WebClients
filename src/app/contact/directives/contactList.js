@@ -214,10 +214,12 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             });
 
             // Move to trash
-            on('move', (e, type) => {
-                if (type === 'trash' && MODEL.cursorID) {
+            on('hotkeys', (e, { type, data: { to } }) => {
+                if (type === 'move' && to === 'trash' && MODEL.cursorID) {
                     dispatcher.contacts('deleteContacts', { contactIDs: [MODEL.cursorID] });
-                } else if (type === 'archive') {
+                }
+
+                if (type === 'move' && to === 'archive') {
                     dispatcher.contacts('addContact');
                 }
             });

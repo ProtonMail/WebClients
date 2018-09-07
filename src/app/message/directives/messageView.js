@@ -31,18 +31,20 @@ function messageView($stateParams, $state, AppModel, dispatchers, conversationLi
                 hotkeys.unbind(['down', 'up']);
             });
 
-            scope.$on('move', (e, mailbox) => {
-                const labelID = MAILBOX_IDENTIFIERS[mailbox];
+            on('hotkeys', (e, { type, data: { to } }) => {
+                if (type === 'move') {
+                    const labelID = MAILBOX_IDENTIFIERS[to];
 
-                /**
-                 * Move item only when we didn't select anything
-                 * -> Prevent x2 move with marked item by elementsCtrl
-                 */
-                if (AppModel.get('numberElementChecked')) {
-                    return;
+                    /**
+                     * Move item only when we didn't select anything
+                     * -> Prevent x2 move with marked item by elementsCtrl
+                     */
+                    if (AppModel.get('numberElementChecked')) {
+                        return;
+                    }
+
+                    dispatcher.messageActions('move', { ids: [scope.message.ID], labelID });
                 }
-
-                dispatcher.messageActions('move', { ids: [scope.message.ID], labelID });
             });
 
             scope.$on('$destroy', () => {
