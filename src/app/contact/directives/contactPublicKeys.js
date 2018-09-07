@@ -72,9 +72,10 @@ function contactPublicKeys(
             /**
              * Remove the passed in key from the trusted keys
              * @param {Object} item
+             * @param {Integer} index
              */
-            const remove = (item) => {
-                keyManager.remove(item);
+            const remove = (item, index) => {
+                keyManager.remove(item, index);
                 tooltipModel.hideAll();
             };
 

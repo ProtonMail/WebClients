@@ -158,7 +158,7 @@ function contactKeyManager(
         /**
          * Select a certain key at index with data item as your new primary key
          * @param {Object} item the key that you want to select as new primary key
-         * @param {integer} index the old index of key `item`.
+         * @param {Integer} index the old index of key `item`.
          */
         const makePrimary = (item, index) => {
             scope.$applyAsync(() => {
@@ -173,12 +173,9 @@ function contactKeyManager(
          * @param {Object} item a contact key
          * @param {Integer} index
          */
-        const remove = (item) => {
+        const remove = (item, index) => {
             scope.$applyAsync(() => {
-                const index = scope.UI.items.indexOf(item);
-                if (index >= 0) {
-                    scope.UI.items.splice(index, 1);
-                }
+                scope.UI.items.splice(index, 1);
                 onChange();
             });
         };
