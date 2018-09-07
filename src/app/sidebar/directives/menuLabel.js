@@ -40,7 +40,8 @@ function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel)
     return {
         replace: true,
         template: '<ul class="menuLabel-container"></ul>',
-        compile(el) {
+        link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
             const updateCache = () => {
                 el[0].innerHTML = _.sortBy(labelsModel.get(), 'Order').reduce(
                     (acc, label) => acc + template(label),
@@ -60,35 +61,31 @@ function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel)
 
             const refresh = () => (updateCache(), updateCounter());
 
+            // Update the counter when we load then
+            on('app.cacheCounters', (e, { type }) => {
+                type === 'load' && updateCounter();
+            });
+
+            // Update the counter when we update it (too many updates if we update them via app.cacheCounters)
+            on('elements', (e, { type }) => {
+                type === 'refresh' && updateCounter();
+            });
+
+            on('labelsModel', (e, { type }) => {
+                if (type === 'cache.refresh' || type === 'cache.update') {
+                    refresh();
+                }
+            });
+
+            // Check the current state to set the current one as active
+            on('$stateChangeSuccess', () => {
+                _rAF(refresh);
+            });
+
             updateCache();
             updateCounter();
 
-            return (scope) => {
-                const { on, unsubscribe } = dispatchers();
-
-                // Update the counter when we load then
-                on('app.cacheCounters', (e, { type }) => {
-                    type === 'load' && updateCounter();
-                });
-
-                // Update the counter when we update it (too many updates if we update them via app.cacheCounters)
-                on('elements', (e, { type }) => {
-                    type === 'refresh' && updateCounter();
-                });
-
-                on('labelsModel', (e, { type }) => {
-                    if (type === 'cache.refresh' || type === 'cache.update') {
-                        refresh();
-                    }
-                });
-
-                // Check the current state to set the current one as active
-                on('$stateChangeSuccess', () => {
-                    _rAF(refresh);
-                });
-
-                scope.$on('$destroy', unsubscribe);
-            };
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }
