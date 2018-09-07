@@ -173,9 +173,12 @@ function contactKeyManager(
          * @param {Object} item a contact key
          * @param {Integer} index
          */
-        const remove = (item, index) => {
+        const remove = (item) => {
             scope.$applyAsync(() => {
-                scope.UI.items.splice(index, 1);
+                const index = scope.UI.items.indexOf(item);
+                if (index >= 0) {
+                    scope.UI.items.splice(index, 1);
+                }
                 onChange();
             });
         };
