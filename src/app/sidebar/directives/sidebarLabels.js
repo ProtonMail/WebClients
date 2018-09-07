@@ -29,11 +29,13 @@ const sidebarLabels = () => ({
          * Force update it here.
          * Related to issue https://github.com/ProtonMail/Angular/issues/6260.
          */
-        function onResize() {
-            scope.$applyAsync(() => scope.updateScrollbar('update'));
-        }
+        const onResize = () => {
+            _rAF(() => scope.$applyAsync(() => scope.updateScrollbar('update')));
+        };
 
-        function dragEnter(e) {
+        const onVisibilitychange = onResize;
+
+        const dragEnter = (e) => {
             // Only when a label is entered when dragging.
             if (e.target.dataset.ptDropzoneItemType !== 'label') {
                 return;
@@ -48,16 +50,18 @@ const sidebarLabels = () => ({
             if (sy !== undefined) {
                 scope.$applyAsync(() => scope.updateScrollbar('scrollTo', sy));
             }
-        }
+        };
 
         const debouncedDe = _.debounce(dragEnter, 250);
 
         el.addEventListener('dragenter', debouncedDe);
         window.addEventListener('resize', onResize);
+        document.addEventListener('visibilitychange', onVisibilitychange); // Required to avoid #7455
 
         scope.$on('$destroy', () => {
             el.removeEventListener('dragenter', debouncedDe);
             window.removeEventListener('resize', onResize);
+            document.removeEventListener('visibilitychange', onVisibilitychange);
         });
     }
 });
