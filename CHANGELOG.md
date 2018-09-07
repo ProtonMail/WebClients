@@ -1,3 +1,9 @@
+# [3.14.9] - 2018-09-07
+
+## Changed
+
+- Hide advanced settings button in add contact details
+
 # [3.14.8] - 2018-09-07
 
 ## Fixed
