@@ -44,7 +44,7 @@
         content: '\f00d';
         color: $white;
         left: 2.9rem;
-        top: .2rem;
+        top: initial;
     }
 
     &::after {
