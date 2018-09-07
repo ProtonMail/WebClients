@@ -759,12 +759,6 @@ msgctxt "Action"
 msgid "Edit"
 msgstr ""
 
-#. link to addresses page
-#: ./src/templates/user/defaultSignature.tpl.html:58
-msgctxt "Action"
-msgid "Edit other signatures"
-msgstr ""
-
 #: ./src/app/address/directives/addressBtnActions.js:5
 msgctxt "Action"
 msgid "Edit signature"
@@ -1451,7 +1445,6 @@ msgstr ""
 #: ./src/templates/modals/label.tpl.html:89
 #: ./src/templates/modals/member.tpl.html:109
 #: ./src/templates/organization/organizationFormName.tpl.html:26
-#: ./src/templates/user/defaultSignature.tpl.html:57
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:43
 #: ./src/templates/views/appearance.tpl.html:131
@@ -4713,8 +4706,7 @@ msgctxt "Info"
 msgid "<strong>This will only be shown once.</strong> ProtonMail is a global effort. Your feedback is very important in our mission to make encryption available for everyone. Thank You!"
 msgstr ""
 
-#: ./src/templates/user/defaultSignature.tpl.html:49
-#: ./src/templates/user/pmSignatureToggle.tpl.html:8
+#: ./src/templates/user/pmSignatureToggle.tpl.html:7
 msgctxt "Info"
 msgid "A <a ui-sref=\"secured.dashboard({scroll: true})\">paid plan</a> is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts."
 msgstr ""
@@ -8687,12 +8679,6 @@ msgctxt "Title"
 msgid "Disable address"
 msgstr ""
 
-#. display name heading on account page
-#: ./src/templates/user/defaultSignature.tpl.html:5
-msgctxt "Title"
-msgid "Display name"
-msgstr ""
-
 #: ./src/templates/domains/domainsMenuStep.tpl.html:6
 #: ./src/templates/modals/domain/domain.tpl.html:12
 #: ./src/templates/views/domains.tpl.html:50
@@ -9363,11 +9349,6 @@ msgctxt "Title"
 msgid "ProtonMail Plus 2-year plan"
 msgstr ""
 
-#: ./src/templates/user/defaultSignature.tpl.html:40
-msgctxt "Title"
-msgid "ProtonMail Signature"
-msgstr ""
-
 #: ./src/templates/user/signupUserForm.tpl.html:61
 #: ./src/templates/views/setup.tpl.html:64
 msgctxt "Title"
@@ -9607,12 +9588,6 @@ msgstr ""
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:14
 msgctxt "Title"
 msgid "Sign in again to continue"
-msgstr ""
-
-#. Signature heading on account page
-#: ./src/templates/user/defaultSignature.tpl.html:22
-msgctxt "Title"
-msgid "Signature"
 msgstr ""
 
 #: ./src/app/ui/factories/pageTitlesModel.js:54
