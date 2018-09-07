@@ -1,3 +1,9 @@
+# [3.14.8] - 2018-09-07
+
+## Fixed
+
+- Folders and labels were missing from the left sidebar menu
+
 # [3.14.7] - 2018-09-07
 
 ## Fixed
