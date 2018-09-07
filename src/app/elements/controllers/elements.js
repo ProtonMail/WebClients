@@ -204,7 +204,7 @@ function ElementsController(
             }
         });
 
-        $scope.$on(
+        on(
             'openMarked',
             onElement(() => {
                 openElement($scope.markedElement);
@@ -258,20 +258,22 @@ function ElementsController(
             $scope.applyLabels(LabelID);
         });
 
-        on('move', (e, mailbox) => {
-            const idDefined = $scope.idDefined();
-            const isScope = !idDefined || (idDefined && AppModel.get('numberElementChecked') > 0);
-            /**
-             * Move item only when nothing is opened
-             * and we have a selection
-             * -> Prevent x2 move with marked item by conversation component
-             *
-             * Hack: defer to prevent children to check an empty value...
-             * @todo  we need to KILL this controller and rfr
-             */
-            if (!isOpened && isScope) {
-                e.preventDefault();
-                _.defer(() => $scope.move(mailbox));
+        on('hotkeys', (e, { type, data: { to } }) => {
+            if (type === 'move') {
+                const idDefined = $scope.idDefined();
+                const isScope = !idDefined || (idDefined && AppModel.get('numberElementChecked') > 0);
+                /**
+                 * Move item only when nothing is opened
+                 * and we have a selection
+                 * -> Prevent x2 move with marked item by conversation component
+                 *
+                 * Hack: defer to prevent children to check an empty value...
+                 * @todo  we need to KILL this controller and rfr
+                 */
+                if (!isOpened && isScope) {
+                    e.preventDefault();
+                    _.defer(() => $scope.move(to));
+                }
             }
         });
 
