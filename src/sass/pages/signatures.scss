@@ -42,6 +42,12 @@ label.settingsSignatures-label-active {
 .settingsSignatures-container .defaultSignature-link-signatures { display: none }
 .settingsSignatures-container .defaultSignature-toggle { transform: none }
 
+.pmSignatureToggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .appConfigBody-is-mobile .settingsSignatures-label-aside { text-align: left }
 
 .appConfigBody-is-mobile .activeAddresses-email,
