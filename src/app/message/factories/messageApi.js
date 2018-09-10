@@ -131,13 +131,14 @@ function messageApi($http, url) {
 
     /**
      * Delete all messages with a label
-     * @param  {String} Label
+     * @param {String} LabelID
+     * @param {String} AddressID
      * @return {Promise}
      */
-    const emptyLabel = (Label, AddressID) =>
+    const emptyLabel = (LabelID, AddressID) =>
         $http.delete(requestURL('empty'), {
             params: {
-                Label,
+                LabelID,
                 AddressID
             }
         });
