@@ -25,6 +25,7 @@ import './helpers/string.spec';
 import './helpers/imageHelper.spec';
 import './helpers/linkifyHelper.spec';
 import './helpers/mail.spec';
+import './helpers/momentHelper.spec';
 import './helpers/fileHelper.spec';
 import './helpers/autoLink.spec';
 import './helpers/parserHTML.spec';
