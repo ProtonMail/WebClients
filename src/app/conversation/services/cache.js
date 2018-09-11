@@ -1124,6 +1124,12 @@ function cache(
         return callApi();
     };
 
+    on('$stateChangeStart', (event, toState, toParams, fromState) => {
+        if (tools.filteredState(fromState.name) !== tools.filteredState(toState.name)) {
+            api.reset();
+        }
+    });
+
     on('logout', () => {
         api.reset();
         cacheCounters.reset();
