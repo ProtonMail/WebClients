@@ -24,10 +24,12 @@ function encryptionView(
         YES: gettextCatalog.getString('Yes', null, 'Confirm text'),
         NO: gettextCatalog.getString('No', null, 'Confirm text')
     };
-    const askSign = (status) => {
+
+    const askSign = async (status) => {
         if (!status || mailSettingsModel.get('Sign')) {
-            return Promise.resolve(false);
+            return false;
         }
+
         return new Promise((resolve) => {
             confirmModal.activate({
                 params: {
@@ -47,55 +49,59 @@ function encryptionView(
             });
         });
     };
+
+    const request = (promise) => {
+        return promise.then(() => notification.success(I18N.SUCCES_MESSAGE)).catch((error) => {
+            throw new Error(error || I18N.ERROR_MESSAGE);
+        });
+    };
+
+    const updatePgpScheme = ({ target: { value = 'pgp-mime' } }) => {
+        const PGPScheme = value === 'pgp-mime' ? PACKAGE_TYPE.SEND_PGP_MIME : PACKAGE_TYPE.SEND_PGP_INLINE;
+        request(settingsMailApi.updatePgpScheme({ PGPScheme }));
+    };
+
+    const attachPublicKey = async (status, scope) => {
+        const enableSign = await askSign(status);
+
+        const promises = [settingsMailApi.updateAttachPublic({ AttachPublicKey: +status })];
+
+        if (enableSign) {
+            const promise = settingsMailApi.updateSign({ Sign: 1 }).then(() => {
+                scope.$applyAsync(() => {
+                    scope.sign = true;
+                });
+            });
+            promises.push(promise);
+        }
+        request(Promise.all(promises));
+    };
+
     return {
         replace: true,
         scope: {},
         templateUrl: require('../../../templates/settings/encryptionView.tpl.html'),
         link(scope, elem) {
+            const { on, unsubscribe } = dispatchers();
             const pgpSelector = elem[0].querySelector('.pgp-scheme');
+
             scope.attachPublic = mailSettingsModel.get('AttachPublicKey');
             scope.sign = mailSettingsModel.get('Sign');
             scope.promptpin = mailSettingsModel.get('PromptPin');
             scope.pgpscheme =
                 mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'pgp-inline' : 'pgp-mime';
 
-            const { on, unsubscribe } = dispatchers();
-            on('encryptSettings.attachPublic', (event, { data: { status } }) => {
-                askSign(status).then((enableSign) => {
-                    const promises = [settingsMailApi.updateAttachPublic({ AttachPublicKey: +status })];
-                    if (enableSign) {
-                        promises.push(settingsMailApi.updateSign({ Sign: 1 }).then(() => (scope.sign = 1)));
-                    }
-                    const promise = Promise.all(promises)
-                        .then(() => notification.success(I18N.SUCCES_MESSAGE))
-                        .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));
-                    networkActivityTracker.track(promise);
-                });
-            });
-            on('encryptSettings.sign', (event, { data: { status } }) => {
-                const promise = settingsMailApi
-                    .updateSign({ Sign: +status })
-                    .then(() => notification.success(I18N.SUCCES_MESSAGE))
-                    .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));
-                networkActivityTracker.track(promise);
-            });
-            on('encryptSettings.promptpin', (event, { data: { status } }) => {
-                const promise = settingsMailApi
-                    .updatePromptPin({ PromptPin: +status })
-                    .then(() => notification.success(I18N.SUCCES_MESSAGE))
-                    .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));
-                networkActivityTracker.track(promise);
+            on('encryptSettings', (e, { type, data: { status } }) => {
+                type === 'attachPublic' && attachPublicKey(status, scope);
+
+                if (type === 'sign') {
+                    request(settingsMailApi.updateSign({ Sign: +status }));
+                }
+                if (type === 'promptpin') {
+                    request(settingsMailApi.updatePromptPin({ PromptPin: +status }));
+                }
             });
 
-            const updatePgpScheme = ({ target: { value = 'pgp-mime' } }) => {
-                const promise = settingsMailApi
-                    .updatePgpScheme({
-                        PGPScheme: value === 'pgp-mime' ? PACKAGE_TYPE.SEND_PGP_MIME : PACKAGE_TYPE.SEND_PGP_INLINE
-                    })
-                    .then(() => notification.success(I18N.SUCCES_MESSAGE))
-                    .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));
-                networkActivityTracker.track(promise);
-            };
             pgpSelector.addEventListener('change', updatePgpScheme);
 
             scope.$on('$destroy', () => {

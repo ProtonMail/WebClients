@@ -27,7 +27,7 @@ function toggle(dispatchers) {
             $checkbox.on('change', onChange);
 
             // Make sure to pass a boolean to the ng-model checkbox
-            scope.status = Boolean(scope.status);
+            scope.status = !!scope.status;
 
             scope.$on('$destroy', () => {
                 $checkbox.off('change', onChange);
