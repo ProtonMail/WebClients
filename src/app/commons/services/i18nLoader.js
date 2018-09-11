@@ -1,37 +1,13 @@
 import _ from 'lodash';
 
 import CONFIG from '../../config';
+import { selectLocale, formatLocale } from '../../../helpers/momentHelper';
 
 /* @ngInject */
 function i18nLoader(dispatchers, gettextCatalog, $injector) {
-
     const CACHE = {};
-    const upperCaseLocale = (locale = '') => (locale === 'en' ? 'us' : locale).toUpperCase();
     const { dispatcher } = dispatchers(['i18n']);
     const dispatch = (type, data = {}) => dispatcher.i18n(type, data);
-
-    /**
-     * Format the locale to a valid format for gettext
-     * {@link https://www.gnu.org/software/gettext/manual/gettext.html#Header-Entry}
-     * @param  {String} locale
-     * @return {String}        xx_XX
-     */
-    const formatLocale = (locale) => {
-        // in this case we want to try to get the fr-CA string instead of the fr-fr string
-        // the way to get this is to try to retrieve it from the window.navigator.languages.
-        const firstLanguage =
-            window.navigator.languages && window.navigator.languages.length ? window.navigator.languages[0] : null;
-        const value = (locale || firstLanguage || window.navigator.userLanguage || window.navigator.language).replace(
-            '-',
-            '_'
-        );
-
-        // OS is in French (France) => navigator.language === fr
-        if (value.length === 2) {
-            return `${value}_${upperCaseLocale(value)}`;
-        }
-        return value;
-    };
 
     const getLocale = () => {
         // Doesn't work on IE11 ;)
@@ -50,80 +26,6 @@ function i18nLoader(dispatchers, gettextCatalog, $injector) {
         const locale = lang || navigatorLocale;
         const [shortLocale] = locale.split('_');
         return _.extend(CACHE, { locale, navigatorLocale, shortLocale });
-    };
-
-    const localeRanker = (navigatorLocaleData) => {
-        return (localeA, localeB) => {
-            const localeAData = moment.localeData(localeA);
-            const localeBData = moment.localeData(localeB);
-
-            const localeAfirstday = localeAData.firstDayOfWeek();
-            const localeBfirstday = localeBData.firstDayOfWeek();
-            const navigatorFirstDay = navigatorLocaleData.firstDayOfWeek();
-
-            // first try to match the first day of week = most important
-            if (
-                localeAfirstday !== localeBfirstday &&
-                (localeAfirstday === navigatorFirstDay || localeBfirstday === navigatorFirstDay)
-            ) {
-                return localeAfirstday === navigatorFirstDay ? -1 : 1;
-            }
-
-            // then try to match long date format (exact)
-            const localeADateFormat = localeAData.longDateFormat('L');
-            const localeBDatelformat = localeBData.longDateFormat('L');
-            const navigatorDateformat = navigatorLocaleData.longDateFormat('L');
-
-            if (
-                localeADateFormat !== localeBDatelformat &&
-                (localeADateFormat === navigatorDateformat || localeBDatelformat === navigatorDateformat)
-            ) {
-                return localeADateFormat === navigatorDateformat ? -1 : 1;
-            }
-
-            // maybe match them without symbols?
-            const woSymbols = (str) => str.replace(/[^a-zA-Z]/g, '');
-            const localeAStrippedFormat = woSymbols(localeADateFormat);
-            const localeBStrippedFormat = woSymbols(localeBDatelformat);
-            const navigatorStrippedFormat = woSymbols(navigatorDateformat);
-
-            if (
-                localeAStrippedFormat !== localeBStrippedFormat &&
-                (localeAStrippedFormat === navigatorStrippedFormat || localeBStrippedFormat === navigatorStrippedFormat)
-            ) {
-                return localeAStrippedFormat === navigatorStrippedFormat ? -1 : 1;
-            }
-
-            // promote en_gb as it's more common than australian
-            if (localeA === 'en-gb' || localeB === 'en-gb') {
-                return localeA === 'en-gb' ? -1 : 1;
-            }
-
-            return localeA.length - localeB.length;
-        };
-    };
-
-    const selectLocale = (baseLocale, navigatorLocale = formatLocale()) => {
-        // select one of the locales that have the same language as the base locale
-        // and has the same settings as the navigator locale.
-
-        const navigatorLocaleData = moment.localeData(navigatorLocale);
-        const normalizedNavLocale = navigatorLocale.toLowerCase().replace('_', '-');
-
-        if (navigatorLocaleData !== null) {
-            const possibleLocales = CONFIG.momentLocales.filter((val) => val.lastIndexOf(baseLocale, 0) === 0);
-
-            possibleLocales.sort(localeRanker(navigatorLocaleData));
-
-            // chose the navigator locale if possible
-            if (_.includes(possibleLocales, normalizedNavLocale)) {
-                return normalizedNavLocale;
-            }
-            if (possibleLocales.length) {
-                return possibleLocales[0];
-            }
-        }
-        return baseLocale;
     };
 
     const localizePikaday = () => {
@@ -153,22 +55,10 @@ function i18nLoader(dispatchers, gettextCatalog, $injector) {
     };
 
     const localizeDate = async () => {
-        const { navigatorLocale, shortLocale } = CACHE;
+        const { locale, navigatorLocale } = CACHE;
         $injector.get('dateUtils').init();
 
-        /**
-         * We want to use a more specific locale because a language isn't directly connect to a language:
-         * e.g. English is used by U.S./Canada and U.K. but U.S./Canada use Sunday as the first day and
-         * the U.K. uses Monday.
-         * It's also better if you consider that all untranslated languages use English.
-         * moment.localeData() uses the selected language in the interface.
-         * Note that this doesn't only apply to the English language, the same occurs when considering:
-         * French-Canada and France (Both French but: Sunday/Monday);
-         * Brazil and Portugal (Both Portuguese but: Sunday/Monday);
-         * Spain and Hispanic-America (Both Spanish but: Sunday/Monday);
-         * Iraq, Saudi-Arabia and Morocco (Both Arabic but: Saturday/Sunday/Monday).
-         */
-        moment.locale(selectLocale(shortLocale, navigatorLocale));
+        moment.locale(selectLocale(locale, navigatorLocale));
 
         localizePikaday();
         CACHE.langCountry = moment.locale();

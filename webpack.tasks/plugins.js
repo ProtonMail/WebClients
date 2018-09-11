@@ -9,9 +9,7 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AutoDllPlugin = require('autodll-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
-const localesMoment = require(path.resolve('./po/lang-moment.json'));
 const CONFIG = require('../env/conf.build');
 const env = require('../env/config');
 
@@ -69,10 +67,6 @@ const list = [
         chunks: ['app'],
         chunksSortMode: 'manual',
         minify: minify()
-    }),
-
-    new MomentLocalesPlugin({
-        localesToKeep: localesMoment
     }),
 
     new webpack.SourceMapDevToolPlugin({
