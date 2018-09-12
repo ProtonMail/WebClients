@@ -1,3 +1,11 @@
+# [3.14.11] - 2018-09-12
+
+## Fixed
+
+- Wrong messages shown in some cases when move actions are applied
+- Time formats were incorrectly showing 24-hour time
+- Sign external messages setting did not update correctly
+
 # [3.14.10] - 2018-09-07
 
 ## Fixed
