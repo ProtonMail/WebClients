@@ -1,3 +1,9 @@
+# [3.14.12] - 2018-09-13
+
+## Fixed
+
+- Fixed a signup issue with some languages
+
 # [3.14.11] - 2018-09-12
 
 ## Fixed
