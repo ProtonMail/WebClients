@@ -12,7 +12,7 @@ function signupLink(gettextCatalog) {
         replace: true,
         template: '<a></a>',
         link(scope, el, { key = 'default' }) {
-            const [lang] = gettextCatalog.getCurrentLanguage().split('_');
+            const [lang] = gettextCatalog.getCurrentLanguage().split(/[-_]/);
             el[0].textContent = getI18n()[key];
             el[0].href = getURL(lang !== 'en' && lang);
         }
