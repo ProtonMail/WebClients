@@ -37,7 +37,7 @@ const isProdBranch = (branch = process.env.NODE_ENV_BRANCH) => /-prod/.test(bran
 const isTorBranch = (branch = process.env.NODE_ENV_BRANCH) => /-tor$/.test(branch);
 const typeofBranch = (branch = process.env.NODE_ENV_BRANCH) => {
     const [, type] = (branch || '').match(/deploy-(\w+)/) || [];
-    if (/dev|beta|prod/.test(type)) {
+    if (/dev|beta|prod|old/.test(type)) {
         return type;
     }
 
