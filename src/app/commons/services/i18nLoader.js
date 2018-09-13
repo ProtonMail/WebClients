@@ -9,15 +9,31 @@ function i18nLoader(dispatchers, gettextCatalog, $injector) {
     const { dispatcher } = dispatchers(['i18n']);
     const dispatch = (type, data = {}) => dispatcher.i18n(type, data);
 
+    const upperCaseLocale = (locale = '') => (locale === 'en' ? 'us' : locale).toUpperCase();
+
+    /**
+     * We expect it as fr_FR not fr-FR
+     * @param {String} locale
+     * @returns {string}
+     */
+    const getTransformedLocale = (locale = '') => {
+        const changedLocale = locale.replace('-', '_');
+        // OS is in French (France) => navigator.language === fr
+        if (changedLocale.length === 2) {
+            return `${changedLocale}_${upperCaseLocale(changedLocale)}`;
+        }
+        return changedLocale;
+    };
+
     const getLocale = () => {
         // Doesn't work on IE11 ;)
         try {
             const queryParams = new window.URL(window.location).searchParams;
-            return formatLocale(queryParams.get('language'));
+            return getTransformedLocale(formatLocale(queryParams.get('language')));
         } catch (e) {
             // Match: xx_XX xx-XX xx 1192
             const [, locale] = window.location.search.match(/language=(([a-z]{2,}(_|-)[A-Z]{2,})|([a-z]{2,}))/) || [];
-            return formatLocale(locale);
+            return getTransformedLocale(formatLocale(locale));
         }
     };
 
