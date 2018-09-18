@@ -1,16 +1,20 @@
 #!/bin/bash
 
-if [[ ! $(git rev-parse --abbrev-ref HEAD | grep deploy) ]]; then
-    jsFiles=$(git diff --cached --name-only --diff-filter=ACM "*.js" "*.jsx" | tr '\n' ' ')
-    [ -z "$jsFiles" ] && exit 0
+if [ -d "node_modules" ]; then
 
-    echo "$jsFiles" | xargs ./node_modules/.bin/cqc --verbose --complexity-max=5
+    if [[ ! $(git rev-parse --abbrev-ref HEAD | grep deploy) ]]; then
+        jsFiles=$(git diff --cached --name-only --diff-filter=ACM "*.js" "*.jsx" | tr '\n' ' ')
+        [ -z "$jsFiles" ] && exit 0
 
-    echo
+        echo "$jsFiles" | xargs ./node_modules/.bin/cqc --verbose --complexity-max=5
 
-    echo "$jsFiles" | xargs ./tasks/checkInjector.sh
+        echo
 
-    npx lint-staged;
-fi;
+        echo "$jsFiles" | xargs ./tasks/checkInjector.sh
+
+        npx lint-staged;
+    fi;
+fi
+
 
 
