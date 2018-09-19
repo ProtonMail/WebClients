@@ -1,6 +1,7 @@
 import { DEFAULT_SQUIRE_VALUE } from '../../constants';
 import { blobURLtoBlob } from '../../../helpers/fileHelper';
 import { isIE11 } from '../../../helpers/browser';
+import { getChildrenElements } from '../../../helpers/domHelper';
 
 const { IFRAME_CLASS } = DEFAULT_SQUIRE_VALUE;
 
@@ -16,7 +17,7 @@ function squireEditor(dispatchers, editorModel, sanitize) {
      * and embedded images properly.
      */
     const SQUIRE_CONFIG = {
-        sanitizeToDOMFragment: (html, isPaste, self) => {
+        sanitizeToDOMFragment(html, isPaste, self) {
             // eslint-disable-next-line no-underscore-dangle
             const doc = self._doc;
             // Use proton's instance of DOMPurify to allow proton-src attributes to be displayed in squire.
@@ -187,27 +188,31 @@ function squireEditor(dispatchers, editorModel, sanitize) {
             We want to create an attachment
          */
         const isWeirdBrowsers = isIE11();
+
         const ghost = editor.insertHTML;
         editor.insertHTML = async (html, isPaste) => {
             if (isPaste) {
-                const fragment = SQUIRE_CONFIG.sanitizeToDOMFragment(html, isPaste, editor);
-                // Not using {first,last}ElementChild for IE11.
-                const firstElement = fragment.childNodes && fragment.childNodes[0];
-                const lastElement = fragment.childNodes && fragment.childNodes[fragment.childNodes.length - 1];
+                try {
+                    const fragment = SQUIRE_CONFIG.sanitizeToDOMFragment(html, isPaste, editor);
 
-                // Check if it is just one image being pasted.
-                if (firstElement && firstElement === lastElement && firstElement.tagName === 'IMG') {
-                    /*
-                        Interceptor for Chrome/FF/Safari etc. as they work as we want.
-                        we need this when you copy an image from an URL -> (option copy image) and paste it here.
-                        We already deal with it via another way (paste event)
-                     */
-                    if (!isWeirdBrowsers) {
-                        return;
+                    const { first, last } = getChildrenElements(fragment);
+
+                    // Check if it is just one image being pasted.
+                    if (first && first === last && first.tagName === 'IMG') {
+                        /*
+                            Interceptor for Chrome/FF/Safari etc. as they work as we want.
+                            we need this when you copy an image from an URL -> (option copy image) and paste it here.
+                            We already deal with it via another way (paste event)
+                         */
+                        if (!isWeirdBrowsers) {
+                            return;
+                        }
+                        const src = first.src;
+                        const file = await blobURLtoBlob(src);
+                        return editor.fireEvent('paste.image', { file });
                     }
-                    const src = firstElement.src;
-                    const file = await blobURLtoBlob(src);
-                    return editor.fireEvent('paste.image', { file });
+                } catch (e) {
+                    console.error(e);
                 }
             }
             ghost.call(editor, html, isPaste);

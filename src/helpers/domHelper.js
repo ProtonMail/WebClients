@@ -1,4 +1,7 @@
+import _ from 'lodash';
 import juice from 'juice/client';
+
+import { isIE11 } from './browser';
 
 const OPTIONS = {
     applyAttributesTableElements: false
@@ -79,3 +82,26 @@ export const toggle = (element, className, value) => {
  * @returns {boolean}
  */
 export const isElement = (node) => node && node.nodeType === 1;
+
+/**
+ * Get children configuration for a node/fragment
+ * As IE is not able to deal with the dom API we need to "emulate it"
+ * @param  {Element} node Can be a fragment
+ * @return {Object}      {children: <Array>, first:<Element>, last:<Element>}
+ */
+export const getChildrenElements = (node) => {
+    if (!isIE11() || node.firstElementChild) {
+        return {
+            first: node.firstElementChild,
+            last: node.lastElementChild,
+            children: node.children
+        };
+    }
+    const children = _.filter(node.childNodes, isElement);
+
+    return {
+        first: children[0],
+        last: _.last(children),
+        children
+    };
+};
