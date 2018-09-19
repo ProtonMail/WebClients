@@ -36,7 +36,6 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
 
                 if (type === 'code.sent.error' && data.method === method && data.errorMessage) {
                     notification.error(data.errorMessage);
-                    el[0].classList.add(CODE_SENT_CLASS);
                 }
             });
 
