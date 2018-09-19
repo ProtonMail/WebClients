@@ -28,6 +28,7 @@ function SecuredController(
         $scope.isFree = isFree;
     };
     setUserType();
+
     AppModel.set('isLoggedIn', true); // Shouldn't be there
     AppModel.set('isLocked', false); // Shouldn't be there
 
