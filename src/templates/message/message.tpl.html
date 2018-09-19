@@ -18,15 +18,15 @@
                 <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
                 <div class="contact message-contact">
                     <div class="from message-contact-from"><span translate translate-context="Message sender label" translate>From</span>:</div>
-                    <div class="from-value" pt-tooltip="{{ ::message.Sender | contact:'Name' }} {{ ::message.Sender | contact:'Address' }}">
-                        <strong>{{ ::message.Sender | contact:'Name' }}</strong>
-                        <em>{{ ::message.Sender | contact:'Address' }}
+                    <div class="from-value" pt-tooltip="{{ message.Sender | contact:'Name' }} {{ message.Sender | contact:'Address' }}">
+                        <strong>{{ message.Sender | contact:'Name' }}</strong>
+                        <em>{{ message.Sender | contact:'Address' }}
                         </em>
                     </div>
                     <message-address-actions
                         data-message-id="message.ID"
-                        data-address="{{ ::message.Sender | contact:'Address' }}"
-                        data-name="{{ ::message.Sender | contact:'Name' }}"
+                        data-address="{{ message.Sender | contact:'Address' }}"
+                        data-name="{{ message.Sender | contact:'Name' }}"
                         ng-if="message.expand"></message-address-actions>
                     <encryption-status class="encryptionStatus"
                        pt-tooltip="{{ ::message.encryptionType() }}"></encryption-status>
