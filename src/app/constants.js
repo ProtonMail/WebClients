@@ -332,7 +332,8 @@ export const TIME = {
 };
 export const KNOWLEDGE_BASE = {
     DIGITAL_SIGNATURE: 'https://protonmail.com/support/knowledge-base/digital-signature/',
-    PGP_MIME_INLINE: 'https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/'
+    PGP_MIME_INLINE: 'https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/',
+    STORAGE_WARNING: 'https://protonmail.com/support/knowledge-base/storage-limit-reached/'
 };
 export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
 
@@ -401,3 +402,10 @@ export const REGEX_EMAIL = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)
 
 // REGEX_URL from http://urlregex.com
 export const REGEX_URL = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
+
+export const STORAGE_WARNING = {
+    KEY: 'storage_warning',
+    VALUE: 'seen',
+    WARNING_LIMIT: 90,
+    REACHED_LIMIT: 99.99
+};

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function navigationItem($state, $stateParams, dispatchers, sidebarModel, eventManager, AppModel) {
+function navigationItem($state, $stateParams, dispatchers, sidebarModel, eventManager, AppModel, storageWarning) {
     const CLASS_ACTIVE = 'active';
     const CLASS_SPIN = 'spinMe';
     const template = (key, { state, label, icon = '' }) => {
@@ -100,6 +100,10 @@ function navigationItem($state, $stateParams, dispatchers, sidebarModel, eventMa
                 AppModel.set('requestTimeout', false);
 
                 if (sameRoute && firstPage) {
+                    if (storageWarning.isLimitReached()) {
+                        storageWarning.showModal();
+                    }
+
                     AppModel.set('showSidebar', false);
                     return (id = setSpinner(el[0].querySelector('.refresh'), id));
                 }

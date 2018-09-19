@@ -9,12 +9,14 @@ import identitySection from './directives/identitySection';
 import signupPayForm from './directives/signupPayForm';
 import signupStepLink from './directives/signupStepLink';
 import signupUserForm from './directives/signupUserForm';
+import storageWarningView from './directives/storageWarning';
 import usernameDomain from './directives/usernameDomain';
 import usernamePassword from './directives/usernamePassword';
 import displayNameSignature from './directives/displayNameSignature';
 import generateKeyModel from './factories/generateKeyModel';
 import signatureModel from './factories/signatureModel';
 import addressesModel from './factories/addressesModel';
+import storageWarning from './factories/storageWarning';
 import deleteAccountModal from './modals/deleteAccountModal';
 import abuseFraudModal from './modals/abuseFraudModal';
 import generateModal from './modals/generateModal';
@@ -39,6 +41,7 @@ export default angular
     .directive('signupPayForm', signupPayForm)
     .directive('signupStepLink', signupStepLink)
     .directive('signupUserForm', signupUserForm)
+    .directive('storageWarningView', storageWarningView)
     .directive('usernameDomain', usernameDomain)
     .directive('usernamePassword', usernamePassword)
     .directive('displayNameSignature', displayNameSignature)
@@ -46,6 +49,7 @@ export default angular
     .factory('generateKeyModel', generateKeyModel)
     .factory('signatureModel', signatureModel)
     .factory('addressesModel', addressesModel)
+    .factory('storageWarning', storageWarning)
     .factory('deleteAccountModal', deleteAccountModal)
     .factory('generateModal', generateModal)
     .factory('attachSignupSubscription', attachSignupSubscription)

@@ -34,6 +34,7 @@ function ElementsController(
     $scope.elementsLoaded = false;
     $scope.limitReached = false;
     $scope.conversations = [];
+
     /**
      * Method called at the initialization of this controller
      */

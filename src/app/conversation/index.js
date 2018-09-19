@@ -5,6 +5,7 @@ import listColumns from './directives/listColumns';
 import listMobile from './directives/listMobile';
 import listRows from './directives/listRows';
 import statesConversation from './directives/statesConversation';
+import stickyMessages from './directives/stickyMessages';
 import actionConversation from './factories/actionConversation';
 import conversationApi from './factories/conversationApi';
 import conversationListeners from './factories/conversationListeners';
@@ -28,6 +29,7 @@ export default angular
     .directive('listMobile', listMobile)
     .directive('listRows', listRows)
     .directive('statesConversation', statesConversation)
+    .directive('stickyMessages', stickyMessages)
     .factory('cache', cache)
     .factory('cacheCounters', cacheCounters)
     .factory('actionConversation', actionConversation)

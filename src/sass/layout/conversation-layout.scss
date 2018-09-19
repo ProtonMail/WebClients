@@ -6,13 +6,13 @@
 body {
     #conversation-list-columns {
         box-sizing: border-box;
-        width: 500px;
         width: 40%;
         float: left;
         height: 100%;
-        overflow: auto;
         position: relative;
         border-right:1px solid $border;
+        display: flex;
+        flex-direction: column;
     }
     #conversation-view,
     #pm_view {
@@ -42,10 +42,12 @@ body {
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
     }
+    #conversation-list-mobile,
     #conversation-list-rows {
         height: 100%;
         position: relative;
-        overflow: auto;
+        display: flex;
+        flex-direction: column;
     }
     #pm_main {
         height: calc(100% - 61px); /* #pm_header-desktop height */
@@ -106,4 +108,11 @@ body.appConfigBody-is-mobile {
         overflow-x: hidden;
         height: 100%;
     }
+}
+
+body:not(.hasStickyMessages) .stickyMessages-container { display: none; }
+
+.stickyMessages-container {
+    box-sizing: border-box;
+    padding: 6px;
 }

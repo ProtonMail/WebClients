@@ -14,7 +14,7 @@ function overviewSection(authentication, dispatchers, organizationModel, subscri
             function updateStorageBar() {
                 const organization = organizationModel.get();
                 const model = organization.PlanName === 'free' ? authentication.user : organization;
-                const progress = model.UsedSpace / model.MaxSpace * 100;
+                const progress = (model.UsedSpace / model.MaxSpace) * 100;
 
                 dispatcher.progressBar('storageBar', { progress });
             }
@@ -54,6 +54,8 @@ function overviewSection(authentication, dispatchers, organizationModel, subscri
                 updateUser();
                 updateStorageBar();
             });
+
+            on('app.event', (e, { type }) => type === 'usedSpace' && updateStorageBar());
 
             on('organizationChange', (e, { data: organization }) => {
                 updateOrganization(organization);
