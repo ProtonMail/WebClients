@@ -26,7 +26,7 @@ function confirmModal(pmModal, gettextCatalog) {
             this.class = params.class;
             this.cancelText = params.cancelText || I18N.cancel;
             this.confirm = () => (hotkeys.bind(['enter']), params.confirm());
-            this.cancel = () => (hotkeys.bind(['enter']), params.cancel());
+            this.cancel = (type = 'cross') => (hotkeys.bind(['enter']), params.cancel(type));
 
             // The button is not directly available
             setTimeout(() => angular.element('#confirmModalBtn').focus(), 100);

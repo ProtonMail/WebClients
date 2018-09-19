@@ -224,6 +224,7 @@ function eventManager(
     function manageStorage(storage) {
         if (angular.isDefined(storage)) {
             authentication.user.UsedSpace = storage;
+            dispatch('usedSpace');
         }
     }
 

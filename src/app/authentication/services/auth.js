@@ -15,6 +15,7 @@ function authentication(
     CONFIG,
     upgradePassword,
     networkActivityTracker,
+    dispatchers,
     pmcw,
     secureSessionStorage,
     User,
@@ -26,6 +27,7 @@ function authentication(
     decryptUser
 ) {
     let keys = {}; // Store decrypted keys
+    const { dispatcher } = dispatchers(['setUser']);
     const auth = {
         headersSet: false,
         // The Authorization header is used just once for the /cookies route, then we forget it and use cookies instead.
@@ -491,6 +493,7 @@ function authentication(
 
                     AppModel.set('isLoggedIn', true);
                     this.user = user;
+                    dispatcher.setUser();
 
                     const plainMailboxPass = tempStorage.getItem('plainMailboxPass');
                     tempStorage.removeItem('plainMailboxPass');

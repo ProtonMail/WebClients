@@ -20,6 +20,7 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel) {
         commandPalette: className('commandPalette'),
         rows: className('rows'),
         networkActivity: className('networkActivity'),
+        storageLimitReached: 'hasStickyMessages', // Note: Improve this if you need to add more sticky messages.
         isSecure: 'secure',
         isLocked: 'unlock'
     };

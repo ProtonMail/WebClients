@@ -1,0 +1,22 @@
+.storageWarning-container {
+    color: white;
+    background: #c83024;
+    border-radius: 5px;
+    padding: 5px;
+    min-height: 40px;
+}
+
+.storageWarning-container .link {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.storageWarning-icon {
+    margin: 0 10px;
+    font-size: 34px;
+}
+
+.storageWarning-text {
+    margin-top: 3px;
+}

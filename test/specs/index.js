@@ -9,6 +9,7 @@ import './composer/factories/squireEditor.spec';
 import './composer/factories/textToHtmlMail.spec';
 import './composer/directives/btnSendMessage.spec';
 import './composer/directives/composer.spec';
+import './user/factories/storageWarning.spec';
 import './labels/factories/labelsModel.spec';
 import './labels/directives/createLabel.spec';
 import './attachments/embedded.spec';

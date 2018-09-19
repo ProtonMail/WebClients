@@ -16,7 +16,8 @@ function validateMessage(
     authentication,
     notification,
     addressWithoutKeys,
-    sendPreferences
+    sendPreferences,
+    storageWarning
 ) {
     const I18N = {
         SEND_ANYWAY: gettextCatalog.getString('Send anyway', null, 'Action'),
@@ -199,6 +200,10 @@ function validateMessage(
     };
 
     function canWrite() {
+        if (storageWarning.isLimitReached()) {
+            return storageWarning.showModal();
+        }
+
         // In delinquent state
         if (authentication.user.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return notification.error(I18N.ERROR_DELINQUENT);
