@@ -9,34 +9,35 @@ const UpdaterRenderer = require('listr-update-renderer');
 const moment = require('moment');
 
 const { success, error, warn, json } = require('./helpers/log');
-
 const env = require('../env/config');
 const { CONFIG, branch } = env.getConfig('dist');
 const { externalFiles } = require('../env/conf.build');
 
-const push = (branch) => {
+const bash = (cli) => execa.shell(cli, { shell: '/bin/bash' });
+const push = async (branch) => {``
     const commands = ['cd dist'];
+
+    const message = /-prod-/.test(branch) ? `New Release ${CONFIG.app_version}` : 'New Release';
+    const description = `Based on the commit: ${CONFIG.sentry.release}`;
+
     if (os.platform() === 'linux') {
         commands.push('git ls-files --deleted -z | xargs -r -0 git rm');
     } else {
         commands.push('(git ls-files --deleted -z  || echo:) | xargs -0 git rm');
     }
     commands.push('git add --all');
-    commands.push('git commit -m "New Release"');
+    commands.push(`git commit -m "${message}" -m '${description}'`);
     commands.push(`git push origin ${branch}`);
     commands.push('cd ..');
     commands.push(`git push origin ${branch}`);
-    return execa.shell(commands.join(' && '), { shell: '/bin/bash' });
+    return bash(commands.join(' && '));
 };
 
-const pullDist = (branch) => {
-    const commands = [
-        `git fetch origin ${branch}:${branch}`,
-        `git clone file://$PWD --depth 1 --single-branch --branch ${branch} dist`,
-        'cd dist',
-        'rm -rf *'
-    ].join(' && ');
-    return execa.shell(commands, { shell: '/bin/bash' });
+const pullDist = async (branch, force) => {
+    const flag = force ? '-f' : '';
+    await bash(`git fetch ${flag} origin ${branch}:${branch}`);
+    await bash(`git clone file://$PWD --depth 1 --single-branch --branch ${branch} dist`);
+    await bash('cd dist  && rm -rf *');
 };
 
 /**
@@ -57,33 +58,44 @@ const buildCustomApp = async (branch, { start, end } = {}) => {
 
     if (start) {
         // Backup build to prevent conditions as it will always be the same things to replace
-        await execa.shell('rsync -av --progress dist/ distback --exclude .git', { shell: '/bin/bash' });
+        await bash('rsync -av --progress dist/ distback --exclude .git');
     }
 
     // Backup build assets
     const cli = ['rsync -av --progress distback/ distCurrent --exclude .git', 'rm -rf dist'];
-    await execa.shell(cli.join(' && '), { shell: '/bin/bash' });
+    await bash(cli.join(' && '));
     await pullDist(branch, true);
 
     // Update previous dist with new assets
-    const cmd = [`rsync -av --delete distCurrent/ dist --exclude .git`, `rm -rf distCurrent`];
+    await bash('rsync -av --delete distCurrent/ dist --exclude .git');
 
     // A/B testing config
     if (/deploy-prod/.test(branch)) {
-        cmd.unshift(
-            `sed -i "s/abSiteId:${abSiteId}/abSiteId:${abSiteIdB}/g;" $(find distCurrent/ -type f -name 'app.*.js')`
-        );
+
+        // Because for the lulz. cf https://myshittycode.com/2014/07/24/os-x-sed-extra-characters-at-the-end-of-l-command-error/
+        if (os.platform() === 'darwin')  {
+            await bash(
+                `sed -i '' "s/abSiteId:${abSiteId}/abSiteId:${abSiteIdB}/g;" $(find distCurrent -type f -name 'app.*.js')`
+            );
+        }  else {
+            await bash(
+                `sed -i "s/abSiteId:${abSiteId}/abSiteId:${abSiteIdB}/g;" $(find distCurrent -type f -name 'app.*.js')`
+            );
+        }
     }
 
-    end && cmd.push(`rm -rf distback`);
+    await bash('rm -rf distCurrent');
 
-    await execa.shell(cmd.join(' && '), { shell: '/bin/bash' });
+    if (end) {
+        await bash(`rm -rf distback`);
+    }
+
     await push(branch);
 };
 
 const checkEnv = async () => {
     try {
-        await execa.shell('[ -e ./env/env.json ]', { shell: '/bin/bash' });
+        await bash('[ -e ./env/env.json ]');
     } catch (e) {
         throw new Error('You must have env.json to deploy. Cf the wiki');
     }
@@ -102,7 +114,7 @@ const getTasks = (branch, { isCI, flowType = 'single' }) => {
         {
             title: 'Clear previous dist',
             task: async () => {
-                await del(['dist'], { dryRun: false });
+                await del(['dist', 'distCurrent', 'distback'], { dryRun: false });
                 isCI && execa.shell('mkdir dist');
             }
         },
@@ -125,9 +137,7 @@ const getTasks = (branch, { isCI, flowType = 'single' }) => {
         {
             title: 'Copy some files',
             task() {
-                return execa.shell(`cp src/{${externalFiles.list.join(',')}} dist/`, {
-                    shell: '/bin/bash'
-                });
+                return bash(`cp src/{${externalFiles.list.join(',')}} dist/`);
             }
         },
         {
