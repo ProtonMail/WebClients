@@ -1,3 +1,14 @@
+# [3.14.13] - 2018-09-20
+
+## Added
+- Storage limit warning modals
+
+## Fixed
+- Duplicated image on copy/paste in the composer
+- Replying and/or forwarding a message showed a wrong address in some cases
+- Proton signature toggle was not updating
+- Human verification did not work on Edge browser
+
 # [3.14.12] - 2018-09-13
 
 ## Fixed
