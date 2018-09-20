@@ -721,6 +721,11 @@ msgctxt "Action"
 msgid "Display invoice"
 msgstr ""
 
+#: ./src/app/user/factories/storageWarning.js:33
+msgctxt "Action"
+msgid "Do not remind me"
+msgstr ""
+
 #: ./src/app/composer/factories/composerFromModel.js:17
 msgctxt "Action"
 msgid "Don't show this again"
@@ -927,6 +932,11 @@ msgstr ""
 #: ./src/templates/blackFriday/blackFridayPaid.tpl.html:9
 msgctxt "Action"
 msgid "Get a new 2-year plan"
+msgstr ""
+
+#: ./src/app/user/factories/storageWarning.js:31
+msgctxt "Action"
+msgid "Go to dashboard"
 msgstr ""
 
 #. Make sure this string is short please
@@ -1238,6 +1248,11 @@ msgctxt "Action"
 msgid "OK"
 msgstr ""
 
+#: ./src/app/user/factories/storageWarning.js:32
+msgctxt "Action"
+msgid "Ok"
+msgstr ""
+
 #: ./src/templates/squire/squireToolbar.tpl.html:41
 msgctxt "Action"
 msgid "Ordered list"
@@ -1496,7 +1511,7 @@ msgctxt "Action"
 msgid "Send"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:22
+#: ./src/app/composer/services/validateMessage.js:23
 #: ./src/templates/modals/expirationModal.tpl.html:55
 msgctxt "Action"
 msgid "Send anyway"
@@ -3222,7 +3237,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:58
+#: ./src/app/composer/services/validateMessage.js:59
 msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr ""
@@ -3498,7 +3513,7 @@ msgctxt "Error"
 msgid "Invalid email"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:29
+#: ./src/app/composer/services/validateMessage.js:30
 msgctxt "Error"
 msgid "Invalid email(s): {{total}}"
 msgstr ""
@@ -3582,7 +3597,7 @@ msgctxt "Error"
 msgid "No Internet connection found."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:52
+#: ./src/app/composer/services/validateMessage.js:53
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr ""
@@ -3659,7 +3674,7 @@ msgctxt "Error"
 msgid "Please enter a password for this email."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:36
+#: ./src/app/composer/services/validateMessage.js:37
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr ""
@@ -3781,12 +3796,12 @@ msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:31
+#: ./src/app/composer/services/validateMessage.js:32
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:37
+#: ./src/app/composer/services/validateMessage.js:38
 msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
 msgstr ""
@@ -3879,7 +3894,7 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:23
+#: ./src/app/composer/services/validateMessage.js:24
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr ""
@@ -3912,7 +3927,7 @@ msgctxt "Error"
 msgid "You are using an outdated version of ProtonMail, please refresh the page."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:51
+#: ./src/app/composer/services/validateMessage.js:52
 msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr ""
@@ -3954,7 +3969,7 @@ msgctxt "Error"
 msgid "You have used all users in your plan. Please upgrade your plan to add a new user."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:43
+#: ./src/app/composer/services/validateMessage.js:44
 msgctxt "Error"
 msgid "You have {{total}} recipients. The maximum number is 25."
 msgstr ""
@@ -5340,7 +5355,7 @@ msgctxt "Info"
 msgid "No logs yet"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:50
+#: ./src/app/composer/services/validateMessage.js:51
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr ""
@@ -6081,7 +6096,7 @@ msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:63
+#: ./src/app/composer/services/validateMessage.js:64
 #: ./src/templates/views/payments.tpl.html:64
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
@@ -6974,6 +6989,7 @@ msgstr ""
 #: ./src/app/composer/services/autoPinPrimaryKeys.js:11
 #: ./src/app/search/directives/wildcardCheckbox.js:5
 #: ./src/app/ui/directives/noResults.js:4
+#: ./src/app/user/factories/storageWarning.js:11
 #: ./src/templates/autoresponder/autoresponder.tpl.html:26
 #: ./src/templates/contact/contactError.tpl.html:19
 #: ./src/templates/contact/contactError.tpl.html:38
@@ -6985,6 +7001,7 @@ msgstr ""
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:9
 #: ./src/templates/modals/confirm.tpl.html:13
 #: ./src/templates/modals/expirationModal.tpl.html:43
+#: ./src/templates/user/storageWarning.tpl.html:8
 #: ./src/templates/views/account.tpl.html:128
 #: ./src/templates/views/account.tpl.html:159
 #: ./src/templates/views/account.tpl.html:206
@@ -7553,12 +7570,12 @@ msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr ""
 
-#: ./src/app/commons/services/i18nLoader.js:44
+#: ./src/app/commons/services/i18nLoader.js:60
 msgctxt "Pikaday"
 msgid "Next Month"
 msgstr ""
 
-#: ./src/app/commons/services/i18nLoader.js:43
+#: ./src/app/commons/services/i18nLoader.js:59
 msgctxt "Pikaday"
 msgid "Previous Month"
 msgstr ""
@@ -7870,6 +7887,25 @@ msgstr ""
 #: ./src/templates/filter/spamListSearch.tpl.html:3
 msgctxt "Spam filtering"
 msgid "Search Whitelist and Blacklist"
+msgstr ""
+
+#: ./src/templates/user/storageWarning.tpl.html:6
+msgctxt "Storage warning"
+msgid "Storage limit reached. Unable to send or receive emails."
+msgstr ""
+
+#: ./src/app/user/factories/storageWarning.js:23
+msgctxt "Storage warning"
+msgid ""
+"You have reached 100% of your storage capacity. You won't be able to send or receive emails\n"
+"            unless you permanently delete some emails or purchase more storage. {{learnMoreLink}}."
+msgstr ""
+
+#: ./src/app/user/factories/storageWarning.js:14
+msgctxt "Storage warning"
+msgid ""
+"You have reached {{ percentage }}% of your storage capacity. Consider freeing up some space\n"
+"                or purchasing more storage before you run out of capacity."
 msgstr ""
 
 #: ./src/app/contact/directives/contactPublicKeys.js:29
@@ -8198,7 +8234,7 @@ msgctxt "Title"
 msgid "Addresses"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:57
+#: ./src/app/composer/services/validateMessage.js:58
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:43
 #: ./src/app/ui/factories/pageTitlesModel.js:47
 #: ./src/templates/views/members.tpl.html:114
@@ -9161,7 +9197,7 @@ msgctxt "Title"
 msgid "No messages"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:49
+#: ./src/app/composer/services/validateMessage.js:50
 msgctxt "Title"
 msgid "No subject"
 msgstr ""
@@ -9815,6 +9851,7 @@ msgstr ""
 
 #: ./src/app/address/services/deleteKeyProcess.js:16
 #: ./src/app/user/directives/signupUserForm.js:6
+#: ./src/app/user/factories/storageWarning.js:34
 #: ./src/templates/views/reset-login-password.tpl.html:102
 msgctxt "Title"
 msgid "Warning"
@@ -9990,7 +10027,7 @@ msgstr ""
 
 #: ./src/templates/settings/encryptionView.tpl.html:56
 msgctxt "Tooltip automatically attach public key"
-msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and sent encrypted messages to you."
+msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you."
 msgstr ""
 
 #: ./src/templates/contact/contactEncrypted.tpl.html:4
