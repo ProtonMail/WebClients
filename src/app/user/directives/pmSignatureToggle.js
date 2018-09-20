@@ -15,8 +15,8 @@ function pmSignatureToggle(dispatchers, mailSettingsModel, signatureModel) {
             const { PMSignature } = mailSettingsModel.get();
             const { on, unsubscribe } = dispatchers();
 
-            on('changePMSignature', (e, data) => {
-                signatureModel.changeProtonStatus(data);
+            on('changePMSignature', (e, { data: { status } }) => {
+                signatureModel.changeProtonStatus(status);
             });
 
             scope.protonSignature = {
