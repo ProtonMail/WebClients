@@ -13,7 +13,10 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
         link(scope, el, { method }) {
             const { on, unsubscribe } = dispatchers(['humanVerification']);
 
-            const onSubmit = () => {
+            const onSubmit = (e) => {
+                // Stop the propagation to the signup form...
+                e.preventDefault();
+                e.stopPropagation();
                 const promise = humanVerificationModel.sendCode(method, scope.contactInformation);
 
                 networkActivityTracker.track(promise);
@@ -36,6 +39,7 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
 
                 if (type === 'code.sent.error' && data.method === method && data.errorMessage) {
                     notification.error(data.errorMessage);
+                    el[0].classList.remove(CODE_SENT_CLASS);
                 }
             });
 
