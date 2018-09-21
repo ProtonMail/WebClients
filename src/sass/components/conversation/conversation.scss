@@ -5,6 +5,7 @@
     box-sizing: border-box;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    flex: 1;
 }
 /* context */
 .hasElementsSelected [id="conversation-view"] { display: none !important }
