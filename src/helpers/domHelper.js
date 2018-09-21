@@ -105,3 +105,18 @@ export const getChildrenElements = (node) => {
         children
     };
 };
+
+/**
+ * Test if the string contains HTML data
+ * It doesn't have loading resources side effects
+ * @param {String} str
+ * @return {Object}
+ */
+export const isHTML = (str = '') => {
+    const doc = new DOMParser().parseFromString(str, 'text/html');
+    const firstChild = doc.body.childNodes[0];
+    return {
+        isHtml: Array.from(doc.body.childNodes).some(isElement),
+        isWrapped: !!isElement(firstChild)
+    };
+};
