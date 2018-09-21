@@ -5,6 +5,7 @@ function handle401($http, authentication) {
     let refreshPromise = null;
     const clearPromise = () => (refreshPromise = null);
     const logout = (err) => {
+        clearPromise();
         authentication.logout(true, false);
 
         return Promise.reject(err);
