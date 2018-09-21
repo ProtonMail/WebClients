@@ -4,6 +4,7 @@
 - Storage limit warning modals
 
 ## Fixed
+- Add address didn't show an error message for free users
 - Duplicated image on copy/paste in the composer
 - Replying and/or forwarding a message showed a wrong address in some cases
 - Proton signature toggle was not updating
