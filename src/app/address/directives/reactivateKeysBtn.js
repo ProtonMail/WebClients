@@ -12,8 +12,8 @@ function reactivateKeysBtn(
 ) {
     const I18N = {
         success: gettextCatalog.getString('Keys reactivated', null, 'Success'),
-        reactivateContact: gettextCatalog.getString('Reactivate contact keys', null, 'Action'),
-        reactivateAddress: gettextCatalog.getString('Reactivate address keys', null, 'Action')
+        reactivateContact: gettextCatalog.getString('Reactivate keys', null, 'Action'),
+        reactivateAddress: gettextCatalog.getString('Reactivate keys', null, 'Action')
     };
 
     const getKeys = (mode) => {
