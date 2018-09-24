@@ -48,7 +48,7 @@ function composerLoader(dispatchers, editorModel) {
 
             const { ToList = [], CCList = [], BCCList = [] } = scope.selected;
 
-            if (![].concat(ToList, CCList, BCCList).length) {
+            if (!ToList.concat(CCList, BCCList).length) {
                 const input = el
                     .find('.toRow')
                     .find('input')

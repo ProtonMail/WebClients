@@ -236,12 +236,26 @@ iframe,
 	}
 }
 
-button, 
+button,
 input[type=button],
 input[type=reset],
 input[type=submit],
 [role=button] {
 	cursor: pointer;
+}
+
+fieldset {
+	border: 1px solid $primary;
+	padding: 1em;
+	border-radius: $border-radius;
+	margin-bottom: 1em;
+}
+
+fieldset legend {
+	color: $primary;
+	text-transform: uppercase;
+	padding-left: .5em;
+	padding-right: .5em;
 }
 
 .no-outline {

@@ -112,9 +112,9 @@ function filterModal(
              */
             function prepareConditions({ Simple = {} } = {}) {
                 const { Conditions = [] } = Simple;
-                const conditions = Conditions.map(({ Type = {}, Comparator = {}, Values = [] }) => ({
+                const conditions = Conditions.map(({ Type = {}, Comparator = {}, Values = [], value = '' }) => ({
                     Values,
-                    value: '',
+                    value,
                     Type: _.find(ctrl.types, { value: Type.value }),
                     Comparator: _.find(ctrl.comparators, { value: Comparator.value })
                 }));
