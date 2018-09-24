@@ -4,7 +4,9 @@
         <section id="storageStatus" ng-show="user.UsedSpace > 0">
             <div class="wrap">
                 <placeholder-progress></placeholder-progress>
-                <span><strong>{{ ::user.UsedSpace | percentage:user.MaxSpace }}%</strong> Storage space used.</span>
+                <span>
+                    <strong>{{ ::user.UsedSpace | percentage:user.MaxSpace }}%</strong>
+                    <span translate translate-context="Info">Storage space used.</span></span>
             </div>
         </section>
         <section ng-if="!isFree">
