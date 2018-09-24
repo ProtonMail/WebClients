@@ -20,7 +20,7 @@
 
                 <contact-view-item
                     ng-class="{'contactViewDetail-item-start': !$index}"
-                    ng-repeat="info in ::value track by $id(info) | orderBy:'-params.pref'"
+                    ng-repeat="info in ::value track by $id(info)"
                     class="contactViewDetail-item"></contact-view-item>
             </ul>
         </div>
@@ -52,7 +52,7 @@
 
                 <contact-view-item
                     ng-class="{'contactViewDetail-item-start': !$index}"
-                    ng-repeat="info in ::value track by $id(info) | orderBy:'-params.pref'""
+                    ng-repeat="info in ::value track by $id(info)"
                     class="contactViewDetail-item"></contact-view-item>
 
             </ul>

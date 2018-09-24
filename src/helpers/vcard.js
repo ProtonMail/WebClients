@@ -29,8 +29,8 @@ export const groupMatcher = (group) => (prop) => {
  */
 export function orderByPref(properties = []) {
     return _.sortBy(properties, (property) => {
-        const { pref = 0 } = property.getParams() || {};
-        return pref;
+        const { pref = 9999 } = property.getParams() || {};
+        return ~~pref;
     });
 }
 
