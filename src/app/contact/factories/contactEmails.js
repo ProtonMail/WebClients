@@ -30,7 +30,8 @@ function contactEmails(Contact, dispatchers, sanitize) {
         CACHE.emails.push(...data);
         syncMap(data);
     };
-    const get = () => angular.copy(CACHE.emails);
+
+    const get = () => CACHE.emails.slice();
     const getMap = () => CACHE.map;
     const clear = () => ((CACHE.emails.length = 0), (CACHE.map = Object.create(null)));
 
@@ -88,6 +89,8 @@ function contactEmails(Contact, dispatchers, sanitize) {
             event.Action === DELETE && dispatcher.contacts('deletedContactEmail', { ID: event.ID });
             (event.Action === CREATE || event.Action === UPDATE) && emit(event.ContactEmail);
         });
+
+        dispatcher.contacts('cacheEmails.updated');
     };
 
     on('resetContactEmails', () => {
