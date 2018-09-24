@@ -49,7 +49,7 @@ module.exports = {
             'dropzone/dist/dropzone.js',
             'ical.js/build/ical.js',
             'angular-ical/dist/js/angular-ical.js',
-            'push.js/push.js',
+            'push.js/bin/push.js',
             'awesomplete/awesomplete.js',
             'angular-ui-indeterminate/dist/indeterminate.js',
             'jquery-mousewheel/jquery.mousewheel.js',
