@@ -1,13 +1,29 @@
 import _ from 'lodash';
 import { flow, filter, take, map, orderBy } from 'lodash/fp';
+
 import { REGEX_EMAIL, EMAIL_FORMATING, AUTOCOMPLETE_DOMAINS, AWESOMEPLETE_MAX_ITEMS } from '../../constants';
 
 const { OPEN_TAG_AUTOCOMPLETE, CLOSE_TAG_AUTOCOMPLETE } = EMAIL_FORMATING;
 
 /* @ngInject */
-function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $filter) {
-    let TEMP_LABELS = {};
+function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $filter, dispatchers) {
     const unicodeTagView = $filter('unicodeTagView');
+    const { on } = dispatchers(['contacts']);
+
+    const CACHE = {
+        EMAILS: [],
+        LABELS: Object.create(null)
+    };
+
+    on('contacts', ({ type }) => {
+        /*
+            Store a cache to fix perf issue #7520 if we have too much contacts
+            we don't need to perform this action every time we do the autocompletion
+         */
+        if (type === 'contactEmails.updated') {
+            CACHE.EMAILS = formatCacheEmails();
+        }
+    });
 
     /**
      * @{link https://css-tricks.com/snippets/javascript/htmlentities-for-javascript/}
@@ -19,6 +35,21 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;');
     };
+
+    /**
+     * Default formating + sort for contacts emails
+     * @return {Array}
+     */
+    function formatCacheEmails() {
+        return flow(
+            map(({ Name, Email, LastUsedTime }) => {
+                const value = Email;
+                const label = formatLabel(Name, Email);
+                return { label, value, Name, LastUsedTime };
+            }),
+            orderBy(['LastUsedTime', 'label'], ['desc', 'asc'])
+        )($injector.get('contactEmails').get());
+    }
 
     /**
      * Get a list of default value + most commons domains
@@ -43,13 +74,13 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
      * @param  {String} Email
      * @return {String}
      */
-    const formatLabel = (Name, Email) => {
+    function formatLabel(Name, Email) {
         if (Email === Name || !Name) {
             return Email.trim();
         }
 
         return `${htmlEntities(Name).trim()} ${OPEN_TAG_AUTOCOMPLETE}${Email.trim()}${CLOSE_TAG_AUTOCOMPLETE}`;
-    };
+    }
 
     /**
      * Filter the autocomplete list output
@@ -79,19 +110,22 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
         const value = unicodeTagView(val.trim());
         const input = value.toLowerCase();
 
+        // Prepare the CACHE if it's not available yet
+        if (!CACHE.EMAILS.length) {
+            CACHE.EMAILS = formatCacheEmails();
+        }
+
         const collection = flow(
-            map(({ Name, Email, LastUsedTime }) => {
-                const value = Email;
-                const label = formatLabel(Name, Email);
-                return { label, value, Name, LastUsedTime };
-            }),
-            orderBy(['LastUsedTime', 'label'], ['desc', 'asc']),
             filter(({ label }) => label.toLowerCase().includes(input)),
             take(AWESOMEPLETE_MAX_ITEMS)
-        )($injector.get('contactEmails').get());
+        )(CACHE.EMAILS);
 
-        // it creates a map <escaped>:<label> because the lib does not support more keys than label/value and we need the unescaped value #4901
-        TEMP_LABELS = collection.reduce((acc, { label, Name }) => ((acc[label] = Name), acc), {});
+        /*
+            it creates a map <escaped>:<label>
+            because the lib does not support more keys than label/value
+            and we need the unescaped value #4901
+         */
+        CACHE.LABELS = collection.reduce((acc, { label, Name }) => ((acc[label] = Name), acc), Object.create(null));
 
         const hasAutocompletion = !!collection.length;
 
@@ -143,8 +177,11 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
         let list = [];
 
         const all = () => list;
-        const clear = () => ((list.length = 0), (TEMP_LABELS = {}));
         const exist = (value) => list.some(({ Address }) => Address === value);
+        const clear = () => {
+            list.length = 0;
+            CACHE.LABELS = Object.create(null);
+        };
 
         /**
          * Add new email to the list
@@ -164,7 +201,7 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
          * @return {Number}
          */
         const add = ({ label, value } = {}) => {
-            const data = formatNewEmail(TEMP_LABELS[label] || label, value);
+            const data = formatNewEmail(CACHE.LABELS[label] || label, value);
             addEmail(data);
         };
 
