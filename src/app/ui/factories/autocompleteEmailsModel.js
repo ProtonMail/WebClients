@@ -15,7 +15,7 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
         LABELS: Object.create(null)
     };
 
-    on('contacts', ({ type }) => {
+    on('contacts', (e, { type }) => {
         /*
             Store a cache to fix perf issue #7520 if we have too much contacts
             we don't need to perform this action every time we do the autocompletion
