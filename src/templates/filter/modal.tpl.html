@@ -13,7 +13,8 @@
             </div>
 
             <div class="modal-body pm_form filter-form">
-                <p translate translate-context="Info" class="alert alert-info filter-complex-only">To find out how to write Sieve filters, <a target="_blank" href="https://protonmail.com/support/knowledge-base/sieve/">click here</a>.</p>
+                <p translate translate-context="Info" class="alert alert-info">Custom filters work on all new emails, including
+                    incoming emails as well as sent emails</p>
                 <div class="pm_grid">
                     <div class="col-1-8">
                         <label for="filterName" translate translate-context="Title">Name</label>
@@ -25,12 +26,11 @@
                         </div>
                     </div>
                 </div>
-
+                <p translate translate-context="Info" class="alert alert-info filter-complex-only">To find out how to write Sieve
+                    filters, <a target="_blank" href="https://protonmail.com/support/knowledge-base/sieve/">click here</a>.</p>
                 <sieve-label-input sieve="ctrl.filter.Sieve"></sieve-label-input>
 
-                <p translate translate-context="Info" class="alert alert-info">Custom filters work on all new emails, including incoming emails as well as sent emails</p>
-
-                <div class="filter-simple-only">
+                <fieldset class="filter-simple-only">
 
                     <legend translate-context="Title" translate translate-context="Title">Conditions</legend>
 
@@ -104,15 +104,14 @@
                                         <i class="fa fa-check"></i>
                                     </button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
+                    <button type="button" class="pm_button filterModal-add-condition-button" ng-click="ctrl.addCondition()" translate translate-context="Action">Add
+                                Condition</button>
+                </fieldset>
 
-                    <p>
-                        <a href="#" class="pm_button link" ng-click="ctrl.addCondition()" translate translate-context="Action">Add Condition</a>
-                    </p>
-
+                <fieldset>
                     <legend translate-context="Title" translate translate-context="Title">Actions</legend>
                     <label>
                         <custom-checkbox data-custom-ng-model="ctrl.hasLabels"></custom-checkbox>
@@ -128,7 +127,8 @@
                             </label>
                         </div>
                         <div class="col-1-4 filter-modal-label-add">
-                            <button type="button" class="pm_button white" ng-click="ctrl.addLabel()" translate translate-context="Action">Add label</button>
+                            <button type="button" class="pm_button white" ng-click="ctrl.addLabel()" translate translate-context="Action">Add
+                                label</button>
                         </div>
                     </div>
 
@@ -175,7 +175,8 @@
                         </div>
 
                         <div class="col-1-4 filter-modal-folder-add">
-                            <button type="button" class="pm_button white" ng-click="ctrl.addFolder()" translate translate-context="Action">Add folder</button>
+                            <button type="button" class="pm_button white" ng-click="ctrl.addFolder()" translate translate-context="Action">Add
+                                folder</button>
                         </div>
                     </div>
 
@@ -208,15 +209,11 @@
                         </label>
 
                         <div class="alert pm_grid" ng-show="ctrl.hasVacation">
-                            <squire id="vacationMessage"
-                                class="no-resize error_tooltip"
-                                allow-data-uri="true"
-                                data-value="ctrl.filter.Simple.Actions.Vacation"
-                                data-type-content="OOF-Message"
-                            ></squire>
+                            <squire id="vacationMessage" class="no-resize error_tooltip" allow-data-uri="true" data-value="ctrl.filter.Simple.Actions.Vacation"
+                                data-type-content="OOF-Message"></squire>
                         </div>
                     </div>
-                </div>
+                </fieldset>
             </div>
         </div>
 

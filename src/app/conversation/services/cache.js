@@ -399,7 +399,7 @@ function cache(
                     const { ToList = [], CCList = [], BCCList = [] } = message;
                     message.loaded = true;
                     message.Senders = [message.Sender];
-                    message.Recipients = _.uniq([].concat(ToList, CCList, BCCList));
+                    message.Recipients = _.uniq(ToList.concat(CCList, BCCList));
                 });
 
                 storeMessages(Messages);

@@ -3,7 +3,10 @@ import { flow, map, uniq } from 'lodash/fp';
 /* @ngInject */
 function filterButton(filterModal, lazyLoader) {
     const recipients = ({ ToList = [], CCList = [], BCCList = [] }) => {
-        return flow(map(({ Address }) => Address), uniq)([].concat(ToList, CCList, BCCList));
+        return flow(
+            map(({ Address }) => Address),
+            uniq
+        )(ToList.concat(CCList, BCCList));
     };
 
     const attachments = ({ Attachments = [] }) => (Attachments.length ? 'contains' : '!contains');
@@ -33,7 +36,8 @@ function filterButton(filterModal, lazyLoader) {
                         conditions.push({
                             Type: { value: 'subject' },
                             Comparator: { value: 'contains' },
-                            Values: [scope.message.Subject]
+                            Values: [],
+                            value: scope.message.Subject // Let the user change the value #7427
                         });
                     }
 

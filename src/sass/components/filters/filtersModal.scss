@@ -4,6 +4,10 @@
     width: 100%;
 }
 
+.filterModal-add-condition-button {
+    margin-top: 1em;
+}
+
 .filter-modal-condition {
     @include flexInline();
     @include flexFill();
