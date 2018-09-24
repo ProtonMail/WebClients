@@ -42,6 +42,7 @@
 
 }
 
+.protonLoader:not(.show) { z-index: -1 }
 .protonLoader:not(.show)::after { display: none }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
