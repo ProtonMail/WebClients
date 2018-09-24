@@ -90,7 +90,7 @@ function contactEmails(Contact, dispatchers, sanitize) {
             (event.Action === CREATE || event.Action === UPDATE) && emit(event.ContactEmail);
         });
 
-        dispatcher.contacts('cacheEmails.updated');
+        events.length && dispatcher.contacts('contactEmails.updated');
     };
 
     on('resetContactEmails', () => {
