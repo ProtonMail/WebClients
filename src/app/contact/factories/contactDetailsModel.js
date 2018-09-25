@@ -107,7 +107,7 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
                         if (item.value) {
                             params.vCard.add(
                                 item.type,
-                                escapeValue(item.value),
+                                _.dropRightWhile(escapeValue(item.value), (adr) => !adr), // Remove empty lines from the end
                                 getParams(item, child.length > 1 && index + 1)
                             );
                         }
