@@ -1,9 +1,14 @@
 import { syncObjectList } from '../../../helpers/arrayHelper';
 
 /* @ngInject */
-function keysView(dispatchers, addressKeysViewModel, addressesModel, authentication) {
-    const REQUIRE_CONTACT_CLASS = 'keysView-require-contact-keys-reactivation';
-    const REQUIRE_ADDRESS_CLASS = 'keysView-require-address-keys-reactivation';
+function keysView(dispatchers, addressKeysViewModel, addressesModel, authentication, reactivateKeys) {
+    const REQUIRE_CLASS = 'keysView-require-keys-reactivation';
+
+    const requireKeysReactivation = () => {
+        const keys = reactivateKeys.get();
+        return keys.length;
+    };
+
     return {
         restrict: 'E',
         replace: true,
@@ -12,27 +17,29 @@ function keysView(dispatchers, addressKeysViewModel, addressesModel, authenticat
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
 
+            const updateClass = () => {
+                const action = requireKeysReactivation() ? 'add' : 'remove';
+                el[0].classList[action](REQUIRE_CLASS);
+            };
+
             const updateUser = async () => {
                 const user = authentication.user;
-                const contactAction = user.Keys.some(({ decrypted }) => !decrypted) ? 'add' : 'remove';
                 const userKeys = await addressKeysViewModel.getUserKeys(user);
 
-                scope.$applyAsync(async () => {
+                scope.$applyAsync(() => {
                     scope.isSubUser = user.subuser;
                     scope.userKeys = userKeys;
-                    el[0].classList[contactAction](REQUIRE_CONTACT_CLASS);
+                    updateClass();
                 });
             };
 
             const updateAddresses = (addresses = addressesModel.get()) => {
                 const addressKeys = addressKeysViewModel.getAddressKeys(addresses);
-                const allDecrypted = addressKeys.some(({ keys = [] }) => keys.some(({ decrypted }) => !decrypted));
-                const addressAction = allDecrypted ? 'add' : 'remove';
 
                 scope.$applyAsync(() => {
                     // syncObjectList to prevent a total redraw, which closes the keys tables
                     scope.addressKeys = syncObjectList('addressID', scope.addressKeys, addressKeys);
-                    el[0].classList[addressAction](REQUIRE_ADDRESS_CLASS);
+                    updateClass();
                 });
             };
 

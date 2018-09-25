@@ -1,38 +1,8 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function reactivateKeysBtn(
-    authentication,
-    addressesModel,
-    oldPasswordModal,
-    gettextCatalog,
-    reactivateKeys,
-    networkActivityTracker,
-    notification
-) {
+function reactivateKeysBtn(oldPasswordModal, gettextCatalog, reactivateKeys, networkActivityTracker, notification) {
     const I18N = {
         success: gettextCatalog.getString('Keys reactivated', null, 'Success'),
-        reactivateContact: gettextCatalog.getString('Reactivate keys', null, 'Action'),
-        reactivateAddress: gettextCatalog.getString('Reactivate keys', null, 'Action')
-    };
-
-    const getKeys = (mode) => {
-        if (mode === 'contact') {
-            const { Keys = [] } = authentication.user;
-            return Keys.filter(({ decrypted }) => !decrypted);
-        }
-
-        if (mode === 'address') {
-            return _.reduce(
-                addressesModel.get(),
-                (acc, { Keys = [] }) => {
-                    return acc.concat(Keys.filter(({ decrypted }) => !decrypted));
-                },
-                []
-            );
-        }
-
-        return [];
+        reactivateKeys: gettextCatalog.getString('Reactivate keys', null, 'Action')
     };
 
     return {
@@ -40,25 +10,21 @@ function reactivateKeysBtn(
         scope: {
             contact: '='
         },
-        template: `<button class="reactivateKeysBtn-container pm_button">${I18N.reactivateContact}</button>`,
+        template: `<button class="reactivateKeysBtn-container pm_button">${I18N.reactivateKeys}</button>`,
         restrict: 'E',
-        link(scope, el, { mode }) {
-            if (mode === 'address') {
-                el[0].textContent = I18N.reactivateAddress;
-            }
-
+        link(scope, el) {
             const onClick = () => {
                 oldPasswordModal.activate({
                     params: {
                         submit(password) {
-                            const keys = getKeys(mode); // Get the keys dynamically since they can change.
+                            const keys = reactivateKeys.get(); // Get the keys dynamically since they can change.
                             oldPasswordModal.deactivate();
-                            const promise = reactivateKeys(keys, password, scope.contact).then(
-                                ({ success, failed }) => {
+                            const promise = reactivateKeys
+                                .process(keys, password, scope.contact)
+                                .then(({ success, failed }) => {
                                     success && notification.success(success);
                                     failed && notification.error(failed);
-                                }
-                            );
+                                });
 
                             networkActivityTracker.track(promise);
                         },
