@@ -44,13 +44,14 @@
                     ng-model="account.notificationEmail"
                     class="form-control"
                     placeholder-translate="Recovery email"
+                    data-valid-email
                     data-valid-recovery
                     data-valid-recovery-username="account.username"
                     data-valid-recovery-domain="account.domain.value">
 
                 <div ng-messages="accountForm.notificationEmail.$error" class="signUpProcess-errors-recoveryEmail">
-                    <p ng-message="email" class="text-red" translate-context="Error" translate>Email invalid</p>
-                    <p ng-message="validUsername" class="text-red" translate-context="Error" translate>Recovery email invalid</p>
+                    <p ng-message="email" class="text-red" translate-context="Error" translate>Invalid email</p>
+                    <p ng-message="validRecovery" class="text-red" translate-context="Error" translate>Recovery email invalid</p>
                 </div>
             </section>
         </div><!--/.wrapper-->

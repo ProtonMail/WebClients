@@ -14,7 +14,7 @@ function validRecovery() {
             username: '=validRecoveryUsername'
         },
         link(scope, el, attr, ngModel) {
-            ngModel.$validators.validUsername = validator(scope);
+            ngModel.$validators.validRecovery = validator(scope);
         }
     };
 }
