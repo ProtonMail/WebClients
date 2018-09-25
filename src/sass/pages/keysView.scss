@@ -1,2 +1,1 @@
-.keysView-container:not(.keysView-require-contact-keys-reactivation) [data-mode="contact"] { display: none }
-.keysView-container:not(.keysView-require-address-keys-reactivation) [data-mode="address"] { display: none }
+.keysView-container:not(.keysView-require-keys-reactivation) .reactivateKeysBtn-container { display: none }

@@ -317,7 +317,7 @@ function addressKeysView(
                     params: {
                         submit(password) {
                             reactivateKeyModal.deactivate();
-                            const promise = reactivateKeys([key], password).then(({ success, failed }) => {
+                            const promise = reactivateKeys.process([key], password).then(({ success, failed }) => {
                                 success && notification.success(success);
                                 failed && notification.error(failed);
                             });

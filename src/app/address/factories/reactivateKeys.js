@@ -1,7 +1,17 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passwords, pmcw, dispatchers) {
+function reactivateKeys(
+    addressesModel,
+    addressKeysViewModel,
+    authentication,
+    Key,
+    eventManager,
+    gettextCatalog,
+    passwords,
+    pmcw,
+    dispatchers
+) {
     const FAILED_DECRYPTION_PASSWORD = 1;
     const FAILED_KEY_REACTIVATE = 2;
 
@@ -80,7 +90,7 @@ function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passw
         );
     };
 
-    return async (keys = [], oldPassword, contact) => {
+    const process = async (keys = [], oldPassword, contact) => {
         const { data = {} } = await Key.salts();
         const salts = _.reduce(
             keys,
@@ -143,6 +153,23 @@ function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passw
 
         return output;
     };
+
+    /**
+     * Returns keys not decrypted from user (contact) and addresses
+     * @return {Array}
+     */
+    const get = () => {
+        const { Keys: userKeys = [] } = authentication.user;
+        const addresses = addressesModel.get();
+        const addressKeysView = addressKeysViewModel.getAddressKeys(addresses);
+        const addressKeys = addressKeysView.reduce((acc, { keys = [] }) => {
+            return acc.concat(keys);
+        }, []);
+
+        return userKeys.concat(addressKeys).filter(({ decrypted }) => !decrypted);
+    };
+
+    return { process, get };
 }
 
 export default reactivateKeys;
