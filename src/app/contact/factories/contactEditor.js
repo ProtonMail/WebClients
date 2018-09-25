@@ -244,12 +244,6 @@ function contactEditor(
      * @return {Promise}
      */
     function update({ contact = {}, callback = _.noop }) {
-        const adr = contact.vCard && contact.vCard.get('adr');
-        if (adr) {
-            // Remove empty lines from the end
-            contact.vCard.set('adr', _.dropRightWhile(adr.valueOf(), (adr) => !adr));
-        }
-
         const promise = updateContact(contact)
             .then(() => notification.success(I18N.EDIT_SUCCESS))
             .then(eventManager.call)
