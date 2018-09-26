@@ -73,9 +73,7 @@ function cacheCounters(messageApi, conversationApi, $q, dispatchers, authenticat
                 )(conversation.data.Counts);
 
                 dispatch('load');
-
-                return Promise.resolve();
-            }, Promise.reject);
+            });
     };
 
     /**

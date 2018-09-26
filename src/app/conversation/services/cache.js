@@ -3,7 +3,8 @@ import { flow, filter, each, map, head, maxBy, uniq } from 'lodash/fp';
 
 import { STATUS, MAILBOX_IDENTIFIERS, CONVERSATION_LIMIT, ELEMENTS_PER_PAGE, MESSAGE_LIMIT } from '../../constants';
 
-const INVALID_SEARCH_ERROR_CODE = 15225;
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
+
 const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = STATUS;
 
 /* @ngInject */
@@ -30,10 +31,6 @@ function cache(
     const missingConversations = [];
 
     const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = MAILBOX_IDENTIFIERS;
-    const I18N = {
-        errorMessages: gettextCatalog.getString('No messages available', null, 'Error'),
-        errorConversations: gettextCatalog.getString('No conversations available', null, 'Error')
-    };
 
     const { dispatcher, on } = dispatchers([
         'elements',
@@ -322,10 +319,6 @@ function cache(
             .getDispatcher()
             .then(() => conversationApi.query(request))
             .then(({ data = {} } = {}) => {
-                if (data.Code === INVALID_SEARCH_ERROR_CODE) {
-                    return [];
-                }
-
                 refreshStateLimit(data);
 
                 _.each(data.Conversations, (conversation) => {
@@ -357,10 +350,17 @@ function cache(
                 api.clearDispatcher();
                 return data.Conversations.slice(0, ELEMENTS_PER_PAGE);
             })
-            .catch(({ data = {} } = {}) => {
+            .catch((e) => {
+                const { data = {} } = e;
+
                 api.clearDispatcher();
                 dispatchElements('error', { code: data.Code, error: data.Error });
-                throw new Error(data.Error || I18N.errorConversations);
+
+                if (data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_SEARCH_QUERY_SYNTAX) {
+                    return [];
+                }
+
+                throw e;
             });
 
         networkActivityTracker.track(promise);
@@ -388,9 +388,6 @@ function cache(
             .getDispatcher()
             .then(() => messageApi.query(request))
             .then(({ data = {} } = {}) => {
-                if (data.Code === INVALID_SEARCH_ERROR_CODE) {
-                    return [];
-                }
                 const { Messages = [], Limit = 0 } = data;
 
                 refreshStateLimit(data);
@@ -421,10 +418,17 @@ function cache(
                 api.clearDispatcher();
                 return Messages.slice(0, ELEMENTS_PER_PAGE);
             })
-            .catch(({ data = {} } = {}) => {
+            .catch((e) => {
+                const { data = {} } = e;
+
                 api.clearDispatcher();
                 dispatchElements('error', { code: data.Code, error: data.Error });
-                throw new Error(data.Error || I18N.errorMessages);
+
+                if (data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_SEARCH_QUERY_SYNTAX) {
+                    return [];
+                }
+
+                throw e;
             });
 
         networkActivityTracker.track(promise);

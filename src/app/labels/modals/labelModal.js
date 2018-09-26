@@ -22,7 +22,6 @@ function labelModal(
         LABEL_UPDATED: gettextCatalog.getString('Label updated', null, 'Label modal'),
         FOLDER_CREATED: gettextCatalog.getString('Folder created', null, 'Label modal'),
         LABEL_CREATED: gettextCatalog.getString('Label created', null, 'Label modal'),
-        ERROR_MESSAGE: gettextCatalog.getString('Error when saving label', null, 'Error label modal'),
         ERROR_FOLDER_NAME: gettextCatalog.getString('Invalid folder name', null, 'Error label modal'),
         ERROR_LABEL_NAME: gettextCatalog.getString('Invalid label name', null, 'Error label modal')
     };
@@ -95,10 +94,7 @@ function labelModal(
 
         return Label[action]({ ID, Name, Color, Display, Exclusive, Notify })
             .then(({ data = {} } = {}) => data.Label)
-            .then((newLabel) => eventManager.call().then(() => newLabel))
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || TRANSLATIONS.ERROR_MESSAGE);
-            });
+            .then((newLabel) => eventManager.call().then(() => newLabel));
     }
 
     return pmModal({

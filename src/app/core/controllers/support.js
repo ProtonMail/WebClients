@@ -7,7 +7,6 @@ function SupportController(
     authentication,
     tempStorage,
     tools,
-    notification,
     gettextCatalog,
     confirmModal,
     Reset,
@@ -95,7 +94,7 @@ function SupportController(
             Token: $scope.params.resetToken
         };
 
-        Reset.validateResetToken($scope.tokenParams)
+        const promise = Reset.validateResetToken($scope.tokenParams)
             .then(({ data = {} }) => {
                 $scope.passwordMode = data.PasswordMode;
                 $scope.addresses = data.Addresses;
@@ -103,11 +102,12 @@ function SupportController(
                 $scope.resetState = $scope.states.DANGER;
             })
             .catch((error) => {
-                const { data = {} } = error;
                 resetState();
-                notification.error(data.Error || 'Unable to verify reset token');
                 $log.error(error);
+                throw error;
             });
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.confirmReset = () => {
@@ -175,7 +175,7 @@ function SupportController(
                 .catch((error) => {
                     $log.error(error);
                     resetState();
-                    notification.error(error.message);
+                    throw error;
                 })
         );
     };

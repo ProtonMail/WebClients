@@ -1,7 +1,6 @@
 import _ from 'lodash';
 
 import { MIME_TYPES, INBOX_AND_SENT, SENT, MAX_NUMBER_COMPOSER } from '../../constants';
-import { MESSAGE_DOES_NOT_EXIST } from '../constants/index';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -214,26 +213,20 @@ function ComposeMessageController(
         if (found || limitReached) {
             return;
         }
-        try {
-            const message = await cache.queryMessage(ID);
-            await message.clearTextBody();
-            /**
-             * Init and prepare the message as if we are replying or forwarding. i.e. try to load embedded content and blacklist all transformers.
-             * This sanitizes and removes unwanted content, e.g. remote content if that is specified to not load by default.
-             * Use 'reply' as the action to transformEmbedded in prepareContent.
-             * See #6645
-             * Don't prepare plaintext messages because they are converted to html when sanitized.
-             */
-            const isDraftPlainText = message.isPlainText() && message.IsEncrypted === 5;
-            const preparedMessage = isDraftPlainText ? message : messageBuilder.prepare(message, 'reply');
-            await initMessage(preparedMessage);
-            await commitComposer(preparedMessage);
-        } catch (e) {
-            // Already a nerwork activity tracker
-            if (e.Code !== MESSAGE_DOES_NOT_EXIST) {
-                notification.error(e);
-            }
-        }
+
+        const message = await cache.queryMessage(ID);
+        await message.clearTextBody();
+        /**
+         * Init and prepare the message as if we are replying or forwarding. i.e. try to load embedded content and blacklist all transformers.
+         * This sanitizes and removes unwanted content, e.g. remote content if that is specified to not load by default.
+         * Use 'reply' as the action to transformEmbedded in prepareContent.
+         * See #6645
+         * Don't prepare plaintext messages because they are converted to html when sanitized.
+         */
+        const isDraftPlainText = message.isPlainText() && message.IsEncrypted === 5;
+        const preparedMessage = isDraftPlainText ? message : messageBuilder.prepare(message, 'reply');
+        await initMessage(preparedMessage);
+        await commitComposer(preparedMessage);
     });
 
     on('hotkeys', (e, { type }) => {

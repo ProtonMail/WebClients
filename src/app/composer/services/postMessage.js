@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 import { STATUS, ENCRYPTED_STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
-import { SUCCESS, DRAFT_NOT_EXIST } from '../constants/index';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
 /* @ngInject */
 function postMessage(
@@ -23,9 +23,9 @@ function postMessage(
     const I18N = {
         SAVE_MESSAGE_SUCCESS: gettextCatalog.getString('Message saved', null, 'Record message')
     };
-    const unicodeTagView = $filter('unicodeTagView');
-    const { dispatcher } = dispatchers(['actionMessage']);
+    const { dispatcher } = dispatchers(['actionMessage', 'composer.update']);
     const dispatchMessageAction = (message) => dispatcher.actionMessage('update', message);
+    const dispatchComposerUpdate = (type, data = {}) => dispatcher['composer.update'](type, data);
 
     const isPGPAttachment = ({ Encrypted }) => Encrypted === ENCRYPTED_STATUS.PGP_MIME;
 
@@ -149,9 +149,9 @@ function postMessage(
     };
 
     const saveDraft = async (localMessage, { actionType, parameters, notification }) => {
-        const { Message: remoteMessage, Code } = await messageRequest.draft(parameters, localMessage, actionType);
+        try {
+            const { Message: remoteMessage } = await messageRequest.draft(parameters, localMessage, actionType);
 
-        if (Code === SUCCESS) {
             const conversation = cache.getConversationCached(remoteMessage.ConversationID) || {};
             const contextNumUnread = conversation.ContextNumUnread || 0;
             let numMessages;
@@ -229,13 +229,15 @@ function postMessage(
 
             // this output is not even used?
             return localMessage;
-        }
+        } catch (e) {
+            const { data = {} } = e;
 
-        if (Code === DRAFT_NOT_EXIST) {
-            // Case where the user delete draft in an other terminal
-            delete parameters.id;
-            const { data = {} } = await messageApi.createDraft(parameters);
-            return data.Message;
+            // Case where the message has already been sent
+            if (data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_UPDATE_DRAFT_NOT_DRAFT) {
+                return dispatchComposerUpdate('close.message', { message: localMessage });
+            }
+
+            throw e;
         }
     };
 
@@ -287,22 +289,15 @@ function postMessage(
         message,
         { notification = false, autosaving = false, loader = true, encrypt = true } = {}
     ) => {
-        try {
-            const promise = save(message, { notification, autosaving, encrypt });
+        const promise = save(message, { notification, autosaving, encrypt });
 
-            if (autosaving === false || loader) {
-                networkActivityTracker.track(promise);
-            }
-
-            composerRequestModel.save(message, promise);
-            return await promise;
-        } catch (error) {
-            const message = unicodeTagView(error.message);
-            if (autosaving) {
-                return notify({ message, classes: 'notification-danger' });
-            }
-            throw new Error(message);
+        if (autosaving === false || loader) {
+            networkActivityTracker.track(promise);
         }
+
+        composerRequestModel.save(message, promise);
+
+        return promise;
     };
 
     return recordMessage;

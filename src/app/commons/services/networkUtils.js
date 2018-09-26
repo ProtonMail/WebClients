@@ -8,7 +8,10 @@ function networkUtils() {
      * @param  {Object} options.config
      * @return {Boolean}
      */
-    const isCancelledRequest = ({ config = {} } = {}) => {
+    const isCancelledRequest = ({ xhrStatus = '', config = {} } = {}) => {
+        if (xhrStatus === 'abort') {
+            return true;
+        }
         const { value } = (config.timeout || {}).$$state || {};
         return value === CANCEL_REQUEST;
     };

@@ -16,7 +16,11 @@ function notification() {
 
     this.$get = [
         'notify',
-        (notify) => {
+        '$cacheFactory',
+        (notify, $cacheFactory) => {
+            // LRU cache containing notification texts -> timestamp
+            const cache = $cacheFactory('notifications', { number: 5 });
+
             const action = (type) => (input, options = {}) => {
                 const message = input instanceof Error ? input.message : input;
                 options.classes = `${options.classes || ''} ${CONFIG.classNames[type]}`.trim();
@@ -27,8 +31,22 @@ function notification() {
                     options.messageTemplate = htmlInfo.isWrapped ? message : `<div>${message}</div>`;
                 }
 
+                /**
+                 * Check if this notification is already displayed. Useful because the app often makes multiple
+                 * API calls and if they error out with e.g. force upgrade they could show up multiple times.
+                 */
+                if (cache.get(message) === true) {
+                    return;
+                }
+                cache.put(message, true);
+
+                const onClose = (...args) => {
+                    options.onClose && options.onClose(...args);
+                    cache.put(message, false);
+                };
+
                 type === 'error' && (options.duration = 10000);
-                notify({ message, ...options });
+                notify({ message, ...options, onClose });
             };
 
             const config = {
@@ -44,7 +62,12 @@ function notification() {
             return {
                 success: action('success'),
                 error: action('error'),
-                info: action('info')
+                info: action('info'),
+                closeAll: () => {
+                    // We need to empty our cache as well because the onClose is not called from `closeAll`.
+                    cache.removeAll();
+                    notify.closeAll();
+                }
             };
         }
     ];

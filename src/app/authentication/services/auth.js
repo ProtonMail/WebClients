@@ -104,7 +104,7 @@ function authentication(
     function receivedCredentials(data) {
         const eventManager = $injector.get('eventManager');
         saveAuthData(data);
-        eventManager.setEventID(data.EventID);
+        eventManager.initialize(data.EventID);
     }
 
     // RUN-TIME PUBLIC FUNCTIONS
@@ -273,7 +273,7 @@ function authentication(
                     $log.error('setAuthCookie2', error);
                     // Report issue to Sentry
                     $exceptionHandler(data.Error || error); // NOTE: remove this line once the "Invalid access token" issue is solved
-                    throw new Error(data.Error || 'Error setting authentication cookies.');
+                    throw error;
                 });
         },
 

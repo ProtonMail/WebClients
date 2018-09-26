@@ -2,7 +2,6 @@
 function paymentModel(eventManager, Payment, networkActivityTracker, gettextCatalog, notification, dispatchers) {
     let CACHE = {};
     const I18N = {
-        SUBSCRIBE_ERROR: gettextCatalog.getString('Error subscribing', null, 'Error'),
         COUPON_INVALID: gettextCatalog.getString('Invalid coupon code', null, 'Error'),
         GIFT_INVALID: gettextCatalog.getString('Invalid gift code', null, 'Error'),
         COUPON_SUCCESS: gettextCatalog.getString('Coupon code accepted', null, 'Coupon code request'),
@@ -18,10 +17,7 @@ function paymentModel(eventManager, Payment, networkActivityTracker, gettextCata
     const loadStatus = () => {
         return Payment.status()
             .then(({ data = {} }) => data)
-            .then((data) => set('status', data))
-            .catch(({ data = {} } = {}) => {
-                throw Error(data.Error);
-            });
+            .then((data) => set('status', data));
     };
 
     const loadMethods = ({ subuser } = {}) => {
@@ -30,10 +26,7 @@ function paymentModel(eventManager, Payment, networkActivityTracker, gettextCata
         }
         return Payment.methods()
             .then(({ data = {} }) => data.PaymentMethods)
-            .then((data) => set('methods', data))
-            .catch(({ data = {} } = {}) => {
-                throw Error(data.Error);
-            });
+            .then((data) => set('methods', data));
     };
 
     const load = (type, cb) => (refresh, data) => {
@@ -53,11 +46,7 @@ function paymentModel(eventManager, Payment, networkActivityTracker, gettextCata
     };
 
     function subscribe(config) {
-        return Payment.subscribe(config)
-            .then(({ data = {} } = {}) => data)
-            .catch(({ data = {} } = {}) => {
-                throw Error(data.Error || I18N.SUBSCRIBE_ERROR);
-            });
+        return Payment.subscribe(config).then(({ data = {} } = {}) => data);
     }
 
     function add(params) {

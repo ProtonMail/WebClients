@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import { RECIPIENT_TYPE, PACKAGE_TYPE, CONTACT_ERROR, KEY_FLAGS } from '../../constants';
+import { RECIPIENT_TYPE, PACKAGE_TYPE, KEY_FLAGS } from '../../constants';
+import { CONTACT_ERROR } from '../../errors';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup, groupMatcher } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';

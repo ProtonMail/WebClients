@@ -20,14 +20,9 @@ function changeMailboxPassword(
      * @return {Promise}
      */
     function getUser(newMailPwd = '', keySalt = '') {
-        return Promise.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()])
-            .then(([password, user = {}]) => ({ password, user }))
-            .catch(([, { data = {} } = {}]) => {
-                throw new Error(
-                    data.Error ||
-                        gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error')
-                );
-            });
+        return Promise.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()]).then(
+            ([password, user = {}]) => ({ password, user })
+        );
     }
 
     /**
@@ -39,23 +34,16 @@ function changeMailboxPassword(
     function manageOrganizationKeys(password = '', oldMailPwd = '', user = {}) {
         if (user.Role === PAID_ADMIN_ROLE) {
             // Get organization key
-            return organizationApi
-                .getKeys()
-                .then(({ data = {} } = {}) => {
-                    const encryptPrivateKey = data.PrivateKey;
+            return organizationApi.getKeys().then(({ data = {} } = {}) => {
+                const encryptPrivateKey = data.PrivateKey;
 
-                    // Decrypt organization private key with the old mailbox password (current)
-                    // then encrypt private key with the new mailbox password
-                    // return 0 on failure to decrypt, other failures are fatal
-                    return pmcw
-                        .decryptPrivateKey(encryptPrivateKey, oldMailPwd)
-                        .then((pkg) => pmcw.encryptPrivateKey(pkg, password), () => 0);
-                })
-                .catch(({ data = {} } = {}) => {
-                    throw new Error(
-                        data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error')
-                    );
-                });
+                // Decrypt organization private key with the old mailbox password (current)
+                // then encrypt private key with the new mailbox password
+                // return 0 on failure to decrypt, other failures are fatal
+                return pmcw
+                    .decryptPrivateKey(encryptPrivateKey, oldMailPwd)
+                    .then((pkg) => pmcw.encryptPrivateKey(pkg, password), () => 0);
+            });
         }
         return Promise.resolve(0);
     }

@@ -14,9 +14,7 @@ function payModal(
     };
 
     const pay = (ID, options = {}) => {
-        const promise = Payment.pay(ID, options).catch(({ data = {} } = {}) => {
-            throw Error(data.Error);
-        });
+        const promise = Payment.pay(ID, options);
 
         networkActivityTracker.track(promise);
 

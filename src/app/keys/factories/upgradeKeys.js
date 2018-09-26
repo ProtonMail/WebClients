@@ -14,20 +14,13 @@ function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, pass
     function manageOrganizationKeys(password = '', oldSaltedPassword = '', user = {}) {
         if (user.Role === PAID_ADMIN_ROLE) {
             // Get organization key
-            return organizationApi
-                .getKeys()
-                .then(({ data = {} } = {}) => {
-                    const encryptPrivateKey = data.PrivateKey;
-                    const [{ Email }] = $injector.get('addressesModel').getByUser(user) || {};
-                    return pmcw
-                        .decryptPrivateKey(encryptPrivateKey, oldSaltedPassword)
-                        .then((pkg) => pmcw.reformatKey(pkg, Email, password), () => 0);
-                })
-                .catch(({ data = {} } = {}) => {
-                    throw new Error(
-                        data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error')
-                    );
-                });
+            return organizationApi.getKeys().then(({ data = {} } = {}) => {
+                const encryptPrivateKey = data.PrivateKey;
+                const [{ Email }] = $injector.get('addressesModel').getByUser(user) || {};
+                return pmcw
+                    .decryptPrivateKey(encryptPrivateKey, oldSaltedPassword)
+                    .then((pkg) => pmcw.reformatKey(pkg, Email, password), () => 0);
+            });
         }
         return Promise.resolve(0);
     }

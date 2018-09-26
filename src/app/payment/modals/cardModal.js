@@ -30,11 +30,9 @@ function cardModal(pmModal, Payment, gettextCatalog, cardModel, networkActivityT
             const method = () => {
                 if (self.mode === 'edition') {
                     const card = cardModel(self.card);
-                    return Payment.updateMethod({ Type: 'card', Details: card.details() })
-                        .then(({ data = {} } = {}) => data.PaymentMethod)
-                        .catch(({ data = {} }) => {
-                            throw Error(data.Error);
-                        });
+                    return Payment.updateMethod({ Type: 'card', Details: card.details() }).then(
+                        ({ data = {} } = {}) => data.PaymentMethod
+                    );
                 }
                 return Promise.resolve();
             };

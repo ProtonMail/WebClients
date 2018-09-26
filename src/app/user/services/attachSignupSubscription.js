@@ -8,11 +8,7 @@ function attachSignupSubscription(dispatchers, signupModel, authentication, even
         // if the user subscribed to a plan during the signup process
         if (['plus', 'visionary'].includes(Name) && Amount === authentication.user.Credit) {
             const subscribe = () => {
-                return Payment.subscribe({ Amount: 0, Currency, Cycle, PlanIDs: { [ID]: 1 } }).catch(
-                    ({ data = {} }) => {
-                        throw Error(data.Error);
-                    }
-                );
+                return Payment.subscribe({ Amount: 0, Currency, Cycle, PlanIDs: { [ID]: 1 } });
             };
 
             return subscribe().then(eventManager.call);
@@ -23,9 +19,7 @@ function attachSignupSubscription(dispatchers, signupModel, authentication, even
         const method = signupModel.get('temp.method') || {};
         // We save the payment method used during the subscription
         if (method.Type === 'card') {
-            return Payment.updateMethod(method).catch(({ data = {} } = {}) => {
-                throw Error(data.Error);
-            });
+            return Payment.updateMethod(method);
         }
     };
 

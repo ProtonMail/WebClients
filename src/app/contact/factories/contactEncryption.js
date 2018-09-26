@@ -1,15 +1,9 @@
 import _ from 'lodash';
 
 import { orderByPref, uniqGroups } from '../../../helpers/vcard';
-import {
-    CONTACT_MODE,
-    CONTACTS_LIMIT_ENCRYPTION,
-    MAIN_KEY,
-    VCARD_VERSION,
-    CONTACT_ERROR,
-    VCARD_KEY_FIELDS
-} from '../../constants';
+import { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, VCARD_KEY_FIELDS } from '../../constants';
 import { createCancellationToken } from '../../../helpers/promiseHelper';
+import { CONTACT_ERROR } from '../../errors';
 
 const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
 const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(VCARD_KEY_FIELDS);

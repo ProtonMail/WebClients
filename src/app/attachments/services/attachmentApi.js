@@ -143,11 +143,7 @@ function attachmentApi(
                 message
             });
 
-            if (json) {
-                return deferred.reject(json);
-            }
-
-            deferred.resolve({ id: REQUEST_ID, isError: true });
+            deferred.reject(json);
             unsubscribe();
         }
 
@@ -233,13 +229,8 @@ function attachmentApi(
      * @return {Promise}
      */
     const remove = async ({ ID: MessageID } = {}, attachment = {}) => {
-        try {
-            const { data = {} } = await $http.delete(requestURL(attachment.ID), { MessageID });
-            return data;
-        } catch (e) {
-            const error = gettextCatalog.getString('Error during the remove request', null, 'Error delete attachment');
-            throw new Error(e.Error || error);
-        }
+        const { data = {} } = await $http.delete(requestURL(attachment.ID), { MessageID });
+        return data;
     };
 
     const updateSignature = ({ ID, Signature }) => $http.put(requestURL(ID, 'signature'), { Signature });

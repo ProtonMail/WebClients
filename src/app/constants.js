@@ -7,10 +7,8 @@ export const AUTOCOMPLETE_MAX_RECIPIENTS = 25;
 export const MAX_OUTSIDE_REPLY = 4;
 export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
 export const WHITELIST = ['notify@protonmail.com'];
-export const ERROR_AUTH_ACCOUNT_DISABLED = 10003;
 export const MAX_TITLE_LENGTH = 255;
 export const AWESOMEPLETE_MAX_ITEMS = 20;
-export const ERROR_SILENT = 'ignoreError';
 export const WIZARD_ENABLED = true;
 export const FREE_USER_ROLE = 0;
 export const PAID_MEMBER_ROLE = 1;
@@ -56,7 +54,12 @@ export const ATTACHMENT_NUMBER_LIMIT = 100;
 export const MAX_NUMBER_COMPOSER = 3;
 export const MESSAGE_LIMIT = 100;
 export const CONVERSATION_LIMIT = 100;
-export const INTERVAL_EVENT_TIMER = 30 * 1000; // time between querying the event log (every 30 seconds)
+
+export const EVENTS_MS = {
+    INTERVAL_EVENT_TIMER: 30 * 1000, // Time in ms between querying the event log (every 30 seconds)
+    LOOP_DEBOUNCE_MS: 500 // Interval in ms during which the old event call is returned if calling again.
+};
+
 export const TIMEOUT_PRELOAD_MESSAGE = 500; // milliseconds
 export const UPLOAD_GRADIENT_DARK = '147, 145, 209'; // dark rgb color for upload progress bar
 export const UPLOAD_GRADIENT_LIGHT = '255, 255, 255'; // light rgb color for upload progress bar
@@ -184,13 +187,6 @@ export const CONTACT_MODE = {
     SIGNED: 2,
     ENCRYPTED: 1,
     CLEAR_TEXT: 0
-};
-
-export const CONTACT_ERROR = {
-    TYPE3_CONTACT_VERIFICATION: 3,
-    TYPE3_CONTACT_DECRYPTION: 2,
-    TYPE2_CONTACT_VERIFICATION: 1,
-    TYPE1_CONTACT: 0
 };
 
 export const ENCRYPTED_STATUS = {

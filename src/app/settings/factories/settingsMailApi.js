@@ -1,25 +1,12 @@
 /* @ngInject */
 function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
-    const I18N = {
-        ERROR_SAVE_INPUT: gettextCatalog.getString(
-            'Unable to save your changes, your signature is too large.',
-            null,
-            'Error'
-        )
-    };
     const requestURL = url.build('settings/mail');
     const handleResult = ({ data = {} } = {}) => {
         mailSettingsModel.set('all', data.MailSettings);
         return data;
     };
-    const handleError = ({ data = {} } = {}) => {
-        // USER_UPDATE_SIGNATURE_TOO_LARGE
-        if (data.Code === 12010) {
-            throw new Error(I18N.ERROR_SAVE_INPUT);
-        }
-    };
 
-    const handleResponse = (promise) => promise.then(handleResult).catch(handleError);
+    const handleResponse = (promise) => promise.then(handleResult);
     const fetch = () => handleResponse($http.get(requestURL()));
     const updateTheme = (data) => handleResponse($http.put(requestURL('theme'), data));
     const updateAutoSaveContacts = (data) => handleResponse($http.put(requestURL('autocontacts'), data));

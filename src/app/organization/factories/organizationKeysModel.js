@@ -25,8 +25,7 @@ function organizationKeysModel(
             null,
             'Error'
         ),
-        ERROR_ALREADY_ACTIVE: gettextCatalog.getString('Organization keys already active', null, 'Error'),
-        ERROR_DEFAULT: gettextCatalog.getString('Organization keys request failed', null, 'Error')
+        ERROR_ALREADY_ACTIVE: gettextCatalog.getString('Organization keys already active', null, 'Error')
     };
 
     const get = (key = 'keys') => angular.copy(CACHE[key]);
@@ -41,15 +40,10 @@ function organizationKeysModel(
     });
 
     function fetch() {
-        return organizationApi
-            .getKeys()
-            .then(({ data = {} } = {}) => {
-                set('keys', data);
-                return data;
-            })
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || I18N.ERROR_DEFAULT);
-            });
+        return organizationApi.getKeys().then(({ data = {} } = {}) => {
+            set('keys', data);
+            return data;
+        });
     }
 
     /**

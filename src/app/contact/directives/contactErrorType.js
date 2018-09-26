@@ -1,4 +1,4 @@
-import { CONTACT_ERROR } from '../../constants';
+import { CONTACT_ERROR } from '../../errors';
 
 const { TYPE3_CONTACT_VERIFICATION, TYPE2_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION } = CONTACT_ERROR;
 

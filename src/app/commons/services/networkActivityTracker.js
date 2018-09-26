@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import { ERROR_SILENT } from '../../constants';
 
 /* @ngInject */
 function networkActivityTracker($filter, AppModel, errorReporter, notification) {
@@ -34,7 +33,7 @@ function networkActivityTracker($filter, AppModel, errorReporter, notification) 
                 notification.error(error);
             }
 
-            if (angular.isObject(error) && !error.noNotify) {
+            if (angular.isObject(error)) {
                 const { data = {} } = error;
                 let message;
 
@@ -50,7 +49,7 @@ function networkActivityTracker($filter, AppModel, errorReporter, notification) 
                     message = 'An error has occurred. <br> Please try again or refresh the page.';
                 }
 
-                if (message !== 'loginPassword:cancel' && message !== ERROR_SILENT) {
+                if (!error.noNotify) {
                     notification.error(message);
                 }
 

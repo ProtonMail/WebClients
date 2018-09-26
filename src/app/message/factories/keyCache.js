@@ -1,8 +1,7 @@
 import _ from 'lodash';
 import { RECIPIENT_TYPE, TIME } from '../../constants';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
-const KEY_GET_ADDRESS_MISSING = 33102;
-const KEY_GET_ADDRESS_NO_RECEIVE = 33103;
 const TIMEOUT = 10 * TIME.MINUTE;
 
 /* @ngInject */
@@ -20,9 +19,11 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
                 return _.pick(data, 'RecipientType', 'MIMEType', 'Keys');
             })
             .catch((err) => {
+                const { data = {} } = err;
+
                 if (
-                    err.data &&
-                    (err.data.Code === KEY_GET_ADDRESS_MISSING || err.data.Code === KEY_GET_ADDRESS_NO_RECEIVE)
+                    data.Code === API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING ||
+                    data.Code === API_CUSTOM_ERROR_CODES.KEY_GET_DOMAIN_MISSING_MX
                 ) {
                     return {
                         RecipientType: RECIPIENT_TYPE.TYPE_NO_RECEIVE,
@@ -30,6 +31,7 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
                         Keys: []
                     };
                 }
+
                 throw err;
             });
     };

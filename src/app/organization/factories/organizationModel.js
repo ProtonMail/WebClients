@@ -17,18 +17,6 @@ function organizationModel(
     let CACHE = {};
 
     const I18N = {
-        CREATE_ERROR: gettextCatalog.getString(
-            'Error during organization request',
-            null,
-            'Error organization creation'
-        ),
-        FETCH_ERROR: gettextCatalog.getString('Organization request failed', null, 'Error organization'),
-        KEYS_ERROR: gettextCatalog.getString(
-            'Error during the generation of new organization keys',
-            null,
-            'Error organization'
-        ),
-        UPDATING_NAME_ERROR: gettextCatalog.getString('Error updating organization name', null, 'Error'),
         UPDATING_NAME_SUCCESS: gettextCatalog.getString('Organization updated', null, 'Info'),
         UPDATE_PASSWORD_SUCCESS: gettextCatalog.getString('Password updated', null, 'Info')
     };
@@ -63,15 +51,10 @@ function organizationModel(
             set(fakeOrganization);
             return Promise.resolve(fakeResult);
         }
-        return organizationApi
-            .get()
-            .then(({ data = {} } = {}) => {
-                set(data.Organization);
-                return data.Organization;
-            })
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || I18N.FETCH_ERROR);
-            });
+        return organizationApi.get().then(({ data = {} } = {}) => {
+            set(data.Organization);
+            return data.Organization;
+        });
     }
 
     function create() {
@@ -81,10 +64,7 @@ function organizationModel(
 
         generateKeys()
             .then(organizationApi.create)
-            .then(({ data = {} } = {}) => data)
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || I18N.CREATE_ERROR);
-            });
+            .then(({ data = {} } = {}) => data);
     }
 
     function generateKeys() {
@@ -94,22 +74,14 @@ function organizationModel(
 
         return setupKeys
             .generateOrganization(authentication.getPassword())
-            .then(({ privateKeyArmored: PrivateKey }) => ({ PrivateKey }))
-            .catch(() => {
-                throw new Error(I18N.KEYS_ERROR);
-            });
+            .then(({ privateKeyArmored: PrivateKey }) => ({ PrivateKey }));
     }
 
     const saveName = (DisplayName) => {
-        const promise = organizationApi
-            .updateOrganizationName({ DisplayName })
-            .then(({ data = {} } = {}) => {
-                notification.success(I18N.UPDATING_NAME_SUCCESS);
-                return data;
-            })
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || I18N.UPDATING_NAME_ERROR);
-            });
+        const promise = organizationApi.updateOrganizationName({ DisplayName }).then(({ data = {} } = {}) => {
+            notification.success(I18N.UPDATING_NAME_SUCCESS);
+            return data;
+        });
 
         networkActivityTracker.track(promise);
     };

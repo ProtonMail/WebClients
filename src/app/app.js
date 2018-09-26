@@ -173,15 +173,6 @@ angular
             $('#loading_pm, #pm_slow, #pm_slow2').remove();
         });
     })
-    .run(($state, dispatchers) => {
-        const { on } = dispatchers();
-
-        on('$stateChangeError', (event, current, previous, rejection, ...arg) => {
-            $state.go('support.message');
-            console.warn('stateChangeError', event, current, previous, rejection, arg);
-            console.error(arg[1]);
-        });
-    })
     .run((consoleMessage) => consoleMessage())
     .config(($logProvider, $compileProvider, $qProvider, CONFIG) => {
         const debugInfo = CONFIG.debug || false;

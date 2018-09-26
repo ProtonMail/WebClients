@@ -32,27 +32,17 @@ function simpleSend(messageApi, User, pmcw, srp, encryptMessage) {
     }
 
     const createDraft = async (message) => {
-        try {
-            const config = await getDraftParameters(message);
-            const { data = {} } = await messageApi.createDraft(config);
+        const config = await getDraftParameters(message);
+        const { data = {} } = await messageApi.createDraft(config);
 
-            return data.Message;
-        } catch (err) {
-            const { data = {} } = err || {};
-            throw new Error(data.Error);
-        }
+        return data.Message;
     };
 
     const send = async (message) => {
-        try {
-            const config = await getSendParameters(message);
-            const { data = {} } = await messageApi.send(config);
+        const config = await getSendParameters(message);
+        const { data = {} } = await messageApi.send(config);
 
-            return data.Message;
-        } catch (err) {
-            const { data = {} } = err || {};
-            throw new Error(data.Error);
-        }
+        return data.Message;
     };
 
     return async (message) => {

@@ -1,16 +1,12 @@
 /* @ngInject */
 function donateModel(Payment, networkActivityTracker, gettextCatalog, notification, dispatchers) {
     const I18N = {
-        credit: {
-            error: gettextCatalog.getString('Error while processing credit.', null, 'Donation modal')
-        },
         donation: {
             success: gettextCatalog.getString(
                 'Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!',
                 null,
                 'Donation modal'
-            ),
-            error: gettextCatalog.getString('Error while processing donation.', null, 'Donation modal')
+            )
         },
         topUp: {
             success: gettextCatalog.getString('Credits added', null, 'topUp modal')
@@ -21,22 +17,14 @@ function donateModel(Payment, networkActivityTracker, gettextCatalog, notificati
     const dispatch = (type, data = {}) => dispatcher.payments(type, data);
 
     const donate = (options = {}) => {
-        const promise = Payment.donate(options)
-            .then(() => I18N.donation.success)
-            .catch(() => {
-                throw new Error(I18N.donation.error);
-            });
+        const promise = Payment.donate(options).then(() => I18N.donation.success);
 
         networkActivityTracker.track(promise);
         return promise;
     };
 
     const addCredits = (options = {}) => {
-        const promise = Payment.credit(options)
-            .then(() => I18N.topUp.success)
-            .catch(() => {
-                throw new Error(I18N.credit.error);
-            });
+        const promise = Payment.credit(options).then(() => I18N.topUp.success);
 
         networkActivityTracker.track(promise);
         return promise;

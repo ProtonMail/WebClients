@@ -1,5 +1,5 @@
 /* @ngInject */
-function lazyLoader($ocLazyLoad, networkActivityTracker, notification, gettextCatalog) {
+function lazyLoader($ocLazyLoad, networkActivityTracker, notification, gettextCatalog, AppModel) {
     const CACHE = { loaded: 0 };
 
     const I18N = {
@@ -31,7 +31,11 @@ function lazyLoader($ocLazyLoad, networkActivityTracker, notification, gettextCa
             delete CACHE[type];
             CACHE.loaded++;
         } catch (e) {
-            console.error(e);
+            // The error does not contain the http error...
+            if (!AppModel.get('onLine')) {
+                return;
+            }
+
             // cf caching issue with when we deploy new assets #6888
             notification.error(`${I18N.OUTDATED} <a>${I18N.ACTION}</a>`, {
                 duration: 0,

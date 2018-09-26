@@ -106,9 +106,8 @@ Are you sure you want to continue?`,
             const { data } = await Key.create({ AddressID: address.ID, PrivateKey, Primary: primary });
             return onSuccess(address, data.Key);
         } catch (err) {
-            const { data = {} } = err || {};
             address.state = STATE.ERROR;
-            throw new Error(data.Error);
+            throw err;
         }
     };
 

@@ -153,9 +153,9 @@ export default angular
                                     window.location.href = INVITE_URL;
                                     return Promise.reject();
                                 })
-                                .catch(() => {
+                                .catch((e) => {
                                     $state.go('login');
-                                    return Promise.reject();
+                                    throw e;
                                 });
                         }
                         return Promise.resolve();
@@ -176,15 +176,11 @@ export default angular
                         $state
                     ) {
                         const I18N = {
-                            SUCCESS: gettextCatalog.getString('Theme reset! Redirecting...', null, 'Info'),
-                            ERROR: gettextCatalog.getString('Unable to reset theme', null, 'Error')
+                            SUCCESS: gettextCatalog.getString('Theme reset! Redirecting...', null, 'Info')
                         };
                         const promise = settingsMailApi
                             .updateTheme({ Theme: '' })
                             .then(() => notification.success(I18N.SUCCESS))
-                            .catch(() => {
-                                throw new Error(I18N.ERROR);
-                            })
                             .then(eventManager.call)
                             .then(() => $state.go('secured.inbox'));
                         networkActivityTracker.track(promise);
