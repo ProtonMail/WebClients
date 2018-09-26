@@ -1,5 +1,5 @@
 /* @ngInject */
-function dropdown($document, dispatchers) {
+function dropdown($document, AppModel, dispatchers) {
     const CLASS_OPEN = 'pm_dropdown-opened';
 
     return (scope, element) => {
@@ -21,7 +21,10 @@ function dropdown($document, dispatchers) {
         }
 
         function outside(event) {
-            if (!dropdown[0].contains(event.target)) {
+            const isOutsideDropdown = !dropdown[0].contains(event.target);
+            const modalClosed = !AppModel.is('modalOpen');
+
+            if (isOutsideDropdown && modalClosed) {
                 dispatcher.closeDropdown('close');
             }
         }

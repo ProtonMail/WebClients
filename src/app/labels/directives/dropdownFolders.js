@@ -97,8 +97,9 @@ function dropdownFolders(AppModel, labelsModel, dispatchers, actionConversation,
                                 Name: scope.searchValue,
                                 Exclusive: 1
                             },
-                            close() {
+                            close(folder) {
                                 labelModal.deactivate();
+                                folder && onClickDropdown();
                             }
                         }
                     });

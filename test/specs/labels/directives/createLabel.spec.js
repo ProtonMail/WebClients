@@ -67,7 +67,7 @@ describe('CreateLabel directive', () => {
                 iscope = dom.isolateScope();
                 spyOn(labelModal, 'activate').and.callThrough();
                 spyOn(labelModal, 'deactivate');
-                spyOn(rootScope, '$emit');
+                spyOn(rootScope, '$emit').and.callThrough();
                 mockResponseLabel = null;
                 dom.triggerHandler('click');
             });
@@ -88,8 +88,19 @@ describe('CreateLabel directive', () => {
                 expect(labelModal.deactivate).toHaveBeenCalledWith();
             });
 
-            it('should not emit an event', () => {
-                expect(rootScope.$emit).not.toHaveBeenCalled();
+            it('should not emit a messageActions event', () => {
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('messageActions', {
+                    type: 'label',
+                    data: jasmine.any(Object)
+                });
+            });
+
+            it('should not emit a closeDropdown event', () => {
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('closeDropdown');
+            });
+
+            it('should not emit a createLabel event', () => {
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('createLabel', jasmine.any(Object));
             });
         });
 
@@ -101,7 +112,7 @@ describe('CreateLabel directive', () => {
                 iscope = dom.isolateScope();
                 spyOn(labelModal, 'activate').and.callThrough();
                 spyOn(labelModal, 'deactivate');
-                spyOn(rootScope, '$emit');
+                spyOn(rootScope, '$emit').and.callThrough();
                 mockResponseLabel = { Name: 'polo' };
                 dom.triggerHandler('click');
             });
@@ -123,7 +134,21 @@ describe('CreateLabel directive', () => {
             });
 
             it('should not emit an event', () => {
-                expect(rootScope.$emit).not.toHaveBeenCalled();
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('messageActions', {
+                    type: 'label',
+                    data: jasmine.any(Object)
+                });
+            });
+
+            it('should not emit a closeDropdown event', () => {
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('closeDropdown');
+            });
+
+            it('should emit a createLabel event', () => {
+                expect(rootScope.$emit).toHaveBeenCalledWith('createLabel', {
+                    type: 'new.label',
+                    data: jasmine.any(Object)
+                });
             });
         });
 
@@ -192,7 +217,7 @@ describe('CreateLabel directive', () => {
                 expect(labelModal.deactivate).toHaveBeenCalledWith();
             });
 
-            it('should emit an event', () => {
+            it('should emit a messageActions event', () => {
                 expect(rootScope.$emit).toHaveBeenCalledWith('messageActions', {
                     type: 'label',
                     data: {
@@ -200,6 +225,10 @@ describe('CreateLabel directive', () => {
                         labels: [{ Name: 'polo', Selected: true }]
                     }
                 });
+            });
+
+            it('should emit 3 events: messageActions, closeDropdown and createLabel', () => {
+                expect(rootScope.$emit).toHaveBeenCalledTimes(3);
             });
         });
 

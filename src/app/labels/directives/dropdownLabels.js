@@ -1,23 +1,11 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function dropdownLabels(
-    $timeout,
-    AppModel,
-    dispatchers,
-    labelsModel,
-    mailSettingsModel,
-    eventManager,
-    notification,
-    settingsMailApi,
-    gettextCatalog
-) {
+function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notification, gettextCatalog) {
     const NOTIFS = {
         LABELS_SAVED: gettextCatalog.getString('Labels Saved', null, 'dropdown label'),
         LABEL_SAVED: gettextCatalog.getString('Label Saved', null, 'dropdown label')
     };
-    const { dispatcher } = dispatchers(['closeDropdown']);
-    const close = () => dispatcher.closeDropdown();
 
     const mapLabelsMessage = (elements = []) => {
         return _.reduce(
@@ -44,6 +32,8 @@ function dropdownLabels(
             message: '='
         },
         link(scope, element) {
+            const { dispatcher, on, unsubscribe } = dispatchers(['closeDropdown']);
+            const close = () => dispatcher.closeDropdown();
             const dropdown = angular
                 .element(element)
                 .closest('.pm_buttons')
@@ -100,6 +90,12 @@ function dropdownLabels(
                 }
             };
 
+            on('createLabel', (e, { type, data = {} }) => {
+                if (type === 'new.label') {
+                    scope.labels.push({ ...data.label, Selected: true });
+                }
+            });
+
             element.on('submit', onSubmit);
             element.on('click', onClick);
             dropdown.on('click', onClickDropdown);
@@ -110,6 +106,7 @@ function dropdownLabels(
                 dropdown.off('click', onClickDropdown);
                 element.off('submit', onSubmit);
                 element.off('click', onClick);
+                unsubscribe();
             });
         }
     };
