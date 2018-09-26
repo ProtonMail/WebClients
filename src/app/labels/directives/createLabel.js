@@ -1,13 +1,16 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function createLabel(dispatchers, labelModal) {
-    const { dispatcher } = dispatchers(['messageActions']);
+    const { dispatcher } = dispatchers(['closeDropdown', 'createLabel', 'messageActions']);
     const dispatch = (message, label = {}) => {
-        dispatcher.messageActions('label', {
-            messages: [message],
-            labels: [_.extend({}, label, { Selected: true })]
-        });
+        if (message) {
+            dispatcher.messageActions('label', {
+                messages: [message],
+                labels: [{ ...label, Selected: true }]
+            });
+            dispatcher.closeDropdown();
+        }
+
+        dispatcher.createLabel('new.label', { label });
     };
 
     return {
@@ -28,7 +31,7 @@ function createLabel(dispatchers, labelModal) {
                         },
                         close(label) {
                             labelModal.deactivate();
-                            scope.message && label && dispatch(scope.message, label);
+                            label && dispatch(scope.message, label);
                         }
                     }
                 });
