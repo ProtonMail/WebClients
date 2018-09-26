@@ -50,7 +50,7 @@ function SecuredController(
     }
 
     attachSignupSubscription();
-    eventManager.start(authentication.user.EventID);
+    eventManager.initialize();
     // Initialize counters for conversation (total and unread)
     cacheCounters.query();
     // Preload the contact list

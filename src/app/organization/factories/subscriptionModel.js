@@ -23,7 +23,6 @@ const MAP_ADDONS = {
 /* @ngInject */
 function subscriptionModel(dispatchers, gettextCatalog, Payment) {
     const CACHE = {};
-    const ERROR_SUBSCRIPTION = gettextCatalog.getString('Subscription request failed', null, 'Error');
     const { dispatcher, on } = dispatchers(['subscription']);
 
     const get = () => angular.copy(CACHE.subscription || {});
@@ -89,14 +88,10 @@ function subscriptionModel(dispatchers, gettextCatalog, Payment) {
     }
 
     function fetch() {
-        return Payment.subscription()
-            .then((data = {}) => {
-                set(data.Subscription);
-                return get();
-            })
-            .catch(({ data = {} } = {}) => {
-                throw Error(data.Error || ERROR_SUBSCRIPTION);
-            });
+        return Payment.subscription().then((data = {}) => {
+            set(data.Subscription);
+            return get();
+        });
     }
 
     function name() {

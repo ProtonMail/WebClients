@@ -89,18 +89,11 @@ function PaymentsController(
         methods.splice(index, 1);
         methods.unshift(method);
 
-        const promise = Payment.order({ PaymentMethodIDs: _.map(methods, 'ID') })
-            .then(({ data = {} } = {}) => {
-                $scope.methods = methods;
-                notification.success(gettextCatalog.getString('Payment method updated', null, 'Payment'));
-                return data;
-            })
-            .catch(({ data = {} } = {}) => {
-                throw new Error(
-                    data.Error ||
-                        gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error')
-                );
-            });
+        const promise = Payment.order({ PaymentMethodIDs: _.map(methods, 'ID') }).then(({ data = {} } = {}) => {
+            $scope.methods = methods;
+            notification.success(gettextCatalog.getString('Payment method updated', null, 'Payment'));
+            return data;
+        });
 
         networkActivityTracker.track(promise);
     };
@@ -122,10 +115,8 @@ function PaymentsController(
                             notification.success(gettextCatalog.getString('Payment method deleted', null, 'Payment'));
                         })
                         .catch((error) => {
-                            const { data = {} } = error;
                             confirmModal.deactivate();
-                            error.message && notification.error(error.message);
-                            data.Error && notification.error(data.Error);
+                            throw error;
                         });
                     networkActivityTracker.track(promise);
                 },

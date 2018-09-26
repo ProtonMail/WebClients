@@ -92,21 +92,17 @@ function blackFridayModel(
                 Currency: CACHE.currency,
                 PlanIDs,
                 CouponCode: subscriptionModel.coupon()
-            })
-                .then(({ data: valid = {} } = {}) => {
-                    paymentModal.activate({
-                        params: {
-                            planIDs: PlanIDs,
-                            valid,
-                            cancel() {
-                                paymentModal.deactivate();
-                            }
+            }).then(({ data: valid = {} } = {}) => {
+                paymentModal.activate({
+                    params: {
+                        planIDs: PlanIDs,
+                        valid,
+                        cancel() {
+                            paymentModal.deactivate();
                         }
-                    });
-                })
-                .catch(({ data = {} } = {}) => {
-                    throw Error(data.Error);
+                    }
                 });
+            });
         });
 
         networkActivityTracker.track(promise);

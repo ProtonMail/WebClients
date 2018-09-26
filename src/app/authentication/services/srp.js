@@ -205,6 +205,7 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
 
                     const httpReq = {
                         method,
+                        noNotify: true, // TODO: The SRP is all broken. It is going to be removed soon.
                         url: url.get() + endpoint,
                         data: _.extend(req, {
                             SRPSession: session,

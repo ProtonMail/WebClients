@@ -22,6 +22,16 @@ function OutsideController(
     attachmentModelOutside,
     sanitize
 ) {
+    const I18N = {
+        SUCCESS: gettextCatalog.getString('Message sent', null),
+        OUTSIDE_REPLY_ERROR: gettextCatalog.getString(
+            'ProtonMail\'s Encrypted Outside feature only allows replying 5 times. <a href="https://protonmail.com/signup" target="_blank">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>.',
+            null,
+            'Notification'
+        ),
+        ENCRYPTION_ERROR: gettextCatalog.getString('Error encrypting message', null, 'Error')
+    };
+
     attachmentModelOutside.load();
     const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
     const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
@@ -107,11 +117,7 @@ function OutsideController(
         const { Replies = [] } = $scope.message;
 
         if (Replies.length >= MAX_OUTSIDE_REPLY) {
-            const message = gettextCatalog.getString(
-                'ProtonMail\'s Encrypted Outside feature only allows replying 5 times. <a href="https://protonmail.com/signup" target="_blank">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>.',
-                null,
-                'Notification'
-            );
+            const message = I18N.OUTSIDE_REPLY_ERROR;
             notification.info(message);
         }
         const process = embedded
@@ -133,7 +139,10 @@ function OutsideController(
                             { Filename: [], DataPacket: [], MIMEType: [], KeyPackets: [], ContentID: [] }
                         );
                     })
-                ])
+                ]).catch(() => {
+                    // Override any encryption error above with this.
+                    throw new Error(I18N.ENCRYPTION_ERROR);
+                })
             )
             .then(([{ data: Body }, { data: ReplyBody }, Packages]) => {
                 return Eo.reply(decryptedToken, tokenId, {
@@ -144,19 +153,12 @@ function OutsideController(
                     'KeyPackets[]': Packages.KeyPackets,
                     'ContentID[]': Packages.ContentID,
                     'DataPacket[]': Packages.DataPacket
-                })
-                    .then((result) => {
-                        $state.go('eo.message', { tag: $stateParams.tag });
-                        notification.success(gettextCatalog.getString('Message sent', null));
-                        return result;
-                    })
-                    .catch((err) => {
-                        notification.error(gettextCatalog.getString('Error during the reply process', null, 'Error'));
-                        throw err;
-                    });
+                });
             })
-            .catch((error) => {
-                error.message = gettextCatalog.getString('Error during the encryption', null, 'Error');
+            .then((result) => {
+                $state.go('eo.message', { tag: $stateParams.tag });
+                notification.success(I18N.success);
+                return result;
             });
 
         return networkActivityTracker.track(process);

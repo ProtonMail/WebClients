@@ -10,11 +10,7 @@ function payInvoiceBtn(gettextCatalog, Payment, paymentModel, payModal, networkA
     };
 
     const checkInvoice = ({ ID } = {}) => {
-        return Payment.check(ID)
-            .then(({ data }) => data)
-            .catch(({ data = {} } = {}) => {
-                throw Error(data.Error);
-            });
+        return Payment.check(ID).then(({ data }) => data);
     };
 
     return {

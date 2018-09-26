@@ -61,7 +61,7 @@ function main {
 
     # You can lint all the project via the flag --lint
     if [[ "$1" = "--lint" ]]; then
-        LIST=$(find src/app -type f -name '*.js' ! -name 'app.js'  ! -name 'appLazy.js' ! -name 'index.js'  ! -name 'routes.js'   ! -name 'config.js'   ! -name 'constants.js'   ! -name 'transformBase.js'   ! -name 'translateAttribute.js'   ! -name 'ptdndconstants.js' ! -path '*helpers*');
+        LIST=$(find src/app -type f -name '*.js' ! -name 'app.js'  ! -name 'appLazy.js' ! -name 'index.js'  ! -name 'routes.js'   ! -name 'config.js'   ! -name 'constants.js'  ! -name 'errors.js'  ! -name 'transformBase.js'  ! -name 'translateAttribute.js'   ! -name 'ptdndconstants.js' ! -path '*helpers*');
 
         for file in $LIST ; do
             testMainInjection "$file";

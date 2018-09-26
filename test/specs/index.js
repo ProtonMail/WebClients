@@ -35,3 +35,4 @@ import './helpers/address.spec';
 import './helpers/vcard.spec';
 import './commons/services/url.spec';
 import './commons/providers/notify.spec';
+import './commons/factories/AppModel.spec';

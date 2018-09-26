@@ -28,8 +28,6 @@ function attachmentModel(
     let MAP_ATTACHMENTS = {};
     const EVENT_NAME = 'attachment.upload';
     const I18N = {
-        ERROR_UPLOAD: gettextCatalog.getString('Error during file upload', null, 'Compose message'),
-        ERROR_ENCRYPT: gettextCatalog.getString('Error encrypting attachment', null, 'Compose message'),
         IMAGE: gettextCatalog.getString('Image', null, 'Title')
     };
 
@@ -292,14 +290,14 @@ function attachmentModel(
      * If you remove the embedded from the editor (SUPPR), you will have the attachment's ID,
      * and for a new one you need its REQUEST_ID (the front use packages).
      * @param  {Object} data
-     * @return {void}
+     * @return {Promise}
      */
     function remove(data) {
         const { id, message, packet, messageID } = data;
         const msg = message || { ID: messageID };
         const attachment = data.attachment || getAttachment(msg, id);
 
-        attachmentApi
+        return attachmentApi
             .remove(msg, attachment)
             .then(() => {
                 const attConf = getConfigMapAttachment(id, attachment);
@@ -315,7 +313,7 @@ function attachmentModel(
                 cleanMap(state);
             })
             .catch((exception) => {
-                dispatch('remove.error', { message, exception });
+                dispatch('remove.error', { message, exception, attachment, id });
             });
     }
 
@@ -323,10 +321,10 @@ function attachmentModel(
      * Remove a list of attachments
      * @param  {Message} options.message
      * @param  {Array} options.list    List of attachments
-     * @return {void}
+     * @return {Array<Promise>}
      */
     function removeAll({ message, list }) {
-        list.forEach((attachment) => {
+        return list.map((attachment) =>
             remove({
                 id: attachment.ID,
                 attachment,
@@ -334,8 +332,8 @@ function attachmentModel(
                 packet: {
                     Inline: +isEmbedded(attachment)
                 }
-            });
-        });
+            })
+        );
     }
 
     /**
@@ -389,31 +387,23 @@ function attachmentModel(
         const privateKeys = authentication.getPrivateKeys(message.AddressID);
         message.attachmentsToggle = true;
 
-        return AttachmentLoader.load(file, message.From.Keys[0].PublicKey, privateKeys)
-            .then((packets) => {
-                return attachmentApi
-                    .upload(packets, message, tempPacket, total)
-                    .then(({ attachment, sessionKey, REQUEST_ID, isAborted, isError }) => {
-                        if (isAborted || isError) {
-                            throw new Error('Request error');
-                        }
+        const doUpload = (packets) => {
+            return attachmentApi
+                .upload(packets, message, tempPacket, total)
+                .then(({ attachment, sessionKey, REQUEST_ID, isAborted }) => {
+                    if (isAborted) {
+                        return;
+                    }
 
-                        // Extract content-id even if there are no headers
-                        const contentId = `${(attachment.Headers || {})['content-id'] || ''}`;
-                        const cid = contentId.replace(/[<>]+/g, '');
+                    // Extract content-id even if there are no headers
+                    const contentId = `${(attachment.Headers || {})['content-id'] || ''}`;
+                    const cid = contentId.replace(/[<>]+/g, '');
 
-                        return { attachment, sessionKey, packets, cid, REQUEST_ID };
-                    })
-                    .catch((err) => {
-                        console.error(err);
-                        notification.error(I18N.ERROR_UPLOAD);
-                    });
-            })
-            .catch((err) => {
-                console.error(err);
-                notification.error(I18N.ERROR_ENCRYPT);
-                throw err;
-            });
+                    return { attachment, sessionKey, packets, cid, REQUEST_ID };
+                });
+        };
+
+        return AttachmentLoader.load(file, message.From.Keys[0].PublicKey, privateKeys).then(doUpload);
     }
 
     const getCurrentQueue = ({ ID }) => queueMessage[ID];

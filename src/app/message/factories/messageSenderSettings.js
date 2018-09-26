@@ -1,4 +1,5 @@
-import { CONTACT_ERROR, SEND_TYPES } from '../../constants';
+import { SEND_TYPES } from '../../constants';
+import { CONTACT_ERROR } from '../../errors';
 import { normalizeEmail } from '../../../helpers/string';
 
 /* @ngInject */

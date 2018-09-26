@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { MAILBOX_IDENTIFIERS } from '../../constants';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
 const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
 const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
@@ -169,11 +170,13 @@ function spamListModel(dispatchers, incomingModel) {
             resetIndex();
             refresh();
         } catch (e) {
+            const { data = {} } = e;
             // Trying to move an item already deleted -> refresh the list
-            if (e.Code === 35023) {
+            if (data.Code === API_CUSTOM_ERROR_CODES.INCOMING_DEFAULT_UPDATE_NOT_EXIST) {
                 delete MAIN_CACHE.MAP[id];
                 load({ Search: MAIN_CACHE.query });
             }
+            throw e;
         }
     };
 

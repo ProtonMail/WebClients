@@ -1,7 +1,6 @@
 /* @ngInject */
-function errorReporter(notify) {
-    const newNotification = (msg) => msg && notify(msg);
-    const clear = notify.closeAll;
+function errorReporter(notification) {
+    const newNotification = (msg) => msg && notification.error(msg);
     const catcher = (msg, promise) => (error) => {
         newNotification(msg, error);
         promise && promise.reject();
@@ -16,7 +15,7 @@ function errorReporter(notify) {
     };
 
     return {
-        clear,
+        clear: notification.closeAll,
         catcher,
         resolve: resolver,
         notify: newNotification

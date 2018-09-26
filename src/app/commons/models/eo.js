@@ -1,8 +1,12 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function Eo($http, url, CONFIG) {
+function Eo($http, url, CONFIG, gettextCatalog) {
     const requestURL = url.build('eo');
+
+    const I18N = {
+        SEND_ERROR: gettextCatalog.getString('Unable to send the message.', null, 'Error')
+    };
 
     /**
      * Parse the JSON coming from the XHR request
@@ -67,14 +71,16 @@ function Eo($http, url, CONFIG) {
             xhr.onload = function onload() {
                 const { json, isInvalid } = parseJSON(xhr);
 
-                if (xhr.status !== 200) {
-                    return reject(new Error('Unable to send the message'));
-                }
-
                 if (json.Error) {
-                    const msgError = !isInvalid ? json.Error : 'Unable to send the message.';
+                    const msgError = !isInvalid ? json.Error : I18N.SEND_ERROR;
                     return reject(new Error(msgError));
                 }
+
+                if (xhr.status !== 200) {
+                    // TODO: Handle offline, upgrade required, etc...
+                    return reject(new Error(I18N.SEND_ERROR));
+                }
+
                 resolve('Message send');
             };
 

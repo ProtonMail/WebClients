@@ -32,12 +32,7 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
     }
 
     function request(route, params = {}, timeout) {
-        return $http
-            .get(route, { params, timeout })
-            .then(({ data = {} } = {}) => data)
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error);
-            });
+        return $http.get(route, { params, timeout }).then(({ data = {} } = {}) => data);
     }
 
     async function queryContacts(route = '', { PageSize, key = '' }, timeout) {
@@ -257,9 +252,6 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
                 oldContact.Cards.filter(({ Type }) => ENCRYPTED_MODES.includes(Type))
             );
             return $http.put(requestURL(contact.ID), newContact).then(({ data = {} } = {}) => {
-                if (data.Error) {
-                    throw new Error(data.Error);
-                }
                 // NOTE We need to pass the cards to update the encrypted icon in the contact view
                 data.cards = newContact.Cards;
                 return data;

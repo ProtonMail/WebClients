@@ -23,6 +23,9 @@ function messageModel(
     mailSettingsModel,
     addressesModel
 ) {
+    const I18N = {
+        ENCRYPTION_ERROR: gettextCatalog.getString('Error encrypting message', null, 'Error')
+    };
     const ENCRYPTED_HEADERS_FILENAME = gettextCatalog.getString(
         'Encrypted Headers',
         null,
@@ -262,9 +265,8 @@ function messageModel(
                     compression: true
                 })
                 .then(({ data }) => ((this.Body = data), data))
-                .catch((error) => {
-                    error.message = gettextCatalog.getString('Error encrypting message');
-                    throw error;
+                .catch(() => {
+                    throw new Error(I18N.ENCRYPTION_ERROR);
                 });
         }
 

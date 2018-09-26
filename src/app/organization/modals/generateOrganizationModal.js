@@ -98,21 +98,16 @@ function generateOrganizationModal(
                                                     TwoFactorCode: twoFactorCode
                                                 };
 
-                                                return organizationApi
-                                                    .replaceKeys(payload, creds)
-                                                    .then(() => {
-                                                        notification.success(
-                                                            gettextCatalog.getString(
-                                                                'Organization keys change successful',
-                                                                null,
-                                                                'Error'
-                                                            )
-                                                        );
-                                                        return resolve(params.submit(decryptedKey));
-                                                    })
-                                                    .catch(({ data = {} } = {}) => {
-                                                        return reject(new Error(data.Error));
-                                                    });
+                                                return organizationApi.replaceKeys(payload, creds).then(() => {
+                                                    notification.success(
+                                                        gettextCatalog.getString(
+                                                            'Organization keys change successful',
+                                                            null,
+                                                            'Error'
+                                                        )
+                                                    );
+                                                    return resolve(params.submit(decryptedKey));
+                                                });
                                             },
                                             cancel() {
                                                 loginPasswordModal.deactivate();

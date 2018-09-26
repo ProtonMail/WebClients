@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
-import { CONTACT_ERROR, TIME, KEY_FLAGS } from '../../constants';
+import { TIME, KEY_FLAGS } from '../../constants';
+import { CONTACT_ERROR } from '../../errors';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';

@@ -1,12 +1,6 @@
 /* @ngInject */
 function organizationApi($http, gettextCatalog, url, srp) {
     const requestURL = url.build('organizations');
-    const I18N = {
-        ERROR_FETCH_BACKUP: gettextCatalog.getString('Error retrieving backup organization keys', null, 'Error')
-    };
-    const handleError = (message = '') => ({ data = {} } = {}) => {
-        throw new Error(data.Error || message);
-    };
 
     /**
      * Get group info: group name, token IDs, members (ids, names, roles, addresses, used space, space limit), domains (ids, names, verification status for MX, SPF, DKIM), usage and limits (for domains, members, addresses and space), billing info (status, billing cycle, next billing time). Only available for the group admin.
@@ -24,7 +18,7 @@ function organizationApi($http, gettextCatalog, url, srp) {
      * Get organization keys
      * @return {Promise}
      */
-    const getBackupKeys = () => $http.get(requestURL('keys', 'backup')).catch(handleError(I18N.ERROR_FETCH_BACKUP));
+    const getBackupKeys = () => $http.get(requestURL('keys', 'backup'));
 
     /**
      * Update private key for the organization

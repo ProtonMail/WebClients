@@ -250,43 +250,30 @@ function DomainsController(
     };
 
     const verifyDomain = async ({ ID }) => {
-        try {
-            const data = (await domainApi.get(ID)) || {};
-            const { VerifyState } = data.Domain || {};
+        const data = (await domainApi.get(ID)) || {};
+        const { VerifyState } = data.Domain || {};
 
-            if (VerifyState === 0) {
-                throw new Error(
-                    gettextCatalog.getString(
-                        'Verification did not succeed, please try again in an hour.',
-                        null,
-                        'Error'
-                    )
-                );
-            }
-
-            if (VerifyState === 1) {
-                notification.error(
-                    gettextCatalog.getString(
-                        'Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.',
-                        null,
-                        'Error'
-                    ),
-                    { duration: 30000 }
-                );
-                return { test: false, data };
-            }
-
-            if (VerifyState === 2) {
-                notification.success(gettextCatalog.getString('Domain verified', null));
-                return { test: true, data };
-            }
-        } catch (e) {
-            if (e.message) {
-                throw e;
-            }
+        if (VerifyState === 0) {
             throw new Error(
                 gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error')
             );
+        }
+
+        if (VerifyState === 1) {
+            notification.error(
+                gettextCatalog.getString(
+                    'Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.',
+                    null,
+                    'Error'
+                ),
+                { duration: 30000 }
+            );
+            return { test: false, data };
+        }
+
+        if (VerifyState === 2) {
+            notification.success(gettextCatalog.getString('Domain verified', null));
+            return { test: true, data };
         }
     };
 
@@ -431,16 +418,6 @@ function DomainsController(
                         .then((data) => {
                             $scope.domains[index] = data.Domain;
                             dmarcModal.deactivate();
-                        })
-                        .catch(({ data = {} } = {}) => {
-                            throw new Error(
-                                data.Error ||
-                                    gettextCatalog.getString(
-                                        'Verification did not succeed, please try again in an hour.',
-                                        null,
-                                        'Error'
-                                    )
-                            );
                         });
 
                     networkActivityTracker.track(promise);

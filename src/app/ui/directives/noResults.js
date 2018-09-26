@@ -1,6 +1,7 @@
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
+
 /* @ngInject */
 function noResults(elementsError, tools, gettextCatalog, labelsModel, $stateParams) {
-    const INVALID_SEARCH_ERROR_CODE = 15225;
     const learnMore = gettextCatalog.getString('Learn more', null, 'Link');
 
     const TYPES = {
@@ -90,7 +91,7 @@ function noResults(elementsError, tools, gettextCatalog, labelsModel, $statePara
             }
 
             $h3.innerHTML =
-                code === INVALID_SEARCH_ERROR_CODE
+                code === API_CUSTOM_ERROR_CODES.MESSAGE_SEARCH_QUERY_SYNTAX
                     ? `${error}.<br /><a href="https://protonmail.com/support/knowledge-base/search/" target="_blank">${learnMore}</a>`
                     : getLabel(type);
         }

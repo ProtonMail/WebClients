@@ -1,12 +1,11 @@
 import { parseURL } from '../../../helpers/browser';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, CANCEL_REQUEST } from '../../constants';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
+
+const { PAYMENTS_PAYPAL_CONNECTION_EXCEPTION } = API_CUSTOM_ERROR_CODES;
 
 /* @ngInject */
 function paypalView(notification, Payment, gettextCatalog, $q, networkUtils, windowModel) {
-    const I18N = {
-        down: gettextCatalog.getString('Error connecting to PayPal.', null, 'Paypal component')
-    };
-
     return {
         replace: true,
         restrict: 'E',
@@ -53,19 +52,19 @@ function paypalView(notification, Payment, gettextCatalog, $q, networkUtils, win
                     })
                     .then(({ ApprovalURL }) => (scope.approvalURL = ApprovalURL))
                     .catch((error) => {
+                        if (networkUtils.isCancelledRequest(error)) {
+                            return;
+                        }
+
                         const { data = {} } = error;
 
-                        if (data.Code === 22802) {
+                        if (data.Code === PAYMENTS_PAYPAL_CONNECTION_EXCEPTION) {
                             scope.paypalNetworkError = true;
                         }
 
                         deferred = null;
 
-                        if (networkUtils.isCancelledRequest(error)) {
-                            return;
-                        }
-
-                        throw new Error(error.message || data.Error || I18N.down);
+                        throw error;
                     });
             };
 
@@ -100,6 +99,9 @@ function paypalView(notification, Payment, gettextCatalog, $q, networkUtils, win
             }
 
             load();
+
+            // Needed for error handler to retry.
+            scope.initPaypal = load;
 
             scope.$on('$destroy', () => {
                 // Cancel request if pending

@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { MAILBOX_IDENTIFIERS, FILTER_VERSION } from '../../constants';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
 /* @ngInject */
 function filterModal(
@@ -394,13 +395,13 @@ function filterModal(
                     params.close();
                 };
 
-                const onError = ({ data = {} } = {}) => {
-                    notification.error(data.Error);
-
-                    if (data.Code === 50016) {
+                const onError = (e) => {
+                    const { data = {} } = e;
+                    if (data.Code === API_CUSTOM_ERROR_CODES.FILTER_CREATE_TOO_MANY_ACTIVE) {
                         eventManager.call();
                         params.close();
                     }
+                    throw e;
                 };
 
                 if (data.ID) {

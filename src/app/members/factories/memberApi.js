@@ -1,22 +1,9 @@
 /* @ngInject */
-function memberApi($http, url, srp, gettextCatalog) {
-    const I18N = {
-        ERROR_NAME: gettextCatalog.getString('Error updating the name', null, 'Error'),
-        ERROR_CREATE: gettextCatalog.getString('User creation failed', null, 'Error'),
-        ERROR_REQUEST: gettextCatalog.getString('User request failed', null, 'Error'),
-        ERROR_DELETE: gettextCatalog.getString('Error during deletion', null, 'Error'),
-        ERROR_UPDATE_ROLE: gettextCatalog.getString('Error updating role', null, 'Error'),
-        ERROR_PRIVATIZE: gettextCatalog.getString('Error privatizing the user', null, 'Error'),
-        ERROR_QUOTA: gettextCatalog.getString('Error updating the disk space quota', null, 'Error'),
-        ERROR_VPN: gettextCatalog.getString('Error updating the vpn option', null, 'Error')
-    };
-
+function memberApi($http, url, srp) {
     const requestUrl = url.build('members');
     const requestSrp = url.make('members');
+
     const handleResult = ({ data = {} } = {}) => data;
-    const filterError = (error) => ({ data = {} } = {}) => {
-        throw new Error(data.Error || error);
-    };
 
     /**
      * Add a member to a group. This creates a new user. Returns the new {member_id} if successful.
@@ -25,8 +12,7 @@ function memberApi($http, url, srp, gettextCatalog) {
         return srp
             .getPasswordParams(password, Obj)
             .then((data) => $http.post(requestUrl(), data))
-            .then(handleResult)
-            .catch(filterError(I18N.ERROR_CREATE));
+            .then(handleResult);
     };
 
     /**
@@ -38,17 +24,11 @@ function memberApi($http, url, srp, gettextCatalog) {
     const authenticate = (memberID, params) => {
         return srp
             .performSRPRequest('POST', requestSrp(memberID, 'auth'), {}, params)
-            .then(({ data = {} }) => data.UID)
-            .catch((error) => {
-                throw new Error(error.error_description);
-            });
+            .then(({ data = {} }) => data.UID);
     };
 
     const query = () => {
-        return $http
-            .get(requestUrl())
-            .then(handleResult)
-            .catch(filterError(I18N.ERROR_REQUEST));
+        return $http.get(requestUrl()).then(handleResult);
     };
 
     /**
@@ -63,10 +43,7 @@ function memberApi($http, url, srp, gettextCatalog) {
      * @return {Promise}
      */
     const name = (memberID, Name) => {
-        return $http
-            .put(requestUrl(memberID, 'name'), { Name })
-            .then(handleResult)
-            .catch(filterError(I18N.ERROR_NAME));
+        return $http.put(requestUrl(memberID, 'name'), { Name }).then(handleResult);
     };
 
     /**
@@ -76,10 +53,7 @@ function memberApi($http, url, srp, gettextCatalog) {
      * @return {Promise}
      */
     const quota = (memberID, MaxSpace) => {
-        return $http
-            .put(requestUrl(memberID, 'quota'), { MaxSpace })
-            .then(handleResult)
-            .catch(filterError(I18N.ERROR_QUOTA));
+        return $http.put(requestUrl(memberID, 'quota'), { MaxSpace }).then(handleResult);
     };
 
     /**
@@ -89,10 +63,7 @@ function memberApi($http, url, srp, gettextCatalog) {
      * @return {Promise}
      */
     const vpn = (memberID, MaxVPN) => {
-        return $http
-            .put(requestUrl(memberID, 'vpn'), { MaxVPN })
-            .then(handleResult)
-            .catch(filterError(I18N.ERROR_VPN));
+        return $http.put(requestUrl(memberID, 'vpn'), { MaxVPN }).then(handleResult);
     };
 
     /**
@@ -102,10 +73,7 @@ function memberApi($http, url, srp, gettextCatalog) {
      * @return {Promise}
      */
     const role = (memberID, params) => {
-        return $http
-            .put(requestUrl(memberID, 'role'), params)
-            .then(handleResult)
-            .catch(filterError(I18N.ERROR_UPDATE_ROLE));
+        return $http.put(requestUrl(memberID, 'role'), params).then(handleResult);
     };
 
     /**
@@ -124,20 +92,14 @@ function memberApi($http, url, srp, gettextCatalog) {
      * @return {Promise}
      */
     const privatize = (memberID) => {
-        return $http
-            .put(requestUrl(memberID, 'privatize'))
-            .then(handleResult)
-            .catch(filterError(I18N.ERROR_PRIVATIZE));
+        return $http.put(requestUrl(memberID, 'privatize')).then(handleResult);
     };
 
     /**
      * Nuke the member. Protect against nuking the group owner.
      */
     const remove = (memberID) => {
-        return $http
-            .delete(requestUrl(memberID))
-            .then(handleResult)
-            .catch(filterError(I18N.ERROR_DELETE));
+        return $http.delete(requestUrl(memberID)).then(handleResult);
     };
 
     /**

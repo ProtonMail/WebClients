@@ -64,21 +64,10 @@ function customFilterList(
 
                     // Save priority order
                     networkActivityTracker.track(
-                        Filter.order({ FilterIDs })
-                            .then(({ data = {} } = {}) => {
-                                notification.success(gettextCatalog.getString('Order saved', null, 'Info'));
-                                return data;
-                            })
-                            .catch(({ data = {} } = {}) => {
-                                throw new Error(
-                                    data.Error ||
-                                        gettextCatalog.getString(
-                                            'Unable to save your changes, please try again.',
-                                            null,
-                                            'Error'
-                                        )
-                                );
-                            })
+                        Filter.order({ FilterIDs }).then(({ data = {} } = {}) => {
+                            notification.success(gettextCatalog.getString('Order saved', null, 'Info'));
+                            return data;
+                        })
                     );
                 }
             };
@@ -195,36 +184,21 @@ function customFilterList(
                 });
             };
 
-            scope.enableCustomFilter = (filter) => {
-                const promise = Filter.enable(filter)
+            const enableDisable = (fn, revertStatus) => (filter) => {
+                const promise = fn(filter)
                     .then(() => {
                         notification.success(gettextCatalog.getString('Status updated', null, 'Info'));
                     })
-                    .catch(({ data = {} } = {}) => {
-                        filter.Status = false; // Has to be a Boolean to work with the toggle directive
-                        throw new Error(data.Error);
+                    .catch((e) => {
+                        filter.Status = revertStatus; // Has to be a Boolean to work with the toggle directive
+                        throw e;
                     });
 
-                networkActivityTracker.track(promise);
-
-                return promise;
+                return networkActivityTracker.track(promise);
             };
 
-            scope.disableCustomFilter = (filter) => {
-                const promise = Filter.disable(filter)
-                    .then(({ data = {} }) => {
-                        notification.success(gettextCatalog.getString('Status updated', null, 'Info'));
-                        return data;
-                    })
-                    .catch(({ data = {} } = {}) => {
-                        filter.Status = true; // Has to be a Boolean to work with the toggle directive
-                        throw new Error(data.Error);
-                    });
-
-                networkActivityTracker.track(promise);
-
-                return promise;
-            };
+            scope.enableCustomFilter = enableDisable(Filter.enable, false);
+            scope.disableCustomFilter = enableDisable(Filter.disable, true);
 
             function changeCustomFilterStatus(filter, status) {
                 if (status) {

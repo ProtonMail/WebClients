@@ -12,7 +12,6 @@ function encryptionView(
 ) {
     const I18N = {
         SUCCES_MESSAGE: gettextCatalog.getString('Encryption setting updated', null, 'Success'),
-        ERROR_MESSAGE: gettextCatalog.getString('Error while updating setting', null, 'Error'),
         ENABLE_SIGNING_TITLE: gettextCatalog.getString(
             'Automatic sign outgoing messages?',
             null,
@@ -51,9 +50,7 @@ function encryptionView(
     };
 
     const request = (promise) => {
-        return promise.then(() => notification.success(I18N.SUCCES_MESSAGE)).catch((error) => {
-            throw new Error(error || I18N.ERROR_MESSAGE);
-        });
+        return promise.then(() => notification.success(I18N.SUCCES_MESSAGE));
     };
 
     const updatePgpScheme = ({ target: { value = 'pgp-mime' } }) => {

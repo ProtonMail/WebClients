@@ -1,4 +1,5 @@
 import { UNPAID_STATE, WIZARD_ENABLED } from '../../constants';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
 /* @ngInject */
 function signupUserProcess(
@@ -31,8 +32,9 @@ function signupUserProcess(
             return data;
         } catch (e) {
             const { data = {} } = e;
+
             // Failed Human verification
-            if (data.Code === 12087) {
+            if (data.Code === API_CUSTOM_ERROR_CODES.USER_CREATE_TOKEN_INVALID) {
                 dispatch('creating', { value: false });
                 dispatch('chech.humanity', { value: true });
 
@@ -43,7 +45,7 @@ function signupUserProcess(
             }
 
             return Promise.reject({
-                error: new Error(e.Error),
+                error: new Error(data.Error),
                 verbose: true
             });
         }
@@ -134,16 +136,12 @@ function signupUserProcess(
     };
 
     const create = async (model) => {
-        try {
-            await doCreateUser(model);
-            await createAddress();
+        await doCreateUser(model);
+        await createAddress();
 
-            return setUserLanguage()
-                .then(doGetUserInfo)
-                .then(finishRedirect);
-        } catch (e) {
-            throw e;
-        }
+        return setUserLanguage()
+            .then(doGetUserInfo)
+            .then(finishRedirect);
     };
 
     function generateNewKeys() {

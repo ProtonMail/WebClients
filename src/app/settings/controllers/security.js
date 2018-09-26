@@ -40,12 +40,10 @@ function SecurityController(
         },
         revoke: {
             successOthers: gettextCatalog.getString('Other sessions revoked', null, 'Success'),
-            success: gettextCatalog.getString('Session revoked', null, 'Success'),
-            error: gettextCatalog.getString('Error during revoke request', null, 'Error')
+            success: gettextCatalog.getString('Session revoked', null, 'Success')
         },
         logging: {
             success: gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'),
-            error: gettextCatalog.getString('Error during the initialization of logs', null, 'Error'),
             disable: gettextCatalog.getString('Disable', null, 'Action')
         }
     };
@@ -182,18 +180,12 @@ function SecurityController(
 
     $scope.initLogs = () => {
         networkActivityTracker.track(
-            Logs.get().then(
-                (response) => {
-                    $scope.logs = _.sortBy(response.data.Logs, 'Time').reverse();
-                    $scope.logCount = $scope.logs.length;
-                    setCurrentPage(1);
-                    $scope.haveLogs = true;
-                },
-                (error) => {
-                    notification.error(I18N.logging.error);
-                    $log.error(error);
-                }
-            )
+            Logs.get().then((response) => {
+                $scope.logs = _.sortBy(response.data.Logs, 'Time').reverse();
+                $scope.logCount = $scope.logs.length;
+                setCurrentPage(1);
+                $scope.haveLogs = true;
+            })
         );
     };
 
@@ -239,12 +231,7 @@ function SecurityController(
     };
 
     $scope.revokeOthers = () => {
-        const promise = activeSessionsModel
-            .revokeOthers()
-            .then(() => notification.success(I18N.revoke.successOthers))
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || I18N.revoke.error);
-            });
+        const promise = activeSessionsModel.revokeOthers().then(() => notification.success(I18N.revoke.successOthers));
 
         networkActivityTracker.track(promise);
     };
@@ -281,12 +268,7 @@ function SecurityController(
     };
 
     $scope.revoke = (uid) => {
-        const promise = activeSessionsModel
-            .revoke(uid)
-            .then(() => notification.success(I18N.revoke.success))
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || I18N.revoke.error);
-            });
+        const promise = activeSessionsModel.revoke(uid).then(() => notification.success(I18N.revoke.success));
 
         networkActivityTracker.track(promise);
     };
