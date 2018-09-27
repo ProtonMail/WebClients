@@ -19,7 +19,7 @@ describe('listToString', async () => {
 
     it('should do commas correctly', async () => {
         const combined = listToString(['Rembrandt', 'Vermeer', 'van Gogh', 'Mondriaan']);
-        expect(combined).toBe('Rembrandt, Vermeer, van Gogh, and Mondriaan');
+        expect(combined).toBe('Rembrandt, Vermeer, van Gogh and Mondriaan');
     });
 
     it('should handle nesting correctly', async () => {

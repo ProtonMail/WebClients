@@ -6,7 +6,7 @@ describe('createCancellationToken', () => {
 
     it('should not throw an error when not cancelling', () => {
         const token = createCancellationToken();
-        expect(token.check).to.not.throw();
+        expect(token.check).not.toThrow();
         expect(token.isCancelled()).toBe(false);
     });
 
@@ -14,7 +14,7 @@ describe('createCancellationToken', () => {
     it('should throw an error when cancelling', async () => {
         const token = createCancellationToken();
         token.cancel('Hello world');
-        expect(token.check).to.throw();
+        expect(token.check).toThrow();
         expect(token.isCancelled()).toBe(true);
     });
 
@@ -22,11 +22,11 @@ describe('createCancellationToken', () => {
         const token = createCancellationToken();
         token.cancel('Hello world');
         // should resolve immediately
-        const result = await Promise.all([token.getCancelEvent(), delay('Bye world', 10)]);
+        const result = await Promise.race([token.getCancelEvent(), delay('Bye world', 10)]);
         expect(result).toBe('Hello world');
 
         // should resolve immediately the second time too
-        const result2 = await Promise.all([token.getCancelEvent(), delay('Bye world', 10)]);
+        const result2 = await Promise.race([token.getCancelEvent(), delay('Bye world', 10)]);
         expect(result2).toBe('Hello world');
     });
 });
