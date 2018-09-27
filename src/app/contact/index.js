@@ -59,6 +59,7 @@ import contactViewItem from './directives/contactViewItem';
 import contactViewType from './filters/contactViewType';
 import contactActionHeader from './directives/contactActionHeader';
 import contactEncryptionSettings from './services/contactEncryptionSettings';
+import contactEncryptionAddressMap from './factories/contactEncryptionAddressMap';
 import contactMimetypeSelector from './directives/contactMimetypeSelector';
 import contactEncryptionModel from './factories/contactEncryptionModel';
 import contactEncryptToggle from './directives/contactEncryptToggle';
@@ -134,6 +135,7 @@ export default angular
     .factory('contactSpam', contactSpam)
     .factory('contactKeyAssigner', contactKeyAssigner)
     .factory('contactKeyManager', contactKeyManager)
+    .factory('contactEncryptionAddressMap', contactEncryptionAddressMap)
     .filter('contact', contactFilter)
     .filter('spam', spam)
     .factory('contactAskEncryption', contactAskEncryption)

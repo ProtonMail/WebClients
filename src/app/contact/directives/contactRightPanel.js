@@ -1,5 +1,12 @@
 /* @ngInject */
-function contactRightPanel(dispatchers, contactCache, $stateParams, Contact) {
+function contactRightPanel(
+    dispatchers,
+    contactCache,
+    $stateParams,
+    Contact,
+    contactEncryptionAddressMap,
+    networkActivityTracker
+) {
     const HIDE_CLASS = 'contactRightPanel-placeholder-hidden';
 
     const getMode = (current) => (current === 'edition' ? 'view' : 'edition');
@@ -52,11 +59,14 @@ function contactRightPanel(dispatchers, contactCache, $stateParams, Contact) {
                 }
             };
 
-            const load = () => {
-                contactCache.find($stateParams.id).then((data) => {
-                    scope.$applyAsync(() => {
-                        scope.contact = data;
-                    });
+            const load = async () => {
+                const promise = Contact.get($stateParams.id);
+                networkActivityTracker.track(promise);
+                const data = await promise;
+
+                contactEncryptionAddressMap.init($stateParams.id, data.vCard);
+                scope.$applyAsync(() => {
+                    scope.contact = data;
                 });
             };
 
@@ -72,6 +82,7 @@ function contactRightPanel(dispatchers, contactCache, $stateParams, Contact) {
                         ...contact,
                         Cards: data.cards
                     }).then((data) => {
+                        contactEncryptionAddressMap.init(scope.contact.ID, data);
                         scope.$applyAsync(() => {
                             scope.contact = data;
                         });

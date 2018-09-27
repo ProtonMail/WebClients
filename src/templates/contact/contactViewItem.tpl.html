@@ -47,4 +47,10 @@
                 ng-repeat="detail in ::formatAddress(info.value) track by $index">{{::detail}}</li>
         </ul>
     </address>
+
+    <advanced-settings-btn
+        class="contactItem-btn-settings"
+        ng-if="type === 'email' && !isOwnAddress(info.value)"
+        data-contact="contact"
+        data-model="info"></advanced-settings-btn>
 </li>

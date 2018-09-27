@@ -3,7 +3,10 @@ import { CONTACT_SETTINGS_DEFAULT } from '../../constants';
 import { ADVANCED_SENDING_KEYS } from '../../../helpers/vCardFields';
 
 /* @ngInject */
-function contactEncryptionSaver(Contact, contactEncryptionModel, dispatchers, vcard) {
+function contactEncryptionSaver(contactEncryptionModel, dispatchers, vcard, $injector, notification, gettextCatalog) {
+    const I18N = {
+        SUCCESS_ADVANCED_SAVED: gettextCatalog.getString('Advanced settings saved', null, 'Info')
+    };
     const vcardService = vcard;
     const { dispatcher } = dispatchers(['contacts']);
     const FIELDS_MAP = contactEncryptionModel.getMap();
@@ -50,18 +53,20 @@ function contactEncryptionSaver(Contact, contactEncryptionModel, dispatchers, vc
      * Save the contact encryption settings for email at index `index`.
      * @param {Object} model The model that encodes all the current information set
      * @param {String} ID The ID of the contact
+     * @param {vCard} card The vCard representing this contact
      * @param {String} email
      * @returns {Promise.<void>}
      */
-    const save = async (model, ID, email) => {
-        const contact = await Contact.get(ID);
-        const newCard = build(contact.vCard, email, model);
+    const save = async (model, { ID, vCard }, email) => {
+        const Contact = $injector.get('Contact');
+        const newCard = build(vCard, email, model);
         const { Contact: data, cards } = await Contact.updateUnencrypted({
             ID,
             vCard: newCard
         });
 
         dispatcher.contacts('contactUpdated', { contact: data, cards });
+        notification.success(I18N.SUCCESS_ADVANCED_SAVED);
     };
 
     return { save, build };

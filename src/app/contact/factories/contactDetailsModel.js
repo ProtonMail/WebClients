@@ -1,11 +1,18 @@
 import _ from 'lodash';
 
-import { VCARD_KEYS } from '../../constants';
+import { VCARD_KEYS, CONTACT_ADD_ID } from '../../constants';
 import { unescapeValue, escapeValue, cleanValue } from '../../../helpers/vcard';
 import { getKeys, getHumanFields, isPersonalsKey, FIELDS, toHumanKey } from '../../../helpers/vCardFields';
 
 /* @ngInject */
-function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalog, vcard) {
+function contactDetailsModel(
+    contactTransformLabel,
+    contactSchema,
+    gettextCatalog,
+    vcard,
+    contactEncryptionAddressMap,
+    contactEncryptionSaver
+) {
     const vcardService = vcard;
 
     const I18N = {
@@ -52,23 +59,13 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
         return params;
     }
 
-    const settingValue = (value) => {
-        switch (typeof value) {
-            case 'boolean':
-                return JSON.stringify(value);
-            case 'object':
-                return value.value;
-            default:
-                return value;
-        }
-    };
-
     /**
      * Prepare the request before to send to the BE
      * @return {Object} params
      */
     function prepare(scope) {
         const params = angular.copy(contactSchema.contactAPI);
+        const contactID = scope.contact.ID || CONTACT_ADD_ID;
 
         Object.keys(scope.model).forEach((key) => {
             const child = scope.model[key];
@@ -81,24 +78,15 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
                             return;
                         }
                         const vCardArgs = getParams(item, child.length > 1 && index + 1);
+
                         const emailProperty = new vCard.Property(type, escapeValue(email), vCardArgs);
                         emailProperty.group = `item${index + 1}`;
-                        params.vCard.addProperty(emailProperty);
+                        const helperCard = new vCard();
+                        helperCard.addProperty(emailProperty);
 
-                        // If we create a new contact and edit advanced settings
-                        if (scope.advancedSettingsCard) {
-                            const data = scope.advancedSettingsCard.data;
-                            Object.keys(data).forEach((key) => {
-                                const prop = data[key];
-                                const encryptProperty = new vCard.Property(
-                                    prop.getField(),
-                                    settingValue(escapeValue(prop.valueOf()))
-                                );
-
-                                encryptProperty.group = emailProperty.group;
-                                params.vCard.addProperty(encryptProperty);
-                            });
-                        }
+                        const contactEncryptModel = contactEncryptionAddressMap.get(contactID, email);
+                        const card = contactEncryptionSaver.build(helperCard, email, contactEncryptModel);
+                        params.vCard = vcardService.merge([params.vCard, card]);
                     });
                     break;
                 case 'Tels':

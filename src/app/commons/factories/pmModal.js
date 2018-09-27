@@ -67,6 +67,10 @@ function pmModal(
                 on('logout', () => {
                     deactivate();
                 });
+
+                on('$stateChangeSuccess', () => {
+                    deactivate();
+                });
             });
         }
 

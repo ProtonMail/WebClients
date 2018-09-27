@@ -1,22 +1,22 @@
-import { normalizeEmail } from '../../../helpers/string';
+import { CONTACT_ADD_ID } from '../../constants';
 
 /* @ngInject */
 function contactEncryptionSettings(
     keyCache,
     contactEncryptionModal,
-    contactEncryptionModel,
     contactEncryptionSaver,
+    contactEncryptionAddressMap,
     networkActivityTracker
 ) {
     /**
      * Get keys and format the model for the modal
      * @param  {String} email
-     * @param  {contact} settings Settings (Keys, Scheme, Sign...)
+     * @param  {String} id contact id
      * @return {Object}
      */
-    const loadConfig = async (email, contact) => {
+    const loadConfig = async (email, id) => {
         const keys = await keyCache.getKeysPerEmail(email);
-        const model = contactEncryptionModel.prepare(contact.vCard, normalizeEmail(email));
+        const model = contactEncryptionAddressMap.get(id, email);
         return { keys, model };
     };
 
@@ -28,19 +28,18 @@ function contactEncryptionSettings(
      * @return {Promise}                 return the new model with { Keys, Sign etc.}
      */
     const get = async ({ value: email } = {}, contact) => {
-        const { model, keys: internalKeys } = await networkActivityTracker.track(loadConfig(email, contact));
+        const directSave = !!contact.ID;
+        const contactId = contact.ID || CONTACT_ADD_ID;
+        const { model, keys: internalKeys } = await networkActivityTracker.track(loadConfig(email, contactId));
 
         return new Promise((resolve, reject) => {
-            const directSave = !!contact.ID;
+            const saveData = async (model) => {
+                contactEncryptionAddressMap.set(contactId, email, model);
 
-            const getData = (model) => {
                 if (directSave) {
-                    const promise = contactEncryptionSaver.save(model, contact.ID, email);
-                    networkActivityTracker.track(promise);
-                    return { model };
+                    const promise = contactEncryptionSaver.save(model, contact, email);
+                    await networkActivityTracker.track(promise);
                 }
-                const vCard = contactEncryptionSaver.build(contact.vCard, email, model);
-                return { model, vCard };
             };
 
             contactEncryptionModal.activate({
@@ -50,7 +49,8 @@ function contactEncryptionSettings(
                     model,
                     directSave,
                     save(model) {
-                        resolve(getData(model));
+                        saveData(model);
+                        resolve();
                         contactEncryptionModal.deactivate();
                     },
                     close() {

@@ -123,12 +123,6 @@ function contactCache(
         return promise;
     }
 
-    function find(id) {
-        const promise = Contact.get(id);
-        networkActivityTracker.track(promise);
-        return promise;
-    }
-
     /**
      * Sync the collection and auto select the last contact
      * added if it exists.
@@ -302,8 +296,6 @@ function contactCache(
         clear();
     });
 
-    const getContact = (ID) => CACHE.map.all[ID];
-
-    return { hydrate, isHydrated, clear, get, total, paginate, load, find, getItem, getContact };
+    return { hydrate, isHydrated, clear, get, total, paginate, load, getItem };
 }
 export default contactCache;
