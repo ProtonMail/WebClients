@@ -17,38 +17,41 @@ function contactEncryptionModel(mailSettingsModel, vcard) {
     const vcardService = vcard;
 
     /**
+     * Returns the default values of the encryption model
+     * @return {Object}
+     */
+    const getDefaultValues = () => {
+        return {
+            Keys: [],
+            Sign: mailSettingsModel.get('Sign') === 1,
+            Encrypt: false,
+            MIMEType: CONTACT_SETTINGS_DEFAULT,
+            Scheme: CONTACT_SETTINGS_DEFAULT
+        };
+    };
+    /**
      * Helper to build the model injected inside contactEncryptionModal
      * @param {Array} properties
      * @return {Object} model { Encrypt: true, Sign: false, Keys: [], ... }
      */
     const buildModel = (properties = []) => {
         // Use reduceRight() to use the first property of each field
-        return properties.reduceRight(
-            (acc, property) => {
-                const field = property.getField();
-                const value = property.valueOf();
+        return properties.reduceRight((acc, property) => {
+            const field = property.getField();
+            const value = property.valueOf();
 
-                if (field === 'key') {
-                    // We do unshift() to keep the pref order
-                    acc.Keys.unshift(cleanValue(value));
-                    return acc;
-                }
-
-                const key = FIELDS_MAP[field];
-                acc[key] = cleanValue(value, field);
-
+            if (field === 'key') {
+                // We do unshift() to keep the pref order
+                acc.Keys.unshift(cleanValue(value));
                 return acc;
-            },
-            {
-                Keys: [],
-                Sign: mailSettingsModel.get('Sign') === 1,
-                Encrypt: false,
-                MIMEType: CONTACT_SETTINGS_DEFAULT,
-                Scheme: CONTACT_SETTINGS_DEFAULT
             }
-        );
-    };
 
+            const key = FIELDS_MAP[field];
+            acc[key] = cleanValue(value, field);
+
+            return acc;
+        }, getDefaultValues());
+    };
     /**
      * Prepare data to be injected inside contactEncryptionModal
      * @param {vCard} vcard
@@ -76,6 +79,6 @@ function contactEncryptionModel(mailSettingsModel, vcard) {
 
     const getMap = () => FIELDS_MAP;
 
-    return { prepare, getMap };
+    return { prepare, getMap, getDefaultValues };
 }
 export default contactEncryptionModel;

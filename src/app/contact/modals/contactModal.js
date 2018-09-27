@@ -1,5 +1,7 @@
+import { CONTACT_ADD_ID } from '../../constants';
+
 /* @ngInject */
-function contactModal($state, dispatchers, gettextCatalog, notification, pmModal) {
+function contactModal($state, dispatchers, gettextCatalog, notification, pmModal, contactEncryptionAddressMap) {
     const I18N = {
         contactAdded: gettextCatalog.getString('Contact added', null, 'Success message for the contact modal'),
         contactError: gettextCatalog.getString('Error with the request', null, 'Default error for the contact modal')
@@ -30,6 +32,7 @@ function contactModal($state, dispatchers, gettextCatalog, notification, pmModal
             });
 
             this.contact = params.contact;
+            contactEncryptionAddressMap.init(CONTACT_ADD_ID, this.contact.vCard);
             this.cancel = params.close;
             this.submit = () => dispatcher.contacts('submitContactForm');
             this.$onDestroy = () => {

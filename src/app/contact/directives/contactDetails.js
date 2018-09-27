@@ -145,11 +145,6 @@ function contactDetails(
                 if (type === 'contactUpdated' && data.contact.ID === scope.contact.ID) {
                     updateType(data.cards.map(({ Type }) => Type));
                 }
-
-                // Only when we create a new contact
-                if (type === 'advancedSettings.set') {
-                    scope.advancedSettingsCard = data.vCard;
-                }
             });
 
             on('hotkeys', (e, { type = '' }) => {
@@ -159,6 +154,10 @@ function contactDetails(
             });
 
             on('$stateChangeStart', (event, toState, toParams) => {
+                // Do not ask for contacts that are new
+                if (!scope.state.ID) {
+                    return;
+                }
                 if (scope.contactForm.$dirty) {
                     event.preventDefault();
                     saveBeforeToLeave(toState, toParams);

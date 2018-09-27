@@ -1,7 +1,7 @@
 import { isOwnAddress } from '../../../helpers/address';
 
 /* @ngInject */
-function advancedSettingsBtn(contactEncryptionSettings, addressesModel, keyCache, dispatchers) {
+function advancedSettingsBtn(contactEncryptionSettings, addressesModel, keyCache) {
     return {
         scope: {
             contact: '=',
@@ -11,8 +11,6 @@ function advancedSettingsBtn(contactEncryptionSettings, addressesModel, keyCache
         restrict: 'E',
         templateUrl: require('../../../templates/contact/advancedSettingsBtn.tpl.html'),
         link(scope, el) {
-            const { dispatcher } = dispatchers(['contacts']);
-
             scope.isOwnAddress = (email) => {
                 const address = addressesModel.getByEmail(email);
                 const keys = keyCache.getUserAddressesKeys(address) || {};
@@ -21,18 +19,7 @@ function advancedSettingsBtn(contactEncryptionSettings, addressesModel, keyCache
 
             const onClick = async () => {
                 try {
-                    const data = await contactEncryptionSettings({ ...scope.model }, scope.contact);
-
-                    data.vCard &&
-                        dispatcher.contacts('advancedSettings.set', {
-                            contact: scope.contact,
-                            vCard: data.vCard
-                        });
-
-                    // Ensure we sync the view -> when we create a contact only
-                    scope.$applyAsync(() => {
-                        data.vCard && (scope.contact.vCard = data.vCard);
-                    });
+                    await contactEncryptionSettings({ ...scope.model }, scope.contact);
                 } catch (e) {
                     // noop
                 }
