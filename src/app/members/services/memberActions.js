@@ -61,7 +61,7 @@ function memberActions(
         ACTION_REMOVE: {
             title: gettextCatalog.getString('Remove user', null, 'Title'),
             message: gettextCatalog.getString(
-                'Are you sure you want to permanently remove this user from your organization? They will lose access to any addresses belonging to your organization.',
+                'Are you sure you want to permanently remove this user from your organization? The user will lose access to all the addresses of your organization.',
                 null,
                 'Info'
             )
