@@ -328,7 +328,10 @@ function eventManager(
         STATE.notification = notify({
             templateUrl: require('../../../templates/notifications/retry.tpl.html'),
             duration: '0',
-            onClick: loop
+            onClick() {
+                closeRetryNotification();
+                loop();
+            }
         });
     };
 
