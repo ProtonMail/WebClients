@@ -57,7 +57,7 @@ function actionConversation(
         }
 
         const events = ids.reduce((acc, ID) => {
-            const messages = cache.queryMessagesCached(ID, false);
+            const messages = cache.queryMessagesCached(ID);
             dispatcher.deleteConversation('delete', ID); // Close composer
             _.each(messages, ({ ID }) => acc.push({ Action: 0, ID }));
             acc.push({ Action: 0, ID });
@@ -136,7 +136,7 @@ function actionConversation(
         const events = ids.reduce((acc, ID) => {
             const { Labels = [] } = cache.getConversationCached(ID) || {};
 
-            _.each(cache.queryMessagesCached(ID, false), ({ ID }) => {
+            _.each(cache.queryMessagesCached(ID), ({ ID }) => {
                 acc.push({
                     ID,
                     Action: 3,
