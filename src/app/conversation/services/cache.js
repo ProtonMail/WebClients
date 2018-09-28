@@ -250,7 +250,7 @@ function cache(
         }
 
         const { Labels = [] } = api.getConversationCached(conversationID) || {};
-        const messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
+        const messages = api.queryMessagesCached(conversationID, false); // messages are ordered by -Time
 
         if (messages.length) {
             Labels.forEach(({ ID }) => {
