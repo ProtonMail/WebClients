@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { flow, filter, reduce, sortBy, last, map } from 'lodash/fp';
+import { flow, forEach, filter, reduce, sortBy, last, map } from 'lodash/fp';
 
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
@@ -87,17 +87,19 @@ function actionConversation(
             const { Labels = [] } = cache.getConversationCached(ID) || {};
 
             if (messages.length) {
-                const { ID } = flow(
-                    filter(({ LabelIDs = [] }) => _.includes(LabelIDs, currentLocation)),
-                    sortBy(({ Time }) => Time),
-                    last
-                )(messages);
+                const { ID } =
+                    flow(
+                        filter(({ LabelIDs = [] }) => _.includes(LabelIDs, currentLocation)),
+                        sortBy(({ Time }) => Time),
+                        last
+                    )(messages) || {};
 
-                acc.push({
-                    ID,
-                    Action: 3,
-                    Message: { ID, Unread: 1 }
-                });
+                ID &&
+                    acc.push({
+                        ID,
+                        Action: 3,
+                        Message: { ID, Unread: 1 }
+                    });
             }
 
             acc.push({
@@ -107,7 +109,7 @@ function actionConversation(
                     ID,
                     Labels: _.map(Labels, (label) => {
                         if (label.ID === currentLocation || label.ID === MAILBOX_IDENTIFIERS.allmail) {
-                            label.ContextNumUnread++; // FIXME calculate the correct number
+                            label.ContextNumUnread++;
                         }
                         return label;
                     })
@@ -126,6 +128,7 @@ function actionConversation(
     function read(ids = []) {
         const currentLocation = tools.currentLocation();
         const promise = conversationApi.read(ids);
+
         cache.addToDispatcher(promise);
 
         if (!tools.cacheContext()) {
@@ -135,14 +138,20 @@ function actionConversation(
 
         const events = ids.reduce((acc, ID) => {
             const { Labels = [] } = cache.getConversationCached(ID) || {};
+            const messages = cache.queryMessagesCached(ID);
 
-            _.each(cache.queryMessagesCached(ID), ({ ID }) => {
-                acc.push({
-                    ID,
-                    Action: 3,
-                    Message: { ID, Unread: 0 }
-                });
-            });
+            if (messages.length) {
+                flow(
+                    filter(({ LabelIDs = [] }) => _.includes(LabelIDs, currentLocation)),
+                    forEach(({ ID }) => {
+                        acc.push({
+                            ID,
+                            Action: 3,
+                            Message: { ID, Unread: 0 }
+                        });
+                    })
+                )(messages);
+            }
 
             acc.push({
                 Action: 3,
