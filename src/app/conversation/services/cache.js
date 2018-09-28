@@ -723,10 +723,10 @@ function cache(
     /**
      * Return a copy of messages cached for a specific ConversationID
      * @param {String} conversationID
-     * @param {Boolean} loaded - Set it to `false` if you plan to use only the `ID`
+     * @param {Boolean} loaded
      * @return {Array}
      */
-    api.queryMessagesCached = (ConversationID = '', loaded = true) => {
+    api.queryMessagesCached = (ConversationID = '', loaded) => {
         const parameters = loaded ? { ConversationID, loaded } : { ConversationID };
         const list = api.orderMessage(_.filter(messagesCached, parameters));
         return list.map(messageModel);
@@ -752,7 +752,7 @@ function cache(
      */
     api.getConversation = (ID) => {
         const conversation = _.find(conversationsCached, { ID }) || {};
-        const messages = api.queryMessagesCached(ID); // messages are ordered by -Time
+        const messages = api.queryMessagesCached(ID, true); // messages are ordered by -Time
 
         if (conversation.loaded === true && messages.length === conversation.NumMessages) {
             return Promise.resolve(angular.copy(conversation));
