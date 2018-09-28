@@ -32,7 +32,7 @@ function bugReportModel(
         params: {
             form: bugReportApi.getForm(),
             content,
-            submit: async function(data) {
+            async submit(data) {
                 bugModal.deactivate();
                 const formData = await bugReportApi.toFormData(data);
                 bugReportApi.report(formData);

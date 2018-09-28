@@ -5,7 +5,7 @@ import { uniqGroups } from '../../../helpers/vcard';
 import { PACKAGE_TYPE } from '../../constants';
 
 /* @ngInject */
-function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncryption, contactKeyAssigner, vcard) {
+function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncryptionModal, contactKeyAssigner, vcard) {
     const asyncSequentialMap = (list, asyncFunction) =>
         list.reduce((lastProcess, element) => {
             return lastProcess.then((accumulator) => {
@@ -15,12 +15,12 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
 
     const encryptModal = (email) =>
         new Promise((resolve) =>
-            contactAskEncryption.activate({
+            contactAskEncryptionModal.activate({
                 params: {
                     email,
                     submit(result) {
                         resolve(result);
-                        contactAskEncryption.deactivate();
+                        contactAskEncryptionModal.deactivate();
                     },
                     onEscape: _.noop
                 }

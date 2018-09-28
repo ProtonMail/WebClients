@@ -94,7 +94,7 @@ function addressKeysView(
         unlockUser().then(() =>
             exportPrivateKeyModal.activate({
                 params: {
-                    privateKey: privateKey,
+                    privateKey,
                     export(data) {
                         download(data, email, 'private');
                         exportPrivateKeyModal.deactivate();

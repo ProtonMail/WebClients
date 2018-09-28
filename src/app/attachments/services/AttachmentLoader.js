@@ -35,7 +35,7 @@ function AttachmentLoader(
         if (verified !== null) {
             SignatureVerifier.put(attachment.ID, verified);
         }
-        cache.put(getCacheKey(attachment), { data: data });
+        cache.put(getCacheKey(attachment), { data });
     };
 
     /**

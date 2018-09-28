@@ -42,7 +42,7 @@
     "before": true
   },
   "rules": {
-    "object-shorthand": "off",
+    "object-shorthand": ["error", "always", { "avoidExplicitReturnArrows": true }],
     "arrow-parens": ["error", "always"],
     "comma-dangle": ["error", "never"],
     "no-shadow": ["off", { "hoist": "never", "builtinGlobals": true  }],
@@ -82,5 +82,13 @@
     "operator-linebreak": "off",
     "implicit-arrow-linebreak": "off",
     "no-restricted-globals": ["error", "event"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*Modal.js"],
+      "rules": {
+        "object-shorthand": "off"
+      }
+    }
+  ]
 }

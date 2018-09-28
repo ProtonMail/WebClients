@@ -46,7 +46,7 @@ import contactSelectorModel from './factories/contactSelectorModel';
 import contactSpam from './factories/contactSpam';
 import contactFilter from './filters/contact';
 import spam from './filters/spam';
-import contactAskEncryption from './modals/contactAskEncryption';
+import contactAskEncryptionModal from './modals/contactAskEncryptionModal';
 import contactBeforeToLeaveModal from './modals/contactBeforeToLeaveModal';
 import contactEncryptionModal from './modals/contactEncryptionModal';
 import contactLoaderModal from './modals/contactLoaderModal';
@@ -138,7 +138,7 @@ export default angular
     .factory('contactEncryptionAddressMap', contactEncryptionAddressMap)
     .filter('contact', contactFilter)
     .filter('spam', spam)
-    .factory('contactAskEncryption', contactAskEncryption)
+    .factory('contactAskEncryptionModal', contactAskEncryptionModal)
     .factory('contactBeforeToLeaveModal', contactBeforeToLeaveModal)
     .factory('contactEncryptionModal', contactEncryptionModal)
     .factory('contactLoaderModal', contactLoaderModal)

@@ -145,7 +145,7 @@ function setupKeys(passwords, pmcw, webcrypto, Key, memberApi) {
         });
 
         return {
-            AddressID: AddressID,
+            AddressID,
             UserKey: PrivateKey,
             MemberKey,
             Token

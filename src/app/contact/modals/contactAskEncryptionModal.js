@@ -1,8 +1,8 @@
 /* @ngInject */
-function contactAskEncryption(pmModal) {
+function contactAskEncryptionModal(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: require('../../../templates/contact/contactAskEncryption.tpl.html'),
+        templateUrl: require('../../../templates/contact/contactAskEncryptionModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.email = params.email;
@@ -16,4 +16,4 @@ function contactAskEncryption(pmModal) {
         }
     });
 }
-export default contactAskEncryption;
+export default contactAskEncryptionModal;

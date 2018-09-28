@@ -107,7 +107,7 @@ function squireModalListener(editorModel, editorState, squireExecAction, addLink
                             label,
                             type
                         },
-                        submit: ({ url, label, type }) => {
+                        submit({ url, label, type }) {
                             closeModal();
                             squireExecAction.makeLink(message, {
                                 link: formatLink(url, type),
@@ -115,11 +115,11 @@ function squireModalListener(editorModel, editorState, squireExecAction, addLink
                                 wrap: getSelectedImg(message)
                             });
                         },
-                        delete: () => {
+                        delete() {
                             closeModal();
                             squireExecAction.removeLink(message);
                         },
-                        cancel: () => {
+                        cancel() {
                             closeModal();
                         }
                     }
@@ -140,11 +140,11 @@ function squireModalListener(editorModel, editorState, squireExecAction, addLink
                         image: {
                             src: ''
                         },
-                        submit: ({ src }) => {
+                        submit({ src }) {
                             closeModal();
                             squireExecAction.insertImage(message, { url: src });
                         },
-                        addFile: () => {
+                        addFile() {
                             closeModal();
                             // When the add file button was clicked, check if we are only allowing
                             // data-uri on this message. Then open the file selector and insert the image
@@ -159,7 +159,7 @@ function squireModalListener(editorModel, editorState, squireExecAction, addLink
                                 });
                             }
                         },
-                        cancel: () => {
+                        cancel() {
                             closeModal();
                         }
                     }
