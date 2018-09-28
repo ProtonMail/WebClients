@@ -1,14 +1,43 @@
-# [3.14.13] - 2018-09-20
-
+# [3.14.13] - 2018-09-28
 ## Added
-- Storage limit warning modals
+- UX Improvement - Label creation
+- improvement - make adding filters easier to use
+- Contact key status has an incorrect tooltip
+- Storage warning modal
 
 ## Fixed
-- Add address didn't show an error message for free users
-- Duplicated image on copy/paste in the composer
-- Replying and/or forwarding a message showed a wrong address in some cases
+- Can't create a weekly automatic reply
+- Marking a conversation as unread triggers an error
+- Conversation doesn't move to correct spot and messages/time is not updated
+- Retry action doesn't work
+- Missing strings for localisation in main EN file
+- API V3 Error handling
+- When adding an additional address to a contact, the display format of the addresses is changing.
+- Account can be created with an invalid recovery address
+- Marking a conversation as unread triggers an error
+- Contacts order is not saved
+- The notification element is visible, blocking clicks when it's not displayed
+- Ultra slow typing of recipient in the composer
+- Pressing the ADD ADDRESS in Addresses/Users on a free account does nothing
+- Correction
+- If you copy+paste remote images in the composer, they will show up twice (again)
+- Replying and Forwarding a message displays an incorrect From address after changing the From address
+- Human verification by email displays both "Verification code sent" and "Please use a non-ProtonMail email address"
+
+## Improved
+- Add a contact with advanced settings doesn't work
+- Change the "Reactivate Address Keys" button to "Reactivate Keys"
+- Change the "Reactivate Address Keys" button to "Reactivate Keys"
+
+## Changed
+- toggle for IE11, initial is not supported and autoprefixer is broken
+- listener autocomplete cache
+- refresh cache autocomplete name
+- 401 promise was not cleared in the catch handler
+- Conversation wrapper not flexing the whole height
 - Proton signature toggle was not updating
-- Human verification did not work on Edge browser
+- Human verification fail on Edge
+- Expected locale in underscore
 
 # [3.14.12] - 2018-09-13
 
