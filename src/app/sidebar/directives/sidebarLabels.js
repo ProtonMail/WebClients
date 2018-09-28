@@ -18,7 +18,7 @@ const sidebarLabels = () => ({
                 enable: false
             },
             callbacks: {
-                whileScrolling: function() {
+                whileScrolling() {
                     mcsScroller.setScrollPosition(this.mcs.top);
                 }
             }

@@ -101,7 +101,7 @@ function removeElement(
                 message,
                 title: I18N.TITLE,
                 cancel: confirmModal.deactivate,
-                confirm: async () => {
+                async confirm() {
                     confirmModal.deactivate();
                     await removeList(ids, context, labelID);
 

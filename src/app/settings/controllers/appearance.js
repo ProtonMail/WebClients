@@ -20,9 +20,9 @@ function AppearanceController(
     const { Theme, ComposerMode, ViewLayout, MessageButtons, ViewMode } = mailSettingsModel.get();
     $scope.appearance = {
         cssTheme: Theme,
-        ComposerMode: ComposerMode,
-        ViewLayout: ViewLayout,
-        MessageButtons: MessageButtons,
+        ComposerMode,
+        ViewLayout,
+        MessageButtons,
         viewMode: !ViewMode // BE data is reversed
     };
 

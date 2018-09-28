@@ -103,7 +103,7 @@ export default angular
                         templateUrl: require('../templates/views/unlock.tpl.html')
                     }
                 },
-                onEnter: (AppModel) => {
+                onEnter(AppModel) {
                     AppModel.set('isLoggedIn', true);
                     AppModel.set('domoArigato', true);
                 }

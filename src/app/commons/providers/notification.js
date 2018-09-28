@@ -63,7 +63,7 @@ function notification() {
                 success: action('success'),
                 error: action('error'),
                 info: action('info'),
-                closeAll: () => {
+                closeAll() {
                     // We need to empty our cache as well because the onClose is not called from `closeAll`.
                     cache.removeAll();
                     notify.closeAll();

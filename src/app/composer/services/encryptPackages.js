@@ -94,7 +94,7 @@ function encryptPackages(pmcw, authentication, AttachmentLoader) {
         const publicKeys = _.filter(publicKeysList);
         const { data, sessionKey } = await pmcw.encryptMessage({
             data: pack.Body,
-            publicKeys: publicKeys,
+            publicKeys,
             sessionKey: publicKeys.length ? undefined : await generateSessionKey(),
             privateKeys,
             returnSessionKey: true,
