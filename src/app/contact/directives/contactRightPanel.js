@@ -82,7 +82,7 @@ function contactRightPanel(
                         ...contact,
                         Cards: data.cards
                     }).then((data) => {
-                        contactEncryptionAddressMap.init(scope.contact.ID, data);
+                        contactEncryptionAddressMap.init(scope.contact.ID, data.vCard);
                         scope.$applyAsync(() => {
                             scope.contact = data;
                         });
