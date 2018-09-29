@@ -1,10 +1,12 @@
 # ProtonMail Web Client
 
-[![CircleCI](https://circleci.com/gh/ProtonMail/Angular.svg?style=svg&circle-token=d960b54918d5375b4e7639ca505d14a0e131dc21)](https://circleci.com/gh/ProtonMail/Angular)
+[![CircleCI](https://circleci.com/gh/ProtonMail/Angular.svg?style=svg&circle-token=d960b54918d5375b4e7639ca505d14a0e131dc21)](https://circleci.com/gh/ProtonMail/Angular) 
 
 Official AngularJS web client for the [ProtonMail secure email service](https://protonmail.com). ProtonMail also makes use of [OpenPGPjs](https://github.com/openpgpjs/openpgpjs) as our message cryptography is PGP compliant.
 
 ## Translation
+
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/protonmail/localized.svg)](https://crowdin.com/project/protonmail)
 
 We are currently working with our community to localize ProtonMail from English to most of the world's major languages. If you're interested in being part of this translation project, send us an email to contact@protonmail.ch with the subject line "ProtonMail Translation Project [Your Language]" and we will offer you more information about it.
 
