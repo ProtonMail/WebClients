@@ -19,6 +19,7 @@
                 ng-repeat="(type, value) in model.clear track by type">
 
                 <contact-view-item
+                    data-type="{{::type}}"
                     ng-class="{'contactViewDetail-item-start': !$index}"
                     ng-repeat="info in ::value track by $id(info)"
                     class="contactViewDetail-item"></contact-view-item>

@@ -91,13 +91,20 @@ export const toHumanKey = (key) => {
  * Get keys available for a field or non standards keys
  * @param  {String} field Type of fields (CUSTOMS to list non-standard)
  * @param  {Object} vcard
+ * @param  {Boolean} isPersonnal Filter a key from PERSONNALS
  * @return {Array}
  */
-export function getKeys(field = '', vcard = {}) {
+export function getKeys(field = '', vcard = {}, isPersonnal) {
     // Return non standard keys
     if (field === 'CUSTOMS') {
         return _.difference(Object.keys(vcard.data), STANDARD_KEYS.concat(ADVANCED_SENDING_KEYS));
     }
+
+    // Ensure the field exist inside PERSONNALS
+    if (isPersonnal && isPersonalsKey(field)) {
+        return [field.toLowerCase()];
+    }
+
     return FIELDS[field];
 }
 

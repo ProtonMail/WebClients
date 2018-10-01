@@ -130,8 +130,16 @@ function contactDetailsModel(
         return params;
     }
 
-    function extract({ vcard = new vCard(), field = '', type }) {
-        const keys = getKeys(field, vcard);
+    /**
+     * Extract fields from the vCard
+     * @param  {vCard}   options.vcard
+     * @param  {String}  options.field
+     * @param  {String}  options.type
+     * @param  {Boolean} isPersonnal   field value is a key from PERSONNALS
+     * @return {Array}
+     */
+    function extract({ vcard = new vCard(), field = '', type }, isPersonnal) {
+        const keys = getKeys(field, vcard, isPersonnal);
         const listKeys = keys || (isPersonalsKey(field) ? getKeys('PERSONALS', vcard) : []);
 
         return vcardService.extractProperties(vcard, listKeys).map((property) => buildProperty(property, type));
