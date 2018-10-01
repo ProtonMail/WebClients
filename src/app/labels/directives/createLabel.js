@@ -8,6 +8,7 @@ function createLabel(dispatchers, labelModal) {
                 labels: [{ ...label, Selected: true }]
             });
             dispatcher.closeDropdown();
+            return;
         }
 
         dispatcher.createLabel('new.label', { label });
