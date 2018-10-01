@@ -90,6 +90,7 @@ function contactEditor(
             created: [creationResult],
             errors: [errorResult] = []
         } = await create({ contacts: [contact] });
+
         if (errorResult || !creationResult) {
             const { code, error = I18N.GENERAL_CONTACT_ERROR } = errorResult || {};
             const exception = new Error(error);
@@ -149,7 +150,7 @@ function contactEditor(
                 total,
                 updated: update,
                 removed,
-                errors: errors.map(({ Error }) => Error)
+                errors: errors.map((item) => item.Error)
             };
         } catch (error) {
             return {

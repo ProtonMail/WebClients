@@ -47,6 +47,9 @@
     margin-top: 1rem;
 }
 
+/* We don't want to display more than one name #7485 + #6522 */
+.contactViewDetail-item[data-type="fn"] + [data-type="fn"] { display: none }
+
 .contactViewDetail-icon {
     width: 50px;
     text-align: center;

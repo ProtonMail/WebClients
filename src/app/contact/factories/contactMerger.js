@@ -1,4 +1,5 @@
 import _ from 'lodash';
+
 import duplicateExtractor from '../../../helpers/duplicateExtractor';
 
 /* @ngInject */
@@ -106,7 +107,7 @@ function contactMerger(
      * @return {vCard} the new vCard instance
      */
     function getMergedContact(contacts = []) {
-        return vcard.merge(contacts.map(({ vCard }) => vCard));
+        return vcard.merge(_.map(contacts, 'vCard'));
     }
 
     /**
@@ -120,16 +121,23 @@ function contactMerger(
             if (selected.length <= 1) {
                 return;
             }
-            // Merge the vCards together, and create the update contact in the way the API expects.
-            const update = contactSchema.prepareContact(getMergedContact(selected));
-            // The first selected contact is the one that will be updated.
-            // Set the ID on the "new" contact (the one to update).
-            update.ID = selected[0].id;
-            return update;
+
+            /*
+                Merge the vCards together, and create the update contact in the way the API expects.
+                The first selected contact is the one that will be updated.
+                Set the ID on the "new" contact (the one to update).
+             */
+            return {
+                ...contactSchema.prepareContact(getMergedContact(selected)),
+                ID: selected[0].id
+            };
         };
 
-        // Contacts to remove are the selected contacts (except the first one, because it is the target for the merge)
-        // + the contacts selected for deletion.
+        /*
+            Contacts to remove are the selected contacts
+            (except the first one, because it is the target for the merge)
+            + the contacts selected for deletion.
+         */
         const getContactsToRemove = (selected = [], deleted = []) =>
             selected
                 .slice(1)
@@ -208,7 +216,7 @@ function contactMerger(
      */
     async function doMerge(groups) {
         const duplicateGroups = prepareGroups(groups);
-        if (Object.keys(duplicateGroups).length === 0) {
+        if (!Object.keys(duplicateGroups).length) {
             throw new Error('Not enough contacts selected');
         }
         return contactEditor.merge(prepareMerge(duplicateGroups));
@@ -256,6 +264,7 @@ function contactMerger(
                     if (selectedContacts.length <= 1) {
                         return;
                     }
+
                     showContactPreviewModal(
                         getMergedContact(selectedContacts),
                         getPreviewMergeCallback(group, groupName, mergeGroupSuccess)
