@@ -92,7 +92,7 @@ function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notificati
 
             on('createLabel', (e, { type, data = {} }) => {
                 if (type === 'new.label') {
-                    scope.labels.push({ ...data.label, Selected: true });
+                    scope.labels && scope.labels.push({ ...data.label, Selected: true });
                 }
             });
 
