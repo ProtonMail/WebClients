@@ -1741,7 +1741,7 @@ msgid "Upgrade account"
 msgstr ""
 
 #: ./src/templates/contact/contactEncrypted.tpl.html:15
-#: ./src/templates/contact/contactViewDetail.tpl.html:43
+#: ./src/templates/contact/contactViewDetail.tpl.html:44
 msgctxt "Action"
 msgid "Upgrade now"
 msgstr ""
@@ -4613,7 +4613,7 @@ msgctxt "Info"
 msgid "Are you sure you want to clear all your logs?"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:318
+#: ./src/app/contact/factories/contactEditor.js:319
 msgctxt "Info"
 msgid "Are you sure you want to delete all your contacts?"
 msgstr ""
@@ -4624,7 +4624,7 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this address?"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:319
+#: ./src/app/contact/factories/contactEditor.js:320
 msgctxt "Info"
 msgid "Are you sure you want to delete this contact?"
 msgid_plural "Are you sure you want to delete the selected contacts?"
@@ -5545,7 +5545,7 @@ msgstr ""
 
 #: ./src/app/bridge/directives/bridgeFreePanel.js:4
 #: ./src/templates/contact/contactEncrypted.tpl.html:20
-#: ./src/templates/contact/contactViewDetail.tpl.html:44
+#: ./src/templates/contact/contactViewDetail.tpl.html:45
 msgctxt "Info"
 msgid "This feature is only available for paid users."
 msgstr ""
@@ -5856,7 +5856,7 @@ msgctxt "Info"
 msgid "You have no custom filters."
 msgstr ""
 
-#: ./src/app/contact/factories/contactMerger.js:19
+#: ./src/app/contact/factories/contactMerger.js:20
 msgctxt "Info"
 msgid "You have no duplicate contacts"
 msgstr ""
@@ -7746,7 +7746,7 @@ msgctxt "Subtitle advanced settings"
 msgid "Configure External PGP (optional)"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:280
+#: ./src/app/contact/factories/contactEditor.js:281
 msgctxt "Success"
 msgid "All contacts deleted"
 msgstr ""
@@ -7771,7 +7771,7 @@ msgctxt "Success"
 msgid "Code applied"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:281
+#: ./src/app/contact/factories/contactEditor.js:282
 msgctxt "Success"
 msgid "Contact deleted"
 msgid_plural "Contacts deleted"
@@ -8459,7 +8459,7 @@ msgid "Decrypt message"
 msgstr ""
 
 #: ./src/app/composer/controllers/composeMessage.js:571
-#: ./src/app/contact/factories/contactEditor.js:329
+#: ./src/app/contact/factories/contactEditor.js:330
 #: ./src/app/elements/services/removeElement.js:15
 msgctxt "Title"
 msgid "Delete"
@@ -8485,7 +8485,7 @@ msgctxt "Title"
 msgid "Delete address"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:328
+#: ./src/app/contact/factories/contactEditor.js:329
 #: ./src/app/elements/directives/advancedFilterElement.js:51
 msgctxt "Title"
 msgid "Delete all"
@@ -8943,7 +8943,7 @@ msgctxt "Title"
 msgid "Manage your email with folders and labels"
 msgstr ""
 
-#: ./src/app/contact/factories/contactMerger.js:18
+#: ./src/app/contact/factories/contactMerger.js:19
 msgctxt "Title"
 msgid "Merge contacts"
 msgstr ""
@@ -9807,7 +9807,7 @@ msgctxt "Tooltip"
 msgid "Edit contact"
 msgstr ""
 
-#: ./src/templates/contact/contactViewDetail.tpl.html:33
+#: ./src/templates/contact/contactViewDetail.tpl.html:34
 msgctxt "Tooltip"
 msgid "Encrypted data with verified digital signature"
 msgstr ""
