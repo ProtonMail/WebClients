@@ -93,11 +93,10 @@ function contactDetailsModel(
                 case 'Adrs':
                     child.forEach((item, index) => {
                         if (item.value) {
-                            params.vCard.add(
-                                item.type,
-                                _.dropRightWhile(escapeValue(item.value), (adr) => !adr), // Remove empty lines from the end
-                                getParams(item, child.length > 1 && index + 1)
-                            );
+                            const value = escapeValue(item.value);
+                            // Remove empty lines from the end for addresses
+                            const val = key === 'Adrs' ? _.dropRightWhile(value, (adr) => !adr) : value;
+                            params.vCard.add(item.type, val, getParams(item, child.length > 1 && index + 1));
                         }
                     });
                     break;
