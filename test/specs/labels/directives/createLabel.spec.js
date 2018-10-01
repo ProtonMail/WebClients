@@ -227,8 +227,8 @@ describe('CreateLabel directive', () => {
                 });
             });
 
-            it('should emit 3 events: messageActions, closeDropdown and createLabel', () => {
-                expect(rootScope.$emit).toHaveBeenCalledTimes(3);
+            it('should emit 2 events: messageActions, closeDropdown and createLabel', () => {
+                expect(rootScope.$emit).toHaveBeenCalledTimes(2);
             });
         });
 
