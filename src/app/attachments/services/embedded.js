@@ -1,5 +1,5 @@
 import { isInlineEmbedded } from '../../../helpers/imageHelper';
-import { escapeSrc } from '../../../helpers/domHelper';
+import { escapeSrc, unescapeSrc } from '../../../helpers/domHelper';
 
 /* @ngInject */
 function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) {
@@ -16,7 +16,7 @@ function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) 
      * @param  {String} text      Alternative body to parse
      * @return {Promise}
      */
-    const parser = (message, { direction = 'blob', text = '', isOutside = false } = {}) => {
+    const parser = async (message, { direction = 'blob', text = '', isOutside = false } = {}) => {
         const content = text || message.getDecryptedBody();
 
         testDiv.innerHTML = escapeSrc(content); // We don't use embeddedUtils.getBodyParser because the content is already cleaned
@@ -29,19 +29,17 @@ function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) 
              * Don't do it everytime because it's "slow" and we don't want to slow down the process.
              */
             if (isOutside) {
-                return Promise.resolve(embeddedParser.escapeHTML(message, direction, testDiv));
+                embeddedParser.mutateHTML(message, direction, testDiv);
+                return unescapeSrc(testDiv.innerHTML);
             }
 
-            return Promise.resolve(content);
+            return content;
         }
 
-        return embeddedParser
-            .decrypt(message)
-            .then(() => embeddedParser.escapeHTML(message, direction, testDiv))
-            .catch((error) => {
-                console.error(error);
-                throw error;
-            });
+        await embeddedParser.decrypt(message);
+
+        embeddedParser.mutateHTML(message, direction, testDiv);
+        return unescapeSrc(testDiv.innerHTML);
     };
 
     const addEmbedded = (message, cid, data, MIME) => {

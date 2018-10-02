@@ -12,7 +12,7 @@ import './composer/directives/composer.spec';
 import './user/factories/storageWarning.spec';
 import './labels/factories/labelsModel.spec';
 import './labels/directives/createLabel.spec';
-import './attachments/embedded.spec';
+import './attachments/embeddedParser.spec';
 import './message/services/transformBase.spec';
 import './message/services/transformLinks.spec';
 import './message/services/transformEmbedded.spec';
