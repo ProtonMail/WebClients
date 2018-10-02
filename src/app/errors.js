@@ -39,3 +39,12 @@ export const EVENT_ERRORS = {
     MAIL: 1,
     CONTACTS: 2
 };
+
+export const USERNAME_STATUS = {
+    AVAILABLE: 0,
+    INVALID_CHARACTERS: 1,
+    START_SPECIAL_CHARACTER: 2,
+    END_SPECIAL_CHARACTER: 3,
+    TOO_LONG: 4,
+    ALREADY_USED: 5
+};
