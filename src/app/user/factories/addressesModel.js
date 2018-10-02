@@ -6,8 +6,8 @@ import { removeEmailAlias } from '../../../helpers/string';
 const { PREMIUM } = ADDRESS_TYPE;
 
 /* @ngInject */
-function addressesModel(Address, authentication, dispatchers, formatKeys, prepareDraft) {
-    const { dispatcher, on } = dispatchers(['addressesModel']);
+function addressesModel(Address, authentication, dispatchers, formatKeys) {
+    const { dispatcher, on } = dispatchers(['addressesModel', 'prepareDraft']);
     let CACHE = {};
     const sortByOrder = (addresses = []) => _.sortBy(addresses, 'Order');
 
@@ -23,7 +23,7 @@ function addressesModel(Address, authentication, dispatchers, formatKeys, prepar
 
         return formatKeys(sortedAddresses).then((formattedAddresses) => {
             CACHE[user.ID] = formattedAddresses;
-            prepareDraft.init(); // Prepare draft to accelerate the composer open process
+            dispatcher.prepareDraft('init'); // Prepare draft to accelerate the composer open process
             !noEvent && dispatcher.addressesModel('addresses.updated', { addresses: formattedAddresses });
         });
     };
