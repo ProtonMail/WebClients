@@ -42,9 +42,15 @@ function transformEmbedded(embedded, $state, mailSettingsModel) {
 
             if (show) {
                 image.setAttribute('data-embedded-img', src);
+                /**
+                 * Since the image is supposed to be displayed, remove the proton-src attribute.
+                 * Then it will be parsed by the embeddedParser in the blob or cid direction.
+                 */
+                image.removeAttribute('proton-src');
 
                 // Auto load image inside a reply draft
                 if (isReplyForward) {
+                    // `getUrl` may return undefined here because the embedded attachments have not yet been decrypted and put in the blob store.
                     image.src = embedded.getUrl(image);
                     return;
                 }

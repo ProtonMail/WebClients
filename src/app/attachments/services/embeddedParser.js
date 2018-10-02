@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import { flow, filter, map } from 'lodash/fp';
-import { unescapeSrc } from '../../../helpers/domHelper';
 
 import { EMBEDDED, ENCRYPTED_STATUS } from '../../constants';
 
@@ -16,28 +15,29 @@ function embeddedParser(
 ) {
     const EMBEDDED_CLASSNAME = 'proton-embedded';
 
+    /**
+     * It works on data-src attribute for this reason:
+     * Don't set the src attribute since it's evaluated and cid:cid create an error (#3330)
+     * NET::ERR_UNKNOWN_URL_SCHEME because src="cid:xxxx" is not valid HTML
+     * This function expects the content to be properly unescaped later.
+     */
     const actionDirection = {
         blob(nodes, cid, url) {
             _.each(nodes, (node) => {
+                // Always remove the `data-` src attribute set by the cid function, otherwise it can get displayed if the user does not auto load embedded images.
+                node.removeAttribute('data-src');
                 if (node.getAttribute('proton-src')) {
                     return;
                 }
-                node.src = url;
+                node.setAttribute('data-src', url);
                 node.setAttribute('data-embedded-img', cid);
-                node.removeAttribute('data-src');
                 node.classList.add(EMBEDDED_CLASSNAME);
             });
         },
         cid(nodes, cid) {
-            /**
-             * Don't set the src attribute since it's evaluated and cid:cid create an error (#3330)
-             * NET::ERR_UNKNOWN_URL_SCHEME because src="cid:xxxx" is not valid HTML
-             */
             _.each(nodes, (node) => {
                 node.removeAttribute('data-embedded-img');
                 node.removeAttribute('src');
-
-                // Used later with a regexp
                 node.setAttribute('data-src', `cid:${cid}`);
             });
         }
@@ -45,12 +45,13 @@ function embeddedParser(
 
     /**
      * Parse the content to inject the generated blob src
+     * This function expects the content to be unescaped later.
      * @param  {Resource} message             Message
      * @param  {String} direction             Parsing to execute, blob || cid
      * @param  {Node} testDiv
      * @return {String}                       Parsed HTML
      */
-    const escapeHTML = (message, direction, testDiv) => {
+    const mutateHTML = (message, direction, testDiv) => {
         Object.keys(embeddedStore.cid.get(message)).forEach((cid) => {
             const nodes = embeddedUtils.findEmbedded(cid, testDiv);
 
@@ -60,8 +61,6 @@ function embeddedParser(
                 (actionDirection[direction] || angular.noop)(nodes, cid, url);
             }
         });
-
-        return unescapeSrc(testDiv.innerHTML);
     };
 
     const removeEmbeddedHTML = (message, Headers = {}, content = '') => {
@@ -153,6 +152,6 @@ function embeddedParser(
         });
     };
 
-    return { escapeHTML, removeEmbeddedHTML, decrypt };
+    return { mutateHTML, removeEmbeddedHTML, decrypt };
 }
 export default embeddedParser;

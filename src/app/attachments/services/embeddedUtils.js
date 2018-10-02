@@ -55,6 +55,7 @@ function embeddedUtils(attachmentFileFormat, tools) {
             `img[src="${cid}"]`,
             `img[src="cid:${cid}"]`,
             `img[data-embedded-img="${cid}"]`,
+            `img[data-embedded-img="cid:${cid}"]`,
             `img[data-src="cid:${cid}"]`,
             `img[proton-src="cid:${cid}"]`
         ];

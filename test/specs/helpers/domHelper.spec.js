@@ -1,4 +1,4 @@
-import { isHTML } from '../../../src/helpers/domHelper';
+import { isHTML, escapeSrc, unescapeSrc } from '../../../src/helpers/domHelper';
 
 describe('isHTML', () => {
     [
@@ -39,7 +39,35 @@ describe('isHTML', () => {
         }
     ].forEach(({ input, output, name }) => {
         it(`should ${output ? '' : 'not '}detect HTML content in ${name}`, () => {
-            expect(isHTML(input)).toEqual(output);
+            expect(isHTML(input))
+                .toEqual(output);
         });
+    });
+});
+
+describe('escape', () => {
+    it('should escape src', () => {
+        expect(escapeSrc('<img src="woot">'))
+            .toEqual('<img data-src="woot">');
+    });
+
+    it('should not double escape', () => {
+        expect(escapeSrc('<img data-src="woot">'))
+            .toEqual('<img data-src="woot">');
+    });
+
+    it('should not escape proton-src', () => {
+        expect(escapeSrc('<img proton-src="woot">'))
+            .toEqual('<img proton-src="woot">');
+    });
+
+    it('should unescape', () => {
+        expect(unescapeSrc('<img data-src="woot">'))
+            .toEqual('<img src="woot">');
+    });
+
+    it('should not unescape proton-src', () => {
+        expect(unescapeSrc('<img proton-src="woot">'))
+            .toEqual('<img proton-src="woot">');
     });
 });
