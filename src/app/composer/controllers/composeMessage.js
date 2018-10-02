@@ -30,6 +30,7 @@ function ComposeMessageController(
     notification,
     outsidersMap,
     postMessage,
+    prepareDraft,
     sendMessage,
     validateMessage
 ) {
@@ -201,8 +202,13 @@ function ComposeMessageController(
 
     on('composer.new', async (e, { type, data = {} }) => {
         const limitReached = checkComposerNumber();
-        if (!limitReached && AppModel.is('onLine')) {
-            validateMessage.canWrite() && initMessage(await messageBuilder.create(type, data.message, data.isAfter));
+
+        if (!limitReached && AppModel.is('onLine') && validateMessage.canWrite()) {
+            const message = await prepareDraft.get();
+
+            initMessage(
+                await messageBuilder.create(type, messageModel({ Body: message.Body, ...data.message }), data.isAfter)
+            );
         }
     });
 
@@ -389,7 +395,7 @@ function ComposeMessageController(
         $scope.$applyAsync(() => {
             const size = $scope.messages.unshift(message);
 
-            postMessage(message)
+            postMessage(message, { encrypt: false })
                 .then(() => {
                     dispatcher['composer.update']('loaded', { size, message });
                 })

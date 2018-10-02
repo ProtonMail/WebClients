@@ -276,6 +276,7 @@ function messageBuilder(
 
         newMsg.AddressID = currentMsg.AddressID; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
         newMsg.From = address;
+        newMsg.Body = currentMsg.Body; // We use the existing Body to speed up the draft request logic
 
         /* add inline images as attachments */
         newMsg.Attachments = pickAttachements(currentMsg, action);

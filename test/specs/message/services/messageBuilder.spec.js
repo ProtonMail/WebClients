@@ -513,6 +513,7 @@ Est-ce que tu vas bien ?
 
             DEFAULT_MESSAGE = {
                 Type: DRAFT,
+                Body: 'encrypted body',
                 ToList: [],
                 CCList: [],
                 BCCList: [],
