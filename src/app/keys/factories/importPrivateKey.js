@@ -11,7 +11,7 @@ function importPrivateKey(
     unlockUser,
     gettextCatalog
 ) {
-    const PRIVATE_KEY_EXPR = /-----BEGIN PGP PRIVATE KEY BLOCK-----[^-]*-----END PGP PRIVATE KEY BLOCK-----/g;
+    const PRIVATE_KEY_EXPR = /-----BEGIN PGP PRIVATE KEY BLOCK-----(?:(?!-----).)*-----END PGP PRIVATE KEY BLOCK-----/gs;
     const getKeyObject = (keyid) => {
         const keys = authentication.user.Keys.concat(_.flatten(_.map(addressesModel.get(), 'Keys')));
         return keys.find(({ ID }) => ID === keyid);
