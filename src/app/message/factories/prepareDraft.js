@@ -54,6 +54,12 @@ function prepareDraft(addressesModel, authentication, dispatchers, messageBuilde
         clear();
     });
 
+    on('prepareDraft', (e, { type }) => {
+        if (type === 'init') {
+            init();
+        }
+    });
+
     return { init, get };
 }
 export default prepareDraft;
