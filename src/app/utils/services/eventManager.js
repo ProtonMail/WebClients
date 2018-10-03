@@ -254,6 +254,18 @@ function eventManager(
         }
     }
 
+    /**
+     * Manage the addresses update for a user. Check early because addressesmodel.update will always re-set.
+     * @param {Array} events
+     * @returns {Promise}
+     */
+    function manageAddresses(events = []) {
+        if (!events.length) {
+            return Promise.resolve();
+        }
+        return $injector.get('addressesModel').update(events);
+    }
+
     function refreshMail() {
         $injector.get('cache').reset();
         cachePages.clear();
@@ -299,7 +311,7 @@ function eventManager(
         manageOrganization(data.Organization);
         manageFilters(data.Filters);
         manageActiveMessage(data);
-        await $injector.get('addressesModel').update(data.Addresses);
+        await manageAddresses(data.Addresses);
         await $injector.get('manageUser')(data);
 
         if (data.More === 1) {

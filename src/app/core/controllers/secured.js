@@ -16,6 +16,7 @@ function SecuredController(
     hotkeys,
     mailSettingsModel,
     resurrecter,
+    prepareDraft,
     userType
 ) {
     const { on, unsubscribe } = dispatchers();
@@ -56,6 +57,8 @@ function SecuredController(
     // Preload the contact list
     !$state.includes('secured.contacts') && contactCache.load();
     addressWithoutKeysManager.manage().catch(_.noop);
+
+    prepareDraft.init();
 
     on('updateUser', () => {
         $scope.$applyAsync(() => {
