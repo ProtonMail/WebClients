@@ -73,7 +73,7 @@ function manageUser(
             }
         }
 
-        return addressesModel.set(addresses);
+        return addressesModel.set(addresses, user, true);
     };
 
     const mergeUser = async (user = {}, keys, dirtyAddresses) => {
