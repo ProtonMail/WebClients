@@ -457,10 +457,24 @@ function actionConversation(
                         contactSpam(Senders.map(({ Address = '' }) => Address).filter(Boolean));
                     }
 
-                    const labelIDsRemoved = flow(
-                        filter(({ ID }) => _.includes(folderIDs, ID)),
-                        map(({ ID }) => ID)
-                    )(conversation.Labels);
+                    const Labels = conversation.Labels.reduce(
+                        (acc, label) => {
+                            if (_.includes(folderIDs, label.ID)) {
+                                return acc;
+                            }
+
+                            label.ContextNumUnread = toTrash ? 0 : label.ContextNumUnread;
+                            acc.push(label);
+
+                            return acc;
+                        },
+                        [
+                            {
+                                ID: labelID,
+                                ContextNumUnread: toTrash ? 0 : conversation.ContextNumUnread
+                            }
+                        ]
+                    );
 
                     acc.push({
                         Action: 3,
@@ -468,9 +482,7 @@ function actionConversation(
                         Conversation: {
                             ID,
                             Selected: false,
-                            ContextNumUnread: toTrash ? 0 : conversation.ContextNumUnread,
-                            LabelIDsRemoved: labelIDsRemoved, // Remove current location
-                            LabelIDsAdded: labelIDsAdded // Add new location
+                            Labels
                         }
                     });
                 }
