@@ -106,27 +106,6 @@ msgctxt "Action"
 msgid "Add"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:110
-msgctxt "Action"
-msgid ""
-"Add\n"
-"                                Condition"
-msgstr ""
-
-#: ./src/templates/filter/modal.tpl.html:178
-msgctxt "Action"
-msgid ""
-"Add\n"
-"                                folder"
-msgstr ""
-
-#: ./src/templates/filter/modal.tpl.html:130
-msgctxt "Action"
-msgid ""
-"Add\n"
-"                                label"
-msgstr ""
-
 #. button
 #: ./src/templates/modals/domain/address.tpl.html:11
 msgctxt "Action"
@@ -168,6 +147,11 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr ""
 
+#: ./src/templates/filter/modal.tpl.html:110
+msgctxt "Action"
+msgid "Add condition"
+msgstr ""
+
 #. Add contact button in no result placeholder
 #: ./src/templates/contact/contactNoResult.tpl.html:7
 msgctxt "Action"
@@ -196,6 +180,7 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr ""
 
+#: ./src/templates/filter/modal.tpl.html:176
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
@@ -206,6 +191,7 @@ msgctxt "Action"
 msgid "Add key"
 msgstr ""
 
+#: ./src/templates/filter/modal.tpl.html:129
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -378,7 +364,7 @@ msgstr ""
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:34
-#: ./src/templates/filter/modal.tpl.html:221
+#: ./src/templates/filter/modal.tpl.html:218
 #: ./src/templates/modals/activateOrganization.tpl.html:24
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -1467,7 +1453,7 @@ msgstr ""
 #: ./src/templates/directives/composer/composer.tpl.html:116
 #: ./src/templates/directives/composer/composer.tpl.html:123
 #: ./src/templates/filter/filterAddressModal.tpl.html:39
-#: ./src/templates/filter/modal.tpl.html:222
+#: ./src/templates/filter/modal.tpl.html:219
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -3671,7 +3657,7 @@ msgctxt "Error"
 msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:45
+#: ./src/templates/user/usernameDomain.tpl.html:47
 msgctxt "Error"
 msgid "The request failed"
 msgstr ""
@@ -3706,14 +3692,24 @@ msgctxt "Error"
 msgid "Upgrade to a paid plan to send from your {{email}} address"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:44
+#: ./src/templates/user/usernameDomain.tpl.html:46
 msgctxt "Error"
 msgid "Username already taken"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:43
+#: ./src/templates/user/usernameDomain.tpl.html:45
+msgctxt "Error"
+msgid "Username contains invalid characters"
+msgstr ""
+
+#: ./src/templates/user/usernameDomain.tpl.html:44
 msgctxt "Error"
 msgid "Username invalid"
+msgstr ""
+
+#: ./src/templates/user/usernameDomain.tpl.html:43
+msgctxt "Error"
+msgid "Username is too long"
 msgstr ""
 
 #: ./src/templates/user/usernameDomain.tpl.html:41
@@ -4000,22 +3996,22 @@ msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:118
+#: ./src/templates/filter/modal.tpl.html:117
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:185
+#: ./src/templates/filter/modal.tpl.html:182
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:137
+#: ./src/templates/filter/modal.tpl.html:135
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:208
+#: ./src/templates/filter/modal.tpl.html:205
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr ""
@@ -4926,7 +4922,7 @@ msgctxt "Info"
 msgid "Drop file or click here"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:179
+#: ./src/app/composer/controllers/composeMessage.js:180
 msgctxt "Info"
 msgid "Email was already sent"
 msgstr ""
@@ -5124,7 +5120,7 @@ msgctxt "Info"
 msgid "Logs include authentication attempts for all Proton services that use your ProtonMail credentials."
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:589
+#: ./src/app/composer/controllers/composeMessage.js:595
 msgctxt "Info"
 msgid "Message discarded"
 msgstr ""
@@ -5267,7 +5263,7 @@ msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:572
+#: ./src/app/composer/controllers/composeMessage.js:578
 msgctxt "Info"
 msgid "Permanently delete this draft?"
 msgstr ""
@@ -6219,7 +6215,7 @@ msgctxt "Label"
 msgid "Admin VPN Connections:"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:152
+#: ./src/templates/filter/modal.tpl.html:150
 msgctxt "Label"
 msgid "Archive"
 msgstr ""
@@ -6387,7 +6383,7 @@ msgctxt "Label"
 msgid "Highest security"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:145
+#: ./src/templates/filter/modal.tpl.html:143
 msgctxt "Label"
 msgid "Inbox"
 msgstr ""
@@ -6503,7 +6499,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:192
+#: ./src/templates/filter/modal.tpl.html:189
 msgctxt "Label"
 msgid "Read"
 msgstr ""
@@ -6533,12 +6529,12 @@ msgctxt "Label"
 msgid "Signature"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:159
+#: ./src/templates/filter/modal.tpl.html:157
 msgctxt "Label"
 msgid "Spam"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:199
+#: ./src/templates/filter/modal.tpl.html:196
 msgctxt "Label"
 msgid "Starred"
 msgstr ""
@@ -6558,7 +6554,7 @@ msgctxt "Label"
 msgid "Time zone"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:166
+#: ./src/templates/filter/modal.tpl.html:164
 msgctxt "Label"
 msgid "Trash"
 msgstr ""
@@ -6985,7 +6981,7 @@ msgctxt "Message"
 msgid "Fw:"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:286
+#: ./src/app/message/services/messageBuilder.js:287
 msgctxt "Message"
 msgid "On {{date}}, {{name}} {{address}} wrote:"
 msgstr ""
@@ -7251,7 +7247,7 @@ msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:320
+#: ./src/app/composer/controllers/composeMessage.js:326
 msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
 msgstr ""
@@ -7982,7 +7978,7 @@ msgstr ""
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:47
-#: ./src/templates/filter/modal.tpl.html:115
+#: ./src/templates/filter/modal.tpl.html:114
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:201
 #: ./src/templates/views/domains.tpl.html:52
@@ -8458,7 +8454,7 @@ msgctxt "Title"
 msgid "Decrypt message"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:571
+#: ./src/app/composer/controllers/composeMessage.js:577
 #: ./src/app/contact/factories/contactEditor.js:330
 #: ./src/app/elements/services/removeElement.js:15
 msgctxt "Title"
@@ -8994,7 +8990,7 @@ msgctxt "Title"
 msgid "New Address Key ({{ email }})"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:446
+#: ./src/app/composer/controllers/composeMessage.js:452
 msgctxt "Title"
 msgid "New message"
 msgstr ""
@@ -10732,7 +10728,7 @@ msgstr ""
 msgid "Browser"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:126
+#: ./src/app/composer/controllers/composeMessage.js:127
 #: ./src/app/routes.js:446
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr ""
