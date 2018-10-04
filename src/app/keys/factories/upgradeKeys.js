@@ -91,7 +91,7 @@ function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, pass
                             .then((PrivateKey) => ({ ID, PrivateKey }));
                     })
                     // Cannot decrypt, return 0 (not an error)
-                    .then(null, (error) => ($log.error(error), 0))
+                    .then(null, () => 0)
             );
         });
     }
