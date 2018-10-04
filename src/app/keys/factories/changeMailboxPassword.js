@@ -85,9 +85,8 @@ function changeMailboxPassword(
                         ({ ID, pkg }) => {
                             return pmcw.encryptPrivateKey(pkg, password).then((PrivateKey) => ({ ID, PrivateKey }));
                         },
-                        (error) => {
+                        () => {
                             // Cannot decrypt, return 0 (not an error)
-                            $log.error(error);
                             return 0;
                         }
                     )
