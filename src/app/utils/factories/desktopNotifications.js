@@ -4,7 +4,15 @@ function desktopNotifications() {
     const isEnabled = () => status() === Push.Permission.GRANTED;
 
     const request = (onGranted = angular.noop, onDenied = angular.noop) => {
-        Push.Permission.request(onGranted, onDenied);
+        try {
+            Push.Permission.request(onGranted, onDenied);
+        } catch (err) {
+            /**
+             * Hotfix to fix requesting the permission on non-promisified requests.
+             * TypeError: undefined is not an object (evaluating 'this._win.Notification.requestPermission().then')
+             * https://github.com/Nickersoft/push.js/issues/117
+             */
+        }
     };
 
     const create = (title, params) => {
