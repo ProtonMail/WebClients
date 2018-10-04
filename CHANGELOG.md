@@ -1,3 +1,7 @@
+# [3.14.15] - 2018-10-04
+## Fixed
+- Requesting desktop permission Safari crashes the login process
+
 # [3.14.14] - 2018-10-04
 ## Fixed
 - "Cannot read property `map` of undefined" error in console
