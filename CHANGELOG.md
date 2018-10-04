@@ -1,43 +1,47 @@
+# [3.14.14] - 2018-10-04
+## Fixed
+- "Cannot read property `map` of undefined" error in console
+- After deleting a new unread message, the counter from All Mail folder doesn't refresh itself automaticaly
+- Image in Drafts does not load even if Load embedded images is enabled
+- composer took too long to open with some addresses
+- Edit contact phone broke the format
+
+## Changed
+- translation format issue in templates
+- New signup username checks
+- dropdown labels behavior
+- Don't show errors for missing keys
+
 # [3.14.13] - 2018-09-28
 ## Added
-- UX Improvement - Label creation
-- improvement - make adding filters easier to use
-- Contact key status has an incorrect tooltip
+- Contact key status tooltip
 - Storage warning modal
 
 ## Fixed
 - Can't create a weekly automatic reply
 - Marking a conversation as unread triggers an error
 - Conversation doesn't move to correct spot and messages/time is not updated
-- Retry action doesn't work
-- Missing strings for localisation in main EN file
-- API V3 Error handling
-- When adding an additional address to a contact, the display format of the addresses is changing.
+- Missing strings for localisations
+- When adding an additional address to a contact, the display format of the addresses changed
 - Account can be created with an invalid recovery address
 - Marking a conversation as unread triggers an error
 - Contacts order is not saved
 - The notification element is visible, blocking clicks when it's not displayed
-- Ultra slow typing of recipient in the composer
-- Pressing the ADD ADDRESS in Addresses/Users on a free account does nothing
-- Correction
-- If you copy+paste remote images in the composer, they will show up twice (again)
+- Slow thping issue in some cases
+- Pressing the ADD ADDRESS for free accounts didn’t show correct error
+- If you copy+paste remote images in the composer, they will show up twice
 - Replying and Forwarding a message displays an incorrect From address after changing the From address
 - Human verification by email displays both "Verification code sent" and "Please use a non-ProtonMail email address"
 
 ## Improved
-- Add a contact with advanced settings doesn't work
-- Change the "Reactivate Address Keys" button to "Reactivate Keys"
-- Change the "Reactivate Address Keys" button to "Reactivate Keys"
+- Label creation
+- Filter creation
+- Add a contact with advanced settings
+- improvments for IE11
 
 ## Changed
-- toggle for IE11, initial is not supported and autoprefixer is broken
-- listener autocomplete cache
-- refresh cache autocomplete name
-- 401 promise was not cleared in the catch handler
-- Conversation wrapper not flexing the whole height
 - Proton signature toggle was not updating
 - Human verification fail on Edge
-- Expected locale in underscore
 
 # [3.14.12] - 2018-09-13
 
