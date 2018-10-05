@@ -1,3 +1,10 @@
+# [3.14.16] - 2018-10-05
+
+## Fixed
+
+- Copy, cut and paste was not working with Edge browser
+- Advanced Sieve editor was broken
+
 # [3.14.15] - 2018-10-04
 ## Fixed
 - Requesting desktop permission Safari crashes the login process
