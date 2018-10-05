@@ -1,9 +1,12 @@
 import _ from 'lodash';
 
 import { STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
 /* @ngInject */
 function sendMessage(
+    sendPreferences,
+    keyCache,
     composerRequestModel,
     dispatchers,
     messageModel,
@@ -75,7 +78,7 @@ function sendMessage(
         return Promise.all(promises).then(() => true);
     };
 
-    const send = async (message, parameters) => {
+    const send = async (message, parameters, retry = true) => {
         const emails = await prepare(message, parameters);
         // we await later for parallel performance.
         const attachmentUpdates = handleAttachmentSigs(message);
@@ -90,7 +93,18 @@ function sendMessage(
         // Avoid to have SAVE and SEND request in the same time
         // Make sure to keep that just before the send message API request
         await composerRequestModel.chain(message);
-        return messageRequest.send(parameters);
+        const suppress = retry ? [API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED] : [];
+        try {
+            return await messageRequest.send(parameters, suppress);
+        } catch (e) {
+            if (retry && e.data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED) {
+                sendPreferences.clearCache();
+                keyCache.clearCache();
+                // retry if we used the wrong keys
+                return send(message, parameters, false);
+            }
+            throw e;
+        }
     };
 
     const pipe = async (message, parameters = {}) => {

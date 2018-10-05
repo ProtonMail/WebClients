@@ -35,8 +35,8 @@ function messageRequest(dispatchers, messageApi) {
         }
     }
 
-    async function send(parameters) {
-        const { data = {} } = await messageApi.send(parameters);
+    async function send(parameters, suppress = []) {
+        const { data = {} } = await messageApi.send(parameters, { suppress });
         return data;
     }
 

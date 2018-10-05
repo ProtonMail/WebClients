@@ -132,7 +132,16 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
         return result.RecipientType === RECIPIENT_TYPE.TYPE_NO_RECEIVE;
     };
 
-    return { get, getKeysPerEmail, isInvalid, getUserAddressesKeys };
+    /**
+     * Clears the cache
+     */
+    const clearCache = () => {
+        Object.keys(CACHE).forEach((email) => {
+            delete CACHE[email];
+        });
+    };
+
+    return { get, getKeysPerEmail, isInvalid, getUserAddressesKeys, clearCache };
 }
 
 export default keyCache;

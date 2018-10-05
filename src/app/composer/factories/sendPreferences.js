@@ -446,6 +446,6 @@ function sendPreferences(
         clearCache();
     });
 
-    return { get };
+    return { get, clearCache };
 }
 export default sendPreferences;
