@@ -7,9 +7,10 @@ function messageApi($http, url) {
     /**
      * Send a message
      * @param  {Object} params
+     * @param  {Object} config
      * @return {Promise}
      */
-    const send = (params = {}) => $http.post(requestURL(params.id), params);
+    const send = (params = {}, config = {}) => $http.post(requestURL(params.id), params, config);
     const label = (params) => $http.put(requestURL('label'), params);
     const unlabel = (params) => $http.put(requestURL('unlabel'), params);
 
