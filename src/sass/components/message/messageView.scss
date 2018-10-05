@@ -537,6 +537,11 @@
     font-family: monospace;
 }
 
+.bodyDecrypted pre code {
+    white-space: pre-wrap;
+    background-color: transparent;
+}
+
 #conversation-view:empty { display: none }
 
 .message.message-mode-plain .displayContentBtn-container { display: none }
