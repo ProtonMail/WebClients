@@ -69,10 +69,6 @@ function pasteImage(attachmentFileFormat, attachmentModel, squireExecAction, get
         // Edge needs items as files is undefined
         const files = Array.from(clipboardData.files || clipboardData.items || []);
 
-        if (files.length) {
-            e.preventDefault();
-        }
-
         const promises = files.map((file) => paste(file, message));
         Promise.all(promises);
     };
