@@ -28,8 +28,15 @@
         ng-if="type === 'tel'"
         href="tel:{{info.value}}"
         class="contactViewItem-value-tel">{{::info.value}}</a>
+
+    <a
+        ng-if="type === 'url'"
+        rel="noreferrer nofollow noopener"
+        href="{{::info.value | formatURL}}"
+        target="_blank"
+        class="contactViewItem-value-url">{{::info.value | formatURL}}</a>
     <span
-        ng-if="type !== 'adr' && type !== 'email' && type !== 'tel' && type !== 'photo'"
+        ng-if="type !== 'adr' && type !== 'email' && type !== 'tel' && type !== 'photo' && type !== 'url'"
         class="contactViewItem-value-txt">{{::info.value}}</span>
 
     <img
