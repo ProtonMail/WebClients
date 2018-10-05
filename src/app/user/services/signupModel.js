@@ -65,14 +65,7 @@ function signupModel(User, $state, $stateParams, $location, dispatchers, Payment
                 return data;
             })
             .catch((err) => {
-                const { data = {} } = err;
-
                 $state.go('login');
-
-                if (data.Error) {
-                    throw new Error(data.Error);
-                }
-
                 throw err;
             });
     };
