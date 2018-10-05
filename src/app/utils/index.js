@@ -33,9 +33,11 @@ import sanitize from './services/sanitize';
 import mailtoHandler from './directives/mailtoHandler';
 import mailUtils from './services/mailUtils';
 import discardModal from './modals/discardModal';
+import formatURL from './filters/formatURL';
 
 export default angular
     .module('proton.utils', [])
+    .filter('formatURL', formatURL)
     .factory('discardModal', discardModal)
     .factory('mailUtils', mailUtils)
     .directive('mailtoHandler', mailtoHandler)
