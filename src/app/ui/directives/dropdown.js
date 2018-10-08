@@ -5,12 +5,11 @@ function dropdown($document, dispatchers) {
     return {
         restrict: 'A',
         scope: {},
-        link(scope, element, { dontAutoClose }) {
+        link(scope, element, { dropdownNoAutoClose }) {
             const { on, unsubscribe, dispatcher } = dispatchers(['closeDropdown']);
             const parent = element.parent();
             const dropdown = parent.find('.pm_dropdown');
 
-            // Functions
             function showDropdown() {
                 element.addClass('active');
                 dropdown.addClass(CLASS_OPEN);
@@ -24,7 +23,7 @@ function dropdown($document, dispatchers) {
             }
 
             function outside() {
-                if (dontAutoClose) {
+                if (dropdownNoAutoClose) {
                     return;
                 }
 
