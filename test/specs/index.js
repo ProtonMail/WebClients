@@ -16,6 +16,7 @@ import './attachments/embeddedParser.spec';
 import './message/services/transformBase.spec';
 import './message/services/transformLinks.spec';
 import './message/services/transformEmbedded.spec';
+import './commons/services/i18nloader.spec';
 import './message/services/messageBuilder.spec';
 import './message/services/transformRemote.spec';
 import './message/services/transformEscape.spec';
