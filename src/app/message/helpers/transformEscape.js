@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import transformBase from '../services/transformBase';
+import transformBase from './transformBase';
 import { unescapeCSSEncoding } from '../../../helpers/string';
 
 /**

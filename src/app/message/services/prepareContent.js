@@ -1,18 +1,21 @@
 import _ from 'lodash';
+
 import transformEscape from '../helpers/transformEscape';
+import transformLinks from '../helpers/transformLinks';
 
 /* @ngInject */
 function prepareContent($injector, transformAttachements, transformRemote, transformEmbedded) {
-    const filters = [
-        'transformLinks',
-        'transformEmbedded',
-        'transformWelcome',
-        'transformBlockquotes',
-        'transformStylesheet'
-    ].map((name) => ({
-        name,
-        action: $injector.get(name)
-    }));
+    const filters = ['transformEmbedded', 'transformWelcome', 'transformBlockquotes', 'transformStylesheet'].map(
+        (name) => ({
+            name,
+            action: $injector.get(name)
+        })
+    );
+
+    filters.unshift({
+        name: 'transformLinks',
+        action: transformLinks
+    });
 
     /**
      * Get the list of transoformation to perform

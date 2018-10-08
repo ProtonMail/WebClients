@@ -10,6 +10,7 @@ function sanitize() {
         },
         // When we display a message we need to be global and return more informations
         raw: { WHOLE_DOCUMENT: true, RETURN_DOM: true },
+        html: { WHOLE_DOCUMENT: false, RETURN_DOM: true },
         content: {
             ALLOW_UNKNOWN_PROTOCOLS: true,
             WHOLE_DOCUMENT: false,
@@ -19,6 +20,7 @@ function sanitize() {
     };
 
     const getConfig = (type) => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
+    const clean = (mode) => (input) => DOMPurify.sanitize(input, getConfig(mode));
 
     /**
      * Custom config only for messages
@@ -26,21 +28,21 @@ function sanitize() {
      * @param  {Boolean} raw Format the message and return the whole document
      * @return {String|Document}
      */
-    const message = (input) => DOMPurify.sanitize(input, getConfig());
+    const message = clean();
 
     /**
      * Sanitize input with a config similar than Squire + ours
      * @param  {String} input
      * @return {Document}
      */
-    const html = (input) => DOMPurify.sanitize(input, getConfig('raw'));
+    const html = clean('raw');
 
     /**
      * Sanitize input and returns the whole document
      * @param  {String} input
      * @return {Document}
      */
-    const content = (input) => DOMPurify.sanitize(input, getConfig('content'));
+    const content = clean('content');
 
     /**
      * Default config we don't want any custom behaviour

@@ -64,20 +64,22 @@ function embedded(embeddedFinder, embeddedStore, embeddedParser, embeddedUtils) 
     };
 
     /**
-     * Check if attachment exist
-     * @param  {Resource} message
-     * @param  {String} src - cid:url
-     * @return {Object}
+     * Check if attachment exist inside the dom
+     * @param  {Message} message
+     * @param  {Document} html Message body parser
+     * @return {Function}
      */
-    const getAttachment = (message, src) => {
-        const cid = src.replace(REGEXP_CID_START, '');
-        const body = message.getDecryptedBody();
-        const testDiv = embeddedUtils.getBodyParser(body);
-        const contains = embeddedFinder.find(message, testDiv);
-
-        if (contains) {
-            return embeddedStore.cid.get(message)[cid] || {};
-        }
+    const getAttachment = (message, html) => {
+        /**
+         * @param  {String} src - cid:url
+         */
+        return (src) => {
+            const cid = src.replace(REGEXP_CID_START, '');
+            const contains = embeddedFinder.find(message, html);
+            if (contains) {
+                return embeddedStore.cid.get(message)[cid] || {};
+            }
+        };
     };
 
     return {

@@ -12,11 +12,12 @@ function transformEmbedded(embedded, $state, mailSettingsModel) {
         const isReplyForward = /^reply|forward/.test(action);
         const show = message.showEmbedded === true || ShowImages & EMBEDDED;
         const isEoReply = $state.is('eo.reply');
+        const getAttachment = embedded.getAttachment(message, html);
 
         images.forEach((image) => {
             const src = image.getAttribute('proton-src');
             image.setAttribute('referrerPolicy', 'no-referrer');
-            const attachment = embedded.getAttachment(message, src);
+            const attachment = getAttachment(src);
 
             if (!image.classList.contains(EMBEDDED_CLASSNAME)) {
                 image.classList.add(EMBEDDED_CLASSNAME);
