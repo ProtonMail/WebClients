@@ -1912,7 +1912,7 @@ msgctxt "Action to report an error for the message"
 msgid "Report problem"
 msgstr ""
 
-#: ./src/templates/ui/toolbarDesktop.tpl.html:36
+#: ./src/templates/ui/toolbarDesktop.tpl.html:37
 msgctxt "Action toolbar"
 msgid "Label as"
 msgstr ""
@@ -4271,7 +4271,7 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:378
+#: ./src/app/conversation/factories/actionConversation.js:385
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
 msgid_plural "{{number}} conversations moved to {{folder}}"
@@ -7393,12 +7393,12 @@ msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr ""
 
-#: ./src/app/commons/services/i18nLoader.js:60
+#: ./src/app/commons/services/i18nLoader.js:54
 msgctxt "Pikaday"
 msgid "Next Month"
 msgstr ""
 
-#: ./src/app/commons/services/i18nLoader.js:59
+#: ./src/app/commons/services/i18nLoader.js:53
 msgctxt "Pikaday"
 msgid "Previous Month"
 msgstr ""
