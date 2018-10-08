@@ -263,13 +263,20 @@ function actionConversation(
     };
 
     const getRules = (element, labels = [], alsoArchive) => {
-        const labelIDs = element.ConversationID ? element.LabelIDs : element.Labels.map(({ ID }) => ID);
+        const isMessage = element.ConversationID;
+        const labelIDs = isMessage ? element.LabelIDs : element.Labels.map(({ ID }) => ID);
         const currentLocation = tools.currentLocation();
         const isStateAllowedRemove =
             _.includes(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
         // Selected can equals to true / false / null
-        const LabelIDsAdded = getLabelsId(labels, ({ ID, Selected }) => Selected === true && !labelIDs.includes(ID));
-        const LabelIDsRemoved = getLabelsId(labels, ({ ID, Selected }) => Selected === false && labelIDs.includes(ID));
+        const LabelIDsAdded = getLabelsId(
+            labels,
+            ({ ID, Selected }) => Selected === true && (!isMessage || !labelIDs.includes(ID))
+        );
+        const LabelIDsRemoved = getLabelsId(
+            labels,
+            ({ ID, Selected }) => Selected === false && (!isMessage || labelIDs.includes(ID))
+        );
 
         if (alsoArchive) {
             LabelIDsAdded.push(MAILBOX_IDENTIFIERS.archive);
