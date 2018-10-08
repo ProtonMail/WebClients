@@ -57,7 +57,7 @@
     </span>
     <span class="pm_buttons">
         <span class="pm_buttons" ng-class="{ disabled: isDisabled() }">
-            <a href="#" class="pm_trigger open-folder" dropdown ng-class="{ disabled: isDisabled() }">
+            <a href="#" class="pm_trigger open-folder" dropdown data-dont-auto-close="true" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-folder"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
@@ -66,7 +66,7 @@
             </span>
         </span>
         <span class="pm_buttons" ng-class="{ disabled: isDisabled() }">
-            <a href="#" class="pm_trigger open-label" dropdown ng-class="{ disabled: isDisabled() }">
+            <a href="#" class="pm_trigger open-label" dropdown data-dont-auto-close="true" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
