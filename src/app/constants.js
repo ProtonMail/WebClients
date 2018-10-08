@@ -85,6 +85,7 @@ export const DEFAULT_CYCLE = 12;
 export const TRACKER_ROUTE = 'proton.php';
 export const PIWIK_SCRIPT = 'proton.js';
 export const CANCEL_REQUEST = 'CANCEL_REQUEST';
+export const DEFAULT_TRANSLATION = 'en_US';
 export const CONTACTS_LIMIT_ENCRYPTION = 20;
 export const CONTACTS_LIMIT_UPLOAD = 50;
 export const CONTACTS_LIMIT_REQUESTS = 10;

@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import CONFIG from '../../config';
+import { DEFAULT_TRANSLATION } from '../../constants';
 import { selectLocale, formatLocale } from '../../../helpers/momentHelper';
 
 /* @ngInject */
@@ -25,7 +26,7 @@ function i18nLoader(dispatchers, gettextCatalog, $injector) {
         return changedLocale;
     };
 
-    const getLocale = () => {
+    const getBrowserLocale = () => {
         // Doesn't work on IE11 ;)
         try {
             const queryParams = new window.URL(window.location).searchParams;
@@ -35,13 +36,6 @@ function i18nLoader(dispatchers, gettextCatalog, $injector) {
             const [, locale] = window.location.search.match(/language=(([a-z]{2,}(_|-)[A-Z]{2,})|([a-z]{2,}))/) || [];
             return getTransformedLocale(formatLocale(locale));
         }
-    };
-
-    const listLocales = (lang) => {
-        const navigatorLocale = getLocale();
-        const locale = lang || navigatorLocale;
-        const [shortLocale] = locale.split('_');
-        return _.extend(CACHE, { locale, navigatorLocale, shortLocale });
     };
 
     const localizePikaday = () => {
@@ -70,46 +64,74 @@ function i18nLoader(dispatchers, gettextCatalog, $injector) {
         });
     };
 
-    const localizeDate = async () => {
-        const { locale, navigatorLocale } = CACHE;
+    /**
+     * Localize the dates with the current translation locale and browser locale.
+     */
+    const localizeDate = () => {
+        const { translationLocale, browserLocale } = CACHE;
         $injector.get('dateUtils').init();
 
-        moment.locale(selectLocale(locale, navigatorLocale));
+        moment.locale(selectLocale(translationLocale, browserLocale));
 
         localizePikaday();
-        CACHE.langCountry = moment.locale();
-        dispatch('load', { lang: CACHE.langCountry });
+        dispatch('load');
     };
 
-    const loadGettextCatalog = async (lang) => {
-        const { locale, shortLocale } = listLocales(lang);
-
-        gettextCatalog.debugPrefix = '';
-        gettextCatalog.setCurrentLanguage(locale);
-        gettextCatalog.debug = CONFIG.debug || false;
-
-        document.documentElement.lang = shortLocale;
-
-        if (locale.startsWith('en')) {
-            return;
-        }
-
-        // If the translation is not available it seems to crash (CPU 100%)
-        if (CONFIG.translations.includes(locale)) {
-            return gettextCatalog.loadRemote(`/i18n/${locale}.json`);
+    /**
+     * Return a matched locale if it exists in our supported translations.
+     * Otherwise returns the default translation.
+     * @param {String} browserLocale e.g. en_GB
+     * @returns {String}
+     */
+    const getTranslation = (browserLocale = '') => {
+        // Check if the full locale exists in the translations.
+        if (CONFIG.translations.includes(browserLocale)) {
+            return browserLocale;
         }
 
         // Try again, but only match on the language, not on the locale.
-        const languageMatch = _.find(CONFIG.translations, (lang) => lang.substr(0, 2) === shortLocale);
-        if (languageMatch) {
-            return gettextCatalog.loadRemote(`/i18n/${languageMatch}.json`);
+        const browserLanguage = browserLocale.substr(0, 2);
+        const translationByLanguage = _.find(CONFIG.translations, (lang) => lang.substr(0, 2) === browserLanguage);
+        if (translationByLanguage) {
+            return translationByLanguage;
         }
+
+        return DEFAULT_TRANSLATION;
+    };
+
+    /**
+     * Load the translation library with a language.
+     * Either uses the specified language in the argument, or the locale in the browser.
+     * @param {String} lang
+     * @returns {Promise}
+     */
+    const loadGettextCatalog = async (lang) => {
+        const browserLocale = getBrowserLocale();
+
+        const translationLocale = getTranslation(lang || browserLocale);
+        const translationLocaleLanguage = translationLocale.substr(0, 2);
+
+        CACHE.translationLocale = translationLocale;
+        CACHE.browserLocale = browserLocale;
+
+        gettextCatalog.debug = CONFIG.debug || false;
+        gettextCatalog.debugPrefix = '';
+
+        gettextCatalog.setCurrentLanguage(translationLocale);
+
+        document.documentElement.lang = translationLocaleLanguage;
+
+        // If it's the default translation, we don't need to load the json since it's loaded by default.
+        if (translationLocale === DEFAULT_TRANSLATION) {
+            return;
+        }
+
+        return gettextCatalog.loadRemote(`/i18n/${translationLocale}.json`);
     };
 
     return {
         localizeDate,
-        translate: loadGettextCatalog,
-        langCountry: CACHE.langCountry
+        translate: loadGettextCatalog
     };
 }
 export default i18nLoader;
