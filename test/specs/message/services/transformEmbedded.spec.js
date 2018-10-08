@@ -8,12 +8,14 @@ describe('transformEmbedded service', () => {
         ShowImages: 0
     };
     const embeddedService = {
-        getAttachment(msg, src) {
-            if (src === 'cid:embedded.jpg') {
-                return {
-                    Name: EMBEDDED_NAME
-                };
-            }
+        getAttachment(msg, html) {
+            return (src) => {
+                if (src === 'cid:embedded.jpg') {
+                    return {
+                        Name: EMBEDDED_NAME
+                    };
+                }
+            };
         },
         getUrl(node) {
             const src = node.getAttribute('data-embedded-img') || '';

@@ -54,7 +54,6 @@ import prepareContent from './services/prepareContent';
 import transformAttachements from './services/transformAttachements';
 import transformBlockquotes from './services/transformBlockquotes';
 import transformEmbedded from './services/transformEmbedded';
-import transformLinks from './services/transformLinks';
 import transformRemote from './services/transformRemote';
 import transformStylesheet from './services/transformStylesheet';
 import transformWelcome from './services/transformWelcome';
@@ -122,7 +121,6 @@ export default angular
     .factory('transformAttachements', transformAttachements)
     .factory('transformBlockquotes', transformBlockquotes)
     .factory('transformEmbedded', transformEmbedded)
-    .factory('transformLinks', transformLinks)
     .factory('transformRemote', transformRemote)
     .factory('transformStylesheet', transformStylesheet)
     .factory('transformWelcome', transformWelcome).name;

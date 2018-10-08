@@ -1,4 +1,4 @@
-import service from '../../../../src/app/message/services/transformBase';
+import service from '../../../../src/app/message/helpers/transformBase';
 
 describe('transformBase service', () => {
     const factory = service;

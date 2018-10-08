@@ -120,3 +120,8 @@ export const isHTML = (str = '') => {
         isWrapped: !!isElement(firstChild)
     };
 };
+
+/**
+ * cf https://developer.mozilla.org/en-US/docs/Web/API/Element/matches
+ */
+export const matches = (node, selector) => (node.matches || node.msMatchesSelector).call(node, selector);

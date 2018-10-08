@@ -1,4 +1,5 @@
 import { flow, filter, reduce } from 'lodash/fp';
+
 import { REMOTE, WHITELIST } from '../../constants';
 
 /* @ngInject */
