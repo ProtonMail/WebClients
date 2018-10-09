@@ -21,8 +21,13 @@ function isDelinquent($state, gettextCatalog, notification, authentication) {
      * @param  {String} message Error notification
      */
     const error = (state = 'secured.payments', message = I18N.ERROR_ADMIN) => {
-        notification.error(message);
-        $state.go(state);
+        $state.go(state).then(() => {
+            /**
+             * Show the notification once all the promises has been resolved.
+             * Otherwise it is closed by the network activity tracker.
+             */
+            notification.error(message);
+        });
         throw new Error(message);
     };
 
