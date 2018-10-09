@@ -1,26 +1,8 @@
-import { USERNAME_STATUS } from '../../errors';
-
 /* @ngInject */
-function uniqueUsername($stateParams, User) {
+function uniqueUsername($stateParams, UserAvailability) {
     const clean = (input = '') => input.toLowerCase().replace(/\.|-|_/, '');
 
-    const ERRORS = ['alreadyTaken', 'tooMuch', 'requestError', 'tooLong', 'invalidCharacter', 'apiError'];
-
-    const STATUS_TO_ERROR = {
-        [USERNAME_STATUS.ALREADY_USED]: 'alreadyTaken',
-        [USERNAME_STATUS.TOO_LONG]: 'tooLong',
-        [USERNAME_STATUS.START_SPECIAL_CHARACTER]: 'invalidCharacter',
-        [USERNAME_STATUS.END_SPECIAL_CHARACTER]: 'invalidCharacter',
-        [USERNAME_STATUS.INVALID_CHARACTERS]: 'invalidCharacter'
-    };
-
-    /**
-     * Convert the status code from the api to an error name that we display.
-     * Returns already used by default.
-     * @param {Number} status
-     * @returns {string}
-     */
-    const getErrorName = (status) => STATUS_TO_ERROR[status] || STATUS_TO_ERROR[USERNAME_STATUS.ALREADY_USED];
+    const ERRORS = ['offlineError', 'tooMuch', 'requestError', 'apiError'];
 
     const validator = (ngModel, scope) => (username) => {
         const usernameCleaned = clean(username);
@@ -32,18 +14,15 @@ function uniqueUsername($stateParams, User) {
             return Promise.resolve();
         }
 
-        return User.available({ params: { Name: username }, noNotify: true })
-            .then(({ data = {} } = {}) => {
-                if (data.Status === USERNAME_STATUS.AVAILABLE) {
-                    return Promise.resolve();
-                }
-
-                ngModel.$error[getErrorName(data.Status)] = true;
-                return Promise.reject(false);
-            })
-            .catch(({ status, data = {} } = {}) => {
+        return UserAvailability.available({ params: { Name: username }, noNotify: true }).catch(
+            ({ status, data = {} } = {}) => {
                 if (status === 429) {
                     ngModel.$error.tooMuch = true;
+                    return Promise.reject(false);
+                }
+
+                if (status === 0 || status === -1) {
+                    ngModel.$error.offlineError = true;
                     return Promise.reject(false);
                 }
 
@@ -53,9 +32,11 @@ function uniqueUsername($stateParams, User) {
                     return Promise.reject(false);
                 }
 
+                // If there is no error from the API, show a generic "Request failed".
                 ngModel.$error.requestError = true;
                 return Promise.reject(false);
-            });
+            }
+        );
     };
 
     return {
