@@ -1,3 +1,14 @@
+# [3.14.17] - 2018-10-09
+
+## Added
+- Increase domain limit to 100 for the professional plan
+- Adding URL in Contact details was not shown as hyperlink
+
+## Fixed
+- Can't access ProtonMail with an unpaid invoice on the account
+- Some menus remained open until something else is clicked.
+- Label loading issue if message was moved to a custom folder
+
 # [3.14.16] - 2018-10-05
 
 ## Fixed
