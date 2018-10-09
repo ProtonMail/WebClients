@@ -1,5 +1,5 @@
 /* @ngInject */
-function prepareDraft(addressesModel, authentication, dispatchers, messageBuilder) {
+function prepareDraft(addressesModel, authentication, dispatchers, messageBuilder, messageModel) {
     const { on } = dispatchers();
     const CACHE = {};
 
@@ -13,6 +13,12 @@ function prepareDraft(addressesModel, authentication, dispatchers, messageBuilde
      * Clear promise cached
      */
     const clear = () => delete CACHE.messagePrepared;
+
+    /**
+     * Get prepared body
+     * @return {String}
+     */
+    const getBody = () => CACHE.messagePrepared.Body;
 
     /**
      * Prepare the default draft for the composer
@@ -40,11 +46,16 @@ function prepareDraft(addressesModel, authentication, dispatchers, messageBuilde
 
     /**
      * Return prepare draft promise
-     * @return {Promise}
+     * @param {Object} message
+     * @return {Promise} messageModel
      */
-    const get = () => {
+    const getMessage = (message = messageModel()) => {
+        if (message.isPGPMIME()) {
+            return message;
+        }
+
         if (CACHE.messagePrepared) {
-            return CACHE.messagePrepared;
+            return { Body: getBody(), ...message }; // If the message.Body is defined, we have to keep it.
         }
 
         return init();
@@ -60,6 +71,6 @@ function prepareDraft(addressesModel, authentication, dispatchers, messageBuilde
         }
     });
 
-    return { init, get };
+    return { init, getMessage };
 }
 export default prepareDraft;

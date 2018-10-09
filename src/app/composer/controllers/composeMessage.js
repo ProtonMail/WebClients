@@ -204,11 +204,9 @@ function ComposeMessageController(
         const limitReached = checkComposerNumber();
 
         if (!limitReached && AppModel.is('onLine') && validateMessage.canWrite()) {
-            const message = await prepareDraft.get();
+            const message = await prepareDraft.getMessage(data.message);
 
-            initMessage(
-                await messageBuilder.create(type, messageModel({ Body: message.Body, ...data.message }), data.isAfter)
-            );
+            initMessage(await messageBuilder.create(type, message, data.isAfter));
         }
     });
 
@@ -395,7 +393,7 @@ function ComposeMessageController(
         $scope.$applyAsync(() => {
             const size = $scope.messages.unshift(message);
 
-            postMessage(message, { encrypt: false })
+            postMessage(message, { encrypt: !message.Body })
                 .then(() => {
                     dispatcher['composer.update']('loaded', { size, message });
                 })
