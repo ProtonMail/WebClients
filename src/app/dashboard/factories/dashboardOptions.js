@@ -62,7 +62,7 @@ function dashboardOptions(gettextCatalog) {
         },
         professional: {
             member: MEMBER_OPTIONS,
-            domain: generateDomains(2, 51)
+            domain: generateDomains(2, 101)
         }
     };
 
