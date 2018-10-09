@@ -3464,6 +3464,7 @@ msgid "Name exceeds maximum length"
 msgstr ""
 
 #: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:23
+#: ./src/templates/user/usernameDomain.tpl.html:44
 msgctxt "Error"
 msgid "No Internet connection found."
 msgstr ""
@@ -3657,7 +3658,7 @@ msgctxt "Error"
 msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:47
+#: ./src/templates/user/usernameDomain.tpl.html:45
 msgctxt "Error"
 msgid "The request failed"
 msgstr ""
@@ -3692,24 +3693,34 @@ msgctxt "Error"
 msgid "Upgrade to a paid plan to send from your {{email}} address"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:46
+#: ./src/app/commons/models/userAvailability.js:25
 msgctxt "Error"
 msgid "Username already taken"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:45
+#: ./src/app/commons/models/userAvailability.js:33
+msgctxt "Error"
+msgid "Username already used"
+msgstr ""
+
+#: ./src/app/commons/models/userAvailability.js:27
 msgctxt "Error"
 msgid "Username contains invalid characters"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:44
+#: ./src/templates/user/usernameDomain.tpl.html:43
 msgctxt "Error"
 msgid "Username invalid"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:43
+#: ./src/app/commons/models/userAvailability.js:29
 msgctxt "Error"
-msgid "Username is too long"
+msgid "Username must begin with a letter or digit"
+msgstr ""
+
+#: ./src/app/commons/models/userAvailability.js:31
+msgctxt "Error"
+msgid "Username must end with a letter or digit"
 msgstr ""
 
 #: ./src/templates/user/usernameDomain.tpl.html:41
@@ -3717,6 +3728,11 @@ msgstr ""
 #: ./src/templates/views/reset-login-password.tpl.html:66
 msgctxt "Error"
 msgid "Username required"
+msgstr ""
+
+#: ./src/app/commons/models/userAvailability.js:32
+msgctxt "Error"
+msgid "Username too long"
 msgstr ""
 
 #: ./src/app/settings/controllers/domains.js:258
@@ -5502,7 +5518,7 @@ msgctxt "Info"
 msgid "The ultimate internet privacy package, combining the most popular ProtonMail and ProtonVPN plans. By buying both together with our special 2-year plan, you can save 45% off of the regular monthly price."
 msgstr ""
 
-#: ./src/app/routes.js:179
+#: ./src/app/routes.js:178
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr ""
@@ -10729,7 +10745,7 @@ msgid "Browser"
 msgstr ""
 
 #: ./src/app/composer/controllers/composeMessage.js:127
-#: ./src/app/routes.js:446
+#: ./src/app/routes.js:445
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr ""
 
