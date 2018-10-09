@@ -158,7 +158,6 @@ export default angular
                                     throw e;
                                 });
                         }
-                        return Promise.resolve();
                     }
                 }
             })
@@ -218,13 +217,13 @@ export default angular
 
                         if (isValidCycle && isValidCurrency && isValidPlan) {
                             if (plan === 'free') {
-                                return Promise.resolve([]);
+                                return [];
                             }
 
                             return Payment.plans(currency, cycle).then(({ data }) => data.Plans);
                         }
 
-                        return Promise.resolve([]);
+                        return [];
                     },
                     optionsHumanCheck(signupModel) {
                         return signupModel.getOptionsVerification();
@@ -303,7 +302,7 @@ export default angular
                         return Eo.token($stateParams.tag)
                             .then(({ data = {} } = {}) => data.Token)
                             .catch(() => {
-                                return Promise.resolve(false);
+                                return false;
                             });
                     }
                 },
@@ -481,7 +480,8 @@ export default angular
                     user(app, authentication, $http, pmcw, secureSessionStorage, i18nLoader, userSettingsModel) {
                         const isAuth = Object.keys(authentication.user || {}).length > 0;
                         if (isAuth) {
-                            return i18nLoader.localizeDate().then(() => authentication.user);
+                            i18nLoader.localizeDate();
+                            return authentication.user;
                         }
 
                         const uid = secureSessionStorage.getItem(OAUTH_KEY + ':UID');
@@ -683,7 +683,6 @@ export default angular
                             networkActivityTracker.track(promise);
                             return promise;
                         }
-                        return Promise.resolve();
                     },
                     sessions(members, activeSessionsModel, networkActivityTracker) {
                         const promise = activeSessionsModel.fetch();
@@ -741,7 +740,6 @@ export default angular
                             $state.go('secured.account');
                             return Promise.reject();
                         }
-                        return Promise.resolve();
                     },
                     invoices(Payment, networkActivityTracker) {
                         return networkActivityTracker.track(Payment.invoices({ Owner: 0 }));
@@ -822,7 +820,6 @@ export default angular
                             $state.go('secured.account');
                             return Promise.reject();
                         }
-                        return Promise.resolve();
                     },
                     dashboardPlans(user, dashboardModel, subscriptionModel) {
                         return subscriptionModel.fetch().then(({ Currency }) => dashboardModel.loadPlans(Currency));
@@ -856,7 +853,7 @@ export default angular
                 resolve: {
                     access(user, $state) {
                         if (!user.subuser && user.Role !== PAID_MEMBER_ROLE) {
-                            return Promise.resolve();
+                            return;
                         }
                         $state.go('secured.account');
                         return Promise.reject();
@@ -883,7 +880,6 @@ export default angular
                         if (user.Role === PAID_ADMIN_ROLE) {
                             return networkActivityTracker.track(organizationKeysModel.fetch());
                         }
-                        return Promise.resolve();
                     },
                     methods(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getMethods(null, user));
@@ -913,7 +909,6 @@ export default angular
                             $state.go('secured.account');
                             return Promise.reject();
                         }
-                        return Promise.resolve();
                     },
                     members(user, memberModel, networkActivityTracker) {
                         if (user.Role === PAID_ADMIN_ROLE) {
@@ -937,7 +932,6 @@ export default angular
                         if (user.Role === PAID_ADMIN_ROLE) {
                             return networkActivityTracker.track(organizationKeysModel.fetch());
                         }
-                        return Promise.resolve();
                     },
                     methods(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getMethods(null, user));
