@@ -16,6 +16,7 @@ import logs from './models/logs';
 import payment from './models/payment';
 import reset from './models/reset';
 import user from './models/user';
+import userAvailability from './models/userAvailability';
 import notification from './providers/notification';
 import url from './services/url';
 import dispatchers from './services/dispatchers';
@@ -50,6 +51,7 @@ export default angular
     .factory('Payment', payment)
     .factory('Reset', reset)
     .factory('User', user)
+    .factory('UserAvailability', userAvailability)
     .provider('notification', notification)
     .factory('url', url)
     .factory('dispatchers', dispatchers)
