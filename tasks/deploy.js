@@ -14,7 +14,8 @@ const { CONFIG, branch } = env.getConfig('dist');
 const { externalFiles } = require('../env/conf.build');
 
 const bash = (cli) => execa.shell(cli, { shell: '/bin/bash' });
-const push = async (branch) => {``
+const push = async (branch) => {
+    ``;
     const commands = ['cd dist'];
 
     const message = /-prod-/.test(branch) ? `New Release ${CONFIG.app_version}` : 'New Release';
@@ -71,13 +72,12 @@ const buildCustomApp = async (branch, { start, end } = {}) => {
 
     // A/B testing config
     if (/deploy-prod/.test(branch)) {
-
         // Because for the lulz. cf https://myshittycode.com/2014/07/24/os-x-sed-extra-characters-at-the-end-of-l-command-error/
-        if (os.platform() === 'darwin')  {
+        if (os.platform() === 'darwin') {
             await bash(
                 `sed -i '' "s/abSiteId:${abSiteId}/abSiteId:${abSiteIdB}/g;" $(find distCurrent -type f -name 'app.*.js')`
             );
-        }  else {
+        } else {
             await bash(
                 `sed -i "s/abSiteId:${abSiteId}/abSiteId:${abSiteIdB}/g;" $(find distCurrent -type f -name 'app.*.js')`
             );
@@ -166,7 +166,7 @@ const getTasks = (branch, { isCI, flowType = 'single' }) => {
     }
 
     // Keep prod-b as the latest one as it's the only one with a diff config
-    ['dev', 'tor', 'prod-b'].forEach((key, i, arr) => {
+    ['dev', 'tor', 'beta', 'prod-b'].forEach((key, i, arr) => {
         list.push({
             title: `Create sub-bundle for deploy-${key}`,
             enabled: () => !isCI && /prod-a$/.test(branch),
