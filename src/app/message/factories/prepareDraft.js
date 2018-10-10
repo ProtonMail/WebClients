@@ -55,7 +55,8 @@ function prepareDraft(addressesModel, authentication, dispatchers, messageBuilde
         }
 
         if (CACHE.messagePrepared) {
-            return { Body: getBody(), ...message }; // If the message.Body is defined, we have to keep it.
+            // Make sure to return a messageModel Object
+            return messageModel({ Body: getBody(), ...message }); // If the message.Body is defined, we have to keep it.
         }
 
         return init();
