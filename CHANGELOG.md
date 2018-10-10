@@ -1,3 +1,8 @@
+# [3.14.18] - 2018-10-10
+
+## Fixed
+- You cannot reply to a PGP message, an error "Invalid message body" was shown
+
 # [3.14.17] - 2018-10-09
 
 ## Added
