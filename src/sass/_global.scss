@@ -251,6 +251,12 @@ fieldset {
 	margin-bottom: 1em;
 }
 
+/* removes X in input when typing in IE/EDGE */
+input::-ms-clear {
+    width: 0;
+    height: 0;
+}
+
 fieldset legend {
 	color: $primary;
 	text-transform: uppercase;
