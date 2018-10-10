@@ -393,7 +393,7 @@ function ComposeMessageController(
         $scope.$applyAsync(() => {
             const size = $scope.messages.unshift(message);
 
-            postMessage(message, { encrypt: !message.Body })
+            postMessage(message, { encrypt: !message.isPGPMIME() })
                 .then(() => {
                     dispatcher['composer.update']('loaded', { size, message });
                 })
