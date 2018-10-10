@@ -110,8 +110,8 @@ function wizard(
                 });
             }
 
-            function tourStart() {
-                $state.go('secured.inbox');
+            async function tourStart() {
+                await $state.go('secured.inbox');
                 AppModel.set('tourActive', true);
                 scope.$applyAsync(() => {
                     scope.tourActive = true; // used for body class and CSS.
