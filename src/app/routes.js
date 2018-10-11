@@ -526,52 +526,6 @@ export default angular
                     authentication.redirectIfNecessary();
                 }
             })
-            .state('pgp', {
-                url: '/pgp/:messageID',
-                resolve: {
-                    app(lazyLoader) {
-                        // We need to lazy load the app.
-                        return lazyLoader.app();
-                    },
-                    messageID(app, $stateParams) {
-                        if ($stateParams.messageID) {
-                            return $stateParams.messageID;
-                        }
-                        return Promise.reject();
-                    }
-                },
-                views: {
-                    'main@': {
-                        templateUrl: require('../templates/views/pgp.tpl.html'),
-                        controller($scope, messageID, downloadFile) {
-                            function viewPgp(event) {
-                                $scope.$applyAsync(() => {
-                                    $scope.content = event.data;
-                                });
-                                window.removeEventListener('message', viewPgp, false);
-                            }
-
-                            $scope.download = () => {
-                                const blob = new Blob([$scope.content], { type: 'data:text/plain;charset=utf-8;' });
-                                const filename = 'pgp.txt';
-                                downloadFile(blob, filename);
-                            };
-
-                            $scope.print = () => {
-                                window.print();
-                            };
-
-                            if (window.opener) {
-                                const url = window.location.href;
-                                const arr = url.split('/');
-                                const targetOrigin = arr[0] + '//' + arr[2];
-                                window.addEventListener('message', viewPgp, false);
-                                window.opener.postMessage(messageID, targetOrigin);
-                            }
-                        }
-                    }
-                }
-            })
 
             .state('printer', {
                 params: { messageID: null },

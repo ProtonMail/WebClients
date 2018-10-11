@@ -2,7 +2,14 @@ import { MAILBOX_IDENTIFIERS } from '../../constants';
 import { combineHeaders, splitMail } from '../../../helpers/mail';
 
 /* @ngInject */
-function actionMessage(dispatchers, downloadFile, openStatePostMessage, mimeMessageBuilder, networkActivityTracker) {
+function actionMessage(
+    dispatchers,
+    downloadFile,
+    openStatePostMessage,
+    mimeMessageBuilder,
+    networkActivityTracker,
+    pgpModal
+) {
     const { dispatcher } = dispatchers(['messageActions']);
     const disp = (message = {}) => (action = '', mailbox = '') => {
         dispatcher.messageActions(action, {
@@ -86,15 +93,14 @@ function actionMessage(dispatchers, downloadFile, openStatePostMessage, mimeMess
                     }
 
                     case 'viewPgp': {
-                        const message = scope.message;
-                        openStatePostMessage.open(
-                            'pgp',
-                            { messageID: message.ID },
-                            {
-                                message,
-                                data: `${message.Header}\n\r${message.Body}`
+                        pgpModal.activate({
+                            params: {
+                                message: scope.message,
+                                cancel() {
+                                    pgpModal.deactivate();
+                                }
                             }
-                        );
+                        });
                         break;
                     }
 

@@ -59,9 +59,11 @@ import transformStylesheet from './services/transformStylesheet';
 import transformWelcome from './services/transformWelcome';
 import messageDisplayError from './directives/messageDisplayError';
 import prepareDraft from './factories/prepareDraft';
+import pgpModal from './modals/pgpModal';
 
 export default angular
     .module('proton.message', ['ngSanitize', 'proton.contact', 'proton.squire'])
+    .factory('pgpModal', pgpModal)
     .factory('prepareDraft', prepareDraft)
     .directive('messageDisplayError', messageDisplayError)
     .run((unsubscribeModel) => unsubscribeModel.init())

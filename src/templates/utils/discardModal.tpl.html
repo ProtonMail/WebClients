@@ -20,15 +20,13 @@
 
         <footer class="modal-footer text-right">
             <button
-                class="pm_button pull-left"
-                ng-click="ctrl.discard()"
-                ng-disabled="ctrl.networkActivity">{{ ::ctrl.i18n.button.discard }}</button>
+                class="pm_button pull-left disabled-if-network-activity"
+                ng-click="ctrl.discard()">{{ ::ctrl.i18n.button.discard }}</button>
 
             <button
-                class="pm_button primary"
+                class="pm_button primary disabled-if-network-activity"
                 tabindex="1"
-                ng-click="ctrl.submit()"
-                ng-disabled="ctrl.networkActivity">{{ ::ctrl.i18n.button.confirm }}</button>
+                ng-click="ctrl.submit()">{{ ::ctrl.i18n.button.confirm }}</button>
         </footer>
     </div>
     <div class="modal-overlay"></div>
