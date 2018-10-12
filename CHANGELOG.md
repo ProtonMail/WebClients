@@ -1,3 +1,12 @@
+# [3.14.19] - 2018-10-12
+## Fixed
+- Fixed remove/clear input button on IE
+- Tutorial didn't start if triggered manually
+- Custom filter options dropdown was closed after each selection.
+
+##Changed
+- View headers is now shown in the same window as a pop-up
+
 # [3.14.18] - 2018-10-10
 
 ## Fixed
