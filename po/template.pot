@@ -504,6 +504,8 @@ msgstr ""
 #: ./src/templates/directives/composer/composer-header.tpl.html:44
 #: ./src/templates/filter/filterAddressModal.tpl.html:4
 #: ./src/templates/filter/modal.tpl.html:7
+#: ./src/templates/message/pgpModal.tpl.html:24
+#: ./src/templates/message/pgpModal.tpl.html:3
 #: ./src/templates/modals/abuseFraudModal.tpl.html:3
 #: ./src/templates/modals/activateOrganization.tpl.html:3
 #: ./src/templates/modals/addAddress.tpl.html:3
@@ -663,7 +665,7 @@ msgstr ""
 #: ./src/templates/address/addressKeysView.tpl.html:199
 #: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/elements/moveElement.tpl.html:26
-#: ./src/templates/message/message.tpl.html:195
+#: ./src/templates/message/message.tpl.html:196
 #: ./src/templates/modals/deleteAccount.tpl.html:38
 #: ./src/templates/ui/toolbarMobile.tpl.html:50
 #: ./src/templates/views/domains.tpl.html:124
@@ -744,6 +746,8 @@ msgstr ""
 
 #: ./src/app/attachments/services/attachmentDownloader.js:52
 #: ./src/templates/attachments/eventsAttachments.tpl.html:19
+#: ./src/templates/message/pgpModal.tpl.html:17
+#: ./src/templates/message/pgpModal.tpl.html:30
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:28
 #: ./src/templates/views/payments.tpl.html:90
 #: ./src/templates/views/pgp.tpl.html:9
@@ -871,7 +875,7 @@ msgstr ""
 #: ./src/app/address/services/deleteKeyProcess.js:32
 #: ./src/templates/address/addressKeysView.tpl.html:140
 #: ./src/templates/address/addressKeysView.tpl.html:154
-#: ./src/templates/message/message.tpl.html:214
+#: ./src/templates/message/message.tpl.html:215
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
@@ -908,7 +912,7 @@ msgctxt "Action"
 msgid "Forgot username?"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:156
+#: ./src/templates/message/message.tpl.html:157
 msgctxt "Action"
 msgid "Forward"
 msgstr ""
@@ -962,7 +966,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:226
+#: ./src/templates/message/message.tpl.html:227
 msgctxt "Action"
 msgid "Hide details"
 msgstr ""
@@ -1015,7 +1019,7 @@ msgid "Italic"
 msgstr ""
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:130
+#: ./src/templates/message/message.tpl.html:131
 msgctxt "Action"
 msgid "Label as"
 msgstr ""
@@ -1114,13 +1118,13 @@ msgctxt "Action"
 msgid "Mark as read - Mark as unread"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:188
+#: ./src/templates/message/message.tpl.html:189
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr ""
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:11
-#: ./src/templates/message/message.tpl.html:181
+#: ./src/templates/message/message.tpl.html:182
 #: ./src/templates/ui/toolbarMobile.tpl.html:17
 msgctxt "Action"
 msgid "Mark as unread"
@@ -1154,14 +1158,14 @@ msgctxt "Action"
 msgid "Minimize"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:163
+#: ./src/templates/message/message.tpl.html:164
 #: ./src/templates/squire/moreToggle.tpl.html:2
 msgctxt "Action"
 msgid "More"
 msgstr ""
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:122
+#: ./src/templates/message/message.tpl.html:123
 msgctxt "Action"
 msgid "Move to"
 msgstr ""
@@ -1173,7 +1177,7 @@ msgid "Move to archive"
 msgstr ""
 
 #: ./src/templates/elements/moveElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:171
+#: ./src/templates/message/message.tpl.html:172
 #: ./src/templates/ui/toolbarMobile.tpl.html:38
 msgctxt "Action"
 msgid "Move to inbox"
@@ -1186,7 +1190,7 @@ msgid "Move to spam"
 msgstr ""
 
 #: ./src/templates/elements/moveElement.tpl.html:2
-#: ./src/templates/message/message.tpl.html:177
+#: ./src/templates/message/message.tpl.html:178
 #: ./src/templates/ui/toolbarMobile.tpl.html:34
 msgctxt "Action"
 msgid "Move to trash"
@@ -1286,7 +1290,7 @@ msgctxt "Action"
 msgid "Previous"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:218
+#: ./src/templates/message/message.tpl.html:219
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -1355,12 +1359,12 @@ msgctxt "Action"
 msgid "Remove Entry"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:139
+#: ./src/templates/message/message.tpl.html:140
 msgctxt "Action"
 msgid "Reply"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:148
+#: ./src/templates/message/message.tpl.html:149
 msgctxt "Action"
 msgid "Reply all"
 msgstr ""
@@ -1555,7 +1559,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:225
+#: ./src/templates/message/message.tpl.html:226
 msgctxt "Action"
 msgid "Show details"
 msgstr ""
@@ -1790,22 +1794,22 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:209
+#: ./src/templates/message/message.tpl.html:210
 msgctxt "Action"
 msgid "View headers"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:210
+#: ./src/templates/message/message.tpl.html:211
 msgctxt "Action"
 msgid "View original"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:204
+#: ./src/templates/message/message.tpl.html:205
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:200
+#: ./src/templates/message/message.tpl.html:201
 msgctxt "Action"
 msgid "View source code"
 msgstr ""
@@ -6680,6 +6684,11 @@ msgctxt "Label for contact Sign toggle"
 msgid "Sign"
 msgstr ""
 
+#: ./src/templates/message/message.tpl.html:108
+msgctxt "Label for the message size when displaying email details"
+msgid "Size:"
+msgstr ""
+
 #: ./src/app/contact/modals/contactLoaderModal.js:17
 msgctxt "Label for the progress bar displayed during the contact export"
 msgid "Decrypting contacts: {{progress}}%"
@@ -9736,6 +9745,11 @@ msgctxt "Title for report phishing modal"
 msgid "Confirm phishing report"
 msgstr ""
 
+#: ./src/templates/message/pgpModal.tpl.html:13
+msgctxt "Title for the PGP modal"
+msgid "Message headers"
+msgstr ""
+
 #: ./src/app/contact/modals/contactLoaderModal.js:69
 msgctxt "Title for the contacts exporter modal"
 msgid "Exporting Contacts"
@@ -11475,7 +11489,7 @@ msgid "Street address"
 msgstr ""
 
 #: ./src/templates/directives/composer/composerSubject.tpl.html:2
-#: ./src/templates/message/message.tpl.html:109
+#: ./src/templates/message/message.tpl.html:110
 msgid "Subject"
 msgstr ""
 
