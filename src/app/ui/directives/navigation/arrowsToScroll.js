@@ -19,7 +19,7 @@ function arrowsToScroll() {
                 const $left = element.find('[data-direction="left"]');
                 const $right = element.find('[data-direction="right"]');
                 const onResize = _.debounce(
-                    () => $buttons.prop('disabled', container.get(0).scrollWidth < container.get(0).clientWidth),
+                    () => $buttons.prop('disabled', container.get(0).scrollWidth <= container.get(0).clientWidth),
                     300
                 );
                 const onScroll = _.debounce(() => {
