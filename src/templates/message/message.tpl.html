@@ -105,6 +105,7 @@
                     data-list="BCC"
                     data-message-id="message.ID"
                 ></message-contacts>
+                <div class="recipients-details-size"><span translate-context="Label for the message size when displaying email details" translate>Size:</span> {{ ::message.Size | bytes }}</div>
                 <div class="encrypted-subject" ng-if="message.encryptedSubject">
                     <i class="fa fa-lock"></i><span translate class="header-name">Subject</span>
                     <span> {{ ::message.encryptedSubject }}</span>
