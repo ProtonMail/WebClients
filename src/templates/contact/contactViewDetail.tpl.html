@@ -47,13 +47,14 @@
             </div>
 
             <contact-error></contact-error>
+
             <ul
                 class="contactViewDetail-list"
-                ng-repeat="(type, value) in model.encrypted track by type">
+                ng-repeat="properties in model.encrypted track by $id(properties)">
 
                 <contact-view-item
                     ng-class="{'contactViewDetail-item-start': !$index}"
-                    ng-repeat="info in ::value track by $id(info)"
+                    ng-repeat="info in ::properties track by $id(info)"
                     class="contactViewDetail-item"></contact-view-item>
 
             </ul>

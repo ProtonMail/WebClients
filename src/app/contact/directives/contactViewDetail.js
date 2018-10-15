@@ -13,7 +13,7 @@ function contactViewDetail(contactDetailsModel, dispatchers, userType) {
 
             scope.isFree = userType().isFree;
             scope.model = contactDetailsModel.extractHumans(scope.contact.vCard, ({ key }) => key !== 'uid');
-            scope.model.hasEncrypted = !!Object.keys(scope.model.encrypted).length;
+            scope.model.hasEncrypted = scope.model.encrypted.length;
 
             on('contacts', (event, { type = '', data = {} }) => {
                 if (type === 'contactUpdated' && data.contact.ID === scope.contact.ID) {
@@ -22,7 +22,7 @@ function contactViewDetail(contactDetailsModel, dispatchers, userType) {
                             scope.contact.vCard,
                             ({ key }) => key !== 'uid'
                         );
-                        scope.model.hasEncrypted = !!Object.keys(scope.model.encrypted).length;
+                        scope.model.hasEncrypted = scope.model.encrypted.length;
                     });
                 }
             });

@@ -1,6 +1,6 @@
 <li
     class="contactViewItem-container"
-    data-field="{{::type}}">
+    data-field="{{::info.key}}">
 
     <i class="fa fa-phone contactViewDetail-icon" aria-hidden="true"></i>
     <i class="fa fa-envelope contactViewDetail-icon" aria-hidden="true"></i>
@@ -16,37 +16,37 @@
     <i class="fa fa-user-circle-o contactViewDetail-icon" aria-hidden="true"></i>
     <i class="fa fa-tag contactViewDetail-icon" aria-hidden="true"></i>
 
-    <span class="contactViewDetail-type">{{::info.type | contactViewType:type }}</span>
+    <span class="contactViewDetail-type">{{::info.key | contactViewType:info.key }}</span>
     <a
-        ng-if="type === 'email'"
+        ng-if="info.key === 'email'"
         pt-tooltip-translate="Compose a new message to this email"
         pt-tooltip-translate-context="Tooltip"
         href="mailto:{{info.value}}"
         class="contactViewItem-value-email">{{::info.value}}</a>
 
     <a
-        ng-if="type === 'tel'"
+        ng-if="info.key === 'tel'"
         href="tel:{{info.value}}"
         class="contactViewItem-value-tel">{{::info.value}}</a>
 
     <a
-        ng-if="type === 'url'"
+        ng-if="info.key === 'url'"
         rel="noreferrer nofollow noopener"
         href="{{::info.value | formatURL}}"
         target="_blank"
         class="contactViewItem-value-url">{{::info.value | formatURL}}</a>
     <span
-        ng-if="type !== 'adr' && type !== 'email' && type !== 'tel' && type !== 'photo' && type !== 'url'"
+        ng-if="info.key !== 'adr' && info.key !== 'email' && info.key !== 'tel' && info.key !== 'photo' && info.key !== 'url'"
         class="contactViewItem-value-txt">{{::info.value}}</span>
 
     <img
         class="contactViewItem-value-img"
-        ng-if="type === 'photo'"
+        ng-if="info.key === 'photo'"
         ng-src="{{::info.value}}"
         alt="avatar">
 
     <address
-        ng-if="type === 'adr'"
+        ng-if="info.key === 'adr'"
         class="contactViewItem-value-adr">
         <ul class="contactViewItem-list">
             <li
@@ -57,7 +57,7 @@
 
     <advanced-settings-btn
         class="contactItem-btn-settings"
-        ng-if="type === 'email' && !isOwnAddress(info.value)"
+        ng-if="info.key === 'email' && !isOwnAddress(info.value)"
         data-contact="contact"
         data-model="info"></advanced-settings-btn>
 </li>

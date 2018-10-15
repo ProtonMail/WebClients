@@ -2,7 +2,14 @@ import _ from 'lodash';
 
 import { VCARD_KEYS, CONTACT_ADD_ID } from '../../constants';
 import { unescapeValue, escapeValue, cleanValue } from '../../../helpers/vcard';
-import { getKeys, getHumanFields, isPersonalsKey, FIELDS, toHumanKey } from '../../../helpers/vCardFields';
+import {
+    getKeys,
+    getHumanFields,
+    isPersonalsKey,
+    isEncryptedKey,
+    FIELDS,
+    toHumanKey
+} from '../../../helpers/vCardFields';
 
 /* @ngInject */
 function contactDetailsModel(
@@ -152,38 +159,49 @@ function contactDetailsModel(
      */
     const extractHumans = (vcard, filter = _.identity) => {
         const fields = getHumanFields(vcard);
-        const getType = (key) => (/^(email|fn)$/.test(key) ? 'clear' : 'encrypted');
-
-        const { clear, encrypted, personalsList } = fields.reduce(
+        const { clear, encrypted, personalsKey } = fields.reduce(
             (acc, field) => {
                 if (isPersonalsKey(field)) {
-                    acc.personalsList.push(field);
+                    !acc.personalsKey && (acc.personalsKey = field);
                     return acc;
                 }
 
-                acc[getType(field)][field] = extract({
+                const properties = extract({
                     field: field.toUpperCase(),
                     vcard
                 });
+
+                if (!properties.length) {
+                    return acc;
+                }
+
+                if (isEncryptedKey(field)) {
+                    acc.encrypted.push(properties);
+                    return acc;
+                }
+
+                acc.clear[field] = properties;
+
                 return acc;
             },
             {
                 clear: Object.create(null),
-                encrypted: Object.create(null),
-                personalsList: []
+                encrypted: [], // [[], [], []]
+                personalsKey: undefined
             }
         );
 
-        if (personalsList.length) {
+        if (personalsKey) {
             const list = extract({
-                field: personalsList[0].toUpperCase(),
+                field: personalsKey.toUpperCase(),
                 vcard
             });
 
-            const map = list.filter(filter).reduce((acc, obj) => ((acc[obj.key] = [obj]), acc), Object.create(null));
+            const filteredList = list.filter(filter);
+
             return {
                 clear,
-                encrypted: { ...encrypted, ...map }
+                encrypted: filteredList.length ? encrypted.concat([filteredList]) : encrypted
             };
         }
 

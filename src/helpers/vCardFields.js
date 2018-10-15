@@ -112,6 +112,10 @@ export function isPersonalsKey(key = '') {
     return FIELDS.PERSONALS.includes(key.toLowerCase());
 }
 
+export function isEncryptedKey(key = '') {
+    return !/^(email|fn)$/.test(key);
+}
+
 /**
  * Get keys "human friendly" from a vCard, what we want
  * to see as a human about a contact
