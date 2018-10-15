@@ -17,7 +17,8 @@ function notification() {
     this.$get = [
         'notify',
         '$cacheFactory',
-        (notify, $cacheFactory) => {
+        'sanitize',
+        (notify, $cacheFactory, sanitize) => {
             // LRU cache containing notification texts -> timestamp
             const cache = $cacheFactory('notifications', { number: 5 });
 
@@ -26,9 +27,11 @@ function notification() {
                 options.classes = `${options.classes || ''} ${CONFIG.classNames[type]}`.trim();
 
                 const htmlInfo = isHTML(message);
+
                 // If it is a html string, double check that it is actually wrapped in one element. Otherwise wrap it in a div.
                 if (htmlInfo.isHtml && !options.messageTemplate) {
-                    options.messageTemplate = htmlInfo.isWrapped ? message : `<div>${message}</div>`;
+                    const content = sanitize.input(message);
+                    options.messageTemplate = htmlInfo.isWrapped ? content : `<div>${content}</div>`;
                 }
 
                 /**

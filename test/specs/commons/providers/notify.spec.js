@@ -1,5 +1,6 @@
 import notificationService from '../../../../src/app/commons/providers/notification';
 import { generateModuleName } from '../../../utils/helpers';
+import sanitizeService from '../../../../src/app/utils/services/sanitize';
 
 const tpl = require('../../../../src/templates/notifications/base.tpl.html');
 
@@ -7,6 +8,7 @@ const MODULE = generateModuleName();
 
 describe('notify service', () => {
     angular.module(MODULE, ['cgNotify', 'templates-app', 'ngSanitize'])
+        .factory('sanitize', sanitizeService)
         .provider('notification', notificationService)
         .config((notificationProvider) => {
             notificationProvider.template(tpl);
