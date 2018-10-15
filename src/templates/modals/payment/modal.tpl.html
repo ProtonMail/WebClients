@@ -13,7 +13,7 @@
     name="paymentsModalForm"
     role="dialog"
     novalidate
-    ng-submit="ctrl.submit()">
+    ng-submit="paymentsModalForm.$valid && ctrl.submit()">
 
     <div class="modal-dialog" id="paymentsModal">
         <button
@@ -73,4 +73,4 @@
     </div>
 
     <div class="modal-overlay"></div>
-</div>
+</form>

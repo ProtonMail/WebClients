@@ -74,7 +74,8 @@ function paymentForm(
 
     return {
         scope: {
-            ctrl: '='
+            ctrl: '=',
+            form: '='
         },
         replace: true,
         templateUrl: require('../../../templates/payment/paymentForm.tpl.html'),
@@ -166,8 +167,7 @@ function paymentForm(
                     .subscribe(getParameters())
                     .then(eventManager.call)
                     .then(finish)
-                    .catch((error) => {
-                        notification.error(error);
+                    .catch(() => {
                         ctrl.step = 'payment';
                     });
             };
