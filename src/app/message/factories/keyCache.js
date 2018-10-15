@@ -2,13 +2,14 @@ import _ from 'lodash';
 import { RECIPIENT_TYPE, TIME } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
-const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX } = API_CUSTOM_ERROR_CODES;
+const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID } = API_CUSTOM_ERROR_CODES;
 
 const TIMEOUT = 10 * TIME.MINUTE;
 
 /* @ngInject */
 function keyCache(Key, addressesModel, mailSettingsModel) {
     const CACHE = {};
+    const EMAIL_ERRORS = [KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID];
 
     /**
      * Get the keys for an email address from the API.
@@ -16,14 +17,14 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
      * @returns {Promise<{RecipientType, MIMEType, Keys}>}
      */
     const getKeysFromApi = (email) => {
-        return Key.keys({ params: { Email: email }, suppress: [KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX] })
+        return Key.keys({ params: { Email: email }, suppress: EMAIL_ERRORS })
             .then((data) => {
                 return _.pick(data, 'RecipientType', 'MIMEType', 'Keys');
             })
             .catch((err) => {
                 const { data = {} } = err;
 
-                if (data.Code === KEY_GET_ADDRESS_MISSING || data.Code === KEY_GET_DOMAIN_MISSING_MX) {
+                if (EMAIL_ERRORS.includes(data.Code)) {
                     return {
                         RecipientType: RECIPIENT_TYPE.TYPE_NO_RECEIVE,
                         MIMEType: null,
