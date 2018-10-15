@@ -6,11 +6,8 @@ function Key($http, url, srp) {
      * Get public keys of the given emails addresses
      * @return {Promise}
      */
-    const keys = (Email, Fingerprint = null) => {
-        return $http.get(requestURL(), {
-            params: { Email, Fingerprint },
-            noNotify: true
-        });
+    const keys = (params = {}) => {
+        return $http.get(requestURL(), params).then(({ data } = {}) => data);
     };
 
     /**
