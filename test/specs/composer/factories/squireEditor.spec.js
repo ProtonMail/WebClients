@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import service from '../../../../src/app/squire/factories/squireEditor';
 import editorModelService from '../../../../src/app/squire/factories/editorModel';
 import sanitizeService from '../../../../src/app/utils/services/sanitize';
@@ -18,7 +20,7 @@ describe('squire editor', () => {
 
         const dispatchers = dispatchersService(rootScope);
         const editorModel = editorModelService();
-        sanitize = sanitizeService();
+        sanitize = sanitizeService(_.identity);
         squireEditor = service(dispatchers, editorModel, sanitize);
     }));
 
