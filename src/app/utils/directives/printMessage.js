@@ -9,6 +9,7 @@ function printMessage(printMessageModel) {
         templateUrl: require('../../../templates/utils/printMessage.tpl.html'),
         link(scope) {
             scope.model = printMessageModel(scope.config);
+            scope.message = scope.config.message;
         }
     };
 }

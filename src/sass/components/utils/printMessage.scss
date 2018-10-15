@@ -14,6 +14,7 @@
 /* suggest not to split inside attachment area */
 .printMessage-container .listAttachments-container {
     page-break-inside: avoid;
+    margin-top: 1rem;
 }
 
 /* fix attachments text cropped and remove double-border */
@@ -21,3 +22,7 @@
     height: auto;
     line-height: auto;
 }
+
+.printMessage-container .listAttachments-title-size,
+.printMessage-container .listAttachments-title-download { display: none }
+.printMessage-container .listAttachments-container a { pointer-events: none }
