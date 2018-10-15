@@ -154,7 +154,8 @@ function postMessage(
             const { Message: remoteMessage } = await messageRequest.draft(parameters, localMessage, actionType);
 
             const conversation = cache.getConversationCached(remoteMessage.ConversationID) || {};
-            const contextNumUnread = conversation.ContextNumUnread || 0;
+            const { Labels = [], ContextNumUnread = 0 } = conversation;
+
             let numMessages;
 
             if (actionType === STATUS.CREATE) {
@@ -209,10 +210,10 @@ function postMessage(
                     {
                         NumAttachments: localMessage.Attachments.length, // it's fine
                         NumMessages: numMessages,
-                        ContextNumUnread: contextNumUnread,
+                        ContextNumUnread,
                         ID: remoteMessage.ConversationID,
                         Labels: getConversationLabels(
-                            { ContextNumUnread: contextNumUnread },
+                            { ContextNumUnread, Labels },
                             {
                                 toAdd: [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts]
                             }
