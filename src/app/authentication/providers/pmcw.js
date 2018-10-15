@@ -14,6 +14,11 @@ function pmcw() {
 
             keyPromise
                 .then((privateKey) => {
+                    // It can be a clearText key
+                    if (!/^-----BEGIN PGP MESSAGE-----/.test(accessToken)) {
+                        return resolve({ password: prKeyPassCode, token: accessToken });
+                    }
+
                     const message = pmcrypto.getMessage(accessToken);
                     // this is the private key, use this and decryptMessage to get the access token
                     pmcrypto
