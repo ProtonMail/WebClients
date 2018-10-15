@@ -117,9 +117,8 @@ function sendMessage(
             save: false
         });
 
-        const conversation = cache.getConversationCached(Sent.ConversationID);
-        const NumMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
-        const ContextNumUnread = angular.isDefined(conversation) ? conversation.ContextNumUnread : 0;
+        const { NumMessages = 1, ContextNumUnread = 0, Labels = [] } =
+            cache.getConversationCached(Sent.ConversationID) || {};
 
         // The back-end doesn't return Senders nor Recipients
         Sent.Senders = [Sent.Sender];
@@ -143,7 +142,7 @@ function sendMessage(
                 Subject: Sent.Subject,
                 ID: Sent.ConversationID,
                 Labels: getConversationLabels(
-                    { ContextNumUnread },
+                    { ContextNumUnread, Labels },
                     {
                         toAdd: [MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent],
                         toRemove: [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts]
