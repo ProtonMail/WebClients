@@ -25,10 +25,11 @@ function contactEncryptionSettings(
      *      ⚠ Once done we mutate item to update settings. ⚠
      * @param  {Object} item             Item from a vcard for an Email
      * @param  {Object} contact          The contact
+     * @param  {String} mode             'view' from contact view details
      * @return {Promise}                 return the new model with { Keys, Sign etc.}
      */
-    const get = async ({ value: email } = {}, contact) => {
-        const directSave = !!contact.ID;
+    const get = async ({ value: email } = {}, contact, mode) => {
+        const directSave = mode === 'view';
         const contactId = contact.ID || CONTACT_ADD_ID;
         const { model, keys: internalKeys } = await networkActivityTracker.track(loadConfig(email, contactId));
 
@@ -37,6 +38,7 @@ function contactEncryptionSettings(
                 contactEncryptionAddressMap.set(contactId, email, model);
 
                 if (directSave) {
+                    // Save entire contact model only for the contact view details (view mode) because the email is already defined in the model
                     const promise = contactEncryptionSaver.save(model, contact, email);
                     await networkActivityTracker.track(promise);
                 }

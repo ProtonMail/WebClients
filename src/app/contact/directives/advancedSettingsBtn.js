@@ -10,7 +10,7 @@ function advancedSettingsBtn(contactEncryptionSettings, addressesModel, keyCache
         replace: true,
         restrict: 'E',
         templateUrl: require('../../../templates/contact/advancedSettingsBtn.tpl.html'),
-        link(scope, el) {
+        link(scope, el, { mode }) {
             scope.isOwnAddress = (email) => {
                 const address = addressesModel.getByEmail(email);
                 const keys = keyCache.getUserAddressesKeys(address) || {};
@@ -19,7 +19,7 @@ function advancedSettingsBtn(contactEncryptionSettings, addressesModel, keyCache
 
             const onClick = async () => {
                 try {
-                    await contactEncryptionSettings({ ...scope.model }, scope.contact);
+                    await contactEncryptionSettings({ ...scope.model }, scope.contact, mode);
                 } catch (e) {
                     // noop
                 }
