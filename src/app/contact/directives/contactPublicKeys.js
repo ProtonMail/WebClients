@@ -165,7 +165,7 @@ function contactPublicKeys(
                     const { invalidKeys, validKeys } = keys.reduce(
                         (acc, key) => {
                             if (key.error) {
-                                acc.invalidKeys.push(key);
+                                acc.invalidKeys.push(key.error);
                             } else {
                                 acc.validKeys.push(key);
                             }
