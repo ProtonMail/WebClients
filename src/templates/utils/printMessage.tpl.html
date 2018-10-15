@@ -1,0 +1,39 @@
+<div class="printMessage-container">
+
+    <h1>{{ ::model.subject }}</h1>
+
+    <hr>
+
+    <p>
+        <span>{{ ::model.title }}</span>
+        <i ng-repeat="iconClass in model.icons" ng-class="iconClass" class="fa"></i>
+        <b>{{ ::model.time }}</b>
+    </p>
+
+    <p>
+        <span translate-comment="printed message info" translate translate-context="Title">From</span>:
+        <b>{{ ::model.sender }}</b>
+    </p>
+
+    <p ng-if="model.to">
+        <span translate-comment="printed message info" translate translate-context="Title">To</span>:
+        <b>{{ ::model.to }}</b>
+    </p>
+
+    <p ng-if="model.cc">
+        <span translate-comment="printed message info" translate translate-context="Title">CC</span>:
+        <b>{{ ::model.cc }}</b>
+    </p>
+
+    <p ng-if="model.bcc">
+        <span translate-comment="printed message info" translate translate-context="Title">BCC</span>:
+        <b>{{ ::model.bcc }}</b>
+    </p>
+
+    <hr>
+
+    <div ng-bind-html="::model.content" ng-if="model.MIMEType === 'text/html'"></div>
+    <div class="printMessage-plain-content" ng-bind="::model.content" ng-if="model.MIMEType === 'text/plain'"></div>
+
+    <list-attachments data-model="model"></list-attachments>
+</div>

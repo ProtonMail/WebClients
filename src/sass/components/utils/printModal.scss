@@ -1,0 +1,38 @@
+@media print {
+
+    /* some resets */
+    .printModal-body,
+    .pm_modal .modal-dialog,
+    .printModal-container,
+    body {
+        position: static;
+        margin: 0;
+        width: 100%;
+        background: #fff!important;
+    }
+
+    /* remove border from modal */
+    .pm_modal .modal-dialog {
+        border: 0;
+    }
+
+    /* Fix a crazy scrollbar display on Edge printing */
+    html {
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    /* hide everything else not needed for print */
+    body.secure #body, /* appp */
+    .pm_modal .modal-dialog .close, /* modal close button */
+    .pm_modal .modal-dialog .modal-content h4, /* modal text "print preview" */
+    .pm_modal .modal-overlay, /* overlay */
+    .modal-footer /* modale footer buttons */ {
+       display: none;
+    }
+
+    /* fix display */
+    .pm_modal .modal-dialog .modal-content .modal-body {
+        box-shadow: none;
+        padding: 1em;
+    }
+}

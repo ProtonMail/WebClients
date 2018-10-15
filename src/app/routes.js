@@ -527,55 +527,6 @@ export default angular
                 }
             })
 
-            .state('printer', {
-                params: { messageID: null },
-                url: '/printer/:messageID',
-                resolve: {
-                    app(lazyLoader) {
-                        // We need to lazy load the app before being able to build the user object.
-                        return lazyLoader.app();
-                    },
-                    messageID(app, $stateParams) {
-                        if ($stateParams.messageID) {
-                            return $stateParams.messageID;
-                        }
-                        return Promise.reject();
-                    }
-                },
-                views: {
-                    'main@': {
-                        templateUrl: require('../templates/views/message.print.tpl.html'),
-                        controller($scope, $sce, messageID, messageModel) {
-                            $scope.loading = true;
-
-                            if (window.opener) {
-                                const [protocol, , host] = window.location.href.split('/');
-                                const targetOrigin = `${protocol}//${host}`;
-
-                                window.addEventListener('message', printMessage, false);
-                                window.opener.postMessage(messageID, targetOrigin);
-                            }
-
-                            function printMessage(event) {
-                                const message = messageModel(JSON.parse(event.data));
-
-                                if (message.ID === messageID) {
-                                    document.title = message.Subject || message.ID;
-                                    $scope.$applyAsync(() => {
-                                        $scope.content = $sce.trustAsHtml(message.content);
-                                        $scope.message = message;
-                                        $scope.loading = false;
-                                    });
-
-                                    window.removeEventListener('message', printMessage, false);
-                                    setTimeout(() => window.print(), 2000, false);
-                                }
-                            }
-                        }
-                    }
-                }
-            })
-
             .state('secured.account', {
                 url: '/account',
                 views: {

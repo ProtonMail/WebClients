@@ -2,14 +2,7 @@ import { MAILBOX_IDENTIFIERS } from '../../constants';
 import { combineHeaders, splitMail } from '../../../helpers/mail';
 
 /* @ngInject */
-function actionMessage(
-    dispatchers,
-    downloadFile,
-    openStatePostMessage,
-    mimeMessageBuilder,
-    networkActivityTracker,
-    pgpModal
-) {
+function actionMessage(dispatchers, downloadFile, mimeMessageBuilder, networkActivityTracker, pgpModal, printModal) {
     const { dispatcher } = dispatchers(['messageActions']);
     const disp = (message = {}) => (action = '', mailbox = '') => {
         dispatcher.messageActions(action, {
@@ -47,6 +40,23 @@ function actionMessage(
         networkActivityTracker.track(promise);
     };
 
+    /**
+     * Helper to get message content from the view
+     * @param {String} message.MIMEType
+     * @param {String} message.DecryptedBody
+     * @param {Element} node
+     * @return {String} content
+     */
+    const getMessageContent = ({ MIMEType = 'text/html', DecryptedBody }, node) => {
+        if (MIMEType === 'text/plain') {
+            return DecryptedBody;
+        }
+        return node
+            .parents('.message')
+            .get(0)
+            .querySelector('.message-body-container').innerHTML;
+    };
+
     return {
         link(scope, el, { actionMessage, actionMessageType = '' }) {
             const dispatch = disp(scope.message);
@@ -75,20 +85,18 @@ function actionMessage(
                         break;
 
                     case 'print': {
-                        const message = scope.message;
-                        message.content = el
-                            .parents('.message')
-                            .get(0)
-                            .querySelector('.message-body-container').innerHTML;
-
-                        openStatePostMessage.open(
-                            'printer',
-                            { messageID: message.ID },
-                            {
-                                message,
-                                data: JSON.stringify(message)
+                        printModal.activate({
+                            params: {
+                                type: 'message',
+                                config: {
+                                    message: scope.message,
+                                    content: getMessageContent(scope.message, el)
+                                },
+                                cancel() {
+                                    printModal.deactivate();
+                                }
                             }
-                        );
+                        });
                         break;
                     }
 
