@@ -3,7 +3,7 @@ import { flow, filter, reduce } from 'lodash/fp';
 import { REMOTE, WHITELIST } from '../../constants';
 
 /* @ngInject */
-function transformRemote($state, dispatchers, mailSettingsModel) {
+function transformRemote(dispatchers, mailSettingsModel) {
     const { dispatcher } = dispatchers(['message.open']);
     const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map(
         (name) => `proton-${name}`
@@ -74,8 +74,7 @@ function transformRemote($state, dispatchers, mailSettingsModel) {
         const showImages =
             message.showImages ||
             mailSettingsModel.get('ShowImages') & REMOTE ||
-            (WHITELIST.includes(message.Sender.Address) && !message.IsEncrypted) ||
-            $state.is('printer');
+            (WHITELIST.includes(message.Sender.Address) && !message.IsEncrypted);
         const content = html.innerHTML;
 
         // Bind the boolean only if there are something

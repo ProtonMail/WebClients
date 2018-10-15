@@ -118,7 +118,6 @@ angular
             const isUnlock = toState.name === 'login.unlock';
             const isOutside = toState.name.includes('eo');
             const isReset = toState.name.includes('reset');
-            const isPrinter = toState.name === 'printer';
             const isPgp = toState.name === 'pgp';
             const { isLoggedIn, isLocked } = AppModel.query();
 
@@ -133,21 +132,10 @@ angular
                 return;
             }
 
-            if (
-                isLogin ||
-                isSub ||
-                isSupport ||
-                isAccount ||
-                isSignup ||
-                isOutside ||
-                isUpgrade ||
-                isReset ||
-                isPrinter ||
-                isPgp
-            ) {
+            if (isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPgp) {
                 // if on the login, support, account, or signup pages dont require authentication
                 $log.debug(
-                    'appjs:(isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter || isPgp)'
+                    'appjs:(isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPgp)'
                 );
                 return; // no need to redirect
             }
