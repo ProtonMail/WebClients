@@ -1,0 +1,25 @@
+.printMessage-container, .printMessage-container * { box-sizing: border-box }
+
+.printMessage-plain-content {
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+.listAttachments-header {
+    display: none;
+}
+
+.listAttachments-list {
+    margin-top: 1rem;
+}
+
+/* suggest not to split inside attachment area */
+.listAttachments-container {
+    page-break-inside: avoid;
+}
+
+/* fix attachments text cropped and remove double-border */
+.listAttachments-list .listAttachments-att .name {
+    height: auto;
+    line-height: auto;
+}

@@ -34,9 +34,15 @@ import mailtoHandler from './directives/mailtoHandler';
 import mailUtils from './services/mailUtils';
 import discardModal from './modals/discardModal';
 import formatURL from './filters/formatURL';
+import printModal from './modals/printModal';
+import printMessage from './directives/printMessage';
+import printMessageModel from './factories/printMessageModel';
 
 export default angular
     .module('proton.utils', [])
+    .factory('printMessageModel', printMessageModel)
+    .directive('printMessage', printMessage)
+    .factory('printModal', printModal)
     .filter('formatURL', formatURL)
     .factory('discardModal', discardModal)
     .factory('mailUtils', mailUtils)

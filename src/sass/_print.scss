@@ -3,82 +3,13 @@
 	* {
 	  word-break: break-word;
 	}
+
 	blockquote {
 		margin-left: 1rem !important;
 		padding: 0 !important;
 	}
+
 	blockquote blockquote blockquote {
 		margin-left: 0 !important;
-	}
-
-	#secured-print {
-		* {
-			word-break: break-word;
-		}
-		table.print {
-			width: initial !important;
-			b, strong {
-				font-weight: 400;
-			}
-			i, em {
-				font-style: normal;
-			}
-			.pm_button {
-				margin: 4px 4px 0 0;
-			}
-		}
-	}
-
-	#body #conversation-view,
-	#pm_view {
-		width: 100% !important;
-	}
-
-	.pm_button,
-	.pm_buttons,
-	.sidebar,
-	.pm_toolbar,
-	#pm_list,
-	#conversation-list-columns,
-	#pm_header-desktop,
-	#pm_view article.closed
-	 {
-		display: none !important;
-		visibility: hidden !important;
-	}
-	* {
-		overflow: initial !important;
-		height: initial !important;
-		width: initial !important;
-		float: initial !important;
-		border-radius: 0 !important;
-		box-shadow: none !important;
-	}
-
-	/* attachments */
-	.listAttachments-container .listAttachments-att.pm_button {
-		display: inline-block !important;
-		visibility: visible !important;
-		border:0;
-		height:auto;
-		line-height: auto;
-		margin-bottom: 0px;
-
-		&:after { display: none }
-
-		.listAttachments-item { padding: 0 0 0 20px }
-
-		.size {
-			clear: none;
-			display: inline-block;
-			&:before { content: "(" }
-			&:after { content: ")" }
-		}
-
-		[class*="listAttachments-icon"] {
-			width: 20px;
-			font-size: 16px;
-		}
-
 	}
 }
