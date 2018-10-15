@@ -7,8 +7,7 @@ function messagePublicKeyPinning(
     messageSenderSettings
 ) {
     const I18N = {
-        SUCCES_MESSAGE_HIDE: gettextCatalog.getString('Banner permanently hidden'),
-        ERROR_MESSAGE_HIDE: gettextCatalog.getString('Error while updating setting')
+        SUCCES_MESSAGE_HIDE: gettextCatalog.getString('Banner permanently hidden')
     };
     return {
         replace: true,
@@ -19,8 +18,7 @@ function messagePublicKeyPinning(
                 const promise = settingsMailApi
                     .updatePromptPin({ PromptPin: 0 })
                     .then(() => scope.$applyAsync(() => (scope.message.promptKeyPinning = false)))
-                    .then(() => notification.success(I18N.SUCCES_MESSAGE_HIDE))
-                    .catch((error) => notification.error(error || I18N.ERROR_MESSAGE_HIDE));
+                    .then(() => notification.success(I18N.SUCCES_MESSAGE_HIDE));
                 networkActivityTracker.track(promise);
             };
 

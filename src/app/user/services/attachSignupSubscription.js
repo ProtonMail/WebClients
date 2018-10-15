@@ -31,8 +31,7 @@ function attachSignupSubscription(dispatchers, signupModel, authentication, even
                 }
             })
             .then(() => signupModel.clear())
-            .catch((error) => {
-                notification.error(error);
+            .catch(() => {
                 signupModel.clear();
             });
     };
