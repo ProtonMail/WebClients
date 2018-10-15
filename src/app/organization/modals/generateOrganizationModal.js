@@ -98,16 +98,21 @@ function generateOrganizationModal(
                                                     TwoFactorCode: twoFactorCode
                                                 };
 
-                                                return organizationApi.replaceKeys(payload, creds).then(() => {
-                                                    notification.success(
-                                                        gettextCatalog.getString(
-                                                            'Organization keys change successful',
-                                                            null,
-                                                            'Error'
-                                                        )
-                                                    );
-                                                    return resolve(params.submit(decryptedKey));
-                                                });
+                                                organizationApi
+                                                    .replaceKeys(payload, creds)
+                                                    .then(() => {
+                                                        notification.success(
+                                                            gettextCatalog.getString(
+                                                                'Organization keys change successful',
+                                                                null,
+                                                                'Error'
+                                                            )
+                                                        );
+                                                        return resolve(params.submit(decryptedKey));
+                                                    })
+                                                    .catch((e) => {
+                                                        reject(e);
+                                                    });
                                             },
                                             cancel() {
                                                 loginPasswordModal.deactivate();
@@ -117,11 +122,6 @@ function generateOrganizationModal(
                                     });
                                 })
                         )
-                        .catch((error) => {
-                            if (error) {
-                                notification.error(error);
-                            }
-                        })
                 );
             };
 
