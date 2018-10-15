@@ -1,5 +1,5 @@
 /* @ngInject */
-function sanitize() {
+function sanitize($filter) {
     const CONFIG = {
         default: {
             ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i, // eslint-disable-line no-useless-escape
@@ -49,6 +49,8 @@ function sanitize() {
      */
     const input = DOMPurify.sanitize;
 
-    return { message, input, html, content };
+    const toTagUnicode = $filter('unicodeTagView');
+
+    return { message, input, html, content, toTagUnicode };
 }
 export default sanitize;

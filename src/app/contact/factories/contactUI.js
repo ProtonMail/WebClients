@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function contactUI(gettextCatalog, contactTransformLabel) {
+function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
     const EMAIL_TYPE = ['email', 'home', 'work', 'other'];
     const TEL_TYPE = ['tel', 'mobile', 'work', 'fax', 'other'];
     const ADR_TYPE = ['adr', 'home', 'work', 'other'];
@@ -198,8 +198,9 @@ function contactUI(gettextCatalog, contactTransformLabel) {
         return key || PERSONAL_TYPE[_.random(PERSONAL_TYPE.length - 1)];
     }
 
-    function add(UI, type, label, value = '', params, settings) {
+    function add(UI, type, label, val = '', params, settings) {
         const hide = _.includes(UI.hide, type);
+        const value = sanitize.toTagUnicode(val, 'reverse');
         UI.items.push({ type, label: contactTransformLabel.toLang(label), value, hide, params, settings });
     }
 

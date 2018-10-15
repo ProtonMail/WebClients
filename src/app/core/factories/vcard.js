@@ -166,7 +166,7 @@ function vcard(notification, sanitize) {
                     params.type = typeValue;
                 }
 
-                acc.add(key, sanitize.input(cleanValue(value, key, params)), params);
+                acc.add(key, cleanValue(value, key, params), params);
 
                 return acc;
             },
@@ -203,13 +203,13 @@ function vcard(notification, sanitize) {
     }
 
     /**
-     * Clean value
+     * Format clean value
      * @param {String} value The value of the vcard field
      * @param {String} field The name of the vcard field
      * @param {Object} params Rest of the parameters from the vcard value
      * @return {String}
      */
-    function cleanValue(value = '', field = '', params = {}) {
+    function formatCleanValue(value = '', field = '', params = {}) {
         const matches = value.match(/_\$!<(.*)>!\$_/);
 
         // Some imported vCards from Apple have weird bracket around the value _$!<value>!$_
@@ -240,6 +240,11 @@ function vcard(notification, sanitize) {
         }
 
         return value;
+    }
+
+    function cleanValue(value, field, params) {
+        const input = formatCleanValue(value, field, params);
+        return sanitize.input(sanitize.toTagUnicode(input));
     }
 
     /**
