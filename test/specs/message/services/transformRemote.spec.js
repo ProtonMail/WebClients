@@ -10,10 +10,6 @@ describe('transformRemote service', () => {
     const MailSettings = {
         ShowImages: 0
     };
-    const $state = {
-        is() {
-        }
-    };
 
     const mailSettingsModel = {
         get(key = 'all') {
@@ -23,7 +19,7 @@ describe('transformRemote service', () => {
 
     beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
-        factory = service($state, dispatchersService(rootScope), mailSettingsModel);
+        factory = service(dispatchersService(rootScope), mailSettingsModel);
     }));
 
     const DOM = `
