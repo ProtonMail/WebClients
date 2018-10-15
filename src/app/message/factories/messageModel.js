@@ -331,14 +331,19 @@ function messageModel(
                         !compromised && acc.push(key);
                         return acc;
                     }, []);
+
                     if (this.isPGPMIME()) {
                         return this.decryptMIME({
                             message,
                             privateKeys,
                             publicKeys: pubKeys,
                             date: new Date(this.Time * 1000)
+                        }).then((result) => {
+                            this.decrypting = false;
+                            return result;
                         });
                     }
+
                     return pmcw
                         .decryptMessageLegacy({
                             message,
