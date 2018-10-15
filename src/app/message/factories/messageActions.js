@@ -2,6 +2,7 @@ import _ from 'lodash';
 import { flow, uniq, each, map, filter, reduce } from 'lodash/fp';
 
 import { STATUS, MAILBOX_IDENTIFIERS, DRAFT, SENT, INBOX_AND_SENT } from '../../constants';
+import { getConversationLabels } from '../../conversation/helpers/conversationHelpers';
 
 const REMOVE_ID = 0;
 const ADD_ID = 1;
@@ -378,7 +379,8 @@ function messageActions(
             map((id) => cache.getMessageCached(id)),
             filter(Boolean),
             reduce((acc, { ID, ConversationID, Unread }) => {
-                const conversation = cache.getConversationCached(ConversationID);
+                const conversation = cache.getConversationCached(ConversationID) || {};
+                const { ContextNumUnread } = conversation;
 
                 // Messages
                 acc.push({
@@ -394,8 +396,8 @@ function messageActions(
                         ID: ConversationID,
                         Conversation: {
                             ID: ConversationID,
-                            LabelIDsAdded,
-                            ContextNumUnread: conversation.ContextNumUnread
+                            ContextNumUnread,
+                            Labels: getConversationLabels(conversation, { toAdd: LabelIDsAdded })
                         }
                     });
                 }
@@ -427,6 +429,7 @@ function messageActions(
             filter(Boolean),
             reduce((acc, { ID, ConversationID, Unread }) => {
                 const conversation = cache.getConversationCached(ConversationID);
+                const { ContextNumUnread } = conversation;
                 const messages = cache.queryMessagesCached(ConversationID);
                 const stars = _.filter(messages, ({ LabelIDs = [] }) =>
                     _.includes(LabelIDs, MAILBOX_IDENTIFIERS.starred)
@@ -446,8 +449,8 @@ function messageActions(
                         ID: ConversationID,
                         Conversation: {
                             ID: ConversationID,
-                            LabelIDsRemoved,
-                            ContextNumUnread: conversation.ContextNumUnread
+                            ContextNumUnread,
+                            Labels: getConversationLabels(conversation, { toRemove: LabelIDsRemoved })
                         }
                     });
                 }

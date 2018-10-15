@@ -2,6 +2,7 @@ import _ from 'lodash';
 import { flow, forEach, filter, reduce, sortBy, last, map } from 'lodash/fp';
 
 import { MAILBOX_IDENTIFIERS } from '../../constants';
+import { getConversationLabels } from '../helpers/conversationHelpers';
 
 /* @ngInject */
 function actionConversation(
@@ -190,7 +191,7 @@ function actionConversation(
         const events = flow(
             map((id) => cache.getConversationCached(id)),
             filter(Boolean),
-            reduce((acc, { ID, ContextNumUnread }) => {
+            reduce((acc, { ID, ContextNumUnread, Labels }) => {
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
@@ -204,7 +205,11 @@ function actionConversation(
                 acc.push({
                     Action: 3,
                     ID,
-                    Conversation: { ID, ContextNumUnread, LabelIDsRemoved }
+                    Conversation: {
+                        ID,
+                        ContextNumUnread,
+                        Labels: getConversationLabels({ Labels, ContextNumUnread }, { toRemove: LabelIDsRemoved })
+                    }
                 });
                 return acc;
             }, [])
@@ -230,7 +235,7 @@ function actionConversation(
         const events = flow(
             map((id) => cache.getConversationCached(id)),
             filter(Boolean),
-            reduce((acc, { ID, ContextNumUnread }) => {
+            reduce((acc, { ID, ContextNumUnread, Labels }) => {
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
@@ -244,7 +249,11 @@ function actionConversation(
                 acc.push({
                     Action: 3,
                     ID,
-                    Conversation: { ID, ContextNumUnread, LabelIDsAdded }
+                    Conversation: {
+                        ID,
+                        ContextNumUnread,
+                        Labels: getConversationLabels({ Labels, ContextNumUnread }, { toAdd: LabelIDsAdded })
+                    }
                 });
                 return acc;
             }, [])
@@ -306,7 +315,7 @@ function actionConversation(
             map((id) => cache.getConversationCached(id)),
             filter(Boolean),
             reduce((acc, conversation) => {
-                const { ID, ContextNumUnread } = conversation;
+                const { ID, ContextNumUnread, Labels } = conversation;
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
@@ -332,8 +341,15 @@ function actionConversation(
                     Conversation: {
                         ID,
                         ContextNumUnread,
-                        LabelIDsAdded,
-                        LabelIDsRemoved
+                        toAdd: LabelIDsAdded, // Used by getPromises
+                        toRemove: LabelIDsRemoved, // Used by getPromises
+                        Labels: getConversationLabels(
+                            { Labels, ContextNumUnread },
+                            {
+                                toAdd: LabelIDsAdded,
+                                toRemove: LabelIDsRemoved
+                            }
+                        )
                     }
                 });
                 return acc;
@@ -342,7 +358,7 @@ function actionConversation(
 
         const getPromises = (events, flag = ADD) => {
             const mapLabelIDs = events.filter(({ Conversation }) => Conversation).reduce((acc, { Conversation }) => {
-                Conversation[flag === ADD ? 'LabelIDsAdded' : 'LabelIDsRemoved'].forEach((labelID) => {
+                Conversation[flag === ADD ? 'toAdd' : 'toRemove'].forEach((labelID) => {
                     acc[labelID] = acc[labelID] || [];
                     acc[labelID].push(Conversation.ID);
                 });

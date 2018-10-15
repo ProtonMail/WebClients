@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import { STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
+import { getConversationLabels } from '../../conversation/helpers/conversationHelpers';
 
 /* @ngInject */
 function sendMessage(
@@ -141,8 +142,13 @@ function sendMessage(
                 Senders: Sent.Senders,
                 Subject: Sent.Subject,
                 ID: Sent.ConversationID,
-                LabelIDsAdded: [MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent],
-                LabelIDsRemoved: [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts]
+                Labels: getConversationLabels(
+                    { ContextNumUnread },
+                    {
+                        toAdd: [MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent],
+                        toRemove: [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts]
+                    }
+                )
             }
         });
 

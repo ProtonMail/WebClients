@@ -1,5 +1,6 @@
 import './utils/services/mailUtils.spec';
 import './conversation/factories/conversationListeners.spec';
+import './conversation/helpers/conversationHelpers.spec';
 import './core/services/paginationModel.spec';
 import './core/factories/vcard.spec';
 import './core/factories/duplicateExtractor.spec';
