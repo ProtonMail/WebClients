@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import { STATUS, ENCRYPTED_STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
+import { getConversationLabels } from '../../conversation/helpers/conversationHelpers';
 
 /* @ngInject */
 function postMessage(
@@ -210,7 +211,12 @@ function postMessage(
                         NumMessages: numMessages,
                         ContextNumUnread: contextNumUnread,
                         ID: remoteMessage.ConversationID,
-                        LabelIDsAdded: [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts]
+                        Labels: getConversationLabels(
+                            { ContextNumUnread: contextNumUnread },
+                            {
+                                toAdd: [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts]
+                            }
+                        )
                     },
                     numMessages === 1 ? firstConversation : {}
                 )
