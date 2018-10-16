@@ -47,11 +47,11 @@ function editorListener(
      * Attach some hotkeys for the editor
      * @param {Dispatcher} dispatcher
      * @param {Squire} editor
-     * @param {jQLite} element
      * @param {Message} message
+     * @param {String} typeContent
      * @return {void}
      */
-    const bindHotKeys = (dispatcher, editor, element, message) => {
+    const bindHotKeys = (dispatcher, editor, message, typeContent) => {
         /**
          * Higher order function that calls cb if `Hotkeys` is enabled in settings.
          * @param {Function} cb to call
@@ -72,7 +72,11 @@ function editorListener(
         editor.setKeyHandler(
             'escape',
             hotkeysEnabled(() => {
-                dispatcher['composer.update']('close.message', { message, save: true });
+                isMessage(typeContent) &&
+                    dispatcher['composer.update']('close.message', {
+                        message,
+                        save: true
+                    });
             })
         );
 
@@ -81,8 +85,10 @@ function editorListener(
         editor.setKeyHandler(
             sendKey,
             hotkeysEnabled((self, event) => {
-                event.preventDefault();
-                dispatcher.editorListener('pre.send.message', { message });
+                if (isMessage(typeContent)) {
+                    event.preventDefault();
+                    dispatcher.editorListener('pre.send.message', { message });
+                }
             })
         );
 
@@ -339,7 +345,7 @@ function editorListener(
             const onPaste = pasteImage(message);
             const onPasteImage = pasteImage(message, 'paste.image');
 
-            bindHotKeys(dispatcher, editor, el, message);
+            bindHotKeys(dispatcher, editor, message, typeContent);
 
             editor.addEventListener('paste', onPaste);
             editor.addEventListener('paste.image', onPasteImage);
