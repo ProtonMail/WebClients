@@ -47,11 +47,10 @@ function printMessageModel($filter, gettextCatalog) {
 
     /**
      * Prepare message model to print
-     * @param {String} config.content
      * @param {Object} config.message
      * @return {Object} model
      */
-    return ({ content, message }) => {
+    return ({ message }) => {
         const {
             MIMEType,
             Subject: subject,
@@ -73,8 +72,7 @@ function printMessageModel($filter, gettextCatalog) {
             cc: getList(CCList),
             bcc: getList(BCCList),
             time: $filter('localReadableTime')(Time),
-            Attachments, // Keep it capitalize for listAttachments directive
-            content
+            Attachments // Keep it capitalize for listAttachments directive
         };
     };
 }

@@ -32,8 +32,7 @@
 
     <hr>
 
-    <div ng-bind-html="::model.content" ng-if="model.MIMEType === 'text/html'"></div>
-    <div class="printMessage-plain-content" ng-bind="::model.content" ng-if="model.MIMEType === 'text/plain'"></div>
+    <div class="printMessage-content"></div>
 
-    <list-attachments data-model="message"></list-attachments>
+    <list-attachments data-model="config.message"></list-attachments>
 </div>
