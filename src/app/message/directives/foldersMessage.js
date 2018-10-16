@@ -3,15 +3,15 @@ function foldersMessage(dispatchers, gettextCatalog, $compile, mailboxIdentifers
     const MAP_LABELS = {
         archive: {
             className: 'fa-archive',
-            tooltip: gettextCatalog.getString('In archive', null)
+            tooltip: gettextCatalog.getString('In archive', null, 'Tooltip')
         },
         trash: {
             className: 'fa-trash-o',
-            tooltip: gettextCatalog.getString('In trash', null)
+            tooltip: gettextCatalog.getString('In trash', null, 'Tooltip')
         },
         spam: {
             className: 'fa-ban',
-            tooltip: gettextCatalog.getString('In spam', null)
+            tooltip: gettextCatalog.getString('In spam', null, 'Tooltip')
         },
         folder: {
             className: 'fa-folder'
@@ -21,11 +21,11 @@ function foldersMessage(dispatchers, gettextCatalog, $compile, mailboxIdentifers
     const MAP_TYPES = {
         drafts: {
             className: 'pm_tag',
-            tooltip: gettextCatalog.getString('Draft', null)
+            tooltip: gettextCatalog.getString('Draft', null, 'Label')
         },
         sent: {
             className: 'pm_tag',
-            tooltip: gettextCatalog.getString('Sent', null)
+            tooltip: gettextCatalog.getString('Sent', null, 'Label')
         }
     };
 

@@ -2,14 +2,23 @@
     <button type="reset" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title" translate>Add multiple recipients</h4>
+            <h4
+                class="modal-title"
+                translate-context="Title"
+                translate>Add multiple recipients</h4>
         </div>
         <div class="modal-body">
             <div class="contactSelectorForm-search-row">
                 <label class="contactSelectorForm-search-label" for="searchInput">
                     <i class="fa fa-search contactSelectorForm-search-icon"></i>
                 </label>
-                <input type="search" class="contactSelectorForm-search-input" id="searchInput" ng-model="searchValue" placeholder-translate="Search for emails">
+                <input
+                    type="search"
+                    class="contactSelectorForm-search-input"
+                    id="searchInput"
+                    ng-model="searchValue"
+                    placeholder-translate-context="Placeholder"
+                    placeholder-translate="Search for emails">
             </div>
             <p class="contactSelectorForm-warning-message">
                 <i class="fa fa-warning"></i> <span translate-context="Error" translate>You have reached the max recipients (25) per message</span>
@@ -40,13 +49,13 @@
             <ul class="contactSelectorForm-labels">
                 <li class="contactSelectorForm-label" ng-repeat="email in ctrl.others track by $id(email)" title="{{ ::email.Email }}">
                     {{ ::(email.Name || email.Email) }}
-                    <button type="button" class="contactSelectorForm-remove-label-btn" title-translate="Remove" data-list="others" data-index="{{ $index }}">
+                    <button type="button" class="contactSelectorForm-remove-label-btn" title-translate="Remove" title-translate-context="Action" data-list="others" data-index="{{ $index }}">
                         <i class="fa fa-close"></i>
                     </button>
                 </li>
                 <li class="contactSelectorForm-label" ng-repeat="email in ctrl.list | filter: { selected: true } track by $id(email)" title="{{ ::email.Email }}">
                     {{ ::(email.Name || email.Email) }}
-                    <button type="button" class="contactSelectorForm-remove-label-btn" title-translate="Remove" data-list="list" data-index="{{ $index }}">
+                    <button type="button" class="contactSelectorForm-remove-label-btn" title-translate="Remove" title-translate-context="Action" data-list="list" data-index="{{ $index }}">
                         <i class="fa fa-close"></i>
                     </button>
                 </li>

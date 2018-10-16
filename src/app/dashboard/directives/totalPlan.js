@@ -3,7 +3,7 @@ function totalPlan($filter, dashboardConfiguration, dashboardModel, dispatchers,
     const amount = (plan, cycle, currency) =>
         $filter('currency')(dashboardModel.total(plan, cycle) / 100 / cycle, currency);
     const types = ['addon.updated', 'cycle.updated', 'currency.updated', 'vpn.updated'];
-    const month = gettextCatalog.getString('month', null);
+    const month = gettextCatalog.getString('month', null, 'Info');
 
     return {
         restrict: 'E',

@@ -26,7 +26,7 @@
                                 {{ invoice.PeriodStart * 1000 | date : 'medium' }}
                             </td>
                             <td>
-                                {{ invoice.Cart.Next.Plan | capitalize }} <span translate>Plan subscription</span> (<small ng-show="invoice.BillingCycle === 1"  translate>Monthly</small><small ng-show="invoice.BillingCycle === 12"  translate>Annually</small>)
+                                {{ invoice.Cart.Next.Plan | capitalize }} <span translate-context="Info" translate>Plan subscription</span> (<small ng-show="invoice.BillingCycle === 1"  translate translate-context="Option">Monthly</small><small ng-show="invoice.BillingCycle === 12"  translate  translate-context="Option">Annually</small>)
                             </td>
                             <td class="price">
                                 {{ invoice.Amount / 100 | currency: invoice.Currency }}
@@ -56,7 +56,7 @@
                                 {{ invoice.PeriodStart * 1000 | date : 'medium' }}
                             </td>
                             <td>
-                                {{ invoice.Cart.Next.Plan | capitalize }} <span  translate>Plan subscription</span> (<small ng-show="invoice.BillingCycle === 1"  translate>Monthly</small><small ng-show="invoice.BillingCycle === 12"  translate>Annually</small>)
+                                {{ invoice.Cart.Next.Plan | capitalize }} <span translate-context="Title"  translate>Plan subscription</span> (<small ng-show="invoice.BillingCycle === 1"  translate  translate-context="Option">Monthly</small><small ng-show="invoice.BillingCycle === 12"  translate  translate-context="Option">Annually</small>)
                             </td>
                             <td class="price">
                                 {{ invoice.Amount / 100 | currency: invoice.Currency }}

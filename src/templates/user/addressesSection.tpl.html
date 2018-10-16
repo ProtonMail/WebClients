@@ -1,5 +1,9 @@
 <div class="addressesSection-container">
-    <p class="alert alert-info" ng-show="isFree" translate>Add additional email addresses to your account such as username2@protonmail.com. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Plus</a>.</p>
+    <p
+        class="alert alert-info"
+        ng-show="isFree"
+        translate-context="Info"
+        translate>Add additional email addresses to your account such as username2@protonmail.com. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Plus</a>.</p>
     <label class="settingsSignatures-label-active" ng-hide="isFree">
         <div class="settingsSignatures-label-aside">
             <section class="settingsSignatures-header-aside" ng-show="isAdmin">
@@ -27,7 +31,11 @@
                         <span class="ellipsis">{{ address.Email }}</span>
                     </div>
                     <div class="activeAddresses-badge">
-                        <span class="pm_badge primary" ng-show="$first" translate>Default</span>
+                        <span
+                            class="pm_badge primary"
+                            ng-show="$first"
+                            translate-context="Info"
+                            translate>Default</span>
                     </div>
                 </div>
             </li>

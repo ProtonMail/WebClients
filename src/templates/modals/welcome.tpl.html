@@ -18,10 +18,16 @@
                     <br />
                     <div class="pm_grid">
                         <div class="col-1-3">
-                            <label for="displayName" translate>Display name</label>
+                            <label for="displayName" translate-context="Title" translate>Display name</label>
                         </div>
                         <div class="col-2-3">
-                            <input id="displayName" type="text" name="displayName" ng-model="ctrl.displayName" placeholder-translate="Display name" />
+                            <input
+                                id="displayName"
+                                type="text"
+                                name="displayName"
+                                ng-model="ctrl.displayName"
+                                placeholder-translate-context="Placeholder"
+                                placeholder-translate="Display name" />
                             <p class="help-block"><small translate translate-context="Info">This is the 'From' name that people will see when you email them.</small></p>
                         </div>
                     </div>

@@ -3,10 +3,10 @@
 
         <composer-attachments-size class="composerAttachments-size"></composer-attachments-size>
         <span class="composerAttachments-counter-attachments" ng-show="message.Attachments.length > message.NumEmbedded">
-            <i class="fa fa-paperclip"></i> {{ message.Attachments.length - message.NumEmbedded }} <span translate translate-n="message.Attachments.length - message.NumEmbedded" translate-plural="files attached">file attached</span>
+            <i class="fa fa-paperclip"></i> {{ message.Attachments.length - message.NumEmbedded }} <span translate translate-n="message.Attachments.length - message.NumEmbedded" translate-plural="files attached" translate-context="Info">file attached</span>
         </span>
         <span class="composerAttachments-counter-embedded" ng-show="message.NumEmbedded > 0">
-            <i class="fa fa-image embedded"></i> {{ message.NumEmbedded }} <span translate translate-n="message.NumEmbedded" translate-plural="embedded images">embedded image</span>
+            <i class="fa fa-image embedded"></i> {{ message.NumEmbedded }} <span translate translate-n="message.NumEmbedded" translate-plural="embedded images" translate-context="Info">embedded image</span>
         </span>
         <span class="composerAttachments-action">
             <i>{{ labelHeader }}</i>

@@ -13,8 +13,8 @@ function messagePublicKeyFound(
     eventManager
 ) {
     const I18N = {
-        SUCCES_MESSAGE: gettextCatalog.getString('Public Key trusted'),
-        ERROR_MESSAGE: gettextCatalog.getString('Error while adding the public key to the contacts')
+        SUCCES_MESSAGE: gettextCatalog.getString('Public Key trusted', null, 'Success'),
+        ERROR_MESSAGE: gettextCatalog.getString('Error while adding the public key to the contacts', null, 'Error')
     };
 
     return {

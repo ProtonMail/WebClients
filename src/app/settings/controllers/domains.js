@@ -146,7 +146,7 @@ function DomainsController(
                         .delete(domain.ID)
                         .then(eventManager.call)
                         .then(() => {
-                            notification.success(gettextCatalog.getString('Domain deleted', null));
+                            notification.success(gettextCatalog.getString('Domain deleted', null, 'Success'));
                             confirmModal.deactivate();
                         });
 
@@ -166,7 +166,11 @@ function DomainsController(
 
         if (!catchallSupport(Type)) {
             notification.info(
-                gettextCatalog.getString('This feature is only available for ProtonMail Professional plans or higher')
+                gettextCatalog.getString(
+                    'This feature is only available for ProtonMail Professional plans or higher',
+                    null,
+                    'Info'
+                )
             );
             address.catchall = !catchall;
             return;
@@ -177,7 +181,7 @@ function DomainsController(
         }
 
         const promise = domainModel.catchall(DomainID, catchall ? ID : null).then(() => {
-            notification.success(gettextCatalog.getString('Catch-all address updated', null));
+            notification.success(gettextCatalog.getString('Catch-all address updated', null, 'Success'));
         });
 
         networkActivityTracker.track(promise);
@@ -272,7 +276,7 @@ function DomainsController(
         }
 
         if (VerifyState === 2) {
-            notification.success(gettextCatalog.getString('Domain verified', null));
+            notification.success(gettextCatalog.getString('Domain verified', null, 'Success'));
             return { test: true, data };
         }
     };

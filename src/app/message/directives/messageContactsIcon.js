@@ -10,34 +10,66 @@ function messageContacts(gettextCatalog) {
     };
 
     const I18N = {
-        [STATUS.PGP_MIME | !STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString('PGP-signed'),
+        [STATUS.PGP_MIME | !STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
+            'PGP-signed',
+            null,
+            'Info'
+        ),
         [STATUS.PGP_MIME | STATUS.ENCRYPTION_ENABLED | !STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
-            'PGP-encrypted'
+            'PGP-encrypted',
+            null,
+            'Info'
         ),
         [STATUS.PGP_MIME | STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
-            'PGP-encrypted'
+            'PGP-encrypted',
+            null,
+            'Info'
         ),
         [STATUS.PGP_INLINE | !STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
-            'PGP-signed'
+            'PGP-signed',
+            null,
+            'Info'
         ),
         [STATUS.PGP_INLINE | STATUS.ENCRYPTION_ENABLED | !STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
-            'PGP-encrypted'
+            'PGP-encrypted',
+            null,
+            'Info'
         ),
         [STATUS.PGP_INLINE | STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
-            'PGP-encrypted'
+            'PGP-encrypted',
+            null,
+            'Info'
         ),
         [STATUS.PINNING_ENABLED | !STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
-            'End-to-end encrypted to verified recipient'
+            'End-to-end encrypted to verified recipient',
+            null,
+            'Info'
         ),
         [STATUS.PINNING_ENABLED | STATUS.ENCRYPTION_ENABLED | !STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
-            'End-to-end encrypted to verified recipient'
+            'End-to-end encrypted to verified recipient',
+            null,
+            'Info'
         ),
         [STATUS.PINNING_ENABLED | STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
-            'End-to-end encrypted to verified recipient'
+            'End-to-end encrypted to verified recipient',
+            null,
+            'Info'
         ),
-        [!STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString('End-to-end encrypted'),
-        [STATUS.ENCRYPTION_ENABLED | !STATUS.SIGNING_ENABLED]: gettextCatalog.getString('End-to-end encrypted'),
-        [STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString('End-to-end encrypted')
+        [!STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
+            'End-to-end encrypted',
+            null,
+            'Info'
+        ),
+        [STATUS.ENCRYPTION_ENABLED | !STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
+            'End-to-end encrypted',
+            null,
+            'Info'
+        ),
+        [STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
+            'End-to-end encrypted',
+            null,
+            'Info'
+        )
     };
     return {
         templateUrl: require('../../../templates/message/messageContactsIcon.tpl.html'),

@@ -11,11 +11,11 @@
         </div>
         <ul class="infos">
             <li>
-                <strong translate>From</strong>:
+                <strong translate-context="Title" translate>From</strong>:
                 <b>{{ message.Recipient }}</b>
             </li>
             <li>
-                <strong translate>To</strong>:
+                <strong translate-context="Title" translate>To</strong>:
                 <b>{{message.Sender.Name}}</b> <em>&lt;{{ message.Sender.Address }}&gt;</em>
             </li>
         </ul>
@@ -38,6 +38,7 @@
             class="pm_button needsclick disabled-if-network-activity"
             data-action-compose="::message"
             data-action-compose-type="addFile"
+            pt-tooltip-translate-context="Tooltip"
             pt-tooltip-translate="Attachments"><i class="fa fa-paperclip"></i>
         </button>
         <button class="pm_button primary disabled-if-network-activity" ng-click="send()" translate-context="Action" translate>Send</button>

@@ -6,10 +6,18 @@
                 <h4 class="modal-title" translate translate-context="Title">Reactivate key pair</h4>
             </div>
             <div class="modal-body pm_form">
-                <p translate>Enter your login password:</p>
-                <input type="password" ng-model="ctrl.loginPassword" placeholder-translate="Login password" />
-                <p translate>Enter the key password:</p>
-                <input type="password" ng-model="ctrl.keyPassword" placeholder-translate="Key password" />
+                <p translate-context="Title" translate>Enter your login password:</p>
+                <input
+                    type="password"
+                    ng-model="ctrl.loginPassword"
+                    placeholder-translate-context="Placeholder"
+                    placeholder-translate="Login password" />
+                <p translate-context="Title" translate>Enter the key password:</p>
+                <input
+                    type="password"
+                    ng-model="ctrl.keyPassword"
+                    placeholder-translate-context="Placeholder"
+                    placeholder-translate="Key password" />
             </div>
         </div>
         <div class="modal-footer text-right">

@@ -32,7 +32,7 @@ function changePasswordModal(
                     .then(() => (next ? Promise.resolve() : User.lock()))
                     .then(() => eventManager.call())
                     .then(() => {
-                        notification.success(gettextCatalog.getString('Password updated', null));
+                        notification.success(gettextCatalog.getString('Password updated', null, 'Success'));
                         params.close(next);
                     });
                 networkActivityTracker.track(promise);

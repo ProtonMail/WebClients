@@ -7,6 +7,7 @@
         <input
             type="search"
             placeholder-translate="Search messages"
+            placeholder-translate-context="Placeholder search"
             autocomplete="off"
             ng-model="query"
             class="search-form-fieldset-input placeholder-white no-outline">
@@ -27,12 +28,15 @@
                         class="searchForm-advanced-keywords-input"
                         type="text"
                         placeholder-translate="Keywords"
+                        placeholder-translate-context="Placeholder search"
                         ng-model="model.keyword">
                 </div>
                 <div class="row">
                     <label class="searchForm-advanced-wildcard-container">
                         <custom-checkbox data-custom-ng-model="model.wildcard"></custom-checkbox>
-                        <span translate>Do not require exact match</span>
+                        <span
+                            translate-context="Info"
+                            translate>Do not require exact match</span>
                         <a href="https://protonmail.com/support/knowledge-base/search/" target="_blank" class="text-purple">
                             <i class="fa fa-info-circle"></i>
                         </a>
@@ -58,7 +62,7 @@
                         class="searchForm-autocomplete"
                         data-email="model.from"
                         data-custom-id="search_sender"
-                        data-custom-placeholder="{{'From' | translate}}"></autocomplete-email>
+                        data-custom-placeholder="{{'From' | translate:'Title'}}"></autocomplete-email>
                 </div>
                 <div class="col-1-2">
                     <label for="search_recipient" translate translate-context="Title">Recipient</label>
@@ -66,7 +70,7 @@
                         class="searchForm-autocomplete"
                         data-email="model.to"
                         data-custom-id="search_recipient"
-                        data-custom-placeholder="{{'To' | translate}}"></autocomplete-email>
+                        data-custom-placeholder="{{'To' | translate:'Title'}}"></autocomplete-email>
                 </div>
             </div>
             <div class="row margin">
@@ -121,21 +125,30 @@
                                 data-custom-id="attachments_all"
                                 data-custom-ng-model="model.attachments"
                                 data-custom-value="2"></custom-radio>
-                            <span translate translate-comment="form option">All</span>
+                            <span
+                                translate
+                                translate-context="Search action filter"
+                                translate-comment="form option">All</span>
                         </label>
                         <label>
                             <custom-radio
                                 data-custom-id="attachments_yes"
                                 data-custom-ng-model="model.attachments"
                                 data-custom-value="1"></custom-radio>
-                            <span translate translate-comment="form option">Yes</span>
+                            <span
+                                translate
+                                translate-context="Search action filter"
+                                translate-comment="form option">Yes</span>
                         </label>
                         <label>
                             <custom-radio
                                 data-custom-id="attachments_no"
                                 data-custom-ng-model="model.attachments"
                                 data-custom-value="0"></custom-radio>
-                            <span translate translate-comment="form option">No</span>
+                            <span
+                                translate
+                                translate-context="Search action filter"
+                                translate-comment="form option">No</span>
                         </label>
                     </div>
                 </div>

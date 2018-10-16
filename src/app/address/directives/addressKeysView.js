@@ -229,11 +229,12 @@ function addressKeysView(
                                     count,
                                     'Private key imported',
                                     '{{$count}} Private keys imported',
-                                    {}
+                                    {},
+                                    'Success'
                                 )
                             );
                         } else {
-                            notification.success(gettextCatalog.getString('Private key reactivated'));
+                            notification.success(gettextCatalog.getString('Private key reactivated', null, 'Success'));
                         }
                     })
                     .then(

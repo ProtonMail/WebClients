@@ -126,7 +126,7 @@ function AccountController(
                 userSettingsModel.set('NotificationEmail', $scope.notificationEmail);
                 form.$setUntouched();
                 form.$setPristine();
-                notification.success(gettextCatalog.getString('Recovery/Notification email saved', null));
+                notification.success(gettextCatalog.getString('Recovery/Notification email saved', null, 'Success'));
             });
             networkActivityTracker.track(promise);
         }
@@ -141,7 +141,7 @@ function AccountController(
             const promise = settingsApi
                 .passwordReset({ PasswordReset: $scope.passwordReset }, credentials)
                 .then(() => {
-                    notification.success(gettextCatalog.getString('Preference saved', null));
+                    notification.success(gettextCatalog.getString('Preference saved', null, 'Success'));
                 })
                 .catch((error) => {
                     const { Email } = userSettingsModel.get();
@@ -161,7 +161,7 @@ function AccountController(
         const promise = settingsApi
             .notify({ Notify: $scope.dailyNotifications })
             .then(() => {
-                notification.success(gettextCatalog.getString('Preference saved', null));
+                notification.success(gettextCatalog.getString('Preference saved', null, 'Success'));
             })
             .catch((error) => {
                 const { Email } = userSettingsModel.get();
@@ -180,7 +180,8 @@ function AccountController(
                 if (changePasswordModal.active()) {
                     const message = gettextCatalog.getString(
                         'Operation timed out for security reasons, please try again',
-                        null
+                        null,
+                        'Info'
                     );
                     changePasswordModal.deactivate();
                     notification.error(message);
@@ -251,7 +252,7 @@ function AccountController(
         const promise = settingsMailApi
             .updateAutoSaveContacts({ AutoSaveContacts: $scope.autosaveContacts })
             .then(() => {
-                notification.success(gettextCatalog.getString('Preference saved', null));
+                notification.success(gettextCatalog.getString('Preference saved', null, 'Success'));
             });
 
         networkActivityTracker.track(promise);
@@ -260,7 +261,7 @@ function AccountController(
     $scope.saveImages = () => {
         const ShowImages = (mailSettingsModel.get('ShowImages') & EMBEDDED ? 2 : 0) + $scope.images;
         const promise = settingsMailApi.updateShowImages({ ShowImages }).then(() => {
-            notification.success(gettextCatalog.getString('Image preferences updated', null));
+            notification.success(gettextCatalog.getString('Image preferences updated', null, 'Success'));
         });
 
         networkActivityTracker.track(promise);
@@ -269,7 +270,7 @@ function AccountController(
     $scope.saveEmbedded = () => {
         const ShowImages = (mailSettingsModel.get('ShowImages') & REMOTE ? 1 : 0) + $scope.embedded;
         const promise = settingsMailApi.updateShowImages({ ShowImages }).then(() => {
-            notification.success(gettextCatalog.getString('Image preferences updated', null));
+            notification.success(gettextCatalog.getString('Image preferences updated', null, 'Success'));
         });
 
         networkActivityTracker.track(promise);
@@ -293,7 +294,7 @@ function AccountController(
                 hotkeys.unbind();
             }
 
-            notification.success(gettextCatalog.getString('Hotkeys preferences updated', null));
+            notification.success(gettextCatalog.getString('Hotkeys preferences updated', null, 'Success'));
         });
 
         networkActivityTracker.track(promise);

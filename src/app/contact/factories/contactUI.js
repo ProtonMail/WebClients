@@ -15,7 +15,7 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
         information: gettextCatalog.getString('Information', null, 'Placeholder'),
         note: gettextCatalog.getString('A note', null, 'Placeholder'),
         address: gettextCatalog.getString('Address', null, 'Placeholder'),
-        custom: gettextCatalog.getString('Custom', null),
+        custom: gettextCatalog.getString('Custom', null, 'Placeholder'),
         customField: gettextCatalog.getString('Custom field', null, 'Placeholder'),
         htmlMimeType: gettextCatalog.getString('Automatic', null, 'MIME type'),
         plaintextMimeType: gettextCatalog.getString('Plain Text', null, 'MIME type'),

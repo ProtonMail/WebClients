@@ -4,9 +4,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <domains-menu-step></domains-menu-step>
-                <span ng-show="ctrl.domain.DmarcState === 0 || ctrl.domain.DmarcState === 1 || ctrl.domain.DmarcState === 2" class="pull-right pm_badge error" translate  translate-comment="DMARC status badge">Not set</span>
-                <span ng-show="ctrl.domain.DmarcState === 3" class="pull-right pm_badge success" translate  translate-comment="DMARC status badge">Set</span>
-                <h4 class="modal-title">7. DMARC <em translate  translate-comment="DMARC status badge">Optional</em><em>, </em><em translate  translate-comment="DMARC status badge">advanced</em></h4>
+                <span ng-show="ctrl.domain.DmarcState === 0 || ctrl.domain.DmarcState === 1 || ctrl.domain.DmarcState === 2" class="pull-right pm_badge error" translate  translate-context="DMARC configuration status badge"  translate-comment="DMARC status badge">Not set</span>
+                <span ng-show="ctrl.domain.DmarcState === 3" class="pull-right pm_badge success" translate  translate-comment="DMARC status badge"  translate-context="DMARC configuration status badge">Set</span>
+                <h4 class="modal-title">7. DMARC <em translate  translate-comment="DMARC status badge" translate-context="DMARC configuration status badge" >Optional</em><em>, </em><em translate  translate-context="DMARC configuration status badge"  translate-comment="DMARC status badge">advanced</em></h4>
             </div>
             <div class="modal-body pm_form">
                 <p><span translate translate-context="Info">If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. Feel free to ignore and skip DMARC unless you really want strict policies such as <strong>p=quarantine</strong> or <strong>p=reject</strong>.</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/" translate translate-context="Action">Learn more</a></p>

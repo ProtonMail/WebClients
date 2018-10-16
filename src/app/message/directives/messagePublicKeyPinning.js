@@ -7,7 +7,7 @@ function messagePublicKeyPinning(
     messageSenderSettings
 ) {
     const I18N = {
-        SUCCES_MESSAGE_HIDE: gettextCatalog.getString('Banner permanently hidden')
+        SUCCES_MESSAGE_HIDE: gettextCatalog.getString('Banner permanently hidden', null, 'Success')
     };
     return {
         replace: true,

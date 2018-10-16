@@ -79,7 +79,7 @@ function advancedFilterElement(
                     const promise = messageApi[MAP_ACTIONS[mailbox]](labelID).then(() => {
                         cache.empty(labelID);
                         confirmModal.deactivate();
-                        notification.success(gettextCatalog.getString('Folder emptied', null));
+                        notification.success(gettextCatalog.getString('Folder emptied', null, 'Success'));
 
                         return eventManager.call();
                     });

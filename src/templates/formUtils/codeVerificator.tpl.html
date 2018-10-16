@@ -1,7 +1,12 @@
 <form class="codeVerificator-container pm_form" novalidate>
     <div class="pm_grid codeVerificator-contact-section">
         <div class="col-2-3">
-            <input class="codeVerificator-email-input" type="email" ng-model="contactInformation" placeholder-translate="Email verification">
+            <input
+                class="codeVerificator-email-input"
+                type="email"
+                ng-model="contactInformation"
+                placeholder-translate-context="Placeholder"
+                placeholder-translate="Email verification">
             <input class="codeVerificator-sms-input" type="tel" data-ng-intl-tel-input ng-model="contactInformation">
         </div>
         <div class="col-1-3">

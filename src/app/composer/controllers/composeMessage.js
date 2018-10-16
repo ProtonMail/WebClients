@@ -126,7 +126,8 @@ function ComposeMessageController(
             window.onbeforeunload = () => {
                 return gettextCatalog.getString(
                     'By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.',
-                    null
+                    null,
+                    'Info'
                 );
             };
             hotkeys.pause(); // Pause hotkeys

@@ -13,7 +13,7 @@
                 <div class="radio col-1-2 multi-line-label">
                     <label class="visual-label">
                         <custom-radio data-custom-ng-model="appearance.ComposerMode" data-custom-ng-value="0" data-custom-ng-change="saveComposerMode(composerMode)"></custom-radio>
-                        <span  translate tranlate-comment="form option">Popup</span>
+                        <span  translate translate-context="Action"  tranlate-comment="form option">Popup</span>
                         <span class="visual-label-lineBreak"></span>
                         <img src="assets/img/settings/pop.gif"  alt="Popup" />
                     </label>
@@ -21,7 +21,10 @@
                 <div class="radio col-1-2 multi-line-label">
                     <label class="visual-label">
                         <custom-radio data-custom-ng-model="appearance.ComposerMode" data-custom-ng-value="1" data-custom-ng-change="saveComposerMode(composerMode)" ></custom-radio>
-                        <span  translate translate-comment="form option">Maximized</span>
+                        <span
+                            translate
+                            translate-context="Info"
+                            translate-comment="form option">Maximized</span>
                         <span class="visual-label-lineBreak"></span>
                         <img src="assets/img/settings/max.gif" alt="Maximized" />
                     </label>
@@ -40,7 +43,10 @@
                 <div class="radio col-1-2 multi-line-label">
                     <label class="visual-label">
                         <custom-radio data-custom-ng-model="appearance.ViewLayout" data-custom-ng-value="0" data-custom-ng-change="saveLayoutMode(composerMode)" ></custom-radio>
-                        <span  translate translate-comment="form option">Column</span>
+                        <span
+                            translate
+                            translate-context="Info"
+                            translate-comment="form option">Column</span>
                         <span class="visual-label-lineBreak"></span>
                         <img src="/assets/img/settings/col.gif" alt="Column" />
                     </label>
@@ -48,7 +54,10 @@
                 <div class="radio col-1-2 multi-line-label">
                     <label class="visual-label">
                         <custom-radio data-custom-ng-model="appearance.ViewLayout" data-custom-ng-value="1" data-custom-ng-change="saveLayoutMode(composerMode)"></custom-radio>
-                        <span  translate translate-comment="form option">Row</span>
+                        <span
+                            translate
+                            translate-context="Info"
+                            translate-comment="form option">Row</span>
                         <span class="visual-label-lineBreak"></span>
                         <img src="/assets/img/settings/row.gif" alt="Row" />
                     </label>

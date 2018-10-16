@@ -18,19 +18,33 @@
                 <div class="margin" ng-if="ctrl.isAdmin">
                     <label translate translate-context="Label">We are sorry to see you go!</label>
                     <label translate translate-context="Label">Please tell us why you are leaving:</label>
-                    <textarea ng-model="ctrl.feedback" placeholder-translate="Feedback"></textarea>
+                    <textarea
+                        ng-model="ctrl.feedback"
+                        placeholder-translate-context="Placeholder"
+                        placeholder-translate="Feedback"></textarea>
                 </div>
                 <div class="margin">
                     <label translate translate-context="Label">Please provide an email address in case we need to contact you (optional):</label>
-                    <input type="email" ng-model="ctrl.email" placeholder-translate="Email" />
+                    <input
+                        type="email"
+                        placeholder-translate-context="Placeholder"
+                        ng-model="ctrl.email"
+                        placeholder-translate="Email" />
                 </div>
                 <div class="margin">
                     <label translate translate-context="Label">Enter your login password to confirm your identity:</label>
-                    <input type="password" ng-model="ctrl.password" placeholder-translate="Login password" required />
+                    <input
+                        type="password"
+                        placeholder-translate-context="Placeholder"
+                        ng-model="ctrl.password"
+                        placeholder-translate="Login password" required />
                 </div>
                 <div class="margin" ng-if="ctrl.hasTwoFactor">
                     <label translate translate-context="Label">Enter two-factor passcode:</label>
-                    <two-fa-field ng-model="ctrl.twoFactorCode" placeholder-translate="Two-factor passcode"></two-fa-field>
+                    <two-fa-field
+                        ng-model="ctrl.twoFactorCode"
+                        placeholder-translate-context="Placeholder"
+                        placeholder-translate="Two-factor passcode"></two-fa-field>
                 </div>
             </div>
         </div>

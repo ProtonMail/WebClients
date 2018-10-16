@@ -43,6 +43,7 @@
                     data-id="password"
                     data-name="password"
                     data-value="model.password"
+                    placeholder-translate-context="Tooltip"
                     placeholder-translate="Enter your existing Proton password"
                     data-form="setup"></password>
 
@@ -53,6 +54,7 @@
                     data-name="passwordc"
                     data-value="model.passwordConfirm"
                     data-compare="model.password"
+                    placeholder-translate-context="Tooltip"
                     placeholder-translate="Confirm mailbox password"
                     data-form="setup"></password>
 
@@ -72,7 +74,7 @@
         <div class="creating-loader-container">
             <atom-loader data-loader-theme="primary"></atom-loader>
         </div>
-        <h2 class="text-center" ng-show="!signupError" translate translate-text="Title">Generating keys...</h2>
+        <h2 class="text-center" ng-show="!signupError" translate translate-context="Title">Generating keys...</h2>
     </div>
     <p class="alert" translate-context="Info" translate>This can take a few seconds or a few minutes depending on your device.</p>
 </div>
@@ -82,7 +84,7 @@
         <div class="creating-loader-container">
             <atom-loader data-loader-theme="primary"></atom-loader>
         </div>
-        <h2 class="text-center" ng-show="!setupError"  translate>Setting up account</h2>
+        <h2 class="text-center" ng-show="!setupError"  translate-context="Title" translate>Setting up account</h2>
         <h2 class="text-center" ng-show="setupError" translate-context="Error" translate>Setup failed</h2>
     </div>
     <p class="alert alert-danger" ng-show="setupError">An error occured while setting up your account. To see common problems and solutions <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
@@ -90,19 +92,19 @@
         <ol id="creationList">
             <li class="done">
                 <i class="show fa fa-check"></i>
-                <span translate>Generating keys</span>
+                <span translate-context="Info" translate>Generating keys</span>
             </li>
             <li ng-class="{ 'done': setupAccount }">
                 <i ng-class="{ 'show': setupAccount }" class="fa fa-check"></i>
-                <span translate>Setting up account</span>
+                <span translate-context="Info" translate>Setting up account</span>
             </li>
             <li ng-class="{ 'done': getUserInfo }">
                 <i ng-class="{ 'show': getUserInfo }" class="fa fa-check"></i>
-                <span translate>Done</span>
+                <span translate-context="Info" translate>Done</span>
             </li>
             <li ng-class="{ 'done': finishCreation }">
                 <i ng-class="{ 'show': finishCreation }" class="fa fa-check"></i>
-                <span translate>Redirecting</span>
+                <span translate-context="Info" translate>Redirecting</span>
             </li>
         </ol>
     </div>

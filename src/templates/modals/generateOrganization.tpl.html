@@ -23,7 +23,7 @@
                 <p class="alert alert-info" ng-show="ctrl.size === 4096" translate translate-context="Info">Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
                 <label for="newRecoveryPassword" translate-context="Title" translate>Key recovery password</label>
                 <password data-id="newRecoveryPassword" data-name="newRecoveryPassword" data-value="ctrl.newRecoveryPassword" form="generateOrganizationForm"></password>
-                <label for="confirmRecoveryPassword" Title translate>Confirm recovery Password</label>
+                <label for="confirmRecoveryPassword" translate-context="Title" translate>Confirm recovery Password</label>
                 <password data-id="confirmRecoveryPassword" data-name="confirmRecoveryPassword" data-value="ctrl.confirmRecoveryPassword" form="generateOrganizationForm" compare="ctrl.newRecoveryPassword"></password>
                 <p class="alert alert-warning" ng-show="ctrl.otherAdmins" translate translate-context="Info">Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges.</p>
             </div>

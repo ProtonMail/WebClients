@@ -5,25 +5,25 @@ function dropdownFolders(AppModel, labelsModel, dispatchers, actionConversation,
     const { dispatcher } = dispatchers(['closeDropdown', 'messageActions']);
     const mailboxes = [
         {
-            Name: gettextCatalog.getString('Inbox', null),
+            Name: gettextCatalog.getString('Inbox', null, 'Label'),
             ID: MAILBOX_IDENTIFIERS.inbox,
             Order: 9999,
             className: 'fa-inbox'
         },
         {
-            Name: gettextCatalog.getString('Archive', null),
+            Name: gettextCatalog.getString('Archive', null, 'Label'),
             ID: MAILBOX_IDENTIFIERS.archive,
             Order: 9999,
             className: 'fa-archive'
         },
         {
-            Name: gettextCatalog.getString('Spam', null),
+            Name: gettextCatalog.getString('Spam', null, 'Label'),
             ID: MAILBOX_IDENTIFIERS.spam,
             Order: 9999,
             className: 'fa-ban'
         },
         {
-            Name: gettextCatalog.getString('Trash', null),
+            Name: gettextCatalog.getString('Trash', null, 'Label'),
             ID: MAILBOX_IDENTIFIERS.trash,
             Order: 9999,
             className: 'fa-trash-o'

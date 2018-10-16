@@ -23,7 +23,7 @@ function OutsideController(
     sanitize
 ) {
     const I18N = {
-        SUCCESS: gettextCatalog.getString('Message sent', null),
+        SUCCESS: gettextCatalog.getString('Message sent', null, 'Success'),
         OUTSIDE_REPLY_ERROR: gettextCatalog.getString(
             'ProtonMail\'s Encrypted Outside feature only allows replying 5 times. <a href="https://protonmail.com/signup" target="_blank">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>.',
             null,

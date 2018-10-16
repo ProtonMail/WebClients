@@ -17,4 +17,6 @@ jobs:
        - run: npm run config
        - run: ./tasks/checkInjector.sh --lint
        - run: npm run lint
+       - run: npm run i18n:extract
+       - run: npm run i18n:check -- --debug
        - run: npm test

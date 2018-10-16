@@ -61,23 +61,27 @@
                                               ng-show="$first"
                                               pt-tooltip-translate="ProtonMail users will use this key by default for sending"
                                               pt-tooltip-translate-context="Tooltip"
+                                              translate-context="Key state badge"
                                               translate-comment="key state badge"
                                               translate>Primary</span>
                                         <span class="pm_badge success"
                                               ng-show="key.decrypted"
                                               pt-tooltip-translate="You have locally decrypted this key"
                                               pt-tooltip-translate-context="Tooltip"
+                                              translate-context="Key state badge"
                                               translate-comment="key state badge"
                                               translate>Active</span>
                                         <span class="pm_badge error"
                                               ng-hide="key.decrypted"
                                               pt-tooltip-translate="This key is encrypted with an old password"
                                               pt-tooltip-translate-context="Tooltip"
+                                              translate-context="Key state badge"
                                               translate-comment="key state badge"
                                               translate>Inactive</span>
                                         <span class="pm_badge default" ng-show="address.status === 0"
                                               pt-tooltip-translate="This address has been disabled"
                                               pt-tooltip-translate-context="key flag info"
+                                              translate-context="Key state badge"
                                               translate-comment="key state badge"
                                               translate>Disabled</span>
                                         <span class="pm_badge warning"
