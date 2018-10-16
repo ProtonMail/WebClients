@@ -30,7 +30,7 @@ function chooseLayoutBtns(
             const promise = settingsMailApi.updateViewLayout({ ViewLayout: newLayout }).then(() => {
                 dispatcher.settings('viewLayout.updated', { viewLayout: newLayout });
                 tools.mobileResponsive();
-                notification.success(gettextCatalog.getString('Layout saved', null));
+                notification.success(gettextCatalog.getString('Layout saved', null, 'Info'));
             });
 
             networkActivityTracker.track(promise);

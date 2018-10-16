@@ -6,7 +6,7 @@
                     ng-options="day.label for day in availableDays track by day.value"
                     ng-disabled="disableInput"
                     name="{{::datePickerKey}}" required>
-                <option value="" disabled translate>Day of the month</option>
+                <option value="" disabled translate-context="Title" translate>Day of the month</option>
             </select>
             <i class="fa fa-angle-down"></i>
         </div>
@@ -16,14 +16,8 @@
     </div>
 
     <div class="col-1-1 text-red" ng-messages="combineErrors()">
-        <p ng-message="time_required" translate-context="Error input" translate>
-            Please enter a valid time.
-        </p>
-        <p ng-message="date_required" translate-context="Error input" translate>
-            Please enter a valid day in the month.
-        </p>
-        <p ng-message="both_required" translate-context="Error input" translate>
-            Please enter a valid day in the month and time.
-        </p>
+        <p ng-message="time_required" translate-context="Error input" translate>Please enter a valid time.</p>
+        <p ng-message="date_required" translate-context="Error input" translate>Please enter a valid day in the month.</p>
+        <p ng-message="both_required" translate-context="Error input" translate>Please enter a valid day in the month and time.</p>
     </div>
 </div>

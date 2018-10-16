@@ -4,10 +4,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <domains-menu-step></domains-menu-step>
-                <span ng-show="ctrl.domain.VerifyState === 0" class="pull-right pm_badge error" translate translate-comment="Verification status badge">Not set</span>
-                <span ng-show="ctrl.domain.VerifyState === 1" class="pull-right pm_badge error" translate translate-comment="Verification status badge">Not set properly</span>
-                <span ng-show="ctrl.domain.VerifyState === 2" class="pull-right pm_badge success" translate translate-comment="Verification status badge">Good</span>
-                <h4 class="modal-title">2. <span translate translate-context="Title">Verify</span> (<em translate>Required</em>)</h4>
+                <span ng-show="ctrl.domain.VerifyState === 0" class="pull-right pm_badge error" translate translate-comment="Verification status badge"  translate-context="configuration status badge">Not set</span>
+                <span ng-show="ctrl.domain.VerifyState === 1" class="pull-right pm_badge error" translate translate-comment="Verification status badge" translate-context="MX configuration status badge">Not set properly</span>
+                <span ng-show="ctrl.domain.VerifyState === 2" class="pull-right pm_badge success" translate  translate-context="MX configuration status badge"translate-comment="Verification status badge">Good</span>
+                <h4 class="modal-title">2. <span translate translate-context="Title">Verify</span> (<em translate-context="MX configuration status badge" translate>Required</em>)</h4>
             </div>
             <div class="modal-body pm_form">
                 <div>

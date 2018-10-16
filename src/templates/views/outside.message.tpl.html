@@ -16,7 +16,10 @@
             <li>
                 <strong translate-comment="message metadata" translate translate-context="Title">From</strong>
                 <b>{{ message.Sender.Name }}</b> &lt;{{ message.Sender.Address }}&gt;
-                <span class="fa fa-check-circle verified" pt-tooltip-translate="ProtonMail Verified"></span>
+                <span
+                    class="fa fa-check-circle verified"
+                    pt-tooltip-translate-context="Tooltip"
+                    pt-tooltip-translate="ProtonMail Verified"></span>
             </li>
             <li ng-if="message.ToList.length > 0">
                 <strong translate-comment="message metadata" translate translate-context="Title">To</strong>

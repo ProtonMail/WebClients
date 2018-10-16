@@ -72,7 +72,7 @@ function AppearanceController(
             .updateViewLayout({ ViewLayout: value })
             .then(eventManager.call)
             .then(() => {
-                notification.success(gettextCatalog.getString('Layout saved', null));
+                notification.success(gettextCatalog.getString('Layout saved', null, 'Info'));
             });
 
         networkActivityTracker.track(promise);

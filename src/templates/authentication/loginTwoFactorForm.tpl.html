@@ -17,7 +17,14 @@
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
     <div class="margin">
-        <two-fa-field ng-model="twoFactorCode" autofocus tabindex="2" id="twoFactorCode" name="twoFactorCode" placeholder-translate="Two-factor passcode"></two-fa-field>
+        <two-fa-field
+            ng-model="twoFactorCode"
+            autofocus
+            tabindex="2" id="twoFactorCode"
+            name="twoFactorCode"
+            placeholder-translate-context="Placeholder"
+            placeholder-translate="Two-factor passcode"></two-fa-field>
+
     </div>
 
     <div class="loginForm-actions">

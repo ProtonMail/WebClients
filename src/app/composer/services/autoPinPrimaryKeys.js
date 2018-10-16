@@ -11,7 +11,7 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
             ${gettextCatalog.getString('Learn more', null, 'Link')}
             </a>`;
     const I18N = {
-        PROMPT_TITLE: gettextCatalog.getString('Do you want to trust the primary key?'),
+        PROMPT_TITLE: gettextCatalog.getString('Do you want to trust the primary key?', null, 'Title'),
         promptMessage: (emails) =>
             gettextCatalog.getString(
                 `You have enabled Address Verification with Trusted Keys for {{ emails }}, but no active encryption keys have been Trusted.
@@ -19,7 +19,7 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
                 { emails: '<b>' + emails.join(', ') + '</b>' },
                 'Error'
             ) + LEARN_MORE,
-        PROMPT_TITLE_RESIGN: gettextCatalog.getString('Do you want to re-sign the contact?'),
+        PROMPT_TITLE_RESIGN: gettextCatalog.getString('Do you want to re-sign the contact?', null, 'Title'),
         promptResignMessage: (emails) =>
             gettextCatalog.getString(
                 `The verification of {{ emails }} has failed: the contact is not signed correctly.

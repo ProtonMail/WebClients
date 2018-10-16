@@ -3,7 +3,7 @@
         data-attachment-id="{{::attachment.ID}}"
         class=" listAttachments-item"
         ng-class="{ 'dead': attachment.decrypting, 'remove': ('eo.reply' | includedByState) }"
-        data-download-text="{{ 'Download' | translate }}"
+        data-download-text="{{ 'Download' | translate:'Action' }}"
         title="{{ ::attachment.Name }} ({{ ::attachment.Size | humanSize }})">
             <em></em>
             <icon-attachment></icon-attachment>

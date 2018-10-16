@@ -20,7 +20,10 @@
         <div class="col-2-3 openVpnSection-flex">
             <div>
                 <code>{{ VPNName }}</code>
-                <copy data-value="VPNName" pt-tooltip-translate="Copy login"></copy>
+                <copy
+                    data-value="VPNName"
+                    pt-tooltip-translate-context="Tooltip"
+                    pt-tooltip-translate="Copy login"></copy>
             </div>
             <div>
                 <button data-action="changeName" type="button" class="pm_button" translate-context="Action" translate>Edit</button>
@@ -37,7 +40,10 @@
             <div>
                 <code class="openVpnSection-password">{{ VPNPassword }}</code>
                 <code class="openVpnSection-hidden-password">•••••••••••••</code>
-                <copy data-value="VPNPassword" pt-tooltip-translate="Copy password"></copy>
+                <copy
+                    data-value="VPNPassword"
+                    pt-tooltip-translate-context="Tooltip"
+                    pt-tooltip-translate="Copy password"></copy>
             </div>
             <div>
                 <button type="button" class="pm_button openVpnSection-show-button" data-action="togglePassword" translate-context="Action" translate>Show</button>

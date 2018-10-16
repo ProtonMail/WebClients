@@ -12,7 +12,14 @@
             <div class="modal-body pm_form">
                 <div ng-if="ctrl.step === 'name'">
                     <p class="alert alert-info" translate-context="Info" translate>Pick a name for your Organization.</p>
-                    <input ng-model="ctrl.name" type="text" name="name" placeholder-translate="Organization name" ng-maxlength="100" required />
+                    <input
+                        ng-model="ctrl.name"
+                        type="text"
+                        name="name"
+                        placeholder-translate-context="Placeholder"
+                        placeholder-translate="Organization name"
+                        ng-maxlength="100"
+                        required />
                     <div ng-messages="setupOrganizationForm.name.$error">
                         <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
                         <p ng-message="maxlength" class="text-red" translate-context="Error" translate>Name exceeds maximum length</p>
@@ -38,10 +45,23 @@
                 <div ng-if="ctrl.step === 'password'">
                     <p class="alert alert-info" translate-context="Info" translate>Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.</p>
                     <div class="margin">
-                        <password data-id="organizationPassword" data-name="organizationPassword" data-value="ctrl.organizationPassword" data-form="setupOrganizationForm" placeholder-translate="Organization password"></password>
+                        <password
+                            data-id="organizationPassword"
+                            data-name="organizationPassword"
+                            data-value="ctrl.organizationPassword"
+                            data-form="setupOrganizationForm"
+                            placeholder-translate-context="Placeholder"
+                            placeholder-translate="Organization password"></password>
                     </div>
                     <div class="margin">
-                        <password data-id="confirmOrganizationPassword" data-name="confirmOrganizationPassword" data-value="ctrl.confirmOrganizationPassword" data-form="setupOrganizationForm" compare="ctrl.organizationPassword" placeholder-translate="Confirm organization password"></password>
+                        <password
+                            data-id="confirmOrganizationPassword"
+                            data-name="confirmOrganizationPassword"
+                            data-value="ctrl.confirmOrganizationPassword"
+                            data-form="setupOrganizationForm"
+                            data-compare="ctrl.organizationPassword"
+                            placeholder-translate-context="Placeholder"
+                            placeholder-translate="Confirm organization password"></password>
                     </div>
                     <p class="alert alert-warning">
                         <span translate-context="Info" translate>* Do NOT forget this password. If you forget it, you will not be able to manage your organization.</span><br />

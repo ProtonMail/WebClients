@@ -33,8 +33,8 @@
                 </div>
             </div>
             <div class="location message-summary-folder sent">
-                <i ng-if="message.Type === 1" class="pm_tag allMessageLabels-type-draft" translate>Draft</i>
-                <i ng-if="message.Type === 2 || message.Type === 3" class="pm_tag allMessageLabels-type-sent" translate>Sent</i>
+                <i ng-if="message.Type === 1" class="pm_tag allMessageLabels-type-draft" translate-context="Message label" translate>Draft</i>
+                <i ng-if="message.Type === 2 || message.Type === 3" class="pm_tag allMessageLabels-type-sent" translate-context="Message label" translate>Sent</i>
             </div>
         </div>
         <div class="summary-right">
@@ -107,7 +107,11 @@
                 ></message-contacts>
                 <div class="recipients-details-size"><span translate-context="Label for the message size when displaying email details" translate>Size:</span> {{ ::message.Size | bytes }}</div>
                 <div class="encrypted-subject" ng-if="message.encryptedSubject">
-                    <i class="fa fa-lock"></i><span translate class="header-name">Subject</span>
+                    <i class="fa fa-lock"></i>
+                    <span
+                        translate
+                        translate-context="Title"
+                        class="header-name">Subject</span>
                     <span> {{ ::message.encryptedSubject }}</span>
                 </div>
             </div>

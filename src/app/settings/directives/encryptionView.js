@@ -18,7 +18,9 @@ function encryptionView(
             'Confirm modal title'
         ),
         ENABLE_SIGNING_MESSAGE: gettextCatalog.getString(
-            'PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.'
+            'PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.',
+            null,
+            'Info'
         ),
         YES: gettextCatalog.getString('Yes', null, 'Confirm text'),
         NO: gettextCatalog.getString('No', null, 'Confirm text')

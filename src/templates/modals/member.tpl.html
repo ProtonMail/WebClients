@@ -50,10 +50,12 @@
                         <label translate translate-context="Label">Password</label>
                     </div>
                     <div class="col-1-3">
-                        <password data-value="ctrl.temporaryPassword" data-name="newPassword" form="memberForm" placeholder-translate="Password"></password>
+                        <password data-value="ctrl.temporaryPassword" data-name="newPassword" form="memberForm"
+                        placeholder-translate-context="Placeholder"
+                        placeholder-translate="Password"></password>
                     </div>
                     <div class="col-1-3">
-                        <password data-value="ctrl.confirmPassword" data-name="confirmPassword" form="memberForm" placeholder-translate="Confirm Password" compare="ctrl.temporaryPassword"></password>
+                        <password data-value="ctrl.confirmPassword" data-name="confirmPassword" form="memberForm" placeholder-translate="Confirm Password" placeholder-translate-context="Placeholder" compare="ctrl.temporaryPassword"></password>
                     </div>
                 </div>
                 <div class="pm_grid" ng-if="ctrl.showAddress">
@@ -61,7 +63,7 @@
                         <label translate translate-context="Label">Address</label>
                     </div>
                     <div class="col-1-3">
-                        <input type="text" ng-model="ctrl.address" placeholder-translate="Address" required />
+                        <input type="text" ng-model="ctrl.address" placeholder-translate="Address" placeholder-translate-context="Tooltip" required />
                     </div>
                     <div class="col-1-3" ng-if="ctrl.domains.length === 1">
                         <label>@{{ ctrl.domain.DomainName }}</label>
@@ -101,7 +103,7 @@
                 <p ng-if="ctrl.showKeys && !ctrl.private" class="alert alert-warning" translate translate-context="Info">
                     4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys. Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes
                 </p>
-                <p class="alert alert-info" ng-if="!ctrl.ID" translate>Please give the address and temporary password to the new member so they can log in.</p>
+                <p class="alert alert-info" ng-if="!ctrl.ID" translate translate-context="Info">Please give the address and temporary password to the new member so they can log in.</p>
             </div>
         </div>
         <div class="modal-footer text-right">

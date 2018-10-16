@@ -8,19 +8,19 @@ const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 /* @ngInject */
 function subscriptionSection(dispatchers, subscriptionModel, gettextCatalog) {
     const I18N = {
-        vpn: gettextCatalog.getString('VPN connections', null),
-        addresses: gettextCatalog.getString('addresses', null),
-        domain: gettextCatalog.getString('domain', null),
-        domains: gettextCatalog.getString('domains', null),
-        member: gettextCatalog.getString('user', null),
-        members: gettextCatalog.getString('users', null),
+        vpn: gettextCatalog.getString('VPN connections', null, 'Label'),
+        addresses: gettextCatalog.getString('addresses', null, 'Label'),
+        domain: gettextCatalog.getString('domain', null, 'Label'),
+        domains: gettextCatalog.getString('domains', null, 'Label'),
+        member: gettextCatalog.getString('user', null, 'Label'),
+        members: gettextCatalog.getString('users', null, 'Label'),
         cycles: {
-            [MONTHLY]: gettextCatalog.getString('Monthly', null),
-            [YEARLY]: gettextCatalog.getString('Annually', null),
-            [TWO_YEARS]: gettextCatalog.getString('2-years', null)
+            [MONTHLY]: gettextCatalog.getString('Monthly', null, 'Label'),
+            [YEARLY]: gettextCatalog.getString('Annually', null, 'Label'),
+            [TWO_YEARS]: gettextCatalog.getString('2-years', null, 'Label')
         },
         methods: {
-            card: gettextCatalog.getString('Credit card', null),
+            card: gettextCatalog.getString('Credit card', null, 'Label'),
             paypal: 'Paypal'
         }
     };

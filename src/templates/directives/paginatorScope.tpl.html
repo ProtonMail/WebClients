@@ -9,7 +9,10 @@
         </a>
         <span class="pm_dropdown right">
             <a ng-repeat="p in pages" ng-click="select(p)">
-                <em translate translate-comment="current page dropdown in paginator">Page</em> {{ p }}
+                <em
+                    translate
+                    translate-context="Title"
+                    translate-comment="current page dropdown in paginator">Page</em> {{ p }}
             </a>
         </span>
     </span>

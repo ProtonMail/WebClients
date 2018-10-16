@@ -20,11 +20,10 @@ try {
     }
 
     if (isDebug && total) {
-        console.log(translations.join('\n'));
-        process.exit(0);
+        console.log(translations.sort().join('\n'));
+        process.exit(1);
     }
 
-    console.log('-- No transactions without a context \o/');
     process.exit(0);
 } catch (e) {
     console.error(e.message);

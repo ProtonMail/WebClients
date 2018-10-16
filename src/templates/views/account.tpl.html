@@ -30,7 +30,9 @@
                             <label for="notificationEmail" translate-context="Title" translate translate-comment="form label for setting reset email">Reset/notification email</label>
                         </div>
                         <div class="col-5-8">
-                            <input class="margin" type="email" autocomplete="off" id="notificationEmail" name="notificationEmail" placeholder-translate="Notification email" ng-model="notificationEmail" />
+                            <input class="margin" type="email" autocomplete="off" id="notificationEmail" name="notificationEmail"
+                            placeholder-translate-context="Placeholder"
+                            placeholder-translate="Notification email" ng-model="notificationEmail" />
                             <div ng-messages="noticeForm.notificationEmail.$error">
                                 <p class="text-red" ng-message="email" translate-context="Error" translate>The email address is invalid</p>
                             </div>
@@ -97,9 +99,20 @@
                         <label translate-context="Title" translate translate-comment="form heading for changing desktop notifications">Desktop notifications</label>
                     </div>
                     <div class="col-5-8">
-                        <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'granted'"><span translate>Desktop notifications are currently <strong>enabled</strong>.</span><br /><a href="#" ng-click="testDesktopNotification()" translate>Test notification</a></p>
-                        <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'denied'" translate>Desktop notifications are currently <strong>disabled</strong>. To enable them, you need to go to your browser settings.</p>
-                        <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'default'"><span translate-context="To enable desktop notifications, click here" translate>To enable desktop notifications,</span> <a href="#" ng-click="enableDesktopNotifications()" translate>click here</a>.</p>
+                        <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'granted'">
+                            <span translate translate-context="Info">Desktop notifications are currently <strong>enabled</strong>.
+                            </span>
+                            <br />
+                            <a
+                                href="#"
+                                ng-click="testDesktopNotification()"
+                                translate
+                                translate-context="Action">Test notification</a>
+                        </p>
+
+                        <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'denied'" translate translate-context="Info">Desktop notifications are currently <strong>disabled</strong>. To enable them, you need to go to your browser settings.</p>
+
+                        <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'default'"><span translate-context="To enable desktop notifications, click here" translate>To enable desktop notifications,</span> <a href="#" ng-click="enableDesktopNotifications()" translate translate-context="Action">click here</a>.</p>
                         <p>
                             <a href="https://protonmail.com/support/knowledge-base/desktop-notifications/" target="_blank" class="pm_button link" translation-comment="link to learn more about desktop notifications" translate-context="Action" translate>What is this?</a>
                         </p>
@@ -170,7 +183,7 @@
                         translate
                         translate-context="Title">Language</h2>
                 </header-block>
-                <label for="selectDefaultLanguage" translate translate-comment="form option">Choose your default language.</label>
+                <label for="selectDefaultLanguage" translate translate-comment="form option"             translate-context="Title">Choose your default language.</label>
                 <span class="pm_select inline">
                     <select id="selectDefaultLanguage" ng-model="locale" ng-options="locale.label for locale in locales" ng-change="saveDefaultLanguage()"></select>
                     <i class="fa fa-angle-down"></i>
@@ -193,13 +206,19 @@
                         <div class="col-1-2">
                             <label>
                                 <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="1" data-custom-ng-change="saveAutosaveContacts()"></custom-radio>
-                                <span  translate translate-comment="form option">Enabled</span>
+                                <span
+                                    translate
+                                    translate-context="Address state badge"
+                                    translate-comment="form option">Enabled</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
                                 <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="0" data-custom-ng-change="saveAutosaveContacts()"></custom-radio>
-                                <span  translate translate-comment="form option">Disabled</span>
+                                <span
+                                    translate
+                                    translate-context="Address state badge"
+                                    translate-comment="form option">Disabled</span>
                             </label>
                         </div>
                         <p>

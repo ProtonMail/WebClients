@@ -3,7 +3,7 @@ import { normalizeEmail } from '../../../helpers/string';
 /* @ngInject */
 function messageResign(contactEmails, Contact, dispatchers, networkActivityTracker, gettextCatalog, notification) {
     const I18N = {
-        SUCCES_MESSAGE: gettextCatalog.getString('Contact re-signed')
+        SUCCES_MESSAGE: gettextCatalog.getString('Contact re-signed', null, 'Success')
     };
 
     return {

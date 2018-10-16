@@ -4,15 +4,15 @@
         <div class="modal-content">
             <div class="modal-header">
                 <domains-menu-step></domains-menu-step>
-                <span ng-show="ctrl.domain.DkimState === 0" class="pull-right pm_badge error" translate>Not set</span>
+                <span ng-show="ctrl.domain.DkimState === 0" class="pull-right pm_badge error" translate-context="DKIM configuration status badge" translate>Not set</span>
                 <span ng-show="ctrl.domain.DkimState === 1 || ctrl.domain.DkimState === 2 || ctrl.domain.DkimState === 3" class="pull-right pm_badge error" translate translate-context="DKIM configuration status badge">Not set properly</span>
                 <span ng-show="ctrl.domain.DkimState === 4" class="pull-right pm_badge success" translate translate-context="DKIM configuration status badge">On</span>
                 <span ng-show="ctrl.domain.DkimState === 5" class="pull-right pm_badge success" translate translate-context="DKIM configuration status badge">Off</span>
-                <h4 class="modal-title">6. <span translate translate-context="Title">DKIM</span> <em translate>Recommended</em></h4>
+                <h4 class="modal-title">6. <span translate translate-context="Title">DKIM</span> <em translate translate-context="Info">Recommended</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p translate >ProtonMail supports DKIM signing for custom domains! To use DKIM authentication, please add the following TXT record into your DNS for this domain. This can typically be done in the control panel of your domain name registrar.</p>
-                <p translate >Please add the follow TXT record. Note, DNS records can take several hours to update.</p>
+                <p translate-context="Info" translate >ProtonMail supports DKIM signing for custom domains! To use DKIM authentication, please add the following TXT record into your DNS for this domain. This can typically be done in the control panel of your domain name registrar.</p>
+                <p translate-context="Info" translate >Please add the follow TXT record. Note, DNS records can take several hours to update.</p>
                 <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/' translate translate-context="Action">Learn more</a></p>
                 <div class="pm_table">
                     <table class="record">

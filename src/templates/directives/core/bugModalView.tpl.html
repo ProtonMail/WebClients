@@ -9,6 +9,7 @@
         <div class="col-1-4">
             <input
                 type="text"
+                placeholder-translate-context="Placeholder"
                 placeholder-translate="OS Name"
                 name="bug_os"
                 id="bug_os"
@@ -18,7 +19,12 @@
             <label for="bug_os_version" translate translate-context="Title">OS version</label>
         </div>
         <div class="col-1-4">
-            <input placeholder-translate="OS version" type="text" id="bug_os_version" ng-model="model.OSVersion"/>
+            <input
+                placeholder-translate-context="Placeholder"
+                placeholder-translate="OS version"
+                type="text"
+                id="bug_os_version"
+                ng-model="model.OSVersion"/>
         </div>
     </div>
     <div class="pm_grid">
@@ -26,7 +32,13 @@
             <label for="bug_browser" translate translate-context="bug report modal label">Browser</label>
         </div>
         <div class="col-1-4">
-            <input type="text" name="bug_browser" id="bug_browser" placeholder-translate="Browser" ng-model="model.Browser" />
+            <input
+                type="text"
+                name="bug_browser"
+                id="bug_browser"
+                placeholder-translate-context="Placeholder"
+                placeholder-translate="Browser"
+                ng-model="model.Browser" />
         </div>
         <div class="col-1-4">
             <label for="bug_browser_version" translate translate-context="bug report modal label">Browser version</label>

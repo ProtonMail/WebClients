@@ -1,6 +1,6 @@
 /* @ngInject */
 function composerAttachmentsItem(dispatchers, gettextCatalog, attachmentDownloader) {
-    const getTitle = (name) => gettextCatalog.getString(`Download the attachment ${name}`);
+    const getTitle = (name) => gettextCatalog.getString('Download the attachment {{name}}', { name }, 'Info');
     const { dispatcher } = dispatchers(['attachment.upload', 'attachment.upload.outside']);
     const disp = (isOutside) => (type, data = {}) => {
         const event = `attachment.upload${isOutside ? '.outside' : ''}`;

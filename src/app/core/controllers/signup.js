@@ -78,7 +78,8 @@ function SignupController(
                     $scope.step = 3;
                     const message = gettextCatalog.getString(
                         "It currently isn't possible to subscribe to a Paid ProtonMail plan.",
-                        null
+                        null,
+                        'Info'
                     );
                     return notification.info(message);
                 }

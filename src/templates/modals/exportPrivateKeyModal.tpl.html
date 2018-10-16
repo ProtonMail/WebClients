@@ -11,7 +11,7 @@
                 <div class="multi-line-label">
                     <label for="password" translate translate-context="Label in the modal which ask the user to enter a new password">Please enter a password to encrypt your private key with before exporting.</label>
                 </div>
-                <input type="password" autofocus ng-model="ctrl.password" id="password" placeholder-translate="Password" name="password" required/>
+                <input type="password" autofocus ng-model="ctrl.password" id="password" placeholder-translate="Password" name="password" placeholder-translate-context="Placeholder" required/>
                 <div ng-messages="passwordModalForm.password.$error" class="text-red">
                     <p ng-message="required" translate-context="Error" translate>Field required</p>
                 </div>

@@ -123,7 +123,7 @@ function LabelsController(
                     null,
                     'Info'
                 ),
-                NOTIF: gettextCatalog.getString('Folder deleted', null)
+                NOTIF: gettextCatalog.getString('Folder deleted', null, 'Success')
             };
         }
 
@@ -133,7 +133,7 @@ function LabelsController(
                 null,
                 'Info'
             ),
-            NOTIF: gettextCatalog.getString('Label deleted', null)
+            NOTIF: gettextCatalog.getString('Label deleted', null, 'Success')
         };
     }
 
@@ -167,7 +167,7 @@ function LabelsController(
         const promise = Label.order({ LabelIDs: _.uniq(LabelIDs) })
             .then(eventManager.call)
             .then(() => {
-                notification.success(gettextCatalog.getString('Label order saved', null));
+                notification.success(gettextCatalog.getString('Label order saved', null, 'Success'));
             });
 
         networkActivityTracker.track(promise);

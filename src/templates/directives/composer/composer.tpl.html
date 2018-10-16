@@ -68,6 +68,7 @@
                 'primary': message.Attachments && message.Attachments.length > 0
             }"
             pt-tooltip-translate="Attachments"
+            pt-tooltip-translate-context="Tooltip"
             pt-placement="top">
             <i class="fa fa-paperclip"></i>
         </button>
@@ -95,7 +96,7 @@
             }"
             ng-disabled="message.disableOthers() || message !== selected"
             pt-placement="top"
-            pt-tooltip-context="Action"
+            pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Encryption">
             <i class="fa fa-lock"></i>
         </button>
@@ -107,8 +108,7 @@
                 ng-disabled="message.disableDiscard()"
                 pt-tooltip-translate="Delete draft"
                 pt-tooltip-translate-context="Action"
-                pt-placement="top"
-                pt-tooltip-context="Action">
+                pt-placement="top">
                 <i class="fa fa-trash-o"></i>
                 <span ng-show="!!message.maximized" translate translate-context="Action">Discard</span>
             </button>

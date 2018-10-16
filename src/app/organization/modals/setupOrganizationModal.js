@@ -40,11 +40,11 @@ function setupOrganizationModal(
             self.size = 2048;
 
             const allocatedLegend = {
-                label: gettextCatalog.getString('Allocated to admin', null),
+                label: gettextCatalog.getString('Allocated to admin', null, 'Success'),
                 classes: 'background-primary'
             };
             const minPaddingLegend = {
-                label: gettextCatalog.getString('Already used', null),
+                label: gettextCatalog.getString('Already used', null, 'Info'),
                 classes: 'background-red-striped'
             };
 

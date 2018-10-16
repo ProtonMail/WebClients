@@ -44,7 +44,7 @@
                                     <tbody>
                                         <tr>
                                             <td translate-context="Title" translate>
-                                                <span class="margin-right" translate>Number of users</span>
+                                                <span class="margin-right"translate-context="Info"  translate>Number of users</span>
                                             </td>
                                             <td class="absorbing-column">
                                                 <span class="margin-left">{{ organization.UsedMembers }} <span translate-context="Info" translate>of</span> {{ organization.MaxMembers }} <span translate-context="Info" translate>used</span></span>
@@ -57,7 +57,7 @@
                                         </tr>
                                         <tr>
                                             <td translate-context="Title" translate>
-                                                <span class="margin-right" translate>Organization storage</span>
+                                                <span class="margin-right" translate translate-context="Info">Organization storage</span>
                                             </td>
                                             <td>
                                                 <span class="margin-left">{{ organization.MaxSpace | humanSize }}</span>
@@ -70,7 +70,7 @@
                                         </tr>
                                         <tr>
                                             <td translate-context="Title" translate>
-                                                <span class="margin-right" translate>Available VPN connections</span>
+                                                <span class="margin-right" translate-context="Info"  translate>Available VPN connections</span>
                                             </td>
                                             <td class="absorbing-column">
                                                 <span class="margin-left" translate-context="Info" translate>{{ organization.MaxVPN - organization.UsedVPN }} </span>
@@ -83,7 +83,7 @@
                                         </tr>
                                         <tr>
                                             <td translate-context="Title">
-                                                <span class="margin-right" translate>Available domains</span>
+                                                <span class="margin-right" translate-context="Info"  translate>Available domains</span>
                                             </td>
                                             <td>
                                                 <div class="margin-left">
@@ -117,7 +117,10 @@
                         translate-context="Title">Addresses / Users</h2>
 
                     <small class="settingsUsers-details-signatures" ng-if="isAdmin">
-                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span>
+                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span
+                            translate-comment="how many addresses are in use"
+                            translate-context="Info"
+                            translate>addresses used.</span>
                         <a
                             class="settingsUsers-link-signatures"
                             ui-sref="secured.dashboard({scroll: true})"
@@ -167,12 +170,18 @@
                                     <toggle-expand ng-if="member.Addresses.length === 1" class="autoHeight" data-model="member"></toggle-expand>
                                 </td>
                                 <td ng-if="organization.HasKeys === 1">
-                                    <span ng-show="member.Subscriber" translate>Primary Admin</span>
+                                    <span ng-show="member.Subscriber" translate-context="Info"  translate>Primary Admin</span>
                                     <span ng-hide="member.Subscriber" ng-bind="roles[member.Role]"></span>
                                 </td>
                                 <td ng-if="organization.HasKeys === 1">
-                                    <span ng-show="member.Private === 1" translate>Yes</span>
-                                    <span ng-hide="member.Private === 1" translate>No</span>
+                                    <span
+                                        ng-show="member.Private === 1"
+                                        translate-context="Option"
+                                        translate>Yes</span>
+                                    <span
+                                        ng-hide="member.Private === 1"
+                                        translate-context="Option"
+                                        translate>No</span>
                                 </td>
                                 <td>
                                     <div class="members-table-usage">
@@ -249,11 +258,11 @@
                                                 <tr ng-repeat="address in member.Addresses | orderBy: ['!Status','Order'] track by address.ID">
                                                     <td ng-bind="address.Email"></td>
                                                     <td class="absorbing-column">
-                                                        <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge">Enabled</span>
-                                                        <span class="pm_badge error" ng-show="address.Status === 0"  translate translate-comment="address state badge">Disabled</span>
-                                                        <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate translate-comment="address state badge">Missing keys</span>
-                                                        <span class="pm_badge warning" ng-show="address.DomainID === null"  translate translate-comment="address state badge">Orphan</span>
-                                                        <span class="pm_badge primary" ng-show="$first" translate translate translate-comment="address state badge">Default</span>
+                                                        <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge" translate-context="Address state badge">Enabled</span>
+                                                        <span class="pm_badge error" ng-show="address.Status === 0"  translate translate-comment="address state badge" translate-context="Address state badge">Disabled</span>
+                                                        <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate translate-comment="address state badge" translate-context="Address state badge">Missing keys</span>
+                                                        <span class="pm_badge warning" ng-show="address.DomainID === null"  translate translate-comment="address s tate badge" translate-context="Address state badge">Orphan</span>
+                                                        <span class="pm_badge primary" ng-show="$first" translate translate translate-comment="address state badge" translate-context="Address state badge">Default</span>
                                                     </td>
                                                     <td class="text-right">
 

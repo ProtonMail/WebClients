@@ -63,7 +63,7 @@ function importPrivateKey(
                 );
             },
             (err) => {
-                notification.error(gettextCatalog.getString('Unsupported key'));
+                notification.error(gettextCatalog.getString('Unsupported key', null, 'Error'));
                 throw err;
             }
         );

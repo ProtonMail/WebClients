@@ -4,10 +4,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <domains-menu-step></domains-menu-step>
-                <span ng-show="ctrl.domain.SpfState === 0" class="pull-right pm_badge error" translate translate-comment="SPF status badge">Not set</span>
-                <span ng-show="ctrl.domain.SpfState === 1 || ctrl.domain.SpfState === 2" class="pull-right pm_badge error" translate translate-comment="SPF status badge">Not set properly</span>
-                <span ng-show="ctrl.domain.SpfState === 3" class="pull-right pm_badge success" translate translate-comment="SPF status badge">Good</span>
-                <h4 class="modal-title">5. <span translate translate-context="Title">SPF</span> <em translate>Recommended</em></h4>
+                <span ng-show="ctrl.domain.SpfState === 0" class="pull-right pm_badge error" translate translate-comment="SPF status badge"  translate-context="SPF configuration status badge">Not set</span>
+                <span ng-show="ctrl.domain.SpfState === 1 || ctrl.domain.SpfState === 2" class="pull-right pm_badge error" translate translate-comment="SPF status badge" translate-context="MX configuration status badge">Not set properly</span>
+                <span ng-show="ctrl.domain.SpfState === 3" class="pull-right pm_badge success" translate translate-context="MX configuration status badge"translate-comment="SPF status badge">Good</span>
+                <h4 class="modal-title">5. <span translate translate-context="Title">SPF</span> <em  translate-context="MX configuration status badge" translate>Recommended</em></h4>
             </div>
             <div class="modal-body pm_form">
                 <p translate translate-context="Info">SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.</p>

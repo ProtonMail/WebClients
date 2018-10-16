@@ -159,7 +159,10 @@
 
                     <small class="settingsDomains-details-custom" ng-if="isAdmin">
                         {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }}
-                        <span translate-comment="how many addresses are in use" translate>addresses used.</span>
+                        <span
+                            translate-comment="how many addresses are in use"
+                            translate-context="Info"
+                            translate>addresses used.</span>
 
                         <a
                             class="settingsDomains-link-custom"
@@ -208,9 +211,9 @@
                                     </td>
                                     <td ng-bind="address.Email"></td>
                                     <td>
-                                        <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge">Enabled</span>
-                                        <span class="pm_badge error" ng-show="address.Status === 0" translate translate-comment="address state badge">Disabled</span>
-                                        <span class="pm_badge warning" ng-show="address.HasKeys === 0" translate translate-comment="address state badge">Missing keys</span>
+                                        <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge" translate-context="Address state badge">Enabled</span>
+                                        <span class="pm_badge error" ng-show="address.Status === 0" translate translate-comment="address state badge" translate-context="Address state badge">Disabled</span>
+                                        <span class="pm_badge warning" ng-show="address.HasKeys === 0" translate translate-comment="address state badge" translate-context="Address state badge">Missing keys</span>
                                     </td>
                                     <td class="domains-catchAll-container">
                                         <custom-checkbox
