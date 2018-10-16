@@ -74,7 +74,7 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
 
         // Show the API error only - pending decision to be taken for how to handle it.
         if (errorCode === APP_VERSION_BAD) {
-            return notifyError(error, Error);
+            return notifyError(error, errorMessage);
         }
 
         if (errorCode === API_VERSION_INVALID) {
@@ -86,7 +86,7 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
         }
 
         if (errorCode === API_OFFLINE) {
-            return notifyError(error, NOTIFS.offline + Error);
+            return notifyError(error, NOTIFS.offline + errorMessage);
         }
 
         if (errorCode === HUMAN_VERIFICATION_REQUIRED) {
