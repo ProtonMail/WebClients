@@ -57,7 +57,7 @@ msgid ""
 "                <p>Because Tor or free VPNs are frequently abused by spammers, this check may be triggered because of the Tor or VPN exit node you are using.</p>"
 msgstr ""
 
-#: ./src/app/message/factories/messageActions.js:185
+#: ./src/app/message/factories/messageActions.js:186
 msgctxt "Action"
 msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
@@ -584,6 +584,8 @@ msgstr ""
 #: ./src/templates/partials/wizard.tpl.html:6
 #: ./src/templates/payment/giftCodeModal.tpl.html:3
 #: ./src/templates/utils/discardModal.tpl.html:3
+#: ./src/templates/utils/printModal.tpl.html:22
+#: ./src/templates/utils/printModal.tpl.html:3
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:4
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:4
 msgctxt "Action"
@@ -1334,6 +1336,7 @@ msgid "Previous"
 msgstr ""
 
 #: ./src/templates/message/message.tpl.html:223
+#: ./src/templates/utils/printModal.tpl.html:28
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -2039,42 +2042,42 @@ msgctxt "Address state badge"
 msgid "Orphan"
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:41
-#: ./src/app/message/factories/messageActions.js:47
+#: ./src/app/conversation/factories/actionConversation.js:42
+#: ./src/app/message/factories/messageActions.js:48
 msgctxt "App folder"
 msgid "Archive"
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:36
 #: ./src/app/conversation/factories/actionConversation.js:37
-#: ./src/app/message/factories/messageActions.js:42
+#: ./src/app/conversation/factories/actionConversation.js:38
 #: ./src/app/message/factories/messageActions.js:43
+#: ./src/app/message/factories/messageActions.js:44
 msgctxt "App folder"
 msgid "Drafts"
-msgstr ""
-
-#: ./src/app/conversation/factories/actionConversation.js:34
-#: ./src/app/message/factories/messageActions.js:40
-msgctxt "App folder"
-msgid "Inbox"
-msgstr ""
-
-#: ./src/app/conversation/factories/actionConversation.js:38
-#: ./src/app/conversation/factories/actionConversation.js:39
-#: ./src/app/message/factories/messageActions.js:44
-#: ./src/app/message/factories/messageActions.js:45
-msgctxt "App folder"
-msgid "Sent"
 msgstr ""
 
 #: ./src/app/conversation/factories/actionConversation.js:35
 #: ./src/app/message/factories/messageActions.js:41
 msgctxt "App folder"
+msgid "Inbox"
+msgstr ""
+
+#: ./src/app/conversation/factories/actionConversation.js:39
+#: ./src/app/conversation/factories/actionConversation.js:40
+#: ./src/app/message/factories/messageActions.js:45
+#: ./src/app/message/factories/messageActions.js:46
+msgctxt "App folder"
+msgid "Sent"
+msgstr ""
+
+#: ./src/app/conversation/factories/actionConversation.js:36
+#: ./src/app/message/factories/messageActions.js:42
+msgctxt "App folder"
 msgid "Spam"
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:40
-#: ./src/app/message/factories/messageActions.js:46
+#: ./src/app/conversation/factories/actionConversation.js:41
+#: ./src/app/message/factories/messageActions.js:47
 msgctxt "App folder"
 msgid "Trash"
 msgstr ""
@@ -3133,7 +3136,7 @@ msgctxt "Default autoresponder message without signature (no regards, etcetera)"
 msgid "<div>I'm out of the office with limited access to my email.</div>"
 msgstr ""
 
-#: ./src/app/contact/factories/contactDetailsModel.js:19
+#: ./src/app/contact/factories/contactDetailsModel.js:26
 #: ./src/app/contact/factories/contactEncryption.js:134
 #: ./src/app/contact/factories/contactSchema.js:9
 msgctxt "Default display name vcard"
@@ -3434,11 +3437,6 @@ msgctxt "Error"
 msgid "Error while copying"
 msgstr ""
 
-#: ./src/app/message/directives/messagePublicKeyPinning.js:11
-msgctxt "Error"
-msgid "Error while updating setting"
-msgstr ""
-
 #: ./src/app/attachments/services/AttachmentLoader.js:20
 msgctxt "Error"
 msgid "Failed to encrypt attachment. Please try again."
@@ -3652,7 +3650,7 @@ msgctxt "Error"
 msgid "Organization keys already active"
 msgstr ""
 
-#: ./src/app/organization/modals/generateOrganizationModal.js:103
+#: ./src/app/organization/modals/generateOrganizationModal.js:105
 msgctxt "Error"
 msgid "Organization keys change successful"
 msgstr ""
@@ -4444,7 +4442,7 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:385
+#: ./src/app/conversation/factories/actionConversation.js:401
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
 msgid_plural "{{number}} conversations moved to {{folder}}"
@@ -7729,6 +7727,11 @@ msgctxt "Modal setup 2FA"
 msgid "This wizard will enable Two Factor Authentication (2FA) on your ProtonMail account. 2FA will make your ProtonMail account more secure so we recommend enabling it."
 msgstr ""
 
+#: ./src/templates/utils/printModal.tpl.html:13
+msgctxt "Modal title"
+msgid "Print preview"
+msgstr ""
+
 #: ./src/app/keys/factories/keyCompression.js:7
 msgctxt "Modal title"
 msgid "Reduce Key Size"
@@ -8342,7 +8345,7 @@ msgctxt "ProtonVPN with X connections"
 msgid "with"
 msgstr ""
 
-#: ./src/app/composer/services/postMessage.js:24
+#: ./src/app/composer/services/postMessage.js:25
 msgctxt "Record message"
 msgid "Message saved"
 msgstr ""
@@ -8431,12 +8434,12 @@ msgctxt "Select your type of OS"
 msgid "Select your client below to get started with ProtonVPN"
 msgstr ""
 
-#: ./src/app/composer/services/sendMessage.js:25
+#: ./src/app/composer/services/sendMessage.js:26
 msgctxt "Send message"
 msgid "Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, {{link}}click here"
 msgstr ""
 
-#: ./src/app/composer/services/sendMessage.js:24
+#: ./src/app/composer/services/sendMessage.js:25
 msgctxt "Send message"
 msgid "Message sent"
 msgstr ""
@@ -9125,8 +9128,10 @@ msgctxt "Title"
 msgid "Automatically save contacts"
 msgstr ""
 
+#. printed message info
 #: ./src/app/message/directives/messageContacts.js:4
 #: ./src/app/message/filters/recipients.js:13
+#: ./src/templates/utils/printMessage.tpl.html:29
 msgctxt "Title"
 msgid "BCC"
 msgstr ""
@@ -9162,8 +9167,10 @@ msgid "Bridge IMAP/SMTP"
 msgstr ""
 
 #. message metadata
+#. printed message info
 #: ./src/app/message/directives/messageContacts.js:5
 #: ./src/app/message/filters/recipients.js:12
+#: ./src/templates/utils/printMessage.tpl.html:24
 #: ./src/templates/views/outside.message.tpl.html:31
 msgctxt "Title"
 msgid "CC"
@@ -9736,8 +9743,10 @@ msgid "Folders / Labels"
 msgstr ""
 
 #. message metadata
+#. printed message info
 #: ./src/templates/directives/composer/composerSelectFrom.tpl.html:2
 #: ./src/templates/search/searchForm.tpl.html:65
+#: ./src/templates/utils/printMessage.tpl.html:14
 #: ./src/templates/views/outside.message.tpl.html:17
 #: ./src/templates/views/outside.reply.tpl.html:14
 msgctxt "Title"
@@ -10579,10 +10588,12 @@ msgid "Time"
 msgstr ""
 
 #. message metadata
+#. printed message info
 #: ./src/app/message/directives/messageContacts.js:6
 #: ./src/app/message/filters/recipients.js:11
 #: ./src/templates/directives/composer/composerInputMeta.tpl.html:35
 #: ./src/templates/search/searchForm.tpl.html:73
+#: ./src/templates/utils/printMessage.tpl.html:19
 #: ./src/templates/views/outside.message.tpl.html:25
 #: ./src/templates/views/outside.reply.tpl.html:18
 msgctxt "Title"
@@ -11445,6 +11456,16 @@ msgctxt "Write a feedback about ProtonMail"
 msgid "Your thoughts..."
 msgstr ""
 
+#: ./src/templates/contact/contactNoResult.tpl.html:6
+msgctxt "You can Add contact or Import contacts"
+msgid "You can"
+msgstr ""
+
+#: ./src/templates/contact/contactNoResult.tpl.html:8
+msgctxt "You can Add contact or Import contacts"
+msgid "or"
+msgstr ""
+
 #: ./src/app/ui/directives/atomLoader.js:4
 msgctxt "atom text loader"
 msgid "Decrypting"
@@ -11712,6 +11733,16 @@ msgstr ""
 #: ./src/app/dnd/services/actionDnd.js:22
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
+msgstr ""
+
+#: ./src/app/utils/factories/printMessageModel.js:10
+msgctxt "printed message info"
+msgid "Received:"
+msgstr ""
+
+#: ./src/app/utils/factories/printMessageModel.js:11
+msgctxt "printed message info"
+msgid "Sent:"
 msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:122
