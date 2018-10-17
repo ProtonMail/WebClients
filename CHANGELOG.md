@@ -1,3 +1,8 @@
+# [3.14.21] - 2018-10-17
+## Fixed
+- Advanced settings did not save changes
+- The scroll bar didn't show in Contacts view
+
 # [3.14.20] - 2018-10-17
 ## Fixed
 - "You have no contacts" message was not centered on IE
