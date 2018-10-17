@@ -23,12 +23,13 @@ function contactEncryptionSettings(
     /**
      * Load Contact encryption settings modal for an email
      *      ⚠ Once done we mutate item to update settings. ⚠
-     * @param  {Object} item             Item from a vcard for an Email
-     * @param  {Object} contact          The contact
-     * @param  {String} mode             'view' from contact view details
-     * @return {Promise}                 return the new model with { Keys, Sign etc.}
+     * @param  {Object} item            Item from a vcard for an Email
+     * @param  {Object} contact         The contact
+     * @param  {String} option.mode     'view' from contact view details
+     * @param  {Object} option.form     Contact form used in the contact detail
+     * @return {Promise}                return the new model with { Keys, Sign etc.}
      */
-    const get = async ({ value: email } = {}, contact, mode) => {
+    const get = async ({ value: email } = {}, contact, { mode, form }) => {
         const directSave = mode === 'view';
         const contactId = contact.ID || CONTACT_ADD_ID;
         const { model, keys: internalKeys } = await networkActivityTracker.track(loadConfig(email, contactId));
@@ -41,6 +42,8 @@ function contactEncryptionSettings(
                     // Save entire contact model only for the contact view details (view mode) because the email is already defined in the model
                     const promise = contactEncryptionSaver.save(model, contact, email);
                     await networkActivityTracker.track(promise);
+                } else {
+                    form && form.$setDirty();
                 }
             };
 
