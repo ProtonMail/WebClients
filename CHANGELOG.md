@@ -1,10 +1,29 @@
+# [3.14.20] - 2018-10-17
+## Fixed
+- "You have no contacts" message was not centered on IE
+- After trusting keys the lock icon didn't update properly
+- "Cannot read property 'Keys' of undefined" error showed when pressing Escape in the signature editor
+- Minor issue with loading messages
+- "Invalid input" error message when you edit a contact with some characters in the Display name
+- Importing a public key for a second address on a same contact replaced the key on the original address
+- Mark email addresses that fail validation in red
+- Some fields in the contacts were not displayed in certain cases
+- "[object Object]" was shown as an error message if invalid credit card data was entered
+
+## Changed
+- Print now opens as
+- Changes to the labeling for conversations/messages
+- Some errors were not displayed properly
+- Labels attribute was missing in some cases
+- Display embedded content was not working properly
+
 # [3.14.19] - 2018-10-12
 ## Fixed
 - Fixed remove/clear input button on IE
 - Tutorial didn't start if triggered manually
 - Custom filter options dropdown was closed after each selection.
 
-##Changed
+## Changed
 - View headers is now shown in the same window as a pop-up
 
 # [3.14.18] - 2018-10-10
