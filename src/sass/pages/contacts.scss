@@ -25,7 +25,8 @@
     overflow: auto;
     border-right: 1px solid rgba($border, .1);
     background:  rgba($border, .05);
-    z-index: 100
+    z-index: 100;
+    display: flex;
 }
 
 .contactList-table {
