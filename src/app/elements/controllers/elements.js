@@ -437,7 +437,7 @@ function ElementsController(
                     /**
                      * Redirect the user if there are no elements to display for the current state
                      */
-                    if (!$scope.conversations.length && page > 0) {
+                    if (!$scope.conversations.length && page > 0 && !$scope.idDefined()) {
                         return $scope.back(false, page - 1);
                     }
 
