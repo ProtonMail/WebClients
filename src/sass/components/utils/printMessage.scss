@@ -23,6 +23,16 @@
     line-height: auto;
 }
 
+/* Hide toggle blockquote button */
+.printMessage-container .proton-message-blockquote-toggle {
+    display: none;
+}
+
+/* Show all blockquotes */
+.printMessage-container .proton-message-blockquote-toggle ~ * {
+    display: block !important;
+}
+
 .printMessage-container .listAttachments-title-size,
 .printMessage-container .listAttachments-title-download { display: none }
 .printMessage-container .listAttachments-container a { pointer-events: none }
