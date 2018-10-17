@@ -157,7 +157,7 @@ function OutsideController(
             })
             .then((result) => {
                 $state.go('eo.message', { tag: $stateParams.tag });
-                notification.success(I18N.success);
+                notification.success(I18N.SUCCESS);
                 return result;
             });
 
