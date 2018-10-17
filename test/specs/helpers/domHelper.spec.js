@@ -1,4 +1,4 @@
-import { isHTML, escapeSrc, unescapeSrc } from '../../../src/helpers/domHelper';
+import { isHTML, escapeSrc, unescapeSrc, inlineCss } from '../../../src/helpers/domHelper';
 
 describe('isHTML', () => {
     [
@@ -40,6 +40,38 @@ describe('isHTML', () => {
     ].forEach(({ input, output, name }) => {
         it(`should ${output ? '' : 'not '}detect HTML content in ${name}`, () => {
             expect(isHTML(input))
+                .toEqual(output);
+        });
+    });
+});
+
+describe('inline css and remove classes', () => {
+    const getHtml = ({ style = '', body }) => `<html><head>${style}</head><body>${body}</body></html>`;
+
+    [
+        {
+            name: 'strip main div',
+            input: getHtml({
+                style: '<style>.bar { font-color: red }</style>',
+                body: '<div class="bar">asd</div>'
+            }),
+            output: getHtml({
+                body: '<div style="font-color: red;">asd</div>'
+            })
+        },
+        {
+            name: 'strip child',
+            input: getHtml({
+                style: '<style>.foo { font-color: red } .bar { font-color: yellow; }</style>',
+                body: '<div class="foo"><b class="bar">asd</b></div>'
+            }),
+            output: getHtml({
+                body: '<div style="font-color: red;"><b style="font-color: yellow;">asd</b></div>'
+            })
+        }
+    ].forEach(({ input, output, name }) => {
+        it(`should ${name}`, () => {
+            expect(inlineCss(input))
                 .toEqual(output);
         });
     });
