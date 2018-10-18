@@ -7,12 +7,17 @@ function timeRefreshed($filter, dispatchers) {
 
     return {
         restrict: 'A',
-        link(scope, element, { timeRefreshed, timeInterval = 1000, timeFilter = 'delay' }) {
+        link(scope, element, attrs) {
             const { on, unsubscribe } = dispatchers();
             const isTime = element[0].nodeName === 'TIME';
+            const { timeInterval = 1000, timeFilter = 'delay' } = attrs;
             const filter = $filter(timeFilter);
-            isTime && element[0].setAttribute('datetime', getDate(timeRefreshed));
-            const updateTime = () => element.text(filter(timeRefreshed));
+
+            const updateTime = () => {
+                const timeRefreshed = attrs.timeRefreshed;
+                element.text(filter(timeRefreshed));
+                isTime && element[0].setAttribute('datetime', getDate(timeRefreshed));
+            };
             const id = setInterval(updateTime, timeInterval);
 
             updateTime();
