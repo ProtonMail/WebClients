@@ -31,9 +31,12 @@
             ng-class="{'contactViewDetail-isFree': isFree}"
             ng-if="model.hasEncrypted"
             data-type="encrypted">
+            <img src="/assets/img/lock-signed.png" width="20" alt="" class="contactViewDetail-signed-icon on-ie11-only"
+            pt-tooltip-translate="Encrypted data with verified digital signature"
+            pt-tooltip-translate-context="Tooltip" />
             <svg
                 viewBox="0 0 374.8 337.1"
-                class="contactViewDetail-signed-icon"
+                class="contactViewDetail-signed-icon not-on-ie11"
                 pt-tooltip-translate="Encrypted data with verified digital signature"
                 pt-tooltip-translate-context="Tooltip">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-lock-signed"></use>

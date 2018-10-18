@@ -159,8 +159,12 @@ input:-moz-ui-invalid {
     #conversation-view .message > div.summary .labels .pm_labels { top: 0 }
 }
 // IE11
+.on-ie11-only { display: none !important; }
 .ua-ie-11 {
     #conversation-list-rows .conversation .subject { display: inline-block }
+
+    .on-ie11-only { display: block !important; }
+    .not-on-ie11 { display: none !important; }
 }
 
 /* 2FA inputs*/
