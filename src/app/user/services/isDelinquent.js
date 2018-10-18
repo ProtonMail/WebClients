@@ -4,7 +4,7 @@ import { UNPAID_STATE, PAID_MEMBER_ROLE } from '../../constants';
 function isDelinquent($state, gettextCatalog, notification, authentication) {
     const I18N = {
         ERROR_MEMBER: gettextCatalog.getString(
-            'Your account currently has an overdue invoice. Please contact your administrator.',
+            'Account access restricted due to unpaid invoices. Please contact your administrator.',
             null,
             'Error'
         ),
@@ -36,12 +36,14 @@ function isDelinquent($state, gettextCatalog, notification, authentication) {
      * @return {Promise}
      */
     const test = async () => {
-        if (authentication.user.Delinquent < UNPAID_STATE.DELINQUENT) {
+        const { Delinquent = 0, Role = PAID_MEMBER_ROLE } = authentication.user;
+
+        if (Delinquent < UNPAID_STATE.DELINQUENT) {
             return;
         }
 
-        if (authentication.user.Role === PAID_MEMBER_ROLE) {
-            error('login', I18N.ERROR_MEMBER);
+        if (Role === PAID_MEMBER_ROLE) {
+            return error('login', I18N.ERROR_MEMBER);
         }
 
         error();
