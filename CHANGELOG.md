@@ -1,3 +1,17 @@
+# [3.14.22] - 2018-10-19
+## Added
+- An error message is now displayed for all users if the account is delinquent
+
+## Fixed
+- iCalendar ( .ics) files could bypass the loading of remote content setting
+- Header was not displayed properly in the domain wizard on Firefox
+- iOS rendering issue
+- Image for a contact was not displayed properly in Internet Explorer
+- Addresses were not alligned properly in Settings/filters on Internet Explorer
+- Time displayed next to a sent message was the time when the draft was saved, not when the message was sent
+- Opening the last message in the "show unread" mode caused an issue with viewing
+- "Message sent" notification was not showing when responding from encrypted messages sent to non ProtonMail addresses
+
 # [3.14.21] - 2018-10-17
 ## Fixed
 - Advanced settings did not save changes
