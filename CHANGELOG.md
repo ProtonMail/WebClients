@@ -1,3 +1,7 @@
+# [3.14.23] - 2018-10-19
+## Fixed
+- Fixed an issue with keys generation for sub-users
+
 # [3.14.22] - 2018-10-19
 ## Added
 - An error message is now displayed for all users if the account is delinquent
