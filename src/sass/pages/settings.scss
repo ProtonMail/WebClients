@@ -33,7 +33,7 @@
             width: 100%;
             text-align: center;
             height: auto;
-            line-height: 1rem;
+            line-height: 1rem !important;
             &.disabled {
                 opacity: .5;
                 pointer-events: none;
