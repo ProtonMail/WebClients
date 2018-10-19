@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import juice from 'juice/client';
-import declassify from 'declassify';
 
 import { isIE11 } from './browser';
 
@@ -29,13 +28,13 @@ export const findParent = (node, cb) => {
 };
 
 /**
- * Inline css into an element and remove all obsolete class names.
+ * Inline css into an element.
  * @param {String} html
  * @returns {String}
  */
 export const inlineCss = (html = '') => {
     try {
-        return declassify.process(juice(html, OPTIONS));
+        return juice(html, OPTIONS);
     } catch (err) {
         console.error(err);
         return html;
