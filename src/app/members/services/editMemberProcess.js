@@ -79,7 +79,7 @@ function editMemberProcess(
                 Domain: domain.DomainName,
                 MemberID: member.ID
             });
-            member.Addresses.push(data.Address);
+            member.Addresses = [data.Address];
             return { addresses: [data.Address], member };
         };
 
