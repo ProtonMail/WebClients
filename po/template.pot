@@ -1799,7 +1799,7 @@ msgid "Upgrade account"
 msgstr ""
 
 #: ./src/templates/contact/contactEncrypted.tpl.html:15
-#: ./src/templates/contact/contactViewDetail.tpl.html:44
+#: ./src/templates/contact/contactViewDetail.tpl.html:47
 msgctxt "Action"
 msgid "Upgrade now"
 msgstr ""
@@ -3300,6 +3300,11 @@ msgctxt "Error"
 msgid "A line contains too many characters (limit: 40)"
 msgstr ""
 
+#: ./src/app/user/services/isDelinquent.js:6
+msgctxt "Error"
+msgid "Account access restricted due to unpaid invoices. Please contact your administrator."
+msgstr ""
+
 #: ./src/templates/directives/core/bugModalView.tpl.html:98
 msgctxt "Error"
 msgid "Add a description to help us improve ProtonMail"
@@ -3988,11 +3993,6 @@ msgstr ""
 #: ./src/templates/directives/core/bugModalView.tpl.html:73
 msgctxt "Error"
 msgid "You must set an email"
-msgstr ""
-
-#: ./src/app/user/services/isDelinquent.js:6
-msgctxt "Error"
-msgid "Your account currently has an overdue invoice. Please contact your administrator."
 msgstr ""
 
 #: ./src/app/user/services/isDelinquent.js:11
@@ -5947,7 +5947,7 @@ msgstr ""
 
 #: ./src/app/bridge/directives/bridgeFreePanel.js:4
 #: ./src/templates/contact/contactEncrypted.tpl.html:20
-#: ./src/templates/contact/contactViewDetail.tpl.html:45
+#: ./src/templates/contact/contactViewDetail.tpl.html:48
 msgctxt "Info"
 msgid "This feature is only available for paid users."
 msgstr ""
@@ -10935,6 +10935,7 @@ msgid "Edit contact"
 msgstr ""
 
 #: ./src/templates/contact/contactViewDetail.tpl.html:34
+#: ./src/templates/contact/contactViewDetail.tpl.html:37
 msgctxt "Tooltip"
 msgid "Encrypted data with verified digital signature"
 msgstr ""
