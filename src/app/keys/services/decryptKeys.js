@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { MAIN_KEY } from '../../constants';
 
 /* @ngInject */
-function decryptUser(pmcw, notification, Key, keyInfo, setupKeys, gettextCatalog) {
+function decryptKeys(pmcw, notification, Key, keyInfo, setupKeys, gettextCatalog) {
     const I18N = {
         errorPrimaryKey({ Email: email = '' }) {
             return gettextCatalog.getString(
@@ -61,6 +61,7 @@ function decryptUser(pmcw, notification, Key, keyInfo, setupKeys, gettextCatalog
     /**
      * Decrypt a user's keys
      * @param  {Object} user                   the user object
+     * @param  {Array} addresses
      * @param  {Object} organizationKey        organization private key
      * @param  {String} mailboxPassword        the user's mailbox password
      * @return {Object} {keys, dirtyAddresses} decrypted keys, addresses without keys
@@ -71,7 +72,8 @@ function decryptUser(pmcw, notification, Key, keyInfo, setupKeys, gettextCatalog
 
         // All user key are decrypted and stored
         const address = { ID: MAIN_KEY };
-        const list = user.Keys.map((key, index) => {
+        const { Keys = [] } = user;
+        const list = Keys.map((key, index) => {
             if (subuser === true) {
                 return setupKeys.decryptMemberKey(key, organizationKey).then((pkg) => storeKey({ key, pkg, address }));
             }
@@ -120,4 +122,4 @@ function decryptUser(pmcw, notification, Key, keyInfo, setupKeys, gettextCatalog
         });
     };
 }
-export default decryptUser;
+export default decryptKeys;

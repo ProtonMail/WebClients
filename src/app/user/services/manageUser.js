@@ -12,7 +12,7 @@ function manageUser(
     gettextCatalog,
     notification,
     pmcw,
-    decryptUser
+    decryptKeys
 ) {
     const { dispatcher, on } = dispatchers(['organizationChange', 'updateUser']);
     const I18N = {
@@ -89,45 +89,64 @@ function manageUser(
         return addressWithoutKeysManager.manage(user, _.map(Members, 'Member'), true).then(
             (addresses = []) => {
                 if (addresses.length) {
-                    throw new Error('Regenerate keys for addresses');
+                    // Regenerate keys for addresses
+                    return true;
                 }
             },
             () => storeKeys(keys)
         );
     };
 
-    async function manageUser({ User = {}, Members = [] }) {
-        // Remove useless keys
-        delete User.Addresses;
-        delete User.MailSettings;
+    /**
+     * Manage user role
+     * @param {Integer} user.Role
+     * @return {Boolean|void} Returns true if we have to reload the page
+     */
+    const manageRole = ({ Role } = {}) => {
         // Init value on load
         if (angular.isUndefined(CACHE.previousRole)) {
             CACHE.previousRole = authentication.user.Role;
         }
 
-        if (angular.isUndefined(User.Role)) {
-            return;
-        }
-
-        if (User.Role === FREE_USER_ROLE) {
+        if (Role === FREE_USER_ROLE) {
             // Necessary because there is no deletion event for organizations
             dispatcher.organizationChange('update', { data: { PlanName: 'free', HasKeys: 0 } });
         }
 
         // Revoke admin, we reload the app to clear the context
-        if (CACHE.previousRole === PAID_ADMIN_ROLE && User.Role !== PAID_ADMIN_ROLE) {
-            CACHE.previousRole = User.Role;
+        if (angular.isDefined(Role) && CACHE.previousRole === PAID_ADMIN_ROLE && Role !== PAID_ADMIN_ROLE) {
+            CACHE.previousRole = Role;
             _rAF(() => notification.info(`${I18N.REVOKE_ADMIN_RELOAD}<br>${I18N.REVOKE_ADMIN_RELOAD_INFO}`));
-            return _.delay(() => window.location.reload(), 5000);
+            _.delay(() => window.location.reload(), 5000);
+            return true;
         }
 
-        CACHE.previousRole = User.Role;
-        const password = authentication.getPassword();
+        if (angular.isDefined(Role)) {
+            CACHE.previousRole = Role;
+        }
+    };
+
+    async function manageUser({ User = {}, Members = [] }) {
+        // Remove useless keys
+        delete User.Addresses;
+        delete User.MailSettings;
+
+        if (manageRole(User)) {
+            // Break the process to reload the page
+            return;
+        }
 
         try {
+            const password = authentication.getPassword();
             const organizationKey = await getPromise(User, password);
-            const { dirtyAddresses, keys } = await decryptUser(User, addressesModel.get(), organizationKey, password);
-            await generateKeys(User, Members, keys);
+            const { dirtyAddresses, keys } = await decryptKeys(User, addressesModel.get(), organizationKey, password);
+
+            // Open the generate modal if we find addresses without a key
+            if (await generateKeys(User, Members, keys)) {
+                // Break the process because the generate keys modal will save them later
+                return;
+            }
+
             storeKeys(keys);
             mergeUser(User, keys, dirtyAddresses);
         } catch (e) {
