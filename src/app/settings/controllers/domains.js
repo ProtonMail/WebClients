@@ -295,7 +295,7 @@ function DomainsController(
                 submit() {
                     const promise = verifyDomain(domain).then(({ test, data }) => {
                         if (test) {
-                            $scope.domains[index] = data.Domain;
+                            $scope.domains[index] = _.extend({}, $scope.domains[index], data.Domain);
                             verificationModal.deactivate();
                             // open the next step
                             $scope.addAddresses(data.Domain);
@@ -420,7 +420,7 @@ function DomainsController(
                         .get(domain.ID)
                         .then((data) => eventManager.call().then(() => data))
                         .then((data) => {
-                            $scope.domains[index] = data.Domain;
+                            $scope.domains[index] = _.extend({}, $scope.domains[index], data.Domain);
                             dmarcModal.deactivate();
                         });
 
