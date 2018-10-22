@@ -24,7 +24,7 @@ function authentication(
     AppModel,
     tempStorage,
     upgradeKeys,
-    decryptUser
+    decryptKeys
 ) {
     let keys = {}; // Store decrypted keys
     const { dispatcher } = dispatchers(['setUser']);
@@ -75,7 +75,7 @@ function authentication(
                             });
                         };
 
-                        return decryptUser(user, addresses, organizationKey, api.getPassword())
+                        return decryptKeys(user, addresses, organizationKey, api.getPassword())
                             .then(({ keys }) => (storeKeys(keys), user))
                             .catch((error) => {
                                 $exceptionHandler(error);
