@@ -67,19 +67,21 @@ function DomainsController(
 
     on('addressModel', (e, { type, data }) => {
         if (type === 'address.new') {
-            const address = _.extend({}, data.address, {
+            const address = {
+                ...data.address,
                 MemberID: data.member.ID
-            });
-            const domain = _.extend({}, data.domain, {
+            };
+            const domain = {
+                ...data.domain,
                 Addresses: data.domain.Addresses.concat([address])
-            });
+            };
             $scope.addAddresses(domain);
         }
     });
 
     on('memberActions', (e, { type, data }) => {
         if (type === 'edit.success') {
-            const domain = _.extend({}, data.domains[0]);
+            const domain = { ...data.domains[0] };
             domain.Addresses.push(...data.member.Addresses);
             $scope.members.push(data.member);
             $scope.addAddresses(domain);
@@ -295,7 +297,10 @@ function DomainsController(
                 submit() {
                     const promise = verifyDomain(domain).then(({ test, data }) => {
                         if (test) {
-                            $scope.domains[index] = _.extend({}, $scope.domains[index], data.Domain);
+                            $scope.domains[index] = {
+                                ...$scope.domains[index],
+                                ...data.Domain // doesn't contain Addresses
+                            };
                             verificationModal.deactivate();
                             // open the next step
                             $scope.addAddresses(data.Domain);
@@ -420,7 +425,10 @@ function DomainsController(
                         .get(domain.ID)
                         .then((data) => eventManager.call().then(() => data))
                         .then((data) => {
-                            $scope.domains[index] = _.extend({}, $scope.domains[index], data.Domain);
+                            $scope.domains[index] = {
+                                ...$scope.domains[index],
+                                ...data.Domain // doesn't contain Addresses
+                            };
                             dmarcModal.deactivate();
                         });
 
