@@ -1,3 +1,7 @@
+# [3.14.25] - 2018-10-23
+## Fixed
+- Keys saved in the cache were erased after an event
+
 # [3.14.24] - 2018-10-23
 ## Added
 - Add code of conduct file
