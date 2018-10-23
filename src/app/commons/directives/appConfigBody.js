@@ -7,8 +7,13 @@ const LOCKED_STATES = ['login', 'login.unlock', 'eo.unlock', 'eo.message', 'rese
 /* @ngInject */
 function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscriptionModel) {
     const included = (states = [], state = $state.$current.name) => states.includes(state);
+    const userStates = ['isFree', 'isPaidMember', 'isPaidAdmin', 'isSubUser'];
     const className = (key = '') => `appConfigBody-${key}`;
     const mapClassNames = {
+        isFree: className('is-free'),
+        isPaidMember: className('is-paid-member'),
+        isPaidAdmin: className('is-paid-admin'),
+        isSubUser: className('is-sub-user'),
         mobile: className('is-mobile'),
         tablet: className('is-tablet'),
         requestTimeout: className('request-timeout'),
@@ -58,6 +63,10 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
                     const { isLoggedIn, isLocked } = AppModel.query();
 
                     toggleClass('locked', included(LOCKED_STATES) || (isLoggedIn && isLocked));
+                }
+
+                if (userStates.includes(type)) {
+                    toggleClass(mapClassNames[type], data.value);
                 }
             });
 
