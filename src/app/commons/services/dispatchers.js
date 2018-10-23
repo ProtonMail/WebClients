@@ -55,19 +55,25 @@ function dispatchers($rootScope) {
         const listeners = [];
         const dispatcher = createMap(list);
 
+        /**
+         * Register a listener.
+         * Must call unsubscribe in order to clean the listeners array.
+         * @param {String} type
+         * @param {Function} cb
+         */
         const on = (type, cb) => {
             const callback = !verbose ? cb : log(type, cb);
-            const deregistration = $rootScope.$on(type, callback);
-
-            listeners.push(deregistration);
-
-            return deregistration;
+            listeners.push($rootScope.$on(type, callback));
         };
 
+        /**
+         * Unsubscribe from all listeners.
+         */
         const unsubscribe = () => {
             listeners.forEach((cb) => cb());
             listeners.length = 0;
         };
+
         return { dispatcher, on, unsubscribe };
     };
 }
