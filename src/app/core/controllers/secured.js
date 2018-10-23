@@ -24,10 +24,16 @@ function SecuredController(
     $scope.tabletMode = AppModel.is('tablet');
     $scope.user = authentication.user;
     const setUserType = () => {
-        const { isAdmin, isFree } = userType();
+        const { isAdmin, isMember, isFree, isSub } = userType();
         $scope.isAdmin = isAdmin;
         $scope.isFree = isFree;
+
+        AppModel.set('isFree', isFree);
+        AppModel.set('isPaidMember', isMember);
+        AppModel.set('isPaidAdmin', isAdmin);
+        AppModel.set('isSubUser', isSub);
     };
+
     setUserType();
 
     AppModel.set('isLoggedIn', true); // Shouldn't be there
