@@ -30,7 +30,7 @@ function importPrivateKey(
 
             if (index < 0) {
                 throw new Error(
-                    gettextCatalog.getString('Uploaded key does match selected key.', null, 'Error message')
+                    gettextCatalog.getString("Uploaded key doesn't match selected key.", null, 'Error message')
                 );
             }
             return [privateKeys[index]];
