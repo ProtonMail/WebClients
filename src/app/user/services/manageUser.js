@@ -32,7 +32,6 @@ function manageUser(
     };
 
     const storeKeys = (keys) => {
-        authentication.clearKeys();
         _.each(keys, ({ address, key, pkg }) => {
             authentication.storeKey(address.ID, key.ID, pkg);
         });
