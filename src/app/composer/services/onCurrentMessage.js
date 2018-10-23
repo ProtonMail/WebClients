@@ -1,8 +1,6 @@
 /* @ngInject */
 function onCurrentMessage(dispatchers) {
     const DEFAULT_ID = 'editor';
-
-    const { on } = dispatchers();
     /**
      * Check if this is the current instance of the editor
      * @param  {Message} options.ID ID of the current message
@@ -26,6 +24,10 @@ function onCurrentMessage(dispatchers) {
      * @param  {Function} cb    Actions callback
      * @return {Function}         unsubscribe
      */
-    return (event, scope, cb) => on(event, onCurrentMessage(scope, cb));
+    return (event, scope, cb) => {
+        const { on, unsubscribe } = dispatchers();
+        on(event, onCurrentMessage(scope, cb));
+        return unsubscribe;
+    };
 }
 export default onCurrentMessage;
