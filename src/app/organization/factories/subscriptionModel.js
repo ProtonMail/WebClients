@@ -51,6 +51,17 @@ function subscriptionModel(dispatchers, gettextCatalog, Payment) {
     const hasPaid = (type) => hasFactory(PAID_TYPES[type])();
 
     /**
+     * Detect mozilla case from subscription
+     * @return {Boolean}
+     */
+    const isMoz = () => {
+        const { CouponCode } = CACHE.subscription || {};
+        const coupon = CouponCode || ''; // CouponCode can be null
+
+        return coupon.startsWith('MOZILLA') || coupon.startsWith('MOZTEST');
+    };
+
+    /**
      * Format plans to add the Quantity parameter until the API apply this change
      * @param  {Object} subscription
      * @return {Object} subscription
@@ -116,6 +127,6 @@ function subscriptionModel(dispatchers, gettextCatalog, Payment) {
         }
     });
 
-    return { set, get, name, fetch, hasPaid, coupon, count, cycle, currency };
+    return { set, get, name, fetch, hasPaid, coupon, count, cycle, currency, isMoz };
 }
 export default subscriptionModel;

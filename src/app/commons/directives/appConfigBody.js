@@ -5,7 +5,7 @@ const LIGHT_STATES = ['support.reset-password', 'signup', 'login.setup', 'pre-in
 const LOCKED_STATES = ['login', 'login.unlock', 'eo.unlock', 'eo.message', 'reset', 'eo.reply'];
 
 /* @ngInject */
-function appConfigBody($state, AppModel, dispatchers, mailSettingsModel) {
+function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscriptionModel) {
     const included = (states = [], state = $state.$current.name) => states.includes(state);
     const className = (key = '') => `appConfigBody-${key}`;
     const mapClassNames = {
@@ -20,6 +20,7 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel) {
         commandPalette: className('commandPalette'),
         rows: className('rows'),
         networkActivity: className('networkActivity'),
+        moz: className('is-moz'),
         storageLimitReached: 'hasStickyMessages', // Note: Improve this if you need to add more sticky messages.
         isSecure: 'secure',
         isLocked: 'unlock'
@@ -74,6 +75,12 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel) {
                 toggleClass('scroll', included(SCROLL_STATES));
                 toggleClass('light', included(LIGHT_STATES));
                 toggleClass('locked', included(LOCKED_STATES) || (isLoggedIn && isLocked));
+            });
+
+            on('subscription', (e, { type }) => {
+                if (type === 'update') {
+                    toggleClass(mapClassNames.moz, subscriptionModel.isMoz());
+                }
             });
 
             toggleClass('login', !isLoggedIn);

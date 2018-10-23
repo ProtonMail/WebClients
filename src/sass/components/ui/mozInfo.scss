@@ -1,0 +1,50 @@
+.mozInfo-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mozInfo-modal {
+    background: $white;
+    z-index: 1;
+    padding: 1em 2em;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+}
+
+.mozInfo-icon {
+    color: $orange;
+}
+
+body:not(.appConfigBody-is-moz) .mozInfo-container { display: none }
+
+.settingsPayment-section,
+.settingsAccount-subscriptions-section,
+.settingsAccount-delete-section,
+.settingsDashboard-plans-section {
+    position: relative;
+}
+
+.appConfigBody-is-moz {
+    // Hide top up button (to add credits)
+    .donateBtn-container { display: none }
+    .giftCodeBtn-container { display: none }
+
+    // Disable and blur content
+    .settingsPayment-content,
+    .settingsAccount-header-subscriptions,
+    .settingsAccount-subscriptions-label,
+    .settingsAccount-header-delete,
+    .settingsAccount-delete-button,
+    .settingsDashboard-header-plans,
+    .settingsDashboard-plans-subheader,
+    .settingsDashboard-arrowToScroll {
+        filter: blur(2px) grayscale(80%);
+        pointer-events: none;
+    }
+}
