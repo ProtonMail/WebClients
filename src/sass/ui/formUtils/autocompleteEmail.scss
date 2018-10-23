@@ -23,6 +23,7 @@
         fill: $primary;
         // create more contrast on the checkmark (somewhat more than normal because default-color is already really black)
         color: darken($primary, 20);
+        width: 18px;
     }
 
     .pgp-encryption-icon {
