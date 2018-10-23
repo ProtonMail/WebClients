@@ -122,9 +122,11 @@ msgctxt "Action"
 msgid "Add Filter"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:13
+#: ./src/templates/views/payments.tpl.html:15
 msgctxt "Action"
-msgid "Add Payment Method"
+msgid ""
+"Add Payment\n"
+"                            Method"
 msgstr ""
 
 #: ./src/templates/filter/customFilterList.tpl.html:16
@@ -658,7 +660,7 @@ msgctxt "Action"
 msgid "Custom Filter"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:58
+#: ./src/templates/views/payments.tpl.html:63
 msgctxt "Action"
 msgid "Customize"
 msgstr ""
@@ -690,7 +692,7 @@ msgstr ""
 #: ./src/templates/ui/toolbarMobile.tpl.html:50
 #: ./src/templates/views/domains.tpl.html:124
 #: ./src/templates/views/labels.tpl.html:63
-#: ./src/templates/views/payments.tpl.html:42
+#: ./src/templates/views/payments.tpl.html:44
 msgctxt "Action"
 msgid "Delete"
 msgstr ""
@@ -700,7 +702,7 @@ msgctxt "Action"
 msgid "Delete draft"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:373
+#: ./src/templates/views/account.tpl.html:375
 msgctxt "Action"
 msgid "Delete your account"
 msgstr ""
@@ -770,7 +772,7 @@ msgstr ""
 #: ./src/templates/message/pgpModal.tpl.html:17
 #: ./src/templates/message/pgpModal.tpl.html:30
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:28
-#: ./src/templates/views/payments.tpl.html:94
+#: ./src/templates/views/payments.tpl.html:103
 #: ./src/templates/views/pgp.tpl.html:9
 #: ./src/templates/views/security.tpl.html:66
 #: ./src/templates/vpn/vpnRessources.tpl.html:18
@@ -1302,7 +1304,7 @@ msgctxt "Action"
 msgid "Ordered list"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:63
+#: ./src/templates/views/payments.tpl.html:69
 msgctxt "Action"
 msgid "Organization"
 msgstr ""
@@ -1777,7 +1779,7 @@ msgctxt "Action"
 msgid "Unsubscribe"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:41
+#: ./src/templates/views/payments.tpl.html:42
 msgctxt "Action"
 msgid "Update"
 msgstr ""
@@ -1842,7 +1844,7 @@ msgctxt "Action"
 msgid "Use gift code"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:60
+#: ./src/templates/views/payments.tpl.html:65
 msgctxt "Action"
 msgid "User"
 msgstr ""
@@ -3316,7 +3318,7 @@ msgid "Address already associated to a user"
 msgstr ""
 
 #: ./src/app/address/factories/addressModel.js:36
-#: ./src/app/settings/controllers/domains.js:322
+#: ./src/app/settings/controllers/domains.js:327
 msgctxt "Error"
 msgid "Administrator privileges must be activated"
 msgstr ""
@@ -3696,7 +3698,7 @@ msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr ""
 
-#: ./src/app/keys/services/decryptUser.js:8
+#: ./src/app/keys/services/decryptKeys.js:8
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr ""
@@ -3895,7 +3897,7 @@ msgctxt "Error"
 msgid "Username too long"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:262
+#: ./src/app/settings/controllers/domains.js:264
 msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
@@ -3910,7 +3912,7 @@ msgctxt "Error"
 msgid "We do not support embedded SVG files inside the signature"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:268
+#: ./src/app/settings/controllers/domains.js:270
 msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
 msgstr ""
@@ -4085,7 +4087,7 @@ msgstr ""
 
 #: ./src/app/keys/factories/importPrivateKey.js:33
 msgctxt "Error message"
-msgid "Uploaded key does match selected key."
+msgid "Uploaded key doesn't match selected key."
 msgstr ""
 
 #: ./src/app/contact/directives/contactPublicKeys.js:21
@@ -4801,7 +4803,7 @@ msgid "Are you sure you want to delete all your contacts?"
 msgstr ""
 
 #: ./src/app/address/factories/addressModel.js:48
-#: ./src/app/settings/controllers/domains.js:143
+#: ./src/app/settings/controllers/domains.js:145
 msgctxt "Info"
 msgid "Are you sure you want to delete this address?"
 msgstr ""
@@ -5074,7 +5076,7 @@ msgid "Decryption of this content failed"
 msgstr ""
 
 #: ./src/templates/user/addressesSection.tpl.html:34
-#: ./src/templates/views/payments.tpl.html:33
+#: ./src/templates/views/payments.tpl.html:37
 msgctxt "Info"
 msgid "Default"
 msgstr ""
@@ -5445,7 +5447,7 @@ msgctxt "Info"
 msgid "No emails in the {{ filterName }}, click {{ add }} to add addresses to the {{ filterName }}"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:70
+#: ./src/templates/views/payments.tpl.html:79
 msgctxt "Info"
 msgid "No invoices found."
 msgstr ""
@@ -5940,7 +5942,7 @@ msgctxt "Info"
 msgid "This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:169
+#: ./src/app/settings/controllers/domains.js:171
 msgctxt "Info"
 msgid "This feature is only available for ProtonMail Professional plans or higher"
 msgstr ""
@@ -6285,9 +6287,11 @@ msgctxt "Info"
 msgid "You have no labels."
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:15
+#: ./src/templates/views/payments.tpl.html:18
 msgctxt "Info"
-msgid "You have no saved payment methods."
+msgid ""
+"You have no saved payment\n"
+"                        methods."
 msgstr ""
 
 #: ./src/templates/views/members.tpl.html:331
@@ -6327,6 +6331,13 @@ msgctxt "Info"
 msgid "You're upgrading your account. Once we successfully process payment, we'll immediately upgrade your account. Thanks for choosing to become a paying customer!"
 msgstr ""
 
+#: ./src/templates/views/payments.tpl.html:75
+msgctxt "Info"
+msgid ""
+"Your\n"
+"                        account currently has an overdue invoice. Please pay all unpaid invoices."
+msgstr ""
+
 #: ./src/templates/vpn/vpnView.tpl.html:17
 msgctxt "Info"
 msgid "Your ProtonVPN account request has been received. You're already on the waitlist, we'll contact you once capacity becomes available."
@@ -6337,8 +6348,14 @@ msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
 msgstr ""
 
+#: ./src/templates/views/payments.tpl.html:77
+msgctxt "Info"
+msgid ""
+"Your account\n"
+"                        or organization currently has an overdue invoice. Please pay all unpaid invoices."
+msgstr ""
+
 #: ./src/app/composer/services/validateMessage.js:64
-#: ./src/templates/views/payments.tpl.html:68
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
 msgstr ""
@@ -6351,11 +6368,6 @@ msgstr ""
 #: ./src/templates/vpn/vpnView.tpl.html:15
 msgctxt "Info"
 msgid "Your account is currently not eligible for ProtonVPN access. If you are part of an Organization, please contact your account administrator."
-msgstr ""
-
-#: ./src/templates/views/payments.tpl.html:69
-msgctxt "Info"
-msgid "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices."
 msgstr ""
 
 #: ./src/app/user/services/manageUser.js:19
@@ -6498,6 +6510,14 @@ msgctxt "Info for contact Scheme selector"
 msgid "Select the PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages."
 msgstr ""
 
+#: ./src/templates/ui/mozInfo.tpl.html:5
+msgctxt "Info for mozilla condition"
+msgid ""
+"Your subscription is\n"
+"                managed by Mozilla. Please <a href=\"https://support.mozilla.org/en-US/kb/protonvpn\" target=\"_blank\">click here</a> to contact\n"
+"                Mozilla support."
+msgstr ""
+
 #: ./src/templates/modals/abuseFraudModal.tpl.html:10
 msgctxt "Info for the abuse / fraud modal"
 msgid "Account disabled for abuse or fraud."
@@ -6578,47 +6598,47 @@ msgctxt "Input for the code sent"
 msgid "Verification code"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:108
+#: ./src/templates/views/payments.tpl.html:125
 msgctxt "Invoice status display as badge"
 msgid "Billed"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:106
+#: ./src/templates/views/payments.tpl.html:121
 msgctxt "Invoice status display as badge"
 msgid "Paid"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:105
+#: ./src/templates/views/payments.tpl.html:119
 msgctxt "Invoice status display as badge"
 msgid "Unpaid"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:107
+#: ./src/templates/views/payments.tpl.html:123
 msgctxt "Invoice status display as badge"
 msgid "Void"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:100
+#: ./src/templates/views/payments.tpl.html:111
 msgctxt "Invoice type display as badge"
 msgid "Cancellation"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:101
+#: ./src/templates/views/payments.tpl.html:113
 msgctxt "Invoice type display as badge"
 msgid "Credit"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:102
+#: ./src/templates/views/payments.tpl.html:115
 msgctxt "Invoice type display as badge"
 msgid "Donation"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:98
+#: ./src/templates/views/payments.tpl.html:107
 msgctxt "Invoice type display as badge"
 msgid "Other"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:99
+#: ./src/templates/views/payments.tpl.html:109
 msgctxt "Invoice type display as badge"
 msgid "Subscription"
 msgstr ""
@@ -6898,12 +6918,12 @@ msgctxt "Label"
 msgid "Login"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:338
+#: ./src/templates/views/account.tpl.html:339
 msgctxt "Label"
 msgid "Major Announcements (2-3 per year)"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:342
+#: ./src/templates/views/account.tpl.html:343
 msgctxt "Label"
 msgid "Major New Features (3-4 per year)"
 msgstr ""
@@ -6979,12 +6999,12 @@ msgctxt "Label"
 msgid "Prompt to trust keys"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:350
+#: ./src/templates/views/account.tpl.html:351
 msgctxt "Label"
 msgid "Proton Beta (~ 10-12 per year)"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:346
+#: ./src/templates/views/account.tpl.html:347
 msgctxt "Label"
 msgid "Proton Newsletter (5-6 per year)"
 msgstr ""
@@ -8624,7 +8644,7 @@ msgctxt "Success"
 msgid "Banner permanently hidden"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:184
+#: ./src/app/settings/controllers/domains.js:186
 msgctxt "Success"
 msgid "Catch-all address updated"
 msgstr ""
@@ -8646,17 +8666,17 @@ msgctxt "Success"
 msgid "Contact re-signed"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:225
+#: ./src/app/settings/controllers/domains.js:227
 msgctxt "Success"
 msgid "Domain created"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:149
+#: ./src/app/settings/controllers/domains.js:151
 msgctxt "Success"
 msgid "Domain deleted"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:279
+#: ./src/app/settings/controllers/domains.js:281
 msgctxt "Success"
 msgid "Domain verified"
 msgstr ""
@@ -8942,8 +8962,8 @@ msgstr ""
 #: ./src/templates/views/invoices.tpl.html:20
 #: ./src/templates/views/invoices.tpl.html:50
 #: ./src/templates/views/members.tpl.html:159
-#: ./src/templates/views/payments.tpl.html:24
-#: ./src/templates/views/payments.tpl.html:78
+#: ./src/templates/views/payments.tpl.html:28
+#: ./src/templates/views/payments.tpl.html:87
 msgctxt "Title"
 msgid "Actions"
 msgstr ""
@@ -9052,7 +9072,7 @@ msgstr ""
 
 #: ./src/templates/modals/pay.tpl.html:36
 #: ./src/templates/payment/donation.tpl.html:15
-#: ./src/templates/views/payments.tpl.html:77
+#: ./src/templates/views/payments.tpl.html:86
 msgctxt "Title"
 msgid "Amount"
 msgstr ""
@@ -9438,7 +9458,7 @@ msgstr ""
 #. Table heading
 #: ./src/templates/views/invoices.tpl.html:17
 #: ./src/templates/views/invoices.tpl.html:47
-#: ./src/templates/views/payments.tpl.html:81
+#: ./src/templates/views/payments.tpl.html:90
 msgctxt "Title"
 msgid "Date"
 msgstr ""
@@ -9465,7 +9485,7 @@ msgctxt "Title"
 msgid "Delete"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:368
+#: ./src/templates/views/account.tpl.html:370
 msgctxt "Title"
 msgid "Delete Account"
 msgstr ""
@@ -9491,7 +9511,7 @@ msgctxt "Title"
 msgid "Delete all"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:142
+#: ./src/app/settings/controllers/domains.js:144
 msgctxt "Title"
 msgid "Delete domain"
 msgstr ""
@@ -9618,7 +9638,7 @@ msgctxt "Title"
 msgid "Email Content"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:331
+#: ./src/templates/views/account.tpl.html:332
 msgctxt "Title"
 msgid "Email Subscriptions"
 msgstr ""
@@ -9686,7 +9706,7 @@ msgctxt "Title"
 msgid "Event"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:22
+#: ./src/templates/views/payments.tpl.html:26
 msgctxt "Title"
 msgid "Expiration"
 msgstr ""
@@ -9856,7 +9876,7 @@ msgid "Invalid attachment signature"
 msgstr ""
 
 #: ./src/app/ui/factories/pageTitlesModel.js:43
-#: ./src/templates/views/payments.tpl.html:51
+#: ./src/templates/views/payments.tpl.html:56
 msgctxt "Title"
 msgid "Invoices"
 msgstr ""
@@ -10073,7 +10093,7 @@ msgctxt "Title"
 msgid "Notifications"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:21
+#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Number"
 msgstr ""
@@ -10175,7 +10195,7 @@ msgid "Payment method:"
 msgstr ""
 
 #: ./src/app/ui/factories/pageTitlesModel.js:48
-#: ./src/templates/views/payments.tpl.html:6
+#: ./src/templates/views/payments.tpl.html:7
 msgctxt "Title"
 msgid "Payment methods"
 msgstr ""
@@ -10201,7 +10221,7 @@ msgctxt "Title"
 msgid "Plan subscription"
 msgstr ""
 
-#: ./src/templates/views/dashboard.tpl.html:49
+#: ./src/templates/views/dashboard.tpl.html:50
 msgctxt "Title"
 msgid "Plans and prices"
 msgstr ""
@@ -10374,7 +10394,7 @@ msgstr ""
 
 #. Section heading
 #: ./src/app/ui/factories/pageTitlesModel.js:50
-#: ./src/templates/views/account.tpl.html:358
+#: ./src/templates/views/account.tpl.html:359
 msgctxt "Title"
 msgid "Search"
 msgstr ""
@@ -10534,7 +10554,7 @@ msgstr ""
 #: ./src/templates/address/addressKeysView.tpl.html:46
 #: ./src/templates/modals/generate.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:197
-#: ./src/templates/views/payments.tpl.html:80
+#: ./src/templates/views/payments.tpl.html:89
 msgctxt "Title"
 msgid "Status"
 msgstr ""
@@ -10648,8 +10668,8 @@ msgstr ""
 #: ./src/templates/modals/domain/mx.tpl.html:20
 #: ./src/templates/modals/domain/spf.tpl.html:19
 #: ./src/templates/modals/domain/verification.tpl.html:20
-#: ./src/templates/views/payments.tpl.html:23
-#: ./src/templates/views/payments.tpl.html:79
+#: ./src/templates/views/payments.tpl.html:27
+#: ./src/templates/views/payments.tpl.html:88
 msgctxt "Title"
 msgid "Type"
 msgstr ""
@@ -11699,7 +11719,7 @@ msgctxt "key generation progrss"
 msgid "Saved"
 msgstr ""
 
-#: ./src/templates/views/dashboard.tpl.html:59
+#: ./src/templates/views/dashboard.tpl.html:60
 msgctxt "label"
 msgid "Currency"
 msgstr ""
