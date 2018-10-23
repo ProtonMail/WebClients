@@ -1,3 +1,12 @@
+# [3.14.24] - 2018-10-23
+## Added
+- Add code of conduct file
+
+## Fixed
+- Fix issues regarding newly generated keys
+- Error message "Uploaded key does match selected key." is shown when the key doesn't match.
+- [IE 11] PGP-Encrypted padlock takes up lots of space.
+
 # [3.14.23] - 2018-10-19
 ## Fixed
 - Fixed an issue with keys generation for sub-users
