@@ -36,8 +36,7 @@ module.exports = {
             'asmcrypto.js/asmcrypto.js',
             'babel-polyfill/dist/polyfill.js',
             'pmcrypto/dist/pmcrypto-browser.js',
-            'dompurify/dist/purify.js',
-            'bootstrap-sass/assets/javascripts/bootstrap.js'
+            'dompurify/dist/purify.js'
         ].map(bindPrefix),
         jsLazy: [
             'papaparse/papaparse.js',
