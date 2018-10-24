@@ -125,7 +125,11 @@ function manageUser(
         }
     };
 
-    async function manageUser({ User = {}, Members = [] }) {
+    async function manageUser({ User = {}, Addresses = [], Members = [] }) {
+        if (!User && !Addresses.length) {
+            return;
+        }
+
         // Remove useless keys
         delete User.Addresses;
         delete User.MailSettings;
