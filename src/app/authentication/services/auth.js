@@ -201,7 +201,7 @@ function authentication(
          * @return {Array}
          */
         getPrivateKeys(addressID) {
-            return keys[addressID];
+            return Object.keys(keys[addressID]).map((keyID) => keys[addressID][keyID]);
         },
 
         /**
@@ -210,7 +210,7 @@ function authentication(
          * @return {Array}
          */
         getPublicKeys(addressID) {
-            return keys[addressID].map((key) => key.toPublic());
+            return this.getPrivateKeys(addressID).map((key) => key.toPublic());
         },
 
         /**
@@ -218,8 +218,8 @@ function authentication(
          */
         storeKey(addressID, keyID, pkg) {
             pkg.ID = keyID; // Add the keyID inside the package
-            keys[addressID] = keys[addressID] || []; // Initialize array for the address
-            keys[addressID].push(pkg); // Add key package
+            keys[addressID] = keys[addressID] || {}; // Initialize Object for the package
+            keys[addressID][keyID] = pkg; // Add key package
         },
 
         /**
