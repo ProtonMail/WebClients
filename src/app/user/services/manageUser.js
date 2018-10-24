@@ -125,8 +125,8 @@ function manageUser(
         }
     };
 
-    async function manageUser({ User = {}, Addresses = [], Members = [] }) {
-        if (!User && !Addresses.length) {
+    async function manageUser({ User = {}, Addresses = [], Members = [] } = {}) {
+        if (!Object.keys(User).length && !Addresses.length) {
             return;
         }
 
