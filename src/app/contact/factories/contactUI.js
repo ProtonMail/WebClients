@@ -200,7 +200,10 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
 
     function add(UI, type, label, val = '', params, settings) {
         const hide = _.includes(UI.hide, type);
-        const value = sanitize.toTagUnicode(val, 'reverse');
+        // val can be an Array (ex: type = 'adr')
+        const value = Array.isArray(val)
+            ? val.map((v) => sanitize.toTagUnicode(v, 'reverse'))
+            : sanitize.toTagUnicode(val, 'reverse');
         UI.items.push({ type, label: contactTransformLabel.toLang(label), value, hide, params, settings });
     }
 
