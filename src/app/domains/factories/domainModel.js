@@ -40,9 +40,9 @@ function domainModel(dispatchers, domainApi) {
 
     const clear = () => (CACHE.domains.length = 0);
 
-    const manageCache = (events) => {
+    const manageCache = async (events) => {
         const { collection = [] } = updateCollection(CACHE.domains, events, 'Domain');
-        set(collection);
+        set(await Promise.all(collection.map(fetchAddresses)));
     };
 
     on('app.event', (e, { type, data = {} }) => {
