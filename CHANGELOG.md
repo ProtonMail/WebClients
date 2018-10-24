@@ -1,3 +1,10 @@
+# [3.14.27] - 2018-10-24
+## Fixed
+- Opening a message can take time
+- You cannot Unstar a message once it's starred when threading mode is off
+- Hash for vendor not properly generated because the hashes for the files are the same
+- Keys don't appear for member
+
 # [3.14.25] - 2018-10-23
 ## Fixed
 - Keys saved in the cache were erased after an event
