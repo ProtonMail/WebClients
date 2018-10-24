@@ -428,7 +428,7 @@ function messageActions(
             map((id) => cache.getMessageCached(id)),
             filter(Boolean),
             reduce((acc, { ID, ConversationID, Unread }) => {
-                const conversation = cache.getConversationCached(ConversationID);
+                const conversation = cache.getConversationCached(ConversationID) || {};
                 const { ContextNumUnread } = conversation;
                 const messages = cache.queryMessagesCached(ConversationID);
                 const stars = _.filter(messages, ({ LabelIDs = [] }) =>
