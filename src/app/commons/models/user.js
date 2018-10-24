@@ -27,8 +27,10 @@ function User($http, url, srp) {
     const unlock = (creds = {}) => toSRP('PUT', 'unlock', creds);
     const password = (creds = {}) => toSRP('PUT', 'password', creds);
     const remove = (creds = {}) => toSRP('PUT', 'delete', creds);
+    const available = (params) => $http.get(requestURL('available'), params);
 
     return {
+        available,
         create,
         get,
         code,

@@ -12,7 +12,6 @@ import password from './directives/password';
 import togglePassword from './directives/togglePassword';
 import uniqueUsername from './directives/uniqueUsername';
 import validRecovery from './directives/validRecovery';
-import validUsername from './directives/validUsername';
 import validatorTypoEmail from './directives/validatorTypoEmail';
 import cardModel from './factories/cardModel';
 import countriesListModel from './factories/countriesListModel';
@@ -38,7 +37,6 @@ export default angular
     .directive('togglePassword', togglePassword)
     .directive('uniqueUsername', uniqueUsername)
     .directive('validRecovery', validRecovery)
-    .directive('validUsername', validUsername)
     .directive('validatorTypoEmail', validatorTypoEmail)
     .directive('codeVerificator', codeVerificator)
     .factory('cardModel', cardModel)
