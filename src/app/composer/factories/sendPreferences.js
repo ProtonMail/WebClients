@@ -67,14 +67,21 @@ function sendPreferences(
     /**
      * Returns the default send preferences if no contact is available for the specified email address.
      * The global settings, composer mode and API keys can still change the defaults though.
-     * @param email
-     * @param Keys
+     * @param {String} email
+     * @param {Array} data.Keys
+     * @param {Array} data.Warnings
      * @param defaultMimeType
      * @param eoEnabled
      * @param globalSign
-     * @returns {Promise.<*>}
+     * @returns {Promise<Object>}
      */
-    const getDefaultInfo = async (email, { Keys }, defaultMimeType, eoEnabled, globalSign) => {
+    const getDefaultInfo = async (
+        email,
+        { Keys = {}, Warnings: warnings = [] },
+        defaultMimeType,
+        eoEnabled,
+        globalSign
+    ) => {
         const isInternal = await isInternalUser(email);
         const settingsScheme = mailSettingsModel.get('PGPScheme');
         const settingsMime = settingsScheme === PACKAGE_TYPE.SEND_PGP_MIME ? 'multipart/mixed' : 'text/plain';
@@ -85,6 +92,7 @@ function sendPreferences(
             const fallbackAddress = isFallbackAddress(address, Keys);
 
             return {
+                warnings,
                 encrypt: true,
                 sign: true,
                 mimetype: defaultMimeType,
@@ -98,6 +106,7 @@ function sendPreferences(
         }
         if (eoEnabled) {
             return {
+                warnings,
                 encrypt: true,
                 sign: false,
                 mimetype: defaultMimeType,
@@ -110,6 +119,7 @@ function sendPreferences(
             };
         }
         return {
+            warnings,
             encrypt: false,
             sign: globalSign,
             mimetype: globalSign ? settingsMime : defaultMimeType,

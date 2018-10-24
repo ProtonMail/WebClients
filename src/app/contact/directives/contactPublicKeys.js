@@ -7,7 +7,6 @@ function contactPublicKeys(
     keyCompression,
     contactKey,
     contactKeyManager,
-    tooltipModel,
     gettextCatalog,
     notification,
     dispatchers,
@@ -40,7 +39,7 @@ function contactPublicKeys(
             internalKeys: '='
         },
         link(scope, element, attr, ngFormController) {
-            const { dispatcher, on, unsubscribe } = dispatchers(['composer.new', 'advancedSetting']);
+            const { dispatcher, on, unsubscribe } = dispatchers(['composer.new', 'advancedSetting', 'tooltip']);
             const email = scope.email;
             const keys = scope.model;
             const list = element.find('.contactItem-container');
@@ -66,7 +65,7 @@ function contactPublicKeys(
              */
             const add = () => {
                 element.find('.upload-helper').click();
-                tooltipModel.hideAll();
+                dispatcher.tooltip('hideAll');
             };
 
             /**
@@ -76,7 +75,7 @@ function contactPublicKeys(
              */
             const remove = (item, index) => {
                 keyManager.remove(item, index);
-                tooltipModel.hideAll();
+                dispatcher.tooltip('hideAll');
             };
 
             /**
@@ -101,7 +100,7 @@ function contactPublicKeys(
             const BE_ACTIONS = {
                 moveToTrusted(target, item) {
                     keyManager.moveToTrusted(target, item);
-                    tooltipModel.hideAll();
+                    dispatcher.tooltip('hideAll');
                 },
                 moveAllToTrusted: keyManager.moveAllToTrusted,
                 downloadUntrusted: keyManager.download

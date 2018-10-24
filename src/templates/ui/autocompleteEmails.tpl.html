@@ -3,7 +3,10 @@
     <div class="autocompleteEmails-admin">
         <autocomplete-emails-item
             class="autocompleteEmails-item"
-            ng-class="{'autocompleteEmails-item-invalid': email.invalid}"
+            ng-class="{
+                'autocompleteEmails-item-invalid': email.invalid,
+                'autocompleteEmails-item-warning': email.warnings.length
+            }"
             ng-repeat="email in emails track by email.Address"></autocomplete-emails-item>
 
         <div class="autocompleteEmails-field autocomplete-container">

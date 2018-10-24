@@ -1,11 +1,11 @@
 import { EMAIL_FORMATING } from '../../constants';
+import tooltipModel from '../../utils/helpers/tooltipHelper';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 
 /* @ngInject */
-function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, checkTypoEmails, keyCache, dispatchers) {
+function autocompleteEmailsItem(sanitize, dispatchers) {
     const KEY_ENTER = 13;
-    const { dispatcher } = dispatchers(['recipient.update']);
 
     /**
      * Change button [data-address] to delete the item
@@ -37,8 +37,10 @@ function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, c
         replace: true,
         templateUrl: require('../../../templates/ui/autoCompleteEmailsItem.tpl.html'),
         link(scope, el) {
+            const { dispatcher, on, unsubscribe } = dispatchers(['recipient.update']);
             const $span = el.find('span');
             const updateBtn = buttonState(el[0]);
+            let tooltip;
 
             const onClick = ({ target }) => target.setAttribute('contenteditable', true);
 
@@ -73,6 +75,40 @@ function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, c
                 }
             };
 
+            /**
+             * Add tooltip on the element to display warnings coming from the API
+             * The content can change
+             */
+            const updateTooltip = () => {
+                const { warnings = [] } = scope.email; // warnings contains a list of messages
+
+                if (!warnings.length) {
+                    tooltip && tooltip.hide();
+                    return;
+                }
+
+                const title = warnings.join(', ');
+
+                if (!tooltip) {
+                    tooltip = tooltipModel(el, { title });
+                    return;
+                }
+
+                tooltip.updateTitleContent(title);
+            };
+
+            on('autocompleteEmails', (e, { type }) => {
+                if (type === 'refresh') {
+                    updateTooltip();
+                }
+            });
+
+            on('tooltip', (e, { type }) => {
+                if (type === 'hideAll' && tooltip) {
+                    tooltip && tooltip.hide();
+                }
+            });
+
             $span.on('keydown', onInput);
             $span.on('input', onInput);
             $span.on('click', onClick);
@@ -83,6 +119,8 @@ function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, c
                 $span.off('input', onInput);
                 $span.off('click', onClick);
                 $span.off('blur', onBlur);
+                tooltip && tooltip.dispose();
+                unsubscribe();
             });
         }
     };

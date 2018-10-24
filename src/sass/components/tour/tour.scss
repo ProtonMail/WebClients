@@ -1,32 +1,5 @@
 .tooltip.tour {
-	.tooltip-inner  {
-		background-color: $tour;
-		box-shadow: 0 1px 1px rgba(0,0,0,.1);
-	}
-	&.top .tooltip-arrow {
-		border-top-color: $tour;
-	}
-	&.top-left .tooltip-arrow {
-		border-top-color: $tour;
-	}
-	&.top-right .tooltip-arrow {
-		border-top-color: $tour;
-	}
-	&.right .tooltip-arrow {
-		border-right-color: $tour;
-	}
-	&.left .tooltip-arrow {
-		border-left-color: $tour;
-	}
-	&.bottom .tooltip-arrow {
-		border-bottom-color: $tour;
-	}
-	&.bottom-left .tooltip-arrow {
-		border-bottom-color: $tour;
-	}
-	&.bottom-right .tooltip-arrow {
-		border-bottom-color: $tour;
-	}
+	background-color: $tour;
 }
 
 .appConfigBody-tourActive {

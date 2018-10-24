@@ -1,3 +1,5 @@
+import tooltipModel from '../../utils/helpers/tooltipHelper';
+
 /* @ngInject */
 function cvcTooltip(gettextCatalog) {
     const line1 = gettextCatalog.getString(
@@ -10,7 +12,6 @@ function cvcTooltip(gettextCatalog) {
         null,
         'Info'
     );
-    const title = gettextCatalog.getString('Security Code', null, 'Credit card CVC');
 
     return {
         restrict: 'A',
@@ -19,26 +20,19 @@ function cvcTooltip(gettextCatalog) {
             element[0].setAttribute('role', 'button');
 
             const options = {
-                placement: 'top',
-                container: 'body',
-                html: true,
-                title,
+                container: '.cardView-container',
                 trigger: 'focus',
-                content: `
+                html: true,
+                title: `
                     <p>${line1}</p>
                     <p>${line2}</p>
-                `,
-                template: `
-                    <div class="popover" role="tooltip">
-                        <div class="arrow"></div>
-                        <div class="popover-title bold"></div>
-                        <div class="popover-content"></div>
-                    </div>
                 `
             };
-            element.popover(options);
+
+            const tooltip = tooltipModel(element, options);
+
             scope.$on('$destroy', () => {
-                element.popover('destroy');
+                tooltip.dispose();
             });
         }
     };

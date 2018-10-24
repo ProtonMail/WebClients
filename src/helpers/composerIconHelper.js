@@ -1,6 +1,6 @@
 import { SEND_TYPES } from '../app/constants';
 
-const extendPGP = (email, { encrypt, sign, scheme, pinned, ownAddress }) => {
+const extendPGP = (email, { encrypt, sign, scheme, pinned, ownAddress, warnings = [] }) => {
     return {
         ...email,
         encrypt,
@@ -10,7 +10,8 @@ const extendPGP = (email, { encrypt, sign, scheme, pinned, ownAddress }) => {
         isEO: scheme === SEND_TYPES.SEND_EO,
         isPinned: pinned && !ownAddress,
         ownAddress,
-        loadCryptInfo: false
+        loadCryptInfo: false,
+        warnings
     };
 };
 

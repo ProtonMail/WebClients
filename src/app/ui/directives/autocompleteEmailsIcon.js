@@ -1,5 +1,7 @@
+import tooltipModel from '../../utils/helpers/tooltipHelper';
+
 /* @ngInject */
-function autocompleteEmailsIcon(tooltipModel, encryptionStatus, dispatchers) {
+function autocompleteEmailsIcon(encryptionStatus, dispatchers) {
     return {
         replace: true,
         scope: {
@@ -9,18 +11,11 @@ function autocompleteEmailsIcon(tooltipModel, encryptionStatus, dispatchers) {
         templateUrl: require('../../../templates/ui/autoCompleteEmailsIcon.tpl.html'),
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
+            const tooltip = tooltipModel(el, { title: encryptionStatus.getTooltip(scope.email) });
 
             const refreshTooltip = (email) => {
-                const title = encryptionStatus.getTooltip(email);
-                tooltipModel.update(el, { title });
+                tooltip.updateTitleContent(encryptionStatus.getTooltip(email));
             };
-
-            const setTooltip = (email) => {
-                const title = encryptionStatus.getTooltip(email);
-                tooltipModel.add(el, { title });
-            };
-
-            setTooltip(scope.email);
 
             // Ensure the tooltip is updated once the model updates.
             on('autocompleteEmails', (event, { type, data: { messageID } }) => {
@@ -29,7 +24,14 @@ function autocompleteEmailsIcon(tooltipModel, encryptionStatus, dispatchers) {
                 }
             });
 
+            on('tooltip', (e, { type }) => {
+                if (type === 'hideAll') {
+                    tooltip.hide();
+                }
+            });
+
             scope.$on('$destroy', () => {
+                tooltip.dispose();
                 unsubscribe();
             });
         }

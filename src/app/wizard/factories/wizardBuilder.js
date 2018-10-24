@@ -1,49 +1,64 @@
+import tooltipModel from '../../utils/helpers/tooltipHelper';
+
 /* @ngInject */
 function wizardBuilder() {
-    const hideTooltips = () => $('.tooltip').tooltip('hide');
+    const tooltips = []; // Store all tooltip instance
+    const hideTooltips = () => tooltips.forEach((tooltip) => tooltip.hide());
+
+    const destroyTooltips = () => {
+        tooltips.forEach((tooltip) => tooltip.dispose());
+        tooltips.length = 0;
+    };
 
     const loadTooltips = (step) => {
-        let tooltips = [];
-
         switch (step) {
             case 2:
-                $('#tour-layout').tooltip({
-                    title: '1',
-                    placement: 'left',
-                    trigger: 'manual'
-                });
-                $('#tour-settings').tooltip({
-                    title: '2',
-                    placement: 'left',
-                    trigger: 'manual'
-                });
-                tooltips = ['#tour-layout', '#tour-settings'];
+                tooltips.push(
+                    tooltipModel($('#tour-layout'), {
+                        title: '1',
+                        placement: 'left',
+                        trigger: 'manual'
+                    })
+                );
+                tooltips.push(
+                    tooltipModel($('#tour-settings'), {
+                        title: '2',
+                        placement: 'left',
+                        trigger: 'manual'
+                    })
+                );
                 break;
             case 3:
-                $('#tour-label-dropdown').tooltip({
-                    title: '1',
-                    placement: 'bottom',
-                    trigger: 'manual'
-                });
-                $('#tour-folder-dropdown').tooltip({
-                    title: '2',
-                    placement: 'bottom',
-                    trigger: 'manual'
-                });
-                $('#tour-label-settings').tooltip({
-                    title: '3',
-                    placement: 'right',
-                    trigger: 'manual'
-                });
-                tooltips = ['#tour-label-dropdown', '#tour-label-settings', '#tour-folder-dropdown'];
+                tooltips.push(
+                    tooltipModel($('#tour-label-dropdown'), {
+                        title: '1',
+                        placement: 'bottom',
+                        trigger: 'manual'
+                    })
+                );
+                tooltips.push(
+                    tooltipModel($('#tour-folder-dropdown'), {
+                        title: '2',
+                        placement: 'bottom',
+                        trigger: 'manual'
+                    })
+                );
+                tooltips.push(
+                    tooltipModel($('#tour-label-settings'), {
+                        title: '3',
+                        placement: 'top',
+                        trigger: 'manual'
+                    })
+                );
                 break;
             case 4:
-                $('#tour-support').tooltip({
-                    title: '1',
-                    placement: 'left',
-                    trigger: 'manual'
-                });
-                tooltips = ['#tour-support'];
+                tooltips.push(
+                    tooltipModel($('#tour-support'), {
+                        title: '1',
+                        placement: 'left',
+                        trigger: 'manual'
+                    })
+                );
                 break;
             default:
                 break;
@@ -54,12 +69,12 @@ function wizardBuilder() {
 
     const renderTooltips = (step) => {
         const id = setTimeout(() => {
-            $(loadTooltips(step)).tooltip('show');
+            loadTooltips(step).forEach((tooltip) => tooltip.show());
             $('.tooltip:visible').addClass('tour');
             clearTimeout(id);
         });
     };
 
-    return { hideTooltips, renderTooltips };
+    return { hideTooltips, destroyTooltips, renderTooltips };
 }
 export default wizardBuilder;

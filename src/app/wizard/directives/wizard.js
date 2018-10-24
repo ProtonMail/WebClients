@@ -144,7 +144,7 @@ function wizard(
             }
 
             function tourGo(step) {
-                wizardBuilder.hideTooltips().tooltip('destroy');
+                wizardBuilder.destroyTooltips();
 
                 scope.$applyAsync(() => {
                     scope.tourStep = step;

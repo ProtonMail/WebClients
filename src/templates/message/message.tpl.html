@@ -28,8 +28,7 @@
                         data-address="{{ message.Sender | contact:'Address' }}"
                         data-name="{{ message.Sender | contact:'Name' }}"
                         ng-if="message.expand"></message-address-actions>
-                    <encryption-status class="encryptionStatus"
-                       pt-tooltip="{{ ::message.encryptionType() }}"></encryption-status>
+                    <encryption-status class="encryptionStatus"></encryption-status>
                 </div>
             </div>
             <div class="location message-summary-folder sent">
