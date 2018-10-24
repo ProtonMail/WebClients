@@ -1,26 +1,25 @@
 #!/usr/bin/env node
 
-const exec = require('child_process').exec;
-const gulp = require('gulp');
-const concat = require('gulp-concat');
-const glob = require('glob');
-const CONFIG = require('../env/conf.build');
-const { CONFIG: APP_CONFIG } = require('../env/config').getConfig();
+const fs = require('fs');
+const path = require('path');
+const chalk = require('chalk');
+const execa = require('execa');
 
-const OUTPUT_DIR = process.env.NODE_ENV === 'dist' ? 'dist' : 'build';
+const { vendor_files, externalFiles } = require('../env/conf.build');
 
 const makeSRC = (list) => list.map((file) => (/^node_modules/.test(file) ? `./${file}` : file));
 
-const VENDOR_GLOB = makeSRC(CONFIG.vendor_files.js);
-const VENDOR_LAZY_GLOB = makeSRC(CONFIG.vendor_files.jsLazy);
-const VENDOR_LAZY2_GLOB = makeSRC(CONFIG.vendor_files.jsLazy2);
-const VENDOR_LIB_GLOB = makeSRC(glob.sync('./src/libraries/{polyfill,tweetWebIntent,mailparser}.js'));
-const [, OPENPGP] = makeSRC(CONFIG.externalFiles.openpgp);
+const OUTPUT_DIR = process.env.NODE_ENV === 'dist' ? 'dist' : 'build';
+const VENDOR_GLOB = makeSRC(vendor_files.js);
+const VENDOR_LAZY_GLOB = makeSRC(vendor_files.jsLazy);
+const VENDOR_LAZY2_GLOB = makeSRC(vendor_files.jsLazy2);
+const VENDOR_LIB_GLOB = ['./src/libraries/{polyfill,tweetWebIntent}.js'];
+const [, OPENPGP] = makeSRC(externalFiles.openpgp);
 
-[
+const INPUT = [
     {
         name: 'openpgp.min',
-        src: `./${OPENPGP}`
+        src: [OPENPGP]
     },
     {
         name: 'vendor',
@@ -34,11 +33,20 @@ const [, OPENPGP] = makeSRC(CONFIG.externalFiles.openpgp);
         name: 'vendorLazy2',
         src: VENDOR_LAZY2_GLOB
     }
-].forEach(({ name, src }) => {
-    gulp
-        .src(src)
-        .pipe(concat(`${name}.js`))
-        .pipe(gulp.dest(`${OUTPUT_DIR}/`));
-});
+];
 
-exec(`tasks/generateChangelog.js ./CHANGELOG.md ${OUTPUT_DIR}/${APP_CONFIG.changelogPath}`);
+const write = ({ name, src }) => {
+    const list = src.join(' ');
+    const to = path.join(OUTPUT_DIR, `${name}.js`);
+    return execa.shell(`cat ${list} > ${to}`, { shell: '/bin/bash' });
+};
+
+async function main() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR);
+    }
+
+    await Promise.all(INPUT.map(write));
+}
+
+main();

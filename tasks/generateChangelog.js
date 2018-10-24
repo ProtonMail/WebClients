@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 
-const md = require('markdown-it')();
-// eslint-disable-next-line import/no-extraneous-dependencies
-const markdownItAttrs = require('markdown-it-attrs');
-// eslint-disable-next-line import/no-extraneous-dependencies
-const markdownItLinkAttributes = require('markdown-it-link-attributes');
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
+
+const md = require('markdown-it')();
+const markdownItAttrs = require('markdown-it-attrs');
+const markdownItLinkAttributes = require('markdown-it-link-attributes');
 
 if (process.argv.length <= 3) {
     console.error(`${process.argv[0]} src out`);
@@ -15,10 +14,10 @@ if (process.argv.length <= 3) {
 
 md.use(markdownItAttrs);
 md.use(markdownItLinkAttributes, {
-  attrs: {
-    target: '_blank',
-    rel: 'noopener'
-  }
+    attrs: {
+        target: '_blank',
+        rel: 'noopener'
+    }
 });
 
 const sourcePath = path.resolve(process.argv[2]);

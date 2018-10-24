@@ -19,7 +19,7 @@ We are currently working with our community to localize ProtonMail from English 
 
 ### dependencies
   - Node.js >= v8
-  - npm 5
+  - npm 6
   - git
 
 ### Error with Mac
@@ -62,6 +62,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 ```
 npx appComponent
 npm run create
+npm run create:test
 ```
 cf [Component Generator](https://github.com/ProtonMail/componentGenerator)
 
@@ -122,7 +123,7 @@ npm run releaser:unshift
 ```
 
 ### Generate HTML file
-The HTML file from the `CHANGELOG.md` file is automatically generated when running `start` or `dist`. It takes the markdown file and generates the HTML file at `${build}/assets/changelog.tpl.html` which will be dynamically fetched when the modal opens.
+The HTML file from the `CHANGELOG.md` file is automatically generated when running `start -- --debug` or `dist`. It takes the markdown file and generates the HTML file at `${build}/assets/changelog.tpl.html` which will be dynamically fetched when the modal opens.
 
 
 ## Commit naming conventions

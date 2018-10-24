@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 const dedent = require('dedent');
+const execa = require('execa');
 const localIp = require('my-local-ip');
 const portfinder = require('portfinder'); // Coming from webpack-dev-server
 
@@ -24,8 +25,18 @@ const then = now - 11;
 fs.utimesSync(PATH_CONFIG, then, then);
 env.argv.debug && console.log(`${JSON.stringify(CONFIG, null, 2)}`);
 
-if (process.env.NODE_ENV !== 'dist' && process.env.NODE_ENV_MODE !== 'config') {
+// Debug mode npm start
+if (process.env.NODE_ENV !== 'dist' && env.argv.debug) {
+    const fileName = path.join('build', CONFIG.changelogPath);
 
+    if (!fs.existsSync('build')) {
+        fs.mkdirSync('build');
+    }
+
+    execa.shell(`tasks/generateChangelog.js ./CHANGELOG.md ${fileName}`);
+}
+
+if (process.env.NODE_ENV !== 'dist' && process.env.NODE_ENV_MODE !== 'config') {
     if (!env.hasEnv() && !env.isWebClient()) {
         console.log();
         console.log(dedent`

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const os = require('os');
+const path = require('path');
 const Listr = require('listr');
 const execa = require('execa');
 const chalk = require('chalk');
@@ -145,6 +146,13 @@ const getTasks = (branch, { isCI, flowType = 'single' }) => {
             task() {
                 const args = process.argv.slice(2);
                 return execa('npm', ['run', 'dist', ...args]);
+            }
+        },
+        {
+            title: 'Generate the changelog',
+            task() {
+                const fileName = path.join('dist', CONFIG.changelogPath);
+                return bash(`tasks/generateChangelog.js ./CHANGELOG.md ${fileName}`);
             }
         },
         {
