@@ -20,8 +20,7 @@ function message(
     tools,
     unsubscribeModel,
     sendPreferences,
-    $exceptionHandler,
-    tooltipModel
+    $exceptionHandler
 ) {
     /**
      * Back to element list
@@ -55,7 +54,7 @@ function message(
             index: '='
         },
         link(scope, element) {
-            const { on, dispatcher, unsubscribe } = dispatchers(['messageActions', 'composer.load']);
+            const { on, dispatcher, unsubscribe } = dispatchers(['messageActions', 'composer.load', 'tooltip']);
 
             const bindClasses = (message) => {
                 element[0].classList[noRecipients(message) ? 'add' : 'remove'](CLASSNAME.UNDISCLOSED);
@@ -68,8 +67,7 @@ function message(
             };
 
             const reloadEncryptionTooltip = () => {
-                const encryptionStatus = element.find('.encryptionStatus');
-                tooltipModel.update(encryptionStatus, { title: scope.message.encryptionType() });
+                dispatcher.tooltip('reloadEncryptionTooltip', { messageID: scope.message.ID });
             };
 
             const updateMessage = async (promise) => {

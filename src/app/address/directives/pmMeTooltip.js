@@ -1,5 +1,7 @@
+import tooltipModel from '../../utils/helpers/tooltipHelper';
+
 /* @ngInject */
-function pmMeTooltip(AppModel, premiumDomainModel, gettextCatalog, tooltipModel) {
+function pmMeTooltip(AppModel, premiumDomainModel, gettextCatalog, dispatchers) {
     const I18N = {
         getTitle() {
             return gettextCatalog.getString(
@@ -13,9 +15,19 @@ function pmMeTooltip(AppModel, premiumDomainModel, gettextCatalog, tooltipModel)
     return {
         restrict: 'A',
         link(scope, el) {
-            if (!AppModel.is('mobile')) {
-                tooltipModel.add(el, { title: I18N.getTitle() });
-            }
+            const { on, unsubscribe } = dispatchers();
+            const tooltip = !AppModel.is('mobile') ? tooltipModel(el, { title: I18N.getTitle() }) : false;
+
+            on('tooltip', (e, { type }) => {
+                if (type === 'hideAll' && tooltip) {
+                    tooltip.hide();
+                }
+            });
+
+            scope.$on('$destroy', () => {
+                tooltip && tooltip.dispose();
+                unsubscribe();
+            });
         }
     };
 }

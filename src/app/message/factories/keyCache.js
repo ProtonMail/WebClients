@@ -18,9 +18,7 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
      */
     const getKeysFromApi = (email) => {
         return Key.keys({ params: { Email: email }, suppress: EMAIL_ERRORS })
-            .then((data) => {
-                return _.pick(data, 'RecipientType', 'MIMEType', 'Keys');
-            })
+            .then(({ Code, ...data }) => data)
             .catch((err) => {
                 const { data = {} } = err;
 

@@ -34,7 +34,7 @@ function pmModal(
         let element = null;
         let html;
         let scope;
-        const { on, unsubscribe } = dispatchers();
+        const { dispatcher, on, unsubscribe } = dispatchers(['tooltip']);
         if (config.template) {
             html = $q.when(config.template);
         } else {
@@ -110,7 +110,8 @@ function pmModal(
             unsubscribe();
 
             return $animate.leave(element).then(() => {
-                $('.tooltip').tooltip('hide');
+                dispatcher.tooltip('hideAll');
+
                 // We can have a concurrency issues ex: generateModal
                 if (!element) {
                     return;

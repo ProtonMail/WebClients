@@ -35,11 +35,6 @@ function chooseLayoutBtns(
 
             networkActivityTracker.track(promise);
         }
-
-        angular
-            .element('.toolbarDesktop-container')
-            .find('a')
-            .tooltip('hide');
     };
 
     return {

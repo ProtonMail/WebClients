@@ -16,8 +16,6 @@
     width: 100%;
     position: relative;
     max-height: 100px;
-    overflow-y: auto;
-    overflow-x: hidden
 }
 
 .autocompleteEmails-admin, .autocompleteEmails-admin * {box-sizing: border-box}
@@ -40,8 +38,13 @@
 }
 
 .autocompleteEmails-item-invalid {
-    border-color: $red;
-    color: $red;
+    border-color: $bug;
+    color: $bug;
+}
+
+.autocompleteEmails-item-warning {
+    border-color: $exp;
+    color: $exp;
 }
 
 .autocompleteEmails-label {

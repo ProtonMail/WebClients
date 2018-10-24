@@ -39,7 +39,6 @@ import toolbarDesktop from './directives/toolbarDesktop';
 import toolbarMobile from './directives/toolbarMobile';
 import twitterLink from './directives/twitterLink';
 import weekdayTimePicker from './directives/weekdayTimePicker';
-import tooltipModel from './factories/tooltipModel';
 import chevrons from './filters/chevrons';
 import labelAutocomplete from './filters/labelAutocomplete';
 import unescape from './filters/unescape';
@@ -108,7 +107,6 @@ export default angular
     .directive('toolbarMobile', toolbarMobile)
     .directive('twitterLink', twitterLink)
     .directive('weekdayTimePicker', weekdayTimePicker)
-    .factory('tooltipModel', tooltipModel)
     .filter('chevrons', chevrons)
     .filter('labelAutocomplete', labelAutocomplete)
     .filter('unescape', unescape)
