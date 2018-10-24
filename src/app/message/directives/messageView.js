@@ -13,12 +13,15 @@ function messageView($stateParams, $state, AppModel, dispatchers, conversationLi
         replace: true,
         templateUrl: require('../../../templates/message/messageView.tpl.html'),
         link(scope) {
-            const { dispatcher, on, unsubscribe } = dispatchers(['messageActions']);
+            const { dispatcher, on, unsubscribe } = dispatchers(['messageActions', 'elements']);
 
             const messageID = $stateParams.id;
             let unsubscribeActions = angular.noop;
 
             cache.getMessage(messageID).then((message) => {
+                dispatcher.elements('mark', { id: messageID });
+                dispatcher.elements('opened', { id: messageID });
+
                 scope.$applyAsync(() => {
                     message.openMe = true;
                     scope.message = message;
