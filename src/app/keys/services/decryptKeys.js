@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { MAIN_KEY } from '../../constants';
 
 /* @ngInject */
-function decryptKeys(pmcw, notification, Key, keyInfo, setupKeys, gettextCatalog) {
+function decryptKeys($injector, pmcw, notification, Key, keyInfo, setupKeys, gettextCatalog) {
     const I18N = {
         errorPrimaryKey({ Email: email = '' }) {
             return gettextCatalog.getString(
@@ -95,8 +95,11 @@ function decryptKeys(pmcw, notification, Key, keyInfo, setupKeys, gettextCatalog
                                 .then((pkg) => storeKey({ key, pkg, address }));
                         }
                         if (key.Activation) {
+                            const signingKey = primaryKeys.length
+                                ? primaryKeys[0].pkg
+                                : $injector.get('authentication').getPrivateKeys(MAIN_KEY)[0];
                             return setupKeys
-                                .decryptMemberKey(key, primaryKeys[0].pkg)
+                                .decryptMemberKey(key, signingKey)
                                 .then((pkg) => activateKey(key, pkg, mailboxPassword))
                                 .then((pkg) => storeKey({ key, pkg, address }));
                         }
