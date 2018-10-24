@@ -1,3 +1,11 @@
+# [3.14.28] - 2018-10-24
+## Added
+- Warning for email addresses that fail validation
+
+## Fixed
+- Clicking on the new mail notification and clicking delete results with the second email being deleted
+- Performance issues related to loading messages
+
 # [3.14.27] - 2018-10-24
 ## Fixed
 - Opening a message can take time
