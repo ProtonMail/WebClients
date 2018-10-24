@@ -1,5 +1,5 @@
 /* @ngInject */
-function uniqueUsername($stateParams, UserAvailability) {
+function uniqueUsername($stateParams, User) {
     const clean = (input = '') => input.toLowerCase().replace(/\.|-|_/, '');
 
     const ERRORS = ['offlineError', 'tooMuch', 'requestError', 'apiError'];
@@ -14,29 +14,27 @@ function uniqueUsername($stateParams, UserAvailability) {
             return Promise.resolve();
         }
 
-        return UserAvailability.available({ params: { Name: username }, noNotify: true }).catch(
-            ({ status, data = {} } = {}) => {
-                if (status === 429) {
-                    ngModel.$error.tooMuch = true;
-                    return Promise.reject(false);
-                }
-
-                if (status === 0 || status === -1) {
-                    ngModel.$error.offlineError = true;
-                    return Promise.reject(false);
-                }
-
-                if (data.Error) {
-                    ngModel.$error.apiError = true;
-                    scope.apiErrorMessage = data.Error;
-                    return Promise.reject(false);
-                }
-
-                // If there is no error from the API, show a generic "Request failed".
-                ngModel.$error.requestError = true;
+        return User.available({ params: { Name: username }, noNotify: true }).catch(({ status, data = {} } = {}) => {
+            if (status === 429) {
+                ngModel.$error.tooMuch = true;
                 return Promise.reject(false);
             }
-        );
+
+            if (status === 0 || status === -1) {
+                ngModel.$error.offlineError = true;
+                return Promise.reject(false);
+            }
+
+            if (data.Error) {
+                ngModel.$error.apiError = true;
+                scope.apiErrorMessage = data.Error;
+                return Promise.reject(false);
+            }
+
+            // If there is no error from the API, show a generic "Request failed".
+            ngModel.$error.requestError = true;
+            return Promise.reject(false);
+        });
     };
 
     return {
