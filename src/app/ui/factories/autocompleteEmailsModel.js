@@ -226,6 +226,11 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
                 removeByAddress(oldAddress);
                 return;
             }
+            // If there is no text, you can't focus the contentEditable again, so remove it.
+            if (!newAddress && !newName) {
+                removeByAddress(oldAddress);
+                return;
+            }
             // Update the old Address with the new information.
             list = list.map((email) => {
                 if (email.Address === oldAddress) {
