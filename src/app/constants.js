@@ -1,6 +1,7 @@
 export const MAIN_KEY = '0';
 export const REMOTE = 1;
 export const EMBEDDED = 2;
+export const MODAL_Z_INDEX = 11000;
 export const CONVERSATION_REQUEST_SIZE = 10;
 export const GIFT_CODE_LENGTH = 16;
 export const AUTOCOMPLETE_MAX_RECIPIENTS = 25;

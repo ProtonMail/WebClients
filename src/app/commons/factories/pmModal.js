@@ -1,3 +1,5 @@
+import { MODAL_Z_INDEX } from '../../constants';
+
 /* @ngInject */
 function pmModal(
     $animate,
@@ -14,7 +16,7 @@ function pmModal(
 ) {
     const $body = $('#body');
     // The highest z-Index for the last modals used. Used to ensure that modals are sort by time (latest modal on top)
-    let zIndex = 11000;
+    let zIndex = MODAL_Z_INDEX;
 
     function manageHotkeys(bind = true) {
         if (mailSettingsModel.get('Hotkeys')) {
@@ -35,6 +37,8 @@ function pmModal(
         let html;
         let scope;
         const { dispatcher, on, unsubscribe } = dispatchers(['tooltip']);
+        const closeAllTooltips = () => dispatcher.tooltip('hideAll');
+
         if (config.template) {
             html = $q.when(config.template);
         } else {
@@ -46,6 +50,7 @@ function pmModal(
         }
 
         function activate(locals) {
+            closeAllTooltips();
             return html.then((html) => {
                 if (!element) {
                     attach(html, locals);
@@ -110,7 +115,7 @@ function pmModal(
             unsubscribe();
 
             return $animate.leave(element).then(() => {
-                dispatcher.tooltip('hideAll');
+                closeAllTooltips();
 
                 // We can have a concurrency issues ex: generateModal
                 if (!element) {
