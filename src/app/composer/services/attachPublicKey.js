@@ -1,7 +1,7 @@
 import { blobEqualsAttachment } from '../../../helpers/attachment';
 
 /* @ngInject */
-function attachPublicKey(authentication, attachmentModel, dispatchers, pmcw) {
+function attachPublicKey(keysModel, attachmentModel, dispatchers, pmcw) {
     const { dispatcher } = dispatchers(['attachment.upload']);
     /**
      * Generate a blob corresponding to the public key that is passed in. The name is extracted from the message the
@@ -30,7 +30,7 @@ function attachPublicKey(authentication, attachmentModel, dispatchers, pmcw) {
             return;
         }
 
-        const privateKeys = authentication.getPrivateKeys(message.From.ID)[0];
+        const privateKeys = keysModel.getPrivateKeys(message.From.ID)[0];
         const info = await pmcw.keyInfo(privateKeys.armor());
         const file = fileFromKeyInfo(message, info);
         const attachmentExists = message.Attachments.some((attachment) => blobEqualsAttachment(file, attachment));

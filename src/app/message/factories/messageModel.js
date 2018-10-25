@@ -14,14 +14,14 @@ function messageModel(
     embeddedUtils,
     pmcw,
     gettextCatalog,
-    authentication,
     AttachmentLoader,
     sanitize,
     attachmentConverter,
     publicKeyStore,
     attachedPublicKey,
     mailSettingsModel,
-    addressesModel
+    addressesModel,
+    keysModel
 ) {
     const I18N = {
         ENCRYPTION_ERROR: gettextCatalog.getString('Error encrypting message', null, 'Error')
@@ -255,7 +255,7 @@ function messageModel(
         }
 
         encryptBody(publicKeys) {
-            const privateKeys = authentication.getPrivateKeys(this.From.ID)[0];
+            const privateKeys = keysModel.getPrivateKeys(this.From.ID)[0];
             return pmcw
                 .encryptMessage({
                     data: this.getDecryptedBody(),
@@ -308,7 +308,7 @@ function messageModel(
         }
 
         decryptBody() {
-            const privateKeys = authentication.getPrivateKeys(this.AddressID);
+            const privateKeys = keysModel.getPrivateKeys(this.AddressID);
 
             // decryptMessageLegacy expects message to be a string!
             const message = this.Body;
@@ -414,7 +414,7 @@ function messageModel(
         }
 
         cleartextBodyPackets() {
-            const privateKeys = authentication.getPrivateKeys(this.AddressID);
+            const privateKeys = keysModel.getPrivateKeys(this.AddressID);
             const { asymmetric, encrypted } = pmcw.splitMessage(this.Body);
             const message = pmcw.getMessage(asymmetric[0]);
 

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { SEND_TYPES, AES256 } from '../../constants';
 
 /* @ngInject */
-function encryptPackages(pmcw, authentication, AttachmentLoader) {
+function encryptPackages(pmcw, keysModel, AttachmentLoader) {
     const arrayToBase64 = _.flowRight(
         pmcw.encode_base64,
         pmcw.arrayToBinaryString
@@ -225,7 +225,7 @@ function encryptPackages(pmcw, authentication, AttachmentLoader) {
      */
     const encryptPackages = async (message, packages) => {
         const attachmentKeys = await getAttachmentKeys(message);
-        const privateKeys = authentication.getPrivateKeys(message.From.ID)[0];
+        const privateKeys = keysModel.getPrivateKeys(message.From.ID)[0];
         const promises = _.map(packages, (p) => encryptPackage(p, message, [privateKeys], attachmentKeys));
 
         await Promise.all(promises);

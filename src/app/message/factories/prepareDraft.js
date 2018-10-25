@@ -1,5 +1,5 @@
 /* @ngInject */
-function prepareDraft(addressesModel, authentication, dispatchers, messageBuilder, messageModel) {
+function prepareDraft(addressesModel, keysModel, dispatchers, messageBuilder, messageModel) {
     const { on } = dispatchers();
     const CACHE = {};
 
@@ -16,9 +16,12 @@ function prepareDraft(addressesModel, authentication, dispatchers, messageBuilde
 
     /**
      * Get prepared body
-     * @return {String}
+     * @return {Promise<String>}
      */
-    const getBody = () => CACHE.messagePrepared.Body;
+    const getBody = async () => {
+        const { Body } = await CACHE.messagePrepared;
+        return Body;
+    };
 
     /**
      * Prepare the default draft for the composer
@@ -26,14 +29,18 @@ function prepareDraft(addressesModel, authentication, dispatchers, messageBuilde
      * @return {Promise}
      */
     const init = () => {
+        const { active = [] } = addressesModel.getActive();
+
+        // Key can be missing if the member didn't yet created the key
+        if (!active.length) {
+            return Promise.resolve();
+        }
+
+        const [{ ID }] = active;
+        const [publicKeys] = keysModel.getPublicKeys(ID);
         const promise = messageBuilder
             .create('new')
-            .then((message) => {
-                const { ID } = addressesModel.getFirst();
-                const publicKeys = authentication.getPublicKeys(ID)[0];
-
-                return message.encryptBody(publicKeys.armor()).then(() => message);
-            })
+            .then((message) => message.encryptBody(publicKeys.armor()).then(() => message))
             .catch((err) => {
                 clear();
                 throw err;
@@ -49,14 +56,14 @@ function prepareDraft(addressesModel, authentication, dispatchers, messageBuilde
      * @param {Object} message
      * @return {Promise} messageModel
      */
-    const getMessage = (message = messageModel()) => {
+    const getMessage = async (message = messageModel()) => {
         if (message.isPGPMIME()) {
             return message;
         }
 
         if (CACHE.messagePrepared) {
             // Make sure to return a messageModel Object
-            return messageModel({ Body: getBody(), ...message }); // If the message.Body is defined, we have to keep it.
+            return messageModel({ Body: await getBody(), ...message }); // If the message.Body is defined, we have to keep it.
         }
 
         return init();
@@ -66,8 +73,8 @@ function prepareDraft(addressesModel, authentication, dispatchers, messageBuilde
         clear();
     });
 
-    on('prepareDraft', (e, { type }) => {
-        if (type === 'init') {
+    on('keysModel', (e, { type }) => {
+        if (type === 'updated') {
             init();
         }
     });

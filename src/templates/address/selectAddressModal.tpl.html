@@ -8,7 +8,7 @@
             <div class="modal-body pm_form">
                 <p class="alert alert-info">{{ ::ctrl.info }}</p>
                 <span class="pm_select">
-                    <select ng-model="ctrl.model.address" ng-options="address[ctrl.label] for address in ctrl.model.addresses track by address[ctrl.addressID]"></select>
+                    <select ng-model="ctrl.model.address" ng-options="address.email for address in ctrl.model.addresses track by address.addressID"></select>
                     <i class="fa fa-angle-down"></i>
                 </span>
             </div>

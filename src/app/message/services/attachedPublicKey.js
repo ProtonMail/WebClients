@@ -13,7 +13,7 @@ const MAX_KEY_COUNTS = 5;
 function attachedPublicKey(
     contactDetailsModel,
     keyCache,
-    authentication,
+    keysModel,
     autoPinPrimaryKeys,
     pmcw,
     sendPreferences,
@@ -100,7 +100,7 @@ function attachedPublicKey(
     };
 
     const getPublicKeyFromSig = async (message) => {
-        const privateKeys = authentication.getPrivateKeys(message.AddressID);
+        const privateKeys = keysModel.getPrivateKeys(message.AddressID);
 
         const {
             [message.SenderAddress]: { Keys: keys }
@@ -165,7 +165,7 @@ function attachedPublicKey(
     };
 
     const keySignsMessage = (message, keyInfos) => {
-        const privateKeys = authentication.getPrivateKeys(message.AddressID);
+        const privateKeys = keysModel.getPrivateKeys(message.AddressID);
         return pmcw
             .decryptMessageLegacy({
                 message: message.Body,

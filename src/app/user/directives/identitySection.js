@@ -27,10 +27,16 @@ function identitySection(
 
             const { on, unsubscribe } = dispatchers();
 
-            const updateAddress = ({ ID, DisplayName, Signature }, firstTime = false) => {
-                const signature = tools.replaceLineBreaks(Signature);
+            const updateAddress = ({ ID, DisplayName, Signature } = {}) => {
+                // Can happen for a user that does not have keys for an address.
+                if (!ID) {
+                    return;
+                }
 
+                const firstTime = !CACHE.ID;
                 CACHE.ID = ID;
+
+                const signature = tools.replaceLineBreaks(Signature);
 
                 if (!firstTime) {
                     const { editor } = editorModel.find({ ID: EDITOR_ID });
@@ -66,13 +72,7 @@ function identitySection(
 
             on('addressSelection', (event, { type = '', data = {} }) => {
                 if (type === 'change') {
-                    const address = _.find(CACHE.addresses, { ID: data.ID });
-
-                    if (address) {
-                        scope.$applyAsync(() => {
-                            updateAddress(address);
-                        });
-                    }
+                    updateAddress(_.find(CACHE.addresses, { ID: data.ID }));
                 }
             });
 

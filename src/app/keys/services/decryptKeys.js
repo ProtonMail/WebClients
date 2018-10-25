@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { MAIN_KEY } from '../../constants';
 
 /* @ngInject */
-function decryptKeys($injector, pmcw, notification, Key, keyInfo, setupKeys, gettextCatalog) {
+function decryptKeys(pmcw, notification, Key, keyInfo, keysModel, setupKeys, gettextCatalog) {
     const I18N = {
         errorPrimaryKey({ Email: email = '' }) {
             return gettextCatalog.getString(
@@ -34,7 +34,7 @@ function decryptKeys($injector, pmcw, notification, Key, keyInfo, setupKeys, get
      * @param  {String} address                address corresponding to key
      * @return {Object}
      */
-    const storeKey = ({ key, pkg, address }) => {
+    const formatKey = ({ key, pkg, address }) => {
         key.decrypted = true; // We mark this key as decrypted
         return keyInfo(key).then((key) => ({ address, key, pkg }));
     };
@@ -75,11 +75,11 @@ function decryptKeys($injector, pmcw, notification, Key, keyInfo, setupKeys, get
         const { Keys = [] } = user;
         const list = Keys.map((key, index) => {
             if (subuser === true) {
-                return setupKeys.decryptMemberKey(key, organizationKey).then((pkg) => storeKey({ key, pkg, address }));
+                return setupKeys.decryptMemberKey(key, organizationKey).then((pkg) => formatKey({ key, pkg, address }));
             }
             return pmcw
                 .decryptPrivateKey(key.PrivateKey, mailboxPassword)
-                .then((pkg) => storeKey({ key, pkg, address }), () => skipKey({ key, address, index }));
+                .then((pkg) => formatKey({ key, pkg, address }), () => skipKey({ key, address, index }));
         });
 
         const primaryKeys = await Promise.all(list);
@@ -92,20 +92,20 @@ function decryptKeys($injector, pmcw, notification, Key, keyInfo, setupKeys, get
                         if (subuser) {
                             return setupKeys
                                 .decryptMemberKey(key, organizationKey)
-                                .then((pkg) => storeKey({ key, pkg, address }));
+                                .then((pkg) => formatKey({ key, pkg, address }));
                         }
                         if (key.Activation) {
                             const signingKey = primaryKeys.length
                                 ? primaryKeys[0].pkg
-                                : $injector.get('authentication').getPrivateKeys(MAIN_KEY)[0];
+                                : keysModel.getPrivateKeys(MAIN_KEY)[0];
                             return setupKeys
                                 .decryptMemberKey(key, signingKey)
                                 .then((pkg) => activateKey(key, pkg, mailboxPassword))
-                                .then((pkg) => storeKey({ key, pkg, address }));
+                                .then((pkg) => formatKey({ key, pkg, address }));
                         }
                         return pmcw
                             .decryptPrivateKey(key.PrivateKey, mailboxPassword)
-                            .then((pkg) => storeKey({ key, pkg, address }), () => skipKey({ key, address, index }));
+                            .then((pkg) => formatKey({ key, pkg, address }), () => skipKey({ key, address, index }));
                     });
                     acc.promises = acc.promises.concat(promises);
                 }

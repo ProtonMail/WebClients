@@ -33,8 +33,8 @@ function keysView(dispatchers, addressKeysViewModel, addressesModel, authenticat
                 });
             };
 
-            const updateAddresses = (addresses = addressesModel.get()) => {
-                const addressKeys = addressKeysViewModel.getAddressKeys(addresses);
+            const updateAddresses = () => {
+                const addressKeys = addressKeysViewModel.getAddressKeys(addressesModel.get());
 
                 scope.$applyAsync(() => {
                     // syncObjectList to prevent a total redraw, which closes the keys tables
@@ -47,9 +47,9 @@ function keysView(dispatchers, addressKeysViewModel, addressesModel, authenticat
                 updateUser();
             });
 
-            on('addressesModel', (e, { type = '', data = {} }) => {
-                if (type === 'addresses.updated') {
-                    updateAddresses(data.addresses);
+            on('keysModel', (e, { type = '' }) => {
+                if (type === 'updated') {
+                    updateAddresses();
                 }
             });
 
