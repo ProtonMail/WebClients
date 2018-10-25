@@ -13,6 +13,7 @@ function authentication(
     authApi,
     checkKeysFormat,
     CONFIG,
+    keysModel,
     upgradePassword,
     networkActivityTracker,
     dispatchers,
@@ -26,7 +27,6 @@ function authentication(
     upgradeKeys,
     decryptKeys
 ) {
-    let keys = {}; // Store decrypted keys
     const { dispatcher } = dispatchers(['setUser']);
     const auth = {
         headersSet: false,
@@ -68,15 +68,8 @@ function authentication(
                     })
                     .then(({ organizationKey, addresses }) => ({ user, organizationKey, addresses }))
                     .then(({ user, organizationKey, addresses }) => {
-                        const storeKeys = (keys) => {
-                            api.clearKeys();
-                            _.each(keys, ({ address, key, pkg }) => {
-                                api.storeKey(address.ID, key.ID, pkg);
-                            });
-                        };
-
                         return decryptKeys(user, addresses, organizationKey, api.getPassword())
-                            .then(({ keys }) => (storeKeys(keys), user))
+                            .then(({ keys }) => (keysModel.storeKeys(keys), user))
                             .catch((error) => {
                                 $exceptionHandler(error);
                                 throw error;
@@ -193,40 +186,6 @@ function authentication(
             }
 
             return string;
-        },
-
-        /**
-         * Return the private keys available for a specific address ID
-         * @param {String} addressID
-         * @return {Array}
-         */
-        getPrivateKeys(addressID) {
-            return Object.keys(keys[addressID]).map((keyID) => keys[addressID][keyID]);
-        },
-
-        /**
-         * Return the activated public keys available for a specific address ID
-         * @param {String} addressID
-         * @return {Array}
-         */
-        getPublicKeys(addressID) {
-            return this.getPrivateKeys(addressID).map((key) => key.toPublic());
-        },
-
-        /**
-         * Store package
-         */
-        storeKey(addressID, keyID, pkg) {
-            pkg.ID = keyID; // Add the keyID inside the package
-            keys[addressID] = keys[addressID] || {}; // Initialize Object for the package
-            keys[addressID][keyID] = pkg; // Add key package
-        },
-
-        /**
-         * Clear stored keys
-         */
-        clearKeys() {
-            keys = {};
         },
 
         getRefreshCookie() {
@@ -412,8 +371,6 @@ function authentication(
                 secureSessionStorage.clear();
                 // Delete data key
                 delete auth.data;
-                // Clean keys
-                keys = {};
                 auth.headersSet = false;
                 // Remove all user information
                 this.user = {};

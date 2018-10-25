@@ -4,6 +4,7 @@ import { readFileAsString } from '../../../helpers/fileHelper';
 
 /* @ngInject */
 function addressKeysView(
+    addressesModel,
     dispatchers,
     downloadFile,
     gettextCatalog,
@@ -250,13 +251,12 @@ function addressKeysView(
             };
 
             const selectAddress = (info) => {
+                const addresses = addressesModel.get().map(({ Email: email, ID: addressID }) => ({ email, addressID }));
                 return new Promise((resolve, reject) => {
                     selectAddressModal.activate({
                         params: {
                             info,
-                            addressID: 'addressID',
-                            label: 'email',
-                            addresses: scope.addresses,
+                            addresses,
                             async submit(address) {
                                 await selectAddressModal.deactivate();
                                 resolve(address);

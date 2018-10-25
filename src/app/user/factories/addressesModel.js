@@ -15,17 +15,13 @@ function addressesModel(Address, authentication, dispatchers, formatKeys) {
      * Save and formatted addresses in the cache
      * @param {Array}   addresses
      * @param {[type]}  user
-     * @param {Boolean} prepareDraft - Dispatch the prepare draft event or not. By default false because of race
-     *                                 conditions with `authentication.user` not setting having set user or keys
-     *                                 when this function is called. Now called from secured.js instead.
      * @return {Promise}
      */
-    const set = (addresses = [], user = authentication.user, prepareDraft = false) => {
+    const set = (addresses = [], user = authentication.user) => {
         const sortedAddresses = sortByOrder(addresses);
 
         return formatKeys(sortedAddresses).then((formattedAddresses) => {
             CACHE[user.ID] = formattedAddresses;
-            prepareDraft && dispatcher.prepareDraft('init'); // Prepare draft to accelerate the composer open process
             dispatcher.addressesModel('addresses.updated', { addresses: formattedAddresses });
         });
     };
@@ -104,7 +100,7 @@ function addressesModel(Address, authentication, dispatchers, formatKeys) {
      */
     const update = (events = []) => {
         const { collection } = updateCollection(CACHE[authentication.user.ID], events, 'Address');
-        return set(collection, authentication.user, true);
+        return set(collection, authentication.user);
     };
 
     /**

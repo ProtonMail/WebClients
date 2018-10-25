@@ -6,6 +6,7 @@ import { MAIN_KEY, FREE_USER_ROLE, PAID_ADMIN_ROLE } from '../../constants';
 function manageUser(
     $exceptionHandler,
     addressesModel,
+    keysModel,
     addressWithoutKeysManager,
     authentication,
     dispatchers,
@@ -29,12 +30,6 @@ function manageUser(
         if (OrganizationPrivateKey) {
             return pmcw.decryptPrivateKey(OrganizationPrivateKey, password);
         }
-    };
-
-    const storeKeys = (keys) => {
-        _.each(keys, ({ address, key, pkg }) => {
-            authentication.storeKey(address.ID, key.ID, pkg);
-        });
     };
 
     /**
@@ -76,6 +71,7 @@ function manageUser(
     };
 
     const mergeUser = async (user = {}, keys, dirtyAddresses) => {
+        // Extend the user Object store in authentication
         _.each(Object.keys(user), (key) => {
             authentication.user[key] = user[key];
         });
@@ -87,12 +83,13 @@ function manageUser(
     const generateKeys = (user, Members, keys) => {
         return addressWithoutKeysManager.manage(user, _.map(Members, 'Member'), true).then(
             (addresses = []) => {
+                // contains the list of address where keys are missing
                 if (addresses.length) {
                     // Regenerate keys for addresses
                     return true;
                 }
             },
-            () => storeKeys(keys)
+            () => keysModel.storeKeys(keys) // Happens if the user press CANCEL to generate missing keys
         );
     };
 
@@ -150,7 +147,7 @@ function manageUser(
                 return;
             }
 
-            storeKeys(keys);
+            keysModel.storeKeys(keys);
             mergeUser(User, keys, dirtyAddresses);
         } catch (e) {
             e && $exceptionHandler(e);

@@ -9,13 +9,11 @@ const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function attachmentModel(
-    $q,
     attachmentApi,
     AttachmentLoader,
-    authentication,
     dispatchers,
     embedded,
-    notification,
+    keysModel,
     networkActivityTracker,
     composerRequestModel,
     attachmentDownloader,
@@ -345,7 +343,7 @@ function attachmentModel(
      */
     async function sign(attachment, message) {
         // async because we need to use data twice :-)
-        const privateKeys = authentication.getPrivateKeys(message.AddressID);
+        const privateKeys = keysModel.getPrivateKeys(message.AddressID);
 
         const data = await AttachmentLoader.get(attachment, message);
         const { signature } = await pmcw.signMessage({ data, privateKeys, armor: true, detached: true });
@@ -384,7 +382,7 @@ function attachmentModel(
             tempPacket.Inline = 1;
         }
 
-        const privateKeys = authentication.getPrivateKeys(message.AddressID);
+        const privateKeys = keysModel.getPrivateKeys(message.AddressID);
         message.attachmentsToggle = true;
 
         const doUpload = (packets) => {

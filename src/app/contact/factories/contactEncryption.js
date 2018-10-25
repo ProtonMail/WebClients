@@ -20,7 +20,7 @@ const {
 } = CONTACT_ERROR;
 
 /* @ngInject */
-function contactEncryption($injector, chunk, gettextCatalog, pmcw, vcard, contactKeyAssigner, contactProgressReporter) {
+function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contactKeyAssigner, contactProgressReporter) {
     const getErrors = (data = []) => _.map(data, 'error').filter(Boolean);
 
     const buildContact = (ID, data = [], cards) => {
@@ -265,9 +265,8 @@ function contactEncryption($injector, chunk, gettextCatalog, pmcw, vcard, contac
         cancellationToken = createCancellationToken(),
         progressBar = false
     }) {
-        const authentication = $injector.get('authentication');
-        const privateKeys = authentication.getPrivateKeys(MAIN_KEY);
-        const publicKeys = authentication.getPublicKeys(MAIN_KEY);
+        const privateKeys = keysModel.getPrivateKeys(MAIN_KEY);
+        const publicKeys = keysModel.getPublicKeys(MAIN_KEY);
         const total = contacts.length;
         const reporter = progressBar ? contactProgressReporter(0, progressSpeed, total) : () => {};
 

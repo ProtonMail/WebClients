@@ -14,9 +14,11 @@ import keyInfo from './factories/keyInfo';
 import formatKey from './factories/formatKey';
 import formatKeys from './factories/formatKeys';
 import decryptKeys from './services/decryptKeys';
+import keysModel from './factories/keysModel';
 
 export default angular
     .module('proton.keys', [])
+    .factory('keysModel', keysModel)
     .factory('decryptKeys', decryptKeys)
     .directive('keysView', keysView)
     .factory('changeMailboxPassword', changeMailboxPassword)

@@ -1,18 +1,11 @@
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
+import { MAIN_KEY } from '../../constants';
 
 /* @ngInject */
-function addressKeysViewModel(keyInfo, pmcw, authentication) {
+function addressKeysViewModel(keyInfo, pmcw, authentication, keysModel) {
     const getDecryptedKeys = (ID) => {
-        if (ID === 'contact-keys') {
-            return authentication.user.Keys.reduce((acc, { PrivateKey, decrypted }) => {
-                if (decrypted) {
-                    const [key] = pmcw.getKeys(PrivateKey);
-                    acc.push(key);
-                }
-                return acc;
-            }, []);
-        }
-        return authentication.getPrivateKeys(ID).filter((k) => k.isDecrypted());
+        const addressID = ID === 'contact-keys' ? MAIN_KEY : ID;
+        return keysModel.getPrivateKeys(addressID).filter((k) => k.isDecrypted());
     };
     /**
      * From a group of addresses, massage the data in the way that the address keys view directive expects

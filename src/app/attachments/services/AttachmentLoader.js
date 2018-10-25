@@ -5,9 +5,8 @@ function AttachmentLoader(
     dispatchers,
     $cacheFactory,
     $log,
-    $q,
     pmcw,
-    authentication,
+    keysModel,
     $state,
     $stateParams,
     Eo,
@@ -135,7 +134,7 @@ function AttachmentLoader(
         if (isOutside()) {
             options.passwords = [pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'))];
         } else {
-            options.privateKeys = authentication.getPrivateKeys(message.AddressID);
+            options.privateKeys = keysModel.getPrivateKeys(message.AddressID);
         }
         return pmcw.decryptSessionKey(options).then((sessionKey) => angular.extend({}, attachment, { sessionKey }));
     };

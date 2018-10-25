@@ -55,7 +55,7 @@ function validateMessage(
             null,
             'Error'
         ),
-        MEMBER: gettextCatalog.getString('Addresses / Users', null, 'Title'),
+        KEYS: gettextCatalog.getString('Keys', null, 'Title'),
         ERROR_ADDRESSES_INFO: gettextCatalog.getString(
             'Contact your organization’s administrator to resolve this.',
             null,
@@ -194,7 +194,7 @@ function validateMessage(
      */
     const getErrorInfo = () => {
         if (authentication.user.Private) {
-            return `${I18N.ERROR_ADDRESSES_INFO_PRIVATE} <a href="/members">${I18N.MEMBER}</a>`;
+            return `${I18N.ERROR_ADDRESSES_INFO_PRIVATE} <a href="/keys">${I18N.KEYS}</a>`;
         }
         return I18N.ERROR_ADDRESSES_INFO;
     };

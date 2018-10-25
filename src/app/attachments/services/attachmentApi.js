@@ -1,17 +1,7 @@
 import { OAUTH_KEY } from '../../constants';
 
 /* @ngInject */
-function attachmentApi(
-    $http,
-    url,
-    $q,
-    dispatchers,
-    authentication,
-    pmcw,
-    CONFIG,
-    secureSessionStorage,
-    gettextCatalog
-) {
+function attachmentApi($http, url, $q, dispatchers, keysModel, pmcw, CONFIG, secureSessionStorage, gettextCatalog) {
     const MAP = {
         message: {},
         request: {}
@@ -97,7 +87,7 @@ function attachmentApi(
         const dispatcher = dispatchUpload(REQUEST_ID, message, tempPacket);
         const deferred = $q.defer();
         const xhr = new XMLHttpRequest();
-        const keys = authentication.getPrivateKeys(message.AddressID);
+        const keys = keysModel.getPrivateKeys(message.AddressID);
         const { on, unsubscribe } = dispatchers();
 
         // Check the network status of the app (XHR does not auto close)
