@@ -53,7 +53,8 @@ function weekdayTimePicker(dispatchers, datetimeErrorCombiner, timepickerModel) 
                         return;
                     }
                     // combine
-                    scope.timestamp = moment.weekdaysParse(scope.model.weekday) * 24 * 3600 + scope.model.time;
+                    scope.timestamp =
+                        moment.localeData().weekdaysParse(scope.model.weekday) * 24 * 3600 + scope.model.time;
                     dispatchHelper('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
                 }
 
