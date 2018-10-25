@@ -20,9 +20,11 @@ import elementsError from './factories/elementsError';
 import limitElementsModel from './factories/limitElementsModel';
 import removeElement from './services/removeElement';
 import forgeRequestParameters from './services/forgeRequestParameters';
+import sendersName from './directives/sendersName';
 
 export default angular
     .module('proton.elements', [])
+    .directive('sendersName', sendersName)
     .factory('forgeRequestParameters', forgeRequestParameters)
     .controller('ElementsController', ElementsController)
     .directive('advancedFilterElement', advancedFilterElement)
