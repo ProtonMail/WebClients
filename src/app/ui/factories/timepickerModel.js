@@ -49,7 +49,7 @@ function timepickerModel(dispatchers, gettextCatalog) {
     }
 
     function onInitTimePicker(eventKey, func) {
-        on('timepicker', ({ type, data }) => {
+        on('timepicker', (e, { type, data }) => {
             if (type === 'initTimepicker') {
                 func(data);
             }
