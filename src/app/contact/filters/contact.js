@@ -1,8 +1,6 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function contact(gettextCatalog, authentication) {
-    const getContact = (Email) => _.find(authentication.user.Contacts, { Email }) || {};
+function contact(contactEmails) {
+    const getContact = (email) => contactEmails.findEmail(email) || {};
 
     const getContactFromUser = (nameContact, Address) => {
         const { Name = '', Email } = getContact(Address);

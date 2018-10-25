@@ -44,16 +44,7 @@
                     <span
                     class="senders ellipsis"
                     ng-class="{ 'full': !hasLabels(conversation) }">
-                        <span
-                        ng-if="!(('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allSent.**' | includedByState) || ('secured.allDrafts.**' | includedByState))"
-                        class="senders-name"
-                        ng-repeat="contact in senders(conversation)"
-                        title="{{ contact.Address }}">{{ contact | contact: 'Name' | unescape}}</span>
-                        <span
-                        ng-if="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allSent.**' | includedByState) || ('secured.allDrafts.**' | includedByState)"
-                        class="senders-name"
-                        ng-repeat="contact in recipients(conversation)"
-                        title="{{ contact.Address }}">{{ contact | contact: 'Name' | unescape}}</span>
+                        <senders-name></senders-name>
                     </span>
                     <labels-element data-element="conversation"></labels-element>
                 </div>

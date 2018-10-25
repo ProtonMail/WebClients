@@ -77,35 +77,6 @@ function ElementsController(
         );
     }
 
-    $scope.senders = (element) => {
-        if (angular.isDefined(element.Senders)) {
-            return element.Senders;
-        }
-
-        return [element.Sender];
-    };
-
-    $scope.recipients = (element) => {
-        if (angular.isDefined(element.Recipients)) {
-            return element.Recipients;
-        }
-        let recipients = [];
-
-        if (element.ToList) {
-            recipients = recipients.concat(element.ToList);
-        }
-
-        if (element.CCList) {
-            recipients = recipients.concat(element.CCList);
-        }
-
-        if (element.BCCList) {
-            recipients = recipients.concat(element.BCCList);
-        }
-
-        return recipients;
-    };
-
     /**
      * Check if we should display the component
      * @param  {String} type
