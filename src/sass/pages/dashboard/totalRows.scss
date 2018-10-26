@@ -13,6 +13,7 @@
     min-width: 1px; /*IE*/
     white-space: nowrap;
     margin-left: 4px;
+    flex-shrink: 0;
 }
 
 .totalRows-label-right {
