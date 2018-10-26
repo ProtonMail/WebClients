@@ -23,7 +23,7 @@
     "babel-preset-env": "^1.7.0",
     "cache-loader": "^1.2.2",
     "chalk": "^2.3.0",
-    "component-generator": "github:ProtonMail/componentGenerator#1da309c75aa685b645b3e2f8d703c712d6727c4f",
+    "component-generator": "github:ProtonMail/componentGenerator#c8b256c5e1d45bddedb36a6efa3c00238e535a1a",
     "copy-webpack-plugin": "^4.5.1",
     "cqc": "^0.6.0",
     "cross-env": "^5.1.6",
@@ -39,7 +39,7 @@
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^0.14.3",
+    "husky": "^1.1.2",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-webpack-plugin": "^2.1.1",
     "inquirer": "^6.1.0",
@@ -174,7 +174,6 @@
     "i18n:build": "npm run i18n:extract && npm run i18n:update && npm run i18n:compile",
     "posti18n:build": "./tasks/createI18nCache.js && ./tasks/commitI18n.sh",
     "pretty": "prettier --write $(find src/app -type f -name '*.js')",
-    "precommit": "./tasks/metrics.sh",
     "create": "appComponent",
     "create:test": "appComponent --test",
     "cypress:open": "./tasks/lazyInstallVendor e2e && cypress open"
@@ -191,5 +190,10 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "version": "3.14.28"
+  "version": "3.14.28",
+  "husky": {
+    "hooks": {
+      "pre-commit": "./tasks/metrics.sh"
+    }
+  }
 }
