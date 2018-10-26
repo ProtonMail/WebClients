@@ -15,7 +15,7 @@
 .settingsDashboard-btn-donation .donateBtn-icon { display: none }
 
 .settingsDashboard-overview-section-table-container .overviewSection-container {
-    flex: 1;
+    flex: 1 0 auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -56,7 +56,7 @@
     .overviewSection-storage .storageBar { margin-top: 0 }
 
     .overviewSection-tbody-billing {
-        flex: 1;
+        flex: 1 0 auto;
         padding: 1em 0;
         background:url(assets('img/triangle-down.svg')) #F8F8F8 repeat-x 0px -2px;
         background-size: 8px;
