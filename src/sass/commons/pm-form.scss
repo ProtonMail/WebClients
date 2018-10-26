@@ -52,6 +52,10 @@
             &[disabled] {
                 background: rgba(0,0,0,0);
             }
+            &:focus::-ms-value {
+                color: #000;
+                background: #fff;
+            }
         }
         .fa {
             position: absolute;
