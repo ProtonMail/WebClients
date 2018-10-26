@@ -16,6 +16,8 @@
     width: 100%;
     position: relative;
     max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden
 }
 
 .autocompleteEmails-admin, .autocompleteEmails-admin * {box-sizing: border-box}

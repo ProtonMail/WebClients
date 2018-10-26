@@ -39,7 +39,7 @@
     }
 }
 
-.composerInputMeta-container .composerInputMeta-overlay-button {z-index: 2}
+.composerInputMeta-container .composerInputMeta-overlay-button {z-index: 2; outline: 0;}
 
 .composerInputMeta-recipients .composerInputMeta-overlay-label {display: none}
 .composerInputMeta-overlay-hidden .composerInputMeta-overlay {
