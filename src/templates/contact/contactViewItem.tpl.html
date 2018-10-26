@@ -16,7 +16,7 @@
     <i class="fa fa-user-circle-o contactViewDetail-icon" aria-hidden="true"></i>
     <i class="fa fa-tag contactViewDetail-icon" aria-hidden="true"></i>
 
-    <span class="contactViewDetail-type">{{::info.key | contactViewType:info.key }}</span>
+    <span class="contactViewDetail-type">{{ ::info.key | contactViewType:info.type }}</span>
     <a
         ng-if="info.key === 'email'"
         pt-tooltip-translate="Compose a new message to this email"
