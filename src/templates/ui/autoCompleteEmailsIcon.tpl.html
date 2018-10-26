@@ -4,27 +4,35 @@
         ng-show="!(email.encrypt && email.isPinned && !email.isEO)
           && (email.encrypt || email.loadCryptInfo || email.isEO)"
         ng-class="{
-                'encryptionIcon fa-lock': email.encrypt || email.isEO,
-                'encryptionIcon fa-pencil': !email.encrypt && email.sign,
-                'encryptionIcon fa-spinner fa-pulse': email.loadCryptInfo,
-                'pgp-encryption-icon': email.isPgp
-            }"
-    ></i>
+            'encryptionIcon fa-lock': email.encrypt || email.isEO,
+            'encryptionIcon fa-pencil': !email.encrypt && email.sign,
+            'encryptionIcon fa-spinner fa-pulse': email.loadCryptInfo,
+            'pgp-encryption-icon': email.isPgp
+        }"></i>
 
-    <svg width="18" viewBox="0 0 374.8 337.1"
-         ng-if="email.encrypt && email.isPinned && !email.isEO"
-         class="encryptionIcon"
-         ng-class="{
-        'pgp-encryption-icon': email.isPgp
-    }">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-lock-signed"></use>
+    <svg
+        width="18"
+        viewBox="0 0 374.8 337.1"
+        ng-if="email.encrypt && email.isPinned && !email.isEO"
+        class="encryptionIcon"
+        ng-class="{
+            'pgp-encryption-icon': email.isPgp
+        }">
+        <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="#svg-lock-signed"></use>
     </svg>
-    <svg width="18" viewBox="0 0 374.8 337.1"
-         ng-if="!email.encrypt && email.sign"
-         class="encryptionIcon big-encryption-icon"
-         ng-class="{
-        'pgp-encryption-icon': email.isPgp
-    }">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-unlocked-signed"></use>
+
+    <svg
+        width="18"
+        viewBox="0 0 374.8 337.1"
+        ng-if="!email.encrypt && email.sign"
+        class="encryptionIcon big-encryption-icon"
+        ng-class="{
+            'pgp-encryption-icon': email.isPgp
+        }">
+        <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="#svg-unlocked-signed"></use>
     </svg>
 </div>
