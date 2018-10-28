@@ -120,6 +120,9 @@ if (env.isDistRelease()) {
             ]
         })
     );
+
+    const localeWhitelist = new RegExp(["cs", "de", "en", "es", "fr", "it", "ja", "nl", "pl", "pt-br", "ru", "ro", "tr", "uk"].join("|"));
+    list.push(new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, localeWhitelist));
 }
 
 module.exports = list;
