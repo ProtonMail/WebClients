@@ -9,6 +9,7 @@ function contactTransformLabel(gettextCatalog) {
         categories: gettextCatalog.getString('Categories', null, 'VCard key name'),
         cell: gettextCatalog.getString('Cell', null, 'VCard key name'),
         custom: gettextCatalog.getString('Custom', null, 'VCard key name'), // It's not a valid key
+        other: gettextCatalog.getString('Other', null, 'VCard key name'), // It's not a valid key
         email: gettextCatalog.getString('Email', null, 'VCard key name'),
         fax: gettextCatalog.getString('Fax', null, 'VCard key name'),
         fburl: gettextCatalog.getString('Free or busy URL', null, 'VCard key name'),
