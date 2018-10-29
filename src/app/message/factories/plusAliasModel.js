@@ -28,9 +28,13 @@ function plusAliasModel(addressesModel) {
 
         // remove the + stuff
         const Email = `${email.substring(0, plusIndex)}${email.substring(atIndex, email.length)}`;
-        const address = _.find(addressesModel.get(), { Status: 1, Receive: 1, Email });
+        const address = addressesModel.getByEmail(Email);
 
         if (!address) {
+            return false;
+        }
+
+        if (!address.Status || !address.Receive) {
             return false;
         }
 
