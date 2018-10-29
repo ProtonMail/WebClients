@@ -1,5 +1,4 @@
 process.env.CHROME_BIN = require('puppeteer').executablePath();
-
 module.exports = (config) => {
     config.set({
         basePath: '',
@@ -24,7 +23,8 @@ module.exports = (config) => {
                     ...require('../webpack.tasks/templates.loader'),
                     ...require('../webpack.tasks/assets.loader')
                 ]
-            }
+            },
+            plugins: require('../webpack.tasks/plugins')
         },
 
         // list of files to exclude
