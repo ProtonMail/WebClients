@@ -1,5 +1,5 @@
 /* @ngInject */
-function unsubscribePanel(addressesModel, confirmModal, dispatchers, gettextCatalog, unsubscribeModel) {
+function unsubscribePanel(composerFromModel, confirmModal, dispatchers, gettextCatalog, unsubscribeModel) {
     const I18N = {
         notice: gettextCatalog.getString('This message is from a mailing list.', null, 'Info'),
         kb: gettextCatalog.getString('Learn more', null, 'Info'),
@@ -16,12 +16,12 @@ function unsubscribePanel(addressesModel, confirmModal, dispatchers, gettextCata
     const { dispatcher } = dispatchers(['message']);
 
     const confirmFirst = (message) => {
-        const { Email } = addressesModel.getByID(message.AddressID);
+        const { address } = composerFromModel.get(message);
 
         confirmModal.activate({
             params: {
                 title: I18N.title,
-                message: I18N.message(Email),
+                message: I18N.message(address.Email),
                 confirm() {
                     confirmModal.deactivate();
                     dispatcher.message('unsubscribe', { message });
