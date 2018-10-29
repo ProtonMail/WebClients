@@ -1,3 +1,4 @@
+import './authentication/interceptors/httpInterceptor.spec';
 import './utils/services/mailUtils.spec';
 import './conversation/factories/conversationListeners.spec';
 import './conversation/helpers/conversationHelpers.spec';
@@ -39,7 +40,7 @@ import './helpers/fileHelper.spec';
 import './helpers/parserHTML.spec';
 import './helpers/vcard.spec';
 import './commons/services/url.spec';
-import './commons/providers/notify.spec';
+import './commons/providers/notification.spec';
 import './commons/factories/AppModel.spec';
 import './helpers/vCardFields.spec';
 import './utils/filters/unicodeTagView.spec';

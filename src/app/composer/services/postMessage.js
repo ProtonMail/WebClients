@@ -9,7 +9,7 @@ function postMessage(
     dispatchers,
     messageRequest,
     cache,
-    notify,
+    notification,
     gettextCatalog,
     messageApi,
     composerRequestModel,
@@ -149,7 +149,7 @@ function postMessage(
         return parameters;
     };
 
-    const saveDraft = async (localMessage, { actionType, parameters, notification }) => {
+    const saveDraft = async (localMessage, { actionType, parameters, notification: showNotification }) => {
         try {
             const { Message: remoteMessage } = await messageRequest.draft(parameters, localMessage, actionType);
 
@@ -226,8 +226,8 @@ function postMessage(
             // Send events
             cache.events(events);
 
-            if (notification === true) {
-                notify({ message: I18N.SAVE_MESSAGE_SUCCESS, classes: 'notification-success' });
+            if (showNotification === true) {
+                notification.success(I18N.SAVE_MESSAGE_SUCCESS);
             }
 
             localMessage.saving = false;

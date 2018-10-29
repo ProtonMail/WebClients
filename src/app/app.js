@@ -87,7 +87,7 @@ angular
     .config(($httpProvider, CONFIG) => {
         // Http Interceptor to check auth failures for xhr requests
         $httpProvider.interceptors.push('serverTimeInterceptor');
-        $httpProvider.interceptors.push('authHttpResponseInterceptor');
+        $httpProvider.interceptors.push('httpInterceptor');
         $httpProvider.interceptors.push('formatResponseInterceptor');
         $httpProvider.defaults.headers.common['x-pm-appversion'] = 'Web_' + CONFIG.app_version;
         $httpProvider.defaults.headers.common['x-pm-apiversion'] = CONFIG.api_version;
