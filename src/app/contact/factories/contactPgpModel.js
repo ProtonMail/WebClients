@@ -53,18 +53,24 @@ function contactPgpModel(dispatchers, mailSettingsModel, pmcw) {
         return isExpired.every((keyExpired) => keyExpired);
     };
 
+    const processPublicKey = _.flowRight(
+        pmcw.encode_base64,
+        pmcw.arrayToBinaryString,
+        pmcw.stripArmor
+    );
+
     /**
      * Get raw internal keys
      * @return {Promise}
      */
-    const getRawInternalKeys = () =>
-        _.map(CACHE.internalKeys.Keys.filter(({ Send }) => Send), 'PublicKey').map(
-            _.flowRight(
-                pmcw.encode_base64,
-                pmcw.arrayToBinaryString,
-                pmcw.stripArmor
-            )
-        );
+    const getRawInternalKeys = () => {
+        return CACHE.internalKeys.Keys.reduce((acc, { Flags, PublicKey }) => {
+            if (Flags & ENABLE_ENCRYPTION) {
+                acc.push(processPublicKey(PublicKey));
+            }
+            return acc;
+        }, []);
+    };
 
     /**
      * Fix the mime type such that it corresponds with the encryption scheme. Also makes sure the mimetype
