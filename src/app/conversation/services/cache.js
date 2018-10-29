@@ -4,6 +4,7 @@ import { flow, filter, each, map, head, maxBy, uniq } from 'lodash/fp';
 import { STATUS, MAILBOX_IDENTIFIERS, CONVERSATION_LIMIT, ELEMENTS_PER_PAGE, MESSAGE_LIMIT } from '../../constants';
 
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
+import { normalizeEmail } from '../../../helpers/string';
 
 const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = STATUS;
 
@@ -145,9 +146,10 @@ function cache(
         const { list } = _.reduce(
             current.concat(previous),
             (acc, sender) => {
-                if (!acc.map[sender.Address]) {
+                const normalizedEmail = normalizeEmail(sender.Address);
+                if (!acc.map[normalizedEmail]) {
                     acc.list.push(sender);
-                    acc.map[sender.Address] = true;
+                    acc.map[normalizedEmail] = true;
                 }
                 return acc;
             },
