@@ -134,7 +134,11 @@ function httpInterceptor($q, $injector, AppModel, networkUtils) {
 
         if (status === 401) {
             const handle401 = $injector.get('handle401');
-            return handle401(error);
+            return handle401(error).catch((error) => {
+                // Special handling to notify the "Invalid access token" error from the API
+                handleCustomError(error);
+                return $q.reject(error);
+            });
         }
 
         if (status === 403) {

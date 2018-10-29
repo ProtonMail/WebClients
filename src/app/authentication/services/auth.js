@@ -188,9 +188,9 @@ function authentication(
             return string;
         },
 
-        getRefreshCookie() {
+        getRefreshCookie(config) {
             $log.debug('getRefreshCookie');
-            return authApi.refresh({}).then((response) => {
+            return authApi.refresh({}, config).then((response) => {
                 $log.debug(response);
 
                 // Necessary during the transition to UIDs

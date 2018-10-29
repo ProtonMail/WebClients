@@ -13,10 +13,11 @@ function authApi($http, url) {
         /**
          * Refresh an expired token
          * @param {Object} params
+         * @param {Object} config
          * @return {Promise}
          */
-        refresh(params = {}) {
-            return $http.post(requestURL('refresh'), params);
+        refresh(params = {}, config = {}) {
+            return $http.post(requestURL('refresh'), params, config);
         },
         /**
          * Set secure cookies, web app only
