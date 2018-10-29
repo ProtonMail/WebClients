@@ -3,10 +3,8 @@ import { openWindow, parseURL } from '../../../helpers/browser';
 
 /* @ngInject */
 function unsubscribeModel(
-    $http,
-    authentication,
     dispatchers,
-    addressesModel,
+    composerFromModel,
     gettextCatalog,
     messageModel,
     notification,
@@ -28,7 +26,12 @@ function unsubscribeModel(
         return false;
     }
 
-    function sendMessage(value = '', addressID) {
+    /**
+     * Configure and send unsubscribe message
+     * @param {String} value
+     * @param {Object} address
+     */
+    function sendMessage(value = '', address) {
         const message = messageModel();
         const mailto = value.replace('mailto:', '');
         let j = mailto.indexOf('?');
@@ -39,10 +42,9 @@ function unsubscribeModel(
 
         const to = mailto.substring(0, j);
         const { searchObject = {} } = parseURL(mailto.substring(j + 1));
-        const { ID } = addressesModel.getFirst();
 
-        message.AddressID = addressID || ID;
-        message.From = addressesModel.getByID(message.AddressID);
+        message.AddressID = address.ID;
+        message.From = address;
         message.Password = '';
         message.AutoSaveContacts = 0; // Override the global settings value to prevent auto adding recipients to contacts
 
@@ -72,12 +74,12 @@ function unsubscribeModel(
         const list = message.getListUnsubscribe();
         const oneClick = message.getListUnsubscribePost() === UNSUBSCRIBE_ONE_CLICK;
         const matches = (list.match(UNSUBSCRIBE_REGEX) || []).map((m) => m.replace('<', '').replace('>', ''));
-        const addressID = message.AddressID;
+        const { address } = composerFromModel.get(message);
 
         _.each(matches, (value = '') => {
             const startsWithHttp = value.startsWith('http');
 
-            value.startsWith('mailto:') && sendMessage(value, addressID);
+            value.startsWith('mailto:') && sendMessage(value, address);
             startsWithHttp && !oneClick && openWindow(value);
             startsWithHttp && oneClick && postRequest(value); // NOTE Present with MailChimp message but has CORB issue
         });
