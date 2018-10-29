@@ -687,7 +687,7 @@ msgstr ""
 #: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:26
-#: ./src/templates/message/message.tpl.html:200
+#: ./src/templates/message/message.tpl.html:199
 #: ./src/templates/modals/deleteAccount.tpl.html:52
 #: ./src/templates/ui/toolbarMobile.tpl.html:50
 #: ./src/templates/views/domains.tpl.html:124
@@ -908,7 +908,7 @@ msgstr ""
 #: ./src/app/address/services/deleteKeyProcess.js:32
 #: ./src/templates/address/addressKeysView.tpl.html:144
 #: ./src/templates/address/addressKeysView.tpl.html:158
-#: ./src/templates/message/message.tpl.html:219
+#: ./src/templates/message/message.tpl.html:218
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
@@ -945,7 +945,7 @@ msgctxt "Action"
 msgid "Forgot username?"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:161
+#: ./src/templates/message/message.tpl.html:160
 msgctxt "Action"
 msgid "Forward"
 msgstr ""
@@ -999,7 +999,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:231
+#: ./src/templates/message/message.tpl.html:230
 msgctxt "Action"
 msgid "Hide details"
 msgstr ""
@@ -1052,7 +1052,7 @@ msgid "Italic"
 msgstr ""
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:135
+#: ./src/templates/message/message.tpl.html:134
 msgctxt "Action"
 msgid "Label as"
 msgstr ""
@@ -1154,13 +1154,13 @@ msgctxt "Action"
 msgid "Mark as read - Mark as unread"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:193
+#: ./src/templates/message/message.tpl.html:192
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr ""
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:11
-#: ./src/templates/message/message.tpl.html:186
+#: ./src/templates/message/message.tpl.html:185
 #: ./src/templates/ui/toolbarMobile.tpl.html:17
 msgctxt "Action"
 msgid "Mark as unread"
@@ -1195,14 +1195,14 @@ msgid "Minimize"
 msgstr ""
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:168
+#: ./src/templates/message/message.tpl.html:167
 #: ./src/templates/squire/moreToggle.tpl.html:2
 msgctxt "Action"
 msgid "More"
 msgstr ""
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:127
+#: ./src/templates/message/message.tpl.html:126
 msgctxt "Action"
 msgid "Move to"
 msgstr ""
@@ -1214,7 +1214,7 @@ msgid "Move to archive"
 msgstr ""
 
 #: ./src/templates/elements/moveElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:176
+#: ./src/templates/message/message.tpl.html:175
 #: ./src/templates/ui/toolbarMobile.tpl.html:38
 msgctxt "Action"
 msgid "Move to inbox"
@@ -1227,7 +1227,7 @@ msgid "Move to spam"
 msgstr ""
 
 #: ./src/templates/elements/moveElement.tpl.html:2
-#: ./src/templates/message/message.tpl.html:182
+#: ./src/templates/message/message.tpl.html:181
 #: ./src/templates/ui/toolbarMobile.tpl.html:34
 msgctxt "Action"
 msgid "Move to trash"
@@ -1337,7 +1337,7 @@ msgctxt "Action"
 msgid "Previous"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:223
+#: ./src/templates/message/message.tpl.html:222
 #: ./src/templates/utils/printModal.tpl.html:28
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
@@ -1414,12 +1414,12 @@ msgctxt "Action"
 msgid "Remove Entry"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:144
+#: ./src/templates/message/message.tpl.html:143
 msgctxt "Action"
 msgid "Reply"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:153
+#: ./src/templates/message/message.tpl.html:152
 msgctxt "Action"
 msgid "Reply all"
 msgstr ""
@@ -1614,7 +1614,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:230
+#: ./src/templates/message/message.tpl.html:229
 msgctxt "Action"
 msgid "Show details"
 msgstr ""
@@ -1864,22 +1864,22 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:214
+#: ./src/templates/message/message.tpl.html:213
 msgctxt "Action"
 msgid "View headers"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:215
+#: ./src/templates/message/message.tpl.html:214
 msgctxt "Action"
 msgid "View original"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:209
+#: ./src/templates/message/message.tpl.html:208
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:205
+#: ./src/templates/message/message.tpl.html:204
 msgctxt "Action"
 msgid "View source code"
 msgstr ""
@@ -2569,7 +2569,7 @@ msgctxt "Condition for custom filter"
 msgid "matches"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:37
+#: ./src/app/address/directives/addressKeysView.js:38
 msgctxt "Confirm message"
 msgid "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails."
 msgstr ""
@@ -2595,7 +2595,7 @@ msgid ""
 "        It may lead to data loss. Are you sure you want to continue?"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:44
+#: ./src/app/address/directives/addressKeysView.js:45
 msgctxt "Confirm message"
 msgid "This key has not been activated. It is only possible to export the public key. Do you want to export the public key?"
 msgstr ""
@@ -2620,12 +2620,12 @@ msgctxt "Confirm modal title"
 msgid "Automatic sign outgoing messages?"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:43
+#: ./src/app/address/directives/addressKeysView.js:44
 msgctxt "Confirm modal title"
 msgid "Download Public Key"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:42
+#: ./src/app/address/directives/addressKeysView.js:43
 msgctxt "Confirm modal title"
 msgid "Import private key"
 msgstr ""
@@ -2698,11 +2698,6 @@ msgstr ""
 #: ./src/app/payment/factories/paymentModel.js:7
 msgctxt "Coupon code request"
 msgid "Coupon code accepted"
-msgstr ""
-
-#: ./src/app/formUtils/directives/cvcTooltip.js:13
-msgctxt "Credit card CVC"
-msgid "Security Code"
 msgstr ""
 
 #: ./src/app/payment/modals/cardModal.js:25
@@ -3354,7 +3349,7 @@ msgctxt "Error"
 msgid "Cannot generate a zip of your attachments."
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:49
+#: ./src/app/address/directives/addressKeysView.js:50
 msgctxt "Error"
 msgid "Cannot read private key"
 msgstr ""
@@ -3377,7 +3372,7 @@ msgid ""
 "<a href=\"https://protonmail.com/support/knowledge-base/enabling-cookies/\" target=\"_blank\">More information here</a>."
 msgstr ""
 
-#: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:28
+#: ./src/app/authentication/interceptors/httpInterceptor.js:27
 msgctxt "Error"
 msgid "Could not connect to server."
 msgstr ""
@@ -3424,7 +3419,7 @@ msgctxt "Error"
 msgid "Error encrypting message"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:64
+#: ./src/app/address/directives/addressKeysView.js:65
 msgctxt "Error"
 msgid "Error reactivating key. Please try again"
 msgstr ""
@@ -3444,7 +3439,7 @@ msgctxt "Error"
 msgid "Error while copying"
 msgstr ""
 
-#: ./src/app/attachments/services/AttachmentLoader.js:20
+#: ./src/app/attachments/services/AttachmentLoader.js:19
 msgctxt "Error"
 msgid "Failed to encrypt attachment. Please try again."
 msgstr ""
@@ -3620,8 +3615,8 @@ msgctxt "Error"
 msgid "Name exceeds maximum length"
 msgstr ""
 
-#: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:27
-#: ./src/templates/user/usernameDomain.tpl.html:47
+#: ./src/app/authentication/interceptors/httpInterceptor.js:26
+#: ./src/templates/user/usernameDomain.tpl.html:45
 msgctxt "Error"
 msgid "No Internet connection found."
 msgstr ""
@@ -3642,7 +3637,7 @@ msgctxt "Error"
 msgid "No keys to update"
 msgstr ""
 
-#: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:24
+#: ./src/app/authentication/interceptors/httpInterceptor.js:23
 msgctxt "Error"
 msgid "Non-integer API version requested."
 msgstr ""
@@ -3703,7 +3698,7 @@ msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr ""
 
-#: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:30
+#: ./src/app/authentication/interceptors/httpInterceptor.js:29
 msgctxt "Error"
 msgid "ProtonMail cannot be reached right now, please try again later."
 msgstr ""
@@ -3713,7 +3708,7 @@ msgctxt "Error"
 msgid "Recovery email invalid"
 msgstr ""
 
-#: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:29
+#: ./src/app/authentication/interceptors/httpInterceptor.js:28
 msgctxt "Error"
 msgid "Request timed out, please try again."
 msgstr ""
@@ -3763,7 +3758,7 @@ msgctxt "Error"
 msgid "Thank you for your willingness to donate. The maximum we can accept in single donations is 999 999 at this moment. Thank you"
 msgstr ""
 
-#: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:26
+#: ./src/app/authentication/interceptors/httpInterceptor.js:25
 msgctxt "Error"
 msgid "The ProtonMail API is offline:"
 msgstr ""
@@ -3815,7 +3810,7 @@ msgctxt "Error"
 msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:48
+#: ./src/templates/user/usernameDomain.tpl.html:46
 msgctxt "Error"
 msgid "The request failed"
 msgstr ""
@@ -3830,12 +3825,12 @@ msgctxt "Error"
 msgid "Unable to send the message."
 msgstr ""
 
-#: ./src/app/attachments/services/attachmentApi.js:177
+#: ./src/app/attachments/services/attachmentApi.js:167
 msgctxt "Error"
 msgid "Unable to upload file. Please try again"
 msgstr ""
 
-#: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:25
+#: ./src/app/authentication/interceptors/httpInterceptor.js:24
 msgctxt "Error"
 msgid "Unsupported API version."
 msgstr ""
@@ -3855,46 +3850,11 @@ msgctxt "Error"
 msgid "Upgrade to a paid plan to send from your {{email}} address"
 msgstr ""
 
-#: ./src/app/commons/models/userAvailability.js:25
-msgctxt "Error"
-msgid "Username already taken"
-msgstr ""
-
-#: ./src/app/commons/models/userAvailability.js:33
-msgctxt "Error"
-msgid "Username already used"
-msgstr ""
-
-#: ./src/app/commons/models/userAvailability.js:27
-msgctxt "Error"
-msgid "Username contains invalid characters"
-msgstr ""
-
-#: ./src/templates/user/usernameDomain.tpl.html:46
-msgctxt "Error"
-msgid "Username invalid"
-msgstr ""
-
-#: ./src/app/commons/models/userAvailability.js:29
-msgctxt "Error"
-msgid "Username must begin with a letter or digit"
-msgstr ""
-
-#: ./src/app/commons/models/userAvailability.js:31
-msgctxt "Error"
-msgid "Username must end with a letter or digit"
-msgstr ""
-
-#: ./src/templates/user/usernameDomain.tpl.html:44
+#: ./src/templates/user/usernameDomain.tpl.html:43
 #: ./src/templates/views/reset-login-password.tpl.html:19
 #: ./src/templates/views/reset-login-password.tpl.html:66
 msgctxt "Error"
 msgid "Username required"
-msgstr ""
-
-#: ./src/app/commons/models/userAvailability.js:32
-msgctxt "Error"
-msgid "Username too long"
 msgstr ""
 
 #: ./src/app/settings/controllers/domains.js:264
@@ -3917,7 +3877,7 @@ msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:45
+#: ./src/templates/user/usernameDomain.tpl.html:44
 msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr ""
@@ -3940,7 +3900,7 @@ msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr ""
 
-#: ./src/app/attachments/services/AttachmentLoader.js:21
+#: ./src/app/attachments/services/AttachmentLoader.js:20
 msgctxt "Error"
 msgid "You did not provide a file."
 msgstr ""
@@ -4090,7 +4050,7 @@ msgctxt "Error message"
 msgid "Uploaded key doesn't match selected key."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:21
+#: ./src/app/contact/directives/contactPublicKeys.js:20
 msgctxt "Error message"
 msgid "{{keys}} is not a valid PGP key."
 msgid_plural "{{keys}} are not valid PGP keys."
@@ -4709,7 +4669,7 @@ msgctxt "Info"
 msgid "A draft selected is open in a composer, this action will close the composer and delete the message."
 msgstr ""
 
-#: ./src/app/authentication/interceptors/authHttpResponseInterceptor.js:19
+#: ./src/app/authentication/interceptors/httpInterceptor.js:18
 msgctxt "Info"
 msgid "A new version of ProtonMail is available. Please refresh this page."
 msgstr ""
@@ -4967,7 +4927,7 @@ msgctxt "Info"
 msgid "Change default text direction to {{value}}"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:41
+#: ./src/templates/user/usernameDomain.tpl.html:40
 msgctxt "Info"
 msgid "Checking username"
 msgstr ""
@@ -5220,12 +5180,12 @@ msgctxt "Info"
 msgid "Folders and labels are a powerful tool to manage your inbox."
 msgstr ""
 
-#: ./src/app/formUtils/directives/cvcTooltip.js:8
+#: ./src/app/formUtils/directives/cvcTooltip.js:10
 msgctxt "Info"
 msgid "For American Express, the 4 digits on the front of your card."
 msgstr ""
 
-#: ./src/app/formUtils/directives/cvcTooltip.js:3
+#: ./src/app/formUtils/directives/cvcTooltip.js:5
 msgctxt "Info"
 msgid "For Visa, MasterCard and Discover, the 3 digits on the back of your card."
 msgstr ""
@@ -5815,12 +5775,12 @@ msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:32
+#: ./src/app/address/directives/addressKeysView.js:33
 msgctxt "Info"
 msgid "Select an address to which the imported key will be attached"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:27
+#: ./src/app/address/directives/addressKeysView.js:28
 msgctxt "Info"
 msgid "Select an address to which the new key will be attached"
 msgstr ""
@@ -5890,7 +5850,7 @@ msgctxt "Info"
 msgid "Take back your privacy! Setting up your secure email account takes less than 2 minutes."
 msgstr ""
 
-#: ./src/app/user/services/manageUser.js:20
+#: ./src/app/user/services/manageUser.js:21
 msgctxt "Info"
 msgid "The app will now be reloaded in a few seconds"
 msgstr ""
@@ -6022,7 +5982,7 @@ msgctxt "Info"
 msgid "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization."
 msgstr ""
 
-#: ./src/app/address/directives/pmMeTooltip.js:5
+#: ./src/app/address/directives/pmMeTooltip.js:7
 msgctxt "Info"
 msgid "This will add the {{email}} address to your account"
 msgstr ""
@@ -6113,7 +6073,7 @@ msgctxt "Info"
 msgid "User updated"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:40
+#: ./src/templates/user/usernameDomain.tpl.html:39
 msgctxt "Info"
 msgid "Username available"
 msgstr ""
@@ -6370,7 +6330,7 @@ msgctxt "Info"
 msgid "Your account is currently not eligible for ProtonVPN access. If you are part of an Organization, please contact your account administrator."
 msgstr ""
 
-#: ./src/app/user/services/manageUser.js:19
+#: ./src/app/user/services/manageUser.js:20
 msgctxt "Info"
 msgid "Your admin privileges have been revoked."
 msgstr ""
@@ -7222,7 +7182,7 @@ msgctxt "Label for contact Sign toggle"
 msgid "Sign"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:108
+#: ./src/templates/message/message.tpl.html:107
 msgctxt "Label for the message size when displaying email details"
 msgid "Size:"
 msgstr ""
@@ -7683,12 +7643,12 @@ msgctxt "Message for report phishing modal"
 msgid "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full."
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:36
+#: ./src/templates/message/message.tpl.html:35
 msgctxt "Message label"
 msgid "Draft"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:37
+#: ./src/templates/message/message.tpl.html:36
 msgctxt "Message label"
 msgid "Sent"
 msgstr ""
@@ -7703,7 +7663,7 @@ msgctxt "Message network error"
 msgid "Sanitization error"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:72
+#: ./src/templates/message/message.tpl.html:71
 msgctxt "Message recipient label"
 msgid "To"
 msgstr ""
@@ -7767,7 +7727,7 @@ msgctxt "More Toggles"
 msgid "Sign message"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:77
+#: ./src/templates/message/message.tpl.html:76
 msgctxt "No recipients to display in the message header"
 msgid "Undisclosed Recipients"
 msgstr ""
@@ -8593,7 +8553,7 @@ msgid ""
 "                or purchasing more storage before you run out of capacity."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:29
+#: ./src/app/contact/directives/contactPublicKeys.js:28
 #: ./src/app/contact/factories/contactKey.js:9
 msgctxt "String separator"
 msgid "and"
@@ -8686,17 +8646,17 @@ msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:58
+#: ./src/app/address/directives/addressKeysView.js:59
 msgctxt "Success"
 msgid "Encryption and signature verification disabled"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:56
+#: ./src/app/address/directives/addressKeysView.js:57
 msgctxt "Success"
 msgid "Encryption disabled"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:63
+#: ./src/app/address/directives/addressKeysView.js:64
 msgctxt "Success"
 msgid "Encryption enabled"
 msgstr ""
@@ -8784,19 +8744,19 @@ msgctxt "Success"
 msgid "Preference saved"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:55
+#: ./src/app/address/directives/addressKeysView.js:56
 msgctxt "Success"
 msgid "Primary key changed"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:228
+#: ./src/app/address/directives/addressKeysView.js:229
 msgctxt "Success"
 msgid "Private key imported"
 msgid_plural "{{$count}} Private keys imported"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/address/directives/addressKeysView.js:237
+#: ./src/app/address/directives/addressKeysView.js:238
 msgctxt "Success"
 msgid "Private key reactivated"
 msgstr ""
@@ -8826,7 +8786,7 @@ msgctxt "Success"
 msgid "Setting updated"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:57
+#: ./src/app/address/directives/addressKeysView.js:58
 msgctxt "Success"
 msgid "Signature verification enabled"
 msgstr ""
@@ -8856,7 +8816,7 @@ msgctxt "Success notification"
 msgid "Phishing reported"
 msgstr ""
 
-#: ./src/app/message/factories/unsubscribeModel.js:22
+#: ./src/app/message/factories/unsubscribeModel.js:20
 msgctxt "Success notification"
 msgid "Unsubscribed"
 msgstr ""
@@ -9030,7 +8990,6 @@ msgctxt "Title"
 msgid "Addresses"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:58
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:43
 #: ./src/app/ui/factories/pageTitlesModel.js:47
 #: ./src/templates/views/members.tpl.html:114
@@ -9854,7 +9813,7 @@ msgctxt "Title"
 msgid "Identity"
 msgstr ""
 
-#: ./src/app/attachments/factories/attachmentModel.js:31
+#: ./src/app/attachments/factories/attachmentModel.js:29
 msgctxt "Title"
 msgid "Image"
 msgstr ""
@@ -9925,6 +9884,7 @@ msgctxt "Title"
 msgid "Keyboard Shortcuts"
 msgstr ""
 
+#: ./src/app/composer/services/validateMessage.js:58
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:68
 #: ./src/app/ui/factories/pageTitlesModel.js:44
 msgctxt "Title"
@@ -10046,7 +10006,7 @@ msgctxt "Title"
 msgid "Navigation"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:66
+#: ./src/app/address/directives/addressKeysView.js:67
 msgctxt "Title"
 msgid "New Address Key ({{ email }})"
 msgstr ""
@@ -10564,7 +10524,7 @@ msgctxt "Title"
 msgid "Storage"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:111
+#: ./src/templates/message/message.tpl.html:110
 msgctxt "Title"
 msgid "Subject"
 msgstr ""
@@ -10785,7 +10745,7 @@ msgctxt "Title"
 msgid "Without Attachments"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:50
+#: ./src/app/address/directives/addressKeysView.js:51
 msgctxt "Title"
 msgid "You can generate a new encryption key if you think your previous key has been compromised. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
 msgstr ""
@@ -11263,7 +11223,7 @@ msgctxt "VCard key name"
 msgid "Cell"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:43
+#: ./src/app/contact/factories/contactTransformLabel.js:44
 msgctxt "VCard key name"
 msgid "Cryptographic scheme"
 msgstr ""
@@ -11273,158 +11233,163 @@ msgctxt "VCard key name"
 msgid "Custom"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:12
+#: ./src/app/contact/factories/contactTransformLabel.js:13
 msgctxt "VCard key name"
 msgid "Email"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:46
+#: ./src/app/contact/factories/contactTransformLabel.js:47
 msgctxt "VCard key name"
 msgid "Encrypt"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:13
+#: ./src/app/contact/factories/contactTransformLabel.js:14
 msgctxt "VCard key name"
 msgid "Fax"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:44
+#: ./src/app/contact/factories/contactTransformLabel.js:45
 msgctxt "VCard key name"
 msgid "Format"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:14
+#: ./src/app/contact/factories/contactTransformLabel.js:15
 msgctxt "VCard key name"
 msgid "Free or busy URL"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:16
+#: ./src/app/contact/factories/contactTransformLabel.js:17
 msgctxt "VCard key name"
 msgid "Gender"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:17
+#: ./src/app/contact/factories/contactTransformLabel.js:18
 msgctxt "VCard key name"
 msgid "Geolocation"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:19
+#: ./src/app/contact/factories/contactTransformLabel.js:20
 msgctxt "VCard key name"
 msgid "Impp"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:21
+#: ./src/app/contact/factories/contactTransformLabel.js:22
 msgctxt "VCard key name"
 msgid "Language"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:22
+#: ./src/app/contact/factories/contactTransformLabel.js:23
 msgctxt "VCard key name"
 msgid "Logo"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:23
+#: ./src/app/contact/factories/contactTransformLabel.js:24
 msgctxt "VCard key name"
 msgid "Member"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:38
+#: ./src/app/contact/factories/contactTransformLabel.js:39
 msgctxt "VCard key name"
 msgid "Mobile"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:15
+#: ./src/app/contact/factories/contactTransformLabel.js:16
 msgctxt "VCard key name"
 msgid "Name"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:24
+#: ./src/app/contact/factories/contactTransformLabel.js:25
 msgctxt "VCard key name"
 msgid "Nickname"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:25
+#: ./src/app/contact/factories/contactTransformLabel.js:26
 msgctxt "VCard key name"
 msgid "Note"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:26
+#: ./src/app/contact/factories/contactTransformLabel.js:27
 msgctxt "VCard key name"
 msgid "Office"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:27
+#: ./src/app/contact/factories/contactTransformLabel.js:28
 msgctxt "VCard key name"
 msgid "Organization"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:18
-#: ./src/app/contact/factories/contactTransformLabel.js:39
+#: ./src/app/contact/factories/contactTransformLabel.js:12
+msgctxt "VCard key name"
+msgid "Other"
+msgstr ""
+
+#: ./src/app/contact/factories/contactTransformLabel.js:19
+#: ./src/app/contact/factories/contactTransformLabel.js:40
 msgctxt "VCard key name"
 msgid "Personal"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:35
+#: ./src/app/contact/factories/contactTransformLabel.js:36
 msgctxt "VCard key name"
 msgid "Phone"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:28
+#: ./src/app/contact/factories/contactTransformLabel.js:29
 msgctxt "VCard key name"
 msgid "Photo"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:29
+#: ./src/app/contact/factories/contactTransformLabel.js:30
 msgctxt "VCard key name"
 msgid "Private"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:20
+#: ./src/app/contact/factories/contactTransformLabel.js:21
 msgctxt "VCard key name"
 msgid "Public Key"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:31
+#: ./src/app/contact/factories/contactTransformLabel.js:32
 msgctxt "VCard key name"
 msgid "Related"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:32
+#: ./src/app/contact/factories/contactTransformLabel.js:33
 msgctxt "VCard key name"
 msgid "Revision"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:33
+#: ./src/app/contact/factories/contactTransformLabel.js:34
 msgctxt "VCard key name"
 msgid "Role"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:45
+#: ./src/app/contact/factories/contactTransformLabel.js:46
 msgctxt "VCard key name"
 msgid "Sign"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:30
+#: ./src/app/contact/factories/contactTransformLabel.js:31
 msgctxt "VCard key name"
 msgid "Software"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:34
+#: ./src/app/contact/factories/contactTransformLabel.js:35
 msgctxt "VCard key name"
 msgid "Sound"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:47
+#: ./src/app/contact/factories/contactTransformLabel.js:48
 msgctxt "VCard key name"
 msgid "TLS"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:37
+#: ./src/app/contact/factories/contactTransformLabel.js:38
 msgctxt "VCard key name"
 msgid "Timezone"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:36
+#: ./src/app/contact/factories/contactTransformLabel.js:37
 msgctxt "VCard key name"
 msgid "Title"
 msgstr ""
@@ -11434,7 +11399,7 @@ msgctxt "VCard key name"
 msgid "URI for a calendar"
 msgstr ""
 
-#: ./src/app/contact/factories/contactTransformLabel.js:42
+#: ./src/app/contact/factories/contactTransformLabel.js:43
 msgctxt "VCard key name"
 msgid "Work"
 msgstr ""
