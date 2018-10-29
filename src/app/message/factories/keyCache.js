@@ -48,9 +48,9 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
         }
 
         const { Receive, Keys: addressKeys = [] } = address;
-        const Keys = addressKeys.map(({ PublicKey, decrypted }) => {
+        const Keys = addressKeys.map(({ PublicKey, Flags }) => {
             return {
-                Send: decrypted && Receive,
+                Flags,
                 PublicKey
             };
         });
