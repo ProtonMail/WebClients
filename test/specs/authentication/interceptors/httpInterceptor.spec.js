@@ -119,10 +119,13 @@ describe('http interceptor', () => {
             });
         });
 
-        it('should handle 401', () => {
+        it('should handle 401 when it succeeds', () => {
+            MOCKS.handle401.and.returnValue(Promise.resolve());
             instance.responseError({ status: 401, config });
             expect(MOCKS.handle401)
                 .toHaveBeenCalled();
+            expect(MOCKS.notification.error)
+                .not.toHaveBeenCalled();
         });
 
         it('should handle 403', async () => {

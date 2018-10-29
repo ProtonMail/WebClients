@@ -1,7 +1,10 @@
 import _ from 'lodash';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
+
+const { AUTH_COOKIES_REFRESH_INVALID, AUTH_REFRESH_TOKEN_INVALID } = API_CUSTOM_ERROR_CODES;
 
 /* @ngInject */
-function handle401($http, authentication) {
+function handle401($http, $q, authentication) {
     let refreshPromise = null;
 
     const clearPromise = () => (refreshPromise = null);
@@ -20,17 +23,18 @@ function handle401($http, authentication) {
     return (rejection) => {
         if (!authentication.existingSession()) {
             logout();
-            return Promise.reject(rejection);
+            return $q.reject(rejection);
         }
 
         if (!refreshPromise) {
             refreshPromise = authentication
-                .getRefreshCookie()
+                // Don't display this error, the "invalid access token" error will be displayed.
+                .getRefreshCookie({ suppress: [AUTH_COOKIES_REFRESH_INVALID, AUTH_REFRESH_TOKEN_INVALID] })
                 .then(clearPromise)
                 .catch(() => {
                     logout();
                     // If the refresh call fails, hide the "Refresh cookie fail" error and return "Invalid access token" instead
-                    return Promise.reject(rejection);
+                    return $q.reject(rejection);
                 });
         }
 
