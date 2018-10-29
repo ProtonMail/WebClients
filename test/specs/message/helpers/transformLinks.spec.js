@@ -39,7 +39,6 @@ describe('transformLinks service', () => {
         });
 
         it('should add target for real link', () => {
-            console.log(output)
             expect(output.querySelectorAll('[target="_blank"]').length).toEqual(3);
             expect(output.querySelectorAll('[href^="http"][target="_blank"]').length).toEqual(3);
         });
