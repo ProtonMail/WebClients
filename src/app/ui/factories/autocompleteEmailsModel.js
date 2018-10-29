@@ -25,6 +25,11 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
         }
     });
 
+    on('logout', () => {
+        CACHE.EMAILS.length = 0;
+        CACHE.LABELS = Object.create(null);
+    });
+
     /**
      * @{link https://css-tricks.com/snippets/javascript/htmlentities-for-javascript/}
      */
