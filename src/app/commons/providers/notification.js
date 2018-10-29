@@ -9,6 +9,7 @@ function notification() {
             info: 'notification-info'
         }
     };
+    const STATE = {};
 
     this.typeClasses = (config = {}) => ({ ...CONFIG.classNames, ...config });
     this.duration = (value = 6000) => (CONFIG.duration = value);
@@ -48,7 +49,10 @@ function notification() {
                     cache.put(message, false);
                 };
 
-                type === 'error' && (options.duration = 10000);
+                if (type === 'error' && typeof options.duration === 'undefined') {
+                    options.duration = 10000;
+                }
+
                 notify({ message, ...options, onClose });
             };
 
@@ -63,10 +67,16 @@ function notification() {
             notify.config(config);
 
             return {
+                disableClose() {
+                    STATE.disableClose = true;
+                },
                 success: action('success'),
                 error: action('error'),
                 info: action('info'),
                 closeAll() {
+                    if (STATE.disableClose) {
+                        return;
+                    }
                     // We need to empty our cache as well because the onClose is not called from `closeAll`.
                     cache.removeAll();
                     notify.closeAll();

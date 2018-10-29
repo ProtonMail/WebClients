@@ -12,7 +12,7 @@ function LoginController(
     gettextCatalog,
     authentication,
     networkActivityTracker,
-    notify,
+    notification,
     helpLoginModal,
     AppModel,
     pmcw,
@@ -60,9 +60,8 @@ function LoginController(
     $scope.$on('$destroy', unsubscribe);
 
     function notifyError(message, options) {
-        return notify({
+        return notification.error({
             message,
-            classes: 'notification-danger',
             ...options
         });
     }
@@ -72,7 +71,7 @@ function LoginController(
      */
     function clearErrors() {
         $scope.error = null;
-        notify.closeAll();
+        notification.closeAll();
     }
 
     /**

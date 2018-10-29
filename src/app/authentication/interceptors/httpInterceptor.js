@@ -9,9 +9,8 @@ const {
 } = API_CUSTOM_ERROR_CODES;
 
 /* @ngInject */
-function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
-    let notification;
-    let NOTIFS;
+function httpInterceptor($q, $injector, AppModel, networkUtils) {
+    const STATE = {};
 
     const buildNotifs = () => {
         const gettextCatalog = $injector.get('gettextCatalog');
@@ -35,29 +34,35 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
         };
     };
 
-    const notifyError = (error, message) => {
+    /**
+     * Notify an error and set noNotify on the error.
+     * @param {Object} error - The http rejection from $http
+     * @param {String} message - The string to show
+     * @param {Object} [options] - Options object to pass to notify
+     */
+    const notifyError = (error, message, options) => {
         // Disable the notification. Used for the SRP because we don't want to refactor it now.
         if (error.config && error.config.noNotify) {
             return;
         }
         // Set no notify for the network activity tracker to not display errors twice.
         error.noNotify = true;
-        $injector.get('notification').error(message);
+        $injector.get('notification').error(message, options);
     };
 
     const closeNotification = () => {
-        if (!notification) {
+        if (!STATE.notification) {
             return;
         }
-        notification.close();
-        notification = undefined;
+        STATE.notification.close();
+        delete STATE.notification;
     };
 
     /**
      * Handle custom API errors.
      * Returns a new promise if the rejection should be overriden.
-     * @param {Error} error
-     * @returns {Promise | undefined}
+     * @param {Object} error - The http rejection from $http
+     * @returns {Promise | void}
      */
     const handleCustomError = (error) => {
         if (!error || !error.data) {
@@ -74,19 +79,27 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
 
         // Show the API error only - pending decision to be taken for how to handle it.
         if (errorCode === APP_VERSION_BAD) {
-            return notifyError(error, errorMessage);
+            STATE.appVersionBad = true;
+
+            $injector.get('notification').closeAll();
+            $injector.get('notification').disableClose();
+
+            return notifyError(error, errorMessage, {
+                templateUrl: require('../../../templates/notifications/badVersion.tpl.html'),
+                duration: '0'
+            });
         }
 
         if (errorCode === API_VERSION_INVALID) {
-            return notifyError(error, NOTIFS.nonIntegerVersion);
+            return notifyError(error, STATE.NOTIFS.nonIntegerVersion);
         }
 
         if (errorCode === API_VERSION_BAD) {
-            return notifyError(error, NOTIFS.unsupported);
+            return notifyError(error, STATE.NOTIFS.unsupported);
         }
 
         if (errorCode === API_OFFLINE) {
-            return notifyError(error, NOTIFS.offline + errorMessage);
+            return notifyError(error, STATE.NOTIFS.offline + errorMessage);
         }
 
         if (errorCode === HUMAN_VERIFICATION_REQUIRED) {
@@ -109,7 +122,7 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
     /**
      * Handle API status code errors.
      * Returns a new promise if the rejection should be overriden.
-     * @param {Error} error
+     * @param {Object} error - The http rejection from $http
      * @returns {Promise | undefined}
      */
     const handleHttpStatus = (error) => {
@@ -131,18 +144,18 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
         }
 
         if (status === 504) {
-            notification = notifyError(error, NOTIFS.timeout);
+            STATE.notification = notifyError(error, STATE.NOTIFS.timeout);
             return AppModel.set('requestTimeout', true);
         }
 
         if ([408, 503].indexOf(error.status) > -1) {
-            notification = notifyError(error, NOTIFS.noReachProton);
+            STATE.notification = notifyError(error, STATE.NOTIFS.noReachProton);
         }
     };
 
     /**
      * Handle offline error codes.
-     * @param {Error} error
+     * @param {Object} error - The http rejection from $http
      * @returns {Promise | undefined}
      */
     const handleOfflineError = (error) => {
@@ -171,7 +184,7 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
 
             // Some API calls show a custom error notification on offline, like the event manager.
             if (!noOfflineNotify) {
-                notifyError(error, NOTIFS[key]);
+                notifyError(error, STATE.NOTIFS[key]);
             }
 
             AppModel.set('onLine', false);
@@ -180,11 +193,27 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
         return handleTryAgain(error);
     };
 
+    /**
+     * Check if the path begins with templates or assets.
+     * It should always end with a slash and may optionally begin with one.
+     * @param {String} url
+     * @returns {boolean}
+     */
+    const isTemplateOrAssets = (url) => /^\/?(templates|assets)\//.test(url);
+
     return {
+        request(config) {
+            // If the client has received app version bad from the client, silently reject all requests to prevent them being sent to the API.
+            if (STATE.appVersionBad && !isTemplateOrAssets(config.url)) {
+                return $q.reject({ noNotify: true, config, status: -2 });
+            }
+
+            return config;
+        },
         response(response) {
             closeNotification();
 
-            if (/^(?!.*templates)/.test(response.config.url)) {
+            if (!isTemplateOrAssets(response.config.url)) {
                 AppModel.set('onLine', true);
             }
 
@@ -193,7 +222,7 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
         responseError(error) {
             closeNotification();
 
-            !NOTIFS && (NOTIFS = buildNotifs());
+            !STATE.NOTIFS && (STATE.NOTIFS = buildNotifs());
 
             const offlineOverride = handleOfflineError(error);
             if (offlineOverride) {
@@ -215,4 +244,4 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
     };
 }
 
-export default authHttpResponseInterceptor;
+export default httpInterceptor;

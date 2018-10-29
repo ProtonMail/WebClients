@@ -8,7 +8,7 @@ const sanitize = () => ({
 });
 const MODULE = generateModuleName();
 
-describe('notify service', () => {
+describe('notification service', () => {
     angular.module(MODULE, ['cgNotify', 'templates-app', 'ngSanitize'])
         .factory('sanitize', sanitize)
         .provider('notification', notificationService)
@@ -35,7 +35,7 @@ describe('notify service', () => {
 
     it('should display text notification', () => {
         showNotification('hello');
-        expect(dom[0].querySelector('span[ng-bind-html]').innerText)
+        expect(dom[0].querySelector('span.ng-binding').innerText)
             .toBe('hello');
     });
 
