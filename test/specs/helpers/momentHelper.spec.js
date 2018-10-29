@@ -47,4 +47,10 @@ describe('moment helper', () => {
         expect(getString())
             .toEqual('lundi, février 20, 2017 3:12 PM');
     });
+
+    it('should override 24 hour time with 12 hour time in a locale (norwegian) not supported', () => {
+        moment.locale(selectLocale('en-us', 'nb'));
+        expect(getString())
+            .toEqual('Monday 20. February 2017 kl. 15:12');
+    });
 });
