@@ -1,10 +1,19 @@
 import _ from 'lodash';
 import juice from 'juice/client';
+import declassify from 'declassify';
 
 import { isIE11 } from './browser';
+import { BLOCKQUOTE_SELECTORS } from '../app/constants';
 
-const OPTIONS = {
+const JUICE_OPTIONS = {
     applyAttributesTableElements: false
+};
+
+const DECLASSIFY_OPTIONS = {
+    ignore: BLOCKQUOTE_SELECTORS.filter((selector) => selector.startsWith('.'))
+        .map((selector) => selector.replace('.', ''))
+        .concat(/proton-.*/)
+        .concat(/protonmail.*/)
 };
 
 /**
@@ -28,13 +37,13 @@ export const findParent = (node, cb) => {
 };
 
 /**
- * Inline css into an element.
+ * Inline css into an element and remove all obsolete class names.
  * @param {String} html
  * @returns {String}
  */
 export const inlineCss = (html = '') => {
     try {
-        return juice(html, OPTIONS);
+        return declassify.process(juice(html, JUICE_OPTIONS), DECLASSIFY_OPTIONS);
     } catch (err) {
         console.error(err);
         return html;

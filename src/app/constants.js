@@ -408,3 +408,19 @@ export const STORAGE_WARNING = {
     WARNING_LIMIT: 90,
     REACHED_LIMIT: 99.99
 };
+
+export const BLOCKQUOTE_SELECTORS = [
+    '.protonmail_quote',
+    '.gmail_quote',
+    '.yahoo_quoted',
+    '.gmail_extra',
+    '.moz-cite-prefix',
+    // '.WordSection1',
+    '#isForwardContent',
+    '#isReplyContent',
+    '#mailcontent:not(table)',
+    '#origbody',
+    '#reply139content',
+    '#oriMsgHtmlSeperator',
+    'blockquote[type="cite"]'
+];

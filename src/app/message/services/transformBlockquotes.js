@@ -1,20 +1,8 @@
+import { BLOCKQUOTE_SELECTORS } from '../../constants';
+
 /* @ngInject */
 function transformBlockquotes(gettextCatalog) {
-    const quotes = [
-        '.protonmail_quote',
-        '.gmail_quote',
-        '.yahoo_quoted',
-        // '.WordSection1',
-        '#isForwardContent',
-        '#isReplyContent',
-        '#mailcontent:not(table)',
-        '#origbody',
-        '#reply139content',
-        '#oriMsgHtmlSeperator',
-        'blockquote[type="cite"]'
-    ]
-        .map((selector) => `${selector}:not(:empty)`)
-        .join(',');
+    const quotes = BLOCKQUOTE_SELECTORS.map((selector) => `${selector}:not(:empty)`).join(',');
 
     return (html) => {
         const blockquotes = [].slice.call(html.querySelectorAll(quotes));
