@@ -1,3 +1,27 @@
+# [3.14.29] - 2018-10-30
+## Added
+- Added Reply/Reply All/Forward options for emails that can’t be decrypted
+
+## Fixed
+- Some newsletters did not display properly
+- Sometimes wrong suggestions were displayed in the "To:" field
+- The "from" email was displayed twice in draft messages from custom folders
+- The "other" phone type was displayed as "X-other"
+- When unsubscribing from a newsletter with a + alias the response was sent from the main address
+- Advanced settings warning was incorrectly shown
+- The Dashboard was not showing properly in Internet Explorer for paid accounts
+- Adding phone numbers and emails was not properly shown in the Contact field
+- To/CC/BCC were broken if too many emails are added
+- When configuring Auto-Reply the "SAVE" button did not work in some cases
+- Changing the "From" address disaplayed both old and new names in the "From" field in a custom folder with a draft message
+- Tooltip was displayed behind the VPN Protection info window
+- Hitting Backspace after deleting an address in the To field acted as the browser's back button
+- Padlock icons in the composer were partially hidden
+
+## Changed
+- Email address handling with + aliases
+- Show 'Invalid access token' error instead of the 'Refresh failed' error
+
 # [3.14.28] - 2018-10-24
 ## Added
 - Warning for email addresses that fail validation
