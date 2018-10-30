@@ -25,7 +25,7 @@ function plusAliasModel(addressesModel) {
             return;
         }
 
-        const plusPart = email.substring(plusIndex, atIndex);
+        const plusPart = email.substring(plusIndex + 1, atIndex);
 
         // Returns an address where the Email is build to respect the exising capitalization and add the plus part
         return { ...address, Email: addPlusAlias(address.Email, plusPart) };
