@@ -60,10 +60,7 @@ function LoginController(
     $scope.$on('$destroy', unsubscribe);
 
     function notifyError(message, options) {
-        return notification.error({
-            message,
-            ...options
-        });
+        return notification.error(message, options);
     }
 
     /**
