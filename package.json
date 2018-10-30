@@ -191,7 +191,7 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "version": "3.14.28",
+  "version": "3.14.29",
   "husky": {
     "hooks": {
       "pre-commit": "./tasks/metrics.sh"
