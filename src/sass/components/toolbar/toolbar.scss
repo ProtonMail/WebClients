@@ -13,9 +13,18 @@
     position: relative;
     z-index: 8;
     display: flex;
+
+    .toolbarDesktop-row-mode-pagination {
+        @include flexRow();
+        flex: 1;
+        justify-content: flex-end;
+        margin-right: -13px; // to align nicely with conversation view
+    }
     .toolbarDesktop-actions-right {
         @include flexRow();
         margin-left: auto;
+        width: 60%;
+        justify-content: flex-end;
     }
     .pm_checkbox {
         float: left;

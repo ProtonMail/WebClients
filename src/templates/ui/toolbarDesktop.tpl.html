@@ -55,9 +55,13 @@
 
     <advanced-filter-element></advanced-filter-element>
 
+    <div class="toolbarDesktop-row-mode-pagination" ng-if="displayPaginator() && viewLayout === 0">
+        <paginator></paginator>
+    </div>
+
     <div class="pull-right action toolbarDesktop-actions-right">
         <choose-layout-btns id="tour-layout"></choose-layout-btns>
         <nav-elements></nav-elements>
-        <paginator ng-if="displayPaginator()"></paginator>
+        <paginator ng-if="displayPaginator() && viewLayout === 1"></paginator>
     </div>
 </nav>
