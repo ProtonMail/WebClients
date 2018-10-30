@@ -687,7 +687,7 @@ msgstr ""
 #: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:26
-#: ./src/templates/message/message.tpl.html:199
+#: ./src/templates/message/message.tpl.html:198
 #: ./src/templates/modals/deleteAccount.tpl.html:52
 #: ./src/templates/ui/toolbarMobile.tpl.html:50
 #: ./src/templates/views/domains.tpl.html:124
@@ -908,7 +908,7 @@ msgstr ""
 #: ./src/app/address/services/deleteKeyProcess.js:32
 #: ./src/templates/address/addressKeysView.tpl.html:144
 #: ./src/templates/address/addressKeysView.tpl.html:158
-#: ./src/templates/message/message.tpl.html:218
+#: ./src/templates/message/message.tpl.html:217
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
@@ -945,7 +945,7 @@ msgctxt "Action"
 msgid "Forgot username?"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:160
+#: ./src/templates/message/message.tpl.html:159
 msgctxt "Action"
 msgid "Forward"
 msgstr ""
@@ -999,7 +999,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:230
+#: ./src/templates/message/message.tpl.html:229
 msgctxt "Action"
 msgid "Hide details"
 msgstr ""
@@ -1052,7 +1052,7 @@ msgid "Italic"
 msgstr ""
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:134
+#: ./src/templates/message/message.tpl.html:133
 msgctxt "Action"
 msgid "Label as"
 msgstr ""
@@ -1154,13 +1154,13 @@ msgctxt "Action"
 msgid "Mark as read - Mark as unread"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:192
+#: ./src/templates/message/message.tpl.html:191
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr ""
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:11
-#: ./src/templates/message/message.tpl.html:185
+#: ./src/templates/message/message.tpl.html:184
 #: ./src/templates/ui/toolbarMobile.tpl.html:17
 msgctxt "Action"
 msgid "Mark as unread"
@@ -1195,14 +1195,14 @@ msgid "Minimize"
 msgstr ""
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:167
+#: ./src/templates/message/message.tpl.html:166
 #: ./src/templates/squire/moreToggle.tpl.html:2
 msgctxt "Action"
 msgid "More"
 msgstr ""
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:126
+#: ./src/templates/message/message.tpl.html:125
 msgctxt "Action"
 msgid "Move to"
 msgstr ""
@@ -1214,7 +1214,7 @@ msgid "Move to archive"
 msgstr ""
 
 #: ./src/templates/elements/moveElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:175
+#: ./src/templates/message/message.tpl.html:174
 #: ./src/templates/ui/toolbarMobile.tpl.html:38
 msgctxt "Action"
 msgid "Move to inbox"
@@ -1227,7 +1227,7 @@ msgid "Move to spam"
 msgstr ""
 
 #: ./src/templates/elements/moveElement.tpl.html:2
-#: ./src/templates/message/message.tpl.html:181
+#: ./src/templates/message/message.tpl.html:180
 #: ./src/templates/ui/toolbarMobile.tpl.html:34
 msgctxt "Action"
 msgid "Move to trash"
@@ -1337,7 +1337,7 @@ msgctxt "Action"
 msgid "Previous"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:222
+#: ./src/templates/message/message.tpl.html:221
 #: ./src/templates/utils/printModal.tpl.html:28
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
@@ -1414,12 +1414,12 @@ msgctxt "Action"
 msgid "Remove Entry"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:143
+#: ./src/templates/message/message.tpl.html:142
 msgctxt "Action"
 msgid "Reply"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:152
+#: ./src/templates/message/message.tpl.html:151
 msgctxt "Action"
 msgid "Reply all"
 msgstr ""
@@ -1614,7 +1614,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:229
+#: ./src/templates/message/message.tpl.html:228
 msgctxt "Action"
 msgid "Show details"
 msgstr ""
@@ -1864,22 +1864,22 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:213
+#: ./src/templates/message/message.tpl.html:212
 msgctxt "Action"
 msgid "View headers"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:214
+#: ./src/templates/message/message.tpl.html:213
 msgctxt "Action"
 msgid "View original"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:208
+#: ./src/templates/message/message.tpl.html:207
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:204
+#: ./src/templates/message/message.tpl.html:203
 msgctxt "Action"
 msgid "View source code"
 msgstr ""
@@ -2084,7 +2084,7 @@ msgctxt "App folder"
 msgid "Trash"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:197
+#: ./src/app/message/services/messageBuilder.js:202
 msgctxt "Ask user to use encrypted subject"
 msgid ""
 "The selected message has an encrypted subject.\n"
@@ -7182,7 +7182,7 @@ msgctxt "Label for contact Sign toggle"
 msgid "Sign"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:107
+#: ./src/templates/message/message.tpl.html:106
 msgctxt "Label for the message size when displaying email details"
 msgid "Size:"
 msgstr ""
@@ -7536,17 +7536,17 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:189
+#: ./src/app/message/services/messageBuilder.js:194
 msgctxt "Message"
 msgid "Fw:"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:287
+#: ./src/app/message/services/messageBuilder.js:292
 msgctxt "Message"
 msgid "On {{date}}, {{name}} {{address}} wrote:"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:188
+#: ./src/app/message/services/messageBuilder.js:193
 msgctxt "Message"
 msgid "Re:"
 msgstr ""
@@ -7643,12 +7643,12 @@ msgctxt "Message for report phishing modal"
 msgid "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full."
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:35
+#: ./src/templates/message/message.tpl.html:34
 msgctxt "Message label"
 msgid "Draft"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:36
+#: ./src/templates/message/message.tpl.html:35
 msgctxt "Message label"
 msgid "Sent"
 msgstr ""
@@ -7663,12 +7663,12 @@ msgctxt "Message network error"
 msgid "Sanitization error"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:71
+#: ./src/templates/message/message.tpl.html:70
 msgctxt "Message recipient label"
 msgid "To"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:20
+#: ./src/templates/message/message.tpl.html:19
 msgctxt "Message sender label"
 msgid "From"
 msgstr ""
@@ -7727,7 +7727,7 @@ msgctxt "More Toggles"
 msgid "Sign message"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:76
+#: ./src/templates/message/message.tpl.html:75
 msgctxt "No recipients to display in the message header"
 msgid "Undisclosed Recipients"
 msgstr ""
@@ -8559,7 +8559,7 @@ msgctxt "String separator"
 msgid "and"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:193
+#: ./src/app/message/services/messageBuilder.js:198
 msgctxt "Subject"
 msgid "Encrypted Subject"
 msgstr ""
@@ -10462,7 +10462,7 @@ msgctxt "Title"
 msgid "Settings"
 msgstr ""
 
-#: ./src/app/message/services/transformBlockquotes.js:31
+#: ./src/app/message/services/transformBlockquotes.js:19
 msgctxt "Title"
 msgid "Show previous message"
 msgstr ""
@@ -10524,7 +10524,7 @@ msgctxt "Title"
 msgid "Storage"
 msgstr ""
 
-#: ./src/templates/message/message.tpl.html:110
+#: ./src/templates/message/message.tpl.html:109
 msgctxt "Title"
 msgid "Subject"
 msgstr ""
@@ -11168,12 +11168,12 @@ msgctxt "Type of label for a message/conversation"
 msgid "In trash"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:194
+#: ./src/app/message/services/messageBuilder.js:199
 msgctxt "Use encrypted subject as subject"
 msgid "Yes"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:195
+#: ./src/app/message/services/messageBuilder.js:200
 msgctxt "Use unencrypted subject as subject"
 msgid "No"
 msgstr ""
