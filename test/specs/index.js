@@ -23,6 +23,7 @@ import './message/services/messageBuilder.spec';
 import './message/services/transformRemote.spec';
 import './message/helpers/transformEscape.spec';
 import './message/factories/signatureBuilder.spec';
+import './message/factories/plusAliasModel.spec';
 import './search/services/searchValue.spec';
 import './helpers/address.spec';
 import './helpers/arrayHelper.spec';
