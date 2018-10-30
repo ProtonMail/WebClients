@@ -2,10 +2,42 @@ import _ from 'lodash';
 
 export const normalizeEmail = (email = '') => email.toLowerCase();
 
+/**
+ * Remove plus alias part present in the email value
+ * @param {String} email containing +plus-alias
+ */
 export const removeEmailAlias = (email = '') => {
     return normalizeEmail(email)
         .replace(/(\+[^@]*)@/, '@')
         .replace(/[._-](?=[^@]*@)/g, '');
+};
+
+/**
+ * Add plus alias part for an email
+ * @param {String} email original
+ * @param {String} plus part to add between + and @
+ * @return {String}
+ */
+export const addPlusAlias = (email = '', plus = '') => {
+    const atIndex = email.indexOf('@');
+    const plusIndex = email.indexOf('+');
+
+    if (atIndex === -1) {
+        return email;
+    }
+
+    if (plusIndex > -1) {
+        return email;
+    }
+
+    if (!plus) {
+        return email;
+    }
+
+    const name = email.substring(0, atIndex);
+    const domain = email.substring(atIndex, email.length);
+
+    return `${name}+${plus}${domain}`;
 };
 
 /**

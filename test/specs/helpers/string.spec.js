@@ -1,4 +1,4 @@
-import { removeEmailAlias, toUnsignedString, unescapeCSSEncoding, ucFirst, isHTML } from '../../../src/helpers/string';
+import { removeEmailAlias, toUnsignedString, unescapeCSSEncoding, ucFirst, isHTML, addPlusAlias } from '../../../src/helpers/string';
 
 const EMAILS = {
     'dew@foo.bar': 'dew@foo.bar',
@@ -7,6 +7,44 @@ const EMAILS = {
     'dew.new+polo@foo.bar': 'dewnew@foo.bar',
     'dew.NEW+polo@foo.bar': 'dewnew@foo.bar'
 };
+
+const ADD_PLUS_ALIAS_TESTS = [
+    {
+        name: 'handle empty parameters and returns an empty string',
+        input: {},
+        output: ''
+    },
+    {
+        name: 'return the same value even it doesn\'t contain a @',
+        input: {
+            email: 'panda'
+        },
+        output: 'panda'
+    },
+    {
+        name: 'return the same value even it doesn\'t contain the plus part',
+        input: {
+            email: 'panda@pm.me'
+        },
+        output: 'panda@pm.me'
+    },
+    {
+        name: 'keep the same value and not add the plus part because it already contains a +',
+        input: {
+            email: 'panda+tigre@pm.me',
+            plus: 'tortue'
+        },
+        output: 'panda+tigre@pm.me'
+    },
+    {
+        name: 'keep capitalization in the value returned',
+        input: {
+            email: 'Panda@pm.me',
+            plus: 'Tigre'
+        },
+        output: 'Panda+Tigre@pm.me'
+    }
+];
 
 const TEST_HEX = {
     65536: '10000',
@@ -54,6 +92,14 @@ describe('removeEmailAlias', () => {
     it('should remove the alias but keep the email', () => {
         Object.keys(EMAILS).forEach((email) => {
             expect(removeEmailAlias(email)).toBe(EMAILS[email]);
+        });
+    });
+});
+
+describe('addPlusAlias', () => {
+    ADD_PLUS_ALIAS_TESTS.forEach(({ name, input = {}, output }) => {
+        it(`should ${name}`, () => {
+            expect(addPlusAlias(input.email, input.plus)).toBe(output);
         });
     });
 });
