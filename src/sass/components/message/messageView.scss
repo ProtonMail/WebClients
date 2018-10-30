@@ -181,8 +181,6 @@
             .message-summary-labels { display: none !important }
         }
 
-        &.errorDecryption [class*="message-actionBtn-"] { display: none }
-        &.errorDecryption .pm_trigger { border-left: 0 }
         &:not(.hasSender) .message-contact {display: none}
 
         .summary,

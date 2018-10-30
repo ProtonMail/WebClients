@@ -46,6 +46,11 @@ export function injectInline({ Attachments = [] } = {}) {
  * @return {Array}
  */
 export function pickAttachements(message = {}, action = 'new') {
+    if (message.failedDecryption) {
+        // If the decryption fails we drop attachments
+        return [];
+    }
+
     if (/^(reply|replyall)$/.test(action)) {
         return injectInline(message);
     }
