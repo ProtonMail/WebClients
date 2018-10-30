@@ -1,3 +1,6 @@
+# [3.14.30] - 2018-10-30
+## Fixed
+- Two "++" are added if you respond from a plus alias address
 # [3.14.29] - 2018-10-30
 ## Added
 - Added Reply/Reply All/Forward options for emails that can’t be decrypted
