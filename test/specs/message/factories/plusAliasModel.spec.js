@@ -23,10 +23,17 @@ describe('plus alias model', () => {
             .toBeUndefined();
     });
 
-    it('should remove empty plus', () => {
+    it('should add multiple plus', () => {
+        expect(instance.getAddress('vio++++@pm.me'))
+            .toEqual(jasmine.objectContaining({
+                Email: 'vio++++@pm.me'
+            }));
+    });
+
+    it('should add empty plus', () => {
         expect(instance.getAddress('vio+@pm.me'))
             .toEqual(jasmine.objectContaining({
-                Email: 'vio@pm.me'
+                Email: 'vio+@pm.me'
             }));
     });
 

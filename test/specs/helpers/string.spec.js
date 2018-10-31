@@ -22,11 +22,11 @@ const ADD_PLUS_ALIAS_TESTS = [
         output: 'panda'
     },
     {
-        name: 'return the same value even it doesn\'t contain the plus part',
+        name: 'add empty plus alias',
         input: {
             email: 'panda@pm.me'
         },
-        output: 'panda@pm.me'
+        output: 'panda+@pm.me'
     },
     {
         name: 'keep the same value and not add the plus part because it already contains a +',

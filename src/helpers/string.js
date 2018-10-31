@@ -22,15 +22,7 @@ export const addPlusAlias = (email = '', plus = '') => {
     const atIndex = email.indexOf('@');
     const plusIndex = email.indexOf('+');
 
-    if (atIndex === -1) {
-        return email;
-    }
-
-    if (plusIndex > -1) {
-        return email;
-    }
-
-    if (!plus) {
+    if (atIndex === -1 || plusIndex > -1) {
         return email;
     }
 
