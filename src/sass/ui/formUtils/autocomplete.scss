@@ -56,7 +56,9 @@
     white-space: nowrap
 }
 
-.autocompleteEmails-field .visually-hidden {display: none}
+.autocompleteEmails-field .visually-hidden {
+    @extend .sr-only;
+}
 
 .autocompleteEmails-field {
     flex: 1;
@@ -127,7 +129,7 @@
 
 .autocompleteEmails-autocomplete {
 
-    position: fixed;
+    position: absolute;
     width: 92%;
     li { padding: 0 .5em }
 
@@ -148,4 +150,3 @@
 .autocompleteEmails-btn-remove:focus,
 .autocompleteEmails-btn-remove:active { color: #F35D5D }
 
-.autocompleteEmails-field .visually-hidden {display: none}
