@@ -48,7 +48,9 @@ function AccountController(
         { label: 'Pусский', key: 'ru_RU' },
         { label: 'Română', key: 'ro_RO' },
         { label: 'Türkçe', key: 'tr_TR' },
-        { label: 'Українська', key: 'uk_UA' }
+        { label: 'Українська', key: 'uk_UA' },
+        { label: '简体中文', key: 'zh_CN' },
+        { label: '繁體中文', key: 'zh_TW' }
     ];
     $scope.locale = _.find($scope.locales, { key: gettextCatalog.getCurrentLanguage() }) || $scope.locales[0];
     const EMAILING_KEYS = Object.keys($scope.emailing);
