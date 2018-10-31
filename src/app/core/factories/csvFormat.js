@@ -67,14 +67,15 @@ function csvFormat() {
     };
 
     const getParameter = (key = '') => {
-        return flow(filter((param) => parameters[param].filter((value) => key.indexOf(value) > -1).length > 0), head)(
-            Object.keys(parameters)
-        );
+        return flow(
+            filter((param) => parameters[param].filter((value) => key.indexOf(value) > -1).length > 0),
+            head
+        )(Object.keys(parameters));
     };
 
     const extractKeys = (keys = [], contact = {}) => {
-        return keys.reduce((acc, key) => {
-            const value = contact[key];
+        return keys.reduce((acc, key = '') => {
+            const value = contact[key.toLowerCase()];
 
             if (value) {
                 const property = { value: value.toString() };
