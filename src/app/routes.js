@@ -10,41 +10,43 @@ import {
     BILLING_CYCLE
 } from './constants';
 
+const CONVERSATION_PARAMETERS = [
+    'email',
+    'address',
+    'page',
+    'filter',
+    'sort',
+    'label',
+    'from',
+    'to',
+    'subject',
+    'keyword',
+    'begin',
+    'end',
+    'attachments',
+    'wildcard',
+    'starred',
+    'reload',
+    'welcome',
+];
+
+const MAILTO_PARAMETERS = [
+    'mailtoUrl'
+];
+
+const withParams = (url, params = []) => `${url}?${params.join('&')}`;
+
 export default angular
     .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.utils'])
 
     .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
-        const conversationParameters = () => {
-            const parameters = [
-                'email',
-                'address',
-                'page',
-                'filter',
-                'sort',
-                'label',
-                'from',
-                'to',
-                'subject',
-                'keyword',
-                'begin',
-                'end',
-                'attachments',
-                'wildcard',
-                'starred',
-                'reload',
-                'welcome'
-            ];
-
-            return parameters.join('&');
-        };
-
         $stateProvider
 
             // ------------
             // LOGIN ROUTES
             // ------------
             .state('login', {
-                url: '/login',
+                url: withParams('/login', MAILTO_PARAMETERS),
                 views: {
                     'main@': {
                         templateUrl: require('../templates/layout/login.tpl.html')
@@ -62,7 +64,7 @@ export default angular
             })
 
             .state('login.unlock', {
-                url: '/unlock',
+                url: withParams('/unlock?mailToUrl', MAILTO_PARAMETERS),
                 views: {
                     'panel@login': {
                         controller: 'LoginController',
@@ -967,7 +969,7 @@ export default angular
             const parentState = 'secured.' + box;
             const childState = 'secured.' + box + '.element';
 
-            const url = `/${box}?${conversationParameters()}`;
+            const url = withParams(`/${box}`, [...CONVERSATION_PARAMETERS, ...MAILTO_PARAMETERS]);
             const views = {
                 'content@secured': {
                     controller: 'ElementsController',
@@ -1010,11 +1012,10 @@ export default angular
             });
         });
 
-        $urlRouterProvider.otherwise(($injector) => {
+        $urlRouterProvider.otherwise(($injector, $location) => {
             const $state = $injector.get('$state');
             const stateName = $injector.get('authentication').state() || 'secured.inbox';
-
-            return $state.href(stateName);
+            return $state.href(stateName, {mailtoUrl: $location.$$search.mailtoUrl});
         });
 
         $locationProvider.html5Mode(true);

@@ -3,6 +3,7 @@ import { hasSessionStorage, hasCookie } from '../../../helpers/browser';
 /* @ngInject */
 function LoginController(
     $state,
+    $stateParams,
     $scope,
     $log,
     $timeout,
@@ -48,6 +49,8 @@ function LoginController(
     $scope.twoFactor = 0;
     $scope.showOld = window.location.hostname !== 'old.protonmail.com';
     $scope.domoArigato = true;
+
+    const queryParams = $stateParams.mailtoUrl ? {mailtoUrl: $stateParams.mailtoUrl} : {};
 
     on('AppModel', (event, { type, data }) => {
         switch (type) {
@@ -138,18 +141,18 @@ function LoginController(
 
         if ($state.is('login.unlock')) {
             if (!$scope.creds) {
-                return $state.go('login');
+                return $state.go('login', queryParams);
             }
 
             if (!$scope.creds.authResponse) {
                 tempStorage.setItem('creds', $scope.creds);
-                return $state.go('login');
+                return $state.go('login', queryParams);
             }
 
             if ($scope.creds.authResponse.PasswordMode === 1) {
                 return unlock($scope.creds.password, $scope.creds.authResponse).catch((e) => {
                     // If the network call fails here, we need to redirect back to the login screen. Otherwise it just shows a spinner.
-                    $state.go('login');
+                    $state.go('login', queryParams);
                     // Temporary fix: Not using the network activity tracker here so manually showing the notification.
                     notifyError(e.data ? e.data.Error : e.message);
                 });
@@ -189,7 +192,7 @@ function LoginController(
                 AppModel.set('isLoggedIn', true);
 
                 // Redirect to inbox
-                $state.go('secured.inbox');
+                $state.go('secured.inbox', queryParams);
             };
 
             window.addEventListener('message', login);
@@ -269,11 +272,11 @@ function LoginController(
                         AppModel.set('domoArigato', true);
                     }
                     tempStorage.setItem('creds', creds);
-                    $state.go('login.unlock');
+                    $state.go('login.unlock', queryParams);
                 }
             })
             .catch((error) => {
-                $state.go('login');
+                $state.go('login', queryParams);
                 $scope.twoFactor = 0;
                 $timeout(selectPassword, 100, false);
                 resetLoginInputs();
@@ -307,7 +310,7 @@ function LoginController(
                     AppModel.set('isLocked', authentication.isLocked());
                     AppModel.set('isSecure', authentication.isSecured());
 
-                    $state.go('secured.inbox');
+                    $state.go('secured.inbox', queryParams);
                 });
             })
             .catch((error) => {

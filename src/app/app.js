@@ -82,6 +82,8 @@ angular
 
         // SVG Polyfill for IE11 @todo lazy load
         window.svg4everybody();
+
+        navigator.registerProtocolHandler("mailto", "https://mail.protonmail.com/?mailtoUrl=%s", "Protonmail");
     })
 
     .config(($httpProvider, CONFIG) => {

@@ -211,6 +211,21 @@ function ComposeMessageController(
         }
     });
 
+    on('composer.newFromMailto', async (e, {data = {}}) => {
+        const limitReached = checkComposerNumber();
+
+        if (!limitReached && AppModel.is('onLine') && validateMessage.canWrite()) {
+            const message = await prepareDraft.getMessage();
+            // https://tools.ietf.org/html/rfc2368
+            // only basic spec with email to supported (mailto:x@y.z)
+            // other spec will be ommited (mailto:x@y.z?...)
+            const emailTo = data.mailtoUrl.split(/[^a-zA-Z0-9@.]/)[1];
+            message.ToList.push({Address: emailTo, Name: emailTo});
+
+            initMessage(await messageBuilder.create("new", message, false));
+        }
+    });
+
     on('composer.load', async (e, { data: { ID } }) => {
         const found = _.find($scope.messages, { ID });
         const limitReached = checkComposerNumber();

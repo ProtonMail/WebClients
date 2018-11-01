@@ -22,7 +22,8 @@ function ElementsController(
     removeElement,
     tools
 ) {
-    const { on, unsubscribe, dispatcher } = dispatchers(['elements', 'messageActions', 'message.open']);
+    const { on, unsubscribe, dispatcher } = dispatchers(['elements', 'messageActions', 'message.open', "composer.newFromMailto"]);
+
     let unbindWatcherElements;
     const MINUTE = 60 * 1000;
     const { NumMessagePerPage, MessageButtons } = mailSettingsModel.get();
@@ -56,6 +57,11 @@ function ElementsController(
             }); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
         }, $log.error);
+        if($stateParams.mailtoUrl){
+            $scope.$applyAsync(() => {
+                dispatcher['composer.newFromMailto']("", {mailtoUrl: $stateParams.mailtoUrl});
+            });
+        }
     }
 
     $scope.$on('$stateChangeSuccess', () => {
