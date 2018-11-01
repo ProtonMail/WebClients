@@ -2,10 +2,11 @@ import _ from 'lodash';
 import createMscScroller from '../../../helpers/mscScrollHelper';
 
 /* @ngInject */
-const sidebarLabels = () => ({
+const sidebarLabels = (dispatchers) => ({
     replace: true,
     templateUrl: require('../../../templates/sidebar/sidebarLabels.tpl.html'),
     link(scope, $el) {
+        const { on, unsubscribe } = dispatchers();
         const mcsScroller = createMscScroller({ margin: 40, scrollBy: 30 });
         const el = $el[0];
 
@@ -52,6 +53,12 @@ const sidebarLabels = () => ({
             }
         };
 
+        on('labelsModel', (e, { type }) => {
+            if (type === 'cache.update') {
+                onResize();
+            }
+        });
+
         const debouncedDe = _.debounce(dragEnter, 250);
 
         el.addEventListener('dragenter', debouncedDe);
@@ -62,6 +69,7 @@ const sidebarLabels = () => ({
             el.removeEventListener('dragenter', debouncedDe);
             window.removeEventListener('resize', onResize);
             document.removeEventListener('visibilitychange', onVisibilitychange);
+            unsubscribe();
         });
     }
 });
