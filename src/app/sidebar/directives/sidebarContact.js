@@ -24,7 +24,9 @@ function sidebarContact(dispatchers, backState, contactCache, contactMerger, get
                 const contacts = contactCache.get();
 
                 if (!contacts.length) {
-                    return element[0].classList.remove(SHOW_DELETE_CONTACTS);
+                    element[0].classList.remove(SHOW_MERGE_BUTTON);
+                    element[0].classList.remove(SHOW_DELETE_CONTACTS);
+                    return;
                 }
 
                 element[0].classList.add(SHOW_DELETE_CONTACTS);
