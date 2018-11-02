@@ -1,21 +1,20 @@
-#!/usr/bin/env node
-
-const execa = require('execa');
+const fs = require('fs');
 const Listr = require('listr');
 const UpdaterRenderer = require('listr-update-renderer');
 
 const { error } = require('./helpers/log');
 const { externalFiles, vendor_files } = require('../env/conf.build');
 
-const fileExist = (file) => `[ -e ${file} ]`;
-
 const checkDependencies = async (list = [], key) => {
-    const col = list.map((file) => {
-        return execa
-            .shell(`${fileExist(file)}`, { shell: '/bin/bash' })
-            .then(() => ({ file }))
-            .catch((e) => ({ e, file }));
-    });
+    const col = list.map((file) => new Promise((resolve, reject) => {
+        fs.access(file, fs.constants.F_OK, (err) => {
+            if (err) {
+                reject({file});
+            } else {
+                resolve({file});
+            }
+        });
+    }));
     const output = await Promise.all(col);
     const errors = output.filter(({ e }) => e).map(({ file }) => file);
 
