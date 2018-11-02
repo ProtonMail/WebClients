@@ -1,4 +1,4 @@
-<form method="post" id="pm_login" name="unlockForm" class="pm_panel alt pm_form" novalidate ng-keypress="keypress($event)" role="form" autocomplete="on" ng-submit="unlock()" ng-if="tokenError !== true">
+<form method="post" id="pm_login" name="unlockForm" class="pm_panel pm_panel-outsideunlock alt pm_form" novalidate ng-keypress="keypress($event)" role="form" autocomplete="on" ng-submit="unlock()" ng-if="tokenError !== true">
 
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
@@ -11,6 +11,7 @@
 
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
+    <label for="MessagePassword" class="sr-only" translate-context="Label" translate>Message password</label>
     <password
         class="margin unlock-input-password"
         data-id="MessagePassword"
@@ -25,7 +26,8 @@
 
     <div class="loginForm-actions">
         <div class="loginForm-actions-column">
-            <button type="submit" class="loginForm-actions-main pm_button primary pull-right disabled-if-network-activity" translate-context="Action" translate>Decrypt</button>
+
+            <button type="submit" class="loginForm-actions-main pm_button primary primary-white pull-right disabled-if-network-activity" translate-context="Action" translate>Decrypt</button>
             <a href="https://protonmail.com/support" target="_blank" class="login-support pm_button link pull-left" translate-context="Action" translate-comment="link to support portal" translate>Need help?</a>
         </div>
     </div>

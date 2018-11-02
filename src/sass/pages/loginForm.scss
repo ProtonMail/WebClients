@@ -44,6 +44,8 @@
     min-height: 45px; /*safari*/
     line-height: 1.3em;
     padding: .5em;
+    border-radius: $border-radius-large;
+    margin-top: 0;
 }
 
 
@@ -53,11 +55,65 @@
     border: none;
     padding: 0;
     text-decoration: underline;
+    font-weight: bold;
 }
 
-.loginForm-link-signup {
+.loginForm-link-signup,
+.loginForm-btn-oldversion {
     text-transform: none;
     font-weight: bold;
+}
+
+.loginForm-link-signup-button {
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid $white;
+    border-radius: $border-radius-large;
+    background: transparent;
+    text-decoration: none;
+    width: 100%;
+    padding: 1em .5em;
+    font-weight: bold;
+    color: $white;
+    transition: all .3s ease-out;
+
+    &:focus,
+    &:hover {
+        background: $white;
+        color: $dark !important;
+        transition: none;
+    }
+    &:active {
+        background: $primary;
+        border: 1px solid $primary;
+    }
+}
+
+.loginForm-actions-help,
+.loginForm-actions-new-container {
+    width: 100%;
+}
+
+
+/* content with line-through around */
+.loginForm-actions-new-title {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+
+    &::before,
+    &::after {
+        content: "";
+        flex: 1;
+        align-self: center;
+        border-bottom: 1px solid CurrentColor;
+    }
+    &::before {
+        margin-right: 1em;
+    }
+    &::after {
+        margin-left: 1em;
+    }
 }
 
 .loginForm-input-password .togglePassword-btn-toggle,
