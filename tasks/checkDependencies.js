@@ -5,21 +5,10 @@ const UpdaterRenderer = require('listr-update-renderer');
 const { error } = require('./helpers/log');
 const { externalFiles, vendor_files } = require('../env/conf.build');
 
-const checkDependencies = async (list = [], key) => {
-    const col = list.map((file) => new Promise((resolve, reject) => {
-        fs.access(file, fs.constants.F_OK, (err) => {
-            if (err) {
-                reject({file});
-            } else {
-                resolve({file});
-            }
-        });
-    }));
-    const output = await Promise.all(col);
-    const errors = output.filter(({ e }) => e).map(({ file }) => file);
-
-    if (errors.length) {
-        throw new Error(`[${key}] File not found \n ${errors.join('\n')}`);
+const checkDependencies = async (paths = [], key) => {
+    const missingPaths = paths.filter((path) => !fs.existsSync(path));
+    if (missingPaths.length) {
+        throw new Error(`[${key}] File not found \n ${missingPaths.join('\n')}`);
     }
 };
 

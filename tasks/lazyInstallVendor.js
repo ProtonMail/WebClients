@@ -12,44 +12,52 @@
  */
 const execa = require('execa');
 const fs = require('fs');
+const _ = require('lodash');
 
-const args = process.argv.slice(2);
-const type = args[0];
+const CYPRESS = './node_modules/cypress';
+const KARMA = './node_modules/karma';
 
-const testDeps = [
-    'karma',
-    'karma-babel-preprocessor',
-    'karma-chrome-launcher',
-    'karma-cli',
-    'karma-coverage',
-    'karma-jasmine',
-    'karma-junit-reporter',
-    'karma-webpack',
-    'jasmine-core@2.8',
-    'puppeteer@1.6',
-];
-const e2eDeps = [
-    'cypress@3.0'
-];
+const PATHS_TO_DEPS = {
+    [CYPRESS]: [
+        'cypress@3.0'
+    ],
+    [KARMA]: [
+        'karma',
+        'karma-babel-preprocessor',
+        'karma-chrome-launcher',
+        'karma-cli',
+        'karma-coverage',
+        'karma-jasmine',
+        'karma-junit-reporter',
+        'karma-webpack',
+        'jasmine-core@2.8',
+        'puppeteer@1.6',
+    ]
+};
 
-const install = (testFiles = [], deps = []) => {
-    try {
-        testFiles.forEach((file) => fs.accessSync(file, fs.constants.R_OK));
-        console.log("lazyInstallVendor", "✓ We have a cache.");
-    } catch (e) {
-        console.log("lazyInstallVendor", "installing dependencies");
-        execa('npm', ['i', ...deps, "--no-save"]).stdout.pipe(process.stdout);
+const install = (...requestedPaths) => {
+    const pathsToInstall = requestedPaths.filter((file) => !fs.existsSync(file));
+    if (!pathsToInstall.length) {
+        console.log("lazyInstallVendor", "✓ We have a full cache.");
+    } else {
+        const depsToInstall = _.flatMap(pathsToInstall, (path) => PATHS_TO_DEPS[path]);
+        console.log("lazyInstallVendor", "X We will install:", ...depsToInstall);
+        execa('npm', ['i', ...depsToInstall, "--no-save"]).stdout.pipe(process.stdout);
     }
 };
 
 (async () => {
     try {
+        const [command, file, type] = process.argv;
+
         if (type === 'e2e') {
-            install(['./node_modules/cypress'], e2eDeps);
-        } else if (type === 'test') {
-            install(['./node_modules/karma'], testDeps);
-        } else {
-            install(['./node_modules/karma', './node_modules/cypress'], [...testDeps, ...e2eDeps]);
+            install(CYPRESS);
+        }
+        if (type === 'test') {
+            install(KARMA);
+        }
+        if (!type) {
+            install(CYPRESS, KARMA);
         }
     } catch (e) {
         console.error(e);
