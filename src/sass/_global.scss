@@ -90,6 +90,9 @@ html.protonmail {
 	.text-right {
 		text-align: right;
 	}
+	.text-notransform {
+        text-transform: none;
+	}
     .text-gray {
         color: $default-color;
     }

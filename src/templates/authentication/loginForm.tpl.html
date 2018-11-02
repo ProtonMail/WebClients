@@ -2,11 +2,12 @@
     method="post"
     id="pm_login"
     name="loginForm"
-    class="pm_panel alt pm_form loginForm-container"
+    class="pm_panel pm_panel-login alt pm_form loginForm-container"
     novalidate role="form"
     autocomplete="on"
     ng-submit="enterLoginPassword($event)"
     action="login">
+    <div class="pm_panel-login__inner">
 
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
@@ -16,13 +17,13 @@
 
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
+    <label for="username" class="sr-only" translate-context="Label" translate>User login</label>
     <input
         autofocus
         autocapitalize="off"
         autocorrect="off"
         type="text"
         ng-model="username"
-        tabindex="1"
         id="username"
         name="username"
         placeholder-translate-context="login form placeholder"
@@ -30,38 +31,64 @@
         class="margin loginForm-input-username"
         required="" />
 
+    <label for="password" class="sr-only" translate-context="Label" translate>Password</label>
     <password
         class="margin loginForm-input-password"
         data-id="password"
         data-name="password"
         data-value="password"
-        data-tabindex="2"
         data-form="loginForm"
         placeholder-translate-context="login form placeholder"
         placeholder-translate="Password"></password>
 
     <div class="loginForm-actions">
         <div class="loginForm-actions-column">
+
             <button
                 id="login_btn"
                 type="submit"
-                tabindex="3"
-                class="loginForm-actions-main pm_button primary pull-right loginForm-btn-submit disabled-if-network-activity"
+                class="loginForm-actions-main pm_button primary primary-white pull-right loginForm-btn-submit disabled-if-network-activity"
                 translate-context="Action"
                 translate>Login</button>
-            <div class="loginForm-actions-row">
+
+            <div class="text-left text-notransform loginForm-actions-help">
+                <span translate translate-context="Trouble logging in? Get help or try older version.">Trouble logging in? Get</span>
                 <button
-                    class="loginForm-btn-help"
+                    class="loginForm-btn-help "
                     ng-click="displayHelpModal()"
                     type="button"
-                    translate-context="Action"
-                    translate-comment="link for login help"
-                    translate>Need help?</button>
-                <signup-link class="loginForm-link-signup loginForm-actions-right"></signup-link>
+                    translate-comment="Action"
+                    translate-context="Trouble logging in? Get help or try older version."
+                    translate>help</button>
+
+                <span translate translate-context="Trouble logging in? Get help or try older version.">or try</span>
+
+                <a
+                    class="link loginForm-btn-oldversion"
+                    href="https://old.protonmail.com/login"
+                    target="_self"
+                    translate-comment="Action"
+                    translate-context="Trouble logging in? Get help or try older version."
+                    translate>older version</a>.
             </div>
+
+            <div class="loginForm-actions-new-container">
+                <div class="loginForm-actions-new-title text-notransform h4 margin-top" translate-context="title" translate>
+                    New to ProtonMail?
+                </div>
+
+                <div class="loginForm-actions-create-container margin-top">
+                    <a class="loginForm-link-signup-button loginForm-actions-right margin-bottom" href="https://protonmail.com/fr/signup" translate translate-context="Action">Create account</a>
+                </div>
+            </div>
+
+
         </div>
     </div>
+</div>
+<input type="hidden" id="hashed_pw" name="hashed_pw" />
+<div class="pm_panel-bottom text-notransform"><span translate translate-context="Want to test the latest features? Log in on BETA">Want to test the latest features? Log in on</span> <a href="https://beta.protonmail.com/" translate translate-context="Want to test the latest features? Log in on BETA">BETA</a>.</div>
 
-    <input type="hidden" id="hashed_pw" name="hashed_pw" />
 
 </form>
+

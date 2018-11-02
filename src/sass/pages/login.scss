@@ -53,6 +53,7 @@ body#eo-unlock {
     padding: 2rem 2rem 1rem 2rem;
   }
 }
+
 #pm_login,
 #pm_loginTwoFactor,
 body#reset {
@@ -79,7 +80,7 @@ body#reset {
   input[type="password"],
   input[type="email"] {
     border-color: #dfdfdf;
-    background: rgba(255,255,255,.1);
+    background: rgba(107, 107, 107, 0.1);
     color: $white;
     line-height: 38px;
     height: 38px;

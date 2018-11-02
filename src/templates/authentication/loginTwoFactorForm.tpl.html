@@ -2,7 +2,7 @@
     method="post"
     id="pm_loginTwoFactor"
     name="loginTwoFactorForm"
-    class="pm_panel alt pm_form"
+    class="pm_panel alt pm_panel-twofactors pm_form"
     novalidate role="form"
     autocomplete="off"
     ng-submit="enterTwoFactor($event)"
@@ -17,19 +17,19 @@
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
     <div class="margin">
+        <label for="twoFactorCode" translate translate-context="Label">Two-factor passcode</label>
         <two-fa-field
             ng-model="twoFactorCode"
             autofocus
-            tabindex="2" id="twoFactorCode"
+            id="twoFactorCode"
             name="twoFactorCode"
             placeholder-translate-context="Placeholder"
             placeholder-translate="Two-factor passcode"></two-fa-field>
-
     </div>
 
     <div class="loginForm-actions">
         <div class="loginForm-actions-column">
-            <button id="login_btn_2fa" type="submit" tabindex="3" class="loginForm-actions-main  pm_button primary pull-right disabled-if-network-activity" ng-disabled="loginTwoFactorForm.$invalid" translate-context="Action" translate>Login</button>
+            <button id="login_btn_2fa" type="submit" class="loginForm-actions-main  pm_button primary primary-white pull-right disabled-if-network-activity" ng-disabled="loginTwoFactorForm.$invalid" translate-context="Action" translate>Login</button>
             <a class="pm_button link pull-left" ng-click="displayHelpModal()" translate-context="Action" translate-comment="link for login help" translate>Need help?</a>
         </div>
     </div>

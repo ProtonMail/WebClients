@@ -60,6 +60,26 @@
         &.disabled {
             background: lighten($primary, 2%);
         }
+        /* modifier for new home buttons */
+        &-white {
+            background: $white;
+            border-color: $white;
+            color: $dark;
+        }
+        &-white:focus,
+        &-white:hover {
+            background: $primary;
+            border-color: $primary;
+            color: $white;
+        }
+        &-white:active {
+            background-color: $secondary;
+            border-color: $secondary;
+            color: $white;
+        }
+        &-white[disabled] {
+            background-color: $white;
+        }
     }
     &.link {
         background-color: transparent;
