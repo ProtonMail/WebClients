@@ -44,7 +44,7 @@ function AccountController(
         { label: '日本語', key: 'ja_JP' },
         { label: 'Nederlands', key: 'nl_NL' },
         { label: 'Polski', key: 'pl_PL' },
-        { label: 'Portugues, brasileiro', key: 'pt_BR' },
+        { label: 'Português, brasileiro', key: 'pt_BR' },
         { label: 'Pусский', key: 'ru_RU' },
         { label: 'Română', key: 'ro_RO' },
         { label: 'Türkçe', key: 'tr_TR' },
