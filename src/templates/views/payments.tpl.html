@@ -22,10 +22,10 @@
                         <table ng-show="methods.length > 0" id="paymentMethodsTable">
                             <thead>
                                 <tr>
-                                    <th style="width: 8rem" class="number" translate-context="Title" translate>Number</th>
-                                    <th style="width: 7rem" class="expiration" translate-context="Title" translate>Expiration</th>
-                                    <th style="width: 8rem" class="type" translate-context="Title" translate>Type</th>
-                                    <th style="width: 8rem" class="actions" translate-context="Title" translate>Actions</th>
+                                    <th scope="col" style="width: 8rem" class="number" translate-context="Title" translate>Number</th>
+                                    <th scope="col" style="width: 7rem" class="expiration" translate-context="Title" translate>Expiration</th>
+                                    <th scope="col" style="width: 8rem" class="type" translate-context="Title" translate>Type</th>
+                                    <th scope="col" style="width: 8rem" class="actions" translate-context="Title" translate>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,12 +82,12 @@
                         <table ng-show="invoices.length > 0" id="invoicesTable">
                             <thead>
                                 <tr>
-                                    <th class="invoice">ID</th>
-                                    <th class="price" translate-context="Title" translate>Amount</th>
-                                    <th class="actions" translate-context="Title" translate>Actions</th>
-                                    <th class="type" translate-context="Title" translate>Type</th>
-                                    <th class="status" translate-context="Title" translate>Status</th>
-                                    <th class="time" translate-context="Title" translate>Date</th>
+                                    <th scope="col" class="invoice">ID</th>
+                                    <th scope="col" class="price" translate-context="Title" translate>Amount</th>
+                                    <th scope="col" class="actions" translate-context="Title" translate>Actions</th>
+                                    <th scope="col" class="type" translate-context="Title" translate>Type</th>
+                                    <th scope="col" class="status" translate-context="Title" translate>Status</th>
+                                    <th scope="col" class="time" translate-context="Title" translate>Date</th>
                                 </tr>
                             </thead>
                             <tbody>

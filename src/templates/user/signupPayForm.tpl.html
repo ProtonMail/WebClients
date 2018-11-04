@@ -25,27 +25,27 @@
             <table class="print">
                 <tbody>
                     <tr>
-                        <th translate translate-context="Title">Plan</th>
+                        <th scope="row" translate translate-context="Title">Plan</th>
                         <td>
                             <strong class="signupPayForm-feature-plus plus">ProtonMail PLUS</strong>
                             <strong class="signupPayForm-feature-visionary visionary">ProtonMail VISIONARY</strong>
                         </td>
                     </tr>
                     <tr>
-                        <th translate translate-context="Title">Billing</th>
+                        <th scope="row" translate translate-context="Title">Billing</th>
                         <td>
                             <strong class="signupPayForm-selection-monthly" translate translate-context="Info">Monthly</strong>
                             <strong class="signupPayForm-selection-annually" translate translate-context="Info">Annually</strong>
                         </td>
                     </tr>
                     <tr ng-if="giftModel.Gift">
-                        <th translate-context="Title" translate>Gift code</th>
+                        <th scope="row" translate-context="Title" translate>Gift code</th>
                         <td>
                             <strong class="text-green">{{ giftModel.Gift / 100 | currency: plan.Currency }}</strong>
                         </td>
                     </tr>
                     <tr>
-                        <th translate translate-context="Title">Price</th>
+                        <th scope="row" translate translate-context="Title">Price</th>
                         <td>
                             <strong>{{ (giftModel.AmountDue || plan.Amount) / 100 | currency: plan.Currency }}</strong> <i ng-hide="plan.Cycle === 1">({{ (giftModel.AmountDue || plan.Amount) / 100 / plan.Cycle | currency: plan.Currency }} / month)</i>
                         </td>

@@ -33,15 +33,15 @@
                     <table>
                         <tbody>
                             <tr>
-                                <th style="width: 8rem" translate translate-context="Title">Amount</th>
+                                <th scope="row" style="width: 8rem" translate translate-context="Title">Amount</th>
                                 <td class="text-right">{{ ctrl.checkInvoice.Amount / 100 | currency: ctrl.checkInvoice.Currency }}</td>
                             </tr>
                             <tr ng-if="ctrl.checkInvoice.Credit !== 0">
-                                <th translate translate-context="Title">Credit</th>
+                                <th scope="row" translate translate-context="Title">Credit</th>
                                 <td class="text-right">{{ ctrl.checkInvoice.Credit / 100 | currency: ctrl.checkInvoice.Currency }}</td>
                             </tr>
                             <tr>
-                                <th translate translate-context="Title">Amount due</th>
+                                <th scope="row" translate translate-context="Title">Amount due</th>
                                 <td class="text-right">{{ ctrl.checkInvoice.AmountDue / 100 | currency: ctrl.checkInvoice.Currency }}</td>
                             </tr>
                         </tbody>

@@ -2,16 +2,16 @@
     <table class="contactItem-container fixedLayout">
         <thead>
             <tr>
-                <th class="invalid-key-column"></th>
-                <th translate-context="Table Header" translate>Fingerprint</th>
-                <th class="primary" ng-if="enableDelete">
+                <th scope="col" class="invalid-key-column"></th>
+                <th scope="col" translate-context="Table Header" translate>Fingerprint</th>
+                <th scope="col" class="primary" ng-if="enableDelete">
                     <i class="fa fa-info-circle"
                        pt-tooltip-translate="The primary key is used to encrypt outgoing messages."
                        pt-tooltip-translate-context="Tooltip">
                     </i>
                     <span translate-context="Table Header" translate>Primary</span>
                 </th>
-                <th class="primary" ng-if="!enableDelete">
+                <th scope="col" class="primary" ng-if="!enableDelete">
                     <i
                         class="fa fa-info-circle"
                         pt-tooltip-translate="It is allowed to encrypt with this key"
@@ -19,17 +19,17 @@
                     </i>
                     <span translate-context="Table Header" translate>Encryption</span>
                 </th>
-                <th class="created"
+                <th scope="col" class="created"
                     translate-context="Table Header"
                     translate>Created</th>
-                <th class="expires"
+                <th scope="col" class="expires"
                     ng-if="enableDelete"
                     translate-context="Table Header"
                     translate>Expires</th>
-                <th class="bits"
+                <th scope="col" class="bits"
                     translate-context="Table Header"
                     translate>Type</th>
-                <th class="actions"
+                <th scope="col" class="actions"
                     translate-context="Table Header"
                     translate>Actions</th>
             </tr>
