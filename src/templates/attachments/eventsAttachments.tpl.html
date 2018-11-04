@@ -11,7 +11,7 @@
         <div ng-if="event.summary" class="eventsAttachments-details-wrapper">
             <table class="eventsAttachments-details-table">
                 <tr ng-if="event.summary">
-                    <th translate translate-context="Info">Summary</th>
+                    <th scope="row" translate translate-context="Info">Summary</th>
                     <td>
                         {{ ::event.summary }}
                         <button class="pm_button link eventsAttachments-download-link" data-event-uid="{{event.uid}}">
@@ -21,21 +21,21 @@
                     </td>
                 </tr>
                 <tr ng-if="event.description">
-                    <th translate translate-context="Info">Description</th>
+                    <th scope="row" translate translate-context="Info">Description</th>
                     <td class="eventsAttachments-description" ng-bind="::event.description"></td>
                 </tr>
                 <tr>
-                    <th translate translate-context="Info">When</th>
+                    <th scope="row" translate translate-context="Info">When</th>
                     <td>
                         {{ ::dateFormat(event, true) }}
                     </td>
                 </tr>
                 <tr ng-if="event.organizer">
-                    <th translate translate-context="Info">Organizer</th>
+                    <th scope="row" translate translate-context="Info">Organizer</th>
                     <td><attendee-item data-attendee="{{ ::event.organizer }}"></attendee-item></td>
                 </tr>
                 <tr ng-if="event.attendeesList.length">
-                    <th translate translate-context="Info">Attendees</th>
+                    <th scope="row" translate translate-context="Info">Attendees</th>
                     <td>
                         <ul>
                             <li ng-repeat="attendee in event.attendeesList track by $id(attendee)">
@@ -45,7 +45,7 @@
                     </td>
                 </tr>
                 <tr ng-if="event.location">
-                    <th translate translate-context="Info">Location</th>
+                    <th scope="row" translate translate-context="Info">Location</th>
                     <td>{{ ::event.location }}</td>
                 </tr>
             </table>

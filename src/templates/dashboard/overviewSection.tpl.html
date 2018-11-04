@@ -3,13 +3,13 @@
 }">
     <tbody class="overviewSection-tbody">
         <tr>
-            <th translate-context="Title" translate>Username</th>
+            <th scope="row" translate-context="Title" translate>Username</th>
             <td colspan="2">
                 <strong>{{ user.Name }}</strong>
             </td>
         </tr>
         <tr>
-            <th translate-context="Title" translate>Domains</th>
+            <th scope="row" translate-context="Title" translate>Domains</th>
             <td>
                 <strong class="overviewSection-domains-name" >{{ organization.UsedDomains }} <span translate-context="dashboard page. how many domains exist for an organization as well as the total number allowed." translate>of</span> {{ organization.MaxDomains }}</strong>
                 <strong class="overviewSection-domains-free">0</strong>
@@ -28,7 +28,7 @@
             </td>
         </tr>
         <tr>
-            <th translate-context="Title" translate>Addresses</th>
+            <th scope="row" translate-context="Title" translate>Addresses</th>
             <td>
                 <strong class="overviewSection-addresses-total">{{ organization.UsedAddresses }} <span translate-context="dashboard page. how many addresses exist for an organization as well as the total number allowed." translate>of</span> {{ organization.MaxAddresses }}</strong>
                 <strong class="overviewSection-addresses-free">1</strong>
@@ -47,7 +47,7 @@
             </td>
         </tr>
         <tr>
-            <th translate-context="Title" translate>Storage</th>
+            <th scope="row" translate-context="Title" translate>Storage</th>
             <td colspan="2" class="overviewSection-storage">
                 <strong class="overviewSection-storage-size">{{ organization.UsedSpace | humanSize }} <span translate-context="show used storage for an account" translate>of</span> {{ organization.MaxSpace | humanSize }}</strong>
                 <strong class="overviewSection-storage-free">{{ user.UsedSpace | humanSize }} <span translate-context="show used storage for an account" translate>of</span> {{ user.MaxSpace | humanSize }}</strong>
@@ -58,7 +58,7 @@
     </tbody>
     <tbody class="overviewSection-tbody-billing">
         <tr>
-            <th translate-context="Title" translate>Credit</th>
+            <th scope="row" translate-context="Title" translate>Credit</th>
             <td>
                 <strong>{{ (user.Credit || 0) / 100 | currency: user.Currency }}</strong>
             </td>
@@ -68,7 +68,7 @@
             </td>
         </tr>
         <tr ng-if="subscription.CouponCode">
-            <th translate-context="Title" translate>Coupon</th>
+            <th scope="row" translate-context="Title" translate>Coupon</th>
             <td colspan="2">
                 <code class="overviewSection-couponCode">{{ subscription.CouponCode }}</code>
             </td>

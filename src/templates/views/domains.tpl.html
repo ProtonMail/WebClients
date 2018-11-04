@@ -47,9 +47,9 @@
                     <table class="bordered domains" ng-show="domains.length > 0" id="domainsTable">
                         <thead>
                             <tr>
-                                <th style="width: 10rem" class="domain" translate-context="Title" translate>Domain</th>
-                                <th style="width: 30rem" class="status" translate-context="Title" translate>Current status</th>
-                                <th style="width: 6rem" class="text-right actions" translate-context="Title" translate>Actions</th>
+                                <th scope="col" style="width: 10rem" class="domain" translate-context="Title" translate>Domain</th>
+                                <th scope="col" style="width: 30rem" class="status" translate-context="Title" translate>Current status</th>
+                                <th scope="col" style="width: 6rem" class="text-right actions" translate-context="Title" translate>Actions</th>
                             </tr>
                         </thead>
                         <tbody ng-repeat="domain in domains">
@@ -192,16 +192,16 @@
                         <table class="pm_form bordered" ng-show="domain.Addresses.length > 0">
                             <thead>
                                 <tr>
-                                    <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Name</th>
-                                    <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Address</th>
-                                    <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Status</th>
-                                    <th>
+                                    <th scope="col" translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Name</th>
+                                    <th scope="col" translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Address</th>
+                                    <th scope="col" translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Status</th>
+                                    <th scope="col">
                                         <span translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Catch-All</span>
                                         <a href="https://protonmail.com/support/knowledge-base/catch-all/" target="_blank">
                                             <i class="fa fa-info-circle" pt-tooltip-translate="Set a catch-all address for your domain." pt-tooltip-translate-context="Info"></i>
                                         </a>
                                     </th>
-                                    <th class="text-right actions" translate-context="Title" translate>Actions</th>
+                                    <th scope="col" class="text-right actions" translate-context="Title" translate>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>

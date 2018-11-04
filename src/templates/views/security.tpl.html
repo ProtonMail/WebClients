@@ -89,9 +89,9 @@
                                 <table id="accessLog" class="bordered" ng-init="initLogs()" ng-show="logs.length>0">
                                     <thead>
                                         <tr>
-                                            <th style="width:10rem" translate-context="Title" translate>Event</th>
-                                            <th style="width:10rem" ng-show="doLogging == 2" class="text-right">IP</th>
-                                            <th style="width:14rem" class="text-right" translate-context="Title" translate>Time</th>
+                                            <th scope="col" style="width:10rem" translate-context="Title" translate>Event</th>
+                                            <th scope="col" style="width:10rem" ng-show="doLogging == 2" class="text-right">IP</th>
+                                            <th scope="col" style="width:14rem" class="text-right" translate-context="Title" translate>Time</th>
                                         </tr>
                                     </thead>
                                     <tbody>

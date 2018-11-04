@@ -141,22 +141,22 @@
                     <table class="members-table bordered absorbing withDropDown">
                         <thead>
                             <tr>
-                                <th translate-context="Title" translate-comment="table heading" translate>Name</th>
-                                <th class="absorbing-column" translate-context="Title" translate-comment="table heading" translate>Addresses</th>
-                                <th ng-if="organization.HasKeys === 1">
+                                <th scope="col" translate-context="Title" translate-comment="table heading" translate>Name</th>
+                                <th scope="col" class="absorbing-column" translate-context="Title" translate-comment="table heading" translate>Addresses</th>
+                                <th scope="col" ng-if="organization.HasKeys === 1">
                                     <span translate-context="Title" translate-comment="table heading" translate>Role</span>
                                     <a href="https://protonmail.com/support/knowledge-base/member-roles/" target="_blank">
                                         <i class="fa fa-info-circle"></i>
                                     </a>
                                 </th>
-                                <th ng-if="organization.HasKeys === 1">
+                                <th scope="col" ng-if="organization.HasKeys === 1">
                                     <span translate-context="Title" translate-comment="table heading" translate>Private</span>
                                     <a href="https://protonmail.com/support/knowledge-base/private-members/" target="_blank">
                                         <i class="fa fa-info-circle"></i>
                                     </a>
                                 </th>
-                                <th></th>
-                                <th translate-context="Title" translate-comment="table heading" translate>Actions</th>
+                                <th scope="col"></th>
+                                <th scope="col" translate-context="Title" translate-comment="table heading" translate>Actions</th>
                             </tr>
                         </thead>
                         <tbody class="members-table-tbody">
@@ -351,13 +351,13 @@
                             <table class="bordered absorbing">
                                 <thead>
                                     <tr>
-                                        <th>
+                                        <th scope="col">
                                             <span translate-context="Title" translate-comment="table heading" translate>Organization Key Fingerprint</span>
                                             <a href="https://protonmail.com/support/knowledge-base/organization-key/" target="_blank">
                                                 <i class="fa fa-info-circle"></i>
                                             </a>
                                         </th>
-                                        <th translate-context="Title" translate-comment="table heading" translate>Key size</th>
+                                        <th scope="col" translate-context="Title" translate-comment="table heading" translate>Key size</th>
                                     </tr>
                                 </thead>
                                 <tbody>
