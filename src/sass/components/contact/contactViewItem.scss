@@ -61,7 +61,8 @@ $mapFields: (
 
 .contactViewItem-value-img {
      max-width: 128px;
-     max-height: 128px
+     max-height: 128px;
+     align-self: baseline;
 }
 
 .contactViewItem-container .contactItem-btn-settings {
