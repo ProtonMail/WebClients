@@ -52,7 +52,7 @@ function transformEmbedded(embedded, $state, mailSettingsModel) {
                 // Auto load image inside a reply draft
                 if (isReplyForward) {
                     // `getUrl` may return undefined here because the embedded attachments have not yet been decrypted and put in the blob store.
-                    image.src = embedded.getUrl(image);
+                    image.setAttribute('src', embedded.getUrl(image));
                     return;
                 }
 
