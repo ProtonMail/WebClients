@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import Raven from 'raven-js';
 
 import {
     ROW_MODE,

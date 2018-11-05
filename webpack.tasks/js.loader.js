@@ -17,17 +17,8 @@ const jsLoader = () => {
         loader: 'babel-loader',
         options: {
             cacheDirectory: true,
-            presets: [
-                [
-                    'env',
-                    {
-                        targets: {
-                            browsers: ['ie 11']
-                        }
-                    }
-                ]
-            ],
-            plugins: [require('babel-plugin-transform-object-rest-spread'), require('babel-plugin-transform-runtime')],
+            presets: ['env'],
+            plugins: [require('babel-plugin-transform-object-rest-spread')],
             env: {
                 dev: {
                     plugins: [require('babel-plugin-lodash')]

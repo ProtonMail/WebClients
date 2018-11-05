@@ -1,5 +1,3 @@
-import ICAL from 'ical.js';
-
 /* @ngInject */
 function AttachmentEvent(attachmentDownloader, gettextCatalog) {
     const I18N = {

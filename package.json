@@ -176,7 +176,6 @@
     "i18n:build": "npm run i18n:extract && npm run i18n:update && npm run i18n:compile",
     "posti18n:build": "./tasks/createI18nCache.js && ./tasks/commitI18n.sh",
     "pretty": "prettier --write $(find src/app -type f -name '*.js')",
-    "precommit": "./tasks/metrics.sh",
     "create": "appComponent",
     "create:test": "appComponent --test",
     "cypress:open": "./tasks/lazyInstallVendor e2e && cypress open"

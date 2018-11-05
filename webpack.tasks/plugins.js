@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
@@ -17,10 +16,6 @@ const makeSRC = (list) => list.map((file) => path.resolve(file));
 const [OPENPGP_WORKER] = makeSRC(CONFIG.externalFiles.openpgp);
 
 const minify = () => {
-    if (!env.isDistRelease()) {
-        return false;
-    }
-
     return {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
@@ -28,17 +23,6 @@ const minify = () => {
         minifyCSS: true,
         removeComments: true,
         removeEmptyAttributes: true
-    };
-};
-
-const minifyJS = () => {
-    if (!env.isDistRelease()) {
-        return false;
-    }
-
-    return {
-        mangle: true,
-        compress: true
     };
 };
 
@@ -64,7 +48,7 @@ const list = [
         inject: 'body',
         hash: false,
         excludeChunks: ['html', 'app.css'],
-        chunks: ['app'],
+        chunks: ['vendor-app', 'app'],
         chunksSortMode: 'manual',
         minify: minify()
     }),
@@ -87,15 +71,6 @@ if (!env.isDistRelease()) {
 }
 
 if (env.isDistRelease()) {
-    list.push(
-        new UglifyJSPlugin({
-            exclude: /\/node_modules/,
-            parallel: true,
-            sourceMap: true,
-            uglifyOptions: minifyJS()
-        })
-    );
-
     list.push(new OptimizeCSSAssetsPlugin({}));
 
     list.push(
@@ -117,7 +92,8 @@ if (env.isDistRelease()) {
                     quality: 80,
                     progressive: true
                 })
-            ]
+            ],
+            cacheFolder: path.resolve('./node_modules/.cache/imagemin'),
         })
     );
 }

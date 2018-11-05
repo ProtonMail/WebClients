@@ -40,7 +40,8 @@
     "Cypress": true,
     "cy": true,
     "after": true,
-    "before": true
+    "before": true,
+    "Raven": true
   },
   "rules": {
     "object-shorthand": ["error", "always", { "avoidExplicitReturnArrows": true }],

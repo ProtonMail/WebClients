@@ -27,6 +27,18 @@ module.exports = {
     watchOptions: {
         ignored: [/node_modules/, 'i18n/*.json', /\*\.(gif|jpeg|jpg|ico|png)/]
     },
+    optimization: {
+        minimizer: [require('./webpack.tasks/uglify.plugin')],
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor-app',
+                    chunks: 'all',
+                },
+            },
+        },
+    },
     devServer: {
         hot: true,
         stats: 'minimal',

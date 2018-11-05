@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import timezone from 'moment-timezone';
 
 import paginator from './paginator/index';
 import analytics from './analytics/index';
@@ -23,8 +22,6 @@ import utils from './utils/index';
 import CONFIG from './config';
 import routes from './routes';
 import '../sass/app.scss';
-
-window.moment = timezone;
 
 const templates = require.context('../templates', true, /\.html$/);
 templates.keys().forEach(templates);

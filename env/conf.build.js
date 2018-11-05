@@ -37,7 +37,10 @@ module.exports = {
             'asmcrypto.js/asmcrypto.js',
             'babel-polyfill/dist/polyfill.js',
             'pmcrypto/dist/pmcrypto-browser.js',
-            'dompurify/dist/purify.js'
+            'dompurify/dist/purify.js',
+            'moment/min/moment.min.js', // must be before moment-timezone
+            'moment-timezone/builds/moment-timezone.min.js',
+            'raven-js/dist/raven.min.js'
         ].map(bindPrefix),
         jsLazy: [
             'papaparse/papaparse.js',
@@ -47,7 +50,6 @@ module.exports = {
             'jquery-timepicker/jquery.timepicker.js',
             'squire-rte/build/squire-raw.js',
             'dropzone/dist/dropzone.js',
-            'ical.js/build/ical.js',
             'angular-ical/dist/js/angular-ical.js',
             'push.js/bin/push.js',
             'awesomplete/awesomplete.js',
