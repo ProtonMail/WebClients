@@ -727,8 +727,11 @@ export default angular
                             return Promise.reject();
                         }
                     },
-                    dashboardPlans(user, dashboardModel, subscriptionModel) {
-                        return subscriptionModel.fetch().then(({ Currency }) => dashboardModel.loadPlans(Currency));
+                    dashboardPlans(user, dashboardModel, networkActivityTracker, subscriptionModel) {
+                        const promise = subscriptionModel
+                            .fetch()
+                            .then(({ Currency }) => dashboardModel.loadPlans(Currency));
+                        return networkActivityTracker.track(promise);
                     },
                     methods(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getMethods(null, user));
