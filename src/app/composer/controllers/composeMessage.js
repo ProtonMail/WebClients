@@ -39,7 +39,8 @@ function ComposeMessageController(
         'messageActions',
         'actionMessage',
         'editorListener',
-        'elements'
+        'elements',
+        'tooltip'
     ]);
 
     $scope.messages = [];
@@ -469,20 +470,14 @@ function ComposeMessageController(
         message.maximized = false;
         message.ccbcc = false;
         AppModel.set('maximizedComposer', false);
-        // Hide all the tooltip
-        $('.tooltip')
-            .not(this)
-            .hide();
+        dispatcher.tooltip('hideAll');
         $scope.focusFirstComposer(message);
     };
 
     $scope.unminimize = (message) => {
         message.minimized = false;
         message.maximized = message.previousMaximized;
-        // Hide all the tooltip
-        $('.tooltip')
-            .not(this)
-            .hide();
+        dispatcher.tooltip('hideAll');
     };
 
     $scope.maximize = (message) => {
@@ -531,10 +526,7 @@ function ComposeMessageController(
             outsidersMap.remove(message.ID);
             commitComposer(message, true);
 
-            // Hide all the tooltip
-            $('.tooltip')
-                .not(this)
-                .hide();
+            dispatcher.tooltip('hideAll');
 
             dispatcher['composer.update']('close', {
                 size: $scope.messages.length,

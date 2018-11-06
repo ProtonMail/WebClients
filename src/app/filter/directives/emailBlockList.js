@@ -34,7 +34,7 @@ function emailBlockList(dispatchers, gettextCatalog, spamListModel) {
             listType: '@'
         },
         link(scope, elem, { switchTo }) {
-            const { on, unsubscribe } = dispatchers();
+            const { dispatcher, on, unsubscribe } = dispatchers(['tooltip']);
             const list = spamListModel.list(spamListModel.getType(scope.listType));
             const scroller = elem[0].querySelector(`.${CLASSNAMES.LIST}`);
             const warning = elem[0].querySelector('.alert-info');
@@ -53,7 +53,7 @@ function emailBlockList(dispatchers, gettextCatalog, spamListModel) {
                 list.get().then((list) => {
                     scope.$applyAsync(() => {
                         scope.entries = _.uniqBy(list, 'ID');
-                        $('.tooltip').hide();
+                        dispatcher.tooltip('hideAll');
                     });
                 });
             });
