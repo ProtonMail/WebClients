@@ -46,6 +46,7 @@ $mapFields: (
 }
 
 [class*="contactViewItem-value"] {
+    flex: 1 0 0;
     text-overflow: ellipsis;
     overflow: hidden
 }
