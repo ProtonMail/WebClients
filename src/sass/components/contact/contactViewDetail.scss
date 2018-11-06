@@ -51,13 +51,13 @@
 .contactViewDetail-item[data-type="fn"] + [data-type="fn"] { display: none }
 
 .contactViewDetail-icon {
-    width: 50px;
+    min-width: 50px;
     text-align: center;
 }
 
 .contactViewDetail-type {
-    width: 20%;
-    max-width: 250px
+    flex: 0 0 20%;
+    max-width: 250px;
 }
 
 .contactViewDetail-item:not(.contactViewDetail-item-start) {
