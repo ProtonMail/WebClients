@@ -36,7 +36,12 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
             type: '@type'
         },
         link(scope, element, attr, ngFormController) {
-            const { on, unsubscribe, dispatcher } = dispatchers(['contacts', 'contact.item', 'composer.new']);
+            const { dispatcher, on, unsubscribe } = dispatchers([
+                'contacts',
+                'contact.item',
+                'composer.new',
+                'tooltip'
+            ]);
             const list = element.find('.contactItem-container');
             const type = scope.type;
             const datas = getInfo(scope.contact, type);
@@ -92,10 +97,7 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
             }
 
             function remove(item) {
-                // Hide all the tooltip
-                $('.tooltip')
-                    .not(this)
-                    .hide();
+                dispatcher.tooltip('hideAll');
                 contactUI.remove(scope.UI, item);
                 ngFormController.$setDirty();
                 scope.change();

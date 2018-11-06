@@ -104,7 +104,7 @@ angular
         $httpProvider.defaults.headers.get.Pragma = 'no-cache';
     })
     .run(($state, authentication, $log, dispatchers, networkActivityTracker, AppModel) => {
-        const { on } = dispatchers();
+        const { dispatcher, on } = dispatchers(['tooltip']);
 
         on('$stateChangeStart', (event, toState) => {
             networkActivityTracker.clear();
@@ -152,9 +152,7 @@ angular
             AppModel.set('requestTimeout', false);
 
             // Hide all the tooltip
-            $('.tooltip')
-                .not(this)
-                .hide();
+            dispatcher.tooltip('hideAll');
 
             // Close navbar on mobile
             $('.navbar-toggle').click();
