@@ -28,7 +28,7 @@ describe('Create a free user', () => {
     it('should create a user via donation', () => {
         cy.get('[name="donationForm"]').should('not.be.visible');
 
-        cy.get('.humanVerification-block-donation label').click();
+        cy.get('.humanVerification-block-donation .signup-radio-label').click();
         cy.get('[name="donationForm"]').should('be.visible');
 
         cardForm('donation').defaultForm();

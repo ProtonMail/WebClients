@@ -14,13 +14,12 @@ function test(USERNAME, { confirmModal, welcomeModal }, isFree) {
         cy.get('[ng-model="model.username"]').type('polo');
         cy.get('.signUpProcess-about-pending').should('be.visible');
         cy.get('.signUpProcess-about-pending').contains('Checking username');
-        cy.get('[ng-message="alreadyTaken"]').contains('Username already taken');
+        cy.get('[ng-message="apiError"]').contains('Username already used');
 
         cy.get('.signUpProcess-about-success').should('not.be.visible');
         cy.get('.signUpProcess-about-pending').should('not.be.visible');
 
-        cy
-            .get('[ng-model="model.username"]')
+        cy.get('[ng-model="model.username"]')
             .clear()
             .type(USERNAME);
         cy.get('.signUpProcess-about-success').contains('Username available');
@@ -48,8 +47,7 @@ function test(USERNAME, { confirmModal, welcomeModal }, isFree) {
     });
 
     it('should toggle password type', () => {
-        cy
-            .get('#password')
+        cy.get('#password')
             .clear()
             .type('dew');
         cy.get('#password').should('have.attr', 'type', 'password');
@@ -58,8 +56,7 @@ function test(USERNAME, { confirmModal, welcomeModal }, isFree) {
         cy.get('[data-id="password"] .togglePassword-btn-toggle').click();
         cy.get('#password').should('have.attr', 'type', 'password');
 
-        cy
-            .get('#passwordc')
+        cy.get('#passwordc')
             .clear()
             .type('dew');
         cy.get('#passwordc').should('have.attr', 'type', 'password');
