@@ -1,10 +1,32 @@
-import { toUnsignedString } from '../../../helpers/string';
+import mimemessage from 'mimemessage';
+
+import { toUnsignedString, ucFirst } from '../../../helpers/string';
 import transformEscape from '../../message/helpers/transformEscape';
 
 /* @ngInject */
 function embeddedUtils(attachmentFileFormat, tools) {
     const DIV = document.createElement('DIV');
     const REGEXP_CID_START = /^cid:/g;
+
+    /**
+     * Convert raw headers to better format handled by the mimemessage lib
+     * @param  {Object} config   Current attachment headers
+     * @return {Object}          { formated: <Object>, headers: Object }
+     */
+    const convertMimeHeaders = (config = {}) => {
+        const headers = Object.keys(config)
+            .filter((key) => key.startsWith('content'))
+            .reduce((acc, key) => {
+                const [, type] = key.split('-');
+                acc[`content${ucFirst(type)}`] = config[key];
+                return acc;
+            }, Object.create(null));
+
+        return {
+            formatted: mimemessage.factory(headers),
+            headers
+        };
+    };
 
     /**
      * Flush the container HTML and return the container
@@ -93,10 +115,10 @@ function embeddedUtils(attachmentFileFormat, tools) {
 
     const getAttachementName = (Headers = {}) => {
         if (Headers['content-disposition'] !== 'inline') {
-            const [, name] = (Headers['content-disposition'] || '').split('filename=');
-
-            if (name) {
-                return name.replace(/"/g, '');
+            const { formatted = {} } = convertMimeHeaders(Headers);
+            const { params: { filename } = {} } = formatted.contentDisposition() || {};
+            if (filename) {
+                return filename.replace(/"/g, '');
             }
         }
 
