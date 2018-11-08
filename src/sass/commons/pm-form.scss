@@ -294,7 +294,8 @@
     }
 
 
-    label {
+    label,
+    .label {
         height: 35px;
         @include flexRow();
         @include flexAlignCenter();

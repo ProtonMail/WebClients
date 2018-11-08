@@ -49,18 +49,18 @@
 
                 <div class="clearfix">
                     <div class="col-3-8">
-                        <label translate-context="Title" translate translate-comment="form label for enabling/disabling reset email">Allow password reset</label>
+                        <span class="label" id="passwordResetDescAria" translate-context="Title" translate translate-comment="form label for enabling/disabling reset email">Allow password reset</span>
                     </div>
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-model="passwordReset" data-custom-ng-value="1" data-custom-ng-change="savePasswordReset()"></custom-radio>
+                                <custom-radio data-custom-ng-model="passwordReset" data-custom-ng-value="1" data-custom-ng-change="savePasswordReset()" data-custom-aria-describedby="passwordResetDescAria"></custom-radio>
                                 <span translate-context="Action" translate>Enabled</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-model="passwordReset" data-custom-ng-value="0" data-custom-ng-change="savePasswordReset()"></custom-radio>
+                                <custom-radio data-custom-ng-model="passwordReset" data-custom-ng-value="0" data-custom-ng-change="savePasswordReset()" data-custom-aria-describedby="passwordResetDescAria"></custom-radio>
                                 <span translate-context="Action" translate>Disabled</span>
                             </label>
                         </div>
@@ -70,21 +70,21 @@
                 <div class="clearfix">&nbsp;</div>
                 <div class="clearfix">
                     <div class="col-3-8">
-                        <label>
-                            <span translate-context="Title" translate translate-comment="form heading for changing notification settings">Daily email notifications</span>
+                        <span class="label">
+                            <span translate-context="Title" translate translate-comment="form heading for changing notification settings" id="dailyNotificationsDescAria">Daily email notifications</span>
                             <i class="fa fa-info-circle text-purple" pt-tooltip-translate="When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account." pt-tooltip-translate-context="Tooltip to explain daily email notifications"></i>
-                        </label>
+                        </span>
                     </div>
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-model="dailyNotifications" data-custom-name="dailyNotifications" data-custom-ng-value="1" data-custom-ng-change="saveDailyNotifications()"></custom-radio>
+                                <custom-radio data-custom-ng-model="dailyNotifications" data-custom-name="dailyNotifications" data-custom-ng-value="1" data-custom-ng-change="saveDailyNotifications()" data-custom-aria-describedby="dailyNotificationsDescAria"></custom-radio>
                                 <span translate-context="Action" translate translate-comment="notification settings option">Enabled</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-model="dailyNotifications" data-custom-name="dailyNotifications" data-custom-ng-value="0" data-custom-ng-change="saveDailyNotifications()"></custom-radio>
+                                <custom-radio data-custom-ng-model="dailyNotifications" data-custom-name="dailyNotifications" data-custom-ng-value="0" data-custom-ng-change="saveDailyNotifications()" data-custom-aria-describedby="dailyNotificationsDescAria"></custom-radio>
                                 <span translate-context="Action" translate translate-comment="notification settings option">Disabled</span>
                             </label>
                         </div>
@@ -200,12 +200,12 @@
                 </header-block>
                 <div class="clearfix">
                     <div class="col-3-8">
-                        <label translate-context="Title" translate-comment="Settings/Account page form heading for enabling or disabling autosave contacts" translate>Automatically save contacts</label>
+                        <span class="label" id="autosaveContactsDescAria" translate-context="Title" translate-comment="Settings/Account page form heading for enabling or disabling autosave contacts" translate>Automatically save contacts</span>
                     </div>
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="1" data-custom-ng-change="saveAutosaveContacts()"></custom-radio>
+                                <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="1" data-custom-ng-change="saveAutosaveContacts()" data-custom-aria-describedby="autosaveContactsDescAria"></custom-radio>
                                 <span
                                     translate
                                     translate-context="Address state badge"
@@ -214,7 +214,7 @@
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="0" data-custom-ng-change="saveAutosaveContacts()"></custom-radio>
+                                <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="0" data-custom-ng-change="saveAutosaveContacts()" data-custom-aria-describedby="autosaveContactsDescAria"></custom-radio>
                                 <span
                                     translate
                                     translate-context="Address state badge"
@@ -240,18 +240,18 @@
 
                 <div class="clearfix">
                     <div class="col-3-8">
-                        <label class="control-label" translate-context="Title" translate>Load remote content</label>
+                        <span id="saveImagesDescAria" class="control-label label" translate-context="Title" translate>Load remote content</span>
                     </div>
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-change="saveImages()" data-custom-ng-model="images" data-custom-ng-value="1"></custom-radio>
+                                <custom-radio data-custom-ng-change="saveImages()" data-custom-ng-model="images" data-custom-ng-value="1" data-custom-aria-describedby="saveImagesDescAria"></custom-radio>
                                 <span translate-comment="form option" translate-context="Action" translate>Auto</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-change="saveImages()" data-custom-ng-model="images" data-custom-ng-value="0"></custom-radio>
+                                <custom-radio data-custom-ng-change="saveImages()" data-custom-ng-model="images" data-custom-ng-value="0" data-custom-aria-describedby="saveImagesDescAria"></custom-radio>
                                 <span translate-comment="form option" translate-context="Action" translate>Manual</span>
                             </label>
                         </div>
@@ -262,18 +262,18 @@
                 </div>
                 <div class="clearfix">
                     <div class="col-3-8">
-                        <label class="control-label" translate-context="Title" translate>Load embedded images</label>
+                        <span id="saveEmbeddedDescAria" class="control-label label" translate-context="Title" translate>Load embedded images</span>
                     </div>
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="2"></custom-radio>
+                                <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="2" data-custom-aria-describedby="saveEmbeddedDescAria"></custom-radio>
                                 <span translate-comment="form option" translate-context="Action" translate>Auto</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="0"></custom-radio>
+                                <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="0" data-custom-aria-describedby="saveEmbeddedDescAria"></custom-radio>
                                 <span translate-comment="form option" translate-context="Action" translate>Manual</span>
                             </label>
                         </div>
@@ -290,18 +290,18 @@
 
                 <div class="pm_grid">
                     <div class="col-3-8">
-                        <label translate-context="Title" translate>Keyboard Shortcuts</label>
+                        <span id="saveHotkeysDescAria" class="label" translate-context="Title" translate>Keyboard Shortcuts</span>
                     </div>
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-change="saveHotkeys()" data-custom-ng-model="hotkeys" data-custom-ng-value="1"></custom-radio>
+                                <custom-radio data-custom-ng-change="saveHotkeys()" data-custom-ng-model="hotkeys" data-custom-ng-value="1" data-custom-aria-describedby="saveHotkeysDescAria"></custom-radio>
                                 <span translate-context="Action" translate>Enabled</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-change="saveHotkeys()" data-custom-ng-model="hotkeys" data-custom-ng-value="0"></custom-radio>
+                                <custom-radio data-custom-ng-change="saveHotkeys()" data-custom-ng-model="hotkeys" data-custom-ng-value="0" data-custom-aria-describedby="saveHotkeysDescAria"></custom-radio>
                                 <span translate-context="Action" translate>Disabled</span>
                             </label>
                         </div>

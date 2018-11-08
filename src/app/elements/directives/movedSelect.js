@@ -11,7 +11,8 @@ function movedSelect(
     const I18N = {
         includeMoved: gettextCatalog.getString('Include Moved', null, 'Option'),
         hideMoved: gettextCatalog.getString('Hide Moved', null, 'Option'),
-        success: gettextCatalog.getString('Setting updated', null, 'Success')
+        success: gettextCatalog.getString('Setting updated', null, 'Success'),
+        labelSelect: gettextCatalog.getString('Sent / Drafts folders appearance', null, 'Label')
     };
     return {
         restrict: 'E',
@@ -19,11 +20,14 @@ function movedSelect(
         scope: {},
         template: `
             <span class="movedSelect-container pm_select inline">
-                <select class="movedSelect-select">
-                    <option value="3">${I18N.includeMoved}</option>
-                    <option value="0">${I18N.hideMoved}</option>
-                </select>
-                <i class="fa fa-angle-down"></i>
+                <label>
+                    <span class="sr-only">${I18N.labelSelect}</span>
+                    <select class="movedSelect-select">
+                        <option value="3">${I18N.includeMoved}</option>
+                        <option value="0">${I18N.hideMoved}</option>
+                    </select>
+                    <i class="fa fa-angle-down"></i>
+                </label>
             </span>
             `,
         link(scope, element) {
