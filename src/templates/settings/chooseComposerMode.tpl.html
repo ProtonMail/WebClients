@@ -1,7 +1,10 @@
 <div class="chooseComposerMode-container pm_select inline">
-   <select ng-model="model">
-       <option value="text/html" translate-context="Composer Mode" translate>Normal</option>
-       <option value="text/plain" translate-context="Composer Mode" translate>Plain Text</option>
-   </select>
-   <i class="fa fa-angle-down"></i>
+    <label>
+        <span class="sr-only" translate translate-context="Label">Composer mode</span>
+        <select ng-model="model">
+            <option value="text/html" translate-context="Composer Mode" translate>Normal</option>
+            <option value="text/plain" translate-context="Composer Mode" translate>Plain Text</option>
+        </select>
+        <i class="fa fa-angle-down"></i>
+    </label>
 </div>

@@ -9,24 +9,24 @@
                         translate-context="Title">Composer</h2>
                 </header-block>
 
-                <p class="alert alert-info"><span translate-context="Info" translate>This sets the default composer size. Two sizes are available, a smaller popup composer, and a bigger full screen composer.</span> <a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank" translate-context="Action" translate-comment="learn more link" translate>Learn more</a></p>
+                <p class="alert alert-info"><span id="saveComposerModeDescAria" translate-context="Info" translate>This sets the default composer size. Two sizes are available, a smaller popup composer, and a bigger full screen composer.</span> <a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank" translate-context="Action" translate-comment="learn more link" translate>Learn more</a></p>
                 <div class="radio col-1-2 multi-line-label">
                     <label class="visual-label">
-                        <custom-radio data-custom-ng-model="appearance.ComposerMode" data-custom-ng-value="0" data-custom-ng-change="saveComposerMode(composerMode)"></custom-radio>
-                        <span  translate translate-context="Action"  tranlate-comment="form option">Popup</span>
+                        <custom-radio data-custom-ng-model="appearance.ComposerMode" data-custom-ng-value="0" data-custom-ng-change="saveComposerMode(composerMode)" data-custom-aria-describedby="saveComposerModeDescAria"></custom-radio>
+                        <span  translate translate-context="Action" translate-comment="form option">Popup</span>
                         <span class="visual-label-lineBreak"></span>
-                        <img src="assets/img/settings/pop.gif"  alt="Popup" />
+                        <img src="assets/img/settings/pop.gif"  alt="" />
                     </label>
                 </div>
                 <div class="radio col-1-2 multi-line-label">
                     <label class="visual-label">
-                        <custom-radio data-custom-ng-model="appearance.ComposerMode" data-custom-ng-value="1" data-custom-ng-change="saveComposerMode(composerMode)" ></custom-radio>
+                        <custom-radio data-custom-ng-model="appearance.ComposerMode" data-custom-ng-value="1" data-custom-ng-change="saveComposerMode(composerMode)" data-custom-aria-describedby="saveComposerModeDescAria"></custom-radio>
                         <span
                             translate
                             translate-context="Info"
                             translate-comment="form option">Maximized</span>
                         <span class="visual-label-lineBreak"></span>
-                        <img src="assets/img/settings/max.gif" alt="Maximized" />
+                        <img src="assets/img/settings/max.gif" alt="" />
                     </label>
                 </div>
             </section>
@@ -39,27 +39,27 @@
                         translate-context="Title">Layout</h2>
                 </header-block>
 
-                <p class="alert alert-info"><span translate-context="Info" translate>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.</span> <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank"  translate translate-context="Action">Learn more</a></p>
+                <p class="alert alert-info"><span id="saveLayoutModeDescAria" translate-context="Info" translate>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.</span> <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank"  translate translate-context="Action">Learn more</a></p>
                 <div class="radio col-1-2 multi-line-label">
                     <label class="visual-label">
-                        <custom-radio data-custom-ng-model="appearance.ViewLayout" data-custom-ng-value="0" data-custom-ng-change="saveLayoutMode(composerMode)" ></custom-radio>
+                        <custom-radio data-custom-ng-model="appearance.ViewLayout" data-custom-ng-value="0" data-custom-ng-change="saveLayoutMode(composerMode)" data-custom-aria-describedby="saveLayoutModeDescAria"></custom-radio>
                         <span
                             translate
                             translate-context="Info"
                             translate-comment="form option">Column</span>
                         <span class="visual-label-lineBreak"></span>
-                        <img src="/assets/img/settings/col.gif" alt="Column" />
+                        <img src="/assets/img/settings/col.gif" alt="" />
                     </label>
                 </div>
                 <div class="radio col-1-2 multi-line-label">
                     <label class="visual-label">
-                        <custom-radio data-custom-ng-model="appearance.ViewLayout" data-custom-ng-value="1" data-custom-ng-change="saveLayoutMode(composerMode)"></custom-radio>
+                        <custom-radio data-custom-ng-model="appearance.ViewLayout" data-custom-ng-value="1" data-custom-ng-change="saveLayoutMode(composerMode)" data-custom-aria-describedby="saveLayoutModeDescAria"></custom-radio>
                         <span
                             translate
                             translate-context="Info"
                             translate-comment="form option">Row</span>
                         <span class="visual-label-lineBreak"></span>
-                        <img src="/assets/img/settings/row.gif" alt="Row" />
+                        <img src="/assets/img/settings/row.gif" alt="" />
                     </label>
                 </div>
             </section>
@@ -74,20 +74,22 @@
                         translate-context="Title">Toolbar</h2>
                 </header-block>
 
-                <p class="alert alert-info" translate-context="Info" translate>Choose your prefered button order for marking messages as read / unread.</p>
+                <p class="alert alert-info" id="saveButtonsPositionDescAria" translate-context="Info" translate>Choose your prefered button order for marking messages as read / unread.</p>
                 <div class="toolbar-button-options">
                     <label>
-                        <custom-radio data-custom-ng-change="saveButtonsPosition()" data-custom-ng-model="appearance.MessageButtons" data-custom-ng-value="0"></custom-radio>
+                        <custom-radio data-custom-ng-change="saveButtonsPosition()" data-custom-ng-model="appearance.MessageButtons" data-custom-ng-value="0" data-custom-aria-describedby="saveButtonsPositionDescAria"></custom-radio>
                         <span class="pm_buttons pull-left" pt-tooltip-translate="Mark as read - Mark as unread"  pt-tooltip-translate-context="Action">
-                            <a href="#" class="dead"><i class="fa fa fa-eye"></i></a>
-                            <a href="#" class="dead"><i class="fa fa fa-eye-slash"></i></a>
+                            <span class="sr-only" translate translate-context="Action">Mark as read - Mark as unread</span>
+                            <a href="#" class="dead" role="presentation" tabindex="-1"><i class="fa fa fa-eye"></i></a>
+                            <a href="#" class="dead" role="presentation" tabindex="-1"><i class="fa fa fa-eye-slash"></i></a>
                         </span>
                     </label>
                     <label>
-                        <custom-radio data-custom-ng-change="saveButtonsPosition()" data-custom-ng-model="appearance.MessageButtons" data-custom-ng-value="1"></custom-radio>
+                        <custom-radio data-custom-ng-change="saveButtonsPosition()" data-custom-ng-model="appearance.MessageButtons" data-custom-ng-value="1" data-custom-aria-describedby="saveButtonsPositionDescAria"></custom-radio>
                         <span class="pm_buttons pull-left" pt-tooltip-translate="Mark as unread - Mark as read"  pt-tooltip-translate-context="Action">
-                            <a href="#" class="dead"><i class="fa fa fa-eye-slash"></i></a>
-                            <a href="#" class="dead"><i class="fa fa fa-eye"></i></a>
+                            <span class="sr-only" translate translate-context="Action">Mark as unread - Mark as read</span>
+                            <a href="#" class="dead" role="presentation" tabindex="-1"><i class="fa fa fa-eye-slash"></i></a>
+                            <a href="#" class="dead" role="presentation" tabindex="-1"><i class="fa fa fa-eye"></i></a>
                         </span>
                     </label>
                 </div>
@@ -125,7 +127,8 @@
                     </header-block>
 
                     <div class="margin" ng-class="{'has-error': (themeForm.cssTheme.$touched || themeForm.$submitted) && themeForm.cssTheme.$error.required}">
-                        <p class="alert alert-info" translate-context="Info" translate>Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
+                        <p class="alert alert-info" id="cssThemeDescAria" translate-context="Info" translate>Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
+                        <label for="cssTheme" class="sr-only" translate-context="Label" translate>Custom theme</label>
                         <textarea
                             class="code"
                             placeholder-translate="Paste your CSS code here (limited to 200,000 characters)"
@@ -133,7 +136,8 @@
                             id="cssTheme"
                             name="cssTheme"
                             ng-model="appearance.cssTheme"
-                            maxlength="200000"></textarea>
+                            maxlength="200000"
+                            aria-describedby="cssThemeDescAria"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="button" class="pm_button" ng-click="clearTheme()" translate-context="Action" translate>Reset theme</button>

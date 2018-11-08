@@ -1,7 +1,10 @@
 <div class="chooseTextDirection-container pm_select inline">
-    <select class="chooseTextDirection-select" ng-model="model">
-        <option value="0" translate-context="Option" translate>Left to Right</option>
-        <option value="1" translate-context="Option" translate>Right to Left</option>
-    </select>
-    <i class="fa fa-angle-down"></i>
+    <label>
+        <span class="sr-only" translate translate-context="Label">Composer Text Direction</span>
+        <select class="chooseTextDirection-select" ng-model="model">
+                <option value="0" translate-context="Option" translate>Left to Right</option>
+                <option value="1" translate-context="Option" translate>Right to Left</option>
+            </select>
+            <i class="fa fa-angle-down"></i>
+    </label>
 </div>
