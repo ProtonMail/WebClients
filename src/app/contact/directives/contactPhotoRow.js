@@ -27,7 +27,7 @@ function contactPhotoRow(contactPhotoModal, mailSettingsModel) {
                     scope.value = cleanUri(value);
                 }
 
-                element[0].classList[uri ? 'add' : 'remove'](HIDE_CLEAR_BUTTON);
+                element[0].classList[uri ? 'remove' : 'add'](HIDE_CLEAR_BUTTON);
             };
 
             const actions = {
