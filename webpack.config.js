@@ -47,7 +47,9 @@ module.exports = {
         symlinks: false,
         alias: {
             sass: path.resolve('./src/sass'),
-            assets: path.resolve('./src/assets')
+            assets: path.resolve('./src/assets'),
+            // Custom alias as we're building for the web (mimemessage)
+            iconv: 'iconv-lite'
         }
     },
     output: {
