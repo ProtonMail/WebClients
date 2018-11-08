@@ -153,6 +153,11 @@ input:-moz-ui-invalid {
     -webkit-box-shadow:none;
 }
 
+/* removes "clear button" on WebKit/Blink */
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
 // Safari
 .ua-safari {
     #conversation-list-rows .conversation .subject .pm_labels,
