@@ -56,6 +56,7 @@
     position: relative;
     display: flex;
     align-items: flex-start;
+    max-width: 40%;
 
     > input {
         position: relative;
@@ -147,7 +148,7 @@
 .contactItem-aside {
     display: flex;
     flex-grow: 1;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: flex-end;
     margin-left: 8px;
@@ -155,7 +156,7 @@
 
 .contactItem-inputs {
     display: flex;
-    flex-grow: 1;
+    flex: 1 0 auto;
 }
 
 .contactItem-inputs .pm_toggle {
@@ -290,12 +291,13 @@ contact-pgp contact-item ul.contactItem-container {
     box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
     box-sizing: border-box;
     color: $text;
-    flex-grow:1;
+    flex-grow: 1;
     font-size: 1em;
     height: 35px;
     line-height: 32px;
     padding: 0 10px;
     resize: auto;
+    width: 0; /* in order to make them strech correctly with flexbox */
 
     &:focus {
         color: $black;
@@ -315,6 +317,8 @@ contact-pgp contact-item ul.contactItem-container {
 
 .contactItem-inputs textarea {
     font: inherit;
+    min-width: 100%;
+    flex: 1 0 auto;
     min-height: 65px;
     /* autoExpand */
     padding: 8px 25px 8px 10px;
@@ -338,6 +342,10 @@ contact-pgp contact-item ul.contactItem-container {
     position: relative;
     display: flex;
     min-width: 65px;
+}
+
+.contactItem-container-Photos .contactItem-actions {
+    display: none;
 }
 
 // When changing the order, don't show the action buttons.
@@ -391,7 +399,7 @@ contact-pgp contact-item ul.contactItem-container {
 .contactItem-AddLabel,
 .contactItem-add-inline,
 .contactItem-AddLabelIcon {
-    height:36px;
+    height: 36px;
     line-height: 36px;
 }
 .contactItem-AddLabelIcon {
@@ -438,7 +446,7 @@ contact-pgp contact-item ul.contactItem-container {
     display: block;
     width: 17px;
     height: 17px;
-    content: " ";
+    content: "";
     background: url(assets('img/plus.svg')) no-repeat center;
 }
 
@@ -502,7 +510,7 @@ contact-pgp contact-item ul.contactItem-container {
 .contact-add-only { display: none; }
 .pm_modal .contact-add-only { display: block; }
 
-.contactItem-container .contactItem-row:last-of-type .contactItem-add { display: flex }
+.contactItem-container .contactItem-row:last-of-type .contactItem-add { display: block; } /* flex created an issue on IE/EDGE */
 
 .contactItem-container:not(.as-sortable-disabled) .contactItem-toggle-sort .contactItem-toggle-sort-save,
 .contactItem-container.as-sortable-disabled .contactItem-toggle-sort .contactItem-toggle-sort-enable { display: block }
@@ -520,7 +528,7 @@ contact-pgp contact-item ul.contactItem-container {
 .contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-download,
 .contactItem-container:not(.as-sortable-disabled) .contactItem-row .fa-warning,
 .contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-compose,
-.contactItem-container:not(.as-sortable-disabled) .contactItem-row .fa-gear{
+.contactItem-container:not(.as-sortable-disabled) .contactItem-row .fa-gear {
     display: none;
 }
 
@@ -582,5 +590,6 @@ contact-pgp contact-item ul.contactItem-container {
 
 .appConfigBody-is-mobile .contactItem-sortable-wrapper { flex-direction: column }
 .appConfigBody-is-mobile .contactItem-actions { width: auto }
+.appConfigBody-is-mobile .contactItem-label { max-width: 100% }
 .appConfigBody-is-mobile .contactItem-label > input { width: 100% }
 .appConfigBody-is-mobile .contactItem-container .contactItem-row:not(:first-child) .contactItem-label > input { padding-left: 10px }
