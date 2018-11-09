@@ -122,16 +122,18 @@
                     <div class="pm_buttons">
                         <filter-button data-message="message"></filter-button>
                         <div class="pm_buttons">
-                            <a class="pm_trigger open-folder pull-left" pt-tooltip-translate="Move to" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true">
+                            <a role="button" class="pm_trigger open-folder pull-left" pt-tooltip-translate="Move to" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
                                 <small><i class="fa fa-folder"></i> <i class="fa fa-angle-down"></i></small>
+                                <span class="sr-only" translate-context="Action" translate>Move to</span>
                             </a>
                             <div class="pm_dropdown right wide pull-left">
                                 <dropdown-folders data-elements="getElements"></dropdown-folders>
                             </div>
                         </div>
                         <div class="pm_buttons">
-                            <a class="pm_trigger open-label pull-left" pt-tooltip-translate="Label as" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true">
+                            <a role="button" class="pm_trigger open-label pull-left" pt-tooltip-translate="Label as" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
                                 <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
+                                <span class="sr-only" translate-context="Action" translate>Label as</span>
                             </a>
                             <div class="pm_dropdown right wide pull-left">
                                 <dropdown-labels data-messages="getMessage" data-message="message" data-save="saveLabels"></dropdown-labels>
@@ -144,27 +146,39 @@
                             data-action-compose="::message"
                             data-action-compose-type="reply"
                             pt-tooltip-translate="Reply"
-                            pt-tooltip-translate-context="Action">
+                            pt-tooltip-translate-context="Action"
+                            tabindex="0"
+                            role="button">
 
                             <i class="fa fa-mail-reply"></i>
+                            <span class="sr-only" translate-context="Action" translate>Reply</span>
                         </a>
                         <a
                             class="message-actionBtn-replyall"
                             data-action-compose="::message"
                             data-action-compose-type="replyall"
-                            pt-tooltip-translate="Reply all" pt-tooltip-translate-context="Action">
+                            pt-tooltip-translate="Reply all"
+                            pt-tooltip-translate-context="Action"
+                            tabindex="0"
+                            role="button">
                             <i class="fa fa-mail-reply-all"></i>
+                            <span class="sr-only" translate-context="Action" translate>Reply all</span>
                         </a>
 
                         <a
                             class="message-actionBtn-forward"
                             data-action-compose="::message"
                             data-action-compose-type="forward"
-                            pt-tooltip-translate="Forward" pt-tooltip-translate-context="Action">
+                            pt-tooltip-translate="Forward"
+                            pt-tooltip-translate-context="Action"
+                            tabindex="0"
+                            role="button">
                             <i class="fa fa-mail-forward"></i>
+                            <span class="sr-only" translate-context="Action" translate>Forward</span>
                         </a>
-                        <a href="#" class="pm_trigger" dropdown pt-tooltip-translate="More" pt-tooltip-translate-context="Action">
+                        <a role="button" href="#" class="pm_trigger" dropdown pt-tooltip-translate="More" pt-tooltip-translate-context="Action">
                             <i class="fa fa-angle-down"></i>
+                            <span class="sr-only" translate-context="Action" translate>More</span>
                         </a>
                         <div class="pm_dropdown wide right">
                             <button
