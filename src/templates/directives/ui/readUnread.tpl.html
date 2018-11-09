@@ -3,15 +3,20 @@
     data-ng-class="{ disabled: isDisabled(), 'readUnread-container-ur': messageButtons === 1 }">
     <a
         href="#"
+        role="button"
         class="fa fa-eye readUnread-btn-read"
         data-action="read"
         pt-tooltip-translate="Mark as read"
-        pt-tooltip-translate-context="Action"></a>
-
+        pt-tooltip-translate-context="Action">
+        <span class="sr-only" translate-context="Action" translate>Mark as read</span>
+    </a>
     <a
         href="#"
+        role="button"
         class="fa fa-eye-slash readUnread-btn-unread"
         data-action="unread"
         pt-tooltip-translate="Mark as unread"
-        pt-tooltip-translate-context="Action"></a>
+        pt-tooltip-translate-context="Action">
+        <span class="sr-only" translate-context="Action" translate>Mark as unread</span>
+    </a>
 </span>
