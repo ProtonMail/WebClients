@@ -1,4 +1,4 @@
-import { removeEmailAlias, toUnsignedString, unescapeCSSEncoding, ucFirst, isHTML, addPlusAlias } from '../../../src/helpers/string';
+import { removeEmailAlias, toUnsignedString, unescapeCSSEncoding, ucFirst, extractChevrons, addPlusAlias } from '../../../src/helpers/string';
 
 const EMAILS = {
     'dew@foo.bar': 'dew@foo.bar',
@@ -155,3 +155,30 @@ describe('ucFirst', () => {
     });
 });
 
+describe('extractChevrons', () => {
+    [
+        {
+            name: 'should handle empty parameter and return an empty String',
+            output: ''
+        },
+        {
+            name: 'should return an empty String if we cannot find a value surrounded by chevrons',
+            input: 'panda>',
+            output: ''
+        },
+        {
+            name: 'should return an empty String if we cannot find a value surrounded by chevrons',
+            input: '<panda',
+            output: ''
+        },
+        {
+            name: 'should extract the value surrounded by chevrons',
+            input: 'Pandi <panda>',
+            output: 'panda'
+        }
+    ].forEach(({ name, input, output }) => {
+        it(name, () => {
+            expect(extractChevrons(input)).toBe(output);
+        });
+    });
+});

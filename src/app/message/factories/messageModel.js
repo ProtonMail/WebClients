@@ -21,7 +21,8 @@ function messageModel(
     attachedPublicKey,
     mailSettingsModel,
     addressesModel,
-    keysModel
+    keysModel,
+    readReceiptModel
 ) {
     const I18N = {
         ENCRYPTION_ERROR: gettextCatalog.getString('Error encrypting message', null, 'Error')
@@ -242,6 +243,10 @@ function messageModel(
 
         getListUnsubscribePost() {
             return this.getParsedHeaders('List-Unsubscribe-Post') || '';
+        }
+
+        requireReadReceiptConfirmation() {
+            return readReceiptModel.requireConfirmation(this);
         }
 
         close() {

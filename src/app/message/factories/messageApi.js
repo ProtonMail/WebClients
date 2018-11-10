@@ -159,6 +159,13 @@ function messageApi($http, url) {
      */
     const emptyTrash = () => emptyLabel(MAILBOX_IDENTIFIERS.trash);
 
+    /**
+     * Send read receipt confirmation
+     * @param {String} messageID
+     * @return {Promise}
+     */
+    const receipt = (messageID) => $http.post(requestURL(messageID, 'receipt'));
+
     return {
         send,
         createDraft,
@@ -173,6 +180,7 @@ function messageApi($http, url) {
         trash,
         inbox,
         spam,
+        receipt,
         archive,
         delete: destroy,
         undelete,

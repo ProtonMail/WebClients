@@ -86,3 +86,15 @@ export const unescapeCSSEncoding = (str) => {
 export const ucFirst = (input = '') => {
     return input.charAt(0).toUpperCase() + input.slice(1);
 };
+
+/**
+ * Extract value between chevrons
+ * @param {String} str ex: Andy <andy@pm.me>
+ * @return {String} ex: andy@pm.me
+ */
+export const extractChevrons = (str = '') => {
+    const CHEVRONS_REGEX = /<([^>]+)>/g;
+    const [, match = ''] = CHEVRONS_REGEX.exec(str) || [];
+
+    return match;
+};

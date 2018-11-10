@@ -1,8 +1,10 @@
 import _ from 'lodash';
 
-import { STATUS, ENCRYPTED_STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
+import { STATUS, ENCRYPTED_STATUS, MAILBOX_IDENTIFIERS, MESSAGE_FLAGS } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { getConversationLabels } from '../../conversation/helpers/conversationHelpers';
+
+const { FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
 
 /* @ngInject */
 function postMessage(
@@ -11,12 +13,10 @@ function postMessage(
     cache,
     notification,
     gettextCatalog,
-    messageApi,
     composerRequestModel,
     embedded,
     outsidersMap,
     networkActivityTracker,
-    $filter,
     AttachmentLoader,
     attachmentModel,
     embeddedUtils
@@ -129,6 +129,10 @@ function postMessage(
 
         if (autosaving === false) {
             parameters.Message.Unread = 0;
+        }
+
+        if (message.requestReadReceipt) {
+            parameters.Message.Flags = FLAG_RECEIPT_REQUEST;
         }
 
         const { DisplayName: Name, Email: Address } = message.From || {};

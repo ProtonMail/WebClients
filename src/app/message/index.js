@@ -60,9 +60,13 @@ import transformWelcome from './services/transformWelcome';
 import messageDisplayError from './directives/messageDisplayError';
 import prepareDraft from './factories/prepareDraft';
 import pgpModal from './modals/pgpModal';
+import readReceiptPanel from './directives/readReceiptPanel';
+import readReceiptModel from './factories/readReceiptModel';
 
 export default angular
     .module('proton.message', ['ngSanitize', 'proton.contact', 'proton.squire'])
+    .factory('readReceiptModel', readReceiptModel)
+    .directive('readReceiptPanel', readReceiptPanel)
     .factory('pgpModal', pgpModal)
     .factory('prepareDraft', prepareDraft)
     .directive('messageDisplayError', messageDisplayError)
