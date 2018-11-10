@@ -108,6 +108,7 @@ function addressesModel(Address, authentication, dispatchers, formatKeys) {
      * Remove + alias and transform to lower case
      * @param {String} email
      * @param {Object} user optional
+     * @return {Object}
      */
     const getByEmail = (email = '', user = authentication.user) => {
         const cleanEmail = removeEmailAlias(email);

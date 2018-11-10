@@ -460,11 +460,15 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
     display: none;
 }
 
-.composer.publicKeyAttached .squireToolbar-select-item[data-squire-actions="addKey"] .fa-check {
+.composer.publicKeyAttached [data-squire-actions="addKey"] .fa-check {
     opacity: 1
 }
 
-.composer.signed .squireToolbar-select-item[data-squire-actions="sign"] .fa-check {
+.composer.signed [data-squire-actions="sign"] .fa-check {
+    opacity: 1
+}
+
+.composer.readReceiptRequested [data-squire-actions="requestReadReceipt"] .fa-check {
     opacity: 1
 }
 

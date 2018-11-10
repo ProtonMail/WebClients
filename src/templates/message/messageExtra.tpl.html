@@ -4,6 +4,7 @@
     <message-mime-parsing ng-if="message.MIMEParsingFailed" class="messageExtra-container-error"></message-mime-parsing>
     <message-display-error ng-if="message.hasError" class="messageExtra-container-error"></message-display-error>
     <unsubscribe-panel ng-if="!unsubscribed && message.getListUnsubscribe()"></unsubscribe-panel>
+    <read-receipt-panel ng-if="message.requireReadReceiptConfirmation()" class="messageExtra-container-warning"></read-receipt-panel>
     <message-auto-generated ng-if="message.isAutoReply"></message-auto-generated>
     <message-public-key-found ng-if="message.attachedPublicKey && !(message.askResign && message.Verified !== 0)"></message-public-key-found>
     <message-public-key-pinning ng-if="message.promptKeyPinning && !(message.askResign && message.Verified !== 0)"></message-public-key-pinning>

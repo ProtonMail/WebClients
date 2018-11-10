@@ -138,7 +138,9 @@ function squireExecAction(editorModel, dispatchers) {
 
         // We have custom behaviour for these actions
         if (
-            /^(makeLink|insertImage|changeColor|changeFontFamily|changeFontSize|moreToggle|addKey|sign)$/.test(action)
+            /^(makeLink|insertImage|changeColor|changeFontFamily|changeFontSize|moreToggle|addKey|sign|requestReadReceipt)$/.test(
+                action
+            )
         ) {
             return;
         }

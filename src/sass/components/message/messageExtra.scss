@@ -88,6 +88,9 @@
     line-height: normal;
 }
 
+/* readReceiptPanel */
+.messageExtra-container > .readReceiptPanel-container > [class*='-notice']::before { content: "\f0f3" }
+
 /* messageMimeParsing-container */
 .messageExtra-container > .messageMimeParsing-container > [class*='-notice']::before { content: "\f0f6" }
 

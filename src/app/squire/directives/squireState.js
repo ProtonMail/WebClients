@@ -87,6 +87,9 @@ function squireState(onCurrentMessage, editorModel, editorState, dispatchers) {
                             scope.message.sign = !scope.message.sign;
                             dispatcher['squire.messageSign']('signed', { messageID: scope.message.ID });
                             break;
+                        case 'requestReadReceipt':
+                            scope.message.requestReadReceipt = !scope.message.requestReadReceipt;
+                            break;
                         // On any normal action (like make bold, italic, removeFormatting) close the popover
                         default:
                             setPopover(ID, undefined);
