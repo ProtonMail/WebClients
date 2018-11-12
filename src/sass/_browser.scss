@@ -154,7 +154,7 @@ input:-moz-ui-invalid {
 }
 
 /* removes "clear button" on WebKit/Blink */
-input[type="search"]::-webkit-search-cancel-button {
+.searchInput-noClearSearch::-webkit-search-cancel-button {
     display: none;
 }
 
