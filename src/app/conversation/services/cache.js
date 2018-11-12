@@ -5,6 +5,7 @@ import { STATUS, MAILBOX_IDENTIFIERS, CONVERSATION_LIMIT, ELEMENTS_PER_PAGE, MES
 
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { normalizeEmail } from '../../../helpers/string';
+import { isDraft } from '../../../helpers/message';
 
 const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = STATUS;
 
@@ -15,7 +16,6 @@ function cache(
     conversationApi,
     dispatchers,
     firstLoadState,
-    gettextCatalog,
     messageModel,
     messageApi,
     cacheCounters,
@@ -852,6 +852,27 @@ function cache(
     };
 
     /**
+     * Call the API to update the message model if it's not a draft
+     * In case it's a draft we just update flags
+     * @param {Object} event
+     * @param {Boolean} isSend
+     * @return {Promise}
+     */
+    api.updateDraftMessage = async (event, isSend) => {
+        if (isDraft(event.Message)) {
+            return api.updateFlagMessage(event, isSend);
+        }
+
+        const { data = {} } = await messageApi.get(event.ID);
+        const message = data.Message;
+
+        message.loaded = true;
+        storeMessages([message]);
+
+        return messageModel(message);
+    };
+
+    /**
      * Update a conversation
      */
     api.updateFlagConversation = (event = {}) => {
@@ -938,7 +959,7 @@ function cache(
 
     const formatUpdate = (list = []) => {
         const promise = list.map(({ event, type, isSend, item }) => {
-            const key = type === 'Message' ? 'updateFlagMessage' : `update${item}${type}`;
+            const key = `update${item}${type}`;
             return api[key](event, isSend);
         });
         return Promise.all(promise);
