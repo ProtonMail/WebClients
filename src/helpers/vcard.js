@@ -3,8 +3,8 @@ import _ from 'lodash';
 import { normalizeEmail } from './string';
 import { BOOL_FIELDS } from './vCardFields';
 
-const ESCAPE_REGEX = /:|,|;/gi;
-const UNESCAPE_REGEX = /\\:|\\,|\\;/gi;
+const ESCAPE_REGEX = /\\|,|;/gi;
+const UNESCAPE_REGEX = /\\\\|\\,|\\;/gi;
 const BACKSLASH_SEMICOLON_REGEX = /\\;/gi;
 const ANIMALS = '🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼';
 const SPECIAL_CHARACTER_REGEX = /🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼/gi;
@@ -49,7 +49,18 @@ export const uniqGroups = (list) => {
 };
 
 export const unescapeValue = (value = '') => value.replace(UNESCAPE_REGEX, (val) => val.substr(1));
+/**
+ * Property Value Escaping
+ * COMMA character in a value MUST be escaped with a BACKSLASH character.
+ * BACKSLASH characters in values MUST be escaped with a BACKSLASH character.
+ * N and ADR comprise multiple fields delimited by a SEMICOLON character. Therefore, a SEMICOLON in a field of such a "compound" property MUST be escaped with a BACKSLASH character.
+ * SEMICOLON characters in non-compound properties MAY be escaped
+ * See: https://tools.ietf.org/html/rfc6350#section-3.4
+ * @param {String} value
+ * @return {String}
+ */
 export const processEscape = (value = '') => value.replace(ESCAPE_REGEX, (val) => `\\${val}`);
+
 export const escapeValue = (value = '') => {
     if (Array.isArray(value)) {
         return value.map(processEscape);

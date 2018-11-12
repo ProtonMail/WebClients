@@ -1,7 +1,7 @@
-import { cleanValue, orderByPref } from '../../../src/helpers/vcard';
+import { cleanValue, orderByPref, escapeValue } from '../../../src/helpers/vcard';
 import { BOOL_FIELDS } from '../../../src/helpers/vCardFields';
 
-const ADDRESS = ';;Chemin\\; du Pré-Fleuri 3;Plan\\,les\\:Ouates;;1228;CH';
+const ADDRESS = ';;Chemin\\; du Pré-Fleuri 3;Plan\\,les:Ouates;;1228;CH';
 const NAME = 'Yen; Andy;;;';
 const PROPERTY1 = new vCard.Property('email', 'riri@pm.me', { pref: 2 });
 const PROPERTY2 = new vCard.Property('email', 'fifi@pm.me', { pref: '10' });
@@ -26,8 +26,51 @@ describe('cleanValue', () => {
     });
 
     it('should parse string', () => {
-        expect(cleanValue('A\\;n\\:dy\\, Yen', 'fn'))
+        expect(cleanValue('A\\;n:dy\\, Yen', 'fn'))
             .toEqual('A;n:dy, Yen');
+    });
+});
+
+describe('escapeValue', () => {
+    [
+        {
+            name: 'should escape COMMA character with a BACKSLASH',
+            input: 'pandi,panda',
+            output: 'pandi\\,panda'
+        },
+        {
+            name: 'should escape BACKSLASH character with a BACKSLASH',
+            input: 'pandi\\panda',
+            output: 'pandi\\\\panda'
+        },
+        {
+            name: 'should escape SEMICOLON character with a BACKSLASH',
+            input: 'pandi;panda',
+            output: 'pandi\\;panda'
+        },
+        {
+            name: 'should handle integer',
+            input: 3.14,
+            output: '3.14'
+        },
+        {
+            name: 'should handle array as value',
+            input: [
+                'pandi,panda',
+                'pandi\\panda',
+                'pandi;panda'
+            ],
+            output: [
+                'pandi\\,panda',
+                'pandi\\\\panda',
+                'pandi\\;panda'
+            ]
+        }
+    ].forEach(({ name, input, output }) => {
+        it(name, () => {
+            expect(escapeValue(input))
+                .toEqual(output);
+        });
     });
 });
 
