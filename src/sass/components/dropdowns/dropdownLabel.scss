@@ -61,6 +61,7 @@
 	@include flexFill();
 	display: flex;
 	align-items: center;
+	line-height: 1.2;
 }
 
 .dropdown-label-scrollbox-label-text { pointer-events: none }
