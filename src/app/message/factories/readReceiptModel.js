@@ -1,5 +1,4 @@
 import { MESSAGE_FLAGS } from '../../constants';
-import { extractChevrons } from '../../../helpers/string';
 
 const { FLAG_RECEIPT_SENT, FLAG_SENT } = MESSAGE_FLAGS;
 
@@ -34,9 +33,7 @@ function readReceiptModel(addressesModel, eventManager, messageApi) {
             return false;
         }
 
-        const email = extractChevrons(dispositionNotificationTo); // ex: andy@pm.me
-
-        return addressesModel.getByEmail(email);
+        return true;
     };
 
     return { sendConfirmation, requireConfirmation };
