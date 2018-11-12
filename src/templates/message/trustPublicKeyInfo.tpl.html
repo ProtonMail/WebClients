@@ -13,8 +13,7 @@
                 <td class="fingerprint">
                         <span class="publickey-info">
                             <code
-                                pt-tooltip
-                                data-original-title="{{ ::keyInfo.fingerprint }}">{{ ::keyInfo.fingerprint }}</code>
+                                pt-tooltip="{{ ::keyInfo.fingerprint }}">{{ ::keyInfo.fingerprint }}</code>
                         </span>
                 </td>
                 <td class="created">{{ ::keyInfo.created.toLocaleDateString() }}</td>
