@@ -28,7 +28,7 @@ function readReceiptModel(addressesModel, eventManager, messageApi) {
             return false;
         }
 
-        if (Flags & (FLAG_RECEIPT_SENT || FLAG_SENT)) {
+        if (Flags & (FLAG_RECEIPT_SENT | FLAG_SENT)) {
             // Read receipt already sent to this message
             // or message sent
             return false;
