@@ -1,6 +1,20 @@
 /* @ngInject */
-function unsubscribePanel(composerFromModel, confirmModal, dispatchers, gettextCatalog, unsubscribeModel) {
+function unsubscribePanel(
+    composerFromModel,
+    confirmModal,
+    dispatchers,
+    gettextCatalog,
+    notification,
+    unsubscribeModel
+) {
     const I18N = {
+        cannotSend(email) {
+            return gettextCatalog.getString(
+                'Cannot unsubscribe with {{email}}, please check address status',
+                { email },
+                'Error message when unsubscribing to mail list'
+            );
+        },
         notice: gettextCatalog.getString('This message is from a mailing list.', null, 'Info'),
         kb: gettextCatalog.getString('Learn more', null, 'Info'),
         button: gettextCatalog.getString('Unsubscribe', null, 'Action'),
@@ -17,6 +31,10 @@ function unsubscribePanel(composerFromModel, confirmModal, dispatchers, gettextC
 
     const confirmFirst = (message) => {
         const { address } = composerFromModel.get(message);
+
+        if (!address.Send) {
+            return notification.error(I18N.cannotSend(address.Email));
+        }
 
         confirmModal.activate({
             params: {
