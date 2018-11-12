@@ -39,6 +39,9 @@
         width: 16px; /* IE10 */
         position: relative;
     }
+    .pm_dropdown {
+        z-index: auto;
+    }
 }
 
 .toolbarMobile-container {
