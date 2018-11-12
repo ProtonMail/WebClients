@@ -1,7 +1,7 @@
 import { MESSAGE_FLAGS } from '../../constants';
 import { extractChevrons } from '../../../helpers/string';
 
-const { FLAG_RECEIPT_SENT } = MESSAGE_FLAGS;
+const { FLAG_RECEIPT_SENT, FLAG_SENT } = MESSAGE_FLAGS;
 
 /* @ngInject */
 function readReceiptModel(addressesModel, eventManager, messageApi) {
@@ -22,14 +22,15 @@ function readReceiptModel(addressesModel, eventManager, messageApi) {
      * @return {Boolean} address model
      */
     const requireConfirmation = ({ Flags, ParsedHeaders = {} }) => {
-        if (Flags & FLAG_RECEIPT_SENT) {
-            // Read receipt already sent to this message
-            return false;
-        }
-
         const dispositionNotificationTo = ParsedHeaders['Disposition-Notification-To']; // ex: Andy <andy@pm.me>
 
         if (!dispositionNotificationTo) {
+            return false;
+        }
+
+        if (Flags & (FLAG_RECEIPT_SENT || FLAG_SENT)) {
+            // Read receipt already sent to this message
+            // or message sent
             return false;
         }
 
