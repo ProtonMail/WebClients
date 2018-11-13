@@ -27,7 +27,6 @@ function manageContactGroupLink(
                         }
                     });
                 }
-                console.log('contactGroupModal');
                 manageContactGroupModal.activate();
             };
             el.on('click', onClick);
