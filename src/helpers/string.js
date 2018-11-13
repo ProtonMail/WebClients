@@ -34,6 +34,11 @@ export function unicodeTag(input = '', mode) {
     return input.replace(matchTagOpenClose(), (match) => MAP_TAGS[match] || '');
 }
 
+/**
+ * Transform value to be normalized (lowercase)
+ * @param {String} email
+ * @return {String}
+ */
 export const normalizeEmail = (email = '') => email.toLowerCase();
 
 /**

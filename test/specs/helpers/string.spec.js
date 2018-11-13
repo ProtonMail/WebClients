@@ -2,8 +2,8 @@ import {
     removeEmailAlias,
     toUnsignedString,
     unescapeCSSEncoding,
+    normalizeEmail,
     ucFirst,
-    isHTML,
     addPlusAlias,
     extractChevrons,
     unicodeTag
@@ -267,6 +267,24 @@ describe('extractChevrons', () => {
     ].forEach(({ name, input, output }) => {
         it(name, () => {
             expect(extractChevrons(input)).toBe(output);
+        });
+    });
+});
+
+describe('normalizeEmail', () => {
+    [
+        {
+            name: 'should handle empty parameter and return a String',
+            output: ''
+        },
+        {
+            name: 'should lowercase the String',
+            input: 'PandA@pm.me',
+            output: 'panda@pm.me'
+        }
+    ].forEach(({ name, input, output }) => {
+        it(name, () => {
+            expect(normalizeEmail(input)).toBe(output);
         });
     });
 });
