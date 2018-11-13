@@ -3,11 +3,11 @@
 .contactGroupsOverview-container {
     display: inline-flex !important;
     line-height: initial !important;
-    pointer-events: all !important;
     width: auto !important;
     min-width: 100px;
     flex-direction: row-reverse;
     align-items: center;
+    pointer-events: none;
 }
 
 .contactGroupsOverview-ellipsis {
@@ -24,6 +24,7 @@
     display: flex !important;
     border: 0 !important;
     margin: 0 !important;
+    pointer-events: all;
 }
 
 .contactGroupsOverview-label i.fa { color: currentColor; }
