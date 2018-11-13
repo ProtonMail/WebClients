@@ -96,7 +96,21 @@ if (env.isDistRelease()) {
         })
     );
 
-    list.push(new OptimizeCSSAssetsPlugin({}));
+    list.push(
+        new OptimizeCSSAssetsPlugin({
+            cssProcessorPluginOptions: {
+                preset: [
+                    'default',
+                    {
+                        reduceInitial: false,
+                        discardComments: {
+                            removeAll: true
+                        }
+                    }
+                ]
+            }
+        })
+    );
 
     list.push(
         new ImageminPlugin({
