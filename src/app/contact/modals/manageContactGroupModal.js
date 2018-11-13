@@ -113,11 +113,20 @@ function manageContactGroupModal(
 
             on('contactGroupModel', (e, { type }) => {
                 if (/^cache\.(update|refresh)$/.test(type)) {
+                    /*
+                        Force refresh of the whole list as the drag&drop lib stores
+                         a cache which creates an issue if we DnD an item cf #7904
+                     */
                     $scope.$applyAsync(() => {
-                        this.labels = contactGroupModel.get().map((item) => ({
-                            ...item,
-                            selected: CACHE.selection[item.ID]
-                        }));
+                        this.labels.length = 0;
+                        _rAF(() => {
+                            $scope.$applyAsync(() => {
+                                this.labels = contactGroupModel.get().map((item) => ({
+                                    ...item,
+                                    selected: CACHE.selection[item.ID]
+                                }));
+                            });
+                        });
                     });
                 }
             });
