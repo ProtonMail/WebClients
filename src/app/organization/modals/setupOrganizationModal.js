@@ -52,6 +52,7 @@ function setupOrganizationModal(
             self.min = 0;
             self.max = organization.MaxSpace;
             self.unit = base * base * base;
+            self.userUsedSpace = authentication.user.UsedSpace;
 
             const minPadding = authentication.user.UsedSpace / self.unit;
 
@@ -78,7 +79,7 @@ function setupOrganizationModal(
             minPadding > 0 && self.legends.push(minPaddingLegend);
 
             // VPN
-            self.min = 0;
+            self.minVPN = 0;
             self.maxVPN = organization.MaxVPN;
 
             self.sliderVPNOptions = {
@@ -87,7 +88,7 @@ function setupOrganizationModal(
                 step: 1,
                 connect: [true, false],
                 tooltips: true,
-                range: { min: 0, max: self.maxVPN },
+                range: { min: self.minVPN, max: self.maxVPN },
                 pips: {
                     mode: 'values',
                     values: [0, self.maxVPN],
