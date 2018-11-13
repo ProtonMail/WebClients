@@ -133,6 +133,7 @@
 
 //== Composer
 @import "components/composer/composer";
+@import "components/composer/editComposerContactGroupModal";
 @import "components/composer/composerOptions";
 @import "components/composer/composerTime";
 @import "components/composer/composerExpiration";
@@ -170,6 +171,8 @@
 @import "components/sidebar/sidebarContact";
 
 //== Message
+@import "components/message/messageAddressActions";
+@import "components/message/messageAddressActionMenu";
 @import "components/message/messagePlaceholder";
 @import "components/message/allMessageLabels";
 @import "components/message/messageContacts";
@@ -203,9 +206,18 @@
 
 //== Contact
 @import "components/contact/contactActionHeader";
+@import "components/contact/autocompleteContactGroup";
 @import "components/contact/advancedSettingsBtn";
+@import "components/contact/contactGroupsOverview";
 @import "components/contact/contactViewItem";
 @import "components/contact/contactArrowsSort";
+@import "components/contact/actionContactGroup";
+@import "components/contact/manageContactGroupLink";
+@import "components/contact/manageContactGroupModal";
+@import "components/contact/autocompleteContacts";
+@import "components/contact/contactGroupModal";
+@import "components/contact/dropdownGroups";
+@import "components/contact/contactGroupsDropdown";
 @import "components/contact/contactViewDetail";
 @import "components/contact/contactError";
 @import "components/contact/importCardDropzone";
@@ -239,6 +251,8 @@
 
 //== Labels
 @import "components/labels/labelModal";
+@import "components/labels/labelNameInput";
+@import "components/labels/labelColorSelector";
 @import "components/labels/labelsElement";
 @import "components/labels/labelsState";
 

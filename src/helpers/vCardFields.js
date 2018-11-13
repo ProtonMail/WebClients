@@ -1,5 +1,6 @@
 import _ from 'lodash';
 
+import { VCARD_KEY_FIELDS } from '../app/constants';
 import { ucFirst } from './string';
 
 export const BOOL_FIELDS = ['x-pm-encrypt', 'x-pm-sign'];
@@ -35,7 +36,6 @@ export const FIELDS = {
         'org',
         'member',
         'related',
-        'categories',
         'rev',
         'sound',
         'uid',
@@ -82,6 +82,14 @@ export const ADVANCED_SENDING_KEYS = [].concat(
     FIELDS['X-PM-SIGN'],
     FIELDS['X-PM-TLS']
 );
+
+const PROPERTY_CATEGORY = 'categories';
+export const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group', PROPERTY_CATEGORY];
+export const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(VCARD_KEY_FIELDS);
+
+// Fields that are forced to be included in the encrypted data
+export const ENCRYPTED_FIELDS = ['uid'];
+export const GROUP_FIELDS = ['email', PROPERTY_CATEGORY].concat(VCARD_KEY_FIELDS);
 
 export const toHumanKey = (key) => {
     return KEY_MAP[key] || `${ucFirst(key.toLowerCase())}s`;

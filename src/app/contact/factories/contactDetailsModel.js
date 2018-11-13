@@ -10,6 +10,7 @@ import {
     FIELDS,
     toHumanKey
 } from '../../../helpers/vCardFields';
+import { extract as extractProperties } from '../../../helpers/vCardProperties';
 
 /* @ngInject */
 function contactDetailsModel(
@@ -29,9 +30,9 @@ function contactDetailsModel(
     const MAP_KEYS = VCARD_KEYS.reduce((acc, key) => {
         acc[key] = contactTransformLabel.toLang(key);
         return acc;
-    }, {});
+    }, Object.create(null));
 
-    const buildProperty = (property = {}, type = undefined) => {
+    const buildProperty = (type) => (property = {}) => {
         const key = property.getField();
         return {
             value: cleanValue(property.valueOf(), key),
@@ -85,7 +86,6 @@ function contactDetailsModel(
                             return;
                         }
                         const vCardArgs = getParams(item, child.length > 1 && index + 1);
-
                         const emailProperty = new vCard.Property(type, escapeValue(email), vCardArgs);
                         emailProperty.group = `item${index + 1}`;
                         const helperCard = new vCard();
@@ -109,12 +109,31 @@ function contactDetailsModel(
                     break;
                 default:
                     child.forEach((item) => {
+                        /*
+                            We need to clean values for categories as the separator is a COMMA so we must not escape them ;)
+                         */
+                        if (item.type === 'categories') {
+                            // It's an array, and it may contains many strings
+                            // ['dew,cc', '1e', '2,33'] -> "dew,cc,1e,2,33"
+                            const value = (item.value || [])
+                                .toString()
+                                .split(',')
+                                .filter(Boolean)
+                                .toString();
+
+                            if (value.length) {
+                                params.vCard.add(item.type, cleanValue(escapeValue(value)), getParams(item));
+                            }
+
+                            return;
+                        }
+
                         item.value && params.vCard.add(item.type, escapeValue(item.value), getParams(item));
                     });
                     break;
             }
         });
-
+        debugger;
         let fnProperty = params.vCard.get('fn');
 
         if (Array.isArray(fnProperty)) {
@@ -147,8 +166,7 @@ function contactDetailsModel(
     function extract({ vcard = new vCard(), field = '', type }, isPersonnal) {
         const keys = getKeys(field, vcard, isPersonnal);
         const listKeys = keys || (isPersonalsKey(field) ? getKeys('PERSONALS', vcard) : []);
-
-        return vcardService.extractProperties(vcard, listKeys).map((property) => buildProperty(property, type));
+        return extractProperties(vcard, listKeys).map(buildProperty(type));
     }
 
     /**

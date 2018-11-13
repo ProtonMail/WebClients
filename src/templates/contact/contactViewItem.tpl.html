@@ -17,12 +17,19 @@
     <i class="fa fa-tag contactViewDetail-icon" aria-hidden="true"></i>
 
     <span class="contactViewDetail-type">{{ ::info.key | contactViewType:info.type }}</span>
-    <a
+
+    <div
         ng-if="info.key === 'email'"
-        pt-tooltip-translate="Compose a new message to this email"
-        pt-tooltip-translate-context="Tooltip"
-        href="mailto:{{info.value}}"
-        class="contactViewItem-value-email">{{::info.value}}</a>
+        class="contactViewItem-value-email">
+        <a
+            href="mailto:{{info.value}}"
+            pt-tooltip-translate="Compose a new message to this email"
+            pt-tooltip-translate-context="Tooltip"
+            class="contactViewItem-label-email">{{::info.value}}</a>
+        <contact-groups-overview
+            data-email="info.value"
+            class="contactViewItem-label-group"></contact-groups-overview>
+    </div>
 
     <a
         ng-if="info.key === 'tel'"
@@ -55,10 +62,19 @@
         </ul>
     </address>
 
-    <advanced-settings-btn
-        class="contactItem-btn-settings"
-        ng-if="info.key === 'email' && !isOwnAddress(info.value)"
-        data-contact="contact"
-        data-mode="mode"
-        data-model="info"></advanced-settings-btn>
+    <div class="contactViewItem-actions">
+        <contact-groups-dropdown
+            data-position="left"
+            data-type="email"
+            data-model="info.value"
+            class="contactViewItem-actions-dropdownGroup"
+            ng-if="type === 'email'"></contact-groups-dropdown>
+
+        <advanced-settings-btn
+            class="contactItem-btn-settings"
+            ng-if="info.key === 'email' && !isOwnAddress(info.value)"
+            data-contact="contact"
+            data-mode="mode"
+            data-model="info"></advanced-settings-btn>
+    </div>
 </li>

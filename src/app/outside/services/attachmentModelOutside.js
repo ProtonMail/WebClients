@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import { flow, map, reduce, filter } from 'lodash/fp';
 import { MIME_TYPES } from '../../constants';
+import { uniqID } from '../../../helpers/string';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -78,9 +79,7 @@ function attachmentModelOutside($log, AttachmentLoader, dispatchers, embedded, n
      */
     const packetToAttachment = (message) => (list = []) => {
         return list.map((packet) => ({
-            ID: `att_${Math.random()
-                .toString(32)
-                .slice(0, 12)}_${Date.now()}`,
+            ID: `att_${uniqID()}`,
             Name: packet.Filename,
             Size: packet.FileSize,
             Filename: packet.Filename,

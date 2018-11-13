@@ -8,33 +8,47 @@
     'hasSender': message.Sender.Address.length,
     'message-mode-plain': message.viewMode === 'plain'
 }">
-    <message-address-action-menu></message-address-action-menu>
-    <div class="summary" toggle-message>
+
+    <div class="summary" data-toggle-message>
+
         <div class="summary-left">
             <div class="meta">
+
                 <i class="history fa fa-reply" ng-if="message.IsReplied === 1"></i>
                 <i class="history fa fa-reply-all" ng-if="message.IsRepliedAll === 1"></i>
                 <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
+
                 <div class="contact message-contact">
-                    <div class="from message-contact-from"><span translate translate-context="Message sender label" translate>From</span>:</div>
-                    <div class="from-value" pt-tooltip="{{ message.Sender | contact:'Name' }} {{ message.Sender | contact:'Address' }}">
-                        <strong>{{ message.Sender | contact:'Name' }}</strong>
-                        <em>{{ message.Sender | contact:'Address' }}
-                        </em>
+
+                    <div class="from message-contact-from">
+                        <span translate translate-context="Message sender label" translate>From</span>:
                     </div>
+
+                    <div
+                        class="from-value"
+                        pt-tooltip="{{ message.Sender | contact:'Name' }} {{ message.Sender | contact:'Address' }}">
+                        <strong>{{ message.Sender | contact:'Name' }}</strong>
+                        <em>{{ message.Sender | contact:'Address' }}</em>
+                    </div>
+
                     <message-address-actions
                         data-message-id="message.ID"
-                        data-address="{{ message.Sender | contact:'Address' }}"
-                        data-name="{{ message.Sender | contact:'Name' }}"
+                        data-email="message.Sender"
                         ng-if="message.expand"></message-address-actions>
                     <encryption-status class="encryptionStatus"></encryption-status>
+
+                    <message-address-action-menu></message-address-action-menu>
                 </div>
+
+
             </div>
             <div class="location message-summary-folder sent">
                 <i ng-if="message.Type === 1" class="pm_tag allMessageLabels-type-draft" translate-context="Message label" translate>Draft</i>
                 <i ng-if="message.Type === 2 || message.Type === 3" class="pm_tag allMessageLabels-type-sent" translate-context="Message label" translate>Sent</i>
             </div>
+
         </div>
+
         <div class="summary-right">
             <div class="labels message-summary-labels">
                 <labels-element

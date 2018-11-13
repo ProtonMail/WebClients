@@ -5,18 +5,17 @@ function progressBar(dispatchers) {
         replace: true,
         template: '<progress class="progressBar-container"></progress>',
         scope: {},
-        compile(element, { id = 'progress', max = 100 }) {
+        compile(element, { max = 100 }) {
             element[0].value = 1;
             element[0].max = max;
 
-            return (scope) => {
+            return (scope, el, { id }) => {
                 const { on, unsubscribe } = dispatchers();
-
-                on('progressBar', (event, { type = '', data = {} }) => {
+                on('progressBar', (e, { type = '', data = {} }) => {
                     const { progress = 0 } = data;
 
                     if (id === type) {
-                        element[0].value = +progress;
+                        el[0].value = +progress;
                     }
                 });
 

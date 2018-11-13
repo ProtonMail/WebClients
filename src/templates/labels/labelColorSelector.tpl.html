@@ -1,0 +1,15 @@
+<ul class="labelColorSelector-container">
+    <li
+        class="labelColorSelector-item"
+        ng-repeat="c in colors track by c"
+        ng-style="{ 'color': c }">
+        <input
+            tabindex="{{ 2 + $index}}"
+            type="radio"
+            value="{{::c}}"
+            name="paletteColor"
+            aria-labelledby="Color {{::c}}"
+            class="labelColorSelector-input-color">
+        <div class="labelColorSelector-item-mask"><i class="fa fa-check"></i></div>
+    </li>
+</ul>

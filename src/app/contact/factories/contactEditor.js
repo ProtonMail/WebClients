@@ -11,6 +11,7 @@ function contactEditor(
     contactModal,
     contactEmails,
     contactCache,
+    contactGroupModel,
     contactLoaderModal,
     contactSchema,
     confirmModal,
@@ -36,26 +37,34 @@ function contactEditor(
      * @return {Promise}
      */
     function create({ contacts = [], mode, state, callback = _.noop }) {
+        const isImport = mode === 'import';
         const cancellationToken = createCancellationToken();
-        const preCreation = mode === 'import' ? contactImportEncryption.process(contacts) : Promise.resolve(contacts);
 
-        const promise = preCreation
-            .then((contacts) => {
-                // enable the progress bar only for import so we can still use the contacts stack while importing
-                return Contact.add(contacts, cancellationToken, mode === 'import');
-            })
-            .then((data) => {
-                const { created, errors, total } = data;
-                dispatcher.contacts('contactCreated', { created, total, errors, mode, state });
+        const createFlow = async (list = []) => {
+            try {
+                const contacts = await (isImport ? contactImportEncryption.process(list) : list);
+                /*
+                    We enable the progress bar only for import mode
+                    so we can still use the contacts stack while importing
+                 */
+                const data = await Contact.add(contacts, cancellationToken, isImport);
+
+                dispatcher.contacts('contactCreated', {
+                    ...data,
+                    mode,
+                    state
+                });
                 callback(data);
                 return data;
-            })
-            .catch((error) => {
-                if (error.isCancellationError) {
+            } catch (e) {
+                if (e.isCancellationError) {
                     return;
                 }
-                throw error;
-            });
+                throw e;
+            }
+        };
+
+        const promise = createFlow(contacts);
 
         if (mode === 'import') {
             contactLoaderModal.activate({
@@ -109,20 +118,20 @@ function contactEditor(
      */
     function summarizeMergeResults(results = []) {
         return results.reduce(
-            (agg, result) => {
+            (acc, result) => {
                 if (result.updated) {
-                    agg.updated.push(result.updated);
+                    acc.updated.push(result.updated);
                 }
                 if (result.removed) {
-                    agg.removed = agg.removed.concat(result.removed);
+                    acc.removed = acc.removed.concat(result.removed);
                 }
                 if (result.errors) {
-                    agg.errors = agg.errors.concat(result.errors);
+                    acc.errors = acc.errors.concat(result.errors);
                 }
                 if (result.total) {
-                    agg.total += result.total;
+                    acc.total += result.total;
                 }
-                return agg;
+                return acc;
             },
             { updated: [], removed: [], errors: [], total: 0 }
         );
@@ -192,6 +201,7 @@ function contactEditor(
         });
 
         const groups = Object.keys(contacts);
+
         // Update and/or remove for each group of contacts.
         const actions = groups.map((group) => updateAndRemove(contacts[group]));
         // Total is contact to update (if any) + contacts to remove
@@ -245,13 +255,13 @@ function contactEditor(
      * @return {Promise}
      */
     function update({ contact = {}, callback = _.noop }) {
-        const promise = updateContact(contact)
-            .then(() => notification.success(I18N.EDIT_SUCCESS))
-            .then(eventManager.call)
-            .then(callback);
-
-        networkActivityTracker.track(promise);
-        return promise;
+        const flow = async () => {
+            const data = await updateContact(contact);
+            notification.success(I18N.EDIT_SUCCESS);
+            await eventManager.call();
+            callback(data);
+        };
+        return networkActivityTracker.track(flow());
     }
 
     /**
@@ -281,14 +291,12 @@ function contactEditor(
                 ? gettextCatalog.getString('All contacts deleted', null, 'Success')
                 : gettextCatalog.getPlural(contactIDs.length, 'Contact deleted', 'Contacts deleted', null, 'Success');
 
-        const process = () => {
-            return requestDeletion(contactIDs).then(() => {
-                notification.success(success);
-                $state.go('secured.contacts');
-
-                // Remove all selected contacts after deleting a contact.
-                dispatcher.contacts('selectContacts', { isChecked: false });
-            });
+        const process = async () => {
+            await requestDeletion(contactIDs);
+            notification.success(success);
+            $state.go('secured.contacts');
+            // Remove all selected contacts after deleting a contact.
+            dispatcher.contacts('selectContacts', { isChecked: false });
         };
 
         if (confirm) {
@@ -336,27 +344,32 @@ function contactEditor(
                 confirm() {
                     callback();
                     confirmModal.deactivate();
-                },
-                cancel() {
-                    confirmModal.deactivate();
                 }
             }
         });
     }
 
-    function add({ email, name }) {
+    /**
+     * Add a contact with an option to autofill the modal
+     * @param {String} options.email
+     * @param {String} options.name
+     * @param {Boolean} noRedirect Prevent redirection when we create a contact
+     * @return {Promise} resolve when we close the modal
+     */
+    function add({ email, name }, noRedirect) {
         const contact = angular.copy(contactSchema.contactAPI);
 
         email && contact.vCard.add('email', email);
         name && contact.vCard.add('fn', name);
 
-        contactModal.activate({
-            params: {
-                contact,
-                close() {
-                    contactModal.deactivate();
+        return new Promise((resolve) => {
+            contactModal.activate({
+                params: {
+                    hookClose: resolve,
+                    noRedirect,
+                    contact
                 }
-            }
+            });
         });
     }
 
@@ -367,7 +380,7 @@ function contactEditor(
         type === 'addContact' && add(data);
     });
 
-    return { init: angular.noop, create, createSingular, update, updateUnencrypted, remove, merge };
+    return { init: angular.noop, create, createSingular, update, updateUnencrypted, remove, merge, add };
 }
 
 export default contactEditor;

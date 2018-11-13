@@ -42,6 +42,11 @@
 .contactViewDetail-item {
     display: flex;
 }
+
+.contactViewDetail-item[data-field="email"] {
+    align-items: center;
+}
+
 .contactViewDetail-list + .contactViewDetail-list { margin-top: 1.3rem; }
 .contactViewDetail-item + .contactViewDetail-item {
     margin-top: 1rem;

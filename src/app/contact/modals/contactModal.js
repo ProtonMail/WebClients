@@ -25,7 +25,7 @@ function contactModal($state, dispatchers, gettextCatalog, notification, pmModal
                     if (created.length) {
                         notification.success(I18N.contactAdded);
                         const { toState: { name = 'secured.contacts.details' } = {}, toParams } = data.state || {};
-                        $state.go(name, toParams || { id: created[0].ID });
+                        !params.noRedirect && $state.go(name, toParams || { id: created[0].ID });
                         params.close();
                     }
                 }
@@ -33,7 +33,7 @@ function contactModal($state, dispatchers, gettextCatalog, notification, pmModal
 
             this.contact = params.contact;
             contactEncryptionAddressMap.init(CONTACT_ADD_ID, this.contact.vCard);
-            this.cancel = params.close;
+
             this.submit = () => dispatcher.contacts('submitContactForm');
             this.$onDestroy = () => {
                 unsubscribe();

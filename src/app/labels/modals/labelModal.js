@@ -1,9 +1,6 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function labelModal(
     pmModal,
-    tools,
     hotkeys,
     gettextCatalog,
     networkActivityTracker,
@@ -12,7 +9,6 @@ function labelModal(
     notification,
     sanitize
 ) {
-    const COLORS_LIST = tools.colors();
     const TRANSLATIONS = {
         EDIT_FOLDER: gettextCatalog.getString('Edit folder', null, 'Title'),
         EDIT_LABEL: gettextCatalog.getString('Edit label', null, 'Title'),
@@ -74,10 +70,11 @@ function labelModal(
     }
 
     const cleanInput = (color = {}) => {
-        return _.extend({}, color, {
+        return {
+            ...color,
             Name: sanitize.input(color.Name),
             Color: sanitize.input(color.Color)
-        });
+        };
     };
 
     /**
@@ -104,14 +101,12 @@ function labelModal(
         controller: function(params) {
             const { ID, Name = '', Color = '', Exclusive = 0 } = params.label;
             const successMessage = getSuccessMessage(params.label);
-            const index = _.random(0, COLORS_LIST.length - 1);
             this.ID = ID;
             this.exclusive = Exclusive;
             this.title = getTitle(params.label);
             this.name = Name || '';
             this.notify = getNotify(params.label);
-            this.colors = COLORS_LIST;
-            this.color = Color || COLORS_LIST[index];
+            this.color = Color;
 
             this.create = (form) => {
                 if (form.$invalid) {
@@ -138,10 +133,6 @@ function labelModal(
                     params.close(label);
                 });
                 networkActivityTracker.track(promise);
-            };
-
-            this.cancel = () => {
-                params.close();
             };
 
             setTimeout(

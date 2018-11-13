@@ -1,0 +1,33 @@
+.editComposerContactGroupModal-container, .editComposerContactGroupModal-container * { box-sizing: border-box }
+
+.editComposerContactGroupModal-list {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+.editComposerContactGroupModal-item,
+.editComposerContactGroupModal-label {
+    display: flex;
+}
+
+.editComposerContactGroupModal-item + .editComposerContactGroupModal-item {
+    margin-top: 1em;
+}
+
+.editComposerContactGroupModal-label {
+    flex: 1;
+    align-items: center
+}
+.editComposerContactGroupModal-input {
+    width: 2em;
+    justify-content: flex-start;
+}
+
+.editComposerContactGroupModal-icon {
+    margin-left: auto;
+}
+
+.editComposerContactGroupModal-name {
+    font-weight: normal;
+}

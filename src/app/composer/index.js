@@ -38,9 +38,13 @@ import postMessage from './services/postMessage';
 import sendMessage from './services/sendMessage';
 import validateMessage from './services/validateMessage';
 import expirationModal from './modals/expirationModal';
+import editComposerContactGroupModal from './modals/editComposerContactGroupModal';
+import composerContactGroupSelection from './factories/composerContactGroupSelection';
 
 export default angular
     .module('proton.composer', ['proton.labels'])
+    .factory('composerContactGroupSelection', composerContactGroupSelection)
+    .factory('editComposerContactGroupModal', editComposerContactGroupModal)
     .controller('ComposeMessageController', ComposeMessageController)
     .directive('actionCompose', actionCompose)
     .directive('btnSendMessage', btnSendMessage)

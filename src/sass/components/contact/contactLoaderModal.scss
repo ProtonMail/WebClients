@@ -20,6 +20,15 @@
     }
 }
 
+.contactLoaderModal-footer.contactLoaderModal-footer.contactLoaderModal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contactLoaderModal-footer button + button {
+    margin-left: auto
+}
+
 .contactLoaderModal-frame {
     border: 1px solid $border;
     display: flex;
@@ -44,6 +53,53 @@
 
 .contactLoaderModal-log {
     line-height: 1.5em;
+}
+
+.contactLoaderModal-info {
+    margin: 0;
+}
+
+.contactLoaderModal-categories-list {
+    padding: 0;
+    margin: 0;
+    margin-top: 2em
+}
+
+.contactLoaderModal-categories-item {
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    height: 5rem;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.contactLoaderModal-categories-item > * {
+    flex: 1;
+}
+
+.contactLoaderModal-categories-label {
+    max-width: 25%;
+    margin-top: .5em
+}
+
+/*
+    to display:
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    (333 contacts)
+    instead of
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxx (3
+    33 contacts)
+
+ */
+.contactLoaderModal-categories-label span {
+    white-space: pre;
+}
+
+.contactLoaderModal-categories-actions {
+    max-width: 30%;
+    margin-left: .5em;
+    margin-right: .5em
 }
 
 /* Context */

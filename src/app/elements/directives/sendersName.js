@@ -1,14 +1,17 @@
 import _ from 'lodash';
+
 import { INBOX } from '../../constants';
+
 /* @ngInject */
-function sendersName($filter, $state, dispatchers) {
+function sendersName($filter, $state, dispatchers, recipientsFormator) {
+    const contactFilter = $filter('contact');
     const SENDERS_STATE = ['secured.sent', 'secured.allSent', 'secured.drafts', 'secured.allDrafts'];
 
     const formatList = (list = []) => {
         return list.reduce(
             (acc, contact) => {
                 acc.title.push(contact.Address);
-                acc.content.push(_.unescape($filter('contact')(contact, 'Name')));
+                acc.content.push(_.unescape(contactFilter(contact, 'Name')));
                 return acc;
             },
             {
@@ -16,6 +19,13 @@ function sendersName($filter, $state, dispatchers) {
                 content: []
             }
         );
+    };
+
+    const getRecipients = (element, isMessage) => {
+        if (isMessage) {
+            return element.Recipients;
+        }
+        return recipientsFormator.toList(element);
     };
 
     return {
@@ -26,22 +36,16 @@ function sendersName($filter, $state, dispatchers) {
             const { on, unsubscribe } = dispatchers();
             const { ID, ConversationID, Type } = scope.conversation;
             const isMessage = !!ConversationID;
-            const currentStateName = $state.$current.name.replace('.element', '');
+
             const eventName = isMessage ? 'message.refresh' : 'refreshConversation';
+            const currentStateName = $state.$current.name.replace('.element', '');
+            const displaySenders = isMessage ? Type === INBOX : !SENDERS_STATE.includes(currentStateName);
 
             const build = () => {
-                const {
-                    Sender,
-                    ToList = [],
-                    CCList = [],
-                    BCCList = [],
-                    Recipients = [],
-                    Senders = []
-                } = scope.conversation;
-                const displaySenders = isMessage ? Type === INBOX : !SENDERS_STATE.includes(currentStateName);
+                const { Sender, Senders = [] } = scope.conversation;
                 const getSenders = () => (isMessage ? [Sender] : Senders);
-                const getRecipients = () => (isMessage ? ToList.concat(CCList, BCCList) : Recipients);
-                const { title, content } = formatList(displaySenders ? getSenders() : getRecipients());
+                const list = displaySenders ? getSenders() : getRecipients(scope.conversation, isMessage);
+                const { title, content } = formatList(list);
 
                 el[0].title = title.join(', ');
                 el[0].textContent = content.join(', ');
@@ -61,4 +65,5 @@ function sendersName($filter, $state, dispatchers) {
         }
     };
 }
+
 export default sendersName;

@@ -3,6 +3,7 @@ import { flow, forEach, filter, reduce, sortBy, last, map } from 'lodash/fp';
 
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 import { getConversationLabels } from '../helpers/conversationHelpers';
+import { unicodeTag } from '../../../helpers/string';
 
 /* @ngInject */
 function actionConversation(
@@ -15,11 +16,10 @@ function actionConversation(
     networkActivityTracker,
     notification,
     tools,
-    labelsModel,
-    $filter
+    labelsModel
 ) {
     const { dispatcher } = dispatchers(['deleteConversation']);
-    const unicodeTagView = $filter('unicodeTagView');
+
     const basicFolders = [
         MAILBOX_IDENTIFIERS.inbox,
         MAILBOX_IDENTIFIERS.trash,
@@ -403,7 +403,7 @@ function actionConversation(
             '1 conversation moved to {{folder}}',
             '{{number}} conversations moved to {{folder}}',
             {
-                folder: unicodeTagView(folderName),
+                folder: unicodeTag(folderName),
                 number: conversationIDs.length
             },
             'Info'

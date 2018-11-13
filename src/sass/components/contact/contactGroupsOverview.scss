@@ -1,0 +1,30 @@
+.contactGroupsOverview-container, .contactGroupsOverview-container * { box-sizing: border-box }
+
+.contactGroupsOverview-container {
+    display: inline-flex !important;
+    line-height: initial !important;
+    pointer-events: all !important;
+    width: auto !important;
+    min-width: 100px;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.contactGroupsOverview-ellipsis {
+    order: -1;
+    margin-left: .5em;
+    font-size: .7em
+}
+
+.contactGroupsOverview-container:not([data-overflow="true"]) .contactGroupsOverview-ellipsis {
+    display: none
+}
+
+.contactGroupsOverview-label {
+    display: flex !important;
+    border: 0 !important;
+    margin: 0 !important;
+}
+
+.contactGroupsOverview-label i.fa { color: currentColor; }
+.contactGroupsOverview-label::after { content: '' !important; }

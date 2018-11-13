@@ -1,50 +1,50 @@
 .dropdown-folder-container { margin:-15px 0px -15px }
 
 .dropdown-folder-title {
-	margin: 0px -15px 0px;
-	padding: 0px 15px;
-	border-bottom: 1px solid rgba($border, .1);
+    margin: 0px -15px 0px;
+    padding: 0px 15px;
+    border-bottom: 1px solid rgba($border, .1);
 }
 
 .dropdown-folder-title > p {
-	height: 11px;
-	line-height: 14px;
+    height: 11px;
+    line-height: 14px;
 }
 
 .dropdown-folder-search {
-	@include flexRow();
-	@include flexAlignCenter();
-	margin: 0px -5px;
-	padding: 0px 5px;
+    @include flexRow();
+    @include flexAlignCenter();
+    margin: 0px -5px;
+    padding: 0px 5px;
 
 
-	.fa.dropdown-folder-search-icon {
-		font-size: 1em;
-		color: $primary;
-		margin-right: 10px;
-	}
+    .fa.dropdown-folder-search-icon {
+        font-size: 1em;
+        color: $primary;
+        margin-right: 10px;
+    }
 
-	.dropdown-folder-search-input {
-		@include flexFill();
-		height: 30px;
-		padding: 0;
-		border: none;
-		border-radius: 0;
-		box-shadow: none;
-		background: transparent;
-		width: 100%;
-		font-size: 1em;
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-				appearance: none;
-	}
+    .dropdown-folder-search-input {
+        @include flexFill();
+        height: 30px;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        width: 100%;
+        font-size: 1em;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+    }
 }
 
 .dropdown-folder-fullwidth,
 .dropdown-folder-create.pm_button {
-	display: block;
-	margin: 0 -15px;
-	padding: 0rem 15px;
+    display: block;
+    margin: 0 -15px;
+    padding: 0rem 15px;
 }
 
 .dropdown-folder-create.pm_button { margin: .5rem -10px }
@@ -60,58 +60,57 @@
 
 /* scrollbox */
 .dropdown-folder-scrollbox-group-item-button {
-	background: transparent;
-	width: 100%;
-	height: 30px;
-	border:0;
-	padding: 0;
-	text-align: left;
-	cursor: pointer;
+    background: transparent;
+    width: calc(100% - 16px); /* input next to it */
+    border: 0;
+    padding: .5rem 0;
+    text-align: left;
+    cursor: pointer;
 }
 
 .dropdown-folder-scrollbox-group-item-button > div {
-	@include flexRow();
-	@include flexAlignCenter();
-	pointer-events: none;
+    @include flexRow();
+    @include flexAlignCenter();
+    pointer-events: none;
 }
 
 .dropdown-folder-scrollbox-group-item-icon {
-	margin-right: 10px;
-	font-size: 16px;
-	pointer-events: none;
+    margin-right: 10px;
+    font-size: 16px;
+    pointer-events: none;
 }
 
 .dropdown-folder-create-button {
-	box-sizing: border-box;
-	height: initial;
-	min-height: 40px;
-	width: 100%;
+    box-sizing: border-box;
+    height: initial;
+    min-height: 40px;
+    width: 100%;
     padding: 0px;
-	border:0;
-	line-height: 16px;
+    border:0;
+    line-height: 16px;
     font-weight: bold;
-	background: transparent;
+    background: transparent;
     word-wrap: break-word;
     text-transform: none;
-	text-align: left;
-	color: $primary;
-	cursor: pointer;
+    text-align: left;
+    color: $primary;
+    cursor: pointer;
 }
 
 .dropdown-folder-create-button > * {
-	pointer-events: none;
+    pointer-events: none;
 }
 
 .appConfigBody-is-mobile {
-	.dropdown-folder-scrollbox-group-item  {
-		height: 45px;
-		padding: 0;
-		box-sizing: border-box;
-		border: 1px solid $border;
-		margin-bottom: 5px;
-	}
-	.dropdown-folder-scrollbox-group-item-button {
-		height: 45px;
-		padding: 0px 10px
-	}
+    .dropdown-folder-scrollbox-group-item  {
+        height: 45px;
+        padding: 0;
+        box-sizing: border-box;
+        border: 1px solid $border;
+        margin-bottom: 5px;
+    }
+    .dropdown-folder-scrollbox-group-item-button {
+        height: 45px;
+        padding: 0px 10px
+    }
 }

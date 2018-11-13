@@ -1,0 +1,16 @@
+.autocompleteContacts-container, .autocompleteContacts-container * {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.autocompleteContacts-input {
+    padding: .5rem;
+    color: $black;
+    border-radius: 2px;
+    border: 1px solid $border;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.15);
+    background: #fafafa;
+}
+
+.autocompleteContacts-field ul { max-height: 215px !important }
+.autocompleteContacts-field li { padding: .7em !important }

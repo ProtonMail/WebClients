@@ -67,7 +67,7 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
             dropdown.insertAdjacentHTML('beforeEnd', getTemplate());
 
             return (scope, el) => {
-                const { dispatcher, on, unsubscribe } = dispatchers(['closeDropdown', 'selectElements']);
+                const { dispatcher, on, unsubscribe } = dispatchers(['dropdown', 'selectElements']);
                 const $btn = el.find('.elementsSelector-btn-action');
 
                 const allSelected = () => _.every(scope.conversations, { Selected: true });
@@ -88,7 +88,7 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
                 function onClick({ currentTarget }) {
                     const action = currentTarget.getAttribute('data-action');
                     dispatcher.selectElements(action, { isChecked: true });
-                    dispatcher.closeDropdown();
+                    dispatcher.dropdown('close');
                 }
 
                 scope.checkedSelectorState = allSelected;

@@ -32,7 +32,8 @@ function ComposeMessageController(
     postMessage,
     prepareDraft,
     sendMessage,
-    validateMessage
+    validateMessage,
+    recipientsFormator
 ) {
     const { dispatcher, on, unsubscribe } = dispatchers([
         'composer.update',
@@ -76,9 +77,15 @@ function ComposeMessageController(
         try {
             await validateMessage.checkSubject(message);
             await validateMessage.checkExpiration(message);
+
+            const { ToList, CCList, BCCList } = await recipientsFormator.format(message);
+
+            message.ToList = ToList;
+            message.CCList = CCList;
+            message.BCCList = BCCList;
         } catch (e) {
             dispatcher.editorListener('send.failed', { message });
-            return;
+            return console.error(e);
         }
 
         setStateSending(true);
@@ -371,7 +378,7 @@ function ComposeMessageController(
      * Add message in composer list
      * @param {Object} message
      */
-    function initMessage(message) {
+    async function initMessage(message) {
         if (mailSettingsModel.get('ComposerMode') === 1) {
             message.maximized = true;
             AppModel.set('maximizedComposer', true);
@@ -388,6 +395,11 @@ function ComposeMessageController(
         delete message.asEmbedded;
         message.uploading = 0;
         message.sending = false;
+
+        const { ToList, CCList, BCCList } = recipientsFormator.list(message);
+        message.ToList = ToList;
+        message.CCList = CCList;
+        message.BCCList = BCCList;
 
         const { From } = bindFrom(message);
         message.From = From;

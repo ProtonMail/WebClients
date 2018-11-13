@@ -19,7 +19,7 @@ function testVendor {
     if [ -d "./node_modules/karma" ]; then
         echo "✓ We have a cache."
     else
-        npm i karma karma-babel-preprocessor karma-chrome-launcher karma-cli karma-coverage karma-jasmine karma-junit-reporter karma-webpack jasmine-core@2.8 puppeteer@1.6 --no-save;
+        npm i karma karma-babel-preprocessor karma-chrome-launcher karma-cli karma-coverage karma-jasmine karma-junit-reporter karma-webpack jasmine-core@2.8 puppeteer@1.9 --no-save --production;
     fi
 }
 
@@ -28,7 +28,7 @@ function e2eVendor {
     if [ -d "./node_modules/cypress" ]; then
         echo "✓ We have a cache."
     else
-        npm i cypress@3.0 --no-save;
+        npm i cypress@3.0 --no-save --production;
     fi
 }
 

@@ -4,7 +4,8 @@ import { REGEX_EMAIL } from '../../constants';
 import extendPGP from '../../../helpers/composerIconHelper';
 
 /* @ngInject */
-function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, checkTypoEmails, keyCache) {
+function emailsEncryptionFlags(sendPreferences, autoPinPrimaryKeys, checkTypoEmails, keyCache) {
+    const MAIN_CACHE = {};
     /**
      * Handle the missing primary keys.
      * @param preferencesMap
@@ -55,11 +56,13 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, checkTypoEma
      * @param {Message} message
      */
     return (message) => {
+        !MAIN_CACHE[message.ID] && (MAIN_CACHE[message.ID] = {});
+
         /**
          * Cache keeping information about email addresses and encryption information.
          * @type {{[email]: {Address,Name,...PGPInfo}}}
          */
-        const CACHE = {};
+        const CACHE = MAIN_CACHE[message.ID];
 
         /**
          * Extend the recipients.
@@ -69,8 +72,8 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, checkTypoEma
          */
         const extendFromCache = (list = []) => {
             return list.map((email = {}) => {
-                const { Address } = email;
-                const cached = CACHE[Address];
+                const { Address, Email } = email;
+                const cached = CACHE[Address || Email];
                 if (!cached) {
                     return {
                         ...email,
@@ -90,11 +93,9 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, checkTypoEma
          * @returns {Promise<{invalid: (boolean|*)}>}
          */
         const extendInvalid = async (email) => {
-            const { Address } = email;
-            return {
-                ...email,
-                invalid: !REGEX_EMAIL.test(Address) || checkTypoEmails(Address) || (await keyCache.isInvalid(Address))
-            };
+            const adr = email.Address || email.Email;
+            const invalid = !REGEX_EMAIL.test(adr) || checkTypoEmails(adr) || (await keyCache.isInvalid(adr));
+            return { ...email, invalid };
         };
 
         /**
@@ -118,7 +119,8 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, checkTypoEma
         const extendAsync = (emails = [], sendPreferencesMap = {}) => {
             return Promise.all(
                 emails.map((email = {}) => {
-                    return extendInvalid(extendPGP(email, sendPreferencesMap[email.Address]));
+                    const pref = sendPreferencesMap[email.Address || email.Email];
+                    return extendInvalid(extendPGP(email, pref));
                 })
             );
         };
@@ -130,8 +132,8 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, checkTypoEma
          */
         const updateCache = (emailsToAdd = [], emailsToRemove = []) => {
             emailsToAdd.forEach((email = {}) => {
-                const { Address } = email;
-                CACHE[Address] = email;
+                const { Address, Email } = email;
+                CACHE[Address || Email] = email;
             });
             emailsToRemove.forEach((address) => {
                 delete CACHE[address];
@@ -145,7 +147,7 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, checkTypoEma
          * @returns {Promise}
          */
         const sync = async (emails = []) => {
-            const addresses = _.map(emails, 'Address');
+            const addresses = emails.map(({ Address, Email }) => Address || Email);
 
             // Get the sending preferences for all email addresses. Instruct it to catch any errors silently.
             const sendPreferencesMap = await sendPreferences.get(addresses, message, true);
@@ -160,11 +162,10 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, checkTypoEma
             const addressesToRemove = invalidAddresses.concat(failedAddresses);
 
             // Filter the emails that need to be updated in the cache.
-            const filteredEmails = emails.filter(({ Address }) => !addressesToRemove.includes(Address));
+            const filteredEmails = emails.filter(({ Address, Email }) => !addressesToRemove.includes(Address || Email));
 
             // Extend the emails.
             const extendedEmails = await extendAsync(filteredEmails, sendPreferencesMap);
-
             // Update the cache with the extended emails and those to remove.
             updateCache(extendedEmails, addressesToRemove);
 
@@ -174,8 +175,10 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, checkTypoEma
             };
         };
 
-        return { extendFromCache, sync };
+        const clear = () => delete MAIN_CACHE[message.ID];
+
+        return { extendFromCache, sync, clear };
     };
 }
 
-export default autocompleteSyncModel;
+export default emailsEncryptionFlags;

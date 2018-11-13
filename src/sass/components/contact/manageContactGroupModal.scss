@@ -1,0 +1,112 @@
+.manageContactGroupModal-container, .manageContactGroupModal-container * { box-sizing: border-box }
+.manageContactGroupModal-container .modal-title i {
+    margin-right: 1em;
+}
+
+/* cf https://codepen.io/josephespana/pen/xVJzwK */
+.manageContactGroupModal-list {
+    max-height: calc(100vh * .7); /* 70% viewport */
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    overflow-y: auto;
+    /* Shadow covers */
+    background: linear-gradient(white 30%, rgba(255,255,255,0)),
+        linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+
+        /* Shadows */
+        radial-gradient(50% 0, farthest-side, rgba(0,0,0,.05), rgba(0,0,0,0)),
+        radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.05), rgba(0,0,0,0)) 0 100%;
+    background:
+        /* Shadow covers */
+        linear-gradient(white 30%, rgba(255,255,255,0)),
+        linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+
+        /* Shadows */
+        radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.05), rgba(0,0,0,0)),
+        radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.05), rgba(0,0,0,0)) 0 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+
+    /* Opera doesn't support this in the shorthand */
+    background-attachment: local, local, scroll, scroll;
+    border: 1px solid $border
+}
+
+.manageContactGroupModal-item-info.manageContactGroupModal-item-info {
+    display: flex;
+    width: 60%;
+}
+.manageContactGroupModal-info-member { margin-left: auto; }
+
+.manageContactGroupModal-item:last-child .pm_sort-item-content {
+    border-bottom: 0
+}
+
+.manageContactGroupModal-item:only-child .manageContactGroupModal-input-checkbox {
+    display: none
+}
+
+.manageContactGroupModal-item div::before {
+    display: block;
+    width: 3px;
+    position: absolute;
+    top: 50%;
+    left: .5em;
+    margin-top: 0;
+    transform: translateY(-50%);
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+
+.manageContactGroupModal-free {
+
+    .as-sortable-item-handle::before,
+    .labelsState-btn-edit {
+        display: none;
+    }
+
+    .labelsState-item {
+        pointer-events: none
+    }
+
+    .labelsState-btn-delete {
+        pointer-events: all
+    }
+}
+
+.manageContactGroupModal-input-checkbox,
+.manageContactGroupModal-item .manageContactGroupModal-input-checkbox {
+    width: auto;
+    height: auto;
+    min-width: 2em;
+}
+
+
+.manageContactGroupModal-input-checkbox {
+    margin-right: .5em;
+}
+
+.manageContactGroupModal-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: .5em 0;
+}
+
+.manageContactGroupModal-navLabel {
+    display: flex;
+    align-items: center;
+    margin-left: 1.3em;
+}
+
+.manageContactGroupModal-action-removeSelection {
+    opacity: 1;
+    transition: opacity .15s
+}
+
+.modal-body:not(.manageContactGroupModal-hasSelection) .manageContactGroupModal-action-removeSelection {
+    opacity: 0;
+    pointer-events: none;
+}

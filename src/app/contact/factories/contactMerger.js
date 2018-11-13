@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import duplicateExtractor from '../../../helpers/duplicateExtractor';
+import { extractAll as extractAllProperties } from '../../../helpers/vCardProperties';
 
 /* @ngInject */
 function contactMerger(
@@ -35,7 +36,7 @@ function contactMerger(
         }
 
         return _.reduce(
-            vcard.extractAllProperties(vCard),
+            extractAllProperties(vCard),
             (acc, property) => {
                 if (property.getField() === 'email') {
                     acc.push(property.valueOf());
@@ -107,7 +108,7 @@ function contactMerger(
      * @return {vCard} the new vCard instance
      */
     function getMergedContact(contacts = []) {
-        return vcard.merge(_.map(contacts, 'vCard'));
+        return vcard.merge(_.map(contacts, 'vCard'), true);
     }
 
     /**

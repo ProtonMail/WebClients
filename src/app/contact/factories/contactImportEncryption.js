@@ -1,11 +1,12 @@
 import _ from 'lodash';
 
+import { PACKAGE_TYPE } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { uniqGroups } from '../../../helpers/vcard';
-import { PACKAGE_TYPE } from '../../constants';
+import { extractAll as extractAllProperties } from '../../../helpers/vCardProperties';
 
 /* @ngInject */
-function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncryptionModal, contactKeyAssigner, vcard) {
+function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncryptionModal, contactKeyAssigner) {
     const asyncSequentialMap = (list, asyncFunction) =>
         list.reduce((lastProcess, element) => {
             return lastProcess.then((accumulator) => {
@@ -28,7 +29,7 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
         );
 
     const groupGenerator = (contact) => {
-        const properties = vcard.extractAllProperties(contact.vCard);
+        const properties = extractAllProperties(contact.vCard);
         const groups = uniqGroups(properties);
 
         let itemCounter = 0;

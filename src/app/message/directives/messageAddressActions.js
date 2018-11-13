@@ -1,12 +1,15 @@
 /* @ngInject */
-function messageAddressActions(dispatchers) {
-    const BUTTON_DROPDOWN_COLLAPSED = 'fa-caret-down';
-    const BUTTON_DROPDOWN_OPENED = 'fa-caret-right';
-    const addListener = (element, names, listener, unsubscribe) => {
+function messageAddressActions(dispatchers, $filter) {
+    const DROPDOWN_OPENED = 'messageAddressActions-open';
+    const contactFilter = $filter('contact');
+
+    const addListener = (element, names, listener) => {
+        const list = [];
         names.forEach((name) => {
-            element.addEventListener(name, listener);
-            unsubscribe.push(() => element.removeEventListener(name, listener));
+            element.on(name, listener);
+            list.push(() => element.off(name, listener));
         });
+        return list;
     };
 
     return {
@@ -14,48 +17,47 @@ function messageAddressActions(dispatchers) {
         templateUrl: require('../../../templates/message/messageAddressActions.tpl.html'),
         replace: true,
         scope: {
-            messageId: '='
+            messageId: '=',
+            email: '='
         },
-        link(scope, el, { address, name }) {
-            const unsubscribeList = [];
+        link(scope, el) {
             const { on, unsubscribe, dispatcher } = dispatchers(['messageAddressActions']);
-            unsubscribeList.push(unsubscribe);
-            const button = el[0].querySelector('.message-address-action-button');
-            const icon = button.querySelector('i');
 
             const openDropdown = () => {
                 dispatcher.messageAddressActions('show', {
                     messageID: scope.messageId,
-                    address: { address: address.replace(/[<>]/g, ''), name },
+                    address: {
+                        address: scope.email.Address,
+                        name: contactFilter(scope.email, 'Name'),
+                        isContactGroup: !!scope.email.isContactGroup
+                    },
                     element: el
                 });
             };
 
-            const hideDropdown = () => {
-                icon.classList.remove(BUTTON_DROPDOWN_OPENED);
-                icon.classList.add(BUTTON_DROPDOWN_COLLAPSED);
-            };
+            const hideDropdown = () => el[0].classList.remove(DROPDOWN_OPENED);
 
             const onClick = () => {
-                if (icon.classList.contains(BUTTON_DROPDOWN_OPENED)) {
+                if (el[0].classList.contains(DROPDOWN_OPENED)) {
                     dispatcher.messageAddressActions('hide', { messageID: scope.messageId });
-                    hideDropdown();
-                    return;
+                    return hideDropdown();
                 }
                 openDropdown();
-                icon.classList.remove(BUTTON_DROPDOWN_COLLAPSED);
-                icon.classList.add(BUTTON_DROPDOWN_OPENED);
+                el[0].classList.add(DROPDOWN_OPENED);
             };
 
             const stopPropagation = (e) => e.stopPropagation();
 
-            addListener(button, ['click'], onClick, unsubscribeList);
-            addListener(button, ['click', 'mouseup', 'touchend'], stopPropagation, unsubscribeList);
+            on('dropdown', hideDropdown);
 
-            on('closeDropdown', hideDropdown);
+            const unsubscribeList = [
+                unsubscribe,
+                ...addListener(el, ['click', 'mouseup', 'touchend'], stopPropagation),
+                ...addListener(el, ['click'], onClick)
+            ];
 
             scope.$on('$destroy', () => {
-                unsubscribeList.forEach((unsubscribe) => unsubscribe());
+                unsubscribeList.forEach((cb) => cb());
             });
         }
     };

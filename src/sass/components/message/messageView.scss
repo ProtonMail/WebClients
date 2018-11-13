@@ -16,71 +16,6 @@
     padding: 0;
 }
 
-.message-address-actions {
-    display: inline-block;
-    padding-left: 0.25em; // width of 1 space
-
-    .message-address-action-button {
-        border: 0;
-        background: transparent;
-        cursor: pointer;
-        padding-left: 0;
-        line-height: 16px;
-        font-size: 1rem;
-
-        i.fa {
-            margin-left: 0 !important;
-        }
-    }
-
-}
-
-
-.message-address-dropdown-container {
-
-    .pm_dropdown {
-        width: 160px;
-
-        button {
-            overflow: hidden;
-
-            div {
-                width: 100%;
-                display: inline-flex;
-                align-items: center;
-                pointer-events: none;
-            }
-
-            div:before {
-                width: 8px;
-                height: 35px;
-                margin-left: 5px;
-                font-size: .8em;
-                display: block;
-                content: "";
-            }
-
-            div > span {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-        }
-    }
-
-    &.address-is-contact .address-no-contact-only {
-        display: none;
-    }
-
-    &:not(.address-is-contact) .address-contact-only {
-        display: none;
-    }
-
-    &:not(.show-advanced-settings) .message-action-pin-public {
-        display: none;
-    }
-}
-
 .details .contact .message-address-action-button {
     padding-left: 6px;
 }
@@ -157,6 +92,8 @@
         margin: 10px;
         box-sizing: border-box;
         clear: both;
+
+        .recipients-details .messageContacts-email { margin-left: .5em; }
 
         &:not(.open) {
             .message-frame,
@@ -344,6 +281,7 @@
                 white-space: nowrap; /* single line for long from */
                 .contact {
                     display: flex;
+                    align-items: baseline;
                     min-width: 0; // to allow the contact box to shrink
                     strong {
                         font-weight: normal;

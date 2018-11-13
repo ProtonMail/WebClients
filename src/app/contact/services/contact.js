@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import { ContactUpdateError } from '../../../helpers/errors';
 import { createCancellationToken } from '../../../helpers/promiseHelper';
+import { getCategoriesEmail } from '../../../helpers/vcard';
 import {
     CONTACTS_LIMIT_REQUESTS,
     CONTACTS_LIMIT_UPLOAD,
@@ -26,7 +27,8 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
     function clearContacts(contacts = []) {
         return contacts.map((contact) => {
             contact.Email = sanitize.input(contact.Email);
-            contact.Name = sanitize.input(contact.Name);
+            // cf #7697 we need to unescape the html. We will replace it by unicode later
+            contact.Name = _.unescape(sanitize.input(contact.Name));
             return contact;
         });
     }
@@ -35,8 +37,8 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
         return $http.get(route, { params, timeout }).then(({ data = {} } = {}) => data);
     }
 
-    async function queryContacts(route = '', { PageSize, key = '' }, timeout) {
-        const data = await request(route, { PageSize }, timeout);
+    async function queryContacts(route = '', { PageSize, LabelID, key = '' }, timeout) {
+        const data = await request(route, { PageSize, LabelID }, timeout);
         const promises = [Promise.resolve(data[key])];
         const n = Math.ceil(data.Total / PageSize) - 1; // We already load 1 or 2 pages
 
@@ -111,13 +113,13 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
             .then(({ data = {} } = {}) => data)
             .then(({ Responses = [] }) => {
                 return Responses.reduce(
-                    (agg, { ID, Response = {} } = {}) => {
+                    (acc, { ID, Response = {} } = {}) => {
                         if (Response.Error) {
-                            agg.errors.push({ ID, Error: Response.Error, Code: Response.Code });
+                            acc.errors.push({ ID, Error: Response.Error, Code: Response.Code });
                         } else {
-                            agg.removed.push(ID);
+                            acc.removed.push(ID);
                         }
-                        return agg;
+                        return acc;
                     },
                     { removed: [], errors: [] }
                 );
@@ -125,13 +127,14 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
     };
 
     const getIds = ({ data: { Responses = [] } } = {}) => {
-        return Responses.map(({ Response = {} } = {}) => {
+        return Responses.reduce((acc, { Response = {} } = {}) => {
             const { Contact: { ID } = {} } = Response;
-            return ID;
-        }).filter((id) => id);
+            ID && acc.push(ID);
+            return acc;
+        }, []);
     };
 
-    const handleUpload = (total) => (result = []) => {
+    const handleUpload = (total, mapCategories) => (result = []) => {
         const { created, errors } = _.reduce(
             result,
             (acc, { data = {} } = {}) => {
@@ -152,72 +155,66 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
             { created: [], errors: [] }
         );
 
-        return { created, errors, total };
+        return { created, errors, total, mapCategories };
     };
-
-    /**
-     * Clamp the function to the [min, max] range
-     * @param min
-     * @param max
-     * @param value
-     * @return {number}
-     */
-    const clamp = (min, max, value) => Math.floor(Math.max(min, Math.min(max, value)));
 
     function uploadContacts(cards = [], total, progressBar, cancellationToken) {
         // NOTE We start at 50% because the first part (encryption) is already done
         const reporter = progressBar ? contactProgressReporter(50, 100, total) : () => {};
+
+        const MAP_CATEGORIES = getCategoriesEmail(cards);
+
         // Reduce the chunking size if there a not a lot of cards
-        const contactsPerRequest = clamp(5, cards.length / 5, CONTACTS_LIMIT_UPLOAD);
+        const contactsPerRequest = _.clamp(CONTACTS_LIMIT_UPLOAD, 5, cards.length / 5);
         const chunkedContacts = chunk(cards, contactsPerRequest);
-        // Limit the amount of requests at the same time to CONTACTS_LIMIT_REQUEST to not overload the server.
-        // Also ensure at least 3 steps to create a fluent progress bar
-        const parallelRequests = clamp(1, chunkedContacts.length / 3, CONTACTS_LIMIT_REQUESTS);
+
+        /*
+            Limit the amount of requests at the same time to CONTACTS_LIMIT_REQUEST
+            to not overload the server.
+            Also ensure at least 3 steps to create a fluent progress bar
+         */
+        const parallelRequests = _.clamp(CONTACTS_LIMIT_REQUESTS, 1, chunkedContacts.length / 3);
         const threadedContacts = chunk(chunkedContacts, parallelRequests);
 
-        const ids = [];
-        const uploadContactThread = async (lastUpload, chunkedContacts) => {
-            const result = await lastUpload;
-            await Promise.all(
-                chunkedContacts.map(async (Contacts) => {
-                    const params = { Contacts, Groups: 1, Overwrite: 1, Labels: 0 };
-                    const data = await $http.post(requestURL(), params);
+        const uploadThreadRecuder = (ids = []) => async (acc, chunks) => {
+            const result = await acc;
 
-                    !cancellationToken.isCancelled() && reporter(Contacts.length);
+            const requests = chunks.map(async (Contacts) => {
+                const params = { Contacts, Groups: 1, Overwrite: 1, Labels: 0 };
+                const data = await $http.post(requestURL(), params);
 
-                    ids.push(...getIds(data));
-                    result.push(data);
-                })
-            );
+                !cancellationToken.isCancelled() && reporter(Contacts.length);
+                return data;
+            });
+
+            const list = await Promise.all(requests);
+            result.push(...list);
+            ids.push(...list.map(getIds));
 
             // Re-sync so we don't get out of sync too much at the end
             await eventManager.call();
             // Check last so we can rollback at the latest moment possible
             cancellationToken.check();
-            return result;
+            return acc;
         };
 
-        const rollback = (error) => {
+        const rollback = (IDs = []) => (error) => {
             if (error.isCancellationError) {
-                return remove({ IDs: ids })
+                const ciao = () => {
+                    throw error;
+                };
+                return remove({ IDs })
                     .then(eventManager.call)
-                    .then(
-                        () => {
-                            throw error;
-                        },
-                        () => {
-                            throw error;
-                        }
-                    );
+                    .then(ciao, ciao);
             }
             throw error;
         };
 
+        const processedIds = [];
         return threadedContacts
-            .reduce(uploadContactThread, Promise.resolve([]))
-            .catch(rollback)
-            .then((list) => _.flatten(list))
-            .then(handleUpload(total));
+            .reduce(uploadThreadRecuder(processedIds), [])
+            .catch(rollback(processedIds))
+            .then(handleUpload(total, MAP_CATEGORIES));
     }
 
     /**
@@ -227,14 +224,11 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
      * @param {Boolean} progressBar
      * @return {Promise}
      */
-    function add(contacts = [], cancellationToken = createCancellationToken(), progressBar = false) {
-        return contactEncryption
-            .encrypt(contacts, cancellationToken, progressBar)
-            .then((result = []) => uploadContacts(result, contacts.length, progressBar, cancellationToken))
-            .then((data) => {
-                dispatcher.contacts('contactsUpdated');
-                return data;
-            });
+    async function add(contacts = [], cancellationToken = createCancellationToken(), progressBar = false) {
+        const list = await contactEncryption.encrypt(contacts, cancellationToken, progressBar);
+        const data = await uploadContacts(list, contacts.length, progressBar, cancellationToken);
+        dispatcher.contacts('contactsUpdated');
+        return data;
     }
 
     /**
@@ -243,20 +237,22 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
      * @param {Object} contact
      * @return {Promise}
      */
-    function updateUnencrypted(contact) {
+    async function updateUnencrypted(contact) {
+        const contactURL = requestURL(contact.ID);
         const encryptPromise = contactEncryption.encrypt([contact]);
-        const oldContactPromise = request(requestURL(contact.ID));
+        const previousPromise = request(contactURL);
 
-        return Promise.all([encryptPromise, oldContactPromise]).then(([[newContact], { Contact: oldContact }]) => {
-            newContact.Cards = newContact.Cards.filter(({ Type }) => !ENCRYPTED_MODES.includes(Type)).concat(
-                oldContact.Cards.filter(({ Type }) => ENCRYPTED_MODES.includes(Type))
-            );
-            return $http.put(requestURL(contact.ID), newContact).then(({ data = {} } = {}) => {
-                // NOTE We need to pass the cards to update the encrypted icon in the contact view
-                data.cards = newContact.Cards;
-                return data;
-            });
-        });
+        const [[next], { Contact: previous }] = await Promise.all([encryptPromise, previousPromise]);
+
+        const isEncrypted = (Type) => ENCRYPTED_MODES.includes(Type);
+        const previousEncrypted = previous.Cards.filter(({ Type }) => isEncrypted(Type));
+
+        next.Cards = next.Cards.filter(({ Type }) => !isEncrypted(Type)).concat(previousEncrypted);
+
+        const { data = {} } = (await $http.put(contactURL, next)) || {};
+        // NOTE We need to pass the cards to update the encrypted icon in the contact view
+        data.cards = next.Cards;
+        return data;
     }
 
     /**
@@ -265,6 +261,7 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
      * @return {Promise}
      */
     function update(contact) {
+        debugger;
         return contactEncryption.encrypt([contact]).then((contacts) => {
             return $http
                 .put(requestURL(contact.ID), contacts[0])
@@ -326,6 +323,23 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
         return contact;
     }
 
+    const labelEmails = async (cfg) => {
+        const { data = {} } = await $http.put(requestURL('emails', 'label'), cfg);
+        return data;
+    };
+    const unlabelEmails = (data) => $http.put(requestURL('emails', 'unlabel'), data);
+
+    const label = async (cfg) => {
+        const { data = {} } = await $http.put(requestURL('label'), cfg);
+        return data;
+    };
+    const unlabel = (data) => $http.put(requestURL('unlabel'), data);
+
+    async function exportGroup(LabelID) {
+        const { data = {} } = await $http.get(requestURL('emails'), { params: { LabelID } });
+        return data.ContactEmails;
+    }
+
     return {
         hydrate,
         all,
@@ -339,7 +353,12 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
         exportAll,
         groups,
         decrypt,
-        load
+        load,
+        exportGroup,
+        label,
+        unlabel,
+        labelEmails,
+        unlabelEmails
     };
 }
 export default Contact;

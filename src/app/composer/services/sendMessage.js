@@ -19,7 +19,8 @@ function sendMessage(
     notification,
     cache,
     attachmentApi,
-    SignatureVerifier
+    SignatureVerifier,
+    recipientsFormator
 ) {
     const I18N = {
         SEND_SUCCESS: gettextCatalog.getString('Message sent', null, 'Send message'),
@@ -58,23 +59,20 @@ function sendMessage(
      * @param {Message} message
      * @returns {Promise.<boolean>}
      */
-    const handleAttachmentSigs = (message) => {
+    const handleAttachmentSigs = async (message) => {
         if (message.Attachments.every(({ Signature }) => Signature)) {
-            return Promise.resolve(false);
+            return false;
         }
         /*
-             Not all attachments have signatures: remove the signature from the attachments, so they don't show up
-             in the send message.
-             */
+         Not all attachments have signatures: remove the signature from the attachments, so they don't show up
+         in the send message.
+         */
         const signedAttachments = _.filter(message.Attachments, ({ Signature }) => Signature);
-        const promises = _.map(signedAttachments, (attachment) => {
+        const promises = _.map(signedAttachments, async (attachment) => {
             attachment.Signature = null;
-            return (
-                attachmentApi
-                    .updateSignature(attachment)
-                    // save the signature as unverified. the attachment data is always ignored in this case.
-                    .then(() => SignatureVerifier.verify(attachment, null, message))
-            );
+            await attachmentApi.updateSignature(attachment);
+            // save the signature as unverified. the attachment data is always ignored in this case.
+            return SignatureVerifier.verify(attachment, null, message);
         });
         return Promise.all(promises).then(() => true);
     };
@@ -122,7 +120,7 @@ function sendMessage(
 
         // The back-end doesn't return Senders nor Recipients
         Sent.Senders = [Sent.Sender];
-        Sent.Recipients = _.uniq(message.ToList.concat(message.CCList, message.BCCList));
+        Sent.Recipients = recipientsFormator.toList(message);
 
         // Generate event for this message
         const events = [{ Action: STATUS.UPDATE_FLAGS, ID: Sent.ID, Message: Sent }];

@@ -36,6 +36,7 @@ function encryptionStatus(gettextCatalog) {
             (isPinned && !isPgp) * PINNING_ENABLED
         );
     };
+
     const I18N = {
         LOADING_CRYPT_INFO: gettextCatalog.getString('Loading encryption info...', null, 'Info'),
         PGP_SIGN: gettextCatalog.getString('PGP-signed', null, 'Info'),
@@ -43,6 +44,7 @@ function encryptionStatus(gettextCatalog) {
         PINNED_ENCRYPT_SIGN: gettextCatalog.getString('End-to-end encrypted to verified recipient', null, 'Info'),
         PM_ENCRYPT_SIGN: gettextCatalog.getString('End-to-end encrypted', null, 'Info')
     };
+
     const getTooltip = (emailInfo = {}) => {
         // turn into a bitmask value :-)
         switch (getStatusCode(emailInfo)) {

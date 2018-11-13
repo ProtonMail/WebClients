@@ -128,9 +128,7 @@ const sentryConfig = () => {
             release
         };
     }
-    const env = getDefaultApiTarget(argv.api);
-    process.env.NODE_ENV_SENTRY = env;
-    return SENTRY_CONFIG[env] || {};
+    return {};
 };
 
 const getHostURL = (encoded) => {

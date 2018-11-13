@@ -39,7 +39,6 @@ function ElementsController(
      * Method called at the initialization of this controller
      */
     function initialization() {
-        // Variables
         updateNumberElementChecked(AppModel.get('numberElementChecked'));
         $scope.markedElement = undefined;
         $scope.mailbox = tools.currentMailbox();

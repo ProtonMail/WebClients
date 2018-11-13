@@ -2,6 +2,7 @@ import _ from 'lodash';
 import { flow, values, reduce } from 'lodash/fp';
 
 import { CONTACT_MODE } from '../../constants';
+import { extractAll as extractAllProperties } from '../../../helpers/vCardProperties';
 
 const { ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
 
@@ -16,8 +17,7 @@ function contactDetails(
     notification,
     subscriptionModel,
     memberModel,
-    dispatchers,
-    vcard
+    dispatchers
 ) {
     const ENCRYPTED_AND_SIGNED_CLASS = 'contactDetails-encrypted-and-signed';
 
@@ -49,8 +49,9 @@ function contactDetails(
                 element.removeClass(ENCRYPTED_AND_SIGNED_CLASS);
             };
 
+            const onSubmit = () => saveContact();
             const isFree = !subscriptionModel.hasPaid('mail') && !memberModel.isMember();
-            const properties = vcard.extractAllProperties(scope.contact.vCard);
+            const properties = extractAllProperties(scope.contact.vCard);
             const hasEmail = _.filter(properties, (property) => property.getField() === 'email').length;
 
             // Focus the details
@@ -114,12 +115,13 @@ function contactDetails(
                 if (scope.contact.ID) {
                     contact.ID = scope.contact.ID;
                     // Close edition mode
-                    const callback = () => {
+                    const callback = ({ Contact, cards } = {}) => {
                         dispatcher.contacts('action.input', {
                             action: 'toggleMode',
                             current: scope.mode,
                             refresh: true,
-                            contact
+                            contact: Contact,
+                            cards
                         });
                     };
                     dispatcher.contacts('updateContact', { contact, callback });
@@ -127,11 +129,15 @@ function contactDetails(
                     dispatcher.contacts('createContact', { contacts: [contact], state });
                 }
 
-                scope.contactForm.$setSubmitted(true);
-                scope.contactForm.$setPristine(true);
+                scope.$applyAsync(() => {
+                    scope.contactForm.$setSubmitted(true);
+                    scope.contactForm.$setPristine(true);
+                });
 
                 return true;
             }
+
+            element.on('submit', onSubmit);
 
             on('contacts', (event, { type = '', data = {} }) => {
                 if (scope.modal && type === 'submitContactForm') {
@@ -163,8 +169,6 @@ function contactDetails(
                     saveBeforeToLeave(toState, toParams);
                 }
             });
-
-            element.on('submit', saveContact);
 
             scope.$on('$destroy', () => {
                 element.off('submit', saveContact);

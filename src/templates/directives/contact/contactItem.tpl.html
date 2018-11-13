@@ -7,7 +7,7 @@
     <li
         class="contactItem-row"
         ng-if="!item.hide"
-        ng-repeat="item in UI.items"
+        ng-repeat="item in UI.items track by item.uuid"
         as-sortable-item>
 
         <div class="contactItem-sortable-wrapper ng-message-wrapper" as-sortable-item-handle>

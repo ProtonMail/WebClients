@@ -1,12 +1,17 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function labelsElement(dispatchers, labelsModel, authentication, $state) {
+function labelsElement(dispatchers, labelsModel, authentication, $state, contactGroupModel) {
     const HIDE_CLASSNAME = 'labelsElement-hidden';
 
-    const toLabels = (list = []) => {
+    const toLabels = (list = [], type) => {
+        const getLabel = (id) => {
+            const service = !type ? labelsModel : contactGroupModel;
+            return service.read(id, 'labels');
+        };
+
         return list.reduce((acc, id) => {
-            const item = labelsModel.read(id, 'labels');
+            const item = getLabel(id);
             item && acc.push(item);
             return acc;
         }, []);
@@ -28,7 +33,7 @@ function labelsElement(dispatchers, labelsModel, authentication, $state) {
         scope: {
             element: '='
         },
-        link(scope, el, { limit = 4 }) {
+        link(scope, el, { limit = 4, type }) {
             const { dispatcher, on, unsubscribe } = dispatchers(['messageActions']);
             const moreToggle = moreVisibility(el[0].querySelector('.labelsElement-more'));
 
@@ -37,7 +42,7 @@ function labelsElement(dispatchers, labelsModel, authentication, $state) {
                 // Check if there is custom labels
                 if (LabelIDs.length || Labels.length) {
                     const labelIDs = Labels.length ? _.map(Labels, ({ ID }) => ID) : LabelIDs;
-                    const labels = toLabels(labelIDs);
+                    const labels = toLabels(labelIDs, type);
 
                     if (limit !== 'none') {
                         scope.labels = labels.length ? angular.copy(labels.slice(0, limit)) : [];

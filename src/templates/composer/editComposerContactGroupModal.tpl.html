@@ -1,0 +1,58 @@
+<div class="pm_modal editComposerContactGroupModal-container" role="dialog">
+    <div class="modal-dialog">
+        <button
+            type="button"
+            ng-click="ctrl.cancel()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                <i class="fa fa-users" style="color: {{::ctrl.model.Color}}"></i>
+                {{::ctrl.model.Name}} <span>({{::ctrl.memberNumber}})</span></h4>
+            </div>
+
+            <div class="modal-body">
+                <ul class="editComposerContactGroupModal-list">
+                    <li
+                        class="editComposerContactGroupModal-item"
+                        ng-repeat="email in ctrl.group">
+                        <label class="editComposerContactGroupModal-label">
+                            <custom-checkbox
+                                class="editComposerContactGroupModal-input"
+                                data-custom-ng-model="email.isSelected"></custom-checkbox>
+                            <strong class="editComposerContactGroupModal-name">{{ ::email | contact }}</strong>
+                        </label>
+
+                        <email-encryption-icon
+                            class="editComposerContactGroupModal-icon"
+                            data-email="email"
+                            data-message="ctrl.message"></email-encryption-icon>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <footer class="modal-footer text-right">
+            <button
+                class="pm_button pull-left"
+                ng-click="ctrl.cancel()"
+                ng-disabled="ctrl.networkActivity"
+                translate-context="Action"
+                translate>Cancel</button>
+
+            <button
+                class="pm_button primary"
+                tabindex="1"
+                ng-click="ctrl.submit()"
+                ng-disabled="ctrl.networkActivity"
+                translate-context="Action"
+                translate>Save</button>
+        </footer>
+    </div>
+    <div class="modal-overlay"></div>
+</div>

@@ -22,7 +22,6 @@ import longReadableTime from './filters/longReadableTime';
 import number from './filters/number';
 import percentage from './filters/percentage';
 import readableTime from './filters/readableTime';
-import unicodeTagView from './filters/unicodeTagView';
 import utcReadableTime from './filters/utcReadableTime';
 import eventManager from './services/eventManager';
 import hotkeys from './services/hotkeys';
@@ -73,7 +72,6 @@ export default angular
     .filter('number', number)
     .filter('percentage', percentage)
     .filter('readableTime', readableTime)
-    .filter('unicodeTagView', unicodeTagView)
     .filter('utcReadableTime', utcReadableTime)
     .factory('eventManager', eventManager)
     .factory('hotkeys', hotkeys)

@@ -3,25 +3,25 @@
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
-    width: 15px;
+    border: 0;
+    background: transparent;
+    width: 1em;
     height: 37px;
     pointer-events: none;
+}
 
-    &[order="asc"] .fa-sort-asc,
-    &[order="desc"] .fa-sort-desc {
-        color: $dark;
-        opacity: 1;
-    }
+[class*="contactArrowsSort-icon"] {
+    position: relative;
+    color: $dark !important;
+    opacity: .4;
+}
+.contactArrowsSort-icon-asc { top: 6px; }
+.contactArrowsSort-icon-desc { top: -6px; }
 
-    & > .fa-sort-desc,
-    & > .fa-sort-asc {
-        position: relative;
-        opacity: 0.4;
-    }
-
-    & > .fa-sort-desc { top: -6px }
-    & > .fa-sort-asc { top: 6px }
+.contactArrowsSort-container[order="asc"] .contactArrowsSort-icon-asc,
+.contactArrowsSort-container[order="desc"] .contactArrowsSort-icon-desc {
+    opacity: 1;
 }
 
 /* too small for mobile */
-body.appConfigBody-is-mobile .contactArrowsSort-container  { display: none }
+body.appConfigBody-is-mobile .contactArrowsSort-container { display: none }

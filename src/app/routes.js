@@ -504,11 +504,13 @@ export default angular
                                 .then(() => data);
                         });
                     },
-                    labels(user, Label, labelsModel, networkActivityTracker) {
-                        const promise = Label.query().then(({ data = {} } = {}) => {
-                            labelsModel.set(data.Labels);
-                        });
-
+                    labels(user, labelsModel, networkActivityTracker) {
+                        const promise = labelsModel.load();
+                        networkActivityTracker.track(promise);
+                        return promise;
+                    },
+                    contactGroups(user, contactGroupModel, networkActivityTracker) {
+                        const promise = contactGroupModel.load();
                         networkActivityTracker.track(promise);
                         return promise;
                     },

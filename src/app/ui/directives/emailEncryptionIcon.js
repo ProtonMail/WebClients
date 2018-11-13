@@ -1,14 +1,14 @@
 import tooltipModel from '../../utils/helpers/tooltipHelper';
 
 /* @ngInject */
-function autocompleteEmailsIcon(encryptionStatus, dispatchers) {
+function emailEncryptionIcon(encryptionStatus, dispatchers) {
     return {
         replace: true,
         scope: {
             email: '<',
             message: '<'
         },
-        templateUrl: require('../../../templates/ui/autoCompleteEmailsIcon.tpl.html'),
+        templateUrl: require('../../../templates/ui/emailEncryptionIcon.tpl.html'),
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
             const tooltip = tooltipModel(el, { title: encryptionStatus.getTooltip(scope.email) });
@@ -38,4 +38,4 @@ function autocompleteEmailsIcon(encryptionStatus, dispatchers) {
     };
 }
 
-export default autocompleteEmailsIcon;
+export default emailEncryptionIcon;

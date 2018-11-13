@@ -1,21 +1,17 @@
 import _ from 'lodash';
 
+import { uniqID } from '../../../helpers/string';
 import { AWESOMEPLETE_MAX_ITEMS } from '../../constants';
 
 /* @ngInject */
 function autocompleteBuilder(customInputCreator) {
-    const generateID = () =>
-        `${Math.random()
-            .toString(32)
-            .slice(2, 12)}-${Date.now()}`;
-
-    return (post = _.noop, pre = _.noop) => {
+    return ({ link: post = _.noop, pre = _.noop, compile = _.noop }, opt = {}) => {
         /**
          * Linking fonction for the directive
          */
         const postCompile = (scope, el, attr) => {
             const $input = el[0].querySelector('input');
-            $input && ($input.id = `${$input.id}${generateID()}`);
+            $input && ($input.id = `${$input.id}${uniqID()}`);
 
             /**
              * @link {https://leaverou.github.io/awesomplete/#basic-usage}
@@ -26,7 +22,8 @@ function autocompleteBuilder(customInputCreator) {
                 autoFirst: true,
                 sort: false,
                 list: [],
-                ul: el[0].querySelector('.autocompleteEmails-autocomplete')
+                ul: el[0].querySelector('.autocompleteEmails-autocomplete'),
+                ...opt
             });
 
             let previousScrollIndex = 0;
@@ -59,7 +56,7 @@ function autocompleteBuilder(customInputCreator) {
             });
         };
 
-        return customInputCreator('text', { pre, post: postCompile });
+        return customInputCreator('text', { pre, post: postCompile, compile });
     };
 }
 export default autocompleteBuilder;

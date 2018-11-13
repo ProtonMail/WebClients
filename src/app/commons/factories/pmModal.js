@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import { MODAL_Z_INDEX } from '../../constants';
 
 /* @ngInject */
@@ -49,6 +51,9 @@ function pmModal(
                 .then(({ data }) => data);
         }
 
+        const show = () => element && element.removeClass('pm_modal-hidden');
+        const hide = () => element && element.addClass('pm_modal-hidden');
+
         function activate(locals) {
             closeAllTooltips();
             return html.then((html) => {
@@ -63,7 +68,7 @@ function pmModal(
                     window.scrollTo(0, 0);
                     manageHotkeys(false); // Disable hotkeys
                     Mousetrap.bind('escape', () => {
-                        const { onEscape = deactivate } = locals.params || {};
+                        const { onEscape = deactivate } = (locals || {}).params || {};
                         onEscape();
                     });
                     clearTimeout(id);
@@ -86,13 +91,41 @@ function pmModal(
                 throw new Error('The template contains no elements; you need to wrap text nodes');
             }
             scope = $rootScope.$new(true);
+
+            /**
+             * Default params will auto bind close/cancel API + a way to toggle the visibility of the modal
+             * @param  {Object} params
+             */
+            const getParams = (params = {}) => ({
+                close: deactivate,
+                cancel: deactivate,
+                show,
+                hide,
+                ...params
+            });
+
             if (controller) {
                 if (!locals) {
                     /* eslint  { "no-param-reassign": "off"} */
-                    locals = {};
+                    locals = { params: {} };
                 }
                 locals.$scope = scope;
+                locals.params = getParams(locals.params);
+
                 const ctrl = $controller(controller, locals);
+                !ctrl.cancel && (ctrl.cancel = locals.params.cancel);
+                !ctrl.close && (ctrl.close = locals.params.close);
+                ctrl.$hookClose = () => {
+                    // show the previousModal if we have one
+                    if (locals.params.previousModal) {
+                        const id = setTimeout(() => {
+                            locals.params.previousModal.show();
+                            clearTimeout(id);
+                        }, 300);
+                    }
+                    (locals.params.hookClose || _.noop)();
+                };
+
                 if (controllerAs) {
                     scope[controllerAs] = ctrl;
                 }
@@ -134,6 +167,7 @@ function pmModal(
                  * cf https://github.com/angular/angular.js/issues/14376#issuecomment-205926098
                  */
                 (scope[controllerAs].$onDestroy || angular.noop)();
+                scope[controllerAs].$hookClose();
                 scope = null;
                 element.remove();
                 element = null;
@@ -149,6 +183,8 @@ function pmModal(
         return {
             activate,
             deactivate,
+            show,
+            hide,
             active
         };
     };

@@ -1,9 +1,10 @@
 import _ from 'lodash';
 
-import { normalizeEmail } from '../../../helpers/string';
-import { ADVANCED_SENDING_KEYS, FIELDS } from '../../../helpers/vCardFields';
-import { cleanValue } from '../../../helpers/vcard';
 import { CONTACT_SETTINGS_DEFAULT } from '../../constants';
+import { ADVANCED_SENDING_KEYS, FIELDS } from '../../../helpers/vCardFields';
+import { normalizeEmail } from '../../../helpers/string';
+import { cleanValue } from '../../../helpers/vcard';
+import { extract as extractProperties } from '../../../helpers/vCardProperties';
 
 const FIELDS_MAP = {
     'x-pm-encrypt': 'Encrypt',
@@ -13,9 +14,7 @@ const FIELDS_MAP = {
 };
 
 /* @ngInject */
-function contactEncryptionModel(mailSettingsModel, vcard) {
-    const vcardService = vcard;
-
+function contactEncryptionModel(mailSettingsModel) {
     /**
      * Returns the default values of the encryption model
      * @return {Object}
@@ -59,12 +58,12 @@ function contactEncryptionModel(mailSettingsModel, vcard) {
      * @return {Object} model
      */
     const prepare = (vcard, normalizedEmail) => {
-        const emails = vcardService.extractProperties(vcard, FIELDS.EMAIL);
+        const emails = extractProperties(vcard, FIELDS.EMAIL);
         const emailProperty = emails.find((property) => normalizeEmail(property.valueOf()) === normalizedEmail);
 
         if (emailProperty) {
             const group = emailProperty.getGroup();
-            const properties = vcardService.extractProperties(vcard, ADVANCED_SENDING_KEYS, { group });
+            const properties = extractProperties(vcard, ADVANCED_SENDING_KEYS, { group });
             return buildModel(properties);
         }
 

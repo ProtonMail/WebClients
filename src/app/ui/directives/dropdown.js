@@ -5,8 +5,9 @@ function dropdown($document, dispatchers) {
     return {
         restrict: 'A',
         scope: {},
-        link(scope, element, { dropdownNoAutoClose }) {
-            const { on, unsubscribe, dispatcher } = dispatchers(['closeDropdown']);
+        link(scope, element, { dropdownNoAutoClose, dropdownType }) {
+            const { on, unsubscribe, dispatcher } = dispatchers(['dropdown']);
+
             const parent = element.parent();
             const dropdown = parent.find('.pm_dropdown');
 
@@ -14,6 +15,7 @@ function dropdown($document, dispatchers) {
                 element.addClass('active');
                 dropdown.addClass(CLASS_OPEN);
                 $document.on('click', outside);
+                dispatcher.dropdown('show', { type: dropdownType });
             }
 
             function hideDropdown() {
@@ -26,27 +28,25 @@ function dropdown($document, dispatchers) {
                 if (dropdownNoAutoClose) {
                     return;
                 }
-
-                dispatcher.closeDropdown('close');
+                dispatcher.dropdown('close', { type: dropdownType });
             }
 
             function click() {
                 const wasOpen = element.hasClass('active');
                 // Close all dropdowns
-                dispatcher.closeDropdown('close');
+                dispatcher.dropdown('close', { type: dropdownType });
 
                 if (!wasOpen) {
                     // Open only this one
                     showDropdown();
                 }
-
                 return false;
             }
 
-            // Listeners
             element.on('click', click);
-
-            on('closeDropdown', hideDropdown);
+            on('dropdown', (e, { type }) => {
+                type === 'close' && hideDropdown();
+            });
 
             scope.$on('$destroy', () => {
                 element.off('click', click);

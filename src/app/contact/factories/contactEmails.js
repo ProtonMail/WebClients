@@ -2,28 +2,35 @@ import _ from 'lodash';
 
 import { STATUS } from '../../constants';
 import updateCollection from '../../utils/helpers/updateCollection';
+import { normalizeEmail } from '../../../helpers/string';
 
 const { DELETE, CREATE, UPDATE } = STATUS;
 
+const getCacheDefault = () => ({
+    emails: [],
+    map: Object.create(null),
+    emailMap: Object.create(null)
+});
+
 /* @ngInject */
 function contactEmails(Contact, dispatchers, sanitize) {
-    const CACHE = {
-        emails: [],
-        map: Object.create(null)
-    };
+    let CACHE = getCacheDefault();
 
     const syncMap = (diff = []) => {
-        CACHE.map = _.reduce(
+        const { map, emailMap } = _.reduce(
             diff,
             (acc, item) => {
-                if (!acc[item.ContactID]) {
-                    acc[item.ContactID] = [];
+                if (!acc.map[item.ContactID]) {
+                    acc.map[item.ContactID] = [];
                 }
-                acc[item.ContactID].push({ ...item });
+                acc.map[item.ContactID].push({ ...item });
+                acc.emailMap[item.ID] = item;
                 return acc;
             },
-            CACHE.map
+            CACHE
         );
+        CACHE.map = map;
+        CACHE.emailMap = emailMap;
     };
 
     const set = (data) => {
@@ -32,25 +39,42 @@ function contactEmails(Contact, dispatchers, sanitize) {
     };
 
     const get = () => CACHE.emails.slice();
+    const getEmail = (ID) => CACHE.emailMap[ID];
     const getMap = () => CACHE.map;
-    const clear = () => ((CACHE.emails.length = 0), (CACHE.map = Object.create(null)));
+    const clear = () => (CACHE = getCacheDefault());
+
+    const loadFilterEmails = (input, format = _.identity) => {
+        const email = format(input);
+        const match = (input) => format(input) === email;
+        return {
+            noDefault({ Defaults, Email }) {
+                return !Defaults && match(Email);
+            },
+            match: ({ Email }) => match(Email)
+        };
+    };
 
     const findIndex = (ID) => _.findIndex(CACHE.emails, { ID });
-    const findEmail = (email, normalizer = null) => {
-        const norm = normalizer || _.identity;
-        const normEmail = norm(email);
-        const nonDefault = _.find(
-            CACHE.emails,
-            (contactEmail) => !contactEmail.Defaults && norm(contactEmail.Email) === normEmail
-        );
+    const findEmail = (email, normalizer = _.identity) => {
+        const { noDefault, match } = loadFilterEmails(email, normalizer);
+
+        const nonDefault = _.find(CACHE.emails, noDefault);
         if (nonDefault) {
             return nonDefault;
         }
-        return _.find(CACHE.emails, (contactEmail) => norm(contactEmail.Email) === normEmail);
+        return _.find(CACHE.emails, match);
+    };
+
+    const findEmails = (list = [], format = normalizeEmail) => {
+        /*
+            Can be a list of undefined
+            ex: a draft with a group but then the user removes all the contacts.
+         */
+        return list.map((email) => findEmail(email, format)).filter(Boolean);
     };
 
     const { dispatcher, on } = dispatchers(['contacts']);
-    const emit = (contact) => dispatcher.contacts('refreshContactEmails', { ID: contact.ContactID });
+    const emit = (contact) => dispatcher.contacts('refreshContactEmails', { ID: contact.ContactID, contact });
 
     /**
      * Load first 100 emails via the user auth process
@@ -79,7 +103,10 @@ function contactEmails(Contact, dispatchers, sanitize) {
     }
 
     const update = (events = []) => {
-        const cleanEvents = events.map((event) => ({ ...event, ContactEmail: cleanContact(event.ContactEmail) }));
+        const cleanEvents = events.map((event) => ({
+            ...event,
+            ContactEmail: cleanContact(event.ContactEmail)
+        }));
         const { collection } = updateCollection(CACHE.emails, cleanEvents, 'ContactEmail');
 
         clear();
@@ -101,6 +128,6 @@ function contactEmails(Contact, dispatchers, sanitize) {
         clear();
     });
 
-    return { set, get, getMap, clear, findIndex, findEmail, load: loadCache, update };
+    return { set, get, getMap, getEmail, clear, findIndex, findEmail, load: loadCache, update, findEmails };
 }
 export default contactEmails;

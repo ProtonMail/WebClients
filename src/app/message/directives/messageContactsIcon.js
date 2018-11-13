@@ -95,9 +95,12 @@ function messageContacts(gettextCatalog) {
             };
 
             const getTooltip = () => {
+                if (scope.email.isContactGroup) {
+                    return '';
+                }
+
                 // turn into a bitmask value :-)
                 const status = getStatusCode();
-
                 return I18N[status] || '';
             };
 

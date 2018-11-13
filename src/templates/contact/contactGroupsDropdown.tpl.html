@@ -1,0 +1,19 @@
+<div class="contactGroupsDropdown-container pm_buttons">
+    <a
+        class="pm_trigger open-folder toolbarDesktop-select-folder"
+        data-dropdown
+        data-dropdown-no-auto-close="true"
+        data-dropdown-type="{{::type}}"
+        ng-class="{disabled: isDisabled()}"
+        pt-tooltip-translate="Add to contact group"
+        pt-tooltip-translate-context="Action toolbar">
+        <i class="fa fa-users"></i>
+    </a>
+    <div class="pm_dropdown wide contactGroupsDropdown-dropdown">
+        <dropdown-groups
+            data-type="type"
+            data-model="model"
+            class="contactGroupsDropdown-folders"
+            data-elements="getElements"></dropdown-groups>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+.messageAddressActions-container:not(.messageAddressActions-open) {
+    .fa-caret-right { display: none }
+}
+.messageAddressActions-open .fa-caret-down {
+    display: none
+}
+
+.messageAddressActions-container {
+    display: inline-block;
+    border: 0;
+    padding: .5em;
+    background: transparent;
+    cursor: pointer;
+    line-height: 16px;
+    font-size: 1rem;
+}
+
+.messageAddressActions-icon {
+    margin-left: 0 !important;
+}

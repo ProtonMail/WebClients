@@ -1,13 +1,14 @@
-import { getGroup } from '../../../helpers/vcard';
 import { CONTACT_SETTINGS_DEFAULT } from '../../constants';
 import { ADVANCED_SENDING_KEYS } from '../../../helpers/vCardFields';
+import { getGroup } from '../../../helpers/vcard';
+import { extractAll as extractAllProperties } from '../../../helpers/vCardProperties';
 
 /* @ngInject */
-function contactEncryptionSaver(contactEncryptionModel, dispatchers, vcard, $injector, notification, gettextCatalog) {
+function contactEncryptionSaver(contactEncryptionModel, dispatchers, $injector, notification, gettextCatalog) {
     const I18N = {
         SUCCESS_ADVANCED_SAVED: gettextCatalog.getString('Advanced settings saved', null, 'Info')
     };
-    const vcardService = vcard;
+
     const { dispatcher } = dispatchers(['contacts']);
     const FIELDS_MAP = contactEncryptionModel.getMap();
 
@@ -19,7 +20,7 @@ function contactEncryptionSaver(contactEncryptionModel, dispatchers, vcard, $inj
      * @return {vCard} newCard
      */
     const build = (vcard, normalizedEmail, model) => {
-        const allProperties = vcardService.extractAllProperties(vcard);
+        const allProperties = extractAllProperties(vcard);
         const emailProperties = allProperties.filter((property) => property.getField() === 'email');
         const group = getGroup(emailProperties, normalizedEmail);
         const properties = allProperties.filter((property) => {

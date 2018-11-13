@@ -1,5 +1,6 @@
 import _ from 'lodash';
 
+import { CONTACT_MODE } from '../app/constants';
 import { normalizeEmail } from './string';
 import { BOOL_FIELDS } from './vCardFields';
 
@@ -89,8 +90,9 @@ export const cleanMultipleValue = (value = '') =>
  * @return {String}
  */
 export const cleanValue = (value, field) => {
+    debugger;
     // ADR and N contains several value separeted by semicolon
-    if (field === 'adr' || field === 'n') {
+    if (field === 'adr' || field === 'n' || field === 'categories') {
         return cleanMultipleValue(value);
     }
 
@@ -99,4 +101,54 @@ export const cleanValue = (value, field) => {
     }
 
     return unescapeValue(value);
+};
+
+/**
+ * Find all categories inside a list of vCard
+ * then we build an map
+ *     <UID> => <Categories:String> with a comma as separator
+ * @param  {Array}  cards
+ * @return {Object}
+ */
+export const getCategoriesEmail = (cards = []) => {
+    const hasCategories = ({ Type, Data }) => Type === CONTACT_MODE.CLEAR_TEXT && Data.includes('CATEGORIES');
+    const notEncryptedContent = ({ Type }) => Type !== CONTACT_MODE.ENCRYPTED_AND_SIGNED;
+
+    /**
+     * Create a map
+     *     <TypeOfvCard> => vCard
+     * @param  {Object} card
+     * @return {Object}
+     */
+    const formatCards = (card) => {
+        return card.reduce((acc, { Type, Data }) => {
+            acc[Type] = new vCard().parse(Data);
+            return acc;
+        }, {});
+    };
+
+    /**
+     * Get list of categories inside the field categories of a vCard
+     * It can be a string or an array of property.
+     * We don't care about duplicates as we use a map later by Name
+     * @param  {Object} cat content of field categories
+     * @return {String}
+     */
+    const getCategories = (cat) => {
+        if (Array.isArray(cat)) {
+            return cat.map((prop) => prop.valueOf()).join(',');
+        }
+        return cat.valueOf();
+    };
+
+    const mapCategoriesReducer = (acc, { [CONTACT_MODE.CLEAR_TEXT]: clearText, [CONTACT_MODE.SIGNED]: signed }) => {
+        acc[signed.get('uid').valueOf()] = getCategories(clearText.get('categories'));
+        return acc;
+    };
+
+    return cards
+        .filter(({ Cards }) => Cards.some(hasCategories))
+        .map(({ Cards }) => Cards.filter(notEncryptedContent))
+        .map(formatCards)
+        .reduce(mapCategoriesReducer, Object.create(null));
 };

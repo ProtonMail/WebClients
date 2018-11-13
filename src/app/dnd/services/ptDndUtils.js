@@ -1,4 +1,5 @@
 import { isElement } from '../../../helpers/domHelper';
+import { uniqID } from '../../../helpers/string';
 
 /* @ngInject */
 function ptDndUtils() {
@@ -8,9 +9,7 @@ function ptDndUtils() {
      * @return {String}
      */
     function generateUniqId(key = 'drag-') {
-        return `${key}${Math.random()
-            .toString(36)
-            .substring(7)}`;
+        return `${key}${uniqID()}`;
     }
 
     /**

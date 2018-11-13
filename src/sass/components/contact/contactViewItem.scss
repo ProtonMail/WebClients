@@ -24,8 +24,8 @@ $mapFields: (
 .contactViewItem-container[data-field="bday"] .fa-tag { display: none }
 
 
-.contactViewItem-container a {
-    max-width: 60%;
+.contactViewItem-container a[href] {
+    max-width: 70%;
     color: $primary;
     text-decoration: none;
     text-overflow: ellipsis;
@@ -33,8 +33,14 @@ $mapFields: (
 }
 
 .contactViewItem-container a:focus,
-.contactViewItem-container a:hover {
+.contactViewItem-container a:hover,
+.contactViewItem-container [class*="-btn"]:focus,
+.contactViewItem-container [class*="-btn"]:hover {
     color: darken($primary, 10);
+}
+
+.contactViewItem-container a:focus,
+.contactViewItem-container a:hover {
     text-decoration: underline
 }
 
@@ -48,8 +54,33 @@ $mapFields: (
 [class*="contactViewItem-value"] {
     flex: 1 0 0;
     text-overflow: ellipsis;
-    overflow: hidden
+    overflow: hidden;
+    align-items: baseline;
 }
+
+.contactViewItem-value-email {
+    display: flex;
+    /*justify-content: space-between;*/
+    width: 50%;
+    cursor: pointer;
+}
+
+.contactViewItem-label-group {
+    flex-direction: row;
+    padding: 0;
+    margin-left: .5rem;
+    width: auto;
+    min-width: auto
+}
+
+.contactViewItem-label-group[data-overflow="true"] .contactGroupsOverview-ellipsis {
+    order: 0;
+}
+
+.contactViewItem-actions-dropdownGroup {
+    .pm_trigger { color: #555; }
+}
+
 [data-field="note"] .contactViewItem-value-txt {font-style: italic;}
 
 [class*="contactViewItem-btn"] {
@@ -69,6 +100,15 @@ $mapFields: (
 
 .contactViewItem-container .contactItem-btn-settings {
     cursor: pointer;
+    min-width: 1.8rem
+}
+
+.contactViewItem-actions {
+    display: flex;
+    align-items: center;
     margin-left: auto;
-    margin-top: -14px; /* half of its size to center it with the email */
+}
+
+.contactViewItem-actions-dropdownGroup .dropdownGroups-item + .dropdownGroups-item {
+    margin-top: 1rem;
 }

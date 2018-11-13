@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { uniqID } from '../../../helpers/string';
+
 /* @ngInject */
 function injectMessageMedia(dispatchers, displayImages, displayEmbedded) {
     const LOADING_CLASS = 'proton-loading';
@@ -22,9 +24,7 @@ function injectMessageMedia(dispatchers, displayImages, displayEmbedded) {
         if (isWrapped(img)) {
             return;
         }
-        const hash = `${Math.random()
-            .toString(32)
-            .slice(2, 12)}-${Date.now()}`;
+        const hash = uniqID();
         img.setAttribute('data-hash', hash);
         angular.element(img).wrap(`<div class="image loading ${LOADING_CLASS}" data-hash="${hash}"></div>`);
     };

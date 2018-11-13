@@ -68,10 +68,41 @@ import contactSchemeSelector from './directives/contactSchemeSelector';
 import contactPgpModel from './factories/contactPgpModel';
 import contactErrorType from './directives/contactErrorType';
 import advancedSettingsBtn from './directives/advancedSettingsBtn';
+import contactGroupsDropdown from './directives/contactGroupsDropdown';
+import dropdownGroups from './directives/dropdownGroups';
+import contactGroupModal from './modals/contactGroupModal';
+import autocompleteContacts from './directives/autocompleteContacts';
+import contactGroupModel from './factories/contactGroupModel';
+import manageContactGroupModal from './modals/manageContactGroupModal';
+import manageContactGroupLink from './directives/manageContactGroupLink';
+import actionContactGroup from './directives/actionContactGroup';
+import manageContactGroup from './services/manageContactGroup';
+import contactGroupsOverview from './directives/contactGroupsOverview';
+import importContactGroups from './services/importContactGroups';
+import autocompleteContactGroup from './directives/autocompleteContactGroup';
+import contactGroupNameValidator from './directives/contactGroupNameValidator';
 
 export default angular
     .module('proton.contact', ['vs-repeat'])
+    .directive('contactGroupNameValidator', contactGroupNameValidator)
+    .directive('autocompleteContactGroup', autocompleteContactGroup)
+    .factory('importContactGroups', importContactGroups)
     .directive('advancedSettingsBtn', advancedSettingsBtn)
+    .directive('contactGroupsOverview', contactGroupsOverview)
+    .factory('manageContactGroup', manageContactGroup)
+    .directive('actionContactGroup', actionContactGroup)
+    .directive('manageContactGroupLink', manageContactGroupLink)
+    .factory('manageContactGroupModal', manageContactGroupModal)
+    .factory('contactGroupModel', contactGroupModel)
+    .directive('autocompleteContacts', autocompleteContacts)
+    .factory('contactGroupModal', contactGroupModal)
+    .directive('dropdownGroups', dropdownGroups)
+    .directive('contactGroupsDropdown', contactGroupsDropdown)
+    .directive('importCardDropzone', importCardDropzone)
+    .run((contactEditor, contactMerger) => {
+        contactEditor.init();
+        contactMerger.init();
+    })
     .factory('contactPgpModel', contactPgpModel)
     .directive('contactSchemeSelector', contactSchemeSelector)
     .directive('contactSignToggle', contactSignToggle)
@@ -79,16 +110,14 @@ export default angular
     .factory('contactEncryptionModel', contactEncryptionModel)
     .directive('contactMimetypeSelector', contactMimetypeSelector)
     .directive('contactErrorType', contactErrorType)
+    .directive('dropdownGroups', dropdownGroups)
+    .directive('contactGroupsDropdown', contactGroupsDropdown)
     .factory('contactEncryptionSettings', contactEncryptionSettings)
     .directive('contactActionHeader', contactActionHeader)
     .filter('contactViewType', contactViewType)
     .directive('contactViewItem', contactViewItem)
     .directive('contactViewDetail', contactViewDetail)
     .directive('importCardDropzone', importCardDropzone)
-    .run((contactEditor, contactMerger) => {
-        contactEditor.init();
-        contactMerger.init();
-    })
     .directive('contactAddressInput', contactAddressInput)
     .directive('contactPhotoRow', contactPhotoRow)
     .directive('contactClear', contactClear)

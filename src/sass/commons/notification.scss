@@ -40,6 +40,14 @@ body .cg-notify-message {
     word-wrap: break-word;
 }
 
+.cg-notify-message ul {
+    margin: 0 1em;
+    padding: 0;
+    list-style: none;
+    text-align: left
+}
+.cg-notify-message li::before { content: ' - ' }
+
 
 @media (max-width: 800px) {
     html body .cg-notify-message {

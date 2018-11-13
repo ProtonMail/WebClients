@@ -6,8 +6,6 @@ import displaySignatureStatus from '../../../helpers/displaySignatureStatus';
 const CLASSNAME = {
     UNDISCLOSED: 'message-undisclosed'
 };
-const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => ToList.concat(CCList, BCCList);
-const noRecipients = (message) => !getRecipients(message).length;
 
 /* @ngInject */
 function message(
@@ -20,8 +18,11 @@ function message(
     tools,
     unsubscribeModel,
     sendPreferences,
-    $exceptionHandler
+    $exceptionHandler,
+    recipientsFormator
 ) {
+    const noRecipients = (message) => !recipientsFormator.toList(message).length;
+
     /**
      * Back to element list
      */
@@ -118,8 +119,9 @@ function message(
                             );
                         };
 
-                        const recipients = scope.message.emailsToString();
                         const parsedHeaders = scope.message.getParsedHeaders();
+                        const recipients = _.map(recipientsFormator.toList(scope.message), 'Address');
+
                         const encryptionList = parseRecipientHeader(
                             parsedHeaders['X-Pm-Recipient-Encryption'] || '',
                             recipients
@@ -129,11 +131,12 @@ function message(
                             recipients
                         );
 
-                        const addCryptoInfo = ({ Address, Name }) => ({
-                            Address,
-                            Name,
-                            Authentication: authenticationList[Address],
-                            Encryption: encryptionList[Address]
+                        const addCryptoInfo = (item) => ({
+                            ...item,
+                            ...(!item.isContactGroup && {
+                                Authentication: authenticationList[item.Address],
+                                Encryption: encryptionList[item.Address]
+                            })
                         });
 
                         scope.toList = scope.message.ToList.map(addCryptoInfo);
@@ -283,7 +286,9 @@ function message(
              * Get all recipients
              * @return {Array} recipients
              */
-            scope.recipients = () => getRecipients(scope.message);
+            scope.recipients = () => {
+                return scope.message.ToList.concat(scope.message.CCList, scope.message.BCCList);
+            };
 
             /**
              * Check if there is no recipients

@@ -41,19 +41,13 @@ function sidebarContact(dispatchers, backState, contactCache, contactMerger, get
                 }
             }
 
-            function onClick(event) {
-                const action = event.target.getAttribute('data-action');
+            function onClick({ target }) {
+                const action = target.getAttribute('data-action');
 
-                if (/^(merge|import|export)Contacts$/.test(action)) {
-                    return dispatcher.contacts(action);
-                }
-
-                if (action === 'deleteContacts') {
-                    return dispatcher.contacts(action, { contactIDs: 'all' });
-                }
-
-                if (action === 'back') {
-                    return backState.back();
+                action === 'back' && backState.back();
+                action === 'deleteContacts' && dispatcher.contacts(action, { contactIDs: 'all' });
+                if (/^(merge|export|import)Contacts$/.test(action)) {
+                    dispatcher.contacts(action);
                 }
             }
 
