@@ -90,7 +90,6 @@ export const cleanMultipleValue = (value = '') =>
  * @return {String}
  */
 export const cleanValue = (value, field) => {
-    debugger;
     // ADR and N contains several value separeted by semicolon
     if (field === 'adr' || field === 'n' || field === 'categories') {
         return cleanMultipleValue(value);
