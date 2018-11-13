@@ -71,7 +71,7 @@
                 <div ng-if="ctrl.step === 'storage'">
                     <p class="alert alert-info" translate-context="Info" translate>Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.</p>
                     <label>
-                        <strong translate-context="Label" translate>Admin Account Storage:</strong> {{ ctrl.sliderValue * ctrl.unit | humanSize }} ({{ ctrl.min | humanSize }} Used)
+                        <strong translate-context="Label" translate>Admin Account Storage:</strong> {{ ctrl.sliderValue * ctrl.unit | humanSize }} ({{ ctrl.userUsedSpace | humanSize }} Used)
                     </label>
                     <label class="margin">
                         <strong translate-context="Label" translate>Storage for members:</strong> {{ ( ctrl.max - ctrl.sliderValue * ctrl.unit) | humanSize }}

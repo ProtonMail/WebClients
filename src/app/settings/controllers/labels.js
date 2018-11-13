@@ -6,8 +6,6 @@ function LabelsController(
     dispatchers,
     $scope,
     gettextCatalog,
-    $log,
-    authentication,
     confirmModal,
     eventManager,
     Label,
