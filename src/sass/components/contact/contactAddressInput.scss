@@ -10,6 +10,12 @@
     textarea { min-height: 100px }
 }
 
+.contactAddressInput-focussed {
+    position: relative;
+    margin-top: -15px;
+}
+.appConfigBody-is-mobile .contactAddressInput-focussed { margin-top: -10px; }
+
 .contactAddressInput-focussed .contactAddressInput-default,
 .contactAddressInput-container:not(.contactAddressInput-show-post-box) .contactAddressInput-post-box,
 .contactAddressInput-container:not(.contactAddressInput-show-post-box) .contactAddressInput-post-box-label,
@@ -27,10 +33,15 @@
     flex-direction: column;
 }
 
-.contactAddressInput-col * { width: 100% }
+
+.contactAddressInput-col * { width: 100%; }
 .contactAddressInput-col:last-child { margin-left: 2px }
 .contactAddressInput-label {
     color: $primary;
     font-size: .8em;
     line-height: 20px;
+}
+
+.contactAddressInput-field {
+    width: 100% !important;
 }

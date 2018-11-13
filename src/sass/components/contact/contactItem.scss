@@ -156,7 +156,7 @@
 
 .contactItem-inputs {
     display: flex;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
 }
 
 .contactItem-inputs .pm_toggle {
@@ -373,6 +373,10 @@ contact-pgp contact-item ul.contactItem-container {
     left: -30px;
     top: 10px;
 }
+.contactItem-container .copy-button {
+    left: -35px;
+}
+
 
 .contactItem-compose {
     top: 1px;

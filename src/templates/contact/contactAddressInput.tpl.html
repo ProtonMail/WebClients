@@ -1,23 +1,23 @@
 <div class="contactAddressInput-container">
-    <textarea name="default" tabindex="2" ng-model="model.default" class="contactAddressInput-default contactItem-input-with-icon" placeholder-translate="Address" placeholder-translate-context="Placeholder"></textarea>
-    <label class="contactAddressInput-label contactAddressInput-post-box-label" translate-context="Label for address input in contact details" translate>Post office box</label>
-    <input type="text" name="postBox" ng-model="model.postBox" class="contactAddressInput-field contactAddressInput-post-box" placeholder-translate="Post office box" placeholder-translate-context="Placeholder">
-    <label class="contactAddressInput-label contactAddressInput-extended-label" translate-context="Label for address input in contact details" translate>Extended address (apartment or suite number)</label>
-    <input type="text" name="extended" tabindex="2" ng-model="model.extended" class="contactAddressInput-field contactAddressInput-extended" placeholder-translate-context="Placeholder" placeholder-translate="Extended address (apartment or suite number)">
-    <label class="contactAddressInput-label" translate-context="Label for address input in contact details" translate>Street address</label>
-    <textarea name="street" tabindex="2" placeholder-translate-context="Placeholder" ng-model="model.street" class="contactAddressInput-field contactAddressInput-street" placeholder-translate="Street address"></textarea>
-    <label class="contactAddressInput-label" translate-context="Label for address input in contact details" translate>City</label>
-    <input type="text" name="locality" tabindex="2" ng-model="model.locality" class="contactAddressInput-field contactAddressInput-locality" placeholder-translate-context="Placeholder" placeholder-translate="City">
+    <textarea name="default" ng-model="model.default" class="contactAddressInput-default contactItem-input-with-icon" placeholder-translate="Address" placeholder-translate-context="Placeholder"></textarea>
+    <label for="postBox" class="contactAddressInput-label contactAddressInput-post-box-label" translate-context="Label for address input in contact details" translate>Post office box</label>
+    <input type="text" name="postBox" id="postBox" ng-model="model.postBox" class="contactAddressInput-field contactAddressInput-post-box" placeholder-translate="Post office box" placeholder-translate-context="Placeholder">
+    <label for="extended" class="contactAddressInput-label contactAddressInput-extended-label" translate-context="Label for address input in contact details" translate>Extended address (apartment or suite number)</label>
+    <input type="text" name="extended" id="extended" ng-model="model.extended" class="contactAddressInput-field contactAddressInput-extended" placeholder-translate-context="Placeholder" placeholder-translate="Extended address (apartment or suite number)">
+    <label for="street" class="contactAddressInput-label" translate-context="Label for address input in contact details" translate>Street address</label>
+    <textarea name="street" id="street" placeholder-translate-context="Placeholder" ng-model="model.street" class="contactAddressInput-field contactAddressInput-street" placeholder-translate="Street address"></textarea>
+    <label for="locality" class="contactAddressInput-label" translate-context="Label for address input in contact details" translate>City</label>
+    <input type="text" name="locality" id="locality" ng-model="model.locality" class="contactAddressInput-field contactAddressInput-locality" placeholder-translate-context="Placeholder" placeholder-translate="City">
     <div class="contactAddressInput-grid">
         <div class="contactAddressInput-col">
-            <label class="contactAddressInput-label" translate-context="Label for address input in contact details" translate>State/Region</label>
-            <input type="text" name="region" tabindex="2" ng-model="model.region" placeholder-translate-context="Placeholder" class="contactAddressInput-field contactAddressInput-region" placeholder-translate="State/Region">
+            <label for="region" class="contactAddressInput-label" translate-context="Label for address input in contact details" translate>State/Region</label>
+            <input type="text" name="region" id="region" ng-model="model.region" placeholder-translate-context="Placeholder" class="contactAddressInput-field contactAddressInput-region" placeholder-translate="State/Region">
         </div>
         <div class="contactAddressInput-col">
-            <label class="contactAddressInput-label" translate-context="Label for address input in contact details" translate>Postal code</label>
-            <input type="text" placeholder-translate-context="Placeholder" name="postalCode" tabindex="2" ng-model="model.postalCode" class="contactAddressInput-field contactAddressInput-postal-code" placeholder-translate="Postal code">
+            <label for="postalCode" class="contactAddressInput-label" translate-context="Label for address input in contact details" translate>Postal code</label>
+            <input type="text" placeholder-translate-context="Placeholder" name="postalCode" id="postalCode" ng-model="model.postalCode" class="contactAddressInput-field contactAddressInput-postal-code" placeholder-translate="Postal code">
         </div>
     </div>
-    <label class="contactAddressInput-label" translate-context="Label for address input in contact details" translate>Country</label>
-    <input type="text" placeholder-translate-context="Placeholder" name="country" tabindex="2" ng-model="model.country" class="contactAddressInput-field contactAddressInput-country" placeholder-translate="Country">
+    <label for="country" class="contactAddressInput-label" translate-context="Label for address input in contact details" translate>Country</label>
+    <input type="text" placeholder-translate-context="Placeholder" name="country" id="country" ng-model="model.country" class="contactAddressInput-field contactAddressInput-country" placeholder-translate="Country">
 </div>
