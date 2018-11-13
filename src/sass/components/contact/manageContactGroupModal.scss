@@ -110,3 +110,19 @@
     opacity: 0;
     pointer-events: none;
 }
+
+.manageContactGroupModal-info-name {
+    max-width: 70%;
+}
+
+.appConfigBody-is-mobile {
+
+    .manageContactGroupModal-item-info.manageContactGroupModal-item-info {
+        width: calc(100% - 30px); /* full width - checkbox */
+    }
+
+    .manageContactGroupModal-info-name {
+        max-width: calc(100% - 30px - 8em); /* full width - checkbox - text number of members */
+    }
+
+}
