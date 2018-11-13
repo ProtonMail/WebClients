@@ -24,6 +24,8 @@ function editComposerContactGroupModal(pmModal) {
                 return item;
             });
 
+            this.getColor = () => ({ color: this.model.Color });
+
             this.submit = () => {
                 const list = this.group.filter(({ isSelected }) => isSelected);
                 cache.save(this.model, list);

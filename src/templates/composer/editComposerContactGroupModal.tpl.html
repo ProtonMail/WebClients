@@ -11,7 +11,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">
-                <i class="fa fa-users" style="color: {{::ctrl.model.Color}}"></i>
+                <i class="fa fa-users" ng-style="ctrl.getColor()"></i>
                 {{::ctrl.model.Name}} <span>({{::ctrl.memberNumber}})</span></h4>
             </div>
 
