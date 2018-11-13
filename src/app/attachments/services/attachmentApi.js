@@ -1,4 +1,5 @@
 import { OAUTH_KEY } from '../../constants';
+import { uniqID } from '../../../helpers/string';
 
 /* @ngInject */
 function attachmentApi($http, url, $q, dispatchers, keysModel, pmcw, CONFIG, secureSessionStorage, gettextCatalog) {
@@ -81,9 +82,7 @@ function attachmentApi($http, url, $q, dispatchers, keysModel, pmcw, CONFIG, sec
     const get = (ID) => $http.get(requestURL(ID), { responseType: 'arraybuffer' });
 
     const upload = (packets, message, tempPacket, total) => {
-        const REQUEST_ID = `${Math.random()
-            .toString(32)
-            .slice(2, 12)}-${Date.now()}`;
+        const REQUEST_ID = uniqID();
         const dispatcher = dispatchUpload(REQUEST_ID, message, tempPacket);
         const deferred = $q.defer();
         const xhr = new XMLHttpRequest();

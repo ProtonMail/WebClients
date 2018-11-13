@@ -1,0 +1,61 @@
+<div class="dropdownGroups-container">
+
+    <header class="dropdown-folder-title">
+        <p translate translate-context="title">Add to</p>
+    </header>
+
+    <label class="dropdown-folder-search">
+        <i class="fa fa-search dropdown-folder-search-icon"></i>
+        <input
+            class="dropdown-folder-search-input"
+            type="search"
+            placeholder-translate="Filter groups"
+            placeholder-translate-context="Contact group dropdown placeholder"
+            ng-model="searchValue"
+            ng-minlength="1">
+    </label>
+
+    <div
+        class="dropdown-folder-fullwidth scrollbox-container"
+        ng-if="labels.length > 0">
+        <ul class="scrollbox-container-group">
+            <li
+                class="dropdown-folder-scrollbox-group-item dropdownGroups-item"
+                ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue} | orderBy: 'Order')) track by label.ID">
+                <label class="dropdownGroups-option-label">
+                    <div class="dropdownGroups-option-name">
+                        <i class="fa fa-users" ng-style="::color(label)"></i>
+                        <span class="ellipsis dropdownGroups-option-value">{{ ::label.Name }}</span>
+                    </div>
+                    <custom-checkbox
+                        data-class="dropdownGroups-option-checkbox"
+                        data-custom-ng-model="label.Selected"
+                        data-custom-class="scrollbox-container-group-item-empty"
+                        data-custom-ui-indeterminate="label.Selected === null"></custom-checkbox>
+                </label>
+            </li>
+            <li
+                class="scrollbox-container-group-item-empty"
+                ng-if="!filteredLabels.length"
+                translate translate-context="Info">no contact group found</li>
+        </ul>
+
+
+    </div>
+    <div class="dropdown-folder-create">
+        <button
+            class="dropdown-folder-create-button"
+            data-action="create"
+            translate-context="Action"
+            translate>Create a new group
+            <i class="dropdown-folder-create-value">{{searchValue}}</i>
+        </button>
+        <button
+            data-action="apply"
+            class="pm_button primary dropdown-label-apply"
+            tabindex="1"
+            ng-disabled="networkActivity.loading()"
+            translate-context="Action"
+            translate>Apply</button>
+    </div>
+</div>

@@ -4,7 +4,16 @@ import tooltipModel from '../../utils/helpers/tooltipHelper';
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 
 /* @ngInject */
-function autocompleteEmailsItem(sanitize, dispatchers) {
+function autocompleteEmailsItem(
+    sanitize,
+    sendPreferences,
+    autoPinPrimaryKeys,
+    checkTypoEmails,
+    keyCache,
+    dispatchers,
+    manageContactGroup,
+    contactGroupModel
+) {
     const KEY_ENTER = 13;
 
     /**
@@ -33,30 +42,53 @@ function autocompleteEmailsItem(sanitize, dispatchers) {
         return { name: name.trim(), adr: adr.trim() };
     };
 
+    const getAddress = (target) => {
+        const { name, adr } = extractAddress(target);
+        return { Address: adr || name, Name: sanitize.input(name) };
+    };
+
+    const makeIconGroup = ({ Color }) =>
+        `<i aria-hidden="true" class="fa fa-users autocompleteEmailsItem-icon-group" style="color:${Color}"></i>`;
+
     return {
         replace: true,
         templateUrl: require('../../../templates/ui/autoCompleteEmailsItem.tpl.html'),
-        link(scope, el) {
+        link(scope, el, { key }) {
             const { dispatcher, on, unsubscribe } = dispatchers(['recipient.update']);
+
             const $span = el.find('span');
             const updateBtn = buttonState(el[0]);
             let tooltip;
 
-            const onClick = ({ target }) => target.setAttribute('contenteditable', true);
+            if (scope.email.isContactGroup) {
+                const group = contactGroupModel.read(scope.email.Address, 'labels');
+                el[0].insertAdjacentHTML('afterBegin', makeIconGroup(group));
+            }
+
+            const onClick = ({ target }) => {
+                if (scope.email.isContactGroup) {
+                    return manageContactGroup.editComposer(scope.email.Address, scope.message, key);
+                }
+                target.setAttribute('contenteditable', !scope.email.isContactGroup);
+            };
 
             const onBlur = ({ target }) => {
-                target.setAttribute('contenteditable', false);
+                if (scope.email.isContactGroup) {
+                    return;
+                }
 
-                const getAddress = (target) => {
-                    const { name, adr } = extractAddress(target);
-                    return { Address: adr || name, Name: sanitize.input(name) };
-                };
+                target.setAttribute('contenteditable', false);
 
                 const { Address: oldAddress } = scope.email;
                 const { Address, Name } = getAddress(target);
                 updateBtn(Address);
 
-                dispatcher['recipient.update']('update', { messageID: scope.message.ID, oldAddress, Address, Name });
+                dispatcher['recipient.update']('update', {
+                    Address,
+                    Name,
+                    oldAddress,
+                    messageID: scope.message.ID
+                });
             };
 
             /*

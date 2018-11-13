@@ -2,132 +2,12 @@ import _ from 'lodash';
 
 import parseDate from '../../../helpers/vcardDateParser';
 import isUniqField from '../../../helpers/vcardUniqueFields';
-import { VCARD_VERSION, VCARD_TYPES } from '../../constants';
-import { orderByPref } from '../../../helpers/vcard';
+import { VCARD_VERSION, VCARD_TYPES, CONTACT_MODE } from '../../constants';
+import vCardPropertyMaker from '../../../helpers/vCardPropertyMaker';
+import { extractAll, makeUniq } from '../../../helpers/vCardProperties';
 
 /* @ngInject */
 function vcard(notification, sanitize) {
-    const makeUniq = (properties = []) => _.uniqBy(properties, (property) => property.valueOf());
-
-    /**
-     * Check if a property is empty
-     * @param {vCard.Property} property
-     * @return {Boolean}
-     */
-    const isEmpty = (property) => {
-        if (Array.isArray(property)) {
-            return property.filter(isEmpty).length;
-        }
-
-        if (property) {
-            return property.isEmpty();
-        }
-
-        return true;
-    };
-
-    const pushProperty = (collection = [], property, group) => {
-        if (group && property.getGroup() !== group) {
-            return;
-        }
-
-        collection.push(property);
-    };
-
-    /**
-     * Extract specific properties
-     * @param {vCard} vcard
-     * @param {Array} fields
-     * @param {String} options.group
-     * @return {Array} properties
-     */
-    const extractProperties = (vcard = new vCard(), fields = [], { group } = {}) => {
-        return fields.reduce((acc, key) => {
-            const property = vcard.get(key);
-
-            if (isEmpty(property)) {
-                return acc;
-            }
-
-            const value = property.valueOf();
-
-            if (Array.isArray(value)) {
-                orderByPref(value).forEach((prop) => {
-                    pushProperty(acc, prop, group);
-                });
-                return acc;
-            }
-
-            pushProperty(acc, property, group);
-
-            return acc;
-        }, []);
-    };
-
-    /**
-     * Merge multiple vCards into one
-     * @param {Array} vCards
-     * @returns {vCard} newCard
-     */
-    const merge = (vCards = []) => {
-        if (vCards.length === 0) {
-            return;
-        }
-        if (vCards.length === 1) {
-            return vCards[0];
-        }
-        const newCard = new vCard();
-
-        // Count of the id of the group to ensure that no conflicts exists between them between contacts.
-        let groupId = 0;
-
-        // All new properties.
-        const properties = _.reduce(
-            vCards,
-            (acc, vcard = {}) => {
-                const groups = {};
-                const props = extractAllProperties(vcard);
-                _.each(props, (prop) => {
-                    const group = prop.getGroup();
-                    if (group) {
-                        // Rename group to prevent conflicts where properties from different vcards have the same group.
-                        groups[group] = groups[group] || `item${++groupId}`;
-                        prop.group = groups[group];
-                    }
-                    const field = prop.getField();
-                    acc[field] = acc[field] || [];
-                    acc[field].push(prop);
-                });
-                return acc;
-            },
-            {}
-        );
-
-        /**
-         * Build all the properties.
-         * If it's a unique field, take the first property.
-         * Otherwise ensure that the properties are unique and add them.
-         */
-        _.each(Object.keys(properties), (field) => {
-            if (isUniqField(field)) {
-                return build([properties[field][0]], newCard);
-            }
-            build(makeUniq(properties[field]), newCard);
-        });
-
-        return newCard;
-    };
-
-    const to = (vcards = []) =>
-        _.reduce(vcards, (acc, vCard) => acc + clean(vCard).toString(VCARD_VERSION) + '\r\n', '');
-    const from = (vcfString = '') => {
-        try {
-            return vCard.parse(vcfString).map((vcard) => clean(convertCustoms(vcard)));
-        } catch (e) {
-            notification.error(e);
-        }
-    };
-
     /**
      * Check if the type is valid
      * @param  {String}  [type='']
@@ -135,9 +15,8 @@ function vcard(notification, sanitize) {
      */
     function isValidType(type = '') {
         if (type.length) {
-            return _.includes(VCARD_TYPES, type.toLowerCase());
+            return VCARD_TYPES.includes(type.toLowerCase());
         }
-
         return true;
     }
 
@@ -147,7 +26,7 @@ function vcard(notification, sanitize) {
      * @return {vCard}
      */
     function clean(vcard = new vCard()) {
-        const properties = extractAllProperties(vcard);
+        const properties = extractAll(vcard);
 
         return _.reduce(
             properties,
@@ -248,22 +127,54 @@ function vcard(notification, sanitize) {
     }
 
     /**
-     * Get all Properties for a specific vCard
-     * @param  {vCard} vcard
-     * @return {Array}
+     * Merge multiple vCards into one
+     * @param {Array} vCards
+     * @param {Boolean} unicityGroup When we merge contacts we need to ensure we have uniq groups.
+     * @returns {vCard} newCard
      */
-    function extractAllProperties(vcard = new vCard()) {
-        return _.reduce(
-            Object.keys(vcard.data),
-            (acc, key) => {
-                const value = vcard.get(key);
-                const props = Array.isArray(value) ? value : [value];
+    const merge = (vCards = [], unicityGroup = false) => {
+        if (vCards.length === 0) {
+            return;
+        }
+        if (vCards.length === 1) {
+            return vCards[0];
+        }
+        const newCard = new vCard();
 
-                return acc.concat(props);
+        const properties = vCardPropertyMaker(vCards, { unicityGroup });
+
+        /**
+         * Build all the properties.
+         * If it's a unique field, take the first property.
+         * Otherwise ensure that the properties are unique and add them.
+         */
+        _.each(Object.keys(properties), (field) => {
+            if (isUniqField(field)) {
+                return build([properties[field][0]], newCard);
+            }
+            build(makeUniq(properties[field]), newCard);
+        });
+
+        return newCard;
+    };
+
+    const to = (vcards = []) => {
+        return _.reduce(
+            vcards,
+            (acc, vCard) => {
+                return acc + clean(vCard).toString(VCARD_VERSION) + '\r\n';
             },
-            []
+            ''
         );
-    }
+    };
+
+    const from = (vcfString = '') => {
+        try {
+            return vCard.parse(vcfString).map((vcard) => clean(convertCustoms(vcard)));
+        } catch (e) {
+            notification.error(e);
+        }
+    };
 
     /**
      * Handle x-ablabel custom property and convert it to the vCard 4 format
@@ -271,10 +182,8 @@ function vcard(notification, sanitize) {
      * @param  {Array} vcards
      * @return {Array}
      */
-
-    /* eslint no-unused-vars: "off" */
     function convertCustoms(vcard = new vCard()) {
-        const groups = _.groupBy(extractAllProperties(vcard), (property) => property.getGroup() || 'nogroup');
+        const groups = _.groupBy(extractAll(vcard), (property) => property.getGroup() || 'nogroup');
 
         return _.reduce(
             Object.keys(groups),
@@ -283,7 +192,6 @@ function vcard(notification, sanitize) {
 
                 if (groupName === 'nogroup' || group.length === 1) {
                     _.each(group, (prop) => acc.addProperty(prop));
-
                     return acc;
                 }
 
@@ -312,11 +220,40 @@ function vcard(notification, sanitize) {
 
     function build(properties = [], target = new vCard()) {
         _.each(properties, (property) => target.addProperty(property));
-
         return target;
     }
 
-    return { from, to, extractProperties, extractAllProperties, merge, build, isValidType, isEmpty };
+    function updateClearText({ Cards = [] }, contact) {
+        const clearText = Cards.find(({ Type }) => Type === CONTACT_MODE.CLEAR_TEXT);
+
+        if (!clearText) {
+            return;
+        }
+
+        const card = new vCard().parse(clearText.Data);
+        const types = contact.types.includes(CONTACT_MODE.CLEAR_TEXT)
+            ? contact.types
+            : [...contact.types, CONTACT_MODE.CLEAR_TEXT];
+
+        Object.keys(contact.vCard.data).forEach((key) => {
+            if (!card.data[key]) {
+                const prop = contact.vCard.data[key];
+                if (!Array.isArray(prop)) {
+                    card.addProperty(prop);
+                } else {
+                    build(prop, card);
+                }
+            }
+        });
+
+        return {
+            ...contact,
+            types,
+            vCard: card
+        };
+    }
+
+    return { from, to, merge, build, isValidType, updateClearText };
 }
 
 export default vcard;

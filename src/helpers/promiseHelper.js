@@ -2,7 +2,6 @@
  * Create cancellation token that can be used to cancel a promise to a function that supports it
  * @return {Object}
  */
-// eslint-disable-next-line import/prefer-default-export
 export const createCancellationToken = () => {
     let token = false;
     let trigger = () => {};

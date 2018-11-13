@@ -34,40 +34,59 @@ function contactRightPanel(
                 return scope.contact.ID === ID;
             };
 
-            const changeMode = ({ action, current, refresh, contact: { ID } = {}, forceRefresh }) => {
+            const changeMode = async ({ action, current, refresh, contact: { ID } = {}, forceRefresh }) => {
                 if (action === 'toggleMode') {
                     const mode = forceRefresh ? scope.mode : getMode(current);
-                    scope.$applyAsync(() => {
-                        if (!isSameContact(ID)) {
-                            return;
-                        }
+                    return new Promise((resolve, reject) => {
+                        scope.$applyAsync(() => {
+                            if (!isSameContact(ID)) {
+                                return reject(new Error('Not the same contact'));
+                            }
 
-                        // Force reset view directive to refresh the view After the refresh of the contact
-                        if (refresh || forceRefresh) {
-                            scope.mode = '';
+                            // Force reset view directive to refresh the view After the refresh of the contact
+                            if (refresh || forceRefresh) {
+                                scope.mode = '';
 
-                            // Cannot use $applyAsync inside another one, need to defer it
-                            return _rAF(() => {
-                                scope.$applyAsync(() => {
-                                    scope.mode = mode;
+                                // Cannot use $applyAsync inside another one, need to defer it
+                                return _rAF(() => {
+                                    scope.$applyAsync(() => {
+                                        scope.mode = mode;
+                                        resolve();
+                                    });
                                 });
-                            });
-                        }
+                            }
 
-                        scope.mode = mode;
+                            scope.mode = mode;
+                            resolve();
+                        });
                     });
                 }
             };
 
             const load = async () => {
                 const promise = Contact.get($stateParams.id);
-                networkActivityTracker.track(promise);
-                const data = await promise;
-
+                const data = await networkActivityTracker.track(promise);
                 contactEncryptionAddressMap.init($stateParams.id, data.vCard);
                 scope.$applyAsync(() => {
                     scope.contact = data;
                 });
+            };
+
+            const updateContact = async ({ contact, cards: Cards }) => {
+                // If we refresh the email the card won't be available (ex adding a group)
+                if (!Cards) {
+                    return;
+                }
+
+                const item = await Contact.decrypt({
+                    ...contact,
+                    Cards
+                });
+                contactEncryptionAddressMap.init(scope.contact.ID, item.vCard);
+                scope.$applyAsync(() => {
+                    scope.contact = item;
+                });
+                return item;
             };
 
             load();
@@ -76,26 +95,15 @@ function contactRightPanel(
                 type === 'selectContacts' && selectContacts();
                 type === 'action.input' && changeMode(data);
 
-                const { contact = {} } = data;
-                if (type === 'contactUpdated' && contact.ID === scope.contact.ID) {
-                    Contact.decrypt({
-                        ...contact,
-                        Cards: data.cards
-                    }).then((data) => {
-                        contactEncryptionAddressMap.init(scope.contact.ID, data.vCard);
-                        scope.$applyAsync(() => {
-                            scope.contact = data;
-                        });
-                    });
-                }
+                /*
+                    If you update a contact ex via adding a group we refresh
+                    the view based on a config send POST cache update inside ContactCache.
+                 */
+                if (type === 'contactsUpdated' && data.todo) {
+                    const { update = [] } = data.todo;
+                    const contact = update.find(({ ID }) => scope.contact.ID === ID);
 
-                // Ex when we re-sign we force the refreh cf #7400
-                if (type === 'refreshContactEmails' && data.ID === scope.contact.ID) {
-                    changeMode({
-                        action: 'toggleMode',
-                        forceRefresh: true,
-                        contact: scope.contact
-                    });
+                    contact && updateContact({ contact, cards: contact.Cards });
                 }
             });
 

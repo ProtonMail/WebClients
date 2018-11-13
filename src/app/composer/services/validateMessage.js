@@ -1,4 +1,11 @@
-import { MAX_TITLE_LENGTH, UNPAID_STATE, REGEX_EMAIL, MIME_TYPES, PACKAGE_TYPE } from '../../constants';
+import {
+    MAX_TITLE_LENGTH,
+    UNPAID_STATE,
+    REGEX_EMAIL,
+    MIME_TYPES,
+    PACKAGE_TYPE,
+    MESSAGE_MAX_RECIPIENTS
+} from '../../constants';
 
 import { normalizeEmail } from '../../../helpers/string';
 
@@ -42,8 +49,8 @@ function validateMessage(
         ),
         maxRecipients(total) {
             return gettextCatalog.getString(
-                'You have {{total}} recipients. The maximum number is 25.',
-                { total },
+                'You have {{total}} recipients. The maximum number is {{limit}}.',
+                { total, limit: MESSAGE_MAX_RECIPIENTS },
                 'Error'
             );
         },
@@ -99,8 +106,8 @@ function validateMessage(
             throw new Error(I18N.invalidEmails(emailStats.invalid.join(',')));
         }
 
-        // MAX 25 to, cc, bcc
-        if (emailStats.total > 25) {
+        // MAX 100 to, cc, bcc
+        if (emailStats.total > MESSAGE_MAX_RECIPIENTS) {
             throw new Error(I18N.maxRecipients(emailStats.total));
         }
 

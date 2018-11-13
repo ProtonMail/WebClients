@@ -1,0 +1,40 @@
+.messageAddressActionMenu-container {
+    &.messageAddressActionMenu-isGroup .messageAddressActionMenu-btn-add-contact,
+    &.messageAddressActionMenu-isGroup .messageAddressActionMenu-btn-copy-address,
+    &.address-is-contact .messageAddressActionMenu-btn-add-contact,
+    &:not(.address-is-contact) .address-contact-only,
+    &:not(.show-advanced-settings) .message-action-pin-public {
+        display: none;
+    }
+}
+
+.messageAddressActionMenu-dropdown { width: 160px }
+[class*="messageAddressActionMenu-btn-"] { overflow: hidden }
+/* Force hover... specifity hell */
+[class*="messageAddressActionMenu-btn-"][class*="messageAddressActionMenu-btn-"]:hover {
+    background: #f8f8f8 !important
+}
+
+
+.messageAddressActionMenu-label {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.messageAddressActionMenu-label::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 35px;
+    margin-left: 5px;
+    font-size: .8em;
+}
+
+.messageAddressActionMenu-label-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: currentColor !important;
+}

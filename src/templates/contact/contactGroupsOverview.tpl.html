@@ -1,0 +1,10 @@
+<ul class="contactGroupsOverview-container pm_labels">
+    <li
+      ng-repeat="group in groups track by group.ID"
+      pt-tooltip="{{ group.Name }}"
+      class="contactGroupsOverview-label"
+      ng-style="color(group)">
+        <i aria-hidden="true" class="fa fa-users"></i>
+    </li>
+    <i class="fa fa-ellipsis-h contactGroupsOverview-ellipsis" aria-hidden="true"></i>
+</ul>

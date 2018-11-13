@@ -44,4 +44,6 @@ import './commons/services/url.spec';
 import './commons/providers/notification.spec';
 import './commons/factories/AppModel.spec';
 import './helpers/vCardFields.spec';
-import './utils/filters/unicodeTagView.spec';
+import './labels/factories/labelCache.spec';
+import './message/services/recipientsFormator.spec';
+import './ui/factories/autocompleteEmailsModel.spec';

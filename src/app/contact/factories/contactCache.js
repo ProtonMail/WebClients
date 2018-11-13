@@ -15,21 +15,31 @@ function contactCache(
     contactEmails,
     contactImporter
 ) {
+    const CONTACT_STATES = ['secured.contacts'];
     const CACHE = {
         hydrated: false,
         contacts: [],
         map: {
-            all: {},
+            all: Object.create(null),
             selected: [],
             filtered: []
         }
     };
 
     const { dispatcher, on } = dispatchers(['contacts']);
-    const CONTACT_STATES = ['secured.contacts'];
     const getItem = (ID) => _.find(CACHE.contacts, { ID });
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
-    const emit = () => dispatcher.contacts('contactsUpdated', { all: get() });
+    const emit = (contact, data = {}) => {
+        dispatcher.contacts('contactsUpdated', {
+            all: get(),
+            contact,
+            ...data
+        });
+    };
+    const lowerCase = (word = '') => word.toLowerCase();
+    const total = () => ($stateParams.keyword ? CACHE.map.filtered.length : CACHE.contacts.length);
+    const isHydrated = () => CACHE.hydrated;
+
     const orderBy = (contacts = []) => {
         if (!$state.includes('secured.contacts')) {
             return contacts;
@@ -51,10 +61,6 @@ function contactCache(
             return a[key].localeCompare(b[key]);
         });
     };
-    const lowerCase = (word = '') => word.toLowerCase();
-
-    const total = () => ($stateParams.keyword ? CACHE.map.filtered.length : CACHE.contacts.length);
-    const isHydrated = () => CACHE.hydrated;
 
     function selected(ID = $stateParams.id) {
         const selected = flow(
@@ -172,6 +178,9 @@ function contactCache(
     function clear() {
         CACHE.contacts.length = 0;
         CACHE.hydrated = false;
+        CACHE.map.all = Object.create(null);
+        CACHE.map.selected.length = 0;
+        CACHE.map.filtered.length = 0;
     }
 
     function create(contact) {
@@ -191,7 +200,7 @@ function contactCache(
         contact && updateContact({ ID: contact.ID, contact });
     }
 
-    function updateContact({ ID, contact }) {
+    function updateContact({ ID, contact }, hasEvent = true) {
         const index = findIndex(ID);
 
         if (index !== -1) {
@@ -199,16 +208,15 @@ function contactCache(
         } else {
             create(contact);
         }
-
-        emit();
+        hasEvent && emit(contact);
     }
 
-    function refreshContactEmails({ ID }) {
+    function refreshContactEmails({ ID }, hasEvent = true) {
         const index = findIndex(ID);
 
         if (index !== -1) {
             const contact = CACHE.contacts[index];
-            updateContact({ ID, contact });
+            updateContact({ ID, contact }, hasEvent);
         }
     }
 
@@ -268,11 +276,11 @@ function contactCache(
 
     function contactEvents({ events = [] }) {
         const { collection, todo } = updateCollection(CACHE.contacts, events, 'Contact');
-
         CACHE.contacts = collection;
 
         sync(todo.create);
-        emit();
+        todo.update.forEach((item) => refreshContactEmails(item, false));
+        emit(undefined, { todo });
     }
 
     on('contacts', (event, { type, data = {} }) => {

@@ -5,6 +5,7 @@ export const MODAL_Z_INDEX = 11000;
 export const CONVERSATION_REQUEST_SIZE = 10;
 export const GIFT_CODE_LENGTH = 16;
 export const AUTOCOMPLETE_MAX_RECIPIENTS = 25;
+export const MESSAGE_MAX_RECIPIENTS = 100;
 export const MAX_OUTSIDE_REPLY = 4;
 export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
 export const WHITELIST = ['notify@protonmail.com'];
@@ -442,4 +443,41 @@ export const BLOCKQUOTE_SELECTORS = [
     '#reply139content',
     '#oriMsgHtmlSeperator',
     'blockquote[type="cite"]'
+];
+
+export const LABEL_TYPE = {
+    MESSAGE: 1,
+    CONTACT_GROUP: 2
+};
+
+export const LABEL_COLORS = [
+    '#7272a7',
+    '#8989ac',
+
+    '#cf5858',
+    '#cf7e7e',
+
+    '#c26cc7',
+    '#c793ca',
+
+    '#7569d1',
+    '#9b94d1',
+
+    '#69a9d1',
+    '#a8c4d5',
+
+    '#5ec7b7',
+    '#97c9c1',
+
+    '#72bb75',
+    '#9db99f',
+
+    '#c3d261',
+    '#c6cd97',
+
+    '#e6c04c',
+    '#e7d292',
+
+    '#e6984c',
+    '#dfb286'
 ];

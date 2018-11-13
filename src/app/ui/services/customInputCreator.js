@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { uniqID, ucFirst } from '../../../helpers/string';
+
 /* @ngInject */
 function customInputCreator() {
     /**
@@ -27,17 +29,22 @@ function customInputCreator() {
         if (customId) {
             return { for: customId, id: customId };
         }
-        const id = `customInput${Math.random()
-            .toString(32)
-            .slice(2, 12)}`;
+        const id = `customInput${uniqID()}`;
         return { for: id, id };
     };
 
     const removeWatcher = (node, key) => node.removeAttribute(`data-custom-${key}`);
 
-    const bindAttributes = (node, el, attr = {}) => {
+    const bindAttributes = (node, { el, attr = {}, type = '' }) => {
+        const REGEXP_CUSTOM_DIRECTIVE = new RegExp(`custom${ucFirst(type)}`);
+
         // filter attributes for the input
-        const inputAttributes = Object.keys(attr).filter((attribute) => /custom[A-Z]/.test(attribute));
+        const inputAttributes = Object.keys(attr).filter((attribute) => {
+            const isCustom = /custom[A-Z]/.test(attribute);
+            // You can have custom args / directive with the directive's name as namespace
+            const isCustomDirective = REGEXP_CUSTOM_DIRECTIVE.test(attribute);
+            return isCustom && !isCustomDirective;
+        });
 
         const link = getLabelInputLink(inputAttributes);
 
@@ -85,7 +92,7 @@ function customInputCreator() {
          */
     const compiler = (type = '', { pre, post = _.noop, compile = _.noop } = {}) => (el, attr) => {
         const $input = el[0].querySelector(`input[type="${type}"]`);
-        bindAttributes($input, el, attr);
+        bindAttributes($input, { el, attr, type });
         compile(el, attr);
         return pre ? { pre, post } : post;
     };

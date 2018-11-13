@@ -62,6 +62,7 @@ import prepareDraft from './factories/prepareDraft';
 import pgpModal from './modals/pgpModal';
 import readReceiptPanel from './directives/readReceiptPanel';
 import readReceiptModel from './factories/readReceiptModel';
+import recipientsFormator from './services/recipientsFormator';
 
 export default angular
     .module('proton.message', ['ngSanitize', 'proton.contact', 'proton.squire'])
@@ -69,6 +70,7 @@ export default angular
     .directive('readReceiptPanel', readReceiptPanel)
     .factory('pgpModal', pgpModal)
     .factory('prepareDraft', prepareDraft)
+    .factory('recipientsFormator', recipientsFormator)
     .directive('messageDisplayError', messageDisplayError)
     .run((unsubscribeModel) => unsubscribeModel.init())
     .directive('actionMessage', actionMessage)

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel) {
+function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel, contactGroupModel) {
     const CLEANER = document.createElement('div');
     const getClassName = (ID) => {
         const isActiveLabel = $stateParams.label === ID;
@@ -19,41 +19,51 @@ function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel)
         return CLEANER.innerHTML;
     };
 
-    const template = ({ ID, Color, Name, Exclusive }) => {
+    const template = ({ ID, Color, Name, Exclusive }, isContactState) => {
         const className = getClassName(ID);
         const href = $state.href('secured.label', { label: ID, sort: null, filter: null, page: null });
         const cleanName = stripHTML(Name);
         // Prevent XSS as we can break the title
         const cleanAttr = cleanName.replace(/"|'/g, '');
-
-        const classIcon = Exclusive === 1 ? 'fa-folder' : 'fa-tag';
+        const icon = Exclusive === 1 ? 'fa-folder' : 'fa-tag';
+        const classIcon = !isContactState ? icon : 'fa-users';
 
         return dedentTpl(`<li class="${className}">
-                <a href="${href}" title="${cleanAttr}" data-label="${cleanAttr}" class="btn menuLabel-link" data-pt-dropzone-item="${ID}" data-pt-dropzone-item-type="label">
-                    <i class="fa ${classIcon} menuLabel-icon" style="color: ${Color || '#CCC'}"></i>
-                    <span class="menuLabel-title">${cleanName}</span>
-                    <em class="menuLabel-counter" data-label-id="${ID}"></em>
-                </a>
-            </li>`);
+            <a href="${href}" title="${cleanAttr}" data-label="${cleanAttr}" class="btn menuLabel-link" data-pt-dropzone-item="${ID}" data-pt-dropzone-item-type="label">
+                <i class="fa ${classIcon} menuLabel-icon" style="color: ${Color || '#CCC'}"></i>
+                <span class="menuLabel-title">${cleanName}</span>
+                <em class="menuLabel-counter" data-label-id="${ID}"></em>
+            </a>
+        </li>`);
+    };
+
+    const makeTemplate = () => {
+        const isContactState = $state.includes('secured.contacts');
+        const list = isContactState ? contactGroupModel.get() : labelsModel.get();
+        return _.sortBy(list, 'Order')
+            .map((item) => template(item, isContactState))
+            .join('');
     };
 
     return {
         replace: true,
         template: '<ul class="menuLabel-container"></ul>',
         link(scope, el) {
+            /*
+                Click handler is delegate and inside sidebarlabels.
+             */
+
             const { on, unsubscribe } = dispatchers();
             const updateCache = () => {
-                el[0].innerHTML = _.sortBy(labelsModel.get(), 'Order').reduce(
-                    (acc, label) => acc + template(label),
-                    ''
-                );
+                el[0].innerHTML = makeTemplate();
             };
 
             const updateCounter = () => {
+                const isContactState = $state.includes('secured.contacts');
                 _.each(el[0].querySelectorAll('.menuLabel-counter'), (node) => {
                     const id = node.getAttribute('data-label-id');
                     const $anchor = node.parentElement;
-                    const total = sidebarModel.unread('label', id);
+                    const total = isContactState ? sidebarModel.totalMember(id) : sidebarModel.unread('label', id);
                     node.textContent = total;
                     $anchor.title = `${$anchor.getAttribute('data-label')} ${total}`.trim();
                 });
@@ -71,10 +81,13 @@ function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel)
                 type === 'refresh' && updateCounter();
             });
 
-            on('labelsModel', (e, { type }) => {
-                if (type === 'cache.refresh' || type === 'cache.update') {
+            const keyEvent = $state.includes('secured.contacts') ? 'contactGroupModel' : 'labelsModel';
+            on(keyEvent, (e, { type }) => {
+                if (/^cache\.(refresh|update)$/.test(type) || type === 'reorder.success') {
                     refresh();
                 }
+
+                type === 'counter.update' && updateCounter();
             });
 
             // Check the current state to set the current one as active

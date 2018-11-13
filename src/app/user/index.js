@@ -26,9 +26,11 @@ import manageUser from './services/manageUser';
 import signupModel from './services/signupModel';
 import signupUserProcess from './services/signupUserProcess';
 import userType from './services/userType';
+import needUpgrade from './services/needUpgrade';
 
 export default angular
     .module('proton.user', [])
+    .factory('needUpgrade', needUpgrade)
     .service('userType', userType)
     .directive('humanVerification', humanVerification)
     .directive('signupCreationProcess', signupCreationProcess)

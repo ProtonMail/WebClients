@@ -53,25 +53,11 @@
                 </div>
                 <div class="row">
                     <label class="col-1-4" translate translate-context="Label">Color</label>
-                    <div class="text-center col-3-4">
-                        <ul class="palette list-inline labelModal-list">
-                            <li
-                                class="labelModal-item"
-                                ng-repeat="c in ctrl.colors track by c"
-                                ng-style="{ 'color': c }">
-                                <input
-                                    tabindex="{{ 2 + $index}}"
-                                    type="radio"
-                                    ng-value="c"
-                                    name="paletteColor"
-                                    ng-model="ctrl.color"
-                                    aria-labelledby="Color {{::c}}"
-                                    class="labelModal-input-color">
-                                <div class="labelModal-item-mask"><i class="fa fa-check"></i></div>
-                            </li>
-                        </ul>
+                    <div class="col-3-4">
+                        <label-color-selector data-color="ctrl.color"></label-color-selector>
                     </div>
                 </div>
+
                 <div class="row" ng-if="ctrl.ID && ctrl.exclusive">
                     <label for="labelNotify" class="col-1-4" translate translate-context="Title" translate-comment="Desktop notification">Notification</label>
                     <div class="col-3-4">

@@ -3,6 +3,7 @@ import { flow, uniq, each, map, filter, reduce } from 'lodash/fp';
 
 import { STATUS, MAILBOX_IDENTIFIERS, DRAFT, SENT, INBOX_AND_SENT } from '../../constants';
 import { getConversationLabels } from '../../conversation/helpers/conversationHelpers';
+import { unicodeTag } from '../../../helpers/string';
 
 const REMOVE_ID = 0;
 const ADD_ID = 1;
@@ -19,12 +20,11 @@ function messageActions(
     networkActivityTracker,
     notification,
     gettextCatalog,
-    labelsModel,
-    $filter
+    labelsModel
 ) {
     const { on } = dispatchers();
-    const unicodeTagView = $filter('unicodeTagView');
-    const notifySuccess = (message) => notification.success(unicodeTagView(message));
+
+    const notifySuccess = (message) => notification.success(unicodeTag(message));
 
     const basicFolders = [
         MAILBOX_IDENTIFIERS.inbox,

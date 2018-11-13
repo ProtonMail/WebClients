@@ -1,0 +1,33 @@
+.dropdownGroups-container, .dropdownGroups-container * { box-sizing: border-box }
+
+.dropdownGroups-container {
+    text-transform: lowercase;
+
+    .dropdown-folder-title > p::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.dropdownGroups-option-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.dropdownGroups-option-name {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 16px - .5rem);
+    margin-right: .5rem;
+    text-transform: lowercase;
+}
+
+.dropdownGroups-option-name .fa {
+    margin-right: .5em;
+}
+
+.dropdownGroups-option-checkbox {
+    width: auto;
+}

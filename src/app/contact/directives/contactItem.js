@@ -18,10 +18,8 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
     const getFieldKey = (type = '') => MAP_FIELDS[type] || type.toUpperCase();
 
     const getInfo = ({ vCard: vcard }, type) => {
-        return contactDetailsModel.extract({
-            vcard,
-            field: getFieldKey(type)
-        });
+        const field = getFieldKey(type);
+        return contactDetailsModel.extract({ vcard, field });
     };
 
     return {

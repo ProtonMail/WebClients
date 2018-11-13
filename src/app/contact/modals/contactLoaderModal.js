@@ -1,9 +1,6 @@
 /* @ngInject */
 function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
     const LABEL_CLASS = 'contactLoaderModal-label';
-    const SUCCESS_CLASS = 'contactLoaderModal-success';
-    const CONTAINER_CLASS = 'contactLoaderModal-container';
-    const IMPORTED_CLASS = 'contactLoaderModal-imported';
 
     const I18N = {
         encrypting(progress) {
@@ -93,94 +90,123 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
 
     const getModalI18n = (key = '', type = '') => I18N.modal[key][type];
 
-    const getRows = (errors = []) =>
-        errors.map(({ error }) => `<li class="contactLoaderModal-log">- ${error}</li>`).join('');
-    const getError = (errors = [], total) => {
-        if (!errors.length) {
-            return '';
-        }
-
-        if (errors.length === total) {
-            const [{ error = I18N.totalFailure } = {}] = errors;
-            return `<p class="alert alert-danger">${error}</p>`;
-        }
-
-        return `
-            <p>${I18N.importFail(errors.length)}</p>
-            <ul class="contactLoaderModal-logs">${getRows(errors)}</ul>
-        `;
-    };
-    const getSuccess = ({ count = 0, total = 0, text = '', complete = '', error }) => {
-        return `
-                <p>${complete}</p>
-                <div class="contactLoaderModal-frame">
-                    <h1>${count} of ${total}</h1>
-                    <strong>${text}</strong>
-                </div>
-                ${error}
-            `;
-    };
-
-    const getMergeRows = (errors = []) =>
-        errors.map((error) => `<li class="contactLoaderModal-log">- ${error}</li>`).join('');
-    const getMergeError = (errors = []) => {
-        if (!errors.length) {
-            return '';
-        }
-        return `
-            <p>${I18N.mergeFail(errors.length)}</p>
-            <ul class="contactLoaderModal-logs">${getMergeRows(errors)}</ul>
-        `;
-    };
-
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/contact/contactLoaderModal.tpl.html'),
         /* @ngInject */
-        controller: function(params) {
+        controller: function(params, $scope, importContactGroups) {
             const { on, unsubscribe } = dispatchers();
+            let $label = document.querySelector(`.${LABEL_CLASS}`);
 
-            on('contacts', (event, { type = '', data = {} }) => {
+            this.class = 'small';
+            this.title = getModalI18n(params.mode, 'title');
+            this.info = getModalI18n(params.mode, 'info');
+            this.optionsGroup = importContactGroups.getOptions();
+
+            let importGroup = () => ({});
+
+            /**
+             * Preformat the model based on the defaut default categories available for the user
+             * @return {Object}
+             */
+            const createCategoriesModel = () => {
+                return this.categories.reduce((acc, { group }) => {
+                    const index = +!!group.isNew;
+                    acc[group.ID] = {
+                        action: this.optionsGroup[index],
+                        group: {
+                            label: group.Name,
+                            value: group.ID,
+                            data: {}
+                        },
+                        name: group.isNew ? group.Name : ''
+                    };
+                    return acc;
+                }, Object.create(null));
+            };
+
+            const setSuccess = (opt) => {
+                this.success = {
+                    complete: getModalI18n(params.mode, 'complete'),
+                    text: getModalI18n(params.mode, 'text'),
+                    ...opt
+                };
+            };
+
+            const setErrors = (type = 'import', errors = [], total) => {
+                if (!errors.length) {
+                    return;
+                }
+
+                this.error = {
+                    list: errors,
+                    total
+                };
+
+                if (errors.length === total) {
+                    const [{ error = I18N.totalFailure } = {}] = errors;
+                    this.error.message = error;
+                    return;
+                }
+
+                this.error.message = I18N[`${type}Fail`](errors.length);
+            };
+
+            const processResponse = (
+                { created = [], errors = [], total = 0, categories = [], updated = [], removed = {} },
+                type
+            ) => {
+                const count = type === 'merge' ? updated.length + removed.length : created.length;
+
+                $scope.$applyAsync(() => {
+                    this.state = 'imported';
+                    setSuccess({ count, total });
+                    setErrors(type, errors, total);
+                    this.categories = categories;
+                });
+            };
+
+            on('contacts', (e, { type = '', data = {} }) => {
                 if (type === 'contactCreated') {
-                    const { created = [], errors = [], total = 0 } = data;
-                    document.querySelector(`.${CONTAINER_CLASS}`).classList.add(IMPORTED_CLASS);
-                    document.querySelector(`.${SUCCESS_CLASS}`).innerHTML = getSuccess({
-                        count: created.length,
-                        total,
-                        complete: getModalI18n(params.mode, 'complete'),
-                        text: getModalI18n(params.mode, 'text'),
-                        error: getError(errors, total)
+                    const { created, mapCategories } = data;
+                    importGroup = importContactGroups(created, mapCategories);
+                    processResponse({
+                        ...data,
+                        categories: importGroup.list()
                     });
                 }
 
                 if (type === 'contactsMerged') {
-                    const { updated = [], removed = [], errors = [], total = 0 } = data;
-                    document.querySelector(`.${CONTAINER_CLASS}`).classList.add(IMPORTED_CLASS);
-                    document.querySelector(`.${SUCCESS_CLASS}`).innerHTML = getSuccess({
-                        count: updated.length + removed.length,
-                        total,
-                        complete: getModalI18n(params.mode, 'complete'),
-                        text: getModalI18n(params.mode, 'text'),
-                        error: getMergeError(errors, total)
-                    });
+                    processResponse(data, 'merge');
                 }
             });
 
             on('progressBar', (event, { type = '', data = {} }) => {
-                const $label = document.querySelector(`.${LABEL_CLASS}`);
-
+                !$label && ($label = document.querySelector(`.${LABEL_CLASS}`));
                 if ($label && type === 'contactsProgressBar') {
                     $label.textContent = getModalI18n(params.mode, 'progress')(data.progress);
                 }
             });
 
-            this.title = getModalI18n(params.mode, 'title');
-            this.info = getModalI18n(params.mode, 'info');
+            this.save = () => {
+                if ($scope.contactImport.$invalid) {
+                    return;
+                }
+
+                importGroup.run(this.model).then(() => params.close());
+            };
+
+            this.toStep = (step) => {
+                this.state = step;
+                this.class = '';
+                this.model = createCategoriesModel();
+            };
+
             this.close = () => {
-                const $label = document.querySelector(`.${LABEL_CLASS}`);
                 $label.textContent = I18N.cancelling;
                 params.close();
             };
+
             this.$onDestroy = () => {
                 unsubscribe();
             };

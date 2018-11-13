@@ -1,5 +1,5 @@
 /* @ngInject */
-function contact(contactEmails) {
+function contact(contactEmails, contactGroupModel) {
     const getContact = (email) => contactEmails.findEmail(email) || {};
 
     const getContactFromUser = (nameContact, Address) => {
@@ -24,17 +24,23 @@ function contact(contactEmails) {
 
     return (sender, parameter) => {
         // The sender might be null
-        const { Name = '', Address = '' } = sender || {};
+        const { Name = '', Address = '', isContactGroup, Email } = sender || {};
+
+        const adr = Address || Email;
 
         if (parameter === 'Address') {
-            return `<${Address}>`;
+            return `<${adr}>`;
+        }
+
+        if (parameter === 'Raw') {
+            return !isContactGroup ? adr : contactGroupModel.getNumberString(Address);
         }
 
         if (parameter === 'Name') {
-            return getContactFromUser(Name, Address);
+            return getContactFromUser(Name, adr);
         }
 
-        return fillContact(Name, Address) || `${Name} <${Address}>`;
+        return fillContact(Name, adr) || `${Name} <${adr}>`;
     };
 }
 export default contact;

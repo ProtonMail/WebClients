@@ -1,9 +1,13 @@
-
+/*.sidebarContact-container [id="labelSettings"] {
+    margin-left: 1em;
+}
+*/
 .sidebarContact-container button.sidebarApp-link > * {
     pointer-events: none;
     display: inline-block; // Required for IE and Edge browser (https://github.com/ProtonMail/Angular/issues/6153)
 }
 
+.sidebarContact-container .menuLabel-link * { pointer-events: none }
 .sidebarContact-container .sidebarApp-menu .sidebarApp-item { position: relative }
 .sidebarContact-container .sidebarApp-menu .sidebarApp-item:after {
     pointer-events: none;
@@ -21,6 +25,10 @@
 .sidebarContact-container .sidebarApp-menu .sidebarApp-item.active:after {
     /* check _theme reset */
     background: linear-gradient(to right, rgba($sidebar-active,0) 0%, $sidebar-active 12px)
+}
+
+.sidebarContact-manageGroup {
+    margin: 1em 0 .5em;
 }
 
 /* Context */

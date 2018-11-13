@@ -1,7 +1,7 @@
+
 import _ from 'lodash';
 
-import { CONVERSATION_VIEW_MODE, EVENTS_MS, MAILBOX_IDENTIFIERS, STATUS } from '../../constants';
-
+import { CONVERSATION_VIEW_MODE, EVENTS_MS, MAILBOX_IDENTIFIERS, STATUS, LABEL_TYPE } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, EVENT_ERRORS } from '../../errors';
 
 /* @ngInject */
@@ -284,7 +284,20 @@ function eventManager(
         dispatcher.contacts('resetContacts');
     }
 
+    const refreshLabels = ({ Labels }) => {
+        if (Array.isArray(Labels)) {
+            const { [LABEL_TYPE.MESSAGE]: messageLabels, [LABEL_TYPE.CONTACT_GROUP]: contactGroups } = _.groupBy(
+                Labels,
+                'Label.Type'
+            );
+
+            messageLabels && $injector.get('labelsModel').sync(messageLabels);
+            contactGroups && $injector.get('contactGroupModel').sync(contactGroups);
+        }
+    };
+
     const manage = async (data = {}) => {
+
         manageNotices(data.Notices);
         setEventID(data.EventID);
 
@@ -294,11 +307,11 @@ function eventManager(
             return;
         }
 
-        $injector.get('labelsModel').sync(data.Labels);
         manageMailSettings(data.MailSettings);
         manageVpnSettings(data.VPNSettings);
         manageUserSettings(data.UserSettings);
         manageSubscription(data);
+        refreshLabels(data);
         $injector.get('contactEmails').update(data.ContactEmails);
         manageContacts(data.Contacts);
         manageThreadings(data.Messages, data.Conversations);

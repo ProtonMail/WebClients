@@ -1,40 +1,60 @@
-<div class="message-address-dropdown-container">
+<div class="messageAddressActionMenu-container">
     <a class="message-address-trigger" dropdown></a>
-    <div class="pm_dropdown noPadding">
-        <button class="message-action-compose-to"
+    <div class="pm_dropdown noPadding messageAddressActionMenu-dropdown">
+        <button
+            class="messageAddressActionMenu-btn-compose-to"
             data-action="compose-to">
-            <div>
+            <div class="messageAddressActionMenu-label">
                 <i class="fa fa-envelope-o"></i>
-                <span translate translate-context="Action">Compose to</span>
+                <span
+                    class="messageAddressActionMenu-label-txt"
+                    translate
+                    translate-context="Action">Compose to</span>
             </div>
         </button>
-        <button class="message-action-add-contact address-no-contact-only"
+        <button
+            class="messageAddressActionMenu-btn-add-contact address-no-contact-only"
             data-action="add-contact">
-            <div>
+            <div class="messageAddressActionMenu-label">
                 <i class="fa fa-user-plus"></i>
-                <span translate translate-context="Action">Add to contacts</span>
+                <span
+                    class="messageAddressActionMenu-label-txt"
+                    translate
+                    translate-context="Action">Add to contacts</span>
             </div>
         </button>
-        <button class="message-action-copy-address"
+        <button
+            class="messageAddressActionMenu-btn-copy-address"
             data-action="contact-copy">
-            <div>
+            <div class="messageAddressActionMenu-label">
                 <i class="fa fa-copy"></i>
-                <span translate translate-context="Action">Copy address</span>
+                <span
+                    class="messageAddressActionMenu-label-txt"
+                    translate
+                    translate-context="Action">Copy address</span>
             </div>
         </button>
-        <button class="message-action-show-contact address-contact-only"
-                data-action="contact-details">
-            <div>
+        <button
+            class="messageAddressActionMenu-btn-show-contact address-contact-only"
+            data-action="contact-details">
+            <div class="messageAddressActionMenu-label">
                 <i class="fa fa-address-card-o"></i>
-                <span translate translate-context="Action">See contact details</span>
+                <span
+                    class="messageAddressActionMenu-label-txt"
+                    translate
+                    translate-context="Action">See contact details</span>
             </div>
         </button>
-        <button ng-if="message.isInternal && !message.isSentByMe()"
-                class="message-action-pin-public"
-                data-action="advanced-settings">
-            <div>
+        <button
+            ng-if="message.isInternal && !message.isSentByMe()"
+            class="messageAddressActionMenu-btn-pin-public"
+            data-action="advanced-settings">
+            <div class="messageAddressActionMenu-label">
                 <i class="fa fa-key"></i>
-                <span translate translate-context="Action">Trust Public Keys</span>
+                <span
+                    class="messageAddressActionMenu-label-txt"
+                    translate
+                    translate-context="Action">Trust Public Keys</span>
             </div>
         </button>
     </div>

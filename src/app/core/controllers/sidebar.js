@@ -10,10 +10,9 @@ function SidebarController($scope, AppModel, dispatchers) {
 
     on('AppModel', (e, { type, data = {} }) => {
         type === 'mobile' && bindAppValue('mobileMode', data);
-        type === 'showSidebar' && bindAppValue(type, data);
-        type === 'inboxSidebar' && bindAppValue(type, data);
-        type === 'settingsSidebar' && bindAppValue(type, data);
-        type === 'contactSidebar' && bindAppValue(type, data);
+        if (/^(show|inbox|settings|contact)Sidebar$/.test(type)) {
+            bindAppValue(type, data);
+        }
     });
 
     $scope.$on('$destroy', () => {

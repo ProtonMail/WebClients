@@ -1,7 +1,7 @@
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function sidebarModel(tools, cacheCounters, gettextCatalog, mailSettingsModel, dynamicStates) {
+function sidebarModel(tools, cacheCounters, gettextCatalog, dynamicStates, contactGroupModel) {
     const getStateConfig = () => {
         const defaultDrafts = dynamicStates.getDraftsState();
         const defaultSent = dynamicStates.getSentState();
@@ -77,7 +77,7 @@ function sidebarModel(tools, cacheCounters, gettextCatalog, mailSettingsModel, d
      * Returns the number of unread messages in a location
      * @param mailbox {String} name indentifier for folder
      * @param id {Integer} labelID for a label
-     * @return {Integer}
+     * @return {String}
      */
     const unread = (mailbox, id) => {
         const mailboxConverted = renameMailbox(mailbox);
@@ -92,6 +92,16 @@ function sidebarModel(tools, cacheCounters, gettextCatalog, mailSettingsModel, d
         return `(${count})`;
     };
 
-    return { unread, getStateConfig };
+    /**
+     * Returns the number of members inside a contact group
+     * @param {String}  ID id of the contact group
+     * @return {String}
+     */
+    const totalMember = (ID) => {
+        const count = contactGroupModel.getNumber(ID);
+        return count <= 0 ? '' : `(${count})`;
+    };
+
+    return { unread, getStateConfig, totalMember };
 }
 export default sidebarModel;

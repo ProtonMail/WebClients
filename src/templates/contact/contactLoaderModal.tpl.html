@@ -1,4 +1,7 @@
-<div class="pm_modal small very-important {{ctrl.class}}" role="dialog" style="display: block;">
+<div
+    class="pm_modal very-important"
+    role="dialog"
+    ng-class="ctrl.class">
     <div class="modal-dialog">
         <button
             type="button"
@@ -7,22 +10,124 @@
             title-translate="Close"
             title-translate-context="Action"
             class="fa fa-times close"></button>
-        <div class="modal-content contactLoaderModal-container">
-            <div class="modal-header">
+        <form
+            name="contactImport"
+            novalidate
+            class="modal-content contactLoaderModal-container"
+            ng-class="{
+            'contactLoaderModal-imported': ctrl.state === 'imported'
+        }">
+            <header class="modal-header">
                 <h4 class="modal-title">{{ ::ctrl.title }}</h4>
-            </div>
+            </header>
+
             <div class="modal-body">
-                <p class="alert alert-info contactLoaderModal-info">{{ ::ctrl.info }}</p>
-                <loader-tag></loader-tag>
-                <progress-bar id="contactsProgressBar"></progress-bar>
-                <label class="contactLoaderModal-label"></label>
-                <div class="contactLoaderModal-success"></div>
-                <div class="contactLoaderModal-error"></div>
+
+                <div ng-if="ctrl.state !== 'manageGroups'">
+                    <p class="alert alert-info contactLoaderModal-info">{{ ::ctrl.info }}</p>
+                    <loader-tag></loader-tag>
+                    <progress-bar id="contactsProgressBar"></progress-bar>
+                    <label class="contactLoaderModal-label"></label>
+                    <div
+                        class="contactLoaderModal-success"
+                        ng-if="ctrl.success">
+                        <p>{{ ctrl.success.complete }}</p>
+                        <div class="contactLoaderModal-frame">
+                            <h1>{{ctrl.success.count}} of {{ctrl.success.total}}</h1>
+                            <strong>{{ctrl.success.text}}</strong>
+                        </div>
+                    </div>
+                    <div
+                        class="contactLoaderModal-error"
+                        ng-if="ctrl.error.list.length">
+                        <p
+                            ng-if="ctrl.error.list.length === ctrl.error.total"
+                            class="alert alert-danger">{{::ctrl.error.message}}</p>
+
+                        <div ng-if="ctrl.error.list.length !== ctrl.error.total">
+                            <p>{{::ctrl.error.message}}</p>
+                            <ul class="contactLoaderModal-logs">
+                                <li
+                                    class="contactLoaderModal-log"
+                                    ng-repeat="error in ctrl.error.list track by $id(error)">- {{::error}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    ng-if="ctrl.state === 'manageGroups'"
+                    class="pm_form">
+
+                    <p
+                        class="contactLoaderModal-info"
+                        translate-context="Info"
+                        translate>We picked up at leaast one group/organization from the list of contacts you are importing.</p>
+                    <p
+                        class="contactLoaderModal-info"
+                        translate-context="Info"
+                        translate>Take the time to review how we should import these groups.</p>
+
+                    <ul class="contactLoaderModal-categories-list">
+                        <li
+                            class="contactLoaderModal-categories-item"
+                            ng-repeat="item in ctrl.categories track by item.id">
+                            <div class="contactLoaderModal-categories-label">
+                                <strong style="color: {{::item.group.Color}};">{{ ::item.group.Name }}</strong>
+                                <span>({{ ::item.contacts.length }} Contacts)</span>
+                            </div>
+
+                            <div class="pm_select contactLoaderModal-categories-actions">
+                                <select
+                                    class="contactLoaderModal-categories-select"
+                                    ng-model="ctrl.model[item.group.ID].action"
+                                    ng-options="option.label for option in ctrl.optionsGroup track by option.value"></select>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+
+                            <div class="contactLoaderModal-categories-input">
+                                <autocomplete-contact-group
+                                    ng-if="ctrl.model[item.group.ID].action.value === 2",
+                                    data-form="contactImport"
+                                    data-model="ctrl.model[item.group.ID].group"
+                                    class="contactGroupModal-autocomplete"></autocomplete-contact-group>
+
+
+                                <label-name-input
+                                    class="contactGroupModal-input-label"
+                                    ng-if="ctrl.model[item.group.ID].action.value === 1"
+                                    data-mode="contactGroup"
+                                    data-form="contactImport"
+                                    data-model="ctrl.model[item.group.ID]"></label-name-input>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="modal-footer text-right">
-                <button class="pm_button" ng-click="ctrl.close()" translate-context="Action" translate>Close</button>
-            </div>
-        </div>
+
+            <footer class="modal-footer contactLoaderModal-footer">
+                <button
+                    class="pm_button"
+                    ng-click="ctrl.close()"
+                    translate-context="Action"
+                    translate>Close</button>
+
+                <button
+                    class="pm_button"
+                    ng-if="ctrl.state === 'manageGroups'"
+                    ng-click="ctrl.save()"
+                    translate-context="Action"
+                    translate>Save</button>
+
+                <button
+                    ng-if="ctrl.state === 'imported' && ctrl.categories.length"
+                    class="pm_button"
+                    ng-click="ctrl.toStep('manageGroups')"
+                    translate-context="Action"
+                    translate>Next</button>
+            </footer>
+        </form>
     </div>
     <div class="modal-overlay"></div>
 </div>

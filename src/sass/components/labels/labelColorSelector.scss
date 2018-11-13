@@ -1,0 +1,63 @@
+.labelColorSelector-container, .labelColorSelector-container * {
+    box-sizing: border-box;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.labelColorSelector-item {
+    position: relative;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    min-width: 2rem;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0 .35rem .35rem 0;
+    overflow: hidden;
+}
+
+.labelColorSelector-item .fa {
+    opacity: 0;
+    color: $white;
+    display: inline-block;
+    transition: opacity .1s linear;
+}
+
+.labelColorSelector-item:hover .fa { opacity: .25 }
+
+.labelColorSelector-item-mask {
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 2;
+    background: currentColor;
+    border: 2px solid $white;
+    pointer-events: none;
+    transition: border .1s ease-out;
+}
+
+.labelColorSelector-input-color {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.labelColorSelector-input-color:checked + .labelColorSelector-item-mask .fa { opacity: 1 }
+
+.labelColorSelector-input-color:focus + .labelColorSelector-item-mask,
+.labelColorSelector-input-color:checked + .labelColorSelector-item-mask {
+    border:3px solid rgba(0, 0, 0, .1);
+}

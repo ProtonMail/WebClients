@@ -1,5 +1,39 @@
 import _ from 'lodash';
 
+import { EMAIL_FORMATING } from '../app/constants';
+
+const {
+    OPEN_TAG_AUTOCOMPLETE,
+    CLOSE_TAG_AUTOCOMPLETE,
+    OPEN_TAG_AUTOCOMPLETE_RAW,
+    CLOSE_TAG_AUTOCOMPLETE_RAW
+} = EMAIL_FORMATING;
+
+export const MAP_TAGS = {
+    [OPEN_TAG_AUTOCOMPLETE_RAW]: OPEN_TAG_AUTOCOMPLETE,
+    [CLOSE_TAG_AUTOCOMPLETE_RAW]: CLOSE_TAG_AUTOCOMPLETE,
+    [OPEN_TAG_AUTOCOMPLETE]: OPEN_TAG_AUTOCOMPLETE_RAW,
+    [CLOSE_TAG_AUTOCOMPLETE]: CLOSE_TAG_AUTOCOMPLETE_RAW
+};
+
+/**
+ * Replace custom unicode escape for chevrons by default
+ * Replace <> (for a tag) via unicode or reverse it
+ * @param  {String} input
+ * @param {String} mode  undefined for toUnicode, reverse for unicode -> <|>
+ * @return {String}
+ */
+export function unicodeTag(input = '', mode) {
+    if (mode === 'reverse') {
+        const matchTagUnicodeOpenClose = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE}|${CLOSE_TAG_AUTOCOMPLETE}`, 'ig');
+
+        return input.replace(matchTagUnicodeOpenClose(), (match) => MAP_TAGS[match] || '');
+    }
+
+    const matchTagOpenClose = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE_RAW}|${CLOSE_TAG_AUTOCOMPLETE_RAW}`, 'ig');
+    return input.replace(matchTagOpenClose(), (match) => MAP_TAGS[match] || '');
+}
+
 export const normalizeEmail = (email = '') => email.toLowerCase();
 
 /**
@@ -95,6 +129,36 @@ export const ucFirst = (input = '') => {
 export const extractChevrons = (str = '') => {
     const CHEVRONS_REGEX = /<([^>]+)>/g;
     const [, match = ''] = CHEVRONS_REGEX.exec(str) || [];
-
     return match;
 };
+
+/**
+ * @{link https://css-tricks.com/snippets/javascript/htmlentities-for-javascript/}
+ */
+export const htmlEntities = (str = '') => {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+};
+
+export const uniqID = () => {
+    return `pt${Math.random()
+        .toString(32)
+        .slice(2, 12)}-${Date.now()}`;
+};
+
+/**
+ * Generates a contact UID of the form 'proton-web-uuid'
+ * @return {String}
+ */
+export function generateUID() {
+    const s4 = () => {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    };
+
+    return `proton-web-${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
+}

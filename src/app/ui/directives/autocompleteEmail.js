@@ -96,7 +96,7 @@ function autocompleteEmail(autocompleteEmailsModel, autocompleteBuilder, dispatc
         },
         replace: true,
         templateUrl: require('../../../templates/ui/autocompleteEmail.tpl.html'),
-        compile: autocompleteBuilder(link)
+        compile: autocompleteBuilder({ link })
     };
 }
 export default autocompleteEmail;

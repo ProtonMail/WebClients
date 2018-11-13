@@ -1,9 +1,10 @@
 import _ from 'lodash';
 
+import { unicodeTag } from '../../../helpers/string';
+
 /* @ngInject */
-function networkActivityTracker($filter, AppModel, errorReporter, notification) {
+function networkActivityTracker(AppModel, errorReporter, notification) {
     let promises = [];
-    const unicodeTagView = $filter('unicodeTagView');
 
     /**
      * Check if we have some promises currently running
@@ -38,7 +39,7 @@ function networkActivityTracker($filter, AppModel, errorReporter, notification) 
                 let message;
 
                 if (error.message) {
-                    message = !error.raw ? unicodeTagView(error.message) : error.message;
+                    message = !error.raw ? unicodeTag(error.message) : error.message;
                 } else if (error.Error) {
                     message = error.Error;
                 } else if (error.error_description) {

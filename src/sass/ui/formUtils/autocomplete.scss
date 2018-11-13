@@ -55,6 +55,13 @@
     overflow: hidden;
     white-space: nowrap
 }
+/* Generated via autocompleteEmailsItem by the directive */
+.autocompleteEmailsItem-icon-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: .2em
+}
 
 .autocompleteEmails-field .visually-hidden {
     @extend .sr-only;

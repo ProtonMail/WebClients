@@ -1,4 +1,5 @@
 import { isIE11, isEdge } from '../../../helpers/browser';
+import { uniqID } from '../../../helpers/string';
 
 /* @ngInject */
 function pasteImage(attachmentFileFormat, attachmentModel, squireExecAction, gettextCatalog) {
@@ -43,9 +44,7 @@ function pasteImage(attachmentFileFormat, attachmentModel, squireExecAction, get
 
         file.inline = 1;
         file.upload = {
-            uuid: `${Math.random()
-                .toString(32)
-                .slice(2, 12)}-${Date.now()}`
+            uuid: `${uniqID()}`
         };
 
         const { url, cid } = (await attachmentModel.create(file, message)) || {};

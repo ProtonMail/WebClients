@@ -1,5 +1,6 @@
 $modalMargin: 2rem;
 
+.pm_modal-hidden { display: none !important }
 .pm_modal {
     position: absolute;
     z-index: 99998;
@@ -110,6 +111,8 @@ $modalMargin: 2rem;
             clear: both;
             padding: ($modalMargin/2) $modalMargin;
             background-color: $white;
+            display: flex;
+            justify-content: space-between;
         }
 
         .modal-content {
@@ -152,6 +155,8 @@ $modalMargin: 2rem;
 .confirm-warning-icon {
     color: indianred;
 }
+
+.pm_modal.small + .pm_modal:not(.small) { z-index: 9990; }
 
 body.appConfigBody-is-mobile {
 

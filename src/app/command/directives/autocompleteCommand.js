@@ -122,7 +122,7 @@ function autocompleteCommand(autocompleteBuilder, autocompleteCommandModel, AppM
         },
         replace: true,
         templateUrl: require('../../../templates/command/autocompleteCommand.tpl.html'),
-        compile: autocompleteBuilder(link)
+        compile: autocompleteBuilder({ link })
     };
 }
 export default autocompleteCommand;

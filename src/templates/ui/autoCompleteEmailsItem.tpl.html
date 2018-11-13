@@ -1,8 +1,10 @@
 <div class="autocompleteEmailsItem-container">
-    <autocomplete-emails-icon data-email="email" data-message="message"></autocomplete-emails-icon>
+    <email-encryption-icon
+        data-email="email"
+        data-message="message"></email-encryption-icon>
 
     <span class="autocompleteEmails-label" tabindex="0">
-        {{ email | labelAutocomplete }}
+        {{ email | labelAutocomplete:message }}
     </span>
     <button
         class="autocompleteEmails-btn-remove fa fa-times"

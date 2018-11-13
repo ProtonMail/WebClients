@@ -1,9 +1,8 @@
+import { uniqID } from '../../../helpers/string';
+
 /* @ngInject */
 function password() {
-    const generateID = () =>
-        `pw${Math.random()
-            .toString(32)
-            .slice(2, 12)}-${Date.now()}`;
+    const generateID = () => `pw${uniqID()}`;
 
     return {
         restrict: 'E',

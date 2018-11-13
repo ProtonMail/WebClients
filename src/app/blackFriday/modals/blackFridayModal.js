@@ -9,7 +9,7 @@ function blackFridayModal($state, authentication, dispatchers, pmModal, blackFri
         templateUrl: require('../../../templates/blackFriday/blackFridayModal.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope, userType) {
-            const { dispatcher, on, unsubscribe } = dispatchers(['blackFriday', 'closeDropdown']);
+            const { dispatcher, on, unsubscribe } = dispatchers(['blackFriday', 'dropdown']);
 
             on('blackFriday', (event, { type = '' }) => {
                 if (type === 'loaded') {
@@ -47,7 +47,7 @@ function blackFridayModal($state, authentication, dispatchers, pmModal, blackFri
             this.changeCurrency = (currency = 'EUR') => {
                 this.currency = currency;
                 blackFridayModel.set('currency', currency);
-                dispatcher.closeDropdown();
+                dispatcher.dropdown('close');
             };
 
             this.$onDestroy = () => {

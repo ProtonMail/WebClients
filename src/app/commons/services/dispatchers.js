@@ -19,7 +19,7 @@ function getEvent(type, data) {
  * @returns {Function}
  */
 function createDispatcher($rootScope, key) {
-    return function(type, data) {
+    return function(type, data = {}) {
         $rootScope.$emit(key, getEvent(type, data));
     };
 }
@@ -37,15 +37,32 @@ function dispatchers($rootScope) {
     };
 
     /**
+     * Get the trace of the call
+     * We remove:
+     *  - First line => Error Message
+     *  - 2sd line => this trace call
+     *  - 3rd line => the log call where we call this function
+     *  Then we keep everything until we match a DOM ref.
+     *  @return {String} StackTrace of the event.
+     */
+    function trace() {
+        const stack = new Error().stack;
+        const [, ...rest] = stack.split('\n');
+        const index = rest.findIndex((row) => row.trim().startsWith('at HTML'));
+        return rest.slice(2, index).join('\n');
+    }
+
+    /**
      * Log event action
      * @param  {String} type main eventName
      * @param  {Function} cb callback
      * @return {Function}
      */
     const log = (type, cb) => (...arg) => {
-        const namespace = `type [${type}]:`;
         const [data] = arg.slice(-1);
-        console.group(namespace);
+        const namespace = `type [${type}]: ${data.type}`;
+        console.groupCollapsed(namespace);
+        console.log(trace());
         console.log(data);
         cb(...arg);
         console.groupEnd(namespace);

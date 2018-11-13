@@ -83,7 +83,10 @@
     "import/export": 2,
     "operator-linebreak": "off",
     "implicit-arrow-linebreak": "off",
-    "no-restricted-globals": ["error", "event"]
+    "no-await-in-loop": "off",
+    "no-restricted-globals": ["error", "event"],
+    "no-restricted-syntax": ["error", "WithStatement"]
+
   },
   "overrides": [
     {

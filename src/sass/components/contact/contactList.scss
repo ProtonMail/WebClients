@@ -1,3 +1,12 @@
+.contactList-item td {
+    padding: .5em 0 !important;
+    min-height: 40px;
+}
+
+.contactList-item.contactList-item.contactList-item td ul {
+    line-height: initial;
+}
+
 .contactList-item-activeContact td {
     background: $active-background;
     * { color: set-color($active-background, $white) }
@@ -21,11 +30,18 @@
     }
 }
 
-.contactList-item .customCheckbox-container {
-    border-left: 4px solid transparent;
+.contactList-item-email.contactList-item-email {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: .5em !important;
 }
 
-.contactList-item-activeCursorContact .customCheckbox-container {
+.contactList-checkbox {
+    border-left: .4em solid transparent;
+}
+
+.contactList-item-activeCursorContact .contactList-checkbox {
     border-left-color: $primary;
 }
 
@@ -47,7 +63,6 @@
         }
         span,
         ul {
-            line-height: 50px;
             overflow: hidden;
             text-overflow: ellipsis;
             display: block;

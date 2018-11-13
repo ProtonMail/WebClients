@@ -6,7 +6,7 @@ import atomLoader from './directives/atomLoader';
 import autocompleteEmail from './directives/autocompleteEmail';
 import autocompleteEmails from './directives/autocompleteEmails';
 import autocompleteEmailsItem from './directives/autocompleteEmailsItem';
-import autocompleteEmailsIcon from './directives/autocompleteEmailsIcon';
+import emailEncryptionIcon from './directives/emailEncryptionIcon';
 import chooseLayoutBtns from './directives/chooseLayoutBtns';
 import customCheckbox from './directives/customCheckbox';
 import customRadio from './directives/customRadio';
@@ -39,11 +39,10 @@ import toolbarDesktop from './directives/toolbarDesktop';
 import toolbarMobile from './directives/toolbarMobile';
 import twitterLink from './directives/twitterLink';
 import weekdayTimePicker from './directives/weekdayTimePicker';
-import chevrons from './filters/chevrons';
 import labelAutocomplete from './filters/labelAutocomplete';
 import unescape from './filters/unescape';
 import autocompleteBuilder from './services/autocompleteBuilder';
-import autocompleteSyncModel from './services/autocompleteSyncModel';
+import emailsEncryptionFlags from './services/emailsEncryptionFlags';
 import backState from './services/backState';
 import consoleMessage from './services/consoleMessage';
 import customInputCreator from './services/customInputCreator';
@@ -74,7 +73,7 @@ export default angular
     .directive('autocompleteEmail', autocompleteEmail)
     .directive('autocompleteEmails', autocompleteEmails)
     .directive('autocompleteEmailsItem', autocompleteEmailsItem)
-    .directive('autocompleteEmailsIcon', autocompleteEmailsIcon)
+    .directive('emailEncryptionIcon', emailEncryptionIcon)
     .directive('chooseLayoutBtns', chooseLayoutBtns)
     .directive('customCheckbox', customCheckbox)
     .directive('customRadio', customRadio)
@@ -107,11 +106,10 @@ export default angular
     .directive('toolbarMobile', toolbarMobile)
     .directive('twitterLink', twitterLink)
     .directive('weekdayTimePicker', weekdayTimePicker)
-    .filter('chevrons', chevrons)
     .filter('labelAutocomplete', labelAutocomplete)
     .filter('unescape', unescape)
     .factory('autocompleteBuilder', autocompleteBuilder)
-    .factory('autocompleteSyncModel', autocompleteSyncModel)
+    .factory('emailsEncryptionFlags', emailsEncryptionFlags)
     .factory('backState', backState)
     .factory('consoleMessage', consoleMessage)
     .factory('customInputCreator', customInputCreator)

@@ -1,11 +1,12 @@
 import { FIELDS, ADVANCED_SENDING_KEYS } from '../../../helpers/vCardFields';
 import { normalizeEmail } from '../../../helpers/string';
+import { extract as extractProperties } from '../../../helpers/vCardProperties';
 
 /* @ngInject */
-function contactEncryptionAddressMap(dispatchers, vcard, contactEncryptionModel) {
+function contactEncryptionAddressMap(dispatchers, contactEncryptionModel) {
     const { on } = dispatchers();
 
-    const CACHE = { models: {} };
+    const CACHE = { models: Object.create(null) };
     /**
      * Set a certain contactencryption model on an address that is located in the contact associated with the given contact
      * id. The contact's data should be initialized using init before calling this function.
@@ -38,8 +39,8 @@ function contactEncryptionAddressMap(dispatchers, vcard, contactEncryptionModel)
      * @param {vCard} card The vCard from which to fetch the appropriate data.
      */
     const init = (id, card) => {
-        CACHE.models[id] = {};
-        const emails = vcard.extractProperties(card, FIELDS.EMAIL);
+        CACHE.models[id] = Object.create(null);
+        const emails = extractProperties(card, FIELDS.EMAIL);
         emails.forEach((property) => {
             const normalizedEmail = normalizeEmail(property.valueOf());
             set(id, normalizedEmail, contactEncryptionModel.prepare(card, normalizedEmail));
@@ -48,7 +49,7 @@ function contactEncryptionAddressMap(dispatchers, vcard, contactEncryptionModel)
     };
 
     on('logout', () => {
-        CACHE.models = {};
+        CACHE.models = Object.create(null);
     });
 
     return { init, set, get };

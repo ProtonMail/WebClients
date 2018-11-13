@@ -1,0 +1,20 @@
+.contactGroupsDropdown-container, .contactGroupsDropdown-container * { box-sizing: border-box }
+
+.contactGroupsDropdown-free * {
+    pointer-events: none;
+}
+
+.contactGroupsDropdown-dropdown {
+    z-index: 200;
+    padding: 0 1em !important;
+    overflow: hidden;
+}
+
+.contactGroupsDropdown-container[data-position="left"] {
+
+    .contactGroupsDropdown-dropdown {
+        left: auto;
+        right: -1px;
+        box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.15)
+    }
+}

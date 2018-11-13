@@ -25,7 +25,7 @@ function LabelsController(
 
     const changeNotify = (event, { data: { id, status } }) => {
         const { Name, Color, Display, Exclusive } = _.find($scope.labels, { ID: id });
-        const promise = Label.update({ ID: id, Name, Color, Display, Exclusive, Notify: status ? 1 : 0 })
+        const promise = Label.update({ ID: id, Name, Color, Display, Exclusive, Notify: +!!status })
             .then(eventManager.call)
             .then(() => notification.success(Exclusive ? I18N.folderUpdated : I18N.labelUpdated));
 
@@ -145,7 +145,7 @@ function LabelsController(
                 title,
                 message: CONFIRM,
                 confirm() {
-                    const promise = Label.delete(label.ID)
+                    const promise = Label.remove(label.ID)
                         .then(eventManager.call)
                         .then(() => {
                             confirmModal.deactivate();

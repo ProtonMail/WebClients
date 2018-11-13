@@ -1,16 +1,12 @@
 import _ from 'lodash';
 
-import { orderByPref, uniqGroups } from '../../../helpers/vcard';
-import { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, VCARD_KEY_FIELDS } from '../../constants';
-import { createCancellationToken } from '../../../helpers/promiseHelper';
 import { CONTACT_ERROR } from '../../errors';
+import { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION } from '../../constants';
+import { orderByPref } from '../../../helpers/vcard';
+import vCardPropertyMaker from '../../../helpers/vCardPropertyMaker';
+import { createCancellationToken } from '../../../helpers/promiseHelper';
+import { generateUID } from '../../../helpers/string';
 
-const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
-const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(VCARD_KEY_FIELDS);
-
-// Fields that are forced to be included in the encrypted data
-const ENCRYPTED_FIELDS = ['uid'];
-const GROUP_FIELDS = ['email'].concat(VCARD_KEY_FIELDS);
 const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
 const {
     TYPE3_CONTACT_VERIFICATION,
@@ -38,19 +34,6 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
         return contact;
     };
 
-    /**
-     * Generates a contact UID of the form 'proton-web-uuid'
-     * @return {String}
-     */
-    function generateUID() {
-        const s4 = () =>
-            Math.floor((1 + Math.random()) * 0x10000)
-                .toString(16)
-                .substring(1);
-
-        return `proton-web-${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
-    }
-
     function mergeContactData(data = []) {
         const vcfString = _.reduce(data, (acc, { data }) => `${acc}${data}\r\n`, '');
         const vcards = vcard.from(vcfString);
@@ -65,46 +48,12 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
         const detached = true;
         const promises = [];
         await assignKeyToGroup(data);
-        let itemCounter = 0;
-        const properties = vcard.extractAllProperties(data);
-        const groups = uniqGroups(properties);
+
         const defaultUID = generateUID();
 
-        function getGroupName() {
-            itemCounter++;
-
-            const groupName = `item${itemCounter}`;
-
-            if (groups.includes(groupName)) {
-                return getGroupName();
-            }
-
-            return groupName;
-        }
-
-        const { toEncryptAndSign, toSign, clearText } = _.reduce(
-            vcard.extractAllProperties(data),
-            (acc, property) => {
-                const key = property.getField();
-                const isClear = CLEAR_FIELDS.includes(key);
-                const isSigned = SIGNED_FIELDS.includes(key);
-                const isEncrypted = ENCRYPTED_FIELDS.includes(key);
-
-                if (GROUP_FIELDS.includes(key) && !property.group) {
-                    property.group = getGroupName();
-                }
-
-                isClear && acc.clearText.push(property);
-                isSigned && acc.toSign.push(property);
-
-                if ((!isClear && !isSigned) || isEncrypted) {
-                    acc.toEncryptAndSign.push(property);
-                }
-
-                return acc;
-            },
-            { toEncryptAndSign: [], toSign: [], clearText: [] }
-        );
+        const { toEncryptAndSign = [], toSign = [], clearText = [] } = vCardPropertyMaker([data], {
+            type: 'encryption'
+        });
 
         if (toEncryptAndSign.length > 0) {
             const encSignedFields = toEncryptAndSign.map((prop) => prop.getField());
@@ -162,15 +111,13 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
         }
 
         if (clearText.length > 0) {
-            const data = vcard.build(clearText).toString(VCARD_VERSION);
+            const Data = vcard.build(clearText).toString(VCARD_VERSION);
 
-            promises.push(
-                Promise.resolve({
-                    Type: CLEAR_TEXT,
-                    Data: data,
-                    Signature: null
-                })
-            );
+            promises.push({
+                Type: CLEAR_TEXT,
+                Data,
+                Signature: null
+            });
         }
 
         return Promise.all(promises);
@@ -216,7 +163,7 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
                         return { error: TYPE1_CONTACT, data: new vCard().toString(VCARD_VERSION) };
                     });
                 case CLEAR_TEXT:
-                    return Promise.resolve({ data: Data });
+                    return { data: Data };
             }
         });
 
@@ -305,10 +252,9 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
      * @return {Promise}
      */
     function decrypt(contacts = [], cancellationToken = createCancellationToken(), progressBar = false) {
-        const transform = ({ ID, Cards }, publicKeys, privateKeys) => {
-            return extractCards({ cards: Cards, privateKeys, publicKeys }).then((data) =>
-                buildContact(ID, data, Cards)
-            );
+        const transform = async ({ ID, Cards }, publicKeys, privateKeys) => {
+            const data = await extractCards({ cards: Cards, privateKeys, publicKeys });
+            return buildContact(ID, data, Cards);
         };
         return transformContactsConcurrent({ contacts, transform, progressSpeed: 100, cancellationToken, progressBar });
     }
@@ -322,13 +268,22 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
      * @return {Promise}
      */
     function encrypt(contacts = [], cancellationToken = createCancellationToken(), progressBar = false) {
-        const transform = (contact, [publicKey], [privateKey]) => {
-            return prepareCards({ data: contact.vCard, publicKeys: [publicKey], privateKeys: [privateKey] }).then(
-                (Cards) => ({ Cards })
-            );
+        const transform = async ({ vCard }, [publicKey], [privateKey]) => {
+            const Cards = await prepareCards({
+                data: vCard,
+                publicKeys: [publicKey],
+                privateKeys: [privateKey]
+            });
+            return { Cards };
         };
 
-        return transformContactsConcurrent({ contacts, transform, progressSpeed: 50, cancellationToken, progressBar });
+        return transformContactsConcurrent({
+            cancellationToken,
+            progressBar,
+            contacts,
+            transform,
+            progressSpeed: 50
+        });
     }
 
     return { decrypt, encrypt };

@@ -1,7 +1,16 @@
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function messageView($stateParams, $state, AppModel, dispatchers, conversationListeners, cache, hotkeys) {
+function messageView(
+    $stateParams,
+    $state,
+    dispatchers,
+    AppModel,
+    conversationListeners,
+    cache,
+    hotkeys,
+    recipientsFormator
+) {
     function back() {
         const name = $state.$current.name;
         const route = name.replace('.element', '');
@@ -21,9 +30,13 @@ function messageView($stateParams, $state, AppModel, dispatchers, conversationLi
             cache.getMessage(messageID).then((message) => {
                 dispatcher.elements('mark', { id: messageID });
                 dispatcher.elements('opened', { id: messageID });
-
+                const { ToList, CCList, BCCList } = recipientsFormator.list(message);
                 scope.$applyAsync(() => {
                     message.openMe = true;
+
+                    message.ToList = ToList;
+                    message.CCList = CCList;
+                    message.BCCList = BCCList;
                     scope.message = message;
                     AppModel.set('numberElementSelected', 1);
 

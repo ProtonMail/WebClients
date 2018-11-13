@@ -1,5 +1,7 @@
+import { unicodeTag } from '../../../helpers/string';
+
 /* @ngInject */
-function sanitize($filter) {
+function sanitize() {
     const CONFIG = {
         default: {
             ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i, // eslint-disable-line no-useless-escape
@@ -49,7 +51,7 @@ function sanitize($filter) {
      */
     const input = DOMPurify.sanitize;
 
-    const toTagUnicode = $filter('unicodeTagView');
+    const toTagUnicode = unicodeTag;
 
     return { message, input, html, content, toTagUnicode };
 }

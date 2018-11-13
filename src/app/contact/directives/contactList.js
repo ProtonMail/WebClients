@@ -3,10 +3,14 @@ import _ from 'lodash';
 /* @ngInject */
 function contactList($filter, dispatchers, $state, $stateParams, contactCache, hotkeys) {
     const HEADER_HEIGHT = 120;
-    const ITEM_CLASS = 'contactList-item';
-    const ACTIVE_CLASS = 'contactList-item-activeContact';
-    const ACTIVE_CURSOR_CLASS = 'contactList-item-activeCursorContact';
-    const LOADED_CLASS = 'contactList-loaded';
+
+    const CLASSNAMES = {
+        ITEM: 'contactList-item',
+        ACTIVE: 'contactList-item-activeContact',
+        ACTIVE_CURSOR: 'contactList-item-activeCursorContact',
+        LOADED: 'contactList-loaded',
+        CHECKBOX: '.customCheckbox-input'
+    };
 
     return {
         restrict: 'E',
@@ -31,16 +35,17 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             const setContactCursor = (id, $items) => {
                 MODEL.cursorID = id;
 
-                const $rows = $items || element.find(`.${ITEM_CLASS}`);
-                $rows.removeClass(ACTIVE_CURSOR_CLASS);
+                const $rows = $items || element.find(`.${CLASSNAMES.ITEM}`);
+                $rows.removeClass(CLASSNAMES.ACTIVE);
 
                 const $row = $rows.has(`[data-contact-id="${unescape(MODEL.cursorID)}"]`);
 
                 // Focus the checkbox to toggle it with the "space" key
-                _rAF(() => {
-                    $row[0].classList.add(ACTIVE_CURSOR_CLASS);
-                    $row[0].querySelector('.customCheckbox-input').focus();
-                });
+                $row[0] &&
+                    _rAF(() => {
+                        $row[0].classList.add(CLASSNAMES.ACTIVE);
+                        $row[0].querySelector(CLASSNAMES.CHECKBOX).focus();
+                    });
             };
 
             function updateContacts() {
@@ -49,8 +54,8 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 scope.$applyAsync(() => {
                     scope.contacts = filteredContacts;
 
-                    if (!element[0].classList.contains(LOADED_CLASS)) {
-                        element[0].classList.add(LOADED_CLASS);
+                    if (!element[0].classList.contains(CLASSNAMES.LOADED)) {
+                        element[0].classList.add(CLASSNAMES.LOADED);
                     }
 
                     _.defer(() => {
@@ -65,18 +70,18 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             }
 
             function activeContact(scroll = false) {
-                const $items = element.find(`.${ITEM_CLASS}`);
-                $items.removeClass(ACTIVE_CLASS);
+                const $items = element.find(`.${CLASSNAMES.ITEM}`);
+                $items.removeClass(CLASSNAMES.ACTIVE);
 
                 if ($stateParams.id) {
-                    const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape($stateParams.id)}"]`);
+                    const $row = element.find(`.${CLASSNAMES.ITEM}[data-contact-id="${unescape($stateParams.id)}"]`);
 
                     const filteredContacts = paginatedContacts();
                     const selectedContacts = filteredContacts.filter((c) => c.selected);
 
                     // Only add the active class if 0 contacts are tick
                     if (!selectedContacts.length) {
-                        $row.addClass(ACTIVE_CLASS);
+                        $row.addClass(CLASSNAMES.ACTIVE);
                     }
 
                     if (!MODEL.cursorID) {
@@ -130,7 +135,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 }
 
                 const { ID } = scope.contacts[pos];
-                const $items = element.find(`.${ITEM_CLASS}`);
+                const $items = element.find(`.${CLASSNAMES.ITEM}`);
                 const $row = $items.has(`[data-contact-id="${unescape(MODEL.cursorID)}"]`);
                 setContactCursor(ID, $items);
 
@@ -159,7 +164,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                     return e.preventDefault();
                 }
 
-                if (/customCheckbox/.test(target.className)) {
+                if (target.classList.contains(CLASSNAMES.CHECKBOX.slice(1))) {
                     e.stopPropagation();
                     setContactSelection(target.dataset.contactId, target.checked, shiftKey);
                 }
@@ -179,9 +184,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 }
             }
 
-            // Open the current contact
             const openContact = () => {
-                // Open the contact
                 $state.go('secured.contacts.details', { id: MODEL.cursorID });
 
                 hotkeys.bind('mod+s');
@@ -202,7 +205,6 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             contactCache.hydrate();
 
             on('right', openContact);
-
             on('openMarked', openContact);
 
             // Restore them to allow custom keyboard navigation

@@ -1,13 +1,15 @@
 import _ from 'lodash';
+
 import { REGEX_EMAIL } from '../../constants';
 
 /* @ngInject */
 function autocompleteEmails(
     autocompleteEmailsModel,
     autocompleteBuilder,
-    autocompleteSyncModel,
+    emailsEncryptionFlags,
     dispatchers,
     gettextCatalog,
+    composerContactGroupSelection,
     notification
 ) {
     const TAB_KEY = 9;
@@ -89,21 +91,36 @@ function autocompleteEmails(
      * @param  {String} value
      * @return {Array}
      */
-    const splitEmails = (value = '') =>
-        value
+    const splitEmails = (value = '') => {
+        return value
             .split(/,|;/)
             .filter(Boolean)
             .map((txt) => txt.trim());
+    };
+
+    const getRecipients = (model) => {
+        return model
+            .all()
+            .slice()
+            .reduce(
+                (acc, item) => {
+                    const key = !item.isContactGroup ? 'emails' : 'contactGroups';
+                    acc[key].push(item);
+                    return acc;
+                },
+                { emails: [], contactGroups: [] }
+            );
+    };
 
     const link = (scope, el, { awesomplete }) => {
         const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'autocompleteEmails']);
 
         scope.emails = [];
-        const $list = el[0].querySelector('.autocompleteEmails-admin');
 
+        const $list = el[0].querySelector('.autocompleteEmails-admin');
         // Model for this autocomplete
         const model = autocompleteEmailsModel(scope.list);
-        const modelExtender = autocompleteSyncModel(scope.message);
+        const modelExtender = emailsEncryptionFlags(scope.message);
 
         // Auto scroll to the end of the list
         const updateScroll = () => _rAF(() => ($list.scrollTop = $list.scrollHeight + 32));
@@ -125,45 +142,42 @@ function autocompleteEmails(
         };
 
         /**
+         * Extend the emails from the email model with information about PGP and loading.
+         * Always get the latest array from the model. This is to ensure the list is always up to date.
+         * Set them on the scope.
+         */
+        const extendAndSet = () => {
+            const config = getRecipients(model);
+
+            // Extend the emails with any cached information, or with loading in case it's a new address.
+            const list = modelExtender.extendFromCache(config.emails);
+
+            setEmails(config.contactGroups.concat(list));
+        };
+
+        /**
+         * Sync the emails to the cache.
+         */
+        const sync = async () => {
+            const { emails } = getRecipients(model);
+
+            // Sync the emails to cache.
+            const { addressesToRemove = [], failedAddresses = [] } = await modelExtender.sync(emails);
+
+            // Display an error message that these addresses failed to fetch.
+            if (failedAddresses.length) {
+                notification.error(I18N.failedToFetch(failedAddresses));
+            }
+
+            // Need to remove the addresses that were invalid from the real model.
+            addressesToRemove.forEach(model.removeByAddress);
+        };
+
+        /**
          * Update the list. Get the emails from the model, and extend them with the PGP and loading data.
          * @returns {Promise<void>}
          */
         const updateModel = async () => {
-            /**
-             * Extend the emails from the email model with information about PGP and loading.
-             * Always get the latest array from the model. This is to ensure the list is always up to date.
-             * Set them on the scope.
-             */
-            const extendAndSet = () => {
-                // Get the latest array from the model.
-                const emails = model.all().slice();
-
-                // Extend the emails with any cached information, or with loading in case it's a new address.
-                const extendedEmails = modelExtender.extendFromCache(emails);
-
-                // Set the new emails on the scope.
-                setEmails(extendedEmails);
-            };
-
-            /**
-             * Sync the emails to the cache.
-             */
-            const sync = async () => {
-                // Get the latest array from the model.
-                const emails = model.all().slice();
-
-                // Sync the emails to cache.
-                const { addressesToRemove = [], failedAddresses = [] } = await modelExtender.sync(emails);
-
-                // Display an error message that these addresses failed to fetch.
-                if (failedAddresses.length) {
-                    notification.error(I18N.failedToFetch(failedAddresses));
-                }
-
-                // Need to remove the addresses that were invalid from the real model.
-                addressesToRemove.forEach(model.removeByAddress);
-            };
-
             // Extend and set the addresses. Primarily to show the loading spinner for new addresses.
             extendAndSet();
 
@@ -263,14 +277,19 @@ function autocompleteEmails(
             }
         };
 
+        const removeGroup = (Address) => {
+            const cache = composerContactGroupSelection(scope.message.ID);
+            cache.remove(Address);
+        };
+
         const onClick = ({ target }) => {
             // Reset autocomplete to work only after 1 letter
             awesomplete.minChars = 1;
 
-            // Click onto a remove button
             if (target.classList.contains('autocompleteEmails-btn-remove')) {
                 const { address } = target.dataset;
                 model.removeByAddress(address);
+                removeGroup(address);
                 return syncModel();
             }
 
@@ -390,9 +409,16 @@ function autocompleteEmails(
             el.off('submit', onSubmit);
             awesomplete.input.removeEventListener('blur', onSubmit);
             model.clear();
+            modelExtender.clear();
             unsubscribe();
         });
     };
+
+    const compile = (el, { key }) => {
+        const node = el[0].querySelector('.autocompleteEmails-item');
+        node && node.setAttribute('data-key', key);
+    };
+
     return {
         scope: {
             list: '=emails',
@@ -400,7 +426,23 @@ function autocompleteEmails(
         },
         replace: true,
         templateUrl: require('../../../templates/ui/autocompleteEmails.tpl.html'),
-        compile: autocompleteBuilder(link)
+        compile: autocompleteBuilder(
+            { link, compile },
+            {
+                data(item) {
+                    return {
+                        label: item.label,
+                        value: {
+                            value: item.value,
+                            data: {
+                                ContactID: item.ContactID,
+                                isContactGroup: item.isContactGroup
+                            }
+                        }
+                    };
+                }
+            }
+        )
     };
 }
 

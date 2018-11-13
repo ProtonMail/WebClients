@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { uniqID } from '../../../helpers/string';
+
 /* @ngInject */
 function composerInputMeta(contactSelectorModel, dispatchers) {
     /**
@@ -37,10 +39,7 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
      * @return {String}
      */
     const getNameAutocomplete = (label) => {
-        const id = Math.random()
-            .toString(32)
-            .slice(2, 12);
-        return `composerAutocomplete${label}${id}`;
+        return `composerAutocomplete${label}${uniqID()}`;
     };
 
     return {

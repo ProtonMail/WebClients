@@ -1,14 +1,16 @@
 import _ from 'lodash';
+
 import createMscScroller from '../../../helpers/mscScrollHelper';
 
 /* @ngInject */
-const sidebarLabels = (dispatchers) => ({
+const sidebarLabels = (dispatchers, manageContactGroup, needUpgrade) => ({
     replace: true,
     templateUrl: require('../../../templates/sidebar/sidebarLabels.tpl.html'),
-    link(scope, $el) {
-        const { on, unsubscribe } = dispatchers();
+    link(scope, el, { type }) {
+        const { on, unsubscribe: unsubscribeHook } = dispatchers();
         const mcsScroller = createMscScroller({ margin: 40, scrollBy: 30 });
-        const el = $el[0];
+
+        const unsubscribe = [unsubscribeHook];
 
         scope.scrollbarConfig = {
             advanced: {
@@ -45,7 +47,7 @@ const sidebarLabels = (dispatchers) => ({
              * Get the height of the scroller list (need to get it here because it can change on resize and
              * the height hasn't been calculated when the template is initialized.
              */
-            const { height } = el.getBoundingClientRect();
+            const { height } = el[0].getBoundingClientRect();
             // Get the new scroll value.
             const sy = mcsScroller.scroll(e.target.offsetTop, height);
             if (sy !== undefined) {
@@ -61,15 +63,33 @@ const sidebarLabels = (dispatchers) => ({
 
         const debouncedDe = _.debounce(dragEnter, 250);
 
-        el.addEventListener('dragenter', debouncedDe);
+        if (type === 'groups') {
+            const onClick = (e) => {
+                if (e.target.nodeName === 'A' || e.currentTarget.nodeName === 'A') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (!needUpgrade()) {
+                        manageContactGroup.edit(null, e.target.getAttribute('data-pt-dropzone-item'));
+                    }
+                }
+            };
+            el.on('click', onClick);
+            unsubscribe.push(() => el.off('click', onClick));
+        }
+
+        el[0].addEventListener('dragenter', debouncedDe);
         window.addEventListener('resize', onResize);
         document.addEventListener('visibilitychange', onVisibilitychange); // Required to avoid #7455
 
-        scope.$on('$destroy', () => {
-            el.removeEventListener('dragenter', debouncedDe);
+        unsubscribe.push(() => {
+            el[0].removeEventListener('dragenter', debouncedDe);
             window.removeEventListener('resize', onResize);
             document.removeEventListener('visibilitychange', onVisibilitychange);
-            unsubscribe();
+        });
+
+        scope.$on('$destroy', () => {
+            unsubscribe.forEach((cb) => cb());
+            unsubscribe.length = 0;
         });
     }
 });

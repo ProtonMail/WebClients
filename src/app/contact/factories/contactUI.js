@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { uniqID } from '../../../helpers/string';
+
 /* @ngInject */
 function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
     const EMAIL_TYPE = ['email', 'home', 'work', 'other'];
@@ -24,6 +26,35 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
         noScheme: gettextCatalog.getString('Use Global Default', null, 'Default encryption scheme'),
         default: gettextCatalog.getString('Default', null, 'MIME type')
     };
+
+    const MAP_KEYS = {
+        Key: { key: 'key', type: 'key' },
+        Scheme: { key: 'x-pm-scheme', type: 'pm-scheme' },
+        MIMEType: { key: 'x-pm-mimetype', type: 'pm-mimetype' },
+        Encrypt: { key: 'x-pm-encrypt', type: 'pm-encrypt' },
+        Sign: { key: 'x-pm-sign', type: 'pm-sign' },
+        TLS: { key: 'x-pm-tls', type: 'pm-tls' },
+        Name: { key: 'fn', type: 'fn' },
+        Emails: { key: 'email', type: 'email' },
+        Tels: { key: 'tel', type: 'tel' },
+        Adrs: { key: 'adr', type: 'adr' },
+        Customs: { key: 'x-custom', type: 'custom' },
+        Notes: { key: 'note', type: 'note' },
+        Photos: { key: 'photo', type: 'photo' },
+        Categories: { key: 'categories', type: 'categories' }
+    };
+
+    /**
+     * Found the first key not yet used or return one random from the list
+     * @param {Object} UI
+     * @param {Array} source
+     * @return {String} type
+     */
+    function findKey({ items = [] }) {
+        const types = _.map(items, 'type');
+        const key = _.find(PERSONAL_TYPE, (type) => types.indexOf(type) === -1);
+        return key || PERSONAL_TYPE[_.random(PERSONAL_TYPE.length - 1)];
+    }
 
     function removeX(value = '') {
         if (value.toLowerCase().startsWith('x-')) {
@@ -50,7 +81,7 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
             iconClass: '',
             labels: [],
             items: [],
-            hide: ['version', 'n', 'prodid', 'abuid', 'uid'],
+            hide: ['version', 'n', 'prodid', 'abuid', 'uid', 'categories'],
             inputType: 'text',
             defaultValue: ''
         };
@@ -119,7 +150,7 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
                         data.key,
                         removeX(data.type) || removeX(data.key),
                         getValue(data.value, UI),
-                        {},
+                        data.params,
                         data.settings
                     );
                 }
@@ -128,11 +159,11 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
 
         if (!datas.length || (datas.length === 1 && _.includes(UI.hide, datas[0].key))) {
             const populated = populate(UI, type);
-            add(UI, populated.key, populated.type, UI.defaultValue, {}, {});
+            add(UI, populated.key, populated.type, UI.defaultValue, populated.params, {});
         }
 
         UI.inputName = `name_${UI.placeholder.replace(/\W+|_/g, '')}`;
-
+        UI.uuid = uniqID();
         return UI;
     }
 
@@ -150,52 +181,10 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
     }
 
     function populate(UI, type) {
-        switch (type) {
-            case 'Key':
-                return { key: 'key', type: 'key' };
-            case 'Scheme':
-                return { key: 'x-pm-scheme', type: 'pm-scheme' };
-            case 'MIMEType':
-                return { key: 'x-pm-mimetype', type: 'pm-mimetype' };
-            case 'Encrypt':
-                return { key: 'x-pm-encrypt', type: 'pm-encrypt' };
-            case 'Sign':
-                return { key: 'x-pm-sign', type: 'pm-sign' };
-            case 'TLS':
-                return { key: 'x-pm-tls', type: 'pm-tls' };
-            case 'Name':
-                return { key: 'fn', type: 'fn' };
-            case 'Emails':
-                return { key: 'email', type: 'email' };
-            case 'Tels':
-                return { key: 'tel', type: 'tel' };
-            case 'Adrs':
-                return { key: 'adr', type: 'adr' };
-            case 'Personals': {
-                const key = findKey(UI);
-                return { key, type: key };
-            }
-            case 'Customs':
-                return { key: 'x-custom', type: 'custom' };
-            case 'Notes':
-                return { key: 'note', type: 'note' };
-            case 'Photos':
-                return { key: 'photo', type: 'photo' };
-            default:
-                break;
-        }
-    }
-
-    /**
-     * Found the first key not yet used or return one random from the list
-     * @param {Object} UI
-     * @param {Array} source
-     * @return {String} type
-     */
-    function findKey({ items = [] }) {
-        const types = _.map(items, 'type');
-        const key = _.find(PERSONAL_TYPE, (type) => types.indexOf(type) === -1);
-        return key || PERSONAL_TYPE[_.random(PERSONAL_TYPE.length - 1)];
+        const key = findKey(UI);
+        const Personals = { key, type: key };
+        const MAP = { ...MAP_KEYS, Personals };
+        return MAP[type];
     }
 
     function add(UI, type, label, val = '', params, settings) {
@@ -204,7 +193,17 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
         const value = Array.isArray(val)
             ? val.map((v) => sanitize.toTagUnicode(v, 'reverse'))
             : sanitize.toTagUnicode(val, 'reverse');
-        UI.items.push({ type, label: contactTransformLabel.toLang(label), value, hide, params, settings });
+
+        UI.uuid = uniqID();
+        UI.items.push({
+            type,
+            label: contactTransformLabel.toLang(label),
+            value,
+            hide,
+            params,
+            settings,
+            uuid: uniqID()
+        });
     }
 
     const remove = (UI, item) => UI.items.splice(UI.items.indexOf(item), 1);

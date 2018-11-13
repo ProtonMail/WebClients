@@ -1,0 +1,143 @@
+<div class="pm_modal contactGroupModal-container" role="dialog">
+
+    <form
+        class="modal-dialog contactGroupModal-form"
+        name="groupForm"
+        novalidate
+        ng-submit="ctrl.create(groupForm)">
+
+        <button
+            type="button"
+            ng-click="ctrl.cancel()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
+
+        <div class="modal-content">
+            <header class="modal-header">
+                <h4
+                    class="modal-title"
+                    translate-context="Title"
+                    translate>Group details</h4>
+            </header>
+
+            <div class="modal-body pm_form pm_grid">
+
+                <div class="row">
+                    <label
+                        for="name"
+                        class="col-1-4"
+                        translate
+                        translate-context="Label">Name</label>
+
+                    <label-name-input
+                        class="col-3-4"
+                        data-form="groupForm"
+                        data-model="ctrl.model"></label-name-input>
+                </div>
+
+                <div class="row">
+                    <label
+                        class="col-1-4"
+                        translate
+                        translate-context="Label">Color</label>
+
+                    <div class="col-3-4">
+                        <label-color-selector data-color="ctrl.model.color"></label-color-selector>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label
+                        class="col-1-4"
+                        translate
+                        translate-context="Label">Add Contact</label>
+
+                    <div class="col-3-4 contactGroupModal-addContact">
+                        <autocomplete-contacts
+                            class="contactGroupModal-autocomplete"
+                            data-list="ctrl.model.contacts"></autocomplete-contacts>
+
+                        <div class="contactGroupModal-create">
+                            <header class="contactGroupModal-create-header">
+                                <h3
+                                    class="contactGroupModal-create-title"
+                                    translate-context="Title"
+                                    translate>Contact doesn't exist</h3>
+                            </header>
+                            <p
+                                class="contactGroupModal-create-message text-center"
+                                translate-context="Info"
+                                translate>There is no matching name or address in your Contacts. Would you like to create a new contact and add this to the contact group ?</p>
+
+                            <button
+                                class="pm_button primary contactGroupModal-create-btn"
+                                type="button"
+                                ng-click="ctrl.createNewContact()"
+                                translate-context="Action"
+                                translate>Create new contact</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pm_table contactGroupModal-contacts">
+
+                    <p class="contactGroupModal-no-contacts text-center" ng-if="!ctrl.model.contacts.length">
+                        <i>No contacts added yet</i>
+                    </p>
+
+                    <table class="contactGroupModal-table fixedLayout" ng-if="ctrl.model.contacts.length">
+                        <thead class="contactGroupModal-thead">
+                            <th
+                                class="contactGroupModal-th-name"
+                                translate-context="Title"
+                                translate-comment="table heading"
+                                translate>Name</th>
+                            <th
+                                class="contactGroupModal-th-email"
+                                translate-context="Title"
+                                translate-comment="table heading"
+                                translate>Address</th>
+                        </thead>
+                        <tbody class="contactGroupModal-tbody">
+                            <tr
+                                ng-repeat="contact in ctrl.model.contacts track by contact.ID"
+                                class="contactGroupModal-row">
+                                <td class="contactGroupModal-td-name">{{::contact.Name}}</td>
+                                <td class="contactGroupModal-td-email">
+                                    <span class="contactGroupModal-email">{{::contact.Email}}</span>
+                                    <action-contact-group
+                                        class="contactGroupModal-btn-remove"
+                                        data-action="remove.contact"
+                                        data-contact="contact"
+                                        data-group="ctrl.model"
+                                        pt-tooltip-translate="Remove"
+                                        pt-tooltip-translate-context="Action">
+                                    </action-contact-group>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer class="modal-footer text-right">
+            <button
+                class="pm_button pull-left"
+                ng-click="ctrl.cancel()"
+                ng-disabled="ctrl.networkActivity"
+                translate-context="Action"
+                translate>Cancel</button>
+
+            <button
+                class="pm_button primary"
+                ng-disabled="ctrl.networkActivity"
+                translate-context="Action"
+                translate>Save</button>
+        </footer>
+    </form>
+    <div class="modal-overlay"></div>
+</div>
+

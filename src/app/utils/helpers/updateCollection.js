@@ -31,7 +31,7 @@ function updateCollection(all = [], events = [], type = '') {
 
             return acc;
         },
-        { update: [], create: [], remove: {} }
+        { update: [], create: [], remove: Object.create(null) }
     );
 
     // NOTE We cannot trust Action so "create" and "update" events need to be handle in the way
@@ -55,7 +55,7 @@ function updateCollection(all = [], events = [], type = '') {
         },
         {
             collection: copy,
-            MAP: _.reduce(copy, (acc, element, index) => ((acc[element.ID] = index), acc), {})
+            MAP: _.reduce(copy, (acc, element, index) => ((acc[element.ID] = index), acc), Object.create(null))
         }
     );
 

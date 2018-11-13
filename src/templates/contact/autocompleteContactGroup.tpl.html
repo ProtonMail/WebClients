@@ -1,0 +1,19 @@
+<div class="autocompleteEmail-container autocomplete-container autocompleteContactGroup-container ng-message-wrapper">
+    <input
+        id="autocomplete"
+        name="autocomplete"
+        type="text"
+        ng-value="email.label"
+        autofocus
+        autocomplete="off"
+        spellcheck="false"
+        autocapitalize="off"
+        class="autocompleteEmail-input">
+
+    <div
+        role="alert"
+        class="text-red labelNameInput-errors">
+        <p ng-if="email.isRequired" translate-context="Error" translate>Name required.</p>
+        <p ng-if="email.doesNotExist" translate-context="Error" translate>You don't have a group with such a name.</p>
+    </div>
+</div>

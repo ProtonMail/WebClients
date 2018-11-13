@@ -53,6 +53,8 @@
 .contacts-container.contacts-empty .contacts-list,
 .contacts-container.contacts-empty .contactsDetails-container { height: 100% }
 
+[id="secured-contacts-details"].appConfigBody-is-tablet .contactsToolbar-contactGroup,
+[id="secured-contacts-details"].appConfigBody-is-mobile .contactsToolbar-contactGroup,
 [id="secured-contacts"] .contactsDetails-container,
 .contacts-container.contacts-empty .contactsToolbar-container,
 .contacts-container.contacts-empty .contactPlaceholder-container,
@@ -71,6 +73,11 @@
     overflow: visible; /* keep toolbar at top on mobile*/
 }
 
+body:not([id*="secured-contacts"]) {
+    .sidebarLabels-manageGroup[data-mode="create"] {
+        display: none
+    }
+}
 
 .appConfigBody-is-tablet .contactDetails-details,
 .appConfigBody-is-mobile .contactDetails-details {

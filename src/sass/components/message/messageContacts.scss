@@ -53,3 +53,6 @@
 }
 
 .messageContacts-btn-compose { color: $primary }
+
+.messageContacts-list-item { display: flex }
+.messageContacts-list-item .messageAddressActions-container { padding: 0 .25em }

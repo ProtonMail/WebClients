@@ -47,7 +47,8 @@
                     </td>
                     <td
                         data-contact-id="{{ ::contact.ID }}"
-                        class="contactList-item-name" data-action="showContact">
+                        class="contactList-item-name"
+                        data-action="showContact">
                         <span>{{ contact.Name }}</span>
                     </td>
                     <td
@@ -56,6 +57,9 @@
                         <ul class="inlineList">
                             <li>{{ contact.emails }}</li>
                         </ul>
+                        <contact-groups-overview
+                            data-contact="contact"
+                            class="contactList-item-group"></contact-groups-overview>
                     </td>
                 </tr>
             </tbody>

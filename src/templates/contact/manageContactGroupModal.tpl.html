@@ -1,0 +1,109 @@
+<form
+    class="pm_modal manageContactGroupModal-container"
+    ng-submit="ctrl.create()"
+    ng-class="{'manageContactGroupModal-free': ctrl.isFree}"
+    name="manageContactGroupModal"
+    id="groupsContainer"
+    novalidate>
+    <div class="modal-dialog">
+        <button type="button" ng-click="ctrl.close()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+
+        <div class="modal-content">
+            <header class="modal-header">
+                <h4 class="modal-title"><i class="fa fa-users"></i>Manage Groups</pre></h4>
+            </header>
+
+            <div
+                ng-class="{'manageContactGroupModal-hasSelection': ctrl.hasSelection && ctrl.labels.length}"
+                class="modal-body">
+
+                <nav class="manageContactGroupModal-nav" ng-if="ctrl.labels.length > 1">
+                    <label class="manageContactGroupModal-navLabel">
+                        <custom-checkbox
+                            data-custom-name="selectAll"
+                            data-ng-click="ctrl.selectAll()"
+                            class="manageContactGroupModal-input-checkbox"></custom-checkbox>
+                        <span
+                            class="manageContactGroupModal-navLabel-value"
+                            translate-context="Manage contact group modal"
+                            translate>Select all</span>
+                    </label>
+
+                    <button
+                        type="button"
+                        ng-click="ctrl.removeSelection()"
+                        class="pm_button manageContactGroupModal-action-removeSelection"
+                        translate-context="Action"
+                        translate>Remove selection</button>
+
+                </nav>
+
+                <p
+                    class="alert alert-info labelsState-msg-info"
+                    ng-if="!ctrl.labels.length"
+                    translate-context="Info"
+                    translate>You have no contact groups.</p>
+
+                <ul
+                    ng-if="ctrl.labels.length"
+                    class="labelsState-list pm_sort-container manageContactGroupModal-list"
+                    data-as-sortable="ctrl.labelsDragControlListeners"
+                    is-disabled="ctrl.labels.length === 1"
+                    ng-class="{ 'as-sortable-disabled': ctrl.labels.length === 1 }"
+                    data-ng-model="ctrl.labels">
+
+                    <li
+                        class="labelsState-item pm_sort-item manageContactGroupModal-item"
+                        ng-repeat="label in ctrl.labels track by label.ID"
+                        data-color="{{label.Color}}"
+                        data-as-sortable-item>
+
+                        <div class="pm_sort-item-content" as-sortable-item-handle>
+
+                            <custom-checkbox
+                                class="manageContactGroupModal-input-checkbox"
+                                data-custom-label-id="{{::label.ID}}"
+                                data-custom-checkbox-event="change"
+                                data-custom-ng-model="label.selected"></custom-checkbox>
+
+                            <div class="manageContactGroupModal-item-info">
+                                <i class="labelsState-item-icon fa fa-users" ng-style="{ color: label.Color }"></i>
+                                <span class="label label-pm labelsState-item-name ellipsis manageContactGroupModal-info-name">{{label.Name}}</span>
+                                <span class="manageContactGroupModal-info-member">{{ ctrl.getNumberMembers(label) }}</span>
+                            </div>
+                            <div>
+                                <action-label-btn
+                                    data-model="label"
+                                    data-key="group"
+                                    data-action="edit"
+                                    class="pm_button link labelsState-btn-edit"></action-label-btn>
+                                <action-label-btn
+                                    data-model="label"
+                                    data-key="group"
+                                    data-action="remove"
+                                    class="pm_button link text-red labelsState-btn-delete"></action-label-btn>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <footer class="modal-footer text-right">
+            <button
+                class="pm_button pull-left"
+                ng-click="ctrl.close()"
+                type="button"
+                translate-context="Action"
+                translate>Close</button>
+
+            <button
+                ng-if="!ctrl.isFree"
+                class="pm_button primary"
+                tabindex="1"
+                translate-context="Action"
+                translate>Create a new contact group</button>
+        </footer>
+    </div>
+    <div class="modal-overlay"></div>
+</form>

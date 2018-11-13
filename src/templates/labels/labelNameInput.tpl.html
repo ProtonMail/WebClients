@@ -1,0 +1,27 @@
+<div class="labelNameInput-container ng-message-wrapper">
+    <input
+        tabindex="1"
+        type="text"
+        class="form-control labelNameInput-input"
+        autofocus
+        id="name"
+        name="name"
+        data-valid-label
+        data-contact-group-name-validator="{{::mode}}"
+        ng-model="model.name"
+        placeholder-translate-context="Placeholder"
+        placeholder-translate="name"
+        required>
+
+    <div
+        ng-messages="form.name.$error"
+        role="alert"
+        class="text-red labelNameInput-errors">
+        <p ng-message="required" translate-context="Error" translate>You must set a name</p>
+        <p ng-message="duplicateGroup" translate-context="Error" translate>A group with this name already exists.</p>
+        <p ng-message="validLabel">
+            <span translate-context="Error" translate>Invalid name. Forbidden char. ex:</span>
+            &#60;&#62;
+        </p>
+    </div>
+</div>

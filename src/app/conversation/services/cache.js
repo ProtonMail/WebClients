@@ -22,7 +22,8 @@ function cache(
     networkActivityTracker,
     tools,
     labelsModel,
-    cachePages
+    cachePages,
+    recipientsFormator
 ) {
     const api = {};
     let messagesCached = []; // In this array we store the messages cached
@@ -395,10 +396,9 @@ function cache(
                 refreshStateLimit(data);
 
                 _.each(Messages, (message) => {
-                    const { ToList = [], CCList = [], BCCList = [] } = message;
                     message.loaded = true;
                     message.Senders = [message.Sender];
-                    message.Recipients = _.uniq(ToList.concat(CCList, BCCList));
+                    message.Recipients = recipientsFormator.toList(message);
                 });
 
                 storeMessages(Messages);

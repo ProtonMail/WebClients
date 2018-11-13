@@ -1,5 +1,13 @@
-<div id="sidebarLabels" ng-scrollbars ng-scrollbars-config="::scrollbarConfig" ng-scrollbars-update="updateScrollbar">
+<div
+    id="sidebarLabels"
+    class="sidebarLabels-container"
+    ng-scrollbars ng-scrollbars-config="::scrollbarConfig"
+    ng-scrollbars-update="updateScrollbar">
     <div class="labels">
         <menu-label class="sidebarApp-menu"></menu-label>
+        <manage-contact-group-link
+            data-mode="create"
+            class="sidebarLabels-manageGroup"></manage-contact-group-link>
+
     </div>
 </div>

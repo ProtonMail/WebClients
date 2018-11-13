@@ -19,12 +19,15 @@ function postMessage(
     networkActivityTracker,
     AttachmentLoader,
     attachmentModel,
-    embeddedUtils
+    embeddedUtils,
+    recipientsFormator
 ) {
     const I18N = {
         SAVE_MESSAGE_SUCCESS: gettextCatalog.getString('Message saved', null, 'Record message')
     };
     const { dispatcher } = dispatchers(['actionMessage', 'composer.update']);
+    const notify = notification;
+
     const dispatchMessageAction = (message) => dispatcher.actionMessage('update', message);
     const dispatchComposerUpdate = (type, data = {}) => dispatcher['composer.update'](type, data);
 
@@ -142,6 +145,12 @@ function postMessage(
             Address
         };
 
+        const { ToList, CCList, BCCList } = await recipientsFormator.format(parameters.Message, message);
+
+        parameters.Message.ToList = ToList;
+        parameters.Message.CCList = CCList;
+        parameters.Message.BCCList = BCCList;
+
         const [{ PublicKey } = {}] = message.From.Keys || [];
 
         parameters.AttachmentKeyPackets = await message.encryptAttachmentKeyPackets(PublicKey);
@@ -153,7 +162,7 @@ function postMessage(
         return parameters;
     };
 
-    const saveDraft = async (localMessage, { actionType, parameters, notification: showNotification }) => {
+    const saveDraft = async (localMessage, { actionType, parameters, notification }) => {
         try {
             const { Message: remoteMessage } = await messageRequest.draft(parameters, localMessage, actionType);
 
@@ -193,8 +202,9 @@ function postMessage(
             localMessage.NumEmbedded = localMessage.countEmbedded();
             localMessage.AddressID = remoteMessage.AddressID;
 
-            remoteMessage.Senders = [remoteMessage.Sender]; // The back-end doesn't return Senders so need a trick
-            remoteMessage.Recipients = _.uniq(remoteMessage.ToList.concat(remoteMessage.CCList, remoteMessage.BCCList)); // The back-end doesn't return Recipients
+            // The back-end doesn't return these keys
+            remoteMessage.Senders = [remoteMessage.Sender];
+            remoteMessage.Recipients = recipientsFormator.toList(remoteMessage);
 
             // Generate conversation event
             const firstConversation = {
@@ -204,7 +214,13 @@ function postMessage(
             };
 
             // Update draft in message list
-            const events = [{ Action: actionType, ID: remoteMessage.ID, Message: remoteMessage }];
+            const events = [
+                {
+                    Action: actionType,
+                    ID: remoteMessage.ID,
+                    Message: remoteMessage
+                }
+            ];
 
             // Generate conversation event
             events.push({
@@ -230,8 +246,8 @@ function postMessage(
             // Send events
             cache.events(events);
 
-            if (showNotification === true) {
-                notification.success(I18N.SAVE_MESSAGE_SUCCESS);
+            if (notification === true) {
+                notify.success(I18N.SAVE_MESSAGE_SUCCESS);
             }
 
             localMessage.saving = false;
