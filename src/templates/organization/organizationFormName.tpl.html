@@ -16,8 +16,7 @@
                 required>
             <div
                 ng-messages="organizationForm.name.$error"
-                class="text-red"
-                 ng-if="organizationForm.name.$touched || organizationForm.$submitted">
+                class="text-red">
                 <p ng-message="required" translate-context="Error" translate>Field required</p>
                 <p ng-message="maxlength" translate-context="Error" translate>Name exceeds maximum length</p>
             </div>
