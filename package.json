@@ -31,7 +31,7 @@
     "css-loader": "^1.0.0",
     "dedent": "^0.7.0",
     "del-cli": "^1.1.0",
-    "eslint": "^5.6.0",
+    "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.12.0",
     "execa": "^1.0.0",
@@ -144,7 +144,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "./tasks/checkDependencies.js",
-    "lint": "./tasks/lint.js",
+    "lint": "eslint src/app src/helpers --ext .js --quiet --cache",
     "e2e": "./tasks/lazyInstallVendor e2e && cypress run",
     "vendor": "cross-env NODE_ENV=dev tasks/buildVendor.js",
     "pretest": "./tasks/lazyInstallVendor test && del ./build && npm run vendor && cross-env NODE_ENV=test npm run config",
