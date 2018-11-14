@@ -86,8 +86,3 @@ body.appConfigBody-is-mobile .headerSecuredMobile-container { height: 70px }
         pointer-events: none
     }
 }
-@media screen and (max-width: $tablet-landscape) {
-    .headerSecured-container {
-        z-index: 100; /* underlay composer */
-    }
-}
