@@ -1,7 +1,35 @@
 <div class="contactPhotoRow-container">
-    <img class="contactPhotoRow-image" alt="Photo" ng-src="{{ uri }}" data-action="edit">
-    <i class="fa fa-ban fa-3x contactPhotoRow-icon" pt-tooltip-translate="Image blocked" pt-tooltip-translate-context="Contact photo icon"></i>
-    <button class="contactPhotoRow-load-button pm_button" data-action="load" type="button" pt-tooltip-translate="Load remote image" pt-tooltip-translate-context="Contact photo action" translate-context="Action" translate>Load</button>
-    <button class="contactPhotoRow-edit-button pm_button" data-action="edit" type="button" pt-tooltip-translate="Edit image" pt-tooltip-translate-context="Contact photo action" translate-context="Action" translate>Edit</button>
-    <button class="contactPhotoRow-clear-button pm_button" data-action="clear" type="button" pt-tooltip-translate="Clear image" pt-tooltip-translate-context="Contact photo action" translate-context="Action" translate>Clear</button>
+    <img
+        class="contactPhotoRow-image"
+        alt="Photo"
+        ng-src="{{ uri }}"
+        data-action="edit">
+    <i
+        class="fa fa-ban fa-3x contactPhotoRow-icon"
+        pt-tooltip-translate="Image blocked"
+        pt-tooltip-translate-context="Contact photo icon"></i>
+
+    <nav class="contactPhotoRow-nav">
+        <button
+            class="contactPhotoRow-button-load pm_button"
+            data-action="load"
+            type="button"
+            pt-tooltip-translate="Load remote image"
+            pt-tooltip-translate-context="Contact photo action" translate-context="Action"
+            translate>Load</button>
+        <button
+            class="contactPhotoRow-button-edit pm_button"
+            data-action="edit"
+            type="button"
+            pt-tooltip-translate="Edit image"
+            pt-tooltip-translate-context="Contact photo action" translate-context="Action"
+            translate>Edit</button>
+        <button
+            class="contactPhotoRow-button-clear pm_button"
+            data-action="clear"
+            type="button"
+            pt-tooltip-translate="Clear image"
+            pt-tooltip-translate-context="Contact photo action" translate-context="Action"
+            translate>Clear</button>
+    </nav>
 </div>

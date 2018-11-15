@@ -1,5 +1,6 @@
 .contactPhotoRow-container {
     display: flex;
+    justify-content: space-between;
     position: relative;
 }
 
@@ -10,11 +11,9 @@
     align-self: baseline;
 }
 
-.contactPhotoRow-image,
-.contactPhotoRow-edit-button,
-.contactPhotoRow-load-button,
-.contactPhotoRow-clear-button {
+.contactPhotoRow-image {
     margin-right: 10px;
+    float: left;
 }
 
 .contactPhotoRow-icon {
@@ -28,6 +27,20 @@
     left: 0;
 }
 
-.contactPhotoRow-hide-clear-button .contactPhotoRow-clear-button { display: none }
-.contactPhotoRow-container:not(.contactPhotoRow-image-blocked) .contactPhotoRow-load-button { display: none }
+.contactPhotoRow-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    align-content:flex-start;
+    margin-right: .5rem;
+    margin-left: auto;
+}
+
+[class*="contactPhotoRow-button"] {
+    margin-left: .5em;
+    margin-top: .5em
+}
+
+.contactPhotoRow-hide-clear-button .contactPhotoRow-button-clear,
+.contactPhotoRow-container:not(.contactPhotoRow-image-blocked) .contactPhotoRow-button-load,
 .contactPhotoRow-container:not(.contactPhotoRow-image-blocked) .contactPhotoRow-icon { display: none }
