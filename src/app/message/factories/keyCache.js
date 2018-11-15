@@ -3,7 +3,7 @@ import { RECIPIENT_TYPE, TIME } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
 const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID } = API_CUSTOM_ERROR_CODES;
-
+const { TYPE_NO_RECEIVE, TYPE_INTERNAL } = RECIPIENT_TYPE;
 const TIMEOUT = 10 * TIME.MINUTE;
 
 /* @ngInject */
@@ -24,7 +24,7 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
 
                 if (EMAIL_ERRORS.includes(data.Code)) {
                     return {
-                        RecipientType: RECIPIENT_TYPE.TYPE_NO_RECEIVE,
+                        RecipientType: TYPE_NO_RECEIVE,
                         MIMEType: null,
                         Keys: []
                     };
@@ -57,7 +57,7 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
 
         // Do not save in the cache: we use the addressesModel cache instead.
         return {
-            RecipientType: Receive ? RECIPIENT_TYPE.TYPE_INTERNAL : RECIPIENT_TYPE.TYPE_NO_RECEIVE,
+            RecipientType: Receive ? TYPE_INTERNAL : TYPE_NO_RECEIVE,
             MIMEType: mailSettingsModel.get('ReceiveMIMEType'),
             Keys
         };
@@ -127,7 +127,7 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
      */
     const isInvalid = async (email = '') => {
         const result = await getKeysPerEmail(email);
-        return result.RecipientType === RECIPIENT_TYPE.TYPE_NO_RECEIVE;
+        return result.RecipientType === TYPE_NO_RECEIVE;
     };
 
     /**
