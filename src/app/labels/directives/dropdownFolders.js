@@ -2,7 +2,7 @@ import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
 function dropdownFolders(AppModel, labelsModel, dispatchers, actionConversation, labelModal, gettextCatalog) {
-    const { dispatcher } = dispatchers(['closeDropdown', 'messageActions']);
+    const { dispatcher } = dispatchers(['dropdown', 'messageActions']);
     const mailboxes = [
         {
             Name: gettextCatalog.getString('Inbox', null, 'Label'),
@@ -30,7 +30,7 @@ function dropdownFolders(AppModel, labelsModel, dispatchers, actionConversation,
         }
     ];
 
-    const close = () => dispatcher.closeDropdown();
+    const close = () => dispatcher.dropdown('close');
 
     function moveTo(elements = [], type = '', labelID = '') {
         const elementIDs = elements.map(({ ID }) => ID);

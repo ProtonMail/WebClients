@@ -44,6 +44,7 @@ function dropdown($document, dispatchers) {
             }
 
             element.on('click', click);
+
             on('dropdown', (e, { type }) => {
                 type === 'close' && hideDropdown();
             });

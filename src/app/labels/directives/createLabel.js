@@ -1,13 +1,13 @@
 /* @ngInject */
 function createLabel(dispatchers, labelModal) {
-    const { dispatcher } = dispatchers(['closeDropdown', 'createLabel', 'messageActions']);
+    const { dispatcher } = dispatchers(['dropdown', 'createLabel', 'messageActions']);
     const dispatch = (message, label = {}) => {
         if (message) {
             dispatcher.messageActions('label', {
                 messages: [message],
                 labels: [{ ...label, Selected: true }]
             });
-            dispatcher.closeDropdown();
+            dispatcher.dropdown('close');
             return;
         }
 

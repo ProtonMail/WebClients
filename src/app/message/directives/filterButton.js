@@ -19,7 +19,7 @@ function filterButton(dispatchers, filterModal, lazyLoader) {
         link(scope, el) {
             scope.model = {};
             const $btn = el[0].querySelector('.filterButton-btn-next');
-            const { dispatcher } = dispatchers(['closeDropdown']);
+            const { dispatcher } = dispatchers(['dropdown']);
 
             function initialize() {
                 scope.model.subject = false;
@@ -89,7 +89,7 @@ function filterButton(dispatchers, filterModal, lazyLoader) {
                     });
 
                     initialize();
-                    dispatcher.closeDropdown();
+                    dispatcher.dropdown('close');
                 });
             };
 
