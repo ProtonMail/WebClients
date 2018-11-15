@@ -261,7 +261,6 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
      * @return {Promise}
      */
     function update(contact) {
-        debugger;
         return contactEncryption.encrypt([contact]).then((contacts) => {
             return $http
                 .put(requestURL(contact.ID), contacts[0])
