@@ -32,8 +32,8 @@ function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notificati
             message: '='
         },
         link(scope, element) {
-            const { dispatcher, on, unsubscribe } = dispatchers(['closeDropdown']);
-            const close = () => dispatcher.closeDropdown();
+            const { dispatcher, on, unsubscribe } = dispatchers(['dropdown']);
+            const close = () => dispatcher.dropdown('close');
             const dropdown = angular
                 .element(element)
                 .closest('.pm_buttons')
