@@ -231,7 +231,13 @@ function validateMessage(
 
     async function checkKeys(message) {
         const emails = normalizeRecipients(message);
-        const invalidEmails = await Promise.all(emails.filter(keyCache.isInvalid));
+        const conditions = await Promise.all(emails.map(keyCache.isInvalid));
+        const invalidEmails = conditions.reduce((acc, isInvalid, index) => {
+            if (isInvalid) {
+                acc.push(emails[index]);
+            }
+            return acc;
+        }, []);
 
         if (invalidEmails.length) {
             throw new Error(I18N.invalidEmails(invalidEmails.join(', ')));
