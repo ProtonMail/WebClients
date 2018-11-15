@@ -24,7 +24,12 @@ module.exports = (config) => {
                     ...require('../webpack.tasks/assets.loader')
                 ]
             },
-            plugins: require('../webpack.tasks/plugins')
+            plugins: require('../webpack.tasks/plugins'),
+            resolve: {
+                alias: {
+                    iconv: 'iconv-lite'
+                }
+            }
         },
 
         // list of files to exclude

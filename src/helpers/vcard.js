@@ -6,6 +6,7 @@ import { BOOL_FIELDS } from './vCardFields';
 
 const ESCAPE_REGEX = /\\|,|;/gi;
 const UNESCAPE_REGEX = /\\\\|\\,|\\;/gi;
+const UNESCAPE_EXTENDED_REGEX = /\\\\|\\:|\\,|\\;/gi;
 const BACKSLASH_SEMICOLON_REGEX = /\\;/gi;
 const ANIMALS = '🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼';
 const SPECIAL_CHARACTER_REGEX = /🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼/gi;
@@ -49,7 +50,20 @@ export const uniqGroups = (list) => {
     );
 };
 
-export const unescapeValue = (value = '') => value.replace(UNESCAPE_REGEX, (val) => val.substr(1));
+/**
+ * Unescape an input.
+ * If extended is a Boolean === true, we can unescape : too.
+ * ex: for a base64
+ * @param  {String} value
+ * @param  {Boolean} extended
+ * @return {String}
+ */
+export const unescapeValue = (value = '', extended) => {
+    // If we do map(unescapeValue) we still want the default unescape
+    const reg = extended !== true ? UNESCAPE_REGEX : UNESCAPE_EXTENDED_REGEX;
+    return value.replace(reg, (val) => val.substr(1));
+};
+
 /**
  * Property Value Escaping
  * COMMA character in a value MUST be escaped with a BACKSLASH character.
