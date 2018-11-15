@@ -112,7 +112,7 @@ msgctxt "Action"
 msgid "Add Address"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:100
+#: ./src/templates/directives/contact/contactItem.tpl.html:101
 msgctxt "Action"
 msgid "Add Entry"
 msgstr ""
@@ -376,7 +376,7 @@ msgstr ""
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:41
 #: ./src/templates/contact/contactActionHeader.tpl.html:22
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:28
-#: ./src/templates/contact/contactGroupModal.tpl.html:127
+#: ./src/templates/contact/contactGroupModal.tpl.html:108
 #: ./src/templates/contact/contactMergerModal.tpl.html:26
 #: ./src/templates/contact/contactModal.tpl.html:17
 #: ./src/templates/contact/contactPhotoModal.tpl.html:13
@@ -467,7 +467,7 @@ msgctxt "Action"
 msgid "Change mailbox password"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:145
+#: ./src/templates/directives/contact/contactItem.tpl.html:149
 msgctxt "Action"
 msgid "Change order"
 msgstr ""
@@ -487,7 +487,7 @@ msgctxt "Action"
 msgid "Change password"
 msgstr ""
 
-#: ./src/templates/contact/contactPhotoRow.tpl.html:6
+#: ./src/templates/contact/contactPhotoRow.tpl.html:27
 #: ./src/templates/directives/core/bugModalView.tpl.html:113
 msgctxt "Action"
 msgid "Clear"
@@ -688,11 +688,6 @@ msgctxt "Action"
 msgid "Create label"
 msgstr ""
 
-#: ./src/templates/contact/contactGroupModal.tpl.html:74
-msgctxt "Action"
-msgid "Create new contact"
-msgstr ""
-
 #. Tooltip
 #: ./src/templates/message/filterButton.tpl.html:2
 #: ./src/templates/message/filterButton.tpl.html:4
@@ -830,7 +825,7 @@ msgstr ""
 #: ./src/app/labels/directives/actionLabelBtn.js:15
 #: ./src/app/members/directives/memberEditBtn.js:4
 #: ./src/templates/contact/contactActionHeader.tpl.html:15
-#: ./src/templates/contact/contactPhotoRow.tpl.html:5
+#: ./src/templates/contact/contactPhotoRow.tpl.html:20
 #: ./src/templates/dashboard/addonRow.tpl.html:8
 #: ./src/templates/views/labels.tpl.html:58
 #: ./src/templates/vpn/openVpnSection.tpl.html:29
@@ -1112,7 +1107,7 @@ msgctxt "Action"
 msgid "Learn more"
 msgstr ""
 
-#: ./src/templates/contact/contactPhotoRow.tpl.html:4
+#: ./src/templates/contact/contactPhotoRow.tpl.html:13
 #: ./src/templates/message/displayContentBtn.tpl.html:10
 msgctxt "Action"
 msgid "Load"
@@ -1453,14 +1448,14 @@ msgid "Reload ProtonMail"
 msgstr ""
 
 #: ./src/app/members/directives/memberEditBtn.js:7
-#: ./src/templates/contact/contactGroupModal.tpl.html:110
+#: ./src/templates/contact/contactGroupModal.tpl.html:91
 #: ./src/templates/contact/contactSelectorForm.tpl.html:52
 #: ./src/templates/contact/contactSelectorForm.tpl.html:58
 msgctxt "Action"
 msgid "Remove"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:91
+#: ./src/templates/directives/contact/contactItem.tpl.html:92
 msgctxt "Action"
 msgid "Remove Entry"
 msgstr ""
@@ -1564,7 +1559,7 @@ msgstr ""
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:48
 #: ./src/templates/contact/contactActionHeader.tpl.html:30
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:41
-#: ./src/templates/contact/contactGroupModal.tpl.html:134
+#: ./src/templates/contact/contactGroupModal.tpl.html:115
 #: ./src/templates/contact/contactLoaderModal.tpl.html:116
 #: ./src/templates/contact/contactModal.tpl.html:23
 #: ./src/templates/contact/contactPhotoModal.tpl.html:19
@@ -1579,7 +1574,7 @@ msgstr ""
 #: ./src/templates/modals/changePassword.tpl.html:40
 #: ./src/templates/modals/label.tpl.html:76
 #: ./src/templates/modals/member.tpl.html:111
-#: ./src/templates/organization/organizationFormName.tpl.html:26
+#: ./src/templates/organization/organizationFormName.tpl.html:25
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:45
 #: ./src/templates/views/appearance.tpl.html:144
@@ -1587,7 +1582,7 @@ msgctxt "Action"
 msgid "Save"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:146
+#: ./src/templates/directives/contact/contactItem.tpl.html:150
 msgctxt "Action"
 msgid "Save order"
 msgstr ""
@@ -1631,7 +1626,7 @@ msgctxt "Action"
 msgid "Send"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:30
+#: ./src/app/composer/services/validateMessage.js:31
 #: ./src/templates/modals/expirationModal.tpl.html:55
 msgctxt "Action"
 msgid "Send anyway"
@@ -2743,22 +2738,22 @@ msgctxt "Contact modal title"
 msgid "Edit contact"
 msgstr ""
 
-#: ./src/templates/contact/contactPhotoRow.tpl.html:6
+#: ./src/templates/contact/contactPhotoRow.tpl.html:27
 msgctxt "Contact photo action"
 msgid "Clear image"
 msgstr ""
 
-#: ./src/templates/contact/contactPhotoRow.tpl.html:5
+#: ./src/templates/contact/contactPhotoRow.tpl.html:20
 msgctxt "Contact photo action"
 msgid "Edit image"
 msgstr ""
 
-#: ./src/templates/contact/contactPhotoRow.tpl.html:4
+#: ./src/templates/contact/contactPhotoRow.tpl.html:13
 msgctxt "Contact photo action"
 msgid "Load remote image"
 msgstr ""
 
-#: ./src/templates/contact/contactPhotoRow.tpl.html:3
+#: ./src/templates/contact/contactPhotoRow.tpl.html:7
 msgctxt "Contact photo icon"
 msgid "Image blocked"
 msgstr ""
@@ -3442,7 +3437,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:66
+#: ./src/app/composer/services/validateMessage.js:68
 msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr ""
@@ -3550,7 +3545,7 @@ msgstr ""
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:16
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:15
 #: ./src/templates/modals/setupOrganization.tpl.html:24
-#: ./src/templates/organization/organizationFormName.tpl.html:21
+#: ./src/templates/organization/organizationFormName.tpl.html:20
 #: ./src/templates/payment/giftCodeInput.tpl.html:13
 #: ./src/templates/squire/addFile.tpl.html:22
 #: ./src/templates/squire/addLink.tpl.html:29
@@ -3610,18 +3605,13 @@ msgctxt "Error"
 msgid "Invalid coupon code"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:132
+#: ./src/templates/directives/contact/contactItem.tpl.html:136
 #: ./src/templates/directives/core/bugModalView.tpl.html:74
 #: ./src/templates/filter/filterAddressModal.tpl.html:28
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:30
 #: ./src/templates/user/signupUserForm.tpl.html:54
 msgctxt "Error"
 msgid "Invalid email"
-msgstr ""
-
-#: ./src/app/composer/services/validateMessage.js:37
-msgctxt "Error"
-msgid "Invalid email(s): {{total}}"
 msgstr ""
 
 #: ./src/app/composer/directives/composerExpiration.js:10
@@ -3694,7 +3684,7 @@ msgid "Message passwords do not match."
 msgstr ""
 
 #: ./src/templates/modals/setupOrganization.tpl.html:25
-#: ./src/templates/organization/organizationFormName.tpl.html:22
+#: ./src/templates/organization/organizationFormName.tpl.html:21
 msgctxt "Error"
 msgid "Name exceeds maximum length"
 msgstr ""
@@ -3710,9 +3700,14 @@ msgctxt "Error"
 msgid "No Internet connection found."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:60
+#: ./src/app/composer/services/validateMessage.js:62
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
+msgstr ""
+
+#: ./src/templates/contact/autocompleteContacts.tpl.html:19
+msgctxt "Error"
+msgid "No email address found."
 msgstr ""
 
 #: ./src/app/contact/factories/contactImporter.js:13
@@ -3772,7 +3767,7 @@ msgctxt "Error"
 msgid "Please enter a password for this email."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:44
+#: ./src/app/composer/services/validateMessage.js:46
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr ""
@@ -3820,6 +3815,11 @@ msgstr ""
 #: ./src/templates/user/signupCreationProcess.tpl.html:12
 msgctxt "Error"
 msgid "Sign up failed"
+msgstr ""
+
+#: ./src/app/composer/services/validateMessage.js:40
+msgctxt "Error"
+msgid "Some email address are invalid"
 msgstr ""
 
 #: ./src/app/user/services/signupUserProcess.js:25
@@ -3886,17 +3886,22 @@ msgctxt "Error"
 msgid "The email body is not a valid MIME message."
 msgstr ""
 
+#: ./src/app/composer/services/validateMessage.js:38
+msgctxt "Error"
+msgid "The following addresses are not valid: {{emails}}"
+msgstr ""
+
 #: ./src/app/composer/directives/composerExpiration.js:9
 msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:39
+#: ./src/app/composer/services/validateMessage.js:41
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:45
+#: ./src/app/composer/services/validateMessage.js:47
 msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
 msgstr ""
@@ -3958,7 +3963,7 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:31
+#: ./src/app/composer/services/validateMessage.js:32
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr ""
@@ -3991,7 +3996,7 @@ msgctxt "Error"
 msgid "You are using an outdated version of ProtonMail, please refresh the page."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:59
+#: ./src/app/composer/services/validateMessage.js:61
 msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr ""
@@ -4038,7 +4043,7 @@ msgctxt "Error"
 msgid "You have used all users in your plan. Please upgrade your plan to add a new user."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:51
+#: ./src/app/composer/services/validateMessage.js:53
 msgctxt "Error"
 msgid "You have {{total}} recipients. The maximum number is {{limit}}."
 msgstr ""
@@ -4132,12 +4137,12 @@ msgctxt "Error input"
 msgid "Please enter a valid time."
 msgstr ""
 
-#: ./src/app/labels/modals/labelModal.js:21
+#: ./src/app/labels/modals/labelModal.js:12
 msgctxt "Error label modal"
 msgid "Invalid folder name"
 msgstr ""
 
-#: ./src/app/labels/modals/labelModal.js:22
+#: ./src/app/labels/modals/labelModal.js:13
 msgctxt "Error label modal"
 msgid "Invalid label name"
 msgstr ""
@@ -5035,7 +5040,7 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:135
+#: ./src/app/composer/controllers/composeMessage.js:138
 #: ./src/app/routes.js:445
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
@@ -5252,7 +5257,7 @@ msgctxt "Info"
 msgid "Drop file or click here"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:189
+#: ./src/app/composer/controllers/composeMessage.js:192
 msgctxt "Info"
 msgid "Email was already sent"
 msgstr ""
@@ -5499,7 +5504,7 @@ msgctxt "Info"
 msgid "Maximized"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:598
+#: ./src/app/composer/controllers/composeMessage.js:601
 msgctxt "Info"
 msgid "Message discarded"
 msgstr ""
@@ -5546,7 +5551,7 @@ msgctxt "Info"
 msgid "No logs yet"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:58
+#: ./src/app/composer/services/validateMessage.js:60
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr ""
@@ -5678,7 +5683,7 @@ msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:581
+#: ./src/app/composer/controllers/composeMessage.js:584
 msgctxt "Info"
 msgid "Permanently delete this draft?"
 msgstr ""
@@ -6007,11 +6012,6 @@ msgstr ""
 #: ./src/app/settings/controllers/appearance.js:41
 msgctxt "Info"
 msgid "Theme saved"
-msgstr ""
-
-#: ./src/templates/contact/contactGroupModal.tpl.html:69
-msgctxt "Info"
-msgid "There is no matching name or address in your Contacts. Would you like to create a new contact and add this to the contact group ?"
 msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:182
@@ -6464,7 +6464,7 @@ msgid ""
 "                        or organization currently has an overdue invoice. Please pay all unpaid invoices."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:71
+#: ./src/app/composer/services/validateMessage.js:73
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
 msgstr ""
@@ -6845,7 +6845,7 @@ msgstr ""
 
 #: ./src/templates/contact/contactGroupModal.tpl.html:52
 msgctxt "Label"
-msgid "Add Contact"
+msgid "Add email address"
 msgstr ""
 
 #: ./src/templates/contact/contactPhotoForm.tpl.html:4
@@ -7513,22 +7513,22 @@ msgctxt "Label information"
 msgid "You can drag and drop to rearrange the order of Labels/Folders."
 msgstr ""
 
-#: ./src/app/labels/modals/labelModal.js:19
+#: ./src/app/labels/modals/labelModal.js:10
 msgctxt "Label modal"
 msgid "Folder created"
 msgstr ""
 
-#: ./src/app/labels/modals/labelModal.js:17
+#: ./src/app/labels/modals/labelModal.js:8
 msgctxt "Label modal"
 msgid "Folder updated"
 msgstr ""
 
-#: ./src/app/labels/modals/labelModal.js:20
+#: ./src/app/labels/modals/labelModal.js:11
 msgctxt "Label modal"
 msgid "Label created"
 msgstr ""
 
-#: ./src/app/labels/modals/labelModal.js:18
+#: ./src/app/labels/modals/labelModal.js:9
 msgctxt "Label modal"
 msgid "Label updated"
 msgstr ""
@@ -8081,7 +8081,7 @@ msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:333
+#: ./src/app/composer/controllers/composeMessage.js:336
 msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
 msgstr ""
@@ -9258,7 +9258,7 @@ msgstr ""
 
 #. table heading
 #. table heading for the domains page table listing of addresses
-#: ./src/templates/contact/contactGroupModal.tpl.html:97
+#: ./src/templates/contact/contactGroupModal.tpl.html:78
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:6
 #: ./src/templates/modals/domain/address.tpl.html:31
 #: ./src/templates/modals/generate.tpl.html:51
@@ -9584,11 +9584,6 @@ msgctxt "Title"
 msgid "Contact List"
 msgstr ""
 
-#: ./src/templates/contact/contactGroupModal.tpl.html:64
-msgctxt "Title"
-msgid "Contact doesn't exist"
-msgstr ""
-
 #: ./src/templates/views/keysView.tpl.html:19
 msgctxt "Title"
 msgid "Contact encryption keys"
@@ -9632,12 +9627,12 @@ msgctxt "Title"
 msgid "Create Contact"
 msgstr ""
 
-#: ./src/app/labels/modals/labelModal.js:15
+#: ./src/app/labels/modals/labelModal.js:6
 msgctxt "Title"
 msgid "Create new folder"
 msgstr ""
 
-#: ./src/app/labels/modals/labelModal.js:16
+#: ./src/app/labels/modals/labelModal.js:7
 msgctxt "Title"
 msgid "Create new label"
 msgstr ""
@@ -9739,7 +9734,7 @@ msgctxt "Title"
 msgid "Decrypt message"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:580
+#: ./src/app/composer/controllers/composeMessage.js:583
 #: ./src/app/contact/factories/contactEditor.js:338
 #: ./src/app/elements/services/removeElement.js:15
 msgctxt "Title"
@@ -9886,12 +9881,12 @@ msgctxt "Title"
 msgid "Drafts"
 msgstr ""
 
-#: ./src/app/labels/modals/labelModal.js:13
+#: ./src/app/labels/modals/labelModal.js:4
 msgctxt "Title"
 msgid "Edit folder"
 msgstr ""
 
-#: ./src/app/labels/modals/labelModal.js:14
+#: ./src/app/labels/modals/labelModal.js:5
 msgctxt "Title"
 msgid "Edit label"
 msgstr ""
@@ -10206,7 +10201,7 @@ msgctxt "Title"
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:65
+#: ./src/app/composer/services/validateMessage.js:67
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:68
 #: ./src/app/ui/factories/pageTitlesModel.js:44
 msgctxt "Title"
@@ -10309,7 +10304,7 @@ msgstr ""
 
 #. table heading
 #. table heading for the domains page table listing of addresses
-#: ./src/templates/contact/contactGroupModal.tpl.html:92
+#: ./src/templates/contact/contactGroupModal.tpl.html:73
 #: ./src/templates/contact/contactList.tpl.html:14
 #: ./src/templates/filter/modal.tpl.html:20
 #: ./src/templates/views/domains.tpl.html:195
@@ -10334,7 +10329,7 @@ msgctxt "Title"
 msgid "New Address Key ({{ email }})"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:464
+#: ./src/app/composer/controllers/composeMessage.js:467
 msgctxt "Title"
 msgid "New message"
 msgstr ""
@@ -10354,7 +10349,7 @@ msgctxt "Title"
 msgid "No messages"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:57
+#: ./src/app/composer/services/validateMessage.js:59
 msgctxt "Title"
 msgid "No subject"
 msgstr ""
@@ -11227,7 +11222,7 @@ msgctxt "Tooltip"
 msgid "Confirm mailbox password"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:85
+#: ./src/templates/directives/contact/contactItem.tpl.html:86
 msgctxt "Tooltip"
 msgid "Copy address"
 msgstr ""
