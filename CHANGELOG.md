@@ -1,3 +1,9 @@
+# [3.14.32] - 2018-11-15
+
+## Fixed
+- Adding new label from dropdown list doesn't refresh the dropdown list
+- Invalid password field height
+
 # [3.14.31] - 2018-11-15
 
 ## Added
