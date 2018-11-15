@@ -151,10 +151,24 @@
 
 body.appConfigBody-is-mobile {
     [class*='signUpProcess-step-'],
-    [class*='signUpProcess-step-'] .pm_panel { margin: 0 }
+    [class*='signUpProcess-step-'] .pm_panel { margin: 0; padding: 1em !important; max-width: none; }
     [class*='signUpProcess-step-'] [data-step]::before { display: none }
     [class*='signUpProcess-step-'] .wrapper { padding: 0 }
-    [class*='signUpProcess-step-'] .wrapper label { margin-top: 3rem }
+    [class*='signUpProcess-step-'] .wrapper label { margin-top: 1rem }
+    [class*='signUpProcess-step-'] .wrapper .customMaskInput-mask { margin-top: 0; }
+    [class*='signUpProcess-step-'] .wrapper .signup-radio-label {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -1em;
+            left: -1em;
+            right: -1em;
+            bottom: -1em;
+        }
+    }
     .signUpProcess-btn-create {
         width: 100%;
         height: 4rem;

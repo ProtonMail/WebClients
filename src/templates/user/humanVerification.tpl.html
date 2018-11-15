@@ -11,25 +11,27 @@
             'humanVerification-show-sms': showSms,
             'humanVerification-show-donation': showPayment,
         }">
-        <label class="titleLabel" for="password" data-step="5">
+        <span class="titleLabel label" for="password" data-step="5">
             <span translate translate-context="Title" translate-comment="Antispam section of account creation">Are you human?</span>
-        </label>
+        </span>
         <p class="help" translate-context="Info" translate>To fight spam, please verify you are human.</p>
         <p class="help humanVerification-help-privacy" translate-context="Info" translate>Your email or phone number will not be linked to the account created. It is only used during the signup process. A hash will be saved to prevent abuse of the ProtonMail systems.</p>
 
         <div class="humanVerification-block-captcha">
-            <label class="signup-radio-label humanVerification-label-captcha">
+            <label for="id-signup-radio-captcha" class="signup-radio-label humanVerification-label-captcha">
                 <custom-radio
                     data-custom-ng-model="verificator"
-                    data-custom-value="captcha"></custom-radio>
+                    data-custom-value="captcha"
+                    data-custom-id="id-signup-radio-captcha"></custom-radio>
                 <strong class="signup-radio-label-text">CAPTCHA</strong>
             </label>
         </div>
         <div class="humanVerification-block-email">
-            <label class="signup-radio-label">
+            <label for="id-signup-radio-email" class="signup-radio-label">
                 <custom-radio
                     data-custom-ng-model="verificator"
-                    data-custom-value="email"></custom-radio>
+                    data-custom-value="email"
+                    data-custom-id="id-signup-radio-email"></custom-radio>
                 <strong class="signup-radio-label-text" translate translate-context="Title">Email</strong>
             </label>
         </div>
@@ -37,18 +39,20 @@
 
             <span class="pull-right humanVerification-sms-details">(<a href="#" ng-click="whySMS = !whySMS"  translate-context="Link" translate>Why is this required?</a>)</span>
 
-            <label class="signup-radio-label">
+            <label for="id-signup-radio-sms" class="signup-radio-label">
                 <custom-radio
                     data-custom-ng-model="verificator"
-                    data-custom-value="sms"></custom-radio>
+                    data-custom-value="sms"
+                    data-custom-id="id-signup-radio-sms"></custom-radio>
                 <strong class="signup-radio-label-text" translate translate-context="Title">SMS</strong>
             </label>
         </div>
         <div class="humanVerification-block-donation">
-            <label class="signup-radio-label">
+            <label for="id-signup-radio-donate" class="signup-radio-label">
                 <custom-radio
                     data-custom-ng-model="verificator"
-                    data-custom-value="donation"></custom-radio>
+                    data-custom-value="donation"
+                    data-custom-id="id-signup-radio-donate"></custom-radio>
                 <strong class="signup-radio-label-text" translate translate-context="Title">Donate</strong>
             </label>
         </div>
