@@ -1,4 +1,4 @@
-<form class="autocompleteContacts-container" novalidate>
+<form class="autocompleteContacts-container ng-message-wrapper" novalidate>
 
     <div class="autocompleteContacts-field autocomplete-container">
         <input
@@ -13,4 +13,9 @@
 
     <ul class="autocompleteContacts-autocomplete"></ul>
 
+    <div
+        role="alert"
+        class="text-red labelNameInput-errors">
+        <p ng-if="email.doesNotExist" translate-context="Error" translate>No email address found.</p>
+    </div>
 </form>

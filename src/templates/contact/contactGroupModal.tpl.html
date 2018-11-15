@@ -52,32 +52,13 @@
                     <label
                         class="col-1-4"
                         translate
-                        translate-context="Label">Add Contact</label>
+                        translate-context="Label">Add email address</label>
 
                     <div class="col-3-4 contactGroupModal-addContact">
                         <autocomplete-contacts
                             class="contactGroupModal-autocomplete"
+                            data-form="groupForm"
                             data-list="ctrl.model.contacts"></autocomplete-contacts>
-
-                        <div class="contactGroupModal-create">
-                            <header class="contactGroupModal-create-header">
-                                <h3
-                                    class="contactGroupModal-create-title"
-                                    translate-context="Title"
-                                    translate>Contact doesn't exist</h3>
-                            </header>
-                            <p
-                                class="contactGroupModal-create-message text-center"
-                                translate-context="Info"
-                                translate>There is no matching name or address in your Contacts. Would you like to create a new contact and add this to the contact group ?</p>
-
-                            <button
-                                class="pm_button primary contactGroupModal-create-btn"
-                                type="button"
-                                ng-click="ctrl.createNewContact()"
-                                translate-context="Action"
-                                translate>Create new contact</button>
-                        </div>
                     </div>
                 </div>
 
