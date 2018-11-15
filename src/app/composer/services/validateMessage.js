@@ -7,7 +7,7 @@ import {
     MESSAGE_MAX_RECIPIENTS
 } from '../../constants';
 
-import { normalizeEmail } from '../../../helpers/string';
+import { normalizeRecipients, getRecipients } from '../../../helpers/message';
 
 const { PLAINTEXT } = MIME_TYPES;
 const { SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE_TYPE;
@@ -20,6 +20,7 @@ function validateMessage(
     tools,
     confirmModal,
     expirationModal,
+    keyCache,
     authentication,
     notification,
     addressWithoutKeys,
@@ -33,9 +34,10 @@ function validateMessage(
             null,
             'Error'
         ),
-        invalidEmails(total) {
-            return gettextCatalog.getString('Invalid email(s): {{total}}', { total }, 'Error');
+        invalidEmails(emails) {
+            return gettextCatalog.getString('The following addresses are not valid: {{emails}}', { emails }, 'Error');
         },
+        EMAIL_ADDRESS_INVALID: gettextCatalog.getString('Some email address are invalid', null, 'Error'),
         MAX_BODY_LENGTH: gettextCatalog.getString(
             'The maximum length of the message body is 16,000,000 characters.',
             null,
@@ -92,7 +94,10 @@ function validateMessage(
             throw new Error(I18N.STILL_UPLOADING);
         }
         cleanEmails(message);
-        const emailStats = message.ToList.concat(message.CCList, message.BCCList).reduce(
+
+        await checkKeys(message);
+
+        const emailStats = getRecipients(message).reduce(
             (acc, { Address = '' }) => {
                 acc.all.push(Address);
                 !REGEX_EMAIL.test(Address) && acc.invalid.push(Address);
@@ -173,15 +178,15 @@ function validateMessage(
     /**
      * Check if the message has the requirement if ExpirationTime is defined
      * @param  {Object} message
+     * @param {Array} emails list of email address (string)
      * @return {Promise}
      */
-    async function checkExpiration(message) {
-        const normEmails = message.emailsToString().map(normalizeEmail);
-        const sendPrefs = await sendPreferences.get(normEmails, message);
+    async function checkExpiration(message, emails = []) {
+        const sendPrefs = await sendPreferences.get(emails, message);
 
         // Filter the emails with the preferences which include this type
         const filterTypes = (types = [], shouldEncrypt = false) =>
-            normEmails.filter((email) => {
+            emails.filter((email) => {
                 const { scheme, encrypt } = sendPrefs[email];
                 return shouldEncrypt === encrypt && types.includes(scheme);
             });
@@ -224,6 +229,15 @@ function validateMessage(
         return true;
     }
 
-    return { checkSubject, validate, canWrite, checkExpiration };
+    async function checkKeys(message) {
+        const emails = normalizeRecipients(message);
+        const invalidEmails = await Promise.all(emails.filter(keyCache.isInvalid));
+
+        if (invalidEmails.length) {
+            throw new Error(I18N.invalidEmails(invalidEmails.join(', ')));
+        }
+    }
+
+    return { checkSubject, validate, canWrite, checkExpiration, checkKeys };
 }
 export default validateMessage;

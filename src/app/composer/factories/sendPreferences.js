@@ -192,7 +192,8 @@ function sendPreferences(
         email
     ) => {
         const info = {};
-        const isInternal = keyData.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
+        const { RecipientType, Warnings = [] } = keyData;
+        const isInternal = RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
         const primaryPinned = isInternal ? isPrimaryPinned(emailKeys, keyData, email) : true;
         const pmKey = isInternal ? pmcw.getKeys(keyData.Keys[0].PublicKey) : [];
         // In case the pgp packet list contains multiple keys, only the first one is taken.
@@ -206,14 +207,17 @@ function sendPreferences(
         const keyObjects = keyObjs.filter((k) => k !== null);
 
         info.publickeys = keyObjects.length && primaryPinned ? keyObjects[0] : pmKey;
+        info.warnings = Warnings;
         info.encrypt = isInternal || (encryptFlag && !!keyObjects.length);
         info.sign = isInternal || (signFlag === null ? !!globalSign : signFlag);
         info.sign = info.sign || encryptFlag;
+
         if (isInternal) {
             info.scheme = PACKAGE_TYPE.SEND_PM;
         } else {
             info.scheme = info.sign || info.encrypt ? scheme : PACKAGE_TYPE.SEND_CLEAR;
         }
+
         info.scheme = info.scheme === null ? mailSettingsModel.get('PGPScheme') : info.scheme;
 
         if (eoEnabled && !info.encrypt) {
@@ -221,6 +225,7 @@ function sendPreferences(
             info.encrypt = true;
             info.scheme = PACKAGE_TYPE.SEND_EO;
         }
+
         info.mimetype = mimetypeLogic(mimetype, defaultMimeType, info);
         info.primaryPinned = primaryPinned;
         info.isVerified = isVerified;
@@ -294,7 +299,6 @@ function sendPreferences(
         const schemeProp = _.find(schemeList, matchesGroup);
         const scheme = schemeProp ? toSchemeConstant(schemeProp.valueOf()) : null;
         const base64Keys = await reorderKeys(keyData, _.map(emailKeys, (prop) => contactKey.getBase64Value(prop)));
-
         const data = {
             encryptFlag:
                 isInternal ||

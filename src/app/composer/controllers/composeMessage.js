@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { MIME_TYPES, INBOX_AND_SENT, SENT, MAX_NUMBER_COMPOSER } from '../../constants';
+import { normalizeRecipients } from '../../../helpers/message';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -76,9 +77,11 @@ function ComposeMessageController(
 
         try {
             await validateMessage.checkSubject(message);
-            await validateMessage.checkExpiration(message);
 
             const { ToList, CCList, BCCList } = await recipientsFormator.format(message);
+            const emails = normalizeRecipients({ ToList, CCList, BCCList });
+
+            await validateMessage.checkExpiration(message, emails);
 
             message.ToList = ToList;
             message.CCList = CCList;
