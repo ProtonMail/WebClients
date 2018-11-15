@@ -14,20 +14,14 @@ function contactPhotoRow(contactPhotoModal, mailSettingsModel) {
         },
         templateUrl: require('../../../templates/contact/contactPhotoRow.tpl.html'),
         link(scope, element, attr, ngFormController) {
-            const cleanUri = (uri = '') => uri.replace(PHOTO_PLACEHOLDER_URL, '');
             const updateImage = (uri = '') => {
-                const value = uri || PHOTO_PLACEHOLDER_URL;
+                const blockImage = !scope.showImage && REGEX_URL.test(uri);
 
-                if (!scope.showImage && REGEX_URL.test(uri)) {
-                    scope.uri = PHOTO_PLACEHOLDER_URL;
-                    scope.value = cleanUri(value);
-                    element[0].classList.add(IMAGE_BLOCKED);
-                } else {
-                    scope.uri = value;
-                    scope.value = cleanUri(value);
-                }
+                scope.uri = blockImage ? PHOTO_PLACEHOLDER_URL : uri || PHOTO_PLACEHOLDER_URL;
+                scope.value = uri;
 
                 element[0].classList[uri ? 'remove' : 'add'](HIDE_CLEAR_BUTTON);
+                element[0].classList[blockImage ? 'add' : 'remove'](IMAGE_BLOCKED);
             };
 
             const actions = {
@@ -38,6 +32,7 @@ function contactPhotoRow(contactPhotoModal, mailSettingsModel) {
                             submit(uri) {
                                 contactPhotoModal.deactivate();
                                 scope.$applyAsync(() => {
+                                    scope.showImage = true;
                                     updateImage(uri);
                                     ngFormController.$setDirty();
                                 });
@@ -50,7 +45,7 @@ function contactPhotoRow(contactPhotoModal, mailSettingsModel) {
                 },
                 clear() {
                     scope.$applyAsync(() => {
-                        updateImage(PHOTO_PLACEHOLDER_URL);
+                        updateImage();
                         ngFormController.$setDirty();
                     });
                 },
