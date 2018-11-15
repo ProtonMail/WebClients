@@ -38,7 +38,7 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
      * @returns {Boolean|Object} false in case of error otherwise an openpgp key
      */
     const parseKey = (keyProperty) => {
-        const dataValue = contactDetailsModel.unescapeValue(keyProperty.valueOf().trim());
+        const dataValue = contactDetailsModel.unescapeValue(keyProperty.valueOf().trim(), true);
 
         try {
             // strip data url if needed.
@@ -66,8 +66,7 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
      * @returns {String|Boolean} false in case the key property does not contain a pgp key, a base64 encoded pgp key otherwise
      */
     const getBase64Value = (keyProperty) => {
-        const dataValue = contactDetailsModel.unescapeValue(keyProperty.valueOf().trim());
-
+        const dataValue = contactDetailsModel.unescapeValue(keyProperty.valueOf().trim(), true);
         try {
             // strip data url if needed.
             const bytes = decodeDataUri(dataValue);
