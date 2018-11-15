@@ -34,33 +34,44 @@ function contactRightPanel(
                 return scope.contact.ID === ID;
             };
 
-            const changeMode = async ({ action, current, refresh, contact: { ID } = {}, forceRefresh }) => {
-                if (action === 'toggleMode') {
-                    const mode = forceRefresh ? scope.mode : getMode(current);
-                    return new Promise((resolve, reject) => {
-                        scope.$applyAsync(() => {
-                            if (!isSameContact(ID)) {
-                                return reject(new Error('Not the same contact'));
-                            }
-
-                            // Force reset view directive to refresh the view After the refresh of the contact
-                            if (refresh || forceRefresh) {
-                                scope.mode = '';
-
-                                // Cannot use $applyAsync inside another one, need to defer it
-                                return _rAF(() => {
-                                    scope.$applyAsync(() => {
-                                        scope.mode = mode;
-                                        resolve();
-                                    });
-                                });
-                            }
-
-                            scope.mode = mode;
-                            resolve();
-                        });
-                    });
+            const changeMode = async ({
+                action,
+                current,
+                refresh,
+                contact: { ID } = {},
+                forceRefresh,
+                from: sourceEvent
+            }) => {
+                /*
+                    When we update the contact to ensure we refresh it with
+                    the updated data on toggle mode, we wait for the updateContact event.
+                    (when this action ocure, we're processing this event).
+                 */
+                if (action !== 'toggleMode' || sourceEvent === 'updateContact') {
+                    return;
                 }
+
+                const mode = forceRefresh ? scope.mode : getMode(current);
+                scope.$applyAsync(() => {
+                    if (!isSameContact(ID)) {
+                        // Not the same contact
+                        return;
+                    }
+
+                    // Force reset view directive to refresh the view After the refresh of the contact
+                    if (refresh || forceRefresh) {
+                        scope.mode = '';
+
+                        // Cannot use $applyAsync inside another one, need to defer it
+                        return _rAF(() => {
+                            scope.$applyAsync(() => {
+                                scope.mode = mode;
+                            });
+                        });
+                    }
+
+                    scope.mode = mode;
+                });
             };
 
             const load = async () => {
@@ -103,7 +114,16 @@ function contactRightPanel(
                     const { update = [] } = data.todo;
                     const contact = update.find(({ ID }) => scope.contact.ID === ID);
 
-                    contact && updateContact({ contact, cards: contact.Cards });
+                    if (contact) {
+                        updateContact({ contact, cards: contact.Cards }).then((contact) => {
+                            // Refresh the current contact when we update it
+                            changeMode({
+                                contact,
+                                action: 'toggleMode',
+                                current: 'edition'
+                            });
+                        });
+                    }
                 }
             });
 
