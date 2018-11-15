@@ -1,14 +1,5 @@
 /* @ngInject */
-function labelModal(
-    pmModal,
-    hotkeys,
-    gettextCatalog,
-    networkActivityTracker,
-    eventManager,
-    Label,
-    notification,
-    sanitize
-) {
+function labelModal(pmModal, gettextCatalog, networkActivityTracker, eventManager, Label, notification, sanitize) {
     const TRANSLATIONS = {
         EDIT_FOLDER: gettextCatalog.getString('Edit folder', null, 'Title'),
         EDIT_LABEL: gettextCatalog.getString('Edit label', null, 'Title'),
@@ -89,9 +80,9 @@ function labelModal(
     function save({ ID, Name = '', Color = '', Display = 1, Exclusive = 0, Notify = 0 }) {
         const action = ID ? 'update' : 'create';
 
-        return Label[action]({ ID, Name, Color, Display, Exclusive, Notify })
-            .then(({ data = {} } = {}) => data.Label)
-            .then((newLabel) => eventManager.call().then(() => newLabel));
+        return Label[action]({ ID, Name, Color, Display, Exclusive, Notify }).then((newLabel) =>
+            eventManager.call().then(() => newLabel)
+        );
     }
 
     return pmModal({
