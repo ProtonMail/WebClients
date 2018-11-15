@@ -1,4 +1,4 @@
-# [3.14.31] - 2018-11-25
+# [3.14.31] - 2018-11-15
 
 ## Added
 - Link to the beta version on the signup page
