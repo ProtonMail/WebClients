@@ -1,3 +1,27 @@
+# [3.14.31] - 2018-11-25
+
+## Added
+- Link to the beta version on the signup page
+
+## Fixed
+- Clearing contact photo didn't reset the preview image
+- Selecting a label didn't close the drop-down menu
+- Change organization name button was misaligned
+- Creating a new organization didn't update the main input field
+- Creating an organization showed an incorrect amount of storage used by the admin
+- Full fingerprint was not shown when hovering over it in the advanced contact settings
+- "Move to" and "Label as" inbox actions don't work in some cases
+- When the first label or folder has an emoji, the top of the emoji was cut off
+- Two remove buttons appeared when searching contacts
+- Vcard exported incorrect picture URL structure
+- Free users were unable to use unsubscribe from mailing lists in some cases
+- Some visual issues with Contacts display on certain resolutions
+
+## Changed
+- Login page rearranged to include link to the beta version
+- Label UI on labels / folders page
+- "Send" action behavior with some invalid addresses
+
 # [3.14.30] - 2018-10-30
 ## Fixed
 - Two "++" are added if you respond from a plus alias address
