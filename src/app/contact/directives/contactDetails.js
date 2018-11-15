@@ -118,6 +118,7 @@ function contactDetails(
                     const callback = ({ Contact, cards } = {}) => {
                         dispatcher.contacts('action.input', {
                             action: 'toggleMode',
+                            from: 'updateContact',
                             current: scope.mode,
                             refresh: true,
                             contact: Contact,

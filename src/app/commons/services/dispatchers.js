@@ -48,8 +48,13 @@ function dispatchers($rootScope) {
     function trace() {
         const stack = new Error().stack;
         const [, ...rest] = stack.split('\n');
-        const index = rest.findIndex((row) => row.trim().startsWith('at HTML'));
-        return rest.slice(2, index).join('\n');
+        // Default index when done via Angular
+        const index = rest.findIndex((row) => row.trim().startsWith('at processQueue'));
+        // Index when it's coming from a click etc.
+        const indexHTML = rest.findIndex((row) => row.trim().startsWith('at HTMLElement.dispatch'));
+        const n = index === -1 ? indexHTML : index;
+
+        return rest.slice(2, n).join('\n');
     }
 
     /**
