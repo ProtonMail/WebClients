@@ -4,7 +4,6 @@ import { REGEX_EMAIL } from '../../constants';
 function autocompleteContacts(autocompleteEmailsModel, autocompleteBuilder, dispatchers) {
     const TAB_KEY = 9;
     const COMMA_KEY = 188;
-    const CLASS_NO_AUTOCOMPLETE = 'autocompleteContacts-not-exist';
 
     /**
      * Get the selected input value configuration
@@ -69,7 +68,6 @@ function autocompleteContacts(autocompleteEmailsModel, autocompleteBuilder, disp
         const { on, unsubscribe } = dispatchers();
 
         scope.emails = [];
-        const isNewContact = () => el[0].classList.contains(CLASS_NO_AUTOCOMPLETE);
 
         // Model for this autocomplete
         const model = autocompleteEmailsModel(scope.list, {
@@ -78,23 +76,14 @@ function autocompleteContacts(autocompleteEmailsModel, autocompleteBuilder, disp
             mode: 'contact'
         });
 
-        const syncModel = () => {
+        const syncModel = (opt = {}, refresh = true) => {
+            const hasError = opt.doesNotExist;
             scope.$applyAsync(() => {
-                scope.list = model.all();
+                refresh && (scope.list = model.all());
+                scope.email = opt;
+                scope.form.$invalid = hasError;
+                scope.form.$valid = !hasError;
             });
-        };
-
-        /**
-         * Check if we need to display the Add new contact card
-         * @param  {Boolean} hasAutocompletion
-         * @param  {String}  value             Input's value
-         * @return {void}
-         */
-        const showAddContactInfo = (hasAutocompletion, value = '') => {
-            if (hasAutocompletion || (!hasAutocompletion && !value.length)) {
-                return el[0].classList.remove(CLASS_NO_AUTOCOMPLETE);
-            }
-            return el[0].classList.add(CLASS_NO_AUTOCOMPLETE);
         };
 
         const onInput = ({ target }) => {
@@ -116,16 +105,15 @@ function autocompleteContacts(autocompleteEmailsModel, autocompleteBuilder, disp
             const { list, hasAutocompletion } = model.filterContact(target.value);
             hasAutocompletion && (awesomplete.list = list);
 
-            showAddContactInfo(hasAutocompletion, target.value);
+            const value = target.value || '';
 
-            if (!(target.value || '').includes('@')) {
-                return;
+            if (value && !hasAutocompletion) {
+                return syncModel({
+                    doesNotExist: true
+                });
             }
 
-            // Unselect the autocomplete suggestion if the input value is a valid email
-            if (hasAutocompletion && REGEX_EMAIL.test(target.value)) {
-                return awesomplete.goto(-1);
-            }
+            syncModel({}, false);
         };
 
         const onClick = ({ target }) => {
@@ -152,10 +140,6 @@ function autocompleteContacts(autocompleteEmailsModel, autocompleteBuilder, disp
          */
         const onSubmit = (e) => {
             e.preventDefault();
-
-            if (!isNewContact()) {
-                return;
-            }
 
             const { value, clear } = getFormValue(e.target);
 
@@ -197,11 +181,9 @@ function autocompleteContacts(autocompleteEmailsModel, autocompleteBuilder, disp
          * Update the model when an user select an option
          */
         awesomplete.replace = function replace(opt) {
-            if (!isNewContact()) {
-                model.add(opt);
-                this.input.value = '';
-                syncModel();
-            }
+            model.add(opt);
+            this.input.value = '';
+            syncModel();
         };
 
         // Custom filter as the list contains unicode and not the input
@@ -212,24 +194,6 @@ function autocompleteContacts(autocompleteEmailsModel, autocompleteBuilder, disp
         on('contacts', (e, { type }) => {
             if (/^contact(Events|Updated)$/.test(type)) {
                 return syncModel(true);
-            }
-
-            if (type === 'contactCreated') {
-                const value = awesomplete.input.value;
-                el[0].classList.remove(CLASS_NO_AUTOCOMPLETE);
-                const {
-                    list: [contact]
-                } = model.filterContact(value);
-                model.add({
-                    label: contact.label,
-                    value: {
-                        value: contact.ID,
-                        data: {
-                            Email: contact.value
-                        }
-                    }
-                });
-                awesomplete.input.value = '';
             }
         });
 
@@ -250,14 +214,15 @@ function autocompleteContacts(autocompleteEmailsModel, autocompleteBuilder, disp
             el.off('click', onClick);
             el.off('input', onInput);
             el.off('submit', onSubmit);
-            model.clear();
             unsubscribe();
+            model.clear();
         });
     };
 
     return {
         scope: {
-            list: '='
+            list: '=',
+            form: '='
         },
         replace: true,
         templateUrl: require('../../../templates/contact/autocompleteContacts.tpl.html'),

@@ -133,7 +133,7 @@ function contactDetailsModel(
                     break;
             }
         });
-        debugger;
+
         let fnProperty = params.vCard.get('fn');
 
         if (Array.isArray(fnProperty)) {

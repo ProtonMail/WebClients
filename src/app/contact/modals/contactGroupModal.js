@@ -1,5 +1,3 @@
-import { REGEX_EMAIL } from '../../constants';
-
 /* @ngInject */
 function contactGroupModal(pmModal) {
     return pmModal({
@@ -13,8 +11,7 @@ function contactGroupModal(pmModal) {
             sanitize,
             networkActivityTracker,
             manageContactGroup,
-            eventManager,
-            contactEditor
+            eventManager
         ) {
             const { on, unsubscribe } = dispatchers();
 
@@ -48,16 +45,6 @@ function contactGroupModal(pmModal) {
                 Color: sanitize.input(color),
                 ContactIDs: contacts.map(({ ID }) => sanitize.input(ID))
             });
-
-            this.createNewContact = async () => {
-                params.hide();
-                const value = document.querySelector('.autocompleteContacts-input').value || '';
-                const key = REGEX_EMAIL.test(value) ? 'email' : 'name';
-
-                // No need to attach it to the scope as it's not the most common use case
-                await contactEditor.add({ [key]: value }, true);
-                params.show();
-            };
 
             this.create = (form) => {
                 if (form.$invalid) {

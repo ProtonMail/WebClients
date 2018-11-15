@@ -24,28 +24,4 @@
     position: relative;
 }
 
-.contactGroupModal-autocomplete:not(.autocompleteContacts-not-exist) + .contactGroupModal-create {
-    display: none
-}
-
-.contactGroupModal-create {
-    position: absolute;
-    top: 2.1rem;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 150px;
-    padding-bottom: 1em;
-    background: $white;
-    border: 1px solid $gray-light;
-}
-
-.contactGroupModal-create-header {
-    padding: .3em 1em;
-    background: $light
-}
-
-.contactGroupModal-create-message { margin: 1em }
-.contactGroupModal-create-btn { margin: auto }
 .contactGroupModal-contacts { width: 100% }

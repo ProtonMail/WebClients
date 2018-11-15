@@ -102,15 +102,33 @@ function autocompleteEmailsModel($injector, checkTypoEmails, dispatchers, userTy
      * @param  {Array} keys    Types of event to trigger the cache refresh
      * @return {Function}     Event listener
      */
-    const refreshCache = (keys) => (e, { type }) => {
-        if (keys.includes(type)) {
+    const refreshCache = (keys, debounce = false) => {
+        const cache = {};
+        const cb = (type) => {
             _rAF(() => {
                 CACHE.EMAILS = formatCacheEmails();
-                dispatcher.ui('autocompleteContacts.updated');
+                dispatcher.ui('autocompleteContacts.updated', { type });
             });
-        }
+        };
+
+        return (e, { type }) => {
+            if (keys.includes(type)) {
+                /*
+                    We store the call inside a cache because we debounce by TYPE,
+                    not the call of the event listener itself.
+                    Some events ex: contactUpdated can be triggered very often,
+                    we don't want to perform a huge task often.
+                 */
+                if (!cache[type]) {
+                    cache[type] = !debounce ? cb : _.debounce(cb, 300);
+                }
+                cache[type](type);
+            }
+        };
     };
 
+    // We can get a lot of this key, so we debounce the CB
+    on('contacts', refreshCache(['contactsUpdated'], true));
     on('contacts', refreshCache(['contactEmails.updated', 'resetContacts']));
     on('contactGroupModel', refreshCache(['cache.refresh']));
 
@@ -249,6 +267,7 @@ function autocompleteEmailsModel($injector, checkTypoEmails, dispatchers, userTy
         };
 
         const all = () => LOCAL_CACHE.list;
+        const debug = () => ({ LOCAL_CACHE, CACHE });
         const exist = (value) => LOCAL_CACHE.list.some((item) => item[keyValue] === value);
         const clear = () => {
             LOCAL_CACHE.list.length = 0;
@@ -386,6 +405,7 @@ function autocompleteEmailsModel($injector, checkTypoEmails, dispatchers, userTy
             isEmpty,
             clear,
             exist,
+            debug,
             refresh
         };
     };
