@@ -148,10 +148,14 @@
 .contactItem-aside {
     display: flex;
     flex-grow: 1;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: flex-end;
+    flex-wrap: wrap;
     margin-left: 8px;
+}
+
+.contactItem-itemEdit {
+    display: flex;
+    flex: 1;
+    flex-wrap: nowrap
 }
 
 .contactItem-inputs {

@@ -36,98 +36,102 @@
             </label>
 
             <div class="contactItem-aside">
-                <div class="contactItem-inputs">
-                    <div class="pm_select" ng-if="UI.mode === 'select'">
-                        <select
-                            name="{{ ::UI.inputName }}"
+
+                <div class="contactItem-itemEdit">
+                    <div class="contactItem-inputs">
+                        <div class="pm_select" ng-if="UI.mode === 'select'">
+                            <select
+                                name="{{ ::UI.inputName }}"
+                                placeholder="{{ UI.placeholder }}"
+                                ng-model="item.value"
+                                ng-change="change()"
+                                ng-options="option as option.name for option in UI.options track by option.value"
+                            >
+                            </select>
+                            <i class="fa fa-angle-down"></i>
+                        </div>
+                        <input
+                            ng-if="UI.mode === 'singleLine'"
+                            type="{{ ::UI.inputType }}"
+                            name="{{ ::UI.inputName+$index }}"
+                            data-valid-email
                             placeholder="{{ UI.placeholder }}"
+                            class="form-control contactItem-field"
+                            tabindex="2"
+                            ng-class="{ 'contactItem-input-with-icon': UI.inputType === 'email' }"
                             ng-model="item.value"
-                            ng-change="change()"
-                            ng-options="option as option.name for option in UI.options track by option.value"
-                        >
-                        </select>
-                        <i class="fa fa-angle-down"></i>
+                            ng-change="change()">
+
+                        <textarea
+                            ng-if="UI.mode === 'multiLine'"
+                            placeholder="{{ UI.placeholder }}"
+                            class="form-control contactItem-field"
+                            tabindex="2"
+                            ng-model="item.value"
+                            ng-change="change()"></textarea>
+
+                        <contact-address-input
+                            ng-if="UI.mode === 'address'"
+                            data-focused="config.isFocusedAddress"
+                            data-value="item.value"
+                            data-form="form"></contact-address-input>
+
+                        <contact-photo-row
+                            ng-if="UI.mode === 'photo'"
+                            data-value="item.value"
+                            data-form="form"></contact-photo-row>
                     </div>
-                    <input
-                        ng-if="UI.mode === 'singleLine'"
-                        type="{{ ::UI.inputType }}"
-                        name="{{ ::UI.inputName+$index }}"
-                        data-valid-email
-                        placeholder="{{ UI.placeholder }}"
-                        class="form-control contactItem-field"
-                        tabindex="2"
-                        ng-class="{ 'contactItem-input-with-icon': UI.inputType === 'email' }"
-                        ng-model="item.value"
-                        ng-change="change()">
 
-                    <textarea
-                        ng-if="UI.mode === 'multiLine'"
-                        placeholder="{{ UI.placeholder }}"
-                        class="form-control contactItem-field"
-                        tabindex="2"
-                        ng-model="item.value"
-                        ng-change="change()"></textarea>
+                    <div class="contactItem-actions">
+                        <copy
+                            ng-if="UI.mode === 'address' && !config.isFocusedAddress"
+                            data-value="getAddressValue(item)"
+                            pt-tooltip-translate="Copy address"
+                            pt-tooltip-translate-context="Tooltip"></copy>
 
-                    <contact-address-input
-                        ng-if="UI.mode === 'address'"
-                        data-focused="config.isFocusedAddress"
-                        data-value="item.value"
-                        data-form="form"></contact-address-input>
+                        <button
+                            ng-if="!UI.unique && visibleItems().length > 1"
+                            type="button"
+                            class="contactItem-delete"
+                            data-action="remove"
+                            data-index="{{ $index }}"
+                            pt-tooltip-translate="Remove Entry"
+                            pt-tooltip-translate-context="Action"></button>
 
-                    <contact-photo-row
-                        ng-if="UI.mode === 'photo'"
-                        data-value="item.value"
-                        data-form="form"></contact-photo-row>
+                        <button
+                            ng-if="!UI.unique && visibleItems().length"
+                            type="button"
+                            class="contactItem-add"
+                            data-action="add"
+                            pt-tooltip-translate="Add Entry"
+                            pt-tooltip-translate-context="Action"></button>
 
+                        <a
+                            ng-if="UI.infoLink && UI.infoTooltip && $index === 0"
+                           href="{{ ::UI.infoLink }}"
+                           target="_blank"
+                           class="text-purple">
+                            <i class="fa fa-info-circle contact-item-info"
+                               pt-tooltip="{{ ::UI.infoTooltip }}"></i>
+                        </a>
+                        <i
+                            class="fa fa-info-circle contact-item-info"
+                            ng-if="!UI.infoLink && UI.infoTooltip && $index === 0"
+                            pt-tooltip="{{ ::UI.infoTooltip }}"></i>
+
+                        <advanced-settings-btn
+                            class="contactItem-btn-settings"
+                            ng-if="UI.inputType === 'email' && item.value"
+                            data-contact="contact"
+                            data-form="form"
+                            data-model="item"></advanced-settings-btn>
+                    </div>
                 </div>
 
-                <div class="contactItem-actions">
-                    <copy
-                        ng-if="UI.mode === 'address' && !config.isFocusedAddress"
-                        data-value="getAddressValue(item)"
-                        pt-tooltip-translate="Copy address"
-                        pt-tooltip-translate-context="Tooltip"></copy>
-
-                    <button
-                        ng-if="!UI.unique && visibleItems().length > 1"
-                        type="button"
-                        class="contactItem-delete"
-                        data-action="remove"
-                        data-index="{{ $index }}"
-                        pt-tooltip-translate="Remove Entry"
-                        pt-tooltip-translate-context="Action"></button>
-
-                    <button
-                        ng-if="!UI.unique && visibleItems().length"
-                        type="button"
-                        class="contactItem-add"
-                        data-action="add"
-                        pt-tooltip-translate="Add Entry"
-                        pt-tooltip-translate-context="Action"></button>
-
-                    <a
-                        ng-if="UI.infoLink && UI.infoTooltip && $index === 0"
-                       href="{{ ::UI.infoLink }}"
-                       target="_blank"
-                       class="text-purple">
-                        <i class="fa fa-info-circle contact-item-info"
-                           pt-tooltip="{{ ::UI.infoTooltip }}"></i>
-                    </a>
-                    <i
-                        class="fa fa-info-circle contact-item-info"
-                        ng-if="!UI.infoLink && UI.infoTooltip && $index === 0"
-                        pt-tooltip="{{ ::UI.infoTooltip }}"></i>
-
-                    <advanced-settings-btn
-                        class="contactItem-btn-settings"
-                        ng-if="UI.inputType === 'email' && item.value"
-                        data-contact="contact"
-                        data-form="form"
-                        data-model="item"></advanced-settings-btn>
-
-                </div>
-
-                <div class="contactItem-validation" ng-messages="form[UI.inputName+$index].$error" role="alert">
+                <div
+                    class="contactItem-validation"
+                    ng-messages="form[UI.inputName+$index].$error"
+                    role="alert">
                     <div class="ng-messages-errors">
                         <p ng-message="email" class="text-red"  translate-context="Error" translate>Invalid email</p>
                     </div>
