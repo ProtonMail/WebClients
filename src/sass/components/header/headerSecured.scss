@@ -5,7 +5,6 @@
     color: $header-font-color;
     font-size: 12px;
     position: relative;
-    z-index: 3000; /* overlay composer */
     font-family: sans-serif;
     opacity: .999; /* stacking context, don't remove it otherwise dropdown menus will fail */
 }
