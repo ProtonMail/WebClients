@@ -1,3 +1,10 @@
+# [3.14.34] - 2018-11-16
+## Added
+- Spelling mistake in Settings > Appearance > Toolbar
+
+## Fixed
+- Top menu overlaps with other page content
+
 # [3.14.33] - 2018-11-16
 
 ## Fixed
