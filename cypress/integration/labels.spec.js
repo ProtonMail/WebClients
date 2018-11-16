@@ -1,6 +1,6 @@
 const hookBefore = () => {
     before(() => {
-        cy.login(false, Cypress.env('labelUser'));
+        cy.login();
     });
 };
 
@@ -16,6 +16,6 @@ const test = (subject, cb) => {
     });
 };
 
-test('Edit labels via toolbar', () => require('../fixtures/labels/editLabel'));
+test('Edit labels via toolbar', () => require('../fixtures/labels/editLabel.spec'));
 test('Edit folders via toolbar', () => require('../fixtures/labels/editFolder.spec'));
 test('No labels', () => require('../fixtures/labels/nolabels.spec'));

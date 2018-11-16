@@ -9,7 +9,7 @@ const deleteLabelModal = modalTest({
 });
 
 const openLabelState = () => {
-    cy.get('[id="tour-label-settings"]').click();
+    cy.get('[id="tour-label-dropdown"]').click();
     cy.url().should('include', '/labels');
 };
 
@@ -28,11 +28,14 @@ it('should be empty', () => {
 it('should create a label', () => {
     const modal = toolbarLabel.create();
     modal.setName(NEW_LABEL);
-    modal.setColor('#cf5858');
+    cy.get('.labelColorSelector-container')
+        .find('[style="color: rgb(207, 88, 88);"]')
+        .click();
     CACHE.label[NEW_LABEL] = '#cf5858';
     modal.save();
     modal.isOpen(false);
     notification.success('Label created');
+    cy.get('[id="tour-label-dropdown"]').click();
     toolbarLabel.isOpen(false);
 });
 
@@ -48,7 +51,7 @@ it('should not be empty', () => {
 });
 
 it('should close it', () => {
-    toolbarLabel.close();
+    cy.get('[id="tour-label-dropdown"]').click();
 });
 
 describe('Bind label to the webmail', () => {
@@ -57,18 +60,5 @@ describe('Bind label to the webmail', () => {
         cy.get('.menuLabel-item').should('have.length', 1);
         cy.get('.menuLabel-title').should('contain', NEW_LABEL);
         cy.get('.menuLabel-icon').should('have.attr', 'style', `color: ${color}`);
-    });
-});
-
-describe('delete existing label', () => {
-    it('should display a modal to delete the label', () => {
-        openLabelState();
-        const color = CACHE.label[NEW_LABEL];
-        deleteLabelModal.isOpen(false);
-        cy.get(`.labelsState-item[data-color="${color}"] .labelsState-btn-delete`).click();
-        deleteLabelModal.isOpen();
-        deleteLabelModal.submit();
-        notification.success('Label deleted');
-        delete CACHE.label[NEW_LABEL];
     });
 });
