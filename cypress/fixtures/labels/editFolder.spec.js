@@ -9,7 +9,7 @@ const deleteFolderModal = modalTest({
 });
 
 const openLabelState = () => {
-    cy.get('[id="tour-label-settings"]').click();
+    cy.get('[id="tour-folder-dropdown"]').click();
     cy.url().should('include', '/labels');
 };
 
@@ -28,11 +28,14 @@ it('should be open with default', () => {
 it('should create a folder', () => {
     const modal = toolbarFolder.create();
     modal.setName(NEW_FOLDER);
-    modal.setColor('#cf5858');
+    cy.get('.labelColorSelector-container')
+        .find('[style="color: rgb(207, 88, 88);"]')
+        .click();
     CACHE.folder[NEW_FOLDER] = '#cf5858';
     modal.save();
     modal.isOpen(false);
     notification.success('Folder created');
+    cy.get('[id="tour-folder-dropdown"]').click();
     toolbarFolder.isOpen(false);
 });
 
@@ -44,27 +47,14 @@ it('should add the color inside the list', () => {
 });
 
 it('should close it', () => {
-    toolbarFolder.close();
+    cy.get('[id="tour-folder-dropdown"]').click();
 });
 
 describe('Bind folder to the webmail', () => {
     it('should display the folder in the sidebar', () => {
         const color = CACHE.folder[NEW_FOLDER];
-        cy.get('.menuLabel-item').should('have.length', 1);
+        cy.get('.menuLabel-item').should('have.length', 2);
         cy.get('.menuLabel-title').should('contain', NEW_FOLDER);
         cy.get('.menuLabel-icon').should('have.attr', 'style', `color: ${color}`);
-    });
-});
-
-describe('delete existing folder', () => {
-    it('should display a modal to delete the folder', () => {
-        openLabelState();
-        const color = CACHE.folder[NEW_FOLDER];
-        deleteFolderModal.isOpen(false);
-        cy.get(`.labelsState-item[data-color="${color}"] .labelsState-btn-delete`).click();
-        deleteFolderModal.isOpen();
-        deleteFolderModal.submit();
-        notification.success('Folder deleted');
-        delete CACHE.folder[NEW_FOLDER];
     });
 });
