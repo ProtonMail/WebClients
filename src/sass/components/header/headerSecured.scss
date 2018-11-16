@@ -7,6 +7,7 @@
     position: relative;
     font-family: sans-serif;
     opacity: .999; /* stacking context, don't remove it otherwise dropdown menus will fail */
+    z-index: 100;
 }
 
 .headerSecuredDesktop-container,
