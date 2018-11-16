@@ -1,8 +1,9 @@
+import CONFIG from '../../config';
 import { OAUTH_KEY } from '../../constants';
 import { uniqID } from '../../../helpers/string';
 
 /* @ngInject */
-function attachmentApi($http, url, $q, dispatchers, keysModel, pmcw, CONFIG, secureSessionStorage, gettextCatalog) {
+function attachmentApi($http, url, $q, dispatchers, keysModel, pmcw, secureSessionStorage, gettextCatalog) {
     const MAP = {
         message: {},
         request: {}

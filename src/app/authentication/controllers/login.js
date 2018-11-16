@@ -7,7 +7,6 @@ function LoginController(
     $log,
     $timeout,
     $location,
-    CONFIG,
     dispatchers,
     gettextCatalog,
     authentication,

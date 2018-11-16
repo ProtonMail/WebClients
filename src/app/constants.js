@@ -84,8 +84,6 @@ export const IFRAME_SECURE_ORIGIN = 'https://secure.protonmail.com';
 export const DEFAULT_CURRENCY = 'EUR';
 export const CHANGELOG_PATH = 'assets/changelog.tpl.html';
 export const DEFAULT_CYCLE = 12;
-export const TRACKER_ROUTE = 'proton.php';
-export const PIWIK_SCRIPT = 'proton.js';
 export const CANCEL_REQUEST = 'CANCEL_REQUEST';
 export const DEFAULT_TRANSLATION = 'en_US';
 export const CONTACTS_LIMIT_ENCRYPTION = 20;
@@ -237,14 +235,6 @@ export const CYCLE = {
     MONTHLY: 1,
     YEARLY: 12,
     TWO_YEARS: 24
-};
-
-export const METRIC_GOALS = {
-    SIGNUP_ALL: 2,
-    SIGNUP_FREE: 4,
-    SIGNUP_PAID: 3,
-    SIGNUP_PLUS: 6,
-    SIGNUP_VISIONARY: 5
 };
 
 export const RECIPIENT_TYPE = {

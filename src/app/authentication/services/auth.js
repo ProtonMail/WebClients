@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
-import { OAUTH_KEY, FREE_USER_ROLE, MAILBOX_PASSWORD_KEY } from '../../constants';
+import CONFIG from '../../config';
+import { OAUTH_KEY, MAILBOX_PASSWORD_KEY } from '../../constants';
 
 /* @ngInject */
 function authentication(
@@ -12,7 +13,6 @@ function authentication(
     $exceptionHandler,
     authApi,
     checkKeysFormat,
-    CONFIG,
     keysModel,
     upgradePassword,
     networkActivityTracker,
@@ -104,7 +104,6 @@ function authentication(
     let api = {
         user: {},
         saveAuthData,
-        savePassword,
         receivedCredentials,
         getUID() {
             return secureSessionStorage.getItem(OAUTH_KEY + ':UID');

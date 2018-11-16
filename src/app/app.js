@@ -2,7 +2,6 @@ import _ from 'lodash';
 import timezone from 'moment-timezone';
 
 import paginator from './paginator/index';
-import analytics from './analytics/index';
 import authentication from './authentication/index';
 import browserSupport from './browserSupport/index';
 import bugReport from './bugReport/index';
@@ -40,7 +39,6 @@ angular
         'oc.lazyLoad',
         'templates-app',
         paginator,
-        analytics,
         authentication,
         browserSupport,
         bugReport,
@@ -59,7 +57,6 @@ angular
         utils,
         routes
     ])
-    .constant('CONFIG', CONFIG)
     .config((notificationProvider) => {
         notificationProvider.template(require('../templates/notifications/base.tpl.html'));
     })
@@ -84,7 +81,7 @@ angular
         window.svg4everybody();
     })
 
-    .config(($httpProvider, CONFIG) => {
+    .config(($httpProvider) => {
         // Http Interceptor to check auth failures for xhr requests
         $httpProvider.interceptors.push('serverTimeInterceptor');
         $httpProvider.interceptors.push('httpInterceptor');
@@ -160,7 +157,7 @@ angular
         });
     })
     .run((consoleMessage) => consoleMessage())
-    .config(($logProvider, $compileProvider, $qProvider, CONFIG) => {
+    .config(($logProvider, $compileProvider, $qProvider) => {
         const debugInfo = CONFIG.debug || false;
         $logProvider.debugEnabled(debugInfo);
         $compileProvider.debugInfoEnabled(debugInfo);
