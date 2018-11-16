@@ -1,3 +1,11 @@
+# [3.14.33] - 2018-11-16
+
+## Fixed
+- Sending a message was not working
+- Refresh contact on update
+- Removed `z-index` property to solve the header issue
+- Review signup + labels on mobile
+
 # [3.14.32] - 2018-11-15
 
 ## Fixed
