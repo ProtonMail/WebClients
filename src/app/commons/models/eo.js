@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
+import CONFIG from '../../config';
+
 /* @ngInject */
-function Eo($http, url, CONFIG, gettextCatalog) {
+function Eo($http, url, gettextCatalog) {
     const requestURL = url.build('eo');
 
     const I18N = {

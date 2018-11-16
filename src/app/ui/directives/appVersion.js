@@ -1,5 +1,7 @@
+import CONFIG from '../../config';
+
 /* @ngInject */
-function appVersion(CONFIG, releaseNotesModal) {
+function appVersion(releaseNotesModal) {
     const onClick = (e) => {
         e.preventDefault();
         e.stopPropagation();

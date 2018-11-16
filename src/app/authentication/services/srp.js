@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
+import CONFIG from '../../config';
+
 /* @ngInject */
-function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
+function srp($http, webcrypto, passwords, url, authApi, handle10003) {
     /**
      * [generateProofs description]
      * @param  {Integer} len            Size of the proof (bytes length)
