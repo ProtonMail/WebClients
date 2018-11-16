@@ -256,7 +256,7 @@
         cursor: pointer;
         transition: all .3s ease-out;
         -webkit-tap-highlight-color: transparent;
-        z-index: 1;
+        /* no z-index here, otherwise, menus will fail */
         box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
         background: $button-background;
 
