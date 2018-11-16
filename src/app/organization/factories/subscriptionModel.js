@@ -14,7 +14,7 @@ const PAID_TYPES = {
 
 const MAP_ADDONS = {
     address: '5address',
-    storage: '1gb',
+    space: '1gb',
     domain: '1domain',
     member: '1member',
     vpn: '1vpn'
