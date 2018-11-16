@@ -49,7 +49,7 @@ msgctxt "2FA setup modal"
 msgid "Scan this QR code with your two factor authentication device to set up your account."
 msgstr ""
 
-#: ./src/templates/user/humanVerification.tpl.html:57
+#: ./src/templates/user/humanVerification.tpl.html:61
 msgctxt "About human verification"
 msgid ""
 "<p>Too many ProtonMail accounts have been created from your connection.</p>\n"
@@ -611,7 +611,7 @@ msgctxt "Action"
 msgid "Common login problems"
 msgstr ""
 
-#: ./src/templates/user/humanVerification.tpl.html:78
+#: ./src/templates/user/humanVerification.tpl.html:82
 msgctxt "Action"
 msgid "Complete setup"
 msgstr ""
@@ -7632,7 +7632,7 @@ msgctxt "Link"
 msgid "What is the difference between ProtonVPN and OpenVPN logins?"
 msgstr ""
 
-#: ./src/templates/user/humanVerification.tpl.html:38
+#: ./src/templates/user/humanVerification.tpl.html:40
 msgctxt "Link"
 msgid "Why is this required?"
 msgstr ""
@@ -9862,7 +9862,7 @@ msgstr ""
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
-#: ./src/templates/user/humanVerification.tpl.html:52
+#: ./src/templates/user/humanVerification.tpl.html:56
 #: ./src/templates/views/dashboard.tpl.html:30
 msgctxt "Title"
 msgid "Donate"
@@ -9894,7 +9894,7 @@ msgstr ""
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:15
 #: ./src/templates/contact/contactList.tpl.html:25
-#: ./src/templates/user/humanVerification.tpl.html:33
+#: ./src/templates/user/humanVerification.tpl.html:35
 msgctxt "Title"
 msgid "Email"
 msgstr ""
@@ -10660,7 +10660,7 @@ msgctxt "Title"
 msgid "Role"
 msgstr ""
 
-#: ./src/templates/user/humanVerification.tpl.html:44
+#: ./src/templates/user/humanVerification.tpl.html:47
 msgctxt "Title"
 msgid "SMS"
 msgstr ""
