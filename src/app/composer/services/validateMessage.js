@@ -37,7 +37,7 @@ function validateMessage(
         invalidEmails(emails) {
             return gettextCatalog.getString('The following addresses are not valid: {{emails}}', { emails }, 'Error');
         },
-        EMAIL_ADDRESS_INVALID: gettextCatalog.getString('Some email address are invalid', null, 'Error'),
+        EMAIL_ADDRESS_INVALID: gettextCatalog.getString('Some email addresses are invalid', null, 'Error'),
         MAX_BODY_LENGTH: gettextCatalog.getString(
             'The maximum length of the message body is 16,000,000 characters.',
             null,
