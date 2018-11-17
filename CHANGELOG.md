@@ -1,3 +1,12 @@
+# [3.14.36] - 2018-11-17
+
+## Fixed
+- Failed to execute 'btoa' on 'Window': The string to be encoded contains characters outside of the Latin1 range.
+- Top menu overlaps wit other page content
+
+## Changed
+- Storage has an incorrect addon mapping
+
 # [3.14.34] - 2018-11-16
 ## Added
 - Spelling mistake in Settings > Appearance > Toolbar
