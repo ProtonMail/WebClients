@@ -385,7 +385,7 @@
     transform: translateX(0);
 }
 
-@media (max-height: 500px) {
+@media (max-height: 550px), (max-width: 35em) {
     [id="sidebarLabels"] {
         height: auto;
         overflow: visible;
