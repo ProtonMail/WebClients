@@ -1,3 +1,9 @@
+# [3.14.36] - 2018-11-17
+
+## Fixed
+- Custom folder/label list in left nav bar is not scrollable at certain resolutions/zoom levels
+- After clicking the "create account" button, the page defaults to FR language
+
 # [3.14.35] - 2018-11-17
 
 ## Fixed
