@@ -1,4 +1,3 @@
-
 import _ from 'lodash';
 
 import { CONVERSATION_VIEW_MODE, EVENTS_MS, MAILBOX_IDENTIFIERS, STATUS, LABEL_TYPE } from '../../constants';
@@ -284,20 +283,33 @@ function eventManager(
         dispatcher.contacts('resetContacts');
     }
 
-    const refreshLabels = ({ Labels }) => {
-        if (Array.isArray(Labels)) {
-            const { [LABEL_TYPE.MESSAGE]: messageLabels, [LABEL_TYPE.CONTACT_GROUP]: contactGroups } = _.groupBy(
-                Labels,
-                'Label.Type'
+    const refreshLabels = ({ Labels = [] }) => {
+        if (Labels.length) {
+            const { messageLabels, contactGroups } = Labels.reduce(
+                (acc, label) => {
+                    // The Type is not defined for delete event (Action: 0)
+                    if (!label.Action || label.Type === LABEL_TYPE.MESSAGE) {
+                        acc.messageLabels.push(label);
+                    }
+
+                    if (!label.Action || label.Type === LABEL_TYPE.CONTACT_GROUP) {
+                        acc.contactGroups.push(label);
+                    }
+
+                    return acc;
+                },
+                {
+                    messageLabels: [],
+                    contactGroups: []
+                }
             );
 
-            messageLabels && $injector.get('labelsModel').sync(messageLabels);
-            contactGroups && $injector.get('contactGroupModel').sync(contactGroups);
+            messageLabels.length && $injector.get('labelsModel').sync(messageLabels);
+            contactGroups.length && $injector.get('contactGroupModel').sync(contactGroups);
         }
     };
 
     const manage = async (data = {}) => {
-
         manageNotices(data.Notices);
         setEventID(data.EventID);
 
