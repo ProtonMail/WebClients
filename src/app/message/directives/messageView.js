@@ -67,6 +67,7 @@ function messageView(
                 hotkeys.bind(['down', 'up']);
                 unsubscribeActions();
                 unsubscribe();
+                dispatcher.elements('close', { element: scope.message });
             });
         }
     };
