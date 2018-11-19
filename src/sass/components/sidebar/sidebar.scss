@@ -273,6 +273,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.menuLabel-title {
+    line-height: 1.3;
+}
 
 .menuLabel-item.active {
     .menuLabel-title { color: $sidebar-color }
