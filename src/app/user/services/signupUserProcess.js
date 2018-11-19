@@ -152,6 +152,7 @@ function signupUserProcess(
     }
 
     const createAccount = (model) => {
+        dispatch('signup.error', { value: false });
         create(model).catch((e) => {
             notification.error(e.error ? e.error.message : I18N.ERROR_PROCESS);
             dispatch('signup.error', { value: true });
