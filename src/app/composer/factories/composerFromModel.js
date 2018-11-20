@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { flow, filter, sortBy } from 'lodash/fp';
+import { getItem, setItem } from '../../../helpers/storageHelper';
 
 /* @ngInject */
 function composerFromModel(
@@ -53,7 +54,7 @@ function composerFromModel(
                 confirmText: I18N.DONT_SHOW_AGAIN,
                 confirm() {
                     confirmModal.deactivate();
-                    localStorage.setItem(PM_ADDRESS_ITEM, 'dontShowAgain');
+                    setItem(PM_ADDRESS_ITEM, 'dontShowAgain');
                 },
                 cancel() {
                     confirmModal.deactivate();
@@ -78,7 +79,7 @@ function composerFromModel(
         if (!authentication.hasPaidMail() && isPmMeAddress(address)) {
             const found = _.find(addresses, (address) => canSend(address) && !isPmMeAddress(address));
 
-            if (!localStorage.getItem(PM_ADDRESS_ITEM)) {
+            if (!getItem(PM_ADDRESS_ITEM)) {
                 displayWarning(found.Email);
             }
 

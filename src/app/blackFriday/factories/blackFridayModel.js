@@ -2,13 +2,20 @@ import blackFridayOffers from '../helpers/blackFridayOffers';
 import { isDealEvent } from '../helpers/blackFridayHelper';
 import { BLACK_FRIDAY, CYCLE } from '../../constants';
 import { getPlansMap } from '../../../helpers/paymentHelper';
+import { getItem, setItem } from '../../../helpers/storageHelper';
 
 /* @ngInject */
 function blackFridayModel(authentication, subscriptionModel, paymentModel, PaymentCache) {
     // Needed as function because the authentiation.user.ID can change.
     const getKey = () => `protonmail_black_friday_${authentication.user.ID}_${BLACK_FRIDAY.YEAR}`;
-    const hasSeenOffer = () => localStorage.getItem(getKey());
-    const saveClose = () => localStorage.setItem(getKey(), 'closed');
+
+    const hasSeenOffer = () => {
+        return getItem(getKey(), false);
+    };
+
+    const saveClose = () => {
+        setItem(getKey(), 'closed');
+    };
 
     /**
      * Check if we are in the Black Friday period, and if there are any offers available.
