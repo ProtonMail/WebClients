@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { PLANS_TYPE } from '../../constants';
+import { getPlansMap } from '../../../helpers/paymentHelper';
 
 /* @ngInject */
 function paymentForm(
@@ -19,60 +19,6 @@ function paymentForm(
     };
 
     const formatPlanIDs = (planIDs = []) => _.countBy(planIDs, (planID) => planID);
-
-    /**
-     * Extract the name of the addon, ex 1gb -> space
-     * to have human friendly keys for the template
-     * @param  {String} name Addon's name
-     * @return {String}
-     */
-    const getTypeAddon = (name) => {
-        const [, match] = name.match(/\d+(\w+)/) || [];
-        if (match === 'gb') {
-            return 'space';
-        }
-        return match;
-    };
-
-    const updateKey = (acc, key, value = 0) => (acc[key] = acc[key] ? acc[key] + value : value);
-
-    const formatPlanMap = (plans = []) => {
-        return plans.reduce((acc, plan) => {
-            if (plan.ID) {
-                // ID is not defined for free
-                acc[plan.ID] = plan;
-            }
-            return acc;
-        }, Object.create(null));
-    };
-
-    const getPlanTotal = (list, map) => {
-        const plans = list.map((ID) => map[ID]);
-
-        // Compute how many addons
-        const total = plans.reduce((acc, plan) => {
-            updateKey(acc, 'MaxSpace', plan.MaxSpace);
-            updateKey(acc, 'MaxMembers', plan.MaxMembers);
-            updateKey(acc, 'MaxDomains', plan.MaxDomains);
-            updateKey(acc, 'MaxAddresses', plan.MaxAddresses);
-            updateKey(acc, 'MaxVPN', plan.MaxVPN);
-            return acc;
-        }, Object.create(null));
-
-        // Compute price /addon
-        const price = plans
-            .filter(({ Type }) => Type === PLANS_TYPE.ADDON)
-            .reduce(
-                (acc, { Name, Amount }) => {
-                    const type = getTypeAddon(Name);
-                    updateKey(acc, type, Amount);
-                    return acc;
-                },
-                { space: 0, member: 0, domain: 0, address: 0, vpn: 0 }
-            );
-
-        return { total, price };
-    };
 
     return {
         scope: {
@@ -98,11 +44,7 @@ function paymentForm(
                 ctrl.coupon = params.valid.Coupon.Code;
             }
 
-            // @todo Improve the API to provide a CACHE ˜= labelsModel
-            const planList = dashboardModel.query(params.valid.Currency, params.valid.Cycle);
-
-            const PLANS_MAP = formatPlanMap(planList);
-            const MAP_TOTAL = getPlanTotal(params.planIDs, PLANS_MAP);
+            const PLANS_MAP = getPlansMap(params.plans, 'ID');
 
             ctrl.planIDs = params.planIDs;
             ctrl.plans = _.uniq(params.planIDs).map((ID) => PLANS_MAP[ID]);
@@ -116,9 +58,6 @@ function paymentForm(
             ctrl.methods = list;
             ctrl.method = selected;
             ctrl.status = paymentModel.get('status'); // move out
-
-            ctrl.count = (type) => MAP_TOTAL.total[type];
-            ctrl.price = (type) => MAP_TOTAL.price[type];
 
             ctrl.paypalCallback = (config) => {
                 ctrl.paypalConfig = config;

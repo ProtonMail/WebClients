@@ -94,7 +94,7 @@ function subscriptionModel(dispatchers, gettextCatalog, Payment) {
     }
 
     function coupon() {
-        const { CouponCode = '' } = get();
+        const { CouponCode } = get();
         return CouponCode;
     }
 

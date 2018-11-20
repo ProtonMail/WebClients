@@ -1,15 +1,13 @@
 /* @ngInject */
-function PaymentCache(Payment, $cacheFactory, $q, dispatchers) {
+function PaymentCache(Payment, $cacheFactory, dispatchers) {
     const cache = $cacheFactory('Payments', { number: 30 });
     const { on } = dispatchers();
 
     const getKey = (method, args) => `${method}-${JSON.stringify(args)}`;
 
-    const fnSync = (method) => (...args) => cache.get(getKey(method, args));
-
     /**
      * Custom cache because angular's http cache only supports GET requests.
-     * @param method
+     * @param {String} method - method name to override in Payment
      * @returns {Function}
      */
     const fnAsync = (method) => (...args) => {
@@ -17,13 +15,16 @@ function PaymentCache(Payment, $cacheFactory, $q, dispatchers) {
 
         const result = cache.get(key);
         if (result) {
-            return $q.resolve(result);
+            return result;
         }
 
-        return Payment[method](...args).then((result) => {
-            cache.put(key, result);
-            return result;
+        const promise = Payment[method](...args).catch((e) => {
+            cache.remove(key);
+            return Promise.reject(e);
         });
+
+        cache.put(key, promise);
+        return promise;
     };
 
     /**
@@ -43,7 +44,6 @@ function PaymentCache(Payment, $cacheFactory, $q, dispatchers) {
 
     return methods.reduce((acc, method) => {
         acc[method] = fnAsync(method);
-        acc[`${method}Cached`] = fnSync(method);
         return acc;
     }, {});
 }

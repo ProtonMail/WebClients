@@ -83,10 +83,6 @@ function dashboardModel(
         dispatcher.dashboard('vpn.updated', { plan });
     };
 
-    const query = (currency = 'USD', cycle = YEARLY) => {
-        return PaymentCache.plansCached(currency, cycle);
-    };
-
     const collectPlans = (plan) => {
         const cache = CACHE_PLAN[dashboardConfiguration.cycle()];
         return planListGenerator[plan](cache);
@@ -99,18 +95,26 @@ function dashboardModel(
             return downgrade();
         }
 
+        const Cycle = dashboardConfiguration.cycle();
+        const Currency = dashboardConfiguration.currency();
+
         const PlanIDs = _.map(plans, 'ID'); // Map plan IDs
-        const promise = PaymentCache.valid({
-            Cycle: dashboardConfiguration.cycle(),
-            Currency: dashboardConfiguration.currency(),
-            PlanIDs,
-            CouponCode: subscriptionModel.coupon()
-        }).then((valid) => {
+
+        const promise = Promise.all([
+            PaymentCache.plans(Currency, Cycle),
+            PaymentCache.valid({
+                Cycle,
+                Currency,
+                PlanIDs,
+                CouponCode: subscriptionModel.coupon()
+            })
+        ]).then(([plans, valid]) => {
             paymentModal.activate({
                 params: {
                     planIDs: PlanIDs,
                     valid,
                     choice,
+                    plans,
                     plan,
                     cancel() {
                         paymentModal.deactivate();
@@ -312,6 +316,6 @@ function dashboardModel(
         }
     });
 
-    return { init: angular.noop, loadPlans, get, query, amount, amounts, total, filter };
+    return { init: angular.noop, loadPlans, get, amount, amounts, total, filter };
 }
 export default dashboardModel;
