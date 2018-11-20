@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { REGEX_EMAIL } from '../../constants';
+import { REGEX_EMAIL, MESSAGE_MAX_RECIPIENTS } from '../../constants';
 
 /* @ngInject */
 function autocompleteEmails(
@@ -16,14 +16,13 @@ function autocompleteEmails(
     const BACKSPACE_KEY = 8;
     const COMMA_KEY = 188;
     const ESCAPE_KEY = 27;
-    const RECIPIENT_LIMIT = 25;
     const THROTTLE_TIMEOUT = 300;
 
     const I18N = {
         langRecipientLimit(total) {
             return gettextCatalog.getString(
                 'The maximum number ({{total}}) of Recipients is {{limit}}.',
-                { total, limit: RECIPIENT_LIMIT },
+                { total, limit: MESSAGE_MAX_RECIPIENTS },
                 'Error'
             );
         },
@@ -232,7 +231,7 @@ function autocompleteEmails(
         const checkMessageLimit = (numberToAdd = 1) => {
             const { ToList, CCList, BCCList } = scope.message;
             const total = ToList.length + CCList.length + BCCList.length + numberToAdd;
-            if (total > RECIPIENT_LIMIT) {
+            if (total > MESSAGE_MAX_RECIPIENTS) {
                 notification.error(I18N.langRecipientLimit(total));
                 return false;
             }
