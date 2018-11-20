@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { AUTOCOMPLETE_MAX_RECIPIENTS } from '../../constants';
+import { MESSAGE_MAX_RECIPIENTS } from '../../constants';
 
 /* @ngInject */
 function contactSelectorForm(gettextCatalog, notification) {
@@ -8,7 +8,7 @@ function contactSelectorForm(gettextCatalog, notification) {
         invalidForm: gettextCatalog.getString('Invalid form', null, 'Error'),
         limitReached: gettextCatalog.getString(
             'You have reached the max recipients ({{limit}}) per message',
-            { limit: AUTOCOMPLETE_MAX_RECIPIENTS },
+            { limit: MESSAGE_MAX_RECIPIENTS },
             'Error'
         )
     };
@@ -32,7 +32,7 @@ function contactSelectorForm(gettextCatalog, notification) {
                 scope.$applyAsync(() => {
                     const recipients = getRecipients();
 
-                    if (recipients.length > AUTOCOMPLETE_MAX_RECIPIENTS) {
+                    if (recipients.length > MESSAGE_MAX_RECIPIENTS) {
                         notification.error(I18N.limitReached);
                         return;
                     }
@@ -44,9 +44,7 @@ function contactSelectorForm(gettextCatalog, notification) {
             const updateView = () => {
                 const recipients = getRecipients();
 
-                el[0].classList[recipients.length > AUTOCOMPLETE_MAX_RECIPIENTS ? 'add' : 'remove'](
-                    LIMIT_REACHED_CLASS
-                );
+                el[0].classList[recipients.length > MESSAGE_MAX_RECIPIENTS ? 'add' : 'remove'](LIMIT_REACHED_CLASS);
                 el[0].classList[!recipients.length ? 'add' : 'remove'](NO_RECIPIENTS_CLASS);
             };
 
