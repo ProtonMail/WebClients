@@ -64,7 +64,7 @@ msgid_plural "{{number}} messages moved to {{folder}}"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:128
+#: ./src/templates/user/signupPayForm.tpl.html:87
 msgctxt "Action"
 msgid "<i class=\"fa fa-lock\"></i> Submit"
 msgstr ""
@@ -176,7 +176,7 @@ msgid "Add contacts"
 msgstr ""
 
 #. payment modal add coupon button
-#: ./src/templates/payment/paymentForm.tpl.html:74
+#: ./src/templates/payment/paymentForm.tpl.html:78
 msgctxt "Action"
 msgid "Add coupon"
 msgstr ""
@@ -313,9 +313,9 @@ msgstr ""
 #: ./src/templates/contact/dropdownGroups.tpl.html:53
 #: ./src/templates/directives/dropdownLabels.tpl.html:69
 #: ./src/templates/payment/giftCodeModal.tpl.html:15
-#: ./src/templates/payment/paymentForm.tpl.html:100
-#: ./src/templates/payment/paymentForm.tpl.html:88
-#: ./src/templates/user/signupPayForm.tpl.html:121
+#: ./src/templates/payment/paymentForm.tpl.html:104
+#: ./src/templates/payment/paymentForm.tpl.html:92
+#: ./src/templates/user/signupPayForm.tpl.html:82
 msgctxt "Action"
 msgid "Apply"
 msgstr ""
@@ -328,6 +328,7 @@ msgid "Auto"
 msgstr ""
 
 #: ./src/templates/ui/toolbarDesktop.tpl.html:5
+#: ./src/templates/ui/toolbarDesktop.tpl.html:7
 msgctxt "Action"
 msgid "Back to list"
 msgstr ""
@@ -350,13 +351,6 @@ msgstr ""
 #: ./src/templates/squire/squireToolbar.tpl.html:3
 msgctxt "Action"
 msgid "Bold"
-msgstr ""
-
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:15
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:22
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:8
-msgctxt "Action"
-msgid "Buy"
 msgstr ""
 
 #: ./src/templates/directives/composer/composerInputMeta.tpl.html:50
@@ -406,7 +400,7 @@ msgstr ""
 #: ./src/templates/modals/member.tpl.html:110
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
-#: ./src/templates/modals/payment/modal.tpl.html:53
+#: ./src/templates/modals/payment/modal.tpl.html:56
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:96
@@ -417,7 +411,7 @@ msgstr ""
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:37
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:19
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
-#: ./src/templates/user/signupPayForm.tpl.html:138
+#: ./src/templates/user/signupPayForm.tpl.html:97
 #: ./src/templates/views/outside.reply.tpl.html:31
 #: ./src/templates/views/reset-login-password.tpl.html:127
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
@@ -451,10 +445,20 @@ msgctxt "Action"
 msgid "Change font size"
 msgstr ""
 
-#: ./src/templates/ui/chooseLayoutBtns.tpl.html:10
+#: ./src/templates/ui/chooseLayoutBtns.tpl.html:12
 #: ./src/templates/ui/chooseLayoutBtns.tpl.html:2
 msgctxt "Action"
 msgid "Change layout"
+msgstr ""
+
+#: ./src/templates/ui/chooseLayoutBtns.tpl.html:10
+msgctxt "Action"
+msgid "Change layout (columns)"
+msgstr ""
+
+#: ./src/templates/ui/chooseLayoutBtns.tpl.html:20
+msgctxt "Action"
+msgid "Change layout (rows)"
 msgstr ""
 
 #: ./src/templates/views/account.tpl.html:137
@@ -575,7 +579,7 @@ msgstr ""
 #: ./src/templates/modals/pay.tpl.html:107
 #: ./src/templates/modals/pay.tpl.html:16
 #: ./src/templates/modals/payment/modal.tpl.html:19
-#: ./src/templates/modals/payment/modal.tpl.html:60
+#: ./src/templates/modals/payment/modal.tpl.html:63
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
 #: ./src/templates/modals/releaseNotes.tpl.html:23
@@ -960,11 +964,6 @@ msgctxt "Action"
 msgid "Folders / Labels"
 msgstr ""
 
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:32
-msgctxt "Action"
-msgid "For custom 2-year plans, click here"
-msgstr ""
-
 #. link to reset mailbox
 #: ./src/templates/views/unlock.tpl.html:42
 msgctxt "Action"
@@ -998,11 +997,6 @@ msgstr ""
 #: ./src/app/address/directives/addressBtnActions.js:9
 msgctxt "Action"
 msgid "Generate missing keys"
-msgstr ""
-
-#: ./src/templates/blackFriday/blackFridayPaid.tpl.html:9
-msgctxt "Action"
-msgid "Get a new 2-year plan"
 msgstr ""
 
 #: ./src/app/user/factories/storageWarning.js:31
@@ -1292,7 +1286,8 @@ msgstr ""
 
 #: ./src/templates/address/selectAddressModal.tpl.html:18
 #: ./src/templates/contact/contactLoaderModal.tpl.html:123
-#: ./src/templates/directives/paginator.tpl.html:27
+#: ./src/templates/directives/paginator.tpl.html:37
+#: ./src/templates/directives/paginator.tpl.html:44
 #: ./src/templates/directives/paginatorScope.tpl.html:19
 #: ./src/templates/elements/navElements.tpl.html:9
 #: ./src/templates/modals/changePassword.tpl.html:41
@@ -1348,7 +1343,7 @@ msgctxt "Action"
 msgid "Organization"
 msgstr ""
 
-#: ./src/templates/directives/paginator.tpl.html:9
+#: ./src/templates/directives/paginator.tpl.html:13
 #: ./src/templates/directives/paginatorScope.tpl.html:6
 msgctxt "Action"
 msgid "Page number"
@@ -1359,7 +1354,7 @@ msgctxt "Action"
 msgid "Pay"
 msgstr ""
 
-#: ./src/templates/payment/paymentForm.tpl.html:17
+#: ./src/templates/payment/paymentForm.tpl.html:20
 msgctxt "Action"
 msgid "Pay annually"
 msgstr ""
@@ -1370,6 +1365,7 @@ msgctxt "Action"
 msgid "Popup"
 msgstr ""
 
+#: ./src/templates/directives/paginator.tpl.html:10
 #: ./src/templates/directives/paginator.tpl.html:3
 #: ./src/templates/directives/paginatorScope.tpl.html:2
 #: ./src/templates/elements/navElements.tpl.html:2
@@ -1534,7 +1530,7 @@ msgctxt "Action"
 msgid "Restore administrator privileges"
 msgstr ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:133
+#: ./src/templates/user/signupPayForm.tpl.html:92
 msgctxt "Action"
 msgid "Retry"
 msgstr ""
@@ -1675,11 +1671,6 @@ msgctxt "Action"
 msgid "Show details"
 msgstr ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:57
-msgctxt "Action"
-msgid "Show features"
-msgstr ""
-
 #: ./src/templates/partials/conversation.tpl.html:13
 msgctxt "Action"
 msgid "Show non-trashed messages"
@@ -1734,7 +1725,7 @@ msgstr ""
 #: ./src/templates/modals/decryptImportKey.tpl.html:20
 #: ./src/templates/modals/humanVerification.tpl.html:22
 #: ./src/templates/modals/organizationRecovery.tpl.html:15
-#: ./src/templates/modals/payment/modal.tpl.html:66
+#: ./src/templates/modals/payment/modal.tpl.html:69
 #: ./src/templates/modals/reactivate.tpl.html:25
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:22
 #: ./src/templates/modals/switchPasswordMode.tpl.html:74
@@ -1742,11 +1733,6 @@ msgstr ""
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:17
 msgctxt "Action"
 msgid "Submit"
-msgstr ""
-
-#: ./src/templates/blackFriday/blackFridayPaid.tpl.html:6
-msgctxt "Action"
-msgid "Switch current subscription to a 2-year plan"
 msgstr ""
 
 #: ./src/templates/views/account.tpl.html:140
@@ -1951,7 +1937,6 @@ msgid "Wipe"
 msgstr ""
 
 #: ./src/app/contact/factories/contactSpam.js:14
-#: ./src/app/user/directives/signupStepLink.js:4
 msgctxt "Action"
 msgid "Yes"
 msgstr ""
@@ -2048,14 +2033,14 @@ msgctxt "Action toolbar"
 msgid "Add to contact group"
 msgstr ""
 
-#: ./src/templates/ui/toolbarDesktop.tpl.html:38
-#: ./src/templates/ui/toolbarDesktop.tpl.html:47
+#: ./src/templates/ui/toolbarDesktop.tpl.html:41
+#: ./src/templates/ui/toolbarDesktop.tpl.html:52
 msgctxt "Action toolbar"
 msgid "Label as"
 msgstr ""
 
-#: ./src/templates/ui/toolbarDesktop.tpl.html:19
-#: ./src/templates/ui/toolbarDesktop.tpl.html:28
+#: ./src/templates/ui/toolbarDesktop.tpl.html:20
+#: ./src/templates/ui/toolbarDesktop.tpl.html:31
 msgctxt "Action toolbar"
 msgid "Move to"
 msgstr ""
@@ -2753,17 +2738,17 @@ msgctxt "Contact photo icon"
 msgid "Image blocked"
 msgstr ""
 
-#: ./src/templates/payment/paymentForm.tpl.html:79
+#: ./src/templates/payment/paymentForm.tpl.html:83
 msgctxt "Context"
 msgid "Coupon"
 msgstr ""
 
-#: ./src/templates/payment/paymentForm.tpl.html:94
+#: ./src/templates/payment/paymentForm.tpl.html:98
 msgctxt "Context"
 msgid "Gift code"
 msgstr ""
 
-#: ./src/app/payment/factories/paymentModel.js:7
+#: ./src/app/payment/factories/paymentModel.js:15
 msgctxt "Coupon code request"
 msgid "Coupon code accepted"
 msgstr ""
@@ -3320,11 +3305,6 @@ msgctxt "Download attachments"
 msgid "Download all"
 msgstr ""
 
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:26
-msgctxt "Dropdown"
-msgid "Change currency <i class=\"fa fa-caret-down\"></i>"
-msgstr ""
-
 #: ./src/app/autoresponder/services/autoresponderLanguage.js:17
 msgctxt "Duration/repetition of autoresponder"
 msgid "Fixed duration"
@@ -3355,7 +3335,7 @@ msgctxt "Empty table message"
 msgid "All available keys are trusted"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:30
+#: ./src/app/message/factories/messageModel.js:31
 msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr ""
@@ -3486,7 +3466,7 @@ msgctxt "Error"
 msgid "Error connecting to PayPal."
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:28
+#: ./src/app/message/factories/messageModel.js:29
 #: ./src/app/outside/controllers/outside.js:32
 msgctxt "Error"
 msgid "Error encrypting message"
@@ -3517,7 +3497,7 @@ msgctxt "Error"
 msgid "Failed to encrypt attachment. Please try again."
 msgstr ""
 
-#: ./src/app/ui/directives/autocompleteEmails.js:31
+#: ./src/app/ui/directives/autocompleteEmails.js:30
 msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
 msgstr ""
@@ -3595,7 +3575,7 @@ msgctxt "Error"
 msgid "Invalid card number"
 msgstr ""
 
-#: ./src/app/payment/factories/paymentModel.js:5
+#: ./src/app/payment/factories/paymentModel.js:13
 msgctxt "Error"
 msgid "Invalid coupon code"
 msgstr ""
@@ -3625,14 +3605,14 @@ msgctxt "Error"
 msgid "Invalid form"
 msgstr ""
 
-#: ./src/app/payment/factories/paymentModel.js:6
-#: ./src/app/user/directives/signupPayForm.js:12
+#: ./src/app/payment/factories/paymentModel.js:14
+#: ./src/app/user/directives/signupPayForm.js:18
 #: ./src/templates/payment/giftCodeInput.tpl.html:14
 msgctxt "Error"
 msgid "Invalid gift code"
 msgstr ""
 
-#: ./src/app/routes.js:121
+#: ./src/app/routes.js:125
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr ""
@@ -3817,12 +3797,12 @@ msgctxt "Error"
 msgid "Some email addresses are invalid"
 msgstr ""
 
-#: ./src/app/user/services/signupUserProcess.js:25
+#: ./src/app/user/services/signupUserProcess.js:26
 msgctxt "Error"
 msgid "Something went wrong"
 msgstr ""
 
-#: ./src/app/user/services/signupUserProcess.js:24
+#: ./src/app/user/services/signupUserProcess.js:25
 msgctxt "Error"
 msgid "Something went wrong during address creation"
 msgstr ""
@@ -3901,7 +3881,7 @@ msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
 msgstr ""
 
-#: ./src/app/ui/directives/autocompleteEmails.js:24
+#: ./src/app/ui/directives/autocompleteEmails.js:23
 msgctxt "Error"
 msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
 msgstr ""
@@ -4335,7 +4315,7 @@ msgctxt "Generate key modal"
 msgid "Key created for {{email}}"
 msgstr ""
 
-#: ./src/app/payment/factories/paymentModel.js:8
+#: ./src/app/payment/factories/paymentModel.js:16
 msgctxt "Gift code request"
 msgid "Gift code accepted"
 msgstr ""
@@ -4854,7 +4834,7 @@ msgctxt "Info"
 msgid "Also used to reset a forgotten password."
 msgstr ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:38
+#: ./src/app/user/directives/signupPayForm.js:21
 msgctxt "Info"
 msgid "Annually"
 msgstr ""
@@ -5030,13 +5010,13 @@ msgctxt "Info"
 msgid "By clicking Setup Account, you agree to abide by"
 msgstr ""
 
-#: ./src/templates/payment/paymentForm.tpl.html:105
+#: ./src/templates/payment/paymentForm.tpl.html:110
 msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr ""
 
 #: ./src/app/composer/controllers/composeMessage.js:138
-#: ./src/app/routes.js:445
+#: ./src/app/routes.js:465
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr ""
@@ -5115,7 +5095,7 @@ msgctxt "Info"
 msgid "Create and manage sub-accounts and assign them email addresses on your custom domain."
 msgstr ""
 
-#: ./src/templates/payment/paymentForm.tpl.html:25
+#: ./src/templates/payment/paymentForm.tpl.html:28
 msgctxt "Info"
 msgid "Credit card payment is currently not available, please try again later."
 msgstr ""
@@ -5288,6 +5268,11 @@ msgctxt "Info"
 msgid "Enter the Organization Password to restore administrator privileges. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Learn more</a>"
 msgstr ""
 
+#: ./src/app/user/directives/signupPayForm.js:23
+msgctxt "Info"
+msgid "Every 2 years"
+msgstr ""
+
 #: ./src/templates/contact/contactActionHeader.tpl.html:46
 #: ./src/templates/contact/contactActionHeader.tpl.html:8
 msgctxt "Info"
@@ -5317,11 +5302,6 @@ msgstr ""
 #: ./src/templates/modals/support.tpl.html:9
 msgctxt "Info"
 msgid "For a custom solution, contact our entreprise sales team for a quote."
-msgstr ""
-
-#: ./src/templates/blackFriday/blackFridayModal.tpl.html:9
-msgctxt "Info"
-msgid "For a strictly limited period between Black Friday and Cyber Monday (November 24-27), we are having the first ever sale in ProtonMail's history! For these 4 days only, it is possible to get up to 45% off regular price for ProtonMail and ProtonVPN with our special 2-year plans. Once subscribed to this promotion, you keep the discount as long as your subscription is active."
 msgstr ""
 
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:21
@@ -5424,7 +5404,7 @@ msgctxt "Info"
 msgid "It can take up to a day for DNS changes to update."
 msgstr ""
 
-#: ./src/app/core/controllers/signup.js:79
+#: ./src/app/core/controllers/signup.js:76
 msgctxt "Info"
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
 msgstr ""
@@ -5504,7 +5484,7 @@ msgctxt "Info"
 msgid "Message discarded"
 msgstr ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:37
+#: ./src/app/user/directives/signupPayForm.js:22
 msgctxt "Info"
 msgid "Monthly"
 msgstr ""
@@ -5668,7 +5648,7 @@ msgctxt "Info"
 msgid "Password updated"
 msgstr ""
 
-#: ./src/templates/payment/paymentForm.tpl.html:24
+#: ./src/templates/payment/paymentForm.tpl.html:27
 msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr ""
@@ -5778,11 +5758,6 @@ msgctxt "Info"
 msgid "Problem loading your account"
 msgstr ""
 
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:7
-msgctxt "Info"
-msgid "ProtonMail Plus adds a number of powerful features to your secure inbox: 5GB storage, 5 extra addresses, Filters, Folders, Labels, IMAP/SMTP support (beta), use your own domain name."
-msgstr ""
-
 #: ./src/templates/modals/addAddress.tpl.html:52
 msgctxt "Info"
 msgid "ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not. <a href=\"https://protonmail.com/support/knowledge-base/aliases-within-protonmail/\" target=\"_blank\">Learn more</a>"
@@ -5804,11 +5779,6 @@ msgctxt "Info"
 msgid "ProtonMail encountered a problem loading your account. Please refresh the page and try again later."
 msgstr ""
 
-#: ./src/templates/blackFriday/blackFridayModal.tpl.html:12
-msgctxt "Info"
-msgid "ProtonMail is entirely community funded as we don't sell ads or abuse your privacy. Your support allows us to continue to improve ProtonMail and make the Internet a better place."
-msgstr ""
-
 #: ./src/templates/pmMe/pmMeView.tpl.html:9
 msgctxt "Info"
 msgid "ProtonMail now supports @pm.me email addresses (short for ProtonMail me or Private Message me)."
@@ -5827,11 +5797,6 @@ msgstr ""
 #: ./src/templates/views/appearance.tpl.html:42
 msgctxt "Info"
 msgid "ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts."
-msgstr ""
-
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:14
-msgctxt "Info"
-msgid "ProtonVPN encrypts your internet connection, ensuring your online activity stays private. 100+ servers in 14 countries. Secure core network, Tor integration, protect up to 5 devices."
 msgstr ""
 
 #: ./src/templates/modals/domain/dkim.tpl.html:11
@@ -5994,12 +5959,7 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr ""
 
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:21
-msgctxt "Info"
-msgid "The ultimate internet privacy package, combining the most popular ProtonMail and ProtonVPN plans. By buying both together with our special 2-year plan, you can save 45% off of the regular monthly price."
-msgstr ""
-
-#: ./src/app/routes.js:178
+#: ./src/app/routes.js:182
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr ""
@@ -6011,7 +5971,7 @@ msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:182
 #: ./src/templates/views/setup.tpl.html:79
-#: ./src/templates/views/signup.tpl.html:15
+#: ./src/templates/views/signup.tpl.html:14
 msgctxt "Info"
 msgid "This can take a few seconds or a few minutes depending on your device."
 msgstr ""
@@ -6157,7 +6117,7 @@ msgstr ""
 
 #: ./src/templates/modals/pay.tpl.html:88
 #: ./src/templates/payment/donation.tpl.html:103
-#: ./src/templates/payment/paymentForm.tpl.html:63
+#: ./src/templates/payment/paymentForm.tpl.html:66
 msgctxt "Info"
 msgid "To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions."
 msgstr ""
@@ -6430,7 +6390,7 @@ msgctxt "Info"
 msgid "You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue."
 msgstr ""
 
-#: ./src/templates/modals/payment/modal.tpl.html:36
+#: ./src/templates/modals/payment/modal.tpl.html:39
 msgctxt "Info"
 msgid "You're upgrading your account. Once we successfully process payment, we'll immediately upgrade your account. Thanks for choosing to become a paying customer!"
 msgstr ""
@@ -6464,7 +6424,7 @@ msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
 msgstr ""
 
-#: ./src/templates/modals/payment/modal.tpl.html:38
+#: ./src/templates/modals/payment/modal.tpl.html:41
 msgctxt "Info"
 msgid "Your account is being updated, this may take up to 30 seconds."
 msgstr ""
@@ -6490,7 +6450,7 @@ msgctxt "Info"
 msgid "Your email or phone number will not be linked to the account created. It is only used during the signup process. A hash will be saved to prevent abuse of the ProtonMail systems."
 msgstr ""
 
-#: ./src/templates/modals/payment/modal.tpl.html:45
+#: ./src/templates/modals/payment/modal.tpl.html:48
 msgctxt "Info"
 msgid "Your new features are now available."
 msgstr ""
@@ -6529,6 +6489,7 @@ msgid "is activated on your account."
 msgstr ""
 
 #: ./src/app/dashboard/directives/totalPlan.js:6
+#: ./src/app/user/directives/signupPayForm.js:19
 msgctxt "Info"
 msgid "month"
 msgstr ""
@@ -6684,7 +6645,7 @@ msgctxt "Info for the vpn modal"
 msgid "ProtonVPN encrypts your internet connection, adding a powerful layer of security to your devices and ensuring your online activity stays private."
 msgstr ""
 
-#: ./src/templates/modals/payment/modal.tpl.html:46
+#: ./src/templates/modals/payment/modal.tpl.html:49
 msgctxt "Info payment"
 msgid "Start customizing!"
 msgstr ""
@@ -7533,7 +7494,8 @@ msgctxt "Label select weekday"
 msgid "Select weekday"
 msgstr ""
 
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:111
+#: ./src/templates/payment/paymentPlanOverview.tpl.html:16
+#: ./src/templates/payment/tosubscribeOverview.tpl.html:109
 msgctxt "Link"
 msgid "(What is this?)"
 msgstr ""
@@ -7612,7 +7574,7 @@ msgctxt "Link"
 msgid "More info"
 msgstr ""
 
-#: ./src/templates/payment/paymentForm.tpl.html:105
+#: ./src/templates/payment/paymentForm.tpl.html:110
 msgctxt "Link"
 msgid "ProtonMail's Terms and Conditions"
 msgstr ""
@@ -7800,7 +7762,7 @@ msgctxt "Message"
 msgid "Re:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:111
+#: ./src/app/message/factories/messageModel.js:112
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr ""
@@ -7810,64 +7772,64 @@ msgctxt "Message decryption error"
 msgid "Decryption error: Decryption of this message's encryption content failed."
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:98
+#: ./src/app/message/factories/messageModel.js:99
 msgctxt "Message encryption status"
 msgid "Encrypted message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:60
+#: ./src/app/message/factories/messageModel.js:61
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:61
+#: ./src/app/message/factories/messageModel.js:62
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message from verified address"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:69
+#: ./src/app/message/factories/messageModel.js:70
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:70
+#: ./src/app/message/factories/messageModel.js:71
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message from verified address"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:75
+#: ./src/app/message/factories/messageModel.js:76
 msgctxt "Message encryption status"
 msgid "PGP-signed message from verified address"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:66
-#: ./src/app/message/factories/messageModel.js:71
-#: ./src/app/message/factories/messageModel.js:76
-#: ./src/app/message/factories/messageModel.js:89
-#: ./src/app/message/factories/messageModel.js:95
+#: ./src/app/message/factories/messageModel.js:67
+#: ./src/app/message/factories/messageModel.js:72
+#: ./src/app/message/factories/messageModel.js:77
+#: ./src/app/message/factories/messageModel.js:90
+#: ./src/app/message/factories/messageModel.js:96
 msgctxt "Message encryption status"
 msgid "Sender verification failed"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:108
+#: ./src/app/message/factories/messageModel.js:109
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail with zero access encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:87
 #: ./src/app/message/factories/messageModel.js:88
+#: ./src/app/message/factories/messageModel.js:89
 msgctxt "Message encryption status"
 msgid "Sent by you with end-to-end encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:74
-#: ./src/app/message/factories/messageModel.js:93
+#: ./src/app/message/factories/messageModel.js:75
 #: ./src/app/message/factories/messageModel.js:94
+#: ./src/app/message/factories/messageModel.js:95
 msgctxt "Message encryption status"
 msgid "Stored with zero access encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:80
+#: ./src/app/message/factories/messageModel.js:81
 msgctxt "Message encryption status"
 msgid "Unencrypted message"
 msgstr ""
@@ -8071,7 +8033,7 @@ msgctxt "Notification update"
 msgid "The public key with fingerprint {{ fingerprint }} was replaced with a revoked key."
 msgstr ""
 
-#: ./src/app/utils/services/eventManager.js:162
+#: ./src/app/utils/services/eventManager.js:163
 msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr ""
@@ -8214,12 +8176,12 @@ msgctxt "Payment"
 msgid "Payment method updated"
 msgstr ""
 
-#: ./src/templates/payment/paymentForm.tpl.html:14
+#: ./src/templates/payment/paymentForm.tpl.html:17
 msgctxt "Payment form information"
 msgid "Save 20% with the annual plan!"
 msgstr ""
 
-#: ./src/templates/payment/paymentForm.tpl.html:84
+#: ./src/templates/payment/paymentForm.tpl.html:88
 msgctxt "Payment form input label"
 msgid "Coupon"
 msgstr ""
@@ -8584,7 +8546,7 @@ msgctxt "ProtonVPN with X connections"
 msgid "with"
 msgstr ""
 
-#: ./src/app/composer/services/postMessage.js:26
+#: ./src/app/composer/services/postMessage.js:24
 msgctxt "Record message"
 msgid "Message saved"
 msgstr ""
@@ -8686,76 +8648,6 @@ msgstr ""
 #: ./src/templates/autoresponder/autoresponderMessage.tpl.html:23
 msgctxt "Settings autoresponder, how many bites inside the message"
 msgid "bytes used"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:126
-msgctxt "Signup error"
-msgid "Would you like to create a free ProtonMail account instead?"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:64
-msgctxt "Signup features"
-msgid "20GB storage"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:63
-msgctxt "Signup features"
-msgid "5GB storage"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:74
-msgctxt "Signup features"
-msgid "Early access to new features"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:75
-msgctxt "Signup features"
-msgid "Help pick new features through Visionary only polls"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:67
-msgctxt "Signup features"
-msgid "Labels and Custom Filters"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:66
-msgctxt "Signup features"
-msgid "No sending limits"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:73
-msgctxt "Signup features"
-msgid "Priority Customer Support"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:68
-msgctxt "Signup features"
-msgid "Send encrypted messages to external recipients"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:65
-msgctxt "Signup features"
-msgid "Send up to 1000 messages per day"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:72
-msgctxt "Signup features"
-msgid "Support for up to 5 domains"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:70
-msgctxt "Signup features"
-msgid "Up to 5 email aliases"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:71
-msgctxt "Signup features"
-msgid "Up to 50 email aliases"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:69
-msgctxt "Signup features"
-msgid "Use your own domain (ex: thomas@anderson.com)"
 msgstr ""
 
 #: ./src/templates/user/signupCreationProcess.tpl.html:25
@@ -9328,8 +9220,13 @@ msgctxt "Title"
 msgid "Amount"
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:56
+msgctxt "Title"
+msgid "Amount Due"
+msgstr ""
+
 #: ./src/templates/modals/pay.tpl.html:44
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:127
+#: ./src/templates/payment/tosubscribeOverview.tpl.html:125
 msgctxt "Title"
 msgid "Amount due"
 msgstr ""
@@ -9412,12 +9309,12 @@ msgctxt "Title"
 msgid "Background color"
 msgstr ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:35
+#: ./src/templates/user/signupPayForm.tpl.html:24
 msgctxt "Title"
 msgid "Billing"
 msgstr ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:16
+#: ./src/templates/user/signupPayForm.tpl.html:6
 msgctxt "Title"
 msgid "Billing Information"
 msgstr ""
@@ -9425,11 +9322,6 @@ msgstr ""
 #: ./src/templates/message/trustPublicKeyInfo.tpl.html:8
 msgctxt "Title"
 msgid "Bits"
-msgstr ""
-
-#: ./src/templates/blackFriday/blackFridayModal.tpl.html:6
-msgctxt "Title"
-msgid "Black Friday Offer"
 msgstr ""
 
 #: ./src/app/ui/factories/pageTitlesModel.js:33
@@ -9601,11 +9493,13 @@ msgctxt "Title"
 msgid "Conversation Grouping"
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:52
 #: ./src/templates/payment/tosubscribeOverview.tpl.html:88
 msgctxt "Title"
 msgid "Cost per month"
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:50
 #: ./src/templates/dashboard/overviewSection.tpl.html:71
 #: ./src/templates/payment/tosubscribeOverview.tpl.html:100
 msgctxt "Title"
@@ -9652,16 +9546,12 @@ msgctxt "Title"
 msgid "Creating account"
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:53
 #: ./src/templates/dashboard/overviewSection.tpl.html:61
 #: ./src/templates/modals/pay.tpl.html:40
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:122
+#: ./src/templates/payment/tosubscribeOverview.tpl.html:120
 msgctxt "Title"
 msgid "Credit"
-msgstr ""
-
-#: ./src/templates/user/signupPayForm.tpl.html:98
-msgctxt "Title"
-msgid "Credit Card"
 msgstr ""
 
 #: ./src/templates/views/domains.tpl.html:51
@@ -9816,6 +9706,16 @@ msgstr ""
 #: ./src/app/address/factories/addressModel.js:43
 msgctxt "Title"
 msgid "Disable address"
+msgstr ""
+
+#: ./src/app/payment/directives/paymentPlanOverview.js:38
+msgctxt "Title"
+msgid "Discount: 1-year plan"
+msgstr ""
+
+#: ./src/app/payment/directives/paymentPlanOverview.js:39
+msgctxt "Title"
+msgid "Discount: 2-year plan"
 msgstr ""
 
 #: ./src/templates/modals/welcome.tpl.html:21
@@ -10046,7 +9946,7 @@ msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:180
 #: ./src/templates/views/setup.tpl.html:77
-#: ./src/templates/views/signup.tpl.html:13
+#: ./src/templates/views/signup.tpl.html:12
 msgctxt "Title"
 msgid "Generating keys..."
 msgstr ""
@@ -10056,10 +9956,15 @@ msgctxt "Title"
 msgid "Getting started with ProtonVPN"
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:55
+msgctxt "Title"
+msgid "Gift"
+msgstr ""
+
 #: ./src/templates/payment/giftCodeModal.tpl.html:6
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:117
-#: ./src/templates/user/signupPayForm.tpl.html:117
-#: ./src/templates/user/signupPayForm.tpl.html:42
+#: ./src/templates/payment/tosubscribeOverview.tpl.html:115
+#: ./src/templates/user/signupPayForm.tpl.html:30
+#: ./src/templates/user/signupPayForm.tpl.html:78
 msgctxt "Title"
 msgid "Gift code"
 msgstr ""
@@ -10413,14 +10318,14 @@ msgctxt "Title"
 msgid "Organization recovery password"
 msgstr ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:23
+#: ./src/templates/user/signupPayForm.tpl.html:13
 #: ./src/templates/views/dashboard.tpl.html:8
 msgctxt "Title"
 msgid "Overview"
 msgstr ""
 
 #. current page dropdown in paginator
-#: ./src/templates/directives/paginator.tpl.html:19
+#: ./src/templates/directives/paginator.tpl.html:29
 #: ./src/templates/directives/paginatorScope.tpl.html:12
 msgctxt "Title"
 msgid "Page"
@@ -10445,11 +10350,6 @@ msgctxt "Title"
 msgid "Pay invoice"
 msgstr ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:107
-msgctxt "Title"
-msgid "PayPal"
-msgstr ""
-
 #: ./src/templates/modals/payment/modal.tpl.html:29
 msgctxt "Title"
 msgid "Payment"
@@ -10461,8 +10361,13 @@ msgid "Payment details"
 msgstr ""
 
 #. form label
-#: ./src/templates/payment/paymentForm.tpl.html:31
-#: ./src/templates/user/signupPayForm.tpl.html:84
+#: ./src/templates/user/signupPayForm.tpl.html:50
+msgctxt "Title"
+msgid "Payment method"
+msgstr ""
+
+#. form label
+#: ./src/templates/payment/paymentForm.tpl.html:34
 msgctxt "Title"
 msgid "Payment method:"
 msgstr ""
@@ -10483,8 +10388,9 @@ msgctxt "Title"
 msgid "Personalize your layout"
 msgstr ""
 
+#: ./src/templates/payment/paymentPlanOverview.tpl.html:3
 #: ./src/templates/payment/tosubscribeOverview.tpl.html:4
-#: ./src/templates/user/signupPayForm.tpl.html:28
+#: ./src/templates/user/signupPayForm.tpl.html:18
 msgctxt "Title"
 msgid "Plan"
 msgstr ""
@@ -10500,8 +10406,9 @@ msgid "Plans and prices"
 msgstr ""
 
 #. Table heading
+#: ./src/templates/payment/paymentPlanOverview.tpl.html:4
 #: ./src/templates/payment/tosubscribeOverview.tpl.html:5
-#: ./src/templates/user/signupPayForm.tpl.html:48
+#: ./src/templates/user/signupPayForm.tpl.html:36
 #: ./src/templates/views/invoices.tpl.html:19
 #: ./src/templates/views/invoices.tpl.html:49
 msgctxt "Title"
@@ -10529,19 +10436,10 @@ msgctxt "Title"
 msgid "Privatize User"
 msgstr ""
 
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:111
+#: ./src/app/payment/directives/paymentPlanOverview.js:54
+#: ./src/templates/payment/tosubscribeOverview.tpl.html:109
 msgctxt "Title"
 msgid "Proration"
-msgstr ""
-
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:19
-msgctxt "Title"
-msgid "ProtonMail + VPN Plus 2-year plan"
-msgstr ""
-
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:5
-msgctxt "Title"
-msgid "ProtonMail Plus 2-year plan"
 msgstr ""
 
 #: ./src/templates/user/signupUserForm.tpl.html:63
@@ -10554,11 +10452,6 @@ msgstr ""
 #: ./src/templates/vpn/vpnView.tpl.html:6
 msgctxt "Title"
 msgid "ProtonVPN"
-msgstr ""
-
-#: ./src/templates/blackFriday/blackFridayFree.tpl.html:12
-msgctxt "Title"
-msgid "ProtonVPN Plus 2-year plan"
 msgstr ""
 
 #: ./src/templates/vpn/vpnView.tpl.html:62
@@ -10861,12 +10754,12 @@ msgctxt "Title"
 msgid "Text color"
 msgstr ""
 
-#: ./src/templates/modals/payment/modal.tpl.html:44
+#: ./src/templates/modals/payment/modal.tpl.html:47
 msgctxt "Title"
 msgid "Thank you for your subscription!"
 msgstr ""
 
-#: ./src/templates/user/signupPayForm.tpl.html:18
+#: ./src/app/user/directives/signupPayForm.js:31
 msgctxt "Title"
 msgid "Thank you for your support!"
 msgstr ""
@@ -10899,16 +10792,19 @@ msgctxt "Title"
 msgid "Toolbar"
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:35
 #: ./src/templates/payment/tosubscribeOverview.tpl.html:95
 msgctxt "Title"
 msgid "Total (2-year billing)"
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:34
 #: ./src/templates/payment/tosubscribeOverview.tpl.html:94
 msgctxt "Title"
 msgid "Total (annual billing)"
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:33
 #: ./src/templates/payment/tosubscribeOverview.tpl.html:93
 msgctxt "Title"
 msgid "Total (monthly billing)"
@@ -11084,9 +10980,42 @@ msgctxt "Title"
 msgid "label"
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:62
+msgctxt "Title"
+msgid "{{$count}} Address"
+msgid_plural "{{$count}} Addresses"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ./src/app/payment/directives/paymentPlanOverview.js:60
+msgctxt "Title"
+msgid "{{$count}} Custom domain"
+msgid_plural "{{$count}} Custom domains"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ./src/app/payment/directives/paymentPlanOverview.js:61
+msgctxt "Title"
+msgid "{{$count}} User"
+msgid_plural "{{$count}} Users"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ./src/app/payment/directives/paymentPlanOverview.js:64
+msgctxt "Title"
+msgid "{{$count}} VPN Connection"
+msgid_plural "{{$count}} VPN Connections"
+msgstr[0] ""
+msgstr[1] ""
+
 #: ./src/app/contact/services/manageContactGroup.js:55
 msgctxt "Title"
 msgid "{{Name}} deleted"
+msgstr ""
+
+#: ./src/app/payment/directives/paymentPlanOverview.js:58
+msgctxt "Title"
+msgid "{{amount}} Storage"
 msgstr ""
 
 #: ./src/templates/contact/contactAskEncryptionModal.tpl.html:5
@@ -11171,9 +11100,19 @@ msgctxt "Tooltip"
 msgid "1-year plan, 20% off"
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:43
+msgctxt "Tooltip"
+msgid "1-year plan, {{percentage}} off"
+msgstr ""
+
 #: ./src/templates/payment/tosubscribeOverview.tpl.html:22
 msgctxt "Tooltip"
 msgid "2-year plan, 33% off"
+msgstr ""
+
+#: ./src/app/payment/directives/paymentPlanOverview.js:45
+msgctxt "Tooltip"
+msgid "2-year plan, {{percentage}} off"
 msgstr ""
 
 #: ./src/templates/dashboard/totalRows.tpl.html:43
@@ -11367,11 +11306,6 @@ msgstr ""
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:93
 msgctxt "Tooltip"
 msgid "Trust"
-msgstr ""
-
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:101
-msgctxt "Tooltip"
-msgid "VPN discount, 20% off"
 msgstr ""
 
 #: ./src/templates/address/addressKeysView.tpl.html:67
