@@ -12,7 +12,6 @@ import giftCodeValidator from './directives/giftCodeValidator';
 import payInvoiceBtn from './directives/payInvoiceBtn';
 import paymentForm from './directives/paymentForm';
 import paypalView from './directives/paypalView';
-import tosubscribeOverview from './directives/tosubscribeOverview';
 import donateModel from './factories/donateModel';
 import giftCodeModel from './factories/giftCodeModel';
 import paymentBitcoinModel from './factories/paymentBitcoinModel';
@@ -46,7 +45,6 @@ export default angular
     .directive('paymentForm', paymentForm)
     .directive('paypalView', paypalView)
     .directive('paymentPlanOverview', paymentPlanOverview)
-    .directive('tosubscribeOverview', tosubscribeOverview)
     .factory('donateModel', donateModel)
     .factory('giftCodeModel', giftCodeModel)
     .factory('paymentBitcoinModel', paymentBitcoinModel)

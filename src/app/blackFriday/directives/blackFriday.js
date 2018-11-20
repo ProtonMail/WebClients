@@ -142,16 +142,15 @@ function blackFriday(
                     return acc;
                 }, []);
 
-                // Needed for the payment modal.
                 const promise = wrapLoading(PaymentCache.plans(payment.Currency, payment.Cycle));
-
-                await networkActivityTracker.track(promise);
+                const plans = await networkActivityTracker.track(promise);
 
                 paymentModal.activate({
                     params: {
                         isBlackFriday: true,
                         planIDs,
                         valid: payment,
+                        plans,
                         cancel() {
                             paymentModal.deactivate();
                         }
