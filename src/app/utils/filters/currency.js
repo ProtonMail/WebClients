@@ -1,34 +1,24 @@
 /* @ngInject */
 function currencyFilter() {
-    const FORMATTERS = {};
     const MAP = {
         USD: '$',
         EUR: '€',
         CHF: 'CHF'
     };
 
-    function fallbackFormat(amount = 0, currency = '') {
+    return (amount = 0, currency = '') => {
         const symbol = MAP[currency] || currency;
         const value = Number(amount).toFixed(2);
 
+        const prefix = value < 0 ? '-' : '';
+        const absValue = Math.abs(value);
+
         if (currency === 'USD') {
             // Negative amount, - is before the devise
-            const prefix = value < 0 ? '-' : '';
-            return `${prefix}${symbol}${Math.abs(value)}`.trim();
+            return `${prefix}${symbol}${absValue}`;
         }
 
-        return `${value} ${symbol}`.trim();
-    }
-
-    const getFormatter = (currency) => (amount) => fallbackFormat(amount, currency);
-
-    return (amount, currency) => {
-        if (!currency) {
-            return fallbackFormat(amount, currency);
-        }
-
-        !FORMATTERS[currency] && (FORMATTERS[currency] = getFormatter(currency));
-        return FORMATTERS[currency](amount);
+        return `${prefix}${absValue} ${symbol}`;
     };
 }
 export default currencyFilter;

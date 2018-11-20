@@ -1,0 +1,82 @@
+.paymentPlanOverview-list {
+    padding: 0;
+    margin: 0
+}
+
+.paymentPlanOverview-item {
+    list-style: none;
+    margin: 0;
+    padding: 0 1em;
+    border-bottom: 1px solid $border;
+}
+
+.paymentPlanOverview-item-container {
+    display: flex;
+    justify-content: space-between;
+    height: 36px;
+    align-items: center;
+}
+
+.paymentPlanOverview-item-title {
+    line-height: initial;
+    font-weight: normal;
+    font-size: 1em;
+    color: inherit;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.paymentPlanOverview-item-discount {
+    border-radius: $border-radius;
+    border: 1px solid $discount;
+    color: $discount;
+    font-size: .85em;
+    font-weight: bold;
+    padding: 1px 3px;
+    margin: 0 10px 0 5px;
+
+    &:hover {
+        color: $white;
+        background-color: $discount;
+    }
+}
+
+.paymentPlanOverview-list-features {
+    padding: 0;
+    margin-left: 1em;
+    padding-bottom: 1em;
+}
+
+.paymentPlanOverview-list-features .paymentPlanOverview-item-container {
+    height: 28px;
+}
+
+.paymentPlanOverview-item-container.final .paymentPlanOverview-item-title,
+.paymentPlanOverview-item-container.final .paymentPlanOverview-item-price {
+    font-weight: bold;
+}
+
+.paymentPlanOverview-item-container.discount .paymentPlanOverview-item-price {
+    color: $green;
+}
+
+
+.paymentPlanOverview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    background: $tertiary;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+    color: $default-color-medium;
+    font-weight: 400;
+    text-transform: uppercase;
+    height: 36px;
+}
+
+.paymentPlanOverview-header-title {
+    font-size: 1em;
+    color: inherit;
+}

@@ -91,7 +91,9 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
      * @param {Promise}
      */
     const verify = (params) => {
-        return generateFingerprint(params).then((params) => $http.post(requestUrl('verify'), params));
+        return generateFingerprint(params)
+            .then((params) => $http.post(requestUrl('verify'), params))
+            .then(({ data = {} } = {}) => data);
     };
 
     /**
@@ -129,13 +131,15 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
 
     /**
      * Get plans available to user
-     * @param {Function} filter callback to filter plans (default will remove vpn)
+     * @param {String} Currency
+     * @param {Number} Cycle
+     * @return {Promise<Array>}
      */
     const plans = (Currency, Cycle) => {
         return $http
             .get(requestUrl('plans'), { params: { Currency, Cycle } })
-            .then(paymentPlansFormator(Currency, Cycle))
-            .then((data) => ({ data }));
+            .then(({ data: { Plans = [] } = {} }) => Plans)
+            .then(paymentPlansFormator(Currency, Cycle));
     };
 
     /**
@@ -175,7 +179,7 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
     /**
      * Validate a subscription
      */
-    const valid = (opt) => $http.post(requestUrl('subscription', 'check'), opt);
+    const valid = (opt) => $http.post(requestUrl('subscription', 'check'), opt).then(({ data = {} }) => data);
 
     const updateMethod = (params) => {
         return generateFingerprint(params).then((params) => $http.post(requestUrl('methods'), params));

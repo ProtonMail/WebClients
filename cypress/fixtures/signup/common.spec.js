@@ -1,4 +1,4 @@
-function test(USERNAME, { confirmModal, welcomeModal }, isFree) {
+function test(USERNAME, { confirmModal }, isFree) {
     it('should only display the main step', () => {
         cy.get('.signUpProcess-step-1').should('be.visible');
         cy.get('.signUpProcess-step-2').should('not.be.visible');

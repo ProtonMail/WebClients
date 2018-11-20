@@ -9,9 +9,7 @@ function navigation(dispatchers, blackFridayModel) {
         link(scope, element) {
             const { on, unsubscribe } = dispatchers();
             const update = () =>
-                element[0].classList[blackFridayModel.isBlackFridayPeriod(true) ? 'add' : 'remove'](
-                    IS_BLACK_FRIDAY_CLASS
-                );
+                element[0].classList[blackFridayModel.isDealPeriod(true) ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);
 
             on('subscription', (event, { type = '' }) => {
                 type === 'update' && update();

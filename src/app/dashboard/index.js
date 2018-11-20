@@ -1,7 +1,7 @@
 import activePlan from './directives/activePlan';
 import addVpn from './directives/addVpn';
 import addonRow from './directives/addonRow';
-import currencySelector from './directives/currencySelector';
+import dashboardCurrencySelector from './directives/currencySelector';
 import freeColumn from './directives/freeColumn';
 import overviewSection from './directives/overviewSection';
 import planPrice from './directives/planPrice';
@@ -33,7 +33,7 @@ export default angular
     .directive('activePlan', activePlan)
     .directive('addVpn', addVpn)
     .directive('addonRow', addonRow)
-    .directive('currencySelector', currencySelector)
+    .directive('dashboardCurrencySelector', dashboardCurrencySelector)
     .directive('freeColumn', freeColumn)
     .directive('overviewSection', overviewSection)
     .directive('planPrice', planPrice)

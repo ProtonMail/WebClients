@@ -123,7 +123,7 @@ function SetupController(
         if (authentication.user.Delinquent < UNPAID_STATE.DELINQUENT) {
             return $state.go('secured.inbox', { welcome: WIZARD_ENABLED });
         }
-        $state.go('secured.dashboard');
+        return $state.go('secured.dashboard');
     }
 }
 export default SetupController;

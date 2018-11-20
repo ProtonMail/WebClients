@@ -19,6 +19,7 @@ import paymentBitcoinModel from './factories/paymentBitcoinModel';
 import paymentModalModel from './factories/paymentModalModel';
 import paymentModel from './factories/paymentModel';
 import brick from './services/brick';
+import paymentPlanOverview from './directives/paymentPlanOverview';
 import paymentPlansFormator from './services/paymentPlansFormator';
 import paymentUtils from './services/paymentUtils';
 import cardModal from './modals/cardModal';
@@ -44,6 +45,7 @@ export default angular
     .directive('payInvoiceBtn', payInvoiceBtn)
     .directive('paymentForm', paymentForm)
     .directive('paypalView', paypalView)
+    .directive('paymentPlanOverview', paymentPlanOverview)
     .directive('tosubscribeOverview', tosubscribeOverview)
     .factory('donateModel', donateModel)
     .factory('giftCodeModel', giftCodeModel)

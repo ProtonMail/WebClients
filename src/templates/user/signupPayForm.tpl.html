@@ -1,21 +1,11 @@
-<div
-    class="signupPayForm-container"
-    ng-class="{
-        'signupPayForm-cycle-month': plan.Cycle === 1,
-        'signupPayForm-cycle-year': plan.Cycle === 12,
-        'signupPayForm-plan-plus': plan.Name === 'plus',
-        'signupPayForm-plan-visionary': plan.Name === 'visionary',
-        'signupPayForm-method-paypal': method.value === 'paypal',
-        'signupPayForm-error': errorPay,
-    }">
-
+<div class="signupPayForm-container">
     <header class="text-center header signupPayForm-header">
         <img class="signupPayForm-header-logo" src="/assets/img/logo/logo-purple.svg" height="34" />
         <h2 class="signupPayForm-header-title">
             <i class="fa fa-money"></i>
             <span translate translate-context="Title">Billing Information</span>
         </h2>
-        <p class="uppercase" translate translate-context="Title">Thank you for your support!</p>
+        <p class="signupPayForm-thanks"></p>
     </header>
     <hr />
 
@@ -27,53 +17,29 @@
                     <tr>
                         <th scope="row" translate translate-context="Title">Plan</th>
                         <td>
-                            <strong class="signupPayForm-feature-plus plus">ProtonMail PLUS</strong>
-                            <strong class="signupPayForm-feature-visionary visionary">ProtonMail VISIONARY</strong>
+                            <strong class="signupPayForm-plan-name">{{ ::plan.name }}</strong>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row" translate translate-context="Title">Billing</th>
                         <td>
-                            <strong class="signupPayForm-selection-monthly" translate translate-context="Info">Monthly</strong>
-                            <strong class="signupPayForm-selection-annually" translate translate-context="Info">Annually</strong>
+                            <strong class="signupPayForm-plan-billing">{{ ::plan.billing }}</strong>
                         </td>
                     </tr>
-                    <tr ng-if="giftModel.Gift">
+                    <tr class="signupPayForm-gift-amount-row">
                         <th scope="row" translate-context="Title" translate>Gift code</th>
                         <td>
-                            <strong class="text-green">{{ giftModel.Gift / 100 | currency: plan.Currency }}</strong>
+                            <strong class="signupPayForm-plan-gift text-green">{{ giftModel.Gift / 100 | currency: payment.Currency }}</strong>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row" translate translate-context="Title">Price</th>
                         <td>
-                            <strong>{{ (giftModel.AmountDue || plan.Amount) / 100 | currency: plan.Currency }}</strong> <i ng-hide="plan.Cycle === 1">({{ (giftModel.AmountDue || plan.Amount) / 100 / plan.Cycle | currency: plan.Currency }} / month)</i>
+                            <strong class="signupPayForm-plan-price">{{ plan.price }}</strong>
                         </td>
                     </tr>
                 </tbody>
             </table>
-
-            <button type="button" class="signupPayForm-btn-features">
-                <span translate-context="Action" translate>Show features</span>
-                <i class="fa fa-angle-down"></i>
-                <i class="fa fa-angle-up"></i>
-            </button>
-
-            <ul class="signupPayForm-view-features">
-                <li class="signupPayForm-feature-plus" translate-context="Signup features" translate>5GB storage</li>
-                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>20GB storage</li>
-                <li class="signupPayForm-feature-plus" translate-context="Signup features" translate>Send up to 1000 messages per day</li>
-                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>No sending limits</li>
-                <li translate-context="Signup features" translate>Labels and Custom Filters</li>
-                <li translate-context="Signup features" translate>Send encrypted messages to external recipients</li>
-                <li translate-context="Signup features" translate>Use your own domain (ex: thomas@anderson.com)</li>
-                <li class="signupPayForm-feature-plus" translate-context="Signup features" translate>Up to 5 email aliases</li>
-                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>Up to 50 email aliases</li>
-                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>Support for up to 5 domains</li>
-                <li translate-context="Signup features" translate>Priority Customer Support</li>
-                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>Early access to new features</li>
-                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>Help pick new features through Visionary only polls</li>
-            </ul>
         </div>
     </div>
 
@@ -81,13 +47,14 @@
 
         <div class="pm_grid margin">
             <div class="col-1-2">
-                <label for="paymentMethod" translate translate-context="Title" translate-comment="form label">Payment method:</label>
+                <label for="paymentMethod" translate translate-context="Title" translate-comment="form label">Payment method</label>
             </div>
             <div class="col-1-2">
                 <div class="pm_select">
                     <select
                         id="paymentMethod"
                         ng-model="method"
+                        ng-change="onPaymentMethodChange()"
                         ng-options="method.label for method in methods"></select>
                     <i class="fa fa-angle-down"></i>
                 </div>
@@ -95,22 +62,16 @@
         </div>
 
         <div class="pm_grid" ng-if="method.value === 'card'">
-            <div class="col-1-4 bold" translate translate-context="Title">Credit Card</div>
-            <div class="col-3-4">
-                <card-view
-                    data-card="account.card"
-                    data-form="payForm"></card-view>
-            </div>
+            <card-view
+                data-card="account.card"
+                data-form="payForm"></card-view>
         </div>
 
         <div class="pm_grid" ng-if="method.value === 'paypal'">
-            <div class="col-1-4 bold" translate translate-context="Title">PayPal</div>
-            <div class="col-3-4">
-                <paypal-view
-                    data-callback="onPaypalSuccess"
-                    data-currency="plan.Currency"
-                    data-amount="giftModel.AmountDue || plan.Amount"></paypal-view>
-            </div>
+            <paypal-view
+                data-callback="onPaypalSuccess"
+                data-currency="payment.Currency"
+                data-amount="giftModel.AmountDue || payment.AmountDue"></paypal-view>
         </div>
 
         <div class="pm_grid signupPayForm-gift-row">

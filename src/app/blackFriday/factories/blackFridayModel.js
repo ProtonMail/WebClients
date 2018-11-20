@@ -1,134 +1,109 @@
-import _ from 'lodash';
-
-import { PAID_MEMBER_ROLE, CYCLE, PLANS, BLACK_FRIDAY_INTERVAL } from '../../constants';
-
-const { TWO_YEARS } = CYCLE;
-const { PLUS, VPN_PLUS } = PLANS.PLAN;
+import blackFridayOffers from '../helpers/blackFridayOffers';
+import { isDealEvent } from '../helpers/blackFridayHelper';
+import { BLACK_FRIDAY, CYCLE } from '../../constants';
+import { getPlansMap } from '../../../helpers/paymentHelper';
 
 /* @ngInject */
-function blackFridayModel(
-    authentication,
-    dashboardModel,
-    dispatchers,
-    networkActivityTracker,
-    Payment,
-    paymentModal,
-    subscriptionModel,
-    paymentModel
-) {
-    const CACHE = {};
-    const BLACK_FRIDAY_ITEM = 'protonmail_black_friday';
-    const inInterval = () => moment().isBetween('2017-11-24', '2017-11-28');
-    const { dispatcher, on } = dispatchers(['blackFriday']);
+function blackFridayModel(authentication, subscriptionModel, paymentModel, PaymentCache) {
+    // Needed as function because the authentiation.user.ID can change.
+    const getKey = () => `protonmail_black_friday_${authentication.user.ID}_${BLACK_FRIDAY.YEAR}`;
+    const hasSeenOffer = () => localStorage.getItem(getKey());
+    const saveClose = () => localStorage.setItem(getKey(), 'closed');
 
-    function isBlackFridayPeriod(force = false) {
-        const subscription = subscriptionModel.get();
-        const isLifetime = subscription.CouponCode === 'LIFETIME';
-        const isMember = authentication.user.Role === PAID_MEMBER_ROLE;
-        const isSubuser = authentication.user.subuser;
-        const isTwoYears = subscription.Cycle === TWO_YEARS;
-
-        // No black friday for lifetime users
-        if (isLifetime) {
+    /**
+     * Check if we are in the Black Friday period, and if there are any offers available.
+     * @param {boolean} force
+     * @returns {boolean}
+     */
+    const isDealPeriod = (force = false) => {
+        if (!blackFridayOffers(subscriptionModel.get(), authentication.user).length) {
             return false;
         }
-
-        // No black friday for member or subuser
-        if (isMember || isSubuser) {
+        if (!force && hasSeenOffer()) {
             return false;
         }
+        return isDealEvent();
+    };
 
-        // Don't show again the black friday for two years user
-        if (isTwoYears) {
-            return false;
-        }
+    /**
+     * Get all needed payment info for an offer.
+     * @param {Object} subscription
+     * @param {Object} plansMap
+     * @param {String} currency
+     * @returns {function}
+     */
+    const getOfferPayment = (subscription, plansMap, currency) => ({ offers = [], coupon, cycle }) => {
+        const { PlanIDs, plans } = offers.reduce(
+            (acc, { name, quantity = 1 }) => {
+                const plan = plansMap[name];
+                const { ID } = plan;
 
-        // Check token saved in localStorage
-        if (!force && localStorage.getItem(BLACK_FRIDAY_ITEM)) {
-            return false;
-        }
+                acc.PlanIDs[ID] = quantity;
+                acc.plans.push(plan);
 
-        return inInterval();
-    }
+                return acc;
+            },
+            { PlanIDs: {}, plans: [] }
+        );
 
-    function loadPlanIDs(plan = 'current') {
-        return dashboardModel.fetchPlans(CACHE.currency, TWO_YEARS).then(({ Plans = [] } = {}) => {
-            const PlanIDs = [];
-            const MAP_PLAN_ID = _.reduce(
-                Plans,
-                (acc, { Name, ID }) => {
-                    acc[Name] = ID;
-                    return acc;
-                },
-                {}
-            );
+        // Use the YEARLY cycle for 2-for-1 deal and current subscription cycle or MONTHLY cycle for 2-year deal.
+        const regularPriceCycle =
+            coupon === BLACK_FRIDAY.COUPON_CODE ? CYCLE.YEARLY : subscription.Cycle || CYCLE.MONTHLY;
 
-            if (plan === PLUS) {
-                PlanIDs.push(MAP_PLAN_ID[PLUS]);
-            }
-
-            if (plan === VPN_PLUS) {
-                PlanIDs.push(MAP_PLAN_ID[VPN_PLUS]);
-            }
-
-            if (plan === `${PLUS}+${VPN_PLUS}`) {
-                PlanIDs.push(MAP_PLAN_ID[PLUS], MAP_PLAN_ID[VPN_PLUS]);
-            }
-
-            if (plan === 'current') {
-                const subscription = subscriptionModel.get();
-
-                PlanIDs.push(...subscription.Plans.map(({ Name }) => MAP_PLAN_ID[Name]));
-            }
-
-            return PlanIDs;
-        });
-    }
-
-    function buy({ plan = 'current' }) {
-        const promise = loadPlanIDs(plan).then((PlanIDs) => {
-            return Payment.valid({
-                Cycle: TWO_YEARS,
-                Currency: CACHE.currency,
+        return Promise.all([
+            // Offer price
+            PaymentCache.valid({
                 PlanIDs,
-                CouponCode: subscriptionModel.coupon()
-            }).then(({ data: valid = {} } = {}) => {
-                paymentModal.activate({
-                    params: {
-                        planIDs: PlanIDs,
-                        valid,
-                        cancel() {
-                            paymentModal.deactivate();
-                        }
-                    }
-                });
-            });
-        });
+                Currency: currency,
+                Cycle: cycle,
+                CouponCode: coupon
+            }),
+            // Regular price
+            PaymentCache.valid({
+                PlanIDs,
+                Currency: currency,
+                Cycle: regularPriceCycle
+            }),
+            // Without coupon to get the "after" price
+            PaymentCache.valid({
+                PlanIDs,
+                Currency: currency,
+                Cycle: BLACK_FRIDAY.CYCLE
+            })
+        ]).then((payments) => ({ PlanIDs, payments, plans }));
+    };
 
-        networkActivityTracker.track(promise);
+    /**
+     * Get the black friday offers.
+     * Gets it based on the current subscription.
+     * Returns the offers, with the payment info from the API together with the plans.
+     * @param {String} currency
+     * @returns {Promise}
+     */
+    const getOffers = async (currency) => {
+        const subscription = subscriptionModel.get();
+        const offers = blackFridayOffers(subscription, authentication.user);
+        if (!offers.length) {
+            return;
+        }
+
+        /**
+         * Getting the plans for the ID mapping. Using the monthly cycle to ensure that it's
+         * cached for the payment plans form.
+         */
+        const Plans = await PaymentCache.plans(currency, CYCLE.MONTHLY);
+        const plansMap = getPlansMap(Plans);
+        // Either use the specified currency, or if there is none, use the currency of the first plan received from the API.
+        const getOfferCb = getOfferPayment(subscription, plansMap, currency || plansMap.free.currency);
+
+        return Promise.all(offers.map(getOfferCb));
+    };
+
+    function loadPayments() {
+        return Promise.all([paymentModel.getMethods(), paymentModel.getStatus()]);
     }
 
-    function set(key, value) {
-        CACHE[key] = value;
-    }
-
-    function saveClose() {
-        localStorage.setItem(BLACK_FRIDAY_ITEM, 'closed');
-    }
-
-    function load() {
-        Promise.all([paymentModel.getMethods(), paymentModel.getStatus()]).then(() => dispatcher.blackFriday('loaded'));
-    }
-
-    setInterval(() => {
-        dispatcher.blackFriday('tictac');
-    }, BLACK_FRIDAY_INTERVAL);
-
-    on('blackFriday', (event, { type = '', data = {} }) => {
-        type === 'buy' && buy(data);
-        type === 'load' && load();
-    });
-
-    return { init: angular.noop, isBlackFridayPeriod, set, saveClose, inInterval };
+    return { isDealPeriod, loadPayments, getOffers, saveClose };
 }
+
 export default blackFridayModel;

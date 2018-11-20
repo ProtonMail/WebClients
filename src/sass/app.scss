@@ -80,6 +80,7 @@
 @import "ui/codeMirror";
 @import "ui/customMaskInput";
 @import "ui/copy";
+@import "ui/currencySelector";
 @import "ui/customRadio";
 @import "ui/customCheckbox";
 @import "ui/datetimePicker";
@@ -274,6 +275,7 @@
 @import "components/tour/tour";
 
 //== Payments
+@import "components/payments/paymentPlanOverview";
 @import "components/payments/tosubscribeOverview";
 @import "components/payments/payInvoiceModal";
 @import "components/payments/featuresList";
@@ -289,9 +291,7 @@
 //== Black Friday
 @import "components/blackFriday/navigationBlackFriday";
 @import "components/blackFriday/blackFridayModal";
-@import "components/blackFriday/blackFridayPrice";
-@import "components/blackFriday/blackFridayFree";
-@import "components/blackFriday/blackFridayPaid";
+@import "components/blackFriday/blackFriday";
 
 //== VPN
 @import "components/vpn/openVpnSection";

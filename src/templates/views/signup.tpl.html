@@ -1,7 +1,6 @@
 <signup-user-form
     class="pm_panel wide signUpProcess-step-1"
     ng-if="step === 1"
-    data-plans="plans"
     data-account="account"
     data-domains="domains"></signup-user-form>
 
@@ -22,7 +21,8 @@
 
 
 <signup-pay-form
-    data-plan="plan"
+    data-plans="plans"
+    data-payment="payment"
     data-account="account"
     class="pm_panel wide signUpProcess-step-4"
     ng-if="step === 4"></signup-pay-form>

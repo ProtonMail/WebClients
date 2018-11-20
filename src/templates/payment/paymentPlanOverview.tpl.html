@@ -1,0 +1,42 @@
+<div class="paymentPlanOverview-container">
+    <header class="paymentPlanOverview-header">
+        <span class="paymentPlanOverview-header-title" translate-context="Title" translate>Plan</span>
+        <span class="paymentPlanOverview-header-title" translate-context="Title" translate>Price</span>
+    </header>
+
+    <ul class="paymentPlanOverview-list">
+        <li
+            class="paymentPlanOverview-item"
+            ng-repeat="item in list track by $id(item)">
+
+            <header class="paymentPlanOverview-item-container {{ ::item.className }}">
+                <div class="paymentPlanOverview-item-title">
+                    {{ ::item.text }}
+
+                    <a ng-if="::item.proration"
+                       class="text-purple"
+                       href="https://protonmail.com/support/knowledge-base/credit-proration/"
+                       target="_blank"
+                       translate-context="Link"
+                       translate>(What is this?)</a>
+                </div>
+
+                <span ng-if="::item.tooltip"
+                      class="paymentPlanOverview-item-discount"
+                      pt-tooltip="{{ ::item.tooltip.hover }}"
+                      data-discount="{{ ::item.tooltip.percentage }}">{{ ::item.tooltip.text }}</span>
+
+                <span class="paymentPlanOverview-item-price">{{ ::item.price }}</span>
+            </header>
+
+            <ul class="paymentPlanOverview-list-features" ng-if="::item.features">
+                <li
+                    class="paymentPlanOverview-item-container"
+                    ng-repeat="feature in ::item.features track by $id(feature)">
+                    <span class="paymentPlanOverview-item-title">{{ ::feature.text }}</span>
+                    <span class="paymentPlanOverview-item-price">{{ ::feature.price }}</span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

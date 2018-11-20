@@ -21,7 +21,8 @@ function User($http, url, srp) {
 
     const code = (params) => $http.post(requestURL('code'), params);
     const human = () => $http.get(requestURL('human'));
-    const check = (params) => $http.post(requestURL('human'), params);
+    const verifyHuman = (params) => $http.post(requestURL('human'), params);
+    const check = () => (params) => $http.put(requestURL('check'), params);
     const direct = () => $http.get(requestURL('direct'));
     const lock = () => $http.put(requestURL('lock'));
     const unlock = (creds = {}) => toSRP('PUT', 'unlock', creds);
@@ -35,6 +36,7 @@ function User($http, url, srp) {
         get,
         code,
         human,
+        verifyHuman,
         check,
         direct,
         lock,

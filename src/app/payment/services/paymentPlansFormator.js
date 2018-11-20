@@ -1,4 +1,4 @@
-import { BASE_SIZE } from '../../constants';
+import { PLANS_TYPE, BASE_SIZE } from '../../constants';
 
 /* @ngInject */
 function paymentPlansFormator(gettextCatalog) {
@@ -17,11 +17,12 @@ function paymentPlansFormator(gettextCatalog) {
     const numberLabels = (totalFolders, totalLabels) =>
         `${totalFolders} ${I18N.FOLDERS} / ${totalLabels} ${I18N.LABELS}`;
 
-    return (Currency, Cycle) => ({ data = {} } = {}) => {
-        const plans = data.Plans;
+    return (QueriedCurrency, QueriedCycle) => (Plans = []) => {
+        const { Currency, Cycle } = Plans[0] || { Currency: QueriedCurrency, Cycle: QueriedCycle };
+
         // Add free plan
-        plans.unshift({
-            Type: 1,
+        Plans.unshift({
+            Type: PLANS_TYPE.PLAN,
             Cycle,
             Currency,
             Name: 'free',
@@ -34,7 +35,7 @@ function paymentPlansFormator(gettextCatalog) {
             TwoFactor: 0
         });
 
-        plans.forEach((plan) => {
+        Plans.forEach((plan) => {
             switch (plan.Name) {
                 case 'free':
                     plan.sending = msgPerDay(150);
@@ -72,10 +73,7 @@ function paymentPlansFormator(gettextCatalog) {
             }
         });
 
-        return {
-            ...data,
-            Plans: plans
-        };
+        return Plans;
     };
 }
 export default paymentPlansFormator;

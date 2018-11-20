@@ -1,48 +1,25 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function currencySelector(dashboardConfiguration, dispatchers) {
-    const ACTIVE_BUTTON_CLASS = 'active';
-
+function dashboardCurrencySelector(dashboardConfiguration, dispatchers) {
     return {
         restrict: 'E',
-        replace: true,
-        templateUrl: require('../../../templates/dashboard/currencySelector.tpl.html'),
-        link(scope, element) {
-            const currency = dashboardConfiguration.currency();
-            const $buttons = element.find('.currencySelector-button');
-            const { dispatcher, on, unsubscribe } = dispatchers(['dashboard']);
+        template: '<currency-selector data-currency="{{ ::currency }}" data-name="dashboardCurrency">',
+        scope: {},
+        link(scope) {
+            const { on, dispatcher, unsubscribe } = dispatchers(['dashboardCurrency', 'dashboard']);
 
-            function onClick(event) {
-                const currency = event.target.getAttribute('value');
-
-                dispatcher.dashboard('change.currency', { currency });
-                active(currency);
-            }
-
-            function active(currency) {
-                _.each($buttons, (button) => {
-                    if (button.value === currency) {
-                        button.classList.add(ACTIVE_BUTTON_CLASS);
-                    } else {
-                        button.classList.remove(ACTIVE_BUTTON_CLASS);
-                    }
-                });
-            }
-
-            element.on('click', onClick);
+            scope.currency = dashboardConfiguration.currency();
 
             on('subscription', (event, { type, data }) => {
-                type === 'update' && active(data.subscription.Currency);
+                type === 'update' && dispatcher.dashboardCurrency('set', data.subscription.Currency);
             });
 
-            active(currency);
-
-            scope.$on('$destroy', () => {
-                unsubscribe();
-                element.off('click', onClick);
+            on('dashboardCurrency', (event, { type, data }) => {
+                type === 'change' && dispatcher.dashboard('change.currency', { currency: data });
             });
+
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }
-export default currencySelector;
+
+export default dashboardCurrencySelector;

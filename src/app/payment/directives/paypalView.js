@@ -60,6 +60,8 @@ function paypalView(notification, Payment, gettextCatalog, $q, networkUtils, win
 
                         if (data.Code === PAYMENTS_PAYPAL_CONNECTION_EXCEPTION) {
                             scope.paypalNetworkError = true;
+                        } else {
+                            scope.errorDetails = {};
                         }
 
                         deferred = null;

@@ -100,9 +100,7 @@
             <span translate translate-context="Title">Coupon</span>
             <span
                 class="tosubscribeOverview-discount"
-                ng-if="ctrl.valid.Coupon && ctrl.valid.Coupon.Code === 'BUNDLE'"
-                pt-tooltip-translate-context="Tooltip"
-                pt-tooltip-translate="VPN discount, 20% off">-20%</span>
+                pt-tooltip="{{ ctrl.valid.Coupon.Description }}">-{{ -ctrl.valid.CouponDiscount / ctrl.valid.Amount | percentage }}%</span>
             <strong class="text-green">{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong>
         </li>
 

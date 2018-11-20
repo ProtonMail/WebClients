@@ -6,8 +6,8 @@ function SecuredController(
     $state,
     addressWithoutKeysManager,
     AppModel,
-    attachSignupSubscription,
     authentication,
+    blackFridayHandler,
     cacheCounters,
     contactCache,
     desktopNotifications,
@@ -56,7 +56,6 @@ function SecuredController(
         hotkeys.unbind();
     }
 
-    attachSignupSubscription();
     eventManager.initialize();
     // Initialize counters for conversation (total and unread)
     cacheCounters.query();
@@ -65,6 +64,8 @@ function SecuredController(
     addressWithoutKeysManager.manage().catch(_.noop);
 
     prepareDraft.init();
+
+    blackFridayHandler();
 
     on('updateUser', () => {
         $scope.$applyAsync(() => {

@@ -28,7 +28,7 @@ function humanVerificationModal($http, dispatchers, pmModal, User, networkActivi
             networkActivityTracker.track(promise);
 
             self.submit = () => {
-                const promise = User.check({ Token: self.tokens[self.verificator], TokenType: self.verificator })
+                const promise = User.verifyHuman({ Token: self.tokens[self.verificator], TokenType: self.verificator })
                     .then(handleResult)
                     .then(() => {
                         params.close(true);

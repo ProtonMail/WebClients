@@ -9,7 +9,7 @@ function wizard(
     $timeout,
     $state,
     welcomeModal,
-    blackFridayModal,
+    blackFridayModalOpener,
     blackFridayModel,
     wizardBuilder,
     AppModel,
@@ -97,17 +97,11 @@ function wizard(
                 const isFree = !subscriptionModel.hasPaid('mail');
                 const isMonthly = subscriptionModel.cycle() === MONTHLY;
 
-                return blackFridayModel.isBlackFridayPeriod(true) && (isFree || isMonthly);
+                return blackFridayModel.isDealPeriod(true) && (isFree || isMonthly);
             }
 
             function openBlackFridayModal() {
-                blackFridayModal.activate({
-                    params: {
-                        close() {
-                            blackFridayModal.deactivate();
-                        }
-                    }
-                });
+                blackFridayModalOpener();
             }
 
             async function tourStart() {

@@ -25,15 +25,10 @@ describe('Create a user: plus:12:CHF via paypal', () => {
     commonSpecs(USERNAME, { confirmModal, welcomeModal });
 
     it('should create a user via payment', () => {
-        cy.get('.signupPayForm-feature-plus').should('be.visible');
-        cy.get('.signupPayForm-feature-visionary').should('not.be.visible');
+        cy.get('.signupPayForm-plan-name').contains('ProtonMail Plus');
+        cy.get('.signupPayForm-plan-billing').contains('Annually');
+        cy.get('.signupPayForm-plan-price').contains('48.00 CHF (4.00 CHF / month)');
 
-        cy.get('.signupPayForm-selection-annually').should('be.visible');
-        cy.get('.signupPayForm-selection-monthly').should('not.be.visible');
-
-        cy.get('.signupPayForm-view-features').should('not.be.visible');
-        cy.get('.signupPayForm-btn-features').click();
-        cy.get('.signupPayForm-view-features').should('be.visible');
         cy.get('.print tr:last-of-type strong').contains('CHF');
 
         paymentMethod('paypal');

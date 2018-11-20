@@ -2,13 +2,17 @@ import _ from 'lodash';
 import {
     PAID_ADMIN_ROLE,
     PAID_MEMBER_ROLE,
-    INVITE_MAIL,
+    PRODUCT_TYPE,
     INVITE_URL,
     OAUTH_KEY,
     MAILBOX_IDENTIFIERS,
     CURRENCIES,
-    BILLING_CYCLE
+    BILLING_CYCLE,
+    SIGNUP_PLANS,
+    BLACK_FRIDAY
 } from './constants';
+import { getPlansMap } from '../helpers/paymentHelper';
+import { isDealEvent } from './blackFriday/helpers/blackFridayHelper';
 
 export default angular
     .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.utils'])
@@ -122,7 +126,7 @@ export default angular
 
                     AppModel.set('loggingOut', false);
 
-                    Invite.check(inviteToken, inviteSelector, INVITE_MAIL)
+                    Invite.check(inviteToken, inviteSelector, PRODUCT_TYPE.MAIL)
                         .then(({ data = {} } = {}) => {
                             if (data.Valid === 1) {
                                 AppModel.set('preInvited', true);
@@ -188,13 +192,14 @@ export default angular
             })
 
             .state('signup', {
-                url: '/create/new?plan&billing&currency',
+                url: '/create/new?plan&billing&currency&coupon',
                 params: {
                     inviteSelector: undefined, // set by invite
                     inviteToken: undefined, // set by invite
-                    plan: null, // 'free' / 'plus' / 'visionary'
+                    plan: null, // 'free' / 'plus' / 'visionary' / 'plus_vpnplus'
                     billing: null, // 1 / 12
-                    currency: null // 'CHF' / 'EUR' / 'USD'
+                    currency: null, // 'CHF' / 'EUR' / 'USD'
+                    coupon: null
                 },
                 views: {
                     'main@': {
@@ -209,21 +214,36 @@ export default angular
                     lang(i18nLoader) {
                         return i18nLoader.translate();
                     },
-                    plans($stateParams, Payment) {
-                        const { currency, billing: cycle, plan } = $stateParams;
+                    paymentPlans($stateParams, PaymentCache) {
+                        const { currency, billing, plan, coupon: couponParam } = $stateParams;
+                        const cycle = +billing;
+
                         const isValidCurrency = _.includes(CURRENCIES, currency);
-                        const isValidCycle = _.includes(BILLING_CYCLE, +cycle);
-                        const isValidPlan = _.includes(['free', 'plus', 'visionary', 'professional'], plan);
+                        const isValidCycle = _.includes(BILLING_CYCLE, cycle);
+                        const isValidPlan = _.includes(SIGNUP_PLANS, plan);
 
-                        if (isValidCycle && isValidCurrency && isValidPlan) {
-                            if (plan === 'free') {
-                                return [];
-                            }
-
-                            return Payment.plans(currency, cycle).then(({ data }) => data.Plans);
+                        if (!isValidCurrency || !isValidPlan || !isValidCycle) {
+                            return;
                         }
 
-                        return [];
+                        // Remove the black friday coupon if it's not yet time.
+                        const coupon =
+                            couponParam === BLACK_FRIDAY.COUPON_CODE ? isDealEvent() && couponParam : couponParam;
+
+                        return PaymentCache.plans(currency, cycle).then((Plans) => {
+                            const plansMap = getPlansMap(Plans);
+                            const plans = plan.split('_').map((name) => plansMap[name]);
+                            const planIDs = plans.map(({ ID }) => ID);
+
+                            return PaymentCache.valid({
+                                PlanIDs: planIDs,
+                                Currency: currency,
+                                Cycle: cycle,
+                                CouponCode: coupon
+                            }).then((payment) => {
+                                return { payment, plans };
+                            });
+                        });
                     },
                     optionsHumanCheck(signupModel) {
                         return signupModel.getOptionsVerification();

@@ -47,10 +47,7 @@ function totalRows(
             scope.onChange = () => dispatcher.dashboard('change.cycle', { cycle: scope.cycle });
 
             function bindClass() {
-                const action =
-                    subscriptionModel.cycle() === TWO_YEARS || blackFridayModel.isBlackFridayPeriod(true)
-                        ? 'add'
-                        : 'remove';
+                const action = subscriptionModel.cycle() === TWO_YEARS ? 'add' : 'remove';
 
                 element[0].classList[action](HAS_TWO_YEARS_CLASS);
             }

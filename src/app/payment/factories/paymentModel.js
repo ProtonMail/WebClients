@@ -1,5 +1,13 @@
 /* @ngInject */
-function paymentModel(eventManager, Payment, networkActivityTracker, gettextCatalog, notification, dispatchers) {
+function paymentModel(
+    eventManager,
+    Payment,
+    PaymentCache,
+    networkActivityTracker,
+    gettextCatalog,
+    notification,
+    dispatchers
+) {
     let CACHE = {};
     const I18N = {
         COUPON_INVALID: gettextCatalog.getString('Invalid coupon code', null, 'Error'),
@@ -51,7 +59,7 @@ function paymentModel(eventManager, Payment, networkActivityTracker, gettextCata
 
     function add(params) {
         const promise = Payment.valid(params)
-            .then(({ data = {} } = {}) => {
+            .then((data) => {
                 if (params.CouponCode && data.CouponDiscount === 0) {
                     throw new Error(I18N.COUPON_INVALID);
                 }

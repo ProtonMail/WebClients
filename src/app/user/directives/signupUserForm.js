@@ -1,4 +1,4 @@
-import { INVITE_MAIL } from '../../constants';
+import { PRODUCT_TYPE } from '../../constants';
 
 /* @ngInject */
 function signupUserForm(confirmModal, dispatchers, gettextCatalog, signupModel) {
@@ -15,7 +15,6 @@ function signupUserForm(confirmModal, dispatchers, gettextCatalog, signupModel) 
         replace: true,
         scope: {
             domains: '=',
-            plans: '=',
             account: '='
         },
         templateUrl: require('../../../templates/user/signupUserForm.tpl.html'),
@@ -25,7 +24,7 @@ function signupUserForm(confirmModal, dispatchers, gettextCatalog, signupModel) 
                 // Save variables to prevent extensions/etc
                 // from modifying them during setup process
                 signupModel.store(scope.account);
-                signupModel.set('Type', INVITE_MAIL);
+                signupModel.set('Type', PRODUCT_TYPE.MAIL);
 
                 dispatcher.signup('userform.submit', {
                     form: scope.account
