@@ -1,10 +1,8 @@
 import _ from 'lodash';
 
-import { STATUS, ENCRYPTED_STATUS, MAILBOX_IDENTIFIERS, MESSAGE_FLAGS } from '../../constants';
+import { STATUS, ENCRYPTED_STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { getConversationLabels } from '../../conversation/helpers/conversationHelpers';
-
-const { FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
 
 /* @ngInject */
 function postMessage(
@@ -99,7 +97,7 @@ function postMessage(
 
     const makeParams = async (message, autosaving) => {
         const parameters = {
-            Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'Unread', 'MIMEType')
+            Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'Unread', 'MIMEType', 'Flags')
         };
         parameters.Message.Subject = parameters.Message.Subject || '';
 
@@ -132,10 +130,6 @@ function postMessage(
 
         if (autosaving === false) {
             parameters.Message.Unread = 0;
-        }
-
-        if (message.requestReadReceipt) {
-            parameters.Message.Flags = FLAG_RECEIPT_REQUEST;
         }
 
         const { DisplayName: Name, Email: Address } = message.From || {};

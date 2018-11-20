@@ -1,3 +1,8 @@
+import { MESSAGE_FLAGS } from '../../constants';
+import { requestReadReceipt, addFlag, removeFlag } from '../../../helpers/message';
+
+const { FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
+
 /* @ngInject */
 function squireState(onCurrentMessage, editorModel, editorState, dispatchers) {
     const KEY_ARROW_INPUT = [38, 39, 40, 37, 33, 34, 36, 35]; // URDL FastUP FastDown
@@ -88,7 +93,9 @@ function squireState(onCurrentMessage, editorModel, editorState, dispatchers) {
                             dispatcher['squire.messageSign']('signed', { messageID: scope.message.ID });
                             break;
                         case 'requestReadReceipt':
-                            scope.message.requestReadReceipt = !scope.message.requestReadReceipt;
+                            scope.message.Flags = requestReadReceipt(scope.message, FLAG_RECEIPT_REQUEST)
+                                ? removeFlag(scope.message, FLAG_RECEIPT_REQUEST)
+                                : addFlag(scope.message, FLAG_RECEIPT_REQUEST);
                             break;
                         // On any normal action (like make bold, italic, removeFormatting) close the popover
                         default:
