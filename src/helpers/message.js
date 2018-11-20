@@ -2,7 +2,7 @@ import { MESSAGE_FLAGS } from '../app/constants';
 
 import { normalizeEmail } from './string';
 
-const { FLAG_RECEIVED, FLAG_SENT, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
+const { FLAG_RECEIVED, FLAG_SENT, FLAG_RECEIPT_REQUEST, FLAG_IMPORTED } = MESSAGE_FLAGS;
 
 /**
  * Add flag to current one
@@ -33,6 +33,15 @@ export function removeFlag({ Flags = 0 } = {}, flag) {
  */
 export function requestReadReceipt({ Flags = 0 } = {}) {
     return Flags & FLAG_RECEIPT_REQUEST;
+}
+
+/**
+ * Check if the message Object is imported
+ * @param {Integer} message.Flags bit map
+ * @return {Boolean}
+ */
+export function isImported({ Flags = 0 } = {}) {
+    return Flags & FLAG_IMPORTED;
 }
 
 /**
