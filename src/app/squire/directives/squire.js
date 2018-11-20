@@ -23,16 +23,7 @@ const tabIndexAble = (iframe) => (isPlainText) => {
 };
 
 /* @ngInject */
-function squire(
-    squireEditor,
-    embedded,
-    editorListener,
-    dispatchers,
-    sanitize,
-    toggleModeEditor,
-    mailSettingsModel,
-    onCurrentMessage
-) {
+function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, toggleModeEditor, onCurrentMessage) {
     const CLASS_NAMES = {
         LOADED: 'squireEditor-loaded'
     };

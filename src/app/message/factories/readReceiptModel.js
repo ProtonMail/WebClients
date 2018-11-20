@@ -3,7 +3,7 @@ import { MESSAGE_FLAGS } from '../../constants';
 const { FLAG_RECEIPT_SENT, FLAG_SENT } = MESSAGE_FLAGS;
 
 /* @ngInject */
-function readReceiptModel(addressesModel, eventManager, messageApi) {
+function readReceiptModel(eventManager, messageApi) {
     /**
      * Send read receipt confirmation
      * @param {String} message.ID

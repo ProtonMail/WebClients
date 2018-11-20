@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { ENCRYPTED_STATUS, VERIFICATION_STATUS, MIME_TYPES, AES256 } from '../../constants';
 import { toText } from '../../../helpers/parserHTML';
 import { inlineCss } from '../../../helpers/domHelper';
+import { requestReadReceipt } from '../../../helpers/message';
 
 const PGPMIME_TYPES = [ENCRYPTED_STATUS.PGP_MIME, ENCRYPTED_STATUS.PGP_MIME_SIGNED];
 const { PLAINTEXT } = MIME_TYPES;
@@ -127,6 +128,10 @@ function messageModel(
 
         isDraft() {
             return this.Type === 1;
+        }
+
+        requestReadReceipt() {
+            return requestReadReceipt(this);
         }
 
         getVerificationStatus() {
