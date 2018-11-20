@@ -1,0 +1,63 @@
+<div class="blackFriday-container">
+    <header class="blackFriday-header">
+        <span class="blackFriday-header-info">{{ state.header }}</span>
+        <black-friday-countdown data-end="{{::state.end}}"></black-friday-countdown>
+    </header>
+
+    <div class="blackFriday-content">
+        <span class="blackFridayIntro">{{ state.intro }}</span>
+
+        <div class="blackFridayOffers-container">
+            <div class="blackFridayOffer-container" ng-repeat="offer in offers track by $id(offer)">
+
+                <div class="blackFridayOffer-header" data-percentage="{{ ::offer.percentage }}">{{ ::offer.header }}</div>
+
+                <div class="blackFridayOffer-content">
+                    <div class="blackFridayOffer-plans">
+                        <span class="blackFridayOffer-plans-title" ng-repeat="name in ::offer.plans">
+                            {{ ::name }}
+                        </span>
+                    </div>
+
+                    <div class="blackFridayOffer-price-container">
+                        <div class="blackFridayOffer-price-info">
+                            {{ ::offer.discountedPrice }}<span class="blackFridayOffer-price-month">{{ ::state.perMonth }}</span>
+                        </div>
+                        <div class="blackFridayOffer-price-regular">
+                            {{ ::offer.regularPrice }}<span>{{ ::state.perMonth }}</span>
+                        </div>
+                        <div class="blackFridayOffer-price-savings">
+                            {{ ::offer.savings }}
+                        </div>
+                        <div class="blackFridayOffer-price-billing">
+                            {{ ::offer.billing }}
+                        </div>
+                    </div>
+
+                    <button
+                        type="button"
+                        ng-disabled="state.loading"
+                        class="pm_button primary blackFridayOffer-buy"
+                        data-buy-offer="{{ $index }}"
+                    >{{ ::state.buy }}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <span class="blackFridayCurrent">{{ ::currentPrice }}</span>
+    </div>
+
+    <footer class="blackFriday-footer">
+        <currency-selector
+            data-currency="{{::state.currency}}"
+            data-name="blackFridayCurrency"
+        ></currency-selector>
+
+        <div class="blackFridayAfter-container">
+            <span class="blackFridayAfter-item" ng-repeat="offer in offers track by $id(offer)">
+                {{ ::offer.afterBilling }}
+            </span>
+        </div>
+    </footer>
+</div>

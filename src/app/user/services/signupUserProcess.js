@@ -10,6 +10,7 @@ function signupUserProcess(
     settingsApi,
     signupModel,
     authentication,
+    attachSignupSubscription,
     lazyLoader,
     Address,
     $state,
@@ -51,7 +52,7 @@ function signupUserProcess(
         }
     }
 
-    async function setUserLanguage() {
+    function setUserLanguage() {
         if ($location.search().language) {
             return settingsApi.updateLocale({ Locale: gettextCatalog.getCurrentLanguage() });
         }
@@ -115,7 +116,7 @@ function signupUserProcess(
             return $state.go('secured.inbox', { welcome: WIZARD_ENABLED });
         }
 
-        $state.go('secured.dashboard');
+        return $state.go('secured.dashboard');
     }
 
     const createAddress = async () => {
@@ -135,13 +136,29 @@ function signupUserProcess(
         }
     };
 
+    const doSubscription = async () => {
+        const plans = signupModel.get('temp.plans');
+
+        // Attach subscription and catch any error to keep the same behavior as before (to redirect to the inbox).
+        await attachSignupSubscription({
+            plans: signupModel.get('temp.plans'),
+            payment: signupModel.get('temp.payment'),
+            method: signupModel.get('temp.method')
+        }).catch((e) => console.error(e));
+
+        dispatcher.signup('user.subscription.finished', { plans });
+    };
+
     const create = async (model) => {
         await doCreateUser(model);
         await createAddress();
+        await doSubscription();
+        await setUserLanguage();
+        await doGetUserInfo();
 
-        return setUserLanguage()
-            .then(doGetUserInfo)
-            .then(finishRedirect);
+        signupModel.clear();
+
+        return finishRedirect();
     };
 
     function generateNewKeys() {

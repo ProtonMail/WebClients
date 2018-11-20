@@ -60,14 +60,16 @@ function paymentForm(
         }, Object.create(null));
 
         // Compute price /addon
-        const price = plans.filter(({ Type }) => Type === PLANS_TYPE.ADDON).reduce(
-            (acc, { Name, Amount }) => {
-                const type = getTypeAddon(Name);
-                updateKey(acc, type, Amount);
-                return acc;
-            },
-            { space: 0, member: 0, domain: 0, address: 0, vpn: 0 }
-        );
+        const price = plans
+            .filter(({ Type }) => Type === PLANS_TYPE.ADDON)
+            .reduce(
+                (acc, { Name, Amount }) => {
+                    const type = getTypeAddon(Name);
+                    updateKey(acc, type, Amount);
+                    return acc;
+                },
+                { space: 0, member: 0, domain: 0, address: 0, vpn: 0 }
+            );
 
         return { total, price };
     };
@@ -83,6 +85,8 @@ function paymentForm(
             const ctrl = scope.ctrl;
             const params = paymentModalModel.get();
             const dispatch = disp(params.plan);
+
+            ctrl.isBlackFriday = !!params.isBlackFriday;
 
             ctrl.card = {};
             ctrl.cancel = params.cancel;
@@ -100,6 +104,7 @@ function paymentForm(
             const PLANS_MAP = formatPlanMap(planList);
             const MAP_TOTAL = getPlanTotal(params.planIDs, PLANS_MAP);
 
+            ctrl.planIDs = params.planIDs;
             ctrl.plans = _.uniq(params.planIDs).map((ID) => PLANS_MAP[ID]);
             ctrl.step = 'payment';
 
@@ -190,11 +195,13 @@ function paymentForm(
                 return parameters;
             }
 
-            ctrl.apply = (thing = 'coupon') => {
-                paymentModel
+            const apply = (thing = 'coupon') => {
+                return paymentModel
                     .add(getAddParameters(thing))
                     .then((data) => (ctrl.valid = data))
                     .then(() => {
+                        dispatch('payment.change', ctrl.valid);
+
                         // If the amount due is null we select the first choice to display the submit button
                         if (!ctrl.valid.AmountDue) {
                             return (ctrl.method = ctrl.methods[0]);
@@ -224,10 +231,20 @@ function paymentForm(
                 }
             };
 
+            const onSubmit = (e) => {
+                if (e.target.name === 'couponForm' || e.target.name === 'giftForm') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    apply(e.target.name === 'couponForm' ? 'coupon' : 'gift');
+                }
+            };
+
             el.on('click', onClick);
+            el.on('submit', onSubmit);
 
             scope.$on('$destroy', () => {
-                el.on('click', onClick);
+                el.off('click', onClick);
+                el.off('submit', onSubmit);
             });
         }
     };

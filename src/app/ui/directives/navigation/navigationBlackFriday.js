@@ -1,17 +1,9 @@
-import { CYCLE } from '../../../constants';
-
-const { MONTHLY } = CYCLE;
+import { getEventName } from '../../../blackFriday/helpers/blackFridayHelper';
 
 /* @ngInject */
-function navigationBlackFriday($stateParams, blackFridayModal, blackFridayModel, subscriptionModel) {
+function navigationBlackFriday($stateParams, blackFridayModalOpener) {
     const onClick = () => {
-        blackFridayModal.activate({
-            params: {
-                close() {
-                    blackFridayModal.deactivate();
-                }
-            }
-        });
+        blackFridayModalOpener();
     };
 
     return {
@@ -20,18 +12,20 @@ function navigationBlackFriday($stateParams, blackFridayModal, blackFridayModel,
         replace: true,
         templateUrl: require('../../../../templates/ui/navigation/navigationBlackFriday.tpl.html'),
         link(scope, element) {
-            const isFree = !subscriptionModel.hasPaid('mail');
-            const isMonthly = subscriptionModel.cycle() === MONTHLY;
-            const afterSignup = $stateParams.welcome;
+            const textEl = element[0].querySelector('.navigation-title');
 
-            if (blackFridayModel.isBlackFridayPeriod(false) && (isFree || isMonthly) && !afterSignup) {
-                onClick();
-            }
+            const refresh = () => {
+                textEl.textContent = getEventName();
+            };
+
+            const id = setInterval(refresh, 60000);
+            refresh();
 
             element.on('click', onClick);
 
             scope.$on('$destroy', () => {
                 element.off('click', onClick);
+                clearInterval(id);
             });
         }
     };

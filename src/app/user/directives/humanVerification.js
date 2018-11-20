@@ -1,4 +1,4 @@
-import { INVITE_MAIL } from '../../constants';
+import { PRODUCT_TYPE } from '../../constants';
 
 /* @ngInject */
 function humanVerification(AppModel, User, $state, signupModel, networkActivityTracker, dispatchers) {
@@ -26,7 +26,7 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
             model: '='
         },
         templateUrl: require('../../../templates/user/humanVerification.tpl.html'),
-        link(scope, el, { offerType = INVITE_MAIL }) {
+        link(scope, el, { offerType = PRODUCT_TYPE.MAIL }) {
             const { on, unsubscribe, dispatcher } = dispatchers(['payments']);
 
             const dispatchHelper = (type, data) => dispatcher.payments(type, data);

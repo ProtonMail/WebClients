@@ -16,12 +16,19 @@
     flex-shrink: 0;
 }
 
+.totalRows-label-left {
+    max-width: 50%;
+}
+
 .totalRows-label-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
     width: 100%;
+    flex: 1;
+    // Nearly transparent for safari
+    background: linear-gradient(to left, #fff 80%, rgba(255,255,255,0.01));
 }
 
 .totalRows-wrapper {

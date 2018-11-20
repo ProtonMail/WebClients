@@ -12,7 +12,7 @@ function SignupController(
     gettextCatalog,
     networkActivityTracker,
     notification,
-    plans,
+    paymentPlans,
     AppModel,
     signupModel,
     signupUserProcess
@@ -34,7 +34,6 @@ function SignupController(
         5 === creating
      */
     $scope.step = 1;
-    $scope.plans = plans;
     $scope.domains = _.map(domains, (value) => ({ label: value, value }));
     $scope.isFromInvitation = AppModel.is('preInvited');
 
@@ -48,12 +47,10 @@ function SignupController(
 
     authentication.logout(false, authentication.isLoggedIn());
 
-    if (plans.length) {
-        $scope.plan = _.find(plans, {
-            Name: $stateParams.plan,
-            Cycle: parseInt($stateParams.billing, 10),
-            Currency: $stateParams.currency
-        });
+    if (paymentPlans) {
+        const { plans, payment } = paymentPlans;
+        $scope.plans = plans;
+        $scope.payment = payment;
     }
 
     // Clear auth data
@@ -71,7 +68,7 @@ function SignupController(
                     return createAccount();
                 }
 
-                if (plans.length) {
+                if ($scope.payment) {
                     if (signupModel.optionsHumanCheck('payment')) {
                         return ($scope.step = 4);
                     }
@@ -91,8 +88,8 @@ function SignupController(
         networkActivityTracker.track(promise);
     }
 
-    function verify({ Payment, Amount, Currency, GiftCode, Credit }) {
-        signupModel.verify({ Payment, Amount, Currency, GiftCode, Credit }, $scope.plan).then(createAccount);
+    function verify(options) {
+        signupModel.verify(options, $scope.plans, $scope.payment).then(createAccount);
     }
 
     function applyGift(opt) {
@@ -107,8 +104,7 @@ function SignupController(
             data.action !== 'humanVerification' && createAccount();
 
             if (data.action === 'humanVerification') {
-                const { Payment, Amount, Currency } = data.options;
-                verify({ Payment, Amount, Currency });
+                verify(data.options);
             }
         }
     });
@@ -126,10 +122,7 @@ function SignupController(
 
         type === 'apply.gift' && applyGift(data);
 
-        if (type === 'payform.submit') {
-            const { method, Amount, Currency, GiftCode, Credit } = data.payment;
-            verify({ Payment: method, Amount, Currency, GiftCode, Credit });
-        }
+        type === 'payform.submit' && verify(data);
     });
 
     $scope.$on('$destroy', () => {

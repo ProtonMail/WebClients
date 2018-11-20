@@ -42,7 +42,7 @@ describe('Create a free user', () => {
         cy.get('.signUpProcess-step-4').should('not.be.visible');
         cy.get('.signUpProcess-step-5').should('be.visible');
 
-        cy.url({ timeout: 20000 }).should('include', '/inbox');
+        cy.url({ timeout: 30000 }).should('include', '/inbox');
 
         wizardTuto.isOpen(false);
 

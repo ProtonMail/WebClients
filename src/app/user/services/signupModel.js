@@ -106,13 +106,13 @@ function signupModel(User, $state, $stateParams, $location, dispatchers, Payment
             $rootScope.tempMethod = data.Payment; // We save this payment method to save it later
 
          */
-    function verify(opt, plan) {
-        const promise = Payment.verify(_.extend({}, opt, { Username: get('username') }))
-            .then(({ data = {} } = {}) => {
-                set('VerifyCode', data.VerifyCode);
-                set('temp.plan', plan);
+    function verify(opt, plans, payment) {
+        const promise = Payment.verify({ ...opt, Username: get('username') })
+            .then(({ VerifyCode }) => {
+                set('VerifyCode', VerifyCode);
+                set('temp.plans', plans);
+                set('temp.payment', payment);
                 set('temp.method', opt.Payment);
-                return data;
             })
             .catch(({ data = {} } = {}) => {
                 // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.

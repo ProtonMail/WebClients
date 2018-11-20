@@ -18,8 +18,6 @@ export const CURRENCIES = ['USD', 'EUR', 'CHF'];
 export const BILLING_CYCLE = [1, 12, 24];
 export const PHOTO_PLACEHOLDER_URL = '/assets/img/photo-placeholder.png';
 export const INVITE_URL = 'https://protonmail.com/invite';
-export const INVITE_MAIL = 1;
-export const INVITE_VPN = 2;
 export const OAUTH_KEY = 'proton:oauth';
 export const CUSTOM_DOMAIN_ADDRESS = 3;
 export const MESSAGE_VIEW_MODE = 1;
@@ -29,7 +27,6 @@ export const COLUMN_MODE = 0;
 export const ENCRYPTION_DEFAULT = 2048;
 export const MAX_SIZE_SCREENSHOT = 500 * 1000;
 export const CLIENT_TYPE = 1;
-export const BLACK_FRIDAY_INTERVAL = 10 * 60 * 1000;
 export const CONTACT_EMAILS_LIMIT = 1000;
 export const CONTACTS_LIMIT = 1000;
 export const EXPORT_CONTACTS_LIMIT = 50;
@@ -236,6 +233,11 @@ export const CYCLE = {
     TWO_YEARS: 24
 };
 
+export const PRODUCT_TYPE = {
+    MAIL: 1,
+    VPN: 2
+};
+
 export const RECIPIENT_TYPE = {
     TYPE_INTERNAL: 1,
     TYPE_EXTERNAL: 2,
@@ -416,6 +418,30 @@ export const STORAGE_WARNING = {
     VALUE: 'seen',
     WARNING_LIMIT: 90,
     REACHED_LIMIT: 99.99
+};
+
+export const SIGNUP_PLANS = ['plus', 'visionary', 'plus_vpnplus'];
+
+const BLACK_FRIDAY_YEAR = 2018;
+
+export const BUNDLE_COUPON_CODE = 'BUNDLE';
+
+export const BLACK_FRIDAY = {
+    YEAR: BLACK_FRIDAY_YEAR,
+    COUPON_CODE: 'TWO4ONE2018',
+    CYCLE: CYCLE.TWO_YEARS,
+    BETWEEN: {
+        START: `${BLACK_FRIDAY_YEAR}-11-23`,
+        END: `${BLACK_FRIDAY_YEAR}-11-26`
+    },
+    INTERVAL: 10 * 60 * 1000
+};
+
+export const CYBER_MONDAY = {
+    BETWEEN: {
+        START: `${BLACK_FRIDAY_YEAR}-11-26`,
+        END: `${BLACK_FRIDAY_YEAR}-12-01`
+    }
 };
 
 export const BLOCKQUOTE_SELECTORS = [

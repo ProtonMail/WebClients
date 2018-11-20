@@ -8,6 +8,7 @@ import autocompleteEmails from './directives/autocompleteEmails';
 import autocompleteEmailsItem from './directives/autocompleteEmailsItem';
 import emailEncryptionIcon from './directives/emailEncryptionIcon';
 import chooseLayoutBtns from './directives/chooseLayoutBtns';
+import currencySelector from './directives/currencySelector';
 import customCheckbox from './directives/customCheckbox';
 import customRadio from './directives/customRadio';
 import customTheme from './directives/customTheme';
@@ -75,6 +76,7 @@ export default angular
     .directive('autocompleteEmailsItem', autocompleteEmailsItem)
     .directive('emailEncryptionIcon', emailEncryptionIcon)
     .directive('chooseLayoutBtns', chooseLayoutBtns)
+    .directive('currencySelector', currencySelector)
     .directive('customCheckbox', customCheckbox)
     .directive('customRadio', customRadio)
     .directive('customTheme', customTheme)

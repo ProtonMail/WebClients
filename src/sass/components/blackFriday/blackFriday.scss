@@ -1,0 +1,243 @@
+$background: #222;
+$primary-text-color: #fff;
+$secondary-text-color: #868686;
+
+$offer-content-border: #484848;
+$offer-header-background: #f5f5f5;
+$offer-content-background: #3e3e3e;
+$offer-header-size: 50px;
+
+.blackFriday-container {
+    background-color: $background;
+    position: relative;
+}
+
+.blackFriday-container::before {
+    display: block;
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: url(assets('/sale/circle-purple.png')) center center no-repeat;
+    background-size: 80%;
+    opacity: 0.3;
+}
+
+.blackFriday-header {
+    position: relative;
+    padding: 1em 2em;
+    color: $primary-text-color;
+    background-color: $offer-content-background;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+
+.blackFriday-content {
+    position: relative;
+}
+
+.blackFriday-header-info {
+    display: block;
+
+    margin-bottom: .25em;
+    font-size: 1.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.blackFridayCountdown-container {
+    min-height: 27px;
+    font-size: 1.3em;
+    color: $secondary-text-color;
+}
+
+.blackFridayIntro {
+    display: block;
+
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    color: $secondary-text-color !important;
+}
+
+.blackFridayCurrent {
+    display: block;
+
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+    color: $primary-text-color !important;
+}
+
+.blackFridayOffers-container {
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 30px 0;
+    padding: 0 80px;
+}
+
+.blackFridayOffer-container {
+    position: relative;
+
+    border: 1px solid $offer-content-border;
+    box-sizing: border-box;
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    color: $background;
+}
+
+.blackFridayOffer-header {
+    background: $offer-header-background;
+    border-bottom: 1px solid $offer-content-border;
+    font-size: 1.2em;
+    height: $offer-header-size;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.blackFridayOffer-header:before {
+    content: ' ';
+    display: block;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    border-style: solid;
+    border-width: 0 $offer-header-size $offer-header-size 0;
+    border-color: transparent $primary transparent transparent;
+}
+
+.blackFridayOffer-header:after {
+    content: "-"attr(data-percentage)"%";
+    display: block;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    color: #fff;
+    font-size: 11px;
+    font-weight: 400;
+
+    padding: 8px 2px 0 0;
+}
+
+.blackFridayOffer-content {
+    padding: 20px 0;
+    background-color: $offer-content-background;
+    color: $primary-text-color;
+}
+
+.blackFridayOffer-plans {
+    height: 3.5em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.blackFridayOffer-plans-title {
+    display: block;
+    font-size: 1.3em;
+    margin-bottom: 0.25em;
+}
+
+.blackFridayOffer-price-container {
+    margin: 20px 0 20px 0;
+}
+
+.blackFridayOffer-price-info {
+    font-size: 2em;
+    color: $primary;
+    margin-bottom: 5px;
+}
+
+.blackFridayOffer-price-month {
+    font-size: 0.8em;
+    color: $primary-text-color;
+}
+
+.blackFridayOffer-price-regular, .blackFridayOffer-price-billing {
+    font-size: 0.8em;
+    color: $secondary-text-color;
+}
+
+.blackFridayOffer-price-savings {
+    margin: 20px 0;
+    font-size: 1.1em;
+    color: $primary;
+}
+
+.blackFridayOffer-buy {
+    position: relative;
+    width: 70%;
+}
+
+.blackFriday-footer {
+    position: relative;
+    padding: 0 4em 1em 4em;
+}
+
+.blackFridayAfter-container {
+    color: $secondary-text-color;
+    text-align: center;
+}
+
+.blackFridayAfter-item {
+    display: block;
+    margin-bottom: .5em;
+}
+
+.blackFriday-container .currencySelector-container {
+    margin: 20px 0;
+    justify-content: center;
+
+    .currencySelector-button {
+        background: $background;
+        border-color: $offer-content-border;
+    }
+
+    .currencySelector-button.active {
+        background: $offer-content-background;
+        color: $primary-text-color;
+    }
+
+    .currencySelector-button.active:hover, .currencySelector-button:hover {
+        background: lighten($offer-content-background, 10);
+        color: $primary-text-color;
+    }
+}
+
+@media (max-width: 700px) {
+    .blackFridayOffers-container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 580px) {
+    .blackFridayOffers-container {
+        flex-direction: column;
+        padding: 0 0;
+    }
+
+    .blackFridayOffer-container {
+        margin-bottom: 20px;
+    }
+}
+

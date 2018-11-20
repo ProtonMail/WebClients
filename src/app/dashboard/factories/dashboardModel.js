@@ -15,7 +15,7 @@ function dashboardModel(
     dispatchers,
     downgrade,
     gettextCatalog,
-    Payment,
+    PaymentCache,
     paymentModal,
     subscriptionModel,
     networkActivityTracker,
@@ -24,7 +24,6 @@ function dashboardModel(
 ) {
     const { dispatcher, on } = dispatchers(['dashboard']);
     const CACHE_PLAN = {};
-    const CACHE_API = {};
     const filter = (amount) =>
         $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
     const get = (key) => {
@@ -85,9 +84,7 @@ function dashboardModel(
     };
 
     const query = (currency = 'USD', cycle = YEARLY) => {
-        const key = `plans-${currency}-${cycle}`;
-        const { Plans = [] } = CACHE_API[key] || {};
-        return Plans;
+        return PaymentCache.plansCached(currency, cycle);
     };
 
     const collectPlans = (plan) => {
@@ -103,12 +100,12 @@ function dashboardModel(
         }
 
         const PlanIDs = _.map(plans, 'ID'); // Map plan IDs
-        const promise = Payment.valid({
+        const promise = PaymentCache.valid({
             Cycle: dashboardConfiguration.cycle(),
             Currency: dashboardConfiguration.currency(),
             PlanIDs,
             CouponCode: subscriptionModel.coupon()
-        }).then(({ data: valid = {} } = {}) => {
+        }).then((valid) => {
             paymentModal.activate({
                 params: {
                     planIDs: PlanIDs,
@@ -125,19 +122,6 @@ function dashboardModel(
         networkActivityTracker.track(promise);
     };
 
-    const fetchPlans = (currency = 'USD', cycle = YEARLY) => {
-        const key = `plans-${currency}-${cycle}`;
-
-        if (CACHE_API[key]) {
-            return Promise.resolve(CACHE_API[key]);
-        }
-
-        return Payment.plans(currency, cycle).then(({ data = {} }) => {
-            CACHE_API[key] = data;
-            return data;
-        });
-    };
-
     /**
      * Load plan for a cycle and a currency, then create a map for them
      *  - addons: (Type === 0)
@@ -150,8 +134,8 @@ function dashboardModel(
      * @return {Promise}
      */
     const loadPlanCycle = (currency, cycle = YEARLY) => {
-        return fetchPlans(currency, cycle).then((data = {}) => {
-            const { list, addons, plan, amounts } = (data.Plans || []).reduce(
+        return PaymentCache.plans(currency, cycle).then((Plans = []) => {
+            const { list, addons, plan, amounts } = Plans.reduce(
                 (acc, plan) => {
                     acc.amounts[plan.Name] = plan.Amount;
 
@@ -323,11 +307,11 @@ function dashboardModel(
             dashboardConfiguration.set('cycle', Cycle);
 
             loadPlanCycle(Currency, Cycle).then(() => {
-                selectPlan(plan, 'paypal');
+                selectPlan(plan);
             });
         }
     });
 
-    return { init: angular.noop, loadPlans, fetchPlans, get, query, amount, amounts, total, filter };
+    return { init: angular.noop, loadPlans, get, query, amount, amounts, total, filter };
 }
 export default dashboardModel;
