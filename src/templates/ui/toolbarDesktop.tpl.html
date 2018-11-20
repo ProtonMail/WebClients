@@ -4,6 +4,7 @@
     <span class="pm_buttons back" ng-if="idDefined() &&  viewLayout === 1">
         <a href="#" ng-click="back()" pt-tooltip-translate="Back to list" pt-tooltip-translate-context="Action">
             <i class="fa fa-long-arrow-left"></i>
+            <span class="sr-only" translate-context="Action" translate>Back to list</span>
         </a>
     </span>
 
@@ -22,7 +23,9 @@
                 data-dropdown-no-auto-close="true"
                 ng-class="{disabled: isDisabled()}"
                 pt-tooltip-translate="Move to"
-                pt-tooltip-translate-context="Action toolbar">
+                pt-tooltip-translate-context="Action toolbar"
+                tabindex="0"
+                role="button">
                 <i class="fa fa-folder"></i>
                 <i class="fa fa-angle-down"></i>
                 <span class="sr-only" translate-context="Action toolbar" translate>Move to</span>
@@ -41,7 +44,9 @@
                 data-dropdown-no-auto-close="true"
                 ng-class="{disabled: isDisabled()}"
                 pt-tooltip-translate="Label as"
-                pt-tooltip-translate-context="Action toolbar">
+                pt-tooltip-translate-context="Action toolbar"
+                tabindex="0"
+                role="button">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
                 <span class="sr-only" translate-context="Action toolbar" translate>Label as</span>
