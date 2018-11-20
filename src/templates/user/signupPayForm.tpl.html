@@ -123,8 +123,6 @@
         </div>
 
         <footer class="text-center signupPayForm-footer">
-            <p class="alert alert-info signupPayForm-msg-error"><span translate translate-context="Signup error">Would you like to create a free ProtonMail account instead?</span> <signup-step-link data-value="3"></signup-step-link></p>
-
             <button
                 class="pm_button primary large signupPayForm-btn-submit disabled-if-network-activity"
                 type="submit"
@@ -137,7 +135,7 @@
                 translate-context="Action">Retry</button>
             <button
                 class="pm_button link signupPayForm-btn-cancel disabled-if-network-activity"
-                type="reset"
+                signup-step-link="3"
                 translate
                 translate-context="Action">Cancel</button>
         </footer>
