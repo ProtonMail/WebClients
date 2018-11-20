@@ -286,14 +286,14 @@ function eventManager(
     const refreshLabels = ({ Labels = [] }) => {
         if (Labels.length) {
             const { messageLabels, contactGroups } = Labels.reduce(
-                (acc, label) => {
-                    // The Type is not defined for delete event (Action: 0)
-                    if (!label.Action || label.Type === LABEL_TYPE.MESSAGE) {
-                        acc.messageLabels.push(label);
+                (acc, event) => {
+                    // Label is not defined for delete event (Action: 0)
+                    if (!event.Action || event.Label.Type === LABEL_TYPE.MESSAGE) {
+                        acc.messageLabels.push(event);
                     }
 
-                    if (!label.Action || label.Type === LABEL_TYPE.CONTACT_GROUP) {
-                        acc.contactGroups.push(label);
+                    if (!event.Action || event.Label.Type === LABEL_TYPE.CONTACT_GROUP) {
+                        acc.contactGroups.push(event);
                     }
 
                     return acc;
