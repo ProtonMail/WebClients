@@ -1,4 +1,5 @@
 import { KNOWLEDGE_BASE, STORAGE_WARNING } from '../../constants';
+import { getItem, setItem } from '../../../helpers/storageHelper';
 
 const DEFAULT_STATE = {
     isModalOpen: false,
@@ -70,7 +71,7 @@ function storageWarning(gettextCatalog, dispatchers, authentication, $state, con
      * @param {Number} percentage
      */
     const openWarningModal = (percentage) => {
-        if (localStorage.getItem(STORAGE_WARNING.KEY) === STORAGE_WARNING.VALUE) {
+        if (getItem(STORAGE_WARNING.KEY) === STORAGE_WARNING.VALUE) {
             return;
         }
         return openModal({
@@ -81,7 +82,7 @@ function storageWarning(gettextCatalog, dispatchers, authentication, $state, con
             cancelText: I18N.DO_NOT_REMIND,
             cancel(type) {
                 // Ignore when clicking on the X
-                type === 'btn' && localStorage.setItem(STORAGE_WARNING.KEY, STORAGE_WARNING.VALUE);
+                type === 'btn' && setItem(STORAGE_WARNING.KEY, STORAGE_WARNING.VALUE);
             }
         });
     };
