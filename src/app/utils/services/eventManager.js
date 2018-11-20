@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import { CONVERSATION_VIEW_MODE, EVENTS_MS, MAILBOX_IDENTIFIERS, STATUS, LABEL_TYPE } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, EVENT_ERRORS } from '../../errors';
+import { isImported } from '../../../helpers/message';
 
 /* @ngInject */
 function eventManager(
@@ -9,7 +10,6 @@ function eventManager(
     $injector,
     $state,
     $timeout,
-    AppModel,
     authentication,
     cachePages,
     desktopNotifications,
@@ -148,13 +148,15 @@ function eventManager(
             all[inbox] = { Notify: 1, ID: inbox };
             all[starred] = { Notify: 1, ID: starred };
 
-            const now = moment();
-
             _.each(messages, ({ Action, Message = {} }) => {
-                const mTime = moment.unix(Message.Time);
                 const onlyNotify = filterNotify(Message);
 
-                if (Action === 1 && Message.Unread === 1 && onlyNotify.length && mTime.isSame(now, 'day')) {
+                // Prevent desktop notification from being shown for imports
+                if (isImported(Message)) {
+                    return;
+                }
+
+                if (Action === 1 && Message.Unread === 1 && onlyNotify.length) {
                     const [{ ID }] = onlyNotify;
                     const route = `secured.${states[ID] || 'label'}.element`;
                     const label = states[ID] ? null : ID;
