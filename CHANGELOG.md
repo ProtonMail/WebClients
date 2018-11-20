@@ -1,3 +1,14 @@
+# [3.15.0] - 2018-11-20
+
+[![ProtonMail v3.15 has been released!](assets/img/v3-15.jpg)](https://protonmail.com/blog/protonmail-v3-15-release-notes/)
+
+[ProtonMail 3.15](https://protonmail.com/blog/protonmail-v3-15-release-notes/)
+
+## Added
+
+- Contact groups
+- Read receipts
+
 # [3.14.36] - 2018-11-17
 
 ## Fixed
