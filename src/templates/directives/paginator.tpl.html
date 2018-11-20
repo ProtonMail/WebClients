@@ -1,21 +1,31 @@
 <span
     class="pm_buttons paginator paginator-container">
     <a
-        pt-tooltip-translate="Previous" pt-tooltip-translate-context="Action"
-        class="paginator-btn-previous">
+        pt-tooltip-translate="Previous"
+        pt-tooltip-translate-context="Action"
+        class="paginator-btn-previous"
+        tabindex="0"
+        role="button">
         <i class="fa fa-chevron-left"></i>
+        <span class="sr-only" translate-context="Action" translate>Previous</span>
     </a>
     <span class="pull-left paginator-dropdown-list">
         <a
             class="pm_trigger paginator-dropdown"
             dropdown
             pt-tooltip-translate="Page number"
-            pt-tooltip-translate-context="Action">
+            pt-tooltip-translate-context="Action"
+            tabindex="0"
+            role="button">
             <small>{{ ::page }}</small>
             <i class="fa fa-angle-down"></i>
         </a>
         <span class="pm_dropdown right">
-            <a ng-repeat="p in pages track by p" data-value="{{::p}}" class="paginator-dropdown-item">
+            <a
+                tabindex="0"
+                role="button"
+                ng-repeat="p in pages track by p" data-value="{{::p}}"
+                class="paginator-dropdown-item">
                 <em
                     class="paginator-label"
                     translate
@@ -26,7 +36,11 @@
     </span>
     <a
         class="paginator-btn-next"
-        pt-tooltip-translate="Next" pt-tooltip-translate-context="Action">
+        pt-tooltip-translate="Next"
+        pt-tooltip-translate-context="Action"
+        tabindex="0"
+        role="button">
         <i class="fa fa-chevron-right"></i>
+        <span class="sr-only" translate-context="Action" translate>Next</span>
     </a>
 </span>
