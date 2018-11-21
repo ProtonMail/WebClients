@@ -9,11 +9,12 @@
         margin: 0;
         width: 100%;
         background: #fff!important;
-        font-size: 15pt;
+        font-size: 16pt;
     }
 
     .printMessage-subject-title {
-        font-size: 20pt !important;
+        font-size: 26pt !important;
+        font-weight: bold !important;
     }
 
     /* remove border from modal */
@@ -31,13 +32,20 @@
     .pm_modal .modal-dialog .close, /* modal close button */
     .pm_modal .modal-dialog .modal-content h4, /* modal text "print preview" */
     .pm_modal .modal-overlay, /* overlay */
-    .modal-footer /* modale footer buttons */ {
-       display: none;
+    .modal-footer, /* modale footer buttons */
+    button.fa.fa-ellipsis-h.pm_button.more /* more button */ {
+       display: none !important;
+    }
+
+    .protonmail_quote,
+    .protonmail_signature_block
+    .protonmail_signature_block-user div {
+        font-size: 16pt !important;
     }
 
     /* fix display */
     .pm_modal .modal-dialog .modal-content .modal-body {
         box-shadow: none;
-        padding: 1em;
+        padding: .5em;
     }
 }
