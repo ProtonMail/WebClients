@@ -8,42 +8,69 @@ const PROPERTY2 = new vCard.Property('email', 'fifi@pm.me', { pref: '10' });
 const PROPERTY3 = new vCard.Property('email', 'loulou@pm.me');
 const PROPERTIES = [PROPERTY1, PROPERTY3, PROPERTY2];
 const PROPERTIES_ORDERED = [PROPERTY1, PROPERTY2, PROPERTY3];
+const KEY_BASE64_ESCAPED = 'data\\:application/pgp-keys;base64,xsFNBFuqPgwBEADFuCqkEPs7lxUDTwMj4Sso1olsA3wYhLzLzMHhp1f1NnRhwlDZdO3esc9S4OQuZMc7q4IvXZdvsLS5qTP41p1a/f+LSri/WF60+cvYyU9t/hlKltA9miOQvB3XCr969RY3tediTAH2XSwk/UfiPaAfyLx4//x30+Ra0+4L/JGPpQQLoR+X/+/AlT0EMtnXrldHm7ArKaggHsNSdSmdzr1URFg';
+const KEY_BASE64_UNESCAPED = 'data:application/pgp-keys;base64,xsFNBFuqPgwBEADFuCqkEPs7lxUDTwMj4Sso1olsA3wYhLzLzMHhp1f1NnRhwlDZdO3esc9S4OQuZMc7q4IvXZdvsLS5qTP41p1a/f+LSri/WF60+cvYyU9t/hlKltA9miOQvB3XCr969RY3tediTAH2XSwk/UfiPaAfyLx4//x30+Ra0+4L/JGPpQQLoR+X/+/AlT0EMtnXrldHm7ArKaggHsNSdSmdzr1URFg';
 
 describe('Helper vcard', () => {
 
     describe('cleanValue', () => {
-        it('shoud parse address', () => {
-            expect(cleanValue(ADDRESS, 'adr'))
-                .toEqual(['', '', 'Chemin; du Pré-Fleuri 3', 'Plan,les:Ouates', '', '1228', 'CH']);
-        });
 
-        it('shoud parse name', () => {
-            expect(cleanValue(NAME, 'n'))
-                .toEqual(['Yen', ' Andy', '', '', '']);
-        });
+        [
+          {
+            name: 'address',
+            input: [ADDRESS, 'adr'],
+            output: ['', '', 'Chemin; du Pré-Fleuri 3', 'Plan,les:Ouates', '', '1228', 'CH']
+          },
+          {
+            name: 'name',
+            input: [NAME, 'n'],
+            output: ['Yen', ' Andy', '', '', '']
+          },
+          {
+            name: 'boolean',
+            input: ['False   ', BOOL_FIELDS[0]],
+            output: false
+          },
+          {
+            name: 'string',
+            input: ['A\\;n:dy\\, Yen', 'fn'],
+            output: 'A;n:dy, Yen'
+          },
+          {
+            name: 'key base64',
+            input: [KEY_BASE64_ESCAPED, 'key'],
+            output: KEY_BASE64_UNESCAPED
+          },
+          {
+            name: 'base64 but not unescape if not a key',
+            input: [KEY_BASE64_ESCAPED],
+            output: KEY_BASE64_ESCAPED
+          },
+          {
+            name: 'key base64 already escaped',
+            input: [KEY_BASE64_UNESCAPED],
+            output: KEY_BASE64_UNESCAPED
+          }
+        ].forEach(({ name, input, output }) => {
+          it(`shoud parse ${name}`, () => {
+              expect(cleanValue.apply(null, input))
+                  .toEqual(output);
+          });
+        })
 
-        it('shoud parse boolean', () => {
-            expect(cleanValue('False   ', BOOL_FIELDS[0]))
-                .toEqual(false);
-        });
-
-        it('should parse string', () => {
-            expect(cleanValue('A\\;n:dy\\, Yen', 'fn'))
-                .toEqual('A;n:dy, Yen');
-        });
     });
 
     describe('unescapeValue', () => {
         [
             {
                 name: 'not unescape base 64 if not extended',
-                input: ['data\\:application/pgp-keys;base64,xsFNBFuqPgwBEADFuCqkEPs7lxUDTwMj4Sso1olsA3wYhLzLzMHhp1f1NnRhwlDZdO3esc9S4OQuZMc7q4IvXZdvsLS5qTP41p1a/f+LSri/WF60+cvYyU9t/hlKltA9miOQvB3XCr969RY3tediTAH2XSwk/UfiPaAfyLx4//x30+Ra0+4L/JGPpQQLoR+X/+/AlT0EMtnXrldHm7ArKaggHsNSdSmdzr1URFg'],
-                output: 'data\\:application/pgp-keys;base64,xsFNBFuqPgwBEADFuCqkEPs7lxUDTwMj4Sso1olsA3wYhLzLzMHhp1f1NnRhwlDZdO3esc9S4OQuZMc7q4IvXZdvsLS5qTP41p1a/f+LSri/WF60+cvYyU9t/hlKltA9miOQvB3XCr969RY3tediTAH2XSwk/UfiPaAfyLx4//x30+Ra0+4L/JGPpQQLoR+X/+/AlT0EMtnXrldHm7ArKaggHsNSdSmdzr1URFg'
+                input: [KEY_BASE64_ESCAPED],
+                output: KEY_BASE64_ESCAPED
             },
             {
                 name: 'unescape base 64 if extended',
-                input: ['data\\:application/pgp-keys;base64,xsFNBFuqPgwBEADFuCqkEPs7lxUDTwMj4Sso1olsA3wYhLzLzMHhp1f1NnRhwlDZdO3esc9S4OQuZMc7q4IvXZdvsLS5qTP41p1a/f+LSri/WF60+cvYyU9t/hlKltA9miOQvB3XCr969RY3tediTAH2XSwk/UfiPaAfyLx4//x30+Ra0+4L/JGPpQQLoR+X/+/AlT0EMtnXrldHm7ArKaggHsNSdSmdzr1URFg', true],
-                output: 'data:application/pgp-keys;base64,xsFNBFuqPgwBEADFuCqkEPs7lxUDTwMj4Sso1olsA3wYhLzLzMHhp1f1NnRhwlDZdO3esc9S4OQuZMc7q4IvXZdvsLS5qTP41p1a/f+LSri/WF60+cvYyU9t/hlKltA9miOQvB3XCr969RY3tediTAH2XSwk/UfiPaAfyLx4//x30+Ra0+4L/JGPpQQLoR+X/+/AlT0EMtnXrldHm7ArKaggHsNSdSmdzr1URFg'
+                input: [KEY_BASE64_ESCAPED, true],
+                output: KEY_BASE64_UNESCAPED
             }
         ].forEach(({ name, input, output }) => {
             it(`should ${name}`, () => {

@@ -113,7 +113,7 @@ export const cleanValue = (value, field) => {
         return value.toLowerCase().trim() !== 'false';
     }
 
-    return unescapeValue(value);
+    return unescapeValue(value, field === 'key');
 };
 
 /**
