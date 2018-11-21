@@ -51,7 +51,11 @@ function contactSelectorModel(contactEmails, contactSelectorModal, dispatchers) 
                 others,
                 submit(recipients) {
                     close();
-                    dispatcher['composer.update']('add.recipients', { name, recipients });
+                    dispatcher['composer.update']('add.recipients', {
+                        name,
+                        recipients,
+                        messageID: message.ID
+                    });
                 }
             }
         });

@@ -396,7 +396,11 @@ function autocompleteEmails(
         el.on('submit', onSubmit);
 
         on('autocompleteEmails', (event, { type, data = {} }) => {
-            if (type === 'refresh' && data.name === el[0].getAttribute('data-name')) {
+            if (
+                type === 'refresh' &&
+                data.name === el[0].getAttribute('data-name') &&
+                data.messageID === scope.message.ID
+            ) {
                 refreshFromList(data.list);
             }
         });

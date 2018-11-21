@@ -129,8 +129,8 @@ function autocompleteEmailsItem(
                 tooltip.updateTitleContent(title);
             };
 
-            on('autocompleteEmails', (e, { type }) => {
-                if (type === 'refresh') {
+            on('autocompleteEmails', (e, { type, data: { messageID } }) => {
+                if (type === 'refresh' && messageID === scope.message.ID) {
                     updateTooltip();
                 }
             });
