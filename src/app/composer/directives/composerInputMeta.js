@@ -113,9 +113,13 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
                 el.on('click', onClick);
 
                 on('composer.update', (event, { type, data = {} }) => {
-                    if (type === 'add.recipients' && data.name === getInputName()) {
+                    if (
+                        type === 'add.recipients' &&
+                        data.name === getInputName() &&
+                        data.messageID === scope.message.ID
+                    ) {
                         const list = _.map(data.recipients, ({ Name, Email: Address }) => ({ Name, Address }));
-                        dispatcher.autocompleteEmails('refresh', { list, name: data.name });
+                        dispatcher.autocompleteEmails('refresh', { list, name: data.name, messageID: data.messageID });
                     }
                 });
 
