@@ -19,7 +19,7 @@ import { BLACK_FRIDAY } from '../app/constants';
 export const normalizePrice = (amountA, cycleA, cycleB) => (cycleA === cycleB ? amountA : amountA * (cycleB / cycleA));
 
 /**
- * Get plans as a map. Where each name of the plan is the key.
+ * Get plans as a map. Where each [key] of the plan will be the key of the object.
  * @param {Array} Plans
  * @param {String} key What key to map by.
  * @returns {Object}
