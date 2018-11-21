@@ -38,11 +38,16 @@ function blackFridayModalOpener(
             STATE.hasData = false;
             STATE.currency = currency;
 
-            STATE.loading = blackFridayModel.getOffers(currency).then(() => {
-                STATE.hasData = true;
-                STATE.loading = undefined;
-                openModal();
-            });
+            STATE.loading = blackFridayModel.getOffers(currency)
+                .then(() => {
+                    STATE.hasData = true;
+                    STATE.loading = undefined;
+                    openModal();
+                })
+                .catch(() => {
+                    STATE.currency = undefined;
+                    STATE.loading = undefined;
+                });
 
             networkActivityTracker.track(STATE.loading);
 
