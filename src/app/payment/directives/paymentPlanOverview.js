@@ -138,7 +138,8 @@ function paymentPlanOverview(
             const planText = Title;
             const planAmount = Amount * quantity;
 
-            const featureKeys = Name.indexOf('vpn') !== -1 ? FEATURE_KEYS_VPN : FEATURE_KEYS_MAIL;
+            const isVpnPlan = Name.indexOf('vpn') !== -1;
+            const featureKeys = isVpnPlan ? FEATURE_KEYS_VPN : FEATURE_KEYS_MAIL;
 
             const features = featureKeys.map((key) => {
                 const value = totalFeatures[key];
@@ -153,7 +154,8 @@ function paymentPlanOverview(
                 };
             });
 
-            acc.push({
+            // Always show the mail subscription, if any, before vpn.
+            acc[isVpnPlan ? 'push' : 'unshift']({
                 text: planText,
                 price: getPriceString(planAmount, Currency, Cycle, CYCLE.MONTHLY),
                 features

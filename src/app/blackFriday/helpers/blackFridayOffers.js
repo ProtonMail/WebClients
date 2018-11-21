@@ -34,6 +34,15 @@ const transformPlans = (plans = []) =>
     );
 
 /**
+ * Sorts VPN plans down.
+ * @param {String} a
+ * @returns {number}
+ */
+const mailPreference = (a) => {
+    return a.indexOf('vpn') === -1 ? -1 : 1;
+};
+
+/**
  * Returns an array of offers with plans.
  * @param {Object} plans
  * @param {Object} addons
@@ -52,7 +61,9 @@ const getPlanOffers = (plans, addons) => {
         return [
             {
                 offers: [
-                    ...Object.keys(plans).map((name) => ({ name })),
+                    ...Object.keys(plans)
+                        .sort(mailPreference)
+                        .map((name) => ({ name })),
                     ...Object.keys(addons).map((name) => ({ name, quantity: addons[name].Quantity }))
                 ],
                 cycle: CYCLE.TWO_YEARS
@@ -177,7 +188,11 @@ const getPlanOffers = (plans, addons) => {
     if (plans[PROFESSIONAL]) {
         return [
             {
-                offers: [...Object.keys(plans).map((name) => ({ name }))],
+                offers: [
+                    ...Object.keys(plans)
+                        .sort(mailPreference)
+                        .map((name) => ({ name }))
+                ],
                 cycle: TWO_YEARS
             }
         ];
