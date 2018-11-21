@@ -72,6 +72,8 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
                 remove: (index) => remove(scope.UI.items[index]),
                 toggleSortable() {
                     scope.$applyAsync(() => {
+                        // Close dropdown for each item
+                        scope.UI.items.forEach((item) => (item.displaySelector = false));
                         scope.UI.sortableState = !scope.UI.sortableState;
                         list.toggleClass(AS_SORTABLE_DISABLED);
                     });
