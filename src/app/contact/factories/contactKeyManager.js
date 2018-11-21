@@ -297,13 +297,13 @@ function contactKeyManager(
 
         const setUI = () => {
             const promises = keys.reduce((acc, value) => {
-                if (value) {
-                    acc.push(
-                        readDataUrl(value)
-                            .then((key) => contactKey.keyInfo(key, email))
-                            .then((keyInfo) => setPublicKey(keyInfo))
-                    );
+                if (!value) {
+                    return acc;
                 }
+                const promise = readDataUrl(value)
+                    .then((key) => contactKey.keyInfo(key, email))
+                    .then(setPublicKey);
+                acc.push(promise);
                 return acc;
             }, []);
 
@@ -313,7 +313,8 @@ function contactKeyManager(
          * Initializes scope.UI and scope.BE
          */
         const init = async () => {
-            const promises = networkActivityTracker.track(Promise.all([setUI(), calculateBE()]));
+            const list = Promise.all([setUI(), calculateBE()]);
+            const promises = networkActivityTracker.track(list);
             const [uiItems, beItems] = await promises;
 
             scope.UI = { items: uiItems };

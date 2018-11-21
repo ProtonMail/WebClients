@@ -41,7 +41,7 @@ function contactEncryptionModel(mailSettingsModel) {
 
             if (field === 'key') {
                 // We do unshift() to keep the pref order
-                acc.Keys.unshift(cleanValue(value));
+                acc.Keys.unshift(cleanValue(value, field));
                 return acc;
             }
 
