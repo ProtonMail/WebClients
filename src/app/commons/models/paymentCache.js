@@ -1,3 +1,5 @@
+import { CURRENCIES, CYCLE } from '../../constants';
+
 /* @ngInject */
 function PaymentCache(Payment, $cacheFactory, dispatchers) {
     const cache = $cacheFactory('Payments', { number: 30 });
@@ -42,10 +44,35 @@ function PaymentCache(Payment, $cacheFactory, dispatchers) {
 
     const methods = ['valid', 'plans'];
 
-    return methods.reduce((acc, method) => {
+    const out = methods.reduce((acc, method) => {
         acc[method] = fnAsync(method);
         return acc;
     }, {});
+
+    /**
+     * Special caching for plans when you specify an undefined currency to see if it's already cached.
+     * This can happen in the dashboard model where we always get with a currency.
+     * But in some cases we don't care for it and just want to plan ids.
+     * @param {Object}
+     * @returns {*}
+     */
+    const plans = ({ Cycle = CYCLE.MONTHLY, Currency } = {}) => {
+        if (!Currency) {
+            const currency = CURRENCIES.find((currency) => {
+                const key = getKey('plans', [{ Cycle, Currency: currency }]);
+                return cache.get(key);
+            });
+            if (currency) {
+                return out.plans({ Cycle, Currency: currency });
+            }
+        }
+        return out.plans({ Cycle, Currency });
+    };
+
+    return {
+        ...out,
+        plans
+    };
 }
 
 export default PaymentCache;

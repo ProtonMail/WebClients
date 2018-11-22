@@ -70,7 +70,7 @@ function paymentPlanOverview(
 
         return Promise.all([
             // Individual information
-            PaymentCache.plans(Currency, CYCLE.MONTHLY),
+            PaymentCache.plans(),
             // Base price
             PaymentCache.valid({
                 PlanIDs,
@@ -106,7 +106,7 @@ function paymentPlanOverview(
      * @param {Object} plans
      * @returns {Array}
      */
-    const getPlanItems = (planIds, plans) => {
+    const getPlanItems = (planIds, plans, Currency) => {
         const plansMap = getPlansMap(plans, 'ID');
 
         const { totalFeatures, addons } = Object.keys(planIds).reduce(
@@ -129,7 +129,7 @@ function paymentPlanOverview(
 
         return Object.keys(planIds).reduce((acc, id) => {
             const quantity = planIds[id];
-            const { Name, Type, Title, Amount, Cycle, Currency } = plansMap[id];
+            const { Name, Type, Title, Amount, Cycle } = plansMap[id];
 
             if (Type === PLANS_TYPE.ADDON) {
                 return acc;
@@ -298,7 +298,7 @@ function paymentPlanOverview(
 
     const getList = (planIds, plans, basePrice, cyclePrice, offerPrice) => {
         return [
-            ...getPlanItems(planIds, plans),
+            ...getPlanItems(planIds, plans, offerPrice.Currency),
             ...getDiscountItems(basePrice, cyclePrice, offerPrice),
             ...getTotalPrice(offerPrice),
             ...getCreditItems(offerPrice),
@@ -338,18 +338,18 @@ function paymentPlanOverview(
             const { on, unsubscribe } = dispatchers();
 
             const reload = (valid) => {
-                const planIds = scope.planIds.reduce((acc, cur) => {
-                    acc[cur] = (acc[cur] || 0) + 1;
-                    return acc;
-                }, {});
-
                 const { Currency, Cycle, Coupon } = valid;
-                const CouponCode = Coupon && Coupon.Code;
+                /**
+                     Why do we use coupon() here if it's not defined? It's because it is called with the subscription coupon from selectPlan()
+                     But the API can return a null COUPON in that case. It automatically adds the BUNDLE discount if it's called with undefined.
+                     So make sure we call with exactly the same parameters here.
+                 */
+                const CouponCode = Coupon ? Coupon.Code : subscriptionModel.coupon();
 
-                const promise = load(subscriptionModel.get(), planIds, Currency, Cycle, CouponCode).then(
+                const promise = load(subscriptionModel.get(), scope.planIds, Currency, Cycle, CouponCode).then(
                     ([plans, basePrice, cyclePrice, offerPrice]) => {
                         scope.$applyAsync(() => {
-                            scope.list = getList(planIds, plans, basePrice, cyclePrice, offerPrice);
+                            scope.list = getList(scope.planIds, plans, basePrice, cyclePrice, offerPrice);
                         });
                     }
                 );

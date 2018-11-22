@@ -1,4 +1,4 @@
-import { BLACK_FRIDAY, CYBER_MONDAY, CYCLE, PLANS_TYPE } from '../../constants';
+import { BLACK_FRIDAY, CYBER_MONDAY, PLANS_TYPE } from '../../constants';
 import { getEventName, isBlackFriday } from '../helpers/blackFridayHelper';
 import { getAfterCouponDiscount, hasBlackFridayCoupon, normalizePrice } from '../../../helpers/paymentHelper';
 
@@ -135,21 +135,14 @@ function blackFriday(
                     return;
                 }
 
-                const planIDs = Object.keys(PlanIDs).reduce((acc, PlanID) => {
-                    for (let i = 0; i < PlanIDs[PlanID]; ++i) {
-                        acc.push(PlanID);
-                    }
-                    return acc;
-                }, []);
-
                 // Get with monthly cycle to ensure caching for paymentPlanOverview. Only needed for IDs.
-                const promise = wrapLoading(PaymentCache.plans(payment.Currency, CYCLE.MONTHLY));
+                const promise = wrapLoading(PaymentCache.plans());
                 const plans = await networkActivityTracker.track(promise);
 
                 paymentModal.activate({
                     params: {
                         isBlackFriday: true,
-                        planIDs,
+                        planIDs: PlanIDs,
                         valid: payment,
                         plans,
                         cancel() {
