@@ -4,7 +4,8 @@
         $position === 'center' ? 'cg-notify-message-center' : '',
         $position === 'left' ? 'cg-notify-message-left' : '',
         $position === 'right' ? 'cg-notify-message-right' : '']"
-    ng-style="{'margin-left': $centerMargin}">
+    ng-style="{'margin-left': $centerMargin}"
+    role="alert">
     <div class="cg-notify-message-content" ng-show="!$messageTemplate" ng-bind-html="$message"></div>
     <div ng-show="$messageTemplate" class="cg-notify-message-template"></div>
     <a class="cg-notify-text-muted" ng-click="$close()"><i class="fa fa-times"></i></a>
