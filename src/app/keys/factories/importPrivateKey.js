@@ -13,6 +13,7 @@ function importPrivateKey(
 ) {
     const PRIVATE_KEY_EXPR = /-----BEGIN PGP PRIVATE KEY BLOCK-----(?:(?!-----)[\s\S])*-----END PGP PRIVATE KEY BLOCK-----/g;
     const getKeyObject = (keyid) => {
+        // Get all keys, even invalid
         const keys = authentication.user.Keys.concat(_.flatten(_.map(addressesModel.get(), 'Keys')));
         return keys.find(({ ID }) => ID === keyid);
     };
@@ -23,7 +24,7 @@ function importPrivateKey(
         if (keyid) {
             const keyObj = getKeyObject(keyid);
             const [serverKeyInfo, uploadedKeyInfos] = await Promise.all([
-                pmcw.keyInfo(keyObj.PublicKey),
+                pmcw.keyInfo(keyObj.PrivateKey),
                 Promise.all(privateKeys.map(pmcw.keyInfo))
             ]);
             const index = uploadedKeyInfos.findIndex(({ fingerprint }) => serverKeyInfo.fingerprint === fingerprint);
@@ -80,10 +81,13 @@ function importPrivateKey(
         const promise = addressID
             ? Key.create({ AddressID: addressID, PrivateKey: privateKey, Primary: 0 })
             : Key.reactivate(keyid, { PrivateKey: privateKey });
-        return promise.then(() => 1).catch((error) => {
-            !error.noNotify && notification.error(error.data && error.data.Error ? error.data.Error : error.message);
-            return 0;
-        });
+        return promise
+            .then(() => 1)
+            .catch((error) => {
+                !error.noNotify &&
+                    notification.error(error.data && error.data.Error ? error.data.Error : error.message);
+                return 0;
+            });
     };
 
     const createKeys = (privateKeys, addressID, keyid) => {
@@ -96,7 +100,7 @@ function importPrivateKey(
         const { ID: addressID = false } = addressesModel.get().find(({ Email }) => Email === email) || {};
         if (!addressID) {
             const keyObj = getKeyObject(keyid);
-            const pmKey = pmcw.getKeys(keyObj.PublicKey);
+            const pmKey = pmcw.getKeys(keyObj.PrivateKey);
             const [, , email] = pmKey[0].users[0].userId.userid.split(/(<|>)/g);
             // fallback on keyid: happens when reactivating keys
             return reformat(decryptedKeys, email).then((formattedKeys) => createKeys(formattedKeys, addressID, keyid));
