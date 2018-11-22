@@ -9,7 +9,8 @@ import {
     CURRENCIES,
     BILLING_CYCLE,
     SIGNUP_PLANS,
-    BLACK_FRIDAY
+    BLACK_FRIDAY,
+    CYCLE
 } from './constants';
 import { getPlansMap } from '../helpers/paymentHelper';
 import { isDealEvent } from './blackFriday/helpers/blackFridayHelper';
@@ -230,7 +231,8 @@ export default angular
                         const coupon =
                             couponParam === BLACK_FRIDAY.COUPON_CODE ? isDealEvent() && couponParam : couponParam;
 
-                        return PaymentCache.plans(currency, cycle).then((Plans) => {
+                        // Get with monthly cycle to ensure caching for paymentPlanOverview. Only needed for IDs.
+                        return PaymentCache.plans(currency, CYCLE.MONTHLY).then((Plans) => {
                             const plansMap = getPlansMap(Plans);
                             const plans = plan.split('_').map((name) => plansMap[name]);
                             const planIDs = plans.map(({ ID }) => ID);
