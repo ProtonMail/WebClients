@@ -17,8 +17,8 @@ function paymentPlansFormator(gettextCatalog) {
     const numberLabels = (totalFolders, totalLabels) =>
         `${totalFolders} ${I18N.FOLDERS} / ${totalLabels} ${I18N.LABELS}`;
 
-    return (QueriedCurrency, QueriedCycle) => (Plans = []) => {
-        const { Currency, Cycle } = Plans[0] || { Currency: QueriedCurrency, Cycle: QueriedCycle };
+    return (Plans = []) => {
+        const { Currency, Cycle } = Plans[0] || {};
 
         // Add free plan
         Plans.unshift({

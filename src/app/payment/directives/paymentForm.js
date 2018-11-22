@@ -18,8 +18,6 @@ function paymentForm(
         dispatcher['modal.payment'](type, _.extend({ plan }, data));
     };
 
-    const formatPlanIDs = (planIDs = []) => _.countBy(planIDs, (planID) => planID);
-
     return {
         scope: {
             ctrl: '=',
@@ -47,7 +45,7 @@ function paymentForm(
             const PLANS_MAP = getPlansMap(params.plans, 'ID');
 
             ctrl.planIDs = params.planIDs;
-            ctrl.plans = _.uniq(params.planIDs).map((ID) => PLANS_MAP[ID]);
+            ctrl.plans = Object.keys(params.planIDs).map((ID) => PLANS_MAP[ID]);
             ctrl.step = 'payment';
 
             const { list, selected } = paymentUtils.generateMethods({
@@ -72,7 +70,7 @@ function paymentForm(
                     Currency: ctrl.valid.Currency,
                     CouponCode: ctrl.coupon,
                     GiftCode: ctrl.gift,
-                    PlanIDs: formatPlanIDs(params.planIDs)
+                    PlanIDs: ctrl.planIDs
                 };
 
                 if (!ctrl.valid.AmountDue) {
@@ -121,7 +119,7 @@ function paymentForm(
                 const parameters = {
                     Currency: params.valid.Currency,
                     Cycle: params.valid.Cycle,
-                    PlanIDs: formatPlanIDs(params.planIDs)
+                    PlanIDs: params.planIDs
                 };
 
                 if (thing === 'coupon') {

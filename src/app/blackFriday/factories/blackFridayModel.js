@@ -94,8 +94,7 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
             return;
         }
 
-        // Get with monthly cycle to ensure caching for paymentPlanOverview. Only needed for IDs.
-        const Plans = await PaymentCache.plans(currency, CYCLE.MONTHLY);
+        const Plans = await PaymentCache.plans();
         const plansMap = getPlansMap(Plans);
         // Either use the specified currency, or if there is none, use the currency of the first plan received from the API.
         const getOfferCb = getOfferPayment(subscription, plansMap, currency || plansMap.free.currency);

@@ -9,8 +9,7 @@ import {
     CURRENCIES,
     BILLING_CYCLE,
     SIGNUP_PLANS,
-    BLACK_FRIDAY,
-    CYCLE
+    BLACK_FRIDAY
 } from './constants';
 import { getPlansMap } from '../helpers/paymentHelper';
 import { isDealEvent } from './blackFriday/helpers/blackFridayHelper';
@@ -232,13 +231,16 @@ export default angular
                             couponParam === BLACK_FRIDAY.COUPON_CODE ? isDealEvent() && couponParam : couponParam;
 
                         // Get with monthly cycle to ensure caching for paymentPlanOverview. Only needed for IDs.
-                        return PaymentCache.plans(currency, CYCLE.MONTHLY).then((Plans) => {
+                        return PaymentCache.plans().then((Plans) => {
                             const plansMap = getPlansMap(Plans);
                             const plans = plan.split('_').map((name) => plansMap[name]);
-                            const planIDs = plans.map(({ ID }) => ID);
+                            const PlanIDs = plans.reduce((acc, { ID }) => {
+                                acc[ID] = (acc[ID] || 0) + 1;
+                                return acc;
+                            }, {});
 
                             return PaymentCache.valid({
-                                PlanIDs: planIDs,
+                                PlanIDs,
                                 Currency: currency,
                                 Cycle: cycle,
                                 CouponCode: coupon
@@ -752,9 +754,10 @@ export default angular
                         }
                     },
                     dashboardPlans(user, dashboardModel, networkActivityTracker, subscriptionModel) {
-                        const promise = subscriptionModel
-                            .fetch()
-                            .then(({ Currency }) => dashboardModel.loadPlans(Currency));
+                        const promise = subscriptionModel.fetch().then(() => {
+                            // Ensure it's called with the same currency as the dashboard
+                            return dashboardModel.loadPlans(subscriptionModel.currency());
+                        });
                         return networkActivityTracker.track(promise);
                     },
                     methods(user, paymentModel, networkActivityTracker) {

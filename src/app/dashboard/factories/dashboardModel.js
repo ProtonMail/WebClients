@@ -98,14 +98,18 @@ function dashboardModel(
         const Cycle = dashboardConfiguration.cycle();
         const Currency = dashboardConfiguration.currency();
 
-        const PlanIDs = _.map(plans, 'ID'); // Map plan IDs
+        const PlanIDs = plans.reduce((acc, cur) => {
+            const { ID } = cur;
+            acc[ID] = (acc[ID] || 0) + 1;
+            return acc;
+        }, {});
 
         const promise = Promise.all([
-            PaymentCache.plans(Currency, CYCLE.MONTHLY), // Get with monthly cycle to ensure caching for paymentPlanOverview. Only needed for IDs.
+            PaymentCache.plans(),
             PaymentCache.valid({
-                Cycle,
-                Currency,
                 PlanIDs,
+                Currency,
+                Cycle,
                 CouponCode: subscriptionModel.coupon()
             })
         ]).then(([plans, valid]) => {
@@ -133,12 +137,12 @@ function dashboardModel(
      *  - vpn: (Type === 1)
      *  And a list of plan, ProtonMail plan (not vpn)
      *  And a map between Name and Amount
-     * @param  {String} currency
-     * @param  {Number} cycle
+     * @param  {String} Currency
+     * @param  {Number} Cycle
      * @return {Promise}
      */
-    const loadPlanCycle = (currency, cycle = YEARLY) => {
-        return PaymentCache.plans(currency, cycle).then((Plans = []) => {
+    const loadPlanCycle = (Currency, Cycle = YEARLY) => {
+        return PaymentCache.plans({ Currency, Cycle }).then((Plans = []) => {
             const { list, addons, plan, amounts } = Plans.reduce(
                 (acc, plan) => {
                     acc.amounts[plan.Name] = plan.Amount;

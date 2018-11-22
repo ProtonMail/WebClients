@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { CYCLE } from '../../constants';
 
 /* @ngInject */
 function Payment($http, authentication, url, brick, paymentPlansFormator) {
@@ -131,15 +132,14 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
 
     /**
      * Get plans available to user
-     * @param {String} Currency
-     * @param {Number} Cycle
+     * @param {Object} params
      * @return {Promise<Array>}
      */
-    const plans = (Currency, Cycle) => {
+    const plans = ({ Cycle = CYCLE.MONTHLY, Currency } = {}) => {
         return $http
-            .get(requestUrl('plans'), { params: { Currency, Cycle } })
+            .get(requestUrl('plans'), { params: { Cycle, Currency } })
             .then(({ data: { Plans = [] } = {} }) => Plans)
-            .then(paymentPlansFormator(Currency, Cycle));
+            .then(paymentPlansFormator);
     };
 
     /**

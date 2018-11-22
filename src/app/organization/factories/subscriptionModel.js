@@ -95,7 +95,8 @@ function subscriptionModel(dispatchers, gettextCatalog, Payment) {
 
     function coupon() {
         const { CouponCode } = get();
-        return CouponCode;
+        // CouponCode is apparently null from the API.
+        return !CouponCode ? undefined : CouponCode;
     }
 
     function fetch() {
