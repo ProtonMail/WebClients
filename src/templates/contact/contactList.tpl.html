@@ -53,13 +53,15 @@
                     </td>
                     <td
                         data-contact-id="{{ ::contact.ID }}"
-                        class="text-muted contactList-item-email" data-action="showContact">
-                        <ul class="inlineList">
-                            <li>{{ contact.emails }}</li>
-                        </ul>
-                        <contact-groups-overview
-                            data-contact="contact"
-                            class="contactList-item-group"></contact-groups-overview>
+                        class="text-muted contactList-item-email-wrapper" data-action="showContact">
+                        <span class="contactList-item-email">
+                            <ul class="inlineList">
+                                <li>{{ contact.emails }}</li>
+                            </ul>
+                            <contact-groups-overview
+                                data-contact="contact"
+                                class="contactList-item-group"></contact-groups-overview>
+                        </span>
                     </td>
                 </tr>
             </tbody>
