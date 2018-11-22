@@ -781,12 +781,12 @@ msgctxt "Action"
 msgid "Display invoice"
 msgstr ""
 
-#: ./src/app/user/factories/storageWarning.js:33
+#: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
 msgid "Do not remind me"
 msgstr ""
 
-#: ./src/app/composer/factories/composerFromModel.js:17
+#: ./src/app/composer/factories/composerFromModel.js:18
 msgctxt "Action"
 msgid "Don't show this again"
 msgstr ""
@@ -999,7 +999,7 @@ msgctxt "Action"
 msgid "Generate missing keys"
 msgstr ""
 
-#: ./src/app/user/factories/storageWarning.js:31
+#: ./src/app/user/factories/storageWarning.js:32
 msgctxt "Action"
 msgid "Go to dashboard"
 msgstr ""
@@ -1321,14 +1321,14 @@ msgctxt "Action"
 msgid "Not spam"
 msgstr ""
 
-#: ./src/app/composer/factories/composerFromModel.js:16
+#: ./src/app/composer/factories/composerFromModel.js:17
 #: ./src/templates/modals/abuseFraudModal.tpl.html:16
 #: ./src/templates/modals/alert.tpl.html:13
 msgctxt "Action"
 msgid "OK"
 msgstr ""
 
-#: ./src/app/user/factories/storageWarning.js:32
+#: ./src/app/user/factories/storageWarning.js:33
 msgctxt "Action"
 msgid "Ok"
 msgstr ""
@@ -3606,7 +3606,7 @@ msgid "Invalid form"
 msgstr ""
 
 #: ./src/app/payment/factories/paymentModel.js:14
-#: ./src/app/user/directives/signupPayForm.js:18
+#: ./src/app/user/directives/signupPayForm.js:9
 #: ./src/templates/payment/giftCodeInput.tpl.html:14
 msgctxt "Error"
 msgid "Invalid gift code"
@@ -3777,7 +3777,7 @@ msgctxt "Error"
 msgid "Reset code is required"
 msgstr ""
 
-#: ./src/app/composer/factories/composerFromModel.js:20
+#: ./src/app/composer/factories/composerFromModel.js:21
 msgctxt "Error"
 msgid "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address {{email}}"
 msgstr ""
@@ -4834,7 +4834,7 @@ msgctxt "Info"
 msgid "Also used to reset a forgotten password."
 msgstr ""
 
-#: ./src/app/user/directives/signupPayForm.js:21
+#: ./src/app/user/directives/signupPayForm.js:12
 msgctxt "Info"
 msgid "Annually"
 msgstr ""
@@ -5268,7 +5268,7 @@ msgctxt "Info"
 msgid "Enter the Organization Password to restore administrator privileges. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Learn more</a>"
 msgstr ""
 
-#: ./src/app/user/directives/signupPayForm.js:23
+#: ./src/app/user/directives/signupPayForm.js:14
 msgctxt "Info"
 msgid "Every 2 years"
 msgstr ""
@@ -5484,7 +5484,7 @@ msgctxt "Info"
 msgid "Message discarded"
 msgstr ""
 
-#: ./src/app/user/directives/signupPayForm.js:22
+#: ./src/app/user/directives/signupPayForm.js:13
 msgctxt "Info"
 msgid "Monthly"
 msgstr ""
@@ -6489,7 +6489,7 @@ msgid "is activated on your account."
 msgstr ""
 
 #: ./src/app/dashboard/directives/totalPlan.js:6
-#: ./src/app/user/directives/signupPayForm.js:19
+#: ./src/app/user/directives/signupPayForm.js:10
 msgctxt "Info"
 msgid "month"
 msgstr ""
@@ -7495,7 +7495,6 @@ msgid "Select weekday"
 msgstr ""
 
 #: ./src/templates/payment/paymentPlanOverview.tpl.html:16
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:109
 msgctxt "Link"
 msgid "(What is this?)"
 msgstr ""
@@ -7536,7 +7535,7 @@ msgstr ""
 #: ./src/app/composer/services/autoPinPrimaryKeys.js:11
 #: ./src/app/search/directives/wildcardCheckbox.js:5
 #: ./src/app/ui/directives/noResults.js:5
-#: ./src/app/user/factories/storageWarning.js:11
+#: ./src/app/user/factories/storageWarning.js:12
 #: ./src/templates/autoresponder/autoresponder.tpl.html:26
 #: ./src/templates/contact/contactError.tpl.html:18
 #: ./src/templates/contact/contactError.tpl.html:37
@@ -8527,15 +8526,6 @@ msgctxt "Plan feature"
 msgid "Unlimited sending"
 msgstr ""
 
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:36
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:46
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:57
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:68
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:78
-msgctxt "Price per month"
-msgid "/mo"
-msgstr ""
-
 #: ./src/app/dashboard/directives/vpnRow.js:24
 msgctxt "ProtonVPN with X connections"
 msgid "connections"
@@ -8690,14 +8680,14 @@ msgctxt "Storage warning"
 msgid "Storage limit reached. Unable to send or receive emails."
 msgstr ""
 
-#: ./src/app/user/factories/storageWarning.js:23
+#: ./src/app/user/factories/storageWarning.js:24
 msgctxt "Storage warning"
 msgid ""
 "You have reached 100% of your storage capacity. You won't be able to send or receive emails\n"
 "            unless you permanently delete some emails or purchase more storage. {{learnMoreLink}}."
 msgstr ""
 
-#: ./src/app/user/factories/storageWarning.js:14
+#: ./src/app/user/factories/storageWarning.js:15
 msgctxt "Storage warning"
 msgid ""
 "You have reached {{ percentage }}% of your storage capacity. Consider freeing up some space\n"
@@ -9226,7 +9216,6 @@ msgid "Amount Due"
 msgstr ""
 
 #: ./src/templates/modals/pay.tpl.html:44
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:125
 msgctxt "Title"
 msgid "Amount due"
 msgstr ""
@@ -9494,14 +9483,12 @@ msgid "Conversation Grouping"
 msgstr ""
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:52
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:88
 msgctxt "Title"
 msgid "Cost per month"
 msgstr ""
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:50
 #: ./src/templates/dashboard/overviewSection.tpl.html:71
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:100
 msgctxt "Title"
 msgid "Coupon"
 msgstr ""
@@ -9549,7 +9536,6 @@ msgstr ""
 #: ./src/app/payment/directives/paymentPlanOverview.js:53
 #: ./src/templates/dashboard/overviewSection.tpl.html:61
 #: ./src/templates/modals/pay.tpl.html:40
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:120
 msgctxt "Title"
 msgid "Credit"
 msgstr ""
@@ -9962,7 +9948,6 @@ msgid "Gift"
 msgstr ""
 
 #: ./src/templates/payment/giftCodeModal.tpl.html:6
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:115
 #: ./src/templates/user/signupPayForm.tpl.html:30
 #: ./src/templates/user/signupPayForm.tpl.html:78
 msgctxt "Title"
@@ -10389,7 +10374,6 @@ msgid "Personalize your layout"
 msgstr ""
 
 #: ./src/templates/payment/paymentPlanOverview.tpl.html:3
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:4
 #: ./src/templates/user/signupPayForm.tpl.html:18
 msgctxt "Title"
 msgid "Plan"
@@ -10407,7 +10391,6 @@ msgstr ""
 
 #. Table heading
 #: ./src/templates/payment/paymentPlanOverview.tpl.html:4
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:5
 #: ./src/templates/user/signupPayForm.tpl.html:36
 #: ./src/templates/views/invoices.tpl.html:19
 #: ./src/templates/views/invoices.tpl.html:49
@@ -10437,7 +10420,6 @@ msgid "Privatize User"
 msgstr ""
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:54
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:109
 msgctxt "Title"
 msgid "Proration"
 msgstr ""
@@ -10594,7 +10576,7 @@ msgctxt "Title"
 msgid "Sender"
 msgstr ""
 
-#: ./src/app/composer/factories/composerFromModel.js:18
+#: ./src/app/composer/factories/composerFromModel.js:19
 msgctxt "Title"
 msgid "Sending notice"
 msgstr ""
@@ -10759,7 +10741,7 @@ msgctxt "Title"
 msgid "Thank you for your subscription!"
 msgstr ""
 
-#: ./src/app/user/directives/signupPayForm.js:31
+#: ./src/app/user/directives/signupPayForm.js:22
 msgctxt "Title"
 msgid "Thank you for your support!"
 msgstr ""
@@ -10793,19 +10775,16 @@ msgid "Toolbar"
 msgstr ""
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:35
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:95
 msgctxt "Title"
 msgid "Total (2-year billing)"
 msgstr ""
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:34
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:94
 msgctxt "Title"
 msgid "Total (annual billing)"
 msgstr ""
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:33
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:93
 msgctxt "Title"
 msgid "Total (monthly billing)"
 msgstr ""
@@ -10924,7 +10903,7 @@ msgstr ""
 
 #: ./src/app/address/services/deleteKeyProcess.js:16
 #: ./src/app/user/directives/signupUserForm.js:6
-#: ./src/app/user/factories/storageWarning.js:34
+#: ./src/app/user/factories/storageWarning.js:35
 #: ./src/templates/views/reset-login-password.tpl.html:102
 msgctxt "Title"
 msgid "Warning"
@@ -11095,19 +11074,9 @@ msgctxt "Toggle Star message/conversation"
 msgid "Unstar"
 msgstr ""
 
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:17
-msgctxt "Tooltip"
-msgid "1-year plan, 20% off"
-msgstr ""
-
 #: ./src/app/payment/directives/paymentPlanOverview.js:43
 msgctxt "Tooltip"
 msgid "1-year plan, {{percentage}} off"
-msgstr ""
-
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:22
-msgctxt "Tooltip"
-msgid "2-year plan, 33% off"
 msgstr ""
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:45
@@ -12074,37 +12043,6 @@ msgstr ""
 #: ./src/templates/dashboard/subscriptionSection.tpl.html:29
 msgctxt "subscription details"
 msgid "Billing cycle end"
-msgstr ""
-
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:66
-msgctxt "subscription label"
-msgid "Address"
-msgid_plural "Addresses"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:44
-msgctxt "subscription label"
-msgid "Custom domain"
-msgid_plural "Custom domains"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:34
-msgctxt "subscription label"
-msgid "Storage"
-msgstr ""
-
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:55
-msgctxt "subscription label"
-msgid "User"
-msgid_plural "Users"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ./src/templates/payment/tosubscribeOverview.tpl.html:76
-msgctxt "subscription label"
-msgid "VPN Connections"
 msgstr ""
 
 #: ./src/templates/dashboard/subscriptionSection.tpl.html:44
