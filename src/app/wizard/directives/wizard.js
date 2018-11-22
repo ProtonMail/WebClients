@@ -122,6 +122,7 @@ function wizard(
                 scope.$applyAsync(() => {
                     scope.tourActive = false;
                     wizardBuilder.hideTooltips();
+                    $('.tooltip').removeClass('tour');
                 });
             }
 

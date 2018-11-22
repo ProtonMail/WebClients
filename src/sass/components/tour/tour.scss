@@ -1,6 +1,18 @@
 .tooltip.tour {
 	background-color: $tour;
 }
+.tooltip.tour[x-placement^="left"] .tooltip-arrow {
+    border-left-color: $tour;
+}
+.tooltip.tour[x-placement^="top"] .tooltip-arrow {
+    border-top-color: $tour;
+}
+.tooltip.tour[x-placement^="bottom"] .tooltip-arrow {
+    border-bottom-color: $tour;
+}
+.tooltip.tour[x-placement^="right"] .tooltip-arrow {
+    border-right-color: $tour;
+}
 
 .appConfigBody-tourActive {
 	.sidebarApp-link[href='/labels'] { overflow: visible }
