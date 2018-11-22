@@ -3916,7 +3916,7 @@ msgctxt "Error"
 msgid "Unsupported auth version"
 msgstr ""
 
-#: ./src/app/keys/factories/importPrivateKey.js:66
+#: ./src/app/keys/factories/importPrivateKey.js:67
 msgctxt "Error"
 msgid "Unsupported key"
 msgstr ""
@@ -4122,12 +4122,12 @@ msgctxt "Error label modal"
 msgid "Invalid label name"
 msgstr ""
 
-#: ./src/app/keys/factories/importPrivateKey.js:110
+#: ./src/app/keys/factories/importPrivateKey.js:114
 msgctxt "Error message"
 msgid "Invalid private key file."
 msgstr ""
 
-#: ./src/app/keys/factories/importPrivateKey.js:33
+#: ./src/app/keys/factories/importPrivateKey.js:34
 msgctxt "Error message"
 msgid "Uploaded key doesn't match selected key."
 msgstr ""
@@ -4975,12 +4975,12 @@ msgctxt "Info"
 msgid "Below are optional settings you can use to customize your account. You can always find these on your Settings page."
 msgstr ""
 
-#: ./src/app/dashboard/directives/totalRows.js:22
+#: ./src/app/dashboard/directives/totalRows.js:23
 msgctxt "Info"
 msgid "Billed as {{amount}} /2-yr"
 msgstr ""
 
-#: ./src/app/dashboard/directives/totalRows.js:18
+#: ./src/app/dashboard/directives/totalRows.js:19
 msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr ""
@@ -5016,7 +5016,7 @@ msgid "By clicking Submit, you agree to abide by"
 msgstr ""
 
 #: ./src/app/composer/controllers/composeMessage.js:138
-#: ./src/app/routes.js:465
+#: ./src/app/routes.js:469
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr ""
