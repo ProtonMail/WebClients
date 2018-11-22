@@ -15,6 +15,10 @@ const customTheme = (AppModel, dispatchers, mailSettingsModel) => ({
         on('mailSettings', update);
         on('AppModel', update);
 
+        on('logout', () => {
+            el[0].textContent = '';
+        });
+
         update();
 
         scope.$on('$destroy', unsubscribe);
