@@ -53,7 +53,8 @@ function paymentForm(
             const { list, selected } = paymentUtils.generateMethods({
                 choice: params.choice,
                 Cycle: params.valid.Cycle,
-                Amount: params.valid.AmountDue
+                Amount: params.valid.AmountDue,
+                CouponCode: params.valid.Coupon && params.valid.Coupon.Code
             });
             ctrl.methods = list;
             ctrl.method = selected;

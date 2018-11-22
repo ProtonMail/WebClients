@@ -4,16 +4,7 @@ import { getEventName } from '../../blackFriday/helpers/blackFridayHelper';
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
 /* @ngInject */
-function signupPayForm(
-    paymentUtils,
-    dispatchers,
-    $stateParams,
-    cardModel,
-    giftCodeModel,
-    notification,
-    gettextCatalog,
-    $filter
-) {
+function signupPayForm(paymentUtils, dispatchers, cardModel, giftCodeModel, notification, gettextCatalog, $filter) {
     const I18N = {
         invalidGiftCode: gettextCatalog.getString('Invalid gift code', null, 'Error'),
         month: gettextCatalog.getString('month', null, 'Info'),
@@ -78,7 +69,7 @@ function signupPayForm(
 
             const $btnApply = el.find('.signupPayForm-btn-apply');
             const { list, selected } = paymentUtils.generateMethods({
-                Cycle: +$stateParams.billing
+                Cycle: scope.payment.Cycle
             });
 
             scope.methods = list;

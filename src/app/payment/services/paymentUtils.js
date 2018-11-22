@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { CYCLE } from '../../constants';
+import { BLACK_FRIDAY, CYCLE } from '../../constants';
 import { isIE11 } from '../../../helpers/browser';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
@@ -34,6 +34,7 @@ function paymentUtils(gettextCatalog, paymentModel, $state) {
         choice,
         Cycle = YEARLY,
         Amount,
+        CouponCode,
         modal = ''
     } = {}) => {
         const list = [
@@ -56,7 +57,7 @@ function paymentUtils(gettextCatalog, paymentModel, $state) {
             });
         }
 
-        if (!$state.is('signup')) {
+        if (!$state.is('signup') && CouponCode !== BLACK_FRIDAY.COUPON_CODE) {
             list.push({
                 value: 'bitcoin',
                 label: 'Bitcoin'
