@@ -4,6 +4,7 @@
         $position === 'center' ? 'cg-notify-message-center' : '',
         $position === 'left' ? 'cg-notify-message-left' : '',
         $position === 'right' ? 'cg-notify-message-right' : '']"
-    ng-style="{'margin-left': $centerMargin}">
+    ng-style="{'margin-left': $centerMargin}"
+    role="alert">
     <div><span translate-context="Notification error trying to connect to the API" translate>Servers are unreachable.</span> <a href="#" ng-click="$click()" translate-context="Action notification error trying to connect to the API" translate>Retry now</a>.</div>
 </div>

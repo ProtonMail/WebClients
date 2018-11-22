@@ -4,7 +4,8 @@
         $position === 'center' ? 'cg-notify-message-center' : '',
         $position === 'left' ? 'cg-notify-message-left' : '',
         $position === 'right' ? 'cg-notify-message-right' : '']"
-    ng-style="{'margin-left': $centerMargin}">
+    ng-style="{'margin-left': $centerMargin}"
+    role="alert">
 
     <div ng-class="{ 'animated bounceIn' : $classes==='notification-success' }">
         <span>{{ ::$message }}</span>
