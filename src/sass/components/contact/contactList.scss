@@ -4,7 +4,7 @@
 }
 
 .contactList-item.contactList-item.contactList-item td ul {
-    line-height: initial;
+    line-height: normal;
 }
 
 .contactList-item-activeContact td {
@@ -30,11 +30,34 @@
     }
 }
 
+.contactList-table .contactList-item-name,
+.contactList-table .contactList-item-email,
+.contactList-table .contactList-item-email-wrapper {
+    vertical-align: middle !important;
+}
+
+.contactList-table .contactList-tbody td {
+    line-height: normal !important;
+}
+
+.contactList-item-email .inlineList {
+    padding-right: .5em !important;
+}
+
 .contactList-item-email.contactList-item-email {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
     padding-right: .5em !important;
+}
+
+.contactList-item-group {
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+.contactList-item-name.contactList-item-name {
+    padding-right: .25em !important;
 }
 
 .contactList-checkbox {
@@ -66,8 +89,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: block;
-            width: 100%;
-            display: block;
+            max-width: 100%;
         }
 
         ul {
