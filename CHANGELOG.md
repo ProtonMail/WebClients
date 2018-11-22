@@ -1,3 +1,10 @@
+# [3.15.2] - 2018-11-22
+## Fixed
+- "Unknown ASCII armor type" error was shown when importing private key for contacts
+
+## Changed
+- Behavior for some options on the Dashboard
+
 # [3.15.1] - 2018-11-22
 ## Fixed
 - "Add multiple recipients" modal did not clear the selected addresses in some cases
