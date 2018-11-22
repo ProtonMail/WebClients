@@ -101,7 +101,7 @@ function dashboardModel(
         const PlanIDs = _.map(plans, 'ID'); // Map plan IDs
 
         const promise = Promise.all([
-            PaymentCache.plans(Currency, Cycle),
+            PaymentCache.plans(Currency, CYCLE.MONTHLY), // Get with monthly cycle to ensure caching for paymentPlanOverview. Only needed for IDs.
             PaymentCache.valid({
                 Cycle,
                 Currency,
