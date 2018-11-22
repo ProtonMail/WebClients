@@ -14,7 +14,7 @@ function contactSelectorModel(contactEmails, contactSelectorModal, dispatchers) 
      */
     const load = (message = {}, key = 'ToList') => {
         const recipients = message[key] || [];
-        const emailList = contactEmails.get();
+        const emailList = contactEmails.get().map((address) => ({ ...address }));
         const emailMap = emailList.reduce((acc, { Email = '' }, index) => {
             acc[Email] = index;
             return acc;
