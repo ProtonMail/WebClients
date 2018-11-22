@@ -1,4 +1,5 @@
 import { CYCLE } from '../../constants';
+import { isDealEvent } from '../../blackFriday/helpers/blackFridayHelper';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
@@ -47,7 +48,7 @@ function totalRows(
             scope.onChange = () => dispatcher.dashboard('change.cycle', { cycle: scope.cycle });
 
             function bindClass() {
-                const action = subscriptionModel.cycle() === TWO_YEARS ? 'add' : 'remove';
+                const action = subscriptionModel.cycle() === TWO_YEARS || isDealEvent() ? 'add' : 'remove';
 
                 element[0].classList[action](HAS_TWO_YEARS_CLASS);
             }
