@@ -1,3 +1,11 @@
+# [3.15.1] - 2018-11-22
+## Fixed
+- "Add multiple recipients" modal did not clear the selected addresses in some cases
+- "Add multiple recipients" modal added the selected addresses in all open composers
+- Email type dropdown was not closed when rearranging addresses
+- The printing font was very small for some documents
+- Some error messages appeared when accessing Advanced contact settings
+
 # [3.15.0] - 2018-11-20
 
 [![ProtonMail v3.15 has been released!](assets/img/v3-15.jpg)](https://protonmail.com/blog/protonmail-v3-15-release-notes/)
