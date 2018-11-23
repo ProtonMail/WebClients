@@ -13,8 +13,9 @@
     padding: 0;
 }
 
-.expiration-list-item {
+.expiration-list-item.expiration-list-item.expiration-list-item {
     padding: 0.5em 1em;
     list-style: none;
+    display: block;
 }
 .expiration-list-item + .expiration-list-item { border-top: 1px solid $toolbar-border }
