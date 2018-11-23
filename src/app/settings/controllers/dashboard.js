@@ -31,7 +31,7 @@ function DashboardController(
     dashboardConfiguration.set('cycle', $stateParams.cycle || subscriptionModel.cycle());
     dashboardConfiguration.set('currency', $stateParams.currency || subscriptionModel.currency());
 
-    if (blackFridayModel.isDealPeriod(true) && !$stateParams.noBlackFridayModal) {
+    if (blackFridayModel.isDealPeriod() && !$stateParams.noBlackFridayModal) {
         blackFridayModalOpener();
     }
 
