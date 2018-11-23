@@ -61,8 +61,7 @@ function blackFriday(
         const isBlackFridayDeal = hasBlackFridayCoupon(discount);
 
         const discountedAmount = getAfterCouponDiscount(discount);
-        // Don't include the bundle discount when it's the black friday deal for the regular price
-        const regularAmount = isBlackFridayDeal ? regular.Amount : getAfterCouponDiscount(regular);
+        const regularAmount = regular.Amount;
         const regularNormalizedAmount = normalizePrice(regularAmount, regular.Cycle, Cycle);
         const savingsAmount = regularNormalizedAmount - discountedAmount;
         const afterAmount = getAfterCouponDiscount(after);

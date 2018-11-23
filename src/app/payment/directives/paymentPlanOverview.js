@@ -157,7 +157,6 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
 
         if (Cycle !== regular.Cycle || CouponDiscount < 0) {
             const discountedAmount = getAfterCouponDiscount(discountPrice);
-            // Don't include the bundle discount when it's the black friday deal for the regular price
             const regularAmount = regular.Amount;
             const regularNormalizedAmount = normalizePrice(regularAmount, regular.Cycle, Cycle);
             const savings = regularNormalizedAmount - discountedAmount;
