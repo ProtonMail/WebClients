@@ -2,6 +2,7 @@
 function toggleExpand() {
     const EXPAND_CLASS = 'fa-chevron-down';
     const COLLAPSE_CLASS = 'fa-chevron-right';
+    const ATTR_EXPANDED = 'aria-expanded';
     return {
         restrict: 'E',
         replace: true,
@@ -16,6 +17,7 @@ function toggleExpand() {
             function toggleClass() {
                 const toAdd = scope.model.toggle ? EXPAND_CLASS : COLLAPSE_CLASS;
                 const toRemove = scope.model.toggle ? COLLAPSE_CLASS : EXPAND_CLASS;
+                element[0].setAttribute(ATTR_EXPANDED, scope.model.toggle);
                 $i.classList.remove(toRemove);
                 $i.classList.add(toAdd);
             }
