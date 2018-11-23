@@ -21,7 +21,7 @@ const MAP_ADDONS = {
 };
 
 /* @ngInject */
-function subscriptionModel(dispatchers, gettextCatalog, Payment) {
+function subscriptionModel(dispatchers, Payment) {
     const CACHE = {};
     const { dispatcher, on } = dispatchers(['subscription']);
 
