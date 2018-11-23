@@ -117,6 +117,14 @@ function addonRow(
                     }
                 });
 
+                on('app.event', (event, { type }) => {
+                    if (type === 'subscription.event') {
+                        const value = subscriptionModel.count(addon);
+                        set(value);
+                        dispatch(value);
+                    }
+                });
+
                 $select.on('change', onChange);
                 $edit.on('click', openModal);
                 set(initValue);

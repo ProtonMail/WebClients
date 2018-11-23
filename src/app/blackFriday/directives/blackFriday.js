@@ -153,12 +153,14 @@ function blackFriday(
             };
 
             const onClick = ({ target }) => {
+                if (!scope.offers) {
+                    return;
+                }
                 const buyOffer = target.dataset.buyOffer;
                 const offer = scope.offers[buyOffer];
                 if (!offer) {
                     return;
                 }
-
                 openPayment(offer.clickData);
                 dispatcher.blackFriday('closeModal');
             };
