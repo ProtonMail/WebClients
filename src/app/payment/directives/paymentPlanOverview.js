@@ -1,10 +1,5 @@
 import { BLACK_FRIDAY, BUNDLE_COUPON_CODE, CYCLE, PLANS, PLANS_TYPE } from '../../constants';
-import {
-    getAfterCouponDiscount,
-    getPlansMap,
-    normalizePrice,
-    hasBlackFridayCoupon
-} from '../../../helpers/paymentHelper';
+import { getAfterCouponDiscount, getPlansMap, normalizePrice } from '../../../helpers/paymentHelper';
 import { getEventName } from '../../blackFriday/helpers/blackFridayHelper';
 
 const { MEMBER, ADDRESS, DOMAIN, SPACE, VPN } = PLANS.ADDON;
