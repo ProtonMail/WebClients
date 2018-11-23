@@ -60,3 +60,14 @@
 
 .navigation:not(.navigation-is-black-friday) .navigationBlackFriday { display: none }
 .navigation.navigation-is-black-friday .navigation-upgrade-item { display: none }
+
+@media (max-width: 980px) {
+    .navigation.navigation-is-black-friday > li {
+        flex: 0 0 95px;
+    }
+}
+@media (max-width: 830px) {
+    .navigation.navigation-is-black-friday > li {
+        flex: 0 0 90px;
+    }
+}
