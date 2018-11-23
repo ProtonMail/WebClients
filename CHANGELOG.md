@@ -1,3 +1,12 @@
+# [3.15.3] - 2018-11-23
+## Fixed
+- Changes on the Dashboard did not update if you use the BlackFriday offer
+- Mobile: Menu, Search and Compose buttons were inactive with a minimized composer
+- Some scrolling issues
+
+## Changed
+- Don't show the Balck Friday offer modal every time the user goes to the dashboard page
+
 # [3.15.2] - 2018-11-22
 ## Fixed
 - "Unknown ASCII armor type" error was shown when importing private key for contacts
