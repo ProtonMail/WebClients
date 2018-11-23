@@ -140,6 +140,16 @@ function paymentForm(
                     .then(() => {
                         dispatch('payment.change', ctrl.valid);
 
+                        const { list, selected } = paymentUtils.generateMethods({
+                            choice: ctrl.method.value,
+                            Cycle: ctrl.valid.Cycle,
+                            Amount: ctrl.valid.AmountDue,
+                            CouponCode: ctrl.valid.Coupon && ctrl.valid.Coupon.Code
+                        });
+
+                        ctrl.methods = list;
+                        ctrl.method = selected;
+
                         // If the amount due is null we select the first choice to display the submit button
                         if (!ctrl.valid.AmountDue) {
                             return (ctrl.method = ctrl.methods[0]);

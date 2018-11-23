@@ -208,7 +208,7 @@ const getPlanOffers = (plans, addons) => {
  * @returns {Array}
  */
 export default ({ CouponCode, Cycle, Plans: CurrentPlans = [] }, { Role, subuser }) => {
-    const isLifetime = CouponCode === 'LIFETIME';
+    const isLifetime = CouponCode === 'LIFETIME' || CouponCode === 'VISIONARYFOREVER';
     const isTwoYears = Cycle === TWO_YEARS;
     const isMember = Role === PAID_MEMBER_ROLE;
     const isSubuser = !!subuser;

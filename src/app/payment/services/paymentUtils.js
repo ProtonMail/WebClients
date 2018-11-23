@@ -77,8 +77,9 @@ function paymentUtils(gettextCatalog, paymentModel, $state) {
             selected = list[size];
         }
 
-        if (choice) {
-            selected = _.find(list, { value: choice });
+        const exist = _.find(list, { value: choice });
+        if (exist) {
+            selected = exist;
         }
 
         return { list, selected };
