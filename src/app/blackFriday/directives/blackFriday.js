@@ -10,14 +10,13 @@ function blackFriday(
     paymentModal,
     PaymentCache,
     networkActivityTracker,
-    userType,
     $filter
 ) {
     const TEXTS = {
         241: 'Two-for-one deal',
         2: 'Two-year deal',
         price: (price) => `${price} for the first 2 years`,
-        regularPrice: (price) => `Regular yearly price ${price}`,
+        regularPrice: (price) => `Regular monthly price ${price}`,
         currentPrice: (price) => `Current price ${price}`,
         currentSubscriptionPrice: (price, plans) => `You are currently charged ${price}/month for ${plans}`,
         savings: (price) => `Save ${price} over two years`,
@@ -53,10 +52,9 @@ function blackFriday(
      * @param {Object} regular
      * @param {Object} after
      * @param {Number} index
-     * @param {Boolean} isPaid
      * @returns {Object}
      */
-    const getPrice = ({ discount, regular, after, index, isPaid }) => {
+    const getPrice = ({ discount, regular, after, index }) => {
         const stars = '*'.repeat(index + 1);
         const { Cycle, Currency } = discount;
 
@@ -73,9 +71,7 @@ function blackFriday(
             header: TEXTS[isBlackFridayDeal ? 241 : 2],
             percentage: percentageFilter((regularNormalizedAmount - discountedAmount) / regularNormalizedAmount),
             discountedPrice: currencyFilter(discountedAmount, Cycle, Currency),
-            regularPrice: TEXTS[isPaid ? 'currentPrice' : 'regularPrice'](
-                currencyFilter(regularAmount, regular.Cycle, Currency)
-            ),
+            regularPrice: TEXTS.regularPrice(currencyFilter(regularAmount, regular.Cycle, Currency)),
             savings: TEXTS.savings(currencyFilter(savingsAmount, 1, Currency)),
             billing: TEXTS.billing(currencyFilter(discountedAmount, 1, Currency)) + stars,
             afterBilling: stars + TEXTS.afterBilling(currencyFilter(afterAmount, 1, Currency))
@@ -89,13 +85,12 @@ function blackFriday(
         };
     };
 
-    const getOffer = ({ PlanIDs, plans = [], payments: [discount, regular, after] }, isPaid, index) => ({
+    const getOffer = ({ PlanIDs, plans = [], payments: [discount, regular, after] }, index) => ({
         ...getPrice({
             discount,
             regular,
             after,
-            index,
-            isPaid
+            index
         }),
         plans: getPlanTitles(plans),
         clickData: getClickData(PlanIDs, discount)
@@ -181,8 +176,8 @@ function blackFriday(
                                     ? 'commit2'
                                     : 'get2'
                             ];
-                        const isPaid = userType().isPaid;
-                        scope.offers = offers.map((offer, index) => getOffer(offer, isPaid, index));
+
+                        scope.offers = offers.map(getOffer);
                     });
                 });
 

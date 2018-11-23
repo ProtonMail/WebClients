@@ -53,10 +53,6 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
             { PlanIDs: {}, plans: [] }
         );
 
-        // Use the YEARLY cycle for 2-for-1 deal and current subscription cycle or MONTHLY cycle for 2-year deal.
-        const regularPriceCycle =
-            coupon === BLACK_FRIDAY.COUPON_CODE ? CYCLE.YEARLY : subscription.Cycle || CYCLE.MONTHLY;
-
         return Promise.all([
             // Offer price
             PaymentCache.valid({
@@ -69,7 +65,7 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
             PaymentCache.valid({
                 PlanIDs,
                 Currency: currency,
-                Cycle: regularPriceCycle
+                Cycle: CYCLE.MONTHLY
             }),
             // Without coupon to get the "after" price
             PaymentCache.valid({

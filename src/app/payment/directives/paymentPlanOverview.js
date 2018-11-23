@@ -1,5 +1,10 @@
 import { BLACK_FRIDAY, BUNDLE_COUPON_CODE, CYCLE, PLANS, PLANS_TYPE } from '../../constants';
-import { getAfterCouponDiscount, getPlansMap, normalizePrice } from '../../../helpers/paymentHelper';
+import {
+    getAfterCouponDiscount,
+    getPlansMap,
+    normalizePrice,
+    hasBlackFridayCoupon
+} from '../../../helpers/paymentHelper';
 import { getEventName } from '../../blackFriday/helpers/blackFridayHelper';
 
 const { MEMBER, ADDRESS, DOMAIN, SPACE, VPN } = PLANS.ADDON;
@@ -16,14 +21,7 @@ const ADDONS_MAP = {
 };
 
 /* @ngInject */
-function paymentPlanOverview(
-    gettextCatalog,
-    $filter,
-    subscriptionModel,
-    PaymentCache,
-    networkActivityTracker,
-    dispatchers
-) {
+function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActivityTracker, dispatchers) {
     const currencyFilter = (amount, currency) => $filter('currency')(amount / 100, currency);
     const percentageFilter = $filter('percentage');
     const humanFilter = $filter('humanSize');
@@ -34,20 +32,18 @@ function paymentPlanOverview(
             [CYCLE.YEARLY]: gettextCatalog.getString('Total (annual billing)', null, 'Title'),
             [CYCLE.TWO_YEARS]: gettextCatalog.getString('Total (2-year billing)', null, 'Title')
         },
-        DISCOUNTS: {
-            [CYCLE.YEARLY]: gettextCatalog.getString('Discount: 1-year plan', null, 'Title'),
-            [CYCLE.TWO_YEARS]: gettextCatalog.getString('Discount: 2-year plan', null, 'Title')
-        },
         TOOLTIP: {
             [CYCLE.YEARLY]: (percentage) =>
                 gettextCatalog.getString('1-year plan, {{percentage}} off', { percentage }, 'Tooltip'),
             [CYCLE.TWO_YEARS]: (percentage) =>
                 gettextCatalog.getString('2-year plan, {{percentage}} off', { percentage }, 'Tooltip')
         },
-        COUPONS: {
+        DISCOUNTS: {
             [BLACK_FRIDAY.COUPON_CODE]: getEventName(),
             [BUNDLE_COUPON_CODE]: 'Bundle',
-            ANY: gettextCatalog.getString('Coupon', null, 'Title')
+            ANY: gettextCatalog.getString('Discount', null, 'Title'),
+            [CYCLE.YEARLY]: gettextCatalog.getString('1-year plan', null, 'Title'),
+            [CYCLE.TWO_YEARS]: gettextCatalog.getString('2-year plan', null, 'Title')
         },
         PER_MONTH: gettextCatalog.getString('Cost per month', null, 'Title'),
         CREDIT: gettextCatalog.getString('Credit', null, 'Title'),
@@ -65,9 +61,7 @@ function paymentPlanOverview(
         }
     };
 
-    const load = (subscription, PlanIDs, Currency, Cycle, CouponCode) => {
-        const regularPriceCycle = CouponCode === BLACK_FRIDAY.COUPON_CODE ? CYCLE.YEARLY : Cycle;
-
+    const load = (PlanIDs, Currency) => {
         return Promise.all([
             // Individual information
             PaymentCache.plans(),
@@ -76,12 +70,6 @@ function paymentPlanOverview(
                 PlanIDs,
                 Currency,
                 Cycle: CYCLE.MONTHLY
-            }),
-            // Cycle price - without coupon to get cycle discount
-            PaymentCache.valid({
-                PlanIDs,
-                Currency,
-                Cycle: regularPriceCycle
             })
         ]);
     };
@@ -164,57 +152,33 @@ function paymentPlanOverview(
      *  The coupon discount, if there is one.
      * Calculates the cycle discount from the base price.
      * Calculates the real coupon discount because the one from the API includes the cycle discount.
-     * @param {Object} basePrice
-     * @param {Object} cyclePrice
      * @param {Object} discountPrice
+     * @param {Object} basePrice
      * @returns {Array}
      */
-    const getDiscountItems = (basePrice, cyclePrice, discountPrice) => {
+    const getDiscountItems = (discountPrice, regular) => {
         const result = [];
-
-        const normalizedBasePrice = normalizePrice(basePrice.Amount, basePrice.Cycle, CYCLE.MONTHLY);
-        const normalizedCyclePrice = normalizePrice(cyclePrice.Amount, cyclePrice.Cycle, CYCLE.MONTHLY);
-
-        const normalizedPriceAfterCoupon = normalizePrice(
-            getAfterCouponDiscount(discountPrice),
-            discountPrice.Cycle,
-            CYCLE.MONTHLY
-        );
-
-        const normalizedCycleDiffAmount = normalizedBasePrice - normalizedCyclePrice;
         const { Cycle, Currency, Coupon, CouponDiscount } = discountPrice;
 
-        if (Cycle > CYCLE.MONTHLY) {
-            const percentage = percentageFilter(normalizedCycleDiffAmount / normalizedBasePrice);
-            const percentageText = percentage + '%';
-
-            result.push({
-                text: I18N.DISCOUNTS[cyclePrice.Cycle],
-                price: getPriceString(-normalizedCycleDiffAmount, Currency, CYCLE.MONTHLY),
-                className: 'discount',
-                tooltip: {
-                    text: percentageText,
-                    percentage,
-                    hover: I18N.TOOLTIP[cyclePrice.Cycle](percentageText)
-                }
-            });
-        }
-
-        if (CouponDiscount < 0) {
-            const actualCouponDiscount = normalizedCyclePrice - normalizedPriceAfterCoupon;
-            const percentage = percentageFilter(actualCouponDiscount / normalizedCyclePrice);
-            const code = Coupon && Coupon.Code;
-            const couponName = I18N.COUPONS[code] || code;
-            const couponText = `${I18N.COUPONS.ANY}: ${couponName}`;
+        if (Cycle !== regular.Cycle || CouponDiscount < 0) {
+            const discountedAmount = getAfterCouponDiscount(discountPrice);
+            // Don't include the bundle discount when it's the black friday deal for the regular price
+            const regularAmount = regular.Amount;
+            const regularNormalizedAmount = normalizePrice(regularAmount, regular.Cycle, Cycle);
+            const savings = regularNormalizedAmount - discountedAmount;
+            const percentage = percentageFilter(savings / regularNormalizedAmount);
+            const { Code = Cycle, Description = '' } = Coupon || {};
+            const couponName = I18N.DISCOUNTS[Code] || Code;
+            const couponText = `${I18N.DISCOUNTS.ANY}: ${couponName}`;
 
             result.push({
                 text: couponText,
-                price: getPriceString(-actualCouponDiscount, Currency, CYCLE.MONTHLY),
+                price: `-${getPriceString(savings, Currency, Cycle, CYCLE.MONTHLY)}`,
                 className: 'discount',
                 tooltip: {
-                    text: percentage + '%',
+                    text: `-${percentage}%`,
                     percentage,
-                    hover: Coupon.Description
+                    hover: Description || couponName
                 }
             });
         }
@@ -289,10 +253,10 @@ function paymentPlanOverview(
         };
     };
 
-    const getList = (planIds, plans, basePrice, cyclePrice, offerPrice) => {
+    const getList = (planIds, plans, offerPrice, basePrice) => {
         return [
             ...getPlanItems(planIds, plans, offerPrice.Currency),
-            ...getDiscountItems(basePrice, cyclePrice, offerPrice),
+            ...getDiscountItems(offerPrice, basePrice),
             ...getTotalPrice(offerPrice),
             ...getCreditItems(offerPrice),
             getFinalPrice(offerPrice)
@@ -331,16 +295,12 @@ function paymentPlanOverview(
             const { on, unsubscribe } = dispatchers();
 
             const reload = (valid) => {
-                const { Currency, Cycle, Coupon } = valid;
-                const CouponCode = Coupon && Coupon.Code;
-
-                const promise = load(subscriptionModel.get(), scope.planIds, Currency, Cycle, CouponCode).then(
-                    ([plans, basePrice, cyclePrice]) => {
-                        scope.$applyAsync(() => {
-                            scope.list = getList(scope.planIds, plans, basePrice, cyclePrice, valid);
-                        });
-                    }
-                );
+                const { Currency } = valid;
+                const promise = load(scope.planIds, Currency).then(([plans, basePrice]) => {
+                    scope.$applyAsync(() => {
+                        scope.list = getList(scope.planIds, plans, valid, basePrice);
+                    });
+                });
 
                 return networkActivityTracker.track(doLoad(scope, promise));
             };
