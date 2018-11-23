@@ -1,4 +1,4 @@
-import { cleanValue, orderByPref, escapeValue, unescapeValue } from '../../../src/helpers/vcard';
+import { cleanValue, orderByPref, escapeValue, unescapeValue, EXTENDED_FIELD_CLEAN } from '../../../src/helpers/vcard';
 import { BOOL_FIELDS } from '../../../src/helpers/vCardFields';
 
 const ADDRESS = ';;Chemin\\; du Pré-Fleuri 3;Plan\\,les:Ouates;;1228;CH';
@@ -14,6 +14,20 @@ const KEY_BASE64_UNESCAPED = 'data:application/pgp-keys;base64,xsFNBFuqPgwBEADFu
 describe('Helper vcard', () => {
 
     describe('cleanValue', () => {
+
+        const unescapedTests = EXTENDED_FIELD_CLEAN.reduce((acc, key) => {
+            acc.push({
+              name: `${key} base64`,
+              input: [KEY_BASE64_ESCAPED, key],
+              output: KEY_BASE64_UNESCAPED
+            });
+            acc.push({
+              name: `${key} base64 already escaped`,
+              input: [KEY_BASE64_UNESCAPED, key],
+              output: KEY_BASE64_UNESCAPED
+            });
+            return acc;
+        }, []);
 
         [
           {
@@ -37,12 +51,7 @@ describe('Helper vcard', () => {
             output: 'A;n:dy, Yen'
           },
           {
-            name: 'key base64',
-            input: [KEY_BASE64_ESCAPED, 'key'],
-            output: KEY_BASE64_UNESCAPED
-          },
-          {
-            name: 'base64 but not unescape if not a key',
+            name: `base64 but not unescape if not a ${EXTENDED_FIELD_CLEAN.join('/')}`,
             input: [KEY_BASE64_ESCAPED],
             output: KEY_BASE64_ESCAPED
           },
@@ -50,7 +59,8 @@ describe('Helper vcard', () => {
             name: 'key base64 already escaped',
             input: [KEY_BASE64_UNESCAPED],
             output: KEY_BASE64_UNESCAPED
-          }
+          },
+          ...unescapedTests
         ].forEach(({ name, input, output }) => {
           it(`shoud parse ${name}`, () => {
               expect(cleanValue.apply(null, input))
