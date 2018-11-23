@@ -320,6 +320,9 @@
             content:'';
             clear: both;
         }
+        &.labelFix {
+            height: auto;
+        }
     }
 
     .multi-line-label {
