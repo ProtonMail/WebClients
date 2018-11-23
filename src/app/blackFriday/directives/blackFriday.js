@@ -27,7 +27,7 @@ function blackFriday(
             return total === 1 ? `${name} deal` : `${name} deals`;
         },
         and: ' and ',
-        commit2: 'Commit to two years and save more!',
+        commit2: 'Save more with a two year plan!',
         get2: 'Get two years for the price of one!',
         perMonth: '/mo',
         buy: 'Get the deal'
