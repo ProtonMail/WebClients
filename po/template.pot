@@ -2002,7 +2002,7 @@ msgctxt "Action in the active sessions table"
 msgid "Revoke"
 msgstr ""
 
-#: ./src/templates/notifications/retry.tpl.html:8
+#: ./src/templates/notifications/retry.tpl.html:9
 msgctxt "Action notification error trying to connect to the API"
 msgid "Retry now"
 msgstr ""
@@ -8017,7 +8017,7 @@ msgctxt "Notification"
 msgid "ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>."
 msgstr ""
 
-#: ./src/templates/notifications/retry.tpl.html:8
+#: ./src/templates/notifications/retry.tpl.html:9
 msgctxt "Notification error trying to connect to the API"
 msgid "Servers are unreachable."
 msgstr ""
@@ -9064,6 +9064,16 @@ msgctxt "The message contains too many bytes, only xxx allowed (you are using xx
 msgid "bytes)."
 msgstr ""
 
+#: ./src/app/payment/directives/paymentPlanOverview.js:40
+msgctxt "Title"
+msgid "1-year plan"
+msgstr ""
+
+#: ./src/app/payment/directives/paymentPlanOverview.js:41
+msgctxt "Title"
+msgid "2-year plan"
+msgstr ""
+
 #: ./src/templates/views/members.tpl.html:72
 msgctxt "Title"
 msgid "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Available VPN connections</span>"
@@ -9210,7 +9220,7 @@ msgctxt "Title"
 msgid "Amount"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:56
+#: ./src/app/payment/directives/paymentPlanOverview.js:47
 msgctxt "Title"
 msgid "Amount Due"
 msgstr ""
@@ -9482,12 +9492,11 @@ msgctxt "Title"
 msgid "Conversation Grouping"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:52
+#: ./src/app/payment/directives/paymentPlanOverview.js:43
 msgctxt "Title"
 msgid "Cost per month"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:50
 #: ./src/templates/dashboard/overviewSection.tpl.html:71
 msgctxt "Title"
 msgid "Coupon"
@@ -9533,7 +9542,7 @@ msgctxt "Title"
 msgid "Creating account"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:53
+#: ./src/app/payment/directives/paymentPlanOverview.js:44
 #: ./src/templates/dashboard/overviewSection.tpl.html:61
 #: ./src/templates/modals/pay.tpl.html:40
 msgctxt "Title"
@@ -9694,14 +9703,9 @@ msgctxt "Title"
 msgid "Disable address"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:38
-msgctxt "Title"
-msgid "Discount: 1-year plan"
-msgstr ""
-
 #: ./src/app/payment/directives/paymentPlanOverview.js:39
 msgctxt "Title"
-msgid "Discount: 2-year plan"
+msgid "Discount"
 msgstr ""
 
 #: ./src/templates/modals/welcome.tpl.html:21
@@ -9942,7 +9946,7 @@ msgctxt "Title"
 msgid "Getting started with ProtonVPN"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:55
+#: ./src/app/payment/directives/paymentPlanOverview.js:46
 msgctxt "Title"
 msgid "Gift"
 msgstr ""
@@ -10419,7 +10423,7 @@ msgctxt "Title"
 msgid "Privatize User"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:54
+#: ./src/app/payment/directives/paymentPlanOverview.js:45
 msgctxt "Title"
 msgid "Proration"
 msgstr ""
@@ -10774,17 +10778,17 @@ msgctxt "Title"
 msgid "Toolbar"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:35
+#: ./src/app/payment/directives/paymentPlanOverview.js:28
 msgctxt "Title"
 msgid "Total (2-year billing)"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:34
+#: ./src/app/payment/directives/paymentPlanOverview.js:27
 msgctxt "Title"
 msgid "Total (annual billing)"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:33
+#: ./src/app/payment/directives/paymentPlanOverview.js:26
 msgctxt "Title"
 msgid "Total (monthly billing)"
 msgstr ""
@@ -10959,28 +10963,28 @@ msgctxt "Title"
 msgid "label"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:62
+#: ./src/app/payment/directives/paymentPlanOverview.js:53
 msgctxt "Title"
 msgid "{{$count}} Address"
 msgid_plural "{{$count}} Addresses"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:60
+#: ./src/app/payment/directives/paymentPlanOverview.js:51
 msgctxt "Title"
 msgid "{{$count}} Custom domain"
 msgid_plural "{{$count}} Custom domains"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:61
+#: ./src/app/payment/directives/paymentPlanOverview.js:52
 msgctxt "Title"
 msgid "{{$count}} User"
 msgid_plural "{{$count}} Users"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:64
+#: ./src/app/payment/directives/paymentPlanOverview.js:55
 msgctxt "Title"
 msgid "{{$count}} VPN Connection"
 msgid_plural "{{$count}} VPN Connections"
@@ -10992,7 +10996,7 @@ msgctxt "Title"
 msgid "{{Name}} deleted"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:58
+#: ./src/app/payment/directives/paymentPlanOverview.js:49
 msgctxt "Title"
 msgid "{{amount}} Storage"
 msgstr ""
@@ -11074,12 +11078,12 @@ msgctxt "Toggle Star message/conversation"
 msgid "Unstar"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:43
+#: ./src/app/payment/directives/paymentPlanOverview.js:32
 msgctxt "Tooltip"
 msgid "1-year plan, {{percentage}} off"
 msgstr ""
 
-#: ./src/app/payment/directives/paymentPlanOverview.js:45
+#: ./src/app/payment/directives/paymentPlanOverview.js:34
 msgctxt "Tooltip"
 msgid "2-year plan, {{percentage}} off"
 msgstr ""
