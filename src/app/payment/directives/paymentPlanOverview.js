@@ -82,13 +82,6 @@ function paymentPlanOverview(
                 PlanIDs,
                 Currency,
                 Cycle: regularPriceCycle
-            }),
-            // Offer price
-            PaymentCache.valid({
-                PlanIDs,
-                Currency,
-                Cycle,
-                CouponCode
             })
         ]);
     };
@@ -339,17 +332,12 @@ function paymentPlanOverview(
 
             const reload = (valid) => {
                 const { Currency, Cycle, Coupon } = valid;
-                /**
-                     Why do we use coupon() here if it's not defined? It's because it is called with the subscription coupon from selectPlan()
-                     But the API can return a null COUPON in that case. It automatically adds the BUNDLE discount if it's called with undefined.
-                     So make sure we call with exactly the same parameters here.
-                 */
-                const CouponCode = Coupon ? Coupon.Code : subscriptionModel.coupon();
+                const CouponCode = Coupon && Coupon.Code;
 
                 const promise = load(subscriptionModel.get(), scope.planIds, Currency, Cycle, CouponCode).then(
-                    ([plans, basePrice, cyclePrice, offerPrice]) => {
+                    ([plans, basePrice, cyclePrice]) => {
                         scope.$applyAsync(() => {
-                            scope.list = getList(scope.planIds, plans, basePrice, cyclePrice, offerPrice);
+                            scope.list = getList(scope.planIds, plans, basePrice, cyclePrice, valid);
                         });
                     }
                 );
