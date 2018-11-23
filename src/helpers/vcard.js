@@ -10,6 +10,21 @@ const UNESCAPE_EXTENDED_REGEX = /\\\\|\\:|\\,|\\;/gi;
 const BACKSLASH_SEMICOLON_REGEX = /\\;/gi;
 const ANIMALS = '🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼';
 const SPECIAL_CHARACTER_REGEX = /🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼/gi;
+export const EXTENDED_FIELD_CLEAN = [
+    'key',
+    'photo',
+    'geo',
+    'impp',
+    'logo',
+    'member',
+    'related',
+    'sound',
+    'uid',
+    'url',
+    'caluri',
+    'caladruri',
+    'fburl'
+];
 
 export const getGroup = (emailList, email) => {
     const normalEmail = normalizeEmail(email);
@@ -90,12 +105,13 @@ export const escapeValue = (value = '') => {
  * @param {String} value
  * @return {String}
  */
-export const cleanMultipleValue = (value = '') =>
-    value
+export const cleanMultipleValue = (value = '') => {
+    return value
         .replace(BACKSLASH_SEMICOLON_REGEX, ANIMALS)
         .split(';')
         .map((value) => value.replace(SPECIAL_CHARACTER_REGEX, '\\;'))
         .map(unescapeValue);
+};
 
 /**
  * Clean value to be use by the app (UI)
@@ -113,7 +129,7 @@ export const cleanValue = (value, field) => {
         return value.toLowerCase().trim() !== 'false';
     }
 
-    return unescapeValue(value, field === 'key');
+    return unescapeValue(value, EXTENDED_FIELD_CLEAN.includes(field));
 };
 
 /**
