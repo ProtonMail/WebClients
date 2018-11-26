@@ -286,6 +286,7 @@
             height: $composerRowHeight !important;
             overflow: hidden;
             padding: 0 !important;
+            bottom: 0;
             header {
                 border-radius: 2px;
                 .fa.fa-minus {
@@ -524,7 +525,7 @@
 @media screen and (max-width: $mobile-landscape) {
     #pm_composer .composer[style] {
         transition: none !important;
-        transform: translateX(0) !important
+        transform: translateX(0) !important;
     }
 
     .appConfigBody-activeComposer {
@@ -565,6 +566,12 @@
 
     .appConfigBody-is-mobile #outsideMessageWrap footer .pm_button span {display: block}
     .appConfigBody-is-mobile#eo-reply #message-body .squire-toolbar {padding: 0}
+}
+
+@media screen and (max-width: $mobile-portrait) {
+    #pm_composer .composer[style] {
+        left: 0;
+    }
 }
 
 @media screen and (max-width: $tablet-landscape) {
