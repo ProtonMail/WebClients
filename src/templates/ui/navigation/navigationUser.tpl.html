@@ -6,12 +6,16 @@
         </span>
         <span class="navigation-title">{{ displayName || email }}</span>
     </a>
+    <span class="navigationUser-newVersion-info"></span>
     <span class="pm_dropdown navigationUser-dropdown wide right">
         <span class="navigationUser-head">
             <strong class="navigationUser-head-display-name" title="{{ displayName }}">{{ displayName }}</strong>
             <span class="navigationUser-head-email" title="{{ email }}">{{ email }}</span>
             <span class="navigationUser-head-organization" title="{{ organization.DisplayName }}">{{ organization.DisplayName }}</span>
         </span>
+
+        <div class="navigationUser-newVersion-container" data-new-version></div>
+
         <button class="navigationUser-help" ng-if="wizardEnabled" data-display-wizard-button>
             <i class="fa fa-magic"></i>
             <span translate translate-context="Action">Tutorial</span>

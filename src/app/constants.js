@@ -420,6 +420,10 @@ export const STORAGE_WARNING = {
     REACHED_LIMIT: 99.99
 };
 
+export const VERSION_INFO = {
+    INTERVAL: 30 * TIME.MINUTE
+};
+
 export const SIGNUP_PLANS = ['plus', 'visionary', 'plus_vpnplus'];
 
 const BLACK_FRIDAY_YEAR = 2018;

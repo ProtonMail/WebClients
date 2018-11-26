@@ -16,6 +16,7 @@ function SecuredController(
     hotkeys,
     mailSettingsModel,
     resurrecter,
+    versionInfoModel,
     prepareDraft,
     userType
 ) {
@@ -66,6 +67,8 @@ function SecuredController(
     prepareDraft.init();
 
     blackFridayHandler();
+
+    versionInfoModel();
 
     on('updateUser', () => {
         $scope.$applyAsync(() => {
