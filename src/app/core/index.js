@@ -7,6 +7,7 @@ import hideUpgrade from './directives/hideUpgrade';
 import placeholderProgress from './directives/placeholderProgress';
 import bugModalView from './directives/bugModalView';
 import supportMessage from './directives/supportMessage';
+import newVersion from './directives/newVersion';
 import formatResponseInterceptor from './interceptors/formatResponseInterceptor';
 import serverTimeInterceptor from './interceptors/serverTimeInterceptor';
 import alertModal from './factories/alertModal';
@@ -28,6 +29,7 @@ import switchPasswordModeModal from './factories/switchPasswordModeModal';
 import twoFAIntroModal from './factories/twoFAIntroModal';
 import vcard from './factories/vcard';
 import verificationModal from './factories/verificationModal';
+import versionInfoModel from './factories/versionInfoModel';
 import welcomeModal from './factories/welcomeModal';
 import windowModel from './factories/windowModel';
 import SidebarController from './controllers/sidebar';
@@ -49,6 +51,7 @@ export default angular
     .directive('placeholderProgress', placeholderProgress)
     .directive('bugModalView', bugModalView)
     .directive('supportMessage', supportMessage)
+    .directive('newVersion', newVersion)
     .factory('formatResponseInterceptor', formatResponseInterceptor)
     .factory('serverTimeInterceptor', serverTimeInterceptor)
     .factory('alertModal', alertModal)
@@ -70,6 +73,7 @@ export default angular
     .factory('twoFAIntroModal', twoFAIntroModal)
     .factory('vcard', vcard)
     .factory('verificationModal', verificationModal)
+    .factory('versionInfoModel', versionInfoModel)
     .factory('welcomeModal', welcomeModal)
     .factory('windowModel', windowModel)
     .factory('confirm', confirm).name;

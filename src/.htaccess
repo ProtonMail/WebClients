@@ -19,7 +19,7 @@ RewriteRule ^(.*) /index.html [NC,L]
 # Error pages
 ErrorDocument 403   /assets/errors/403.html
 
-<Files index.html>
+<Files ~ "(index.html|version.json)">
     FileETag None
     Header unset ETag
     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"

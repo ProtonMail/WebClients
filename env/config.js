@@ -161,6 +161,7 @@ const getConfig = (env = process.env.NODE_ENV) => {
         api_version: `${argv['api-version'] || CONFIG_DEFAULT.api_version}`,
         articleLink: argv.article || CONFIG_DEFAULT.articleLink,
         changelogPath: env === 'dist' ? CONFIG_DEFAULT.changelogPath : 'changelog.tpl.html',
+        versionPath: env === 'dist' ? CONFIG_DEFAULT.versionPath : 'version.json',
         statsConfig: getStatsConfig(argv.branch)
     });
     return extend({ CONFIG }, { branch: argv.branch });

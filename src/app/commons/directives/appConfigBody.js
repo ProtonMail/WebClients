@@ -28,7 +28,8 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
         moz: className('is-moz'),
         storageLimitReached: 'hasStickyMessages', // Note: Improve this if you need to add more sticky messages.
         isSecure: 'secure',
-        isLocked: 'unlock'
+        isLocked: 'unlock',
+        newVersion: 'newVersion'
     };
 
     return {

@@ -27,13 +27,15 @@ env.argv.debug && console.log(`${JSON.stringify(CONFIG, null, 2)}`);
 
 // Debug mode npm start
 if (process.env.NODE_ENV !== 'dist' && env.argv.debug) {
-    const fileName = path.join('build', CONFIG.changelogPath);
+    const fileNameChangelog = path.join('build', CONFIG.changelogPath);
+    const fileNameVersionInfo = path.join('build', CONFIG.versionPath);
 
     if (!fs.existsSync('build')) {
         fs.mkdirSync('build');
     }
 
-    execa.shell(`tasks/generateChangelog.js ./CHANGELOG.md ${fileName}`);
+    execa.shell(`tasks/generateChangelog.js ./CHANGELOG.md ${fileNameChangelog}`);
+    execa.shell(`tasks/generateVersionInfo.js ${CONFIG.app_version} ${fileNameVersionInfo}`);
 }
 
 if (process.env.NODE_ENV !== 'dist' && process.env.NODE_ENV_MODE !== 'config') {

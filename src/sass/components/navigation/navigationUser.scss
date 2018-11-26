@@ -5,10 +5,9 @@
 .navigationUser-head {
     text-align: left;
     line-height: 1rem;
-    margin-bottom: 1rem;
-    float: left;
     display: block;
     width: 100%;
+    margin-bottom: 1rem;
 }
 
 .navigationUser-head-display-name,
@@ -23,6 +22,44 @@
 
 .navigationUser-head-display-name {
     text-transform: uppercase;
+}
+
+body:not(.newVersion) {
+    .navigationUser-newVersion-info,
+    .navigationUser-newVersion-container {
+        display: none
+    }
+}
+
+.navigationUser-newVersion-info {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $primary;
+}
+
+.navigationUser-newVersion-container {
+    text-align: center;
+    color: $primary;
+    border: 1px solid $primary;
+    padding: 5px 3px;
+    font-size: 0.9em;
+    margin-bottom: 0.7rem;
+}
+
+.newVersion-text {
+    margin: 0;
+}
+
+.newVersion-link {
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 5px 5px 0 5px;
+    display: block;
 }
 
 .navigationUser-help {
