@@ -89,3 +89,7 @@
     color: $exp;
     fill: lighten($exp, 10%);
 }
+
+.contactViewDetail-loadRemoteImage .contactViewItem-value-figureBtn {
+    display: none
+}

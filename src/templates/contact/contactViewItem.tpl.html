@@ -46,11 +46,23 @@
         ng-if="info.key !== 'adr' && info.key !== 'email' && info.key !== 'tel' && info.key !== 'photo' && info.key !== 'url'"
         class="contactViewItem-value-txt">{{::info.value}}</span>
 
-    <img
-        class="contactViewItem-value-img"
+    <div
         ng-if="info.key === 'photo'"
-        ng-src="{{::info.value}}"
-        alt="avatar">
+        class="contactViewItem-value-figure">
+        <div class="contactViewItem-value-figureMask">
+            <button
+                class="pm_button contactViewItem-value-figureBtn"
+                data-action="loadRemoteImage"
+                type="button"
+                translate-context="Action"
+                translate>Load image</button>
+        </div>
+        <img
+            class="contactViewItem-value-img"
+            ng-if="loadImage"
+            ng-src="{{::info.value}}"
+            alt="avatar">
+    </div>
 
     <address
         ng-if="info.key === 'adr'"
