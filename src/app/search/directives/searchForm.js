@@ -72,7 +72,7 @@ function searchForm(
                     scope.model.folder = _.find(folders, { value: parameters.label }) || folders[0];
                 };
 
-                on('updateUser', () => {
+                on('addresses.updated', () => {
                     scope.addresses = searchModel.getAddresses();
                 });
 
@@ -93,6 +93,7 @@ function searchForm(
                         });
                     }
                 });
+
                 on('labelsModel', (e, { type }) => {
                     if (type === 'cache.update' || type === 'cache.refresh') {
                         folders = searchModel.getFolderList();
