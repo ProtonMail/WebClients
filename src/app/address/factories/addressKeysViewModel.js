@@ -2,7 +2,7 @@ import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 import { MAIN_KEY } from '../../constants';
 
 /* @ngInject */
-function addressKeysViewModel(keyInfo, pmcw, authentication, keysModel) {
+function addressKeysViewModel(formatKey, pmcw, authentication, keysModel) {
     const getDecryptedKeys = (ID) => {
         const addressID = ID === 'contact-keys' ? MAIN_KEY : ID;
         return keysModel.getPrivateKeys(addressID).filter((k) => k.isDecrypted());
@@ -59,7 +59,7 @@ function addressKeysViewModel(keyInfo, pmcw, authentication, keysModel) {
      * @returns {Array}
      */
     const getUserKeys = async (user) => {
-        const Keys = await Promise.all(user.Keys.map(keyInfo));
+        const Keys = await Promise.all(user.Keys.map(formatKey));
         const contactAddress = {
             ID: 'contact-keys',
             Email: user.Name,
