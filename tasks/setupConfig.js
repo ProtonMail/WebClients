@@ -35,7 +35,7 @@ if (process.env.NODE_ENV !== 'dist' && env.argv.debug) {
     }
 
     execa.shell(`tasks/generateChangelog.js ./CHANGELOG.md ${fileNameChangelog}`);
-    execa.shell(`tasks/generateVersionInfo.js ${CONFIG.app_version} ${fileNameVersionInfo}`);
+    execa.shell(`tasks/generateVersionInfo.js ${CONFIG.app_version} ${CONFIG.commit} ${fileNameVersionInfo}`);
 }
 
 if (process.env.NODE_ENV !== 'dist' && process.env.NODE_ENV_MODE !== 'config') {
