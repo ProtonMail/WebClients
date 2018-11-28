@@ -46,6 +46,8 @@ function contactSelectorForm(gettextCatalog, notification) {
 
                 el[0].classList[recipients.length > MESSAGE_MAX_RECIPIENTS ? 'add' : 'remove'](LIMIT_REACHED_CLASS);
                 el[0].classList[!recipients.length ? 'add' : 'remove'](NO_RECIPIENTS_CLASS);
+
+                scope.checkAll = scope.ctrl.list.length === _.filter(scope.ctrl.list, { selected: true }).length;
             };
 
             const onClick = ({ target }) => {
@@ -76,7 +78,14 @@ function contactSelectorForm(gettextCatalog, notification) {
             el.on('reset', onReset);
             el.on('click', onClick);
 
+            scope.disableCheckAll = !scope.ctrl.list.length;
             scope.onCheck = () => updateView();
+            scope.onSelectAll = () => {
+                scope.ctrl.list = scope.ctrl.list.map((email) => ({
+                    ...email,
+                    selected: scope.checkAll
+                }));
+            };
 
             updateView();
 

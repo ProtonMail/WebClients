@@ -27,7 +27,12 @@
                 <table class="fixedLayout">
                     <thead>
                         <tr>
-                            <th scope="col" class="checkbox"></th>
+                            <th scope="col" class="checkbox">
+                                <custom-checkbox
+                                    data-custom-ng-model="checkAll"
+                                    data-custom-ng-disabled="disableCheckAll"
+                                    data-custom-ng-change="onSelectAll()"></custom-checkbox>
+                            </th>
                             <th scope="col" translate-context="Header" translate>Name</th>
                             <th scope="col" translate-context="Header" translate>Email</th>
                         </tr>
