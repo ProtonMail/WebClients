@@ -9,7 +9,7 @@ const deleteFolderModal = modalTest({
 });
 
 const openLabelState = () => {
-    cy.get('[id="tour-folder-dropdown"]').click();
+    cy.get('[id="tour-label-settings"]').click();
     cy.url().should('include', '/labels');
 };
 
@@ -53,8 +53,23 @@ it('should close it', () => {
 describe('Bind folder to the webmail', () => {
     it('should display the folder in the sidebar', () => {
         const color = CACHE.folder[NEW_FOLDER];
-        cy.get('.menuLabel-item').should('have.length', 2);
+        cy.get('.menuLabel-item').should('have.length', 1);
         cy.get('.menuLabel-title').should('contain', NEW_FOLDER);
         cy.get('.menuLabel-icon').should('have.attr', 'style', `color: ${color}`);
+    });
+});
+
+describe('Delete existing folder', () => {
+    it('should redirect us from mail dashboard to labels state', () => {
+        openLabelState();
+    });
+
+    it('should display a modal to delete the folder', () => {
+        deleteFolderModal.isOpen(false);
+        cy.get(`.labelsState-btn-delete`).click();
+        deleteFolderModal.isOpen();
+        deleteFolderModal.submit();
+        notification.success('Folder deleted');
+        delete CACHE.folder[NEW_FOLDER];
     });
 });

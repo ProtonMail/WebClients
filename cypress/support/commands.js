@@ -51,7 +51,7 @@ Cypress.Commands.add('login', (unlock, username) => {
         cy.get('#username').type(username || Cypress.env('login1'));
         cy.get('#password').type(Cypress.env('password1'));
 
-        cy.get('#login_btn').click();
+        cy.get('#login_btn').click({ timeout: 5000 });
         cy.url().should('include', '/inbox');
         return cy.get('.search-form-fieldset-input');
     }
@@ -61,7 +61,7 @@ Cypress.Commands.add('login', (unlock, username) => {
 
     cy.get('#username').type(username || Cypress.env('login2'));
     cy.get('#password').type(Cypress.env('password2'));
-    cy.get('#login_btn').click();
+    cy.get('#login_btn').click({ timeout: 5000 });
     cy.url().should('include', '/login/unlock');
     cy.get('[name="mailbox-password"]').type(Cypress.env('unlockpassword2'));
     cy.get('#unlock_btn').click();
@@ -82,8 +82,7 @@ Cypress.Commands.add('logout', () => {
  * @link https://github.com/cypress-io/cypress/issues/757#issuecomment-337676399
  */
 Cypress.Commands.add('selectOption', (country, selector = '#country') => {
-    cy
-        .get(selector)
+    cy.get(selector)
         .then(($select) => {
             const opt = $select.find(`option[label="${country}"]`);
             $select.val(opt.attr('value'));
