@@ -20,7 +20,7 @@
                         translate-context="Warning">Please add a password for the following recipients</label>
                     <toggle-expand id="clearToggle" data-model="ctrl.toggles.clear"></toggle-expand>
                     <ul class="expiration-list" ng-if="ctrl.toggles.clear.toggle">
-                        <li ng-repeat="recipient in ctrl.recipients.clear track by recipient" class="expiration-list-item ellipsis">
+                        <li ng-repeat="recipient in ctrl.recipients.clear track by recipient" class="expiration-list-item ellipsis" title="{{ ::recipient }}">
                             {{ ::recipient }}
                         </li>
                     </ul>
