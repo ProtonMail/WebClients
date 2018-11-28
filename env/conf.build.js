@@ -87,7 +87,7 @@ module.exports = {
             'normalize.css/normalize.css'
         ].map(bindPrefix),
 
-        fonts: ['components-font-awesome/fonts/*'].map(bindPrefix),
+        fonts: ['components-font-awesome/fonts', 'text-security/dist/text-security-disc.*'].map(bindPrefix),
 
         sass_include_dirs: ['bourbon/dist', 'bootstrap-sass-official/assets/stylesheets'].map(bindPrefix)
     }
