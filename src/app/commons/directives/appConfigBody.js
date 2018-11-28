@@ -1,5 +1,7 @@
 import { ROW_MODE } from '../../constants';
 
+import { isMac, isFirefox } from '../../../helpers/browser';
+
 const SCROLL_STATES = ['signup', 'login.setup', 'secured.print'];
 const LIGHT_STATES = ['support.reset-password', 'signup', 'login.setup', 'pre-invite', 'support.message'];
 const LOCKED_STATES = ['login', 'login.unlock', 'eo.unlock', 'eo.message', 'reset', 'eo.reply'];
@@ -16,6 +18,8 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
         isSubUser: className('is-sub-user'),
         mobile: className('is-mobile'),
         tablet: className('is-tablet'),
+        mac: className('is-mac'),
+        firefox: className('is-firefox'),
         requestTimeout: className('request-timeout'),
         tourActive: className('tourActive'),
         activeComposer: className('activeComposer'),
@@ -48,6 +52,9 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
                 const method = value ? 'add' : 'remove';
                 _rAF(() => el[0].classList[method](className));
             };
+
+            toggleClass(mapClassNames.firefox, isFirefox());
+            toggleClass(mapClassNames.mac, isMac());
 
             on('AppModel', (e, { type, data = {} }) => {
                 const className = mapClassNames[type];

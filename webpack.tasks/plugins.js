@@ -46,7 +46,11 @@ const list = [
     new webpack.NamedModulesPlugin(),
     // new WebpackNotifierPlugin(),
     new CopyWebpackPlugin([
-        { from: CONFIG.vendor_files.fonts[0], to: 'assets/fonts/' },
+        ...makeSRC(CONFIG.vendor_files.fonts).map((font) => ({
+            from: font,
+            to: 'assets/fonts',
+            flatten: true
+        })),
         { from: 'src/i18n', to: 'i18n' },
         { from: OPENPGP_WORKER, to: 'openpgp.worker.min.js' }
     ]),
