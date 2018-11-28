@@ -9,7 +9,7 @@ const deleteLabelModal = modalTest({
 });
 
 const openLabelState = () => {
-    cy.get('[id="tour-label-dropdown"]').click();
+    cy.get('[id="tour-label-settings"]').click();
     cy.url().should('include', '/labels');
 };
 
@@ -60,5 +60,20 @@ describe('Bind label to the webmail', () => {
         cy.get('.menuLabel-item').should('have.length', 1);
         cy.get('.menuLabel-title').should('contain', NEW_LABEL);
         cy.get('.menuLabel-icon').should('have.attr', 'style', `color: ${color}`);
+    });
+});
+
+describe('Delete existing label', () => {
+    it('should redirect us from mail dashboard to labels state', () => {
+        openLabelState();
+    });
+
+    it('should display a modal to delete the label', () => {
+        deleteLabelModal.isOpen(false);
+        cy.get(`.labelsState-btn-delete`).click();
+        deleteLabelModal.isOpen();
+        deleteLabelModal.submit();
+        notification.success('Label deleted');
+        delete CACHE.label[NEW_LABEL];
     });
 });

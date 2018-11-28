@@ -21,7 +21,7 @@ const openLabelState = () => {
 };
 
 const NEW_LABEL = 'monique';
-const NEW_FOLDER = 'pedro';
+const NEW_FOLDER = 'roberto';
 const COLORS = { folder: {}, label: {} };
 
 it('should not contains labels', () => {
@@ -70,7 +70,9 @@ describe('Add a label', () => {
     });
 
     it('should check a color', () => {
-        modal.setColor();
+        cy.get('.labelColorSelector-container')
+            .find('[style="color: rgb(207, 88, 88);"]')
+            .click();
     });
 
     it('should add the color', () => {
@@ -79,37 +81,25 @@ describe('Add a label', () => {
         notification.success('Label created');
     });
 
+    const color = 'rgb(207, 88, 88);';
+
     it('should contains only one item', () => {
         cy.get('.labelsState-item').should('have.length', 1);
         cy.get('.labelsState-item-name').should('contain', NEW_LABEL);
-        cy.get('.labelsState-item-icon').should('have.attr', 'style', `color: ${hexToRgb(modal.getColor())};`);
+        cy.get('.labelsState-item-icon').should('have.attr', 'style', `color: ${color}`);
         cy.get('.labelsState-item-icon').should('not.have.class', 'fa-folder');
         cy.get('.labelsState-item-icon').should('have.class', 'fa-tag');
         cy.get('.labelsState-toggle-label').should('not.exist');
     });
 
-    it('should contains only one item', () => {
-        cy.get('.labelsState-item').should('have.length', 1);
-    });
-
-    it('should add a row for a label', () => {
-        COLORS.label[NEW_LABEL] = modal.getColor();
-        const item = cy.get(`.labelsState-item[data-color="${modal.getColor()}"]`);
-        item.get('.labelsState-item-name').should('contain', NEW_LABEL);
-        item.get('.labelsState-item-icon').should('have.attr', 'style', `color: ${hexToRgb(modal.getColor())};`);
-        item.get('.labelsState-item-icon').should('not.have.class', 'fa-folder');
-        item.get('.labelsState-item-icon').should('have.class', 'fa-tag');
-    });
-
     it('should not allow to change notifications', () => {
-        const item = cy.get(`.labelsState-item[data-color="${modal.getColor()}"]`);
-        item.get('.labelsState-toggle-label').should('not.exist');
+        cy.get('.labelsState-toggle-label').should('not.exist');
     });
 });
 
 describe('Bind label to the webmail', () => {
     it('should display the label in the sidebar', () => {
-        const color = COLORS.label[NEW_LABEL];
+        const color = '#cf5858';
         cy.clickBack();
         cy.url().should('include', '/inbox');
         cy.get('.menuLabel-item').should('have.length', 1);
@@ -141,7 +131,7 @@ describe('Add existing label', () => {
 
 describe('delete existing label', () => {
     it('should display a modal to delete the label', () => {
-        const color = COLORS.label[NEW_LABEL];
+        const color = '#cf5858';
         deleteLabelModal.isOpen(false);
         cy.get(`.labelsState-item[data-color="${color}"] .labelsState-btn-delete`).click();
         deleteLabelModal.isOpen();
@@ -185,7 +175,9 @@ describe('Add a folder', () => {
     });
 
     it('should check a color', () => {
-        modal.setColor();
+        cy.get('.labelColorSelector-container')
+            .find('[style="color: rgb(105, 169, 209);"]')
+            .click();
     });
 
     it('should add the color', () => {
@@ -198,48 +190,43 @@ describe('Add a folder', () => {
         cy.get('.labelsState-item').should('have.length', 1);
     });
 
+    const color = 'rgb(105, 169, 209);';
+
     it('should add a row for a folder', () => {
-        COLORS.folder[NEW_FOLDER] = modal.getColor();
-        const item = cy.get(`.labelsState-item[data-color="${modal.getColor()}"]`);
-        item.get('.labelsState-item-name').should('contain', NEW_FOLDER);
-        item.get('.labelsState-item-icon').should('have.attr', 'style', `color: ${hexToRgb(modal.getColor())};`);
-        item.get('.labelsState-item-icon').should('have.class', 'fa-folder');
-        item.get('.labelsState-item-icon').should('not.have.class', 'fa-tag');
+        cy.get('.labelsState-item-name').should('contain', NEW_FOLDER);
+        cy.get('.labelsState-item-icon').should('have.attr', 'style', `color: ${color}`);
+        cy.get('.labelsState-item-icon').should('have.class', 'fa-folder');
+        cy.get('.labelsState-item-icon').should('not.have.class', 'fa-tag');
     });
 
     it('should allow to change notifications', () => {
-        const item = cy.get(`.labelsState-item[data-color="${modal.getColor()}"]`);
+        const item = cy.get(`.labelsState-item`).find('[style="color: rgb(105, 169, 209);"]');
         item.get('.labelsState-toggle-label').should('exist');
-        item.get('[data-name="changeNotifyLabel"]').should('have.class', 'off');
-        item.get('[data-name="changeNotifyLabel"]').should('not.have.class', 'on');
+        item.get('[type="checkbox"]').should('not.have.class', 'ng-not-empty');
+        cy.get('[type="checkbox"]').should('have.class', 'ng-empty');
     });
 
     it('should change the notification', () => {
         const item = cy
-            .get(`.labelsState-item[data-color="${modal.getColor()}"]`)
+            .get(`.labelsState-item`)
+            .find('[style="color: rgb(105, 169, 209);"]')
             .get('[data-name="changeNotifyLabel"]');
-        item.should('have.class', 'off');
-        item.should('not.have.class', 'on');
-
-        item.get('span.on').click();
-        cy.wait(500);
+        item.get('[type="checkbox"]').check({ force: true, timeout: 500 });
         notification.success('Folder updated');
         cy.wait(1000);
-        item.should('have.class', 'on');
-        item.should('not.have.class', 'off');
-
-        item.get('span.off').click();
-        cy.wait(500);
+        cy.get('[type="checkbox"]').should('have.class', 'ng-not-empty');
+        cy.get('[type="checkbox"]').should('not.have.class', 'ng-empty');
+        item.get('[type="checkbox"]').uncheck({ force: true, timeout: 500 });
         notification.success('Folder updated', false);
         cy.wait(1000);
-        item.should('have.class', 'off');
-        item.should('not.have.class', 'on');
+        cy.get('[type="checkbox"]').should('have.class', 'ng-empty');
+        cy.get('[type="checkbox"]').should('not.have.class', 'ng-not-empty');
     });
 });
 
 describe('Bind folder to the webmail', () => {
     it('should display the label in the sidebar', () => {
-        const color = COLORS.folder[NEW_FOLDER];
+        const color = '#69a9d1';
         cy.clickBack();
         cy.url().should('include', '/inbox');
         cy.get('.menuLabel-item').should('have.length', 1);
@@ -273,7 +260,7 @@ describe('Add existing folder', () => {
 describe('Delete existing folder', () => {
     it('should display a modal to delete the label', () => {
         deleteFolderModal.isOpen(false);
-        const color = COLORS.folder[NEW_FOLDER];
+        const color = '#69a9d1';
         cy.get(`.labelsState-item[data-color="${color}"] .labelsState-btn-delete`).click();
         deleteFolderModal.isOpen();
         deleteFolderModal.submit();
