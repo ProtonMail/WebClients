@@ -74,6 +74,10 @@
     pointer-events: none;
 }
 
+.contactSelectorForm-table-wrapper .customCheckbox-container {
+    top: -5px;
+}
+
 // Conditions
 .contactSelectorForm-container:not(.contactSelectorForm-limit-reached) .contactSelectorForm-warning-message { display: none }
 .contactSelectorForm-no-recipients .contactSelectorForm-labels { display: none }
