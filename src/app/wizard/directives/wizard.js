@@ -1,20 +1,5 @@
-import { CYCLE } from '../../constants';
-
-const { MONTHLY } = CYCLE;
-
 /* @ngInject */
-function wizard(
-    dispatchers,
-    $stateParams,
-    $timeout,
-    $state,
-    welcomeModal,
-    blackFridayModalOpener,
-    blackFridayModel,
-    wizardBuilder,
-    AppModel,
-    subscriptionModel
-) {
+function wizard(dispatchers, $stateParams, $timeout, $state, welcomeModal, wizardBuilder, AppModel) {
     return {
         restrict: 'E',
         replace: true,
@@ -32,10 +17,6 @@ function wizard(
                         },
                         next() {
                             welcomeModal.deactivate();
-
-                            if (checkBlackFriday()) {
-                                openBlackFridayModal();
-                            }
 
                             if (!AppModel.is('mobile')) {
                                 tourStart();
@@ -92,17 +73,6 @@ function wizard(
             }
 
             element.on('keydown', onKeydown);
-
-            function checkBlackFriday() {
-                const isFree = !subscriptionModel.hasPaid('mail');
-                const isMonthly = subscriptionModel.cycle() === MONTHLY;
-
-                return blackFridayModel.isDealPeriod(true) && (isFree || isMonthly);
-            }
-
-            function openBlackFridayModal() {
-                blackFridayModalOpener();
-            }
 
             async function tourStart() {
                 await $state.go('secured.inbox');

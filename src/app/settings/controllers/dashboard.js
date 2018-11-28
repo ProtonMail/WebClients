@@ -5,12 +5,10 @@ function DashboardController(
     dispatchers,
     $scope,
     $stateParams,
-    blackFridayModel,
     methods,
     authentication,
     dashboardConfiguration,
-    subscriptionModel,
-    blackFridayModalOpener
+    subscriptionModel
 ) {
     const { on, unsubscribe } = dispatchers();
 
@@ -30,10 +28,6 @@ function DashboardController(
 
     dashboardConfiguration.set('cycle', $stateParams.cycle || subscriptionModel.cycle());
     dashboardConfiguration.set('currency', $stateParams.currency || subscriptionModel.currency());
-
-    if (blackFridayModel.isDealPeriod() && !$stateParams.noBlackFridayModal) {
-        blackFridayModalOpener();
-    }
 
     $scope.$on('$destroy', unsubscribe);
 }
