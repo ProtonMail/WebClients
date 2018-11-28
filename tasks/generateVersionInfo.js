@@ -3,15 +3,16 @@
 const fs = require('fs');
 const path = require('path');
 
-if (process.argv.length <= 3) {
-    console.error(`${process.argv[0]} version out`);
+if (process.argv.length <= 4) {
+    console.error(`${process.argv[0]} version commit out`);
     process.exit(1);
 }
 
-const outputPath = path.resolve(process.argv[3]);
+const outputPath = path.resolve(process.argv[4]);
 
 const info = {
-    version: process.argv[2]
+    version: process.argv[2],
+    commit: process.argv[3]
 };
 
 const out = JSON.stringify(info, null, 2);

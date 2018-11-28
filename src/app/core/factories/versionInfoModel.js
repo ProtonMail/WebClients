@@ -7,12 +7,12 @@ function versionInfoModel($http, AppModel, dispatchers) {
     const STATE = {};
 
     /**
-     * Check if the version differs. Supports both downgrades and upgrades.
-     * @param {String} versionA
-     * @param {String} versionB
+     * Check if the string differs if `a` exists.
+     * @param {String} a
+     * @param {String} b
      * @returns {boolean}
      */
-    const isDifferent = (versionA, versionB) => !!versionA && versionB !== versionA;
+    const isDifferent = (a, b) => !!a && b !== a;
 
     const stopInterval = () => {
         clearInterval(STATE.intervalHandle);
@@ -20,9 +20,9 @@ function versionInfoModel($http, AppModel, dispatchers) {
     };
 
     const poll = async () => {
-        const { data: { version } = {} } = await $http.get(CONFIG.versionPath);
+        const { data: { version, commit } = {} } = await $http.get(CONFIG.versionPath);
 
-        if (!isDifferent(version, CONFIG.app_version)) {
+        if (!isDifferent(commit, CONFIG.commit)) {
             return;
         }
 

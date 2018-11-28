@@ -159,7 +159,7 @@ const getTasks = (branch, { isCI, flowType = 'single' }) => {
             title: 'Generate the version info',
             task() {
                 const fileName = path.join('dist', CONFIG.versionPath);
-                return bash(`tasks/generateVersionInfo.js ${CONFIG.app_version} ${fileName}`);
+                return bash(`tasks/generateVersionInfo.js ${CONFIG.app_version} ${CONFIG.commit} ${fileName}`);
             }
         },
         {

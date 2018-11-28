@@ -26,7 +26,7 @@ const isWebClient = () => {
 const getBuildCommit = () => {
     try {
         const origin = execSync('git rev-parse HEAD');
-        return origin.toString();
+        return origin.toString().trim();
     } catch (e) {
         return '';
     }
@@ -159,6 +159,7 @@ const getConfig = (env = process.env.NODE_ENV) => {
         sentry: sentryConfig(),
         app_version: argv['app-version'] || CONFIG_DEFAULT.app_version,
         api_version: `${argv['api-version'] || CONFIG_DEFAULT.api_version}`,
+        commit: getBuildCommit(),
         articleLink: argv.article || CONFIG_DEFAULT.articleLink,
         changelogPath: env === 'dist' ? CONFIG_DEFAULT.changelogPath : 'changelog.tpl.html',
         versionPath: env === 'dist' ? CONFIG_DEFAULT.versionPath : 'version.json',
