@@ -49,7 +49,7 @@ function wizard(dispatchers, $stateParams, $timeout, $state, welcomeModal, wizar
 
             on('$stateChangeSuccess', () => {
                 if (!has()) {
-                    hide();
+                    tourEnd();
                 }
             });
 
