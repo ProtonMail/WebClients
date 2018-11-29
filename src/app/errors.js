@@ -5,6 +5,12 @@ export const CONTACT_ERROR = {
     TYPE1_CONTACT: 0
 };
 
+export const HTTP_ERROR_CODES = {
+    ABORTED: -1,
+    TIMEOUT: 0,
+    TOO_MANY_REQUESTS: 429
+};
+
 export const API_CUSTOM_ERROR_CODES = {
     APP_VERSION_BAD: 5003,
 
