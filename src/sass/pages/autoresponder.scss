@@ -1,3 +1,6 @@
+.autoresponderViewContainer {
+    opacity: .999; /* stacking context, please do not remove */
+}
 
 .autoresponderCharacters, .autoresponderEmptyMessage {
     display: none;
