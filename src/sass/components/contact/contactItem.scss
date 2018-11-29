@@ -563,7 +563,8 @@ contact-pgp contact-item ul.contactItem-container {
 /* Validation */
 
 .contactItem-validation {
-    min-width: 100%
+    min-width: 100%;
+    border-left: 1px solid transparent; /* fix WTF for IE11 */
 }
 
 .contactItem-validation p {
