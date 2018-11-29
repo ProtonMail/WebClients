@@ -5,7 +5,7 @@
             class="public-key-found-notice-text"
             ng-if="message.Verified < 2 && message.IsEncrypted !== 1"
             translate-context="Info"
-            translate>This message has an unknown public key attached.</span>
+            translate>An unknown public key has been detected for this recipient.</span>
         <span
             class="public-key-found-notice-text"
             ng-if="message.IsEncrypted === 1 || message.Verified > 1"
