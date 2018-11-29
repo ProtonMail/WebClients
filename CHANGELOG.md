@@ -1,3 +1,7 @@
+# [3.15.4] - 2018-11-29
+## Changed
+- Stop showing the BF modal automatically
+
 # [3.15.3] - 2018-11-23
 ## Fixed
 - Changes on the Dashboard did not update if you use the BlackFriday offer
