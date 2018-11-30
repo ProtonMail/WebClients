@@ -471,12 +471,6 @@ function ComposeMessageController(
         dispatcher.actionMessage('update', message);
     }
 
-    const wait = (delay) => {
-        return new Promise((resolve) => {
-            setTimeout(resolve, delay);
-        });
-    };
-
     /**
      * Focus the first not minimized composer window
      * @param {Object} message
