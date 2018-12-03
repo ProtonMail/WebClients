@@ -95,7 +95,7 @@ function passwords($q, gettextCatalog, webcrypto) {
         currentAuthVersion: 4,
         cleanUsername,
         expandHash,
-        hashPassword(version, password, salt, userName, modulus) {
+        hashPassword({ version, password, salt, username, modulus }) {
             switch (version) {
                 case 4:
                 case 3:
@@ -103,7 +103,7 @@ function passwords($q, gettextCatalog, webcrypto) {
                 case 2:
                 case 1:
                 case 0:
-                    return hashPasswordVersion[version](password, userName, modulus);
+                    return hashPasswordVersion[version](password, username, modulus);
                 default:
                     $q.reject({ message: gettextCatalog.getString('Unsupported auth version', null, 'Error') });
                     break;

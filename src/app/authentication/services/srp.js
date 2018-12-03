@@ -1,6 +1,9 @@
 import _ from 'lodash';
 
 import CONFIG from '../../config';
+import { SRP_MODULUS_KEY, VERIFICATION_STATUS } from '../../constants';
+
+const { SIGNED_AND_VALID, NOT_SIGNED } = VERIFICATION_STATUS;
 
 /* @ngInject */
 function srp($http, webcrypto, passwords, url, authApi, handle10003) {
@@ -151,7 +154,29 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
         });
     }
 
-    function tryAuth(infoResp, method, endpoint, req, creds, headers, fallbackAuthVersion) {
+    /**
+     * Verify the modulus signature with the SRP public key
+     * @param {Object} modulusParsed
+     * @return {Promise}
+     */
+    async function verifyModulus(modulusParsed) {
+        try {
+            const { verified = NOT_SIGNED } = await pmcrypto.verifyMessage({
+                message: modulusParsed,
+                publicKeys: openpgp.key.readArmored(SRP_MODULUS_KEY).keys
+            });
+
+            if (verified !== SIGNED_AND_VALID) {
+                throw new Error();
+            }
+        } catch (e) {
+            return Promise.reject({
+                error_description: 'Unable to verify server identity'
+            });
+        }
+    }
+
+    async function tryAuth(infoResp, method, endpoint, req, creds, headers, fallbackAuthVersion) {
         function srpHasher(arr) {
             return passwords.expandHash(pmcrypto.arrayToBinaryString(arr));
         }
@@ -160,9 +185,11 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
         let useFallback;
 
         const session = infoResp.data.SRPSession;
-        const modulus = pmcrypto.binaryStringToArray(
-            pmcrypto.decode_base64(openpgp.cleartext.readArmored(infoResp.data.Modulus).getText())
-        );
+        const modulusParsed = openpgp.cleartext.readArmored(infoResp.data.Modulus);
+
+        await verifyModulus(modulusParsed);
+
+        const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(modulusParsed.getText()));
         const serverEphemeral = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(infoResp.data.ServerEphemeral));
 
         let authVersion = infoResp.data.Version;
@@ -194,7 +221,13 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
         }
 
         return passwords
-            .hashPassword(authVersion, creds.Password, salt, creds.Username, modulus)
+            .hashPassword({
+                version: authVersion,
+                password: creds.Password,
+                salt,
+                username: creds.Username,
+                modulus
+            })
             .then(
                 (hashed) => {
                     proofs = generateProofs(2048, srpHasher, modulus, hashed, serverEphemeral);
@@ -260,38 +293,40 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
             );
     }
 
-    function randomVerifier(password) {
-        return authApi
-            .modulus()
-            .then(({ data = {} } = {}) => {
-                const modulus = pmcrypto.binaryStringToArray(
-                    pmcrypto.decode_base64(openpgp.cleartext.readArmored(data.Modulus).getText())
-                );
-                const salt = pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(10)));
-                return passwords
-                    .hashPassword(passwords.currentAuthVersion, password, salt, undefined, modulus)
-                    .then((hashedPassword) => {
-                        const verifier = generateVerifier(2048, hashedPassword, modulus);
-
-                        return {
-                            Auth: {
-                                Version: passwords.currentAuthVersion,
-                                ModulusID: data.ModulusID,
-                                Salt: pmcrypto.encode_base64(salt),
-                                Verifier: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(verifier))
-                            }
-                        };
-                    });
-            })
-            .catch((err = {}) => {
-                const { data = {} } = err;
-                if (data.Error) {
-                    return Promise.reject({
-                        error_description: data.Error
-                    });
-                }
-                throw err;
+    async function randomVerifier(password) {
+        try {
+            const { data = {} } = (await authApi.modulus()) || {};
+            const modulusParsed = openpgp.cleartext.readArmored(data.Modulus);
+            await verifyModulus(modulusParsed);
+            const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(modulusParsed.getText()));
+            const salt = pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(10)));
+            const hashedPassword = await passwords.hashPassword({
+                version: passwords.currentAuthVersion,
+                password,
+                salt,
+                modulus
             });
+            const verifier = generateVerifier(2048, hashedPassword, modulus);
+
+            return {
+                Auth: {
+                    Version: passwords.currentAuthVersion,
+                    ModulusID: data.ModulusID,
+                    Salt: pmcrypto.encode_base64(salt),
+                    Verifier: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(verifier))
+                }
+            };
+        } catch (err) {
+            const { data = {} } = err || {};
+
+            if (data.Error) {
+                return Promise.reject({
+                    error_description: data.Error
+                });
+            }
+
+            throw err;
+        }
     }
 
     function authInfo(Username) {
