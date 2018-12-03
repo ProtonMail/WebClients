@@ -104,7 +104,6 @@ function autocompleteContacts(autocompleteEmailsModel, autocompleteBuilder, disp
             // Classic autocompletion
             const { list, hasAutocompletion } = model.filterContact(target.value);
             hasAutocompletion && (awesomplete.list = list);
-
             const value = target.value || '';
 
             if (value && !hasAutocompletion) {

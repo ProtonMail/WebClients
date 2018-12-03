@@ -88,7 +88,7 @@ export const formatNewEmail = (label = '', value = '', keyValue = DEFAULT_KEY_VA
 };
 
 /* @ngInject */
-function autocompleteEmailsModel($injector, checkTypoEmails, dispatchers, userType) {
+function autocompleteEmailsModel($injector, dispatchers, userType) {
     const { on, dispatcher } = dispatchers(['ui', 'contactGroupModel']);
 
     const CACHE = {
@@ -215,8 +215,10 @@ function autocompleteEmailsModel($injector, checkTypoEmails, dispatchers, userTy
 
         const collection = flow(
             filter(filterContactGroup(mode, isFree)),
-            filter(({ label }) => {
-                return !cache[label] && label.toLowerCase().includes(input);
+            filter(({ label, Name, isContactGroup }) => {
+                // or a contact group we take the name as it doesn't contains the number of member.
+                const key = isContactGroup ? Name : label;
+                return !cache[key] && label.toLowerCase().includes(input);
             }),
             take(AWESOMEPLETE_MAX_ITEMS)
         )(CACHE.EMAILS);
@@ -286,9 +288,10 @@ function autocompleteEmailsModel($injector, checkTypoEmails, dispatchers, userTy
                 LOCAL_CACHE.list.push(data);
 
                 const item = mapItems(originalItem || data);
+                const key = data.isContactGroup ? item.label : data.label;
 
                 // Store a ref to filter them out of the autocomplete list later
-                LOCAL_CACHE.mapExisting[item.label] = true;
+                LOCAL_CACHE.mapExisting[key || item.label] = item;
             }
         };
 
@@ -304,7 +307,7 @@ function autocompleteEmailsModel($injector, checkTypoEmails, dispatchers, userTy
             const isStringValue = typeof value === 'string';
             const val = isStringValue ? value : value.value;
             const data = formatNewEmail(CACHE.LABELS[label] || label, val, keyValue);
-            addEmail({ ...data, ...(!isStringValue && value.data) });
+            addEmail({ label, ...data, ...(!isStringValue && value.data) });
         };
 
         /**
@@ -312,9 +315,25 @@ function autocompleteEmailsModel($injector, checkTypoEmails, dispatchers, userTy
          * @param  {String} options.Address
          * @return {Array}
          */
-        const remove = (cb) => ((LOCAL_CACHE.list = LOCAL_CACHE.list.filter(cb)), LOCAL_CACHE.list);
-        const removeItem = (key) => remove(({ [keyValue]: removeKey }) => removeKey !== key);
-        const removeByAddress = (Address) => remove(({ Address: otherAddress }) => otherAddress !== Address);
+        const remove = (cbRemove, cbExisting = _.noop) => {
+            const item = LOCAL_CACHE.list.find(cbExisting);
+            LOCAL_CACHE.list = LOCAL_CACHE.list.filter(cbRemove);
+
+            // If we have a match, remove it from the existing as it's not inside the autocomplete anymore.
+            if (item) {
+                const key = Object.keys(LOCAL_CACHE.mapExisting).find((key) => {
+                    return LOCAL_CACHE.mapExisting[key].ID === item.ID;
+                });
+                delete LOCAL_CACHE.mapExisting[key];
+            }
+            return LOCAL_CACHE.list;
+        };
+
+        const removeItem = (key, scope = keyValue) => {
+            return remove(({ [scope]: removeKey }) => removeKey !== key, ({ [scope]: removeKey }) => removeKey === key);
+        };
+
+        const removeByAddress = (Address) => removeItem(Address, 'Address');
 
         /**
          * Update an address. Ensures that the list is still unique. If new address already exists, the old address will be removed.
@@ -323,8 +342,10 @@ function autocompleteEmailsModel($injector, checkTypoEmails, dispatchers, userTy
          * @param {String} newName
          */
         const updateEmail = (oldAddress, newAddress, newName) => {
-            // If the address has been updated, ensure that it is unique. If it already exists,
-            // delete the old address.
+            /*
+                If the address has been updated, ensure that it is unique.
+                If it already exists, delete the old address.
+             */
             if (oldAddress !== newAddress && LOCAL_CACHE.list.some((email) => email.Address === newAddress)) {
                 removeByAddress(oldAddress);
                 return;
@@ -334,6 +355,7 @@ function autocompleteEmailsModel($injector, checkTypoEmails, dispatchers, userTy
                 removeByAddress(oldAddress);
                 return;
             }
+
             // Update the old Address with the new information.
             LOCAL_CACHE.list = LOCAL_CACHE.list.map((email) => {
                 if (email.Address === oldAddress) {
