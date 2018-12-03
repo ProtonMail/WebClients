@@ -1,3 +1,7 @@
+# [3.15.5] - 2018-12-03
+## Changed
+- Verify the signature of the Modulus during authentication
+
 # [3.15.4] - 2018-11-29
 ## Changed
 - Stop showing the BF modal automatically
