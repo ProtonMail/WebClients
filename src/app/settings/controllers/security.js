@@ -245,6 +245,7 @@ function SecurityController(
                     confirm() {
                         const promise = settingsApi.setLogging({ LogAuth: 0 }).then(() => {
                             $scope.doLogging = 0;
+                            activeSessionsModel.clear();
                             notification.success(I18N.clear.updated);
                             confirmModal.deactivate();
                             $scope.disabledText = I18N.clear.disabled;
