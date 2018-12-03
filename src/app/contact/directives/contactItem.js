@@ -123,8 +123,13 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
                     dispatcher['contact.item']('change', { items: scope.UI.items, type: scope.type });
                 });
             scope.visibleItems = () => scope.UI.items.filter(({ hide }) => !hide);
-            scope.toggleSelector = (event, item) => {
-                item.displaySelector = !item.displaySelector;
+            scope.toggleSelector = (event, { uuid, displaySelector }) => {
+                scope.UI.items = scope.UI.items.map((item) => {
+                    if (uuid === item.uuid) {
+                        return { ...item, displaySelector: !displaySelector };
+                    }
+                    return { ...item, displaySelector: false };
+                });
                 event.preventDefault();
                 event.stopPropagation();
             };
