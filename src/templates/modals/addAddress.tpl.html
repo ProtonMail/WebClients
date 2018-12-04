@@ -8,10 +8,10 @@
             <div class="modal-body pm_form">
                 <div class="pm_grid" ng-if="'secured.members' | includedByState">
                     <div class="col-3-8">
-                        <label translate-context="Label" translate>User</label>
+                        <span class="label" translate-context="Label" translate>User</span>
                     </div>
                     <div class="col-5-8">
-                        <strong>{{ ctrl.members[0].Name }}</strong>
+                        <strong class="label">{{ ctrl.members[0].Name }}</strong>
                     </div>
                 </div>
                 <div class="pm_grid" ng-if="'secured.domains' | includedByState">
@@ -38,10 +38,10 @@
                         <div class="col-1-2">
                             <input autofocus type="text" ng-model="ctrl.address" placeholder-translate-context="Example user" placeholder-translate="thomas.anderson" />
                         </div>
-                        <div class="col-1-3" ng-show="ctrl.domains.length === 1">
+                        <div class="col-1-2" ng-show="ctrl.domains.length === 1">
                             <label class="bold">@{{ ctrl.domain.DomainName }}</label>
                         </div>
-                        <div class="col-1-3" ng-show="ctrl.domains.length > 1">
+                        <div class="col-1-2" ng-show="ctrl.domains.length > 1">
                             <span class="pm_select">
                                 <select ng-model="ctrl.domain" ng-options="'@'+domain.DomainName for domain in ctrl.domains"></select>
                                 <i class="fa fa-angle-down"></i>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <p ng-hide="ctrl.domain.ID" class="alert alert-info" translate translate-context="Info">ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not. <a href='https://protonmail.com/support/knowledge-base/aliases-within-protonmail/' target='_blank'>Learn more</a></p>
-                <h3 translate-context="Title in the address modal" ranslate>Name / Signature</h3>
+                <h3 translate-context="Title in the address modal" translate>Name / Signature</h3>
                 <display-name-signature data-model="ctrl.model"></display-name-signature>
             </div>
         </div>
