@@ -25,20 +25,31 @@ const then = now - 11;
 fs.utimesSync(PATH_CONFIG, then, then);
 env.argv.debug && console.log(`${JSON.stringify(CONFIG, null, 2)}`);
 
-// Debug mode npm start
-if (process.env.NODE_ENV !== 'dist' && env.argv.debug) {
+const generator = (() => {
     const fileNameChangelog = path.join('build', CONFIG.changelogPath);
     const fileNameVersionInfo = path.join('build', CONFIG.versionPath);
+    const changelog = () => {
+        execa.shell(`tasks/generateChangelog.js ./CHANGELOG.md ${fileNameChangelog}`);
+    };
 
+    const version = () => {
+        execa.shell(`tasks/generateVersionInfo.js ${CONFIG.app_version} ${CONFIG.commit} ${fileNameVersionInfo}`);
+    };
+
+    return { changelog, version };
+})();
+
+// Debug mode npm start
+if (process.env.NODE_ENV !== 'dist' && env.argv.debug) {
     if (!fs.existsSync('build')) {
         fs.mkdirSync('build');
     }
-
-    execa.shell(`tasks/generateChangelog.js ./CHANGELOG.md ${fileNameChangelog}`);
-    execa.shell(`tasks/generateVersionInfo.js ${CONFIG.app_version} ${CONFIG.commit} ${fileNameVersionInfo}`);
+    generator.changelog();
 }
 
 if (process.env.NODE_ENV !== 'dist' && process.env.NODE_ENV_MODE !== 'config') {
+    generator.version();
+
     if (!env.hasEnv() && !env.isWebClient()) {
         console.log();
         console.log(dedent`
