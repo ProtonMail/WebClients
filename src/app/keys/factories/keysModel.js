@@ -106,7 +106,11 @@ function keysModel(dispatchers, pmcw) {
             });
         }
 
-        return keys;
+        // set Primary for the first key
+        return keys.map((key, index) => ({
+            ...key,
+            Primary: +(index === 0)
+        }));
     };
 
     /**
