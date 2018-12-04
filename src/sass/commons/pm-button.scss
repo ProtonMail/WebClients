@@ -91,6 +91,9 @@
         &:hover {
             text-decoration: underline;
         }
+        &.color-white {
+            color: $white;
+        }
     }
     &.autoHeight {
         height:auto;
