@@ -200,7 +200,7 @@ function autocompleteContacts(autocompleteEmailsModel, autocompleteBuilder, disp
             if (type !== 'cache.remove') {
                 return;
             }
-            data.forEach(model.removeItem);
+            data.forEach((id) => model.removeItem(id));
         });
 
         el.on('keydown', onKeyDown);
