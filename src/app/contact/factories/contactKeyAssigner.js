@@ -26,8 +26,9 @@ function contactKeyAssigner(pmcw, contactKey) {
     const reassignProcess = (emailGroups, propList) =>
         Promise.all(
             _.map(propList, async (property) => {
-                const value = contactKey.getBase64Value(property);
+                const value = await contactKey.getBase64Value(property);
                 const dataValue = `data:application/pgp-keys;base64,${value}`;
+
                 if (value === false) {
                     return [];
                 }

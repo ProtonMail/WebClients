@@ -120,11 +120,13 @@ function OutsideController(
             const message = I18N.OUTSIDE_REPLY_ERROR;
             notification.info(message);
         }
-        const process = embedded
-            .parser($scope.message, { direction: 'cid' })
-            .then((data) =>
+        const process = Promise.all([
+            embedded.parser($scope.message, { direction: 'cid' }),
+            pmcw.getKeys($scope.message.publicKey)
+        ])
+            .then(([data, publicKeys]) =>
                 Promise.all([
-                    pmcw.encryptMessage({ data, publicKeys: pmcw.getKeys($scope.message.publicKey) }),
+                    pmcw.encryptMessage({ data, publicKeys }),
                     pmcw.encryptMessage({ data, passwords: password }),
                     attachmentModelOutside.encrypt($scope.message).then((attachments) => {
                         return attachments.reduce(

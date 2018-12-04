@@ -4,6 +4,7 @@ import { SEND_TYPES, VERIFICATION_STATUS, EMAIL_FORMATING, KEY_FLAGS, LARGE_KEY_
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
+import { addGetKeys } from '../../../helpers/key';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -105,10 +106,9 @@ function attachedPublicKey(
         const {
             [message.SenderAddress]: { Keys: keys }
         } = await keyCache.get([message.SenderAddress]);
-        const publicKeys = keys.reduce((acc, { PublicKey, Flags }) => {
+        const publicKeys = (await addGetKeys(keys, 'PublicKey')).reduce((acc, { Flags, keys }) => {
             if (Flags & KEY_FLAGS.ENABLE_VERIFICATION) {
-                const [k] = pmcw.getKeys(PublicKey);
-                acc.push(k);
+                acc.push(keys[0]);
             }
             return acc;
         }, []);
@@ -130,7 +130,8 @@ function attachedPublicKey(
             return false;
         }
 
-        const publicKey = pmcw.getMatchingKey(signature, publicKeys);
+        const publicKey = await pmcw.getMatchingKey(signature, publicKeys);
+
         return publicKey.armor();
     };
 
@@ -164,28 +165,29 @@ function attachedPublicKey(
         );
     };
 
-    const keySignsMessage = (message, keyInfos) => {
+    const keySignsMessage = async (message, keyInfos) => {
         const privateKeys = keysModel.getPrivateKeys(message.AddressID);
-        return pmcw
-            .decryptMessageLegacy({
+
+        try {
+            const { signatures } = await pmcw.decryptMessageLegacy({
                 message: message.Body,
                 privateKeys,
                 date: new Date(message.Time * 1000)
-            })
-            .then(({ signatures }) => {
-                const signaturePackets = _.flatten(
-                    signatures.map(({ packets }) => Object.values(packets).filter((a) => typeof a === 'object'))
-                );
-                const signingKeyIds = signaturePackets.map(({ issuerKeyId: { bytes } }) => bytes);
-                return keyInfos.filter(({ publicKeyArmored }) => {
-                    const keyList = pmcw.getKeys(publicKeyArmored);
-                    const keyIds = _.flatten(keyList.map((key) => key.getKeyIds().map(({ bytes }) => bytes)));
-                    return _.intersection(keyIds, signingKeyIds).length !== 0;
-                });
-            })
-            .catch(() => {
-                return [];
             });
+
+            const signaturePackets = _.flatten(
+                signatures.map(({ packets }) => Object.values(packets).filter((a) => typeof a === 'object'))
+            );
+
+            const signingKeyIds = signaturePackets.map(({ issuerKeyId: { bytes } }) => bytes);
+
+            return (await addGetKeys(keyInfos, 'publicKeyArmored')).filter(({ keys: keyList }) => {
+                const keyIds = _.flatten(keyList.map((key) => key.getKeyIds().map(({ bytes }) => bytes)));
+                return _.intersection(keyIds, signingKeyIds).length !== 0;
+            });
+        } catch (e) {
+            return [];
+        }
     };
 
     const getMatchingKeyInfo = async (keyInfos, message) => {

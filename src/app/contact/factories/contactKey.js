@@ -35,7 +35,7 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
     /**
      * Tries extract the openpgp keys from a vCard KEY property.
      * @param {vCard.Property} keyProperty
-     * @returns {Boolean|Object} false in case of error otherwise an openpgp key
+     * @returns {Promise<Boolean|Object>} false in case of error otherwise an openpgp key
      */
     const parseKey = (keyProperty) => {
         const dataValue = contactDetailsModel.unescapeValue(keyProperty.valueOf().trim(), true);
@@ -63,15 +63,16 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
      * Extracts the base64 value of KEY property. In case the KEY property is already a valid pgp key in base64
      * it's returned as normal. If the KEY property is an armored pgp key the armor is stripped and the base64 is returned
      * @param {vCard.Property} keyProperty
-     * @returns {String|Boolean} false in case the key property does not contain a pgp key, a base64 encoded pgp key otherwise
+     * @returns {Promise<String|Boolean>} false in case the key property does not contain a pgp key, a base64 encoded pgp key otherwise
      */
-    const getBase64Value = (keyProperty) => {
+    const getBase64Value = async (keyProperty) => {
         const dataValue = contactDetailsModel.unescapeValue(keyProperty.valueOf().trim(), true);
+
         try {
             // strip data url if needed.
             const bytes = decodeDataUri(dataValue);
             // normal base 64 encoding
-            pmcw.getKeys(bytes);
+            await pmcw.getKeys(bytes);
             // the value is already in correct format
             return encodeBytes(bytes);
         } catch (e) {
@@ -80,7 +81,7 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
 
         try {
             // try armored key
-            pmcw.getKeys(dataValue);
+            await pmcw.getKeys(dataValue);
             // just output the raw base 64
             return encodeBytes(pmcw.stripArmor(dataValue));
         } catch (e) {
@@ -153,7 +154,7 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
      * @returns {Promise.<*>}
      */
     const keyInfo = async (key, currentEmail) => {
-        const [keyObject] = pmcw.getKeys(key);
+        const [keyObject] = await pmcw.getKeys(key);
         const result = await pmcw.keyInfo(key);
         const isExpired = await pmcw.isExpiredKey(keyObject);
 

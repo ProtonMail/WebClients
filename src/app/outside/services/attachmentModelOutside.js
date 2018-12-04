@@ -7,7 +7,7 @@ import { uniqID } from '../../../helpers/string';
 const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
-function attachmentModelOutside($log, AttachmentLoader, dispatchers, embedded, notification) {
+function attachmentModelOutside(AttachmentLoader, dispatchers, embedded, notification) {
     const EVENT_NAME = 'attachment.upload.outside';
 
     const { on, dispatcher } = dispatchers([EVENT_NAME, 'actionMessage', 'attachmentAdded']);
@@ -166,7 +166,7 @@ function attachmentModelOutside($log, AttachmentLoader, dispatchers, embedded, n
                 QUEUE.length = 0;
             })
             .catch((err) => {
-                $log.error(err);
+                console.error(err);
                 notification.error('Error encrypting attachment');
                 dispatchMessageAction(message);
             });

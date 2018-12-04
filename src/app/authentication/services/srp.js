@@ -185,10 +185,9 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
         let useFallback;
 
         const session = infoResp.data.SRPSession;
-        const modulusParsed = openpgp.cleartext.readArmored(infoResp.data.Modulus);
 
+        const modulusParsed = await openpgp.cleartext.readArmored(infoResp.data.Modulus);
         await verifyModulus(modulusParsed);
-
         const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(modulusParsed.getText()));
         const serverEphemeral = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(infoResp.data.ServerEphemeral));
 
@@ -296,16 +295,18 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
     async function randomVerifier(password) {
         try {
             const { data = {} } = (await authApi.modulus()) || {};
-            const modulusParsed = openpgp.cleartext.readArmored(data.Modulus);
+            const modulusParsed = await openpgp.cleartext.readArmored(data.Modulus);
             await verifyModulus(modulusParsed);
             const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(modulusParsed.getText()));
             const salt = pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(10)));
-            const hashedPassword = await passwords.hashPassword({
-                version: passwords.currentAuthVersion,
+            const hashedPassword = await passwords.hashPassword(
+                passwords.currentAuthVersion,
                 password,
                 salt,
+                undefined,
                 modulus
-            });
+            );
+
             const verifier = generateVerifier(2048, hashedPassword, modulus);
 
             return {

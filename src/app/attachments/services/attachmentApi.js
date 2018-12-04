@@ -154,7 +154,7 @@ function attachmentApi($http, url, $q, dispatchers, keysModel, pmcw, secureSessi
             unsubscribe();
         };
 
-        xhr.onload = function onload() {
+        xhr.onload = async function onload() {
             const { json, isInvalid } = parseJSON(xhr);
 
             const statusCode = this.status;
@@ -184,19 +184,21 @@ function attachmentApi($http, url, $q, dispatchers, keysModel, pmcw, secureSessi
             delete MAP.message[message.ID][REQUEST_ID];
             delete MAP.request[REQUEST_ID];
 
-            const msg = pmcw.getMessage(packets.keys);
+            try {
+                const message = await pmcw.getMessage(packets.keys);
+                const sessionKey = await pmcw.decryptSessionKey({ message, privateKeys: keys });
 
-            pmcw.decryptSessionKey({ message: msg, privateKeys: keys })
-                .then((sessionKey) => ({
+                deferred.resolve({
                     REQUEST_ID,
                     sessionKey,
                     attachment: {
                         ...(json.Attachment || {}),
                         sessionKey
                     }
-                }))
-                .then(deferred.resolve)
-                .catch(deferred.reject);
+                });
+            } catch (e) {
+                deferred.reject(e);
+            }
         };
 
         xhr.open('post', requestURL(), true);

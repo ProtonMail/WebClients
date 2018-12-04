@@ -5,6 +5,7 @@ import { CONTACT_ERROR } from '../../errors';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
+import { addGetKeys } from '../../../helpers/key';
 
 /* @ngInject */
 function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmails, Contact, contactKey) {
@@ -69,17 +70,27 @@ function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmai
         const {
             [email]: { Keys }
         } = await keyCache.get([email]);
-        const compromisedKeys = Keys.reduce((acc, { PublicKey, Flags }) => {
+        // pmcw.getKeys is async so we have to call it first
+        const keys = await addGetKeys(Keys, 'PublicKey');
+        const compromisedKeys = keys.reduce((acc, { Flags, keys }) => {
             if (!(Flags & KEY_FLAGS.ENABLE_VERIFICATION)) {
-                const [key] = pmcw.getKeys(PublicKey);
-                acc[pmcw.getFingerprint(key)] = true;
+                acc[pmcw.getFingerprint(keys[0])] = true;
             }
             return acc;
         }, {});
         // In case the pgp packet list contains multiple keys, only first one is taken.
-        const publicKeys = emailKeys.reduce((acc, emailKey) => {
-            const [k = null] = contactKey.parseKey(emailKey);
-            k && acc.push({ key: k, compromised: !!compromisedKeys[k.primaryKey.getFingerprint()] });
+        const parsedKeys = await Promise.all(
+            emailKeys.map(async (emailKey) => ({
+                ...emailKey,
+                keys: await contactKey.parseKey(emailKey)
+            }))
+        );
+        const publicKeys = parsedKeys.reduce((acc, { keys }) => {
+            keys.length &&
+                acc.push({
+                    key: keys[0],
+                    compromised: !!compromisedKeys[keys[0].primaryKey.getFingerprint()]
+                });
             return acc;
         }, []);
 
@@ -114,10 +125,9 @@ function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmai
         }
 
         const { Keys } = address;
-
-        const pubKeys = Keys.reduce((acc, { PrivateKey, Flags }) => {
-            const [k] = pmcw.getKeys(PrivateKey);
-            acc.push({ key: k.toPublic(), compromised: !(Flags & KEY_FLAGS.ENABLE_VERIFICATION) });
+        const keys = await addGetKeys(Keys, 'PrivateKey');
+        const pubKeys = keys.reduce((acc, { Flags, keys }) => {
+            acc.push({ key: keys[0].toPublic(), compromised: !(Flags & KEY_FLAGS.ENABLE_VERIFICATION) });
             return acc;
         }, []);
         CACHE.EMAIL_PUBLIC_KEY[normEmail] = { timestamp: Date.now(), pubKeys };

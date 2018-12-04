@@ -184,10 +184,10 @@ function contactKeyManager(
          * Triggers a download of key `item`
          * @param {Object} item a contact key
          */
-        const download = (item) => {
+        const download = async (item) => {
             const [, base64] = item.value.split(',');
             const data = pmcw.binaryStringToArray(pmcw.decodeBase64(base64));
-            const [key] = pmcw.getKeys(data);
+            const [key] = await pmcw.getKeys(data);
             const blob = new Blob([key.armor()], { type: 'data:text/plain;charset=utf-8;' });
             const filename = `publickey - ${email} - 0x${item.fingerprint.slice(0, 8).toUpperCase()}.asc`;
 

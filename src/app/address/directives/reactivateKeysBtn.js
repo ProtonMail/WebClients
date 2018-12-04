@@ -16,8 +16,8 @@ function reactivateKeysBtn(oldPasswordModal, gettextCatalog, reactivateKeys, net
             const onClick = () => {
                 oldPasswordModal.activate({
                     params: {
-                        submit(password) {
-                            const keys = reactivateKeys.get(); // Get the keys dynamically since they can change.
+                        async submit(password) {
+                            const keys = await reactivateKeys.get(); // Get the keys dynamically since they can change.
                             oldPasswordModal.deactivate();
                             const promise = reactivateKeys
                                 .process(keys, password, scope.contact)

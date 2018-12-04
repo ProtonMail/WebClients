@@ -13,14 +13,31 @@ function addressKeysViewModel(formatKey, pmcw, authentication, keysModel) {
      * @param {Object} addresses
      * @return {Array}
      */
-    const getAddressKeys = (addresses = []) => {
-        return addresses.reduce((acc, { Keys = [], ID = '', Email = '', Order, Status }) => {
+    const getAddressKeys = async (addresses = []) => {
+        const addressesWithParsedKeys = await Promise.all(
+            addresses.map(async (address) => {
+                const { Keys = [] } = address;
+
+                if (!Keys.length) {
+                    return address;
+                }
+
+                const [{ PrivateKey } = {}] = Keys;
+
+                return {
+                    ...address,
+                    keys: await pmcw.getKeys(PrivateKey)
+                };
+            })
+        );
+
+        return addressesWithParsedKeys.reduce((acc, { Keys = [], keys = [], ID = '', Email = '', Order, Status }) => {
             if (!Keys.length) {
                 return acc;
             }
 
-            const [{ fingerprint, created, bitSize, PrivateKey } = {}] = Keys;
-            const [keyObject] = pmcw.getKeys(PrivateKey);
+            const [{ fingerprint, created, bitSize } = {}] = Keys;
+            const [keyObject] = keys;
 
             if (!keyObject) {
                 return acc;

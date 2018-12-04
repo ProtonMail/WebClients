@@ -89,7 +89,7 @@ function SignatureVerifier(dispatchers, pmcw, addressesModel, publicKeyStore) {
      */
     const verify = async (attachment, decryptedAttachment, message, embeddedSigs = []) => {
         const { ID, Signature } = attachment;
-        const signatures = Signature ? [pmcw.getSignature(Signature)] : embeddedSigs;
+        const signatures = Signature ? [await pmcw.getSignature(Signature)] : embeddedSigs;
 
         // shortcut to prevent unnecessary public key fetching
         if (!signatures.length) {

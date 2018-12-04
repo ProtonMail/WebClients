@@ -1,4 +1,5 @@
 import { KEY_FLAGS } from '../../constants';
+import { addGetKeys } from '../../../helpers/key';
 
 /* @ngInject */
 function generateKeyModel(Key, pmcw, setupKeys, authentication, confirmModal, gettextCatalog, addressesModel) {
@@ -71,10 +72,9 @@ Are you sure you want to continue?`,
      */
     const generate = async ({ numBits, passphrase, organizationKey, memberMap = {}, address, primary = true }) => {
         const { Keys = [] } = addressesModel.getByID(address.ID, authentication.user, true) || {};
-        const algorithms = Keys.reduce((acc, { PublicKey, Flags }) => {
+        const algorithms = (await addGetKeys(Keys, 'PublicKey')).reduce((acc, { keys, Flags }) => {
             if (Flags !== KEY_FLAGS.DISABLED) {
-                const [k] = pmcw.getKeys(PublicKey);
-                acc.push(k.getAlgorithmInfo());
+                acc.push(keys[0].getAlgorithmInfo());
             }
             return acc;
         }, []);

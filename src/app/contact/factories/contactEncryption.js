@@ -128,14 +128,16 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
         const promises = _.map(cards, ({ Type, Data = '', Signature = '' }) => {
             switch (Type) {
                 case ENCRYPTED_AND_SIGNED:
-                    return pmcw
-                        .decryptMessage({
-                            message: pmcw.getMessage(Data),
-                            privateKeys,
-                            publicKeys,
-                            armor,
-                            signature: pmcw.getSignature(Signature)
-                        })
+                    return Promise.all([pmcw.getMessage(Data), pmcw.getSignature(Signature)])
+                        .then(([message, signature]) =>
+                            pmcw.decryptMessage({
+                                message,
+                                privateKeys,
+                                publicKeys,
+                                armor,
+                                signature
+                            })
+                        )
                         .then(({ data, verified }) => {
                             if (verified !== 1) {
                                 return { error: TYPE3_CONTACT_VERIFICATION, data };
@@ -147,11 +149,14 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
                         });
                 case SIGNED:
                     return pmcw
-                        .verifyMessage({
-                            message: pmcw.getCleartextMessage(Data),
-                            publicKeys,
-                            signature: pmcw.getSignature(Signature)
-                        })
+                        .getSignature(Signature)
+                        .then((signature) =>
+                            pmcw.verifyMessage({
+                                message: pmcw.getCleartextMessage(Data),
+                                publicKeys,
+                                signature
+                            })
+                        )
                         .then(({ verified }) => {
                             if (verified !== 1) {
                                 return { error: TYPE2_CONTACT_VERIFICATION, data: Data };
@@ -159,9 +164,12 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
                             return { data: Data };
                         });
                 case ENCRYPTED:
-                    return pmcw.decryptMessage({ message: pmcw.getMessage(Data), privateKeys, armor }).catch(() => {
-                        return { error: TYPE1_CONTACT, data: new vCard().toString(VCARD_VERSION) };
-                    });
+                    return pmcw
+                        .getMessage(Data)
+                        .then((message) => pmcw.decryptMessage({ message, privateKeys, armor }))
+                        .catch(() => {
+                            return { error: TYPE1_CONTACT, data: new vCard().toString(VCARD_VERSION) };
+                        });
                 case CLEAR_TEXT:
                     return { data: Data };
             }

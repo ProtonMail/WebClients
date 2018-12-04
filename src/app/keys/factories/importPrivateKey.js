@@ -100,7 +100,7 @@ function importPrivateKey(
         const { ID: addressID = false } = addressesModel.get().find(({ Email }) => Email === email) || {};
         if (!addressID) {
             const keyObj = getKeyObject(keyid);
-            const pmKey = pmcw.getKeys(keyObj.PrivateKey);
+            const pmKey = await pmcw.getKeys(keyObj.PrivateKey);
             const [, , email] = pmKey[0].users[0].userId.userid.split(/(<|>)/g);
             // fallback on keyid: happens when reactivating keys
             return reformat(decryptedKeys, email).then((formattedKeys) => createKeys(formattedKeys, addressID, keyid));
