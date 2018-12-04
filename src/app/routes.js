@@ -13,6 +13,7 @@ import {
 } from './constants';
 import { getPlansMap } from '../helpers/paymentHelper';
 import { isDealEvent } from './blackFriday/helpers/blackFridayHelper';
+import { decrypt } from '../helpers/message';
 
 export default angular
     .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.utils'])
@@ -350,9 +351,11 @@ export default angular
                             $scope.tokenError = !encryptedToken;
 
                             $scope.unlock = () => {
-                                const message = pmcw.getMessage(encryptedToken);
                                 const promise = pmcw
-                                    .decryptMessage({ message, passwords: [$scope.params.MessagePassword] })
+                                    .getMessage(encryptedToken)
+                                    .then((message) =>
+                                        pmcw.decryptMessage({ message, passwords: [$scope.params.MessagePassword] })
+                                    )
                                     .then((decryptedToken) => {
                                         secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
                                         secureSessionStorage.setItem(
@@ -392,23 +395,13 @@ export default angular
                             const promises = _.reduce(
                                 message.Replies,
                                 (acc, reply) => {
-                                    const promise = pmcw
-                                        .decryptMessage({
-                                            message: pmcw.getMessage(reply.Body),
-                                            passwords: [password]
-                                        })
-                                        .then(({ data }) => (reply.DecryptedBody = data));
+                                    const promise = decrypt(reply, password).then(
+                                        (body) => (reply.DecryptedBody = body)
+                                    );
                                     acc.push(promise);
                                     return acc;
                                 },
-                                [
-                                    pmcw
-                                        .decryptMessage({
-                                            message: pmcw.getMessage(message.Body),
-                                            passwords: [password]
-                                        })
-                                        .then(({ data } = {}) => (message.DecryptedBody = data))
-                                ]
+                                [decrypt(message, password).then((body) => (message.DecryptedBody = body))]
                             );
 
                             return $q.all(promises).then(() => messageModel(message));
@@ -437,24 +430,20 @@ export default angular
                             const message = result.data.Message;
 
                             message.publicKey = result.data.PublicKey; // The sender’s public key
-                            return pmcw
-                                .decryptMessage({
-                                    message: pmcw.getMessage(message.Body),
-                                    passwords: [password]
-                                })
-                                .then((body) => {
-                                    const attachments = _.filter(message.Attachments, (attachment) => {
-                                        return (
-                                            attachment.Headers &&
-                                            (attachment.Headers['content-id'] || attachment.Headers['content-location'])
-                                        );
-                                    });
 
-                                    message.DecryptedBody = body.data;
-                                    message.Attachments = attachments;
-                                    message.NumAttachments = attachments.length;
-                                    return messageModel(message);
+                            return decrypt(message, password).then((body) => {
+                                const attachments = _.filter(message.Attachments, (attachment) => {
+                                    return (
+                                        attachment.Headers &&
+                                        (attachment.Headers['content-id'] || attachment.Headers['content-location'])
+                                    );
                                 });
+
+                                message.DecryptedBody = body.data;
+                                message.Attachments = attachments;
+                                message.NumAttachments = attachments.length;
+                                return messageModel(message);
+                            });
                         });
                     }
                 },

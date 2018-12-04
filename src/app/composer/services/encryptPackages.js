@@ -101,7 +101,7 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
             compression: true
         });
 
-        const { asymmetric: keys, encrypted } = pmcw.splitMessage(data);
+        const { asymmetric: keys, encrypted } = await pmcw.splitMessage(data);
         return { keys, encrypted, sessionKey };
     };
 
@@ -117,7 +117,7 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
      * @returns {Promise.<{keys, encrypted: *, sessionKey: *}>}
      */
     const encryptDraftBodyPackage = async (pack, privateKeys, addressKeys, publicKeysList, message) => {
-        const ownPublicKeys = pmcw.getKeys(message.From.Keys[0].PublicKey);
+        const ownPublicKeys = await pmcw.getKeys(message.From.Keys[0].PublicKey);
         const publicKeys = ownPublicKeys.concat(_.filter(publicKeysList));
 
         const { data, sessionKey } = await pmcw.encryptMessage({
@@ -128,19 +128,19 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
             compression: true
         });
 
-        const packets = pmcw.splitMessage(data);
+        const packets = await pmcw.splitMessage(data);
 
         const { asymmetric, encrypted } = packets;
 
         // rebuild the data without the send keypackets
         packets.asymmetric = packets.asymmetric.slice(0, ownPublicKeys.length);
-        const combineMessage = _.flowRight(
-            pmcw.getMessage,
+        // combine message
+        const value = _.flowRight(
             pmcw.concatArrays,
             _.flatten,
             _.values
-        );
-        const bodyMessage = combineMessage(packets);
+        )(packets);
+        const bodyMessage = await pmcw.getMessage(value);
         message.Body = bodyMessage.armor();
 
         return { keys: asymmetric.slice(ownPublicKeys.length), encrypted, sessionKey };

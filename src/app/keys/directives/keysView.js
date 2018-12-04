@@ -4,8 +4,8 @@ import { syncObjectList } from '../../../helpers/arrayHelper';
 function keysView(dispatchers, addressKeysViewModel, addressesModel, authentication, reactivateKeys) {
     const REQUIRE_CLASS = 'keysView-require-keys-reactivation';
 
-    const requireKeysReactivation = () => {
-        const keys = reactivateKeys.get();
+    const requireKeysReactivation = async () => {
+        const keys = await reactivateKeys.get();
         return keys.length;
     };
 
@@ -17,8 +17,8 @@ function keysView(dispatchers, addressKeysViewModel, addressesModel, authenticat
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
 
-            const updateClass = () => {
-                const action = requireKeysReactivation() ? 'add' : 'remove';
+            const updateClass = async () => {
+                const action = (await requireKeysReactivation()) ? 'add' : 'remove';
                 el[0].classList[action](REQUIRE_CLASS);
             };
 
@@ -33,8 +33,8 @@ function keysView(dispatchers, addressKeysViewModel, addressesModel, authenticat
                 });
             };
 
-            const updateAddresses = () => {
-                const addressKeys = addressKeysViewModel.getAddressKeys(addressesModel.get());
+            const updateAddresses = async () => {
+                const addressKeys = await addressKeysViewModel.getAddressKeys(addressesModel.get());
 
                 scope.$applyAsync(() => {
                     // syncObjectList to prevent a total redraw, which closes the keys tables

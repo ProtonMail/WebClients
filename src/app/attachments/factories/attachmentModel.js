@@ -105,7 +105,7 @@ function attachmentModel(
             try {
                 const data = await readFileAsString(queueEntry.file);
                 // check if it's valid key data
-                pmcw.getKeys(data);
+                await pmcw.getKeys(data);
                 // add new mimetype
                 queueEntry.file = _.extend(new Blob([data], { type: 'application/pgp-keys' }), queueEntry.file);
             } catch (e) {

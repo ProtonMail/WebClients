@@ -156,12 +156,12 @@ function reactivateKeys(
 
     /**
      * Returns keys not decrypted from user (contact) and addresses
-     * @return {Array}
+     * @return {Promise<Array>}
      */
-    const get = () => {
+    const get = async () => {
         const { Keys: userKeys = [] } = authentication.user;
         const addresses = addressesModel.get();
-        const addressKeysView = addressKeysViewModel.getAddressKeys(addresses);
+        const addressKeysView = await addressKeysViewModel.getAddressKeys(addresses);
         const addressKeys = addressKeysView.reduce((acc, { keys = [] }) => {
             return acc.concat(keys);
         }, []);

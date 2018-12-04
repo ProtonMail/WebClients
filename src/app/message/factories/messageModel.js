@@ -264,20 +264,23 @@ function messageModel(
             return this.IsEncrypted === ENCRYPTED_STATUS.PGP_INLINE;
         }
 
-        encryptBody(publicKeys) {
-            const privateKeys = keysModel.getPrivateKeys(this.From.ID)[0];
-            return pmcw
-                .encryptMessage({
+        async encryptBody(publicKeys) {
+            try {
+                const privateKeys = keysModel.getPrivateKeys(this.From.ID)[0];
+                const { data } = pmcw.encryptMessage({
                     data: this.getDecryptedBody(),
-                    publicKeys: pmcw.getKeys(publicKeys),
+                    publicKeys: await pmcw.getKeys(publicKeys),
                     privateKeys,
                     format: 'utf8',
                     compression: true
-                })
-                .then(({ data }) => ((this.Body = data), data))
-                .catch(() => {
-                    throw new Error(I18N.ENCRYPTION_ERROR);
                 });
+
+                this.Body = data;
+
+                return data;
+            } catch (e) {
+                throw new Error(I18N.ENCRYPTION_ERROR);
+            }
         }
 
         isPGPMIME() {
@@ -382,8 +385,9 @@ function messageModel(
                 });
         }
 
-        encryptAttachmentKeyPackets(publicKey = '', passwords = []) {
+        async encryptAttachmentKeyPackets(publicKey = '', passwords = []) {
             const packets = {};
+            const publicKeys = publicKey.length ? await pmcw.getKeys(publicKey) : [];
 
             return Promise.all(
                 this.Attachments.filter(({ ID }) => ID.indexOf('PGPAttachment')).map((attachment) => {
@@ -394,7 +398,7 @@ function messageModel(
                                 .encryptSessionKey({
                                     data: sessionKey.data,
                                     algorithm: sessionKey.algorithm,
-                                    publicKeys: publicKey.length ? pmcw.getKeys(publicKey) : [],
+                                    publicKeys,
                                     passwords
                                 })
                                 .then(({ message }) => {
@@ -406,31 +410,6 @@ function messageModel(
                     );
                 })
             ).then(() => packets);
-        }
-
-        cleartextAttachmentKeyPackets() {
-            const packets = {};
-
-            return Promise.all(
-                this.Attachments.map((attachment) => {
-                    return AttachmentLoader.getSessionKey(this, attachment).then(
-                        ({ sessionKey = {}, AttachmentID, ID } = {}) => {
-                            attachment.sessionKey = sessionKey; // Update the ref
-                            packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(sessionKey.data));
-                        }
-                    );
-                })
-            ).then(() => packets);
-        }
-
-        cleartextBodyPackets() {
-            const privateKeys = keysModel.getPrivateKeys(this.AddressID);
-            const { asymmetric, encrypted } = pmcw.splitMessage(this.Body);
-            const message = pmcw.getMessage(asymmetric[0]);
-
-            return pmcw
-                .decryptSessionKey({ message, privateKeys })
-                .then((sessionKey) => ({ sessionKey, dataPacket: encrypted }));
         }
 
         emailsToString() {

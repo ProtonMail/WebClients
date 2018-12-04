@@ -46,9 +46,10 @@ function contactPgpModel(dispatchers, mailSettingsModel, pmcw) {
             .map(pmcw.decode_base64)
             .map(pmcw.binaryStringToArray)
             .filter((a) => a.length)
-            .map(pmcw.getKeys);
+            .map(pmcw.getKeys)
+            .map(([k]) => pmcw.isExpiredKey(k));
 
-        const isExpired = await Promise.all(keyObjects.map(([k]) => pmcw.isExpiredKey(k)));
+        const isExpired = await Promise.all(keyObjects);
 
         return isExpired.every((keyExpired) => keyExpired);
     };

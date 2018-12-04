@@ -96,7 +96,7 @@ function sendPreferences(
                 encrypt: true,
                 sign: true,
                 mimetype: defaultMimeType,
-                publickeys: pmcw.getKeys(Keys[0].PublicKey),
+                publickeys: await pmcw.getKeys(Keys[0].PublicKey),
                 primaryPinned: !fallbackAddress,
                 scheme: PACKAGE_TYPE.SEND_PM,
                 pinned: ownAddress,
@@ -149,15 +149,16 @@ function sendPreferences(
      * @param Keys
      * @returns {boolean}
      */
-    const isPrimaryPinned = (base64Keys, { Keys }, email) => {
+    const isPrimaryPinned = async (base64Keys, { Keys }, email) => {
         if (base64Keys.length === 0) {
             const address = addressesModel.getByEmail(email);
             return !isFallbackAddress(address, Keys);
         }
 
         const sendKeys = _.map(Keys.filter(encryptionEnabled), 'PublicKey');
-        const sendKeyObjects = sendKeys.map(pmcw.getKeys).filter(([k = false]) => !!k);
-        const [pinnedKey] = pmcw.getKeys(base64ToArray(base64Keys[0]));
+        const keys = await Promise.all(sendKeys.map(pmcw.getKeys));
+        const sendKeyObjects = keys.filter(([k = false]) => !!k);
+        const [pinnedKey] = await pmcw.getKeys(base64ToArray(base64Keys[0]));
         const pinnedFingerprint = pmcw.getFingerprint(pinnedKey);
 
         return (
@@ -194,8 +195,8 @@ function sendPreferences(
         const info = {};
         const { RecipientType, Warnings = [] } = keyData;
         const isInternal = RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
-        const primaryPinned = isInternal ? isPrimaryPinned(emailKeys, keyData, email) : true;
-        const pmKey = isInternal ? pmcw.getKeys(keyData.Keys[0].PublicKey) : [];
+        const primaryPinned = isInternal ? await isPrimaryPinned(emailKeys, keyData, email) : true;
+        const pmKey = isInternal ? await pmcw.getKeys(keyData.Keys[0].PublicKey) : [];
         // In case the pgp packet list contains multiple keys, only the first one is taken.
         const keyObjs = await Promise.all(
             emailKeys
@@ -298,7 +299,10 @@ function sendPreferences(
         const mimetype = mimetypeProp ? mimetypeProp.valueOf() : null;
         const schemeProp = _.find(schemeList, matchesGroup);
         const scheme = schemeProp ? toSchemeConstant(schemeProp.valueOf()) : null;
-        const base64Keys = await reorderKeys(keyData, _.map(emailKeys, (prop) => contactKey.getBase64Value(prop)));
+        const base64Keys = await reorderKeys(
+            keyData,
+            await Promise.all(_.map(emailKeys, (prop) => contactKey.getBase64Value(prop)))
+        );
         const data = {
             encryptFlag:
                 isInternal ||

@@ -64,8 +64,8 @@ function changeMailboxPassword(
 
             promises = inputKeys.map(({ PrivateKey, ID, Token }) => {
                 // Decrypt private key with organization key and token
-                return organizationKey
-                    .then((key) => pmcw.decryptMessage({ message: pmcw.getMessage(Token), privateKeys: [key] }))
+                return Promise.all([organizationKey, pmcw.getMessage(Token)])
+                    .then(([key, message]) => pmcw.decryptMessage({ message, privateKeys: [key] }))
                     .then(({ data }) => pmcw.decryptPrivateKey(PrivateKey, data))
                     .then((pkg) => ({ ID, pkg }));
             });

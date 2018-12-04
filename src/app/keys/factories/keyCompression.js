@@ -28,8 +28,8 @@ function keyCompression(pmcw, confirm, $filter, gettextCatalog) {
      * @param {String} newKey The reduced armored key
      * @returns {Promise}
      */
-    const askForCompression = (oldKey, newKey) => {
-        const [keyObject] = pmcw.getKeys(oldKey);
+    const askForCompression = async (oldKey, newKey) => {
+        const [keyObject] = await pmcw.getKeys(oldKey);
         const fingerprint = keyObject.primaryKey.getFingerprint();
 
         return confirm({
@@ -52,7 +52,7 @@ function keyCompression(pmcw, confirm, $filter, gettextCatalog) {
         if (armoredKey.length < LARGE_KEY_SIZE) {
             return armoredKey;
         }
-        const compressedKey = pmcw.compressKey(armoredKey);
+        const compressedKey = await pmcw.compressKey(armoredKey);
 
         // Compression was not really effective, just skip compression
         if (compressedKey.length > LARGE_KEY_SIZE && compressedKey.length > armoredKey * 0.6) {

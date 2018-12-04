@@ -97,9 +97,9 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
                     if (keys.length === 0) {
                         return;
                     }
+                    const parsedKeys = await Promise.all(keys.map(contactKey.parseKey));
                     const keyObjects = await Promise.all(
-                        keys
-                            .map(contactKey.parseKey)
+                        parsedKeys
                             .filter((k) => k)
                             .map(([k = false]) => k)
                             .map((k) => {

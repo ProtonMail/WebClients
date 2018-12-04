@@ -4,7 +4,6 @@ import { readFileAsBuffer } from '../../../helpers/fileHelper';
 function AttachmentLoader(
     dispatchers,
     $cacheFactory,
-    $log,
     pmcw,
     keysModel,
     $state,
@@ -59,48 +58,51 @@ function AttachmentLoader(
      * @param  {String} options.algo
      * @return {Promise}
      */
-    const decrypt = (attachment, sessionKey = {}) => {
+    const decrypt = async (attachment, sessionKey = {}) => {
         // create new Uint8Array to store decrypted attachment
         const at = new Uint8Array(attachment);
-        // decrypt the att
-        return pmcw
-            .decryptMessage({
-                message: pmcw.getMessage(at),
+
+        try {
+            // decrypt the att
+            const { data, signatures } = await pmcw.decryptMessage({
+                message: await pmcw.getMessage(at),
                 sessionKeys: [sessionKey],
                 format: 'binary'
-            })
-            .then(({ data, signatures }) => ({
+            });
+
+            return {
                 data,
                 signatures,
                 fromCache: false
-            }))
-            .catch((err) => ($log.error(err), err));
+            };
+        } catch (err) {
+            console.error(err);
+            throw err;
+        }
     };
 
-    const encrypt = (data, publicKeys, privateKeys, { name, type, size, inline } = {}) => {
-        return pmcw
-            .encryptMessage({
-                passwords: [],
-                filename: name,
-                armor: false,
-                detached: true,
-                data,
-                publicKeys: pmcw.getKeys(publicKeys),
-                privateKeys
-            })
-            .then(({ message, signature }) => {
-                const { asymmetric, encrypted } = pmcw.splitMessage(message);
-                return {
-                    Filename: name,
-                    MIMEType: type,
-                    FileSize: size,
-                    Inline: inline,
-                    signature: signature ? signature.packets.write() : undefined,
-                    Preview: data,
-                    keys: asymmetric[0],
-                    data: encrypted[0]
-                };
-            });
+    const encrypt = async (data, publicKeys, privateKeys, { name, type, size, inline } = {}) => {
+        const { message, signature } = await pmcw.encryptMessage({
+            filename: name,
+            armor: false,
+            detached: true,
+            data,
+            publicKeys: await pmcw.getKeys(publicKeys),
+            privateKeys
+        });
+
+        const { asymmetric, encrypted } = await pmcw.splitMessage(message);
+
+        return {
+            Filename: name,
+            MIMEType: type,
+            FileSize: size,
+            Inline: inline,
+            signature: signature ? signature.packets.write() : undefined,
+            Preview: data,
+            keys: asymmetric[0],
+            data: encrypted[0]
+        };
     };
 
     // read the file locally, and encrypt it. return the encrypted file.
@@ -125,18 +127,23 @@ function AttachmentLoader(
      * @param  {Object} attachment
      * @return {Promise}   With the attachment containing the sessionKey (no-sideeffects)
      */
-    const getSessionKey = (message, attachment) => {
+    const getSessionKey = async (message, attachment) => {
         if (attachment.sessionKey) {
-            return Promise.resolve(attachment);
+            return attachment;
         }
+
         const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-        const options = { message: pmcw.getMessage(keyPackets) };
+        const options = { message: await pmcw.getMessage(keyPackets) };
+
         if (isOutside()) {
             options.passwords = [pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'))];
         } else {
             options.privateKeys = keysModel.getPrivateKeys(message.AddressID);
         }
-        return pmcw.decryptSessionKey(options).then((sessionKey) => angular.extend({}, attachment, { sessionKey }));
+
+        const sessionKey = await pmcw.decryptSessionKey(options);
+
+        return { ...attachment, sessionKey };
     };
 
     const getDecryptedAttachmentAPI = async (message, attachment) => {

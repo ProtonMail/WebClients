@@ -6,7 +6,7 @@ function formatKey(keyInfo, pmcw) {
      */
     const formatKey = async (source) => {
         const key = await keyInfo(source);
-        const [k] = pmcw.getKeys(key.PrivateKey);
+        const [k] = await pmcw.getKeys(key.PrivateKey);
 
         return { ...key, PublicKey: k.toPublic().armor() };
     };
