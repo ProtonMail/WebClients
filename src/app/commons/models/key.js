@@ -81,18 +81,20 @@ function Key($http, url, srp) {
     /**
      * Make a private key primary, only for activated keys
      * @param {String} keyID
+     * @param {Object} params
      * @return {Promise}
      */
-    const primary = (keyID) => {
-        return $http.put(requestURL(keyID, 'primary'));
+    const primary = (keyID, params) => {
+        return $http.put(requestURL(keyID, 'primary'), params);
     };
     /**
      * Delete key
      * @param {String} keyID
+     * @param {Object} params
      * @return {Promise}
      */
-    const remove = (keyID) => {
-        return $http.delete(requestURL(keyID));
+    const remove = (keyID, params) => {
+        return $http.put(requestURL(keyID, 'delete'), params);
     };
     /**
      * Get salts
@@ -104,10 +106,12 @@ function Key($http, url, srp) {
     /**
      * Update the key flags
      * @param {String} keyID
-     * @param {Integer} Flags (bitmask: bit 0 enables verification, bit 1 enables encryption)
+     * @param {Integer} params.Flags (bitmask: bit 0 enables verification, bit 1 enables encryption)
+     * @param {Object} params.SignedKeyList
+     * @return {Promise}
      */
-    const flags = (keyID, Flags) => {
-        return $http.put(requestURL(keyID, 'flags'), { Flags });
+    const flags = (keyID, params) => {
+        return $http.put(requestURL(keyID, 'flags'), params);
     };
     /**
      * reactive key

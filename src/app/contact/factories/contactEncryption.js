@@ -1,13 +1,13 @@
 import _ from 'lodash';
 
 import { CONTACT_ERROR } from '../../errors';
-import { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION } from '../../constants';
+import { KEY_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION } from '../../constants';
 import { orderByPref } from '../../../helpers/vcard';
 import vCardPropertyMaker from '../../../helpers/vCardPropertyMaker';
 import { createCancellationToken } from '../../../helpers/promiseHelper';
 import { generateUID } from '../../../helpers/string';
 
-const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
+const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = KEY_MODE;
 const {
     TYPE3_CONTACT_VERIFICATION,
     TYPE3_CONTACT_DECRYPTION,

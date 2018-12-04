@@ -7,6 +7,7 @@ function importPrivateKey(
     addressesModel,
     authentication,
     Key,
+    keysModel,
     notification,
     unlockUser,
     gettextCatalog
@@ -77,10 +78,11 @@ function importPrivateKey(
     const reformat = (privateKeys, email) =>
         Promise.all(privateKeys.map((privKey) => pmcw.reformatKey(privKey, email, authentication.getPassword())));
 
-    const createKey = (privateKey, addressID, keyid) => {
+    const createKey = async (privateKey, addressID, keyID) => {
+        const SignedKeyList = await keysModel.signedKeyList(addressID, { mode: 'create', keyID, privateKey });
         const promise = addressID
-            ? Key.create({ AddressID: addressID, PrivateKey: privateKey, Primary: 0 })
-            : Key.reactivate(keyid, { PrivateKey: privateKey });
+            ? Key.create({ AddressID: addressID, PrivateKey: privateKey, Primary: 0, SignedKeyList })
+            : Key.reactivate(keyID, { PrivateKey: privateKey, SignedKeyList });
         return promise
             .then(() => 1)
             .catch((error) => {

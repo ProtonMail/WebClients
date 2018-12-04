@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { CONTACT_MODE } from '../app/constants';
+import { KEY_MODE } from '../app/constants';
 import { normalizeEmail } from './string';
 import { BOOL_FIELDS } from './vCardFields';
 
@@ -140,8 +140,8 @@ export const cleanValue = (value, field) => {
  * @return {Object}
  */
 export const getCategoriesEmail = (cards = []) => {
-    const hasCategories = ({ Type, Data }) => Type === CONTACT_MODE.CLEAR_TEXT && Data.includes('CATEGORIES');
-    const notEncryptedContent = ({ Type }) => Type !== CONTACT_MODE.ENCRYPTED_AND_SIGNED;
+    const hasCategories = ({ Type, Data }) => Type === KEY_MODE.CLEAR_TEXT && Data.includes('CATEGORIES');
+    const notEncryptedContent = ({ Type }) => Type !== KEY_MODE.ENCRYPTED_AND_SIGNED;
 
     /**
      * Create a map
@@ -170,7 +170,7 @@ export const getCategoriesEmail = (cards = []) => {
         return cat.valueOf();
     };
 
-    const mapCategoriesReducer = (acc, { [CONTACT_MODE.CLEAR_TEXT]: clearText, [CONTACT_MODE.SIGNED]: signed }) => {
+    const mapCategoriesReducer = (acc, { [KEY_MODE.CLEAR_TEXT]: clearText, [KEY_MODE.SIGNED]: signed }) => {
         acc[signed.get('uid').valueOf()] = getCategories(clearText.get('categories'));
         return acc;
     };

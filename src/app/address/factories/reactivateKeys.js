@@ -6,6 +6,7 @@ function reactivateKeys(
     addressKeysViewModel,
     authentication,
     Key,
+    keyModels,
     eventManager,
     gettextCatalog,
     passwords,
@@ -90,7 +91,7 @@ function reactivateKeys(
         );
     };
 
-    const process = async (keys = [], oldPassword, contact) => {
+    const process = async (keys = [], oldPassword, { contact, address } = {}) => {
         const { data = {} } = await Key.salts();
         const salts = _.reduce(
             keys,
@@ -116,9 +117,13 @@ function reactivateKeys(
                 const keyPassword = await passwords.computeKeyPassword(oldPassword, KeySalt);
                 const decryptedKey = await pmcw.decryptPrivateKey(key.PrivateKey, keyPassword);
                 const privateKey = await pmcw.encryptPrivateKey(decryptedKey, password);
-
+                const SignedKeyList = await keyModels.signedKeyList(address.ID, {
+                    mode: 'create',
+                    keyID: key.ID,
+                    privateKey
+                });
                 // Update the key in the API.
-                const data = (await Key.reactivate(key.ID, { PrivateKey: privateKey })) || {};
+                const data = (await Key.reactivate(key.ID, { PrivateKey: privateKey, SignedKeyList })) || {};
 
                 key.decrypted = true;
 

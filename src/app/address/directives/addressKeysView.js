@@ -11,6 +11,7 @@ function addressKeysView(
     importPrivateKey,
     notification,
     Key,
+    keysModel,
     exportKeyModal,
     exportPrivateKeyModal,
     reactivateKeyModal,
@@ -138,8 +139,13 @@ function addressKeysView(
         });
     };
 
-    const makePrimaryKey = (address, { ID }) => {
-        const promise = Key.primary(ID)
+    const makePrimaryKey = async (address, { ID, PrivateKey }) => {
+        const SignedKeyList = await keysModel.signedKeyList(address.ID, {
+            mode: 'set-primary',
+            keyID: ID,
+            privateKey: PrivateKey
+        });
+        const promise = Key.primary(ID, { SignedKeyList })
             .then(eventManager.call)
             .then(() => notification.success(I18N.PRIVATE_KEY_PRIMARY));
         networkActivityTracker.track(promise);
@@ -152,8 +158,9 @@ function addressKeysView(
      * @param {String} messageDown The notification message to be displayed on downgrade
      * @return {Function} (address, key) A function taking an address object and the key object as input
      */
-    const createMarker = (flags, messageUp, messageDown) => (address, { ID, Flags }) => {
-        const promise = Key.flags(ID, flags)
+    const createMarker = (flags, messageUp, messageDown) => async (address, { ID, Flags }) => {
+        const SignedKeyList = await keysModel.signedKeyList(address.ID, { mode: 'mark', newFlags: flags });
+        const promise = Key.flags(ID, { Flags: flags, SignedKeyList })
             .then(eventManager.call)
             .then(() => notification.success(Flags < flags ? messageUp : messageDown));
         networkActivityTracker.track(promise);
@@ -318,10 +325,12 @@ function addressKeysView(
                     params: {
                         submit(password) {
                             reactivateKeyModal.deactivate();
-                            const promise = reactivateKeys.process([key], password).then(({ success, failed }) => {
-                                success && notification.success(success);
-                                failed && notification.error(failed);
-                            });
+                            const promise = reactivateKeys
+                                .process([key], password, { address })
+                                .then(({ success, failed }) => {
+                                    success && notification.success(success);
+                                    failed && notification.error(failed);
+                                });
 
                             networkActivityTracker.track(promise);
                         },

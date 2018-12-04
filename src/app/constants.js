@@ -199,7 +199,7 @@ export const SPAM_SCORE = {
     PHISHING: 102
 };
 
-export const CONTACT_MODE = {
+export const KEY_MODE = {
     ENCRYPTED_AND_SIGNED: 3,
     SIGNED: 2,
     ENCRYPTED: 1,
