@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 import parseDate from '../../../helpers/vcardDateParser';
 import isUniqField from '../../../helpers/vcardUniqueFields';
-import { VCARD_VERSION, VCARD_TYPES, CONTACT_MODE } from '../../constants';
+import { VCARD_VERSION, VCARD_TYPES, KEY_MODE } from '../../constants';
 import vCardPropertyMaker from '../../../helpers/vCardPropertyMaker';
 import { extractAll, makeUniq } from '../../../helpers/vCardProperties';
 
@@ -224,16 +224,16 @@ function vcard(notification, sanitize) {
     }
 
     function updateClearText({ Cards = [] }, contact) {
-        const clearText = Cards.find(({ Type }) => Type === CONTACT_MODE.CLEAR_TEXT);
+        const clearText = Cards.find(({ Type }) => Type === KEY_MODE.CLEAR_TEXT);
 
         if (!clearText) {
             return;
         }
 
         const card = new vCard().parse(clearText.Data);
-        const types = contact.types.includes(CONTACT_MODE.CLEAR_TEXT)
+        const types = contact.types.includes(KEY_MODE.CLEAR_TEXT)
             ? contact.types
-            : [...contact.types, CONTACT_MODE.CLEAR_TEXT];
+            : [...contact.types, KEY_MODE.CLEAR_TEXT];
 
         Object.keys(contact.vCard.data).forEach((key) => {
             if (!card.data[key]) {

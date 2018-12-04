@@ -9,6 +9,7 @@ function deleteKeyProcess(
     downloadFile,
     eventManager,
     Key,
+    keysModel,
     notification,
     networkActivityTracker
 ) {
@@ -23,7 +24,7 @@ function deleteKeyProcess(
         ),
         EXPORT_TITLE: gettextCatalog.getString('Key backup', null, 'Title'),
         EXPORT_MESSAGE: gettextCatalog.getString(
-            `Deleting your keys is irreversible. 
+            `Deleting your keys is irreversible.
         To be able to access any message encrypted with this key, you might want to make a back up of this key for later use.
         Do you want to export this key?`,
             null,
@@ -108,10 +109,12 @@ function deleteKeyProcess(
     /**
      * Deletes the specified key, triggering the eventmanager and notifying the user of the result.
      * @param {Object} Key An object describing the key we want to delete
+     * @param {String} addressID
      * @return {Promise}
      */
-    const deleteKey = ({ ID }) => {
-        const promise = Key.remove(ID)
+    const deleteKey = async ({ ID }, addressID) => {
+        const SignedKeyList = await keysModel.signedKeyList(addressID, { mode: 'remove', keyID: ID });
+        const promise = Key.remove(ID, { SignedKeyList })
             .then(eventManager.call)
             .then(() => notification.success(I18N.SUCCES_NOTIFICATION));
         return networkActivityTracker.track(promise);
@@ -122,10 +125,10 @@ function deleteKeyProcess(
      * @param {Object} Key The key object describing the key we want to delete
      * @return {Promise}
      */
-    const start = async ({ email }, keyInfo) => {
+    const start = async ({ email, ID }, keyInfo) => {
         await warnUser();
         keyInfo.decrypted && (await exportKey(email, keyInfo));
-        return deleteKey(keyInfo);
+        return deleteKey(keyInfo, ID);
     };
     return { start };
 }

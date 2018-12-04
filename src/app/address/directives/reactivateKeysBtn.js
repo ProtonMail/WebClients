@@ -20,7 +20,7 @@ function reactivateKeysBtn(oldPasswordModal, gettextCatalog, reactivateKeys, net
                             const keys = await reactivateKeys.get(); // Get the keys dynamically since they can change.
                             oldPasswordModal.deactivate();
                             const promise = reactivateKeys
-                                .process(keys, password, scope.contact)
+                                .process(keys, password, { contact: scope.contact })
                                 .then(({ success, failed }) => {
                                     success && notification.success(success);
                                     failed && notification.error(failed);

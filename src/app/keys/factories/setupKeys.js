@@ -1,7 +1,7 @@
 import { ENCRYPTION_DEFAULT } from '../../constants';
 
 /* @ngInject */
-function setupKeys(passwords, pmcw, webcrypto, Key, memberApi) {
+function setupKeys(passwords, pmcw, webcrypto, Key, keysModel, memberApi) {
     /**
      * Generates key pairs for a list of addresses
      * @param  {Array}  addresses  array of addresses that require keys
@@ -107,11 +107,18 @@ function setupKeys(passwords, pmcw, webcrypto, Key, memberApi) {
      * @param  {String} newPassword          the new key password
      * @return {Object}                      payload for API request
      */
-    function prepareSetupPayload(KeySalt = '', AddressKeys = [], newPassword = '') {
-        const payload = { KeySalt, AddressKeys };
+    async function prepareSetupPayload(KeySalt = '', AddressKeys = [], newPassword = '') {
+        const payload = { KeySalt };
 
-        if (AddressKeys.length > 0) {
+        if (AddressKeys.length) {
             payload.PrimaryKey = AddressKeys[0].PrivateKey;
+            payload.AddressKeys = await Promise.all(
+                AddressKeys.map(async ({ AddressID, PrivateKey }) => ({
+                    AddressID,
+                    PrivateKey,
+                    SignedKeyList: await keysModel.signedKeyList(AddressID, { mode: 'reset', privateKey: PrivateKey })
+                }))
+            );
         }
 
         if (newPassword.length) {
@@ -174,8 +181,8 @@ function setupKeys(passwords, pmcw, webcrypto, Key, memberApi) {
      * @param  {Object} params               additional parameters to add to request (token, username)
      * @return {Object}                      API response to key reset
      */
-    function reset({ keySalt, keys }, password = '', params = {}) {
-        const rv = prepareSetupPayload(keySalt, keys, password);
+    async function reset({ keySalt, keys }, password = '', params = {}) {
+        const rv = await prepareSetupPayload(keySalt, keys, password);
         const payload = { ...rv.payload, ...params };
         return Key.reset(payload, rv.newPassword).then(response);
     }
@@ -187,8 +194,8 @@ function setupKeys(passwords, pmcw, webcrypto, Key, memberApi) {
      * @param  {String} password             the new key password
      * @return {Object}                      API response to key setup
      */
-    function setup({ keySalt, keys }, password = '') {
-        const { payload, newPassword } = prepareSetupPayload(keySalt, keys, password);
+    async function setup({ keySalt, keys }, password = '') {
+        const { payload, newPassword } = await prepareSetupPayload(keySalt, keys, password);
         return Key.setup(payload, newPassword).then(response);
     }
 

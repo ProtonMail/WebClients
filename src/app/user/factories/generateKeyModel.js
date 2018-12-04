@@ -2,7 +2,16 @@ import { KEY_FLAGS } from '../../constants';
 import { addGetKeys } from '../../../helpers/key';
 
 /* @ngInject */
-function generateKeyModel(Key, pmcw, setupKeys, authentication, confirmModal, gettextCatalog, addressesModel) {
+function generateKeyModel(
+    Key,
+    pmcw,
+    setupKeys,
+    authentication,
+    confirmModal,
+    gettextCatalog,
+    addressesModel,
+    keysModel
+) {
     const STATE = {
         QUEUED: 0,
         GENERATING: 1,
@@ -103,7 +112,12 @@ Are you sure you want to continue?`,
                 return onSuccess(address, key);
             }
 
-            const { data } = await Key.create({ AddressID: address.ID, PrivateKey, Primary: primary });
+            const { data } = await Key.create({
+                AddressID: address.ID,
+                PrivateKey,
+                Primary: primary,
+                SignedKeyList: await keysModel.signedKeyList(address.ID, { mode: 'create', privateKey: PrivateKey })
+            });
             return onSuccess(address, data.Key);
         } catch (err) {
             address.state = STATE.ERROR;

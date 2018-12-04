@@ -7,12 +7,12 @@ import {
     CONTACTS_LIMIT_REQUESTS,
     CONTACTS_LIMIT_UPLOAD,
     EXPORT_CONTACTS_LIMIT,
-    CONTACT_MODE,
+    KEY_MODE,
     CONTACT_EMAILS_LIMIT,
     CONTACTS_LIMIT
 } from '../../constants';
 
-const ENCRYPTED_MODES = [CONTACT_MODE.ENCRYPTED, CONTACT_MODE.ENCRYPTED_AND_SIGNED];
+const ENCRYPTED_MODES = [KEY_MODE.ENCRYPTED, KEY_MODE.ENCRYPTED_AND_SIGNED];
 
 /* @ngInject */
 function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, eventManager, contactProgressReporter) {

@@ -15,16 +15,23 @@ function decryptKeys(pmcw, notification, Key, keyInfo, keysModel, setupKeys, get
 
     /**
      * Activate newly-provisioned member key
-     * @param  {Object} key                    the key object
-     * @param  {Object} pkg                    decrypted private key
-     * @param  {String} mailboxPassword        the mailbox password
-     * @return {Object}
+     * @param  {Object} options.key                    the key object
+     * @param  {Object} options.pkg                    decrypted private key
+     * @param  {String} options.mailboxPassword        the mailbox password
+     * @param  {Object} options.address
+     * @return {Promise<Object>}
      */
-    const activateKey = (key, pkg, mailboxPassword) => {
-        return pmcw
-            .encryptPrivateKey(pkg, mailboxPassword)
-            .then((PrivateKey) => Key.activate(key.ID, { PrivateKey }))
-            .then(() => pkg);
+    const activateKey = async ({ key, pkg, mailboxPassword, address }) => {
+        const PrivateKey = await pmcw.encryptPrivateKey(pkg, mailboxPassword);
+        const SignedKeyList = await keysModel.signedKeyList(address.ID, {
+            mode: 'create',
+            keyID: key.ID,
+            privateKey: PrivateKey
+        });
+
+        await Key.activate(key.ID, { PrivateKey, SignedKeyList });
+
+        return pkg;
     };
 
     /**
@@ -100,7 +107,7 @@ function decryptKeys(pmcw, notification, Key, keyInfo, keysModel, setupKeys, get
                                 : keysModel.getPrivateKeys(MAIN_KEY)[0];
                             return setupKeys
                                 .decryptMemberKey(key, signingKey)
-                                .then((pkg) => activateKey(key, pkg, mailboxPassword))
+                                .then((pkg) => activateKey({ key, pkg, mailboxPassword, address }))
                                 .then((pkg) => formatKey({ key, pkg, address }));
                         }
                         return pmcw
