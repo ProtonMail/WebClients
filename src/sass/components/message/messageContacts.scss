@@ -19,11 +19,28 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    min-width: 0;
+    width: 100%; /* for IE11 bug */
 }
-
+.messageContacts-list-item {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: calc(100% - 2rem);
+}
+.messageContacts-list-item > *,
+.messageContacts-name-email > * {
+    min-width: 0;
+}
+.messageContacts-name-email {
+    display: flex;
+}
 .messageContacts-email {
     font-style: italic;
     color: $default-color-medium;
+}
+
+.messageContacts-message-address-wrapper {
+    white-space: nowrap;
 }
 
 .messageContacts-container svg.pgp {
@@ -54,5 +71,5 @@
 
 .messageContacts-btn-compose { color: $primary }
 
-.messageContacts-list-item { display: flex }
+
 .messageContacts-list-item .messageAddressActions-container { padding: 0 .25em }

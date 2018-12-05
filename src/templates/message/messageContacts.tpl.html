@@ -2,12 +2,16 @@
     <span class="messageContacts-where"></span>
     <ul class="messageContacts-list">
        <li class="messageContacts-list-item" ng-repeat="email in model track by $id(email)">
-            <span title="{{ ::email | contact:'Raw'}}">{{ ::email | contact:'Name' }}</span>
-            <em class="messageContacts-email">{{ ::email | contact:'Raw' }}</em>
-            <message-address-actions
-                data-email="email"
-                data-message-id="messageId"></message-address-actions>
-            <message-contacts-icon></message-contacts-icon>
+            <div class="messageContacts-name-email" title="{{ ::email | contact:'Raw'}}">
+                <span class="messageContacts-name ellipsis">{{ ::email | contact:'Name' }}</span>
+                <em class="messageContacts-email ellipsis">{{ ::email | contact:'Address' }}</em>
+            </div>
+            <div class="messageContacts-message-address-wrapper">
+                <message-address-actions
+                    data-email="email"
+                    data-message-id="messageId"></message-address-actions>
+                <message-contacts-icon></message-contacts-icon>
+            </div>
         </li>
     </ul>
 </div>
