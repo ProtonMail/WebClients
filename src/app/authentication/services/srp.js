@@ -16,7 +16,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
      * @param  {Uint8Array} serverEphemeral
      * @return {Object}
      */
-    function generateProofs(len, hash, modulus, hashedPassword, serverEphemeral) {
+    async function generateProofs(len, hash, modulus, hashedPassword, serverEphemeral) {
         function toBN(arr) {
             const reversed = new Uint8Array(arr.length);
             for (let i = 0; i < arr.length; i++) {
@@ -36,7 +36,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
 
         const generator = new asmCrypto.BigNumber(2);
 
-        let multiplier = toBN(hash(openpgp.util.concatUint8Array([fromBN(generator), modulus])));
+        let multiplier = toBN(await hash(openpgp.util.concatUint8Array([fromBN(generator), modulus])));
 
         modulus = toBN(modulus);
         serverEphemeral = toBN(serverEphemeral);
@@ -90,7 +90,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
 
             clientEphemeral = modulus.power(generator, clientSecret);
             scramblingParam = toBN(
-                hash(openpgp.util.concatUint8Array([fromBN(clientEphemeral), fromBN(serverEphemeral)]))
+                await hash(openpgp.util.concatUint8Array([fromBN(clientEphemeral), fromBN(serverEphemeral)]))
             );
         } while (scramblingParam.compare(0) === 0); // Very unlikely
 
@@ -106,10 +106,10 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
             .divide(modulus.subtract(1)).remainder;
         const sharedSession = modulus.power(subtracted, exponent);
 
-        const clientProof = hash(
+        const clientProof = await hash(
             openpgp.util.concatUint8Array([fromBN(clientEphemeral), fromBN(serverEphemeral), fromBN(sharedSession)])
         );
-        const serverProof = hash(
+        const serverProof = await hash(
             openpgp.util.concatUint8Array([fromBN(clientEphemeral), clientProof, fromBN(sharedSession)])
         );
 
@@ -161,9 +161,10 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
      */
     async function verifyModulus(modulusParsed) {
         try {
+            const publicKeys = await openpgp.key.readArmored(SRP_MODULUS_KEY);
             const { verified = NOT_SIGNED } = await pmcrypto.verifyMessage({
                 message: modulusParsed,
-                publicKeys: openpgp.key.readArmored(SRP_MODULUS_KEY).keys
+                publicKeys: publicKeys.keys
             });
 
             if (verified !== SIGNED_AND_VALID) {
@@ -215,81 +216,72 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
         }
 
         let salt = '';
+
         if (authVersion >= 3) {
             salt = pmcrypto.decode_base64(infoResp.data.Salt);
         }
 
-        return passwords
-            .hashPassword({
+        try {
+            const hashed = await passwords.hashPassword({
                 version: authVersion,
                 password: creds.Password,
                 salt,
                 username: creds.Username,
                 modulus
+            });
+
+            proofs = await generateProofs(2048, srpHasher, modulus, hashed, serverEphemeral);
+
+            if (proofs.Type !== 'Success') {
+                return Promise.reject({
+                    error_description: proofs.Description
+                });
+            }
+        } catch (err) {
+            return Promise.reject({
+                error_description: err.message
+            });
+        }
+
+        const httpReq = {
+            method,
+            noNotify: true, // TODO: The SRP is all broken. It is going to be removed soon.
+            url: url.get() + endpoint,
+            data: _.extend(req, {
+                SRPSession: session,
+                ClientEphemeral: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientEphemeral)),
+                ClientProof: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientProof)),
+                TwoFactorCode: creds.TwoFactorCode
             })
-            .then(
-                (hashed) => {
-                    proofs = generateProofs(2048, srpHasher, modulus, hashed, serverEphemeral);
+        };
 
-                    if (proofs.Type !== 'Success') {
-                        return Promise.reject({
-                            error_description: proofs.Description
-                        });
-                    }
+        if (angular.isDefined(headers)) {
+            httpReq.headers = headers;
+        }
 
-                    const httpReq = {
-                        method,
-                        noNotify: true, // TODO: The SRP is all broken. It is going to be removed soon.
-                        url: url.get() + endpoint,
-                        data: _.extend(req, {
-                            SRPSession: session,
-                            ClientEphemeral: pmcrypto.encode_base64(
-                                pmcrypto.arrayToBinaryString(proofs.ClientEphemeral)
-                            ),
-                            ClientProof: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientProof)),
-                            TwoFactorCode: creds.TwoFactorCode
-                        })
-                    };
-                    if (angular.isDefined(headers)) {
-                        httpReq.headers = headers;
-                    }
+        try {
+            const resp = await $http(httpReq);
 
-                    return $http(httpReq);
-                },
-                (err) => {
-                    return Promise.reject({
-                        error_description: err.message
-                    });
-                }
-            )
-            .then(
-                (resp) => {
-                    if (
-                        pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ExpectedServerProof)) ===
-                        resp.data.ServerProof
-                    ) {
-                        return Promise.resolve(_.extend(resp, { authVersion }));
-                    }
+            if (
+                pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ExpectedServerProof)) ===
+                resp.data.ServerProof
+            ) {
+                return Promise.resolve(_.extend(resp, { authVersion }));
+            }
+        } catch (error) {
+            const { data = {} } = error || {};
 
-                    return Promise.reject({
-                        error_description: 'Invalid server authentication'
-                    });
-                },
-                (error) => {
-                    const { data = {} } = error || {};
+            handle10003(data);
 
-                    handle10003(data);
+            if (data.Error) {
+                return Promise.reject({
+                    error_description: data.Error,
+                    usedFallback: useFallback
+                });
+            }
 
-                    if (data.Error) {
-                        return Promise.reject({
-                            error_description: data.Error,
-                            usedFallback: useFallback
-                        });
-                    }
-
-                    return Promise.reject(error);
-                }
-            );
+            return Promise.reject(error);
+        }
     }
 
     async function randomVerifier(password) {
