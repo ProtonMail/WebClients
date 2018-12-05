@@ -140,8 +140,8 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
             _.flatten,
             _.values
         )(packets);
-        const bodyMessage = await pmcw.getMessage(value);
-        message.Body = bodyMessage.armor();
+
+        message.Body = await pmcw.armorBytes(value);
 
         return { keys: asymmetric.slice(ownPublicKeys.length), encrypted, sessionKey };
     };
