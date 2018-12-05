@@ -119,7 +119,7 @@
                 ></message-contacts>
                 <div class="recipients-details-size"><span translate-context="Label for the message size when displaying email details" translate>Size:</span> {{ ::message.Size | bytes }}</div>
                 <div class="encrypted-subject" ng-if="message.encryptedSubject">
-                    <i class="fa fa-lock"></i>
+                    <i class="fa fa-lock encrypted-subject-icon" pt-tooltip-translate="Subject is end-to-end encrypted" pt-tooltip-translate-context="Tooltip"></i>
                     <span
                         translate
                         translate-context="Title"

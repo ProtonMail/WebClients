@@ -2,11 +2,13 @@
 
 .messageContacts-where,
 .encrypted-subject .header-name,
-.encrypted-subject i {
+.encrypted-subject-icon {
     margin-right: .5em;
     color: $default-color-medium
 }
-
+.encrypted-subject-icon {
+    padding-top: .5em;
+}
 
 .encrypted-subject .header-name {
     margin-right: 0;
