@@ -74,6 +74,7 @@ function contactDetailsModel(
     function prepare(scope) {
         const params = angular.copy(contactSchema.contactAPI);
         const contactID = scope.contact.ID || CONTACT_ADD_ID;
+        const MAP_EMAIL_POS = {};
 
         Object.keys(scope.model).forEach((key) => {
             const child = scope.model[key];
@@ -93,6 +94,9 @@ function contactDetailsModel(
 
                         const contactEncryptModel = contactEncryptionAddressMap.get(contactID, email);
                         const card = contactEncryptionSaver.build(helperCard, email, contactEncryptModel);
+
+                        // Save position to attach group to the new index (ex: post reorder)
+                        MAP_EMAIL_POS[vCardArgs.group] = emailProperty.group;
                         params.vCard = vcardService.merge([params.vCard, card]);
                     });
                     break;
@@ -122,7 +126,12 @@ function contactDetailsModel(
                                 .toString();
 
                             if (value.length) {
-                                params.vCard.add(item.type, cleanValue(escapeValue(value)), getParams(item));
+                                const cfg = getParams(item);
+
+                                // Import the new position if there was a re-order
+                                const group = MAP_EMAIL_POS[cfg.group] || cfg.group;
+                                const opt = { ...cfg, group };
+                                params.vCard.add(item.type, cleanValue(escapeValue(value)), opt);
                             }
 
                             return;
