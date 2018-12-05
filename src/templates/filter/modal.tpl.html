@@ -138,36 +138,41 @@
                     <div class="alert pm_grid" ng-show="ctrl.hasMove">
 
                         <div class="col-1-4">
-                            <label>
+                            <label class="filter-modal-label">
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="inbox"></custom-radio>
+                                <i class="fa fa-inbox"></i>
                                 <span class="ellipsis" translate translate-context="Label">Inbox</span>
                             </label>
                         </div>
 
                         <div class="col-1-4">
-                            <label>
+                            <label class="filter-modal-label">
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="archive"></custom-radio>
+                                <i class="fa fa-archive"></i>
                                 <span class="ellipsis" translate translate-context="Label">Archive</span>
                             </label>
                         </div>
 
                         <div class="col-1-4">
-                            <label>
+                            <label class="filter-modal-label">
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="spam"></custom-radio>
+                                <i class="fa fa-ban"></i>
                                 <span class="ellipsis" translate translate-context="Label">Spam</span>
                             </label>
                         </div>
 
                         <div class="col-1-4">
-                            <label>
+                            <label class="filter-modal-label">
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="trash"></custom-radio>
+                                <i class="fa fa-trash-o"></i>
                                 <span class="ellipsis" translate translate-context="Label">Trash</span>
                             </label>
                         </div>
 
                         <div class="col-1-4" ng-repeat="folder in ctrl.folders track by folder.ID">
-                            <label>
+                            <label class="filter-modal-label">
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.Name }}"></custom-radio>
+                                <i class="filter-modal-label-item-icon fa" ng-class="{ 'fa-folder': folder.Exclusive, 'fa-tag': !folder.Exclusive }" ng-style="{ color: folder.Color }"></i>
                                 <span class="ellipsis" title="{{ ::folder.Name }}">{{ ::folder.Name }}</span>
                             </label>
                         </div>
