@@ -267,7 +267,7 @@ function messageModel(
         async encryptBody(publicKeys) {
             try {
                 const privateKeys = keysModel.getPrivateKeys(this.From.ID)[0];
-                const { data } = pmcw.encryptMessage({
+                const { data } = await pmcw.encryptMessage({
                     data: this.getDecryptedBody(),
                     publicKeys: await pmcw.getKeys(publicKeys),
                     privateKeys,
