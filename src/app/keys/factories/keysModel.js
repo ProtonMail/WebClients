@@ -1,5 +1,6 @@
 import { KEY_MODE, MAIN_KEY } from '../../constants';
 import { removeFlag } from '../../../helpers/message';
+import { addGetKeys } from '../../../helpers/key';
 
 const { ENCRYPTED, ENCRYPTED_AND_SIGNED } = KEY_MODE;
 
@@ -76,16 +77,16 @@ function keysModel(dispatchers, pmcw) {
      * @param {String} options.keyID
      * @param {Integer} options.newFlags
      * @param {Object<Key>} options.privateKeyObject
-     * @return {Array<Object>} keys
+     * @return {Promise<Array>} keys
      */
-    const getKeys = (privateKeys = [], { mode, keyID, newFlags, privateKeyObject }) => {
-        const keys = privateKeys.reduce((acc, key) => {
+    const getKeys = async (privateKeys = [], { mode, keyID, newFlags, privateKeyObject }) => {
+        const keys = (await addGetKeys(privateKeys, 'PrivateKey')).reduce((acc, key) => {
             if (['delete', 'set-primary', 'create'].includes(mode) && key.ID === keyID) {
                 return acc;
             }
 
             acc.push({
-                Fingerprint: pmcw.getFingerprint(pmcw.getKeys(key.PrivateKey)[0]),
+                Fingerprint: pmcw.getFingerprint(key.keys[0]),
                 Flags: getFlags(mode, key, keyID, newFlags)
             });
 
@@ -120,12 +121,12 @@ function keysModel(dispatchers, pmcw) {
      * @param {String} options.privateKey If the request changes which key is primary, it's signed by the new one
      * @param {String} options.keyID
      * @param {Integer} options.newFlags flags we want to add
-     * @return {Object} SignedKeyList
+     * @return {Promise<Object>} SignedKeyList
      */
     const signedKeyList = async (addressID = MAIN_KEY, { mode, privateKey, keyID, newFlags } = {}) => {
         const privateKeys = getPrivateKeys(addressID);
-        const [privateKeyObject] = privateKey ? pmcw.getKeys(privateKey) : privateKeys; // Only the primary key signs
-        const Data = JSON.stringify(getKeys(privateKeys, { mode, keyID, newFlags, privateKeyObject }));
+        const [privateKeyObject] = privateKey ? await pmcw.getKeys(privateKey) : privateKeys; // Only the primary key signs
+        const Data = JSON.stringify(await getKeys(privateKeys, { mode, keyID, newFlags, privateKeyObject }));
         const { signature: Signature } = await pmcw.signMessage({
             data: Data,
             privateKeys: [privateKeyObject],
