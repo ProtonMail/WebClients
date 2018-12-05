@@ -151,11 +151,14 @@ function setupKeys(passwords, pmcw, webcrypto, Key, keysModel, memberApi) {
             privateKeys
         });
 
+        const SignedKeyList = await keysModel.signedKeyList(AddressID, { mode: 'reset', privateKey: PrivateKey });
+
         return {
             AddressID,
             UserKey: PrivateKey,
             MemberKey,
-            Token
+            Token,
+            SignedKeyList
         };
     }
 
