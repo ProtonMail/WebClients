@@ -16,13 +16,15 @@ function passwords($q, gettextCatalog, webcrypto) {
         return name.replace(/\.|-|_/g, '').toLowerCase();
     }
 
-    function expandHash(str) {
-        return openpgp.util.concatUint8Array([
+    async function expandHash(str) {
+        const list = await Promise.all([
             openpgp.crypto.hash.sha512(pmcrypto.binaryStringToArray(str + '\x00')),
             openpgp.crypto.hash.sha512(pmcrypto.binaryStringToArray(str + '\x01')),
             openpgp.crypto.hash.sha512(pmcrypto.binaryStringToArray(str + '\x02')),
             openpgp.crypto.hash.sha512(pmcrypto.binaryStringToArray(str + '\x03'))
         ]);
+
+        return openpgp.util.concatUint8Array(list);
     }
 
     function computeKeyPassword(password, salt) {
