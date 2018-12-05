@@ -6,7 +6,7 @@ function reactivateKeys(
     addressKeysViewModel,
     authentication,
     Key,
-    keyModels,
+    keysModel,
     eventManager,
     gettextCatalog,
     passwords,
@@ -117,7 +117,7 @@ function reactivateKeys(
                 const keyPassword = await passwords.computeKeyPassword(oldPassword, KeySalt);
                 const decryptedKey = await pmcw.decryptPrivateKey(key.PrivateKey, keyPassword);
                 const privateKey = await pmcw.encryptPrivateKey(decryptedKey, password);
-                const SignedKeyList = await keyModels.signedKeyList(address.ID, {
+                const SignedKeyList = await keysModel.signedKeyList(address.ID, {
                     mode: 'create',
                     keyID: key.ID,
                     privateKey
