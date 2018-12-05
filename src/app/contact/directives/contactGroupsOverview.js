@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import tooltipModel from '../../utils/helpers/tooltipHelper';
+
 /* @ngInject */
 function contactGroupsOverview(contactGroupModel, contactEmails, dispatchers) {
     const toLabels = (list = []) => {
@@ -8,6 +10,42 @@ function contactGroupsOverview(contactGroupModel, contactEmails, dispatchers) {
             item && acc.push(item);
             return acc;
         }, []);
+    };
+
+    /**
+     * Generate a list item for a group, we create the tooltip from here
+     * to prevent a watcher inside pt-tootlip, to reresh it if we change
+     * the title.
+     * @param  {String} options.Name  Group's name
+     * @param  {String} options.Color Group's color
+     * @return {Object}
+     */
+    const getTpl = ({ Name, Color = 'inherit' }) => {
+        const li = document.createElement('LI');
+        li.className = 'contactGroupsOverview-label';
+        li.insertAdjacentHTML('beforeend', '<i aria-hidden="true" class="fa fa-users"></i>');
+        li.style.color = Color;
+
+        const tooltip = tooltipModel(li, { title: Name });
+        return { li, tooltip };
+    };
+
+    /**
+     * Create the list of groups + ellipsis
+     * @param  {Element} node
+     * @param  {Array} groups
+     * @return {Array}        [...Function]
+     */
+    const makeHTML = (node, groups = []) => {
+        const unsubscribe = [];
+        node.innerHTML = '';
+        groups.forEach((group) => {
+            const { li, tooltip } = getTpl(group);
+            unsubscribe.push(() => tooltip.dispose());
+            node.appendChild(li);
+        });
+        node.insertAdjacentHTML('beforeend', '<i class="fa fa-ellipsis-h contactGroupsOverview-ellipsis" aria-hidden="true"></i>');
+        return unsubscribe;
     };
 
     return {
@@ -20,18 +58,26 @@ function contactGroupsOverview(contactGroupModel, contactEmails, dispatchers) {
         templateUrl: require('../../../templates/contact/contactGroupsOverview.tpl.html'),
         link(scope, el, { limit = 3, type }) {
             const { on, unsubscribe } = dispatchers();
-
-            scope.groups = [];
-            scope.color = ({ Color: color = 'inherit' } = {}) => ({ color });
+            const toolTips = [];
+            const unsubscribeToolTips = () => {
+                toolTips.forEach((cb) => {
+                    cb();
+                });
+                toolTips.length = 0;
+            };
 
             const getLabels = () => {
                 const { LabelIDs = [] } = scope.contact || contactEmails.findEmail(scope.email) || {};
                 return LabelIDs;
             };
 
-            scope.getName = ({ Name }) => Name;
+            // Refresh tooltips + and register unsubscribe cb
+            const render = (list = []) => {
+                toolTips.push(...makeHTML(el[0], list));
+            };
 
             const build = () => {
+                unsubscribeToolTips();
                 const LabelIDs = getLabels();
                 // Check if there is custom labels
                 if (LabelIDs.length) {
@@ -42,27 +88,30 @@ function contactGroupsOverview(contactGroupModel, contactEmails, dispatchers) {
                         const list = total ? angular.copy(labels.slice(0, limit)) : [];
 
                         el[0].setAttribute('data-overflow', total > limit);
-                        return (scope.groups = list);
+                        return render(list);
                     }
 
-                    return (scope.groups = angular.copy(labels));
+                    return render(labels);
                 }
-                scope.groups.length = 0;
+                return render();
             };
 
+            const refresh = () => _.defer(build, 160);
+
             on('contacts', (e, { type }) => {
-                if (type === 'contactsUpdated') {
-                    _.defer(() => scope.$applyAsync(build), 160);
-                }
+                (type === 'contactsUpdated') && refresh();
             });
 
             on('contactGroupModel', (e, { type = '' }) => {
-                /^cache\.(refresh|remove)$/.test(type) && _.defer(() => scope.$applyAsync(build), 160);
+                ['cache.refresh', 'cache.remove'].includes(type) && refresh();
             });
 
             build();
 
-            scope.$on('$destroy', unsubscribe);
+            scope.$on('$destroy', () => {
+                unsubscribe();
+                unsubscribeToolTips();
+            });
         }
     };
 }

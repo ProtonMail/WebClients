@@ -24,8 +24,8 @@
                 ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue} | orderBy: 'Order')) track by label.ID">
                 <label class="dropdownGroups-option-label">
                     <div class="dropdownGroups-option-name">
-                        <i class="fa fa-users" ng-style="::color(label)"></i>
-                        <span class="ellipsis dropdownGroups-option-value">{{ ::label.Name }}</span>
+                        <i class="fa fa-users" ng-style="color(label)"></i>
+                        <span class="ellipsis dropdownGroups-option-value">{{ label.Name }}</span>
                     </div>
                     <custom-checkbox
                         data-class="dropdownGroups-option-checkbox"
