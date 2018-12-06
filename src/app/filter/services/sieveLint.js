@@ -2,12 +2,15 @@ import { FILTER_VERSION } from '../../constants';
 
 /* @ngInject */
 function sieveLint(Filter) {
-    let wasValid = true;
+    const lint = async (text, Version = FILTER_VERSION) => {
+        const { data = {} } = await Filter.check({ Version, Sieve: text });
+        return data.Issues || [];
+    };
 
     /**
      * Uses the protonmail API to find errors in the sieve code.
      */
-    function register() {
+    function init() {
         window.CodeMirror.registerHelper('lint', 'sieve', (text) => {
             if (text.trim() === '') {
                 const line = text.split('\n')[0];
@@ -21,27 +24,10 @@ function sieveLint(Filter) {
                 ];
             }
 
-            return Filter.check({
-                Version: FILTER_VERSION,
-                Sieve: text
-            }).then((response) => {
-                if (response.status !== 200) {
-                    return [];
-                }
-                wasValid = response.data.Issues.length === 0;
-                return response.data.Issues;
-            });
+            return lint(text);
         });
     }
 
-    function lastCheckWasValid() {
-        return wasValid;
-    }
-
-    function resetLastCheck() {
-        wasValid = true;
-    }
-
-    return { init: register, lastCheckWasValid, resetLastCheck };
+    return { init, run: lint };
 }
 export default sieveLint;

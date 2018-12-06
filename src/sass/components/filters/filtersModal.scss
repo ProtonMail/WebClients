@@ -101,6 +101,11 @@
 
 
 /* Labels */
+.filter-modal-label-container,
+.filter-modal-vacation,
+.filter-modal-markdetails {
+    border: 1px solid transparent;
+}
 
 .filter-modal-label-container {
     @include flexRow();
@@ -124,6 +129,23 @@
 .filter-modal-simple .filter-complex-only  {
         display: none;
 }
+
+[data-validity*="sieve"] [id="filterScriptContainer"] .CodeMirror,
+[data-validity*="conditions"] [data-mode="conditions"],
+[data-validity*="action"] [data-mode="action"],
+[data-validity*="actions:labels"] [data-mode="action"] .filter-modal-label-container,
+[data-validity*="actions:mark"] [data-mode="action"] .filter-modal-markdetails,
+[data-validity*="actions:vacation"] [data-mode="action"] .filter-modal-vacation,
+[data-validity*="noaction"] [data-mode="action"] .filterModal-checkbox label {
+    border-color: $red;
+}
+
+[data-validity*="action"] [data-mode="action"] legend,
+[data-validity*="conditions"] [data-mode="conditions"] legend {
+    color: $red;
+}
+
+
 
 /* float switching to give each column there own rows doesn't work in flex boxes */
 body.appConfigBody-is-mobile .filter-modal-complex {

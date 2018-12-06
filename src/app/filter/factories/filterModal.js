@@ -16,6 +16,7 @@ function filterModal(
     labelModal,
     labelsModel,
     sieveLint,
+    filterValidator,
     userType
 ) {
     const TRANSLATIONS = {
@@ -214,8 +215,6 @@ function filterModal(
                     Version: FILTER_VERSION
                 };
 
-                sieveLint.resetLastCheck();
-
                 if (params.mode === 'simple') {
                     ctrl.mode = 'simple';
                     ctrl.filter.Simple = {
@@ -293,65 +292,6 @@ function filterModal(
                 return false;
             };
 
-            ctrl.valid = () => {
-                let pass = true;
-
-                // Check name
-                const { Name = '' } = ctrl.filter;
-                if (!Name.length) {
-                    return false;
-                }
-
-                if (Object.keys(ctrl.filter.Simple || {}).length > 0) {
-                    // Simple mode
-                    // Check conditions
-                    let attachmentsCondition = 0;
-
-                    _.each(ctrl.filter.Simple.Conditions, (condition) => {
-                        pass = pass && condition.Type.value !== 'select';
-
-                        if (
-                            condition.Type.value === 'subject' ||
-                            condition.Type.value === 'sender' ||
-                            condition.Type.value === 'recipient'
-                        ) {
-                            pass = pass && condition.Values.length > 0;
-                        }
-
-                        if (condition.Type.value === 'attachments') {
-                            attachmentsCondition++;
-                        }
-                    });
-
-                    pass = pass && attachmentsCondition <= 1;
-
-                    // Check actions
-                    pass = pass && (ctrl.hasLabels || ctrl.hasMove || ctrl.hasMark || ctrl.hasVacation);
-
-                    if (ctrl.hasLabels === true) {
-                        pass = pass && _.filter(ctrl.filter.Simple.Actions.Labels, { Selected: true }).length > 0;
-                    }
-
-                    if (ctrl.hasMark === true) {
-                        pass =
-                            pass && (ctrl.filter.Simple.Actions.Mark.Starred || ctrl.filter.Simple.Actions.Mark.Read);
-                    }
-
-                    if (ctrl.hasMove === true) {
-                        pass = pass && !!ctrl.filter.Simple.Actions.Move;
-                    }
-
-                    if (ctrl.hasVacation === true) {
-                        pass = pass && !!ctrl.filter.Simple.Actions.Vacation;
-                    }
-
-                    return pass;
-                }
-                // Complex mode
-                // Check sieve script content
-                return ctrl.filter.Sieve.length > 0 && sieveLint.lastCheckWasValid();
-            };
-
             ctrl.addCondition = () => {
                 ctrl.filter.Simple.Conditions.push({
                     Type: _.head(ctrl.types),
@@ -415,7 +355,21 @@ function filterModal(
                     .catch(onError);
             };
 
-            ctrl.save = () => {
+            ctrl.resetValidity = () => {
+                this.validator = [];
+            };
+
+            ctrl.save = async () => {
+                const { valid, errors } = await filterValidator(this);
+
+                $scope.$applyAsync(() => {
+                    this.validator = errors;
+                });
+
+                if (!valid) {
+                    return console.log(errors);
+                }
+
                 if (params.mode === 'complex') {
                     // we need to wait on codemirror to update the ng-model
                     $timeout(
@@ -465,8 +419,6 @@ function filterModal(
 
                 networkActivityTracker.track(requestUpdate(clone));
             };
-
-            ctrl.cancel = params.close;
 
             ctrl.initialization();
         }

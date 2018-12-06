@@ -1,9 +1,16 @@
-<div class="pm_modal {{ctrl.class}} filter-modal-container" ng-class="ctrl.mode === 'complex' ? 'filter-modal-complex' : 'filter-modal-simple'" role="dialog">
+<div
+    class="pm_modal {{ctrl.class}} filter-modal-container"
+    ng-class="ctrl.mode === 'complex' ? 'filter-modal-complex' : 'filter-modal-simple'"
+    role="dialog">
 
     <form
         class="modal-dialog"
         name="addFilterModal"
+        ng-click="ctrl.resetValidity()"
+        ng-submit="ctrl.save()"
+        data-validity="{{ctrl.validator}}"
         novalidate>
+
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
 
         <div class="modal-content">
@@ -30,7 +37,7 @@
                     filters, <a target="_blank" href="https://protonmail.com/support/knowledge-base/sieve/">click here</a>.</p>
                 <sieve-label-input sieve="ctrl.filter.Sieve"></sieve-label-input>
 
-                <fieldset class="filter-simple-only">
+                <fieldset data-mode="conditions" class="filter-simple-only">
 
                     <legend translate-context="Title" translate translate-context="Title">Conditions</legend>
 
@@ -100,7 +107,10 @@
                                         placeholder-translate-context="Filter modal condition"
                                         ng-keyup="$event.keyCode === 13 && ctrl.addValue(condition)"
                                         ng-blur="ctrl.addValue(condition)"  />
-                                    <button class="filter-modal-add-condition-button pm_button" ng-disabled="!condition.value" type="submit">
+                                    <button
+                                        class="filter-modal-add-condition-button pm_button"
+                                        ng-disabled="!condition.value"
+                                        type="button">
                                         <i class="fa fa-check"></i>
                                     </button>
                                 </div>
@@ -110,17 +120,20 @@
                     <button type="button" class="pm_button filterModal-add-condition-button" ng-click="ctrl.addCondition()" translate translate-context="Action">Add condition</button>
                 </fieldset>
 
-                <fieldset class="filter-simple-only">
+                <fieldset data-mode="action" class="filter-simple-only">
                     <legend translate-context="Title" translate translate-context="Title">Actions</legend>
                     <label>
-                        <custom-checkbox data-custom-ng-model="ctrl.hasLabels"></custom-checkbox>
+                        <custom-checkbox
+                            class="filterModal-checkbox"
+                            data-custom-ng-model="ctrl.hasLabels"></custom-checkbox>
                         <span translate-context="Filter modal label" translate>Apply labels</span>
                     </label>
 
                     <div class="alert pm_grid filter-modal-label-container" ng-show="ctrl.hasLabels">
                         <div class="col-1-4" ng-repeat="label in ctrl.filter.Simple.Actions.Labels track by label.ID | orderBy: 'Order'">
                             <label class="filter-modal-label">
-                                <custom-checkbox data-custom-ng-model="label.Selected"></custom-checkbox>
+                                <custom-checkbox
+                                    data-custom-ng-model="label.Selected"></custom-checkbox>
                                 <i class="fa" ng-class="{ 'fa-folder': label.Exclusive, 'fa-tag': !label.Exclusive }" ng-style="{color: label.Color}"></i>
                                 <span class="ellipsis" title="{{ ::label.Name }}">{{ ::label.Name }}</span>
                             </label>
@@ -131,7 +144,9 @@
                     </div>
 
                     <label>
-                        <custom-checkbox data-custom-ng-model="ctrl.hasMove"></custom-checkbox>
+                        <custom-checkbox
+                            class="filterModal-checkbox"
+                            data-custom-ng-model="ctrl.hasMove"></custom-checkbox>
                         <span translate-context="Filter modal label" translate>Move to</span>
                     </label>
 
@@ -183,11 +198,13 @@
                     </div>
 
                     <label>
-                        <custom-checkbox data-custom-ng-model="ctrl.hasMark"></custom-checkbox>
+                        <custom-checkbox
+                            class="filterModal-checkbox"
+                            data-custom-ng-model="ctrl.hasMark"></custom-checkbox>
                         <span translate-context="Filter modal label" translate>Mark as</span>
                     </label>
 
-                    <div class="alert pm_grid" ng-show="ctrl.hasMark">
+                    <div class="alert pm_grid filter-modal-markdetails" ng-show="ctrl.hasMark">
                         <div class="col-1-4">
                             <label>
                                 <custom-checkbox data-custom-ng-model="ctrl.filter.Simple.Actions.Mark.Read"></custom-checkbox>
@@ -204,13 +221,15 @@
 
                     </div>
 
-                    <div ng-show="::ctrl.isPaid">
+                    <div ng-if="::ctrl.isPaid">
                         <label>
-                            <custom-checkbox data-custom-ng-model="ctrl.hasVacation"></custom-checkbox>
+                            <custom-checkbox
+                                class="filterModal-checkbox"
+                                data-custom-ng-model="ctrl.hasVacation"></custom-checkbox>
                             <span translate-context="Filter modal label" translate>Send auto reply</span>
                         </label>
 
-                        <div class="alert pm_grid" ng-show="ctrl.hasVacation">
+                        <div class="alert pm_grid filter-modal-vacation" ng-show="ctrl.hasVacation">
                             <squire id="vacationMessage" class="no-resize error_tooltip" allow-data-uri="true" data-value="ctrl.filter.Simple.Actions.Vacation"
                                 data-type-content="OOF-Message"></squire>
                         </div>
@@ -219,16 +238,18 @@
             </div>
         </div>
 
-        <div class="modal-footer">
-            <button type="button" class="pm_button disabled-if-network-activity" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+        <footer class="modal-footer">
             <button
                 type="button"
-                ng-click="ctrl.save()"
+                class="pm_button disabled-if-network-activity"
+                ng-click="ctrl.cancel()"
+                translate
+                translate-context="Action">Cancel</button>
+            <button
                 class="pm_button primary pull-right disabled-if-network-activity"
-                ng-disabled="ctrl.valid() === false"
                 translate
                 translate-context="Action">Save</button>
-        </div>
+        </footer>
     </form>
     <div class="modal-overlay"></div>
 </div>
