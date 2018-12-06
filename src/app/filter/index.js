@@ -10,9 +10,11 @@ import incomingModel from './factories/incomingModel';
 import spamListModel from './factories/spamListModel';
 import filterAddressModal from './modals/filterAddressModal';
 import sieveLint from './services/sieveLint';
+import filterValidator from './services/filterValidator';
 
 export default angular
     .module('proton.filter', ['proton.utils'])
+    .factory('filterValidator', filterValidator)
     .directive('customFilterList', customFilterList)
     .directive('emailBlockButton', emailBlockButton)
     .directive('emailBlockList', emailBlockList)
