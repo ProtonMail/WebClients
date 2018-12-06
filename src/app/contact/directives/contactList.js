@@ -36,16 +36,18 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 MODEL.cursorID = id;
 
                 const $rows = $items || element.find(`.${CLASSNAMES.ITEM}`);
-                $rows.removeClass(CLASSNAMES.ACTIVE);
-
                 const $row = $rows.has(`[data-contact-id="${unescape(MODEL.cursorID)}"]`);
+                const isCurrentActive = $stateParams.id === id;
 
                 // Focus the checkbox to toggle it with the "space" key
-                $row[0] &&
-                    _rAF(() => {
-                        $row[0].classList.add(CLASSNAMES.ACTIVE);
+                if ($row[0]) {
+
+                    // Ensure we run the $digest to refesh isActive
+                    scope.$applyAsync(() => {
+                        isCurrentActive && $row[0].classList.add(CLASSNAMES.ACTIVE);
                         $row[0].querySelector(CLASSNAMES.CHECKBOX).focus();
                     });
+                }
             };
 
             function updateContacts() {
@@ -120,7 +122,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 });
             };
 
-            const onNextPrevElement = (type) => () => {
+            const onNextPrevElement = (type) => _.throttle(() => {
                 const index = _.findIndex(scope.contacts, { ID: MODEL.cursorID }) || 0;
                 const pos = type === 'DOWN' ? index + 1 : index - 1;
 
@@ -154,7 +156,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                         }
                     );
                 }
-            };
+            }, 50);
 
             function onClick(e) {
                 const { target, shiftKey } = e;
