@@ -73,8 +73,12 @@
                             class="contactLoaderModal-categories-item"
                             ng-repeat="item in ctrl.categories track by item.id">
                             <div class="contactLoaderModal-categories-label">
-                                <strong style="color: {{::item.group.Color}};">{{ ::item.group.Name }}</strong>
-                                <span>({{ ::item.contacts.length }} Contacts)</span>
+                                <strong style="color: {{::item.group.Color}};">
+                                    <span class="ellipsis contactLoaderModal-categories-label-text" title="{{ ::item.group.Name }}">{{ ::item.group.Name }}</span>
+                                </strong><br>
+                                <span>
+                                    ({{ ::item.contacts.length }} <span translate translate-n="item.contacts.length" translate-plural="contacts" translate-context="Info">contact</span>)
+                                </span>
                             </div>
 
                             <div class="pm_select contactLoaderModal-categories-actions">
