@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import timezone from 'moment-timezone';
 
+import '../helpers/setupPmcrypto';
 import paginator from './paginator/index';
 import authentication from './authentication/index';
 import browserSupport from './browserSupport/index';
@@ -163,3 +164,6 @@ angular
         $compileProvider.debugInfoEnabled(debugInfo);
         $qProvider.errorOnUnhandledRejections(debugInfo);
     });
+
+// Load the application
+angular.bootstrap(document, ['proton']);

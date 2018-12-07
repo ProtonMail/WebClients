@@ -1,5 +1,6 @@
-import { MESSAGE_FLAGS } from '../app/constants';
+import * as pmcrypto from 'pmcrypto';
 
+import { MESSAGE_FLAGS } from '../app/constants';
 import { normalizeEmail } from './string';
 
 const { FLAG_RECEIVED, FLAG_SENT, FLAG_RECEIPT_REQUEST, FLAG_IMPORTED } = MESSAGE_FLAGS;

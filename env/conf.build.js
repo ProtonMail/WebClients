@@ -3,6 +3,9 @@ const bindPrefix = (name) => `node_modules/${name}`;
 module.exports = {
     externalFiles: {
         openpgp: ['openpgp/dist/openpgp.worker.min.js', 'openpgp/dist/openpgp.min.js'].map(bindPrefix),
+        openpgp_compat: ['openpgp/dist/compat/openpgp.worker.min.js', 'openpgp/dist/compat/openpgp.min.js'].map(
+            bindPrefix
+        ),
         list: ['.htaccess', 'manifest.json', 'robots.txt']
     },
     vendor_files: {
@@ -34,9 +37,7 @@ module.exports = {
             'ng-intl-tel-input/dist/ng-intl-tel-input.js',
             'hi-base32/build/base32.min.js',
             'cssuseragent/cssua.js',
-            'asmcrypto.js/asmcrypto.js',
             'babel-polyfill/dist/polyfill.js',
-            'pmcrypto/dist/pmcrypto-browser.js',
             'dompurify/dist/purify.js'
         ].map(bindPrefix),
         jsLazy: [

@@ -1,5 +1,7 @@
-window.openpgp = {
-    config: {},
+import { init } from 'pmcrypto';
+
+const openpgp = {
+    config: { versionstring: { indexOf: () => 0 } },
     util: {
         str_to_Uint8Array(str) {
             const bytes = new Uint8Array(str.length);
@@ -16,5 +18,7 @@ window.openpgp = {
             return result.join('');
         }
     },
-    initWorker: function () {}
+    initWorker () {}
 };
+
+init({ openpgp, btoa, atob });

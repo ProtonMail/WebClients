@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import { BigNumber, Modulus } from 'asmcrypto.js';
+import * as pmcrypto from 'pmcrypto';
 
 import CONFIG from '../../config';
 import { SRP_MODULUS_KEY, VERIFICATION_STATUS } from '../../constants';
@@ -22,7 +24,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
             for (let i = 0; i < arr.length; i++) {
                 reversed[arr.length - i - 1] = arr[i];
             }
-            return new asmCrypto.BigNumber(reversed);
+            return BigNumber.fromArrayBuffer(reversed);
         }
 
         function fromBN(bn) {
@@ -34,7 +36,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
             return reversed;
         }
 
-        const generator = new asmCrypto.BigNumber(2);
+        const generator = BigNumber.fromNumber(2);
 
         let multiplier = toBN(await hash(openpgp.util.concatUint8Array([fromBN(generator), modulus])));
 
@@ -42,24 +44,24 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
         serverEphemeral = toBN(serverEphemeral);
         hashedPassword = toBN(hashedPassword);
 
-        const modulusMinusOne = modulus.subtract(1);
+        const modulusMinusOne = modulus.subtract(BigNumber.fromNumber(1));
 
         if (modulus.bitLength !== len) {
             return { Type: 'Error', Description: 'SRP modulus has incorrect size' };
         }
 
-        modulus = new asmCrypto.Modulus(modulus);
+        modulus = new Modulus(modulus);
         multiplier = modulus.reduce(multiplier);
 
-        if (multiplier.compare(1) <= 0 || multiplier.compare(modulusMinusOne) >= 0) {
+        if (multiplier.compare(BigNumber.fromNumber(1)) <= 0 || multiplier.compare(modulusMinusOne) >= 0) {
             return { Type: 'Error', Description: 'SRP multiplier is out of bounds' };
         }
 
-        if (generator.compare(1) <= 0 || generator.compare(modulusMinusOne) >= 0) {
+        if (generator.compare(BigNumber.fromNumber(1)) <= 0 || generator.compare(modulusMinusOne) >= 0) {
             return { Type: 'Error', Description: 'SRP generator is out of bounds' };
         }
 
-        if (serverEphemeral.compare(1) <= 0 || serverEphemeral.compare(modulusMinusOne) >= 0) {
+        if (serverEphemeral.compare(BigNumber.fromNumber(1)) <= 0 || serverEphemeral.compare(modulusMinusOne) >= 0) {
             return { Type: 'Error', Description: 'SRP server ephemeral is out of bounds' };
         }
 
@@ -86,24 +88,24 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
         do {
             do {
                 clientSecret = toBN(webcrypto.getRandomValues(new Uint8Array(len / 8)));
-            } while (clientSecret.compare(len * 2) <= 0); // Very unlikely
+            } while (clientSecret.compare(BigNumber.fromNumber(len * 2)) <= 0); // Very unlikely
 
             clientEphemeral = modulus.power(generator, clientSecret);
             scramblingParam = toBN(
                 await hash(openpgp.util.concatUint8Array([fromBN(clientEphemeral), fromBN(serverEphemeral)]))
             );
-        } while (scramblingParam.compare(0) === 0); // Very unlikely
+        } while (scramblingParam.compare(BigNumber.fromNumber(0)) === 0); // Very unlikely
 
         let subtracted = serverEphemeral.subtract(
             modulus.reduce(modulus.power(generator, hashedPassword).multiply(multiplier))
         );
-        if (subtracted.compare(0) < 0) {
+        if (subtracted.compare(BigNumber.fromNumber(0)) < 0) {
             subtracted = subtracted.add(modulus);
         }
         const exponent = scramblingParam
             .multiply(hashedPassword)
             .add(clientSecret)
-            .divide(modulus.subtract(1)).remainder;
+            .divide(modulus.subtract(BigNumber.fromNumber(1))).remainder;
         const sharedSession = modulus.power(subtracted, exponent);
 
         const clientProof = await hash(
@@ -127,7 +129,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
             for (let i = 0; i < arr.length; i++) {
                 reversed[arr.length - i - 1] = arr[i];
             }
-            return new asmCrypto.BigNumber(reversed);
+            return BigNumber.fromArrayBuffer(reversed);
         }
 
         function fromBN(bn) {
@@ -139,9 +141,9 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
             return reversed;
         }
 
-        const generator = new asmCrypto.BigNumber(2);
+        const generator = BigNumber.fromNumber(2);
 
-        modulus = new asmCrypto.Modulus(toBN(modulus));
+        modulus = new Modulus(toBN(modulus));
         hashedPassword = toBN(hashedPassword);
 
         const verifier = modulus.power(generator, hashedPassword);

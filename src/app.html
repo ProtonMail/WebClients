@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="proton" ng-csp="no-unsafe-eval" class="protonmail">
+<html lang="en" ng-csp="no-unsafe-eval" class="protonmail">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -81,7 +81,13 @@
         window.location = "https://protonmail.com/compatibility";
     }
 </script>
-<script type="text/javascript" src="openpgp.min.js"></script>
-<script type="text/javascript" src="vendor.js"></script>
+<!-- Browsers with ES module support load this file. -->
+<script type="module" src="openpgp.min.js"></script>
+
+<!-- Older browsers load this file (and module-supporting -->
+<!-- browsers know *not* to load this file). -->
+<script nomodule src="openpgp_compat.min.js"></script>
+
+<script defer type="text/javascript" src="vendor.js"></script>
 </body>
 </html>

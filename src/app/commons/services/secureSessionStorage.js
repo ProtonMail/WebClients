@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import * as pmcrypto from 'pmcrypto';
 
 import { MAILBOX_PASSWORD_KEY, OAUTH_KEY } from '../../constants';
 

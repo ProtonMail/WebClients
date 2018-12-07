@@ -1,3 +1,5 @@
+import * as pmcrypto from 'pmcrypto';
+
 /**
  * Convert file to encoded base 64 string
  * @param  {File} file

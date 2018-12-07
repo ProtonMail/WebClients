@@ -1,3 +1,4 @@
+import '../setupPmcrypto';
 import './authentication/interceptors/httpInterceptor.spec';
 import './utils/services/mailUtils.spec';
 import './conversation/factories/conversationListeners.spec';
