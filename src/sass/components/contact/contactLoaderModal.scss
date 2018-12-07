@@ -83,17 +83,8 @@
     margin-top: .5em
 }
 
-/*
-    to display:
-    xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    (333 contacts)
-    instead of
-    xxxxxxxxxxxxxxxxxxxxxxxxxxxx (3
-    33 contacts)
-
- */
-.contactLoaderModal-categories-label span {
-    white-space: pre;
+.contactLoaderModal-categories-label-text {
+    max-width: 100%;
 }
 
 .contactLoaderModal-categories-actions {
