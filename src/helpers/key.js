@@ -1,3 +1,5 @@
+import * as pmcrypto from 'pmcrypto';
+
 /**
  * Extract public key from the private key
  * @param {String} privateKey

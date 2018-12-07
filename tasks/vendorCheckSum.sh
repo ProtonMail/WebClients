@@ -59,23 +59,26 @@ HASH_VENDOR_LAZY=$(shasum dist/vendorLazy.js | awk '{print  $1}');
 HASH_VENDOR_LAZY2=$(shasum dist/vendorLazy2.js | awk '{print  $1}');
 HASH_STYLE=$(shasum dist/styles.css | awk '{print  $1}');
 
-# No need to recompute them later post edit in place as it comes with the same version of openpgp.
+# OpenPGP files won't change, so we can calculate their hash here
 HASH_OPENPGP=$(shasum dist/openpgp.min.js | awk '{print  $1}');
-HASH_WORKER=$(shasum dist/openpgp.worker.min.js | awk '{print  $1}');
-
+HASH_OPENPGP_COMPAT=$(shasum dist/openpgp_compat.min.js | awk '{print  $1}');
 
 echo " → Replace shasum in place"
 
 replace "s/appLazy.js.map/appLazy.$HASH_APP_LAZY.js.map/g;" dist/appLazy.js;
 replace "s/openpgp.min.js/openpgp.$HASH_OPENPGP.js/g;"  dist/openpgp.worker.min.js
-replace "s/openpgp.worker.min.js/openpgp.worker.$HASH_WORKER.js/g;" dist/vendor.js
+replace "s/openpgp.min.js/openpgp_compat.$HASH_OPENPGP.js/g;"  dist/openpgp_compat.worker.min.js
+
+# Calculate the hash of the workers after we have changed their files
+HASH_WORKER=$(shasum dist/openpgp.worker.min.js | awk '{print  $1}');
+HASH_WORKER_COMPAT=$(shasum dist/openpgp_compat.worker.min.js | awk '{print  $1}');
 
 echo " → Checksum for app + vendor"
 
 HASH_VENDOR=$(shasum dist/vendor.js | awk '{print  $1}');
 
 # Replace assets for lazyLoad inside the app.js. Single source of truth
-replace "s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g;" dist/app.js;
+replace "s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g;s/openpgp.worker.min.js/openpgp.worker.$HASH_WORKER.js/g;s/openpgp_compat.worker.min.js/openpgp_compat.worker.$HASH_WORKER_COMPAT.js/g;" dist/app.js;
 
 # No more updates, let's create its hash
 HASH_APP=$(shasum dist/app.js | awk '{print  $1}');
@@ -83,7 +86,7 @@ HASH_APP=$(shasum dist/app.js | awk '{print  $1}');
 replace "s/app.js.map/app.$HASH_APP.js.map/g;" dist/app.js;
 
 # Last step update index.html with assets
-replace "s/app.js/app.$HASH_APP.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g;s/styles.css/styles.$HASH_STYLE.css/g;s/vendor.js/vendor.$HASH_VENDOR.js/g;s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/openpgp.min.js/openpgp.$HASH_OPENPGP.js/g;" dist/index.html;
+replace "s/app.js/app.$HASH_APP.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g;s/styles.css/styles.$HASH_STYLE.css/g;s/vendor.js/vendor.$HASH_VENDOR.js/g;s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/openpgp.min.js/openpgp.$HASH_OPENPGP.js/g;s/openpgp_compat.min.js/openpgp_compat.$HASH_OPENPGP_COMPAT.js/g;" dist/index.html;
 
 echo " → Write new files"
 echo
@@ -95,6 +98,8 @@ mv dist/vendorLazy2.js dist/vendorLazy2.$HASH_VENDOR_LAZY2.js
 mv dist/styles.css dist/styles.$HASH_STYLE.css
 mv dist/openpgp.min.js dist/openpgp.$HASH_OPENPGP.js
 mv dist/openpgp.worker.min.js dist/openpgp.worker.$HASH_WORKER.js
+mv dist/openpgp_compat.min.js dist/openpgp_compat.$HASH_OPENPGP_COMPAT.js
+mv dist/openpgp_compat.worker.min.js dist/openpgp_compat.worker.$HASH_WORKER_COMPAT.js
 mv dist/vendor.js dist/vendor.$HASH_VENDOR.js
 mv dist/app.js dist/app.$HASH_APP.js
 mv dist/app.js.map dist/app.$HASH_APP.js.map
@@ -108,6 +113,8 @@ echo HASH_VENDOR_LAZY $HASH_VENDOR_LAZY
 echo HASH_VENDOR_LAZY2 $HASH_VENDOR_LAZY2
 echo HASH_OPENPGP $HASH_OPENPGP
 echo HASH_WORKER $HASH_WORKER
+echo HASH_OPENPGP_COMPAT $HASH_OPENPGP_COMPAT
+echo HASH_WORKER_COMPAT $HASH_WORKER_COMPAT
 
 echo
 echo " ✓ Write shasum success"

@@ -1,3 +1,5 @@
+import * as pmcrypto from 'pmcrypto';
+
 /* @ngInject */
 function passwords($q, gettextCatalog, webcrypto) {
     function bcrypt(str, salt) {

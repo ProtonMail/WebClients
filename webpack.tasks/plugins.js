@@ -9,12 +9,14 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AutoDllPlugin = require('autodll-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 const CONFIG = require('../env/conf.build');
 const env = require('../env/config');
 
 const makeSRC = (list) => list.map((file) => path.resolve(file));
 const [OPENPGP_WORKER] = makeSRC(CONFIG.externalFiles.openpgp);
+const [OPENPGP_COMPAT_WORKER] = makeSRC(CONFIG.externalFiles.openpgp_compat);
 
 const minify = () => {
     if (!env.isDistRelease()) {
@@ -52,7 +54,8 @@ const list = [
             flatten: true
         })),
         { from: 'src/i18n', to: 'i18n' },
-        { from: OPENPGP_WORKER, to: 'openpgp.worker.min.js' }
+        { from: OPENPGP_WORKER, to: 'openpgp.worker.min.js' },
+        { from: OPENPGP_COMPAT_WORKER, to: 'openpgp_compat.worker.min.js' }
     ]),
 
     new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
@@ -70,7 +73,12 @@ const list = [
         excludeChunks: ['html', 'app.css'],
         chunks: ['app'],
         chunksSortMode: 'manual',
+        defer: ['app'],
         minify: minify()
+    }),
+
+    new ScriptExtHtmlWebpackPlugin({
+        defaultAttribute: 'defer'
     }),
 
     new webpack.SourceMapDevToolPlugin({
@@ -93,7 +101,7 @@ if (!env.isDistRelease()) {
 if (env.isDistRelease()) {
     list.push(
         new UglifyJSPlugin({
-            exclude: /\/node_modules/,
+            exclude: /\/node_modules\/(?!(asmcrypto\.js|pmcrypto))/,
             parallel: true,
             sourceMap: true,
             uglifyOptions: minifyJS()

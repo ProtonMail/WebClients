@@ -1,3 +1,5 @@
+import * as pmcrypto from 'pmcrypto';
+
 import { ENCRYPTION_DEFAULT } from '../../constants';
 
 /* @ngInject */

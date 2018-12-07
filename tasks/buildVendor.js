@@ -15,11 +15,16 @@ const VENDOR_LAZY_GLOB = makeSRC(vendor_files.jsLazy);
 const VENDOR_LAZY2_GLOB = makeSRC(vendor_files.jsLazy2);
 const VENDOR_LIB_GLOB = ['./src/libraries/{polyfill,tweetWebIntent}.js'];
 const [, OPENPGP] = makeSRC(externalFiles.openpgp);
+const [, OPENPGP_COMPAT] = makeSRC(externalFiles.openpgp_compat);
 
 const INPUT = [
     {
         name: 'openpgp.min',
         src: [OPENPGP]
+    },
+    {
+        name: 'openpgp_compat.min',
+        src: [OPENPGP_COMPAT]
     },
     {
         name: 'vendor',

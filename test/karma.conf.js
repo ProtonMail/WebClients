@@ -6,7 +6,6 @@ module.exports = (config) => {
 
         // list of files / patterns to load in the browser
         files: [
-            'mock.js',
             '../build/vendor.js',
             '../build/vendorLazy.js',
             '../build/vendorLazy2.js',
