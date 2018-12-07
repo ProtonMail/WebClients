@@ -92,6 +92,7 @@ function filterModal(
             ctrl.types = angular.copy(TRANSLATIONS.TYPES);
             ctrl.comparators = angular.copy(TRANSLATIONS.COMPARATORS);
             ctrl.operators = angular.copy(TRANSLATIONS.OPERATORS);
+
             /**
              * Open a modal to create a new folder / label
              * @param  {Number} [Exclusive=0]
@@ -115,8 +116,8 @@ function filterModal(
             function prepareConditions({ Simple = {} } = {}) {
                 const { Conditions = [] } = Simple;
                 const conditions = Conditions.map(({ Type = {}, Comparator = {}, Values = [], value = '' }) => ({
-                    Values,
-                    value,
+                    Values: value ? Values.concat([value]) : Values,
+                    value: value ? '' : value,
                     Type: _.find(ctrl.types, { value: Type.value }),
                     Comparator: _.find(ctrl.comparators, { value: Comparator.value })
                 }));
@@ -222,7 +223,9 @@ function filterModal(
                         Conditions: prepareConditions(model),
                         Actions: prepareActions(model)
                     };
-                } else if (params.mode === 'complex') {
+                }
+
+                if (params.mode === 'complex') {
                     ctrl.mode = 'complex';
                     ctrl.filter.Sieve = model ? model.Sieve : '';
                 }
