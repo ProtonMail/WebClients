@@ -39,7 +39,7 @@
                             <input autofocus type="text" ng-model="ctrl.address" placeholder-translate-context="Example user" placeholder-translate="thomas.anderson" />
                         </div>
                         <div class="col-1-2" ng-show="ctrl.domains.length === 1">
-                            <label class="bold">@{{ ctrl.domain.DomainName }}</label>
+                            <label class="bold"><span class="ellipsis" title="@{{ ctrl.domain.DomainName }}">@{{ ctrl.domain.DomainName }}</span></label>
                         </div>
                         <div class="col-1-2" ng-show="ctrl.domains.length > 1">
                             <span class="pm_select">
