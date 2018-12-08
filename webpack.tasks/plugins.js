@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
@@ -33,17 +32,6 @@ const minify = () => {
     };
 };
 
-const minifyJS = () => {
-    if (!env.isDistRelease()) {
-        return false;
-    }
-
-    return {
-        mangle: true,
-        compress: true
-    };
-};
-
 const list = [
     new webpack.NamedModulesPlugin(),
     // new WebpackNotifierPlugin(),
@@ -71,9 +59,9 @@ const list = [
         inject: 'body',
         hash: false,
         excludeChunks: ['html', 'app.css'],
-        chunks: ['app'],
+        chunks: ['vendorApp', 'app'],
         chunksSortMode: 'manual',
-        defer: ['app'],
+        defer: ['vendorApp', 'app'],
         minify: minify()
     }),
 
@@ -83,7 +71,7 @@ const list = [
 
     new webpack.SourceMapDevToolPlugin({
         filename: '[name].js.map',
-        exclude: ['templates', 'html', 'styles']
+        exclude: ['templates', 'html', 'styles', 'vendorApp']
     })
 ];
 
@@ -99,15 +87,6 @@ if (!env.isDistRelease()) {
 }
 
 if (env.isDistRelease()) {
-    list.push(
-        new UglifyJSPlugin({
-            exclude: /\/node_modules\/(?!(asmcrypto\.js|pmcrypto))/,
-            parallel: true,
-            sourceMap: true,
-            uglifyOptions: minifyJS()
-        })
-    );
-
     list.push(
         new OptimizeCSSAssetsPlugin({
             cssProcessorPluginOptions: {
@@ -126,6 +105,7 @@ if (env.isDistRelease()) {
 
     list.push(
         new ImageminPlugin({
+            cacheFolder: path.resolve('./node_modules/.cache'),
             maxConcurrency: Infinity,
             disable: false,
             test: /\.(jpe?g|png)$/i,

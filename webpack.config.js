@@ -66,5 +66,6 @@ module.exports = {
         ]
     },
 
-    plugins: require('./webpack.tasks/plugins')
+    plugins: require('./webpack.tasks/plugins'),
+    optimization: require('./webpack.tasks/optimization')
 };
