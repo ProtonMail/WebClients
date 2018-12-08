@@ -1,7 +1,8 @@
 #!/bin/bash
 set -eo pipefail
 
-COMMAND=./node_modules/.bin/uglifyjs;
+COMMAND="./node_modules/.bin/terser --mangle --compress";
+CACHE_DIR="./node_modules/.cache/appVendor";
 
 #
 #  Process
@@ -38,25 +39,58 @@ function replace {
 
 function minify {
     if [ -e "./dist/$1.js" ]; then
-        echo " → minify $1";
-        $COMMAND --compress --mangle -o dist/$1.js -- dist/$1.js &
+        echo " - minify $1";
+        $COMMAND -o dist/$1.js -- dist/$1.js &
     fi
 }
 
+function needMinify {
+    local hash=$(shasum "dist/$1.js" | awk '{print  $1}');
+    if [ -f "$CACHE_DIR/$1.$hash.js" ]; then
+        echo true;
+    else
+        echo false;
+    fi
+}
+
+## Compute the hash post minify as we won't change the content and we need it for the cache system
+HASH_VENDOR_CACHE=$(shasum dist/vendor.js | awk '{print  $1}');
+HASH_VENDOR_LAZY=$(shasum dist/vendorLazy.js | awk '{print  $1}');
+HASH_VENDOR_LAZY2=$(shasum dist/vendorLazy2.js | awk '{print  $1}');
+
+if [ ! -d "$CACHE_DIR" ]; then
+    echo " → Create cache directory"
+    mkdir $CACHE_DIR;
+fi
+
+VENDOR_EXIST=$(needMinify "vendor");
+VENDOR_LAZY_EXIST=$(needMinify "vendorLazy");
+VENDOR_LAZY_2_EXIST=$(needMinify "vendorLazy2");
+
 echo " → Minify vendors + vendorsLazy"
 
-minify vendor
-minify vendorLazy
-minify vendorLazy2
+[ "$VENDOR_EXIST" = true ] && echo " - Cache found for vendor";
+[ "$VENDOR_LAZY_EXIST" = true ] && echo " - Cache found for vendorLazy";
+[ "$VENDOR_LAZY_2_EXIST" = true ] && echo " - Cache found for vendorLazy2";
+
+[ "$VENDOR_EXIST" = false ] && minify vendor
+[ "$VENDOR_LAZY_EXIST" = false ] && minify vendorLazy
+[ "$VENDOR_LAZY_2_EXIST" = false ] && minify vendorLazy2
 wait
+
+# If we have a cache for the current vendor, replace the current one with the cache
+if [ "$VENDOR_EXIST" = true ]; then
+    rm dist/vendor.js;
+    cp $CACHE_DIR/vendor.$HASH_VENDOR_CACHE.js dist/vendor.js
+else
+    cp dist/vendor.js $CACHE_DIR/vendor.$HASH_VENDOR_CACHE.js
+fi
 
 echo " ✓ Minify vendors + vendorsLazy success"
 echo
 echo " → Compute shasum for bundles"
 
 HASH_APP_LAZY=$(shasum dist/appLazy.js | awk '{print  $1}');
-HASH_VENDOR_LAZY=$(shasum dist/vendorLazy.js | awk '{print  $1}');
-HASH_VENDOR_LAZY2=$(shasum dist/vendorLazy2.js | awk '{print  $1}');
 HASH_STYLE=$(shasum dist/styles.css | awk '{print  $1}');
 
 # OpenPGP files won't change, so we can calculate their hash here
@@ -67,7 +101,7 @@ echo " → Replace shasum in place"
 
 replace "s/appLazy.js.map/appLazy.$HASH_APP_LAZY.js.map/g;" dist/appLazy.js;
 replace "s/openpgp.min.js/openpgp.$HASH_OPENPGP.js/g;"  dist/openpgp.worker.min.js
-replace "s/openpgp.min.js/openpgp_compat.$HASH_OPENPGP.js/g;"  dist/openpgp_compat.worker.min.js
+replace "s/openpgp.min.js/openpgp_compat.$HASH_OPENPGP_COMPAT.js/g;"  dist/openpgp_compat.worker.min.js
 
 # Calculate the hash of the workers after we have changed their files
 HASH_WORKER=$(shasum dist/openpgp.worker.min.js | awk '{print  $1}');
@@ -76,6 +110,7 @@ HASH_WORKER_COMPAT=$(shasum dist/openpgp_compat.worker.min.js | awk '{print  $1}
 echo " → Checksum for app + vendor"
 
 HASH_VENDOR=$(shasum dist/vendor.js | awk '{print  $1}');
+HASH_VENDORAPP=$(shasum dist/vendorApp.js | awk '{print  $1}');
 
 # Replace assets for lazyLoad inside the app.js. Single source of truth
 replace "s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g;s/openpgp.worker.min.js/openpgp.worker.$HASH_WORKER.js/g;s/openpgp_compat.worker.min.js/openpgp_compat.worker.$HASH_WORKER_COMPAT.js/g;" dist/app.js;
@@ -86,27 +121,43 @@ HASH_APP=$(shasum dist/app.js | awk '{print  $1}');
 replace "s/app.js.map/app.$HASH_APP.js.map/g;" dist/app.js;
 
 # Last step update index.html with assets
-replace "s/app.js/app.$HASH_APP.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g;s/styles.css/styles.$HASH_STYLE.css/g;s/vendor.js/vendor.$HASH_VENDOR.js/g;s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/openpgp.min.js/openpgp.$HASH_OPENPGP.js/g;s/openpgp_compat.min.js/openpgp_compat.$HASH_OPENPGP_COMPAT.js/g;" dist/index.html;
+replace "s/app.js/app.$HASH_APP.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g;s/styles.css/styles.$HASH_STYLE.css/g;s/vendor.js/vendor.$HASH_VENDOR.js/g;s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/openpgp.min.js/openpgp.$HASH_OPENPGP.js/g;s/openpgp_compat.min.js/openpgp_compat.$HASH_OPENPGP_COMPAT.js/g;s/vendorApp.js/vendorApp.$HASH_VENDORAPP.js/g;" dist/index.html;
 
 echo " → Write new files"
 echo
 
 mv dist/appLazy.js dist/appLazy.$HASH_APP_LAZY.js
 mv dist/appLazy.js.map dist/appLazy.$HASH_APP_LAZY.js.map
-mv dist/vendorLazy.js dist/vendorLazy.$HASH_VENDOR_LAZY.js
-mv dist/vendorLazy2.js dist/vendorLazy2.$HASH_VENDOR_LAZY2.js
 mv dist/styles.css dist/styles.$HASH_STYLE.css
 mv dist/openpgp.min.js dist/openpgp.$HASH_OPENPGP.js
 mv dist/openpgp.worker.min.js dist/openpgp.worker.$HASH_WORKER.js
 mv dist/openpgp_compat.min.js dist/openpgp_compat.$HASH_OPENPGP_COMPAT.js
 mv dist/openpgp_compat.worker.min.js dist/openpgp_compat.worker.$HASH_WORKER_COMPAT.js
 mv dist/vendor.js dist/vendor.$HASH_VENDOR.js
+mv dist/vendorApp.js dist/vendorApp.$HASH_VENDORAPP.js
 mv dist/app.js dist/app.$HASH_APP.js
 mv dist/app.js.map dist/app.$HASH_APP.js.map
 rm dist/html.js
 
+if [ "$VENDOR_LAZY_EXIST" = true ]; then
+    rm dist/vendorLazy.js;
+    cp $CACHE_DIR/vendorLazy.$HASH_VENDOR_LAZY.js dist/vendorLazy.$HASH_VENDOR_LAZY.js
+else
+    mv dist/vendorLazy.js dist/vendorLazy.$HASH_VENDOR_LAZY.js
+    cp dist/vendorLazy.$HASH_VENDOR_LAZY.js $CACHE_DIR/vendorLazy.$HASH_VENDOR_LAZY.js;
+fi
+
+if [ "$VENDOR_LAZY_2_EXIST" = true ]; then
+    rm dist/vendorLazy2.js;
+    cp $CACHE_DIR/vendorLazy2.$HASH_VENDOR_LAZY2.js dist/vendorLazy2.$HASH_VENDOR_LAZY2.js
+else
+    mv dist/vendorLazy2.js dist/vendorLazy2.$HASH_VENDOR_LAZY2.js
+    cp dist/vendorLazy2.$HASH_VENDOR_LAZY2.js $CACHE_DIR/vendorLazy2.$HASH_VENDOR_LAZY2.js;
+fi
+
 echo HASH_APP $HASH_APP
 echo HASH_VENDOR $HASH_VENDOR
+echo HASH_VENDOR $HASH_VENDORAPP
 echo HASH_STYLE $HASH_STYLE
 echo HASH_APP_LAZY $HASH_APP_LAZY
 echo HASH_VENDOR_LAZY $HASH_VENDOR_LAZY
