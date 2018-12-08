@@ -79,7 +79,11 @@ function importPrivateKey(
         Promise.all(privateKeys.map((privKey) => pmcw.reformatKey(privKey, email, authentication.getPassword())));
 
     const createKey = async (privateKey, addressID, keyID) => {
-        const SignedKeyList = await keysModel.signedKeyList(addressID, { mode: 'create', keyID, privateKey });
+        const SignedKeyList = await keysModel.signedKeyList(addressID, {
+            mode: 'create',
+            keyID,
+            privateKey: await pmcw.decryptPrivateKey(privateKey, authentication.getPassword())
+        });
         const promise = addressID
             ? Key.create({ AddressID: addressID, PrivateKey: privateKey, Primary: 0, SignedKeyList })
             : Key.reactivate(keyID, { PrivateKey: privateKey, SignedKeyList });

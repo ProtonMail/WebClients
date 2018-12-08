@@ -116,7 +116,10 @@ Are you sure you want to continue?`,
                 AddressID: address.ID,
                 PrivateKey,
                 Primary: primary,
-                SignedKeyList: await keysModel.signedKeyList(address.ID, { mode: 'create', privateKey: PrivateKey })
+                SignedKeyList: await keysModel.signedKeyList(address.ID, {
+                    mode: 'create',
+                    privateKey: await pmcw.decryptPrivateKey(PrivateKey, passphrase)
+                })
             });
             return onSuccess(address, data.Key);
         } catch (err) {

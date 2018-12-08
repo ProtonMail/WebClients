@@ -17,9 +17,9 @@ export async function getPublicKey(privateKey) {
  * @param {String} parameter ex: 'PublicKey', 'PrivateKey', 'publicKeyArmored'
  * @return {Promise<Array>}
  */
-export function addGetKeys(keys, parameter) {
+export function addGetKeys(keys = [], parameter) {
     const extendKey = async (key) => {
-        const keys = await pmcrypto.getKeys(key[parameter]) || [];
+        const keys = (await pmcrypto.getKeys(key[parameter])) || [];
         return { ...key, keys };
     };
 

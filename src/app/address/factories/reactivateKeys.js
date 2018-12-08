@@ -120,7 +120,7 @@ function reactivateKeys(
                 const SignedKeyList = await keysModel.signedKeyList(address.ID, {
                     mode: 'create',
                     keyID: key.ID,
-                    privateKey
+                    privateKey: decryptedKey
                 });
                 // Update the key in the API.
                 const data = (await Key.reactivate(key.ID, { PrivateKey: privateKey, SignedKeyList })) || {};

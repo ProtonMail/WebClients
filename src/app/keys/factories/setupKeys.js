@@ -12,7 +12,7 @@ function setupKeys(passwords, pmcw, webcrypto, Key, keysModel, memberApi) {
      * @return {Promise<Array<Object>>} array of objects {AddressID:String, PrivateKey:String}
      */
     async function generateAddresses(addresses = [], passphrase = '', numBits = ENCRYPTION_DEFAULT) {
-        const list = addresses.map(({ ID, Email: email } = {}) => {
+        const list = addresses.map(({ ID, Email: email, Keys } = {}) => {
             return pmcw
                 .generateKey({
                     userIds: [{ name: email, email }],
@@ -21,7 +21,8 @@ function setupKeys(passwords, pmcw, webcrypto, Key, keysModel, memberApi) {
                 })
                 .then(({ privateKeyArmored: PrivateKey }) => ({
                     AddressID: ID,
-                    PrivateKey
+                    PrivateKey,
+                    Keys
                 }));
         });
         return Promise.all(list);
@@ -113,12 +114,19 @@ function setupKeys(passwords, pmcw, webcrypto, Key, keysModel, memberApi) {
         const payload = { KeySalt };
 
         if (AddressKeys.length) {
+            const passphrase = await passwords.computeKeyPassword(newPassword, KeySalt);
+
             payload.PrimaryKey = AddressKeys[0].PrivateKey;
+
             payload.AddressKeys = await Promise.all(
-                AddressKeys.map(async ({ AddressID, PrivateKey }) => ({
+                AddressKeys.map(async ({ AddressID, PrivateKey, Keys }) => ({
                     AddressID,
                     PrivateKey,
-                    SignedKeyList: await keysModel.signedKeyList(AddressID, { mode: 'reset', privateKey: PrivateKey })
+                    SignedKeyList: await keysModel.signedKeyList(AddressID, {
+                        mode: 'reset',
+                        privateKey: await pmcw.decryptPrivateKey(PrivateKey, passphrase),
+                        resetKeys: Keys
+                    })
                 }))
             );
         }
@@ -136,8 +144,8 @@ function setupKeys(passwords, pmcw, webcrypto, Key, keysModel, memberApi) {
     /**
      * Takes a member key and generates its encrypted token
      * @param  {String} password             the key password
-     * @param  {Object} PrivateKey           member key
-     * @param  {Array<Object>} keys          array of keys encrypted with new password
+     * @param  {String} key.PrivateKey           member key
+     * @param  {String} key.AddressID          array of keys encrypted with new password
      * @param  {Object} privateKeys          organization private key
      * @return {Object}
      */
@@ -145,15 +153,18 @@ function setupKeys(passwords, pmcw, webcrypto, Key, keysModel, memberApi) {
         const value = webcrypto.getRandomValues(new Uint8Array(128));
         const randomString = pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(value));
 
-        const result = await pmcw.decryptPrivateKey(PrivateKey, password);
-        const MemberKey = await pmcw.encryptPrivateKey(result, randomString);
+        const privateKeyDecrypted = await pmcw.decryptPrivateKey(PrivateKey, password);
+        const MemberKey = await pmcw.encryptPrivateKey(privateKeyDecrypted, randomString);
         const { data: Token } = await pmcw.encryptMessage({
             data: randomString,
             publicKeys: privateKeys.toPublic(),
             privateKeys
         });
 
-        const SignedKeyList = await keysModel.signedKeyList(AddressID, { mode: 'reset', privateKey: PrivateKey });
+        const SignedKeyList = await keysModel.signedKeyList(AddressID, {
+            mode: 'reset',
+            privateKey: privateKeyDecrypted
+        });
 
         return {
             AddressID,

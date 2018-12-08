@@ -86,11 +86,10 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
      * (i.e. the draft body)
      * @param pack
      * @param privateKeys
-     * @param addressKeys
      * @param publicKeysList
      * @returns {Promise.<{keys: *, encrypted: *, sessionKey: *}>}
      */
-    const encryptBodyPackage = async (pack, privateKeys, addressKeys, publicKeysList) => {
+    const encryptBodyPackage = async (pack, privateKeys, publicKeysList) => {
         const publicKeys = _.filter(publicKeysList);
         const { data, sessionKey } = await pmcw.encryptMessage({
             data: pack.Body,
@@ -111,12 +110,11 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
      * (i.e. deduplication)
      * @param pack
      * @param privateKeys
-     * @param addressKeys
      * @param publicKeysList
      * @param message
      * @returns {Promise.<{keys, encrypted: *, sessionKey: *}>}
      */
-    const encryptDraftBodyPackage = async (pack, privateKeys, addressKeys, publicKeysList, message) => {
+    const encryptDraftBodyPackage = async (pack, privateKeys, publicKeysList, message) => {
         const ownPublicKeys = await pmcw.getKeys(message.From.Keys[0].PublicKey);
         const publicKeys = ownPublicKeys.concat(_.filter(publicKeysList));
 
@@ -163,13 +161,7 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
          */
         const encryptPack = message.MIMEType === pack.MIMEType ? encryptDraftBodyPackage : encryptBodyPackage;
 
-        const { keys, encrypted, sessionKey } = await encryptPack(
-            pack,
-            privateKeys,
-            addressKeys,
-            publicKeysList,
-            message
-        );
+        const { keys, encrypted, sessionKey } = await encryptPack(pack, privateKeys, publicKeysList, message);
 
         let counter = 0;
         _.each(publicKeysList, (publicKey, index) => {

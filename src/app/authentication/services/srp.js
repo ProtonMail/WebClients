@@ -293,13 +293,12 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
             await verifyModulus(modulusParsed);
             const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(modulusParsed.getText()));
             const salt = pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(10)));
-            const hashedPassword = await passwords.hashPassword(
-                passwords.currentAuthVersion,
+            const hashedPassword = await passwords.hashPassword({
+                version: passwords.currentAuthVersion,
                 password,
                 salt,
-                undefined,
                 modulus
-            );
+            });
 
             const verifier = generateVerifier(2048, hashedPassword, modulus);
 
