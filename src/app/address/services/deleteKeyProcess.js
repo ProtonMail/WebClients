@@ -113,7 +113,10 @@ function deleteKeyProcess(
      * @return {Promise}
      */
     const deleteKey = async ({ ID }, addressID) => {
-        const SignedKeyList = await keysModel.signedKeyList(addressID, { mode: 'remove', keyID: ID });
+        const SignedKeyList = await keysModel.signedKeyList(addressID, {
+            mode: 'remove',
+            keyID: ID
+        });
         const promise = Key.remove(ID, { SignedKeyList })
             .then(eventManager.call)
             .then(() => notification.success(I18N.SUCCES_NOTIFICATION));
@@ -125,10 +128,10 @@ function deleteKeyProcess(
      * @param {Object} Key The key object describing the key we want to delete
      * @return {Promise}
      */
-    const start = async ({ email, ID }, keyInfo) => {
+    const start = async ({ email, addressID }, keyInfo) => {
         await warnUser();
         keyInfo.decrypted && (await exportKey(email, keyInfo));
-        return deleteKey(keyInfo, ID);
+        return deleteKey(keyInfo, addressID);
     };
     return { start };
 }

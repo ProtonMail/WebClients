@@ -1,33 +1,61 @@
 import { KEY_MODE, MAIN_KEY } from '../../constants';
 import { removeFlag } from '../../../helpers/message';
-import { addGetKeys } from '../../../helpers/key';
 
 const { ENCRYPTED, ENCRYPTED_AND_SIGNED } = KEY_MODE;
+const REMOVE_KEY = ['remove', 'set-primary', 'create'];
+const UNSHIFT_KEY = ['reset', 'set-primary'];
+const PUSH_KEY = ['create'];
 
 /* @ngInject */
 function keysModel(dispatchers, pmcw) {
     const { dispatcher, on } = dispatchers(['keysModel']);
     let CACHE = {};
 
-    const storeKey = (addressID, keyID, pkg) => {
-        pkg.ID = keyID; // Add the keyID inside the package
+    /**
+     * Store key and package in MAP[addressID][keyID]
+     * @param {String} addressID
+     * @param {Object} key metadata
+     * @param {Object<Key>} pkg decrypted key
+     */
+    const storeKey = (addressID, key, pkg) => {
         CACHE[addressID] = CACHE[addressID] || {}; // Initialize Object for the package
-        CACHE[addressID][keyID] = pkg; // Add key package
+        CACHE[addressID][key.ID] = { pkg, key }; // Add key model (coming from API) and the decrypted key package
     };
 
+    /**
+     * Store all keys and dispatch an event
+     * @param {Array<Object>} keys
+     */
     const storeKeys = (keys = []) => {
-        keys.forEach(({ address, key, pkg }) => storeKey(address.ID, key.ID, pkg));
+        keys.forEach(({ address, key, pkg }) => storeKey(address.ID, key, pkg));
         dispatcher.keysModel('updated', { keys });
     };
 
     /**
      * Return the private keys available for a specific address ID
+     * Only key that we can decrypt
      * @param {String} addressID
-     * @return {Array}
+     * @return {Array<Key>} [pkg]
      */
     const getPrivateKeys = (addressID) => {
-        return Object.keys(CACHE[addressID]).map((keyID) => CACHE[addressID][keyID]);
+        return Object.keys(CACHE[addressID]).reduce((acc, keyID) => {
+            const { pkg } = CACHE[addressID][keyID] || {};
+
+            if (pkg) {
+                acc.push(pkg);
+            }
+
+            return acc;
+        }, []);
     };
+
+    /**
+     * Get all keys for a specific address
+     * Even inactive keys
+     * @param {String} addressID
+     * @return {Array<Object>} [{ key, pkg }]
+     */
+    const getAllKeys = (addressID) => Object.keys(CACHE[addressID]).map((keyID) => CACHE[addressID][keyID]);
 
     /**
      * Return the activated public keys available for a specific address ID
@@ -35,7 +63,7 @@ function keysModel(dispatchers, pmcw) {
      * @return {Array}
      */
     const getPublicKeys = (addressID) => {
-        return getPrivateKeys(addressID).map((key) => key.toPublic());
+        return getPrivateKeys(addressID).map((pkg) => pkg.toPublic());
     };
 
     /**
@@ -43,13 +71,11 @@ function keysModel(dispatchers, pmcw) {
      * @param {String} addressID
      * @return {Boolean}
      */
-    const hasKey = (addressID) => {
-        return Object.keys(CACHE[addressID] || {}).length;
-    };
+    const hasKey = (addressID) => Object.keys(CACHE[addressID] || {}).length;
 
     /**
      * Helper to prepare Flags for a key
-     * @param {String} mode reset, create, delete, set-primary, mark
+     * @param {String} mode reset, create, remove, set-primary, mark
      * @param {Object} key one of the private key object (current iteration)
      * @param {String} keyID key ID we are interacting with
      * @param {Integer} newFlags to apply
@@ -69,67 +95,81 @@ function keysModel(dispatchers, pmcw) {
     /**
      * Helper to prepare Data for SignedKeyList
      * When we 'create' we remove the key first and push it after
-     * When we 'delete' we remove the key from the list
+     * When we 'remove' we remove the key from the list
      * When we 'set-primary' we remove the key first and unshift the key
      * When we 'reset' we unshift the key
-     * @param {Array} privateKeys
+     * @param {Array<Object>} privateKeys
      * @param {String} options.mode
      * @param {String} options.keyID
      * @param {Integer} options.newFlags
-     * @param {Object<Key>} options.privateKeyObject
-     * @return {Promise<Array>} keys
+     * @param {Object<Key>} options.newPrivateKey
+     * @return {Object<Key>} result.primaryKey key used to sign
+     * @return {Array<Object>} result.preparedKeys keys parsed for Data
      */
-    const getKeys = async (privateKeys = [], { mode, keyID, newFlags, privateKeyObject }) => {
-        const keys = (await addGetKeys(privateKeys, 'PrivateKey')).reduce((acc, key) => {
-            if (['delete', 'set-primary', 'create'].includes(mode) && key.ID === keyID) {
+    const prepareKeys = (privateKeys = [], { mode, keyID, newFlags, newPrivateKey }) => {
+        const keys = privateKeys.reduce((acc, { key, pkg }) => {
+            if (REMOVE_KEY.includes(mode) && key.ID === keyID) {
                 return acc;
             }
 
             acc.push({
-                Fingerprint: pmcw.getFingerprint(key.keys[0]),
-                Flags: getFlags(mode, key, keyID, newFlags)
+                Fingerprint: key.Fingerprint,
+                Flags: getFlags(mode, key, keyID, newFlags),
+                pkg
             });
 
             return acc;
         }, []);
 
-        if (mode === 'reset' || mode === 'set-primary') {
+        if (UNSHIFT_KEY.includes(mode)) {
             keys.unshift({
-                Fingerprint: pmcw.getFingerprint(privateKeyObject),
-                Flags: ENCRYPTED_AND_SIGNED
+                Fingerprint: pmcw.getFingerprint(newPrivateKey),
+                Flags: ENCRYPTED_AND_SIGNED,
+                pkg: newPrivateKey
             });
         }
 
-        if (mode === 'create') {
+        if (PUSH_KEY.includes(mode)) {
             keys.push({
-                Fingerprint: pmcw.getFingerprint(privateKeyObject),
-                Flags: ENCRYPTED_AND_SIGNED
+                Fingerprint: pmcw.getFingerprint(newPrivateKey),
+                Flags: ENCRYPTED_AND_SIGNED,
+                pkg: newPrivateKey
             });
         }
 
-        // set Primary for the first key
-        return keys.map((key, index) => ({
-            ...key,
-            Primary: +(index === 0)
-        }));
+        return {
+            primaryKey: keys[0].pkg,
+            preparedKeys: keys.map(({ Fingerprint, Flags }, index) => ({
+                // Keep the key order, it's important for the API until they fix it
+                // Fingerprint, Primary, Flags
+                Fingerprint,
+                Primary: +(index === 0), // set Primary for the first key
+                Flags
+            }))
+        };
     };
 
     /**
      * For Key Transparency, we sign the list of address keys whenever we change it
-     * @param {String} addressID
+     * @param {String} addressID address ID impacted
      * @param {String} options.mode reset, create, delete, set-primary, mark
-     * @param {String} options.privateKey If the request changes which key is primary, it's signed by the new one
-     * @param {String} options.keyID
-     * @param {Integer} options.newFlags flags we want to add
+     * @param {Object<Key>} options.privateKey new decrypted private key
+     * @param {String} options.keyID key impacted
+     * @param {Integer} options.newFlags flags we want to add when we mark
+     * @param {Array} options.resetKeys
      * @return {Promise<Object>} SignedKeyList
      */
-    const signedKeyList = async (addressID = MAIN_KEY, { mode, privateKey, keyID, newFlags } = {}) => {
-        const privateKeys = getPrivateKeys(addressID);
-        const [privateKeyObject] = privateKey ? await pmcw.getKeys(privateKey) : privateKeys; // Only the primary key signs
-        const Data = JSON.stringify(await getKeys(privateKeys, { mode, keyID, newFlags, privateKeyObject }));
+    const signedKeyList = async (
+        addressID = MAIN_KEY,
+        { mode, privateKey: newPrivateKey, keyID, newFlags, resetKeys = [] } = {}
+    ) => {
+        // In case we reset from outside, keys are not saved in keysModel
+        const privateKeys = hasKey(addressID) ? getAllKeys(addressID) : resetKeys.map((key) => ({ key, pkg: null })); // Contains all keys, even inactive
+        const { preparedKeys, primaryKey } = prepareKeys(privateKeys, { mode, keyID, newFlags, newPrivateKey });
+        const Data = JSON.stringify(preparedKeys);
         const { signature: Signature } = await pmcw.signMessage({
             data: Data,
-            privateKeys: [privateKeyObject],
+            privateKeys: [primaryKey],
             armor: true,
             detached: true
         });
@@ -144,6 +184,6 @@ function keysModel(dispatchers, pmcw) {
         CACHE = {};
     });
 
-    return { storeKey, storeKeys, getPublicKeys, getPrivateKeys, hasKey, signedKeyList };
+    return { storeKeys, getPublicKeys, getPrivateKeys, hasKey, signedKeyList };
 }
 export default keysModel;

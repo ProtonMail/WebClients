@@ -202,8 +202,11 @@ function sendPreferences(
             emailKeys
                 .map(pmcw.decode_base64)
                 .map(pmcw.binaryStringToArray)
-                .map(pmcw.getKeys)
-                .map(([k]) => pmcw.isExpiredKey(k).then((isExpired) => (isExpired ? null : [k])))
+                .map((a) => {
+                    return pmcw
+                        .getKeys(a)
+                        .then(([k]) => pmcw.isExpiredKey(k).then((isExpired) => (isExpired ? null : [k])));
+                })
         );
         const keyObjects = keyObjs.filter((k) => k !== null);
 

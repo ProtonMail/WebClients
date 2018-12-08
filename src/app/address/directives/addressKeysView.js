@@ -158,8 +158,12 @@ function addressKeysView(
      * @param {String} messageDown The notification message to be displayed on downgrade
      * @return {Function} (address, key) A function taking an address object and the key object as input
      */
-    const createMarker = (flags, messageUp, messageDown) => async (address, { ID, Flags }) => {
-        const SignedKeyList = await keysModel.signedKeyList(address.ID, { mode: 'mark', newFlags: flags });
+    const createMarker = (flags, messageUp, messageDown) => async ({ addressID }, { ID, Flags }) => {
+        const SignedKeyList = await keysModel.signedKeyList(addressID, {
+            mode: 'mark',
+            keyID: ID,
+            newFlags: flags
+        });
         const promise = Key.flags(ID, { Flags: flags, SignedKeyList })
             .then(eventManager.call)
             .then(() => notification.success(Flags < flags ? messageUp : messageDown));

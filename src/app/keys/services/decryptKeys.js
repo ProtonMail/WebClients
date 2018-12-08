@@ -127,8 +127,10 @@ function decryptKeys(pmcw, notification, Key, keyInfo, keysModel, setupKeys, get
         );
 
         return Promise.all(promises).then((addressKeys) => {
-            const keys = primaryKeys.concat(addressKeys).filter(({ key }) => key.decrypted);
-            return { keys, dirtyAddresses };
+            return {
+                keys: primaryKeys.concat(addressKeys),
+                dirtyAddresses
+            };
         });
     };
 }
