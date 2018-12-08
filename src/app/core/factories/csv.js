@@ -3,11 +3,29 @@ import _ from 'lodash';
 /* @ngInject */
 function csv(csvFormat) {
     const properties = csvFormat.getAllProperties();
-    const toVCard = (contact) => {
+    /**
+     * Lowercase key contact
+     * @param {Object} contact
+     * @return {Object}
+     */
+    const formatContact = (contact = {}) => {
+        return Object.keys(contact).reduce((acc, key = '') => {
+            acc[key.toLowerCase()] = contact[key];
+            return acc;
+        }, {});
+    };
+
+    /**
+     * Parse CSV contact to extract properties and generate a vCard
+     * @param {Object<csv>} contact
+     * @param {Object<vCard>}
+     */
+    const toVCard = (contact = {}) => {
+        const c = formatContact(contact);
         return _.reduce(
             properties,
             (acc, key = '') => {
-                const props = csvFormat[key](contact);
+                const props = csvFormat[key](c);
 
                 if (props.length) {
                     _.each(props, ({ value = '', parameter = '' }) => {
@@ -30,7 +48,8 @@ function csv(csvFormat) {
     return {
         /**
          * Convert CSV data to vCard
-         * @return {Promise}
+         * @param {File} file
+         * @return {Promise<Array>}
          */
         csvToVCard(file) {
             return new Promise((resolve, reject) => {
