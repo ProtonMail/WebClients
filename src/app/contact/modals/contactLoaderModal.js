@@ -203,7 +203,7 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
             };
 
             this.close = () => {
-                $label.textContent = I18N.cancelling;
+                $label && ($label.textContent = I18N.cancelling);
                 params.close();
             };
 

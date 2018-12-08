@@ -211,6 +211,7 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
         };
 
         const processedIds = [];
+
         return threadedContacts
             .reduce(uploadThreadRecuder(processedIds), [])
             .catch(rollback(processedIds))

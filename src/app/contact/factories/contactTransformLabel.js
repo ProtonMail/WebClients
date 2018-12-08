@@ -64,7 +64,8 @@ function contactTransformLabel(gettextCatalog) {
     const toLang = (input = '') => {
         const label = input.toLowerCase();
         const value = label.startsWith('x-') ? label.slice(2) : label;
-        return MAP[value] || `${label.charAt(0).toUpperCase()}${label.slice(1)}`;
+
+        return MAP[value] || `${value.charAt(0).toUpperCase()}${value.slice(1)}`;
     };
 
     /**

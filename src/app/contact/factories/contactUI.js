@@ -57,11 +57,13 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
     }
 
     function removeX(value = '') {
-        if (value.toLowerCase().startsWith('x-')) {
+        const v = value.toLowerCase();
+
+        if (v.startsWith('x-')) {
             return value.substring(2);
         }
 
-        if (value.toLowerCase().startsWith('x')) {
+        if (v.startsWith('x')) {
             return value.substring(1);
         }
 
