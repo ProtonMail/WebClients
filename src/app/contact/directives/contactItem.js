@@ -124,14 +124,15 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
                 });
             scope.visibleItems = () => scope.UI.items.filter(({ hide }) => !hide);
             scope.toggleSelector = (event, { uuid, displaySelector }) => {
+                event.preventDefault();
+                event.stopPropagation();
                 scope.UI.items = scope.UI.items.map((item) => {
                     if (uuid === item.uuid) {
                         return { ...item, displaySelector: !displaySelector };
                     }
                     return { ...item, displaySelector: false };
                 });
-                event.preventDefault();
-                event.stopPropagation();
+                dispatcher['contact.item']('closeAllSelectors', { type: scope.type });
             };
 
             scope.setLabel = (item = {}, value = '') => {
@@ -153,6 +154,16 @@ function contactItem(dispatchers, contactTransformLabel, contactUI, contactDetai
             scope.change();
 
             element.on('click', onClick);
+
+            on('contact.item', (e, { type = '', data = {} }) => {
+                if (type === 'closeAllSelectors' && scope.type !== data.type) {
+                    scope.$applyAsync(() => {
+                        scope.UI.items = scope.UI.items.map((item) => {
+                            return { ...item, displaySelector: false };
+                        });
+                    });
+                }
+            });
 
             on('contacts', (e, { type = '' }) => {
                 if (!list.hasClass(AS_SORTABLE_DISABLED) && (type === 'updateContact' || type === 'createContact')) {
