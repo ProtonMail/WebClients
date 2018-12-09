@@ -277,7 +277,7 @@ export default angular
             .state('support.message', {
                 url: '/message',
                 onEnter($state, $stateParams) {
-                    if ($stateParams.data === null) {
+                    if (!$stateParams.error) {
                         $state.go('login');
                     }
                 },

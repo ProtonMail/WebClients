@@ -468,7 +468,7 @@ function authentication(
                     return user;
                 })
                 .catch((error) => {
-                    $state.go('support.message');
+                    $state.go('support.message', { error });
                     throw error;
                 });
         },
