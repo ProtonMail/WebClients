@@ -46,6 +46,7 @@ export const PM_ALIAS = 2;
 export const REPLY = 0;
 export const REPLY_ALL = 1;
 export const FORWARD = 2;
+// FIXME FILTER MIGRATION: CHANGE FILTER VERSION TO 2 ONCE API IS READY
 export const FILTER_VERSION = 1;
 export const ATTACHMENT_SIZE_LIMIT = 25; // MB
 export const ATTACHMENT_NUMBER_LIMIT = 100;

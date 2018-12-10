@@ -23,8 +23,8 @@ function customFilterList(
             const { on, unsubscribe } = dispatchers();
             scope.customFilters = null;
 
-            const promise = Filter.query().then((data = {}) => {
-                scope.customFilters = data.Filters;
+            const promise = Filter.query().then((filters) => {
+                scope.customFilters = filters;
             });
 
             networkActivityTracker.track(promise);

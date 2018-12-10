@@ -56,7 +56,6 @@ module.exports = {
             'jquery-mousewheel/jquery.mousewheel.js',
             'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
             'ng-scrollbars/dist/scrollbars.min.js',
-            'sieve.js/sieve.js',
             'blob.js/Blob.js',
             'file-saver/FileSaver.js',
             'qrcodejs2/qrcode.min.js',
@@ -70,9 +69,9 @@ module.exports = {
         jsLazy2: [
             'codemirror/lib/codemirror.js',
             'codemirror/addon/display/autorefresh.js',
-            'codemirror/mode/sieve/sieve.js',
             'codemirror/addon/lint/lint.js',
-            'angular-ui-codemirror/dist/ui-codemirror.min.js'
+            'angular-ui-codemirror/dist/ui-codemirror.min.js',
+            'codemirror/mode/sieve/sieve.js' // not linked to our library
         ].map(bindPrefix),
 
         css: [

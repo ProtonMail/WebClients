@@ -210,22 +210,17 @@ function eventManager(
             _.each(filters, (filter) => {
                 if (filter.Action === DELETE) {
                     dispatcher.filter('delete', { ID: filter.ID });
-                } else if (filter.Action === CREATE) {
-                    const simple = Sieve.fromTree(filter.Filter.Tree);
-                    if (_.isEqual(filter.Filter.Tree, Sieve.toTree(simple))) {
+                } else if (filter.Action === CREATE || filter.Action === UPDATE) {
+                    const simple = $injector.get('simpleFilter').computeFromTree(filter.Filter);
+                    if (simple) {
                         filter.Filter.Simple = simple;
                     } else {
                         delete filter.Filter.Simple;
                     }
-                    dispatcher.filter('create', { ID: filter.ID, Filter: filter.Filter });
-                } else if (filter.Action === UPDATE) {
-                    const simple = Sieve.fromTree(filter.Filter.Tree);
-                    if (_.isEqual(filter.Filter.Tree, Sieve.toTree(simple))) {
-                        filter.Filter.Simple = simple;
-                    } else {
-                        delete filter.Filter.Simple;
-                    }
-                    dispatcher.filter('update', { ID: filter.ID, Filter: filter.Filter });
+                    dispatcher.filter(filter.Action === CREATE ? 'create' : 'update', {
+                        ID: filter.ID,
+                        Filter: filter.Filter
+                    });
                 }
             });
         }
