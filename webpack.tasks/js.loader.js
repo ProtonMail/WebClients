@@ -52,7 +52,7 @@ const pipe = [
     },
     {
         test: /\.js$/,
-        exclude: /(\/node_modules\/(?!(asmcrypto\.js|pmcrypto)))|mailparser\.js/,
+        exclude: /(\/node_modules\/(?!(asmcrypto\.js|pmcrypto|sieve\.js)))|mailparser\.js/,
         use: jsLoader()
     },
     {

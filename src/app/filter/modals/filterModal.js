@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import { MAILBOX_IDENTIFIERS, FILTER_VERSION } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
+import { templates as sieveTemplates } from '../../../helpers/sieve';
 
 /* @ngInject */
 function filterModal(
@@ -203,6 +204,13 @@ function filterModal(
                 return Status;
             }
 
+            /**
+             * Prepare the Version
+             * @param {Integer} Version
+             * @return {Integer}
+             */
+            const prepareVersion = ({ Version = FILTER_VERSION } = {}) => Version;
+
             ctrl.addLabel = () => openLabelModal(0);
             ctrl.addFolder = () => openLabelModal(1);
 
@@ -213,7 +221,7 @@ function filterModal(
                     ID: prepareID(model),
                     Name: prepareName(model),
                     Status: prepareStatus(model),
-                    Version: FILTER_VERSION
+                    Version: prepareVersion(model)
                 };
 
                 if (params.mode === 'simple') {
@@ -227,7 +235,9 @@ function filterModal(
 
                 if (params.mode === 'complex') {
                     ctrl.mode = 'complex';
-                    ctrl.filter.Sieve = model ? model.Sieve : '';
+
+                    const defaultFilter = sieveTemplates[ctrl.filter.Version] || '';
+                    ctrl.filter.Sieve = model ? model.Sieve : defaultFilter;
                 }
 
                 if (angular.isObject(ctrl.filter.Simple)) {

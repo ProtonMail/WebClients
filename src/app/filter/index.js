@@ -5,15 +5,17 @@ import filterView from './directives/filterView';
 import sieveLabelInput from './directives/sieveLabelInput';
 import spamListSearch from './directives/spamListSearch';
 import spamLists from './directives/spamLists';
-import filterModal from './factories/filterModal';
+import filterModal from './modals/filterModal';
 import incomingModel from './factories/incomingModel';
 import spamListModel from './factories/spamListModel';
 import filterAddressModal from './modals/filterAddressModal';
 import sieveLint from './services/sieveLint';
+import simpleFilter from './services/simpleFilter';
 import filterValidator from './services/filterValidator';
 
 export default angular
     .module('proton.filter', ['proton.utils'])
+    .factory('simpleFilter', simpleFilter)
     .factory('filterValidator', filterValidator)
     .directive('customFilterList', customFilterList)
     .directive('emailBlockButton', emailBlockButton)

@@ -1,13 +1,14 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function Filter($http, url) {
+function Filter($http, url, $injector) {
+    const requestUrl = url.build('filters');
+    // lazy loading the Sieve.js library through injector.
     /**
      * Transform the filter model before to send it to the back-end
      */
     function transformRequestFilter(filter) {
-        if (angular.isDefined(filter.Simple)) {
-            filter.Tree = Sieve.toTree(filter.Simple);
+        const tree = $injector.get('simpleFilter').computeTree(filter);
+        if (tree) {
+            filter.Tree = tree;
         }
 
         return angular.toJson(filter);
@@ -20,7 +21,7 @@ function Filter($http, url) {
          * @return {Promise}
          */
         create(filter) {
-            return $http.post(url.get() + '/filters', filter, {
+            return $http.post(requestUrl(), filter, {
                 transformRequest: transformRequestFilter
             });
         },
@@ -30,7 +31,7 @@ function Filter($http, url) {
          * @return {Promise}
          */
         check(filter) {
-            return $http.post(url.get() + '/filters/check', filter, {
+            return $http.post(requestUrl('check'), filter, {
                 transformRequest: transformRequestFilter
             });
         },
@@ -38,17 +39,19 @@ function Filter($http, url) {
          * Get filters owned by the current user
          * @return {Promise}
          */
-        query() {
-            return $http.get(url.get() + '/filters').then(({ data = {} } = {}) => {
-                _.each(data.Filters, (filter) => {
-                    const simple = Sieve.fromTree(filter.Tree);
-                    if (_.isEqual(filter.Tree, Sieve.toTree(simple))) {
-                        filter.Simple = simple;
-                    } else {
-                        delete filter.Simple;
-                    }
-                });
-                return data;
+        async query() {
+            const {
+                data: { Filters = [] }
+            } = await $http.get(requestUrl());
+
+            return Filters.map((filter) => {
+                const simple = $injector.get('simpleFilter').computeFromTree(filter);
+                if (simple) {
+                    filter.Simple = simple;
+                } else {
+                    delete filter.Simple;
+                }
+                return filter;
             });
         },
         /**
@@ -57,7 +60,7 @@ function Filter($http, url) {
          * @return {Promise}
          */
         update(filter) {
-            return $http.put(url.get() + '/filters/' + filter.ID, filter, {
+            return $http.put(requestUrl(filter.ID), filter, {
                 transformRequest: transformRequestFilter
             });
         },
@@ -67,7 +70,7 @@ function Filter($http, url) {
          * @return {Promise}
          */
         enable(filter) {
-            return $http.put(url.get() + '/filters/' + filter.ID + '/enable');
+            return $http.put(requestUrl(filter.ID, 'enable'));
         },
         /**
          * Disable a specific filter
@@ -75,7 +78,7 @@ function Filter($http, url) {
          * @return {Promise}
          */
         disable(filter) {
-            return $http.put(url.get() + '/filters/' + filter.ID + '/disable');
+            return $http.put(requestUrl(filter.ID, 'disable'));
         },
         /**
          * Update custom filter order
@@ -83,7 +86,7 @@ function Filter($http, url) {
          * @return {Promise}
          */
         order(order) {
-            return $http.put(url.get() + '/filters/order', order);
+            return $http.put(requestUrl('order'), order);
         },
         /**
          * Delete a specific filter
@@ -91,14 +94,14 @@ function Filter($http, url) {
          * @return {Promise}
          */
         delete(filter) {
-            return $http.delete(url.get() + '/filters/' + filter.ID);
+            return $http.delete(requestUrl(filter.ID));
         },
         /**
          * Clear filter
          * @return {Promise}
          */
         clear() {
-            return $http.delete(url.get() + '/filters');
+            return $http.delete(requestUrl());
         }
     };
 
