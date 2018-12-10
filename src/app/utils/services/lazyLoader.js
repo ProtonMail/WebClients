@@ -1,5 +1,5 @@
 /* @ngInject */
-function lazyLoader($ocLazyLoad, networkActivityTracker, notification, gettextCatalog, AppModel) {
+function lazyLoader(networkActivityTracker, notification, gettextCatalog, AppModel, $injector) {
     const CACHE = { loaded: 0 };
 
     const I18N = {
@@ -11,11 +11,20 @@ function lazyLoader($ocLazyLoad, networkActivityTracker, notification, gettextCa
         ACTION: gettextCatalog.getString('Reload ProtonMail', null, 'Action')
     };
 
-    // On build we will rename these files via sed. DON'T TOUCH THEM
-    const FILES = {
-        app: 'appLazy.js',
-        vendor: 'vendorLazy.js',
-        vendor2: 'vendorLazy2.js'
+    const getImport = (type) => {
+        if (type === 'app') {
+            return import(/* webpackChunkName: "appLazy.module" */ '../../appLazy');
+        }
+
+        if (type === 'vendor') {
+            return import(/* webpackChunkName: "vendorLazy.module" */ '../../vendorLazy');
+        }
+
+        if (type === 'vendor2') {
+            return import(/* webpackChunkName: "vendor2Lazy.module" */ '../../vendorLazy2');
+        }
+
+        throw new Error('unknown lazy load');
     };
 
     /**
@@ -26,11 +35,18 @@ function lazyLoader($ocLazyLoad, networkActivityTracker, notification, gettextCa
      */
     const load = async (type) => {
         try {
-            CACHE[type] = $ocLazyLoad.load(FILES[type]);
-            await CACHE[type];
+            CACHE[type] = getImport(type);
+
+            const module = await CACHE[type];
+
+            // With all lazy loaded modules, there are new modules to inject.
+            $injector.loadNewModules([module.default.name]);
+
             delete CACHE[type];
             CACHE.loaded++;
         } catch (e) {
+            console.log('error', e);
+
             // The error does not contain the http error...
             if (!AppModel.get('onLine')) {
                 return;
@@ -73,6 +89,7 @@ function lazyLoader($ocLazyLoad, networkActivityTracker, notification, gettextCa
     const extraVendor = () => {
         return networkActivityTracker.track(load('vendor2'));
     };
+
     return { app, extraVendor };
 }
 

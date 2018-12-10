@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import vCard from 'vcf';
 
 import { CONTACT_ERROR } from '../../errors';
 import { KEY_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION } from '../../constants';

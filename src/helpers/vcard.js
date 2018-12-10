@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import vCard from 'vcf';
 
 import { KEY_MODE } from '../app/constants';
 import { normalizeEmail } from './string';

@@ -22,7 +22,6 @@ import search from './search/index';
 
 export default angular.module('protonLazy', [
     'as.sortable',
-    'ngIcal',
     'ngScrollbars',
     'pikaday',
     'ui.indeterminate',

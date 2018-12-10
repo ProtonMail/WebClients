@@ -61,7 +61,24 @@ function main {
 
     # You can lint all the project via the flag --lint
     if [[ "$1" = "--lint" ]]; then
-        LIST=$(find src/app -type f -name '*.js' ! -name 'app.js'  ! -name 'appLazy.js' ! -name 'index.js'  ! -name 'routes.js'   ! -name 'config.js'   ! -name 'constants.js'  ! -name 'errors.js'  ! -name 'transformBase.js'  ! -name 'translateAttribute.js' ! -name 'ptdndconstants.js' ! -name 'keyboard-event-constants.js' ! -path '*helpers*');
+        EXCLUDE_LIST=(
+            app.js
+            appLazy.js
+            vendor.js
+            vendorLazy.js
+            vendorLazy2.js
+            index.js
+            routes.js
+            config.js
+            constants.js
+            errors.js
+            transformBase.js
+            translateAttribute.js
+            ptdndconstants.js
+            keyboard-event-constants.js
+        )
+        EXCLUDE=$(printf "! -name %s " $(echo ${EXCLUDE_LIST[@]}))
+        LIST=$(find src/app -type f -name '*.js' $EXCLUDE ! -path '*helpers*' ! -path '*Helpers*');
 
         for file in $LIST ; do
             testMainInjection "$file";

@@ -16,14 +16,9 @@ const minimizer = [
 
 module.exports = {
     splitChunks: {
-        cacheGroups: {
-            vendor: {
-                test: /\/node_modules\/.+(mjs|js|json)$/,
-                chunks: 'initial',
-                name: 'vendorApp',
-                enforce: true
-            }
-        }
+        // Share all chunks between async and sync bundles https://webpack.js.org/plugins/split-chunks-plugin/#splitchunks-chunks
+        chunks: 'all',
+        name: true
     },
     minimizer
 };

@@ -1,4 +1,4 @@
-import dateParser from '../../../../src/helpers/vcardDateParser';
+import dateParser from '../../../src/helpers/vcardDateParser';
 
 describe('vcard date parser', () => {
     const tests = [

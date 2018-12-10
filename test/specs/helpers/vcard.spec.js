@@ -1,3 +1,5 @@
+import vCard from 'vcf';
+
 import { cleanValue, orderByPref, escapeValue, unescapeValue, EXTENDED_FIELD_CLEAN } from '../../../src/helpers/vcard';
 import { BOOL_FIELDS } from '../../../src/helpers/vCardFields';
 

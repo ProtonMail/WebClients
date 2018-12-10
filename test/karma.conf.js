@@ -1,4 +1,5 @@
 process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = (config) => {
     config.set({
         basePath: '',
@@ -6,11 +7,6 @@ module.exports = (config) => {
 
         // list of files / patterns to load in the browser
         files: [
-            '../build/vendor.js',
-            '../build/vendorLazy.js',
-            '../build/vendorLazy2.js',
-            'templates.js',
-            '../node_modules/angular-mocks/angular-mocks.js',
             'specs/index.js'
         ],
 
@@ -19,6 +15,8 @@ module.exports = (config) => {
             module: {
                 rules: [
                     ...require('../webpack.tasks/js.loader'),
+                     // Use a simple css loader because karma-webpack does not work with ours
+                    ...require('../webpack.tasks/css.tests.loader'),
                     ...require('../webpack.tasks/templates.loader'),
                     ...require('../webpack.tasks/assets.loader')
                 ]
@@ -31,9 +29,7 @@ module.exports = (config) => {
             }
         },
 
-        // list of files to exclude
         preprocessors: {
-            'templates.js': ['webpack'],
             'specs/index.js': ['webpack', 'coverage']
         },
 

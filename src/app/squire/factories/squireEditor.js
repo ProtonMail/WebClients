@@ -1,3 +1,5 @@
+import Squire from 'squire-rte';
+
 import { DEFAULT_SQUIRE_VALUE } from '../../constants';
 import { blobURLtoBlob } from '../../../helpers/fileHelper';
 import { isIE11 } from '../../../helpers/browser';

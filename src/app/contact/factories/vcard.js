@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import vCard from 'vcf';
 
 import parseDate from '../../../helpers/vcardDateParser';
 import isUniqField from '../../../helpers/vcardUniqueFields';

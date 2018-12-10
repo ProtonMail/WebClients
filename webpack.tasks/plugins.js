@@ -2,23 +2,30 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WriteWebpackPlugin = require('write-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
-const WebpackNotifierPlugin = require('webpack-notifier');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AutoDllPlugin = require('autodll-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
+const transformOpenpgpFiles = require('./helpers/openpgp');
 const CONFIG = require('../env/conf.build');
 const env = require('../env/config');
 
 const makeSRC = (list) => list.map((file) => path.resolve(file));
-const [OPENPGP_WORKER] = makeSRC(CONFIG.externalFiles.openpgp);
-const [OPENPGP_COMPAT_WORKER] = makeSRC(CONFIG.externalFiles.openpgp_compat);
+
+const isDistRelease = env.isDistRelease();
+
+const { mainFiles: openpgpFiles, workerFiles: openpgpWorkerFiles } = transformOpenpgpFiles(
+    CONFIG.externalFiles.openpgp,
+    CONFIG.externalFiles.openpgp_workers,
+    isDistRelease
+);
 
 const minify = () => {
-    if (!env.isDistRelease()) {
+    if (!isDistRelease) {
         return false;
     }
 
@@ -33,7 +40,9 @@ const minify = () => {
 };
 
 const list = [
-    new webpack.NamedModulesPlugin(),
+    // HashedModuleIdsPlugin recommended for production https://webpack.js.org/guides/caching/
+    isDistRelease ? new webpack.HashedModuleIdsPlugin() : new webpack.NamedModulesPlugin(),
+
     // new WebpackNotifierPlugin(),
     new CopyWebpackPlugin([
         ...makeSRC(CONFIG.vendor_files.fonts).map((font) => ({
@@ -41,28 +50,38 @@ const list = [
             to: 'assets/fonts',
             flatten: true
         })),
+
         { from: 'src/i18n', to: 'i18n' },
-        { from: OPENPGP_WORKER, to: 'openpgp.worker.min.js' },
-        { from: OPENPGP_COMPAT_WORKER, to: 'openpgp_compat.worker.min.js' }
+        { from: 'src/assets', to: 'assets' }
     ]),
 
-    new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
+    new WriteWebpackPlugin([
+        ...openpgpFiles.concat(openpgpWorkerFiles).map(({ filepath, contents }) => ({
+            name: filepath,
+            data: Buffer.from(contents)
+        }))
+    ]),
 
     new MiniCssExtractPlugin({
-        // Options similar to the same options in webpackOptions.output
-        // both options are optional
-        filename: 'styles.css'
+        filename: isDistRelease ? '[name].[hash:8].css' : '[name].css',
+        chunkFilename: isDistRelease ? '[id].[hash:8].css' : '[id].css'
     }),
 
     new HtmlWebpackPlugin({
-        template: 'src/app.html',
+        template: 'src/app.ejs',
         inject: 'body',
-        hash: false,
-        excludeChunks: ['html', 'app.css'],
-        chunks: ['vendorApp', 'app'],
-        chunksSortMode: 'manual',
-        defer: ['vendorApp', 'app'],
-        minify: minify()
+        defer: ['app'],
+        minify: minify(),
+        templateParameters: {
+            OPENPGP: openpgpFiles[0].filepath,
+            OPENPGP_COMPAT: openpgpFiles[1].filepath
+        }
+    }),
+
+    new webpack.DefinePlugin({
+        // Needs to be wrapped in strings because webpack does a direct replace
+        OPENPGP_WORKER: JSON.stringify(openpgpWorkerFiles[0].filepath),
+        OPENPGP_WORKER_COMPAT: JSON.stringify(openpgpWorkerFiles[1].filepath)
     }),
 
     new ScriptExtHtmlWebpackPlugin({
@@ -70,12 +89,12 @@ const list = [
     }),
 
     new webpack.SourceMapDevToolPlugin({
-        filename: '[name].js.map',
-        exclude: ['templates', 'html', 'styles', 'vendorApp']
+        filename: isDistRelease ? '[name].[hash:8].js.map' : '[name].js.map',
+        exclude: ['styles', 'vendor', 'vendorLazy', 'vendorLazy2']
     })
 ];
 
-if (!env.isDistRelease()) {
+if (!isDistRelease) {
     // cf https://github.com/mzgoddard/hard-source-webpack-plugin/issues/301
     // list.unshift(new HardSourceWebpackPlugin());
     list.push(
@@ -86,7 +105,7 @@ if (!env.isDistRelease()) {
     );
 }
 
-if (env.isDistRelease()) {
+if (isDistRelease) {
     list.push(
         new OptimizeCSSAssetsPlugin({
             cssProcessorPluginOptions: {

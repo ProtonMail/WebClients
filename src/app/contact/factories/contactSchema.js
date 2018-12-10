@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import vCard from 'vcf';
 
 /* @ngInject */
 function contactSchema(gettextCatalog) {

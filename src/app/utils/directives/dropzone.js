@@ -1,3 +1,5 @@
+import Dropzone from 'dropzone';
+
 /* @ngInject */
 function dropzone() {
     return {

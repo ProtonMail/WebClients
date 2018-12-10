@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import saveAs from 'file-saver';
+import JSZip from 'jszip';
+
 import { VERIFICATION_STATUS } from '../../constants';
 import { isFileSaverSupported, isMobile } from '../../../helpers/browser';
 
@@ -78,7 +81,7 @@ function attachmentDownloader(
     const downloadFile = (blob, name, el) => {
         try {
             if (hasFileSaverSupported) {
-                return window.saveAs(blob, name);
+                return saveAs(blob, name);
             }
 
             // Bad blob support, make a data URI, don't click it
@@ -276,7 +279,7 @@ function attachmentDownloader(
                     return; // We don't want to download it
                 }
             }
-            const zip = new window.JSZip();
+            const zip = new JSZip();
             list.forEach(({ Name, data }) => zip.file(Name, data));
             const content = await zip.generateAsync({ type: 'blob' });
             downloadFile(content, getZipAttachmentName(message), el);
