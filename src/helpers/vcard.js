@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import vCard from 'vcf';
 
-import { KEY_MODE } from '../app/constants';
+import { CONTACT_CARD_TYPE } from '../app/constants';
 import { normalizeEmail } from './string';
 import { BOOL_FIELDS } from './vCardFields';
 
@@ -11,6 +11,7 @@ const UNESCAPE_EXTENDED_REGEX = /\\\\|\\:|\\,|\\;/gi;
 const BACKSLASH_SEMICOLON_REGEX = /\\;/gi;
 const ANIMALS = '🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼';
 const SPECIAL_CHARACTER_REGEX = /🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼/gi;
+const { CLEAR_TEXT, SIGNED, ENCRYPTED_AND_SIGNED } = CONTACT_CARD_TYPE;
 export const EXTENDED_FIELD_CLEAN = [
     'key',
     'photo',
@@ -141,8 +142,8 @@ export const cleanValue = (value, field) => {
  * @return {Object}
  */
 export const getCategoriesEmail = (cards = []) => {
-    const hasCategories = ({ Type, Data }) => Type === KEY_MODE.CLEAR_TEXT && Data.includes('CATEGORIES');
-    const notEncryptedContent = ({ Type }) => Type !== KEY_MODE.ENCRYPTED_AND_SIGNED;
+    const hasCategories = ({ Type, Data }) => Type === CLEAR_TEXT && Data.includes('CATEGORIES');
+    const notEncryptedContent = ({ Type }) => Type !== ENCRYPTED_AND_SIGNED;
 
     /**
      * Create a map
@@ -171,7 +172,7 @@ export const getCategoriesEmail = (cards = []) => {
         return cat.valueOf();
     };
 
-    const mapCategoriesReducer = (acc, { [KEY_MODE.CLEAR_TEXT]: clearText, [KEY_MODE.SIGNED]: signed }) => {
+    const mapCategoriesReducer = (acc, { [CLEAR_TEXT]: clearText, [SIGNED]: signed }) => {
         acc[signed.get('uid').valueOf()] = getCategories(clearText.get('categories'));
         return acc;
     };
