@@ -1,7 +1,7 @@
-import { KEY_MODE, MAIN_KEY } from '../../constants';
+import { KEY_FLAG, MAIN_KEY } from '../../constants';
 import { removeFlag } from '../../../helpers/message';
 
-const { ENCRYPTED, ENCRYPTED_AND_SIGNED } = KEY_MODE;
+const { ENCRYPTED, ENCRYPTED_AND_SIGNED } = KEY_FLAG;
 const REMOVE_KEY = ['remove', 'set-primary', 'create'];
 const UNSHIFT_KEY = ['reset', 'set-primary'];
 const PUSH_KEY = ['create'];
@@ -82,7 +82,7 @@ function keysModel(dispatchers, pmcw) {
      */
     const getFlags = (mode, key, keyID, newFlags) => {
         if (mode === 'reset') {
-            return removeFlag(key.Flags, ENCRYPTED);
+            return removeFlag(key, ENCRYPTED);
         }
 
         if (mode === 'mark' && key.ID === keyID) {

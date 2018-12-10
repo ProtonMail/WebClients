@@ -1,10 +1,10 @@
 import _ from 'lodash';
 import { flow, values, reduce } from 'lodash/fp';
 
-import { KEY_MODE } from '../../constants';
+import { CONTACT_CARD_TYPE } from '../../constants';
 import { extractAll as extractAllProperties } from '../../../helpers/vCardProperties';
 
-const { ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = KEY_MODE;
+const { ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_CARD_TYPE;
 
 /* @ngInject */
 function contactDetails(

@@ -200,10 +200,17 @@ export const SPAM_SCORE = {
     PHISHING: 102
 };
 
-export const KEY_MODE = {
+export const CONTACT_CARD_TYPE = {
     ENCRYPTED_AND_SIGNED: 3,
     SIGNED: 2,
     ENCRYPTED: 1,
+    CLEAR_TEXT: 0
+};
+
+export const KEY_FLAG = {
+    ENCRYPTED_AND_SIGNED: 3,
+    ENCRYPTED: 2,
+    SIGNED: 1,
     CLEAR_TEXT: 0
 };
 
