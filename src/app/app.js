@@ -1,6 +1,9 @@
 import _ from 'lodash';
 import timezone from 'moment-timezone';
+import FastClick from 'fastclick';
+import svg4everybody from 'svg4everybody';
 
+import './vendor';
 import '../helpers/setupPmcrypto';
 import paginator from './paginator/index';
 import authentication from './authentication/index';
@@ -37,7 +40,6 @@ angular
         'ngMessages',
         'ngSanitize',
         'ui.router',
-        'oc.lazyLoad',
         'templates-app',
         paginator,
         authentication,
@@ -79,7 +81,7 @@ angular
         AppModel.set('showWelcome', true);
 
         // SVG Polyfill for IE11 @todo lazy load
-        window.svg4everybody();
+        svg4everybody();
     })
 
     .config(($httpProvider) => {

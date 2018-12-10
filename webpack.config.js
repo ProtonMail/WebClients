@@ -1,14 +1,7 @@
 const path = require('path');
-const glob = require('glob');
-const CONFIG = require('./env/conf.build');
 const env = require('./env/config');
 
-const makeSRC = (list) => list.map((file) => path.resolve(file));
-const TEMPLATES_GLOB = makeSRC(glob.sync('./src/templates/**/*.tpl.html'));
-const CSS_GLOB = makeSRC(CONFIG.vendor_files.css);
-
 const BUILD_TARGET = !env.isDistRelease() ? 'build' : 'dist';
-// const BUILD_TARGET = 'build';
 
 /**
  * Some plugins are broken -> uglifyJS
@@ -20,10 +13,12 @@ process.on('unhandledRejection', (reason, p) => {
     console.log('Reason', reason);
 });
 
+const isEnvProduction = env.isDistRelease();
+
 module.exports = {
     stats: 'minimal',
-    devtool: !env.isDistRelease() ? 'cheap-module-eval-source-map' : false, // Done via UglifyJS
-    mode: !env.isDistRelease() ? 'development' : 'production',
+    devtool: !isEnvProduction ? 'cheap-module-eval-source-map' : false, // Done via UglifyJS
+    mode: !isEnvProduction ? 'development' : 'production',
     watchOptions: {
         ignored: [/node_modules/, 'i18n/*.json', /\*\.(gif|jpeg|jpg|ico|png)/]
     },
@@ -38,9 +33,7 @@ module.exports = {
         contentBase: path.resolve('./build')
     },
     entry: {
-        app: ['./src/app/app.js'],
-        appLazy: ['./src/app/appLazy.js'],
-        html: './src/app.html'
+        app: ['./src/app/app.js']
     },
     resolve: {
         unsafeCache: true,
@@ -54,7 +47,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(`./${BUILD_TARGET}`),
-        filename: '[name].js'
+        filename: isEnvProduction ? '[name].[chunkhash:8].js' : '[name].js',
+        chunkFilename: isEnvProduction ? '[name].[chunkhash:8].chunk.js' : '[name].chunk.js'
     },
 
     module: {

@@ -1,4 +1,6 @@
+import Dropzone from 'dropzone';
 import _ from 'lodash';
+
 import { MIME_TYPES, BASE_SIZE, ATTACHMENT_SIZE_LIMIT, ATTACHMENT_NUMBER_LIMIT } from '../../constants';
 
 const { PLAINTEXT } = MIME_TYPES;
@@ -33,7 +35,7 @@ function composerDropzone(
             'Composer'
         ),
         [ATTACHMENT_MAX_SIZE](bytes) {
-            const total = Math.round(10 * bytes / BASE_SIZE / BASE_SIZE) / 10;
+            const total = Math.round((10 * bytes) / BASE_SIZE / BASE_SIZE) / 10;
             return gettextCatalog.getString(
                 'Attachments are limited to {{number}} MBB. Total attached would be: {{total}} MB.',
                 _.extend({ total }, numberLimit),

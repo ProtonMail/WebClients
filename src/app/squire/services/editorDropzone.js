@@ -1,3 +1,4 @@
+import Dropzone from 'dropzone';
 import _ from 'lodash';
 
 /* @ngInject */

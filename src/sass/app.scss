@@ -7,8 +7,6 @@
 @import "../../node_modules/awesomplete/awesomplete.css";
 @import "../../node_modules/nouislider/distribute/nouislider.css";
 @import "../../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
-@import "../../node_modules/codemirror/lib/codemirror.css";
-@import "../../node_modules/codemirror/addon/lint/lint.css";
 
 //=== 🚀 Setup ==============================//
 //== Base
@@ -77,7 +75,6 @@
 @import "ui/legends";
 @import "ui/ngScrollbars";
 @import "ui/asSortable";
-@import "ui/codeMirror";
 @import "ui/customMaskInput";
 @import "ui/copy";
 @import "ui/currencySelector";

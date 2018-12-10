@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import markdownit from 'markdown-it';
 
 /* @ngInject */
 function textToHtmlMail(signatureBuilder) {
@@ -8,7 +9,7 @@ function textToHtmlMail(signatureBuilder) {
     };
 
     const FAKE_BODY = document.createElement('body');
-    const md = window.markdownit('default', OPTIONS);
+    const md = markdownit('default', OPTIONS);
 
     /**
      * This function generates a random string that is not included in the input text.

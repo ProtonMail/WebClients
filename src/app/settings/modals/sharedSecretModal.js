@@ -1,3 +1,4 @@
+import QRCode from 'qrcodejs2';
 import _ from 'lodash';
 
 /* @ngInject */

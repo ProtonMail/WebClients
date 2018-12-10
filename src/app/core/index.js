@@ -11,12 +11,9 @@ import newVersion from './directives/newVersion';
 import formatResponseInterceptor from './interceptors/formatResponseInterceptor';
 import serverTimeInterceptor from './interceptors/serverTimeInterceptor';
 import alertModal from './factories/alertModal';
-import browserFingerprint from './factories/browserFingerprint';
 import bugModal from './factories/bugModal';
 import releaseNotesModal from './factories/releaseNotesModal';
 import confirmModal from './factories/confirmModal';
-import csv from './factories/csv';
-import csvFormat from './factories/csvFormat';
 import downloadFile from './factories/downloadFile';
 import exceptionHandler from './factories/exceptionHandler';
 import feedbackModal from './factories/feedbackModal';
@@ -27,7 +24,6 @@ import recoveryCodeModal from './factories/recoveryCodeModal';
 import supportModal from './factories/supportModal';
 import switchPasswordModeModal from './factories/switchPasswordModeModal';
 import twoFAIntroModal from './factories/twoFAIntroModal';
-import vcard from './factories/vcard';
 import verificationModal from './factories/verificationModal';
 import versionInfoModel from './factories/versionInfoModel';
 import welcomeModal from './factories/welcomeModal';
@@ -55,12 +51,9 @@ export default angular
     .factory('formatResponseInterceptor', formatResponseInterceptor)
     .factory('serverTimeInterceptor', serverTimeInterceptor)
     .factory('alertModal', alertModal)
-    .factory('browserFingerprint', browserFingerprint)
     .factory('bugModal', bugModal)
     .factory('confirmModal', confirmModal)
     .factory('releaseNotesModal', releaseNotesModal)
-    .factory('csv', csv)
-    .factory('csvFormat', csvFormat)
     .factory('downloadFile', downloadFile)
     .factory('$exceptionHandler', exceptionHandler)
     .factory('feedbackModal', feedbackModal)
@@ -71,7 +64,6 @@ export default angular
     .factory('supportModal', supportModal)
     .factory('switchPasswordModeModal', switchPasswordModeModal)
     .factory('twoFAIntroModal', twoFAIntroModal)
-    .factory('vcard', vcard)
     .factory('verificationModal', verificationModal)
     .factory('versionInfoModel', versionInfoModel)
     .factory('welcomeModal', welcomeModal)

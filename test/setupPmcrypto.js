@@ -21,4 +21,4 @@ const openpgp = {
     initWorker () {}
 };
 
-init({ openpgp, btoa, atob });
+init(openpgp);

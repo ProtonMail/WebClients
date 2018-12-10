@@ -81,6 +81,7 @@ import contactGroupsOverview from './directives/contactGroupsOverview';
 import importContactGroups from './services/importContactGroups';
 import autocompleteContactGroup from './directives/autocompleteContactGroup';
 import contactGroupNameValidator from './directives/contactGroupNameValidator';
+import vcard from './factories/vcard';
 
 export default angular
     .module('proton.contact', ['vs-repeat'])
@@ -110,8 +111,6 @@ export default angular
     .factory('contactEncryptionModel', contactEncryptionModel)
     .directive('contactMimetypeSelector', contactMimetypeSelector)
     .directive('contactErrorType', contactErrorType)
-    .directive('dropdownGroups', dropdownGroups)
-    .directive('contactGroupsDropdown', contactGroupsDropdown)
     .factory('contactEncryptionSettings', contactEncryptionSettings)
     .directive('contactActionHeader', contactActionHeader)
     .filter('contactViewType', contactViewType)
@@ -173,4 +172,5 @@ export default angular
     .factory('contactLoaderModal', contactLoaderModal)
     .factory('contactMergerModal', contactMergerModal)
     .factory('contactModal', contactModal)
+    .factory('vcard', vcard)
     .factory('importContactModal', importContactModal).name;

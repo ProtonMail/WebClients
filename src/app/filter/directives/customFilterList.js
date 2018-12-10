@@ -24,7 +24,9 @@ function customFilterList(
             scope.customFilters = null;
 
             const promise = Filter.query().then((filters) => {
-                scope.customFilters = filters;
+                scope.$applyAsync(() => {
+                    scope.customFilters = filters;
+                });
             });
 
             networkActivityTracker.track(promise);

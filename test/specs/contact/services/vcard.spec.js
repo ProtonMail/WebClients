@@ -1,7 +1,7 @@
 import _ from 'lodash';
-import service from '../../../../src/app/core/factories/vcard';
+import vCard from 'vcf';
 
-import { CONSTANTS } from '../../../../src/app/constants';
+import service from '../../../../src/app/contact/factories/vcard';
 
 describe('vcard factory', () => {
     const sanitize = { input: _.identity, message: _.identity };
@@ -16,7 +16,7 @@ describe('vcard factory', () => {
     let mergedContact;
 
     beforeEach(angular.mock.inject(() => {
-        factory = service(CONSTANTS, notification, sanitize);
+        factory = service(notification, sanitize);
 
         contactA = new vCard();
         contactB = new vCard();

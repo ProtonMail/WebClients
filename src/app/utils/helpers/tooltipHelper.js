@@ -1,3 +1,5 @@
+import Tooltip from 'tooltip.js';
+
 const tooltipModel = (reference, options) => {
     return new Tooltip(reference, {
         container: 'body',

@@ -1,3 +1,5 @@
+import Push from 'push.js';
+
 /* @ngInject */
 function desktopNotifications() {
     const status = () => Push.Permission.get();

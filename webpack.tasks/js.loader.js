@@ -27,7 +27,11 @@ const jsLoader = () => {
                     }
                 ]
             ],
-            plugins: [require('babel-plugin-transform-object-rest-spread'), require('babel-plugin-transform-runtime')],
+            plugins: [
+                require('babel-plugin-syntax-dynamic-import'),
+                require('babel-plugin-transform-object-rest-spread'),
+                require('babel-plugin-transform-runtime')
+            ],
             env: {
                 dev: {
                     plugins: [require('babel-plugin-lodash')]

@@ -1,3 +1,5 @@
+import saveAs from 'file-saver';
+
 import { isFileSaverSupported } from '../../../helpers/browser';
 
 /* @ngInject */
@@ -10,7 +12,7 @@ function downloadFile(gettextCatalog, notification) {
             if (!isFileSaverSupported()) {
                 throw new Error(newerBrowser);
             }
-            window.saveAs(blob, filename);
+            saveAs(blob, filename);
         } catch (error) {
             // TODO add link
             notification.error(

@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import vCard from 'vcf';
+
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';

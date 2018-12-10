@@ -1,10 +1,11 @@
 import * as pmcrypto from 'pmcrypto';
+import bcrypt from 'bcryptjs';
 
 /* @ngInject */
 function passwords($q, gettextCatalog, webcrypto) {
-    function bcrypt(str, salt) {
+    function bcryptHelper(str, salt) {
         const deferred = $q.defer();
-        dcodeIO.bcrypt.hash(str, salt, (err, hash) => {
+        bcrypt.hash(str, salt, (err, hash) => {
             if (typeof hash !== 'string') {
                 deferred.reject(err);
             } else {
@@ -32,7 +33,7 @@ function passwords($q, gettextCatalog, webcrypto) {
     function computeKeyPassword(password, salt) {
         if (salt && salt.length) {
             const saltBinary = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(salt));
-            return bcrypt(password, '$2y$10$' + dcodeIO.bcrypt.encodeBase64(saltBinary, 16)).then((hash) => {
+            return bcryptHelper(password, '$2y$10$' + bcrypt.encodeBase64(saltBinary, 16)).then((hash) => {
                 // Remove bcrypt prefix and salt (first 29 characters)
                 return hash.slice(29);
             });
@@ -56,7 +57,7 @@ function passwords($q, gettextCatalog, webcrypto) {
         3(password, salt, modulus) {
             const saltBinary = pmcrypto.binaryStringToArray(salt + 'proton');
             // We use the latest version of bcrypt, 2y, with 2^10 rounds.
-            return bcrypt(password, '$2y$10$' + dcodeIO.bcrypt.encodeBase64(saltBinary, 16)).then((unexpandedHash) => {
+            return bcryptHelper(password, '$2y$10$' + bcrypt.encodeBase64(saltBinary, 16)).then((unexpandedHash) => {
                 return expandHash(unexpandedHash + pmcrypto.arrayToBinaryString(modulus));
             });
         },
@@ -78,7 +79,7 @@ function passwords($q, gettextCatalog, webcrypto) {
                 encodedSalt += byte;
             }
             // See hash version 3 for explanation of the prefix
-            return bcrypt(password, '$2y$10$' + encodedSalt).then((unexpandedHash) => {
+            return bcryptHelper(password, '$2y$10$' + encodedSalt).then((unexpandedHash) => {
                 return expandHash(unexpandedHash + pmcrypto.arrayToBinaryString(modulus));
             });
         },

@@ -1,3 +1,5 @@
+import ClipboardJS from 'clipboard';
+
 /* @ngInject */
 function ptClipboard(gettextCatalog, notification) {
     const I18N = {

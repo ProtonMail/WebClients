@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 import { unicodeTag } from '../../../helpers/string';
 
 /* @ngInject */

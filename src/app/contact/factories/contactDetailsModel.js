@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import vCard from 'vcf';
 
 import { VCARD_KEYS, CONTACT_ADD_ID } from '../../constants';
 import { unescapeValue, escapeValue, cleanValue } from '../../../helpers/vcard';

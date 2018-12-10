@@ -1,12 +1,9 @@
 import { init, createWorker } from 'pmcrypto';
 import { isIE11 } from './browser';
 
-init({
-    openpgp,
-    btoa,
-    atob
-});
+init(window.openpgp);
 
 createWorker({
-    path: isIE11() ? 'openpgp_compat.worker.min.js' : 'openpgp.worker.min.js'
+    // NOTE: THESE VALUES ARE TRANSFORMED BY WEBPACK WITH THE DEFINE PLUGIN.
+    path: isIE11() ? OPENPGP_WORKER_COMPAT : OPENPGP_WORKER // eslint-disable-line no-undef
 });

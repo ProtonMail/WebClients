@@ -1,3 +1,5 @@
+import QRCode from 'qrcodejs2';
+
 import { BTC_DONATION_ADDRESS } from '../../constants';
 
 /* @ngInject */

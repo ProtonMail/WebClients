@@ -31,8 +31,6 @@ export default angular
     .factory('embeddedStore', embeddedStore)
     .directive('attachmentElement', attachmentElement)
     .directive('btnDownloadAttachments', btnDownloadAttachments)
-    .directive('iconAttachment', iconAttachment)
-    .directive('listAttachments', listAttachments)
     .factory('AttachmentLoader', AttachmentLoader)
     .factory('SignatureVerifier', SignatureVerifier)
     .factory('AttachmentEvent', AttachmentEvent)

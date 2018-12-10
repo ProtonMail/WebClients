@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import vCard from 'vcf';
 
 import { SEND_TYPES, VERIFICATION_STATUS, EMAIL_FORMATING, KEY_FLAGS, LARGE_KEY_SIZE } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';

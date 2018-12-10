@@ -1,3 +1,5 @@
+import vCard from 'vcf';
+
 import { CONTACT_SETTINGS_DEFAULT } from '../../constants';
 import { ADVANCED_SENDING_KEYS } from '../../../helpers/vCardFields';
 import { getGroup } from '../../../helpers/vcard';

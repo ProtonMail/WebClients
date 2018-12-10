@@ -1,3 +1,5 @@
+import { csvToVCard } from '../../../helpers/csv';
+
 /* @ngInject */
 function contactImporter(
     contactSchema,
@@ -5,7 +7,6 @@ function contactImporter(
     importContactModal,
     notification,
     vcard,
-    csv,
     gettextCatalog,
     networkActivityTracker
 ) {
@@ -21,8 +22,7 @@ function contactImporter(
     const importVCF = async (reader) => dispatch(vcard.from(reader.result));
 
     const importVCard = (file) => {
-        return csv
-            .csvToVCard(file)
+        return csvToVCard(file)
             .then((parsed = []) => parsed.length && dispatch(parsed))
             .catch((e) => {
                 console.error(e);
