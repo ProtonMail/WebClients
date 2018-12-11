@@ -529,6 +529,7 @@ Est-ce que tu vas bien ?
                 uploading: 0,
                 toFocussed: false,
                 autocompletesFocussed: false,
+                new: true,
                 ccbcc: false,
                 AddressID: 42,
                 NumEmbedded: 0,

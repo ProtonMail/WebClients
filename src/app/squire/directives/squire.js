@@ -120,7 +120,7 @@ function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, t
                     setEditorModeType(scope.message.MIMEType);
 
                     if (isPlainText) {
-                        if (scope.message.isDraft()) {
+                        if (scope.message.isDraft() && !scope.message.new) {
                             // If it is a draft plaintext, it does not need to be converted.
                             setPlaintext(textarea, body);
                         } else {
