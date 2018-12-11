@@ -54,8 +54,13 @@ function contactDetails(
             const properties = extractAllProperties(scope.contact.vCard);
             const hasEmail = _.filter(properties, (property) => property.getField() === 'email').length;
 
-            // Focus the details
-            element.find('.contactDetails-details').focus();
+            /*
+             * Focus the input with autofocus because the modal doesn't behave as
+             * contact details. With only the attribute, depending on which one
+             * you try open first, the other one won't focus.
+             * Via this hack, we do focus --force (╬￣皿￣)凸
+             */
+            _rAF(() => element.find('[autofocus="autofocus]').focus());
 
             scope.model = {};
             scope.state = {
