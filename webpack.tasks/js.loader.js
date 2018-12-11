@@ -19,18 +19,19 @@ const jsLoader = () => {
             cacheDirectory: true,
             presets: [
                 [
-                    'env',
+                    '@babel/env',
                     {
                         targets: {
                             browsers: ['ie 11']
-                        }
+                        },
+                        useBuiltIns: 'entry'
                     }
                 ]
             ],
             plugins: [
-                require('babel-plugin-syntax-dynamic-import'),
-                require('babel-plugin-transform-object-rest-spread'),
-                require('babel-plugin-transform-runtime')
+                require('@babel/plugin-syntax-dynamic-import'),
+                require('@babel/plugin-proposal-object-rest-spread'),
+                require('@babel/plugin-transform-runtime')
             ],
             env: {
                 dev: {
@@ -40,7 +41,7 @@ const jsLoader = () => {
                     plugins: [require('babel-plugin-angularjs-annotate'), require('babel-plugin-lodash')]
                 },
                 test: {
-                    plugins: ['istanbul']
+                    plugins: [require('babel-plugin-istanbul')]
                 }
             }
         }

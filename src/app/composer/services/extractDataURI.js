@@ -1,6 +1,6 @@
 import { flow, map, filter } from 'lodash/fp';
-import { escapeSrc, unescapeSrc } from '../../../helpers/domHelper';
 
+import { escapeSrc, unescapeSrc } from '../../../helpers/domHelper';
 import { MIME_TYPES } from '../../constants';
 
 const { PLAINTEXT } = MIME_TYPES;
@@ -29,7 +29,7 @@ function extractDataURI(attachmentModel, embedded) {
      * @param {Resource} message
      * @return {Promise}
      */
-    async function extractDataURI(message) {
+    async function extractor(message) {
         if (message.MIMEType === PLAINTEXT) {
             return message;
         }
@@ -72,6 +72,6 @@ function extractDataURI(attachmentModel, embedded) {
         return message;
     }
 
-    return extractDataURI;
+    return extractor;
 }
 export default extractDataURI;

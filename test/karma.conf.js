@@ -1,3 +1,5 @@
+const path = require('path');
+
 process.env.CHROME_BIN = require('puppeteer').executablePath();
 
 module.exports = (config) => {
@@ -42,14 +44,19 @@ module.exports = (config) => {
             ]
         },
 
-        reporters: ['progress', 'coverage', 'junit'],
+        reporters: ['progress', 'coverage', 'coverage-istanbul', 'junit'],
         junitReporter: {
             outputDir: 'coverage',
             outputFile: 'test-results.xml'
         },
+        coverageIstanbulReporter: {
+            reports: ['html', 'text-summary'],
+            dir: path.resolve('coverage/%browser%'),
+            fixWebpackSourcePaths: true
+        },
         port: 9876,
         colors: true,
-
+        concurrency: Infinity,
         webpackMiddleware: {
             stats: 'minimal'
         },

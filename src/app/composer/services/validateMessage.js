@@ -147,10 +147,10 @@ function validateMessage(
                     title: I18N.NO_SUBJECT_TITLE,
                     message: I18N.NO_SUBJECT_MESSAGE,
                     confirm() {
-                        confirmModal.deactivate().finally(resolve);
+                        confirmModal.deactivate().then(resolve);
                     },
                     cancel() {
-                        confirmModal.deactivate().finally(reject);
+                        confirmModal.deactivate().then(reject);
                     }
                 }
             });
