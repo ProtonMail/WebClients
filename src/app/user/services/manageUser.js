@@ -122,7 +122,7 @@ function manageUser(
         }
     };
 
-    async function manageUser({ User = {}, Addresses = [], Members = [] } = {}) {
+    async function main({ User = {}, Addresses = [], Members = [] } = {}) {
         if (!Object.keys(User).length && !Addresses.length) {
             return;
         }
@@ -158,6 +158,6 @@ function manageUser(
         delete CACHE.previousRole;
     });
 
-    return manageUser;
+    return main;
 }
 export default manageUser;

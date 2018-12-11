@@ -1,4 +1,4 @@
-import 'babel-polyfill';
+import '@babel/polyfill';
 import '../libraries/polyfill';
 import '../libraries/tweetWebIntent';
 import './vendorHelpers/jquery.loader';
