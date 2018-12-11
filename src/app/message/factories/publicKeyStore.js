@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { getFingerprint } from 'pmcrypto';
 
 import { TIME, KEY_FLAGS } from '../../constants';
 import { CONTACT_ERROR } from '../../errors';
@@ -8,7 +9,7 @@ import { normalizeEmail } from '../../../helpers/string';
 import { addGetKeys } from '../../../helpers/key';
 
 /* @ngInject */
-function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmails, Contact, contactKey) {
+function publicKeyStore(addressesModel, dispatchers, keyCache, contactEmails, Contact, contactKey) {
     const CACHE = {};
     const CACHE_TIMEOUT = TIME.HOUR;
     const usesDefaults = (contactEmail) => !contactEmail || contactEmail.Defaults;
@@ -74,7 +75,7 @@ function publicKeyStore(addressesModel, dispatchers, keyCache, pmcw, contactEmai
         const keys = await addGetKeys(Keys, 'PublicKey');
         const compromisedKeys = keys.reduce((acc, { Flags, keys }) => {
             if (!(Flags & KEY_FLAGS.ENABLE_VERIFICATION)) {
-                acc[pmcw.getFingerprint(keys[0])] = true;
+                acc[getFingerprint(keys[0])] = true;
             }
             return acc;
         }, {});

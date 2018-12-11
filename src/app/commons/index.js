@@ -25,7 +25,6 @@ import i18nLoader from './services/i18nLoader';
 import networkActivityTracker from './services/networkActivityTracker';
 import networkUtils from './services/networkUtils';
 import secureSessionStorage from './services/secureSessionStorage';
-import webcrypto from './services/webcrypto';
 import translateAttribute from './directives/translateAttribute';
 import lazyInject from './directives/lazyInject';
 import ptClipboard from './services/ptClipboard';
@@ -60,7 +59,6 @@ export default angular
     .factory('networkActivityTracker', networkActivityTracker)
     .factory('networkUtils', networkUtils)
     .factory('secureSessionStorage', secureSessionStorage)
-    .factory('webcrypto', webcrypto)
     .directive('placeholderTranslate', translateAttribute.placeholder)
     .directive('titleTranslate', translateAttribute.title)
     .directive('lazyInject', lazyInject)

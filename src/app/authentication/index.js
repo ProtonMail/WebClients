@@ -7,7 +7,6 @@ import helpLoginModal from './modals/helpLoginModal';
 import oldPasswordModal from './modals/oldPasswordModal';
 import loginPasswordModal from './modals/loginPasswordModal';
 import loginPasswordInput from './directives/loginPasswordInput';
-import pmcw from './providers/pmcw';
 import auth from './services/auth';
 import authApi from './services/authApi';
 import handle401 from './services/handle401';
@@ -41,7 +40,6 @@ export default angular
     .factory('oldPasswordModal', oldPasswordModal)
     .factory('loginPasswordModal', loginPasswordModal)
     .factory('logoutManager', logoutManager)
-    .provider('pmcw', pmcw)
     .factory('authentication', auth)
     .factory('authApi', authApi)
     .factory('handle401', handle401)

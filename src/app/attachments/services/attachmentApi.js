@@ -1,9 +1,11 @@
+import { getMessage, decryptSessionKey } from 'pmcrypto';
+
 import CONFIG from '../../config';
 import { OAUTH_KEY } from '../../constants';
 import { uniqID } from '../../../helpers/string';
 
 /* @ngInject */
-function attachmentApi($http, url, $q, dispatchers, keysModel, pmcw, secureSessionStorage, gettextCatalog) {
+function attachmentApi($http, url, $q, dispatchers, keysModel, secureSessionStorage, gettextCatalog) {
     const MAP = {
         message: {},
         request: {}
@@ -185,8 +187,8 @@ function attachmentApi($http, url, $q, dispatchers, keysModel, pmcw, secureSessi
             delete MAP.request[REQUEST_ID];
 
             try {
-                const message = await pmcw.getMessage(packets.keys);
-                const sessionKey = await pmcw.decryptSessionKey({ message, privateKeys: keys });
+                const message = await getMessage(packets.keys);
+                const sessionKey = await decryptSessionKey({ message, privateKeys: keys });
 
                 deferred.resolve({
                     REQUEST_ID,

@@ -1,5 +1,7 @@
+import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
+
 /* @ngInject */
-function exportPrivateKeyModal(pmModal, pmcw, authentication) {
+function exportPrivateKeyModal(pmModal, authentication) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/exportPrivateKeyModal.tpl.html'),
@@ -12,9 +14,8 @@ function exportPrivateKeyModal(pmModal, pmcw, authentication) {
             setTimeout(() => document.getElementById('password').focus(), 100);
 
             self.submit = () => {
-                pmcw
-                    .decryptPrivateKey(params.privateKey, authentication.getPassword())
-                    .then((privateKey) => pmcw.encryptPrivateKey(privateKey, self.password))
+                decryptPrivateKey(params.privateKey, authentication.getPassword())
+                    .then((privateKey) => encryptPrivateKey(privateKey, self.password))
                     .then((armor) => params.export(armor));
             };
 

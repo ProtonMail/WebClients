@@ -1,10 +1,12 @@
+import { updateServerTime } from 'pmcrypto';
+
 /* @ngInject */
-function serverTimeInterceptor(pmcw) {
+function serverTimeInterceptor() {
     const handleResponse = (result) => {
         const dateHeader = result.headers('date');
         const serverTime = new Date(dateHeader);
         if (dateHeader !== null && !isNaN(+serverTime)) {
-            pmcw.updateServerTime(serverTime);
+            updateServerTime(serverTime);
         }
         return result;
     };

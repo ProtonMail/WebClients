@@ -1,18 +1,11 @@
-import { readFileAsString } from '../../../helpers/fileHelper';
+import { binaryStringToArray, decodeBase64, getKeys } from 'pmcrypto';
+
+import { readFileAsString, readDataUrl } from '../../../helpers/fileHelper';
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 import { KEY_FLAGS } from '../../constants';
 
 /* @ngInject */
-function contactKeyManager(
-    notification,
-    contactKey,
-    networkActivityTracker,
-    readDataUrl,
-    gettextCatalog,
-    downloadFile,
-    keyCache,
-    pmcw
-) {
+function contactKeyManager(notification, contactKey, networkActivityTracker, gettextCatalog, downloadFile, keyCache) {
     const I18N = {
         sendKeyDetails(created, bits) {
             return gettextCatalog.getString(
@@ -109,7 +102,7 @@ function contactKeyManager(
          * @param {Object} keyInfo
          * @return {Object} key item
          */
-        const setPublicKey = (keyInfo) => ({
+        const getPublickeyInfo = (keyInfo) => ({
             info: keyInfo,
             value: keyInfo.key,
             fingerprint: keyInfo.fingerprint,
@@ -127,7 +120,7 @@ function contactKeyManager(
          */
         const moveToTrusted = (item) => {
             scope.$applyAsync(() => {
-                scope.UI.items.push(setPublicKey(item.info));
+                scope.UI.items.push(getPublickeyInfo(item.info));
                 onChange();
             });
         };
@@ -139,7 +132,7 @@ function contactKeyManager(
             scope.$applyAsync(() => {
                 const untrustedKeys = scope.BE.items.filter(({ hide }) => !hide);
                 untrustedKeys.forEach((item) => {
-                    scope.UI.items.push(setPublicKey(item.info));
+                    scope.UI.items.push(getPublickeyInfo(item.info));
                 });
                 onChange();
             });
@@ -186,8 +179,8 @@ function contactKeyManager(
          */
         const download = async (item) => {
             const [, base64] = item.value.split(',');
-            const data = pmcw.binaryStringToArray(pmcw.decodeBase64(base64));
-            const [key] = await pmcw.getKeys(data);
+            const data = binaryStringToArray(decodeBase64(base64));
+            const [key] = await getKeys(data);
             const blob = new Blob([key.armor()], { type: 'data:text/plain;charset=utf-8;' });
             const filename = `publickey - ${email} - 0x${item.fingerprint.slice(0, 8).toUpperCase()}.asc`;
 
@@ -218,7 +211,7 @@ function contactKeyManager(
             scope.$applyAsync(() => {
                 // Add keys as new keys to the trusted keys (= pinned keys)
                 newKeys.forEach((keyInfo) => {
-                    scope.UI.items.push(setPublicKey(keyInfo));
+                    scope.UI.items.push(getPublickeyInfo(keyInfo));
                 });
 
                 // Overwrite known trusted keys by the newly passed in data
@@ -235,7 +228,7 @@ function contactKeyManager(
                         notification.info(I18N.updatedKeyNotification(key.fingerprint.substring(0, 10)));
                     }
 
-                    scope.UI.items[index] = setPublicKey(key);
+                    scope.UI.items[index] = getPublickeyInfo(key);
                 });
                 onChange();
             });
@@ -300,9 +293,8 @@ function contactKeyManager(
                 if (!value) {
                     return acc;
                 }
-                const promise = readDataUrl(value)
-                    .then((key) => contactKey.keyInfo(key, email))
-                    .then(setPublicKey);
+                const key = readDataUrl(value);
+                const promise = contactKey.keyInfo(key, email).then(getPublickeyInfo);
                 acc.push(promise);
                 return acc;
             }, []);

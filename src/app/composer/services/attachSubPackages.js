@@ -1,9 +1,11 @@
 import _ from 'lodash';
+import { encryptMessage } from 'pmcrypto';
+
 import { SEND_TYPES } from '../../constants';
 import { isInternal } from '../../../helpers/message';
 
 /* @ngInject */
-function attachSubPackages(dispatchers, pmcw, srp) {
+function attachSubPackages(dispatchers, srp) {
     const { dispatcher } = dispatchers(['actionMessage']);
     const dispatchMessageAction = (message) => dispatcher.actionMessage('update', message);
 
@@ -33,7 +35,7 @@ function attachSubPackages(dispatchers, pmcw, srp) {
             const Token = await message.generateReplyToken();
 
             const [{ data: EncToken }, verifier] = await Promise.all([
-                pmcw.encryptMessage({ data: Token, publicKeys: [], passwords: [message.Password] }),
+                encryptMessage({ data: Token, publicKeys: [], passwords: [message.Password] }),
                 srp.randomVerifier(message.Password)
             ]);
 

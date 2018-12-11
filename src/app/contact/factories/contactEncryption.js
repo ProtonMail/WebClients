@@ -1,5 +1,15 @@
 import _ from 'lodash';
 import vCard from 'vcf';
+import {
+    decryptMessage,
+    encryptMessage,
+    getCleartextMessage,
+    getMaxConcurrency,
+    getMessage,
+    getSignature,
+    signMessage,
+    verifyMessage
+} from 'pmcrypto';
 
 import { CONTACT_ERROR } from '../../errors';
 import { CONTACT_CARD_TYPE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION } from '../../constants';
@@ -17,7 +27,7 @@ const {
 } = CONTACT_ERROR;
 
 /* @ngInject */
-function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contactKeyAssigner, contactProgressReporter) {
+function contactEncryption(chunk, gettextCatalog, vcard, keysModel, contactKeyAssigner, contactProgressReporter) {
     const getErrors = (data = []) => _.map(data, 'error').filter(Boolean);
 
     const buildContact = (ID, data = [], cards) => {
@@ -65,7 +75,7 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
             const data = vcard.build(toEncryptAndSign).toString(VCARD_VERSION);
 
             promises.push(
-                pmcw.encryptMessage({ data, publicKeys, privateKeys, armor, detached }).then(({ data, signature }) => ({
+                encryptMessage({ data, publicKeys, privateKeys, armor, detached }).then(({ data, signature }) => ({
                     Type: ENCRYPTED_AND_SIGNED,
                     Data: data,
                     Signature: signature
@@ -103,7 +113,7 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
             const data = vcard.build(toSign).toString(VCARD_VERSION);
 
             promises.push(
-                pmcw.signMessage({ data, privateKeys, armor, detached }).then(({ signature }) => ({
+                signMessage({ data, privateKeys, armor, detached }).then(({ signature }) => ({
                     Type: SIGNED,
                     Data: data,
                     Signature: signature
@@ -129,9 +139,9 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
         const promises = _.map(cards, ({ Type, Data = '', Signature = '' }) => {
             switch (Type) {
                 case ENCRYPTED_AND_SIGNED:
-                    return Promise.all([pmcw.getMessage(Data), pmcw.getSignature(Signature)])
+                    return Promise.all([getMessage(Data), getSignature(Signature)])
                         .then(([message, signature]) =>
-                            pmcw.decryptMessage({
+                            decryptMessage({
                                 message,
                                 privateKeys,
                                 publicKeys,
@@ -149,11 +159,10 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
                             return { error: TYPE3_CONTACT_DECRYPTION, data: new vCard().toString(VCARD_VERSION) };
                         });
                 case SIGNED:
-                    return pmcw
-                        .getSignature(Signature)
+                    return getSignature(Signature)
                         .then((signature) =>
-                            pmcw.verifyMessage({
-                                message: pmcw.getCleartextMessage(Data),
+                            verifyMessage({
+                                message: getCleartextMessage(Data),
                                 publicKeys,
                                 signature
                             })
@@ -165,9 +174,8 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
                             return { data: Data };
                         });
                 case ENCRYPTED:
-                    return pmcw
-                        .getMessage(Data)
-                        .then((message) => pmcw.decryptMessage({ message, privateKeys, armor }))
+                    return getMessage(Data)
+                        .then((message) => decryptMessage({ message, privateKeys, armor }))
                         .catch(() => {
                             return { error: TYPE1_CONTACT, data: new vCard().toString(VCARD_VERSION) };
                         });
@@ -241,7 +249,7 @@ function contactEncryption(chunk, gettextCatalog, pmcw, vcard, keysModel, contac
             });
         };
 
-        const concurrency = pmcw.getMaxConcurrency();
+        const concurrency = getMaxConcurrency();
         const chunkedContacts = chunk(contacts, Math.ceil(CONTACTS_LIMIT_ENCRYPTION / concurrency));
 
         const doubleChunkedContacts = chunk(chunkedContacts, Math.ceil(chunkedContacts.length / concurrency));

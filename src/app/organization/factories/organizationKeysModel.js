@@ -1,3 +1,5 @@
+import { decryptPrivateKey, keyInfo } from 'pmcrypto';
+
 import { PAID_ADMIN_ROLE } from '../../constants';
 
 /* @ngInject */
@@ -5,7 +7,6 @@ function organizationKeysModel(
     organizationApi,
     dispatchers,
     authentication,
-    pmcw,
     memberModel,
     notification,
     generateOrganizationModal,
@@ -65,7 +66,7 @@ function organizationKeysModel(
         const { PublicKey, PrivateKey } = await loadkeys();
         if (PublicKey) {
             set('keyStatus', 0);
-            const info = await pmcw.keyInfo(PrivateKey || PublicKey);
+            const info = await keyInfo(PrivateKey || PublicKey);
             set('organizationKeyInfo', info);
         }
 
@@ -75,7 +76,7 @@ function organizationKeysModel(
         }
 
         try {
-            const key = await pmcw.decryptPrivateKey(PrivateKey, authentication.getPassword());
+            const key = await decryptPrivateKey(PrivateKey, authentication.getPassword());
             set('organizationKey', key);
         } catch (e) {
             set('keyStatus', 2);
@@ -85,8 +86,8 @@ function organizationKeysModel(
     }
 
     const generate = async (pkg) => {
-        const keyInfo = await pmcw.keyInfo(pkg.toPublic().armor());
-        set('organizationKeyInfo', keyInfo);
+        const keyInfoData = await keyInfo(pkg.toPublic().armor());
+        set('organizationKeyInfo', keyInfoData);
         set('keyStatus', 0);
         set('organizationKey', pkg);
     };

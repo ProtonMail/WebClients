@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import { binaryStringToArray, decodeBase64, getFingerprint, getKeys, isExpiredKey, keyInfo } from 'pmcrypto';
+
 import { RECIPIENT_TYPE, PACKAGE_TYPE, KEY_FLAGS } from '../../constants';
 import { CONTACT_ERROR } from '../../errors';
 import { toList } from '../../../helpers/arrayHelper';
@@ -7,16 +9,7 @@ import { normalizeEmail } from '../../../helpers/string';
 import { isOwnAddress, isFallbackAddress } from '../../../helpers/address';
 
 /* @ngInject */
-function sendPreferences(
-    dispatchers,
-    pmcw,
-    addressesModel,
-    contactEmails,
-    Contact,
-    contactKey,
-    keyCache,
-    mailSettingsModel
-) {
+function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, contactKey, keyCache, mailSettingsModel) {
     // We cache all the information coming from the Contacts, so we can avoid accessing the contacts multiple times.
     const CACHE = {};
     const { on } = dispatchers();
@@ -96,7 +89,7 @@ function sendPreferences(
                 encrypt: true,
                 sign: true,
                 mimetype: defaultMimeType,
-                publickeys: await pmcw.getKeys(Keys[0].PublicKey),
+                publickeys: await getKeys(Keys[0].PublicKey),
                 primaryPinned: !fallbackAddress,
                 scheme: PACKAGE_TYPE.SEND_PM,
                 pinned: ownAddress,
@@ -133,11 +126,11 @@ function sendPreferences(
     };
 
     const base64ToArray = _.flowRight(
-        pmcw.binaryStringToArray,
-        pmcw.decode_base64
+        binaryStringToArray,
+        decodeBase64
     );
     const keyInfoBase64 = _.flowRight(
-        pmcw.keyInfo,
+        keyInfo,
         base64ToArray
     );
 
@@ -156,14 +149,13 @@ function sendPreferences(
         }
 
         const sendKeys = _.map(Keys.filter(encryptionEnabled), 'PublicKey');
-        const keys = await Promise.all(sendKeys.map(pmcw.getKeys));
+        const keys = await Promise.all(sendKeys.map(getKeys));
         const sendKeyObjects = keys.filter(([k = false]) => !!k);
-        const [pinnedKey] = await pmcw.getKeys(base64ToArray(base64Keys[0]));
-        const pinnedFingerprint = pmcw.getFingerprint(pinnedKey);
+        const [pinnedKey] = await getKeys(base64ToArray(base64Keys[0]));
+        const pinnedFingerprint = getFingerprint(pinnedKey);
 
         return (
-            sendKeyObjects.length === 0 ||
-            sendKeyObjects.map(([k]) => pmcw.getFingerprint(k)).includes(pinnedFingerprint)
+            sendKeyObjects.length === 0 || sendKeyObjects.map(([k]) => getFingerprint(k)).includes(pinnedFingerprint)
         );
     };
 
@@ -196,16 +188,14 @@ function sendPreferences(
         const { RecipientType, Warnings = [] } = keyData;
         const isInternal = RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
         const primaryPinned = isInternal ? await isPrimaryPinned(emailKeys, keyData, email) : true;
-        const pmKey = isInternal ? await pmcw.getKeys(keyData.Keys[0].PublicKey) : [];
+        const pmKey = isInternal ? await getKeys(keyData.Keys[0].PublicKey) : [];
         // In case the pgp packet list contains multiple keys, only the first one is taken.
         const keyObjs = await Promise.all(
             emailKeys
-                .map(pmcw.decode_base64)
-                .map(pmcw.binaryStringToArray)
+                .map(decodeBase64)
+                .map(binaryStringToArray)
                 .map((a) => {
-                    return pmcw
-                        .getKeys(a)
-                        .then(([k]) => pmcw.isExpiredKey(k).then((isExpired) => (isExpired ? null : [k])));
+                    return getKeys(a).then(([k]) => isExpiredKey(k).then((isExpired) => (isExpired ? null : [k])));
                 })
         );
         const keyObjects = keyObjs.filter((k) => k !== null);
@@ -247,7 +237,7 @@ function sendPreferences(
      */
     const reorderKeys = async (keyData, base64Keys) => {
         const sendKeys = _.map(keyData.Keys.filter(encryptionEnabled), 'PublicKey');
-        const sendKeyPromise = Promise.all(sendKeys.map(pmcw.keyInfo));
+        const sendKeyPromise = Promise.all(sendKeys.map(keyInfo));
         const pinnedKeyPromise = Promise.all(base64Keys.map(keyInfoBase64));
         const [pinnedKeyInfo, sendKeyInfo] = await Promise.all([pinnedKeyPromise, sendKeyPromise]);
 

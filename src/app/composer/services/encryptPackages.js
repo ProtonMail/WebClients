@@ -1,24 +1,35 @@
 import _ from 'lodash';
+import {
+    armorBytes,
+    arrayToBinaryString,
+    concatArrays,
+    encodeBase64,
+    encryptMessage,
+    encryptSessionKey,
+    generateSessionKey,
+    getKeys,
+    splitMessage
+} from 'pmcrypto';
+
 import { SEND_TYPES, AES256 } from '../../constants';
 
 /* @ngInject */
-function encryptPackages(pmcw, keysModel, AttachmentLoader) {
+function encryptPackages(keysModel, AttachmentLoader) {
     const arrayToBase64 = _.flowRight(
-        pmcw.encode_base64,
-        pmcw.arrayToBinaryString
+        encodeBase64,
+        arrayToBinaryString
     );
     const packToBase64 = ({ data, algorithm: Algorithm = AES256 }) => {
         return { Key: arrayToBase64(data), Algorithm };
     };
     const encryptKeyPacket = ({ sessionKeys = [], publicKeys = [], passwords = [] }) => {
         const promises = _.map(sessionKeys, (sessionKey) =>
-            pmcw
-                .encryptSessionKey({
-                    data: sessionKey.data,
-                    algorithm: sessionKey.algorithm,
-                    publicKeys: publicKeys.length > 0 ? publicKeys : undefined,
-                    passwords
-                })
+            encryptSessionKey({
+                data: sessionKey.data,
+                algorithm: sessionKey.algorithm,
+                publicKeys: publicKeys.length > 0 ? publicKeys : undefined,
+                passwords
+            })
                 .then(({ message }) => {
                     return message.packets.write();
                 })
@@ -74,10 +85,10 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
      * Generate random session key in the format openpgp creates them
      * @returns {{algorithm: string, data: (*|Uint8Array)}}
      */
-    const generateSessionKey = async () => {
+    const generateSessionKeyHelper = async () => {
         return {
             algorithm: AES256,
-            data: await pmcw.generateSessionKey(AES256)
+            data: await generateSessionKey(AES256)
         };
     };
 
@@ -91,16 +102,16 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
      */
     const encryptBodyPackage = async (pack, privateKeys, publicKeysList) => {
         const publicKeys = _.filter(publicKeysList);
-        const { data, sessionKey } = await pmcw.encryptMessage({
+        const { data, sessionKey } = await encryptMessage({
             data: pack.Body,
             publicKeys,
-            sessionKey: publicKeys.length ? undefined : await generateSessionKey(),
+            sessionKey: publicKeys.length ? undefined : await generateSessionKeyHelper(),
             privateKeys,
             returnSessionKey: true,
             compression: true
         });
 
-        const { asymmetric: keys, encrypted } = await pmcw.splitMessage(data);
+        const { asymmetric: keys, encrypted } = await splitMessage(data);
         return { keys, encrypted, sessionKey };
     };
 
@@ -115,10 +126,10 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
      * @returns {Promise.<{keys, encrypted: *, sessionKey: *}>}
      */
     const encryptDraftBodyPackage = async (pack, privateKeys, publicKeysList, message) => {
-        const ownPublicKeys = await pmcw.getKeys(message.From.Keys[0].PublicKey);
+        const ownPublicKeys = await getKeys(message.From.Keys[0].PublicKey);
         const publicKeys = ownPublicKeys.concat(_.filter(publicKeysList));
 
-        const { data, sessionKey } = await pmcw.encryptMessage({
+        const { data, sessionKey } = await encryptMessage({
             data: pack.Body,
             publicKeys,
             privateKeys,
@@ -126,7 +137,7 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
             compression: true
         });
 
-        const packets = await pmcw.splitMessage(data);
+        const packets = await splitMessage(data);
 
         const { asymmetric, encrypted } = packets;
 
@@ -134,12 +145,12 @@ function encryptPackages(pmcw, keysModel, AttachmentLoader) {
         packets.asymmetric = packets.asymmetric.slice(0, ownPublicKeys.length);
         // combine message
         const value = _.flowRight(
-            pmcw.concatArrays,
+            concatArrays,
             _.flatten,
             _.values
         )(packets);
 
-        message.Body = await pmcw.armorBytes(value);
+        message.Body = await armorBytes(value);
 
         return { keys: asymmetric.slice(ownPublicKeys.length), encrypted, sessionKey };
     };

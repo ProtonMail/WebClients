@@ -1,17 +1,10 @@
+import { decryptPrivateKey, generateKey } from 'pmcrypto';
+
 import { KEY_FLAGS } from '../../constants';
 import { addGetKeys } from '../../../helpers/key';
 
 /* @ngInject */
-function generateKeyModel(
-    Key,
-    pmcw,
-    setupKeys,
-    authentication,
-    confirmModal,
-    gettextCatalog,
-    addressesModel,
-    keysModel
-) {
+function generateKeyModel(Key, setupKeys, authentication, confirmModal, gettextCatalog, addressesModel, keysModel) {
     const STATE = {
         QUEUED: 0,
         GENERATING: 1,
@@ -97,7 +90,7 @@ Are you sure you want to continue?`,
         }
         try {
             address.state = STATE.GENERATING;
-            const { privateKeyArmored: PrivateKey } = await pmcw.generateKey({
+            const { privateKeyArmored: PrivateKey } = await generateKey({
                 userIds: [{ name: address.Email, email: address.Email }],
                 passphrase,
                 numBits
@@ -118,7 +111,7 @@ Are you sure you want to continue?`,
                 Primary: primary,
                 SignedKeyList: await keysModel.signedKeyList(address.ID, {
                     mode: 'create',
-                    privateKey: await pmcw.decryptPrivateKey(PrivateKey, passphrase)
+                    privateKey: await decryptPrivateKey(PrivateKey, passphrase)
                 })
             });
             return onSuccess(address, data.Key);

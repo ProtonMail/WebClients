@@ -1,4 +1,4 @@
-import * as pmcrypto from 'pmcrypto';
+import { arrayToBinaryString, binaryStringToArray, decodeBase64 } from 'pmcrypto';
 
 /**
  * Convert file to encoded base 64 string
@@ -48,7 +48,7 @@ export const readFileAsBuffer = (file) => {
 export const readFileAsString = async (file) => {
     const arrayBuffer = await readFileAsBuffer(file);
     // eslint-disable-next-line new-cap
-    return pmcrypto.arrayToBinaryString(new Uint8Array(arrayBuffer));
+    return arrayToBinaryString(new Uint8Array(arrayBuffer));
 };
 
 /**
@@ -71,4 +71,24 @@ export const blobURLtoBlob = (url) => {
         };
         xhr.send();
     });
+};
+
+/**
+ * Read the base64 portion of a data url.
+ * @param {String} url
+ * @returns {Uint8Array}
+ */
+export const readDataUrl = (url = '') => {
+    const error = 'The given url is not a data url.';
+
+    if (url.substring(0, 5) !== 'data:') {
+        throw new Error(error);
+    }
+
+    const [, base64] = url.split(',');
+    if (!base64) {
+        throw new Error(error);
+    }
+
+    return binaryStringToArray(decodeBase64(base64));
 };

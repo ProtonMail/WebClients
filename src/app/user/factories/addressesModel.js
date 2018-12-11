@@ -1,12 +1,14 @@
 import _ from 'lodash';
+
 import { ADDRESS_TYPE } from '../../constants';
 import updateCollection from '../../utils/helpers/updateCollection';
 import { removeEmailAlias } from '../../../helpers/string';
+import { formatKeys } from '../../../helpers/key';
 
 const { PREMIUM } = ADDRESS_TYPE;
 
 /* @ngInject */
-function addressesModel(Address, authentication, dispatchers, formatKeys) {
+function addressesModel(Address, authentication, dispatchers) {
     const { dispatcher, on } = dispatchers(['addressesModel', 'prepareDraft']);
     let CACHE = {};
     const sortByOrder = (addresses = []) => _.sortBy(addresses, 'Order');

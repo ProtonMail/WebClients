@@ -1,8 +1,11 @@
+import { getKeys, getFingerprint } from 'pmcrypto';
+
+import { formatKey } from '../../../helpers/key';
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 import { MAIN_KEY } from '../../constants';
 
 /* @ngInject */
-function addressKeysViewModel(formatKey, pmcw, authentication, keysModel) {
+function addressKeysViewModel(authentication, keysModel) {
     const getDecryptedKeys = (ID) => {
         const addressID = ID === 'contact-keys' ? MAIN_KEY : ID;
         return keysModel.getPrivateKeys(addressID).filter((k) => k.isDecrypted());
@@ -26,7 +29,7 @@ function addressKeysViewModel(formatKey, pmcw, authentication, keysModel) {
 
                 return {
                     ...address,
-                    keys: await pmcw.getKeys(PrivateKey)
+                    keys: await getKeys(PrivateKey)
                 };
             })
         );
@@ -44,7 +47,7 @@ function addressKeysViewModel(formatKey, pmcw, authentication, keysModel) {
             }
 
             const decryptedKeys = getDecryptedKeys(ID);
-            const fingerprints = decryptedKeys.map((k) => pmcw.getFingerprint(k));
+            const fingerprints = decryptedKeys.map(getFingerprint);
 
             const algType = keyAlgorithm.describe(Keys[0]);
             const address = {

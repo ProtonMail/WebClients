@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { decryptPrivateKey, encryptMessage, encryptPrivateKey } from 'pmcrypto';
 
 /* @ngInject */
 function generateOrganizationModal(
@@ -6,7 +7,6 @@ function generateOrganizationModal(
     authentication,
     networkActivityTracker,
     organizationApi,
-    pmcw,
     passwords,
     setupKeys,
     loginPasswordModal,
@@ -40,7 +40,7 @@ function generateOrganizationModal(
                             payload.PrivateKey = privateKeyArmored;
                             return privateKeyArmored;
                         })
-                        .then((armored) => pmcw.decryptPrivateKey(armored, authentication.getPassword()))
+                        .then((armored) => decryptPrivateKey(armored, authentication.getPassword()))
                         .then((pkg) => {
                             decryptedKey = pkg;
 
@@ -51,7 +51,7 @@ function generateOrganizationModal(
                             promises.push(
                                 passwords
                                     .computeKeyPassword(password, payload.BackupKeySalt)
-                                    .then((keyPassword) => pmcw.encryptPrivateKey(pkg, keyPassword))
+                                    .then((keyPassword) => encryptPrivateKey(pkg, keyPassword))
                                     .then((armored) => {
                                         payload.BackupPrivateKey = armored;
                                     })
@@ -70,7 +70,7 @@ function generateOrganizationModal(
                                         setupKeys
                                             .decryptMemberToken(key, params.existingKey)
                                             .then(({ decryptedToken }) =>
-                                                pmcw.encryptMessage({
+                                                encryptMessage({
                                                     data: decryptedToken,
                                                     publicKeys: pkg.toPublic(),
                                                     privateKeys: pkg

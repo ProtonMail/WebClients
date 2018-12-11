@@ -1,3 +1,5 @@
+import { encodeUtf8 } from 'pmcrypto';
+
 import { hasSessionStorage, hasCookie } from '../../../helpers/browser';
 
 /* @ngInject */
@@ -14,7 +16,6 @@ function LoginController(
     notification,
     helpLoginModal,
     AppModel,
-    pmcw,
     tempStorage,
     srp
 ) {
@@ -342,7 +343,7 @@ function LoginController(
         }
 
         const usernameLowerCase = username.toLowerCase();
-        const passwordEncoded = pmcw.encode_utf8(password);
+        const passwordEncoded = encodeUtf8(password);
 
         if (!passwordEncoded) {
             return notifyError(I18N.PASSWORD_ERROR);

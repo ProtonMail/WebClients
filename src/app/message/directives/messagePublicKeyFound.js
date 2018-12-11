@@ -1,3 +1,5 @@
+import { keyInfo } from 'pmcrypto';
+
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 import { isInternal } from '../../../helpers/message';
 
@@ -5,7 +7,6 @@ import { isInternal } from '../../../helpers/message';
 function messagePublicKeyFound(
     dispatchers,
     trustPublicKeyModal,
-    pmcw,
     networkActivityTracker,
     attachedPublicKey,
     gettextCatalog,
@@ -26,7 +27,7 @@ function messagePublicKeyFound(
             const element = el[0];
 
             const trust = () => {
-                const keyInfoPromise = pmcw.keyInfo(scope.message.attachedPublicKey);
+                const keyInfoPromise = keyInfo(scope.message.attachedPublicKey);
                 const addressesPromise = keyInfoPromise.then((keyInfo) =>
                     attachedPublicKey.extractAddresses(scope.message, keyInfo)
                 );

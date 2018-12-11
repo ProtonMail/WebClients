@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import { encryptMessage, getKeys, decodeUtf8Base64 } from 'pmcrypto';
+
 import { MIME_TYPES, MAX_OUTSIDE_REPLY } from '../../constants';
 
 const { DEFAULT } = MIME_TYPES;
@@ -15,7 +17,6 @@ function OutsideController(
     prepareContent,
     messageData,
     notification,
-    pmcw,
     textToHtmlMail,
     networkActivityTracker,
     secureSessionStorage,
@@ -34,7 +35,7 @@ function OutsideController(
 
     attachmentModelOutside.load();
     const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
-    const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
+    const password = decodeUtf8Base64(secureSessionStorage.getItem('proton:encrypted_password'));
     const tokenId = $stateParams.tag;
     const message = messageData;
 
@@ -122,12 +123,12 @@ function OutsideController(
         }
         const process = Promise.all([
             embedded.parser($scope.message, { direction: 'cid' }),
-            pmcw.getKeys($scope.message.publicKey)
+            getKeys($scope.message.publicKey)
         ])
             .then(([data, publicKeys]) =>
                 Promise.all([
-                    pmcw.encryptMessage({ data, publicKeys }),
-                    pmcw.encryptMessage({ data, passwords: password }),
+                    encryptMessage({ data, publicKeys }),
+                    encryptMessage({ data, passwords: password }),
                     attachmentModelOutside.encrypt($scope.message).then((attachments) => {
                         return attachments.reduce(
                             (acc, { Filename, DataPacket, MIMEType, KeyPackets, CID = '' }) => {

@@ -1,10 +1,11 @@
 import _ from 'lodash';
-import * as pmcrypto from 'pmcrypto';
+import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from 'pmcrypto';
 
+import { getRandomValues } from '../../../helpers/webcrypto';
 import { MAILBOX_PASSWORD_KEY, OAUTH_KEY } from '../../constants';
 
 /* @ngInject */
-function secureSessionStorage(webcrypto) {
+function secureSessionStorage() {
     // Partially inspired by http://www.thomasfrank.se/sessionvars.html
 
     // This service implements essentially the sessionStorage API. However,
@@ -69,8 +70,8 @@ function secureSessionStorage(webcrypto) {
         }
 
         try {
-            item = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(item));
-            nameItem = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(nameItem));
+            item = binaryStringToArray(decodeBase64(item));
+            nameItem = binaryStringToArray(decodeBase64(nameItem));
         } catch (e) {
             continue;
         }
@@ -92,7 +93,7 @@ function secureSessionStorage(webcrypto) {
             unpaddedLength--;
         }
 
-        data[whitelist[i]] = pmcrypto.arrayToBinaryString(xored.slice(0, unpaddedLength));
+        data[whitelist[i]] = arrayToBinaryString(xored.slice(0, unpaddedLength));
     }
 
     storage.clear();
@@ -128,18 +129,18 @@ function secureSessionStorage(webcrypto) {
     var flush = function() {
         for (var key in data) {
             if (data.hasOwnProperty(key)) {
-                const item = pmcrypto.binaryStringToArray(data[key]);
+                const item = binaryStringToArray(data[key]);
                 const paddedLength = Math.ceil(item.length / 256) * 256;
 
-                var share1 = webcrypto.getRandomValues(new Uint8Array(paddedLength));
+                var share1 = getRandomValues(new Uint8Array(paddedLength));
                 var share2 = new Uint8Array(share1);
 
                 for (let i = 0; i < item.length; i++) {
                     share2[i] ^= item[i];
                 }
 
-                nameStorage[key] = pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(share1));
-                storage.setItem(key, pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(share2)));
+                nameStorage[key] = encodeBase64(arrayToBinaryString(share1));
+                storage.setItem(key, encodeBase64(arrayToBinaryString(share2)));
             }
         }
 

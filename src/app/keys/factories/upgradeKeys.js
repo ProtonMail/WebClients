@@ -1,9 +1,10 @@
+import { decryptPrivateKey, encodeUtf8Base64, reformatKey } from 'pmcrypto';
 import _ from 'lodash';
 
 import { PAID_ADMIN_ROLE, MAILBOX_PASSWORD_KEY } from '../../constants';
 
 /* @ngInject */
-function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, passwords, pmcw, secureSessionStorage) {
+function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, passwords, secureSessionStorage) {
     /**
      * Reformat organization keys
      * @param  {String} password
@@ -17,9 +18,10 @@ function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, pass
             return organizationApi.getKeys().then(({ data = {} } = {}) => {
                 const encryptPrivateKey = data.PrivateKey;
                 const [{ Email }] = $injector.get('addressesModel').getByUser(user) || {};
-                return pmcw
-                    .decryptPrivateKey(encryptPrivateKey, oldSaltedPassword)
-                    .then((pkg) => pmcw.reformatKey(pkg, Email, password), () => 0);
+                return decryptPrivateKey(encryptPrivateKey, oldSaltedPassword).then(
+                    (pkg) => reformatKey(pkg, Email, password),
+                    () => 0
+                );
             });
         }
         return Promise.resolve(0);
@@ -78,7 +80,7 @@ function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, pass
         // Reformat all keys, if they can be decrypted
         const promises = inputKeys.map(({ PrivateKey, ID }) => {
             // Decrypt private key with the old mailbox password
-            return pmcw.decryptPrivateKey(PrivateKey, oldSaltedPassword).then((pkg) => ({ ID, pkg }));
+            return decryptPrivateKey(PrivateKey, oldSaltedPassword).then((pkg) => ({ ID, pkg }));
         });
 
         return promises.map((promise) => {
@@ -86,9 +88,10 @@ function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, pass
                 promise
                     // Encrypt the key with the new mailbox password
                     .then(({ ID, pkg }) => {
-                        return pmcw
-                            .reformatKey(pkg, emailAddresses[ID], password)
-                            .then((PrivateKey) => ({ ID, PrivateKey }));
+                        return reformatKey(pkg, emailAddresses[ID], password).then((PrivateKey) => ({
+                            ID,
+                            PrivateKey
+                        }));
                     })
                     // Cannot decrypt, return 0 (not an error)
                     .then(null, () => 0)
@@ -143,7 +146,7 @@ function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, pass
                 })
             )
             .then(() => {
-                secureSessionStorage.setItem(MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(passwordComputed));
+                secureSessionStorage.setItem(MAILBOX_PASSWORD_KEY, encodeUtf8Base64(passwordComputed));
             });
     };
 }

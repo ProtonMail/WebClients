@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { decryptPrivateKey } from 'pmcrypto';
 
 import { MAIN_KEY, FREE_USER_ROLE, PAID_ADMIN_ROLE } from '../../constants';
 
@@ -12,7 +13,6 @@ function manageUser(
     dispatchers,
     gettextCatalog,
     notification,
-    pmcw,
     decryptKeys
 ) {
     const { dispatcher, on } = dispatchers(['organizationChange', 'updateUser']);
@@ -28,7 +28,7 @@ function manageUser(
     const CACHE = {};
     const getPromise = async ({ OrganizationPrivateKey } = {}, password) => {
         if (OrganizationPrivateKey) {
-            return pmcw.decryptPrivateKey(OrganizationPrivateKey, password);
+            return decryptPrivateKey(OrganizationPrivateKey, password);
         }
     };
 

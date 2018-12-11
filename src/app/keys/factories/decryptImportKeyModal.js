@@ -1,5 +1,7 @@
+import { decryptPrivateKey, getFingerprint, getKeys } from 'pmcrypto';
+
 /* @ngInject */
-function decryptImportKeyModal(pmModal, notification, pmcw, gettextCatalog) {
+function decryptImportKeyModal(pmModal, notification, gettextCatalog) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/decryptImportKey.tpl.html'),
@@ -9,16 +11,16 @@ function decryptImportKeyModal(pmModal, notification, pmcw, gettextCatalog) {
             self.password = '';
             const privateKey = params.privateKey;
 
-            pmcw.getKeys(params.privateKey).then(([key]) => {
+            getKeys(params.privateKey).then(([key]) => {
                 $scope.$applyAsync(() => {
-                    self.fingerprint = pmcw.getFingerprint(key).substring(0, 8);
+                    self.fingerprint = getFingerprint(key).substring(0, 8);
                 });
             });
 
             setTimeout(() => document.getElementById('password').focus(), 100);
 
             self.submit = () => {
-                pmcw.decryptPrivateKey(privateKey, self.password)
+                decryptPrivateKey(privateKey, self.password)
                     .then((decryptedKey) => {
                         params.submit(decryptedKey);
                     })

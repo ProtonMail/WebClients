@@ -1,14 +1,15 @@
 import _ from 'lodash';
 import { BigNumber, Modulus } from 'asmcrypto.js';
-import * as pmcrypto from 'pmcrypto';
+import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64, verifyMessage } from 'pmcrypto';
 
 import CONFIG from '../../config';
 import { SRP_MODULUS_KEY, VERIFICATION_STATUS } from '../../constants';
+import { getRandomValues } from '../../../helpers/webcrypto';
 
 const { SIGNED_AND_VALID, NOT_SIGNED } = VERIFICATION_STATUS;
 
 /* @ngInject */
-function srp($http, webcrypto, passwords, url, authApi, handle10003) {
+function srp($http, passwords, url, authApi, handle10003) {
     /**
      * [generateProofs description]
      * @param  {Integer} len            Size of the proof (bytes length)
@@ -87,7 +88,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
         let clientSecret, clientEphemeral, scramblingParam;
         do {
             do {
-                clientSecret = toBN(webcrypto.getRandomValues(new Uint8Array(len / 8)));
+                clientSecret = toBN(getRandomValues(new Uint8Array(len / 8)));
             } while (clientSecret.compare(BigNumber.fromNumber(len * 2)) <= 0); // Very unlikely
 
             clientEphemeral = modulus.power(generator, clientSecret);
@@ -164,7 +165,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
     async function verifyModulus(modulusParsed) {
         try {
             const publicKeys = await openpgp.key.readArmored(SRP_MODULUS_KEY);
-            const { verified = NOT_SIGNED } = await pmcrypto.verifyMessage({
+            const { verified = NOT_SIGNED } = await verifyMessage({
                 message: modulusParsed,
                 publicKeys: publicKeys.keys
             });
@@ -181,7 +182,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
 
     async function tryAuth(infoResp, method, endpoint, req, creds, headers, fallbackAuthVersion) {
         function srpHasher(arr) {
-            return passwords.expandHash(pmcrypto.arrayToBinaryString(arr));
+            return passwords.expandHash(arrayToBinaryString(arr));
         }
 
         let proofs;
@@ -191,8 +192,8 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
 
         const modulusParsed = await openpgp.cleartext.readArmored(infoResp.data.Modulus);
         await verifyModulus(modulusParsed);
-        const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(modulusParsed.getText()));
-        const serverEphemeral = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(infoResp.data.ServerEphemeral));
+        const modulus = binaryStringToArray(decodeBase64(modulusParsed.getText()));
+        const serverEphemeral = binaryStringToArray(decodeBase64(infoResp.data.ServerEphemeral));
 
         let authVersion = infoResp.data.Version;
         useFallback = authVersion === 0;
@@ -220,7 +221,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
         let salt = '';
 
         if (authVersion >= 3) {
-            salt = pmcrypto.decode_base64(infoResp.data.Salt);
+            salt = decodeBase64(infoResp.data.Salt);
         }
 
         try {
@@ -251,8 +252,8 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
             url: url.get() + endpoint,
             data: _.extend(req, {
                 SRPSession: session,
-                ClientEphemeral: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientEphemeral)),
-                ClientProof: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientProof)),
+                ClientEphemeral: encodeBase64(arrayToBinaryString(proofs.ClientEphemeral)),
+                ClientProof: encodeBase64(arrayToBinaryString(proofs.ClientProof)),
                 TwoFactorCode: creds.TwoFactorCode
             })
         };
@@ -264,10 +265,7 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
         try {
             const resp = await $http(httpReq);
 
-            if (
-                pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ExpectedServerProof)) ===
-                resp.data.ServerProof
-            ) {
+            if (encodeBase64(arrayToBinaryString(proofs.ExpectedServerProof)) === resp.data.ServerProof) {
                 return Promise.resolve(_.extend(resp, { authVersion }));
             }
         } catch (error) {
@@ -291,8 +289,8 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
             const { data = {} } = (await authApi.modulus()) || {};
             const modulusParsed = await openpgp.cleartext.readArmored(data.Modulus);
             await verifyModulus(modulusParsed);
-            const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(modulusParsed.getText()));
-            const salt = pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(10)));
+            const modulus = binaryStringToArray(decodeBase64(modulusParsed.getText()));
+            const salt = arrayToBinaryString(getRandomValues(new Uint8Array(10)));
             const hashedPassword = await passwords.hashPassword({
                 version: passwords.currentAuthVersion,
                 password,
@@ -306,8 +304,8 @@ function srp($http, webcrypto, passwords, url, authApi, handle10003) {
                 Auth: {
                     Version: passwords.currentAuthVersion,
                     ModulusID: data.ModulusID,
-                    Salt: pmcrypto.encode_base64(salt),
-                    Verifier: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(verifier))
+                    Salt: encodeBase64(salt),
+                    Verifier: encodeBase64(arrayToBinaryString(verifier))
                 }
             };
         } catch (err) {

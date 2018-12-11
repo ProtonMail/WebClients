@@ -1,15 +1,17 @@
 import QRCode from 'qrcodejs2';
 import _ from 'lodash';
 
+import { getRandomValues } from '../../../helpers/webcrypto';
+
 /* @ngInject */
-function sharedSecretModal(addressesModel, authentication, pmModal, webcrypto) {
+function sharedSecretModal(addressesModel, authentication, pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/twofactor/sharedSecret.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const self = this;
-            const randomBytes = webcrypto.getRandomValues(new Uint8Array(20));
+            const randomBytes = getRandomValues(new Uint8Array(20));
             const sharedSecret = base32.encode(randomBytes);
             const primaryAddress = _.find(addressesModel.get(), ({ Keys }) => Keys);
             const identifier = primaryAddress ? primaryAddress.Email : `${authentication.user.Name}@protonmail`;

@@ -1,8 +1,8 @@
 import _ from 'lodash';
+import { decryptPrivateKey, getKeys, keyInfo, reformatKey } from 'pmcrypto';
 
 /* @ngInject */
 function importPrivateKey(
-    pmcw,
     decryptImportKeyModal,
     addressesModel,
     authentication,
@@ -25,8 +25,8 @@ function importPrivateKey(
         if (keyid) {
             const keyObj = getKeyObject(keyid);
             const [serverKeyInfo, uploadedKeyInfos] = await Promise.all([
-                pmcw.keyInfo(keyObj.PrivateKey),
-                Promise.all(privateKeys.map(pmcw.keyInfo))
+                keyInfo(keyObj.PrivateKey),
+                Promise.all(privateKeys.map(keyInfo))
             ]);
             const index = uploadedKeyInfos.findIndex(({ fingerprint }) => serverKeyInfo.fingerprint === fingerprint);
 
@@ -41,10 +41,10 @@ function importPrivateKey(
     };
 
     const decrypt = (file) => {
-        return pmcw.keyInfo(file).then(
+        return keyInfo(file).then(
             ({ decrypted = null, fingerprint }) => {
                 if (decrypted !== false) {
-                    return pmcw.getKeys(file);
+                    return getKeys(file);
                 }
 
                 return new Promise((resolve, reject) =>
@@ -76,13 +76,13 @@ function importPrivateKey(
             .then(_.flatten)
             .catch(() => null);
     const reformat = (privateKeys, email) =>
-        Promise.all(privateKeys.map((privKey) => pmcw.reformatKey(privKey, email, authentication.getPassword())));
+        Promise.all(privateKeys.map((privKey) => reformatKey(privKey, email, authentication.getPassword())));
 
     const createKey = async (privateKey, addressID, keyID) => {
         const SignedKeyList = await keysModel.signedKeyList(addressID, {
             mode: 'create',
             keyID,
-            privateKey: await pmcw.decryptPrivateKey(privateKey, authentication.getPassword())
+            privateKey: await decryptPrivateKey(privateKey, authentication.getPassword())
         });
         const promise = addressID
             ? Key.create({ AddressID: addressID, PrivateKey: privateKey, Primary: 0, SignedKeyList })
@@ -106,7 +106,7 @@ function importPrivateKey(
         const { ID: addressID = false } = addressesModel.get().find(({ Email }) => Email === email) || {};
         if (!addressID) {
             const keyObj = getKeyObject(keyid);
-            const pmKey = await pmcw.getKeys(keyObj.PrivateKey);
+            const pmKey = await getKeys(keyObj.PrivateKey);
             const [, , email] = pmKey[0].users[0].userId.userid.split(/(<|>)/g);
             // fallback on keyid: happens when reactivating keys
             return reformat(decryptedKeys, email).then((formattedKeys) => createKeys(formattedKeys, addressID, keyid));
