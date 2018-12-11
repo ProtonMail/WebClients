@@ -90,6 +90,7 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
 
         switch (type) {
             case 'Name':
+                UI.autofocus = true;
                 UI.unique = true;
                 UI.placeholder = I18N.name;
                 UI.iconClass = 'fa-user';
