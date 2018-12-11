@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { decryptMessage, getMessage, encodeUtf8Base64, decodeUtf8Base64 } from 'pmcrypto';
+import { decodeUtf8Base64 } from 'pmcrypto';
 
 import {
     PAID_ADMIN_ROLE,
@@ -336,42 +336,7 @@ export default angular
                 views: {
                     content: {
                         templateUrl: require('../templates/views/outside.unlock.tpl.html'),
-                        controller(
-                            $scope,
-                            $state,
-                            $stateParams,
-                            encryptedToken,
-                            networkActivityTracker,
-                            notification,
-                            secureSessionStorage
-                        ) {
-                            $scope.params = {
-                                MessagePassword: ''
-                            };
-
-                            $scope.tokenError = !encryptedToken;
-
-                            $scope.unlock = () => {
-                                const promise = getMessage(encryptedToken)
-                                    .then((message) =>
-                                        decryptMessage({ message, passwords: [$scope.params.MessagePassword] })
-                                    )
-                                    .then((decryptedToken) => {
-                                        secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
-                                        secureSessionStorage.setItem(
-                                            'proton:encrypted_password',
-                                            encodeUtf8Base64($scope.params.MessagePassword)
-                                        );
-                                        $state.go('eo.message', { tag: $stateParams.tag });
-                                    })
-                                    .catch((err) => {
-                                        console.error(err);
-                                        notification.error('Wrong Mailbox Password.');
-                                    });
-
-                                networkActivityTracker.track(promise);
-                            };
-                        }
+                        controller: 'OutsideUnlockController'
                     }
                 }
             })
@@ -435,7 +400,7 @@ export default angular
                                     );
                                 });
 
-                                message.DecryptedBody = body.data;
+                                message.DecryptedBody = body;
                                 message.Attachments = attachments;
                                 message.NumAttachments = attachments.length;
                                 return messageModel(message);
