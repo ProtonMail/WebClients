@@ -22,8 +22,8 @@
             'tall': (message.Attachments.length === 0),
             'mini': mini === true,
             'small': small === true,
-            'publicKeyAttached': message.primaryKeyAttached,
-            'signed': message.sign,
-            'readReceiptRequested': message.requestReadReceipt()
+            'publicKeyAttached': message.isAttachPublicKey(),
+            'signed': message.isSign(),
+            'readReceiptRequested': message.isRequestReadReceipt()
         }"></composer>
 </form>

@@ -1,5 +1,5 @@
-import { SEND_TYPES } from '../../constants';
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
+import { isInternal } from '../../../helpers/message';
 
 /* @ngInject */
 function messagePublicKeyFound(
@@ -38,7 +38,7 @@ function messagePublicKeyFound(
                     trustPublicKeyModal.activate({
                         params: {
                             addresses,
-                            isInternal: scope.message.IsEncrypted === SEND_TYPES.SEND_PM,
+                            isInternal: isInternal(scope.message),
                             keyInfo,
                             submit(addresses) {
                                 const promise = attachedPublicKey.attachPublicKey(

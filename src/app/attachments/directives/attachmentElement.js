@@ -67,7 +67,7 @@ function attachmentElement(SignatureVerifier, embeddedUtils, dispatchers, attach
                 }
             });
 
-            if (scope.message.isPGPInlineEncrypted() && attachmentFileFormat.receivedUnencrypted(scope.attachment)) {
+            if (scope.message.isPGPInline() && attachmentFileFormat.receivedUnencrypted(scope.attachment)) {
                 element.classList.add(UNENCRYPTED_PGP_INLINE_CLASS);
             }
 

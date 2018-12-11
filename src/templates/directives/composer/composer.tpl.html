@@ -92,7 +92,7 @@
             class="pm_button composer-btn-encryption"
             ng-class="{
                 'active': message.displayPanel && message.panelName == 'encrypt',
-                'primary': message.IsEncrypted === 1
+                'primary': message.isInternal()
             }"
             ng-disabled="message.disableOthers() || message !== selected"
             pt-placement="top"

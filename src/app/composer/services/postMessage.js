@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { STATUS, ENCRYPTED_STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
+import { STATUS, MAILBOX_IDENTIFIERS, ENCRYPTED_STATUS } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { getConversationLabels } from '../../conversation/helpers/conversationHelpers';
 

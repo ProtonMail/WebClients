@@ -1,11 +1,10 @@
-import { VERIFICATION_STATUS, ENCRYPTED_STATUS, SIGNATURE_START } from '../app/constants';
-
+import { VERIFICATION_STATUS, SIGNATURE_START } from '../app/constants';
+import { isAuto } from './message';
 /**
  * Some complicated logic after internal discussions.
  * This function returns whether we should display a lock with check / warning (indicating the signature status)
  * or we just display a lock.
  * The following logic is applied:
- *  1. If a message is not encrypted the unlocked lock is displayed.
  *  2. If a SENT message has been correctly verified, a lonesome lock is displayed, unaccompanied by its check
  *      (because we don't consciously do key pinning here)
  *  3. If a SENT message doesn't have a signature, but should have, we display a warning. A SENT message should have a signature if:
@@ -24,11 +23,7 @@ import { VERIFICATION_STATUS, ENCRYPTED_STATUS, SIGNATURE_START } from '../app/c
  */
 const displaySignatureStatus = (message) => {
     const isSentByMe = message.isSentByMe();
-    const isEncrypted = Number.parseInt(message.IsEncrypted, 10);
-    // Rule 1:
-    if (isEncrypted === ENCRYPTED_STATUS.NONE) {
-        return () => false;
-    }
+
     // Rule 4 + 5 + 6 for non-SENT messages
     if (!isSentByMe) {
         return () =>
@@ -45,7 +40,7 @@ const displaySignatureStatus = (message) => {
         // Rule 3:
         if (
             message.Verified === VERIFICATION_STATUS.NOT_SIGNED &&
-            isEncrypted !== ENCRYPTED_STATUS.AUTOREPLY &&
+            !isAuto(message) &&
             !isImport &&
             message.Time > SIGNATURE_START
         ) {

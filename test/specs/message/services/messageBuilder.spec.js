@@ -6,7 +6,7 @@ import service, {
     injectInline,
     findSender
 } from '../../../../src/app/message/services/messageBuilder';
-import { REPLY_ALL, REPLY, FORWARD, DRAFT } from '../../../../src/app/constants';
+import { REPLY_ALL, REPLY, FORWARD, MESSAGE_FLAGS } from '../../../../src/app/constants';
 
 const RE_PREFIX = 'Re:';
 const FW_PREFIX = 'Fw:';
@@ -193,12 +193,12 @@ describe('Create type of message', () => {
             ReplyTos: ['jeanne@pt.com']
         };
 
-        describe('Type != 2||3', () => {
+        describe('Flag received', () => {
 
             const newMsg = {};
 
             beforeEach(() => {
-                message.Type = 1;
+                message.Flags = MESSAGE_FLAGS.FLAG_RECEIVED;
                 reply(newMsg, message);
             });
 
@@ -209,12 +209,12 @@ describe('Create type of message', () => {
             });
         });
 
-        describe('Type 2', () => {
+        describe('Flag sent', () => {
 
             const newMsg = {};
 
             beforeEach(() => {
-                message.Type = 2;
+                message.Flags = MESSAGE_FLAGS.FLAG_SENT;
                 reply(newMsg, message);
             });
 
@@ -225,12 +225,12 @@ describe('Create type of message', () => {
             });
         });
 
-        describe('Type 3', () => {
+        describe('Flag received and sent', () => {
 
             const newMsg = {};
 
             beforeEach(() => {
-                message.Type = 3;
+                message.Flags = MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED;
                 reply(newMsg, message);
             });
 
@@ -255,12 +255,12 @@ describe('Create type of message', () => {
             ReplyTos: ['jeanne@pt.com']
         };
 
-        describe('Type !== 2||3', () => {
+        describe('Flag received', () => {
 
             const newMsg = {};
 
             beforeEach(() => {
-                message.Type = 1;
+                message.Flags = MESSAGE_FLAGS.FLAG_RECEIVED;
                 replyAll(newMsg, message);
             });
 
@@ -273,12 +273,12 @@ describe('Create type of message', () => {
             });
         });
 
-        describe('Type === 2', () => {
+        describe('Flag sent', () => {
 
             const newMsg = {};
 
             beforeEach(() => {
-                message.Type = 2;
+                message.Flags = MESSAGE_FLAGS.FLAG_SENT;
                 replyAll(newMsg, message);
             });
 
@@ -291,12 +291,12 @@ describe('Create type of message', () => {
             });
         });
 
-        describe('Type === 3', () => {
+        describe('Flag received and sent', () => {
 
             const newMsg = {};
 
             beforeEach(() => {
-                message.Type = 3;
+                message.Flags = MESSAGE_FLAGS.FLAG_RECEIVED | MESSAGE_FLAGS.FLAG_SENT;
                 replyAll(newMsg, message);
             });
 
@@ -512,7 +512,7 @@ Est-ce que tu vas bien ?
                 textToHtmlMail);
 
             DEFAULT_MESSAGE = {
-                Type: DRAFT,
+                Flags: 0,
                 Body: 'encrypted body',
                 ToList: [],
                 CCList: [],
@@ -524,7 +524,6 @@ Est-ce que tu vas bien ?
                 RightToLeft: undefined,
                 Subject: '',
                 PasswordHint: '',
-                IsEncrypted: 0,
                 ExpirationTime: 0,
                 From: TESTABLE_ADDRESS_DEFAULT,
                 uploading: 0,
@@ -667,7 +666,7 @@ Est-ce que tu vas bien ?
             action: 'reply',
             currentMessageExtension: {
                 ID: Date.now(),
-                Type: 2,
+                Flags: MESSAGE_FLAGS.FLAG_SENT,
                 Subject: 'polo',
                 ToList: ['bob'],
                 CCList: ['bobby'],
@@ -702,7 +701,7 @@ Est-ce que tu vas bien ?
             body: defaultReply,
             currentMessageExtension: {
                 ID: Date.now(),
-                Type: 3,
+                Flags: MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED,
                 Subject: 'Re: polo',
                 MIMEType: 'text/plain',
                 ToList: ['bob'],
@@ -739,7 +738,7 @@ Est-ce que tu vas bien ?
             body: defaultReply,
             currentMessageExtension: {
                 ID: Date.now(),
-                Type: 3,
+                Flags: MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED,
                 Subject: 'Re: polo',
                 MIMEType: 'text/plain',
                 ToList: ['bob'],
@@ -825,7 +824,7 @@ Est-ce que tu vas bien ?
             body: defaultReply,
             currentMessageExtension: {
                 ID: Date.now(),
-                Type: 2,
+                Flags: MESSAGE_FLAGS.FLAG_SENT,
                 AddressID: 1337,
                 Subject: 'polo',
                 ToList: ['bob'],
@@ -875,7 +874,7 @@ Est-ce que tu vas bien ?
             body: defaultReply,
             currentMessageExtension: {
                 ID: Date.now(),
-                Type: 2,
+                Flags: MESSAGE_FLAGS.FLAG_SENT,
                 AddressID: 1337,
                 Subject: 'polo',
                 ToList: ['bob'],
@@ -933,7 +932,7 @@ Est-ce que tu vas bien ?
             body: defaultReply,
             currentMessageExtension: {
                 ID: Date.now(),
-                Type: 2,
+                Flags: MESSAGE_FLAGS.FLAG_SENT,
                 AddressID: 1337,
                 Subject: 'polo',
                 ToList: ['bob'],
@@ -986,7 +985,7 @@ Est-ce que tu vas bien ?
             body: defaultReply,
             currentMessageExtension: {
                 ID: Date.now(),
-                Type: 2,
+                Flags: MESSAGE_FLAGS.FLAG_SENT,
                 Subject: 'polo',
                 ToList: ['bob'],
                 CCList: ['bobby'],
@@ -1020,7 +1019,7 @@ Est-ce que tu vas bien ?
             body: defaultReply,
             currentMessageExtension: {
                 ID: Date.now(),
-                Type: 3,
+                Flags: MESSAGE_FLAGS.FLAG_RECEIVED | MESSAGE_FLAGS.FLAG_SENT,
                 Subject: 'polo',
                 ToList: ['bob'],
                 CCList: ['bobby'],
@@ -1106,7 +1105,7 @@ Est-ce que tu vas bien ?
             body: defaultReply,
             currentMessageExtension: {
                 ID: Date.now(),
-                Type: 2,
+                Flags: MESSAGE_FLAGS.FLAG_SENT,
                 Subject: 'polo',
                 ToList: ['bob'],
                 CCList: ['bobby'],
@@ -1266,10 +1265,6 @@ Est-ce que tu vas bien ?
 
                 it('should set a value to PasswordHint', () => {
                     expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-                });
-
-                it('should set a value to IsEncrypted', () => {
-                    expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
                 });
 
                 it('should set a value to ExpirationTime', () => {

@@ -1,11 +1,30 @@
 import _ from 'lodash';
 
-import { ENCRYPTED_STATUS, VERIFICATION_STATUS, MIME_TYPES, AES256 } from '../../constants';
+import { VERIFICATION_STATUS, MIME_TYPES, AES256, MESSAGE_FLAGS } from '../../constants';
 import { toText } from '../../../helpers/parserHTML';
 import { inlineCss } from '../../../helpers/domHelper';
-import { requestReadReceipt } from '../../../helpers/message';
+import { setBit, clearBit, toggleBit } from '../../../helpers/bitHelper';
+import {
+    isMIME,
+    isInternal,
+    isExternal,
+    isDraft,
+    isReplied,
+    isRepliedAll,
+    isForwarded,
+    isSent,
+    isSentEncrypted,
+    isSentAndReceived,
+    isAuto,
+    isInternalEncrypted,
+    isExternalEncrypted,
+    isPGPInline,
+    isPGPEncrypted,
+    isRequestReadReceipt,
+    isAttachPublicKey,
+    isSign
+} from '../../../helpers/message';
 
-const PGPMIME_TYPES = [ENCRYPTED_STATUS.PGP_MIME, ENCRYPTED_STATUS.PGP_MIME_SIGNED];
 const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
@@ -39,18 +58,14 @@ function messageModel(
         Subject: '',
         PasswordHint: '',
         Unread: 1,
-        Type: 0,
+        Flags: 0,
         Sender: {},
         ToList: [],
         Time: 0,
         Size: 0,
         Attachments: [],
         NumAttachments: 0,
-        IsEncrypted: 0,
         ExpirationTime: 0,
-        IsReplied: 0,
-        IsRepliedAll: 0,
-        IsForwarded: 0,
         AddressID: '',
         CCList: [],
         BCCList: [],
@@ -66,48 +81,64 @@ function messageModel(
         ),
         gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
+
     const pgpTypes = [
         gettextCatalog.getString('PGP-encrypted message', null, 'Message encryption status'),
         gettextCatalog.getString('PGP-encrypted message from verified address', null, 'Message encryption status'),
         gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
+
     const clearTypes = [
         gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
         gettextCatalog.getString('PGP-signed message from verified address', null, 'Message encryption status'),
         gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
-    const encryptionTypes = [
-        // 0 - None
-        [gettextCatalog.getString('Unencrypted message', null, 'Message encryption status')],
-        // 1 - Internal
-        pmTypes,
-        // 2 - External
-        clearTypes,
-        // 3 - Out enc
-        [
-            gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
-            gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
-            gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-        ],
-        // 4 - Out plain
-        [
-            gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
-            gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
-            gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-        ],
-        // 5 - Store enc
-        [gettextCatalog.getString('Encrypted message', null, 'Message encryption status')],
-        // 6 - EO
-        pmTypes,
-        // 7 - PGP/Inline
-        pgpTypes,
-        // 8 - PGP/MIME
-        pgpTypes,
-        // 9 - Signed MIME
-        clearTypes,
-        // 10 - Auto response
-        [gettextCatalog.getString('Sent by ProtonMail with zero access encryption', null, 'Message encryption status')]
+
+    const sentEncrypted = [
+        gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
+        gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
+        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
+
+    const autoTypes = [
+        gettextCatalog.getString('Sent by ProtonMail with zero access encryption', null, 'Message encryption status')
+    ];
+
+    const sentClear = [
+        gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
+        gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
+        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
+    ];
+
+    const draftTypes = [gettextCatalog.getString('Encrypted message', null, 'Message encryption status')];
+
+    const getType = (message) => {
+        if (isSentEncrypted(message)) {
+            return sentEncrypted;
+        }
+
+        if (isAuto(message)) {
+            return autoTypes;
+        }
+
+        if (isSent(message)) {
+            return sentClear;
+        }
+
+        if (isDraft(message)) {
+            return draftTypes;
+        }
+
+        if (isInternalEncrypted(message)) {
+            return pmTypes;
+        }
+
+        if (isExternalEncrypted(message)) {
+            return pgpTypes;
+        }
+
+        return clearTypes;
+    };
 
     const emptyMessage = gettextCatalog.getString('Message empty', null, 'Message content if empty');
     const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
@@ -115,8 +146,6 @@ function messageModel(
 
     class Message {
         constructor(msg) {
-            this.primaryKeyAttached = mailSettingsModel.get('AttachPublicKey');
-            this.sign = mailSettingsModel.get('Sign');
             _.extend(this, angular.copy(msg));
             const { ParsedHeaders = {}, xOriginalTo } = msg;
 
@@ -126,12 +155,74 @@ function messageModel(
             return this;
         }
 
-        isDraft() {
-            return this.Type === 1;
+        addFlag(flag) {
+            this.Flags = setBit(this.Flags, flag);
         }
 
-        requestReadReceipt() {
-            return requestReadReceipt(this);
+        toggleFlag(flag) {
+            this.Flags = toggleBit(this.Flags, flag);
+        }
+
+        removeFlag(flag) {
+            this.Flags = clearBit(this.Flags, flag);
+        }
+
+        toggleReadReceipt() {
+            this.toggleFlag(MESSAGE_FLAGS.FLAG_RECEIPT_REQUEST);
+        }
+
+        isAttachPublicKey() {
+            return isAttachPublicKey(this);
+        }
+
+        isSign() {
+            return isSign(this);
+        }
+
+        toggleAttachPublicKey() {
+            this.toggleFlag(MESSAGE_FLAGS.FLAG_PUBLIC_KEY);
+            // Auto sign when attaching the public key.
+            this.isAttachPublicKey() && this.addFlag(MESSAGE_FLAGS.FLAG_SIGN);
+        }
+
+        toggleSign() {
+            this.toggleFlag(MESSAGE_FLAGS.FLAG_SIGN);
+        }
+
+        isSent() {
+            return isSent(this);
+        }
+
+        isSentAndReceived() {
+            return isSentAndReceived(this);
+        }
+
+        isInternal() {
+            return isInternal(this);
+        }
+
+        isExternal() {
+            return isExternal(this);
+        }
+
+        isDraft() {
+            return isDraft(this);
+        }
+
+        isReplied() {
+            return isReplied(this);
+        }
+
+        isRepliedAll() {
+            return isRepliedAll(this);
+        }
+
+        isForwarded() {
+            return isForwarded(this);
+        }
+
+        isRequestReadReceipt() {
+            return isRequestReadReceipt(this);
         }
 
         getVerificationStatus() {
@@ -144,10 +235,7 @@ function messageModel(
         }
 
         encryptionType() {
-            const IsEncVal = this.IsEncrypted;
-            const IsSent = this.isSentByMe();
-            const encTypeVal = IsEncVal === ENCRYPTED_STATUS.INTERNAL && IsSent ? ENCRYPTED_STATUS.OUT_ENC : IsEncVal;
-            const encType = encryptionTypes[encTypeVal];
+            const encType = getType(this);
             return encType.length > this.Verified ? encType[this.Verified] : encType[0];
         }
 
@@ -157,8 +245,11 @@ function messageModel(
 
         isSentByMe() {
             const { Address: senderAddress } = this.Sender;
-            const addresses = addressesModel.get();
-            return addresses.some(({ Email }) => Email === senderAddress);
+            return addressesModel.getByEmail(senderAddress);
+        }
+
+        isSentEncrypted() {
+            return isSentEncrypted(this);
         }
 
         plainText() {
@@ -260,8 +351,12 @@ function messageModel(
             }
         }
 
-        isPGPInlineEncrypted() {
-            return this.IsEncrypted === ENCRYPTED_STATUS.PGP_INLINE;
+        isPGPEncrypted() {
+            return isPGPEncrypted(this);
+        }
+
+        isPGPInline() {
+            return isPGPInline(this);
         }
 
         async encryptBody(publicKeys) {
@@ -283,8 +378,8 @@ function messageModel(
             }
         }
 
-        isPGPMIME() {
-            return PGPMIME_TYPES.includes(this.IsEncrypted) || this.MIMEType === MIME_TYPES.MIME;
+        isMIME() {
+            return isMIME(this);
         }
 
         async decryptMIME({ message, privateKeys, publicKeys, date }) {
@@ -345,7 +440,7 @@ function messageModel(
                         return acc;
                     }, []);
 
-                    if (this.isPGPMIME()) {
+                    if (this.isMIME()) {
                         return this.decryptMIME({
                             message,
                             privateKeys,
@@ -420,16 +515,7 @@ function messageModel(
             return attachedPublicKey.extractFromEmail(this);
         }
 
-        isMIME() {
-            return PGPMIME_TYPES.includes(this.IsEncrypted) || this.MIMEType === 'multipart/mixed';
-        }
-
         async clearTextBody(forceDecrypt = false) {
-            if (!(this.isDraft() || this.IsEncrypted > 0)) {
-                this.setDecryptedBody(this.Body, false);
-                return this.getDecryptedBody();
-            }
-
             if (this.getDecryptedBody() && !forceDecrypt) {
                 return this.getDecryptedBody();
             }

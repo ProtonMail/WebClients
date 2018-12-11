@@ -74,7 +74,7 @@ function transformRemote(dispatchers, mailSettingsModel) {
         const showImages =
             message.showImages ||
             mailSettingsModel.get('ShowImages') & REMOTE ||
-            (WHITELIST.includes(message.Sender.Address) && !message.IsEncrypted);
+            WHITELIST.includes(message.Sender.Address);
         const content = html.innerHTML;
 
         // Bind the boolean only if there are something

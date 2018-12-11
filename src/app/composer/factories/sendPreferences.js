@@ -420,8 +420,8 @@ function sendPreferences(
      */
     const get = async (emails = [], message, catchErrors = false) => {
         const defaultMimeType = message ? message.MIMEType : null;
-        const eoEnabled = message && message.IsEncrypted === 1;
-        const globalSign = message ? message.sign : mailSettingsModel.get('Sign');
+        const eoEnabled = message && message.isInternal();
+        const globalSign = message ? message.isSign() : mailSettingsModel.get('Sign');
         const normEmails = _.uniq(_.map(emails, normalizeEmail));
 
         const normInfos = await Promise.all(

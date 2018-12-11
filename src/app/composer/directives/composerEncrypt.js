@@ -1,3 +1,7 @@
+import { MESSAGE_FLAGS } from '../../constants';
+
+const { FLAG_INTERNAL } = MESSAGE_FLAGS;
+
 /* @ngInject */
 function composerEncrypt(dispatchers, notification, gettextCatalog) {
     const { dispatcher } = dispatchers(['composer.update']);
@@ -34,7 +38,7 @@ function composerEncrypt(dispatchers, notification, gettextCatalog) {
                     return notification.error(MESSAGES.noMatchPassword);
                 }
                 scope.$applyAsync(() => {
-                    scope.message.IsEncrypted = 1;
+                    scope.message.addFlag(FLAG_INTERNAL);
                     scope.message.Password = scope.model.password;
                     scope.message.PasswordHint = scope.model.hint;
                     dispatch('close.panel', scope.message);
@@ -48,7 +52,7 @@ function composerEncrypt(dispatchers, notification, gettextCatalog) {
                     scope.model.hint = '';
                     scope.encryptForm.$setUntouched();
                     delete scope.message.PasswordHint;
-                    scope.message.IsEncrypted = 0;
+                    scope.message.removeFlag(FLAG_INTERNAL);
                     dispatch('close.panel', scope.message);
                 });
             };

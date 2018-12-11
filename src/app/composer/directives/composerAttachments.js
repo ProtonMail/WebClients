@@ -1,5 +1,4 @@
 import _ from 'lodash';
-
 import { ENCRYPTED_STATUS } from '../../constants';
 
 /* @ngInject */
@@ -58,22 +57,24 @@ function composerAttachments(embeddedUtils, gettextCatalog, dispatchers) {
         const body = scope.message.getDecryptedBody();
         const testDiv = embeddedUtils.getBodyParser(body);
         const embeddedAttachments = embeddedUtils.extractEmbedded(list, testDiv);
-        return list.filter(({ Encrypted }) => Encrypted !== ENCRYPTED_STATUS.PGP_MIME).map((attachment) => {
-            const { ID, Name, Size } = attachment;
-            const Inline = embeddedAttachments.indexOf(attachment) > -1;
+        return list
+            .filter(({ Encrypted }) => Encrypted !== ENCRYPTED_STATUS.PGP_MIME)
+            .map((attachment) => {
+                const { ID, Name, Size } = attachment;
+                const Inline = embeddedAttachments.indexOf(attachment) > -1;
 
-            return {
-                id: ID,
-                packet: {
-                    filename: Name,
-                    uploading: false,
-                    Size,
-                    Inline
-                },
-                messageID: scope.message.ID,
-                message: scope.message
-            };
-        });
+                return {
+                    id: ID,
+                    packet: {
+                        filename: Name,
+                        uploading: false,
+                        Size,
+                        Inline
+                    },
+                    messageID: scope.message.ID,
+                    message: scope.message
+                };
+            });
     };
 
     const isMessage = ({ ID }, { message = {}, messageID }) => {

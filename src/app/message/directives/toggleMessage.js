@@ -1,4 +1,4 @@
-import { DRAFT } from '../../constants';
+import { isDraft } from '../../../helpers/message';
 
 /* @ngInject */
 function toggleMessage(dispatchers) {
@@ -22,7 +22,7 @@ function toggleMessage(dispatchers) {
                 ) {
                     scope.$applyAsync(() => {
                         // Open the message in composer if it's a draft
-                        if (scope.message.Type === DRAFT) {
+                        if (isDraft(scope.message)) {
                             return dispatcher['composer.load']('', scope.message);
                         }
 

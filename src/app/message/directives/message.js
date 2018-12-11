@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
-import { SEND_TYPES } from '../../constants';
+import { MESSAGE_FLAGS, SEND_TYPES } from '../../constants';
 import displaySignatureStatus from '../../../helpers/displaySignatureStatus';
+
+const { FLAG_INTERNAL } = MESSAGE_FLAGS;
 
 const CLASSNAME = {
     UNDISCLOSED: 'message-undisclosed'
@@ -78,9 +80,10 @@ function message(
                     .get([scope.message.SenderAddress])
                     .then(({ [scope.message.SenderAddress]: { pinned, scheme, isVerified } }) =>
                         scope.$applyAsync(() => {
-                            scope.message.isInternal = scheme === SEND_TYPES.SEND_PM;
+                            const isInternal = scheme === SEND_TYPES.SEND_PM;
+                            isInternal && scope.message.addFlag(FLAG_INTERNAL);
                             scope.message.promptKeyPinning =
-                                !pinned && mailSettingsModel.get('PromptPin') && scheme === SEND_TYPES.SEND_PM;
+                                !pinned && mailSettingsModel.get('PromptPin') && isInternal;
                             scope.message.askResign = pinned && !isVerified;
                         })
                     );
@@ -237,7 +240,7 @@ function message(
                     const type = tools.typeView();
 
                     if (message && canBeOpen(message)) {
-                        if (message.isPGPMIME()) {
+                        if (message.isMIME()) {
                             // we need to reload the attachments too: otherwise the attachments disappear from the message
                             await message.loadPGPAttachments();
                         }
@@ -250,7 +253,7 @@ function message(
             });
 
             function openMessage({ expand } = {}) {
-                if (scope.message.Type === 1) {
+                if (scope.message.isDraft()) {
                     if ($state.includes('secured.drafts.**') || $state.includes('secured.allDrafts.**')) {
                         dispatcher['composer.load']('', scope.message);
                     }

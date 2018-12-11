@@ -1,11 +1,12 @@
 import _ from 'lodash';
 import vCard from 'vcf';
 
-import { SEND_TYPES, VERIFICATION_STATUS, EMAIL_FORMATING, KEY_FLAGS, LARGE_KEY_SIZE } from '../../constants';
+import { VERIFICATION_STATUS, EMAIL_FORMATING, KEY_FLAGS, LARGE_KEY_SIZE, SEND_TYPES } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
 import { addGetKeys } from '../../../helpers/key';
+import { isInternal } from '../../../helpers/message';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -215,7 +216,7 @@ function attachedPublicKey(
     };
 
     const extractFromEmail = async (message) => {
-        if (message.IsEncrypted === SEND_TYPES.SEND_PM) {
+        if (isInternal(message)) {
             return message.Verified === SIGNED_AND_INVALID ? getPublicKeyFromSig(message) : false;
         }
 

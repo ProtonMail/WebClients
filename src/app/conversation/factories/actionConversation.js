@@ -4,6 +4,7 @@ import { flow, forEach, filter, reduce, sortBy, last, map } from 'lodash/fp';
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 import { getConversationLabels } from '../helpers/conversationHelpers';
 import { unicodeTag } from '../../../helpers/string';
+import { getLabelIDsMoved } from '../../../helpers/message';
 
 /* @ngInject */
 function actionConversation(
@@ -357,13 +358,15 @@ function actionConversation(
         )(ids);
 
         const getPromises = (events, flag = ADD) => {
-            const mapLabelIDs = events.filter(({ Conversation }) => Conversation).reduce((acc, { Conversation }) => {
-                Conversation[flag === ADD ? 'toAdd' : 'toRemove'].forEach((labelID) => {
-                    acc[labelID] = acc[labelID] || [];
-                    acc[labelID].push(Conversation.ID);
-                });
-                return acc;
-            }, {});
+            const mapLabelIDs = events
+                .filter(({ Conversation }) => Conversation)
+                .reduce((acc, { Conversation }) => {
+                    Conversation[flag === ADD ? 'toAdd' : 'toRemove'].forEach((labelID) => {
+                        acc[labelID] = acc[labelID] || [];
+                        acc[labelID].push(Conversation.ID);
+                    });
+                    return acc;
+                }, {});
 
             return Object.keys(mapLabelIDs).map((labelID) => {
                 return conversationApi[flag === ADD ? 'label' : 'unlabel'](labelID, mapLabelIDs[labelID]);
@@ -394,7 +397,6 @@ function actionConversation(
         const labels = labelsModel.ids('labels');
         const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
         const toSpam = labelID === MAILBOX_IDENTIFIERS.spam;
-        const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
         const promise = conversationApi.label(labelID, conversationIDs);
         const folderName = getFolderNameTranslated(labelID);
 
@@ -419,46 +421,16 @@ function actionConversation(
             return networkActivityTracker.track(promise);
         }
 
-        const labelIDsAdded = [labelID];
-
         // Generate cache events
         const events = _.reduce(
             conversationIDs,
             (acc, ID) => {
                 const messages = cache.queryMessagesCached(ID);
 
-                _.each(messages, ({ Type, LabelIDs = [], ID, Unread }) => {
-                    const copyLabelIDsAdded = labelIDsAdded.slice(); // Copy
+                _.each(messages, (message) => {
+                    const { LabelIDs = [], ID, Unread } = message;
+                    const copyLabelIDsAdded = getLabelIDsMoved(labelID, message);
                     const copyLabelIDsRemoved = _.filter(LabelIDs, (labelID) => _.includes(folderIDs, labelID));
-
-                    if (toInbox) {
-                        /**
-                         * Types definition
-                         *   - 1: a draft
-                         * if you move it to trash and back to inbox, it will go to draft instead
-                         *   - 2: is sent
-                         *  if you move it to trash and back, it will go back to sent
-                         *   - 3: is inbox and sent (a message sent to yourself)
-                         * if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
-                         */
-                        switch (Type) {
-                            case 1: {
-                                const index = copyLabelIDsAdded.indexOf(MAILBOX_IDENTIFIERS.inbox);
-                                copyLabelIDsAdded.splice(index, 1);
-                                copyLabelIDsAdded.push(MAILBOX_IDENTIFIERS.allDrafts);
-                                break;
-                            }
-                            case 2: {
-                                const index = copyLabelIDsAdded.indexOf(MAILBOX_IDENTIFIERS.inbox);
-                                copyLabelIDsAdded.splice(index, 1);
-                                copyLabelIDsAdded.push(MAILBOX_IDENTIFIERS.allSent);
-                                break;
-                            }
-                            case 3:
-                                copyLabelIDsAdded.push(MAILBOX_IDENTIFIERS.allSent);
-                                break;
-                        }
-                    }
 
                     acc.push({
                         ID,

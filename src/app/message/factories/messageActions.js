@@ -1,9 +1,10 @@
 import _ from 'lodash';
 import { flow, uniq, each, map, filter, reduce } from 'lodash/fp';
 
-import { STATUS, MAILBOX_IDENTIFIERS, DRAFT, SENT, INBOX_AND_SENT } from '../../constants';
+import { STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
 import { getConversationLabels } from '../../conversation/helpers/conversationHelpers';
 import { unicodeTag } from '../../../helpers/string';
+import { getLabelIDsMoved } from '../../../helpers/message';
 
 const REMOVE_ID = 0;
 const ADD_ID = 1;
@@ -84,26 +85,6 @@ function messageActions(
         }
     });
 
-    function updateLabelsAdded(Type, labelID) {
-        const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
-
-        if (toInbox) {
-            switch (Type) {
-                // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
-                case DRAFT:
-                    return [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts];
-                // This message is sent, if you move it to trash and back, it will go back to sent
-                case SENT:
-                    return [MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent];
-                // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
-                case INBOX_AND_SENT:
-                    return [MAILBOX_IDENTIFIERS.inbox, MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent];
-            }
-        }
-
-        return [labelID];
-    }
-
     // Message actions
     function move({ ids, labelID }) {
         const folders = labelsModel.ids('folders');
@@ -116,7 +97,7 @@ function messageActions(
             map((id) => {
                 const message = cache.getMessageCached(id) || {};
                 let labelIDs = message.LabelIDs || [];
-                const labelIDsAdded = updateLabelsAdded(message.Type, labelID);
+                const labelIDsAdded = getLabelIDsMoved(message, labelID);
                 const labelIDsRemoved = labelIDs.filter((labelID) => folderIDs.indexOf(labelID) > -1);
 
                 if (Array.isArray(labelIDsRemoved)) {

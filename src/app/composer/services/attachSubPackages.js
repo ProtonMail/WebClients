@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { SEND_TYPES } from '../../constants';
+import { isInternal } from '../../../helpers/message';
 
 /* @ngInject */
 function attachSubPackages(dispatchers, pmcw, srp) {
@@ -141,7 +142,7 @@ function attachSubPackages(dispatchers, pmcw, srp) {
                 case SEND_TYPES.SEND_EO:
                 case SEND_TYPES.SEND_CLEAR:
                     // Encrypted for outside (EO)
-                    if (message.IsEncrypted === 1) {
+                    if (isInternal(message)) {
                         return bindPackageSet(sendPMEncryptedOutside(message), email, packageType);
                     }
 
