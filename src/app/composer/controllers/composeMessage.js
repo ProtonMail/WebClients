@@ -34,7 +34,8 @@ function ComposeMessageController(
     prepareDraft,
     sendMessage,
     validateMessage,
-    recipientsFormator
+    recipientsFormator,
+    dynamicStates
 ) {
     const { dispatcher, on, unsubscribe } = dispatchers([
         'composer.update',
@@ -551,11 +552,13 @@ function ComposeMessageController(
              */
             dispatcher.elements('refresh');
 
+            const stateDraft = dynamicStates.getDraftsState();
+
             if (
                 (message.ConversationID === $stateParams.id || message.ID === $stateParams.id) &&
-                $state.includes('secured.drafts')
+                $state.includes(stateDraft)
             ) {
-                $state.go('secured.drafts');
+                $state.go(stateDraft);
             }
         };
 
