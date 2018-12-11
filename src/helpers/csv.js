@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import Papa from 'papaparse';
 import vCard from 'vcf';
 
@@ -18,33 +17,34 @@ const formatContact = (contact = {}) => {
 };
 
 /**
+ * Escape newline character for vCard format
+ * @param {String} value
+ * @return {String}
+ */
+const prepareValue = (value = '') => value.replace(/\n/g, '\\\\n');
+
+/**
  * Parse CSV contact to extract properties and generate a vCard
  * @param {Object<csv>} contact
- * @param {Object<vCard>}
+ * @return {Object<vCard>}
  */
 const toVCard = (contact = {}) => {
     const c = formatContact(contact);
-    return _.reduce(
-        properties,
-        (acc, key = '') => {
-            const props = keys[key](c);
+    return properties.reduce((acc, field = '') => {
+        const props = keys[field](c);
 
-            if (props.length) {
-                _.each(props, ({ value = '', parameter = '' }) => {
-                    const params = {};
+        props.forEach(({ value = '', parameter = '' }) => {
+            const params = {};
 
-                    if (parameter) {
-                        params.type = parameter;
-                    }
-
-                    acc.add(key, value, params);
-                });
+            if (parameter) {
+                params.type = parameter;
             }
 
-            return acc;
-        },
-        new vCard()
-    );
+            acc.add(field, prepareValue(value), params);
+        });
+
+        return acc;
+    }, new vCard());
 };
 
 /**
