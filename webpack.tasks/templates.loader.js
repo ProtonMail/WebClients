@@ -13,13 +13,7 @@ module.exports = [
                     prefix: 'templates',
                     root: 'assets'
                 }
-            }
-        ]
-    },
-
-    {
-        test: /\.html$/,
-        use: [
+            },
             {
                 loader: 'html-loader',
                 options: {
@@ -30,4 +24,18 @@ module.exports = [
             }
         ]
     }
+
+    // {
+    //     test: /\.tpl\.html$/,
+    //     use: [
+    //         {
+    //             loader: 'html-loader',
+    //             options: {
+    //                 minimize: env.isDistRelease(),
+    //                 root: 'assets',
+    //                 attrs: false
+    //             }
+    //         }
+    //     ]
+    // }
 ];
