@@ -342,7 +342,8 @@ function messageBuilder(
             uploading: 0,
             toFocussed: false,
             autocompletesFocussed: false,
-            ccbcc: false
+            ccbcc: false,
+            new: true
         });
     }
 
