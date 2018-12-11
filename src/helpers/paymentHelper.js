@@ -45,3 +45,17 @@ export const getAfterCouponDiscount = ({ Amount, CouponDiscount }) => Amount + C
  * @returns {boolean}
  */
 export const hasBlackFridayCoupon = ({ Coupon } = {}) => Coupon && Coupon.Code === BLACK_FRIDAY.COUPON_CODE;
+
+/**
+ * Check if a coupon is invalid by comparing the coupon code with the result of the coupon.
+ * @param {String} couponCode
+ * @param {Object} data - data from the check route
+ * @return {Boolean}
+ */
+export const isInvalidCoupon = (couponCode, { Coupon } = {}) => {
+    if (!couponCode) {
+        return false;
+    }
+    const returnedCouponCode = Coupon && Coupon.Code;
+    return returnedCouponCode !== couponCode;
+};

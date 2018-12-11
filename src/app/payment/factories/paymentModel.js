@@ -1,3 +1,5 @@
+import { isInvalidCoupon } from '../../../helpers/paymentHelper';
+
 /* @ngInject */
 function paymentModel(
     eventManager,
@@ -60,7 +62,7 @@ function paymentModel(
     function add(params) {
         const promise = Payment.valid(params)
             .then((data) => {
-                if (params.CouponCode && data.CouponDiscount === 0) {
+                if (isInvalidCoupon(params.CouponCode, data)) {
                     throw new Error(I18N.COUPON_INVALID);
                 }
 
