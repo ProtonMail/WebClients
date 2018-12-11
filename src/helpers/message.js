@@ -1,58 +1,60 @@
 import * as pmcrypto from 'pmcrypto';
-
-import { MESSAGE_FLAGS } from '../app/constants';
+import { MAILBOX_IDENTIFIERS, MESSAGE_FLAGS, MIME_TYPES } from '../app/constants';
 import { normalizeEmail } from './string';
+import { hasBit } from './bitHelper';
 
-const { FLAG_RECEIVED, FLAG_SENT, FLAG_RECEIPT_REQUEST, FLAG_IMPORTED } = MESSAGE_FLAGS;
+const {
+    FLAG_RECEIVED,
+    FLAG_SENT,
+    FLAG_RECEIPT_REQUEST,
+    FLAG_IMPORTED,
+    FLAG_REPLIED,
+    FLAG_REPLIEDALL,
+    FLAG_FORWARDED,
+    FLAG_INTERNAL,
+    FLAG_AUTO,
+    FLAG_E2E,
+    FLAG_SIGN,
+    FLAG_PUBLIC_KEY
+} = MESSAGE_FLAGS;
 
-/**
- * Add flag to current one
- * @param {Integer} message.Flags bit map
- * @param {Integer} flag
- * @return {Integer}
- */
-export function addFlag({ Flags = 0 } = {}, flag) {
-    return Flags | flag;
-}
-/**
- * Remove flag from current one
- * @param {Integer} message.Flags bit map
- * @param {Integer} flag
- * @return {Integer}
- */
-export function removeFlag({ Flags = 0 } = {}, flag) {
-    if (Flags & flag) {
-        return Flags - flag;
-    }
-    return Flags;
-}
+const { MIME } = MIME_TYPES;
 
 /**
- * Check if the message Object requires read receipt
- * @param {Integer} message.Flags bit map
- * @return {Boolean}
+ * Check if a message has a mime type
+ * @return {function({MIMEType}): boolean}
  */
-export function requestReadReceipt({ Flags = 0 } = {}) {
-    return Flags & FLAG_RECEIPT_REQUEST;
-}
+const hasMimeType = (type) => ({ MIMEType } = {}) => MIMEType === type;
 
 /**
- * Check if the message Object is imported
- * @param {Integer} message.Flags bit map
- * @return {Boolean}
+ * Check if a message has a flag in the flags bitmap
+ * @param {Number} flag
+ * @returns {Function}
  */
-export function isImported({ Flags = 0 } = {}) {
-    return Flags & FLAG_IMPORTED;
-}
+export const hasFlag = (flag) => ({ Flags = 0 } = {}) => hasBit(Flags, flag);
 
-/**
- * Check if the message Object is a Draft
- * @param {Integer} message.Flags bit map
- * @return {Boolean}
- */
-export function isDraft({ Flags = 0 } = {}) {
-    return !(Flags & (FLAG_RECEIVED | FLAG_SENT));
-}
+export const isRequestReadReceipt = hasFlag(FLAG_RECEIPT_REQUEST);
+export const isImported = hasFlag(FLAG_IMPORTED);
+export const isInternal = hasFlag(FLAG_INTERNAL);
+export const isExternal = (message) => !isInternal(message);
+export const isAuto = hasFlag(FLAG_AUTO);
+export const isReceived = hasFlag(FLAG_RECEIVED);
+export const isSent = hasFlag(FLAG_SENT);
+export const isReplied = hasFlag(FLAG_REPLIED);
+export const isRepliedAll = hasFlag(FLAG_REPLIEDALL);
+export const isForwarded = hasFlag(FLAG_FORWARDED);
+export const isSentAndReceived = hasFlag(FLAG_SENT | FLAG_RECEIVED);
+export const isDraft = (message) => !isSent(message) && !isReceived(message);
+export const isE2E = hasFlag(FLAG_E2E);
+export const isSentEncrypted = hasFlag(FLAG_E2E | FLAG_SENT);
+export const isInternalEncrypted = hasFlag(FLAG_E2E | FLAG_INTERNAL);
+export const isSign = hasFlag(FLAG_SIGN);
+export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
+export const isExternalEncrypted = (message) => isE2E(message) && !isInternal(message);
+export const isPGPEncrypted = hasFlag(FLAG_RECEIVED | FLAG_E2E);
+
+export const isMIME = hasMimeType(MIME);
+export const isPGPInline = (message) => isPGPEncrypted(message) && !isMIME(message);
 
 /**
  * Extract recipients addresses from a message
@@ -61,18 +63,18 @@ export function isDraft({ Flags = 0 } = {}) {
  * @param {Array} message.BCCList
  * @return {Array<Object>}
  */
-export function getRecipients({ ToList, CCList = [], BCCList = [] } = {}) {
+export const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => {
     return ToList.concat(CCList, BCCList);
-}
+};
 
 /**
  * Extract and normalize recipients
  * @param {Object} message
  * @return {Array<String>}
  */
-export function normalizeRecipients(message = {}) {
+export const normalizeRecipients = (message = {}) => {
     return getRecipients(message).map(({ Address }) => normalizeEmail(Address));
-}
+};
 
 /**
  * Decrypt simple message body with password
@@ -88,3 +90,41 @@ export async function decrypt({ Body = '' } = {}, password) {
     });
     return body;
 }
+
+/**
+ * Get the label ids to add for a message that has moved.
+ *
+ * Types definition
+ *   - 1: a draft
+ * if you move it to trash and back to inbox, it will go to draft instead
+ *   - 2: is sent
+ *  if you move it to trash and back, it will go back to sent
+ *   - 3: is inbox and sent (a message sent to yourself)
+ * if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
+ *
+ * @param {String} labelID label id to which it is moved
+ * @param {Message} message
+ * @returns {Array}
+ */
+export const getLabelIDsMoved = (message, labelID) => {
+    const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
+
+    if (toInbox) {
+        // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
+        if (message.isDraft()) {
+            return [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts];
+        }
+
+        // If you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
+        if (message.isSentAndReceived()) {
+            return [MAILBOX_IDENTIFIERS.inbox, MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent];
+        }
+
+        // This message is sent, if you move it to trash and back, it will go back to sent
+        if (message.isSent()) {
+            return [MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent];
+        }
+    }
+
+    return [labelID];
+};

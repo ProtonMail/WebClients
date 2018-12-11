@@ -20,13 +20,13 @@ function attachPublicKey(keysModel, attachmentModel, dispatchers, pmcw) {
     };
 
     /**
-     * Attaches the senders public key if primaryKeyAttached has been set. Should be called whenever the message is going to be sent.
+     * Attaches the senders public key if public key attached has been set. Should be called whenever the message is going to be sent.
      *
      * @param {Message} message
      * @return {Promise<void>}
      */
     const attachPublicKey = async (message = {}) => {
-        if (!message.primaryKeyAttached) {
+        if (!message.isAttachPublicKey()) {
             return;
         }
 

@@ -1,9 +1,11 @@
+import { isReceived } from '../../../helpers/message';
+
 /* @ngInject */
 function printMessageModel($filter, gettextCatalog) {
     const mapIcons = {
-        IsReplied: 'fa-reply',
-        IsRepliedAll: 'fa-reply-all',
-        IsForwarded: 'fa-mail-forward'
+        isReplied: 'fa-reply',
+        isRepliedAll: 'fa-reply-all',
+        isForwarded: 'fa-mail-forward'
     };
 
     const I18N = {
@@ -24,8 +26,8 @@ function printMessageModel($filter, gettextCatalog) {
      * @return {Array} icons
      */
     const getIcons = (message = {}) => {
-        return ['IsReplied', 'IsRepliedAll', 'IsForwarded'].reduce((acc, key) => {
-            if (message[key]) {
+        return ['isReplied', 'isRepliedAll', 'isForwarded'].reduce((acc, key) => {
+            if (message[key]()) {
                 acc.push(mapIcons[key]);
             }
             return acc;
@@ -34,11 +36,11 @@ function printMessageModel($filter, gettextCatalog) {
 
     /**
      * Title to display in the print message view
-     * @param {Integer} message.Type
+     * @param {Object} message
      * @return {String}
      */
-    const getTitle = ({ Type } = {}) => {
-        if (Type === 0 || Type === 3) {
+    const getTitle = (message) => {
+        if (isReceived(message)) {
             return I18N.received;
         }
 

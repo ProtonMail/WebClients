@@ -1,15 +1,20 @@
 import _ from 'lodash';
 
-import { SEND_TYPES } from '../../constants';
+import { SEND_TYPES, MESSAGE_FLAGS } from '../../constants';
+import { setBit } from '../../../helpers/bitHelper';
+
+const { FLAG_RECEIVED } = MESSAGE_FLAGS;
 
 /* @ngInject */
 function generateTopPackages(mimeMessageBuilder) {
     // We NEVER upconvert, if the user wants html: plaintext is actually fine as well
     const generateHTML = (message) => (message.MIMEType === 'text/html' ? message.getDecryptedBody() : false);
 
+    const addReceived = (Flags = 0) => setBit(Flags, FLAG_RECEIVED);
+
     const generatePlainTextPackage = async (message) => {
         return {
-            Type: 0,
+            Flags: addReceived(message.Flags),
             Addresses: {},
             MIMEType: 'text/plain',
             Body: message.exportPlainText()
@@ -18,7 +23,7 @@ function generateTopPackages(mimeMessageBuilder) {
 
     const generateHTMLPackage = async (message) => {
         return {
-            Type: 0,
+            Flags: addReceived(message.Flags),
             Addresses: {},
             MIMEType: 'text/html',
             Body: generateHTML(message)
@@ -35,7 +40,7 @@ function generateTopPackages(mimeMessageBuilder) {
         // Build the multipart/alternate MIME entity containing both the HTML and plain text entities.
 
         return {
-            Type: 0,
+            Flags: addReceived(message.Flags),
             Addresses: {},
             MIMEType: 'multipart/mixed',
             Body: await mimeMessageBuilder.construct(message)

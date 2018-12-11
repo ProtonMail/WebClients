@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import { flow, filter, sortBy } from 'lodash/fp';
-import { DRAFT, FORWARD, REPLY_ALL, REPLY, MIME_TYPES } from '../../constants';
+import { FORWARD, REPLY_ALL, REPLY, MIME_TYPES, MESSAGE_FLAGS } from '../../constants';
+import { isSent, isSentAndReceived } from '../../../helpers/message';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -114,7 +115,7 @@ export function createMessage(addresses = [], { RE_PREFIX, FW_PREFIX } = {}) {
         newMsg.Action = REPLY;
         newMsg.Subject = formatSubject(useEncrypted ? origin.encryptedSubject : origin.Subject, RE_PREFIX);
 
-        if (origin.Type === 2 || origin.Type === 3) {
+        if (isSent(origin) || isSentAndReceived(origin)) {
             newMsg.ToList = origin.ToList;
         } else {
             newMsg.ToList = origin.ReplyTos;
@@ -124,22 +125,15 @@ export function createMessage(addresses = [], { RE_PREFIX, FW_PREFIX } = {}) {
     /**
      * Format and build a replyAll
      * @param  {Message} newMsg          New message to build
-     * @param  {String} Subject          from the current message
-     * @param  {String} ToList           from the current message
-     * @param  {String} CCList           from the current message
-     * @param  {String} BCCList          from the current message
-     * @param  {Array} ReplyTos          from the current message
-     * @param  {Number} Type             from the current message
+     * @param  {String} origin           the original message
+     * @param  {boolean} useEncrypted    should use encrypted
      */
-    function replyAll(
-        newMsg,
-        { Subject, Type, ToList, ReplyTos, CCList, BCCList, encryptedSubject = '' } = {},
-        useEncrypted = false
-    ) {
+    function replyAll(newMsg, origin = {}, useEncrypted = false) {
+        const { Subject, ToList, ReplyTos, CCList, BCCList, encryptedSubject = '' } = origin;
         newMsg.Action = REPLY_ALL;
         newMsg.Subject = formatSubject(useEncrypted ? encryptedSubject : Subject, RE_PREFIX);
 
-        if (Type === 2 || Type === 3) {
+        if (isSent(origin) || isSentAndReceived(origin)) {
             newMsg.ToList = ToList;
             newMsg.CCList = CCList;
             newMsg.BCCList = BCCList;
@@ -273,6 +267,9 @@ function messageBuilder(
         newMsg.MIMEType = loadMimeType(currentMsg, mailSettingsModel.get('DraftMIMEType'));
         newMsg.RightToLeft = mailSettingsModel.get('RightToLeft');
 
+        mailSettingsModel.get('AttachPublicKey') && newMsg.addFlag(MESSAGE_FLAGS.FLAG_PUBLIC_KEY);
+        mailSettingsModel.get('Sign') && newMsg.addFlag(MESSAGE_FLAGS.FLAG_SIGN);
+
         await handleAction(action, currentMsg, newMsg);
 
         newMsg.xOriginalTo = currentMsg.xOriginalTo;
@@ -331,7 +328,7 @@ function messageBuilder(
         const sender = findSender(addressesModel.get(), message);
 
         _.defaults(message, {
-            Type: DRAFT,
+            Flags: 0,
             ToList: [],
             CCList: [],
             BCCList: [],
@@ -340,7 +337,6 @@ function messageBuilder(
             recipientFields: [],
             Subject: '',
             PasswordHint: '',
-            IsEncrypted: 0,
             ExpirationTime: 0,
             From: sender,
             uploading: 0,

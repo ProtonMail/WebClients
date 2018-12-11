@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { INBOX } from '../../constants';
+import { isReceived } from '../../../helpers/message';
 
 /* @ngInject */
 function sendersName($filter, $state, dispatchers, recipientsFormator) {
@@ -34,12 +34,13 @@ function sendersName($filter, $state, dispatchers, recipientsFormator) {
         template: '<span class="senders-name"></span>',
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
-            const { ID, ConversationID, Type } = scope.conversation;
+            const { ID, ConversationID } = scope.conversation;
             const isMessage = !!ConversationID;
-
             const eventName = isMessage ? 'message.refresh' : 'refreshConversation';
             const currentStateName = $state.$current.name.replace('.element', '');
-            const displaySenders = isMessage ? Type === INBOX : !SENDERS_STATE.includes(currentStateName);
+            const displaySenders = isMessage
+                ? isReceived(scope.conversation)
+                : !SENDERS_STATE.includes(currentStateName);
 
             const build = () => {
                 const { Sender, Senders = [] } = scope.conversation;

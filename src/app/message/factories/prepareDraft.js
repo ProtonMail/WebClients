@@ -57,7 +57,7 @@ function prepareDraft(addressesModel, keysModel, dispatchers, messageBuilder, me
      * @return {Promise} messageModel
      */
     const getMessage = async (message = messageModel()) => {
-        if (message.isPGPMIME()) {
+        if (message.isMIME()) {
             return message;
         }
 

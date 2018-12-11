@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { DRAFT, MAILBOX_IDENTIFIERS, ROW_MODE } from '../../constants';
+import { MAILBOX_IDENTIFIERS, ROW_MODE } from '../../constants';
 
 /* @ngInject */
 function conversation(
@@ -106,7 +106,7 @@ function conversation(
                     return;
                 }
 
-                if (msg.Type === DRAFT) {
+                if (msg.isDraft()) {
                     return dispatcher['composer.load']('', msg);
                 }
 

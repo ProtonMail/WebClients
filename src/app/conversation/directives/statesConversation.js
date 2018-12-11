@@ -5,9 +5,9 @@ function statesConversation() {
         replace: true,
         template: `
             <i class="fa" ng-class="{
-                'fa-mail-reply': conversation.IsReplied,
-                'fa-mail-reply-all': conversation.IsRepliedAll,
-                'fa-mail-forward': conversation.IsForwarded
+                'fa-mail-reply': conversation.isReplied(),
+                'fa-mail-reply-all': conversation.isRepliedAll(),
+                'fa-mail-forward': conversation.isForwarded()
             }"></i>
         `
     };

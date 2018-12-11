@@ -37,10 +37,6 @@ export const TIMEOUT = 30 * 1000; // timeout in milliseconds
 export const TEMP_STORAGE_LIFETIME = 60 * 1000;
 export const BASE_SIZE = 1024; // define the base used for byte
 export const KEY_VERSION = 3;
-export const INBOX = 0;
-export const DRAFT = 1;
-export const SENT = 2;
-export const INBOX_AND_SENT = 3;
 export const PM_ADDRESS = 1;
 export const PM_ALIAS = 2;
 export const REPLY = 0;
@@ -213,20 +209,6 @@ export const KEY_FLAG = {
     SIGNED: 1,
     CLEAR_TEXT: 0
 };
-
-export const ENCRYPTED_STATUS = {
-    NONE: 0,
-    INTERNAL: 1,
-    EXTERNAL: 2,
-    OUT_ENC: 3,
-    OUT_PLAIN: 4,
-    STORED_ENC: 5,
-    PGP_INLINE: 7,
-    PGP_MIME: 8,
-    PGP_MIME_SIGNED: 9,
-    AUTOREPLY: 10
-};
-
 export const STATUS = {
     DELETE: 0,
     CREATE: 1,
@@ -250,15 +232,6 @@ export const RECIPIENT_TYPE = {
     TYPE_INTERNAL: 1,
     TYPE_EXTERNAL: 2,
     TYPE_NO_RECEIVE: 3
-};
-
-export const SEND_TYPES = {
-    SEND_PM: 1,
-    SEND_EO: 2,
-    SEND_CLEAR: 4,
-    SEND_PGP_INLINE: 8,
-    SEND_PGP_MIME: 16,
-    SEND_MIME: 32
 };
 
 export const PLANS = {
@@ -354,6 +327,19 @@ export const KNOWLEDGE_BASE = {
     STORAGE_WARNING: 'https://protonmail.com/support/knowledge-base/storage-limit-reached/'
 };
 export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
+
+export const ENCRYPTED_STATUS = {
+    PGP_MIME: 8 // Used for attachment
+};
+
+export const SEND_TYPES = {
+    SEND_PM: 1,
+    SEND_EO: 2,
+    SEND_CLEAR: 4,
+    SEND_PGP_INLINE: 8,
+    SEND_PGP_MIME: 16,
+    SEND_MIME: 32
+};
 
 export const MIME_TYPES = {
     MIME: 'multipart/mixed',

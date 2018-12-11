@@ -1,5 +1,5 @@
 import { KEY_FLAG, MAIN_KEY } from '../../constants';
-import { removeFlag } from '../../../helpers/message';
+import { clearBit } from '../../../helpers/bitHelper';
 
 const { ENCRYPTED, ENCRYPTED_AND_SIGNED } = KEY_FLAG;
 const REMOVE_KEY = ['remove', 'set-primary', 'create'];
@@ -82,7 +82,7 @@ function keysModel(dispatchers, pmcw) {
      */
     const getFlags = (mode, key, keyID, newFlags) => {
         if (mode === 'reset') {
-            return removeFlag(key, ENCRYPTED);
+            return clearBit(key, ENCRYPTED);
         }
 
         if (mode === 'mark' && key.ID === keyID) {

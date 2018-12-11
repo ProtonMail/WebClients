@@ -1,4 +1,4 @@
-import { DRAFT } from '../../constants';
+import { isDraft } from '../../../helpers/message';
 
 /* @ngInject */
 function conversationListeners(dispatchers) {
@@ -9,7 +9,6 @@ function conversationListeners(dispatchers) {
         forwardConversation: 'forward'
     };
 
-    const isDraft = ({ Type }) => Type === DRAFT;
     const isDecrypted = ({ failedDecryption }) => !failedDecryption;
 
     const openComposer = (key, message = {}) => () => {

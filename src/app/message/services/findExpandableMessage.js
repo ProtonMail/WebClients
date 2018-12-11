@@ -1,16 +1,16 @@
 import _ from 'lodash';
 import { flow, filter, last } from 'lodash/fp';
 
-import { SENT, ENCRYPTED_STATUS, DRAFT } from '../../constants';
+import { isDraft, isSent, isAuto } from '../../../helpers/message';
 
 /* @ngInject */
 function findExpandableMessage(tools, $state, $stateParams) {
-    const isSentAutoReply = ({ Type, IsEncrypted, ParsedHeaders = {} }) => {
-        if (!(Type & SENT)) {
+    const isSentAutoReply = ({ Flags, ParsedHeaders = {} }) => {
+        if (!isSent({ Flags })) {
             return false;
         }
 
-        if (IsEncrypted === ENCRYPTED_STATUS.AUTOREPLY) {
+        if (isAuto({ Flags })) {
             return true;
         }
 
@@ -63,7 +63,11 @@ function findExpandableMessage(tools, $state, $stateParams) {
     function find(messages = []) {
         let thisOne;
 
-        const filterCb = (cb) => flow(filter(cb), last)(messages);
+        const filterCb = (cb) =>
+            flow(
+                filter(cb),
+                last
+            )(messages);
 
         const currentLocation = tools.currentLocation();
 
@@ -80,24 +84,24 @@ function findExpandableMessage(tools, $state, $stateParams) {
             case $state.includes('secured.starred.**'):
             case $state.includes('secured.label.**'):
                 thisOne = getMessage(
-                    _.filter(messages, (m) => m.LabelIDs.indexOf(currentLocation) > -1 && m.Type !== DRAFT)
+                    _.filter(messages, (message) => message.LabelIDs.indexOf(currentLocation) > -1 && !isDraft(message))
                 );
                 break;
 
             case $state.includes('secured.allDrafts.**'):
             case $state.includes('secured.drafts.**'):
-                thisOne = filterCb(({ Type }) => Type === DRAFT);
+                thisOne = filterCb(isDraft);
                 break;
 
             default: {
-                const latest = filterCb((m) => m.Type !== DRAFT && !isSentAutoReply(m));
+                const latest = filterCb((message) => !isDraft(message) && !isSentAutoReply(message));
 
                 if (latest && latest.Unread === 0) {
                     thisOne = latest;
                     break;
                 }
 
-                thisOne = getMessage(_.filter(messages, (m) => m.Type !== DRAFT && !isSentAutoReply(m)));
+                thisOne = getMessage(_.filter(messages, (message) => !isDraft(message) && !isSentAutoReply(message)));
                 break;
             }
         }

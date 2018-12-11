@@ -1,6 +1,6 @@
 import service from '../../../../src/app/conversation/factories/conversationListeners';
 import dispatchersService from '../../../../src/app/commons/services/dispatchers';
-import { DRAFT, INBOX } from '../../../../src/app/constants';
+import { MESSAGE_FLAGS } from '../../../../src/app/constants';
 
 describe('conversationListeners factory', () => {
 
@@ -40,7 +40,7 @@ describe('conversationListeners factory', () => {
 
         beforeEach(() => {
             spy = jasmine.createSpy();
-            message = { Type: DRAFT };
+            message = { Flags: 0 };
             spyOn(rootScope, '$on').and.callThrough();
             unsubscribe = factory(message);
         });
@@ -126,7 +126,7 @@ describe('conversationListeners factory', () => {
 
         beforeEach(() => {
             spy = jasmine.createSpy();
-            message = { Type: INBOX };
+            message = { Flags: MESSAGE_FLAGS.FLAG_RECEIVED };
             spyOn(rootScope, '$on').and.callThrough();
             unsubscribe = factory(message);
         });
@@ -212,7 +212,7 @@ describe('conversationListeners factory', () => {
 
         beforeEach(() => {
             spy = jasmine.createSpy();
-            message = { Type: INBOX, failedDecryption: true };
+            message = { Flags: MESSAGE_FLAGS.FLAG_RECEIVED, failedDecryption: true };
             spyOn(rootScope, '$on').and.callThrough();
             unsubscribe = factory(message);
         });

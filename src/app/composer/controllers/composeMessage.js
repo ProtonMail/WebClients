@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
-import { MIME_TYPES, INBOX_AND_SENT, SENT, MAX_NUMBER_COMPOSER } from '../../constants';
-import { normalizeRecipients } from '../../../helpers/message';
+import { MIME_TYPES, MAX_NUMBER_COMPOSER } from '../../constants';
+import { normalizeRecipients, isSent } from '../../../helpers/message';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -174,8 +174,6 @@ function ComposeMessageController(
         });
     });
 
-    const isSent = ({ Type } = {}) => Type === INBOX_AND_SENT || Type === SENT;
-
     on('app.event', (event, { type, data }) => {
         switch (type) {
             case 'activeMessages': {
@@ -239,7 +237,7 @@ function ComposeMessageController(
          * See #6645
          * Don't prepare plaintext messages because they are converted to html when sanitized.
          */
-        const isDraftPlainText = message.isPlainText() && message.IsEncrypted === 5;
+        const isDraftPlainText = message.isPlainText() && message.isDraft();
         const preparedMessage = isDraftPlainText ? message : messageBuilder.prepare(message, 'reply');
         await initMessage(preparedMessage);
         await commitComposer(preparedMessage);
@@ -410,7 +408,7 @@ function ComposeMessageController(
         $scope.$applyAsync(() => {
             const size = $scope.messages.unshift(message);
 
-            postMessage(message, { encrypt: !message.isPGPMIME() })
+            postMessage(message, { encrypt: !message.isMIME() })
                 .then(() => {
                     dispatcher['composer.update']('loaded', { size, message });
                 })

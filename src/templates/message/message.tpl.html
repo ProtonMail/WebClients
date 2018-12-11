@@ -3,8 +3,8 @@
     'marked': message.ID === marked.ID,
     'unread': message.Unread === 1,
     'details': message.toggleDetails === true,
-    'draft': message.Type === 1,
-    'sent': message.Type === 2 || message.Type === 3,
+    'draft': message.isDraft(),
+    'sent': message.isSent(),
     'hasSender': message.Sender.Address.length,
     'message-mode-plain': message.viewMode === 'plain'
 }">
@@ -14,9 +14,9 @@
         <div class="summary-left">
             <div class="meta">
 
-                <i class="history fa fa-reply" ng-if="message.IsReplied === 1"></i>
-                <i class="history fa fa-reply-all" ng-if="message.IsRepliedAll === 1"></i>
-                <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
+                <i class="history fa fa-reply" ng-if="message.isReplied()"></i>
+                <i class="history fa fa-reply-all" ng-if="message.isRepliedAll()"></i>
+                <i class="history fa fa-mail-forward" ng-if="message.isForwarded()"></i>
 
                 <div class="contact message-contact">
 
@@ -43,8 +43,8 @@
 
             </div>
             <div class="location message-summary-folder sent">
-                <i ng-if="message.Type === 1" class="pm_tag allMessageLabels-type-draft" translate-context="Message label" translate>Draft</i>
-                <i ng-if="message.Type === 2 || message.Type === 3" class="pm_tag allMessageLabels-type-sent" translate-context="Message label" translate>Sent</i>
+                <i ng-if="message.isDraft()" class="pm_tag allMessageLabels-type-draft" translate-context="Message label" translate>Draft</i>
+                <i ng-if="message.isSent()" class="pm_tag allMessageLabels-type-sent" translate-context="Message label" translate>Sent</i>
             </div>
 
         </div>
@@ -237,8 +237,8 @@
                             </button>
                             <button data-action-message="viewPgp">
                                 <i class="fa fa-code"></i>
-                                <span translate translate-context="Action" ng-if="message.IsEncrypted !== 0">View headers</span>
-                                <span translate translate-context="Action" ng-if="message.IsEncrypted === 0">View original</span>
+                                <span translate translate-context="Action">View headers</span>
+                                <span translate translate-context="Action">View original</span>
                             </button>
                             <button data-action-message="downloadEml" ng-if="!message.failedDecryption">
                                 <i class="fa fa-download"></i>
