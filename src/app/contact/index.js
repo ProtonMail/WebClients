@@ -116,7 +116,6 @@ export default angular
     .filter('contactViewType', contactViewType)
     .directive('contactViewItem', contactViewItem)
     .directive('contactViewDetail', contactViewDetail)
-    .directive('importCardDropzone', importCardDropzone)
     .directive('contactAddressInput', contactAddressInput)
     .directive('contactPhotoRow', contactPhotoRow)
     .directive('contactClear', contactClear)
