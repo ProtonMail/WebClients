@@ -1,8 +1,10 @@
-import * as pmcrypto from 'pmcrypto';
 import bcrypt from 'bcryptjs';
+import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64, encodeUtf8 } from 'pmcrypto';
+
+import { getRandomValues } from '../../../helpers/webcrypto';
 
 /* @ngInject */
-function passwords($q, gettextCatalog, webcrypto) {
+function passwords($q, gettextCatalog) {
     function bcryptHelper(str, salt) {
         const deferred = $q.defer();
         bcrypt.hash(str, salt, (err, hash) => {
@@ -21,10 +23,10 @@ function passwords($q, gettextCatalog, webcrypto) {
 
     async function expandHash(str) {
         const list = await Promise.all([
-            openpgp.crypto.hash.sha512(pmcrypto.binaryStringToArray(str + '\x00')),
-            openpgp.crypto.hash.sha512(pmcrypto.binaryStringToArray(str + '\x01')),
-            openpgp.crypto.hash.sha512(pmcrypto.binaryStringToArray(str + '\x02')),
-            openpgp.crypto.hash.sha512(pmcrypto.binaryStringToArray(str + '\x03'))
+            openpgp.crypto.hash.sha512(binaryStringToArray(str + '\x00')),
+            openpgp.crypto.hash.sha512(binaryStringToArray(str + '\x01')),
+            openpgp.crypto.hash.sha512(binaryStringToArray(str + '\x02')),
+            openpgp.crypto.hash.sha512(binaryStringToArray(str + '\x03'))
         ]);
 
         return openpgp.util.concatUint8Array(list);
@@ -32,7 +34,7 @@ function passwords($q, gettextCatalog, webcrypto) {
 
     function computeKeyPassword(password, salt) {
         if (salt && salt.length) {
-            const saltBinary = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(salt));
+            const saltBinary = binaryStringToArray(decodeBase64(salt));
             return bcryptHelper(password, '$2y$10$' + bcrypt.encodeBase64(saltBinary, 16)).then((hash) => {
                 // Remove bcrypt prefix and salt (first 29 characters)
                 return hash.slice(29);
@@ -46,7 +48,7 @@ function passwords($q, gettextCatalog, webcrypto) {
     }
 
     function generateKeySalt() {
-        return pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(16))));
+        return encodeBase64(arrayToBinaryString(getRandomValues(new Uint8Array(16))));
     }
 
     const hashPasswordVersion = {
@@ -55,10 +57,10 @@ function passwords($q, gettextCatalog, webcrypto) {
         },
 
         3(password, salt, modulus) {
-            const saltBinary = pmcrypto.binaryStringToArray(salt + 'proton');
+            const saltBinary = binaryStringToArray(salt + 'proton');
             // We use the latest version of bcrypt, 2y, with 2^10 rounds.
             return bcryptHelper(password, '$2y$10$' + bcrypt.encodeBase64(saltBinary, 16)).then((unexpandedHash) => {
-                return expandHash(unexpandedHash + pmcrypto.arrayToBinaryString(modulus));
+                return expandHash(unexpandedHash + arrayToBinaryString(modulus));
             });
         },
 
@@ -67,9 +69,7 @@ function passwords($q, gettextCatalog, webcrypto) {
         },
 
         1(password, userName, modulus) {
-            const salt = openpgp.crypto.hash.md5(
-                pmcrypto.binaryStringToArray(pmcrypto.encode_utf8(userName.toLowerCase()))
-            );
+            const salt = openpgp.crypto.hash.md5(binaryStringToArray(encodeUtf8(userName.toLowerCase())));
             let encodedSalt = '';
             for (let i = 0; i < salt.length; i++) {
                 let byte = salt[i].toString(16);
@@ -80,16 +80,14 @@ function passwords($q, gettextCatalog, webcrypto) {
             }
             // See hash version 3 for explanation of the prefix
             return bcryptHelper(password, '$2y$10$' + encodedSalt).then((unexpandedHash) => {
-                return expandHash(unexpandedHash + pmcrypto.arrayToBinaryString(modulus));
+                return expandHash(unexpandedHash + arrayToBinaryString(modulus));
             });
         },
 
         0(password, userName, modulus) {
-            const prehashed = pmcrypto.encode_base64(
-                pmcrypto.arrayToBinaryString(
-                    openpgp.crypto.hash.sha512(
-                        pmcrypto.binaryStringToArray(userName.toLowerCase() + pmcrypto.encode_utf8(password))
-                    )
+            const prehashed = encodeBase64(
+                arrayToBinaryString(
+                    openpgp.crypto.hash.sha512(binaryStringToArray(userName.toLowerCase() + encodeUtf8(password)))
                 )
             );
             return hashPasswordVersion[1](prehashed, userName, modulus);

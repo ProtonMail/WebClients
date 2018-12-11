@@ -1,7 +1,9 @@
+import { compressKey, getKeys } from 'pmcrypto';
+
 import { LARGE_KEY_SIZE } from '../../constants';
 
 /* @ngInject */
-function keyCompression(pmcw, confirm, $filter, gettextCatalog) {
+function keyCompression(confirm, $filter, gettextCatalog) {
     const humanSize = $filter('humanSize');
     const I18N = {
         REDUCE_KEY_SIZE_TITLE: gettextCatalog.getString('Reduce Key Size', null, 'Modal title'),
@@ -29,7 +31,7 @@ function keyCompression(pmcw, confirm, $filter, gettextCatalog) {
      * @returns {Promise}
      */
     const askForCompression = async (oldKey, newKey) => {
-        const [keyObject] = await pmcw.getKeys(oldKey);
+        const [keyObject] = await getKeys(oldKey);
         const fingerprint = keyObject.primaryKey.getFingerprint();
 
         return confirm({
@@ -47,12 +49,12 @@ function keyCompression(pmcw, confirm, $filter, gettextCatalog) {
      * @param armoredKey
      * @returns {Promise.<*>}
      */
-    const compressKey = async (armoredKey) => {
+    const compressKeyHelper = async (armoredKey) => {
         // We don't need to do anything if the key is not really big
         if (armoredKey.length < LARGE_KEY_SIZE) {
             return armoredKey;
         }
-        const compressedKey = await pmcw.compressKey(armoredKey);
+        const compressedKey = await compressKey(armoredKey);
 
         // Compression was not really effective, just skip compression
         if (compressedKey.length > LARGE_KEY_SIZE && compressedKey.length > armoredKey * 0.6) {
@@ -64,7 +66,7 @@ function keyCompression(pmcw, confirm, $filter, gettextCatalog) {
         return compress ? compressedKey : armoredKey;
     };
 
-    return { compressKey };
+    return { compressKey: compressKeyHelper };
 }
 
 export default keyCompression;

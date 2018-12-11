@@ -4,11 +4,12 @@ import vCard from 'vcf';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
+import { getKeyAsUri } from '../../../helpers/key';
 
 const DEFAULT_CONTACT_GROUP = 'item1';
 
 /* @ngInject */
-function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal, gettextCatalog) {
+function autoPinPrimaryKeys(Contact, keyCache, contactEmails, confirmModal, gettextCatalog) {
     const LEARN_MORE = `<a target='_blank' href='https://protonmail.com/support/knowledge-base/address-verification/'>
             ${gettextCatalog.getString('Learn more', null, 'Link')}
             </a>`;
@@ -37,13 +38,13 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
      * @param {vCard} card
      * @param {String} email
      * @param {Object} keys
+     * @return {Promise}
      */
-    const addKeyToVCard = (card, email, keys) => {
+    const addKeyToVCard = async (card, email, keys) => {
         const normalizedEmail = normalizeEmail(email);
         const emailList = toList(card.get('email'));
         const group = getGroup(emailList, normalizedEmail);
-        const data = pmcw.stripArmor(keys[email].Keys[0].PublicKey);
-        const base64 = `data:application/pgp-keys;base64,${pmcw.encode_base64(pmcw.arrayToBinaryString(data))}`;
+        const base64 = await getKeyAsUri(keys[email].Keys[0].PublicKey);
 
         card.add('key', base64, { group });
     };
@@ -55,7 +56,7 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
      */
     const createDefaultContacts = (emails, keys) => {
         return Promise.all(
-            emails.map((email) => {
+            emails.map(async (email) => {
                 const normalizedEmail = normalizeEmail(email);
                 const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
 
@@ -65,7 +66,7 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
                     card.set('fn', normalizedEmail);
                     card.set('email', normalizedEmail, { group: DEFAULT_CONTACT_GROUP });
 
-                    addKeyToVCard(card, email, keys);
+                    await addKeyToVCard(card, email, keys);
 
                     return Contact.add([{ vCard: card }]).then(() => false);
                 }
@@ -77,6 +78,7 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
 
     const pinPrimaryKeys = async (emails, keys) => {
         const existingEmails = await createDefaultContacts(emails, keys);
+
         const contactIds = existingEmails.reduce((acc, email) => {
             const normalizedEmail = normalizeEmail(email);
             const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
@@ -87,14 +89,14 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
             acc[contactEmail.ContactID].push(email);
             return acc;
         }, {});
+
         return Promise.all(
-            Object.keys(contactIds).map((contactID) => {
-                return Contact.get(contactID).then((contact) => {
-                    contactIds[contactID].forEach((email) => {
-                        addKeyToVCard(contact.vCard, email, keys);
-                    });
-                    return Contact.update(contact);
-                });
+            Object.keys(contactIds).map(async (contactID) => {
+                const contact = await Contact.get(contactID);
+
+                await Promise.all(contactIds[contactID].map((email) => addKeyToVCard(contact.vCard, email, keys)));
+
+                return Contact.update(contact);
             })
         );
     };

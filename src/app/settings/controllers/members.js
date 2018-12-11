@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function MembersController($controller, $scope, $stateParams, authentication, pmcw, memberActions, memberModel) {
-    $controller('SignaturesController', { $scope, authentication, pmcw });
+function MembersController($controller, $scope, $stateParams, authentication, memberActions, memberModel) {
+    $controller('SignaturesController', { $scope, authentication });
 
     function scrollToUsers() {
         $('.settings').animate(

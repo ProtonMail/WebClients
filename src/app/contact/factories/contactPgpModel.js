@@ -1,4 +1,13 @@
 import _ from 'lodash';
+import {
+    arrayToBinaryString,
+    binaryStringToArray,
+    decodeBase64,
+    encodeBase64,
+    getKeys,
+    isExpiredKey,
+    stripArmor
+} from 'pmcrypto';
 
 import { PACKAGE_TYPE, RECIPIENT_TYPE, MIME_TYPES, KEY_FLAGS, CONTACT_SETTINGS_DEFAULT } from '../../constants';
 
@@ -8,7 +17,7 @@ const { TYPE_INTERNAL } = RECIPIENT_TYPE;
 const { ENABLE_ENCRYPTION } = KEY_FLAGS;
 
 /* @ngInject */
-function contactPgpModel(dispatchers, mailSettingsModel, pmcw) {
+function contactPgpModel(dispatchers, mailSettingsModel) {
     const CACHE = {};
     const { dispatcher, on, unsubscribe } = dispatchers(['advancedSetting']);
     const set = (key, value) => (CACHE.model[key] = value);
@@ -43,33 +52,31 @@ function contactPgpModel(dispatchers, mailSettingsModel, pmcw) {
         const keyObjects = keys
             .map((value) => value.split(','))
             .map(([, base64 = '']) => base64)
-            .map(pmcw.decode_base64)
-            .map(pmcw.binaryStringToArray)
+            .map(decodeBase64)
+            .map(binaryStringToArray)
             .filter((a) => a.length)
-            .map((a) => pmcw.getKeys(a).then(([k]) => pmcw.isExpiredKey(k)));
+            .map((a) => getKeys(a).then(([k]) => isExpiredKey(k)));
 
         const isExpired = await Promise.all(keyObjects);
 
         return isExpired.every((keyExpired) => keyExpired);
     };
 
-    const processPublicKey = _.flowRight(
-        pmcw.encode_base64,
-        pmcw.arrayToBinaryString,
-        pmcw.stripArmor
-    );
-
     /**
      * Get raw internal keys
      * @return {Promise}
      */
-    const getRawInternalKeys = () => {
-        return CACHE.internalKeys.Keys.reduce((acc, { Flags, PublicKey }) => {
-            if (Flags & ENABLE_ENCRYPTION) {
-                acc.push(processPublicKey(PublicKey));
-            }
-            return acc;
-        }, []);
+    const getRawInternalKeys = async () => {
+        const keys = CACHE.internalKeys.Keys;
+
+        return Promise.all(
+            keys
+                .filter(({ Flags }) => Flags & ENABLE_ENCRYPTION)
+                .map(async ({ PublicKey }) => {
+                    const stripped = await stripArmor(PublicKey);
+                    return encodeBase64(arrayToBinaryString(stripped));
+                })
+        );
     };
 
     /**

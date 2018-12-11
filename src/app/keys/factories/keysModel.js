@@ -1,3 +1,5 @@
+import { getFingerprint, signMessage } from 'pmcrypto';
+
 import { KEY_FLAG, MAIN_KEY } from '../../constants';
 import { clearBit } from '../../../helpers/bitHelper';
 
@@ -7,7 +9,7 @@ const UNSHIFT_KEY = ['reset', 'set-primary'];
 const PUSH_KEY = ['create'];
 
 /* @ngInject */
-function keysModel(dispatchers, pmcw) {
+function keysModel(dispatchers) {
     const { dispatcher, on } = dispatchers(['keysModel']);
     let CACHE = {};
 
@@ -123,7 +125,7 @@ function keysModel(dispatchers, pmcw) {
 
         if (UNSHIFT_KEY.includes(mode)) {
             keys.unshift({
-                Fingerprint: pmcw.getFingerprint(newPrivateKey),
+                Fingerprint: getFingerprint(newPrivateKey),
                 Flags: ENCRYPTED_AND_SIGNED,
                 pkg: newPrivateKey
             });
@@ -131,7 +133,7 @@ function keysModel(dispatchers, pmcw) {
 
         if (PUSH_KEY.includes(mode)) {
             keys.push({
-                Fingerprint: pmcw.getFingerprint(newPrivateKey),
+                Fingerprint: getFingerprint(newPrivateKey),
                 Flags: ENCRYPTED_AND_SIGNED,
                 pkg: newPrivateKey
             });
@@ -167,7 +169,7 @@ function keysModel(dispatchers, pmcw) {
         const privateKeys = hasKey(addressID) ? getAllKeys(addressID) : resetKeys.map((key) => ({ key, pkg: null })); // Contains all keys, even inactive
         const { preparedKeys, primaryKey } = prepareKeys(privateKeys, { mode, keyID, newFlags, newPrivateKey });
         const Data = JSON.stringify(preparedKeys);
-        const { signature: Signature } = await pmcw.signMessage({
+        const { signature: Signature } = await signMessage({
             data: Data,
             privateKeys: [primaryKey],
             armor: true,

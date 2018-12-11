@@ -1,10 +1,22 @@
+import {
+    binaryStringToArray,
+    concatArrays,
+    decodeBase64,
+    decodeUtf8Base64,
+    decryptMessage,
+    decryptSessionKey,
+    encryptMessage,
+    getKeys,
+    getMessage,
+    splitMessage
+} from 'pmcrypto';
+
 import { readFileAsBuffer } from '../../../helpers/fileHelper';
 
 /* @ngInject */
 function AttachmentLoader(
     dispatchers,
     $cacheFactory,
-    pmcw,
     keysModel,
     $state,
     $stateParams,
@@ -64,8 +76,8 @@ function AttachmentLoader(
 
         try {
             // decrypt the att
-            const { data, signatures } = await pmcw.decryptMessage({
-                message: await pmcw.getMessage(at),
+            const { data, signatures } = await decryptMessage({
+                message: await getMessage(at),
                 sessionKeys: [sessionKey],
                 format: 'binary'
             });
@@ -82,16 +94,16 @@ function AttachmentLoader(
     };
 
     const encrypt = async (data, publicKeys, privateKeys, { name, type, size, inline } = {}) => {
-        const { message, signature } = await pmcw.encryptMessage({
+        const { message, signature } = await encryptMessage({
             filename: name,
             armor: false,
             detached: true,
             data,
-            publicKeys: await pmcw.getKeys(publicKeys),
+            publicKeys: await getKeys(publicKeys),
             privateKeys
         });
 
-        const { asymmetric, encrypted } = await pmcw.splitMessage(message);
+        const { asymmetric, encrypted } = await splitMessage(message);
 
         return {
             Filename: name,
@@ -132,16 +144,16 @@ function AttachmentLoader(
             return attachment;
         }
 
-        const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-        const options = { message: await pmcw.getMessage(keyPackets) };
+        const keyPackets = binaryStringToArray(decodeBase64(attachment.KeyPackets));
+        const options = { message: await getMessage(keyPackets) };
 
         if (isOutside()) {
-            options.passwords = [pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'))];
+            options.passwords = [decodeUtf8Base64(secureSessionStorage.getItem('proton:encrypted_password'))];
         } else {
             options.privateKeys = keysModel.getPrivateKeys(message.AddressID);
         }
 
-        const sessionKey = await pmcw.decryptSessionKey(options);
+        const sessionKey = await decryptSessionKey(options);
 
         return { ...attachment, sessionKey };
     };
@@ -155,10 +167,7 @@ function AttachmentLoader(
             cache.put(getCacheKey(attachment), decrypted);
             return decrypted;
         } catch (error) {
-            const blob = pmcw.concatArrays([
-                pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets)),
-                new Uint8Array(data)
-            ]);
+            const blob = concatArrays([binaryStringToArray(decodeBase64(attachment.KeyPackets)), new Uint8Array(data)]);
             // Fallback download raw attachment
             return Promise.reject({ data: blob, error });
         }

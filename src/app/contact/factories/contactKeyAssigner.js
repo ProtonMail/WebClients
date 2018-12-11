@@ -1,8 +1,9 @@
 import _ from 'lodash';
 import vCard from 'vcf';
+import { keyInfo, binaryStringToArray, decodeBase64 } from 'pmcrypto';
 
 /* @ngInject */
-function contactKeyAssigner(pmcw, contactKey) {
+function contactKeyAssigner(contactKey) {
     const GROUP_PROPS = ['x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-scheme', 'x-pm-tls'];
 
     const normalize = (email) =>
@@ -12,9 +13,9 @@ function contactKeyAssigner(pmcw, contactKey) {
             .replace(/[._-](?=[^@]*@)/g, '');
 
     const getKeyInfo = _.flowRight(
-        pmcw.keyInfo,
-        pmcw.binaryStringToArray,
-        pmcw.decode_base64
+        keyInfo,
+        binaryStringToArray,
+        decodeBase64
     );
 
     const getEmailsByGroup = (data) => {

@@ -1,7 +1,8 @@
+import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
+
 /* @ngInject */
 function activateOrganizationKeys(
     organizationApi,
-    pmcw,
     notification,
     authentication,
     passwords,
@@ -14,26 +15,26 @@ function activateOrganizationKeys(
     };
 
     function setup(context) {
-        const encryptPrivateKey = (pkg) => {
+        const encryptPrivateKeyHelper = (pkg) => {
             try {
-                return pmcw.encryptPrivateKey(pkg, authentication.getPassword());
+                return encryptPrivateKey(pkg, authentication.getPassword());
             } catch (err) {
                 const { data = {} } = err;
                 throw new Error(data.Error || context.ERROR_MESSAGE);
             }
         };
 
-        const decryptPrivateKey = async (PrivateKey, KeySalt, passcode) => {
+        const decryptPrivateKeyHelper = async (PrivateKey, KeySalt, passcode) => {
             try {
                 const keyPassword = await passwords.computeKeyPassword(passcode, KeySalt);
-                return pmcw.decryptPrivateKey(PrivateKey, keyPassword);
+                return decryptPrivateKey(PrivateKey, keyPassword);
             } catch (err) {
                 throw new Error(I18N.ERROR_PASSWORD);
             }
         };
 
         const activateKeys = async (pkg) => {
-            const PrivateKey = await encryptPrivateKey(pkg);
+            const PrivateKey = await encryptPrivateKeyHelper(pkg);
             const { data = {} } = await organizationApi.activateKeys({ PrivateKey });
             notification.success(context.SUCCESS_MESSAGE);
             return data;
@@ -42,7 +43,7 @@ function activateOrganizationKeys(
         const regenerateKeys = async (passcode) => {
             const { data = {} } = await organizationApi.getBackupKeys();
             const { PrivateKey, KeySalt } = data;
-            const pkg = await decryptPrivateKey(PrivateKey, KeySalt, passcode);
+            const pkg = await decryptPrivateKeyHelper(PrivateKey, KeySalt, passcode);
             await activateKeys(pkg);
             return pkg;
         };

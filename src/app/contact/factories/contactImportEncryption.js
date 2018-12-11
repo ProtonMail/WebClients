@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { isExpiredKey } from 'pmcrypto';
 
 import { PACKAGE_TYPE } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
@@ -6,7 +7,7 @@ import { uniqGroups } from '../../../helpers/vcard';
 import { extractAll as extractAllProperties } from '../../../helpers/vCardProperties';
 
 /* @ngInject */
-function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncryptionModal, contactKeyAssigner) {
+function contactImportEncryption($injector, contactKey, contactAskEncryptionModal, contactKeyAssigner) {
     const asyncSequentialMap = (list, asyncFunction) =>
         list.reduce((lastProcess, element) => {
             return lastProcess.then((accumulator) => {
@@ -106,7 +107,7 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
                                 if (!k) {
                                     return Promise.resolve(k);
                                 }
-                                return pmcw.isExpiredKey(k).then((isExpired) => (isExpired ? false : k));
+                                return isExpiredKey(k).then((isExpired) => (isExpired ? false : k));
                             })
                     );
 

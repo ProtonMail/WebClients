@@ -1,8 +1,11 @@
 import _ from 'lodash';
+import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
+
 import { MAIN_KEY } from '../../constants';
+import { getKeyInfo } from '../../../helpers/key';
 
 /* @ngInject */
-function decryptKeys(pmcw, notification, Key, keyInfo, keysModel, setupKeys, gettextCatalog) {
+function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog) {
     const I18N = {
         errorPrimaryKey({ Email: email = '' }) {
             return gettextCatalog.getString(
@@ -22,7 +25,7 @@ function decryptKeys(pmcw, notification, Key, keyInfo, keysModel, setupKeys, get
      * @return {Promise<Object>}
      */
     const activateKey = async ({ key, pkg, mailboxPassword, address }) => {
-        const PrivateKey = await pmcw.encryptPrivateKey(pkg, mailboxPassword);
+        const PrivateKey = await encryptPrivateKey(pkg, mailboxPassword);
         const SignedKeyList = await keysModel.signedKeyList(address.ID, {
             mode: 'create',
             keyID: key.ID,
@@ -43,7 +46,7 @@ function decryptKeys(pmcw, notification, Key, keyInfo, keysModel, setupKeys, get
      */
     const formatKey = ({ key, pkg, address }) => {
         key.decrypted = true; // We mark this key as decrypted
-        return keyInfo(key).then((key) => ({ address, key, pkg }));
+        return getKeyInfo(key).then((key) => ({ address, key, pkg }));
     };
 
     /**
@@ -55,7 +58,7 @@ function decryptKeys(pmcw, notification, Key, keyInfo, keysModel, setupKeys, get
      */
     const skipKey = ({ key, address, index }) => {
         key.decrypted = false; // This key is not decrypted
-        return keyInfo(key).then((key) => {
+        return getKeyInfo(key).then((key) => {
             // If the primary (first) key for address does not decrypt, display error.
             if (index === 0) {
                 address.disabled = true; // This address cannot be used
@@ -84,9 +87,10 @@ function decryptKeys(pmcw, notification, Key, keyInfo, keysModel, setupKeys, get
             if (subuser === true) {
                 return setupKeys.decryptMemberKey(key, organizationKey).then((pkg) => formatKey({ key, pkg, address }));
             }
-            return pmcw
-                .decryptPrivateKey(key.PrivateKey, mailboxPassword)
-                .then((pkg) => formatKey({ key, pkg, address }), () => skipKey({ key, address, index }));
+            return decryptPrivateKey(key.PrivateKey, mailboxPassword).then(
+                (pkg) => formatKey({ key, pkg, address }),
+                () => skipKey({ key, address, index })
+            );
         });
 
         const primaryKeys = await Promise.all(list);
@@ -110,9 +114,10 @@ function decryptKeys(pmcw, notification, Key, keyInfo, keysModel, setupKeys, get
                                 .then((pkg) => activateKey({ key, pkg, mailboxPassword, address }))
                                 .then((pkg) => formatKey({ key, pkg, address }));
                         }
-                        return pmcw
-                            .decryptPrivateKey(key.PrivateKey, mailboxPassword)
-                            .then((pkg) => formatKey({ key, pkg, address }), () => skipKey({ key, address, index }));
+                        return decryptPrivateKey(key.PrivateKey, mailboxPassword).then(
+                            (pkg) => formatKey({ key, pkg, address }),
+                            () => skipKey({ key, address, index })
+                        );
                     });
                     acc.promises = acc.promises.concat(promises);
                 }

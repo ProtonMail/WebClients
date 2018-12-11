@@ -1,6 +1,6 @@
 import _ from 'lodash';
-
 import { flow, filter, map, reduce } from 'lodash/fp';
+import { getKeys, signMessage } from 'pmcrypto';
 
 import { MIME_TYPES } from '../../constants';
 import { readFileAsString } from '../../../helpers/fileHelper';
@@ -18,7 +18,6 @@ function attachmentModel(
     composerRequestModel,
     attachmentDownloader,
     gettextCatalog,
-    pmcw,
     SignatureVerifier
 ) {
     const MAX_KEY_SIZE = 50 * 1024;
@@ -105,7 +104,7 @@ function attachmentModel(
             try {
                 const data = await readFileAsString(queueEntry.file);
                 // check if it's valid key data
-                await pmcw.getKeys(data);
+                await getKeys(data);
                 // add new mimetype
                 queueEntry.file = _.extend(new Blob([data], { type: 'application/pgp-keys' }), queueEntry.file);
             } catch (e) {
@@ -346,7 +345,7 @@ function attachmentModel(
         const privateKeys = keysModel.getPrivateKeys(message.AddressID);
 
         const data = await AttachmentLoader.get(attachment, message);
-        const { signature } = await pmcw.signMessage({ data, privateKeys, armor: true, detached: true });
+        const { signature } = await signMessage({ data, privateKeys, armor: true, detached: true });
         attachment.Signature = signature;
         await attachmentApi.updateSignature(attachment);
         /*

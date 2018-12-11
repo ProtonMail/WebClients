@@ -2,6 +2,22 @@ import { toggle } from '../../../helpers/domHelper';
 
 /* @ngInject */
 function contactPgp(dispatchers, contactPgpModel) {
+    const updateKeys = async (element, keys = []) => {
+        const [unarmoredKeys, keysExpired] = await Promise.all([
+            contactPgpModel.getRawInternalKeys(),
+            contactPgpModel.allKeysExpired(keys)
+        ]);
+
+        toggle(element, 'pgp-expired', !keys.length || keysExpired);
+        toggle(element, 'pgp-no-keys', !keys.length);
+        toggle(
+            element,
+            'pgp-no-primary',
+            !unarmoredKeys.some((k) => keys.map((value) => value.split('base64,')[1]).includes(k))
+        );
+        toggle(element, 'pgp-encrypt', contactPgpModel.get('Encrypt'));
+    };
+
     return {
         replace: true,
         templateUrl: require('../../../templates/directives/contact/contactPgp.tpl.html'),
@@ -20,20 +36,7 @@ function contactPgp(dispatchers, contactPgpModel) {
             on('advancedSetting', (event, { type, data = {} }) => {
                 switch (type) {
                     case 'updateKeys': {
-                        const unarmoredKeys = contactPgpModel.getRawInternalKeys();
-
-                        contactPgpModel.allKeysExpired(data.keys).then((keysExpired) => {
-                            toggle(element, 'pgp-expired', !data.keys.length || keysExpired);
-                            toggle(element, 'pgp-no-keys', !data.keys.length);
-                            toggle(element, 'pgp-encrypt', contactPgpModel.get('Encrypt'));
-                            toggle(
-                                element,
-                                'pgp-no-primary',
-                                !unarmoredKeys.some((k) =>
-                                    data.keys.map((value) => value.split('base64,')[1]).includes(k)
-                                )
-                            );
-                        });
+                        updateKeys(element, data.keys);
                         break;
                     }
                     case 'updateScheme':
@@ -60,25 +63,19 @@ function contactPgp(dispatchers, contactPgpModel) {
             });
 
             contactPgpModel.init(scope.model, scope.email, scope.internalKeys);
+
             const internalUser = contactPgpModel.isInternalUser();
             const disabledUser = contactPgpModel.isDisabledUser();
-            const keys = contactPgpModel.get('Keys') || [];
-            const unarmoredKeys = contactPgpModel.getRawInternalKeys();
 
             toggle(element, 'pgp-external', !internalUser);
             toggle(element, 'pgp-internal', internalUser);
             toggle(element, 'pgp-address-disabled', disabledUser);
-            contactPgpModel.allKeysExpired(keys).then((keysExpired) => toggle(element, 'pgp-expired', keysExpired));
-            toggle(element, 'pgp-no-keys', !keys.length);
-            toggle(
-                element,
-                'pgp-no-primary',
-                !unarmoredKeys.some((k) => keys.map((value) => value.split('base64,')[1]).includes(k))
-            );
             toggle(element, 'pgp-inline', contactPgpModel.isPGPInline());
             toggle(element, 'pgp-mime', contactPgpModel.isPGPMime());
             toggle(element, 'pgp-encrypt', contactPgpModel.get('Encrypt'));
             toggle(element, 'pgp-sign', contactPgpModel.get('Sign'));
+
+            updateKeys(element, contactPgpModel.get('Keys'));
 
             scope.$on('$destroy', () => {
                 unsubscribe();

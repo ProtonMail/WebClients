@@ -1,3 +1,5 @@
+import { decryptMessage, decryptPrivateKey, encryptPrivateKey, getMessage } from 'pmcrypto';
+
 import { PAID_ADMIN_ROLE } from '../../constants';
 
 /* @ngInject */
@@ -10,7 +12,6 @@ function changeMailboxPassword(
     networkActivityTracker,
     organizationApi,
     passwords,
-    pmcw,
     User
 ) {
     /**
@@ -35,14 +36,15 @@ function changeMailboxPassword(
         if (user.Role === PAID_ADMIN_ROLE) {
             // Get organization key
             return organizationApi.getKeys().then(({ data = {} } = {}) => {
-                const encryptPrivateKey = data.PrivateKey;
+                const privateKey = data.PrivateKey;
 
                 // Decrypt organization private key with the old mailbox password (current)
                 // then encrypt private key with the new mailbox password
                 // return 0 on failure to decrypt, other failures are fatal
-                return pmcw
-                    .decryptPrivateKey(encryptPrivateKey, oldMailPwd)
-                    .then((pkg) => pmcw.encryptPrivateKey(pkg, password), () => 0);
+                return decryptPrivateKey(privateKey, oldMailPwd).then(
+                    (pkg) => encryptPrivateKey(pkg, password),
+                    () => 0
+                );
             });
         }
         return Promise.resolve(0);
@@ -60,20 +62,20 @@ function changeMailboxPassword(
         let promises = [];
         if (user.OrganizationPrivateKey) {
             // Sub-user
-            const organizationKey = pmcw.decryptPrivateKey(user.OrganizationPrivateKey, oldMailPwd);
+            const organizationKey = decryptPrivateKey(user.OrganizationPrivateKey, oldMailPwd);
 
             promises = inputKeys.map(({ PrivateKey, ID, Token }) => {
                 // Decrypt private key with organization key and token
-                return Promise.all([organizationKey, pmcw.getMessage(Token)])
-                    .then(([key, message]) => pmcw.decryptMessage({ message, privateKeys: [key] }))
-                    .then(({ data }) => pmcw.decryptPrivateKey(PrivateKey, data))
+                return Promise.all([organizationKey, getMessage(Token)])
+                    .then(([key, message]) => decryptMessage({ message, privateKeys: [key] }))
+                    .then(({ data }) => decryptPrivateKey(PrivateKey, data))
                     .then((pkg) => ({ ID, pkg }));
             });
         } else {
             // Not sub-user
             promises = inputKeys.map(({ PrivateKey, ID }) => {
                 // Decrypt private key with the old mailbox password
-                return pmcw.decryptPrivateKey(PrivateKey, oldMailPwd).then((pkg) => ({ ID, pkg }));
+                return decryptPrivateKey(PrivateKey, oldMailPwd).then((pkg) => ({ ID, pkg }));
             });
         }
 
@@ -83,7 +85,7 @@ function changeMailboxPassword(
                     // Encrypt the key with the new mailbox password
                     .then(
                         ({ ID, pkg }) => {
-                            return pmcw.encryptPrivateKey(pkg, password).then((PrivateKey) => ({ ID, PrivateKey }));
+                            return encryptPrivateKey(pkg, password).then((PrivateKey) => ({ ID, PrivateKey }));
                         },
                         () => {
                             // Cannot decrypt, return 0 (not an error)

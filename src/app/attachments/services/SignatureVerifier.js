@@ -1,9 +1,11 @@
 import _ from 'lodash';
 import { flow, filter, find } from 'lodash/fp';
+import { createMessage, getSignature, verifyMessage } from 'pmcrypto';
+
 import { VERIFICATION_STATUS } from '../../constants';
 
 /* @ngInject */
-function SignatureVerifier(dispatchers, pmcw, addressesModel, publicKeyStore) {
+function SignatureVerifier(dispatchers, addressesModel, publicKeyStore) {
     const { NOT_VERIFIED, NOT_SIGNED, SIGNED_AND_INVALID, SIGNED_NO_PUB_KEY, SIGNED_AND_VALID } = VERIFICATION_STATUS;
     const { dispatcher } = dispatchers(['attachmentVerified']);
 
@@ -61,17 +63,15 @@ function SignatureVerifier(dispatchers, pmcw, addressesModel, publicKeyStore) {
      * @returns {Promise.<*[]>}
      */
     const verifyAllSignatures = (message, publicKeys, signatures, attachment, decryptedAttachment) => {
-        const attMessage = pmcw.createMessage(decryptedAttachment);
+        const attMessage = createMessage(decryptedAttachment);
 
         const asyncSigVerifiers = signatures.map((signature) => {
-            return pmcw
-                .verifyMessage({
-                    message: attMessage,
-                    publicKeys,
-                    signature,
-                    date: new Date(message.Time * 1000)
-                })
-                .then(({ verified }) => verified);
+            return verifyMessage({
+                message: attMessage,
+                publicKeys,
+                signature,
+                date: new Date(message.Time * 1000)
+            }).then(({ verified }) => verified);
         });
 
         return Promise.all(asyncSigVerifiers);
@@ -89,7 +89,7 @@ function SignatureVerifier(dispatchers, pmcw, addressesModel, publicKeyStore) {
      */
     const verify = async (attachment, decryptedAttachment, message, embeddedSigs = []) => {
         const { ID, Signature } = attachment;
-        const signatures = Signature ? [await pmcw.getSignature(Signature)] : embeddedSigs;
+        const signatures = Signature ? [await getSignature(Signature)] : embeddedSigs;
 
         // shortcut to prevent unnecessary public key fetching
         if (!signatures.length) {

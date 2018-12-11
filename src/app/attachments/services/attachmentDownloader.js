@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import saveAs from 'file-saver';
 import JSZip from 'jszip';
+import { decodeUtf8, arrayToBinaryString } from 'pmcrypto';
 
 import { VERIFICATION_STATUS } from '../../constants';
 import { isFileSaverSupported, isMobile } from '../../../helpers/browser';
@@ -13,8 +14,7 @@ function attachmentDownloader(
     notification,
     invalidSignature,
     SignatureVerifier,
-    confirmModal,
-    pmcw
+    confirmModal
 ) {
     const hasFileSaverSupported = isFileSaverSupported();
 
@@ -152,9 +152,7 @@ function attachmentDownloader(
      * @param {Node} message
      */
     const downloadString = (attachment, message) => {
-        return AttachmentLoader.get(attachment, message).then((buffer) =>
-            pmcw.decode_utf8(pmcw.arrayToBinaryString(buffer))
-        );
+        return AttachmentLoader.get(attachment, message).then((buffer) => decodeUtf8(arrayToBinaryString(buffer)));
     };
 
     const allowDownloadBrokenAtt = () =>

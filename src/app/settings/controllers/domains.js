@@ -22,12 +22,11 @@ function DomainsController(
     mxModal,
     networkActivityTracker,
     notification,
-    pmcw,
     spfModal,
     verificationModal,
     dispatchers
 ) {
-    $controller('SignaturesController', { $scope, authentication, pmcw });
+    $controller('SignaturesController', { $scope, authentication });
 
     const { on, unsubscribe } = dispatchers();
 

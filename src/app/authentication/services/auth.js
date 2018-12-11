@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { checkMailboxPassword, decodeBase64, decodeUtf8Base64, decryptPrivateKey, encodeUtf8Base64 } from 'pmcrypto';
 
 import CONFIG from '../../config';
 import { OAUTH_KEY, MAILBOX_PASSWORD_KEY } from '../../constants';
@@ -17,7 +18,6 @@ function authentication(
     upgradePassword,
     networkActivityTracker,
     dispatchers,
-    pmcw,
     secureSessionStorage,
     User,
     passwords,
@@ -53,7 +53,7 @@ function authentication(
                 // Required for subuser
                 const decryptOrganization = () => {
                     if (user.subuser) {
-                        return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
+                        return decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
                     }
                     return Promise.resolve();
                 };
@@ -91,7 +91,7 @@ function authentication(
 
     function savePassword(pwd) {
         // Save password in session storage
-        secureSessionStorage.setItem(MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
+        secureSessionStorage.setItem(MAILBOX_PASSWORD_KEY, encodeUtf8Base64(pwd));
     }
 
     function receivedCredentials(data) {
@@ -120,7 +120,7 @@ function authentication(
                 auth.setAuthHeaders();
             } else if (session) {
                 auth.data = {
-                    UID: pmcw.decode_base64(session)
+                    UID: decodeBase64(session)
                 };
 
                 // Remove obsolete item
@@ -138,7 +138,7 @@ function authentication(
             }
 
             // Save password in session storage
-            secureSessionStorage.setItem(MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
+            secureSessionStorage.setItem(MAILBOX_PASSWORD_KEY, encodeUtf8Base64(pwd));
         },
 
         /**
@@ -146,7 +146,7 @@ function authentication(
          */
         getPassword() {
             const value = secureSessionStorage.getItem(MAILBOX_PASSWORD_KEY);
-            return value ? pmcw.decode_utf8_base64(value) : undefined;
+            return value ? decodeUtf8Base64(value) : undefined;
         },
 
         randomString(length) {
@@ -409,7 +409,7 @@ function authentication(
                 tempStorage.setItem('plainMailboxPass', pwd);
                 passwords
                     .computeKeyPassword(pwd, KeySalt)
-                    .then((pwd) => pmcw.checkMailboxPassword(PrivateKey, pwd, AccessToken))
+                    .then((pwd) => checkMailboxPassword(PrivateKey, pwd, AccessToken))
                     .then(
                         ({ token, password }) => {
                             savePassword(password);

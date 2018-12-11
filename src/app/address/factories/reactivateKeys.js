@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { encryptPrivateKey, decryptPrivateKey } from 'pmcrypto';
 
 /* @ngInject */
 function reactivateKeys(
@@ -10,7 +11,6 @@ function reactivateKeys(
     eventManager,
     gettextCatalog,
     passwords,
-    pmcw,
     dispatchers
 ) {
     const FAILED_DECRYPTION_PASSWORD = 1;
@@ -115,8 +115,8 @@ function reactivateKeys(
         const reactivateKey = async ({ KeySalt, key }) => {
             try {
                 const keyPassword = await passwords.computeKeyPassword(oldPassword, KeySalt);
-                const decryptedKey = await pmcw.decryptPrivateKey(key.PrivateKey, keyPassword);
-                const privateKey = await pmcw.encryptPrivateKey(decryptedKey, password);
+                const decryptedKey = await decryptPrivateKey(key.PrivateKey, keyPassword);
+                const privateKey = await encryptPrivateKey(decryptedKey, password);
                 const SignedKeyList = await keysModel.signedKeyList(address.ID, {
                     mode: 'create',
                     keyID: key.ID,

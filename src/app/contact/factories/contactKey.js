@@ -1,10 +1,21 @@
 import _ from 'lodash';
+import {
+    arrayToBinaryString,
+    binaryStringToArray,
+    decodeBase64,
+    encodeBase64,
+    getKeys,
+    isExpiredKey,
+    keyInfo,
+    stripArmor
+} from 'pmcrypto';
 
 import { listToString } from '../../../helpers/arrayHelper';
 import { removeEmailAlias } from '../../../helpers/string';
+import { getKeyAsUri } from '../../../helpers/key';
 
 /* @ngInject */
-function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
+function contactKey(contactDetailsModel, gettextCatalog) {
     const I18N = {
         LANG_AND: gettextCatalog.getString('and', null, 'String separator'),
         REVOCATION_MESSAGE: gettextCatalog.getString('This key is revoked.', null, 'PGP key warning'),
@@ -22,7 +33,7 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
 
     const decodeDataUri = (uri = '') => {
         const base64 = uri.substring(0, 5).toLowerCase() === 'data:' ? uri.split(',')[1] : uri;
-        return pmcw.binaryStringToArray(pmcw.decode_base64(base64));
+        return binaryStringToArray(decodeBase64(base64));
     };
 
     /**
@@ -30,7 +41,7 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
      * @param {Uint8Array} bytes
      * @return string base64 encoding of the given bytes
      */
-    const encodeBytes = (bytes) => pmcw.encode_base64(pmcw.arrayToBinaryString(bytes));
+    const encodeBytes = (bytes) => encodeBase64(arrayToBinaryString(bytes));
 
     /**
      * Tries extract the openpgp keys from a vCard KEY property.
@@ -44,14 +55,14 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
             // strip data url if needed.
             const bytes = decodeDataUri(dataValue);
             // normal base 64 encoding
-            return pmcw.getKeys(bytes);
+            return getKeys(bytes);
         } catch (e) {
             // swallow
         }
 
         try {
             // try armored key
-            return pmcw.getKeys(dataValue);
+            return getKeys(dataValue);
         } catch (e) {
             // swallow
         }
@@ -72,7 +83,7 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
             // strip data url if needed.
             const bytes = decodeDataUri(dataValue);
             // normal base 64 encoding
-            await pmcw.getKeys(bytes);
+            await getKeys(bytes);
             // the value is already in correct format
             return encodeBytes(bytes);
         } catch (e) {
@@ -81,9 +92,9 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
 
         try {
             // try armored key
-            await pmcw.getKeys(dataValue);
+            await getKeys(dataValue);
             // just output the raw base 64
-            return encodeBytes(pmcw.stripArmor(dataValue));
+            return encodeBytes(await stripArmor(dataValue));
         } catch (e) {
             // swallow
         }
@@ -153,19 +164,18 @@ function contactKey(pmcw, contactDetailsModel, gettextCatalog) {
      * @param {String} currentEmail the email of the contact the key is / will be added too
      * @returns {Promise.<*>}
      */
-    const keyInfo = async (key, currentEmail) => {
-        const [keyObject] = await pmcw.getKeys(key);
-        const result = await pmcw.keyInfo(key);
-        const isExpired = await pmcw.isExpiredKey(keyObject);
+    const keyInfoHelper = async (key, currentEmail) => {
+        const [keyObject] = await getKeys(key);
+        const result = await keyInfo(key);
+        const isExpired = await isExpiredKey(keyObject);
 
-        const data = typeof key === 'string' ? pmcw.stripArmor(key) : key;
-        result.key = 'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
+        result.key = await getKeyAsUri(key);
         result.isExpired = isExpired;
         result.invalidMessage = invalidMessage(result, keyObject, currentEmail);
 
         return result;
     };
 
-    return { parseKey, getBase64Value, keyInfo };
+    return { parseKey, getBase64Value, keyInfo: keyInfoHelper };
 }
 export default contactKey;

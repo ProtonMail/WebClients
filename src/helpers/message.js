@@ -1,5 +1,6 @@
-import * as pmcrypto from 'pmcrypto';
-import { MAILBOX_IDENTIFIERS, MESSAGE_FLAGS, MIME_TYPES } from '../app/constants';
+import { decryptMessage, getMessage } from 'pmcrypto';
+
+import { MESSAGE_FLAGS, MIME_TYPES, MAILBOX_IDENTIFIERS } from '../app/constants';
 import { normalizeEmail } from './string';
 import { hasBit } from './bitHelper';
 
@@ -83,8 +84,8 @@ export const normalizeRecipients = (message = {}) => {
  * @return {String} body
  */
 export async function decrypt({ Body = '' } = {}, password) {
-    const message = await pmcrypto.getMessage(Body);
-    const { data: body } = await pmcrypto.decryptMessage({
+    const message = await getMessage(Body);
+    const { data: body } = await decryptMessage({
         message,
         passwords: [password]
     });

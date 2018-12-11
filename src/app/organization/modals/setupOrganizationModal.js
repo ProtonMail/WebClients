@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
 
 import { BASE_SIZE } from '../../constants';
 
@@ -12,7 +13,6 @@ function setupOrganizationModal(
     organizationModel,
     memberApi,
     setupKeys,
-    pmcw,
     gettextCatalog
 ) {
     return pmModal({
@@ -130,7 +130,7 @@ function setupOrganizationModal(
                         payload.PrivateKey = privateKeyArmored;
                         return privateKeyArmored;
                     })
-                    .then((armored) => pmcw.decryptPrivateKey(armored, mailboxPassword))
+                    .then((armored) => decryptPrivateKey(armored, mailboxPassword))
                     .then((pkg) => (decryptedKey = pkg));
             }
             function password() {
@@ -141,7 +141,7 @@ function setupOrganizationModal(
 
                 return passwords
                     .computeKeyPassword(organizationPassword, payload.BackupKeySalt)
-                    .then((keyPassword) => pmcw.encryptPrivateKey(decryptedKey, keyPassword))
+                    .then((keyPassword) => encryptPrivateKey(decryptedKey, keyPassword))
                     .then((armored) => (payload.BackupPrivateKey = armored))
                     .then(() => organizationApi.updateOrganizationKeys(payload));
             }

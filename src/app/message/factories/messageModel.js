@@ -1,4 +1,14 @@
 import _ from 'lodash';
+import {
+    arrayToBinaryString,
+    encodeBase64,
+    getKeys,
+    encryptMessage,
+    generateSessionKey,
+    decryptMIMEMessage,
+    decryptMessageLegacy,
+    encryptSessionKey
+} from 'pmcrypto';
 
 import { VERIFICATION_STATUS, MIME_TYPES, AES256, MESSAGE_FLAGS } from '../../constants';
 import { toText } from '../../../helpers/parserHTML';
@@ -32,7 +42,6 @@ function messageModel(
     $timeout,
     dispatchers,
     embeddedUtils,
-    pmcw,
     gettextCatalog,
     AttachmentLoader,
     sanitize,
@@ -231,7 +240,7 @@ function messageModel(
 
         generateReplyToken() {
             // Use a base64-encoded AES256 session key as the reply token
-            return pmcw.generateSessionKey(AES256).then((key) => pmcw.encode_base64(pmcw.arrayToBinaryString(key)));
+            return generateSessionKey(AES256).then((key) => encodeBase64(arrayToBinaryString(key)));
         }
 
         encryptionType() {
@@ -362,9 +371,9 @@ function messageModel(
         async encryptBody(publicKeys) {
             try {
                 const privateKeys = keysModel.getPrivateKeys(this.From.ID)[0];
-                const { data } = await pmcw.encryptMessage({
+                const { data } = await encryptMessage({
                     data: this.getDecryptedBody(),
-                    publicKeys: await pmcw.getKeys(publicKeys),
+                    publicKeys: await getKeys(publicKeys),
                     privateKeys,
                     format: 'utf8',
                     compression: true
@@ -385,7 +394,7 @@ function messageModel(
         async decryptMIME({ message, privateKeys, publicKeys, date }) {
             const headerFilename = ENCRYPTED_HEADERS_FILENAME;
             const sender = this.Sender.Address;
-            const result = await pmcw.decryptMIMEMessage({
+            const result = await decryptMIMEMessage({
                 message,
                 privateKeys,
                 publicKeys,
@@ -452,25 +461,23 @@ function messageModel(
                         });
                     }
 
-                    return pmcw
-                        .decryptMessageLegacy({
-                            message,
-                            privateKeys,
-                            publicKeys: pubKeys,
-                            date: new Date(this.Time * 1000)
-                        })
-                        .then(({ data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED }) => {
-                            this.decryptedMIME = data;
-                            this.decrypting = false;
-                            this.hasError = false;
+                    return decryptMessageLegacy({
+                        message,
+                        privateKeys,
+                        publicKeys: pubKeys,
+                        date: new Date(this.Time * 1000)
+                    }).then(({ data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED }) => {
+                        this.decryptedMIME = data;
+                        this.decrypting = false;
+                        this.hasError = false;
 
-                            const signedInvalid = VERIFICATION_STATUS.SIGNED_AND_INVALID;
-                            const signedPubkey = VERIFICATION_STATUS.SIGNED_NO_PUB_KEY;
-                            const verified =
-                                !list.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
+                        const signedInvalid = VERIFICATION_STATUS.SIGNED_AND_INVALID;
+                        const signedPubkey = VERIFICATION_STATUS.SIGNED_NO_PUB_KEY;
+                        const verified =
+                            !list.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
 
-                            return { message: data, attachments: [], verified };
-                        });
+                        return { message: data, attachments: [], verified };
+                    });
                 })
                 .catch((error) => {
                     this.networkError = error.status === -1;
@@ -482,25 +489,23 @@ function messageModel(
 
         async encryptAttachmentKeyPackets(publicKey = '', passwords = []) {
             const packets = {};
-            const publicKeys = publicKey.length ? await pmcw.getKeys(publicKey) : [];
+            const publicKeys = publicKey.length ? await getKeys(publicKey) : [];
 
             return Promise.all(
                 this.Attachments.filter(({ ID }) => ID.indexOf('PGPAttachment')).map((attachment) => {
                     return AttachmentLoader.getSessionKey(this, attachment).then(
                         ({ sessionKey = {}, AttachmentID, ID } = {}) => {
                             attachment.sessionKey = sessionKey; // Update the ref
-                            return pmcw
-                                .encryptSessionKey({
-                                    data: sessionKey.data,
-                                    algorithm: sessionKey.algorithm,
-                                    publicKeys,
-                                    passwords
-                                })
-                                .then(({ message }) => {
-                                    packets[AttachmentID || ID] = pmcw.encode_base64(
-                                        pmcw.arrayToBinaryString(message.packets.write())
-                                    );
-                                });
+                            return encryptSessionKey({
+                                data: sessionKey.data,
+                                algorithm: sessionKey.algorithm,
+                                publicKeys,
+                                passwords
+                            }).then(({ message }) => {
+                                packets[AttachmentID || ID] = encodeBase64(
+                                    arrayToBinaryString(message.packets.write())
+                                );
+                            });
                         }
                     );
                 })

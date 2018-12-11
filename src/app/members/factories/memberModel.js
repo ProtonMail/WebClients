@@ -1,10 +1,12 @@
 import _ from 'lodash';
+
 import updateCollection from '../../utils/helpers/updateCollection';
+import { formatKeys } from '../../../helpers/key';
 
 import { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE } from '../../constants';
 
 /* @ngInject */
-function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication, formatKeys) {
+function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication) {
     let CACHE = [];
     const { dispatcher, on } = dispatchers(['members']);
     const I18N = {

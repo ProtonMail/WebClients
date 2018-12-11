@@ -23,7 +23,6 @@ function AccountController(
     notification,
     organizationModel,
     passwords,
-    pmcw,
     settingsApi,
     settingsMailApi,
     tools,

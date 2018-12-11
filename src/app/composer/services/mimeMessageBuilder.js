@@ -1,8 +1,9 @@
 import _ from 'lodash';
 import mimemessage from 'mimemessage';
+import { arrayToBinaryString } from 'pmcrypto';
 
 /* @ngInject */
-function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
+function mimeMessageBuilder(embeddedUtils, AttachmentLoader) {
     /**
      * Remove '; name=' and '; filename=' values
      * @param {String} value
@@ -29,7 +30,7 @@ function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
             const entity = mimemessage.factory({
                 contentType: `${contentTypeValue}; filename=${attachmentName}; name=${attachmentName}`,
                 contentTransferEncoding: 'base64',
-                body: pmcw.arrayToBinaryString(data)
+                body: arrayToBinaryString(data)
             });
 
             entity.header(

@@ -1,11 +1,20 @@
 import _ from 'lodash';
 import vCard from 'vcf';
+import {
+    arrayToBinaryString,
+    binaryStringToArray,
+    decodeBase64,
+    decryptMessageLegacy,
+    getFingerprint,
+    getMatchingKey,
+    keyInfo
+} from 'pmcrypto';
 
 import { VERIFICATION_STATUS, EMAIL_FORMATING, KEY_FLAGS, LARGE_KEY_SIZE, SEND_TYPES } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
-import { addGetKeys } from '../../../helpers/key';
+import { addGetKeys, getKeyAsUri } from '../../../helpers/key';
 import { isInternal } from '../../../helpers/message';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
@@ -18,7 +27,6 @@ function attachedPublicKey(
     keyCache,
     keysModel,
     autoPinPrimaryKeys,
-    pmcw,
     sendPreferences,
     publicKeyStore,
     AttachmentLoader,
@@ -26,11 +34,6 @@ function attachedPublicKey(
     Contact,
     networkActivityTracker
 ) {
-    const asDataUri = (publicKey) => {
-        const data = pmcw.stripArmor(publicKey);
-        return 'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
-    };
-
     /**
      * Extact and clean the new email
      * Format:
@@ -57,9 +60,7 @@ function attachedPublicKey(
 
         return Promise.all([sendInfo, trustedKeys]).then(([sendPref, publicKeys]) =>
             addresses
-                .filter(({ adr }) =>
-                    publicKeys[adr].every(({ key }) => pmcw.getFingerprint(key) !== keyInfo.fingerprint)
-                )
+                .filter(({ adr }) => publicKeys[adr].every(({ key }) => getFingerprint(key) !== keyInfo.fingerprint))
                 .map((address) => {
                     if (keyInfo.expires !== null && keyInfo.expires < Date.now()) {
                         return _.extend({}, address, { encrypt: false, expired: true });
@@ -121,7 +122,7 @@ function attachedPublicKey(
 
         const {
             signatures: [signature = false]
-        } = await pmcw.decryptMessageLegacy({
+        } = await decryptMessageLegacy({
             message: message.Body,
             privateKeys,
             date: new Date(message.Time * 1000),
@@ -132,7 +133,7 @@ function attachedPublicKey(
             return false;
         }
 
-        const publicKey = await pmcw.getMatchingKey(signature, publicKeys);
+        const publicKey = await getMatchingKey(signature, publicKeys);
 
         return publicKey.armor();
     };
@@ -158,7 +159,7 @@ function attachedPublicKey(
                 }
                 const keydata = header.match(/^(?:\s*(?:[^;\s]*)\s*=\s*[^;\s]*\s*;)*\s*keydata\s*=([^;]*)$/);
                 try {
-                    return pmcw.binaryStringToArray(pmcw.decode_base64(keydata[1]));
+                    return binaryStringToArray(decodeBase64(keydata[1]));
                 } catch (e) {
                     // not encoded correctly
                     return null;
@@ -171,7 +172,7 @@ function attachedPublicKey(
         const privateKeys = keysModel.getPrivateKeys(message.AddressID);
 
         try {
-            const { signatures } = await pmcw.decryptMessageLegacy({
+            const { signatures } = await decryptMessageLegacy({
                 message: message.Body,
                 privateKeys,
                 date: new Date(message.Time * 1000)
@@ -229,21 +230,21 @@ function attachedPublicKey(
         }
 
         const isKey = (key) =>
-            pmcw.keyInfo(key).catch(() => {
+            keyInfo(key).catch(() => {
                 return false;
             });
 
         const buffers = await Promise.all(candidates.map((c) => AttachmentLoader.get(c, message)));
-        const armoredFiles = buffers.map(pmcw.arrayToBinaryString);
-        const keyInfo = _.filter(await Promise.all(armoredFiles.map(isKey)));
+        const armoredFiles = buffers.map(arrayToBinaryString);
+        const keyInfos = _.filter(await Promise.all(armoredFiles.map(isKey)));
 
-        if (keyInfo.length === 0) {
+        if (keyInfos.length === 0) {
             // try to get them from the autocrypt headers
             const autocryptdata = extractPublicKeysFromAutocrypt(message);
-            keyInfo.push(..._.filter(await Promise.all(autocryptdata.map(isKey))));
+            keyInfos.push(..._.filter(await Promise.all(autocryptdata.map(isKey))));
         }
 
-        const keyInfoObject = await getMatchingKeyInfo(keyInfo, message);
+        const keyInfoObject = await getMatchingKeyInfo(keyInfos, message);
 
         if (!keyInfoObject) {
             return false;
@@ -255,12 +256,12 @@ function attachedPublicKey(
         return addresses.length ? publicKeyArmored : false;
     };
 
-    const createContactWithKey = (publicKey, address) => {
+    const createContactWithKey = async (publicKey, address) => {
         const group = 'item1';
         const card = new vCard();
         card.set('fn', address.name || address.adr);
         card.set('email', address.adr, { group });
-        card.set('key', asDataUri(publicKey), { group });
+        card.set('key', await getKeyAsUri(publicKey), { group });
         if (address.encrypt) {
             card.set('x-pm-encrypt', 'true', { group });
             card.set('x-pm-sign', 'true', { group });
@@ -297,7 +298,7 @@ function attachedPublicKey(
             2
         );
 
-        contact.vCard.add('key', contactDetailsModel.escapeValue(asDataUri(publicKey)), {
+        contact.vCard.add('key', contactDetailsModel.escapeValue(await getKeyAsUri(publicKey)), {
             group,
             pref: address.encrypt ? 1 : keyList.length + 1
         });
@@ -337,8 +338,7 @@ function attachedPublicKey(
     return {
         extractAddresses,
         extractFromEmail,
-        attachPublicKey,
-        createContactWithKey
+        attachPublicKey
     };
 }
 export default attachedPublicKey;

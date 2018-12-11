@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import { decryptMessage, getMessage, encodeUtf8Base64, decodeUtf8Base64 } from 'pmcrypto';
+
 import {
     PAID_ADMIN_ROLE,
     PAID_MEMBER_ROLE,
@@ -338,7 +340,6 @@ export default angular
                             $scope,
                             $state,
                             $stateParams,
-                            pmcw,
                             encryptedToken,
                             networkActivityTracker,
                             notification,
@@ -351,16 +352,15 @@ export default angular
                             $scope.tokenError = !encryptedToken;
 
                             $scope.unlock = () => {
-                                const promise = pmcw
-                                    .getMessage(encryptedToken)
+                                const promise = getMessage(encryptedToken)
                                     .then((message) =>
-                                        pmcw.decryptMessage({ message, passwords: [$scope.params.MessagePassword] })
+                                        decryptMessage({ message, passwords: [$scope.params.MessagePassword] })
                                     )
                                     .then((decryptedToken) => {
                                         secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
                                         secureSessionStorage.setItem(
                                             'proton:encrypted_password',
-                                            pmcw.encode_utf8_base64($scope.params.MessagePassword)
+                                            encodeUtf8Base64($scope.params.MessagePassword)
                                         );
                                         $state.go('eo.message', { tag: $stateParams.tag });
                                     })
@@ -382,10 +382,8 @@ export default angular
                     app(lazyLoader, i18nLoader) {
                         return lazyLoader.app().then(i18nLoader.localizeDate);
                     },
-                    messageData(app, $stateParams, $q, Eo, messageModel, pmcw, secureSessionStorage) {
-                        const password = pmcw.decode_utf8_base64(
-                            secureSessionStorage.getItem('proton:encrypted_password')
-                        );
+                    messageData(app, $stateParams, $q, Eo, messageModel, secureSessionStorage) {
+                        const password = decodeUtf8Base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
                         return Eo.message(
                             secureSessionStorage.getItem('proton:decrypted_token'),
@@ -419,12 +417,10 @@ export default angular
             .state('eo.reply', {
                 url: '/eo/reply/:tag',
                 resolve: {
-                    messageData($stateParams, Eo, messageModel, pmcw, secureSessionStorage) {
+                    messageData($stateParams, Eo, messageModel, secureSessionStorage) {
                         const tokenId = $stateParams.tag;
                         const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
-                        const password = pmcw.decode_utf8_base64(
-                            secureSessionStorage.getItem('proton:encrypted_password')
-                        );
+                        const password = decodeUtf8Base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
                         return Eo.message(decryptedToken, tokenId).then((result) => {
                             const message = result.data.Message;
@@ -491,7 +487,7 @@ export default angular
                         return lazyLoader.app();
                     },
                     // Contains also labels and contacts
-                    user(app, authentication, $http, pmcw, secureSessionStorage, i18nLoader, userSettingsModel) {
+                    user(app, authentication, $http, secureSessionStorage, i18nLoader, userSettingsModel) {
                         const isAuth = Object.keys(authentication.user || {}).length > 0;
                         if (isAuth) {
                             i18nLoader.localizeDate();
@@ -503,7 +499,7 @@ export default angular
                         if (uid) {
                             $http.defaults.headers.common['x-pm-uid'] = uid;
                         } else if (angular.isDefined(secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken'))) {
-                            $http.defaults.headers.common['x-pm-uid'] = pmcw.decode_base64(
+                            $http.defaults.headers.common['x-pm-uid'] = decodeUtf8Base64(
                                 secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken') || ''
                             );
                             secureSessionStorage.setItem(OAUTH_KEY + ':UID', $http.defaults.headers.common['x-pm-uid']);
