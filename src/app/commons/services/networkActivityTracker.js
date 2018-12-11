@@ -15,9 +15,10 @@ function networkActivityTracker(AppModel, errorReporter, notification) {
     /**
      * Track promise to catch event around
      * @param {object} promise - Promise tracker
+     * @param {boolean} silent - Whether to notify errors
      * @return {object} promise - Return the orginal promise to stay in the same context
      */
-    const track = (promise) => {
+    const track = (promise, silent = false) => {
         errorReporter.clear();
 
         // Display the loader
@@ -50,7 +51,7 @@ function networkActivityTracker(AppModel, errorReporter, notification) {
                     message = 'An error has occurred. <br> Please try again or refresh the page.';
                 }
 
-                if (!error.noNotify) {
+                if (!error.noNotify && !silent) {
                     notification.error(message);
                 }
 
