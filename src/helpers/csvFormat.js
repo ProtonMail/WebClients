@@ -4,46 +4,46 @@ import { flow, filter, head } from 'lodash/fp';
 
 const PROPERTIES = {
     adr: [], // NOTE Too complex to be defined here
-    anniversary: ['Anniversary'],
-    bday: ['Birthday'],
+    anniversary: ['anniversary'],
+    bday: ['birthday'],
     email: [
-        'E-mail Address',
-        'E-mail 2 Address',
-        'E-mail 3 Address',
-        'Email',
-        'Alternate Email 1',
-        'Alternate Email 2',
-        'Primary Email',
-        'Secondary Email'
+        'e-mail address',
+        'e-mail 2 address',
+        'e-mail 3 address',
+        'email',
+        'alternate email 1',
+        'alternate email 2',
+        'primary email',
+        'secondary email'
     ],
     fn: [], // NOTE Too complex to be defined here
-    gender: ['Gender'],
-    geo: ['Geolocation', 'Location'],
-    impp: ['Impp'],
-    lang: ['Language'],
-    logo: ['Logo'],
-    member: ['Membmer', 'Group Membership'],
-    nickname: ['Nickname', 'Display Name', 'Screen Name'],
-    note: ['Notes', 'Note'],
-    org: ['Company', 'Organization', 'Department'],
-    photo: ['Photo', 'Avatar'],
-    prodid: ['Software'],
-    rev: ['Revision'],
-    role: ['Role'],
-    sound: ['Sound'],
-    tel: ['Primary Phone', 'Other Phone', 'Radio Phone', 'Other', 'Yahoo Phone'],
-    title: ['Title', 'Job Title', 'JobTitle'],
-    tz: ['Timezone', 'TimeZone'],
-    uid: ['UID'],
+    gender: ['gender'],
+    geo: ['geolocation', 'location'],
+    impp: ['impp'],
+    lang: ['language'],
+    logo: ['logo'],
+    member: ['membmer', 'group membership'],
+    nickname: ['nickname', 'display name', 'screen name'],
+    note: ['notes', 'note'],
+    org: ['company', 'organization', 'department'],
+    photo: ['photo', 'avatar'],
+    prodid: ['software'],
+    rev: ['revision'],
+    role: ['role'],
+    sound: ['sound'],
+    tel: ['primary phone', 'other phone', 'radio phone', 'other', 'yahoo phone'],
+    title: ['title', 'job title', 'jobtitle'],
+    tz: ['timezone'],
+    uid: ['uid'],
     url: [
-        'URL',
-        'Web Page',
-        'Personal Website',
-        'Business Website',
-        'Website',
-        'Web Page 1',
-        'Web Page 2',
-        'Personal Web Page'
+        'url',
+        'web page',
+        'personal website',
+        'business website',
+        'website',
+        'web page 1',
+        'web page 2',
+        'personal web page'
     ]
 };
 
@@ -91,22 +91,21 @@ const extractKeys = (keys = [], contact = {}) => {
 };
 
 /*
-    the post office box;
-    the extended address (e.g., apartment or suite number);
-    the street address;
-    the locality (e.g., city);
-    the region (e.g., state or province);
-    the postal code;
-    the country name (full name in the language specified in
-    */
-
+the post office box;
+the extended address (e.g., apartment or suite number);
+the street address;
+the locality (e.g., city);
+the region (e.g., state or province);
+the postal code;
+the country name (full name in the language specified in
+*/
 const extractAddress = (contact, type) => {
-    const address = contact[`${type} Address`] || contact[`${type} Street`] || '';
-    const address2 = contact[`${type} Address 2`] || contact[`${type} Street 2`] || '';
-    const city = contact[`${type} City`] || '';
-    const state = contact[`${type} State`] || '';
-    const zipCode = contact[`${type} ZipCode`] || contact[`${type} Postal Code`] || contact[`${type} ZIP`] || '';
-    const country = contact[`${type} Country`] || contact[`${type} Country/Region`] || '';
+    const address = contact[`${type} address`] || contact[`${type} street`] || '';
+    const address2 = contact[`${type} address 2`] || contact[`${type} street 2`] || '';
+    const city = contact[`${type} city`] || '';
+    const state = contact[`${type} state`] || '';
+    const zipCode = contact[`${type} zipcode`] || contact[`${type} postal code`] || contact[`${type} zip`] || '';
+    const country = contact[`${type} country`] || contact[`${type} country/region`] || '';
     const value = ['', address2, address, city, state, zipCode, country];
 
     return value.join('').trim().length ? value.join(';').trim() : '';
@@ -137,39 +136,39 @@ const url = (contact) => extractKeys(PROPERTIES.url, contact);
 const adr = (contact) => {
     const addresses = [];
 
-    _.each(['Home', 'Work', 'Business', 'Other'], (type) => {
+    _.each(['home', 'work', 'business', 'other'], (type) => {
         const value = extractAddress(contact, type);
 
         if (value) {
-            addresses.push({ value, type });
+            addresses.push({ value, parameter: type });
         }
     });
 
-    if (contact['Address 1 - Formatted']) {
-        const address = { value: contact['Address 1 - Formatted'] };
+    if (contact['address 1 - formatted']) {
+        const address = { value: contact['address 1 - formatted'] };
 
-        if (contact['Address 2 - Type']) {
-            address.parameter = contact['Address 1 - Type'];
+        if (contact['address 1 - type']) {
+            address.parameter = contact['address 1 - type'];
         }
 
         addresses.push(address);
     }
 
-    if (contact['Address 2 - Formatted']) {
-        const address = { value: contact['Address 2 - Formatted'] };
+    if (contact['address 2 - formatted']) {
+        const address = { value: contact['address 2 - formatted'] };
 
-        if (contact['Address 2 - Type']) {
-            address.parameter = contact['Address 2 - Type'];
+        if (contact['address 2 - type']) {
+            address.parameter = contact['address 2 - type'];
         }
 
         addresses.push(address);
     }
 
-    if (contact['Address 3 - Formatted']) {
-        const address = { value: contact['Address 3 - Formatted'] };
+    if (contact['address 3 - formatted']) {
+        const address = { value: contact['address 3 - formatted'] };
 
-        if (contact['Address 3 - Type']) {
-            address.parameter = contact['Address 3 - Type'];
+        if (contact['address 3 - type']) {
+            address.parameter = contact['address 3 - type'];
         }
 
         addresses.push(address);
@@ -180,12 +179,12 @@ const adr = (contact) => {
 
 const bday = (contact) => {
     const bdays = extractKeys(PROPERTIES.bday, contact);
-    const year = contact['Birth Year'];
-    const month = contact['Birth Month'];
-    const day = contact['Birth Day'];
+    const year = contact['birth year'];
+    const month = contact['birth month'];
+    const day = contact['birth day'];
 
     if (year && month && day) {
-        bdays.push(`${year}-${month}-${day}`);
+        bdays.push({ value: `${year}-${month}-${day}` });
     }
 
     return bdays;
@@ -194,31 +193,31 @@ const bday = (contact) => {
 const email = (contact) => {
     const emails = extractKeys(PROPERTIES.email, contact);
 
-    if (contact['E-mail 1 - Value']) {
-        const email = { value: contact['E-mail 1 - Value'] };
+    if (contact['e-mail 1 - value']) {
+        const email = { value: contact['e-mail 1 - value'] };
 
-        if (contact['E-mail 1 - Type']) {
-            email.parameter = contact['E-mail 1 - Type'];
+        if (contact['e-mail 1 - type']) {
+            email.parameter = contact['e-mail 1 - type'];
         }
 
         emails.push(email);
     }
 
-    if (contact['E-mail 2 - Value']) {
-        const email = { value: contact['E-mail 2 - Value'] };
+    if (contact['e-mail 2 - value']) {
+        const email = { value: contact['e-mail 2 - value'] };
 
-        if (contact['E-mail 2 - Type']) {
-            email.parameter = contact['E-mail 2 - Type'];
+        if (contact['e-mail 2 - type']) {
+            email.parameter = contact['e-mail 2 - type'];
         }
 
         emails.push(email);
     }
 
-    if (contact['E-mail 3 - Value']) {
-        const email = { value: contact['E-mail 3 - Value'] };
+    if (contact['e-mail 3 - value']) {
+        const email = { value: contact['e-mail 3 - value'] };
 
-        if (contact['E-mail 3 - Type']) {
-            email.parameter = contact['E-mail 3 - Type'];
+        if (contact['e-mail 3 - type']) {
+            email.parameter = contact['e-mail 3 - type'];
         }
 
         emails.push(email);
@@ -229,38 +228,38 @@ const email = (contact) => {
 
 const fn = (contact) => {
     const fullnames = [];
-    const name = [];
+    const names = [];
 
-    if (contact.First) {
-        name.push(contact.First);
+    if (contact.first) {
+        names.push(contact.first);
     }
 
-    if (contact.Name) {
-        name.push(contact.Name);
+    if (contact.name) {
+        names.push(contact.name);
     }
 
-    if (contact.Middle) {
-        name.push(contact.Middle);
+    if (contact.middle) {
+        names.push(contact.middle);
     }
 
-    if (contact.Last) {
-        name.push(contact.Last);
+    if (contact.last) {
+        names.push(contact.last);
     }
 
-    if (contact['First Name']) {
-        name.push(contact['First Name']);
+    if (contact['first name']) {
+        names.push(contact['first name']);
     }
 
-    if (contact['Middle Name']) {
-        name.push(contact['Middle Name']);
+    if (contact['middle name']) {
+        names.push(contact['middle name']);
     }
 
-    if (contact['Last Name']) {
-        name.push(contact['Last Name']);
+    if (contact['last name']) {
+        names.push(contact['last name']);
     }
 
-    if (name.length) {
-        fullnames.push({ value: name.join(' ') });
+    if (names.length) {
+        fullnames.push({ value: names.join(' ') });
     }
 
     return fullnames;
@@ -278,31 +277,31 @@ const tel = (contact) => {
         });
     });
 
-    if (contact['Phone 1 - Value']) {
-        const tel = { value: contact['Phone 1 - Value'] };
+    if (contact['phone 1 - value']) {
+        const tel = { value: contact['phone 1 - value'] };
 
-        if (contact['Phone 1 - Type']) {
-            tel.parameter = contact['Phone 1 - Type'];
+        if (contact['phone 1 - type']) {
+            tel.parameter = contact['phone 1 - type'];
         }
 
         tels.push(tel);
     }
 
-    if (contact['Phone 2 - Value']) {
-        const tel = { value: contact['Phone 2 - Value'] };
+    if (contact['phone 2 - value']) {
+        const tel = { value: contact['phone 2 - value'] };
 
-        if (contact['Phone 2 - Type']) {
-            tel.parameter = contact['Phone 2 - Type'];
+        if (contact['phone 2 - type']) {
+            tel.parameter = contact['phone 2 - type'];
         }
 
         tels.push(tel);
     }
 
-    if (contact['Phone 3 - Value']) {
-        const tel = { value: contact['Phone 3 - Value'] };
+    if (contact['phone 3 - value']) {
+        const tel = { value: contact['phone 3 - value'] };
 
-        if (contact['Phone 3 - Type']) {
-            tel.parameter = contact['Phone 3 - Type'];
+        if (contact['phone 3 - type']) {
+            tel.parameter = contact['phone 3 - type'];
         }
 
         tels.push(tel);
