@@ -73,11 +73,11 @@
     "write-webpack-plugin": "^1.1.0"
   },
   "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
     "angular": "^1.7.4",
     "angular-cookies": "^1.7.4",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/runtime": "^7.0.0",
     "angular-gettext": "^2.3.11",
     "angular-ical": "^1.1.0",
     "angular-loader": "^1.7.4",
@@ -113,7 +113,7 @@
     "jquery-timepicker": "github:KAYLukas/timepicker.git#patch-1",
     "jquery.payment": "^3.0.0",
     "jszip": "^3.1.4",
-    "juice": "^4.2.3",
+    "juice": "^5.0.1",
     "linkify-it": "^2.0.3",
     "lodash": "^4.17.4",
     "malihu-custom-scrollbar-plugin": "github:ProtonMail/malihu-custom-scrollbar-plugin.git#feat/fixUpdateTimeout",
