@@ -21,9 +21,15 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
      * Get the list of transoformation to perform
      *     => Blacklist everything via *
      * @param  {Array}  blacklist
+     * @param  {Array}  whitelist
      * @return {Array}
      */
-    const getTransformers = (blacklist = []) => {
+    const getTransformers = (blacklist = [], whitelist = []) => {
+        // --force
+        if (whitelist.length) {
+            return filters.filter(({ name }) => whitelist.includes(name));
+        }
+
         if (blacklist.includes('*')) {
             return [];
         }
@@ -53,8 +59,8 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
         return input.querySelector('body').innerHTML;
     }
 
-    return (content, message, { blacklist = [], action } = {}) => {
-        const transformers = getTransformers(blacklist);
+    return (content, message, { blacklist = [], whitelist = [], action } = {}) => {
+        const transformers = getTransformers(blacklist, whitelist);
         const div = createParser(content, {
             action,
             isBlacklisted: _.includes(blacklist, 'transformRemote')

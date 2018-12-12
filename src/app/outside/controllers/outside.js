@@ -46,7 +46,10 @@ function OutsideController(
             content = `<br /><br /><blockquote class="protonmail_quote" type="cite">${content}</blockquote>`;
         }
 
-        return prepareContent(content, message);
+        // No need to add the read more here as we will sanitize it later and it will classes
+        return prepareContent(content, message, {
+            blacklist: ['transformBlockquotes']
+        });
     }
 
     const plaintextToHTML = (plaintext) => {
@@ -84,7 +87,12 @@ function OutsideController(
             };
             $scope.message = message;
             $scope.isPlain = message.isPlainText();
-            $scope.body = message.getDecryptedBody();
+
+            // apply transformation to add the blockquote
+            $scope.body = prepareContent(message.getDecryptedBody(), message, {
+                blacklist: ['*'],
+                whitelist: ['transformBlockquotes']
+            });
         });
 
         // start timer ago
