@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { decryptPrivateKey } from 'pmcrypto';
 import { KEY_FLAGS, KEY_FILE_EXTENSION } from '../../constants';
 import { readFileAsString } from '../../../helpers/fileHelper';
 
@@ -139,11 +140,11 @@ function addressKeysView(
         });
     };
 
-    const makePrimaryKey = async (address, { ID, PrivateKey }) => {
-        const SignedKeyList = await keysModel.signedKeyList(address.ID, {
+    const makePrimaryKey = async ({ addressID }, { ID, PrivateKey }) => {
+        const SignedKeyList = await keysModel.signedKeyList(addressID, {
             mode: 'set-primary',
             keyID: ID,
-            privateKey: PrivateKey
+            privateKey: await decryptPrivateKey(PrivateKey, authentication.getPassword())
         });
         const promise = Key.primary(ID, { SignedKeyList })
             .then(eventManager.call)
