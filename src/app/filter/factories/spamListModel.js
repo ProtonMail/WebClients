@@ -8,7 +8,11 @@ const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
 const PAGE_SIZE = 100;
 
 /* @ngInject */
-function spamListModel(dispatchers, incomingModel) {
+function spamListModel(dispatchers, incomingModel, notification, gettextCatalog) {
+    const I18N = {
+        ADD_SUCCESS: gettextCatalog.getString('Email added', null, 'Success notification'),
+        REMOVE_SUCCESS: gettextCatalog.getString('Email removed', null, 'Success notification')
+    };
     let MAIN_CACHE = getDefault();
 
     const { dispatcher, on } = dispatchers(['filters']);
@@ -106,6 +110,7 @@ function spamListModel(dispatchers, incomingModel) {
             CACHE.list.unshift(item);
             MAIN_CACHE.MAP[item.ID] = item;
             resetIndex(item.Location);
+            notification.success(I18N.ADD_SUCCESS);
             refresh();
         };
 
@@ -194,6 +199,7 @@ function spamListModel(dispatchers, incomingModel) {
         MAIN_CACHE[item.Location].invalidate = !MAIN_CACHE[item.Location].ending;
         delete MAIN_CACHE.MAP[id];
         resetIndex(item.Location);
+        notification.success(I18N.REMOVE_SUCCESS);
         refresh();
     };
 
