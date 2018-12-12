@@ -8,6 +8,10 @@ module.exports = {
         ),
         list: ['.htaccess', 'manifest.json', 'robots.txt']
     },
+    babel: {
+        excludedFiles: ['mailparser.js'],
+        includedNodeModules: ['asmcrypto.js', 'pmcrypto', 'sieve.js', 'angular-ui-codemirror']
+    },
     vendor_files: {
         css: [
             'ng-sortable/dist/ng-sortable.css',

@@ -1,4 +1,6 @@
 const env = require('../env/config');
+const { babel } = require('../env/conf.build');
+const getRegex = require('./helpers/babel');
 
 const hasTranspile = !('transpile' in env.argv);
 
@@ -57,7 +59,7 @@ const pipe = [
     },
     {
         test: /\.js$/,
-        exclude: /(\/node_modules\/(?!(asmcrypto\.js|pmcrypto|sieve\.js)))|mailparser\.js/,
+        exclude: getRegex(babel.includedNodeModules, babel.excludedFiles),
         use: jsLoader()
     },
     {
