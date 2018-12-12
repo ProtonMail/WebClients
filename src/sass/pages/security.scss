@@ -1,24 +1,3 @@
-.securityContainer .noLog,
-.securityContainer .onlyActive { display: none }
-
-.securityContainer.noLog .noLog,
-.securityContainer.activeLog .onlyActive,
-.securityContainer.activeLogAdvanced .onlyActive { display: inherit }
-
-
-.securityContainer.noLog .noLogBtn,
-.securityContainer.activeLog .activeLogBtn,
-.securityContainer.activeLogAdvanced .activeLogAdvancedBtn {
-    background: $button-background-active;
-    box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.2);
-}
-
-
-.securityLogRefresh {
-    float: left;
-    margin-right: 1rem;
-}
-
 .securtiyLogActions > .pm_button { margin: 0 0 0 5px }
 .activeSessions-table {
     max-height: 200px;

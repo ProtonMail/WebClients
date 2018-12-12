@@ -52,10 +52,12 @@ function paginatorScope(dispatchers) {
                 buildPages();
             });
 
-            on('paginatorScope', (e, { type, page }) => {
+            on('paginatorScope', (e, { type, data = {} }) => {
                 if (type === attribute.type) {
-                    scope.page = page;
-                    disable();
+                    scope.$applyAsync(() => {
+                        scope.page = data.page;
+                        disable();
+                    });
                 }
             });
 
