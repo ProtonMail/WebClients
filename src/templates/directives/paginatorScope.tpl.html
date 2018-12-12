@@ -1,9 +1,19 @@
 <span class="pm_buttons paginator">
-    <a pt-tooltip-translate="Previous" pt-tooltip-translate-context="Action" ng-click="previous()" ng-class="{'disabled': disableP}">
+    <a
+        pt-tooltip-translate="Previous"
+        pt-tooltip-translate-context="Action"
+        ng-click="previous()"
+        ng-class="{'disabled': disableP}">
         <i class="fa fa-chevron-left"></i>
     </a>
-    <span class="pull-left paginator-dropdown-list">
-        <a class="pm_trigger" dropdown ng-class="{'disabled': disableMain}" pt-tooltip-translate="Page number" pt-tooltip-translate-context="Action">
+
+    <div class="pull-left paginator-dropdown-list">
+        <a
+            class="pm_trigger"
+            dropdown
+            ng-class="{'disabled': disableMain}"
+            pt-tooltip-translate="Page number"
+            pt-tooltip-translate-context="Action">
             <small>{{ page }}</small>
             <i class="fa fa-angle-down"></i>
         </a>
@@ -15,8 +25,13 @@
                     translate-comment="current page dropdown in paginator">Page</em> {{ p }}
             </a>
         </span>
-    </span>
-    <a pt-tooltip-translate="Next" pt-tooltip-translate-context="Action" ng-click="next()" ng-class="{'disabled': disableN}">
+    </div>
+
+    <a
+        pt-tooltip-translate="Next"
+        pt-tooltip-translate-context="Action"
+        ng-click="next()"
+        ng-class="{'disabled': disableN}">
         <i class="fa fa-chevron-right"></i>
     </a>
 </span>

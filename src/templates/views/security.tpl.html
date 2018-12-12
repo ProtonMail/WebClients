@@ -1,8 +1,5 @@
 <div id="pm_settings">
-    <div ng-class="{
-        'noLog': doLogging === 0,
-        'activeLog': doLogging === 1,
-        'activeLogAdvanced': doLogging === 2}" class="settings securityContainer" >
+    <div class="settings securityContainer" >
         <div class="row pm_grid">
             <section class="pm_form col-1-2">
                 <header-block class="settingsSecurity-header-2fa">
@@ -52,76 +49,7 @@
             </section>
         </div>
         <div class="row">
-            <section class="setting pm_form full">
-                <form method="post">
-                    <header-block class="settingsSecurity-header-logs">
-                        <h2
-                            class="settingsSecurity-title-logs"
-                            translate
-                             translate-comment="logs page heading"
-                            translate-context="Title">Authentication Logs</h2>
-                    </header-block>
-                        <div class="pull-right securtiyLogActions onlyActive">
-                            <button class="pm_button pull-left" ng-click="clearLogs()" translate-context="Action" translate>Wipe</button>
-                            <button class="pm_button pull-left" ng-click="downloadLogs()" translate-context="Action" translate>Download</button>
-                            <span ng-show="(logCount > logItemsPerPage)">
-                                <paginator-scope data-type="logs" page="currentLogPage" total-items="logCount" items-per-page="logItemsPerPage" change="loadLogs" />
-                            </span>
-                        </div>
-                        <div class="pm_buttons pull-left margin-bottom">
-                            <a class="noLogBtn" ng-click="setLogging(0)">{{ disabledText }}</a>
-                            <a class="activeLogBtn" ng-click="setLogging(1)" translate-context="Action" translate>Basic</a>
-                            <a class="activeLogAdvancedBtn" ng-click="setLogging(2)" translate-context="Action" translate>Advanced</a>
-                        </div>
-                        <a class="securityLogRefresh pm_button onlyActive" ng-click="initLogs()">
-                            <i class="fa fa-rotate-right"></i>
-                        </a>
-                        <div class="clear">
-                            <p class="noLog alert alert-info" translate translate-context="Info">You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.</p>
-                            <p class="onlyActive alert alert-info" translate translate-context="Info">Logs include authentication attempts for all Proton services that use your ProtonMail credentials.</p>
-                        </div>
-                        <div class="clear onlyActive">
-                            <p class="alert alert-info onlyActive" ng-show="logs.length < 1" translate-context="Info" translate>No logs yet</p>
-                            <p class="alert alert-info onlyActive" ng-show="!haveLogs"><i class="fa fa-spin fa-spinner"></i>
-                                <span translate-context="Info" translate>Fetching logs...</span>
-                            </p>
-                            <div class="pm_table">
-                                <table id="accessLog" class="bordered" ng-init="initLogs()" ng-show="logs.length>0">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" style="width:10rem" translate-context="Title" translate>Event</th>
-                                            <th scope="col" style="width:10rem" ng-show="doLogging == 2" class="text-right">IP</th>
-                                            <th scope="col" style="width:14rem" class="text-right" translate-context="Title" translate>Time</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="log in logs | limitTo: logItemsPerPage: (currentLogPage - 1) * logItemsPerPage" ng-class="{ 'danger': (log.Event == 0) }">
-                                            <td scope="row">
-                                                <span ng-show="{{ log.Event === 0 }}"><i class="fa fa-times-circle text-red"></i>
-                                                    <span translate-context="Info" translate-comment="authentication log record" translate translate-context="auth log entry">Login failure (password)</span>
-                                                </span>
-                                                <span ng-show="{{ log.Event === 1 }}"><i class="fa fa-check"></i>
-                                                    <span translate translate-context="auth log entry">Login success</span>
-                                                </span>
-                                                <span ng-show="{{ log.Event === 2 }}"><i class="fa fa-check"></i>
-                                                    <span translate translate-context="auth log entry">Logout</span>
-                                                </span>
-                                                <span ng-show="{{ log.Event === 3 }}"><i class="fa fa-times-circle text-red"></i>
-                                                    <span translate translate-context="auth log entry">Login failure (two-factor)</span>
-                                                </span>
-                                            </td>
-                                            <td ng-show="doLogging == 2" class="text-right">
-                                                <kbd ng-show="log.IP!==''">{{ ::log.IP }}</kbd>
-                                                <kbd ng-show="log.IP===''">--</kbd>
-                                            </td>
-                                            <td class="text-right">{{ log.Time * 1000 | date : 'medium' }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div><!--/.pm_table-->
-                        </div>
-                </form>
-            </section>
+            <log-manager class="setting pm_form full"></log-manager>
         </div>
         <encryption-view></encryption-view>
     </div><!--/.settings-->

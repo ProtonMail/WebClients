@@ -97,8 +97,8 @@ function pmModal(
              * @param  {Object} params
              */
             const getParams = (params = {}) => ({
-                close: deactivate,
-                cancel: deactivate,
+                close: () => deactivate('close'),
+                cancel: () => deactivate('close'), // it's an alias
                 show,
                 hide,
                 ...params
@@ -115,7 +115,7 @@ function pmModal(
                 const ctrl = $controller(controller, locals);
                 !ctrl.cancel && (ctrl.cancel = locals.params.cancel);
                 !ctrl.close && (ctrl.close = locals.params.close);
-                ctrl.$hookClose = () => {
+                ctrl.$hookClose = (mode) => {
                     // show the previousModal if we have one
                     if (locals.params.previousModal) {
                         const id = setTimeout(() => {
@@ -123,7 +123,7 @@ function pmModal(
                             clearTimeout(id);
                         }, 300);
                     }
-                    (locals.params.hookClose || _.noop)();
+                    (locals.params.hookClose || _.noop)(mode);
                 };
 
                 if (controllerAs) {
@@ -139,7 +139,7 @@ function pmModal(
             return $animate.enter(element, container);
         }
 
-        function deactivate() {
+        function deactivate(mode) {
             if (!element) {
                 return $q.when();
             }
@@ -167,7 +167,7 @@ function pmModal(
                  * cf https://github.com/angular/angular.js/issues/14376#issuecomment-205926098
                  */
                 (scope[controllerAs].$onDestroy || angular.noop)();
-                scope[controllerAs].$hookClose();
+                scope[controllerAs].$hookClose(mode);
                 scope = null;
                 element.remove();
                 element = null;

@@ -1,0 +1,43 @@
+<div class="sessionLogsTable-container pm_table">
+    <table
+        id="accessLog"
+        class="bordered">
+        <thead>
+            <tr>
+                <th scope="col" style="width:10rem" translate-context="Title" translate>Event</th>
+                <th scope="col" style="width:10rem" ng-if="model.doLogging == 2" class="text-right">IP</th>
+                <th scope="col" style="width:14rem" class="text-right" translate-context="Title" translate>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                class="sessionLogsTable-row"
+                ng-repeat="log in model.list track by $id(log)"
+                data-logevent="{{::log.Event}}">
+                <td scope="row">
+                    <span
+                        data-if="0"
+                        ng-show="{{ log.Event === 0 }}"><i class="fa fa-times-circle text-red"></i>
+                        <span
+                            translate-context="Info"
+                            translate-comment="authentication log record"
+                            translate translate-context="auth log entry">Login failure (password)</span>
+                    </span>
+                    <span data-if="1"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Login success</span>
+                    </span>
+                    <span data-if="2"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Logout</span>
+                    </span>
+                    <span data-if="3"><i class="fa fa-times-circle text-red"></i>
+                        <span translate translate-context="auth log entry">Login failure (two-factor)</span>
+                    </span>
+                </td>
+                <td ng-if="model.doLogging == 2" class="text-right">
+                    <kbd>{{ ::log.IP || '--' }}</kbd>
+                </td>
+                <td class="text-right">{{ ::log.Time * 1000 | date : 'medium' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

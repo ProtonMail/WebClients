@@ -19,12 +19,14 @@ import command from './command/index';
 import bridge from './bridge/index';
 import pmMe from './pmMe/index';
 import search from './search/index';
+import security from './security/index';
 
 export default angular.module('protonLazy', [
     'as.sortable',
     'ngScrollbars',
     'pikaday',
     'ui.indeterminate',
+    security,
     filter,
     squire,
     search,

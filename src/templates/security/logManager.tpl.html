@@ -1,0 +1,100 @@
+<form
+    class="logManager-container"
+    ng-class="{
+        'noLog': model.doLogging === 0,
+        'activeLog': model.doLogging === 1,
+        'activeLogAdvanced': model.doLogging === 2
+    }"
+    novalidate
+    method="post">
+    <header-block class="settingsSecurity-header-logs">
+        <h2
+            class="settingsSecurity-title-logs"
+            translate
+             translate-comment="logs page heading"
+            translate-context="Title">Authentication Logs</h2>
+    </header-block>
+
+    <nav class="logManager-nav">
+        <div class="logManager-navLeft">
+            <div class="pm_buttons logManager-groupBtn">
+                <button
+                    class="noLogBtn logManager-btn-noLogBtn"
+                    type="button"
+                    data-action="disable">
+                        <span
+                            ng-if="!doLogging"
+                            translate
+                            translate-context="Action">Disable</span>
+                        <span
+                            ng-if="doLogging"
+                            translate
+                            translate-context="Action">Disabled</span>
+                    </button>
+                <button
+                    class="activeLogBtn logManager-btn-activeLogBtn"
+                    type="button"
+                    data-action="basic"
+                    translate
+                    translate-context="Action">Basic</button>
+                <button
+                    class="activeLogAdvancedBtn logManager-btn-activeLogAdvancedBtn"
+                    type="button"
+                    data-action="advanced"
+                    translate
+                    translate-context="Action">Advanced</button>
+            </div>
+
+            <button
+                class="securityLogRefresh pm_button onlyActive"
+                data-action="reload"
+                type="button">
+                <i class="fa fa-rotate-right"></i>
+            </button>
+        </div>
+
+        <div class="logManager-navRigtht securtiyLogActions onlyActive">
+            <button
+                class="pm_button"
+                data-action="clear"
+                type="button"
+                translate-context="Action"
+                translate>Wipe</button>
+            <button
+                class="pm_button"
+                data-action="download"
+                type="button"
+                translate-context="Action"
+                translate>Download</button>
+            <paginator-scope
+                ng-if="model.total"
+                class="logManager-pagination"
+                data-type="logs"
+                data-page="model.currentPage"
+                data-total-items="model.total"
+                data-items-per-page="model.perPage"
+                data-change="changePage"></paginator-scope>
+        </div>
+    </nav>
+
+    <div class="clear">
+        <p class="noLog alert alert-info" translate translate-context="Info">You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.</p>
+        <p class="onlyActive alert alert-info" translate translate-context="Info">Logs include authentication attempts for all Proton services that use your ProtonMail credentials.</p>
+    </div>
+
+    <div class="clear onlyActive">
+        <p
+            class="alert alert-info onlyActive"
+            ng-if="model.loaded && !model.total"
+            translate-context="Info"
+            translate>No logs yet</p>
+        <p
+            class="alert alert-info onlyActive"
+            ng-if="!model.loaded"><i class="fa fa-spin fa-spinner"></i>
+            <span translate-context="Info" translate>Fetching logs...</span>
+        </p>
+        <session-logs-table
+            ng-if="model.total"
+            data-model="model"></session-logs-table>
+    </div>
+</form>

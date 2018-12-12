@@ -1,0 +1,47 @@
+.logManager-container, .logManager-container * { box-sizing: border-box }
+
+
+.logManager-container.noLog .onlyActive:not(.securtiyLogActions),
+.logManager-container.activeLogAdvanced .noLog,
+.logManager-container.activeLog .noLog { display: none }
+
+/* Preserve height buttons */
+.logManager-container.noLog .onlyActive.securtiyLogActions {
+    visibility: hidden;
+}
+
+.logManager-container.noLog .noLogBtn,
+.logManager-container.activeLog .activeLogBtn,
+.logManager-container.activeLogAdvanced .activeLogAdvancedBtn {
+    background: $button-background-active;
+    box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.logManager-nav {
+    display: flex;
+}
+
+.logManager-navLeft {
+    display: flex;
+    align-items: center;
+    margin-right: auto
+}
+
+.logManager-groupBtn, .logManager-pagination {
+    height: 100%;
+}
+
+[class*="logManager-btn"] {
+    border: 0;
+}
+[class*="logManager-btn"] * {
+    pointer-events: none
+}
+
+[class*="logManager-btn"] + [class*="logManager-btn"] {
+    border-left: 1px solid $border
+}
+
+.logManager-pagination {
+    margin-left: 1em;
+}
