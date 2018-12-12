@@ -84,7 +84,7 @@ function keysModel(dispatchers) {
      */
     const getFlags = (mode, key, keyID, newFlags) => {
         if (mode === 'reset') {
-            return clearBit(key, ENCRYPTED);
+            return clearBit(key.Flags, ENCRYPTED);
         }
 
         if (mode === 'mark' && key.ID === keyID) {
