@@ -115,6 +115,14 @@ $modalMargin: 2rem;
             justify-content: space-between;
         }
 
+        .modal-footer .modal-footer-button:only-child {
+            margin-left: auto;
+        }
+
+        .modal-footer .modal-footer-button + .modal-footer-button {
+            margin-left: auto
+        }
+
         .modal-content {
             h1, h2, h3, h4 {
                 font-size: 22px;

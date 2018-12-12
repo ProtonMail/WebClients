@@ -31,9 +31,9 @@
                 <p class="alert alert-info" translate translate-context="Info">If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. Do not create multiple SPF records.</p>
             </div>
         </div>
-        <div class="modal-footer clearfix">
-            <button class="pm_button primary pull-right" ng-click="ctrl.next()" translate translate-context="Action">Next</button>
-            <button class="pm_button" ng-click="ctrl.close()" translate translate-context="Action">Close</button>
+        <div class="modal-footer">
+            <button class="pm_button modal-footer-button" ng-click="ctrl.close()" translate translate-context="Action">Close</button>
+            <button class="pm_button primary modal-footer-button" ng-click="ctrl.next()" translate translate-context="Action">Next</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

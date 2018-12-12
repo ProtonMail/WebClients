@@ -13,10 +13,12 @@
                     translate>Do you want to export the public key or the private key?</p>
             </div>
         </div>
-        <div class="modal-footer text-right">
-            <button type="submit" class="pm_button pull-left" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
-            <button type="button" class="pm_button" ng-click="ctrl.exportPrivate()" translate translate-context="Action">Private key</button>
-            <button type="submit" class="pm_button primary" ng-click="ctrl.exportPublic()" translate translate-context="Action">Public key</button>
+        <div class="modal-footer">
+            <button type="submit" class="pm_button modal-footer-button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <div class="modal-footer-button">
+                <button type="button" class="pm_button" ng-click="ctrl.exportPrivate()" translate translate-context="Action">Private key</button>
+                <button type="submit" class="pm_button primary" ng-click="ctrl.exportPublic()" translate translate-context="Action">Public key</button>
+            </div>
         </div>
     </div>
     <div class="modal-overlay"></div>

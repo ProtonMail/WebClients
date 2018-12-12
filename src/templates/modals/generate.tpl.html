@@ -73,9 +73,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true" translate translate-context="Action">Cancel</button>
-            <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process === true" translate translate-context="Action">Generate Keys</button>
-            <button ng-if="ctrl.import" type="submit" class="pm_button link pull-right" ng-disabled="ctrl.process === true" translate translate-context="Action" ng-click="ctrl.import()">Import</button>
+            <button type="button" class="pm_button modal-footer-button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true" translate translate-context="Action">Cancel</button>
+            <button type="submit" class="pm_button primary modal-footer-button" ng-disabled="ctrl.process === true" translate translate-context="Action">Generate Keys</button>
+            <button ng-if="ctrl.import" type="submit" class="pm_button link modal-footer-button" ng-disabled="ctrl.process === true" translate translate-context="Action" ng-click="ctrl.import()">Import</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
