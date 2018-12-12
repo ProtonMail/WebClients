@@ -29,6 +29,15 @@ export const isChrome = () => $.ua.browser.name === 'Chrome';
 export const isMac = () => getOS().name === 'Mac OS';
 export const hasTouch = 'ontouchstart' in document.documentElement;
 
+/**
+ * If the browser supports script type="module"
+ * @return {boolean}
+ */
+export const hasModulesSupport = () => {
+    const script = document.createElement('script');
+    return 'noModule' in script;
+};
+
 export const isFileSaverSupported = () => 'download' in document.createElement('a') || navigator.msSaveOrOpenBlob;
 
 export const prngAvailable = () => {
