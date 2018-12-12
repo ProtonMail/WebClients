@@ -68,8 +68,8 @@ function passwords($q, gettextCatalog) {
             return hashPasswordVersion[1](password, cleanUsername(userName), modulus);
         },
 
-        1(password, userName, modulus) {
-            const salt = openpgp.crypto.hash.md5(binaryStringToArray(encodeUtf8(userName.toLowerCase())));
+        async 1(password, userName, modulus) {
+            const salt = await openpgp.crypto.hash.md5(binaryStringToArray(encodeUtf8(userName.toLowerCase())));
             let encodedSalt = '';
             for (let i = 0; i < salt.length; i++) {
                 let byte = salt[i].toString(16);
@@ -84,12 +84,11 @@ function passwords($q, gettextCatalog) {
             });
         },
 
-        0(password, userName, modulus) {
-            const prehashed = encodeBase64(
-                arrayToBinaryString(
-                    openpgp.crypto.hash.sha512(binaryStringToArray(userName.toLowerCase() + encodeUtf8(password)))
-                )
+        async 0(password, userName, modulus) {
+            const hash = await openpgp.crypto.hash.sha512(
+                binaryStringToArray(userName.toLowerCase() + encodeUtf8(password))
             );
+            const prehashed = encodeBase64(arrayToBinaryString(hash));
             return hashPasswordVersion[1](prehashed, userName, modulus);
         }
     };
