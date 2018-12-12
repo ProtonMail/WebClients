@@ -60,7 +60,7 @@ function contactDetails(
              * you try open first, the other one won't focus.
              * Via this hack, we do focus --force (╬￣皿￣)凸
              */
-            _rAF(() => element.find('[autofocus="autofocus]').focus());
+            _rAF(() => element.find('[autofocus="autofocus"]').focus());
 
             scope.model = {};
             scope.state = {
