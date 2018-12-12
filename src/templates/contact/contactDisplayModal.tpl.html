@@ -9,12 +9,12 @@
                 <contact-display data-vcard="ctrl.vcard" data-modal="true"></contact-display>
             </div>
         </div>
-        <div class="modal-footer text-right" ng-if="ctrl.onClickMerge">
-            <button class="pm_button pull-left" ng-click="ctrl.onClickClose()" translate-context="Action" translate>Close</button>
-            <button class="pm_button primary" ng-click="ctrl.onClickMerge()" tabindex="1" name="merge" translate-context="Action" translate>Merge</button>
+        <div class="modal-footer" ng-if="ctrl.onClickMerge">
+            <button class="pm_button modal-footer-button" ng-click="ctrl.onClickClose()" translate-context="Action" translate>Close</button>
+            <button class="pm_button primary modal-footer-button" ng-click="ctrl.onClickMerge()" tabindex="1" name="merge" translate-context="Action" translate>Merge</button>
         </div>
-        <div class="modal-footer text-right" ng-if="!ctrl.onClickMerge">
-            <button class="pm_button primary" ng-click="ctrl.onClickClose()" translate-context="Action" tabindex="1" translate>Close</button>
+        <div class="modal-footer" ng-if="!ctrl.onClickMerge">
+            <button class="pm_button primary modal-footer-button" ng-click="ctrl.onClickClose()" translate-context="Action" tabindex="1" translate>Close</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

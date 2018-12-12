@@ -23,23 +23,23 @@
                     form="addFileModal"></add-file>
             </div>
         </div>
-        <div class="modal-footer text-right">
+        <div class="modal-footer">
             <button
                 type="button"
-                class="pm_button pull-left addFile-cancel-button"
+                class="pm_button modal-footer-button addFile-cancel-button"
                 ng-click="ctrl.cancel()"
                 translate
                 translate-context="Action">Cancel
             </button>
             <button
                 type="button"
-                class="pm_button addFile-file-button"
+                class="pm_button modal-footer-button addFile-file-button"
                 ng-if="::ctrl.canAddFile"
                 ng-click="ctrl.addFile()">{{ ::ctrl.addFileTitle }}
             </button>
             <button
                 type="submit"
-                class="pm_button primary addFile-insert-button"
+                class="pm_button primary modal-footer-button addFile-insert-button"
                 ng-disabled="addFileModal.$valid === false"
                 ng-click="ctrl.insert()">{{ ::ctrl.actionTitle }}
             </button>

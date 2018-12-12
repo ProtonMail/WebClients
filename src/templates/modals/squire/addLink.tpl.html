@@ -23,10 +23,10 @@
                     form="addLinkModal"></add-link>
             </div>
         </div>
-        <div class="modal-footer text-right">
+        <div class="modal-footer">
             <button
                 type="button"
-                class="pm_button pull-left addLink-cancel-button"
+                class="pm_button modal-footer-button addLink-cancel-button"
                 ng-click="ctrl.cancel()"
                 translate
                 translate-context="Action">Cancel
@@ -34,12 +34,12 @@
             <button
                 ng-if="::ctrl.isUpdate"
                 type="button"
-                class="pm_button addLink-remove-button"
+                class="pm_button modal-footer-button addLink-remove-button"
                 ng-click="ctrl.delete()">{{ ::ctrl.deleteTitle }}
             </button>
             <button
                 type="submit"
-                class="pm_button primary addLink-insert-button"
+                class="pm_button primary modal-footer-button addLink-insert-button"
                 ng-disabled="addLinkModal.$valid === false"
                 ng-click="ctrl.submit()">{{ ::ctrl.actionTitle }}
             </button>

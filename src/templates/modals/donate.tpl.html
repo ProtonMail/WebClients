@@ -33,17 +33,17 @@
             </div>
         </div>
 
-        <div class="modal-footer text-right  donateModal-group-btn">
+        <div class="modal-footer donateModal-group-btn">
 
             <button
                 type="button"
-                class="pm_button donateModal-btn-cancel"
+                class="pm_button modal-footer-button donateModal-btn-cancel"
                 ng-click="ctrl.close()"
                 translate
                 translate-context="Action">Cancel</button>
             <button
                 type="button"
-                class="pm_button donateModal-btn-close"
+                class="pm_button modal-footer-button donateModal-btn-close"
                 ng-click="ctrl.close()"
                 translate
                 translate-context="Action">Close</button>
@@ -51,7 +51,7 @@
             <button
                 data-donation-external-submit
                 ng-disabled="ctrl.process === true"
-                class="pm_button primary donateModal-btn-donation">
+                class="pm_button primary modal-footer-button donateModal-btn-donation">
                     <span
                         class="donateModal-action-donate"
                         translate-context="Action"

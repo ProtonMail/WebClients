@@ -110,15 +110,15 @@
                 </div>
             </div>
 
-            <footer class="modal-footer contactLoaderModal-footer">
+            <footer class="modal-footer">
                 <button
-                    class="pm_button"
+                    class="pm_button modal-footer-button"
                     ng-click="ctrl.close()"
                     translate-context="Action"
                     translate>Close</button>
 
                 <button
-                    class="pm_button"
+                    class="pm_button modal-footer-button"
                     ng-if="ctrl.state === 'manageGroups'"
                     ng-click="ctrl.save()"
                     translate-context="Action"
@@ -126,7 +126,7 @@
 
                 <button
                     ng-if="ctrl.state === 'imported' && ctrl.categories.length"
-                    class="pm_button"
+                    class="pm_button modal-footer-button"
                     ng-click="ctrl.toStep('manageGroups')"
                     translate-context="Action"
                     translate>Next</button>
