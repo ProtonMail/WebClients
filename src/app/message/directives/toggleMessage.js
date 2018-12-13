@@ -18,7 +18,8 @@ function toggleMessage(dispatchers) {
                 if (
                     selection() &&
                     event.target.nodeName !== 'A' &&
-                    !event.target.classList.contains('labelsElement-btn-remove')
+                    !event.target.classList.contains('labelsElement-btn-remove') &&
+                    !event.target.classList.contains('messageAddressActionMenu-btn-copy-address')
                 ) {
                     scope.$applyAsync(() => {
                         // Open the message in composer if it's a draft
