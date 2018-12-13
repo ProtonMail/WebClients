@@ -117,7 +117,7 @@ function reactivateKeys(
                 const keyPassword = await passwords.computeKeyPassword(oldPassword, KeySalt);
                 const decryptedKey = await decryptPrivateKey(key.PrivateKey, keyPassword);
                 const privateKey = await encryptPrivateKey(decryptedKey, password);
-                const SignedKeyList = await keysModel.signedKeyList(address.ID, {
+                const SignedKeyList = await keysModel.signedKeyList(address.addressID, {
                     mode: 'create',
                     keyID: key.ID,
                     privateKey: decryptedKey

@@ -5,11 +5,22 @@ import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 import { MAIN_KEY } from '../../constants';
 
 /* @ngInject */
-function addressKeysViewModel(authentication, keysModel) {
+function addressKeysViewModel(keysModel) {
+    /**
+     * Get private keys for specific address
+     * @param {String} ID
+     * @return {Array<Key>}
+     */
     const getDecryptedKeys = (ID) => {
         const addressID = ID === 'contact-keys' ? MAIN_KEY : ID;
+
+        if (!keysModel.hasKey(ID)) {
+            return [];
+        }
+
         return keysModel.getPrivateKeys(addressID).filter((k) => k.isDecrypted());
     };
+
     /**
      * From a group of addresses, massage the data in the way that the address keys view directive expects
      * with it's keys and main key as the first key.
