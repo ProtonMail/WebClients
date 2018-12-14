@@ -19,7 +19,11 @@ function toggleMessage(dispatchers) {
                     selection() &&
                     event.target.nodeName !== 'A' &&
                     !event.target.classList.contains('labelsElement-btn-remove') &&
-                    !event.target.classList.contains('messageAddressActionMenu-btn-copy-address')
+                    !event.target.classList.contains('messageAddressActionMenu-btn-compose-to') &&
+                    !event.target.classList.contains('messageAddressActionMenu-btn-add-contact') &&
+                    !event.target.classList.contains('messageAddressActionMenu-btn-copy-address') &&
+                    !event.target.classList.contains('messageAddressActionMenu-btn-show-contact') &&
+                    !event.target.classList.contains('messageAddressActionMenu-btn-pin-public')
                 ) {
                     scope.$applyAsync(() => {
                         // Open the message in composer if it's a draft
