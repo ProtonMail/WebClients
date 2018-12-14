@@ -5,7 +5,7 @@
         <label class="vpnColumns-label">Tor VPN <i class="fa fa-info-circle"  pt-tooltip-translate-context="Tooltip" pt-tooltip-translate="Send all your traffic through the Tor network with a single click"></i></label>
         <label class="vpnColumns-label">Secure Core <i class="fa fa-info-circle"  pt-tooltip-translate-context="Tooltip" pt-tooltip-translate="Provides additional protection against VPN server compromise by routing connections through our Secure Core network"></i></label>
     </div>
-    <div class="vpnColumns-col vpnColumns-vpnbasic-col">
+    <label for="AddProtonVPNBasic" role="presentation" class="vpnColumns-col vpnColumns-vpnbasic-col">
         <header class="vpnColumns-header">
             <span
                 class="vpnColumns-selected"
@@ -27,11 +27,11 @@
             <i class="fa fa-times"></i>
         </div>
         <footer class="vpnColumns-footer">
-            <button type="button" data-action="vpnbasic" translate-context="Action for the vpn columns" translate>Add ProtonVPN Basic</button>
+            <button type="button" id="AddProtonVPNBasic" data-action="vpnbasic" translate-context="Action for the vpn columns" translate>Add ProtonVPN Basic</button>
             <button type="button" disabled translate-context="Action for the vpn columns" translate>ProtonVPN Basic Selected</button>
         </footer>
-    </div>
-    <div class="vpnColumns-col vpnColumns-vpnplus-col">
+    </label>
+    <label for="AddProtonVPNPlus" role="presentation" class="vpnColumns-col vpnColumns-vpnplus-col">
         <header class="vpnColumns-header">
             <span
                 class="vpnColumns-selected"
@@ -53,8 +53,8 @@
             <i class="fa fa-check"></i>
         </div>
         <footer class="vpnColumns-footer">
-            <button type="button" data-action="vpnplus" translate-context="Action for the vpn columns" translate>Add ProtonVPN Plus</button>
+            <button type="button" id="AddProtonVPNPlus" data-action="vpnplus" translate-context="Action for the vpn columns" translate>Add ProtonVPN Plus</button>
             <button type="button" disabled translate-context="Action for the vpn columns" translate>ProtonVPN Plus Selected</button>
         </footer>
-    </div>
+    </label>
 </div>
