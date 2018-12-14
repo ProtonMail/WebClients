@@ -19,7 +19,6 @@ import 'mousetrap/mousetrap';
 import 'mousetrap/plugins/pause/mousetrap-pause';
 import 'mousetrap/plugins/global-bind/mousetrap-global-bind';
 
-import 'nouislider/distribute/nouislider';
 import 'intl-tel-input/build/js/intlTelInput';
 import 'intl-tel-input/build/js/utils';
 import 'ng-intl-tel-input/dist/ng-intl-tel-input';

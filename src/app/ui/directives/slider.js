@@ -1,3 +1,5 @@
+import noUiSlider from 'nouislider';
+
 /* @ngInject */
 function slider(dispatchers) {
     return {
@@ -71,7 +73,7 @@ function slider(dispatchers) {
             }
 
             function usedSpace(unit) {
-                return unit / available * 100 + '%';
+                return (unit / available) * 100 + '%';
             }
 
             function moveNodes(node, newParent) {
