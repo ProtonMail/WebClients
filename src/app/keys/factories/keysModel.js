@@ -3,7 +3,7 @@ import { getFingerprint, signMessage } from 'pmcrypto';
 import { KEY_FLAG, MAIN_KEY } from '../../constants';
 import { clearBit } from '../../../helpers/bitHelper';
 
-const { ENCRYPTED, ENCRYPTED_AND_SIGNED } = KEY_FLAG;
+const { ENCRYPTED, SIGNED, ENCRYPTED_AND_SIGNED } = KEY_FLAG;
 const REMOVE_KEY = ['remove', 'set-primary', 'create'];
 const UNSHIFT_KEY = ['reset', 'set-primary'];
 const PUSH_KEY = ['create'];
@@ -108,10 +108,10 @@ function keysModel(dispatchers) {
      * @param {String} options.keyID
      * @param {Integer} options.newFlags
      * @param {Object<Key>} options.newPrivateKey
-     * @return {Object<Key>} result.primaryKey key used to sign
+     * @param {Integer} options.canReceive
      * @return {Array<Object>} result.preparedKeys keys parsed for Data
      */
-    const prepareKeys = (privateKeys = [], { mode, keyID, newFlags, newPrivateKey }) => {
+    const prepareKeys = (privateKeys = [], { mode, keyID, newFlags, newPrivateKey, canReceive }) => {
         const keys = privateKeys.reduce((acc, { key, pkg }) => {
             if (REMOVE_KEY.includes(mode) && key.ID === keyID) {
                 return acc;
@@ -129,7 +129,8 @@ function keysModel(dispatchers) {
         if (UNSHIFT_KEY.includes(mode)) {
             keys.unshift({
                 Fingerprint: getFingerprint(newPrivateKey),
-                Flags: ENCRYPTED_AND_SIGNED,
+                // If all keys are strictly signed then the new key should be just signed
+                Flags: canReceive === 0 ? SIGNED : ENCRYPTED_AND_SIGNED,
                 pkg: newPrivateKey
             });
         }
@@ -145,8 +146,6 @@ function keysModel(dispatchers) {
         return {
             primaryKey: keys[0].pkg,
             preparedKeys: keys.map(({ Fingerprint, Flags }, index) => ({
-                // Keep the key order, it's important for the API until they fix it
-                // Fingerprint, Primary, Flags
                 Fingerprint,
                 Primary: +(index === 0), // set Primary for the first key
                 Flags
@@ -161,16 +160,23 @@ function keysModel(dispatchers) {
      * @param {Object<Key>} options.privateKey new decrypted private key
      * @param {String} options.keyID key impacted
      * @param {Integer} options.newFlags flags we want to add when we mark
-     * @param {Array} options.resetKeys
+     * @param {Array} options.resetKeys used when the user reset his account
+     * @param {Integer} options.canReceive
      * @return {Promise<Object>} SignedKeyList
      */
     const signedKeyList = async (
         addressID = MAIN_KEY,
-        { mode, privateKey: newPrivateKey, keyID, newFlags, resetKeys = [] } = {}
+        { mode, privateKey: newPrivateKey, keyID, newFlags, resetKeys = [], canReceive } = {}
     ) => {
         // In case we reset from outside, keys are not saved in keysModel
         const privateKeys = hasKey(addressID) ? getAllKeys(addressID) : resetKeys.map((key) => ({ key, pkg: null })); // Contains all keys, even inactive
-        const { preparedKeys, primaryKey } = prepareKeys(privateKeys, { mode, keyID, newFlags, newPrivateKey });
+        const { preparedKeys, primaryKey } = prepareKeys(privateKeys, {
+            mode,
+            keyID,
+            newFlags,
+            newPrivateKey,
+            canReceive
+        });
         const Data = JSON.stringify(preparedKeys);
         const { signature: Signature } = await signMessage({
             data: Data,

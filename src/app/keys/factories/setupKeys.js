@@ -23,7 +23,7 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
      * @return {Promise<Array<Object>>} array of objects {AddressID:String, PrivateKey:String}
      */
     async function generateAddresses(addresses = [], passphrase = '', numBits = ENCRYPTION_DEFAULT) {
-        const list = addresses.map(({ ID, Email: email, Keys } = {}) => {
+        const list = addresses.map(({ ID, Email: email, Keys, Receive } = {}) => {
             return generateKey({
                 userIds: [{ name: email, email }],
                 passphrase,
@@ -31,7 +31,8 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
             }).then(({ privateKeyArmored: PrivateKey }) => ({
                 AddressID: ID,
                 PrivateKey,
-                Keys
+                Keys,
+                Receive
             }));
         });
         return Promise.all(list);
@@ -128,13 +129,14 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
             payload.PrimaryKey = AddressKeys[0].PrivateKey;
 
             payload.AddressKeys = await Promise.all(
-                AddressKeys.map(async ({ AddressID, PrivateKey, Keys }) => ({
+                AddressKeys.map(async ({ AddressID, Receive, PrivateKey, Keys }) => ({
                     AddressID,
                     PrivateKey,
                     SignedKeyList: await keysModel.signedKeyList(AddressID, {
                         mode: 'reset',
                         privateKey: await decryptPrivateKey(PrivateKey, passphrase),
-                        resetKeys: Keys
+                        resetKeys: Keys,
+                        canReceive: Receive
                     })
                 }))
             );
