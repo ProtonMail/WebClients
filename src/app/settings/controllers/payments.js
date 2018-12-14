@@ -4,20 +4,15 @@ import { UNPAID_STATE } from '../../constants';
 /* @ngInject */
 function PaymentsController(
     $scope,
-    $state,
     gettextCatalog,
     authentication,
     cardModal,
-    customizeInvoiceModal,
     dispatchers,
     payModal,
     confirmModal,
-    invoices,
     methods,
-    downloadFile,
     notification,
     networkActivityTracker,
-    organizationInvoices,
     Payment,
     paymentModel
 ) {
@@ -31,23 +26,12 @@ function PaymentsController(
 
     $scope.methods = methods;
     $scope.invoiceOwner = 0;
-    $scope.invoices = invoices.data.Invoices;
-    $scope.total = invoices.data.Total;
 
     on('updateUser', () => {
         $scope.$applyAsync(() => {
             updateUser();
         });
     });
-
-    $scope.changeInvoices = (owner) => {
-        if (owner === 0) {
-            $scope.invoices = invoices.data.Invoices;
-        } else if (owner === 1) {
-            $scope.invoices = organizationInvoices.data.Invoices;
-        }
-        $scope.invoiceOwner = owner;
-    };
 
     $scope.add = () => {
         cardModal.activate({
@@ -125,34 +109,6 @@ function PaymentsController(
                 }
             }
         });
-    };
-
-    /**
-     * Open modal to customize invoice text
-     */
-    $scope.customize = function() {
-        customizeInvoiceModal.activate({
-            params: {
-                cancel() {
-                    customizeInvoiceModal.deactivate();
-                }
-            }
-        });
-    };
-
-    /**
-     * Download invoice
-     * @param {Object} invoice
-     */
-    $scope.download = (invoice) => {
-        networkActivityTracker.track(
-            Payment.invoice(invoice.ID).then((result) => {
-                const filename = 'ProtonMail Invoice ' + invoice.ID + '.pdf';
-                const blob = new Blob([result.data], { type: 'application/pdf' });
-
-                downloadFile(blob, filename);
-            })
-        );
     };
 
     /**

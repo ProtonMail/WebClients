@@ -301,6 +301,10 @@
 @import "components/security/logManager";
 @import "components/security/sessionLogsTable";
 
+//== Invoices
+@import "components/invoices/invoiceList";
+@import "components/invoices/invoiceSection";
+
 //== Modals
 @import "components/modals/index";
 

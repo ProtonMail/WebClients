@@ -16,6 +16,8 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
         return params;
     };
 
+    const response = (promise) => promise.then(({ data }) => data);
+
     function generateFingerprint(params = {}) {
         const paymentMethodID = params.PaymentMethodID;
         // Faster accessor for the Object. We need to update the ref
@@ -108,12 +110,17 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
      * @param {Object} params
      * @return {Promise}
      */
-    const invoices = (params) => $http.get(requestUrl('invoices'), { params });
+    const invoices = (params) => {
+        return response($http.get(requestUrl('invoices'), { params }));
+    };
 
     /**
      * Get an invoice as pdf
+     * @param {String} id ID of the Invoice
      */
-    const invoice = (id) => $http.get(requestUrl('invoices', id), { responseType: 'arraybuffer' });
+    const invoice = (id) => {
+        return response($http.get(requestUrl('invoices', id), { responseType: 'arraybuffer' }));
+    };
 
     /**
      * Return information to pay invoice unpaid

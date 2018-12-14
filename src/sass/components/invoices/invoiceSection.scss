@@ -1,0 +1,29 @@
+.invoiceSection-container, .invoiceSection-container * { box-sizing: border-box }
+
+.invoiceSection-title::after {
+    content: ' (' attr(data-total) ')';
+    font-style: italic;
+    font-size: .8em;
+    font-weight: normal;
+}
+
+.invoiceSection-nav {
+    display: flex;
+}
+
+.invoiceSection-nav-right {
+    margin-left: auto;
+}
+
+.invoiceSection-pagination.invoiceSection-pagination {
+    margin-left: 1em !important;
+}
+
+.invoiceSection-nav-right .pm_button {
+    height: auto;
+    border: 0 !important;
+}
+
+.invoiceSection-nav-right .pm_button + .pm_button  {
+    border-left: 1px solid $border !important;
+}

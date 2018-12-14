@@ -54,6 +54,25 @@ export const EVENTS_MS = {
     INTERVAL_EVENT_TIMER: 30 * 1000, // Time in ms between querying the event log (every 30 seconds)
     LOOP_DEBOUNCE_MS: 500 // Interval in ms during which the old event call is returned if calling again.
 };
+export const INVOICE_OWNER = {
+    USER: 0,
+    ORGANIZATION: 1
+};
+
+export const INVOICE_TYPE = {
+    OTHER: 0,
+    SUBSCRIPTION: 1,
+    CANCELLATION: 2,
+    CREDIT: 3,
+    DONATION: 4
+};
+
+export const INVOICE_STATE = {
+    UNPAID: 0,
+    PAID: 1,
+    VOID: 2,
+    BILLED: 3
+};
 
 export const TIMEOUT_PRELOAD_MESSAGE = 500; // milliseconds
 export const UPLOAD_GRADIENT_DARK = '147, 145, 209'; // dark rgb color for upload progress bar
@@ -62,6 +81,7 @@ export const ENC_OUT_ENC_REPLY = 6; // encrypted for outside
 export const SAVE_TIMEOUT_TIME = 3000; // 3 seconds
 export const SAVE_THROTTLE_TIME = 10000; // 10 seconds
 export const MAX_EXPIRATION_TIME = 672; // hours
+export const INVOICES_PER_PAGE = 25;
 export const ELEMENTS_PER_PAGE = 50;
 export const CONTACTS_PER_PAGE = 1000;
 export const HD_BREAKPOINT = 1920;
