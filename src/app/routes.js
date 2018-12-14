@@ -623,15 +623,6 @@ export default angular
                             return Promise.reject();
                         }
                     },
-                    invoices(Payment, networkActivityTracker) {
-                        return networkActivityTracker.track(Payment.invoices({ Owner: 0 }));
-                    },
-                    organizationInvoices(user, Payment, networkActivityTracker) {
-                        if (user.Role === PAID_ADMIN_ROLE) {
-                            return networkActivityTracker.track(Payment.invoices({ Owner: 1 }));
-                        }
-                        return {};
-                    },
                     methods(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },

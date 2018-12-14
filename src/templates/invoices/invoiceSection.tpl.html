@@ -1,0 +1,72 @@
+<section class="setting full pm_form settingsPayment-section invoiceSection-container">
+    <moz-info></moz-info>
+    <header-block class="settingsPayment-header-invoices">
+        <h2
+            class="settingsPayment-title-invoices invoiceSection-title"
+            data-total="{{model.total}}"
+            translate
+            translate-context="Title">Invoices</h2>
+    </header-block>
+
+    <div class="settingsPayment-content">
+
+        <nav class="margin invoiceSection-nav">
+            <button
+                type="button"
+                class="pm_button"
+                data-action="customize"
+                translate-context="Action"
+                translate>Customize</button>
+
+            <div class="pm_buttons invoiceSection-nav-right" ng-if="getUserInfo('role') === 2">
+
+                <button
+                    class="pm_button"
+                    ng-class="{ 'active': model.owner === 0 }"
+                    type="button"
+                    data-action="user"
+                    translate-context="Action"
+                    translate>User</button>
+
+                <button
+                    class="pm_button"
+                    ng-class="{ 'active': model.owner === 1 }"
+                    type="button"
+                    data-action="organization"
+                    translate-context="Action"
+                    translate>Organization</button>
+            </div>
+
+            <paginator-scope
+                ng-if="model.total"
+                class="invoiceSection-pagination"
+                data-type="invoices"
+                data-page="model.page"
+                data-total-items="model.total"
+                data-items-per-page="model.perPage"
+                data-change="changePage"></paginator-scope>
+        </nav>
+
+        <p
+            class="alert alert-danger"
+            ng-if="getUserInfo('delinquent') && getUserInfo('role') === 0"
+            translate-context="Info"
+            translate>Your account currently has an overdue invoice. Please pay all unpaid invoices.</p>
+
+        <p
+            class="alert alert-danger"
+            ng-if="getUserInfo('delinquent') && getUserInfo('role') > 0"
+            translate-context="Info"
+            translate>Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.</p>
+
+        <p
+            class="alert alert-info"
+            ng-if="!model.list.length && model.loaded"
+            translate-context="Info"
+            translate>No invoices found.</p>
+
+        <invoice-list
+            data-model="model"
+            ng-if="model.loaded"></invoice-list>
+    </div>
+</section>

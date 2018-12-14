@@ -1,3 +1,4 @@
+import invoices from './invoices/index';
 import address from './address/index';
 import attachments from './attachments/index';
 import autoresponder from './autoresponder/index';
@@ -26,6 +27,7 @@ export default angular.module('protonLazy', [
     'ngScrollbars',
     'pikaday',
     'ui.indeterminate',
+    invoices,
     security,
     filter,
     squire,

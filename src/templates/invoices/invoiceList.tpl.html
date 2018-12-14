@@ -1,0 +1,49 @@
+<div class="invoiceList-container pm_table">
+    <table id="invoicesTable">
+        <thead>
+            <tr>
+                <th scope="col" class="invoice">ID</th>
+                <th scope="col" class="price" translate-context="Title" translate>Amount</th>
+                <th scope="col" class="actions" translate-context="Title" translate>Actions</th>
+                <th scope="col" class="type" translate-context="Title" translate>Type</th>
+                <th scope="col" class="status" translate-context="Title" translate>Status</th>
+                <th scope="col" class="time" translate-context="Title" translate>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                class="invoiceList-row"
+                ng-repeat="invoice in model.list track by invoice.ID">
+                <td>
+                    <span class="bold">#{{ ::invoice.ID }}</span>
+                </td>
+                <td>{{::invoice | invoicePrice }}</td>
+                <td>
+                    <button
+                        type="button"
+                        data-action="download"
+                        data-action-arg="{{::invoice.ID}}"
+                        class="pm_button link"
+                        translate-context="Action"
+                        translate>Download</button>
+                    <pay-invoice-btn
+                        data-model="invoice"
+                        ng-if="invoice.State === 0"></pay-invoice-btn>
+                </td>
+                <td>
+                    <span class="pm_badge">{{ ::invoice | invoiceInfo:'type' }}</span>
+                </td>
+                <td>
+                    <!-- State is mutatble -> via payInvoiceBtn -->
+                    <span
+                        ng-class="{
+                            error: invoice.State === 0,
+                            success: invoice.State === 1
+                        }"
+                        class="pm_badge">{{ invoice | invoiceInfo:'state' }}</span>
+                </td>
+                <td>{{ invoice.CreateTime | readableTime }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
