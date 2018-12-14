@@ -147,6 +147,11 @@ function manageUser(
                 return;
             }
 
+            // Clear all addresses if change on it (so we keep contact keys)
+            if (Addresses.length) {
+                keysModel.clearAddressKeys();
+            }
+
             keysModel.storeKeys(keys);
             mergeUser(User, keys, dirtyAddresses);
         } catch (e) {

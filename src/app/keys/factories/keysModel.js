@@ -13,6 +13,11 @@ function keysModel(dispatchers) {
     const { dispatcher, on } = dispatchers(['keysModel']);
     let CACHE = {};
     const clear = () => (CACHE = {});
+    const clearAddressKeys = () => {
+        CACHE = {
+            [MAIN_KEY]: CACHE[MAIN_KEY]
+        };
+    };
 
     /**
      * Store key and package in MAP[addressID][keyID]
@@ -31,7 +36,6 @@ function keysModel(dispatchers) {
      * @param {Array<Object>} keys contains all keys (user + addresses)
      */
     const storeKeys = (keys = []) => {
-        clear(); // Keep the clear in case of delete event
         keys.forEach(({ address, key, pkg }) => storeKey(address.ID, key, pkg));
         dispatcher.keysModel('updated', { keys });
     };
@@ -195,6 +199,6 @@ function keysModel(dispatchers) {
         clear();
     });
 
-    return { storeKeys, getPublicKeys, getPrivateKeys, hasKey, signedKeyList };
+    return { storeKeys, getPublicKeys, getPrivateKeys, hasKey, signedKeyList, clearAddressKeys };
 }
 export default keysModel;
