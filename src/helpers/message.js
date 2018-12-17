@@ -52,7 +52,7 @@ export const isInternalEncrypted = hasFlag(FLAG_E2E | FLAG_INTERNAL);
 export const isSign = hasFlag(FLAG_SIGN);
 export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
 export const isExternalEncrypted = (message) => isE2E(message) && !isInternal(message);
-export const isPGPEncrypted = hasFlag(FLAG_RECEIVED | FLAG_E2E);
+export const isPGPEncrypted = (message) => isExternal(message) && isReceived(message) && isE2E(message);
 
 export const isMIME = hasMimeType(MIME);
 export const isPGPInline = (message) => isPGPEncrypted(message) && !isMIME(message);
