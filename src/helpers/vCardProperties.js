@@ -31,7 +31,14 @@ const canPushProp = (property, group) => {
  */
 export const makeUniq = (properties = []) =>
     _.uniqBy(properties, (property) => {
-        return property.valueOf() && property.getType();
+        const type = property.getType();
+        const value = property.valueOf();
+
+        if (type) {
+            return type && value;
+        }
+
+        return value;
     });
 
 /**
