@@ -22,5 +22,4 @@ import 'mousetrap/plugins/global-bind/mousetrap-global-bind';
 import 'intl-tel-input/build/js/intlTelInput';
 import 'intl-tel-input/build/js/utils';
 import 'ng-intl-tel-input/dist/ng-intl-tel-input';
-import 'hi-base32/build/base32.min';
 import 'cssuseragent/cssua';

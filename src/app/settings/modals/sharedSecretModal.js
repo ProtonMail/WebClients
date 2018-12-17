@@ -1,4 +1,5 @@
 import QRCode from 'qrcodejs2';
+import base32 from 'hi-base32';
 import _ from 'lodash';
 
 import { getRandomValues } from '../../../helpers/webcrypto';
@@ -10,25 +11,23 @@ function sharedSecretModal(addressesModel, authentication, pmModal) {
         templateUrl: require('../../../templates/modals/twofactor/sharedSecret.tpl.html'),
         /* @ngInject */
         controller: function(params) {
-            const self = this;
             const randomBytes = getRandomValues(new Uint8Array(20));
             const sharedSecret = base32.encode(randomBytes);
             const primaryAddress = _.find(addressesModel.get(), ({ Keys }) => Keys);
             const identifier = primaryAddress ? primaryAddress.Email : `${authentication.user.Name}@protonmail`;
             const qrURI = `otpauth://totp/${identifier}?secret=${sharedSecret}&issuer=ProtonMail&algorithm=SHA1&digits=6&period=30`;
 
-            self.sharedSecret = params.sharedSecret || sharedSecret;
-            self.qrURI = params.qrURI || qrURI;
-            self.manual = false;
-            self.next = () => params.next(self.sharedSecret, self.qrURI);
-            self.cancel = () => params.cancel();
-            self.displayManual = () => {
-                self.manual = !self.manual;
+            this.sharedSecret = params.sharedSecret || sharedSecret;
+            this.qrURI = params.qrURI || qrURI;
+            this.manual = false;
+            this.next = () => params.next(this.sharedSecret, this.qrURI);
+            this.displayManual = () => {
+                this.manual = !this.manual;
             };
 
-            self.makeCode = () => {
+            this.makeCode = () => {
                 /* eslint no-new: "off" */
-                new QRCode(document.getElementById('qrcode'), self.qrURI);
+                new QRCode(document.getElementById('qrcode'), this.qrURI);
             };
         }
     });
