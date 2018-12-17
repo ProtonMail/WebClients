@@ -83,6 +83,8 @@ export const ADVANCED_SENDING_KEYS = [].concat(
     FIELDS['X-PM-TLS']
 );
 
+export const FIELDS_TYPED = [].concat(FIELDS.EMAIL, FIELDS.TEL, FIELDS.ADR);
+
 const PROPERTY_CATEGORY = 'categories';
 export const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group', PROPERTY_CATEGORY];
 export const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(VCARD_KEY_FIELDS);
