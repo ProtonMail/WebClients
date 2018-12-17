@@ -1,8 +1,12 @@
 <div class="pmSignatureToggle-container">
     <div class="pmSignatureToggle-row">
         <p ng-bind-html="protonSignature.content"></p>
-        <toggle ng-if="!protonSignature.isMandatory" class="defaultSignature-toggle small" data-status="protonSignature.isActive"
-            data-name="changePMSignature"></toggle>
+        <toggle
+            ng-if="!protonSignature.isMandatory"
+            class="defaultSignature-toggle small"
+            data-status="protonSignature.isActive"
+            data-name="changePMSignature"
+            data-id="changePMSignature"></toggle>
     </div>
     <p class="alert alert-info" ng-if="protonSignature.isMandatory" translate translate-context="Info">
         A <a ui-sref="secured.dashboard({scroll: true})">paid plan</a> is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts.

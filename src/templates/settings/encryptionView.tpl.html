@@ -24,7 +24,7 @@
             <div class="pm_grid">
                 <div class="row">
                     <div class="col-1-2">
-                        <label>
+                        <label for="encryptSettingsSign">
                             <span
                                 translate-context="Label"
                                 translate>
@@ -42,11 +42,11 @@
                         </label>
                     </div>
                     <div class="col-1-2">
-                        <toggle data-status="sign" name="encryptSettings" data-type="sign"></toggle>
+                        <toggle data-status="sign" name="encryptSettings" data-id="encryptSettingsSign" data-type="sign"></toggle>
                     </div>
                 </div><div class="row">
                 <div class="col-1-2">
-                    <label>
+                    <label for="encryptSettingsAttachPublic">
                             <span translate-context="Label"
                                   translate>
                                 Automatically attach public key
@@ -61,12 +61,12 @@
                     </label>
                 </div>
                 <div class="col-1-2">
-                    <toggle data-status="attachPublic" name="encryptSettings" data-type="attachPublic"></toggle>
+                    <toggle data-status="attachPublic" name="encryptSettings" data-id="encryptSettingsAttachPublic" data-type="attachPublic"></toggle>
                 </div>
             </div>
                 <div class="row">
                     <div class="col-1-2">
-                        <label>
+                        <label for="pgpScheme">
                             <span translate-context="Label" translate>Default PGP Scheme</span>
                             <a href="https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/" target="_blank" class="text-purple">
                                 <i
@@ -80,7 +80,7 @@
                     <div class="col-1-2">
                         <div class="pm_select">
                             <i class="fa fa-angle-down"></i>
-                            <select class="pgp-scheme" name="pgp-scheme" ng-model="pgpscheme">
+                            <select class="pgp-scheme" name="pgp-scheme" id="pgpScheme" ng-model="pgpscheme">
                                 <option value="pgp-mime">PGP/MIME</option>
                                 <option value="pgp-inline">Inline PGP</option>
                             </select>
@@ -118,7 +118,7 @@
             <div class="pm_grid">
                 <div class="row">
                     <div class="col-1-2">
-                        <label>
+                        <label for="encryptSettingsPromptpin">
                             <span
                                 translate-context="Label"
                                 translate>
@@ -133,7 +133,7 @@
                         </label>
                     </div>
                     <div class="col-1-2">
-                        <toggle data-status="promptpin" name="encryptSettings" data-type="promptpin"></toggle>
+                        <toggle data-status="promptpin" name="encryptSettings" data-id="encryptSettingsPromptpin" data-type="promptpin"></toggle>
                     </div>
                 </div>
 

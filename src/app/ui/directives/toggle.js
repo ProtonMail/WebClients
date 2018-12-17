@@ -23,6 +23,7 @@ function toggle(dispatchers) {
                     });
                 }
             };
+            scope.getID = () => scope.id || `pm_toggle-${scope.$id}`;
 
             $checkbox.on('change', onChange);
 
