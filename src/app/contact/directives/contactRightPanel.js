@@ -1,3 +1,7 @@
+import { CONTACT_ERROR } from '../../errors';
+
+const { TYPE3_CONTACT_VERIFICATION, TYPE2_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION } = CONTACT_ERROR;
+
 /* @ngInject */
 function contactRightPanel(
     dispatchers,
@@ -8,8 +12,14 @@ function contactRightPanel(
     networkActivityTracker
 ) {
     const HIDE_CLASS = 'contactRightPanel-placeholder-hidden';
-
     const getMode = (current) => (current === 'edition' ? 'view' : 'edition');
+    const toClass = (key) => `contactErrorType-${key}-error`;
+
+    const testErrors = ({ errors = [] } = {}) => ({
+        [toClass('encrypted-verification')]: errors.includes(TYPE3_CONTACT_VERIFICATION),
+        [toClass('encrypted')]: errors.includes(TYPE3_CONTACT_DECRYPTION),
+        [toClass('verification')]: errors.includes(TYPE2_CONTACT_VERIFICATION)
+    });
 
     return {
         replace: true,
@@ -19,6 +29,7 @@ function contactRightPanel(
             const { on, unsubscribe, dispatcher } = dispatchers(['contacts']);
 
             scope.mode = 'view';
+            scope.testErrors = testErrors;
 
             const selectContacts = () => {
                 const list = contactCache.paginate(contactCache.get('filtered'));
