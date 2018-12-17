@@ -24,7 +24,15 @@ const canPushProp = (property, group) => {
     return !group || property.getGroup() === group;
 };
 
-export const makeUniq = (properties = []) => _.uniqBy(properties, (property) => property.valueOf());
+/**
+ * A property is considered as the same if it share the sale value and property with an other
+ * @param {Array<vCard.Property>} properties
+ * @return {Array}
+ */
+export const makeUniq = (properties = []) =>
+    _.uniqBy(properties, (property) => {
+        return property.valueOf() && property.getType();
+    });
 
 /**
  * Extract specific properties
