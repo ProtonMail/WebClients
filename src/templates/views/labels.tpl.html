@@ -51,7 +51,7 @@
                                 <span class="label-pm labelsState-item-name ellipsis">{{ label.Name }}</span>
                             </div>
                             <div ng-if="label.Exclusive" pt-tooltip-translate-context="Label" pt-tooltip-translate="Enable/disable desktop and mobile notifications">
-                                <label class="labelsState-toggle-label" translate-context="Label" translate>Notification</label>
+                                <label for="{{ label.ID }}" class="labelsState-toggle-label" translate-context="Label" translate>Notification</label>
                                 <toggle data-status="label.notify" class="small" data-name="changeNotifyLabel" data-id="{{ label.ID }}"></toggle>
                             </div>
                             <div>

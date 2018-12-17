@@ -22,9 +22,9 @@
             <ul class="settingsFilters-sort-container pm_sort-container" data-as-sortable="filterDragControlListeners"  is-disabled="customFilters.length === 1" ng-class="{ 'as-sortable-disabled': customFilters.length === 1 }" data-ng-model="customFilters">
                 <li class="pm_sort-item" ng-repeat="filter in customFilters | orderBy: 'Priority'" as-sortable-item="">
                     <div class="pm_sort-item-content" as-sortable-item-handle="">
-                        <div>
+                        <label for="{{ filter.ID }}">
                             <span class="ellipsis" title="{{ filter.Name }}">{{ filter.Name }}</span>
-                        </div>
+                        </label>
                         <toggle class="settingsFilters-sort-toggle small" data-status="filter.Status" data-name="changeCustomFilterStatus" data-id="{{ filter.ID }}"></toggle>
                         <div>
                             <button class="pm_button link" ng-show="isSimple(filter)" ng-click="editCustomFilter(filter)">Edit</button>
