@@ -6,9 +6,12 @@ function contactError(dispatchers) {
         link(scope, el) {
             const { dispatcher } = dispatchers(['contacts']);
 
-            const onClick = (e) => {
-                if (e.target.nodeName === 'BUTTON' && e.target.dataset.action === 'resign') {
-                    dispatcher.contacts('updateContact', { contact: scope.contact });
+            const onClick = ({ target }) => {
+                if (target.dataset.action === 'resign') {
+                    dispatcher.contacts('updateContact', {
+                        contact: scope.contact,
+                        action: 'resign'
+                    });
                 }
             };
 
