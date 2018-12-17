@@ -19,7 +19,7 @@
                 <ul class="editComposerContactGroupModal-list">
                     <li
                         class="editComposerContactGroupModal-item"
-                        ng-repeat="email in ctrl.group">
+                        ng-repeat="email in ctrl.group track by email.ID">
                         <label class="editComposerContactGroupModal-label">
                             <custom-checkbox
                                 class="editComposerContactGroupModal-input"
