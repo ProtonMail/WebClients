@@ -1,9 +1,10 @@
 import _ from 'lodash';
 import vCard from 'vcf';
 
-import { VCARD_KEYS, CONTACT_ADD_ID } from '../../constants';
+import { CONTACT_ADD_ID } from '../../constants';
 import { unescapeValue, escapeValue, cleanValue } from '../../../helpers/vcard';
 import {
+    FIELDS_TYPED,
     getKeys,
     getHumanFields,
     isPersonalsKey,
@@ -28,11 +29,6 @@ function contactDetailsModel(
         unknown: gettextCatalog.getString('Unknown', null, 'Default display name vcard')
     };
 
-    const MAP_KEYS = VCARD_KEYS.reduce((acc, key) => {
-        acc[key] = contactTransformLabel.toLang(key);
-        return acc;
-    }, Object.create(null));
-
     const buildProperty = (type) => (property = {}) => {
         const key = property.getField();
         return {
@@ -55,9 +51,9 @@ function contactDetailsModel(
 
     function getParams(item = {}, pref = 0) {
         const params = item.params || {};
-        const hasType = item.label && MAP_KEYS[item.type] !== item.label;
 
-        if (hasType) {
+        // Always add a type if we can cf #8137
+        if (FIELDS_TYPED.includes(item.type)) {
             params.type = contactTransformLabel.toVCard(item.label);
         }
 

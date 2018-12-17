@@ -1,33 +1,25 @@
 import _ from 'lodash';
 import vCard from 'vcf';
-import {
-    decryptMessage,
-    encryptMessage,
-    getCleartextMessage,
-    getMaxConcurrency,
-    getMessage,
-    getSignature,
-    signMessage,
-    verifyMessage
-} from 'pmcrypto';
+import { encryptMessage, getMaxConcurrency, signMessage } from 'pmcrypto';
 
-import { CONTACT_ERROR } from '../../errors';
 import { CONTACT_CARD_TYPE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION } from '../../constants';
 import { orderByPref } from '../../../helpers/vcard';
 import vCardPropertyMaker from '../../../helpers/vCardPropertyMaker';
 import { createCancellationToken } from '../../../helpers/promiseHelper';
 import { generateUID } from '../../../helpers/string';
 
-const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_CARD_TYPE;
-const {
-    TYPE3_CONTACT_VERIFICATION,
-    TYPE3_CONTACT_DECRYPTION,
-    TYPE2_CONTACT_VERIFICATION,
-    TYPE1_CONTACT
-} = CONTACT_ERROR;
+const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, SIGNED } = CONTACT_CARD_TYPE;
 
 /* @ngInject */
-function contactEncryption(chunk, gettextCatalog, vcard, keysModel, contactKeyAssigner, contactProgressReporter) {
+function contactEncryption(
+    chunk,
+    gettextCatalog,
+    vcard,
+    keysModel,
+    contactKeyAssigner,
+    contactProgressReporter,
+    extractCards
+) {
     const getErrors = (data = []) => _.map(data, 'error').filter(Boolean);
 
     const buildContact = (ID, data = [], cards) => {
@@ -37,6 +29,7 @@ function contactEncryption(chunk, gettextCatalog, vcard, keysModel, contactKeyAs
             errors: getErrors(data),
             types: cards.map(({ Type }) => Type)
         };
+
         Object.keys(contact.vCard.data).forEach((key) => {
             if (Array.isArray(contact.vCard.data[key])) {
                 contact.vCard.data[key] = orderByPref(contact.vCard.data[key]);
@@ -130,59 +123,6 @@ function contactEncryption(chunk, gettextCatalog, vcard, keysModel, contactKeyAs
                 Signature: null
             });
         }
-
-        return Promise.all(promises);
-    }
-
-    function extractCards({ cards = [], privateKeys = [], publicKeys = [] }) {
-        const armor = true;
-        const promises = _.map(cards, ({ Type, Data = '', Signature = '' }) => {
-            switch (Type) {
-                case ENCRYPTED_AND_SIGNED:
-                    return Promise.all([getMessage(Data), getSignature(Signature)])
-                        .then(([message, signature]) =>
-                            decryptMessage({
-                                message,
-                                privateKeys,
-                                publicKeys,
-                                armor,
-                                signature
-                            })
-                        )
-                        .then(({ data, verified }) => {
-                            if (verified !== 1) {
-                                return { error: TYPE3_CONTACT_VERIFICATION, data };
-                            }
-                            return { data };
-                        })
-                        .catch(() => {
-                            return { error: TYPE3_CONTACT_DECRYPTION, data: new vCard().toString(VCARD_VERSION) };
-                        });
-                case SIGNED:
-                    return getSignature(Signature)
-                        .then((signature) =>
-                            verifyMessage({
-                                message: getCleartextMessage(Data),
-                                publicKeys,
-                                signature
-                            })
-                        )
-                        .then(({ verified }) => {
-                            if (verified !== 1) {
-                                return { error: TYPE2_CONTACT_VERIFICATION, data: Data };
-                            }
-                            return { data: Data };
-                        });
-                case ENCRYPTED:
-                    return getMessage(Data)
-                        .then((message) => decryptMessage({ message, privateKeys, armor }))
-                        .catch(() => {
-                            return { error: TYPE1_CONTACT, data: new vCard().toString(VCARD_VERSION) };
-                        });
-                case CLEAR_TEXT:
-                    return { data: Data };
-            }
-        });
 
         return Promise.all(promises);
     }

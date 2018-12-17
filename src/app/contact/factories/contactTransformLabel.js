@@ -33,6 +33,7 @@ function contactTransformLabel(gettextCatalog) {
         rev: gettextCatalog.getString('Revision', null, 'VCard key name'),
         role: gettextCatalog.getString('Role', null, 'VCard key name'),
         sound: gettextCatalog.getString('Sound', null, 'VCard key name'),
+        voice: gettextCatalog.getString('Phone', null, 'VCard key name'),
         tel: gettextCatalog.getString('Phone', null, 'VCard key name'),
         title: gettextCatalog.getString('Title', null, 'VCard key name'),
         tz: gettextCatalog.getString('Timezone', null, 'VCard key name'),
@@ -47,6 +48,8 @@ function contactTransformLabel(gettextCatalog) {
         'pm-encrypt': gettextCatalog.getString('Encrypt', null, 'VCard key name'),
         'pm-tls': gettextCatalog.getString('TLS', null, 'VCard key name')
     };
+
+    const MAP_KEYS = Object.keys(MAP);
 
     /**
      * Transform vCard label to language if a reference is found, or undefined
@@ -73,7 +76,16 @@ function contactTransformLabel(gettextCatalog) {
      * @param  {String} label
      * @return {Boolean / String}
      */
-    const toVCard = (label = '') => Object.keys(MAP).find((key) => label === MAP[key]) || label;
+    const toVCard = (label = '') => {
+        const key = MAP_KEYS.find((key) => label === MAP[key]);
+
+        // Default value https://tools.ietf.org/html/rfc6350#section-6.4.1
+        if (key === 'tel') {
+            return 'voice';
+        }
+
+        return key || label;
+    };
 
     return { toLang, toLangExplicit, toVCard };
 }

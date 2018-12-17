@@ -153,7 +153,6 @@ function labelCache(sanitize, Label) {
 
         const sort = (type = 'Name') => {
             CACHE.all = _.sortBy(CACHE.all, ({ [type]: Key }) => {
-                console.log(Key);
                 if (typeof Key === 'number') {
                     return Key;
                 }
