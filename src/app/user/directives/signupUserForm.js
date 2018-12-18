@@ -1,7 +1,5 @@
-import { PRODUCT_TYPE } from '../../constants';
-
 /* @ngInject */
-function signupUserForm(confirmModal, dispatchers, gettextCatalog, signupModel) {
+function signupUserForm(confirmModal, dispatchers, gettextCatalog) {
     const I18N = {
         TITLE: gettextCatalog.getString('Warning', null, 'Title'),
         MESSAGE: gettextCatalog.getString(
@@ -20,15 +18,9 @@ function signupUserForm(confirmModal, dispatchers, gettextCatalog, signupModel) 
         templateUrl: require('../../../templates/user/signupUserForm.tpl.html'),
         link(scope, el) {
             const { dispatcher } = dispatchers(['signup']);
-            const send = () => {
-                // Save variables to prevent extensions/etc
-                // from modifying them during setup process
-                signupModel.store(scope.account);
-                signupModel.set('Type', PRODUCT_TYPE.MAIL);
 
-                dispatcher.signup('userform.submit', {
-                    form: scope.account
-                });
+            const send = () => {
+                dispatcher.signup('userform.submit', scope.account);
             };
 
             const onSubmit = (e) => {

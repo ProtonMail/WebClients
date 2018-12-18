@@ -188,8 +188,8 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
      */
     const valid = (opt) => $http.post(requestUrl('subscription', 'check'), opt).then(({ data = {} }) => data);
 
-    const updateMethod = (params) => {
-        return generateFingerprint(params).then((params) => $http.post(requestUrl('methods'), params));
+    const updateMethod = (params, config) => {
+        return generateFingerprint(params).then((params) => $http.post(requestUrl('methods'), params, config));
     };
 
     const deleteMethod = (id) => $http.delete(requestUrl('methods', id));

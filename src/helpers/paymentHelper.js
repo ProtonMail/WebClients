@@ -32,6 +32,19 @@ export const getPlansMap = (Plans = [], key = 'Name') => {
 };
 
 /**
+ * Get the count of plans as an object.
+ * @param {Object} plansMap - Object of plans keyed by the name of plans
+ * @param {Array} planNames - Array of names of plans
+ */
+export const getPlansCount = (plansMap, planNames) => {
+    return planNames.reduce((acc, name) => {
+        const { ID } = plansMap[name];
+        acc[ID] = (acc[ID] || 0) + 1;
+        return acc;
+    }, {});
+};
+
+/**
  * Get the discounted coupon price. Does not use AmountDue because of credit and proration.
  * @param {Number} Amount
  * @param {Number} CouponDiscount

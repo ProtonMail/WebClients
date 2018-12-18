@@ -1,10 +1,11 @@
 import _ from 'lodash';
 
+import { getPlansCount, getPlansMap } from '../../../helpers/paymentHelper';
+
 /* @ngInject */
 function SignupController(
     $location,
     $scope,
-    $state,
     $stateParams,
     authentication,
     dispatchers,
@@ -12,16 +13,49 @@ function SignupController(
     gettextCatalog,
     networkActivityTracker,
     notification,
-    paymentPlans,
+    subscriptionInfo,
+    PaymentCache,
     AppModel,
+    giftCodeModel,
     signupModel,
     signupUserProcess
 ) {
     const I18N = {
-        success: gettextCatalog.getString('Gift code applied', null, 'Success')
+        validGiftCode: gettextCatalog.getString('Gift code applied', null, 'Success'),
+        invalidGiftCode: gettextCatalog.getString('Invalid gift code', null, 'Error')
     };
 
-    const { on, unsubscribe } = dispatchers();
+    const { on, unsubscribe, dispatcher } = dispatchers(['signup']);
+
+    /**
+     * Get all the necessary payment information needed.
+     * @param {Array} planNames
+     * @param {String} coupon
+     * @param {Number} cycle
+     * @param {String} currency
+     * @param {String} giftCode
+     * @returns {Promise}
+     */
+    const getPaymentInfo = async ({ planNames = [], coupon, cycle, currency, giftCode }) => {
+        const plansMap = getPlansMap(await PaymentCache.plans());
+        const planIds = getPlansCount(plansMap, planNames);
+        const plans = planNames.map((name) => plansMap[name]);
+
+        const payment = await PaymentCache.valid({
+            PlanIDs: planIds,
+            Currency: currency,
+            Cycle: cycle,
+            CouponCode: coupon,
+            GiftCode: giftCode
+        });
+
+        return { payment, plans, planIds };
+    };
+
+    const STATE = {
+        // If the user is subscribing to a plan, already make a request for the payment info so it's ready
+        paymentPromise: subscriptionInfo ? getPaymentInfo(subscriptionInfo) : undefined
+    };
 
     // NOTE I don't know where the "u" parameter is set
     const initUsername = () => $location.search().u || $stateParams.username || '';
@@ -47,56 +81,101 @@ function SignupController(
 
     authentication.logout(false, authentication.isLoggedIn());
 
-    if (paymentPlans) {
-        const { plans, payment } = paymentPlans;
-        $scope.plans = plans;
-        $scope.payment = payment;
-    }
-
-    // Clear auth data
-    const createAccount = () => {
-        $scope.step = 5;
-        return signupUserProcess.createAccount($scope.account);
+    const setStep = (step) => {
+        $scope.$applyAsync(() => {
+            $scope.step = step;
+        });
     };
 
-    function generateUserKeys() {
-        $scope.step = 2;
+    const createAccount = () => {
+        setStep(5);
+        signupUserProcess.createAccount($scope.account);
+    };
 
-        const promise = signupUserProcess.generateNewKeys().then(() => {
+    const generateUserKeys = async () => {
+        await networkActivityTracker.track(signupUserProcess.generateNewKeys());
+
+        if (AppModel.is('preInvited')) {
+            return createAccount();
+        }
+
+        // No cached payment promise means we're not trying to sign up for a paid plan.
+        if (!STATE.paymentPromise) {
+            return setStep(3);
+        }
+
+        if (!signupModel.optionsHumanCheck('payment')) {
+            setStep(3);
+            const message = gettextCatalog.getString(
+                "It currently isn't possible to subscribe to a Paid ProtonMail plan.",
+                null,
+                'Info'
+            );
+            notification.info(message);
+            return;
+        }
+
+        try {
+            const { payment, plans, planIds } = await STATE.paymentPromise;
+
+            delete STATE.paymentPromise;
+
+            signupModel.set('temp.planIds', planIds);
+            signupModel.set('temp.payment', payment);
+
             $scope.$applyAsync(() => {
-                if (AppModel.is('preInvited')) {
-                    return createAccount();
-                }
-
-                if ($scope.payment) {
-                    if (signupModel.optionsHumanCheck('payment')) {
-                        return ($scope.step = 4);
-                    }
-                    $scope.step = 3;
-                    const message = gettextCatalog.getString(
-                        "It currently isn't possible to subscribe to a Paid ProtonMail plan.",
-                        null,
-                        'Info'
-                    );
-                    return notification.info(message);
-                }
-
-                $scope.step = 3;
+                $scope.payment = payment;
+                $scope.plans = plans;
+                $scope.step = 4;
             });
-        });
+        } catch (e) {
+            delete STATE.paymentPromise;
+            // If the payment call fails, go to step 3 instead.
+            setStep(3);
+        }
+    };
 
-        networkActivityTracker.track(promise);
-    }
+    const onSubmitUserForm = (data) => {
+        signupModel.store(data);
+        setStep(2);
+        generateUserKeys();
+    };
+
+    const onSubmitGiftCode = async (giftCode = '') => {
+        if (!giftCode || !giftCodeModel.isValid(giftCode)) {
+            return notification.error(I18N.invalidGiftCode);
+        }
+
+        // If already fetching, ignore
+        if (STATE.paymentPromise) {
+            return;
+        }
+
+        try {
+            STATE.paymentPromise = getPaymentInfo({
+                ...subscriptionInfo,
+                giftCode
+            });
+
+            const { payment } = await networkActivityTracker.track(STATE.paymentPromise);
+
+            if (payment.Gift) {
+                notification.success(I18N.validGiftCode);
+                dispatcher.signup('gift.applied', payment);
+            }
+
+            signupModel.set('temp.payment', payment);
+
+            $scope.$applyAsync(() => {
+                $scope.payment = payment;
+            });
+        } catch (e) {
+            delete STATE.paymentPromise;
+        }
+    };
 
     function verify(options) {
-        signupModel.verify(options, $scope.plans, $scope.payment).then(createAccount);
-    }
-
-    function applyGift(opt) {
-        signupModel.applyGiftCode(opt).then((data) => {
-            notification.success(I18N.success);
-            return data;
-        });
+        signupModel.verify(options).then(createAccount);
     }
 
     on('payments', (e, { type, data = {} }) => {
@@ -117,10 +196,9 @@ function SignupController(
         type === 'signup.error' && bindStep('signupError', data.value);
         type === 'goto.step' && bindStep('step', data.value);
 
-        type === 'userform.submit' && generateUserKeys();
-        type === 'humanform.submit' && createAccount();
-
-        type === 'apply.gift' && applyGift(data);
+        type === 'userform.submit' && onSubmitUserForm(data);
+        type === 'humanform.submit' && createAccount(data);
+        type === 'giftcode.submit' && onSubmitGiftCode(data);
 
         type === 'payform.submit' && verify(data);
     });

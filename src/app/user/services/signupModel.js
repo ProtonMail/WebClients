@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import { INVITE_URL } from '../../constants';
+
+import { INVITE_URL, PRODUCT_TYPE } from '../../constants';
 
 /* @ngInject */
 function signupModel(User, $state, $stateParams, $location, dispatchers, Payment, networkActivityTracker) {
@@ -77,7 +78,7 @@ function signupModel(User, $state, $stateParams, $location, dispatchers, Payment
         const params = {
             Username: get('username'),
             Email: get('notificationEmail'),
-            Type: get('Type'),
+            Type: PRODUCT_TYPE.MAIL,
             Referrer: $location.search().ref
         };
 
@@ -106,13 +107,11 @@ function signupModel(User, $state, $stateParams, $location, dispatchers, Payment
             $rootScope.tempMethod = data.Payment; // We save this payment method to save it later
 
          */
-    function verify(opt, plans, payment) {
-        const promise = Payment.verify({ ...opt, Username: get('username') })
+    function verify(options) {
+        const promise = Payment.verify({ ...options, Username: get('username') })
             .then(({ VerifyCode }) => {
                 set('VerifyCode', VerifyCode);
-                set('temp.plans', plans);
-                set('temp.payment', payment);
-                set('temp.method', opt.Payment);
+                set('temp.method', options.Payment);
             })
             .catch(({ data = {} } = {}) => {
                 // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
@@ -121,19 +120,6 @@ function signupModel(User, $state, $stateParams, $location, dispatchers, Payment
                     throw new Error(data.Error);
                 }
             });
-
-        networkActivityTracker.track(promise);
-
-        return promise;
-    }
-
-    function applyGiftCode(opt) {
-        const promise = Payment.validateVerify(_.extend({}, opt, { Username: get('username') })).then(
-            ({ data = {} } = {}) => {
-                dispatch('gift.applied', data);
-                return data;
-            }
-        );
 
         networkActivityTracker.track(promise);
 
@@ -152,8 +138,7 @@ function signupModel(User, $state, $stateParams, $location, dispatchers, Payment
         getOptionsVerification,
         optionsHumanCheck,
         createUser,
-        verify,
-        applyGiftCode
+        verify
     };
 }
 export default signupModel;

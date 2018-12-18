@@ -137,16 +137,12 @@ function signupUserProcess(
     };
 
     const doSubscription = async () => {
-        const plans = signupModel.get('temp.plans');
-
         // Attach subscription and catch any error to keep the same behavior as before (to redirect to the inbox).
         await attachSignupSubscription({
-            plans: signupModel.get('temp.plans'),
+            planIds: signupModel.get('temp.planIds'),
             payment: signupModel.get('temp.payment'),
             method: signupModel.get('temp.method')
         }).catch((e) => console.error(e));
-
-        dispatcher.signup('user.subscription.finished', { plans });
     };
 
     const create = async (model) => {

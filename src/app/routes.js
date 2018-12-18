@@ -13,7 +13,6 @@ import {
     SIGNUP_PLANS,
     BLACK_FRIDAY
 } from './constants';
-import { getPlansMap } from '../helpers/paymentHelper';
 import { isDealEvent } from './blackFriday/helpers/blackFridayHelper';
 import { decrypt } from '../helpers/message';
 
@@ -217,7 +216,7 @@ export default angular
                     lang(i18nLoader) {
                         return i18nLoader.translate();
                     },
-                    paymentPlans($stateParams, PaymentCache) {
+                    subscriptionInfo($stateParams) {
                         const { currency, billing, plan, coupon: couponParam } = $stateParams;
                         const cycle = +billing;
 
@@ -233,24 +232,7 @@ export default angular
                         const coupon =
                             couponParam === BLACK_FRIDAY.COUPON_CODE ? isDealEvent() && couponParam : couponParam;
 
-                        // Get with monthly cycle to ensure caching for paymentPlanOverview. Only needed for IDs.
-                        return PaymentCache.plans().then((Plans) => {
-                            const plansMap = getPlansMap(Plans);
-                            const plans = plan.split('_').map((name) => plansMap[name]);
-                            const PlanIDs = plans.reduce((acc, { ID }) => {
-                                acc[ID] = (acc[ID] || 0) + 1;
-                                return acc;
-                            }, {});
-
-                            return PaymentCache.valid({
-                                PlanIDs,
-                                Currency: currency,
-                                Cycle: cycle,
-                                CouponCode: coupon
-                            }).then((payment) => {
-                                return { payment, plans };
-                            });
-                        });
+                        return { planNames: plan.split('_'), currency, cycle, coupon };
                     },
                     optionsHumanCheck(signupModel) {
                         return signupModel.getOptionsVerification();
