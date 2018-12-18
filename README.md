@@ -30,6 +30,19 @@ brew install libpng
 ```
 > or `brew upgrade libpng` if you already have the lib
 
+### For Windows
+
+If you use Windows, you will need to have bash on your computer in order to execute everything ex:
+- run tests
+- deploy
+- etc.
+
+1. Install bash then check the path of bash ex: `C:\\Program Files\\git\\bin\\bash.exe"`
+2. `npm config set script-shell "C:\\Program Files\\git\\bin\\bash.exe"`
+3. :popcorn:
+
+[More informations](https://stackoverflow.com/questions/23243353/how-to-set-shell-for-npm-run-scripts-in-windows)
+
 #### If you have docker, and prefer to not install node (or anything else) locally
 
 - `make start` to start the app on a container (use `make localurl` to find the url where it's running)
