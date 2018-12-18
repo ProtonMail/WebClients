@@ -1,7 +1,7 @@
 /* @ngInject */
 function autoresponderLanguage(gettextCatalog) {
     const AUTORESPONDER_UPDATED_MESSAGE = gettextCatalog.getString('Autoresponder updated', null, 'Success');
-    const AUTORESPONDER_INSTALLED_MESSAGE = gettextCatalog.getString('Autoresponder installed', null, 'Success');
+    const AUTORESPONDER_INSTALLED_MESSAGE = gettextCatalog.getString('Autoresponder activated', null, 'Success');
     const AUTORESPONDER_REMOVED_MESSAGE = gettextCatalog.getString('Autoresponder removed', null, 'Success');
 
     // Not translated: it's not editable, foreign people doing international business wouldn't want it to be translated
