@@ -11,9 +11,7 @@ function signupHumanForm(dispatchers) {
             const onSubmit = (e) => {
                 e.preventDefault();
 
-                dispatcher.signup('humanform.submit', {
-                    form: scope.account
-                });
+                dispatcher.signup('humanform.submit', scope.account);
             };
 
             el.on('submit', onSubmit);

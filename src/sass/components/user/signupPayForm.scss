@@ -3,11 +3,6 @@
     .signupPayForm-btn-retry { display: none }
 }
 
-// Hide the gift code input when a coupon code has been entered.
-.signupPayForm-has-couponCode .signupPayForm-gift-row {
-    display: none
-}
-
 // Hide the gift amount row when no gift code is entered
 .signupPayForm-container:not(.signupPayForm-has-giftCode) {
     .signupPayForm-gift-amount-row {
@@ -17,6 +12,10 @@
 
 .signupPayForm-container label {
     font-weight: bold;
+}
+
+.signupPayForm-method-hidden .signupPayForm-paymentInfo {
+    display: none;
 }
 
 .signupPayForm-method-paypal .signupPayForm-footer,
