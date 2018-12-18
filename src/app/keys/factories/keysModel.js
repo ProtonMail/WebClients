@@ -134,7 +134,7 @@ function keysModel(dispatchers) {
             keys.unshift({
                 Fingerprint: getFingerprint(newPrivateKey),
                 // If all keys are strictly signed then the new key should be just signed
-                Flags: canReceive === 0 ? SIGNED : ENCRYPTED_AND_SIGNED,
+                Flags: privateKeys.length && canReceive === 0 ? SIGNED : ENCRYPTED_AND_SIGNED,
                 pkg: newPrivateKey
             });
         }
