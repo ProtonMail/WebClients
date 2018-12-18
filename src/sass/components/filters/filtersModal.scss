@@ -99,7 +99,6 @@
     height: 35px;
 }
 
-
 /* Labels */
 .filter-modal-label-container,
 .filter-modal-vacation,
@@ -130,6 +129,10 @@
         display: none;
 }
 
+.filter-modal-simple [data-squire-actions="moreToggle"] {
+    display: none;
+}
+
 [data-validity*="sieve"] [id="filterScriptContainer"] .CodeMirror,
 [data-validity*="conditions"] [data-mode="conditions"],
 [data-validity*="action"] [data-mode="action"],
@@ -145,8 +148,6 @@
     color: $red;
 }
 
-
-
 /* float switching to give each column there own rows doesn't work in flex boxes */
 body.appConfigBody-is-mobile .filter-modal-complex {
 
@@ -161,9 +162,7 @@ body.appConfigBody-is-mobile .filter-modal-complex {
 
 }
 
-
 .filter-modal-complex {
-
     .filter-simple-only {
         display: none;
     }
@@ -216,5 +215,4 @@ body.appConfigBody-is-mobile .filter-modal-complex {
         right: 0;
         bottom: 0;
     }
-
 }
