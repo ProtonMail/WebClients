@@ -59,7 +59,7 @@ function paymentModel(
         return Payment.subscribe(config).then(({ data = {} } = {}) => data);
     }
 
-    function add(params) {
+    function add(params, thing) {
         const promise = Payment.valid(params)
             .then((data) => {
                 if (isInvalidCoupon(params.CouponCode, data)) {
@@ -73,11 +73,11 @@ function paymentModel(
                 return data;
             })
             .then((data) => {
-                if (params.CouponCode) {
+                if (thing === 'coupon') {
                     notification.success(I18N.COUPON_SUCCESS);
                 }
 
-                if (params.GiftCode) {
+                if (thing === 'gift') {
                     notification.success(I18N.GIFT_SUCCESS);
                 }
 
