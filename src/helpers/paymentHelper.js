@@ -66,9 +66,6 @@ export const hasBlackFridayCoupon = ({ Coupon } = {}) => Coupon && Coupon.Code =
  * @return {Boolean}
  */
 export const isInvalidCoupon = (couponCode, { Coupon } = {}) => {
-    if (!couponCode) {
-        return false;
-    }
     const returnedCouponCode = Coupon && Coupon.Code;
     return returnedCouponCode !== couponCode;
 };

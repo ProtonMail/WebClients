@@ -4,7 +4,7 @@ describe('payment helper', () => {
     describe('coupon', () => {
         it('should handle no code', () => {
             expect(isInvalidCoupon()).toBeFalsy();
-            expect(isInvalidCoupon('', { Coupon: null })).toBeFalsy();
+            expect(isInvalidCoupon('', { Coupon: null })).toBeTruthy();
         });
 
         it('should handle same code', () => {
