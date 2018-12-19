@@ -115,27 +115,22 @@ function paymentForm(
                     });
             };
 
-            function getAddParameters(thing) {
+            function getAddParameters() {
                 const parameters = {
                     Currency: params.valid.Currency,
                     Cycle: params.valid.Cycle,
                     PlanIDs: params.planIDs
                 };
 
-                if (thing === 'coupon') {
-                    parameters.CouponCode = ctrl.coupon;
-                }
-
-                if (thing === 'gift') {
-                    parameters.GiftCode = ctrl.gift;
-                }
+                parameters.CouponCode = ctrl.coupon;
+                parameters.GiftCode = ctrl.gift;
 
                 return parameters;
             }
 
             const apply = (thing = 'coupon') => {
                 return paymentModel
-                    .add(getAddParameters(thing))
+                    .add(getAddParameters(), thing)
                     .then((data) => (ctrl.valid = data))
                     .then(() => {
                         dispatch('payment.change', ctrl.valid);
