@@ -30,6 +30,8 @@ function paymentForm(
             const params = paymentModalModel.get();
             const dispatch = disp(params.plan);
 
+            const MODEL = {};
+
             ctrl.isBlackFriday = !!params.isBlackFriday;
 
             ctrl.card = {};
@@ -40,6 +42,7 @@ function paymentForm(
             if (params.valid.Coupon) {
                 ctrl.displayCoupon = true;
                 ctrl.coupon = params.valid.Coupon.Code;
+                MODEL.coupon = ctrl.coupon;
             }
 
             const PLANS_MAP = getPlansMap(params.plans, 'ID');
@@ -68,8 +71,8 @@ function paymentForm(
                     Amount: ctrl.valid.AmountDue,
                     Cycle: ctrl.valid.Cycle,
                     Currency: ctrl.valid.Currency,
-                    CouponCode: ctrl.coupon,
-                    GiftCode: ctrl.gift,
+                    CouponCode: MODEL.coupon,
+                    GiftCode: MODEL.gift,
                     PlanIDs: ctrl.planIDs
                 };
 
@@ -115,31 +118,40 @@ function paymentForm(
                     });
             };
 
-            function getAddParameters() {
+            function getAddParameters(thing) {
                 const parameters = {
                     Currency: params.valid.Currency,
                     Cycle: params.valid.Cycle,
                     PlanIDs: params.planIDs
                 };
 
-                parameters.CouponCode = ctrl.coupon;
-                parameters.GiftCode = ctrl.gift;
+                // Use the value of whatever we are applying, otherwise the latest valid value confirmed by the API.
+                parameters.CouponCode = thing === 'coupon' ? ctrl.coupon : MODEL.coupon;
+                parameters.GiftCode = thing === 'gift' ? ctrl.gift : MODEL.gift;
 
                 return parameters;
             }
 
             const apply = (thing = 'coupon') => {
+                const parameters = getAddParameters(thing);
+
                 return paymentModel
-                    .add(getAddParameters(), thing)
+                    .add(parameters, thing)
                     .then((data) => (ctrl.valid = data))
                     .then(() => {
                         dispatch('payment.change', ctrl.valid);
+
+                        const CouponCode = ctrl.valid.Coupon && ctrl.valid.Coupon.Code;
+
+                        // Update latest valid values.
+                        MODEL.gift = parameters.GiftCode;
+                        MODEL.coupon = CouponCode;
 
                         const { list, selected } = paymentUtils.generateMethods({
                             choice: ctrl.method.value,
                             Cycle: ctrl.valid.Cycle,
                             Amount: ctrl.valid.AmountDue,
-                            CouponCode: ctrl.valid.Coupon && ctrl.valid.Coupon.Code
+                            CouponCode
                         });
 
                         ctrl.methods = list;
@@ -172,22 +184,17 @@ function paymentForm(
                         Cycle: 12
                     });
                 }
-            };
 
-            const onSubmit = (e) => {
-                if (e.target.name === 'couponForm' || e.target.name === 'giftForm') {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    apply(e.target.name === 'couponForm' ? 'coupon' : 'gift');
+                const action = target.dataset.action;
+                if (action === 'gift' || action === 'coupon') {
+                    apply(action);
                 }
             };
 
             el.on('click', onClick);
-            el.on('submit', onSubmit);
 
             scope.$on('$destroy', () => {
                 el.off('click', onClick);
-                el.off('submit', onSubmit);
             });
         }
     };

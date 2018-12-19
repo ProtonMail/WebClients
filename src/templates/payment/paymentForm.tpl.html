@@ -79,7 +79,7 @@
                     <gift-code-btn ng-if="!ctrl.displayGift" ng-click="ctrl.displayGift = true"></gift-code-btn>
                 </p>
 
-                <form name="couponForm" ng-if="ctrl.displayCoupon" novalidate>
+                <div ng-if="ctrl.displayCoupon">
                     <label translate-context="Context" translate>Coupon</label>
                     <div class="pm_grid flex flex-row">
                         <div class="col-2-3">
@@ -89,22 +89,22 @@
                             </div>
                         </div>
                         <div class="col-1-3">
-                            <button type="submit" class="pm_button primary" translate-context="Action" translate>Apply</button>
+                            <button type="button" data-action="coupon" class="pm_button primary" translate-context="Action" translate>Apply</button>
                         </div>
                     </div>
-                </form>
+                </div>
 
-                <form name="giftForm" ng-if="ctrl.displayGift" novalidate>
+                <div ng-if="ctrl.displayGift">
                     <label translate-context="Context" translate>Gift code</label>
                     <div class="pm_grid flex flex-row">
                         <div class="col-2-3">
-                            <gift-code-input data-code="ctrl.gift" data-form="giftForm"></gift-code-input>
+                            <gift-code-input data-code="ctrl.gift" data-form="form"></gift-code-input>
                         </div>
                         <div class="col-1-3">
-                            <button type="submit" class="pm_button primary" translate-context="Action" translate>Apply</button>
+                            <button type="button" data-action="gift" class="pm_button primary" translate-context="Action" translate>Apply</button>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
 
             <p><span translate translate-context="Info">By clicking Submit, you agree to abide by</span> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate translate-context="Link">ProtonMail's Terms and Conditions</a>.</p>

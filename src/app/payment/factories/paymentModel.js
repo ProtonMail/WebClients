@@ -62,11 +62,11 @@ function paymentModel(
     function add(params, thing) {
         const promise = Payment.valid(params)
             .then((data) => {
-                if (isInvalidCoupon(params.CouponCode, data)) {
+                if (thing === 'coupon' && isInvalidCoupon(params.CouponCode, data)) {
                     throw new Error(I18N.COUPON_INVALID);
                 }
 
-                if (params.GiftCode && !data.Gift) {
+                if (thing === 'gift' && !data.Gift) {
                     throw new Error(I18N.GIFT_INVALID);
                 }
 
