@@ -1,3 +1,8 @@
+# [3.15.7] - 2018-12-20
+
+## Changed
+- Update all translations
+
 # [3.15.6] - 2018-12-19
 ## Added
 - App suggestion when visiting the web version from a mobile device
