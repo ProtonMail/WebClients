@@ -1,3 +1,34 @@
+# [3.15.6] - 2018-12-19
+## Added
+- App suggestion when visiting the web version from a mobile device
+- Select All/Deselect All checkbox when adding multiple recipients
+- New version notification under the User menu
+
+## Fixed
+- Fixed a bug where the SRP modulus signature was not verified by the web client. Reported by N. Kobeissi and S. Zanella.
+- Incorrect error message was shown when adding a new addresses to a custom domain
+- Free users were unable to delete multiple contact groups
+- Set focus on Name input field when adding a new contact
+- Gift codes were not properly working at signup
+- Contact groups that contain contacts with invalid PGP keys couldn't be edited in the composer
+- Verifying contacts didn't refresh the contact view
+- Incorrect padlock color for some messages
+- Failure to reactivate an email key blocked the display of contacts
+- Click on copy address closed the message
+- Dropdown menus overlaped with clicking on different contact categories
+- Invalid display of long custom domain names
+- Contact group long names didn't fit into the import modal
+- Changing contact group name didn't update in all locations
+- An address could be missing after being removed from a contact group
+- Log out button was unclickable when in the Auto-Reply tab
+- Some characters were not recognized in the password
+- Select all contacts broke the checkbox alignment
+- Newly created additional address did not show in the advanced search menu
+
+## Changed
+- Setup account where keys don't exist
+- Plaintext behavior for new messages
+
 # [3.15.3] - 2018-11-23
 ## Fixed
 - Changes on the Dashboard did not update if you use the BlackFriday offer
