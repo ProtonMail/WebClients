@@ -19,7 +19,8 @@ function password() {
         const input = node.querySelector('INPUT');
 
         Object.keys(natives).forEach((key) => {
-            input.setAttribute(key, natives[key]);
+            const value = natives[key];
+            value && input.setAttribute(key, value);
         });
 
         // Issue with input password on MacOS -> dead keys don't work
