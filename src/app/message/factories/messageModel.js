@@ -211,7 +211,7 @@ function messageModel(
         }
 
         isEO() {
-            return isInternal(this) && this.Password;
+            return !!this.Password;
         }
 
         isExternal() {

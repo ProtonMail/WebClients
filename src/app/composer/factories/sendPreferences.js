@@ -413,7 +413,6 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
         const eoEnabled = message && message.isEO();
         const globalSign = message ? message.isSign() : mailSettingsModel.get('Sign');
         const normEmails = _.uniq(_.map(emails, normalizeEmail));
-
         const normInfos = await Promise.all(
             normEmails.map(async (email) => {
                 try {
