@@ -410,7 +410,7 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
      */
     const get = async (emails = [], message, catchErrors = false) => {
         const defaultMimeType = message ? message.MIMEType : null;
-        const eoEnabled = message && message.isInternal();
+        const eoEnabled = message && message.isEO();
         const globalSign = message ? message.isSign() : mailSettingsModel.get('Sign');
         const normEmails = _.uniq(_.map(emails, normalizeEmail));
 

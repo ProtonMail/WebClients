@@ -210,6 +210,10 @@ function messageModel(
             return isInternal(this);
         }
 
+        isEO() {
+            return isInternal(this) && this.Password;
+        }
+
         isExternal() {
             return isExternal(this);
         }
