@@ -1,3 +1,11 @@
+# [3.15.8] - 2018-12-21
+## Fixed
+- Saving message as draft sets an encryption for non-ProtonMail addresses
+- Reports from users about logging in with 1Password
+
+## Changed
+- Update "More info" link to the latest blog post (#8255)
+
 # [3.15.7] - 2018-12-20
 
 ## Changed
