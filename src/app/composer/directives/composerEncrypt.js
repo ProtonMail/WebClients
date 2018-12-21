@@ -51,6 +51,7 @@ function composerEncrypt(dispatchers, notification, gettextCatalog) {
                     scope.model.confirm = '';
                     scope.model.hint = '';
                     scope.encryptForm.$setUntouched();
+                    delete scope.message.Password;
                     delete scope.message.PasswordHint;
                     scope.message.removeFlag(FLAG_INTERNAL);
                     dispatch('close.panel', scope.message);
