@@ -24,11 +24,11 @@ function password() {
         });
 
         // Issue with input password on MacOS -> dead keys don't work
-        // NOTE: 1Password doesn't recognize the input to auto-fill the form
-        // if (isMacOS) {
-        //     input.classList.add('password-input-mac');
-        //     input.type = 'text';
-        // }
+        if (isMacOS) {
+            input.classList.add('password-input-mac');
+            // FIXME: 1Password doesn't recognize the input to auto-fill the form
+            // input.type = 'text';
+        }
 
         compare && input.setAttribute('data-compare-to', 'compare');
         autofocus && input.setAttribute('autofocus', true);
@@ -55,9 +55,10 @@ function password() {
                 }
 
                 // We need to re-force the type password on submit to allow the user to save the password
-                if (!isMacOS) {
-                    return;
-                }
+                // See first FIXME
+                // if (!isMacOS) {
+                //     return;
+                // }
 
                 const onFocus = ({ target }) => {
                     target.type = 'text';
