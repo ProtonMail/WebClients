@@ -394,7 +394,7 @@ msgstr ""
 #: ./src/templates/modals/exportKeyModal.tpl.html:17
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
 #: ./src/templates/modals/generate.tpl.html:76
-#: ./src/templates/modals/generateOrganization.tpl.html:32
+#: ./src/templates/modals/generateOrganization.tpl.html:38
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
 #: ./src/templates/modals/member.tpl.html:110
@@ -988,7 +988,7 @@ msgid "Fullscreen"
 msgstr ""
 
 #: ./src/templates/modals/generate.tpl.html:77
-#: ./src/templates/modals/generateOrganization.tpl.html:33
+#: ./src/templates/modals/generateOrganization.tpl.html:39
 msgctxt "Action"
 msgid "Generate Keys"
 msgstr ""
@@ -5336,7 +5336,7 @@ msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sre
 msgstr ""
 
 #: ./src/templates/modals/generate.tpl.html:35
-#: ./src/templates/modals/generateOrganization.tpl.html:23
+#: ./src/templates/modals/generateOrganization.tpl.html:29
 msgctxt "Info"
 msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
 msgstr ""
@@ -5602,7 +5602,7 @@ msgctxt "Info"
 msgid "Other administrators exist in your organization, you are responsible for communicating the new password to them."
 msgstr ""
 
-#: ./src/templates/modals/generateOrganization.tpl.html:28
+#: ./src/templates/modals/generateOrganization.tpl.html:34
 msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
 msgstr ""
@@ -9466,7 +9466,7 @@ msgctxt "Title"
 msgid "Confirm mailbox password"
 msgstr ""
 
-#: ./src/templates/modals/generateOrganization.tpl.html:26
+#: ./src/templates/modals/generateOrganization.tpl.html:32
 msgctxt "Title"
 msgid "Confirm recovery Password"
 msgstr ""
@@ -9998,7 +9998,7 @@ msgstr ""
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:25
-#: ./src/templates/modals/generateOrganization.tpl.html:13
+#: ./src/templates/modals/generateOrganization.tpl.html:14
 #: ./src/templates/modals/setupOrganization.tpl.html:34
 msgctxt "Title"
 msgid "High security"
@@ -10006,7 +10006,7 @@ msgstr ""
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:31
-#: ./src/templates/modals/generateOrganization.tpl.html:19
+#: ./src/templates/modals/generateOrganization.tpl.html:23
 #: ./src/templates/modals/setupOrganization.tpl.html:40
 msgctxt "Title"
 msgid "Highest security"
@@ -10089,7 +10089,7 @@ msgctxt "Title"
 msgid "Key password"
 msgstr ""
 
-#: ./src/templates/modals/generateOrganization.tpl.html:24
+#: ./src/templates/modals/generateOrganization.tpl.html:30
 msgctxt "Title"
 msgid "Key recovery password"
 msgstr ""
