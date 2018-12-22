@@ -29,7 +29,7 @@ function prepareDraft(addressesModel, keysModel, dispatchers, messageBuilder, me
      * @return {Promise}
      */
     const init = () => {
-        const { active = [] } = addressesModel.getActive();
+        const { active = [] } = addressesModel.getActive(undefined, { Send: 1 });
 
         // Key can be missing if the member didn't yet created the key
         if (!active.length) {
@@ -39,7 +39,7 @@ function prepareDraft(addressesModel, keysModel, dispatchers, messageBuilder, me
         const [{ ID }] = active;
         const [publicKeys] = keysModel.getPublicKeys(ID);
         const promise = messageBuilder
-            .create('new')
+            .create('new', { AddressID: ID })
             .then((message) => message.encryptBody(publicKeys.armor()).then(() => message))
             .catch((err) => {
                 clear();
