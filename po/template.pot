@@ -3339,6 +3339,11 @@ msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr ""
 
+#: ./src/app/authentication/controllers/login.js:30
+msgctxt "Error"
+msgid "<strong>Incompatible browser detected</strong><br>Unfortunately your browser is outdated and not compatible with ProtonMail.<br>Please use the latest version of Safari, Firefox, Chrome, or Edge.<br>As a temporary workaround, you could try using an older version of ProtonMail <a href=\"https://old.protonmail.com\">here</a>."
+msgstr ""
+
 #: ./src/templates/labels/labelNameInput.tpl.html:21
 msgctxt "Error"
 msgid "A group with this name already exists."
@@ -3416,7 +3421,7 @@ msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:33
+#: ./src/app/authentication/controllers/login.js:41
 msgctxt "Error"
 msgid ""
 "Cookies are disabled.\n"
@@ -3746,7 +3751,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:44
+#: ./src/app/authentication/controllers/login.js:52
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr ""
@@ -3890,7 +3895,7 @@ msgctxt "Error"
 msgid "The request failed"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:27
+#: ./src/app/authentication/controllers/login.js:35
 msgctxt "Error"
 msgid "Unable to log you in. Please try again later."
 msgstr ""
@@ -3957,7 +3962,7 @@ msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:28
+#: ./src/app/authentication/controllers/login.js:36
 msgctxt "Error"
 msgid ""
 "You are in Private Mode or have Session Storage disabled.\n"
@@ -7615,12 +7620,12 @@ msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:38
+#: ./src/app/authentication/controllers/login.js:46
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:43
+#: ./src/app/authentication/controllers/login.js:51
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr ""
