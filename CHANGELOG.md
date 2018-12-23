@@ -1,3 +1,8 @@
+# [3.15.9] - 2018-12-23
+## Fixed
+- Create draft with `@pm.me` address on FREE account
+- Old Safari 9.x can't load the web-app
+
 # [3.15.8] - 2018-12-21
 ## Fixed
 - Saving message as draft sets an encryption for non-ProtonMail addresses
