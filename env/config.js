@@ -162,7 +162,6 @@ const getConfig = (env = process.env.NODE_ENV) => {
         commit: getBuildCommit(),
         articleLink: argv.article || CONFIG_DEFAULT.articleLink,
         changelogPath: env === 'dist' ? CONFIG_DEFAULT.changelogPath : 'changelog.tpl.html',
-        versionPath: env === 'dist' ? CONFIG_DEFAULT.versionPath : 'version.json',
         statsConfig: getStatsConfig(argv.branch)
     });
     return extend({ CONFIG }, { branch: argv.branch });
