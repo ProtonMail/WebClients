@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,6 +10,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AutoDllPlugin = require('autodll-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const SriPlugin = require('webpack-subresource-integrity');
 
 const transformOpenpgpFiles = require('./helpers/openpgp');
 const CONFIG = require('../env/conf.build');
@@ -23,6 +25,9 @@ const { mainFiles: openpgpFiles, workerFiles: openpgpWorkerFiles } = transformOp
     CONFIG.externalFiles.openpgp_workers,
     isDistRelease
 );
+
+// We don't need to transpile it
+const CHECK_COMPAT_APP = 'checkCompatApp.js';
 
 const minify = () => {
     if (!isDistRelease) {
@@ -74,8 +79,15 @@ const list = [
         minify: minify(),
         templateParameters: {
             OPENPGP: openpgpFiles[0].filepath,
-            OPENPGP_COMPAT: openpgpFiles[1].filepath
+            OPENPGP_INTEGRITY: openpgpFiles[0].integrity,
+            OPENPGP_COMPAT: openpgpFiles[1].filepath,
+            OPENPGP_COMPAT_INTEGRITY: openpgpFiles[1].integrity
         }
+    }),
+
+    new SriPlugin({
+        hashFuncNames: ['sha384'],
+        enabled: isDistRelease
     }),
 
     new webpack.DefinePlugin({
@@ -85,12 +97,13 @@ const list = [
     }),
 
     new ScriptExtHtmlWebpackPlugin({
+        sync: path.basename(CHECK_COMPAT_APP, 'js'),
         defaultAttribute: 'defer'
     }),
 
     new webpack.SourceMapDevToolPlugin({
         filename: isDistRelease ? '[name].[hash:8].js.map' : '[name].js.map',
-        exclude: ['styles', 'vendor', 'vendorLazy', 'vendorLazy2']
+        exclude: ['styles', 'checkCompatApp', 'vendor', 'vendorLazy', 'vendorLazy2']
     })
 ];
 

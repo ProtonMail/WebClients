@@ -33,6 +33,7 @@ module.exports = {
         contentBase: path.resolve('./build')
     },
     entry: {
+        checkCompatApp: ['./src/checkCompatApp.js'],
         app: ['./src/app/app.js']
     },
     resolve: {
@@ -48,7 +49,8 @@ module.exports = {
     output: {
         path: path.resolve(`./${BUILD_TARGET}`),
         filename: isEnvProduction ? '[name].[chunkhash:8].js' : '[name].js',
-        chunkFilename: isEnvProduction ? '[name].[chunkhash:8].chunk.js' : '[name].chunk.js'
+        chunkFilename: isEnvProduction ? '[name].[chunkhash:8].chunk.js' : '[name].chunk.js',
+        crossOriginLoading: 'anonymous'
     },
 
     module: {
