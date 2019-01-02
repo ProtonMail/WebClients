@@ -29,7 +29,7 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog) {
         const SignedKeyList = await keysModel.signedKeyList(address.ID, {
             mode: 'create',
             keyID: key.ID,
-            privateKey: PrivateKey
+            privateKey: pkg
         });
 
         await Key.activate(key.ID, { PrivateKey, SignedKeyList });
