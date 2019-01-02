@@ -29,18 +29,12 @@ function advancedFilterElement(
     };
     const clearState = (state) => state.replace('.element', '');
     const switchState = (opt = {}) => {
-        $state.go(
-            clearState($state.$current.name),
-            _.extend(
-                {},
-                $state.params,
-                {
-                    page: undefined,
-                    id: undefined
-                },
-                opt
-            )
-        );
+        $state.go(clearState($state.$current.name), {
+            ...$state.params,
+            page: undefined,
+            id: undefined,
+            ...opt
+        });
     };
 
     /**
@@ -51,7 +45,7 @@ function advancedFilterElement(
         const title = gettextCatalog.getString('Delete all', null, 'Title');
         const message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
 
-        if (['drafts', 'allDrafts', 'spam', 'trash', 'folder', 'label'].indexOf(mailbox) === -1) {
+        if (!['drafts', 'allDrafts', 'spam', 'trash', 'folder', 'label'].includes(mailbox)) {
             return;
         }
 
@@ -69,25 +63,19 @@ function advancedFilterElement(
             params: {
                 title,
                 message,
-                confirm() {
-                    // Back to the origin before to clear the folder
-                    // https://github.com/ProtonMail/Angular/issues/5901
+                async confirm() {
+                    const promise = messageApi[MAP_ACTIONS[mailbox]](labelID).then(eventManager.call);
+                    await networkActivityTracker.track(promise);
+                    cache.empty(labelID);
+                    confirmModal.deactivate();
+                    notification.success(gettextCatalog.getString('Folder emptied', null, 'Success'));
+                    /*
+                        Back to the origin before to clear the folder
+                        https://github.com/ProtonMail/Angular/issues/5901
+                     */
                     if ($state.includes('**.element')) {
                         $state.go($state.$current.name.replace('.element', ''));
                     }
-
-                    const promise = messageApi[MAP_ACTIONS[mailbox]](labelID).then(() => {
-                        cache.empty(labelID);
-                        confirmModal.deactivate();
-                        notification.success(gettextCatalog.getString('Folder emptied', null, 'Success'));
-
-                        return eventManager.call();
-                    });
-
-                    networkActivityTracker.track(promise);
-                },
-                cancel() {
-                    confirmModal.deactivate();
                 }
             }
         });
