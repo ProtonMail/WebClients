@@ -9,7 +9,7 @@ module.exports = {
         list: ['.htaccess', 'manifest.json', 'robots.txt']
     },
     babel: {
-        excludedFiles: ['mailparser.js'],
+        excludedFiles: ['mailparser.js', 'checkCompatApp.js'],
         includedNodeModules: ['asmcrypto.js', 'pmcrypto', 'sieve.js', 'angular-ui-codemirror']
     },
     vendor_files: {

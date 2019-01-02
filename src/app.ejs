@@ -57,36 +57,12 @@
 <noscript class="pm_noscript">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
 <proton-svgs></proton-svgs>
 
-<script type="text/javascript">
 
-    // required features check
-    function isGoodPrngAvailable() {
-        if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
-            return true;
-        } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
-            return true;
-        }
-        return false;
-    }
-
-    if (navigator.cookieEnabled === false) {
-        alert('Cookies are required to use ProtonMail. Please enable cookies in your browser.');
-        window.location = "https://protonmail.com/compatibility";
-    }
-    if(typeof Storage === "undefined") {
-        alert('sessionStorage is required to use ProtonMail. Please enable sessionStorage in your browser.');
-        window.location = "https://protonmail.com/compatibility";
-    }
-    if (!isGoodPrngAvailable()) {
-        alert('A browser that has a Pseudo Random Number Generator is required to use ProtonMail. Please update your browser.');
-        window.location = "https://protonmail.com/compatibility";
-    }
-</script>
 <!-- Browsers with ES module support load this file. -->
-<script type="module" crossorigin src="<%= OPENPGP %>"></script>
+<script type="module" crossorigin src="<%= OPENPGP %>" integrity="<%= OPENPGP_INTEGRITY %>"></script>
 
 <!-- Older browsers load this file (and module-supporting -->
 <!-- browsers know *not* to load this file). -->
-<script nomodule src="<%= OPENPGP_COMPAT %>"></script>
+<script nomodule src="<%= OPENPGP_COMPAT %>" integrity="<%= OPENPGP_COMPAT_INTEGRITY %>"></script>
 </body>
 </html>

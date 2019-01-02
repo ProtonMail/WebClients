@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const createHash = require('crypto').createHash;
 
+const SRI_ALGORITHM = 'sha384';
 const id = (path, contents) => contents;
 
 const defaultPath = ({ basename, ext, hash }) => [basename, ext, hash].filter(Boolean).join('.');
@@ -35,9 +36,14 @@ const transformFile = ({
 
     const transformedPath = transformPath({ filepath, basename, ext: ext.slice(1), hash });
 
+    const integrity = createHash(SRI_ALGORITHM)
+        .update(transformedContents, encoding)
+        .digest('base64');
+
     return {
         filepath: transformedPath,
-        contents: transformedContents
+        contents: transformedContents,
+        integrity: `${SRI_ALGORITHM}-${integrity}`
     };
 };
 
