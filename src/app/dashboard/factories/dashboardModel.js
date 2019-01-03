@@ -104,15 +104,21 @@ function dashboardModel(
             return acc;
         }, {});
 
-        const promise = Promise.all([
-            PaymentCache.plans(),
-            PaymentCache.valid({
-                PlanIDs,
-                Currency,
-                Cycle,
-                CouponCode: subscriptionModel.coupon()
-            })
-        ]).then(([plans, valid]) => {
+        const CouponCode = subscriptionModel.coupon();
+
+        const checkPromise = PaymentCache.valid({ PlanIDs, Currency, Cycle, CouponCode }).then((result) => {
+            /**
+             * If the coupon is invalid, make another request without any coupon for the api to automatically apply the fallback coupon.
+             * Does not compare the actual coupon received, just checks that that the coupon received is null. This is to enable compatibility
+             * if the API adds support for falling back automatically.
+             */
+            if (CouponCode && !result.Coupon) {
+                return PaymentCache.valid({ PlanIDs, Currency, Cycle });
+            }
+            return result;
+        });
+
+        const promise = Promise.all([PaymentCache.plans(), checkPromise]).then(([plans, valid]) => {
             paymentModal.activate({
                 params: {
                     planIDs: PlanIDs,
