@@ -13,7 +13,7 @@ const formatContact = (contact = {}) => {
     return Object.keys(contact).reduce((acc, key = '') => {
         acc[key.toLowerCase()] = contact[key];
         return acc;
-    }, {});
+    }, Object.create(null));
 };
 
 /**
