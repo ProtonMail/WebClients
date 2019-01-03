@@ -185,7 +185,7 @@ npm run e2e
 
 ## License
 
-Copyright (c) 2013-2018
+Copyright (c) 2013-2019
 
 Proton Technologies A.G. (Switzerland)
 
