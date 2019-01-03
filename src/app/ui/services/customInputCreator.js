@@ -25,7 +25,7 @@ function customInputCreator() {
     };
 
     const getLabelInputLink = (attributes = []) => {
-        const customId = attributes.filter((attr) => attr === 'customId')[0];
+        const customId = attributes.find((attr) => attr === 'customId');
         if (customId) {
             return { for: customId, id: customId };
         }
@@ -35,7 +35,7 @@ function customInputCreator() {
 
     const removeWatcher = (node, key) => node.removeAttribute(`data-custom-${key}`);
 
-    const bindAttributes = (node, { el, attr = {}, type = '' }) => {
+    const bindAttributes = (node, { el, attr = {}, type = '', $label }) => {
         const REGEXP_CUSTOM_DIRECTIVE = new RegExp(`custom${ucFirst(type)}`);
 
         // filter attributes for the input
@@ -48,7 +48,9 @@ function customInputCreator() {
 
         const link = getLabelInputLink(inputAttributes);
 
-        attr[link.id] && (node.id = attr[link.id]);
+        // Always attach a default id/for. Take the custom ID made by the user first.
+        node.id = attr[link.id] || link.id;
+        $label && $label.setAttribute('for', node.id);
 
         inputAttributes.forEach((attribute) => {
             const key = nameToAttribute(attribute);
@@ -92,7 +94,8 @@ function customInputCreator() {
          */
     const compiler = (type = '', { pre, post = _.noop, compile = _.noop } = {}) => (el, attr) => {
         const $input = el[0].querySelector(`input[type="${type}"]`);
-        bindAttributes($input, { el, attr, type });
+        const $label = el[0].querySelector('.customMaskInput-mask');
+        $input && bindAttributes($input, { el, attr, type, $label });
         compile(el, attr);
         return pre ? { pre, post } : post;
     };
