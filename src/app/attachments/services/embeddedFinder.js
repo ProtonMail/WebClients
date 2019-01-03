@@ -32,12 +32,17 @@ function embeddedFinder(embeddedStore, embeddedUtils) {
             const contentName = embeddedUtils.getAttachementName(MAP_CID[cid].Headers);
 
             // Find the matching attachement
-            const attachment = list.filter(({ Headers = {}, Name = '' } = {}) => {
+            const attachment = list.find(({ Headers = {}, Name = '' } = {}) => {
+                if (Headers['content-id']) {
+                    return Headers['content-id'] === contentId;
+                }
+
                 if (Headers['content-location']) {
                     return Name === contentName;
                 }
-                return Headers['content-id'] === contentId;
-            })[0];
+
+                return false;
+            });
 
             attachment && acc.push({ cid, attachment });
             return acc;
