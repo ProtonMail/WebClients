@@ -1,4 +1,5 @@
 import vCard from 'vcf';
+
 import { csvToVCard } from '../../../src/helpers/csv';
 import contacts from '../../media/contacts-csv';
 
@@ -11,13 +12,16 @@ describe('csv', () => {
         });
 
         it('should reject the Promise if the input is invalid', async () => {
-            try {
-                await csvToVCard(true);
-            } catch (error) {
-                return;
-            }
+            const test = async () => {
+                try {
+                    await csvToVCard(true);
+                    return false;
+                } catch (error) {
+                    return true;
+                }
+            };
 
-            throw new Error('Promise should not be resolved');
+            expect(await test()).toBe(true);
         });
 
         it('should return a Promise<Array(vCard)>', async () => {
@@ -36,6 +40,8 @@ describe('csv', () => {
             contact.add('nickname', 'Chris Green');
             contact.add('org', 'Information Technology');
             contact.add('title', 'IT Manager');
+            contact.addProperty(new vCard.Property('tel', '123-555-6641', { type: 'Mobile' }));
+            contact.addProperty(new vCard.Property('tel', '123-555-9821', { type: 'Fax' }));
 
             expect(vcard).toEqual(contact);
         });

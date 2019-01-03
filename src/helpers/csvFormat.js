@@ -48,12 +48,12 @@ const PROPERTIES = {
 };
 
 const PHONES = {
-    Home: ['Home Phone', 'Home Phone 2'],
-    Work: ['Work Phone', 'Company Main Phone', 'Business Phone', 'Business Phone 2'],
-    Mobile: ['Mobile', 'Mobile Number', 'Mobile Phone'],
-    Fax: ['Fax', 'Fax Number', 'Home Fax', 'Business Fax', 'Other Fax', 'Telex'],
-    Pager: ['Pager', 'Pager Number'],
-    Car: ['Car Phone']
+    Home: ['home phone', 'home phone 2', 'voice'],
+    Work: ['work phone', 'company main phone', 'business phone', 'business phone 2', 'telephone work'],
+    Mobile: ['mobile', 'mobile number', 'mobile phone', 'x-mobile'],
+    Fax: ['fax', 'fax number', 'home fax', 'business fax', 'other fax', 'telex'],
+    Pager: ['pager', 'pager number'],
+    Car: ['car phone']
 };
 
 const parameters = {
@@ -267,10 +267,9 @@ const fn = (contact) => {
 
 const tel = (contact) => {
     const tels = extractKeys(PROPERTIES.tel, contact);
-
     Object.keys(PHONES).forEach((parameter) => {
         PHONES[parameter].forEach((key) => {
-            const value = contact[key];
+            const value = contact[key.toLowerCase()];
             if (value) {
                 tels.push({ value, parameter });
             }
