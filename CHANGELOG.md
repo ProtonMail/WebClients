@@ -1,3 +1,10 @@
+# [3.15.10] - 2019-01-03
+## Fixed
+- ESC key was unresponsive in some cases
+- Amount Mismatch error was shown when using certain coupons
+- Login issues for some sub-user accounts
+- 'Empty Trash' didn't refresh the UI
+
 # [3.15.9] - 2018-12-23
 ## Fixed
 - Create draft with `@pm.me` address on FREE account
