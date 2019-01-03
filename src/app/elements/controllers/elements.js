@@ -246,6 +246,10 @@ function ElementsController(
                     _.defer(() => $scope.move(to));
                 }
             }
+
+            if (type === 'escape') {
+                $scope.back();
+            }
         });
 
         on('read', () => {
@@ -685,11 +689,17 @@ function ElementsController(
             return $state.go(route, opt);
         }
 
-        $state.go(route, {
+        const config = {
             id: null,
-            page: page || ~~$stateParams.page || 1,
             label: $stateParams.label
-        });
+        };
+
+        // Only add the queryParam if page > 1 (default inbox === ?page=1), else it's useless
+        if (~~$stateParams.page && typeof page !== 'undefined') {
+            config.page = page || ~~$stateParams.page || 1;
+        }
+
+        $state.go(route, config);
     };
 
     /**

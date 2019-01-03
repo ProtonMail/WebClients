@@ -166,9 +166,6 @@ function conversation(
                     }
                     actionConversation.move([scope.conversation.ID], labelID);
                 }
-                if (type === 'escape') {
-                    back();
-                }
             });
 
             const onNextPrevElement = (type) => () => {
