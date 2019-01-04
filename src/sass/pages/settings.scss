@@ -312,6 +312,30 @@
     }
 }
 
+.usersTable {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+.usersTable td,
+.usersTable th {
+    padding: .8rem;
+    border-bottom: 1px solid rgba($border, .1);
+    text-align: left;
+    font-weight: normal;
+}
+.usersTable th {
+    vertical-align: top;
+}
+.usersTable .nowrap {
+    white-space: nowrap;
+}
+.usersTable-domainList {
+    max-width: 100%;
+    margin-right: .5ch;
+}
+
+
 body.appConfigBody-is-mobile {
     #pm_settings {
 
@@ -361,12 +385,6 @@ body.appConfigBody-is-mobile {
                     display: table-cell;
                     width: initial;
                 }
-            }
-        }
-        #usersTable {
-            th,
-            td {
-                padding: 1rem;
             }
         }
     }
@@ -454,12 +472,7 @@ body.appConfigBody-is-mobile {
 @media (max-width: $desktop) {
     body #pm_settings {
         #usersTable {
-            th {
-                width: 12rem;
-            }
             td {
-                padding: 10px 1rem;
-                line-height: 1.5rem;
                 .pm_button {
                     line-height: 1.5rem;
                     margin: 0;
