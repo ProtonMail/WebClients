@@ -5,7 +5,7 @@ const ELEMENTS = [
     },
     {
         selector: 'img:not([src^="http"]):not([proton-src^="cid"])',
-        attribute: 'src'
+        attribute: 'proton-src'
     }
 ];
 
