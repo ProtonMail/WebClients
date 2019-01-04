@@ -1158,7 +1158,7 @@ msgstr ""
 #. link to domains
 #: ./src/templates/dashboard/overviewSection.tpl.html:18
 #: ./src/templates/dashboard/overviewSection.tpl.html:37
-#: ./src/templates/views/members.tpl.html:97
+#: ./src/templates/views/members.tpl.html:99
 msgctxt "Action"
 msgid "Manage"
 msgstr ""
@@ -1834,9 +1834,9 @@ msgstr ""
 #: ./src/templates/dashboard/overviewSection.tpl.html:23
 #: ./src/templates/dashboard/overviewSection.tpl.html:42
 #: ./src/templates/ui/navigation/navigation.tpl.html:7
-#: ./src/templates/views/members.tpl.html:54
-#: ./src/templates/views/members.tpl.html:67
-#: ./src/templates/views/members.tpl.html:80
+#: ./src/templates/views/members.tpl.html:58
+#: ./src/templates/views/members.tpl.html:71
+#: ./src/templates/views/members.tpl.html:84
 msgctxt "Action"
 msgid "Upgrade"
 msgstr ""
@@ -4954,12 +4954,12 @@ msgctxt "Info"
 msgid "Automatic replies can respond automatically to incoming messages (such as when you are on vacation and can't respond)."
 msgstr ""
 
-#: ./src/templates/views/members.tpl.html:73
+#: ./src/templates/views/members.tpl.html:77
 msgctxt "Info"
 msgid "Available VPN connections"
 msgstr ""
 
-#: ./src/templates/views/members.tpl.html:86
+#: ./src/templates/views/members.tpl.html:90
 msgctxt "Info"
 msgid "Available domains"
 msgstr ""
@@ -5540,7 +5540,7 @@ msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr ""
 
-#: ./src/templates/views/members.tpl.html:47
+#: ./src/templates/views/members.tpl.html:46
 msgctxt "Info"
 msgid "Number of users"
 msgstr ""
@@ -5586,7 +5586,7 @@ msgctxt "Info"
 msgid "Organization keys restored"
 msgstr ""
 
-#: ./src/templates/views/members.tpl.html:60
+#: ./src/templates/views/members.tpl.html:64
 msgctxt "Info"
 msgid "Organization storage"
 msgstr ""
@@ -6516,12 +6516,12 @@ msgctxt "Info"
 msgid "no label found"
 msgstr ""
 
-#: ./src/templates/views/members.tpl.html:50
+#: ./src/templates/views/members.tpl.html:51
 msgctxt "Info"
 msgid "of"
 msgstr ""
 
-#: ./src/templates/views/members.tpl.html:50
+#: ./src/templates/views/members.tpl.html:54
 msgctxt "Info"
 msgid "used"
 msgstr ""
@@ -6531,7 +6531,7 @@ msgctxt "Info"
 msgid "{{ name }} is also in your contacts. Remove them from your contacts?"
 msgstr ""
 
-#: ./src/templates/views/members.tpl.html:76
+#: ./src/templates/views/members.tpl.html:80
 msgctxt "Info"
 msgid "{{ organization.MaxVPN - organization.UsedVPN }}"
 msgstr ""
@@ -9094,21 +9094,6 @@ msgstr ""
 #: ./src/app/payment/directives/paymentPlanOverview.js:41
 msgctxt "Title"
 msgid "2-year plan"
-msgstr ""
-
-#: ./src/templates/views/members.tpl.html:72
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Available VPN connections</span>"
-msgstr ""
-
-#: ./src/templates/views/members.tpl.html:46
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Number of users</span>"
-msgstr ""
-
-#: ./src/templates/views/members.tpl.html:59
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate=\"\" translate-context=\"Info\">Organization storage</span>"
 msgstr ""
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:13
