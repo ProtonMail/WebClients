@@ -1113,6 +1113,7 @@ function cache(
             if (action === 'next') {
                 request.BeginID = elementID;
                 request.Begin = elementTime;
+                request.Desc = 0;
             } else if (action === 'previous') {
                 request.EndID = elementID;
                 request.End = elementTime;
