@@ -39,68 +39,68 @@
                     </div>
                     <div class="col-1-2">
                         <div class="clearfix">
-                            <div class="pm_table">
-                                <table class="plain absorbing" id="usersTable">
-                                    <tbody>
-                                        <tr>
-                                            <td translate-context="Title" translate>
-                                                <span class="margin-right"translate-context="Info"  translate>Number of users</span>
-                                            </td>
-                                            <td class="absorbing-column">
-                                                <span class="margin-left">{{ organization.UsedMembers }} <span translate-context="Info" translate>of</span> {{ organization.MaxMembers }} <span translate-context="Info" translate>used</span></span>
-                                            </td>
-                                            <td class="text-right">
-                                                <span hide-upgrade="member">
-                                                    <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td translate-context="Title" translate>
-                                                <span class="margin-right" translate translate-context="Info">Organization storage</span>
-                                            </td>
-                                            <td>
-                                                <span class="margin-left">{{ organization.MaxSpace | humanSize }}</span>
-                                            </td>
-                                            <td class="text-right">
-                                                <span hide-upgrade="space">
-                                                    <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td translate-context="Title" translate>
-                                                <span class="margin-right" translate-context="Info"  translate>Available VPN connections</span>
-                                            </td>
-                                            <td class="absorbing-column">
-                                                <span class="margin-left" translate-context="Info" translate>{{ organization.MaxVPN - organization.UsedVPN }} </span>
-                                            </td>
-                                            <td class="text-right">
-                                                <span hide-upgrade="member">
-                                                    <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td translate-context="Title">
-                                                <span class="margin-right" translate-context="Info"  translate>Available domains</span>
-                                            </td>
-                                            <td>
-                                                <div class="margin-left">
-                                                    <span ng-repeat="domain in domains">
+                            <table class="usersTable" id="usersTable">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <span translate-context="Info"  translate>Number of users</span>
+                                        </th>
+                                        <td>
+                                            <span class="nowrap">
+                                                {{ organization.UsedMembers }}
+                                                <span translate-context="Info" translate>of</span>
+                                                {{ organization.MaxMembers }}
+                                            </span>
+                                            <span translate-context="Info" translate>used</span>
+                                        </td>
+                                        <td class="text-right">
+                                            <span hide-upgrade="member">
+                                                <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span translate translate-context="Info">Organization storage</span>
+                                        </th>
+                                        <td>
+                                            <span class="nowrap">{{ organization.MaxSpace | humanSize }}</span>
+                                        </td>
+                                        <td class="text-right">
+                                            <span hide-upgrade="space">
+                                                <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span translate-context="Info"  translate>Available VPN connections</span>
+                                        </th>
+                                        <td>
+                                            <span translate-context="Info" translate>{{ organization.MaxVPN - organization.UsedVPN }} </span>
+                                        </td>
+                                        <td class="text-right">
+                                            <span hide-upgrade="member">
+                                                <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" colspan="2">
+                                            <span class="margin-right" translate-context="Info"  translate>Available domains</span>
+
+                                            <div class="margin-left" >
+                                                   <span class="ellipsis usersTable-domainList" ng-repeat="domain in domains" title="{{ domain.DomainName }}">
                                                         {{ domain.DomainName }}{{ $last ? '' : ', ' }}
-                                                    </span>
-                                                </div>
-                                            </td>
-                                            <td class="text-right">
-                                                <span>
-                                                    <a ui-sref="secured.domains" class="pm_button link" translate-context="Action" translate-comment="link to domains" translate>Manage</a>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                                 </span>
+                                             </div>
+                                        </th>
+                                        <td class="text-right">
+                                            <a ui-sref="secured.domains" class="pm_button link" translate-context="Action" translate-comment="link to domains" translate>Manage</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
