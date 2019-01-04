@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { MailParser } from 'pmcrypto';
 
 import { toList } from './arrayHelper';
@@ -51,6 +52,6 @@ export const splitMail = (mail) => {
     }
     const headers = mail.substring(0, headersEnd);
     // remove leading newlines
-    const body = mail.substring(headersEnd).trimLeft();
+    const body = _.trimStart(mail.substring(headersEnd));
     return { headers, body };
 };
