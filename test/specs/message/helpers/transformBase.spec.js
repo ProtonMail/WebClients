@@ -116,9 +116,10 @@ describe('transformBase service', () => {
             });
 
 
-            it('should bind a src if there is not', () => {
+            it('should bind proton-src if there is not', () => {
                 const nope = output.querySelector('#imgNope');
-                expect(nope.src).toBe(URL_PROTON + '/');
+                expect(nope.getAttribute('proton-src')).toBe(URL_PROTON + '/');
+                expect(nope.src).toBe('');
             });
 
             it('should not change the SRC for a link with already http', () => {
@@ -203,9 +204,10 @@ describe('transformBase service', () => {
             });
 
 
-            it('should bind a src if there is not', () => {
+            it('should bind proton-src if there is not', () => {
                 const nope = output.querySelector('#imgNope');
-                expect(nope.src).toBe(URL_PROTON_SLASH);
+                expect(nope.getAttribute('proton-src')).toBe(URL_PROTON_SLASH);
+                expect(nope.src).toBe('');
             });
 
 
@@ -293,9 +295,10 @@ describe('transformBase service', () => {
             });
 
 
-            it('should bind a src if there is not', () => {
+            it('should bind proton-src if there is not', () => {
                 const nope = output.querySelector('#imgNope');
-                expect(nope.src).toBe(matchLink(''));
+                expect(nope.getAttribute('proton-src')).toBe(matchLink(''));
+                expect(nope.src).toBe('');
             });
 
 
