@@ -25,17 +25,17 @@
             width="18"
             viewBox="0 0 374.8 337.1"
             ng-class="{
-                'valid-sig': message.Verified === 1,
-                'invalid-sig': message.Verified !== 1,
+                'valid-sig': message.verified === 1,
+                'invalid-sig': message.verified !== 1,
                 'internal': message.isInternal() || message.isSentEncrypted() || message.isDraft() || message.isAuto(),
                 'pgp': message.isPGPEncrypted(),
             }">
             <use
-                ng-if="message.Verified === 1"
+                ng-if="message.verified === 1"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xlink:href="#svg-lock-signed"></use>
             <use
-                ng-if="message.Verified !== 1"
+                ng-if="message.verified !== 1"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xlink:href="#svg-lock-warning"></use>
         </svg>

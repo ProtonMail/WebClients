@@ -6,9 +6,9 @@
     <unsubscribe-panel ng-if="!unsubscribed && message.getListUnsubscribe()"></unsubscribe-panel>
     <read-receipt-panel ng-if="message.requireReadReceiptConfirmation()" class="messageExtra-container-warning"></read-receipt-panel>
     <message-auto-generated ng-if="message.isAutoReply"></message-auto-generated>
-    <message-public-key-found ng-if="message.attachedPublicKey && !(message.askResign && message.Verified !== 0)"></message-public-key-found>
-    <message-public-key-pinning ng-if="message.promptKeyPinning && !(message.askResign && message.Verified !== 0)"></message-public-key-pinning>
-    <message-resign ng-if="message.askResign && message.Verified !== 0"></message-resign>
+    <message-public-key-found ng-if="message.attachedPublicKey && !(message.askResign && message.verified !== 0)"></message-public-key-found>
+    <message-public-key-pinning ng-if="message.promptKeyPinning && !(message.askResign && message.verified !== 0)"></message-public-key-pinning>
+    <message-resign ng-if="message.askResign && message.verified !== 0"></message-resign>
     <display-content-btn data-action="remote"></display-content-btn>
     <display-content-btn data-action="embedded"></display-content-btn>
 </section>

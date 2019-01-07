@@ -25,14 +25,13 @@ import {
     isSent,
     isSentEncrypted,
     isSentAndReceived,
-    isAuto,
-    isInternalEncrypted,
-    isExternalEncrypted,
     isPGPInline,
     isPGPEncrypted,
     isRequestReadReceipt,
     isAttachPublicKey,
-    isSign
+    isSign,
+    inSigningPeriod,
+    isImported
 } from '../../../helpers/message';
 
 const { PLAINTEXT } = MIME_TYPES;
@@ -45,10 +44,10 @@ function messageModel(
     gettextCatalog,
     AttachmentLoader,
     sanitize,
+    getEncryptionType,
     attachmentConverter,
     publicKeyStore,
     attachedPublicKey,
-    mailSettingsModel,
     addressesModel,
     keysModel,
     readReceiptModel
@@ -80,73 +79,6 @@ function messageModel(
         BCCList: [],
         LabelIDs: [],
         ExternalID: null
-    };
-    const pmTypes = [
-        gettextCatalog.getString('End-to-end encrypted message', null, 'Message encryption status'),
-        gettextCatalog.getString(
-            'End-to-end encrypted message from verified address',
-            null,
-            'Message encryption status'
-        ),
-        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-    ];
-
-    const pgpTypes = [
-        gettextCatalog.getString('PGP-encrypted message', null, 'Message encryption status'),
-        gettextCatalog.getString('PGP-encrypted message from verified address', null, 'Message encryption status'),
-        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-    ];
-
-    const clearTypes = [
-        gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('PGP-signed message from verified address', null, 'Message encryption status'),
-        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-    ];
-
-    const sentEncrypted = [
-        gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-    ];
-
-    const autoTypes = [
-        gettextCatalog.getString('Sent by ProtonMail with zero access encryption', null, 'Message encryption status')
-    ];
-
-    const sentClear = [
-        gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-    ];
-
-    const draftTypes = [gettextCatalog.getString('Encrypted message', null, 'Message encryption status')];
-
-    const getType = (message) => {
-        if (isSentEncrypted(message)) {
-            return sentEncrypted;
-        }
-
-        if (isAuto(message)) {
-            return autoTypes;
-        }
-
-        if (isSent(message)) {
-            return sentClear;
-        }
-
-        if (isDraft(message)) {
-            return draftTypes;
-        }
-
-        if (isInternalEncrypted(message)) {
-            return pmTypes;
-        }
-
-        if (isExternalEncrypted(message)) {
-            return pgpTypes;
-        }
-
-        return clearTypes;
     };
 
     const emptyMessage = gettextCatalog.getString('Message empty', null, 'Message content if empty');
@@ -239,7 +171,7 @@ function messageModel(
         }
 
         getVerificationStatus() {
-            return this.Verified;
+            return this.verified;
         }
 
         generateReplyToken() {
@@ -248,8 +180,18 @@ function messageModel(
         }
 
         encryptionType() {
-            const encType = getType(this);
-            return encType.length > this.Verified ? encType[this.Verified] : encType[0];
+            const encType = getEncryptionType(this);
+
+            if (encType.length > this.verified) {
+                // Old messages are not signed, so missing sender signatures should be treated like external missing signatures, no warning
+                if (!inSigningPeriod(this) && isSentEncrypted(this) && !isImported(this)) {
+                    return encType[0];
+                }
+
+                return encType[this.verified];
+            }
+
+            return encType[0];
         }
 
         isPlainText() {
@@ -546,7 +488,7 @@ function messageModel(
                 }
 
                 this.setDecryptedBody(result.message, !this.isPlainText());
-                this.Verified = result.verified;
+                this.verified = result.verified;
                 this.failedDecryption = false;
 
                 if (result.encryptedSubject && this.Subject !== result.encryptedSubject) {
