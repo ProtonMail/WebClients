@@ -391,6 +391,7 @@ export const EMAIL_FORMATING = {
 export const AUTOCOMPLETE_DOMAINS = [
     'protonmail.com',
     'protonmail.ch',
+    'pm.me',
     'gmail.com',
     'hotmail.com',
     'live.com',
