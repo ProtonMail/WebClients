@@ -16,6 +16,10 @@
 .contactsToolbar-right {
     flex: 1;
     text-align: right;
+
+    & .paginator a:last-child {
+       border-left: 0;
+    }
 }
 
 .contactsToolbar-container > button,

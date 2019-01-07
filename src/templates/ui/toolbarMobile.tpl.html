@@ -7,9 +7,10 @@
     </span>
 
     <span class="pm_buttons" ng-class="{ disabled: isDisabled()}">
-        <a class="pm_trigger" dropdown ng-disabled="isDisabled()">
+        <a href="#" tabindex="0" role="button" class="pm_trigger" dropdown ng-disabled="isDisabled()">
             <em><i class="fa fa-eye-slash"></i>
             <i class="fa fa-angle-down"></i></em>
+            <span class="sr-only" translate-context="Action" translate>Mark as read/unread</span>
         </a>
         <span class="pm_dropdown wide">
             <a ng-click="unread()">
@@ -24,52 +25,55 @@
     </span>
 
     <span class="pm_buttons" ng-class="{ disabled: isDisabled() }">
-        <a class="pm_trigger" dropdown ng-disabled="isDisabled()">
+        <button class="pm_trigger" dropdown ng-disabled="isDisabled()">
             <em><i class="fa fa-trash-o"></i>
             <i class="fa fa-angle-down"></i></em>
-        </a>
+            <span class="sr-only" translate-context="Action" translate>Move to</span>
+        </button>
         <span class="pm_dropdown wide">
-            <a ng-click="move('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }">
+            <button ng-click="move('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-trash-o"></i>
                 <span translate translate-context="Action">Move to trash</span>
-            </a>
-            <a ng-click="move('inbox')" ng-hide="{{ ('secured.inbox.**' | includedByState) || ('secured.spam.**' | includedByState) }}" ng-class="{ disabled: numberElementSelected === 0 }">
+            </button>
+            <button ng-click="move('inbox')" ng-hide="{{ ('secured.inbox.**' | includedByState) || ('secured.spam.**' | includedByState) }}" ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-inbox"></i>
                 <span translate translate-context="Action">Move to inbox</span>
-            </a>
-            <a ng-click="move('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
+            </button>
+            <button ng-click="move('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-archive"></i>
                 <span translate translate-context="Action">Move to archive</span>
-            </a>
-            <a ng-click="move('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
+            </button>
+            <button ng-click="move('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-ban"></i>
                 <span translate translate-context="Action">Move to spam</span>
-            </a>
-            <a ng-click="delete()" ng-show="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allmail.**' | includedByState)" ng-class="{ disabled: isDisabled() }">
+            </button>
+            <button ng-click="delete()" ng-show="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allmail.**' | includedByState)" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-times-circle-o"></i>
                 <span translate translate-context="Action">Delete</span>
-            </a>
-            <a ng-click="move('inbox')" ng-show="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
+            </button>
+            <button ng-click="move('inbox')" ng-show="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-check"></i>
                 <span translate translate-context="Action">Not spam</span>
-            </a>
+            </button>
         </span>
     </span>
     <span class="pm_buttons">
         <span class="pm_buttons" ng-class="{ disabled: isDisabled() }">
-            <a href="#" class="pm_trigger open-folder" dropdown data-dropdown-no-auto-close="true" ng-class="{ disabled: isDisabled() }">
+            <button class="pm_trigger open-folder toolbarMobile-btn-select-folder" data-dropdown data-dropdown-no-auto-close="true" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-folder"></i>
                 <i class="fa fa-angle-down"></i>
-            </a>
+                <span class="sr-only" translate-context="Action toolbar" translate>Move to</span>
+            </button>
             <span class="pm_dropdown wide right">
                 <dropdown-folders data-elements="getElements"></dropdown-folders>
             </span>
         </span>
         <span class="pm_buttons" ng-class="{ disabled: isDisabled() }">
-            <a href="#" class="pm_trigger open-label" dropdown data-dropdown-no-auto-close="true" ng-class="{ disabled: isDisabled() }">
+            <button class="pm_trigger open-label" data-dropdown data-dropdown-no-auto-close="true" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
-            </a>
+                <span class="sr-only" translate-context="Action toolbar" translate>Label as</span>
+            </button>
             <span class="pm_dropdown wide right">
                 <dropdown-labels messages="getElements" save="saveLabels"></dropdown-labels>
             </span>

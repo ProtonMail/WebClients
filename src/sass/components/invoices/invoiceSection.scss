@@ -21,9 +21,16 @@
 
 .invoiceSection-nav-right .pm_button {
     height: auto;
-    border: 0 !important;
 }
 
-.invoiceSection-nav-right .pm_button + .pm_button  {
-    border-left: 1px solid $border !important;
+.invoiceSection-nav-right > :last-of-type {
+    border-right: 1px solid $border;
+}
+.invoiceSection-pagination > :last-child {
+    border-left: 0;
+}
+.invoiceSection-pagination .pm_dropdown a {
+    border-left: 0!important;
+    border-right: 0!important;
+    border-top: 0!important;
 }
