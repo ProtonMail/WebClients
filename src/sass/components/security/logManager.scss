@@ -31,17 +31,24 @@
     height: 100%;
 }
 
-[class*="logManager-btn"] {
-    border: 0;
+.pm_buttons > [class*="logManager-btn"]:last-child {
+    border-right: 1px solid $border;
 }
 [class*="logManager-btn"] * {
     pointer-events: none
 }
 
-[class*="logManager-btn"] + [class*="logManager-btn"] {
-    border-left: 1px solid $border
-}
-
 .logManager-pagination {
     margin-left: 1em;
+
+    & > :last-child {
+        border-left: 0;
+    }
+
+    & .pm_dropdown a {
+        border-left: 0!important;
+        border-right: 0!important;
+        border-top: 0!important;
+    }
 }
+

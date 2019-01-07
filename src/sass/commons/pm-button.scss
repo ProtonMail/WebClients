@@ -198,7 +198,6 @@
 
 .pm_buttons {
     @include flexInline();
-    border: 1px solid $border;
     height: 33px;
     margin: 0 10px 0 0;
     position: relative;
@@ -238,17 +237,15 @@
         float:left; /* inline-block add extra space*/
         border-radius: 0;
         margin: 0 !important; /* overide unknow margin for appConfigBody-is-mobile */
-        border:none;
+        border: 0;
         &.pm_button {
             height: 33px;
             line-height: 36px;
         }
-        &:not(:first-of-type){
-            border-left:1px solid $border;
-        }
     }
 
-    a {
+    a,
+    button {
         @include flexInline();
         @include flexFillHeight();
         @include flexAlignCenter();
@@ -262,6 +259,11 @@
         /* no z-index here, otherwise, menus will fail */
         box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
         background: $button-background;
+        border: 1px solid $border;
+
+        &:not(:last-of-type){
+            border-right: 0;
+        }
 
         &.fa-angle-down {
             padding: 0 3px;
@@ -313,11 +315,10 @@
         text-transform: uppercase;
     }
     & > * {
-        border-left: 1px solid $border;
+        border-right: 0;
     }
     & > *:first-child {
         border-radius: 2px 0 0 2px;
-        border-left: none;
     }
     & > *:last-child {
         border-radius: 0 2px 2px 0;
@@ -348,10 +349,13 @@
 
 /* pm_buttons with child button */
 .pm_buttons .pm_buttons-child {
-    border-width: 0 0 0 1px;
+    border: 1px solid $border;
     padding: 0;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
     background: $button-background;
+    &:not(:last-of-type){
+        border-right: 0;
+    }
 }
 
 .pm_buttons .pm_buttons-child:hover,

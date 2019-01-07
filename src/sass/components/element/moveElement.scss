@@ -12,8 +12,6 @@
 body[id^="secured-trash"],
 body[id^="secured-drafts"] {
     .moveElement-btn-trash { display: none }
-    .moveElement-btn-delete { display: inline-block; }
-    .moveElement-btn-inbox { border-left: 0 }
 }
 
 body[id^="secured-spam"] {
@@ -24,3 +22,9 @@ body[id^="secured-inbox"] .moveElement-btn-inbox { display: none  }
 body[id^="secured-sent"] .moveElement-btn-inbox { display: none  }
 body[id^="secured-archive"] .moveElement-btn-archive { display: none  }
 body[id^="secured-spam"] .moveElement-btn-spam { display: none  }
+
+/* exceptions for groups */
+body:not([id^="secured-spam"]) .pm_buttons .moveElement-btn-spam {
+    border-right: 1px solid $border;
+}
+
