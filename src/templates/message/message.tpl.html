@@ -156,7 +156,7 @@
                     </div>
                     <nav class="pm_buttons">
                         <a
-                            class="message-actionBtn-reply"
+                            class="dropdown-actions-nowrap-reply"
                             data-action-compose="::message"
                             data-action-compose-type="reply"
                             pt-tooltip-translate="Reply"
@@ -168,7 +168,7 @@
                             <span class="sr-only" translate-context="Action" translate>Reply</span>
                         </a>
                         <a
-                            class="message-actionBtn-replyall"
+                            class="dropdown-actions-nowrap-replyall"
                             data-action-compose="::message"
                             data-action-compose-type="replyall"
                             pt-tooltip-translate="Reply all"
@@ -180,7 +180,7 @@
                         </a>
 
                         <a
-                            class="message-actionBtn-forward"
+                            class="dropdown-actions-nowrap-forward"
                             data-action-compose="::message"
                             data-action-compose-type="forward"
                             pt-tooltip-translate="Forward"
@@ -194,58 +194,64 @@
                             <i class="fa fa-angle-down"></i>
                             <span class="sr-only" translate-context="Action" translate>More</span>
                         </a>
-                        <div class="pm_dropdown wide right">
+                        <div class="pm_dropdown wide dropdown-actions-nowrap right">
                             <button
+                                class="dropdown-actions-nowrap-button"
                                 data-action-message="move"
                                 data-action-message-type="inbox">
-                                <i class="fa fa-inbox"></i>
-                                <span translate translate-context="Action">Move to inbox</span>
+                                <i class="fa fa-inbox dropdown-actions-nowrap-icon"></i>
+                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Move to inbox</span>
                             </button>
                             <button
+                                class="dropdown-actions-nowrap-button"
                                 data-action-message="move"
                                 data-action-message-type="trash">
-                                <i class="fa fa-trash-o"></i>
-                                <span translate translate-context="Action">Move to trash</span>
-                            </button>
-                            <button data-action-message="unread">
-                                <i class="fa fa-eye-slash"></i>
-                                <span translate translate-context="Action">Mark as unread</span>
+                                <i class="fa fa-trash-o dropdown-actions-nowrap-icon"></i>
+                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Move to trash</span>
                             </button>
                             <button
+                                class="dropdown-actions-nowrap-button"
+                                data-action-message="unread">
+                                <i class="fa fa-eye-slash dropdown-actions-nowrap-icon"></i>
+                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Mark as unread</span>
+                            </button>
+                            <button
+                                class="dropdown-actions-nowrap-button"
                                 data-action-message="move"
                                 data-action-message-type="spam"
                                 ng-hide="'secured.spam.**' | includedByState">
-                                <i class="fa fa-ban"></i>
-                                <span translate translate-context="Action">Mark as spam</span>
+                                <i class="fa fa-ban dropdown-actions-nowrap-icon"></i>
+                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Mark as spam</span>
                             </button>
                             <phishing-btn ng-if="!message.failedDecryption"></phishing-btn>
                             <button
+                                class="dropdown-actions-nowrap-button"
                                 data-action-message="delete"
                                 ng-if="'secured.trash.**' | includedByState">
-                                <i class="fa fa-times"></i>
-                                <span translate translate-context="Action">Delete</span>
+                                <i class="fa fa-times dropdown-actions-nowrap-icon"></i>
+                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Delete</span>
                             </button>
                             <button data-action-message="togglePlainHtml">
-                                <span ng-show="message.viewMode === 'html'">
-                                    <i class="fa fa-file-text-o"></i>
-                                    <span translate translate-context="Action">View source code</span>
+                                <span class="dropdown-actions-nowrap-button" ng-show="message.viewMode === 'html'">
+                                    <i class="fa fa-file-text-o dropdown-actions-nowrap-icon"></i>
+                                    <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">View source code</span>
                                 </span>
-                                <span ng-show="message.viewMode === 'plain'">
-                                    <i class="fa fa-file-photo-o"></i>
-                                    <span translate translate-context="Action">View rendered HTML</span>
+                                <span class="dropdown-actions-nowrap-button" ng-show="message.viewMode === 'plain'">
+                                    <i class="fa fa-file-photo-o dropdown-actions-nowrap-icon"></i>
+                                    <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">View rendered HTML</span>
                                 </span>
                             </button>
-                            <button data-action-message="viewPgp">
-                                <i class="fa fa-code"></i>
-                                <span translate translate-context="Action">View headers</span>
+                            <button class="dropdown-actions-nowrap-button" data-action-message="viewPgp">
+                                <i class="fa fa-code dropdown-actions-nowrap-icon"></i>
+                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">View headers</span>
                             </button>
-                            <button data-action-message="downloadEml" ng-if="!message.failedDecryption">
-                                <i class="fa fa-download"></i>
-                                <span translate-context="Action" translate>Export</span>
+                            <button class="dropdown-actions-nowrap-button" data-action-message="downloadEml" ng-if="!message.failedDecryption">
+                                <i class="fa fa-download dropdown-actions-nowrap-icon"></i>
+                                <span class="dropdown-actions-nowrap-textContainer" translate-context="Action" translate>Export</span>
                             </button>
-                            <button data-action-message="print">
-                                <i class="fa fa-print"></i>
-                                <span translate translate-context="Action">Print</span>
+                            <button class="dropdown-actions-nowrap-button" data-action-message="print">
+                                <i class="fa fa-print dropdown-actions-nowrap-icon"></i>
+                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Print</span>
                             </button>
                         </div>
                     </nav>
