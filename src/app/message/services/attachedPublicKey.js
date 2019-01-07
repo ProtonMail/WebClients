@@ -218,7 +218,7 @@ function attachedPublicKey(
 
     const extractFromEmail = async (message) => {
         if (isInternal(message)) {
-            return message.Verified === SIGNED_AND_INVALID ? getPublicKeyFromSig(message) : false;
+            return message.verified === SIGNED_AND_INVALID ? getPublicKeyFromSig(message) : false;
         }
 
         const candidates = message.Attachments.filter(

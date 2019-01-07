@@ -41,6 +41,7 @@ import signatureBuilder from './factories/signatureBuilder';
 import simpleSend from './factories/simpleSend';
 import trustPublicKeyModal from './factories/trustPublicKeyModal';
 import unsubscribeModel from './factories/unsubscribeModel';
+import getEncryptionType from './factories/getEncryptionType';
 import keyCache from './factories/keyCache';
 import publicKeyStore from './factories/publicKeyStore';
 import filterMessages from './filters/filterMessages';
@@ -116,6 +117,7 @@ export default angular
     .factory('simpleSend', simpleSend)
     .factory('trustPublicKeyModal', trustPublicKeyModal)
     .factory('publicKeyStore', publicKeyStore)
+    .factory('getEncryptionType', getEncryptionType)
     .factory('keyCache', keyCache)
     .factory('unsubscribeModel', unsubscribeModel)
     .filter('filterMessages', filterMessages)

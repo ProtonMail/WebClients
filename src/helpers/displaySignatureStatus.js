@@ -1,10 +1,13 @@
-import { VERIFICATION_STATUS, SIGNATURE_START } from '../app/constants';
-import { isAuto } from './message';
+import { VERIFICATION_STATUS } from '../app/constants';
+import { isAuto, isImported, inSigningPeriod } from './message';
+
+const { SIGNED_AND_INVALID, SIGNED_AND_VALID, NOT_SIGNED } = VERIFICATION_STATUS;
 /**
  * Some complicated logic after internal discussions.
  * This function returns whether we should display a lock with check / warning (indicating the signature status)
  * or we just display a lock.
  * The following logic is applied:
+ *  1. Old SENT messages (not imported, not autoresponse) are not signed
  *  2. If a SENT message has been correctly verified, a lonesome lock is displayed, unaccompanied by its check
  *      (because we don't consciously do key pinning here)
  *  3. If a SENT message doesn't have a signature, but should have, we display a warning. A SENT message should have a signature if:
@@ -26,29 +29,28 @@ const displaySignatureStatus = (message) => {
 
     // Rule 4 + 5 + 6 for non-SENT messages
     if (!isSentByMe) {
-        return () =>
-            message.Verified === VERIFICATION_STATUS.SIGNED_AND_INVALID ||
-            message.Verified === VERIFICATION_STATUS.SIGNED_AND_VALID;
+        return () => message.verified === SIGNED_AND_INVALID || message.verified === SIGNED_AND_VALID;
     }
     // SENT messages
     return () => {
-        const isImport = message.ParsedHeaders && message.ParsedHeaders['X-Pm-Origin'] === 'import';
+        const imported = isImported(message);
+        const auto = isAuto(message);
+        const period = inSigningPeriod(message.Time);
+        // Rule 1:
+        if (!auto && !imported && !period) {
+            return false;
+        }
         // Rule 2:
-        if (message.Verified === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        if (message.verified === SIGNED_AND_VALID) {
             return false;
         }
         // Rule 3:
-        if (
-            message.Verified === VERIFICATION_STATUS.NOT_SIGNED &&
-            !isAuto(message) &&
-            !isImport &&
-            message.Time > SIGNATURE_START
-        ) {
+        if (message.verified === NOT_SIGNED && !auto && !imported && period) {
             // warning
             return true;
         }
         // Rule 4 + 6:
-        return message.Verified === VERIFICATION_STATUS.SIGNED_AND_INVALID;
+        return message.verified === SIGNED_AND_INVALID;
     };
 };
 

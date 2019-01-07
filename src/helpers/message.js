@@ -1,6 +1,6 @@
 import { decryptMessage, getMessage } from 'pmcrypto';
 
-import { MESSAGE_FLAGS, MIME_TYPES, MAILBOX_IDENTIFIERS } from '../app/constants';
+import { MESSAGE_FLAGS, MIME_TYPES, MAILBOX_IDENTIFIERS, SIGNATURE_START } from '../app/constants';
 import { normalizeEmail } from './string';
 import { hasBit } from './bitHelper';
 
@@ -53,6 +53,7 @@ export const isSign = hasFlag(FLAG_SIGN);
 export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
 export const isExternalEncrypted = (message) => isE2E(message) && !isInternal(message);
 export const isPGPEncrypted = (message) => isExternal(message) && isReceived(message) && isE2E(message);
+export const inSigningPeriod = ({ Time }) => Time >= SIGNATURE_START;
 
 export const isMIME = hasMimeType(MIME);
 export const isPGPInline = (message) => isPGPEncrypted(message) && !isMIME(message);
