@@ -1,3 +1,13 @@
+# [3.15.11] - 2019-01-08
+## Fixed
+
+- Sender verification failed on some old messages
+- Mark As Read button was missing a border on the left side
+- The signature is disappearing from the default address in some cases
+- The back arrow didn't show the previous email
+- Load remote content did not work in some cases
+- Some behaviour fixes for IE11
+
 # [3.15.10] - 2019-01-03
 ## Fixed
 - ESC key was unresponsive in some cases
