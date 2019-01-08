@@ -35,7 +35,7 @@ export const makeUniq = (properties = []) =>
         const value = property.valueOf();
 
         if (type) {
-            return type && value;
+            return `${type} ${value}`;
         }
 
         return value;
