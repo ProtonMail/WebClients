@@ -79,6 +79,9 @@ $mapFields: (
 
 .contactViewItem-actions-dropdownGroup {
     .pm_trigger { color: #555; }
+    .toolbarDesktop-select-folder {
+        border-radius: 2px;
+    }
 }
 
 [data-field="note"] .contactViewItem-value-txt {font-style: italic;}

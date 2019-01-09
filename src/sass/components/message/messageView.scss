@@ -383,8 +383,15 @@
                 a {
                     background: $white;
                     border-right: 0;
+                    border-radius: 0;
                 }
-                &:last-child {
+                .pm_buttons:first-of-type a,
+                & > .dropdown-actions-nowrap-reply {
+                    border-radius: 2px 0 0 2px;
+                }
+                .pm_buttons:last-of-type a,
+                & > .dropdown-actions-nowrap-more {
+                    border-radius: 0 2px 2px 0;
                     border-right: 1px solid $border;
                 }
             }

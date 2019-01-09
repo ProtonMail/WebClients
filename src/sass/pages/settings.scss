@@ -9,6 +9,9 @@
     cursor: pointer;
 }
 
+.toolbar-button-options .pm_buttons a:first-of-type {
+    border-radius: 2px 0 0 2px;
+}
 
 .pm_tabs.domainMenu {
     font-size: 1rem;

@@ -59,14 +59,17 @@
 }
 
 /* scrollbox */
-.dropdown-folder-scrollbox-group-item-button {
+.scrollbox-container-group .dropdown-folder-scrollbox-group-item-button,
+.scrollbox-container-group .dropdown-folder-scrollbox-group-item-button:hover {
     background: transparent;
-    width: calc(100% - 16px); /* input next to it */
+    width: 100%; /* input next to it */
     border: 0;
     padding: .5rem 0;
     text-align: left;
     cursor: pointer;
     line-height: normal;
+    display: block;
+    box-shadow: none;
 }
 
 .dropdown-folder-scrollbox-group-item-button > div {
@@ -81,7 +84,8 @@
     pointer-events: none;
 }
 
-.dropdown-folder-create-button {
+.dropdown-folder-create .dropdown-folder-create-button,
+.dropdown-folder-create .dropdown-folder-create-button:hover {
     box-sizing: border-box;
     height: initial;
     min-height: 40px;
@@ -96,6 +100,7 @@
     text-align: left;
     color: $primary;
     cursor: pointer;
+    box-shadow: none;
 }
 
 .dropdown-folder-create-button > * {

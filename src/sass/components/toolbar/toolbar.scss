@@ -49,15 +49,30 @@
     padding: 10px;
 
     .pm_buttons,
-    .pm_buttons a {
+    .pm_buttons a,
+    .pm_buttons button {
         height: 48px;
+        border-radius: 2px;
+        box-sizing: border-box;
     }
     .pm_buttons a {
         padding: 0 8px;
     }
     & > .pm_buttons,
     & > .pull-right {
-    margin-top: 0;
+        margin-top: 0;
+    }
+
+    .pm_buttons {
+        & > button:only-of-type {
+            border-radius: 2px;
+        }
+        button.toolbarMobile-btn-select-folder {
+            border-radius: 2px 0 0 2px;
+        }
+        button.open-label {
+            border-radius: 0 2px 2px 0;
+        }
     }
 
     .pm_checkbox {
