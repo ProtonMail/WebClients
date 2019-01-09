@@ -8,7 +8,12 @@
 
 .settingsFilters-actions-notice {
     margin-left: auto;
-    padding: 20px 0
+    padding: 0;
+}
+
+.settingsFilters-actions-buttons,
+.settingsFilters-actions-notice {
+    margin-bottom: 10px;
 }
 
 .settingsFilters-sort-container { margin-bottom: 20px }
