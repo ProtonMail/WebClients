@@ -8,6 +8,12 @@
 }
 
 .readUnread-container-ur {
-    .readUnread-btn-read { border-left: 1px solid $border !important }
-    .readUnread-btn-unread { border-left: 0 }
+    .readUnread-btn-read {
+        border-left: 0;
+        border-right: 1px solid $border !important;
+        border-radius: 0 2px 2px 0;
+    }
+    .readUnread-btn-unread {
+        border-radius: 2px 0 0 2px;
+    }
 }
