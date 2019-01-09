@@ -15,7 +15,7 @@ import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
 import { addGetKeys, getKeyAsUri } from '../../../helpers/key';
-import { isInternal } from '../../../helpers/message';
+import { isInternal, getDate } from '../../../helpers/message';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -124,8 +124,8 @@ function attachedPublicKey(
             signatures: [signature = false]
         } = await decryptMessageLegacy({
             message: message.Body,
+            messageDate: getDate(message),
             privateKeys,
-            date: new Date(message.Time * 1000),
             publicKeys
         });
 
@@ -174,8 +174,8 @@ function attachedPublicKey(
         try {
             const { signatures } = await decryptMessageLegacy({
                 message: message.Body,
-                privateKeys,
-                date: new Date(message.Time * 1000)
+                messageDate: getDate(message),
+                privateKeys
             });
 
             const signaturePackets = _.flatten(

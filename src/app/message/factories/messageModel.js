@@ -31,7 +31,8 @@ import {
     isAttachPublicKey,
     isSign,
     inSigningPeriod,
-    isImported
+    isImported,
+    getDate
 } from '../../../helpers/message';
 
 const { PLAINTEXT } = MIME_TYPES;
@@ -337,14 +338,14 @@ function messageModel(
             return isMIME(this);
         }
 
-        async decryptMIME({ message, privateKeys, publicKeys, date }) {
+        async decryptMIME({ message, messageDate, privateKeys, publicKeys }) {
             const headerFilename = ENCRYPTED_HEADERS_FILENAME;
             const sender = this.Sender.Address;
             const result = await decryptMIMEMessage({
                 message,
+                messageDate,
                 privateKeys,
                 publicKeys,
-                date,
                 headerFilename,
                 sender
             });
@@ -398,9 +399,9 @@ function messageModel(
                     if (this.isMIME()) {
                         return this.decryptMIME({
                             message,
+                            messageDate: getDate(this),
                             privateKeys,
-                            publicKeys: pubKeys,
-                            date: new Date(this.Time * 1000)
+                            publicKeys: pubKeys
                         }).then((result) => {
                             this.decrypting = false;
                             return result;
@@ -409,9 +410,9 @@ function messageModel(
 
                     return decryptMessageLegacy({
                         message,
+                        messageDate: getDate(this),
                         privateKeys,
-                        publicKeys: pubKeys,
-                        date: new Date(this.Time * 1000)
+                        publicKeys: pubKeys
                     }).then(({ data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED }) => {
                         this.decryptedMIME = data;
                         this.decrypting = false;
