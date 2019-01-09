@@ -45,10 +45,7 @@ module.exports = [
                 }
             },
             {
-                loader: 'css-loader',
-                options: {
-                    minimize: env.isDistRelease()
-                }
+                loader: 'css-loader'
             },
             {
                 loader: 'postcss-loader',
