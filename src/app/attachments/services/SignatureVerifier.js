@@ -55,22 +55,19 @@ function SignatureVerifier(dispatchers, addressesModel, publicKeyStore) {
 
     /**
      * Returns the signature status for each of the signatures when after verifying them with the decryptedAttachment
-     * @param {Object} message
-     * @param {Array} publicKeys
-     * @param {Array} signatures
-     * @param {Object} attachment
      * @param {Uint8Array} decryptedAttachment
+     * @param {Array} signatures
+     * @param {Array} publicKeys
      * @returns {Promise.<*[]>}
      */
-    const verifyAllSignatures = (message, publicKeys, signatures, attachment, decryptedAttachment) => {
+    const verifyAllSignatures = (decryptedAttachment, signatures, publicKeys) => {
         const attMessage = createMessage(decryptedAttachment);
 
         const asyncSigVerifiers = signatures.map((signature) => {
             return verifyMessage({
                 message: attMessage,
                 publicKeys,
-                signature,
-                date: new Date(message.Time * 1000)
+                signature
             }).then(({ verified }) => verified);
         });
 
@@ -102,13 +99,7 @@ function SignatureVerifier(dispatchers, addressesModel, publicKeyStore) {
             !compromised && acc.push(key);
             return acc;
         }, []);
-        const statusPerSig = await verifyAllSignatures(
-            message,
-            publicKeys,
-            signatures,
-            attachment,
-            decryptedAttachment
-        );
+        const statusPerSig = await verifyAllSignatures(decryptedAttachment, signatures, publicKeys);
         const pmcryptoVerified = _.reduce(
             statusPerSig,
             (acc, status) => (acc === SIGNED_AND_VALID ? SIGNED_AND_VALID : status),

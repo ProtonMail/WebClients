@@ -130,3 +130,10 @@ export const getLabelIDsMoved = (message, labelID) => {
 
     return [labelID];
 };
+
+/**
+ * Get date from message
+ * @param {Integer} message.Time
+ * @return {Date}
+ */
+export const getDate = ({ Time = 0 } = {}) => new Date(Time * 1000);
