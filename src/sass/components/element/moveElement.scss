@@ -30,7 +30,8 @@ body[id^="secured-inbox"] .pm_buttons .moveElement-btn-spam,
 body[id^="secured-sent"] .pm_buttons .moveElement-btn-spam,
 body[id^="secured-starred"] .pm_buttons .moveElement-btn-spam,
 body[id^="secured-archive"] .pm_buttons .moveElement-btn-spam,
-body[id^="secured-allmail"] .pm_buttons .moveElement-btn-spam {
+body[id^="secured-allmail"] .pm_buttons .moveElement-btn-spam,
+body[id^="secured-search"] .pm_buttons .moveElement-btn-spam {
     border-right: 1px solid $border;
     border-radius: 0 2px 2px 0;
 }
