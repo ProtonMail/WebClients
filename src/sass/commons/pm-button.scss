@@ -209,7 +209,6 @@
         float: none;
     }
     &.disabled {
-        border: 1px solid lighten($border, 10%);
         color: $button-color-disabled;
     }
     .disabled,
