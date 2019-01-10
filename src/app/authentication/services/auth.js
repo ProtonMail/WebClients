@@ -68,7 +68,13 @@ function authentication(
                     })
                     .then(({ organizationKey, addresses }) => ({ user, organizationKey, addresses }))
                     .then(({ user, organizationKey, addresses }) => {
-                        return decryptKeys(user, addresses, organizationKey, api.getPassword())
+                        return decryptKeys({
+                            user,
+                            addresses,
+                            organizationKey,
+                            mailboxPassword: api.getPassword(),
+                            isSubUser: user.subuser
+                        })
                             .then(({ keys }) => (keysModel.storeKeys(keys), user))
                             .catch((error) => {
                                 $exceptionHandler(error);
