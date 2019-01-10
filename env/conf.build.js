@@ -3,9 +3,7 @@ const bindPrefix = (name) => `node_modules/${name}`;
 module.exports = {
     externalFiles: {
         openpgp: ['openpgp/dist/openpgp.min.js', 'openpgp/dist/compat/openpgp.min.js'].map(bindPrefix),
-        openpgp_workers: ['openpgp/dist/openpgp.worker.min.js', 'openpgp/dist/compat/openpgp.worker.min.js'].map(
-            bindPrefix
-        ),
+        openpgp_workers: ['openpgp/dist/openpgp.worker.min.js'].map(bindPrefix),
         list: ['.htaccess', 'manifest.json', 'robots.txt']
     },
     babel: {
