@@ -20,11 +20,8 @@ const makeSRC = (list) => list.map((file) => path.resolve(file));
 
 const isDistRelease = env.isDistRelease();
 
-const { mainFiles: openpgpFiles, workerFiles: openpgpWorkerFiles } = transformOpenpgpFiles(
-    CONFIG.externalFiles.openpgp,
-    CONFIG.externalFiles.openpgp_workers,
-    isDistRelease
-);
+const openpgpFiles = transformOpenpgpFiles(CONFIG.externalFiles.openpgp, isDistRelease);
+const openpgpWorkerFiles = transformOpenpgpFiles(CONFIG.externalFiles.openpgp_workers, isDistRelease);
 
 // We don't need to transpile it
 const CHECK_COMPAT_APP = 'checkCompatApp.js';
@@ -81,7 +78,9 @@ const list = [
             OPENPGP: openpgpFiles[0].filepath,
             OPENPGP_INTEGRITY: openpgpFiles[0].integrity,
             OPENPGP_COMPAT: openpgpFiles[1].filepath,
-            OPENPGP_COMPAT_INTEGRITY: openpgpFiles[1].integrity
+            OPENPGP_COMPAT_INTEGRITY: openpgpFiles[1].integrity,
+            OPENPGP_WORKER: openpgpWorkerFiles[0].filepath,
+            OPENPGP_WORKER_INTEGRITY: openpgpWorkerFiles[0].integrity
         }
     }),
 
@@ -91,9 +90,19 @@ const list = [
     }),
 
     new webpack.DefinePlugin({
-        // Needs to be wrapped in strings because webpack does a direct replace
-        OPENPGP_WORKER: JSON.stringify(openpgpWorkerFiles[0].filepath),
-        OPENPGP_WORKER_COMPAT: JSON.stringify(openpgpWorkerFiles[1].filepath)
+        // Needs to be JSON encoded because webpack does a direct replace
+        OPENPGP_FILE: JSON.stringify({
+            path: openpgpFiles[0].filepath,
+            integrity: openpgpFiles[0].integrity
+        }),
+        OPENPGP_COMPAT_FILE: JSON.stringify({
+            path: openpgpFiles[1].filepath,
+            integrity: openpgpFiles[1].integrity
+        }),
+        OPENPGP_WORKER_FILE: JSON.stringify({
+            path: openpgpWorkerFiles[0].filepath,
+            integrity: openpgpWorkerFiles[0].integrity
+        })
     }),
 
     new ScriptExtHtmlWebpackPlugin({
