@@ -137,9 +137,17 @@ function manageUser(
         }
 
         try {
-            const password = authentication.getPassword();
-            const organizationKey = await getPromise(User, password);
-            const { dirtyAddresses, keys } = await decryptKeys(User, addressesModel.get(), organizationKey, password);
+            const mailboxPassword = authentication.getPassword();
+            // User can be undefined when we update Addresses, that's why we `authentication.user`
+            const isSubUser = authentication.user.subuser;
+            const organizationKey = await getPromise(User, mailboxPassword);
+            const { dirtyAddresses, keys } = await decryptKeys({
+                user: User,
+                addresses: addressesModel.get(),
+                organizationKey,
+                mailboxPassword,
+                isSubUser
+            });
 
             // Open the generate modal if we find addresses without a key
             if (await generateKeys(User, Members, keys)) {

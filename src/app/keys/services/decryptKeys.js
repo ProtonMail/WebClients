@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
 
 import { MAIN_KEY } from '../../constants';
@@ -70,21 +69,21 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog) {
 
     /**
      * Decrypt a user's keys
-     * @param  {Object} user                   the user object
-     * @param  {Array} addresses
-     * @param  {Object} organizationKey        organization private key
-     * @param  {String} mailboxPassword        the user's mailbox password
+     * @param  {Object} options.user                   the user object
+     * @param  {Array} options.addresses
+     * @param  {Object} options.organizationKey        organization private key
+     * @param  {String} options.mailboxPassword        the user's mailbox password
+     * @param  {Boolean} options.isSubUser
      * @return {Object} {keys, dirtyAddresses} decrypted keys, addresses without keys
      */
-    return async (user = {}, addresses = [], organizationKey = {}, mailboxPassword) => {
+    return async ({ user = {}, addresses = [], organizationKey = {}, mailboxPassword, isSubUser }) => {
         const privateUser = user.Private === 1;
-        const subuser = !_.isUndefined(user.OrganizationPrivateKey);
 
         // All user key are decrypted and stored
         const address = { ID: MAIN_KEY };
         const { Keys = [] } = user;
         const list = Keys.map((key, index) => {
-            if (subuser === true) {
+            if (isSubUser) {
                 return setupKeys.decryptMemberKey(key, organizationKey).then((pkg) => formatKey({ key, pkg, address }));
             }
             return decryptPrivateKey(key.PrivateKey, mailboxPassword).then(
@@ -100,7 +99,7 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog) {
             (acc, address) => {
                 if (address.Keys.length) {
                     const promises = address.Keys.map((key, index) => {
-                        if (subuser) {
+                        if (isSubUser) {
                             return setupKeys
                                 .decryptMemberKey(key, organizationKey)
                                 .then((pkg) => formatKey({ key, pkg, address }));
