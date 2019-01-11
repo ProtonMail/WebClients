@@ -1,3 +1,8 @@
+# [3.15.12] - 2019-01-10
+## Fixed
+- An issue with changing signatures for some subusers
+- On the filters page the created filters were listed with a drop-down animation
+
 # [3.15.11] - 2019-01-08
 ## Fixed
 
