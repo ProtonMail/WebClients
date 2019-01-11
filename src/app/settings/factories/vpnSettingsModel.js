@@ -1,5 +1,5 @@
 /* @ngInject */
-function vpnSettingsModel(dispatchers, vpnSettingsApi) {
+function vpnSettingsModel(dispatchers, vpnSettingsApi, vpnApi) {
     let CACHE = {};
 
     const { on, dispatcher } = dispatchers(['vpnSettings']);
@@ -16,15 +16,25 @@ function vpnSettingsModel(dispatchers, vpnSettingsApi) {
         dispatcher.vpnSettings('updated', get());
     };
 
-    const callApi = async (method, data) => {
+    const callApi = (method, init) => async (data) => {
+        // No need to call it everytime, once is enough.
+        if (init && !get('initApiCredentials')) {
+            /*
+                When we fetch settings, we need to call this method first in order
+                to generate missing credentials for OpenVPN.
+                They don't exist if you create an account on ProtonMail (cf Type)
+            */
+            await vpnApi.get();
+            set('initApiCredentials', true);
+        }
         const vpnSettings = await vpnSettingsApi[method](data);
         set('all', vpnSettings);
         return get();
     };
 
-    const fetch = () => callApi('fetch');
-    const updateName = (data) => callApi('updateName', data);
-    const updatePassword = (data) => callApi('updatePassword', data);
+    const fetch = callApi('fetch', true);
+    const updateName = callApi('updateName');
+    const updatePassword = callApi('updatePassword');
 
     on('logout', clear);
 
