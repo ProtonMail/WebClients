@@ -288,7 +288,7 @@ describe('[ui/factories] ~ autocompleteEmailsModel', () => {
         let userType = () => userTypeConfig;
 
         // EMAILS is the default mode
-        const { mode: MODE_AUTOCOMPLETE = "emails" } = (config || {});
+        const { mode: MODE_AUTOCOMPLETE = "emails", keyValue: KEY_VALUE_AUTOCOMPLETE } = (config || {});
 
         const getTotal = (n = 0) => (previousList.length + n);
 
@@ -416,6 +416,7 @@ describe('[ui/factories] ~ autocompleteEmailsModel', () => {
                 expect(model.exist(ADD_ITEM.emailAddedd.Address)).toBe(true);
             });
 
+
             it('should clear the model', () => {
                 model.add(ADD_ITEM.email);
                 model.clear();
@@ -455,6 +456,7 @@ describe('[ui/factories] ~ autocompleteEmailsModel', () => {
                     model.add(ADD_ITEM.group);
                     expect(model.all().length).toBe(getTotal(2));
                 });
+
             } else {
                 it('should add 2 items without duplicata', () => {
                     expect(model.all().length).toBe(getTotal(0));
@@ -464,52 +466,7 @@ describe('[ui/factories] ~ autocompleteEmailsModel', () => {
                     expect(model.all().length).toBe(getTotal(1));
                 });
             }
-        });
 
-        describe('Filter existing data', () => {
-
-            if (MODE_AUTOCOMPLETE !== 'contact') {
-                it('should contains the group in the autocomplete', () => {
-                    const { list, hasAutocompletion } = model.filterContact('jojo');
-                    expect(hasAutocompletion).toBe(true);
-                    expect(list.length).toBe(1);
-                });
-
-                it('should not contains the group in the autocomplete anymore', () => {
-                    model.add(ADD_ITEM.group);
-                    const { list, hasAutocompletion } = model.filterContact('jojo');
-                    expect(hasAutocompletion).toBe(false);
-                    expect(list.length).toBe(0);
-                });
-            } else {
-                it('should not contains the group in the autocomplete', () => {
-                    const { list, hasAutocompletion } = model.filterContact('jojo');
-                    expect(hasAutocompletion).toBe(false);
-                    expect(list.length).toBe(0);
-                });
-            }
-
-            if (MODE_AUTOCOMPLETE !== 'contactGroup') {
-                it('should contains the email in the autocomplete', () => {
-                    const { list, hasAutocompletion } = model.filterContact('AAAAA');
-                    expect(hasAutocompletion).toBe(true);
-                    expect(list.length).toBe(1);
-                });
-
-                it('should not contains the email in the autocomplete anymore', () => {
-                    model.add(ADD_ITEM.email);
-                    const { list, hasAutocompletion } = model.filterContact('AAAAA');
-                    expect(hasAutocompletion).toBe(false);
-                    expect(list.length).toBe(0);
-                });
-            } else {
-                it('should not contains the email in the autocomplete', () => {
-                    model.add(ADD_ITEM.email);
-                    const { list, hasAutocompletion } = model.filterContact('AAAAA');
-                    expect(hasAutocompletion).toBe(false);
-                    expect(list.length).toBe(0);
-                });
-            }
         });
 
         describe('Listeners', () => {
@@ -721,6 +678,130 @@ describe('[ui/factories] ~ autocompleteEmailsModel', () => {
             });
         });
 
+        describe('Filter existing data', () => {
+
+            const clearList = () => {
+                // Don't use clear as we don't want to kill the ref of the service cache
+                model.all().forEach(() => model.removeLast());
+            };
+
+            beforeEach(clearList);
+
+            if (MODE_AUTOCOMPLETE !== 'contact') {
+                it('should contains the group in the autocomplete 1', () => {
+                    const { list, hasAutocompletion } = model.filterContact('jojo');
+                    expect(hasAutocompletion).toBe(true);
+                    expect(list.length).toBe(1);
+                });
+
+                it('should not contains the group in the autocomplete anymore', () => {
+                    model.add(ADD_ITEM.group);
+                    const { list, hasAutocompletion } = model.filterContact(ADD_ITEM.group.label);
+                    expect(hasAutocompletion).toBe(false);
+                    expect(list.length).toBe(0);
+                });
+            } else {
+
+                if (userTypeConfig.isFree) {
+                    it('should not contains the group in the autocomplete 2', () => {
+                        const { list, hasAutocompletion } = model.filterContact('jojo');
+                        expect(hasAutocompletion).toBe(false);
+                        expect(list.length).toBe(0);
+                    });
+                }
+
+                if (userTypeConfig.isPaid && MODE_AUTOCOMPLETE !== 'contact') {
+                    it('should contains the group in the autocomplete 3', () => {
+                        const { list, hasAutocompletion } = model.filterContact('jojo');
+                        expect(hasAutocompletion).toBe(true);
+                        expect(list.length).toBe(1);
+                    });
+                }
+
+                it('should not contains the group in the autocomplete', () => {
+                    model.add(ADD_ITEM.group);
+                    const { list, hasAutocompletion } = model.filterContact(ADD_ITEM.group.label);
+                    expect(hasAutocompletion).toBe(false);
+                    expect(list.length).toBe(0);
+                });
+            }
+
+            // Mode contact list only emails
+            if (userTypeConfig.isPaid && MODE_AUTOCOMPLETE !== 'contact') {
+                it('should contains the group in the autocomplete post removeLast', () => {
+                    clearList();
+                    model.add(ADD_ITEM.group);
+                    model.removeLast();
+
+                    const { list, hasAutocompletion } = model.filterContact('jojo');
+                    expect(hasAutocompletion).toBe(true);
+                    expect(list.length).toBe(1);
+                });
+
+                // Only available for this mode
+                if (MODE_AUTOCOMPLETE === 'contactGroup') {
+                    it('should contains the group in the autocomplete post removeByAddress', () => {
+                        clearList();
+                        model.add(ADD_ITEM.group);
+                        model.removeByAddress(ADD_ITEM.groupAddedd.Address);
+
+                        const { list, hasAutocompletion } = model.filterContact(ADD_ITEM.group.label);
+                        expect(hasAutocompletion).toBe(false);
+                        expect(list.length).toBe(0);
+                    });
+                }
+
+            }
+
+            if (MODE_AUTOCOMPLETE !== 'contactGroup') {
+                it('should contains the email in the autocomplete 1', () => {
+                    const { list, hasAutocompletion } = model.filterContact('AAAAA');
+                    expect(hasAutocompletion).toBe(true);
+                    expect(list.length).toBe(1);
+                });
+
+                it('should not contains the email in the autocomplete anymore', () => {
+                    model.add(ADD_ITEM.email);
+                    const { list, hasAutocompletion } = model.filterContact('AAAAA');
+                    expect(hasAutocompletion).toBe(false);
+                    expect(list.length).toBe(0);
+                });
+
+            } else {
+                it('should not contains the email in the autocomplete 2', () => {
+                    model.add(ADD_ITEM.email);
+                    const { list, hasAutocompletion } = model.filterContact('AAAAA');
+                    expect(hasAutocompletion).toBe(false);
+                    expect(list.length).toBe(0);
+                });
+            }
+
+            // Not available for this mode
+            if (MODE_AUTOCOMPLETE !== 'contactGroup' && KEY_VALUE_AUTOCOMPLETE !== 'ID') {
+
+                it('should contains the email in the autocomplete post removeLast', () => {
+                    clearList();
+                    model.add(ADD_ITEM.email);
+                    model.removeLast();
+
+                    const { list, hasAutocompletion } = model.filterContact('AAAAA');
+                    expect(hasAutocompletion).toBe(true);
+                    expect(list.length).toBe(1);
+                });
+
+                it('should contains the email in the autocomplete post removeByAddress', () => {
+                    clearList();
+                    model.add(ADD_ITEM.email);
+                    model.removeByAddress(ADD_ITEM.emailAddedd.Address);
+
+                    const { list, hasAutocompletion } = model.filterContact('AAAAA');
+                    expect(hasAutocompletion).toBe(true);
+                    expect(list.length).toBe(1);
+                });
+            }
+
+        });
+
         describe('Update the email', () => {
             const NEW_EMAIL = 'monique@protonmail.com';
             const NEW_NAME = 'monique';
@@ -795,6 +876,15 @@ describe('[ui/factories] ~ autocompleteEmailsModel', () => {
         testModel();
     });
 
+    describe('Autocomplete: user non free', () => {
+        testModel({
+            userTypeConfig: {
+                isFree: false,
+                isPaid: true
+            }
+        });
+    });
+
     describe('Autocomplete: previousList', () => {
         testModel({
             previousList: configPreviousList,
@@ -844,6 +934,4 @@ describe('[ui/factories] ~ autocompleteEmailsModel', () => {
             }
         });
     });
-
-
 });
