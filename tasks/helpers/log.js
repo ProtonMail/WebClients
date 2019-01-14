@@ -6,10 +6,10 @@ const warn = (msg) => {
     console.log();
 };
 
-const success = (msg, { time } = {}) => {
+const success = (msg, { time, space = true } = {}) => {
     const txt = chalk.green(` ${chalk.bold('✓')} ${msg} `);
     const message = [txt, time && `(${time})`].filter(Boolean).join('');
-    console.log();
+    space && console.log();
     console.log(message);
 };
 
@@ -29,6 +29,7 @@ const error = (e) => {
     console.log(chalk.red(' ⚠'), chalk.red(e.message));
     console.log();
     console.log();
+    console.error(e);
     process.exit(1);
 };
 

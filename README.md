@@ -96,6 +96,7 @@ Each `deploy-<NAME>` will be available at `<NAME>.protonmail.com`.
 - `--branch` : Deploy branch dest
 - `--api` : Set an API for the app (_dev, live, etc._)
 - `--debug`: turn on debug mode for the command (default false)
+- `--i18n`: Force sync translations (default false)
 
 ## I18n à la demande
 
