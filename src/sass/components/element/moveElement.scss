@@ -17,7 +17,7 @@ body[id^="secured-drafts"] {
 body[id^="secured-spam"],
 body[id^="secured-drafts"],
 body[id^="secured-trash"]  {
-    .moveElement-btn-delete { display: inline-block !important; }
+    .moveElement-btn-delete { display: inline-flex !important; }
 }
 
 body[id^="secured-inbox"] .moveElement-btn-inbox { display: none !important  }
