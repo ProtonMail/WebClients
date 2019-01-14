@@ -102,7 +102,7 @@ const checkEnv = async () => {
     }
 };
 
-const getTasks = (branch, { isCI, flowType = 'single' }) => {
+const getTasks = (branch, { isCI, flowType = 'single', forceI18n }) => {
     const list = [
         {
             title: 'Check env',
@@ -142,6 +142,13 @@ const getTasks = (branch, { isCI, flowType = 'single' }) => {
             }
         },
         {
+            title: 'Upgrade translations',
+            enabled: () => forceI18n || (!isCI && /prod|beta/.test(branch)),
+            task() {
+                return execa('npm', ['run', 'i18n:sync']);
+            }
+        },
+        {
             title: 'Build the application',
             task() {
                 const args = process.argv.slice(2);
@@ -168,7 +175,7 @@ const getTasks = (branch, { isCI, flowType = 'single' }) => {
             task: () => push(branch)
         },
         {
-            title: 'Create I18N',
+            title: 'Update crowdin with latest translations',
             enabled: () => !isCI && /prod|beta/.test(branch),
             task() {
                 return execa('npm', ['run', 'i18n:build']);
@@ -220,8 +227,9 @@ console.log('');
 env.argv.debug && json(CONFIG);
 
 const flowType = env.argv.flow;
+const forceI18n = env.argv.i18n;
 const start = moment(Date.now());
-const tasks = new Listr(getTasks(branch, { isCI, flowType }), {
+const tasks = new Listr(getTasks(branch, { isCI, flowType, forceI18n }), {
     renderer: UpdaterRenderer,
     collapse: false
 });
