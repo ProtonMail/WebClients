@@ -330,12 +330,16 @@ function addressKeysView(
                     params: {
                         submit(password) {
                             reactivateKeyModal.deactivate();
-                            const promise = reactivateKeys
-                                .process([key], password, { address })
-                                .then(({ success, failed }) => {
-                                    success && notification.success(success);
-                                    failed && notification.error(failed);
-                                });
+                            const toProcess = [
+                                {
+                                    addressID: address.ID,
+                                    keys: [key]
+                                }
+                            ];
+                            const promise = reactivateKeys.process(toProcess, password).then(({ success, failed }) => {
+                                success && notification.success(success);
+                                failed && notification.error(failed);
+                            });
 
                             networkActivityTracker.track(promise);
                         },

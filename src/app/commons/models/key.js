@@ -2,12 +2,14 @@
 function Key($http, url, srp) {
     const requestURL = url.build('keys');
 
+    const unload = ({ data }) => data;
+
     /**
      * Get public keys of the given emails addresses
      * @return {Promise}
      */
     const keys = (params = {}) => {
-        return $http.get(requestURL(), params).then(({ data } = {}) => data);
+        return $http.get(requestURL(), params).then(unload);
     };
 
     /**
@@ -101,7 +103,7 @@ function Key($http, url, srp) {
      * @return {Promise}
      */
     const salts = () => {
-        return $http.get(requestURL('salts'));
+        return $http.get(requestURL('salts')).then(unload);
     };
     /**
      * Update the key flags
