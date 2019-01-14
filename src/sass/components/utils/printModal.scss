@@ -28,12 +28,13 @@
     }
 
     /* hide everything else not needed for print */
-    body.secure #body, /* appp */
+    body.secure #body, /* app */
     .pm_modal .modal-dialog .close, /* modal close button */
     .pm_modal .modal-dialog .modal-content h4, /* modal text "print preview" */
     .pm_modal .modal-overlay, /* overlay */
     .modal-footer, /* modale footer buttons */
-    button.fa.fa-ellipsis-h.pm_button.more /* more button */ {
+    button.fa.fa-ellipsis-h.pm_button.more, /* more button */
+    .noprint /* helper */ {
        display: none !important;
     }
 
