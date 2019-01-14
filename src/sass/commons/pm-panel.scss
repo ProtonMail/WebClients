@@ -53,8 +53,8 @@ body.light {
 body.appConfigBody-is-mobile {
 	.pm_panel {
         width: auto;
-        max-width: 500px;
-		padding: 0 !important;
+        max-width: $panel;
+		padding: 15px 20px;
         margin-top: 2rem;
 
         &-bottom {
@@ -85,7 +85,7 @@ body.appConfigBody-is-mobile {
 #support-reset-password,
 #support-message {
 	.wrap {
-		width: $panel;
+		max-width: $panel;
 		margin: 2rem auto;
 		box-sizing: border-box;
 	}
