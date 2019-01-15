@@ -7,7 +7,7 @@
     position: relative;
     font-family: sans-serif;
     opacity: .999; /* stacking context, don't remove it otherwise dropdown menus will fail */
-    z-index: 100;
+    z-index: 150;
 }
 
 .headerSecuredDesktop-container,
@@ -81,6 +81,13 @@ body.appConfigBody-is-mobile .headerSecuredMobile-container { height: 70px }
 }
 
 // Composer maximized
+@media (max-width: $tablet-landscape) {
+    .appConfigBody-maximizedComposer .headerSecured-container,
+    .appConfigBody-is-mobile .headerSecured-container {
+        z-index: 100;
+    }
+}
+
 .appConfigBody-is-mobile.appConfigBody-activeComposer {
     .headerSecuredMobile-compose {
         pointer-events: none
