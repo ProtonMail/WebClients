@@ -112,7 +112,7 @@
                     width: 100%;
                 }
             }
-            > span:not(.pm_buttons) {
+            > span:not(.pm_buttons):not(.no-ellipsis) {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
