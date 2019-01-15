@@ -103,3 +103,14 @@
         border-right: 0;
     }
 }
+
+@media (max-width: $mobile-tiny) {
+    .toolbarMobile-container {
+        .pm_buttons a,
+        .toolbarMobile-btn-select-folder,
+        .open-label,
+        .pm_trigger {
+            padding: 0 6px;
+        }
+    }
+}
