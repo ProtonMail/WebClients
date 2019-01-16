@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
-"PO-Revision-Date: 2018-12-20 10:02\n"
+"PO-Revision-Date: 2019-01-09 16:56\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:59
 msgctxt "1 of 2 contacts successfully imported."
@@ -404,7 +404,7 @@ msgstr "CC CCO"
 #: ./src/templates/modals/exportKeyModal.tpl.html:17
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
 #: ./src/templates/modals/generate.tpl.html:76
-#: ./src/templates/modals/generateOrganization.tpl.html:32
+#: ./src/templates/modals/generateOrganization.tpl.html:38
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
 #: ./src/templates/modals/member.tpl.html:110
@@ -733,9 +733,9 @@ msgstr "Descrifrar"
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:34
 #: ./src/templates/elements/moveElement.tpl.html:40
-#: ./src/templates/message/message.tpl.html:226
+#: ./src/templates/message/message.tpl.html:232
 #: ./src/templates/modals/deleteAccount.tpl.html:53
-#: ./src/templates/ui/toolbarMobile.tpl.html:50
+#: ./src/templates/ui/toolbarMobile.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:124
 #: ./src/templates/views/labels.tpl.html:63
 #: ./src/templates/views/payments.tpl.html:44
@@ -954,7 +954,7 @@ msgstr "Tiempo de expiración"
 #: ./src/app/address/services/deleteKeyProcess.js:33
 #: ./src/templates/address/addressKeysView.tpl.html:148
 #: ./src/templates/address/addressKeysView.tpl.html:162
-#: ./src/templates/message/message.tpl.html:244
+#: ./src/templates/message/message.tpl.html:250
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
@@ -998,7 +998,7 @@ msgid "Fullscreen"
 msgstr "Pantalla completa"
 
 #: ./src/templates/modals/generate.tpl.html:77
-#: ./src/templates/modals/generateOrganization.tpl.html:33
+#: ./src/templates/modals/generateOrganization.tpl.html:39
 msgctxt "Action"
 msgid "Generate Keys"
 msgstr "Generar claves"
@@ -1030,7 +1030,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr "Ocultar"
 
-#: ./src/templates/message/message.tpl.html:256
+#: ./src/templates/message/message.tpl.html:262
 msgctxt "Action"
 msgid "Hide details"
 msgstr "Ocultar detalles"
@@ -1168,7 +1168,7 @@ msgstr "Establecer por defecto"
 #. link to domains
 #: ./src/templates/dashboard/overviewSection.tpl.html:18
 #: ./src/templates/dashboard/overviewSection.tpl.html:37
-#: ./src/templates/views/members.tpl.html:97
+#: ./src/templates/views/members.tpl.html:99
 msgctxt "Action"
 msgid "Manage"
 msgstr "Administrar"
@@ -1182,7 +1182,7 @@ msgstr "Manual"
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:11
 #: ./src/templates/directives/ui/readUnread.tpl.html:4
-#: ./src/templates/ui/toolbarMobile.tpl.html:21
+#: ./src/templates/ui/toolbarMobile.tpl.html:22
 msgctxt "Action"
 msgid "Mark as read"
 msgstr "Marcar como leído"
@@ -1193,15 +1193,20 @@ msgctxt "Action"
 msgid "Mark as read - Mark as unread"
 msgstr "Marcar como leído - marcar como no leído"
 
-#: ./src/templates/message/message.tpl.html:219
+#: ./src/templates/ui/toolbarMobile.tpl.html:13
+msgctxt "Action"
+msgid "Mark as read/unread"
+msgstr ""
+
+#: ./src/templates/message/message.tpl.html:224
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr "Marcar como spam"
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:13
 #: ./src/templates/directives/ui/readUnread.tpl.html:20
-#: ./src/templates/message/message.tpl.html:212
-#: ./src/templates/ui/toolbarMobile.tpl.html:17
+#: ./src/templates/message/message.tpl.html:216
+#: ./src/templates/ui/toolbarMobile.tpl.html:18
 msgctxt "Action"
 msgid "Mark as unread"
 msgstr "Marcar como no leído"
@@ -1246,36 +1251,37 @@ msgstr "Más"
 #. Tooltip
 #: ./src/templates/message/message.tpl.html:139
 #: ./src/templates/message/message.tpl.html:141
+#: ./src/templates/ui/toolbarMobile.tpl.html:31
 msgctxt "Action"
 msgid "Move to"
 msgstr "Mover a"
 
 #: ./src/templates/elements/moveElement.tpl.html:18
 #: ./src/templates/elements/moveElement.tpl.html:24
-#: ./src/templates/ui/toolbarMobile.tpl.html:42
+#: ./src/templates/ui/toolbarMobile.tpl.html:44
 msgctxt "Action"
 msgid "Move to archive"
 msgstr "Mover al archivo"
 
 #: ./src/templates/elements/moveElement.tpl.html:10
 #: ./src/templates/elements/moveElement.tpl.html:16
-#: ./src/templates/message/message.tpl.html:202
-#: ./src/templates/ui/toolbarMobile.tpl.html:38
+#: ./src/templates/message/message.tpl.html:203
+#: ./src/templates/ui/toolbarMobile.tpl.html:40
 msgctxt "Action"
 msgid "Move to inbox"
 msgstr "Mover al buzón"
 
 #: ./src/templates/elements/moveElement.tpl.html:26
 #: ./src/templates/elements/moveElement.tpl.html:32
-#: ./src/templates/ui/toolbarMobile.tpl.html:46
+#: ./src/templates/ui/toolbarMobile.tpl.html:48
 msgctxt "Action"
 msgid "Move to spam"
 msgstr "Mover a spam"
 
 #: ./src/templates/elements/moveElement.tpl.html:2
 #: ./src/templates/elements/moveElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:208
-#: ./src/templates/ui/toolbarMobile.tpl.html:34
+#: ./src/templates/message/message.tpl.html:210
+#: ./src/templates/ui/toolbarMobile.tpl.html:36
 msgctxt "Action"
 msgid "Move to trash"
 msgstr "Mover a la papelera"
@@ -1330,7 +1336,7 @@ msgctxt "Action"
 msgid "No"
 msgstr "No"
 
-#: ./src/templates/ui/toolbarMobile.tpl.html:54
+#: ./src/templates/ui/toolbarMobile.tpl.html:56
 msgctxt "Action"
 msgid "Not spam"
 msgstr "No es spam"
@@ -1387,7 +1393,7 @@ msgctxt "Action"
 msgid "Previous"
 msgstr "Anterior"
 
-#: ./src/templates/message/message.tpl.html:248
+#: ./src/templates/message/message.tpl.html:254
 #: ./src/templates/utils/printModal.tpl.html:28
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
@@ -1680,7 +1686,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr "Mostrar todo"
 
-#: ./src/templates/message/message.tpl.html:255
+#: ./src/templates/message/message.tpl.html:261
 msgctxt "Action"
 msgid "Show details"
 msgstr "Mostrar detalles"
@@ -1844,9 +1850,9 @@ msgstr "Actualizar"
 #: ./src/templates/dashboard/overviewSection.tpl.html:23
 #: ./src/templates/dashboard/overviewSection.tpl.html:42
 #: ./src/templates/ui/navigation/navigation.tpl.html:7
-#: ./src/templates/views/members.tpl.html:54
-#: ./src/templates/views/members.tpl.html:67
-#: ./src/templates/views/members.tpl.html:80
+#: ./src/templates/views/members.tpl.html:58
+#: ./src/templates/views/members.tpl.html:71
+#: ./src/templates/views/members.tpl.html:84
 msgctxt "Action"
 msgid "Upgrade"
 msgstr "Mejorar"
@@ -1920,17 +1926,17 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr "Mostrar atajos de teclado"
 
-#: ./src/templates/message/message.tpl.html:240
+#: ./src/templates/message/message.tpl.html:246
 msgctxt "Action"
 msgid "View headers"
 msgstr "Mostrar encabezados"
 
-#: ./src/templates/message/message.tpl.html:235
+#: ./src/templates/message/message.tpl.html:241
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr "Ver HTML renderizado"
 
-#: ./src/templates/message/message.tpl.html:231
+#: ./src/templates/message/message.tpl.html:237
 msgctxt "Action"
 msgid "View source code"
 msgstr "Mostrar código fuente"
@@ -2044,12 +2050,14 @@ msgstr "Añadir a grupo de contactos"
 
 #: ./src/templates/ui/toolbarDesktop.tpl.html:41
 #: ./src/templates/ui/toolbarDesktop.tpl.html:52
+#: ./src/templates/ui/toolbarMobile.tpl.html:75
 msgctxt "Action toolbar"
 msgid "Label as"
 msgstr "Etiquetar como"
 
 #: ./src/templates/ui/toolbarDesktop.tpl.html:20
 #: ./src/templates/ui/toolbarDesktop.tpl.html:31
+#: ./src/templates/ui/toolbarMobile.tpl.html:65
 msgctxt "Action toolbar"
 msgid "Move to"
 msgstr "Mover a"
@@ -3353,6 +3361,11 @@ msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr "Encabezados cifrados"
 
+#: ./src/app/authentication/controllers/login.js:30
+msgctxt "Error"
+msgid "<strong>Incompatible browser detected</strong><br>Unfortunately your browser is outdated and not compatible with ProtonMail.<br>Please use the latest version of Safari, Firefox, Chrome, or Edge.<br>As a temporary workaround, you could try using an older version of ProtonMail <a href=\"https://old.protonmail.com\">here</a>."
+msgstr "<strong>Navegador incompatible detectado</strong><br>Su navegador está desactualizado y no es compatible con ProtonMail.<br>Utilice la última versión de Safari, Firefox, Chrome o Edge.<br>Como solución temporal, puede utilizar una versión anterior de ProtonMail <a href=\"https://old.protonmail.com\">aquí</a>."
+
 #: ./src/templates/labels/labelNameInput.tpl.html:21
 msgctxt "Error"
 msgid "A group with this name already exists."
@@ -3430,7 +3443,7 @@ msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "Contacte con el administrador de su organización para resolver esto."
 
-#: ./src/app/authentication/controllers/login.js:33
+#: ./src/app/authentication/controllers/login.js:41
 msgctxt "Error"
 msgid "Cookies are disabled.\n"
 "Please activate it and then reload the page.\n"
@@ -3761,7 +3774,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "Ingrese al menos un destinatario."
 
-#: ./src/app/authentication/controllers/login.js:44
+#: ./src/app/authentication/controllers/login.js:52
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Ingrese su código de dos factores"
@@ -3905,7 +3918,7 @@ msgctxt "Error"
 msgid "The request failed"
 msgstr "La solicitud ha fallado"
 
-#: ./src/app/authentication/controllers/login.js:27
+#: ./src/app/authentication/controllers/login.js:35
 msgctxt "Error"
 msgid "Unable to log you in. Please try again later."
 msgstr "No se pudo iniciar sesión. Intente más tarde."
@@ -3972,7 +3985,7 @@ msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr "Estás haciendo esto demasiado, por favor, inténtelo de nuevo más tarde"
 
-#: ./src/app/authentication/controllers/login.js:28
+#: ./src/app/authentication/controllers/login.js:36
 msgctxt "Error"
 msgid "You are in Private Mode or have Session Storage disabled.\n"
 "Please deactivate Private Mode and then reload the page.\n"
@@ -4944,7 +4957,7 @@ msgctxt "Info"
 msgid "Are you sure you want to remove administrative privileges from this user?"
 msgstr "¿Está seguro que desea eliminar los privilegios administrativos de este usuario?"
 
-#: ./src/app/elements/directives/advancedFilterElement.js:52
+#: ./src/app/elements/directives/advancedFilterElement.js:46
 #: ./src/app/elements/services/removeElement.js:16
 msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
@@ -4965,12 +4978,12 @@ msgctxt "Info"
 msgid "Automatic replies can respond automatically to incoming messages (such as when you are on vacation and can't respond)."
 msgstr "Las respuestas automáticas pueden responder automáticamente a mensajes entrantes (tales como respuestas de vacaciones)."
 
-#: ./src/templates/views/members.tpl.html:73
+#: ./src/templates/views/members.tpl.html:77
 msgctxt "Info"
 msgid "Available VPN connections"
 msgstr "Conexiones VPN disponibles"
 
-#: ./src/templates/views/members.tpl.html:86
+#: ./src/templates/views/members.tpl.html:90
 msgctxt "Info"
 msgid "Available domains"
 msgstr "Dominios disponibles"
@@ -5230,12 +5243,6 @@ msgctxt "Info"
 msgid "Download the attachment {{name}}"
 msgstr "Descargar el adjunto {{name}}"
 
-#. Inline OpenPGP means NOT pgp/mime, so the body and attachments are encrypted separately
-#: ./src/templates/views/keysView.tpl.html:11
-msgctxt "Info"
-msgid "Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported."
-msgstr "Descargue las claves PGP para utilizarlas con otros servicios compatibles con PGP. Sólo se admiten mensajes entrantes en formato OpenPGP."
-
 #: ./src/app/composer/directives/composerDropzone.js:53
 msgctxt "Info"
 msgid "Drop a file here to upload"
@@ -5352,7 +5359,7 @@ msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sre
 msgstr "Las cuentas gratuitas de ProtonMail se limitan a 1 filtro personalizado. Por favor <a ui-sref=\"secured.dashboard({scroll: true})\">actualice</a> para obtener filtros ilimitados."
 
 #: ./src/templates/modals/generate.tpl.html:35
-#: ./src/templates/modals/generateOrganization.tpl.html:23
+#: ./src/templates/modals/generateOrganization.tpl.html:29
 msgctxt "Info"
 msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
 msgstr "Generar claves de cifrado de 4096 bits puede bloquear o congelar su navegador. Las claves de 4096 bits sólo se recomiendan para computadoras de alto rendimiento, no se recomienda para tabletas y dispositivos móviles."
@@ -5551,7 +5558,7 @@ msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr "No hay asunto, ¿enviar de todos modos?"
 
-#: ./src/templates/views/members.tpl.html:47
+#: ./src/templates/views/members.tpl.html:46
 msgctxt "Info"
 msgid "Number of users"
 msgstr "Número de usuarios"
@@ -5597,7 +5604,7 @@ msgctxt "Info"
 msgid "Organization keys restored"
 msgstr "Claves de la organización restauradas"
 
-#: ./src/templates/views/members.tpl.html:60
+#: ./src/templates/views/members.tpl.html:64
 msgctxt "Info"
 msgid "Organization storage"
 msgstr "Almacenamiento de la organización"
@@ -5618,7 +5625,7 @@ msgctxt "Info"
 msgid "Other administrators exist in your organization, you are responsible for communicating the new password to them."
 msgstr "Existen otros administradores en su organización, es responsable de comunicarles la contraseña nueva."
 
-#: ./src/templates/modals/generateOrganization.tpl.html:28
+#: ./src/templates/modals/generateOrganization.tpl.html:34
 msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
 msgstr "Existen otros administradores en su organización. Debe comunicarles la nueva clave de recuperación de la contraseña a fin de que puedan reactivar sus privilegios de administrador."
@@ -6529,12 +6536,12 @@ msgctxt "Info"
 msgid "no label found"
 msgstr "ninguna etiqueta encontrada"
 
-#: ./src/templates/views/members.tpl.html:50
+#: ./src/templates/views/members.tpl.html:51
 msgctxt "Info"
 msgid "of"
 msgstr "de"
 
-#: ./src/templates/views/members.tpl.html:50
+#: ./src/templates/views/members.tpl.html:54
 msgctxt "Info"
 msgid "used"
 msgstr "usado"
@@ -6544,7 +6551,7 @@ msgctxt "Info"
 msgid "{{ name }} is also in your contacts. Remove them from your contacts?"
 msgstr "{{ name }} también está en sus contactos. ¿Eliminarlo también de sus contactos?"
 
-#: ./src/templates/views/members.tpl.html:76
+#: ./src/templates/views/members.tpl.html:80
 msgctxt "Info"
 msgid "{{ organization.MaxVPN - organization.UsedVPN }}"
 msgstr "{{ organization.MaxVPN - organization.UsedVPN }}"
@@ -7627,19 +7634,19 @@ msgstr "Cambiar a ProtonVPN Plus"
 #: ./src/templates/views/domains.tpl.html:252
 msgctxt "List domains"
 msgid "No custom domain addresses found"
-msgstr ""
+msgstr "No se encontraron direcciones de dominio personalizado"
 
 #: ./src/templates/views/domains.tpl.html:254
 msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr "Añada un dominio personalizado antes de configurar las direcciones."
 
-#: ./src/app/authentication/controllers/login.js:38
+#: ./src/app/authentication/controllers/login.js:46
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr "Ingrese su nombre de usuario y contraseña"
 
-#: ./src/app/authentication/controllers/login.js:43
+#: ./src/app/authentication/controllers/login.js:51
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr "Falta la contraseña"
@@ -7784,7 +7791,7 @@ msgctxt "Message"
 msgid "Re:"
 msgstr "Re:"
 
-#: ./src/app/message/factories/messageModel.js:152
+#: ./src/app/message/factories/messageModel.js:85
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr "Mensaje vacío"
@@ -7794,59 +7801,59 @@ msgctxt "Message decryption error"
 msgid "Decryption error: Decryption of this message's encryption content failed."
 msgstr "Error de descifrado: no se pudo descifrar el contenido cifrado de este mensaje."
 
-#: ./src/app/message/factories/messageModel.js:122
+#: ./src/app/message/factories/getEncryptionType.js:50
 msgctxt "Message encryption status"
 msgid "Encrypted message"
 msgstr "Mensaje cifrado"
 
-#: ./src/app/message/factories/messageModel.js:85
+#: ./src/app/message/factories/getEncryptionType.js:13
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message"
 msgstr "Mensaje cifrado de extremo a extremo"
 
-#: ./src/app/message/factories/messageModel.js:86
+#: ./src/app/message/factories/getEncryptionType.js:14
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message from verified address"
 msgstr "Mensaje cifrado de extremo a extremo de dirección verificada"
 
-#: ./src/app/message/factories/messageModel.js:95
+#: ./src/app/message/factories/getEncryptionType.js:23
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message"
 msgstr "Mensaje PGP-cifrado"
 
-#: ./src/app/message/factories/messageModel.js:96
+#: ./src/app/message/factories/getEncryptionType.js:24
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message from verified address"
 msgstr "Mensaje PGP-cifrado de dirección verificada"
 
-#: ./src/app/message/factories/messageModel.js:102
+#: ./src/app/message/factories/getEncryptionType.js:30
 msgctxt "Message encryption status"
 msgid "PGP-signed message from verified address"
 msgstr "Mensaje PGP-firmado de dirección verificada"
 
-#: ./src/app/message/factories/messageModel.js:103
-#: ./src/app/message/factories/messageModel.js:109
-#: ./src/app/message/factories/messageModel.js:119
-#: ./src/app/message/factories/messageModel.js:91
-#: ./src/app/message/factories/messageModel.js:97
+#: ./src/app/message/factories/getEncryptionType.js:19
+#: ./src/app/message/factories/getEncryptionType.js:25
+#: ./src/app/message/factories/getEncryptionType.js:31
+#: ./src/app/message/factories/getEncryptionType.js:37
+#: ./src/app/message/factories/getEncryptionType.js:47
 msgctxt "Message encryption status"
 msgid "Sender verification failed"
 msgstr "Falló la verificación del remitente"
 
-#: ./src/app/message/factories/messageModel.js:113
+#: ./src/app/message/factories/getEncryptionType.js:41
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail with zero access encryption"
 msgstr "Enviado por ProtonMail con cifrado de acceso cero."
 
-#: ./src/app/message/factories/messageModel.js:107
-#: ./src/app/message/factories/messageModel.js:108
+#: ./src/app/message/factories/getEncryptionType.js:35
+#: ./src/app/message/factories/getEncryptionType.js:36
 msgctxt "Message encryption status"
 msgid "Sent by you with end-to-end encryption"
 msgstr "Enviado por usted con cifrado de extremo a extremo"
 
-#: ./src/app/message/factories/messageModel.js:101
-#: ./src/app/message/factories/messageModel.js:117
-#: ./src/app/message/factories/messageModel.js:118
+#: ./src/app/message/factories/getEncryptionType.js:29
+#: ./src/app/message/factories/getEncryptionType.js:45
+#: ./src/app/message/factories/getEncryptionType.js:46
 msgctxt "Message encryption status"
 msgid "Stored with zero access encryption"
 msgstr "Almacenado con cifrado de acceso cero"
@@ -8854,7 +8861,7 @@ msgctxt "Success"
 msgid "Folder deleted"
 msgstr "Carpeta eliminada"
 
-#: ./src/app/elements/directives/advancedFilterElement.js:82
+#: ./src/app/elements/directives/advancedFilterElement.js:71
 msgctxt "Success"
 msgid "Folder emptied"
 msgstr "Carpeta vaciada"
@@ -9113,21 +9120,6 @@ msgstr "Plan de un año"
 msgctxt "Title"
 msgid "2-year plan"
 msgstr "Plan de dos años"
-
-#: ./src/templates/views/members.tpl.html:72
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Available VPN connections</span>"
-msgstr "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Conexiones VPN disponibles</span>"
-
-#: ./src/templates/views/members.tpl.html:46
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Number of users</span>"
-msgstr "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Número de usuarios</span>"
-
-#: ./src/templates/views/members.tpl.html:59
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate=\"\" translate-context=\"Info\">Organization storage</span>"
-msgstr "<span class=\"margin-right\" translate=\"\" translate-context=\"Info\">Almacenamiento de la organización</span>"
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:13
 #: ./src/app/ui/factories/pageTitlesModel.js:26
@@ -9489,7 +9481,7 @@ msgctxt "Title"
 msgid "Confirm mailbox password"
 msgstr "Confirmar contraseña del buzón"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:26
+#: ./src/templates/modals/generateOrganization.tpl.html:32
 msgctxt "Title"
 msgid "Confirm recovery Password"
 msgstr "Confirmar contraseña de recuperación"
@@ -9510,7 +9502,7 @@ msgctxt "Title"
 msgid "Contact List"
 msgstr "Lista de Contactos"
 
-#: ./src/templates/views/keysView.tpl.html:19
+#: ./src/templates/views/keysView.tpl.html:18
 msgctxt "Title"
 msgid "Contact encryption keys"
 msgstr "Claves de cifrado del contacto"
@@ -9683,7 +9675,7 @@ msgid "Delete address"
 msgstr "Eliminar dirección"
 
 #: ./src/app/contact/factories/contactEditor.js:337
-#: ./src/app/elements/directives/advancedFilterElement.js:51
+#: ./src/app/elements/directives/advancedFilterElement.js:45
 msgctxt "Title"
 msgid "Delete all"
 msgstr "Eliminar todo"
@@ -10021,7 +10013,7 @@ msgstr "Ayuda y soporte"
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:25
-#: ./src/templates/modals/generateOrganization.tpl.html:13
+#: ./src/templates/modals/generateOrganization.tpl.html:14
 #: ./src/templates/modals/setupOrganization.tpl.html:34
 msgctxt "Title"
 msgid "High security"
@@ -10029,7 +10021,7 @@ msgstr "Alta seguridad"
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:31
-#: ./src/templates/modals/generateOrganization.tpl.html:19
+#: ./src/templates/modals/generateOrganization.tpl.html:23
 #: ./src/templates/modals/setupOrganization.tpl.html:40
 msgctxt "Title"
 msgid "Highest security"
@@ -10112,7 +10104,7 @@ msgctxt "Title"
 msgid "Key password"
 msgstr "Clave de contraseña"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:24
+#: ./src/templates/modals/generateOrganization.tpl.html:30
 msgctxt "Title"
 msgid "Key recovery password"
 msgstr "Contraseña de recuperación de claves"

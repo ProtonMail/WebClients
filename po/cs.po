@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Czech\n"
 "Language: cs_CZ\n"
-"PO-Revision-Date: 2018-12-20 10:07\n"
+"PO-Revision-Date: 2019-01-09 16:57\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:59
 msgctxt "1 of 2 contacts successfully imported."
@@ -406,7 +406,7 @@ msgstr "CC BCC"
 #: ./src/templates/modals/exportKeyModal.tpl.html:17
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
 #: ./src/templates/modals/generate.tpl.html:76
-#: ./src/templates/modals/generateOrganization.tpl.html:32
+#: ./src/templates/modals/generateOrganization.tpl.html:38
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
 #: ./src/templates/modals/member.tpl.html:110
@@ -735,9 +735,9 @@ msgstr "Dešifrovat"
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:34
 #: ./src/templates/elements/moveElement.tpl.html:40
-#: ./src/templates/message/message.tpl.html:226
+#: ./src/templates/message/message.tpl.html:232
 #: ./src/templates/modals/deleteAccount.tpl.html:53
-#: ./src/templates/ui/toolbarMobile.tpl.html:50
+#: ./src/templates/ui/toolbarMobile.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:124
 #: ./src/templates/views/labels.tpl.html:63
 #: ./src/templates/views/payments.tpl.html:44
@@ -956,7 +956,7 @@ msgstr "Platnost do"
 #: ./src/app/address/services/deleteKeyProcess.js:33
 #: ./src/templates/address/addressKeysView.tpl.html:148
 #: ./src/templates/address/addressKeysView.tpl.html:162
-#: ./src/templates/message/message.tpl.html:244
+#: ./src/templates/message/message.tpl.html:250
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
@@ -1000,7 +1000,7 @@ msgid "Fullscreen"
 msgstr "Celá obrazovka"
 
 #: ./src/templates/modals/generate.tpl.html:77
-#: ./src/templates/modals/generateOrganization.tpl.html:33
+#: ./src/templates/modals/generateOrganization.tpl.html:39
 msgctxt "Action"
 msgid "Generate Keys"
 msgstr "Generovat klíče"
@@ -1032,7 +1032,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr "Skrýt"
 
-#: ./src/templates/message/message.tpl.html:256
+#: ./src/templates/message/message.tpl.html:262
 msgctxt "Action"
 msgid "Hide details"
 msgstr "Skrýt detaily"
@@ -1126,7 +1126,7 @@ msgstr "Nahrát vzhled Edison"
 #: ./src/templates/contact/contactViewItem.tpl.html:53
 msgctxt "Action"
 msgid "Load image"
-msgstr ""
+msgstr "Načíst obrázek"
 
 #: ./src/templates/partials/sidebar-responsive.tpl.html:39
 #: ./src/templates/ui/header/headerNoAuth.tpl.html:30
@@ -1170,7 +1170,7 @@ msgstr "Nastavit jako výchozí"
 #. link to domains
 #: ./src/templates/dashboard/overviewSection.tpl.html:18
 #: ./src/templates/dashboard/overviewSection.tpl.html:37
-#: ./src/templates/views/members.tpl.html:97
+#: ./src/templates/views/members.tpl.html:99
 msgctxt "Action"
 msgid "Manage"
 msgstr "Spravovat"
@@ -1184,7 +1184,7 @@ msgstr "Ručně"
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:11
 #: ./src/templates/directives/ui/readUnread.tpl.html:4
-#: ./src/templates/ui/toolbarMobile.tpl.html:21
+#: ./src/templates/ui/toolbarMobile.tpl.html:22
 msgctxt "Action"
 msgid "Mark as read"
 msgstr "Označit jako přečtené"
@@ -1195,15 +1195,20 @@ msgctxt "Action"
 msgid "Mark as read - Mark as unread"
 msgstr "Označit jako přečtené - Označit jako nepřečtené"
 
-#: ./src/templates/message/message.tpl.html:219
+#: ./src/templates/ui/toolbarMobile.tpl.html:13
+msgctxt "Action"
+msgid "Mark as read/unread"
+msgstr ""
+
+#: ./src/templates/message/message.tpl.html:224
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr "Označit jako spam"
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:13
 #: ./src/templates/directives/ui/readUnread.tpl.html:20
-#: ./src/templates/message/message.tpl.html:212
-#: ./src/templates/ui/toolbarMobile.tpl.html:17
+#: ./src/templates/message/message.tpl.html:216
+#: ./src/templates/ui/toolbarMobile.tpl.html:18
 msgctxt "Action"
 msgid "Mark as unread"
 msgstr "Označit jako nepřečtené"
@@ -1248,36 +1253,37 @@ msgstr "Více"
 #. Tooltip
 #: ./src/templates/message/message.tpl.html:139
 #: ./src/templates/message/message.tpl.html:141
+#: ./src/templates/ui/toolbarMobile.tpl.html:31
 msgctxt "Action"
 msgid "Move to"
 msgstr "Přesunout do"
 
 #: ./src/templates/elements/moveElement.tpl.html:18
 #: ./src/templates/elements/moveElement.tpl.html:24
-#: ./src/templates/ui/toolbarMobile.tpl.html:42
+#: ./src/templates/ui/toolbarMobile.tpl.html:44
 msgctxt "Action"
 msgid "Move to archive"
 msgstr "Přesunout do archivu"
 
 #: ./src/templates/elements/moveElement.tpl.html:10
 #: ./src/templates/elements/moveElement.tpl.html:16
-#: ./src/templates/message/message.tpl.html:202
-#: ./src/templates/ui/toolbarMobile.tpl.html:38
+#: ./src/templates/message/message.tpl.html:203
+#: ./src/templates/ui/toolbarMobile.tpl.html:40
 msgctxt "Action"
 msgid "Move to inbox"
 msgstr "Přesunout do složky Doručená pošta"
 
 #: ./src/templates/elements/moveElement.tpl.html:26
 #: ./src/templates/elements/moveElement.tpl.html:32
-#: ./src/templates/ui/toolbarMobile.tpl.html:46
+#: ./src/templates/ui/toolbarMobile.tpl.html:48
 msgctxt "Action"
 msgid "Move to spam"
 msgstr "Přesunout do složky Nevyžádaná pošta"
 
 #: ./src/templates/elements/moveElement.tpl.html:2
 #: ./src/templates/elements/moveElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:208
-#: ./src/templates/ui/toolbarMobile.tpl.html:34
+#: ./src/templates/message/message.tpl.html:210
+#: ./src/templates/ui/toolbarMobile.tpl.html:36
 msgctxt "Action"
 msgid "Move to trash"
 msgstr "Přesunout do koše"
@@ -1332,7 +1338,7 @@ msgctxt "Action"
 msgid "No"
 msgstr "Ne"
 
-#: ./src/templates/ui/toolbarMobile.tpl.html:54
+#: ./src/templates/ui/toolbarMobile.tpl.html:56
 msgctxt "Action"
 msgid "Not spam"
 msgstr "Není spam"
@@ -1389,7 +1395,7 @@ msgctxt "Action"
 msgid "Previous"
 msgstr "Předchozí"
 
-#: ./src/templates/message/message.tpl.html:248
+#: ./src/templates/message/message.tpl.html:254
 #: ./src/templates/utils/printModal.tpl.html:28
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
@@ -1682,7 +1688,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr "Zobrazit vše"
 
-#: ./src/templates/message/message.tpl.html:255
+#: ./src/templates/message/message.tpl.html:261
 msgctxt "Action"
 msgid "Show details"
 msgstr "Zobrazit detaily"
@@ -1846,9 +1852,9 @@ msgstr "Aktualizovat"
 #: ./src/templates/dashboard/overviewSection.tpl.html:23
 #: ./src/templates/dashboard/overviewSection.tpl.html:42
 #: ./src/templates/ui/navigation/navigation.tpl.html:7
-#: ./src/templates/views/members.tpl.html:54
-#: ./src/templates/views/members.tpl.html:67
-#: ./src/templates/views/members.tpl.html:80
+#: ./src/templates/views/members.tpl.html:58
+#: ./src/templates/views/members.tpl.html:71
+#: ./src/templates/views/members.tpl.html:84
 msgctxt "Action"
 msgid "Upgrade"
 msgstr "Rozšířit"
@@ -1922,17 +1928,17 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr "Zobrazit klávesové zkratky"
 
-#: ./src/templates/message/message.tpl.html:240
+#: ./src/templates/message/message.tpl.html:246
 msgctxt "Action"
 msgid "View headers"
 msgstr "Zobrazit hlavičku e-mailu"
 
-#: ./src/templates/message/message.tpl.html:235
+#: ./src/templates/message/message.tpl.html:241
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr "Zobrazit ve formátu HTML"
 
-#: ./src/templates/message/message.tpl.html:231
+#: ./src/templates/message/message.tpl.html:237
 msgctxt "Action"
 msgid "View source code"
 msgstr "Zobrazit zdrojový kód"
@@ -2046,12 +2052,14 @@ msgstr "Přidat do skupiny kontaktů"
 
 #: ./src/templates/ui/toolbarDesktop.tpl.html:41
 #: ./src/templates/ui/toolbarDesktop.tpl.html:52
+#: ./src/templates/ui/toolbarMobile.tpl.html:75
 msgctxt "Action toolbar"
 msgid "Label as"
 msgstr "Označit jako"
 
 #: ./src/templates/ui/toolbarDesktop.tpl.html:20
 #: ./src/templates/ui/toolbarDesktop.tpl.html:31
+#: ./src/templates/ui/toolbarMobile.tpl.html:65
 msgctxt "Action toolbar"
 msgid "Move to"
 msgstr "Přesunout do"
@@ -2643,7 +2651,9 @@ msgctxt "Confirm message"
 msgid "Deleting your keys is irreversible.\n"
 "        To be able to access any message encrypted with this key, you might want to make a back up of this key for later use.\n"
 "        Do you want to export this key?"
-msgstr ""
+msgstr "Smazání Vašich klíčů se nedá vrátit zpět. \n"
+"        Pro přístup ke zprávám šifrovaným pomocí tohoto klíče by jste si měli udělat jeho záložní kopii pro případné pozdější použití.\n"
+"        Chcete exportovat tento klíč?"
 
 #: ./src/app/address/services/deleteKeyProcess.js:18
 msgctxt "Confirm message"
@@ -3353,6 +3363,11 @@ msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr "Zašifrované záhlaví"
 
+#: ./src/app/authentication/controllers/login.js:30
+msgctxt "Error"
+msgid "<strong>Incompatible browser detected</strong><br>Unfortunately your browser is outdated and not compatible with ProtonMail.<br>Please use the latest version of Safari, Firefox, Chrome, or Edge.<br>As a temporary workaround, you could try using an older version of ProtonMail <a href=\"https://old.protonmail.com\">here</a>."
+msgstr "<strong>Zjištěn nepodporovaný prohlížeč</strong><br>Váš prohlížeč je bohužel zastaralý a není kompatibilní s ProtonMail.<br>Prosím používejte nejnovější verzi Safari, Firefox, Chrome, nebo Edge.<br>Jako dočasné řešení můžete zkusit použít starší verzi ProtonMail <a href=\"https://old.protonmail.com\">zde</a>."
+
 #: ./src/templates/labels/labelNameInput.tpl.html:21
 msgctxt "Error"
 msgid "A group with this name already exists."
@@ -3430,7 +3445,7 @@ msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "Obraťte se na svého správce ogranizace, abyste to vyřešili."
 
-#: ./src/app/authentication/controllers/login.js:33
+#: ./src/app/authentication/controllers/login.js:41
 msgctxt "Error"
 msgid "Cookies are disabled.\n"
 "Please activate it and then reload the page.\n"
@@ -3761,7 +3776,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "Zadejte prosím alespoň jednoho příjemce."
 
-#: ./src/app/authentication/controllers/login.js:44
+#: ./src/app/authentication/controllers/login.js:52
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Zadejte prosím své dvoufázové heslo"
@@ -3907,7 +3922,7 @@ msgctxt "Error"
 msgid "The request failed"
 msgstr "Požadavek se nezdařil"
 
-#: ./src/app/authentication/controllers/login.js:27
+#: ./src/app/authentication/controllers/login.js:35
 msgctxt "Error"
 msgid "Unable to log you in. Please try again later."
 msgstr "Nelze se přihlásit. Zkuste to prosím později."
@@ -3974,7 +3989,7 @@ msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr "Příliš mnoho pokusů, zkuste to prosím později"
 
-#: ./src/app/authentication/controllers/login.js:28
+#: ./src/app/authentication/controllers/login.js:36
 msgctxt "Error"
 msgid "You are in Private Mode or have Session Storage disabled.\n"
 "Please deactivate Private Mode and then reload the page.\n"
@@ -4161,7 +4176,7 @@ msgstr[3] "{{keys}} nejsou platné PGP klíče."
 #: ./src/app/message/directives/unsubscribePanel.js:5
 msgctxt "Error message when unsubscribing to mail list"
 msgid "Cannot unsubscribe with {{email}}, please upgrade to a paid plan or enable the address"
-msgstr ""
+msgstr "Nelze se odhlásit od {{email}}, upgradujte na placený plán nebo povolte adresu"
 
 #: ./src/app/core/directives/bugModalView.js:7
 msgctxt "Error notification in the bug report modal when the user upload file"
@@ -4858,7 +4873,7 @@ msgstr "Také se používá k obnovení zapomenutého hesla."
 #: ./src/templates/message/messagePublicKeyFound.tpl.html:4
 msgctxt "Info"
 msgid "An unknown public key has been detected for this recipient."
-msgstr ""
+msgstr "Pro tohoto příjemce byl zjištěn neznámý veřejný klíč."
 
 #: ./src/app/user/directives/signupPayForm.js:11
 msgctxt "Info"
@@ -4952,7 +4967,7 @@ msgctxt "Info"
 msgid "Are you sure you want to remove administrative privileges from this user?"
 msgstr "Opravdu chcete tomuto uživatelovi odebrat oprávnění správce?"
 
-#: ./src/app/elements/directives/advancedFilterElement.js:52
+#: ./src/app/elements/directives/advancedFilterElement.js:46
 #: ./src/app/elements/services/removeElement.js:16
 msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
@@ -4973,12 +4988,12 @@ msgctxt "Info"
 msgid "Automatic replies can respond automatically to incoming messages (such as when you are on vacation and can't respond)."
 msgstr "Automatické odpovědi mohou automaticky reagovat na příchozí zprávy (například, pokud jste na dovolené a nemůžete na zprávu odpovědět)."
 
-#: ./src/templates/views/members.tpl.html:73
+#: ./src/templates/views/members.tpl.html:77
 msgctxt "Info"
 msgid "Available VPN connections"
 msgstr "Dostupná VPN připojení"
 
-#: ./src/templates/views/members.tpl.html:86
+#: ./src/templates/views/members.tpl.html:90
 msgctxt "Info"
 msgid "Available domains"
 msgstr "Dostupné domény"
@@ -5237,12 +5252,6 @@ msgctxt "Info"
 msgid "Download the attachment {{name}}"
 msgstr "Stáhnout přílohu {{name}}"
 
-#. Inline OpenPGP means NOT pgp/mime, so the body and attachments are encrypted separately
-#: ./src/templates/views/keysView.tpl.html:11
-msgctxt "Info"
-msgid "Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported."
-msgstr "Stáhněte si PGP klíče, které chcete používat i v jiných aplikacích. Aktuálně jsou podporovány pouze příchozí zprávy ve formátu inline OpenPGP."
-
 #: ./src/app/composer/directives/composerDropzone.js:53
 msgctxt "Info"
 msgid "Drop a file here to upload"
@@ -5359,7 +5368,7 @@ msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sre
 msgstr "Bezplatné účty ProtonMail jsou omezeny na 1 vlastní filtr. Získejte neomezené filtry <a ui-sref=\"secured.dashboard({scroll: true})\">změnou tarifu</a>."
 
 #: ./src/templates/modals/generate.tpl.html:35
-#: ./src/templates/modals/generateOrganization.tpl.html:23
+#: ./src/templates/modals/generateOrganization.tpl.html:29
 msgctxt "Info"
 msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
 msgstr "Generování 4096-bitových šifrovacích klíčů může způsobit zamrznutí nebo pád prohlížeče. 4096-bitové klíče doporučujeme používat pouze na vysoce výkonných počítačích - nedoporučuje se pro tablety a mobily."
@@ -5558,7 +5567,7 @@ msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr "Žádný předmět, přesto odeslat?"
 
-#: ./src/templates/views/members.tpl.html:47
+#: ./src/templates/views/members.tpl.html:46
 msgctxt "Info"
 msgid "Number of users"
 msgstr "Počet uživatelů"
@@ -5604,7 +5613,7 @@ msgctxt "Info"
 msgid "Organization keys restored"
 msgstr "Klíče organizace byly obnoveny"
 
-#: ./src/templates/views/members.tpl.html:60
+#: ./src/templates/views/members.tpl.html:64
 msgctxt "Info"
 msgid "Organization storage"
 msgstr "Úložiště organizace"
@@ -5625,7 +5634,7 @@ msgctxt "Info"
 msgid "Other administrators exist in your organization, you are responsible for communicating the new password to them."
 msgstr "Ve vaší organizaci existují ostatní správci, vaší povinností je sdělit jim nové heslo."
 
-#: ./src/templates/modals/generateOrganization.tpl.html:28
+#: ./src/templates/modals/generateOrganization.tpl.html:34
 msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
 msgstr "Ve vaší organizaci existují ostatní správci. Vaší povinností je sdělit jim nové heslo pro obnovu, aby mohli obnovit své oprávnění pro kompletní správu účtu."
@@ -5773,7 +5782,7 @@ msgstr "Chcete-li získat podporu pro 1 nebo více uživatelů, přejděte pros�
 #: ./src/app/user/services/needUpgrade.js:4
 msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
-msgstr ""
+msgstr "Chcete-li použít tuto prémiovou funkci, upgradujte na placený plán."
 
 #: ./src/templates/views/members.tpl.html:173
 msgctxt "Info"
@@ -5976,7 +5985,7 @@ msgstr "Získejte zpět své soukromí! Nastavení zabezpečení e-mailového ú
 #: ./src/templates/contact/contactLoaderModal.tpl.html:66
 msgctxt "Info"
 msgid "Take the time to review how we should import these groups."
-msgstr ""
+msgstr "Zjištění, jak je možné importovat tyto skupiny trvá nějakou dobu."
 
 #: ./src/app/user/services/manageUser.js:21
 msgctxt "Info"
@@ -6087,7 +6096,7 @@ msgstr "Tato stránka je dostupná pouze na zařízeních s vyšším rozlišen�
 #: ./src/templates/message/messagePublicKeyPinning.tpl.html:3
 msgctxt "Info"
 msgid "This sender's public key has not been trusted yet."
-msgstr ""
+msgstr "Veřejný klíč tohoto odesílatele nebyl dosud ověřen."
 
 #: ./src/templates/views/appearance.tpl.html:12
 msgctxt "Info"
@@ -6251,7 +6260,7 @@ msgstr "Právě generujeme šifrovací klíče pro váš účet, může to trvat
 #: ./src/templates/contact/contactLoaderModal.tpl.html:62
 msgctxt "Info"
 msgid "We picked up at least one group/organization from the list of contacts you are importing."
-msgstr ""
+msgstr "Ze seznamu kontaktů, které importujete jsme identifikovali minimálně jednu skupinu/organizaci."
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:67
 msgctxt "Info"
@@ -6451,7 +6460,7 @@ msgstr "Váš účet nemá oprávnění používat službu ProtonVPN. Jste-li so
 #: ./src/templates/invoices/invoiceSection.tpl.html:56
 msgctxt "Info"
 msgid "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices."
-msgstr ""
+msgstr "Váš účet nebo organizace má v současné době opožděnou fakturu. Zaplaťte prosím všechny neuhrazené faktury."
 
 #: ./src/app/user/services/manageUser.js:20
 msgctxt "Info"
@@ -6490,10 +6499,10 @@ msgstr "použitých adres."
 msgctxt "Info"
 msgid "contact"
 msgid_plural "contacts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "kontakt"
+msgstr[1] "kontakty"
+msgstr[2] "kontaktů"
+msgstr[3] "kontakty"
 
 #: ./src/templates/attachments/listAttachments.tpl.html:11
 #: ./src/templates/directives/composer/composerAttachments.tpl.html:9
@@ -6541,12 +6550,12 @@ msgctxt "Info"
 msgid "no label found"
 msgstr "nebyl nalezen žádný štítek"
 
-#: ./src/templates/views/members.tpl.html:50
+#: ./src/templates/views/members.tpl.html:51
 msgctxt "Info"
 msgid "of"
 msgstr "z"
 
-#: ./src/templates/views/members.tpl.html:50
+#: ./src/templates/views/members.tpl.html:54
 msgctxt "Info"
 msgid "used"
 msgstr "použito"
@@ -6556,7 +6565,7 @@ msgctxt "Info"
 msgid "{{ name }} is also in your contacts. Remove them from your contacts?"
 msgstr "{{ name }} je taky mezi Vašimi kontakty. Chtete jej odstanit z Vašich kontaktů?"
 
-#: ./src/templates/views/members.tpl.html:76
+#: ./src/templates/views/members.tpl.html:80
 msgctxt "Info"
 msgid "{{ organization.MaxVPN - organization.UsedVPN }}"
 msgstr "{{ organization.MaxVPN - organization.UsedVPN }}"
@@ -6600,7 +6609,7 @@ msgstr[3] "Počet vybraných zpráv: {{$count}}"
 #: ./src/app/contact/services/manageContactGroup.js:30
 msgctxt "Info"
 msgid "{{Name}} created with {{total}} contact(s)"
-msgstr ""
+msgstr "{{Name}} vytvořeno s {{total}} kontaktem(y)"
 
 #: ./src/app/contact/services/manageContactGroup.js:28
 msgctxt "Info"
@@ -6615,12 +6624,12 @@ msgstr "Počet obnovených klíčů: {{n}}"
 #: ./src/app/contact/services/importContactGroups.js:21
 msgctxt "Info"
 msgid "{{total}} groups added"
-msgstr ""
+msgstr "{{total}} skupin přidáno"
 
 #: ./src/app/contact/services/importContactGroups.js:24
 msgctxt "Info"
 msgid "{{total}} groups updated"
-msgstr ""
+msgstr "{{total}} skupin aktualizováno"
 
 #: ./src/templates/views/security.tpl.html:48
 msgctxt "Info about active sessions"
@@ -7647,19 +7656,19 @@ msgstr "Přejít na ProtonVPN Plus"
 #: ./src/templates/views/domains.tpl.html:252
 msgctxt "List domains"
 msgid "No custom domain addresses found"
-msgstr ""
+msgstr "Nebyly nalezeny žádné vlastní doménové adresy"
 
 #: ./src/templates/views/domains.tpl.html:254
 msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr "Před konfigurací adresy prosím přidejte vlastní doménu."
 
-#: ./src/app/authentication/controllers/login.js:38
+#: ./src/app/authentication/controllers/login.js:46
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr "Zadejte prosím své uživatelské jméno a heslo"
 
-#: ./src/app/authentication/controllers/login.js:43
+#: ./src/app/authentication/controllers/login.js:51
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr "Chybí heslo"
@@ -7804,7 +7813,7 @@ msgctxt "Message"
 msgid "Re:"
 msgstr "Re:"
 
-#: ./src/app/message/factories/messageModel.js:152
+#: ./src/app/message/factories/messageModel.js:85
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr "Zpráva je prázdná"
@@ -7814,59 +7823,59 @@ msgctxt "Message decryption error"
 msgid "Decryption error: Decryption of this message's encryption content failed."
 msgstr "Chyba dešifrování: Dešifrování obsahu zprávy se nezdařilo."
 
-#: ./src/app/message/factories/messageModel.js:122
+#: ./src/app/message/factories/getEncryptionType.js:50
 msgctxt "Message encryption status"
 msgid "Encrypted message"
 msgstr "Zašifrovaná zpráva"
 
-#: ./src/app/message/factories/messageModel.js:85
+#: ./src/app/message/factories/getEncryptionType.js:13
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message"
 msgstr "End-to-End šifrovaná zpráva"
 
-#: ./src/app/message/factories/messageModel.js:86
+#: ./src/app/message/factories/getEncryptionType.js:14
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message from verified address"
 msgstr "End-to-end šifrovaná zpráva z ověřené adresy"
 
-#: ./src/app/message/factories/messageModel.js:95
+#: ./src/app/message/factories/getEncryptionType.js:23
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message"
 msgstr "Zpráva šifrovaná pomocí PGP"
 
-#: ./src/app/message/factories/messageModel.js:96
+#: ./src/app/message/factories/getEncryptionType.js:24
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message from verified address"
 msgstr "Zpráva šifrovaná pomocí PGP z ověřené adresy"
 
-#: ./src/app/message/factories/messageModel.js:102
+#: ./src/app/message/factories/getEncryptionType.js:30
 msgctxt "Message encryption status"
 msgid "PGP-signed message from verified address"
 msgstr "Zpráva podepsaná pomocí PGP z ověřené adresy"
 
-#: ./src/app/message/factories/messageModel.js:103
-#: ./src/app/message/factories/messageModel.js:109
-#: ./src/app/message/factories/messageModel.js:119
-#: ./src/app/message/factories/messageModel.js:91
-#: ./src/app/message/factories/messageModel.js:97
+#: ./src/app/message/factories/getEncryptionType.js:19
+#: ./src/app/message/factories/getEncryptionType.js:25
+#: ./src/app/message/factories/getEncryptionType.js:31
+#: ./src/app/message/factories/getEncryptionType.js:37
+#: ./src/app/message/factories/getEncryptionType.js:47
 msgctxt "Message encryption status"
 msgid "Sender verification failed"
 msgstr "Ověření odesílatele se nezdařilo"
 
-#: ./src/app/message/factories/messageModel.js:113
+#: ./src/app/message/factories/getEncryptionType.js:41
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail with zero access encryption"
 msgstr "Odesláno pomocí ProtonMail s nulovým přístupem šifrování"
 
-#: ./src/app/message/factories/messageModel.js:107
-#: ./src/app/message/factories/messageModel.js:108
+#: ./src/app/message/factories/getEncryptionType.js:35
+#: ./src/app/message/factories/getEncryptionType.js:36
 msgctxt "Message encryption status"
 msgid "Sent by you with end-to-end encryption"
 msgstr "Odesláno vámi s end-to-end šifrováním"
 
-#: ./src/app/message/factories/messageModel.js:101
-#: ./src/app/message/factories/messageModel.js:117
-#: ./src/app/message/factories/messageModel.js:118
+#: ./src/app/message/factories/getEncryptionType.js:29
+#: ./src/app/message/factories/getEncryptionType.js:45
+#: ./src/app/message/factories/getEncryptionType.js:46
 msgctxt "Message encryption status"
 msgid "Stored with zero access encryption"
 msgstr "Uloženo s nulovým přístupem šifrování"
@@ -7985,12 +7994,12 @@ msgstr "Podepsat zprávu"
 #: ./src/app/core/directives/newVersion.js:5
 msgctxt "New version"
 msgid "New version {{ version }} available"
-msgstr ""
+msgstr "Dostupná nová verze {{ version }}"
 
 #: ./src/app/core/directives/newVersion.js:6
 msgctxt "New version"
 msgid "Reload Tab"
-msgstr ""
+msgstr "Obnovit záložku"
 
 #: ./src/templates/message/message.tpl.html:89
 msgctxt "No recipients to display in the message header"
@@ -8779,15 +8788,15 @@ msgstr "Přiřadit správci"
 msgctxt "Success"
 msgid "Apply group success"
 msgid_plural "Apply {{$count}} groups success"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Skupina úspěšně použita"
+msgstr[1] "Úspěšně použita {{$count}} skupin"
+msgstr[2] "Úspěšně použita {{$count}} skupin"
+msgstr[3] "Úspěšně použita {{$count}} skupin"
 
 #: ./src/app/autoresponder/services/autoresponderLanguage.js:4
 msgctxt "Success"
 msgid "Autoresponder activated"
-msgstr ""
+msgstr "Autoresponder byl aktivován"
 
 #: ./src/app/autoresponder/services/autoresponderLanguage.js:5
 msgctxt "Success"
@@ -8878,7 +8887,7 @@ msgctxt "Success"
 msgid "Folder deleted"
 msgstr "Složka byla smazána"
 
-#: ./src/app/elements/directives/advancedFilterElement.js:82
+#: ./src/app/elements/directives/advancedFilterElement.js:71
 msgctxt "Success"
 msgid "Folder emptied"
 msgstr "Složka byla vyprázdněna"
@@ -9042,12 +9051,12 @@ msgstr "Děkujeme za zpětnou vazbu!"
 #: ./src/app/filter/factories/spamListModel.js:13
 msgctxt "Success notification"
 msgid "Email added"
-msgstr ""
+msgstr "E-mail přidán"
 
 #: ./src/app/filter/factories/spamListModel.js:14
 msgctxt "Success notification"
 msgid "Email removed"
-msgstr ""
+msgstr "E-mail byl odebrán"
 
 #: ./src/app/bugReport/factories/bugReportModel.js:23
 msgctxt "Success notification"
@@ -9143,21 +9152,6 @@ msgstr "roční tarif"
 msgctxt "Title"
 msgid "2-year plan"
 msgstr "dvouletý tarif"
-
-#: ./src/templates/views/members.tpl.html:72
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Available VPN connections</span>"
-msgstr "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Dostupná VPN připojení</span>"
-
-#: ./src/templates/views/members.tpl.html:46
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Number of users</span>"
-msgstr "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Počet uživatelů</span>"
-
-#: ./src/templates/views/members.tpl.html:59
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate=\"\" translate-context=\"Info\">Organization storage</span>"
-msgstr "<span class=\"margin-right\" translate=\"\" translate-context=\"Info\">Úložný prostor organizace</span>"
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:13
 #: ./src/app/ui/factories/pageTitlesModel.js:26
@@ -9519,7 +9513,7 @@ msgctxt "Title"
 msgid "Confirm mailbox password"
 msgstr "Potvrdit heslo k e-mailové schránce"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:26
+#: ./src/templates/modals/generateOrganization.tpl.html:32
 msgctxt "Title"
 msgid "Confirm recovery Password"
 msgstr "Potvrdit heslo pro obnovení"
@@ -9540,7 +9534,7 @@ msgctxt "Title"
 msgid "Contact List"
 msgstr "Seznam kontaktů"
 
-#: ./src/templates/views/keysView.tpl.html:19
+#: ./src/templates/views/keysView.tpl.html:18
 msgctxt "Title"
 msgid "Contact encryption keys"
 msgstr "Šifrovací klíče kontaktu"
@@ -9628,7 +9622,7 @@ msgstr "Aktuální stav"
 #: ./src/templates/views/domains.tpl.html:155
 msgctxt "Title"
 msgid "Custom Domain Addresses"
-msgstr ""
+msgstr "Vlastní doménové adresy"
 
 #: ./src/templates/filter/customFilterList.tpl.html:4
 msgctxt "Title"
@@ -9713,7 +9707,7 @@ msgid "Delete address"
 msgstr "Smazat adresu"
 
 #: ./src/app/contact/factories/contactEditor.js:337
-#: ./src/app/elements/directives/advancedFilterElement.js:51
+#: ./src/app/elements/directives/advancedFilterElement.js:45
 msgctxt "Title"
 msgid "Delete all"
 msgstr "Smazat vše"
@@ -10003,7 +9997,7 @@ msgstr "Od"
 #: ./src/templates/modals/hotkey.tpl.html:11
 msgctxt "Title"
 msgid "General"
-msgstr ""
+msgstr "Obecné"
 
 #: ./src/templates/views/reset-login-password.tpl.html:196
 msgctxt "Title"
@@ -10051,7 +10045,7 @@ msgstr "Nápověda a podpora"
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:25
-#: ./src/templates/modals/generateOrganization.tpl.html:13
+#: ./src/templates/modals/generateOrganization.tpl.html:14
 #: ./src/templates/modals/setupOrganization.tpl.html:34
 msgctxt "Title"
 msgid "High security"
@@ -10059,7 +10053,7 @@ msgstr "Vysoké zapezpečení"
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:31
-#: ./src/templates/modals/generateOrganization.tpl.html:19
+#: ./src/templates/modals/generateOrganization.tpl.html:23
 #: ./src/templates/modals/setupOrganization.tpl.html:40
 msgctxt "Title"
 msgid "Highest security"
@@ -10142,7 +10136,7 @@ msgctxt "Title"
 msgid "Key password"
 msgstr "Heslo klíče"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:24
+#: ./src/templates/modals/generateOrganization.tpl.html:30
 msgctxt "Title"
 msgid "Key recovery password"
 msgstr "Heslo pro obnovení klíče"
@@ -10233,7 +10227,7 @@ msgstr "Přihlašovací heslo"
 #: ./src/templates/modals/hotkey.tpl.html:34
 msgctxt "Title"
 msgid "Mail"
-msgstr ""
+msgstr "Pošta"
 
 #. form heading for changing mailbox password
 #: ./src/templates/modals/switchPasswordMode.tpl.html:48
@@ -11138,12 +11132,12 @@ msgstr "Ceník ProtonVPN"
 #: ./src/templates/modals/addAddress.tpl.html:53
 msgctxt "Title in the address modal"
 msgid "Name / Signature"
-msgstr ""
+msgstr "Jméno / Podpis"
 
 #: ./src/app/invoices/factories/invoiceModel.js:6
 msgctxt "Title invoice PDF"
 msgid "Invoice"
-msgstr ""
+msgstr "Faktura"
 
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
@@ -11368,7 +11362,7 @@ msgstr "Odeslat veškerý přenos dat skrze sít Tor pomocí jednoho kliknutí"
 #: ./src/templates/message/message.tpl.html:122
 msgctxt "Tooltip"
 msgid "Subject is end-to-end encrypted"
-msgstr ""
+msgstr "Předmět je šifrován end-to-end"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:8
 msgctxt "Tooltip"
@@ -11389,7 +11383,8 @@ msgstr "Důvěra"
 msgctxt "Tooltip"
 msgid "Using this key for encryption will encrypt outgoing messages\n"
 "                       to this address with this key and set this key as the primary PGP key for this address."
-msgstr ""
+msgstr "Pomocí tohoto šifrovacího klíče budou šifrovány odchozí zprávy\n"
+"                       na tuto adresu a zároveň jej nastavíte jako primární klíč PGP pro tuto adresu."
 
 #: ./src/templates/address/addressKeysView.tpl.html:71
 msgctxt "Tooltip"
