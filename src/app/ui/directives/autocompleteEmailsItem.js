@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import { EMAIL_FORMATING } from '../../constants';
 import tooltipModel from '../../utils/helpers/tooltipHelper';
 
@@ -96,16 +98,23 @@ function autocompleteEmailsItem(
                 And reset invalid state
                 ex: BACKSPACE
              */
-            const onInput = (e) => {
+            const onInput = _.throttle((e) => {
                 if (e.keyCode === KEY_ENTER) {
                     return onBlur(e);
                 }
 
                 if (e.target.getAttribute('contenteditable') === 'true') {
                     e.stopPropagation();
-                    scope.email.invalid && scope.$applyAsync(() => (scope.email.invalid = false));
+                    /*
+                        Don't update the scope itself, we need to remove the className by hand
+                        Angular will trigger a reflow during the update and the user will lose the focus on the span.
+                        cf #7958
+                     */
+                    if (scope.email.invalid) {
+                        e.target.parentElement.classList.remove('autocompleteEmails-item-invalid');
+                    }
                 }
-            };
+            }, 150);
 
             /**
              * Add tooltip on the element to display warnings coming from the API
