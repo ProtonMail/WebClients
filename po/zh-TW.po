@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
-"PO-Revision-Date: 2018-12-20 10:05\n"
+"PO-Revision-Date: 2019-01-09 16:59\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:59
 msgctxt "1 of 2 contacts successfully imported."
@@ -403,7 +403,7 @@ msgstr "抄送密件副本"
 #: ./src/templates/modals/exportKeyModal.tpl.html:17
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
 #: ./src/templates/modals/generate.tpl.html:76
-#: ./src/templates/modals/generateOrganization.tpl.html:32
+#: ./src/templates/modals/generateOrganization.tpl.html:38
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
 #: ./src/templates/modals/member.tpl.html:110
@@ -732,9 +732,9 @@ msgstr "解密"
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:34
 #: ./src/templates/elements/moveElement.tpl.html:40
-#: ./src/templates/message/message.tpl.html:226
+#: ./src/templates/message/message.tpl.html:232
 #: ./src/templates/modals/deleteAccount.tpl.html:53
-#: ./src/templates/ui/toolbarMobile.tpl.html:50
+#: ./src/templates/ui/toolbarMobile.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:124
 #: ./src/templates/views/labels.tpl.html:63
 #: ./src/templates/views/payments.tpl.html:44
@@ -953,7 +953,7 @@ msgstr "到期時間"
 #: ./src/app/address/services/deleteKeyProcess.js:33
 #: ./src/templates/address/addressKeysView.tpl.html:148
 #: ./src/templates/address/addressKeysView.tpl.html:162
-#: ./src/templates/message/message.tpl.html:244
+#: ./src/templates/message/message.tpl.html:250
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
@@ -997,7 +997,7 @@ msgid "Fullscreen"
 msgstr "全螢幕"
 
 #: ./src/templates/modals/generate.tpl.html:77
-#: ./src/templates/modals/generateOrganization.tpl.html:33
+#: ./src/templates/modals/generateOrganization.tpl.html:39
 msgctxt "Action"
 msgid "Generate Keys"
 msgstr "產生金鑰"
@@ -1029,7 +1029,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr "隱藏"
 
-#: ./src/templates/message/message.tpl.html:256
+#: ./src/templates/message/message.tpl.html:262
 msgctxt "Action"
 msgid "Hide details"
 msgstr "隱藏詳細資訊"
@@ -1123,7 +1123,7 @@ msgstr "讀取edison主題"
 #: ./src/templates/contact/contactViewItem.tpl.html:53
 msgctxt "Action"
 msgid "Load image"
-msgstr ""
+msgstr "載入圖片"
 
 #: ./src/templates/partials/sidebar-responsive.tpl.html:39
 #: ./src/templates/ui/header/headerNoAuth.tpl.html:30
@@ -1167,7 +1167,7 @@ msgstr "設為預設植"
 #. link to domains
 #: ./src/templates/dashboard/overviewSection.tpl.html:18
 #: ./src/templates/dashboard/overviewSection.tpl.html:37
-#: ./src/templates/views/members.tpl.html:97
+#: ./src/templates/views/members.tpl.html:99
 msgctxt "Action"
 msgid "Manage"
 msgstr "管理"
@@ -1181,7 +1181,7 @@ msgstr "手動"
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:11
 #: ./src/templates/directives/ui/readUnread.tpl.html:4
-#: ./src/templates/ui/toolbarMobile.tpl.html:21
+#: ./src/templates/ui/toolbarMobile.tpl.html:22
 msgctxt "Action"
 msgid "Mark as read"
 msgstr "標示為已讀取"
@@ -1192,15 +1192,20 @@ msgctxt "Action"
 msgid "Mark as read - Mark as unread"
 msgstr "標記為已讀 － 標記為未讀"
 
-#: ./src/templates/message/message.tpl.html:219
+#: ./src/templates/ui/toolbarMobile.tpl.html:13
+msgctxt "Action"
+msgid "Mark as read/unread"
+msgstr ""
+
+#: ./src/templates/message/message.tpl.html:224
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr "標示為垃圾郵件"
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:13
 #: ./src/templates/directives/ui/readUnread.tpl.html:20
-#: ./src/templates/message/message.tpl.html:212
-#: ./src/templates/ui/toolbarMobile.tpl.html:17
+#: ./src/templates/message/message.tpl.html:216
+#: ./src/templates/ui/toolbarMobile.tpl.html:18
 msgctxt "Action"
 msgid "Mark as unread"
 msgstr "標示為未讀取"
@@ -1245,36 +1250,37 @@ msgstr "更多"
 #. Tooltip
 #: ./src/templates/message/message.tpl.html:139
 #: ./src/templates/message/message.tpl.html:141
+#: ./src/templates/ui/toolbarMobile.tpl.html:31
 msgctxt "Action"
 msgid "Move to"
 msgstr "移至"
 
 #: ./src/templates/elements/moveElement.tpl.html:18
 #: ./src/templates/elements/moveElement.tpl.html:24
-#: ./src/templates/ui/toolbarMobile.tpl.html:42
+#: ./src/templates/ui/toolbarMobile.tpl.html:44
 msgctxt "Action"
 msgid "Move to archive"
 msgstr "移至「封存」資料夾"
 
 #: ./src/templates/elements/moveElement.tpl.html:10
 #: ./src/templates/elements/moveElement.tpl.html:16
-#: ./src/templates/message/message.tpl.html:202
-#: ./src/templates/ui/toolbarMobile.tpl.html:38
+#: ./src/templates/message/message.tpl.html:203
+#: ./src/templates/ui/toolbarMobile.tpl.html:40
 msgctxt "Action"
 msgid "Move to inbox"
 msgstr "移至收件匣"
 
 #: ./src/templates/elements/moveElement.tpl.html:26
 #: ./src/templates/elements/moveElement.tpl.html:32
-#: ./src/templates/ui/toolbarMobile.tpl.html:46
+#: ./src/templates/ui/toolbarMobile.tpl.html:48
 msgctxt "Action"
 msgid "Move to spam"
 msgstr "移至「垃圾郵件」資料夾"
 
 #: ./src/templates/elements/moveElement.tpl.html:2
 #: ./src/templates/elements/moveElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:208
-#: ./src/templates/ui/toolbarMobile.tpl.html:34
+#: ./src/templates/message/message.tpl.html:210
+#: ./src/templates/ui/toolbarMobile.tpl.html:36
 msgctxt "Action"
 msgid "Move to trash"
 msgstr "移至垃圾桶"
@@ -1329,7 +1335,7 @@ msgctxt "Action"
 msgid "No"
 msgstr "No"
 
-#: ./src/templates/ui/toolbarMobile.tpl.html:54
+#: ./src/templates/ui/toolbarMobile.tpl.html:56
 msgctxt "Action"
 msgid "Not spam"
 msgstr "非垃圾郵件"
@@ -1386,7 +1392,7 @@ msgctxt "Action"
 msgid "Previous"
 msgstr "上一步"
 
-#: ./src/templates/message/message.tpl.html:248
+#: ./src/templates/message/message.tpl.html:254
 #: ./src/templates/utils/printModal.tpl.html:28
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
@@ -1679,7 +1685,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr "顯示全部"
 
-#: ./src/templates/message/message.tpl.html:255
+#: ./src/templates/message/message.tpl.html:261
 msgctxt "Action"
 msgid "Show details"
 msgstr "顯示詳細資料"
@@ -1843,9 +1849,9 @@ msgstr "更新"
 #: ./src/templates/dashboard/overviewSection.tpl.html:23
 #: ./src/templates/dashboard/overviewSection.tpl.html:42
 #: ./src/templates/ui/navigation/navigation.tpl.html:7
-#: ./src/templates/views/members.tpl.html:54
-#: ./src/templates/views/members.tpl.html:67
-#: ./src/templates/views/members.tpl.html:80
+#: ./src/templates/views/members.tpl.html:58
+#: ./src/templates/views/members.tpl.html:71
+#: ./src/templates/views/members.tpl.html:84
 msgctxt "Action"
 msgid "Upgrade"
 msgstr "升級"
@@ -1919,17 +1925,17 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr "查看鍵盤快捷鍵"
 
-#: ./src/templates/message/message.tpl.html:240
+#: ./src/templates/message/message.tpl.html:246
 msgctxt "Action"
 msgid "View headers"
 msgstr "檢視標頭 "
 
-#: ./src/templates/message/message.tpl.html:235
+#: ./src/templates/message/message.tpl.html:241
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr "查看呈現的 HTML"
 
-#: ./src/templates/message/message.tpl.html:231
+#: ./src/templates/message/message.tpl.html:237
 msgctxt "Action"
 msgid "View source code"
 msgstr "查看原始程式碼"
@@ -2043,12 +2049,14 @@ msgstr "增加到連絡人群組"
 
 #: ./src/templates/ui/toolbarDesktop.tpl.html:41
 #: ./src/templates/ui/toolbarDesktop.tpl.html:52
+#: ./src/templates/ui/toolbarMobile.tpl.html:75
 msgctxt "Action toolbar"
 msgid "Label as"
 msgstr "標籤為"
 
 #: ./src/templates/ui/toolbarDesktop.tpl.html:20
 #: ./src/templates/ui/toolbarDesktop.tpl.html:31
+#: ./src/templates/ui/toolbarMobile.tpl.html:65
 msgctxt "Action toolbar"
 msgid "Move to"
 msgstr "移至"
@@ -2056,7 +2064,7 @@ msgstr "移至"
 #: ./src/templates/modals/domain/domain.tpl.html:17
 msgctxt "Add a domain"
 msgid "Domain name"
-msgstr "域名"
+msgstr "網域"
 
 #: ./src/templates/modals/domain/domain.tpl.html:7
 msgctxt "Add a new domain label"
@@ -2640,7 +2648,9 @@ msgctxt "Confirm message"
 msgid "Deleting your keys is irreversible.\n"
 "        To be able to access any message encrypted with this key, you might want to make a back up of this key for later use.\n"
 "        Do you want to export this key?"
-msgstr ""
+msgstr "刪除您的金鑰是無法還原的。\n"
+"        要能夠訪問使用此金鑰加密的任何訊息, 您可能需要備份此金鑰以供日後使用。\n"
+"        您是否要匯出此金鑰？"
 
 #: ./src/app/address/services/deleteKeyProcess.js:18
 msgctxt "Confirm message"
@@ -2867,7 +2877,7 @@ msgstr "為您的帳戶添加額外地址，如<u>username2@protonmail.com</u>"
 #: ./src/templates/dashboard/visionaryColumn.tpl.html:19
 msgctxt "Dashboard plan detail"
 msgid "Allows you to host emails for your own domain(s) at ProtonMail, e.g. <u>john.smith@example.com</u>"
-msgstr "讓你在 ProtonMail 為自己的域名託管電子郵件，如<u>john.smith@example.com</u>"
+msgstr "讓你在 ProtonMail 為自己的網域託管電子郵件，如<u>john.smith@example.com</u>"
 
 #: ./src/templates/dashboard/professionalColumn.tpl.html:17
 msgctxt "Dashboard plan detail"
@@ -3285,7 +3295,7 @@ msgstr "檢查您的 DNS 設定。"
 #: ./src/templates/views/domains.tpl.html:14
 msgctxt "Domains"
 msgid "Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade to ProtonMail Plus</a>."
-msgstr "在 ProtonMail 使用您的域名和電子郵件地址，如 yourname@yourdomain.com 。要啟用此功能，<a ui-sref=\"secured.dashboard({scroll: true})\">升級至 ProtonMail Plus</a>。"
+msgstr "在 ProtonMail 使用您的網域和電子郵件地址，如 yourname@yourdomain.com 。要啟用此功能，<a ui-sref=\"secured.dashboard({scroll: true})\">升級至 ProtonMail Plus</a>。"
 
 #: ./src/templates/views/domains.tpl.html:187
 msgctxt "Domains information"
@@ -3295,7 +3305,7 @@ msgstr "刪除地址前必須先停用該地址。只有刪除與該地址關聯
 #: ./src/templates/views/domains.tpl.html:38
 msgctxt "Domains information"
 msgid "You have reached your custom domain limit. <a ui-sref=\"secured.dashboard\">Click here</a> to upgrade your plan to add more."
-msgstr "您已達到自訂域名上限。要添加更多，<a ui-sref=\"secured.dashboard\">按這裡</a>升級。"
+msgstr "您已達到自訂網域上限。要添加更多，<a ui-sref=\"secured.dashboard\">按這裡</a>升級。"
 
 #: ./src/app/payment/factories/donateModel.js:5
 msgctxt "Donation modal"
@@ -3346,6 +3356,11 @@ msgstr "所有可用密鑰均受信任"
 msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr "加密標頭"
+
+#: ./src/app/authentication/controllers/login.js:30
+msgctxt "Error"
+msgid "<strong>Incompatible browser detected</strong><br>Unfortunately your browser is outdated and not compatible with ProtonMail.<br>Please use the latest version of Safari, Firefox, Chrome, or Edge.<br>As a temporary workaround, you could try using an older version of ProtonMail <a href=\"https://old.protonmail.com\">here</a>."
+msgstr "<strong>檢測到不相容的瀏覽器</strong><br>很不幸，您的瀏覽器已經過時，與 protonmail 不相容。<br>請使用最新版本的 Safari、火狐、Chrome 或 Edge。<br>有一種臨時的解決方法, 您可以嘗試使用舊版本的 protonmail <a href=\"https://old.protonmail.com\">在這裡</a>。"
 
 #: ./src/templates/labels/labelNameInput.tpl.html:21
 msgctxt "Error"
@@ -3424,7 +3439,7 @@ msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "請與組織的管理員聯絡以解決此事。"
 
-#: ./src/app/authentication/controllers/login.js:33
+#: ./src/app/authentication/controllers/login.js:41
 msgctxt "Error"
 msgid "Cookies are disabled.\n"
 "Please activate it and then reload the page.\n"
@@ -3755,7 +3770,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "請輸入最少一位收件者。"
 
-#: ./src/app/authentication/controllers/login.js:44
+#: ./src/app/authentication/controllers/login.js:52
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "請輸入兩步驟驗證密碼"
@@ -3897,7 +3912,7 @@ msgctxt "Error"
 msgid "The request failed"
 msgstr "請求失敗"
 
-#: ./src/app/authentication/controllers/login.js:27
+#: ./src/app/authentication/controllers/login.js:35
 msgctxt "Error"
 msgid "Unable to log you in. Please try again later."
 msgstr "無法登入。請稍後再試。"
@@ -3964,7 +3979,7 @@ msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr "嘗試次數過多，請稍候再試"
 
-#: ./src/app/authentication/controllers/login.js:28
+#: ./src/app/authentication/controllers/login.js:36
 msgctxt "Error"
 msgid "You are in Private Mode or have Session Storage disabled.\n"
 "Please deactivate Private Mode and then reload the page.\n"
@@ -4781,7 +4796,7 @@ msgstr "新增一個自訂篩選器以執行諸如自動標記或存檔訊息的
 #: ./src/templates/modals/domain/domain.tpl.html:15
 msgctxt "Info"
 msgid "Add a domain that you own to your ProtonMail account."
-msgstr "把您擁有的域名新增到您的 ProtonMail 帳戶"
+msgstr "把您擁有的網域新增到您的 ProtonMail 帳戶。"
 
 #: ./src/templates/user/addressesSection.tpl.html:2
 msgctxt "Info"
@@ -4842,7 +4857,7 @@ msgstr "亦用以重設密碼。"
 #: ./src/templates/message/messagePublicKeyFound.tpl.html:4
 msgctxt "Info"
 msgid "An unknown public key has been detected for this recipient."
-msgstr ""
+msgstr "已檢測到此收件者的未知公開金鑰。"
 
 #: ./src/app/user/directives/signupPayForm.js:11
 msgctxt "Info"
@@ -4933,7 +4948,7 @@ msgctxt "Info"
 msgid "Are you sure you want to remove administrative privileges from this user?"
 msgstr "您確定要移除這位使用者的管理權限？"
 
-#: ./src/app/elements/directives/advancedFilterElement.js:52
+#: ./src/app/elements/directives/advancedFilterElement.js:46
 #: ./src/app/elements/services/removeElement.js:16
 msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
@@ -4954,15 +4969,15 @@ msgctxt "Info"
 msgid "Automatic replies can respond automatically to incoming messages (such as when you are on vacation and can't respond)."
 msgstr "自動回覆可以在收到電子郵件時自動回信（例如當您休假，無法回覆）。"
 
-#: ./src/templates/views/members.tpl.html:73
+#: ./src/templates/views/members.tpl.html:77
 msgctxt "Info"
 msgid "Available VPN connections"
 msgstr "可用的 VPN 連接數"
 
-#: ./src/templates/views/members.tpl.html:86
+#: ./src/templates/views/members.tpl.html:90
 msgctxt "Info"
 msgid "Available domains"
-msgstr "可用的域名"
+msgstr "可用的網域"
 
 #: ./src/templates/contact/contactActionHeader.tpl.html:41
 msgctxt "Info"
@@ -5219,12 +5234,6 @@ msgctxt "Info"
 msgid "Download the attachment {{name}}"
 msgstr "下載附件 {{name}}"
 
-#. Inline OpenPGP means NOT pgp/mime, so the body and attachments are encrypted separately
-#: ./src/templates/views/keysView.tpl.html:11
-msgctxt "Info"
-msgid "Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported."
-msgstr "下載您的PGP金鑰，可用於其他 PGP 相容的服務。目前只支援內嵌 OpenPGP 格式的郵件。"
-
 #: ./src/app/composer/directives/composerDropzone.js:53
 msgctxt "Info"
 msgid "Drop a file here to upload"
@@ -5341,7 +5350,7 @@ msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sre
 msgstr "免費 ProtonMail 帳戶只能設定 1 個自訂篩選器。請<a ui-sref=\"secured.dashboard({scroll: true})\">升級</a>以解除限制。"
 
 #: ./src/templates/modals/generate.tpl.html:35
-#: ./src/templates/modals/generateOrganization.tpl.html:23
+#: ./src/templates/modals/generateOrganization.tpl.html:29
 msgctxt "Info"
 msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
 msgstr "生成 4096 位元的金鑰可能會使您的瀏覽器崩潰或停止回應。我們僅推薦於高性能電腦上使用 4096 位元的金鑰，而平板電腦和行動裝置則並不推薦。"
@@ -5364,7 +5373,7 @@ msgstr "如果另一位管理員更改了此密碼，您需要向他們詢問新
 #: ./src/templates/modals/domain/mx.tpl.html:41
 msgctxt "Info"
 msgid "If this domain is currently actively receiving emails, create all used email addresses in Step 3 before changing MX record to ensure a smooth transition."
-msgstr "如果此域名已在接收電子郵件，請先在步驟 3 建立所有使用中的電子郵件地址，然後才變更 MX 記錄，以利轉移過程。"
+msgstr "如果此網域已在接收電子郵件，請先在步驟 3 建立所有使用中的電子郵件地址，然後再變更 MX 記錄，以利轉移過程。"
 
 #: ./src/templates/partials/wizard.tpl.html:44
 msgctxt "Info"
@@ -5540,7 +5549,7 @@ msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr "沒有主旨，還是要寄出嗎？"
 
-#: ./src/templates/views/members.tpl.html:47
+#: ./src/templates/views/members.tpl.html:46
 msgctxt "Info"
 msgid "Number of users"
 msgstr "使用者數量"
@@ -5586,7 +5595,7 @@ msgctxt "Info"
 msgid "Organization keys restored"
 msgstr "組織金鑰已還原"
 
-#: ./src/templates/views/members.tpl.html:60
+#: ./src/templates/views/members.tpl.html:64
 msgctxt "Info"
 msgid "Organization storage"
 msgstr "組織儲存空間"
@@ -5607,7 +5616,7 @@ msgctxt "Info"
 msgid "Other administrators exist in your organization, you are responsible for communicating the new password to them."
 msgstr "尚有其他管理員存在於您的組織中，您需負責將新的密碼通知他們。"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:28
+#: ./src/templates/modals/generateOrganization.tpl.html:34
 msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
 msgstr "尚有其他管理員存在於您的組織中，您必須將新的金鑰還原密碼通知他們，他們才能夠使用該密碼來啟用完整的管理員權限。"
@@ -5685,7 +5694,7 @@ msgstr "已訂閱方案"
 #: ./src/templates/modals/domain/address.tpl.html:10
 msgctxt "Info"
 msgid "Please add addresses to send and receive email with this domain"
-msgstr "要從這個域名收發電子郵件，請新增電子郵件地址"
+msgstr "要從這個網域收發電子郵件，請新增電子郵件地址"
 
 #: ./src/templates/modals/domain/dkim.tpl.html:15
 msgctxt "Info"
@@ -5720,7 +5729,7 @@ msgstr "請檢查您的手機並在下方輸入代碼："
 #: ./src/app/members/services/membersValidator.js:16
 msgctxt "Info"
 msgid "Please configure a custom domain before adding users to your organization."
-msgstr "在新增使用者到您的組織之前，請先設定好一個自訂域名。"
+msgstr "在新增使用者到您的組織之前，請先設定好一個自訂網域。"
 
 #: ./src/app/members/services/membersValidator.js:11
 msgctxt "Info"
@@ -5796,7 +5805,7 @@ msgstr "ProtonMail 現已支援 @pm.me 電子郵件地址（ ProtonMail me 或 P
 #: ./src/templates/modals/domain/dkim.tpl.html:14
 msgctxt "Info"
 msgid "ProtonMail supports DKIM signing for custom domains! To use DKIM authentication, please add the following TXT record into your DNS for this domain. This can typically be done in the control panel of your domain name registrar."
-msgstr "ProtonMail 支援針對自訂域名的 DKIM 簽證！如欲使用 DKIM 認證，請在您 DNS 設定的 TXT 記錄欄位新增以下資訊。這通常可以在您域名註冊商的控制台內達成。"
+msgstr "ProtonMail 支援針對自訂網域的 DKIM 簽署！如欲使用 DKIM 驗證，請在您 DNS 設定的 TXT 記錄欄位新增以下資訊。這通常可以在您網域名稱註冊機構的控制台內達成。"
 
 #: ./src/templates/bridge/bridgePaidPanel.tpl.html:2
 msgctxt "Info"
@@ -5855,7 +5864,7 @@ msgstr "列"
 #: ./src/templates/modals/domain/spf.tpl.html:13
 msgctxt "Info"
 msgid "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar."
-msgstr "SPF 是用來指定誰可以為網域傳送電子郵件。因此，我們強烈建議將 ProtonMail 加入到您的 SPF 記錄。請在 DNS 加入以下 TXT 記錄。這步驟通常可以在域名註冊商的控制台完成。"
+msgstr "SPF 是用來指定誰可以為網域傳送電子郵件。因此，我們強烈建議將 ProtonMail 加入到您的 SPF 記錄。請在 DNS 加入以下 TXT 記錄。這步驟通常可以在網域名稱註冊機構的控制台完成。"
 
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:12
 #: ./src/templates/partials/safari.warning.tpl.html:12
@@ -6000,7 +6009,7 @@ msgstr "此會話含有已被移至垃圾桶的訊息。"
 #: ./src/app/message/directives/messageSpamScore.js:13
 msgctxt "Info"
 msgid "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded! {{startLink}}Learn more{{endLink}}."
-msgstr "此電子郵件無法通過網域驗證。該郵件可能是詐騙郵件或遭不當轉寄！{{startLink}}瞭解詳情{{endLink}}。"
+msgstr "此電子郵件無法通過網域驗證。這可能是詐騙郵件或是轉發不當導致！{{startLink}}瞭解詳情{{endLink}}。"
 
 #: ./src/app/message/directives/messageSpamScore.js:8
 msgctxt "Info"
@@ -6069,7 +6078,7 @@ msgstr "此頁面需要較高解像度。請以電腦瀏覽或將手機換成水
 #: ./src/templates/message/messagePublicKeyPinning.tpl.html:3
 msgctxt "Info"
 msgid "This sender's public key has not been trusted yet."
-msgstr ""
+msgstr "此寄件者的公開金鑰尚未被信任。"
 
 #: ./src/templates/views/appearance.tpl.html:12
 msgctxt "Info"
@@ -6105,7 +6114,7 @@ msgstr "這會為您的組織建立一個新金鑰。4096 位元的金鑰只會�
 #: ./src/app/dashboard/factories/downgrade.js:14
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
-msgstr "這會將您的帳戶降級至免費帳戶。ProtonMail 是一項由捐款及付費帳戶支撐的免費服務，請考慮捐款，讓我們能繼續提供免費服務。<br /><br />注意：額外地址、自訂域名及用戶需要先行移除或停用。"
+msgstr "這會將您的帳戶降級至免費帳戶。ProtonMail 是一項由捐款及付費帳戶支撐的免費服務，請考慮捐款，讓我們能繼續提供免費服務。<br /><br />注意：額外地址、自訂網域及用戶需要先行移除或停用。"
 
 #: ./src/templates/partials/safari.attachment.warning.tpl.html:14
 #: ./src/templates/partials/safari.warning.tpl.html:14
@@ -6434,7 +6443,7 @@ msgstr "您的帳戶當前沒有 ProtonVPN 存取權限。如果您是組織的�
 #: ./src/templates/invoices/invoiceSection.tpl.html:56
 msgctxt "Info"
 msgid "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices."
-msgstr ""
+msgstr "您的帳號或組織目前有過期的發票。請支付所有未付款的發票。"
 
 #: ./src/app/user/services/manageUser.js:20
 msgctxt "Info"
@@ -6473,7 +6482,7 @@ msgstr "地址使用量。"
 msgctxt "Info"
 msgid "contact"
 msgid_plural "contacts"
-msgstr[0] ""
+msgstr[0] "聯絡人"
 
 #: ./src/templates/attachments/listAttachments.tpl.html:11
 #: ./src/templates/directives/composer/composerAttachments.tpl.html:9
@@ -6515,12 +6524,12 @@ msgctxt "Info"
 msgid "no label found"
 msgstr "找不到標籤"
 
-#: ./src/templates/views/members.tpl.html:50
+#: ./src/templates/views/members.tpl.html:51
 msgctxt "Info"
 msgid "of"
 msgstr " / "
 
-#: ./src/templates/views/members.tpl.html:50
+#: ./src/templates/views/members.tpl.html:54
 msgctxt "Info"
 msgid "used"
 msgstr "使用中"
@@ -6530,7 +6539,7 @@ msgctxt "Info"
 msgid "{{ name }} is also in your contacts. Remove them from your contacts?"
 msgstr "{{ name }} 也在您的聯絡人中。是否將他從聯絡人中移除？"
 
-#: ./src/templates/views/members.tpl.html:76
+#: ./src/templates/views/members.tpl.html:80
 msgctxt "Info"
 msgid "{{ organization.MaxVPN - organization.UsedVPN }}"
 msgstr ""
@@ -7307,12 +7316,12 @@ msgstr "電子郵件地址"
 #: ./src/app/dashboard/directives/subscriptionSection.js:13
 msgctxt "Label"
 msgid "domain"
-msgstr "域名"
+msgstr "網域"
 
 #: ./src/app/dashboard/directives/subscriptionSection.js:14
 msgctxt "Label"
 msgid "domains"
-msgstr "域名"
+msgstr "網域"
 
 #: ./src/app/dashboard/directives/planPrice.js:5
 #: ./src/app/dashboard/directives/subscriptionSection.js:15
@@ -7609,19 +7618,19 @@ msgstr "升級至 ProtonVPN Plus"
 #: ./src/templates/views/domains.tpl.html:252
 msgctxt "List domains"
 msgid "No custom domain addresses found"
-msgstr ""
+msgstr "找不到自訂的網域位址"
 
 #: ./src/templates/views/domains.tpl.html:254
 msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
-msgstr "設定電子郵件地址前，請先增加自訂域名。"
+msgstr "設定電子郵件地址前，請先新增自訂網域。"
 
-#: ./src/app/authentication/controllers/login.js:38
+#: ./src/app/authentication/controllers/login.js:46
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr "請輸入使用者名稱和密碼"
 
-#: ./src/app/authentication/controllers/login.js:43
+#: ./src/app/authentication/controllers/login.js:51
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr "您的密碼遺失了"
@@ -7766,7 +7775,7 @@ msgctxt "Message"
 msgid "Re:"
 msgstr "Re:"
 
-#: ./src/app/message/factories/messageModel.js:152
+#: ./src/app/message/factories/messageModel.js:85
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr "空訊息"
@@ -7776,59 +7785,59 @@ msgctxt "Message decryption error"
 msgid "Decryption error: Decryption of this message's encryption content failed."
 msgstr "解密失敗：此郵件內容解密失敗。"
 
-#: ./src/app/message/factories/messageModel.js:122
+#: ./src/app/message/factories/getEncryptionType.js:50
 msgctxt "Message encryption status"
 msgid "Encrypted message"
 msgstr "加密訊息"
 
-#: ./src/app/message/factories/messageModel.js:85
+#: ./src/app/message/factories/getEncryptionType.js:13
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message"
 msgstr "端對端加密訊息"
 
-#: ./src/app/message/factories/messageModel.js:86
+#: ./src/app/message/factories/getEncryptionType.js:14
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message from verified address"
 msgstr "加密訊息來自已經驗證的郵件地址"
 
-#: ./src/app/message/factories/messageModel.js:95
+#: ./src/app/message/factories/getEncryptionType.js:23
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message"
 msgstr "PGP 加密訊息"
 
-#: ./src/app/message/factories/messageModel.js:96
+#: ./src/app/message/factories/getEncryptionType.js:24
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message from verified address"
 msgstr "PGP 加密訊息來自已經驗證的郵件位址"
 
-#: ./src/app/message/factories/messageModel.js:102
+#: ./src/app/message/factories/getEncryptionType.js:30
 msgctxt "Message encryption status"
 msgid "PGP-signed message from verified address"
 msgstr "來自已驗證研究地址的 PGP 簽章訊息"
 
-#: ./src/app/message/factories/messageModel.js:103
-#: ./src/app/message/factories/messageModel.js:109
-#: ./src/app/message/factories/messageModel.js:119
-#: ./src/app/message/factories/messageModel.js:91
-#: ./src/app/message/factories/messageModel.js:97
+#: ./src/app/message/factories/getEncryptionType.js:19
+#: ./src/app/message/factories/getEncryptionType.js:25
+#: ./src/app/message/factories/getEncryptionType.js:31
+#: ./src/app/message/factories/getEncryptionType.js:37
+#: ./src/app/message/factories/getEncryptionType.js:47
 msgctxt "Message encryption status"
 msgid "Sender verification failed"
 msgstr "寄件人驗證失敗"
 
-#: ./src/app/message/factories/messageModel.js:113
+#: ./src/app/message/factories/getEncryptionType.js:41
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail with zero access encryption"
 msgstr "以零訪問加密的 ProtonMail 發送"
 
-#: ./src/app/message/factories/messageModel.js:107
-#: ./src/app/message/factories/messageModel.js:108
+#: ./src/app/message/factories/getEncryptionType.js:35
+#: ./src/app/message/factories/getEncryptionType.js:36
 msgctxt "Message encryption status"
 msgid "Sent by you with end-to-end encryption"
 msgstr "以端到端加密傳送"
 
-#: ./src/app/message/factories/messageModel.js:101
-#: ./src/app/message/factories/messageModel.js:117
-#: ./src/app/message/factories/messageModel.js:118
+#: ./src/app/message/factories/getEncryptionType.js:29
+#: ./src/app/message/factories/getEncryptionType.js:45
+#: ./src/app/message/factories/getEncryptionType.js:46
 msgctxt "Message encryption status"
 msgid "Stored with zero access encryption"
 msgstr "存儲為零訪問加密"
@@ -7947,12 +7956,12 @@ msgstr "簽署郵件"
 #: ./src/app/core/directives/newVersion.js:5
 msgctxt "New version"
 msgid "New version {{ version }} available"
-msgstr ""
+msgstr "新版本{{ version }} 可使用"
 
 #: ./src/app/core/directives/newVersion.js:6
 msgctxt "New version"
 msgid "Reload Tab"
-msgstr ""
+msgstr "重新載入分頁"
 
 #: ./src/templates/message/message.tpl.html:89
 msgctxt "No recipients to display in the message header"
@@ -8746,7 +8755,7 @@ msgstr[0] "套用 {{$count}} 群組成功"
 #: ./src/app/autoresponder/services/autoresponderLanguage.js:4
 msgctxt "Success"
 msgid "Autoresponder activated"
-msgstr ""
+msgstr "自動回應程式已啟動"
 
 #: ./src/app/autoresponder/services/autoresponderLanguage.js:5
 msgctxt "Success"
@@ -8792,17 +8801,17 @@ msgstr "重新簽證聯絡人"
 #: ./src/app/settings/controllers/domains.js:226
 msgctxt "Success"
 msgid "Domain created"
-msgstr "已建立域名"
+msgstr "已新增網域"
 
 #: ./src/app/settings/controllers/domains.js:150
 msgctxt "Success"
 msgid "Domain deleted"
-msgstr "已刪除域名"
+msgstr "已刪除網域"
 
 #: ./src/app/settings/controllers/domains.js:280
 msgctxt "Success"
 msgid "Domain verified"
-msgstr "已確認域名"
+msgstr "已確認網域"
 
 #: ./src/app/settings/controllers/account.js:326
 msgctxt "Success"
@@ -8834,7 +8843,7 @@ msgctxt "Success"
 msgid "Folder deleted"
 msgstr "已刪除資料夾"
 
-#: ./src/app/elements/directives/advancedFilterElement.js:82
+#: ./src/app/elements/directives/advancedFilterElement.js:71
 msgctxt "Success"
 msgid "Folder emptied"
 msgstr "已清空資料夾"
@@ -8989,12 +8998,12 @@ msgstr "感謝您的回饋!"
 #: ./src/app/filter/factories/spamListModel.js:13
 msgctxt "Success notification"
 msgid "Email added"
-msgstr ""
+msgstr "電子郵件已增加"
 
 #: ./src/app/filter/factories/spamListModel.js:14
 msgctxt "Success notification"
 msgid "Email removed"
-msgstr ""
+msgstr "電子郵件已刪除"
 
 #: ./src/app/bugReport/factories/bugReportModel.js:23
 msgctxt "Success notification"
@@ -9090,21 +9099,6 @@ msgstr "1年方案"
 msgctxt "Title"
 msgid "2-year plan"
 msgstr "2年方案"
-
-#: ./src/templates/views/members.tpl.html:72
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Available VPN connections</span>"
-msgstr "<span class=\"margin-right\" translate=\"\">可用的 VPN 連接</span>"
-
-#: ./src/templates/views/members.tpl.html:46
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate-context=\"Info\" translate=\"\">Number of users</span>"
-msgstr "<span class=\"margin-right\" translate=\"\">使用者數</span>"
-
-#: ./src/templates/views/members.tpl.html:59
-msgctxt "Title"
-msgid "<span class=\"margin-right\" translate=\"\" translate-context=\"Info\">Organization storage</span>"
-msgstr "<span class=\"margin-right\" translate=\"\">組織存儲空間</span>"
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:13
 #: ./src/app/ui/factories/pageTitlesModel.js:26
@@ -9466,7 +9460,7 @@ msgctxt "Title"
 msgid "Confirm mailbox password"
 msgstr "確認郵箱密碼"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:26
+#: ./src/templates/modals/generateOrganization.tpl.html:32
 msgctxt "Title"
 msgid "Confirm recovery Password"
 msgstr "確認備援密碼"
@@ -9487,7 +9481,7 @@ msgctxt "Title"
 msgid "Contact List"
 msgstr "聯絡人一覽"
 
-#: ./src/templates/views/keysView.tpl.html:19
+#: ./src/templates/views/keysView.tpl.html:18
 msgctxt "Title"
 msgid "Contact encryption keys"
 msgstr "聯絡人金鑰"
@@ -9575,7 +9569,7 @@ msgstr "目前狀態"
 #: ./src/templates/views/domains.tpl.html:155
 msgctxt "Title"
 msgid "Custom Domain Addresses"
-msgstr ""
+msgstr "自訂網域位址"
 
 #: ./src/templates/filter/customFilterList.tpl.html:4
 msgctxt "Title"
@@ -9607,7 +9601,7 @@ msgstr "每日電子郵件通知"
 #: ./src/app/ui/factories/pageTitlesModel.js:37
 msgctxt "Title"
 msgid "Dashboard"
-msgstr "儀錶板"
+msgstr "儀表板"
 
 #. Table heading
 #: ./src/templates/invoices/invoiceList.tpl.html:10
@@ -9660,7 +9654,7 @@ msgid "Delete address"
 msgstr "刪除地址"
 
 #: ./src/app/contact/factories/contactEditor.js:337
-#: ./src/app/elements/directives/advancedFilterElement.js:51
+#: ./src/app/elements/directives/advancedFilterElement.js:45
 msgctxt "Title"
 msgid "Delete all"
 msgstr "全部刪除"
@@ -9746,7 +9740,7 @@ msgstr "您是否信賴此主要金鑰？"
 #: ./src/templates/views/domains.tpl.html:50
 msgctxt "Title"
 msgid "Domain"
-msgstr "域名"
+msgstr "網域"
 
 #. added addesses table label / heading
 #: ./src/templates/modals/domain/address.tpl.html:25
@@ -9761,7 +9755,7 @@ msgstr "域地址"
 #: ./src/templates/views/domains.tpl.html:8
 msgctxt "Title"
 msgid "Domains"
-msgstr "域名"
+msgstr "網域"
 
 #: ./src/app/sidebar/directives/donateBtn.js:4
 #: ./src/templates/modals/donate.tpl.html:23
@@ -9950,7 +9944,7 @@ msgstr "從"
 #: ./src/templates/modals/hotkey.tpl.html:11
 msgctxt "Title"
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: ./src/templates/views/reset-login-password.tpl.html:196
 msgctxt "Title"
@@ -9998,7 +9992,7 @@ msgstr "說明與支援"
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:25
-#: ./src/templates/modals/generateOrganization.tpl.html:13
+#: ./src/templates/modals/generateOrganization.tpl.html:14
 #: ./src/templates/modals/setupOrganization.tpl.html:34
 msgctxt "Title"
 msgid "High security"
@@ -10006,7 +10000,7 @@ msgstr "高安全度"
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:31
-#: ./src/templates/modals/generateOrganization.tpl.html:19
+#: ./src/templates/modals/generateOrganization.tpl.html:23
 #: ./src/templates/modals/setupOrganization.tpl.html:40
 msgctxt "Title"
 msgid "Highest security"
@@ -10089,7 +10083,7 @@ msgctxt "Title"
 msgid "Key password"
 msgstr "金鑰密碼"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:24
+#: ./src/templates/modals/generateOrganization.tpl.html:30
 msgctxt "Title"
 msgid "Key recovery password"
 msgstr "金鑰恢復密碼"
@@ -10180,7 +10174,7 @@ msgstr "登入密碼"
 #: ./src/templates/modals/hotkey.tpl.html:34
 msgctxt "Title"
 msgid "Mail"
-msgstr ""
+msgstr "郵箱"
 
 #. form heading for changing mailbox password
 #: ./src/templates/modals/switchPasswordMode.tpl.html:48
@@ -10228,7 +10222,7 @@ msgstr "我的訂閱"
 #: ./src/templates/views/members.tpl.html:144
 msgctxt "Title"
 msgid "Name"
-msgstr "域名"
+msgstr "網域"
 
 #: ./src/app/address/factories/addressModel.js:51
 #: ./src/app/ui/factories/pageTitlesModel.js:53
@@ -11001,7 +10995,7 @@ msgstr[0] "{{$count}} 個位址"
 msgctxt "Title"
 msgid "{{$count}} Custom domain"
 msgid_plural "{{$count}} Custom domains"
-msgstr[0] "{{$count}} 個自訂域名"
+msgstr[0] "{{$count}} 個自訂網域"
 
 #: ./src/app/payment/directives/paymentPlanOverview.js:52
 msgctxt "Title"
@@ -11073,12 +11067,12 @@ msgstr "ProtonVPN 方案"
 #: ./src/templates/modals/addAddress.tpl.html:53
 msgctxt "Title in the address modal"
 msgid "Name / Signature"
-msgstr ""
+msgstr "名稱/簽名"
 
 #: ./src/app/invoices/factories/invoiceModel.js:6
 msgctxt "Title invoice PDF"
 msgid "Invoice"
-msgstr ""
+msgstr "發票"
 
 #: ./src/app/squire/services/pasteImage.js:7
 msgctxt "Title pasted image"
@@ -11303,7 +11297,7 @@ msgstr "只需點擊一下, 即可通過 Tor 網路發送您所有的傳輸流�
 #: ./src/templates/message/message.tpl.html:122
 msgctxt "Tooltip"
 msgid "Subject is end-to-end encrypted"
-msgstr ""
+msgstr "主題是端到端加密的"
 
 #: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:8
 msgctxt "Tooltip"
@@ -11324,7 +11318,8 @@ msgstr "信任憑證"
 msgctxt "Tooltip"
 msgid "Using this key for encryption will encrypt outgoing messages\n"
 "                       to this address with this key and set this key as the primary PGP key for this address."
-msgstr ""
+msgstr "使用此金鑰將會對寄送郵件進行加密\n"
+"                       加密此地址，並將此金鑰設置為此地址的主要 PGP 金鑰。"
 
 #: ./src/templates/address/addressKeysView.tpl.html:71
 msgctxt "Tooltip"
@@ -11845,7 +11840,7 @@ msgstr "ProtonMail.com 全球製造，瑞士托管。"
 msgctxt "dashboard options select"
 msgid "1 Custom Domain"
 msgid_plural "{{$count}} Custom Domains"
-msgstr[0] "{{$count}} 個自訂域名"
+msgstr[0] "{{$count}} 個自訂網域"
 
 #: ./src/app/dashboard/factories/dashboardOptions.js:12
 msgctxt "dashboard options select"
@@ -11892,17 +11887,17 @@ msgstr "驗證"
 #: ./src/templates/modals/domain/domain.tpl.html:24
 msgctxt "domains"
 msgid "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?"
-msgstr "'www' 子域名通常不用於電子郵件。您確定要使用此子域名？"
+msgstr "'www' 子網域通常不會用於電子郵件。您確定要使用此子網域？"
 
 #: ./src/templates/views/domains.tpl.html:148
 msgctxt "domains list"
 msgid "Click on 'ADD CUSTOM DOMAIN' button to add a domain."
-msgstr "請點選 '增加域名' 按鈕以新增域名。"
+msgstr "請點擊「新增自訂網域」按鈕以新增網域。"
 
 #: ./src/templates/views/domains.tpl.html:146
 msgctxt "domains list"
 msgid "No custom domain found"
-msgstr "找不到自訂的域名。"
+msgstr "找不到自訂網域"
 
 #: ./src/app/labels/directives/dropdownLabels.js:7
 msgctxt "dropdown label"
@@ -11937,7 +11932,7 @@ msgstr "MB"
 #: ./src/templates/views/domains.tpl.html:28
 msgctxt "how many domains are in use"
 msgid "domains used."
-msgstr "已使用域名"
+msgstr "已使用網域。"
 
 #: ./src/templates/user/addressesSection.tpl.html:10
 msgctxt "info link to Addresses/Users in Signatures page"
