@@ -11,7 +11,7 @@ import {
 
 import { getRandomValues } from '../../../helpers/webcrypto';
 
-import { ENCRYPTION_DEFAULT } from '../../constants';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
 
 /* @ngInject */
 function setupKeys(passwords, Key, keysModel, memberApi) {
@@ -19,15 +19,19 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
      * Generates key pairs for a list of addresses
      * @param  {Array}  addresses  array of addresses that require keys
      * @param  {String} passphrase mailbox password to encrypt keys with
-     * @param  {Number} numBits    number of bits in each generated RSA key
+     * @param  {String} encryptionConfigName    to customize the generation of the key
      * @return {Promise<Array<Object>>} array of objects {AddressID:String, PrivateKey:String}
      */
-    async function generateAddresses(addresses = [], passphrase = '', numBits = ENCRYPTION_DEFAULT) {
+    async function generateAddresses(
+        addresses = [],
+        passphrase = '',
+        encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG
+    ) {
         const list = addresses.map(({ ID, Email: email, Keys, Receive } = {}) => {
             return generateKey({
                 userIds: [{ name: email, email }],
                 passphrase,
-                numBits
+                ...ENCRYPTION_CONFIGS[encryptionConfigName]
             }).then(({ privateKeyArmored: PrivateKey }) => ({
                 AddressID: ID,
                 PrivateKey,
@@ -38,24 +42,24 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
         return Promise.all(list);
     }
 
-    async function generate(addresses = [], password = '', numBits = ENCRYPTION_DEFAULT) {
+    async function generate(addresses = [], password = '', encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG) {
         const keySalt = passwords.generateKeySalt();
         const mailboxPassword = await passwords.computeKeyPassword(password, keySalt);
 
         return {
             mailboxPassword,
             keySalt,
-            keys: await generateAddresses(addresses, mailboxPassword, numBits)
+            keys: await generateAddresses(addresses, mailboxPassword, encryptionConfigName)
         };
     }
 
     /**
      * Generates an organization key
      * @param  {String} passphrase mailbox password to encrypt keys with
-     * @param  {Number} numBits    number of bits in each generated RSA key
+     * @param  {String} encryptionConfigName    to customize the generation of the key
      * @return {Promise<Object>}   { key:Key, privateKeyArmored:String, publicKeyArmored:String }
      */
-    function generateOrganization(passphrase, numBits) {
+    function generateOrganization(passphrase, encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG) {
         return generateKey({
             userIds: [
                 {
@@ -64,7 +68,7 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
                 }
             ],
             passphrase,
-            numBits
+            ...ENCRYPTION_CONFIGS[encryptionConfigName]
         });
     }
 

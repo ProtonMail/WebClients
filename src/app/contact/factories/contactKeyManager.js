@@ -1,7 +1,7 @@
 import { binaryStringToArray, decodeBase64, getKeys } from 'pmcrypto';
 
 import { readFileAsString, readDataUrl } from '../../../helpers/fileHelper';
-import keyAlgorithm from '../../keys/helper/keyAlgorithm';
+import { describe } from '../../../helpers/keyAlgorithm';
 import { KEY_FLAGS } from '../../constants';
 
 /* @ngInject */
@@ -106,7 +106,7 @@ function contactKeyManager(notification, contactKey, networkActivityTracker, get
             info: keyInfo,
             value: keyInfo.key,
             fingerprint: keyInfo.fingerprint,
-            algType: keyAlgorithm.describe(keyInfo),
+            algType: describe(keyInfo),
             created: keyInfo.created.toLocaleDateString(),
             expires: keyInfo.expires != null && isFinite(keyInfo.expires) ? keyInfo.expires.toLocaleDateString() : '-',
             isExpired: keyInfo.isExpired,
@@ -278,7 +278,7 @@ function contactKeyManager(notification, contactKey, networkActivityTracker, get
                     infos.map((info) => ({
                         value: info.key,
                         fingerprint: info.fingerprint,
-                        algType: keyAlgorithm.describe(info),
+                        algType: describe(info),
                         details: getDetails(info),
                         bits: info.bitSize,
                         created: info.created.toLocaleDateString(),

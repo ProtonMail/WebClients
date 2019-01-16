@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { ENCRYPTION_DEFAULT, PAID_ADMIN_ROLE, FREE_USER_ROLE } from '../../constants';
+import { DEFAULT_ENCRYPTION_CONFIG, PAID_ADMIN_ROLE, FREE_USER_ROLE } from '../../constants';
 
 /* @ngInject */
 function addressModel(
@@ -179,12 +179,12 @@ function addressModel(
      * @return {Promise}
      */
     const setup = ({ Domain, DisplayName, Signature }) => {
-        const numBits = ENCRYPTION_DEFAULT;
+        const encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG;
         const passphrase = authentication.getPassword();
 
         return Address.setup({ Domain, DisplayName, Signature })
             .then(({ data = {} } = {}) => {
-                return generateKeyModel.generate({ numBits, passphrase, address: data.Address });
+                return generateKeyModel.generate({ encryptionConfigName, passphrase, address: data.Address });
             })
             .then(() => {
                 const promises = [eventManager.call(), pmDomainModel.fetch()];

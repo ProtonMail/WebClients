@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { decryptPrivateKey, encryptMessage, encryptPrivateKey } from 'pmcrypto';
+import { DEFAULT_ENCRYPTION_CONFIG } from '../../constants';
 
 /* @ngInject */
 function generateOrganizationModal(
@@ -19,14 +20,14 @@ function generateOrganizationModal(
         /* @ngInject */
         controller: function(params) {
             // Parameters
-            this.size = 2048;
+            this.encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG;
             this.newRecoveryPassword = '';
             this.confirmRecoveryPassword = '';
             this.otherAdmins = params.otherAdmins;
 
             // Functions
             this.submit = () => {
-                const numBits = this.size;
+                const encryptionConfigName = this.encryptionConfigName;
                 const password = this.newRecoveryPassword;
 
                 let decryptedKey;
@@ -35,7 +36,7 @@ function generateOrganizationModal(
 
                 return networkActivityTracker.track(
                     setupKeys
-                        .generateOrganization(authentication.getPassword(), numBits)
+                        .generateOrganization(authentication.getPassword(), encryptionConfigName)
                         .then(({ privateKeyArmored }) => {
                             payload.PrivateKey = privateKeyArmored;
                             return privateKeyArmored;
