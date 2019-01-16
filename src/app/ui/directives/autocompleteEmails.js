@@ -134,9 +134,18 @@ function autocompleteEmails(
                 scope.emails = emails;
                 scope.list = emails;
                 updateScroll();
-                // NOTE: the main purpose of this is to update the tooltip in the lock directive since we don't use $watch.
-                // Needs to be done in a rAF because otherwise when '$on' is triggered the scope has not been fully updated yet.
-                _rAF(() => dispatcher.autocompleteEmails('refresh', { messageID: scope.message.ID, emails }));
+                /*
+                    NOTE: the main purpose of this is to update the tooltip in the lock directive since we don't use $watch.
+                    Needs to be done in a rAF because otherwise when '$on' is triggered the scope has not been fully updated yet.
+                 */
+                _rAF(() => {
+                    scope.$applyAsync(() => {
+                        dispatcher.autocompleteEmails('refresh', {
+                            messageID: scope.message.ID,
+                            emails
+                        });
+                    });
+                });
             });
         };
 
