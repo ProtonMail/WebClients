@@ -37,7 +37,7 @@ function editMemberProcess(
             unit,
             name,
             hasVPN,
-            size,
+            encryptionConfigName,
             ID
         } = model;
 
@@ -88,7 +88,7 @@ function editMemberProcess(
                 return { member };
             }
             const list = !addresses.length ? params.member.Addresses : addresses;
-            const key = await setupKeys.generate(list, temporaryPassword, size);
+            const key = await setupKeys.generate(list, temporaryPassword, encryptionConfigName);
             return { member, key };
         };
 

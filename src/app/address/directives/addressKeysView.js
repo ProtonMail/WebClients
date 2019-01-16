@@ -51,7 +51,7 @@ function addressKeysView(
         ),
         INVALID_PRIVATE_KEY: gettextCatalog.getString('Cannot read private key', null, 'Error'),
         GENERATE_KEY_MESSAGE: gettextCatalog.getString(
-            'You can generate a new encryption key if you think your previous key has been compromised. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys.',
+            'You can generate a new encryption key if you think your previous key has been compromised.',
             null,
             'Title'
         ),
@@ -312,7 +312,7 @@ function addressKeysView(
                         addresses: [{ Email, ID }],
                         title: I18N.generateKeyTitle(Email),
                         message: I18N.GENERATE_KEY_MESSAGE,
-                        class: 'generateNewKey',
+                        class: 'generateNewKey small',
                         password: authentication.getPassword(),
                         primary: false,
                         onSuccess() {

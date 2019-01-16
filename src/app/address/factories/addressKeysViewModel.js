@@ -1,7 +1,7 @@
 import { getKeys, getFingerprint } from 'pmcrypto';
 
 import { formatKey } from '../../../helpers/key';
-import keyAlgorithm from '../../keys/helper/keyAlgorithm';
+import { describe } from '../../../helpers/keyAlgorithm';
 import { MAIN_KEY } from '../../constants';
 
 /* @ngInject */
@@ -60,7 +60,7 @@ function addressKeysViewModel(keysModel) {
             const decryptedKeys = getDecryptedKeys(ID);
             const fingerprints = decryptedKeys.map(getFingerprint);
 
-            const algType = keyAlgorithm.describe(Keys[0]);
+            const algType = describe(Keys[0]);
             const address = {
                 order: Order,
                 addressID: ID,
@@ -73,7 +73,7 @@ function addressKeysViewModel(keysModel) {
                 publicKey: keyObject.toPublic().armor(),
                 keys: Keys.map((key) => ({
                     decrypted: fingerprints.some((fingerprint) => fingerprint === key.fingerprint),
-                    algType: keyAlgorithm.describe(key),
+                    algType: describe(key),
                     ...key
                 }))
             };

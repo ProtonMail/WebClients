@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
 
-import { BASE_SIZE } from '../../constants';
+import { BASE_SIZE, DEFAULT_ENCRYPTION_CONFIG } from '../../constants';
 
 /* @ngInject */
 function setupOrganizationModal(
@@ -37,7 +37,7 @@ function setupOrganizationModal(
             }
 
             self.step = steps[index];
-            self.size = 2048;
+            self.encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG;
 
             const allocatedLegend = {
                 label: gettextCatalog.getString('Allocated to admin', null, 'Success'),
@@ -122,10 +122,10 @@ function setupOrganizationModal(
             }
             function keys() {
                 const mailboxPassword = authentication.getPassword();
-                const bitSize = self.size;
+                const encryptionConfigName = self.encryptionConfigName;
 
                 return setupKeys
-                    .generateOrganization(mailboxPassword, bitSize)
+                    .generateOrganization(mailboxPassword, encryptionConfigName)
                     .then(({ privateKeyArmored }) => {
                         payload.PrivateKey = privateKeyArmored;
                         return privateKeyArmored;

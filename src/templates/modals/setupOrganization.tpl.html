@@ -26,21 +26,7 @@
                     </div>
                 </div>
                 <div ng-if="ctrl.step === 'keys'">
-                    <p class="alert alert-info" translate-context="Info" translate>This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.</p>
-                    <div class="pm_grid">
-                        <div class="col-1-2">
-                            <label class="checkbox">
-                                <custom-radio data-custom-ng-model="ctrl.size" data-custom-ng-value="2048"></custom-radio>
-                                <strong translate translate-context="Title" translate-comment="form option heading">High security</strong> <small>(2048-bit)</small>
-                            </label>
-                        </div>
-                        <div class="col-1-2">
-                            <label class="checkbox">
-                                <custom-radio data-custom-ng-model="ctrl.size" data-custom-ng-value="4096" data-custom-ng-disabled="ctrl.process === true"></custom-radio>
-                                <strong translate translate-context="Title" translate-comment="form option heading">Highest security</strong> <small>(4096-bit)</small>
-                            </label>
-                        </div>
-                    </div>
+                    <p class="alert alert-info" translate-context="Info" translate>This will create a new encryption key for your organization.</p>
                 </div>
                 <div ng-if="ctrl.step === 'password'">
                     <p class="alert alert-info" translate-context="Info" translate>Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.</p>

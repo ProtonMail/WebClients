@@ -1,4 +1,4 @@
-import { ENCRYPTION_DEFAULT } from '../../constants';
+import { DEFAULT_ENCRYPTION_CONFIG } from '../../constants';
 /* @ngInject */
 function addressModal(
     addressesModel,
@@ -45,7 +45,7 @@ function addressModal(
             this.domain = domains[0];
             this.domains = domains;
             this.address = '';
-            this.size = ENCRYPTION_DEFAULT;
+            this.size = DEFAULT_ENCRYPTION_CONFIG;
             this.members = members;
             this.member = members[0];
             this.showAddMember = organization.HasKeys === 1 && $state.is('secured.domains');

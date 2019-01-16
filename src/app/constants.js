@@ -24,7 +24,12 @@ export const MESSAGE_VIEW_MODE = 1;
 export const CONVERSATION_VIEW_MODE = 0;
 export const ROW_MODE = 1;
 export const COLUMN_MODE = 0;
-export const ENCRYPTION_DEFAULT = 2048;
+export const DEFAULT_ENCRYPTION_CONFIG = 'X25519';
+export const ENCRYPTION_CONFIGS = {
+    X25519: { curve: 'ed25519' },
+    RSA4096: { numBits: 4096 },
+    RSA2048: { numBits: 2048 }
+};
 export const MAX_SIZE_SCREENSHOT = 500 * 1000;
 export const CLIENT_TYPE = 1;
 export const CONTACT_EMAILS_LIMIT = 1000;

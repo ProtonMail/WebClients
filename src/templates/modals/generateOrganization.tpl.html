@@ -6,27 +6,6 @@
                 <h4 class="modal-title" translate translate-context="Title">Change Organization Keys</h4>
             </div>
             <div class="modal-body pm_form">
-                <div class="pm_grid">
-                    <div class="col-1-2">
-                        <label class="checkbox">
-                            <custom-radio data-custom-ng-model="ctrl.size" data-custom-ng-value="2048"></custom-radio>
-                            <span class="flex-grid-column">
-                                <strong translate translate-context="Title" translate-comment="form option heading">High security</strong>
-                                <small>(2048-bit)</small>
-                            </span>
-                        </label>
-                    </div>
-                    <div class="col-1-2">
-                        <label class="checkbox">
-                            <custom-radio data-custom-ng-model="ctrl.size" data-custom-ng-value="4096"></custom-radio>
-                            <span class="flex-grid-column">
-                                <strong translate translate-context="Title" translate-comment="form option heading">Highest security</strong>
-                                <small>(4096-bit)</small>
-                            </span>
-                        </label>
-                    </div>
-                </div>
-                <p class="alert alert-info" ng-show="ctrl.size === 4096" translate translate-context="Info">Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
                 <label for="newRecoveryPassword" translate-context="Title" translate>Key recovery password</label>
                 <password data-id="newRecoveryPassword" data-name="newRecoveryPassword" data-value="ctrl.newRecoveryPassword" form="generateOrganizationForm"></password>
                 <label for="confirmRecoveryPassword" translate-context="Title" translate>Confirm recovery Password</label>

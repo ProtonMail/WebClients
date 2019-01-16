@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { ENCRYPTION_DEFAULT } from '../../constants';
+import { DEFAULT_ENCRYPTION_CONFIG } from '../../constants';
 
 /* @ngInject */
 function generateModal(
@@ -20,7 +20,7 @@ function generateModal(
         },
         title: gettextCatalog.getString('Setting up your Addresses', null, 'Title'),
         message: gettextCatalog.getString(
-            'Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys.',
+            'Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.',
             null,
             'Info'
         )
@@ -33,7 +33,7 @@ function generateModal(
         controller: function(params) {
             const { on, unsubscribe } = dispatchers();
 
-            this.size = ENCRYPTION_DEFAULT; // To match the [radio] value
+            this.encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG; // To match the [radio] value
             this.process = false;
             this.title = params.title || I18N.title;
             this.message = params.message || I18N.message;
@@ -56,7 +56,7 @@ function generateModal(
                     _.map(this.addresses, (address) =>
                         generateKeyModel.generate({
                             address,
-                            numBits: this.size,
+                            encryptionConfigName: this.encryptionConfigName,
                             passphrase: this.password,
                             organizationKey: params.organizationKey,
                             memberMap: params.memberMap,

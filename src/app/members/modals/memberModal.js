@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { BASE_SIZE, ENCRYPTION_DEFAULT } from '../../constants';
+import { BASE_SIZE, DEFAULT_ENCRYPTION_CONFIG } from '../../constants';
 
 const GIGA = BASE_SIZE ** 3;
 
@@ -33,7 +33,7 @@ function memberModal(pmModal, gettextCatalog, organizationModel, subscriptionMod
 
             this.ID = null;
             this.step = 'member';
-            this.size = ENCRYPTION_DEFAULT;
+            this.encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG;
             this.organization = params.organization;
             this.organizationKey = params.organizationKey;
             this.domains = _.filter(params.domains, ({ State }) => State);
