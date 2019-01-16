@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2019-01-09 16:58\n"
+"PO-Revision-Date: 2019-01-16 12:44\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:59
 msgctxt "1 of 2 contacts successfully imported."
@@ -63,7 +63,7 @@ msgctxt "About human verification"
 msgid "<p>Too many ProtonMail accounts have been created from your connection.</p>\n"
 "                <p>Thus, we are requesting additional verification to ensure you are human and not a spam bot.</p>\n"
 "                <p>Because Tor or free VPNs are frequently abused by spammers, this check may be triggered because of the Tor or VPN exit node you are using.</p>"
-msgstr "<p>Odnotowaliśmy próby utworzenia zbyt wielu kont z Twojego adresu Ip.</p>\n"
+msgstr "<p>Odnotowaliśmy próby utworzenia zbyt wielu kont z Twojego adresu IP.</p>\n"
 "                <p>By upewnić się, że nie jesteś robotem wysyłającym spam, a człowiekiem, wymagamy dodatkowej weryfikacji.</p>\n"
 "                <p>Ponieważ sieć Tor lub bezpłatne połączenia VPN są często nadużywane przez spamerów, komunikat ten mógł się pojawić ponieważ korzystasz z węzła wyjściowego sieci Tor lub połączenia VPN.</p>"
 
@@ -425,7 +425,7 @@ msgstr "DW UDW"
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
 #: ./src/templates/user/signupPayForm.tpl.html:100
 #: ./src/templates/views/outside.reply.tpl.html:31
-#: ./src/templates/views/reset-login-password.tpl.html:127
+#: ./src/templates/views/reset-login-password.tpl.html:129
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:16
 msgctxt "Action"
@@ -983,7 +983,7 @@ msgstr "Zapomniałeś hasła?"
 
 #. Make sure this string is short please
 #: ./src/templates/authentication/modals/helpLoginModal.tpl.html:13
-#: ./src/templates/views/reset-login-password.tpl.html:40
+#: ./src/templates/views/reset-login-password.tpl.html:42
 msgctxt "Action"
 msgid "Forgot username?"
 msgstr "Nie pamiętasz nazwy użytkownika?"
@@ -1016,7 +1016,7 @@ msgid "Go to dashboard"
 msgstr "Przejdź do pulpitu"
 
 #. Make sure this string is short please
-#: ./src/templates/views/reset-login-password.tpl.html:41
+#: ./src/templates/views/reset-login-password.tpl.html:43
 msgctxt "Action"
 msgid "Have a reset code?"
 msgstr "Masz kod resetujący?"
@@ -1419,8 +1419,9 @@ msgctxt "Action"
 msgid "ProtonMail Shop"
 msgstr "Sklep ProtonMail"
 
-#: ./src/templates/views/reset-login-password.tpl.html:54
+#: ./src/templates/views/reset-login-password.tpl.html:56
 #: ./src/templates/views/reset-login-password.tpl.html:7
+#: ./src/templates/views/reset-login-password.tpl.html:8
 msgctxt "Action"
 msgid "ProtonMail username to reset"
 msgstr "Nazwa użytkownika ProtonMail do zresetowania"
@@ -1445,7 +1446,7 @@ msgctxt "Action"
 msgid "Reactivate"
 msgstr "Ponownie aktywuj"
 
-#: ./src/app/address/directives/reactivateKeysBtn.js:5
+#: ./src/app/address/directives/reactivateKeysBtn.js:12
 msgctxt "Action"
 msgid "Reactivate keys"
 msgstr "Aktywuj ponownie klucze"
@@ -1506,7 +1507,7 @@ msgctxt "Action"
 msgid "Report phishing"
 msgstr "Zgłoś próbę wyłudzenia informacji"
 
-#: ./src/templates/views/reset-login-password.tpl.html:128
+#: ./src/templates/views/reset-login-password.tpl.html:130
 msgctxt "Action"
 msgid "Reset"
 msgstr "Resetuj"
@@ -1519,20 +1520,20 @@ msgstr "Reset kluczy"
 
 #. button to reset login password
 #. button to reset password
-#: ./src/templates/views/reset-login-password.tpl.html:37
-#: ./src/templates/views/reset-login-password.tpl.html:84
+#: ./src/templates/views/reset-login-password.tpl.html:39
+#: ./src/templates/views/reset-login-password.tpl.html:86
 msgctxt "Action"
 msgid "Reset Password"
 msgstr "Resetowanie hasła"
 
-#: ./src/templates/views/reset-login-password.tpl.html:70
+#: ./src/templates/views/reset-login-password.tpl.html:71
 msgctxt "Action"
 msgid "Reset code"
 msgstr "Kod resetowania"
 
 #. button to reset password
 #: ./src/templates/authentication/modals/helpLoginModal.tpl.html:10
-#: ./src/templates/views/reset-login-password.tpl.html:169
+#: ./src/templates/views/reset-login-password.tpl.html:170
 msgctxt "Action"
 msgid "Reset password"
 msgstr "Resetowanie hasła"
@@ -1918,7 +1919,7 @@ msgctxt "Action"
 msgid "Verify"
 msgstr "Zweryfikuj"
 
-#: ./src/templates/views/reset-login-password.tpl.html:96
+#: ./src/templates/views/reset-login-password.tpl.html:98
 msgctxt "Action"
 msgid "Verifying reset code"
 msgstr "Weryfikacja kodu resetowania"
@@ -2290,12 +2291,12 @@ msgstr "Zmień na plan darmowy"
 #: ./src/app/dashboard/directives/selectPlan.js:6
 msgctxt "Button to select plan on the dashboard"
 msgid "Switch to Plus"
-msgstr "Przejdź na plan Plus"
+msgstr "Zmień na plan Plus"
 
 #: ./src/app/dashboard/directives/selectPlan.js:7
 msgctxt "Button to select plan on the dashboard"
 msgid "Switch to Professional"
-msgstr "Przełącz na plan Profesjonalny"
+msgstr "Zmień na plan Profesjonalny"
 
 #: ./src/app/dashboard/directives/selectPlan.js:12
 msgctxt "Button to select plan on the dashboard"
@@ -2643,7 +2644,7 @@ msgstr "pasuje do"
 #: ./src/app/address/directives/addressKeysView.js:40
 msgctxt "Confirm message"
 msgid "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails."
-msgstr "Czy na pewno chcesz importować klucz prywatny? Importowanie niezabezpieczonych przy generacji lub ujawnionych kluczy prywatnych może naruszyć bezpieczeństwo twoich wiadomości e-mail."
+msgstr "Czy na pewno chcesz zaimportować klucz prywatny? Importowanie ujawnionych lub nieostrożnie wygenerowanych kluczy prywatnych może naruszyć bezpieczeństwo wiadomości e-mail."
 
 #: ./src/app/utils/modals/discardModal.js:10
 msgctxt "Confirm message"
@@ -3389,7 +3390,7 @@ msgstr "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Sk
 #: ./src/templates/directives/core/bugModalView.tpl.html:98
 msgctxt "Error"
 msgid "Add a description to help us improve ProtonMail"
-msgstr "Dodaj opis aby pomóc nam ulepszać Protonmaila"
+msgstr "Dodaj opis, aby pomóc nam ulepszać Protonmaila"
 
 #: ./src/app/members/services/membersValidator.js:47
 msgctxt "Error"
@@ -3431,7 +3432,7 @@ msgstr "Nie można odszyfrować klucza organizacji"
 #: ./src/app/attachments/services/attachmentDownloader.js:57
 msgctxt "Error"
 msgid "Cannot generate a zip of your attachments."
-msgstr "Nie można wygenerować pliku zip twoich załączników."
+msgstr "Nie można wygenerować pliku ZIP załączników."
 
 #: ./src/app/address/directives/addressKeysView.js:52
 msgctxt "Error"
@@ -3534,7 +3535,7 @@ msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
 msgstr "Nie udało się uzyskać informacji o kluczach dla adresów: {{emails}}. Adresy zostaną usunięte z listy odbiorców. Spróbuj ponownie."
 
-#: ./src/app/address/factories/reactivateKeys.js:37
+#: ./src/app/address/factories/reactivateKeys.js:35
 msgctxt "Error"
 msgid "Failed to reactivate key"
 msgstr "Nie udało się reaktywować klucza"
@@ -3566,7 +3567,7 @@ msgctxt "Error"
 msgid "ICS parsing error:"
 msgstr "Błąd składni ICS:"
 
-#: ./src/templates/views/reset-login-password.tpl.html:51
+#: ./src/templates/views/reset-login-password.tpl.html:53
 msgctxt "Error"
 msgid "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it."
 msgstr "WAŻNE: Nie zamykaj ani nie opuszczaj tej strony. Gdy otrzymasz kod resetowania wpisz go w poniższe pole."
@@ -3574,14 +3575,14 @@ msgstr "WAŻNE: Nie zamykaj ani nie opuszczaj tej strony. Gdy otrzymasz kod rese
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:10
 msgctxt "Error"
 msgid "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!"
-msgstr "WAŻNE: Pobieranie twoich prywatnych kluczy i wysyłanie ich lub przechowywanie ich na niezabezpieczonych nośnikach może narazić na niebezpieczeństwo twoje konto!"
+msgstr "WAŻNE: Pobieranie, wysyłanie i przechowywanie kluczy prywatnych na niezabezpieczonych nośnikach może narazić Twoje konto na niebezpieczeństwo!"
 
 #: ./src/app/contact/directives/contactPhotoForm.js:7
 msgctxt "Error"
 msgid "Image upload failed"
 msgstr "Przesłanie obrazu nie powiodło się"
 
-#: ./src/app/address/factories/reactivateKeys.js:28
+#: ./src/app/address/factories/reactivateKeys.js:26
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
@@ -3670,7 +3671,7 @@ msgctxt "Error"
 msgid "Invalid password"
 msgstr "Nieprawidłowe hasło"
 
-#: ./src/templates/views/reset-login-password.tpl.html:33
+#: ./src/templates/views/reset-login-password.tpl.html:35
 msgctxt "Error"
 msgid "Invalid recovery email"
 msgstr "Nieprawidłowy e-mail odzyskiwania konta"
@@ -3777,14 +3778,14 @@ msgstr "Wpisz hasło dla tej wiadomości e-mail."
 #: ./src/app/composer/services/validateMessage.js:46
 msgctxt "Error"
 msgid "Please enter at least one recipient."
-msgstr "Wpisz co najmniej jednego adresata."
+msgstr "Wpisz co najmniej jednego odbiorcę."
 
 #: ./src/app/authentication/controllers/login.js:52
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Wpisz kod uwierzytelniania dwustopniowego"
 
-#: ./src/app/keys/services/decryptKeys.js:11
+#: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr "Klucz główny dla adresu {{email}} nie może być odszyfrowany. Nie będziesz w stanie odczytać lub napisać żadnej wiadomości e-mail z tego adresu"
@@ -3804,7 +3805,7 @@ msgctxt "Error"
 msgid "Request timed out, please try again."
 msgstr "Upłynął limit czasu żądania. Spróbuj ponownie."
 
-#: ./src/templates/views/reset-login-password.tpl.html:80
+#: ./src/templates/views/reset-login-password.tpl.html:82
 msgctxt "Error"
 msgid "Reset code is required"
 msgstr "Kod resetowania jest wymagany"
@@ -3842,7 +3843,7 @@ msgstr "Coś poszło nie tak podczas tworzenia adresu"
 #: ./src/templates/views/outside.unlock.tpl.html:39
 msgctxt "Error"
 msgid "Sorry, this message does not exist or has already expired"
-msgstr "Przepraszamy, ta wiadomość nie istnieje bądź minął jej okres ważności"
+msgstr "Wiadomość nie istnieje, bądź już wygasła"
 
 #: ./src/app/filter/modals/filterModal.js:59
 msgctxt "Error"
@@ -3902,7 +3903,7 @@ msgstr "Następujące adresy są nieprawidłowe: {{emails}}"
 #: ./src/app/composer/directives/composerExpiration.js:9
 msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
-msgstr "Maksymalny czas ważności wynosi 4 tygodnie."
+msgstr "Maksymalny czas wygaśnięcia wynosi 4 tygodnie."
 
 #: ./src/app/composer/services/validateMessage.js:41
 msgctxt "Error"
@@ -3960,8 +3961,8 @@ msgid "Upgrade to a paid plan to send from your {{email}} address"
 msgstr "Ulepsz do planu płatnego, aby wysyłać z Twojego adresu {{email}}"
 
 #: ./src/templates/user/usernameDomain.tpl.html:43
-#: ./src/templates/views/reset-login-password.tpl.html:19
-#: ./src/templates/views/reset-login-password.tpl.html:66
+#: ./src/templates/views/reset-login-password.tpl.html:20
+#: ./src/templates/views/reset-login-password.tpl.html:67
 msgctxt "Error"
 msgid "Username required"
 msgstr "Nazwa użytkownika jest wymagana"
@@ -4081,12 +4082,12 @@ msgctxt "Error"
 msgid "Your browser lacks features needed to download encrypted attachments directly."
 msgstr "Twojej przeglądarce brakuje funkcji potrzebnych do bezpośredniego pobrania zaszyfrowanych załączników."
 
-#: ./src/app/address/factories/reactivateKeys.js:30
+#: ./src/app/address/factories/reactivateKeys.js:28
 msgctxt "Error"
 msgid "{{n}} keys failed to decrypt due to an incorrect password"
 msgstr "Nie udało się odszyfrować {{n}} kluczy z powodu nieprawidłowego hasła"
 
-#: ./src/app/address/factories/reactivateKeys.js:38
+#: ./src/app/address/factories/reactivateKeys.js:36
 msgctxt "Error"
 msgid "{{n}} keys failed to reactivate"
 msgstr "Nie udało się reaktywować {{n}} kluczy"
@@ -4732,7 +4733,7 @@ msgstr "<kbd>s</kbd> Przenieś wiadomość/wątek do <strong>Spamu</strong>."
 #: ./src/templates/modals/hotkey.tpl.html:75
 msgctxt "Info"
 msgid "<kbd>shift</kbd> + <kbd>a</kbd> Reply to all recipients for a message/conversation."
-msgstr "<kbd>shift</kbd> + <kbd>a</kbd> Odpowiedz do wszystkich adresatów wiadomości/wątku."
+msgstr "<kbd>shift</kbd> + <kbd>a</kbd> Odpowiedz do wszystkich odbiorców wiadomości/wątku."
 
 #: ./src/templates/modals/hotkey.tpl.html:76
 msgctxt "Info"
@@ -4798,7 +4799,7 @@ msgid "A new version of ProtonMail is available. Please refresh this page."
 msgstr "Dostępna jest nowa wersja ProtonMaila. Odśwież stronę."
 
 #. reset warning 2/3
-#: ./src/templates/views/reset-login-password.tpl.html:104
+#: ./src/templates/views/reset-login-password.tpl.html:106
 msgctxt "Info"
 msgid "ALL YOUR DATA WILL BE LOST!"
 msgstr "WSZYSTKIE TWOJE DANE ZOSTANĄ UTRACONE!"
@@ -5168,7 +5169,7 @@ msgstr "Filtry niestandardowe działają na wszystkie nowe wiadomości e-mail, �
 #: ./src/templates/views/appearance.tpl.html:130
 msgctxt "Info"
 msgid "Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources."
-msgstr "Motywy trzecich stron potencjalnie mogą ujawnić twoje prywatne dane. Używaj tylko motywów z zaufanych źródeł."
+msgstr "Motywy trzecich stron potencjalnie mogą ujawnić Twoje prywatne dane. Używaj tylko motywów z zaufanych źródeł."
 
 #. errors for contact
 #: ./src/templates/contact/contactError.tpl.html:3
@@ -5231,12 +5232,12 @@ msgstr "Czy nadal chcesz pobrać <strong>{{name}}</strong>?"
 #: ./src/templates/modals/exportKeyModal.tpl.html:10
 msgctxt "Info"
 msgid "Do you want to export the public key or the private key?"
-msgstr "Czy chcesz wyeksportować klucz publiczny lub klucz prywatny?"
+msgstr "Czy chcesz wyeksportować klucz publiczny czy prywatny?"
 
 #: ./src/templates/payment/donation.tpl.html:13
 msgctxt "Info"
 msgid "Donations are added as credit to your ProtonMail account and can be used to purchase account upgrades."
-msgstr "Darowizny są dodawane jako środki na twoje konto ProtonMail i mogą zostać użyte do zakupu ulepszeń konta."
+msgstr "Darowizny trafiają na Twoje konto ProtonMail w formie środków, które mogą zostać użyte do zakupu ulepszeń konta."
 
 #: ./src/app/sidebar/directives/donateBtn.js:6
 msgctxt "Info"
@@ -5277,7 +5278,7 @@ msgstr "E-mail został już wysłany"
 #: ./src/templates/composer/composerEncrypt.tpl.html:64
 msgctxt "Info"
 msgid "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set."
-msgstr "Zaszyfrowane wiadomości do adresatów spoza ProtonMaila wygasają w 28 dni, chyba, że ustawiono krótszy czas wygaśnięcia."
+msgstr "Zaszyfrowane wiadomości do odbiorców spoza ProtonMaila wygasają w 28 dni, chyba, że ustawiono krótszy czas wygaśnięcia."
 
 #: ./src/app/message/directives/messageContactsIcon.js:58
 #: ./src/app/message/directives/messageContactsIcon.js:63
@@ -5285,7 +5286,7 @@ msgstr "Zaszyfrowane wiadomości do adresatów spoza ProtonMaila wygasają w 28 
 #: ./src/app/ui/services/encryptionStatus.js:45
 msgctxt "Info"
 msgid "End-to-end encrypted"
-msgstr "Zaszyfrowane end-to-end"
+msgstr "Zaszyfrowana end-to-end"
 
 #: ./src/app/message/directives/messageContactsIcon.js:43
 #: ./src/app/message/directives/messageContactsIcon.js:48
@@ -5293,7 +5294,7 @@ msgstr "Zaszyfrowane end-to-end"
 #: ./src/app/ui/services/encryptionStatus.js:44
 msgctxt "Info"
 msgid "End-to-end encrypted to verified recipient"
-msgstr "Zaszyfrowane end-to-end do zweryfikowanego odbiorcy"
+msgstr "Zaszyfrowana end-to-end do zweryfikowanego odbiorcy"
 
 #: ./src/app/organization/modals/activateOrganizationModal.js:38
 msgctxt "Info"
@@ -5446,7 +5447,7 @@ msgctxt "Info"
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
 msgstr "Obecnie nie można subskrybować płatnego planu ProtonMail."
 
-#: ./src/templates/views/reset-login-password.tpl.html:138
+#: ./src/templates/views/reset-login-password.tpl.html:140
 msgctxt "Info"
 msgid "Keep this password safe--it cannot be recovered."
 msgstr "Zachowaj to hasło - nie będziemy w stanie Ci pomóc gdy go zapomnisz."
@@ -5456,7 +5457,7 @@ msgctxt "Info"
 msgid "Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM"
 msgstr "Utrzymuj ten rekord w DNS tak długo, jak chcesz używać DKIM. Możesz zmienić jego wartość na <code>wyłączony</code>, aby wyłączyć DKIM"
 
-#: ./src/app/address/factories/reactivateKeys.js:23
+#: ./src/app/address/factories/reactivateKeys.js:21
 msgctxt "Info"
 msgid "Key reactivated"
 msgstr "Klucz został ponownie aktywowany"
@@ -5643,7 +5644,7 @@ msgstr "Jest więcej administratorów w organizacji. Przekaż im nowe hasło odz
 #: ./src/app/settings/directives/encryptionView.js:20
 msgctxt "Info"
 msgid "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed."
-msgstr "Klienci PGP częściej automatycznie wykryją twoje klucze PGP, jeśli wiadomości wychodzące będą podpisane."
+msgstr "Podpisanie wiadomości wychodzących ułatwi klientom PGP automatyczne rozpoznanie Twoich kluczy PGP."
 
 #: ./src/app/message/directives/messageContactsIcon.js:18
 #: ./src/app/message/directives/messageContactsIcon.js:23
@@ -5652,7 +5653,7 @@ msgstr "Klienci PGP częściej automatycznie wykryją twoje klucze PGP, jeśli w
 #: ./src/app/ui/services/encryptionStatus.js:43
 msgctxt "Info"
 msgid "PGP-encrypted"
-msgstr "Szyfrowane PGP"
+msgstr "Zaszyfrowana PGP"
 
 #: ./src/app/message/directives/messageContactsIcon.js:13
 #: ./src/app/message/directives/messageContactsIcon.js:28
@@ -5715,16 +5716,12 @@ msgctxt "Info"
 msgid "Please add addresses to send and receive email with this domain"
 msgstr "Dodaj adresy do wysyłania i odbierania poczty e-mail w tej domenie"
 
-#: ./src/templates/modals/domain/dkim.tpl.html:15
-msgctxt "Info"
-msgid "Please add the follow TXT record. Note, DNS records can take several hours to update."
-msgstr "Dodaj następujący rekord TXT. Weź pod uwagę, że może upłynąć kilka godzin zanim rekordy DNS zostaną zaktualizowane."
-
 #: ./src/templates/modals/domain/mx.tpl.html:14
 msgctxt "Info"
 msgid "Please add the following MX record. Note, DNS records can take several hours to update."
 msgstr "Dodaj następujący rekord MX. Weź pod uwagę, że może upłynąć kilka godzin zanim rekordy DNS zostaną zaktualizowane."
 
+#: ./src/templates/modals/domain/dkim.tpl.html:15
 #: ./src/templates/modals/domain/spf.tpl.html:14
 msgctxt "Info"
 msgid "Please add the following TXT record. Note, DNS records can take several hours to update."
@@ -5857,7 +5854,7 @@ msgid "Reset Password"
 msgstr "Resetowanie hasła"
 
 #. reset warning 1/3
-#: ./src/templates/views/reset-login-password.tpl.html:103
+#: ./src/templates/views/reset-login-password.tpl.html:105
 msgctxt "Info"
 msgid "Resetting your password will also reset your encryption keys, so you will be unable to read your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Learn More</a>."
 msgstr "Resetowanie hasła również zresetuje klucze szyfrowania, nie będziesz więc w stanie odczytać wiadomości sprzed momentu zresetowania. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\"> Dowiedz się więcej</a>."
@@ -5936,7 +5933,7 @@ msgstr "Tutaj możesz ustawić swoje preferencje dla nadawców spamu. \n"
 #: ./src/templates/views/domains.tpl.html:201
 msgctxt "Info"
 msgid "Set a catch-all address for your domain."
-msgstr "Ustaw adres catch-all dla twojej domeny."
+msgstr "Ustaw adres catch-all dla domeny."
 
 #: ./src/templates/views/setup.tpl.html:99
 msgctxt "Info"
@@ -6008,7 +6005,7 @@ msgctxt "Info"
 msgid "Theme saved"
 msgstr "Motyw został zapisany"
 
-#: ./src/templates/views/reset-login-password.tpl.html:182
+#: ./src/templates/views/reset-login-password.tpl.html:183
 #: ./src/templates/views/setup.tpl.html:79
 #: ./src/templates/views/signup.tpl.html:14
 msgctxt "Info"
@@ -6144,7 +6141,7 @@ msgstr "Aby pobrać załączniki w przeglądarce Safari:"
 #: ./src/templates/user/humanVerification.tpl.html:17
 msgctxt "Info"
 msgid "To fight spam, please verify you are human."
-msgstr "Weryfikacja człowieczeństwa. Tak walczymy ze spamem."
+msgstr "Weryfikacja antyspamowa. Udowodnij, że jesteś człowiekiem."
 
 #: ./src/templates/filter/modal.tpl.html:36
 msgctxt "Info"
@@ -6289,7 +6286,7 @@ msgctxt "Info"
 msgid "We will send a reset code to your <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"This is the optional email you used when first creating an account. This is the same as your notification email that is used for sending alerts about new messages.\">recovery email</a> to reset your password."
 msgstr "W celu zresetowania hasła wyślemy kod resetujący na Twój <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"To jest opcjonalny e-mail, który użyty został podczas zakładania konta. Ten sam, na który otrzymujesz powiadomienia o nowych wiadomościach.\">e-mail odzyskiwania</a>."
 
-#: ./src/templates/views/reset-login-password.tpl.html:48
+#: ./src/templates/views/reset-login-password.tpl.html:50
 msgctxt "Info"
 msgid "We've sent a reset code to your <strong>recovery email</strong>, valid for one hour or until you request a new code. Enter it below to continue."
 msgstr "Na Twój <strong>pomocniczy adres e-mail</strong> została wysłana wiadomość z kodem resetującym, ważnym przez godzinę lub do czasu, gdy poprosisz o nowy. Wpisz go do wskazanego pola, aby kontynuować."
@@ -6565,7 +6562,7 @@ msgstr "użyte"
 #: ./src/app/contact/factories/contactSpam.js:8
 msgctxt "Info"
 msgid "{{ name }} is also in your contacts. Remove them from your contacts?"
-msgstr "{{ name }} jest także w twoich kontaktach. Usunąć ich z kontaktów?"
+msgstr "{{ name }} znajduje się także w Twoich kontaktach. Usunąć ten adres z kontaktów?"
 
 #: ./src/templates/views/members.tpl.html:80
 msgctxt "Info"
@@ -6618,7 +6615,7 @@ msgctxt "Info"
 msgid "{{Name}} updated"
 msgstr "Zaktualizowano {{Name}}"
 
-#: ./src/app/address/factories/reactivateKeys.js:24
+#: ./src/app/address/factories/reactivateKeys.js:22
 msgctxt "Info"
 msgid "{{n}} keys reactivated"
 msgstr "Reaktywowano {{n}} kluczy"
@@ -7828,7 +7825,7 @@ msgstr "Błąd odszyfrowywania: odszyfrowanie tej wiadomości nie powiodło się
 #: ./src/app/message/factories/getEncryptionType.js:50
 msgctxt "Message encryption status"
 msgid "Encrypted message"
-msgstr "Zaszyfrowana wiadomość"
+msgstr "Wiadomość zaszyfrowana"
 
 #: ./src/app/message/factories/getEncryptionType.js:13
 msgctxt "Message encryption status"
@@ -7838,7 +7835,7 @@ msgstr "Wiadomość zaszyfrowana end-to-end"
 #: ./src/app/message/factories/getEncryptionType.js:14
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message from verified address"
-msgstr "Zaszyfrowane end-to-end od zweryfikowanego adresu"
+msgstr "Wiadomość zaszyfrowana end-to-end od zweryfikowanego adresu"
 
 #: ./src/app/message/factories/getEncryptionType.js:23
 msgctxt "Message encryption status"
@@ -7853,7 +7850,7 @@ msgstr "Wiadomość zaszyfrowana PGP od zweryfikowanego adresu"
 #: ./src/app/message/factories/getEncryptionType.js:30
 msgctxt "Message encryption status"
 msgid "PGP-signed message from verified address"
-msgstr "Wiadomość podpisana PGP od zweryfikowanego nadawcy"
+msgstr "Wiadomość podpisana PGP od zweryfikowanego adresu"
 
 #: ./src/app/message/factories/getEncryptionType.js:19
 #: ./src/app/message/factories/getEncryptionType.js:25
@@ -7867,20 +7864,20 @@ msgstr "Weryfikacja nadawcy nie powiodła się"
 #: ./src/app/message/factories/getEncryptionType.js:41
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail with zero access encryption"
-msgstr "Wysłane przez ProtonMail z szyfrowaniem po stronie klienta"
+msgstr "Wysłana przez ProtonMail z szyfrowaniem po stronie klienta"
 
 #: ./src/app/message/factories/getEncryptionType.js:35
 #: ./src/app/message/factories/getEncryptionType.js:36
 msgctxt "Message encryption status"
 msgid "Sent by you with end-to-end encryption"
-msgstr "Wysłane przez Ciebie z szyfrowaniem end-to-end"
+msgstr "Wysłana przez Ciebie z szyfrowaniem end-to-end"
 
 #: ./src/app/message/factories/getEncryptionType.js:29
 #: ./src/app/message/factories/getEncryptionType.js:45
 #: ./src/app/message/factories/getEncryptionType.js:46
 msgctxt "Message encryption status"
 msgid "Stored with zero access encryption"
-msgstr "Przechowywane z szyfrowaniem po stronie klienta"
+msgstr "Przechowywana z szyfrowaniem po stronie klienta"
 
 #: ./src/templates/message/messageExpiration.tpl.html:4
 msgctxt "Message expiration label"
@@ -8006,7 +8003,7 @@ msgstr "Odśwież kartę"
 #: ./src/templates/message/message.tpl.html:89
 msgctxt "No recipients to display in the message header"
 msgid "Undisclosed Recipients"
-msgstr "Nieujawnieni Odbiorcy"
+msgstr "Nieznani odbiorcy"
 
 #: ./src/app/ui/directives/noResults.js:34
 msgctxt "No results heading"
@@ -8076,7 +8073,7 @@ msgstr "Filtr został zaktualizowany"
 #: ./src/app/outside/controllers/outside.js:28
 msgctxt "Notification"
 msgid "ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>."
-msgstr "Szyfrowanie Zewnętrzne ProtonMaila umożliwia tylko 5 odpowiedzi. <a href=\"https://protonmail.com/signup\" target=\"_blank\"> Możesz zarejestrować się w ProtonMail aby ciągle i bez ograniczeń korzystać z szyfrowania end-to-end dla całej komunikacji</a>."
+msgstr "Szyfrowanie dla użytkowników spoza ProtonMaila umożliwia tylko 5 odpowiedzi. <a href=\"https://protonmail.com/signup\" target=\"_blank\">Załóż konto ProtonMail, aby w pełni i bez ograniczeń korzystać z szyfrowania end-to-end</a>."
 
 #: ./src/templates/notifications/retry.tpl.html:9
 msgctxt "Notification error trying to connect to the API"
@@ -8619,27 +8616,29 @@ msgctxt "Remove element"
 msgid "{{total}} {{item}} removed"
 msgstr "Usunięto {{total}} {{item}}"
 
-#: ./src/templates/views/reset-login-password.tpl.html:22
+#: ./src/templates/views/reset-login-password.tpl.html:23
+#: ./src/templates/views/reset-login-password.tpl.html:24
 msgctxt "Reset password"
 msgid "Recovery email"
 msgstr "E-mail odzyskiwania"
 
-#: ./src/templates/views/reset-login-password.tpl.html:151
+#: ./src/templates/views/reset-login-password.tpl.html:152
+#: ./src/templates/views/reset-login-password.tpl.html:153
 msgctxt "Reset your login"
 msgid "Confirm new password"
 msgstr "Potwierdź nowe hasło"
 
-#: ./src/templates/views/reset-login-password.tpl.html:163
+#: ./src/templates/views/reset-login-password.tpl.html:164
 msgctxt "Reset your login"
 msgid "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages."
 msgstr "ZAPAMIĘTAJ hasło. Jeśli je zapomnisz, nie będziesz mógł się zalogować ani odszyfrować wiadomości."
 
-#: ./src/templates/views/reset-login-password.tpl.html:164
+#: ./src/templates/views/reset-login-password.tpl.html:165
 msgctxt "Reset your login"
 msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Zapisz hasło w bezpiecznym miejscu. Kliknij na ikonę <i class=\"fa fa-eye\"></i>, aby potwierdzić, że poprawnie wpisałeś hasło."
 
-#: ./src/templates/views/reset-login-password.tpl.html:141
+#: ./src/templates/views/reset-login-password.tpl.html:143
 msgctxt "Reset your password"
 msgid "Choose a new password"
 msgstr "Wybierz nowe hasło"
@@ -8920,7 +8919,7 @@ msgctxt "Success"
 msgid "Key deleted"
 msgstr "Klucz został usunięty"
 
-#: ./src/app/address/directives/reactivateKeysBtn.js:4
+#: ./src/app/address/directives/reactivateKeysBtn.js:11
 msgctxt "Success"
 msgid "Keys reactivated"
 msgstr "Klucz został ponownie aktywowany"
@@ -9879,7 +9878,7 @@ msgstr "Szyfruj dla użytkowników spoza ProtonMaila"
 #: ./src/app/ui/factories/pageTitlesModel.js:23
 msgctxt "Title"
 msgid "Encrypted Message"
-msgstr "Zaszyfrowana wiadomość"
+msgstr "Wiadomość zaszyfrowana"
 
 #: ./src/app/ui/factories/pageTitlesModel.js:24
 msgctxt "Title"
@@ -10001,12 +10000,12 @@ msgctxt "Title"
 msgid "General"
 msgstr "Ogólne"
 
-#: ./src/templates/views/reset-login-password.tpl.html:196
+#: ./src/templates/views/reset-login-password.tpl.html:197
 msgctxt "Title"
 msgid "Generating keys"
 msgstr "Generowanie kluczy"
 
-#: ./src/templates/views/reset-login-password.tpl.html:180
+#: ./src/templates/views/reset-login-password.tpl.html:181
 #: ./src/templates/views/setup.tpl.html:77
 #: ./src/templates/views/signup.tpl.html:12
 msgctxt "Title"
@@ -10078,7 +10077,7 @@ msgstr "Skróty klawiszowe"
 #: ./src/templates/modals/humanVerification.tpl.html:6
 msgctxt "Title"
 msgid "Human verification"
-msgstr "Weryfikacja człowieczeństwa"
+msgstr "Weryfikacja antyspamowa"
 
 #: ./src/templates/bridge/bridgeView.tpl.html:6
 msgctxt "Title"
@@ -10209,7 +10208,7 @@ msgctxt "Title"
 msgid "Location"
 msgstr "Lokalizacja"
 
-#: ./src/templates/views/reset-login-password.tpl.html:204
+#: ./src/templates/views/reset-login-password.tpl.html:205
 msgctxt "Title"
 msgid "Logging in to your account"
 msgstr "Logowanie do Twojego konta"
@@ -10300,7 +10299,7 @@ msgctxt "Title"
 msgid "New message"
 msgstr "Nowa wiadomość"
 
-#: ./src/templates/views/reset-login-password.tpl.html:140
+#: ./src/templates/views/reset-login-password.tpl.html:142
 msgctxt "Title"
 msgid "New password:"
 msgstr "Nowe hasło:"
@@ -10323,7 +10322,7 @@ msgstr "Brak tematu"
 #: ./src/templates/modals/expirationModal.tpl.html:10
 msgctxt "Title"
 msgid "Not all recipients support message expiration"
-msgstr "Nie wszyscy adresaci obsługują wygasanie wiadomości"
+msgstr "Nie wszyscy odbiorcy obsługują wygasanie wiadomości"
 
 #. Desktop notification
 #: ./src/templates/modals/label.tpl.html:61
@@ -10547,7 +10546,7 @@ msgctxt "Title"
 msgid "Recovery email (optional)"
 msgstr "E-mail odzyskiwania hasła (opcjonalnie)"
 
-#: ./src/templates/views/reset-login-password.tpl.html:208
+#: ./src/templates/views/reset-login-password.tpl.html:209
 msgctxt "Title"
 msgid "Redirecting"
 msgstr "Przekierowywanie"
@@ -10572,13 +10571,13 @@ msgctxt "Title"
 msgid "Request timed out, please try again."
 msgstr "Upłynął limit czasu żądania. Spróbuj ponownie."
 
-#: ./src/templates/views/reset-login-password.tpl.html:137
-#: ./src/templates/views/reset-login-password.tpl.html:50
+#: ./src/templates/views/reset-login-password.tpl.html:139
+#: ./src/templates/views/reset-login-password.tpl.html:52
 msgctxt "Title"
 msgid "Reset Password"
 msgstr "Resetowanie hasła"
 
-#: ./src/templates/views/reset-login-password.tpl.html:69
+#: ./src/templates/views/reset-login-password.tpl.html:70
 msgctxt "Title"
 msgid "Reset code:"
 msgstr "Kod resetowania:"
@@ -10589,8 +10588,8 @@ msgctxt "Title"
 msgid "Reset/notification email"
 msgstr "E-mail odzyskiwania/powiadomień"
 
-#: ./src/templates/views/reset-login-password.tpl.html:190
-#: ./src/templates/views/reset-login-password.tpl.html:200
+#: ./src/templates/views/reset-login-password.tpl.html:191
+#: ./src/templates/views/reset-login-password.tpl.html:201
 msgctxt "Title"
 msgid "Resetting your password"
 msgstr "Resetowanie Twojego hasła"
@@ -10825,7 +10824,7 @@ msgstr "Dziękujemy za subskrypcję!"
 #: ./src/app/user/directives/signupPayForm.js:21
 msgctxt "Title"
 msgid "Thank you for your support!"
-msgstr "Dziękujemy za twoje wsparcie!"
+msgstr "Dziękujemy za Twoje wsparcie!"
 
 #: ./src/templates/modals/hotkey.tpl.html:60
 msgctxt "Title"
@@ -10952,7 +10951,7 @@ msgctxt "Title"
 msgid "Username and domain"
 msgstr "Nazwa użytkownika i domena"
 
-#: ./src/templates/views/reset-login-password.tpl.html:53
+#: ./src/templates/views/reset-login-password.tpl.html:55
 msgctxt "Title"
 msgid "Username:"
 msgstr "Nazwa użytkownika:"
@@ -10985,7 +10984,7 @@ msgstr "Weryfikacja"
 #: ./src/app/address/services/deleteKeyProcess.js:17
 #: ./src/app/user/directives/signupUserForm.js:4
 #: ./src/app/user/factories/storageWarning.js:35
-#: ./src/templates/views/reset-login-password.tpl.html:102
+#: ./src/templates/views/reset-login-password.tpl.html:104
 msgctxt "Title"
 msgid "Warning"
 msgstr "Ostrzeżenie"
@@ -11147,13 +11146,13 @@ msgid "Pasted-image"
 msgstr "Wklejony obraz"
 
 #. reset warning 3/3
-#: ./src/templates/views/reset-login-password.tpl.html:106
+#: ./src/templates/views/reset-login-password.tpl.html:108
 msgctxt "To continue, type DANGER below:"
 msgid "To continue, type"
 msgstr "Aby kontynuować, wpisz"
 
 #. reset warning 3/3
-#: ./src/templates/views/reset-login-password.tpl.html:108
+#: ./src/templates/views/reset-login-password.tpl.html:110
 msgctxt "To continue, type DANGER below:"
 msgid "below:"
 msgstr "poniżej:"
@@ -12119,22 +12118,22 @@ msgctxt "printed message info"
 msgid "Sent:"
 msgstr "Wysłano:"
 
-#: ./src/templates/views/reset-login-password.tpl.html:122
+#: ./src/templates/views/reset-login-password.tpl.html:124
 msgctxt "reset password"
 msgid "If you are resetting the Login password only, old messages can be recovered later if you know your existing Mailbox Password. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "Jeśli resetujesz jedynie hasło logowania, to stare wiadomości można odzyskać później, jeśli znasz obecne hasło skrzynki pocztowej. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\"> Dowiedz się więcej</a>."
 
-#: ./src/templates/views/reset-login-password.tpl.html:115
+#: ./src/templates/views/reset-login-password.tpl.html:117
 msgctxt "reset password"
 msgid "If you remember your old password later, you can recover your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "Jeśli przypomnisz sobie swoje stare hasło później, będziesz mógł odzyskać swoje obecne wiadomości. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Dowiedz się więcej</a>."
 
-#: ./src/templates/views/reset-login-password.tpl.html:121
+#: ./src/templates/views/reset-login-password.tpl.html:123
 msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will make old messages unreadable."
 msgstr "Resetowanie hasła logowania lub skrzynki pocztowej sprawi, że nie będzie można odczytać starszych wiadomości."
 
-#: ./src/templates/views/reset-login-password.tpl.html:120
+#: ./src/templates/views/reset-login-password.tpl.html:122
 msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will switch you to <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Single Password Mode</a>."
 msgstr "Zresetowanie hasła logowania lub skrzynki pocztowej przełączy Cię w <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Tryb pojedynczego hasła</a>."

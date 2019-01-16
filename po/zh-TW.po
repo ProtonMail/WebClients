@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
-"PO-Revision-Date: 2019-01-09 16:59\n"
+"PO-Revision-Date: 2019-01-16 12:46\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:59
 msgctxt "1 of 2 contacts successfully imported."
@@ -422,7 +422,7 @@ msgstr "抄送密件副本"
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
 #: ./src/templates/user/signupPayForm.tpl.html:100
 #: ./src/templates/views/outside.reply.tpl.html:31
-#: ./src/templates/views/reset-login-password.tpl.html:127
+#: ./src/templates/views/reset-login-password.tpl.html:129
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:16
 msgctxt "Action"
@@ -980,7 +980,7 @@ msgstr "忘記密碼？"
 
 #. Make sure this string is short please
 #: ./src/templates/authentication/modals/helpLoginModal.tpl.html:13
-#: ./src/templates/views/reset-login-password.tpl.html:40
+#: ./src/templates/views/reset-login-password.tpl.html:42
 msgctxt "Action"
 msgid "Forgot username?"
 msgstr "忘記使用者名稱?"
@@ -1013,7 +1013,7 @@ msgid "Go to dashboard"
 msgstr "移到儀表板"
 
 #. Make sure this string is short please
-#: ./src/templates/views/reset-login-password.tpl.html:41
+#: ./src/templates/views/reset-login-password.tpl.html:43
 msgctxt "Action"
 msgid "Have a reset code?"
 msgstr "有重置代碼？"
@@ -1416,8 +1416,9 @@ msgctxt "Action"
 msgid "ProtonMail Shop"
 msgstr "ProtonMail 商店"
 
-#: ./src/templates/views/reset-login-password.tpl.html:54
+#: ./src/templates/views/reset-login-password.tpl.html:56
 #: ./src/templates/views/reset-login-password.tpl.html:7
+#: ./src/templates/views/reset-login-password.tpl.html:8
 msgctxt "Action"
 msgid "ProtonMail username to reset"
 msgstr "重新設定 ProtonMail 使用者帳戶"
@@ -1442,7 +1443,7 @@ msgctxt "Action"
 msgid "Reactivate"
 msgstr "重新啟用"
 
-#: ./src/app/address/directives/reactivateKeysBtn.js:5
+#: ./src/app/address/directives/reactivateKeysBtn.js:12
 msgctxt "Action"
 msgid "Reactivate keys"
 msgstr "重新啟用金鑰"
@@ -1503,7 +1504,7 @@ msgctxt "Action"
 msgid "Report phishing"
 msgstr "報告網路釣魚"
 
-#: ./src/templates/views/reset-login-password.tpl.html:128
+#: ./src/templates/views/reset-login-password.tpl.html:130
 msgctxt "Action"
 msgid "Reset"
 msgstr "重設"
@@ -1516,20 +1517,20 @@ msgstr "重設金鑰"
 
 #. button to reset login password
 #. button to reset password
-#: ./src/templates/views/reset-login-password.tpl.html:37
-#: ./src/templates/views/reset-login-password.tpl.html:84
+#: ./src/templates/views/reset-login-password.tpl.html:39
+#: ./src/templates/views/reset-login-password.tpl.html:86
 msgctxt "Action"
 msgid "Reset Password"
 msgstr "重設密碼"
 
-#: ./src/templates/views/reset-login-password.tpl.html:70
+#: ./src/templates/views/reset-login-password.tpl.html:71
 msgctxt "Action"
 msgid "Reset code"
 msgstr "重設代碼"
 
 #. button to reset password
 #: ./src/templates/authentication/modals/helpLoginModal.tpl.html:10
-#: ./src/templates/views/reset-login-password.tpl.html:169
+#: ./src/templates/views/reset-login-password.tpl.html:170
 msgctxt "Action"
 msgid "Reset password"
 msgstr "重設密碼"
@@ -1915,7 +1916,7 @@ msgctxt "Action"
 msgid "Verify"
 msgstr "驗證"
 
-#: ./src/templates/views/reset-login-password.tpl.html:96
+#: ./src/templates/views/reset-login-password.tpl.html:98
 msgctxt "Action"
 msgid "Verifying reset code"
 msgstr "驗證重置代碼"
@@ -3525,7 +3526,7 @@ msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
 msgstr "無法取得 {{emails}} 的金鑰資訊。從收件者清單中已移除，請再試一次。"
 
-#: ./src/app/address/factories/reactivateKeys.js:37
+#: ./src/app/address/factories/reactivateKeys.js:35
 msgctxt "Error"
 msgid "Failed to reactivate key"
 msgstr "重啟金鑰失敗"
@@ -3557,7 +3558,7 @@ msgctxt "Error"
 msgid "ICS parsing error:"
 msgstr "ICS檔案解析錯誤:"
 
-#: ./src/templates/views/reset-login-password.tpl.html:51
+#: ./src/templates/views/reset-login-password.tpl.html:53
 msgctxt "Error"
 msgid "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it."
 msgstr "重要提醒：請勿關閉或離開此頁面。當您收到重設碼時需輸入到以下欄位。"
@@ -3572,7 +3573,7 @@ msgctxt "Error"
 msgid "Image upload failed"
 msgstr "影像上傳失敗"
 
-#: ./src/app/address/factories/reactivateKeys.js:28
+#: ./src/app/address/factories/reactivateKeys.js:26
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
@@ -3661,7 +3662,7 @@ msgctxt "Error"
 msgid "Invalid password"
 msgstr "無效的密碼"
 
-#: ./src/templates/views/reset-login-password.tpl.html:33
+#: ./src/templates/views/reset-login-password.tpl.html:35
 msgctxt "Error"
 msgid "Invalid recovery email"
 msgstr "無效的備援電子郵件地址"
@@ -3775,7 +3776,7 @@ msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "請輸入兩步驟驗證密碼"
 
-#: ./src/app/keys/services/decryptKeys.js:11
+#: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr "無法解密信箱 {{email}} 的主要金鑰。您將無法從此信箱讀取或寫入任何電子郵件"
@@ -3795,7 +3796,7 @@ msgctxt "Error"
 msgid "Request timed out, please try again."
 msgstr "請求逾時，請重試。"
 
-#: ./src/templates/views/reset-login-password.tpl.html:80
+#: ./src/templates/views/reset-login-password.tpl.html:82
 msgctxt "Error"
 msgid "Reset code is required"
 msgstr "重置碼為必填"
@@ -3948,8 +3949,8 @@ msgid "Upgrade to a paid plan to send from your {{email}} address"
 msgstr "要從 {{email}} 地址傳送訊息，需升級至付費方案。"
 
 #: ./src/templates/user/usernameDomain.tpl.html:43
-#: ./src/templates/views/reset-login-password.tpl.html:19
-#: ./src/templates/views/reset-login-password.tpl.html:66
+#: ./src/templates/views/reset-login-password.tpl.html:20
+#: ./src/templates/views/reset-login-password.tpl.html:67
 msgctxt "Error"
 msgid "Username required"
 msgstr "需要使用者名稱"
@@ -4071,12 +4072,12 @@ msgctxt "Error"
 msgid "Your browser lacks features needed to download encrypted attachments directly."
 msgstr "您的瀏覽器缺少直接下載加密附件所需的功能。"
 
-#: ./src/app/address/factories/reactivateKeys.js:30
+#: ./src/app/address/factories/reactivateKeys.js:28
 msgctxt "Error"
 msgid "{{n}} keys failed to decrypt due to an incorrect password"
 msgstr "{{n}} 金鑰由於密碼不正確無法解密"
 
-#: ./src/app/address/factories/reactivateKeys.js:38
+#: ./src/app/address/factories/reactivateKeys.js:36
 msgctxt "Error"
 msgid "{{n}} keys failed to reactivate"
 msgstr "{{n}} 金鑰無法重新啟動"
@@ -4782,7 +4783,7 @@ msgid "A new version of ProtonMail is available. Please refresh this page."
 msgstr "有可用的 ProtonMail 新版本。請重新載入頁面。"
 
 #. reset warning 2/3
-#: ./src/templates/views/reset-login-password.tpl.html:104
+#: ./src/templates/views/reset-login-password.tpl.html:106
 msgctxt "Info"
 msgid "ALL YOUR DATA WILL BE LOST!"
 msgstr "你的所有資料都將遺失!"
@@ -5427,7 +5428,7 @@ msgctxt "Info"
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
 msgstr "目前無法訂閱付費的 ProtonMail 計畫。"
 
-#: ./src/templates/views/reset-login-password.tpl.html:138
+#: ./src/templates/views/reset-login-password.tpl.html:140
 msgctxt "Info"
 msgid "Keep this password safe--it cannot be recovered."
 msgstr "請好好保管此密碼，因密碼無法復原。"
@@ -5437,7 +5438,7 @@ msgctxt "Info"
 msgid "Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM"
 msgstr "要繼續使用 DKIM ，請在 DNS 保留此記錄。您可把參數改為 <code>off</code> 以停用 DKIM 。"
 
-#: ./src/app/address/factories/reactivateKeys.js:23
+#: ./src/app/address/factories/reactivateKeys.js:21
 msgctxt "Info"
 msgid "Key reactivated"
 msgstr "金鑰已重新啟用"
@@ -5696,16 +5697,12 @@ msgctxt "Info"
 msgid "Please add addresses to send and receive email with this domain"
 msgstr "要從這個網域收發電子郵件，請新增電子郵件地址"
 
-#: ./src/templates/modals/domain/dkim.tpl.html:15
-msgctxt "Info"
-msgid "Please add the follow TXT record. Note, DNS records can take several hours to update."
-msgstr "請新增以下的 TXT 紀錄。請注意，DNS 紀錄可能需要幾個小時來更新。"
-
 #: ./src/templates/modals/domain/mx.tpl.html:14
 msgctxt "Info"
 msgid "Please add the following MX record. Note, DNS records can take several hours to update."
 msgstr "請新增以下的 MX 紀錄。請注意，DNS 紀錄可能需要幾個小時來更新。"
 
+#: ./src/templates/modals/domain/dkim.tpl.html:15
 #: ./src/templates/modals/domain/spf.tpl.html:14
 msgctxt "Info"
 msgid "Please add the following TXT record. Note, DNS records can take several hours to update."
@@ -5838,7 +5835,7 @@ msgid "Reset Password"
 msgstr "重設密碼"
 
 #. reset warning 1/3
-#: ./src/templates/views/reset-login-password.tpl.html:103
+#: ./src/templates/views/reset-login-password.tpl.html:105
 msgctxt "Info"
 msgid "Resetting your password will also reset your encryption keys, so you will be unable to read your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Learn More</a>."
 msgstr "重設密碼會同時重設您的金鑰，因此您將無法讀取既有訊息。<a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">瞭解詳情</a>。"
@@ -5989,7 +5986,7 @@ msgctxt "Info"
 msgid "Theme saved"
 msgstr "主題已儲存"
 
-#: ./src/templates/views/reset-login-password.tpl.html:182
+#: ./src/templates/views/reset-login-password.tpl.html:183
 #: ./src/templates/views/setup.tpl.html:79
 #: ./src/templates/views/signup.tpl.html:14
 msgctxt "Info"
@@ -6270,7 +6267,7 @@ msgctxt "Info"
 msgid "We will send a reset code to your <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"This is the optional email you used when first creating an account. This is the same as your notification email that is used for sending alerts about new messages.\">recovery email</a> to reset your password."
 msgstr "我們將會傳送一個重設代碼給您的 <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"This is the optional email you used when first creating an account. This is the same as your notification email that is used for sending alerts about new messages.\">備用電子郵件</a> 以重置您的密碼。"
 
-#: ./src/templates/views/reset-login-password.tpl.html:48
+#: ./src/templates/views/reset-login-password.tpl.html:50
 msgctxt "Info"
 msgid "We've sent a reset code to your <strong>recovery email</strong>, valid for one hour or until you request a new code. Enter it below to continue."
 msgstr "我們已將重設碼傳送到您的<strong>備援電子郵件地址</strong>，有效期為 1 小時或直至您要求新代碼。在下方輸入重設碼以繼續。"
@@ -6578,7 +6575,7 @@ msgctxt "Info"
 msgid "{{Name}} updated"
 msgstr "{{Name}} 已更新"
 
-#: ./src/app/address/factories/reactivateKeys.js:24
+#: ./src/app/address/factories/reactivateKeys.js:22
 msgctxt "Info"
 msgid "{{n}} keys reactivated"
 msgstr "重新啟動 {{n}} 鍵"
@@ -8576,27 +8573,29 @@ msgctxt "Remove element"
 msgid "{{total}} {{item}} removed"
 msgstr "已移除 {{total}} {{item}}"
 
-#: ./src/templates/views/reset-login-password.tpl.html:22
+#: ./src/templates/views/reset-login-password.tpl.html:23
+#: ./src/templates/views/reset-login-password.tpl.html:24
 msgctxt "Reset password"
 msgid "Recovery email"
 msgstr "備援電子郵件地址"
 
-#: ./src/templates/views/reset-login-password.tpl.html:151
+#: ./src/templates/views/reset-login-password.tpl.html:152
+#: ./src/templates/views/reset-login-password.tpl.html:153
 msgctxt "Reset your login"
 msgid "Confirm new password"
 msgstr "確認新密碼"
 
-#: ./src/templates/views/reset-login-password.tpl.html:163
+#: ./src/templates/views/reset-login-password.tpl.html:164
 msgctxt "Reset your login"
 msgid "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages."
 msgstr "請勿忘記此密碼。否則，您將無法登入或解密訊息。"
 
-#: ./src/templates/views/reset-login-password.tpl.html:164
+#: ./src/templates/views/reset-login-password.tpl.html:165
 msgctxt "Reset your login"
 msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "請把密碼保管於安全的場所。按 <i class=\"fa fa-eye\"></i> 圖示以確認密碼輸入正確。"
 
-#: ./src/templates/views/reset-login-password.tpl.html:141
+#: ./src/templates/views/reset-login-password.tpl.html:143
 msgctxt "Reset your password"
 msgid "Choose a new password"
 msgstr "選擇新密碼"
@@ -8874,7 +8873,7 @@ msgctxt "Success"
 msgid "Key deleted"
 msgstr "已刪除密鑰"
 
-#: ./src/app/address/directives/reactivateKeysBtn.js:4
+#: ./src/app/address/directives/reactivateKeysBtn.js:11
 msgctxt "Success"
 msgid "Keys reactivated"
 msgstr "金鑰已重新啟用"
@@ -9946,12 +9945,12 @@ msgctxt "Title"
 msgid "General"
 msgstr "一般"
 
-#: ./src/templates/views/reset-login-password.tpl.html:196
+#: ./src/templates/views/reset-login-password.tpl.html:197
 msgctxt "Title"
 msgid "Generating keys"
 msgstr "金鑰生成中"
 
-#: ./src/templates/views/reset-login-password.tpl.html:180
+#: ./src/templates/views/reset-login-password.tpl.html:181
 #: ./src/templates/views/setup.tpl.html:77
 #: ./src/templates/views/signup.tpl.html:12
 msgctxt "Title"
@@ -10154,7 +10153,7 @@ msgctxt "Title"
 msgid "Location"
 msgstr "位置"
 
-#: ./src/templates/views/reset-login-password.tpl.html:204
+#: ./src/templates/views/reset-login-password.tpl.html:205
 msgctxt "Title"
 msgid "Logging in to your account"
 msgstr "登入您的帳戶"
@@ -10245,7 +10244,7 @@ msgctxt "Title"
 msgid "New message"
 msgstr "新訊息"
 
-#: ./src/templates/views/reset-login-password.tpl.html:140
+#: ./src/templates/views/reset-login-password.tpl.html:142
 msgctxt "Title"
 msgid "New password:"
 msgstr "新密碼："
@@ -10492,7 +10491,7 @@ msgctxt "Title"
 msgid "Recovery email (optional)"
 msgstr "備援電子郵件地址（可選）"
 
-#: ./src/templates/views/reset-login-password.tpl.html:208
+#: ./src/templates/views/reset-login-password.tpl.html:209
 msgctxt "Title"
 msgid "Redirecting"
 msgstr "重新導向中"
@@ -10517,13 +10516,13 @@ msgctxt "Title"
 msgid "Request timed out, please try again."
 msgstr "請求逾時，請重試。"
 
-#: ./src/templates/views/reset-login-password.tpl.html:137
-#: ./src/templates/views/reset-login-password.tpl.html:50
+#: ./src/templates/views/reset-login-password.tpl.html:139
+#: ./src/templates/views/reset-login-password.tpl.html:52
 msgctxt "Title"
 msgid "Reset Password"
 msgstr "重設密碼"
 
-#: ./src/templates/views/reset-login-password.tpl.html:69
+#: ./src/templates/views/reset-login-password.tpl.html:70
 msgctxt "Title"
 msgid "Reset code:"
 msgstr "重設代碼:"
@@ -10534,8 +10533,8 @@ msgctxt "Title"
 msgid "Reset/notification email"
 msgstr "重設/通知郵件"
 
-#: ./src/templates/views/reset-login-password.tpl.html:190
-#: ./src/templates/views/reset-login-password.tpl.html:200
+#: ./src/templates/views/reset-login-password.tpl.html:191
+#: ./src/templates/views/reset-login-password.tpl.html:201
 msgctxt "Title"
 msgid "Resetting your password"
 msgstr "重設密碼"
@@ -10897,7 +10896,7 @@ msgctxt "Title"
 msgid "Username and domain"
 msgstr "使用者名稱及網域"
 
-#: ./src/templates/views/reset-login-password.tpl.html:53
+#: ./src/templates/views/reset-login-password.tpl.html:55
 msgctxt "Title"
 msgid "Username:"
 msgstr "使用者名稱："
@@ -10930,7 +10929,7 @@ msgstr "驗證"
 #: ./src/app/address/services/deleteKeyProcess.js:17
 #: ./src/app/user/directives/signupUserForm.js:4
 #: ./src/app/user/factories/storageWarning.js:35
-#: ./src/templates/views/reset-login-password.tpl.html:102
+#: ./src/templates/views/reset-login-password.tpl.html:104
 msgctxt "Title"
 msgid "Warning"
 msgstr "警告"
@@ -11080,13 +11079,13 @@ msgid "Pasted-image"
 msgstr "貼上圖片"
 
 #. reset warning 3/3
-#: ./src/templates/views/reset-login-password.tpl.html:106
+#: ./src/templates/views/reset-login-password.tpl.html:108
 msgctxt "To continue, type DANGER below:"
 msgid "To continue, type"
 msgstr "要繼續，請在下方輸入"
 
 #. reset warning 3/3
-#: ./src/templates/views/reset-login-password.tpl.html:108
+#: ./src/templates/views/reset-login-password.tpl.html:110
 msgctxt "To continue, type DANGER below:"
 msgid "below:"
 msgstr "："
@@ -12031,22 +12030,22 @@ msgctxt "printed message info"
 msgid "Sent:"
 msgstr "已傳送:"
 
-#: ./src/templates/views/reset-login-password.tpl.html:122
+#: ./src/templates/views/reset-login-password.tpl.html:124
 msgctxt "reset password"
 msgid "If you are resetting the Login password only, old messages can be recovered later if you know your existing Mailbox Password. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "若您僅重設登入密碼，您可使用既有的郵箱密碼來恢復舊訊息。<a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">瞭解詳情</a>。"
 
-#: ./src/templates/views/reset-login-password.tpl.html:115
+#: ./src/templates/views/reset-login-password.tpl.html:117
 msgctxt "reset password"
 msgid "If you remember your old password later, you can recover your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "若您回想起舊密碼，您可以恢復既有訊息。<a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">瞭解詳情</a>。"
 
-#: ./src/templates/views/reset-login-password.tpl.html:121
+#: ./src/templates/views/reset-login-password.tpl.html:123
 msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will make old messages unreadable."
 msgstr "重設登入或郵箱密碼會導致既有訊息無法被讀取。"
 
-#: ./src/templates/views/reset-login-password.tpl.html:120
+#: ./src/templates/views/reset-login-password.tpl.html:122
 msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will switch you to <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Single Password Mode</a>."
 msgstr "重設登入或郵箱密碼會將您切換到<a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">單密碼模式</a>。"

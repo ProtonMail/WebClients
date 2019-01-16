@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2019-01-09 16:58\n"
+"PO-Revision-Date: 2019-01-16 12:44\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:59
 msgctxt "1 of 2 contacts successfully imported."
@@ -422,7 +422,7 @@ msgstr "CC CCN"
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
 #: ./src/templates/user/signupPayForm.tpl.html:100
 #: ./src/templates/views/outside.reply.tpl.html:31
-#: ./src/templates/views/reset-login-password.tpl.html:127
+#: ./src/templates/views/reset-login-password.tpl.html:129
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:16
 msgctxt "Action"
@@ -980,7 +980,7 @@ msgstr "Password dimenticata?"
 
 #. Make sure this string is short please
 #: ./src/templates/authentication/modals/helpLoginModal.tpl.html:13
-#: ./src/templates/views/reset-login-password.tpl.html:40
+#: ./src/templates/views/reset-login-password.tpl.html:42
 msgctxt "Action"
 msgid "Forgot username?"
 msgstr "Nome utente dimenticato?"
@@ -1013,7 +1013,7 @@ msgid "Go to dashboard"
 msgstr "Vai al pannello di controllo"
 
 #. Make sure this string is short please
-#: ./src/templates/views/reset-login-password.tpl.html:41
+#: ./src/templates/views/reset-login-password.tpl.html:43
 msgctxt "Action"
 msgid "Have a reset code?"
 msgstr "Hai un codice di reset?"
@@ -1195,7 +1195,7 @@ msgstr "Segna come già letto - Segna come da leggere"
 #: ./src/templates/ui/toolbarMobile.tpl.html:13
 msgctxt "Action"
 msgid "Mark as read/unread"
-msgstr ""
+msgstr "Segna come letta/da leggere"
 
 #: ./src/templates/message/message.tpl.html:224
 msgctxt "Action"
@@ -1416,8 +1416,9 @@ msgctxt "Action"
 msgid "ProtonMail Shop"
 msgstr "Negozio ProtonMail"
 
-#: ./src/templates/views/reset-login-password.tpl.html:54
+#: ./src/templates/views/reset-login-password.tpl.html:56
 #: ./src/templates/views/reset-login-password.tpl.html:7
+#: ./src/templates/views/reset-login-password.tpl.html:8
 msgctxt "Action"
 msgid "ProtonMail username to reset"
 msgstr "Nome utente ProtonMail da reimpostare"
@@ -1442,7 +1443,7 @@ msgctxt "Action"
 msgid "Reactivate"
 msgstr "Riattiva"
 
-#: ./src/app/address/directives/reactivateKeysBtn.js:5
+#: ./src/app/address/directives/reactivateKeysBtn.js:12
 msgctxt "Action"
 msgid "Reactivate keys"
 msgstr "Riattiva chiavi"
@@ -1503,7 +1504,7 @@ msgctxt "Action"
 msgid "Report phishing"
 msgstr "Segnala phishing"
 
-#: ./src/templates/views/reset-login-password.tpl.html:128
+#: ./src/templates/views/reset-login-password.tpl.html:130
 msgctxt "Action"
 msgid "Reset"
 msgstr "Reimposta"
@@ -1516,20 +1517,20 @@ msgstr "Reimposta chiavi"
 
 #. button to reset login password
 #. button to reset password
-#: ./src/templates/views/reset-login-password.tpl.html:37
-#: ./src/templates/views/reset-login-password.tpl.html:84
+#: ./src/templates/views/reset-login-password.tpl.html:39
+#: ./src/templates/views/reset-login-password.tpl.html:86
 msgctxt "Action"
 msgid "Reset Password"
 msgstr "Reimposta password"
 
-#: ./src/templates/views/reset-login-password.tpl.html:70
+#: ./src/templates/views/reset-login-password.tpl.html:71
 msgctxt "Action"
 msgid "Reset code"
 msgstr "Reimposta codice"
 
 #. button to reset password
 #: ./src/templates/authentication/modals/helpLoginModal.tpl.html:10
-#: ./src/templates/views/reset-login-password.tpl.html:169
+#: ./src/templates/views/reset-login-password.tpl.html:170
 msgctxt "Action"
 msgid "Reset password"
 msgstr "Reimposta la password"
@@ -1915,7 +1916,7 @@ msgctxt "Action"
 msgid "Verify"
 msgstr "Verifica"
 
-#: ./src/templates/views/reset-login-password.tpl.html:96
+#: ./src/templates/views/reset-login-password.tpl.html:98
 msgctxt "Action"
 msgid "Verifying reset code"
 msgstr "Verificando il codice di reset"
@@ -3527,7 +3528,7 @@ msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
 msgstr "Impossibile ottenere le informazioni sulla chiave per gli indirizzi: {{emails}}. Questi indirizzi sono stati rimossi dai destinatari. Per favore, riprova."
 
-#: ./src/app/address/factories/reactivateKeys.js:37
+#: ./src/app/address/factories/reactivateKeys.js:35
 msgctxt "Error"
 msgid "Failed to reactivate key"
 msgstr "Riattivazione chiave fallita"
@@ -3559,7 +3560,7 @@ msgctxt "Error"
 msgid "ICS parsing error:"
 msgstr "Errore di analisi del file ICS:"
 
-#: ./src/templates/views/reset-login-password.tpl.html:51
+#: ./src/templates/views/reset-login-password.tpl.html:53
 msgctxt "Error"
 msgid "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it."
 msgstr "IMPORTANTE: Non andartene da questa pagina. Dovrai immettere il codice di reset nel campo sottostante appena lo riceverai."
@@ -3574,7 +3575,7 @@ msgctxt "Error"
 msgid "Image upload failed"
 msgstr "Caricamento dell'immagine fallito"
 
-#: ./src/app/address/factories/reactivateKeys.js:28
+#: ./src/app/address/factories/reactivateKeys.js:26
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
@@ -3663,7 +3664,7 @@ msgctxt "Error"
 msgid "Invalid password"
 msgstr "Password non valida"
 
-#: ./src/templates/views/reset-login-password.tpl.html:33
+#: ./src/templates/views/reset-login-password.tpl.html:35
 msgctxt "Error"
 msgid "Invalid recovery email"
 msgstr "Email di recupero non valida"
@@ -3777,7 +3778,7 @@ msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Per favore, inserisci il tuo codice per l'autenticazione in due passaggi"
 
-#: ./src/app/keys/services/decryptKeys.js:11
+#: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr "La chiave principale per l'indirizzo {{email}} non può essere decriptata. Non potrai leggere o scrivere nessuna email da questo indirizzo"
@@ -3797,7 +3798,7 @@ msgctxt "Error"
 msgid "Request timed out, please try again."
 msgstr "Richiesta scaduta. Per favore, prova di nuovo."
 
-#: ./src/templates/views/reset-login-password.tpl.html:80
+#: ./src/templates/views/reset-login-password.tpl.html:82
 msgctxt "Error"
 msgid "Reset code is required"
 msgstr "Il codice di reset è necessario"
@@ -3952,8 +3953,8 @@ msgid "Upgrade to a paid plan to send from your {{email}} address"
 msgstr "Effettua l'upgrade ad un piano a pagamento per inviare dal tuo indirizzo {{email}}"
 
 #: ./src/templates/user/usernameDomain.tpl.html:43
-#: ./src/templates/views/reset-login-password.tpl.html:19
-#: ./src/templates/views/reset-login-password.tpl.html:66
+#: ./src/templates/views/reset-login-password.tpl.html:20
+#: ./src/templates/views/reset-login-password.tpl.html:67
 msgctxt "Error"
 msgid "Username required"
 msgstr "Nome utente richiesto"
@@ -4075,12 +4076,12 @@ msgctxt "Error"
 msgid "Your browser lacks features needed to download encrypted attachments directly."
 msgstr "Il tuo browser non dispone delle funzionalità necessarie per scaricare direttamente gli allegati criptati."
 
-#: ./src/app/address/factories/reactivateKeys.js:30
+#: ./src/app/address/factories/reactivateKeys.js:28
 msgctxt "Error"
 msgid "{{n}} keys failed to decrypt due to an incorrect password"
 msgstr "Fallito nella decriptazione di {{n}} per password incorretta"
 
-#: ./src/app/address/factories/reactivateKeys.js:38
+#: ./src/app/address/factories/reactivateKeys.js:36
 msgctxt "Error"
 msgid "{{n}} keys failed to reactivate"
 msgstr "Fallito nella riattivazione di {{n}} chiavi"
@@ -4788,7 +4789,7 @@ msgid "A new version of ProtonMail is available. Please refresh this page."
 msgstr "È disponibile una nuova versione di ProtonMail. Si prega di aggiornare questa pagina."
 
 #. reset warning 2/3
-#: ./src/templates/views/reset-login-password.tpl.html:104
+#: ./src/templates/views/reset-login-password.tpl.html:106
 msgctxt "Info"
 msgid "ALL YOUR DATA WILL BE LOST!"
 msgstr "TUTTI I TUOI DATI ANDRANNO PERSI!"
@@ -5433,7 +5434,7 @@ msgctxt "Info"
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
 msgstr "Attualmente non è possibile abbonarsi a un piano ProtonMail a pagamento."
 
-#: ./src/templates/views/reset-login-password.tpl.html:138
+#: ./src/templates/views/reset-login-password.tpl.html:140
 msgctxt "Info"
 msgid "Keep this password safe--it cannot be recovered."
 msgstr "Conservi al sicuro questa password--non può essere recuperata."
@@ -5443,7 +5444,7 @@ msgctxt "Info"
 msgid "Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM"
 msgstr "Mantieni questo record nel tuo DNS fintanto che desideri usare il DKIM. Puoi cambiare il suo valore a <code>off</code> per disattivare DKIM"
 
-#: ./src/app/address/factories/reactivateKeys.js:23
+#: ./src/app/address/factories/reactivateKeys.js:21
 msgctxt "Info"
 msgid "Key reactivated"
 msgstr "Chiave riattivata"
@@ -5702,16 +5703,12 @@ msgctxt "Info"
 msgid "Please add addresses to send and receive email with this domain"
 msgstr "Per favore, aggiungi degli indirizzi per inviare e ricevere email con questo dominio."
 
-#: ./src/templates/modals/domain/dkim.tpl.html:15
-msgctxt "Info"
-msgid "Please add the follow TXT record. Note, DNS records can take several hours to update."
-msgstr "Per favore, aggiungi il seguente record TXT. Nota che i record DNS possono richiedere diverse ore per aggiornarsi."
-
 #: ./src/templates/modals/domain/mx.tpl.html:14
 msgctxt "Info"
 msgid "Please add the following MX record. Note, DNS records can take several hours to update."
 msgstr "Per favore aggiunga il seguente record MX. Si noti che i record DNS possono richiedere diverse ore per aggiornarsi."
 
+#: ./src/templates/modals/domain/dkim.tpl.html:15
 #: ./src/templates/modals/domain/spf.tpl.html:14
 msgctxt "Info"
 msgid "Please add the following TXT record. Note, DNS records can take several hours to update."
@@ -5844,7 +5841,7 @@ msgid "Reset Password"
 msgstr "Reimpostazione password"
 
 #. reset warning 1/3
-#: ./src/templates/views/reset-login-password.tpl.html:103
+#: ./src/templates/views/reset-login-password.tpl.html:105
 msgctxt "Info"
 msgid "Resetting your password will also reset your encryption keys, so you will be unable to read your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Learn More</a>."
 msgstr "Reimpostare la password riazzererà anche le chiavi di cifratura, rendendoti impossibile leggere i messaggi esistenti. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Per saperne di più</a>."
@@ -5995,7 +5992,7 @@ msgctxt "Info"
 msgid "Theme saved"
 msgstr "Tema salvato"
 
-#: ./src/templates/views/reset-login-password.tpl.html:182
+#: ./src/templates/views/reset-login-password.tpl.html:183
 #: ./src/templates/views/setup.tpl.html:79
 #: ./src/templates/views/signup.tpl.html:14
 msgctxt "Info"
@@ -6275,7 +6272,7 @@ msgctxt "Info"
 msgid "We will send a reset code to your <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"This is the optional email you used when first creating an account. This is the same as your notification email that is used for sending alerts about new messages.\">recovery email</a> to reset your password."
 msgstr "Verrà inviato un codice di ripristino al <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"Questo è l'indirizzo email opzionale usato alla creazione dell'account. Questo è lo stesso dell'indirizzo email di notifica che viene usato per inviare avvisi riguardanti i nuovi messaggi.\">tuo indirizzo di recupero</a> per ripristinare la password."
 
-#: ./src/templates/views/reset-login-password.tpl.html:48
+#: ./src/templates/views/reset-login-password.tpl.html:50
 msgctxt "Info"
 msgid "We've sent a reset code to your <strong>recovery email</strong>, valid for one hour or until you request a new code. Enter it below to continue."
 msgstr "Abbiamo inviato un codice di reset alla tua <strong>email di recupero</strong>, il quale è valido per un'ora o fino a quando non richiederai un nuovo codice. Inseriscilo qua sotto per continuare."
@@ -6589,7 +6586,7 @@ msgctxt "Info"
 msgid "{{Name}} updated"
 msgstr "{{Name}} aggiornato"
 
-#: ./src/app/address/factories/reactivateKeys.js:24
+#: ./src/app/address/factories/reactivateKeys.js:22
 msgctxt "Info"
 msgid "{{n}} keys reactivated"
 msgstr "{{n}} chiavi riattivate"
@@ -8587,27 +8584,29 @@ msgctxt "Remove element"
 msgid "{{total}} {{item}} removed"
 msgstr "{{total}} {{item}} rimossi"
 
-#: ./src/templates/views/reset-login-password.tpl.html:22
+#: ./src/templates/views/reset-login-password.tpl.html:23
+#: ./src/templates/views/reset-login-password.tpl.html:24
 msgctxt "Reset password"
 msgid "Recovery email"
 msgstr "Email di recupero"
 
-#: ./src/templates/views/reset-login-password.tpl.html:151
+#: ./src/templates/views/reset-login-password.tpl.html:152
+#: ./src/templates/views/reset-login-password.tpl.html:153
 msgctxt "Reset your login"
 msgid "Confirm new password"
 msgstr "Conferma la nuova password"
 
-#: ./src/templates/views/reset-login-password.tpl.html:163
+#: ./src/templates/views/reset-login-password.tpl.html:164
 msgctxt "Reset your login"
 msgid "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages."
 msgstr "NON dimenticare questa password. Se la dimenticassi, non sarai più in grado di accedere o di decifrare i tuoi messaggi."
 
-#: ./src/templates/views/reset-login-password.tpl.html:164
+#: ./src/templates/views/reset-login-password.tpl.html:165
 msgctxt "Reset your login"
 msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Salva la password in un posto sicuro. Fai clic sull'icona <i class=\"fa fa-eye\"></i> per confermare di aver digitato correttamente la password."
 
-#: ./src/templates/views/reset-login-password.tpl.html:141
+#: ./src/templates/views/reset-login-password.tpl.html:143
 msgctxt "Reset your password"
 msgid "Choose a new password"
 msgstr "Scegli una nuova password"
@@ -8886,7 +8885,7 @@ msgctxt "Success"
 msgid "Key deleted"
 msgstr "Chiave eliminata"
 
-#: ./src/app/address/directives/reactivateKeysBtn.js:4
+#: ./src/app/address/directives/reactivateKeysBtn.js:11
 msgctxt "Success"
 msgid "Keys reactivated"
 msgstr "Chiavi riattivate"
@@ -9961,12 +9960,12 @@ msgctxt "Title"
 msgid "General"
 msgstr "Generale"
 
-#: ./src/templates/views/reset-login-password.tpl.html:196
+#: ./src/templates/views/reset-login-password.tpl.html:197
 msgctxt "Title"
 msgid "Generating keys"
 msgstr "Generazione chiavi"
 
-#: ./src/templates/views/reset-login-password.tpl.html:180
+#: ./src/templates/views/reset-login-password.tpl.html:181
 #: ./src/templates/views/setup.tpl.html:77
 #: ./src/templates/views/signup.tpl.html:12
 msgctxt "Title"
@@ -10169,7 +10168,7 @@ msgctxt "Title"
 msgid "Location"
 msgstr "Posizione"
 
-#: ./src/templates/views/reset-login-password.tpl.html:204
+#: ./src/templates/views/reset-login-password.tpl.html:205
 msgctxt "Title"
 msgid "Logging in to your account"
 msgstr "Accedendo al tuo account"
@@ -10260,7 +10259,7 @@ msgctxt "Title"
 msgid "New message"
 msgstr "Nuovo messaggio"
 
-#: ./src/templates/views/reset-login-password.tpl.html:140
+#: ./src/templates/views/reset-login-password.tpl.html:142
 msgctxt "Title"
 msgid "New password:"
 msgstr "Nuova password:"
@@ -10507,7 +10506,7 @@ msgctxt "Title"
 msgid "Recovery email (optional)"
 msgstr "Email di recupero (opzionale)"
 
-#: ./src/templates/views/reset-login-password.tpl.html:208
+#: ./src/templates/views/reset-login-password.tpl.html:209
 msgctxt "Title"
 msgid "Redirecting"
 msgstr "Reindirizzamento"
@@ -10532,13 +10531,13 @@ msgctxt "Title"
 msgid "Request timed out, please try again."
 msgstr "Richiesta scaduta, per favore provi di nuovo."
 
-#: ./src/templates/views/reset-login-password.tpl.html:137
-#: ./src/templates/views/reset-login-password.tpl.html:50
+#: ./src/templates/views/reset-login-password.tpl.html:139
+#: ./src/templates/views/reset-login-password.tpl.html:52
 msgctxt "Title"
 msgid "Reset Password"
 msgstr "Reimpostazione password"
 
-#: ./src/templates/views/reset-login-password.tpl.html:69
+#: ./src/templates/views/reset-login-password.tpl.html:70
 msgctxt "Title"
 msgid "Reset code:"
 msgstr "Codice di reset:"
@@ -10549,8 +10548,8 @@ msgctxt "Title"
 msgid "Reset/notification email"
 msgstr "Indirizzo email di reset/notifica"
 
-#: ./src/templates/views/reset-login-password.tpl.html:190
-#: ./src/templates/views/reset-login-password.tpl.html:200
+#: ./src/templates/views/reset-login-password.tpl.html:191
+#: ./src/templates/views/reset-login-password.tpl.html:201
 msgctxt "Title"
 msgid "Resetting your password"
 msgstr "Reimpostando la sua password"
@@ -10912,7 +10911,7 @@ msgctxt "Title"
 msgid "Username and domain"
 msgstr "Nome utente e dominio"
 
-#: ./src/templates/views/reset-login-password.tpl.html:53
+#: ./src/templates/views/reset-login-password.tpl.html:55
 msgctxt "Title"
 msgid "Username:"
 msgstr "Nome utente:"
@@ -10945,7 +10944,7 @@ msgstr "Verifica"
 #: ./src/app/address/services/deleteKeyProcess.js:17
 #: ./src/app/user/directives/signupUserForm.js:4
 #: ./src/app/user/factories/storageWarning.js:35
-#: ./src/templates/views/reset-login-password.tpl.html:102
+#: ./src/templates/views/reset-login-password.tpl.html:104
 msgctxt "Title"
 msgid "Warning"
 msgstr "Attenzione"
@@ -11099,13 +11098,13 @@ msgid "Pasted-image"
 msgstr "Immagine incollata"
 
 #. reset warning 3/3
-#: ./src/templates/views/reset-login-password.tpl.html:106
+#: ./src/templates/views/reset-login-password.tpl.html:108
 msgctxt "To continue, type DANGER below:"
 msgid "To continue, type"
 msgstr "Per continuare, scriva"
 
 #. reset warning 3/3
-#: ./src/templates/views/reset-login-password.tpl.html:108
+#: ./src/templates/views/reset-login-password.tpl.html:110
 msgctxt "To continue, type DANGER below:"
 msgid "below:"
 msgstr "sotto:"
@@ -12057,22 +12056,22 @@ msgctxt "printed message info"
 msgid "Sent:"
 msgstr "Inviato:"
 
-#: ./src/templates/views/reset-login-password.tpl.html:122
+#: ./src/templates/views/reset-login-password.tpl.html:124
 msgctxt "reset password"
 msgid "If you are resetting the Login password only, old messages can be recovered later if you know your existing Mailbox Password. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "Se stai azzerando solo la tua password di login, potrai recuperare i tuoi vecchi messaggi successivamente conoscendo la tua password attuale della casella di posta. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Scopri di più</a>."
 
-#: ./src/templates/views/reset-login-password.tpl.html:115
+#: ./src/templates/views/reset-login-password.tpl.html:117
 msgctxt "reset password"
 msgid "If you remember your old password later, you can recover your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "Se ricorda la sua vecchia password poi potrà recuperare i messaggi esistenti. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Scopra di più</a>."
 
-#: ./src/templates/views/reset-login-password.tpl.html:121
+#: ./src/templates/views/reset-login-password.tpl.html:123
 msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will make old messages unreadable."
 msgstr "Reimpostare la password di accesso o quella della casella renderà illeggibili i vecchi messaggi."
 
-#: ./src/templates/views/reset-login-password.tpl.html:120
+#: ./src/templates/views/reset-login-password.tpl.html:122
 msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will switch you to <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Single Password Mode</a>."
 msgstr "Reimpostare la password di accesso o quella della casella attiverà la <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Modalità a singola password</a>."
