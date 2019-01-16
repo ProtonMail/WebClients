@@ -8,12 +8,13 @@
 .moveElement-btn-delete { display: none !important; }
 
 .moveElement-container button + button { border-radius: 0 }
-
 body[id^="secured-trash"],
 body[id^="secured-drafts"] {
     .moveElement-btn-trash { display: none }
 }
 
+body[id^="secured-allmail"],
+body[id^="secured-search"],
 body[id^="secured-spam"],
 body[id^="secured-drafts"],
 body[id^="secured-trash"]  {
