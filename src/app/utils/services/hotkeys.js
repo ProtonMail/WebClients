@@ -177,7 +177,7 @@ function hotkeys(hotkeyModal, $state, $injector, dispatchers, gettextCatalog) {
             keyEventType: KEY_EVENT_TYPE.UP
         },
         {
-            keyboard: ['t', 'del', 'command+backspace'],
+            keyboard: ['t', 'del', 'backspace'],
             callback: trash,
             description: I18N.MOVE_TO_TRASH,
             keyEventType: KEY_EVENT_TYPE.UP

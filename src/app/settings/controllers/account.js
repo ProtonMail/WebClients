@@ -4,28 +4,21 @@ import { PAID_MEMBER_ROLE, REMOTE, EMBEDDED } from '../../constants';
 /* @ngInject */
 function AccountController(
     $scope,
-    $state,
     $timeout,
     authentication,
     changePasswordModal,
-    confirmModal,
     deleteAccountModal,
     desktopNotifications,
     dispatchers,
-    eventManager,
     gettextCatalog,
     hotkeyModal,
     hotkeys,
-    Key,
     loginPasswordModal,
     mailSettingsModel,
     networkActivityTracker,
     notification,
-    organizationModel,
-    passwords,
     settingsApi,
     settingsMailApi,
-    tools,
     User,
     userSettingsModel
 ) {
@@ -288,15 +281,17 @@ function AccountController(
     };
 
     $scope.saveHotkeys = () => {
-        const promise = settingsMailApi.updateHotkeys({ Hotkeys: $scope.hotkeys }).then(() => {
-            if ($scope.hotkeys === 1) {
-                hotkeys.bind();
-            } else {
-                hotkeys.unbind();
-            }
+        const promise = settingsMailApi
+            .updateHotkeys({ Hotkeys: $scope.hotkeys })
+            .then(({ MailSettings = {} } = {}) => {
+                if (MailSettings.Hotkeys === 1) {
+                    hotkeys.bind();
+                } else {
+                    hotkeys.unbind();
+                }
 
-            notification.success(gettextCatalog.getString('Hotkeys preferences updated', null, 'Success'));
-        });
+                notification.success(gettextCatalog.getString('Hotkeys preferences updated', null, 'Success'));
+            });
 
         networkActivityTracker.track(promise);
     };
