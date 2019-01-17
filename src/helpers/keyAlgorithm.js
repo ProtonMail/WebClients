@@ -4,7 +4,7 @@ const ECC_ALGS = ['ecdh', 'ecdsa', 'eddsa'];
 export const isRSA = (algorithmName = '') => algorithmName.toLowerCase().startsWith('rsa');
 export const isECC = (algorithmName = '') => ECC_ALGS.includes(algorithmName.toLowerCase());
 
-export const describe = ({ algorithmName, bitSize }) => {
+export const describe = ({ algorithmName = '', bitSize = 0 } = {}) => {
     const [name] = algorithmName.split('_');
 
     if (isECC(name)) {

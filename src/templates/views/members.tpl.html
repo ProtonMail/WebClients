@@ -357,7 +357,7 @@
                                                 <i class="fa fa-info-circle"></i>
                                             </a>
                                         </th>
-                                        <th scope="col" translate-context="Title" translate-comment="table heading" translate>Key size</th>
+                                        <th scope="col" translate-context="Title" translate-comment="table heading" translate>Key type</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -365,9 +365,7 @@
                                         <td>
                                             <code>{{ organizationKeyInfo.fingerprint }}</code>
                                         </td>
-                                        <td>
-                                            {{ organizationKeyInfo.bitSize }} Bit
-                                        </td>
+                                        <td>{{ organizationKeyType }}</td>
                                     </tr>
                                 </tbody>
                             </table>

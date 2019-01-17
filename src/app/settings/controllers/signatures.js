@@ -1,4 +1,5 @@
 import { PAID_ADMIN_ROLE } from '../../constants';
+import { describe } from '../../../helpers/keyAlgorithm';
 
 /* @ngInject */
 function SignaturesController(
@@ -33,6 +34,7 @@ function SignaturesController(
         $scope.$applyAsync(() => {
             $scope.keyStatus = organizationKeysModel.get('keyStatus');
             $scope.organizationKeyInfo = organizationKeysModel.get('organizationKeyInfo');
+            $scope.organizationKeyType = describe($scope.organizationKeyInfo);
         });
     };
 
