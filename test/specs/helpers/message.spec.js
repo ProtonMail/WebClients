@@ -1,5 +1,5 @@
 import {
-    isDraft, isExternalEncrypted, isPGPInline, isMIME, normalizeRecipients, isReceived
+    isDraft, isExternalEncrypted, isPGPInline, isMIME, normalizeRecipients, isReceived, sameSender
 } from '../../../src/helpers/message';
 import { MESSAGE_FLAGS, MIME_TYPES } from '../../../src/app/constants';
 
@@ -82,3 +82,24 @@ describe('Recipients', () => {
     });
 });
 
+describe('sameSender', () => {
+    it('should have the same sender', () => {
+        expect(sameSender([
+            { Sender: { Address: 'toto@pm.me' } },
+            { Sender: { Address: 'toto@PM.me' } },
+            { Sender: { Address: 'TOTO@pm.me' } }
+        ])).toBe(true);
+    });
+
+    it('should handle empty parameter', () => {
+        expect(sameSender()).toBe(false);
+    });
+
+    it('should not have the same sender', () => {
+        expect(sameSender([
+            { Sender: { Address: 'toto@pm.me' } },
+            { Sender: { Address: 'toto@PM.me' } },
+            { Sender: { Address: 'TaTa@pm.me' } }
+        ])).toBe(false);
+    });
+});
