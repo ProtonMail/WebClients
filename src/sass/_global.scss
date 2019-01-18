@@ -45,7 +45,8 @@ html.protonmail {
 			.desktopOnly { display: none !important }
 		}
 		&.appConfigBody-is-mobile {
-			.notMobile { display: none }
+            .notMobile { display: none }
+            .onmobile-mb-30p { margin-bottom: 30px; }
 		}
 	}
 	.hidden {
@@ -141,6 +142,9 @@ html.protonmail {
 	}
 	.padding-top {
 		padding-top: 10px;
+    }
+    .margin-top-half {
+		margin-top: 5px;
 	}
 	.margin-top {
 		margin-top: 10px;

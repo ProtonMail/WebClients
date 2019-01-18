@@ -24,8 +24,8 @@
                 </header-block>
 
 
-                <form method="post" ng-submit="noticeForm.$valid && saveNotification(noticeForm)" name="noticeForm" novalidate>
-                    <div class="clearfix">
+                <form method="post" class="margin-bottom" ng-submit="noticeForm.$valid && saveNotification(noticeForm)" name="noticeForm" novalidate>
+                    <div>
                         <div class="col-3-8">
                             <label for="notificationEmail" translate-context="Title" translate translate-comment="form label for setting reset email">Reset/notification email</label>
                         </div>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="clearfix">
-                        <div class="col-3-8">&nbsp;</div>
+                        <div class="col-3-8 notMobile">&nbsp;</div>
                         <div class="col-5-8">
                             <button class="pm_button primary disabled-if-network-activity" type="submit" translate-context="Action" translate>Save</button>
                         </div>
@@ -49,7 +49,7 @@
 
                 <div class="clearfix">
                     <div class="col-3-8">
-                        <span class="label labelFix" id="passwordResetDescAria" translate-context="Title" translate translate-comment="form label for enabling/disabling reset email">Allow password reset</span>
+                        <span class="label" id="passwordResetDescAria" translate-context="Title" translate translate-comment="form label for enabling/disabling reset email">Allow password reset</span>
                     </div>
                     <div class="col-5-8">
                         <div class="col-1-2">
@@ -67,7 +67,7 @@
                     </div>
                 </div>
 
-                <div class="clearfix">&nbsp;</div>
+                <div class="clearfix notMobile">&nbsp;</div>
                 <div class="clearfix">
                     <div class="col-3-8">
                         <span class="label">
@@ -93,13 +93,13 @@
                         </p>
                     </div>
                 </div>
-                <div class="clearfix">&nbsp;</div>
+                <div class="clearfix notMobile">&nbsp;</div>
                 <div class="clearfix">
-                    <div class="col-3-8">
+                    <div class="col-3-8 margin-top">
                         <label translate-context="Title" translate translate-comment="form heading for changing desktop notifications">Desktop notifications</label>
                     </div>
                     <div class="col-5-8">
-                        <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'granted'">
+                        <p class="alert alert-info no-margin" ng-show="desktopNotificationsStatus === 'granted'">
                             <span translate translate-context="Info">Desktop notifications are currently <strong>enabled</strong>.
                             </span>
                             <br />
@@ -110,9 +110,9 @@
                                 translate-context="Action">Test notification</a>
                         </p>
 
-                        <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'denied'" translate translate-context="Info">Desktop notifications are currently <strong>disabled</strong>. To enable them, you need to go to your browser settings.</p>
+                        <p class="alert alert-info no-margin" ng-show="desktopNotificationsStatus === 'denied'" translate translate-context="Info">Desktop notifications are currently <strong>disabled</strong>. To enable them, you need to go to your browser settings.</p>
 
-                        <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'default'"><span translate-context="To enable desktop notifications, click here" translate>To enable desktop notifications,</span> <a href="#" ng-click="enableDesktopNotifications()" translate translate-context="Action">click here</a>.</p>
+                        <p class="alert alert-info " ng-show="desktopNotificationsStatus === 'default'"><span translate-context="To enable desktop notifications, click here" translate>To enable desktop notifications,</span> <a href="#" ng-click="enableDesktopNotifications()" translate translate-context="Action">click here</a>.</p>
                         <p>
                             <a href="https://protonmail.com/support/knowledge-base/desktop-notifications/" target="_blank" class="pm_button link" translation-comment="link to learn more about desktop notifications" translate-context="Action" translate>What is this?</a>
                         </p>
@@ -176,7 +176,7 @@
         </div><!--/.row-->
 
         <div class="row pm_grid">
-            <section class="pm_form col-1-2">
+            <section class="pm_form col-1-2 onmobile-mb-30p">
                 <header-block class="settingsAccount-header-language">
                     <h2
                         class="settingsAccount-title-language"
@@ -317,7 +317,7 @@
         </div><!--/.row-->
 
         <div class="row pm_grid">
-            <section class="pm_form col-1-2" id="addressesPrioritySection">
+            <section class="pm_form col-1-2 onmobile-mb-30p" id="addressesPrioritySection">
                 <header-block class="settingsAccount-header-addresses-priority">
                     <h2
                         class="settingsAccount-title-addresses-priority"
