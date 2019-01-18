@@ -70,7 +70,7 @@ function message(
             };
 
             const reloadEncryptionTooltip = () => {
-                dispatcher.tooltip('reloadEncryptionTooltip', { messageID: scope.message.ID });
+                dispatcher.tooltip('reloadEncryptionTooltip', { message: scope.message });
             };
 
             const updateMessage = async (promise) => {

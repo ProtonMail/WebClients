@@ -137,3 +137,24 @@ export const getLabelIDsMoved = (message, labelID) => {
  * @return {Date}
  */
 export const getDate = ({ Time = 0 } = {}) => new Date(Time * 1000);
+
+/**
+ * Check if these all messages shared the same sender (by email address)
+ * @param {Array<message>} messages
+ * @return {Boolean}
+ */
+export const sameSender = (messages = []) => {
+    if (!messages.length) {
+        return false;
+    }
+
+    const [{ Sender: firstSender } = {}] = messages;
+    const firstAddress = normalizeEmail(firstSender.Address);
+
+    return (
+        messages.length ===
+        messages.filter(({ Sender = {} }) => {
+            return normalizeEmail(Sender.Address) === firstAddress;
+        }).length
+    );
+};

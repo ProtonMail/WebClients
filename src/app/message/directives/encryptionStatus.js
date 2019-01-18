@@ -1,4 +1,5 @@
 import tooltipModel from '../../utils/helpers/tooltipHelper';
+import { sameSender } from '../../../helpers/message';
 
 /* @ngInject */
 function encryptionStatus(dispatchers) {
@@ -10,8 +11,8 @@ function encryptionStatus(dispatchers) {
             const { on, unsubscribe } = dispatchers();
             const tooltip = tooltipModel(el, { title: scope.message.encryptionType() });
 
-            on('tooltip', (e, { type, data = {} }) => {
-                if (type === 'reloadEncryptionTooltip' && scope.message.ID === data.messageID) {
+            on('tooltip', (e, { type = '', data = {} }) => {
+                if (type === 'reloadEncryptionTooltip' && sameSender([scope.message, data.message])) {
                     tooltip.updateTitleContent(scope.message.encryptionType());
                 }
 
