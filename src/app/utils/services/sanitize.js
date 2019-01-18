@@ -24,15 +24,24 @@ function sanitize() {
     };
 
     const getConfig = (type) => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
-    const clean = (mode) => (input) => DOMPurify.sanitize(input, getConfig(mode));
+    const clean = (mode) => {
+        const config = getConfig(mode);
+        return (input) => {
+            const value = DOMPurify.sanitize(input, config);
+            if (mode === 'str') {
+                // When trusted types is available, DOMPurify returns a trustedHTML object and not a string, force cast it.
+                return value + '';
+            }
+            return value;
+        };
+    };
 
     /**
      * Custom config only for messages
      * @param  {String} input
-     * @param  {Boolean} raw Format the message and return the whole document
-     * @return {String|Document}
+     * @return {String}
      */
-    const message = clean();
+    const message = clean('str');
 
     /**
      * Sanitize input with a config similar than Squire + ours
@@ -50,8 +59,9 @@ function sanitize() {
 
     /**
      * Default config we don't want any custom behaviour
+     * @return {String}
      */
-    const input = DOMPurify.sanitize;
+    const input = (str) => DOMPurify.sanitize(str) + '';
 
     const toTagUnicode = unicodeTag;
 
