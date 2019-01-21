@@ -21,9 +21,11 @@ import limitElementsModel from './factories/limitElementsModel';
 import removeElement from './services/removeElement';
 import forgeRequestParameters from './services/forgeRequestParameters';
 import sendersName from './directives/sendersName';
+import statesElements from './directives/statesElements';
 
 export default angular
     .module('proton.elements', [])
+    .directive('statesElements', statesElements)
     .directive('sendersName', sendersName)
     .factory('forgeRequestParameters', forgeRequestParameters)
     .controller('ElementsController', ElementsController)

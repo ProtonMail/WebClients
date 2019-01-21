@@ -1,4 +1,4 @@
-<div id="conversation-list-rows" data-pt-select-multiple-elements>
+<div id="conversation-list-rows" class="elementList-container-row" data-pt-select-multiple-elements>
     <sticky-messages></sticky-messages>
     <request-timeout></request-timeout>
     <no-results ng-if="conversations.length === 0 && elementsLoaded"></no-results>
@@ -6,17 +6,9 @@
         <div
             ng-repeat="conversation in conversations track by conversation.ID"
             data-pt-draggable
-            elements-container
+            data-elements-container
             class="conversation"
-            ng-class="{
-                selected: conversation.Selected,
-                active: active(conversation),
-                marked: conversation.ID === markedElement.ID,
-                hasLabels: hasLabels(conversation),
-                read: isRead(conversation),
-                hasAttachments: hasAttachments(conversation),
-                expiring: (conversation.ExpirationTime > 0)
-            }">
+            ng-class="getClassNames(conversation, markedElement)">
             <span class="expiration">
                 <svg height="14" width="14" viewBox="0 0 14 14">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
@@ -32,7 +24,7 @@
             </span>
             <div class="subject">
                 <h4 ng-attr-title="{{ conversation.Subject | unescape }}">
-                    <states-conversation></states-conversation>
+                    <states-elements></states-elements>
                     <folders-element conversation="conversation"></folders-element>
                     <span class="subject-num-message" ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                     <span class="subject-text ellipsis">{{ conversation.Subject  | unescape }}</span>

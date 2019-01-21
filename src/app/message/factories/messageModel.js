@@ -14,26 +14,7 @@ import { VERIFICATION_STATUS, MIME_TYPES, AES256, MESSAGE_FLAGS } from '../../co
 import { toText } from '../../../helpers/parserHTML';
 import { inlineCss } from '../../../helpers/domHelper';
 import { setBit, clearBit, toggleBit } from '../../../helpers/bitHelper';
-import {
-    isMIME,
-    isInternal,
-    isExternal,
-    isDraft,
-    isReplied,
-    isRepliedAll,
-    isForwarded,
-    isSent,
-    isSentEncrypted,
-    isSentAndReceived,
-    isPGPInline,
-    isPGPEncrypted,
-    isRequestReadReceipt,
-    isAttachPublicKey,
-    isSign,
-    inSigningPeriod,
-    isImported,
-    getDate
-} from '../../../helpers/message';
+import { attachTests, getDate, inSigningPeriod, isSentEncrypted, isImported } from '../../../helpers/message';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -93,7 +74,6 @@ function messageModel(
 
             this.isAutoReply = AUTOREPLY_HEADERS.some((header) => header in ParsedHeaders);
             this.xOriginalTo = xOriginalTo || ParsedHeaders['X-Original-To'];
-
             return this;
         }
 
@@ -113,14 +93,6 @@ function messageModel(
             this.toggleFlag(MESSAGE_FLAGS.FLAG_RECEIPT_REQUEST);
         }
 
-        isAttachPublicKey() {
-            return isAttachPublicKey(this);
-        }
-
-        isSign() {
-            return isSign(this);
-        }
-
         toggleAttachPublicKey() {
             this.toggleFlag(MESSAGE_FLAGS.FLAG_PUBLIC_KEY);
             // Auto sign when attaching the public key.
@@ -131,44 +103,8 @@ function messageModel(
             this.toggleFlag(MESSAGE_FLAGS.FLAG_SIGN);
         }
 
-        isSent() {
-            return isSent(this);
-        }
-
-        isSentAndReceived() {
-            return isSentAndReceived(this);
-        }
-
-        isInternal() {
-            return isInternal(this);
-        }
-
         isEO() {
             return !!this.Password;
-        }
-
-        isExternal() {
-            return isExternal(this);
-        }
-
-        isDraft() {
-            return isDraft(this);
-        }
-
-        isReplied() {
-            return isReplied(this);
-        }
-
-        isRepliedAll() {
-            return isRepliedAll(this);
-        }
-
-        isForwarded() {
-            return isForwarded(this);
-        }
-
-        isRequestReadReceipt() {
-            return isRequestReadReceipt(this);
         }
 
         getVerificationStatus() {
@@ -202,10 +138,6 @@ function messageModel(
         isSentByMe() {
             const { Address: senderAddress } = this.Sender;
             return addressesModel.getByEmail(senderAddress);
-        }
-
-        isSentEncrypted() {
-            return isSentEncrypted(this);
         }
 
         plainText() {
@@ -307,14 +239,6 @@ function messageModel(
             }
         }
 
-        isPGPEncrypted() {
-            return isPGPEncrypted(this);
-        }
-
-        isPGPInline() {
-            return isPGPInline(this);
-        }
-
         async encryptBody(publicKeys) {
             try {
                 const privateKeys = keysModel.getPrivateKeys(this.From.ID)[0];
@@ -332,10 +256,6 @@ function messageModel(
             } catch (e) {
                 throw new Error(I18N.ENCRYPTION_ERROR);
             }
-        }
-
-        isMIME() {
-            return isMIME(this);
         }
 
         async decryptMIME({ message, messageDate, privateKeys, publicKeys }) {
@@ -526,6 +446,9 @@ function messageModel(
                 .then((publicKey) => (this.attachedPublicKey = publicKey));
         }
     }
+
+    // Auto attach test helpers
+    attachTests(Message.prototype);
 
     return (m = {}) => new Message({ ...defaultMessage, ...m });
 }

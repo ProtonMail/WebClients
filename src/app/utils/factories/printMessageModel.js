@@ -1,8 +1,8 @@
-import { isReceived } from '../../../helpers/message';
+import { isReceived, isReplied, isRepliedAll, isForwarded } from '../../../helpers/message';
 
 /* @ngInject */
 function printMessageModel($filter, gettextCatalog) {
-    const mapIcons = {
+    const MAP_ICONS = {
         isReplied: 'fa-reply',
         isRepliedAll: 'fa-reply-all',
         isForwarded: 'fa-mail-forward'
@@ -26,10 +26,21 @@ function printMessageModel($filter, gettextCatalog) {
      * @return {Array} icons
      */
     const getIcons = (message = {}) => {
-        return ['isReplied', 'isRepliedAll', 'isForwarded'].reduce((acc, key) => {
-            if (message[key]()) {
-                acc.push(mapIcons[key]);
+        return [
+            {
+                name: 'isReplied',
+                callback: isReplied
+            },
+            {
+                name: 'isRepliedAll',
+                callback: isRepliedAll
+            },
+            {
+                name: 'isForwarded',
+                callback: isForwarded
             }
+        ].reduce((acc, { name, callback }) => {
+            callback(message) && acc.push(MAP_ICONS[name]);
             return acc;
         }, []);
     };

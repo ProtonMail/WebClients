@@ -1,0 +1,8 @@
+.statesElements-container, .statesElements-container * { box-sizing: border-box }
+
+.conversation:not(.element-is-replied):not(.element-is-repliedall):not(.element-is-forwarded) [data-if-is],
+[class*="elementList-container"] .element-is-replied [data-if-is]:not([data-if-is="replied"]),
+[class*="elementList-container"] .element-is-repliedall [data-if-is]:not([data-if-is="repliedall"]),
+[class*="elementList-container"] .element-is-forwarded [data-if-is]:not([data-if-is="forwarded"]) {
+    display: none !important;
+}

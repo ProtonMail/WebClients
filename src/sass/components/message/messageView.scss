@@ -490,8 +490,14 @@
     background-color: transparent;
 }
 
-#conversation-view:empty { display: none }
+.message:not(.message-is-replied):not(.message-is-repliedall):not(.message-is-forwarded) [data-if-is],
+.message.message-is-replied [data-if-is]:not([data-if-is="replied"]),
+.message.message-is-repliedall [data-if-is]:not([data-if-is="repliedall"]),
+.message.message-is-forwarded [data-if-is]:not([data-if-is="forwarded"]) {
+    display: none !important;
+}
 
+#conversation-view:empty,
 .message.message-mode-plain .displayContentBtn-container { display: none }
 
 .protonmail_signature_block-empty { /* https://github.com/ProtonMail/Angular/issues/4813 */

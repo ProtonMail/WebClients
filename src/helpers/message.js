@@ -158,3 +158,90 @@ export const sameSender = (messages = []) => {
         }).length
     );
 };
+
+/**
+ * List of tests we want to attach to a Message
+ * Extend the prototype
+ * @param  {Message.prototype} Message
+ */
+export const attachTests = (prototypeMessage = {}) => {
+    [
+        {
+            name: 'isMIME',
+            callback: isMIME
+        },
+        {
+            name: 'isInternal',
+            callback: isInternal
+        },
+        {
+            name: 'isExternal',
+            callback: isExternal
+        },
+        {
+            name: 'isDraft',
+            callback: isDraft
+        },
+        {
+            name: 'isReplied',
+            callback: isReplied
+        },
+        {
+            name: 'isRepliedAll',
+            callback: isRepliedAll
+        },
+        {
+            name: 'isForwarded',
+            callback: isForwarded
+        },
+        {
+            name: 'isSent',
+            callback: isSent
+        },
+        {
+            name: 'isSentEncrypted',
+            callback: isSentEncrypted
+        },
+        {
+            name: 'isSentAndReceived',
+            callback: isSentAndReceived
+        },
+        {
+            name: 'isPGPInline',
+            callback: isPGPInline
+        },
+        {
+            name: 'isPGPEncrypted',
+            callback: isPGPEncrypted
+        },
+        {
+            name: 'isRequestReadReceipt',
+            callback: isRequestReadReceipt
+        },
+        {
+            name: 'isAttachPublicKey',
+            callback: isAttachPublicKey
+        },
+        {
+            name: 'isSign',
+            callback: isSign
+        },
+        {
+            name: 'inSigningPeriod',
+            callback: inSigningPeriod
+        },
+        {
+            name: 'isImported',
+            callback: isImported
+        },
+        {
+            name: 'getDate',
+            callback: getDate
+        }
+    ].forEach(({ name, callback }) => {
+        // We can't use fn.name as post minify the name will change.
+        prototypeMessage[name] = function() {
+            return callback(this);
+        };
+    });
+};
