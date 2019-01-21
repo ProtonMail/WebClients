@@ -3,11 +3,11 @@ const bindPrefix = (name) => `node_modules/${name}`;
 module.exports = {
     externalFiles: {
         openpgp: ['openpgp/dist/openpgp.min.js', 'openpgp/dist/compat/openpgp.min.js'].map(bindPrefix),
-        openpgp_workers: ['openpgp/dist/openpgp.worker.min.js'].map(bindPrefix),
+        openpgpWorker: bindPrefix('openpgp/dist/openpgp.worker.min.js'),
         list: ['.htaccess', 'manifest.json', 'robots.txt']
     },
     babel: {
-        excludedFiles: ['mailparser.js', 'checkCompatApp.js'],
+        excludedFiles: ['mailparser.js'],
         includedNodeModules: ['asmcrypto.js', 'pmcrypto', 'sieve.js', 'angular-ui-codemirror']
     },
     vendor_files: {

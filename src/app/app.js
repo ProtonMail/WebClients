@@ -4,7 +4,6 @@ import FastClick from 'fastclick';
 import svg4everybody from 'svg4everybody';
 
 import './vendor';
-import '../helpers/setupPmcrypto';
 import paginator from './paginator/index';
 import authentication from './authentication/index';
 import browserSupport from './browserSupport/index';
@@ -25,7 +24,6 @@ import utils from './utils/index';
 
 import CONFIG from './config';
 import routes from './routes';
-import '../sass/app.scss';
 
 window.moment = timezone;
 
@@ -167,5 +165,4 @@ angular
         $qProvider.errorOnUnhandledRejections(debugInfo);
     });
 
-// Load the application
-angular.bootstrap(document, ['proton']);
+export default () => angular.bootstrap(document, ['proton']);
