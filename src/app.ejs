@@ -53,21 +53,7 @@
 </div>
 <div id="pm_slow2" style="display:none;">Loading Message...</div>
 <div ui-view="main" autoscroll="false" id="body"></div>
-
 <noscript class="pm_noscript">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
 <proton-svgs></proton-svgs>
-
-
-<!-- Browsers with ES module support load this file. -->
-<script type="module" crossorigin src="<%= OPENPGP %>" integrity="<%= OPENPGP_INTEGRITY %>"></script>
-
-<!-- Older browsers load this file (and module-supporting -->
-<!-- browsers know *not* to load this file). -->
-<script nomodule src="<%= OPENPGP_COMPAT %>" integrity="<%= OPENPGP_COMPAT_INTEGRITY %>"></script>
-
-<!-- Prefetch the worker script. We load it asynchronously, -->
-<!-- and this should increase the chance that the first -->
-<!-- request to openpgp goes to the worker. -->
-<link rel="prefetch" href="<%= OPENPGP_WORKER %>" integrity="<%= OPENPGP_WORKER_INTEGRITY %>">
 </body>
 </html>

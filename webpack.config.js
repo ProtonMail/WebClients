@@ -33,8 +33,7 @@ module.exports = {
         contentBase: path.resolve('./build')
     },
     entry: {
-        checkCompatApp: ['./src/checkCompatApp.js'],
-        app: ['./src/app/app.js']
+        index: ['./src/app/index.js']
     },
     resolve: {
         unsafeCache: true,

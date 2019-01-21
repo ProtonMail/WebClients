@@ -20,11 +20,13 @@ const makeSRC = (list) => list.map((file) => path.resolve(file));
 
 const isDistRelease = env.isDistRelease();
 
-const openpgpFiles = transformOpenpgpFiles(CONFIG.externalFiles.openpgp, isDistRelease);
-const openpgpWorkerFiles = transformOpenpgpFiles(CONFIG.externalFiles.openpgp_workers, isDistRelease);
+const { main, worker, compat, definition } = transformOpenpgpFiles(
+    CONFIG.externalFiles.openpgp,
+    CONFIG.externalFiles.openpgpWorker,
+    isDistRelease
+);
 
 // We don't need to transpile it
-const CHECK_COMPAT_APP = 'checkCompatApp.js';
 
 const minify = () => {
     if (!isDistRelease) {
@@ -57,12 +59,12 @@ const list = [
         { from: 'src/assets', to: 'assets' }
     ]),
 
-    new WriteWebpackPlugin([
-        ...openpgpFiles.concat(openpgpWorkerFiles).map(({ filepath, contents }) => ({
+    new WriteWebpackPlugin(
+        [main, compat, worker].map(({ filepath, contents }) => ({
             name: filepath,
             data: Buffer.from(contents)
         }))
-    ]),
+    ),
 
     new MiniCssExtractPlugin({
         filename: isDistRelease ? '[name].[hash:8].css' : '[name].css',
@@ -72,16 +74,7 @@ const list = [
     new HtmlWebpackPlugin({
         template: 'src/app.ejs',
         inject: 'body',
-        defer: ['app'],
-        minify: minify(),
-        templateParameters: {
-            OPENPGP: openpgpFiles[0].filepath,
-            OPENPGP_INTEGRITY: openpgpFiles[0].integrity,
-            OPENPGP_COMPAT: openpgpFiles[1].filepath,
-            OPENPGP_COMPAT_INTEGRITY: openpgpFiles[1].integrity,
-            OPENPGP_WORKER: openpgpWorkerFiles[0].filepath,
-            OPENPGP_WORKER_INTEGRITY: openpgpWorkerFiles[0].integrity
-        }
+        minify: minify()
     }),
 
     new SriPlugin({
@@ -90,29 +83,16 @@ const list = [
     }),
 
     new webpack.DefinePlugin({
-        // Needs to be JSON encoded because webpack does a direct replace
-        OPENPGP_FILE: JSON.stringify({
-            path: openpgpFiles[0].filepath,
-            integrity: openpgpFiles[0].integrity
-        }),
-        OPENPGP_COMPAT_FILE: JSON.stringify({
-            path: openpgpFiles[1].filepath,
-            integrity: openpgpFiles[1].integrity
-        }),
-        OPENPGP_WORKER_FILE: JSON.stringify({
-            path: openpgpWorkerFiles[0].filepath,
-            integrity: openpgpWorkerFiles[0].integrity
-        })
+        PM_OPENPGP: JSON.stringify(definition)
     }),
 
     new ScriptExtHtmlWebpackPlugin({
-        sync: path.basename(CHECK_COMPAT_APP, 'js'),
         defaultAttribute: 'defer'
     }),
 
     new webpack.SourceMapDevToolPlugin({
         filename: isDistRelease ? '[name].[hash:8].js.map' : '[name].js.map',
-        exclude: ['styles', 'checkCompatApp', 'vendor', 'vendorLazy', 'vendorLazy2']
+        exclude: ['styles', 'vendor', 'vendorLazy', 'vendorLazy2']
     })
 ];
 
