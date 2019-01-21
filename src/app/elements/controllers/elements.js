@@ -1,5 +1,9 @@
 import _ from 'lodash';
+
 import { MAILBOX_IDENTIFIERS, ROW_MODE, COLUMN_MODE, CONVERSATION_VIEW_MODE } from '../../constants';
+
+import { isReplied, isRepliedAll, isForwarded } from '../../../helpers/message';
+
 /* @ngInject */
 function ElementsController(
     $log,
@@ -31,9 +35,39 @@ function ElementsController(
     }, MINUTE);
     const updateNumberElementChecked = (value) => ($scope.numberElementChecked = value);
 
+    const TYPE_ELEMENTS = tools.getTypeList();
+
     $scope.elementsLoaded = false;
     $scope.limitReached = false;
     $scope.conversations = [];
+
+    function hasLabels({ LabelIDs = [], Labels = [] }) {
+        return LabelIDs.length || Labels.length;
+    }
+    $scope.hasLabels = hasLabels;
+
+    const getTestClassNames = (element) => {
+        if (TYPE_ELEMENTS === 'message') {
+            return {
+                'element-is-replied': isReplied(element),
+                'element-is-repliedall': isRepliedAll(element),
+                'element-is-forwarded': isForwarded(element)
+            };
+        }
+    };
+
+    $scope.getClassNames = (element = {}, marked = {}) => {
+        return {
+            selected: element.Selected,
+            active: active(element),
+            marked: element.ID === marked.ID,
+            hasLabels: hasLabels(element),
+            read: isRead(element),
+            hasAttachments: hasAttachments(element),
+            expiring: element.ExpirationTime > 0,
+            ...getTestClassNames(element)
+        };
+    };
 
     /**
      * Method called at the initialization of this controller
@@ -459,33 +493,31 @@ function ElementsController(
      * @param {Object} element
      * @return {Boolean}
      */
-    $scope.active = (element) => {
+    function active(element) {
         if (AppModel.get('numberElementChecked') === 0 && angular.isDefined($state.params.id)) {
             return $state.params.id === element.ConversationID || $state.params.id === element.ID;
         }
 
         return false;
-    };
+    }
 
-    $scope.hasLabels = ({ LabelIDs = [], Labels = [] }) => LabelIDs.length || Labels.length;
-
-    $scope.hasAttachments = (element) => {
+    function hasAttachments(element) {
         if (element.ConversationID) {
             // is a message
             return element.NumAttachments > 0;
         }
         // is a conversation
         return element.ContextNumAttachments > 0;
-    };
+    }
 
-    $scope.isRead = (element) => {
+    function isRead(element) {
         if (element.ConversationID) {
             // is a message
             return element.Unread === 0;
         }
         // is a conversation
         return element.ContextNumUnread === 0;
-    };
+    }
 
     $scope.size = (element) => {
         if (element.ConversationID) {

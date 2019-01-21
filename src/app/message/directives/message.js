@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import { MESSAGE_FLAGS, SEND_TYPES } from '../../constants';
 import displaySignatureStatus from '../../../helpers/displaySignatureStatus';
+import { isDraft, isSent, isReplied, isRepliedAll, isForwarded } from '../../../helpers/message';
 
 const { FLAG_INTERNAL } = MESSAGE_FLAGS;
 
@@ -58,6 +59,25 @@ function message(
         },
         link(scope, element) {
             const { on, dispatcher, unsubscribe } = dispatchers(['messageActions', 'composer.load', 'tooltip']);
+
+            scope.getClassNames = (message = {}, marked = {}) => {
+                const { Address = [] } = message.Sender || {};
+                const hasSender = Address.length;
+
+                return {
+                    hasSender,
+                    open: message.expand,
+                    marked: message.ID === marked.ID,
+                    unread: message.Unread === 1,
+                    details: message.toggleDetails === true,
+                    draft: isDraft(message),
+                    sent: isSent(message),
+                    'message-is-replied': isReplied(message),
+                    'message-is-repliedall': isRepliedAll(message),
+                    'message-is-forwarded': isForwarded(message),
+                    'message-mode-plain': message.viewMode === 'plain'
+                };
+            };
 
             const bindClasses = (message) => {
                 element[0].classList[noRecipients(message) ? 'add' : 'remove'](CLASSNAME.UNDISCLOSED);

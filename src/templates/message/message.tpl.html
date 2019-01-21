@@ -1,22 +1,13 @@
-<article class="message" ng-class="{
-    'open': message.expand,
-    'marked': message.ID === marked.ID,
-    'unread': message.Unread === 1,
-    'details': message.toggleDetails === true,
-    'draft': message.isDraft(),
-    'sent': message.isSent(),
-    'hasSender': message.Sender.Address.length,
-    'message-mode-plain': message.viewMode === 'plain'
-}">
+<article class="message" ng-class="getClassNames(message, marked)">
 
     <div class="summary" data-toggle-message>
 
         <div class="summary-left">
             <div class="meta">
 
-                <i class="history fa fa-reply" ng-if="message.isReplied()"></i>
-                <i class="history fa fa-reply-all" ng-if="message.isRepliedAll()"></i>
-                <i class="history fa fa-mail-forward" ng-if="message.isForwarded()"></i>
+                <i class="history fa fa-reply" data-if-is="replied"></i>
+                <i class="history fa fa-reply-all" data-if-is="repliedall"></i>
+                <i class="history fa fa-mail-forward" data-if-is="forwarded"></i>
 
                 <div class="contact message-contact">
 
