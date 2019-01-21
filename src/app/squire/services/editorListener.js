@@ -14,7 +14,7 @@ function editorListener(
     editorDropzone,
     removeInlineWatcher,
     mailSettingsModel,
-    gettextCatalog,
+    hotkeys,
     $state,
     pasteImage
 ) {
@@ -187,7 +187,7 @@ function editorListener(
             // Check alt too cf Polish keyboard for S #5476
             if (!e.altKey && (e.ctrlKey || e.metaKey) && e.keyCode === 83) {
                 e.preventDefault();
-                Mousetrap.trigger('mod+s');
+                hotkeys.trigger('mod+s');
             }
         };
 

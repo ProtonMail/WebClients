@@ -284,12 +284,7 @@ function AccountController(
         const promise = settingsMailApi
             .updateHotkeys({ Hotkeys: $scope.hotkeys })
             .then(({ MailSettings = {} } = {}) => {
-                if (MailSettings.Hotkeys === 1) {
-                    hotkeys.bind();
-                } else {
-                    hotkeys.unbind();
-                }
-
+                hotkeys[MailSettings.Hotkeys === 1 ? 'bind' : 'unbind']();
                 notification.success(gettextCatalog.getString('Hotkeys preferences updated', null, 'Success'));
             });
 

@@ -20,10 +20,10 @@ function pmModal(
     // The highest z-Index for the last modals used. Used to ensure that modals are sort by time (latest modal on top)
     let zIndex = MODAL_Z_INDEX;
 
-    function manageHotkeys(bind = true) {
-        if (mailSettingsModel.get('Hotkeys')) {
+    function manageHotkeys(status = true) {
+        if (mailSettingsModel.get('Hotkeys') === 1) {
             const hotkeys = $injector.get('hotkeys');
-            hotkeys[bind ? 'bind' : 'unbind']();
+            hotkeys[status ? 'bind' : 'unbind']();
         }
     }
 
@@ -40,6 +40,7 @@ function pmModal(
         let scope;
         const { dispatcher, on, unsubscribe } = dispatchers(['tooltip']);
         const closeAllTooltips = () => dispatcher.tooltip('hideAll');
+        const hotkeys = $injector.get('hotkeys');
 
         if (config.template) {
             html = $q.when(config.template);
@@ -63,11 +64,12 @@ function pmModal(
 
                 $body.append('<div class="modal-backdrop fade in"></div>');
                 AppModel.set('modalOpen', true);
+
                 const id = setTimeout(() => {
                     $('.modal').addClass('in');
                     window.scrollTo(0, 0);
                     manageHotkeys(false); // Disable hotkeys
-                    Mousetrap.bind('escape', () => {
+                    hotkeys.bind('escape', () => {
                         const { onEscape = deactivate } = (locals || {}).params || {};
                         onEscape();
                     });
@@ -154,7 +156,8 @@ function pmModal(
                 if (!element) {
                     return;
                 }
-                Mousetrap.unbind('escape');
+
+                hotkeys.unbind('escape');
                 manageHotkeys(); // Enable hotkeys
                 scope && scope.$destroy();
                 /**

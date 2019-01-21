@@ -51,11 +51,7 @@ function SecuredController(
     desktopNotifications.request();
 
     // Enable hotkeys
-    if (mailSettingsModel.get('Hotkeys') === 1) {
-        hotkeys.bind();
-    } else {
-        hotkeys.unbind();
-    }
+    hotkeys.init(mailSettingsModel.get('Hotkeys') === 1);
 
     eventManager.initialize();
     // Initialize counters for conversation (total and unread)
@@ -80,7 +76,7 @@ function SecuredController(
     $scope.idDefined = () => $state.params.id && $state.params.id.length > 0;
     $scope.isMobile = () => AppModel.is('mobile');
     $scope.$on('$destroy', () => {
-        hotkeys.unbind();
+        hotkeys.reset();
         unsubscribe();
     });
 }
