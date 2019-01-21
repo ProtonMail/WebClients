@@ -163,6 +163,11 @@ function autocompleteEmails(
             setEmails(config.contactGroups.concat(list));
         };
 
+        const removeGroup = (Address) => {
+            const cache = composerContactGroupSelection(scope.message.ID);
+            cache.remove(Address);
+        };
+
         /**
          * Sync the emails to the cache.
          */
@@ -200,6 +205,16 @@ function autocompleteEmails(
         const syncModel = _.throttle(updateModel, THROTTLE_TIMEOUT);
         syncModel();
 
+        /**
+         * Remove an item from the list of emails ([<icon> email <button>]...)
+         * @param  {String} address
+         */
+        function removeItem(address) {
+            model.removeByAddress(address);
+            removeGroup(address);
+            syncModel();
+        }
+
         on('contacts', (event, { type }) => {
             if (type !== 'contactEvents' && type !== 'contactUpdated') {
                 return;
@@ -214,24 +229,30 @@ function autocompleteEmails(
             syncModel();
         });
 
-        on('composer.update', (event, { type, data: { message = { ID: null } } = {} }) => {
+        on('composer.update', (e, { type, data: { message = { ID: null } } = {} }) => {
             if (type !== 'close.panel' || message.ID !== scope.message.ID) {
                 return;
             }
             syncModel();
         });
-        on('squire.messageSign', (event, { data: { messageID } }) => {
+
+        on('squire.messageSign', (e, { data: { messageID } }) => {
             if (messageID !== scope.message.ID) {
                 return;
             }
             syncModel();
         });
-        on('recipient.update', (event, { data: { messageID, oldAddress, Address, Name } }) => {
+
+        on('recipient.update', (e, { type, data: { messageID, oldAddress, Address, Name, remove = {} } }) => {
             if (messageID !== scope.message.ID) {
                 return;
             }
-            model.updateEmail(oldAddress, Address, Name);
-            syncModel();
+            if (type === 'update') {
+                model.updateEmail(oldAddress, Address, Name);
+                syncModel();
+            }
+
+            type === 'remove' && removeItem(remove.address);
         });
 
         /**
@@ -262,8 +283,7 @@ function autocompleteEmails(
             if (target.value && isSplitable(target.value)) {
                 const emails = splitEmails(target.value);
                 if (!checkMessageLimit(emails.length)) {
-                    resetValue(target, emails);
-                    return;
+                    return resetValue(target, emails);
                 }
                 emails.forEach((value) => model.add({ label: value, value }));
                 syncModel();
@@ -285,20 +305,13 @@ function autocompleteEmails(
             }
         };
 
-        const removeGroup = (Address) => {
-            const cache = composerContactGroupSelection(scope.message.ID);
-            cache.remove(Address);
-        };
-
         const onClick = ({ target }) => {
             // Reset autocomplete to work only after 1 letter
             awesomplete.minChars = 1;
 
             if (target.classList.contains('autocompleteEmails-btn-remove')) {
                 const { address } = target.dataset;
-                model.removeByAddress(address);
-                removeGroup(address);
-                return syncModel();
+                return removeItem(address);
             }
 
             /**
@@ -321,6 +334,7 @@ function autocompleteEmails(
          */
         const onSubmit = (e) => {
             e.preventDefault();
+
             const { value, clear } = getFormValue(e.target);
 
             if (value) {

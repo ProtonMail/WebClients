@@ -16,7 +16,15 @@ function autocompleteEmailsItem(
     manageContactGroup,
     contactGroupModel
 ) {
+    const toClass = (name) => `autocompleteEmails-${name}`;
+
+    const TAB_KEY = 9;
     const KEY_ENTER = 13;
+    const CLASSNAME = {
+        BTN_REMOVE: toClass('btn-remove'),
+        INVALID_EMAIL: toClass('item-invalid'),
+        EDIT_EMAIL: toClass('item-edit')
+    };
 
     /**
      * Change button [data-address] to delete the item
@@ -59,6 +67,7 @@ function autocompleteEmailsItem(
             const { dispatcher, on, unsubscribe } = dispatchers(['recipient.update']);
 
             const $span = el.find('span');
+            const $btn = el.find('.' + CLASSNAME.BTN_REMOVE);
             const updateBtn = buttonState(el[0]);
             let tooltip;
 
@@ -75,6 +84,8 @@ function autocompleteEmailsItem(
             };
 
             const onBlur = ({ target }) => {
+                target.parentElement.classList.remove(CLASSNAME.EDIT_EMAIL);
+
                 if (scope.email.isContactGroup) {
                     return;
                 }
@@ -84,7 +95,6 @@ function autocompleteEmailsItem(
                 const { Address: oldAddress } = scope.email;
                 const { Address, Name } = getAddress(target);
                 updateBtn(Address);
-
                 dispatcher['recipient.update']('update', {
                     Address,
                     Name,
@@ -93,12 +103,20 @@ function autocompleteEmailsItem(
                 });
             };
 
+            let latestKey;
+
             /*
                 Prevent event propagation for custom action by the main component.
                 And reset invalid state
                 ex: BACKSPACE
              */
             const onInput = _.throttle((e) => {
+                latestKey = e.keyCode;
+
+                if (!e.target.parentElement.classList.contains(CLASSNAME.EDIT_EMAIL)) {
+                    e.target.parentElement.classList.add(CLASSNAME.EDIT_EMAIL);
+                }
+
                 if (e.keyCode === KEY_ENTER) {
                     return onBlur(e);
                 }
@@ -111,7 +129,7 @@ function autocompleteEmailsItem(
                         cf #7958
                      */
                     if (scope.email.invalid) {
-                        e.target.parentElement.classList.remove('autocompleteEmails-item-invalid');
+                        e.target.parentElement.classList.remove(CLASSNAME.INVALID_EMAIL);
                     }
                 }
             }, 150);
@@ -150,12 +168,32 @@ function autocompleteEmailsItem(
                 }
             });
 
+            const onFocusBtn = ({ target, originalEvent = {} }) => {
+                const { relatedTarget } = originalEvent;
+
+                /*
+                    When we click on the button no relatedTarget
+                    If we focus via a tab we don't want to trigger a remove action
+                 */
+                if (relatedTarget && latestKey !== TAB_KEY) {
+                    const { address } = target.dataset;
+                    dispatcher['recipient.update']('remove', {
+                        messageID: scope.message.ID,
+                        remove: {
+                            address
+                        }
+                    });
+                }
+            };
+
             $span.on('keydown', onInput);
             $span.on('input', onInput);
+            $btn.on('focus', onFocusBtn);
             $span.on('click', onClick);
             $span.on('blur', onBlur);
 
             scope.$on('$destroy', () => {
+                $btn.off('focus', onFocusBtn);
                 $span.off('keydown', onInput);
                 $span.off('input', onInput);
                 $span.off('click', onClick);
