@@ -8,7 +8,7 @@ const KEY = {
 };
 
 /* @ngInject */
-function plainTextArea(dispatchers, mailSettingsModel) {
+function plainTextArea(dispatchers, mailSettingsModel, hotkeys) {
     const isKey = (e, code) => !e.altKey && (e.ctrlKey || e.metaKey) && e.keyCode === code;
 
     return {
@@ -31,7 +31,7 @@ function plainTextArea(dispatchers, mailSettingsModel) {
                 // Check alt too cf Polis S #5476
                 if (isKey(e, KEY.S)) {
                     e.preventDefault();
-                    Mousetrap.trigger('mod+s');
+                    hotkeys.trigger('mod+s');
                 }
 
                 if (isKey(e, KEY.ENTER) && mailSettingsModel.get('Hotkeys') === 1) {
