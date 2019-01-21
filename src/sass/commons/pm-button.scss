@@ -51,6 +51,7 @@
         &:focus  {
             background-color: darken($primary, 5);
             border-color: transparent;
+            color: set-color($primary, $white);
         }
         &:active {
             background-color: #66669a;
