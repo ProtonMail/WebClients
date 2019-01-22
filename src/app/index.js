@@ -10,7 +10,13 @@ import '../sass/app.scss';
 // eslint-disable-next-line no-undef
 const { main, compat, worker } = PM_OPENPGP;
 
-const dl = ({ filepath, integrity }) => fetch(filepath, { integrity }).then((response) => response.text());
+const dl = ({ filepath, integrity }) => {
+    const options = {
+        integrity,
+        credentials: 'same-origin'
+    };
+    return fetch(filepath, options).then((response) => response.text());
+};
 
 (async () => {
     if (!check()) {
