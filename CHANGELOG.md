@@ -1,3 +1,15 @@
+# [3.15.14] - 2019-01-22
+## Added
+- Delete icon was missing in search mode
+
+## Fixed
+- Login got stuck on older Safari browsers
+- Editing invalid emails did not properly update the composer
+- Enable/disable keyboard shortcuts didn't work without a page refresh
+- Some buttons had different mouse hover effect
+- Verified address lock didn't appear until a message is opened
+- Decryption error appeared for messages on Chrome browser
+
 # [3.15.13] - 2019-01-16
 ## Fixed
 - Fixed minor CSS issues in the composer
