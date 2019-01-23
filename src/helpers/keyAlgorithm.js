@@ -8,7 +8,8 @@ export const describe = ({ algorithmName = '', bitSize = 0 } = {}) => {
     const [name] = algorithmName.split('_');
 
     if (isECC(name)) {
-        return `ECC (${name})`;
+        const value = name === 'eddsa' ? 'ed25519' : name;
+        return `ECC (${value})`;
     }
 
     const formattedName = NON_ABBREVIATION_ALGS.includes(name)
