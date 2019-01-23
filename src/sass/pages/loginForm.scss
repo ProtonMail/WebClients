@@ -35,6 +35,12 @@
 .loginForm-actions-row > * {
     white-space: nowrap;
 }
+.loginForm-actions-row .pm_button {
+    max-width: 49%;
+}
+.loginForm-actions-row .pm_button:only-of-type {
+    max-width: 100%;
+}
 
 .loginForm-actions-main {
     width: 100%;
