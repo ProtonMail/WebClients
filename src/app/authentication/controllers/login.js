@@ -20,15 +20,15 @@ function LoginController(
     srp
 ) {
     const { name, major } = getBrowser();
-    const oldSafari = name === 'Safari' && major === '9';
+    const oldSafariMobile = name === 'Mobile Safari' && +major <= +'11';
 
     /**
      * NOTE: THIS FILE AND THE SRP NEEDS TO BE REFACTORED TO PROPERLY HANDLE ERRORS.
      * MADE A BEST EFFORT TO ONLY SHOW ERRORS ONCE BUT I MAY SHOW TWICE.
      */
     const I18N = {
-        OLD_SAFARI_ERROR: gettextCatalog.getString(
-            '<strong>Incompatible browser detected</strong><br>Unfortunately your browser is outdated and not compatible with ProtonMail.<br>Please use the latest version of Safari, Firefox, Chrome, or Edge.<br>As a temporary workaround, you could try using an older version of ProtonMail <a href="https://old.protonmail.com">here</a>.',
+        OLD_SAFARI_MOBILE_ERROR: gettextCatalog.getString(
+            '<strong>Incompatible browser detected</strong><br>Unfortunately your browser is outdated and not compatible with ProtonMail.<br>Please use the latest version of Safari, Firefox, Chrome, or Edge.',
             null,
             'Error'
         ),
@@ -52,8 +52,8 @@ function LoginController(
         TWOFA_ERROR: gettextCatalog.getString('Please enter your two-factor passcode', null, 'Error')
     };
 
-    if (oldSafari) {
-        notification.error(I18N.OLD_SAFARI_ERROR);
+    if (oldSafariMobile) {
+        notification.error(I18N.OLD_SAFARI_MOBILE_ERROR);
     }
 
     const { on, unsubscribe } = dispatchers();
