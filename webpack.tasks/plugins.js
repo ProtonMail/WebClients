@@ -91,7 +91,7 @@ const list = [
     }),
 
     new webpack.SourceMapDevToolPlugin({
-        filename: isDistRelease ? '[name].[hash:8].js.map' : '[name].js.map',
+        filename: '[file].map',
         exclude: ['styles', 'vendor', 'vendorLazy', 'vendorLazy2']
     })
 ];
