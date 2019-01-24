@@ -1,3 +1,11 @@
+# [3.15.15] - 2019-01-24
+
+## Fixed
+- No spacing between cancel & reset buttons on the password reset page
+
+## Added
+- Warning message for unsupported browsers on iOS
+
 # [3.15.14] - 2019-01-22
 ## Added
 - Delete icon was missing in search mode
