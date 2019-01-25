@@ -47,8 +47,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(`./${BUILD_TARGET}`),
-        filename: isEnvProduction ? '[name].[chunkhash:8].js' : '[name].js',
-        chunkFilename: isEnvProduction ? '[name].[chunkhash:8].chunk.js' : '[name].chunk.js',
+        filename: isEnvProduction ? '[name].[chunkhash:10].js' : '[name].js',
+        chunkFilename: isEnvProduction ? '[name].[chunkhash:10].chunk.js' : '[name].chunk.js',
         crossOriginLoading: 'anonymous'
     },
 

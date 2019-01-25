@@ -67,8 +67,8 @@ const list = [
     ),
 
     new MiniCssExtractPlugin({
-        filename: isDistRelease ? '[name].[hash:8].css' : '[name].css',
-        chunkFilename: isDistRelease ? '[id].[hash:8].css' : '[id].css'
+        filename: isDistRelease ? '[name].[hash:10].css' : '[name].css',
+        chunkFilename: isDistRelease ? '[id].[hash:10].css' : '[id].css'
     }),
 
     new HtmlWebpackPlugin({
