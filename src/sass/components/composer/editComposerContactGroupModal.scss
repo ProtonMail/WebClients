@@ -28,9 +28,17 @@
     margin-left: auto;
 }
 
-.editComposerContactGroupModal-icon svg.encryptionIcon {
+.editComposerContactGroupModal-icon .encryptionIcon {
     margin: 0;
+    line-height: normal;
 }
+.editComposerContactGroupModal-icon svg.encryptionIcon {
+    margin-right: -2px;
+}
+.editComposerContactGroupModal-icon i.encryptionIcon {
+    margin-right: 4px;
+}
+
 
 .editComposerContactGroupModal-name {
     font-weight: normal;
