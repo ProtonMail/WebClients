@@ -590,7 +590,15 @@ function messageActions(
 
                 if (conversation) {
                     if (conversation.NumMessages === 1) {
-                        acc.push({ Action: STATUS.DELETE, ID: conversation.ID });
+                        acc.push({
+                            Action: STATUS.DELETE,
+                            ID: conversation.ID,
+                            Conversation: {
+                                ID: conversation.ID,
+                                Labels: conversation.Labels,
+                                NumMessages: 0
+                            }
+                        });
                     }
 
                     if (conversation.NumMessages > 1) {
