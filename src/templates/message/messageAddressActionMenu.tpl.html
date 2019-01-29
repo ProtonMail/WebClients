@@ -46,7 +46,7 @@
             </div>
         </button>
         <button
-            ng-if="message.isInternal && !message.isSentByMe()"
+            ng-if="message.isInternal() && !message.isSentByMe()"
             class="messageAddressActionMenu-btn-pin-public"
             data-action="advanced-settings">
             <div class="messageAddressActionMenu-label">
