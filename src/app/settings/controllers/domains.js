@@ -177,9 +177,11 @@ function DomainsController(
             return;
         }
 
-        if (catchall) {
-            _.each(Addresses, (address) => (address.catchall = address.ID === ID));
-        }
+        Addresses.forEach((address) => {
+            if (address.ID !== ID) {
+                address.catchall = false;
+            }
+        });
 
         const promise = domainModel.catchall(DomainID, catchall ? ID : null).then(() => {
             notification.success(gettextCatalog.getString('Catch-all address updated', null, 'Success'));
