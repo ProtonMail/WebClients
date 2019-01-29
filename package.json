@@ -160,8 +160,8 @@
     "testwatch": "npm test -- --auto-watch --no-single-run",
     "postbuild:i18n": "npm run i18n",
     "i18n:check": "tasks/noContext",
-    "preversion": "rm package-lock.json || echo 'No useless package-lock to remove'",
-    "postversion": "git push --tags",
+    "preversion": "git update-index --no-assume-unchanged package-lock.json",
+    "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags",
     "config": "cross-env NODE_ENV=dev NODE_ENV_MODE=config tasks/setupConfig.js",
     "start": "cross-env NODE_ENV=dev tasks/setupConfig.js",
     "poststart": "npm run dev",
@@ -204,7 +204,7 @@
   "version": "3.15.15",
   "husky": {
     "hooks": {
-      "pre-commit": "./tasks/metrics.sh"
+      "pre-commit": "git update-index --assume-unchanged package-lock.json && ./tasks/metrics.sh"
     }
   }
 }
