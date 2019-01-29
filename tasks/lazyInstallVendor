@@ -39,7 +39,7 @@ function e2eVendor {
     if [ -d "./node_modules/cypress" ]; then
         echo "✓ We have a cache."
     else
-        npm i cypress@3.0 --no-save --production;
+        npm i cypress@3.1 --no-save --production;
     fi
 }
 
