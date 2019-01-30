@@ -325,14 +325,14 @@ function addressKeysView(
                 });
             };
 
-            const reactivateKey = (address, key) => {
+            const reactivateKey = ({ addressID }, key) => {
                 reactivateKeyModal.activate({
                     params: {
                         submit(password) {
                             reactivateKeyModal.deactivate();
                             const toProcess = [
                                 {
-                                    addressID: address.ID,
+                                    addressID,
                                     keys: [key]
                                 }
                             ];
