@@ -4,6 +4,13 @@ set -eo pipefail
 args=("$@");
 BRANCHES=(${args//,/ });
 
+if [[ "$1" == "--help" ]]; then
+    echo "<cmd> target1,target2,target3..."
+    echo "It can be only one target: <dmd> monique"
+    echo "It will create deploy monique";
+    exit 0;
+fi;
+
 git checkout v3;
 
 for branch in ${BRANCHES[*]} ; do
