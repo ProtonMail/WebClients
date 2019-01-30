@@ -145,28 +145,31 @@ function reactivateKeys(
         const password = authentication.getPassword();
 
         // Reactivate all the keys.
-        const promises = addressesWithKeys.reduce((acc, { addressID, keys }) => {
-            const keyPromises = keys.map((key) => {
-                return reactivateKey({
+        const toActivate = addressesWithKeys.reduce((acc, { addressID, keys }) => {
+            const keyArguments = keys.map((key) => {
+                return {
                     addressID,
                     salt: keySalts[key.ID],
                     key,
                     password,
                     oldPassword
-                });
+                };
             });
 
-            return acc.concat(keyPromises);
+            return acc.concat(keyArguments);
         }, []);
 
-        const result = await Promise.all(promises);
+        const result = [];
 
-        eventManager.call();
+        for (let i = 0; i < toActivate.length; ++i) {
+            result.push(await reactivateKey(toActivate[i]));
+            await eventManager.call();
+        }
 
         // Summarize the results and get the texts to return.
         const summary = getSummary(result);
         return {
-            success: getText(I18N.success, summary.success, promises),
+            success: getText(I18N.success, summary.success, toActivate),
             failed: getErrorText(summary.failed)
         };
     };
