@@ -21,6 +21,15 @@ function setupOrganizationModal(
         /* @ngInject */
         controller: function(params, $scope) {
             const self = this;
+
+            const I18N = {
+                ERROR_PASSWORD_INPUT: gettextCatalog.getString(
+                    'You must add a password for the organization',
+                    null,
+                    'Error'
+                )
+            };
+
             const base = BASE_SIZE;
             const steps = ['name', 'keys', 'password', 'storage'];
             const methods = [name, keys, password, storage, vpn];
@@ -112,14 +121,12 @@ function setupOrganizationModal(
                 });
                 networkActivityTracker.track(promise);
             };
-            self.cancel = () => {
-                params.close();
-            };
+
             function name() {
                 const DisplayName = self.name;
-
                 return organizationApi.updateOrganizationName({ DisplayName });
             }
+
             function keys() {
                 const mailboxPassword = authentication.getPassword();
                 const encryptionConfigName = self.encryptionConfigName;
@@ -133,8 +140,13 @@ function setupOrganizationModal(
                     .then((armored) => decryptPrivateKey(armored, mailboxPassword))
                     .then((pkg) => (decryptedKey = pkg));
             }
-            function password() {
+
+            async function password() {
                 const organizationPassword = self.organizationPassword;
+
+                if (!organizationPassword) {
+                    throw new Error(I18N.ERROR_PASSWORD_INPUT);
+                }
 
                 payload.Tokens = [];
                 payload.BackupKeySalt = passwords.generateKeySalt();
@@ -145,12 +157,14 @@ function setupOrganizationModal(
                     .then((armored) => (payload.BackupPrivateKey = armored))
                     .then(() => organizationApi.updateOrganizationKeys(payload));
             }
+
             function storage() {
                 const memberID = params.memberID;
                 const quota = Math.round(self.sliderValue * self.unit);
 
                 return memberApi.quota(memberID, quota);
             }
+
             function vpn() {
                 const memberID = params.memberID;
                 const vpn = Math.round(self.sliderVPNValue);
