@@ -24,9 +24,8 @@ export const MESSAGE_VIEW_MODE = 1;
 export const CONVERSATION_VIEW_MODE = 0;
 export const ROW_MODE = 1;
 export const COLUMN_MODE = 0;
-export const DEFAULT_ENCRYPTION_CONFIG = 'X25519';
+export const DEFAULT_ENCRYPTION_CONFIG = 'RSA2048';
 export const ENCRYPTION_CONFIGS = {
-    X25519: { curve: 'ed25519' },
     RSA4096: { numBits: 4096 },
     RSA2048: { numBits: 2048 }
 };
