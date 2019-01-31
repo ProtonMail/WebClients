@@ -1,3 +1,12 @@
+# [3.15.16] - 2019-01-31
+
+## Fixed
+- Multiple catch-all addresses could be selected
+- Composer contact group email list had random line height
+- Message remained after it is deleted from the trash
+- Wrong email was shown when selecting trust public keys
+- Login didn't work on some older browsers on iOS
+
 # [3.15.15] - 2019-01-24
 
 ## Fixed
