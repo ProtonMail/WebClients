@@ -393,7 +393,7 @@ msgstr ""
 #: ./src/templates/modals/expirationModal.tpl.html:49
 #: ./src/templates/modals/exportKeyModal.tpl.html:17
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
-#: ./src/templates/modals/generate.tpl.html:79
+#: ./src/templates/modals/generate.tpl.html:74
 #: ./src/templates/modals/generateOrganization.tpl.html:17
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
@@ -987,7 +987,7 @@ msgctxt "Action"
 msgid "Fullscreen"
 msgstr ""
 
-#: ./src/templates/modals/generate.tpl.html:80
+#: ./src/templates/modals/generate.tpl.html:75
 #: ./src/templates/modals/generateOrganization.tpl.html:18
 msgctxt "Action"
 msgid "Generate Keys"
@@ -1041,7 +1041,7 @@ msgid "I have a question"
 msgstr ""
 
 #: ./src/templates/contact/importContactModal.tpl.html:15
-#: ./src/templates/modals/generate.tpl.html:81
+#: ./src/templates/modals/generate.tpl.html:76
 msgctxt "Action"
 msgid "Import"
 msgstr ""
@@ -3348,11 +3348,6 @@ msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:30
-msgctxt "Error"
-msgid "<strong>Incompatible browser detected</strong><br>Unfortunately your browser is outdated and not compatible with ProtonMail.<br>Please use the latest version of Safari, Firefox, Chrome, or Edge."
-msgstr ""
-
 #: ./src/templates/labels/labelNameInput.tpl.html:21
 msgctxt "Error"
 msgid "A group with this name already exists."
@@ -3379,7 +3374,7 @@ msgid "Address already associated to a user"
 msgstr ""
 
 #: ./src/app/address/factories/addressModel.js:36
-#: ./src/app/settings/controllers/domains.js:326
+#: ./src/app/settings/controllers/domains.js:328
 msgctxt "Error"
 msgid "Administrator privileges must be activated"
 msgstr ""
@@ -3430,7 +3425,7 @@ msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:41
+#: ./src/app/authentication/controllers/login.js:33
 msgctxt "Error"
 msgid ""
 "Cookies are disabled.\n"
@@ -3464,7 +3459,7 @@ msgid "Due to credit card processing fees, we cannot accept donations smaller th
 msgstr ""
 
 #. key generation progrss
-#: ./src/templates/modals/generate.tpl.html:69
+#: ./src/templates/modals/generate.tpl.html:64
 msgctxt "Error"
 msgid "Error"
 msgstr ""
@@ -3760,7 +3755,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:52
+#: ./src/app/authentication/controllers/login.js:44
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr ""
@@ -3904,7 +3899,7 @@ msgctxt "Error"
 msgid "The request failed"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:35
+#: ./src/app/authentication/controllers/login.js:27
 msgctxt "Error"
 msgid "Unable to log you in. Please try again later."
 msgstr ""
@@ -3946,7 +3941,7 @@ msgctxt "Error"
 msgid "Username required"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:263
+#: ./src/app/settings/controllers/domains.js:265
 msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
@@ -3961,7 +3956,7 @@ msgctxt "Error"
 msgid "We do not support embedded SVG files inside the signature"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:269
+#: ./src/app/settings/controllers/domains.js:271
 msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
 msgstr ""
@@ -3971,7 +3966,7 @@ msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:36
+#: ./src/app/authentication/controllers/login.js:28
 msgctxt "Error"
 msgid ""
 "You are in Private Mode or have Session Storage disabled.\n"
@@ -4034,6 +4029,11 @@ msgstr ""
 #: ./src/app/composer/services/validateMessage.js:53
 msgctxt "Error"
 msgid "You have {{total}} recipients. The maximum number is {{limit}}."
+msgstr ""
+
+#: ./src/app/organization/modals/setupOrganizationModal.js:26
+msgctxt "Error"
+msgid "You must add a password for the organization"
 msgstr ""
 
 #: ./src/app/organization/factories/organizationKeysModel.js:24
@@ -4832,7 +4832,7 @@ msgctxt "Info"
 msgid "All uploaded keys are expired or revoked! Encryption is automatically disabled."
 msgstr ""
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:47
+#: ./src/app/organization/modals/setupOrganizationModal.js:56
 msgctxt "Info"
 msgid "Already used"
 msgstr ""
@@ -5338,7 +5338,7 @@ msgctxt "Info"
 msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> to get unlimited filters."
 msgstr ""
 
-#: ./src/templates/modals/generate.tpl.html:38
+#: ./src/templates/modals/generate.tpl.html:33
 msgctxt "Info"
 msgid "Generating RSA 4096-bit encryption keys may crash or freeze your browser. RSA 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
 msgstr ""
@@ -6217,7 +6217,7 @@ msgctxt "Info"
 msgid "WARNING: THIS ALSO DELETES ALL CONNECTED SERVICES (ex: <i>ProtonVPN</i>)"
 msgstr ""
 
-#: ./src/templates/modals/generate.tpl.html:44
+#: ./src/templates/modals/generate.tpl.html:39
 msgctxt "Info"
 msgid "We are now generating encryption keys for your address, this may take several minutes and temporarily freeze your browser."
 msgstr ""
@@ -7596,12 +7596,12 @@ msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:46
+#: ./src/app/authentication/controllers/login.js:38
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:51
+#: ./src/app/authentication/controllers/login.js:43
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr ""
@@ -8710,7 +8710,7 @@ msgctxt "Success"
 msgid "All contacts deleted"
 msgstr ""
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:43
+#: ./src/app/organization/modals/setupOrganizationModal.js:52
 msgctxt "Success"
 msgid "Allocated to admin"
 msgstr ""
@@ -8742,7 +8742,7 @@ msgctxt "Success"
 msgid "Banner permanently hidden"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:185
+#: ./src/app/settings/controllers/domains.js:187
 msgctxt "Success"
 msgid "Catch-all address updated"
 msgstr ""
@@ -8769,7 +8769,7 @@ msgctxt "Success"
 msgid "Contact re-signed"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:226
+#: ./src/app/settings/controllers/domains.js:228
 msgctxt "Success"
 msgid "Domain created"
 msgstr ""
@@ -8779,7 +8779,7 @@ msgctxt "Success"
 msgid "Domain deleted"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:280
+#: ./src/app/settings/controllers/domains.js:282
 msgctxt "Success"
 msgid "Domain verified"
 msgstr ""
@@ -9133,7 +9133,7 @@ msgstr ""
 #: ./src/templates/contact/contactGroupModal.tpl.html:78
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:6
 #: ./src/templates/modals/domain/address.tpl.html:31
-#: ./src/templates/modals/generate.tpl.html:54
+#: ./src/templates/modals/generate.tpl.html:49
 #: ./src/templates/search/searchForm.tpl.html:111
 #: ./src/templates/views/domains.tpl.html:196
 msgctxt "Title"
@@ -9379,13 +9379,6 @@ msgstr ""
 #: ./src/app/security/factories/logsModel.js:16
 msgctxt "Title"
 msgid "Clear"
-msgstr ""
-
-#. form option heading
-#: ./src/templates/modals/generate.tpl.html:29
-#: ./src/templates/modals/generate.tpl.html:34
-msgctxt "Title"
-msgid "Compatibility"
 msgstr ""
 
 #: ./src/templates/modals/hotkey.tpl.html:22
@@ -9969,6 +9962,18 @@ msgstr ""
 #: ./src/templates/partials/wizard.tpl.html:42
 msgctxt "Title"
 msgid "Help and support"
+msgstr ""
+
+#. form option heading
+#: ./src/templates/modals/generate.tpl.html:24
+msgctxt "Title"
+msgid "High security"
+msgstr ""
+
+#. form option heading
+#: ./src/templates/modals/generate.tpl.html:29
+msgctxt "Title"
+msgid "Highest security"
 msgstr ""
 
 #: ./src/templates/modals/domain/dkim.tpl.html:21
@@ -10684,17 +10689,11 @@ msgctxt "Title"
 msgid "Start date"
 msgstr ""
 
-#. form option heading
-#: ./src/templates/modals/generate.tpl.html:24
-msgctxt "Title"
-msgid "State-of-the-art"
-msgstr ""
-
 #. table heading
 #. table heading for the domains page table listing of addresses
 #: ./src/templates/address/addressKeysView.tpl.html:50
 #: ./src/templates/invoices/invoiceList.tpl.html:9
-#: ./src/templates/modals/generate.tpl.html:55
+#: ./src/templates/modals/generate.tpl.html:50
 #: ./src/templates/views/domains.tpl.html:197
 msgctxt "Title"
 msgid "Status"
@@ -11940,22 +11939,22 @@ msgctxt "key flag info"
 msgid "This key cannot be used for encryption"
 msgstr ""
 
-#: ./src/templates/modals/generate.tpl.html:67
+#: ./src/templates/modals/generate.tpl.html:62
 msgctxt "key generation progrss"
 msgid "Done"
 msgstr ""
 
-#: ./src/templates/modals/generate.tpl.html:66
+#: ./src/templates/modals/generate.tpl.html:61
 msgctxt "key generation progrss"
 msgid "Generating"
 msgstr ""
 
-#: ./src/templates/modals/generate.tpl.html:65
+#: ./src/templates/modals/generate.tpl.html:60
 msgctxt "key generation progrss"
 msgid "Queued"
 msgstr ""
 
-#: ./src/templates/modals/generate.tpl.html:68
+#: ./src/templates/modals/generate.tpl.html:63
 msgctxt "key generation progrss"
 msgid "Saved"
 msgstr ""
