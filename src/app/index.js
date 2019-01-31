@@ -1,7 +1,7 @@
 import '@babel/polyfill';
 import 'unfetch/polyfill/index'; // https://github.com/developit/unfetch/issues/101
 
-import { hasModulesSupport } from '../helpers/browser';
+import { hasModulesSupport, getOS } from '../helpers/browser';
 import { initMain, initWorker } from './setupPmcrypto';
 import { check, redirect } from '../helpers/compat';
 
@@ -16,6 +16,17 @@ const dl = ({ filepath, integrity }) => {
         credentials: 'same-origin'
     };
     return fetch(filepath, options).then((response) => response.text());
+};
+
+/**
+ * There is a bug in iOS that prevents the openpgp worker from functioning properly.
+ * It's on all browsers there because they use the webkit engine.
+ * See https://github.com/ProtonMail/Angular/issues/8444
+ * @returns {boolean}
+ */
+const isUnsupportedWorker = () => {
+    const { name, version } = getOS();
+    return name.toLowerCase() === 'ios' && parseInt(version, 10) === 11;
 };
 
 (async () => {
@@ -35,6 +46,9 @@ const dl = ({ filepath, integrity }) => {
     // bootstrap the app
     app.default();
 
-    // lazily create the workers
+    if (isUnsupportedWorker()) {
+        return;
+    }
+
     await initWorker(openpgpContents, workerContents);
 })();
