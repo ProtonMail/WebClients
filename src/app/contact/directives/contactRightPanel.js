@@ -45,24 +45,18 @@ function contactRightPanel(
                 return scope.contact.ID === ID;
             };
 
-            const changeMode = async ({
-                action,
-                current,
-                refresh,
-                contact: { ID } = {},
-                forceRefresh,
-                from: sourceEvent
-            }) => {
+            const changeMode = async ({ action, current, refresh, contact: { ID } = {}, forceRefresh }) => {
                 /*
                     When we update the contact to ensure we refresh it with
                     the updated data on toggle mode, we wait for the updateContact event.
                     (when this action ocure, we're processing this event).
                  */
-                if (action !== 'toggleMode' || sourceEvent === 'updateContact') {
+                if (action !== 'toggleMode') {
                     return;
                 }
 
                 const mode = forceRefresh ? scope.mode : getMode(current);
+
                 scope.$applyAsync(() => {
                     if (!isSameContact(ID)) {
                         // Not the same contact

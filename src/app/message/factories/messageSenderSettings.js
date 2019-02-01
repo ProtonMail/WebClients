@@ -71,7 +71,7 @@ function messageSenderSettings(
                 model,
                 internalKeys: keys,
                 async save(model) {
-                    contact.vCard = contactEncryptionSaver.build(contact.vCard, normalizedEmail, model);
+                    contact.vCard = contactEncryptionSaver.build(contact, normalizedEmail, model);
                     contactEncryptionModal.deactivate();
 
                     networkActivityTracker.track(updateContact(scope, contact, normalizedEmail));

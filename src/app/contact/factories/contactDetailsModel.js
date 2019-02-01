@@ -90,7 +90,11 @@ function contactDetailsModel(
                         helperCard.addProperty(emailProperty);
 
                         const contactEncryptModel = contactEncryptionAddressMap.get(contactID, email);
-                        const card = contactEncryptionSaver.build(helperCard, email, contactEncryptModel);
+                        const card = contactEncryptionSaver.build(
+                            { vCard: helperCard, ID: contactID },
+                            email,
+                            contactEncryptModel
+                        );
 
                         // Save position to attach group to the new index (ex: post reorder)
                         MAP_EMAIL_POS[vCardArgs.group] = emailProperty.group;
