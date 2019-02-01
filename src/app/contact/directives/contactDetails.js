@@ -119,18 +119,7 @@ function contactDetails(
 
                 if (scope.contact.ID) {
                     contact.ID = scope.contact.ID;
-                    // Close edition mode
-                    const callback = ({ Contact, cards } = {}) => {
-                        dispatcher.contacts('action.input', {
-                            action: 'toggleMode',
-                            from: 'updateContact',
-                            current: scope.mode,
-                            refresh: true,
-                            contact: Contact,
-                            cards
-                        });
-                    };
-                    dispatcher.contacts('updateContact', { contact, callback });
+                    dispatcher.contacts('updateContact', { contact });
                 } else {
                     dispatcher.contacts('createContact', { contacts: [contact], state });
                 }
