@@ -93,7 +93,7 @@ function messageActions(
         const labels = labelsModel.ids('labels');
         const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
         const toSpam = labelID === MAILBOX_IDENTIFIERS.spam;
-        const folderIDs = toSpam || toTrash ? basicFolders.concat(folders, labels) : basicFolders.concat(folders);
+        const folderIDs = basicFolders.concat(folders);
         const notifyParameters = {};
 
         // Generate cache events
