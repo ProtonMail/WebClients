@@ -110,6 +110,23 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n }) => {
             task: () => execa('./tasks/checkDependencies.js')
         },
         {
+            title: 'Save dependencies if we need',
+            enabled: () => !isCI && /dev|beta|alpha/.test(branch),
+            async task() {
+                const { stdout } = await bash('git rev-parse --abbrev-ref HEAD');
+
+                // Make the change only on v3, we don't want to change it from another place.
+                if (stdout === 'v3') {
+                    await bash('git update-index --no-assume-unchanged package-lock.json');
+                    await bash('git add package-lock.json && git commit -m "Upgrade dependencies"');
+                    await bash('git update-index --assume-unchanged package-lock.json');
+                    await bash('git push origin v3');
+                } else {
+                    await bash('git checkout package-lock.json');
+                }
+            }
+        },
+        {
             title: 'Clear previous dist',
             task: async () => {
                 await del(['dist', 'distCurrent', 'distback'], { dryRun: false });
