@@ -106,4 +106,10 @@
             }
         }
     }
+    /* view source/HTML button */
+    .dropdown-actions-nowrap-button[data-message-mode=''],
+    .dropdown-actions-nowrap-button[data-message-mode="html"] [data-if-message-mode="plain"],
+    .dropdown-actions-nowrap-button[data-message-mode="plain"] [data-if-message-mode="html"] {
+        display: none
+    }
 }
