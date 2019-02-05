@@ -285,8 +285,8 @@ function attachedPublicKey(
 
         const keyList = toList(contact.vCard.data.key || []);
         if (address.encrypt) {
-            contact.vCard.set('x-pm-encrypt', 'true', { group });
-            contact.vCard.set('x-pm-sign', 'true', { group });
+            contact.vCard.add('x-pm-encrypt', 'true', { group });
+            contact.vCard.add('x-pm-sign', 'true', { group });
         }
 
         _.reduce(
