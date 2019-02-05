@@ -124,8 +124,8 @@ function contactImportEncryption($injector, contactKey, contactAskEncryptionModa
                     // a key is set but no matching encrypt flag
                     const encrypt = await askUserForEncryption(emailProp.valueOf());
                     if (encrypt) {
-                        contact.vCard.set('x-pm-encrypt', 'true', { group });
-                        contact.vCard.set('x-pm-sign', 'true', { group });
+                        contact.vCard.add('x-pm-encrypt', 'true', { group });
+                        contact.vCard.add('x-pm-sign', 'true', { group });
                     }
                 }).then(() => contact);
             });
