@@ -222,12 +222,13 @@
                                 <i class="fa fa-times dropdown-actions-nowrap-icon"></i>
                                 <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Delete</span>
                             </button>
-                            <button class="dropdown-actions-nowrap-button" data-action-message="togglePlainHtml">
-                                <span class="dropdown-actions-nowrap-button" ng-show="message.viewMode === 'html'">
+                            <button class="dropdown-actions-nowrap-button" data-action-message="togglePlainHtml"
+                            data-message-mode="{{ message.viewMode }}">
+                                <span class="dropdown-actions-nowrap-button" data-if-message-mode="html">
                                     <i class="fa fa-file-text-o dropdown-actions-nowrap-icon"></i>
                                     <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">View source code</span>
                                 </span>
-                                <span class="dropdown-actions-nowrap-button" ng-show="message.viewMode === 'plain'">
+                                <span class="dropdown-actions-nowrap-button" data-if-message-mode="plain">
                                     <i class="fa fa-file-photo-o dropdown-actions-nowrap-icon"></i>
                                     <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">View rendered HTML</span>
                                 </span>
