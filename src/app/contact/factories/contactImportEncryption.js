@@ -20,9 +20,9 @@ function contactImportEncryption($injector, contactKey, contactAskEncryptionModa
             contactAskEncryptionModal.activate({
                 params: {
                     email,
-                    submit(result) {
+                    async submit(result) {
+                        await contactAskEncryptionModal.deactivate();
                         resolve(result);
-                        contactAskEncryptionModal.deactivate();
                     },
                     onEscape: _.noop
                 }
