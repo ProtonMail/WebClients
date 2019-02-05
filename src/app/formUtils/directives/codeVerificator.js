@@ -20,6 +20,9 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                 const promise = humanVerificationModel.sendCode(method, scope.contactInformation);
 
                 networkActivityTracker.track(promise);
+
+                // reset code value to avoid getting it back a second time
+                scope.$applyAsync(() => (scope.code = ''));
             };
 
             const onClick = ({ target }) => {
