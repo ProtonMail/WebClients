@@ -69,12 +69,16 @@ function pmModal(
                     $('.modal').addClass('in');
                     window.scrollTo(0, 0);
                     manageHotkeys(false); // Disable hotkeys
-                    hotkeys.bind('escape', () => {
-                        const { onEscape = deactivate } = (locals || {}).params || {};
-                        onEscape();
-                    });
+                    hotkeys.bind(['escape']);
                     clearTimeout(id);
                 }, 100);
+
+                on('hotkeys', (e, { type }) => {
+                    if (type === 'escape') {
+                        const { onEscape = deactivate } = (locals || {}).params || {};
+                        onEscape();
+                    }
+                });
 
                 on('logout', () => {
                     deactivate();
@@ -157,7 +161,7 @@ function pmModal(
                     return;
                 }
 
-                hotkeys.unbind('escape');
+                hotkeys.unbind(['escape']);
                 manageHotkeys(); // Enable hotkeys
                 scope && scope.$destroy();
                 /**
