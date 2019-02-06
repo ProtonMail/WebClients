@@ -11,7 +11,7 @@ function Report($http, url, gettextCatalog, requestFormData) {
     const bug = (data) => {
         const request =
             data instanceof FormData
-                ? requestFormData('POST', requestURL('bug'), data)
+                ? requestFormData({ method: 'POST', url: requestURL('bug'), data })
                 : $http.post(requestURL('bug'), data);
 
         return request.then(handleSuccess);
