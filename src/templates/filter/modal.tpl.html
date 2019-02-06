@@ -58,7 +58,7 @@
 
                             <div class="filter-modal-condition-settings">
                                 <span class="filter-modal-condition-if bold" translate-context="Filter modal condition" translate>If</span>
-                                <span class="pm_select inline">
+                                <span class="pm_select">
                                     <select ng-model="condition.Type" ng-options="type.label for type in ctrl.types"></select>
                                     <i class="fa fa-angle-down"></i>
                                 </span>
@@ -83,7 +83,7 @@
                                         </label>
                                 </span>
 
-                                <span class="pm_select inline" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
+                                <span class="pm_select" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
                                     <select class="autoWidth" ng-model="condition.Comparator" ng-options="comparator.label for comparator in ctrl.comparators"></select>
                                     <i class="fa fa-angle-down"></i>
                                 </span>
