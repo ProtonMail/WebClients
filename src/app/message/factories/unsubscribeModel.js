@@ -67,7 +67,7 @@ function unsubscribeModel(
     const postRequest = (url = '') => {
         const data = new FormData();
         data.append('List-Unsubscribe', 'One-Click');
-        return requestFormData('POST', url, data);
+        return requestFormData({ method: 'POST', url, data, noOfflineNotify: true });
     };
 
     function unsubscribe(message = {}) {
