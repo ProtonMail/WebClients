@@ -11,7 +11,7 @@ function consoleMessage($log) {
     return () => {
         // $log.info('%cSTOP⚠️', styles.alert);
         // $log.info('%cThis is a browser feature intended for developers...', styles.alertSpan);
-        $log.info('%cFind a %csecurity bug?%c🐛 security@protonmail.ch', styles.span, styles.strong, styles.link);
+        $log.info('%cFind a %csecurity bug?%c🐛 security@protonmail.com', styles.span, styles.strong, styles.link);
         $log.info("%cWe're %chiring!⛰ %chttps://protonmail.com/careers", styles.span, styles.strong, styles.link);
     };
 }
