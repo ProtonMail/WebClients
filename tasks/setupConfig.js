@@ -13,7 +13,7 @@ portfinder.basePort = 8080;
 
 const env = require('../env/config');
 const PATH_CONFIG = path.resolve('./src/app/config.js');
-const { CONFIG } = env.getConfig();
+const CONFIG = env.getConfig();
 
 fs.writeFileSync(PATH_CONFIG, `export default ${JSON.stringify(CONFIG, null, 4)};`);
 /**

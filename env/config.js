@@ -152,26 +152,36 @@ const getHostURL = (encoded) => {
     return url;
 };
 
-const getConfig = (env = process.env.NODE_ENV) => {
-    const CONFIG = extend({}, CONFIG_DEFAULT, {
+const getEnvDeploy = ({ env = process.env.NODE_ENV, config = true } = {}) => {
+    const opt = {
         debug: env === 'dist' ? false : 'debug-app' in argv ? argv['debug-app'] : true,
         apiUrl: apiUrl(argv.api, argv.branch),
-        sentry: sentryConfig(),
         app_version: argv['app-version'] || CONFIG_DEFAULT.app_version,
         api_version: `${argv['api-version'] || CONFIG_DEFAULT.api_version}`,
-        commit: getBuildCommit(),
         articleLink: argv.article || CONFIG_DEFAULT.articleLink,
         changelogPath: env === 'dist' ? CONFIG_DEFAULT.changelogPath : 'changelog.tpl.html',
         statsConfig: getStatsConfig(argv.branch)
-    });
-    return extend({ CONFIG }, { branch: argv.branch });
+    };
+
+    if (!config) {
+        opt.branch = argv.branch;
+    }
+    return opt;
 };
+
+const getConfig = (env = process.env.NODE_ENV) => ({
+    ...CONFIG_DEFAULT,
+    ...getEnvDeploy(),
+    sentry: sentryConfig(),
+    commit: getBuildCommit()
+});
 
 module.exports = {
     AUTOPREFIXER_CONFIG,
     getHostURL,
     getConfig,
     isDistRelease,
+    getEnvDeploy,
     getI18nMatchFile: i18nLoader.getI18nMatchFile,
     getStatsConfig,
     argv,
