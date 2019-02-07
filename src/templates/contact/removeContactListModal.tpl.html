@@ -1,0 +1,68 @@
+<div class="pm_modal {{ctrl.class}} removeContactListModal-container" role="dialog">
+    <form
+        name="selectorForm"
+        novalidate
+        ng-submit="ctrl.submit($event)"
+        class="modal-dialog">
+        <button
+            type="button"
+            ng-click="ctrl.cancel()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
+
+        <div class="modal-content">
+            <header class="modal-header">
+                <h4 class="modal-title" translate-context="Title" translate>Do you want to remove contact(s) ?</h4>
+                <p translate-context="Info" translate>These emails are also in your contacts. Remove them from your contacts?</p>
+            </header>
+
+            <div class="modal-body">
+
+                <div class="pm_table contactSelectorForm-table-wrapper removeContactListModal-table">
+                    <table class="fixedLayout">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="checkbox">
+                                    <custom-checkbox
+                                        data-custom-ng-model="ctrl.checkAll"
+                                        data-custom-ng-change="ctrl.onSelectAll()"></custom-checkbox>
+                                </th>
+                                <th scope="col" translate-context="Header" translate>Name</th>
+                                <th scope="col" translate-context="Header" translate>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody data-vs-repeat="{scrollParent: '.contactSelectorForm-table-wrapper'}">
+                            <tr ng-repeat="contact in ctrl.list track by contact.ID">
+                                <td class="checkbox">
+                                    <custom-checkbox data-custom-ng-model="contact.selected"></custom-checkbox>
+                                </td>
+                                <td>
+                                    <span class="contactSelectorForm-name">{{ ::contact.Name }}</span></td>
+                                <td>
+                                    <span class="contactSelectorForm-email">{{ ::contact.Email }}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="modal-footer text-right">
+            <button
+                class="pm_button pull-left"
+                ng-click="ctrl.cancel()"
+                translate-context="Action"
+                translate>Cancel</button>
+
+            <button
+                class="pm_button primary"
+                translate-context="Action"
+                translate>Save</button>
+        </footer>
+    </form>
+    <div class="modal-overlay"></div>
+</div>

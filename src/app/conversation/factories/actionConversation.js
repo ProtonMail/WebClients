@@ -422,7 +422,7 @@ function actionConversation(
         }
 
         // Generate cache events
-        const events = _.reduce(
+        const { events, toSpamList } = _.reduce(
             conversationIDs,
             (acc, ID) => {
                 const messages = cache.queryMessagesCached(ID);
@@ -432,7 +432,7 @@ function actionConversation(
                     const copyLabelIDsAdded = getLabelIDsMoved(labelID, message);
                     const copyLabelIDsRemoved = _.filter(LabelIDs, (labelID) => _.includes(folderIDs, labelID));
 
-                    acc.push({
+                    acc.events.push({
                         ID,
                         Action: 3,
                         Message: {
@@ -449,7 +449,7 @@ function actionConversation(
                 if (conversation) {
                     if (toSpam) {
                         const { Senders = [] } = conversation;
-                        contactSpam(Senders.map(({ Address = '' }) => Address).filter(Boolean));
+                        acc.toSpamList.push(...Senders);
                     }
 
                     const Labels = conversation.Labels.reduce(
@@ -471,7 +471,7 @@ function actionConversation(
                         ]
                     );
 
-                    acc.push({
+                    acc.events.push({
                         Action: 3,
                         ID,
                         Conversation: {
@@ -484,9 +484,25 @@ function actionConversation(
 
                 return acc;
             },
-            []
+            {
+                events: [],
+                toSpamList: []
+            }
         );
 
+        // Create a list of unique Address we send to spam
+        const { list: spamEmails } = toSpamList.reduce(
+            (acc, { Address = '' }) => {
+                if (Address && !acc.map[Address]) {
+                    acc.list.push(Address);
+                    acc.map[Address] = true;
+                }
+                return acc;
+            },
+            { list: [], map: Object.create(null) }
+        );
+
+        spamEmails.length && contactSpam(spamEmails);
         cache.events(events);
         displaySuccess();
     }

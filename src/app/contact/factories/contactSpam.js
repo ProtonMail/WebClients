@@ -1,51 +1,33 @@
+import _ from 'lodash';
+
 import { normalizeEmail } from '../../../helpers/string';
 
 /* @ngInject */
-function contactSpam(confirmModal, Contact, contactEmails, eventManager, gettextCatalog) {
+function contactSpam(Contact, contactEmails, eventManager, gettextCatalog, removeContactListModal, notification) {
     const I18N = {
-        TITLE: gettextCatalog.getString('Confirm', null, 'Title'),
-        buildMessage(name = '', email = '') {
-            return gettextCatalog.getString(
-                '{{ name }} is also in your contacts. Remove them from your contacts?',
-                { name: [name, `<${email}>`].join(' ') },
-                'Info'
+        successRemove(total) {
+            return gettextCatalog.getPlural(
+                total,
+                '{{total}} email removed from your contacts',
+                '{{total}} emails removed from your contacts',
+                { total },
+                'Success'
             );
-        },
-        YES: gettextCatalog.getString('Yes', null, 'Action'),
-        NO: gettextCatalog.getString('No', null, 'Action')
-    };
-
-    const remove = async (contactID) => {
-        await Contact.remove({ IDs: [contactID] });
-        await eventManager.call();
+        }
     };
 
     /**
-     * Confirm contact deletion
-     * @param  {String} ContactID
-     * @param  {String} Name
-     * @param  {String} Email
-     * @return {Promise}
+     * List contacts from their emails
+     * @param  {Array}  emails
+     * @return {Array}        <contacts>
      */
-    const ask = ({ ContactID = '', Name = '', Email = '' }) => {
-        return new Promise((resolve) => {
-            confirmModal.activate({
-                params: {
-                    title: I18N.TITLE,
-                    message: I18N.buildMessage(Name, Email),
-                    confirmText: I18N.YES,
-                    cancelText: I18N.NO,
-                    confirm() {
-                        resolve(remove(ContactID));
-                        confirmModal.deactivate();
-                    },
-                    cancel() {
-                        resolve();
-                        confirmModal.deactivate();
-                    }
-                }
-            });
-        });
+    const getContacts = (emails = []) => {
+        return emails.reduce((acc, email) => {
+            const normalizedEmail = normalizeEmail(email);
+            const contact = contactEmails.findEmail(normalizedEmail, normalizeEmail);
+            contact && acc.push(contact);
+            return acc;
+        }, []);
     };
 
     /**
@@ -54,19 +36,32 @@ function contactSpam(confirmModal, Contact, contactEmails, eventManager, gettext
      * @param  {Array}  emails
      * @return {Promise}
      */
-    const check = (emails = []) => {
-        const promises = emails.reduce((acc, email) => {
-            const normalizedEmail = normalizeEmail(email);
-            const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
+    const check = async (emails = []) => {
+        const list = getContacts(emails);
 
-            if (contactEmail) {
-                acc.push(ask(contactEmail));
-            }
+        if (!list.length) {
+            return;
+        }
 
-            return acc;
-        }, []);
+        const contacts = await new Promise((resolve) => {
+            removeContactListModal.activate({
+                params: {
+                    list,
+                    submit(list) {
+                        resolve(list);
+                        removeContactListModal.deactivate();
+                    },
+                    hookClose() {
+                        resolve([]);
+                    }
+                }
+            });
+        });
 
-        return Promise.all(promises);
+        const IDs = _.uniq(contacts.map(({ ContactID }) => ContactID));
+        await Contact.remove({ IDs });
+        contacts.length && notification.success(I18N.successRemove(contacts.length));
+        return eventManager.call();
     };
 
     return check;
