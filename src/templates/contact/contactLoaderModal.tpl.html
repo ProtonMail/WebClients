@@ -121,6 +121,7 @@
                     class="pm_button modal-footer-button"
                     ng-if="ctrl.state === 'manageGroups'"
                     ng-click="ctrl.save()"
+                    ng-disabled="ctrl.pendingImport"
                     translate-context="Action"
                     translate>Save</button>
 
