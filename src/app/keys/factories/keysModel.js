@@ -1,4 +1,4 @@
-import { getFingerprint, signMessage } from 'pmcrypto';
+import { getFingerprint, signMessage, getKeys } from 'pmcrypto';
 
 import { KEY_FLAG, MAIN_KEY } from '../../constants';
 import { clearBit } from '../../../helpers/bitHelper';
@@ -102,6 +102,27 @@ function keysModel(dispatchers) {
     };
 
     /**
+     * Helper to get Fingerprint for a key
+     * The reset case is the only case where the FE should use fingerprints supplied by the BE
+     * We cannot trust the Fingerprint coming from the server so we have to get it from key
+     * @param {String} mode
+     * @param {Object} key
+     * @return {Promise<String>} fingerprint
+     */
+    const extractFingerprint = async (mode, key, pkg) => {
+        if (mode === 'reset') {
+            return key.Fingerprint;
+        }
+
+        if (pkg) {
+            return getFingerprint(pkg);
+        }
+
+        const [k] = await getKeys(key.PrivateKey);
+        return k.getFingerprint();
+    };
+
+    /**
      * Helper to prepare Data for SignedKeyList
      * When we 'create' we remove the key first and push it after
      * When we 'remove' we remove the key from the list
@@ -115,20 +136,18 @@ function keysModel(dispatchers) {
      * @param {Integer} options.canReceive
      * @return {Array<Object>} result.preparedKeys keys parsed for Data
      */
-    const prepareKeys = (privateKeys = [], { mode, keyID, newFlags, newPrivateKey, canReceive }) => {
-        const keys = privateKeys.reduce((acc, { key, pkg }) => {
-            if (REMOVE_KEY.includes(mode) && key.ID === keyID) {
-                return acc;
-            }
-
-            acc.push({
-                Fingerprint: key.Fingerprint,
-                Flags: getFlags(mode, key, keyID, newFlags),
-                pkg
-            });
-
-            return acc;
-        }, []);
+    const prepareKeys = async (privateKeys = [], { mode, keyID, newFlags, newPrivateKey, canReceive }) => {
+        const keys = await Promise.all(
+            privateKeys
+                .filter(({ key }) => !(REMOVE_KEY.includes(mode) && key.ID === keyID))
+                .map(async ({ key, pkg }) => {
+                    return {
+                        Fingerprint: await extractFingerprint(mode, key, pkg),
+                        Flags: getFlags(mode, key, keyID, newFlags),
+                        pkg
+                    };
+                })
+        );
 
         if (UNSHIFT_KEY.includes(mode)) {
             keys.unshift({
@@ -174,7 +193,7 @@ function keysModel(dispatchers) {
     ) => {
         // In case we reset from outside, keys are not saved in keysModel
         const privateKeys = hasKey(addressID) ? getAllKeys(addressID) : resetKeys.map((key) => ({ key, pkg: null })); // Contains all keys, even inactive
-        const { preparedKeys, primaryKey } = prepareKeys(privateKeys, {
+        const { preparedKeys, primaryKey } = await prepareKeys(privateKeys, {
             mode,
             keyID,
             newFlags,
