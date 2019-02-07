@@ -82,9 +82,11 @@ import autocompleteContactGroup from './directives/autocompleteContactGroup';
 import contactGroupNameValidator from './directives/contactGroupNameValidator';
 import vcard from './factories/vcard';
 import extractCards from './services/extractCards';
+import removeContactListModal from './modals/removeContactListModal';
 
 export default angular
     .module('proton.contact', ['vs-repeat'])
+    .factory('removeContactListModal', removeContactListModal)
     .factory('extractCards', extractCards)
     .directive('contactGroupNameValidator', contactGroupNameValidator)
     .directive('autocompleteContactGroup', autocompleteContactGroup)
