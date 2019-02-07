@@ -94,7 +94,7 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/contact/contactLoaderModal.tpl.html'),
         /* @ngInject */
-        controller: function(params, $scope, importContactGroups) {
+        controller: function(params, $scope, importContactGroups, networkActivityTracker) {
             const { on, unsubscribe } = dispatchers();
             let $label = document.querySelector(`.${LABEL_CLASS}`);
 
@@ -102,6 +102,7 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
             this.title = getModalI18n(params.mode, 'title');
             this.info = getModalI18n(params.mode, 'info');
             this.optionsGroup = importContactGroups.getOptions();
+            this.pendingImport = false;
 
             let importGroup = () => ({});
 
@@ -192,8 +193,13 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
                 if ($scope.contactImport.$invalid) {
                     return;
                 }
-
-                importGroup.run(this.model).then(() => params.close());
+                this.pendingImport = true;
+                networkActivityTracker
+                    .track(importGroup.run(this.model))
+                    .then(() => params.close())
+                    .catch(() => {
+                        this.pendingImport = false;
+                    });
             };
 
             this.toStep = (step) => {
