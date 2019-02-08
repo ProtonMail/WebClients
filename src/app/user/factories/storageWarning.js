@@ -1,4 +1,4 @@
-import { KNOWLEDGE_BASE, STORAGE_WARNING } from '../../constants';
+import { KNOWLEDGE_BASE, STORAGE_WARNING, BASE_SIZE } from '../../constants';
 import { getItem, setItem } from '../../../helpers/storageHelper';
 
 const DEFAULT_STATE = {
@@ -108,7 +108,7 @@ function storageWarning(gettextCatalog, dispatchers, authentication, $state, con
      * Update the state when the user's storage has changed.
      */
     const onStorageChanged = () => {
-        const { UsedSpace = 0, MaxSpace = 1 } = authentication.user;
+        const { UsedSpace = 0, MaxSpace = 500 * BASE_SIZE * BASE_SIZE } = authentication.user;
         const percentage = Math.ceil((UsedSpace / MaxSpace) * 100);
         state.percentage = Math.min(100, Math.max(percentage, 0));
         state.isLimitReached = state.percentage >= STORAGE_WARNING.REACHED_LIMIT;
