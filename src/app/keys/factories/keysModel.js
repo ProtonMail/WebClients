@@ -86,19 +86,25 @@ function keysModel(dispatchers) {
      * Helper to prepare Flags for a key
      * @param {String} mode reset, create, remove, set-primary, mark
      * @param {Object} key one of the private key object (current iteration)
-     * @param {String} keyID key ID we are interacting with
+     * @param {String} targetFingerprint - Fingerprint of the key we are interacting with
+     * @param {String} keyFingerprint - Fingerprint for the key
      * @param {Integer} newFlags to apply
      */
-    const getFlags = (mode, key, keyID, newFlags) => {
+    const getFlags = ({ mode, key, targetFingerprint, keyFingerprint, newFlags }) => {
         if (mode === 'reset') {
             return clearBit(key.Flags, ENCRYPTED);
         }
 
-        if (mode === 'mark' && key.ID === keyID) {
+        if (mode === 'mark' && targetFingerprint === keyFingerprint) {
             return newFlags;
         }
 
         return key.Flags;
+    };
+
+    const getArmoredFingerprint = async (PrivateKey) => {
+        const [k] = await getKeys(PrivateKey);
+        return k.getFingerprint();
     };
 
     /**
@@ -118,8 +124,7 @@ function keysModel(dispatchers) {
             return getFingerprint(pkg);
         }
 
-        const [k] = await getKeys(key.PrivateKey);
-        return k.getFingerprint();
+        return getArmoredFingerprint(key.PrivateKey);
     };
 
     /**
@@ -129,40 +134,53 @@ function keysModel(dispatchers) {
      * When we 'set-primary' we remove the key first and unshift the key
      * When we 'reset' we unshift the key
      * @param {Array<Object>} privateKeys
+     * @param {Object} options
      * @param {String} options.mode
-     * @param {String} options.keyID
      * @param {Integer} options.newFlags
-     * @param {Object<Key>} options.newPrivateKey
+     * @param {Object<Key>} [options.decryptedPrivateKey]
+     * @param {String} [options.encryptedPrivateKey]
      * @param {Integer} options.canReceive
      * @return {Array<Object>} result.preparedKeys keys parsed for Data
      */
-    const prepareKeys = async (privateKeys = [], { mode, keyID, newFlags, newPrivateKey, canReceive }) => {
-        const keys = await Promise.all(
-            privateKeys
-                .filter(({ key }) => !(REMOVE_KEY.includes(mode) && key.ID === keyID))
-                .map(async ({ key, pkg }) => {
-                    return {
-                        Fingerprint: await extractFingerprint(mode, key, pkg),
-                        Flags: getFlags(mode, key, keyID, newFlags),
-                        pkg
-                    };
-                })
-        );
+    const prepareKeys = async (
+        privateKeys = [],
+        { mode, newFlags, decryptedPrivateKey, encryptedPrivateKey, canReceive }
+    ) => {
+        const targetFingerprint = encryptedPrivateKey ? await getArmoredFingerprint(encryptedPrivateKey) : '';
+        const fingerprints = await Promise.all(privateKeys.map(({ key, pkg }) => extractFingerprint(mode, key, pkg)));
+
+        const keys = privateKeys.reduce((acc, { key, pkg }, i) => {
+            const keyFingerprint = fingerprints[i];
+
+            if (REMOVE_KEY.includes(mode) && keyFingerprint === targetFingerprint) {
+                return acc;
+            }
+
+            acc.push({
+                Fingerprint: keyFingerprint,
+                Flags: getFlags({ mode, key, targetFingerprint, keyFingerprint, newFlags }),
+                pkg
+            });
+
+            return acc;
+        }, []);
 
         if (UNSHIFT_KEY.includes(mode)) {
             keys.unshift({
-                Fingerprint: getFingerprint(newPrivateKey),
+                Fingerprint: targetFingerprint,
                 // If all keys are strictly signed then the new key should be just signed
                 Flags: privateKeys.length && canReceive === 0 ? SIGNED : ENCRYPTED_AND_SIGNED,
-                pkg: newPrivateKey
+                pkg: decryptedPrivateKey
             });
         }
 
         if (PUSH_KEY.includes(mode)) {
-            keys.push({
-                Fingerprint: getFingerprint(newPrivateKey),
+            // Special case for when you are trying to reactivate the primary key. It still needs to be the primary.
+            const isPrimary = fingerprints.length && fingerprints[0] === targetFingerprint;
+            keys[isPrimary ? 'unshift' : 'push']({
+                Fingerprint: targetFingerprint,
                 Flags: ENCRYPTED_AND_SIGNED,
-                pkg: newPrivateKey
+                pkg: decryptedPrivateKey
             });
         }
 
@@ -179,25 +197,26 @@ function keysModel(dispatchers) {
     /**
      * For Key Transparency, we sign the list of address keys whenever we change it
      * @param {String} addressID address ID impacted
+     * @param {Object} options
      * @param {String} options.mode reset, create, delete, set-primary, mark
-     * @param {Object<Key>} options.privateKey new decrypted private key
-     * @param {String} options.keyID key impacted
      * @param {Integer} options.newFlags flags we want to add when we mark
      * @param {Array} options.resetKeys used when the user reset his account
+     * @param {Object<Key>} [options.decryptedPrivateKey] new decrypted private key
+     * @param {String} [options.encryptedPrivateKey] the armored key we are currently manipulating
      * @param {Integer} options.canReceive
      * @return {Promise<Object>} SignedKeyList
      */
     const signedKeyList = async (
         addressID = MAIN_KEY,
-        { mode, privateKey: newPrivateKey, keyID, newFlags, resetKeys = [], canReceive } = {}
+        { mode, decryptedPrivateKey, encryptedPrivateKey, newFlags, resetKeys = [], canReceive } = {}
     ) => {
         // In case we reset from outside, keys are not saved in keysModel
         const privateKeys = hasKey(addressID) ? getAllKeys(addressID) : resetKeys.map((key) => ({ key, pkg: null })); // Contains all keys, even inactive
         const { preparedKeys, primaryKey } = await prepareKeys(privateKeys, {
             mode,
-            keyID,
             newFlags,
-            newPrivateKey,
+            decryptedPrivateKey,
+            encryptedPrivateKey,
             canReceive
         });
         const Data = JSON.stringify(preparedKeys);

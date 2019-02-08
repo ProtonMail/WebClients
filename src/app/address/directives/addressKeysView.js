@@ -67,7 +67,17 @@ function addressKeysView(
         ERROR: gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'),
         generateKeyTitle(email) {
             return gettextCatalog.getString('New Address Key ({{ email }})', { email }, 'Title');
-        }
+        },
+        privateKeyImported(count) {
+            return gettextCatalog.getPlural(
+                count,
+                'Private key imported',
+                '{{$count}} Private keys imported',
+                {},
+                'Success'
+            );
+        },
+        PRIVATE_KEY_REACTIVATED: gettextCatalog.getString('Private key reactivated', null, 'Success')
     };
 
     const onEvent = (element, type, callback) => {
@@ -143,8 +153,8 @@ function addressKeysView(
     const makePrimaryKey = async ({ addressID }, { ID, PrivateKey }) => {
         const SignedKeyList = await keysModel.signedKeyList(addressID, {
             mode: 'set-primary',
-            keyID: ID,
-            privateKey: await decryptPrivateKey(PrivateKey, authentication.getPassword())
+            decryptedPrivateKey: await decryptPrivateKey(PrivateKey, authentication.getPassword()),
+            encryptedPrivateKey: PrivateKey
         });
         const promise = Key.primary(ID, { SignedKeyList })
             .then(eventManager.call)
@@ -159,11 +169,11 @@ function addressKeysView(
      * @param {String} messageDown The notification message to be displayed on downgrade
      * @return {Function} (address, key) A function taking an address object and the key object as input
      */
-    const createMarker = (flags, messageUp, messageDown) => async ({ addressID }, { ID, Flags }) => {
+    const createMarker = (flags, messageUp, messageDown) => async ({ addressID }, { ID, Flags, PrivateKey }) => {
         const SignedKeyList = await keysModel.signedKeyList(addressID, {
             mode: 'mark',
-            keyID: ID,
-            newFlags: flags
+            newFlags: flags,
+            encryptedPrivateKey: PrivateKey
         });
         const promise = Key.flags(ID, { Flags: flags, SignedKeyList })
             .then(eventManager.call)
@@ -201,6 +211,23 @@ function addressKeysView(
         I18N.PRIVATE_KEY_VALID
     );
 
+    const doImport = async (files, { type, address, key }) => {
+        const file = await Promise.all(_.map(files, readFileAsString));
+        const count = await importPrivateKey.importKey(file.join('\n'), address, key);
+
+        await eventManager.call();
+
+        if (count === 0) {
+            return;
+        }
+
+        if (type === 'import') {
+            return notification.success(I18N.privateKeyImported(count));
+        }
+
+        notification.success(I18N.PRIVATE_KEY_REACTIVATED);
+    };
+
     return {
         replace: true,
         restrict: 'E',
@@ -213,9 +240,14 @@ function addressKeysView(
         link(scope, element) {
             const unsubscribe = [];
             const { dispatcher } = dispatchers(['dropdown']);
-            const importKeyAddress = element[0].querySelector('.import-private-key-address');
-            const importKeyId = element[0].querySelector('.import-private-key-id');
             const importKeyFile = element[0].querySelector('.import-private-key-file');
+
+            let STATE = {};
+
+            const resetState = () => {
+                STATE = {};
+                importKeyFile.value = '';
+            };
 
             if (authentication.isPrivate()) {
                 element[0].classList.add('addressKeysView-is-private');
@@ -227,39 +259,11 @@ function addressKeysView(
                     return;
                 }
                 reactivateKeyModal.deactivate();
-                const promise = Promise.all(_.map(importKeyFile.files, readFileAsString))
-                    .then((file) =>
-                        importPrivateKey.importKey(file.join('\n'), importKeyAddress.value, importKeyId.value)
-                    )
-                    .then((count) => eventManager.call().then(() => count))
-                    .then((count) => {
-                        if (count === 0) {
-                            return;
-                        }
-                        if (importKeyAddress.value) {
-                            notification.success(
-                                gettextCatalog.getPlural(
-                                    count,
-                                    'Private key imported',
-                                    '{{$count}} Private keys imported',
-                                    {},
-                                    'Success'
-                                )
-                            );
-                        } else {
-                            notification.success(gettextCatalog.getString('Private key reactivated', null, 'Success'));
-                        }
-                    })
-                    .then(
-                        () => {
-                            importKeyFile.value = '';
-                        },
-                        (err) => {
-                            importKeyFile.value = '';
-                            throw err;
-                        }
-                    );
-                networkActivityTracker.track(promise);
+
+                networkActivityTracker
+                    .track(doImport(importKeyFile.files, STATE))
+                    .then(resetState)
+                    .catch(resetState);
             };
 
             const selectAddress = (info) => {
@@ -291,8 +295,10 @@ function addressKeysView(
                         message: I18N.IMPORT_MESSAGE,
                         icon: 'fa fa-warning',
                         confirm() {
-                            importKeyAddress.value = email;
-                            importKeyId.value = '';
+                            STATE = {
+                                type: 'import',
+                                address: email
+                            };
                             importKeyFile.click();
                             confirmModal.deactivate();
                         },
@@ -325,7 +331,7 @@ function addressKeysView(
                 });
             };
 
-            const reactivateKey = ({ addressID }, key) => {
+            const reactivateKey = ({ addressID, email }, key) => {
                 reactivateKeyModal.activate({
                     params: {
                         submit(password) {
@@ -344,8 +350,11 @@ function addressKeysView(
                             networkActivityTracker.track(promise);
                         },
                         import() {
-                            importKeyAddress.value = '';
-                            importKeyId.value = key.ID;
+                            STATE = {
+                                type: 'reactivate',
+                                address: email,
+                                key
+                            };
                             importKeyFile.click();
                             // deactivation done in importKeyChange, so they can still cancel the select file popup
                         },

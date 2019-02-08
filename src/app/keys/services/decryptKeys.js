@@ -24,14 +24,14 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog) {
      * @return {Promise<Object>}
      */
     const activateKey = async ({ key, pkg, mailboxPassword, address }) => {
-        const PrivateKey = await encryptPrivateKey(pkg, mailboxPassword);
+        const encryptedPrivateKey = await encryptPrivateKey(pkg, mailboxPassword);
         const SignedKeyList = await keysModel.signedKeyList(address.ID, {
             mode: 'create',
-            keyID: key.ID,
-            privateKey: pkg
+            decryptedPrivateKey: pkg,
+            encryptedPrivateKey
         });
 
-        await Key.activate(key.ID, { PrivateKey, SignedKeyList });
+        await Key.activate(key.ID, { PrivateKey: encryptedPrivateKey, SignedKeyList });
 
         return pkg;
     };

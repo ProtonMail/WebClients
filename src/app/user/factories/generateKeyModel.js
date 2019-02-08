@@ -152,7 +152,8 @@ Are you sure you want to continue?`,
                 Primary: primary,
                 SignedKeyList: await keysModel.signedKeyList(address.ID, {
                     mode: 'create',
-                    privateKey: await decryptPrivateKey(PrivateKey, passphrase)
+                    decryptedPrivateKey: await decryptPrivateKey(PrivateKey, passphrase),
+                    encryptedPrivateKey: PrivateKey
                 })
             });
 
