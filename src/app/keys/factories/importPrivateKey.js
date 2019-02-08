@@ -13,31 +13,26 @@ function importPrivateKey(
     gettextCatalog
 ) {
     const PRIVATE_KEY_EXPR = /-----BEGIN PGP PRIVATE KEY BLOCK-----(?:(?!-----)[\s\S])*-----END PGP PRIVATE KEY BLOCK-----/g;
-    const getKeyObject = (keyid) => {
-        // Get all keys, even invalid
-        const keys = authentication.user.Keys.concat(_.flatten(_.map(addressesModel.get(), 'Keys')));
-        return keys.find(({ ID }) => ID === keyid);
-    };
 
-    const extractPrivateKeys = async (file, keyid) => {
+    const extractPrivateKeys = async (file, keyObj) => {
         const privateKeys = file.match(PRIVATE_KEY_EXPR) || [];
 
-        if (keyid) {
-            const keyObj = getKeyObject(keyid);
-            const [serverKeyInfo, uploadedKeyInfos] = await Promise.all([
-                keyInfo(keyObj.PrivateKey),
-                Promise.all(privateKeys.map(keyInfo))
-            ]);
-            const index = uploadedKeyInfos.findIndex(({ fingerprint }) => serverKeyInfo.fingerprint === fingerprint);
-
-            if (index < 0) {
-                throw new Error(
-                    gettextCatalog.getString("Uploaded key doesn't match selected key.", null, 'Error message')
-                );
-            }
-            return [privateKeys[index]];
+        if (!keyObj) {
+            return privateKeys;
         }
-        return privateKeys;
+
+        const [serverKeyInfo, uploadedKeyInfos] = await Promise.all([
+            keyInfo(keyObj.PrivateKey),
+            Promise.all(privateKeys.map(keyInfo))
+        ]);
+        const index = uploadedKeyInfos.findIndex(({ fingerprint }) => serverKeyInfo.fingerprint === fingerprint);
+
+        if (index < 0) {
+            throw new Error(
+                gettextCatalog.getString("Uploaded key doesn't match selected key.", null, 'Error message')
+            );
+        }
+        return [privateKeys[index]];
     };
 
     const decrypt = (file) => {
@@ -78,15 +73,15 @@ function importPrivateKey(
     const reformat = (privateKeys, email) =>
         Promise.all(privateKeys.map((privKey) => reformatKey(privKey, email, authentication.getPassword())));
 
-    const createKey = async (privateKey, addressID, keyID) => {
+    const createKey = async (encryptedPrivateKey, addressID, keyID) => {
         const SignedKeyList = await keysModel.signedKeyList(addressID, {
             mode: 'create',
-            keyID,
-            privateKey: await decryptPrivateKey(privateKey, authentication.getPassword())
+            decryptedPrivateKey: await decryptPrivateKey(encryptedPrivateKey, authentication.getPassword()),
+            encryptedPrivateKey
         });
         const promise = addressID
-            ? Key.create({ AddressID: addressID, PrivateKey: privateKey, Primary: 0, SignedKeyList })
-            : Key.reactivate(keyID, { PrivateKey: privateKey, SignedKeyList });
+            ? Key.create({ AddressID: addressID, PrivateKey: encryptedPrivateKey, Primary: 0, SignedKeyList })
+            : Key.reactivate(keyID, { PrivateKey: encryptedPrivateKey, SignedKeyList });
         return promise
             .then(() => 1)
             .catch((error) => {
@@ -96,26 +91,30 @@ function importPrivateKey(
             });
     };
 
-    const createKeys = (privateKeys, addressID, keyid) => {
-        return unlockUser()
-            .then(() => Promise.all(privateKeys.map((privateKey) => createKey(privateKey, addressID, keyid))))
-            .then(_.sum);
+    const createKeys = async (privateKeys, addressID, keyid) => {
+        await unlockUser();
+        const result = await Promise.all(privateKeys.map((privateKey) => createKey(privateKey, addressID, keyid)));
+        return _.sum(result);
     };
 
-    const importDecryptedKeys = async (decryptedKeys, email, keyid) => {
+    const importDecryptedKeys = async (decryptedKeys, email, { PrivateKey, ID } = {}) => {
         const { ID: addressID = false } = addressesModel.get().find(({ Email }) => Email === email) || {};
+
         if (!addressID) {
-            const keyObj = getKeyObject(keyid);
-            const pmKey = await getKeys(keyObj.PrivateKey);
+            const pmKey = await getKeys(PrivateKey);
             const [, , email] = pmKey[0].users[0].userId.userid.split(/(<|>)/g);
+
             // fallback on keyid: happens when reactivating keys
-            return reformat(decryptedKeys, email).then((formattedKeys) => createKeys(formattedKeys, addressID, keyid));
+            const formattedKeys = await reformat(decryptedKeys, email);
+            return createKeys(formattedKeys, addressID, ID);
         }
-        return reformat(decryptedKeys, email).then((formattedKeys) => createKeys(formattedKeys, addressID, keyid));
+
+        const formattedKeys = await reformat(decryptedKeys, email);
+        return createKeys(formattedKeys, addressID, ID);
     };
 
-    const importKey = async (file, email, keyid) => {
-        const privateKeys = await extractPrivateKeys(file, keyid);
+    const importKey = async (file, email, keyObj) => {
+        const privateKeys = await extractPrivateKeys(file, keyObj);
         if (privateKeys.length === 0) {
             throw new Error(gettextCatalog.getString('Invalid private key file.', null, 'Error message'));
         }
@@ -126,7 +125,7 @@ function importPrivateKey(
             return 0;
         }
 
-        return importDecryptedKeys(decryptedKeys, email, keyid);
+        return importDecryptedKeys(decryptedKeys, email, keyObj);
     };
 
     return { importKey };

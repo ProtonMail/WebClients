@@ -138,7 +138,8 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
                     PrivateKey,
                     SignedKeyList: await keysModel.signedKeyList(AddressID, {
                         mode: 'reset',
-                        privateKey: await decryptPrivateKey(PrivateKey, passphrase),
+                        decryptedPrivateKey: await decryptPrivateKey(PrivateKey, passphrase),
+                        encryptedPrivateKey: PrivateKey,
                         resetKeys: Keys,
                         canReceive: Receive
                     })
@@ -168,8 +169,8 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
         const value = getRandomValues(new Uint8Array(128));
         const randomString = encodeBase64(arrayToBinaryString(value));
 
-        const privateKeyDecrypted = await decryptPrivateKey(PrivateKey, password);
-        const MemberKey = await encryptPrivateKey(privateKeyDecrypted, randomString);
+        const decryptedPrivateKey = await decryptPrivateKey(PrivateKey, password);
+        const MemberKey = await encryptPrivateKey(decryptedPrivateKey, randomString);
         const { data: Token } = await encryptMessage({
             data: randomString,
             publicKeys: privateKeys.toPublic(),
@@ -178,7 +179,8 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
 
         const SignedKeyList = await keysModel.signedKeyList(AddressID, {
             mode: 'reset',
-            privateKey: privateKeyDecrypted
+            decryptedPrivateKey,
+            encryptedPrivateKey: PrivateKey
         });
 
         return {

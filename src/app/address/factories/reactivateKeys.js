@@ -98,18 +98,16 @@ function reactivateKeys(
         try {
             const { ID: keyID, PrivateKey } = key;
             const keyPassword = await passwords.computeKeyPassword(oldPassword, salt);
-            const decryptedKey = await decryptPrivateKey(PrivateKey, keyPassword);
-            const [privateKey, SignedKeyList] = await Promise.all([
-                encryptPrivateKey(decryptedKey, password),
-                keysModel.signedKeyList(addressID, {
-                    mode: 'create',
-                    keyID,
-                    privateKey: decryptedKey
-                })
-            ]);
+            const decryptedPrivateKey = await decryptPrivateKey(PrivateKey, keyPassword);
+            const encryptedPrivateKey = await encryptPrivateKey(decryptedPrivateKey, password);
+            const SignedKeyList = await keysModel.signedKeyList(addressID, {
+                mode: 'create',
+                decryptedPrivateKey,
+                encryptedPrivateKey
+            });
             const data =
                 (await Key.reactivate(keyID, {
-                    PrivateKey: privateKey,
+                    PrivateKey: encryptedPrivateKey,
                     SignedKeyList
                 })) || {};
 

@@ -109,13 +109,15 @@ function deleteKeyProcess(
     /**
      * Deletes the specified key, triggering the eventmanager and notifying the user of the result.
      * @param {Object} Key An object describing the key we want to delete
+     * @param {Object} Key.ID ID of the key
+     * @param {Object} Key.PrivateKey Armored encrypted private key
      * @param {String} addressID
      * @return {Promise}
      */
-    const deleteKey = async ({ ID }, addressID) => {
+    const deleteKey = async ({ ID, PrivateKey }, addressID) => {
         const SignedKeyList = await keysModel.signedKeyList(addressID, {
             mode: 'remove',
-            keyID: ID
+            encryptedPrivateKey: PrivateKey
         });
         const promise = Key.remove(ID, { SignedKeyList })
             .then(eventManager.call)
