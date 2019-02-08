@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2019-01-16 12:41\n"
+"PO-Revision-Date: 2019-02-08 12:27\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:59
 msgctxt "1 of 2 contacts successfully imported."
@@ -404,17 +404,17 @@ msgstr "CC BCC"
 #: ./src/templates/modals/expirationModal.tpl.html:49
 #: ./src/templates/modals/exportKeyModal.tpl.html:17
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
-#: ./src/templates/modals/generate.tpl.html:76
-#: ./src/templates/modals/generateOrganization.tpl.html:38
+#: ./src/templates/modals/generate.tpl.html:74
+#: ./src/templates/modals/generateOrganization.tpl.html:17
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
-#: ./src/templates/modals/member.tpl.html:110
+#: ./src/templates/modals/member.tpl.html:90
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
-#: ./src/templates/modals/setupOrganization.tpl.html:96
+#: ./src/templates/modals/setupOrganization.tpl.html:82
 #: ./src/templates/modals/squire/addFile.tpl.html:27
 #: ./src/templates/modals/squire/addLink.tpl.html:27
 #: ./src/templates/modals/switchPasswordMode.tpl.html:73
@@ -734,7 +734,7 @@ msgstr "Decriptare"
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:34
 #: ./src/templates/elements/moveElement.tpl.html:40
-#: ./src/templates/message/message.tpl.html:232
+#: ./src/templates/message/message.tpl.html:223
 #: ./src/templates/modals/deleteAccount.tpl.html:53
 #: ./src/templates/ui/toolbarMobile.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:124
@@ -955,14 +955,14 @@ msgstr "Dată expirare"
 #: ./src/app/address/services/deleteKeyProcess.js:33
 #: ./src/templates/address/addressKeysView.tpl.html:148
 #: ./src/templates/address/addressKeysView.tpl.html:162
-#: ./src/templates/message/message.tpl.html:250
+#: ./src/templates/message/message.tpl.html:241
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
 msgstr "Exportare"
 
 #: ./src/templates/modals/domain/dmarc.tpl.html:35
-#: ./src/templates/modals/setupOrganization.tpl.html:99
+#: ./src/templates/modals/setupOrganization.tpl.html:85
 #: ./src/templates/modals/welcome.tpl.html:67
 #: ./src/templates/partials/wizard.tpl.html:55
 msgctxt "Action"
@@ -987,8 +987,8 @@ msgctxt "Action"
 msgid "Forgot username?"
 msgstr "Ați uitat numele de utilizator?"
 
+#: ./src/templates/message/message.tpl.html:173
 #: ./src/templates/message/message.tpl.html:182
-#: ./src/templates/message/message.tpl.html:191
 msgctxt "Action"
 msgid "Forward"
 msgstr "Redirecționare"
@@ -998,8 +998,8 @@ msgctxt "Action"
 msgid "Fullscreen"
 msgstr "Pe tot ecranul"
 
-#: ./src/templates/modals/generate.tpl.html:77
-#: ./src/templates/modals/generateOrganization.tpl.html:39
+#: ./src/templates/modals/generate.tpl.html:75
+#: ./src/templates/modals/generateOrganization.tpl.html:18
 msgctxt "Action"
 msgid "Generate Keys"
 msgstr "Generare chei"
@@ -1031,7 +1031,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr "Ascunde"
 
-#: ./src/templates/message/message.tpl.html:262
+#: ./src/templates/message/message.tpl.html:253
 msgctxt "Action"
 msgid "Hide details"
 msgstr "Ascunde detalii"
@@ -1052,7 +1052,7 @@ msgid "I have a question"
 msgstr "Am o întrebare"
 
 #: ./src/templates/contact/importContactModal.tpl.html:15
-#: ./src/templates/modals/generate.tpl.html:78
+#: ./src/templates/modals/generate.tpl.html:76
 msgctxt "Action"
 msgid "Import"
 msgstr "Importare"
@@ -1084,8 +1084,8 @@ msgid "Italic"
 msgstr "Înclinat"
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:148
-#: ./src/templates/message/message.tpl.html:150
+#: ./src/templates/message/message.tpl.html:139
+#: ./src/templates/message/message.tpl.html:141
 msgctxt "Action"
 msgid "Label as"
 msgstr "Etichetare ca"
@@ -1197,16 +1197,16 @@ msgstr "Marcare ca citit - Marcare ca necitit"
 #: ./src/templates/ui/toolbarMobile.tpl.html:13
 msgctxt "Action"
 msgid "Mark as read/unread"
-msgstr ""
+msgstr "Marcare ca citit/necitit"
 
-#: ./src/templates/message/message.tpl.html:224
+#: ./src/templates/message/message.tpl.html:215
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr "Marcare ca spam"
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:13
 #: ./src/templates/directives/ui/readUnread.tpl.html:20
-#: ./src/templates/message/message.tpl.html:216
+#: ./src/templates/message/message.tpl.html:207
 #: ./src/templates/ui/toolbarMobile.tpl.html:18
 msgctxt "Action"
 msgid "Mark as unread"
@@ -1242,16 +1242,16 @@ msgid "Minimize"
 msgstr "Micșorare"
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:193
-#: ./src/templates/message/message.tpl.html:195
+#: ./src/templates/message/message.tpl.html:184
+#: ./src/templates/message/message.tpl.html:186
 #: ./src/templates/squire/moreToggle.tpl.html:2
 msgctxt "Action"
 msgid "More"
 msgstr "Mai multe"
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:139
-#: ./src/templates/message/message.tpl.html:141
+#: ./src/templates/message/message.tpl.html:130
+#: ./src/templates/message/message.tpl.html:132
 #: ./src/templates/ui/toolbarMobile.tpl.html:31
 msgctxt "Action"
 msgid "Move to"
@@ -1266,7 +1266,7 @@ msgstr "Mutare în «Arhivă»"
 
 #: ./src/templates/elements/moveElement.tpl.html:10
 #: ./src/templates/elements/moveElement.tpl.html:16
-#: ./src/templates/message/message.tpl.html:203
+#: ./src/templates/message/message.tpl.html:194
 #: ./src/templates/ui/toolbarMobile.tpl.html:40
 msgctxt "Action"
 msgid "Move to inbox"
@@ -1281,7 +1281,7 @@ msgstr "Mutare în «Spam»"
 
 #: ./src/templates/elements/moveElement.tpl.html:2
 #: ./src/templates/elements/moveElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:210
+#: ./src/templates/message/message.tpl.html:201
 #: ./src/templates/ui/toolbarMobile.tpl.html:36
 msgctxt "Action"
 msgid "Move to trash"
@@ -1319,7 +1319,7 @@ msgstr "Nu mai arăta"
 #: ./src/templates/modals/domain/mx.tpl.html:47
 #: ./src/templates/modals/domain/spf.tpl.html:36
 #: ./src/templates/modals/domain/verification.tpl.html:39
-#: ./src/templates/modals/setupOrganization.tpl.html:98
+#: ./src/templates/modals/setupOrganization.tpl.html:84
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:38
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:20
 msgctxt "Action"
@@ -1394,7 +1394,7 @@ msgctxt "Action"
 msgid "Previous"
 msgstr "Anteriorul"
 
-#: ./src/templates/message/message.tpl.html:254
+#: ./src/templates/message/message.tpl.html:245
 #: ./src/templates/utils/printModal.tpl.html:28
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
@@ -1478,14 +1478,14 @@ msgctxt "Action"
 msgid "Remove selection"
 msgstr "Eliminare selectate"
 
-#: ./src/templates/message/message.tpl.html:158
-#: ./src/templates/message/message.tpl.html:168
+#: ./src/templates/message/message.tpl.html:149
+#: ./src/templates/message/message.tpl.html:159
 msgctxt "Action"
 msgid "Reply"
 msgstr "Răspuns"
 
+#: ./src/templates/message/message.tpl.html:161
 #: ./src/templates/message/message.tpl.html:170
-#: ./src/templates/message/message.tpl.html:179
 msgctxt "Action"
 msgid "Reply all"
 msgstr "Răspuns tuturor"
@@ -1586,7 +1586,7 @@ msgstr "Deconectare alte sesiuni"
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
 #: ./src/templates/modals/label.tpl.html:75
-#: ./src/templates/modals/member.tpl.html:111
+#: ./src/templates/modals/member.tpl.html:91
 #: ./src/templates/organization/organizationFormName.tpl.html:25
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:45
@@ -1688,7 +1688,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr "Afișare toate"
 
-#: ./src/templates/message/message.tpl.html:261
+#: ./src/templates/message/message.tpl.html:252
 msgctxt "Action"
 msgid "Show details"
 msgstr "Afișare detalii"
@@ -1928,17 +1928,17 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr "Afișare combinații taste"
 
-#: ./src/templates/message/message.tpl.html:246
+#: ./src/templates/message/message.tpl.html:237
 msgctxt "Action"
 msgid "View headers"
 msgstr "Afișare antete"
 
-#: ./src/templates/message/message.tpl.html:241
+#: ./src/templates/message/message.tpl.html:232
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr "Afișare HTML generat"
 
-#: ./src/templates/message/message.tpl.html:237
+#: ./src/templates/message/message.tpl.html:228
 msgctxt "Action"
 msgid "View source code"
 msgstr "Afișare cod sursă"
@@ -3358,15 +3358,10 @@ msgctxt "Empty table message"
 msgid "All available keys are trusted"
 msgstr "Toate cheile disponibile sunt de încredere"
 
-#: ./src/app/message/factories/messageModel.js:59
+#: ./src/app/message/factories/messageModel.js:40
 msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr "Antete criptate"
-
-#: ./src/app/authentication/controllers/login.js:30
-msgctxt "Error"
-msgid "<strong>Incompatible browser detected</strong><br>Unfortunately your browser is outdated and not compatible with ProtonMail.<br>Please use the latest version of Safari, Firefox, Chrome, or Edge.<br>As a temporary workaround, you could try using an older version of ProtonMail <a href=\"https://old.protonmail.com\">here</a>."
-msgstr "<strong>Navigator incompatibil detectat</strong><br>Din păcate navigatorul este depășit și incompatibil cu ProtonMail.<br>Folosiți ultima versiune de Safari, Firefox, Chrome sau Edge.<br>Ca soluție temporară, ați putea încerca folosirea unei versiuni mai vechi a ProtonMail <a href=\"https://old.protonmail.com\">aici</a>."
 
 #: ./src/templates/labels/labelNameInput.tpl.html:21
 msgctxt "Error"
@@ -3394,7 +3389,7 @@ msgid "Address already associated to a user"
 msgstr "Adresă deja asociată unui utilizator"
 
 #: ./src/app/address/factories/addressModel.js:36
-#: ./src/app/settings/controllers/domains.js:326
+#: ./src/app/settings/controllers/domains.js:328
 msgctxt "Error"
 msgid "Administrator privileges must be activated"
 msgstr "Trebuie activate drepturile de administrator"
@@ -3445,7 +3440,7 @@ msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "Contactați administratorul organizației pentru a rezolva acest lucru."
 
-#: ./src/app/authentication/controllers/login.js:41
+#: ./src/app/authentication/controllers/login.js:33
 msgctxt "Error"
 msgid "Cookies are disabled.\n"
 "Please activate it and then reload the page.\n"
@@ -3478,7 +3473,7 @@ msgid "Due to credit card processing fees, we cannot accept donations smaller th
 msgstr "Datorită costurilor de procesare a tranzacțiilor cu cardul, nu putem accepta donații mai mici decât 2."
 
 #. key generation progrss
-#: ./src/templates/modals/generate.tpl.html:66
+#: ./src/templates/modals/generate.tpl.html:64
 msgctxt "Error"
 msgid "Error"
 msgstr "Eroare"
@@ -3493,7 +3488,7 @@ msgctxt "Error"
 msgid "Error connecting to PayPal."
 msgstr "Eroare conectare la PayPal."
 
-#: ./src/app/message/factories/messageModel.js:57
+#: ./src/app/message/factories/messageModel.js:38
 #: ./src/app/outside/controllers/outside.js:33
 msgctxt "Error"
 msgid "Error encrypting message"
@@ -3738,7 +3733,7 @@ msgctxt "Error"
 msgid "Organization keys already active"
 msgstr "Cheile organizației sunt deja active"
 
-#: ./src/app/organization/modals/generateOrganizationModal.js:105
+#: ./src/app/organization/modals/generateOrganizationModal.js:106
 msgctxt "Error"
 msgid "Organization keys change successful"
 msgstr "Schimbare reușită chei organizație"
@@ -3774,7 +3769,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "Specificați cel puțin un destinatar."
 
-#: ./src/app/authentication/controllers/login.js:52
+#: ./src/app/authentication/controllers/login.js:44
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Introduceți codul de acces cu doi factori"
@@ -3919,7 +3914,7 @@ msgctxt "Error"
 msgid "The request failed"
 msgstr "Solicitare eșuată"
 
-#: ./src/app/authentication/controllers/login.js:35
+#: ./src/app/authentication/controllers/login.js:27
 msgctxt "Error"
 msgid "Unable to log you in. Please try again later."
 msgstr "Autentificare imposibilă. Reîncercați."
@@ -3961,7 +3956,7 @@ msgctxt "Error"
 msgid "Username required"
 msgstr "Nume de utilizator obligatoriu"
 
-#: ./src/app/settings/controllers/domains.js:263
+#: ./src/app/settings/controllers/domains.js:265
 msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "Verificarea nu a reușit. Reîncercaţi într-o oră."
@@ -3976,7 +3971,7 @@ msgctxt "Error"
 msgid "We do not support embedded SVG files inside the signature"
 msgstr "Nu sunt suportate fișierele SVG incluse în semnătură"
 
-#: ./src/app/settings/controllers/domains.js:269
+#: ./src/app/settings/controllers/domains.js:271
 msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
 msgstr "Cod de verificare greșit. Asigurați-vă că ați copiat codul de verificare corect și reîncercați. Poate dura până la 24 de ore până se aplică modificările."
@@ -3986,7 +3981,7 @@ msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr "Ați făcut prea multe încercări, reîncercați mai târziu."
 
-#: ./src/app/authentication/controllers/login.js:36
+#: ./src/app/authentication/controllers/login.js:28
 msgctxt "Error"
 msgid "You are in Private Mode or have Session Storage disabled.\n"
 "Please deactivate Private Mode and then reload the page.\n"
@@ -4051,6 +4046,11 @@ msgstr "V-ați folosit toate adresele din plan. Vă rugăm să treceți la un pl
 msgctxt "Error"
 msgid "You have {{total}} recipients. The maximum number is {{limit}}."
 msgstr "Aveți {{total}} destinatari. Numărul maxim este {{limit}}."
+
+#: ./src/app/organization/modals/setupOrganizationModal.js:26
+msgctxt "Error"
+msgid "You must add a password for the organization"
+msgstr "Trebuie să adăugați o parolă pentru organizație"
 
 #: ./src/app/organization/factories/organizationKeysModel.js:24
 msgctxt "Error"
@@ -4503,7 +4503,7 @@ msgstr "* NU uitați această parolă. Dacă o uitați, nu vă veți mai putea c
 
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:16
 #: ./src/templates/modals/changePassword.tpl.html:32
-#: ./src/templates/modals/setupOrganization.tpl.html:67
+#: ./src/templates/modals/setupOrganization.tpl.html:53
 msgctxt "Info"
 msgid "* Do NOT forget this password. If you forget it, you will not be able to manage your organization."
 msgstr "* NU uitați această parolă. Dacă o uitați, nu veți mai putea să vă gestionați organizația."
@@ -4511,7 +4511,7 @@ msgstr "* NU uitați această parolă. Dacă o uitați, nu veți mai putea să v
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:17
 #: ./src/templates/modals/changePassword.tpl.html:28
 #: ./src/templates/modals/changePassword.tpl.html:33
-#: ./src/templates/modals/setupOrganization.tpl.html:68
+#: ./src/templates/modals/setupOrganization.tpl.html:54
 msgctxt "Info"
 msgid "* Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "* Salvați parola undeva în siguranță. Apăsați pe pictograma <i class=\"fa fa-eye\"></i> pentru a confirma că ați introdus corect parola."
@@ -4528,11 +4528,6 @@ msgid_plural "{{number}} conversations moved to {{folder}}"
 msgstr[0] "O conversație mutată în {{folder}}"
 msgstr[1] "{{number}} conversații mutate în {{folder}}"
 msgstr[2] "{{number}} de conversații mutate în {{folder}}"
-
-#: ./src/templates/modals/member.tpl.html:103
-msgctxt "Info"
-msgid "4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys. Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes"
-msgstr "Cheile de 4096 biți funcționează doar pe calculatoarele foarte performante. Pentru majoritatea utilizatorilor recomandăm cheile de 2048 de biți. Apăsând pe <strong>Salvare</strong> se vor genera cheile de criptare și ar putea suspenda ProtonMail pentru câteva minute."
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:2
 msgctxt "Info"
@@ -4855,7 +4850,7 @@ msgctxt "Info"
 msgid "All uploaded keys are expired or revoked! Encryption is automatically disabled."
 msgstr "Toate cheile încărcate sunt expirate sau revocate! Criptarea a fost dezactivată automat."
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:47
+#: ./src/app/organization/modals/setupOrganizationModal.js:56
 msgctxt "Info"
 msgid "Already used"
 msgstr "Deja folosit"
@@ -5004,8 +4999,8 @@ msgstr "Înainte de a putea primi e-mailuri pentru adresele de domeniu particula
 
 #: ./src/app/user/modals/generateModal.js:22
 msgctxt "Info"
-msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
-msgstr "Înainte de a putea trimite și primi mesaje cu noile adrese, trebuie să creați chei de criptare pentru acestea. Cheile de 4096 de biți funcționează doar pe calculatoare performante. Pentru majoritatea utilizatorilor se recomandă chei de 2048 de biți."
+msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them."
+msgstr "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creezi o cheie de criptare pentru ele."
 
 #: ./src/templates/modals/welcome.tpl.html:16
 msgctxt "Info"
@@ -5137,12 +5132,12 @@ msgctxt "Info"
 msgid "Credit card payment is currently not available, please try again later."
 msgstr "Plata cu cardul de credit nu este disponibilă momentan, reîncercați mai târziu."
 
-#: ./src/templates/modals/setupOrganization.tpl.html:83
+#: ./src/templates/modals/setupOrganization.tpl.html:69
 msgctxt "Info"
 msgid "Currently all available VPN connections are allocated to the administrator account. Please select the number of connections you want to reserve for additional users."
 msgstr "Momentan toate conexiunile VPN sunt alocate contului administratorului. Selectați numărul de conexiuni dorite a fi rezervate utilizatorilor suplimentari."
 
-#: ./src/templates/modals/setupOrganization.tpl.html:72
+#: ./src/templates/modals/setupOrganization.tpl.html:58
 msgctxt "Info"
 msgid "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account."
 msgstr "Momentan tot spațiul disponibil este alocat contului administratorului. Reduceți alocarea pentru contul admin pentru a elibera spațiu pentru utilizatori suplimentari. Puteți mări spațiul total oricând trecând la un cont cu plată."
@@ -5362,11 +5357,10 @@ msgctxt "Info"
 msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> to get unlimited filters."
 msgstr "Conturile ProtonMail gratuite sunt limitate la un singur filtru personal. Vă rugăm faceți <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> pentru a obține filtre nelimitate."
 
-#: ./src/templates/modals/generate.tpl.html:35
-#: ./src/templates/modals/generateOrganization.tpl.html:29
+#: ./src/templates/modals/generate.tpl.html:33
 msgctxt "Info"
-msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
-msgstr "Generarea cheilor de criptare de 4096 biți ar putea bloca sau îngheța navigatorul. Cheile de 4096 biți sunt recomandate doar pentru calculatoare foarte performante - nu sunt recomandate pentru tablete sau dispozitive mobile."
+msgid "Generating RSA 4096-bit encryption keys may crash or freeze your browser. RSA 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
+msgstr "Generarea cheilor RSA pe 4096 biți vă poate bloca sau îngheța navigatorul. Cheile RSA pe 4096 biți sunt recomandate numai pentru calculatoare cu performanțe ridicate - nu sunt recomandate pentru tablete sau dispozitive mobile."
 
 #: ./src/templates/views/setup.tpl.html:95
 msgctxt "Info"
@@ -5582,7 +5576,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "Parolă OpenVPN actualizată"
 
-#: ./src/app/settings/controllers/account.js:182
+#: ./src/app/settings/controllers/account.js:175
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Operația a expirat din motive de securitate, vă rugăm reîncercați"
@@ -5629,7 +5623,7 @@ msgctxt "Info"
 msgid "Other administrators exist in your organization, you are responsible for communicating the new password to them."
 msgstr "Există și alți administratori în cadrul organizației, sunteți responsabil să le comunicați noua parolă."
 
-#: ./src/templates/modals/generateOrganization.tpl.html:34
+#: ./src/templates/modals/generateOrganization.tpl.html:13
 msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
 msgstr "Mai există și alți administratori în organizație. Trebuie să le comunicați noua parolă de recuperare pentru a-și putea reactiva drepturile de administrator."
@@ -5750,7 +5744,7 @@ msgctxt "Info"
 msgid "Please enter your organization recovery password:"
 msgstr "Introduceți parola de recuperare a organizației:"
 
-#: ./src/templates/modals/member.tpl.html:106
+#: ./src/templates/modals/member.tpl.html:86
 msgctxt "Info"
 msgid "Please give the address and temporary password to the new member so they can log in."
 msgstr "Transmiteți adresa și parola temporară noului membru pentru a se putea conecta."
@@ -6114,8 +6108,8 @@ msgstr "Aceasta va fi noua dvs. adresă ProtonMail."
 
 #: ./src/templates/modals/setupOrganization.tpl.html:29
 msgctxt "Info"
-msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
-msgstr "Aceasta va crea o cheie de criptare pentru organizație. Cheile de 4096 de biți funcționează doar pe calculatoare foarte performante. Pentru majoritatea utilizatorilor recomandăm utilizarea cheilor de 2048 de biți."
+msgid "This will create a new encryption key for your organization."
+msgstr "Aceasta vă va crea o nouă cheie de criptare pentru organizație."
 
 #: ./src/app/dashboard/factories/downgrade.js:14
 msgctxt "Info"
@@ -6241,7 +6235,7 @@ msgctxt "Info"
 msgid "WARNING: THIS ALSO DELETES ALL CONNECTED SERVICES (ex: <i>ProtonVPN</i>)"
 msgstr "ATENȚIE: ACEASTA VA ȘTERGE ȘI SERVICIILE ASOCIATE (ex: <i>ProtonVPN</i>)"
 
-#: ./src/templates/modals/generate.tpl.html:41
+#: ./src/templates/modals/generate.tpl.html:39
 msgctxt "Info"
 msgid "We are now generating encryption keys for your address, this may take several minutes and temporarily freeze your browser."
 msgstr "Acum se generează cheile de criptare pentru adresa dvs., ar putea dura câteva minute și să oprească temporar navigatorul."
@@ -6341,7 +6335,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Acum puteți primi mesajele și pe adresele de tip @pm.me (prescurtare de la «ProtonMail me» sau «Private Message me»)."
 
-#: ./src/app/settings/controllers/account.js:113
+#: ./src/app/settings/controllers/account.js:106
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Aveți un mesaj nou"
@@ -6472,7 +6466,7 @@ msgctxt "Info"
 msgid "Your new features are now available."
 msgstr "Noile funcții sunt acum disponibile."
 
-#: ./src/templates/modals/setupOrganization.tpl.html:46
+#: ./src/templates/modals/setupOrganization.tpl.html:32
 msgctxt "Info"
 msgid "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe."
 msgstr "Parola organizației poate fi partajată și altora cărora doriți să le dați drepturi de administrator. Este de altfel și un cod de recuperare de urgență pentru a avea acces la organizația dvs. în cazul în care pierdeți accesul la contul dvs. Vă rugăm salvați această parolă și păstrați-o în siguranță."
@@ -6826,7 +6820,7 @@ msgctxt "Label"
 msgid "2-years"
 msgstr "2 ani"
 
-#: ./src/templates/modals/member.tpl.html:80
+#: ./src/templates/modals/member.tpl.html:63
 msgctxt "Label"
 msgid "Account storage"
 msgstr "Spațiu cont"
@@ -6841,18 +6835,18 @@ msgctxt "Label"
 msgid "Add image URL"
 msgstr "Adăugare URL imagine"
 
-#: ./src/templates/modals/member.tpl.html:63
+#: ./src/templates/modals/member.tpl.html:46
 #: ./src/templates/user/identitySection.tpl.html:5
 msgctxt "Label"
 msgid "Address"
 msgstr "Adresa"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:74
+#: ./src/templates/modals/setupOrganization.tpl.html:60
 msgctxt "Label"
 msgid "Admin Account Storage:"
 msgstr "Spațiu cont administrator:"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:85
+#: ./src/templates/modals/setupOrganization.tpl.html:71
 msgctxt "Label"
 msgid "Admin VPN Connections:"
 msgstr "Conexiuni VPN admin:"
@@ -7055,28 +7049,11 @@ msgctxt "Label"
 msgid "Gift code"
 msgstr "Cod cadou"
 
-#. form option heading
-#: ./src/templates/modals/member.tpl.html:38
-msgctxt "Label"
-msgid "High security"
-msgstr "Securitate mare"
-
-#. form option heading
-#: ./src/templates/modals/member.tpl.html:44
-msgctxt "Label"
-msgid "Highest security"
-msgstr "Securitate maximă"
-
 #: ./src/app/labels/directives/dropdownFolders.js:8
 #: ./src/templates/filter/modal.tpl.html:159
 msgctxt "Label"
 msgid "Inbox"
 msgstr "Primite"
-
-#: ./src/templates/modals/member.tpl.html:33
-msgctxt "Label"
-msgid "Key Strength"
-msgstr "Putere cheie"
 
 #: ./src/templates/vpn/openVpnSection.tpl.html:17
 msgctxt "Label"
@@ -7158,7 +7135,7 @@ msgid "Organization password:"
 msgstr "Parolă organizație:"
 
 #: ./src/templates/authentication/loginForm.tpl.html:34
-#: ./src/templates/modals/member.tpl.html:50
+#: ./src/templates/modals/member.tpl.html:33
 #: ./src/templates/modals/switchPasswordMode.tpl.html:13
 #: ./src/templates/vpn/openVpnSection.tpl.html:36
 #: ./src/templates/vpn/vpnView.tpl.html:49
@@ -7262,7 +7239,7 @@ msgctxt "Label"
 msgid "Start time"
 msgstr "Oră pornire"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:77
+#: ./src/templates/modals/setupOrganization.tpl.html:63
 msgctxt "Label"
 msgid "Storage for members:"
 msgstr "Spațiu pentru membri:"
@@ -7303,12 +7280,12 @@ msgctxt "Label"
 msgid "User login"
 msgstr "Conectare"
 
-#: ./src/templates/modals/member.tpl.html:91
+#: ./src/templates/modals/member.tpl.html:74
 msgctxt "Label"
 msgid "VPN Connections"
 msgstr "Conexiuni VPN"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:88
+#: ./src/templates/modals/setupOrganization.tpl.html:74
 msgctxt "Label"
 msgid "VPN Connections for members:"
 msgstr "Conexiuni VPN pentru membri:"
@@ -7419,7 +7396,7 @@ msgctxt "Label for contact Sign toggle"
 msgid "Sign"
 msgstr "Semnare"
 
-#: ./src/templates/message/message.tpl.html:120
+#: ./src/templates/message/message.tpl.html:111
 msgctxt "Label for the message size when displaying email details"
 msgid "Size:"
 msgstr "Mărime:"
@@ -7645,12 +7622,12 @@ msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr "Adăugați un domeniu personal înainte de a configura adresele."
 
-#: ./src/app/authentication/controllers/login.js:46
+#: ./src/app/authentication/controllers/login.js:38
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr "Introduceți numele de utilizator și parola"
 
-#: ./src/app/authentication/controllers/login.js:51
+#: ./src/app/authentication/controllers/login.js:43
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr "Lipsește parola"
@@ -7771,11 +7748,11 @@ msgstr "Unire"
 
 #: ./src/app/user/factories/generateKeyModel.js:19
 msgctxt "Message"
-msgid "An RSA key with bit size {{ bits }} is already active for this address.\n"
+msgid "A key with the same encryption algorithm is already active for this address.\n"
 "Generating another key will cause slower account loading and deletion of this key can cause issues.\n"
 "If you are generating a new key because your old key is compromised, please mark that key as compromised.\n"
 "Are you sure you want to continue?"
-msgstr "O cheie RSA de {{ bits }} biți este deja activă pentru această adresă.\n"
+msgstr "O cheie cu același algoritm este deja activă pentru această adresă.\n"
 "Generarea unei alte chei va duce la încărcarea mai lentă a contului, iar ștergerea acestei chei poate provoca probleme.\n"
 "Dacă generați o cheie nouă deoarece cheia veche vă este compromisă, marcați mai întâi cheia respectivă ca fiind compromisă.\n"
 "Sigur doriți să continuați?"
@@ -7795,7 +7772,7 @@ msgctxt "Message"
 msgid "Re:"
 msgstr "Re:"
 
-#: ./src/app/message/factories/messageModel.js:85
+#: ./src/app/message/factories/messageModel.js:66
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr "Mesajul este gol"
@@ -7882,12 +7859,12 @@ msgctxt "Message for report phishing modal"
 msgid "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full."
 msgstr "Raportarea unui mesaj ca fiind o încercare de înșelăciune ne va trimite și nouă mesajul pentru a-l analiza și îmbunătăți filtrele noastre. Aceasta înseamnă că vom putea vedea conținutul complet al mesajului."
 
-#: ./src/templates/message/message.tpl.html:46
+#: ./src/templates/message/message.tpl.html:37
 msgctxt "Message label"
 msgid "Draft"
 msgstr "Ciornă"
 
-#: ./src/templates/message/message.tpl.html:47
+#: ./src/templates/message/message.tpl.html:38
 msgctxt "Message label"
 msgid "Sent"
 msgstr "Trimis"
@@ -7902,12 +7879,12 @@ msgctxt "Message network error"
 msgid "Sanitization error"
 msgstr "Eroare sanitizare"
 
-#: ./src/templates/message/message.tpl.html:84
+#: ./src/templates/message/message.tpl.html:75
 msgctxt "Message recipient label"
 msgid "To"
 msgstr "La"
 
-#: ./src/templates/message/message.tpl.html:24
+#: ./src/templates/message/message.tpl.html:15
 msgctxt "Message sender label"
 msgid "From"
 msgstr "De la"
@@ -7983,7 +7960,7 @@ msgctxt "New version"
 msgid "Reload Tab"
 msgstr "Reîncărcare filă"
 
-#: ./src/templates/message/message.tpl.html:89
+#: ./src/templates/message/message.tpl.html:80
 msgctxt "No recipients to display in the message header"
 msgid "Undisclosed Recipients"
 msgstr "Destinatar nedivulgat"
@@ -8288,12 +8265,12 @@ msgctxt "Placeholder"
 msgid "City"
 msgstr "Orașul"
 
-#: ./src/templates/modals/member.tpl.html:58
+#: ./src/templates/modals/member.tpl.html:41
 msgctxt "Placeholder"
 msgid "Confirm Password"
 msgstr "Confirmați parola"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:57
+#: ./src/templates/modals/setupOrganization.tpl.html:43
 msgctxt "Placeholder"
 msgid "Confirm organization password"
 msgstr "Confirmați parola organizației"
@@ -8421,7 +8398,7 @@ msgctxt "Placeholder"
 msgid "Organization name"
 msgstr "Nume organizație"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:48
+#: ./src/templates/modals/setupOrganization.tpl.html:34
 msgctxt "Placeholder"
 msgid "Organization password"
 msgstr "Parolă organizație"
@@ -8431,7 +8408,7 @@ msgstr "Parolă organizație"
 #: ./src/templates/modals/activateOrganization.tpl.html:12
 #: ./src/templates/modals/decryptImportKey.tpl.html:12
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:14
-#: ./src/templates/modals/member.tpl.html:53
+#: ./src/templates/modals/member.tpl.html:36
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:13
 msgctxt "Placeholder"
 msgid "Password"
@@ -8764,7 +8741,7 @@ msgctxt "Success"
 msgid "All contacts deleted"
 msgstr "S-au șters toate contactele"
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:43
+#: ./src/app/organization/modals/setupOrganizationModal.js:52
 msgctxt "Success"
 msgid "Allocated to admin"
 msgstr "Alocate administratorului"
@@ -8797,7 +8774,7 @@ msgctxt "Success"
 msgid "Banner permanently hidden"
 msgstr "Banner permanent ascuns"
 
-#: ./src/app/settings/controllers/domains.js:185
+#: ./src/app/settings/controllers/domains.js:187
 msgctxt "Success"
 msgid "Catch-all address updated"
 msgstr "Adresă colector mesaje actualizată"
@@ -8825,7 +8802,7 @@ msgctxt "Success"
 msgid "Contact re-signed"
 msgstr "Contact reînregistrat"
 
-#: ./src/app/settings/controllers/domains.js:226
+#: ./src/app/settings/controllers/domains.js:228
 msgctxt "Success"
 msgid "Domain created"
 msgstr "Domeniu creat"
@@ -8835,12 +8812,12 @@ msgctxt "Success"
 msgid "Domain deleted"
 msgstr "Domeniu șters"
 
-#: ./src/app/settings/controllers/domains.js:280
+#: ./src/app/settings/controllers/domains.js:282
 msgctxt "Success"
 msgid "Domain verified"
 msgstr "Domeniu verificat"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:316
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Preferințe e-mail actualizate"
@@ -8885,13 +8862,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Cod cadou aplicat"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:288
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Preferințele pentru chei rapide au fost actualizate"
 
-#: ./src/app/settings/controllers/account.js:265
-#: ./src/app/settings/controllers/account.js:274
+#: ./src/app/settings/controllers/account.js:258
+#: ./src/app/settings/controllers/account.js:267
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Preferințe imagini actualizate"
@@ -8937,9 +8914,9 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Parolă actualizată"
 
-#: ./src/app/settings/controllers/account.js:145
-#: ./src/app/settings/controllers/account.js:165
-#: ./src/app/settings/controllers/account.js:256
+#: ./src/app/settings/controllers/account.js:138
+#: ./src/app/settings/controllers/account.js:158
+#: ./src/app/settings/controllers/account.js:249
 msgctxt "Success"
 msgid "Preference saved"
 msgstr "Preferințe salvate"
@@ -8967,7 +8944,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Cheie publică aprobată"
 
-#: ./src/app/settings/controllers/account.js:130
+#: ./src/app/settings/controllers/account.js:123
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "E-mail recuperare/notificare salvat"
@@ -9192,7 +9169,7 @@ msgstr "Teme adiționale"
 #: ./src/templates/contact/contactGroupModal.tpl.html:78
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:6
 #: ./src/templates/modals/domain/address.tpl.html:31
-#: ./src/templates/modals/generate.tpl.html:51
+#: ./src/templates/modals/generate.tpl.html:49
 #: ./src/templates/search/searchForm.tpl.html:111
 #: ./src/templates/views/domains.tpl.html:196
 msgctxt "Title"
@@ -9493,7 +9470,7 @@ msgctxt "Title"
 msgid "Confirm mailbox password"
 msgstr "Confirmare parolă mesaje"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:32
+#: ./src/templates/modals/generateOrganization.tpl.html:11
 msgctxt "Title"
 msgid "Confirm recovery Password"
 msgstr "Confirmare parolă de recuperare"
@@ -10024,17 +10001,13 @@ msgid "Help and support"
 msgstr "Ajutor și suport"
 
 #. form option heading
-#: ./src/templates/modals/generate.tpl.html:25
-#: ./src/templates/modals/generateOrganization.tpl.html:14
-#: ./src/templates/modals/setupOrganization.tpl.html:34
+#: ./src/templates/modals/generate.tpl.html:24
 msgctxt "Title"
 msgid "High security"
 msgstr "Securitate mare"
 
 #. form option heading
-#: ./src/templates/modals/generate.tpl.html:31
-#: ./src/templates/modals/generateOrganization.tpl.html:23
-#: ./src/templates/modals/setupOrganization.tpl.html:40
+#: ./src/templates/modals/generate.tpl.html:29
 msgctxt "Title"
 msgid "Highest security"
 msgstr "Securitate maximă"
@@ -10116,20 +10089,15 @@ msgctxt "Title"
 msgid "Key password"
 msgstr "Parola cheii"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:30
+#: ./src/templates/modals/generateOrganization.tpl.html:9
 msgctxt "Title"
 msgid "Key recovery password"
 msgstr "Parolă recuperare cheie"
 
 #. table heading
-#: ./src/templates/views/members.tpl.html:360
-msgctxt "Title"
-msgid "Key size"
-msgstr "Dimensiune cheie"
-
-#. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:22
 #: ./src/templates/address/addressKeysView.tpl.html:49
+#: ./src/templates/views/members.tpl.html:360
 msgctxt "Title"
 msgid "Key type"
 msgstr "Tip cheie"
@@ -10730,7 +10698,7 @@ msgctxt "Title"
 msgid "Signup"
 msgstr "Înscriere"
 
-#: ./src/app/user/factories/generateKeyModel.js:17
+#: ./src/app/user/factories/generateKeyModel.js:18
 msgctxt "Title"
 msgid "Similar Key Already Active!"
 msgstr "Cheie similară deja activă!"
@@ -10761,7 +10729,7 @@ msgstr "Dată început"
 #. table heading for the domains page table listing of addresses
 #: ./src/templates/address/addressKeysView.tpl.html:50
 #: ./src/templates/invoices/invoiceList.tpl.html:9
-#: ./src/templates/modals/generate.tpl.html:52
+#: ./src/templates/modals/generate.tpl.html:50
 #: ./src/templates/views/domains.tpl.html:197
 msgctxt "Title"
 msgid "Status"
@@ -10772,7 +10740,7 @@ msgctxt "Title"
 msgid "Storage"
 msgstr "Spațiu"
 
-#: ./src/templates/message/message.tpl.html:123
+#: ./src/templates/message/message.tpl.html:114
 msgctxt "Title"
 msgid "Subject"
 msgstr "Subiect"
@@ -10995,8 +10963,8 @@ msgstr "Fără atașamente"
 
 #: ./src/app/address/directives/addressKeysView.js:53
 msgctxt "Title"
-msgid "You can generate a new encryption key if you think your previous key has been compromised. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
-msgstr "Puteți genera o nouă cheie de criptare dacă credeți că cheia anterioară a fost compromisă. Cheile de 4096 de biți funcționează numai pe computere de înaltă performanță. Pentru majoritatea utilizatorilor recomandăm utilizarea cheilor de 2048 de biți."
+msgid "You can generate a new encryption key if you think your previous key has been compromised."
+msgstr "Puteți genera o nouă cheie de criptare dacă credeți că cea anterioară a fost compromisă."
 
 #: ./src/templates/modals/welcome.tpl.html:15
 msgctxt "Title"
@@ -11167,7 +11135,7 @@ msgctxt "Tooltip"
 msgid "2-year subscription with VPN discount"
 msgstr "Reducere abonament cu VPN pe 2 ani"
 
-#: ./src/templates/modals/member.tpl.html:66
+#: ./src/templates/modals/member.tpl.html:49
 msgctxt "Tooltip"
 msgid "Address"
 msgstr "Adresa"
@@ -11335,7 +11303,7 @@ msgctxt "Tooltip"
 msgid "Send all your traffic through the Tor network with a single click"
 msgstr "Trimitere trafic prin rețeaua Tor cu un singur clic"
 
-#: ./src/templates/message/message.tpl.html:122
+#: ./src/templates/message/message.tpl.html:113
 msgctxt "Tooltip"
 msgid "Subject is end-to-end encrypted"
 msgstr "Subiectul este criptat la ambele capete"
@@ -12019,22 +11987,22 @@ msgctxt "key flag info"
 msgid "This key cannot be used for encryption"
 msgstr "Această cheie nu poate fi folosită pentru criptare"
 
-#: ./src/templates/modals/generate.tpl.html:64
+#: ./src/templates/modals/generate.tpl.html:62
 msgctxt "key generation progrss"
 msgid "Done"
 msgstr "Gata"
 
-#: ./src/templates/modals/generate.tpl.html:63
+#: ./src/templates/modals/generate.tpl.html:61
 msgctxt "key generation progrss"
 msgid "Generating"
 msgstr "Se generează"
 
-#: ./src/templates/modals/generate.tpl.html:62
+#: ./src/templates/modals/generate.tpl.html:60
 msgctxt "key generation progrss"
 msgid "Queued"
 msgstr "În așteptare"
 
-#: ./src/templates/modals/generate.tpl.html:65
+#: ./src/templates/modals/generate.tpl.html:63
 msgctxt "key generation progrss"
 msgid "Saved"
 msgstr "Salvată"

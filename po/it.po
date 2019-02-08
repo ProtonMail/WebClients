@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2019-01-16 12:44\n"
+"PO-Revision-Date: 2019-02-08 12:30\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:59
 msgctxt "1 of 2 contacts successfully imported."
@@ -402,17 +402,17 @@ msgstr "CC CCN"
 #: ./src/templates/modals/expirationModal.tpl.html:49
 #: ./src/templates/modals/exportKeyModal.tpl.html:17
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
-#: ./src/templates/modals/generate.tpl.html:76
-#: ./src/templates/modals/generateOrganization.tpl.html:38
+#: ./src/templates/modals/generate.tpl.html:74
+#: ./src/templates/modals/generateOrganization.tpl.html:17
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
-#: ./src/templates/modals/member.tpl.html:110
+#: ./src/templates/modals/member.tpl.html:90
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
-#: ./src/templates/modals/setupOrganization.tpl.html:96
+#: ./src/templates/modals/setupOrganization.tpl.html:82
 #: ./src/templates/modals/squire/addFile.tpl.html:27
 #: ./src/templates/modals/squire/addLink.tpl.html:27
 #: ./src/templates/modals/switchPasswordMode.tpl.html:73
@@ -732,7 +732,7 @@ msgstr "Decripta"
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:34
 #: ./src/templates/elements/moveElement.tpl.html:40
-#: ./src/templates/message/message.tpl.html:232
+#: ./src/templates/message/message.tpl.html:223
 #: ./src/templates/modals/deleteAccount.tpl.html:53
 #: ./src/templates/ui/toolbarMobile.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:124
@@ -953,14 +953,14 @@ msgstr "Data di scadenza"
 #: ./src/app/address/services/deleteKeyProcess.js:33
 #: ./src/templates/address/addressKeysView.tpl.html:148
 #: ./src/templates/address/addressKeysView.tpl.html:162
-#: ./src/templates/message/message.tpl.html:250
+#: ./src/templates/message/message.tpl.html:241
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
 msgstr "Esporta"
 
 #: ./src/templates/modals/domain/dmarc.tpl.html:35
-#: ./src/templates/modals/setupOrganization.tpl.html:99
+#: ./src/templates/modals/setupOrganization.tpl.html:85
 #: ./src/templates/modals/welcome.tpl.html:67
 #: ./src/templates/partials/wizard.tpl.html:55
 msgctxt "Action"
@@ -985,8 +985,8 @@ msgctxt "Action"
 msgid "Forgot username?"
 msgstr "Nome utente dimenticato?"
 
+#: ./src/templates/message/message.tpl.html:173
 #: ./src/templates/message/message.tpl.html:182
-#: ./src/templates/message/message.tpl.html:191
 msgctxt "Action"
 msgid "Forward"
 msgstr "Inoltra"
@@ -996,8 +996,8 @@ msgctxt "Action"
 msgid "Fullscreen"
 msgstr "Schermo intero"
 
-#: ./src/templates/modals/generate.tpl.html:77
-#: ./src/templates/modals/generateOrganization.tpl.html:39
+#: ./src/templates/modals/generate.tpl.html:75
+#: ./src/templates/modals/generateOrganization.tpl.html:18
 msgctxt "Action"
 msgid "Generate Keys"
 msgstr "Genera chiavi"
@@ -1029,7 +1029,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr "Nascondi"
 
-#: ./src/templates/message/message.tpl.html:262
+#: ./src/templates/message/message.tpl.html:253
 msgctxt "Action"
 msgid "Hide details"
 msgstr "Nascondi dettagli"
@@ -1050,7 +1050,7 @@ msgid "I have a question"
 msgstr "Ho una domanda"
 
 #: ./src/templates/contact/importContactModal.tpl.html:15
-#: ./src/templates/modals/generate.tpl.html:78
+#: ./src/templates/modals/generate.tpl.html:76
 msgctxt "Action"
 msgid "Import"
 msgstr "Importa"
@@ -1082,8 +1082,8 @@ msgid "Italic"
 msgstr "Corsivo"
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:148
-#: ./src/templates/message/message.tpl.html:150
+#: ./src/templates/message/message.tpl.html:139
+#: ./src/templates/message/message.tpl.html:141
 msgctxt "Action"
 msgid "Label as"
 msgstr "Etichetta come"
@@ -1197,14 +1197,14 @@ msgctxt "Action"
 msgid "Mark as read/unread"
 msgstr "Segna come letta/da leggere"
 
-#: ./src/templates/message/message.tpl.html:224
+#: ./src/templates/message/message.tpl.html:215
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr "Segna come spam"
 
 #: ./src/templates/directives/ui/readUnread.tpl.html:13
 #: ./src/templates/directives/ui/readUnread.tpl.html:20
-#: ./src/templates/message/message.tpl.html:216
+#: ./src/templates/message/message.tpl.html:207
 #: ./src/templates/ui/toolbarMobile.tpl.html:18
 msgctxt "Action"
 msgid "Mark as unread"
@@ -1240,16 +1240,16 @@ msgid "Minimize"
 msgstr "Minimizza"
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:193
-#: ./src/templates/message/message.tpl.html:195
+#: ./src/templates/message/message.tpl.html:184
+#: ./src/templates/message/message.tpl.html:186
 #: ./src/templates/squire/moreToggle.tpl.html:2
 msgctxt "Action"
 msgid "More"
 msgstr "Altro"
 
 #. Tooltip
-#: ./src/templates/message/message.tpl.html:139
-#: ./src/templates/message/message.tpl.html:141
+#: ./src/templates/message/message.tpl.html:130
+#: ./src/templates/message/message.tpl.html:132
 #: ./src/templates/ui/toolbarMobile.tpl.html:31
 msgctxt "Action"
 msgid "Move to"
@@ -1264,7 +1264,7 @@ msgstr "Sposta nell'archivio"
 
 #: ./src/templates/elements/moveElement.tpl.html:10
 #: ./src/templates/elements/moveElement.tpl.html:16
-#: ./src/templates/message/message.tpl.html:203
+#: ./src/templates/message/message.tpl.html:194
 #: ./src/templates/ui/toolbarMobile.tpl.html:40
 msgctxt "Action"
 msgid "Move to inbox"
@@ -1279,7 +1279,7 @@ msgstr "Sposta in spam"
 
 #: ./src/templates/elements/moveElement.tpl.html:2
 #: ./src/templates/elements/moveElement.tpl.html:8
-#: ./src/templates/message/message.tpl.html:210
+#: ./src/templates/message/message.tpl.html:201
 #: ./src/templates/ui/toolbarMobile.tpl.html:36
 msgctxt "Action"
 msgid "Move to trash"
@@ -1317,7 +1317,7 @@ msgstr "Non mostrare mai"
 #: ./src/templates/modals/domain/mx.tpl.html:47
 #: ./src/templates/modals/domain/spf.tpl.html:36
 #: ./src/templates/modals/domain/verification.tpl.html:39
-#: ./src/templates/modals/setupOrganization.tpl.html:98
+#: ./src/templates/modals/setupOrganization.tpl.html:84
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:38
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:20
 msgctxt "Action"
@@ -1392,7 +1392,7 @@ msgctxt "Action"
 msgid "Previous"
 msgstr "Precedente"
 
-#: ./src/templates/message/message.tpl.html:254
+#: ./src/templates/message/message.tpl.html:245
 #: ./src/templates/utils/printModal.tpl.html:28
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
@@ -1476,14 +1476,14 @@ msgctxt "Action"
 msgid "Remove selection"
 msgstr "Rimuovi selezione"
 
-#: ./src/templates/message/message.tpl.html:158
-#: ./src/templates/message/message.tpl.html:168
+#: ./src/templates/message/message.tpl.html:149
+#: ./src/templates/message/message.tpl.html:159
 msgctxt "Action"
 msgid "Reply"
 msgstr "Rispondi"
 
+#: ./src/templates/message/message.tpl.html:161
 #: ./src/templates/message/message.tpl.html:170
-#: ./src/templates/message/message.tpl.html:179
 msgctxt "Action"
 msgid "Reply all"
 msgstr "Rispondi a tutti"
@@ -1584,7 +1584,7 @@ msgstr "Revoca tutte le altre sessioni"
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
 #: ./src/templates/modals/label.tpl.html:75
-#: ./src/templates/modals/member.tpl.html:111
+#: ./src/templates/modals/member.tpl.html:91
 #: ./src/templates/organization/organizationFormName.tpl.html:25
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:45
@@ -1686,7 +1686,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr "Mostra tutto"
 
-#: ./src/templates/message/message.tpl.html:261
+#: ./src/templates/message/message.tpl.html:252
 msgctxt "Action"
 msgid "Show details"
 msgstr "Mostra dettagli"
@@ -1926,17 +1926,17 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr "Visualizza scorciatoie da tastiera"
 
-#: ./src/templates/message/message.tpl.html:246
+#: ./src/templates/message/message.tpl.html:237
 msgctxt "Action"
 msgid "View headers"
 msgstr "Visualizza intestazioni"
 
-#: ./src/templates/message/message.tpl.html:241
+#: ./src/templates/message/message.tpl.html:232
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr "Visualizza il rendering HTML"
 
-#: ./src/templates/message/message.tpl.html:237
+#: ./src/templates/message/message.tpl.html:228
 msgctxt "Action"
 msgid "View source code"
 msgstr "Visualizza il codice sorgente"
@@ -3355,15 +3355,10 @@ msgctxt "Empty table message"
 msgid "All available keys are trusted"
 msgstr "Tutte le chiavi disponibili sono attendibili"
 
-#: ./src/app/message/factories/messageModel.js:59
+#: ./src/app/message/factories/messageModel.js:40
 msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr "Header criptati"
-
-#: ./src/app/authentication/controllers/login.js:30
-msgctxt "Error"
-msgid "<strong>Incompatible browser detected</strong><br>Unfortunately your browser is outdated and not compatible with ProtonMail.<br>Please use the latest version of Safari, Firefox, Chrome, or Edge.<br>As a temporary workaround, you could try using an older version of ProtonMail <a href=\"https://old.protonmail.com\">here</a>."
-msgstr "<strong>Rilevato browser incompatibile</strong><br>Sfortunatamente il tuo browser non è aggiornato e non è compatibile con ProtonMail.<br>Utilizza l'ultima versione di Safari, Firefox, Chrome o Edge.<br>Come soluzione temporanea, potresti provare utilizzando una versione precedente di ProtonMail <a href=\"https://old.protonmail.com\">qui</a>."
 
 #: ./src/templates/labels/labelNameInput.tpl.html:21
 msgctxt "Error"
@@ -3391,7 +3386,7 @@ msgid "Address already associated to a user"
 msgstr "Indirizzo già associato a un utente"
 
 #: ./src/app/address/factories/addressModel.js:36
-#: ./src/app/settings/controllers/domains.js:326
+#: ./src/app/settings/controllers/domains.js:328
 msgctxt "Error"
 msgid "Administrator privileges must be activated"
 msgstr "I privilegi di amministratore devono essere attivati"
@@ -3442,7 +3437,7 @@ msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "Contatta l'amministratore della tua organizzazione per risolverlo."
 
-#: ./src/app/authentication/controllers/login.js:41
+#: ./src/app/authentication/controllers/login.js:33
 msgctxt "Error"
 msgid "Cookies are disabled.\n"
 "Please activate it and then reload the page.\n"
@@ -3477,7 +3472,7 @@ msgid "Due to credit card processing fees, we cannot accept donations smaller th
 msgstr "A causa degli oneri amministrativi della carta di credito, non possiamo accettare donazioni minori di 2."
 
 #. key generation progrss
-#: ./src/templates/modals/generate.tpl.html:66
+#: ./src/templates/modals/generate.tpl.html:64
 msgctxt "Error"
 msgid "Error"
 msgstr "Errore"
@@ -3492,7 +3487,7 @@ msgctxt "Error"
 msgid "Error connecting to PayPal."
 msgstr "Errore di connessione a PayPal."
 
-#: ./src/app/message/factories/messageModel.js:57
+#: ./src/app/message/factories/messageModel.js:38
 #: ./src/app/outside/controllers/outside.js:33
 msgctxt "Error"
 msgid "Error encrypting message"
@@ -3737,7 +3732,7 @@ msgctxt "Error"
 msgid "Organization keys already active"
 msgstr "Chiavi dell'organizzazione già attive"
 
-#: ./src/app/organization/modals/generateOrganizationModal.js:105
+#: ./src/app/organization/modals/generateOrganizationModal.js:106
 msgctxt "Error"
 msgid "Organization keys change successful"
 msgstr "Chiavi dell'organizzazione cambiate con successo"
@@ -3773,7 +3768,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "Per favore, inserisci almeno un destinatario."
 
-#: ./src/app/authentication/controllers/login.js:52
+#: ./src/app/authentication/controllers/login.js:44
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Per favore, inserisci il tuo codice per l'autenticazione in due passaggi"
@@ -3917,7 +3912,7 @@ msgctxt "Error"
 msgid "The request failed"
 msgstr "Richiesta non riuscita"
 
-#: ./src/app/authentication/controllers/login.js:35
+#: ./src/app/authentication/controllers/login.js:27
 msgctxt "Error"
 msgid "Unable to log you in. Please try again later."
 msgstr "Impossibile accedere. Per favore, riprova più tardi."
@@ -3959,7 +3954,7 @@ msgctxt "Error"
 msgid "Username required"
 msgstr "Nome utente richiesto"
 
-#: ./src/app/settings/controllers/domains.js:263
+#: ./src/app/settings/controllers/domains.js:265
 msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "Verifica non riuscita, riprova tra un'ora."
@@ -3974,7 +3969,7 @@ msgctxt "Error"
 msgid "We do not support embedded SVG files inside the signature"
 msgstr "Non supportiamo l'aggiunta di file SVG all'interno della firma"
 
-#: ./src/app/settings/controllers/domains.js:269
+#: ./src/app/settings/controllers/domains.js:271
 msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
 msgstr "Codice di verifica errato. Per favore, assicurati di aver copiato correttamente il codice di verifica e prova di nuovo. Ci possono volere fino a 24 ore affinché le modifiche vengano applicate."
@@ -3984,7 +3979,7 @@ msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr "Stai tentando troppe volte, per favore riprova più tardi"
 
-#: ./src/app/authentication/controllers/login.js:36
+#: ./src/app/authentication/controllers/login.js:28
 msgctxt "Error"
 msgid "You are in Private Mode or have Session Storage disabled.\n"
 "Please deactivate Private Mode and then reload the page.\n"
@@ -4049,6 +4044,11 @@ msgstr "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upg
 msgctxt "Error"
 msgid "You have {{total}} recipients. The maximum number is {{limit}}."
 msgstr "Hai {{total}} destinatari. Il numero massimo è di {{limit}}."
+
+#: ./src/app/organization/modals/setupOrganizationModal.js:26
+msgctxt "Error"
+msgid "You must add a password for the organization"
+msgstr "Devi aggiungere una password per l'organizzazione"
 
 #: ./src/app/organization/factories/organizationKeysModel.js:24
 msgctxt "Error"
@@ -4500,7 +4500,7 @@ msgstr "* NON dimenticare questa password. Se la dimentichi, non sarai in grado 
 
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:16
 #: ./src/templates/modals/changePassword.tpl.html:32
-#: ./src/templates/modals/setupOrganization.tpl.html:67
+#: ./src/templates/modals/setupOrganization.tpl.html:53
 msgctxt "Info"
 msgid "* Do NOT forget this password. If you forget it, you will not be able to manage your organization."
 msgstr "* NON dimenticare questa password. Se la dimentichi, non saresti più in grado di gestire la tua organizzazione."
@@ -4508,7 +4508,7 @@ msgstr "* NON dimenticare questa password. Se la dimentichi, non saresti più in
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:17
 #: ./src/templates/modals/changePassword.tpl.html:28
 #: ./src/templates/modals/changePassword.tpl.html:33
-#: ./src/templates/modals/setupOrganization.tpl.html:68
+#: ./src/templates/modals/setupOrganization.tpl.html:54
 msgctxt "Info"
 msgid "* Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "* Salva la tua password in un luogo sicuro. Fai clic sull'icona <i class=\"fa fa-eye\"></i> per confermare di aver scritto correttamente la password."
@@ -4524,11 +4524,6 @@ msgid "1 conversation moved to {{folder}}"
 msgid_plural "{{number}} conversations moved to {{folder}}"
 msgstr[0] "Una conversazione spostata in {{folder}}"
 msgstr[1] "{{number}} conversazioni spostate in {{folder}}"
-
-#: ./src/templates/modals/member.tpl.html:103
-msgctxt "Info"
-msgid "4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys. Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes"
-msgstr "Le chiavi a 4096 bit funzionano solo su computer ad alte prestazioni. Alla maggior parte degli utenti raccomandiamo di usare chiavi a 2048 bit. Cliccando <strong>Salva</strong> verranno generate le chiavi di cifratura e si potrebbe bloccare ProtonMail per alcuni minuti"
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:2
 msgctxt "Info"
@@ -4851,7 +4846,7 @@ msgctxt "Info"
 msgid "All uploaded keys are expired or revoked! Encryption is automatically disabled."
 msgstr "Tutte le chiavi caricate sono scadute oppure revocate! La crittografia è stata disattivata automaticamente."
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:47
+#: ./src/app/organization/modals/setupOrganizationModal.js:56
 msgctxt "Info"
 msgid "Already used"
 msgstr "Già usato"
@@ -4999,8 +4994,8 @@ msgstr "Prima di poter ricevere messaggi di posta per i tuoi domini personalizza
 
 #: ./src/app/user/modals/generateModal.js:22
 msgctxt "Info"
-msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
-msgstr "Prima che tu possa iniziare a spedire e ricevere messaggi dai tuoi nuovi indirizzi, è necessario creare le rispettive chiavi crittografiche. Le chiavi a 4096 bit funzionano solo su computer molto potenti. Alla maggior parte degli utenti raccomandiamo di usare chiavi a 2048 bit."
+msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them."
+msgstr "Prima di iniziare a inviare e ricevere email dai tuoi nuovi indirizzi devi creare le loro chiavi di crittografia."
 
 #: ./src/templates/modals/welcome.tpl.html:16
 msgctxt "Info"
@@ -5132,12 +5127,12 @@ msgctxt "Info"
 msgid "Credit card payment is currently not available, please try again later."
 msgstr "Il pagamento con carta di credito ora non è disponibile, per favore riprova più tardi."
 
-#: ./src/templates/modals/setupOrganization.tpl.html:83
+#: ./src/templates/modals/setupOrganization.tpl.html:69
 msgctxt "Info"
 msgid "Currently all available VPN connections are allocated to the administrator account. Please select the number of connections you want to reserve for additional users."
 msgstr "Attualmente tutte le connessioni VPN disponibili sono assegnate all'account dell'amministratore. Per favore, seleziona il numero di connessioni che desideri riservare ad altri utenti."
 
-#: ./src/templates/modals/setupOrganization.tpl.html:72
+#: ./src/templates/modals/setupOrganization.tpl.html:58
 msgctxt "Info"
 msgid "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account."
 msgstr "Attualmente tutto lo spazio d'archiviazione disponibile è assegnato all'account amministratore. Per favore, riduci quello assegnato all'amministratore per liberare spazio per utenti aggiuntivi. Puoi aumentare lo spazio d'archiviazione totale in qualsiasi momento facendo l'upgrade del tuo account."
@@ -5356,11 +5351,10 @@ msgctxt "Info"
 msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> to get unlimited filters."
 msgstr "Gli account ProtonMail gratuiti sono limitati a un filtro personalizzato. Per favore effettui l'<a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> per ottenere filtri illimitati."
 
-#: ./src/templates/modals/generate.tpl.html:35
-#: ./src/templates/modals/generateOrganization.tpl.html:29
+#: ./src/templates/modals/generate.tpl.html:33
 msgctxt "Info"
-msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
-msgstr "Generare chiavi di crittografia a 4096 bit potrebbe bloccare o far chiudere il browser. Le chiavi a 4096 bit sono raccomandate solo per computer ad alte prestazioni - non sono raccomandate per tablet o dispositivi mobili."
+msgid "Generating RSA 4096-bit encryption keys may crash or freeze your browser. RSA 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
+msgstr "Generare chiavi di crittografia RSA a 4096 bit potrebbe bloccare o far chiudere il browser. Le chiavi RSA a 4096 bit sono raccomandate solo per computer ad alte prestazioni - non sono raccomandate per tablet o dispositivi mobili."
 
 #: ./src/templates/views/setup.tpl.html:95
 msgctxt "Info"
@@ -5576,7 +5570,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "Password OpenVPN aggiornata"
 
-#: ./src/app/settings/controllers/account.js:182
+#: ./src/app/settings/controllers/account.js:175
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Operazione interrotta per motivi di sicurezza, per favore provi di nuovo"
@@ -5623,7 +5617,7 @@ msgctxt "Info"
 msgid "Other administrators exist in your organization, you are responsible for communicating the new password to them."
 msgstr "Esistono altri amministratori nella tua organizzazione, sei responsabile di comunicare loro la nuova password."
 
-#: ./src/templates/modals/generateOrganization.tpl.html:34
+#: ./src/templates/modals/generateOrganization.tpl.html:13
 msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
 msgstr "Esistono altri amministratori nella tua organizzazione. È necessario comunicare loro la nuova password di recupero delle chiavi in modo da consentirgli di riattivare i loro privilegi di amministratore completi."
@@ -5744,7 +5738,7 @@ msgctxt "Info"
 msgid "Please enter your organization recovery password:"
 msgstr "Per favore, inserisci la password di recupero della tua organizzazione:"
 
-#: ./src/templates/modals/member.tpl.html:106
+#: ./src/templates/modals/member.tpl.html:86
 msgctxt "Info"
 msgid "Please give the address and temporary password to the new member so they can log in."
 msgstr "Per favore, inserisci l'indirizzo e la password temporanea per permettere al nuovo utente di autenticarsi."
@@ -6111,8 +6105,8 @@ msgstr "Questo sarà il tuo nuovo indirizzo email di ProtonMail."
 
 #: ./src/templates/modals/setupOrganization.tpl.html:29
 msgctxt "Info"
-msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
-msgstr "Questo creerà una nuova chiave di crittografia per l'organizzazione. Le chiavi a 4096 bit funzionano solo su computer ad alte prestazioni. Per la maggior parte degli utenti, si consiglia di utilizzare chiavi a 2048 bit."
+msgid "This will create a new encryption key for your organization."
+msgstr "Questo creerà una nuova chiave di crittografia per la tua organizzazione."
 
 #: ./src/app/dashboard/factories/downgrade.js:14
 msgctxt "Info"
@@ -6237,7 +6231,7 @@ msgctxt "Info"
 msgid "WARNING: THIS ALSO DELETES ALL CONNECTED SERVICES (ex: <i>ProtonVPN</i>)"
 msgstr "ATTENZIONE: QUESTO ELIMINA ANCHE TUTTI I SERVIZI ANNESSI (es: <i>ProtonVPN</i>)"
 
-#: ./src/templates/modals/generate.tpl.html:41
+#: ./src/templates/modals/generate.tpl.html:39
 msgctxt "Info"
 msgid "We are now generating encryption keys for your address, this may take several minutes and temporarily freeze your browser."
 msgstr "Ora stiamo generando le chiavi di crittografia del tuo indirizzo, ciò potrebbe richiedere alcuni minuti e bloccare temporaneamente il browser."
@@ -6337,7 +6331,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Ora potrai anche ricevere messaggi al tuo indirizzo @pm.me (abbreviazione di \"ProtonMail me\" o \"Private Message me)."
 
-#: ./src/app/settings/controllers/account.js:113
+#: ./src/app/settings/controllers/account.js:106
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Hai una nuova email"
@@ -6467,7 +6461,7 @@ msgctxt "Info"
 msgid "Your new features are now available."
 msgstr "Sono disponibili nuove funzionalità."
 
-#: ./src/templates/modals/setupOrganization.tpl.html:46
+#: ./src/templates/modals/setupOrganization.tpl.html:32
 msgctxt "Info"
 msgid "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe."
 msgstr "La password dell'organizzazione può essere condivisa con altri utenti a cui si desidera fornire i privilegi di amministrazione. È anche un codice di ripristino di emergenza per ottenere l'accesso alla tua organizzazione nel caso in cui perdessi l'accesso al tuo utente. Si prega di salvare la password e tenerla al sicuro."
@@ -6813,7 +6807,7 @@ msgctxt "Label"
 msgid "2-years"
 msgstr "2 anni"
 
-#: ./src/templates/modals/member.tpl.html:80
+#: ./src/templates/modals/member.tpl.html:63
 msgctxt "Label"
 msgid "Account storage"
 msgstr "Spazio account"
@@ -6828,18 +6822,18 @@ msgctxt "Label"
 msgid "Add image URL"
 msgstr "Aggiungi URL immagine"
 
-#: ./src/templates/modals/member.tpl.html:63
+#: ./src/templates/modals/member.tpl.html:46
 #: ./src/templates/user/identitySection.tpl.html:5
 msgctxt "Label"
 msgid "Address"
 msgstr "Indirizzo"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:74
+#: ./src/templates/modals/setupOrganization.tpl.html:60
 msgctxt "Label"
 msgid "Admin Account Storage:"
 msgstr "Spazio account amministratore:"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:85
+#: ./src/templates/modals/setupOrganization.tpl.html:71
 msgctxt "Label"
 msgid "Admin VPN Connections:"
 msgstr "Connessioni VPN amministratore:"
@@ -7042,28 +7036,11 @@ msgctxt "Label"
 msgid "Gift code"
 msgstr "Codice regalo"
 
-#. form option heading
-#: ./src/templates/modals/member.tpl.html:38
-msgctxt "Label"
-msgid "High security"
-msgstr "Sicurezza alta"
-
-#. form option heading
-#: ./src/templates/modals/member.tpl.html:44
-msgctxt "Label"
-msgid "Highest security"
-msgstr "Sicurezza massima"
-
 #: ./src/app/labels/directives/dropdownFolders.js:8
 #: ./src/templates/filter/modal.tpl.html:159
 msgctxt "Label"
 msgid "Inbox"
 msgstr "Posta in arrivo"
-
-#: ./src/templates/modals/member.tpl.html:33
-msgctxt "Label"
-msgid "Key Strength"
-msgstr "Forza della chiave"
 
 #: ./src/templates/vpn/openVpnSection.tpl.html:17
 msgctxt "Label"
@@ -7145,7 +7122,7 @@ msgid "Organization password:"
 msgstr "Password dell'organizzazione:"
 
 #: ./src/templates/authentication/loginForm.tpl.html:34
-#: ./src/templates/modals/member.tpl.html:50
+#: ./src/templates/modals/member.tpl.html:33
 #: ./src/templates/modals/switchPasswordMode.tpl.html:13
 #: ./src/templates/vpn/openVpnSection.tpl.html:36
 #: ./src/templates/vpn/vpnView.tpl.html:49
@@ -7249,7 +7226,7 @@ msgctxt "Label"
 msgid "Start time"
 msgstr "Ora d'inizio"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:77
+#: ./src/templates/modals/setupOrganization.tpl.html:63
 msgctxt "Label"
 msgid "Storage for members:"
 msgstr "Spazio per i membri:"
@@ -7290,12 +7267,12 @@ msgctxt "Label"
 msgid "User login"
 msgstr "Login utente"
 
-#: ./src/templates/modals/member.tpl.html:91
+#: ./src/templates/modals/member.tpl.html:74
 msgctxt "Label"
 msgid "VPN Connections"
 msgstr "Connessioni VPN"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:88
+#: ./src/templates/modals/setupOrganization.tpl.html:74
 msgctxt "Label"
 msgid "VPN Connections for members:"
 msgstr "Connessioni VPN per i membri:"
@@ -7406,7 +7383,7 @@ msgctxt "Label for contact Sign toggle"
 msgid "Sign"
 msgstr "Firma"
 
-#: ./src/templates/message/message.tpl.html:120
+#: ./src/templates/message/message.tpl.html:111
 msgctxt "Label for the message size when displaying email details"
 msgid "Size:"
 msgstr "Dimensione:"
@@ -7632,12 +7609,12 @@ msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr "Per favore aggiunga un dominio personalizzato prima di configurare gli indirizzi."
 
-#: ./src/app/authentication/controllers/login.js:46
+#: ./src/app/authentication/controllers/login.js:38
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr "Per favore inserisci il tuo nome utente e la password"
 
-#: ./src/app/authentication/controllers/login.js:51
+#: ./src/app/authentication/controllers/login.js:43
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr "La password è assente"
@@ -7758,13 +7735,13 @@ msgstr "Unisci"
 
 #: ./src/app/user/factories/generateKeyModel.js:19
 msgctxt "Message"
-msgid "An RSA key with bit size {{ bits }} is already active for this address.\n"
+msgid "A key with the same encryption algorithm is already active for this address.\n"
 "Generating another key will cause slower account loading and deletion of this key can cause issues.\n"
 "If you are generating a new key because your old key is compromised, please mark that key as compromised.\n"
 "Are you sure you want to continue?"
-msgstr "Una chiave RSA di dimensione {{ bits }} bit è già attiva per questo indirizzo.\n"
-"Generare un'altra chiave causerà un caricamento dell'account più lento e l'eliminazione di questa chiave può causare problemi.\n"
-"Se stai generando una nuova chiave perché quella vecchia è stata compromessa, per favore contrassegna tale chiave come compromessa.\n"
+msgstr "Una chiave con lo stesso algoritmo di crittografia è già attiva per questo indirizzo.\n"
+"La generazione di un'altra chiave causerà un caricamento più lento dell'account e l'eliminazione di essa può causare problemi.\n"
+"Se stai generando una nuova chiave perché la tua vecchia chiave è compromessa, per favore contrassegnala come compromessa.\n"
 "Sei sicuro di voler continuare?"
 
 #: ./src/app/message/services/messageBuilder.js:188
@@ -7782,7 +7759,7 @@ msgctxt "Message"
 msgid "Re:"
 msgstr "Re:"
 
-#: ./src/app/message/factories/messageModel.js:85
+#: ./src/app/message/factories/messageModel.js:66
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr "Messaggio vuoto"
@@ -7869,12 +7846,12 @@ msgctxt "Message for report phishing modal"
 msgid "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full."
 msgstr "Segnalare un messaggio come tentativo di phishing invierà il messaggio a noi, cosicché potremo analizzarlo e migliorare i nostri filtri. Questo significa che saremo in grado di leggere i contenuti del messaggio per intero."
 
-#: ./src/templates/message/message.tpl.html:46
+#: ./src/templates/message/message.tpl.html:37
 msgctxt "Message label"
 msgid "Draft"
 msgstr "Bozza"
 
-#: ./src/templates/message/message.tpl.html:47
+#: ./src/templates/message/message.tpl.html:38
 msgctxt "Message label"
 msgid "Sent"
 msgstr "Inviato"
@@ -7889,12 +7866,12 @@ msgctxt "Message network error"
 msgid "Sanitization error"
 msgstr "Errore nella convalida"
 
-#: ./src/templates/message/message.tpl.html:84
+#: ./src/templates/message/message.tpl.html:75
 msgctxt "Message recipient label"
 msgid "To"
 msgstr "A"
 
-#: ./src/templates/message/message.tpl.html:24
+#: ./src/templates/message/message.tpl.html:15
 msgctxt "Message sender label"
 msgid "From"
 msgstr "Da"
@@ -7970,7 +7947,7 @@ msgctxt "New version"
 msgid "Reload Tab"
 msgstr "Ricarica la scheda"
 
-#: ./src/templates/message/message.tpl.html:89
+#: ./src/templates/message/message.tpl.html:80
 msgctxt "No recipients to display in the message header"
 msgid "Undisclosed Recipients"
 msgstr "Destinatari nascosti"
@@ -8274,12 +8251,12 @@ msgctxt "Placeholder"
 msgid "City"
 msgstr "Città"
 
-#: ./src/templates/modals/member.tpl.html:58
+#: ./src/templates/modals/member.tpl.html:41
 msgctxt "Placeholder"
 msgid "Confirm Password"
 msgstr "Conferma password"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:57
+#: ./src/templates/modals/setupOrganization.tpl.html:43
 msgctxt "Placeholder"
 msgid "Confirm organization password"
 msgstr "Conferma la password dell'organizzazione"
@@ -8407,7 +8384,7 @@ msgctxt "Placeholder"
 msgid "Organization name"
 msgstr "Nome dell'organizzazione"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:48
+#: ./src/templates/modals/setupOrganization.tpl.html:34
 msgctxt "Placeholder"
 msgid "Organization password"
 msgstr "Password dell'organizzazione"
@@ -8417,7 +8394,7 @@ msgstr "Password dell'organizzazione"
 #: ./src/templates/modals/activateOrganization.tpl.html:12
 #: ./src/templates/modals/decryptImportKey.tpl.html:12
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:14
-#: ./src/templates/modals/member.tpl.html:53
+#: ./src/templates/modals/member.tpl.html:36
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:13
 msgctxt "Placeholder"
 msgid "Password"
@@ -8750,7 +8727,7 @@ msgctxt "Success"
 msgid "All contacts deleted"
 msgstr "Eliminati tutti i contatti"
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:43
+#: ./src/app/organization/modals/setupOrganizationModal.js:52
 msgctxt "Success"
 msgid "Allocated to admin"
 msgstr "Allocato all'amministratore"
@@ -8782,7 +8759,7 @@ msgctxt "Success"
 msgid "Banner permanently hidden"
 msgstr "Banner nascosto permanentemente"
 
-#: ./src/app/settings/controllers/domains.js:185
+#: ./src/app/settings/controllers/domains.js:187
 msgctxt "Success"
 msgid "Catch-all address updated"
 msgstr "Indirizzo catch-all aggiornato"
@@ -8809,7 +8786,7 @@ msgctxt "Success"
 msgid "Contact re-signed"
 msgstr "Contatto ri-firmato"
 
-#: ./src/app/settings/controllers/domains.js:226
+#: ./src/app/settings/controllers/domains.js:228
 msgctxt "Success"
 msgid "Domain created"
 msgstr "Dominio creato"
@@ -8819,12 +8796,12 @@ msgctxt "Success"
 msgid "Domain deleted"
 msgstr "Dominio eliminato"
 
-#: ./src/app/settings/controllers/domains.js:280
+#: ./src/app/settings/controllers/domains.js:282
 msgctxt "Success"
 msgid "Domain verified"
 msgstr "Dominio verificato"
 
-#: ./src/app/settings/controllers/account.js:326
+#: ./src/app/settings/controllers/account.js:316
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Preferenze email aggiornate"
@@ -8869,13 +8846,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Codice regalo applicato"
 
-#: ./src/app/settings/controllers/account.js:298
+#: ./src/app/settings/controllers/account.js:288
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Preferenze delle scorciatoie da tastiera aggiornate"
 
-#: ./src/app/settings/controllers/account.js:265
-#: ./src/app/settings/controllers/account.js:274
+#: ./src/app/settings/controllers/account.js:258
+#: ./src/app/settings/controllers/account.js:267
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Aggiornate le preferenze dell'immagine"
@@ -8921,9 +8898,9 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Password aggiornata"
 
-#: ./src/app/settings/controllers/account.js:145
-#: ./src/app/settings/controllers/account.js:165
-#: ./src/app/settings/controllers/account.js:256
+#: ./src/app/settings/controllers/account.js:138
+#: ./src/app/settings/controllers/account.js:158
+#: ./src/app/settings/controllers/account.js:249
 msgctxt "Success"
 msgid "Preference saved"
 msgstr "Preferenze salvate"
@@ -8950,7 +8927,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Chiave pubblica attendibile"
 
-#: ./src/app/settings/controllers/account.js:130
+#: ./src/app/settings/controllers/account.js:123
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "Recupero/Notifiche email salvate"
@@ -9173,7 +9150,7 @@ msgstr "Temi aggiuntivi"
 #: ./src/templates/contact/contactGroupModal.tpl.html:78
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:6
 #: ./src/templates/modals/domain/address.tpl.html:31
-#: ./src/templates/modals/generate.tpl.html:51
+#: ./src/templates/modals/generate.tpl.html:49
 #: ./src/templates/search/searchForm.tpl.html:111
 #: ./src/templates/views/domains.tpl.html:196
 msgctxt "Title"
@@ -9474,7 +9451,7 @@ msgctxt "Title"
 msgid "Confirm mailbox password"
 msgstr "Conferma la password della casella email"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:32
+#: ./src/templates/modals/generateOrganization.tpl.html:11
 msgctxt "Title"
 msgid "Confirm recovery Password"
 msgstr "Conferma la password di recupero"
@@ -10005,17 +9982,13 @@ msgid "Help and support"
 msgstr "Aiuto e assistenza"
 
 #. form option heading
-#: ./src/templates/modals/generate.tpl.html:25
-#: ./src/templates/modals/generateOrganization.tpl.html:14
-#: ./src/templates/modals/setupOrganization.tpl.html:34
+#: ./src/templates/modals/generate.tpl.html:24
 msgctxt "Title"
 msgid "High security"
 msgstr "Sicurezza alta"
 
 #. form option heading
-#: ./src/templates/modals/generate.tpl.html:31
-#: ./src/templates/modals/generateOrganization.tpl.html:23
-#: ./src/templates/modals/setupOrganization.tpl.html:40
+#: ./src/templates/modals/generate.tpl.html:29
 msgctxt "Title"
 msgid "Highest security"
 msgstr "Sicurezza massima"
@@ -10097,20 +10070,15 @@ msgctxt "Title"
 msgid "Key password"
 msgstr "Chiave della password"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:30
+#: ./src/templates/modals/generateOrganization.tpl.html:9
 msgctxt "Title"
 msgid "Key recovery password"
 msgstr "Password di recupero della chiave"
 
 #. table heading
-#: ./src/templates/views/members.tpl.html:360
-msgctxt "Title"
-msgid "Key size"
-msgstr "Dimensione chiave"
-
-#. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:22
 #: ./src/templates/address/addressKeysView.tpl.html:49
+#: ./src/templates/views/members.tpl.html:360
 msgctxt "Title"
 msgid "Key type"
 msgstr "Tipo di chiave"
@@ -10711,7 +10679,7 @@ msgctxt "Title"
 msgid "Signup"
 msgstr "Iscrizione"
 
-#: ./src/app/user/factories/generateKeyModel.js:17
+#: ./src/app/user/factories/generateKeyModel.js:18
 msgctxt "Title"
 msgid "Similar Key Already Active!"
 msgstr "Chiave simile già attiva!"
@@ -10742,7 +10710,7 @@ msgstr "Data d'inizio"
 #. table heading for the domains page table listing of addresses
 #: ./src/templates/address/addressKeysView.tpl.html:50
 #: ./src/templates/invoices/invoiceList.tpl.html:9
-#: ./src/templates/modals/generate.tpl.html:52
+#: ./src/templates/modals/generate.tpl.html:50
 #: ./src/templates/views/domains.tpl.html:197
 msgctxt "Title"
 msgid "Status"
@@ -10753,7 +10721,7 @@ msgctxt "Title"
 msgid "Storage"
 msgstr "Spazio"
 
-#: ./src/templates/message/message.tpl.html:123
+#: ./src/templates/message/message.tpl.html:114
 msgctxt "Title"
 msgid "Subject"
 msgstr "Oggetto"
@@ -10976,8 +10944,8 @@ msgstr "Senza allegati"
 
 #: ./src/app/address/directives/addressKeysView.js:53
 msgctxt "Title"
-msgid "You can generate a new encryption key if you think your previous key has been compromised. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
-msgstr "Puoi generare una nuova chiave di crittografia se pensi che quella tua precedente sia stata compromessa. Le chiavi a 4096 bit funzionano solo su computer ad alte prestazioni. Per la maggior parte degli utenti si consiglia di utilizzare chiavi a 2048 bit."
+msgid "You can generate a new encryption key if you think your previous key has been compromised."
+msgstr "Se pensi che la tua precedente chiave sia stata compromessa, puoi generare una nuova chiave di crittografia."
 
 #: ./src/templates/modals/welcome.tpl.html:15
 msgctxt "Title"
@@ -11144,7 +11112,7 @@ msgctxt "Tooltip"
 msgid "2-year subscription with VPN discount"
 msgstr "Sconto abbonamento biennale con VPN"
 
-#: ./src/templates/modals/member.tpl.html:66
+#: ./src/templates/modals/member.tpl.html:49
 msgctxt "Tooltip"
 msgid "Address"
 msgstr "Indirizzo"
@@ -11312,7 +11280,7 @@ msgctxt "Tooltip"
 msgid "Send all your traffic through the Tor network with a single click"
 msgstr "Invia tutto il traffico attraverso la rete Tor con un singolo click"
 
-#: ./src/templates/message/message.tpl.html:122
+#: ./src/templates/message/message.tpl.html:113
 msgctxt "Tooltip"
 msgid "Subject is end-to-end encrypted"
 msgstr "L'oggetto è crittografato end-to-end"
@@ -11989,22 +11957,22 @@ msgctxt "key flag info"
 msgid "This key cannot be used for encryption"
 msgstr "Questa chiave non può essere usata per la crittografia"
 
-#: ./src/templates/modals/generate.tpl.html:64
+#: ./src/templates/modals/generate.tpl.html:62
 msgctxt "key generation progrss"
 msgid "Done"
 msgstr "Completato"
 
-#: ./src/templates/modals/generate.tpl.html:63
+#: ./src/templates/modals/generate.tpl.html:61
 msgctxt "key generation progrss"
 msgid "Generating"
 msgstr "Generazione"
 
-#: ./src/templates/modals/generate.tpl.html:62
+#: ./src/templates/modals/generate.tpl.html:60
 msgctxt "key generation progrss"
 msgid "Queued"
 msgstr "Accodato"
 
-#: ./src/templates/modals/generate.tpl.html:65
+#: ./src/templates/modals/generate.tpl.html:63
 msgctxt "key generation progrss"
 msgid "Saved"
 msgstr "Salvata"
