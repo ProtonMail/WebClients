@@ -111,7 +111,7 @@ function autocompleteEmails(
             );
     };
 
-    const link = (scope, el, { awesomplete }) => {
+    const link = (scope, el, { awesomplete, attr }) => {
         const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'autocompleteEmails']);
 
         scope.emails = [];
@@ -207,12 +207,17 @@ function autocompleteEmails(
 
         /**
          * Remove an item from the list of emails ([<icon> email <button>]...)
-         * @param  {String} address
+         * @param  {String} options.address Address to remove
+         * @param  {String} options.key     Type of list (CCList, ToList, BCCList)
+         * @return {void}
          */
-        function removeItem(address) {
-            model.removeByAddress(address);
-            removeGroup(address);
-            syncModel();
+        function removeItem({ address, key }) {
+            // Ensure we remove the address in the right list
+            if (attr.key === key) {
+                model.removeByAddress(address);
+                removeGroup(address);
+                syncModel();
+            }
         }
 
         on('contacts', (event, { type }) => {
@@ -243,16 +248,16 @@ function autocompleteEmails(
             syncModel();
         });
 
-        on('recipient.update', (e, { type, data: { messageID, oldAddress, Address, Name, remove = {} } }) => {
+        on('recipient.update', (e, { type, data: { messageID, oldAddress, Address, Name, key, remove = {} } }) => {
             if (messageID !== scope.message.ID) {
                 return;
             }
-            if (type === 'update') {
+            if (type === 'update' && attr.key === key) {
                 model.updateEmail(oldAddress, Address, Name);
                 syncModel();
             }
 
-            type === 'remove' && removeItem(remove.address);
+            type === 'remove' && removeItem(remove);
         });
 
         /**
@@ -310,8 +315,7 @@ function autocompleteEmails(
             awesomplete.minChars = 1;
 
             if (target.classList.contains('autocompleteEmails-btn-remove')) {
-                const { address } = target.dataset;
-                return removeItem(address);
+                return removeItem(target.dataset);
             }
 
             /**
