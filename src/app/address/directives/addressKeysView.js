@@ -268,18 +268,15 @@ function addressKeysView(
 
             const selectAddress = (info) => {
                 const addresses = addressesModel.get().map(({ Email: email, ID: addressID }) => ({ email, addressID }));
-                return new Promise((resolve, reject) => {
+                return new Promise((resolve) => {
                     selectAddressModal.activate({
                         params: {
                             info,
                             addresses,
+                            hookClose: (mode) => mode && resolve({}),
                             async submit(address) {
                                 await selectAddressModal.deactivate();
                                 resolve(address);
-                            },
-                            async cancel() {
-                                await selectAddressModal.deactivate();
-                                reject();
                             }
                         }
                     });
@@ -288,6 +285,10 @@ function addressKeysView(
 
             const importKey = async () => {
                 const { email } = await selectAddress(I18N.SELECT_ADDRESS_TO_IMPORT_KEY);
+
+                if (!email) {
+                    return;
+                }
 
                 confirmModal.activate({
                     params: {
@@ -301,8 +302,7 @@ function addressKeysView(
                             };
                             importKeyFile.click();
                             confirmModal.deactivate();
-                        },
-                        cancel: confirmModal.deactivate
+                        }
                     }
                 });
             };
@@ -312,6 +312,10 @@ function addressKeysView(
              */
             const newKey = async () => {
                 const { email: Email, addressID: ID } = await selectAddress(I18N.SELECT_ADDRESS_TO_ADD_KEY);
+
+                if (!Email) {
+                    return;
+                }
 
                 generateModal.activate({
                     params: {

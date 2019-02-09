@@ -38,16 +38,14 @@ function deleteKeyProcess(
      * @return {Promise}
      */
     const warnUser = () =>
-        new Promise((resolve, reject) => {
+        new Promise((resolve) => {
             confirmModal.activate({
                 params: {
                     title: I18N.WARNING_TITLE,
                     message: I18N.WARNING_MESSAGE,
+                    hookClose: (mode) => resolve(mode === 'confirm'),
                     confirm() {
-                        confirmModal.deactivate().then(resolve);
-                    },
-                    cancel() {
-                        confirmModal.deactivate().then(reject);
+                        confirmModal.deactivate('confirm');
                     }
                 }
             });
@@ -131,9 +129,11 @@ function deleteKeyProcess(
      * @return {Promise}
      */
     const start = async ({ email, addressID }, keyInfo) => {
-        await warnUser();
-        keyInfo.decrypted && (await exportKey(email, keyInfo));
-        return deleteKey(keyInfo, addressID);
+        const confirm = await warnUser();
+        if (confirm) {
+            keyInfo.decrypted && (await exportKey(email, keyInfo));
+            return deleteKey(keyInfo, addressID);
+        }
     };
     return { start };
 }
