@@ -7,9 +7,9 @@
             </div>
             <div class="modal-body pm_form">
                 <div class="multi-line-label">
-                    <label for="password" translate translate-context="Label in the modal which ask the user to enter his password or mailbox password">Enter the password for key with fingerprint <code>{{ ctrl.fingerprint }}</code>.</label>
+                    <label for="password" translate translate-context="Label in the modal which ask the user to enter his password or mailbox password">Enter the password for key with fingerprint <code class="flex-space-left">{{ ctrl.fingerprint }}</code>.</label>
                 </div>
-                <input type="password" autofocus ng-model="ctrl.password" id="password" placeholder-translate="Password" name="password" placeholder-translate-context="Placeholder" required/>
+                <input type="password" autofocus ng-model="ctrl.password" id="password" placeholder-translate="Password" name="password" placeholder-translate-context="Placeholder" required />
                 <div ng-messages="passwordModalForm.password.$error" class="text-red">
                     <p ng-message="required" translate-context="Error" translate>Field required</p>
                 </div>
