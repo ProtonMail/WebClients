@@ -57,7 +57,7 @@ msgid ""
 "                <p>Because Tor or free VPNs are frequently abused by spammers, this check may be triggered because of the Tor or VPN exit node you are using.</p>"
 msgstr ""
 
-#: ./src/app/message/factories/messageActions.js:167
+#: ./src/app/message/factories/messageActions.js:175
 msgctxt "Action"
 msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
@@ -154,7 +154,7 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:120
+#: ./src/templates/filter/modal.tpl.html:121
 msgctxt "Action"
 msgid "Add condition"
 msgstr ""
@@ -192,7 +192,7 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:196
+#: ./src/templates/filter/modal.tpl.html:197
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
@@ -203,7 +203,7 @@ msgctxt "Action"
 msgid "Add key"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:142
+#: ./src/templates/filter/modal.tpl.html:143
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -380,7 +380,7 @@ msgstr ""
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
-#: ./src/templates/filter/modal.tpl.html:242
+#: ./src/templates/filter/modal.tpl.html:243
 #: ./src/templates/modals/activateOrganization.tpl.html:25
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -1572,7 +1572,7 @@ msgstr ""
 #: ./src/templates/directives/composer/composer.tpl.html:116
 #: ./src/templates/directives/composer/composer.tpl.html:123
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:248
+#: ./src/templates/filter/modal.tpl.html:249
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -4216,32 +4216,32 @@ msgctxt "Filter message"
 msgid "Subject"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:60
+#: ./src/templates/filter/modal.tpl.html:55
 msgctxt "Filter modal condition"
 msgid "If"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:102
+#: ./src/templates/filter/modal.tpl.html:97
 msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:129
+#: ./src/templates/filter/modal.tpl.html:130
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:204
+#: ./src/templates/filter/modal.tpl.html:205
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:150
+#: ./src/templates/filter/modal.tpl.html:151
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:229
+#: ./src/templates/filter/modal.tpl.html:230
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr ""
@@ -4286,7 +4286,7 @@ msgctxt "Filter modal type"
 msgid "the subject"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:96
+#: ./src/templates/filter/modal.tpl.html:91
 msgctxt "Filter modal value OR value"
 msgid "or"
 msgstr ""
@@ -6830,7 +6830,7 @@ msgid "Annually"
 msgstr ""
 
 #: ./src/app/labels/directives/dropdownFolders.js:14
-#: ./src/templates/filter/modal.tpl.html:167
+#: ./src/templates/filter/modal.tpl.html:168
 msgctxt "Label"
 msgid "Archive"
 msgstr ""
@@ -7023,7 +7023,7 @@ msgid "Gift code"
 msgstr ""
 
 #: ./src/app/labels/directives/dropdownFolders.js:8
-#: ./src/templates/filter/modal.tpl.html:159
+#: ./src/templates/filter/modal.tpl.html:160
 msgctxt "Label"
 msgid "Inbox"
 msgstr ""
@@ -7156,7 +7156,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:211
+#: ./src/templates/filter/modal.tpl.html:212
 msgctxt "Label"
 msgid "Read"
 msgstr ""
@@ -7197,12 +7197,12 @@ msgid "Signature"
 msgstr ""
 
 #: ./src/app/labels/directives/dropdownFolders.js:20
-#: ./src/templates/filter/modal.tpl.html:175
+#: ./src/templates/filter/modal.tpl.html:176
 msgctxt "Label"
 msgid "Spam"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:218
+#: ./src/templates/filter/modal.tpl.html:219
 msgctxt "Label"
 msgid "Starred"
 msgstr ""
@@ -7223,7 +7223,7 @@ msgid "Time zone"
 msgstr ""
 
 #: ./src/app/labels/directives/dropdownFolders.js:26
-#: ./src/templates/filter/modal.tpl.html:183
+#: ./src/templates/filter/modal.tpl.html:184
 msgctxt "Label"
 msgid "Trash"
 msgstr ""
@@ -7426,7 +7426,7 @@ msgstr ""
 
 #: ./src/templates/modals/decryptImportKey.tpl.html:10
 msgctxt "Label in the modal which ask the user to enter his password or mailbox password"
-msgid "Enter the password for key with fingerprint <code>{{ ctrl.fingerprint }}</code>."
+msgid "Enter the password for key with fingerprint <code class=\"flex-space-left\">{{ ctrl.fingerprint }}</code>."
 msgstr ""
 
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:10
@@ -9089,7 +9089,7 @@ msgstr ""
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:49
-#: ./src/templates/filter/modal.tpl.html:124
+#: ./src/templates/filter/modal.tpl.html:125
 #: ./src/templates/invoices/invoiceList.tpl.html:7
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:204
@@ -10921,12 +10921,12 @@ msgctxt "Title"
 msgid "Welcome to your new encrypted email account"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:73
+#: ./src/templates/filter/modal.tpl.html:68
 msgctxt "Title"
 msgid "With Attachments"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:82
+#: ./src/templates/filter/modal.tpl.html:77
 msgctxt "Title"
 msgid "Without Attachments"
 msgstr ""
