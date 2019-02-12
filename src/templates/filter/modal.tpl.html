@@ -48,72 +48,73 @@
                             </span>
                         </p>
 
-                        <div class="filter-modal-condition alert" style="position: relative;">
+                        <div class="filter-modal-condition alert">
 
+                            <div class="filter-modal-condition-settings-container">
+                                <div class="filter-modal-condition-settings">
+                                    <span class="filter-modal-condition-if bold" translate-context="Filter modal condition" translate>If</span>
+                                    <span class="pm_select">
+                                        <select ng-model="condition.Type" ng-options="type.label for type in ctrl.types"></select>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+
+                                    <span class="filter-modal-condition-attachments" ng-if="condition.Type.value === 'attachments'">
+                                            <label>
+                                                <custom-radio
+                                                    data-custom-ng-change="ctrl.onChangeAttachements(condition, 'contains')"
+                                                    data-custom-ng-model="condition.Comparator.value"
+                                                    data-custom-ng-value="'contains'"
+                                                    data-custom-value="contains"></custom-radio>
+                                                <span translate translate-context="Title">With Attachments</span>
+                                            </label>
+
+                                            <label>
+                                                <custom-radio
+                                                    data-custom-ng-change="ctrl.onChangeAttachements(condition, '!contains')"
+                                                    data-custom-ng-model="condition.Comparator.value"
+                                                    data-custom-ng-value="'!contains'"
+                                                    data-custom-value="!contains"></custom-radio>
+                                                <span translate translate-context="Title">Without Attachments</span>
+                                            </label>
+                                    </span>
+
+                                    <span class="pm_select" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
+                                        <select class="autoWidth" ng-model="condition.Comparator" ng-options="comparator.label for comparator in ctrl.comparators"></select>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+
+                                    <div class="filter-modal-condition-settings-item" ng-if="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
+                                        <div ng-if="condition.Values.length > 0">
+                                            <span class="filter-modal-condition-badges" ng-repeat="value in condition.Values track by $id(value)" title="{{ value }}">
+                                                <span class="filter-modal-condition-badge pm_badge default none"><span class="ellipsis filter-modal-condition-badge-value">{{ value }}</span> <a href="#" class="filter-modal-condition-badge-remove" ng-click="condition.Values.splice($index, 1)"><i class="fa fa-times"></i></a>
+                                                </span>
+                                                <span class="filter-modal-condition-or" translate-context="Filter modal value OR value" translate>or</span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-modal-add-condition-settings-item filter-modal-add-condition" ng-if="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
+                                        <input
+                                            class="filter-modal-add-condition-input"
+                                            type="text"
+                                            ng-model="condition.value"
+                                            placeholder-translate="Text or pattern"
+                                            placeholder-translate-context="Filter modal condition"
+                                            ng-keyup="$event.keyCode === 13 && ctrl.addValue(condition)"
+                                            ng-blur="ctrl.addValue(condition)"  />
+                                        <button
+                                            class="filter-modal-add-condition-button pm_button"
+                                            ng-disabled="!condition.value"
+                                            type="button">
+                                            <i class="fa fa-check"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="filter-modal-condition-remove">
                                 <button type="button" title="Remove" ng-hide="ctrl.filter.Simple.Conditions.length === 1" ng-click="ctrl.removeCondition(condition)" class="pm_button white">
                                     <i class="fa fa-trash"></i>
                                 </button>
-                            </div>
-
-                            <div class="filter-modal-condition-settings">
-                                <span class="filter-modal-condition-if bold" translate-context="Filter modal condition" translate>If</span>
-                                <span class="pm_select">
-                                    <select ng-model="condition.Type" ng-options="type.label for type in ctrl.types"></select>
-                                    <i class="fa fa-angle-down"></i>
-                                </span>
-
-                                <span class="filter-modal-condition-attachments" ng-if="condition.Type.value === 'attachments'">
-                                        <label>
-                                            <custom-radio
-                                                data-custom-ng-change="ctrl.onChangeAttachements(condition, 'contains')"
-                                                data-custom-ng-model="condition.Comparator.value"
-                                                data-custom-ng-value="'contains'"
-                                                data-custom-value="contains"></custom-radio>
-                                            <span translate translate-context="Title">With Attachments</span>
-                                        </label>
-
-                                        <label>
-                                            <custom-radio
-                                                data-custom-ng-change="ctrl.onChangeAttachements(condition, '!contains')"
-                                                data-custom-ng-model="condition.Comparator.value"
-                                                data-custom-ng-value="'!contains'"
-                                                data-custom-value="!contains"></custom-radio>
-                                            <span translate translate-context="Title">Without Attachments</span>
-                                        </label>
-                                </span>
-
-                                <span class="pm_select" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
-                                    <select class="autoWidth" ng-model="condition.Comparator" ng-options="comparator.label for comparator in ctrl.comparators"></select>
-                                    <i class="fa fa-angle-down"></i>
-                                </span>
-
-                                <div class="filter-modal-condition-settings-item" ng-if="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
-                                    <div ng-if="condition.Values.length > 0">
-                                        <span class="filter-modal-condition-badges" ng-repeat="value in condition.Values track by $id(value)">
-                                            <span class="filter-modal-condition-badge pm_badge default none">{{ value }} <a href="#" ng-click="condition.Values.splice($index, 1)"><i class="fa fa-times"></i></a>
-                                            </span>
-                                            <span class="filter-modal-condition-or" translate-context="Filter modal value OR value" translate>or</span>
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div class="filter-modal-add-condition-settings-item filter-modal-add-condition" ng-if="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
-                                    <input
-                                        class="filter-modal-add-condition-input"
-                                        type="text"
-                                        ng-model="condition.value"
-                                        placeholder-translate="Text or pattern"
-                                        placeholder-translate-context="Filter modal condition"
-                                        ng-keyup="$event.keyCode === 13 && ctrl.addValue(condition)"
-                                        ng-blur="ctrl.addValue(condition)"  />
-                                    <button
-                                        class="filter-modal-add-condition-button pm_button"
-                                        ng-disabled="!condition.value"
-                                        type="button">
-                                        <i class="fa fa-check"></i>
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>

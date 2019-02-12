@@ -1,7 +1,11 @@
 .filter-modal-conditions {
-    @include flexInline();
-    @include flexWrap();
+    display: table;
+    table-layout: fixed;
     width: 100%;
+
+    & * {
+        box-sizing: border-box;
+    }
 }
 
 .filterModal-add-condition-button {
@@ -9,8 +13,8 @@
 }
 
 .filter-modal-condition {
-    @include flexInline();
-    @include flexFill();
+    min-width: 100%;
+    display: flex;
     padding-right: 15px;
     overflow: initial
 }
@@ -29,40 +33,62 @@
 .filter-modal-condition-attachments label {
     margin-left: .5rem;
 }
-
-.filter-modal-condition-settings {
-    @include flexInline();
-    @include flexFill();
-    @include flexWrap();
-    @include flexAlignCenter();
-    overflow: initial
+.filter-modal-condition-settings-container {
+    display: table-cell;
+    width: calc(100% - 55px);
 }
 
+.filter-modal-condition-settings {
+    display: flex;
+    @include flexWrap();
+    @include flexAlignCenter();
+    overflow: initial;
+    min-width: 0;
+}
+
+
+.filter-modal-condition-settings-item {
+    max-width: 100%;
+}
 .filter-modal-add-condition-autocomplete { position: relative }
 
 
 .filter-modal-simple-condition { width: 100% }
 .filter-modal-condition-remove {
-    @include flexInline();
-    @include flexJustifyEnd();
-    flex-basis: 55px;
-    order:1;
+    display: table-cell;
+    width: 55px;
 }
 
 /* badges */
 .filter-modal-condition-badges {
-    @include flexInline();
+    // @include flexInline();
     @include flexAlignCenter();
+    display: flex;
+    flex-wrap: wrap;
+}
+.filter-modal-condition-badges * {
+    min-width: 0;
 }
 
 .filter-modal-condition-badge {
     line-height: 2;
     height: auto;
+    max-width: 100%;
+    display: flex;
+}
+.filter-modal-condition-badge-value {
+    max-width: 100%;
+    flex-wrap: nowrap;
+}
+.filter-modal-condition-badge-remove {
+    flex: 0 0 10px;
+    padding-left: 5px;
 }
 
 .filter-modal-condition-or {
-    margin:0 .5rem;
+    margin: 0 .5rem;
     font-size: 75%;
+    flex: 0 0 45px;
 }
 
 /* condition pattern */
