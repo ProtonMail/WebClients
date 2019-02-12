@@ -91,14 +91,16 @@ function messageActions(
         const labels = labelsModel.ids('labels');
         const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
         const toSpam = labelID === MAILBOX_IDENTIFIERS.spam;
-        const folderIDs =
-            toSpam || toTrash ? basicFolders.concat(folders).concat(labels) : basicFolders.concat(folders);
-        const eventList = flow(
-            map((id) => {
-                const message = cache.getMessageCached(id) || {};
+        const folderIDs = toSpam || toTrash ? basicFolders.concat(folders, labels) : basicFolders.concat(folders);
+
+        // Generate cache events
+        const { eventList, toSpamList } = _.reduce(
+            ids,
+            (acc, ID) => {
+                const message = cache.getMessageCached(ID) || {};
                 let labelIDs = message.LabelIDs || [];
                 const labelIDsAdded = getLabelIDsMoved(message, labelID);
-                const labelIDsRemoved = labelIDs.filter((labelID) => folderIDs.indexOf(labelID) > -1);
+                const labelIDsRemoved = labelIDs.filter((labelID) => folderIDs.includes(labelID));
 
                 if (Array.isArray(labelIDsRemoved)) {
                     labelIDs = _.difference(labelIDs, labelIDsRemoved);
@@ -110,23 +112,29 @@ function messageActions(
 
                 if (toSpam) {
                     const { Sender = {} } = message;
-                    contactSpam([Sender.Address]);
+                    acc.toSpamList.push(Sender.Address);
                 }
 
-                return {
+                acc.eventList[ID] = {
+                    ID,
                     Action: 3,
-                    ID: id,
                     Message: {
-                        ID: id,
+                        ID,
                         ConversationID: message.ConversationID,
                         Selected: false,
                         LabelIDs: labelIDs,
                         Unread: toTrash ? 0 : message.Unread
                     }
                 };
-            }),
-            reduce((acc, event) => ((acc[event.ID] = event), acc), {})
-        )(ids);
+
+                return acc;
+            },
+            {
+                eventList: Object.create(null),
+                toSpamList: []
+            }
+        );
+
         const events = _.reduce(
             eventList,
             (acc, event) => {
@@ -174,6 +182,8 @@ function messageActions(
             },
             'Action'
         );
+
+        toSpamList.length && contactSpam(_.uniq(toSpamList));
 
         if (tools.cacheContext()) {
             cache.events(events);
