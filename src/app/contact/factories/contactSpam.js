@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { normalizeEmail } from '../../../helpers/string';
+import { wait } from '../../../helpers/promiseHelper';
 
 /* @ngInject */
 function contactSpam(Contact, contactEmails, eventManager, gettextCatalog, removeContactListModal, notification) {
@@ -43,6 +44,8 @@ function contactSpam(Contact, contactEmails, eventManager, gettextCatalog, remov
             return;
         }
 
+        // Defer the modal to prevent the modal to be closed because the route state can change since we are moving a message cf #8513
+        await wait(1000);
         const contacts = await new Promise((resolve) => {
             removeContactListModal.activate({
                 params: {

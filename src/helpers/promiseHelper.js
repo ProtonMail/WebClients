@@ -26,3 +26,10 @@ export const createCancellationToken = () => {
         }
     };
 };
+
+/**
+ * Pause the flow for an amount of time (ms)
+ * @param  {Number} delay
+ * @return {Promise}
+ */
+export const wait = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
