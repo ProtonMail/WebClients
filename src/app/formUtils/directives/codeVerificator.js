@@ -6,7 +6,8 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
     return {
         replace: true,
         scope: {
-            code: '='
+            code: '=',
+            codeRetry: '@'
         },
         restrict: 'E',
         templateUrl: require('../../../templates/formUtils/codeVerificator.tpl.html'),
@@ -67,6 +68,11 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                     dispatcher.humanVerification('validate.submit.codeVerification');
                 }
             };
+            console.log({ method }, scope.codeRetry);
+            if (scope.codeRetry === 'true') {
+                el[0].classList.add(CODE_SENT_CLASS);
+                focusInput('codeValue');
+            }
 
             el.on('keydown', onKeydown);
             el.on('submit', onSubmit);

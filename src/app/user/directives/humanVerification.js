@@ -32,6 +32,10 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
             const dispatchHelper = (type, data) => dispatcher.payments(type, data);
 
             const $btnSetup = el.find(SELECTOR.BTN_COMPLETE_SETUP);
+            scope.$applyAsync(() => {
+                scope.verificator = scope.model.confirmationType;
+                console.log('---', scope.model.confirmationType, scope.model);
+            });
 
             signupModel.getOptionsVerification(offerType).then(({ email, captcha, sms, payment }) => {
                 scope.$applyAsync(() => {
