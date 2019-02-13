@@ -18,7 +18,8 @@ const getLatestCommit = async () => {
 };
 
 const getCommitByName = async (name) => {
-    const { stdout = '' } = await exec(`git log --pretty=format:'%H---%s' | grep -w "${name}"`);
+    const commit = name.replace(/\[/, '\\[').replace(/\]/, '\\]');
+    const { stdout = '' } = await exec(`git log --pretty=format:'%H---%s' --grep="${commit}"`);
     const [ output = '' ] = stripAnsi(stdout).split('\n');
     const [ hash = '', label = '' ] = output.split('---');
     return { hash, label };
