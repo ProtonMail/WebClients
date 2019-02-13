@@ -1,3 +1,25 @@
+# [3.15.17] - 2019-02-13
+
+## Fixed
+
+- Marking message as spam did not always show the remove contact modal
+- Password reset did not work if the username was autofilled
+- Long text patterns did not display properly in the custom filters modal
+- Error messages were shown for some modals if the "Cancel" option was selected
+- Importing a key that already exists was added again
+- In some reply cases removing an address in the "CC" field also removed the addresses in the "To" field
+- Some "Learn more" links were leading to wrong URLs
+- Pressing "Esc" did not close the Hotkeys modal
+- PGP Encryption settings were not set for all imported email addresses
+- Importing a contact with PGP encryption for a second time caused the UI to freeze
+- "View source code" option did not show if message is blank
+- Email verification code was saved as auto-fill suggestion by the browser
+- "e.match is not a function" error was shown in some cases when forwarding a message
+
+## Changed
+
+- Notification are no longer shown if an error happens during an unsubscribe action
+
 # [3.15.16] - 2019-01-31
 
 ## Fixed
