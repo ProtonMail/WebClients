@@ -68,12 +68,14 @@
         <code-verificator
             data-method="email"
             ng-if="verificator === 'email'"
+            data-code-retry="{{ !!model.confirmationType }}"
             data-code="model.emailCodeVerification"
             class="spacing-top spacing-bottom humanVerification-form-email"></code-verificator>
 
         <code-verificator
             data-method="sms"
             ng-if="verificator === 'sms'"
+            data-code-retry="!!model.confirmationType"
             data-code="model.smsCodeVerification"
             class="spacing-top spacing-bottom humanVerification-form-sms"></code-verificator>
 
