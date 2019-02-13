@@ -45,7 +45,9 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
 
             const onClickCompleteSetup = (e) => {
                 e.preventDefault();
-                dispatchHelper('create.account');
+                scope.$applyAsync(() => {
+                    dispatchHelper('create.account');
+                });
             };
 
             on('payments', (e, { type, data = {} }) => {
@@ -55,6 +57,10 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
             });
 
             on('humanVerification', (e, { type, data = {} }) => {
+                if (type === 'validate.submit.codeVerification') {
+                    return onClickCompleteSetup({ preventDefault() {} });
+                }
+
                 if (type !== 'captcha') {
                     return;
                 }
