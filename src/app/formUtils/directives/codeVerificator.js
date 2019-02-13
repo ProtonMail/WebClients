@@ -3,6 +3,19 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
     const NEW_CODE_CLASS = 'codeVerificator-new-code';
     const CODE_SENT_CLASS = 'codeVerificator-code-sent';
 
+    const CACHE = {};
+
+    const { on, unsubscribe } = dispatchers(['signup']);
+
+    on('signup', (e, { type, data }) => {
+        if (type === 'user.finish' && data.value) {
+            Object.keys(CACHE).forEach((key) => {
+                delete CACHE[key];
+            });
+            unsubscribe();
+        }
+    });
+
     return {
         replace: true,
         scope: {
@@ -27,6 +40,7 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                 e.preventDefault();
                 e.stopPropagation();
 
+                CACHE[method] = scope.contactInformation;
                 const promise = humanVerificationModel.sendCode(method, scope.contactInformation);
                 networkActivityTracker.track(promise);
 
@@ -68,9 +82,15 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                     dispatcher.humanVerification('validate.submit.codeVerification');
                 }
             };
-            console.log({ method }, scope.codeRetry);
+
             if (scope.codeRetry === 'true') {
                 el[0].classList.add(CODE_SENT_CLASS);
+
+                scope.contactInformation = CACHE[method];
+                onSubmit({
+                    preventDefault() {},
+                    stopPropagation() {}
+                });
                 focusInput('codeValue');
             }
 

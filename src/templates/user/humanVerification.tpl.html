@@ -75,7 +75,7 @@
         <code-verificator
             data-method="sms"
             ng-if="verificator === 'sms'"
-            data-code-retry="!!model.confirmationType"
+            data-code-retry="{{ !!model.confirmationType }}"
             data-code="model.smsCodeVerification"
             class="spacing-top spacing-bottom humanVerification-form-sms"></code-verificator>
 

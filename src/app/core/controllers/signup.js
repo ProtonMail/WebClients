@@ -78,8 +78,8 @@ function SignupController(
         captcha_token: false, // Initialize captcha token
         smsCodeVerification: '', // Initialize sms verification code,
         login: {
-            confirmation: 'test',
-            password: 'test'
+            confirmation: '',
+            password: ''
         },
         confirmationType: ''
     };
