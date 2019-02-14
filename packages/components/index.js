@@ -32,6 +32,6 @@ export { default as TableHeader } from './components/table/TableHeader';
 export { default as TableFooter } from './components/table/TableFooter';
 export { default as TableRow } from './components/table/TableRow';
 export { default as TableBody } from './components/table/TableBody';
-export { default as TableBody } from './components/time/Time';
+export { default as Time } from './components/time/Time';
 export { default as Toggle } from './components/toggle/Toggle';
 export { default as Tooltip } from './components/tooltip/Tooltip';
