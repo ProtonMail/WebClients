@@ -4,8 +4,9 @@ import Button from '../button/Button';
 
 const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOutside }) => {
     const [open, setOpen] = useState(isOpen);
-    const handleClick = () => setOpen(!open);
     const wrapperRef = useRef(null);
+
+    const handleClick = () => setOpen(!open);
 
     const handleClickOutside = (event) => {
         if (autoCloseOutside && !wrapperRef.current.contains(event.target)) {

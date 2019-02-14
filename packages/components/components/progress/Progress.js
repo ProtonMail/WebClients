@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Progress = ({ value, max, ...rest }) => <progress max={max} {...rest}>{value}</progress>;
+const Progress = ({ value, max, ...rest }) => <progress className="progressBar" max={max} {...rest}>{value}</progress>;
 
 Progress.propTypes = {
     value: PropTypes.number.isRequired,
