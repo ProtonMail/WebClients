@@ -53,6 +53,14 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                 if (action === 'sendNewCode') {
                     el[0].classList.add(NEW_CODE_CLASS);
                 }
+
+                if (action === 'resetEmail') {
+                    el[0].classList.remove(CODE_SENT_CLASS);
+                    delete CACHE[method];
+                    scope.$applyAsync(() => {
+                        scope.contactInformation = '';
+                    });
+                }
             };
 
             el[0].classList.add(`codeVerificator-${method}-method`);
