@@ -34,9 +34,8 @@
             <span class="codeVerificator-sms-instruction" translate-context="Info" translate>Please check your mobile and enter the code below:</span>
         </p>
 
-        <div class="col-1-2">
+        <div class="col-2-3">
             <input
-                class="bigger"
                 type="text"
                 name="codeValue"
                 id="codeValue"
@@ -44,14 +43,21 @@
                 placeholder-translate-context="Input for the code sent"
                 placeholder-translate="Verification code">
         </div>
-        <div class="col-1-2">
+        <div class="col-1-3">
             <button
                 data-action="sendNewCode"
                 type="button"
-                class="pm_button link codeVerificator-new-code-button"
+                class="pm_button codeVerificator-new-code-button"
                 translate-context="Action"
                 translate>Send new code</button>
         </div>
     </div>
+
+    <button
+        data-action="resetEmail"
+        type="button"
+        class="pm_button link codeVerificator-reset-code-button"
+        translate-context="Action"
+        translate>Change verification email</button>
 
 </form>
