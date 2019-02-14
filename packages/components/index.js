@@ -22,6 +22,8 @@ export { default as HeaderModal } from './components/modal/Header';
 export { default as Modal } from './components/modal/Modal';
 export { default as ContentModal } from './components/modal/Content';
 export { default as Pagination } from './components/pagination/Pagination';
+export { default as usePagination } from './components/pagination/usePagination';
+export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
 export { default as Paragraph } from './components/paragraph/Paragraph';
 export { default as Progress } from './components/progress/Progress';
 export { default as Select } from './components/select/Select';
