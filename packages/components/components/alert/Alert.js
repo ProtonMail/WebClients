@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CLASSES = {
-    info: 'p1 mb1 bg-global-light color-global-grey',
-    warning: 'p1 mb1 bg-global-attention color-global-grey',
-    error: 'p1 mb1 bg-global-warning color-white'
+    info: 'mb1 information-block',
+    warning: 'mb1 warning-block',
+    error: 'mb1 error-block'
 };
 
 const Alert = ({ type, children }) => {
