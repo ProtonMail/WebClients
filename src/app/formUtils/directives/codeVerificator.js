@@ -33,8 +33,6 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                 });
             };
 
-            focusInput(`${method}Verification`);
-
             const onSubmit = (e) => {
                 // Stop the propagation to the signup form...
                 e.preventDefault();
@@ -63,8 +61,6 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                 }
             };
 
-            el[0].classList.add(`codeVerificator-${method}-method`);
-
             on('humanVerification', (e, { type, data }) => {
                 if (type === 'code.sent.success' && data.method === method) {
                     el[0].classList.add(CODE_SENT_CLASS);
@@ -91,10 +87,17 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                 }
             };
 
+            // Store a cache, we destroy it when we complete the signup
+            const onChange = () => {
+                CACHE[method] = scope.contactInformation;
+            };
+
+            scope.contactInformation = CACHE[method];
+            el[0].classList.add(`codeVerificator-${method}-method`);
+            focusInput(`${method}Verification`);
+
             if (scope.codeRetry === 'true') {
                 el[0].classList.add(CODE_SENT_CLASS);
-
-                scope.contactInformation = CACHE[method];
                 onSubmit({
                     preventDefault() {},
                     stopPropagation() {}
@@ -102,11 +105,13 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                 focusInput('codeValue');
             }
 
+            el.on('change', onChange);
             el.on('keydown', onKeydown);
             el.on('submit', onSubmit);
             el.on('click', onClick);
 
             scope.$on('$destroy', () => {
+                el.off('change', onChange);
                 el.off('submit', onSubmit);
                 el.off('click', onClick);
                 el.off('keydown', onKeydown);
