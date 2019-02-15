@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getClasses } from '../../helpers/component';
 
 const Bordered = ({ children, className }) => {
-    return <div className={getClasses('bordered-container p1', className)}>{children}</div>;
+    return <div className={getClasses('bordered-container p1 mb1', className)}>{children}</div>;
 };
 
 Bordered.propTypes = {
