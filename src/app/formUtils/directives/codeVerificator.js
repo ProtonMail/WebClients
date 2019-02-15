@@ -1,11 +1,14 @@
 /* @ngInject */
-function codeVerificator(dispatchers, humanVerificationModel, networkActivityTracker, notification) {
-    const NEW_CODE_CLASS = 'codeVerificator-new-code';
+function codeVerificator(dispatchers, humanVerificationModel, networkActivityTracker, notification, gettextCatalog) {
+    const CACHE = {};
+    const { on, unsubscribe } = dispatchers(['signup']);
     const CODE_SENT_CLASS = 'codeVerificator-code-sent';
 
-    const CACHE = {};
-
-    const { on, unsubscribe } = dispatchers(['signup']);
+    const I18N = {
+        newCodeSent(email) {
+            return gettextCatalog.getString('New code sent to: {{email}}', { email }, 'Success');
+        }
+    };
 
     on('signup', (e, { type, data }) => {
         if (type === 'user.finish' && data.value) {
@@ -44,12 +47,22 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
 
                 // reset code value to avoid getting it back a second time
                 scope.$applyAsync(() => (scope.code = ''));
+
+                e.notifyUser && notification.success(I18N.newCodeSent(scope.contactInformation));
+            };
+
+            const sendNewCode = () => {
+                onSubmit({
+                    preventDefault() {},
+                    stopPropagation() {},
+                    notifyUser: true
+                });
             };
 
             const onClick = ({ target }) => {
                 const action = target.getAttribute('data-action');
                 if (action === 'sendNewCode') {
-                    el[0].classList.add(NEW_CODE_CLASS);
+                    sendNewCode();
                 }
 
                 if (action === 'resetEmail') {
@@ -98,10 +111,7 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
 
             if (scope.codeRetry === 'true') {
                 el[0].classList.add(CODE_SENT_CLASS);
-                onSubmit({
-                    preventDefault() {},
-                    stopPropagation() {}
-                });
+                sendNewCode();
                 focusInput('codeValue');
             }
 
