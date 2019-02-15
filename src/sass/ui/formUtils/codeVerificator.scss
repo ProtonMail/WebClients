@@ -6,8 +6,7 @@
 .codeVerificator-container:not(.codeVerificator-sms-method) .codeVerificator-sms-instruction,
 .codeVerificator-container.codeVerificator-code-sent:not(.codeVerificator-new-code) .codeVerificator-contact-section,
 .codeVerificator-container.codeVerificator-code-sent:not(.codeVerificator-new-code) .codeVerificator-btn-send,
-.codeVerificator-container:not(.codeVerificator-code-sent) .codeVerificator-reset-code-button,
-.codeVerificator-container.codeVerificator-new-code .codeVerificator-new-code-button {
+.codeVerificator-container:not(.codeVerificator-code-sent) .codeVerificator-reset-code-button {
   display: none;
   pointer-events: none
 }
