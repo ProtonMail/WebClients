@@ -32,6 +32,7 @@ import mailtoHandler from './directives/mailtoHandler';
 import mailUtils from './services/mailUtils';
 import discardModal from './modals/discardModal';
 import formatURL from './filters/formatURL';
+import formatBDay from './filters/formatBDay';
 import printModal from './modals/printModal';
 import printMessage from './directives/printMessage';
 import printMessageModel from './factories/printMessageModel';
@@ -42,6 +43,7 @@ export default angular
     .directive('printMessage', printMessage)
     .factory('printModal', printModal)
     .filter('formatURL', formatURL)
+    .filter('formatBDay', formatBDay)
     .factory('discardModal', discardModal)
     .factory('mailUtils', mailUtils)
     .directive('mailtoHandler', mailtoHandler)
