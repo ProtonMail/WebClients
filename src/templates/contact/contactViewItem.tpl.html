@@ -42,8 +42,11 @@
         href="{{::info.value | formatURL}}"
         target="_blank"
         class="contactViewItem-value-url">{{::info.value | formatURL}}</a>
+
+    <span ng-if="info.key === 'bday'" class="contactViewItem-value-bday">{{ ::info.value | formatBDay }}</span>
+
     <span
-        ng-if="info.key !== 'adr' && info.key !== 'email' && info.key !== 'tel' && info.key !== 'photo' && info.key !== 'url'"
+        ng-if="info.key !== 'adr' && info.key !== 'email' && info.key !== 'tel' && info.key !== 'photo' && info.key !== 'url' && info.key !== 'bday'"
         class="contactViewItem-value-txt">{{::info.value}}</span>
 
     <div
