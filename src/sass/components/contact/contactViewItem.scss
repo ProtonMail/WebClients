@@ -39,8 +39,8 @@ $mapFields: (
     color: darken($primary, 10);
 }
 
-.contactViewItem-container a:focus,
-.contactViewItem-container a:hover {
+.contactViewItem-container a:not(.toolbarDesktop-select-folder):focus,
+.contactViewItem-container a:not(.toolbarDesktop-select-folder):hover {
     text-decoration: underline
 }
 
