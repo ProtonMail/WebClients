@@ -16,6 +16,8 @@ export { default as Search } from './components/input/Search';
 export { default as TextArea } from './components/input/TextArea';
 export { default as Label } from './components/label/Label';
 export { default as Href } from './components/link/Href';
+export { default as Loader } from './components/loader/Loader';
+export { default as useLoader } from './components/loader/useLoader';
 export { default as LearnMore } from './components/link/LearnMore';
 export { default as ConfirmModal } from './components/modal/Confirm';
 export { default as FooterModal } from './components/modal/Footer';
