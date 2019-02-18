@@ -26,7 +26,8 @@ function signupUserForm(confirmModal, dispatchers, gettextCatalog) {
             const onSubmit = (e) => {
                 e.preventDefault();
 
-                if (scope.accountForm.$invalid) {
+                // $invalid is set post Async check, valid is always here.
+                if (!scope.accountForm.$valid) {
                     return el[0].querySelector('.ng-invalid').focus();
                 }
 
