@@ -48,7 +48,7 @@ function SupportController(
     $scope.confirmResetLostPassword = () => {
         const title = gettextCatalog.getString('Confirm Reset Password', null, 'Title');
         const message = gettextCatalog.getString(
-            'Resetting your password means you will no longer be able to read your old emails. <a href="https://protonmail.com/support/knowledge-base/updating-your-login-password/" target="_blank">Click here to learn more</a>. If you have further questions, please email contact@protonmail.ch. Are you sure you want to reset your password?',
+            'Resetting your password means you will no longer be able to read your old emails. <a href="https://protonmail.com/support/knowledge-base/updating-your-login-password/" target="_blank">Click here to learn more</a>. If you have further questions, please email contact@protonmail.com. Are you sure you want to reset your password?',
             null,
             'Title'
         );
