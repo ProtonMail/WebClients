@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CLASSES = {
-    info: 'mb1 information-block',
-    warning: 'mb1 warning-block',
-    error: 'mb1 error-block'
+    info: 'mb1 block-info',
+    warning: 'mb1 block-info-error',
+    error: 'mb1 block-info-warning'
 };
 
 const Alert = ({ type, children }) => {
