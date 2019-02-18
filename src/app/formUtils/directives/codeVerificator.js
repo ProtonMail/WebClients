@@ -65,7 +65,7 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                     sendNewCode();
                 }
 
-                if (action === 'resetEmail') {
+                if (action === 'resetCode') {
                     el[0].classList.remove(CODE_SENT_CLASS);
                     delete CACHE[method];
                     scope.$applyAsync(() => {
