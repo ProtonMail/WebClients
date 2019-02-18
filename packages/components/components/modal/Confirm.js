@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { t } from 'ttag';
 
-import Button from '../button/Button';
+import { Button, PrimaryButton } from '../button';
 import Modal from './Modal';
 import Header from './Header';
 import Footer from './Footer';
@@ -35,7 +35,7 @@ const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm })
                 {children}
                 <Footer>
                     <Button onClick={onClose}>{cancel}</Button>
-                    <Button onClick={onConfirm}>{confirm}</Button>
+                    <PrimaryButton onClick={onConfirm}>{confirm}</PrimaryButton>
                 </Footer>
             </Content>
         </Modal>
@@ -55,7 +55,8 @@ Confirm.propTypes = {
 Confirm.defaultProps = {
     show: false,
     cancel: t`Cancel`,
-    confirm: t`Confirm`
+    confirm: t`Confirm`,
+    title: t`Confirm`
 };
 
 export default Confirm;
