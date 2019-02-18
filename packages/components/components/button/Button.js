@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import keycode from 'keycode';
 
 import Icon from '../icon/Icon';
+import { getClasses } from '../../helpers/component';
 
 const Button = (props) => {
     const handleClick = (event) => {
@@ -78,7 +79,7 @@ const Button = (props) => {
         <button
             role={role}
             disabled={loading ? true : disabled}
-            className={className}
+            className={getClasses('mr1', className)}
             type={type}
             tabIndex={disabled ? '-1' : tabIndex}
             title={title}
@@ -88,8 +89,9 @@ const Button = (props) => {
             onFocus={handleFocus}
             onKeyDown={handleKeyDown}
             onKeyUp={handleKeyUp}
+            aria-busy={loading}
             {...rest}
-            >{loading ? <Icon name="spinner" /> : children}</button>
+            >{loading ? null : children}</button>
     );
 };
 
@@ -111,7 +113,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-    className: 'pm-button mr1',
+    className: 'pm-button',
     role: 'button',
     type: 'button',
     disabled: false,
