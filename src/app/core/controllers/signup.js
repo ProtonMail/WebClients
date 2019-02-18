@@ -202,7 +202,6 @@ function SignupController(
 
             const value = (smsCodeVerification && 'sms') || (emailCodeVerification && 'email');
             $scope.account.confirmationType = value || '';
-            debugger;
         });
     };
 
