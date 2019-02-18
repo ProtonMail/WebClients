@@ -1,5 +1,3 @@
-
-// Conditions
 .codeVerificator-container:not(.codeVerificator-code-sent) .codeVerificator-code-section,
 .codeVerificator-container:not(.codeVerificator-sms-method) .codeVerificator-sms-input,
 .codeVerificator-container:not(.codeVerificator-sms-method) .intl-tel-input,
@@ -7,4 +5,10 @@
 .codeVerificator-container:not(.codeVerificator-email-method) .codeVerificator-email-instruction,
 .codeVerificator-container:not(.codeVerificator-sms-method) .codeVerificator-sms-instruction,
 .codeVerificator-container.codeVerificator-code-sent:not(.codeVerificator-new-code) .codeVerificator-contact-section,
-.codeVerificator-container.codeVerificator-new-code .codeVerificator-new-code-button { display: none }
+.codeVerificator-container.codeVerificator-code-sent:not(.codeVerificator-new-code) .codeVerificator-btn-send,
+.codeVerificator-container:not(.codeVerificator-code-sent) .codeVerificator-reset-code-button,
+.codeVerificator-container[data-method="sms"] .codeVerificator-reset-button-email,
+.codeVerificator-container[data-method="email"] .codeVerificator-reset-button-sms {
+  display: none;
+  pointer-events: none
+}

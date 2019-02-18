@@ -33,6 +33,14 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
 
             const $btnSetup = el.find(SELECTOR.BTN_COMPLETE_SETUP);
 
+            // ლ(ಠ益ಠლ because checkbox will rewrite the type... --force
+            scope.model.confirmationType &&
+                setTimeout(() => {
+                    scope.$applyAsync(() => {
+                        scope.verificator = scope.model.confirmationType;
+                    });
+                }, 500);
+
             signupModel.getOptionsVerification(offerType).then(({ email, captcha, sms, payment }) => {
                 scope.$applyAsync(() => {
                     scope.showEmail = email;
@@ -45,7 +53,11 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
 
             const onClickCompleteSetup = (e) => {
                 e.preventDefault();
-                dispatchHelper('create.account');
+                scope.$applyAsync(() => {
+                    // reset as we try to send again
+                    scope.model.confirmationType = '';
+                    dispatchHelper('create.account');
+                });
             };
 
             on('payments', (e, { type, data = {} }) => {
@@ -55,6 +67,10 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
             });
 
             on('humanVerification', (e, { type, data = {} }) => {
+                if (type === 'validate.submit.codeVerification') {
+                    return onClickCompleteSetup({ preventDefault() {} });
+                }
+
                 if (type !== 'captcha') {
                     return;
                 }

@@ -1,29 +1,70 @@
 <form class="codeVerificator-container pm_form" novalidate>
+
     <div class="pm_grid codeVerificator-contact-section">
         <div class="col-2-3">
             <input
                 class="codeVerificator-email-input"
                 type="email"
+                name="emailVerification"
+                id="emailVerification"
                 ng-model="contactInformation"
                 placeholder-translate-context="Placeholder"
                 placeholder-translate="Email verification">
-            <input class="codeVerificator-sms-input" type="tel" data-ng-intl-tel-input ng-model="contactInformation">
+            <input
+                class="codeVerificator-sms-input"
+                type="tel"
+                name="smsVerification"
+                id="smsVerification"
+                data-ng-intl-tel-input
+                ng-model="contactInformation">
         </div>
+
         <div class="col-1-3">
-            <button class="pm_button primary" translate-context="Action" translate>Send</button>
+            <button
+                class="pm_button primary codeVerificator-btn-send"
+                translate-context="Action"
+                translate>Send</button>
         </div>
     </div>
+
     <div class="pm_grid codeVerificator-code-section">
         <p class="alert alert-success">
             <strong translate-context="Info" translate>Verification code sent</strong><br />
             <span class="codeVerificator-email-instruction" translate-context="Info" translate>Please check your email and enter the code below:</span>
             <span class="codeVerificator-sms-instruction" translate-context="Info" translate>Please check your mobile and enter the code below:</span>
         </p>
-        <div class="col-1-2">
-            <input class="bigger" type="text" ng-model="code" placeholder-translate-context="Input for the code sent" placeholder-translate="Verification code">
+
+        <div class="col-2-3">
+            <input
+                type="text"
+                name="codeValue"
+                id="codeValue"
+                ng-model="code"
+                placeholder-translate-context="Input for the code sent"
+                placeholder-translate="Verification code">
         </div>
-        <div class="col-1-2">
-            <button data-action="sendNewCode" type="button" class="pm_button link codeVerificator-new-code-button" translate-context="Action" translate>Send new code</button>
+        <div class="col-1-3">
+            <button
+                data-action="sendNewCode"
+                type="button"
+                class="pm_button codeVerificator-new-code-button"
+                translate-context="Action"
+                translate>Send new code</button>
         </div>
     </div>
+
+    <button
+        data-action="resetCode"
+        type="button"
+        class="pm_button link codeVerificator-reset-code-button">
+            <span
+                class="codeVerificator-reset-button-email"
+                translate-context="Action"
+                translate>Change verification email</span>
+            <span
+                class="codeVerificator-reset-button-sms"
+                translate-context="Action"
+                translate>Change verification number</span>
+        </button>
+
 </form>

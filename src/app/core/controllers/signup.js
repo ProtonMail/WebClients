@@ -76,7 +76,12 @@ function SignupController(
         domain: $scope.domains[0], // Select the first domain
         emailCodeVerification: '', // Initialize verification code
         captcha_token: false, // Initialize captcha token
-        smsCodeVerification: '' // Initialize sms verification code
+        smsCodeVerification: '', // Initialize sms verification code,
+        login: {
+            confirmation: '',
+            password: ''
+        },
+        confirmationType: ''
     };
 
     authentication.logout(false, authentication.isLoggedIn());
@@ -190,8 +195,18 @@ function SignupController(
 
     const bindStep = (key, value) => $scope.$applyAsync(() => ($scope[key] = value));
 
+    const invalidCheckHuman = () => {
+        bindStep('step', 3);
+        $scope.$applyAsync(() => {
+            const { smsCodeVerification, emailCodeVerification } = $scope.account;
+
+            const value = (smsCodeVerification && 'sms') || (emailCodeVerification && 'email');
+            $scope.account.confirmationType = value || '';
+        });
+    };
+
     on('signup', (e, { type, data }) => {
-        type === 'chech.humanity' && bindStep('step', 3);
+        type === 'chech.humanity' && invalidCheckHuman();
         type === 'creating' && bindStep('step', 5);
         type === 'signup.error' && bindStep('signupError', data.value);
         type === 'goto.step' && bindStep('step', data.value);
