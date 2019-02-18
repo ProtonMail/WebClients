@@ -21,11 +21,11 @@ function formatBDay() {
         T102200-0800
         */
         const m = moment(dateAndOrTime);
-        
+
         if (m.isValid()) {
             return m.format('LL');
         }
-        
+
         return dateAndOrTime;
     };
 }
