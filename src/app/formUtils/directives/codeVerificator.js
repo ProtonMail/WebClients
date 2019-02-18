@@ -23,7 +23,7 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
         replace: true,
         scope: {
             code: '=',
-            codeRetry: '@'
+            codeRetry: '='
         },
         restrict: 'E',
         templateUrl: require('../../../templates/formUtils/codeVerificator.tpl.html'),
@@ -109,10 +109,14 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
             el[0].classList.add(`codeVerificator-${method}-method`);
             focusInput(`${method}Verification`);
 
-            if (scope.codeRetry === 'true') {
+            // Try only once, if you switch to another option then come back you will see the default component.
+            if (scope.codeRetry === method) {
                 el[0].classList.add(CODE_SENT_CLASS);
                 sendNewCode();
                 focusInput('codeValue');
+                scope.$applyAsync(() => {
+                    scope.codeRetry = '';
+                });
             }
 
             el.on('change', onChange);
