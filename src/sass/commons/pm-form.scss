@@ -323,6 +323,10 @@
         &.labelFix {
             height: auto;
         }
+
+        &.label-block {
+            display: block;
+        }
     }
 
     .multi-line-label {
