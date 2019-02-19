@@ -35,10 +35,22 @@
 .loginForm-actions-row > * {
     white-space: nowrap;
 }
+
+.loginForm-actions-forgot-reset {
+    align-items: baseline;
+    & > * {
+        white-space: normal;
+    }
+    & .pm_button.small {
+        height: auto;
+        line-height: 1.5;
+    }
+}
+
 .loginForm-actions-row .pm_button {
     max-width: 49%;
 }
-.loginForm-actions-row .pm_button:only-of-type {
+.loginForm-actions-row .pm_button:only-child {
     max-width: 100%;
 }
 
