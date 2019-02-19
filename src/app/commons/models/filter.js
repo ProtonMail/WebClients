@@ -31,7 +31,7 @@ function Filter($http, url, $injector) {
          * @return {Promise}
          */
         check(filter) {
-            return $http.post(requestUrl('check'), filter, {
+            return $http.put(requestUrl('check'), filter, {
                 transformRequest: transformRequestFilter
             });
         },
