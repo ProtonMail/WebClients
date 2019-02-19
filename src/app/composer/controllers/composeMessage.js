@@ -409,7 +409,7 @@ function ComposeMessageController(
         $scope.$applyAsync(() => {
             const size = $scope.messages.unshift(message);
 
-            postMessage(message, { encrypt: !message.isMIME() })
+            postMessage(message, { encrypt: false }) // Body already encrypted with prepareDraft
                 .then(() => {
                     dispatcher['composer.update']('loaded', { size, message });
                 })
