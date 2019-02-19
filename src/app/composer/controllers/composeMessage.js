@@ -112,7 +112,7 @@ function ComposeMessageController(
                     throw e;
                 })
             );
-        networkActivityTracker.track(promise);
+        networkActivityTracker.track(promise).then(eventManager.call);
     };
 
     /**
