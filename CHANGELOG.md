@@ -1,3 +1,15 @@
+# [3.15.18] - 2019-02-19
+## Fixed
+- Old contact email address was used in reset password warning modal
+- Importing a contact in vCard format incorrectly displayed the Birth date
+- Reset password modal didn't fit when language was set to French
+- Using "Enter" on the keyboard proceeded to the next screen without entering a password on signup
+- Add to contact group button has underlined when hovering over it on Firefox
+
+## Changed
+- Contacts auto saving behavior
+- Signup email code submission
+
 # [3.15.17] - 2019-02-13
 
 ## Fixed
