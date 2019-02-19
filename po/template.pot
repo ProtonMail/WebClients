@@ -492,6 +492,16 @@ msgctxt "Action"
 msgid "Change password"
 msgstr ""
 
+#: ./src/templates/formUtils/codeVerificator.tpl.html:60
+msgctxt "Action"
+msgid "Change verification email"
+msgstr ""
+
+#: ./src/templates/formUtils/codeVerificator.tpl.html:64
+msgctxt "Action"
+msgid "Change verification number"
+msgstr ""
+
 #: ./src/templates/contact/contactPhotoRow.tpl.html:27
 #: ./src/templates/directives/core/bugModalView.tpl.html:113
 msgctxt "Action"
@@ -617,7 +627,7 @@ msgctxt "Action"
 msgid "Common login problems"
 msgstr ""
 
-#: ./src/templates/user/humanVerification.tpl.html:82
+#: ./src/templates/user/humanVerification.tpl.html:92
 msgctxt "Action"
 msgid "Complete setup"
 msgstr ""
@@ -1113,7 +1123,7 @@ msgctxt "Action"
 msgid "Load edison theme"
 msgstr ""
 
-#: ./src/templates/contact/contactViewItem.tpl.html:53
+#: ./src/templates/contact/contactViewItem.tpl.html:56
 msgctxt "Action"
 msgid "Load image"
 msgstr ""
@@ -1623,7 +1633,7 @@ msgstr ""
 
 #: ./src/app/composer/directives/btnSendMessage.js:28
 #: ./src/app/composer/directives/btnSendMessage.js:31
-#: ./src/templates/formUtils/codeVerificator.tpl.html:13
+#: ./src/templates/formUtils/codeVerificator.tpl.html:23
 #: ./src/templates/modals/feedback.tpl.html:19
 #: ./src/templates/views/outside.reply.tpl.html:44
 msgctxt "Action"
@@ -1636,7 +1646,7 @@ msgctxt "Action"
 msgid "Send anyway"
 msgstr ""
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:26
+#: ./src/templates/formUtils/codeVerificator.tpl.html:47
 msgctxt "Action"
 msgid "Send new code"
 msgstr ""
@@ -5409,7 +5419,7 @@ msgctxt "Info"
 msgid "It can take up to a day for DNS changes to update."
 msgstr ""
 
-#: ./src/app/core/controllers/signup.js:109
+#: ./src/app/core/controllers/signup.js:114
 msgctxt "Info"
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
 msgstr ""
@@ -5699,12 +5709,12 @@ msgctxt "Info"
 msgid "Please add the following TXT record:"
 msgstr ""
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:19
+#: ./src/templates/formUtils/codeVerificator.tpl.html:33
 msgctxt "Info"
 msgid "Please check your email and enter the code below:"
 msgstr ""
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:20
+#: ./src/templates/formUtils/codeVerificator.tpl.html:34
 msgctxt "Info"
 msgid "Please check your mobile and enter the code below:"
 msgstr ""
@@ -6124,7 +6134,7 @@ msgstr ""
 #: ./src/templates/payment/donation.tpl.html:103
 #: ./src/templates/payment/paymentForm.tpl.html:66
 msgctxt "Info"
-msgid "To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions."
+msgid "To pay via Cash, please email us at <strong>contact@protonmail.com</strong> for instructions."
 msgstr ""
 
 #: ./src/templates/directives/contact/contactPgp.tpl.html:43
@@ -6182,7 +6192,7 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr ""
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:18
+#: ./src/templates/formUtils/codeVerificator.tpl.html:32
 msgctxt "Info"
 msgid "Verification code sent"
 msgstr ""
@@ -6694,7 +6704,7 @@ msgctxt "Information for the custom vpn modal"
 msgid "Need more connections?"
 msgstr ""
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:23
+#: ./src/templates/formUtils/codeVerificator.tpl.html:38
 msgctxt "Input for the code sent"
 msgid "Verification code"
 msgstr ""
@@ -8284,7 +8294,7 @@ msgctxt "Placeholder"
 msgid "Email address"
 msgstr ""
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:4
+#: ./src/templates/formUtils/codeVerificator.tpl.html:5
 msgctxt "Placeholder"
 msgid "Email verification"
 msgstr ""
@@ -8868,6 +8878,11 @@ msgstr ""
 #: ./src/app/outside/controllers/outside.js:27
 msgctxt "Success"
 msgid "Message sent"
+msgstr ""
+
+#: ./src/app/formUtils/directives/codeVerificator.js:9
+msgctxt "Success"
+msgid "New code sent to: {{email}}"
 msgstr ""
 
 #: ./src/app/settings/controllers/security.js:29
@@ -10513,7 +10528,7 @@ msgstr ""
 
 #: ./src/app/core/controllers/support.js:50
 msgctxt "Title"
-msgid "Resetting your password means you will no longer be able to read your old emails. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Click here to learn more</a>. If you have further questions, please email contact@protonmail.ch. Are you sure you want to reset your password?"
+msgid "Resetting your password means you will no longer be able to read your old emails. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Click here to learn more</a>. If you have further questions, please email contact@protonmail.com. Are you sure you want to reset your password?"
 msgstr ""
 
 #: ./src/app/organization/modals/activateOrganizationModal.js:21
