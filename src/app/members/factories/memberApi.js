@@ -110,7 +110,7 @@ function memberApi($http, url, srp) {
     const createKey = (memberID, params) => $http.post(requestUrl(memberID, 'keys'), params);
     const updateKey = (memberID, keyID, params) => $http.put(requestUrl(memberID, 'keys', keyID), params);
     const primaryKey = (memberID, keyID) => $http.put(requestUrl(memberID, 'keys', keyID, 'primary'));
-    const deleteKey = (memberID, keyID) => $http.delete(requestUrl(memberID, 'keys', keyID));
+    const deleteKey = (memberID, keyID) => $http.put(requestUrl(memberID, 'keys', keyID, 'delete'));
     const setupKey = (memberID, passParams, params) => {
         return srp.randomVerifier(passParams).then((passParams) => {
             return $http.post(requestUrl(memberID, 'keys', 'setup'), { ...params, ...passParams });
