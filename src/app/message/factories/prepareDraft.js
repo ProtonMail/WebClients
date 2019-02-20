@@ -63,7 +63,7 @@ function prepareDraft(addressesModel, keysModel, dispatchers, messageBuilder, me
 
         if (CACHE.messagePrepared) {
             // Make sure to return a messageModel Object
-            return messageModel({ Body: await getBody(), ...message }); // If the message.Body is defined, we have to keep it.
+            return messageModel({ ...message, Body: await getBody() }); // Always use the encrypted prepared body
         }
 
         return init();
