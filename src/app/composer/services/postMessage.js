@@ -95,14 +95,13 @@ function postMessage(
         }, []);
     }
 
-    const makeParams = async (message, autosaving) => {
+    const makeParams = async (message) => {
         const parameters = {
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'Unread', 'MIMEType', 'Flags')
         };
+
         parameters.Message.Subject = parameters.Message.Subject || '';
 
-        message.saving = true;
-        message.autosaving = autosaving;
         dispatchMessageAction(message);
 
         if (angular.isString(parameters.Message.ToList)) {
@@ -128,7 +127,7 @@ function postMessage(
             parameters.Message.Unread = 0;
         }
 
-        if (autosaving === false) {
+        if (!message.autosaving === false) {
             parameters.Message.Unread = 0;
         }
 
@@ -277,12 +276,13 @@ function postMessage(
 
     const save = async (message, { notification, autosaving, encrypt }) => {
         try {
-            const parameters = await makeParams(message, autosaving);
-            const [{ ID } = {}] = await composerRequestModel.chain(message);
+            message.saving = true;
+            message.autosaving = autosaving;
 
-            if (ID) {
-                message.ID = ID;
-                parameters.id = ID;
+            const parameters = await makeParams(message, autosaving);
+
+            if (message.ID) {
+                parameters.id = message.ID;
             }
 
             const actionType = message.ID ? STATUS.UPDATE : STATUS.CREATE;
@@ -306,19 +306,21 @@ function postMessage(
      * @param {Boolean} loader
      * @param {Boolean} encryptBody an already pre-encrypted body, to prevent re-encrypting the body (for de-duplication).
      */
-    const recordMessage = async (
+    const recordMessage = (
         message,
         { notification = false, autosaving = false, loader = true, encrypt = true } = {}
     ) => {
-        const promise = save(message, { notification, autosaving, encrypt });
+        const callback = () => {
+            const promise = save(message, { notification, autosaving, encrypt });
 
-        if (autosaving === false || loader) {
-            networkActivityTracker.track(promise);
-        }
+            if (!autosaving || loader) {
+                networkActivityTracker.track(promise);
+            }
 
-        composerRequestModel.save(message, promise);
+            return promise;
+        };
 
-        return promise;
+        return composerRequestModel.add(message, callback);
     };
 
     return recordMessage;
