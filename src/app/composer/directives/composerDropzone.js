@@ -37,7 +37,7 @@ function composerDropzone(
         [ATTACHMENT_MAX_SIZE](bytes) {
             const total = Math.round((10 * bytes) / BASE_SIZE / BASE_SIZE) / 10;
             return gettextCatalog.getString(
-                'Attachments are limited to {{number}} MBB. Total attached would be: {{total}} MB.',
+                'Attachments are limited to {{number}} MB. Total attached would be: {{total}} MB.',
                 _.extend({ total }, numberLimit),
                 'Composer'
             );
