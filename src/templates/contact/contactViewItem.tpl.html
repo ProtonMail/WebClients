@@ -63,7 +63,8 @@
         <img
             class="contactViewItem-value-img"
             ng-if="loadImage"
-            ng-src="{{::info.value}}"
+            ng-src="{{::formatImage(info.value)}}"
+            referrerPolicy="no-referrer"
             alt="avatar">
     </div>
 
