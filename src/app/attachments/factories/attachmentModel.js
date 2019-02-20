@@ -200,34 +200,35 @@ function attachmentModel(
         message.encryptingAttachment = true;
         dispatchMessageAction(message);
 
-        const promise = Promise.all(promises)
-            .then((upload) => upload.filter(Boolean)) // will be undefined for aborted request
-            .then((upload) => {
-                message.uploading = 0;
-                message.encryptingAttachment = false;
-                dispatchMessageAction(message);
+        const callback = () =>
+            Promise.all(promises)
+                .then((upload) => upload.filter(Boolean)) // will be undefined for aborted request
+                .then((upload) => {
+                    message.uploading = 0;
+                    message.encryptingAttachment = false;
+                    dispatchMessageAction(message);
 
-                // Create embedded and replace theses files from the upload list
-                const embeddedMap = addEmbedded(upload, message);
-                return _.map(upload, (config) => {
-                    return embeddedMap[config.attachment.ID] || config;
+                    // Create embedded and replace theses files from the upload list
+                    const embeddedMap = addEmbedded(upload, message);
+                    return _.map(upload, (config) => {
+                        return embeddedMap[config.attachment.ID] || config;
+                    });
+                })
+                .then((upload) => {
+                    message.addAttachments(upload.map(({ attachment }) => attachment));
+                    updateMapAttachments(upload);
+
+                    if (triggerEvent && upload.length) {
+                        dispatch('upload.success', { upload, message, messageID: message.ID });
+                    }
+                    return upload;
+                })
+                .catch((err) => {
+                    dispatchMessageAction(message);
+                    throw err;
                 });
-            })
-            .then((upload) => {
-                message.addAttachments(upload.map(({ attachment }) => attachment));
-                updateMapAttachments(upload);
 
-                if (triggerEvent && upload.length) {
-                    dispatch('upload.success', { upload, message, messageID: message.ID });
-                }
-                return upload;
-            })
-            .catch((err) => {
-                dispatchMessageAction(message);
-                throw err;
-            });
-
-        composerRequestModel.save(message, promise);
+        const promise = composerRequestModel.add(message, callback);
         networkActivityTracker.track(promise);
         return promise;
     }
