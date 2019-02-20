@@ -237,7 +237,7 @@ function LoginController(
                     authentication.receivedCredentials({
                         AccessToken: result.data.AccessToken,
                         RefreshToken: result.data.RefreshToken,
-                        UID: result.data.Uid,
+                        UID: result.data.UID,
                         ExpiresIn: result.data.ExpiresIn,
                         EventID: result.data.EventID
                     });

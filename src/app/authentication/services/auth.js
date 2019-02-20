@@ -214,7 +214,7 @@ function authentication(
                     ClientID: CONFIG.clientID,
                     GrantType: 'refresh_token',
                     RefreshToken: authResponse.RefreshToken,
-                    Uid: authResponse.UID,
+                    UID: authResponse.UID,
                     RedirectURI: 'https://protonmail.com',
                     State: this.randomString(24)
                 })
@@ -404,7 +404,7 @@ function authentication(
                 PrivateKey = '',
                 AccessToken = '',
                 RefreshToken = '',
-                Uid = '',
+                UID = '',
                 ExpiresIn = 0,
                 EventID = '',
                 KeySalt = ''
@@ -422,7 +422,7 @@ function authentication(
                             receivedCredentials({
                                 AccessToken: token,
                                 RefreshToken,
-                                UID: Uid,
+                                UID,
                                 ExpiresIn,
                                 EventID
                             });
