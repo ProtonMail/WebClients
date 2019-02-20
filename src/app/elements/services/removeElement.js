@@ -15,7 +15,7 @@ function removeElement(
         TITLE: gettextCatalog.getString('Delete', null, 'Title'),
         MESSAGE: gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info'),
         DRAFT_INFO: gettextCatalog.getString(
-            'A draft selected is open in a composer, this action will close the composer and delete the message.',
+            'The draft(s) selected is open in a composer, this action will close the composer and delete the message.',
             null,
             'Info'
         ),
