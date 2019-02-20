@@ -1,3 +1,5 @@
+import { REGEX_IMAGE_EXTENSION } from '../app/constants';
+
 /**
  * Convert base64 string to Image
  * @param  {String} base64str
@@ -130,3 +132,24 @@ export const isInlineEmbedded = (src = '') => src.startsWith('data:');
  * @returns {boolean}
  */
 export const isEmbedded = (src = '') => src.startsWith('cid:');
+
+/**
+ * Prepare image source to be display
+ * @param {String} value
+ * @return {String}
+ */
+export const formatImage = (value = '') => {
+    if (!value) {
+        return value;
+    }
+
+    if (REGEX_IMAGE_EXTENSION.test(value)) {
+        return value;
+    }
+
+    if (value.startsWith('data:')) {
+        return value;
+    }
+
+    return `data:image/png;base64,${value}`;
+};
