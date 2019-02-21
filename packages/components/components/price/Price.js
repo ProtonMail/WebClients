@@ -18,7 +18,7 @@ const Price = ({ children: amount = 0, currency = '' }) => {
 
 Price.propTypes = {
     currency: PropTypes.string,
-    children: PropTypes.string.isRequired
+    children: PropTypes.number.isRequired
 };
 
 export default Price;

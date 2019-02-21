@@ -7,6 +7,7 @@ export { default as PrimaryButton } from './components/button/PrimaryButton';
 export { default as ButtonGroup } from './components/button/ButtonGroup';
 export { default as Group } from './components/button/Group';
 export { default as Copy } from './components/button/Copy';
+export { default as Block } from './components/container/Block';
 export { default as Bordered } from './components/container/Bordered';
 export { default as Dropdown } from './components/dropdown/Dropdown';
 export { default as DropdownMenu } from './components/dropdown/DropdownMenu';

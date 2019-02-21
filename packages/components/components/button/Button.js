@@ -2,9 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
 
-import Icon from '../icon/Icon';
-import { getClasses } from '../../helpers/component';
-
 const Button = (props) => {
     const handleClick = (event) => {
         const { onClick } = props;
@@ -79,7 +76,7 @@ const Button = (props) => {
         <button
             role={role}
             disabled={loading ? true : disabled}
-            className={getClasses('mr1', className)}
+            className={className}
             type={type}
             tabIndex={disabled ? '-1' : tabIndex}
             title={title}
@@ -113,7 +110,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-    className: 'pm-button',
+    className: 'pm-button mr1',
     role: 'button',
     type: 'button',
     disabled: false,
