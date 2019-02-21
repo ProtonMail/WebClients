@@ -12,6 +12,8 @@ export { default as Dropdown } from './components/dropdown/Dropdown';
 export { default as DropdownMenu } from './components/dropdown/DropdownMenu';
 export { default as Icon } from './components/icon/Icon';
 export { default as Input } from './components/input/Input';
+export { default as Checkbox } from './components/input/Checkbox';
+export { default as Radio } from './components/input/Radio';
 export { default as Search } from './components/input/Search';
 export { default as TextArea } from './components/input/TextArea';
 export { default as Label } from './components/label/Label';
