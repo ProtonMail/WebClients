@@ -70,6 +70,10 @@ function composerContainer(authentication, composerRender, composerLoader, dispa
                         openClose(type, data);
                         break;
 
+                    case 'refresh':
+                        renderList(data);
+                        break;
+
                     case 'editor.loaded':
                     case 'editor.focus': {
                         const { message, editor, isMessage } = data;
