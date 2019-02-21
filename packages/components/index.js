@@ -31,6 +31,7 @@ export { default as Pagination } from './components/pagination/Pagination';
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
 export { default as Paragraph } from './components/paragraph/Paragraph';
+export { default as Price } from './components/price/Price';
 export { default as Progress } from './components/progress/Progress';
 export { default as Select } from './components/select/Select';
 export { default as Sidebar } from './components/sidebar/Sidebar';
