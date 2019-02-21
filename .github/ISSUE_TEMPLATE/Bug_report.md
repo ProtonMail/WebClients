@@ -24,6 +24,8 @@ If applicable, add screenshots to help explain your problem.
  - OS: [e.g. iOS]
  - Browser [e.g. chrome, safari]
  - Version [e.g. 22]
+ - Plugins [e.g. Grammarly etc.]
+ - Resolution [e.g. 1440x900]
  - URL [e.g. mail.protonmail.com, dev.protonmail.com, alpha.protonmail.red]
 
 **Smartphone (please complete the following information):**
