@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { t } from 'ttag';
 
-import { textToClipboard } from '../../helpers/browser';
+import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import Button from './Button';
 import Icon from '../icon/Icon';
 import { getClasses } from '../../helpers/component';

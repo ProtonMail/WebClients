@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { fromBitmap } from '../helpers/object';
+import { fromBitmap } from 'proton-shared/lib/helpers/object';
 
 const useNews = (initialNews, keys = []) => {
     const [news, set] = useState(fromBitmap(initialNews, keys));

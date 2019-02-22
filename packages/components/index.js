@@ -2,7 +2,6 @@ export { default as Alert } from './components/alert/Alert';
 export { default as Badge } from './components/badge/Badge';
 export { default as Block } from './components/container/Block';
 export { default as Bordered } from './components/container/Bordered';
-export { default as browserHelper } from './helpers/browser';
 export { default as Button } from './components/button/Button';
 export { default as ButtonGroup } from './components/button/ButtonGroup';
 export { default as Checkbox } from './components/input/Checkbox';
