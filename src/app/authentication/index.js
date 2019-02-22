@@ -10,6 +10,7 @@ import loginPasswordInput from './directives/loginPasswordInput';
 import auth from './services/auth';
 import authApi from './services/authApi';
 import handle401 from './services/handle401';
+import handle429 from './services/handle429';
 import unlockUser from './services/unlockUser';
 import handle9001 from './services/handle9001';
 import handle10003 from './services/handle10003';
@@ -43,6 +44,7 @@ export default angular
     .factory('authentication', auth)
     .factory('authApi', authApi)
     .factory('handle401', handle401)
+    .factory('handle429', handle429)
     .factory('unlockUser', unlockUser)
     .factory('handle9001', handle9001)
     .factory('handle10003', handle10003)

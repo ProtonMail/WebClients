@@ -147,6 +147,11 @@ function httpInterceptor($q, $injector, AppModel, networkUtils) {
             return unlockUser().then(() => $http(config));
         }
 
+        if (status === 429) {
+            const handle429 = $injector.get('handle429');
+            return handle429(error);
+        }
+
         if (status === 504) {
             STATE.notification = notifyError(error, STATE.NOTIFS.timeout);
             return AppModel.set('requestTimeout', true);
