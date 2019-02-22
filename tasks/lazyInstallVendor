@@ -22,13 +22,13 @@ function testVendor {
         npm i karma \
         karma-cli \
         karma-webpack \
-        karma-jasmine@1.1.2  \
+        karma-jasmine@2.0.1  \
         karma-coverage \
         karma-chrome-launcher \
         karma-babel-preprocessor@next \
         karma-coverage-istanbul-reporter \
         karma-junit-reporter \
-        jasmine-core@2.8 \
+        jasmine-core@3.3 \
         puppeteer@1.11 \
         --no-save;
     fi

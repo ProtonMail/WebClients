@@ -78,6 +78,9 @@ export const INVOICE_STATE = {
     BILLED: 3
 };
 
+export const MAX_RETRY_AFTER_TIMEOUT = 10; // seconds
+export const MAX_RETRY_AFTER_ATTEMPT = 5; // how many times to try the same request
+
 export const TIMEOUT_PRELOAD_MESSAGE = 500; // milliseconds
 export const UPLOAD_GRADIENT_DARK = '147, 145, 209'; // dark rgb color for upload progress bar
 export const UPLOAD_GRADIENT_LIGHT = '255, 255, 255'; // light rgb color for upload progress bar

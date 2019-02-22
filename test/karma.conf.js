@@ -7,6 +7,14 @@ module.exports = (config) => {
         basePath: '',
         frameworks: ['jasmine'],
 
+        client: {
+            jasmine: {
+                random: false,
+                failFast: true,
+                timeoutInterval: 5000
+            }
+        },
+
         // list of files / patterns to load in the browser
         files: [
             'specs/index.js'
