@@ -5,7 +5,6 @@ export { default as Bordered } from './components/container/Bordered';
 export { default as Button } from './components/button/Button';
 export { default as ButtonGroup } from './components/button/ButtonGroup';
 export { default as Checkbox } from './components/input/Checkbox';
-export { default as componentHelper } from './helpers/component';
 export { default as ConfirmModal } from './components/modal/Confirm';
 export { default as ContentModal } from './components/modal/Content';
 export { default as Copy } from './components/button/Copy';
