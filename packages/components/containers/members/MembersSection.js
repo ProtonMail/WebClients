@@ -3,7 +3,7 @@ import { c, jt } from 'ttag';
 import { Table, TableHeader, SubTitle, Block, PrimaryButton, Alert, LearnMore, Search, useModal, TableBody, TableRow, useSearch } from 'react-components';
 import { Link } from 'react-router-dom';
 import ContextApi from 'proton-shared/lib/context/api';
-import { queryMembers } from 'proton-shared/lib/api/members';
+import { queryMembers, queryAddresses } from 'proton-shared/lib/api/members';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { USER_ROLES } from 'proton-shared/lib/constants';
 
@@ -37,9 +37,20 @@ const MembersSection = () => {
         });
     };
 
+    const fetchAddresses = async (member) => {
+        const { Addresses = [] } = await api(queryAddresses(member.ID));
+
+        return {
+            ...member,
+            addresses: Addresses // TODO format keys
+        };
+    };
+
     const fetchMembers = async () => {
         const { Members } = await api(queryMembers());
-        setMembers(search(Members));
+        const m = await Promise.all(Members.map(fetchAddresses));
+
+        setMembers(search(m));
     };
 
     useEffect(() => {
@@ -70,13 +81,14 @@ const MembersSection = () => {
                 ]} />
                 <TableBody>
                     {members.map((member) => {
-                        return <TableRow key={member.ID} cells={[
+                        const key = member.ID;
+                        return <TableRow key={key} cells={[
                             member.Name,
-                            'TODO',
+                            <MemberAddresses key={key} member={member} />,
                             ROLES[member.Subscriber ? SUPER_ADMIN_ROLE : member.Role],
                             member.Private,
                             `${member.UsedSpace} / ${member.MaxSpace}`,
-                            <MemberActions key={member.ID} member={member} />
+                            <MemberActions key={key} member={member} />
                         ]} />;
                     })}
                 </TableBody>

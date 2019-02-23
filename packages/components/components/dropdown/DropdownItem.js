@@ -30,6 +30,15 @@ const DropdownItem = ({ type, link, text, iconName, className, onClick }) => {
         );
     }
 
+    if (type === 'text') {
+        return (
+            <li className={getClasses('DropdownItem', className)}>
+                {iconName && <Icon name={iconName} />}
+                <DropdownText>{text}</DropdownText>
+            </li>
+        );
+    }
+
     return null;
 };
 
@@ -43,7 +52,7 @@ DropdownItem.propTypes = {
 };
 
 DropdownItem.defaultProps = {
-    type: 'link',
+    type: 'text',
     className: ''
 };
 
