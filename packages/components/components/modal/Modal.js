@@ -5,8 +5,9 @@ import { t } from 'ttag';
 import ModalWithPortal from './ModalWithPortal';
 
 import { getClasses } from '../../helpers/component';
+import Header from './Header';
 
-const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnOuterClick }) => {
+const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnOuterClick, title }) => {
     if (!show) {
         return null;
     }
@@ -24,7 +25,10 @@ const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnO
     return (
         <ModalWithPortal>
             <div className="pm-modalOverlay" title={t`Close modal`} onClick={handleClickOutside}>
-                <dialog className={getClasses('pm-modal', modalClassName)} open aria-labelledby={modalTitleID}>{children}</dialog>
+                <dialog className={getClasses('pm-modal', modalClassName)} open aria-labelledby={modalTitleID}>
+                    {title ? <Header onClose={onClose}>{title}</Header> : null}
+                    {children}
+                </dialog>
             </div>
         </ModalWithPortal>
     );
@@ -36,7 +40,8 @@ Modal.propTypes = {
     onClose: PropTypes.func.isRequired,
     modalClassName: PropTypes.string,
     children: PropTypes.node.isRequired,
-    modalTitleID: PropTypes.string.isRequired
+    modalTitleID: PropTypes.string.isRequired,
+    title: PropTypes.string
 };
 
 Modal.defaultProps = {

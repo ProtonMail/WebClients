@@ -54,3 +54,4 @@ export { default as useLoader } from './components/loader/useLoader';
 export { default as useModal } from './components/modal/useModal';
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
+export { default as useSearch } from './components/input/useSearch';
