@@ -448,8 +448,8 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 }
 
 /* Active items in the more list */
-.squireToolbar-container.dir-ltr .squireToolbar-select-item[data-squire-actions="setTextDirectionLTR"],
-.squireToolbar-container.dir-rtl .squireToolbar-select-item[data-squire-actions="setTextDirectionRTL"],
+.squireToolbar-container[data-text-direction="ltr"] .squireToolbar-select-item[data-squire-actions="setTextDirectionLTR"],
+.squireToolbar-container[data-text-direction="rtl"] .squireToolbar-select-item[data-squire-actions="setTextDirectionRTL"],
 .squire-container[data-editor-mode="text/plain"] .squireToolbar-select-item[data-value="text/plain"],
 .squire-container[data-editor-mode="text/html"] .squireToolbar-select-item[data-value="text/html"] {
     pointer-events: none;

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+
 import { hasTouch } from '../../../helpers/browser';
 
 /* @ngInject */
