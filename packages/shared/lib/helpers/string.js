@@ -13,3 +13,5 @@ export const getRandomString = (length) => {
 
     return result;
 };
+
+export const normalize = (value = '') => value.toLowerCase();
