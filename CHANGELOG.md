@@ -3,10 +3,11 @@
 ## Fixed
 - Invalid message body error was shown when trying to reply to an email (encrypted externally)
 
-##Changed
+## Changed
 - Avoid multiple saving for draft
 
 # [3.15.18] - 2019-02-19
+
 ## Fixed
 - Old contact email address was used in reset password warning modal
 - Importing a contact in vCard format incorrectly displayed the Birth date
