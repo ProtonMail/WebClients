@@ -1,10 +1,11 @@
 import _ from 'lodash';
 import { flow, filter, reduce } from 'lodash/fp';
+
 import { DEFAULT_SQUIRE_VALUE } from '../../constants';
 import { findParent } from '../../../helpers/domHelper';
 
 /* @ngInject */
-function squireToolbar(editorState, editorModel) {
+function squireToolbar(editorState, editorModel, dispatchers) {
     const { HEADER_CLASS } = DEFAULT_SQUIRE_VALUE;
 
     const CLASSNAME = {
@@ -24,12 +25,9 @@ function squireToolbar(editorState, editorModel) {
      * @param str
      * @returns {string}
      */
-    const getDirectionClass = (str = '') => {
-        const matches = REGEX_DIRECTION.exec(str);
-        if (matches && matches.length >= 2) {
-            return matches[1].replace('=', '-');
-        }
-        return 'dir-ltr';
+    const getDirection = (str = '') => {
+        const [, , direction = 'ltr'] = REGEX_DIRECTION.exec(str) || [];
+        return direction;
     };
     /**
      * Strip away the direction attribute from the squire block.
@@ -49,13 +47,10 @@ function squireToolbar(editorState, editorModel) {
              * in the chain below will not work.
              */
             const p = stripDirectionAttribute(path);
-
             if (p !== '(selection)') {
                 const subRowClass = getDefaultClass(node, 'SUB_ROW');
                 const popoverImage = getDefaultClass(node, 'POPOVER_IMAGE');
                 const popoverLink = getDefaultClass(node, 'POPOVER_LINK');
-
-                const directionClass = getDirectionClass(path);
 
                 /**
                  * Find and filter selections to toogle the current action (toolbar)
@@ -76,16 +71,11 @@ function squireToolbar(editorState, editorModel) {
                     .toLowerCase()
                     .trim();
 
-                node.className = [
-                    CLASSNAME.CONTAINER,
-                    classNames,
-                    subRowClass,
-                    popoverImage,
-                    popoverLink,
-                    directionClass
-                ]
+                node.className = [CLASSNAME.CONTAINER, classNames, subRowClass, popoverImage, popoverLink]
                     .filter(Boolean)
                     .join(' ');
+
+                node.setAttribute('data-text-direction', getDirection(path));
             }
         }, 100);
 
@@ -95,6 +85,7 @@ function squireToolbar(editorState, editorModel) {
         link(scope, $el) {
             const ID = scope.message.ID;
             const el = $el[0];
+            const { on, unsubscribe } = dispatchers();
 
             const hideRow = () => el.classList.remove(CLASSNAME.SUB_ROW);
             const closeAllPopups = () => editorState.set(ID, { popover: undefined });
@@ -137,6 +128,16 @@ function squireToolbar(editorState, editorModel) {
                 }
             };
 
+            on('squire.editor', (e, { type, data = {} }) => {
+                if (type === 'squire.native.action') {
+                    const { action = '' } = data;
+                    const [type = '', mode] = action.match(/setTextDirection(.+){1,3}/) || [];
+                    if (type.startsWith('setTextDirection')) {
+                        el.setAttribute('data-text-direction', mode.toLowerCase());
+                    }
+                }
+            });
+
             const { editor } = editorModel.find(scope.message);
             const onPathChange = onPathChangeCb(el, editor);
             const rowButton = el.querySelector('.squireToolbar-action-options');
@@ -151,6 +152,7 @@ function squireToolbar(editorState, editorModel) {
             document.addEventListener('click', clickAnywhereClose);
 
             scope.$on('$destroy', () => {
+                unsubscribe();
                 editorState.off(ID, onStateChange);
                 editor.removeEventListener('pathChange', onPathChange);
                 rowButton.removeEventListener('mousedown', onRowClick);
