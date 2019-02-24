@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { t } from 'ttag';
-import { Alert, SubTitle, Group, ButtonGroup, Block, Button, Table, TableHeader, TableBody, Pagination, usePaginationAsync, TableRow, Time, LearnMore, useModal } from 'react-components';
+import { Alert, SubTitle, Group, ButtonGroup, Block, Button, Table, TableHeader, TableBody, Pagination, usePaginationAsync, TableRow, Time, LearnMore, useModal, useLoading } from 'react-components';
 import ContextApi from 'proton-shared/lib/context/api';
 import { queryInvoices } from 'proton-shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER } from 'proton-shared/lib/constants';
@@ -15,6 +15,7 @@ const InvoicesSection = () => {
     const { api } = useContext(ContextApi);
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
+    const {loading, loaded} = useLoading();
     const [table, setTable] = useState({ invoices: [], total: 0 });
     const { isOpen, open, close } = useModal();
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
@@ -23,6 +24,7 @@ const InvoicesSection = () => {
     const fetchInvoices = async () => {
         const { Total: total, Invoices: invoices } = await api(queryInvoices({ Page: page, PageSize: ELEMENTS_PER_PAGE, Owner: owner }));
         setTable({ invoices, total });
+        loaded();
     };
 
     useEffect(() => {
@@ -61,7 +63,7 @@ const InvoicesSection = () => {
                     t`Date`,
                     t`Action`
                 ]} />
-                <TableBody>
+                <TableBody loading={loading}>
                     {table.invoices.map((invoice, index) => {
                         const key = index.toString();
                         return <TableRow key={key} cells={[

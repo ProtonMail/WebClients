@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { c } from 'ttag';
-import { SubTitle, PrimaryButton, Alert, Block, Table, TableHeader, TableBody, LearnMore } from 'react-components';
+import { SubTitle, PrimaryButton, Alert, Block, Table, TableHeader, TableBody, LearnMore, useLoading } from 'react-components';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 import ContextApi from 'proton-shared/lib/context/api';
 
@@ -9,11 +9,13 @@ import PaymentMethodState from './PaymentMethodState';
 
 const PaymentMethodsSection = () => {
     const { api } = useContext(ContextApi);
+    const {loading, loaded} = useLoading();
     const handleAddPaymentMethod = () => {};
     const [methods, setMethods] = useState([]);
     const fetchMethods = async () => {
         const { PaymentMethods } = await api(queryPaymentMethods());
         setMethods(PaymentMethods);
+        loaded();
     };
     const TYPES = {
         card: c('Label in payment methods table').t`Credit card`
@@ -42,7 +44,7 @@ const PaymentMethodsSection = () => {
                     c('Title for payment methods table').t`Status`,
                     c('Title for payment methods table').t`Actions`
                 ]} />
-                <TableBody>
+                <TableBody loading={loading}>
                     {methods.map((method, index) => {
                         return <TableRow key={method.ID} cells={[
                             `${TYPES[method.Type]} (${method.Details.Brand})`,

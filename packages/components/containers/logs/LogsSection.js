@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { t } from 'ttag';
 import dayjs from 'dayjs';
-import { Button, ButtonGroup, Group, Table, TableHeader, TableBody, TableRow, Badge, Time, Alert, Block, Pagination, usePagination, SubTitle } from 'react-components';
+import { Button, ButtonGroup, Group, Table, TableHeader, TableBody, TableRow, Badge, Time, Alert, Block, Pagination, usePagination, SubTitle, useLoading } from 'react-components';
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
+import { updateLogAuth } from 'proton-shared/lib/api/settings';
 import ContextApi from 'proton-shared/lib/context/api';
 import { ELEMENTS_PER_PAGE } from 'proton-shared/lib/constants';
 
@@ -27,6 +28,7 @@ const BADGE_TYPES = {
 const LogsSection = () => {
     const { api } = useContext(ContextApi);
     const [logs, setLogs] = useState([]);
+    const {loading, loaded} = useLoading();
     const [logAuth, setLogAuth] = useState(DISABLE);
     const {
         page,
@@ -41,6 +43,7 @@ const LogsSection = () => {
     const fetchLogs = async () => {
         const { Logs } = await api(queryLogs());
         setLogs(Logs);
+        loaded();
     };
 
     const handleWipe = async () => {
@@ -63,13 +66,13 @@ const LogsSection = () => {
     };
 
     const handleLogAuth = (LogAuth) => async () => {
-        // await
-        // setLogAuth();
+        await api(updateLogAuth(LogAuth));
+        setLogAuth(LogAuth);
     };
 
     useEffect(() => {
         fetchLogs();
-    }, []);
+    }, [logAuth]);
 
     return (
         <>
@@ -98,7 +101,7 @@ const LogsSection = () => {
                     'IP',
                     t`Time`
                 ]} />
-                <TableBody>
+                <TableBody loading={loading}>
                     {list.map(({ Time: time, Event, IP }, index) => {
                         const key = index.toString();
 

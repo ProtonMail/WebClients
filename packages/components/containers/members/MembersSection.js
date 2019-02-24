@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { c, jt } from 'ttag';
-import { Table, TableHeader, SubTitle, Block, PrimaryButton, Alert, LearnMore, Search, useModal, TableBody, TableRow, useSearch } from 'react-components';
+import { Table, TableHeader, SubTitle, Block, PrimaryButton, Alert, LearnMore, Search, useModal, TableBody, TableRow, useSearch, useLoading } from 'react-components';
 import { Link } from 'react-router-dom';
 import ContextApi from 'proton-shared/lib/context/api';
 import { queryMembers, queryAddresses } from 'proton-shared/lib/api/members';
@@ -13,6 +13,7 @@ import MemberActions from './MemberActions';
 const MembersSection = () => {
     const { api } = useContext(ContextApi);
     const { keywords, set: setKeywords } = useSearch();
+    const {loading, loaded} = useLoading();
     const [members, setMembers] = useState([]);
     const { isOpen: showNewMemberModal, open: openNewMemberModal, close: closeNewMemberModal } = useModal();
     const handleAddMember = () => openNewMemberModal();
@@ -51,6 +52,7 @@ const MembersSection = () => {
         const m = await Promise.all(Members.map(fetchAddresses));
 
         setMembers(search(m));
+        loaded();
     };
 
     useEffect(() => {
@@ -79,7 +81,7 @@ const MembersSection = () => {
                     c('Title header for members table').t`Storage`,
                     c('Title header for members table').t`Actions`
                 ]} />
-                <TableBody>
+                <TableBody loading={loading}>
                     {members.map((member) => {
                         const key = member.ID;
                         return <TableRow key={key} cells={[

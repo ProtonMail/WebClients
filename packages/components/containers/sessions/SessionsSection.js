@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { t } from 'ttag';
-import { Badge, Button, SmallButton, Table, TableHeader, TableBody, TableRow, Time, LearnMore, Alert, Block, SubTitle, ConfirmModal, useModal } from 'react-components';
+import { Badge, Button, SmallButton, Table, TableHeader, TableBody, TableRow, Time, LearnMore, Alert, Block, SubTitle, ConfirmModal, useModal, useLoading } from 'react-components';
 import ContextApi from 'proton-shared/lib/context/api';
 import { querySessions, revokeOtherSessions, revokeSession } from 'proton-shared/lib/api/auth';
 
@@ -20,12 +20,14 @@ const CLIENTS = {
 
 const SessionsSection = () => {
     const { api, authenticationStore } = useContext(ContextApi);
+    const { loading, loaded } = useLoading();
     const [sessions, setSessions] = useState([]);
     const { isOpen: showConfirmRevokeAll, open: openConfirmRevokeAll, close: closeConfirmRevokeAll } = useModal();
     const currentUID = authenticationStore.getUID();
     const fetchSessions = async () => {
         const { Sessions } = await api(querySessions());
         setSessions(Sessions.reverse()); // Most recent, first
+        loaded();
     };
 
     const handleRevoke = (UID) => async () => {
@@ -54,7 +56,7 @@ const SessionsSection = () => {
                     t`Time`,
                     t`Action`,
                 ]} />
-                <TableBody>
+                <TableBody loading={loading}>
                     {sessions.map(({ ClientID, CreateTime, UID }, index) => <TableRow key={index.toString()} cells={[
                         CLIENTS[ClientID],
                         <Time key={index.toString()}>{CreateTime}</Time>,
