@@ -53,6 +53,7 @@ export { default as Title } from './components/title/Title';
 export { default as Toggle } from './components/toggle/Toggle';
 export { default as Tooltip } from './components/tooltip/Tooltip';
 export { default as useLoader } from './components/loader/useLoader';
+export { default as useLoading } from './components/loader/useLoading';
 export { default as useModal } from './components/modal/useModal';
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
