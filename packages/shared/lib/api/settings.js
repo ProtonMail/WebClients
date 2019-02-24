@@ -29,3 +29,9 @@ export const updateInvoiceText = (InvoiceText) => ({
     method: 'put',
     data: { InvoiceText }
 });
+
+export const updateLogAuth = (LogAuth) => ({
+    url: 'settings/logauth',
+    method: 'put',
+    data: { LogAuth }
+});
