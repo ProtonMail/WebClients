@@ -31,11 +31,11 @@ const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm })
     return (
         <Modal show={show} className="confirm-modal" onClose={onClose}>
             <Header onClose={onClose}>{title}</Header>
-            <Content>
+            <Content onSubmit={onConfirm} onReset={onClose}>
                 {children}
-                <Footer>
-                    <Button onClick={onClose}>{cancel}</Button>
-                    <PrimaryButton onClick={onConfirm}>{confirm}</PrimaryButton>
+                <Footer className="flex flex-spacebetween">
+                    <Button type="reset">{cancel}</Button>
+                    <PrimaryButton type="submit">{confirm}</PrimaryButton>
                 </Footer>
             </Content>
         </Modal>
