@@ -1,3 +1,4 @@
+export { default as AddressesSection } from './containers/addresses/AddressesSection';
 export { default as Alert } from './components/alert/Alert';
 export { default as Badge } from './components/badge/Badge';
 export { default as Block } from './components/container/Block';
@@ -22,6 +23,7 @@ export { default as LargeButton } from './components/button/LargeButton';
 export { default as LearnMore } from './components/link/LearnMore';
 export { default as Loader } from './components/loader/Loader';
 export { default as LogsSection } from './containers/logs/LogsSection';
+export { default as MembersSection } from './containers/members/MembersSection';
 export { default as Modal } from './components/modal/Modal';
 export { default as NewsSection } from './containers/news/NewsSection';
 export { default as Pagination } from './components/pagination/Pagination';

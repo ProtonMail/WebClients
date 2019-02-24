@@ -42,7 +42,7 @@ const MembersSection = () => {
 
         return {
             ...member,
-            addresses: Addresses // TODO format keys
+            addresses: Addresses
         };
     };
 
@@ -93,7 +93,7 @@ const MembersSection = () => {
                     })}
                 </TableBody>
             </Table>
-            <Alert>{jt`You cad add and manage addresses for the user in your ${<Link to="addresses">{c('Link').t`Address Settings`}</Link>}`}</Alert>
+            <Alert>{jt`You cad add and manage addresses for the user in your ${<Link to="/settings/addresses">{c('Link').t`Address Settings`}</Link>}`}</Alert>
         </>
     );
 };
