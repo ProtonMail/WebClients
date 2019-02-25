@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
+import { getClasses } from '../../helpers/component';
 
 const TextArea = (props) => {
     const handleKeyDown = (event) => {
@@ -33,7 +34,7 @@ const TextArea = (props) => {
 
     return (
         <textarea
-            className={className}
+            className={getClasses('pm-field w100', className)}
             disabled={disabled}
             id={id}
             name={name}
@@ -65,7 +66,7 @@ TextArea.propTypes = {
 };
 
 TextArea.defaultProps = {
-    rows: 1
+    rows: 5
 };
 
 export default TextArea;
