@@ -5,7 +5,7 @@ import Button from './Button';
 import { getClasses } from '../../helpers/component';
 
 const PrimaryButton = ({ children, className, ...rest }) => {
-    return (<Button className={getClasses('pm-button-primary', className)} {...rest}>{children}</Button>);
+    return (<Button className={getClasses('pm-button-primary mr1', className)} {...rest}>{children}</Button>);
 };
 
 PrimaryButton.propTypes = {
