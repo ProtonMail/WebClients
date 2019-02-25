@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { t } from 'ttag';
-import { Badge, Button, SmallButton, Table, TableHeader, TableBody, TableRow, Time, LearnMore, Alert, Block, SubTitle, ConfirmModal, useModal, useLoading } from 'react-components';
+import { Button, Table, TableHeader, TableBody, TableRow, Time, LearnMore, Pagination, Alert, Block, SubTitle, ConfirmModal, useModal, useLoading, usePagination } from 'react-components';
 import ContextApi from 'proton-shared/lib/context/api';
 import { querySessions, revokeOtherSessions, revokeSession } from 'proton-shared/lib/api/auth';
+import { ELEMENTS_PER_PAGE } from 'proton-shared/lib/constants';
+
+import SessionAction from './SessionAction';
 
 const CLIENTS = {
     Web: t`ProtonMail for web`,
@@ -21,12 +24,13 @@ const CLIENTS = {
 const SessionsSection = () => {
     const { api, authenticationStore } = useContext(ContextApi);
     const { loading, loaded } = useLoading();
-    const [sessions, setSessions] = useState([]);
+    const [table, setTable] = useState({ sessions: [], total: 0 });
+    const { page, list, onNext, onPrevious, onSelect } = usePagination(table.sessions);
     const { isOpen: showConfirmRevokeAll, open: openConfirmRevokeAll, close: closeConfirmRevokeAll } = useModal();
     const currentUID = authenticationStore.getUID();
     const fetchSessions = async () => {
         const { Sessions } = await api(querySessions());
-        setSessions(Sessions.reverse()); // Most recent, first
+        setTable({ sessions: Sessions.reverse(), total: Sessions.length }); // Most recent, first
         loaded();
     };
 
@@ -42,13 +46,22 @@ const SessionsSection = () => {
     return (
         <>
             <SubTitle>{t`Sessions`}</SubTitle>
-            <Alert>{t`Unless you explicitly logout or change your password, sessions cans last for up to 6 months. Sessions expire after 2 weeks of inactivity.`}</Alert>
-            <Block>
-                <Button onClick={openConfirmRevokeAll}>{t`Revoke all other sessions`}</Button>
-                <ConfirmModal show={showConfirmRevokeAll} onClose={closeConfirmRevokeAll} onConfirm={handleRevoke}>
-                    <Alert>{t`Do you want to revoke all other sessions than the current one?`}</Alert>
-                </ConfirmModal>
-                <LearnMore url="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/" />
+            <Alert>{t`Unless you explicitly logout or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity.`}</Alert>
+            <Block className="flex flex-spacebetween">
+                <div>
+                    <Button onClick={openConfirmRevokeAll}>{t`Revoke all other sessions`}</Button>
+                    <ConfirmModal show={showConfirmRevokeAll} onClose={closeConfirmRevokeAll} onConfirm={handleRevoke}>
+                        <Alert>{t`Do you want to revoke all other sessions than the current one?`}</Alert>
+                    </ConfirmModal>
+                    <LearnMore url="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/" />
+                </div>
+                <Pagination
+                    page={page}
+                    total={table.total}
+                    limit={ELEMENTS_PER_PAGE}
+                    onNext={onNext}
+                    onPrevious={onPrevious}
+                    onSelect={onSelect} />
             </Block>
             <Table>
                 <TableHeader cells={[
@@ -57,11 +70,14 @@ const SessionsSection = () => {
                     t`Action`,
                 ]} />
                 <TableBody loading={loading}>
-                    {sessions.map(({ ClientID, CreateTime, UID }, index) => <TableRow key={index.toString()} cells={[
-                        CLIENTS[ClientID],
-                        <Time key={index.toString()}>{CreateTime}</Time>,
-                        currentUID === UID ? <Badge>{t`Current session`}</Badge> : <SmallButton key={index.toString()} onClick={handleRevoke(UID)}>{t`Revoke`}</SmallButton>
-                    ]} />)}
+                    {list.map((session) => {
+                        const key = session.UID;
+                        return <TableRow key={key} cells={[
+                            CLIENTS[session.ClientID],
+                            <Time format="LLL" key={key}>{session.CreateTime}</Time>,
+                            <SessionAction key={key} session={session} currentUID={currentUID} onRevoke={handleRevoke(session.UID)} />
+                        ]} />;
+                    })}
                 </TableBody>
             </Table>
         </>
