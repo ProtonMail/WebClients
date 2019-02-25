@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, HeaderModal, ContentModal, FooterModal, Button, PrimaryButton } from 'react-components';
+import { Modal, HeaderModal, ContentModal, FooterModal, ResetButton, PrimaryButton } from 'react-components';
 import PropTypes from 'prop-types';
 import { c } from 'ttag/types';
 
@@ -11,10 +11,10 @@ const PaymentMethodModal = ({ method, show, onConfirm, onClose}) => {
     return (
         <Modal show={show} onClose={onClose}>
             <HeaderModal onClose={onClose}>{c('Title').t`Payment method`}</HeaderModal>
-            <ContentModal onSubmit={onConfirm}>
+            <ContentModal onSubmit={onConfirm} onReset={onClose}>
                 <PaymentForm card={card} onChange={handleChangeCard} />
                 <FooterModal>
-                    <Button onClick={onClose}>{c('Action').t`Close`}</Button>
+                    <ResetButton>{c('Action').t`Close`}</ResetButton>
                     <PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>
                 </FooterModal>
             </ContentModal>
