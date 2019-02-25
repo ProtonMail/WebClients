@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import LocalizedFormat from 'dayjs/plugin/localizedFormat';
 
 // Jan 17, 2016
-const readableTime = (time) => {
+const readableTime = (time, format = 'LL') => {
     dayjs.extend(LocalizedFormat);
 
     const d = dayjs.unix(time);
@@ -11,7 +11,7 @@ const readableTime = (time) => {
         return d.format('LT');
     }
 
-    return d.format('LL');
+    return d.format(format);
 };
 
 export default readableTime;
