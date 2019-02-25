@@ -31,3 +31,5 @@ export const INVOICE_STATE = {
     VOID: 2,
     BILLED: 3
 };
+
+export const BASE_SIZE = 1024;
