@@ -13,11 +13,6 @@ export const updateLocale = () => ({
     method: 'put'
 });
 
-export const updateLogAuth = () => ({
-    url: 'settings/logauth',
-    method: 'put'
-});
-
 export const updateNews = (News) => ({
     url: 'settings/news',
     method: 'put',
