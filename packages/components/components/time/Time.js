@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import dayjs from 'dayjs';
+import readableTime from 'proton-shared/lib/helpers/readableTime';
 
-const getTime = (time) => dayjs.unix(time).format('YYYY-MM-DD HH:mm:ss');
-const Time = ({ children, ...rest }) => <time {...rest}>{getTime(children)}</time>;
+const Time = ({ children, ...rest }) => <time {...rest}>{readableTime(children)}</time>;
 
 Time.propTypes = {
     children: PropTypes.number.isRequired

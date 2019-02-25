@@ -39,13 +39,15 @@ const InvoicesSection = () => {
                 <br />
                 <LearnMore url="todo" />
             </Alert>
-            <Block>
-                <Group>
-                    <ButtonGroup className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>{t`User`}</ButtonGroup>
-                    <ButtonGroup className={owner === ORGANIZATION ? 'is-active' : ''} onClick={handleOwner(ORGANIZATION)}>{t`Organization`}</ButtonGroup>
-                </Group>
-                <Button onClick={open}>{t`Customize`}</Button>
-                <InvoiceTextModal show={isOpen} onClose={close} />
+            <Block className="flex flex-spacebetween">
+                <div>
+                    <Group>
+                        <ButtonGroup className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>{t`User`}</ButtonGroup>
+                        <ButtonGroup className={owner === ORGANIZATION ? 'is-active' : ''} onClick={handleOwner(ORGANIZATION)}>{t`Organization`}</ButtonGroup>
+                    </Group>
+                    <Button onClick={open}>{t`Customize`}</Button>
+                    <InvoiceTextModal show={isOpen} onClose={close} />
+                </div>
                 <Pagination
                     page={page}
                     total={table.total}

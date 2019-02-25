@@ -6,9 +6,11 @@ import ContextApi from 'proton-shared/lib/context/api';
 import { queryMembers, queryAddresses } from 'proton-shared/lib/api/members';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { USER_ROLES } from 'proton-shared/lib/constants';
+import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import MemberModal from './MemberModal';
 import MemberActions from './MemberActions';
+import MemberAddresses from './MemberAddresses';
 
 const MembersSection = () => {
     const { api } = useContext(ContextApi);
@@ -26,6 +28,11 @@ const MembersSection = () => {
         [USER_ROLES.ADMIN_ROLE]: c('User role').t`Admin`,
         [USER_ROLES.MEMBER_ROLE]: c('User role').t`Member`,
         [SUPER_ADMIN_ROLE]: c('User role').t`Primary Admin`
+    };
+
+    const PRIVATE = {
+        0: c('Status for member').t`No`,
+        1: c('Status for member').t`Yes`
     };
 
     const search = (members = []) => {
@@ -55,6 +62,8 @@ const MembersSection = () => {
         loaded();
     };
 
+    const formatSize = ({ UsedSpace, MaxSpace }) => `${humanSize(UsedSpace, 'GB', true)} / ${humanSize(MaxSpace, 'GB')}`;
+
     useEffect(() => {
         fetchMembers();
     }, [keywords]);
@@ -67,7 +76,7 @@ const MembersSection = () => {
                 <br />
                 <LearnMore url="todo" />
             </Alert>
-            <Block>
+            <Block className="flex flex-spacebetween">
                 <PrimaryButton onClick={handleAddMember}>{c('Action').t`Add user`}</PrimaryButton>
                 <MemberModal show={showNewMemberModal} onClose={closeNewMemberModal} onConfirm={addNewMember} />
                 <Search onChange={handleSearch} placeholder={c('Placeholder').t`Search for User and Addresses`} />
@@ -88,14 +97,14 @@ const MembersSection = () => {
                             member.Name,
                             <MemberAddresses key={key} member={member} />,
                             ROLES[member.Subscriber ? SUPER_ADMIN_ROLE : member.Role],
-                            member.Private,
-                            `${member.UsedSpace} / ${member.MaxSpace}`,
+                            PRIVATE[member.Private],
+                            formatSize(member),
                             <MemberActions key={key} member={member} />
                         ]} />;
                     })}
                 </TableBody>
             </Table>
-            <Alert>{jt`You cad add and manage addresses for the user in your ${<Link to="/settings/addresses">{c('Link').t`Address Settings`}</Link>}`}</Alert>
+            <Alert>{jt`You can add and manage addresses for the user in your ${<Link to="/settings/addresses">{c('Link').t`Address Settings`}</Link>}.`}</Alert>
         </>
     );
 };

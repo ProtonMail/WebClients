@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Modal, ContentModal, FooterModal } from 'react-components';
+import { Modal, ContentModal, FooterModal, Button, PrimaryButton } from 'react-components';
 
 const MemberModal = ({ show, onClose, member }) => {
     const isUpdate = !!member;

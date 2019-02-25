@@ -11,7 +11,7 @@ const MemberAddresses = ({ member }) => {
     const handleAdd = () => {};
 
     return (
-        <Dropdown title={title} content={ngettext(msgid`${n} address`, `${n} addresses`, n)}>
+        <Dropdown title={title} className="pm-button-link" content={ngettext(msgid`${n} address`, `${n} addresses`, n)}>
             <DropdownMenu list={list} />
             <Button onClick={handleManage}>{c('Action for member addresses').t`Manage`}</Button>
             <PrimaryButton onClick={handleAdd}>{c('Action for member addresses').t`Add`}</PrimaryButton>
