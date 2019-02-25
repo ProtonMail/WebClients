@@ -33,6 +33,8 @@ export { default as Price } from './components/price/Price';
 export { default as PrimaryButton } from './components/button/PrimaryButton';
 export { default as Progress } from './components/progress/Progress';
 export { default as Radio } from './components/input/Radio';
+export { default as ResetButton } from './components/button/ResetButton';
+export { default as Row } from './components/container/Row';
 export { default as Search } from './components/input/Search';
 export { default as Select } from './components/select/Select';
 export { default as SessionsSection } from './containers/sessions/SessionsSection';
