@@ -1,6 +1,6 @@
 export const noop = () => {};
 
-export const debounce = (func, wait, immediate) => {
+export const debounce = (func, ms, immediate) => {
 	let timeout;
 
 	return function (...args) {
@@ -11,7 +11,7 @@ export const debounce = (func, wait, immediate) => {
 			if (!immediate) {
 				func.apply(this, args);
 			}
-		}, wait);
+		}, ms);
 
 		if (immediate && !timeout) {
 			func.apply(this, [...args]);
