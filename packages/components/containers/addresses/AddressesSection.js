@@ -10,13 +10,14 @@ const AddressesSection = () => {
     const users = []; // TODO
     const addresses = []; // TODO
     const { isOpen: showAddressModal, open: openAddressModal, closeAddressModal } = useModal();
+    const handleChangeUser = () => {};
 
     return (
         <>
             <SubTitle>{c('Title').t`Addresses`}</SubTitle>
             <Block>
                 <Label htmlFor="userSelect">{c('Label'.t`User:`)}</Label>
-                <Select id="userSelect" options={users}/>
+                <Select id="userSelect" options={users} onChange={handleChangeUser} />
                 <PrimaryButton onClick={openAddressModal}>{c('Action').t`Add address`}</PrimaryButton>
                 <AddressModal show={showAddressModal} onClose={closeAddressModal} />
             </Block>
