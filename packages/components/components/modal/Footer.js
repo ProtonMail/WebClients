@@ -12,4 +12,8 @@ Footer.propTypes = {
     className: PropTypes.string
 };
 
+Footer.defaultProps = {
+    className: 'flex flex-spacebetween'
+};
+
 export default Footer;
