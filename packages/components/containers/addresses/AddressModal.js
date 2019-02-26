@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Modal, ContentModal, ResetButton, FooterModal, ResetButton, PrimaryButton } from 'react-components';
+import { Modal, ContentModal, FooterModal, ResetButton, PrimaryButton } from 'react-components';
 
 const AddressModal = ({ show, onClose }) => {
     const handleSubmit = () => {};

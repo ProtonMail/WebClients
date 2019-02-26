@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { SubTitle, Block, Label, Table, PrimaryButton, Select, TableHeader, TableRow, useModal, TableBody, useLoading } from 'react-components';
 import { connect } from 'react-redux';
 import { fetchMembers } from 'proton-shared/lib/state/members/actions';
-import { fetchAddresses } from 'proton-shared/lib/api/members';
+import { queryAddresses } from 'proton-shared/lib/api/members';
 
 import AddressModal from './AddressModal';
 import AddressActions from './AddressActions';
@@ -16,7 +16,7 @@ const AddressesSection = ({ addresses, members, fetchMembers }) => {
     const membersOptions = members.data.map(({ ID: value, Name: text }) => ({ text, value}));
     const handleChangeMember = async (event) => {
         const memberID = event.target.value;
-        const { Addresses } = await api(fetchAddresses(memberID));
+        const { Addresses } = await api(queryAddresses(memberID));
         setAddresses(Addresses);
     };
 
