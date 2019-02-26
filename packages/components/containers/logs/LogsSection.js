@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { t } from 'ttag';
 import dayjs from 'dayjs';
-import { Button, ButtonGroup, Group, Table, TableHeader, TableBody, TableRow, Badge, Time, Alert, Block, Pagination, usePagination, SubTitle, useLoading } from 'react-components';
+import { connect } from 'react-redux';
+import { Button, ButtonGroup, Group, Alert, Block, Pagination, usePagination, SubTitle, useLoading } from 'react-components';
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
 import { updateLogAuth } from 'proton-shared/lib/api/settings';
 import ContextApi from 'proton-shared/lib/context/api';
-import { ELEMENTS_PER_PAGE } from 'proton-shared/lib/constants';
+import { ELEMENTS_PER_PAGE, LOGS_STATE } from 'proton-shared/lib/constants';
 
-const DISABLE = 0;
-const BASIC = 1;
-const ADVANCED = 2;
+import LogsTable from './LogsTable';
 
 const EVENTS = {
     0: t`Login password failure`,
@@ -18,18 +17,13 @@ const EVENTS = {
     3: t`2FA login failure`
 };
 
-const BADGE_TYPES = {
-    0: 'error',
-    1: 'success',
-    2: 'error',
-    3: 'error'
-};
+const { DISABLE, BASIC, ADVANCED } = LOGS_STATE;
 
-const LogsSection = () => {
+const LogsSection = ({ settings }) => {
     const { api } = useContext(ContextApi);
     const [logs, setLogs] = useState([]);
-    const {loading, loaded} = useLoading();
-    const [logAuth, setLogAuth] = useState(DISABLE);
+    const {loading, loaded, load} = useLoading(settings.loading);
+    const [logAuth, setLogAuth] = useState(settings.data.LogAuth);
     const {
         page,
         list,
@@ -38,9 +32,8 @@ const LogsSection = () => {
         onSelect
     } = usePagination(logs, 1, ELEMENTS_PER_PAGE);
 
-    const handleRefresh = () => fetchLogs();
-
     const fetchLogs = async () => {
+        load();
         const { Logs } = await api(queryLogs());
         setLogs(Logs);
         loaded();
@@ -84,7 +77,7 @@ const LogsSection = () => {
                     <ButtonGroup className={logAuth === BASIC ? 'is-active' : ''} onClick={handleLogAuth(BASIC)}>{t`Basic`}</ButtonGroup>
                     <ButtonGroup className={logAuth === ADVANCED ? 'is-active' : ''} onClick={handleLogAuth(ADVANCED)}>{t`Advanced`}</ButtonGroup>
                 </Group>
-                <Button onClick={handleRefresh}>{t`Refresh`}</Button>
+                <Button onClick={fetchLogs}>{t`Refresh`}</Button>
                 <Button onClick={handleWipe}>{t`Wipe`}</Button>
                 <Button onClick={handleDownload}>{t`Download`}</Button>
                 <Pagination
@@ -95,28 +88,11 @@ const LogsSection = () => {
                     page={page}
                     limit={ELEMENTS_PER_PAGE} />
             </Block>
-            <Table>
-                <TableHeader cells={[
-                    t`Event`,
-                    'IP',
-                    t`Time`
-                ]} />
-                <TableBody loading={loading}>
-                    {list.map(({ Time: time, Event, IP }, index) => {
-                        const key = index.toString();
-
-                        return (
-                            <TableRow key={key} cells={[
-                                <Badge key={key} type={BADGE_TYPES[Event]}>{EVENTS[Event]}</Badge>,
-                                <code key={key}>{IP}</code>,
-                                <Time key={key}>{time}</Time>
-                            ]} />
-                        );
-                    })}
-                </TableBody>
-            </Table>
+            <LogsTable list={list} logAuth={logAuth} loading={loading} />
         </>
     );
 };
 
-export default LogsSection;
+const mapStateToProps = ({ settings }) => ({ settings });
+
+export default connect(mapStateToProps)(LogsSection);

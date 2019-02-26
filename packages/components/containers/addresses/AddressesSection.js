@@ -12,12 +12,20 @@ import AddressStatus from './AddressStatus';
 const AddressesSection = ({ addresses, members, fetchMembers }) => {
     const [selectedAddresses, setAddresses] = useState(addresses.data);
     const { loading, loaded, load } = useLoading(addresses.loading);
-    const { isOpen: showAddressModal, open: openAddressModal, closeAddressModal } = useModal();
-    const membersOptions = members.data.map(({ ID: value, Name: text }) => ({ text, value}));
+    const { isOpen: showAddressModal, open: openAddressModal, close: closeAddressModal } = useModal();
+    const membersOptions = members.data.map(({ ID: value, Name: text, Self: self }) => ({ text, value, self }));
+
     const handleChangeMember = async (event) => {
-        const memberID = event.target.value;
+        const { value: memberID, self } = event.target.value;
+
+        if (self) {
+            return setAddresses(addresses.data);
+        }
+
+        load();
         const { Addresses } = await api(queryAddresses(memberID));
         setAddresses(Addresses);
+        loaded();
     };
 
     useEffect(() => {
