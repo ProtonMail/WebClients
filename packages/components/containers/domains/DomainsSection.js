@@ -13,7 +13,7 @@ const DomainsSection = () => {
             <Alert>
                 {c('Message').t`Add a custom filter to perform actions such as automatically labeling or archiving messages.`}
                 <br />
-                <LearnMore />
+                <LearnMore url="todo" />
             </Alert>
             <Block>
                 <PrimaryButton onClick={openDomainModal}>{c('Action').t`Add domain`}</PrimaryButton>

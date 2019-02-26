@@ -17,7 +17,7 @@ const KeysSection = ({ mode }) => {
             <Alert>
                 {c('Info').t`Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.`}
                 <br />
-                <LearnMore />
+                <LearnMore url="todo" />
             </Alert>
             <Block>
                 <PrimaryButton onClick={handleAddKey}>{c('Action').t`Add new key`}</PrimaryButton>
