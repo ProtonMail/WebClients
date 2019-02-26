@@ -33,3 +33,9 @@ export const INVOICE_STATE = {
 };
 
 export const BASE_SIZE = 1024;
+
+export const LOGS_STATE = {
+    DISABLE: 0,
+    BASIC: 1,
+    ADVANCED: 2
+};
