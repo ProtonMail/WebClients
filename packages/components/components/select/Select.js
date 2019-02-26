@@ -13,16 +13,12 @@ const Select = ({ options, className, ...rest }) => {
 
 Select.propTypes = {
     options: PropTypes.arrayOf(PropTypes.object).isRequired,
-    onChange: PropTypes.func,
-    onClose: PropTypes.func,
-    onOpen: PropTypes.func,
     multiple: PropTypes.bool,
     className: PropTypes.string
 };
 
 Select.defaultProps = {
-    multiple: false,
-    className: ''
+    multiple: false
 };
 
 export default Select;
