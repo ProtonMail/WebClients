@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { SmallButton, ConfirmModal, useModal, Alert } from 'react-components';
 import { c } from 'ttag';
+import ContextApi from 'proton-shared/lib/context/api';
+import { removeMember } from 'proton-shared/lib/api/members';
 
 import MemberModal from './MemberModal';
 
 const MemberActions = ({ member }) => {
+    const { api } = useContext(ContextApi);
     const { isOpen: showEdit, open: openEdit, close: closeEdit } = useModal();
     const { isOpen: showDelete, open: openDelete, close: closeDelete } = useModal();
-    const handleConfirmDelete = () => {};
+    const handleConfirmDelete = () => api(removeMember(member.ID));
 
     return (
         <>

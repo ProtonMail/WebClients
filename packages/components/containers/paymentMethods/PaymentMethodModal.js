@@ -13,7 +13,7 @@ const PaymentMethodModal = ({ method, show, onConfirm, onClose}) => {
             <HeaderModal onClose={onClose}>{c('Title').t`Payment method`}</HeaderModal>
             <ContentModal onSubmit={onConfirm} onReset={onClose}>
                 <PaymentForm card={card} onChange={handleChangeCard} />
-                <FooterModal>
+                <FooterModal className="flex flex-spacebetween">
                     <ResetButton>{c('Action').t`Close`}</ResetButton>
                     <PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>
                 </FooterModal>
