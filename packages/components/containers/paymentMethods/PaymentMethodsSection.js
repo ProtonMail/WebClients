@@ -1,22 +1,26 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { c } from 'ttag';
-import { SubTitle, PrimaryButton, Alert, Block, Table, TableHeader, TableBody, LearnMore, useLoading } from 'react-components';
+import { SubTitle, PrimaryButton, Alert, Block, Table, TableHeader, TableBody, LearnMore, useLoading, useModal } from 'react-components';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 import ContextApi from 'proton-shared/lib/context/api';
 
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
+import CardModal from '../payments/CardModal';
 
 const PaymentMethodsSection = () => {
     const { api } = useContext(ContextApi);
-    const {loading, loaded} = useLoading();
-    const handleAddPaymentMethod = () => {};
+    const { isOpen: showCardModal, open: openCardModal, close: closeCardModal } = useModal();
+    const { loading, loaded, load } = useLoading();
     const [methods, setMethods] = useState([]);
+
     const fetchMethods = async () => {
+        load();
         const { PaymentMethods } = await api(queryPaymentMethods());
         setMethods(PaymentMethods);
         loaded();
     };
+
     const TYPES = {
         card: c('Label in payment methods table').t`Credit card`
     };
@@ -34,7 +38,8 @@ const PaymentMethodsSection = () => {
                 <LearnMore url="todo"/>
             </Alert>
             <Block>
-                <PrimaryButton onClick={handleAddPaymentMethod}>{c('Action').t`Add payment method`}</PrimaryButton>
+                <PrimaryButton onClick={openCardModal}>{c('Action').t`Add payment method`}</PrimaryButton>
+                <CardModal show={showCardModal} onClose={closeCardModal} />
             </Block>
             <Table>
                 <TableHeader cells={[
