@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CLASSNAMES = {
-    success: 'badgeLabel-success',
-    default: 'badgeLabel',
-    origin: 'badgeLabel-grey',
-    warning: 'badgeLabel-warning',
-    error: 'badgeLabel-error'
+    success: 'mr1 badgeLabel-success',
+    default: 'mr1 badgeLabel',
+    origin: 'mr1 badgeLabel-grey',
+    warning: 'mr1 badgeLabel-warning',
+    error: 'mr1 badgeLabel-error'
 };
 
 const Badge = ({ children, type }) => <span className={CLASSNAMES[type]}>{children}</span>;
