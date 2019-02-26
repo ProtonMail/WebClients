@@ -54,11 +54,13 @@ Input.propTypes = {
     readOnly: PropTypes.bool,
     required: PropTypes.bool,
     type: PropTypes.string,
+    autoComplete: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
 };
 
 Input.defaultProps = {
-    type: 'text'
+    type: 'text',
+    autoComplete: 'off'
 };
 
 export default Input;
