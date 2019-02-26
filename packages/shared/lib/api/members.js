@@ -48,3 +48,8 @@ export const updateVPN = (ID, MaxVPN) => ({
     url: `members/${ID}/vpn`,
     data: { MaxVPN }
 });
+
+export const removeMember = (ID) => ({
+    method: 'delete',
+    url: `members/${ID}`
+});
