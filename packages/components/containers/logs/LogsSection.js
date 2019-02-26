@@ -78,8 +78,8 @@ const LogsSection = ({ settings }) => {
                     <ButtonGroup className={logAuth === ADVANCED ? 'is-active' : ''} onClick={handleLogAuth(ADVANCED)}>{t`Advanced`}</ButtonGroup>
                 </Group>
                 <Button onClick={fetchLogs}>{t`Refresh`}</Button>
-                <Button onClick={handleWipe}>{t`Wipe`}</Button>
-                <Button onClick={handleDownload}>{t`Download`}</Button>
+                {list.length ? <Button onClick={handleWipe}>{t`Wipe`}</Button> : null}
+                {list.length ? <Button onClick={handleDownload}>{t`Download`}</Button> : null}
                 <Pagination
                     onNext={onNext}
                     onPrevious={onPrevious}
