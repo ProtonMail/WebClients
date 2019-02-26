@@ -28,7 +28,7 @@ const MemberModal = ({ show, onClose, member }) => {
 
     return (
         <Modal show={show} onClose={onClose} title={title}>
-            <ContentModal onSubmit={handleSubmit} onReset={onClose} autoComplete="off">
+            <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
                     <Input id="nameInput" placeholder="Thomas A. Anderson" onChange={handleChangeName} />
