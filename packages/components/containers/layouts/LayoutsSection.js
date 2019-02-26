@@ -2,50 +2,40 @@ import React from 'react';
 import { c } from 'ttag';
 import { SubTitle, Alert, Row, Label } from 'react-components';
 
+import DraftTypeSelect from './DraftTypeSelect';
+import TextDirectionSelect from './TextDirectionSelect';
+import ShowMovedSelect from './ShowMovedSelect';
+import ComposerModeRadios from './ComposerModeRadios';
+import ViewLayoutRadios from './ViewLayoutRadios';
+
 const LayoutsSection = () => {
-    const draftTypeOptions = [
-        { text: c('Option').t`Normal`, value: 'text/html' },
-        { text: c('Option').t`Plain Text`, value: 'text/plain' }
-    ];
-
-    const textDirectionOptions = [
-        { text: c('Option').t`Left to Right`, value: 0 },
-        { text: c('Option').t`Right to Left`, value: 1 }
-    ];
-
-    const movedOptions = [
-        { text: c('Option').t`Include Moved`, value: 1 },
-        { text: c('Option').t`Hide Moved`, value: 0 }
-    ];
-
-    const handleChangeDraftType = () => {};
-    const handleChangeTextDirection = () => {};
-    const handleChangeMoved = () => {};
-
     return (
         <>
             <SubTitle>{c('Title').t`Layouts`}</SubTitle>
             <Alert>{c('Info').t`Lorem ipsum`}</Alert>
             <Row>
                 <Label>{c('Label').t`Default Composer`}</Label>
+                <ComposerModeRadios />
             </Row>
             <Row>
                 <Label>{c('Label').t`Default Inbox`}</Label>
+                <ViewLayoutRadios />
             </Row>
             <Row>
                 <Label>{c('Label').t`Conversations`}</Label>
+                <ViewModeRadios />
             </Row>
             <Row>
                 <Label>{c('Label').t`Composer Mode`}</Label>
-                <Select options={draftTypeOptions} onChange={handleChangeDraftType} />
+                <DraftTypeSelect />
             </Row>
             <Row>
                 <Label>{c('Label').t`Composer Text Direction`}</Label>
-                <Select options={textDirectionOptions} onChange={handleChangeTextDirection} />
+                <TextDirectionSelect />
             </Row>
             <Row>
                 <Label>{c('Label').t`Sent/Drafts`}</Label>
-                <Select options={movedOptions} onChange={handleChangeMoved} />
+                <ShowMovedSelect />
             </Row>
         </>
     );
