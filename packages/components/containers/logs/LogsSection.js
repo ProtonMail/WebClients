@@ -71,15 +71,17 @@ const LogsSection = ({ settings }) => {
         <>
             <SubTitle>{t`Authentication Logs`}</SubTitle>
             <Alert>{t`Logs includes authentication attempts for all Proton services that use your Proton credentials.`}</Alert>
-            <Block className="pt1 pb1">
-                <Group>
-                    <ButtonGroup className={logAuth === DISABLE ? 'is-active' : ''} onClick={handleLogAuth(DISABLE)}>{t`Disable`}</ButtonGroup>
-                    <ButtonGroup className={logAuth === BASIC ? 'is-active' : ''} onClick={handleLogAuth(BASIC)}>{t`Basic`}</ButtonGroup>
-                    <ButtonGroup className={logAuth === ADVANCED ? 'is-active' : ''} onClick={handleLogAuth(ADVANCED)}>{t`Advanced`}</ButtonGroup>
-                </Group>
-                <Button onClick={fetchLogs}>{t`Refresh`}</Button>
-                {list.length ? <Button onClick={handleWipe}>{t`Wipe`}</Button> : null}
-                {list.length ? <Button onClick={handleDownload}>{t`Download`}</Button> : null}
+            <Block className="flex flex-spacebetween">
+                <div>
+                    <Group className="mr1">
+                        <ButtonGroup className={logAuth === DISABLE ? 'is-active' : ''} onClick={handleLogAuth(DISABLE)}>{t`Disable`}</ButtonGroup>
+                        <ButtonGroup className={logAuth === BASIC ? 'is-active' : ''} onClick={handleLogAuth(BASIC)}>{t`Basic`}</ButtonGroup>
+                        <ButtonGroup className={logAuth === ADVANCED ? 'is-active' : ''} onClick={handleLogAuth(ADVANCED)}>{t`Advanced`}</ButtonGroup>
+                    </Group>
+                    <Button onClick={fetchLogs}>{t`Refresh`}</Button>
+                    {list.length ? <Button onClick={handleWipe}>{t`Wipe`}</Button> : null}
+                    {list.length ? <Button onClick={handleDownload}>{t`Download`}</Button> : null}
+                </div>
                 <Pagination
                     onNext={onNext}
                     onPrevious={onPrevious}

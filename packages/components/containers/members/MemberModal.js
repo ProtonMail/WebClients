@@ -49,7 +49,7 @@ const MemberModal = ({ show, onClose, member }) => {
                 </Row>
                 <MemberStorageSelector member={member} onChange={handleChangeStorage} />
                 <MemberVPNSelector member={member} onChange={handleChangeVPN} />
-                <FooterModal className="flex flex-spacebetween">
+                <FooterModal>
                     <ResetButton>{c('Action').t`Cancel`}</ResetButton>
                     <PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>
                 </FooterModal>
