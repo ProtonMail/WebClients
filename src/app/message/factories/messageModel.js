@@ -47,7 +47,7 @@ function messageModel(
         Order: 0,
         Subject: '',
         PasswordHint: '',
-        Unread: 1,
+        Unread: 0,
         Flags: 0,
         Sender: {},
         ToList: [],
