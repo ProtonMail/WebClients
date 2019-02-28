@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { c } from 'ttag';
-import { SubTitle, PrimaryButton, Alert, Block, Table, TableHeader, TableBody, LearnMore, useLoading, useModal } from 'react-components';
+import { SubTitle, PrimaryButton, Alert, Block, LearnMore, useLoading, useModal } from 'react-components';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 import ContextApi from 'proton-shared/lib/context/api';
 
-import PaymentMethodActions from './PaymentMethodActions';
-import PaymentMethodState from './PaymentMethodState';
-import CardModal from '../payments/CardModal';
+import EditCardModal from '../payments/EditCardModal';
+import PaymentMethodsTable from './PaymentMethodsTable';
 
 const PaymentMethodsSection = () => {
     const { api } = useContext(ContextApi);
@@ -19,10 +18,6 @@ const PaymentMethodsSection = () => {
         const { PaymentMethods } = await api(queryPaymentMethods());
         setMethods(PaymentMethods);
         loaded();
-    };
-
-    const TYPES = {
-        card: c('Label in payment methods table').t`Credit card`
     };
 
     useEffect(() => {
@@ -39,28 +34,9 @@ const PaymentMethodsSection = () => {
             </Alert>
             <Block>
                 <PrimaryButton onClick={openCardModal}>{c('Action').t`Add payment method`}</PrimaryButton>
-                <CardModal show={showCardModal} onClose={closeCardModal} />
+                <EditCardModal show={showCardModal} onClose={closeCardModal} />
             </Block>
-            <Table>
-                <TableHeader cells={[
-                    c('Title for payment methods table').t`Method`,
-                    c('Title for payment methods table').t`NR`,
-                    c('Title for payment methods table').t`Name`,
-                    c('Title for payment methods table').t`Status`,
-                    c('Title for payment methods table').t`Actions`
-                ]} />
-                <TableBody loading={loading}>
-                    {methods.map((method, index) => {
-                        return <TableRow key={method.ID} cells={[
-                            `${TYPES[method.Type]} (${method.Details.Brand})`,
-                            `•••• •••• •••• ${method.Details.Last4}`,
-                            method.Details.Name,
-                            <PaymentMethodState key={method.ID} method={method} index={index} />,
-                            <PaymentMethodActions key={method.ID} method={method} onChange={fetchMethods} />
-                        ]} />;
-                    })}
-                </TableBody>
-            </Table>
+            <PaymentMethodsTable loading={loading} methods={methods} />
         </>
     );
 };
