@@ -47,6 +47,7 @@ function setupOrganizationModal(
 
             self.step = steps[index];
             self.encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG;
+            self.size = self.encryptionConfigName;
 
             const allocatedLegend = {
                 label: gettextCatalog.getString('Allocated to admin', null, 'Success'),
@@ -129,7 +130,7 @@ function setupOrganizationModal(
 
             function keys() {
                 const mailboxPassword = authentication.getPassword();
-                const encryptionConfigName = self.encryptionConfigName;
+                const encryptionConfigName = self.size || self.encryptionConfigName;
 
                 return setupKeys
                     .generateOrganization(mailboxPassword, encryptionConfigName)

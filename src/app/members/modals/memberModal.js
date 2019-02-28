@@ -43,6 +43,7 @@ function memberModal(pmModal, gettextCatalog, organizationModel, subscriptionMod
             this.confirmPassword = '';
             this.address = '';
             this.cancel = params.cancel;
+            this.size = this.encryptionConfigName;
 
             // sliders legends
             const allocatedLegend = { label: I18N.ALLOCATED, classes: 'background-primary' };

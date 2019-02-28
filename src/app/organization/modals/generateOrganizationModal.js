@@ -19,15 +19,14 @@ function generateOrganizationModal(
         templateUrl: require('../../../templates/modals/generateOrganization.tpl.html'),
         /* @ngInject */
         controller: function(params) {
-            // Parameters
             this.encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG;
             this.newRecoveryPassword = '';
             this.confirmRecoveryPassword = '';
             this.otherAdmins = params.otherAdmins;
+            this.size = this.encryptionConfigName;
 
-            // Functions
             this.submit = () => {
-                const encryptionConfigName = this.encryptionConfigName;
+                const encryptionConfigName = this.size || this.encryptionConfigName;
                 const password = this.newRecoveryPassword;
 
                 let decryptedKey;

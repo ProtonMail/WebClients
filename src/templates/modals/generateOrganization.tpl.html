@@ -1,11 +1,43 @@
 <div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
-    <form method="post" class="modal-dialog" ng-submit="generateOrganizationForm.$valid && ctrl.submit()" name="generateOrganizationForm" novalidate>
+
+    <form
+        method="post"
+        class="modal-dialog"
+        ng-submit="generateOrganizationForm.$valid && ctrl.submit()"
+        name="generateOrganizationForm"
+        novalidate>
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" translate translate-context="Title">Change Organization Keys</h4>
             </div>
             <div class="modal-body pm_form">
+                <div class="pm_grid">
+                    <div class="col-1-2">
+                        <label class="checkbox">
+                            <custom-radio
+                                data-custom-ng-model="ctrl.size"
+                                data-custom-value="RSA2048"></custom-radio>
+                            <span class="flex-grid-column">
+                                <strong translate translate-context="Title" translate-comment="form option heading">High security</strong>
+                                <small>(2048-bit)</small>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="col-1-2">
+                        <label class="checkbox">
+                            <custom-radio
+                                data-custom-ng-model="ctrl.size"
+                                data-custom-value="RSA4096"></custom-radio>
+                            <span class="flex-grid-column">
+                                <strong translate translate-context="Title" translate-comment="form option heading">Highest security</strong>
+                                <small>(4096-bit)</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <p class="alert alert-info" ng-show="ctrl.size === 4096" translate translate-context="Info">Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
+
                 <label for="newRecoveryPassword" translate-context="Title" translate>Key recovery password</label>
                 <password data-id="newRecoveryPassword" data-name="newRecoveryPassword" data-value="ctrl.newRecoveryPassword" form="generateOrganizationForm"></password>
                 <label for="confirmRecoveryPassword" translate-context="Title" translate>Confirm recovery Password</label>
@@ -14,8 +46,17 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button modal-footer-button disabled-if-network-activity" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
-            <button type="submit" class="pm_button primary modal-footer-button disabled-if-network-activity" translate translate-context="Action">Generate Keys</button>
+            <button
+                type="button"
+                class="pm_button modal-footer-button disabled-if-network-activity"
+                ng-click="ctrl.cancel()"
+                translate
+                translate-context="Action">Cancel</button>
+            <button
+                type="submit"
+                class="pm_button primary modal-footer-button disabled-if-network-activity"
+                translate
+                translate-context="Action">Generate Keys</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
