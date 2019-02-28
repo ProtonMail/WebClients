@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { t } from 'ttag';
+import { c } from 'ttag';
 
 import { Button, PrimaryButton } from '../button';
 import Modal from './Modal';
-import Header from './Header';
 import Footer from './Footer';
 import Content from './Content';
 
@@ -29,11 +28,10 @@ handleClose = () => {
 
 const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm }) => {
     return (
-        <Modal show={show} className="confirm-modal" onClose={onClose}>
-            <Header onClose={onClose}>{title}</Header>
+        <Modal show={show} onClose={onClose} title={title}>
             <Content onSubmit={onConfirm} onReset={onClose}>
                 {children}
-                <Footer className="flex flex-spacebetween">
+                <Footer>
                     <Button type="reset">{cancel}</Button>
                     <PrimaryButton type="submit">{confirm}</PrimaryButton>
                 </Footer>
@@ -54,9 +52,9 @@ Confirm.propTypes = {
 
 Confirm.defaultProps = {
     show: false,
-    cancel: t`Cancel`,
-    confirm: t`Confirm`,
-    title: t`Confirm`
+    cancel: c('Action').t`Cancel`,
+    confirm: c('Action').t`Confirm`,
+    title: c('Action').t`Confirm`
 };
 
 export default Confirm;
