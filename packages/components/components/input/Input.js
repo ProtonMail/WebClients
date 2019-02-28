@@ -1,16 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
-import { getClasses } from '../../helpers/component';
 
-const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, ...rest }) => {
+import useInput from './useInput';
+
+const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, onChange, onBlur, ...rest }) => {
+    const { focus, change, blur, statusClasses } = useInput();
     const handleFocus = (event) => {
         if (disabled) {
             return;
         }
 
+        focus();
+
         if (onFocus) {
             onFocus(event);
+        }
+    };
+
+    const handleBlur = (event) => {
+        blur();
+
+        if (onBlur) {
+            onBlur(event);
+        }
+    };
+
+    const handleChange = (event) => {
+        change();
+
+        if (onChange) {
+            onChange(event);
         }
     };
 
@@ -27,10 +47,11 @@ const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, ...rest 
     };
 
     return (
-        <input
-            className={getClasses('pm-field', className)}
+        <input className={`pm-field ${className} ${statusClasses}`}
             onFocus={handleFocus}
+            onBlur={handleBlur}
             onKeyDown={handleKeyDown}
+            onChange={handleChange}
             {...rest}
         />
     );

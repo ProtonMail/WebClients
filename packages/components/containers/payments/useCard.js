@@ -11,8 +11,8 @@ const useCard = (initialCard = getDefaultCard()) => {
 
     return {
         card,
-        errors,
         updateCard,
+        errors,
         isValid
     };
 };

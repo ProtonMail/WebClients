@@ -1,11 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useInput from '../input/useInput';
 
-import { getClasses } from '../../helpers/component';
+const Select = ({ options, disabled, className, onChange, onBlur, onFocus, ...rest }) => {
+    const { blur, focus, change, statusClasses } = useInput();
 
-const Select = ({ options, className, ...rest }) => {
+    const handleFocus = (event) => {
+        if (disabled) {
+            return;
+        }
+
+        focus();
+
+        if (onFocus) {
+            onFocus(event);
+        }
+    };
+
+    const handleBlur = (event) => {
+        blur();
+
+        if (onBlur) {
+            onBlur(event);
+        }
+    };
+
+    const handleChange = (event) => {
+        change();
+
+        if (onChange) {
+            onChange(event);
+        }
+    };
+
     return (
-        <select className={getClasses('pm-field', className)} {...rest}>
+        <select className={`pm-field ${className} ${statusClasses}`}
+            onBlur={handleBlur}
+            onFocus={handleFocus}
+            onChange={handleChange}
+            {...rest}>
             {options.map(({ text, ...rest }, index) => <option key={index.toString()} {...rest}>{text}</option>)}
         </select>
     );
