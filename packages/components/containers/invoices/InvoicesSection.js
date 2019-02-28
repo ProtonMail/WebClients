@@ -41,7 +41,7 @@ const InvoicesSection = () => {
             </Alert>
             <Block className="flex flex-spacebetween">
                 <div>
-                    <Group>
+                    <Group className="mr1">
                         <ButtonGroup className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>{t`User`}</ButtonGroup>
                         <ButtonGroup className={owner === ORGANIZATION ? 'is-active' : ''} onClick={handleOwner(ORGANIZATION)}>{t`Organization`}</ButtonGroup>
                     </Group>
