@@ -20,9 +20,10 @@ export const queryPaymentMethods = () => ({
     method: 'get'
 });
 
-export const setPaymentMethod = () => ({
+export const setPaymentMethod = (data) => ({
     url: 'payments/methods',
-    method: 'post'
+    method: 'post',
+    data
 });
 
 export const deletePaymentMethod = (ID) => ({
