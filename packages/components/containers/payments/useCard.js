@@ -1,11 +1,19 @@
 import { useState } from 'react';
 
-const useCard = ({ method, card: initialCard }) => {
-    const [card, updateCard] = useState(toCard(method) || initialCard || DEFAULT_CARD);
+import { getErrors } from './cardValidator';
+import getDefaultCard from './getDefaultCard';
+
+const useCard = (initialCard = getDefaultCard()) => {
+    const [card, update] = useState(initialCard);
+    const updateCard = (key, value) => update({ ...card, [key]: value });
+    const errors = getErrors(card);
+    const isValid = !Object.keys(errors).length;
 
     return {
         card,
-        updateCard
+        errors,
+        updateCard,
+        isValid
     };
 };
 

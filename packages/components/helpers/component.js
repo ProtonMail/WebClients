@@ -1,1 +1,4 @@
-export const getClasses = (defaultClass = '', classNames = '') => [defaultClass.trim(), classNames].join(' ').trim();
+let current = 0
+
+export const generateUID = (prefix) => `${prefix || 'id'}-${current++}`;
+export const getClasses = (defaultClass = '', classNames = '') => `${defaultClass.trim()}  ${classNames.trim()}`;
