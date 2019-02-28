@@ -37,7 +37,7 @@ function editMemberProcess(
             unit,
             name,
             hasVPN,
-            encryptionConfigName,
+            size: encryptionConfigName,
             ID
         } = model;
 

@@ -1,11 +1,19 @@
 <div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
-    <form class="modal-dialog" id="addUserModal" name="memberForm" ng-submit="memberForm.$valid && ctrl.submit()" novalidate>
+
+    <form
+        class="modal-dialog"
+        id="addUserModal"
+        name="memberForm"
+        ng-submit="memberForm.$valid && ctrl.submit()"
+        novalidate>
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+
         <div class="modal-content pm_form">
             <div class="modal-header">
                 <h4 class="modal-title" ng-if="!ctrl.ID" translate-context="Title" translate>Create user</h4>
                 <h4 class="modal-title" ng-if="ctrl.ID" translate-context="Title" translate>Update user</h4>
             </div>
+
             <div class="modal-body">
                 <div class="pm_grid">
                     <div class="col-1-3">
@@ -25,6 +33,28 @@
                             <custom-checkbox data-custom-ng-model="ctrl.private"></custom-checkbox>
                             <span translate translate-context="Action" translate-comment="Form checkbox option">Private</span>
                             <i class="fa fa-info-circle" pt-tooltip-translate-context="Information about this user" pt-tooltip-translate="Organization administrators cannot access the messages of private users."></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="pm_grid" ng-if="ctrl.showKeys && !ctrl.private">
+                    <div class="col-1-3">
+                        <label translate translate-context="Label">Key Strength</label>
+                    </div>
+                    <div class="col-1-3">
+                        <label class="checkbox">
+                            <custom-radio
+                                data-custom-ng-model="ctrl.size"
+                                data-custom-value="RSA2048"></custom-radio>
+                            <strong translate translate-context="Label" translate-comment="form option heading">High security</strong> <small>(2048-bit)</small>
+                        </label>
+                    </div>
+                    <div class="col-1-3">
+                        <label class="checkbox">
+                            <custom-radio
+                                data-custom-ng-model="ctrl.size"
+                                data-custom-value="RSA4096"
+                                data-custom-ng-disabled="ctrl.process"></custom-radio>
+                            <strong translate translate-context="Label" translate-comment="form option heading">Highest security</strong> <small>(4096-bit)</small>
                         </label>
                     </div>
                 </div>
@@ -83,6 +113,9 @@
                         <legends list="ctrl.vpnLegends"></legends>
                     </div>
                 </div>
+                <p ng-if="ctrl.showKeys && !ctrl.private" class="alert alert-warning" translate translate-context="Info">
+                    4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys. Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes
+                </p>
                 <p class="alert alert-info" ng-if="!ctrl.ID" translate translate-context="Info">Please give the address and temporary password to the new member so they can log in.</p>
             </div>
         </div>
