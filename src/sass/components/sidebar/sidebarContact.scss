@@ -6,6 +6,7 @@
     pointer-events: none;
     display: inline-block; // Required for IE and Edge browser (https://github.com/ProtonMail/Angular/issues/6153)
 }
+.sidebarContact-container button.sidebarApp-link > .sidebarApp-link-inner { display: inline; }
 
 .sidebarContact-container .menuLabel-link * { pointer-events: none }
 .sidebarContact-container .sidebarApp-menu .sidebarApp-item { position: relative }
