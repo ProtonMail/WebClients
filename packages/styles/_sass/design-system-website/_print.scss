@@ -1,0 +1,24 @@
+@media print {
+
+  .header {
+    padding: 2em;
+    text-align: center;
+  }
+  .logo g {
+    fill: #000;
+  }
+  
+  /* display links, except for those containing images */
+  /* warning, remember checking the result & think to limitate
+   * this option only for inside content links */
+  /*a:after {
+    content: " (" attr(href) ") ";
+  }
+  a:after img {
+    content: "";
+  }*/
+
+  /* fix particular properties */
+
+
+} /* end print */

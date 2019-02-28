@@ -1,0 +1,302 @@
+ 
+/*
+ * Buttons
+ */
+[class*="pm-button"],
+[class*="pv-button"] {
+  border-radius: $global-border-radius;
+  padding: em(5) em(16) em(6); // design want 34px height
+  border-style: solid;
+  border-width: 1px;
+}
+
+.pm-button {
+  border-color: $pm-global-border;
+  background: $white;
+  color: $pm-global-grey;
+
+  &:hover,
+  &:focus,
+  &.is-hover {
+    box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+  }
+  &:active,
+  &.is-active {
+    //background-color: $pm-global-border;
+    background: radial-gradient(closest-side, $white, $pm-global-border 90%);
+    box-shadow: none;
+  }
+  &[disabled] {
+    background-color: $pm-global-muted;
+    color: rgba( $pm-global-grey, .3 );
+    pointer-events: none;
+  }
+  /* just to cancel examples  */
+  &.is-active:hover {
+    box-shadow: none;
+  }
+  &.is-hover:hover {
+    background-color: $white;
+  }
+
+}
+
+.pm-button-dark {
+  color: $white;
+  background-color: $pm-global-grey;
+  border-color: $pm-global-border;
+
+  &:focus,
+  &:hover,
+  &.is-hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  &:active,
+  &.is-active {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &[disabled] {
+    background-color: $pm-global-muted;
+    color: rgba( $pm-global-grey, .3 );
+    pointer-events: none;
+  }
+  /* just to cancel examples  */
+  &.is-hover:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.pm-button-blue {
+  color: $white;
+  background-color: $pm-blue;
+  border: 1px solid $pm-blue;
+
+  &:focus,
+  &:hover,
+  &.is-hover {
+    box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+    background: $pm-blue-dark;
+  }
+  &:active,
+  &.is-active {
+    background: $pm-blue-dark;
+    text-shadow: 1px 1px 10px rgba( $white, .3 ),-1px -1px 10px rgba( $white, .3 );
+    box-shadow: none;
+  }
+  &[disabled] {
+    background-color: $pm-global-muted;
+    color: rgba( $pm-global-grey, .3 );
+    border: 1px solid $pm-global-border;
+    pointer-events: none;
+  }
+  /* just to cancel examples  */
+  &.is-hover:hover {
+    background-color: $pm-blue-dark;
+  }
+}
+
+.pm-button-blueborder {
+  border-color: $pm-blue;
+  color: $pm-blue;
+  background-color: $white;
+
+  &:focus,
+  &:hover,
+  &.is-hover {
+    box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid $pm-blue-dark;
+    color: $pm-blue-dark;
+  }
+  &:active,
+  &.is-active {
+    border: 1px solid $pm-blue-dark;
+    color: $pm-blue-dark;
+    background: radial-gradient(closest-side, $white, $pm-global-border 90%);
+    box-shadow: none;
+  }
+  &[disabled] {
+    background-color: $pm-global-muted;
+    color: rgba( $pm-global-grey, .3 );
+    border: 1px solid $pm-global-border;
+    pointer-events: none;
+  }
+}
+
+.pm-button-blueborder-dark {
+  border: 1px solid $pm-blue-light;
+  color: $pm-blue-light;
+  background-color: $pm-global-grey;
+
+  &:focus,
+  &:hover,
+  &.is-hover,
+  &:active,
+  &.is-active {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid $pm-blue-dark;
+    color: $pm-blue-dark;
+  }
+  &:active,
+  &.is-active {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &[disabled] {
+    background-color: $pm-global-muted;
+    color: rgba( $pm-global-grey, .3 );
+    border: 1px solid $pm-global-border;
+    pointer-events: none;
+  }
+}
+
+.pv-button-green {
+  color: $white;
+  background-color: $pv-green;
+  border: 1px solid $pv-green;
+
+  &:focus,
+  &:hover,
+  &.is-hover {
+    box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+    background: $pv-green-dark;
+  }
+  &:active,
+  &.is-active {
+    background: $pv-green-dark;
+    text-shadow: 1px 1px 10px rgba( $white, .3 ),-1px -1px 10px rgba( $white, .3 );
+    box-shadow: none;
+  }
+  &[disabled] {
+    background-color: $pm-global-muted;
+    color: rgba( $pm-global-grey, .3 );
+    border: 1px solid $pm-global-border;
+    pointer-events: none;
+  }
+  /* just to cancel examples  */
+  &.is-hover:hover {
+    background-color: $pv-green-dark;
+  }
+}
+
+.pv-button-greenborder {
+  border-color: $pv-green;
+  color: $pv-green;
+  background-color: $white;
+
+  &:focus,
+  &:hover,
+  &.is-hover {
+    box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid $pv-green-dark;
+    color: $pv-green-dark;
+  }
+  &:active,
+  &.is-active {
+    border: 1px solid $pv-green-dark;
+    color: $pv-green-dark;
+    background: radial-gradient(closest-side, $white, $pm-global-border 90%);
+    box-shadow: none;
+  }
+  &[disabled] {
+    background-color: $pm-global-muted;
+    color: rgba( $pm-global-grey, .3 );
+    border: 1px solid $pm-global-border;
+    pointer-events: none;
+  }
+}
+
+.pv-button-greenborder-dark {
+  border: 1px solid $pv-green-light;
+  color: $pv-green-light;
+  background-color: $pm-global-grey;
+
+  &:focus,
+  &:hover,
+  &.is-hover,
+  &:active,
+  &.is-active {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid $pv-green-dark;
+    color: $pv-green-dark;
+  }
+  &:active,
+  &.is-active {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &[disabled] {
+    background-color: $pm-global-muted;
+    color: rgba( $pm-global-grey, .3 );
+    border: 1px solid $pm-global-border;
+    pointer-events: none;
+  }
+}
+
+/* modifiers */
+.pm-button--large {
+  padding: em(10) em(20) em(9); // design want 42px height 
+}
+.pm-button--small {
+  padding: em(1) em(12) em(2); // design want 26px height 
+}
+
+/* button group */
+.pm-group-buttons {
+  @extend .inline-flex;
+  @extend .flex-nowrap;
+}
+.pm-group-button,
+.pm-group-button.is-active,
+.pm-group-button:hover,
+.pm-group-button:focus,
+.pm-group-button:active {
+  border-radius: 0;
+  border-left-width: 0;
+}
+.pm-group-button:hover,
+.pm-group-button:focus,
+.pm-group-button:active {
+  position: relative;
+  z-index: 10;
+}
+.pm-group-buttons > .pm-group-button:first-of-type {
+  border-radius: $global-border-radius 0 0 $global-border-radius;
+  border-left-width: 1px;
+}
+.pm-group-buttons > .pm-group-button:last-of-type {
+  border-radius: 0 $global-border-radius $global-border-radius 0;
+}
+
+/* aliases for buttons => different per project */
+/* primary/link/error/warning/info */
+.pm-button-primary {
+  @extend .pm-button-blue;
+}
+.pm-button-link {
+  @extend .link;
+  border-width: 0;
+}
+.pm-button-error,
+.pm-button-error:focus,
+.pm-button-error:hover,
+.pm-button-error:active {
+  @extend .pm-button-blue;
+  background-color: $pm-global-warning;
+  border-color: $pm-global-warning; 
+}
+.pm-button-warning,
+.pm-button-warning:focus,
+.pm-button-warning:hover,
+.pm-button-warning:active {
+  @extend .pm-button-blue;
+  background-color: $pm-global-attention;
+  border-color: $pm-global-attention; 
+}
+.pm-button-info {
+  @extend .pm-button;
+}
+
+/* other aliases requested */
+.pm-button-redborder {
+  @extend .pm-button;
+  border: 1px solid $pm-global-warning;
+  color: $pm-global-warning;
+}

@@ -1,0 +1,213 @@
+---
+layout: default
+lang: en
+pageId: icons
+title: Icons used in ProtonMail
+description: The reference of icons used and how to implement them correctly.
+keywords: SVG, sprites, accessibility, icons
+section: design
+subsection: icons
+---
+
+<div id="icon-lists">
+  <h2>List of all <abbr title="Scalable Vector Graphics">SVG</abbr> sprites (square sprites)</h2>
+  
+  <h3>Icons with a “native” viewbox of 16×16</h3>
+  {% assign listIcons = "account#add#address#address-add#address-disable#alias#all-emails#anniversary#apparence#archive#arrow-down#arrow-left#arrow-right#arrow-up#attach#attention#auto-reply#auto-reply2#birthday#bullet-points#close#compose#contact#contact-add#contact-photo#contacts-group-people#contacts-group#contacts-group-add#copy#dashboard#date#decrypt#delete#domain#donate#download#drafts#email#email-address#empty-folder#encrypt#encrypted-contacts-book#expand#expiration#export#fax#file-doc#file-docx#file-image#file-pdf#file-pot#file-ppt#file-pptx#file-rar-zip#file-unknown#file-video#file-xliff#file-xls#file-xslx#file-xml#filter#folder#folder-label#font-color#forward#gender#help-answer#html-message#imap-smtp#import#inbox#info#insert-image#keys#label#layout-columns#layout-columns2#layout-rows#layout-rows2#link#member-contact#merge#minimize#mobile#mobile-add#more#note#note-add#notifications-disabled#notifications-enabled#off#on#ordered-list#organization#payments#phishing#phone#plaintext-message#print#protonvpn#read#remove-text-formatting#reply#reply-all#report-bug#role#save#search#security#sent#settings-master#settings-singular#shop#show-all-emails#sign-out#sort-large-small#sort-new-old#sort-old-new#sort-small-large#spam#star#support1#support2#text-align-left#text-align-right#text-bold#text-center#text-font#text-italic#text-justify#text-quote#text-underline#title#trash#tutorial#tutorial2#unread#upgrade-to-paid#view-headers#view-html-code#view-source-code#what-is-this" | split: '#' %}
+
+  <div class="flex mb2">
+    {% for icon in listIcons %}
+    <div class="w200p aligncenter p1">
+      <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey " role="img" focusable="false">
+        <use xlink:href="#shape-{{ icon }}"></use>
+      </svg>
+      <code class="bl mt0-5">#shape-{{ icon }}</code>
+    </div>
+    {% endfor %}
+    <div class="w200p flex-self-vcenter">
+      … to come
+    </div>
+  </div>
+
+  <h3>Icons with a “native” viewbox of 100×100</h3>
+
+  {% assign listIcons = "pm#twitter#clipboard#draft" | split: '#' %}
+
+  <div class="flex mb2">
+    {% for icon in listIcons %}
+    <div class="w200p aligncenter p1">
+      <svg viewBox="0 0 100 100" class="icon-100p fill-global-grey " role="img" focusable="false">
+        <use xlink:href="#shape-{{ icon }}"></use>
+      </svg>
+      <code class="bl mt0-5">#shape-{{ icon }}</code>
+    </div>
+    {% endfor %}
+    <div class="w200p flex-self-vcenter">
+      … to come
+    </div>
+  </div>
+
+</div>
+
+<div id="integration-cases">
+
+  <h2>Integration cases</h2>
+
+  <p>Base code:</p>
+
+  <pre class=" language-markup"><code>&lt;svg viewBox="0 0 100 100" class="icon-100p" role="img" focusable="false"&gt;
+  &lt;use xlink:href="#shape-twitter"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+</code></pre>
+
+  <ol>
+    <li>In <code>viewBox</code> attribute, specify “native” viewbox of the image.</li>
+    <li>In <code>class</code> attribute, specify the class name of the size you want it to be displayed (<code>icon-16p</code>, <code>icon-100p</code>, etc.).</li>
+  </ol>
+
+  <h3 class="mt1">Decorative images (not need for alternative)</h3>
+
+  <p>Add <code>aria-hidden="true"</code> to the SVG, example: </p>
+
+  <div class="flex flex-spacebetween mb2 onmobile-flex-column">
+    <div class="w49">
+      <pre class=" language-markup"><code>&lt;svg viewBox="0 0 100 100" class="icon-25p" role="img" <strong>aria-hidden="true"</strong> focusable="false"&gt;
+  &lt;use xlink:href="#shape-twitter"&gt;&lt;/use&gt;
+&lt;/svg&gt; Our Twitter account
+</code></pre>
+    </div>
+    <div class="w49 aligncenter flex-self-vcenter">
+      <span class="inline-row">
+        <svg viewBox="0 0 100 100" class="icon-25p col" role="img" aria-hidden="true" focusable="false">
+        <use xlink:href="#shape-twitter"></use>
+        </svg> <span class="col alignmiddle pl0-5"> Our Twitter account</span>
+      </span>
+    </div>
+  </div>
+
+
+  <h3 class="mt1">Images with information inside</h3>
+
+  <p>Add <code>aria-hidden="true"</code> to the SVG and provide text using <code>sr-only</code> class, example: </p>
+
+  <div class="flex flex-spacebetween mb2 onmobile-flex-column">
+    <div class="w49">
+      <pre class=" language-markup"><code>&lt;p&gt;
+  we like 
+  &lt;svg viewBox="0 0 100 100" class="icon-25p" role="img" <strong>aria-hidden="true"</strong> focusable="false"&gt;
+    &lt;use xlink:href="#shape-twitter"&gt;&lt;/use&gt;
+  &lt;/svg&gt;
+  &lt;span class="<strong>sr-only</strong>"&gt;Twitter&lt;/span&gt;
+&lt;/p&gt;
+</code></pre>
+    </div>
+    <div class="w49 aligncenter flex-self-vcenter">
+      <p class="inline-row">
+        <span class="col alignmiddle pr0-5">We like</span>
+        <svg viewBox="0 0 100 100" class="icon-25p col" role="img" aria-hidden="true" focusable="false">
+        <use xlink:href="#shape-twitter"></use>
+        </svg> 
+        <span class="sr-only">Twitter</span>
+      </p>
+    </div>
+  </div>
+
+  <h3 class="mt1">&lt;svg&gt; links or alone in buttons</h3>
+
+  <div class="flex flex-spacebetween mb2 onmobile-flex-column">
+    <div class="w49">
+      <pre class=" language-markup"><code>&lt;a href="https://twitter.com/ProtonMail"&gt;
+  &lt;svg viewBox="0 0 100 100" class="icon-25p" role="img" <strong>aria-labelledby="title-svg-icon-twitter"</strong> focusable="false"&gt;
+    <strong>&lt;title id="title-svg-icon-twitter"&gt;Our Twitter account&lt;/title&gt;</strong>
+    &lt;use xlink:href="#shape-twitter"&gt;&lt;/use&gt;
+  &lt;/svg&gt;
+&lt;/a&gt;
+</code></pre>
+    </div>
+    <div class="w49 aligncenter flex-self-vcenter">
+      <a class="twitter-link" href="https://twitter.com/ProtonMail">
+        <svg viewBox="0 0 100 100" class="icon-25p icon-twitter" role="img" aria-labelledby="title-svg-icon-twitter" focusable="false">
+          <title id="title-svg-icon-twitter">Our Twitter account</title>
+          <use xlink:href="#shape-twitter"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+
+  <p>See <a href="/icons-tests/">some tests</a> for icon display (responsive, IE, etc.).</p>
+
+</div>
+
+
+<div id="sizes-colors">
+
+  <h2>Sizes, colors</h2>
+
+  <h3>List of all classes for coloring icons</h3>
+
+  <div class="flex flex-spacebetween mb2 onmobile-flex-column">
+    <div class="w49 ">
+      <ul class="unstyled m0 list-2columns ontablet-list-2columns">
+        {% assign listColors = "global-grey#global-altgrey#global-light#global-border#global-success#global-warning#global-attention#pm-blue#pm-blue-dark#pm-blue-light#pv-green#pv-green-light#pv-green-dark" | split: '#' %}
+
+        {% for color in listColors %}
+          {% if color == 'global-light' or color == 'global-border' or color == 'global-attention'  %}
+            {% assign colorText = 'global-grey' %}
+          {% else %}
+            {% assign colorText = 'global-light' %}
+          {% endif %}
+        <li class="bg-{{ color }} color-{{ colorText }} p0-5"><span>fill-{{ color }}</span>
+          <button type="button" class="js-copy-clipboard js-trigger-notification aligntop" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
+            <svg viewBox="0 0 100 100" aria-hidden="true" class="icon-16p fill-{{ colorText }}" role="img" focusable="false">
+              <use xlink:href="#shape-clipboard"></use>
+            </svg>
+            <span class="sr-only">Copy to clipboard</span>
+          </button>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="w49 aligncenter">
+      <p>Add the class to the SVG, and maaagic:</p>
+      <svg viewBox="0 0 100 100" class="icon-100p fill-global-success" role="img" focusable="false">
+        <use xlink:href="#shape-twitter"></use>
+      </svg>
+      <pre class=" language-markup"><code>&lt;svg viewBox="0 0 100 100" class="icon-100p <strong>fill-global-success</strong>" role="img" focusable="false"&gt;
+  &lt;use xlink:href="#shape-twitter"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+</code></pre>
+    </div>
+
+  </div>
+
+
+
+  <h3>How to use it at different sizes?</h3>
+
+  <div class="flex flex-spacebetween flex-item-end mb2 onmobile-flex-column onmobile-flex-item-nostretch ">
+    <div class="w49 aligncenter">
+      <svg viewBox="0 0 100 100" class="icon-50 shape-twitter-2" role="img" focusable="false">
+        <use xlink:href="#shape-twitter"></use>
+      </svg>
+      <pre class=" language-css"><code>.icon-50 {
+  display: inline-block;
+  width: 50%;
+  height: 50%;
+}
+</code></pre>
+    </div>
+    <div class="w49 aligncenter ">
+      <svg viewBox="0 0 100 100" class="icon-25p shape-twitter-2" role="img" focusable="false">
+        <use xlink:href="#shape-twitter"></use>
+      </svg>
+      <pre class=" language-css"><code>.icon-25p {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+</code></pre>
+    </div>
+  </div>
+
+</div>

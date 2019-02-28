@@ -1,0 +1,62 @@
+---
+layout: default
+lang: en
+pageId: loading-content
+title: Loading content (WIP)
+description: Using aria-busy="true" to show some loading content.
+keywords: loading, content, aria-busy, examples
+section: fe-guidelines
+---
+
+<p>Basically, the idea is to rely on attribute <strong><code>aria-busy="true"</code></strong>.</p>
+
+<h2>On a <code>div</code></h2>
+
+<button class="js-activate-loading pm-button" type="button">Toggle loading on div</button>
+<div class="square-color bordered-container mb2 mt0-5">
+  
+</div>
+
+<h2>On a <code>button</code></h2>
+
+<p>
+  Remember to add attribute <code>disabled</code> when <code>aria-busy="true"</code> is applied.<br>
+  <button class="pm-button mt0-5" disabled aria-busy="true">I'm looooooooooooaaaaaaaaading</button>
+</p>
+
+<h2>Examples on a <code>table &gt; tr</code>/<code>table &gt; td</code></h2>
+
+<table class="pm-simple-table noborder border-collapse">
+    <caption class="sr-only">Invoices</caption>
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Type</th>
+            <th scope="col">Status</th>
+            <th scope="col">Date</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr aria-busy="true">
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td>123456</td>
+            <td>24 €</td>
+            <td>Subscription</td>
+            <td><span class="badgeLabel-success">active</span> <span class="badgeLabel-blue">default</span> <span class="badgeLabel-grey">origin</span></td>
+            <td>16 Mar. 2018</td>
+            <td><button type="button" class="pm-button pm-button--small">Download</button></td>
+        </tr>
+        <tr>
+            <td aria-busy="true" class="progressive">123456</td>
+            <td>24 €</td>
+            <td aria-busy="true">Subscription</td>
+            <td><span class="badgeLabel-warning">disabled</span> <span class="badgeLabel-error">error</span></td>
+            <td>16 Mar. 2018</td>
+            <td><button type="button" class="pm-button pm-button--small">Download</button></td>
+        </tr>
+    </tbody>
+</table>

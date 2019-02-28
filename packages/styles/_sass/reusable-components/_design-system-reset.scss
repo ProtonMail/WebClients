@@ -1,0 +1,92 @@
+/* for HTML 5 */
+article, aside, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section { display: block; }
+audio, canvas, progress, video { display: inline-block; }
+abbr, eventsource, mark, meter, time, output, bb { display: inline; }
+
+/* to comment/fallback if you care about IE<8 */
+html { box-sizing: border-box; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* reset minimum */
+html, body, blockquote, ul, ol, form, button { margin: 0; padding: 0; }
+button { border: 0; }
+p, ul, ol, dl, blockquote, pre, td, th {
+  font-size: 1em;
+  line-height: $l-h;
+  margin: $l-h * 1em 0;
+}
+
+@if $use-reset-button == true {
+  /* reset buttons, remember to style them in forms */
+  input, select, textarea, optgroup, button {
+    background: transparent;
+    border: 0;
+    font: inherit;
+    -webkit-appearance: none;
+  }
+}
+
+/* fix display img/iframe */
+img,
+iframe { vertical-align: middle; }
+
+ul, ol { padding-left: 2em; }
+
+.unstyled {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+@if $rtl-option == true {
+  /* RTL */
+  [dir="rtl"] ul, 
+  [dir="rtl"] ol { 
+    padding-left: 0; 
+    padding-right: 2em;
+  }
+  [dir="rtl"] .unstyled {
+    padding-right: 0;
+  }
+}
+
+
+@if $root-equiv-10-px == true {
+  /* base font size at 10px */
+  html { 
+    font-size: 62.5%;
+    /* IE9-IE11 math fixing. See https://connect.microsoft.com/IE/feedback/details/816709/ */
+    /* Thanks to @guardian, @victorbritopro, @eQRoeil & Knacss */
+    font-size: calc(1em * 0.625);
+  }
+}
+body {
+  background: $pm-global-grey;
+  color: $pm-global-light;
+  font-family: $font-family;
+  @if $typo-unit == 'use_em' {
+     @if $root-equiv-10-px == true {
+       font-size: em($base-font, 10);
+	 }
+	 @else {
+	       font-size: em($base-font, $root-default-font-size);
+	       }
+  }
+  @else if $typo-unit == 'use_rem' {
+     font-size: rem($base-font);
+  }
+  @else if $typo-unit == 'use_rem_with_em_fallback' {
+     @if $root-equiv-10-px == true {
+       font-size: em($base-font, 10);
+	 }
+	 @else {
+	       font-size: em($base-font, $root-default-font-size);
+	       }
+     font-size: rem($base-font);
+  }
+  line-height: $l-h;
+  min-height: 100vh;
+}
+
+

@@ -1,0 +1,366 @@
+// Compass import, if necessary
+//@import "compass/css3";
+ 
+
+// Sass variables: adapt them to your designs
+
+// base size for text
+$base-font             : 14 !default; // if "14" then 1em = 14px
+// default line-height
+$l-h                   : 1.5 !default;
+
+// fonts
+$font-family           : -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif !default;
+
+
+// project colors
+$pm-global-grey     : #262a33;
+$pm-global-altgrey  : #3c414e;
+$pm-global-light    : #F6F7FA;
+$pm-global-border   : #DDE6EC;
+$pm-global-muted    : #eeeff1;
+$pm-global-success  : #5db039;
+$pm-global-warning  : #EC5858;
+$pm-global-attention: #EAC819;
+$pm-blue            : #657ee4;
+$pm-blue-dark       : #526ee0;
+$pm-blue-light      : #788EE8;
+
+$white              : #fff;
+$black              : #000;
+
+$pv-green           : #4DA358;
+$pv-green-dark      : #3E8447;
+$pv-green-light     : #5FB364;
+
+// not approved colors
+$pm-input-background: #fcfdff;
+
+// colors
+$color-links           : $pm-blue;
+$color-hover           : #000 !default;
+$color-hr              : $pm-global-grey;
+$hr-height             : 1px !default; 
+$color-alert           : $pm-global-warning;
+$color-bg-button       : #fff !default;
+$color-txt-button      : #000 !default;
+
+$global-border-radius  : 3px;
+
+// inputs
+$input-defaut-size     : 250px !default;
+$input-defaut-border   : 1px solid $pm-global-border !default;
+
+// main breakpoints
+$breakpoint-big        : 1200 !default;
+$breakpoint-medium     : 880 !default;
+$breakpoint-small      : 640 !default;
+$breakpoint-tiny       : 320 !default;
+
+// RTL
+$rtl-option            : false !default;
+// RTL = Right To Left =>
+// to adapt a website in a language that is written from right to left
+// designed for multilingual websites with LTR et RTL
+
+
+// hyphens
+$hyphenation           : false !default;
+
+// clear floats
+$use-clearleft_right   : false !default;
+$use-clearhidden       : false !default;
+$use-clearfix          : false !default;
+
+// vertical rythm  
+// possible values     : 'double_top_single_bottom',  'single_top', 'single_bottom'
+$vertical-rythm        : 'single_bottom' !default;
+
+// units for typo
+// possible values     : 'use_em',  'use_rem', 'use_rem_with_em_fallback'
+$typo-unit             : 'use_rem' !default;
+
+// applies 62.5% on html (to make 10px default font size), simplifies rem calculation
+$root-equiv-10-px      : true !default;
+
+// basic premise: default user setting for font size is at 16 pixels in the browser
+// you should NEVER update this value, however… who can predict the future…
+$root-default-font-size: 16 !default;
+
+// others
+$use-reset-button      : true !default;
+$use-old-ie-fallbacks  : true !default;
+
+
+// Sass functions: don’t touch if you are not sure ;)
+
+@function em($px, $base: $base-font) {
+
+  @return ($px / $base) * 1em;
+
+}
+
+@function rem($px, $reset-applied: $root-equiv-10-px, $user-default-font-size: $root-default-font-size) {
+
+  @if ( $reset-applied == true ) {
+      @return ($px / 10) * 1rem;
+  }
+  @else {
+         @return ($px / $user-default-font-size) * 1rem;
+		}
+
+}
+
+
+// calculated via https://rocssti.net/en/builder-css
+// based on http://soqr.fr/vertical-rhythm/ thanks @goetter & @eQRoeil
+
+@function line-height ($font-size, $base-height, $base-font, $type-vr){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+  $height: ($base-font * $base-height / $font-size) ;
+
+  @return ($height * $coef) ;
+
+}
+
+
+@function margin-em ($font-size, $base-height, $base-font, $type-vr){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+  $other_coef: ceil($base-height * $base-font / $font-size);
+  $height: ($base-font * $base-height / $font-size) ;
+  $margin: ($height * $coef );
+    
+  @if $type-vr == 'double_top_single_bottom' {
+     @return ( ($margin * $other_coef)*1em 0 ( ($margin/2) * $other_coef) *1em 0 );
+  }
+  @else if $type-vr == 'single_bottom' {
+     @return ( 0 0 ( ($margin/2) * $other_coef) *1em 0 );
+  }
+  @else if $type-vr == 'single_top' {
+     @return ( ( ($margin/2) * $other_coef) *1em 0 0 0 );
+  }
+}
+
+
+@function margin-em-other ($font-size, $base-height, $base-font, $type-vr){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+  $height: ($base-font * $base-height / $font-size) ;
+  $margin: ($height * $coef );
+
+  @return ( ($margin)*1em 0 );
+
+}
+
+
+@mixin flow-hr( $value, $type-vr: $vertical-rythm, $type-unit: $typo-unit ){
+
+  @if $type-unit == 'use_em' {
+     font-size: em($value);
+  }
+  @else if $type-unit == 'use_rem' {
+     font-size: rem($value);
+  }
+  @else if $type-unit == 'use_rem_with_em_fallback' {
+     font-size: em($value);
+     font-size: rem($value);
+  }
+  line-height: line-height($value, $l-h, $base-font, $type-vr);
+  margin: margin-em($value, $l-h, $base-font, $type-vr) ;   
+
+}
+
+
+@mixin flow-other( $value, $type-vr: $vertical-rythm, $type-unit: $typo-unit ){
+
+  @if $type-unit == 'use_em' {
+     font-size: em($value);
+  }
+  @else if $type-unit == 'use_rem' {
+     font-size: rem($value);
+  }
+  @else if $type-unit == 'use_rem_with_em_fallback' {
+     font-size: em($value);
+     font-size: rem($value);
+  }
+  line-height: line-height($value, $l-h, $base-font, $type-vr);
+  margin: margin-em-other($value, $l-h, $base-font, $type-vr) ;   
+
+}
+
+
+@mixin vendor-prefix($property, $value, $prefixes: webkit moz ms o) {
+
+  @if $prefixes {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+  }
+  #{$property}: $value;
+
+}
+
+
+@mixin color-opacity($color, $opacity: 0.9) {
+    color: $color; /* The Fallback */
+    color: rgba($color, $opacity);
+}
+
+@mixin background-opacity($color, $opacity: 0.9) {
+    background-color: $color; /* The Fallback */
+    background-color: rgba($color, $opacity);
+}
+
+
+
+// Replace `$search` with `$replace` in `$string`
+// @author Hugo Giraudel
+// @param {String} $string - Initial string
+// @param {String} $search - Substring to replace
+// @param {String} $replace ('') - New value
+// @return {String} - Updated string
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+
+
+
+// Generate margins
+// example
+// $list-margin: mt, mr, mb, ml, m;
+// $list-margin-values: 0, 1, 2, 3; // specify 2.5 if needed
+
+@mixin margin-generator ($list-margin, $list-margin-values, $prefix: "") {
+
+  @each $margin-type in $list-margin {
+     @each $margin in $list-margin-values {
+        //$temp_m : str-slice($margin-type, 0, 1);
+        $temp_t : str-slice($margin-type, 2, 3);
+        
+        $property: margin;
+        
+        @if $temp_t == t {
+           $property: margin-top;
+        } @else if $temp_t == r {
+           $property: margin-right;
+        } @else if $temp_t == b {
+           $property: margin-bottom;
+        } @else if $temp_t == l {
+           $property: margin-left;
+        }
+        
+        
+        $value : $margin + 0em;
+        /* #{$value} */
+
+        @if $margin == 0 {
+           $value : $margin;
+        } 
+        
+        // convert to string
+        $text-margin: $margin + '';
+        // 1.5 = 1-5
+        $property-class: str-replace($text-margin, '.', '-');
+        
+        // . mr 1-5 { margin-right: 1.5em ;}
+        .#{$prefix}#{$margin-type}#{$property-class} { #{$property}: #{$value}; }
+  
+  
+        }
+     }
+   
+}
+
+
+
+// Generate paddings
+// example
+// $list-padding: pt, pr, pb, pl, p;
+// $list-padding-values: 0, 1, 2, 3; // specify 2.5 if needed
+
+@mixin padding-generator ($list-padding, $list-padding-values, $prefix: "") {
+
+  @each $padding-type in $list-padding {
+     @each $padding in $list-padding-values {
+        //$temp_p : str-slice($padding-type, 0, 1);
+        $temp_t : str-slice($padding-type, 2, 3);
+        
+        $property: padding;
+        
+        @if $temp_t == t {
+           $property: padding-top;
+        } @else if $temp_t == r {
+           $property: padding-right;
+        } @else if $temp_t == b {
+           $property: padding-bottom;
+        } @else if $temp_t == l {
+           $property: padding-left;
+        }
+        
+        $value : $padding + 0em;
+        @if $padding == 0 {
+           $value : $padding;
+        } 
+        
+        // convert to string
+        $text-padding: $padding + '';
+        // 1.5 = 1-5
+        $property-class: str-replace($text-padding, '.', '-');
+        
+        .#{$prefix}#{$padding-type}#{$property-class} { #{$property}: #{$value}; }
+  
+  
+        }
+     }
+}
+
+
+//
+// Responsive management in em 
+//
+
+@mixin respond-to ($breakpoint, $query-type : 'max') {
+  @if $query-type == "max" {
+     @media (max-width: em($breakpoint, $root-default-font-size)) {
+      @content;
+    }
+  }
+ 
+  @else if $query-type == "min" {
+     @media (min-width: em($breakpoint, $root-default-font-size)) {
+      @content;
+    }
+  }
+ 
+  @else  {
+    @warn "Type non supported.";
+  }
+}
+
+
+// 
+// body::before: to get current breakpoint in JS
+//
+@mixin body-before ($value-content, $display-none : false) {
+  @if $value-content != "" {
+    body::before {
+      content: '#{$value-content}';
+      @if $display-none == true {
+        display: none;
+      }
+    }
+  }
+  @else  {
+    @warn "$value-content not specified";
+  }
+
+}

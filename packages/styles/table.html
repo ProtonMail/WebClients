@@ -1,0 +1,88 @@
+---
+layout: default
+lang: en
+pageId: table
+title: Tables
+description: The design of tables used in Proton products.
+keywords: table, styles, rules
+section: design
+---
+
+<h2>Style <code>simple-table</code></h2>
+<table class="pm-simple-table noborder border-collapse">
+    <caption class="sr-only">Invoices</caption>
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Type</th>
+            <th scope="col">Status</th>
+            <th scope="col">Date</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>123456</td>
+            <td>24 €</td>
+            <td>Subscription</td>
+            <td><span class="badgeLabel-success">active</span> <span class="badgeLabel-blue">default</span> <span class="badgeLabel-grey">origin</span></td>
+            <td>16 Mar. 2018</td>
+            <td><button type="button" class="pm-button pm-button--small">Download</button></td>
+        </tr>
+        <tr>
+            <td>123456</td>
+            <td>24 €</td>
+            <td>Subscription</td>
+            <td><span class="badgeLabel-warning">disabled</span> <span class="badgeLabel-error">error</span></td>
+            <td>16 Mar. 2018</td>
+            <td><button type="button" class="pm-button pm-button--small">Download</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+  Design rule: you may use small buttons in tables. <br> 
+  (for Status styles, have a look at <a href="status-labels.html">Status section</a>)
+</p>
+
+<pre class=" language-markup"><code>
+&lt;table class="pm-simple-table noborder border-collapse"&gt;
+  &lt;caption class="sr-only"&gt;Invoices&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;id&lt;/th&gt;
+      &lt;th scope="col"&gt;Amount&lt;/th&gt;
+      &lt;th scope="col"&gt;Type&lt;/th&gt;
+      &lt;th scope="col"&gt;Status&lt;/th&gt;
+      &lt;th scope="col"&gt;Date&lt;/th&gt;
+      &lt;th scope="col"&gt;Action&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;123456&lt;/td&gt;
+      &lt;td&gt;24 €&lt;/td&gt;
+      &lt;td&gt;Subscription&lt;/td&gt;
+      &lt;td&gt;
+         &lt;span class="badgeLabel-success"&gt;active&lt;/span&gt;
+         &lt;span class="badgeLabel-blue"&gt;default&lt;/span&gt;
+         &lt;span class="badgeLabel-grey"&gt;origin&lt;/span&gt;
+      &lt;/td&gt;
+      &lt;td&gt;16 Mar. 2018&lt;/td&gt;
+      &lt;td&gt;&lt;button type="button" class="pm-button"&gt;Download&lt;/button&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;123456&lt;/td&gt;
+      &lt;td&gt;24 €&lt;/td&gt;
+      &lt;td&gt;Subscription&lt;/td&gt;
+      &lt;td&gt;
+        &lt;span class="badgeLabel-warning"&gt;disabled&lt;/span&gt;
+        &lt;span class="badgeLabel-error"&gt;error&lt;/span&gt;
+      &lt;/td&gt;
+      &lt;td&gt;16 Mar. 2018&lt;/td&gt;
+      &lt;td&gt;&lt;button type="button" class="pm-button pm-button--small"&gt;Download&lt;/button&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>

@@ -1,0 +1,124 @@
+/* input design */
+::placeholder {
+  color: rgba($pm-global-grey, .3);
+  font-style: italic;
+}
+
+.pm-field {
+  border: $input-defaut-border;
+  padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
+  background-color: $pm-input-background;
+  width: $input-defaut-size;
+  border-radius: $global-border-radius;
+  &:focus,
+  &.focus {
+    background-color: $white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+  }
+  &.ng-invalid:not(:focus) {
+    border-color: $pm-global-warning;
+  }
+  &.ng-valid:not(:focus) {
+    border-color: $pm-global-success;
+  }
+  &[disabled] {
+    color: rgba( $pm-global-grey, .3 );
+    font-style: italic;
+  }
+  &.w100 {
+    width: 100%;
+  }
+}
+select.pm-field {
+  background: $pm-input-background url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbD0iIzI2MmEzMyIgZD0iTTcuNzgyIDkuMzU2bC00LjQ0LTQuMTExLS43NS42OTQgNS4xOSA0LjgwNSA1LjE5LTQuODA1LS43NDktLjY5NHoiLz48L3N2Zz4=') calc(100% - 6px) 50% no-repeat;
+  padding-left: 1em;
+  padding-right: 25px;
+}
+
+
+.pm-field--small {
+  padding: em(2) em(16);  // design want 26px height (actually 27 to avoid .5px)
+}
+.pm-field--large {
+  padding: em(10) em(16); // design want 42px height (actually 43 to avoid .5px)
+}
+
+/* checkboxes */
+.pm-checkbox-fakecheck-img {
+    display: none;
+}
+.pm-checkbox {
+  @extend .sr-only;
+  &:checked + .pm-checkbox-fakecheck {
+    .pm-checkbox-fakecheck-img {
+        display: block;
+    }
+  }
+}
+.pm-checkbox-fakecheck {
+  display: inline-block;
+  border: 1px solid $pm-global-border;
+  border-radius: 2px;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+
+
+/* radios */
+
+
+/* toogle */
+.pm-toggle-label {
+  margin-top: .5em;
+  // height: 2em;
+  width: 7em;
+  display: inline-flex;
+  border: 1px solid $pm-global-border;
+  background: #fcfdff;
+  border-radius: 2rem;
+  padding: 2px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(3.5em - 2px);
+    transition: transform .25s ease, background-color .25s ease, border-color .25s linear; 
+    border-radius: 2rem;
+    background: $pm-global-muted;
+    top: 2px;
+    left: 0;
+    bottom: 2px;
+    transform: translateX( calc( 3.5em - 2px) );
+    border: 1px solid $pm-global-border;
+  }
+  & > .pm-toggle-label-text {
+    align-self: center;
+    margin: 0;
+    text-align: center;
+    border-radius: 2rem;
+    padding: em(6) 0;
+    width: 3.5em;
+    position: relative;
+    z-index: 2;
+    transition: color .1s steps(1, end); 
+  }
+}
+
+.pm-toggle-checkbox:checked + .pm-toggle-label {
+  & > .pm-toggle-label-text:first-child {
+    color: $white;
+  }
+  &::before {
+    background: $pm-blue;
+    transform: translateX(2px);
+    border-color: $pm-blue-dark;
+  }
+}
+
+
+/* label */
+.pm-label {
+  padding-top: .75em;
+  min-width: 15em;
+}

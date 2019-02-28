@@ -1,0 +1,389 @@
+/**
+ * layout
+ */
+
+/* it depends, it exceeds (french joke) */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+svg {
+  height: auto;
+  max-width: 100%;
+}
+/* no reset on embed, object & video, some players don't like */
+
+/* useful to manage floats */
+/* containing floats */
+.mod,
+.scroll-if-needed {
+  overflow: auto;
+}
+.mod--hidden,
+.no-scroll { 
+  overflow: hidden;
+}
+
+/* some floattings */
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+@if $rtl-option == true {
+  /* RTL */
+  [dir="rtl"] .left {
+    float: right;
+  }
+  [dir="rtl"] .right {
+    float: left;
+  }
+}
+
+
+/* clear floats */
+.clear {
+  clear: both;
+}
+@if $use-clearleft_right == true {
+  .clearleft {
+    clear: left;
+  }
+  .clearright {
+    clear: right;
+  }
+  @if $rtl-option == true {
+    /* RTL */
+    [dir="rtl"] .clearleft {
+      clear: right;
+    }
+    [dir="rtl"] .clearright {
+      clear: left;
+    }
+  }
+}
+@if $use-clearhidden == true {
+  .clearhidden {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+  }
+}
+@if $use-clearfix == true {
+  .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+/* gut: "spacing" empty div */
+.gut {
+  height: 1px;
+}
+
+/* table-design in CSS */
+.row {
+  display: table;
+  table-layout: fixed;
+}
+.inline-row {
+  display: inline-table;
+  table-layout: fixed;
+}
+.line {
+  display: table-row;
+}
+.col {
+  display: table-cell;
+  vertical-align: top;
+}
+.col-noalign {
+  display: table-cell;
+}
+
+/* alignments */
+.aligntop    { vertical-align: top; }
+.alignbottom { vertical-align: bottom; }
+.alignmiddle { vertical-align: middle; }
+
+/* block */
+.bl {
+  display: block;
+}
+
+/* inline-block, useful for grids, and not only */
+.inbl {
+  display: inline-block;
+}
+
+/* grid = element of inline-grid */
+.grid {
+  @extend .inbl;
+  @extend .aligntop;
+}
+
+/* to relativize */
+.relative {
+  position: relative;
+}
+
+/* centered block */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* hardware-acceleration activation */
+.hardware-accelerated {
+  @include vendor-prefix(transform, translateZ(0));
+}
+
+
+
+/* block widths */
+.w1   { width: 1%; }
+.w2   { width: 2%; }
+.w3   { width: 3%; }
+.w5   { width: 5%; }
+.w10  { width: 10%; }
+.w20  { width: 20%; }
+.w25  { width: 25%; }
+.w30  { width: 30%; }
+.w33  { width: 33.333%; }
+.w40  { width: 40%; }
+.w45  { width: 45%; }
+.w49  { width: 49%; }
+.w50  { width: 50%; }
+.w60  { width: 60%; }
+.w66  { width: 66.666%; }
+.w70  { width: 70%; }
+.w75  { width: 75%; }
+.w80  { width: 80%; }
+.w90  { width: 90%; }
+.w100 { width: 100%; }
+
+/* here you may add px widths */
+$list-width: 150, 200, 500;
+// ex .w500p { width: 500px; }
+
+@each $width in $list-width {
+  .w#{$width}p { width: #{$width}px; }
+  }
+  
+/* here you may add em widths */
+$list-width-em: 400;
+// ex .w500e { width: 60em; }
+
+@each $width in $list-width-em {
+  $size_em : em($width);
+  .w#{$width}e { width: $size_em; }
+  }
+
+
+/* max-block widths */
+.mw100 { max-width: 100%; }
+
+
+/* here you may add pixel max-widths */
+$list-max-width: 100;
+
+@each $max-width in $list-max-width {
+  .mw#{$max-width}p { max-width: #{$max-width}px; }
+  }
+
+/* here you may add em max-widths */
+// $list-max-width-em: 960;
+
+// @each $max-width in $list-max-width-em {
+//   $size_em : em($max-width);
+//   .mw#{$max-width}e { max-width: $size_em; }
+//   }
+
+
+/* margins */
+
+$list-margins: mt, mr, mb, ml, m;
+$list-margins-values: 0, 0.5, 1, 1.5, 2; // specify 2.5 if needed
+
+@include margin-generator($list-margins, $list-margins-values);
+
+.mtauto { margin-top: auto; }
+.mrauto { margin-right: auto; }
+.mbauto { margin-bottom: auto; }
+.mlauto { margin-left: auto; }
+.mauto  { margin: auto; }
+
+
+/* paddings */
+
+$list-paddings: pt, pr, pb, pl, p;
+$list-paddings-values: 0, 0.25, 0.5, 1, 2; // specify 2.5 if needed
+
+@include padding-generator($list-paddings, $list-paddings-values);
+
+
+/* to hide text with accessibility… a11y */
+.invisible, .sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.nonvisible { visibility: hidden; }
+
+.hidden, [hidden]  { display: none; } /* hidden everywhere */
+.nodesktop { display: none; } /* hidden on desktop */
+/*.noprint   {} /* hidden on print */
+/*.notablet  {} /* hidden on tablets */
+/*.nomobile  {} /* hidden on mobile */
+
+.list-2columns {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 0;
+     -moz-column-gap: 0;
+          column-gap: 0;
+
+  & > li {
+    -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+    page-break-inside: avoid; /* Firefox */
+         break-inside: avoid; /* IE 10+ */
+         break-inside: avoid-column; /* W3C */ 
+  }
+}
+
+/*
+ * ratio container (for responsive iframes/videos/etc.)
+ */
+[class*="ratio-container-"] {
+  width: 100%;
+  height: 0;
+  @extend .relative;
+}
+.ratio-container-square {
+  padding-top: 100%;
+}
+.ratio-container-16-9 {
+  padding-top: 56.25%;
+}
+
+.inner-ratio-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+/*
+ * Flexbox helpers, also name tartiflex
+ */
+.inline-flex,
+.inline-flex-vcenter {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.flex-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.flex-column-reverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+.flex-spacebetween {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+      justify-content: space-between;	
+}
+.flex-nowrap {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+/* fix aspect ratio */
+.flex > * {
+  min-height: 0;
+  min-width: 0;
+}
+
+.inline-flex-vcenter > *,
+.flex-item-centered-vert {
+  margin-top: auto;
+  margin-bottom: auto;
+  align-self: center;
+}
+
+.flex-item-fluid {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
+}
+
+.flex-item-end {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+              -ms-grid-row-align: flex-end;
+          align-items: flex-end;
+}
+
+.flex-item-noshrink {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.flex-item-nogrow {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+.flex-self-vcenter {
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.flex-autogrid {
+  margin: 0 -0.5em;
+  @extend .flex;
+  @extend .flex-spacebetween;
+}
+.flex-autogrid-item {
+  @extend .flex-item-fluid;
+  padding: 0 .5em 1em;
+}

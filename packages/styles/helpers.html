@@ -1,0 +1,190 @@
+---
+layout: default
+lang: en
+pageId: helpers
+title: Helpers available for integration
+description: A set of helper to avoid reinventing the wheel for common needs (hiding, typography, scroll, print, etc.).
+keywords: helpers, typographic, hiding, scrolls, print
+section: fe-guidelines
+---
+
+<h2>Typographic helpers</h2>
+
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="ellipsis"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <span class="ellipsis inbl mw100p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor lectus eu massa fermentum scelerisque. Praesent vitae massa vel nulla sodales consectetur in vitae urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="uppercase"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies a <code>text-transform: uppercase</code> to element: <span class="uppercase">Lorem ipsum dolor</span>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="cut"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies basic hyphenation to text
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;p <strong>class="alignright"</strong>&gt;Right-aligned text.&lt;/p&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <p class="alignright">Right-aligned text.</p>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;p <strong>class="aligncenter"</strong>&gt;Centered-aligned text.&lt;/p&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <p class="aligncenter">Centered-aligned text.</p>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;p <strong>class="alignleft"</strong>&gt;Left-aligned text.&lt;/p&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <p class="alignleft">Left-aligned text.</p>
+  </div>
+</div>
+
+<p>These helpers may be prefixed by <code>ontablet-/onmobile-</code> to apply them only for tablets/mobiles.</p>
+ 
+
+<h2>Hiding elements</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>hidden</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+&lt;span <strong>class="hidden"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies a <code>display: none</code> to element.
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="nonvisible"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies a <code>visibility: hidden</code> to element (keeps space used but hides it).
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="sr-only"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Makes element disappear but element remain vocalized by speech synthesis (<code>display: none</code>/<code>visibility: hidden</code> elements won't be vocalized)
+  </div>
+</div>
+
+<h2>Others</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;div <strong>class="mod"</strong>&gt;
+&lt;div <strong>class="scroll-if-needed"</strong>&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>overflow: auto</code> to element.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;div <strong>class="mod--hidden"</strong>&gt;
+&lt;div <strong>class="no-scroll"</strong>&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>overflow: hidden</code> to element.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="noborder"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>border: 0</code> to element.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;table <strong>class="border-collapse"</strong>&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>border-collapse: collapse</code> to <code>table</code>.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;div <strong>class="rounded"</strong>&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies standard <code>border-radius</code> to element (value defined with <code>$global-border-radius</code>).
+  </div>
+</div>
+
+
+
+
+<h2>For media print</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="reset4print"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies a big reset of all properties for <code>@media print</code>
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="noprint"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>display: none</code> for <code>@media print</code> (element won't be printed)
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="onprint"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>display: block</code> for <code>@media print</code> (hidden elements will be printed)
+  </div>
+</div>
+
+
+        

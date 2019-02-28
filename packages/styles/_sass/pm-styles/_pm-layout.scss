@@ -1,0 +1,12 @@
+/* for 1px-high hr */
+hr {
+  background-color: $color-hr;
+  border: 0;
+  color: $color-hr;
+  height: $hr-height;
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+/* rounded corners */
+.rounded { border-radius: $global-border-radius; }

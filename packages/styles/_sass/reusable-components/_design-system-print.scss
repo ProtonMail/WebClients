@@ -1,0 +1,52 @@
+@media print {
+  /**
+   * add in this all elements which need to be hardly reseted for print
+   */
+  body,
+  html,
+  .page,
+  .reset4print {
+    background-color: #fff;
+    background-image: none;
+    border: 0;
+    box-shadow: none;
+    color: #000;
+    float: none;
+    height: auto;
+    margin: 0;
+    max-width: 100%;
+    min-height: 0;
+    padding: 0;
+    position: static;
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    max-height: none;
+    display: block;
+  }
+
+  body {
+    padding: .5em;
+    overflow: auto;
+  }
+
+  /* hide unnecessary elements */
+  .noprint {
+    display: none;
+  }
+  
+  /* display specific elements for print */
+  .onprint {
+    display: block;
+  }
+  
+  /* avoid problematic page break */
+  blockquote, ul, ol {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, caption {
+    page-break-after: avoid;
+  }
+
+
+} /* end print */

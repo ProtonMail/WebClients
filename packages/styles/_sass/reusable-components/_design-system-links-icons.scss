@@ -1,0 +1,92 @@
+/* links */
+/* remember focus */
+a,
+.link {
+  color: $color-links;
+  cursor: pointer;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: $color-hover;
+    text-decoration: underline;
+  }
+}
+/* avoid border on images in links + fix border image IE */
+a:link img,
+a:visited img,
+img {
+  border-style: none;
+}
+.nodecoration {
+  text-decoration: none;
+}
+
+/* links with icons, may use DATA-URI */
+
+/* external links */
+/*a[href^="http://"],
+a[href^="https://"] {
+
+}*/
+/* if full URL of the website in an internal link, remove icon */
+/*a[href^="http://www.mydomain.com"] {
+
+}*/
+/* contact, mailto links */
+/*.mail,
+a[href^="mailto:"] {
+
+}*/
+/* if URL ends with .pdf or whatever */
+/*a[href$=".pdf"] {
+
+}*/
+
+/* facto icons */
+[class*="icon-"] {
+  @extend .alignmiddle;
+}
+
+.icon-800p {
+  display: inline-block;
+  width: 800px;
+  height: 800px;
+}
+
+.icon-100p {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.icon-25p {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+.icon-16p {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.icon-50 {
+  display: inline-block;
+  width: 50%;
+  height: 50%;
+}
+
+
+.twitter-link > .icon-twitter {
+  fill: $pm-blue;
+}
+.twitter-link:focus,
+.twitter-link:hover,
+.twitter-link:active {
+  & > .icon-twitter {
+    fill: $pm-blue-dark;
+  }
+}
+
+
+

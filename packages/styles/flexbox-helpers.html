@@ -1,0 +1,247 @@
+---
+layout: default
+lang: en
+pageId: flexbox-helpers
+title: Flexbox helpers
+description: A mini-framework of Flexbox helpers, to achieve most common positionning.
+keywords: flexbox, CSS, positionning, containers
+section: fe-guidelines
+---
+
+<p>Here is a set of flexbox classes, to help positionning elements only using classes.</p>
+
+<h2>Containers</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex bordered-container color-global-light">
+      <div class="bg-pm-blue-light p1">div</div>
+      <span class="bg-pm-blue p1">span</span>
+      <em class="bg-pm-blue-dark p1">em</em>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="flex"</strong>&gt;
+  &lt;div&gt;div&lt;/div&gt;
+  &lt;span&gt;span&lt;/span&gt;
+  &lt;em&gt;em&lt;/em&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex flex-reverse bordered-container color-global-light">
+      <div class="bg-pm-blue-light p1">div</div>
+      <span class="bg-pm-blue p1">span</span>
+      <em class="bg-pm-blue-dark p1">em</em>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="flex flex-reverse"</strong>&gt;
+  &lt;div&gt;div&lt;/div&gt;
+  &lt;span&gt;span&lt;/span&gt;
+  &lt;em&gt;em&lt;/em&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex flex-column bordered-container color-global-light">
+      <div class="bg-pm-blue-light p1">div</div>
+      <span class="bg-pm-blue p1">span</span>
+      <em class="bg-pm-blue-dark p1">em</em>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="flex flex-column"</strong>&gt;
+  &lt;div&gt;div&lt;/div&gt;
+  &lt;span&gt;span&lt;/span&gt;
+  &lt;em&gt;em&lt;/em&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex flex-column-reverse bordered-container color-global-light">
+      <div class="bg-pm-blue-light p1">div</div>
+      <span class="bg-pm-blue p1">span</span>
+      <em class="bg-pm-blue-dark p1">em</em>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="flex flex-column-reverse"</strong>&gt;
+  &lt;div class=""&gt;div&lt;/div&gt;
+  &lt;span class=""&gt;span&lt;/span&gt;
+  &lt;em class=""&gt;em&lt;/em&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex flex-spacebetween bordered-container color-global-light">
+      <div class="bg-pm-blue-light p1">div</div>
+      <span class="bg-pm-blue p1">span</span>
+      <em class="bg-pm-blue-dark p1">em</em>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="flex flex-spacebetween"</strong>&gt;
+  &lt;div&gt;div&lt;/div&gt;
+  &lt;span&gt;span&lt;/span&gt;
+  &lt;em&gt;em&lt;/em&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+
+
+<h2>Items size and behaviour</h2>
+
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex bordered-container color-global-light">
+      <div class="bg-pm-blue-light p1 w150p">.w150p</div>
+      <span class="bg-pm-blue p1 w25">.w25</span>
+      <em class="bg-pm-blue-dark p1 flex-item-fluid">.flex-item-fluid</em>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="flex "</strong>&gt;
+  &lt;div class="w150p"&gt;div&lt;/div&gt;
+  &lt;span class="w25"&gt;span&lt;/span&gt;
+  &lt;em class="flex-item-fluid"&gt;em&lt;/em&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+<p><code>flex-item-fluid</code> applies <code>flex: 1 1 0px</code> to the element.</p> 
+
+<p>If you need an element that <strong>does not shrink</strong>, you may use <code>flex-item-noshrink</code> (applies <code>flex-shrink: 0</code>).<br>
+If you need an element that <strong>does not grow</strong>, you may use <code>flex-item-nogrow</code> (applies <code>flex-grow: 0</code>).<br>
+If you need an element that <strong>centers itself</strong>, you may use <code>flex-self-vcenter</code> (applies <code>align-self: center</code>). In some other cases, you may use <code>mauto</code> class (<code>margin: auto</code>).
+</p>
+
+
+<h2>Simple horizontal autogrid (default spacing is <code>1em</code>)</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex-autogrid color-global-light">
+      <div class="flex-autogrid-item">
+        <div class="bg-pm-blue-light p1">
+          .flex-autogrid-item
+        </div>
+      </div>
+      <div class="flex-autogrid-item">
+        <div class="bg-pm-blue-dark p1">
+          .flex-autogrid-item
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-spacebetween flex-autogrid color-global-light">
+      <div class="flex-autogrid-item">
+        <div class="bg-pm-blue-light p1">
+          .flex-autogrid-item
+        </div>
+      </div>
+      <div class="flex-autogrid-item">
+        <div class="bg-pm-blue-dark p1">
+          .flex-autogrid-item
+        </div>
+      </div>
+      <div class="flex-autogrid-item">
+        <div class="bg-pm-blue-dark p1">
+          .flex-autogrid-item
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="flex-autogrid"</strong>&gt;
+  &lt;div class="flex-autogrid-item"&gt;…&lt;/div&gt;
+  &lt;div class="flex-autogrid-item"&gt;…&lt;/div&gt;
+  …
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+
+<h2>Responsive</h2>
+
+<p>Resize the window, by default, elements take all the width on mobile thanks to <code>onmobile-flex-column</code>.</p>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex flex-spacebetween onmobile-flex-column bordered-container color-global-light">
+      <div class="bg-pm-blue-light p1 w30">.w30</div>
+      <span class="bg-pm-blue p1 w30">.w30</span>
+      <em class="bg-pm-blue-dark p1 w30">.w30</em>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="flex flex-spacebetween onmobile-flex-column"</strong>&gt;
+  &lt;div class="w30"&gt;div&lt;/div&gt;
+  &lt;span class="w30"&gt;span&lt;/span&gt;
+  &lt;em class="w30"&gt;em&lt;/em&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+<p>This can be avoided using <code>onmobile-flex-column-nostretch</code>.</p>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex flex-spacebetween onmobile-flex-column-nostretch bordered-container color-global-light">
+      <div class="bg-pm-blue-light p1 w30">.w30</div>
+      <span class="bg-pm-blue p1 w30">.w30</span>
+      <em class="bg-pm-blue-dark p1 w30">.w30</em>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="flex flex-spacebetween onmobile-flex-column-nostretch"</strong>&gt;
+  &lt;div class="w30"&gt;div&lt;/div&gt;
+  &lt;span class="w30"&gt;span&lt;/span&gt;
+  &lt;em class="w30"&gt;em&lt;/em&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+<p>This can also be used on <code>.autogrid</code> class.</p>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex-autogrid onmobile-flex-column color-global-light">
+      <div class="flex-autogrid-item">
+        <div class="bg-pm-blue-light p1">
+          .flex-autogrid-item
+        </div>
+      </div>
+      <div class="flex-autogrid-item">
+        <div class="bg-pm-blue-dark p1">
+          .flex-autogrid-item
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="flex-autogrid onmobile-flex-column"</strong>&gt;
+  &lt;div class="flex-autogrid-item"&gt;…&lt;/div&gt;
+  &lt;div class="flex-autogrid-item"&gt;…&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>

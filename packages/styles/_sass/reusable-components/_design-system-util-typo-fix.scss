@@ -1,0 +1,183 @@
+.noborder,
+iframe,
+dialog { border: 0; }
+
+.border-collapse {
+  border-collapse: collapse;
+}
+
+/*
+ * taken from http://tinytypo.tetue.net/ made by @tetue
+ * tuned with the help of https://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
+ *
+ * see https://en.wikipedia.org/wiki/Quotation_mark#Summary_table for reference
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(fr) > q {
+  quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D" "\2018" "\2019";
+}
+:lang(en) > q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(es) > q {
+  quotes: "\00AB" "\00BB" "\201C" "\201D";
+}
+:lang(it) > q {
+  quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D";
+}
+:lang(de) > q {
+  quotes: "\201e" "\201c" "\201a" "\2018";
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+
+/* avoid ugly line-height */
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
+
+/* avoid margin problems */
+@if $vertical-rythm == 'single_top' or $vertical-rythm == 'double_top_single_bottom' {
+  h1,.h1,
+  h2,.h2,
+  h3,.h3,
+  h4,.h4,
+  h5,.h5,
+  h6,.h6{
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  /* remove bottom margin on last child */
+  p,
+  ul,
+  ol,
+  dl,
+  blockquote,
+  pre,
+  table {
+    &:last-child {
+      margin-bottom: 0;
+    } 
+  }
+}
+
+/* avoid margin on nested elements */
+li p,
+li ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Hyphenation: Thou shalt not pass (Moïse or Gandalf, don’t remember) */
+@if $hyphenation == true {
+  textarea,
+  table,
+  td,
+  th,
+  code,
+  pre,
+  samp,
+  div,
+  p {
+    word-wrap: break-word;
+  }
+  @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+    textarea,
+    table,
+    td,
+    th,
+    code,
+    pre,
+    samp,
+    div,
+    p {
+      word-wrap: normal;
+      @include vendor-prefix(hyphens, auto, webkit ms);
+    }
+  }
+}
+@else {
+  .cut {
+    word-wrap: break-word;
+  }
+  @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+    .cut {
+      word-wrap: normal;
+      @include vendor-prefix(hyphens, auto, webkit ms);
+    }
+  }
+}
+
+/* remove hyphenation if needed */
+.nocut {
+  word-wrap: normal;
+}
+@supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+  .nocut {
+    @include vendor-prefix(hyphens, none, webkit ms);
+  }
+}
+
+code,
+pre,
+samp {
+  white-space: pre-wrap;
+}
+code {
+  line-height: 1;
+}
+kbd {
+  border: solid 1px;
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+  padding: 0 .25em;
+}
+table {
+  margin-bottom: 1.5em;
+  table-layout: fixed;
+}
+/* important, abbr are good */
+/* only those with a title are shown */
+abbr[title] {
+  border-bottom: dotted 1px;
+  cursor: help;
+  text-decoration: none;
+  /* color inherited from text */
+}
+
+/* text aligns */
+.alignright  { text-align: right; }
+.aligncenter { text-align: center; }
+.alignleft   { text-align: left; }
+
+@if $rtl-option == true {
+  /* RTL */
+  [dir="rtl"] .alignright  { text-align: left; }
+  [dir="rtl"] .alignleft   { text-align: right; }
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+

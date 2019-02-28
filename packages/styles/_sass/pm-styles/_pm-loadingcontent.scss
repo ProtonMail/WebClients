@@ -1,0 +1,52 @@
+[aria-busy="true"] {
+    background-image: url(/assets/img/loading.gif);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+button[aria-busy="true"] {
+    background-position: 100% 50%;
+    background-size: 20px 20px;
+}
+
+tr[aria-busy="true"] {
+    height: 5rem;
+}
+
+td[aria-busy="true"] {
+  position: relative;
+  background-image: none;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #fff url(/assets/img/loading.gif) 50% 50% no-repeat;
+  }
+}
+
+.progressive[aria-busy="true"] {
+  position: relative;
+  background-image: none;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: none;
+    animation: backgroundLoading 1s linear infinite alternate;
+  }
+}
+
+@keyframes backgroundLoading {
+  0% {
+    background-color: $white;
+  }
+  100% {
+    background-color: #eee;
+  }
+}

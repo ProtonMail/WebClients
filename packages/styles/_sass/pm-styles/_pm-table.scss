@@ -1,0 +1,17 @@
+/*
+ * tables
+ */
+.pm-simple-table {
+  @extend .border-collapse;
+  @extend .noborder;
+  @extend .w100;
+}
+.pm-simple-table td,
+.pm-simple-table th {
+  padding: em(9);
+  border-bottom: 1px solid $pm-global-border;
+}
+.pm-simple-table th {
+  @extend .uppercase;
+  @extend .alignleft;
+}

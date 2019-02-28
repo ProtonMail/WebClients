@@ -1,0 +1,133 @@
+/*
+ * Modals
+ */
+/* overlay covers everything */
+$modal-width: 50%;
+$modal-min-width: 42em;
+
+$modal-smaller-width: 22em;
+
+.pm-modalOverlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba( 0, 0, 0, .4 );
+  z-index: 666;
+  cursor: pointer;
+  animation: fade ease .5s 1 normal ;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.pm-modalOverlay[data-background-click="disabled"] {
+  cursor: auto;
+}
+@keyframes fade {
+  0% {
+    background: rgba( 0, 0, 0, 0 );
+  }
+  100% {
+    background: rgba( 0, 0, 0, .4 );
+  }
+}
+
+.pm-modal {
+  position: relative;
+  width: $modal-width;
+  min-width: $modal-min-width;
+  margin-top: 10vh;
+  // margin-left: auto; // no, because of IE11
+  margin-right: auto;
+  max-height: 80vh;
+  max-width: 100%;
+  /*
+  If you have problems with vh units 
+  top: 5%;
+  max-height: 90%;
+  */
+  background: $white;
+  color: $pm-global-grey;
+  padding: 0;
+  overflow: hidden;
+  border-radius: $global-border-radius;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+  animation: pop ease .15s 1 normal ;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: auto;
+}
+@keyframes pop {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	  -webkit-transform: scale(.8);
+	          transform: scale(.8);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	-webkit-transform: scale(1);
+	        transform: scale(1);
+  }
+}
+
+.pm-modal--smaller {
+  width: $modal-smaller-width;
+}
+
+.pm-modalClose {
+  position: absolute;
+  right: .5em;
+  top: .5em;
+  background: transparent;
+  border-radius: 1em;
+  color: $pm-global-grey;
+  border: 0;
+  font-size: 2em;
+  padding: 0;
+  line-height: 1;
+  cursor: pointer;
+}
+// not defined, left this in case of
+// .pm-modalClose:focus,
+// .pm-modalClose:hover,
+// .pm-modalClose:active {
+// }
+// .pm-modalClose:hover,
+// .pm-modalClose:active {
+// }
+
+.pm-modalContent{
+  padding: 0 rem(30);
+  overflow: auto;
+}
+
+.pm-modalHeader {
+  padding: rem(30) rem(30) 0 rem(30) ;
+}
+.pm-modalFooter {
+  padding: rem(30) 0;
+} 
+.pm-modalFooter [class*="pm-button"]:only-of-type {
+  margin-left: auto;
+}
+
+@media (max-width: $modal-min-width) {
+  .pm-modal {
+    margin: 1%;
+    min-width: 0;
+    width: 98%;
+    max-height: 98%;
+    align-self: center;
+  }
+}

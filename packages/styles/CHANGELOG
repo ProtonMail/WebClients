@@ -1,0 +1,126 @@
+# [1.3.4] - 2019-02-18
+
+## New
+
+- added alias `.pm-button-redborder` in buttons
+- added all icons
+- added `pm-modal--smaller` class and example
+
+## Updated/fixes
+
+- remove margin on `textarea`
+
+
+# [1.3.3] - 2019-02-18
+
+## New
+
+- added simple horizontal `flex-autogrid` examples in flexbox helpers
+
+
+# [1.3.2] - 2019-02-15
+
+## New
+
+- added `block-info-*` examples in containers
+- added `ratio-container-*` examples (in "icons tests", also useful for responsive `iframes`/etc. with keeping ratios)
+
+
+## Updated/fixes
+
+- mentionned new `scss` files in "how to use the design system"
+
+
+# [1.3.0] - 2019-02-14
+
+## New
+
+- added loading content page/templates
+- added drop downs (WIP)
+- added design for `progress` bar in navigation (remaining size)
+- added `information-block` style in container section
+- added aliases for buttons: `pm-button-(primary/link/error/warning/info)`
+- added class `.link` (same style as for `a` tag)
+- added class `.scroll-if-needed`, to apply `overflow: auto` on an element
+
+
+## Updated/fixes
+
+- adapted height of buttons/status/input/table cells (from Keven input)
+- updated: default case for `main-area` is without the toolbar, exception is now `main-area--withToolbar`
+- increased speed of all animations/transitions
+- moved `.rounded` class to global layout
+- enhanced Flexbox documentation section (mention of `flex-item-noshrink`, `flex-item-nogrow` and `flex-self-vcenter` classes)
+
+## Misc
+
+- added meta descriptions and keywords for all pages
+- bugfixes: IE11 JS fix (arrow functions are too modern for IE11, f***)
+- added another stupid joke on 404 page
+- updated license
+
+
+# [1.2.0] - 2019-01-24
+
+## New
+
+- added login page/template
+- added class `main-area--noToolbar` (main area without toolbar)
+- added class `main-full` (full-height page for login)
+- splitted `pm-layout` into separate components
+- added list/documentation on each module in “How to use the Design System”
+
+
+## Fixed
+
+- renamed status to badges (including classes)
+- tables (used more `extend`s to factorise)
+- add cache buster for JS file
+- bugfixes (links)
+
+# [1.1.0] - 2019-01-22
+
+## New
+
+- added sub navigation (buttons + IntersectionObserver stuff)
+- refactored group buttons
+- added classes `is-hover` and `is-active` for buttons
+- added exception for main content without toolbar (`main-area--noToolbar`)
+- styled buttons in left toolbar (PM, PVPN, Burger, etc.)
+
+
+## Fixed
+
+- renamed svg sprite
+- updated modal code
+- fixed print version
+- reordered import to have helper working properly on `Hx` stuff
+- bugfixes
+
+# [1.0.0] - 2019-01-14
+
+The design system for Proton projects is here. A quick look?
+
+## Features of the Design System
+
+- A global reference for design: colors, SVG icons available, buttons styles, etc.
+- A documentation to share front-end best practices (conventions, DOs/DONTs, etc.)
+- Some sets of re-usable classes (helpers) for front-end: typographic/hiding/etc. helpers, positionning helpers, etc.
+- A mini Flexbox micro-framework for achieving most common positionning.
+- To be notified of updates, a RSS is available.
+
+## Goals
+
+Here are goals of this tool:
+
+- Having a more consistent experience for users
+- Having a consistent reference for all the teams, and mutualizing some elements on all Proton projects in order to save time
+- Improving/simplifying work discussions between design and devs, and between all front-end team (same language, same conventions, same objectives)
+- Improving/simplifying Front-End maintenability/scalability, by not reinventing the wheel: the goal is to reduce drastically the CSS weight on PM V4 - target is to reduce it by half
+- Facilitating the onboarding of newcomers in the team.
+
+## Roadmap
+
+This will be first the main place to implement design of the V4 of PM. Real assets will come quickly, and project will be updated on a regular basis.
+
+In a near future, there will be other projects (click on the VPN icon to get a nice message)

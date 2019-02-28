@@ -1,0 +1,43 @@
+/*
+ * Notifications
+ */
+[class*="notification-"] {
+  position: absolute;
+  top: 1em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: $global-border-radius;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-name: notificationAnimation;
+}
+.notification {
+  &-alert {
+    background: $pm-global-warning;
+    color: $pm-global-light;
+  }
+  &-success {
+    background: $pm-global-success;
+    color: $pm-global-light;
+  }
+  &-warning {
+    background: $pm-global-attention;
+    color: $pm-global-grey;
+  }
+}
+
+
+@keyframes notificationAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-50px);
+    transform:  translateX(-50%) translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(-50%) translateY(0);
+    transform:  translateX(-50%) translateY(0);
+  }
+}

@@ -1,0 +1,31 @@
+/* color */
+
+.square-color {
+    width: 100px;
+    height: 100px;
+}
+
+
+
+/* DOs/DONTs */
+.icon-ko::after,
+.icon-ok::after {
+    content: '⚠';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 .5em 0 0;
+    font-size: 2em;
+    color: $pm-global-warning;
+}
+.icon-ok::after {
+    content: '✔';
+    color: $pm-global-success;
+}
+
+
+/* 404 */
+.rotate-90 {
+  transform: rotateZ(90deg);
+  transform-origin: 50% 50%;
+}

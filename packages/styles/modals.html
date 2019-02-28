@@ -1,0 +1,61 @@
+---
+layout: default
+lang: en
+pageId: modals
+title: Modals
+description: The modals used in Proton Products.
+keywords: modal, code
+section: design
+---
+
+<p>
+    <button class="js-modal pm-button-blue" data-modal-prefix-class="pm" data-modal-content-id="mod_id1" data-modal-title="Title for your modal" data-modal-close-text="×" data-modal-close-title="Close">A modal please</button>
+</p>
+
+
+<div id="mod_id1" class="hidden">
+    <p>Yeah, with <abbr title="Cascading Style Sheet">CSS</abbr> transforms, it is smoother.</p>
+</div>
+
+
+<p>
+  <button class="js-modal pm-button-blue" data-modal-prefix-class="pm" data-modal-additionnal-class="pm-modal--smaller" data-modal-content-id="mod_id2" data-modal-title="Title for your modal" data-modal-close-text="×" data-modal-close-title="Close">A small modal please</button>
+</p>
+
+
+<div id="mod_id2" class="hidden">
+  <p>Yeah, for short text for sure.</p>
+</div>
+
+
+
+<p>
+    <button class="js-modal pm-button-blue" data-modal-prefix-class="pm" data-modal-content-id="mod_id3" data-modal-title="Title for your modal" data-modal-close-text="×" data-modal-close-title="Close it, really">Another modal please (with a long content)</button>
+</p>
+
+
+<div id="mod_id3" class="hidden">
+    <p>Yeah, with a <br><br><br><br><br>loooooooooooong <br><br><br><br><br><br><br><br>Looooooooooooooooong<br><br><br><br><br>loooooooooooong <br><br><br><br><br><br><br><br> content.</p>
+</div>
+
+
+<h2>Modal code</h2>
+
+<p>If there is only one button in the footer, it will be right-aligned. <code>pm-modalFooter</code> is not mandatory.</p>
+
+<pre class=" language-markup"><code>&lt;div <strong>class="pm-modalOverlay"</strong>&gt;
+  &lt;dialog <strong>class="pm-modal"</strong> role="dialog" open aria-labelledby="modalTitle"&gt;
+    &lt;header <strong>class="pm-modalHeader"</strong>&gt;
+      &lt;button type="button" <strong>class="pm-modalClose"</strong> title="Close"&gt;×&lt;/button&gt;
+      &lt;h1 <strong>id="modalTitle" class="pm-modalTitle"</strong>&gt;Title for your modal&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;div <strong>class="pm-modalContent"</strong>&gt;
+      &lt;p&gt;...&lt;/p&gt;
+      &lt;footer <strong>class="pm-modalFooter</strong> flex flex-spacebetween"&gt;
+        &lt;button class="pm-button-blueborder"&gt;No&lt;/button&gt;
+        &lt;button class="pm-button-blue"&gt;Yes&lt;/button&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
+  &lt;/dialog&gt;
+&lt;/div&gt;</code></pre>
+

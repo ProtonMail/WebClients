@@ -1,0 +1,185 @@
+---
+layout: default
+lang: en
+pageId: positionning-helpers
+title: Helpers available for positionning
+description: Helpers available for positionning (float/table-layout/margins/paddings/etc.)
+keywords: helpers, float, margin, table-layout, padding, inline-block
+section: fe-guidelines
+---
+
+<h2>Float</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="left"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      <span class="left"><code>float: left</code> element</span>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="right"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      <span class="right"><code>float: right</code> element</span>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="clear"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies a <code>clear: both</code> to element.
+  </div>
+</div>
+
+<h2>Table-design using CSS</h2>
+
+<pre class=" language-css"><code>/* table-design in CSS */
+<strong>.row</strong> {
+  display: table;
+  table-layout: fixed;
+}
+<strong>.inline-row</strong> {
+  display: inline-table;
+  table-layout: fixed; 
+}
+.line {
+  display: table-row;
+}
+<strong>.col</strong> {
+  display: table-cell;
+  vertical-align: top;
+}
+<strong>.col-noalign</strong> {
+  display: table-cell;
+}</code></pre>
+
+<div class="row w100 mt2 mb2">  
+  <div class="col alignbottom w30 bg-global-border">
+    alignbottom
+  </div>
+  <div class="col w5"></div>
+  <div class="col w30 bg-global-border">
+    Content b<br />
+    longer
+  </div>
+  <div class="col w5"></div>
+  <div class="col w30 bg-global-border">
+    Content c<br />
+    much<br />
+    longer
+  </div> 
+</div> 
+    
+<pre class=" language-css"><code><strong>.aligntop</strong> {
+  vertical-align: top;
+}
+<strong>.alignbottom</strong> {
+  vertical-align: bottom;
+}
+<strong>.alignmiddle</strong> {
+  vertical-align: middle;
+}</code></pre>
+
+<p>These vertical alignment also work for simple texts.</p>
+
+<h2>inline-block helper</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="inbl"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies a <code>display: inline-block</code> to element.
+  </div>
+</div>
+      
+<h2>Margin/padding helpers</h2>
+        
+<ul>
+  <li>
+    <code>.m</code> = <code>margin</code>
+  </li>
+  <li>
+    <code>.p</code> = <code>padding</code>
+  </li>
+  <li>
+    <code>t/r/b/l</code> = <code>top/right/bottom/left</code>
+  </li>
+  <li><code>0/0-5/1/2</code> = 0/0.5em/1em/2em</li>
+</ul>
+
+<p>
+  Examples:
+</p>
+<div class="flex flex-spacebetween mb1 onmobile-flex-column">
+  <div class="w49 onmobile-mb1">
+    <div class="pt2 bg-global-border">
+      <code>.pt2</code> = <code>padding-top: 2em</code>.
+    </div>
+  </div>
+  <div class="w49 onmobile-mb1">
+    <div class="pl2 bg-global-border">
+      <code>.pl2</code> = <code>padding-left: 2em</code>.
+    </div>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 onmobile-mb1">
+    <div class="p1 bg-global-border">
+      <code>.p1</code> = <code>padding: 1em</code>.
+    </div>
+  </div>
+  <div class="w49 onmobile-mb1">
+    <div class="pl1 pr1 bg-global-border">
+      <code>.pl1</code> + <code>.pr1</code>  = <code>padding-left: 1em</code> + <code>padding-right: 1em</code>.
+    </div>
+  </div>
+</div>
+
+<p>Also available:</p>
+
+<ul>
+  <li><code>.mtauto</code> = <code>margin-left: auto</code>.</li>
+  <li><code>.mrauto</code> = <code>margin-right: auto</code>.</li>
+  <li><code>.mbauto</code> = <code>margin-bottom: auto</code>.</li>
+  <li><code>.mlauto</code> = <code>margin-left: auto</code>.</li>
+  <li><code>.mauto</code> = <code>margin: auto</code>.</li>
+  <li><code>.center</code> = <code>.mlauto</code> + <code>.mrauto</code></li>
+</ul>
+
+<p>
+  This helps for positionning blocks or <a href="/flexbox-helpers">with flexbox</a>.
+</p>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;div <strong>class="w50 mlauto"</strong>&gt;Right-aligned block&lt;/div&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <div class="bordered-container color-global-light">
+     <div class="w50 mlauto bg-pm-blue-light p1">Right-aligned block</div>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;div <strong>class="w50 center"</strong>&gt;Centered block&lt;/div&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <div class="bordered-container color-global-light">
+     <div class="w50 center bg-pm-blue-light p1">Centered block</div>
+    </div>
+  </div>
+</div>
+

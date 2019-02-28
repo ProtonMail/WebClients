@@ -1,0 +1,63 @@
+/* dropdown examples */
+$dropDown-width: 200px;
+.dropDown,
+.dropDown-leftArrow,
+.dropDown-rightArrow {
+  @extend .relative;
+}
+.dropDown-content {
+  position: absolute;
+  z-index: 10;
+  left: calc(50% - #{$dropDown-width/2});
+  top: 100%;
+  margin-top: 2rem;
+  display: block;
+  opacity: 1;
+  transition: visibility 0s ease, transform .15s ease, opacity .15s ease ;
+  transform-origin: top center;
+  transform: scale(1,1);
+  visibility: visible;
+  transition-delay: 0s;
+  width: $dropDown-width; 
+  padding: 0;
+  background: $white;
+  border-radius: $global-border-radius;
+  box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
+}
+
+.dropDown-leftArrow .dropDown-content {
+  left: 0;
+}
+.dropDown-rightArrow .dropDown-content {
+  left: auto;
+  right: 0;
+}
+
+
+.dropDown-content::before {
+  content: '';
+  position: absolute;
+  top: -2rem; 
+  left: calc(50% - 1rem);
+  width: 1rem;
+  height: 1rem;
+  border: 1rem solid transparent;
+  border-bottom: 1rem solid $white;
+}
+
+/* This is the hidden state */
+[hidden].dropDown-content {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1,0);
+  transition-delay: .15s, 0s, 0s;
+}
+
+.dropDown-leftArrow .dropDown-content::before {
+  left: 1rem;
+}
+.dropDown-rightArrow .dropDown-content::before {
+  left: auto;
+  right: 1rem;
+}

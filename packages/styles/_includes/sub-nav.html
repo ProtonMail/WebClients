@@ -1,0 +1,30 @@
+                {% if page.subsection %} 
+                <div class="subNav notablet nomobile bg-global-light noprint">
+
+                  <div class="subNav-inner">
+                      <p class="uppercase smaller">Navigation</p>
+
+                      {% if page.subsection == 'buttons' %}
+
+                      <ul class="unstyled subNav-list">
+                        <li class="mb0-5"><a href="#button-states" class="subNav-link js-scrollTo">Buttons</a></li>
+                        <li class="mb0-5"><a href="#button-aliases" class="subNav-link js-scrollTo">Buttons aliases</a></li>
+                        <li class="mb0-5"><a href="#button-groups" class="subNav-link js-scrollTo">Groups</a></li>
+                      </ul>
+
+                      {% endif %}
+
+                      {% if page.subsection == 'icons' %}
+
+                      <ul class="unstyled subNav-list">
+                        <li class="mb0-5"><a href="#icon-lists" class="subNav-link js-scrollTo">Icon lists</a></li>
+                        <li class="mb0-5"><a href="#integration-cases" class="subNav-link js-scrollTo">Integration cases</a></li>
+                        <li class="mb0-5"><a href="#sizes-colors" class="subNav-link js-scrollTo">Sizes, colors</a></li>
+                      </ul>
+
+                      {% endif %}
+
+                  </div>
+
+                </div>
+                {% endif %}

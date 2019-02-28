@@ -1,0 +1,28 @@
+/*
+ * containers
+ */
+.bordered-container {
+  border: 1px solid $pm-global-border;
+  border-radius: $global-border-radius;
+}
+
+[class*="block-info"] {
+  @extend .p1;
+  color: $pm-global-grey;
+  background-color: $pm-global-light;
+  border-left-width: $global-border-radius;
+  border-left-style: solid;
+}
+.block-info-standard {
+  border-color: $pm-blue;
+  background-color: transparent;
+}
+.block-info {
+  border-color: $pm-blue;
+}
+.block-info-error {
+  border-color: $pm-global-warning;
+}
+.block-info-warning {
+  border-color: $pm-global-attention;
+}

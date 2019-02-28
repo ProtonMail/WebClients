@@ -1,0 +1,126 @@
+---
+layout: default
+lang: en
+pageId: icons-tests
+title: Testpage responsive/display icons
+description: The reference of icons used and how to implement them correctly.
+keywords: SVG, sprites, accessibility, icons
+section: design
+---
+
+
+<h2>Tests</h2>
+
+<a href="/icons/" class="ml1 mb1 right">back to icons</a>
+
+<div class="w200p aligncenter bordered-container">
+  <svg viewBox="0 0 100 100" class="icon-100p fill-global-grey bordered-container" role="img" focusable="false">
+    <use xlink:href="#shape-test16"></use>
+  </svg>
+  <br>
+  <br>Icon viewbox 16X16
+  <br>Display viewbox 100X100
+  <br>CSS display 16X16
+  <br><strong class="color-global-warning">KO</strong>
+</div>
+<div class="w200p aligncenter bordered-container">
+  <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey bordered-container" role="img" focusable="false">
+    <use xlink:href="#shape-test16"></use>
+  </svg>
+  <br>
+  <br>Icon viewbox 16X16
+  <br>Display viewbox 16X16 
+  <br>CSS display 16X16
+  <br><strong class="color-global-success">OK</strong>
+</div>
+<div class="w200p aligncenter bordered-container">
+  <svg viewBox="0 0 16 16" class="icon-100p fill-global-grey bordered-container" role="img" focusable="false">
+    <use xlink:href="#shape-test16"></use>
+  </svg>
+  <br>
+  <br>Icon viewbox 16X16
+  <br>Display viewbox 16X16 
+  <br>CSS display 100X100
+  <br><strong class="color-global-success">OK</strong>
+</div>
+<div class="w100 aligncenter bordered-container">
+  <svg viewBox="0 0 16 16" class="w100 fill-global-grey bordered-container" role="img" focusable="false">
+    <use xlink:href="#shape-test16"></use>
+  </svg>
+  <br>
+  <br>Icon viewbox 16X16
+  <br>Display viewbox 16X16 
+  <br>CSS display 100%
+  <br><strong class="color-global-warning">KO</strong> (IE need explicit height)
+</div>
+<div class="w100 aligncenter bordered-container">
+  <svg viewBox="0 0 16 16" class="icon-50 fill-global-grey bordered-container" role="img" focusable="false">
+    <use xlink:href="#shape-test16"></use>
+  </svg>
+  <br>
+  <br>Icon viewbox 16X16
+  <br>Display viewbox 16X16 
+  <br>CSS display 50% X 50%
+  <br><strong class="color-global-warning">KO</strong> (IE need explicit height)
+</div>
+<div class="w100 aligncenter bordered-container">
+  <svg viewBox="0 0 16 16" class="icon-800p fill-global-grey bordered-container" role="img" focusable="false">
+    <use xlink:href="#shape-test16"></use>
+  </svg>
+  <br>
+  <br>Icon viewbox 16X16
+  <br>Display viewbox 16X16 
+  <br>CSS display 800X800
+  <br><strong class="color-global-warning">KO</strong> (height of 800px is conserved at lower resolutions :-[)
+</div>
+
+<div class="w100 aligncenter bordered-container">
+  <div class="ratio-container-square">
+    <svg viewBox="0 0 16 16" class="inner-ratio-container w100 fill-global-grey bordered-container" role="img" focusable="false">
+      <use xlink:href="#shape-test16"></use>
+    </svg>
+  </div> 
+  <br>
+  <br>Icon viewbox 16X16
+  <br>Display viewbox 16X16 
+  <br>CSS display 100%
+  <br>Added ratio container square
+  <br><strong class="color-global-success">OK</strong>
+</div>
+
+
+<svg class="hidden">
+  <defs> 
+    <path id="shape-vpn" d="M95.362 13.263a11.119 10.461 0 0 0-22.237 0v.324l-48.46 14.72a11.119 10.461 0 1 0-9.2 16.34 10.971 10.322 0 0 0 3.395-.557l31.83 37.817a11.119 10.461 0 1 0 17.466-3.842L85.08 23.678a11.07 10.415 0 0 0 10.282-10.415zM60.973 75.335a11.02 10.368 0 0 0-4.92 1.157L24.96 39.462a11.02 10.368 0 0 0 1.575-4.351l49.492-14.858a11.119 10.461 0 0 0 1.722 1.48L61.022 75.335z" />
+    
+    <g id="shape-pm"><path d="M49.237 7.854S24.144 7.03 18.968 34.866v18.958s.214 2.03 5.921 6.15C30.596 64.097 45.369 75.7 49.237 75.7c3.868 0 18.642-11.604 24.349-15.725 5.706-4.122 5.92-6.15 5.92-6.15v-18.96C74.331 7.03 49.237 7.856 49.237 7.856zm17.184 37.347H32.054V34.866c3.487-13.823 17.183-14.013 17.183-14.013s13.696.19 17.184 14.013z"/><path d="M49.237 79.97s-3.889-.381-6.932-2.495c-3.044-2.113-23.337-16.612-23.337-16.612v28.702s.172 3.34 3.85 3.34h52.839c3.678 0 3.85-3.34 3.85-3.34V60.863S59.212 75.362 56.17 77.475c-3.044 2.114-6.933 2.494-6.933 2.494z"/></g>
+    
+    <path id="shape-twitter" d="M100.001,17.942c-3.681,1.688-7.633,2.826-11.783,3.339
+    c4.236-2.624,7.49-6.779,9.021-11.73c-3.965,2.432-8.354,4.193-13.026,5.146C80.47,10.575,75.138,8,69.234,8
+    c-11.33,0-20.518,9.494-20.518,21.205c0,1.662,0.183,3.281,0.533,4.833c-17.052-0.884-32.168-9.326-42.288-22.155
+    c-1.767,3.133-2.778,6.773-2.778,10.659c0,7.357,3.622,13.849,9.127,17.65c-3.363-0.109-6.525-1.064-9.293-2.651
+    c-0.002,0.089-0.002,0.178-0.002,0.268c0,10.272,7.072,18.845,16.458,20.793c-1.721,0.484-3.534,0.744-5.405,0.744
+    c-1.322,0-2.606-0.134-3.859-0.379c2.609,8.424,10.187,14.555,19.166,14.726c-7.021,5.688-15.867,9.077-25.48,9.077
+    c-1.656,0-3.289-0.102-4.895-0.297C9.08,88.491,19.865,92,31.449,92c37.737,0,58.374-32.312,58.374-60.336
+    c0-0.92-0.02-1.834-0.059-2.743C93.771,25.929,97.251,22.195,100.001,17.942L100.001,17.942z"></path>  
+    
+    <g id="shape-youtube"> <path class="youtube"  d="M98.77,27.492c-1.225-5.064-5.576-8.799-10.811-9.354C75.561,16.818,63.01,15.993,50.514,16
+      c-12.495-0.007-25.045,0.816-37.446,2.139c-5.235,0.557-9.583,4.289-10.806,9.354C0.522,34.704,0.5,42.574,0.5,50.001
+      c0,7.426,0,15.296,1.741,22.509c1.224,5.061,5.572,8.799,10.807,9.352c12.399,1.32,24.949,2.145,37.446,2.14
+      c12.494,0.005,25.047-0.817,37.443-2.14c5.234-0.555,9.586-4.291,10.81-9.352c1.741-7.213,1.753-15.083,1.753-22.509
+      S100.51,34.704,98.77,27.492 M67.549,52.203L43.977,64.391c-2.344,1.213-4.262,0.119-4.262-2.428V38.036
+      c0-2.548,1.917-3.644,4.262-2.429l23.572,12.188C69.896,49.008,69.896,50.992,67.549,52.203"></path> </g> 
+    
+    <path id="shape-clipboard" d="M28.144 53.684H70.67v3.887H28.144zm63.788-42.757V96.44H6.882V10.927h12.757c5.226 0 9.27-4.214 12.758-7.774h34.02c3.487 3.56 7.531 7.774 12.758 7.774zm-46.778 3.887c0 2.145 1.905 3.887 4.253 3.887 2.347 0 4.252-1.742 4.252-3.887 0-2.146-1.905-3.887-4.252-3.887-2.348 0-4.253 1.74-4.253 3.887zm38.273 58.83c-4.563 5.266-10.41 10.74-16.262 15.023h16.262zm0-54.943h-17.01l-8.505 7.774H41.335L32.397 18.7h-17.01v69.966h31.307c17.673 0 11.218-23.322 11.218-23.322s25.515 6.413 25.515-9.55zM28.144 65.345h21.263v-3.887H28.144zm0-15.548H70.67V45.91H28.144zm0-7.774H70.67v-3.887H28.144z"/>
+    
+    <g id="shape-draft">
+      <path d="M31.25 37.5h18.75v6.25h-18.75v-6.25z"></path>
+      <path d="M31.25 75h18.75v6.25h-18.75v-6.25z"></path>
+      <path d="M31.25 50h37.5v6.25h-37.5v-6.25z"></path>
+      <path d="M80.322 29.657c-6.36-6.308-9.918-9.863-16.223-16.229l-0.916-0.928h-44.434v81.25h62.5v-63.178zM62.5 20.694l0.241 0.241c3.625 3.651 6.631 6.655 10.317 10.315h-10.558zM75 87.5h-50v-68.75h31.25v18.75h18.75z"></path>
+    </g>
+
+    <g id="shape-test16" data-name="Layer 8"><path d="M11,6V5.5A1.50164,1.50164,0,0,0,9.5,4h-3A1.50164,1.50164,0,0,0,5,5.5V6H2v8H14V6Zm2,1.5A1.50164,1.50164,0,0,1,11.5,9H9.14062v.03735A1.4805,1.4805,0,0,0,6.89014,9H4.5A1.50164,1.50164,0,0,1,3,7.5V7H13ZM8.5,10A.5.5,0,1,1,8,9.5.501.501,0,0,1,8.5,10ZM6,5.5A.501.501,0,0,1,6.5,5h3a.501.501,0,0,1,.5.5V6H6ZM3,13V9.48755A2.476,2.476,0,0,0,4.5,10h2a1.5,1.5,0,0,0,3,0h2A2.476,2.476,0,0,0,13,9.48755V13Z" /></g>
+
+  </defs>
+</svg>

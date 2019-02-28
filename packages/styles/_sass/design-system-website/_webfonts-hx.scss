@@ -1,0 +1,58 @@
+/* here the font faces */
+/*@font-face {
+
+}*/
+
+h1,
+.h1 {
+  display: block;
+  @include flow-hr(36);
+  font-weight: normal;
+}
+h2,
+.h2 {
+  display: block;
+  @include flow-hr(28);
+  font-weight: normal;
+}
+h3,
+.h3 {
+  display: block;
+  @include flow-hr(20);
+  font-weight: normal;
+}
+h4,
+.h4 {
+  display: block;
+  @include flow-hr(18);
+  font-weight: normal;
+}
+h5,
+.h5 {
+  display: block;
+  @include flow-hr(17);
+  font-weight: normal;
+}
+h6,
+.h6 {
+  display: block;
+  @include flow-hr(16);
+  font-weight: normal;
+}
+
+/* other useful classes */
+.smaller {
+  @include flow-other(10); // equiv 10px
+}
+.small {
+  @include flow-other(12); // equiv 12px
+}
+.big {
+  @include flow-other(16); // equiv 16px
+}
+.bigger {
+  @include flow-other(18); // equiv 18px
+}
+.biggest {
+  @include flow-other(20); // equiv 20px
+}

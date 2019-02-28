@@ -1,0 +1,71 @@
+/**
+ * medium/tablet breakpoint
+ */
+@include respond-to($breakpoint-medium) { 
+   
+  /**
+   * global structure adaptation (page / skip links / header / main content / footer)
+   */
+
+  .ontablet-list-2columns {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+  }
+  
+  /**
+   * inside content (other styles for pages)
+   */
+
+
+}
+
+
+
+
+/**
+ * small/mobile breakpoint
+ */
+@include respond-to($breakpoint-small) { 
+
+  /**
+   * global structure adaptation (page / skip links / header / main content / footer)
+   */
+  .main {
+    margin-right: 10px;
+  }
+  .aside:not(.aside-noBurger) {
+    padding-top: .25em;
+  }
+  
+  /**
+   * inside content (other styles for pages)
+   */
+
+  .sidebar[aria-hidden="true"] {
+    transform: translateX(-180px);
+    width: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 1s, 0s, 0s, 0s;
+  }
+  /* nesting visibility, see https://codepen.io/nico3333fr/pen/OaBOwa for explanation */
+  .sidebar[aria-hidden="true"] .animated-expandmore__to_expand {
+    visibility: hidden;
+    transition-delay: 1s, 0s, 0s, 0s;
+  }
+
+}
+
+
+
+/**
+ * tiny/small mobile breakpoint
+ */
+@include respond-to($breakpoint-tiny) { 
+
+  /**
+   * global structure adaptation (page / skip links / header / main content / footer)
+   */
+
+}

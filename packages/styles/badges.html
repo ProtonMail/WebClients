@@ -1,0 +1,41 @@
+---
+layout: default
+lang: en
+pageId: badges
+title: Badges
+description: Badges used for status/tables/etc.
+keywords: badges, status, labels
+section: design
+---
+
+<table class="pm-simple-table noborder border-collapse">
+    <caption class="sr-only">Status/Labels</caption>
+    <thead>
+        <tr>
+            <th scope="col">Example</th>
+            <th scope="col">Code</th>
+            <th scope="col">Copy to clipboard</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% assign listColors = "success#blue#grey#warning#error" | split: '#' %}
+        {% assign messages = "active#default#origin#disabled#error" | split: '#' %}
+
+        {% for color in listColors %}
+        <tr>
+            <td><span class="badgeLabel-{{ color }}">{{ messages[forloop.index0] }}</span></td>
+            <td><pre class=" language-markup"><code>&lt;span class="<strong>badgeLabel-{{ color }}</strong>"&gt;{{ messages[forloop.index0] }}&lt;/span&gt;
+{% if color == 'blue' %}
+&lt;span class="<strong>badgeLabel</strong>"&gt;{{ messages[forloop.index0] }}&lt;/span&gt;
+{% endif %}</code></pre></td>
+            <td><code class="sr-only">&lt;span class="badgeLabel-{{ color }}"&gt;{{ messages[forloop.index0] }}&lt;/span&gt;</code> 
+                <button type="button" class="js-copy-clipboard js-trigger-notification aligntop" title="Copy to clipboard" data-notification-text="Successfully copied" data-notification-type="success">
+                    <svg viewBox="0 0 100 100" aria-hidden="true" class="icon-16p" role="img" focusable="false">
+                        <use xlink:href="#shape-clipboard"></use>
+                    </svg>
+                    <span class="sr-only">Copy to clipboard</span>
+                </button></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie6 oldies no-js"> <![endif]-->
+<!--[if lte IE 7]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie7 oldies no-js"> <![endif]-->
+<!--[if IE 8]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie8 oldies no-js">  <![endif]-->
+<!--[if IE 9]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie9 no-js">  <![endif]-->
+<!--[if gt IE 9]><!--> <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ page.lang }}" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    {% if site.environment == "prod" %}
+    <link rel="stylesheet" href="/assets/css/styles-pm_{{ site.time | date: "%s" }}.css" />
+    {% else %}
+    <link rel="stylesheet" href="/assets/css/styles-pm.css" />
+    {% endif %}
+    
+    <title>{{ page.title }}</title>
+
+    {% include metas.html %}
+    
+  </head>
+  <body>
+    <div class="body flex flex-nowrap no-scroll">
+
+    <aside class="aside aside-noBurger noprint">
+
+      <ul class="unstyled m0 aligncenter">
+        <li class="mb0-5">
+          <a href="/" class="center bl aside-link" title="ProtonMail" aria-current="true">
+            <svg viewBox="0 0 100 100" class="aside-linkIcon fill-global-light" role="img" focusable="false" aria-hidden="true">
+              <use xlink:href="#shape-pm"></use>
+            </svg>
+            <span class="sr-only">ProtonMail</span>
+          </a>
+        </li>
+        <li class="mb0-5">
+          <a class="center bl js-notyet aside-link" title="ProtonVPN">
+            <svg viewBox="0 0 100 100" class="aside-linkIcon fill-global-light" role="img" focusable="false" aria-hidden="true">
+              <use xlink:href="#shape-vpn"></use>
+            </svg>
+            <span class="sr-only">ProtonVPN</span>
+          </a>
+        </li>
+      </ul>
+
+    </aside>
+
+    <div class="content flex-item-fluid reset4print">
+
+          <main class="main-full pt1 pb1 pl2 pr2 flex flex-column flex-nowrap reset4print">
+
+                <p class="alignright flex-item-noshrink noprint">
+                    Go to: <a href="/" class="inbl">Design system home</a>
+                </p>
+                <h1 class="flex-item-noshrink">{{ page.title }}</h1>
+                    
+                  {{ content }}
+
+                  {% include sprite-icons.svg %}
+            
+          </main>
+        </div>
+
+    </div>
+
+  </div>
+  
+  {% if site.environment == "prod" %}
+  <script src="/assets/js/main_{{ site.time | date: "%s" }}.js"></script>
+  {% else %}
+  <script src="/assets/js/main.js"></script>
+  {% endif %}
+  </body>
+</html>

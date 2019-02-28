@@ -1,0 +1,44 @@
+---
+layout: default
+lang: en
+pageId: how-to-use-design-system
+title: How to use the Design System
+description: Some general rules about how to use the Design System
+keywords: structure, design system, proton
+section: fe-guidelines
+---
+
+<p>The Proton Design System is splitted into 2 sections:</p>
+<ol>
+  <li><strong>Design</strong>: brand colors/buttons/etc. all elements used for the project.</li>
+  <li><strong>Front-End Guidelines</strong>: guidelines to understand project structures, existing classes, helpers, available frameworks, recommendations, etc.</li>
+</ol>
+
+<h2>About CSS structure and re-use</h2>
+
+<p>Sass files of the Design System are splitted for the moment into 3 folders:</p>
+
+<ol>
+  <li class="mb0-5"><strong>reusable-components</strong>: a set of files/framework/etc. <strong>that can be used on every project</strong>.
+  <ul>
+    {% assign sassFiles = "design-system-config#design-system-reset#design-system-colors#design-system-util-typo-fix#design-system-links-icons#design-system-layout-modules#design-system-forms#design-system-responsive#design-system-print#design-system-viewport-fix" | split: '#' %}
+    {% assign sassDescription = "config, Sass functions and variables#resets#colors classes (<code>background</code>, <code>color</code>, and <code>fill</code>)#typo fixes and typo helpers#icons sizes/links#all positionning helpers (including flex)#all resets for forms#all helpers for responsive#all helpers/resets for print#some viewport fixes" | split: '#' %}
+    {% for file in sassFiles %}
+    <li><strong>_{{ file }}.scss</strong>: {{ sassDescription[forloop.index0] }}</li>
+    {% endfor %}
+  </ul>
+  </li>
+  <li class="mb0-5"><strong>pm-styles</strong>: styles used <strong>for ProtonMail V4</strong>.
+    <ul>
+        {% assign sassFiles = "pm-badges#pm-layout#pm-notifications#pm-table#pm-modal#pm-buttons#pm-dropdown#pm-progressBar#pm-loadingcontent#pm-containers" | split: '#' %}
+        {% assign links = "/badges/#/containers/#/notifications/#/table/#/modals/#/buttons/#/drop-down/#/#/loading-content/#/containers/" | split: '#' %}
+        {% assign linksDesc = "badges#containers#notifications#tables#modals#buttons#drop downs#on each page on the left bottom#loading content#containers" | split: '#' %}
+        {% for file in sassFiles %}
+        <li><strong>_{{ file }}.scss</strong>: <a href="{{ links[forloop.index0] }}">see {{ linksDesc[forloop.index0] }}</a></li>
+        {% endfor %}
+      </ul>
+  </li>
+  <li class="mb0-5"><strong>design-system-website</strong>: extra-styles only needed to make this website work properly.</li>
+</ol>
+
+<p>See in <code>/assets/css/styles-pm.scss</code> to see an example of import of all of these.</p>

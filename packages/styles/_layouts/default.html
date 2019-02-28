@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie6 oldies no-js"> <![endif]-->
+<!--[if lte IE 7]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie7 oldies no-js"> <![endif]-->
+<!--[if IE 8]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie8 oldies no-js">  <![endif]-->
+<!--[if IE 9]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie9 no-js">  <![endif]-->
+<!--[if gt IE 9]><!--> <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ page.lang }}" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    {% if site.environment == "prod" %}
+    <link rel="stylesheet" href="/assets/css/styles-pm_{{ site.time | date: "%s" }}.css" />
+    {% else %}
+    <link rel="stylesheet" href="/assets/css/styles-pm.css" />
+    {% endif %}
+    
+    <title>{{ page.title }}</title>
+
+    {% include metas.html %}
+    
+  </head>
+  <body>
+    <div class="body flex flex-nowrap no-scroll">
+
+    <aside class="aside noprint">
+
+      <ul class="unstyled m0 aligncenter">
+        <li class="mb0-5 nodesktop notablet "><button type="button" class="togglemenu w100 center color-global-light js-togglemenu aside-link" title="Navigation"><span aria-hidden="true">≡</span> <span class="sr-only">navigation</span></button></li>
+        <li class="mb0-5">
+          <a href="/" class="center bl aside-link" title="ProtonMail" aria-current="true">
+            <svg viewBox="0 0 100 100" class="aside-linkIcon fill-global-light" role="img" focusable="false" aria-hidden="true">
+              <use xlink:href="#shape-pm"></use>
+            </svg>
+            <span class="sr-only">ProtonMail</span>
+          </a>
+        </li>
+        <li class="mb0-5">
+          <a class="center bl js-notyet aside-link" title="ProtonVPN">
+            <svg viewBox="0 0 16 16" class="aside-linkIcon fill-global-light" role="img" focusable="false" aria-hidden="true">
+              <use xlink:href="#shape-protonvpn"></use>
+            </svg>
+            <span class="sr-only">ProtonVPN</span>
+          </a>
+        </li>
+      </ul>
+
+    </aside>
+
+    <div class="content flex-item-fluid reset4print">
+
+        <header class="header flex flex-nowrap flex-spacebetween reset4print">
+
+          <a href="/" class="nodecoration flex-item-centered-vert">
+            <svg viewbox="0 0 148 23" class="logo" role="img" aria-labelledby="logo__title" focusable="false"><title id="logo__title">ProtonMail</title><g stroke-miterlimit="10" stroke-width="20"><path d="M823.495 470.975h-65.25v189.75h-71.25v-516.75h135c125.25 0 201.75 51 201.75 159.75 0 120.75-83.25 167.25-200.25 167.25zm6-271.5h-71.25v215.25h71.25c68.25 0 118.5-21.75 118.5-110.25 0-77.25-49.5-105-118.5-105zM1107.743 660.725v-395.25h60l8.25 75.75c22.5-55.5 57-84.75 103.5-84.75 12.75 0 27 1.5 39 4.5l-12.75 67.5c-12-3-20.25-4.5-34.5-4.5-49.5 0-81 50.25-94.5 105v231.75zM1520.988 247.475c112.5 0 175.499 81 175.499 206.25 0 122.25-64.499 207-176.249 207-112.5 0-176.25-81-176.25-206.25 0-122.25 64.5-207 177-207zm0 55.5c-66 0-102.75 48-102.75 151.5 0 102.75 36 150.75 102 150.75s102-48 102-151.5c0-102.75-36-150.75-101.25-150.75zM1999.487 633.725c-24 18-55.5 27-88.5 27-73.5 0-106.5-46.5-106.5-114.75v-237h-63v-52.5h63v-89.25l69-8.25v97.5h99.75l-8.25 52.5h-91.5v236.25c0 39.75 12.75 58.5 47.25 58.5 17.25 0 33-5.25 52.5-17.25zM2206.485 247.475c112.5 0 175.5 81 175.5 206.25 0 122.25-64.5 207-176.25 207-112.5 0-176.25-81-176.25-206.25 0-122.25 64.5-207 177-207zm0 55.5c-66 0-102.75 48-102.75 151.5 0 102.75 36 150.75 102 150.75s102-48 102-151.5c0-102.75-36-150.75-101.25-150.75zM2553.735 660.725h-69v-395.25h59.25l5.25 54c32.25-40.5 79.5-63 126-63 76.5 0 107.25 43.5 107.25 117v287.25h-69v-282.75c0-47.25-16.5-67.5-61.5-67.5-42.75 0-77.25 33-98.25 63.75zM3320.978 660.725l-22.5-264.75c-6-72.75-8.25-155.25-8.25-171.75h-3l-115.5 381.75h-68.25l-120-381.75h-3c0 17.25-1.5 105-6.75 171.75l-20.25 264.75h-67.5l42.75-516.75h96l113.25 377.25h3l109.5-377.25h96.75l42.75 516.75zM3762.72 562.475c0 31.5 9 42.75 29.25 50.25l-16.5 48c-35.25-4.5-60.75-20.25-72.75-55.5-27.75 37.5-69.75 55.5-117.75 55.5-79.5 0-128.25-48.75-128.25-122.25 0-81.75 66-127.5 186-127.5h51v-30.75c0-55.5-27.75-76.5-85.5-76.5-26.25 0-63 6-103.5 20.25l-18-51c48.75-18 93-25.5 132-25.5 100.5 0 144 48.75 144 129zm-69-8.25v-97.5h-47.25c-84.75 0-114 30.75-114 78.75 0 48.75 21.75 73.5 71.25 73.5 37.5 0 67.5-20.25 90-54.75zM3923.212 175.475c-28.5 0-48-20.25-48-47.25 0-26.25 19.5-46.5 48-46.5s48.75 20.25 48.75 46.5c0 27-20.25 47.25-48.75 47.25zm-34.5 485.25v-395.25h69v395.25zM4217.956 647.225c-17.25 8.25-36 13.5-56.25 13.5-47.25 0-81-27-81-94.5V97.475l69-8.25v483c0 22.5 7.5 31.5 24.75 31.5 9.75 0 18-1.5 25.5-4.5z" transform="matrix(.03462 0 0 .03402 0 .149)"/></g><g><path d="M8.263.15S1.413-.072 0 7.396v5.086s.058.545 1.616 1.65c1.558 1.106 5.59 4.219 6.647 4.219 1.056 0 5.089-3.113 6.646-4.219 1.558-1.105 1.617-1.65 1.617-1.65V7.396C15.113-.072 8.263.15 8.263.15zm4.69 10.019h-9.38V7.396c.951-3.708 4.69-3.76 4.69-3.76s3.738.052 4.69 3.76z"/><path d="M8.263 19.496s-1.062-.102-1.893-.669C5.54 18.26 0 14.37 0 14.37v7.7s.047.896 1.05.896h14.425c1.004 0 1.05-.895 1.05-.895v-7.7s-5.539 3.89-6.37 4.456c-.83.567-1.892.67-1.892.67z"/></g></svg>
+          </a>
+
+          <div class="flex-item-centered-vert noprint">
+            <label for="white" class="toogle-white"><input type="checkbox" name="white" id="white" class="sr-only">toggle color mode</label>
+          </div>
+
+        </header>
+        
+        <div class="flex flex-nowrap">
+          <div class="sidebar flex js-sidebar nomobile noprint">
+
+            <div class="flex no-scroll flex-column flex-nowrap">
+
+              <nav class="navigation flex-item-fluid mb1 scroll-if-needed">
+              
+                <p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Design</p>
+                <ul class="navigation__list unstyled js-to_expand{% if page.section == 'design' %} is-opened{% endif %}">
+                  <li class="navigation__item">
+                    <a href="/colors/" class="navigation__link"{% if page.pageId == 'colors' %} aria-current="page"{% endif %}>
+                      Colors
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/typography/" class="navigation__link"{% if page.pageId == 'typography' %} aria-current="page"{% endif %}>
+                      Typography
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/buttons/" class="navigation__link"{% if page.pageId == 'buttons' %} aria-current="page"{% endif %}>
+                      Buttons
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/table/" class="navigation__link"{% if page.pageId == 'table' %} aria-current="page"{% endif %}>
+                      Tables
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/containers/" class="navigation__link"{% if page.pageId == 'containers' %} aria-current="page"{% endif %}>
+                      Containers
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/badges/" class="navigation__link"{% if page.pageId == 'badges' %} aria-current="page"{% endif %}>
+                      Badges
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/forms/" class="navigation__link"{% if page.pageId == 'forms' %} aria-current="page"{% endif %}>
+                      Forms
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/notifications/" class="navigation__link"{% if page.pageId == 'notifications' %} aria-current="page"{% endif %}>
+                      Notifications
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/icons/" class="navigation__link"{% if page.pageId == 'icons' %} aria-current="page"{% endif %}>
+                      Icons
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/modals/" class="navigation__link"{% if page.pageId == 'modals' %} aria-current="page"{% endif %}>
+                      Modals
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/drop-down/" class="navigation__link"{% if page.pageId == 'drop-down' %} aria-current="page"{% endif %}>
+                      Drop downs
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/login/" class="navigation__link"{% if page.pageId == 'login' %} aria-current="page"{% endif %}>
+                      Login (no nav)
+                    </a>
+                  </li>
+                </ul>
+                
+                <p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Front-end Guidelines</p>
+                <ul class="navigation__list unstyled js-to_expand{% if page.section == 'fe-guidelines' %} is-opened{% endif %}">
+                  <li class="navigation__item">
+                    <a href="/how-to-use-design-system/" class="navigation__link"{% if page.pageId == 'how-to-use-design-system' %} aria-current="page"{% endif %}>
+                      How to use the Design System
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/namespacing-classes/" class="navigation__link"{% if page.pageId == 'namespacing-classes' %} aria-current="page"{% endif %}>
+                      Namespacing classes
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/dos-dont/" class="navigation__link"{% if page.pageId == 'dos-dont' %} aria-current="page"{% endif %}>
+                      DOs/DONTs
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                    <a href="/helpers/" class="navigation__link"{% if page.pageId == 'helpers' %} aria-current="page"{% endif %}>
+                      Helpers available
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                      <a href="/flexbox-helpers/" class="navigation__link"{% if page.pageId == 'flexbox-helpers' %} aria-current="page"{% endif %}>
+                        Flexbox helpers
+                      </a>
+                    </li>
+                  <li class="navigation__item">
+                    <a href="/positionning-helpers/" class="navigation__link"{% if page.pageId == 'positionning-helpers' %} aria-current="page"{% endif %}>
+                      Positionning helpers
+                    </a>
+                  </li>
+                  <li class="navigation__item">
+                      <a href="/loading-content/" class="navigation__link"{% if page.pageId == 'loading-content' %} aria-current="page"{% endif %}>
+                        Loading content
+                      </a>
+                    </li>
+                </ul>
+              
+              </nav>
+
+              <div class="flex-item-noshrink nomobile progressBar-container aligncenter">
+
+                <progress class="progressBar" max="100" value="42" aria-describedby="sizeRemaining"></progress>
+
+                <span class="bl small m0" id="sizeRemaining">4.2 GB / 10 GB</span>
+                <span class="bl small m0">ProtonMail v4.00</span>
+
+              </div>
+
+            </div>
+
+          </div>
+            
+          <div class="main flex-item-fluid">
+            <div class="toolbar noprint">
+
+            </div>
+            <div class="main-area--withToolbar reset4print"><!-- can't apply flex on it directly, otherwise, stick will fail -->
+              <div class="flex flex-reverse">
+
+                {% include sub-nav.html %}                
+
+                <main class="main-area-content flex-item-fluid">
+              
+                  <h1>{{ page.title }}</h1>
+
+                  {% if page.intro %}
+                  <a href="/" class="right ml1 mb1">Back to home</a>
+                  {% endif %}
+                    
+                  {{ content }}
+
+                  {% if page.pageId <> 'icons-tests' %}
+
+                    {% include sprite-icons.svg %}
+
+                  {% endif %}
+
+                </main>
+
+              </div>
+
+            </div>
+            
+          </div>
+        </div>
+
+    </div>
+
+  </div>
+  
+  {% if site.environment == "prod" %}
+  <script src="/assets/js/main_{{ site.time | date: "%s" }}.js"></script>
+  {% else %}
+  <script src="/assets/js/main.js"></script>
+  {% endif %}
+  </body>
+</html>

@@ -1,0 +1,66 @@
+---
+layout: default
+lang: en
+pageId: drop-down
+title: Drop downs
+description: Examples of drop down menus.
+keywords: dropdown, example, animations
+section: design
+---
+
+<div class="flex flex-spacebetween">
+  <div>
+    <div class="dropDown-leftArrow inbl">
+      <button class="pm-button-blue inbl js-dropDown-button" aria-expanded="false" type="button">
+        Left
+      </button>
+      <div class="js-dropDown-content dropDown-content" hidden>
+          <div class="p1">
+            With <code>.dropDown-leftArrow</code> container class.
+          </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dropDown inbl">
+      <button class="pm-button-blue inbl js-dropDown-button" aria-expanded="false" type="button">
+        Drop drown by default
+      </button>
+      <div class="js-dropDown-content dropDown-content" hidden>
+          <div class="p1">
+            Width of 200px, centered on <code>.dropDown</code> container.
+          </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dropDown-rightArrow inbl">
+      <button class="pm-button-blue inbl js-dropDown-button" aria-expanded="true" type="button">
+        Right
+      </button>
+      <div class="js-dropDown-content dropDown-content">
+          <div class="p1">
+            With <code>.dropDown-rightArrow</code> container class, already opened.
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<h2 class="mt2">Drop down code</h2>
+
+<p>If the drop down has to be opened, just set <code>aria-expanded</code> to <code>true</code> on the button and remove <code>hidden</code> attribute on <code>.dropDown-content</code>.</p>
+
+<pre class=" language-markup"><code>&lt;div class="dropDown inbl"&gt;
+  &lt;button class="pm-button-blue" <strong>aria-expanded="false/true"</strong> type="button"&gt;
+    Drop Down button
+  &lt;/button&gt;
+  &lt;div <strong>class="dropDown-content" hidden</strong>&gt;
+    Content of the drop down
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+

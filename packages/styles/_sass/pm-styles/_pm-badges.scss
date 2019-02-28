@@ -1,0 +1,28 @@
+/*
+ * badges/labels 
+ */
+[class*="badgeLabel"] {
+  @extend .uppercase;
+  @extend .color-white;
+  @extend .inbl;
+  font-size: em(11);
+  padding: 0 em(6) em(1.5); // design want 16px height 
+  line-height: 1.35;
+  border-radius: $global-border-radius;
+}
+.badgeLabel-success {
+  @extend .bg-global-success;
+}
+.badgeLabel-blue,
+.badgeLabel {
+  @extend .bg-pm-blue;
+}
+.badgeLabel-grey {
+  @extend .bg-global-grey;
+}
+.badgeLabel-warning {
+  @extend .bg-global-attention;
+}
+.badgeLabel-error {
+  @extend .bg-global-warning;
+}

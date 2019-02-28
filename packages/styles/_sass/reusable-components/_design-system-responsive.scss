@@ -1,0 +1,171 @@
+/* general case */
+@include body-before ('desktop', true);
+
+/**
+ * medium/tablet breakpoint
+ */
+@include respond-to($breakpoint-medium) { 
+   
+  /**
+   * layout/modules
+   */
+
+  /* display elements */
+  .nodesktop { display: block; }
+
+  /* hide unnecessary elements */
+  .notablet { display: none; }
+  
+  /* linearization of floating content/table-layout */
+  .autotablet {
+    float: none;
+    display: block;
+    width: auto;
+  }
+  
+  /* margins */
+  $list-margins-tablet: mt, mr, mb, ml, m;
+  $list-margins-tablet-values: 0, 1, 2; // specify 2.5 if needed
+
+  @include margin-generator($list-margins-tablet, $list-margins-tablet-values, "ontablet-");
+
+  /* paddings */
+  $list-paddings-tablet: pt, pr, pb, pl, p;
+  $list-paddings-tablet-values: 0, 1, 2; // specify 2.5 if needed
+
+  @include padding-generator($list-paddings-tablet, $list-paddings-tablet-values, "ontablet-");
+  
+  /* text aligns */
+  .ontablet- {
+    &alignleft   { text-align: left; }
+    &aligncenter { text-align: center; }
+    &alignright  { text-align: right; }
+  }
+
+  .ontablet- {
+    &w100        { width: 100%; }
+  }
+
+  /**
+   * global structure adaptation (page / skip links / header / main content / footer)
+   */
+  @include body-before ('tablet');
+
+}
+
+
+
+
+/**
+ * small/mobile breakpoint
+ */
+@include respond-to($breakpoint-small) { 
+
+  /**
+   * layout/modules
+   */
+
+  /* display elements */
+  .notablet { display: block; }
+
+  /* hide unnecessary elements */
+  .nomobile { display: none; }
+
+  /* linearization of floating content/table-layout */
+  .automobile {
+    float: none;
+    display: block;
+    width: auto;
+  }
+  
+  /* margins */
+  $list-margins-mobile: mt, mr, mb, ml, m;
+  $list-margins-mobile-values: 0, 1, 2; // specify 2.5 if needed
+
+  @include margin-generator($list-margins-mobile, $list-margins-mobile-values, "onmobile-");
+  
+  /* paddings */
+  $list-paddings-mobile: pt, pr, pb, pl, p;
+  $list-paddings-mobile-values: 0, 1, 2; // specify 2.5 if needed
+
+  @include padding-generator($list-paddings-mobile, $list-paddings-mobile-values, "onmobile-");
+  
+  /* text aligns */
+  .onmobile- {
+    &alignleft   { text-align: left; }
+    &aligncenter { text-align: center; }
+    &alignright  { text-align: right; }
+  }
+
+  .onmobile- {
+    &flex-column {
+      flex-direction: column;
+      & > * {
+        width: 100%;
+      }
+      &.flex-autogrid {
+        margin: 0;
+      }
+      & > .flex-autogrid-item {
+        padding: 0;
+        min-height: auto;
+      }
+    }
+    &flex-column-nostretch {
+      flex-direction: column;
+      & > * {
+        align-self: center;
+      }
+    }
+  }
+  
+
+  /**
+   * global structure adaptation (page / skip links / header / main content / footer)
+   */
+  @include body-before ('mobile');
+
+}
+
+
+
+/**
+ * tiny/small mobile breakpoint
+ */
+@include respond-to($breakpoint-tiny) { 
+
+  /**
+   * layout/modules
+   */
+
+  /* display elements */
+  /*.nomobile { display: block; }*/
+
+  /* hide unnecessary elements */
+  .notinymobile { display: none; }
+
+  /* linearization of floating content/table-layout */
+  .autotinymobile {
+    float: none;
+    display: block;
+    width: auto;
+  }
+  
+  /* margins */
+  //$list-margins-tinymobile: mt, mr, mb, ml, m;
+  //$list-margins-tinymobile-values: 0, 1, 2; // specify 2.5 if needed
+
+  //@include margin-generator($list-margins-tinymobile, $list-margins-tinymobile-values, "ontinymobile-");
+
+  /* paddings */
+  //$list-paddings-tinymobile: pt, pr, pb, pl, p;
+  //$list-paddings-tinymobile-values: 0, 1, 2; // specify 2.5 if needed
+
+  //@include padding-generator($list-paddings-tinymobile, $list-paddings-tinymobile-values, "ontinymobile-");  
+
+  /**
+   * global structure adaptation (page / skip links / header / main content / footer)
+   */
+  @include body-before ('tinymobile');
+
+}

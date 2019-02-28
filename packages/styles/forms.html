@@ -1,0 +1,128 @@
+---
+layout: default
+lang: en
+pageId: forms
+title: Forms elements
+description: Some styles for forms, field states, field sizes, etc.
+keywords: field states, forms, fields
+section: design
+---
+
+<h2>Field states</h2>
+
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field0" class="pm-label">
+        Disabled Form
+    </label>
+    <span>
+        <input type="text" id="id_field0" class="pm-field" value="Placeholder" disabled />
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field00" class="pm-label">
+        Active Form with placeholder
+    </label>
+    <span>
+        <input type="text" id="id_field00" class="pm-field" placeholder="A placeholder" />
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field1" class="pm-label">
+        Active Form with value
+    </label>
+    <span>
+        <input type="text" id="id_field1" class="pm-field" value="An active field with a value" />
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field2" class="pm-label">
+        Active Form + focus
+    </label>
+    <span>
+        <input type="text" id="id_field2" class="pm-field focus" value="An active field with focus" />
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field4" class="pm-label">
+        Error Form
+    </label>
+    <span>
+        <input type="text" id="id_field4" class="pm-field ng-invalid" value="This is a mistake" />
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field5" class="pm-label">
+        Success Form
+    </label>
+    <span>
+        <input type="text" id="id_field5" class="pm-field ng-valid" value="This is good!" />
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_textarea" class="pm-label">
+        Textarea
+    </label>
+    <span>
+        <textarea name="textaread" id="id_textarea" class="pm-field" cols="30" rows="5"></textarea>
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field6" class="pm-label">
+        A select
+    </label>
+    <span>
+        <select id="id_field6" class="pm-field">
+            <option value="">An loooooooooooooooooon option</option>
+            <option value="">Another option</option>
+        </select>
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <span class="pm-label">
+    </span>
+    <span>
+        <label for="id_field7">
+            <input type="checkbox" class="pm-checkbox" id="id_field7">
+            <span class="pm-checkbox-fakecheck">
+                <svg viewBox="0 0 16 16" class="icon-16p pm-checkbox-fakecheck-img" role="img" focusable="false">
+                    <use xlink:href="#shape-on"></use>
+                </svg>
+            </span> 
+            I agree to check this
+        </label>
+    </span>
+</div>
+
+
+
+<h2>Field sizes</h2>
+
+<p>Add <code>pm-field--large</code> or <code>pm-field--small</code> to the <code>input</code>:</p>
+
+<pre class=" language-css"><code>&lt;input type="text" class="pm-field <strong>pm-field--small</strong>" value="A field" /&gt;</code></pre>
+
+<div class="flex mt2 mb2 onmobile-flex-column">
+    <span class="pr1">
+        <input type="text" class="pm-field pm-field--small auto" value="A field" />
+    </span>
+    <span class="pr1">
+        <input type="text" class="pm-field auto" value="A field" />
+    </span>
+    <span class="pr1">
+        <input type="text" class="pm-field pm-field--large auto" value="A field" />
+    </span>
+</div>
+
+
+<h2>Toggle state (TBD and tested from accessibility pov)</h2>
+
+
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_toogle" class="pm-label">
+        Active something
+    </label>
+    <span>
+        <input type="checkbox" id="id_toogle" class="pm-toggle-checkbox" value="wozaaa" />
+        <label for="id_toogle" class="pm-toggle-label"><span class="pm-toggle-label-text">On</span><span class="pm-toggle-label-text">Off</span></label>
+    </span>
+</div>

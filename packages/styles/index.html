@@ -1,0 +1,33 @@
+---
+layout: default
+lang: en
+pageId: index
+title: ProtonMail Design System
+description: ProtonMail Design System V4.0
+keywords: ProtonMail, Design System, updates
+section: home
+---
+
+<p>Welcome to ProtonMail V4.0 Design System. The goals of these pages are: </p>
+
+<ul>
+    <li>Having a <strong>more consistent experience</strong> for users</li>
+    <li>Having a consistent reference for all the teams</li>
+    <li>Improving/<strong>simplifying work discussions between design and devs</strong>, and between all front-end team (same language, same conventions, same objectives)</li>
+    <li>Improving/simplifying Front-End <strong>maintenability/scalability</strong></li>
+    <li>Avoid reinventing the wheel for Front-End</li>
+    <li><strong>Documentaaaation!</strong> Because it is important. &copy; </li>
+    <li>Facilitating the onboarding of newcomers in the team.</li>
+</ul>
+
+<h2>Last updates</h2>
+
+{% for post in site.posts %}
+    <div class="mb2">
+     <h3 class="mt2"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+     <p class="mb0-5">{{ post.date | date_to_string  }}:
+         {{ post.intro }}
+     </p>
+     <a href="{{ post.url }}">Read more about “{{ post.title }}”</a>
+    </div>
+{% endfor %}

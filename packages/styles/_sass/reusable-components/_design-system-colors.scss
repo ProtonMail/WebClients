@@ -1,0 +1,143 @@
+/* PM and VPN colors */
+.bg-global-grey {
+  background-color: $pm-global-grey;
+}
+.bg-global-altgrey {
+  background-color: $pm-global-altgrey;
+}
+.bg-global-altgrey-gradient {
+  background-image: linear-gradient(to bottom, $pm-global-grey, $pm-global-altgrey);
+}
+.bg-global-light {
+  background-color: $pm-global-light;
+}
+.bg-global-border {
+  background-color: $pm-global-border;
+}
+.bg-global-muted {
+  background-color: $pm-global-muted;
+}
+.bg-global-success {
+  background-color: $pm-global-success;
+}
+.bg-global-warning {
+  background-color: $pm-global-warning;
+}
+.bg-global-attention {
+  background-color: $pm-global-attention;
+}
+.bg-pm-blue {
+  background-color: $pm-blue;
+}
+.bg-pm-blue-dark {
+  background-color: $pm-blue-dark;
+}
+.bg-pm-blue-light {
+  background-color: $pm-blue-light;
+}
+
+.bg-pv-green {
+  background-color: $pv-green;
+}
+.bg-pv-green-dark {
+  background-color: $pv-green-dark;
+}
+.bg-pv-green-light {
+  background-color: $pv-green-light;
+}
+
+
+
+.fill-global-grey {
+  fill: $pm-global-grey;
+}
+.fill-global-altgrey {
+  fill: $pm-global-altgrey;
+}
+.fill-global-light {
+  fill: $pm-global-light;
+}
+.fill-global-border {
+  fill: $pm-global-border;
+}
+.fill-global-muted {
+  fill: $pm-global-muted;
+}
+.fill-global-success {
+  fill: $pm-global-success;
+}
+.fill-global-warning {
+  fill: $pm-global-warning;
+}
+.fill-global-attention {
+  fill: $pm-global-attention;
+}
+.fill-pm-blue {
+  fill: $pm-blue;
+}
+.fill-pm-blue-dark {
+  fill: $pm-blue-dark;
+}
+.fill-pm-blue-light {
+  fill: $pm-blue-light;
+}
+
+.fill-pv-green {
+  fill: $pv-green;
+}
+.fill-pv-green-dark {
+  fill: $pv-green-dark;
+}
+.fill-pv-green-light {
+  fill: $pv-green-light;
+}
+
+
+
+.color-global-grey {
+  color: $pm-global-grey;
+}
+.color-global-altgrey {
+  color: $pm-global-altgrey;
+}
+.color-global-light {
+  color: $pm-global-light;
+}
+.color-global-border {
+  color: $pm-global-border;
+}
+.color-global-muted {
+  color: $pm-global-muted;
+}
+.color-global-success {
+  color: $pm-global-success;
+}
+.color-global-warning {
+  color: $pm-global-warning;
+}
+.color-global-attention {
+  color: $pm-global-attention;
+}
+.color-pm-blue {
+  color: $pm-blue;
+}
+.color-pm-blue-dark {
+  color: $pm-blue-dark;
+}
+.color-pm-blue-light {
+  color: $pm-blue-light;
+}
+
+.color-pv-green {
+  color: $pv-green;
+}
+.color-pv-green-dark {
+  color: $pv-green-dark;
+}
+.color-pv-green-light {
+  color: $pv-green-light;
+}
+
+.color-white {
+  color: $white;
+}

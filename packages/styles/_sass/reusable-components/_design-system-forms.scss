@@ -1,0 +1,68 @@
+/*
+ * inputs
+ */
+/* resets */
+
+/* makes you want to click on */
+label,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  cursor: pointer;
+}
+button[disabled],
+input[type="submit"][disabled],
+input[type="button"][disabled],
+input[type="reset"][disabled] {
+  cursor: default;
+}
+
+/* for field texts */
+.label {
+  display: inline-block;
+}
+
+/* avoid dummy resize */
+textarea {
+  resize: vertical;
+}
+/* remove a Firefox difference on button tag */
+button::-moz-focus-inner { border: 0; padding: 0; }
+
+label,
+button,
+input,
+select {
+  vertical-align: middle;
+}
+
+@if $use-reset-button == false {
+  /** fix typo inputs **/
+  input,
+  select,
+  textarea,
+  optgroup,
+  button {
+    font: inherit;
+  }
+}
+
+/*
+ * avoids dimensioning for radio, checkboxes and images
+ * and a different display on IE
+ */
+input[type="radio"],
+input[type="checkbox"],
+input[type="image"] {
+  background-color: transparent;
+  border: 0;
+  width: auto;
+}
+
+/* to cancel input sizing or other if needed */
+.auto {
+  width: auto;
+  min-width: 0;
+}
+
