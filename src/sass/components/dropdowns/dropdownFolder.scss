@@ -103,6 +103,11 @@
     box-shadow: none;
 }
 
+.dropdown-folder-create-button-inner {
+    border: 1px solid transparent; // yes, this makes no sense, but fixes a glitch bug on Edge
+    // see https://github.com/ProtonMail/Angular/issues/8586
+}
+
 .dropdown-folder-create-button > * {
     pointer-events: none;
 }
