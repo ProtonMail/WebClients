@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const ModalWithPortal = ({ children }) => {
     const [el] = useState(() => document.createElement('div'));
