@@ -10,3 +10,9 @@ hr {
 
 /* rounded corners */
 .rounded { border-radius: $global-border-radius; }
+
+kbd {
+  @extend .rounded;
+  @extend .bg-global-light;
+  border: 1px solid $pm-global-border;
+}

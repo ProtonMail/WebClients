@@ -58,6 +58,9 @@ section: design
         <input type="text" id="id_field5" class="pm-field ng-valid" value="This is good!" />
     </span>
 </div>
+
+<h2>Different form inputs</h2>
+
 <div class="flex flex-nowrap onmobile-flex-column mb1">
     <label for="id_textarea" class="pm-label">
         Textarea
@@ -84,12 +87,37 @@ section: design
         <label for="id_field7">
             <input type="checkbox" class="pm-checkbox" id="id_field7">
             <span class="pm-checkbox-fakecheck">
-                <svg viewBox="0 0 16 16" class="icon-16p pm-checkbox-fakecheck-img" role="img" focusable="false">
+                <svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" role="img" focusable="false">
                     <use xlink:href="#shape-on"></use>
                 </svg>
             </span> 
             I agree to check this
         </label>
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <span class="pm-label" id="question">
+        Do you speak martian?
+    </span>
+    <span class="pt0-5">
+        <label for="id_field8" class="mr2">
+            <input type="radio" name="martian" class="pm-radio" id="id_field8" value="yaisse" aria-describedby="question">
+            <span class="pm-radio-fakeradio"></span> 
+            Yes
+        </label>
+        <label for="id_field9">
+            <input type="radio" name="martian" class="pm-radio" id="id_field9" value="nooooo" aria-describedby="question">
+            <span class="pm-radio-fakeradio"></span> 
+            No
+        </label>
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field10" class="pm-label">
+        Search form
+    </label>
+    <span>
+        <input type="search" id="id_field10" class="pm-field" placeholder="Search for something" value="" />
     </span>
 </div>
 
@@ -114,7 +142,7 @@ section: design
 </div>
 
 
-<h2>Toggle state (TBD and tested from accessibility pov)</h2>
+<h2>Toggle state (to check from accessibility pov)</h2>
 
 
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -123,6 +151,17 @@ section: design
     </label>
     <span>
         <input type="checkbox" id="id_toogle" class="pm-toggle-checkbox" value="wozaaa" />
-        <label for="id_toogle" class="pm-toggle-label"><span class="pm-toggle-label-text">On</span><span class="pm-toggle-label-text">Off</span></label>
+        <label for="id_toogle" class="pm-toggle-label">
+            <span class="pm-toggle-label-text">
+                <svg viewBox="0 0 16 16" class="pm-toggle-label-img" role="img" focusable="false">
+                    <use xlink:href="#shape-on"></use>
+                </svg>
+            </span>
+            <span class="pm-toggle-label-text">
+                <svg viewBox="0 0 16 16" class="pm-toggle-label-img" role="img" focusable="false">
+                    <use xlink:href="#shape-off"></use>
+                </svg>
+            </span>
+        </label>
     </span>
 </div>
