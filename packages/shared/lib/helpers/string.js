@@ -16,4 +16,4 @@ export const getRandomString = (length) => {
 
 export const normalize = (value = '') => value.toLowerCase();
 
-export const replaceLinesBreak = (content = '') => content.replace(/(?:\r\n|\r|\n)/g, '<br />');
+export const replaceLineBreak = (content = '') => content.replace(/(?:\r\n|\r|\n)/g, '<br />');
