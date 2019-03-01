@@ -1,11 +1,10 @@
 import { encodeUtf8Base64, decodeUtf8Base64 } from 'pmcrypto';
+import { SECURE_SESSION_STORAGE_KEY } from './constants';
 
 import createStore from './helpers/store';
 import { load, save } from './helpers/secureSessionStorage';
 import { MAILBOX_PASSWORD_KEY, UID_KEY } from './constants';
 import { attachOnUnload } from './helpers/dom';
-
-const WHITELIST = [MAILBOX_PASSWORD_KEY, UID_KEY];
 
 const createAuthStore = ({ set, get, reset }) => {
     const setUID = (UID) => set(UID_KEY, UID);
@@ -30,11 +29,11 @@ const createAuthStore = ({ set, get, reset }) => {
 };
 
 export default () => {
-    const { set, get, reset, getState } = createStore(load(WHITELIST));
+    const { set, get, reset, getState } = createStore(load(SECURE_SESSION_STORAGE_KEY));
     const authStore = createAuthStore({ set, get, reset });
 
     attachOnUnload(() => {
-        save(getState());
+        save(SECURE_SESSION_STORAGE_KEY, getState());
     });
 
     return authStore;
