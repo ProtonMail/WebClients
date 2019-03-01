@@ -5,10 +5,12 @@ import { connect } from 'react-redux';
 import { Button, ButtonGroup, Group, Alert, Block, Pagination, usePagination, SubTitle, useLoading } from 'react-components';
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
 import { updateLogAuth } from 'proton-shared/lib/api/settings';
+import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import ContextApi from 'proton-shared/lib/context/api';
 import { ELEMENTS_PER_PAGE, LOGS_STATE } from 'proton-shared/lib/constants';
 
 import LogsTable from './LogsTable';
+import WipeLogsButton from './WipeLogsButton';
 
 const EVENTS = {
     0: t`Login password failure`,
@@ -79,7 +81,7 @@ const LogsSection = ({ settings }) => {
                         <ButtonGroup className={logAuth === ADVANCED ? 'is-active' : ''} onClick={handleLogAuth(ADVANCED)}>{t`Advanced`}</ButtonGroup>
                     </Group>
                     <Button onClick={fetchLogs}>{t`Refresh`}</Button>
-                    {list.length ? <Button onClick={handleWipe}>{t`Wipe`}</Button> : null}
+                    {list.length ? <WipeLogsButton onWipe={handleWipe} /> : null}
                     {list.length ? <Button onClick={handleDownload}>{t`Download`}</Button> : null}
                 </div>
                 <Pagination

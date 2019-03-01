@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { t } from 'ttag';
 
 import ModalWithPortal from './ModalWithPortal';
 
-import { getClasses } from '../../helpers/component';
 import Header from './Header';
 
 const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnOuterClick, title }) => {
@@ -25,7 +24,7 @@ const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnO
     return (
         <ModalWithPortal>
             <div className="pm-modalOverlay" title={t`Close modal`} onClick={handleClickOutside}>
-                <dialog className={getClasses('pm-modal', modalClassName)} open aria-labelledby={modalTitleID}>
+                <dialog className={`pm-modal ${modalClassName}`} open aria-labelledby={modalTitleID}>
                     {title ? <Header onClose={onClose}>{title}</Header> : null}
                     {children}
                 </dialog>
