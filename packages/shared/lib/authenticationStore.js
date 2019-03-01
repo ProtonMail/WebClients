@@ -1,9 +1,8 @@
 import { encodeUtf8Base64, decodeUtf8Base64 } from 'pmcrypto';
-import { SECURE_SESSION_STORAGE_KEY } from './constants';
 
 import createStore from './helpers/store';
 import { load, save } from './helpers/secureSessionStorage';
-import { MAILBOX_PASSWORD_KEY, UID_KEY } from './constants';
+import { MAILBOX_PASSWORD_KEY, UID_KEY, SECURE_SESSION_STORAGE_KEY } from './constants';
 import { attachOnUnload } from './helpers/dom';
 
 const createAuthStore = ({ set, get, reset }) => {
