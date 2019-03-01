@@ -12,7 +12,7 @@ describe('onceWithQueue', () => {
 
         const cb = onceWithQueue(async () => {
             await wait(DELAY);
-            count = count + 1;
+            count++;
         });
 
         cb();
@@ -31,7 +31,7 @@ describe('onceWithQueue', () => {
 
         const cb = onceWithQueue(async () => {
             await wait(DELAY);
-            count = count + 1;
+            count++;
         });
 
         cb();
@@ -59,7 +59,7 @@ describe('onceWithQueue', () => {
 
         const cb = onceWithQueue(async () => {
             await wait(DELAY);
-            count = count + 1;
+            count++;
         });
 
         const p1 = cb().then(() => {

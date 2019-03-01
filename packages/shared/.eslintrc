@@ -5,20 +5,23 @@
         "node": true
     },
     "rules": {
+        "arrow-parens": ["error", "always"],
         "indent": "off",
         "comma-dangle": ["error", "never"],
+        "consistent-return": "off",
         "object-curly-newline": "off",
         "prefer-template": "off",
         "no-plusplus": "off",
-        "arrow-parens": ["error", "always"],
         "no-continue": "off",
         "no-bitwise": "off",
         "no-await-in-loop": "off",
         "arrow-body-style": "off",
+        "space-before-function-paren": "off",
+        "operator-linebreak": "off",
+        "implicit-arrow-linebreak": "off",
         "import/no-unresolved": ["error", {
             "ignore": ["^react$", "ttag"]
         }],
-        "consistent-return": "off",
         "import/prefer-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "max-len": ["error", {
