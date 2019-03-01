@@ -1,4 +1,4 @@
-export const get = () => ({
+export const getSettings = () => ({
     url: 'settings',
     method: 'get'
 });
