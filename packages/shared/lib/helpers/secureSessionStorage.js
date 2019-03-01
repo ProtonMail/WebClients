@@ -1,91 +1,95 @@
-import { getRandomValues, arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from 'pmcrypto';
+import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from 'pmcrypto';
+import getRandomValues from 'get-random-values';
 
-const storage = window.sessionStorage;
-
-const loadName = () => {
+const deserialize = (string) => {
     try {
-        return JSON.parse(window.name);
+        return JSON.parse(string);
     } catch (e) {
         return {};
     }
 };
 
-export const load = (whitelist) => {
-    const nameStorage = loadName();
-    window.name = '';
+const serialize = (data) => JSON.stringify(data);
 
-    const data = {};
+const deserializeItem = (value) => {
+    if (!value) {
+        return;
+    }
+    try {
+        return binaryStringToArray(decodeBase64(value));
+    } catch (e) {
+        return undefined;
+    }
+};
 
-    for (let i = 0; i < whitelist.length; i++) {
-        const key = whitelist[i];
+const serializeItem = (value) => {
+    if (!value) {
+        return;
+    }
+    return encodeBase64(arrayToBinaryString(value));
+};
 
-        if (!nameStorage.hasOwnProperty(key)) {
-            continue;
+export const mergeParts = (share1, share2) =>
+    Object.keys(share1).reduce((acc, key) => {
+        const share1Value = deserializeItem(share1[key]);
+        const share2Value = deserializeItem(share2[key]);
+
+        if (!share1Value || !share2Value || share2Value.length !== share1Value.length) {
+            return acc;
         }
 
-        let storageItem = storage.getItem(key);
-        storage.removeItem(key);
+        const xored = new Array(share2Value.length);
 
-        let nameItem = nameStorage[key];
-
-        if (!storageItem || !nameItem) {
-            continue;
-        }
-
-        try {
-            storageItem = binaryStringToArray(decodeBase64(storageItem));
-            nameItem = binaryStringToArray(decodeBase64(nameItem));
-        } catch (e) {
-            continue;
-        }
-
-        if (storageItem.length !== nameItem.length) {
-            continue;
-        }
-
-        const xored = new Array(storageItem.length);
-
-        for (let j = 0; j < storageItem.length; j++) {
-            xored[j] = storageItem[j] ^ nameItem[j];
+        for (let j = 0; j < share2Value.length; j++) {
+            // eslint-disable-next-line
+            xored[j] = share2Value[j] ^ share1Value[j];
         }
 
         // Strip off padding
-        let unpaddedLength = storageItem.length;
-
+        let unpaddedLength = share2Value.length;
         while (unpaddedLength > 0 && xored[unpaddedLength - 1] === 0) {
             unpaddedLength--;
         }
 
-        data[key] = arrayToBinaryString(xored.slice(0, unpaddedLength));
-    }
+        acc[key] = arrayToBinaryString(xored.slice(0, unpaddedLength));
+        return acc;
+    }, {});
 
-    return data;
+export const separateParts = (data) =>
+    Object.keys(data).reduce(
+        (acc, key) => {
+            const item = binaryStringToArray(data[key]);
+            const paddedLength = Math.ceil(item.length / 256) * 256;
+
+            const share1 = getRandomValues(new Uint8Array(paddedLength));
+            const share2 = new Uint8Array(share1);
+
+            for (let i = 0; i < item.length; i++) {
+                // eslint-disable-next-line
+                share2[i] ^= item[i];
+            }
+
+            acc.share1[key] = serializeItem(share1);
+            acc.share2[key] = serializeItem(share2);
+
+            return acc;
+        },
+        { share1: {}, share2: {} }
+    );
+
+export const save = (key, data) => {
+    const { share1, share2 } = separateParts(data);
+
+    window.name = serialize(share1);
+    window.sessionStorage.setItem(key, serialize(share2));
 };
 
-export const save = (data) => {
-    const nameStorage = {};
+export const load = (key) => {
+    const nameStorage = deserialize(window.name);
+    window.name = '';
 
-    for (let key in data) {
-        if (!data.hasOwnProperty(key)) {
-            continue;
-        }
+    const sessionData = deserialize(window.sessionStorage.getItem(key));
+    window.sessionStorage.removeItem(key);
 
-        const item = binaryStringToArray(data[key]);
-        const paddedLength = Math.ceil(item.length / 256) * 256;
-
-        const share1 = getRandomValues(new Uint8Array(paddedLength));
-        let share2 = new Uint8Array(share1);
-
-        for (let i = 0; i < item.length; i++) {
-            share2[i] ^= item[i];
-        }
-
-        nameStorage[key] = encodeBase64(arrayToBinaryString(share1));
-        storage.setItem(key, encodeBase64(arrayToBinaryString(share2)));
-    }
-
-    window.name = JSON.stringify(nameStorage);
+    return mergeParts(nameStorage, sessionData);
 };
-
-
-

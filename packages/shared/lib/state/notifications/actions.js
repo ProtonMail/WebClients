@@ -10,7 +10,7 @@ export const create = (payload) => {
 export const remove = (id) => {
     return {
         type: REMOVE_NOTIFICATION,
-        payload: id,
+        payload: id
     };
 };
 

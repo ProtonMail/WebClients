@@ -12,6 +12,39 @@ export default (api, success, error) => {
         abortController: undefined
     };
 
+    const setEventID = (eventID) => {
+        STATE.lastEventID = eventID;
+    };
+
+    const start = () => {
+        const { timeoutHandle, retryIndex } = STATE;
+        if (timeoutHandle) {
+            return;
+        }
+        const ms = INTERVAL_EVENT_TIMER * FIBONACCI[retryIndex];
+        // eslint-disable-next-line
+        STATE.timeoutHandle = setTimeout(call, ms);
+    };
+
+    const stop = () => {
+        const { timeoutHandle, abortController } = STATE;
+
+        if (abortController) {
+            abortController.abort();
+            delete STATE.abortController;
+        }
+
+        if (timeoutHandle) {
+            clearTimeout(timeoutHandle);
+            delete STATE.timeoutHandle;
+        }
+    };
+
+    const reset = () => {
+        stop();
+        STATE = {};
+    };
+
     const run = async () => {
         try {
             STATE.abortController = new AbortController();
@@ -44,43 +77,11 @@ export default (api, success, error) => {
         start();
     });
 
-    const setEventID = (eventID) => {
-        STATE.lastEventID = eventID;
-    };
-
-    const start = () => {
-        const { timeoutHandle, retryIndex } = STATE;
-        if (timeoutHandle) {
-            return;
-        }
-        const ms = INTERVAL_EVENT_TIMER * FIBONACCI[retryIndex];
-        STATE.timeoutHandle = setTimeout(call, ms);
-    };
-
-    const stop = () => {
-        const { timeoutHandle, abortController } = STATE;
-
-        if (abortController) {
-            abortController.abort();
-            delete STATE.abortController;
-        }
-
-        if (timeoutHandle) {
-            clearTimeout(timeoutHandle);
-            delete STATE.timeoutHandle;
-        }
-    };
-
-    const reset = () => {
-        stop();
-        STATE = {};
-    };
-
     return {
         setEventID,
         start,
         stop,
         call,
         reset
-    }
-}
+    };
+};

@@ -11,7 +11,8 @@ export const toBitMap = (o = {}) => Object.keys(o).reduce((acc, key, index) => a
  * @param {Array<String>} keys ex: ['announcements', 'features', 'newsletter', 'beta']
  * @returns {Object<Boolean>} ex: { announcements: true, features: false, newsletter: false, beta: false }
  */
-export const fromBitmap = (value, keys = []) => keys.reduce((acc, key, index) => {
-    acc[key] = !!(value & (1 << index));
-    return acc;
-}, {});
+export const fromBitmap = (value, keys = []) =>
+    keys.reduce((acc, key, index) => {
+        acc[key] = !!(value & (1 << index));
+        return acc;
+    }, {});

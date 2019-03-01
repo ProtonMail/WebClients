@@ -1,5 +1,5 @@
 export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
-export const UID_KEY = `proton:UID`;
+export const UID_KEY = 'proton:UID';
 export const INTERVAL_EVENT_TIMER = 30 * 1000;
 export const EVENT_ACTIONS = {
     DELETE: 0,

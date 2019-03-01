@@ -1,0 +1,32 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "indent": "off",
+        "comma-dangle": ["error", "never"],
+        "object-curly-newline": "off",
+        "prefer-template": "off",
+        "no-plusplus": "off",
+        "arrow-parens": ["error", "always"],
+        "no-continue": "off",
+        "no-bitwise": "off",
+        "no-await-in-loop": "off",
+        "arrow-body-style": "off",
+        "import/no-unresolved": ["error", {
+            "ignore": ["^react$", "ttag"]
+        }],
+        "consistent-return": "off",
+        "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "max-len": ["error", {
+            "ignoreComments": true,
+            "code": 120,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true,
+        }]
+    }
+}

@@ -1,3 +1,5 @@
+import updateCollection from '../../helpers/updateCollection';
+
 export const DEFAULT_STATE = {
     loading: false,
     data: []
@@ -8,7 +10,7 @@ export const createActions = (prefix) => {
         LOADING: `${prefix}_LOADING`,
         SET: `${prefix}_SET`,
         UPDATE: `${prefix}_UPDATE`,
-        RESET: `${prefix}_RESET`,
+        RESET: `${prefix}_RESET`
     };
 };
 

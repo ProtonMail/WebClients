@@ -4,7 +4,7 @@ export const attachOnUnload = (cb) => {
     }
 
     if (window.attachEvent) {
-        return window.attachEvent('onunload',  cb);
+        return window.attachEvent('onunload', cb);
     }
 
     throw new Error('No method for adding event listeners!');

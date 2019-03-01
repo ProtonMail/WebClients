@@ -87,5 +87,5 @@ export default (api) => {
         init,
         auth,
         callAndValidate
-    }
+    };
 };

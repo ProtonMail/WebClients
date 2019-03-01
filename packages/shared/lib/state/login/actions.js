@@ -1,9 +1,9 @@
+import { AUTH_VERSION } from 'pmcrypto';
 import { ACTIONS } from './reducer';
 import { cookies as cookiesRoute, info as infoRoute } from '../../api/auth';
 import srpWithRetry from './srpWithRetry';
 import { getRandomString } from '../../helpers/string';
 import { passwordUpgrade } from '../../api/settings';
-import { AUTH_VERSION } from 'pmcrypto';
 import { unlock } from '../../authentication';
 
 export const DONE_AUTHENTICATED = 1;
@@ -21,7 +21,7 @@ const loadingAction = (payload = true) => {
     return {
         type: ACTIONS.LOADING,
         payload
-    }
+    };
 };
 
 const showTwoFactorAction = (credentials, infoResult) => {
@@ -31,7 +31,7 @@ const showTwoFactorAction = (credentials, infoResult) => {
             credentials,
             infoResult
         }
-    }
+    };
 };
 
 const showUnlockAction = (authResult, authVersion) => {
@@ -41,48 +41,52 @@ const showUnlockAction = (authResult, authVersion) => {
             authResult,
             authVersion
         }
-    }
+    };
 };
 
 export const resetAction = () => {
     return {
-        type: ACTIONS.RESET,
-    }
+        type: ACTIONS.RESET
+    };
 };
 
 export const finalizeEffect = ({ UID, RefreshToken }, AccessToken, credentials, mailboxPassword, authVersion) => {
     return async (dispatch, getState, { api, srp, authenticationStore }) => {
-        await api(cookiesRoute({
-            UID,
-            AuthToken: AccessToken,
-            RefreshToken,
-            State: getRandomString(24)
-        }));
+        await api(
+            cookiesRoute({
+                UID,
+                AuthToken: AccessToken,
+                RefreshToken,
+                State: getRandomString(24)
+            })
+        );
 
         authenticationStore.setUID(UID);
         authenticationStore.setPassword(mailboxPassword);
 
         if (authVersion < AUTH_VERSION) {
-            await srp.init(credentials, passwordUpgrade())
+            await srp.init(credentials, passwordUpgrade());
         }
 
         return DONE_AUTHENTICATED;
-    }
+    };
 };
 
 export const setupEffect = ({ UID, AccessToken, RefreshToken }) => {
     return async (dispatch, getState, { api, authenticationStore }) => {
-        await api(cookiesRoute({
-            UID,
-            AuthToken: AccessToken,
-            RefreshToken,
-            State: getRandomString(24)
-        }));
+        await api(
+            cookiesRoute({
+                UID,
+                AuthToken: AccessToken,
+                RefreshToken,
+                State: getRandomString(24)
+            })
+        );
 
         authenticationStore.setUID(UID);
 
         return DONE_SETUP;
-    }
+    };
 };
 
 export const authEffect = (credentials, infoResult) => {
@@ -110,15 +114,16 @@ export const unlockEffect = ({ password }) => {
         try {
             dispatch(loadingAction());
 
-            const { login: { credentials, authResult, authVersion } } = getState();
+            const {
+                login: { credentials, authResult, authVersion }
+            } = getState();
 
             const { token, mailboxPassword } = await unlock(password, authResult);
 
             return await dispatch(finalizeEffect(authResult, token, credentials, mailboxPassword, authVersion));
         } catch (e) {
             const { message = '' } = e;
-            if (message.includes('Wrong mailbox password') ||
-                message.includes('Incorrect key passphrase')) {
+            if (message.includes('Wrong mailbox password') || message.includes('Incorrect key passphrase')) {
                 dispatch(loadingAction(false));
                 return;
             }
@@ -133,7 +138,9 @@ export const loginTwoFaEffect = ({ twoFa }) => {
         try {
             dispatch(loadingAction());
 
-            const { login: { credentials, infoResult } } = getState();
+            const {
+                login: { credentials, infoResult }
+            } = getState();
 
             const newCredentials = {
                 ...credentials,

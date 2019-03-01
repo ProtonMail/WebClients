@@ -1,4 +1,4 @@
-import { getRandomValues } from 'pmcrypto';
+import getRandomValues from 'get-random-values';
 
 export const getRandomString = (length) => {
     const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

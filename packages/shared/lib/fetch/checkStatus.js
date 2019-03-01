@@ -2,7 +2,7 @@ export default async (response) => {
     const { status } = response;
 
     if (status >= 200 && status < 300) {
-        return response
+        return response;
     }
 
     const data = await response.json().catch(() => {});
@@ -12,5 +12,5 @@ export default async (response) => {
     error.status = status;
     error.data = data;
 
-    throw error
+    throw error;
 };

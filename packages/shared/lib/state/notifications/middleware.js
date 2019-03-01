@@ -9,10 +9,11 @@ export default (store) => {
             idx = 0;
         }
 
-        const clear = () => store.dispatch({
-            type: REMOVE_NOTIFICATION,
-            payload: id
-        });
+        const clear = () =>
+            store.dispatch({
+                type: REMOVE_NOTIFICATION,
+                payload: id
+            });
 
         intervalIds[id] = setTimeout(clear, expiration);
         return { id, ...rest };
@@ -29,7 +30,7 @@ export default (store) => {
     };
 
     const clearNotifications = () => {
-        Object.keys((intervalIds)).forEach((id) => {
+        Object.keys(intervalIds).forEach((id) => {
             const intervalId = intervalIds[id];
             clearTimeout(intervalId);
         });
@@ -41,7 +42,7 @@ export default (store) => {
             return next(action);
         }
 
-        const type = action.type;
+        const { type } = action;
 
         if (type === ADD_NOTIFICATION) {
             return next({
@@ -61,5 +62,5 @@ export default (store) => {
         }
 
         return next(action);
-    }
-}
+    };
+};

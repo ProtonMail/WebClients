@@ -6,7 +6,7 @@ export const handleUnauthorized = (e) => {
 
 export const getError = (e) => {
     if (!e.data) {
-        return
+        return;
     }
 
     const { Error: errorMessage, Code: errorCode } = e.data;
@@ -24,19 +24,22 @@ export const getError = (e) => {
 export const createRefreshHandler = (refresh, logout) => {
     let refreshPromise;
 
-    const clear = () => refreshPromise = undefined;
+    const clear = () => {
+        refreshPromise = undefined;
+    };
 
     return () => {
         if (refreshPromise) {
             return refreshPromise;
         }
 
-        return refreshPromise = refresh()
+        refreshPromise = refresh()
             .then(clear)
             .catch((e) => {
                 clear();
                 logout();
                 throw e;
             });
+        return refreshPromise;
     };
 };

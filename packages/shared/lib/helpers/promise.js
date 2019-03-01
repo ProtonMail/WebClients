@@ -12,13 +12,18 @@
 export const onceWithQueue = (fn) => {
     let STATE = {};
 
-    const clear = () => STATE = {};
+    const clear = () => {
+        STATE = {};
+    };
 
-    const clearPromise = () => STATE.promise = undefined;
+    const clearPromise = () => {
+        STATE.promise = undefined;
+    };
 
     const next = () => {
         const { args } = STATE;
         clear();
+        // eslint-disable-next-line
         return run(...args);
     };
 
@@ -32,16 +37,14 @@ export const onceWithQueue = (fn) => {
         // If a promise is running, set up the queue.
         if (STATE.promise) {
             STATE.args = args;
-            return STATE.queued = STATE.promise
-                .then(next);
+            STATE.queued = STATE.promise.then(next);
+            return STATE.queued;
         }
 
         // Cache the promise.
         STATE.promise = fn();
         // Set up independent resolve handlers.
-        STATE.promise
-            .then(clearPromise)
-            .catch(clear);
+        STATE.promise.then(clearPromise).catch(clear);
 
         return STATE.promise;
     };

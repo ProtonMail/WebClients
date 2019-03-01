@@ -17,9 +17,11 @@ const fetchHelper = ({ url: urlString, params = {}, output, ...config }) => {
 };
 
 export const fetchJson = ({ data, headers, output = 'json', ...config }) => {
-    const extraHeaders = data ? {
-        'Content-Type': 'application/json',
-    } : undefined;
+    const extraHeaders = data
+        ? {
+              'Content-Type': 'application/json'
+          }
+        : undefined;
 
     return fetchHelper({
         ...config,
@@ -31,4 +33,3 @@ export const fetchJson = ({ data, headers, output = 'json', ...config }) => {
         output
     });
 };
-

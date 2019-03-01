@@ -26,26 +26,31 @@ const updateCollection = (events = [], model = []) => {
     );
 
     // NOTE We cannot trust Action so "create" and "update" events need to be handle in the way
-    const { collection } = [].concat(todo.create, todo.update).reduce((acc, element) => {
-        const index = acc.MAP[element.ID];
+    const { collection } = [].concat(todo.create, todo.update).reduce(
+        (acc, element) => {
+            const index = acc.MAP[element.ID];
 
-        if (typeof index !== 'undefined') {
-            // index can be set to 0
-            // Update
-            acc.collection[index] = element;
+            if (typeof index !== 'undefined') {
+                // index can be set to 0
+                // Update
+                acc.collection[index] = element;
+                return acc;
+            }
+
+            // Create
+            const length = acc.collection.push(element);
+            acc.MAP[element.ID] = length - 1; // index
+
             return acc;
+        },
+        {
+            collection: copy,
+            MAP: copy.reduce((acc, element, index) => {
+                acc[element.ID] = index;
+                return acc;
+            }, {})
         }
-
-        // Create
-        const length = acc.collection.push(element);
-        acc.MAP[element.ID] = length - 1; // index
-
-        return acc;
-    },
-    {
-        collection: copy,
-        MAP: copy.reduce((acc, element, index) => ((acc[element.ID] = index), acc), Object.create(null))
-    });
+    );
 
     return collection;
 };

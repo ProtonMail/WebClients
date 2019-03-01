@@ -11,14 +11,16 @@ export const fetchMembers = () => {
         dispatch(loadingAction());
         try {
             const { Members = [] } = await api(queryMembers());
-            const members = await Promise.all(Members.map(async (member) => {
-                const { Addresses = [] } = await api(queryAddresses(member.ID));
+            const members = await Promise.all(
+                Members.map(async (member) => {
+                    const { Addresses = [] } = await api(queryAddresses(member.ID));
 
-                return {
-                    ...member,
-                    addresses: Addresses
-                };
-            }));
+                    return {
+                        ...member,
+                        addresses: Addresses
+                    };
+                })
+            );
 
             return dispatch(setAction(members));
         } catch (error) {

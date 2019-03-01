@@ -5,10 +5,7 @@ import { load, save } from './helpers/secureSessionStorage';
 import { MAILBOX_PASSWORD_KEY, UID_KEY } from './constants';
 import { attachOnUnload } from './helpers/dom';
 
-const WHITELIST = [
-    MAILBOX_PASSWORD_KEY,
-    UID_KEY
-];
+const WHITELIST = [MAILBOX_PASSWORD_KEY, UID_KEY];
 
 const createAuthStore = ({ set, get, reset }) => {
     const setUID = (UID) => set(UID_KEY, UID);
@@ -29,7 +26,7 @@ const createAuthStore = ({ set, get, reset }) => {
         setPassword,
         getPassword,
         reset
-    }
+    };
 };
 
 export default () => {
@@ -42,4 +39,3 @@ export default () => {
 
     return authStore;
 };
-

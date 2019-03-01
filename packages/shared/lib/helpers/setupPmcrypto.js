@@ -1,10 +1,6 @@
 import { init, createWorker } from 'pmcrypto';
 import { loadScript } from './dom';
 
-/**
- * TODO: Move these functions to pmcrypto.
- */
-
 export const initMain = async (openpgpContents) => {
     const mainUrl = URL.createObjectURL(new Blob([openpgpContents], { type: 'text/javascript' }));
     await loadScript(mainUrl);
@@ -23,14 +19,16 @@ export const initWorker = async (openpgpContents, openpgpWorkerContents) => {
         path: workerUrl
     });
 
-    if (openpgp.getWorker()) {
+    if (window.openpgp.getWorker()) {
         // Wait until all workers are loaded
         await Promise.all(
-            openpgp.getWorker().workers.map(
+            window.openpgp.getWorker().workers.map(
                 (worker) =>
                     new Promise((resolve) => {
-                        const onmessage = worker.onmessage;
+                        const { onmessage } = worker;
+                        // eslint-disable-next-line
                         worker.onmessage = () => {
+                            // eslint-disable-next-line
                             worker.onmessage = onmessage;
                             resolve();
                         };

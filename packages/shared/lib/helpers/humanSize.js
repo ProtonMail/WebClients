@@ -30,7 +30,7 @@ const humanSize = (input = 0, forceUnit = false, withoutUnit = false) => {
 
     if (typeof input === 'number') {
         bytes = input;
-    } else if (isNaN(parseInt(input, 10))) {
+    } else if (Number.isNaN(parseInt(input, 10))) {
         bytes = 0;
     }
 
@@ -48,6 +48,5 @@ const humanSize = (input = 0, forceUnit = false, withoutUnit = false) => {
 
     return transformTo(bytes, 'GB', withoutUnit);
 };
-
 
 export default humanSize;
