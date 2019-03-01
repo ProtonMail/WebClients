@@ -40,3 +40,8 @@ export const LOGS_STATE = {
     BASIC: 1,
     ADVANCED: 2
 };
+
+export const MEMBER_TYPE = {
+    MEMBER: 0,
+    SUB_MEMBER: 1
+};
