@@ -1,8 +1,8 @@
 import { describe, it } from 'mocha';
 import assert from 'assert';
 
-import { wait } from '../lib/helpers/promise';
-import { onceWithQueue } from '../lib/helpers/onceWithQueue';
+import { wait } from '../../lib/helpers/promise';
+import { onceWithQueue } from '../../lib/helpers/onceWithQueue';
 
 const DELAY = 10;
 

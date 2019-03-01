@@ -2,7 +2,7 @@ import { describe, it } from 'mocha';
 import assert from 'assert';
 import requireInject from 'require-inject';
 
-import './setup';
+import '../setup';
 
 const mockRandomValues = (buf) =>
     new Uint8Array(
@@ -15,7 +15,7 @@ const mocks = {
     'get-random-values': mockRandomValues
 };
 
-const { separateParts, mergeParts } = requireInject('../lib/helpers/secureSessionStorage', mocks);
+const { separateParts, mergeParts } = requireInject('../../lib/helpers/secureSessionStorage', mocks);
 
 describe('secureSessionStorage', () => {
     it('should separate parts in two shares', () => {
