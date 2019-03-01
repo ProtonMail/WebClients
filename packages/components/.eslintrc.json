@@ -1,0 +1,34 @@
+{
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    "react/display-name": "off",
+    "react/prop-types": "warn",
+    "react-hooks/rules-of-hooks": "error"
+  }
+}
