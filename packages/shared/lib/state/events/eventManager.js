@@ -1,6 +1,6 @@
 import { INTERVAL_EVENT_TIMER } from '../../constants';
 import { getEvents } from '../../api/events';
-import { onceWithQueue } from '../../helpers/promise';
+import { onceWithQueue } from '../../helpers/onceWithQueue';
 
 const FIBONACCI = [1, 1, 2, 3, 5, 8];
 
