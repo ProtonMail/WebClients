@@ -1,7 +1,17 @@
 import React, { useState, useContext } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Modal, ContentModal, FooterModal, ResetButton, PrimaryButton, Row, Label, Password, Input } from 'react-components';
+import {
+    Modal,
+    ContentModal,
+    FooterModal,
+    ResetButton,
+    PrimaryButton,
+    Row,
+    Label,
+    Password,
+    Input
+} from 'react-components';
 import ContextApi from 'proton-shared/lib/context/api';
 
 import MemberStorageSelector from './MemberStorageSelector';
@@ -9,7 +19,7 @@ import MemberVPNSelector from './MemberVPNSelector';
 
 const MemberModal = ({ show, onClose, member }) => {
     const { api } = useContext(ContextApi);
-    const { ID, Name = '', Private, addresses = [], Type } = member;
+    const { ID, Name = '' } = member;
     const isUpdate = ID;
     const title = isUpdate ? c('Title').t`Update user` : c('Title').t`Add user`;
     const [model, updateModel] = useState({ name: Name, password: '', confirm: '', address: '', domain: '' });
@@ -36,8 +46,16 @@ const MemberModal = ({ show, onClose, member }) => {
                 <Row>
                     <Label>{c('Label').t`Password`}</Label>
                     <div className="flex-autogrid">
-                        <Password className="flex-autogrid-item mb1" onChange={handleChangePassword} placeholder={c('Placeholder').t`Password`} />
-                        <Password className="flex-autogrid-item" onChange={handleChangeConfirmPassword} placeholder={c('Placeholder').t`Confirm Password`} />
+                        <Password
+                            className="flex-autogrid-item mb1"
+                            onChange={handleChangePassword}
+                            placeholder={c('Placeholder').t`Password`}
+                        />
+                        <Password
+                            className="flex-autogrid-item"
+                            onChange={handleChangeConfirmPassword}
+                            placeholder={c('Placeholder').t`Confirm Password`}
+                        />
                     </div>
                 </Row>
                 <Row>

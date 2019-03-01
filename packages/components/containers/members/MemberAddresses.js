@@ -15,9 +15,11 @@ const MemberAddresses = ({ member }) => {
     return (
         <Dropdown title={title} className="pm-button-link" content={ngettext(msgid`${n} address`, `${n} addresses`, n)}>
             <DropdownMenu list={list} />
-            <div class="flex flex-spacebetween">
-                <Link className="pm-button pm-button--small" to="/settings/addresses">{c('Link for member addresses').t`Manage`}</Link>
-                <SmallButton className="pm-button-primary" onClick={open}>{c('Action for member addresses').t`Add`}</SmallButton>
+            <div className="flex flex-spacebetween">
+                <Link className="pm-button pm-button--small" to="/settings/addresses">{c('Link for member addresses')
+                    .t`Manage`}</Link>
+                <SmallButton className="pm-button-primary" onClick={open}>{c('Action for member addresses')
+                    .t`Add`}</SmallButton>
                 <AddressModal show={isOpen} onClose={close} member={member} />
             </div>
         </Dropdown>

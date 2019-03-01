@@ -7,6 +7,7 @@ import TextDirectionSelect from './TextDirectionSelect';
 import ShowMovedSelect from './ShowMovedSelect';
 import ComposerModeRadios from './ComposerModeRadios';
 import ViewLayoutRadios from './ViewLayoutRadios';
+import ViewModeRadios from './ViewModeRadios';
 
 const LayoutsSection = () => {
     return (

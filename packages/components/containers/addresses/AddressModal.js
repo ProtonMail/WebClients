@@ -1,10 +1,20 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-
-
-import { Modal, ContentModal, FooterModal, ResetButton, PrimaryButton, Alert, Row, Label, Text, Input, RichTextEditor } from 'react-components';
-
+import {
+    Modal,
+    ContentModal,
+    FooterModal,
+    ResetButton,
+    LearnMore,
+    PrimaryButton,
+    Alert,
+    Row,
+    Label,
+    Text,
+    Input,
+    RichTextEditor
+} from 'react-components';
 
 import useAddressModal from './useAddressModal';
 import DomainsSelect from './DomainsSelect';
@@ -20,18 +30,21 @@ const AddressModal = ({ show, onClose, member }) => {
         const { name: DisplayName, signature: Signature, address: Local, domain: Domain } = model;
         const parameters = {
             MemberID: member.ID,
-            Local, Domain,
-            DisplayName, Signature
+            Local,
+            Domain,
+            DisplayName,
+            Signature
         };
 
-        console.log(parameters);
+        return parameters;
     };
 
     return (
         <Modal show={show} onClose={onClose} title={title}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Alert>
-                    {c('Info').t`ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not.`}
+                    {c('Info')
+                        .t`ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not.`}
                     <br />
                     <LearnMore url="https://protonmail.com/support/knowledge-base/addresses-and-aliases/" />
                 </Alert>
@@ -42,13 +55,22 @@ const AddressModal = ({ show, onClose, member }) => {
                 <Row>
                     <Label>{c('Label').t`Address`}</Label>
                     <div className="flex-autogrid">
-                        <Input value={model.address} className="flex-autogrid-item" placeholder={c('Placeholder').t`Choose address`} onChange={handleChange('address')} />
+                        <Input
+                            value={model.address}
+                            className="flex-autogrid-item"
+                            placeholder={c('Placeholder').t`Choose address`}
+                            onChange={handleChange('address')}
+                        />
                         <DomainsSelect member={member} onChange={handleChange('domain')} />
                     </div>
                 </Row>
                 <Row>
                     <Label>{c('Label').t`Display name`}</Label>
-                    <Input value={model.name} placeholder={c('Placeholder').t`Choose display name`} onChange={handleChange('name')} />
+                    <Input
+                        value={model.name}
+                        placeholder={c('Placeholder').t`Choose display name`}
+                        onChange={handleChange('name')}
+                    />
                 </Row>
                 <Row>
                     <Label>{c('Label').t`Signature`}</Label>

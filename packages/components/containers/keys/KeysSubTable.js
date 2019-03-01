@@ -1,9 +1,7 @@
 import React from 'react';
-import { c } from 'ttag';
-import PropTypes from 'prop-types';
 
 const KeysSubTable = () => {
-    return null;
+    return <table />;
 };
 
 export default KeysSubTable;

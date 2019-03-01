@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { Dropdown, DropdownMenu } from 'react-components';
 
-const AddressActions = ({ address, index }) => {
+const AddressActions = () => {
     const list = [];
 
     return (

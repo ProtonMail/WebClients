@@ -47,7 +47,8 @@ const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, onChange
     };
 
     return (
-        <input className={`pm-field ${className} ${statusClasses}`}
+        <input
+            className={`pm-field ${className} ${statusClasses}`}
             onFocus={handleFocus}
             onBlur={handleBlur}
             onKeyDown={handleKeyDown}
@@ -75,8 +76,7 @@ Input.propTypes = {
     readOnly: PropTypes.bool,
     required: PropTypes.bool,
     type: PropTypes.string,
-    autoComplete: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool])
 };
 
 Input.defaultProps = {

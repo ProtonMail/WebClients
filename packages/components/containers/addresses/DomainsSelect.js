@@ -5,11 +5,11 @@ import { fetchDomains } from 'proton-shared/lib/state/domains/actions';
 import { queryAvailableDomains, queryPremiumDomains } from 'proton-shared/lib/api/domains';
 import ContextApi from 'proton-shared/lib/context/api';
 import { MEMBER_TYPE } from 'proton-shared/lib/constants';
-import { Select } from 'react-components';
+import { Select, useLoading } from 'react-components';
 
 import { fakeEvent } from '../../helpers/component';
 
-const DomainsSelect = ({ member, onChange, user, fetchDomains }) => {
+const DomainsSelect = ({ member, onChange, user, domains, fetchDomains }) => {
     const { api } = useContext(ContextApi);
     const { loading, loaded } = useLoading();
     const [options, setOptions] = useState([]);
@@ -20,18 +20,21 @@ const DomainsSelect = ({ member, onChange, user, fetchDomains }) => {
         onChange(event);
     };
 
-    const formatDomains = (domains = []) => domains.reduce((acc, { State, DomainName }) => {
-        State && acc.push(DomainName);
-        return acc;
-    }, []);
+    const formatDomains = (domains = []) =>
+        domains.reduce((acc, { State, DomainName }) => {
+            State && acc.push(DomainName);
+            return acc;
+        }, []);
 
     const queryDomains = async () => {
-        const [available, premium, domains] = await Promise.all([
+        const [available, premium] = await Promise.all([
             member.Type === MEMBER_TYPE.MEMBER ? api(queryAvailableDomains()).then(({ Domains }) => Domains) : [],
-            member.Type === MEMBER_TYPE.MEMBER && user.isPaidMail ? api(queryPremiumDomains()).then(({ Domains }) => Domains) : [],
+            member.Type === MEMBER_TYPE.MEMBER && user.isPaidMail
+                ? api(queryPremiumDomains()).then(({ Domains }) => Domains)
+                : [],
             user.isPaidMail ? fetchDomains() : []
         ]);
-        const domainNames = [].concat(available, premium, formatDomains(domains));
+        const domainNames = [].concat(available, premium, formatDomains(domains.data));
 
         setOptions(domainNames.map((text) => ({ text, value: text })));
         setDomain(domainNames[0]);
@@ -48,10 +51,16 @@ const DomainsSelect = ({ member, onChange, user, fetchDomains }) => {
 
 DomainsSelect.propTypes = {
     member: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    user: PropTypes.object,
+    domains: PropTypes.object,
+    fetchDomains: PropTypes.func
 };
 
 const mapStateToProps = ({ user }) => ({ user });
 const mapDispatchToProps = { fetchDomains };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DomainsSelect);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(DomainsSelect);

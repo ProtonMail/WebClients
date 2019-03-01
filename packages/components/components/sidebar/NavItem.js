@@ -48,8 +48,8 @@ const NavItem = ({ type, link, text, onClick, iconClassName, list }) => {
 };
 
 NavItem.propTypes = {
-    type: PropTypes.string.isRequired,
     iconClassName: PropTypes.string,
+    onClick: PropTypes.func,
     type: PropTypes.oneOf(['link', 'button', 'text']),
     link: PropTypes.string,
     text: PropTypes.string,

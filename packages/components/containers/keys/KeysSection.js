@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { SubTitle, Alert, Block, PrimaryButton, Button } from 'react-components';
+import { SubTitle, Alert, Block, PrimaryButton, Button, LearnMore } from 'react-components';
 
 import KeysTable from './KeysTable';
 
@@ -15,7 +15,8 @@ const KeysSection = ({ mode }) => {
         <>
             <SubTitle>{title}</SubTitle>
             <Alert>
-                {c('Info').t`Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.`}
+                {c('Info')
+                    .t`Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.`}
                 <br />
                 <LearnMore url="todo" />
             </Alert>
