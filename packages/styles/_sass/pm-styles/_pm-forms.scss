@@ -28,11 +28,24 @@
   &.w100 {
     width: 100%;
   }
+
+  &[type="search"] {
+    background: url("/assets/img/sprite-for-css-only.svg#css-search") 6px 50% no-repeat;
+    background-size: 1.5rem;
+    @extend .pl2;
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
 }
 select.pm-field {
-  background: $pm-input-background url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbD0iIzI2MmEzMyIgZD0iTTcuNzgyIDkuMzU2bC00LjQ0LTQuMTExLS43NS42OTQgNS4xOSA0LjgwNSA1LjE5LTQuODA1LS43NDktLjY5NHoiLz48L3N2Zz4=') calc(100% - 6px) 50% no-repeat;
+  background: $pm-input-background url("/assets/img/sprite-for-css-only.svg#css-carret") calc(100% - 6px) 50% no-repeat;
+  background-size: 1.5rem;
   padding-left: 1em;
   padding-right: 25px;
+  &::-ms-expand {
+    display: none;
+  }
 }
 
 
@@ -44,35 +57,62 @@ select.pm-field {
 }
 
 /* checkboxes */
+.pm-checkbox-fakecheck {
+  display: inline-flex;
+  border: 1px solid $pm-global-border;
+  border-radius: 2px;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: .25rem;
+}
 .pm-checkbox-fakecheck-img {
-    display: none;
+  visibility: hidden;
+  margin: auto;
+  width: 1rem;
 }
 .pm-checkbox {
   @extend .sr-only;
   &:checked + .pm-checkbox-fakecheck {
     .pm-checkbox-fakecheck-img {
-        display: block;
+      visibility: visible;
     }
   }
+  &:focus + .pm-checkbox-fakecheck {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+  }
 }
-.pm-checkbox-fakecheck {
-  display: inline-block;
-  border: 1px solid $pm-global-border;
-  border-radius: 2px;
-  width: 1.6rem;
-  height: 1.6rem;
-}
-
 
 
 /* radios */
+.pm-radio-fakeradio {
+  @extend .pm-checkbox-fakecheck;
+  border-radius: 50%;
+}
+.pm-radio-fakeradio::before {
+  content: '';
+  margin: auto;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  background: transparent;
+}
+.pm-radio {
+  @extend .sr-only;
+  &:checked + .pm-radio-fakeradio::before {
+    background: $pm-blue;
+  }
+  &:focus + .pm-radio-fakeradio {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+  }
+}
 
 
 /* toogle */
+$width: 5.5em;
 .pm-toggle-label {
   margin-top: .5em;
   // height: 2em;
-  width: 7em;
+  width: $width;
   display: inline-flex;
   border: 1px solid $pm-global-border;
   background: #fcfdff;
@@ -82,14 +122,15 @@ select.pm-field {
   &::before {
     content: '';
     position: absolute;
-    width: calc(3.5em - 2px);
+    width: calc( #{$width/2} - 2px);
     transition: transform .25s ease, background-color .25s ease, border-color .25s linear; 
     border-radius: 2rem;
     background: $pm-global-muted;
     top: 2px;
     left: 0;
     bottom: 2px;
-    transform: translateX( calc( 3.5em - 2px) );
+    transform: translateX( #{$width/2} ) translateX(- 2px);
+    // transform: translateX( calc( 2.5rem - 2px) ); does NOT work in IE11
     border: 1px solid $pm-global-border;
   }
   & > .pm-toggle-label-text {
@@ -98,23 +139,36 @@ select.pm-field {
     text-align: center;
     border-radius: 2rem;
     padding: em(6) 0;
-    width: 3.5em;
+    width: #{$width/2};
     position: relative;
     z-index: 2;
-    transition: color .1s steps(1, end); 
+    transition: fill .1s steps(1, end); 
+    display: inline-flex;
   }
 }
 
-.pm-toggle-checkbox:checked + .pm-toggle-label {
-  & > .pm-toggle-label-text:first-child {
-    color: $white;
+.pm-toggle-checkbox {
+  @extend .invisible;
+  &:checked + .pm-toggle-label {
+    & > .pm-toggle-label-text:first-child {
+      fill: $white;
+    }
+    &::before {
+      background: $pm-blue;
+      transform: translateX(2px);
+      border-color: $pm-blue-dark;
+    }
   }
-  &::before {
-    background: $pm-blue;
-    transform: translateX(2px);
-    border-color: $pm-blue-dark;
+  &:focus + .pm-toggle-label {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
 }
+.pm-toggle-label-img {
+  margin: auto;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
 
 
 /* label */
