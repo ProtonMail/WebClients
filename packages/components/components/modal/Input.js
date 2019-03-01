@@ -24,7 +24,7 @@ const InputModal = ({ label, title, input: initialInput, show, onClose, onSubmit
     const handleSubmit = () => onSubmit(input);
 
     return (
-        <Modal show={show} onClose={onClose} title={title}>
+        <Modal show={show} onClose={onClose} title={title} modalClassName="pm-modal--smaller">
             <Content onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor={id}>{label}</Label>

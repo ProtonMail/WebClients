@@ -28,7 +28,7 @@ handleClose = () => {
 
 const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm }) => {
     return (
-        <Modal show={show} onClose={onClose} title={title}>
+        <Modal show={show} onClose={onClose} title={title} modalClassName="pm-modal--smaller">
             <Content onSubmit={onConfirm} onReset={onClose}>
                 {children}
                 <Footer>
