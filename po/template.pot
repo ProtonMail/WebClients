@@ -72,8 +72,8 @@ msgstr ""
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:34
 msgctxt "Action"
 msgid ""
-"<span ng-if=\"ctrl.directSave\" translate-context=\"Action\" translate=\"\">Save</span>\n"
-"                    <span ng-if=\"!ctrl.directSave\" translate-context=\"Action\" translate=\"\">Done</span>"
+"<span ng-if=\"ctrl.directSave\" translate-context=\"Action\" translate>Save</span>\n"
+"                    <span ng-if=\"!ctrl.directSave\" translate-context=\"Action\" translate>Done</span>"
 msgstr ""
 
 #: ./src/templates/bridge/bridgeFreePanel.tpl.html:2
@@ -395,16 +395,16 @@ msgstr ""
 #: ./src/templates/modals/exportKeyModal.tpl.html:17
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
 #: ./src/templates/modals/generate.tpl.html:74
-#: ./src/templates/modals/generateOrganization.tpl.html:17
+#: ./src/templates/modals/generateOrganization.tpl.html:49
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
-#: ./src/templates/modals/member.tpl.html:90
+#: ./src/templates/modals/member.tpl.html:123
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
-#: ./src/templates/modals/setupOrganization.tpl.html:82
+#: ./src/templates/modals/setupOrganization.tpl.html:101
 #: ./src/templates/modals/squire/addFile.tpl.html:27
 #: ./src/templates/modals/squire/addLink.tpl.html:27
 #: ./src/templates/modals/switchPasswordMode.tpl.html:73
@@ -581,12 +581,12 @@ msgstr ""
 #: ./src/templates/modals/feedback.tpl.html:18
 #: ./src/templates/modals/feedback.tpl.html:3
 #: ./src/templates/modals/generate.tpl.html:6
-#: ./src/templates/modals/generateOrganization.tpl.html:3
+#: ./src/templates/modals/generateOrganization.tpl.html:9
 #: ./src/templates/modals/hotkey.tpl.html:101
 #: ./src/templates/modals/hotkey.tpl.html:3
 #: ./src/templates/modals/humanVerification.tpl.html:3
 #: ./src/templates/modals/label.tpl.html:11
-#: ./src/templates/modals/member.tpl.html:3
+#: ./src/templates/modals/member.tpl.html:9
 #: ./src/templates/modals/organizationRecovery.tpl.html:3
 #: ./src/templates/modals/pay.tpl.html:107
 #: ./src/templates/modals/pay.tpl.html:16
@@ -682,11 +682,9 @@ msgctxt "Action"
 msgid "Create a new folder"
 msgstr ""
 
-#: ./src/templates/contact/dropdownGroups.tpl.html:46
+#: ./src/templates/contact/dropdownGroups.tpl.html:47
 msgctxt "Action"
-msgid ""
-"Create a new group\n"
-"            <i class=\"dropdown-folder-create-value\">{{searchValue}}</i>"
+msgid "Create a new group"
 msgstr ""
 
 #: ./src/templates/labels/createLabel.tpl.html:7
@@ -963,7 +961,7 @@ msgid "Export"
 msgstr ""
 
 #: ./src/templates/modals/domain/dmarc.tpl.html:35
-#: ./src/templates/modals/setupOrganization.tpl.html:85
+#: ./src/templates/modals/setupOrganization.tpl.html:104
 #: ./src/templates/modals/welcome.tpl.html:66
 #: ./src/templates/partials/wizard.tpl.html:55
 msgctxt "Action"
@@ -1000,7 +998,7 @@ msgid "Fullscreen"
 msgstr ""
 
 #: ./src/templates/modals/generate.tpl.html:75
-#: ./src/templates/modals/generateOrganization.tpl.html:18
+#: ./src/templates/modals/generateOrganization.tpl.html:55
 msgctxt "Action"
 msgid "Generate Keys"
 msgstr ""
@@ -1320,7 +1318,7 @@ msgstr ""
 #: ./src/templates/modals/domain/mx.tpl.html:47
 #: ./src/templates/modals/domain/spf.tpl.html:36
 #: ./src/templates/modals/domain/verification.tpl.html:39
-#: ./src/templates/modals/setupOrganization.tpl.html:84
+#: ./src/templates/modals/setupOrganization.tpl.html:103
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:38
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:20
 msgctxt "Action"
@@ -1402,7 +1400,7 @@ msgid "Print"
 msgstr ""
 
 #. Form checkbox option
-#: ./src/templates/modals/member.tpl.html:26
+#: ./src/templates/modals/member.tpl.html:34
 msgctxt "Action"
 msgid "Private"
 msgstr ""
@@ -1587,7 +1585,7 @@ msgstr ""
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
 #: ./src/templates/modals/label.tpl.html:75
-#: ./src/templates/modals/member.tpl.html:91
+#: ./src/templates/modals/member.tpl.html:124
 #: ./src/templates/organization/organizationFormName.tpl.html:25
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:45
@@ -2358,7 +2356,7 @@ msgstr ""
 
 #: ./src/app/composer/directives/composerDropzone.js:39
 msgctxt "Composer"
-msgid "Attachments are limited to {{number}} MBB. Total attached would be: {{total}} MB."
+msgid "Attachments are limited to {{number}} MB. Total attached would be: {{total}} MB."
 msgstr ""
 
 #: ./src/app/composer/directives/composerDropzone.js:26
@@ -3726,7 +3724,7 @@ msgctxt "Error"
 msgid "Organization keys already active"
 msgstr ""
 
-#: ./src/app/organization/modals/generateOrganizationModal.js:106
+#: ./src/app/organization/modals/generateOrganizationModal.js:105
 msgctxt "Error"
 msgid "Organization keys change successful"
 msgstr ""
@@ -4184,7 +4182,7 @@ msgctxt "Example user"
 msgid "thomas.anderson"
 msgstr ""
 
-#: ./src/templates/modals/member.tpl.html:15
+#: ./src/templates/modals/member.tpl.html:23
 msgctxt "Exemple name for the user"
 msgid "ex: Thomas Anderson"
 msgstr ""
@@ -4495,7 +4493,7 @@ msgstr ""
 
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:16
 #: ./src/templates/modals/changePassword.tpl.html:32
-#: ./src/templates/modals/setupOrganization.tpl.html:53
+#: ./src/templates/modals/setupOrganization.tpl.html:72
 msgctxt "Info"
 msgid "* Do NOT forget this password. If you forget it, you will not be able to manage your organization."
 msgstr ""
@@ -4503,7 +4501,7 @@ msgstr ""
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:17
 #: ./src/templates/modals/changePassword.tpl.html:28
 #: ./src/templates/modals/changePassword.tpl.html:33
-#: ./src/templates/modals/setupOrganization.tpl.html:54
+#: ./src/templates/modals/setupOrganization.tpl.html:73
 msgctxt "Info"
 msgid "* Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr ""
@@ -4519,6 +4517,11 @@ msgid "1 conversation moved to {{folder}}"
 msgid_plural "{{number}} conversations moved to {{folder}}"
 msgstr[0] ""
 msgstr[1] ""
+
+#: ./src/templates/modals/member.tpl.html:116
+msgctxt "Info"
+msgid "4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys. Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes"
+msgstr ""
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:2
 msgctxt "Info"
@@ -4768,11 +4771,6 @@ msgctxt "Info"
 msgid "A <a ui-sref=\"secured.dashboard({scroll: true})\">paid plan</a> is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts."
 msgstr ""
 
-#: ./src/app/elements/services/removeElement.js:17
-msgctxt "Info"
-msgid "A draft selected is open in a composer, this action will close the composer and delete the message."
-msgstr ""
-
 #: ./src/app/authentication/interceptors/httpInterceptor.js:18
 msgctxt "Info"
 msgid "A new version of ProtonMail is available. Please refresh this page."
@@ -4841,7 +4839,7 @@ msgctxt "Info"
 msgid "All uploaded keys are expired or revoked! Encryption is automatically disabled."
 msgstr ""
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:56
+#: ./src/app/organization/modals/setupOrganizationModal.js:57
 msgctxt "Info"
 msgid "Already used"
 msgstr ""
@@ -5122,12 +5120,12 @@ msgctxt "Info"
 msgid "Credit card payment is currently not available, please try again later."
 msgstr ""
 
-#: ./src/templates/modals/setupOrganization.tpl.html:69
+#: ./src/templates/modals/setupOrganization.tpl.html:88
 msgctxt "Info"
 msgid "Currently all available VPN connections are allocated to the administrator account. Please select the number of connections you want to reserve for additional users."
 msgstr ""
 
-#: ./src/templates/modals/setupOrganization.tpl.html:58
+#: ./src/templates/modals/setupOrganization.tpl.html:77
 msgctxt "Info"
 msgid "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account."
 msgstr ""
@@ -5345,6 +5343,11 @@ msgstr ""
 #: ./src/templates/filter/customFilterList.tpl.html:11
 msgctxt "Info"
 msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> to get unlimited filters."
+msgstr ""
+
+#: ./src/templates/modals/generateOrganization.tpl.html:39
+msgctxt "Info"
+msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
 msgstr ""
 
 #: ./src/templates/modals/generate.tpl.html:33
@@ -5613,7 +5616,7 @@ msgctxt "Info"
 msgid "Other administrators exist in your organization, you are responsible for communicating the new password to them."
 msgstr ""
 
-#: ./src/templates/modals/generateOrganization.tpl.html:13
+#: ./src/templates/modals/generateOrganization.tpl.html:45
 msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
 msgstr ""
@@ -5734,7 +5737,7 @@ msgctxt "Info"
 msgid "Please enter your organization recovery password:"
 msgstr ""
 
-#: ./src/templates/modals/member.tpl.html:86
+#: ./src/templates/modals/member.tpl.html:119
 msgctxt "Info"
 msgid "Please give the address and temporary password to the new member so they can log in."
 msgstr ""
@@ -5965,6 +5968,11 @@ msgctxt "Info"
 msgid "The app will now be reloaded in a few seconds"
 msgstr ""
 
+#: ./src/app/elements/services/removeElement.js:17
+msgctxt "Info"
+msgid "The draft(s) selected is open in a composer, this action will close the composer and delete the message."
+msgstr ""
+
 #: ./src/templates/message/messageResign.tpl.html:3
 msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
@@ -6104,7 +6112,7 @@ msgstr ""
 
 #: ./src/templates/modals/setupOrganization.tpl.html:29
 msgctxt "Info"
-msgid "This will create a new encryption key for your organization."
+msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr ""
 
 #: ./src/app/dashboard/factories/downgrade.js:14
@@ -6462,7 +6470,7 @@ msgctxt "Info"
 msgid "Your new features are now available."
 msgstr ""
 
-#: ./src/templates/modals/setupOrganization.tpl.html:32
+#: ./src/templates/modals/setupOrganization.tpl.html:51
 msgctxt "Info"
 msgid "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe."
 msgstr ""
@@ -6674,7 +6682,7 @@ msgctxt "Inform the user that he reach the search limit"
 msgid "Your search matched too many results. Please limit your search and try again."
 msgstr ""
 
-#: ./src/templates/modals/member.tpl.html:27
+#: ./src/templates/modals/member.tpl.html:35
 msgctxt "Information about this user"
 msgid "Organization administrators cannot access the messages of private users."
 msgstr ""
@@ -6803,7 +6811,7 @@ msgctxt "Label"
 msgid "2-years"
 msgstr ""
 
-#: ./src/templates/modals/member.tpl.html:63
+#: ./src/templates/modals/member.tpl.html:93
 msgctxt "Label"
 msgid "Account storage"
 msgstr ""
@@ -6818,18 +6826,18 @@ msgctxt "Label"
 msgid "Add image URL"
 msgstr ""
 
-#: ./src/templates/modals/member.tpl.html:46
+#: ./src/templates/modals/member.tpl.html:76
 #: ./src/templates/user/identitySection.tpl.html:5
 msgctxt "Label"
 msgid "Address"
 msgstr ""
 
-#: ./src/templates/modals/setupOrganization.tpl.html:60
+#: ./src/templates/modals/setupOrganization.tpl.html:79
 msgctxt "Label"
 msgid "Admin Account Storage:"
 msgstr ""
 
-#: ./src/templates/modals/setupOrganization.tpl.html:71
+#: ./src/templates/modals/setupOrganization.tpl.html:90
 msgctxt "Label"
 msgid "Admin VPN Connections:"
 msgstr ""
@@ -7032,10 +7040,27 @@ msgctxt "Label"
 msgid "Gift code"
 msgstr ""
 
+#. form option heading
+#: ./src/templates/modals/member.tpl.html:48
+msgctxt "Label"
+msgid "High security"
+msgstr ""
+
+#. form option heading
+#: ./src/templates/modals/member.tpl.html:57
+msgctxt "Label"
+msgid "Highest security"
+msgstr ""
+
 #: ./src/app/labels/directives/dropdownFolders.js:8
 #: ./src/templates/filter/modal.tpl.html:160
 msgctxt "Label"
 msgid "Inbox"
+msgstr ""
+
+#: ./src/templates/modals/member.tpl.html:41
+msgctxt "Label"
+msgid "Key Strength"
 msgstr ""
 
 #: ./src/templates/vpn/openVpnSection.tpl.html:17
@@ -7075,7 +7100,7 @@ msgstr ""
 
 #: ./src/templates/contact/contactGroupModal.tpl.html:28
 #: ./src/templates/modals/label.tpl.html:27
-#: ./src/templates/modals/member.tpl.html:12
+#: ./src/templates/modals/member.tpl.html:20
 msgctxt "Label"
 msgid "Name"
 msgstr ""
@@ -7118,7 +7143,7 @@ msgid "Organization password:"
 msgstr ""
 
 #: ./src/templates/authentication/loginForm.tpl.html:34
-#: ./src/templates/modals/member.tpl.html:33
+#: ./src/templates/modals/member.tpl.html:63
 #: ./src/templates/modals/switchPasswordMode.tpl.html:13
 #: ./src/templates/vpn/openVpnSection.tpl.html:36
 #: ./src/templates/vpn/vpnView.tpl.html:49
@@ -7222,7 +7247,7 @@ msgctxt "Label"
 msgid "Start time"
 msgstr ""
 
-#: ./src/templates/modals/setupOrganization.tpl.html:63
+#: ./src/templates/modals/setupOrganization.tpl.html:82
 msgctxt "Label"
 msgid "Storage for members:"
 msgstr ""
@@ -7263,12 +7288,12 @@ msgctxt "Label"
 msgid "User login"
 msgstr ""
 
-#: ./src/templates/modals/member.tpl.html:74
+#: ./src/templates/modals/member.tpl.html:104
 msgctxt "Label"
 msgid "VPN Connections"
 msgstr ""
 
-#: ./src/templates/modals/setupOrganization.tpl.html:74
+#: ./src/templates/modals/setupOrganization.tpl.html:93
 msgctxt "Label"
 msgid "VPN Connections for members:"
 msgstr ""
@@ -8243,12 +8268,12 @@ msgctxt "Placeholder"
 msgid "City"
 msgstr ""
 
-#: ./src/templates/modals/member.tpl.html:41
+#: ./src/templates/modals/member.tpl.html:71
 msgctxt "Placeholder"
 msgid "Confirm Password"
 msgstr ""
 
-#: ./src/templates/modals/setupOrganization.tpl.html:43
+#: ./src/templates/modals/setupOrganization.tpl.html:62
 msgctxt "Placeholder"
 msgid "Confirm organization password"
 msgstr ""
@@ -8376,7 +8401,7 @@ msgctxt "Placeholder"
 msgid "Organization name"
 msgstr ""
 
-#: ./src/templates/modals/setupOrganization.tpl.html:34
+#: ./src/templates/modals/setupOrganization.tpl.html:53
 msgctxt "Placeholder"
 msgid "Organization password"
 msgstr ""
@@ -8386,7 +8411,7 @@ msgstr ""
 #: ./src/templates/modals/activateOrganization.tpl.html:12
 #: ./src/templates/modals/decryptImportKey.tpl.html:12
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:14
-#: ./src/templates/modals/member.tpl.html:36
+#: ./src/templates/modals/member.tpl.html:66
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:13
 msgctxt "Placeholder"
 msgid "Password"
@@ -8719,7 +8744,7 @@ msgctxt "Success"
 msgid "All contacts deleted"
 msgstr ""
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:52
+#: ./src/app/organization/modals/setupOrganizationModal.js:53
 msgctxt "Success"
 msgid "Allocated to admin"
 msgstr ""
@@ -9370,7 +9395,7 @@ msgctxt "Title"
 msgid "Change OpenVPN Password"
 msgstr ""
 
-#: ./src/templates/modals/generateOrganization.tpl.html:6
+#: ./src/templates/modals/generateOrganization.tpl.html:12
 msgctxt "Title"
 msgid "Change Organization Keys"
 msgstr ""
@@ -9450,7 +9475,7 @@ msgctxt "Title"
 msgid "Confirm mailbox password"
 msgstr ""
 
-#: ./src/templates/modals/generateOrganization.tpl.html:11
+#: ./src/templates/modals/generateOrganization.tpl.html:43
 msgctxt "Title"
 msgid "Confirm recovery Password"
 msgstr ""
@@ -9524,7 +9549,7 @@ msgctxt "Title"
 msgid "Create new label"
 msgstr ""
 
-#: ./src/templates/modals/member.tpl.html:6
+#: ./src/templates/modals/member.tpl.html:13
 msgctxt "Title"
 msgid "Create user"
 msgstr ""
@@ -9987,12 +10012,16 @@ msgstr ""
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:24
+#: ./src/templates/modals/generateOrganization.tpl.html:22
+#: ./src/templates/modals/setupOrganization.tpl.html:36
 msgctxt "Title"
 msgid "High security"
 msgstr ""
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:29
+#: ./src/templates/modals/generateOrganization.tpl.html:33
+#: ./src/templates/modals/setupOrganization.tpl.html:45
 msgctxt "Title"
 msgid "Highest security"
 msgstr ""
@@ -10074,7 +10103,7 @@ msgctxt "Title"
 msgid "Key password"
 msgstr ""
 
-#: ./src/templates/modals/generateOrganization.tpl.html:9
+#: ./src/templates/modals/generateOrganization.tpl.html:41
 msgctxt "Title"
 msgid "Key recovery password"
 msgstr ""
@@ -10840,7 +10869,7 @@ msgctxt "Title"
 msgid "Unsubscribe from mailing list?"
 msgstr ""
 
-#: ./src/templates/modals/member.tpl.html:7
+#: ./src/templates/modals/member.tpl.html:14
 msgctxt "Title"
 msgid "Update user"
 msgstr ""
@@ -11116,7 +11145,7 @@ msgctxt "Tooltip"
 msgid "2-year subscription with VPN discount"
 msgstr ""
 
-#: ./src/templates/modals/member.tpl.html:49
+#: ./src/templates/modals/member.tpl.html:79
 msgctxt "Tooltip"
 msgid "Address"
 msgstr ""
