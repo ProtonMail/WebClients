@@ -13,12 +13,8 @@ const AddressModal = ({ show, onClose, member }) => {
     const { model, update } = useAddressModal(member);
     const title = c('Title').t`Create address`;
 
-    const handleChange = (key) => (event) => {
-        if (key === 'signature') {
-            return update(key, event); // Here event represent the value returned by Quill (RichTextEditor)
-        }
-        update(key, event.target.value);
-    };
+    const handleChange = (key) => (event) => update(key, event.target.value);
+    const handleSignature = (value) => update('signature', value);
 
     const handleSubmit = async () => {
         const { name: DisplayName, signature: Signature, address: Local, domain: Domain } = model;
@@ -56,7 +52,7 @@ const AddressModal = ({ show, onClose, member }) => {
                 </Row>
                 <Row>
                     <Label>{c('Label').t`Signature`}</Label>
-                    <RichTextEditor value={model.signature} onChange={handleChange('signature')} />
+                    <RichTextEditor value={model.signature} onChange={handleSignature} />
                 </Row>
                 <FooterModal>
                     <ResetButton>{c('Action').t`Cancel`}</ResetButton>
