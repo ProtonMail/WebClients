@@ -29,6 +29,7 @@ export { default as LogsSection } from './containers/logs/LogsSection';
 export { default as MembersSection } from './containers/members/MembersSection';
 export { default as Modal } from './components/modal/Modal';
 export { default as NewsSection } from './containers/news/NewsSection';
+export { default as OrganizationSection } from './containers/organization/OrganizationSection';
 export { default as Pagination } from './components/pagination/Pagination';
 export { default as Paragraph } from './components/paragraph/Paragraph';
 export { default as Password } from './components/input/Password';
