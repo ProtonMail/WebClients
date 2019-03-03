@@ -217,12 +217,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 hotkeys.unbind(['mod+s']);
             });
 
-            // Move to trash
             on('hotkeys', (e, { type, data: { to } }) => {
-                if (type === 'move' && to === 'trash' && MODEL.cursorID) {
-                    dispatcher.contacts('deleteContacts', { contactIDs: [MODEL.cursorID] });
-                }
-
                 if (type === 'move' && to === 'archive') {
                     dispatcher.contacts('addContact');
                 }

@@ -94,6 +94,15 @@ function contactToolbar($state, $stateParams, contactCache, gettextCatalog, mess
                 state.name === 'secured.contacts.details' && scope.noSelection && update();
             });
 
+            // Move to trash
+            on('hotkeys', (e, { type, data: { to } }) => {
+                if (type === 'move' && to === 'trash') {
+                    return dispatcher.contacts('deleteContacts', {
+                        contactIDs: _.map(getList(), 'ID')
+                    });
+                }
+            });
+
             on('selectElements', (e, { type }) => type === 'all' && toggleSelectAll(false));
 
             on('right', () => {
