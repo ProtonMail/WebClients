@@ -41,7 +41,6 @@ export const mergeParts = (share1, share2) =>
         const xored = new Array(share2Value.length);
 
         for (let j = 0; j < share2Value.length; j++) {
-            // eslint-disable-next-line
             xored[j] = share2Value[j] ^ share1Value[j];
         }
 
@@ -65,7 +64,6 @@ export const separateParts = (data) =>
             const share2 = new Uint8Array(share1);
 
             for (let i = 0; i < item.length; i++) {
-                // eslint-disable-next-line
                 share2[i] ^= item[i];
             }
 
