@@ -3,12 +3,12 @@ export const queryDomains = () => ({
     method: 'get'
 });
 
-export const getDomains = (domainID) => ({
+export const getDomain = (domainID) => ({
     url: `domains/${domainID}`,
     method: 'get'
 });
 
-export const getDomainAddresses = (domainID) => ({
+export const queryDomainAddresses = (domainID) => ({
     url: `domains/${domainID}/addresses`,
     method: 'get'
 });
