@@ -1,8 +1,21 @@
+# [1.3.6] - 2019-03-04
+
+## New
+
+- added `.italic` class 
+- added SVG sprite for CSS use only (with doc)
+- added `.bold` alias for `.strong`
+
+## Misc
+
+- Fix CSP issue on SVG sprite for CSS (Firefox)
+
+
 # [1.3.5] - 2019-03-01
 
 ## New
 
-- added `input type="radio/checkbox/search" in forms
+- added `input type="radio/checkbox/search"` in forms
 - added SVG sprite for CSS use only
 - added `.strong` and reset for `b` and `strong` 
 
