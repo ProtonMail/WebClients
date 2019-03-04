@@ -476,6 +476,7 @@
         .composer-btn-expiration.primary svg {
             fill: $white;
         }
+
     }
 
 
@@ -520,6 +521,14 @@
     }
 }
 
+/* when composer not maximized, text should be visually hidden */
+.composer:not(.maximized) {
+    .composer-btn-save-text,
+    .composer-btn-discard-text {
+        @extend .sr-only;
+    }
+}
+
 /* RESPONSIVE */
 
 @media screen and (max-width: $mobile-landscape) {
@@ -553,8 +562,20 @@
     #pm_composer footer {
         .pm_button {
             padding:0px 10px !important;
-            span {
-                display: none;
+            .composer-btn-save-text,
+            .composer-btn-discard-text {
+                /* equiv .sr-only
+                 * but impossible to extend a class
+                 * defined outside a breakpoint
+                 */
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                border: 0;
             }
             &.mobileFull {
                 span {
