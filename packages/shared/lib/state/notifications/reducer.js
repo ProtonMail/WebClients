@@ -12,12 +12,12 @@ const filterOutId = (arr, removeId) => {
 };
 
 export default createReducer([], {
-    [ADD_NOTIFICATION]: (state, action) => {
-        const notification = createNotification(action);
+    [ADD_NOTIFICATION]: (state, payload) => {
+        const notification = createNotification(payload);
         return [notification, ...filterOutId(state, notification.id)];
     },
-    [REMOVE_NOTIFICATION]: (state, action) => {
-        return filterOutId(state, action);
+    [REMOVE_NOTIFICATION]: (state, payload) => {
+        return filterOutId(state, payload);
     },
     [CLEAR_NOTIFICATIONS]: () => {
         return [];

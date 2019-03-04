@@ -11,7 +11,7 @@ export const revoke = () => ({
     url: 'auth'
 });
 
-export const refresh = () => ({
+export const setRefreshCookies = () => ({
     method: 'post',
     url: 'auth/refresh'
 });

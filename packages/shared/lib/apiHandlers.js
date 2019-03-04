@@ -1,8 +1,5 @@
-export const handleUnauthorized = (e) => {
-    if (e.status === 401) {
-        return true;
-    }
-};
+export const STATUS_CODE_UNAUTHORIZED = 401;
+export const STATUS_CODE_UNLOCK = 403;
 
 export const getError = (e) => {
     if (!e.data) {
@@ -21,25 +18,27 @@ export const getError = (e) => {
     };
 };
 
-export const createRefreshHandler = (refresh, logout) => {
-    let refreshPromise;
+export const createOnceHandler = (createPromise, onError) => {
+    let promise;
 
     const clear = () => {
-        refreshPromise = undefined;
+        promise = undefined;
     };
 
     return () => {
-        if (refreshPromise) {
-            return refreshPromise;
+        if (promise) {
+            return promise;
         }
 
-        refreshPromise = refresh()
+        promise = createPromise()
             .then(clear)
             .catch((e) => {
                 clear();
-                logout();
+                if (onError) {
+                    onError();
+                }
                 throw e;
             });
-        return refreshPromise;
+        return promise;
     };
 };

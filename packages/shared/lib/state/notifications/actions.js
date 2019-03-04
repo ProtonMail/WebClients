@@ -1,20 +1,20 @@
 import { ADD_NOTIFICATION, REMOVE_NOTIFICATION, CLEAR_NOTIFICATIONS } from './actionTypes';
 
-export const create = (payload) => {
+export const createNotification = (payload) => {
     return {
         type: ADD_NOTIFICATION,
         payload
     };
 };
 
-export const remove = (id) => {
+export const removeNotification = (id) => {
     return {
         type: REMOVE_NOTIFICATION,
         payload: id
     };
 };
 
-export const clear = () => {
+export const clearNotifications = () => {
     return {
         type: CLEAR_NOTIFICATIONS
     };

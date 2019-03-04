@@ -1,7 +1,4 @@
-import { getError, handleUnauthorized, createRefreshHandler } from './apiHandlers';
-import { refresh as refreshApi } from './api/auth';
-
-export default ({ xhr, authenticationStore, onLogout, onError, API_URL, APP_VERSION, CLIENT_ID, API_VERSION }) => {
+export default ({ xhr, authenticationStore, API_URL, APP_VERSION, CLIENT_ID, API_VERSION }) => {
     const defaultHeaders = {
         accept: 'application/vnd.protonmail.v1+json',
         'x-pm-appversion': `${CLIENT_ID}_${APP_VERSION}`,
@@ -12,7 +9,7 @@ export default ({ xhr, authenticationStore, onLogout, onError, API_URL, APP_VERS
         'x-pm-uid': UID
     });
 
-    const call = ({ url, data, headers, ...rest }) => {
+    return ({ url, data, headers, ...rest }) => {
         const UID = authenticationStore.getUID();
         const authHeaders = UID ? getAuthHeaders(UID) : undefined;
 
@@ -25,25 +22,6 @@ export default ({ xhr, authenticationStore, onLogout, onError, API_URL, APP_VERS
                 ...headers
             },
             ...rest
-        });
-    };
-
-    const refresh = () => call(refreshApi());
-
-    const refreshHandler = createRefreshHandler(refresh, onLogout);
-
-    return (options) => {
-        return call(options).catch((e) => {
-            if (handleUnauthorized(e)) {
-                return refreshHandler().then(() => call(options));
-            }
-
-            const res = getError(e);
-            if (res) {
-                onError(res);
-            }
-
-            throw e;
         });
     };
 };
