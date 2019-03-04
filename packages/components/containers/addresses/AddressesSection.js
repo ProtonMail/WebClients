@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { SubTitle, Table, TableHeader, TableRow, TableBody, useLoading } from 'react-components';
 import { connect } from 'react-redux';
-import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 import { queryAddresses } from 'proton-shared/lib/api/members';
 import ContextApi from 'proton-shared/lib/context/api';
 
@@ -30,7 +29,7 @@ const AddressesSection = ({ addresses }) => {
     return (
         <>
             <SubTitle>{c('Title').t`Addresses`}</SubTitle>
-            <AddressesToolbar onChangeMember={handleChangeMember} />
+            <AddressesToolbar onChangeMember={handleChangeMember} loading={loading} />
             <Table>
                 <TableHeader
                     cells={[
@@ -63,11 +62,6 @@ AddressesSection.propTypes = {
     addresses: PropTypes.object
 };
 
-const mapStateToProps = ({ addresses, members }) => ({ addresses, members });
+const mapStateToProps = ({ addresses }) => ({ addresses });
 
-const mapDispatchToProps = { fetchMembers };
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(AddressesSection);
+export default connect(mapStateToProps)(AddressesSection);

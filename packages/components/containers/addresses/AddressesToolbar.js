@@ -7,9 +7,9 @@ import { connect } from 'react-redux';
 
 import AddressModal from './AddressModal';
 
-const AddressesToolbar = ({ onChangeMember, members, fetchMembers }) => {
+const AddressesToolbar = ({ onChangeMember, members, fetchMembers, loading }) => {
     const { isOpen, open, close } = useModal();
-    const [member, setMember] = useState(members.data.find(({ Self }) => Self));
+    const [member, setMember] = useState(members.data.find(({ Self }) => Self) || {});
     const options = members.data.map(({ ID: value, Name: text, Self: self }) => ({ text, value, self }));
 
     const handleChange = ({ target }) => {
@@ -26,8 +26,15 @@ const AddressesToolbar = ({ onChangeMember, members, fetchMembers }) => {
     return (
         <Block>
             <Label htmlFor="memberSelect" className="mr1">{c('Label').t`User:`}</Label>
-            <Select id="memberSelect" value={member.ID} options={options} className="mr1" onChange={handleChange} />
-            <PrimaryButton onClick={open}>{c('Action').t`Add address`}</PrimaryButton>
+            <Select
+                loading={loading}
+                id="memberSelect"
+                value={member.ID}
+                options={options}
+                className="mr1"
+                onChange={handleChange}
+            />
+            <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Add address`}</PrimaryButton>
             <AddressModal show={isOpen} onClose={close} member={member} />
         </Block>
     );
@@ -36,7 +43,8 @@ const AddressesToolbar = ({ onChangeMember, members, fetchMembers }) => {
 AddressesToolbar.propTypes = {
     members: PropTypes.object,
     fetchMembers: PropTypes.func,
-    onChangeMember: PropTypes.func.isRequired
+    onChangeMember: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = ({ members }) => ({ members });
