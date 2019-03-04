@@ -20,10 +20,15 @@ const AddressesSection = ({ addresses }) => {
             return setAddresses(addresses.data);
         }
 
-        load();
-        const { Addresses } = await api(queryAddresses(memberID));
-        setAddresses(Addresses);
-        loaded();
+        try {
+            load();
+            const { Addresses } = await api(queryAddresses(memberID));
+            setAddresses(Addresses);
+            loaded();
+        } catch (error) {
+            loaded();
+            throw error;
+        }
     };
 
     return (

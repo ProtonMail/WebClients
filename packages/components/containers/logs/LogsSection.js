@@ -2,7 +2,17 @@ import React, { useState, useEffect, useContext } from 'react';
 import { t } from 'ttag';
 import dayjs from 'dayjs';
 import { connect } from 'react-redux';
-import { Button, ButtonGroup, Group, Alert, Block, Pagination, usePagination, SubTitle, useLoading } from 'react-components';
+import {
+    Button,
+    ButtonGroup,
+    Group,
+    Alert,
+    Block,
+    Pagination,
+    usePagination,
+    SubTitle,
+    useLoading
+} from 'react-components';
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
 import { updateLogAuth } from 'proton-shared/lib/api/settings';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
@@ -24,21 +34,20 @@ const { DISABLE, BASIC, ADVANCED } = LOGS_STATE;
 const LogsSection = ({ settings }) => {
     const { api } = useContext(ContextApi);
     const [logs, setLogs] = useState([]);
-    const {loading, loaded, load} = useLoading(settings.loading);
+    const { loading, loaded, load } = useLoading(settings.loading);
     const [logAuth, setLogAuth] = useState(settings.data.LogAuth);
-    const {
-        page,
-        list,
-        onNext,
-        onPrevious,
-        onSelect
-    } = usePagination(logs, 1, ELEMENTS_PER_PAGE);
+    const { page, list, onNext, onPrevious, onSelect } = usePagination(logs, 1, ELEMENTS_PER_PAGE);
 
     const fetchLogs = async () => {
-        load();
-        const { Logs } = await api(queryLogs());
-        setLogs(Logs);
-        loaded();
+        try {
+            load();
+            const { Logs } = await api(queryLogs());
+            setLogs(Logs);
+            loaded();
+        } catch (error) {
+            loaded();
+            throw error;
+        }
     };
 
     const handleWipe = async () => {
@@ -47,11 +56,13 @@ const LogsSection = ({ settings }) => {
     };
 
     const handleDownload = () => {
-        const data = logs.reduce((acc, { Event, Time, IP }) => {
-            acc.push(`${EVENTS[Event]},${dayjs(Time * 1000)},${IP}`);
-            return acc;
-        },
-        [['Event', 'Time', 'IP'].join(',')]);
+        const data = logs.reduce(
+            (acc, { Event, Time, IP }) => {
+                acc.push(`${EVENTS[Event]},${dayjs(Time * 1000)},${IP}`);
+                return acc;
+            },
+            [['Event', 'Time', 'IP'].join(',')]
+        );
 
         const filename = 'logs.csv';
         const csvString = data.join('\r\n');
@@ -76,9 +87,18 @@ const LogsSection = ({ settings }) => {
             <Block className="flex flex-spacebetween">
                 <div>
                     <Group className="mr1">
-                        <ButtonGroup className={logAuth === DISABLE ? 'is-active' : ''} onClick={handleLogAuth(DISABLE)}>{t`Disable`}</ButtonGroup>
-                        <ButtonGroup className={logAuth === BASIC ? 'is-active' : ''} onClick={handleLogAuth(BASIC)}>{t`Basic`}</ButtonGroup>
-                        <ButtonGroup className={logAuth === ADVANCED ? 'is-active' : ''} onClick={handleLogAuth(ADVANCED)}>{t`Advanced`}</ButtonGroup>
+                        <ButtonGroup
+                            className={logAuth === DISABLE ? 'is-active' : ''}
+                            onClick={handleLogAuth(DISABLE)}
+                        >{t`Disable`}</ButtonGroup>
+                        <ButtonGroup
+                            className={logAuth === BASIC ? 'is-active' : ''}
+                            onClick={handleLogAuth(BASIC)}
+                        >{t`Basic`}</ButtonGroup>
+                        <ButtonGroup
+                            className={logAuth === ADVANCED ? 'is-active' : ''}
+                            onClick={handleLogAuth(ADVANCED)}
+                        >{t`Advanced`}</ButtonGroup>
                     </Group>
                     <Button onClick={fetchLogs}>{t`Refresh`}</Button>
                     {list.length ? <WipeLogsButton onWipe={handleWipe} /> : null}
@@ -90,7 +110,8 @@ const LogsSection = ({ settings }) => {
                     onSelect={onSelect}
                     total={logs.length}
                     page={page}
-                    limit={ELEMENTS_PER_PAGE} />
+                    limit={ELEMENTS_PER_PAGE}
+                />
             </Block>
             <LogsTable list={list} logAuth={logAuth} loading={loading} />
         </>

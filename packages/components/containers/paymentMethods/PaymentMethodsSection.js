@@ -14,10 +14,15 @@ const PaymentMethodsSection = () => {
     const [methods, setMethods] = useState([]);
 
     const fetchMethods = async () => {
-        load();
-        const { PaymentMethods } = await api(queryPaymentMethods());
-        setMethods(PaymentMethods);
-        loaded();
+        try {
+            load();
+            const { PaymentMethods } = await api(queryPaymentMethods());
+            setMethods(PaymentMethods);
+            loaded();
+        } catch (error) {
+            loaded();
+            throw error;
+        }
     };
 
     useEffect(() => {
@@ -30,7 +35,7 @@ const PaymentMethodsSection = () => {
             <Alert>
                 {c('Info for payment methods').t`Lorem ipsum`}
                 <br />
-                <LearnMore url="todo"/>
+                <LearnMore url="todo" />
             </Alert>
             <Block>
                 <PrimaryButton onClick={openCardModal}>{c('Action').t`Add payment method`}</PrimaryButton>

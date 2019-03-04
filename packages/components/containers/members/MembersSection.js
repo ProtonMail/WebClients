@@ -1,6 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { c, jt } from 'ttag';
-import { Table, TableHeader, SubTitle, Block, PrimaryButton, Alert, LearnMore, Search, useModal, TableBody, TableRow, useSearch, useLoading } from 'react-components';
+import {
+    Table,
+    TableHeader,
+    SubTitle,
+    Block,
+    PrimaryButton,
+    Alert,
+    LearnMore,
+    Search,
+    useModal,
+    TableBody,
+    TableRow,
+    useSearch,
+    useLoading
+} from 'react-components';
 import { Link } from 'react-router-dom';
 import ContextApi from 'proton-shared/lib/context/api';
 import { queryMembers, queryAddresses } from 'proton-shared/lib/api/members';
@@ -15,7 +29,7 @@ import MemberAddresses from './MemberAddresses';
 const MembersSection = () => {
     const { api } = useContext(ContextApi);
     const { keywords, set: setKeywords } = useSearch();
-    const {loading, loaded} = useLoading();
+    const { loading, loaded } = useLoading();
     const [members, setMembers] = useState([]);
     const { isOpen: showNewMemberModal, open: openNewMemberModal, close: closeNewMemberModal } = useModal();
     const handleAddMember = () => openNewMemberModal();
@@ -62,7 +76,8 @@ const MembersSection = () => {
         loaded();
     };
 
-    const formatSize = ({ UsedSpace, MaxSpace }) => `${humanSize(UsedSpace, 'GB', true)} / ${humanSize(MaxSpace, 'GB')}`;
+    const formatSize = ({ UsedSpace, MaxSpace }) =>
+        `${humanSize(UsedSpace, 'GB', true)} / ${humanSize(MaxSpace, 'GB')}`;
 
     useEffect(() => {
         fetchMembers();
@@ -72,7 +87,8 @@ const MembersSection = () => {
         <>
             <SubTitle>{c('Title').t`Users`}</SubTitle>
             <Alert>
-                {c('Info for members section').t`Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.`}
+                {c('Info for members section')
+                    .t`Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.`}
                 <br />
                 <LearnMore url="todo" />
             </Alert>
@@ -82,29 +98,38 @@ const MembersSection = () => {
                 <Search onChange={handleSearch} placeholder={c('Placeholder').t`Search for User and Addresses`} />
             </Block>
             <Table>
-                <TableHeader cells={[
-                    c('Title header for members table').t`Name`,
-                    c('Title header for members table').t`Addresses`,
-                    c('Title header for members table').t`Role`,
-                    c('Title header for members table').t`Private`,
-                    c('Title header for members table').t`Storage`,
-                    c('Title header for members table').t`Actions`
-                ]} />
+                <TableHeader
+                    cells={[
+                        c('Title header for members table').t`Name`,
+                        c('Title header for members table').t`Addresses`,
+                        c('Title header for members table').t`Role`,
+                        c('Title header for members table').t`Private`,
+                        c('Title header for members table').t`Storage`,
+                        c('Title header for members table').t`Actions`
+                    ]}
+                />
                 <TableBody loading={loading}>
                     {members.map((member) => {
                         const key = member.ID;
-                        return <TableRow key={key} cells={[
-                            member.Name,
-                            <MemberAddresses key={key} member={member} />,
-                            ROLES[member.Subscriber ? SUPER_ADMIN_ROLE : member.Role],
-                            PRIVATE[member.Private],
-                            formatSize(member),
-                            <MemberActions key={key} member={member} />
-                        ]} />;
+                        return (
+                            <TableRow
+                                key={key}
+                                cells={[
+                                    member.Name,
+                                    <MemberAddresses key={key} member={member} />,
+                                    ROLES[member.Subscriber ? SUPER_ADMIN_ROLE : member.Role],
+                                    PRIVATE[member.Private],
+                                    formatSize(member),
+                                    <MemberActions key={key} member={member} />
+                                ]}
+                            />
+                        );
                     })}
                 </TableBody>
             </Table>
-            <Alert>{jt`You can add and manage addresses for the user in your ${<Link to="/settings/addresses">{c('Link').t`Address Settings`}</Link>}.`}</Alert>
+            <Alert>{jt`You can add and manage addresses for the user in your ${(
+                <Link to="/settings/addresses">{c('Link').t`Address Settings`}</Link>
+            )}.`}</Alert>
         </>
     );
 };

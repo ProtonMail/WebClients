@@ -6,8 +6,8 @@ import { Button, ConfirmModal, Alert, useModal } from 'react-components';
 const WipeLogsButton = ({ onWipe }) => {
     const { isOpen, open, close } = useModal();
     const handleConfirm = () => {
-        close();
         onWipe();
+        close();
     };
     return (
         <>
