@@ -16,6 +16,7 @@ import embedded from './services/embedded';
 import embeddedFinder from './services/embeddedFinder';
 import embeddedParser from './services/embeddedParser';
 import embeddedUtils from './services/embeddedUtils';
+import pgpMimeAttachments from './services/pgpMimeAttachments';
 import invalidSignature from './services/invalidSignature';
 import attendeeItem from './directives/attendeeItem';
 
@@ -37,6 +38,7 @@ export default angular
     .factory('attachmentApi', attachmentApi)
     .factory('attachmentConverter', attachmentConverter)
     .factory('attachmentDownloader', attachmentDownloader)
+    .factory('pgpMimeAttachments', pgpMimeAttachments)
     .factory('embedded', embedded)
     .factory('embeddedFinder', embeddedFinder)
     .factory('embeddedParser', embeddedParser)

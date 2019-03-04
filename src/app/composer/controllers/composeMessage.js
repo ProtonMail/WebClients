@@ -32,6 +32,7 @@ function ComposeMessageController(
     outsidersMap,
     postMessage,
     prepareDraft,
+    pgpMimeAttachments,
     sendMessage,
     validateMessage,
     recipientsFormator,
@@ -406,17 +407,15 @@ function ComposeMessageController(
         const { From } = bindFrom(message);
         message.From = From;
 
+        // Body already encrypted with prepareDraft
+        await postMessage(message, { encrypt: false });
+
+        // Upload the filtered pgp mime attachments after the draft has been created
+        await pgpMimeAttachments.handle(message);
+
         $scope.$applyAsync(() => {
             const size = $scope.messages.unshift(message);
-
-            postMessage(message, { encrypt: false }) // Body already encrypted with prepareDraft
-                .then(() => {
-                    dispatcher['composer.update']('loaded', { size, message });
-                })
-                .catch(() => {
-                    const [, ...list] = $scope.messages;
-                    $scope.messages = list;
-                });
+            dispatcher['composer.update']('loaded', { size, message });
         });
     }
 

@@ -44,14 +44,14 @@ const syntaxHighlighterFilter = (dom) => {
 };
 
 /*
-    * match attributes or elements with svg, xlink, srcset, src, background, poster.
-    * the regex checks that the element/attribute is actually in an element by looking forward and seeing if it
-    * ends properly with a >
-    *
-    * Another assumption in these regex are: all attributes use the " quotes instead of the ' quote. This is satisfied
-    * by the previous standardization steps
-    */
-const BLACK_LIST = ['svg', 'xlink:href', 'srcset=', 'src=', 'background=', 'poster='];
+ * match attributes or elements with svg, xlink, srcset, src, background, poster.
+ * the regex checks that the element/attribute is actually in an element by looking forward and seeing if it
+ * ends properly with a >
+ *
+ * Another assumption in these regex are: all attributes use the " quotes instead of the ' quote. This is satisfied
+ * by the previous standardization steps
+ */
+const BLACK_LIST = ['svg', 'xlink:href', 'srcset=', 'src=', 'data-src=', 'background=', 'poster='];
 const FORBIDDEN_HTML = `(${BLACK_LIST.join('|')})`;
 const NO_SPECIALS = '([^"><\\\\]|\\\\[^><])';
 const NO_QUOTS = '(\\\\.|[^"\\\\])';
@@ -104,10 +104,10 @@ const escapeURL = (input, action) => {
         return input;
     }
     /*
-        * first grep the style, then we make sure the style doesn't contain urls...
-        * This is needed because javascript regex doesn't support lookbehinds, making it impossible to match
-        * an url and lookbehind us to see if we are in a style attribute
-        */
+     * first grep the style, then we make sure the style doesn't contain urls...
+     * This is needed because javascript regex doesn't support lookbehinds, making it impossible to match
+     * an url and lookbehind us to see if we are in a style attribute
+     */
     return input.replace(REGEXP_IS_STYLE, (match, p1, p2, p3) => `${p1}${escapeURLinStyle(p2)}${p3}`);
 };
 
