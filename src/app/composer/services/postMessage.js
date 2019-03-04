@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { STATUS, MAILBOX_IDENTIFIERS, ENCRYPTED_STATUS } from '../../constants';
+import { STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { getConversationLabels } from '../../conversation/helpers/conversationHelpers';
 
@@ -28,46 +28,6 @@ function postMessage(
 
     const dispatchMessageAction = (message) => dispatcher.actionMessage('update', message);
     const dispatchComposerUpdate = (type, data = {}) => dispatcher['composer.update'](type, data);
-
-    const isPGPAttachment = ({ Encrypted }) => Encrypted === ENCRYPTED_STATUS.PGP_MIME;
-
-    /**
-     * Uploads the list of pgp attachments as normal protonmail attachments which are stored as attachment object in the backend
-     * This must be done because pgp/MIME attachments are actually stored in the body, and are thus unaccessable
-     * For protonmail. But we need to upload them again to be able to send them using the protonmail api. They are
-     * of course still encrypted, but now separately.
-     * @param {Object} message
-     * @param {Object} pgpAttachments A set of pgp attachments (which are not actually stored on the BE, but in the body)
-     */
-    const makeNative = (message, pgpAttachments) => {
-        const body = message.getDecryptedBody();
-        const promises = _.map(pgpAttachments, async (attachment) => {
-            // message parameter doesn't really matter in this case as the attachment should be in the cache
-            const data = await AttachmentLoader.get(attachment);
-            const file = new Blob([data]);
-            const cid = embeddedUtils.readCID(attachment.Headers);
-            file.name = attachment.Name;
-            if (cid) {
-                file.inline = Number(embeddedUtils.isEmbedded(attachment, body));
-            }
-            const { attachment: nativeAttachment } = await attachmentModel.create(
-                file,
-                message,
-                file.inline === 1,
-                cid
-            );
-
-            return { [attachment.ID]: nativeAttachment };
-        });
-        return Promise.all(promises);
-    };
-
-    const uploadPGPMimeAttachments = async (message) => {
-        // @pre: all attachments are inline. so we are not copying 'real' attachments here.
-        const mimeAttachments = _.filter(message.Attachments, isPGPAttachment);
-        const nativeAttachments = await makeNative(message, mimeAttachments);
-        return _.extend({}, ...nativeAttachments);
-    };
 
     const signAttachments = (message) => {
         const unsigned = _.filter(message.Attachments, ({ Signature }) => !Signature);
@@ -176,17 +136,9 @@ function postMessage(
             localMessage.Type = remoteMessage.Type;
             localMessage.LabelIDs = remoteMessage.LabelIDs;
 
-            const pgpAttachments = actionType === STATUS.CREATE ? await uploadPGPMimeAttachments(localMessage) : {};
-
             if (remoteMessage.Attachments.length > 0) {
                 localMessage.Attachments = syncAttachmentsRemote(localMessage, remoteMessage);
             }
-
-            localMessage.Attachments = _.map(
-                localMessage.Attachments,
-                (attachment) => pgpAttachments[attachment.ID] || attachment
-            );
-            localMessage.Attachments = _.uniqBy(localMessage.Attachments, ({ ID }) => ID);
 
             // signs the attachments in place :-)
             await signAttachments(localMessage);

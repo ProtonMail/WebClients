@@ -179,6 +179,7 @@ function messageBuilder(
     gettextCatalog,
     mailSettingsModel,
     messageModel,
+    pgpMimeAttachments,
     prepareContent,
     signatureBuilder,
     textToHtmlMail
@@ -281,8 +282,11 @@ function messageBuilder(
         newMsg.Body = currentMsg.Body; // We use the existing Body to speed up the draft request logic
 
         /* add inline images as attachments */
-        newMsg.Attachments = pickAttachements(currentMsg, action);
+        const attachments = pickAttachements(currentMsg, action);
         newMsg.NumEmbedded = 0;
+
+        newMsg.Attachments = pgpMimeAttachments.clean(attachments);
+        newMsg.pgpMimeAttachments = pgpMimeAttachments.filter(attachments);
 
         if (action !== 'new') {
             const previously = () => {

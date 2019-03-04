@@ -442,6 +442,12 @@ describe('messageBuilder factory', () => {
         return 'prepareContent';
     };
 
+    const pgpMimeAttachments = {
+        clean(attachments) { return attachments; },
+        filter() { return []; },
+        handle() {}
+    };
+
     const composerFromModel = {
         get() {
             return { address: {} };
@@ -507,6 +513,7 @@ Est-ce que tu vas bien ?
                 gettextCatalog,
                 mailSettingsModel,
                 messageModelMock,
+                pgpMimeAttachments,
                 prepareContent,
                 signatureBuilder,
                 textToHtmlMail);
@@ -518,6 +525,7 @@ Est-ce que tu vas bien ?
                 CCList: [],
                 BCCList: [],
                 Attachments: [],
+                pgpMimeAttachments: [],
                 numTags: [],
                 recipientFields: [],
                 MIMEType: 'text/html',

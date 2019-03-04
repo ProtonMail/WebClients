@@ -73,6 +73,10 @@ function embeddedUtils(attachmentFileFormat, tools) {
      * @return {Array}
      */
     const findEmbedded = (cid, testDiv) => {
+        // If cid is an empty string, it can give a false positive
+        if (!cid) {
+            return [];
+        }
         const selector = [
             `img[src="${cid}"]`,
             `img[src="cid:${cid}"]`,
