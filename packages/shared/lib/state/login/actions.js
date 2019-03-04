@@ -1,7 +1,8 @@
-import { AUTH_VERSION } from 'pmcrypto';
+import { AUTH_VERSION } from 'pm-srp';
+
 import { ACTIONS } from './reducer';
-import { cookies as cookiesRoute, info as infoRoute } from '../../api/auth';
-import srpWithRetry from './srpWithRetry';
+import { setCookies, getInfo } from '../../api/auth';
+import loginWithFallback from './loginWithFallback';
 import { getRandomString } from '../../helpers/string';
 import { passwordUpgrade } from '../../api/settings';
 import { unlock } from '../../authentication';
@@ -53,7 +54,7 @@ export const resetAction = () => {
 export const finalizeEffect = ({ UID, RefreshToken }, AccessToken, credentials, mailboxPassword, authVersion) => {
     return async (dispatch, getState, { api, srp, authenticationStore }) => {
         await api(
-            cookiesRoute({
+            setCookies({
                 UID,
                 AuthToken: AccessToken,
                 RefreshToken,
@@ -75,7 +76,7 @@ export const finalizeEffect = ({ UID, RefreshToken }, AccessToken, credentials, 
 export const setupEffect = ({ UID, AccessToken, RefreshToken }) => {
     return async (dispatch, getState, { api, authenticationStore }) => {
         await api(
-            cookiesRoute({
+            setCookies({
                 UID,
                 AuthToken: AccessToken,
                 RefreshToken,
@@ -91,7 +92,7 @@ export const setupEffect = ({ UID, AccessToken, RefreshToken }) => {
 
 export const authEffect = (credentials, infoResult) => {
     return async (dispatch, getState, { api, srp }) => {
-        const { authVersion, result } = await srpWithRetry(api, srp, credentials, infoResult);
+        const { authVersion, result } = await loginWithFallback(api, srp, credentials, infoResult);
 
         const showUnlock = hasUnlock(result);
         if (showUnlock) {
@@ -161,7 +162,7 @@ export const loginEffect = (credentials) => {
             dispatch(loadingAction());
 
             const { username } = credentials;
-            const infoResult = await api(infoRoute(username));
+            const infoResult = await api(getInfo(username));
 
             const showTwoFa = hasTwoFactor(infoResult);
             if (showTwoFa) {

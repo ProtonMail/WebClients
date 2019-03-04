@@ -1,29 +1,26 @@
-import { getRandomSrpVerifier, getSrp } from 'pmcrypto';
+import { getSrp, getRandomSrpVerifier } from 'pm-srp';
 
-import { modulus, info } from './api/auth';
+import { getInfo, getModulus } from './api/auth';
 
-export default (api) => {
+function srp(api) {
     /**
-     * Perform the call and validate the server proof.
+     * Call the API with the SRP parameters and validate the server proof.
      * @param {Object} config
-     * @param {Object} parameters
-     * @param {Object} expectation
+     * @param {Object} authData
+     * @param {String} expectedServerProof
      * @return {Promise}
      */
-    const callAndValidate = async (config, parameters, expectation) => {
-        const { data, ...restConfig } = config;
-
+    const callAndValidate = async ({ data, ...restConfig }, authData, expectedServerProof) => {
         const result = await api({
             ...restConfig,
             data: {
-                ...parameters,
+                ...authData,
                 ...data
             }
         });
-
         const { ServerProof } = result;
 
-        if (ServerProof !== expectation) {
+        if (ServerProof !== expectedServerProof) {
             throw new Error('Unexpected server proof');
         }
 
@@ -33,59 +30,64 @@ export default (api) => {
     /**
      * Perform an SRP call authenticating your identity.
      * @param {Object} credentials
-     * @param {String} credentials.Username
-     * @param {String} credentials.Password
-     * @param {String} credentials.TwoFactorCode
-     * @param {Object} config - HTTP object to call
+     * @param {Object} config - Config to pass to the api method.
+     * @param {Object} [info] - Result from auth/info call
+     * @param {Number} [version] - Auth version to use
      * @return {Promise} - That resolves to the result of the call
      */
-    const auth = async (credentials, config) => {
-        const { username } = credentials;
-        const authInfo = await api(info(username));
-        const { parameters, expectation } = await getSrp(authInfo, credentials);
-        return callAndValidate(config, parameters, expectation);
+    const auth = async (credentials, config, info, version) => {
+        const authInfo = info || (await api(getInfo(credentials.username)));
+        const { expectedServerProof, clientProof, clientEphemeral } = await getSrp(authInfo, credentials, version);
+        const authData = {
+            ClientProof: clientProof,
+            ClientEphemeral: clientEphemeral,
+            TwoFactorCode: credentials.totp,
+            SRPSession: authInfo.SRPSession
+        };
+        return callAndValidate(config, authData, expectedServerProof);
     };
 
     /**
      * Get initialization parameters for SRP.
-     * @param {Object} credentials
      * @return {Promise}
      */
-    const getInit = async (credentials) => {
-        const data = await api(modulus());
-        const result = await getRandomSrpVerifier(data, credentials);
-
+    const getVerify = async (credentials) => {
+        const data = await api(getModulus());
+        const { version, salt, verifier } = await getRandomSrpVerifier(data, credentials);
+        const authData = {
+            ModulusID: data.ModulusID,
+            Version: version,
+            Salt: salt,
+            Verifier: verifier
+        };
         return {
-            Auth: result
+            Auth: authData
         };
     };
 
     /**
-     * Perform an SRP initialization call with the random verifier
+     * Perform an SRP call with the random verifier.
      * @param {Object} credentials
-     * @param {String} credentials.Username
-     * @param {String} credentials.Password
-     * @param {String} credentials.TwoFactorCode
-     * @param {Object} config - HTTP configuration object
-     * @return {Promise} - That resolves to the result of the $http call
+     * @param {Object} config - Config to pass to the api method.
+     * @param {Object} [data] - Data to pass
+     * @return {Promise} - That resolves to the result of the api call
      */
-    const init = async (credentials, config) => {
-        const authParams = await getInit(credentials);
-
-        const { data, ...restConfig } = config;
-
+    const verify = async (credentials, { data, ...restConfig }) => {
+        const authData = await getVerify(credentials);
         return api({
             ...restConfig,
             data: {
                 ...data,
-                ...authParams
+                ...authData
             }
         });
     };
 
     return {
-        init,
-        auth,
-        callAndValidate
+        getVerify,
+        verify,
+        auth
     };
-};
+}
+
+export default srp;

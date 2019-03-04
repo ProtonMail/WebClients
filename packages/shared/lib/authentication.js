@@ -1,4 +1,5 @@
-import { checkMailboxPassword, computeKeyPassword } from 'pmcrypto';
+import { checkMailboxPassword } from 'pmcrypto';
+import { computeKeyPassword } from 'pm-srp';
 
 export const unlock = async (password, { KeySalt, PrivateKey, AccessToken }) => {
     const mailboxPassword = await computeKeyPassword(password, KeySalt);

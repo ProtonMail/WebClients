@@ -1,9 +1,9 @@
 export const PASSWORD_WRONG_ERROR = 8002;
 
-export const auth = (Username, ClientID) => ({
+export const auth = (Username) => ({
     method: 'post',
     url: 'auth',
-    data: { Username, ClientID }
+    data: { Username }
 });
 
 export const revoke = () => ({
@@ -11,17 +11,15 @@ export const revoke = () => ({
     url: 'auth'
 });
 
-export const refresh = (ClientID) => ({
+export const refresh = () => ({
     method: 'post',
-    url: 'auth/refresh',
-    data: { ClientID }
+    url: 'auth/refresh'
 });
 
-export const cookies = ({ UID, ClientID, AuthToken, RefreshToken, State, RedirectURI = 'https://protonmail.com' }) => ({
+export const setCookies = ({ UID, AuthToken, RefreshToken, State, RedirectURI = 'https://protonmail.com' }) => ({
     method: 'post',
     url: 'auth/cookies',
     data: {
-        ClientID,
         UID,
         ResponseType: 'token',
         GrantType: 'refresh_token',
@@ -35,13 +33,13 @@ export const cookies = ({ UID, ClientID, AuthToken, RefreshToken, State, Redirec
     }
 });
 
-export const info = (Username, ClientID) => ({
+export const getInfo = (Username) => ({
     method: 'post',
     url: 'auth/info',
-    data: { Username, ClientID }
+    data: { Username }
 });
 
-export const modulus = () => ({
+export const getModulus = () => ({
     method: 'get',
     url: 'auth/modulus'
 });

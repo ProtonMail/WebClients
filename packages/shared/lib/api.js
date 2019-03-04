@@ -16,18 +16,9 @@ export default ({ xhr, authenticationStore, onLogout, onError, API_URL, APP_VERS
         const UID = authenticationStore.getUID();
         const authHeaders = UID ? getAuthHeaders(UID) : undefined;
 
-        // Append the ClientID if it's set as a key.
-        const otherData =
-            data && 'ClientID' in data
-                ? {
-                      ...data,
-                      ClientID: CLIENT_ID
-                  }
-                : data;
-
         return xhr({
             url: `${API_URL}/${url}`,
-            data: otherData,
+            data,
             headers: {
                 ...defaultHeaders,
                 ...authHeaders,
@@ -37,7 +28,7 @@ export default ({ xhr, authenticationStore, onLogout, onError, API_URL, APP_VERS
         });
     };
 
-    const refresh = () => call(refreshApi(CLIENT_ID));
+    const refresh = () => call(refreshApi());
 
     const refreshHandler = createRefreshHandler(refresh, onLogout);
 
