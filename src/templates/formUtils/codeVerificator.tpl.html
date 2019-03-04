@@ -34,24 +34,21 @@
             <span class="codeVerificator-sms-instruction" translate-context="Info" translate>Please check your mobile and enter the code below:</span>
         </p>
 
-        <div class="col-2-3">
-            <input
-                type="text"
-                name="codeValue"
-                id="codeValue"
-                ng-model="code"
-                placeholder-translate-context="Input for the code sent"
-                placeholder-translate="Verification code">
-        </div>
-        <div class="col-1-3">
-            <button
-                data-action="sendNewCode"
-                type="button"
-                class="pm_button codeVerificator-new-code-button"
-                translate-context="Action"
-                translate>Send new code</button>
-        </div>
+        <input
+            type="text"
+            name="codeValue"
+            id="codeValue"
+            ng-model="code"
+            placeholder-translate-context="Input for the code sent"
+            placeholder-translate="Verification code">
     </div>
+
+    <button
+        data-action="sendNewCode"
+        type="button"
+        class="pm_button link codeVerificator-new-code-button"
+        translate-context="Action"
+        translate>Send new code</button>
 
     <button
         data-action="resetCode"
