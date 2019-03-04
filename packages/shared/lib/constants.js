@@ -83,7 +83,29 @@ export const DKIM_STATE = {
 
 export const DMARC_STATE = {
     DMARC_STATE_DEFAULT: 0, // 0 is default, no dmarc record
-    DMARC_STATE_ONE: 1,// 1 is found entries but format wrong
+    DMARC_STATE_ONE: 1, // 1 is found entries but format wrong
     DMARC_STATE_MULT: 2, // 2 is multiple dmarc records, no good
     DMARC_STATE_GOOD: 3 // 3 is good!
+};
+
+export const ADDRESS_STATUS = {
+    STATUS_DISABLED: 0,
+    STATUS_ENABLED: 1
+};
+
+export const ADDRESS_TYPE = {
+    TYPE_ORIGINAL: 1,
+    TYPE_ALIAS: 2,
+    TYPE_CUSTOM_DOMAIN: 3,
+    TYPE_PREMIUM: 4
+};
+
+export const RECEIVE_ADDRESS = {
+    RECEIVE_YES: 1,
+    RECEIVE_NO: 0
+};
+
+export const SEND_ADDRESS = {
+    SEND_YES: 1,
+    SEND_NO: 0
 };

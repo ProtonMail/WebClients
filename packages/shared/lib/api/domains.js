@@ -29,7 +29,7 @@ export const addDomain = (Name) => ({
     data: { Name }
 });
 
-export const setCatchAll = (domainID, AddressID) => ({
+export const updateCatchAll = (domainID, AddressID) => ({
     url: `domains/${domainID}/catchall`,
     method: 'put',
     data: { AddressID }
