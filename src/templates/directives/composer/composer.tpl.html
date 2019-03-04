@@ -71,6 +71,7 @@
             pt-tooltip-translate-context="Tooltip"
             pt-placement="top">
             <i class="fa fa-paperclip"></i>
+            <span class="sr-only" translate-context="Action" translate>Attachments</span>
         </button>
 
         <button
@@ -83,9 +84,10 @@
             pt-placement="top"
             pt-tooltip-translate="Expiration time"
             pt-tooltip-translate-context="Action">
-            <svg height="14" width="14" viewBox="0 0 14 14">
+            <svg height="14" width="14" viewBox="0 0 14 14" role="img" focusable="false" aria-hidden="true">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
             </svg>
+            <span class="sr-only" translate-context="Action" translate>Expiration time</span>
         </button>
 
         <button
@@ -99,6 +101,7 @@
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Encryption">
             <i class="fa fa-lock"></i>
+            <span class="sr-only" translate-context="Action" translate>Encryption</span>
         </button>
 
         <div class="pull-right">
@@ -110,7 +113,7 @@
                 pt-tooltip-translate-context="Action"
                 pt-placement="top">
                 <i class="fa fa-trash-o"></i>
-                <span ng-show="!!message.maximized" translate translate-context="Action">Discard</span>
+                <span class="composer-btn-discard-text" translate translate-context="Action">Discard</span>
             </button>
 
             <button
@@ -120,7 +123,7 @@
                 pt-placement="top"
                 pt-tooltip-translate-context="Action">
                 <i class="fa fa-floppy-o"></i>
-                <span ng-show="message.maximized === true" translate translate-context="Action">Save</span>
+                <span class="composer-btn-save-text" translate translate-context="Action">Save</span>
             </button>
             <btn-send-message
                 class="pm_button primary mobileFull composer-btn-send"
