@@ -62,6 +62,14 @@ section: design
 <h2>Different form inputs</h2>
 
 <div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field10" class="pm-label">
+        Search form
+    </label>
+    <span>
+        <input type="search" id="id_field10" class="pm-field" placeholder="Search for something" value="" />
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
     <label for="id_textarea" class="pm-label">
         Textarea
     </label>
@@ -87,7 +95,7 @@ section: design
         <label for="id_field7">
             <input type="checkbox" class="pm-checkbox" id="id_field7">
             <span class="pm-checkbox-fakecheck">
-                <svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" role="img" focusable="false">
+                <svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
                     <use xlink:href="#shape-on"></use>
                 </svg>
             </span> 
@@ -112,22 +120,41 @@ section: design
         </label>
     </span>
 </div>
-<div class="flex flex-nowrap onmobile-flex-column mb1">
-    <label for="id_field10" class="pm-label">
-        Search form
-    </label>
-    <span>
-        <input type="search" id="id_field10" class="pm-field" placeholder="Search for something" value="" />
-    </span>
-</div>
 
+<p><strong class="bigger color-global-warning">⚠⚠</strong> when using radios and checkboxes (design is made by “fake” elements), please do include “real” and “fake” <code>input</code>s in the <code>label</code>, otherwise <strong>people</strong> won’t be able to use the <code>input</code>.</p>
+
+<pre class="language-markup"><code>&lt;<strong>label for="id_of_my_field"</strong>&gt;
+  &lt;input type="checkbox" class="pm-checkbox" <strong>id="id_of_my_field"</strong>&gt;
+  &lt;span class="pm-checkbox-fakecheck"&gt;
+    …
+  &lt;/span&gt; 
+  I agree to check this
+&lt;/label&gt;
+</code></pre>
+
+<p><strong class="bigger color-global-warning">⚠⚠</strong> when using radios, please remember to be explicit or to link radios to their description (via <code>fielset</code>, <code>aria-describedby</code>, etc.).</p>
+
+<pre class="language-markup"><code>&lt;span class="pm-label" <strong>id="question"</strong>&gt;
+  Do you speak martian?
+&lt;/span&gt;
+&lt;label for="id_yes" class="mr2"&gt;
+  &lt;input type="radio" name="martian" class="pm-radio" id="id_yes" value="yaisse" <strong>aria-describedby="question"</strong>&gt;
+  &lt;span class="pm-radio-fakeradio"&gt;&lt;/span&gt; 
+  Yes
+&lt;/label&gt;
+&lt;label for="id_no"&gt;
+  &lt;input type="radio" name="martian" class="pm-radio" id="id_no" value="nooooo" <strong>aria-describedby="question"</strong>&gt;
+  &lt;span class="pm-radio-fakeradio"&gt;&lt;/span&gt; 
+  No
+&lt;/label&gt;
+</code></pre>
 
 
 <h2>Field sizes</h2>
 
 <p>Add <code>pm-field--large</code> or <code>pm-field--small</code> to the <code>input</code>:</p>
 
-<pre class=" language-css"><code>&lt;input type="text" class="pm-field <strong>pm-field--small</strong>" value="A field" /&gt;</code></pre>
+<pre class="language-markup"><code>&lt;input type="text" class="pm-field <strong>pm-field--small</strong>" value="A field" /&gt;</code></pre>
 
 <div class="flex mt2 mb2 onmobile-flex-column">
     <span class="pr1">

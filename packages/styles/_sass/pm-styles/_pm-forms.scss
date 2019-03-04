@@ -66,15 +66,16 @@ select.pm-field {
   margin-right: .25rem;
 }
 .pm-checkbox-fakecheck-img {
-  visibility: hidden;
   margin: auto;
   width: 1rem;
+  transform: scale(0);
+  transition: .15s transform linear;
 }
 .pm-checkbox {
   @extend .sr-only;
   &:checked + .pm-checkbox-fakecheck {
     .pm-checkbox-fakecheck-img {
-      visibility: visible;
+      transform: scale(1);
     }
   }
   &:focus + .pm-checkbox-fakecheck {
@@ -95,11 +96,14 @@ select.pm-field {
   height: .8rem;
   border-radius: 50%;
   background: transparent;
+  transform: scale(0);
+  transition: .15s transform linear;
 }
 .pm-radio {
   @extend .sr-only;
   &:checked + .pm-radio-fakeradio::before {
     background: $pm-blue;
+    transform: scale(1);
   }
   &:focus + .pm-radio-fakeradio {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
