@@ -34,17 +34,27 @@ const Select = ({ options, disabled, className, onChange, onBlur, onFocus, ...re
     };
 
     return (
-        <select className={`pm-field ${className} ${statusClasses}`}
+        <select
+            className={`pm-field ${className} ${statusClasses}`}
             onBlur={handleBlur}
             onFocus={handleFocus}
             onChange={handleChange}
-            {...rest}>
-            {options.map(({ text, ...rest }, index) => <option key={index.toString()} {...rest}>{text}</option>)}
+            {...rest}
+        >
+            {options.map(({ text, ...rest }, index) => (
+                <option key={index.toString()} {...rest}>
+                    {text}
+                </option>
+            ))}
         </select>
     );
 };
 
 Select.propTypes = {
+    disabled: PropTypes.bool,
+    onChange: PropTypes.func,
+    onBlur: PropTypes.func,
+    onFocus: PropTypes.func,
     options: PropTypes.arrayOf(PropTypes.object).isRequired,
     multiple: PropTypes.bool,
     className: PropTypes.string
