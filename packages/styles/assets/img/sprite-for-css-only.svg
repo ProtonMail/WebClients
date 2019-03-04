@@ -1,12 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
 
-  <style> 
-  use { display: none; } 
-  use:target { display: block; } 
-  
-  .white { fill: #fff; } 
-  .black { fill: #000; } 
-  </style> 
+<!-- don't touch this part without updating CSP header => bug Firefox https://bugzilla.mozilla.org/show_bug.cgi?id=1262842#c33 -->
+<style nonce="666">use { display: none; } 
+use:target { display: block; } 
+.white { fill: #fff; } 
+.black { fill: #000; }</style> 
 
   <symbol id="symbol-search"> 
   <path d="M9.6,8.89a4.47,4.47,0,0,0,1-2.83,4.56,4.56,0,1,0-4.56,4.56,4.47,4.47,0,0,0,2.83-1l4.26,4.25.7-.7Zm-3.54.73A3.56,3.56,0,1,1,9.62,6.06,3.57,3.57,0,0,1,6.06,9.62Z"></path>
