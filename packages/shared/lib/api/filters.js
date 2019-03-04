@@ -20,6 +20,7 @@ export const clearFilters = () => ({
     url: 'filters'
 });
 
+// eslint-disable-next-line
 export const updateFilter = (filterID, { Name, Sieve, Tree, Version }) => ({
     method: 'put',
     url: `filters/${filterID}`
