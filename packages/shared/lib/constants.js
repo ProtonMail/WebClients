@@ -45,3 +45,45 @@ export const MEMBER_TYPE = {
     MEMBER: 0,
     SUB_MEMBER: 1
 };
+
+export const DOMAIN_STATE = {
+    DOMAIN_STATE_DEFAULT: 0, // Domain's State before verify or after deactivation
+    DOMAIN_STATE_ACTIVE: 1, // active once verified
+    DOMAIN_STATE_WARN: 2 // detected backward DNS change after ACTIVE
+};
+
+export const VERIFY_STATE = {
+    VERIFY_STATE_DEFAULT: 0, // 0 is default, no good
+    VERIFY_STATE_EXIST: 1, // 1 is has code but doesn't match DB's, no good
+    VERIFY_STATE_GOOD: 2 // 2 is has code and matches DB's, good!
+};
+
+export const MX_STATE = {
+    MX_STATE_DEFAULT: 0, // 0 is default, no good
+    MX_STATE_NO_US: 1, // 1 is set but does not have us
+    MX_STATE_INC_US: 2, // 2 is includes our MX but priority no good
+    MX_STATE_GOOD: 3 // 3 is includes our MX and we are highest and pri is legit, good!
+};
+
+export const SPF_STATE = {
+    SPF_STATE_DEFAULT: 0, // 0 is default, no spf record
+    SPF_STATE_ONE: 1, // 1 is has spf record but not us
+    SPF_STATE_MULT: 2, // 2 is has multiple spf records, no good
+    SPF_STATE_GOOD: 3 // 3 is has spf record and includes us, good!
+};
+
+export const DKIM_STATE = {
+    DKIM_STATE_DEFAULT: 0, // 0 is default, no dkim record
+    DKIM_STATE_ONE: 1, // 1 is found entries but format wrong
+    DKIM_STATE_MULT: 2, // 2 is multiple dkim records, no good
+    DKIM_STATE_CHECK: 3, // 3 is proper entry, but did not check or did not match DB's public key
+    DKIM_STATE_GOOD: 4, // 4 is proper entry and matches DB's public key, good!
+    DKIM_STATE_OFF: 5 // 5 is User wants to stop signing with dkim
+};
+
+export const DMARC_STATE = {
+    DMARC_STATE_DEFAULT: 0, // 0 is default, no dmarc record
+    DMARC_STATE_ONE: 1,// 1 is found entries but format wrong
+    DMARC_STATE_MULT: 2, // 2 is multiple dmarc records, no good
+    DMARC_STATE_GOOD: 3 // 3 is good!
+};
