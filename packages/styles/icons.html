@@ -211,3 +211,26 @@ subsection: icons
   </div>
 
 </div>
+
+
+
+
+<div id="css-sprite">
+
+  <h3>Icons used only from CSS</h3>
+
+  <p>Some icons are used by CSS for some special cases, they are in a separate sprite in <code>assets/img/sprite-for-css-only.svg</code> (and this sprite should <strong>only</strong> be used for these rares cases).</p>
+
+  {% assign listIcons = "search#carret" | split: '#' %}
+  {% assign listIconsDesc = "In <code>input search</code>#In <code>select</code>" | split: '#' %}
+
+  <div class="flex mb2">
+  {% for icon in listIcons %}
+  <div class="w200p  aligncenter p1">
+    <div class="css-{{ icon }} icon-16p"></div>
+    <span class="bl mt0-5">{{ listIconsDesc[forloop.index0] }}</span>
+  </div>
+  {% endfor %}
+  </div>
+
+</div>

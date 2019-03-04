@@ -29,3 +29,12 @@
   transform: rotateZ(90deg);
   transform-origin: 50% 50%;
 }
+
+
+/* CSS icons, for reference */
+.css-search {
+  background: url("/assets/img/sprite-for-css-only.svg#css-search") 50% 50% no-repeat;
+}
+.css-carret {
+  background: url("/assets/img/sprite-for-css-only.svg#css-carret") 50% 50% no-repeat;
+}
