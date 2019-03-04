@@ -1,7 +1,7 @@
 import createReducer from '../utils/createReducer';
 import { ADD_NOTIFICATION, REMOVE_NOTIFICATION, CLEAR_NOTIFICATIONS } from './actionTypes';
 
-const createNotification = ({ id, text, type = 'info' }) => ({
+const createNotification = ({ id, text, type = 'success' }) => ({
     id,
     text,
     type
