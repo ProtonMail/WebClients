@@ -23,6 +23,10 @@ $modal-smaller-width: 22em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .pm-modalOverlay[data-background-click="disabled"] {
   cursor: auto;
@@ -41,10 +45,11 @@ $modal-smaller-width: 22em;
   width: $modal-width;
   min-width: $modal-min-width;
   margin-top: 10vh;
-  // margin-left: auto; // no, because of IE11
+  margin-left: auto; // no, because of IE11
   margin-right: auto;
   max-height: 80vh;
   max-width: 100%;
+  flex: 0 1 auto;
   /*
   If you have problems with vh units 
   top: 5%;
