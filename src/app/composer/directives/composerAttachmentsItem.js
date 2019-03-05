@@ -10,7 +10,7 @@ function composerAttachmentsItem(dispatchers, gettextCatalog, attachmentDownload
     return {
         replace: true,
         template:
-            '<a class="composerAttachmentsItem-container"><progress-upload data-model="attachment"></progress-upload></a>',
+            '<span class="composerAttachmentsItem-container"><progress-upload data-model="attachment"></progress-upload></span>',
         link(scope, el, { isOutside = false }) {
             const dispatch = disp(isOutside);
             el[0].title = getTitle(scope.attachment.packet.filename);

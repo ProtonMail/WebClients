@@ -1,9 +1,15 @@
 /* @ngInject */
-const progressionBtn = (dispatchers) => ({
+const progressionBtn = (dispatchers, gettextCatalog) => ({
     replace: true,
-    template: '<button type="button" class="progressionBtn-btn"><i class="fa fa-times"></i></button>',
-    link(scope, el, { action = '' }) {
+    templateUrl: require('../../../templates/ui/progressionBtn.tpl.html'),
+    link(scope, el, { action = '', fileName }) {
         const { dispatcher, on, unsubscribe } = dispatchers(['attachment.upload']);
+
+        el[0].querySelector('.sr-only').innerHTML = gettextCatalog.getString(
+            'Remove the attachment {{fileName}}',
+            { fileName },
+            'Info'
+        );
         el[0].setAttribute('data-label', action);
 
         const onClick = (e) => {

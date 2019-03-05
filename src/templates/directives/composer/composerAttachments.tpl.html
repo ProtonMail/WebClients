@@ -1,5 +1,5 @@
 <div class="composerAttachments-container composerAttachments-close">
-    <div class="composerAttachments-header">
+    <button type="button" class="composerAttachments-header">
 
         <composer-attachments-size class="composerAttachments-size"></composer-attachments-size>
         <span class="composerAttachments-counter-attachments" ng-show="message.Attachments.length > message.NumEmbedded">
@@ -11,7 +11,7 @@
         <span class="composerAttachments-action">
             <i>{{ labelHeader }}</i>
         </span>
-    </div>
+    </button>
     <div class="composerAttachments-loaders">
         <composer-attachments-item
             ng-repeat="attachment in list track by attachment.id"
