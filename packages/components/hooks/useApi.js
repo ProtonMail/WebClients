@@ -3,7 +3,7 @@ import ContextApi from 'proton-shared/lib/context/api';
 
 import useAsync from './useAsync';
 
-const useApi = (fn, dependencies = []) => {
+const useApi = (fn, dependencies) => {
     const { api } = useContext(ContextApi);
     const abortRef = useRef();
 
@@ -38,7 +38,7 @@ const useApi = (fn, dependencies = []) => {
         (...args) => {
             return call(fn(...args));
         },
-        [call, ...dependencies]
+        [call, ...(dependencies || [])]
     );
 
     /**
@@ -52,7 +52,7 @@ const useApi = (fn, dependencies = []) => {
             });
         }
         return cancel;
-    }, [...dependencies]);
+    }, [...(dependencies || [])]);
 
     return {
         result,
