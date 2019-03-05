@@ -28,24 +28,13 @@ function delay(gettextCatalog) {
             ms = then.diff(now, 'milliseconds', true);
             const seconds = Math.floor(moment.duration(ms).asSeconds());
 
-            // concatonate the variables
-            return (
-                days +
-                ' ' +
-                gettextCatalog.getString('Days', null, 'Delay') +
-                ' ' +
-                hours +
-                ' ' +
-                gettextCatalog.getString('Hours', null, 'Delay') +
-                ' ' +
-                minutes +
-                ' ' +
-                gettextCatalog.getString('Minutes', null, 'Delay') +
-                ' ' +
-                seconds +
-                ' ' +
-                gettextCatalog.getString('Seconds', null, 'Delay')
-            );
+            const list = [];
+            days && list.push(`${days} ${gettextCatalog.getString('Days', null, 'Delay')}`);
+            hours && list.push(`${hours} ${gettextCatalog.getString('Hours', null, 'Delay')}`);
+            minutes && list.push(`${minutes} ${gettextCatalog.getString('Minutes', null, 'Delay')}`);
+            seconds && list.push(`${seconds} ${gettextCatalog.getString('Seconds', null, 'Delay')}`);
+
+            return list.join(' ');
         }
 
         return '';
