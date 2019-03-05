@@ -130,9 +130,15 @@ function contactDetailsModel(
                                 const cfg = getParams(item);
 
                                 // Import the new position if there was a re-order
-                                const group = MAP_EMAIL_POS[cfg.group] || cfg.group;
-                                const opt = { ...cfg, group };
-                                params.vCard.add(item.type, cleanValue(escapeValue(value)), opt);
+                                const group = MAP_EMAIL_POS[cfg.group];
+
+                                // ex: when you delete the only email attached to a group you don't need to keep the group anymore
+                                if (group) {
+                                    params.vCard.add(item.type, cleanValue(escapeValue(value)), {
+                                        ...cfg,
+                                        group
+                                    });
+                                }
                             }
 
                             return;
