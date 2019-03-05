@@ -27,7 +27,7 @@ const AddressesToolbar = ({ onChangeMember, members, fetchMembers, loading }) =>
         <Block>
             <Label htmlFor="memberSelect" className="mr1">{c('Label').t`User:`}</Label>
             <Select
-                loading={loading}
+                disabled={loading}
                 id="memberSelect"
                 value={member.ID}
                 options={options}
