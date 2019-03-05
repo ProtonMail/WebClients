@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState } from 'react';
 import { t } from 'ttag';
 import {
     Alert,
@@ -15,13 +15,12 @@ import {
     TableRow,
     Time,
     LearnMore,
-    useModal,
-    useLoading
+    useModal
 } from 'react-components';
-import ContextApi from 'proton-shared/lib/context/api';
 import { queryInvoices } from 'proton-shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER } from 'proton-shared/lib/constants';
 
+import useApi from '../../hooks/useApi';
 import InvoiceAmount from './InvoiceAmount';
 import InvoiceType from './InvoiceType';
 import InvoiceState from './InvoiceState';
@@ -29,26 +28,22 @@ import InvoiceActions from './InvoiceActions';
 import InvoiceTextModal from './InvoiceTextModal';
 
 const InvoicesSection = () => {
-    const { api } = useContext(ContextApi);
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
-    const { loading, loaded } = useLoading();
-    const [table, setTable] = useState({ invoices: [], total: 0 });
     const { isOpen, open, close } = useModal();
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
     const handleOwner = (own = USER) => () => setOwner(own);
 
-    const fetchInvoices = async () => {
-        const { Total: total, Invoices: invoices } = await api(
-            queryInvoices({ Page: page, PageSize: ELEMENTS_PER_PAGE, Owner: owner })
-        );
-        setTable({ invoices, total });
-        loaded();
-    };
+    const query = () =>
+        queryInvoices({
+            Page: page,
+            PageSize: ELEMENTS_PER_PAGE,
+            Owner: owner
+        });
 
-    useEffect(() => {
-        fetchInvoices();
-    }, [page, owner]);
+    const { data = {}, loading } = useApi(query, [page, owner]);
+
+    const { Invoices: invoices = [], Total: total = 0 } = data;
 
     return (
         <>
@@ -75,7 +70,7 @@ const InvoicesSection = () => {
                 </div>
                 <Pagination
                     page={page}
-                    total={table.total}
+                    total={total}
                     limit={ELEMENTS_PER_PAGE}
                     onNext={onNext}
                     onPrevious={onPrevious}
@@ -85,7 +80,7 @@ const InvoicesSection = () => {
             <Table>
                 <TableHeader cells={['ID', t`Amount`, t`Type`, t`Status`, t`Date`, t`Action`]} />
                 <TableBody loading={loading}>
-                    {table.invoices.map((invoice, index) => {
+                    {invoices.map((invoice, index) => {
                         const key = index.toString();
                         return (
                             <TableRow

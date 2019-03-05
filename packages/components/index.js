@@ -61,6 +61,7 @@ export { default as Time } from './components/time/Time';
 export { default as Title } from './components/title/Title';
 export { default as Toggle } from './components/toggle/Toggle';
 export { default as Tooltip } from './components/tooltip/Tooltip';
+export { default as useApi } from './hooks/useApi';
 export { default as useLoader } from './components/loader/useLoader';
 export { default as useLoading } from './components/loader/useLoading';
 export { default as useModal } from './components/modal/useModal';
