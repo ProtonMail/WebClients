@@ -28,7 +28,7 @@ const InputModal = ({ label, title, input: initialInput, show, onClose, onSubmit
             <Content onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor={id}>{label}</Label>
-                    <Input id={id} value={input} placeholder={placeholder} onChange={handleChange} />
+                    <Input id={id} value={input} placeholder={placeholder} onChange={handleChange} required />
                 </Row>
                 <Footer>
                     <Button type="reset">{cancel}</Button>
@@ -39,7 +39,6 @@ const InputModal = ({ label, title, input: initialInput, show, onClose, onSubmit
     );
 };
 
-
 InputModal.propTypes = {
     input: PropTypes.string,
     onClose: PropTypes.func,
@@ -49,7 +48,8 @@ InputModal.propTypes = {
     cancel: PropTypes.string.isRequired,
     confirm: PropTypes.string.isRequired,
     show: PropTypes.bool.isRequired,
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    submit: PropTypes.string
 };
 
 InputModal.defaultProps = {

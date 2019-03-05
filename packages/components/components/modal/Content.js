@@ -4,12 +4,21 @@ import PropTypes from 'prop-types';
 import { getClasses } from '../../helpers/component';
 
 const Content = ({ children, className, onSubmit, onReset, autoComplete, ...rest }) => {
-    return <form
-        onSubmit={onSubmit}
-        onReset={onReset}
-        autoComplete={autoComplete}
-        className={getClasses('pm-modalContent', className)}
-        {...rest}>{children}</form>;
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onSubmit(event);
+    };
+    return (
+        <form
+            onSubmit={handleSubmit}
+            onReset={onReset}
+            autoComplete={autoComplete}
+            className={getClasses('pm-modalContent', className)}
+            {...rest}
+        >
+            {children}
+        </form>
+    );
 };
 
 Content.propTypes = {
