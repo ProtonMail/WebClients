@@ -1,40 +1,54 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
-import { SubTitle, Table, TableHeader, TableRow, TableBody, useLoading } from 'react-components';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { SubTitle, Table, TableHeader, TableRow, TableBody, useApi } from 'react-components';
 import { queryAddresses } from 'proton-shared/lib/api/members';
-import ContextApi from 'proton-shared/lib/context/api';
+import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
 import AddressesToolbar from './AddressesToolbar';
 
-const AddressesSection = ({ addresses }) => {
-    const { api } = useContext(ContextApi);
+const AddressesSection = ({ addresses, fetchMembers: queryMembers, members }) => {
+    const { request, loading } = useApi((memberID) => queryAddresses(memberID));
     const [selectedAddresses, setAddresses] = useState(addresses.data);
-    const { loading, loaded, load } = useLoading(addresses.loading);
+    const [member, setMember] = useState();
 
-    const handleChangeMember = async (memberID, self) => {
-        if (self) {
+    const fetchMembers = async () => {
+        await queryMembers();
+        const currentUser = members.data.find(({ Self }) => Self);
+        setMember(currentUser);
+    };
+
+    const fetchAddresses = async () => {
+        if (!member) {
+            return [];
+        }
+
+        if (member.Self) {
             return setAddresses(addresses.data);
         }
 
-        try {
-            load();
-            const { Addresses } = await api(queryAddresses(memberID));
-            setAddresses(Addresses);
-            loaded();
-        } catch (error) {
-            loaded();
-            throw error;
-        }
+        const { Addresses } = await request(member.ID);
+
+        setAddresses(Addresses);
     };
+
+    useEffect(() => {
+        fetchMembers();
+    }, []);
+
+    useEffect(() => {
+        fetchAddresses();
+    }, [member]);
 
     return (
         <>
             <SubTitle>{c('Title').t`Addresses`}</SubTitle>
-            <AddressesToolbar onChangeMember={handleChangeMember} loading={loading} />
+            {member ? (
+                <AddressesToolbar onChangeMember={setMember} loading={loading} members={members.data} member={member} />
+            ) : null}
             <Table>
                 <TableHeader
                     cells={[
@@ -52,7 +66,9 @@ const AddressesSection = ({ addresses }) => {
                                 cells={[
                                     address.Email,
                                     <AddressStatus key={key} address={address} index={index} />,
-                                    <AddressActions key={key} address={address} index={index} />
+                                    member ? (
+                                        <AddressActions key={key} address={address} member={member} index={index} />
+                                    ) : null
                                 ]}
                             />
                         );
@@ -64,9 +80,15 @@ const AddressesSection = ({ addresses }) => {
 };
 
 AddressesSection.propTypes = {
-    addresses: PropTypes.object
+    addresses: PropTypes.object.isRequired,
+    fetchMembers: PropTypes.func.isRequired,
+    members: PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ addresses }) => ({ addresses });
+const mapStateToProps = ({ addresses, members }) => ({ addresses, members });
+const mapDispatchToProps = { fetchMembers };
 
-export default connect(mapStateToProps)(AddressesSection);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(AddressesSection);

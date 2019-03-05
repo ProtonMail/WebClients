@@ -1,27 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { Block, Label, Select, PrimaryButton, useModal } from 'react-components';
-import { fetchMembers } from 'proton-shared/lib/state/members/actions';
-import { connect } from 'react-redux';
 
 import AddressModal from './AddressModal';
 
-const AddressesToolbar = ({ onChangeMember, members, fetchMembers, loading }) => {
+const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
     const { isOpen, open, close } = useModal();
-    const [member, setMember] = useState(members.data.find(({ Self }) => Self) || {});
-    const options = members.data.map(({ ID: value, Name: text, Self: self }) => ({ text, value, self }));
+    const options = members.map(({ ID: value, Name: text }) => ({ text, value }));
 
     const handleChange = ({ target }) => {
-        const { value, self } = target;
-
-        setMember(members.data.find(({ ID }) => value === ID));
-        onChangeMember(value, self);
+        const member = members.data.find(({ ID }) => target.value === ID);
+        onChangeMember(member);
     };
-
-    useEffect(() => {
-        fetchMembers();
-    }, []);
 
     return (
         <Block>
@@ -41,17 +32,10 @@ const AddressesToolbar = ({ onChangeMember, members, fetchMembers, loading }) =>
 };
 
 AddressesToolbar.propTypes = {
-    members: PropTypes.object,
-    fetchMembers: PropTypes.func,
+    member: PropTypes.object,
+    members: PropTypes.array,
     onChangeMember: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired
 };
 
-const mapStateToProps = ({ members }) => ({ members });
-
-const mapDispatchToProps = { fetchMembers };
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(AddressesToolbar);
+export default AddressesToolbar;
