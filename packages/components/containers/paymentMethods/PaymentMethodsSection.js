@@ -8,9 +8,9 @@ import PaymentMethodsTable from './PaymentMethodsTable';
 
 const PaymentMethodsSection = () => {
     const { isOpen: showCardModal, open: openCardModal, close: closeCardModal } = useModal();
-    const { data = {}, loading } = useApi(queryPaymentMethods, []);
+    const { result = {}, loading } = useApi(queryPaymentMethods, []);
 
-    const { PaymentMethods: paymentMethods = [] } = data;
+    const { PaymentMethods: paymentMethods = [] } = result;
 
     return (
         <>

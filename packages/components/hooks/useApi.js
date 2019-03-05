@@ -1,46 +1,21 @@
-import { useContext, useRef, useEffect, useCallback, useReducer } from 'react';
+import { useContext, useRef, useEffect, useCallback } from 'react';
 import ContextApi from 'proton-shared/lib/context/api';
 
-import useIsMounted from './useIsMounted';
-
-const defaultState = {
-    loading: false
-};
-
-const reducer = (state, action) => {
-    switch (action.type) {
-        case 'loading':
-            return {
-                ...state,
-                loading: true
-            };
-        case 'success':
-            return {
-                error: undefined,
-                loading: false,
-                data: action.payload
-            };
-        case 'error':
-            return {
-                data: undefined,
-                loading: false,
-                error: action.payload
-            };
-    }
-};
+import useAsync from './useAsync';
 
 const useApi = (fn, dependencies = []) => {
-    const [{ loading, data, error }, dispatch] = useReducer(reducer, defaultState);
-    const isMounted = useIsMounted();
     const { api } = useContext(ContextApi);
     const abortRef = useRef();
 
     const cancel = useCallback(() => {
-        if (abortRef.current) {
-            abortRef.current.abort();
-            abortRef.current = undefined;
+        if (!abortRef.current) {
+            return;
         }
+        abortRef.current.abort();
+        abortRef.current = undefined;
     }, []);
+
+    const { result, error, loading, run } = useAsync();
 
     const call = useCallback(
         (config) => {
@@ -54,28 +29,14 @@ const useApi = (fn, dependencies = []) => {
                 ...config
             });
 
-            dispatch({ type: 'loading' });
-            return promise
-                .then((data) => {
-                    if (!isMounted()) {
-                        return;
-                    }
-                    dispatch({ type: 'success', payload: data });
-                })
-                .catch((error) => {
-                    if (error.name === 'AbortError' || !isMounted()) {
-                        return;
-                    }
-                    dispatch({ type: 'error', payload: error });
-                    throw error;
-                });
+            return run(promise);
         },
-        [api, dispatch]
+        [api, run]
     );
 
     const request = useCallback(
-        (args) => {
-            return call(fn(args));
+        (...args) => {
+            return call(fn(...args));
         },
         [call, ...dependencies]
     );
@@ -94,11 +55,10 @@ const useApi = (fn, dependencies = []) => {
     }, [...dependencies]);
 
     return {
-        data,
+        result,
         error,
         loading,
-        request,
-        cancel
+        request
     };
 };
 

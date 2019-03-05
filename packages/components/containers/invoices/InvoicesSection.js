@@ -41,9 +41,9 @@ const InvoicesSection = () => {
             Owner: owner
         });
 
-    const { data = {}, loading } = useApi(query, [page, owner]);
+    const { result = {}, loading } = useApi(query, [page, owner]);
 
-    const { Invoices: invoices = [], Total: total = 0 } = data;
+    const { Invoices: invoices = [], Total: total = 0 } = result;
 
     return (
         <>
