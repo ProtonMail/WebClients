@@ -109,3 +109,14 @@ export const SEND_ADDRESS = {
     SEND_YES: 1,
     SEND_NO: 0
 };
+
+export const MEMBER_PRIVATE = {
+    READABLE: 0,
+    UNREADABLE: 1
+};
+
+export const MEMBER_ROLE = {
+    ORGANIZATION_NONE: 0,
+    ORGANIZATION_MEMBER: 1,
+    ORGANIZATION_OWNER: 2
+};
