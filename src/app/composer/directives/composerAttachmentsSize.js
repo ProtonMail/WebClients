@@ -16,7 +16,7 @@ const composerAttachmentsSize = ($filter, dispatchers) => ({
                 attachmentsSize += data.packet.Size;
                 updateTotalSize(attachmentsSize);
             }
-            if (type === 'upload.success') {
+            if (['remove.success', 'upload.success'].includes(type)) {
                 attachmentsSize = scope.message.attachmentsSize();
                 updateTotalSize(attachmentsSize);
             }
