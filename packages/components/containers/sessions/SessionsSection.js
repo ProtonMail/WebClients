@@ -1,6 +1,22 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { t } from 'ttag';
-import { Button, Table, TableHeader, TableBody, TableRow, Time, LearnMore, Pagination, Alert, Block, SubTitle, ConfirmModal, useModal, useLoading, usePagination } from 'react-components';
+import {
+    Button,
+    Table,
+    TableHeader,
+    TableBody,
+    TableRow,
+    Time,
+    LearnMore,
+    Pagination,
+    Alert,
+    Block,
+    SubTitle,
+    ConfirmModal,
+    useModal,
+    useLoading,
+    usePagination
+} from 'react-components';
 import ContextApi from 'proton-shared/lib/context/api';
 import { querySessions, revokeOtherSessions, revokeSession } from 'proton-shared/lib/api/auth';
 import { ELEMENTS_PER_PAGE } from 'proton-shared/lib/constants';
@@ -61,22 +77,31 @@ const SessionsSection = () => {
                     limit={ELEMENTS_PER_PAGE}
                     onNext={onNext}
                     onPrevious={onPrevious}
-                    onSelect={onSelect} />
+                    onSelect={onSelect}
+                />
             </Block>
             <Table>
-                <TableHeader cells={[
-                    t`Service`,
-                    t`Time`,
-                    t`Action`,
-                ]} />
-                <TableBody loading={loading}>
+                <TableHeader cells={[t`Service`, t`Time`, t`Action`]} />
+                <TableBody loading={loading} colSpan={3}>
                     {list.map((session) => {
                         const key = session.UID;
-                        return <TableRow key={key} cells={[
-                            CLIENTS[session.ClientID],
-                            <Time format="LLL" key={key}>{session.CreateTime}</Time>,
-                            <SessionAction key={key} session={session} currentUID={currentUID} onRevoke={handleRevoke(session.UID)} />
-                        ]} />;
+                        return (
+                            <TableRow
+                                key={key}
+                                cells={[
+                                    CLIENTS[session.ClientID],
+                                    <Time format="LLL" key={key}>
+                                        {session.CreateTime}
+                                    </Time>,
+                                    <SessionAction
+                                        key={key}
+                                        session={session}
+                                        currentUID={currentUID}
+                                        onRevoke={handleRevoke(session.UID)}
+                                    />
+                                ]}
+                            />
+                        );
                     })}
                 </TableBody>
             </Table>

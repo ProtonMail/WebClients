@@ -28,7 +28,7 @@ const PaymentMethodsTable = ({ methods, loading }) => {
                     c('Title for payment methods table').t`Actions`
                 ]}
             />
-            <TableBody loading={loading}>
+            <TableBody loading={loading} colSpan={5}>
                 {methods.map((method, index) => {
                     return (
                         <TableRow

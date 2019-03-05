@@ -15,30 +15,34 @@ const EVENTS = {
 
 const LogsTable = ({ list, logAuth, loading }) => {
     if (logAuth === DISABLE) {
-        return <Alert>{c('Info').t`You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.`}</Alert>;
+        return (
+            <Alert>{c('Info')
+                .t`You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.`}</Alert>
+        );
     }
 
     if (!loading && !list.length) {
-        return <Alert>{c('Info').t`No logs yet`}</Alert>
+        return <Alert>{c('Info').t`No logs yet`}</Alert>;
     }
 
     return (
         <Table>
-            <TableHeader cells={[
-                c('Header').t`Event`,
-                logAuth === ADVANCED ? 'IP' : '',
-                c('Header').t`Time`
-            ]} />
-            <TableBody loading={loading}>
+            <TableHeader cells={[c('Header').t`Event`, logAuth === ADVANCED ? 'IP' : '', c('Header').t`Time`]} />
+            <TableBody loading={loading} colSpan={3}>
                 {list.map(({ Time: time, Event, IP }, index) => {
                     const key = index.toString();
 
                     return (
-                        <TableRow key={key} cells={[
-                            EVENTS[Event],
-                            logAuth === ADVANCED ? IP : '',
-                            <Time key={key} format="LLL">{time}</Time>
-                        ]} />
+                        <TableRow
+                            key={key}
+                            cells={[
+                                EVENTS[Event],
+                                logAuth === ADVANCED ? IP : '',
+                                <Time key={key} format="LLL">
+                                    {time}
+                                </Time>
+                            ]}
+                        />
                     );
                 })}
             </TableBody>

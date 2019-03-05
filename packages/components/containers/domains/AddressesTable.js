@@ -21,7 +21,7 @@ const AddressesTable = ({ domain, members, loading }) => {
                     c('Title header for addresses domain table').t`Actions`
                 ]}
             />
-            <TableBody loading={loading}>
+            <TableBody loading={loading} colSpan={5}>
                 {domain.addresses.map((address, index) => {
                     const key = address.ID;
                     return (

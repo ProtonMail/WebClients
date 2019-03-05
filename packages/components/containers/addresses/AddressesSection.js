@@ -43,7 +43,7 @@ const AddressesSection = ({ addresses }) => {
                         c('Header for addresses table').t`Actions`
                     ]}
                 />
-                <TableBody loading={loading}>
+                <TableBody loading={loading} colSpan={3}>
                     {selectedAddresses.map((address, index) => {
                         const key = address.ID;
                         return (

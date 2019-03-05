@@ -22,7 +22,7 @@ const DomainsTable = ({ domains, members, loading, fetchMembers }) => {
                     c('Header for addresses table').t`Actions`
                 ]}
             />
-            <TableBody loading={loading}>
+            <TableBody loading={loading} colSpan={3}>
                 {domains.map((domain) => {
                     const key = domain.ID;
                     return (

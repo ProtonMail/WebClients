@@ -79,7 +79,7 @@ const InvoicesSection = () => {
             </Block>
             <Table>
                 <TableHeader cells={['ID', t`Amount`, t`Type`, t`Status`, t`Date`, t`Action`]} />
-                <TableBody loading={loading}>
+                <TableBody loading={loading} colSpan={6}>
                     {invoices.map((invoice, index) => {
                         const key = index.toString();
                         return (

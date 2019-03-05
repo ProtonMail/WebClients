@@ -108,7 +108,7 @@ const MembersSection = () => {
                         c('Title header for members table').t`Actions`
                     ]}
                 />
-                <TableBody loading={loading}>
+                <TableBody loading={loading} colSpan={6}>
                     {members.map((member) => {
                         const key = member.ID;
                         return (
