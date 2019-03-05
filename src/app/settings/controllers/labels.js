@@ -1,4 +1,5 @@
 import _ from 'lodash';
+
 import createScrollHelper from '../../../helpers/dragScrollHelper';
 
 /* @ngInject */
@@ -60,20 +61,21 @@ function LabelsController(
 
     $scope.$on('$destroy', unsubscribe);
 
-    function openLabelModal(label) {
+    function openLabelModal(label, mode) {
         labelModal.activate({
             params: {
                 label,
                 onSuccess() {
+                    if (mode === 'edit') {
+                        return;
+                    }
+
                     // Auto Scroll to the latest item
                     const id = setTimeout(() => {
                         const $li = document.querySelector('.labelsState-item:last-child');
                         $li && $li.scrollIntoView();
                         clearTimeout(id);
                     }, 500);
-                },
-                close() {
-                    labelModal.deactivate();
                 }
             }
         });
@@ -98,7 +100,7 @@ function LabelsController(
      * @param {Object} label
      */
     $scope.editLabel = (label) => {
-        openLabelModal(label);
+        openLabelModal(label, 'edit');
     };
 
     $scope.sortLabels = () => {
