@@ -3,7 +3,7 @@ import { useState } from 'react';
 const FOCUSSED_CLASS = 'focussed';
 const BLURRED_CLASS = 'blured';
 const DIRTY_CLASS = 'dirty';
-const PRISTINE_CLASS = 'dirty';
+const PRISTINE_CLASS = 'pristine';
 
 const DEFAULT_STATE = { focussed: false, blurred: false, dirty: false, pristine: true };
 
@@ -26,8 +26,11 @@ const useInput = (initialState = DEFAULT_STATE, prefix = 'field') => {
     return {
         status,
         statusClasses: classes.join(' '),
-        change, blur, focus, reset
-    }
+        change,
+        blur,
+        focus,
+        reset
+    };
 };
 
 export default useInput;
