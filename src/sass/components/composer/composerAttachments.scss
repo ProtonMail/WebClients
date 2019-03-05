@@ -9,9 +9,14 @@
     align-items: center;
     height: 32px;
     padding: 0 10px;
-    cursor: pointer;
+    border: 0;
     border-top: 1px solid $border;
-
+    width: 100%;
+    appearance: none;
+    background-color: transparent;
+    // just to avoid some font differences in some browsers
+    font: inherit;
+    cursor: pointer;
 }
 
 .composerAttachments-header * { pointer-events: none }
