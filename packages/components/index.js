@@ -69,5 +69,4 @@ export { default as useLoading } from './components/loader/useLoading';
 export { default as useModal } from './components/modal/useModal';
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
-export { default as useSearch } from './components/input/useSearch';
 export { default as useStep } from './helpers/useStep';
