@@ -1,3 +1,28 @@
+# [3.15.20] - 2019-03-06
+
+## Fixed
+
+- Signup codes were automatically resent
+- Contact remained in a group even after removing the email addresses
+- Delete attachment button was not vocalized
+- Attachments size was not updated when removing attachments from the composer
+- Page scrolled to the bottom after editing a folder or a label
+- Learn more link on storage warning modal was broken
+- PGP messages couldn't be forwarded after replying
+- Deleting contact removed a wrong one in sime cases
+- New drafts were marked as unread
+- The top of the contact group icon was hidden.
+- Design issue with the page selector dropdown on the Contacts page
+- Changing the text direction in the composer did not show the cursor in the correct location
+- The composer was overlapping/going out of the window border when resizing the window
+- Images were not properly imported from VCF files
+- Localization improvements
+
+## Changed
+
+- Confirmation code behavior on the signup page
+- Improved expiration message information
+
 # [3.15.19] - 2019-02-20
 
 ## Fixed
