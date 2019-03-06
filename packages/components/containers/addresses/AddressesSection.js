@@ -10,16 +10,10 @@ import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
 import AddressesToolbar from './AddressesToolbar';
 
-const AddressesSection = ({ addresses, fetchMembers: queryMembers, members }) => {
+const AddressesSection = ({ addresses, fetchMembers, members }) => {
     const { request, loading } = useApi((memberID) => queryAddresses(memberID));
     const [selectedAddresses, setAddresses] = useState(addresses.data);
     const [member, setMember] = useState();
-
-    const fetchMembers = async () => {
-        await queryMembers();
-        const currentUser = members.data.find(({ Self }) => Self);
-        setMember(currentUser);
-    };
 
     const fetchAddresses = async () => {
         if (!member) {
@@ -34,6 +28,11 @@ const AddressesSection = ({ addresses, fetchMembers: queryMembers, members }) =>
 
         setAddresses(Addresses);
     };
+
+    useEffect(() => {
+        const currentUser = members.data.find(({ Self }) => Self);
+        setMember(currentUser);
+    }, [members.data]);
 
     useEffect(() => {
         fetchMembers();
@@ -66,9 +65,7 @@ const AddressesSection = ({ addresses, fetchMembers: queryMembers, members }) =>
                                 cells={[
                                     address.Email,
                                     <AddressStatus key={key} address={address} index={index} />,
-                                    member ? (
-                                        <AddressActions key={key} address={address} member={member} index={index} />
-                                    ) : null
+                                    member ? <AddressActions key={key} address={address} index={index} /> : null
                                 ]}
                             />
                         );

@@ -1,6 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createAddress } from 'proton-shared/lib/api/addresses';
+import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 import {
     Modal,
     ContentModal,
@@ -13,15 +16,16 @@ import {
     Label,
     Text,
     Input,
-    RichTextEditor
+    RichTextEditor,
+    useApi
 } from 'react-components';
 
 import useAddressModal from './useAddressModal';
 import DomainsSelect from './DomainsSelect';
 
-const AddressModal = ({ show, onClose, member }) => {
+const AddressModal = ({ show, onClose, member, createNotification }) => {
+    const { request } = useApi((params) => createAddress(params));
     const { model, update } = useAddressModal(member);
-    const title = c('Title').t`Create address`;
 
     const handleChange = (key) => (event) => update(key, event.target.value);
     const handleSignature = (value) => update('signature', value);
@@ -36,11 +40,14 @@ const AddressModal = ({ show, onClose, member }) => {
             Signature
         };
 
-        return parameters;
+        await request(parameters);
+        // TODO call event mananger
+        onClose();
+        createNotification({ text: c('Success').t`Address added` });
     };
 
     return (
-        <Modal show={show} onClose={onClose} title={title}>
+        <Modal show={show} onClose={onClose} title={c('Title').t`Create address`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Alert>
                     {c('Info')
@@ -60,6 +67,7 @@ const AddressModal = ({ show, onClose, member }) => {
                             className="flex-autogrid-item"
                             placeholder={c('Placeholder').t`Choose address`}
                             onChange={handleChange('address')}
+                            required
                         />
                         <DomainsSelect member={member} onChange={handleChange('domain')} />
                     </div>
@@ -88,7 +96,13 @@ const AddressModal = ({ show, onClose, member }) => {
 AddressModal.propTypes = {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
-    member: PropTypes.object
+    member: PropTypes.object,
+    createNotification: PropTypes.func.isRequired
 };
 
-export default AddressModal;
+const mapDispatchToProps = { createNotification };
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(AddressModal);

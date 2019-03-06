@@ -2,28 +2,27 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Dropdown, DropdownMenu, useApi } from 'react-components';
-import { ADDRESS_TYPE, ADDRESS_STATUS, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
+import { Dropdown, DropdownMenu, useApi, useModal } from 'react-components';
+import { ADDRESS_TYPE, ADDRESS_STATUS } from 'proton-shared/lib/constants';
 import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
 
+import EditAddressModal from './EditAddressModal';
+
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 const { STATUS_DISABLED, STATUS_ENABLED } = ADDRESS_STATUS;
-const { READABLE, UNREADABLE } = MEMBER_PRIVATE;
 
-const AddressActions = ({ address, member, user, createNotification }) => {
+const AddressActions = ({ address, user, createNotification }) => {
     const { request: requestDelete } = useApi(() => deleteAddress(address.ID));
     const { request: requestEnable } = useApi(() => enableAddress(address.ID));
     const { request: requestDisable } = useApi(() => disableAddress(address.ID));
+    const { isOpen, open, close } = useModal();
     const { Status, Type } = address;
     const canDelete = Type === TYPE_CUSTOM_DOMAIN;
     const canEnable =
         user.isAdmin && Status === STATUS_DISABLED && Type !== TYPE_ORIGINAL && address.Type !== TYPE_PREMIUM;
     const canDisable =
         user.isAdmin && Status === STATUS_ENABLED && Type !== TYPE_ORIGINAL && address.Type !== TYPE_PREMIUM;
-    const canGenerate =
-        ((user.isAdmin && member.Private === READABLE) || (member.Private === UNREADABLE && member.Self)) &&
-        address.HasKeys === 0;
 
     const handleDelete = async () => {
         await requestDelete();
@@ -43,17 +42,13 @@ const AddressActions = ({ address, member, user, createNotification }) => {
         createNotification({ text: c('Success notification').t`Address disabled` });
     };
 
-    const handleGenerateMissingKeys = () => {};
-
-    const list = [];
-
-    if (canDelete) {
-        list.push({
-            text: c('Address action').t`Delete`,
+    const list = [
+        {
+            text: c('Address action').t`Edit`,
             type: 'button',
-            onClick: handleDelete
-        });
-    }
+            onClick: open
+        }
+    ];
 
     if (canEnable) {
         list.push({
@@ -71,25 +66,27 @@ const AddressActions = ({ address, member, user, createNotification }) => {
         });
     }
 
-    if (canGenerate) {
+    if (canDelete) {
         list.push({
-            text: c('Address action').t`Generate missing keys`,
+            text: c('Address action').t`Delete`,
             type: 'button',
-            onClick: handleGenerateMissingKeys
+            onClick: handleDelete
         });
     }
 
     return (
-        <Dropdown className="pm-button pm-button--small" content={c('Action').t`Options`}>
-            <DropdownMenu list={list} />
-        </Dropdown>
+        <>
+            <Dropdown className="pm-button pm-button--small" content={c('Action').t`Options`}>
+                <DropdownMenu list={list} />
+            </Dropdown>
+            <EditAddressModal show={isOpen} onClose={close} address={address} />
+        </>
     );
 };
 
 AddressActions.propTypes = {
     address: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired,
-    member: PropTypes.object.isRequired,
     createNotification: PropTypes.func.isRequired
 };
 

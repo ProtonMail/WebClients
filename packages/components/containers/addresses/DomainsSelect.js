@@ -1,17 +1,16 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchDomains } from 'proton-shared/lib/state/domains/actions';
 import { queryAvailableDomains, queryPremiumDomains } from 'proton-shared/lib/api/domains';
-import ContextApi from 'proton-shared/lib/context/api';
 import { MEMBER_TYPE } from 'proton-shared/lib/constants';
-import { Select, useLoading } from 'react-components';
+import { Select, useApi } from 'react-components';
 
 import { fakeEvent } from '../../helpers/component';
 
 const DomainsSelect = ({ member, onChange, user, domains, fetchDomains }) => {
-    const { api } = useContext(ContextApi);
-    const { loading, loaded } = useLoading();
+    const { request: requestAvailableDomains, loading } = useApi(queryAvailableDomains);
+    const { request: requestPremiumDomains } = useApi(queryPremiumDomains);
     const [options, setOptions] = useState([]);
     const [domain, setDomain] = useState('');
 
@@ -28,18 +27,18 @@ const DomainsSelect = ({ member, onChange, user, domains, fetchDomains }) => {
 
     const queryDomains = async () => {
         const [available, premium] = await Promise.all([
-            member.Type === MEMBER_TYPE.MEMBER ? api(queryAvailableDomains()).then(({ Domains }) => Domains) : [],
+            member.Type === MEMBER_TYPE.MEMBER ? requestAvailableDomains().then(({ Domains }) => Domains) : [],
             member.Type === MEMBER_TYPE.MEMBER && user.isPaidMail
-                ? api(queryPremiumDomains()).then(({ Domains }) => Domains)
+                ? requestPremiumDomains().then(({ Domains }) => Domains)
                 : [],
             user.isPaidMail ? fetchDomains() : []
         ]);
+
         const domainNames = [].concat(available, premium, formatDomains(domains.data));
 
         setOptions(domainNames.map((text) => ({ text, value: text })));
         setDomain(domainNames[0]);
         onChange(fakeEvent(domainNames[0]));
-        loaded();
     };
 
     useEffect(() => {
@@ -57,7 +56,7 @@ DomainsSelect.propTypes = {
     fetchDomains: PropTypes.func
 };
 
-const mapStateToProps = ({ user }) => ({ user });
+const mapStateToProps = ({ user, domains }) => ({ user, domains });
 const mapDispatchToProps = { fetchDomains };
 
 export default connect(
