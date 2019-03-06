@@ -6,6 +6,8 @@ import { STATUSES } from './KeysStatus';
 const convertKey = (address) => ({ decryptedPrivateKey, Key, info }, i) => {
     const getStatus = () => {
         const statuses = [];
+        const { Flags } = Key;
+        const { Status } = address;
 
         if (i === 0) {
             statuses.push(STATUSES.PRIMARY);
@@ -19,15 +21,15 @@ const convertKey = (address) => ({ decryptedPrivateKey, Key, info }, i) => {
             statuses.push(STATUSES.ENCRYPTED);
         }
 
-        if (decryptedPrivateKey && Key.Flags > 0 && Key.Flags < 3 && address.Status !== 0) {
+        if (decryptedPrivateKey && Flags > 0 && Flags < 3 && Status !== 0) {
             statuses.push(STATUSES.COMPROMISED);
         }
 
-        if (Key.Flags === 0) {
+        if (Flags === 0) {
             statuses.push(STATUSES.OBSOLETE);
         }
 
-        if (address.Status === 0) {
+        if (Status === 0) {
             statuses.push(STATUSES.DISABLED);
         }
 
