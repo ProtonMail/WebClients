@@ -1,33 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getClasses } from '../../helpers/component';
-
-const Icon = ({ name, type, alt, ...rest }) => {
-    if (type === 'svg') {
-        return <svg></svg>;
-    }
-
-    if (type === 'class') {
-        return <i className={getClasses('fa', name)} {...rest} />;
-    }
-
-    if (type === 'src') {
-        return <img src={name} alt={alt} {...rest} />;
-    }
-
-    return null;
+const Icon = ({ name, className, viewBox, alt, ...rest }) => {
+    return (
+        <>
+            <svg viewBox={viewBox} className={className} role="img" focusable="false" {...rest}>
+                <use xlinkHref={`#shape-${name}`} />
+            </svg>
+            {alt ? <span className="sr-only">{alt}</span> : null}
+        </>
+    );
 };
 
 Icon.propTypes = {
+    alt: PropTypes.string,
     name: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['svg', 'class', 'src']),
-    alt: PropTypes.string
+    viewBox: PropTypes.string,
+    className: PropTypes.string
 };
 
 Icon.defaultProps = {
-    type: 'svg',
-    alt: ''
+    viewBox: '0 0 16 16',
+    className: 'icon-16p fill-global-grey'
 };
 
 export default Icon;
