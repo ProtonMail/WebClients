@@ -3,10 +3,15 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
     const CACHE = {};
     const { on, unsubscribe } = dispatchers(['signup']);
     const CODE_SENT_CLASS = 'codeVerificator-code-sent';
+    const DELAY_ACTIVE_RESEND = 30000;
 
     const I18N = {
-        newCodeSent(email) {
-            return gettextCatalog.getString('Code sent to: {{email}}', { email }, 'Success');
+        canResend(delay) {
+            return gettextCatalog.getString(
+                'Please wait {{delay}} second(s) before requesting a new code',
+                { delay },
+                'Info'
+            );
         }
     };
 
@@ -34,6 +39,28 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
 
             scope.model = { value: '' };
 
+            const CACHE = {
+                canSend: false
+            };
+
+            /**
+             * Activate the resend button only after 30s.
+             * as the sms/email can take a few seconds to come, so to prevent the jail
+             * we allow the button only after 30s.
+             */
+            function activateResend() {
+                CACHE.canSend = false;
+                CACHE.start = Date.now();
+                if ('timer' in CACHE) {
+                    clearTimeout(CACHE.timer);
+                }
+                CACHE.timer = setTimeout(() => {
+                    CACHE.canSend = true;
+                    clearTimeout(CACHE.timer);
+                    delete CACHE.timer;
+                }, DELAY_ACTIVE_RESEND);
+            }
+
             const focusInput = (name) => {
                 scope.$applyAsync(() => {
                     el[0][name].focus();
@@ -50,17 +77,33 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                     return;
                 }
 
+                activateResend();
                 CACHE[method] = scope.model.value;
                 const promise = humanVerificationModel.sendCode(method, scope.model.value);
                 networkActivityTracker.track(promise);
-
                 // reset code value to avoid getting it back a second time
                 scope.$applyAsync(() => (scope.code = ''));
-                notification.success(I18N.newCodeSent(scope.model.value));
+            };
+
+            const sendNewCode = () => {
+                onSubmit({
+                    preventDefault() {},
+                    stopPropagation() {}
+                });
             };
 
             const onClick = ({ target }) => {
                 const action = target.getAttribute('data-action');
+
+                if (action === 'sendNewCode') {
+                    if (!CACHE.canSend) {
+                        // How many seconds before we can send
+                        const delay = Math.ceil((DELAY_ACTIVE_RESEND - (Date.now() - CACHE.start)) / 1000);
+                        return notification.info(I18N.canResend(delay));
+                    }
+
+                    sendNewCode();
+                }
 
                 if (action === 'resetCode') {
                     el[0].classList.remove(CODE_SENT_CLASS);

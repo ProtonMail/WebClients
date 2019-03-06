@@ -202,6 +202,10 @@ function SignupController(
 
             const value = (smsCodeVerification && 'sms') || (emailCodeVerification && 'email');
             $scope.account.confirmationType = value || '';
+
+            // Reset to disable the submit button
+            $scope.account.emailCodeVerification = '';
+            $scope.account.smsCodeVerification = '';
         });
     };
 
