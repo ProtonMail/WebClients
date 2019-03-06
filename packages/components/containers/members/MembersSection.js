@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { c, jt } from 'ttag';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import {
     Table,
     TableHeader,
@@ -11,13 +13,10 @@ import {
     Search,
     useModal,
     TableBody,
-    TableRow,
-    useSearch,
-    useLoading
+    TableRow
 } from 'react-components';
 import { Link } from 'react-router-dom';
-import ContextApi from 'proton-shared/lib/context/api';
-import { queryMembers, queryAddresses } from 'proton-shared/lib/api/members';
+import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { USER_ROLES } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
@@ -26,54 +25,38 @@ import MemberModal from './MemberModal';
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
 
-const MembersSection = () => {
-    const { api } = useContext(ContextApi);
-    const { keywords, set: setKeywords } = useSearch();
-    const { loading, loaded } = useLoading();
-    const [members, setMembers] = useState([]);
+const SUPER_ADMIN_ROLE = 'superman';
+
+const ROLES = {
+    [USER_ROLES.ADMIN_ROLE]: c('User role').t`Admin`,
+    [USER_ROLES.MEMBER_ROLE]: c('User role').t`Member`,
+    [SUPER_ADMIN_ROLE]: c('User role').t`Primary Admin`
+};
+
+const PRIVATE = {
+    0: c('Status for member').t`No`,
+    1: c('Status for member').t`Yes`
+};
+
+const MembersSection = ({ members, fetchMembers }) => {
+    const [keywords, setKeywords] = useState('');
+    const [membersSelected, setMembers] = useState(members.data);
     const { isOpen: showNewMemberModal, open: openNewMemberModal, close: closeNewMemberModal } = useModal();
     const handleAddMember = () => openNewMemberModal();
-    const handleSearch = (event) => setKeywords(event.target.value);
+    const handleSearch = (value) => setKeywords(value);
+
     const addNewMember = () => {};
-
-    const SUPER_ADMIN_ROLE = 'superman';
-
-    const ROLES = {
-        [USER_ROLES.ADMIN_ROLE]: c('User role').t`Admin`,
-        [USER_ROLES.MEMBER_ROLE]: c('User role').t`Member`,
-        [SUPER_ADMIN_ROLE]: c('User role').t`Primary Admin`
-    };
-
-    const PRIVATE = {
-        0: c('Status for member').t`No`,
-        1: c('Status for member').t`Yes`
-    };
 
     const search = (members = []) => {
         if (!keywords) {
             return members;
         }
 
+        const normalizedWords = normalize(keywords);
+
         return members.filter(({ Name }) => {
-            return normalize(Name).includes(keywords);
+            return normalize(Name).includes(normalizedWords);
         });
-    };
-
-    const fetchAddresses = async (member) => {
-        const { Addresses = [] } = await api(queryAddresses(member.ID));
-
-        return {
-            ...member,
-            addresses: Addresses
-        };
-    };
-
-    const fetchMembers = async () => {
-        const { Members } = await api(queryMembers());
-        const m = await Promise.all(Members.map(fetchAddresses));
-
-        setMembers(search(m));
-        loaded();
     };
 
     const formatSize = ({ UsedSpace, MaxSpace }) =>
@@ -81,7 +64,11 @@ const MembersSection = () => {
 
     useEffect(() => {
         fetchMembers();
-    }, [keywords]);
+    }, []);
+
+    useEffect(() => {
+        setMembers(search(members.data));
+    }, [keywords, members.data]);
 
     return (
         <>
@@ -95,7 +82,12 @@ const MembersSection = () => {
             <Block className="flex flex-spacebetween">
                 <PrimaryButton onClick={handleAddMember}>{c('Action').t`Add user`}</PrimaryButton>
                 <MemberModal show={showNewMemberModal} onClose={closeNewMemberModal} onConfirm={addNewMember} />
-                <Search onChange={handleSearch} placeholder={c('Placeholder').t`Search for User and Addresses`} />
+                <Search
+                    onChange={handleSearch}
+                    placeholder={c('Placeholder').t`Search for User and Addresses`}
+                    delay={500}
+                    value={keywords}
+                />
             </Block>
             <Table>
                 <TableHeader
@@ -108,8 +100,8 @@ const MembersSection = () => {
                         c('Title header for members table').t`Actions`
                     ]}
                 />
-                <TableBody loading={loading} colSpan={6}>
-                    {members.map((member) => {
+                <TableBody loading={members.loading} colSpan={6}>
+                    {membersSelected.map((member) => {
                         const key = member.ID;
                         return (
                             <TableRow
@@ -134,4 +126,15 @@ const MembersSection = () => {
     );
 };
 
-export default MembersSection;
+MembersSection.propTypes = {
+    members: PropTypes.object.isRequired,
+    fetchMembers: PropTypes.func.isRequired
+};
+
+const mapStateToProps = ({ members }) => ({ members });
+const mapDispatchToProps = { fetchMembers };
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(MembersSection);

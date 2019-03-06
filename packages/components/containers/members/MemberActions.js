@@ -24,7 +24,7 @@ const MemberActions = ({ member }) => {
         <>
             <SmallButton onClick={openEdit}>{c('Action').t`Edit`}</SmallButton>
             <MemberModal show={showEdit} onClose={closeEdit} member={member} />
-            <SmallButton className="pm-button-redborder" onClick={openDelete}>{c('Action').t`Delete`}</SmallButton>
+            <SmallButton onClick={openDelete}>{c('Action').t`Delete`}</SmallButton>
             <ConfirmModal show={showDelete} onClose={closeDelete} onConfirm={handleConfirmDelete}>
                 <Alert>{c('Info')
                     .t`Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted.`}</Alert>
