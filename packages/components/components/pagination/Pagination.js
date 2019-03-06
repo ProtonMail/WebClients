@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { t } from 'ttag';
 
 import { ButtonGroup, Group } from '../button';
 import { Dropdown, DropdownMenu } from '../dropdown';
+import Icon from '../icon/Icon';
 
 const Pagination = ({ onNext, onPrevious, onSelect, page, total, limit }) => {
     if (!total) {
@@ -31,11 +31,15 @@ const Pagination = ({ onNext, onPrevious, onSelect, page, total, limit }) => {
 
     return (
         <Group>
-            <ButtonGroup disabled={disablePrevious} onClick={onPrevious}>{t`Previous`}</ButtonGroup>
+            <ButtonGroup disabled={disablePrevious} onClick={onPrevious}>
+                <Icon name="arrow-left" />
+            </ButtonGroup>
             <Dropdown className="pm-button pm-group-button" content={page}>
                 <DropdownMenu list={list} />
             </Dropdown>
-            <ButtonGroup disabled={disableNext} onClick={onNext}>{t`Next`}</ButtonGroup>
+            <ButtonGroup disabled={disableNext} onClick={onNext}>
+                <Icon name="arrow-right" />
+            </ButtonGroup>
         </Group>
     );
 };
