@@ -490,12 +490,12 @@ msgctxt "Action"
 msgid "Change password"
 msgstr ""
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:74
+#: ./src/templates/formUtils/codeVerificator.tpl.html:81
 msgctxt "Action"
 msgid "Change verification email"
 msgstr ""
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:78
+#: ./src/templates/formUtils/codeVerificator.tpl.html:85
 msgctxt "Action"
 msgid "Change verification number"
 msgstr ""
@@ -1642,6 +1642,11 @@ msgstr ""
 #: ./src/templates/modals/expirationModal.tpl.html:55
 msgctxt "Action"
 msgid "Send anyway"
+msgstr ""
+
+#: ./src/templates/formUtils/codeVerificator.tpl.html:70
+msgctxt "Action"
+msgid "Send new code"
 msgstr ""
 
 #: ./src/templates/message/readReceiptPanel.tpl.html:5
@@ -5773,6 +5778,11 @@ msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr ""
 
+#: ./src/app/formUtils/directives/codeVerificator.js:10
+msgctxt "Info"
+msgid "Please wait {{delay}} second(s) before requesting a new code"
+msgstr ""
+
 #: ./src/templates/views/members.tpl.html:173
 msgctxt "Info"
 msgid "Primary Admin"
@@ -8802,7 +8812,7 @@ msgctxt "Success"
 msgid "Code applied"
 msgstr ""
 
-#: ./src/app/formUtils/directives/codeVerificator.js:9
+#: ./src/app/formUtils/factories/humanVerificationModel.js:7
 msgctxt "Success"
 msgid "Code sent to: {{email}}"
 msgstr ""
