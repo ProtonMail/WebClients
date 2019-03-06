@@ -1,6 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Component to print svg icon
+ * <Icon name="label" alt="My label" />
+ * @param {String} name of the svg icon present in the design-system
+ * @param {String} className used on svg tag
+ * @param {String} viewBox
+ * @param {String} alt used by screen reader
+ * @return {React.Component}
+ */
 const Icon = ({ name, className, viewBox, alt, ...rest }) => {
     return (
         <>
