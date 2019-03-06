@@ -1,22 +1,46 @@
-<form class="codeVerificator-container pm_form" novalidate>
+<form
+    name="codeVerificatorForm"
+    class="codeVerificator-container pm_form"
+    novalidate>
 
     <div class="pm_grid codeVerificator-contact-section">
-        <div class="col-2-3">
+        <div class="col-2-3 ng-message-wrapper">
             <input
                 class="codeVerificator-email-input"
                 type="email"
                 name="emailVerification"
                 id="emailVerification"
-                ng-model="contactInformation"
+                required
+                ng-model="model.value"
+                ng-if="method === 'email'"
+                data-valid-email
                 placeholder-translate-context="Placeholder"
                 placeholder-translate="Email verification">
             <input
                 class="codeVerificator-sms-input"
                 type="tel"
                 name="smsVerification"
+                ng-if="method === 'sms'"
+                required
                 id="smsVerification"
                 data-ng-intl-tel-input
-                ng-model="contactInformation">
+                ng-model="model.value">
+
+            <div
+                ng-messages="codeVerificatorForm.emailVerification.$error"
+                ng-if="codeVerificatorForm.emailVerification.$dirty || codeVerificatorForm.$submitted"
+                class="text-red">
+                <p ng-message="required" translate translate-context="Error">Email required</p>
+                <p ng-message="email" translate-context="Error" translate>Invalid email</p>
+            </div>
+
+            <div
+                ng-messages="codeVerificatorForm.smsVerification.$error"
+                ng-if="codeVerificatorForm.smsVerification.$dirty || codeVerificatorForm.$submitted"
+                class="text-red">
+                <p ng-message="required" translate translate-context="Error">SMS number required</p>
+                <p ng-message="ngIntlTelInput" translate translate-context="Error">Invalid format (country and/or number)</p>
+            </div>
         </div>
 
         <div class="col-1-3">
@@ -42,13 +66,6 @@
             placeholder-translate-context="Input for the code sent"
             placeholder-translate="Verification code">
     </div>
-
-    <button
-        data-action="sendNewCode"
-        type="button"
-        class="pm_button link codeVerificator-new-code-button"
-        translate-context="Action"
-        translate>Send new code</button>
 
     <button
         data-action="resetCode"
