@@ -6,7 +6,7 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
 
     const I18N = {
         newCodeSent(email) {
-            return gettextCatalog.getString('New code sent to: {{email}}', { email }, 'Success');
+            return gettextCatalog.getString('Code sent to: {{email}}', { email }, 'Success');
         }
     };
 
@@ -23,12 +23,16 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
         replace: true,
         scope: {
             code: '=',
-            codeRetry: '='
+            codeRetry: '=',
+            method: '@'
         },
         restrict: 'E',
         templateUrl: require('../../../templates/formUtils/codeVerificator.tpl.html'),
-        link(scope, el, { method }) {
+        link(scope, el) {
             const { on, unsubscribe, dispatcher } = dispatchers(['humanVerification']);
+            const { method } = scope;
+
+            scope.model = { value: '' };
 
             const focusInput = (name) => {
                 scope.$applyAsync(() => {
@@ -41,35 +45,28 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
                 e.preventDefault();
                 e.stopPropagation();
 
-                CACHE[method] = scope.contactInformation;
-                const promise = humanVerificationModel.sendCode(method, scope.contactInformation);
+                // Prevent submit if invalid we can hit the jail
+                if (!scope.codeVerificatorForm.$valid) {
+                    return;
+                }
+
+                CACHE[method] = scope.model.value;
+                const promise = humanVerificationModel.sendCode(method, scope.model.value);
                 networkActivityTracker.track(promise);
 
                 // reset code value to avoid getting it back a second time
                 scope.$applyAsync(() => (scope.code = ''));
-
-                e.notifyUser && notification.success(I18N.newCodeSent(scope.contactInformation));
-            };
-
-            const sendNewCode = () => {
-                onSubmit({
-                    preventDefault() {},
-                    stopPropagation() {},
-                    notifyUser: true
-                });
+                notification.success(I18N.newCodeSent(scope.model.value));
             };
 
             const onClick = ({ target }) => {
                 const action = target.getAttribute('data-action');
-                if (action === 'sendNewCode') {
-                    sendNewCode();
-                }
 
                 if (action === 'resetCode') {
                     el[0].classList.remove(CODE_SENT_CLASS);
                     delete CACHE[method];
                     scope.$applyAsync(() => {
-                        scope.contactInformation = '';
+                        scope.model.value = '';
                     });
                 }
             };
@@ -102,22 +99,12 @@ function codeVerificator(dispatchers, humanVerificationModel, networkActivityTra
 
             // Store a cache, we destroy it when we complete the signup
             const onChange = () => {
-                CACHE[method] = scope.contactInformation;
+                CACHE[method] = scope.model.value;
             };
 
-            scope.contactInformation = CACHE[method];
+            scope.model.value = CACHE[method];
             el[0].classList.add(`codeVerificator-${method}-method`);
             focusInput(`${method}Verification`);
-
-            // Try only once, if you switch to another option then come back you will see the default component.
-            if (scope.codeRetry === method) {
-                el[0].classList.add(CODE_SENT_CLASS);
-                sendNewCode();
-                focusInput('codeValue');
-                scope.$applyAsync(() => {
-                    scope.codeRetry = '';
-                });
-            }
 
             el.on('change', onChange);
             el.on('keydown', onKeydown);
