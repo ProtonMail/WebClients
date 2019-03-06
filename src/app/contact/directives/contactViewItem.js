@@ -1,5 +1,3 @@
-import { formatImage } from '../../../helpers/imageHelper';
-
 /* @ngInject */
 function contactViewItem() {
     return {
@@ -8,7 +6,6 @@ function contactViewItem() {
         templateUrl: require('../../../templates/contact/contactViewItem.tpl.html'),
         link(scope) {
             scope.formatAddress = (list = []) => list.filter(Boolean);
-            scope.formatImage = formatImage;
         }
     };
 }
