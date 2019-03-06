@@ -164,7 +164,6 @@
             line-height: $composerRowHeight;
             padding: 0 10px;
             cursor: pointer;
-            box-sizing: border-box;
             z-index: 7;
             border-top: 1px solid $border;
             background: $tertiary;
@@ -187,7 +186,6 @@
 
             overflow: auto;
             -webkit-overflow-scrolling: touch;
-            box-sizing: border-box;
             background: $tertiary;
 
             .preview-close {
@@ -238,7 +236,6 @@
                     color: $default-color;
                     border-radius: 2px;
                     width: 45%;
-                    box-sizing: border-box;
                     white-space: nowrap;
                     position: relative;
                     .preview-name {
@@ -308,7 +305,6 @@
             width: calc(100% - #{$sidebarWidth} - 40px);
             height: auto !important;
             max-height: 100%;
-            box-sizing: border-box;
             margin: 0;
             overflow: auto;
 

@@ -1,5 +1,4 @@
 .autocompleteEmails-container {
-    box-sizing: border-box;
     color: $default-color;
     font-size: 13px;
     width: 100%;
@@ -19,8 +18,6 @@
     overflow-y: auto;
     overflow-x: hidden
 }
-
-.autocompleteEmails-admin, .autocompleteEmails-admin * {box-sizing: border-box}
 
 
 .autocompleteEmails-item {

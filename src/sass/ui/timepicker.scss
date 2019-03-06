@@ -10,12 +10,10 @@
 
 .ui-timepicker-container {
     position: absolute;
-    box-sizing: border-box;
     z-index: 5000 !important;
 }
 
 .ui-timepicker {
-    box-sizing: content-box;
     display: block;
     height: 205px;
     list-style: none outside none;
@@ -26,7 +24,6 @@
 }
 
 .ui-timepicker-viewport {
-    box-sizing: content-box;
     width: 100% !important;
     display: block;
     height: 205px;

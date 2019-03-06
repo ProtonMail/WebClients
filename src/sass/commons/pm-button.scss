@@ -6,7 +6,6 @@
     line-height: 35px;
     border: 1px solid $border;
     border-radius: $border-radius;
-    box-sizing: border-box;
     display: inline-block;
     cursor: pointer;
     font-size: 12px;
@@ -105,7 +104,6 @@
         height: 30px;
         line-height: 30px;
         width: 30px;
-        box-sizing: border-box;
         text-align: center;
         border: 1px solid $border;
         border-radius: 30px;

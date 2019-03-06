@@ -1,6 +1,3 @@
-.logManager-container, .logManager-container * { box-sizing: border-box }
-
-
 .logManager-container.noLog .onlyActive:not(.securtiyLogActions),
 .logManager-container.activeLogAdvanced .noLog,
 .logManager-container.activeLog .noLog { display: none }

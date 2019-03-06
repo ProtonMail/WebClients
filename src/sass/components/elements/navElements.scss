@@ -1,7 +1,3 @@
-.navElements-container * {
-    box-sizing: border-box;
-}
-
 .navElements-container:not(.navElements-displayed) {
     display: none
 }

@@ -48,7 +48,6 @@ body#eo-reply {
     .composer-outside-editor iframe {
         width: 100%;
         padding: 1rem 25px;
-        box-sizing: border-box;
     }
 
 	#pm_footer {
@@ -95,7 +94,6 @@ body#eo-reply {
 			padding: 0 35px;
 			height: 42px;
 			line-height: 42px;
-			box-sizing: border-box;
 			li {
 				height: 40px;
 				line-height: 40px;
@@ -117,7 +115,6 @@ body#eo-reply {
 			min-height: 30rem;
 			height: 30rem;
 			padding: 1rem 25px;
-			box-sizing: border-box;
 		}
 	}
 	#inputFile {
@@ -166,7 +163,6 @@ body#eo-reply {
 		padding: 20px 35px;
 		border-bottom: 1px solid $border;
 		margin-bottom: 10px;
-		box-sizing: border-box;
 		h1 {
 			line-height: 35px;
 			display: inline-block;

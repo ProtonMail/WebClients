@@ -14,7 +14,6 @@
     .undelete,
     .delete,
     .details {
-        width: 40px;
         color: $primary;
         background: none;
         border: none;
@@ -47,16 +46,20 @@
 .contactMergerList-item {
     .contactMergerList-priority {
         text-align: center;
-        max-width: 20px;
+        max-width: 40px;
         color: $default-color-medium;
         border-right: 1px solid $gray-light;
-        margin-right: 10px;
+        //margin-right: 10px;
     }
     .contactMergerList-actions {
-        max-width: 100px;
+        flex: 0 0 100px;
     }
 
     border-bottom: 1px solid $gray-light;
+
+    .contactMergerList-name {
+        padding-left: 1rem;
+    }
 }
 
 .contactMergerList-item.deleted,
@@ -81,6 +84,7 @@
 }
 
 .contactMergerList-name {
+
     .customCheckbox-container {
         margin-right: 6px;
     }

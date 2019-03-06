@@ -2,7 +2,6 @@
 	width: $panel;
 	margin: auto;
 	color: $white;
-	box-sizing: border-box;
 	padding: 50px;
 	max-width: 100%;
 	&.alt {
@@ -13,7 +12,6 @@
 		margin-top: 8rem;
 		margin-bottom: 2rem;
 		padding: 50px 44px 0 44px;
-		box-sizing: border-box;
 		min-height: 350px;
         a { color: $white }
         &.pm_panel--twofactors {
@@ -87,6 +85,5 @@ body.appConfigBody-is-mobile {
 	.wrap {
 		max-width: $panel;
 		margin: 2rem auto;
-		box-sizing: border-box;
 	}
 }

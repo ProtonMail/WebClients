@@ -9,7 +9,6 @@
     align-content: space-between;
     width: $sidebarWidth;
     min-width: $sidebarWidth;
-    box-sizing: border-box;
     overflow: auto;
     float: left;
     background: $sidebar-background;
@@ -29,7 +28,6 @@
 
     .sidebar-btn-compose,
     .sidebar-btn-back {
-        box-sizing: border-box;
         min-height: 40px;
         margin-bottom: 10px;
         font-size: 12px;
@@ -299,7 +297,6 @@
     .menuLabel-container {
         padding: 0;
         margin: 0;
-        box-sizing: border-box
     }
 
     .menuLabel-link { padding: 0 25px 0px 15px }

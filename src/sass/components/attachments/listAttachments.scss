@@ -139,7 +139,6 @@
     flex-wrap: wrap;
 
     .listAttachments-att {
-        box-sizing: border-box;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -172,9 +171,8 @@
         .name {
             text-transform: initial;
             display: block;
-            line-height: 15px;
-            height: 15px;
-            padding-top: 5px;
+            margin-top: 5px;
+            line-height: 1.3;
             white-space: nowrap;
             max-width: 100%;
             overflow: hidden;
@@ -184,7 +182,7 @@
         }
         .size {
             display: block;
-            line-height: 15px;
+            line-height: 1.2;
             height: 15px;
             padding-bottom: 5px;
             float: left;

@@ -1,6 +1,3 @@
-.pm_labels,
-.pm_labels * {box-sizing: border-box}
-
 .pm_labels {
     position: relative;
     display: inline-flex;
@@ -15,7 +12,6 @@
         margin-left: .25em;
         border-radius: 3px;
         max-width: 8rem;
-        box-sizing: border-box;
         border: 2px solid currentColor;
         transition: max-width .25s ease;
         line-height: 1;

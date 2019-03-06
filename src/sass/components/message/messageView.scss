@@ -91,7 +91,6 @@
         border: 1px solid $border;
         border-radius: 2px;
         margin: 10px;
-        box-sizing: border-box;
         clear: both;
 
         .recipients-details .messageContacts-email { margin-left: .5em; }
@@ -126,7 +125,6 @@
             float: left;
             width: 100%;
             clear: both;
-            box-sizing: border-box;
         }
         .message-contact-sender { color: $primary }
         &.marked {
@@ -641,7 +639,6 @@ body.appConfigBody-is-mobile {
                 .details {
                     .recipients-summary {
                         padding-left: 12px;
-                        box-sizing: border-box;
                     }
                 }
             }

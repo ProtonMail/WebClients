@@ -3,46 +3,6 @@ $pad: 20px;
 .pm_grid {
 	margin: 0 0 $pad 0;
 
-	.col-1-8,
-	.col-2-8,
-	.col-3-8,
-	.col-4-8,
-	.col-5-8,
-	.col-6-8,
-	.col-7-8,
-	.col-8-8,
-
-	.col-1-6,
-	.col-2-6,
-	.col-3-6,
-	.col-4-6,
-	.col-5-6,
-	.col-6-6,
-
-	.col-1-5,
-	.col-2-5,
-	.col-3-5,
-	.col-4-5,
-	.col-5-5,
-
-	.col-1-4,
-	.col-2-4,
-	.col-3-4,
-	.col-4-4,
-
-	.col-1-3,
-	.col-2-3,
-	.col-3-3,
-
-	.col-1-2,
-	.col-2-3,
-
-	.col-1-1
-
-	{
-		box-sizing: border-box;
-	}
-
 	&.truncate > div {
 		max-width: 100%;
 		overflow: hidden;
@@ -228,7 +188,6 @@ $pad: 20px;
 			float: left;
 			width: 100% !important;
 			clear: both;
-			box-sizing: border-box;
 			padding: 0;
 			flex-basis: auto;
 			margin-bottom: 10px;

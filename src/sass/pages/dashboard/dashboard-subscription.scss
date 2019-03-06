@@ -28,12 +28,10 @@
             display: flex;
             justify-content: space-between;
             padding: 0 10px;
-            box-sizing: border-box;
 
             & > td {
                 display: block;
                 padding: .5em;
-                box-sizing: border-box;
             }
         }
     }
