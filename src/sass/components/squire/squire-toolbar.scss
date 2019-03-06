@@ -4,8 +4,6 @@
     justify-content: center;
     position: relative
 }
-.squireToolbar-container,
-.squireToolbar-container * { box-sizing: border-box }
 
 .squireToolbar-container.b .squireToolbar-action-bold,
 .squireToolbar-container.i .squireToolbar-action-italic,
@@ -205,7 +203,6 @@
 
     &[class*="hidden"] { display: none; pointer-events: none }
 
-    &, & * { box-sizing: border-box }
     input, input[type="text"] {
         line-height: 2em;
         border: 1px solid #e1e1ef;
@@ -238,7 +235,6 @@
         text-decoration: none;
         border: 1px solid $border;
         border-radius: 2px;
-        box-sizing: border-box;
         display: inline-block;
         cursor: pointer;
         transition: background-color .25s linear, border-color    .25s linear;

@@ -1,5 +1,3 @@
-.invoiceSection-container, .invoiceSection-container * { box-sizing: border-box }
-
 .invoiceSection-title::after {
     content: ' (' attr(data-total) ')';
     font-style: italic;

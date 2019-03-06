@@ -1,4 +1,7 @@
-.atomLoader { color: $white }
+.atomLoader {
+    box-sizing: content-box;
+    color: $white
+}
 
 .atomLoader-container {
   margin: 0 auto 20px auto;

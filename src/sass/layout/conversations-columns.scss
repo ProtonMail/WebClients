@@ -6,7 +6,7 @@
     background: $white;
 
     position: relative;
-    height: 60px;
+    height: 61px;
     overflow: hidden;
     border-bottom: 1px solid $border;
 
@@ -18,7 +18,6 @@
         height: 100%;
         width: 38px; /* .elements-selector-check + (.pm_toolbar padding-left*2) */
         min-width: 38px;
-        box-sizing: border-box;
         text-align: center;
         input[type="checkbox"] {
             margin: 0;
@@ -35,7 +34,6 @@
         @include flexRow();
         padding-right: 10px;
         height: 30px;
-        box-sizing: border-box;
 
         &.top {
             @include flexAlignEnd();

@@ -8,10 +8,10 @@
     -webkit-overflow-scrolling: touch;
     display: block;
     clear: both;
-    border-top:1px solid $border;
-    border-bottom:1px solid $border;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
 
-    background: #FFF no-repeat;
+    background: #fff no-repeat;
     background-image:
         -webkit-radial-gradient(50% 0, farthest-side, $border, rgba(0,0,0,0)),
         -webkit-radial-gradient(50% 100%,farthest-side, $border, rgba(0,0,0,0));
@@ -21,8 +21,8 @@
     background-image:
         radial-gradient(farthest-side at 50% 0, $border, rgba(0,0,0,0)),
         radial-gradient(farthest-side at 50% 100%, $border, rgba(0,0,0,0));
-    background-position: 0 0, 0 100%;
-    background-size: 100% 3px;
+    background-position: 50% 0, 0 100%;
+    background-size: calc(100% - 20px) 3px;
 
     &:before,
     &:after {
@@ -31,17 +31,12 @@
         z-index: -1;
         display: block;
         height: 15px;
-        margin: 0 0 -15px;
-        background: -webkit-linear-gradient(top,#FFF,#FFF 30%,rgba(255,255,255,0));
-        background:    -moz-linear-gradient(top,#FFF,#FFF 30%,rgba(255,255,255,0));
-        background:   linear-gradient(to bottom,#FFF,#FFF 30%,rgba(255,255,255,0));
+        margin: 0 -15px -15px -15px;
+        background: #fff;
 
     }
     &:after {
-        margin: -15px 0 0;
-        background: -webkit-linear-gradient(top,rgba(255,255,255,0),#FFF 70%,#FFF);
-        background:    -moz-linear-gradient(top,rgba(255,255,255,0),#FFF 70%,#FFF);
-        background:   linear-gradient(to bottom,rgba(255,255,255,0),#FFF 70%,#FFF);
+        margin: -15px -15px 0 -15px;
     }
 
     .scrollbox-container-group,

@@ -41,7 +41,6 @@ body {
                 justify-content: space-between;
                 align-items: center;
 
-                box-sizing: border-box;
                 width: calc(84% - 17rem);
                 padding-left: 4px;
                 background: inherit;
@@ -105,7 +104,6 @@ body {
                 padding-right: 1rem;
             }
             time.time {
-                box-sizing: border-box;
                 float: right;
                 text-align: right;
                 font-style: normal;

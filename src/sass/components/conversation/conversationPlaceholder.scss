@@ -1,6 +1,5 @@
 .conversationPlaceholder {
 	padding:  0;
-	box-sizing: border-box;
 	header {
 	    font-size: 24px;
 	    font-weight: 400;
@@ -14,7 +13,6 @@
 	    padding-bottom: ( (($toolbarHeight)-30) /2 );
 	    padding-left: 40px;
 	    padding-right: 40px;
-	    box-sizing: border-box;
 	    border-bottom: 1px solid $border;
 	    margin: 0;
 	}

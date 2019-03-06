@@ -1,7 +1,6 @@
 .searchForm-container {
     @include flexInline();
     position: relative;
-    box-sizing: border-box;
     height: 35px;
     width: calc(100% - 700px);
     max-width: 25%;
@@ -123,7 +122,6 @@
     float: left;
     padding: .5rem 1rem 1rem;
     width: 100%;
-    box-sizing: border-box;
     border-radius: 0 0 1rem 1rem;
     > .row {
         line-height: 36px /* header#pm_header-desktop */
@@ -181,7 +179,6 @@ body.appConfigBody-is-mobile {
             float: left;
             width: 100% !important;
             clear: both;
-            box-sizing: border-box;
             padding: 0;
         }
     }

@@ -15,7 +15,6 @@
         display: inline-flex;
         flex-direction: row;
         align-items: center;
-        box-sizing: border-box;
         margin: 0.3em 0 0 0 !important;
         font-weight: bold;
         line-height: .9em;
@@ -90,7 +89,6 @@
     line-height: 35px;
     border: 1px solid $border;
     border-radius: $border-radius;
-    box-sizing: border-box;
     display: inline-block;
     cursor: pointer;
     font-size: 12px;

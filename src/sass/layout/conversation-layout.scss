@@ -5,7 +5,6 @@
 // REGULAR
 body {
     #conversation-list-columns {
-        box-sizing: border-box;
         width: 40%;
         float: left;
         height: 100%;
@@ -113,6 +112,5 @@ body.appConfigBody-is-mobile {
 body:not(.hasStickyMessages) .stickyMessages-container { display: none; }
 
 .stickyMessages-container {
-    box-sizing: border-box;
     padding: 6px;
 }

@@ -29,11 +29,9 @@
 
     .autocomplete-container {
         position: relative;
-        box-sizing: border-box;
     }
 
     .awesomplete input {
-        box-sizing: border-box;
         padding: 1em 1em 1em .5em;
         border: 0;
     }
@@ -49,7 +47,6 @@
     .awesomplete { flex: 1 }
 
     .autocompleteEmails-autocomplete {
-        box-sizing: border-box;
         position: static;
         width: 100%;
         border: 0;
@@ -57,7 +54,7 @@
         margin: .5em 0;
         max-height: 185px;
 
-        li { padding: 1em; box-sizing: border-box }
+        li { padding: 1em; }
         li + li { border-top: 1px solid $toolbar-border }
 
         [aria-selected="true"] { background: $primary; color: white }

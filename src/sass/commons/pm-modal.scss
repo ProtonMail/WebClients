@@ -5,7 +5,6 @@ $modalMargin: 2rem;
     position: absolute;
     z-index: 99998;
     display: block;
-    box-sizing: border-box;
     left: 0;
     top: 0;
     right: 0;
@@ -75,7 +74,6 @@ $modalMargin: 2rem;
         margin-bottom: 3rem;
         margin-left: -24rem;
         border: 5px solid $primary;
-        box-sizing: border-box;
         .close {
             position: absolute;
             right: -5px;
@@ -103,7 +101,6 @@ $modalMargin: 2rem;
                 box-shadow: inset 0 1px 0 $border, inset 0 -1px 0 $border;
                 clear: both;
                 zoom: 1;
-                box-sizing: border-box;
                 width: 100%;
             }
         }
@@ -187,7 +184,6 @@ body.appConfigBody-is-mobile {
             top: 0;
             width: 100%;
             margin: 0;
-            box-sizing: border-box;
             border: none;
             .close {
                 top: 0;
