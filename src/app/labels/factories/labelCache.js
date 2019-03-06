@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { flow, filter, sortBy } from 'lodash/fp';
+import { flow, filter, sortBy, map } from 'lodash/fp';
 
 import { LABEL_TYPE } from '../../constants';
 import updateCollection from '../../utils/helpers/updateCollection';
@@ -23,19 +23,25 @@ function labelCache(sanitize, Label) {
             map: defaultMaps()
         };
 
-        /**
-         * Clean label datas received from the BE
-         * @param  {Array} labels
-         * @return {Array}
-         */
-        const cleanLabels = (labels = []) => _.map(labels, cleanLabel);
-
         function cleanLabel(label) {
             label.Name = sanitize.input(label.Name);
             label.Color = sanitize.input(label.Color);
             label.notify = !!label.Notify;
             return label;
         }
+
+        /**
+         * Take raw list of labels from event or GET API.
+         * Always clean + sort the list
+         * @param  {Array}  list
+         * @return {Array}
+         */
+        const formatAll = (list = []) => {
+            return flow(
+                map(cleanLabel),
+                sortBy('Order')
+            )(list);
+        };
 
         /**
          * Create a cache ref map from the current list of labels.
@@ -80,7 +86,7 @@ function labelCache(sanitize, Label) {
          * @return {void}
          */
         const set = (list = []) => {
-            CACHE.all = cleanLabels(list);
+            CACHE.all = formatAll(list);
             syncMap();
             syncLabels();
             syncFolders();
@@ -88,7 +94,7 @@ function labelCache(sanitize, Label) {
 
         /**
          * Get a list (a copy) of labels by type
-         *     - all (default) (non-sorted)
+         *     - all (default) (sorted)
          *     - labels sorted by Order
          *     - folders sorted by Order
          * @param  {String} key
@@ -135,8 +141,7 @@ function labelCache(sanitize, Label) {
         const sync = (list = []) => {
             const { collection, todo } = updateCollection(CACHE.all, list, 'Label');
 
-            CACHE.all = cleanLabels(_.sortBy(collection, 'Order'));
-
+            CACHE.all = formatAll(collection);
             syncMap();
             syncLabels();
             syncFolders();
