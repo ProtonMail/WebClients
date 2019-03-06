@@ -2,6 +2,8 @@ import _ from 'lodash';
 import vCard from 'vcf';
 
 import { orderByPref } from './vcard';
+import { FIELDS } from './vCardFields';
+import { formatImage } from './imageHelper';
 
 /**
  * Check if a property is empty
@@ -55,13 +57,18 @@ export function extract(vcard = new vCard(), fields = [], { group } = {}) {
         if (isEmpty(property)) {
             return acc;
         }
-
         const value = property.valueOf();
 
         if (Array.isArray(value)) {
             orderByPref(value).forEach((prop) => {
                 canPushProp(prop, group) && acc.push(prop);
             });
+            return acc;
+        }
+
+        if (FIELDS.PHOTO.includes(key)) {
+            const prop = new vCard.Property(key, formatImage(value), property.getParams());
+            canPushProp(prop, group) && acc.push(prop);
             return acc;
         }
 

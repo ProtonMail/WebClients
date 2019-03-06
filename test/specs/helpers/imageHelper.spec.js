@@ -1,4 +1,4 @@
-import { resizeImage, toBlob, toFile } from '../../../src/helpers/imageHelper';
+import { resizeImage, toBlob, toFile, formatImage } from '../../../src/helpers/imageHelper';
 import img from '../../media/img';
 
 const MIMETYPE_REGEX = /data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/;
@@ -67,3 +67,34 @@ describe('resizeImage', () => {
         expect(resizedFile.size).toBeLessThan(originalFile.size);
     });
 });
+
+describe('formatImage', () => {
+
+    [
+        {
+            output: '',
+            name: 'return an empty string if no input'
+        },
+        {
+            input: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+            output: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+            name: 'return the input if it is a well-formed base64'
+        },
+        {
+            input: 'https://i.imgur.com/WScAnHr.jpg',
+            output: 'https://i.imgur.com/WScAnHr.jpg',
+            name: 'return the URL if it is an URL'
+        },
+        {
+            input: '/9j/4AAQSkZJRgABAQAAkACQAAD/4QB0RXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAIdpAAQAAAABAAAATgAAAAAAAACQAAAAAQAAAJAA',
+            output: 'data:image/png;base64,/9j/4AAQSkZJRgABAQAAkACQAAD/4QB0RXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAIdpAAQAAAABAAAATgAAAAAAAACQAAAAAQAAAJAA',
+            name: 'return a base64 if the input is not an URL nor a base64'
+        }
+    ].forEach(({ name, input, output }) => {
+        it(`should ${name}`, () => {
+            expect(formatImage(input)).toBe(output);
+        });
+    })
+
+
+})
