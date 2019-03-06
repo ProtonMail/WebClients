@@ -58,10 +58,10 @@ export const getAddressesKeys = (addresses = [], keys = {}) => {
             return acc;
         }
 
-        const firstUserKey = addressKeys[0];
+        const primaryKey = addressKeys[0];
         acc.push({
             email: address.Email,
-            ...firstUserKey,
+            ...primaryKey,
             keys: addressKeys
         });
 
@@ -74,11 +74,11 @@ export const getUserAddressKeys = (user = {}, keys = {}) => {
     if (!userKeys.length) {
         return [];
     }
-    const firstUserKey = userKeys[0];
+    const primaryKey = userKeys[0];
     return [
         {
             email: user.Name,
-            ...firstUserKey,
+            ...primaryKey,
             keys: userKeys
         }
     ];
