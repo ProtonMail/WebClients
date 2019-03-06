@@ -17,9 +17,13 @@ const Tooltip = ({ title, placement, html, trigger, delay, children }) => {
         return () => {
             tooltip.dispose();
         };
-    });
+    }, []);
 
-    return <div className="Tooltip" ref={tooltipRef}>{children}</div>;
+    return (
+        <div className="Tooltip" ref={tooltipRef}>
+            {children}
+        </div>
+    );
 };
 
 Tooltip.propTypes = {

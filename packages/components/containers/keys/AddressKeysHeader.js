@@ -3,13 +3,8 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { SubTitle, Alert, Block, PrimaryButton, Button, LearnMore } from 'react-components';
 
-import KeysTable from './KeysTable';
-
-const KeysSection = ({ mode }) => {
+const AddressKeysHeader = ({ mode, handleAddKey, handleImportKey, handleReactivateKeys }) => {
     const title = mode === 'user' ? c('Title').t`Contact Encryption Keys` : c('Title').t`Email Encryption Keys`;
-    const handleAddKey = () => {};
-    const handleImportKey = () => {};
-    const handleReactivateKeys = () => {};
 
     return (
         <>
@@ -25,17 +20,15 @@ const KeysSection = ({ mode }) => {
                 <Button onClick={handleImportKey}>{c('Action').t`Import key`}</Button>
                 <Button onClick={handleReactivateKeys}>{c('Action').t`Reactivate keys`}</Button>
             </Block>
-            <KeysTable />
         </>
     );
 };
 
-KeysSection.propTypes = {
-    mode: PropTypes.string.isRequired
+AddressKeysHeader.propTypes = {
+    mode: PropTypes.string.isRequired,
+    handleAddKey: PropTypes.func.isRequired,
+    handleImportKey: PropTypes.func.isRequired,
+    handleReactivateKeys: PropTypes.func.isRequired
 };
 
-KeysSection.defaultProps = {
-    mode: 'user'
-};
-
-export default KeysSection;
+export default AddressKeysHeader;

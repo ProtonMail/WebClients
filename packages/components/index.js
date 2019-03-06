@@ -23,6 +23,7 @@ export { default as Icons } from './components/icon/Icons';
 export { default as Input } from './components/input/Input';
 export { default as InputModal } from './components/modal/Input';
 export { default as InvoicesSection } from './containers/invoices/InvoicesSection';
+export { default as AddressKeysSection } from './containers/Keys/AddressKeysSection';
 export { default as Label } from './components/label/Label';
 export { default as LargeButton } from './components/button/LargeButton';
 export { default as LearnMore } from './components/link/LearnMore';
