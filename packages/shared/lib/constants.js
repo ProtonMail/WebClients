@@ -35,6 +35,7 @@ export const INVOICE_STATE = {
 };
 
 export const BASE_SIZE = 1024;
+export const GIGA = BASE_SIZE ** 3;
 
 export const LOGS_STATE = {
     DISABLE: 0,
