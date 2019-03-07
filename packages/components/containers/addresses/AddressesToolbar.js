@@ -7,7 +7,10 @@ import AddressModal from './AddressModal';
 
 const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
     const { isOpen, open, close } = useModal();
-    const options = members.map(({ ID: value, Name: text }) => ({ text, value }));
+    const options = members.map(({ ID: value, Name, addresses }) => ({
+        text: `${Name} (${addresses.map(({ Email }) => Email).join(', ')})`,
+        value
+    }));
 
     const handleChange = ({ target }) => {
         const member = members.data.find(({ ID }) => target.value === ID);
