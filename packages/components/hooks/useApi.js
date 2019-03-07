@@ -1,64 +1,41 @@
-import { useContext, useRef, useEffect, useCallback } from 'react';
-import ContextApi from 'proton-shared/lib/context/api';
+import { useEffect, useCallback } from 'react';
 
 import useAsync from './useAsync';
+import useApiRequest from './useApiRequest';
 
 const useApi = (fn, dependencies) => {
-    const { api } = useContext(ContextApi);
-    const abortRef = useRef();
+    const { request, cancel } = useApiRequest();
+    const { loading, result, error, run } = useAsync(true);
 
-    const cancel = useCallback(() => {
-        if (!abortRef.current) {
-            return;
-        }
-        abortRef.current.abort();
-        abortRef.current = undefined;
-    }, []);
+    // Either user specified dependencies or empty array to always cancel requests on unmount.
+    const hookDependencies = dependencies || [];
 
-    const { result, error, loading, run } = useAsync();
-
-    const call = useCallback(
-        (config) => {
-            cancel();
-
-            const abortController = new AbortController();
-            abortRef.current = abortController;
-
-            const promise = api({
-                signal: abortController.signal,
-                ...config
-            });
-
-            return run(promise);
-        },
-        [api, run]
-    );
-
-    const request = useCallback(
+    // Callback updates
+    const requestAndSetResults = useCallback(
         (...args) => {
-            return call(fn(...args));
+            cancel();
+            const promise = request(fn(...args));
+            run(promise);
+            return promise;
         },
-        [call, ...(dependencies || [])]
+        [request, run, fn]
     );
 
-    /**
-     * If dependencies are specified, or if any dependency is changed, call the request.
-     * Always set up the cancel function on unmount.
-     */
     useEffect(() => {
+        // If user has specified any dependencies, auto request
         if (dependencies) {
-            request().catch(() => {
+            requestAndSetResults().catch(() => {
                 // catch the error to stop the "uncaught exception error"
             });
         }
         return cancel;
-    }, [...(dependencies || [])]);
+    }, [...hookDependencies]);
 
     return {
         result,
         error,
         loading,
-        request
+        request: requestAndSetResults
     };
 };
 

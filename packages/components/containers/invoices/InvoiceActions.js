@@ -1,5 +1,5 @@
 import React from 'react';
-import { SmallButton, useApi } from 'react-components';
+import { SmallButton, useApiWithoutResult } from 'react-components';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { INVOICE_STATE } from 'proton-shared/lib/constants';
@@ -7,7 +7,7 @@ import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { getInvoice } from 'proton-shared/lib/api/payments';
 
 const InvoiceActions = ({ invoice: { State, ID } }) => {
-    const { loading, request } = useApi(getInvoice);
+    const { loading, request } = useApiWithoutResult(getInvoice);
 
     const handleDownload = async () => {
         const buffer = await request(ID);

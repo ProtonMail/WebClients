@@ -27,7 +27,7 @@ const reducer = (state, action) => {
     }
 };
 
-const useAsync = () => {
+const useAsync = (setResults = true) => {
     const [{ loading, result, error }, dispatch] = useReducer(reducer, DEFAULT_STATE);
     const isMounted = useIsMounted();
 
@@ -36,12 +36,12 @@ const useAsync = () => {
         try {
             const data = await promise;
             if (isMounted()) {
-                dispatch({ type: 'success', payload: data });
+                dispatch({ type: 'success', payload: setResults ? data : undefined });
             }
             return data;
         } catch (e) {
             if (isMounted() && e.name !== 'AbortError') {
-                dispatch({ type: 'error', payload: e });
+                dispatch({ type: 'error', payload: setResults ? e : undefined });
             }
             throw e;
         }
