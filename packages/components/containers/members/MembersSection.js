@@ -2,7 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { c, jt } from 'ttag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Table, TableHeader, SubTitle, Block, Alert, LearnMore, Search, TableBody, TableRow } from 'react-components';
+import {
+    Table,
+    TableHeader,
+    Info,
+    SubTitle,
+    Block,
+    Alert,
+    LearnMore,
+    Search,
+    TableBody,
+    TableRow
+} from 'react-components';
 import { Link } from 'react-router-dom';
 import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 import { normalize } from 'proton-shared/lib/helpers/string';
@@ -62,8 +73,14 @@ const MembersSection = ({ members, fetchMembers }) => {
                     cells={[
                         c('Title header for members table').t`Name`,
                         c('Title header for members table').t`Addresses`,
-                        c('Title header for members table').t`Role`,
-                        c('Title header for members table').t`Private`,
+                        <>
+                            {c('Title header for members table').t`Role`}
+                            <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
+                        </>,
+                        <>
+                            {c('Title header for members table').t`Private`}
+                            <Info url="https://protonmail.com/support/knowledge-base/private-members/" />
+                        </>,
                         c('Title header for members table').t`Options`,
                         c('Title header for members table').t`Actions`
                     ]}

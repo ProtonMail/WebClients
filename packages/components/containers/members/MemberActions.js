@@ -1,22 +1,21 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { SmallButton, ConfirmModal, useModal, Alert } from 'react-components';
+import { SmallButton, ConfirmModal, useModal, Alert, useApi } from 'react-components';
 import { c } from 'ttag';
 import { connect } from 'react-redux';
-import ContextApi from 'proton-shared/lib/context/api';
 import { removeMember } from 'proton-shared/lib/api/members';
 import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
 import EditMemberModal from './EditMemberModal';
 
 const MemberActions = ({ member }) => {
-    const { api } = useContext(ContextApi);
+    const { request } = useApi(removeMember);
     const { isOpen: showEdit, open: openEdit, close: closeEdit } = useModal();
     const { isOpen: showDelete, open: openDelete, close: closeDelete } = useModal();
 
     const handleConfirmDelete = async () => {
         closeDelete();
-        await api(removeMember(member.ID));
+        await request(member.ID);
         createNotification({ text: c('Success message').t`User deleted` });
     };
 
