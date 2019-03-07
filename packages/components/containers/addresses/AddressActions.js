@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Dropdown, DropdownMenu, useApi, useModal } from 'react-components';
+import { Dropdown, DropdownMenu, useApiWithoutResult, useModal } from 'react-components';
 import { ADDRESS_TYPE, ADDRESS_STATUS } from 'proton-shared/lib/constants';
 import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
@@ -13,16 +13,14 @@ const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 const { STATUS_DISABLED, STATUS_ENABLED } = ADDRESS_STATUS;
 
 const AddressActions = ({ address, user, createNotification }) => {
-    const { request: requestDelete } = useApi(() => deleteAddress(address.ID));
-    const { request: requestEnable } = useApi(() => enableAddress(address.ID));
-    const { request: requestDisable } = useApi(() => disableAddress(address.ID));
+    const { Status, Type, ID } = address;
+    const { request: requestDelete } = useApiWithoutResult(() => deleteAddress(ID));
+    const { request: requestEnable } = useApiWithoutResult(() => enableAddress(ID));
+    const { request: requestDisable } = useApiWithoutResult(() => disableAddress(ID));
     const { isOpen, open, close } = useModal();
-    const { Status, Type } = address;
     const canDelete = Type === TYPE_CUSTOM_DOMAIN;
-    const canEnable =
-        user.isAdmin && Status === STATUS_DISABLED && Type !== TYPE_ORIGINAL && address.Type !== TYPE_PREMIUM;
-    const canDisable =
-        user.isAdmin && Status === STATUS_ENABLED && Type !== TYPE_ORIGINAL && address.Type !== TYPE_PREMIUM;
+    const canEnable = user.isAdmin && Status === STATUS_DISABLED && Type !== TYPE_ORIGINAL && Type !== TYPE_PREMIUM;
+    const canDisable = user.isAdmin && Status === STATUS_ENABLED && Type !== TYPE_ORIGINAL && Type !== TYPE_PREMIUM;
 
     const handleDelete = async () => {
         await requestDelete();
