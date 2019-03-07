@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { SubTitle, Table, TableHeader, TableRow, TableBody, useApi } from 'react-components';
+import { SubTitle, Table, TableHeader, TableRow, TableBody, useApiWithoutResult } from 'react-components';
 import { queryAddresses } from 'proton-shared/lib/api/members';
 import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 
@@ -11,7 +11,7 @@ import AddressStatus from './AddressStatus';
 import AddressesToolbar from './AddressesToolbar';
 
 const AddressesSection = ({ addresses, fetchMembers, members }) => {
-    const { request, loading } = useApi((memberID) => queryAddresses(memberID));
+    const { request, loading } = useApiWithoutResult(queryAddresses);
     const [selectedAddresses, setAddresses] = useState(addresses.data);
     const [member, setMember] = useState();
 

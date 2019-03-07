@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Checkbox, useApi } from 'react-components';
+import { Checkbox, useApiWithoutResult } from 'react-components';
 import { updateCatchAll } from 'proton-shared/lib/api/domains';
 import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
 
 const AddressCatchAll = ({ organization, address, domain, createNotification }) => {
-    const { request, loading } = useApi(() => updateCatchAll(domain.ID, address.ID));
+    const { request, loading } = useApiWithoutResult(updateCatchAll);
     const [state, changeState] = useState(!!address.CatchAll);
     const hasCatchAllSupport = address.Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN && organization.Features & 1;
 
     const handleChange = async () => {
-        await request();
+        await request(domain.ID, address.ID);
         changeState(!state);
     };
 

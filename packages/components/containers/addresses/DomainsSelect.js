@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import { fetchDomains } from 'proton-shared/lib/state/domains/actions';
 import { queryAvailableDomains, queryPremiumDomains } from 'proton-shared/lib/api/domains';
 import { MEMBER_TYPE } from 'proton-shared/lib/constants';
-import { Select, useApi } from 'react-components';
+import { Select, useApiWithoutResult } from 'react-components';
 
 import { fakeEvent } from '../../helpers/component';
 
 const DomainsSelect = ({ member, onChange, user, domains, fetchDomains }) => {
-    const { request: requestAvailableDomains, loading } = useApi(queryAvailableDomains);
-    const { request: requestPremiumDomains } = useApi(queryPremiumDomains);
+    const { request: requestAvailableDomains, loading } = useApiWithoutResult(queryAvailableDomains);
+    const { request: requestPremiumDomains } = useApiWithoutResult(queryPremiumDomains);
     const [options, setOptions] = useState([]);
     const [domain, setDomain] = useState('');
 

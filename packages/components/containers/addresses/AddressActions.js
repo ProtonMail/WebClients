@@ -14,28 +14,28 @@ const { STATUS_DISABLED, STATUS_ENABLED } = ADDRESS_STATUS;
 
 const AddressActions = ({ address, user, createNotification }) => {
     const { Status, Type, ID } = address;
-    const { request: requestDelete } = useApiWithoutResult(() => deleteAddress(ID));
-    const { request: requestEnable } = useApiWithoutResult(() => enableAddress(ID));
-    const { request: requestDisable } = useApiWithoutResult(() => disableAddress(ID));
+    const { request: requestDelete } = useApiWithoutResult(deleteAddress);
+    const { request: requestEnable } = useApiWithoutResult(enableAddress);
+    const { request: requestDisable } = useApiWithoutResult(disableAddress);
     const { isOpen, open, close } = useModal();
     const canDelete = Type === TYPE_CUSTOM_DOMAIN;
     const canEnable = user.isAdmin && Status === STATUS_DISABLED && Type !== TYPE_ORIGINAL && Type !== TYPE_PREMIUM;
     const canDisable = user.isAdmin && Status === STATUS_ENABLED && Type !== TYPE_ORIGINAL && Type !== TYPE_PREMIUM;
 
     const handleDelete = async () => {
-        await requestDelete();
+        await requestDelete(ID);
         // TODO call event manager
         createNotification({ text: c('Success notification').t`Address deleted` });
     };
 
     const handleEnable = async () => {
-        await requestEnable();
+        await requestEnable(ID);
         // TODO call event manager
         createNotification({ text: c('Success notification').t`Address enabled` });
     };
 
     const handleDisable = async () => {
-        await requestDisable();
+        await requestDisable(ID);
         // TODO call event manager
         createNotification({ text: c('Success notification').t`Address disabled` });
     };

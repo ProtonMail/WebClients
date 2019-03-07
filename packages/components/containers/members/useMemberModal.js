@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useApi } from 'react-components';
+import { useApiWithoutResult } from 'react-components';
 import { c } from 'ttag';
 import { GIGA } from 'proton-shared/lib/constants';
 import { createMember, createMemberAddress } from 'proton-shared/lib/api/members';
@@ -17,8 +17,8 @@ const useMemberModal = (organization, domains) => {
         vpn: 1,
         storage: FIVE_GIGA
     });
-    const { request: requestCreateMember } = useApi(createMember);
-    const { request: requestCreateMemberAddress } = useApi(createMemberAddress);
+    const { request: requestCreateMember } = useApiWithoutResult(createMember);
+    const { request: requestCreateMemberAddress } = useApiWithoutResult(createMemberAddress);
     const hasVPN = organization.MaxVPN;
     const update = (key, value) => updateModel({ ...model, [key]: value });
 

@@ -2,19 +2,19 @@ import React from 'react';
 import { c } from 'ttag';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Alert, SmallButton, ConfirmModal, useModal, useApi } from 'react-components';
+import { Alert, SmallButton, ConfirmModal, useModal, useApiWithoutResult } from 'react-components';
 import { deleteDomain } from 'proton-shared/lib/api/domains';
 import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
 import DomainModal from './DomainModal';
 
 const DomainActions = ({ domain, createNotification }) => {
-    const { request, loading } = useApi(() => deleteDomain(domain.ID));
+    const { request, loading } = useApiWithoutResult(deleteDomain);
     const { isOpen: showEditModal, open: openEditModal, close: closeEditModal } = useModal();
     const { isOpen: showDeleteModal, open: openDeleteModal, close: closeDeleteModal } = useModal();
 
     const handleConfirmDelete = async () => {
-        await request();
+        await request(domain.ID);
         closeDeleteModal();
         createNotification({ text: c('Success message').t`Domain deleted` });
     };

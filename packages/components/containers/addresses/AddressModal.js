@@ -17,14 +17,14 @@ import {
     Text,
     Input,
     RichTextEditor,
-    useApi
+    useApiWithoutResult
 } from 'react-components';
 
 import useAddressModal from './useAddressModal';
 import DomainsSelect from './DomainsSelect';
 
 const AddressModal = ({ show, onClose, member, createNotification }) => {
-    const { request } = useApi((params) => createAddress(params));
+    const { request } = useApiWithoutResult(createAddress);
     const { model, update } = useAddressModal(member);
 
     const handleChange = (key) => (event) => update(key, event.target.value);

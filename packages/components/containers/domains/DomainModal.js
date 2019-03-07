@@ -2,7 +2,16 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Modal, Button, PrimaryButton, FooterModal, ContentModal, useStep, Breadcrumb, useApi } from 'react-components';
+import {
+    Modal,
+    Button,
+    PrimaryButton,
+    FooterModal,
+    ContentModal,
+    useStep,
+    Breadcrumb,
+    useApiWithoutResult
+} from 'react-components';
 import { addDomain, getDomain } from 'proton-shared/lib/api/domains';
 import { VERIFY_STATE } from 'proton-shared/lib/constants';
 import { createNotification } from 'proton-shared/lib/state/notifications/actions';
@@ -22,8 +31,8 @@ const VERIFY_STEP = 1;
 const DomainModal = ({ show, onClose, domain, createNotification }) => {
     const [domainModel, setDomain] = useState(domain);
     const [domainName, updateDomainName] = useState(domainModel.DomainName);
-    const { request: requestGetDomain } = useApi(() => getDomain(domainModel.ID));
-    const { request: requestAddDomain } = useApi(() => addDomain(domainName));
+    const { request: requestGetDomain } = useApiWithoutResult(getDomain);
+    const { request: requestAddDomain } = useApiWithoutResult(addDomain);
     const { step, next, goTo } = useStep();
     const handleClick = (index) => goTo(index);
 
@@ -51,7 +60,7 @@ const DomainModal = ({ show, onClose, domain, createNotification }) => {
     }
 
     const verifyDomain = async () => {
-        const data = await requestGetDomain();
+        const data = await requestGetDomain(domainModel.ID);
         const { VerifyState } = data.Domain || {};
 
         if (VerifyState === VERIFY_STATE_DEFAULT) {
@@ -70,7 +79,7 @@ const DomainModal = ({ show, onClose, domain, createNotification }) => {
 
     const handleSubmit = async () => {
         if (step === DOMAIN_STEP && !domainModel.ID) {
-            const { Domain } = await requestAddDomain();
+            const { Domain } = await requestAddDomain(domainName);
             setDomain(Domain);
             return next();
         }

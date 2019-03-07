@@ -11,7 +11,7 @@ import {
     Row,
     Label,
     Input,
-    useApi
+    useApiWithoutResult
 } from 'react-components';
 
 import MemberStorageSelector from './MemberStorageSelector';
@@ -21,9 +21,9 @@ import { updateName, updateQuota, updateVPN } from 'proton-shared/lib/api/member
 
 const EditMemberModal = ({ show, onClose, member, organization, createNotification }) => {
     const [model, updateModel] = useState({ name: member.Name, storage: member.MaxSpace, vpn: member.MaxVPN });
-    const { request: requestUpdateName } = useApi(updateName);
-    const { request: requestUpdateQuota } = useApi(updateQuota);
-    const { request: requestUpdateVPN } = useApi(updateVPN);
+    const { request: requestUpdateName } = useApiWithoutResult(updateName);
+    const { request: requestUpdateQuota } = useApiWithoutResult(updateQuota);
+    const { request: requestUpdateVPN } = useApiWithoutResult(updateVPN);
     const hasVPN = organization.MaxVPN;
     const handleChangeName = ({ target }) => updateModel({ ...model, name: target.value });
     const handleChangeStorage = (storage) => updateModel({ ...model, storage });

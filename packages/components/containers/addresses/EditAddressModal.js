@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { updateAddress } from 'proton-shared/lib/api/addresses';
 import {
     Modal,
     ContentModal,
@@ -13,17 +14,17 @@ import {
     ResetButton,
     PrimaryButton,
     FooterModal,
-    useApi
+    useApiWithoutResult
 } from 'react-components';
 import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
 const EditAddressModal = ({ show, onClose, address, createNotification }) => {
-    const { request } = useApi();
+    const { request } = useApiWithoutResult(updateAddress);
     const [model, updateModel] = useState({ displayName: address.DisplayName, signature: address.Signature });
     const handleDisplayName = (event) => updateModel({ ...model, displayName: event.target.value });
     const handleSignature = (value) => updateModel({ ...model, signature: value });
     const handleSubmit = async () => {
-        await request({ DisplayName: model.displayName, Signature: model.signature });
+        await request(address.ID, { DisplayName: model.displayName, Signature: model.signature });
         // TODO call event manager
         onClose();
         createNotification({ text: c('Success').t`Address updated` });

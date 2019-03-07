@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SmallButton, ConfirmModal, useModal, Alert, useApi } from 'react-components';
+import { SmallButton, ConfirmModal, useModal, Alert, useApiWithoutResult } from 'react-components';
 import { c } from 'ttag';
 import { connect } from 'react-redux';
 import { removeMember } from 'proton-shared/lib/api/members';
@@ -9,7 +9,7 @@ import { createNotification } from 'proton-shared/lib/state/notifications/action
 import EditMemberModal from './EditMemberModal';
 
 const MemberActions = ({ member }) => {
-    const { request } = useApi(removeMember);
+    const { request } = useApiWithoutResult(removeMember);
     const { isOpen: showEdit, open: openEdit, close: closeEdit } = useModal();
     const { isOpen: showDelete, open: openDelete, close: closeDelete } = useModal();
 
