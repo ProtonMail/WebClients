@@ -20,6 +20,7 @@ export { default as HeaderModal } from './components/modal/Header';
 export { default as Href } from './components/link/Href';
 export { default as Icon } from './components/icon/Icon';
 export { default as Icons } from './components/icon/Icons';
+export { default as Info } from './components/link/Info';
 export { default as Input } from './components/input/Input';
 export { default as InputModal } from './components/modal/Input';
 export { default as InvoicesSection } from './containers/invoices/InvoicesSection';
