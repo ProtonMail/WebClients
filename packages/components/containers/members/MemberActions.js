@@ -7,7 +7,7 @@ import ContextApi from 'proton-shared/lib/context/api';
 import { removeMember } from 'proton-shared/lib/api/members';
 import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
-import MemberModal from './MemberModal';
+import EditMemberModal from './EditMemberModal';
 
 const MemberActions = ({ member }) => {
     const { api } = useContext(ContextApi);
@@ -23,7 +23,7 @@ const MemberActions = ({ member }) => {
     return (
         <>
             <SmallButton onClick={openEdit}>{c('Action').t`Edit`}</SmallButton>
-            <MemberModal show={showEdit} onClose={closeEdit} member={member} />
+            <EditMemberModal show={showEdit} onClose={closeEdit} member={member} />
             <SmallButton onClick={openDelete}>{c('Action').t`Delete`}</SmallButton>
             <ConfirmModal show={showDelete} onClose={closeDelete} onConfirm={handleConfirmDelete}>
                 <Alert>{c('Info')
