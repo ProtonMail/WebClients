@@ -45,8 +45,6 @@ const MembersSection = ({ members, fetchMembers }) => {
     const handleAddMember = () => openNewMemberModal();
     const handleSearch = (value) => setKeywords(value);
 
-    const addNewMember = () => {};
-
     const search = (members = []) => {
         if (!keywords) {
             return members;
@@ -81,7 +79,7 @@ const MembersSection = ({ members, fetchMembers }) => {
             </Alert>
             <Block className="flex flex-spacebetween">
                 <PrimaryButton onClick={handleAddMember}>{c('Action').t`Add user`}</PrimaryButton>
-                <MemberModal show={showNewMemberModal} onClose={closeNewMemberModal} onConfirm={addNewMember} />
+                <MemberModal show={showNewMemberModal} onClose={closeNewMemberModal} />
                 <Search
                     onChange={handleSearch}
                     placeholder={c('Placeholder').t`Search for User and Addresses`}
