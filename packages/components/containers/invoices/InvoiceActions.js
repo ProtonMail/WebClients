@@ -7,10 +7,10 @@ import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { getInvoice } from 'proton-shared/lib/api/payments';
 
 const InvoiceActions = ({ invoice: { State, ID } }) => {
-    const { loading, request } = useApi(() => getInvoice(ID));
+    const { loading, request } = useApi(getInvoice);
 
     const handleDownload = async () => {
-        const buffer = await request(getInvoice(ID));
+        const buffer = await request(ID);
         const filename = c('Title for PDF file').t`ProtonMail invoice` + ` ${ID}.pdf`;
         const blob = new Blob([buffer], { type: 'application/pdf' });
 
