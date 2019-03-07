@@ -6,25 +6,13 @@ import { Table, TableHeader, SubTitle, Block, Alert, LearnMore, Search, TableBod
 import { Link } from 'react-router-dom';
 import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 import { normalize } from 'proton-shared/lib/helpers/string';
-import { USER_ROLES } from 'proton-shared/lib/constants';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
 import AddMemberButton from './AddMemberButton';
-
-const SUPER_ADMIN_ROLE = 'superman';
-
-const ROLES = {
-    [USER_ROLES.ADMIN_ROLE]: c('User role').t`Admin`,
-    [USER_ROLES.MEMBER_ROLE]: c('User role').t`Member`,
-    [SUPER_ADMIN_ROLE]: c('User role').t`Primary Admin`
-};
-
-const PRIVATE = {
-    0: c('Status for member').t`No`,
-    1: c('Status for member').t`Yes`
-};
+import MemberOptions from './MemberOptions';
+import MemberRole from './MemberRole';
+import MemberPrivate from './MemberPrivate';
 
 const MembersSection = ({ members, fetchMembers }) => {
     const [keywords, setKeywords] = useState('');
@@ -42,9 +30,6 @@ const MembersSection = ({ members, fetchMembers }) => {
             return normalize(Name).includes(normalizedWords);
         });
     };
-
-    const formatSize = ({ UsedSpace, MaxSpace }) =>
-        `${humanSize(UsedSpace, 'GB', true)} / ${humanSize(MaxSpace, 'GB')}`;
 
     useEffect(() => {
         fetchMembers();
@@ -79,7 +64,7 @@ const MembersSection = ({ members, fetchMembers }) => {
                         c('Title header for members table').t`Addresses`,
                         c('Title header for members table').t`Role`,
                         c('Title header for members table').t`Private`,
-                        c('Title header for members table').t`Storage`,
+                        c('Title header for members table').t`Options`,
                         c('Title header for members table').t`Actions`
                     ]}
                 />
@@ -92,9 +77,9 @@ const MembersSection = ({ members, fetchMembers }) => {
                                 cells={[
                                     member.Name,
                                     <MemberAddresses key={key} member={member} />,
-                                    ROLES[member.Subscriber ? SUPER_ADMIN_ROLE : member.Role],
-                                    PRIVATE[member.Private],
-                                    formatSize(member),
+                                    <MemberRole key={key} member={member} />,
+                                    <MemberPrivate key={key} member={member} />,
+                                    <MemberOptions key={key} member={member} />,
                                     <MemberActions key={key} member={member} />
                                 ]}
                             />
