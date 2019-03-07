@@ -22,7 +22,9 @@ export const fetchMembers = () => {
                 })
             );
 
-            return dispatch(setAction(members));
+            dispatch(setAction(members));
+
+            return members;
         } catch (error) {
             dispatch(resetAction());
             throw error;
