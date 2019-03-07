@@ -6,16 +6,13 @@
   border-radius: $global-border-radius;
 }
 
+$block-info-border-width: 3px;
 [class*="block-info"] {
-  @extend .p1;
+  padding: .5em 1.2em;
   color: $pm-global-grey;
   background-color: $pm-global-light;
-  border-left-width: $global-border-radius;
+  border-left-width: $block-info-border-width;
   border-left-style: solid;
-}
-.block-info-standard {
-  border-color: $pm-blue;
-  background-color: transparent;
 }
 .block-info {
   border-color: $pm-blue;
@@ -26,3 +23,12 @@
 .block-info-warning {
   border-color: $pm-global-attention;
 }
+
+[class*="block-info-standard"] {
+  padding: .2em 1.2em;
+}
+.block-info-standard {
+  border-color: $pm-blue;
+  background-color: transparent;
+}
+// other colors might be added later
