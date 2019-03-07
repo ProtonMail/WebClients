@@ -1,21 +1,23 @@
 export const noop = () => {};
 
-export const debounce = (func, ms, immediate) => {
+export const debounce = (func, wait, immediate) => {
     let timeout;
 
-    return function(...args) {
+    return function executedFunction({ ...args }) {
+        const context = this;
+
+        const later = () => {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+
+        const callNow = immediate && !timeout;
+
         clearTimeout(timeout);
 
-        timeout = setTimeout(() => {
-            timeout = null;
-            if (!immediate) {
-                func.apply(this, args);
-            }
-        }, ms);
+        timeout = setTimeout(later, wait);
 
-        if (immediate && !timeout) {
-            func.apply(this, [...args]);
-        }
+        if (callNow) func.apply(context, args);
     };
 };
 
