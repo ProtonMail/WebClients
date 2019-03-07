@@ -2,28 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { c, jt } from 'ttag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-    Table,
-    TableHeader,
-    SubTitle,
-    Block,
-    PrimaryButton,
-    Alert,
-    LearnMore,
-    Search,
-    useModal,
-    TableBody,
-    TableRow
-} from 'react-components';
+import { Table, TableHeader, SubTitle, Block, Alert, LearnMore, Search, TableBody, TableRow } from 'react-components';
 import { Link } from 'react-router-dom';
 import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { USER_ROLES } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import MemberModal from './MemberModal';
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
+import AddMemberButton from './AddMemberButton';
 
 const SUPER_ADMIN_ROLE = 'superman';
 
@@ -41,8 +29,6 @@ const PRIVATE = {
 const MembersSection = ({ members, fetchMembers }) => {
     const [keywords, setKeywords] = useState('');
     const [membersSelected, setMembers] = useState(members.data);
-    const { isOpen: showNewMemberModal, open: openNewMemberModal, close: closeNewMemberModal } = useModal();
-    const handleAddMember = () => openNewMemberModal();
     const handleSearch = (value) => setKeywords(value);
 
     const search = (members = []) => {
@@ -78,8 +64,7 @@ const MembersSection = ({ members, fetchMembers }) => {
                 <LearnMore url="todo" />
             </Alert>
             <Block className="flex flex-spacebetween">
-                <PrimaryButton onClick={handleAddMember}>{c('Action').t`Add user`}</PrimaryButton>
-                <MemberModal show={showNewMemberModal} onClose={closeNewMemberModal} />
+                <AddMemberButton />
                 <Search
                     onChange={handleSearch}
                     placeholder={c('Placeholder').t`Search for User and Addresses`}

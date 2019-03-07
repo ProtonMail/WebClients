@@ -35,6 +35,7 @@ const EditMemberModal = ({ show, onClose, member, organization, createNotificati
             await requestUpdateVPN(model.vpn);
         }
         // TODO call event manager
+        onClose();
         createNotification({ text: c('Success').t`User updated` });
     };
     return (
@@ -47,6 +48,7 @@ const EditMemberModal = ({ show, onClose, member, organization, createNotificati
                         id="nameInput"
                         placeholder="Thomas A. Anderson"
                         onChange={handleChangeName}
+                        required
                     />
                 </Row>
                 <Row>

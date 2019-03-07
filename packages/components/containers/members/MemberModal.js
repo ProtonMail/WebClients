@@ -1,6 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import { c } from 'ttag';
+import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import {
     Modal,
     ContentModal,
@@ -10,63 +12,101 @@ import {
     Row,
     Label,
     Password,
-    Input
+    Input,
+    Checkbox,
+    Select,
+    Text
 } from 'react-components';
-import ContextApi from 'proton-shared/lib/context/api';
 
 import MemberStorageSelector from './MemberStorageSelector';
 import MemberVPNSelector from './MemberVPNSelector';
+import useMemberModal from './useMemberModal';
 
-const MemberModal = ({ show, onClose, member }) => {
-    const { api } = useContext(ContextApi);
-    const { ID, Name = '' } = member;
-    const isUpdate = ID;
-    const title = isUpdate ? c('Title').t`Update user` : c('Title').t`Add user`;
-    const [model, updateModel] = useState({ name: Name, password: '', confirm: '', address: '', domain: '' });
+const MemberModal = ({ show, onClose, organization, domains, createNotification }) => {
+    const { model, update, hasVPN, save, check } = useMemberModal(organization, domains);
+    const domainOptions = domains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
+    const handleChange = (key) => ({ target }) => update(key, target.value);
+    const handleChangePrivate = ({ target }) => update('private', target.checked);
+    const handleChangeStorage = (value) => update('storage', value);
+    const handleChangeVPN = (value) => update('vpn', value);
 
     const handleSubmit = async () => {
-        await api();
+        try {
+            check();
+        } catch (error) {
+            createNotification({ type: 'error', text: error.message });
+        }
+
+        await save();
+        // TODO call event mananger
         onClose();
+        createNotification({ text: c('Success').t`User created` });
     };
 
-    const handleChangePassword = (event) => updateModel({ password: event.target.value });
-    const handleChangeConfirmPassword = (event) => updateModel({ confirm: event.target.value });
-    const handleChangeName = (event) => updateModel({ name: event.target.value });
-    const handleChangeAddress = (event) => updateModel({ address: event.target.value });
-    const handleChangeStorage = () => {};
-    const handleChangeVPN = () => {};
-
     return (
-        <Modal show={show} onClose={onClose} title={title}>
+        <Modal show={show} onClose={onClose} title={c('Title').t`Add user`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
-                    <Input id="nameInput" placeholder="Thomas A. Anderson" onChange={handleChangeName} />
+                    <div className="flex-autogrid">
+                        <Input
+                            id="nameInput"
+                            className="flex-autogrid-item"
+                            placeholder="Thomas A. Anderson"
+                            onChange={handleChange('name')}
+                            required
+                        />
+                        <Label className="flex-autogrid-item">
+                            <Checkbox checked={model.private} onChange={handleChangePrivate} />{' '}
+                            {c('Label for new member').t`Private`}
+                        </Label>
+                    </div>
                 </Row>
+                {model.private ? null : (
+                    <Row>
+                        <Label>{c('Label').t`Key strength`}</Label>
+                    </Row>
+                )}
                 <Row>
                     <Label>{c('Label').t`Password`}</Label>
                     <div className="flex-autogrid">
                         <Password
+                            value={model.password}
                             className="flex-autogrid-item mb1"
-                            onChange={handleChangePassword}
+                            onChange={handleChange('password')}
                             placeholder={c('Placeholder').t`Password`}
+                            required
                         />
                         <Password
+                            value={model.confirm}
                             className="flex-autogrid-item"
-                            onChange={handleChangeConfirmPassword}
+                            onChange={handleChange('confirm')}
                             placeholder={c('Placeholder').t`Confirm Password`}
+                            required
                         />
                     </div>
                 </Row>
                 <Row>
                     <Label>{c('Label').t`Address`}</Label>
-                    <div>
-                        <Input onChange={handleChangeAddress} placeholder={c('Placeholder').t`Address`} />
-                        <span>{model.domain}</span>
+                    <div className="flex-autogrid">
+                        <Input onChange={handleChange('address')} placeholder={c('Placeholder').t`Address`} required />
+                        {domainOptions.length === 1 ? (
+                            <Text>{`@${domainOptions[0].value}`}</Text>
+                        ) : (
+                            <Select options={domainOptions} value={model.domain} onChange={handleChange('domain')} />
+                        )}
                     </div>
                 </Row>
-                <MemberStorageSelector member={member} onChange={handleChangeStorage} />
-                <MemberVPNSelector member={member} onChange={handleChangeVPN} />
+                <Row>
+                    <Label>{c('Label').t`Account storage`}</Label>
+                    <MemberStorageSelector organization={organization} onChange={handleChangeStorage} />
+                </Row>
+                {hasVPN ? (
+                    <Row>
+                        <Label>{c('Label').t`VPN connections`}</Label>
+                        <MemberVPNSelector organization={organization} onChange={handleChangeVPN} />
+                    </Row>
+                ) : null}
                 <FooterModal>
                     <ResetButton>{c('Action').t`Cancel`}</ResetButton>
                     <PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>
@@ -79,11 +119,14 @@ const MemberModal = ({ show, onClose, member }) => {
 MemberModal.propTypes = {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
-    member: PropTypes.object
+    organization: PropTypes.object.isRequired,
+    createNotification: PropTypes.func.isRequired,
+    domains: PropTypes.array.isRequired
 };
 
-MemberModal.defaultProps = {
-    member: {}
-};
+const mapDispatchToProps = { createNotification };
 
-export default MemberModal;
+export default connect(
+    null,
+    mapDispatchToProps
+)(MemberModal);
