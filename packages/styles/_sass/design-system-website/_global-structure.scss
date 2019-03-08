@@ -1,3 +1,7 @@
+/* fix bug on Chrome */
+body {
+  @extend .no-scroll;
+}
 /* === page === */
 .aside {
   background: $pm-global-grey;
