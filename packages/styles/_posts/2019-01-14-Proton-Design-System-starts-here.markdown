@@ -41,8 +41,8 @@ categories: update announcement
 <p>As we all love security, quality and privacy, we have here:</p>
 
 <div class="aligncenter">
-  <p><img src="/assets/img/security_headers.png" alt="A+ to Security Headers" /></p>
-  <p><img src="/assets/img/dareboost.png" alt="100% at Dareboost" /></p>
-  <p><img src="/assets/img/observatory.png" alt="A+ to Mozilla Observatory" /></p>
+  <p><img src="/assets/img/design-system-website/security_headers.png" alt="A+ to Security Headers" /></p>
+  <p><img src="/assets/img/design-system-website/dareboost.png" alt="100% at Dareboost" /></p>
+  <p><img src="/assets/img/design-system-website/observatory.png" alt="A+ to Mozilla Observatory" /></p>
 </div>
 

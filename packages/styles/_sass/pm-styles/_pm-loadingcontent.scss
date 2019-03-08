@@ -1,5 +1,5 @@
 [aria-busy="true"] {
-    background-image: url(/assets/img/loading.gif);
+    background-image: url(/assets/img/shared/loading.gif);
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
@@ -23,7 +23,7 @@ td[aria-busy="true"] {
     right: 0;
     left: 0;
     bottom: 0;
-    background: #fff url(/assets/img/loading.gif) 50% 50% no-repeat;
+    background: #fff url(/assets/img/shared/loading.gif) 50% 50% no-repeat;
   }
 }
 

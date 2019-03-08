@@ -3,7 +3,7 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
-  Content-Security-Policy: "upgrade-insecure-requests;  block-all-mixed-content; default-src 'none' ;  script-src 'self' *.cloudfront.net ; style-src 'self' *.cloudfront.net 'sha384-Pp7PqCRNYLvvTHJsxPJZ7eBgl1saOZixbOYVzQxTU/rN8NC24xVFIUoMraLGEamz' ; img-src 'self'; font-src 'self';  connect-src 'self' ; child-src 'self' ; frame-ancestors 'self'  ; manifest-src 'self' ; worker-src 'self' ; base-uri 'self' ; form-action 'self' ; "
+  Content-Security-Policy: "upgrade-insecure-requests;  block-all-mixed-content; default-src 'none' ;  script-src 'self' *.cloudfront.net ; style-src 'self' *.cloudfront.net 'sha256-5+IMlK8uJSNhlKCuxR4+kod6USumoLAu2tceFwHI1Gw=' ; img-src 'self'; font-src 'self';  connect-src 'self' ; child-src 'self' ; frame-ancestors 'self'  ; manifest-src 'self' ; worker-src 'self' ; base-uri 'self' ; form-action 'self' ; "
   Feature-Policy: "geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'self'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'self'; fullscreen 'self'; payment 'none' ;"
 
 /*.css

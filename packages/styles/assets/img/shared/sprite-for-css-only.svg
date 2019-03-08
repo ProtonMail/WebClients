@@ -1,13 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
 
 <!-- don't touch this part without updating CSP header => bug Firefox https://bugzilla.mozilla.org/show_bug.cgi?id=1262842#c33 -->
-<style nonce="666">use { display: none; } 
+<style>use { display: none; } 
 use:target { display: block; } 
 .white { fill: #fff; } 
 .black { fill: #000; }
 .rotated-right { 
-  transform: rotateZ(-90deg); 
-  transform-origin: center;
+-webkit-transform: rotateZ(-90deg); 
+transform: rotateZ(-90deg); 
+-webkit-transform-origin: center; 
+transform-origin: center;
 }</style> 
 
   <symbol id="symbol-search"> 
