@@ -11,10 +11,8 @@ function simpleFilter() {
     const computeFromTree = (filter) => {
         const simple = Sieve.fromTree(filter.Tree);
 
-        // FIXME FILTER MIGRATION: REMOVE IT
         const fromSimple = Sieve.toTree(simple, filter.Version).filter(({ Type }) => Type !== 'Comment');
         const original = filter.Tree.filter(({ Type }) => Type !== 'Comment');
-        // END REMOVE
 
         return _.isEqual(fromSimple, original) && simple;
     };
