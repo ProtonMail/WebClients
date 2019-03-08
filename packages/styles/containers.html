@@ -8,6 +8,8 @@ keywords: containers, proton, examples
 section: design
 ---
 
+<h2>Container with border</h2>
+
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
   <div class="w49 pt0-5">
     <div class="bordered-container">
@@ -28,17 +30,17 @@ section: design
 
 
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
-    <div class="w49">
-        <div class="bordered-container p1 mt0-5">
-            This container has no padding/margin by default. 
-            You have to add them.
-            <div class="bordered-container p1 mt1">
-                It can be nested
-            </div>
-            <div class="bordered-container p1 mt1">
-                several times
-            </div>
-        </div>
+  <div class="w49">
+    <div class="bordered-container p1 mt0-5">
+      This container has no padding/margin by default. 
+      You have to add them.
+      <div class="bordered-container p1 mt1">
+        It can be nested
+      </div>
+      <div class="bordered-container p1 mt1">
+        several times
+      </div>
+    </div>
   </div>
   <div class="w49 aligncenter flex-self-vcenter">
     <pre class=" language-markup"><code>&lt;div class="bordered-container p1 mt0-5"&gt;
@@ -54,6 +56,38 @@ section: design
 </code></pre>
   </div>
 </div>
+
+<h2>“Domain” breadcrumb</h2>
+
+
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <ul class="breadcrumb-container unstyled inline-flex pl0-5 pr0-5">
+      <li class="breadcrumb-item"><button type="button" class="breadcrumb-button">Domain</button></li>
+      <li class="breadcrumb-item"><button type="button" class="breadcrumb-button">Verify</button></li>
+      <li class="breadcrumb-item"><button type="button" class="breadcrumb-button" disabled aria-current="step">Addresses</button></li>
+      <li class="breadcrumb-item"><button type="button" class="breadcrumb-button">MX</button></li>
+      <li class="breadcrumb-item"><button type="button" class="breadcrumb-button">SPF</button></li>
+      <li class="breadcrumb-item"><button type="button" class="breadcrumb-button">DKIM</button></li>
+      <li class="breadcrumb-item"><button type="button" class="breadcrumb-button">DMARC</button></li>
+    </ul>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;ul class="breadcrumb-container unstyled inline-flex pl0-5 pr0-5"&gt;
+  &lt;li class="breadcrumb-item"&gt;
+    &lt;button type="button" class="breadcrumb-button"&gt;Domain&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="breadcrumb-item"&gt;
+    &lt;button type="button" class="breadcrumb-button" <strong>disabled aria-current="step</strong>"&gt;Addresses&lt;/button&gt;
+  &lt;/li&gt;
+  …
+&lt;/ul&gt;
+</code></pre>
+  </div>
+</div>
+
+<h2>Information block</h2>
 
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
   <div class="w49 pt0-5">
