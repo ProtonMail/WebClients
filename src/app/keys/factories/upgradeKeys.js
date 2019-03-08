@@ -1,10 +1,11 @@
-import { decryptPrivateKey, encodeUtf8Base64, reformatKey } from 'pmcrypto';
 import _ from 'lodash';
+import { decryptPrivateKey, encodeUtf8Base64, reformatKey } from 'pmcrypto';
+import { generateKeySalt, computeKeyPassword } from 'pm-srp';
 
 import { PAID_ADMIN_ROLE, MAILBOX_PASSWORD_KEY } from '../../constants';
 
 /* @ngInject */
-function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, passwords, secureSessionStorage) {
+function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, secureSessionStorage) {
     /**
      * Reformat organization keys
      * @param  {String} password
@@ -123,11 +124,10 @@ function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, pass
 
     return ({ mailboxPassword = '', oldSaltedPassword = '', user = {} }) => {
         let passwordComputed = '';
-        const keySalt = passwords.generateKeySalt();
+        const keySalt = generateKeySalt();
         const loginPassword = user.PasswordMode === 1 ? mailboxPassword : '';
 
-        return passwords
-            .computeKeyPassword(mailboxPassword, keySalt)
+        return computeKeyPassword(mailboxPassword, keySalt)
             .then((password) => {
                 passwordComputed = password;
                 const collection = manageUserKeys(passwordComputed, oldSaltedPassword, user);

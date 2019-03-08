@@ -1,4 +1,4 @@
-import { decryptMessage, getCleartextMessage, getMessage, getSignature, verifyMessage } from 'pmcrypto';
+import { decryptMessage, createCleartextMessage, getMessage, getSignature, verifyMessage } from 'pmcrypto';
 import vCard from 'vcf';
 
 import { CONTACT_ERROR } from '../../errors';
@@ -52,7 +52,7 @@ function extractCards() {
             try {
                 const signature = await getSignature(Signature);
                 const { verified } = await verifyMessage({
-                    message: getCleartextMessage(Data),
+                    message: createCleartextMessage(Data),
                     publicKeys,
                     signature
                 });

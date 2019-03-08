@@ -1,27 +1,12 @@
 /* @ngInject */
-function Reset($http, url, srp) {
-    return {
-        // POST
-        requestResetToken(params = {}) {
-            return $http.post(url.get() + '/reset', params);
-        },
-        resetPassword(params = {}, newPassword = '') {
-            const request = (data) => {
-                const requestUrl = `${url.get()}/reset/${encodeURIComponent(data.Token)}`;
-                return $http.post(requestUrl, data);
-            };
-            return srp.getPasswordParams(newPassword, params).then(request);
-        },
-        getMailboxResetToken(params = {}) {
-            return $http.post(url.get() + '/reset/mailbox', params);
-        },
-        resetMailbox(params = {}) {
-            return $http.post(url.get() + '/reset/mailbox/' + encodeURIComponent(params.Token), params);
-        },
-        // GET
-        validateResetToken(params = {}) {
-            return $http.get(url.get() + '/reset/' + params.Username + '/' + encodeURIComponent(params.Token));
-        }
-    };
+function Reset($http, url) {
+    const requestUrl = url.build('reset');
+
+    const request = (params = {}) => $http.post(requestUrl(), params);
+
+    const validate = ({ Username, Token }) => $http.get(requestUrl(Username, encodeURIComponent(Token)));
+
+    return { request, validate };
 }
+
 export default Reset;

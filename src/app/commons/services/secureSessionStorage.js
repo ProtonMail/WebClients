@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from 'pmcrypto';
+import getRandomValues from 'get-random-values';
 
-import { getRandomValues } from '../../../helpers/webcrypto';
 import { MAILBOX_PASSWORD_KEY, OAUTH_KEY } from '../../constants';
 
 /* @ngInject */

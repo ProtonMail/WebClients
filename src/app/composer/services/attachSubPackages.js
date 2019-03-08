@@ -33,13 +33,13 @@ function attachSubPackages(dispatchers, srp) {
         try {
             const Token = await message.generateReplyToken();
 
-            const [{ data: EncToken }, verifier] = await Promise.all([
+            const [{ data: EncToken }, { Auth }] = await Promise.all([
                 encryptMessage({ data: Token, publicKeys: [], passwords: [message.Password] }),
-                srp.randomVerifier(message.Password)
+                srp.getVerify({ Password: message.Password })
             ]);
 
             return {
-                Auth: verifier.Auth,
+                Auth,
                 Type: SEND_TYPES.SEND_EO,
                 PasswordHint: message.PasswordHint,
                 Token,

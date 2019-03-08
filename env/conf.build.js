@@ -8,7 +8,14 @@ module.exports = {
     },
     babel: {
         excludedFiles: ['mailparser.js'],
-        includedNodeModules: ['asmcrypto.js', 'pmcrypto', 'sieve.js', 'angular-ui-codemirror']
+        includedNodeModules: [
+            'asmcrypto.js',
+            'pmcrypto',
+            'pm-srp',
+            'get-random-values',
+            'sieve.js',
+            'angular-ui-codemirror'
+        ]
     },
     vendor_files: {
         css: [

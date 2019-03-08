@@ -8,13 +8,13 @@ import {
     encodeBase64,
     generateKey
 } from 'pmcrypto';
-
-import { getRandomValues } from '../../../helpers/webcrypto';
+import { computeKeyPassword, generateKeySalt } from 'pm-srp';
+import getRandomValues from 'get-random-values';
 
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
 
 /* @ngInject */
-function setupKeys(passwords, Key, keysModel, memberApi) {
+function setupKeys(Key, keysModel, memberApi) {
     /**
      * Generates key pairs for a list of addresses
      * @param  {Array}  addresses  array of addresses that require keys
@@ -43,8 +43,8 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
     }
 
     async function generate(addresses = [], password = '', encryptionConfigName = DEFAULT_ENCRYPTION_CONFIG) {
-        const keySalt = passwords.generateKeySalt();
-        const mailboxPassword = await passwords.computeKeyPassword(password, keySalt);
+        const keySalt = generateKeySalt();
+        const mailboxPassword = await computeKeyPassword(password, keySalt);
 
         return {
             mailboxPassword,
@@ -128,7 +128,7 @@ function setupKeys(passwords, Key, keysModel, memberApi) {
         const payload = { KeySalt };
 
         if (AddressKeys.length) {
-            const passphrase = await passwords.computeKeyPassword(newPassword, KeySalt);
+            const passphrase = await computeKeyPassword(newPassword, KeySalt);
 
             payload.PrimaryKey = AddressKeys[0].PrivateKey;
 

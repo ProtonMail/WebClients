@@ -14,10 +14,10 @@ function upgradePassword(settingsApi, tempStorage) {
      * @return {Promise}
      */
     function send() {
-        const Auth = tempStorage.getItem(key);
-        if (Auth) {
+        const credentials = tempStorage.getItem(key);
+        if (credentials) {
             tempStorage.removeItem(key);
-            return settingsApi.passwordUpgrade(Auth);
+            return settingsApi.passwordUpgrade(credentials);
         }
         return Promise.resolve();
     }

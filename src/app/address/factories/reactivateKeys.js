@@ -1,6 +1,7 @@
 import { encryptPrivateKey, decryptPrivateKey } from 'pmcrypto';
 
 import { MAIN_KEY } from '../../constants';
+import { computeKeyPasswordWithFallback } from '../../../helpers/passwordsHelper';
 
 /* @ngInject */
 function reactivateKeys(
@@ -10,8 +11,7 @@ function reactivateKeys(
     Key,
     keysModel,
     eventManager,
-    gettextCatalog,
-    passwords
+    gettextCatalog
 ) {
     const FAILED_DECRYPTION_PASSWORD = 1;
     const FAILED_KEY_REACTIVATE = 2;
@@ -97,7 +97,7 @@ function reactivateKeys(
     const reactivateKey = async ({ addressID, salt, key, password, oldPassword }) => {
         try {
             const { ID: keyID, PrivateKey } = key;
-            const keyPassword = await passwords.computeKeyPassword(oldPassword, salt);
+            const keyPassword = await computeKeyPasswordWithFallback(oldPassword, salt);
             const decryptedPrivateKey = await decryptPrivateKey(PrivateKey, keyPassword);
             const encryptedPrivateKey = await encryptPrivateKey(decryptedPrivateKey, password);
             const SignedKeyList = await keysModel.signedKeyList(addressID, {

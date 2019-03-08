@@ -1,35 +1,27 @@
 /* @ngInject */
 function memberApi($http, url, srp) {
     const requestUrl = url.build('members');
-    const requestSrp = url.make('members');
 
     const handleResult = ({ data = {} } = {}) => data;
 
     /**
      * Add a member to a group. This creates a new user. Returns the new {member_id} if successful.
      */
-    const create = (Obj, password) => {
-        return srp
-            .getPasswordParams(password, Obj)
-            .then((data) => $http.post(requestUrl(), data))
-            .then(handleResult);
-    };
+    const create = (data, Password) => srp.verify.post({ Password }, requestUrl(), data).then(handleResult);
 
     /**
      * Authenticate on behalf of a member to view her inbox.
      * @param {String} memberID
-     * @param {Object} params
+     * @param {Object} credentials
      * @return {Promise}
      */
-    const authenticate = (memberID, params) => {
-        return srp
-            .performSRPRequest('POST', requestSrp(memberID, 'auth'), {}, params)
-            .then(({ data = {} }) => data.UID);
-    };
+    const authenticate = (memberID, credentials) =>
+        srp.auth
+            .post(credentials, requestUrl(memberID, 'auth'))
+            .then(handleResult)
+            .then(({ UID }) => UID);
 
-    const query = () => {
-        return $http.get(requestUrl()).then(handleResult);
-    };
+    const query = () => $http.get(requestUrl()).then(handleResult);
 
     /**
      * Get member info, including UserID and key pair.
@@ -79,12 +71,10 @@ function memberApi($http, url, srp) {
     /**
      * Update login password
      * @param {String} memberID
-     * @param {String} password
+     * @param {String} Password
      * @return {Promise}
      */
-    const password = (memberID, password) => {
-        return srp.getPasswordParams(password).then((data) => $http.post(requestUrl(memberID, 'password'), data));
-    };
+    const password = (memberID, Password) => srp.verify.post({ Password }, requestUrl(memberID, 'password'));
 
     /**
      * Make account private
@@ -111,11 +101,8 @@ function memberApi($http, url, srp) {
     const updateKey = (memberID, keyID, params) => $http.put(requestUrl(memberID, 'keys', keyID), params);
     const primaryKey = (memberID, keyID) => $http.put(requestUrl(memberID, 'keys', keyID, 'primary'));
     const deleteKey = (memberID, keyID) => $http.put(requestUrl(memberID, 'keys', keyID, 'delete'));
-    const setupKey = (memberID, passParams, params) => {
-        return srp.randomVerifier(passParams).then((passParams) => {
-            return $http.post(requestUrl(memberID, 'keys', 'setup'), { ...params, ...passParams });
-        });
-    };
+    const setupKey = (memberID, Password, data) =>
+        srp.verify.post({ Password }, requestUrl(memberID, 'keys', 'setup'), data);
 
     return {
         addresses,

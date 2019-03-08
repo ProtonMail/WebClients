@@ -1,34 +1,20 @@
 /* @ngInject */
 function User($http, url, srp) {
-    const headersVersion3 = { 'x-pm-apiversion': 3 };
     const requestURL = url.build('users');
 
-    const toSRP = (type, scope, creds, data = {}) => {
-        return srp.performSRPRequest(type, `/users/${scope}`, data, creds);
-    };
-
-    const create = (params, password) => {
-        return srp.getPasswordParams(password, params).then((data) => $http.post(requestURL(), data));
-    };
-
-    const get = () => {
-        return $http
-            .get(requestURL(), {
-                header: headersVersion3
-            })
-            .then(({ data = {} } = {}) => data.User);
-    };
-
+    const create = (data, Password) => srp.verify.post({ Password }, requestURL(), data);
+    const get = () => $http.get(requestURL()).then(({ data = {} } = {}) => data.User);
     const code = (params) => $http.post(requestURL('code'), params);
     const human = () => $http.get(requestURL('human'));
     const verifyHuman = (params) => $http.post(requestURL('human'), params);
     const check = () => (params) => $http.put(requestURL('check'), params);
     const direct = () => $http.get(requestURL('direct'));
     const lock = () => $http.put(requestURL('lock'));
-    const unlock = (creds = {}) => toSRP('PUT', 'unlock', creds);
-    const password = (creds = {}) => toSRP('PUT', 'password', creds);
-    const remove = (creds = {}) => toSRP('PUT', 'delete', creds);
     const available = (params) => $http.get(requestURL('available'), params);
+
+    const unlock = (credentials) => srp.auth.put(credentials, requestURL('unlock'));
+    const password = (credentials) => srp.auth.put(credentials, requestURL('password'));
+    const remove = (credentials) => srp.auth.put(credentials, requestURL('delete'));
 
     return {
         available,

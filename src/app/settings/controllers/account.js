@@ -17,6 +17,7 @@ function AccountController(
     mailSettingsModel,
     networkActivityTracker,
     notification,
+    organizationModel,
     settingsApi,
     settingsMailApi,
     User,
@@ -116,7 +117,7 @@ function AccountController(
         function submit(currentPassword, twoFactorCode) {
             loginPasswordModal.deactivate();
             const credentials = { Password: currentPassword, TwoFactorCode: twoFactorCode };
-            const promise = settingsApi.updateEmail({ Email: $scope.notificationEmail }, credentials).then(() => {
+            const promise = settingsApi.updateEmail(credentials, { Email: $scope.notificationEmail }).then(() => {
                 userSettingsModel.set('NotificationEmail', $scope.notificationEmail);
                 form.$setUntouched();
                 form.$setPristine();
@@ -133,7 +134,7 @@ function AccountController(
             loginPasswordModal.deactivate();
             const credentials = { Password, TwoFactorCode };
             const promise = settingsApi
-                .passwordReset({ PasswordReset: $scope.passwordReset }, credentials)
+                .passwordReset(credentials, { PasswordReset: $scope.passwordReset })
                 .then(() => {
                     notification.success(gettextCatalog.getString('Preference saved', null, 'Success'));
                 })
