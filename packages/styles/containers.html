@@ -57,8 +57,8 @@ section: design
   </div>
 </div>
 
-<h2>“Domain” breadcrumb</h2>
 
+<h2>“Domain” breadcrumb</h2>
 
 
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
@@ -86,6 +86,67 @@ section: design
 </code></pre>
   </div>
 </div>
+
+
+<h2>Information panels</h2>
+
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+
+    <div class="flex flex-spacebetween">
+      <div class="w45">
+
+        <div class="information-panel bordered-container relative">
+          <div class="information-panel-image flex bg-global-light">
+            <svg viewBox="0 0 16 16" class="icon-16p mauto" role="img" aria-hidden="true" focusable="false">
+              <use xlink:href="#shape-contacts-group-people"></use>
+            </svg>
+          </div>
+          <div class="information-panel-content">
+            <p>Go to the User Settings if you want to assign and manage users to your custom Domain. </p>
+            <p class="aligncenter"><button type="button" class="pm-button-blue">Yipikai!</button></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="w45">
+
+        <div class="information-panel bordered-container relative">
+          <div class="information-panel-image flex bg-global-light">
+            <svg viewBox="0 0 16 16" class="icon-16p mauto" role="img" aria-hidden="true" focusable="false">
+              <use xlink:href="#shape-email-address"></use>
+            </svg>
+          </div>
+          <div class="information-panel-content">
+            <p>Go to the User Settings if you want to assign and manage users to your custom Domain. </p>
+            <p class="aligncenter"><button type="button" class="pm-button-blue">Wouhou!</button></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div class="<strong>information-panel bordered-container relative</strong>"&gt;
+  &lt;div class="<strong>information-panel-image flex bg-global-light</strong>"&gt;
+    &lt;svg viewBox="0 0 16 16" class="icon-16p <strong>mauto</strong>" role="img" aria-hidden="true" focusable="false"&gt;
+      &lt;use xlink:href="#<strong>shape-email-address</strong>"&gt;&lt;/use&gt;
+    &lt;svg&gt;
+  &lt;/div&gt;
+  &lt;div class="<strong>information-panel-content</strong>"&gt;
+    &lt;p&gt;Go to the User Settings…&lt;/p&gt;
+    &lt;p class="aligncenter"&gt;
+      &lt;button type="button" class="pm-button-blue"&gt;Wouhou!&lt;/button&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/ul&gt;
+</code></pre>
+  </div>
+</div>
+
+
 
 <h2>Information block</h2>
 

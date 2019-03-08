@@ -1,0 +1,30 @@
+/*
+ * Information panels
+ */
+.information-panel-image {
+  position: absolute;
+  width: 48px;
+  height: 36px;
+  top: 19px;
+  left: -12px;
+  border: 1px solid $pm-global-border;
+  border-radius: $global-border-radius;
+  border-bottom-left-radius: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    top: calc(100% + 1px);
+    left: -1px;
+    border: 6px solid transparent;
+    border-top: 6px solid $pm-global-border;
+    border-right: 6px solid $pm-global-border;
+  }
+}
+
+.information-panel-content {
+  margin: 1.6rem 2.3rem 1.6rem 5.1rem;
+}
