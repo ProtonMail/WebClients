@@ -202,7 +202,6 @@ function contactEncryption(
 
     /**
      * Decrypt the custom datas
-     * NOTE It's very important to chain the promises for the encryption to not overcharge pmcw
      * @param {Array} contacts
      * @param {Object} cancellationToken
      * @param {Boolean} progressBar
