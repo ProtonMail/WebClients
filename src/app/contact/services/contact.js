@@ -39,32 +39,29 @@ function Contact($http, dispatchers, url, chunk, contactEncryption, sanitize, ev
         return $http.get(route, { params, timeout }).then(({ data = {} } = {}) => data);
     }
 
+    const requestPagesChunked = (amount, cb, startIndex = 0) => {
+        const pages = [...new Array(amount)].map((a, i) => i + startIndex);
+        const chunks = chunk(pages, CONTACTS_REQUESTS_PER_SECOND);
+        return runChunksDelayed(chunks, cb, 1000);
+    };
+
     /**
      * Query contacts throttled to not hit rate limiting
      * @param {String} route
      * @param {Number} PageSize
-     * @param {String} LabelID
      * @param {String} key
      * @param {Number} timeout
      * @returns {Promise<Array>}
      */
-    async function queryContacts(route = '', { PageSize, LabelID, key = '' }, timeout) {
-        const data = await request(route, { PageSize, LabelID }, timeout);
-        const result = [data];
-        const n = Math.ceil(data.Total / PageSize) - 1; // We already load 1 or 2 pages
+    async function queryContacts(route = '', { PageSize, key = '' }, timeout) {
+        const requestPage = (page) => request(route, { PageSize, Page: page }, timeout);
 
-        if (n > 0) {
-            const pages = [...new Array(n)].map((a, i) => i + 1);
-            const chunks = chunk(pages, CONTACTS_REQUESTS_PER_SECOND);
+        const firstPage = await requestPage();
+        const n = Math.ceil(firstPage.Total / PageSize) - 1; // We already load 1 or 2 pages
 
-            const cb = (page) => {
-                return request(route, { PageSize, Page: page }, timeout);
-            };
+        const restPages = n > 0 ? await requestPagesChunked(n, requestPage, 1) : [];
 
-            result.push(...(await runChunksDelayed(chunks, cb, 1000)));
-        }
-
-        return result.reduce((acc, item) => acc.concat(item[key]), []);
+        return [firstPage, ...restPages].reduce((acc, item) => acc.concat(item[key]), []);
     }
 
     /**
