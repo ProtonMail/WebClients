@@ -33,7 +33,9 @@ const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm })
                 {children}
                 <Footer>
                     <Button type="reset">{cancel}</Button>
-                    <PrimaryButton type="submit">{confirm}</PrimaryButton>
+                    <PrimaryButton type="submit" autoFocus={true}>
+                        {confirm}
+                    </PrimaryButton>
                 </Footer>
             </Content>
         </Modal>

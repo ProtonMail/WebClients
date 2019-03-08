@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { SmallButton, useModal, ConfirmModal, Alert, EditCardModal } from 'react-components';
-import ContextApi from 'proton-shared/lib/context/api';
+import { connect } from 'react-redux';
+import { SmallButton, useModal, ConfirmModal, Alert, EditCardModal, useApiWithoutResult } from 'react-components';
 import { deletePaymentMethod } from 'proton-shared/lib/api/payments';
+import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
 const toCard = ({ Details }) => {
     return {
@@ -17,21 +18,23 @@ const toCard = ({ Details }) => {
     };
 };
 
-const PaymentMethodActions = ({ method, onChange }) => {
+const PaymentMethodActions = ({ method, createNotification, onChange }) => {
     const card = toCard(method);
-    const { api } = useContext(ContextApi);
+    const { request } = useApiWithoutResult(deletePaymentMethod);
     const { isOpen: deleteModal, open: openDeleteModal, close: closeDeleteModal } = useModal();
     const { isOpen: editModal, open: openEditModal, close: closeEditModal } = useModal();
 
     const deleteMethod = async () => {
-        await api(deletePaymentMethod(method.ID));
-        onChange();
+        await request(method.ID);
+        await onChange();
+        closeDeleteModal();
+        createNotification({ text: c('Success').t`Payment method deleted` });
     };
 
     return (
         <>
-            <SmallButton onClick={openEditModal}>{c('Action').t`Edit`}</SmallButton>
-            <EditCardModal card={card} show={editModal} onClose={closeEditModal} />
+            {method.Type === 'card' ? <SmallButton onClick={openEditModal}>{c('Action').t`Edit`}</SmallButton> : null}
+            <EditCardModal card={card} show={editModal} onClose={closeEditModal} onChange={onChange} />
             <SmallButton onClick={openDeleteModal}>{c('Action').t`Delete`}</SmallButton>
             <ConfirmModal
                 show={deleteModal}
@@ -48,7 +51,13 @@ const PaymentMethodActions = ({ method, onChange }) => {
 
 PaymentMethodActions.propTypes = {
     method: PropTypes.object.isRequired,
+    createNotification: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired
 };
 
-export default PaymentMethodActions;
+const mapDispatchToProps = { createNotification };
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(PaymentMethodActions);

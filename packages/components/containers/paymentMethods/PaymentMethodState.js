@@ -10,11 +10,11 @@ const PaymentMethodState = ({ method, index }) => {
     const { ExpMonth, ExpYear } = method.Details;
 
     if (ExpMonth >= month && ExpYear >= year) {
-        return <Badge type="error">{c('Label on payment method').t`Expired`}</Badge>;
+        return <Badge type="error">{`${c('Label on payment method').t`Expired`} ${ExpMonth}/${ExpYear}`}</Badge>;
     }
 
     if (!index) {
-        return <Badge type="success">{c('Label on payment method').t`Active`}</Badge>;
+        return <Badge>{c('Label on payment method').t`Default`}</Badge>;
     }
 
     return null;

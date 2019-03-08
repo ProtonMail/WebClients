@@ -8,8 +8,7 @@ import PaymentMethodsTable from './PaymentMethodsTable';
 
 const PaymentMethodsSection = () => {
     const { isOpen: showCardModal, open: openCardModal, close: closeCardModal } = useModal();
-    const { result = {}, loading } = useApi(queryPaymentMethods, []);
-
+    const { result = {}, loading, request } = useApi(queryPaymentMethods, []);
     const { PaymentMethods: paymentMethods = [] } = result;
 
     return (
@@ -22,9 +21,9 @@ const PaymentMethodsSection = () => {
             </Alert>
             <Block>
                 <PrimaryButton onClick={openCardModal}>{c('Action').t`Add payment method`}</PrimaryButton>
-                <EditCardModal show={showCardModal} onClose={closeCardModal} />
+                <EditCardModal show={showCardModal} onClose={closeCardModal} onChange={request} />
             </Block>
-            <PaymentMethodsTable loading={loading} methods={paymentMethods} />
+            <PaymentMethodsTable loading={loading} methods={paymentMethods} fetchMethods={request} />
         </>
     );
 };

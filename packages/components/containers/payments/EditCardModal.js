@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Modal, ContentModal, FooterModal, ResetButton, PrimaryButton, useLoading } from 'react-components';
-import ContextApi from 'proton-shared/lib/context/api';
+import { connect } from 'react-redux';
+import { Modal, ContentModal, FooterModal, ResetButton, PrimaryButton, useApiWithoutResult } from 'react-components';
 import { setPaymentMethod } from 'proton-shared/lib/api/payments';
+import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
 import CardForm from './CardForm';
 import useCard from './useCard';
 import toDetails from './toDetails';
 
-const EditCardModal = ({ card: existingCard, show, onClose }) => {
-    const { api } = useContext(ContextApi);
-    const { loading, loaded, load } = useLoading(false);
+const EditCardModal = ({ card: existingCard, show, onClose, onChange, createNotification }) => {
+    const { loading, request } = useApiWithoutResult(setPaymentMethod);
     const title = existingCard ? c('Title').t`Edit credit card` : c('Title').t`Add credit card`;
     const { card, updateCard, errors, isValid } = useCard(existingCard);
 
@@ -21,18 +21,14 @@ const EditCardModal = ({ card: existingCard, show, onClose }) => {
             return;
         }
 
-        try {
-            load();
-            await api(setPaymentMethod({ Type: 'card', Details: toDetails(card) }));
-            onClose();
-        } catch (error) {
-            loaded();
-            throw error;
-        }
+        await request({ Type: 'card', Details: toDetails(card) });
+        await onChange();
+        onClose();
+        createNotification({ text: c('Success').t`Payment method updated` });
     };
 
     return (
-        <Modal show={show} onClose={onClose} title={title}>
+        <Modal modalClassName="pm-modal--smaller" show={show} onClose={onClose} title={title}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <CardForm card={card} errors={errors} onChange={updateCard} loading={loading} />
                 <FooterModal>
@@ -47,7 +43,14 @@ const EditCardModal = ({ card: existingCard, show, onClose }) => {
 EditCardModal.propTypes = {
     card: PropTypes.object,
     show: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+    createNotification: PropTypes.func.isRequired
 };
 
-export default EditCardModal;
+const mapDispatchToProps = { createNotification };
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(EditCardModal);

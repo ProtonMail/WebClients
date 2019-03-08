@@ -28,7 +28,14 @@ const InputModal = ({ label, title, input: initialInput, show, onClose, onSubmit
             <Content onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor={id}>{label}</Label>
-                    <Input id={id} value={input} placeholder={placeholder} onChange={handleChange} required />
+                    <Input
+                        id={id}
+                        value={input}
+                        placeholder={placeholder}
+                        onChange={handleChange}
+                        autoFocus={true}
+                        required
+                    />
                 </Row>
                 <Footer>
                     <Button type="reset">{cancel}</Button>
