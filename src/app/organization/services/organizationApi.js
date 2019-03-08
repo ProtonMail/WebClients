@@ -29,13 +29,11 @@ function organizationApi($http, gettextCatalog, url, srp) {
 
     /**
      * Replace private key for the organization
-     * @param {Object} params
-     * @param {Object} creds
+     * @param {Object} credentials
+     * @param {Object} data
      * @return {Promise}
      */
-    const replaceKeys = (params, creds) => {
-        return srp.performSRPRequest('PUT', '/organizations/keys', params, creds);
-    };
+    const replaceKeys = (credentials, data) => srp.auth.put(credentials, requestURL('keys'), data);
 
     /**
      * Replace current organization keys and member keys
@@ -46,13 +44,11 @@ function organizationApi($http, gettextCatalog, url, srp) {
 
     /**
      * Get organization keys
-     * @param {Object} params
-     * @param {Object} creds
+     * @param {Object} credentials
+     * @param {Object} data
      * @return {Promise}
      */
-    const updateBackupKeys = (params, creds) => {
-        return srp.performSRPRequest('PUT', '/organizations/keys/backup', params, creds);
-    };
+    const updateBackupKeys = (credentials, data) => srp.auth.put(credentials, requestURL('keys', 'backup'), data);
 
     /**
      * Update organization name

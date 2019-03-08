@@ -22,30 +22,28 @@ function Key($http, url, srp) {
     };
     /**
      * Install a new key for each address
-     * @param {Object} params
+     * @param {Object} data
+     * @param {String} [Password]
      * @return {Promise}
      */
-    const setup = (params = {}, newPassword = '') => {
-        if (newPassword.length) {
-            return srp
-                .getPasswordParams(newPassword, params)
-                .then((authParams) => $http.post(requestURL('setup'), authParams));
+    const setup = (data = {}, Password = '') => {
+        if (Password.length) {
+            return srp.verify.post({ Password }, requestURL('setup'), data);
         }
 
-        return $http.post(requestURL('setup'), params);
+        return $http.post(requestURL('setup'), data);
     };
     /**
      * Install a new key for each address
-     * @param {Object} params
+     * @param {Object} data
+     * @param {String} [Password]
      * @return {Promise}
      */
-    const reset = (params = {}, newPassword = '') => {
-        if (newPassword.length) {
-            return srp
-                .getPasswordParams(newPassword, params)
-                .then((authParams) => $http.post(requestURL('reset'), authParams));
+    const reset = (data = {}, Password = '') => {
+        if (Password.length) {
+            return srp.verify.post({ Password }, requestURL('reset'), data);
         }
-        return $http.post(requestURL('reset'), params);
+        return $http.post(requestURL('reset'), data);
     };
     /**
      * Activate key
@@ -56,29 +54,27 @@ function Key($http, url, srp) {
     const activate = (keyID, params = {}) => $http.put(requestURL(keyID, 'activate'), params);
     /**
      * Update private key only, use for password updates
-     * @param {Object} params
+     * @param {Object} data
+     * @param {String} [Password]
      * @return {Promise}
      */
-    const updatePrivate = (params = {}, newPassword = '') => {
-        if (newPassword.length) {
-            return srp
-                .getPasswordParams(newPassword, params)
-                .then((authParams) => $http.put(requestURL('private'), authParams));
+    const updatePrivate = (data = {}, Password = '') => {
+        if (Password.length) {
+            return srp.verify.put({ Password }, requestURL('private'), data);
         }
-        return $http.put(requestURL('private'), params);
+        return $http.put(requestURL('private'), data);
     };
     /**
      * Upgrade private key with incorrect metadata
-     * @param {Object} params
+     * @param {Object} data
+     * @param {String} [Password]
      * @return {Promise}
      */
-    const upgrade = (params = {}, newPassword = '') => {
-        if (newPassword.length) {
-            return srp
-                .getPasswordParams(newPassword, params)
-                .then((authParams) => $http.put(requestURL('private', 'upgrade'), authParams));
+    const upgrade = (data = {}, Password = '') => {
+        if (Password.length) {
+            return srp.verify.put({ Password }, requestURL('private', 'upgrade'), data);
         }
-        return $http.put(requestURL('private', 'upgrade'), params);
+        return $http.put(requestURL('private', 'upgrade'), data);
     };
     /**
      * Make a private key primary, only for activated keys

@@ -51,8 +51,8 @@ function SecurityController(
         function submit(loginPassword, twoFactorCode) {
             const promise = settingsApi
                 .enableTwoFactor(
-                    { TwoFactorSharedSecret: sharedSecret },
-                    { TwoFactorCode: twoFactorCode, Password: loginPassword }
+                    { TwoFactorCode: twoFactorCode, Password: loginPassword },
+                    { TwoFactorSharedSecret: sharedSecret }
                 )
                 .then((data = {}) => data.TwoFactorRecoveryCodes)
                 .then((codes) => {

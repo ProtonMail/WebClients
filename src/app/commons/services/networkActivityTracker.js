@@ -43,8 +43,6 @@ function networkActivityTracker(AppModel, errorReporter, notification) {
                     message = !error.raw ? unicodeTag(error.message) : error.message;
                 } else if (error.Error) {
                     message = error.Error;
-                } else if (error.error_description) {
-                    message = error.error_description;
                 } else if (data.Error) {
                     message = data.Error;
                 } else {

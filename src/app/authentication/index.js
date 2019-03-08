@@ -16,10 +16,10 @@ import handle9001 from './services/handle9001';
 import handle10003 from './services/handle10003';
 import handleTryAgain from './services/handleTryAgain';
 import logoutManager from './services/logoutManager';
-import passwords from './services/passwords';
 import srp from './services/srp';
 import upgradePassword from './services/upgradePassword';
 import tryAgainModel from './factories/tryAgainModel';
+import loginWithFallback from './services/loginWithFallback';
 import activeSessionsModel from './factories/activeSessionsModel';
 
 export default angular
@@ -42,6 +42,7 @@ export default angular
     .factory('loginPasswordModal', loginPasswordModal)
     .factory('logoutManager', logoutManager)
     .factory('authentication', auth)
+    .factory('loginWithFallback', loginWithFallback)
     .factory('authApi', authApi)
     .factory('handle401', handle401)
     .factory('handle429', handle429)
@@ -49,7 +50,6 @@ export default angular
     .factory('handle9001', handle9001)
     .factory('handle10003', handle10003)
     .factory('handleTryAgain', handleTryAgain)
-    .factory('passwords', passwords)
     .factory('srp', srp)
     .factory('tryAgainModel', tryAgainModel)
     .factory('activeSessionsModel', activeSessionsModel)

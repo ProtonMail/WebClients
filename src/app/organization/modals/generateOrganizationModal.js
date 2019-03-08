@@ -1,5 +1,7 @@
 import _ from 'lodash';
 import { decryptPrivateKey, encryptMessage, encryptPrivateKey } from 'pmcrypto';
+import { computeKeyPassword, generateKeySalt } from 'pm-srp';
+
 import { DEFAULT_ENCRYPTION_CONFIG } from '../../constants';
 
 /* @ngInject */
@@ -8,7 +10,6 @@ function generateOrganizationModal(
     authentication,
     networkActivityTracker,
     organizationApi,
-    passwords,
     setupKeys,
     loginPasswordModal,
     notification,
@@ -47,10 +48,9 @@ function generateOrganizationModal(
                             const promises = [];
 
                             // Backup key
-                            payload.BackupKeySalt = passwords.generateKeySalt();
+                            payload.BackupKeySalt = generateKeySalt();
                             promises.push(
-                                passwords
-                                    .computeKeyPassword(password, payload.BackupKeySalt)
+                                computeKeyPassword(password, payload.BackupKeySalt)
                                     .then((keyPassword) => encryptPrivateKey(pkg, keyPassword))
                                     .then((armored) => {
                                         payload.BackupPrivateKey = armored;
@@ -99,7 +99,7 @@ function generateOrganizationModal(
                                                 };
 
                                                 organizationApi
-                                                    .replaceKeys(payload, creds)
+                                                    .replaceKeys(creds, payload)
                                                     .then(() => {
                                                         notification.success(
                                                             gettextCatalog.getString(

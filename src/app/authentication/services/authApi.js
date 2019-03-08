@@ -1,15 +1,10 @@
+import { getRandomString } from '../../../helpers/string';
+
 /* @ngInject */
 function authApi($http, url) {
     const requestURL = url.build('auth');
+    const unload = ({ data }) => data;
     return {
-        /**
-         * Authenticate
-         * @param {Object} params
-         * @return {Promise}
-         */
-        authenticate(params = {}) {
-            return $http.post(requestURL(), params);
-        },
         /**
          * Refresh an expired token
          * @param {Object} params
@@ -24,21 +19,29 @@ function authApi($http, url) {
          * @param {Object} params
          * @return {Promise}
          */
-        cookies(params = {}) {
-            return $http.post(requestURL('cookies'), params);
+        cookies({ UID, RefreshToken }) {
+            return $http.post(requestURL('cookies'), {
+                ResponseType: 'token',
+                GrantType: 'refresh_token',
+                RefreshToken,
+                UID,
+                RedirectURI: 'https://protonmail.com',
+                State: getRandomString(24)
+            });
         },
         /**
          * Set up SRP authentication request
+         * @param {String} Username
          * @return {Promise}
          */
-        info(params = {}) {
-            return $http.post(requestURL('info'), params);
+        info(Username) {
+            return $http.post(requestURL('info'), { Username }).then(unload);
         },
         /**
          * @return {Promise}
          */
         modulus() {
-            return $http.get(requestURL('modulus'));
+            return $http.get(requestURL('modulus')).then(unload);
         },
         /**
          * Revoke a token

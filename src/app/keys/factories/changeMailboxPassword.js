@@ -1,4 +1,5 @@
 import { decryptMessage, decryptPrivateKey, encryptPrivateKey, getMessage } from 'pmcrypto';
+import { computeKeyPassword, generateKeySalt } from 'pm-srp';
 
 import { PAID_ADMIN_ROLE } from '../../constants';
 
@@ -11,7 +12,6 @@ function changeMailboxPassword(
     Key,
     networkActivityTracker,
     organizationApi,
-    passwords,
     User
 ) {
     /**
@@ -21,9 +21,10 @@ function changeMailboxPassword(
      * @return {Promise}
      */
     function getUser(newMailPwd = '', keySalt = '') {
-        return Promise.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()]).then(
-            ([password, user = {}]) => ({ password, user })
-        );
+        return Promise.all([computeKeyPassword(newMailPwd, keySalt), User.get()]).then(([password, user = {}]) => ({
+            password,
+            user
+        }));
     }
 
     /**
@@ -113,7 +114,7 @@ function changeMailboxPassword(
 
     return ({ newPassword = '', onePassword = false }) => {
         const oldMailPwd = authentication.getPassword();
-        const keySalt = passwords.generateKeySalt();
+        const keySalt = generateKeySalt();
         const newLoginPassword = onePassword ? newPassword : '';
         let passwordComputed;
         const promise = getUser(newPassword, keySalt)

@@ -1,8 +1,7 @@
 import QRCode from 'qrcodejs2';
 import base32 from 'hi-base32';
 import _ from 'lodash';
-
-import { getRandomValues } from '../../../helpers/webcrypto';
+import getRandomValues from 'get-random-values';
 
 /* @ngInject */
 function sharedSecretModal(addressesModel, authentication, pmModal) {

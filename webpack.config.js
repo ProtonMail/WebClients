@@ -42,7 +42,9 @@ module.exports = {
             sass: path.resolve('./src/sass'),
             assets: path.resolve('./src/assets'),
             // Custom alias as we're building for the web (mimemessage)
-            iconv: 'iconv-lite'
+            iconv: 'iconv-lite',
+            // Ensure the same pmcrypto is used for pm-srp and angular if you symlink pm-srp to dev.
+            pmcrypto: path.resolve('./node_modules/pmcrypto')
         }
     },
     output: {

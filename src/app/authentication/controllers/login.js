@@ -17,7 +17,7 @@ function LoginController(
     helpLoginModal,
     AppModel,
     tempStorage,
-    srp
+    authApi
 ) {
     /**
      * NOTE: THIS FILE AND THE SRP NEEDS TO BE REFACTORED TO PROPERLY HANDLE ERRORS.
@@ -278,10 +278,10 @@ function LoginController(
     }
 
     function initialAuth(username, password) {
-        return srp.info(username).then((resp) => {
+        return authApi.info(username).then((resp) => {
             $scope.initialInfoResponse = resp;
 
-            if (resp.data.TwoFactor === 0) {
+            if (resp.TwoFactor === 0) {
                 // user does not have two factor enabled, we will proceed to the auth call
                 return login(username, password, null, $scope.initialInfoResponse);
             }

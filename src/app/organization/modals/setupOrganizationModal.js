@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
+import { computeKeyPassword, generateKeySalt } from 'pm-srp';
 
 import { BASE_SIZE, DEFAULT_ENCRYPTION_CONFIG } from '../../constants';
 
@@ -7,7 +8,6 @@ import { BASE_SIZE, DEFAULT_ENCRYPTION_CONFIG } from '../../constants';
 function setupOrganizationModal(
     authentication,
     pmModal,
-    passwords,
     networkActivityTracker,
     organizationApi,
     organizationModel,
@@ -150,10 +150,9 @@ function setupOrganizationModal(
                 }
 
                 payload.Tokens = [];
-                payload.BackupKeySalt = passwords.generateKeySalt();
+                payload.BackupKeySalt = generateKeySalt();
 
-                return passwords
-                    .computeKeyPassword(organizationPassword, payload.BackupKeySalt)
+                return computeKeyPassword(organizationPassword, payload.BackupKeySalt)
                     .then((keyPassword) => encryptPrivateKey(decryptedKey, keyPassword))
                     .then((armored) => (payload.BackupPrivateKey = armored))
                     .then(() => organizationApi.updateOrganizationKeys(payload));

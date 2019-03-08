@@ -1,8 +1,9 @@
 import _ from 'lodash';
-import { checkMailboxPassword, decodeBase64, decodeUtf8Base64, decryptPrivateKey, encodeUtf8Base64 } from 'pmcrypto';
+import { decodeBase64, decodeUtf8Base64, decryptPrivateKey, checkMailboxPassword, encodeUtf8Base64 } from 'pmcrypto';
+import { AUTH_VERSION, computeKeyPassword } from 'pm-srp';
 
-import CONFIG from '../../config';
 import { OAUTH_KEY, MAILBOX_PASSWORD_KEY } from '../../constants';
+import { computeKeyPasswordWithFallback } from '../../../helpers/passwordsHelper';
 
 /* @ngInject */
 function authentication(
@@ -20,8 +21,8 @@ function authentication(
     dispatchers,
     secureSessionStorage,
     User,
-    passwords,
     srp,
+    loginWithFallback,
     AppModel,
     tempStorage,
     upgradeKeys,
@@ -155,44 +156,6 @@ function authentication(
             return value ? decodeUtf8Base64(value) : undefined;
         },
 
-        randomString(length) {
-            const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-            let i;
-            let result = '';
-            const isOpera = Object.prototype.toString.call(window.opera) === '[object Opera]';
-
-            if (window.crypto && window.crypto.getRandomValues) {
-                const values = new Uint32Array(length);
-                window.crypto.getRandomValues(values);
-
-                for (i = 0; i < length; i++) {
-                    result += charset[values[i] % charset.length];
-                }
-
-                return result;
-            } else if (isOpera) {
-                // Opera's Math.random is secure, see http://lists.w3.org/Archives/Public/public-webcrypto/2013Jan/0063.html
-                for (i = 0; i < length; i++) {
-                    result += charset[Math.floor(Math.random() * charset.length)];
-                }
-
-                return result;
-            }
-            return this.semiRandomString(length);
-        },
-
-        semiRandomString(size) {
-            let string = '';
-            let i = 0;
-            const chars = '0123456789ABCDEF';
-
-            while (i++ < size) {
-                string += chars[Math.floor(Math.random() * 16)];
-            }
-
-            return string;
-        },
-
         getRefreshCookie(config) {
             $log.debug('getRefreshCookie');
             return authApi.refresh({}, config).then((response) => {
@@ -205,84 +168,32 @@ function authentication(
             });
         },
 
-        setAuthCookie(authResponse) {
+        async setAuthCookie(authResponse) {
             $log.debug('setAuthCookie');
 
-            return authApi
-                .cookies({
-                    ResponseType: 'token',
-                    ClientID: CONFIG.clientID,
-                    GrantType: 'refresh_token',
-                    RefreshToken: authResponse.RefreshToken,
-                    UID: authResponse.UID,
-                    RedirectURI: 'https://protonmail.com',
-                    State: this.randomString(24)
-                })
-                .then((result) => {
-                    $log.debug(result);
-                    $log.debug('/auth/cookies:', result);
-                    $log.debug('/auth/cookies1: resolved');
-                    AppModel.set('domoArigato', true);
-                    // forget the old headers, set the new ones
-                    $log.debug('/auth/cookies2: resolved');
-                    $log.debug('headers change', $http.defaults.headers);
-
-                    saveAuthData(result.data);
-                    AppModel.set('isLocked', false);
-
-                    return result;
-                })
-                .catch((error) => {
-                    const { data = {} } = error;
-                    $log.error('setAuthCookie2', error);
-                    // Report issue to Sentry
-                    $exceptionHandler(data.Error || error); // NOTE: remove this line once the "Invalid access token" issue is solved
-                    throw error;
-                });
+            const result = await authApi.cookies({
+                RefreshToken: authResponse.RefreshToken,
+                UID: authResponse.UID
+            });
+            AppModel.set('domoArigato', true);
+            saveAuthData(result.data);
+            AppModel.set('isLocked', false);
+            await upgradePassword.send();
         },
 
-        loginWithCredentials(creds, initialInfoResponse) {
-            const deferred = $q.defer();
-
-            if (!creds.Username || !creds.Password) {
-                deferred.reject({
-                    message: 'Username and Password are required to login'
-                });
-            } else {
-                delete $http.defaults.headers.common.Accept;
-                srp.performSRPRequest(
-                    'POST',
-                    '/auth',
-                    {
-                        Username: creds.Username,
-                        ClientID: CONFIG.clientID
-                    },
-                    creds,
-                    initialInfoResponse
-                ).then(
-                    (resp) => {
-                        // Upgrade users to the newest auth version
-                        if (resp.authVersion < passwords.currentAuthVersion) {
-                            srp.getPasswordParams(creds.Password).then((data) => {
-                                upgradePassword.store(data);
-                                deferred.resolve(resp);
-                            });
-                        } else {
-                            deferred.resolve(resp);
-                        }
-                        // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
-                    },
-                    (error) => {
-                        // TODO: This is almost certainly broken, not sure it needs to work though?
-                        console.error(error);
-                        deferred.reject({
-                            message: error.error_description
-                        });
-                    }
-                );
+        async loginWithCredentials(credentials, authInfo) {
+            if (!credentials.Username || !credentials.Password) {
+                throw new Error('Username and Password are required to login');
             }
 
-            return deferred.promise;
+            const { authVersion, result } = await loginWithFallback(credentials, authInfo);
+
+            // Upgrade users to the newest auth version
+            if (authVersion < AUTH_VERSION) {
+                upgradePassword.store(credentials);
+            }
+
+            return result;
         },
 
         existingSession() {
@@ -398,7 +309,7 @@ function authentication(
 
         // Returns an async promise that will be successful only if the mailbox password
         // proves correct (we test this by decrypting a small blob)
-        unlockWithPassword(
+        async unlockWithPassword(
             pwd,
             {
                 PrivateKey = '',
@@ -410,38 +321,24 @@ function authentication(
                 KeySalt = ''
             } = {}
         ) {
-            const req = $q.defer();
-            if (pwd) {
-                tempStorage.setItem('plainMailboxPass', pwd);
-                passwords
-                    .computeKeyPassword(pwd, KeySalt)
-                    .then((pwd) => checkMailboxPassword(PrivateKey, pwd, AccessToken))
-                    .then(
-                        ({ token, password }) => {
-                            savePassword(password);
-                            receivedCredentials({
-                                AccessToken: token,
-                                RefreshToken,
-                                UID,
-                                ExpiresIn,
-                                EventID
-                            });
-                            upgradePassword.send();
-                            req.resolve(200);
-                        },
-                        () => {
-                            req.reject({
-                                message: 'Wrong decryption password.'
-                            });
-                        }
-                    );
-            } else {
-                req.reject({
-                    message: 'Password is required.'
-                });
+            if (!pwd) {
+                throw new Error('Password is required.');
             }
 
-            return req.promise;
+            const mailboxPassword = await computeKeyPasswordWithFallback(pwd, KeySalt);
+            const { token } = await checkMailboxPassword(PrivateKey, mailboxPassword, AccessToken).catch(() => {
+                throw new Error('Wrong decryption password');
+            });
+
+            tempStorage.setItem('plainMailboxPass', pwd);
+            savePassword(mailboxPassword);
+            receivedCredentials({
+                AccessToken: token,
+                RefreshToken,
+                UID,
+                ExpiresIn,
+                EventID
+            });
         },
 
         fetchUserInfo() {

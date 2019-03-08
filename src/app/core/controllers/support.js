@@ -72,7 +72,7 @@ function SupportController(
      * Shows errors otherwise sets a flag to show a different form
      */
     function resetLostPassword() {
-        const promise = Reset.requestResetToken({
+        const promise = Reset.request({
             Username: $scope.params.username,
             NotificationEmail: $scope.params.recoveryEmail
         }).then(() => {
@@ -94,7 +94,7 @@ function SupportController(
             Token: $scope.params.resetToken
         };
 
-        const promise = Reset.validateResetToken($scope.tokenParams)
+        const promise = Reset.validate($scope.tokenParams)
             .then(({ data = {} }) => {
                 $scope.passwordMode = data.PasswordMode;
                 $scope.addresses = data.Addresses;

@@ -3,7 +3,7 @@ import { PASSWORD_MODE } from '../../constants';
 const { TWO_MODE, ONE_MODE } = PASSWORD_MODE;
 
 /* @ngInject */
-const loginPasswordInput = (userSettingsModel, srp, networkActivityTracker, gettextCatalog) => {
+const loginPasswordInput = (userSettingsModel, authApi, networkActivityTracker, gettextCatalog) => {
     const TWO_FACTOR_HIDDEN_CLASS = 'hideTwoFactor';
 
     const I18N = {
@@ -50,8 +50,8 @@ const loginPasswordInput = (userSettingsModel, srp, networkActivityTracker, gett
 
             // If two factor isn't forced, make a request to info to see if we must enable it.
             if (typeof scope.hasTwoFactor === 'undefined') {
-                const promise = srp.info().then(({ data = {} } = {}) => {
-                    setTwoFactorVisible(data.TwoFactor === 1);
+                const promise = authApi.info().then(({ TwoFactor }) => {
+                    setTwoFactorVisible(TwoFactor === 1);
                 });
                 networkActivityTracker.track(promise);
             }

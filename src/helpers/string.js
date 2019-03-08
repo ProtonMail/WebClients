@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import getRandomValues from 'get-random-values';
 
 import { EMAIL_FORMATING } from '../app/constants';
 
@@ -167,3 +168,22 @@ export function generateUID() {
 
     return `proton-web-${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
 }
+
+/**
+ * Generate a random string.
+ * @param {Number} length
+ * @return {string}
+ */
+export const getRandomString = (length) => {
+    const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let i;
+    let result = '';
+
+    const values = getRandomValues(new Uint32Array(length));
+
+    for (i = 0; i < length; i++) {
+        result += charset[values[i] % charset.length];
+    }
+
+    return result;
+};
