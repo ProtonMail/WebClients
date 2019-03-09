@@ -26,7 +26,7 @@ export const updateFilter = (filterID, { Name, Sieve, Tree, Version }) => ({
     url: `filters/${filterID}`
 });
 
-export const checkSieveFilter = ({ Sieve, Version }) => ({
+export const checkSieveFilter = ({ Sieve, Version } = {}) => ({
     method: 'put',
     url: 'filters/check',
     data: { Sieve, Version }

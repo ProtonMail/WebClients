@@ -1,10 +1,10 @@
-export const queryContacts = ({ Page = 0, PageSize = 1000, LabelID }) => ({
+export const queryContacts = ({ Page = 0, PageSize = 1000, LabelID } = {}) => ({
     url: 'contacts',
     method: 'get',
     params: { Page, PageSize, LabelID }
 });
 
-export const queryContactExport = ({ Page = 0, PageSize = 1000, LabelID }) => ({
+export const queryContactExport = ({ Page = 0, PageSize = 1000, LabelID } = {}) => ({
     url: 'contacts/export',
     method: 'get',
     params: { Page, PageSize, LabelID }
@@ -15,25 +15,25 @@ export const getContact = (contactID) => ({
     method: 'get'
 });
 
-export const addContacts = ({ Contacts, Overwrite, Labels }) => ({
+export const addContacts = ({ Contacts, Overwrite, Labels } = {}) => ({
     url: 'contacts',
     method: 'post',
     data: { Contacts, Overwrite, Labels }
 });
 
-export const updateContact = (contactID, { Cards }) => ({
+export const updateContact = (contactID, { Cards } = {}) => ({
     url: `contacts/${contactID}`,
     method: 'put',
     data: { Cards }
 });
 
-export const labelContacts = ({ LabelID, ContactIDs }) => ({
+export const labelContacts = ({ LabelID, ContactIDs } = {}) => ({
     url: 'contacts/label',
     method: 'put',
     data: { LabelID, ContactIDs }
 });
 
-export const unLabelContacts = ({ LabelID, ContactIDs }) => ({
+export const unLabelContacts = ({ LabelID, ContactIDs } = {}) => ({
     url: 'contacts/unlabel',
     method: 'put',
     data: { LabelID, ContactIDs }
@@ -50,19 +50,19 @@ export const clearContacts = () => ({
     method: 'delete'
 });
 
-export const queryContactEmails = ({ Page = 0, PageSize = 1000, Email, LabelID }) => ({
+export const queryContactEmails = ({ Page, PageSize, Email, LabelID } = {}) => ({
     url: 'contacts/emails',
     method: 'get',
     params: { Page, PageSize, Email, LabelID }
 });
 
-export const labelContactEmails = ({ LabelID, ContactEmailIDs }) => ({
+export const labelContactEmails = ({ LabelID, ContactEmailIDs } = {}) => ({
     url: 'contacts/emails/label',
     method: 'put',
     data: { LabelID, ContactEmailIDs }
 });
 
-export const unLabelContactEmails = ({ LabelID, ContactEmailIDs }) => ({
+export const unLabelContactEmails = ({ LabelID, ContactEmailIDs } = {}) => ({
     url: 'contacts/emails/unlabel',
     method: 'put',
     data: { LabelID, ContactEmailIDs }

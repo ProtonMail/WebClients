@@ -15,7 +15,7 @@ export const orderLabel = ({ LabelIDs, Type }) => ({
     data: { LabelIDs, Type }
 });
 
-export const updateLabel = (labelID, { Name, Color, Display, Notify }) => ({
+export const updateLabel = (labelID, { Name, Color, Display, Notify } = {}) => ({
     method: 'put',
     url: `labels/${labelID}`,
     data: { Name, Color, Display, Notify }

@@ -20,7 +20,7 @@ export const queryConversations = ({
     AddressID,
     ID,
     AutoWildcard
-}) => ({
+} = {}) => ({
     method: 'get',
     url: 'conversations',
     params: {
@@ -78,13 +78,13 @@ export const deleteConversations = (IDs) => ({
     data: { IDs }
 });
 
-export const labelConversations = ({ LabelID, IDs }) => ({
+export const labelConversations = ({ LabelID, IDs } = {}) => ({
     method: 'put',
     url: 'conversations/label',
     data: { LabelID, IDs }
 });
 
-export const unlabelConversations = ({ LabelID, IDs }) => ({
+export const unlabelConversations = ({ LabelID, IDs } = {}) => ({
     method: 'put',
     url: 'conversations/unlabel',
     data: { LabelID, IDs }
