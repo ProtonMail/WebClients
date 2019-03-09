@@ -5,29 +5,25 @@ import Href from './Href';
 import Icon from '../icon/Icon';
 import Tooltip from '../tooltip/Tooltip';
 
-const Info = ({ url, tooltip, title }) => {
+const wrapTooltip = (children, title) => <Tooltip title={title}>{children}</Tooltip>;
+const wrapLink = (children, url) => <Href url={url}>{children}</Href>;
+
+const Info = ({ url, title }) => {
+    let children = <Icon name="info" />;
+
     if (url) {
-        return (
-            <Href url={url} title={title}>
-                <Icon name="info" />
-            </Href>
-        );
+        children = wrapLink(children, url);
     }
 
-    if (tooltip) {
-        return (
-            <Tooltip title={tooltip}>
-                <Icon name="info" />
-            </Tooltip>
-        );
+    if (title) {
+        children = wrapTooltip(children, title);
     }
 
-    return null;
+    return children;
 };
 
 Info.propTypes = {
     url: PropTypes.string,
-    tooltip: PropTypes.string,
     title: PropTypes.string
 };
 
