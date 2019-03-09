@@ -12,9 +12,12 @@ const AddressCatchAll = ({ organization, address, domain, createNotification }) 
     const [state, changeState] = useState(!!address.CatchAll);
     const hasCatchAllSupport = address.Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN && organization.Features & 1;
 
-    const handleChange = async () => {
-        await request(domain.ID, address.ID);
-        changeState(!state);
+    const handleChange = async ({ target }) => {
+        const newValue = target.checked;
+        await request(domain.ID, newValue ? address.ID : null);
+        // TODO call event manager
+        changeState(newValue);
+        createNotification({ text: c('Success').t`Catch-all address updated` });
     };
 
     const handleClick = (event) => {
