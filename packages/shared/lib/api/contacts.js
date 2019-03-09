@@ -1,13 +1,13 @@
 export const queryContacts = ({ Page = 0, PageSize = 1000, LabelID }) => ({
     url: 'contacts',
     method: 'get',
-    params: { PageID, PageSize, LabelID }
+    params: { Page, PageSize, LabelID }
 });
 
 export const queryContactExport = ({ Page = 0, PageSize = 1000, LabelID }) => ({
     url: 'contacts/export',
     method: 'get',
-    params: { PageID, PageSize, LabelID }
+    params: { Page, PageSize, LabelID }
 });
 
 export const getContact = (contactID) => ({
@@ -30,13 +30,13 @@ export const updateContact = (contactID, { Cards }) => ({
 export const labelContacts = ({ LabelID, ContactIDs }) => ({
     url: 'contacts/label',
     method: 'put',
-    data: { labelID, contactIDs }
+    data: { LabelID, ContactIDs }
 });
 
 export const unLabelContacts = ({ LabelID, ContactIDs }) => ({
     url: 'contacts/unlabel',
     method: 'put',
-    data: { labelID, contactIDs }
+    data: { LabelID, ContactIDs }
 });
 
 export const deleteContacts = (IDs) => ({
@@ -53,7 +53,7 @@ export const clearContacts = () => ({
 export const queryContactEmails = ({ Page = 0, PageSize = 1000, Email, LabelID }) => ({
     url: 'contacts/emails',
     method: 'get',
-    params: { Page, PageSize, Email, LabelID}
+    params: { Page, PageSize, Email, LabelID }
 });
 
 export const labelContactEmails = ({ LabelID, ContactEmailIDs }) => ({
