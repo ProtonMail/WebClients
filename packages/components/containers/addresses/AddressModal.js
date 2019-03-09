@@ -69,7 +69,11 @@ const AddressModal = ({ show, onClose, member, createNotification }) => {
                             onChange={handleChange('address')}
                             required
                         />
-                        <DomainsSelect member={member} onChange={handleChange('domain')} />
+                        <DomainsSelect
+                            className="flex-autogrid-item"
+                            member={member}
+                            onChange={handleChange('domain')}
+                        />
                     </div>
                 </Row>
                 <Row>

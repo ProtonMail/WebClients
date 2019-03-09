@@ -8,7 +8,7 @@ import { Select, useApiWithoutResult } from 'react-components';
 
 import { fakeEvent } from '../../helpers/component';
 
-const DomainsSelect = ({ member, onChange, user, domains, fetchDomains }) => {
+const DomainsSelect = ({ member, onChange, user, domains, fetchDomains, className }) => {
     const { request: requestAvailableDomains, loading } = useApiWithoutResult(queryAvailableDomains);
     const { request: requestPremiumDomains } = useApiWithoutResult(queryPremiumDomains);
     const [options, setOptions] = useState([]);
@@ -45,7 +45,7 @@ const DomainsSelect = ({ member, onChange, user, domains, fetchDomains }) => {
         queryDomains();
     }, []);
 
-    return <Select disabled={loading} value={domain} options={options} onChange={handleChange} />;
+    return <Select className={className} disabled={loading} value={domain} options={options} onChange={handleChange} />;
 };
 
 DomainsSelect.propTypes = {
@@ -53,7 +53,8 @@ DomainsSelect.propTypes = {
     onChange: PropTypes.func.isRequired,
     user: PropTypes.object,
     domains: PropTypes.object,
-    fetchDomains: PropTypes.func
+    fetchDomains: PropTypes.func,
+    className: PropTypes.string
 };
 
 const mapStateToProps = ({ user, domains }) => ({ user, domains });

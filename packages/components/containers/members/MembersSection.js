@@ -25,7 +25,7 @@ import MemberOptions from './MemberOptions';
 import MemberRole from './MemberRole';
 import MemberPrivate from './MemberPrivate';
 
-const MembersSection = ({ members, fetchMembers }) => {
+const MembersSection = ({ organization, members, fetchMembers }) => {
     const [keywords, setKeywords] = useState('');
     const [membersSelected, setMembers] = useState(members.data);
     const handleSearch = (value) => setKeywords(value);
@@ -97,7 +97,7 @@ const MembersSection = ({ members, fetchMembers }) => {
                                     <MemberRole key={key} member={member} />,
                                     <MemberPrivate key={key} member={member} />,
                                     <MemberOptions key={key} member={member} />,
-                                    <MemberActions key={key} member={member} />
+                                    <MemberActions key={key} member={member} organization={organization} />
                                 ]}
                             />
                         );
@@ -113,10 +113,11 @@ const MembersSection = ({ members, fetchMembers }) => {
 
 MembersSection.propTypes = {
     members: PropTypes.object.isRequired,
-    fetchMembers: PropTypes.func.isRequired
+    fetchMembers: PropTypes.func.isRequired,
+    organization: PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ members }) => ({ members });
+const mapStateToProps = ({ members, organization: { data } }) => ({ members, organization: data });
 const mapDispatchToProps = { fetchMembers };
 
 export default connect(
