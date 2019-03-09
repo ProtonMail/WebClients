@@ -45,12 +45,13 @@ export const queryMessageMetadata = ({
         AddressID,
         ID,
         AutoWildcard
-    },
+    }
 });
 
 export const queryGroupedMessageCount = (AddressID) => ({
     method: 'get',
-    url: 'messages/count'
+    url: 'messages/count',
+    params: { AddressID }
 });
 
 export const getMessage = (messageID) => ({

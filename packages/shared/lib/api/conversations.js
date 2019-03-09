@@ -45,7 +45,7 @@ export const queryConversations = ({
         AddressID,
         ID,
         AutoWildcard
-    },
+    }
 });
 
 export const getConversation = (conversationID, MessageID) => ({
@@ -56,7 +56,8 @@ export const getConversation = (conversationID, MessageID) => ({
 
 export const queryGroupedConversationCount = (AddressID) => ({
     method: 'get',
-    url: 'conversations/count'
+    url: 'conversations/count',
+    params: { AddressID }
 });
 
 export const markConversationsAsRead = (IDs) => ({

@@ -38,16 +38,7 @@ export const reportBug = ({
     }
 });
 
-export const reportCrash = ({
-    OS,
-    OSVersion,
-    Browser,
-    BrowserVersion,
-    Client,
-    ClientVersion,
-    ClientType,
-    Debug
-  }) => ({
+export const reportCrash = ({ OS, OSVersion, Browser, BrowserVersion, Client, ClientVersion, ClientType, Debug }) => ({
     method: 'post',
     url: 'reports/bug',
     data: {
@@ -67,7 +58,7 @@ export const reportCrash = ({
 export const reportCSPViolation = (cspReport) => ({
     method: 'post',
     url: 'reports/csp',
-    data: { "csp-report": cspReport }
+    data: { 'csp-report': cspReport }
 });
 
 export const reportPishing = ({ MessageID, MIMEType, Body }) => ({
