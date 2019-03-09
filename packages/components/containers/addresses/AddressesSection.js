@@ -65,7 +65,9 @@ const AddressesSection = ({ addresses, fetchMembers, members }) => {
                                 cells={[
                                     address.Email,
                                     <AddressStatus key={key} address={address} index={index} />,
-                                    member ? <AddressActions key={key} address={address} index={index} /> : null
+                                    member ? (
+                                        <AddressActions key={key} member={member} address={address} index={index} />
+                                    ) : null
                                 ]}
                             />
                         );
