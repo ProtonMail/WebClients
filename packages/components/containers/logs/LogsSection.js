@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { t } from 'ttag';
 import dayjs from 'dayjs';
 import { connect } from 'react-redux';
@@ -16,8 +16,8 @@ import {
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
 import { updateLogAuth } from 'proton-shared/lib/api/settings';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import ContextApi from 'proton-shared/lib/context/api';
 import { ELEMENTS_PER_PAGE, LOGS_STATE } from 'proton-shared/lib/constants';
+import useApi from '../../hooks/useApi';
 
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
@@ -32,7 +32,7 @@ const EVENTS = {
 const { DISABLE, BASIC, ADVANCED } = LOGS_STATE;
 
 const LogsSection = ({ settings }) => {
-    const { api } = useContext(ContextApi);
+    const api = useApi();
     const [logs, setLogs] = useState([]);
     const { loading, loaded, load } = useLoading(settings.loading);
     const [logAuth, setLogAuth] = useState(settings.data.LogAuth);

@@ -1,12 +1,24 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Modal, Alert, ContentModal, FooterModal, PrimaryButton, Label, TextArea, Block, ResetButton, useLoading } from 'react-components';
-import ContextApi from 'proton-shared/lib/context/api';
+import {
+    Modal,
+    Alert,
+    ContentModal,
+    FooterModal,
+    PrimaryButton,
+    Label,
+    TextArea,
+    Block,
+    ResetButton,
+    useLoading
+} from 'react-components';
 import { updateInvoiceText } from 'proton-shared/lib/api/settings';
 
+import useApi from '../../hooks/useApi';
+
 const InvoiceTextModal = ({ show, onClose }) => {
-    const { api } = useContext(ContextApi);
+    const api = useApi();
     const { loading, loaded, load } = useLoading(false);
     const [invoiceText, setInvoiceText] = useState(''); // TODO get it from settings model
     const handleChange = (event) => setInvoiceText(event.target.value);
@@ -25,11 +37,19 @@ const InvoiceTextModal = ({ show, onClose }) => {
     return (
         <Modal show={show} onClose={onClose} title={c('Title').t`Add invoice details`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <Alert>{c('Info message for custom invoice modal').t`Add your name (or company name) and address to your invoices.`}</Alert>
+                <Alert>{c('Info message for custom invoice modal')
+                    .t`Add your name (or company name) and address to your invoices.`}</Alert>
                 <Block>
                     <Label htmlFor="invoiceTextarea">{c('Label').t`Customize invoices`}</Label>
                 </Block>
-                <TextArea id="invoiceTextarea" value={invoiceText} placeholder={c('Placeholder for custom invoice text').t`Add your name (or company name) and address to your invoices`} onChange={handleChange} disabled={loading} />
+                <TextArea
+                    id="invoiceTextarea"
+                    value={invoiceText}
+                    placeholder={c('Placeholder for custom invoice text')
+                        .t`Add your name (or company name) and address to your invoices`}
+                    onChange={handleChange}
+                    disabled={loading}
+                />
                 <FooterModal>
                     <ResetButton disabled={loading}>{c('Action').t`Close`}</ResetButton>
                     <PrimaryButton loading={loading} type="submit">{c('Action').t`Save`}</PrimaryButton>

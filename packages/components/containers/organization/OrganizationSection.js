@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { connect } from 'react-redux';
 import { SubTitle, Alert, LearnMore, Row, Label, SmallButton, useModal, InputModal } from 'react-components';
-import ContextApi from 'proton-shared/lib/context/api';
 import { updateOrganizationName } from 'proton-shared/lib/api/organization';
 
+import useApi from '../../hooks/useApi';
+
 const OrganizationSection = ({ organization }) => {
-    const { api } = useContext(ContextApi);
+    const api = useApi();
     const { isOpen, open, close } = useModal();
     const { Name = '' } = organization.data;
     const handleSubmit = (name) => async () => {
@@ -34,7 +35,8 @@ const OrganizationSection = ({ organization }) => {
                         label={c('Label').t`Organization name`}
                         placeholder={c('Placeholder').t`Choose a name`}
                         onClose={close}
-                        onSubmit={handleSubmit} />
+                        onSubmit={handleSubmit}
+                    />
                 </div>
             </Row>
         </>

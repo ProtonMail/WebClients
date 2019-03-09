@@ -20,7 +20,7 @@ import {
 import { queryInvoices } from 'proton-shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER } from 'proton-shared/lib/constants';
 
-import useApi from '../../hooks/useApi';
+import useApiResult from '../../hooks/useApi';
 import InvoiceAmount from './InvoiceAmount';
 import InvoiceType from './InvoiceType';
 import InvoiceState from './InvoiceState';
@@ -41,7 +41,7 @@ const InvoicesSection = () => {
             Owner: owner
         });
 
-    const { result = {}, loading } = useApi(query, [page, owner]);
+    const { result = {}, loading } = useApiResult(query, [page, owner]);
 
     const { Invoices: invoices = [], Total: total = 0 } = result;
 

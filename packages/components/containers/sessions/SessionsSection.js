@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { t } from 'ttag';
 import {
     Button,
@@ -17,11 +17,12 @@ import {
     useLoading,
     usePagination
 } from 'react-components';
-import ContextApi from 'proton-shared/lib/context/api';
+import useApi from '../../hooks/useApi';
 import { querySessions, revokeOtherSessions, revokeSession } from 'proton-shared/lib/api/auth';
 import { ELEMENTS_PER_PAGE } from 'proton-shared/lib/constants';
 
 import SessionAction from './SessionAction';
+import useAuthenticationStore from '../../hooks/useAuthenticationStore';
 
 const CLIENTS = {
     Web: t`ProtonMail for web`,
@@ -38,7 +39,8 @@ const CLIENTS = {
 };
 
 const SessionsSection = () => {
-    const { api, authenticationStore } = useContext(ContextApi);
+    const api = useApi();
+    const authenticationStore = useAuthenticationStore();
     const { loading, loaded } = useLoading();
     const [table, setTable] = useState({ sessions: [], total: 0 });
     const { page, list, onNext, onPrevious, onSelect } = usePagination(table.sessions);

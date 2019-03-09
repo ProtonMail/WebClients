@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { Select } from 'react-components';
-import ContextApi from 'proton-shared/lib/context/api';
 import { updateRightToLeft } from 'proton-shared/lib/api/mailSettings';
 
+import useApi from '../../hooks/useApi';
+
 const TextDirectionSelect = () => {
-    const { api } = useContext(ContextApi);
+    const api = useApi();
     const handleChange = (event) => api(updateRightToLeft(event.target.value));
 
     const options = [

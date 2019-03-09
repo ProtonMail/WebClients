@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, PrimaryButton, Alert, Block, LearnMore, useApi, useModal } from 'react-components';
+import { SubTitle, PrimaryButton, Alert, Block, LearnMore, useApiResult, useModal } from 'react-components';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 
 import EditCardModal from '../payments/EditCardModal';
@@ -8,7 +8,7 @@ import PaymentMethodsTable from './PaymentMethodsTable';
 
 const PaymentMethodsSection = () => {
     const { isOpen: showCardModal, open: openCardModal, close: closeCardModal } = useModal();
-    const { result = {}, loading, request } = useApi(queryPaymentMethods, []);
+    const { result = {}, loading, request } = useApiResult(queryPaymentMethods, []);
     const { PaymentMethods: paymentMethods = [] } = result;
 
     return (

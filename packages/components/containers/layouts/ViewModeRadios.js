@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { Label, Radio } from 'react-components';
-import ContextApi from 'proton-shared/lib/context/api';
 import { updateViewMode } from 'proton-shared/lib/api/mailSettings';
 
+import useApi from '../../hooks/useApi';
+
 const ViewModeRadios = () => {
-    const { api } = useContext(ContextApi);
+    const api = useApi();
     const handleChange = (mode) => () => api(updateViewMode(mode));
 
     return (

@@ -1,25 +1,20 @@
-import { useEffect, useCallback } from 'react';
+import { useCallback } from 'react';
 
 import useAsync from './useAsync';
-import useApiRequest from './useApiRequest';
+import useApi from './useApi';
 
 const useApiWithoutResult = (fn) => {
-    const { request, cancel } = useApiRequest();
+    const request = useApi();
     const { loading, run } = useAsync(false);
 
     const requestAndSetLoading = useCallback(
         (...args) => {
-            cancel();
             const promise = request(fn(...args));
             run(promise);
             return promise;
         },
         [request, run, fn]
     );
-
-    useEffect(() => {
-        return cancel;
-    }, []);
 
     return {
         loading,

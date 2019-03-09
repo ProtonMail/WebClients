@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { Label, Radio } from 'react-components';
-import ContextApi from 'proton-shared/lib/context/api';
 import { updateComposerMode } from 'proton-shared/lib/api/mailSettings';
+import useApi from '../../hooks/useApi';
 
 const ComposerModeRadios = () => {
-    const { api } = useContext(ContextApi);
+    const api = useApi();
     const handleChange = (mode) => () => api(updateComposerMode(mode));
 
     return (
