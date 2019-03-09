@@ -26,13 +26,13 @@ const MemberActions = ({ member, organization, createNotification }) => {
     const login = () => {};
 
     const makeAdmin = async () => {
-        await requestUpdateRole(member.ID, MEMBER_ROLE.MEMBER_ROLE);
+        await requestUpdateRole(member.ID, MEMBER_ROLE.ORGANIZATION_OWNER);
         // TODO call event manager
         createNotification({ text: c('Success message').t`Role updated` });
     };
 
     const revokeAdmin = async () => {
-        await requestUpdateRole(member.ID, MEMBER_ROLE.ORGANIZATION_OWNER);
+        await requestUpdateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER);
         // TODO call event manager
         createNotification({ text: c('Success message').t`Role updated` });
     };
