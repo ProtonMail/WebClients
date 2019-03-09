@@ -53,3 +53,8 @@ export const removeMember = (memberID) => ({
     method: 'delete',
     url: `members/${memberID}`
 });
+
+export const privatizeMember = (memberID) => ({
+    method: 'put',
+    url: `members/${memberID}/privatize`
+});
