@@ -3,11 +3,24 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { updateSign, updateAttachPublicKey, updatePGPScheme } from 'proton-shared/lib/api/mailSettings';
-import { Alert, SubTitle, Row, Label, LearnMore, Info, Toggle, Select, useApiWithoutResult } from 'react-components';
+import {
+    Alert,
+    SubTitle,
+    Row,
+    Label,
+    LearnMore,
+    Info,
+    Toggle,
+    Select,
+    ConfirmModal,
+    useApiWithoutResult,
+    useModal
+} from 'react-components';
 import { PACKAGE_TYPE } from 'proton-shared/lib/constants';
 
 const ExternalPGPSettingsSection = ({ mailSettings }) => {
     const [sign, setSign] = useState(!!mailSettings.Sign);
+    const { isOpen, open, close } = useModal();
     const [attachPublicKey, setAttachPublicKey] = useState(!!mailSettings.AttachPublicKey);
     const [PGPScheme, setPGPSheme] = useState(mailSettings.PGPScheme);
     const options = [
@@ -18,6 +31,7 @@ const ExternalPGPSettingsSection = ({ mailSettings }) => {
     const { request: requestSign } = useApiWithoutResult(updateSign);
     const { request: requestAttachPublicKey } = useApiWithoutResult(updateAttachPublicKey);
     const { request: requestPGPScheme } = useApiWithoutResult(updatePGPScheme);
+    const handleConfirmSign = () => handleChangeSign(true);
 
     const handleChangeSign = async (newValue) => {
         await requestSign(+newValue);
@@ -25,6 +39,7 @@ const ExternalPGPSettingsSection = ({ mailSettings }) => {
     };
 
     const handleChangeAttachPublicKey = async (newValue) => {
+        askSign(newValue);
         await requestAttachPublicKey(+newValue);
         setAttachPublicKey(newValue);
     };
@@ -33,6 +48,13 @@ const ExternalPGPSettingsSection = ({ mailSettings }) => {
         const newValue = parseInt(target.value);
         await requestPGPScheme(newValue);
         setPGPSheme(newValue);
+    };
+
+    const askSign = (status) => {
+        if (!status || sign) {
+            return false;
+        }
+        open();
     };
 
     return (
@@ -65,6 +87,17 @@ const ExternalPGPSettingsSection = ({ mailSettings }) => {
                 </Label>
                 <Toggle id="attachPublicKeyToggle" value={attachPublicKey} onChange={handleChangeAttachPublicKey} />
             </Row>
+            <ConfirmModal
+                show={isOpen}
+                onClose={close}
+                confirm={c('Action').t`Yes`}
+                cancel={c('Action').t`No`}
+                title={c('Title').t`Automatic sign outgoing messages?`}
+                onConfirm={handleConfirmSign}
+            >
+                <Alert>{c('Info')
+                    .t`PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.`}</Alert>
+            </ConfirmModal>
             <Row>
                 <Label htmlFor="PGPSchemeSelect">
                     {c('Label').t`Default PGP Scheme`}
