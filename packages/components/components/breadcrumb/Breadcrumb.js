@@ -9,21 +9,25 @@ const Breadcrumb = ({ list, current, onClick }) => {
     };
 
     return (
-        <div className="breadcrumb-container">
+        <ul className="breadcrumb-container unstyled inline-flex pl0-5 pr0-5">
             {list.map((item, index) => {
+                const key = index.toString();
                 return (
-                    <button
-                        disabled={index === current}
-                        aria-current={current === index ? 'step' : false}
-                        onClick={handleClick(index)}
-                        key={index.toString()}
-                        className="breadcrumb-item"
-                    >
-                        {item}
-                    </button>
+                    <li className="breadcrumb-item" key={key}>
+                        <button
+                            type="button"
+                            disabled={index === current}
+                            aria-current={current === index ? 'step' : false}
+                            onClick={handleClick(index)}
+                            key={key}
+                            className="breadcrumb-button"
+                        >
+                            {item}
+                        </button>
+                    </li>
                 );
             })}
-        </div>
+        </ul>
     );
 };
 
