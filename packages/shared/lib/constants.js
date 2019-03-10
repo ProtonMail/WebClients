@@ -122,3 +122,16 @@ export const MEMBER_ROLE = {
     ORGANIZATION_MEMBER: 1,
     ORGANIZATION_OWNER: 2
 };
+
+export const PACKAGE_TYPE = {
+    SEND_PM: 1,
+    SEND_EO: 2,
+    SEND_CLEAR: 4,
+    SEND_PGP_INLINE: 8,
+    SEND_PGP_MIME: 16
+};
+
+export const SHOW_IMAGES = {
+    REMOTE: 1,
+    EMBEDDED: 2
+};
