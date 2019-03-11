@@ -9,7 +9,6 @@ import {
     ContentModal,
     FooterModal,
     ResetButton,
-    LearnMore,
     PrimaryButton,
     Alert,
     Row,
@@ -49,11 +48,9 @@ const AddressModal = ({ show, onClose, member, createNotification }) => {
     return (
         <Modal show={show} onClose={onClose} title={c('Title').t`Create address`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <Alert>
+                <Alert learnMore="https://protonmail.com/support/knowledge-base/addresses-and-aliases/">
                     {c('Info')
                         .t`ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not.`}
-                    <br />
-                    <LearnMore url="https://protonmail.com/support/knowledge-base/addresses-and-aliases/" />
                 </Alert>
                 <Row>
                     <Label>{c('Label').t`User`}</Label>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { c } from 'ttag';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { SubTitle, Alert, PrimaryButton, Button, Block, LearnMore, useModal } from 'react-components';
+import { SubTitle, Alert, PrimaryButton, Button, Block, useModal } from 'react-components';
 import { fetchDomains } from 'proton-shared/lib/state/domains/actions';
 
 import DomainModal from './DomainModal';
@@ -19,11 +19,9 @@ const DomainsSection = ({ organization, domains, fetchDomains }) => {
     return (
         <>
             <SubTitle>{c('Title').t`Domains`}</SubTitle>
-            <Alert>
+            <Alert learnMore="todo">
                 {c('Message')
                     .t`Add a custom filter to perform actions such as automatically labeling or archiving messages.`}
-                <br />
-                <LearnMore url="todo" />
             </Alert>
             <Block>
                 <PrimaryButton onClick={open}>{c('Action').t`Add domain`}</PrimaryButton>

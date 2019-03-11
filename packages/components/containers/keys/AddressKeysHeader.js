@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { SubTitle, Alert, Block, PrimaryButton, Button, LearnMore } from 'react-components';
+import { SubTitle, Alert, Block, PrimaryButton, Button } from 'react-components';
 
 const AddressKeysHeader = ({ mode, handleAddKey, handleImportKey, handleReactivateKeys }) => {
     const isUserMode = mode === 'user';
@@ -10,11 +10,9 @@ const AddressKeysHeader = ({ mode, handleAddKey, handleImportKey, handleReactiva
     return (
         <>
             <SubTitle>{title}</SubTitle>
-            <Alert>
+            <Alert learnMore="todo">
                 {c('Info')
                     .t`Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.`}
-                <br />
-                <LearnMore url="todo" />
             </Alert>
             {isUserMode ? null : (
                 <Block>

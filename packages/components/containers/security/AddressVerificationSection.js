@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
-import { Alert, SubTitle, Row, Label, LearnMore, Info, Toggle, useApiWithoutResult } from 'react-components';
+import { Alert, SubTitle, Row, Label, Info, Toggle, useApiWithoutResult } from 'react-components';
 
 const AddressVerificationSection = ({ mailSettings }) => {
     const [promptPin, setPromptPin] = useState(!!mailSettings.PromptPin);
@@ -17,11 +17,9 @@ const AddressVerificationSection = ({ mailSettings }) => {
     return (
         <>
             <SubTitle>{c('Title').t`Address verification`}</SubTitle>
-            <Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/address-verification/">
                 {c('Info')
                     .t`Address verification is an advanced security feature. Only turn this on if you know what it does.`}
-                <br />
-                <LearnMore url="https://protonmail.com/support/knowledge-base/address-verification/" />
             </Alert>
             <Row>
                 <Label htmlFor="trustToggle">

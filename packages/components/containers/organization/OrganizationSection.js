@@ -1,7 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { SubTitle, Alert, LearnMore, Row, Label, SmallButton, useModal, InputModal } from 'react-components';
+import { SubTitle, Alert, Row, Label, SmallButton, useModal, InputModal } from 'react-components';
 import { updateOrganizationName } from 'proton-shared/lib/api/organization';
 
 import useApi from '../../hooks/useApi';
@@ -18,11 +19,7 @@ const OrganizationSection = ({ organization }) => {
     return (
         <>
             <SubTitle>{c('Title').t`Organization`}</SubTitle>
-            <Alert>
-                {c('Info').t`Lorem ipsum`}
-                <br />
-                <LearnMore url="todo" />
-            </Alert>
+            <Alert learnMore="todo">{c('Info').t`Lorem ipsum`}</Alert>
             <Row>
                 <Label>{c('Label').t`Organization name`}</Label>
                 <div>
@@ -41,6 +38,10 @@ const OrganizationSection = ({ organization }) => {
             </Row>
         </>
     );
+};
+
+OrganizationSection.propTypes = {
+    organization: PropTypes.object.isRequired
 };
 
 const mapStateToProps = ({ organization }) => ({ organization });

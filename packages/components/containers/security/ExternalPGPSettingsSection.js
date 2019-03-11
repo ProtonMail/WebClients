@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, SubTitle, Row, Label, LearnMore, Info } from 'react-components';
+import { Alert, SubTitle, Row, Label, Info } from 'react-components';
 
 import AttachPublicKeyToggle from './AttachPublicKeyToggle';
 import SignToggle from './SignToggle';
@@ -12,10 +12,8 @@ const ExternalPGPSettingsSection = ({ mailSettings }) => {
     return (
         <>
             <SubTitle>{c('Title').t`External PGP settings (optional)`}</SubTitle>
-            <Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
                 {c('Info').t`Only change these settings if you are using PGP with non-ProtonMail recipients.`}
-                <br />
-                <LearnMore url="https://protonmail.com/support/knowledge-base/how-to-use-pgp/" />
             </Alert>
             <Row>
                 <Label htmlFor="signToggle">

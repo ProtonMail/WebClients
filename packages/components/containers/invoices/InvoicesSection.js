@@ -14,7 +14,6 @@ import {
     usePaginationAsync,
     TableRow,
     Time,
-    LearnMore,
     useModal
 } from 'react-components';
 import { queryInvoices } from 'proton-shared/lib/api/payments';
@@ -48,10 +47,8 @@ const InvoicesSection = () => {
     return (
         <>
             <SubTitle>{t`Invoices`}</SubTitle>
-            <Alert>
+            <Alert learnMore="todo">
                 {t`Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.`}
-                <br />
-                <LearnMore url="todo" />
             </Alert>
             <Block className="flex flex-spacebetween">
                 <div>

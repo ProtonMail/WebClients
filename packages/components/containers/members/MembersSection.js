@@ -2,18 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { c, jt } from 'ttag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-    Table,
-    TableHeader,
-    Info,
-    SubTitle,
-    Block,
-    Alert,
-    LearnMore,
-    Search,
-    TableBody,
-    TableRow
-} from 'react-components';
+import { Table, TableHeader, Info, SubTitle, Block, Alert, Search, TableBody, TableRow } from 'react-components';
 import { Link } from 'react-router-dom';
 import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 import { normalize } from 'proton-shared/lib/helpers/string';
@@ -53,11 +42,9 @@ const MembersSection = ({ organization, members, fetchMembers }) => {
     return (
         <>
             <SubTitle>{c('Title').t`Users`}</SubTitle>
-            <Alert>
+            <Alert learnMore="todo">
                 {c('Info for members section')
                     .t`Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.`}
-                <br />
-                <LearnMore url="todo" />
             </Alert>
             <Block className="flex flex-spacebetween">
                 <AddMemberButton />

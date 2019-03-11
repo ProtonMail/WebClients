@@ -1,15 +1,13 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Label, LearnMore, Table, TableHeader, TableBody, TableRow } from 'react-components';
+import { Alert, Label, Table, TableHeader, TableBody, TableRow } from 'react-components';
 
 const SPFSection = () => {
     return (
         <>
-            <Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
                 {c('Info')
                     .t`SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.`}
-                <br />
-                <LearnMore url="https://protonmail.com/support/knowledge-base/anti-spoofing/" />
             </Alert>
             <Label>{c('Label')
                 .t`Please add the following TXT record. Note, DNS records can take several hours to update.`}</Label>

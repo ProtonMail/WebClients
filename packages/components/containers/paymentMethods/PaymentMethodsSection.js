@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, PrimaryButton, Alert, Block, LearnMore, useApiResult, useModal } from 'react-components';
+import { SubTitle, PrimaryButton, Alert, Block, useApiResult, useModal } from 'react-components';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 
 import EditCardModal from '../payments/EditCardModal';
@@ -14,11 +14,7 @@ const PaymentMethodsSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
-            <Alert>
-                {c('Info for payment methods').t`Lorem ipsum`}
-                <br />
-                <LearnMore url="todo" />
-            </Alert>
+            <Alert learnMore="todo">{c('Info for payment methods').t`Lorem ipsum`}</Alert>
             <Block>
                 <PrimaryButton onClick={openCardModal}>{c('Action').t`Add payment method`}</PrimaryButton>
                 <EditCardModal show={showCardModal} onClose={closeCardModal} onChange={request} />

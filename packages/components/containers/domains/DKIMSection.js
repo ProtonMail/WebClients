@@ -1,16 +1,14 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Alert, Label, LearnMore, Table, TableHeader, TableBody, TableRow } from 'react-components';
+import { Alert, Label, Table, TableHeader, TableBody, TableRow } from 'react-components';
 
 const DKIMSection = ({ domain }) => {
     return (
         <>
-            <Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
                 {c('Info')
                     .t`ProtonMail supports DKIM signing for custom domains! To use DKIM authentication, please add the following TXT record into your DNS for this domain. This can typically be done in the control panel of your domain name registrar.`}
-                <br />
-                <LearnMore url="https://protonmail.com/support/knowledge-base/anti-spoofing/" />
             </Alert>
             <Label>{c('Label')
                 .t`Please add the following TXT record. Note, DNS records can take several hours to update.`}</Label>
