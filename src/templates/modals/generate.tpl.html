@@ -22,12 +22,17 @@
                     <label class="checkbox">
                         <custom-radio data-custom-ng-model="ctrl.encryptionConfigName" data-custom-value="RSA2048"></custom-radio>
                         <strong translate translate-context="Title" translate-comment="form option heading">High security</strong>
-                        <i>(RSA 2048-bit) Older but faster</i>
+                        <i>RSA 2048-bit (Older but faster)</i>
                     </label>
                     <label class="checkbox">
                         <custom-radio data-custom-ng-model="ctrl.encryptionConfigName" data-custom-value="RSA4096"></custom-radio>
                         <strong translate translate-context="Title" translate-comment="form option heading">Highest security</strong>
-                        <i>(RSA 4096-bit) Secure but slow</i>
+                        <i>RSA 4096-bit (Secure but slow)</i>
+                    </label>
+                    <label class="checkbox">
+                        <custom-radio data-custom-ng-model="ctrl.encryptionConfigName" data-custom-value="X25519"></custom-radio>
+                        <strong translate translate-context="Title" translate-comment="form option heading">State-of-the-art</strong>
+                        <i>X25519 (Modern, fastest, secure)</i>
                     </label>
                 </div>
                 <p
