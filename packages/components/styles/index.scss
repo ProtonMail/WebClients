@@ -1,0 +1,29 @@
+$path-images: "~design-system/assets/img/shared/";
+
+@import "~design-system/_sass/reusable-components/design-system-config";
+@import "~design-system/_sass/reusable-components/design-system-reset";
+@import "~design-system/_sass/reusable-components/design-system-colors";
+@import "~design-system/_sass/reusable-components/design-system-util-typo-fix";
+@import "~design-system/_sass/reusable-components/design-system-links-icons";
+@import "~design-system/_sass/reusable-components/design-system-layout-modules";
+@import "~design-system/_sass/reusable-components/design-system-forms";
+@import "~design-system/_sass/reusable-components/design-system-responsive";
+@import "~design-system/_sass/reusable-components/design-system-print";
+@import "~design-system/_sass/reusable-components/design-system-viewport-fix";
+
+@import "~design-system/_sass/pm-styles/pm-buttons";
+@import "~design-system/_sass/pm-styles/pm-badges";
+@import "~design-system/_sass/pm-styles/pm-containers";
+@import "~design-system/_sass/pm-styles/pm-dropdown";
+@import "~design-system/_sass/pm-styles/pm-forms";
+@import "~design-system/_sass/pm-styles/pm-layout";
+@import "~design-system/_sass/pm-styles/pm-modal";
+@import "~design-system/_sass/pm-styles/pm-notifications";
+@import "~design-system/_sass/pm-styles/pm-table";
+@import "~design-system/_sass/pm-styles/pm-progressBar";
+@import "~design-system/_sass/pm-styles/pm-panels";
+
+@import "~design-system/_sass/design-system-website/webfonts-hx";
+@import "~design-system/_sass/design-system-website/global-structure";
+@import "~design-system/_sass/design-system-website/inside-content";
+@import "~design-system/_sass/design-system-website/responsive";
