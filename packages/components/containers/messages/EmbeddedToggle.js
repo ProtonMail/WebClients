@@ -13,6 +13,7 @@ const EmbeddedToggle = ({ id, showImages, onChange }) => {
     const handleChange = async (newValue) => {
         const bit = newValue ? setBit(showImages, EMBEDDED) : clearBit(showImages, EMBEDDED);
         await request(bit);
+        // TODO call event manager
         setValue(newValue);
         onChange(bit);
     };

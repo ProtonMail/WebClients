@@ -13,6 +13,7 @@ const RemoteToggle = ({ id, showImages, onChange }) => {
     const handleChange = async (newValue) => {
         const bit = newValue ? setBit(showImages, REMOTE) : clearBit(showImages, REMOTE);
         await request(bit);
+        // TODO call event manager
         setValue(newValue);
         onChange(bit);
     };
