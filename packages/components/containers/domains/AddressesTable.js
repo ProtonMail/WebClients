@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Table, TableHeader, TableBody, TableRow } from 'react-components';
+import { Table, TableHeader, TableBody, TableRow, Info } from 'react-components';
 
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
@@ -17,7 +17,10 @@ const AddressesTable = ({ domain, members, loading }) => {
                     c('Title header for addresses domain table').t`Address`,
                     c('Title header for addresses domain table').t`Name`,
                     c('Title header for addresses domain table').t`Status`,
-                    c('Title header for addresses domain table').t`Catch all`,
+                    <>
+                        {c('Title header for addresses domain table').t`Catch all`}
+                        <Info url="https://protonmail.com/support/knowledge-base/catch-all/" />
+                    </>,
                     c('Title header for addresses domain table').t`Actions`
                 ]}
             />

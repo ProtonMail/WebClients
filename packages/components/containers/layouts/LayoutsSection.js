@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, Alert, Row, Label } from 'react-components';
+import { SubTitle, Alert, Row, Label, Info } from 'react-components';
 
 import DraftTypeSelect from './DraftTypeSelect';
 import TextDirectionSelect from './TextDirectionSelect';
@@ -15,15 +15,35 @@ const LayoutsSection = () => {
             <SubTitle>{c('Title').t`Layouts`}</SubTitle>
             <Alert>{c('Info').t`Lorem ipsum`}</Alert>
             <Row>
-                <Label>{c('Label').t`Default Composer`}</Label>
+                <Label>
+                    <span className="mr1">{c('Label').t`Default Composer`}</span>
+                    <Info
+                        url="https://protonmail.com/support/knowledge-base/composer/"
+                        title={c('Tooltip')
+                            .t`This sets the default composer size. Two sizes are available, a smaller popup composer, and a bigger full screen composer.`}
+                    />
+                </Label>
                 <ComposerModeRadios />
             </Row>
             <Row>
-                <Label>{c('Label').t`Default Inbox`}</Label>
+                <Label>
+                    <span className="mr1">{c('Label').t`Default Inbox`}</span>
+                    <Info
+                        url="https://protonmail.com/support/knowledge-base/change-inbox-layout/"
+                        title={c('Tooltip')
+                            .t`ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.`}
+                    />
+                </Label>
                 <ViewLayoutRadios />
             </Row>
             <Row>
-                <Label>{c('Label').t`Conversations`}</Label>
+                <Label>
+                    <span className="mr1">{c('Label').t`Conversations`}</span>
+                    <Info
+                        title={c('Tooltip')
+                            .t`Conversation Grouping automatically groups messages in the same conversation together.`}
+                    />
+                </Label>
                 <ViewModeRadios />
             </Row>
             <Row>
@@ -35,7 +55,13 @@ const LayoutsSection = () => {
                 <TextDirectionSelect />
             </Row>
             <Row>
-                <Label>{c('Label').t`Sent/Drafts`}</Label>
+                <Label>
+                    <span className="mr1">{c('Label').t`Sent/Drafts`}</span>
+                    <Info
+                        title={c('Tooltip')
+                            .t`Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder.`}
+                    />
+                </Label>
                 <ShowMovedSelect />
             </Row>
         </>

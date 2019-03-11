@@ -15,14 +15,14 @@ const MessageContentSection = ({ mailSettings }) => {
             <SubTitle>{c('Title').t`Address verification`}</SubTitle>
             <Row>
                 <Label htmlFor="remoteToggle">
-                    {c('Label').t`Auto-load remote content`}
+                    <span className="mr1">{c('Label').t`Auto-load remote content`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/images-by-default/" />
                 </Label>
                 <RemoteToggle id="remoteToggle" showImages={showImages} onChange={handleChange} />
             </Row>
             <Row>
                 <Label htmlFor="embeddedToggle">
-                    {c('Label').t`Auto-load embedded images`}
+                    <span className="mr1">{c('Label').t`Auto-load embedded images`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/images-by-default/" />
                 </Label>
                 <EmbeddedToggle id="embeddedToggle" showImages={showImages} onChange={handleChange} />

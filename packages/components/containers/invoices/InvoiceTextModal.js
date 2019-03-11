@@ -36,7 +36,7 @@ const InvoiceTextModal = ({ show, onClose }) => {
 
     return (
         <Modal show={show} onClose={onClose} title={c('Title').t`Add invoice details`}>
-            <ContentModal onSubmit={handleSubmit} onReset={onClose}>
+            <ContentModal modalClassName="pm-modal--smaller" onSubmit={handleSubmit} onReset={onClose}>
                 <Alert>{c('Info message for custom invoice modal')
                     .t`Add your name (or company name) and address to your invoices.`}</Alert>
                 <Block>

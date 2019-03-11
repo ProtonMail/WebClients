@@ -19,7 +19,7 @@ const ExternalPGPSettingsSection = ({ mailSettings }) => {
             </Alert>
             <Row>
                 <Label htmlFor="signToggle">
-                    {c('Label').t`Sign external messages`}
+                    <span className="mr1">{c('Label').t`Sign external messages`}</span>
                     <Info
                         url="https://protonmail.com/support/knowledge-base/what-is-a-digital-signature/"
                         title={c('Tooltip sign external messages')
@@ -30,7 +30,7 @@ const ExternalPGPSettingsSection = ({ mailSettings }) => {
             </Row>
             <Row>
                 <Label htmlFor="attachPublicKeyToggle">
-                    {c('Label').t`Automatically attach public key`}
+                    <span className="mr1">{c('Label').t`Automatically attach public key`}</span>
                     <Info
                         url="https://protonmail.com/support/knowledge-base/how-to-use-pgp"
                         title={c('Tooltip automatically attach public key')
@@ -45,7 +45,7 @@ const ExternalPGPSettingsSection = ({ mailSettings }) => {
             </Row>
             <Row>
                 <Label htmlFor="PGPSchemeSelect">
-                    {c('Label').t`Default PGP Scheme`}
+                    <span className="mr1">{c('Label').t`Default PGP Scheme`}</span>
                     <Info
                         url="https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/"
                         title={c('Tooltip default pgp scheme')

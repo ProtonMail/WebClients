@@ -25,7 +25,7 @@ const AddressVerificationSection = ({ mailSettings }) => {
             </Alert>
             <Row>
                 <Label htmlFor="trustToggle">
-                    {c('Label').t`Prompt to trust keys`}
+                    <span className="mr1">{c('Label').t`Prompt to trust keys`}</span>
                     <Info
                         url="https://protonmail.com/support/knowledge-base/address-verification/"
                         title={c('Tooltip prompt to trust keys')
