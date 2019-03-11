@@ -1,15 +1,14 @@
 import React from 'react';
 import { c } from 'ttag';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Alert, SmallButton, ConfirmModal, useModal, useApiWithoutResult } from 'react-components';
+import { Alert, SmallButton, ConfirmModal, useModal, useApiWithoutResult, useNotifications } from 'react-components';
 import { deleteDomain } from 'proton-shared/lib/api/domains';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
 import DomainModal from './DomainModal';
 
-const DomainActions = ({ domain, createNotification }) => {
+const DomainActions = ({ domain }) => {
     const { request, loading } = useApiWithoutResult(deleteDomain);
+    const { createNotification } = useNotifications();
     const { isOpen: showEditModal, open: openEditModal, close: closeEditModal } = useModal();
     const { isOpen: showDeleteModal, open: openDeleteModal, close: closeDeleteModal } = useModal();
 
@@ -38,13 +37,7 @@ const DomainActions = ({ domain, createNotification }) => {
 };
 
 DomainActions.propTypes = {
-    domain: PropTypes.object.isRequired,
-    createNotification: PropTypes.func.isRequired
+    domain: PropTypes.object.isRequired
 };
 
-const mapDispatchToProps = { createNotification };
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(DomainActions);
+export default DomainActions;

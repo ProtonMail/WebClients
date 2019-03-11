@@ -1,17 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { connect } from 'react-redux';
-import { Modal, ContentModal, FooterModal, ResetButton, PrimaryButton, useApiWithoutResult } from 'react-components';
+import {
+    Modal,
+    ContentModal,
+    FooterModal,
+    ResetButton,
+    PrimaryButton,
+    useApiWithoutResult,
+    useNotifications
+} from 'react-components';
 import { setPaymentMethod } from 'proton-shared/lib/api/payments';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
 import CardForm from './CardForm';
 import useCard from './useCard';
 import toDetails from './toDetails';
 
-const EditCardModal = ({ card: existingCard, show, onClose, onChange, createNotification }) => {
+const EditCardModal = ({ card: existingCard, show, onClose, onChange }) => {
     const { loading, request } = useApiWithoutResult(setPaymentMethod);
+    const { createNotification } = useNotifications();
     const title = existingCard ? c('Title').t`Edit credit card` : c('Title').t`Add credit card`;
     const { card, updateCard, errors, isValid } = useCard(existingCard);
 
@@ -44,13 +51,7 @@ EditCardModal.propTypes = {
     card: PropTypes.object,
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
-    onChange: PropTypes.func.isRequired,
-    createNotification: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = { createNotification };
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(EditCardModal);
+export default EditCardModal;

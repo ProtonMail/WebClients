@@ -1,8 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import {
     Modal,
     ContentModal,
@@ -15,14 +13,16 @@ import {
     Input,
     Checkbox,
     Select,
-    Text
+    Text,
+    useNotifications
 } from 'react-components';
 
 import MemberStorageSelector from './MemberStorageSelector';
 import MemberVPNSelector from './MemberVPNSelector';
 import useMemberModal from './useMemberModal';
 
-const MemberModal = ({ show, onClose, organization, domains, createNotification }) => {
+const MemberModal = ({ show, onClose, organization, domains }) => {
+    const { createNotification } = useNotifications();
     const { model, update, hasVPN, save, check } = useMemberModal(organization, domains);
     const domainOptions = domains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
     const handleChange = (key) => ({ target }) => update(key, target.value);
@@ -120,13 +120,7 @@ MemberModal.propTypes = {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     organization: PropTypes.object.isRequired,
-    createNotification: PropTypes.func.isRequired,
     domains: PropTypes.array.isRequired
 };
 
-const mapDispatchToProps = { createNotification };
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(MemberModal);
+export default MemberModal;

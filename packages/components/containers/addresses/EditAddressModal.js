@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { updateAddress } from 'proton-shared/lib/api/addresses';
 import {
     Modal,
@@ -14,13 +13,14 @@ import {
     ResetButton,
     PrimaryButton,
     FooterModal,
-    useApiWithoutResult
+    useApiWithoutResult,
+    useNotifications
 } from 'react-components';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
-const EditAddressModal = ({ show, onClose, address, createNotification }) => {
+const EditAddressModal = ({ show, onClose, address }) => {
     const { request } = useApiWithoutResult(updateAddress);
     const [model, updateModel] = useState({ displayName: address.DisplayName, signature: address.Signature });
+    const { createNotification } = useNotifications();
     const handleDisplayName = (event) => updateModel({ ...model, displayName: event.target.value });
     const handleSignature = (value) => updateModel({ ...model, signature: value });
     const handleSubmit = async () => {
@@ -61,13 +61,7 @@ const EditAddressModal = ({ show, onClose, address, createNotification }) => {
 EditAddressModal.propTypes = {
     address: PropTypes.object.isRequired,
     show: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired,
-    createNotification: PropTypes.func.isRequired
+    onClose: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = { createNotification };
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(EditAddressModal);
+export default EditAddressModal;

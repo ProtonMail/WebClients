@@ -1,9 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { createAddress } from 'proton-shared/lib/api/addresses';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 import {
     Modal,
     ContentModal,
@@ -16,15 +14,17 @@ import {
     Text,
     Input,
     RichTextEditor,
-    useApiWithoutResult
+    useApiWithoutResult,
+    useNotifications
 } from 'react-components';
 
 import useAddressModal from './useAddressModal';
 import DomainsSelect from './DomainsSelect';
 
-const AddressModal = ({ show, onClose, member, createNotification }) => {
+const AddressModal = ({ show, onClose, member }) => {
     const { request } = useApiWithoutResult(createAddress);
     const { model, update } = useAddressModal(member);
+    const { createNotification } = useNotifications();
 
     const handleChange = (key) => (event) => update(key, event.target.value);
     const handleSignature = (value) => update('signature', value);
@@ -97,13 +97,7 @@ const AddressModal = ({ show, onClose, member, createNotification }) => {
 AddressModal.propTypes = {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
-    member: PropTypes.object,
-    createNotification: PropTypes.func.isRequired
+    member: PropTypes.object
 };
 
-const mapDispatchToProps = { createNotification };
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(AddressModal);
+export default AddressModal;

@@ -2,9 +2,8 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Dropdown, DropdownMenu, useApiWithoutResult, useModal } from 'react-components';
+import { Dropdown, DropdownMenu, useApiWithoutResult, useModal, useNotifications } from 'react-components';
 import { ADDRESS_TYPE, ADDRESS_STATUS, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
 
 import EditAddressModal from './EditAddressModal';
@@ -13,12 +12,13 @@ const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 const { STATUS_DISABLED, STATUS_ENABLED } = ADDRESS_STATUS;
 const { READABLE, UNREADABLE } = MEMBER_PRIVATE;
 
-const AddressActions = ({ address, user, member, createNotification }) => {
+const AddressActions = ({ address, user, member }) => {
     const { Status, Type, ID } = address;
     const { request: requestDelete } = useApiWithoutResult(deleteAddress);
     const { request: requestEnable } = useApiWithoutResult(enableAddress);
     const { request: requestDisable } = useApiWithoutResult(disableAddress);
     const { isOpen, open, close } = useModal();
+    const { createNotification } = useNotifications();
     const canDelete = Type === TYPE_CUSTOM_DOMAIN;
     const canEnable = user.isAdmin && Status === STATUS_DISABLED && Type !== TYPE_ORIGINAL && Type !== TYPE_PREMIUM;
     const canDisable = user.isAdmin && Status === STATUS_ENABLED && Type !== TYPE_ORIGINAL && Type !== TYPE_PREMIUM;
@@ -102,14 +102,9 @@ const AddressActions = ({ address, user, member, createNotification }) => {
 AddressActions.propTypes = {
     address: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired,
-    member: PropTypes.object.isRequired,
-    createNotification: PropTypes.func.isRequired
+    member: PropTypes.object.isRequired
 };
 
 const mapStateToProps = ({ user: { data } }) => ({ user: data });
-const mapDispatchToProps = { createNotification };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(AddressActions);
+export default connect(mapStateToProps)(AddressActions);

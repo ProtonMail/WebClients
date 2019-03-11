@@ -11,16 +11,17 @@ import {
     Row,
     Label,
     Input,
-    useApiWithoutResult
+    useApiWithoutResult,
+    useNotifications
 } from 'react-components';
 
 import MemberStorageSelector from './MemberStorageSelector';
 import MemberVPNSelector from './MemberVPNSelector';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 import { updateName, updateQuota, updateVPN } from 'proton-shared/lib/api/members';
 
-const EditMemberModal = ({ show, onClose, member, organization, createNotification }) => {
+const EditMemberModal = ({ show, onClose, member, organization }) => {
     const [model, updateModel] = useState({ name: member.Name, storage: member.MaxSpace, vpn: member.MaxVPN });
+    const { createNotification } = useNotifications();
     const { request: requestUpdateName } = useApiWithoutResult(updateName);
     const { request: requestUpdateQuota } = useApiWithoutResult(updateQuota);
     const { request: requestUpdateVPN } = useApiWithoutResult(updateVPN);
@@ -74,14 +75,9 @@ EditMemberModal.propTypes = {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     member: PropTypes.object.isRequired,
-    organization: PropTypes.object.isRequired,
-    createNotification: PropTypes.func.isRequired
+    organization: PropTypes.object.isRequired
 };
 
 const mapStateToProps = ({ organization: { data: organization } }) => ({ organization });
-const mapDispatchToProps = { createNotification };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(EditMemberModal);
+export default connect(mapStateToProps)(EditMemberModal);

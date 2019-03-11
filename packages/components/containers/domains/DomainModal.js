@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import {
     Modal,
     Button,
@@ -10,11 +9,11 @@ import {
     ContentModal,
     useStep,
     Breadcrumb,
-    useApiWithoutResult
+    useApiWithoutResult,
+    useNotifications
 } from 'react-components';
 import { addDomain, getDomain } from 'proton-shared/lib/api/domains';
 import { VERIFY_STATE } from 'proton-shared/lib/constants';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
 import DomainSection from './DomainSection';
 import VerifySection from './VerifySection';
@@ -28,8 +27,9 @@ const { VERIFY_STATE_DEFAULT, VERIFY_STATE_EXIST, VERIFY_STATE_GOOD } = VERIFY_S
 const DOMAIN_STEP = 0;
 const VERIFY_STEP = 1;
 
-const DomainModal = ({ show, onClose, domain, createNotification }) => {
+const DomainModal = ({ show, onClose, domain }) => {
     const [domainModel, setDomain] = useState(domain);
+    const { createNotification } = useNotifications();
     const [domainName, updateDomainName] = useState(domainModel.DomainName);
     const { request: requestGetDomain } = useApiWithoutResult(getDomain);
     const { request: requestAddDomain } = useApiWithoutResult(addDomain);
@@ -124,17 +124,11 @@ const DomainModal = ({ show, onClose, domain, createNotification }) => {
 DomainModal.propTypes = {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
-    domain: PropTypes.object.isRequired,
-    createNotification: PropTypes.func.isRequired
+    domain: PropTypes.object.isRequired
 };
 
 DomainModal.defaultProps = {
     domain: {}
 };
 
-const mapDispatchToProps = { createNotification };
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(DomainModal);
+export default DomainModal;

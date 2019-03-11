@@ -1,15 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ConfirmModal, useModal, Alert, useApiWithoutResult, Dropdown, DropdownMenu } from 'react-components';
+import {
+    ConfirmModal,
+    useModal,
+    Alert,
+    useApiWithoutResult,
+    Dropdown,
+    DropdownMenu,
+    useNotifications
+} from 'react-components';
 import { c } from 'ttag';
-import { connect } from 'react-redux';
 import { removeMember, updateRole, privatizeMember } from 'proton-shared/lib/api/members';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 import { MEMBER_PRIVATE, MEMBER_ROLE } from 'proton-shared/lib/constants';
 
 import EditMemberModal from './EditMemberModal';
 
-const MemberActions = ({ member, organization, createNotification }) => {
+const MemberActions = ({ member, organization }) => {
+    const { createNotification } = useNotifications();
     const { request: requestRemoveMember } = useApiWithoutResult(removeMember);
     const { request: requestUpdateRole } = useApiWithoutResult(updateRole);
     const { request: requestPrivatize } = useApiWithoutResult(privatizeMember);
@@ -110,13 +117,7 @@ const MemberActions = ({ member, organization, createNotification }) => {
 
 MemberActions.propTypes = {
     member: PropTypes.object.isRequired,
-    organization: PropTypes.object.isRequired,
-    createNotification: PropTypes.func.isRequired
+    organization: PropTypes.object.isRequired
 };
 
-const mapDispatchToProps = { createNotification };
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(MemberActions);
+export default MemberActions;

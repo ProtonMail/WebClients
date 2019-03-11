@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { connect } from 'react-redux';
-import { PrimaryButton, useModal } from 'react-components';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
+import { PrimaryButton, useModal, useNotifications } from 'react-components';
 import { fetchDomains } from 'proton-shared/lib/state/domains/actions';
 import { DOMAIN_STATE } from 'proton-shared/lib/constants';
 
@@ -11,7 +10,8 @@ import MemberModal from './MemberModal';
 
 const { DOMAIN_STATE_ACTIVE } = DOMAIN_STATE;
 
-const AddMemberButton = ({ createNotification, organization, domains, fetchDomains }) => {
+const AddMemberButton = ({ organization, domains, fetchDomains }) => {
+    const { createNotification } = useNotifications();
     const [verifiedDomains, setDomains] = useState([]);
     const { isOpen, open, close } = useModal();
     const handleClick = () => {
@@ -83,7 +83,6 @@ const AddMemberButton = ({ createNotification, organization, domains, fetchDomai
 };
 
 AddMemberButton.propTypes = {
-    createNotification: PropTypes.func.isRequired,
     organization: PropTypes.object.isRequired,
     domains: PropTypes.object.isRequired,
     fetchDomains: PropTypes.func.isRequired
@@ -93,7 +92,7 @@ const mapStateToProps = ({ organization: { data: dataOrganization }, domains }) 
     organization: dataOrganization,
     domains
 });
-const mapDispatchToProps = { createNotification, fetchDomains };
+const mapDispatchToProps = { fetchDomains };
 
 export default connect(
     mapStateToProps,

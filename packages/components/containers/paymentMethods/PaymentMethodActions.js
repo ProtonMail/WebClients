@@ -1,10 +1,16 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { SmallButton, useModal, ConfirmModal, Alert, EditCardModal, useApiWithoutResult } from 'react-components';
+import {
+    SmallButton,
+    useModal,
+    ConfirmModal,
+    Alert,
+    EditCardModal,
+    useApiWithoutResult,
+    useNotifications
+} from 'react-components';
 import { deletePaymentMethod } from 'proton-shared/lib/api/payments';
-import { createNotification } from 'proton-shared/lib/state/notifications/actions';
 
 const toCard = ({ Details }) => {
     return {
@@ -18,8 +24,9 @@ const toCard = ({ Details }) => {
     };
 };
 
-const PaymentMethodActions = ({ method, createNotification, onChange }) => {
+const PaymentMethodActions = ({ method, onChange }) => {
     const card = toCard(method);
+    const { createNotification } = useNotifications();
     const { request } = useApiWithoutResult(deletePaymentMethod);
     const { isOpen: deleteModal, open: openDeleteModal, close: closeDeleteModal } = useModal();
     const { isOpen: editModal, open: openEditModal, close: closeEditModal } = useModal();
@@ -51,13 +58,7 @@ const PaymentMethodActions = ({ method, createNotification, onChange }) => {
 
 PaymentMethodActions.propTypes = {
     method: PropTypes.object.isRequired,
-    createNotification: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = { createNotification };
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(PaymentMethodActions);
+export default PaymentMethodActions;
