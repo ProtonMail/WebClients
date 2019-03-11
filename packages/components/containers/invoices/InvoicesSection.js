@@ -19,7 +19,7 @@ import {
 import { queryInvoices } from 'proton-shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER } from 'proton-shared/lib/constants';
 
-import useApiResult from '../../hooks/useApi';
+import useApiResult from '../../hooks/useApiResult';
 import InvoiceAmount from './InvoiceAmount';
 import InvoiceType from './InvoiceType';
 import InvoiceState from './InvoiceState';
