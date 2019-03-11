@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import AddressKeysHeader from './AddressKeysHeader';
+import ContactKeysHeader from './ContactKeysHeader';
 import AddressKeysTable from './AddressKeysTable';
 import { getAddressesKeys, getUserAddressKeys } from './AddressKeysSectionModel';
 
@@ -66,10 +67,10 @@ const AddressKeysSection = ({ userModel, addressesModel, keysModel }) => {
 
     return (
         <>
-            <AddressKeysHeader mode={'address'} {...headerHandlers} />
+            <AddressKeysHeader {...headerHandlers} />
             <AddressKeysTable addressKeys={addressKeys} mode={'address'} {...tableHandlers} />
 
-            <AddressKeysHeader mode={'user'} />
+            <ContactKeysHeader />
             <AddressKeysTable addressKeys={userAddressKeys} mode={'user'} {...tableHandlers} />
         </>
     );
