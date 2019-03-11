@@ -27,7 +27,6 @@
     .conversation-meta {
         @include flexColumn();
         max-width: calc(100% - 38px);
-        background: inherit
     }
 
     .row {
@@ -117,7 +116,6 @@
         }
 
         .senders {
-            float: left;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -138,9 +136,10 @@
 
 
         .labelsElement-container {
-            position: absolute;
-            right: 10px;
-            bottom: 10px;
+            flex: 0;
+            margin-left: auto;
+            display: inline-flex;
+            flex-wrap: nowrap;
             z-index: 2;
             width: auto;
             height: 18px
