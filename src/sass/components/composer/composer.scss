@@ -41,8 +41,12 @@
         background:$white;
         will-change: transform;
 
-        header, footer, .row {
-          line-height: $composerRowHeight;
+        header, footer {
+            line-height: $composerRowHeight;
+        }
+
+        .row {
+            line-height: #{$composerRowHeight+1px}; // fixes a zoom bug for Chrome
         }
 
         .composer-meta:not(.composer-toggle-ccbcc) .ccRow,
