@@ -1,8 +1,4 @@
-// Compass import, if necessary
-//@import "compass/css3";
- 
-
-// Sass variables: adapt them to your designs
+// Sass variables: adapt them to your designs globally
 
 // base size for text
 $base-font             : 14 !default; // if "14" then 1em = 14px
@@ -14,27 +10,27 @@ $font-family           : -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxyg
 
 
 // project colors
-$pm-global-grey     : #262a33;
-$pm-global-altgrey  : #3c414e;
-$pm-global-light    : #F6F7FA;
-$pm-global-border   : #DDE6EC;
-$pm-global-muted    : #eeeff1;
-$pm-global-success  : #5db039;
-$pm-global-warning  : #EC5858;
-$pm-global-attention: #EAC819;
-$pm-blue            : #657ee4;
-$pm-blue-dark       : #526ee0;
-$pm-blue-light      : #788EE8;
+$pm-global-grey        : #262a33;
+$pm-global-altgrey     : #3c414e;
+$pm-global-light       : #f6f7fa;
+$pm-global-border      : #dde6ec;
+$pm-global-muted       : #eeeff1;
+$pm-global-success     : #5db039;
+$pm-global-warning     : #ec5858;
+$pm-global-attention   : #eac819;
+$pm-blue               : #657ee4;
+$pm-blue-dark          : #526ee0;
+$pm-blue-light         : #788ee8;
 
-$white              : #fff;
-$black              : #000;
+$white                 : #fff;
+$black                 : #000;
 
-$pv-green           : #4DA358;
-$pv-green-dark      : #3E8447;
-$pv-green-light     : #5FB364;
+$pv-green              : #4da358;
+$pv-green-dark         : #3e8447;
+$pv-green-light        : #5fb364;
 
 // not approved colors
-$pm-input-background: #fcfdff;
+$pm-input-background   : #fcfdff;
 
 // colors
 $color-links           : $pm-blue;
@@ -91,6 +87,9 @@ $root-default-font-size: 16 !default;
 $use-reset-button      : true !default;
 $use-old-ie-fallbacks  : true !default;
 
+// default config for webpack, can be overriden by "global config" in styles-pm.scss
+$path-images           : '../../assets/img/shared/' !default;
+
 
 // Sass functions: don’t touch if you are not sure ;)
 
@@ -115,7 +114,7 @@ $use-old-ie-fallbacks  : true !default;
 // calculated via https://rocssti.net/en/builder-css
 // based on http://soqr.fr/vertical-rhythm/ thanks @goetter & @eQRoeil
 
-@function line-height ($font-size, $base-height, $base-font, $type-vr){
+@function line-height ($font-size, $base-height, $base-font, $type-vr) {
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
   $height: ($base-font * $base-height / $font-size) ;
@@ -125,7 +124,7 @@ $use-old-ie-fallbacks  : true !default;
 }
 
 
-@function margin-em ($font-size, $base-height, $base-font, $type-vr){
+@function margin-em ($font-size, $base-height, $base-font, $type-vr) {
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
   $other_coef: ceil($base-height * $base-font / $font-size);

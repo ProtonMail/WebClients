@@ -23,7 +23,7 @@
  * RTL = Right To Left =>
  * to adapt a website in a language that is written from right to left
  * designed for multilingual websites with LTR et RTL
- * set $rtl_option to true in design-system-config
+ * set $rtl_option to true
  *
  *
  * summary
@@ -34,6 +34,13 @@
  * 
  * 
  */
+
+/*
+ * global variables for this case
+ * if you need to override values in design-system-config or another
+ * do it here and NOT in partials (which might be updated)
+ */
+$path-images  : '../img/shared/';
 
 
 @import "reusable-components/design-system-config";

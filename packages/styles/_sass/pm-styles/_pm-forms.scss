@@ -30,7 +30,7 @@
   }
 
   &[type="search"] {
-    background: url("/assets/img/shared/sprite-for-css-only.svg#css-search") 6px 50% no-repeat;
+    background: url("#{$path-images}sprite-for-css-only.svg#css-search") 6px 50% no-repeat;
     background-size: 1.5rem;
     @extend .pl2;
     &::-webkit-search-cancel-button {
@@ -39,7 +39,7 @@
   }
 }
 select.pm-field {
-  background: $pm-input-background url("/assets/img/shared/sprite-for-css-only.svg#css-carret") calc(100% - 6px) 50% no-repeat;
+  background: $pm-input-background url("#{$path-images}sprite-for-css-only.svg#css-carret") calc(100% - 6px) 50% no-repeat;
   background-size: 1.5rem;
   padding-left: 1em;
   padding-right: 25px;

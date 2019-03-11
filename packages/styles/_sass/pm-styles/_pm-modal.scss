@@ -2,10 +2,10 @@
  * Modals
  */
 /* overlay covers everything */
-$modal-width: 50%;
-$modal-min-width: 42em;
+$modal-width: 50% !default;
+$modal-min-width: 42em !default;
 
-$modal-smaller-width: 22em;
+$modal-smaller-width: 22em !default;
 
 .pm-modalOverlay {
   position: fixed;
