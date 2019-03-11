@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { SubTitle, Alert, Block, PrimaryButton, Button, LearnMore } from 'react-components';
 
 const AddressKeysHeader = ({ mode, handleAddKey, handleImportKey, handleReactivateKeys }) => {
-    const title = mode === 'user' ? c('Title').t`Contact Encryption Keys` : c('Title').t`Email Encryption Keys`;
+    const isUserMode = mode === 'user';
+    const title = isUserMode ? c('Title').t`Contact Encryption Keys` : c('Title').t`Email Encryption Keys`;
 
     return (
         <>
@@ -15,11 +16,13 @@ const AddressKeysHeader = ({ mode, handleAddKey, handleImportKey, handleReactiva
                 <br />
                 <LearnMore url="todo" />
             </Alert>
-            <Block>
-                <PrimaryButton onClick={handleAddKey}>{c('Action').t`Add new key`}</PrimaryButton>
-                <Button onClick={handleImportKey}>{c('Action').t`Import key`}</Button>
-                <Button onClick={handleReactivateKeys}>{c('Action').t`Reactivate keys`}</Button>
-            </Block>
+            {isUserMode ? null : (
+                <Block>
+                    <PrimaryButton onClick={handleAddKey}>{c('Action').t`Add new key`}</PrimaryButton>
+                    <Button onClick={handleImportKey}>{c('Action').t`Import key`}</Button>
+                    <Button onClick={handleReactivateKeys}>{c('Action').t`Reactivate keys`}</Button>
+                </Block>
+            )}
         </>
     );
 };

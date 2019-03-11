@@ -53,12 +53,7 @@ const AddressKeysSection = ({ userModel, addressesModel, keysModel }) => {
     const headerHandlers = {
         handleAddKey,
         handleImportKey,
-        handleReactivateKeys,
-        handleDeleteKey,
-        handleExportKey,
-        handleMakePrimaryKey,
-        handleMarkObsoleteKey,
-        handleMarkCompromisedKey
+        handleReactivateKeys
     };
 
     const tableHandlers = {
@@ -74,7 +69,7 @@ const AddressKeysSection = ({ userModel, addressesModel, keysModel }) => {
             <AddressKeysHeader mode={'address'} {...headerHandlers} />
             <AddressKeysTable addressKeys={addressKeys} mode={'address'} {...tableHandlers} />
 
-            <AddressKeysHeader mode={'user'} {...headerHandlers} />
+            <AddressKeysHeader mode={'user'} />
             <AddressKeysTable addressKeys={userAddressKeys} mode={'user'} {...tableHandlers} />
         </>
     );
