@@ -2,17 +2,24 @@ export const STATUS_CODE_UNAUTHORIZED = 401;
 export const STATUS_CODE_UNLOCK = 403;
 
 export const getError = (e) => {
-    if (!e.data) {
-        return;
+    const { data, status } = e;
+
+    if (!data) {
+        return {
+            status
+        };
     }
 
-    const { Error: errorMessage, Code: errorCode } = e.data;
+    const { Error: errorMessage, Code: errorCode } = data;
 
     if (!errorMessage) {
-        return;
+        return {
+            status
+        };
     }
 
     return {
+        status,
         code: errorCode,
         message: errorMessage
     };
