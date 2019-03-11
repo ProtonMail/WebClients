@@ -1,18 +1,17 @@
-import checkStatus from './checkStatus';
+import { createUrl, checkStatus } from './helpers';
 
-const fetchHelper = ({ url: urlString, params = {}, output, ...config }) => {
-    const options = {
+const fetchHelper = ({ url: urlString, params, output, ...rest }) => {
+    const config = {
         mode: 'cors',
         credentials: 'include',
         redirect: 'follow',
-        ...config
+        ...rest
     };
 
-    const url = new URL(urlString);
-    Object.keys(params).forEach((key) => url.searchParams.append(key, params[key]));
+    const url = createUrl(urlString, params);
 
-    return fetch(url, options)
-        .then(checkStatus)
+    return fetch(url, config)
+        .then((response) => checkStatus(response, config))
         .then((response) => response[output]());
 };
 
