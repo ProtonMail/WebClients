@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { c } from 'ttag';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Table, TableHeader, TableBody, TableRow } from 'react-components';
+import { Table, TableHeader, TableBody, TableRow, Alert } from 'react-components';
 import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 
 import DomainStatus from './DomainStatus';
@@ -12,6 +12,10 @@ const DomainsTable = ({ domains, loading, fetchMembers }) => {
     useEffect(() => {
         fetchMembers();
     }, []);
+
+    if (!loading && !domains.length) {
+        return <Alert>{c('Info').t`No domains yet`}</Alert>;
+    }
     return (
         <Table>
             <TableHeader
