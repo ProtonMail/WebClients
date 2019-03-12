@@ -12,7 +12,11 @@ const Alert = ({ type, children, learnMore }) => {
     return (
         <div className={CLASSES[type]}>
             <div>{children}</div>
-            {learnMore ? <LearnMore url={learnMore} /> : null}
+            {learnMore ? (
+                <div>
+                    <LearnMore url={learnMore} />
+                </div>
+            ) : null}
         </div>
     );
 };
