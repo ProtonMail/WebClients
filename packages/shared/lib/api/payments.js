@@ -30,3 +30,9 @@ export const deletePaymentMethod = (ID) => ({
     url: `payments/methods/${ID}`,
     method: 'delete'
 });
+
+export const createBitcoinPayment = ({ Amount, Currency }) => ({
+    url: 'payments/bcinfo',
+    method: 'post',
+    data: { Amount, Currency }
+});

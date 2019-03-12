@@ -20,6 +20,9 @@ export const INVOICE_OWNER = {
     USER: 0,
     ORGANIZATION: 1
 };
+export const DEFAULT_CURRENCY = 'EUR';
+export const MIN_BITCOIN_AMOUNT = 500;
+export const BTC_DONATION_ADDRESS = '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8';
 export const AUTH_LOG_EVENTS = {
     LOGIN_FAILURE_PASSWORD: 0,
     LOGIN_SUCCESS: 1,
