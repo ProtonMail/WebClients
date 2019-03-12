@@ -22,8 +22,9 @@ const Copy = ({ className }) => {
         <Button
             onClick={handleClick}
             className={getClasses(copied ? 'copied' : '', className)}
-            title={copied ? t`Copied` : t`Copy`}>
-            <Icon />
+            title={copied ? t`Copied` : t`Copy`}
+        >
+            <Icon name="clipboard" />
         </Button>
     );
 };
