@@ -61,7 +61,8 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
-    multiple: false
+    multiple: false,
+    className: ''
 };
 
 export default Select;

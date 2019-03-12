@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import Button from '../button/Button';
-import NavText from './NavText';
-import NavIcon from './NavIcon';
+import Icon from '../icon/Icon';
 import NavMenu from './NavMenu';
 
-const NavItem = ({ type, link, text, onClick, iconClassName, list }) => {
+const NavItem = ({ type, link, text, onClick, iconName, list }) => {
     if (type === 'link') {
         return (
             <li className="navigation__item">
                 <NavLink className="navigation__link" to={link}>
-                    {iconClassName && <NavIcon className={iconClassName} />}
-                    <NavText>{text}</NavText>
+                    {iconName && <Icon name={iconName} />}
+                    {text}
                 </NavLink>
                 {list.length ? <NavMenu list={list} /> : null}
             </li>
@@ -24,8 +23,8 @@ const NavItem = ({ type, link, text, onClick, iconClassName, list }) => {
         return (
             <li className="navigation__item">
                 <span className="navigation__link">
-                    {iconClassName && <NavIcon className={iconClassName} />}
-                    <NavText>{text}</NavText>
+                    {iconName && <Icon name={iconName} />}
+                    {text}
                     {list.length ? <NavMenu list={list} /> : null}
                 </span>
             </li>
@@ -36,8 +35,8 @@ const NavItem = ({ type, link, text, onClick, iconClassName, list }) => {
         return (
             <li className="navigation__item">
                 <Button className="w100" onClick={onClick}>
-                    {iconClassName && <NavIcon className={iconClassName} />}
-                    <NavText>{text}</NavText>
+                    {iconName && <Icon name={iconName} />}
+                    {text}
                 </Button>
                 {list.length ? <NavMenu list={list} /> : null}
             </li>
@@ -48,7 +47,7 @@ const NavItem = ({ type, link, text, onClick, iconClassName, list }) => {
 };
 
 NavItem.propTypes = {
-    iconClassName: PropTypes.string,
+    iconName: PropTypes.string,
     onClick: PropTypes.func,
     type: PropTypes.oneOf(['link', 'button', 'text']),
     link: PropTypes.string,
