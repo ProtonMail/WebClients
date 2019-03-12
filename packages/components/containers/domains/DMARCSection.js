@@ -7,7 +7,7 @@ const DMARCSection = () => {
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
                 {c('Info')
-                    .t`If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. Feel free to ignore and skip DMARC unless you really want strict policies such as <strong>p=quarantine</strong> or <strong>p=reject</strong>.`}
+                    .t`If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. Feel free to ignore and skip DMARC unless you really want strict policies such as "p=quarantine" or "p=reject".`}
             </Alert>
             <Label>{c('Label').t`Here is a basic DMARC record that does nothing except email you reports.`}</Label>
             <Table>

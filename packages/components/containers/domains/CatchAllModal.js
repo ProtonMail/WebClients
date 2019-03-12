@@ -7,7 +7,7 @@ import AddressesTable from './AddressesTable';
 
 const CatchAllModal = ({ domain, show, onClose }) => {
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Catch all address`}>
+        <Modal modalClassName="pm-modal--small" show={show} onClose={onClose} title={c('Title').t`Catch all address`}>
             <ContentModal onReset={onClose}>
                 <AddressesTable domain={domain} />
                 <FooterModal>

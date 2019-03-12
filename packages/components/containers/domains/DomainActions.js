@@ -24,7 +24,7 @@ const DomainActions = ({ domain }) => {
         <>
             <SmallButton onClick={openEditModal}>{c('Action').t`Edit`}</SmallButton>
             <DomainModal show={showEditModal} onClose={closeEditModal} domain={domain} />
-            <SmallButton onClick={openCatchAllModal} />
+            <SmallButton onClick={openCatchAllModal}>{c('Action').t`Catch all`}</SmallButton>
             <CatchAllModal show={showCatchAllModal} onClose={closeCatchAllModal} domain={domain} />
             <SmallButton onClick={openDeleteModal}>{c('Action').t`Delete`}</SmallButton>
             <ConfirmModal

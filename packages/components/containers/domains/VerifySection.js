@@ -8,7 +8,13 @@ const VerifySection = ({ domain }) => {
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
                 {c('Info for domain modal')
-                    .t`For security reasons, we need to verify that you are the owner of your domain. Please add the following code into your DNS record. <strong>Do not remove it even after successful verification</strong>. This can typically be done in the control panel of your domain name registrar.`}
+                    .t`For security reasons, we need to verify that you are the owner of your domain. Please add the following code into your DNS record.`}
+            </Alert>
+            <Alert type="warning">
+                <strong>{c('Warning for domain modal').t`Do not remove it even after successful verification.`}</strong>
+                <br />
+                {c('Warning for domain modal')
+                    .t`This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
             <Label>{c('Label for domain modal').t`Please add the following TXT record:`}</Label>
             <Table>
