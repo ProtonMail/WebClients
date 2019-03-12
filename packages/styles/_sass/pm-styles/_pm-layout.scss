@@ -10,6 +10,7 @@ hr {
 
 /* rounded corners */
 .rounded { border-radius: $global-border-radius; }
+.rounded50 { border-radius: 50%; }
 
 kbd {
   @extend .rounded;

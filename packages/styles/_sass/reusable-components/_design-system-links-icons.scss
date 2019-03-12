@@ -48,11 +48,6 @@ a[href^="mailto:"] {
   @extend .alignmiddle;
 }
 
-.icon-800p {
-  display: inline-block;
-  width: 800px;
-  height: 800px;
-}
 
 .icon-100p {
   display: inline-block;
@@ -76,17 +71,6 @@ a[href^="mailto:"] {
   height: 50%;
 }
 
-
-.twitter-link > .icon-twitter {
-  fill: $pm-blue;
-}
-.twitter-link:focus,
-.twitter-link:hover,
-.twitter-link:active {
-  & > .icon-twitter {
-    fill: $pm-blue-dark;
-  }
-}
 
 
 

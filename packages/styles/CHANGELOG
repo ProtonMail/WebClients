@@ -1,10 +1,24 @@
+# [1.4.3] - 2019-03-12
+
+## New
+
+- added class `rounded50` (`border-radius: 50%`)
+- added examples of integration in icons
+- added one DO/DONT
+
+## Updated/fixes
+
+- removed duplicate SVG icon
+- moved some classes that are specific to design system website
+- indentation fixes
+
 # [1.4.2] - 2019-03-11
 
 ## Updated/fixes
 
-- use relative path for images (for webpack)
-- add documentation for variables
-- add missing `!default` on variables of the design system
+- used relative path for images (for webpack)
+- added documentation for variables
+- added missing `!default` on variables of the design system
 - updated `styles-pm` comments and “how to use design system” for variables
 - indentation fixes
 
@@ -28,7 +42,7 @@
 
 ## Updated/fixes
 
-- fix `padding`s on `block-info-warning`
+- fixed `padding`s on `block-info-warning`
 
 ## Misc
 
@@ -45,7 +59,7 @@
 
 ## Misc
 
-- Fix CSP issue on SVG sprite for CSS (Firefox)
+- Fixed CSP issue on SVG sprite for CSS (Firefox)
 
 
 # [1.3.5] - 2019-03-01
