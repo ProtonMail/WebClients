@@ -4,16 +4,15 @@ import { NavLink } from 'react-router-dom';
 
 import Button from '../button/Button';
 import Icon from '../icon/Icon';
-import DropdownText from './DropdownText';
 import { getClasses } from '../../helpers/component';
 
-const DropdownItem = ({ type, link, text, iconName, className, onClick }) => {
+const DropdownItem = ({ type, link, text, iconName, className, onClick, disabled }) => {
     if (type === 'button') {
         return (
             <li className={getClasses('DropdownItem', className)}>
-                <Button onClick={onClick}>
+                <Button onClick={onClick} disabled={disabled}>
                     {iconName && <Icon name={iconName} />}
-                    <DropdownText>{text}</DropdownText>
+                    {text}
                 </Button>
             </li>
         );
@@ -24,7 +23,7 @@ const DropdownItem = ({ type, link, text, iconName, className, onClick }) => {
             <li className={getClasses('DropdownItem', className)}>
                 <NavLink to={link}>
                     {iconName && <Icon name={iconName} />}
-                    <DropdownText>{text}</DropdownText>
+                    {text}
                 </NavLink>
             </li>
         );
@@ -34,7 +33,7 @@ const DropdownItem = ({ type, link, text, iconName, className, onClick }) => {
         return (
             <li className={getClasses('DropdownItem', className)}>
                 {iconName && <Icon name={iconName} />}
-                <DropdownText>{text}</DropdownText>
+                {text}
             </li>
         );
     }
@@ -48,7 +47,8 @@ DropdownItem.propTypes = {
     type: PropTypes.string.isRequired,
     iconName: PropTypes.string,
     text: PropTypes.string.isRequired,
-    link: PropTypes.string
+    link: PropTypes.string,
+    disabled: PropTypes.bool
 };
 
 DropdownItem.defaultProps = {
