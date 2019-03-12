@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-import { Button, PrimaryButton } from '../button';
+import { ResetButton, PrimaryButton } from '../button';
 import Modal from './Modal';
 import Footer from './Footer';
 import Content from './Content';
@@ -32,7 +32,7 @@ const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm })
             <Content onSubmit={onConfirm} onReset={onClose}>
                 {children}
                 <Footer>
-                    <Button type="reset">{cancel}</Button>
+                    <ResetButton>{cancel}</ResetButton>
                     <PrimaryButton type="submit" autoFocus={true}>
                         {confirm}
                     </PrimaryButton>

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import {
     Modal,
-    Button,
+    ResetButton,
     PrimaryButton,
     FooterModal,
     ContentModal,
@@ -111,7 +111,7 @@ const DomainModal = ({ show, onClose, domain }) => {
                 {<Breadcrumb list={STEPS.map(({ label }) => label)} current={step} onClick={handleClick} />}
                 {STEPS[step].section}
                 <FooterModal>
-                    <Button type="reset">{c('Action').t`Close`}</Button>
+                    <ResetButton>{c('Action').t`Close`}</ResetButton>
                     <PrimaryButton type="submit">
                         {step < STEPS.length - 1 ? c('Action').t`Next` : c('Action').t`Finish`}
                     </PrimaryButton>

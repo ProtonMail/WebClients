@@ -24,6 +24,7 @@ const Pagination = ({ onNext, onPrevious, onSelect, page, total, limit }) => {
         list.push({
             text: index.toString(),
             type: 'button',
+            disabled: index === page,
             className: index === page ? 'is-active' : '',
             onClick: onSelect(index)
         });

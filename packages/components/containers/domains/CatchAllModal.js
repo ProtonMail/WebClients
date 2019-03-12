@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Modal, ContentModal, FooterModal, Button } from 'react-components';
+import { Modal, ContentModal, FooterModal, ResetButton } from 'react-components';
 
 import AddressesTable from './AddressesTable';
 
@@ -11,7 +11,7 @@ const CatchAllModal = ({ domain, show, onClose }) => {
             <ContentModal onReset={onClose}>
                 <AddressesTable domain={domain} />
                 <FooterModal>
-                    <Button type="reset">{c('Action').t`Close`}</Button>
+                    <ResetButton>{c('Action').t`Close`}</ResetButton>
                 </FooterModal>
             </ContentModal>
         </Modal>

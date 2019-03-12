@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Button, PrimaryButton, Input, Label, Row } from 'react-components';
+import { ResetButton, PrimaryButton, Input, Label, Row } from 'react-components';
 
 import Modal from './Modal';
 import Footer from './Footer';
@@ -38,7 +38,7 @@ const InputModal = ({ label, title, input: initialInput, show, onClose, onSubmit
                     />
                 </Row>
                 <Footer>
-                    <Button type="reset">{cancel}</Button>
+                    <ResetButton>{cancel}</ResetButton>
                     <PrimaryButton type="submit">{submit}</PrimaryButton>
                 </Footer>
             </Content>
