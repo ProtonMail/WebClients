@@ -1,16 +1,26 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Table, TableHeader, TableBody, TableRow, Time, Alert } from 'react-components';
-import { LOGS_STATE } from 'proton-shared/lib/constants';
+import { Table, TableHeader, TableBody, TableRow, Time, Alert, Icon } from 'react-components';
+import { LOGS_STATE, AUTH_LOG_EVENTS } from 'proton-shared/lib/constants';
 
 const { DISABLE, ADVANCED } = LOGS_STATE;
+const { LOGIN_FAILURE_PASSWORD, LOGIN_SUCCESS, LOGOUT, LOGIN_FAILURE_2FA, LOGIN_SUCCESS_AWAIT_2FA } = AUTH_LOG_EVENTS;
 
 const EVENTS = {
-    0: c('Logs status').t`Login password failure`,
-    1: c('Logs status').t`Login success`,
-    2: c('Logs status').t`Logout`,
-    3: c('Logs status').t`2FA login failure`
+    [LOGIN_FAILURE_PASSWORD]: c('Logs status').t`Login failure (Password)`,
+    [LOGIN_SUCCESS]: c('Logs status').t`Login success`,
+    [LOGOUT]: c('Logs status').t`Logout`,
+    [LOGIN_FAILURE_2FA]: c('Logs status').t`Login failure (2FA)`,
+    [LOGIN_SUCCESS_AWAIT_2FA]: c('Logs status').t`Login failure (2FA)`
+};
+
+const ICONS = {
+    [LOGIN_FAILURE_PASSWORD]: <Icon name="off" />,
+    [LOGIN_SUCCESS]: <Icon name="on" />,
+    [LOGOUT]: <Icon name="on" />,
+    [LOGIN_FAILURE_2FA]: <Icon name="off" />,
+    [LOGIN_SUCCESS_AWAIT_2FA]: <Icon name="off" />
 };
 
 const LogsTable = ({ list, logAuth, loading }) => {
@@ -36,7 +46,9 @@ const LogsTable = ({ list, logAuth, loading }) => {
                         <TableRow
                             key={key}
                             cells={[
-                                EVENTS[Event],
+                                <>
+                                    {ICONS[Event]} {EVENTS[Event]}
+                                </>,
                                 logAuth === ADVANCED ? IP : '',
                                 <Time key={key} format="LLL">
                                     {time}

@@ -7,6 +7,7 @@ import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 
 import DomainStatus from './DomainStatus';
 import DomainActions from './DomainActions';
+import DomainName from './DomainName';
 
 const DomainsTable = ({ domains, loading, fetchMembers }) => {
     useEffect(() => {
@@ -32,7 +33,7 @@ const DomainsTable = ({ domains, loading, fetchMembers }) => {
                         <TableRow
                             key={key}
                             cells={[
-                                domain.DomainName,
+                                <DomainName key={key} domain={domain} />,
                                 <DomainStatus key={key} domain={domain} />,
                                 <DomainActions key={key} domain={domain} />
                             ]}
