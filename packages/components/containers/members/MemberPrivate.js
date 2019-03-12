@@ -1,9 +1,10 @@
-import { c } from 'ttag';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { Icon } from 'react-components';
 
 const PRIVATE = {
-    0: c('Status for member').t`No`,
-    1: c('Status for member').t`Yes`
+    0: <Icon name="off" />,
+    1: <Icon name="on" />
 };
 
 const MemberPrivate = ({ member }) => {
