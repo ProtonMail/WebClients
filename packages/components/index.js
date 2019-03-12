@@ -44,6 +44,7 @@ export { default as Price } from './components/price/Price';
 export { default as PrimaryButton } from './components/button/PrimaryButton';
 export { default as Progress } from './components/progress/Progress';
 export { default as Radio } from './components/input/Radio';
+export { default as LinkButton } from './components/button/LinkButton';
 export { default as ResetButton } from './components/button/ResetButton';
 export { default as RichTextEditor } from './components/input/RichTextEditor';
 export { default as Row } from './components/container/Row';

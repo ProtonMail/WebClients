@@ -5,3 +5,4 @@ export { default as PrimaryButton } from './PrimaryButton';
 export { default as ButtonGroup } from './ButtonGroup';
 export { default as Group } from './Group';
 export { default as Copy } from './Copy';
+export { default as LinkButton } from './LinkButton';

@@ -1,28 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { t } from 'ttag';
+import { c } from 'ttag';
 
-import Input from '../input/Input';
-import Label from '../label/Label';
+import Checkbox from '../input/Checkbox';
+import Icon from '../icon/Icon';
 
-const Toggle = ({ id }) => {
+const label = (key) => {
+    const I18N = {
+        on: c('Toggle button').t`On`,
+        off: c('Toggle button').t`Off`
+    };
+
+    return (
+        <span className="pm-toggle-label-text">
+            <Icon name={key} alt={I18N[key]} className="pm-toggle-label-img" />
+        </span>
+    );
+};
+
+const Toggle = ({ id, checked, onChange }) => {
+    const [value, setValue] = useState(checked);
+    const handleChange = ({ target }) => {
+        const newVal = target.checked;
+        setValue(newVal);
+        onChange(newVal);
+    };
+
     return (
         <>
-            <Input type="checkbox" id={id} className="pm-toggle-checkbox" />
-            <Label htmlFor={id} className="pm-toggle-label">
-                <span className="pm-toggle-label-text">{t`On`}</span>
-                <span className="pm-toggle-label-text">{t`Off`}</span>
-            </Label>
+            <Checkbox id={id} checked={value} className="pm-toggle-checkbox" onChange={handleChange} />
+            <label htmlFor={id} className="pm-toggle-label">
+                {label('on')}
+                {label('off')}
+            </label>
         </>
     );
 };
 
 Toggle.propTypes = {
-    id: PropTypes.string.isRequired
+    id: PropTypes.string.isRequired,
+    checked: PropTypes.bool.isRequired,
+    onChange: PropTypes.func.isRequired
 };
 
 Toggle.defaultProps = {
-    id: 'toggle'
+    id: 'toggle',
+    checked: false
 };
 
 export default Toggle;
