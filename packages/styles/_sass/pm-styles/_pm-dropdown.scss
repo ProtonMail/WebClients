@@ -33,6 +33,19 @@ $dropDown-width: 200px !default;
   right: 0;
 }
 
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .dropDown-leftArrow .dropDown-content {
+      right: 0;
+      left: auto;
+    }
+    .dropDown-rightArrow .dropDown-content {
+      left: 0;
+      right: auto;
+    }
+  }
+}
+
 
 .dropDown-content::before {
   content: '';
@@ -60,4 +73,17 @@ $dropDown-width: 200px !default;
 .dropDown-rightArrow .dropDown-content::before {
   left: auto;
   right: 1rem;
+}
+
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .dropDown-leftArrow .dropDown-content::before {
+      right: 1rem;
+      left: auto;
+    }
+    .dropDown-rightArrow .dropDown-content::before {
+      right: auto;
+      left: 1rem;
+    }
+  }
 }

@@ -265,6 +265,20 @@
   border-radius: 0 $global-border-radius $global-border-radius 0;
 }
 
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .pm-group-buttons > .pm-group-button:first-of-type {
+      border-radius: 0 $global-border-radius $global-border-radius 0;
+      border-right-width: 1px;
+      border-left-width: 0;
+    }
+    .pm-group-buttons > .pm-group-button:last-of-type {
+      border-radius: $global-border-radius 0 0 $global-border-radius;
+      border-left-width: 1px;
+    }
+  }
+}
+
 /* aliases for buttons => different per project */
 /* primary/link/error/warning/info */
 .pm-button-primary {

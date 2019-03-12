@@ -22,6 +22,16 @@
     content: '✔';
     color: $pm-global-success;
 }
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .icon-ko::after,
+    .icon-ok::after {
+      left: 0;
+      right: auto;
+      padding: 0 0 0 .5em;
+    }
+  }
+}
 
 
 /* 404 */
@@ -40,4 +50,7 @@
 }
 .css-greater {
   background: url("/assets/img/shared/sprite-for-css-only.svg#css-greater") 50% 50% no-repeat;
+}
+.css-lesser {
+  background: url("/assets/img/shared/sprite-for-css-only.svg#css-lesser") 50% 50% no-repeat;
 }

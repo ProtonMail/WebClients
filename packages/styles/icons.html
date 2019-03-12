@@ -31,7 +31,7 @@ subsection: icons
 
   <h3>Icons with a “native” viewbox of 100×100</h3>
 
-  {% assign listIcons = "pm#twitter#clipboard#draft" | split: '#' %}
+  {% assign listIcons = "pm#twitter#clipboard" | split: '#' %}
 
   <div class="flex mb2">
     {% for icon in listIcons %}
@@ -253,8 +253,8 @@ subsection: icons
 
   <p>Some icons are used by CSS for some special cases, they are in a separate sprite in <code>assets/img/sprite-for-css-only.svg</code> (and this sprite should <strong>only</strong> be used for these rares cases).</p>
 
-  {% assign listIcons = "search#carret#greater" | split: '#' %}
-  {% assign listIconsDesc = "In <code>input search</code>#In <code>select</code>#In breadcrumb domain" | split: '#' %}
+  {% assign listIcons = "search#carret#greater#lesser" | split: '#' %}
+  {% assign listIconsDesc = "In <code>input search</code>#In <code>select</code>#In breadcrumb domain#In breadcrumb domain" | split: '#' %}
 
   <div class="flex mb2">
   {% for icon in listIcons %}

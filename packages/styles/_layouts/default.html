@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!--[if lte IE 6]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie6 oldies no-js"> <![endif]-->
-<!--[if lte IE 7]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie7 oldies no-js"> <![endif]-->
-<!--[if IE 8]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie8 oldies no-js">  <![endif]-->
-<!--[if IE 9]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie9 no-js">  <![endif]-->
-<!--[if gt IE 9]><!--> <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ page.lang }}" class="no-js"> <!--<![endif]-->
+<!--[if lte IE 6]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie6 oldies no-js"{% if page.direction == 'rtl' %} dir="rtl"{% endif %}> <![endif]-->
+<!--[if lte IE 7]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie7 oldies no-js"{% if page.direction == 'rtl' %} dir="rtl"{% endif %}> <![endif]-->
+<!--[if IE 8]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie8 oldies no-js"{% if page.direction == 'rtl' %} dir="rtl"{% endif %}>  <![endif]-->
+<!--[if IE 9]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ page.lang }}" lang="{{ page.lang }}" class="ie9 no-js"{% if page.direction == 'rtl' %} dir="rtl"{% endif %}>  <![endif]-->
+<!--[if gt IE 9]><!--> <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ page.lang }}" class="no-js"{% if page.direction == 'rtl' %} dir="rtl"{% endif %}> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     {% if site.environment == "prod" %}

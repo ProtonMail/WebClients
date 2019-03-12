@@ -6,13 +6,22 @@
   border-radius: $global-border-radius;
 }
 
-$block-info-border-width: 3px;
+$block-info-border-width: 3px !default;
 [class*="block-info"] {
   padding: .5em 1.2em;
   color: $pm-global-grey;
   background-color: $pm-global-light;
   border-left-width: $block-info-border-width;
   border-left-style: solid;
+}
+@if $rtl-option == true {
+  [dir="rtl"] {
+    [class*="block-info"] {
+      border-left-width: 0;
+      border-right-width: $block-info-border-width;
+      border-right-style: solid;
+    }
+  }
 }
 .block-info {
   border-color: $pm-blue;

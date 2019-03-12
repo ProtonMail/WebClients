@@ -15,6 +15,13 @@
   top: 6px;
   opacity: .3;
 }
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .breadcrumb-item:not(:last-of-type)::after {
+      background-image: url("#{$path-images}sprite-for-css-only.svg#css-lesser");
+    }
+  }
+}
 .breadcrumb-button {
   padding: .4em;
   opacity: .3;

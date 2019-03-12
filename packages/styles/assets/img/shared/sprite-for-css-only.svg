@@ -1,15 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
 
 <!-- don't touch this part without updating CSP header => bug Firefox https://bugzilla.mozilla.org/show_bug.cgi?id=1262842#c33 -->
-<style>use { display: none; } 
-use:target { display: block; } 
-.white { fill: #fff; } 
+<style>use { display: none; }
+use:target { display: block; }
+.white { fill: #fff; }
 .black { fill: #000; }
-.rotated-right { 
--webkit-transform: rotateZ(-90deg); 
-transform: rotateZ(-90deg); 
--webkit-transform-origin: center; 
+.rotated-right,
+.rotated-left {
+-webkit-transform-origin: center;
 transform-origin: center;
+}
+.rotated-right {
+-webkit-transform: rotateZ(-90deg);
+transform: rotateZ(-90deg);
+}
+.rotated-left {
+-webkit-transform: rotateZ(90deg);
+transform: rotateZ(90deg);
 }</style> 
 
   <symbol id="symbol-search"> 
@@ -24,5 +31,6 @@ transform-origin: center;
   <use id="css-search" xlink:href="#symbol-search" class="black" />
   <use id="css-carret" xlink:href="#symbol-carret" class="black" />
   <use id="css-greater" xlink:href="#symbol-carret" class="black rotated-right" />
+  <use id="css-lesser" xlink:href="#symbol-carret" class="black rotated-left" />
 
 </svg>

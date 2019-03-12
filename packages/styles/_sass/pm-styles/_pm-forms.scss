@@ -48,6 +48,16 @@ select.pm-field {
   }
 }
 
+@if $rtl-option == true {
+  [dir="rtl"] {
+    select.pm-field {
+      background-position: 6px 50%;
+      padding-right: 1em;
+      padding-left: 25px;
+    }
+  }
+}
+
 
 .pm-field--small {
   padding: em(2) em(16);  // design want 26px height (actually 27 to avoid .5px)
@@ -150,6 +160,17 @@ $width: 5.5em;
     display: inline-flex;
   }
 }
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .pm-toggle-label {
+      &::before {
+        left: auto;
+        right: 0;
+        transform: translateX( -#{$width/2} ) translateX(1px);
+      }
+    }
+  }
+}
 
 .pm-toggle-checkbox {
   @extend .invisible;
@@ -165,6 +186,17 @@ $width: 5.5em;
   }
   &:focus + .pm-toggle-label {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+  }
+}
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .pm-toggle-checkbox {
+      &:checked + .pm-toggle-label {
+        &::before {
+          transform: translateX(-2px);
+        }
+      }
+    }
   }
 }
 .pm-toggle-label-img {

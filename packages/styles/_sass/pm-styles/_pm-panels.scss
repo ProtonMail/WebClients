@@ -28,3 +28,22 @@
 .information-panel-content {
   margin: 1.6rem 2.3rem 1.6rem 5.1rem;
 }
+
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .information-panel-image {
+      left: auto;
+      right: -12px;
+      &::before {
+        left: auto;
+        right: -1px;
+        border: 6px solid transparent;
+        border-top: 6px solid $pm-global-border;
+        border-left: 6px solid $pm-global-border;
+      }
+    }
+    .information-panel-content {
+      margin: 1.6rem 5.1rem 1.6rem 2.3rem;
+    }
+  }
+}

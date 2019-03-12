@@ -223,6 +223,18 @@ $list-margins-values: 0, 0.5, 1, 1.5, 2; // specify 2.5 if needed
 .mlauto { margin-left: auto; }
 .mauto  { margin: auto; }
 
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .mrauto { 
+      margin-right: inherit; 
+      margin-left: auto;
+    }
+    .mlauto { 
+      margin-left: inherit; 
+      margin-right: auto;
+    }
+  }
+}
 
 /* paddings */
 

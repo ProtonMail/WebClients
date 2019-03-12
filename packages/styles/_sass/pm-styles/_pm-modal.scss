@@ -111,6 +111,14 @@ $modal-smaller-width: 22em !default;
 // .pm-modalClose:hover,
 // .pm-modalClose:active {
 // }
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .pm-modalClose {
+      left: .5em;
+      right: auto;
+    }
+  }
+}
 
 .pm-modalContent{
   padding: 0 rem(30);

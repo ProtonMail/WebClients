@@ -49,6 +49,13 @@
     opacity: 0;
     transition-delay: 1s, 0s, 0s, 0s;
   }
+  @if $rtl-option == true {
+    [dir="rtl"] {
+      .sidebar[aria-hidden="true"] {
+        transform: translateX(+180px);
+      }
+    }
+  }
   /* nesting visibility, see https://codepen.io/nico3333fr/pen/OaBOwa for explanation */
   .sidebar[aria-hidden="true"] .animated-expandmore__to_expand {
     visibility: hidden;
