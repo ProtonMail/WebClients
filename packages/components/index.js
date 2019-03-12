@@ -1,4 +1,5 @@
 export { default as AddressesSection } from './containers/addresses/AddressesSection';
+export { default as AddressVerificationSection } from './containers/security/AddressVerificationSection';
 export { default as Alert } from './components/alert/Alert';
 export { default as AskPasswordModal } from './containers/password/AskPasswordModal';
 export { default as Badge } from './components/badge/Badge';
@@ -15,6 +16,7 @@ export { default as DomainsSection } from './containers/domains/DomainsSection';
 export { default as Dropdown } from './components/dropdown/Dropdown';
 export { default as DropdownMenu } from './components/dropdown/DropdownMenu';
 export { default as EditCardModal } from './containers/payments/EditCardModal';
+export { default as ExternalPGPSettingsSection } from './containers/security/ExternalPGPSettingsSection';
 export { default as FooterModal } from './components/modal/Footer';
 export { default as Group } from './components/button/Group';
 export { default as HeaderModal } from './components/modal/Header';
