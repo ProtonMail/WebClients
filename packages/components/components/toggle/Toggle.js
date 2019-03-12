@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
@@ -19,16 +19,9 @@ const label = (key) => {
 };
 
 const Toggle = ({ id, checked, onChange }) => {
-    const [value, setValue] = useState(checked);
-    const handleChange = ({ target }) => {
-        const newVal = target.checked;
-        setValue(newVal);
-        onChange(newVal);
-    };
-
     return (
         <>
-            <Checkbox id={id} checked={value} className="pm-toggle-checkbox" onChange={handleChange} />
+            <Checkbox id={id} checked={checked} className="pm-toggle-checkbox" onChange={onChange} />
             <label htmlFor={id} className="pm-toggle-label">
                 {label('on')}
                 {label('off')}
