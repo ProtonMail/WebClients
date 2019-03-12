@@ -25,7 +25,7 @@ export { default as Info } from './components/link/Info';
 export { default as Input } from './components/input/Input';
 export { default as InputModal } from './components/modal/Input';
 export { default as InvoicesSection } from './containers/invoices/InvoicesSection';
-export { default as AddressKeysSection } from './containers/Keys/AddressKeysSection';
+export { default as AddressKeysSection } from './containers/keys/AddressKeysSection';
 export { default as LoginContainer } from './containers/login/LoginContainer';
 export { default as Label } from './components/label/Label';
 export { default as LargeButton } from './components/button/LargeButton';
