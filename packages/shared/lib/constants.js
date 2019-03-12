@@ -20,6 +20,13 @@ export const INVOICE_OWNER = {
     USER: 0,
     ORGANIZATION: 1
 };
+export const AUTH_LOG_EVENTS = {
+    LOGIN_FAILURE_PASSWORD: 0,
+    LOGIN_SUCCESS: 1,
+    LOGOUT: 2,
+    LOGIN_FAILURE_2FA: 3,
+    LOGIN_SUCCESS_AWAIT_2FA: 4
+};
 export const INVOICE_TYPE = {
     OTHER: 0,
     SUBSCRIPTION: 1,
