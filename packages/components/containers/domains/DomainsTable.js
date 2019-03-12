@@ -7,9 +7,8 @@ import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 
 import DomainStatus from './DomainStatus';
 import DomainActions from './DomainActions';
-import AddressesTable from './AddressesTable';
 
-const DomainsTable = ({ domains, members, loading, fetchMembers }) => {
+const DomainsTable = ({ domains, loading, fetchMembers }) => {
     useEffect(() => {
         fetchMembers();
     }, []);
@@ -26,25 +25,14 @@ const DomainsTable = ({ domains, members, loading, fetchMembers }) => {
                 {domains.map((domain) => {
                     const key = domain.ID;
                     return (
-                        <React.Fragment key={key}>
-                            <TableRow
-                                cells={[
-                                    domain.DomainName,
-                                    <DomainStatus key={key} domain={domain} />,
-                                    <DomainActions key={key} domain={domain} />
-                                ]}
-                            />
-                            <tr>
-                                <td colSpan="3">
-                                    <AddressesTable
-                                        key={key}
-                                        loading={members.loading}
-                                        domain={domain}
-                                        members={members.data}
-                                    />
-                                </td>
-                            </tr>
-                        </React.Fragment>
+                        <TableRow
+                            key={key}
+                            cells={[
+                                domain.DomainName,
+                                <DomainStatus key={key} domain={domain} />,
+                                <DomainActions key={key} domain={domain} />
+                            ]}
+                        />
                     );
                 })}
             </TableBody>
@@ -54,15 +42,13 @@ const DomainsTable = ({ domains, members, loading, fetchMembers }) => {
 
 DomainsTable.propTypes = {
     domains: PropTypes.array.isRequired,
-    members: PropTypes.object.isRequired,
     loading: PropTypes.bool.isRequired,
     fetchMembers: PropTypes.func.isRequired
 };
 
-const mapStateToProps = ({ members }) => ({ members });
 const mapDispatchToProps = { fetchMembers };
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(DomainsTable);

@@ -1,14 +1,18 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Table, TableHeader, TableBody, TableRow, Info } from 'react-components';
 
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
 import AddressCatchAll from './AddressCatchAll';
 
-const AddressesTable = ({ domain, members, loading }) => {
-    const getMember = (memberID) => members.find(({ ID }) => memberID === ID) || {};
+const AddressesTable = ({ domain, members }) => {
+    const getMemberName = (memberID) => {
+        const { Name = '' } = members.data.find(({ ID }) => memberID === ID) || {};
+        return Name;
+    };
     return (
         <Table>
             <TableHeader
@@ -24,7 +28,7 @@ const AddressesTable = ({ domain, members, loading }) => {
                     c('Title header for addresses domain table').t`Actions`
                 ]}
             />
-            <TableBody loading={loading} colSpan={5}>
+            <TableBody loading={members.loading} colSpan={5}>
                 {domain.addresses.map((address, index) => {
                     const key = address.ID;
                     return (
@@ -33,7 +37,7 @@ const AddressesTable = ({ domain, members, loading }) => {
                             cells={[
                                 `${index + 1}.`,
                                 address.Email,
-                                getMember(address.MemberID).Name,
+                                getMemberName(address.MemberID),
                                 <AddressStatus key={key} address={address} />,
                                 <AddressCatchAll key={key} address={address} domain={domain} />,
                                 <AddressActions key={key} address={address} />
@@ -48,8 +52,9 @@ const AddressesTable = ({ domain, members, loading }) => {
 
 AddressesTable.propTypes = {
     domain: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired,
-    members: PropTypes.array.isRequired
+    members: PropTypes.object.isRequired
 };
 
-export default AddressesTable;
+const mapStateToProps = ({ members }) => ({ members });
+
+export default connect(mapStateToProps)(AddressesTable);
