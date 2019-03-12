@@ -11,6 +11,7 @@ const AskPasswordModal = ({ onClose, onSubmit }) => {
             show={true}
             cancel={c('Label').t`Cancel`}
             confirm={c('Label').t`Submit`}
+            placeholder={c('Placeholder').t`Password`}
             onSubmit={onSubmit}
             onClose={onClose}
         />
