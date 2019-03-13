@@ -36,3 +36,14 @@ export const createBitcoinPayment = ({ Amount, Currency }) => ({
     method: 'post',
     data: { Amount, Currency }
 });
+
+export const payInvoice = (invoiceID, data) => ({
+    url: `payments/invoices/${invoiceID}`,
+    method: 'post',
+    data
+});
+
+export const getPaymentMethodStatus = () => ({
+    url: 'payments/status',
+    method: 'get'
+});
