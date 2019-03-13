@@ -145,3 +145,8 @@ export const SHOW_IMAGES = {
     REMOTE: 1,
     EMBEDDED: 2
 };
+
+export const COMPOSER_MODE = {
+    POPUP: 0,
+    MAXIMIZED: 1
+};
