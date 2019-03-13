@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { SubTitle } from 'react-components';
+import { SubTitle, useNotifications } from 'react-components';
+import { FORM } from 'proton-shared/lib/authentication/loginReducer';
 
 import LoginForm from './LoginForm';
 import TOTPForm from './TOTPForm';
 import UnlockForm from './UnlockForm';
 import useLogin from './useLogin';
-import { FORM } from './loginReducer';
+
+const getErrorText = (error) => {
+    if (error.name === 'PasswordError') {
+        return c('Error').t('Incorrect decryption password');
+    }
+    if (error.data && error.data.Error) {
+        return error.data.Error;
+    }
+    return error.message;
+};
 
 const LoginContainer = ({ onLogin }) => {
-    const { form, loading, handleLoginSubmit, handleTotpSubmit, handleUnlockSubmit } = useLogin(onLogin);
+    const { form, error, loading, handleLoginSubmit, handleTotpSubmit, handleUnlockSubmit } = useLogin(onLogin);
+    const { createNotification } = useNotifications();
 
     const formComponent = (() => {
         if (form === FORM.LOGIN) {
@@ -27,6 +38,14 @@ const LoginContainer = ({ onLogin }) => {
 
         throw new Error('Unsupported form');
     })();
+
+    useEffect(() => {
+        if (!error) {
+            return;
+        }
+        const text = getErrorText(error);
+        createNotification({ type: 'error', text });
+    }, [error]);
 
     const text = c('Login').t`User login`;
     return (
