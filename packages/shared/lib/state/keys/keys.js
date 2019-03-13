@@ -4,6 +4,18 @@ import { MAIN_USER_KEY } from '../../constants';
 
 const noop = () => {};
 
+export const getPrimaryKeyWithSalt = (Keys = [], KeySalts = []) => {
+    const [primaryKey] = Keys;
+    const { PrivateKey, ID } = primaryKey || {};
+    const { KeySalt } = KeySalts.find(({ ID: keySaltID }) => ID === keySaltID) || {};
+
+    // Not verifying that KeySalt exists because of old auth versions.
+    return {
+        PrivateKey,
+        KeySalt
+    };
+};
+
 const prepareKeysHelper = async (decryptKeyCb, UserKeys = [], Addresses = []) => {
     const userKeysPromise = Promise.all(UserKeys.map(decryptKeyCb));
 

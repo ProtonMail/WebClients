@@ -45,7 +45,7 @@ describe('onceWithQueue', () => {
 
         assert.strictEqual(count, 1);
 
-        await wait(DELAY);
+        await wait(DELAY + 1);
 
         assert.strictEqual(count, 2);
 

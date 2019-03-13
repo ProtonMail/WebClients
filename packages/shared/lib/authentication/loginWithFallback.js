@@ -1,19 +1,17 @@
 import { getAuthVersionWithFallback } from 'pm-srp';
 
-import { getInfo, PASSWORD_WRONG_ERROR } from '../api/auth';
+import { auth, getInfo, PASSWORD_WRONG_ERROR } from '../api/auth';
+import { srpAuth } from '../srp';
 
 /**
  * Provides authentication with fallback behavior in case the user's auth version is unknown.
- * @param {Object} abortController
  * @param {Function} api
  * @param {Object} srp
  * @param {Object} credentials
  * @param {Object} [initalAuthInfo] - Optional result from /info call
  * @return {Promise<{result, authVersion: number}>}
  */
-const loginWithFallback = async ({ abortController, api, srp, credentials, initalAuthInfo }) => {
-    const requestUrl = '/auth';
-
+const loginWithFallback = async ({ api, credentials, initalAuthInfo }) => {
     let state = {
         authInfo: initalAuthInfo,
         lastAuthVersion: undefined
@@ -22,11 +20,7 @@ const loginWithFallback = async ({ abortController, api, srp, credentials, inita
     const data = { Username: username };
 
     do {
-        const infoConfig = {
-            ...getInfo(username),
-            signal: abortController.signal
-        };
-        const { authInfo = await api(infoConfig), lastAuthVersion } = state;
+        const { authInfo = await api(getInfo(username)), lastAuthVersion } = state;
 
         const { version, done } = getAuthVersionWithFallback(authInfo, username, lastAuthVersion);
 
@@ -34,13 +28,16 @@ const loginWithFallback = async ({ abortController, api, srp, credentials, inita
             // If it's not the last fallback attempt, suppress the wrong password notification from the API.
             const suppress = done ? undefined : { suppress: [PASSWORD_WRONG_ERROR] };
             const srpConfig = {
-                method: 'post',
-                url: requestUrl,
-                data,
-                signal: abortController.signal,
+                ...auth(data),
                 ...suppress
             };
-            const result = await srp.auth(credentials, srpConfig, authInfo, version);
+            const result = await srpAuth({
+                api,
+                credentials,
+                config: srpConfig,
+                info: authInfo,
+                version
+            });
             return {
                 authVersion: version,
                 result

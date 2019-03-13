@@ -1,9 +1,9 @@
 export const PASSWORD_WRONG_ERROR = 8002;
 
-export const auth = (Username) => ({
+export const auth = (data) => ({
     method: 'post',
     url: 'auth',
-    data: { Username }
+    data
 });
 
 export const revoke = () => ({
@@ -16,7 +16,7 @@ export const setRefreshCookies = () => ({
     url: 'auth/refresh'
 });
 
-export const setCookies = ({ UID, AuthToken, RefreshToken, State, RedirectURI = 'https://protonmail.com' }) => ({
+export const setCookies = ({ UID, AccessToken, RefreshToken, State, RedirectURI = 'https://protonmail.com' }) => ({
     method: 'post',
     url: 'auth/cookies',
     data: {
@@ -28,7 +28,7 @@ export const setCookies = ({ UID, AuthToken, RefreshToken, State, RedirectURI = 
         State
     },
     headers: {
-        Authorization: `Bearer ${AuthToken}`,
+        Authorization: `Bearer ${AccessToken}`,
         'x-pm-uid': UID
     }
 });
