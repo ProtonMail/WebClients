@@ -1,23 +1,45 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Label, Radio } from 'react-components';
+import { RadioCard, useApiWithoutResult, useMailSettings, useEventManager } from 'react-components';
 import { updateComposerMode } from 'proton-shared/lib/api/mailSettings';
-import useApi from '../../hooks/useApi';
+import { COMPOSER_MODE } from 'proton-shared/lib/constants';
+
+const { POPUP, MAXIMIZED } = COMPOSER_MODE;
 
 const ComposerModeRadios = () => {
-    const api = useApi();
-    const handleChange = (mode) => () => api(updateComposerMode(mode));
+    const { ComposerMode } = useMailSettings();
+    const { call } = useEventManager();
+    const { request, loading } = useApiWithoutResult(updateComposerMode);
+
+    const handleChange = (mode) => async () => {
+        await request(mode);
+        call();
+    };
 
     return (
         <>
-            <Label htmlFor="popupRadio">
-                <Radio id="popupRadio" name="composerMode" onChange={handleChange(0)} />
-                {c('Label').t`Popup`}
-            </Label>
-            <Label htmlFor="maximizedRadio">
-                <Radio id="maximizedRadio" name="composerMode" onChange={handleChange(1)} />
-                {c('Label').t`Maximized`}
-            </Label>
+            <RadioCard
+                value={POPUP}
+                checked={ComposerMode === POPUP}
+                id="popupRadio"
+                disabled={loading}
+                name="composerMode"
+                label={c('Label to change composer mode').t`Popup`}
+                onChange={handleChange(POPUP)}
+            >
+                <img alt="Popup" src="/assets/img/design-system-website/popup.png" />
+            </RadioCard>
+            <RadioCard
+                value={MAXIMIZED}
+                checked={ComposerMode === MAXIMIZED}
+                id="maximizedRadio"
+                disabled={loading}
+                name="composerMode"
+                label={c('Label to change composer mode').t`Maximized`}
+                onChange={handleChange(MAXIMIZED)}
+            >
+                <img alt="Maximized" src="/assets/img/design-system-website/maximized.png" />
+            </RadioCard>
         </>
     );
 };
