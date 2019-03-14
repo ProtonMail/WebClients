@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Select } from 'react-components';
-import usePaymentMethodsSelect from '../payments/usePaymentMethodsSelect';
+import usePaymentMethodsSelect from './usePaymentMethodsSelect';
 import { CYCLE } from 'proton-shared/lib/constants';
 
 const PaymentMethodsSelect = ({ method, amount, cycle, coupon, type, onChange }) => {

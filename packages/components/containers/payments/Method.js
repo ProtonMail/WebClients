@@ -10,7 +10,7 @@ import PayPal from './PayPal';
 import Cash from './Cash';
 import Bitcoin from './Bitcoin';
 
-const PaymentPanel = ({ type, amount, currency, onCard, onPayPal, method }) => {
+const Method = ({ type, amount, currency, onCard, onPayPal, method }) => {
     const { result = {} } = useApiResult(queryPaymentMethods, []);
     const { PaymentMethods = [] } = result;
     const { card, updateCard, errors, isValid } = useCard();
@@ -38,26 +38,25 @@ const PaymentPanel = ({ type, amount, currency, onCard, onPayPal, method }) => {
     };
 
     useEffect(() => {
-        onCard({ card, errors, isValid });
+        onCard({ card, isValid });
     }, [card]);
 
     return render();
 };
 
-PaymentPanel.propTypes = {
+Method.propTypes = {
     method: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation']),
+    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit']),
     amount: PropTypes.number.isRequired,
-    methods: PropTypes.arrayOf(PropTypes.string),
     onPay: PropTypes.func,
     onCard: PropTypes.func,
-    onPayPay: PropTypes.func,
+    onPayPal: PropTypes.func,
     currency: PropTypes.oneOf(['EUR', 'CHF', 'USD'])
 };
 
-PaymentPanel.defaultProps = {
+Method.defaultProps = {
     amount: 0,
     loading: false
 };
 
-export default PaymentPanel;
+export default Method;
