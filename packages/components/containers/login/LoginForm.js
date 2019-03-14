@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { t } from 'ttag';
+import { c } from 'ttag';
 import { Input, Label, Button } from 'react-components';
 
 const LoginForm = ({ onSubmit, loading }) => {
@@ -21,7 +21,7 @@ const LoginForm = ({ onSubmit, loading }) => {
     return (
         <form name="loginForm" noValidate onSubmit={handleSubmit}>
             <Label htmlFor="login" className="bl mb1">
-                <span className="sr-only">{t`Username`}</span>
+                <span className="sr-only">{c('Label').t`Username`}</span>
                 <Input
                     type="text"
                     name="login"
@@ -32,12 +32,12 @@ const LoginForm = ({ onSubmit, loading }) => {
                     id="login"
                     required
                     value={username}
-                    placeholder={t`Username`}
+                    placeholder={c('Placeholder').t`Username`}
                     onChange={onChange(setUsername)}
                 />
             </Label>
             <Label htmlFor="password" className="bl mb1">
-                <span className="sr-only">{t`Password`}</span>
+                <span className="sr-only">{c('Label').t`Password`}</span>
                 <Input
                     type="password"
                     name="password"
@@ -45,7 +45,7 @@ const LoginForm = ({ onSubmit, loading }) => {
                     id="password"
                     required
                     value={password}
-                    placeholder={t`Password`}
+                    placeholder={c('Placeholder').t`Password`}
                     onChange={onChange(setPassword)}
                 />
             </Label>

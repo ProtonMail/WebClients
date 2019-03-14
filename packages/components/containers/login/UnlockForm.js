@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { t } from 'ttag';
+import { c } from 'ttag';
 import { Input, Label, Button } from 'react-components';
 
 const UnlockForm = ({ onSubmit, loading }) => {
@@ -19,7 +19,7 @@ const UnlockForm = ({ onSubmit, loading }) => {
     return (
         <form name="unlockForm" noValidate onSubmit={handleSubmit}>
             <div>
-                <Label htmlFor="password">{t`Mailbox password`}</Label>
+                <Label htmlFor="password">{c('Label').t`Mailbox password`}</Label>
                 <Input
                     type="text"
                     name="password"
@@ -29,7 +29,7 @@ const UnlockForm = ({ onSubmit, loading }) => {
                     id="password"
                     required
                     value={password}
-                    placeholder={t`Mailbox password`}
+                    placeholder={c('Placeholder').t`Mailbox password`}
                     onChange={onChange(setPassword)}
                 />
             </div>

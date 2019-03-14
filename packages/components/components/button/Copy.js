@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { t } from 'ttag';
+import { c } from 'ttag';
 
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import Button from './Button';
@@ -22,7 +22,7 @@ const Copy = ({ className }) => {
         <Button
             onClick={handleClick}
             className={getClasses(copied ? 'copied' : '', className)}
-            title={copied ? t`Copied` : t`Copy`}
+            title={copied ? c('Label').t`Copied` : c('Label').t`Copy`}
         >
             <Icon name="clipboard" />
         </Button>

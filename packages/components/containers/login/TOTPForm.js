@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { t } from 'ttag';
+import { c } from 'ttag';
 import { Input, Label, Button } from 'react-components';
 
 const TOTPForm = ({ onSubmit, loading }) => {
@@ -26,7 +26,7 @@ const TOTPForm = ({ onSubmit, loading }) => {
     return (
         <form name="twoFaForm" noValidate onSubmit={handleSubmit}>
             <div>
-                <Label htmlFor="twoFa">{t`Two-factor code`}</Label>
+                <Label htmlFor="twoFa">{c('Label').t`Two-factor code`}</Label>
                 <Input
                     type="text"
                     name="twoFa"
@@ -36,7 +36,7 @@ const TOTPForm = ({ onSubmit, loading }) => {
                     id="twoFa"
                     required
                     value={totp}
-                    placeholder={t`Two-factor code`}
+                    placeholder={c('Placeholder').t`Two-factor code`}
                     onChange={onChange(setTotp)}
                 />
             </div>

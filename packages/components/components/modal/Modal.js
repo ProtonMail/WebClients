@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { t } from 'ttag';
+import { c } from 'ttag';
 
 import ModalWithPortal from './ModalWithPortal';
 
@@ -19,11 +19,11 @@ const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnO
         if (event.target.classList.contains('pm-modalOverlay')) {
             onClose(event);
         }
-    }
+    };
 
     return (
         <ModalWithPortal>
-            <div className="pm-modalOverlay" title={t`Close modal`} onClick={handleClickOutside}>
+            <div className="pm-modalOverlay" title={c('Action').t`Close modal`} onClick={handleClickOutside}>
                 <dialog className={`pm-modal ${modalClassName}`} open aria-labelledby={modalTitleID}>
                     {title ? <Header onClose={onClose}>{title}</Header> : null}
                     {children}

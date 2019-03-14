@@ -45,7 +45,7 @@ const AddressActions = ({ address, user, member }) => {
     };
 
     const handleGenerate = async () => {
-        // TODO
+        // TODO generate missing keys
         createNotification({ text: c('Success notification').t`Keys generated` });
     };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { t } from 'ttag';
+import { c } from 'ttag';
 import dayjs from 'dayjs';
 import { connect } from 'react-redux';
 import {
@@ -23,10 +23,10 @@ import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
 
 const EVENTS = {
-    0: t`Login password failure`,
-    1: t`Login success`,
-    2: t`Logout`,
-    3: t`2FA login failure`
+    0: c('Log event').t`Login password failure`,
+    1: c('Log event').t`Login success`,
+    2: c('Log event').t`Logout`,
+    3: c('Log event').t`2FA login failure`
 };
 
 const { DISABLE, BASIC, ADVANCED } = LOGS_STATE;
@@ -82,27 +82,27 @@ const LogsSection = ({ settings }) => {
 
     return (
         <>
-            <SubTitle>{t`Authentication Logs`}</SubTitle>
-            <Alert>{t`Logs includes authentication attempts for all Proton services that use your Proton credentials.`}</Alert>
+            <SubTitle>{c('Title').t`Authentication Logs`}</SubTitle>
+            <Alert>{c('Info')
+                .t`Logs includes authentication attempts for all Proton services that use your Proton credentials.`}</Alert>
             <Block className="flex flex-spacebetween">
                 <div>
                     <Group className="mr1">
                         <ButtonGroup
                             className={logAuth === DISABLE ? 'is-active' : ''}
                             onClick={handleLogAuth(DISABLE)}
-                        >{t`Disable`}</ButtonGroup>
-                        <ButtonGroup
-                            className={logAuth === BASIC ? 'is-active' : ''}
-                            onClick={handleLogAuth(BASIC)}
-                        >{t`Basic`}</ButtonGroup>
+                        >{c('Log preference').t`Disabled`}</ButtonGroup>
+                        <ButtonGroup className={logAuth === BASIC ? 'is-active' : ''} onClick={handleLogAuth(BASIC)}>{c(
+                            'Log preference'
+                        ).t`Basic`}</ButtonGroup>
                         <ButtonGroup
                             className={logAuth === ADVANCED ? 'is-active' : ''}
                             onClick={handleLogAuth(ADVANCED)}
-                        >{t`Advanced`}</ButtonGroup>
+                        >{c('Log preference').t`Advanced`}</ButtonGroup>
                     </Group>
-                    <Button onClick={fetchLogs}>{t`Refresh`}</Button>
+                    <Button onClick={fetchLogs}>{c('Action').t`Refresh`}</Button>
                     {list.length ? <WipeLogsButton onWipe={handleWipe} /> : null}
-                    {list.length ? <Button onClick={handleDownload}>{t`Download`}</Button> : null}
+                    {list.length ? <Button onClick={handleDownload}>{c('Action').t`Download`}</Button> : null}
                 </div>
                 <Pagination
                     onNext={onNext}
