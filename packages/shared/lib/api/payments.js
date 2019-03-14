@@ -76,3 +76,9 @@ export const donate = (data) => ({
     method: 'post',
     data
 });
+
+export const buyCredit = (data) => ({
+    url: 'payments/credit',
+    method: 'post',
+    data
+});
