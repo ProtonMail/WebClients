@@ -1,11 +1,6 @@
-export const getUser = (UID) => ({
+export const getUser = () => ({
     url: 'users',
-    method: 'get',
-    headers: UID
-        ? {
-              'x-pm-uid': UID
-          }
-        : undefined
+    method: 'get'
 });
 
 export const queryUnlock = () => ({

@@ -12,11 +12,16 @@ import { getRandomString } from '../helpers/string';
 import loginWithFallback from './loginWithFallback';
 
 import { ACTION_TYPES } from './loginReducer';
+import { getUIDHeaders } from '../api';
+import { mergeHeaders } from '../fetch/helpers';
+
+const withUIDHeaders = (UID, config) => mergeHeaders(config, getUIDHeaders(UID));
 
 export const handleFinalizeAction = async (state, { api }) => {
     try {
         const {
             credentials: { password },
+            authResult: { UID },
             authVersion
         } = state;
 
@@ -24,7 +29,7 @@ export const handleFinalizeAction = async (state, { api }) => {
             await srpVerify({
                 api,
                 credentials: { password },
-                config: passwordUpgrade()
+                config: withUIDHeaders(UID, passwordUpgrade())
             });
         }
 
@@ -97,7 +102,10 @@ export const handleDeprecationAction = async (state, { api }) => {
             })
         );
 
-        const [{ User }, { KeySalts }] = await Promise.all([api(getUser(UID)), api(getKeySalts(UID))]);
+        const [{ User }, { KeySalts }] = await Promise.all([
+            api(withUIDHeaders(UID, getUser())),
+            api(withUIDHeaders(UID, getKeySalts()))
+        ]);
         const primaryKey = getPrimaryKeyWithSalt(User.Keys, KeySalts);
 
         return {

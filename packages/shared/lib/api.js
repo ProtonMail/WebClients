@@ -1,9 +1,10 @@
+export const getUIDHeaders = (UID) => ({
+    'x-pm-uid': UID
+});
+
 export default ({ xhr, UID, API_URL, APP_VERSION, CLIENT_ID, API_VERSION }) => {
-    const authHeaders = UID
-        ? {
-              'x-pm-uid': UID
-          }
-        : undefined;
+    const authHeaders = UID ? getUIDHeaders(UID) : undefined;
+
     const defaultHeaders = {
         accept: 'application/vnd.protonmail.v1+json',
         'x-pm-appversion': `${CLIENT_ID}_${APP_VERSION}`,

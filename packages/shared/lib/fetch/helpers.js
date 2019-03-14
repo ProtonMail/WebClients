@@ -25,6 +25,14 @@ export const createUrl = (urlString, params = {}) => {
     return url;
 };
 
+export const mergeHeaders = ({ headers: configHeaders, ...restConfig }, headers) => ({
+    ...restConfig,
+    headers: {
+        ...configHeaders,
+        ...headers
+    }
+});
+
 export const checkStatus = (response, config) => {
     const { status } = response;
 

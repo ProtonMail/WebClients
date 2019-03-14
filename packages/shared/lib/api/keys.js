@@ -1,7 +1,4 @@
-export const getKeySalts = (UID) => ({
+export const getKeySalts = () => ({
     url: 'keys/salts',
-    method: 'get',
-    headers: {
-        'x-pm-uid': UID
-    }
+    method: 'get'
 });
