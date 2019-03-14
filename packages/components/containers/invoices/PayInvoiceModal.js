@@ -64,42 +64,44 @@ const PayInvoiceModal = ({ show, invoice, onClose, fetchInvoices }) => {
         return true;
     };
 
+    const getContent = () => (
+        <>
+            <Row>
+                <Label>{c('Label').t`Amount`}</Label>
+                <Price className="pm-label" currency={Currency}>
+                    {Amount}
+                </Price>
+            </Row>
+            <Row>
+                <Label>{c('Label').t`Amount due`}</Label>
+                <Price className="pm-label" currency={Currency}>
+                    {AmountDue}
+                </Price>
+            </Row>
+            <Row>
+                <Label>{c('Label').t`Select payment method`}</Label>
+                <PaymentMethodsSelect
+                    method={method}
+                    amount={AmountDue}
+                    type={PAYMENT_TYPE}
+                    onChange={handleChangeMethod}
+                />
+            </Row>
+            <PaymentPanel
+                amount={AmountDue}
+                currency={Currency}
+                onCard={handleCard}
+                onPayPal={handlePayPal}
+                type={PAYMENT_TYPE}
+                method={method}
+            />
+        </>
+    );
+
     return (
         <Modal modalClassName="pm-modal--smaller" show={show} onClose={onClose} title={c('Title').t`Pay invoice`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                {loadingCheck ? null : (
-                    <>
-                        <Row>
-                            <Label>{c('Label').t`Amount`}</Label>
-                            <Price className="pm-label" currency={Currency}>
-                                {Amount}
-                            </Price>
-                        </Row>
-                        <Row>
-                            <Label>{c('Label').t`Amount due`}</Label>
-                            <Price className="pm-label" currency={Currency}>
-                                {AmountDue}
-                            </Price>
-                        </Row>
-                        <Row>
-                            <Label>{c('Label').t`Select payment method`}</Label>
-                            <PaymentMethodsSelect
-                                method={method}
-                                amount={AmountDue}
-                                type={PAYMENT_TYPE}
-                                onChange={handleChangeMethod}
-                            />
-                        </Row>
-                        <PaymentPanel
-                            amount={AmountDue}
-                            currency={Currency}
-                            onCard={handleCard}
-                            onPayPal={handlePayPal}
-                            type={PAYMENT_TYPE}
-                            method={method}
-                        />
-                    </>
-                )}
+                {loadingCheck ? null : getContent()}
                 <FooterModal>
                     <ResetButton>{c('Action').t`Close`}</ResetButton>
                     {canPay() ? (
