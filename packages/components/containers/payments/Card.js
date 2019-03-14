@@ -6,7 +6,7 @@ import { range } from 'proton-shared/lib/helpers/array';
 
 import { getFullList } from '../../helpers/countries';
 
-const CardForm = ({ card, errors, onChange, loading }) => {
+const Card = ({ card, errors, onChange, loading }) => {
     const countries = getFullList().map(({ value, label: text }) => ({ value, text }));
     const handleChange = (key) => (event) => onChange(key, event.target.value);
     const currentYear = new Date().getFullYear();
@@ -96,11 +96,15 @@ const CardForm = ({ card, errors, onChange, loading }) => {
     );
 };
 
-CardForm.propTypes = {
+Card.propTypes = {
     loading: PropTypes.bool.isRequired,
     card: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired
 };
 
-export default CardForm;
+Card.defaultProps = {
+    loading: false
+};
+
+export default Card;

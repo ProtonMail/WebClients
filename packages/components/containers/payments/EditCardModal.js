@@ -12,7 +12,7 @@ import {
 } from 'react-components';
 import { setPaymentMethod } from 'proton-shared/lib/api/payments';
 
-import CardForm from './CardForm';
+import Card from './Card';
 import useCard from './useCard';
 import toDetails from './toDetails';
 
@@ -37,7 +37,7 @@ const EditCardModal = ({ card: existingCard, show, onClose, onChange }) => {
     return (
         <Modal modalClassName="pm-modal--smaller" show={show} onClose={onClose} title={title}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <CardForm card={card} errors={errors} onChange={updateCard} loading={loading} />
+                <Card card={card} errors={errors} onChange={updateCard} loading={loading} />
                 <FooterModal>
                     <ResetButton disabled={loading}>{c('Action').t`Close`}</ResetButton>
                     <PrimaryButton loading={loading} type="submit">{c('Action').t`Save`}</PrimaryButton>
