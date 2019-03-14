@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { t } from 'ttag';
+import { c } from 'ttag';
 import {
     Button,
     Table,
@@ -25,17 +25,17 @@ import SessionAction from './SessionAction';
 import useAuthenticationStore from '../../hooks/useAuthenticationStore';
 
 const CLIENTS = {
-    Web: t`ProtonMail for web`,
-    iOS: t`ProtonMail for iOS`,
-    Android: t`ProtonMail for Android`,
-    ImportExport: t`ProtonMail Import-Export`,
-    Bridge: t`ProtonMail Bridge`,
-    WebVPN: t`ProtonVPN for web`,
-    VPN: t`ProtonVPN for Windows`,
-    macOSVPN: t`ProtonVPN for macOS`,
-    iOSVPN: t`ProtonVPN for iOS`,
-    AndroidVPN: t`ProtonVPN for Android`,
-    Admin: t`Admin`
+    Web: c('Badge').t`ProtonMail for web`,
+    iOS: c('Badge').t`ProtonMail for iOS`,
+    Android: c('Badge').t`ProtonMail for Android`,
+    ImportExport: c('Badge').t`ProtonMail Import-Export`,
+    Bridge: c('Badge').t`ProtonMail Bridge`,
+    WebVPN: c('Badge').t`ProtonVPN for web`,
+    VPN: c('Badge').t`ProtonVPN for Windows`,
+    macOSVPN: c('Badge').t`ProtonVPN for macOS`,
+    iOSVPN: c('Badge').t`ProtonVPN for iOS`,
+    AndroidVPN: c('Badge').t`ProtonVPN for Android`,
+    Admin: c('Badge').t`Admin`
 };
 
 const SessionsSection = () => {
@@ -63,13 +63,14 @@ const SessionsSection = () => {
 
     return (
         <>
-            <SubTitle>{t`Sessions`}</SubTitle>
-            <Alert>{t`Unless you explicitly logout or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity.`}</Alert>
+            <SubTitle>{c('Title').t`Sessions`}</SubTitle>
+            <Alert>{c('Info')
+                .t`Unless you explicitly logout or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity.`}</Alert>
             <Block className="flex flex-spacebetween">
                 <div>
-                    <Button onClick={openConfirmRevokeAll}>{t`Revoke all other sessions`}</Button>
+                    <Button onClick={openConfirmRevokeAll}>{c('Action').t`Revoke all other sessions`}</Button>
                     <ConfirmModal show={showConfirmRevokeAll} onClose={closeConfirmRevokeAll} onConfirm={handleRevoke}>
-                        <Alert>{t`Do you want to revoke all other sessions than the current one?`}</Alert>
+                        <Alert>{c('Info').t`Do you want to revoke all other sessions than the current one?`}</Alert>
                     </ConfirmModal>
                     <LearnMore url="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/" />
                 </div>
@@ -83,7 +84,7 @@ const SessionsSection = () => {
                 />
             </Block>
             <Table>
-                <TableHeader cells={[t`Service`, t`Time`, t`Action`]} />
+                <TableHeader cells={[c('Title').t`Service`, c('Title').t`Time`, c('Title').t`Action`]} />
                 <TableBody loading={loading} colSpan={3}>
                     {list.map((session) => {
                         const key = session.UID;
