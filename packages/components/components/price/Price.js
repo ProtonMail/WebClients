@@ -7,9 +7,9 @@ const CURRENCIES = {
     CHF: 'CHF'
 };
 
-const Price = ({ children: amount = 0, currency = '', className = '' }) => {
+const Price = ({ children: amount = 0, currency = '', className = '', divisor }) => {
     const symbol = CURRENCIES[currency] || currency;
-    const value = Number(amount).toFixed(2);
+    const value = Number(amount > 0 ? amount / divisor : amount).toFixed(2);
     const prefix = value < 0 ? '-' : '';
     const absValue = Math.abs(value);
 
@@ -23,7 +23,13 @@ const Price = ({ children: amount = 0, currency = '', className = '' }) => {
 Price.propTypes = {
     currency: PropTypes.string,
     children: PropTypes.number.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    divisor: PropTypes.number.isRequired
+};
+
+Price.defaultProps = {
+    children: 0,
+    divisor: 100
 };
 
 export default Price;
