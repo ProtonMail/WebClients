@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { t } from 'ttag';
+import { c } from 'ttag';
 import {
     Alert,
     SubTitle,
@@ -17,7 +17,7 @@ import {
     useModal
 } from 'react-components';
 import { queryInvoices } from 'proton-shared/lib/api/payments';
-import { ELEMENTS_PER_PAGE, INVOICE_OWNER } from 'proton-shared/lib/constants';
+import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE } from 'proton-shared/lib/constants';
 
 import useApiResult from '../../hooks/useApiResult';
 import InvoiceAmount from './InvoiceAmount';
@@ -40,29 +40,33 @@ const InvoicesSection = () => {
             Owner: owner
         });
 
-    const { result = {}, loading } = useApiResult(query, [page, owner]);
-
+    const { result = {}, loading, request } = useApiResult(query, [page, owner]);
     const { Invoices: invoices = [], Total: total = 0 } = result;
+    const hasUnpaid = invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
 
     return (
         <>
-            <SubTitle>{t`Invoices`}</SubTitle>
+            <SubTitle>{c('Title').t`Invoices`}</SubTitle>
             <Alert learnMore="todo">
-                {t`Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.`}
+                {c('Info')
+                    .t`Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.`}
             </Alert>
+            {hasUnpaid ? (
+                <Alert>{c('Error')
+                    .t`Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.`}</Alert>
+            ) : null}
             <Block className="flex flex-spacebetween">
                 <div>
                     <Group className="mr1">
-                        <ButtonGroup
-                            className={owner === USER ? 'is-active' : ''}
-                            onClick={handleOwner(USER)}
-                        >{t`User`}</ButtonGroup>
+                        <ButtonGroup className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>{c(
+                            'Action'
+                        ).t`User`}</ButtonGroup>
                         <ButtonGroup
                             className={owner === ORGANIZATION ? 'is-active' : ''}
                             onClick={handleOwner(ORGANIZATION)}
-                        >{t`Organization`}</ButtonGroup>
+                        >{c('Action').t`Organization`}</ButtonGroup>
                     </Group>
-                    <Button onClick={open}>{t`Customize`}</Button>
+                    <Button onClick={open}>{c('Action').t`Customize`}</Button>
                     <InvoiceTextModal show={isOpen} onClose={close} />
                 </div>
                 <Pagination
@@ -75,7 +79,16 @@ const InvoicesSection = () => {
                 />
             </Block>
             <Table>
-                <TableHeader cells={['ID', t`Amount`, t`Type`, t`Status`, t`Date`, t`Action`]} />
+                <TableHeader
+                    cells={[
+                        'ID',
+                        c('Title').t`Amount`,
+                        c('Title').t`Type`,
+                        c('Title').t`Status`,
+                        c('Title').t`Date`,
+                        c('Title').t`Action`
+                    ]}
+                />
                 <TableBody loading={loading} colSpan={6}>
                     {invoices.map((invoice, index) => {
                         const key = index.toString();
@@ -88,7 +101,7 @@ const InvoicesSection = () => {
                                     <InvoiceType key={key} invoice={invoice} />,
                                     <InvoiceState key={key} invoice={invoice} />,
                                     <Time key={key}>{invoice.CreateTime}</Time>,
-                                    <InvoiceActions key={key} invoice={invoice} />
+                                    <InvoiceActions key={key} invoice={invoice} onChange={request} />
                                 ]}
                             />
                         );

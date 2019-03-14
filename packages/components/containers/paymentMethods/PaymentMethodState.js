@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Badge } from 'react-components';
+import { isExpired } from 'proton-shared/lib/helpers/card';
 
 const PaymentMethodState = ({ method, index }) => {
-    const currentTime = new Date();
-    const month = currentTime.getMonth() + 1;
-    const year = currentTime.getFullYear();
-    const { ExpMonth, ExpYear } = method.Details;
-
-    if (ExpMonth >= month && ExpYear >= year) {
-        return <Badge type="error">{`${c('Label on payment method').t`Expired`} ${ExpMonth}/${ExpYear}`}</Badge>;
+    if (isExpired(method.Details)) {
+        return (
+            <Badge type="error">{`${c('Label on payment method').t`Expired`} ${method.Details.ExpMonth}/${
+                method.Details.ExpYear
+            }`}</Badge>
+        );
     }
 
     if (!index) {

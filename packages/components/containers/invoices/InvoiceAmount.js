@@ -6,7 +6,7 @@ import { INVOICE_STATE } from 'proton-shared/lib/constants';
 const InvoiceAmount = ({ invoice }) => {
     const format = ({ State, AmountCharged = 0, AmountDue = 0 }) => {
         const value = State === INVOICE_STATE.UNPAID ? AmountDue : AmountCharged;
-        return value / 100;
+        return value;
     };
 
     return <Price currency={invoice.Currency}>{format(invoice)}</Price>;

@@ -1,36 +1,22 @@
 import React from 'react';
-import { SmallButton, useApiWithoutResult } from 'react-components';
-import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { INVOICE_STATE } from 'proton-shared/lib/constants';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { getInvoice } from 'proton-shared/lib/api/payments';
 
-const InvoiceActions = ({ invoice: { State, ID } }) => {
-    const { loading, request } = useApiWithoutResult(getInvoice);
+import DownloadInvoiceButton from './DownloadInvoiceButton';
+import PayButton from './PayButton';
 
-    const handleDownload = async () => {
-        const buffer = await request(ID);
-        const filename = c('Title for PDF file').t`ProtonMail invoice` + ` ${ID}.pdf`;
-        const blob = new Blob([buffer], { type: 'application/pdf' });
-
-        downloadFile(blob, filename);
-    };
-
-    const handlePay = () => {};
-
+const InvoiceActions = ({ invoice, onChange }) => {
     return (
         <>
-            <SmallButton onClick={handleDownload} disabled={loading}>{c('Action').t`Download`}</SmallButton>
-            {State === INVOICE_STATE.UNPAID ? (
-                <SmallButton onClick={handlePay}>{c('Action').t`Pay`}</SmallButton>
-            ) : null}
+            <DownloadInvoiceButton invoice={invoice} />
+            {invoice.State === INVOICE_STATE.UNPAID ? <PayButton invoice={invoice} onChange={onChange} /> : null}
         </>
     );
 };
 
 InvoiceActions.propTypes = {
-    invoice: PropTypes.object.isRequired
+    invoice: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
 };
 
 export default InvoiceActions;

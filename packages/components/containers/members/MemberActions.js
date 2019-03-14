@@ -30,7 +30,9 @@ const MemberActions = ({ member, organization }) => {
         createNotification({ text: c('Success message').t`User deleted` });
     };
 
-    const login = () => {};
+    const login = () => {
+        // TODO
+    };
 
     const makeAdmin = async () => {
         await requestUpdateRole(member.ID, MEMBER_ROLE.ORGANIZATION_OWNER);
