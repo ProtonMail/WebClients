@@ -150,3 +150,26 @@ export const COMPOSER_MODE = {
     POPUP: 0,
     MAXIMIZED: 1
 };
+
+export const DEFAULT_CYCLE = 12;
+
+export const CYCLE = {
+    MONTHLY: 1,
+    YEARLY: 12,
+    TWO_YEARS: 24
+};
+
+export const BUNDLE_COUPON_CODE = 'BUNDLE';
+const BLACK_FRIDAY_YEAR = 2018;
+export const BLACK_FRIDAY = {
+    YEAR: BLACK_FRIDAY_YEAR,
+    COUPON_CODE: 'TWO4ONE2018',
+    CYCLE: CYCLE.TWO_YEARS,
+    BETWEEN: {
+        START: `${BLACK_FRIDAY_YEAR}-11-23`,
+        END: `${BLACK_FRIDAY_YEAR}-11-26`
+    },
+    INTERVAL: 10 * 60 * 1000
+};
+export const MIN_PAYPAL_AMOUNT = 500;
+export const MAX_PAYPAL_AMOUNT = 99999900;
