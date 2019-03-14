@@ -119,7 +119,7 @@ export const handleAuthAction = async (state, { api }) => {
         const loginResult = await loginWithFallback({
             api,
             credentials,
-            infoResult
+            initalAuthInfo: infoResult
         });
 
         return {
