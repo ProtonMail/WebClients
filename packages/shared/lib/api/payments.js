@@ -70,3 +70,9 @@ export const getPaymentMethodStatus = () => ({
     url: 'payments/status',
     method: 'get'
 });
+
+export const donate = (data) => ({
+    url: 'payments/donate',
+    method: 'post',
+    data
+});
