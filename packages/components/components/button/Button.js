@@ -9,7 +9,7 @@ const Button = (props) => {
         if (onClick) {
             onClick(event);
         }
-    }
+    };
 
     const handleKeyDown = (event) => {
         const { onKeyDown, onClick } = props;
@@ -19,10 +19,7 @@ const Button = (props) => {
             onKeyDown(event);
         }
 
-        if (
-            event.target === event.currentTarget &&
-            (key === 'space' || key === 'enter')
-        ) {
+        if (event.target === event.currentTarget && (key === 'space' || key === 'enter')) {
             event.preventDefault();
 
             if (onClick) {
@@ -40,7 +37,7 @@ const Button = (props) => {
     };
 
     const handleFocus = (event) => {
-        const { disabled, onFocus } =  props;
+        const { disabled, onFocus } = props;
 
         if (disabled) {
             return;
@@ -59,18 +56,7 @@ const Button = (props) => {
         }
     };
 
-    const {
-        type,
-        role,
-        loading,
-        tabIndex,
-        buttonRef,
-        className,
-        children,
-        title,
-        disabled,
-        ...rest
-    } = props;
+    const { type, role, loading, tabIndex, buttonRef, className, children, title, disabled, ...rest } = props;
 
     return (
         <button
@@ -88,7 +74,9 @@ const Button = (props) => {
             onKeyUp={handleKeyUp}
             aria-busy={loading}
             {...rest}
-            >{loading ? null : children}</button>
+        >
+            {children}
+        </button>
     );
 };
 
