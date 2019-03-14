@@ -11,32 +11,25 @@ import {
     TextArea,
     Block,
     ResetButton,
-    useLoading
+    useApiWithoutResult,
+    useSettings
 } from 'react-components';
 import { updateInvoiceText } from 'proton-shared/lib/api/settings';
 
-import useApi from '../../hooks/useApi';
-
 const InvoiceTextModal = ({ show, onClose }) => {
-    const api = useApi();
-    const { loading, loaded, load } = useLoading(false);
-    const [invoiceText, setInvoiceText] = useState(''); // TODO get it from settings model
-    const handleChange = (event) => setInvoiceText(event.target.value);
-
-    const handleSubmit = async () => {
-        try {
-            load();
-            await api(updateInvoiceText(invoiceText));
-            onClose();
-        } catch (error) {
-            loaded();
-            throw error;
-        }
-    };
+    const { InvoiceText } = useSettings();
+    const [invoiceText, setInvoiceText] = useState(InvoiceText);
+    const handleChange = ({ target }) => setInvoiceText(target.value);
+    const { request, loading } = useApiWithoutResult(() => updateInvoiceText(invoiceText));
 
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Add invoice details`}>
-            <ContentModal modalClassName="pm-modal--smaller" onSubmit={handleSubmit} onReset={onClose}>
+        <Modal
+            modalClassName="pm-modal--smaller"
+            show={show}
+            onClose={onClose}
+            title={c('Title').t`Add invoice details`}
+        >
+            <ContentModal onSubmit={request} onReset={onClose}>
                 <Alert>{c('Info message for custom invoice modal')
                     .t`Add your name (or company name) and address to your invoices.`}</Alert>
                 <Block>

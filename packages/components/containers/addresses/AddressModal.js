@@ -15,13 +15,15 @@ import {
     Input,
     RichTextEditor,
     useApiWithoutResult,
-    useNotifications
+    useNotifications,
+    useEventManager
 } from 'react-components';
 
 import useAddressModal from './useAddressModal';
 import DomainsSelect from './DomainsSelect';
 
 const AddressModal = ({ show, onClose, member }) => {
+    const { call } = useEventManager();
     const { request } = useApiWithoutResult(createAddress);
     const { model, update } = useAddressModal(member);
     const { createNotification } = useNotifications();
@@ -40,7 +42,7 @@ const AddressModal = ({ show, onClose, member }) => {
         };
 
         await request(parameters);
-        // TODO call event mananger
+        await call();
         onClose();
         createNotification({ text: c('Success').t`Address added` });
     };

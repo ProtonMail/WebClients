@@ -79,6 +79,7 @@ export { default as useAuthenticationStore } from './hooks/useAuthenticationStor
 export { default as useApi } from './hooks/useApi';
 export { default as useApiResult } from './hooks/useApiResult';
 export { default as useApiWithoutResult } from './hooks/useApiWithoutResult';
+export { default as useEventManager } from './hooks/useEventManager';
 export { default as useNotifications } from './hooks/useNotifications';
 export { default as useLoader } from './components/loader/useLoader';
 export { default as useLoading } from './components/loader/useLoading';

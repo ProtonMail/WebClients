@@ -1,16 +1,17 @@
 import React from 'react';
-import { t } from 'ttag';
-import { Label, Checkbox } from 'react-components';
+import { c } from 'ttag';
+import { Label, Checkbox, useApiWithoutResult, useSettings, useEventManager } from 'react-components';
 import { updateNews } from 'proton-shared/lib/api/settings';
 import { toBitMap } from 'proton-shared/lib/helpers/object';
 
-import useApi from '../../hooks/useApi';
 import useNews from './useNews';
 
 const NewsSection = () => {
-    const api = useApi();
+    const { News } = useSettings();
+    const { call } = useEventManager();
+    const { request, loading } = useApiWithoutResult(updateNews);
     const keys = ['announcements', 'features', 'newsletter', 'beta'];
-    const { news, setNews } = useNews(0, keys); // TODO get it from settings model
+    const { news, setNews } = useNews(News, keys);
 
     const handleChange = (key) => async (event) => {
         // Here we need to keep the order of the Object for the bitmap conversion
@@ -20,27 +21,43 @@ const NewsSection = () => {
             return acc;
         }, {});
         const value = toBitMap(newState);
-        await api(updateNews(value));
+        await request(value);
+        await call();
         setNews(value);
     };
 
     return (
         <>
             <Label htmlFor="announcements">
-                <Checkbox id="announcements" checked={news.announcements} onChange={handleChange('announcements')} />{' '}
-                {t`Major announcements (2-3 per year)`}
+                <Checkbox
+                    id="announcements"
+                    checked={news.announcements}
+                    disabled={loading}
+                    onChange={handleChange('announcements')}
+                />
+                {c('Label for news').t`Major announcements (2-3 per year)`}
             </Label>
             <Label htmlFor="features">
-                <Checkbox id="features" checked={news.features} onChange={handleChange('features')} />{' '}
-                {t`Major features (3-4 per year)`}
+                <Checkbox
+                    id="features"
+                    checked={news.features}
+                    disabled={loading}
+                    onChange={handleChange('features')}
+                />
+                {c('Label for news').t`Major features (3-4 per year)`}
             </Label>
             <Label htmlFor="newsletter">
-                <Checkbox id="newsletter" checked={news.newsletter} onChange={handleChange('newsletter')} />{' '}
-                {t`Proton newsletter (5-6 per year)`}
+                <Checkbox
+                    id="newsletter"
+                    checked={news.newsletter}
+                    disabled={loading}
+                    onChange={handleChange('newsletter')}
+                />
+                {c('Label for news').t`Proton newsletter (5-6 per year)`}
             </Label>
             <Label htmlFor="beta">
-                <Checkbox id="beta" checked={news.beta} onChange={handleChange('beta')} />{' '}
-                {t`Proton Beta (10-12 per year)`}
+                <Checkbox id="beta" checked={news.beta} disabled={loading} onChange={handleChange('beta')} />
+                {c('Label for news').t`Proton Beta (10-12 per year)`}
             </Label>
         </>
     );

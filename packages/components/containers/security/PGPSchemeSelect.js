@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import { Select, useApiWithoutResult } from 'react-components';
+import { Select, useApiWithoutResult, useEventManager } from 'react-components';
 import { updatePGPScheme } from 'proton-shared/lib/api/mailSettings';
 
 const PGPSchemeSelect = ({ id, pgpScheme }) => {
     const [value, setValue] = useState(pgpScheme);
+    const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updatePGPScheme);
     const options = [
         { value: PACKAGE_TYPE.SEND_PGP_MIME, text: 'PGP/MIME' },
@@ -14,7 +15,7 @@ const PGPSchemeSelect = ({ id, pgpScheme }) => {
 
     const handleChange = async ({ target }) => {
         await request(target.value);
-        // TODO call event manager
+        await call();
         setValue(target.value);
     };
 

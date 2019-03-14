@@ -14,10 +14,12 @@ import {
     PrimaryButton,
     FooterModal,
     useApiWithoutResult,
-    useNotifications
+    useNotifications,
+    useEventManager
 } from 'react-components';
 
 const EditAddressModal = ({ show, onClose, address }) => {
+    const { call } = useEventManager();
     const { request } = useApiWithoutResult(updateAddress);
     const [model, updateModel] = useState({ displayName: address.DisplayName, signature: address.Signature });
     const { createNotification } = useNotifications();
@@ -25,7 +27,7 @@ const EditAddressModal = ({ show, onClose, address }) => {
     const handleSignature = (value) => updateModel({ ...model, signature: value });
     const handleSubmit = async () => {
         await request(address.ID, { DisplayName: model.displayName, Signature: model.signature });
-        // TODO call event manager
+        await call();
         onClose();
         createNotification({ text: c('Success').t`Address updated` });
     };

@@ -12,7 +12,8 @@ import {
     Label,
     Input,
     useApiWithoutResult,
-    useNotifications
+    useNotifications,
+    useEventManager
 } from 'react-components';
 
 import MemberStorageSelector from './MemberStorageSelector';
@@ -20,6 +21,7 @@ import MemberVPNSelector from './MemberVPNSelector';
 import { updateName, updateQuota, updateVPN } from 'proton-shared/lib/api/members';
 
 const EditMemberModal = ({ show, onClose, member, organization }) => {
+    const { call } = useEventManager();
     const [model, updateModel] = useState({ name: member.Name, storage: member.MaxSpace, vpn: member.MaxVPN });
     const { createNotification } = useNotifications();
     const { request: requestUpdateName } = useApiWithoutResult(updateName);
@@ -35,7 +37,7 @@ const EditMemberModal = ({ show, onClose, member, organization }) => {
         if (hasVPN) {
             await requestUpdateVPN(model.vpn);
         }
-        // TODO call event manager
+        await call();
         onClose();
         createNotification({ text: c('Success').t`User updated` });
     };

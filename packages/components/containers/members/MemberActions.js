@@ -7,7 +7,8 @@ import {
     useApiWithoutResult,
     Dropdown,
     DropdownMenu,
-    useNotifications
+    useNotifications,
+    useEventManager
 } from 'react-components';
 import { c } from 'ttag';
 import { removeMember, updateRole, privatizeMember } from 'proton-shared/lib/api/members';
@@ -16,6 +17,7 @@ import { MEMBER_PRIVATE, MEMBER_ROLE } from 'proton-shared/lib/constants';
 import EditMemberModal from './EditMemberModal';
 
 const MemberActions = ({ member, organization }) => {
+    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { request: requestRemoveMember } = useApiWithoutResult(removeMember);
     const { request: requestUpdateRole } = useApiWithoutResult(updateRole);
@@ -25,7 +27,7 @@ const MemberActions = ({ member, organization }) => {
 
     const handleConfirmDelete = async () => {
         await requestRemoveMember(member.ID);
-        // TODO call event manager
+        await call();
         closeDelete();
         createNotification({ text: c('Success message').t`User deleted` });
     };
@@ -36,19 +38,19 @@ const MemberActions = ({ member, organization }) => {
 
     const makeAdmin = async () => {
         await requestUpdateRole(member.ID, MEMBER_ROLE.ORGANIZATION_OWNER);
-        // TODO call event manager
+        await call();
         createNotification({ text: c('Success message').t`Role updated` });
     };
 
     const revokeAdmin = async () => {
         await requestUpdateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER);
-        // TODO call event manager
+        await call();
         createNotification({ text: c('Success message').t`Role updated` });
     };
 
     const makePrivate = async () => {
         await requestPrivatize(member.ID);
-        // TODO call even manager
+        await call();
         createNotification({ text: c('Success message').t`Status updated` });
     };
 

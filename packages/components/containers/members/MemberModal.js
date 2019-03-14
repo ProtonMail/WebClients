@@ -14,7 +14,8 @@ import {
     Checkbox,
     Select,
     Text,
-    useNotifications
+    useNotifications,
+    useEventManager
 } from 'react-components';
 
 import MemberStorageSelector from './MemberStorageSelector';
@@ -23,6 +24,7 @@ import useMemberModal from './useMemberModal';
 
 const MemberModal = ({ show, onClose, organization, domains }) => {
     const { createNotification } = useNotifications();
+    const { call } = useEventManager();
     const { model, update, hasVPN, save, check } = useMemberModal(organization, domains);
     const domainOptions = domains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
     const handleChange = (key) => ({ target }) => update(key, target.value);
@@ -38,7 +40,7 @@ const MemberModal = ({ show, onClose, organization, domains }) => {
         }
 
         await save();
-        // TODO call event mananger
+        await call();
         onClose();
         createNotification({ text: c('Success').t`User created` });
     };

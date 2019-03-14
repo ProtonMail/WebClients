@@ -2,7 +2,14 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Dropdown, DropdownMenu, useApiWithoutResult, useModal, useNotifications } from 'react-components';
+import {
+    Dropdown,
+    DropdownMenu,
+    useApiWithoutResult,
+    useModal,
+    useNotifications,
+    useEventManager
+} from 'react-components';
 import { ADDRESS_TYPE, ADDRESS_STATUS, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
 
@@ -14,6 +21,7 @@ const { READABLE, UNREADABLE } = MEMBER_PRIVATE;
 
 const AddressActions = ({ address, user, member }) => {
     const { Status, Type, ID } = address;
+    const { call } = useEventManager();
     const { request: requestDelete } = useApiWithoutResult(deleteAddress);
     const { request: requestEnable } = useApiWithoutResult(enableAddress);
     const { request: requestDisable } = useApiWithoutResult(disableAddress);
@@ -28,19 +36,19 @@ const AddressActions = ({ address, user, member }) => {
 
     const handleDelete = async () => {
         await requestDelete(ID);
-        // TODO call event manager
+        await call();
         createNotification({ text: c('Success notification').t`Address deleted` });
     };
 
     const handleEnable = async () => {
         await requestEnable(ID);
-        // TODO call event manager
+        await call();
         createNotification({ text: c('Success notification').t`Address enabled` });
     };
 
     const handleDisable = async () => {
         await requestDisable(ID);
-        // TODO call event manager
+        await call();
         createNotification({ text: c('Success notification').t`Address disabled` });
     };
 
