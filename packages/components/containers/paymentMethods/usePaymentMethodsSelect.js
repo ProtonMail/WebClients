@@ -12,7 +12,7 @@ const usePaymentMethodsSelect = ({ amount, cycle, coupon, type }) => {
     const isYearly = cycle === CYCLE.YEARLY;
     const isTwoYear = cycle === CYCLE.TWO_YEARS;
     const isInvoice = type === 'invoice';
-    const isSignup = false; // TODO
+    const isSignup = type === 'signup';
 
     const cardNumber = (details) => {
         return `[${details.Brand}] •••• ${details.Last4} ${isExpired(details) ? `(${c('Info').t`Expired`})` : ''}`;
