@@ -55,15 +55,33 @@ function contactEmails(Contact, dispatchers, sanitize) {
     };
 
     const findIndex = (ID) => _.findIndex(CACHE.emails, { ID });
-    const findEmail = (email, normalizer = _.identity) => {
-        const { noDefault, match } = loadFilterEmails(email, normalizer);
 
-        const nonDefault = _.find(CACHE.emails, noDefault);
-        if (nonDefault) {
-            return nonDefault;
+    /**
+     * Find contacts from an email.
+     * Available API method:
+     *     - filter for All -> Array
+     *     - find for one -> Object
+     * @param  {String} method  Type of method to get them.
+     * @param {Boolean} forceMatch True to force the match of all matching emails
+     * @return {Function}
+     */
+    const finderByEmail = (method, forceMatch) => (email, normalizer = _.identity) => {
+        const { noDefault, match } = loadFilterEmails(email, normalizer);
+        const getMethod = method === 'find' ? _.find : _.filter;
+
+        if (!forceMatch) {
+            const nonDefault = getMethod(CACHE.emails, noDefault);
+            if (Array.isArray(nonDefault) ? nonDefault.length : nonDefault) {
+                return nonDefault;
+            }
         }
-        return _.find(CACHE.emails, match);
+
+        return getMethod(CACHE.emails, match);
     };
+
+    const findEmail = finderByEmail('find');
+    // Force match all as we want all off them
+    const findAllByEmail = finderByEmail('filter', true);
 
     const findEmails = (list = [], format = normalizeEmail) => {
         /*
@@ -128,6 +146,18 @@ function contactEmails(Contact, dispatchers, sanitize) {
         clear();
     });
 
-    return { set, get, getMap, getEmail, clear, findIndex, findEmail, load: loadCache, update, findEmails };
+    return {
+        set,
+        get,
+        getMap,
+        getEmail,
+        clear,
+        findIndex,
+        findEmail,
+        load: loadCache,
+        update,
+        findEmails,
+        findAllByEmail
+    };
 }
 export default contactEmails;

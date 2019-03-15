@@ -27,7 +27,9 @@ function contactCache(
     };
 
     const { dispatcher, on } = dispatchers(['contacts']);
-    const getItem = (ID) => _.find(CACHE.contacts, { ID });
+    const getItem = (ID) => {
+        return (CACHE.contacts.map.all || {})[ID] || _.find(CACHE.contacts, { ID });
+    };
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
     const emit = (contact, data = {}) => {
         dispatcher.contacts('contactsUpdated', {
@@ -157,7 +159,7 @@ function contactCache(
             (acc, contact) => {
                 contact.Emails = MAP_EMAILS[contact.ID] || [];
                 contact.emails = contact.Emails.map(({ Email = '' }) => Email).join(', ');
-                acc.all[contact.ID] = { ...contact };
+                acc.all[contact.ID] = contact;
                 acc.list.push(acc.all[contact.ID]);
                 return acc;
             },
@@ -173,8 +175,8 @@ function contactCache(
     }
 
     /*
-         * Clear the contacts array and reset Hydrated
-         */
+     * Clear the contacts array and reset Hydrated
+     */
     function clear() {
         CACHE.contacts.length = 0;
         CACHE.hydrated = false;
