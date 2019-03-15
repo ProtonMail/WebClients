@@ -237,7 +237,7 @@ function contactEditor(
 
     /**
      * Update a contact and emit the 'contactUpdated' event.
-     * @param {Object} contact
+     * @param {Object} contact : { ID: <ContactID>, vCard }
      * @returns {Promise}
      */
     function updateContact(contact) {
@@ -380,7 +380,7 @@ function contactEditor(
         type === 'addContact' && add(data);
     });
 
-    return { init: angular.noop, create, createSingular, update, updateUnencrypted, remove, merge, add };
+    return { init: angular.noop, create, createSingular, update, updateUnencrypted, remove, merge, add, updateContact };
 }
 
 export default contactEditor;

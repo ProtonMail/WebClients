@@ -30,6 +30,7 @@
                                         data-custom-ng-change="ctrl.onSelectAll()"></custom-checkbox>
                                 </th>
                                 <th scope="col" translate-context="Header" translate>Name</th>
+                                <th scope="col" translate-context="Header" translate>Type</th>
                                 <th scope="col" translate-context="Header" translate>Email</th>
                             </tr>
                         </thead>
@@ -40,6 +41,8 @@
                                 </td>
                                 <td>
                                     <span class="contactSelectorForm-name">{{ ::contact.Name }}</span></td>
+                                <td>
+                                    <span class="contactSelectorForm-name">{{ ::contact.Type.toString() }}</span></td>
                                 <td>
                                     <span class="contactSelectorForm-email">{{ ::contact.Email }}</span>
                                 </td>
