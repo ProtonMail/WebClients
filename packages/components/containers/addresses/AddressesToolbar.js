@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Block, Label, Select, PrimaryButton, useModal } from 'react-components';
+import { Row, Label, Select, PrimaryButton, useModal } from 'react-components';
 
 import AddressModal from './AddressModal';
 
@@ -18,19 +18,22 @@ const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
     };
 
     return (
-        <Block>
-            <Label htmlFor="memberSelect" className="mr1">{c('Label').t`User:`}</Label>
-            <Select
-                disabled={loading}
-                id="memberSelect"
-                value={member.ID}
-                options={options}
-                className="mr1"
-                onChange={handleChange}
-            />
-            <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Add address`}</PrimaryButton>
-            <AddressModal show={isOpen} onClose={close} member={member} />
-        </Block>
+        <Row>
+            <Label htmlFor="memberSelect">{c('Label').t`User`}</Label>
+            <div>
+                <Select
+                    disabled={loading}
+                    id="memberSelect"
+                    value={member.ID}
+                    options={options}
+                    className="mr1 mb1"
+                    onChange={handleChange}
+                />
+                <br />
+                <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Add address`}</PrimaryButton>
+                <AddressModal show={isOpen} onClose={close} member={member} />
+            </div>
+        </Row>
     );
 };
 
