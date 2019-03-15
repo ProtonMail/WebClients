@@ -175,3 +175,9 @@ export const BLACK_FRIDAY = {
 };
 export const MIN_PAYPAL_AMOUNT = 500;
 export const MAX_PAYPAL_AMOUNT = 99999900;
+export const NEWS = {
+    ANNOUNCEMENTS: 1,
+    FEATURES: 2,
+    NEWSLETTER: 4,
+    BETA: 8
+};
