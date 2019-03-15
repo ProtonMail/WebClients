@@ -16,6 +16,7 @@ describe('storage warning', () => {
     const mockAppModel = {
         set: () => {}
     };
+    const mockTranslator = () => (cb) => cb();
 
     const mockModal = {};
 
@@ -25,7 +26,8 @@ describe('storage warning', () => {
         .factory('storageWarning', storageWarningService)
         .factory('AppModel', () => mockAppModel)
         .factory('authentication', () => authentication)
-        .factory('dispatchers', dispatchersService);
+        .factory('dispatchers', dispatchersService)
+        .factory('translator', mockTranslator);
 
     beforeEach(angular.mock.module(MODULE));
 

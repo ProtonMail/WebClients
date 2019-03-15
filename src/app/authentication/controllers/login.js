@@ -17,13 +17,14 @@ function LoginController(
     helpLoginModal,
     AppModel,
     tempStorage,
-    authApi
+    authApi,
+    translator
 ) {
     /**
      * NOTE: THIS FILE AND THE SRP NEEDS TO BE REFACTORED TO PROPERLY HANDLE ERRORS.
      * MADE A BEST EFFORT TO ONLY SHOW ERRORS ONCE BUT I MAY SHOW TWICE.
      */
-    const I18N = {
+    const I18N = translator(() => ({
         NO_DATA_ERROR: gettextCatalog.getString('Unable to log you in. Please try again later.', null, 'Error'),
         SESSION_STORAGE_ERROR: gettextCatalog.getString(
             'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.\n<a href="https://protonmail.com/support/knowledge-base/enabling-cookies/" target="_blank">More information here</a>.',
@@ -42,7 +43,7 @@ function LoginController(
         ),
         PASSWORD_ERROR: gettextCatalog.getString('Your password is missing', null, 'Login error'),
         TWOFA_ERROR: gettextCatalog.getString('Please enter your two-factor passcode', null, 'Error')
-    };
+    }));
 
     const { on, unsubscribe } = dispatchers();
     $scope.twoFactor = 0;

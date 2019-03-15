@@ -1,11 +1,11 @@
 import ClipboardJS from 'clipboard';
 
 /* @ngInject */
-function ptClipboard(gettextCatalog, notification) {
-    const I18N = {
+function ptClipboard(gettextCatalog, notification, translator) {
+    const I18N = translator(() => ({
         SUCCESS: gettextCatalog.getString('Copied to clipboard', null, 'Info'),
         ERROR: gettextCatalog.getString('Error while copying', null, 'Error')
-    };
+    }));
 
     /**
      * Create copy action

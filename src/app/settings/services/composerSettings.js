@@ -1,5 +1,12 @@
 /* @ngInject */
-function composerSettings(authentication, settingsMailApi, networkActivityTracker, gettextCatalog, notification) {
+function composerSettings(
+    authentication,
+    settingsMailApi,
+    networkActivityTracker,
+    gettextCatalog,
+    notification,
+    translator
+) {
     /**
      * Keeps track of the request as it's loading.
      * Relies on the settingsMailApi to throw an error to reject the promise.
@@ -10,14 +17,14 @@ function composerSettings(authentication, settingsMailApi, networkActivityTracke
         return promise;
     };
 
-    const I18N = {
+    const I18N = translator(() => ({
         successComposer(value) {
             return gettextCatalog.getString('Change composer mode to {{value}}', { value }, 'Info');
         },
         successTextDirection(value) {
             return gettextCatalog.getString('Change default text direction to {{value}}', { value }, 'Info');
         }
-    };
+    }));
 
     const updateComposerMode = (MIMEType, successMessage) =>
         trackUpdate(settingsMailApi.updateDraftType({ MIMEType })).then(() =>

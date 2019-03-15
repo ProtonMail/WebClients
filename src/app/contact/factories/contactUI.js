@@ -3,13 +3,14 @@ import _ from 'lodash';
 import { uniqID } from '../../../helpers/string';
 
 /* @ngInject */
-function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
+function contactUI(gettextCatalog, contactTransformLabel, sanitize, translator) {
+
     const EMAIL_TYPE = ['email', 'home', 'work', 'other'];
     const TEL_TYPE = ['tel', 'mobile', 'work', 'fax', 'other'];
     const ADR_TYPE = ['adr', 'home', 'work', 'other'];
     const PERSONAL_TYPE = ['org', 'anniversary', 'bday', 'gender', 'nickname', 'role', 'title', 'url']; // Andy wants 'org' first
 
-    const I18N = {
+    const I18N = translator(() => ({
         name: gettextCatalog.getString('Name', null, 'Placeholder'),
         pgp: gettextCatalog.getString('Public key', null, 'Placeholder'),
         emailAddress: gettextCatalog.getString('Email address', null, 'Placeholder'),
@@ -25,7 +26,7 @@ function contactUI(gettextCatalog, contactTransformLabel, sanitize) {
         optionalTLS: gettextCatalog.getString('Opportunistic', null, 'TLS type'),
         noScheme: gettextCatalog.getString('Use Global Default', null, 'Default encryption scheme'),
         default: gettextCatalog.getString('Default', null, 'MIME type')
-    };
+    }));
 
     const MAP_KEYS = {
         Key: { key: 'key', type: 'key' },

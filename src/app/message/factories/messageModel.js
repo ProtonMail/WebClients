@@ -31,17 +31,16 @@ function messageModel(
     publicKeyStore,
     attachedPublicKey,
     addressesModel,
+    readReceiptModel,
     keysModel,
-    readReceiptModel
+    translator
 ) {
-    const I18N = {
-        ENCRYPTION_ERROR: gettextCatalog.getString('Error encrypting message', null, 'Error')
-    };
-    const ENCRYPTED_HEADERS_FILENAME = gettextCatalog.getString(
-        'Encrypted Headers',
-        null,
-        'Encrypted Headers filename'
-    );
+    const I18N = translator(() => ({
+        ENCRYPTION_ERROR: gettextCatalog.getString('Error encrypting message', null, 'Error'),
+        ENCRYPTED_HEADERS_FILENAME: gettextCatalog.getString('Encrypted Headers', null, 'Encrypted Headers filename'),
+        EMPTY: gettextCatalog.getString('Message empty', null, 'Message content if empty')
+    }));
+
     const defaultMessage = {
         ID: '',
         Order: 0,
@@ -63,7 +62,6 @@ function messageModel(
         ExternalID: null
     };
 
-    const emptyMessage = gettextCatalog.getString('Message empty', null, 'Message content if empty');
     const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
     const { dispatcher } = dispatchers(['message']);
 
@@ -259,7 +257,7 @@ function messageModel(
         }
 
         async decryptMIME({ message, messageDate, privateKeys, publicKeys }) {
-            const headerFilename = ENCRYPTED_HEADERS_FILENAME;
+            const headerFilename = I18N.ENCRYPTED_HEADERS_FILENAME;
             const sender = this.Sender.Address;
             const result = await decryptMIMEMessage({
                 message,
@@ -271,7 +269,7 @@ function messageModel(
             });
             try {
                 // extract the message body and attachments
-                const { body = emptyMessage, mimetype = PLAINTEXT } = (await result.getBody()) || {};
+                const { body = I18N.EMPTY, mimetype = PLAINTEXT } = (await result.getBody()) || {};
                 this.MIMEType = mimetype;
 
                 const pmcryptoVerified = await result.verify();

@@ -5,7 +5,8 @@ import { API_CUSTOM_ERROR_CODES } from '../../errors';
 const { PAYMENTS_PAYPAL_CONNECTION_EXCEPTION } = API_CUSTOM_ERROR_CODES;
 
 /* @ngInject */
-function paypalView(notification, Payment, gettextCatalog, $q, networkUtils, windowModel) {
+function paypalView(notification, Payment, $q, networkUtils, windowModel) {
+
     return {
         replace: true,
         restrict: 'E',

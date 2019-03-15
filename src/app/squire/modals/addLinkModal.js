@@ -1,6 +1,6 @@
 /* @ngInject */
-function addLinkModal(pmModal, gettextCatalog) {
-    const I18N = {
+function addLinkModal(pmModal, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         insert: {
             formTitle: gettextCatalog.getString('Insert link', null, 'Composer, add Link'),
             actionTitle: gettextCatalog.getString('Insert', null, 'Composer, add Link'),
@@ -11,7 +11,7 @@ function addLinkModal(pmModal, gettextCatalog) {
             actionTitle: gettextCatalog.getString('Update', null, 'Composer, add Link'),
             deleteTitle: gettextCatalog.getString('Delete', null, 'Composer, add Link')
         }
-    };
+    }));
 
     return pmModal({
         controllerAs: 'ctrl',

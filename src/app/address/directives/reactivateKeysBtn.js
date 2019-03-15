@@ -5,12 +5,14 @@ function reactivateKeysBtn(
     gettextCatalog,
     reactivateKeys,
     networkActivityTracker,
-    notification
+    notification,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         success: gettextCatalog.getString('Keys reactivated', null, 'Success'),
         reactivateKeys: gettextCatalog.getString('Reactivate keys', null, 'Action')
-    };
+    }));
+
     const { dispatcher } = dispatchers(['keys']);
 
     return {

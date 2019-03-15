@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { decryptPrivateKey } from 'pmcrypto';
+
 import { KEY_FLAGS, KEY_FILE_EXTENSION } from '../../constants';
 import { readFileAsString } from '../../../helpers/fileHelper';
 
@@ -24,9 +25,10 @@ function addressKeysView(
     generateModal,
     authentication,
     deleteKeyProcess,
-    selectAddressModal
+    selectAddressModal,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         SELECT_ADDRESS_TO_ADD_KEY: gettextCatalog.getString(
             'Select an address to which the new key will be attached',
             null,
@@ -78,7 +80,7 @@ function addressKeysView(
             );
         },
         PRIVATE_KEY_REACTIVATED: gettextCatalog.getString('Private key reactivated', null, 'Success')
-    };
+    }));
 
     const onEvent = (element, type, callback) => {
         element.addEventListener(type, callback);

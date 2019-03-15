@@ -1,5 +1,4 @@
 import _ from 'lodash';
-
 import { flow, filter, sortBy } from 'lodash/fp';
 import { getItem, setItem } from '../../../helpers/storageHelper';
 
@@ -10,10 +9,11 @@ function composerFromModel(
     confirmModal,
     gettextCatalog,
     plusAliasModel,
+    translator,
     premiumDomainModel
 ) {
     const PM_ADDRESS_ITEM = 'protonmail_pm_address';
-    const I18N = {
+    const I18N = translator(() => ({
         OK: gettextCatalog.getString('OK', null, 'Action'),
         DONT_SHOW_AGAIN: gettextCatalog.getString("Don't show this again", null, 'Action'),
         TITLE: gettextCatalog.getString('Sending notice', null, 'Title'),
@@ -24,7 +24,7 @@ function composerFromModel(
                 'Error'
             );
         }
-    };
+    }));
     /**
      * Return list of addresses available in the FROM select
      * @param  {Object} message

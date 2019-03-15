@@ -1,13 +1,12 @@
 /* @ngInject */
-function danger(gettextCatalog) {
-    const dangerWord = gettextCatalog.getString('DANGER', null, 'Make sure the DANGER string is translated');
-    const placeholder = gettextCatalog.getString(
-        "Enter the word 'DANGER' here.",
-        null,
-        'Make sure the DANGER string is translated'
-    );
+function danger(gettextCatalog, translator) {
+    const I18N = translator(() => ({
+        DANGER: gettextCatalog.getString('DANGER', null, 'Make sure the DANGER string is translated'),
+        PLACEHOLDER: gettextCatalog.getString("Enter the word 'DANGER' here.", null, 'Make sure the DANGER string is translated')
+    }));
+
     function isDanger(value) {
-        return value === dangerWord;
+        return value === I18N.DANGER;
     }
     return {
         require: 'ngModel',
@@ -16,8 +15,8 @@ function danger(gettextCatalog) {
             dangerWord: '='
         },
         link(scope, element, attributes, ngModel) {
-            scope.dangerWord = dangerWord;
-            element.attr('placeholder', placeholder);
+            scope.dangerWord = I18N.DANGER;
+            element.attr('placeholder', I18N.PLACEHOLDER);
             ngModel.$validators.danger = isDanger;
         }
     };

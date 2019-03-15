@@ -1,5 +1,5 @@
 /* @ngInject */
-function messageContacts(gettextCatalog) {
+function messageContacts(gettextCatalog, translator) {
     const STATUS = {
         ENCRYPTION_ENABLED: 1,
         SIGNING_ENABLED: 2,
@@ -9,7 +9,7 @@ function messageContacts(gettextCatalog) {
         LOADING_CRYPT_INFO: 32
     };
 
-    const I18N = {
+    const I18N = translator(() => ({
         [STATUS.PGP_MIME | !STATUS.ENCRYPTION_ENABLED | STATUS.SIGNING_ENABLED]: gettextCatalog.getString(
             'PGP-signed',
             null,
@@ -70,7 +70,8 @@ function messageContacts(gettextCatalog) {
             null,
             'Info'
         )
-    };
+    }));
+
     return {
         templateUrl: require('../../../templates/message/messageContactsIcon.tpl.html'),
         replace: true,

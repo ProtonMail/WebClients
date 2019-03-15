@@ -1,8 +1,9 @@
 /* @ngInject */
-function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
+function contactLoaderModal(dispatchers, gettextCatalog, pmModal, translator) {
+
     const LABEL_CLASS = 'contactLoaderModal-label';
 
-    const I18N = {
+    const I18N = translator(() => ({
         encrypting(progress) {
             return gettextCatalog.getString(
                 'Encrypting contacts: {{progress}}%',
@@ -44,9 +45,9 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
             'Error during importation'
         ),
         cancelling: gettextCatalog.getString('Import cancelled. Rolling back.', null, 'Cancelled during importation')
-    };
+    }));
 
-    I18N.modal = {
+    I18N.modal = translator(() => ({
         import: {
             title: gettextCatalog.getString('Importing Contacts', null, 'Title for the contacts exporter modal'),
             info: gettextCatalog.getString(
@@ -86,7 +87,7 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
                 '1 of 2 contacts successfully merged.'
             )
         }
-    };
+    }));
 
     const getModalI18n = (key = '', type = '') => I18N.modal[key][type];
 

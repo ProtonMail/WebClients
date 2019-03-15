@@ -7,11 +7,12 @@ function signatureModel(
     eventManager,
     notification,
     gettextCatalog,
-    networkActivityTracker
+    networkActivityTracker,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         SUCCESS_UPDATE: gettextCatalog.getString('Signature updated', null, 'Info')
-    };
+    }));
 
     const changePMSignature = async (status) => {
         const PMSignature = +!!status;

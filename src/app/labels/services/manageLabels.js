@@ -8,9 +8,10 @@ function manageLabels(
     Label,
     labelsModel,
     networkActivityTracker,
-    notification
+    notification,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         FOLDER: gettextCatalog.getString('folder', null, 'Title'),
         LABEL: gettextCatalog.getString('label', null, 'Title'),
         GROUP: gettextCatalog.getString('contact group', null, 'Title'),
@@ -69,7 +70,7 @@ function manageLabels(
             const message = getMessage();
             return { NOTIF, message, title };
         }
-    };
+    }));
 
     const remove = (label, type) => {
         const total = !label.IDs ? 1 : label.IDs.length;

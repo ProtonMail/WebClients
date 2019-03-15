@@ -12,15 +12,17 @@ function deleteAccountModal(
     gettextCatalog,
     notification,
     userSettingsModel,
-    userType
+    userType,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         invalidForm: gettextCatalog.getString(
             'Invalid email address or password',
             null,
             'Error reported when the delete account form is invalid'
         )
-    };
+    }));
+
     async function report(params, isAdmin) {
         if (isAdmin) {
             return Report.bug(params);

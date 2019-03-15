@@ -1,9 +1,9 @@
 /* @ngInject */
-function wildcardCheckbox(dispatchers, gettextCatalog, mailSettingsModel) {
-    const I18N = {
+function wildcardCheckbox(dispatchers, gettextCatalog, mailSettingsModel, translator) {
+    const I18N = translator(() => ({
         info: gettextCatalog.getString('Do not require exact match', null, 'Label'),
         learn: gettextCatalog.getString('Learn more', null, 'Link')
-    };
+    }));
 
     return {
         restrict: 'E',

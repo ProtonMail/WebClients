@@ -8,9 +8,9 @@ const DEFAULT_STATE = {
 };
 
 /* @ngInject */
-function storageWarning(gettextCatalog, dispatchers, authentication, $state, confirmModal, AppModel) {
-    const LEARN_MORE = gettextCatalog.getString('Learn more', null, 'Link');
-    const I18N = {
+function storageWarning(gettextCatalog, dispatchers, authentication, $state, confirmModal, AppModel, translator) {
+    const I18N = translator(() => ({
+        LEARN_MORE: gettextCatalog.getString('Learn more', null, 'Link'),
         warningMessage(percentage) {
             return gettextCatalog.getString(
                 `
@@ -21,19 +21,21 @@ function storageWarning(gettextCatalog, dispatchers, authentication, $state, con
                 'Storage warning'
             );
         },
-        REACHED_MESSAGE: gettextCatalog.getString(
-            `
-            You have reached 100% of your storage capacity. You won't be able to send or receive emails
-            unless you permanently delete some emails or purchase more storage. {{learnMoreLink}}.
-            `,
-            { learnMoreLink: `<a href="${KNOWLEDGE_BASE.STORAGE_WARNING}" target="_blank">${LEARN_MORE}</a>` },
-            'Storage warning'
-        ),
+        reachedMessage() {
+            return gettextCatalog.getString(
+                `
+                You have reached 100% of your storage capacity. You won't be able to send or receive emails
+                unless you permanently delete some emails or purchase more storage. {{learnMoreLink}}.
+                `,
+                { learnMoreLink: `<a href="${KNOWLEDGE_BASE.STORAGE_WARNING}" target="_blank">${this.LEARN_MORE}</a>` },
+                'Storage warning'
+            );
+        },
         DASHBOARD: gettextCatalog.getString('Go to dashboard', null, 'Action'),
         OK: gettextCatalog.getString('Ok', null, 'Action'),
         DO_NOT_REMIND: gettextCatalog.getString('Do not remind me', null, 'Action'),
         WARNING: gettextCatalog.getString('Warning', null, 'Title')
-    };
+    }));
 
     const { on } = dispatchers();
 
@@ -94,7 +96,7 @@ function storageWarning(gettextCatalog, dispatchers, authentication, $state, con
         openModal({
             icon: 'fa fa-exclamation-triangle',
             title: I18N.WARNING,
-            message: I18N.REACHED_MESSAGE,
+            message: I18N.reachedMessage(),
             cancelText: I18N.DASHBOARD,
             confirmText: I18N.OK,
             cancel(type) {

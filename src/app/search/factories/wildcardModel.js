@@ -1,8 +1,9 @@
 /* @ngInject */
-function wildcardModel(dispatchers, gettextCatalog, networkActivityTracker, notification, settingsMailApi) {
-    const I18N = {
+function wildcardModel(dispatchers, gettextCatalog, networkActivityTracker, notification, settingsMailApi, translator) {
+    const I18N = translator(() => ({
         success: gettextCatalog.getString('Search parameter updated', null, 'Success')
-    };
+    }));
+
     const { on } = dispatchers();
 
     function updateAutowildcard({ AutoWildcardSearch }) {

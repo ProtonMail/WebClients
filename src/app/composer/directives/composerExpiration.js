@@ -3,15 +3,15 @@ import _ from 'lodash';
 import { MAX_EXPIRATION_TIME } from '../../constants';
 
 /* @ngInject */
-function composerExpiration(dispatchers, notification, gettextCatalog) {
+function composerExpiration(dispatchers, notification, gettextCatalog, translator) {
     const { dispatcher } = dispatchers(['composer.update']);
-    const MESSAGES = {
+
+    const I18N = translator(() => ({
         maxEpiration: gettextCatalog.getString('The maximum expiration is 4 weeks.', null, 'Error'),
         invalid: gettextCatalog.getString('Invalid expiration time.', null, 'Error')
-    };
+    }));
 
     const dispatch = (type, message) => dispatcher['composer.update'](type, { message, type: 'expiration' });
-
     const formatOption = (size) => _.range(size).map((value) => ({ label: `${value}`, value }));
 
     const OPTIONS = {
@@ -60,11 +60,11 @@ function composerExpiration(dispatchers, notification, gettextCatalog) {
 
                 // How can we enter in this situation?
                 if (parseInt(hours, 10) > MAX_EXPIRATION_TIME) {
-                    return notification.error(MESSAGES.maxEpiration);
+                    return notification.error(I18N.maxEpiration);
                 }
 
                 if (isNaN(hours)) {
-                    return notification.error(MESSAGES.invalid);
+                    return notification.error(I18N.invalid);
                 }
 
                 scope.$applyAsync(() => {

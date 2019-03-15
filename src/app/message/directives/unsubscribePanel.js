@@ -1,6 +1,14 @@
 /* @ngInject */
-function unsubscribePanel(addressesModel, confirmModal, dispatchers, gettextCatalog, notification, unsubscribeModel) {
-    const I18N = {
+function unsubscribePanel(
+    addressesModel,
+    confirmModal,
+    dispatchers,
+    gettextCatalog,
+    notification,
+    unsubscribeModel,
+    translator
+) {
+    const I18N = translator(() => ({
         cannotSend(email) {
             return gettextCatalog.getString(
                 'Cannot unsubscribe with {{email}}, please upgrade to a paid plan or enable the address',
@@ -19,7 +27,8 @@ function unsubscribePanel(addressesModel, confirmModal, dispatchers, gettextCata
                 'Info'
             );
         }
-    };
+    }));
+
     const { dispatcher } = dispatchers(['message']);
 
     const confirmFirst = (message) => {

@@ -1,9 +1,9 @@
 /* @ngInject */
-function displayContentBtn(dispatchers, gettextCatalog) {
-    const NOTICES = {
+function displayContentBtn(dispatchers, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         embedded: gettextCatalog.getString('This message contains embedded images', null, 'Action'),
         remote: gettextCatalog.getString('This message contains remote content', null, 'Action')
-    };
+    }));
 
     const getClassName = (name) => `displayContentBtn-type-${name}`;
 
@@ -14,8 +14,7 @@ function displayContentBtn(dispatchers, gettextCatalog) {
             const { dispatcher } = dispatchers(['message.open']);
             const $notice = el[0].querySelector('.displayContentBtn-notice-text');
             const $btn = el.find('.displayContentBtn-button');
-
-            $notice.textContent = NOTICES[action];
+            $notice.textContent = I18N[action];
 
             const onClick = () => {
                 dispatcher['message.open']('injectContent', {

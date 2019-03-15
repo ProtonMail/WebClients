@@ -2,13 +2,14 @@ import _ from 'lodash';
 import vCard from 'vcf';
 
 /* @ngInject */
-function contactSchema(gettextCatalog) {
+function contactSchema(gettextCatalog, translator) {
+
     const contactAPI = { vCard: new vCard() };
     const group = ['Tel', 'Adr', 'Note'];
     const personnal = ['Bday', 'Title', 'Org', 'Nickname'];
-    const I18N = {
+    const I18N = translator(() => ({
         UNKNOWN: gettextCatalog.getString('Unknown', null, 'Default display name vcard')
-    };
+    }));
 
     const all = group.concat(personnal);
 

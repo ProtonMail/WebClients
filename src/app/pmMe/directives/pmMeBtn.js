@@ -1,10 +1,10 @@
 /* @ngInject */
-function pmMeBtn(gettextCatalog, pmMeModel, premiumDomainModel) {
-    const I18N = {
+function pmMeBtn(gettextCatalog, pmMeModel, premiumDomainModel, translator) {
+    const I18N = translator(() => ({
         activate(email) {
             return gettextCatalog.getString('Activate {{email}}', { email }, 'Action');
         }
-    };
+    }));
 
     const onClick = () => pmMeModel.activate();
 

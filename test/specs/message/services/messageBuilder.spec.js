@@ -425,6 +425,7 @@ describe('messageBuilder factory', () => {
     let spyMessageModelMock = jasmine.createSpy();
     let spyLocalReadableTime = jasmine.createSpy();
     let spyPrepareContent = jasmine.createSpy();
+    let spyTranslator = jasmine.createSpy();
     let userMock = { Signature: '', DraftMIMEType: 'text/html' };
 
     let rootScope, factory;
@@ -494,6 +495,13 @@ Est-ce que tu vas bien ?
         spyMessageModelMock(data);
         return new Message(data);
     };
+
+    const translator = (cb) => {
+        const data = cb();
+        spyTranslator(data);
+        return data;
+    };
+
     beforeEach(angular.mock.module('ng', ($provide) => {
         $provide.factory('localReadableTimeFilter', () => (...args) => {
             spyLocalReadableTime(...args);
@@ -516,6 +524,7 @@ Est-ce que tu vas bien ?
                 pgpMimeAttachments,
                 prepareContent,
                 signatureBuilder,
+                translator,
                 textToHtmlMail);
 
             DEFAULT_MESSAGE = {
@@ -546,6 +555,21 @@ Est-ce que tu vas bien ?
             };
         })
     );
+
+    it('should load translations', () => {
+        expect(spyTranslator).toHaveBeenCalledTimes(2);
+        expect(spyTranslator).toHaveBeenCalledWith({
+            RE_PREFIX: jasmine.any(String),
+            FW_PREFIX: jasmine.any(String)
+        });
+
+        expect(spyTranslator).toHaveBeenCalledWith({
+            TITLE_ENCRYPTED_SUBJECT: jasmine.any(String),
+            YES_CONFIRM: jasmine.any(String),
+            NO_CONFIRM: jasmine.any(String),
+            encryptedSubjectMessage: jasmine.any(Function)
+        });
+    })
 
     describe('Prepare sanitizes content with prepareContent', () => {
         it('should use the signatureBuilder factory', () => {

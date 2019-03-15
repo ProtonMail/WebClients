@@ -24,12 +24,13 @@ function AttachmentLoader(
     secureSessionStorage,
     attachmentApi,
     SignatureVerifier,
-    gettextCatalog
+    gettextCatalog,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         encrypt: gettextCatalog.getString('Failed to encrypt attachment. Please try again.', null, 'Error'),
         missing: gettextCatalog.getString('You did not provide a file.', null, 'Error')
-    };
+    }));
 
     const { dispatcher } = dispatchers(['attachmentLoader']);
     const cache = $cacheFactory('attachments');

@@ -1,6 +1,6 @@
 /* @ngInject */
-function memberEditBtn(memberActions, gettextCatalog) {
-    const I18N = {
+function memberEditBtn(memberActions, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         edit: gettextCatalog.getString('Edit', null, 'Action'),
         add: gettextCatalog.getString('Add user', null, 'Action'),
         destroy: gettextCatalog.getString('Delete', null, 'Action'),
@@ -10,7 +10,7 @@ function memberEditBtn(memberActions, gettextCatalog) {
         revokeAdmin: gettextCatalog.getString('Revoke Admin', null, 'Action'),
         makePrivate: gettextCatalog.getString('Make Private', null, 'Action'),
         enableSupport: gettextCatalog.getString('Enable multi-user support', null, 'Action')
-    };
+    }));
 
     return {
         replace: true,

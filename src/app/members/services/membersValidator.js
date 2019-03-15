@@ -1,8 +1,16 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function membersValidator(gettextCatalog, notification, $state, organizationModel, domainModel, memberModel) {
-    const I18N = {
+function membersValidator(
+    gettextCatalog,
+    notification,
+    $state,
+    organizationModel,
+    domainModel,
+    memberModel,
+    translator
+) {
+    const I18N = translator(() => ({
         INVALID_PLAN: gettextCatalog.getString(
             'Multi-user support requires either a Professional or Visionary plan.',
             null,
@@ -45,7 +53,7 @@ function membersValidator(gettextCatalog, notification, $state, organizationMode
         INVALID_VPN: gettextCatalog.getString('Invalid VPN quota', null, 'Error'),
         ERROR_DECRYPT_ORGA_KEY: gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'),
         ERROR_ALREADY_USER: gettextCatalog.getString('Address already associated to a user', null, 'Error')
-    };
+    }));
 
     const validDependencies = (organization) => {
         const verifiedDomains = _.filter(domainModel.query(), ({ State }) => State);

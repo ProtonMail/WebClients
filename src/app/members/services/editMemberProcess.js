@@ -9,12 +9,13 @@ function editMemberProcess(
     setupKeys,
     membersValidator,
     notification,
-    eventManager
+    eventManager,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         SUCCESS_UPDATE: gettextCatalog.getString('User updated', null, 'Info'),
         SUCCESS_CREATE: gettextCatalog.getString('User created', null, 'Info')
-    };
+    }));
 
     /**
      * Edit a member

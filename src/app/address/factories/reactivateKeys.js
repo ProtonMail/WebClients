@@ -11,12 +11,13 @@ function reactivateKeys(
     Key,
     keysModel,
     eventManager,
-    gettextCatalog
+    gettextCatalog,
+    translator
 ) {
     const FAILED_DECRYPTION_PASSWORD = 1;
     const FAILED_KEY_REACTIVATE = 2;
 
-    const I18N = {
+    const I18N = translator(() => ({
         success: {
             one: gettextCatalog.getString('Key reactivated', null, 'Info'),
             many: (n) => gettextCatalog.getString('{{n}} keys reactivated', { n }, 'Info')
@@ -24,19 +25,22 @@ function reactivateKeys(
         errors: {
             [FAILED_DECRYPTION_PASSWORD]: {
                 one: gettextCatalog.getString('Incorrect decryption password', null, 'Error'),
-                many: (n) =>
-                    gettextCatalog.getString(
+                many(n) {
+                    return gettextCatalog.getString(
                         '{{n}} keys failed to decrypt due to an incorrect password',
                         { n },
                         'Error'
-                    )
+                    );
+                }
             },
             [FAILED_KEY_REACTIVATE]: {
                 one: gettextCatalog.getString('Failed to reactivate key', null, 'Error'),
-                many: (n) => gettextCatalog.getString('{{n}} keys failed to reactivate', { n }, 'Error')
+                many(n) {
+                    return gettextCatalog.getString('{{n}} keys failed to reactivate', { n }, 'Error');
+                }
             }
         }
-    };
+    }));
 
     /**
      * Get the text from based on the results.

@@ -8,11 +8,12 @@ function activateOrganizationKeys(
     authentication,
     networkActivityTracker,
     gettextCatalog,
-    eventManager
+    eventManager,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         ERROR_PASSWORD: gettextCatalog.getString('Password incorrect. Please try again', null, 'Error')
-    };
+    }));
 
     function setup(context) {
         const encryptPrivateKeyHelper = (pkg) => {

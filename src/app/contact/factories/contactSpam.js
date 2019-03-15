@@ -12,9 +12,10 @@ function contactSpam(
     notification,
     contactCache,
     contactEditor,
-    networkActivityTracker
+    networkActivityTracker,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         successRemove(total) {
             return gettextCatalog.getPlural(
                 total,
@@ -24,7 +25,7 @@ function contactSpam(
                 'Success'
             );
         }
-    };
+    }));
 
     /**
      * List all contacts from the list of Emails

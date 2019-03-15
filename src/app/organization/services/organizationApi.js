@@ -1,5 +1,5 @@
 /* @ngInject */
-function organizationApi($http, gettextCatalog, url, srp) {
+function organizationApi($http, url, srp) {
     const requestURL = url.build('organizations');
 
     /**

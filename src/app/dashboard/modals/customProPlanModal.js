@@ -1,6 +1,6 @@
 /* @ngInject */
-function customProPlanModal(customProPlanModel, gettextCatalog, pmModal) {
-    const I18N = {
+function customProPlanModal(customProPlanModel, gettextCatalog, translator, pmModal) {
+    const I18N = translator(() => ({
         members(value) {
             return gettextCatalog.getPlural(value, '1 user', '{{$count}} users', {}, 'Custom pro plan dashboard');
         },
@@ -10,7 +10,7 @@ function customProPlanModal(customProPlanModel, gettextCatalog, pmModal) {
         addresses(value) {
             return gettextCatalog.getString('{{value}} addresses', { value }, 'Custom pro plan dashboard');
         }
-    };
+    }));
 
     return pmModal({
         controllerAs: 'ctrl',

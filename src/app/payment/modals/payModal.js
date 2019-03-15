@@ -7,11 +7,12 @@ function payModal(
     gettextCatalog,
     paymentUtils,
     networkActivityTracker,
-    cardModel
+    cardModel,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         success: gettextCatalog.getString('Invoice paid', null, 'Info')
-    };
+    }));
 
     const pay = (ID, options = {}) => {
         const promise = Payment.pay(ID, options);

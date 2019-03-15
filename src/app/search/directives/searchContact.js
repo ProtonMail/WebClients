@@ -1,18 +1,20 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function searchContact(dispatchers, $state, $stateParams, contactCache, gettextCatalog) {
-    const I18N = gettextCatalog.getString('Search contacts', null, 'Title');
+function searchContact(dispatchers, $state, $stateParams, contactCache, gettextCatalog, translator) {
+    const I18N = translator(() => ({
+        TITLE: gettextCatalog.getString('Search contacts', null, 'Title')
+    }));
 
     const generatePlaceholder = () => {
         const total = contactCache.total();
 
         // Prevent false total if we have more than 100 contacts (pagination limit)
         if (!total || !contactCache.isHydrated()) {
-            return I18N;
+            return I18N.TITLE;
         }
 
-        return `${I18N} (${total})`;
+        return `${I18N.TITLE} (${total})`;
     };
 
     return {

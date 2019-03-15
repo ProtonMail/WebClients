@@ -6,10 +6,11 @@ const PGP_INLINE = 'PGP/Inline';
 const PGP_MIME = 'PGP/MIME';
 
 /* @ngInject */
-function contactSchemeSelector(dispatchers, gettextCatalog, mailSettingsModel) {
-    const I18N = {
+function contactSchemeSelector(dispatchers, gettextCatalog, mailSettingsModel, translator) {
+    const I18N = translator(() => ({
         noScheme: gettextCatalog.getString('Use global default', null, 'Default encryption scheme')
-    };
+    }));
+
     return {
         require: '^form',
         scope: {

@@ -3,8 +3,8 @@ import { setHidden } from '../../../helpers/domHelper';
 import { formatLink } from '../../../helpers/urlHelpers';
 
 /* @ngInject */
-function addLink(gettextCatalog) {
-    const I18N = {
+function addLink(gettextCatalog, translator) {
+    const I18N = translator(() => ({
         description: {
             [LINK_TYPES.WEB]: gettextCatalog.getString('To what URL should this link go?', null, 'Composer, add Link'),
             [LINK_TYPES.EMAIL]: gettextCatalog.getString(
@@ -23,7 +23,7 @@ function addLink(gettextCatalog) {
             [LINK_TYPES.EMAIL]: gettextCatalog.getString('Add an email address', null, 'Composer, add Link'),
             [LINK_TYPES.PHONE]: gettextCatalog.getString('Add a phone number', null, 'Composer, add Link')
         }
-    };
+    }));
 
     return {
         replace: true,

@@ -6,8 +6,8 @@ import { CYCLE, PLANS_TYPE, BASE_SIZE } from '../../constants';
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
 /* @ngInject */
-function subscriptionSection(dispatchers, subscriptionModel, gettextCatalog) {
-    const I18N = {
+function subscriptionSection(dispatchers, subscriptionModel, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         vpn: gettextCatalog.getString('VPN connections', null, 'Label'),
         addresses: gettextCatalog.getString('addresses', null, 'Label'),
         domain: gettextCatalog.getString('domain', null, 'Label'),
@@ -23,7 +23,7 @@ function subscriptionSection(dispatchers, subscriptionModel, gettextCatalog) {
             card: gettextCatalog.getString('Credit card', null, 'Label'),
             paypal: 'Paypal'
         }
-    };
+    }));
 
     const formatSubscription = (sub = {}) => {
         sub.cycle = I18N.cycles[sub.Cycle];

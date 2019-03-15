@@ -3,13 +3,15 @@ import { MESSAGE_FLAGS } from '../../constants';
 const { FLAG_INTERNAL } = MESSAGE_FLAGS;
 
 /* @ngInject */
-function composerEncrypt(dispatchers, notification, gettextCatalog) {
+function composerEncrypt(dispatchers, notification, gettextCatalog, translator) {
+
     const { dispatcher } = dispatchers(['composer.update']);
     const dispatch = (type, message) => dispatcher['composer.update'](type, { message, type: 'encryption' });
-    const MESSAGES = {
+
+    const I18N = translator(() => ({
         noPassword: gettextCatalog.getString('Please enter a password for this email.', null, 'Error'),
         noMatchPassword: gettextCatalog.getString('Message passwords do not match.', null, 'Error')
-    };
+    }));
 
     return {
         replace: true,
@@ -31,11 +33,11 @@ function composerEncrypt(dispatchers, notification, gettextCatalog) {
                 e.stopPropagation();
 
                 if (!scope.model.password.length) {
-                    return notification.error(MESSAGES.noPassword);
+                    return notification.error(I18N.noPassword);
                 }
 
                 if (scope.model.password !== scope.model.confirm) {
-                    return notification.error(MESSAGES.noMatchPassword);
+                    return notification.error(I18N.noMatchPassword);
                 }
                 scope.$applyAsync(() => {
                     scope.message.addFlag(FLAG_INTERNAL);

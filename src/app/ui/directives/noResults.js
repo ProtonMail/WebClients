@@ -1,8 +1,10 @@
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
 /* @ngInject */
-function noResults(elementsError, tools, gettextCatalog, labelsModel, $stateParams) {
-    const learnMore = gettextCatalog.getString('Learn more', null, 'Link');
+function noResults(elementsError, tools, gettextCatalog, labelsModel, $stateParams, translator) {
+    const I18N = translator(() => ({
+        LEARN_MORE: gettextCatalog.getString('Learn more', null, 'Link')
+    }));
 
     const TYPES = {
         inbox: {
@@ -92,7 +94,9 @@ function noResults(elementsError, tools, gettextCatalog, labelsModel, $statePara
 
             $h3.innerHTML =
                 code === API_CUSTOM_ERROR_CODES.MESSAGE_SEARCH_QUERY_SYNTAX
-                    ? `${error}.<br /><a href="https://protonmail.com/support/knowledge-base/search/" target="_blank">${learnMore}</a>`
+                    ? `${error}.<br /><a href="https://protonmail.com/support/knowledge-base/search/" target="_blank">${
+                          I18N.LEARN_MORE
+                      }</a>`
                     : getLabel(type);
         }
     };

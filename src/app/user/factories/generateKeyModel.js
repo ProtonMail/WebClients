@@ -5,7 +5,16 @@ import { addGetKeys } from '../../../helpers/key';
 import { isRSA, isECC } from '../../../helpers/keyAlgorithm';
 
 /* @ngInject */
-function generateKeyModel(Key, setupKeys, authentication, confirmModal, gettextCatalog, addressesModel, keysModel) {
+function generateKeyModel(
+    Key,
+    setupKeys,
+    authentication,
+    confirmModal,
+    gettextCatalog,
+    addressesModel,
+    keysModel,
+    translator
+) {
     const STATE = {
         QUEUED: 0,
         GENERATING: 1,
@@ -14,7 +23,7 @@ function generateKeyModel(Key, setupKeys, authentication, confirmModal, gettextC
         ERROR: 4
     };
 
-    const I18N = {
+    const I18N = translator(() => ({
         TITLE: gettextCatalog.getString('Similar Key Already Active!', null, 'Title'),
         WARNING: gettextCatalog.getString(
             `A key with the same encryption algorithm is already active for this address.
@@ -24,7 +33,7 @@ Are you sure you want to continue?`,
             null,
             'Message'
         )
-    };
+    }));
 
     const onSuccess = (address, key) => {
         address.state = STATE.SAVED;

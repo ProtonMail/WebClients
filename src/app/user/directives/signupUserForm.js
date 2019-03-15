@@ -1,13 +1,13 @@
 /* @ngInject */
-function signupUserForm(confirmModal, dispatchers, gettextCatalog) {
-    const I18N = {
+function signupUserForm(confirmModal, dispatchers, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         TITLE: gettextCatalog.getString('Warning', null, 'Title'),
         MESSAGE: gettextCatalog.getString(
             'Warning: You did not set a recovery email so account recovery is impossible if you forget your password. Proceed without recovery email?',
             null,
             'Warning'
         )
-    };
+    }));
 
     return {
         replace: true,

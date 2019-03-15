@@ -11,9 +11,10 @@ function totalRows(
     dashboardModel,
     dispatchers,
     gettextCatalog,
+    translator,
     subscriptionModel
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         billedAs(amount, cycle) {
             if (cycle === YEARLY) {
                 return gettextCatalog.getString('Billed as {{amount}} /yr', { amount }, 'Info');
@@ -25,7 +26,7 @@ function totalRows(
 
             return '';
         }
-    };
+    }));
 
     const types = ['addon.updated', 'cycle.updated', 'currency.updated', 'vpn.updated'];
     const amount = (plan, cycle, currency, division) =>

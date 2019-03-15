@@ -1,15 +1,16 @@
 /* @ngInject */
-function confirmModal(pmModal, gettextCatalog) {
-    const I18N = {
+function confirmModal(pmModal, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         confirm: gettextCatalog.getString('Confirm', null, 'Default text for the confirm button in the confirm modal'),
         cancel: gettextCatalog.getString('Cancel', null, 'Default text for the cancel button in the confirm modal')
-    };
+    }));
 
     const getClassName = ({ isDanger = false, isWarning = false } = {}) => {
         const danger = isDanger && 'alert-danger';
         const warning = isWarning && 'alert-warning';
         return ['alert', danger, warning].filter(Boolean).join(' ');
     };
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/confirm.tpl.html'),

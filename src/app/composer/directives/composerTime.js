@@ -1,10 +1,10 @@
 /* @ngInject */
-function composerTime(dispatchers, gettextCatalog) {
+function composerTime(dispatchers, gettextCatalog, translator) {
     const getTime = ({ Time }) => moment.unix(Time).format('LT');
-    const I18N = {
+    const I18N = translator(() => ({
         saveAt: gettextCatalog.getString('Saved at', null, 'Info display in the composer footer'),
         saving: gettextCatalog.getString('Saving', null, 'Info display in the composer footer')
-    };
+    }));
 
     return {
         restrict: 'E',

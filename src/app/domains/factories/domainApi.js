@@ -1,5 +1,5 @@
 /* @ngInject */
-function domainApi($http, gettextCatalog, url) {
+function domainApi($http, url) {
     const requestURL = url.build('domains');
 
     const handleResult = ({ data = {} } = {}) => data;

@@ -13,11 +13,13 @@ function contactEncryptionSaver(
     dispatchers,
     $injector,
     notification,
-    gettextCatalog
+    gettextCatalog,
+    translator
 ) {
-    const I18N = {
+
+    const I18N = translator(() => ({
         SUCCESS_ADVANCED_SAVED: gettextCatalog.getString('Advanced settings saved', null, 'Info')
-    };
+    }));
 
     const { dispatcher } = dispatchers(['contacts']);
     const FIELDS_MAP = contactEncryptionModel.getMap();

@@ -3,9 +3,9 @@ import { compressKey, getKeys } from 'pmcrypto';
 import { LARGE_KEY_SIZE } from '../../constants';
 
 /* @ngInject */
-function keyCompression(confirm, $filter, gettextCatalog) {
+function keyCompression(confirm, $filter, gettextCatalog, translator) {
     const humanSize = $filter('humanSize');
-    const I18N = {
+    const I18N = translator(() => ({
         REDUCE_KEY_SIZE_TITLE: gettextCatalog.getString('Reduce Key Size', null, 'Modal title'),
         reduceKeySizeText(fingerprint, newsize, oldsize) {
             return gettextCatalog.getString(
@@ -23,7 +23,8 @@ function keyCompression(confirm, $filter, gettextCatalog) {
                 'Modal message'
             );
         }
-    };
+    }));
+
     /**
      * Prompts the user to give him/her the option to reduce the key size by removing key certifications.
      * @param {String} oldKey The original armored key

@@ -1,10 +1,10 @@
 /* @ngInject */
-function contactEncryptionModal(pmModal, gettextCatalog, contactPgpModel) {
-    const I18N = {
+function contactEncryptionModal(pmModal, gettextCatalog, contactPgpModel, translator) {
+    const I18N = translator(() => ({
         title({ email }) {
             return gettextCatalog.getString('Advanced settings ({{email}})', { email }, 'Title');
         }
-    };
+    }));
 
     return pmModal({
         controllerAs: 'ctrl',

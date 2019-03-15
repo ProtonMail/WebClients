@@ -182,14 +182,18 @@ function messageBuilder(
     pgpMimeAttachments,
     prepareContent,
     signatureBuilder,
+    translator,
     textToHtmlMail
 ) {
-    const { reply, replyAll, forward, newCopy } = createMessage(addressesModel.get(), {
-        RE_PREFIX: gettextCatalog.getString('Re:', null, 'Message'),
-        FW_PREFIX: gettextCatalog.getString('Fw:', null, 'Message')
-    });
+    const { reply, replyAll, forward, newCopy } = createMessage(
+        addressesModel.get(),
+        translator(() => ({
+            RE_PREFIX: gettextCatalog.getString('Re:', null, 'Message'),
+            FW_PREFIX: gettextCatalog.getString('Fw:', null, 'Message')
+        }))
+    );
 
-    const I18N = {
+    const I18N = translator(() => ({
         TITLE_ENCRYPTED_SUBJECT: gettextCatalog.getString('Encrypted Subject', null, 'Subject'),
         YES_CONFIRM: gettextCatalog.getString('Yes', null, 'Use encrypted subject as subject'),
         NO_CONFIRM: gettextCatalog.getString('No', null, 'Use unencrypted subject as subject'),
@@ -203,7 +207,7 @@ function messageBuilder(
                 'Ask user to use encrypted subject'
             );
         }
-    };
+    }));
 
     /**
      * Convert string content to HTML

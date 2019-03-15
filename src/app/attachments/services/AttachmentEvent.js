@@ -1,10 +1,10 @@
 import ICAL from 'ical.js';
 
 /* @ngInject */
-function AttachmentEvent(attachmentDownloader, gettextCatalog) {
-    const I18N = {
+function AttachmentEvent(attachmentDownloader, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         ICS_PARSING_ERROR: gettextCatalog.getString('ICS parsing error:', null, 'Error')
-    };
+    }));
     const REGEXP_EVENT_EXTENSIONS = /\.(?:ics|icalendar|ical|vcard|vcf)$/i;
 
     const filterAttachmentsForEvents = (attachments = []) =>

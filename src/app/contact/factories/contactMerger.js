@@ -14,12 +14,13 @@ function contactMerger(
     gettextCatalog,
     networkActivityTracker,
     notification,
+    translator,
     vcard
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         mergeContacts: gettextCatalog.getString('Merge contacts', null, 'Title'),
         noDuplicate: gettextCatalog.getString('You have no duplicate contacts', null, 'Info')
-    };
+    }));
 
     const { on } = dispatchers();
 

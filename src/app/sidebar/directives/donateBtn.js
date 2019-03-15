@@ -1,6 +1,6 @@
 /* @ngInject */
-function donateBtn(gettextCatalog, notification, donateModal, paymentModel) {
-    const I18N = {
+function donateBtn(gettextCatalog, notification, donateModal, paymentModel, translator) {
+    const I18N = translator(() => ({
         donation: gettextCatalog.getString('Donate', null, 'Title'),
         topUp: gettextCatalog.getString('Add credits', null, 'Title'),
         notAvailable: gettextCatalog.getString(
@@ -8,7 +8,7 @@ function donateBtn(gettextCatalog, notification, donateModal, paymentModel) {
             null,
             'Info'
         )
-    };
+    }));
 
     return {
         replace: true,

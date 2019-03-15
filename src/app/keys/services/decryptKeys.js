@@ -1,11 +1,13 @@
 import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
 
+
 import { MAIN_KEY } from '../../constants';
 import { getKeyInfo } from '../../../helpers/key';
 
 /* @ngInject */
-function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog) {
-    const I18N = {
+function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, translator) {
+
+    const I18N = translator(() => ({
         errorPrimaryKey({ Email: email = '' }) {
             return gettextCatalog.getString(
                 'Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address',
@@ -13,7 +15,7 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog) {
                 'Error'
             );
         }
-    };
+    }));
 
     /**
      * Activate newly-provisioned member key

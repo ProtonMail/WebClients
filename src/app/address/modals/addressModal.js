@@ -12,9 +12,10 @@ function addressModal(
     gettextCatalog,
     organizationModel,
     premiumDomainModel,
+    translator,
     tools
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         ERROR_DECRYPT_ORG_KEY: gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'),
         errorPmMeSetup() {
             return gettextCatalog.getString(
@@ -27,7 +28,7 @@ function addressModal(
             );
         },
         SUCCESS_ADD: gettextCatalog.getString('Address added', null, 'Info')
-    };
+    }));
 
     const { dispatcher } = dispatchers(['domainModal']);
 

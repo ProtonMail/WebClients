@@ -11,12 +11,14 @@ function messagePublicKeyFound(
     attachedPublicKey,
     gettextCatalog,
     notification,
-    eventManager
+    eventManager,
+    translator
 ) {
-    const I18N = {
+
+    const I18N = translator(() => ({
         SUCCES_MESSAGE: gettextCatalog.getString('Public Key trusted', null, 'Success'),
         ERROR_MESSAGE: gettextCatalog.getString('Error while adding the public key to the contacts', null, 'Error')
-    };
+    }));
 
     return {
         replace: true,

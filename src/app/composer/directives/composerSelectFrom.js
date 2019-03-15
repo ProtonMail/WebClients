@@ -1,8 +1,15 @@
 import { isIE11 } from '../../../helpers/browser';
 
 /* @ngInject */
-function composerSelectFrom(notification, editorModel, gettextCatalog, composerFromModel, premiumDomainModel) {
-    const I18N = {
+function composerSelectFrom(
+    notification,
+    editorModel,
+    gettextCatalog,
+    composerFromModel,
+    premiumDomainModel,
+    translator
+) {
+    const I18N = translator(() => ({
         upgradeRequired() {
             return gettextCatalog.getString(
                 'Upgrade to a paid plan to send from your {{email}} address',
@@ -10,7 +17,7 @@ function composerSelectFrom(notification, editorModel, gettextCatalog, composerF
                 'Error'
             );
         }
-    };
+    }));
 
     return {
         scope: {

@@ -1,8 +1,8 @@
 import tooltipModel from '../../utils/helpers/tooltipHelper';
 
 /* @ngInject */
-function pmMeTooltip(AppModel, premiumDomainModel, gettextCatalog, dispatchers) {
-    const I18N = {
+function pmMeTooltip(AppModel, premiumDomainModel, gettextCatalog, dispatchers, translator) {
+    const I18N = translator(() => ({
         getTitle() {
             return gettextCatalog.getString(
                 'This will add the {{email}} address to your account',
@@ -10,7 +10,7 @@ function pmMeTooltip(AppModel, premiumDomainModel, gettextCatalog, dispatchers) 
                 'Info'
             );
         }
-    };
+    }));
 
     return {
         restrict: 'A',

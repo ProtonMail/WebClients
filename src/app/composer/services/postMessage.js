@@ -18,11 +18,12 @@ function postMessage(
     AttachmentLoader,
     attachmentModel,
     embeddedUtils,
-    recipientsFormator
+    recipientsFormator,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         SAVE_MESSAGE_SUCCESS: gettextCatalog.getString('Message saved', null, 'Record message')
-    };
+    }));
     const { dispatcher } = dispatchers(['actionMessage', 'composer.update']);
     const notify = notification;
 

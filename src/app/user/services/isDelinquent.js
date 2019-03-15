@@ -1,8 +1,8 @@
 import { UNPAID_STATE, PAID_MEMBER_ROLE } from '../../constants';
 
 /* @ngInject */
-function isDelinquent($state, gettextCatalog, notification, authentication) {
-    const I18N = {
+function isDelinquent($state, gettextCatalog, notification, authentication, translator) {
+    const I18N = translator(() => ({
         ERROR_MEMBER: gettextCatalog.getString(
             'Account access restricted due to unpaid invoices. Please contact your administrator.',
             null,
@@ -13,7 +13,7 @@ function isDelinquent($state, gettextCatalog, notification, authentication) {
             null,
             'Error'
         )
-    };
+    }));
 
     /**
      * Action on error, default use case the admin

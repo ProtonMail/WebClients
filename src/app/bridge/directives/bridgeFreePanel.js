@@ -1,8 +1,8 @@
 /* @ngInject */
-function bridgeFreePanel(gettextCatalog, notification) {
-    const I18N = {
+function bridgeFreePanel(gettextCatalog, notification, translator) {
+    const I18N = translator(() => ({
         info: gettextCatalog.getString('This feature is only available for paid users.', null, 'Info')
-    };
+    }));
     const onClick = () => notification.info(I18N.info);
     return {
         replace: true,

@@ -2,18 +2,19 @@ import Dropzone from 'dropzone';
 import _ from 'lodash';
 
 /* @ngInject */
-function editorDropzone(gettextCatalog, attachmentFileFormat, squireExecAction, notification) {
+function editorDropzone(gettextCatalog, attachmentFileFormat, squireExecAction, notification, translator) {
+
     const SVG_MIME = 'image/svg+xml';
     const CLASS_DRAGGABLE = 'editorDropzone-enter';
 
-    const I18N = {
+    const I18N = translator(() => ({
         DICT_DEFAULT_MESSAGE: gettextCatalog.getString('Drop an image here to insert', null, 'Info'),
         INVALID_FILE_SVG: gettextCatalog.getString(
             'We do not support embedded SVG files inside the signature',
             null,
             'Error'
         )
-    };
+    }));
 
     const getConfig = (message, node) => ({
         addRemoveLinks: false,

@@ -11,7 +11,7 @@ const {
 } = SENDPREF_STATUS;
 
 /* @ngInject */
-function encryptionStatus(gettextCatalog) {
+function encryptionStatus(gettextCatalog, translator) {
     /**
      * This generates a bitmap of SENDPREF_STATUS. For each value in SENDPREF_STATUS a bit will be set.
      * @param emailInfo
@@ -37,13 +37,13 @@ function encryptionStatus(gettextCatalog) {
         );
     };
 
-    const I18N = {
-        LOADING_CRYPT_INFO: gettextCatalog.getString('Loading encryption info...', null, 'Info'),
-        PGP_SIGN: gettextCatalog.getString('PGP-signed', null, 'Info'),
-        PGP_ENCRYPT_SIGN: gettextCatalog.getString('PGP-encrypted', null, 'Info'),
-        PINNED_ENCRYPT_SIGN: gettextCatalog.getString('End-to-end encrypted to verified recipient', null, 'Info'),
-        PM_ENCRYPT_SIGN: gettextCatalog.getString('End-to-end encrypted', null, 'Info')
-    };
+    const I18N = translator(() => ({
+        LOADING_CRYPT_INFO: gettextCatalog.getString('Loading encryption info...', null, 'Tooltip'),
+        PGP_SIGN: gettextCatalog.getString('PGP-signed', null, 'Tooltip'),
+        PGP_ENCRYPT_SIGN: gettextCatalog.getString('PGP-encrypted', null, 'Tooltip'),
+        PINNED_ENCRYPT_SIGN: gettextCatalog.getString('End-to-end encrypted to verified recipient', null, 'Tooltip'),
+        PM_ENCRYPT_SIGN: gettextCatalog.getString('End-to-end encrypted', null, 'Tooltip')
+    }));
 
     const getTooltip = (emailInfo = {}) => {
         // turn into a bitmask value :-)

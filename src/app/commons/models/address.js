@@ -1,5 +1,6 @@
 /* @ngInject */
 function Address($http, url) {
+
     const requestUrl = url.build('addresses');
 
     const handleResult = ({ data = {} } = {}) => data;

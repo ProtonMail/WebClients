@@ -1,11 +1,20 @@
 /* @ngInject */
-function activeSessionsModel($filter, authApi, authentication, dispatchers, gettextCatalog, memberModel, userType) {
+function activeSessionsModel(
+    $filter,
+    authApi,
+    authentication,
+    dispatchers,
+    gettextCatalog,
+    memberModel,
+    userType,
+    translator
+) {
     const { on, dispatcher } = dispatchers(['activeSessions']);
-    const I18N = {
+    const I18N = translator(() => ({
         createTime(date) {
             return gettextCatalog.getString('Created on {{ date }}', { date }, 'Tooltip display per session');
         }
-    };
+    }));
     const sessions = [];
     const get = () => sessions;
     const clear = () => (sessions.length = 0);

@@ -15,16 +15,17 @@ function signupUserProcess(
     Address,
     $state,
     setupKeys,
-    notification
+    notification,
+    translator
 ) {
     const CACHE = {};
     const { dispatcher } = dispatchers(['signup']);
     const dispatch = (type, data = {}) => dispatcher.signup(type, data);
 
-    const I18N = {
+    const I18N = translator(() => ({
         ERROR_ADDRESS_CREATION: gettextCatalog.getString('Something went wrong during address creation', null, 'Error'),
         ERROR_PROCESS: gettextCatalog.getString('Something went wrong', null, 'Error')
-    };
+    }));
 
     async function doCreateUser(model) {
         dispatch('create.user', { value: true });

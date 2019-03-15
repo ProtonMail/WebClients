@@ -23,11 +23,12 @@ function addressModel(
     Address,
     authentication,
     addressWithoutKeysManager,
+    translator,
     dispatchers
 ) {
     const { dispatcher } = dispatchers(['addressModel', 'memberActions']);
 
-    const I18N = {
+    const I18N = translator(() => ({
         ERROR_DO_UPGRADE: gettextCatalog.getString(
             'You have used all addresses in your plan. Please upgrade your plan to add a new address',
             null,
@@ -55,7 +56,7 @@ function addressModel(
             null,
             'Error'
         )
-    };
+    }));
 
     const canAdd = (member = {}, redirect = true) => {
         const { MaxAddresses, UsedAddresses, HasKeys } = organizationModel.get() || {};

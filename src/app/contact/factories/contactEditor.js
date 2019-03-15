@@ -20,15 +20,15 @@ function contactEditor(
     networkActivityTracker,
     notification,
     contactImportEncryption,
-    contactProgressReporter
+    contactProgressReporter,
+    translator
 ) {
     const { dispatcher, on } = dispatchers(['contacts', 'progressBar']);
 
-    const I18N = {
+    const I18N = translator(() => ({
         GENERAL_CONTACT_ERROR: gettextCatalog.getString('Error creating a contact', null, 'error message'),
         EDIT_SUCCESS: gettextCatalog.getString('Contact edited', null, 'Success message')
-    };
-
+    }));
     /**
      * Add contacts
      * @param {Array} contacts

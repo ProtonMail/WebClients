@@ -3,10 +3,10 @@ import { PASSWORD_MODE } from '../../constants';
 const { TWO_MODE, ONE_MODE } = PASSWORD_MODE;
 
 /* @ngInject */
-const loginPasswordInput = (userSettingsModel, authApi, networkActivityTracker, gettextCatalog) => {
+const loginPasswordInput = (userSettingsModel, authApi, networkActivityTracker, gettextCatalog, translator) => {
     const TWO_FACTOR_HIDDEN_CLASS = 'hideTwoFactor';
 
-    const I18N = {
+    const I18N = translator(() => ({
         [TWO_MODE]: {
             placeholder: gettextCatalog.getString('Login password', null, 'Login modal'),
             label: gettextCatalog.getString('Enter your login password:', null, 'Login modal')
@@ -15,7 +15,7 @@ const loginPasswordInput = (userSettingsModel, authApi, networkActivityTracker, 
             placeholder: gettextCatalog.getString('Password', null, 'Login modal'),
             label: gettextCatalog.getString('Enter your current password:', null, 'Login modal')
         }
-    };
+    }));
 
     /**
      * Get the translated text.

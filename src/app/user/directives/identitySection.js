@@ -8,11 +8,12 @@ function identitySection(
     notification,
     signatureModel,
     tools,
-    dispatchers
+    dispatchers,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         SUCCESS_SAVE: gettextCatalog.getString('Name / Signature saved', null, "User's signature")
-    };
+    }));
     const EDITOR_ID = 'signature';
     const MULTIPLE_ADDRESS_CLASS = 'identitySection-has-multiple-address';
 

@@ -7,26 +7,26 @@ function changeVPNPasswordModal(
     networkActivityTracker,
     vpnSettingsModel
 ) {
-    const successMessage = gettextCatalog.getString('OpenVPN password updated', null, 'Info');
-
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/vpn/changeVPNPasswordModal.tpl.html'),
         /* @ngInject */
-        controller: function(params) {
-            const self = this;
-            self.VPNPassword = '';
-            self.passwordDefined = params.password;
-            self.submit = () => {
-                const { VPNPassword } = self;
+        controller: function(params, gettextCatalog) {
+
+            const success = gettextCatalog.getString('OpenVPN password updated', null, 'Info');
+
+            this.VPNPassword = '';
+            this.passwordDefined = params.password;
+            this.submit = () => {
+                const { VPNPassword } = this;
                 const promise = vpnSettingsModel
                     .updatePassword({ VPNPassword })
                     .then(() => eventManager.call())
-                    .then(() => (notification.success(successMessage), params.close(VPNPassword)));
+                    .then(() => (notification.success(success), params.close(VPNPassword)));
 
                 networkActivityTracker.track(promise);
             };
-            self.cancel = () => params.close();
+            this.cancel = () => params.close();
         }
     });
 }

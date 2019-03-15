@@ -72,4 +72,9 @@ body:not(.login) .headerNoAuth-container [class*='__noAuth'] { display: none }
 body#signup .headerNoAuth-item-signup__noAuth { display: none }
 
 /* mobile */
-body.appConfigBody-is-mobile .headerNoAuth-item-report { display: none }
+.appConfigBody-is-mobile .headerNoAuth-item-report { display: none }
+.appConfigBody-is-mobile .headerNoAuth-item-signup-button {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 9rem;
+}

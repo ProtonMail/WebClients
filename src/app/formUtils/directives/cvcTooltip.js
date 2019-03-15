@@ -1,17 +1,16 @@
 import tooltipModel from '../../utils/helpers/tooltipHelper';
 
 /* @ngInject */
-function cvcTooltip(gettextCatalog) {
-    const line1 = gettextCatalog.getString(
-        'For Visa, MasterCard and Discover, the 3 digits on the back of your card.',
-        null,
-        'Info'
-    );
-    const line2 = gettextCatalog.getString(
-        'For American Express, the 4 digits on the front of your card.',
-        null,
-        'Info'
-    );
+function cvcTooltip(gettextCatalog, translator) {
+    const I18N = translator(() => ({
+        TITLE: gettextCatalog.getString('Security Code', null, 'Credit card CVC'),
+        LINE1: gettextCatalog.getString(
+            'For Visa, MasterCard and Discover, the 3 digits on the back of your card.',
+            null,
+            'Info'
+        ),
+        LINE2: gettextCatalog.getString('For American Express, the 4 digits on the front of your card.', null, 'Info')
+    }));
 
     return {
         restrict: 'A',
@@ -24,8 +23,8 @@ function cvcTooltip(gettextCatalog) {
                 trigger: 'focus',
                 html: true,
                 title: `
-                    <p>${line1}</p>
-                    <p>${line2}</p>
+                    <h4>${I18N.TITLE}</h4>
+                    <p>${I18N.LINE1}</br>${I18N.LINE2}</p>
                 `
             };
 

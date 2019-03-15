@@ -5,12 +5,12 @@ import { BASE_SIZE, DEFAULT_ENCRYPTION_CONFIG } from '../../constants';
 const GIGA = BASE_SIZE ** 3;
 
 /* @ngInject */
-function memberModal(pmModal, gettextCatalog, organizationModel, subscriptionModel, editMemberProcess) {
-    const I18N = {
+function memberModal(pmModal, gettextCatalog, organizationModel, subscriptionModel, editMemberProcess, translator) {
+    const I18N = translator(() => ({
         USED: gettextCatalog.getString('Already used', null, 'Memory info'),
         ALLOCATED: gettextCatalog.getString('Allocated', null, 'Memory info'),
         ALREADY_ALLOCATED: gettextCatalog.getString('Already allocated', null, 'Memory info')
-    };
+    }));
 
     const getConfigKeys = ({ member = {} }) => {
         const fiveGigabit = 5 * GIGA;

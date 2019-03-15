@@ -1,5 +1,6 @@
 /* @ngInject */
 function memberApi($http, url, srp) {
+
     const requestUrl = url.build('members');
 
     const handleResult = ({ data = {} } = {}) => data;

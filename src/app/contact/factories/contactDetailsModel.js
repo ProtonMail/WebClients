@@ -20,14 +20,15 @@ function contactDetailsModel(
     contactSchema,
     gettextCatalog,
     vcard,
+    translator,
     contactEncryptionAddressMap,
     contactEncryptionSaver
 ) {
     const vcardService = vcard;
 
-    const I18N = {
+    const I18N = translator(() => ({
         unknown: gettextCatalog.getString('Unknown', null, 'Default display name vcard')
-    };
+    }));
 
     const buildProperty = (type) => (property = {}) => {
         const key = property.getField();

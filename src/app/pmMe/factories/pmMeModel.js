@@ -8,9 +8,10 @@ function pmMeModel(
     networkActivityTracker,
     notification,
     User,
-    premiumDomainModel
+    premiumDomainModel,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         info: gettextCatalog.getString(
             'Set a display name and signature for {{email}}',
             { email: premiumDomainModel.email() },
@@ -30,7 +31,7 @@ function pmMeModel(
                 'Success notification for free user after @pm.me generation'
             );
         }
-    };
+    }));
 
     const confirmAddress = (callback) => {
         setupAddressModal.activate({

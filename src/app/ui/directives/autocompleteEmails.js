@@ -10,7 +10,8 @@ function autocompleteEmails(
     dispatchers,
     gettextCatalog,
     composerContactGroupSelection,
-    notification
+    notification,
+    translator
 ) {
     const TAB_KEY = 9;
     const BACKSPACE_KEY = 8;
@@ -18,7 +19,7 @@ function autocompleteEmails(
     const ESCAPE_KEY = 27;
     const THROTTLE_TIMEOUT = 300;
 
-    const I18N = {
+    const I18N = translator(() => ({
         langRecipientLimit(total) {
             return gettextCatalog.getString(
                 'The maximum number ({{total}}) of Recipients is {{limit}}.',
@@ -33,7 +34,7 @@ function autocompleteEmails(
                 'Error'
             );
         }
-    };
+    }));
 
     /**
      * Get the selected input value configuration

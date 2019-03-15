@@ -4,7 +4,14 @@ import { LABEL_COLORS } from '../../constants';
 import { uniqID } from '../../../helpers/string';
 
 /* @ngInject */
-function importContactGroups(contactGroupModel, manageContactGroup, eventManager, gettextCatalog, notification) {
+function importContactGroups(
+    contactGroupModel,
+    manageContactGroup,
+    eventManager,
+    gettextCatalog,
+    notification,
+    translator
+) {
     /*
         Private constant only usefull for the import
      */
@@ -13,7 +20,7 @@ function importContactGroups(contactGroupModel, manageContactGroup, eventManager
         UPDATE: 2
     };
 
-    const I18N = {
+    const I18N = translator(() => ({
         nothing: gettextCatalog.getString('Do not import group', null, 'Label'),
         [ACTIONS.UPDATE]: gettextCatalog.getString('Merge with existing group', null, 'Label'),
         [ACTIONS.CREATE]: gettextCatalog.getString('Create a new group', null, 'Label'),
@@ -23,7 +30,7 @@ function importContactGroups(contactGroupModel, manageContactGroup, eventManager
         updateSuccess(total) {
             return gettextCatalog.getString('{{total}} groups updated', { total }, 'Info');
         }
-    };
+    }));
 
     /**
      * The order is important, most important one is Update.

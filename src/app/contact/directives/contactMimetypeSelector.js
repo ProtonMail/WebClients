@@ -3,11 +3,11 @@ import _ from 'lodash';
 import { CONTACT_SETTINGS_DEFAULT, MIME_TYPES } from '../../constants';
 
 /* @ngInject */
-function contactMimetypeSelector(dispatchers, gettextCatalog) {
-    const I18N = {
+function contactMimetypeSelector(dispatchers, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         htmlMimeType: gettextCatalog.getString('Automatic', null, 'MIME type'),
         plaintextMimeType: gettextCatalog.getString('Plain Text', null, 'MIME type')
-    };
+    }));
 
     return {
         require: '^form',

@@ -1,12 +1,12 @@
 /* @ngInject */
-function organizationBtnActions(organizationModel, organizationKeysModel, gettextCatalog) {
-    const I18N = {
+function organizationBtnActions(organizationModel, organizationKeysModel, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         changePassword: gettextCatalog.getString('Change organization password', null, 'Action'),
         changeKeys: gettextCatalog.getString('Change organization keys', null, 'Action'),
         resetKeys: gettextCatalog.getString('Reset Keys', null, 'Action'),
         activateKeys: gettextCatalog.getString('Activate Keys', null, 'Action'),
         restoreKeys: gettextCatalog.getString('Restore Keys', null, 'Action')
-    };
+    }));
 
     const getKey = (action) => {
         const key = action === 'restoreKeys' ? 'activateKeys' : action;
