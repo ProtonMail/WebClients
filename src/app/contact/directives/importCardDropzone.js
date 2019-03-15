@@ -2,12 +2,12 @@ import Dropzone from 'dropzone';
 import _ from 'lodash';
 
 /* @ngInject */
-function importCardDropzone(dispatchers, notification, gettextCatalog) {
+function importCardDropzone(dispatchers, notification, gettextCatalog, translator) {
     const { dispatcher } = dispatchers(['importCardDropzone']);
-    const I18N = {
+    const I18N = translator(() => ({
         dictDefaultMessage: gettextCatalog.getString('Drop file or click here', null, 'Info'),
         dictInvalidFileType: gettextCatalog.getString('Invalid file type', null, 'Error')
-    };
+    }));
 
     const CLASS_HAS_FILE = 'importCardDropzone-has-file';
 

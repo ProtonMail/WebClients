@@ -11,10 +11,11 @@ function generateModal(
     generateKeyModel,
     gettextCatalog,
     addressWithoutKeys,
-    eventManager
+    eventManager,
+    translator
 ) {
     const STATE = generateKeyModel.getStates();
-    const I18N = {
+    const I18N = translator(() => ({
         success(email) {
             return gettextCatalog.getString('Key created for {{email}}', { email }, 'Generate key modal');
         },
@@ -24,7 +25,7 @@ function generateModal(
             null,
             'Info'
         )
-    };
+    }));
 
     return pmModal({
         controllerAs: 'ctrl',

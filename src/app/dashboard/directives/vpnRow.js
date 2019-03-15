@@ -10,6 +10,7 @@ function vpnRow(
     dispatchers,
     gettextCatalog,
     subscriptionModel,
+    translator,
     customVpnModal
 ) {
     const HAS_VPN_CLASS = 'vpnRow-has-vpn';
@@ -19,10 +20,10 @@ function vpnRow(
     const getName = (config = {}) => (config.vpnplus ? 'ProtonVPN Plus' : 'ProtonVPN Basic');
     const getClass = (config = {}) => (config.vpnplus ? VPN_PLUS_CLASS : VPN_BASIC_CLASS);
 
-    const I18N = {
+    const I18N = translator(() => ({
         with: gettextCatalog.getString('with', null, 'ProtonVPN with X connections'),
         connections: gettextCatalog.getString('connections', null, 'ProtonVPN with X connections')
-    };
+    }));
 
     const openModal = (plan) => {
         customVpnModal.activate({

@@ -3,6 +3,7 @@ import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
 /* @ngInject */
 function messageRequest(dispatchers, messageApi) {
+
     const getEditPromise = (type = STATUS.CREATE, parameters) => {
         if (type === STATUS.UPDATE) {
             return messageApi.updateDraft(parameters);

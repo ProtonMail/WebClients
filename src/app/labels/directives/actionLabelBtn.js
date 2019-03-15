@@ -9,12 +9,13 @@ function actionLabelBtn(
     networkActivityTracker,
     manageContactGroupModal,
     userType,
+    translator,
     manageContactGroup
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         edit: gettextCatalog.getString('Edit', null, 'Action'),
         remove: gettextCatalog.getString('Delete', null, 'Action')
-    };
+    }));
 
     const getType = (key) => (key === 'group' ? LABEL_TYPE.CONTACT_GROUP : LABEL_TYPE.MESSAGE);
 

@@ -2,10 +2,10 @@ import { isIE11, isEdge } from '../../../helpers/browser';
 import { uniqID } from '../../../helpers/string';
 
 /* @ngInject */
-function pasteImage(attachmentFileFormat, attachmentModel, squireExecAction, gettextCatalog) {
-    const I18N = {
+function pasteImage(attachmentFileFormat, attachmentModel, squireExecAction, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         PASTED_IMAGE: gettextCatalog.getString('Pasted-image', null, 'Title pasted image')
-    };
+    }));
 
     /**
      * Both Edge and IE11 are unable to use the file constructor

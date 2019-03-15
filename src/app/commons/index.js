@@ -28,9 +28,11 @@ import secureSessionStorage from './services/secureSessionStorage';
 import translateAttribute from './directives/translateAttribute';
 import lazyInject from './directives/lazyInject';
 import ptClipboard from './services/ptClipboard';
+import translator from './services/translator';
 
 export default angular
     .module('proton.commons', [])
+    .factory('translator', translator)
     .factory('ptClipboard', ptClipboard)
     .directive('appConfigBody', appConfigBody)
     .directive('appCopyright', appCopyright)

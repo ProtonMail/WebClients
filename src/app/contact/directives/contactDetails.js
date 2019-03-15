@@ -17,17 +17,18 @@ function contactDetails(
     notification,
     subscriptionModel,
     memberModel,
-    dispatchers
+    dispatchers,
+    translator
 ) {
     const ENCRYPTED_AND_SIGNED_CLASS = 'contactDetails-encrypted-and-signed';
 
-    const I18N = {
+    const I18N = translator(() => ({
         invalidForm: gettextCatalog.getString(
             'This form is invalid',
             null,
             'Error displays when the user try to leave an unsaved and invalid contact details'
         )
-    };
+    }));
 
     return {
         restrict: 'E',

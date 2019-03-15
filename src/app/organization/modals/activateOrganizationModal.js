@@ -1,6 +1,6 @@
 /* @ngInject */
-function activateOrganizationModal(pmModal, gettextCatalog, activateOrganizationKeys) {
-    const I18N = {
+function activateOrganizationModal(pmModal, gettextCatalog, activateOrganizationKeys, translator) {
+    const I18N = translator(() => ({
         1: {
             TITLE: gettextCatalog.getString('Key Activation', null, 'Title'),
             PROMPT: gettextCatalog.getString('Organization password:', null, 'Label'),
@@ -37,7 +37,7 @@ function activateOrganizationModal(pmModal, gettextCatalog, activateOrganization
             TITLE: gettextCatalog.getString('Administrator Key Activation', null, 'Title'),
             PROMPT: gettextCatalog.getString('Enter activation passcode:', null, 'Info')
         }
-    };
+    }));
 
     const getAlertClass = (keyStatus) => {
         if (keyStatus === 1) {

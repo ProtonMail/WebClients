@@ -13,17 +13,18 @@ function manageUser(
     dispatchers,
     gettextCatalog,
     notification,
-    decryptKeys
+    decryptKeys,
+    translator
 ) {
     const { dispatcher, on } = dispatchers(['organizationChange', 'updateUser']);
-    const I18N = {
+    const I18N = translator(() => ({
         REVOKE_ADMIN_RELOAD: gettextCatalog.getString('Your admin privileges have been revoked.', null, 'Info'),
         REVOKE_ADMIN_RELOAD_INFO: gettextCatalog.getString(
             'The app will now be reloaded in a few seconds',
             null,
             'Info'
         )
-    };
+    }));
 
     const CACHE = {};
     const getPromise = async ({ OrganizationPrivateKey } = {}, password) => {

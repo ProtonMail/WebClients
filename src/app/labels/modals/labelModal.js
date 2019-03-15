@@ -1,6 +1,16 @@
 /* @ngInject */
-function labelModal(pmModal, gettextCatalog, networkActivityTracker, eventManager, Label, notification, sanitize) {
-    const TRANSLATIONS = {
+function labelModal(
+    pmModal,
+    tools,
+    gettextCatalog,
+    networkActivityTracker,
+    eventManager,
+    Label,
+    notification,
+    sanitize,
+    translator
+) {
+    const I18N = translator(() => ({
         EDIT_FOLDER: gettextCatalog.getString('Edit folder', null, 'Title'),
         EDIT_LABEL: gettextCatalog.getString('Edit label', null, 'Title'),
         CREATE_NEW_FOLDER: gettextCatalog.getString('Create new folder', null, 'Title'),
@@ -11,7 +21,7 @@ function labelModal(pmModal, gettextCatalog, networkActivityTracker, eventManage
         LABEL_CREATED: gettextCatalog.getString('Label created', null, 'Label modal'),
         ERROR_FOLDER_NAME: gettextCatalog.getString('Invalid folder name', null, 'Error label modal'),
         ERROR_LABEL_NAME: gettextCatalog.getString('Invalid label name', null, 'Error label modal')
-    };
+    }));
     /**
      * Get title for label modal
      * @param  {String} ID        Label ID
@@ -20,9 +30,9 @@ function labelModal(pmModal, gettextCatalog, networkActivityTracker, eventManage
      */
     function getTitle({ ID, Exclusive = 0 }) {
         if (ID) {
-            return Exclusive ? TRANSLATIONS.EDIT_FOLDER : TRANSLATIONS.EDIT_LABEL;
+            return Exclusive ? I18N.EDIT_FOLDER : I18N.EDIT_LABEL;
         }
-        return Exclusive ? TRANSLATIONS.CREATE_NEW_FOLDER : TRANSLATIONS.CREATE_NEW_LABEL;
+        return Exclusive ? I18N.CREATE_NEW_FOLDER : I18N.CREATE_NEW_LABEL;
     }
 
     /**
@@ -47,9 +57,9 @@ function labelModal(pmModal, gettextCatalog, networkActivityTracker, eventManage
      */
     function getSuccessMessage({ ID, Exclusive = 0 }) {
         if (ID) {
-            return Exclusive ? TRANSLATIONS.FOLDER_UPDATED : TRANSLATIONS.LABEL_UPDATED;
+            return Exclusive ? I18N.FOLDER_UPDATED : I18N.LABEL_UPDATED;
         }
-        return Exclusive ? TRANSLATIONS.FOLDER_CREATED : TRANSLATIONS.LABEL_CREATED;
+        return Exclusive ? I18N.FOLDER_CREATED : I18N.LABEL_CREATED;
     }
     /**
      * Get error color name for label modal
@@ -57,7 +67,7 @@ function labelModal(pmModal, gettextCatalog, networkActivityTracker, eventManage
      * @return {String}
      */
     function getErrorColorName({ Exclusive = 0 }) {
-        return Exclusive ? TRANSLATIONS.ERROR_FOLDER_NAME : TRANSLATIONS.ERROR_LABEL_NAME;
+        return Exclusive ? I18N.ERROR_FOLDER_NAME : I18N.ERROR_LABEL_NAME;
     }
 
     const cleanInput = (color = {}) => {

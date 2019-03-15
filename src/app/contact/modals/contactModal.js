@@ -1,11 +1,19 @@
 import { CONTACT_ADD_ID } from '../../constants';
 
 /* @ngInject */
-function contactModal($state, dispatchers, gettextCatalog, notification, pmModal, contactEncryptionAddressMap) {
-    const I18N = {
+function contactModal(
+    $state,
+    dispatchers,
+    gettextCatalog,
+    notification,
+    pmModal,
+    contactEncryptionAddressMap,
+    translator
+) {
+    const I18N = translator(() => ({
         contactAdded: gettextCatalog.getString('Contact added', null, 'Success message for the contact modal'),
         contactError: gettextCatalog.getString('Error with the request', null, 'Default error for the contact modal')
-    };
+    }));
 
     return pmModal({
         controllerAs: 'ctrl',

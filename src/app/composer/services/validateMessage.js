@@ -25,9 +25,10 @@ function validateMessage(
     notification,
     addressWithoutKeys,
     sendPreferences,
-    storageWarning
+    storageWarning,
+    translator,
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         SEND_ANYWAY: gettextCatalog.getString('Send anyway', null, 'Action'),
         STILL_UPLOADING: gettextCatalog.getString(
             'Wait for attachment to finish uploading or cancel upload.',
@@ -75,7 +76,7 @@ function validateMessage(
             null,
             'Info'
         )
-    };
+    }));
 
     const cleanEmails = (message) => {
         message.ToList.concat(message.CCList, message.BCCList).forEach((item) => {

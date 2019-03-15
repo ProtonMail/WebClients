@@ -1,16 +1,16 @@
 /* @ngInject */
-function atomLoader(dispatchers, gettextCatalog) {
-    const translations = {
+function atomLoader(dispatchers, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         decrypting: gettextCatalog.getString('Decrypting', null, 'atom text loader'),
         upgradingKeys: gettextCatalog.getString(
             'Enabling calendar (coming soon).<br />This may take a few minutes, please wait.',
             null,
             'atom text loader'
         )
-    };
+    }));
 
     const getTranslatedText = (translationKey) => {
-        return `${translations[translationKey]}`;
+        return `${I18N[translationKey]}`;
     };
 
     return {

@@ -1,5 +1,5 @@
 /* @ngInject */
-function Report($http, url, gettextCatalog, requestFormData) {
+function Report($http, url, requestFormData) {
     const requestURL = url.build('reports');
 
     const handleSuccess = ({ data = {} } = {}) => data;

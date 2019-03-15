@@ -1,15 +1,15 @@
 /* @ngInject */
-function lazyLoader(networkActivityTracker, notification, gettextCatalog, AppModel, $injector) {
+function lazyLoader(networkActivityTracker, notification, gettextCatalog, AppModel, $injector, translator) {
     const CACHE = { loaded: 0 };
 
-    const I18N = {
+    const I18N = translator(() => ({
         OUTDATED: gettextCatalog.getString(
             'You are using an outdated version of ProtonMail, please refresh the page.',
             null,
             'Error'
         ),
         ACTION: gettextCatalog.getString('Reload ProtonMail', null, 'Action')
-    };
+    }));
 
     const getImport = (type) => {
         if (type === 'app') {

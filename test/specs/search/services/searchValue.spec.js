@@ -12,6 +12,9 @@ const labelsModel = {
     get: () => []
 };
 
+const translator = (cb) => cb();
+
+
 describe('SearchValue service', () => {
 
     const tests = [
@@ -86,7 +89,7 @@ describe('SearchValue service', () => {
         const ghost = window.moment;
         beforeEach(() => {
             window.moment = (input) => ({ unix: () => input });
-            searchModel = searchModelService(() => ({}), gettextCatalog, labelsModel);
+            searchModel = searchModelService(() => ({}), gettextCatalog, labelsModel, translator);
             parser = service({}).extractParameters;
             folders = searchModel.getFolderList();
         });

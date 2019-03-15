@@ -1,17 +1,17 @@
 import { isReceived, isReplied, isRepliedAll, isForwarded } from '../../../helpers/message';
 
 /* @ngInject */
-function printMessageModel($filter, gettextCatalog) {
+function printMessageModel($filter, gettextCatalog, translator) {
     const MAP_ICONS = {
         isReplied: 'fa-reply',
         isRepliedAll: 'fa-reply-all',
         isForwarded: 'fa-mail-forward'
     };
 
-    const I18N = {
+    const I18N = translator(() => ({
         received: gettextCatalog.getString('Received:', null, 'printed message info'),
         sent: gettextCatalog.getString('Sent:', null, 'printed message info')
-    };
+    }));
 
     /**
      * Helper to create a list from Array of email Object

@@ -2,13 +2,14 @@ import _ from 'lodash';
 import { ENCRYPTED_STATUS } from '../../constants';
 
 /* @ngInject */
-function composerAttachments(embeddedUtils, gettextCatalog, dispatchers) {
+function composerAttachments(embeddedUtils, gettextCatalog, dispatchers, translator) {
+
     const CLASS_CLOSED = 'composerAttachments-close';
     const CLASS_HIDDEN = 'composerAttachments-hidden';
-    const labelHeader = {
+    const I18N = translator(() => ({
         show: gettextCatalog.getString('Show', null, 'Action'),
         hide: gettextCatalog.getString('Hide', null, 'Action')
-    };
+    }));
 
     /**
      * Toggle the panel
@@ -26,7 +27,7 @@ function composerAttachments(embeddedUtils, gettextCatalog, dispatchers) {
         const doAction = (action, label) => () => {
             action === 'remove' && el.classList.remove(CLASS_HIDDEN);
             el.classList[action](CLASS_CLOSED);
-            scope.$applyAsync(() => (scope.labelHeader = labelHeader[label]));
+            scope.$applyAsync(() => (scope.I18N = I18N[label]));
         };
 
         const open = doAction('remove', 'hide');
@@ -166,7 +167,7 @@ function composerAttachments(embeddedUtils, gettextCatalog, dispatchers) {
             const { on, unsubscribe } = dispatchers();
 
             scope.list = formatAttachments(scope, scope.message.Attachments);
-            scope.labelHeader = labelHeader.show;
+            scope.I18N = I18N.show;
 
             const requestSet = {};
 

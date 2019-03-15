@@ -3,15 +3,15 @@ import _ from 'lodash';
 import { MESSAGE_MAX_RECIPIENTS } from '../../constants';
 
 /* @ngInject */
-function contactSelectorForm(gettextCatalog, notification) {
-    const I18N = {
+function contactSelectorForm(gettextCatalog, notification, translator) {
+    const I18N = translator(() => ({
         invalidForm: gettextCatalog.getString('Invalid form', null, 'Error'),
         limitReached: gettextCatalog.getString(
             'You have reached the max recipients ({{limit}}) per message',
             { limit: MESSAGE_MAX_RECIPIENTS },
             'Error'
         )
-    };
+    }));
     const LIMIT_REACHED_CLASS = 'contactSelectorForm-limit-reached';
     const NO_RECIPIENTS_CLASS = 'contactSelectorForm-no-recipients';
     return {

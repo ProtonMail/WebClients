@@ -18,9 +18,10 @@ function filterModal(
     labelsModel,
     sieveLint,
     filterValidator,
-    userType
+    userType,
+    translator
 ) {
-    const TRANSLATIONS = {
+    const I18N = translator(() => ({
         TYPES: [
             { label: gettextCatalog.getString('Select', null, 'Filter modal type'), value: 'select' },
             { label: gettextCatalog.getString('the subject', null, 'Filter modal type'), value: 'subject' },
@@ -59,7 +60,7 @@ function filterModal(
         ERROR_PATTERN: gettextCatalog.getString('Text or pattern already included', null, 'Error'),
         FILTER_UPDATED_SUCCESS: gettextCatalog.getString('Filter updated', null, 'Notification'),
         FILTER_CREATED_SUCCESS: gettextCatalog.getString('Filter created', null, 'Notification')
-    };
+    }));
 
     /**
      * Filter the list of new Label by type
@@ -89,11 +90,9 @@ function filterModal(
             ctrl.hasMark = false;
             ctrl.hasVacation = false;
             ctrl.folders = foldersOrdered;
-
-            ctrl.types = angular.copy(TRANSLATIONS.TYPES);
-            ctrl.comparators = angular.copy(TRANSLATIONS.COMPARATORS);
-            ctrl.operators = angular.copy(TRANSLATIONS.OPERATORS);
-
+            ctrl.types = angular.copy(I18N.TYPES);
+            ctrl.comparators = angular.copy(I18N.COMPARATORS);
+            ctrl.operators = angular.copy(I18N.OPERATORS);
             /**
              * Open a modal to create a new folder / label
              * @param  {Number} [Exclusive=0]
@@ -321,7 +320,7 @@ function filterModal(
                         condition.value = '';
                     }
                 } else {
-                    notification.error(TRANSLATIONS.ERROR_PATTERN);
+                    notification.error(I18N.ERROR_PATTERN);
                 }
             };
 
@@ -359,12 +358,12 @@ function filterModal(
 
                 if (data.ID) {
                     return Filter.update(data)
-                        .then(onSuccess(TRANSLATIONS.FILTER_UPDATED_SUCCESS))
+                        .then(onSuccess(I18N.FILTER_UPDATED_SUCCESS))
                         .catch(onError);
                 }
 
                 return Filter.create(data)
-                    .then(onSuccess(TRANSLATIONS.FILTER_CREATED_SUCCESS))
+                    .then(onSuccess(I18N.FILTER_CREATED_SUCCESS))
                     .catch(onError);
             };
 

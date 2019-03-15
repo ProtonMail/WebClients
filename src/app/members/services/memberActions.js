@@ -21,11 +21,12 @@ function memberActions(
     organizationModel,
     setupOrganizationModal,
     User,
+    translator,
     dispatchers
 ) {
     const { dispatcher } = dispatchers(['memberActions']);
 
-    const I18N = {
+    const I18N = translator(() => ({
         CHANGE_ROLE: {
             default: {
                 title: gettextCatalog.getString('Change Role', null, 'Title'),
@@ -82,7 +83,7 @@ function memberActions(
             null,
             'Info'
         )
-    };
+    }));
 
     const edit = (member, domains = domainModel.query()) => {
         const params = {

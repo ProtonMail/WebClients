@@ -11,9 +11,10 @@ function deleteKeyProcess(
     Key,
     keysModel,
     notification,
+    translator,
     networkActivityTracker
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         WARNING_TITLE: gettextCatalog.getString('Warning', null, 'Title'),
         WARNING_MESSAGE: gettextCatalog.getString(
             `This feature is intended for advanced users only!
@@ -32,7 +33,7 @@ function deleteKeyProcess(
         ),
         EXPORT_ACTION: gettextCatalog.getString('Export', null, 'Action'),
         SUCCES_NOTIFICATION: gettextCatalog.getString('Key deleted', null, 'Success')
-    };
+    }));
     /**
      * Warns the user of the dangers of deleting a key. Allows the user to cancel the process.
      * @return {Promise}

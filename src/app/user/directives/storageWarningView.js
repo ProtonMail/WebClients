@@ -4,7 +4,7 @@ function storageWarningView(storageWarning) {
         scope: {},
         replace: true,
         restrict: 'E',
-        templateUrl: require('../../../templates/user/storageWarning.tpl.html'),
+        templateUrl: require('../../../templates/user/storageWarningView.tpl.html'),
         link(scope, el) {
             const link = el[0].querySelector('.link');
 

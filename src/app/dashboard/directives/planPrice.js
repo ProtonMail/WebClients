@@ -1,10 +1,10 @@
 /* @ngInject */
-function planPrice($filter, dashboardConfiguration, dashboardModel, dispatchers, gettextCatalog) {
+function planPrice($filter, dashboardConfiguration, dashboardModel, dispatchers, gettextCatalog, translator) {
     const types = ['cycle.updated', 'currency.updated'];
-    const I18N = {
+    const I18N = translator(() => ({
         user: gettextCatalog.getString('user', null, 'Label'),
         month: gettextCatalog.getString('month', null, 'Delay')
-    };
+    }));
     const amount = (plan, cycle, currency) => {
         const amounts = dashboardModel.amounts(cycle);
         const month = `/${I18N.month}`;

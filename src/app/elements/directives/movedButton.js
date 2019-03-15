@@ -1,9 +1,13 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function movedButton($state, gettextCatalog, tools) {
+function movedButton($state, gettextCatalog, tools, translator) {
     const ACTIVE_CLASS = 'active';
-    const includeMovedMessages = gettextCatalog.getString('Include moved messages', null, 'Link');
+
+    const I18N = translator(() => ({
+        INCLUDE_MOVED_MESSAGES: gettextCatalog.getString('Include moved messages', null, 'Link')
+    }));
+
     const MAP = {
         sent: 'secured.allSent',
         allSent: 'secured.sent',
@@ -19,7 +23,7 @@ function movedButton($state, gettextCatalog, tools) {
             <button class="movedButton-container">
                 <div>
                     <i class="movedButton-icon fa fa-share-square-o"></i>
-                    <span class="movedButton-text">${includeMovedMessages}</span>
+                    <span class="movedButton-text">${I18N.INCLUDE_MOVED_MESSAGES}</span>
                 </div>
             </button>
             `,

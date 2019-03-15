@@ -10,12 +10,13 @@ function contactPublicKeys(
     gettextCatalog,
     notification,
     dispatchers,
-    networkActivityTracker
+    networkActivityTracker,
+    translator
 ) {
     const AS_SORTABLE_DISABLED = 'as-sortable-disabled';
     const ALL_KEYS_TRUSTED = 'all-keys-trusted';
 
-    const I18N = {
+    const I18N = translator(() => ({
         invalidKeyMessage(keys) {
             return gettextCatalog.getPlural(
                 keys.length,
@@ -26,7 +27,7 @@ function contactPublicKeys(
             );
         },
         LANG_AND: gettextCatalog.getString('and', null, 'String separator')
-    };
+    }));
 
     return {
         restrict: 'E',

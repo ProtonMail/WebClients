@@ -6,15 +6,16 @@ import { formatKeys } from '../../../helpers/key';
 import { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE } from '../../constants';
 
 /* @ngInject */
-function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication) {
+function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication, translator) {
+
     let CACHE = [];
     const { dispatcher, on } = dispatchers(['members']);
-    const I18N = {
+    const I18N = translator(() => ({
         ROLES: {
             [PAID_ADMIN_ROLE]: gettextCatalog.getString('Admin', null, 'User role'),
             [PAID_MEMBER_ROLE]: gettextCatalog.getString('Member', null, 'User role')
         }
-    };
+    }));
 
     const USER_MEMBER = { Self: 1 };
 

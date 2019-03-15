@@ -1,8 +1,9 @@
 /* @ngInject */
-function giftCodeModal(dispatchers, gettextCatalog, notification, paymentModel, pmModal) {
-    const I18N = {
+function giftCodeModal(dispatchers, gettextCatalog, notification, paymentModel, pmModal, translator) {
+    const I18N = translator(() => ({
         success: gettextCatalog.getString('Code applied', null, 'Success')
-    };
+    }));
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/payment/giftCodeModal.tpl.html'),

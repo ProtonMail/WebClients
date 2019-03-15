@@ -10,10 +10,11 @@ function bugReportModel(
     eventManager,
     gettextCatalog,
     networkActivityTracker,
-    notification
+    notification,
+    translator
 ) {
     const { on } = dispatchers();
-    const I18N = {
+    const I18N = translator(() => ({
         phishingTitle: gettextCatalog.getString('Confirm phishing report', null, 'Title for report phishing modal'),
         phishingMessage: gettextCatalog.getString(
             'Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.',
@@ -21,7 +22,7 @@ function bugReportModel(
             'Message for report phishing modal'
         ),
         phishingReported: gettextCatalog.getString('Phishing reported', null, 'Success notification')
-    };
+    }));
 
     /**
      * Generate the configuration for the modal

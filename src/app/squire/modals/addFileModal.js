@@ -1,13 +1,13 @@
 /* @ngInject */
-function addFileModal(pmModal, gettextCatalog) {
-    const I18N = {
+function addFileModal(pmModal, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         insert: {
             formTitle: gettextCatalog.getString('Insert image', null, 'Composer, add File'),
             actionTitle: gettextCatalog.getString('Insert', null, 'Composer, add File'),
             addFileTitle: gettextCatalog.getString('Add file', null, 'Composer, add File'),
             deleteTitle: gettextCatalog.getString('Delete', null, 'Composer, add File')
         }
-    };
+    }));
 
     return pmModal({
         controllerAs: 'ctrl',

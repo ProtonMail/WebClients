@@ -8,19 +8,24 @@ function contactImporter(
     notification,
     vcard,
     gettextCatalog,
+    translator,
     networkActivityTracker
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         noFiles: gettextCatalog.getString('No files were selected', null, 'Error'),
         invalid: gettextCatalog.getString('Invalid file type', null, 'Error'),
         parsingCSV: gettextCatalog.getString('Cannot convert the file', null, 'Error')
-    };
+    }));
+
     const { dispatcher } = dispatchers(['contacts']);
-    const dispatch = (data = []) =>
-        dispatcher.contacts('createContact', { contacts: contactSchema.prepareContacts(data), mode: 'import' });
+    const dispatch = (data = []) => {
+        dispatcher.contacts('createContact', {
+            contacts: contactSchema.prepareContacts(data),
+            mode: 'import'
+        });
+    };
 
     const importVCF = async (reader) => dispatch(vcard.from(reader.result));
-
     const importVCard = (file) => {
         return csvToVCard(file)
             .then((parsed = []) => parsed.length && dispatch(parsed))

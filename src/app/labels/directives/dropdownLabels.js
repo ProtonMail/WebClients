@@ -1,11 +1,12 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notification, gettextCatalog) {
-    const NOTIFS = {
+function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notification, gettextCatalog, translator) {
+
+    const I18N = translator(() => ({
         LABELS_SAVED: gettextCatalog.getString('Labels Saved', null, 'dropdown label'),
         LABEL_SAVED: gettextCatalog.getString('Label Saved', null, 'dropdown label')
-    };
+    }));
 
     const mapLabelsMessage = (elements = []) => {
         return _.reduce(
@@ -72,7 +73,7 @@ function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notificati
                     AppModel.set('numberElementChecked', 0);
                     scope.saveLabels(scope.labels, scope.alsoArchive);
                     close();
-                    notification.success(NOTIFS.LABELS_SAVED);
+                    notification.success(I18N.LABELS_SAVED);
                 });
             };
 
@@ -85,7 +86,7 @@ function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notificati
                             label.Selected = true;
                             scope.saveLabels(scope.labels, scope.alsoArchive);
                             close();
-                            notification.success(NOTIFS.LABEL_SAVED);
+                            notification.success(I18N.LABEL_SAVED);
                         });
                 }
             };

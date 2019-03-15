@@ -3,8 +3,8 @@ import { SPAM_SCORE } from '../../constants';
 const { PHISHING, DMARC_FAILED, PM_SPOOFED } = SPAM_SCORE;
 
 /* @ngInject */
-function messageSpamScore(gettextCatalog) {
-    const scoreNotice = {
+function messageSpamScore(gettextCatalog, translator) {
+    const I18N = translator(() => ({
         [PM_SPOOFED]: gettextCatalog.getString(
             'This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!',
             null,
@@ -27,7 +27,7 @@ function messageSpamScore(gettextCatalog) {
             },
             'Info'
         )
-    };
+    }));
 
     return {
         replace: true,
@@ -38,7 +38,7 @@ function messageSpamScore(gettextCatalog) {
         `,
         link(scope, el, { score }) {
             const $notice = el[0].querySelector('.messageSpamScore-notice');
-            $notice.innerHTML = scoreNotice[score];
+            $notice.innerHTML = I18N[score];
         }
     };
 }

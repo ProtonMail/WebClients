@@ -4,19 +4,20 @@ import { isInvalidCoupon } from '../../../helpers/paymentHelper';
 function paymentModel(
     eventManager,
     Payment,
-    PaymentCache,
     networkActivityTracker,
     gettextCatalog,
     notification,
-    dispatchers
+    dispatchers,
+    translator
 ) {
     let CACHE = {};
-    const I18N = {
+
+    const I18N = translator(() => ({
         COUPON_INVALID: gettextCatalog.getString('Invalid coupon code', null, 'Error'),
         GIFT_INVALID: gettextCatalog.getString('Invalid gift code', null, 'Error'),
         COUPON_SUCCESS: gettextCatalog.getString('Coupon code accepted', null, 'Coupon code request'),
         GIFT_SUCCESS: gettextCatalog.getString('Gift code accepted', null, 'Gift code request')
-    };
+    }));
 
     const { on } = dispatchers();
 

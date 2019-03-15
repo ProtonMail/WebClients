@@ -18,12 +18,14 @@ function SignupController(
     AppModel,
     giftCodeModel,
     signupModel,
+    translator,
     signupUserProcess
 ) {
-    const I18N = {
+
+    const I18N = translator(() => ({
         validGiftCode: gettextCatalog.getString('Gift code applied', null, 'Success'),
         invalidGiftCode: gettextCatalog.getString('Invalid gift code', null, 'Error')
-    };
+    }));
 
     const { on, unsubscribe, dispatcher } = dispatchers(['signup']);
 

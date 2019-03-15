@@ -1,10 +1,9 @@
 import _ from 'lodash';
-
 import { flow, filter, each } from 'lodash/fp';
 
 /* @ngInject */
-function hotkeys($state, $injector, dispatchers, gettextCatalog) {
-    const I18N = {
+function hotkeys($state, $injector, dispatchers, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         OPEN_COMPOSER: gettextCatalog.getString('Open the composer', null, 'Hotkey description'),
         CREATE_REPLY: gettextCatalog.getString('Create a reply', null, 'Hotkey description'),
         CREATE_REPLY_ALL: gettextCatalog.getString('Create a reply all', null, 'Hotkey description'),
@@ -25,7 +24,7 @@ function hotkeys($state, $injector, dispatchers, gettextCatalog) {
         GO_TO_TRASH: gettextCatalog.getString('Go to trash', null, 'Hotkey description'),
         SELECT_ALL: gettextCatalog.getString('Select all elements', null, 'Hotkey description'),
         UNSELECT_ALL: gettextCatalog.getString('Unselect all elements', null, 'Hotkey description')
-    };
+    }));
 
     const KEY_EVENT_TYPE = {
         PRESS: 'keypress',

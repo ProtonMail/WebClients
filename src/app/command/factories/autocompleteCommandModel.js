@@ -4,13 +4,20 @@ import { AWESOMEPLETE_MAX_ITEMS } from '../../constants';
 import { ucFirst } from '../../../helpers/string';
 
 /* @ngInject */
-function autocompleteCommandModel(dispatchers, hotkeys, labelsModel, gettextCatalog, $stateParams) {
+function autocompleteCommandModel(
+    hotkeys,
+    labelsModel,
+    dispatchers,
+    gettextCatalog,
+    $stateParams,
+    translator
+) {
     let scopedList = [];
-    const I18N = {
+    const I18N = translator(() => ({
         'Add folder': gettextCatalog.getString('Add folder', null, 'Command palette action'),
         'Add label': gettextCatalog.getString('Add label', null, 'Command palette action'),
         'Remove label': gettextCatalog.getString('Remove label', null, 'Command palette action')
-    };
+    }));
 
     const { dispatcher } = dispatchers(['app.commands']);
     const COMMANDS = formatCommands(hotkeys.keys());

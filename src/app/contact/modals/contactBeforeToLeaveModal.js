@@ -1,13 +1,13 @@
 /* @ngInject */
-function contactBeforeToLeaveModal(gettextCatalog, discardModal) {
-    const I18N = {
+function contactBeforeToLeaveModal(gettextCatalog, discardModal, translator) {
+    const I18N = translator(() => ({
         title: gettextCatalog.getString('Save Changes?', null, 'Title for contact modal'),
         message: gettextCatalog.getString(
             'There are unsaved changes to the contact you are editing. Do you want to save changes?',
             null,
             'Message for contact modal'
         )
-    };
+    }));
 
     const activate = ({ params }) => {
         return discardModal.activate({

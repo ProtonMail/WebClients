@@ -13,14 +13,15 @@ function LabelsController(
     labelModal,
     labelsModel,
     networkActivityTracker,
-    notification
+    notification,
+    translator
 ) {
     const { on, unsubscribe } = dispatchers();
 
-    const I18N = {
+    const I18N = translator(() => ({
         labelUpdated: gettextCatalog.getString('Label updated', null, 'Success'),
         folderUpdated: gettextCatalog.getString('Folder updated', null, 'Success')
-    };
+    }));
 
     const changeNotify = (event, { data: { id, status } }) => {
         const { Name, Color, Display, Exclusive } = _.find($scope.labels, { ID: id });

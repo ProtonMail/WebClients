@@ -1,37 +1,48 @@
 import _ from 'lodash';
 import vCard from 'vcf';
 
+import { KNOWLEDGE_BASE } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
+import dedentTpl from '../../../helpers/dedent';
 import { normalizeEmail } from '../../../helpers/string';
 import { getKeyAsUri } from '../../../helpers/key';
 
 const DEFAULT_CONTACT_GROUP = 'item1';
 
 /* @ngInject */
-function autoPinPrimaryKeys(Contact, keyCache, contactEmails, confirmModal, gettextCatalog) {
-    const LEARN_MORE = `<a target='_blank' href='https://protonmail.com/support/knowledge-base/address-verification/'>
-            ${gettextCatalog.getString('Learn more', null, 'Link')}
-            </a>`;
-    const I18N = {
+function autoPinPrimaryKeys(Contact, keyCache, contactEmails, confirmModal, gettextCatalog, translator) {
+
+    const learnMoreLink = (title) => dedentTpl`<a
+        target="_blank"
+        href="${KNOWLEDGE_BASE.ADDRESS_VERIFICATION}">${title}</a>`;
+
+    const I18N = translator(() => ({
+        LEARN_MORE: gettextCatalog.getString('Learn more', null, 'Link'),
         PROMPT_TITLE: gettextCatalog.getString('Do you want to trust the primary key?', null, 'Title'),
-        promptMessage: (emails) =>
-            gettextCatalog.getString(
-                `You have enabled Address Verification with Trusted Keys for {{ emails }}, but no active encryption keys have been Trusted.
+        promptMessage(emails) {
+            return (
+                gettextCatalog.getString(
+                    `You have enabled Address Verification with Trusted Keys for {{ emails }}, but no active encryption keys have been Trusted.
                  You must Trust the primary key in order to send a message to this address.`,
-                { emails: '<b>' + emails.join(', ') + '</b>' },
-                'Error'
-            ) + LEARN_MORE,
+                    { emails: `<b>${emails.join(', ')}</b>` },
+                    'Error'
+                ) + learnMoreLink(this.LEARN_MORE)
+            );
+        },
         PROMPT_TITLE_RESIGN: gettextCatalog.getString('Do you want to re-sign the contact?', null, 'Title'),
-        promptResignMessage: (emails) =>
-            gettextCatalog.getString(
-                `The verification of {{ emails }} has failed: the contact is not signed correctly.
+        promptResignMessage(emails) {
+            return (
+                gettextCatalog.getString(
+                    `The verification of {{ emails }} has failed: the contact is not signed correctly.
                     You must re-sign the contact in order to send a message to this address or edit the contact. This can also happen when
                     you have recovered your password and reset your keys.`,
-                { emails: '<b>' + emails.join(', ') + '</b>' },
-                'Warning'
-            ) + LEARN_MORE
-    };
+                    { emails: `<b>${emails.join(', ')}</b>` },
+                    'Warning'
+                ) + learnMoreLink(this.LEARN_MORE)
+            );
+        }
+    }));
 
     /**
      * Attach a given key to an email address in a vcard

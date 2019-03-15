@@ -6,14 +6,16 @@ function movedSelect(
     networkActivityTracker,
     mailSettingsModel,
     settingsMailApi,
+    translator,
     notification
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         includeMoved: gettextCatalog.getString('Include Moved', null, 'Option'),
         hideMoved: gettextCatalog.getString('Hide Moved', null, 'Option'),
         success: gettextCatalog.getString('Setting updated', null, 'Success'),
         labelSelect: gettextCatalog.getString('Sent / Drafts folders appearance', null, 'Label')
-    };
+    }));
+
     return {
         restrict: 'E',
         replace: true,

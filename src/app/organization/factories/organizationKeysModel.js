@@ -13,6 +13,7 @@ function organizationKeysModel(
     eventManager,
     networkActivityTracker,
     gettextCatalog,
+    translator,
     activateOrganizationModal
 ) {
     const { dispatcher, on } = dispatchers(['organizationChange']);
@@ -20,14 +21,14 @@ function organizationKeysModel(
     let CACHE = { keyStatus: 0 };
     const ALLOWED_STATES = ['signatures', 'domains', 'members'].map((n) => `secured.${n}`);
 
-    const I18N = {
+    const I18N = translator(() => ({
         MUST_PRIVATISE_ERROR: gettextCatalog.getString(
             'You must privatize all sub-accounts before generating new organization keys',
             null,
             'Error'
         ),
         ERROR_ALREADY_ACTIVE: gettextCatalog.getString('Organization keys already active', null, 'Error')
-    };
+    }));
 
     const get = (key = 'keys') => angular.copy(CACHE[key]);
     const set = (key, value) => (CACHE[key] = value);

@@ -15,8 +15,8 @@ import { removeEmailAlias } from '../../../helpers/string';
 import { getKeyAsUri } from '../../../helpers/key';
 
 /* @ngInject */
-function contactKey(contactDetailsModel, gettextCatalog) {
-    const I18N = {
+function contactKey(contactDetailsModel, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         LANG_AND: gettextCatalog.getString('and', null, 'String separator'),
         REVOCATION_MESSAGE: gettextCatalog.getString('This key is revoked.', null, 'PGP key warning'),
         EXPIRATION_MESSAGE: gettextCatalog.getString('This key is expired.', null, 'PGP key warning'),
@@ -29,7 +29,7 @@ function contactKey(contactDetailsModel, gettextCatalog) {
                 'PGP key warning'
             );
         }
-    };
+    }));
 
     const decodeDataUri = (uri = '') => {
         const base64 = uri.substring(0, 5).toLowerCase() === 'data:' ? uri.split(',')[1] : uri;

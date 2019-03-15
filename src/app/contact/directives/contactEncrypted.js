@@ -1,11 +1,11 @@
 /* @ngInject */
-function contactEncrypted(gettextCatalog) {
+function contactEncrypted(gettextCatalog, translator) {
     const TOGGLE_BUTTON_CLASS = 'contactDetails-toggle-custom-fields';
     const SHOW_CLASS = 'contactDetails-show-custom-fields';
-    const I18N = {
+    const I18N = translator(() => ({
         SHOW: gettextCatalog.getString('Show custom fields', null, 'Action in contact details'),
         HIDE: gettextCatalog.getString('Hide custom fields', null, 'Action in contact details')
-    };
+    }));
 
     return {
         restrict: 'E',

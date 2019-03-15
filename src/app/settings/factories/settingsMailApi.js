@@ -1,5 +1,6 @@
 /* @ngInject */
 function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
+
     const requestURL = url.build('settings/mail');
     const handleResult = ({ data = {} } = {}) => {
         mailSettingsModel.set('all', data.MailSettings);

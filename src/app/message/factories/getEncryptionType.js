@@ -8,74 +8,73 @@ import {
 } from '../../../helpers/message';
 
 /* @ngInject */
-function getEncryptionType(gettextCatalog) {
-    const pmTypes = [
-        gettextCatalog.getString('End-to-end encrypted message', null, 'Message encryption status'),
-        gettextCatalog.getString(
-            'End-to-end encrypted message from verified address',
-            null,
-            'Message encryption status'
-        ),
-        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-    ];
+function getEncryptionType(gettextCatalog, translator) {
 
-    const pgpTypes = [
-        gettextCatalog.getString('PGP-encrypted message', null, 'Message encryption status'),
-        gettextCatalog.getString('PGP-encrypted message from verified address', null, 'Message encryption status'),
-        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-    ];
+    const I18N = translator(() => ({
+        pm: [
+            gettextCatalog.getString('End-to-end encrypted message', null, 'Message encryption status'),
+            gettextCatalog.getString(
+                'End-to-end encrypted message from verified address',
+                null,
+                'Message encryption status'
+            ),
+            gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
+        ],
+        pgp: [
+            gettextCatalog.getString('PGP-encrypted message', null, 'Message encryption status'),
+            gettextCatalog.getString('PGP-encrypted message from verified address', null, 'Message encryption status'),
+            gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
+        ],
+        clear: [
+            gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('PGP-signed message from verified address', null, 'Message encryption status'),
+            gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
+        ],
+        sentEncrypted: [
+            gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
+        ],
+        auto: [
+            gettextCatalog.getString('Sent by ProtonMail with zero access encryption', null, 'Message encryption status')
+        ],
+        sentClear: [
+            gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
+        ],
+        draft: [gettextCatalog.getString('Encrypted message', null, 'Message encryption status')]
+    }));
 
-    const clearTypes = [
-        gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('PGP-signed message from verified address', null, 'Message encryption status'),
-        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-    ];
-
-    const sentEncrypted = [
-        gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-    ];
-
-    const autoTypes = [
-        gettextCatalog.getString('Sent by ProtonMail with zero access encryption', null, 'Message encryption status')
-    ];
-
-    const sentClear = [
-        gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
-    ];
-
-    const draftTypes = [gettextCatalog.getString('Encrypted message', null, 'Message encryption status')];
-
-    return (message) => {
+    const getFromType = (message) => {
         if (isSentEncrypted(message)) {
-            return sentEncrypted;
+            return I18N.sentEncrypted;
         }
 
         if (isAuto(message)) {
-            return autoTypes;
+            return I18N.auto;
         }
 
         if (isSent(message)) {
-            return sentClear;
+            return I18N.sentClear;
         }
 
         if (isDraft(message)) {
-            return draftTypes;
+            return I18N.draft;
         }
 
         if (isInternalEncrypted(message)) {
-            return pmTypes;
+            return I18N.pm;
         }
 
         if (isExternalEncrypted(message)) {
-            return pgpTypes;
+            return I18N.pgp;
         }
 
-        return clearTypes;
+        return I18N.clear;
     };
+
+    return getFromType;
 }
 
 export default getEncryptionType;

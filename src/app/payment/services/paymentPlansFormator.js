@@ -1,8 +1,8 @@
 import { PLANS_TYPE, BASE_SIZE } from '../../constants';
 
 /* @ngInject */
-function paymentPlansFormator(gettextCatalog) {
-    const I18N = {
+function paymentPlansFormator(gettextCatalog, translator) {
+    const I18N = translator(() => ({
         MSG_PER_DAY: gettextCatalog.getString('Messages per day', null, 'Plan feature'),
         LABELS: gettextCatalog.getString('Labels', null, 'Plan feature'),
         FOLDERS: gettextCatalog.getString('Folders', null, 'Plan feature'),
@@ -11,7 +11,7 @@ function paymentPlansFormator(gettextCatalog) {
         LIMITED_SUPPORT: gettextCatalog.getString('Limited support', null, 'Plan feature'),
         PRIORITY_SUPPORT: gettextCatalog.getString('Priority support', null, 'Plan feature'),
         UNLIMITED_SENDING: gettextCatalog.getString('Unlimited sending', null, 'Plan feature')
-    };
+    }));
 
     const msgPerDay = (total) => `${total} ${I18N.MSG_PER_DAY}`;
     const numberLabels = (totalFolders, totalLabels) =>

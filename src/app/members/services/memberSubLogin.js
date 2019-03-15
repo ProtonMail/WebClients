@@ -9,15 +9,16 @@ function memberSubLogin(
     memberModel,
     authentication,
     networkActivityTracker,
+    translator,
     gettextCatalog
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         ERROR: gettextCatalog.getString(
             'Permission denied, administrator privileges have been restricted.',
             null,
             'Error'
         )
-    };
+    }));
 
     const SUBLOGIN_URL = $state.href('login.sub', { sub: true }, { absolute: true });
 

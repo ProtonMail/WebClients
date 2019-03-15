@@ -1,15 +1,15 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function bugModalView(gettextCatalog, notification) {
+function bugModalView(gettextCatalog, notification, translator) {
     const UPLOADED_CLASS = 'bugModalView-files-uploaded';
-    const I18N = {
+    const I18N = translator(() => ({
         noImageSelected: gettextCatalog.getString(
             'No image selected',
             null,
             'Error notification in the bug report modal when the user upload file'
         )
-    };
+    }));
     return {
         replace: true,
         restrict: 'E',

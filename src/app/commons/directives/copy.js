@@ -1,8 +1,8 @@
 /* @ngInject */
-function copy(gettextCatalog, ptClipboard) {
-    const I18N = {
+function copy(gettextCatalog, ptClipboard, translator) {
+    const I18N = translator(() => ({
         copy: gettextCatalog.getString('Copy to your clipboard', null, 'Info')
-    };
+    }));
 
     return {
         restrict: 'E',

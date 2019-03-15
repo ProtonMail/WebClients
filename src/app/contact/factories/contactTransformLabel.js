@@ -1,6 +1,6 @@
 /* @ngInject */
-function contactTransformLabel(gettextCatalog) {
-    const MAP = {
+function contactTransformLabel(gettextCatalog, translator) {
+    const I18N = translator(() => ({
         adr: gettextCatalog.getString('Address', null, 'VCard key name'),
         anniversary: gettextCatalog.getString('Anniversary', null, 'VCard key name'),
         caladruri: gettextCatalog.getString('Calendar user address', null, 'VCard key name'),
@@ -47,16 +47,16 @@ function contactTransformLabel(gettextCatalog) {
         'pm-sign': gettextCatalog.getString('Sign', null, 'VCard key name'),
         'pm-encrypt': gettextCatalog.getString('Encrypt', null, 'VCard key name'),
         'pm-tls': gettextCatalog.getString('TLS', null, 'VCard key name')
-    };
+    }));
 
-    const MAP_KEYS = Object.keys(MAP);
+    const MAP_KEYS = Object.keys(I18N);
 
     /**
      * Transform vCard label to language if a reference is found, or undefined
      * @param  {String} label
      * @return {String}
      */
-    const toLangExplicit = (label = '') => MAP[label.toLowerCase()];
+    const toLangExplicit = (label = '') => I18N[label.toLowerCase()];
 
     /**
      * Transform vCard label to language if a reference is found
@@ -67,8 +67,7 @@ function contactTransformLabel(gettextCatalog) {
     const toLang = (input = '') => {
         const label = input.toLowerCase();
         const value = label.startsWith('x-') ? label.slice(2) : label;
-
-        return MAP[value] || `${value.charAt(0).toUpperCase()}${value.slice(1)}`;
+        return I18N[value] || `${value.charAt(0).toUpperCase()}${value.slice(1)}`;
     };
 
     /**
@@ -77,7 +76,7 @@ function contactTransformLabel(gettextCatalog) {
      * @return {Boolean / String}
      */
     const toVCard = (label = '') => {
-        const key = MAP_KEYS.find((key) => label === MAP[key]);
+        const key = MAP_KEYS.find((key) => label === I18N[key]);
 
         // Default value https://tools.ietf.org/html/rfc6350#section-6.4.1
         if (key === 'tel') {

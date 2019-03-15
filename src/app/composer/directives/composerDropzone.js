@@ -14,7 +14,8 @@ function composerDropzone(
     dispatchers,
     notification,
     gettextCatalog,
-    $state
+    $state,
+    translator
 ) {
     Dropzone.autoDiscover = false;
 
@@ -22,7 +23,7 @@ function composerDropzone(
 
     const numberLimit = { number: ATTACHMENT_SIZE_LIMIT };
     const sizeLimit = { number: ATTACHMENT_SIZE_LIMIT };
-    const dropMessages = {
+    const I18N = translator(() => ({
         0: gettextCatalog.getString('Empty attachment', null, 'Composer'),
         [ATTACHMENT_NUMBER_LIMIT]: gettextCatalog.getString(
             'Messages are limited to {{number}} attachments',
@@ -41,16 +42,10 @@ function composerDropzone(
                 _.extend({ total }, numberLimit),
                 'Composer'
             );
-        }
-    };
-
-    const ERROR_EO_NUMBER_ATT = gettextCatalog.getString(
-        'Maximum number of attachments (10) exceeded.',
-        null,
-        'Composer'
-    );
-
-    const dictDefaultMessage = gettextCatalog.getString('Drop a file here to upload', null, 'Info');
+        },
+        ERROR_EO_NUMBER_ATT: gettextCatalog.getString('Maximum number of attachments (10) exceeded.', null, 'Composer'),
+        dictDefaultMessage: gettextCatalog.getString('Drop a file here to upload', null, 'Info')
+    }));
 
     /**
      * Compute some information to get the current context for a dropzone
@@ -78,21 +73,21 @@ function composerDropzone(
             const { currentSize, numberFiles } = getDropFileConfigMessage(message, file);
 
             if (numberFiles === ATTACHMENT_NUMBER_LIMIT) {
-                const msg = dropMessages[ATTACHMENT_NUMBER_LIMIT];
+                const msg = I18N[ATTACHMENT_NUMBER_LIMIT];
                 dropzone.removeFile(file);
                 notification.error(msg);
                 return queue;
             }
 
             if (currentSize >= ATTACHMENT_MAX_SIZE) {
-                const msg = dropMessages[ATTACHMENT_MAX_SIZE](currentSize);
+                const msg = I18N[ATTACHMENT_MAX_SIZE](currentSize);
                 dropzone.removeFile(file);
                 notification.error(msg);
                 return queue;
             }
 
             if (currentSize === 0) {
-                const msg = dropMessages[0];
+                const msg = I18N[0];
                 /* file is too big */
                 dropzone.removeFile(file);
                 notification.error(msg);
@@ -127,7 +122,7 @@ function composerDropzone(
      */
     const getConfig = (message, dispatchAction) => ({
         addRemoveLinks: false,
-        dictDefaultMessage,
+        dictDefaultMessage: I18N.dictDefaultMessage,
         url: '/file/post',
         autoProcessQueue: false,
         paramName: 'file', // The name that will be used to transfer the file
@@ -150,7 +145,7 @@ function composerDropzone(
 
                     // Prevent freeze from the API
                     return (id = setTimeout(() => {
-                        notification.error(dropMessages[ATTACHMENT_SIZE_LIMIT]);
+                        notification.error(I18N[ATTACHMENT_SIZE_LIMIT]);
                         dispatchAction(message, { size: 0, files: [] });
                         clearTimeout(id);
                     }, 100));
@@ -167,7 +162,7 @@ function composerDropzone(
 
                 if (isEO && queue.files.length + message.Attachments.length > 10) {
                     dispatchAction(message, queue, 'attachments.limit.error');
-                    return notification.error(ERROR_EO_NUMBER_ATT);
+                    return notification.error(I18N.ERROR_EO_NUMBER_ATT);
                 }
                 dispatchAction(message, queue);
             });

@@ -12,14 +12,15 @@ function organizationModel(
     networkActivityTracker,
     changeOrganizationPasswordModal,
     loginPasswordModal,
+    translator,
     changeOrganizationPassword
 ) {
     let CACHE = {};
 
-    const I18N = {
+    const I18N = translator(() => ({
         UPDATING_NAME_SUCCESS: gettextCatalog.getString('Organization updated', null, 'Info'),
         UPDATE_PASSWORD_SUCCESS: gettextCatalog.getString('Password updated', null, 'Info')
-    };
+    }));
 
     const { dispatcher, on } = dispatchers(['organizationChange']);
 

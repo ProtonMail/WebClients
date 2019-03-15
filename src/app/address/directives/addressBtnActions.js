@@ -1,6 +1,6 @@
 /* @ngInject */
-function addressBtnActions(addressModel, gettextCatalog) {
-    const I18N = {
+function addressBtnActions(addressModel, gettextCatalog, translator) {
+    const I18N = translator(() => ({
         makeDefault: gettextCatalog.getString('Make default', null, 'Action'),
         editSignature: gettextCatalog.getString('Edit signature', null, 'Action'),
         disable: gettextCatalog.getString('Disable', null, 'Action'),
@@ -8,7 +8,7 @@ function addressBtnActions(addressModel, gettextCatalog) {
         remove: gettextCatalog.getString('Delete', null, 'Action'),
         generate: gettextCatalog.getString('Generate missing keys', null, 'Action'),
         add: gettextCatalog.getString('Add address', null, 'Action')
-    };
+    }));
 
     return {
         replace: true,

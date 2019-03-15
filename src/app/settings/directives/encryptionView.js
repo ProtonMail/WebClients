@@ -8,9 +8,10 @@ function encryptionView(
     settingsMailApi,
     notification,
     networkActivityTracker,
-    confirmModal
+    confirmModal,
+    translator
 ) {
-    const I18N = {
+    const I18N = translator(() => ({
         SUCCES_MESSAGE: gettextCatalog.getString('Encryption setting updated', null, 'Success'),
         ENABLE_SIGNING_TITLE: gettextCatalog.getString(
             'Automatic sign outgoing messages?',
@@ -24,7 +25,7 @@ function encryptionView(
         ),
         YES: gettextCatalog.getString('Yes', null, 'Confirm text'),
         NO: gettextCatalog.getString('No', null, 'Confirm text')
-    };
+    }));
 
     const askSign = async (status) => {
         if (!status || mailSettingsModel.get('Sign')) {

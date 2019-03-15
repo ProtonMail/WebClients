@@ -1,7 +1,7 @@
 /* @ngInject */
-function donateModel(Payment, networkActivityTracker, gettextCatalog, notification, dispatchers) {
-    const I18N = {
-        donation: {
+function donateModel(Payment, networkActivityTracker, gettextCatalog, notification, dispatchers, translator) {
+    const I18N = translator(() => ({
+         donation: {
             success: gettextCatalog.getString(
                 'Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!',
                 null,
@@ -11,7 +11,7 @@ function donateModel(Payment, networkActivityTracker, gettextCatalog, notificati
         topUp: {
             success: gettextCatalog.getString('Credits added', null, 'topUp modal')
         }
-    };
+    }));
 
     const { on, dispatcher } = dispatchers(['payments']);
     const dispatch = (type, data = {}) => dispatcher.payments(type, data);

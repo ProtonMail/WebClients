@@ -1,7 +1,7 @@
 /* @ngInject */
-function selectPlan(dispatchers, gettextCatalog, subscriptionModel) {
+function selectPlan(dispatchers, gettextCatalog, subscriptionModel, translator) {
     const ACTIVE_BUTTON_CLASS = 'primary';
-    const I18N = {
+    const I18N = translator(() => ({
         downgradeToFree: gettextCatalog.getString('Switch to Free', null, 'Button to select plan on the dashboard'),
         downgradeToPlus: gettextCatalog.getString('Switch to Plus', null, 'Button to select plan on the dashboard'),
         downgradeToProfessional: gettextCatalog.getString(
@@ -28,7 +28,7 @@ function selectPlan(dispatchers, gettextCatalog, subscriptionModel) {
             null,
             'Button to select plan on the dashboard'
         )
-    };
+    }));
 
     const MAP = {
         free: {

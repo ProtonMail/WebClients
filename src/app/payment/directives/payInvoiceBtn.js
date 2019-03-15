@@ -1,13 +1,21 @@
 /* @ngInject */
-function payInvoiceBtn(gettextCatalog, Payment, paymentModel, payModal, networkActivityTracker, notification) {
-    const I18N = {
+function payInvoiceBtn(
+    gettextCatalog,
+    Payment,
+    paymentModel,
+    payModal,
+    networkActivityTracker,
+    notification,
+    translator
+) {
+    const I18N = translator(() => ({
         message: gettextCatalog.getString('Pay', null, 'Action'),
         notAvailable: gettextCatalog.getString(
             'Payments are currently not available, please try again later',
             null,
             'Info'
         )
-    };
+    }));
 
     const checkInvoice = ({ ID } = {}) => {
         return Payment.check(ID).then(({ data }) => data);

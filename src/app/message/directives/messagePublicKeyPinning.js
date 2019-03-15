@@ -1,14 +1,17 @@
-/* @ngInject */
+    /* @ngInject */
 function messagePublicKeyPinning(
     gettextCatalog,
     settingsMailApi,
     notification,
     networkActivityTracker,
+    translator,
     messageSenderSettings
 ) {
-    const I18N = {
+
+    const I18N = translator(() => ({
         SUCCES_MESSAGE_HIDE: gettextCatalog.getString('Banner permanently hidden', null, 'Success')
-    };
+    }));
+
     return {
         replace: true,
         restrict: 'E',

@@ -2,10 +2,10 @@ import { CONTACT_IMG_SIZE } from '../../constants';
 import { resizeImage } from '../../../helpers/imageHelper';
 
 /* @ngInject */
-function contactPhotoForm(gettextCatalog, notification) {
-    const I18N = {
+function contactPhotoForm(gettextCatalog, notification, translator) {
+    const I18N = translator(() => ({
         error: gettextCatalog.getString('Image upload failed', null, 'Error')
-    };
+    }));
     return {
         restrict: 'E',
         replace: true,

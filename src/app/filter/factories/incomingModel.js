@@ -1,10 +1,10 @@
 /* @ngInject */
-function incomingModel(notification, gettextCatalog, IncomingDefault, networkActivityTracker) {
-    const I18N = {
+function incomingModel(notification, gettextCatalog, IncomingDefault, networkActivityTracker, translator) {
+    const I18N = translator(() => ({
         ADD_SUCCESS: gettextCatalog.getString('Spam Filter Added', null, 'Filters'),
         UPDATE_SUCCESS: gettextCatalog.getString('Spam Filter Updated', null, 'Filters'),
         DELETE_SUCCESS: gettextCatalog.getString('Spam Filter Deleted', null, 'Filters')
-    };
+    }));
 
     const get = (config) => {
         const promise = IncomingDefault.get(config).then(({ data = {} }) => {

@@ -9,7 +9,7 @@ import identitySection from './directives/identitySection';
 import signupPayForm from './directives/signupPayForm';
 import signupStepLink from './directives/signupStepLink';
 import signupUserForm from './directives/signupUserForm';
-import storageWarningView from './directives/storageWarning';
+import storageWarningView from './directives/storageWarningView';
 import usernameDomain from './directives/usernameDomain';
 import usernamePassword from './directives/usernamePassword';
 import displayNameSignature from './directives/displayNameSignature';

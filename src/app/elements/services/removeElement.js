@@ -8,10 +8,11 @@ function removeElement(
     confirmModal,
     $state,
     notification,
-    tools
+    tools,
+    translator
 ) {
     const { dispatcher } = dispatchers(['composer.update']);
-    const I18N = {
+    const I18N = translator(() => ({
         TITLE: gettextCatalog.getString('Delete', null, 'Title'),
         MESSAGE: gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info'),
         DRAFT_INFO: gettextCatalog.getString(
@@ -26,7 +27,7 @@ function removeElement(
         success(total, item) {
             return gettextCatalog.getString('{{total}} {{item}} removed', { total, item }, 'Remove element');
         }
-    };
+    }));
 
     function redirectUser() {
         // The default view for all conversations in not the state conversation but inbox

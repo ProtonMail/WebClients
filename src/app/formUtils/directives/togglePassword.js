@@ -2,16 +2,16 @@ import dedentTpl from '../../../helpers/dedent';
 // import { isMac } from '../../../helpers/browser';
 
 /* @ngInject */
-function togglePassword(gettextCatalog) {
+function togglePassword(gettextCatalog, translator) {
     const CLASS_DISPLAY_PASSWORD = 'togglePassword-btn-display';
-    const TOOLTIPS = {
+    const I18N = translator(() => ({
         SHOW: gettextCatalog.getString('Show password', null, 'toggle password'),
         HIDE: gettextCatalog.getString('Hide password', null, 'toggle password')
-    };
+    }));
 
     const template = dedentTpl`<button type="button" class="togglePassword-btn-toggle">
-        <i class="togglePassword-icon-toText fa fa-eye" pt-tooltip="${TOOLTIPS.SHOW}"></i>
-        <i class="togglePassword-icon-toPassword fa fa-eye-slash" pt-tooltip="${TOOLTIPS.HIDE}"></i>
+        <i class="togglePassword-icon-toText fa fa-eye" pt-tooltip="${I18N.SHOW}"></i>
+        <i class="togglePassword-icon-toPassword fa fa-eye-slash" pt-tooltip="${I18N.HIDE}"></i>
     </button>`;
 
     return {

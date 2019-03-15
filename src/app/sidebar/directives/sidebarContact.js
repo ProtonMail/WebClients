@@ -1,11 +1,11 @@
 /* @ngInject */
-function sidebarContact(dispatchers, backState, contactCache, contactMerger, gettextCatalog) {
+function sidebarContact(dispatchers, backState, contactCache, contactMerger, gettextCatalog, translator) {
     const SHOW_DELETE_CONTACTS = 'sidebarContact-show-delete-contacts';
     const SHOW_MERGE_BUTTON = 'sidebarContact-show-merge-button';
     const MERGE_TEXT = 'sidebarContact-merge-text';
-    const I18N = {
+    const I18N = translator(() => ({
         merge: gettextCatalog.getString('Merge', null, 'Merge contacts')
-    };
+    }));
 
     return {
         restrict: 'E',

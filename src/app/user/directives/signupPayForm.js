@@ -4,8 +4,17 @@ import { getEventName } from '../../blackFriday/helpers/blackFridayHelper';
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
 /* @ngInject */
-function signupPayForm(paymentUtils, dispatchers, cardModel, notification, gettextCatalog, $filter) {
-    const I18N = {
+function signupPayForm(
+    paymentUtils,
+    dispatchers,
+    cardModel,
+    notification,
+    gettextCatalog,
+    $filter,
+    translator
+) {
+
+    const I18N = translator(() => ({
         MONTH: gettextCatalog.getString('month', null, 'Info'),
         BILLING: {
             [YEARLY]: gettextCatalog.getString('Annually', null, 'Info'),
@@ -20,7 +29,7 @@ function signupPayForm(paymentUtils, dispatchers, cardModel, notification, gette
             }
             return gettextCatalog.getString('Thank you for your support!', null, 'Title');
         }
-    };
+    }));
 
     const CLASSNAMES = {
         couponCode: {

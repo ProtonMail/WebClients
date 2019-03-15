@@ -18,15 +18,19 @@ function attachmentModel(
     composerRequestModel,
     attachmentDownloader,
     gettextCatalog,
-    SignatureVerifier
+    SignatureVerifier,
+    translator
 ) {
     const MAX_KEY_SIZE = 50 * 1024;
     const queueMessage = {};
     let MAP_ATTACHMENTS = {};
     const EVENT_NAME = 'attachment.upload';
-    const I18N = {
+
+    const I18N = translator(() => ({
+        ERROR_UPLOAD: gettextCatalog.getString('Error during file upload', null, 'Compose message'),
+        ERROR_ENCRYPT: gettextCatalog.getString('Error encrypting attachment', null, 'Compose message'),
         IMAGE: gettextCatalog.getString('Image', null, 'Title')
-    };
+    }));
 
     const { on, dispatcher } = dispatchers([EVENT_NAME, 'actionMessage']);
     const dispatch = (type, data) => dispatcher[EVENT_NAME](type, data);

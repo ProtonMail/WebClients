@@ -3,26 +3,22 @@ import _ from 'lodash';
 import { BASE_SIZE } from '../../constants';
 
 /* @ngInject */
-function humanSize(gettextCatalog) {
+function humanSize(gettextCatalog, translator) {
     const units = {
         KB: BASE_SIZE,
         MB: BASE_SIZE * BASE_SIZE,
         GB: BASE_SIZE * BASE_SIZE * BASE_SIZE
     };
 
-    const i18nSuffix = (key) => {
-        const map = {
-            KB: gettextCatalog.getString('KB', null, 'fileSize format'),
-            MB: gettextCatalog.getString('MB', null, 'fileSize format'),
-            GB: gettextCatalog.getString('GB', null, 'fileSize format')
-        };
-
-        return map[key];
-    };
+    const I18N = translator(() => ({
+        KB: gettextCatalog.getString('KB', null, 'fileSize format'),
+        MB: gettextCatalog.getString('MB', null, 'fileSize format'),
+        GB: gettextCatalog.getString('GB', null, 'fileSize format')
+    }));
 
     function transformTo(bytes, unit, withoutUnit) {
         const value = (bytes / units[unit]).toFixed(2);
-        const suffix = withoutUnit ? '' : ` ${i18nSuffix(unit)}`;
+        const suffix = withoutUnit ? '' : ` ${I18N[unit]}`;
         return value + suffix;
     }
 
