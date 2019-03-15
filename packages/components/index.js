@@ -36,7 +36,7 @@ export { default as Loader } from './components/loader/Loader';
 export { default as LogsSection } from './containers/logs/LogsSection';
 export { default as MembersSection } from './containers/members/MembersSection';
 export { default as Modal } from './components/modal/Modal';
-export { default as NewsSection } from './containers/news/NewsSection';
+export { default as NotificationSection } from './containers/notification/NotificationSection';
 export { default as OrganizationSection } from './containers/organization/OrganizationSection';
 export { default as Pagination } from './components/pagination/Pagination';
 export { default as Paragraph } from './components/paragraph/Paragraph';

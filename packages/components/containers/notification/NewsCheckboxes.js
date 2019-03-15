@@ -7,7 +7,7 @@ import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
 
 const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA } = NEWS;
 
-const NewsSection = () => {
+const NewsCheckboxes = () => {
     const { News } = useSettings();
     const { request, loading } = useApiWithoutResult(updateNews);
     const [news, setNews] = useState(News);
@@ -54,4 +54,4 @@ const NewsSection = () => {
     );
 };
 
-export default NewsSection;
+export default NewsCheckboxes;
