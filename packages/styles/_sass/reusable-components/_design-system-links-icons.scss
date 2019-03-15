@@ -71,6 +71,11 @@ a[href^="mailto:"] {
   height: 50%;
 }
 
-
+.path2x {
+  stroke-width: 1px;
+  &.fill-global-light {
+    stroke: $pm-global-light;   
+  }
+}
 
 
