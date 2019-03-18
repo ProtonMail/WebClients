@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import keycode from 'keycode';
 
 import ModalWithPortal from './ModalWithPortal';
 
 import Header from './Header';
 
-const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnOuterClick, title }) => {
-    if (!show) {
-        return null;
-    }
+const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnOuterClick, closeOnEscape, title }) => {
+    const onKeydown = (event) => {
+        const key = keycode(event);
+
+        if (closeOnEscape && key === 'escape') {
+            onClose();
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('keydown', onKeydown);
+        return () => {
+            document.removeEventListener('keydown', onKeydown);
+        };
+    }, []);
 
     const handleClickOutside = (event) => {
         if (!closeOnOuterClick) {
@@ -20,6 +32,10 @@ const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnO
             onClose(event);
         }
     };
+
+    if (!show) {
+        return null;
+    }
 
     return (
         <ModalWithPortal>
@@ -36,6 +52,7 @@ const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnO
 Modal.propTypes = {
     show: PropTypes.bool.isRequired,
     closeOnOuterClick: PropTypes.bool,
+    closeOnEscape: PropTypes.bool,
     onClose: PropTypes.func.isRequired,
     modalClassName: PropTypes.string,
     children: PropTypes.node.isRequired,
@@ -45,6 +62,7 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
     closeOnOuterClick: true,
+    closeOnEscape: true,
     show: false,
     modalTitleID: 'modalTitle'
 };
