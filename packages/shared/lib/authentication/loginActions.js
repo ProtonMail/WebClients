@@ -5,7 +5,7 @@ import { srpVerify } from '../srp';
 import { getUser } from '../api/user';
 import { getKeySalts } from '../api/keys';
 import { getInfo, setCookies } from '../api/auth';
-import { passwordUpgrade } from '../api/settings';
+import { upgradePassword } from '../api/settings';
 import { isPgpMessage, decryptAccessToken } from './helpers';
 import { getPrimaryKeyWithSalt } from '../state/keys/keys';
 import { getRandomString } from '../helpers/string';
@@ -29,7 +29,7 @@ export const handleFinalizeAction = async (state, { api }) => {
             await srpVerify({
                 api,
                 credentials: { password },
-                config: withUIDHeaders(UID, passwordUpgrade())
+                config: withUIDHeaders(UID, upgradePassword())
             });
         }
 
