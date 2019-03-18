@@ -1,12 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import keycode from 'keycode';
+
 import Button from '../button/Button';
 
 const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOutside }) => {
     const [open, setOpen] = useState(isOpen);
     const wrapperRef = useRef(null);
+    const buttonRef = useRef(null);
 
     const handleClick = () => setOpen(!open);
+
+    const handleKeydown = (event) => {
+        const key = keycode(event);
+
+        if (key === 'escape' && buttonRef.current === document.activeElement) {
+            setOpen(false);
+        }
+    };
 
     const handleClickOutside = (event) => {
         if (autoCloseOutside && !wrapperRef.current.contains(event.target)) {
@@ -22,16 +33,24 @@ const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOu
 
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('keydown', handleKeydown);
 
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleKeydown);
         };
     }, []);
 
     return (
         <div className="dropDown" ref={wrapperRef}>
-            <Button className={className} onClick={handleClick} aria-expanded={open}>{content}</Button>
-            {open ? <div className="dropDown-content" onClick={handleClickContent}>{children}</div> : null}
+            <Button ref={buttonRef} className={className} onClick={handleClick} aria-expanded={open}>
+                {content}
+            </Button>
+            {open ? (
+                <div className="dropDown-content" onClick={handleClickContent}>
+                    {children}
+                </div>
+            ) : null}
         </div>
     );
 };
