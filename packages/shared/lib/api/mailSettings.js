@@ -57,6 +57,12 @@ export const updateViewMode = (ViewMode) => ({
     data: { ViewMode }
 });
 
+export const updateDraftType = (MIMEType) => ({
+    url: 'settings/mail/drafttype',
+    method: 'put',
+    data: { MIMEType }
+});
+
 export const updateRightToLeft = (RightToLeft) => ({
     url: 'settings/mail/righttoleft',
     method: 'put',
