@@ -35,9 +35,12 @@ $block-info-border-width: 3px !default;
 
 [class*="block-info-standard"] {
   padding: .2em 1.2em;
+  background-color: transparent;
 }
 .block-info-standard {
   border-color: $pm-blue;
-  background-color: transparent;
+}
+.block-info-standard-error {
+  border-color: $pm-global-warning;
 }
 // other colors might be added later
