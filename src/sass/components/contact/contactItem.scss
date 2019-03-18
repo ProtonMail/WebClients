@@ -558,7 +558,8 @@ contact-pgp contact-item ul.contactItem-container {
 
 /* Validation */
 
-.contactItem-validation {
+.contactItem-validation,
+.contactItem-itemEdit {
     min-width: 100%;
     border-left: 1px solid transparent; /* fix WTF for IE11 */
 }
