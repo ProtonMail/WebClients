@@ -1,6 +1,6 @@
-import React, { useState, onEffect } from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
-import { Label, Checkbox, useApiWithoutResult, useSettings } from 'react-components';
+import { Label, Checkbox, useApiWithoutResult, useSettings, useEventManager } from 'react-components';
 import { NEWS } from 'proton-shared/lib/constants';
 import { updateNews } from 'proton-shared/lib/api/settings';
 import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
@@ -9,13 +9,17 @@ const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA } = NEWS;
 
 const NewsCheckboxes = () => {
     const { News } = useSettings();
+    const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateNews);
     const [news, setNews] = useState(News);
-    const handleChange = (mask) => setNews(toggleBit(news, mask));
 
-    onEffect(() => {
-        request(news); // No need to call the even manager here
-    }, [news]);
+    const handleChange = async (mask) => {
+        const newNews = toggleBit(news, mask);
+
+        setNews(newNews);
+        await request(newNews);
+        await call();
+    };
 
     return (
         <>

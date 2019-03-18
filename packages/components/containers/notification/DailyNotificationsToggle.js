@@ -1,16 +1,18 @@
-import React, { onEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Toggle, useToggle, useSettings } from 'react-components';
+import { Toggle, useToggle, useSettings, useApiWithoutResult } from 'react-components';
 
 const DailyNotificationsToggle = ({ id }) => {
     const { Email } = useSettings();
+    const { request, loading } = useApiWithoutResult(); // TODO add API config
     const { state, toggle } = useToggle(!!Email.Notify);
 
-    onEffect(() => {
-        // TODO call API
-    }, [state]);
+    const handleChange = ({ target }) => {
+        toggle();
+        request(target.checked);
+    };
 
-    return <Toggle checked={state} id={id} onChange={toggle} />;
+    return <Toggle disabled={loading} checked={state} id={id} onChange={handleChange} />;
 };
 
 DailyNotificationsToggle.propTypes = {

@@ -52,6 +52,7 @@ const Select = ({ options, disabled, className, onChange, onBlur, onFocus, ...re
 
 Select.propTypes = {
     disabled: PropTypes.bool,
+    size: PropTypes.number.isRequired,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
     onFocus: PropTypes.func,
@@ -62,7 +63,8 @@ Select.propTypes = {
 
 Select.defaultProps = {
     multiple: false,
-    className: ''
+    className: '',
+    size: 1
 };
 
 export default Select;
