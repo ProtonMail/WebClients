@@ -9,7 +9,8 @@
 
 .moveElement-container button + button { border-radius: 0 }
 body[id^="secured-trash"],
-body[id^="secured-drafts"] {
+body[id^="secured-drafts"],
+body[id^="secured-allDrafts"] {
     .moveElement-btn-trash { display: none }
 }
 
@@ -17,18 +18,21 @@ body[id^="secured-allmail"],
 body[id^="secured-search"],
 body[id^="secured-spam"],
 body[id^="secured-drafts"],
+body[id^="secured-allDrafts"],
 body[id^="secured-trash"]  {
     .moveElement-btn-delete { display: inline-block !important; }
 }
 
 body[id^="secured-inbox"] .moveElement-btn-inbox { display: none !important  }
 body[id^="secured-sent"] .moveElement-btn-inbox { display: none !important }
+body[id^="secured-allSent"] .moveElement-btn-inbox { display: none !important }
 body[id^="secured-archive"] .moveElement-btn-archive { display: none !important }
 body[id^="secured-spam"] .moveElement-btn-spam { display: none !important }
 
 /* exceptions for groups */
 body[id^="secured-inbox"] .pm_buttons .moveElement-btn-spam,
 body[id^="secured-sent"] .pm_buttons .moveElement-btn-spam,
+body[id^="secured-allSent"] .pm_buttons .moveElement-btn-spam,
 body[id^="secured-starred"] .pm_buttons .moveElement-btn-spam,
 body[id^="secured-archive"] .pm_buttons .moveElement-btn-spam,
 body[id^="secured-label"] .pm_buttons .moveElement-btn-spam {
@@ -36,6 +40,7 @@ body[id^="secured-label"] .pm_buttons .moveElement-btn-spam {
     border-radius: 0 2px 2px 0;
 }
 body[id^="secured-drafts"] .pm_buttons .moveElement-btn-inbox,
+body[id^="secured-allDrafts"] .pm_buttons .moveElement-btn-inbox,
 body[id^="secured-trash"] .pm_buttons .moveElement-btn-inbox {
     border-radius: 2px 0 0 2px;
 }
