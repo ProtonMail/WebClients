@@ -1,18 +1,40 @@
 import React from 'react';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { SubTitle, Alert, Row, Label, SmallButton, useModal, InputModal } from 'react-components';
+import { Link } from 'react-router-dom';
+import {
+    SubTitle,
+    Alert,
+    Row,
+    Label,
+    Text,
+    SmallButton,
+    useModal,
+    useOrganization,
+    InputModal,
+    useApiWithoutResult
+} from 'react-components';
 import { updateOrganizationName } from 'proton-shared/lib/api/organization';
+import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import useApi from '../../hooks/useApi';
-
-const OrganizationSection = ({ organization }) => {
-    const api = useApi();
+const OrganizationSection = () => {
+    const { request } = useApiWithoutResult(updateOrganizationName);
+    const [organization] = useOrganization();
+    const {
+        Name,
+        UsedMembers,
+        MaxMembers,
+        MaxSpace,
+        UsedVPN,
+        MaxVPN,
+        UsedDomains,
+        MaxDomains,
+        UsedAddresses,
+        MaxAddresses
+    } = organization;
     const { isOpen, open, close } = useModal();
-    const { Name = '' } = organization.data;
+
     const handleSubmit = (name) => async () => {
-        await api(updateOrganizationName(name));
+        await request(name);
         close();
     };
 
@@ -23,7 +45,7 @@ const OrganizationSection = ({ organization }) => {
             <Row>
                 <Label>{c('Label').t`Organization name`}</Label>
                 <div>
-                    <span className="pm-label mr1">{Name}</span>
+                    <Text className="mr1">{Name}</Text>
                     <SmallButton onClick={open}>{c('Action').t`Edit`}</SmallButton>
                     <InputModal
                         show={isOpen}
@@ -36,14 +58,38 @@ const OrganizationSection = ({ organization }) => {
                     />
                 </div>
             </Row>
+            <Row>
+                <Label>{c('Label').t`Number of users`}</Label>
+                <Text>
+                    {`${UsedMembers}/${MaxMembers}`} <Link to="todo">{c('Link').t`Upgrade`}</Link>
+                </Text>
+            </Row>
+            <Row>
+                <Label>{c('Label').t`Organization storage`}</Label>
+                <Text>
+                    {humanSize(MaxSpace)} <Link to="todo">{c('Link').t`Upgrade`}</Link>
+                </Text>
+            </Row>
+            <Row>
+                <Label>{c('Label').t`VPN connections`}</Label>
+                <Text>
+                    {`${UsedVPN}/${MaxVPN}`} <Link to="todo">{c('Link').t`Upgrade`}</Link>
+                </Text>
+            </Row>
+            <Row>
+                <Label>{c('Label').t`Addresses`}</Label>
+                <Text>
+                    {`${UsedAddresses}/${MaxAddresses}`} <Link to="todo">{c('Link').t`Upgrade`}</Link>
+                </Text>
+            </Row>
+            <Row>
+                <Label>{c('Label').t`Domains`}</Label>
+                <Text>
+                    {`${UsedDomains}/${MaxDomains}`} <Link to="todo">{c('Link').t`Upgrade`}</Link>
+                </Text>
+            </Row>
         </>
     );
 };
 
-OrganizationSection.propTypes = {
-    organization: PropTypes.object.isRequired
-};
-
-const mapStateToProps = ({ organization }) => ({ organization });
-
-export default connect(mapStateToProps)(OrganizationSection);
+export default OrganizationSection;
