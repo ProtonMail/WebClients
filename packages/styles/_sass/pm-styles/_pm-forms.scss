@@ -91,6 +91,9 @@ select.pm-field {
   &:focus + .pm-checkbox-fakecheck {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
+  &[disabled] + .pm-checkbox-fakecheck {
+    background: $pm-global-muted;
+  }
 }
 
 
@@ -117,6 +120,9 @@ select.pm-field {
   }
   &:focus + .pm-radio-fakeradio {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+  }
+  &[disabled] + .pm-radio-fakeradio {
+    background: $pm-global-muted;
   }
 }
 
