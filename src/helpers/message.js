@@ -104,8 +104,8 @@ export async function decrypt({ Body = '' } = {}, password) {
  *   - 3: is inbox and sent (a message sent to yourself)
  * if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
  *
- * @param {String} labelID label id to which it is moved
  * @param {Message} message
+ * @param {String} labelID label id to which it is moved
  * @returns {Array}
  */
 export const getLabelIDsMoved = (message, labelID) => {
