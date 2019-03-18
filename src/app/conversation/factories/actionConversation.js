@@ -429,7 +429,7 @@ function actionConversation(
 
                 _.each(messages, (message) => {
                     const { LabelIDs = [], ID, Unread } = message;
-                    const copyLabelIDsAdded = getLabelIDsMoved(labelID, message);
+                    const copyLabelIDsAdded = getLabelIDsMoved(message, labelID);
                     const copyLabelIDsRemoved = _.filter(LabelIDs, (labelID) => _.includes(folderIDs, labelID));
 
                     acc.events.push({

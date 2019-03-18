@@ -37,9 +37,9 @@ function foldersMessage(dispatchers, gettextCatalog, $compile, mailboxIdentifers
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
 
-            const build = ({ LabelIDs, Type }) => {
+            const build = ({ LabelIDs = [], Type }) => {
                 let template = '';
-                Array.isArray(LabelIDs) && (template += getTemplateLabels(LabelIDs));
+                LabelIDs.length && (template += getTemplateLabels(LabelIDs));
                 angular.isNumber(Type) && (template += getTemplateType(Type));
 
                 // Compile the template to bind the tooltip etc.
