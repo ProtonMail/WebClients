@@ -1,3 +1,20 @@
+# [3.15.21] - 2019-03-19
+
+## Fixed
+
+- The Delete button was not visible in the Drafts folder
+- The trash icon disappeared if you move a message to trash twice from the All Mail folder
+- Contacts were missing after export
+- Creating a contact on IE was broken
+- French leaks in the English translations
+- Link for beta was not clickable on the german version
+- "Too many recent API requests" error was shown when exporting contacts
+
+
+## Added
+
+- ECC key generation
+
 # [3.15.20] - 2019-03-06
 
 ## Fixed
