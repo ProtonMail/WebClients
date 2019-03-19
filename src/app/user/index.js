@@ -1,7 +1,7 @@
 import humanVerification from './directives/humanVerification';
 import signupCreationProcess from './directives/signupCreationProcess';
 import signupHumanForm from './directives/signupHumanForm';
-import signupLink from './directives/signupLink';
+import linkWebsite from './directives/linkWebsite';
 import addressesSelector from './directives/addressesSelector';
 import addressesSection from './directives/addressesSection';
 import pmSignatureToggle from './directives/pmSignatureToggle';
@@ -35,7 +35,7 @@ export default angular
     .directive('humanVerification', humanVerification)
     .directive('signupCreationProcess', signupCreationProcess)
     .directive('signupHumanForm', signupHumanForm)
-    .directive('signupLink', signupLink)
+    .directive('linkWebsite', linkWebsite)
     .directive('addressesSelector', addressesSelector)
     .directive('addressesSection', addressesSection)
     .directive('pmSignatureToggle', pmSignatureToggle)
