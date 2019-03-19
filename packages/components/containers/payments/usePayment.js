@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'React';
+import { useState, useEffect } from 'react';
 
 const usePayment = (submit) => {
     const [method, setMethod] = useState('');
