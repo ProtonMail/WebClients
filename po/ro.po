@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2019-02-08 12:27\n"
+"PO-Revision-Date: 2019-03-19 10:58\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:59
 msgctxt "1 of 2 contacts successfully imported."
@@ -67,7 +67,7 @@ msgstr "<p>Au fost create prea multe conturi ProtonMail prin conexiunea dvs.</p>
 "                 <p>De aceea, solicităm verificări suplimentare pentru a ne asigura că sunteți o persoană și nu un robot de spam.</p>\n"
 "                 <p>Deoarece Tor sau VPN-urile gratuite sunt frecvent abuzate de cei care fac spam, această verificare poate fi declanșată din cauza nodului de ieșire Tor sau VPN pe care îl utilizați.</p>"
 
-#: ./src/app/message/factories/messageActions.js:167
+#: ./src/app/message/factories/messageActions.js:175
 msgctxt "Action"
 msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
@@ -79,13 +79,6 @@ msgstr[2] "{{number}} de mesaje mutate în {{folder}}"
 msgctxt "Action"
 msgid "<i class=\"fa fa-lock\"></i> Submit"
 msgstr "<i class=\"fa fa-lock\"></i> Trimitere"
-
-#: ./src/templates/contact/contactEncryptionModal.tpl.html:34
-msgctxt "Action"
-msgid "<span ng-if=\"ctrl.directSave\" translate-context=\"Action\" translate=\"\">Save</span>\n"
-"                    <span ng-if=\"!ctrl.directSave\" translate-context=\"Action\" translate=\"\">Done</span>"
-msgstr "<span ng-if=\"ctrl.directSave\" translate-context=\"Action\" translate=\"\">Salvare</span>\n"
-"                    <span ng-if=\"!ctrl.directSave\" translate-context=\"Action\" translate=\"\">Gata</span>"
 
 #: ./src/templates/bridge/bridgeFreePanel.tpl.html:2
 msgctxt "Action"
@@ -165,7 +158,7 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr "Adăugare autorăspuns"
 
-#: ./src/templates/filter/modal.tpl.html:120
+#: ./src/templates/filter/modal.tpl.html:121
 msgctxt "Action"
 msgid "Add condition"
 msgstr "Adăugare condiție"
@@ -203,7 +196,7 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr "Adăugare filtre"
 
-#: ./src/templates/filter/modal.tpl.html:196
+#: ./src/templates/filter/modal.tpl.html:197
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
@@ -214,13 +207,13 @@ msgctxt "Action"
 msgid "Add key"
 msgstr "Adăugare cheie"
 
-#: ./src/templates/filter/modal.tpl.html:142
+#: ./src/templates/filter/modal.tpl.html:143
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
 msgstr "Adăugare etichetă"
 
-#: ./src/templates/address/addressKeysView.tpl.html:13
+#: ./src/templates/address/addressKeysView.tpl.html:11
 msgctxt "Action"
 msgid "Add new key"
 msgstr "Adăugare cheie nouă"
@@ -331,6 +324,11 @@ msgctxt "Action"
 msgid "Apply"
 msgstr "Aplicare"
 
+#: ./src/templates/directives/composer/composer.tpl.html:74
+msgctxt "Action"
+msgid "Attachments"
+msgstr "Atașamente"
+
 #. form option
 #: ./src/templates/views/account.tpl.html:249
 #: ./src/templates/views/account.tpl.html:271
@@ -387,10 +385,11 @@ msgstr "CC BCC"
 #: ./src/templates/contact/contactPhotoModal.tpl.html:13
 #: ./src/templates/contact/contactSelectorForm.tpl.html:71
 #: ./src/templates/contact/importContactModal.tpl.html:14
+#: ./src/templates/contact/removeContactListModal.tpl.html:55
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
-#: ./src/templates/filter/modal.tpl.html:242
+#: ./src/templates/filter/modal.tpl.html:243
 #: ./src/templates/modals/activateOrganization.tpl.html:25
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -405,16 +404,16 @@ msgstr "CC BCC"
 #: ./src/templates/modals/exportKeyModal.tpl.html:17
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
 #: ./src/templates/modals/generate.tpl.html:74
-#: ./src/templates/modals/generateOrganization.tpl.html:17
+#: ./src/templates/modals/generateOrganization.tpl.html:49
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
-#: ./src/templates/modals/member.tpl.html:90
+#: ./src/templates/modals/member.tpl.html:123
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
-#: ./src/templates/modals/setupOrganization.tpl.html:82
+#: ./src/templates/modals/setupOrganization.tpl.html:101
 #: ./src/templates/modals/squire/addFile.tpl.html:27
 #: ./src/templates/modals/squire/addLink.tpl.html:27
 #: ./src/templates/modals/switchPasswordMode.tpl.html:73
@@ -502,6 +501,16 @@ msgctxt "Action"
 msgid "Change password"
 msgstr "Schimbare parolă"
 
+#: ./src/templates/formUtils/codeVerificator.tpl.html:81
+msgctxt "Action"
+msgid "Change verification email"
+msgstr "Schimbare e-mail de verificare"
+
+#: ./src/templates/formUtils/codeVerificator.tpl.html:85
+msgctxt "Action"
+msgid "Change verification number"
+msgstr "Schimbare număr de verificare"
+
 #: ./src/templates/contact/contactPhotoRow.tpl.html:27
 #: ./src/templates/directives/core/bugModalView.tpl.html:113
 msgctxt "Action"
@@ -539,6 +548,7 @@ msgstr "Apăsați aici pentru reîncercare"
 #: ./src/templates/contact/importContactModal.tpl.html:3
 #: ./src/templates/contact/manageContactGroupModal.tpl.html:9
 #: ./src/templates/contact/manageContactGroupModal.tpl.html:93
+#: ./src/templates/contact/removeContactListModal.tpl.html:7
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:3
 #: ./src/templates/dashboard/customVpnModal.tpl.html:3
 #: ./src/templates/directives/composer/composer-header.tpl.html:44
@@ -580,12 +590,12 @@ msgstr "Apăsați aici pentru reîncercare"
 #: ./src/templates/modals/feedback.tpl.html:18
 #: ./src/templates/modals/feedback.tpl.html:3
 #: ./src/templates/modals/generate.tpl.html:6
-#: ./src/templates/modals/generateOrganization.tpl.html:3
+#: ./src/templates/modals/generateOrganization.tpl.html:9
 #: ./src/templates/modals/hotkey.tpl.html:101
 #: ./src/templates/modals/hotkey.tpl.html:3
 #: ./src/templates/modals/humanVerification.tpl.html:3
 #: ./src/templates/modals/label.tpl.html:11
-#: ./src/templates/modals/member.tpl.html:3
+#: ./src/templates/modals/member.tpl.html:9
 #: ./src/templates/modals/organizationRecovery.tpl.html:3
 #: ./src/templates/modals/pay.tpl.html:107
 #: ./src/templates/modals/pay.tpl.html:16
@@ -626,7 +636,7 @@ msgctxt "Action"
 msgid "Common login problems"
 msgstr "Probleme frecvente de conectare"
 
-#: ./src/templates/user/humanVerification.tpl.html:82
+#: ./src/templates/user/humanVerification.tpl.html:92
 msgctxt "Action"
 msgid "Complete setup"
 msgstr "Finalizare configurare"
@@ -681,12 +691,10 @@ msgctxt "Action"
 msgid "Create a new folder"
 msgstr "Creare folder"
 
-#: ./src/templates/contact/dropdownGroups.tpl.html:46
+#: ./src/templates/contact/dropdownGroups.tpl.html:47
 msgctxt "Action"
-msgid "Create a new group\n"
-"            <i class=\"dropdown-folder-create-value\">{{searchValue}}</i>"
-msgstr "Creare grup nou\n"
-"            <i class=\"dropdown-folder-create-value\">{{searchValue}}</i>"
+msgid "Create a new group"
+msgstr "Creare grup nou"
 
 #: ./src/templates/labels/createLabel.tpl.html:7
 msgctxt "Action"
@@ -729,7 +737,7 @@ msgstr "Decriptare"
 #: ./src/app/address/directives/addressBtnActions.js:8
 #: ./src/app/labels/directives/actionLabelBtn.js:16
 #: ./src/app/members/directives/memberEditBtn.js:6
-#: ./src/templates/address/addressKeysView.tpl.html:207
+#: ./src/templates/address/addressKeysView.tpl.html:205
 #: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:34
@@ -744,7 +752,7 @@ msgctxt "Action"
 msgid "Delete"
 msgstr "Ștergere"
 
-#: ./src/templates/directives/composer/composer.tpl.html:106
+#: ./src/templates/directives/composer/composer.tpl.html:109
 msgctxt "Action"
 msgid "Delete draft"
 msgstr "Ștergere ciornă"
@@ -779,7 +787,7 @@ msgctxt "Action"
 msgid "Disabled"
 msgstr "Dezactivat"
 
-#: ./src/templates/directives/composer/composer.tpl.html:113
+#: ./src/templates/directives/composer/composer.tpl.html:116
 msgctxt "Action"
 msgid "Discard"
 msgstr "Renunțare"
@@ -806,7 +814,7 @@ msgctxt "Action"
 msgid "Donate"
 msgstr "Donați"
 
-#: ./src/templates/contact/contactEncryptionModal.tpl.html:45
+#: ./src/templates/contact/contactEncryptionModal.tpl.html:43
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:29
 msgctxt "Action"
 msgid "Done"
@@ -889,7 +897,7 @@ msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
 msgstr "Activare autentificare cu doi factori"
 
-#: ./src/templates/address/addressKeysView.tpl.html:102
+#: ./src/templates/address/addressKeysView.tpl.html:100
 msgctxt "Action"
 msgid "Enable encryption"
 msgstr "Activare criptare"
@@ -899,7 +907,7 @@ msgctxt "Action"
 msgid "Enable multi-user support"
 msgstr "Activare suport multiutilizator"
 
-#: ./src/templates/address/addressKeysView.tpl.html:125
+#: ./src/templates/address/addressKeysView.tpl.html:123
 msgctxt "Action"
 msgid "Enable signature verification"
 msgstr "Activare verificare semnătură"
@@ -927,7 +935,8 @@ msgctxt "Action"
 msgid "Encrypting attachments"
 msgstr "Criptare atașament"
 
-#: ./src/templates/directives/composer/composer.tpl.html:91
+#: ./src/templates/directives/composer/composer.tpl.html:104
+#: ./src/templates/directives/composer/composer.tpl.html:93
 msgctxt "Action"
 msgid "Encryption"
 msgstr "Criptare"
@@ -947,23 +956,24 @@ msgctxt "Action"
 msgid "Expand"
 msgstr "Extindere"
 
-#: ./src/templates/directives/composer/composer.tpl.html:76
+#: ./src/templates/directives/composer/composer.tpl.html:77
+#: ./src/templates/directives/composer/composer.tpl.html:90
 msgctxt "Action"
 msgid "Expiration time"
 msgstr "Dată expirare"
 
 #: ./src/app/address/services/deleteKeyProcess.js:33
-#: ./src/templates/address/addressKeysView.tpl.html:148
-#: ./src/templates/address/addressKeysView.tpl.html:162
-#: ./src/templates/message/message.tpl.html:241
+#: ./src/templates/address/addressKeysView.tpl.html:146
+#: ./src/templates/address/addressKeysView.tpl.html:160
+#: ./src/templates/message/message.tpl.html:242
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
 msgstr "Exportare"
 
 #: ./src/templates/modals/domain/dmarc.tpl.html:35
-#: ./src/templates/modals/setupOrganization.tpl.html:85
-#: ./src/templates/modals/welcome.tpl.html:67
+#: ./src/templates/modals/setupOrganization.tpl.html:104
+#: ./src/templates/modals/welcome.tpl.html:66
 #: ./src/templates/partials/wizard.tpl.html:55
 msgctxt "Action"
 msgid "Finish"
@@ -999,7 +1009,7 @@ msgid "Fullscreen"
 msgstr "Pe tot ecranul"
 
 #: ./src/templates/modals/generate.tpl.html:75
-#: ./src/templates/modals/generateOrganization.tpl.html:18
+#: ./src/templates/modals/generateOrganization.tpl.html:55
 msgctxt "Action"
 msgid "Generate Keys"
 msgstr "Generare chei"
@@ -1031,7 +1041,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr "Ascunde"
 
-#: ./src/templates/message/message.tpl.html:253
+#: ./src/templates/message/message.tpl.html:254
 msgctxt "Action"
 msgid "Hide details"
 msgstr "Ascunde detalii"
@@ -1063,7 +1073,7 @@ msgctxt "Action"
 msgid "Import contacts"
 msgstr "Importare contacte"
 
-#: ./src/templates/address/addressKeysView.tpl.html:14
+#: ./src/templates/address/addressKeysView.tpl.html:12
 msgctxt "Action"
 msgid "Import key"
 msgstr "Importare cheie"
@@ -1122,7 +1132,7 @@ msgctxt "Action"
 msgid "Load edison theme"
 msgstr "Încărcare temă edison"
 
-#: ./src/templates/contact/contactViewItem.tpl.html:53
+#: ./src/templates/contact/contactViewItem.tpl.html:56
 msgctxt "Action"
 msgid "Load image"
 msgstr "Încărcare imagine"
@@ -1150,7 +1160,7 @@ msgctxt "Action"
 msgid "Make Admin"
 msgstr "Administrator"
 
-#: ./src/templates/address/addressKeysView.tpl.html:172
+#: ./src/templates/address/addressKeysView.tpl.html:170
 msgctxt "Action"
 msgid "Make Primary"
 msgstr "Setare ca primară"
@@ -1218,12 +1228,12 @@ msgctxt "Action"
 msgid "Mark as unread - Mark as read"
 msgstr "Marcare ca necitit - Marcare ca citit"
 
-#: ./src/templates/address/addressKeysView.tpl.html:194
+#: ./src/templates/address/addressKeysView.tpl.html:192
 msgctxt "Action"
 msgid "Mark compromised"
 msgstr "Marcare compromise"
 
-#: ./src/templates/address/addressKeysView.tpl.html:181
+#: ./src/templates/address/addressKeysView.tpl.html:179
 msgctxt "Action"
 msgid "Mark obsolete"
 msgstr "Marcare învechite"
@@ -1306,7 +1316,7 @@ msgid "Never show"
 msgstr "Nu mai arăta"
 
 #: ./src/templates/address/selectAddressModal.tpl.html:18
-#: ./src/templates/contact/contactLoaderModal.tpl.html:127
+#: ./src/templates/contact/contactLoaderModal.tpl.html:128
 #: ./src/templates/directives/paginator.tpl.html:37
 #: ./src/templates/directives/paginator.tpl.html:44
 #: ./src/templates/directives/paginatorScope.tpl.html:30
@@ -1319,7 +1329,7 @@ msgstr "Nu mai arăta"
 #: ./src/templates/modals/domain/mx.tpl.html:47
 #: ./src/templates/modals/domain/spf.tpl.html:36
 #: ./src/templates/modals/domain/verification.tpl.html:39
-#: ./src/templates/modals/setupOrganization.tpl.html:84
+#: ./src/templates/modals/setupOrganization.tpl.html:103
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:38
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:20
 msgctxt "Action"
@@ -1331,7 +1341,6 @@ msgctxt "Action"
 msgid "Next tip"
 msgstr "Următorul sfat"
 
-#: ./src/app/contact/factories/contactSpam.js:15
 #: ./src/app/user/directives/signupLink.js:8
 msgctxt "Action"
 msgid "No"
@@ -1394,7 +1403,7 @@ msgctxt "Action"
 msgid "Previous"
 msgstr "Anteriorul"
 
-#: ./src/templates/message/message.tpl.html:245
+#: ./src/templates/message/message.tpl.html:246
 #: ./src/templates/utils/printModal.tpl.html:28
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
@@ -1402,7 +1411,7 @@ msgid "Print"
 msgstr "Imprimare"
 
 #. Form checkbox option
-#: ./src/templates/modals/member.tpl.html:26
+#: ./src/templates/modals/member.tpl.html:34
 msgctxt "Action"
 msgid "Private"
 msgstr "Privat"
@@ -1440,7 +1449,7 @@ msgctxt "Action"
 msgid "RE-SIGN"
 msgstr "RESEMNARE"
 
-#: ./src/templates/address/addressKeysView.tpl.html:140
+#: ./src/templates/address/addressKeysView.tpl.html:138
 msgctxt "Action"
 msgid "Reactivate"
 msgstr "Reactivare"
@@ -1571,22 +1580,23 @@ msgstr "Deconectare alte sesiuni"
 #. contact details
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:48
 #: ./src/templates/contact/contactActionHeader.tpl.html:31
-#: ./src/templates/contact/contactEncryptionModal.tpl.html:41
+#: ./src/templates/contact/contactEncryptionModal.tpl.html:39
 #: ./src/templates/contact/contactGroupModal.tpl.html:115
 #: ./src/templates/contact/contactLoaderModal.tpl.html:120
 #: ./src/templates/contact/contactModal.tpl.html:23
 #: ./src/templates/contact/contactPhotoModal.tpl.html:19
+#: ./src/templates/contact/removeContactListModal.tpl.html:61
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:42
 #: ./src/templates/dashboard/customVpnModal.tpl.html:20
-#: ./src/templates/directives/composer/composer.tpl.html:116
-#: ./src/templates/directives/composer/composer.tpl.html:123
+#: ./src/templates/directives/composer/composer.tpl.html:119
+#: ./src/templates/directives/composer/composer.tpl.html:126
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:248
+#: ./src/templates/filter/modal.tpl.html:249
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
 #: ./src/templates/modals/label.tpl.html:75
-#: ./src/templates/modals/member.tpl.html:91
+#: ./src/templates/modals/member.tpl.html:124
 #: ./src/templates/organization/organizationFormName.tpl.html:25
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:45
@@ -1632,7 +1642,7 @@ msgstr "Selectare mesaje"
 
 #: ./src/app/composer/directives/btnSendMessage.js:28
 #: ./src/app/composer/directives/btnSendMessage.js:31
-#: ./src/templates/formUtils/codeVerificator.tpl.html:13
+#: ./src/templates/formUtils/codeVerificator.tpl.html:47
 #: ./src/templates/modals/feedback.tpl.html:19
 #: ./src/templates/views/outside.reply.tpl.html:44
 msgctxt "Action"
@@ -1645,7 +1655,7 @@ msgctxt "Action"
 msgid "Send anyway"
 msgstr "Trimitere așa"
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:26
+#: ./src/templates/formUtils/codeVerificator.tpl.html:70
 msgctxt "Action"
 msgid "Send new code"
 msgstr "Trimitere cod nou"
@@ -1688,7 +1698,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr "Afișare toate"
 
-#: ./src/templates/message/message.tpl.html:252
+#: ./src/templates/message/message.tpl.html:253
 msgctxt "Action"
 msgid "Show details"
 msgstr "Afișare detalii"
@@ -1928,17 +1938,17 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr "Afișare combinații taste"
 
-#: ./src/templates/message/message.tpl.html:237
+#: ./src/templates/message/message.tpl.html:238
 msgctxt "Action"
 msgid "View headers"
 msgstr "Afișare antete"
 
-#: ./src/templates/message/message.tpl.html:232
+#: ./src/templates/message/message.tpl.html:233
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr "Afișare HTML generat"
 
-#: ./src/templates/message/message.tpl.html:228
+#: ./src/templates/message/message.tpl.html:229
 msgctxt "Action"
 msgid "View source code"
 msgstr "Afișare cod sursă"
@@ -1952,11 +1962,6 @@ msgstr "Ce este asta?"
 msgctxt "Action"
 msgid "Wipe"
 msgstr "Golire"
-
-#: ./src/app/contact/factories/contactSpam.js:14
-msgctxt "Action"
-msgid "Yes"
-msgstr "Da"
 
 #: ./src/templates/user/signupCreationProcess.tpl.html:15
 #: ./src/templates/views/account.tpl.html:115
@@ -2151,7 +2156,7 @@ msgctxt "App folder"
 msgid "Trash"
 msgstr "Gunoi"
 
-#: ./src/app/message/services/messageBuilder.js:196
+#: ./src/app/message/services/messageBuilder.js:197
 msgctxt "Ask user to use encrypted subject"
 msgid "The selected message has an encrypted subject.\n"
 "                ProtonMail does not support sending an encrypted subject.\n"
@@ -2364,7 +2369,7 @@ msgstr "Atașamentele sunt limitate la {{number}} MB."
 
 #: ./src/app/composer/directives/composerDropzone.js:39
 msgctxt "Composer"
-msgid "Attachments are limited to {{number}} MBB. Total attached would be: {{total}} MB."
+msgid "Attachments are limited to {{number}} MB. Total attached would be: {{total}} MB."
 msgstr "Atașamentele sunt limitate la {{number}} MB. Total atașamente: {{total}} MB."
 
 #: ./src/app/composer/directives/composerDropzone.js:26
@@ -3241,24 +3246,24 @@ msgctxt "Default text for the confirm button in the confirm modal"
 msgid "Confirm"
 msgstr "Confirmare"
 
-#: ./src/app/utils/filters/delay.js:35
+#: ./src/app/utils/filters/delay.js:32
 #: ./src/templates/composer/composerExpiration.tpl.html:33
 msgctxt "Delay"
 msgid "Days"
 msgstr "Zile"
 
-#: ./src/app/utils/filters/delay.js:39
+#: ./src/app/utils/filters/delay.js:33
 #: ./src/templates/composer/composerExpiration.tpl.html:46
 msgctxt "Delay"
 msgid "Hours"
 msgstr "Ore"
 
-#: ./src/app/utils/filters/delay.js:43
+#: ./src/app/utils/filters/delay.js:34
 msgctxt "Delay"
 msgid "Minutes"
 msgstr "Minute"
 
-#: ./src/app/utils/filters/delay.js:47
+#: ./src/app/utils/filters/delay.js:35
 msgctxt "Delay"
 msgid "Seconds"
 msgstr "Secunde"
@@ -3472,6 +3477,11 @@ msgctxt "Error"
 msgid "Due to credit card processing fees, we cannot accept donations smaller than 2."
 msgstr "Datorită costurilor de procesare a tranzacțiilor cu cardul, nu putem accepta donații mai mici decât 2."
 
+#: ./src/templates/formUtils/codeVerificator.tpl.html:33
+msgctxt "Error"
+msgid "Email required"
+msgstr "Adresa de e-mail este obligatorie"
+
 #. key generation progrss
 #: ./src/templates/modals/generate.tpl.html:64
 msgctxt "Error"
@@ -3605,6 +3615,7 @@ msgstr "Cod de cupon invalid"
 #: ./src/templates/directives/contact/contactItem.tpl.html:136
 #: ./src/templates/directives/core/bugModalView.tpl.html:74
 #: ./src/templates/filter/filterAddressModal.tpl.html:28
+#: ./src/templates/formUtils/codeVerificator.tpl.html:34
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:30
 #: ./src/templates/user/signupUserForm.tpl.html:54
 msgctxt "Error"
@@ -3626,6 +3637,11 @@ msgstr "Tip fișier nevalid"
 msgctxt "Error"
 msgid "Invalid form"
 msgstr "Formular nevalid"
+
+#: ./src/templates/formUtils/codeVerificator.tpl.html:42
+msgctxt "Error"
+msgid "Invalid format (country and/or number)"
+msgstr "Format nevalid (țară și/sau număr)"
 
 #: ./src/app/core/controllers/signup.js:25
 #: ./src/app/payment/factories/paymentModel.js:16
@@ -3733,7 +3749,7 @@ msgctxt "Error"
 msgid "Organization keys already active"
 msgstr "Cheile organizației sunt deja active"
 
-#: ./src/app/organization/modals/generateOrganizationModal.js:106
+#: ./src/app/organization/modals/generateOrganizationModal.js:105
 msgctxt "Error"
 msgid "Organization keys change successful"
 msgstr "Schimbare reușită chei organizație"
@@ -3798,6 +3814,11 @@ msgstr "Solicitare expirată, încercați din nou."
 msgctxt "Error"
 msgid "Reset code is required"
 msgstr "Este necesar codul de resetare"
+
+#: ./src/templates/formUtils/codeVerificator.tpl.html:41
+msgctxt "Error"
+msgid "SMS number required"
+msgstr "Numărul pentru SMS este obligatoriu"
 
 #: ./src/app/composer/factories/composerFromModel.js:21
 msgctxt "Error"
@@ -3939,7 +3960,7 @@ msgctxt "Error"
 msgid "Unsupported auth version"
 msgstr "Versiune de autentificare nesuportată"
 
-#: ./src/app/keys/factories/importPrivateKey.js:68
+#: ./src/app/keys/factories/importPrivateKey.js:63
 msgctxt "Error"
 msgid "Unsupported key"
 msgstr "Cheie nesuportată"
@@ -4151,12 +4172,12 @@ msgctxt "Error label modal"
 msgid "Invalid label name"
 msgstr "Nume etichetă nevalid"
 
-#: ./src/app/keys/factories/importPrivateKey.js:120
+#: ./src/app/keys/factories/importPrivateKey.js:119
 msgctxt "Error message"
 msgid "Invalid private key file."
 msgstr "Fișier cheie privată nevalidă."
 
-#: ./src/app/keys/factories/importPrivateKey.js:35
+#: ./src/app/keys/factories/importPrivateKey.js:32
 msgctxt "Error message"
 msgid "Uploaded key doesn't match selected key."
 msgstr "Cheia încărcată nu se potrivește cu cheia selectată."
@@ -4194,7 +4215,7 @@ msgctxt "Example user"
 msgid "thomas.anderson"
 msgstr "tudor.andrei"
 
-#: ./src/templates/modals/member.tpl.html:15
+#: ./src/templates/modals/member.tpl.html:23
 msgctxt "Exemple name for the user"
 msgid "ex: Thomas Anderson"
 msgstr "ex.: Tudor Andrei"
@@ -4236,32 +4257,32 @@ msgctxt "Filter message"
 msgid "Subject"
 msgstr "Subiect"
 
-#: ./src/templates/filter/modal.tpl.html:60
+#: ./src/templates/filter/modal.tpl.html:55
 msgctxt "Filter modal condition"
 msgid "If"
 msgstr "Dacă"
 
-#: ./src/templates/filter/modal.tpl.html:102
+#: ./src/templates/filter/modal.tpl.html:97
 msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr "Text sau model"
 
-#: ./src/templates/filter/modal.tpl.html:129
+#: ./src/templates/filter/modal.tpl.html:130
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr "Aplicare etichete"
 
-#: ./src/templates/filter/modal.tpl.html:204
+#: ./src/templates/filter/modal.tpl.html:205
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr "Marcare ca"
 
-#: ./src/templates/filter/modal.tpl.html:150
+#: ./src/templates/filter/modal.tpl.html:151
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr "Mutare în"
 
-#: ./src/templates/filter/modal.tpl.html:229
+#: ./src/templates/filter/modal.tpl.html:230
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr "Trimitere autorăspuns"
@@ -4306,7 +4327,7 @@ msgctxt "Filter modal type"
 msgid "the subject"
 msgstr "subiectul"
 
-#: ./src/templates/filter/modal.tpl.html:96
+#: ./src/templates/filter/modal.tpl.html:91
 msgctxt "Filter modal value OR value"
 msgid "or"
 msgstr "sau"
@@ -4351,11 +4372,13 @@ msgid "Gift code accepted"
 msgstr "Cod cadou acceptat"
 
 #: ./src/templates/contact/contactSelectorForm.tpl.html:37
+#: ./src/templates/contact/removeContactListModal.tpl.html:33
 msgctxt "Header"
 msgid "Email"
 msgstr "E-mail"
 
 #: ./src/templates/contact/contactSelectorForm.tpl.html:36
+#: ./src/templates/contact/removeContactListModal.tpl.html:32
 msgctxt "Header"
 msgid "Name"
 msgstr "Nume"
@@ -4503,7 +4526,7 @@ msgstr "* NU uitați această parolă. Dacă o uitați, nu vă veți mai putea c
 
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:16
 #: ./src/templates/modals/changePassword.tpl.html:32
-#: ./src/templates/modals/setupOrganization.tpl.html:53
+#: ./src/templates/modals/setupOrganization.tpl.html:72
 msgctxt "Info"
 msgid "* Do NOT forget this password. If you forget it, you will not be able to manage your organization."
 msgstr "* NU uitați această parolă. Dacă o uitați, nu veți mai putea să vă gestionați organizația."
@@ -4511,7 +4534,7 @@ msgstr "* NU uitați această parolă. Dacă o uitați, nu veți mai putea să v
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:17
 #: ./src/templates/modals/changePassword.tpl.html:28
 #: ./src/templates/modals/changePassword.tpl.html:33
-#: ./src/templates/modals/setupOrganization.tpl.html:54
+#: ./src/templates/modals/setupOrganization.tpl.html:73
 msgctxt "Info"
 msgid "* Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "* Salvați parola undeva în siguranță. Apăsați pe pictograma <i class=\"fa fa-eye\"></i> pentru a confirma că ați introdus corect parola."
@@ -4528,6 +4551,11 @@ msgid_plural "{{number}} conversations moved to {{folder}}"
 msgstr[0] "O conversație mutată în {{folder}}"
 msgstr[1] "{{number}} conversații mutate în {{folder}}"
 msgstr[2] "{{number}} de conversații mutate în {{folder}}"
+
+#: ./src/templates/modals/member.tpl.html:116
+msgctxt "Info"
+msgid "4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys. Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes"
+msgstr "Cheile cu 4096 biți funcţionează numai pe calculatoare de înaltă performanță. Pentru majoritatea utilizatorilor, recomandăm utilizarea cheilor de 2048 de biţi. Făcând clic pe <strong>Salvare</strong> se vor genera chei de criptare ce pot bloca ProtonMail timp de câteva minute"
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:2
 msgctxt "Info"
@@ -4777,11 +4805,6 @@ msgctxt "Info"
 msgid "A <a ui-sref=\"secured.dashboard({scroll: true})\">paid plan</a> is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts."
 msgstr "Este necesar un <a ui-sref=\"secured.dashboard({scroll: true})\">plan plătit</a> pentru a ascunde semnătura ProtonMail. Veniturile din planurile cu plată ne permit să continuăm suportarea conturilor gratuite."
 
-#: ./src/app/elements/services/removeElement.js:17
-msgctxt "Info"
-msgid "A draft selected is open in a composer, this action will close the composer and delete the message."
-msgstr "O ciornă selectată este în proces de compunere, această acțiune va închide compunerea și va șterge mesajul."
-
 #: ./src/app/authentication/interceptors/httpInterceptor.js:18
 msgctxt "Info"
 msgid "A new version of ProtonMail is available. Please refresh this page."
@@ -4840,7 +4863,7 @@ msgctxt "Info"
 msgid "Address updated"
 msgstr "Adresă actualizată"
 
-#: ./src/app/contact/factories/contactEncryptionSaver.js:11
+#: ./src/app/contact/factories/contactEncryptionSaver.js:19
 msgctxt "Info"
 msgid "Advanced settings saved"
 msgstr "Setări avansate salvate"
@@ -4850,7 +4873,7 @@ msgctxt "Info"
 msgid "All uploaded keys are expired or revoked! Encryption is automatically disabled."
 msgstr "Toate cheile încărcate sunt expirate sau revocate! Criptarea a fost dezactivată automat."
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:56
+#: ./src/app/organization/modals/setupOrganizationModal.js:57
 msgctxt "Info"
 msgid "Already used"
 msgstr "Deja folosit"
@@ -4915,13 +4938,13 @@ msgid "Are you sure you want to delete this filter?"
 msgstr "Sigur doriți ștergerea acestui filtru?"
 
 #: ./src/app/labels/services/manageLabels.js:48
-#: ./src/app/settings/controllers/labels.js:119
+#: ./src/app/settings/controllers/labels.js:121
 msgctxt "Info"
 msgid "Are you sure you want to delete this folder? Messages in the folders aren’t deleted if the folder is deleted, they can still be found in all mail. If you want to delete all messages in a folder, move them to trash."
 msgstr "Sigur doriți ștergerea acestui folder? Mesajele din folder nu sunt șterse dacă folderul este șters, ele încă putând fi găsite în toate mesajele. Dacă doriți să ștergeți toate mesajele dintr-un folder, mutați-le în gunoi."
 
 #: ./src/app/labels/services/manageLabels.js:54
-#: ./src/app/settings/controllers/labels.js:129
+#: ./src/app/settings/controllers/labels.js:131
 msgctxt "Info"
 msgid "Are you sure you want to delete this label? Removing a label will not remove the messages with that label."
 msgstr "Sigur doriți să ștergeți această etichetă? Ștergerea unei etichete nu va șterge mesajele etichetate cu ea."
@@ -5047,7 +5070,7 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "Apăsând pe Trimitere, sunteți de acord să respectați"
 
-#: ./src/app/composer/controllers/composeMessage.js:139
+#: ./src/app/composer/controllers/composeMessage.js:140
 #: ./src/app/routes.js:401
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
@@ -5132,12 +5155,12 @@ msgctxt "Info"
 msgid "Credit card payment is currently not available, please try again later."
 msgstr "Plata cu cardul de credit nu este disponibilă momentan, reîncercați mai târziu."
 
-#: ./src/templates/modals/setupOrganization.tpl.html:69
+#: ./src/templates/modals/setupOrganization.tpl.html:88
 msgctxt "Info"
 msgid "Currently all available VPN connections are allocated to the administrator account. Please select the number of connections you want to reserve for additional users."
 msgstr "Momentan toate conexiunile VPN sunt alocate contului administratorului. Selectați numărul de conexiuni dorite a fi rezervate utilizatorilor suplimentari."
 
-#: ./src/templates/modals/setupOrganization.tpl.html:58
+#: ./src/templates/modals/setupOrganization.tpl.html:77
 msgctxt "Info"
 msgid "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account."
 msgstr "Momentan tot spațiul disponibil este alocat contului administratorului. Reduceți alocarea pentru contul admin pentru a elibera spațiu pentru utilizatori suplimentari. Puteți mări spațiul total oricând trecând la un cont cu plată."
@@ -5258,7 +5281,7 @@ msgctxt "Info"
 msgid "Drop file or click here"
 msgstr "Plasați un fișier sau apăsați aici"
 
-#: ./src/app/composer/controllers/composeMessage.js:191
+#: ./src/app/composer/controllers/composeMessage.js:192
 msgctxt "Info"
 msgid "Email was already sent"
 msgstr "E-mailul a fost deja trimis"
@@ -5357,6 +5380,11 @@ msgctxt "Info"
 msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> to get unlimited filters."
 msgstr "Conturile ProtonMail gratuite sunt limitate la un singur filtru personal. Vă rugăm faceți <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> pentru a obține filtre nelimitate."
 
+#: ./src/templates/modals/generateOrganization.tpl.html:39
+msgctxt "Info"
+msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
+msgstr "Generarea cheilor pe 4096 biți poate bloca browserul dvs. Cheile pe 4096 biți sunt recomandate numai pentru calculatoare cu înalte performanțe - nu sunt recomandate pentru tablete sau dispozitive mobile."
+
 #: ./src/templates/modals/generate.tpl.html:33
 msgctxt "Info"
 msgid "Generating RSA 4096-bit encryption keys may crash or freeze your browser. RSA 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
@@ -5429,7 +5457,7 @@ msgctxt "Info"
 msgid "It can take up to a day for DNS changes to update."
 msgstr "Poate dura până la o zi pentru ca modificările DNS să fie actualizate."
 
-#: ./src/app/core/controllers/signup.js:109
+#: ./src/app/core/controllers/signup.js:114
 msgctxt "Info"
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
 msgstr "Momentan nu este posibilă abonarea la un plan plătit ProtonMail."
@@ -5504,7 +5532,7 @@ msgctxt "Info"
 msgid "Maximized"
 msgstr "Mărit"
 
-#: ./src/app/composer/controllers/composeMessage.js:602
+#: ./src/app/composer/controllers/composeMessage.js:601
 msgctxt "Info"
 msgid "Message discarded"
 msgstr "Mesaj anulat"
@@ -5623,7 +5651,7 @@ msgctxt "Info"
 msgid "Other administrators exist in your organization, you are responsible for communicating the new password to them."
 msgstr "Există și alți administratori în cadrul organizației, sunteți responsabil să le comunicați noua parolă."
 
-#: ./src/templates/modals/generateOrganization.tpl.html:13
+#: ./src/templates/modals/generateOrganization.tpl.html:45
 msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
 msgstr "Mai există și alți administratori în organizație. Trebuie să le comunicați noua parolă de recuperare pentru a-și putea reactiva drepturile de administrator."
@@ -5683,7 +5711,7 @@ msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
 msgstr "Plățile sunt momentan nedisponibile, vă rugăm încercați mai târziu."
 
-#: ./src/app/composer/controllers/composeMessage.js:585
+#: ./src/app/composer/controllers/composeMessage.js:584
 msgctxt "Info"
 msgid "Permanently delete this draft?"
 msgstr "Ștergeți definitiv această ciornă?"
@@ -5719,12 +5747,12 @@ msgctxt "Info"
 msgid "Please add the following TXT record:"
 msgstr "Adăugați următoarea înregistrare TXT:"
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:19
+#: ./src/templates/formUtils/codeVerificator.tpl.html:57
 msgctxt "Info"
 msgid "Please check your email and enter the code below:"
 msgstr "Verificați-vă adresa de e-mail și introduceți mai jos codul:"
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:20
+#: ./src/templates/formUtils/codeVerificator.tpl.html:58
 msgctxt "Info"
 msgid "Please check your mobile and enter the code below:"
 msgstr "Verificați-vă telefonul mobil și introduceți mai jos codul:"
@@ -5744,7 +5772,7 @@ msgctxt "Info"
 msgid "Please enter your organization recovery password:"
 msgstr "Introduceți parola de recuperare a organizației:"
 
-#: ./src/templates/modals/member.tpl.html:86
+#: ./src/templates/modals/member.tpl.html:119
 msgctxt "Info"
 msgid "Please give the address and temporary password to the new member so they can log in."
 msgstr "Transmiteți adresa și parola temporară noului membru pentru a se putea conecta."
@@ -5769,6 +5797,11 @@ msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
 msgstr "Vă rugăm să treceți la un plan cu plată pentru aceste funcții speciale."
 
+#: ./src/app/formUtils/directives/codeVerificator.js:10
+msgctxt "Info"
+msgid "Please wait {{delay}} second(s) before requesting a new code"
+msgstr "Așteptați {{delay}} secunde înainte de a resolicita un cod nou"
+
 #: ./src/templates/views/members.tpl.html:173
 msgctxt "Info"
 msgid "Primary Admin"
@@ -5781,8 +5814,8 @@ msgstr "Problemă la încărcarea contului"
 
 #: ./src/templates/modals/addAddress.tpl.html:52
 msgctxt "Info"
-msgid "ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not. <a href=\"https://protonmail.com/support/knowledge-base/aliases-within-protonmail/\" target=\"_blank\">Learn more</a>"
-msgstr "Adresele ProtonMail nu pot fi șterse niciodată (doar dezactivate). Adresele ProtonMail vor fi întotdeauna contorizate la limita adreselor indiferent dacă sunt sau nu active. <a href=\"https://protonmail.com/support/knowledge-base/aliases-within-protonmail/\" target=\"_blank\">Aflați mai multe</a>"
+msgid "ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not. <a href=\"https://protonmail.com/support/knowledge-base/addresses-and-aliases/\" target=\"_blank\">Learn more</a>"
+msgstr "Adresele ProtonMail nu pot fi șterse niciodată (doar dezactivate). Adresele ProtonMail vor conta întotdeauna pentru limita de adrese fie activate sau nu. <a href=\"https://protonmail.com/support/knowledge-base/addresses-and-aliases/\" target=\"_blank\"> Aflați mai multe</a>"
 
 #: ./src/templates/partials/wizard.tpl.html:21
 msgctxt "Info"
@@ -5829,6 +5862,11 @@ msgstr "Recomandat"
 msgctxt "Info"
 msgid "Redirecting"
 msgstr "Redirecționare"
+
+#: ./src/app/ui/directives/progressionBtn.js:8
+msgctxt "Info"
+msgid "Remove the attachment {{fileName}}"
+msgstr "Se elimină atașamentul {{fileName}}"
 
 #: ./src/templates/modals/domain/address.tpl.html:7
 msgctxt "Info"
@@ -5974,6 +6012,11 @@ msgctxt "Info"
 msgid "The app will now be reloaded in a few seconds"
 msgstr "Aplicația va fi reîncărcată în câteva secunde"
 
+#: ./src/app/elements/services/removeElement.js:17
+msgctxt "Info"
+msgid "The draft(s) selected is open in a composer, this action will close the composer and delete the message."
+msgstr "Ciornele selectate sunt în proces de compunere, această acțiune va închide compunerea și va șterge mesajul."
+
 #: ./src/templates/message/messageResign.tpl.html:3
 msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
@@ -5988,6 +6031,11 @@ msgstr "Reinițializare temă! Redirecționare..."
 msgctxt "Info"
 msgid "Theme saved"
 msgstr "Temă salvată"
+
+#: ./src/templates/contact/removeContactListModal.tpl.html:18
+msgctxt "Info"
+msgid "These emails are also in your contacts. Remove them from your contacts?"
+msgstr "Aceste adrese de e-mail apar și în contacte. Le eliminați și din contacte?"
 
 #: ./src/templates/views/reset-login-password.tpl.html:183
 #: ./src/templates/views/setup.tpl.html:79
@@ -6108,8 +6156,8 @@ msgstr "Aceasta va fi noua dvs. adresă ProtonMail."
 
 #: ./src/templates/modals/setupOrganization.tpl.html:29
 msgctxt "Info"
-msgid "This will create a new encryption key for your organization."
-msgstr "Aceasta vă va crea o nouă cheie de criptare pentru organizație."
+msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
+msgstr "Aceasta va crea o cheie de criptare pentru organizație. Cheile de 4096 de biți funcționează doar pe calculatoare foarte performante. Pentru majoritatea utilizatorilor recomandăm utilizarea cheilor de 2048 de biți."
 
 #: ./src/app/dashboard/factories/downgrade.js:14
 msgctxt "Info"
@@ -6138,8 +6186,8 @@ msgstr "Pentru a afla cum să scrieți filtre Sieve,\n"
 #: ./src/templates/payment/donation.tpl.html:103
 #: ./src/templates/payment/paymentForm.tpl.html:66
 msgctxt "Info"
-msgid "To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions."
-msgstr "Pentru a plăti în numerar, trimiteți-ne un e-mail la <strong>contact@protonmail.ch</strong> pentru instrucțiuni."
+msgid "To pay via Cash, please email us at <strong>contact@protonmail.com</strong> for instructions."
+msgstr "Pentru a plăti în numerar, trimiteți-ne un e-mail la <strong>contact@protonmail.com</strong> pentru instrucțiuni."
 
 #: ./src/templates/directives/contact/contactPgp.tpl.html:43
 msgctxt "Info"
@@ -6196,7 +6244,7 @@ msgctxt "Info"
 msgid "Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character."
 msgstr "Caractere valide sunt A-Z, a-z, 0-9. (punct), _ (liniuța de subliniere) și - (cratimă). Numele de utilizator trebuie să înceapă și să se termine cu un caracter alfanumeric."
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:18
+#: ./src/templates/formUtils/codeVerificator.tpl.html:56
 msgctxt "Info"
 msgid "Verification code sent"
 msgstr "Codul de verificare a fost trimis"
@@ -6466,7 +6514,7 @@ msgctxt "Info"
 msgid "Your new features are now available."
 msgstr "Noile funcții sunt acum disponibile."
 
-#: ./src/templates/modals/setupOrganization.tpl.html:32
+#: ./src/templates/modals/setupOrganization.tpl.html:51
 msgctxt "Info"
 msgid "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe."
 msgstr "Parola organizației poate fi partajată și altora cărora doriți să le dați drepturi de administrator. Este de altfel și un cod de recuperare de urgență pentru a avea acces la organizația dvs. în cazul în care pierdeți accesul la contul dvs. Vă rugăm salvați această parolă și păstrați-o în siguranță."
@@ -6539,11 +6587,6 @@ msgstr "din"
 msgctxt "Info"
 msgid "used"
 msgstr "utilizat"
-
-#: ./src/app/contact/factories/contactSpam.js:8
-msgctxt "Info"
-msgid "{{ name }} is also in your contacts. Remove them from your contacts?"
-msgstr "{{ name }} apare și în contacte. Îl eliminați din contacte?"
 
 #: ./src/templates/views/members.tpl.html:80
 msgctxt "Info"
@@ -6648,8 +6691,8 @@ msgstr "Abonamentul dvs.\n"
 
 #: ./src/templates/modals/abuseFraudModal.tpl.html:10
 msgctxt "Info for the abuse / fraud modal"
-msgid "Account disabled for abuse or fraud."
-msgstr "Cont dezactivat pentru abuz sau fraudă."
+msgid "Account disabled for <a href=\"https://protonmail.com/support/knowledge-base/account-disabled/\" target=\"_blank\">abuse or fraud</a>."
+msgstr "Cont dezactivat pentru <a href=\"https://protonmail.com/support/knowledge-base/account-disabled/\" target=\"_blank\">abuz sau fraudă</a>."
 
 #: ./src/templates/modals/abuseFraudModal.tpl.html:11
 msgctxt "Info for the abuse / fraud modal"
@@ -6691,7 +6734,7 @@ msgctxt "Inform the user that he reach the search limit"
 msgid "Your search matched too many results. Please limit your search and try again."
 msgstr "Căutarea a găsit prea multe rezultate. Limitați căutarea și reîncercați."
 
-#: ./src/templates/modals/member.tpl.html:27
+#: ./src/templates/modals/member.tpl.html:35
 msgctxt "Information about this user"
 msgid "Organization administrators cannot access the messages of private users."
 msgstr "Administratorii organizației nu pot accesa mesajele utilizatorilor privați."
@@ -6721,7 +6764,7 @@ msgctxt "Information for the custom vpn modal"
 msgid "Need more connections?"
 msgstr "Doriți mai multe conexiuni?"
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:23
+#: ./src/templates/formUtils/codeVerificator.tpl.html:61
 msgctxt "Input for the code sent"
 msgid "Verification code"
 msgstr "Cod de verificare"
@@ -6782,35 +6825,35 @@ msgid "Created on {{created}}, {{bits}} bits (cannot be used for sending)"
 msgstr "Creată la {{created}}, {{bits}} biți (nu poate fi folosită pentru trimiteri)"
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:71
+#: ./src/templates/address/addressKeysView.tpl.html:69
 msgctxt "Key state badge"
 msgid "Active"
 msgstr "Activă"
 
-#: ./src/templates/address/addressKeysView.tpl.html:117
+#: ./src/templates/address/addressKeysView.tpl.html:115
 msgctxt "Key state badge"
 msgid "Compromised"
 msgstr "Compromisă"
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:85
+#: ./src/templates/address/addressKeysView.tpl.html:83
 msgctxt "Key state badge"
 msgid "Disabled"
 msgstr "Dezactivată"
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:78
+#: ./src/templates/address/addressKeysView.tpl.html:76
 msgctxt "Key state badge"
 msgid "Inactive"
 msgstr "Inactivă"
 
-#: ./src/templates/address/addressKeysView.tpl.html:94
+#: ./src/templates/address/addressKeysView.tpl.html:92
 msgctxt "Key state badge"
 msgid "Obsolete"
 msgstr "Învechită"
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:64
+#: ./src/templates/address/addressKeysView.tpl.html:62
 msgctxt "Key state badge"
 msgid "Primary"
 msgstr "Primară"
@@ -6820,7 +6863,7 @@ msgctxt "Label"
 msgid "2-years"
 msgstr "2 ani"
 
-#: ./src/templates/modals/member.tpl.html:63
+#: ./src/templates/modals/member.tpl.html:93
 msgctxt "Label"
 msgid "Account storage"
 msgstr "Spațiu cont"
@@ -6835,18 +6878,18 @@ msgctxt "Label"
 msgid "Add image URL"
 msgstr "Adăugare URL imagine"
 
-#: ./src/templates/modals/member.tpl.html:46
+#: ./src/templates/modals/member.tpl.html:76
 #: ./src/templates/user/identitySection.tpl.html:5
 msgctxt "Label"
 msgid "Address"
 msgstr "Adresa"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:60
+#: ./src/templates/modals/setupOrganization.tpl.html:79
 msgctxt "Label"
 msgid "Admin Account Storage:"
 msgstr "Spațiu cont administrator:"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:71
+#: ./src/templates/modals/setupOrganization.tpl.html:90
 msgctxt "Label"
 msgid "Admin VPN Connections:"
 msgstr "Conexiuni VPN admin:"
@@ -6857,7 +6900,7 @@ msgid "Annually"
 msgstr "Anual"
 
 #: ./src/app/labels/directives/dropdownFolders.js:14
-#: ./src/templates/filter/modal.tpl.html:167
+#: ./src/templates/filter/modal.tpl.html:168
 msgctxt "Label"
 msgid "Archive"
 msgstr "Arhivă"
@@ -6959,7 +7002,7 @@ msgctxt "Label"
 msgid "Do not require exact match"
 msgstr "Nu e nevoie de potrivire exactă"
 
-#: ./src/templates/modals/welcome.tpl.html:54
+#: ./src/templates/modals/welcome.tpl.html:53
 msgctxt "Label"
 msgid "Download App"
 msgstr "Descărcare aplicație"
@@ -7049,11 +7092,28 @@ msgctxt "Label"
 msgid "Gift code"
 msgstr "Cod cadou"
 
+#. form option heading
+#: ./src/templates/modals/member.tpl.html:48
+msgctxt "Label"
+msgid "High security"
+msgstr "Securitate mare"
+
+#. form option heading
+#: ./src/templates/modals/member.tpl.html:57
+msgctxt "Label"
+msgid "Highest security"
+msgstr "Securitate maximă"
+
 #: ./src/app/labels/directives/dropdownFolders.js:8
-#: ./src/templates/filter/modal.tpl.html:159
+#: ./src/templates/filter/modal.tpl.html:160
 msgctxt "Label"
 msgid "Inbox"
 msgstr "Primite"
+
+#: ./src/templates/modals/member.tpl.html:41
+msgctxt "Label"
+msgid "Key Strength"
+msgstr "Putere cheie"
 
 #: ./src/templates/vpn/openVpnSection.tpl.html:17
 msgctxt "Label"
@@ -7092,7 +7152,7 @@ msgstr "Lunar"
 
 #: ./src/templates/contact/contactGroupModal.tpl.html:28
 #: ./src/templates/modals/label.tpl.html:27
-#: ./src/templates/modals/member.tpl.html:12
+#: ./src/templates/modals/member.tpl.html:20
 msgctxt "Label"
 msgid "Name"
 msgstr "Nume"
@@ -7135,7 +7195,7 @@ msgid "Organization password:"
 msgstr "Parolă organizație:"
 
 #: ./src/templates/authentication/loginForm.tpl.html:34
-#: ./src/templates/modals/member.tpl.html:33
+#: ./src/templates/modals/member.tpl.html:63
 #: ./src/templates/modals/switchPasswordMode.tpl.html:13
 #: ./src/templates/vpn/openVpnSection.tpl.html:36
 #: ./src/templates/vpn/vpnView.tpl.html:49
@@ -7183,7 +7243,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr "Pagina ProtonVPN"
 
-#: ./src/templates/filter/modal.tpl.html:211
+#: ./src/templates/filter/modal.tpl.html:212
 msgctxt "Label"
 msgid "Read"
 msgstr "Citit"
@@ -7224,12 +7284,12 @@ msgid "Signature"
 msgstr "Semnătură"
 
 #: ./src/app/labels/directives/dropdownFolders.js:20
-#: ./src/templates/filter/modal.tpl.html:175
+#: ./src/templates/filter/modal.tpl.html:176
 msgctxt "Label"
 msgid "Spam"
 msgstr "Spam"
 
-#: ./src/templates/filter/modal.tpl.html:218
+#: ./src/templates/filter/modal.tpl.html:219
 msgctxt "Label"
 msgid "Starred"
 msgstr "Marcate"
@@ -7239,7 +7299,7 @@ msgctxt "Label"
 msgid "Start time"
 msgstr "Oră pornire"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:63
+#: ./src/templates/modals/setupOrganization.tpl.html:82
 msgctxt "Label"
 msgid "Storage for members:"
 msgstr "Spațiu pentru membri:"
@@ -7250,7 +7310,7 @@ msgid "Time zone"
 msgstr "Fus orar"
 
 #: ./src/app/labels/directives/dropdownFolders.js:26
-#: ./src/templates/filter/modal.tpl.html:183
+#: ./src/templates/filter/modal.tpl.html:184
 msgctxt "Label"
 msgid "Trash"
 msgstr "Gunoi"
@@ -7280,12 +7340,12 @@ msgctxt "Label"
 msgid "User login"
 msgstr "Conectare"
 
-#: ./src/templates/modals/member.tpl.html:74
+#: ./src/templates/modals/member.tpl.html:104
 msgctxt "Label"
 msgid "VPN Connections"
 msgstr "Conexiuni VPN"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:74
+#: ./src/templates/modals/setupOrganization.tpl.html:93
 msgctxt "Label"
 msgid "VPN Connections for members:"
 msgstr "Conexiuni VPN pentru membri:"
@@ -7453,8 +7513,8 @@ msgstr "Introduceți o parolă de criptare a cheii private înainte de exportare
 
 #: ./src/templates/modals/decryptImportKey.tpl.html:10
 msgctxt "Label in the modal which ask the user to enter his password or mailbox password"
-msgid "Enter the password for key with fingerprint <code>{{ ctrl.fingerprint }}</code>."
-msgstr "Introduceți parola pentru cheia cu amprentă <code>{{ ctrl.fingerprint }}</code>."
+msgid "Enter the password for key with fingerprint <code class=\"flex-space-left\">{{ ctrl.fingerprint }}</code>."
+msgstr "Introduceți parola pentru cheia cu amprentă <code class=\"flex-space-left\">{{ ctrl.fingerprint }}</code>."
 
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:10
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:10
@@ -7757,17 +7817,17 @@ msgstr "O cheie cu același algoritm este deja activă pentru această adresă.\
 "Dacă generați o cheie nouă deoarece cheia veche vă este compromisă, marcați mai întâi cheia respectivă ca fiind compromisă.\n"
 "Sigur doriți să continuați?"
 
-#: ./src/app/message/services/messageBuilder.js:188
+#: ./src/app/message/services/messageBuilder.js:189
 msgctxt "Message"
 msgid "Fw:"
 msgstr "Fw:"
 
-#: ./src/app/message/services/messageBuilder.js:289
+#: ./src/app/message/services/messageBuilder.js:293
 msgctxt "Message"
 msgid "On {{date}}, {{name}} {{address}} wrote:"
 msgstr "La {{date}}, {{name}} {{address}} a scris:"
 
-#: ./src/app/message/services/messageBuilder.js:187
+#: ./src/app/message/services/messageBuilder.js:188
 msgctxt "Message"
 msgid "Re:"
 msgstr "Re:"
@@ -7851,8 +7911,8 @@ msgstr "Există modificări nesalvate la persoana de contact pe care o editați.
 
 #: ./src/templates/contact/contactAskEncryptionModal.tpl.html:8
 msgctxt "Message for encryption contact modal"
-msgid "The email <span style=\"font-weight: bold;\">{{ ::ctrl.email }}</span> has PGP keys set. Do you want to enable PGP encryption for this contact?"
-msgstr "Mesajul <span style=\"font-weight: bold;\">{{ ::ctrl.email }}</span>are setate chei PGP. Doriți să activați criptarea PGP pentru acest contact?"
+msgid "The email <strong>{{ ::ctrl.email }}</strong> has PGP keys set. Do you want to enable PGP encryption for this contact?"
+msgstr "Mesajul <strong>{{ ::ctrl.email }}</strong> are setate chei PGP. Doriți să activați criptarea PGP pentru acest contact?"
 
 #: ./src/app/bugReport/factories/bugReportModel.js:18
 msgctxt "Message for report phishing modal"
@@ -8055,7 +8115,7 @@ msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr "Mesaj nou de la {{sender}}"
 
-#: ./src/app/composer/controllers/composeMessage.js:335
+#: ./src/app/composer/controllers/composeMessage.js:336
 msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
 msgstr "Ați deschis numărul maxim de ferestre de compunere permise"
@@ -8265,12 +8325,12 @@ msgctxt "Placeholder"
 msgid "City"
 msgstr "Orașul"
 
-#: ./src/templates/modals/member.tpl.html:41
+#: ./src/templates/modals/member.tpl.html:71
 msgctxt "Placeholder"
 msgid "Confirm Password"
 msgstr "Confirmați parola"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:43
+#: ./src/templates/modals/setupOrganization.tpl.html:62
 msgctxt "Placeholder"
 msgid "Confirm organization password"
 msgstr "Confirmați parola organizației"
@@ -8316,7 +8376,7 @@ msgctxt "Placeholder"
 msgid "Email address"
 msgstr "Adresă e-mail"
 
-#: ./src/templates/formUtils/codeVerificator.tpl.html:4
+#: ./src/templates/formUtils/codeVerificator.tpl.html:8
 msgctxt "Placeholder"
 msgid "Email verification"
 msgstr "Verificare e-mail"
@@ -8398,7 +8458,7 @@ msgctxt "Placeholder"
 msgid "Organization name"
 msgstr "Nume organizație"
 
-#: ./src/templates/modals/setupOrganization.tpl.html:34
+#: ./src/templates/modals/setupOrganization.tpl.html:53
 msgctxt "Placeholder"
 msgid "Organization password"
 msgstr "Parolă organizație"
@@ -8408,7 +8468,7 @@ msgstr "Parolă organizație"
 #: ./src/templates/modals/activateOrganization.tpl.html:12
 #: ./src/templates/modals/decryptImportKey.tpl.html:12
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:14
-#: ./src/templates/modals/member.tpl.html:36
+#: ./src/templates/modals/member.tpl.html:66
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:13
 msgctxt "Placeholder"
 msgid "Password"
@@ -8721,7 +8781,7 @@ msgctxt "String separator"
 msgid "and"
 msgstr "și"
 
-#: ./src/app/message/services/messageBuilder.js:192
+#: ./src/app/message/services/messageBuilder.js:193
 msgctxt "Subject"
 msgid "Encrypted Subject"
 msgstr "Subiect criptat"
@@ -8741,7 +8801,7 @@ msgctxt "Success"
 msgid "All contacts deleted"
 msgstr "S-au șters toate contactele"
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:52
+#: ./src/app/organization/modals/setupOrganizationModal.js:53
 msgctxt "Success"
 msgid "Allocated to admin"
 msgstr "Alocate administratorului"
@@ -8783,6 +8843,11 @@ msgstr "Adresă colector mesaje actualizată"
 msgctxt "Success"
 msgid "Code applied"
 msgstr "Cod aplicat"
+
+#: ./src/app/formUtils/factories/humanVerificationModel.js:7
+msgctxt "Success"
+msgid "Code sent to: {{email}}"
+msgstr "Cod trimis la: {{email}}"
 
 #: ./src/app/contact/factories/contactEditor.js:292
 msgctxt "Success"
@@ -8842,7 +8907,7 @@ msgctxt "Success"
 msgid "Encryption setting updated"
 msgstr "Setări criptare actualizate"
 
-#: ./src/app/settings/controllers/labels.js:124
+#: ./src/app/settings/controllers/labels.js:126
 msgctxt "Success"
 msgid "Folder deleted"
 msgstr "Folder șters"
@@ -8852,7 +8917,7 @@ msgctxt "Success"
 msgid "Folder emptied"
 msgstr "Folder golit"
 
-#: ./src/app/settings/controllers/labels.js:21
+#: ./src/app/settings/controllers/labels.js:22
 msgctxt "Success"
 msgid "Folder updated"
 msgstr "Folder actualizat"
@@ -8883,18 +8948,18 @@ msgctxt "Success"
 msgid "Keys reactivated"
 msgstr "Chei reactivate"
 
-#: ./src/app/settings/controllers/labels.js:134
+#: ./src/app/settings/controllers/labels.js:136
 msgctxt "Success"
 msgid "Label deleted"
 msgstr "Etichetă ștearsă"
 
 #: ./src/app/labels/services/manageLabels.js:21
-#: ./src/app/settings/controllers/labels.js:168
+#: ./src/app/settings/controllers/labels.js:170
 msgctxt "Success"
 msgid "Label order saved"
 msgstr "Ordine etichete salvată"
 
-#: ./src/app/settings/controllers/labels.js:20
+#: ./src/app/settings/controllers/labels.js:21
 msgctxt "Success"
 msgid "Label updated"
 msgstr "Etichetă actualizată"
@@ -8926,7 +8991,7 @@ msgctxt "Success"
 msgid "Primary key changed"
 msgstr "Cheie primară modificată"
 
-#: ./src/app/address/directives/addressKeysView.js:241
+#: ./src/app/address/directives/addressKeysView.js:72
 msgctxt "Success"
 msgid "Private key imported"
 msgid_plural "{{$count}} Private keys imported"
@@ -8934,7 +8999,7 @@ msgstr[0] "Cheie privată importată"
 msgstr[1] "{{$count}} chei private importate"
 msgstr[2] "{{$count}} de chei private importate"
 
-#: ./src/app/address/directives/addressKeysView.js:250
+#: ./src/app/address/directives/addressKeysView.js:80
 msgctxt "Success"
 msgid "Private key reactivated"
 msgstr "Cheie privată reactivată"
@@ -8976,6 +9041,14 @@ msgstr "Setare actualizată"
 msgctxt "Success"
 msgid "Signature verification enabled"
 msgstr "Verificare semnătură activată"
+
+#: ./src/app/contact/factories/contactSpam.js:10
+msgctxt "Success"
+msgid "{{total}} email removed from your contacts"
+msgid_plural "{{total}} emails removed from your contacts"
+msgstr[0] "{{total}} adresă eliminată din contacte"
+msgstr[1] "{{total}} adrese eliminate din contacte"
+msgstr[2] "{{total}} de adrese eliminate din contacte"
 
 #: ./src/app/labels/services/manageLabels.js:61
 msgctxt "Success"
@@ -9118,8 +9191,8 @@ msgstr "Cont"
 
 #. Table heading
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:51
-#: ./src/templates/filter/modal.tpl.html:124
+#: ./src/templates/address/addressKeysView.tpl.html:49
+#: ./src/templates/filter/modal.tpl.html:125
 #: ./src/templates/invoices/invoiceList.tpl.html:7
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:204
@@ -9385,7 +9458,7 @@ msgctxt "Title"
 msgid "Change OpenVPN Password"
 msgstr "Schimbare parolă OpenVPN"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:6
+#: ./src/templates/modals/generateOrganization.tpl.html:12
 msgctxt "Title"
 msgid "Change Organization Keys"
 msgstr "Schimbare chei organizație"
@@ -9440,11 +9513,6 @@ msgctxt "Title"
 msgid "Conditions"
 msgstr "Condiții"
 
-#: ./src/app/contact/factories/contactSpam.js:6
-msgctxt "Title"
-msgid "Confirm"
-msgstr "Confirmare"
-
 #: ./src/templates/composer/composerEncrypt.tpl.html:28
 msgctxt "Title"
 msgid "Confirm Password"
@@ -9470,7 +9538,7 @@ msgctxt "Title"
 msgid "Confirm mailbox password"
 msgstr "Confirmare parolă mesaje"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:11
+#: ./src/templates/modals/generateOrganization.tpl.html:43
 msgctxt "Title"
 msgid "Confirm recovery Password"
 msgstr "Confirmare parolă de recuperare"
@@ -9544,7 +9612,7 @@ msgctxt "Title"
 msgid "Create new label"
 msgstr "Creare etichetă"
 
-#: ./src/templates/modals/member.tpl.html:6
+#: ./src/templates/modals/member.tpl.html:13
 msgctxt "Title"
 msgid "Create user"
 msgstr "Creare utilizator"
@@ -9636,7 +9704,7 @@ msgctxt "Title"
 msgid "Decrypt message"
 msgstr "Decriptare mesaj"
 
-#: ./src/app/composer/controllers/composeMessage.js:584
+#: ./src/app/composer/controllers/composeMessage.js:583
 #: ./src/app/contact/factories/contactEditor.js:338
 #: ./src/app/elements/services/removeElement.js:15
 msgctxt "Title"
@@ -9674,12 +9742,12 @@ msgctxt "Title"
 msgid "Delete domain"
 msgstr "Ștergere domeniu"
 
-#: ./src/app/settings/controllers/labels.js:112
+#: ./src/app/settings/controllers/labels.js:114
 msgctxt "Title"
 msgid "Delete folder"
 msgstr "Ștergere folder"
 
-#: ./src/app/settings/controllers/labels.js:113
+#: ./src/app/settings/controllers/labels.js:115
 msgctxt "Title"
 msgid "Delete label"
 msgstr "Ștergere etichetă"
@@ -9740,6 +9808,11 @@ msgctxt "Title"
 msgid "Do you want to re-sign the contact?"
 msgstr "Doriți să reînregistrați contactul?"
 
+#: ./src/templates/contact/removeContactListModal.tpl.html:17
+msgctxt "Title"
+msgid "Do you want to remove contact(s) ?"
+msgstr "Doriți să eliminați contactul(ele)?"
+
 #: ./src/app/composer/services/autoPinPrimaryKeys.js:17
 msgctxt "Title"
 msgid "Do you want to trust the primary key?"
@@ -9799,7 +9872,7 @@ msgid "Edit label"
 msgstr "Editare etichetă"
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:19
+#: ./src/templates/address/addressKeysView.tpl.html:17
 #: ./src/templates/contact/contactList.tpl.html:25
 #: ./src/templates/user/humanVerification.tpl.html:35
 msgctxt "Title"
@@ -9927,8 +10000,8 @@ msgid "Filters"
 msgstr "Filtre"
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:21
-#: ./src/templates/address/addressKeysView.tpl.html:48
+#: ./src/templates/address/addressKeysView.tpl.html:19
+#: ./src/templates/address/addressKeysView.tpl.html:46
 #: ./src/templates/message/trustPublicKeyInfo.tpl.html:5
 msgctxt "Title"
 msgid "Fingerprint"
@@ -10002,12 +10075,16 @@ msgstr "Ajutor și suport"
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:24
+#: ./src/templates/modals/generateOrganization.tpl.html:22
+#: ./src/templates/modals/setupOrganization.tpl.html:36
 msgctxt "Title"
 msgid "High security"
 msgstr "Securitate mare"
 
 #. form option heading
 #: ./src/templates/modals/generate.tpl.html:29
+#: ./src/templates/modals/generateOrganization.tpl.html:33
+#: ./src/templates/modals/setupOrganization.tpl.html:45
 msgctxt "Title"
 msgid "Highest security"
 msgstr "Securitate maximă"
@@ -10089,14 +10166,14 @@ msgctxt "Title"
 msgid "Key password"
 msgstr "Parola cheii"
 
-#: ./src/templates/modals/generateOrganization.tpl.html:9
+#: ./src/templates/modals/generateOrganization.tpl.html:41
 msgctxt "Title"
 msgid "Key recovery password"
 msgstr "Parolă recuperare cheie"
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:22
-#: ./src/templates/address/addressKeysView.tpl.html:49
+#: ./src/templates/address/addressKeysView.tpl.html:20
+#: ./src/templates/address/addressKeysView.tpl.html:47
 #: ./src/templates/views/members.tpl.html:360
 msgctxt "Title"
 msgid "Key type"
@@ -10241,7 +10318,7 @@ msgctxt "Title"
 msgid "New Address Key ({{ email }})"
 msgstr "Cheie nouă adresă ({{ email }})"
 
-#: ./src/app/composer/controllers/composeMessage.js:466
+#: ./src/app/composer/controllers/composeMessage.js:465
 msgctxt "Title"
 msgid "New message"
 msgstr "Mesaj nou"
@@ -10543,8 +10620,8 @@ msgstr "Resetare parolă conectare"
 
 #: ./src/app/core/controllers/support.js:50
 msgctxt "Title"
-msgid "Resetting your password means you will no longer be able to read your old emails. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Click here to learn more</a>. If you have further questions, please email contact@protonmail.ch. Are you sure you want to reset your password?"
-msgstr "Resetarea parolei înseamnă că nu veți mai putea citi vechile mesaje. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Apăsați aici pentru detalii</a>. Dacă aveți întrebări suplimentare, vă rugăm trimiteți-ne un mesaj la contact@protonmail.ch. Sunteți sigur că doriți resetarea parolei?"
+msgid "Resetting your password means you will no longer be able to read your old emails. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Click here to learn more</a>. If you have further questions, please email contact@protonmail.com. Are you sure you want to reset your password?"
+msgstr "Resetarea parolei înseamnă că nu veți mai putea citi mesajele vechi. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Apăsați aici pentru a afla mai multe</a>. Dacă aveți întrebări suplimentare, vă rugăm să ne scrieți la adresa contact@protonmail.com. Sigur reinițializați parola?"
 
 #: ./src/app/organization/modals/activateOrganizationModal.js:21
 msgctxt "Title"
@@ -10727,7 +10804,7 @@ msgstr "Dată început"
 
 #. table heading
 #. table heading for the domains page table listing of addresses
-#: ./src/templates/address/addressKeysView.tpl.html:50
+#: ./src/templates/address/addressKeysView.tpl.html:48
 #: ./src/templates/invoices/invoiceList.tpl.html:9
 #: ./src/templates/modals/generate.tpl.html:50
 #: ./src/templates/views/domains.tpl.html:197
@@ -10855,7 +10932,7 @@ msgctxt "Title"
 msgid "Unsubscribe from mailing list?"
 msgstr "Vă dezabonați de la lista de discuții?"
 
-#: ./src/templates/modals/member.tpl.html:7
+#: ./src/templates/modals/member.tpl.html:14
 msgctxt "Title"
 msgid "Update user"
 msgstr "Actualizare utilizator"
@@ -10872,7 +10949,7 @@ msgid "Use for encryption"
 msgstr "Utilizare pentru criptare"
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:20
+#: ./src/templates/address/addressKeysView.tpl.html:18
 #: ./src/templates/modals/domain/address.tpl.html:30
 msgctxt "Title"
 msgid "User"
@@ -10951,12 +11028,12 @@ msgctxt "Title"
 msgid "Welcome to your new encrypted email account"
 msgstr "Bine ați venit la noul cont de e-mail criptat"
 
-#: ./src/templates/filter/modal.tpl.html:73
+#: ./src/templates/filter/modal.tpl.html:68
 msgctxt "Title"
 msgid "With Attachments"
 msgstr "Cu atașamente"
 
-#: ./src/templates/filter/modal.tpl.html:82
+#: ./src/templates/filter/modal.tpl.html:77
 msgctxt "Title"
 msgid "Without Attachments"
 msgstr "Fără atașamente"
@@ -11135,7 +11212,7 @@ msgctxt "Tooltip"
 msgid "2-year subscription with VPN discount"
 msgstr "Reducere abonament cu VPN pe 2 ani"
 
-#: ./src/templates/modals/member.tpl.html:49
+#: ./src/templates/modals/member.tpl.html:79
 msgctxt "Tooltip"
 msgid "Address"
 msgstr "Adresa"
@@ -11268,7 +11345,7 @@ msgctxt "Tooltip"
 msgid "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited."
 msgstr "ProtonMail nu poate fi utilizat pentru mesaje trimise în masă sau spam. Mesajele legitime sunt nelimitate."
 
-#: ./src/templates/address/addressKeysView.tpl.html:64
+#: ./src/templates/address/addressKeysView.tpl.html:62
 msgctxt "Tooltip"
 msgid "ProtonMail users will use this key by default for sending"
 msgstr "Utilizatorii ProtonMail vor folosi implicit această cheie pentru trimiteri"
@@ -11313,7 +11390,7 @@ msgctxt "Tooltip"
 msgid "The primary key is used to encrypt outgoing messages."
 msgstr "Cheia primară este folosită pentru a cripta mesajele trimise."
 
-#: ./src/templates/address/addressKeysView.tpl.html:78
+#: ./src/templates/address/addressKeysView.tpl.html:76
 msgctxt "Tooltip"
 msgid "This key is encrypted with an old password"
 msgstr "Această cheie este criptată cu o parolă veche"
@@ -11330,7 +11407,7 @@ msgid "Using this key for encryption will encrypt outgoing messages\n"
 msgstr "Utilizarea acestei chei pentru criptare va cripta mesajele expediate\n"
 "                        la această adresă cu această cheie și va seta această cheie ca și cheie principală PGP pentru această adresă."
 
-#: ./src/templates/address/addressKeysView.tpl.html:71
+#: ./src/templates/address/addressKeysView.tpl.html:69
 msgctxt "Tooltip"
 msgid "You have locally decrypted this key"
 msgstr "Ați decriptat local această cheie"
@@ -11476,12 +11553,12 @@ msgctxt "Type of label for a message/conversation"
 msgid "In trash"
 msgstr "În gunoi"
 
-#: ./src/app/message/services/messageBuilder.js:193
+#: ./src/app/message/services/messageBuilder.js:194
 msgctxt "Use encrypted subject as subject"
 msgid "Yes"
 msgstr "Da"
 
-#: ./src/app/message/services/messageBuilder.js:194
+#: ./src/app/message/services/messageBuilder.js:195
 msgctxt "Use unencrypted subject as subject"
 msgid "No"
 msgstr "Nu"
@@ -11962,27 +12039,27 @@ msgctxt "info link to Addresses/Users in Signatures page"
 msgid "New Addresses can be added on"
 msgstr "Adrese noi pot fi adăugate în"
 
-#: ./src/templates/address/addressKeysView.tpl.html:181
+#: ./src/templates/address/addressKeysView.tpl.html:179
 msgctxt "key flag info"
 msgid "Disables encryption with this key"
 msgstr "Dezactivare criptare cu această cheie"
 
-#: ./src/templates/address/addressKeysView.tpl.html:194
+#: ./src/templates/address/addressKeysView.tpl.html:192
 msgctxt "key flag info"
 msgid "Disables signature verification and encryption with this key"
 msgstr "Dezactivare verificare semnătură și criptare cu această cheie"
 
-#: ./src/templates/address/addressKeysView.tpl.html:117
+#: ./src/templates/address/addressKeysView.tpl.html:115
 msgctxt "key flag info"
 msgid "Signatures produced by this key are treated as invalid and this key cannot be used for encryption"
 msgstr "Semnăturile produse de această cheie sunt considerate nevalide, iar această cheie nu poate fi folosită pentru criptare."
 
-#: ./src/templates/address/addressKeysView.tpl.html:85
+#: ./src/templates/address/addressKeysView.tpl.html:83
 msgctxt "key flag info"
 msgid "This address has been disabled"
 msgstr "Această adresă a fost dezactivată"
 
-#: ./src/templates/address/addressKeysView.tpl.html:94
+#: ./src/templates/address/addressKeysView.tpl.html:92
 msgctxt "key flag info"
 msgid "This key cannot be used for encryption"
 msgstr "Această cheie nu poate fi folosită pentru criptare"
