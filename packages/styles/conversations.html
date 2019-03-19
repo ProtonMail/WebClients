@@ -1,0 +1,94 @@
+---
+layout: default
+lang: en
+pageId: conversations
+title: Conversations (WIP)
+description: Example of styles in conversations.
+keywords: conversations, proton, examples
+section: design
+---
+
+<h2>Collapsed</h2>
+
+<div class="message-container">
+  <div class="message-header is-inbound">
+    Loremp ipsum
+  </div>
+</div>
+<br>
+<div class="message-container">
+  <div class="message-header is-outbound">
+    Loremp ipsum
+  </div>
+</div>
+
+<h2 class="mt1">Expanded</h2>
+
+<div class="message-container is-opened">
+  <div class="message-header is-inbound">
+    Loremp ipsum
+  </div>
+  <div class="message-content">
+    Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. <br><br>Cras in tortor laoreet, dapibus mi elementum, cursus ligula. Cras eget purus fringilla, congue eros rutrum, faucibus mauris. Donec condimentum ligula a nibh scelerisque, quis tincidunt erat luctus.<br><br>
+    <button class="pm-button message-expand js-seemore-email">…</button>
+    <div class="" hidden>
+      Plop
+    </div>
+  </div>
+  <div class="message-attachments">
+
+    <div class="flex flex-spacebetween mb1">
+      <span>2 Attachments (2.1 MB)</span>
+      <button class="link strong">Download all</button>      
+    </div>
+
+    <ul class="unstyled flex mb0">
+      <li class="mr1">
+        <a class="message-attachment inline-flex pm-button">
+          <span class="flex message-attachmentIcon">
+            <svg viewBox="0 0 16 16" class="mauto icon-16p" role="img" focusable="false">
+              <use xlink:href="#shape-file-image"></use>
+            </svg>  
+          </span>
+          <span class="inbl message-attachmentInfo">
+            <span class="bl">Attachmentname.jpg</span>
+            <span class="bl message-attachmentSize">JPG - 1 MB</span>
+          </span>
+        </a>
+      </li>
+      <li class="mr1">
+        <a class="message-attachment inline-flex pm-button">
+          <span class="flex message-attachmentIcon">
+            <svg viewBox="0 0 16 16" class="mauto icon-16p" role="img" focusable="false">
+              <use xlink:href="#shape-file-image"></use>
+            </svg>  
+          </span>
+          <span class="inbl message-attachmentInfo">
+            <span class="bl">Wozaaaaaaa.jpg</span>
+            <span class="bl message-attachmentSize">JPG - 1.2 MB</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+    
+  </div>
+</div>
+
+<!-- <div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 pt0-5">
+    <div class="bordered-container">
+      <div class="p1">
+        Here a classic container. For form, etc.
+      </div>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div class="bordered-container"&gt;
+  &lt;div class="p1"&gt;
+    Here a classic container. For form, etc.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div> -->
+

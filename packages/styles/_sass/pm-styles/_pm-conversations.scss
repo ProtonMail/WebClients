@@ -1,0 +1,90 @@
+/*
+ * Conversations
+ */
+.message-container {
+  border: 1px solid $pm-global-border;
+  border-radius: $global-border-radius;
+}
+.message-header {
+  background-color: $pm-global-light;
+  @extend .p1;
+  @extend .relative;
+
+  &.is-inbound::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 23px;
+    height: 17px;
+    transform: skewX(50deg) translateX(-10px);
+
+    border-top: 1px solid $pm-global-border;
+    border-left: 1px solid $pm-global-border;
+    background-color: $pm-global-light;
+  }
+
+  &.is-outbound::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 23px;
+    height: 17px;
+    transform: skewX(-50deg) translateX(10px);
+
+    border-top: 1px solid $pm-global-border;
+    border-right: 1px solid $pm-global-border;
+    background-color: $pm-global-light;
+  }
+
+}
+
+/* states classes */
+.message-container.is-opened {
+
+  > .message-header {
+      border-bottom: 1px solid $pm-global-border;
+  }
+
+}
+
+
+.message-content {
+  @extend .p1;
+}
+
+.message-expand {
+  padding: 0 .5em .6em; // centers 
+  background-color: $pm-global-light;
+  line-height: .75;
+}
+
+.message-attachments {
+  @extend .p1;
+  border-top: 1px solid $pm-global-border;
+  font-size: 1.4rem;
+}
+
+.message-attachment {
+  line-height: 1.3;
+  padding: 0;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  } 
+}
+.message-attachmentIcon {
+  width: 2.6em;
+}
+.message-attachmentInfo {
+  border-left: 1px solid $pm-global-border;
+  padding: .3em .7em;
+}
+.message-attachmentSize {
+  font-size: 1.2rem;
+  opacity: .5;
+}

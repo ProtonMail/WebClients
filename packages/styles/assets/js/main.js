@@ -19,8 +19,6 @@ Prism.languages.javascript=Prism.languages.extend("clike",{"class-name":[Prism.l
  */
 "use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var _extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},loadConfig=function(){var e={},t=function(t,n){e[t]=n},n=function(t){return e[t]},r=function(t){return e[t]};return{set:t,get:n,remove:r}},DATA_HASH_ID="data-hash-id",pluginConfig=loadConfig(),findById=function(e,t){return document.querySelector("#"+e+"["+DATA_HASH_ID+'="'+t+'"]')},addClass=function(e,t){e.classList?e.classList.add(t):e.className+=" "+t},removeClass=function(e,t){e.classList?e.classList.remove(t):e.className=e.className.replace(new RegExp("(^|\\b)"+t.split(" ").join("|")+"(\\b|$)","gi")," ")},hasClass=function(e,t){return e.classList?e.classList.contains(t):new RegExp("(^| )"+t+"( |$)","gi").test(e.className)},setAttributes=function(e,t){Object.keys(t).forEach(function(n){e.setAttribute(n,t[n])})},triggerEvent=function(e,t){if(e.fireEvent)e.fireEvent("on"+t);else{var n=document.createEvent("Events");n.initEvent(t,!0,!1),e.dispatchEvent(n)}},searchParentHashId=function(e,t){for(var n=!1,r=e;1===r.nodeType&&r&&n===!1;)r.hasAttribute(t)===!0?n=!0:r=r.parentNode;return n===!0?r.getAttribute(t):""},searchParent=function(e,t,n){for(var r=!1,_=e;_&&r===!1;)hasClass(_,t)===!0&&_.getAttribute(DATA_HASH_ID)===n?r=!0:_=_.parentNode;return r===!0?_.getAttribute("id"):""},plugin=function(){var e=arguments.length<=0||void 0===arguments[0]?{}:arguments[0],t=_extends({HIDESHOW_EXPAND:"js-expandmore",HIDESHOW_BUTTON_EXPAND:"js-expandmore-button",HIDESHOW_BUTTON_EXPAND_STYLE:"expandmore__button",HIDESHOW_BUTTON_LABEL_ID:"label_expand_",DATA_PREFIX_CLASS:"data-hideshow-prefix-class",HIDESHOW_BUTTON_EMPTY_ELEMENT_SYMBOL:"expandmore__symbol",HIDESHOW_BUTTON_EMPTY_ELEMENT_TAG:"span",ATTR_HIDESHOW_BUTTON_EMPTY_ELEMENT:"aria-hidden",HIDESHOW_TO_EXPAND_ID:"expand_",HIDESHOW_TO_EXPAND_STYLE:"expandmore__to_expand",ATTR_CONTROL:"data-controls",ATTR_EXPANDED:"aria-expanded",ATTR_LABELLEDBY:"data-labelledby",ATTR_HIDDEN:"data-hidden",IS_OPENED_CLASS:"is-opened",DISPLAY_FIRST_LOAD:"js-first_load",DISPLAY_FIRST_LOAD_DELAY:"1500"},e),n=Math.random().toString(32).slice(2,12);pluginConfig.set(n,t);var r=function(){var e=arguments.length<=0||void 0===arguments[0]?document:arguments[0];return[].slice.call(e.querySelectorAll("."+t.HIDESHOW_EXPAND))},_=function(e){r(e).forEach(function(e){var r,_,a,i=Math.random().toString(32).slice(2,12),s=e.hasAttribute(t.DATA_PREFIX_CLASS)===!0?e.getAttribute(t.DATA_PREFIX_CLASS)+"-":"",E=e.nextElementSibling,o=e.innerHTML,A=document.createElement("BUTTON"),T=document.createElement(t.HIDESHOW_BUTTON_EMPTY_ELEMENT_TAG);e.setAttribute(DATA_HASH_ID,n),addClass(T,s+t.HIDESHOW_BUTTON_EMPTY_ELEMENT_SYMBOL),setAttributes(T,(r={},_defineProperty(r,t.ATTR_HIDESHOW_BUTTON_EMPTY_ELEMENT,!0),_defineProperty(r,DATA_HASH_ID,n),r)),e.innerHTML="",addClass(A,s+t.HIDESHOW_BUTTON_EXPAND_STYLE),addClass(A,t.HIDESHOW_BUTTON_EXPAND),setAttributes(A,(_={},_defineProperty(_,t.ATTR_CONTROL,t.HIDESHOW_TO_EXPAND_ID+i),_defineProperty(_,t.ATTR_EXPANDED,"false"),_defineProperty(_,"id",t.HIDESHOW_BUTTON_LABEL_ID+i),_defineProperty(_,"type","button"),_defineProperty(_,DATA_HASH_ID,n),_)),A.innerHTML=o,e.appendChild(A),A.insertBefore(T,A.firstChild),setAttributes(E,(a={},_defineProperty(a,t.ATTR_LABELLEDBY,t.HIDESHOW_BUTTON_LABEL_ID+i),_defineProperty(a,t.ATTR_HIDDEN,"true"),_defineProperty(a,"id",t.HIDESHOW_TO_EXPAND_ID+i),_defineProperty(a,DATA_HASH_ID,n),a)),addClass(E,s+t.HIDESHOW_TO_EXPAND_STYLE),hasClass(E,t.DISPLAY_FIRST_LOAD)===!0&&setTimeout(function(){removeClass(E,t.DISPLAY_FIRST_LOAD)},t.DISPLAY_FIRST_LOAD_DELAY),hasClass(E,t.IS_OPENED_CLASS)===!0&&(addClass(A,t.IS_OPENED_CLASS),A.setAttribute(t.ATTR_EXPANDED,"true"),removeClass(E,t.IS_OPENED_CLASS),E.removeAttribute(t.ATTR_HIDDEN))})};return{attach:_}},main=function(){return["click","keydown"].forEach(function(e){document.body.addEventListener(e,function(t){var n=searchParentHashId(t.target,DATA_HASH_ID);if(""!==n){var r=pluginConfig.get(n),_=searchParent(t.target,r.HIDESHOW_BUTTON_EXPAND,n);if(""!==_&&"click"===e){var a=findById(_,n),i=findById(a.getAttribute(r.ATTR_CONTROL),n),s=a.getAttribute(r.ATTR_EXPANDED);"false"===s?(a.setAttribute(r.ATTR_EXPANDED,!0),addClass(a,r.IS_OPENED_CLASS),i.removeAttribute(r.ATTR_HIDDEN)):(a.setAttribute(r.ATTR_EXPANDED,!1),removeClass(a,r.IS_OPENED_CLASS),i.setAttribute(r.ATTR_HIDDEN,!0))}if(hasClass(t.target,r.HIDESHOW_EXPAND)===!0){var E=t.target,o=E.querySelector("."+r.HIDESHOW_BUTTON_EXPAND);if(E!=o){if("click"===e)return triggerEvent(o,"click"),!1;if("keydown"===e&&(13===t.keyCode||32===t.keyCode))return triggerEvent(o,"click"),!1}}}},!0)}),plugin};window.van11yAccessibleHideShowAria=main();var onLoad=function e(){var t=window.van11yAccessibleHideShowAria();t.attach(),document.removeEventListener("DOMContentLoaded",e)};document.addEventListener("DOMContentLoaded",onLoad);
 
-
-
 /**
  * van11y-accessible-modal-window-aria - ES2015 accessible modal window system, using ARIA (compatible IE9+ when transpiled)
  * @version v2.4.4
@@ -717,4 +715,24 @@ var loadings = [].slice.call(document.body.querySelectorAll('.js-activate-loadin
 
 loadings.forEach(function(elem) {
     elem.addEventListener("click", toggleLoadings );
+});
+
+
+
+
+function mailSeeMore( e ) {
+  var button = e.currentTarget;
+  var content = button.nextElementSibling;
+
+  button.setAttribute('hidden', true);
+  content.removeAttribute('hidden');
+
+}
+
+
+
+var moreEmails = [].slice.call(document.body.querySelectorAll('.js-seemore-email'));
+
+moreEmails.forEach(function(elem) {
+    elem.addEventListener("click", mailSeeMore );
 });

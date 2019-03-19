@@ -123,6 +123,11 @@
                     </a>
                   </li>
                   <li class="navigation__item">
+                    <a href="/conversations/" class="navigation__link"{% if page.pageId == 'conversations' %} aria-current="page"{% endif %}>
+                      Conversations (WIP)
+                    </a>
+                  </li>
+                  <li class="navigation__item">
                     <a href="/login/" class="navigation__link"{% if page.pageId == 'login' %} aria-current="page"{% endif %}>
                       Login (no nav)
                     </a>
@@ -152,9 +157,9 @@
                     </a>
                   </li>
                   <li class="navigation__item">
-                      <a href="/flexbox-helpers/" class="navigation__link"{% if page.pageId == 'flexbox-helpers' %} aria-current="page"{% endif %}>
-                        Flexbox helpers
-                      </a>
+                    <a href="/flexbox-helpers/" class="navigation__link"{% if page.pageId == 'flexbox-helpers' %} aria-current="page"{% endif %}>
+                      Flexbox helpers
+                    </a>
                     </li>
                   <li class="navigation__item">
                     <a href="/positionning-helpers/" class="navigation__link"{% if page.pageId == 'positionning-helpers' %} aria-current="page"{% endif %}>
@@ -162,10 +167,10 @@
                     </a>
                   </li>
                   <li class="navigation__item">
-                      <a href="/loading-content/" class="navigation__link"{% if page.pageId == 'loading-content' %} aria-current="page"{% endif %}>
-                        Loading content
-                      </a>
-                    </li>
+                    <a href="/loading-content/" class="navigation__link"{% if page.pageId == 'loading-content' %} aria-current="page"{% endif %}>
+                      Loading content
+                    </a>
+                  </li>
                 </ul>
               
               </nav>
