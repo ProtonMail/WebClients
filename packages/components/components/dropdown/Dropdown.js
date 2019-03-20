@@ -7,14 +7,13 @@ import Button from '../button/Button';
 const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOutside }) => {
     const [open, setOpen] = useState(isOpen);
     const wrapperRef = useRef(null);
-    const buttonRef = useRef(null);
 
     const handleClick = () => setOpen(!open);
 
     const handleKeydown = (event) => {
         const key = keycode(event);
 
-        if (key === 'escape' && buttonRef.current === document.activeElement) {
+        if (key === 'escape' && event.target === document.activeElement) {
             setOpen(false);
         }
     };
@@ -43,7 +42,7 @@ const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOu
 
     return (
         <div className="dropDown" ref={wrapperRef}>
-            <Button ref={buttonRef} className={className} onClick={handleClick} aria-expanded={open}>
+            <Button className={className} onClick={handleClick} aria-expanded={open}>
                 {content}
             </Button>
             {open ? (
