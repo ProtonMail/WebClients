@@ -4,6 +4,7 @@ import vCard from 'vcf';
 import { orderByPref } from './vcard';
 import { FIELDS } from './vCardFields';
 import { formatImage } from './imageHelper';
+import { toList } from './arrayHelper';
 
 /**
  * Check if a property is empty
@@ -92,4 +93,28 @@ export function extractAll(vcard = new vCard()) {
         },
         []
     );
+}
+
+/**
+ * Remove specific property on vCard by looking at field and group
+ * @param {vCard} vcard original
+ * @param {String} field
+ * @param {Object} group
+ * @returns {vCard} new vcard
+ */
+export function removeProperty(vcard = new vCard(), field = '', group = '') {
+    return Object.keys(vcard.data).reduce((acc, key) => {
+        toList(vcard.get(key))
+            .filter((property) => {
+                if (property.getField() === field && property.getGroup() === group) {
+                    return false;
+                }
+                return true;
+            })
+            .forEach((property) => {
+                acc.addProperty(property);
+            });
+
+        return acc;
+    }, new vCard());
 }
