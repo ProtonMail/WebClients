@@ -1,3 +1,6 @@
+import { CONTACT_CARD_TYPE } from '../../constants';
+
+const { SIGNED, ENCRYPTED_AND_SIGNED } = CONTACT_CARD_TYPE;
 /* @ngInject */
 function contactViewDetail(contactDetailsModel, dispatchers, userType, mailSettingsModel) {
     const loadImages = (scope, el) => (value) => {
@@ -28,6 +31,7 @@ function contactViewDetail(contactDetailsModel, dispatchers, userType, mailSetti
             const loadRemoteImage = loadImages(scope, el[0]);
 
             scope.isFree = userType().isFree;
+            scope.isSigned = scope.contact.types.includes(SIGNED) || scope.contact.types.includes(ENCRYPTED_AND_SIGNED);
 
             loadRemoteImage(!!mailSettingsModel.get('ShowImages'));
 
