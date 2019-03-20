@@ -4,7 +4,7 @@ import { isExpiredKey } from 'pmcrypto';
 import { PACKAGE_TYPE } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { uniqGroups } from '../../../helpers/vcard';
-import { extractAll as extractAllProperties } from '../../../helpers/vCardProperties';
+import { extractAll as extractAllProperties, removeProperty } from '../../../helpers/vCardProperties';
 
 /* @ngInject */
 function contactImportEncryption($injector, contactKey, contactAskEncryptionModal, contactKeyAssigner) {
@@ -81,54 +81,67 @@ function contactImportEncryption($injector, contactKey, contactAskEncryptionModa
          * if keys are available
          * @param contact
          */
-        const processContact = (contact) =>
-            normalize(contact).then(() => {
-                const emailList = toList(contact.vCard.get('email'));
-                const keyList = toList(contact.vCard.get('key'));
-                const encryptList = toList(contact.vCard.get('x-pm-encrypt'));
-                return asyncSequentialMap(emailList, async (emailProp) => {
-                    // first do filtering that does not require the API
-                    const group = emailProp.getGroup();
-                    const encrypts = encryptList.filter((prop) => prop.getGroup() === group);
-                    // short circuit as soon as we know we should not ask the user to enable encryption.
-                    if (encrypts.length > 0) {
-                        return;
-                    }
-                    const keys = keyList.filter((prop) => prop.getGroup() === group);
-                    if (keys.length === 0) {
-                        return;
-                    }
-                    const parsedKeys = await Promise.all(keys.map(contactKey.parseKey));
-                    const keyObjects = await Promise.all(
-                        parsedKeys
-                            .filter((k) => k)
-                            .map(([k = false]) => k)
-                            .map((k) => {
-                                if (!k) {
-                                    return Promise.resolve(k);
-                                }
-                                return isExpiredKey(k).then((isExpired) => (isExpired ? false : k));
-                            })
-                    );
+        const processContact = async (contact) => {
+            await normalize(contact);
 
-                    if (!keyObjects.some((k) => k)) {
-                        return;
-                    }
+            const emailList = toList(contact.vCard.get('email'));
+            const keyList = toList(contact.vCard.get('key'));
+            const encryptList = toList(contact.vCard.get('x-pm-encrypt'));
 
-                    const info = await sendPreferences.get([emailProp.valueOf()]);
-                    if (info.scheme === PACKAGE_TYPE.SEND_PM) {
-                        // internal user: skip
-                        return;
-                    }
+            await asyncSequentialMap(emailList, async (emailProp) => {
+                // first do filtering that does not require the API
+                const group = emailProp.getGroup();
+                const keys = keyList.filter((prop) => prop.getGroup() === group);
 
-                    // a key is set but no matching encrypt flag
-                    const encrypt = await askUserForEncryption(emailProp.valueOf());
-                    if (encrypt) {
-                        contact.vCard.add('x-pm-encrypt', 'true', { group });
-                        contact.vCard.add('x-pm-sign', 'true', { group });
-                    }
-                }).then(() => contact);
+                if (keys.length === 0) {
+                    return;
+                }
+
+                const parsedKeys = await Promise.all(keys.map(contactKey.parseKey));
+                const keyObjects = await Promise.all(
+                    parsedKeys
+                        .filter((k) => k)
+                        .map(([k = false]) => k)
+                        .map((k) => {
+                            if (!k) {
+                                return Promise.resolve(k);
+                            }
+                            return isExpiredKey(k)
+                                .then((isExpired) => (isExpired ? false : k))
+                                .catch(() => false);
+                        })
+                );
+
+                if (!keyObjects.some((k) => k)) {
+                    // Remove invalid key
+                    contact.vCard = removeProperty(contact.vCard, 'key', group);
+                    return;
+                }
+
+                const encrypts = encryptList.filter((prop) => prop.getGroup() === group);
+                // short circuit as soon as we know we should not ask the user to enable encryption.
+                if (encrypts.length > 0) {
+                    return;
+                }
+
+                const info = await sendPreferences.get([emailProp.valueOf()]);
+
+                if (info.scheme === PACKAGE_TYPE.SEND_PM) {
+                    // internal user: skip
+                    return;
+                }
+
+                // a key is set but no matching encrypt flag
+                const encrypt = await askUserForEncryption(emailProp.valueOf());
+
+                if (encrypt) {
+                    contact.vCard.add('x-pm-encrypt', 'true', { group });
+                    contact.vCard.add('x-pm-sign', 'true', { group });
+                }
             });
+
+            return contact;
+        };
 
         return asyncSequentialMap(contacts, processContact);
     };
