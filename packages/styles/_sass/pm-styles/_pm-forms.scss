@@ -38,6 +38,16 @@
     }
   }
 }
+@if $rtl-option == true {
+  [dir="rtl"] {
+    [type="search"].pm-field {
+      padding-left: 0;
+      @extend .pr2;
+      background: url("#{$path-images}sprite-for-css-only.svg#css-search-rtl") calc(100% - 6px) 50% no-repeat;
+    }
+  }
+}
+
 select.pm-field {
   background: $pm-input-background url("#{$path-images}sprite-for-css-only.svg#css-carret") calc(100% - 6px) 50% no-repeat;
   background-size: 1.5rem;

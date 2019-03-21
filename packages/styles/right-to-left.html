@@ -1,0 +1,155 @@
+---
+layout: default
+lang: en
+pageId: right-to-left
+title: Right-to-left
+description: Example of Right-To-Left adaptation
+keywords: RTL, i18n, classes, example
+section: fe-guidelines
+direction: rtl
+---
+
+<p>This is strange, right?</p>
+<p>Here are some examples with arabic lorem ipsum.</p>
+
+<div class="flex-autogrid lang="ar">
+
+  <div class="flex-autogrid-item">
+    <ul>
+      <li>ماذا واتّجه إذ الا, و إيو اتفاق بتطويق والديون, به، وجزر عالمية الولايات بل. ولم أي تنفّس مدينة والفرنسي. لكل تونس وعلى تكبّد عن, ما هذا تعداد وإعلان. أم لكل هُزم المضي ارتكبها, مرمى وحرمان بالإنزال لان من. مليون الإقتصادية جعل بـ. وفرنسا العمليات لكل ٣٠. أخذ أهّل الباهضة الأوروبية، بل, نهاية الشطر عدد هو.</li>
+      <li>جعل ٠٨٠٤ وقرى الإمداد في, وقرى مشاركة الى هو. أي لإعلان واستمر باستخدام أما. فقد لم هاربر عملية وإيطالي, يتبقّ جزيرتي والمانيا على ان. ان وبحلول شموليةً مدن, وبالرغم البولندي اقتصادية جُل مع. دنو جيما شاسعة الهادي أم, ما الصين انتصارهم الإيطالية على.</li>
+    </ul>
+  </div>
+  <div class="flex-autogrid-item">
+    <table class="pm-simple-table noborder border-collapse">
+      <caption class="sr-only">صباح الخير</caption>
+      <thead>
+        <tr>
+          <th scope="col">انا لا اتكلم العربية</th>
+          <th scope="col">صباح الخير</th>
+          <th scope="col">أبله</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>صباح الخير</td>
+          <td>انا لا اتكلم العربية</td>
+          <td><button type="button" class="pm-button">صباح الخير</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="flex-autogrid lang="ar">
+  <div class="flex-autogrid-item">
+    <div class="block-info-standard">
+        انا لا اتكلم العربية انا لا اتكلم العربية <br>انا لا اتكلم العربية
+    </div>
+  </div>
+  <div class="flex-autogrid-item">
+    <div class="information-panel bordered-container relative ml1 mr1">
+      <div class="information-panel-image flex bg-global-light">
+        <svg viewBox="0 0 16 16" class="icon-16p mauto" role="img" aria-hidden="true" focusable="false">
+          <use xlink:href="#shape-email-address"></use>
+        <svg>
+      </div>
+      <div class="information-panel-content">
+        <p>انا لا اتكلم العربية انا لا اتكلم العربية انا لا اتكلم العربية انا لا اتكلم العربية انا لا اتكلم العربية</p>
+        <p class="aligncenter">
+          <button type="button" class="pm-button-blue">صباح الخير</button>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex-autogrid-item">
+    <p class="mt0">
+      <select id="id_field6" class="pm-field">
+        <option value="">نعم</option>
+        <option value="">ليس</option>
+      </select>
+    </p>
+    <p>
+      <label for="id_field7">
+        <input type="checkbox" class="pm-checkbox" id="id_field7">
+        <span class="pm-checkbox-fakecheck">
+            <svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
+                <use xlink:href="#shape-on"></use>
+            </svg>
+        </span> 
+        نعم
+      </label>
+    </p>
+    <p>
+      <label for="id_field8" class="ml2">
+        <input type="radio" name="martian" class="pm-radio" id="id_field8" value="yaisse">
+        <span class="pm-radio-fakeradio"></span> 
+        نعم
+      </label>
+      <label for="id_field9">
+        <input type="radio" name="martian" class="pm-radio" id="id_field9" value="nooooo">
+        <span class="pm-radio-fakeradio"></span> 
+        ليس
+      </label>
+    </p>
+    <p>
+      <input type="search" id="id_field10" class="pm-field" placeholder="صباح الخير" value="">
+    </p>
+
+  </div>
+  <div class="flex-autogrid-item">
+    <ul class="breadcrumb-container unstyled inline-flex m0 pl0-5 pr0-5">
+      <li class="breadcrumb-item">
+        <button type="button" class="breadcrumb-button">صباح الخير</button>
+      </li>
+      <li class="breadcrumb-item">
+        <button type="button" class="breadcrumb-button">نعم</button>
+      </li>
+      <li class="breadcrumb-item">
+        <button type="button" class="breadcrumb-button" disabled aria-current="step">ليس</button>
+      </li>
+      <li class="breadcrumb-item">
+        <button type="button" class="breadcrumb-button">انا لا اتكلم العربية</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<hr class="mt1 mb1">
+
+<div dir="ltr" lang="en">
+
+  <h2>How to activate right-to-left option/conceive right-to-left</h2>
+
+  <ol class="ml1">
+    <li>In the global stylesheet (<code>styles-pm.scss</code>), set <code>$rtl-option: true;</code>, this will enable additionnal styles dedicated to RTL adaptations (and <span class="uppercase">not</span> in design system partials).</li>
+    <li>If an image has a real and important notion of next/previous (ex: an arrow showing something next to it), remember to flip it using <code>mirror</code> class (if mirrored version doesn't already exist).
+    <br>
+    Example: <svg viewBox="0 0 16 16" class="icon-16p" role="img" focusable="false">
+        <use xlink:href="#shape-show-all-emails"></use>
+      </svg>
+      becomes <svg viewBox="0 0 16 16" class="icon-16p mirror" role="img" focusable="false">
+          <use xlink:href="#shape-show-all-emails"></use>
+        </svg>
+        with class <code>mirror</code> on it.
+    </li>
+    <li>For SVG sprites used in a CSS, you may create the <code>use</code> adapted to RTL combined with class <code>mirror</code>, ex. <code>&lt;use id="css-search-rtl" xlink:href="#symbol-search" class="black mirror" /&gt;</code></li>
+    <li>To adapt a component that is not yet adapted, do wrap your RTL styles like this:
+<pre class="language-css "><code>.myClass { text-align: left; }
+
+<strong>@if $rtl-option == true {</strong>
+  <strong>[dir="rtl"] {</strong>
+    .myClass { text-align: right; }
+  }
+}
+</code></pre>
+     This will ensure your module is RTL-ready, but does not load RTL styles if they are not needed for another project. 
+    </li>
+  </ol>
+
+  
+  
+</div>
+
+
+

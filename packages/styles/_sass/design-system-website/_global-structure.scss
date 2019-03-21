@@ -325,6 +325,12 @@ pre[class*="language-"] {
       text-align: right;
     }
   }
+  [dir="ltr"] {
+    code[class*="language-"],
+    pre[class*="language-"] {
+      text-align: left;
+    }
+  }
 }
 
 /* Code blocks */

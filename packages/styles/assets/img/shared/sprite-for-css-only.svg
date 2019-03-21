@@ -6,7 +6,8 @@ use:target { display: block; }
 .white { fill: #fff; }
 .black { fill: #000; }
 .rotated-right,
-.rotated-left {
+.rotated-left,
+.mirror {
 -webkit-transform-origin: center;
 transform-origin: center;
 }
@@ -17,6 +18,10 @@ transform: rotateZ(-90deg);
 .rotated-left {
 -webkit-transform: rotateZ(90deg);
 transform: rotateZ(90deg);
+}
+.mirror {
+-webkit-transform: rotateY(180deg);
+transform: rotateY(180deg);
 }</style> 
 
   <symbol id="symbol-search"> 
@@ -29,6 +34,7 @@ transform: rotateZ(90deg);
   </symbol> 
   
   <use id="css-search" xlink:href="#symbol-search" class="black" />
+  <use id="css-search-rtl" xlink:href="#symbol-search" class="black mirror" />
   <use id="css-carret" xlink:href="#symbol-carret" class="black" />
   <use id="css-greater" xlink:href="#symbol-carret" class="black rotated-right" />
   <use id="css-lesser" xlink:href="#symbol-carret" class="black rotated-left" />

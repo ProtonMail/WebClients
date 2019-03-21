@@ -55,7 +55,7 @@ subsection: icons
 
   <p>Base code:</p>
 
-  <pre class=" language-markup"><code>&lt;svg viewBox="0 0 16 16" class="icon-100p" role="img" focusable="false"&gt;
+  <pre class=" language-markup"><code>&lt;svg viewBox="0 0 16 16" class="icon-16p" role="img" focusable="false"&gt;
   &lt;use xlink:href="#shape-twitter"&gt;&lt;/use&gt;
 &lt;/svg&gt;
 </code></pre>
@@ -285,8 +285,8 @@ subsection: icons
 
   <p>Some icons are used by CSS for some special cases, they are in a separate sprite in <code>assets/img/sprite-for-css-only.svg</code> (and this sprite should <strong>only</strong> be used for these rares cases).</p>
 
-  {% assign listIcons = "search#carret#greater#lesser" | split: '#' %}
-  {% assign listIconsDesc = "In <code>input search</code>#In <code>select</code>#In breadcrumb domain#In breadcrumb domain" | split: '#' %}
+  {% assign listIcons = "search#search-rtl#carret#greater#lesser" | split: '#' %}
+  {% assign listIconsDesc = "In <code>input search</code>#In <code>input search</code> (RTL)#In <code>select</code>#In breadcrumb domain#In breadcrumb domain" | split: '#' %}
 
   <div class="flex mb2">
   {% for icon in listIcons %}

@@ -399,3 +399,10 @@ $list-paddings-values: 0, 0.25, 0.5, 1, 2; // specify 2.5 if needed
   @extend .flex-item-fluid;
   padding: 0 .5em 1em;
 }
+
+
+/* RTL */
+.mirror {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
