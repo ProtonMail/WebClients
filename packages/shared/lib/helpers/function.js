@@ -3,7 +3,7 @@ export const noop = () => {};
 export const debounce = (func, wait, immediate) => {
     let timeout;
 
-    return function executedFunction({ ...args }) {
+    return function executedFunction(...args) {
         const context = this;
 
         const later = () => {
