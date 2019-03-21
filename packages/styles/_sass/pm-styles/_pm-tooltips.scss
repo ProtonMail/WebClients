@@ -1,0 +1,84 @@
+/*
+ * tooltips
+ */
+$tooltip-width: 10em;
+$arrow-width: .5em;
+
+[class*="tooltip-"][aria-hidden="true"]:not(.tooltip-container) {
+  display: none;
+}
+
+/* position relative for containers */
+.tooltip-container {
+  @extend .relative;
+  @extend .inbl;
+}
+
+/* tooltip styles */
+/* factorisation */
+[class*="tooltip-"]:not(.tooltip-container) {
+  position: absolute;
+  z-index: 666;
+  width: $tooltip-width;
+  border-radius: $global-border-radius;
+  background: $pm-global-grey;
+  color: $pm-global-light;
+  padding: .5em;
+  text-align: center;
+}
+.tooltip-top {
+  bottom: calc(100% + #{$arrow-width} + 10px ); // 100% from bottom + arrow width + small margin
+  left: calc(50% - #{$tooltip-width/2} );
+}
+.tooltip-right {
+  left: calc(100% + #{$arrow-width} + 10px );
+  top: 0;
+}
+.tooltip-bottom {
+  top: calc(100% + #{$arrow-width} + 10px ); // 100% from bottom + arrow width + small margin
+  left: calc(50% - #{$tooltip-width/2} );
+}
+.tooltip-left {
+  right: calc(100% + #{$arrow-width} + 10px );
+  top: 0;
+}
+
+/* used pseudo-element to make arrows */
+/* factorisation */
+[class*="tooltip-"]:not(.tooltip-container)::before {
+  content: '';
+  speak: none;
+  position: absolute;
+  z-index: 666;
+  width: $arrow-width;
+  height: $arrow-width;
+  pointer-events: none;
+}
+
+.tooltip-top::before {
+  top: 100%;
+  left: calc(50% - #{$arrow-width} );
+  border: $arrow-width solid transparent;
+  border-top: $arrow-width solid $pm-global-grey;
+}
+.tooltip-right::before {
+  top: calc(50% - #{$arrow-width} );
+  left: -#{$arrow-width*2};
+  border: $arrow-width solid transparent;
+  border-right: $arrow-width solid $pm-global-grey;
+}
+.tooltip-bottom::before {
+  bottom: 100%;
+  left: calc(50% - #{$arrow-width} );
+  border: $arrow-width solid transparent;
+  border-bottom: $arrow-width solid $pm-global-grey;
+}
+.tooltip-left::before {
+  top: calc(50% - #{$arrow-width} );
+  right: -#{$arrow-width*2};
+  border: $arrow-width solid transparent;
+  border-left: $arrow-width solid $pm-global-grey;
+}
+
+
+/* responsive ? */

@@ -30,9 +30,9 @@ section: fe-guidelines
   </li>
   <li class="mb0-5"><strong>pm-styles</strong>: styles used <strong>for ProtonMail V4</strong>.
     <ul>
-        {% assign sassFiles = "pm-badges#pm-layout#pm-notifications#pm-table#pm-modal#pm-buttons#pm-forms#pm-dropdown#pm-progressBar#pm-loadingcontent#pm-containers#pm-breadcrumb-domain#pm-panels" | split: '#' %}
-        {% assign links = "/badges/#/containers/#/notifications/#/table/#/modals/#/buttons/#/forms/#/drop-down/#/#/loading-content/#/containers/#/containers/#/containers/" | split: '#' %}
-        {% assign linksDesc = "badges#containers#notifications#tables#modals#buttons#forms#drop downs#on each page on the left bottom#loading content#containers#breadcrumb domain#information panels" | split: '#' %}
+        {% assign sassFiles = "pm-badges#pm-layout#pm-notifications#pm-table#pm-modal#pm-buttons#pm-forms#pm-dropdown#pm-progressBar#pm-loadingcontent#pm-containers#pm-breadcrumb-domain#pm-panels#pm-conversations#pm-tooltips" | split: '#' %}
+        {% assign links = "/badges/#/containers/#/notifications/#/table/#/modals/#/buttons/#/forms/#/drop-down/#/#/loading-content/#/containers/#/containers/#/containers/#/conversations/#/tooltips/" | split: '#' %}
+        {% assign linksDesc = "badges#containers#notifications#tables#modals#buttons#forms#drop downs#on each page on the left bottom#loading content#containers#breadcrumb domain#information panels#conversations#tooltips" | split: '#' %}
         {% for file in sassFiles %}
         <li><strong>_{{ file }}.scss</strong>: <a href="{{ links[forloop.index0] }}">see {{ linksDesc[forloop.index0] }}</a></li>
         {% endfor %}

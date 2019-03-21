@@ -1,0 +1,47 @@
+---
+layout: default
+lang: en
+pageId: tooltips
+title: Tooltips
+description: The tooltips used in Proton Products.
+keywords: tooltips, code
+section: design
+---
+
+<h2>Tooltip examples</h2>
+
+<div class="flex flex-spacebetween">
+  <div>
+    <p><button class="js-tooltip pm-button" data-tooltip-text="Cool, it works!" data-tooltip-prefix-class="tooltip-right">Show me another tooltip</button></p>
+  </div>
+  <div>
+    <p><button class="js-tooltip pm-button" data-tooltip-text="Cool, it works!" data-tooltip-prefix-class="tooltip-top">Hover or focus me to show the tooltip</button></p>
+
+    <p><button class="js-tooltip pm-button" data-tooltip-text="Cool, it works!" data-tooltip-prefix-class="tooltip-bottom">Show me another tooltip on bottom</button></p>
+  </div>
+  <div>
+    <p><button class="js-tooltip pm-button" data-tooltip-text="Cool, it works!" data-tooltip-prefix-class="tooltip-left">Show me another tooltip</button></p>
+  </div>
+</div>
+
+<h2>Design pattern</h2>
+
+<ul>
+  <li>Tooltip can be triggered by keyboard focus or mouse.</li>
+  <li>Tooltip and the element that triggered it are linked via <code>aria-describedby="a_random_id"</code>.</li>
+  <li>Activating a tooltip removes <code>aria-hidden="true"</code> on it.</li>
+  <li>Using <kbd>Esc</kbd> closes the tooltip.</li>
+</ul>
+
+<h2>Tooltip code</h2>
+
+<pre class=" language-markup"><code>&lt;span class="tooltip-container"&gt;
+  &lt;!-- tooltip-container is used to position the tooltip, relative to --&gt;
+  &lt;button class="js-tooltip pm-button" <strong>aria-describedby="a_random_id"</strong>&gt;
+    Show me another tooltip
+  &lt;/button&gt;
+  &lt;span class="<strong>tooltip-top|bottom|left|right</strong>" <strong>id="a_random_id" role="tooltip" aria-hidden="true"</strong>&gt;
+    Cool, it works!
+  &lt;/span&gt;
+&lt;/span&gt;</code></pre>
+
