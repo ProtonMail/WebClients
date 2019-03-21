@@ -254,6 +254,11 @@ export default angular
                         controller: 'SupportController',
                         templateUrl: require('../templates/layout/auth.tpl.html')
                     }
+                },
+                resolve: {
+                    i18n(i18nLoader) {
+                        return i18nLoader.translate();
+                    }
                 }
             })
 
