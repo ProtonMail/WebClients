@@ -1,7 +1,7 @@
 export const MAIN_USER_KEY = 'USER_KEYS';
 export const SECURE_SESSION_STORAGE_KEY = 'SECURE';
 export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
-export const UID_KEY = 'proton:UID';
+export const UID_KEY = 'proton:oauth:UID';
 export const INTERVAL_EVENT_TIMER = 30 * 1000;
 export const EVENT_ACTIONS = {
     DELETE: 0,

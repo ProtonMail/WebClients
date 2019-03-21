@@ -11,6 +11,11 @@ const deserialize = (string) => {
 
 const serialize = (data) => JSON.stringify(data);
 
+/**
+ * Deserialize an item
+ * @param {string} value
+ * @return {Uint8Array}
+ */
 const deserializeItem = (value) => {
     if (!value) {
         return;
@@ -22,6 +27,11 @@ const deserializeItem = (value) => {
     }
 };
 
+/**
+ * Serialize an item
+ * @param {Uint8Array} value
+ * @return {String}
+ */
 const serializeItem = (value) => {
     if (!value) {
         return;
@@ -29,6 +39,36 @@ const serializeItem = (value) => {
     return encodeBase64(arrayToBinaryString(value));
 };
 
+/**
+ * TODO: Replace this with one key when the other apps have been updated.
+ * @param {Array} keys
+ * @param {Object} data
+ */
+const saveSessionStorage = (keys = [], data) => {
+    keys.forEach((key) => {
+        window.sessionStorage.setItem(key, serialize(data[key]));
+    }, {});
+};
+
+/**
+ * TODO: Replace this with one key when the other apps have been updated.
+ * @param {Array} keys
+ * @return {Object}
+ */
+const readSessionStorage = (keys = []) => {
+    return keys.reduce((acc, key) => {
+        acc[key] = deserialize(window.sessionStorage.getItem(key));
+        window.sessionStorage.removeItem(key);
+        return acc;
+    }, {});
+};
+
+/**
+ * Parts two parts into an object.
+ * @param {Object} share1
+ * @param {Object} share2
+ * @return {Object}
+ */
 export const mergeParts = (share1, share2) =>
     Object.keys(share1).reduce((acc, key) => {
         const share1Value = deserializeItem(share1[key]);
@@ -54,6 +94,11 @@ export const mergeParts = (share1, share2) =>
         return acc;
     }, {});
 
+/**
+ * Separate an object in two parts.
+ * @param {Object} data
+ * @return {{share1: {}, share2: {}}}
+ */
 export const separateParts = (data) =>
     Object.keys(data).reduce(
         (acc, key) => {
@@ -75,19 +120,28 @@ export const separateParts = (data) =>
         { share1: {}, share2: {} }
     );
 
-export const save = (key, data) => {
+/**
+ * Save data to name storage and session storage.
+ * @param {Array} keys
+ * @param {Object} data
+ */
+export const save = (keys, data) => {
     const { share1, share2 } = separateParts(data);
 
     window.name = serialize(share1);
-    window.sessionStorage.setItem(key, serialize(share2));
+    saveSessionStorage(keys, share2);
 };
 
-export const load = (key) => {
+/**
+ * Load data from name storage and session storage.
+ * @param {Array} keys
+ * @return {Object}
+ */
+export const load = (keys) => {
     const nameStorage = deserialize(window.name);
     window.name = '';
 
-    const sessionData = deserialize(window.sessionStorage.getItem(key));
-    window.sessionStorage.removeItem(key);
+    const sessionData = readSessionStorage(keys);
 
     return mergeParts(nameStorage, sessionData);
 };
