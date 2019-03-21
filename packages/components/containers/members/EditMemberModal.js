@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { c } from 'ttag';
 import {
     Modal,
@@ -13,14 +12,16 @@ import {
     Input,
     useApiWithoutResult,
     useNotifications,
-    useEventManager
+    useEventManager,
+    useOrganization
 } from 'react-components';
 
 import MemberStorageSelector from './MemberStorageSelector';
 import MemberVPNSelector from './MemberVPNSelector';
 import { updateName, updateQuota, updateVPN } from 'proton-shared/lib/api/members';
 
-const EditMemberModal = ({ show, onClose, member, organization }) => {
+const EditMemberModal = ({ show, onClose, member }) => {
+    const [organization] = useOrganization();
     const { call } = useEventManager();
     const [model, updateModel] = useState({ name: member.Name, storage: member.MaxSpace, vpn: member.MaxVPN });
     const { createNotification } = useNotifications();
@@ -76,10 +77,7 @@ const EditMemberModal = ({ show, onClose, member, organization }) => {
 EditMemberModal.propTypes = {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
-    member: PropTypes.object.isRequired,
-    organization: PropTypes.object.isRequired
+    member: PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ organization: { data: organization } }) => ({ organization });
-
-export default connect(mapStateToProps)(EditMemberModal);
+export default EditMemberModal;

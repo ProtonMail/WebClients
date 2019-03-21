@@ -1,7 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import {
     Dropdown,
     DropdownMenu,
@@ -20,8 +19,8 @@ const { STATUS_DISABLED, STATUS_ENABLED } = ADDRESS_STATUS;
 const { READABLE, UNREADABLE } = MEMBER_PRIVATE;
 
 const AddressActions = ({ address, user, member }) => {
-    const { Status, Type, ID } = address;
     const { call } = useEventManager();
+    const { Status, Type, ID } = address;
     const { request: requestDelete } = useApiWithoutResult(deleteAddress);
     const { request: requestEnable } = useApiWithoutResult(enableAddress);
     const { request: requestDisable } = useApiWithoutResult(disableAddress);
@@ -110,10 +109,8 @@ const AddressActions = ({ address, user, member }) => {
 
 AddressActions.propTypes = {
     address: PropTypes.object.isRequired,
-    user: PropTypes.object.isRequired,
-    member: PropTypes.object.isRequired
+    member: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ user: { data } }) => ({ user: data });
-
-export default connect(mapStateToProps)(AddressActions);
+export default AddressActions;

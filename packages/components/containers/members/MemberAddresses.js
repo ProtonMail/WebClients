@@ -7,8 +7,9 @@ import { Dropdown, DropdownMenu, SmallButton, useModal } from 'react-components'
 import AddressModal from '../addresses/AddressModal';
 
 const MemberAddresses = ({ member }) => {
-    const title = member.addresses.map(({ Email }) => Email).join(', ');
-    const list = member.addresses.map(({ Email: text }) => ({ text }));
+    const addresses = member.addresses || [];
+    const title = addresses.map(({ Email }) => Email).join(', ');
+    const list = addresses.map(({ Email: text }) => ({ text }));
     const n = list.length;
     const { isOpen, open, close } = useModal();
 

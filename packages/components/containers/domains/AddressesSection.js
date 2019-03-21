@@ -1,15 +1,26 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { Alert, Button, PrimaryButton, Block, Table, TableHeader, TableBody, TableRow } from 'react-components';
+import {
+    useMembers,
+    Alert,
+    Button,
+    PrimaryButton,
+    Block,
+    Table,
+    TableHeader,
+    TableBody,
+    TableRow
+} from 'react-components';
 
-const AddressesSection = ({ domain, members, history }) => {
+const AddressesSection = ({ domain, history }) => {
+    const [members = []] = useMembers();
+
     const handleAddAddress = () => history.push('/addresses');
     const handleAddUser = () => history.push('/members');
     const getMemberName = (memberID) => {
-        const { Name = '' } = members.data.find(({ ID }) => ID === memberID);
+        const { Name = '' } = members.find(({ ID }) => ID === memberID);
         return Name;
     };
 
@@ -39,10 +50,7 @@ const AddressesSection = ({ domain, members, history }) => {
 
 AddressesSection.propTypes = {
     domain: PropTypes.object.isRequired,
-    members: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ members }) => ({ members });
-
-export default withRouter(connect(mapStateToProps)(AddressesSection));
+export default withRouter(AddressesSection);

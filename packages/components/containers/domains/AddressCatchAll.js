@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Checkbox, useApiWithoutResult, useNotifications, useEventManager } from 'react-components';
+import { Checkbox, useApiWithoutResult, useNotifications, useEventManager, useOrganization } from 'react-components';
 import { updateCatchAll } from 'proton-shared/lib/api/domains';
 import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
 
-const AddressCatchAll = ({ organization, address, domain }) => {
+const AddressCatchAll = ({ address, domain }) => {
+    const [organization] = useOrganization();
     const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateCatchAll);
     const { createNotification } = useNotifications();
@@ -37,10 +37,7 @@ const AddressCatchAll = ({ organization, address, domain }) => {
 
 AddressCatchAll.propTypes = {
     address: PropTypes.object.isRequired,
-    domain: PropTypes.object.isRequired,
-    organization: PropTypes.object.isRequired
+    domain: PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ organization }) => ({ organization });
-
-export default connect(mapStateToProps)(AddressCatchAll);
+export default AddressCatchAll;

@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { connect } from 'react-redux';
-import { PrimaryButton, useModal, useNotifications } from 'react-components';
-import { fetchDomains } from 'proton-shared/lib/state/domains/actions';
+import { PrimaryButton, useModal, useNotifications, useDomains, useOrganization } from 'react-components';
 import { DOMAIN_STATE } from 'proton-shared/lib/constants';
 
 import MemberModal from './MemberModal';
 
 const { DOMAIN_STATE_ACTIVE } = DOMAIN_STATE;
 
-const AddMemberButton = ({ organization, domains, fetchDomains }) => {
+const AddMemberButton = () => {
+    const [organization] = useOrganization();
+    const [domains = [], domainsLoading] = useDomains();
+
     const { createNotification } = useNotifications();
     const [verifiedDomains, setDomains] = useState([]);
     const { isOpen, open, close } = useModal();
+
     const handleClick = () => {
         try {
             if (organization.MaxMembers === 1) {
@@ -65,36 +66,19 @@ const AddMemberButton = ({ organization, domains, fetchDomains }) => {
     };
 
     useEffect(() => {
-        fetchDomains();
-    }, []);
-
-    useEffect(() => {
-        setDomains(domains.data.filter(({ State }) => State === DOMAIN_STATE_ACTIVE));
-    }, [domains.data]);
+        setDomains(domains.filter(({ State }) => State === DOMAIN_STATE_ACTIVE));
+    }, [domains]);
 
     return (
         <>
-            <PrimaryButton disabled={domains.loading} onClick={handleClick}>{c('Action').t`Add user`}</PrimaryButton>
-            {domains.loading ? null : (
+            <PrimaryButton disabled={domainsLoading} onClick={handleClick}>{c('Action').t`Add user`}</PrimaryButton>
+            {domainsLoading ? null : (
                 <MemberModal show={isOpen} onClose={close} organization={organization} domains={verifiedDomains} />
             )}
         </>
     );
 };
 
-AddMemberButton.propTypes = {
-    organization: PropTypes.object.isRequired,
-    domains: PropTypes.object.isRequired,
-    fetchDomains: PropTypes.func.isRequired
-};
+AddMemberButton.propTypes = {};
 
-const mapStateToProps = ({ organization: { data: dataOrganization }, domains }) => ({
-    organization: dataOrganization,
-    domains
-});
-const mapDispatchToProps = { fetchDomains };
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(AddMemberButton);
+export default AddMemberButton;

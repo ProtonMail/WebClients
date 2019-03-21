@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { fetchDomains } from 'proton-shared/lib/state/domains/actions';
 import { queryAvailableDomains, queryPremiumDomains } from 'proton-shared/lib/api/domains';
 import { MEMBER_TYPE } from 'proton-shared/lib/constants';
-import { Select, useApiWithoutResult } from 'react-components';
+import { useUser, useDomains, Select, useApiWithoutResult } from 'react-components';
 
 import { fakeEvent } from '../../helpers/component';
 
-const DomainsSelect = ({ member, onChange, user, domains, fetchDomains, className }) => {
+const DomainsSelect = ({ member, onChange, className }) => {
+    const [user] = useUser();
+    const [domains, fetchDomains] = useDomains();
+
     const { request: requestAvailableDomains, loading } = useApiWithoutResult(queryAvailableDomains);
     const { request: requestPremiumDomains } = useApiWithoutResult(queryPremiumDomains);
     const [options, setOptions] = useState([]);
@@ -34,7 +35,7 @@ const DomainsSelect = ({ member, onChange, user, domains, fetchDomains, classNam
             user.isPaidMail ? fetchDomains() : []
         ]);
 
-        const domainNames = [].concat(available, premium, formatDomains(domains.data));
+        const domainNames = [].concat(available, premium, formatDomains(domains));
 
         setOptions(domainNames.map((text) => ({ text, value: text })));
         setDomain(domainNames[0]);
@@ -57,10 +58,4 @@ DomainsSelect.propTypes = {
     className: PropTypes.string
 };
 
-const mapStateToProps = ({ user, domains }) => ({ user, domains });
-const mapDispatchToProps = { fetchDomains };
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(DomainsSelect);
+export default DomainsSelect;

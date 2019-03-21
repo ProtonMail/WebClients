@@ -197,7 +197,18 @@ export { default as useEventManager } from './hooks/useEventManager';
 export { default as useNotifications } from './hooks/useNotifications';
 export { default as usePrompts } from './hooks/usePrompts';
 export { default as useIsMounted } from './hooks/useIsMounted';
+export { default as useInstance } from './hooks/useInstance';
 export { default as useApi } from './hooks/useApi';
 export { default as useApiResult } from './hooks/useApiResult';
 export { default as useAuthenticationStore } from './hooks/useAuthenticationStore';
 export { default as useAsync } from './hooks/useAsync';
+
+export { useAddresses, AddressesProvider, AddressesContext } from './models/addressesModel';
+export { useContactEmails, ContactEmailsProvider, ContactEmailsContext } from './models/contactEmailsModel';
+export { useDomains, DomainsProvider, DomainsContext } from './models/domainsModel';
+export { useMailSettings, MailSettingsProvider, MailSettingsContext } from './models/mailSettingsModel';
+export { useMembers, MembersProvider, MembersContext } from './models/membersModel';
+export { useOrganization, OrganizationProvider, OrganizationContext } from './models/organizationModel';
+export { useSubscription, SubscriptionProvider, SubscriptionContext } from './models/subscriptionModel';
+export { useUser, UserProvider, UserContext } from './models/userModel';
+export { useUserSettings, UserSettingsProvider, UserSettingsContext } from './models/userSettingsModel';

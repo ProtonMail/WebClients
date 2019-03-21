@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { c, jt } from 'ttag';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Table, TableHeader, Info, SubTitle, Block, Alert, Search, TableBody, TableRow } from 'react-components';
+import {
+    Table,
+    TableHeader,
+    Info,
+    SubTitle,
+    Block,
+    Alert,
+    Search,
+    TableBody,
+    TableRow,
+    useMembers
+} from 'react-components';
 import { Link } from 'react-router-dom';
-import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 import { normalize } from 'proton-shared/lib/helpers/string';
 
 import MemberActions from './MemberActions';
@@ -13,10 +21,13 @@ import AddMemberButton from './AddMemberButton';
 import MemberOptions from './MemberOptions';
 import MemberRole from './MemberRole';
 import MemberPrivate from './MemberPrivate';
+import { useOrganization } from '../../models/organizationModel';
 
-const MembersSection = ({ organization, members, fetchMembers }) => {
+const MembersSection = () => {
+    const [members = [], membersLoading] = useMembers();
+    const [organization] = useOrganization();
     const [keywords, setKeywords] = useState('');
-    const [membersSelected, setMembers] = useState(members.data);
+    const [membersSelected, setMembers] = useState(members);
     const handleSearch = (value) => setKeywords(value);
 
     const search = (members = []) => {
@@ -32,12 +43,8 @@ const MembersSection = ({ organization, members, fetchMembers }) => {
     };
 
     useEffect(() => {
-        fetchMembers();
-    }, []);
-
-    useEffect(() => {
-        setMembers(search(members.data));
-    }, [keywords, members.data]);
+        setMembers(search(members));
+    }, [keywords, members]);
 
     return (
         <>
@@ -72,7 +79,7 @@ const MembersSection = ({ organization, members, fetchMembers }) => {
                         c('Title header for members table').t`Actions`
                     ]}
                 />
-                <TableBody loading={members.loading} colSpan={6}>
+                <TableBody loading={membersLoading} colSpan={6}>
                     {membersSelected.map((member) => {
                         const key = member.ID;
                         return (
@@ -98,16 +105,6 @@ const MembersSection = ({ organization, members, fetchMembers }) => {
     );
 };
 
-MembersSection.propTypes = {
-    members: PropTypes.object.isRequired,
-    fetchMembers: PropTypes.func.isRequired,
-    organization: PropTypes.object.isRequired
-};
+MembersSection.propTypes = {};
 
-const mapStateToProps = ({ members, organization: { data } }) => ({ members, organization: data });
-const mapDispatchToProps = { fetchMembers };
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(MembersSection);
+export default MembersSection;

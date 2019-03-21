@@ -1,15 +1,16 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Table, TableHeader, TableBody, TableRow, Info } from 'react-components';
+import { useMembers, Table, TableHeader, TableBody, TableRow, Info } from 'react-components';
 
 import AddressStatus from './AddressStatus';
 import AddressCatchAll from './AddressCatchAll';
 
-const AddressesTable = ({ domain, members }) => {
+const AddressesTable = ({ domain }) => {
+    const [members = []] = useMembers();
+
     const getMemberName = (memberID) => {
-        const { Name = '' } = members.data.find(({ ID }) => memberID === ID) || {};
+        const { Name = '' } = members.find(({ ID }) => memberID === ID) || {};
         return Name;
     };
     return (
@@ -46,10 +47,7 @@ const AddressesTable = ({ domain, members }) => {
 };
 
 AddressesTable.propTypes = {
-    domain: PropTypes.object.isRequired,
-    members: PropTypes.object.isRequired
+    domain: PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ members }) => ({ members });
-
-export default connect(mapStateToProps)(AddressesTable);
+export default AddressesTable;

@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { SubTitle, Row, Label, Info } from 'react-components';
+import { SubTitle, Row, Label, Info, useMailSettings } from 'react-components';
 
 import RemoteToggle from './RemoteToggle';
 import EmbeddedToggle from './EmbeddedToggle';
 
-const MessageContentSection = ({ mailSettings }) => {
+const MessageContentSection = () => {
+    const [mailSettings] = useMailSettings();
     const [showImages, setShowImages] = useState(mailSettings.ShowImages);
+
+    // Handle updates from the Event Manager.
+    useEffect(() => {
+        setShowImages(mailSettings.ShowImages);
+    }, [mailSettings.ShowImages]);
+
     const handleChange = (newValue) => setShowImages(newValue);
+
     return (
         <>
             <SubTitle>{c('Title').t`Address verification`}</SubTitle>
@@ -31,10 +37,4 @@ const MessageContentSection = ({ mailSettings }) => {
     );
 };
 
-MessageContentSection.propTypes = {
-    mailSettings: PropTypes.object.isRequired
-};
-
-const mapStateToProps = ({ mailSettings: { data } }) => ({ mailSettings: data });
-
-export default connect(mapStateToProps)(MessageContentSection);
+export default MessageContentSection;

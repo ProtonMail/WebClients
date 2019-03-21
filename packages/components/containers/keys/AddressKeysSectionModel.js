@@ -1,5 +1,5 @@
 import { MAIN_USER_KEY } from 'proton-shared/lib/constants';
-import { describe } from 'proton-shared/lib/state/keys/keysAlgorithm';
+import { describe } from 'proton-shared/lib/keys/keysAlgorithm';
 
 import { STATUSES } from './KeysStatus';
 
@@ -70,7 +70,7 @@ export const getAddressesKeys = (addresses = [], keys = {}) => {
 };
 
 export const getUserAddressKeys = (user = {}, keys = {}) => {
-    const userKeys = getKeysList(keys[MAIN_USER_KEY], convertKey(user));
+    const userKeys = getKeysList(keys[MAIN_USER_KEY], convertKey({}));
     if (!userKeys.length) {
         return [];
     }

@@ -1,9 +1,9 @@
 import React, { onEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Toggle, useToggle, useSettings } from 'react-components';
+import { Toggle, useToggle, useUserSettings } from 'react-components';
 
 const PasswordResetToggle = ({ id }) => {
-    const { Email } = useSettings();
+    const [{ Email }] = useUserSettings();
     const { state, toggle } = useToggle(!!Email.Reset);
 
     onEffect(() => {

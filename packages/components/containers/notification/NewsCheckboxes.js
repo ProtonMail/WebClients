@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { Label, Checkbox, useApiWithoutResult, useSettings, useEventManager } from 'react-components';
+import { Label, Checkbox, useApiWithoutResult, useUserSettings, useEventManager } from 'react-components';
 import { NEWS } from 'proton-shared/lib/constants';
 import { updateNews } from 'proton-shared/lib/api/settings';
 import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
@@ -8,7 +8,7 @@ import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
 const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA } = NEWS;
 
 const NewsCheckboxes = () => {
-    const { News } = useSettings();
+    const [{ News }] = useUserSettings();
     const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateNews);
     const [news, setNews] = useState(News);

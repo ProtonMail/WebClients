@@ -12,12 +12,12 @@ import {
     Block,
     ResetButton,
     useApiWithoutResult,
-    useSettings
+    useUserSettings
 } from 'react-components';
 import { updateInvoiceText } from 'proton-shared/lib/api/settings';
 
 const InvoiceTextModal = ({ show, onClose }) => {
-    const { InvoiceText } = useSettings();
+    const [{ InvoiceText }] = useUserSettings();
     const [invoiceText, setInvoiceText] = useState(InvoiceText);
     const handleChange = ({ target }) => setInvoiceText(target.value);
     const { request, loading } = useApiWithoutResult(() => updateInvoiceText(invoiceText));

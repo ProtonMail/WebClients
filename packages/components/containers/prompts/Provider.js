@@ -1,16 +1,15 @@
-import React, { useReducer, useEffect, useState } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import PromptsContext from '../../context/prompts';
+import useInstance from '../../hooks/useInstance';
 import PromptsContainer from './Container';
 import reducer from './reducer';
 import createManager from './manager';
 
 const PromptsProvider = ({ children }) => {
     const [prompts, dispatch] = useReducer(reducer, []);
-
-    // Using useState as a instance variable rather than useMemo because it can be cleared by react
-    const [manager] = useState(() => createManager(dispatch));
+    const manager = useInstance(() => createManager(dispatch));
 
     useEffect(() => {
         return () => manager.resetPrompts();

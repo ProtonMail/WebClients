@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
 import { Alert, SubTitle, Row, Label, Info, Toggle, useApiWithoutResult } from 'react-components';
+import { useMailSettings } from '../../models/mailSettingsModel';
 
-const AddressVerificationSection = ({ mailSettings }) => {
+const AddressVerificationSection = () => {
+    const [mailSettings] = useMailSettings();
     const [promptPin, setPromptPin] = useState(!!mailSettings.PromptPin);
     const { request } = useApiWithoutResult(updatePromptPin);
+
+    // Handle updates from the Event Manager.
+    useEffect(() => {
+        setPromptPin(mailSettings.PromptPin);
+    }, [mailSettings.PromptPin]);
 
     const handleChange = async (newValue) => {
         await request(+newValue);
@@ -36,10 +41,4 @@ const AddressVerificationSection = ({ mailSettings }) => {
     );
 };
 
-AddressVerificationSection.propTypes = {
-    mailSettings: PropTypes.object.isRequired
-};
-
-const mapStateToProps = ({ mailSettings: { data } }) => ({ mailSettings: data });
-
-export default connect(mapStateToProps)(AddressVerificationSection);
+export default AddressVerificationSection;

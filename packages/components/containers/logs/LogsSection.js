@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import dayjs from 'dayjs';
-import { connect } from 'react-redux';
 import {
     Button,
     ButtonGroup,
@@ -11,13 +10,14 @@ import {
     Pagination,
     usePagination,
     SubTitle,
-    useLoading
+    useLoading,
+    useUserSettings,
+    useApi
 } from 'react-components';
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
 import { updateLogAuth } from 'proton-shared/lib/api/settings';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { ELEMENTS_PER_PAGE, LOGS_STATE } from 'proton-shared/lib/constants';
-import useApi from '../../hooks/useApi';
 
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
@@ -31,11 +31,12 @@ const EVENTS = {
 
 const { DISABLE, BASIC, ADVANCED } = LOGS_STATE;
 
-const LogsSection = ({ settings }) => {
+const LogsSection = () => {
     const api = useApi();
+    const [settings, settingsLoading] = useUserSettings();
     const [logs, setLogs] = useState([]);
-    const { loading, loaded, load } = useLoading(settings.loading);
-    const [logAuth, setLogAuth] = useState(settings.data.LogAuth);
+    const { loading, loaded, load } = useLoading(settingsLoading);
+    const [logAuth, setLogAuth] = useState(settings.LogAuth);
     const { page, list, onNext, onPrevious, onSelect } = usePagination(logs, 1, ELEMENTS_PER_PAGE);
 
     const fetchLogs = async () => {
@@ -75,6 +76,11 @@ const LogsSection = ({ settings }) => {
         await api(updateLogAuth(LogAuth));
         setLogAuth(LogAuth);
     };
+
+    // Handle updates from the event manager
+    useEffect(() => {
+        setLogAuth(settings.LogAuth);
+    }, [settings.LogAuth]);
 
     useEffect(() => {
         fetchLogs();
@@ -118,6 +124,4 @@ const LogsSection = ({ settings }) => {
     );
 };
 
-const mapStateToProps = ({ settings }) => ({ settings });
-
-export default connect(mapStateToProps)(LogsSection);
+export default LogsSection;

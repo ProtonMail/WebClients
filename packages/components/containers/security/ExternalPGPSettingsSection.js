@@ -1,14 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, SubTitle, Row, Label, Info } from 'react-components';
+import { Alert, SubTitle, Row, Label, Info, useMailSettings } from 'react-components';
 
 import AttachPublicKeyToggle from './AttachPublicKeyToggle';
 import SignToggle from './SignToggle';
 import PGPSchemeSelect from './PGPSchemeSelect';
 
-const ExternalPGPSettingsSection = ({ mailSettings }) => {
+const ExternalPGPSettingsSection = () => {
+    const [mailSettings] = useMailSettings();
+
     return (
         <>
             <SubTitle>{c('Title').t`External PGP settings (optional)`}</SubTitle>
@@ -56,10 +56,4 @@ const ExternalPGPSettingsSection = ({ mailSettings }) => {
     );
 };
 
-ExternalPGPSettingsSection.propTypes = {
-    mailSettings: PropTypes.object.isRequired
-};
-
-const mapStateToProps = ({ mailSettings: { data } }) => ({ mailSettings: data });
-
-export default connect(mapStateToProps)(ExternalPGPSettingsSection);
+export default ExternalPGPSettingsSection;

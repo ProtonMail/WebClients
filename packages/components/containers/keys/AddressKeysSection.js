@@ -1,15 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import AddressKeysHeader from './AddressKeysHeader';
 import ContactKeysHeader from './ContactKeysHeader';
 import AddressKeysTable from './AddressKeysTable';
 import { getAddressesKeys, getUserAddressKeys } from './AddressKeysSectionModel';
+import { useUser } from '../../models/userModel';
+import { useAddresses } from '../../models/addressesModel';
 
-const AddressKeysSection = ({ userModel, addressesModel, keysModel }) => {
-    const addressKeys = getAddressesKeys(addressesModel.data, keysModel.data);
-    const userAddressKeys = getUserAddressKeys(userModel.data, keysModel.data);
+const AddressKeysSection = () => {
+    const [user] = useUser();
+    const [addresses] = useAddresses();
+    // TODO: Keys model
+    const addressKeys = getAddressesKeys(addresses, {});
+    const userAddressKeys = getUserAddressKeys(user, {});
 
     const handleAddKey = (...args) => {
         // eslint-disable-next-line
@@ -76,18 +79,6 @@ const AddressKeysSection = ({ userModel, addressesModel, keysModel }) => {
     );
 };
 
-AddressKeysSection.propTypes = {
-    addressesModel: PropTypes.object.isRequired,
-    userModel: PropTypes.object.isRequired,
-    keysModel: PropTypes.object.isRequired
-};
+AddressKeysSection.propTypes = {};
 
-const mapStateToProps = ({ user, addresses, keys }) => {
-    return {
-        userModel: user,
-        addressesModel: addresses,
-        keysModel: keys
-    };
-};
-
-export default connect(mapStateToProps)(AddressKeysSection);
+export default AddressKeysSection;

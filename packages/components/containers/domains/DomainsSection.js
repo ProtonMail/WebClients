@@ -1,20 +1,27 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { c } from 'ttag';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { SubTitle, Alert, PrimaryButton, Button, Block, useModal } from 'react-components';
-import { fetchDomains } from 'proton-shared/lib/state/domains/actions';
+import {
+    useEventManager,
+    useOrganization,
+    useDomains,
+    SubTitle,
+    Alert,
+    PrimaryButton,
+    Button,
+    Block,
+    useModal
+} from 'react-components';
 
 import DomainModal from './DomainModal';
 import DomainsTable from './DomainsTable';
 
-const DomainsSection = ({ organization, domains, fetchDomains }) => {
+const DomainsSection = () => {
+    const [domains, loading] = useDomains();
+    const [organization] = useOrganization();
     const { isOpen, open, close } = useModal();
-    const { UsedDomains, MaxDomains } = organization.data;
+    const { UsedDomains, MaxDomains } = organization;
 
-    useEffect(() => {
-        fetchDomains();
-    }, []);
+    const { call } = useEventManager(); // TODO: Use event manager or expose a refresh fn in the models?
 
     return (
         <>
@@ -26,9 +33,9 @@ const DomainsSection = ({ organization, domains, fetchDomains }) => {
             <Block>
                 <PrimaryButton onClick={open}>{c('Action').t`Add domain`}</PrimaryButton>
                 <DomainModal show={isOpen} onClose={close} />
-                <Button disabled={domains.loading} onClick={fetchDomains}>{c('Action').t`Refresh status`}</Button>
+                <Button disabled={loading} onClick={call}>{c('Action').t`Refresh status`}</Button>
             </Block>
-            <DomainsTable loading={domains.loading} domains={domains.data} />
+            <DomainsTable loading={loading} domains={domains} />
             <Block>
                 {UsedDomains} / {MaxDomains} {c('Info').t`domains used`}
             </Block>
@@ -36,16 +43,4 @@ const DomainsSection = ({ organization, domains, fetchDomains }) => {
     );
 };
 
-DomainsSection.propTypes = {
-    organization: PropTypes.object.isRequired,
-    domains: PropTypes.object.isRequired,
-    fetchDomains: PropTypes.func.isRequired
-};
-
-const mapStateToProps = ({ domains, organization }) => ({ domains, organization });
-const mapDispatchToProps = { fetchDomains };
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(DomainsSection);
+export default DomainsSection;

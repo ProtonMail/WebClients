@@ -7,7 +7,7 @@ import { COMPOSER_MODE } from 'proton-shared/lib/constants';
 const { POPUP, MAXIMIZED } = COMPOSER_MODE;
 
 const ComposerModeRadios = () => {
-    const { ComposerMode } = useMailSettings();
+    const [{ ComposerMode }] = useMailSettings();
     const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateComposerMode);
 

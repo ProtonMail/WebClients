@@ -1,19 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { c } from 'ttag';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Table, TableHeader, TableBody, TableRow, Alert } from 'react-components';
-import { fetchMembers } from 'proton-shared/lib/state/members/actions';
 
 import DomainStatus from './DomainStatus';
 import DomainActions from './DomainActions';
 import DomainName from './DomainName';
 
-const DomainsTable = ({ domains, loading, fetchMembers }) => {
-    useEffect(() => {
-        fetchMembers();
-    }, []);
-
+const DomainsTable = ({ domains = [], loading }) => {
     if (!loading && !domains.length) {
         return <Alert>{c('Info').t`No domains yet`}</Alert>;
     }
@@ -47,13 +41,7 @@ const DomainsTable = ({ domains, loading, fetchMembers }) => {
 
 DomainsTable.propTypes = {
     domains: PropTypes.array.isRequired,
-    loading: PropTypes.bool.isRequired,
-    fetchMembers: PropTypes.func.isRequired
+    loading: PropTypes.bool.isRequired
 };
 
-const mapDispatchToProps = { fetchMembers };
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(DomainsTable);
+export default DomainsTable;

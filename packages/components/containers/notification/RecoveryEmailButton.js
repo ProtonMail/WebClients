@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Button, InputModal, useModal, useSettings } from 'react-components';
+import { Button, InputModal, useModal, useUserSettings } from 'react-components';
 
 const RecoveryEmailButton = () => {
-    const { Email } = useSettings();
+    const [{ Email }] = useUserSettings();
     const [email, setEmail] = useState(Email.Value);
     const { isOpen, open, close } = useModal();
 

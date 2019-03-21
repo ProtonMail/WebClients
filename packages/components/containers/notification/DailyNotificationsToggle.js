@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Toggle, useToggle, useSettings, useApiWithoutResult } from 'react-components';
+import { Toggle, useToggle, useUserSettings, useApiWithoutResult } from 'react-components';
 
 const DailyNotificationsToggle = ({ id }) => {
-    const { Email } = useSettings();
+    const [{ Email }] = useUserSettings();
     const { request, loading } = useApiWithoutResult(); // TODO add API config
     const { state, toggle } = useToggle(!!Email.Notify);
 
