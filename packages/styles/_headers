@@ -3,7 +3,7 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
-  Content-Security-Policy: "upgrade-insecure-requests;  block-all-mixed-content; default-src 'none' ;  script-src 'self' *.cloudfront.net ; style-src 'self' *.cloudfront.net 'sha256-BAfQ6SyHiL7f9ll006C4IYI8W2lww3vxDep7/eN6Mtg=' ; img-src 'self'; font-src 'self';  connect-src 'self' ; child-src 'self' ; frame-ancestors 'self'  ; manifest-src 'self' ; worker-src 'self' ; base-uri 'self' ; form-action 'self' ; "
+  Content-Security-Policy: "upgrade-insecure-requests;  block-all-mixed-content; default-src 'none' ;  script-src 'self' *.cloudfront.net ; style-src 'self' *.cloudfront.net 'sha256-BAfQ6SyHiL7f9ll006C4IYI8W2lww3vxDep7/eN6Mtg=' 'sha256-BSotIw2cpD4FO1E2ZzaNY7y3BwHroOxKhlUxKNR9b6I=' ; img-src 'self'; font-src 'self';  connect-src 'self' ; child-src 'self' ; frame-ancestors 'self'  ; manifest-src 'self' ; worker-src 'self' ; base-uri 'self' ; form-action 'self' ; "
   Feature-Policy: "geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'self'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'self'; fullscreen 'self'; payment 'none' ;"
 
 /*.css
