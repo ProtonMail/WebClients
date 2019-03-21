@@ -1,4 +1,4 @@
-import { USER_ROLES } from '../../constants';
+import { USER_ROLES } from '../constants';
 
 const { ADMIN_ROLE, MEMBER_ROLE } = USER_ROLES;
 

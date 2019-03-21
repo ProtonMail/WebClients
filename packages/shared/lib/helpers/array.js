@@ -7,3 +7,13 @@ export const range = (start = 0, end = 0, step = 1) => {
 
     return result;
 };
+
+export const chunk = (list = [], size = 1) => {
+    return list.reduce((res, item, index) => {
+        if (index % size === 0) {
+            res.push([]);
+        }
+        res[res.length - 1].push(item);
+        return res;
+    }, []);
+};

@@ -7,7 +7,7 @@ import { getKeySalts } from '../api/keys';
 import { getInfo, setCookies } from '../api/auth';
 import { upgradePassword } from '../api/settings';
 import { isPgpMessage, decryptAccessToken } from './helpers';
-import { getPrimaryKeyWithSalt } from '../state/keys/keys';
+import { getPrimaryKeyWithSalt } from '../keys/keys';
 import { getRandomString } from '../helpers/string';
 import loginWithFallback from './loginWithFallback';
 

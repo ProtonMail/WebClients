@@ -1,12 +1,20 @@
-import { INTERVAL_EVENT_TIMER } from '../../constants';
-import { getEvents } from '../../api/events';
-import { onceWithQueue } from '../../helpers/onceWithQueue';
+import { INTERVAL_EVENT_TIMER } from '../constants';
+import { getEvents } from '../api/events';
+import { onceWithQueue } from '../helpers/onceWithQueue';
 
 const FIBONACCI = [1, 1, 2, 3, 5, 8];
 
-export default (api, success, error) => {
+/**
+ * Create the event manager process.
+ * @param {function} api - Function to call the API.
+ * @param {String} initialEventId - Initial event ID to begin from
+ * @param {function} onSuccess - Function to handle the data from the event manager
+ * @param {function} onError - Function to handle the error
+ * @return {{call, setEventID, stop, start, reset}}
+ */
+export default ({ api, eventId: initialEventId, onSuccess, onError }) => {
     let STATE = {
-        lastEventID: undefined,
+        lastEventID: initialEventId,
         timeoutHandle: undefined,
         retryIndex: 0,
         abortController: undefined
@@ -47,14 +55,14 @@ export default (api, success, error) => {
 
     const run = async () => {
         try {
-            STATE.abortController = new AbortController();
+            const abortController = new AbortController();
+            STATE.abortController = abortController;
             const { More, EventID, ...rest } = await api({
                 ...getEvents(STATE.lastEventID),
-                signal: STATE.abortController.signal
+                signal: abortController.signal
             });
 
-            await success(rest);
-
+            await onSuccess(rest);
             setEventID(EventID);
             STATE.retryIndex = 0;
 
@@ -62,19 +70,24 @@ export default (api, success, error) => {
                 return run();
             }
         } catch (e) {
-            error(e);
-
             // Increase the retry index when the call fails to not spam.
             if (STATE.retryIndex < FIBONACCI.length - 1) {
                 STATE.retryIndex++;
             }
+            onError(e);
+            throw e;
         }
     };
 
     const call = onceWithQueue(async () => {
-        stop();
-        await run();
-        start();
+        try {
+            stop();
+            await run();
+            start();
+        } catch (e) {
+            start();
+            throw e;
+        }
     });
 
     return {
