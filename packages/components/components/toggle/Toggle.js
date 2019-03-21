@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-import Checkbox from '../input/Checkbox';
 import Icon from '../icon/Icon';
 
 const label = (key) => {
@@ -18,11 +17,11 @@ const label = (key) => {
     );
 };
 
-const Toggle = ({ id, checked, onChange }) => {
+const Toggle = (props) => {
     return (
         <>
-            <Checkbox id={id} checked={checked} className="pm-toggle-checkbox" onChange={onChange} />
-            <label htmlFor={id} className="pm-toggle-label">
+            <input {...props} type="checkbox" className="pm-toggle-checkbox" />
+            <label htmlFor={props.id} className="pm-toggle-label">
                 {label('on')}
                 {label('off')}
             </label>
