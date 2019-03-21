@@ -19,9 +19,11 @@ const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOu
     };
 
     const handleClickOutside = (event) => {
-        if (autoCloseOutside && !wrapperRef.current.contains(event.target)) {
-            setOpen(false);
+        // Do nothing if clicking ref's element or descendent elements
+        if (!autoCloseOutside || !wrapperRef.current || wrapperRef.contains(event.target)) {
+            return;
         }
+        setOpen(false);
     };
 
     const handleClickContent = () => {
@@ -32,10 +34,12 @@ const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOu
 
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('touchstart', handleClickOutside);
         document.addEventListener('keydown', handleKeydown);
 
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('touchstart', handleClickOutside);
             document.removeEventListener('keydown', handleKeydown);
         };
     }, []);
