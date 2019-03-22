@@ -100,6 +100,16 @@ body {
   }
 }
 
+.has-scroll-inside-navigation > .progressBar-container::before {
+  content: '';
+  position: absolute;
+  top: -2em;
+  right: 0;
+  left: 0;
+  height: 2em;
+  background: linear-gradient(to top, #000 0, rgba(0, 0, 0, 0) 2em);
+}
+
 .navigation__link:focus,
 .navigation__link:hover {
   background: rgba(255,255,255,.05);

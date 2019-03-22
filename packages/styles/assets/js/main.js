@@ -748,3 +748,29 @@ var moreEmails = [].slice.call(document.body.querySelectorAll('.js-seemore-email
 moreEmails.forEach(function(elem) {
     elem.addEventListener("click", mailSeeMore );
 });
+
+
+
+
+function detectScrollNav() {
+  var navigation_container = document.body.querySelector('.js-sidebar-container');
+  var navigation = document.body.querySelector('.js-navigation');
+  
+  if ( navigation.scrollHeight > navigation.clientHeight ) {
+     navigation_container.classList.add('has-scroll-inside-navigation');
+  }
+  else { navigation_container.classList.remove('has-scroll-inside-navigation'); }
+}
+
+
+// // Select the node that will be observed for mutations
+// var navigation = document.body.querySelector('.js-navigation');
+
+// // Options for the observer (which mutations to observe)
+// var config = { attributes: true, childList: true, subtree: true };
+
+// // Create an observer instance linked to the callback function
+// var observer = new MutationObserver(detectScrollNav);
+
+// // Start observing the target node for configured mutations
+// observer.observe(navigation, config);

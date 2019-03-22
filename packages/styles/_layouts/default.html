@@ -61,9 +61,9 @@
         <div class="flex flex-nowrap">
           <div class="sidebar flex js-sidebar nomobile noprint">
 
-            <div class="flex no-scroll flex-column flex-nowrap">
+            <div class="flex no-scroll flex-column flex-nowrap js-sidebar-container">
 
-              <nav class="navigation flex-item-fluid mb1 scroll-if-needed">
+              <nav class="navigation flex-item-fluid mb1 scroll-if-needed js-navigation">
               
                 <p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Design</p>
                 <ul class="navigation__list unstyled js-to_expand{% if page.section == 'design' %} is-opened{% endif %}">
@@ -185,7 +185,7 @@
               
               </nav>
 
-              <div class="flex-item-noshrink nomobile progressBar-container aligncenter">
+              <div class="flex-item-noshrink relative nomobile progressBar-container aligncenter">
 
                 <progress class="progressBar" max="100" value="42" aria-describedby="sizeRemaining"></progress>
 
