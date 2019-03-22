@@ -18,7 +18,7 @@ const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 const { STATUS_DISABLED, STATUS_ENABLED } = ADDRESS_STATUS;
 const { READABLE, UNREADABLE } = MEMBER_PRIVATE;
 
-const AddressActions = ({ address, user, member }) => {
+const AddressActions = ({ address, user }) => {
     const { call } = useEventManager();
     const { Status, Type, ID } = address;
     const { request: requestDelete } = useApiWithoutResult(deleteAddress);
@@ -30,7 +30,8 @@ const AddressActions = ({ address, user, member }) => {
     const canEnable = user.isAdmin && Status === STATUS_DISABLED && Type !== TYPE_ORIGINAL && Type !== TYPE_PREMIUM;
     const canDisable = user.isAdmin && Status === STATUS_ENABLED && Type !== TYPE_ORIGINAL && Type !== TYPE_PREMIUM;
     const canGenerate =
-        ((user.isAdmin && member.Private === READABLE) || (member.Private === UNREADABLE && member.Self)) &&
+        ((user.isAdmin && address.member.Private === READABLE) ||
+            (address.member.Private === UNREADABLE && address.member.Self)) &&
         !address.HasKeys;
 
     const handleDelete = async () => {
@@ -109,7 +110,6 @@ const AddressActions = ({ address, user, member }) => {
 
 AddressActions.propTypes = {
     address: PropTypes.object.isRequired,
-    member: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired
 };
 

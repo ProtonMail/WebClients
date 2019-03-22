@@ -1,20 +1,31 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Row, Label, Select, PrimaryButton, useModal } from 'react-components';
+import { Row, Label, Select } from 'react-components';
+import { ALL_MEMBERS_ID } from 'proton-shared/lib/constants';
 
-import AddressModal from './AddressModal';
+import AddAddressButton from './AddAddressButton';
 
 const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
-    const { isOpen, open, close } = useModal();
-    const options = members.map(({ ID: value, Name, addresses }) => ({
-        text: `${Name} (${addresses.map(({ Email }) => Email).join(', ')})`,
-        value
-    }));
+    const options = members.reduce(
+        (acc, { ID: value, Name, addresses }) => {
+            acc.push({
+                text: `${Name} (${addresses.map(({ Email }) => Email).join(', ')})`,
+                value
+            });
+            return acc;
+        },
+        [
+            {
+                text: `${c('Option').t`All`} (${members.map(({ Name }) => Name).join(', ')})`,
+                value: ALL_MEMBERS_ID
+            }
+        ]
+    );
 
     const handleChange = ({ target }) => {
-        const member = members.data.find(({ ID }) => target.value === ID);
-        onChangeMember(member);
+        const newID = target.value;
+        onChangeMember(newID === ALL_MEMBERS_ID ? { ID: ALL_MEMBERS_ID } : members.find(({ ID }) => newID === ID));
     };
 
     return (
@@ -26,12 +37,10 @@ const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
                     id="memberSelect"
                     value={member.ID}
                     options={options}
-                    className="mr1 mb1"
+                    className="mr1"
                     onChange={handleChange}
                 />
-                <br />
-                <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Add address`}</PrimaryButton>
-                <AddressModal show={isOpen} onClose={close} member={member} />
+                {member.ID === ALL_MEMBERS_ID ? null : <AddAddressButton loading={loading} member={member} />}
             </div>
         </Row>
     );
