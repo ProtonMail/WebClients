@@ -1,26 +1,42 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Label, Radio } from 'react-components';
-import { updateViewMode } from 'proton-shared/lib/api/mailSettings';
+import { RadioCards } from 'react-components';
+import { VIEW_MODE } from 'proton-shared/lib/constants';
+import conversationGroupSvg from 'design-system/assets/img/pm-images/conversation-group.svg';
+import conversationSingleSvg from 'design-system/assets/img/pm-images/conversation-single.svg';
 
-import useApi from '../../hooks/useApi';
+const { GROUP, SINGLE } = VIEW_MODE;
 
-const ViewModeRadios = () => {
-    const api = useApi();
-    const handleChange = (mode) => () => api(updateViewMode(mode));
+const ViewModeRadios = ({ viewMode, handleChange, loading }) => {
+    const radioCardGroup = {
+        value: GROUP,
+        checked: viewMode === GROUP,
+        id: 'groupRadio',
+        disabled: loading,
+        name: 'viewMode',
+        label: c('Label to change view mode').t`Conversation group`,
+        onChange: handleChange(GROUP),
+        children: <img alt="Group" src={conversationGroupSvg} />
+    };
+    const radioCardSingle = {
+        value: SINGLE,
+        checked: viewMode === SINGLE,
+        id: 'singleRadio',
+        disabled: loading,
+        name: 'viewMode',
+        label: c('Label to change view mode').t`Single messages`,
+        onChange: handleChange(SINGLE),
+        children: <img alt="Single" src={conversationSingleSvg} />
+    };
 
-    return (
-        <>
-            <Label htmlFor="conversationRadio">
-                <Radio id="conversationRadio" name="viewMode" onChange={handleChange(0)} />
-                {c('Label').t`Conversation Group`}
-            </Label>
-            <Label htmlFor="messageRadio">
-                <Radio id="messageRadio" name="viewMode" onChange={handleChange(1)} />
-                {c('Label').t`Single Messages`}
-            </Label>
-        </>
-    );
+    return <RadioCards list={[radioCardGroup, radioCardSingle]} />;
+};
+
+ViewModeRadios.propTypes = {
+    viewMode: PropTypes.number.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    loading: PropTypes.bool
 };
 
 export default ViewModeRadios;

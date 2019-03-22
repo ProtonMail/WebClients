@@ -1,26 +1,42 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Label, Radio } from 'react-components';
-import { updateViewLayout } from 'proton-shared/lib/api/mailSettings';
+import { RadioCards } from 'react-components';
+import { VIEW_LAYOUT } from 'proton-shared/lib/constants';
+import inboxColumnSvg from 'design-system/assets/img/pm-images/inbox-colum.svg';
+import inboxRowSvg from 'design-system/assets/img/pm-images/inbox-row.svg';
 
-import useApi from '../../hooks/useApi';
+const { COLUMN, ROW } = VIEW_LAYOUT;
 
-const ViewLayoutRadios = () => {
-    const api = useApi();
-    const handleChange = (mode) => () => api(updateViewLayout(mode));
+const ViewLayoutRadios = ({ viewLayout, handleChange, loading }) => {
+    const radioCardColumn = {
+        value: COLUMN,
+        checked: viewLayout === COLUMN,
+        id: 'columnRadio',
+        disabled: loading,
+        name: 'viewLayout',
+        label: c('Label to change view layout').t`Column`,
+        onChange: handleChange(COLUMN),
+        children: <img alt="Column" src={inboxColumnSvg} />
+    };
+    const radioCardRow = {
+        value: ROW,
+        checked: viewLayout === ROW,
+        id: 'rowRadio',
+        disabled: loading,
+        name: 'viewLayout',
+        label: c('Label to change view layout').t`Row`,
+        onChange: handleChange(ROW),
+        children: <img alt="Row" src={inboxRowSvg} />
+    };
 
-    return (
-        <>
-            <Label htmlFor="columnRadio">
-                <Radio id="columnRadio" name="viewLayout" onChange={handleChange(0)} />
-                {c('Label').t`Column`}
-            </Label>
-            <Label htmlFor="rowRadio">
-                <Radio id="rowRadio" name="viewLayout" onChange={handleChange(1)} />
-                {c('Label').t`Radio`}
-            </Label>
-        </>
-    );
+    return <RadioCards list={[radioCardColumn, radioCardRow]} />;
+};
+
+ViewLayoutRadios.propTypes = {
+    viewLayout: PropTypes.number.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    loading: PropTypes.bool
 };
 
 export default ViewLayoutRadios;
