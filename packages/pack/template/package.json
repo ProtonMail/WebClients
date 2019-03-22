@@ -1,0 +1,48 @@
+{
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "abortcontroller-polyfill": "^1.2.1",
+    "dayjs": "^1.7.8",
+    "file-saver": "^2.0.0",
+    "keycode": "^2.2.0",
+    "design-system": "github:ProtonMail/design-system.git#master",
+    "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:^6.0.0",
+    "proton-shared": "github:ProtonMail/proton-shared.git#master",
+    "proton-pack": "github:ProtonMail/boilerplate.git#feat/binary",
+    "react": "^16.8.1",
+    "react-components": "github:ProtonMail/react-components.git#master",
+    "react-dom": "^16.8.1",
+    "react-redux": "^6.0.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.7",
+    "redux-thunk": "^2.3.0",
+    "ttag": "^1.5.1",
+    "yetch": "^1.1.0"
+  },
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4"
+  },
+  "scripts": {
+    "start": "proton-pack dev-server",
+    "lint": "eslint src --ext .js --quiet --cache",
+    "pretty": "prettier --write  $(find src/app -type f -name '*.js')",
+    "preversion": "git update-index --no-assume-unchanged package-lock.json",
+    "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags",
+    "postinstall": "git update-index --assume-unchanged package-lock.json"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+
+const fs = require('fs').promises;
+const path = require('path');
+const chalk = require('chalk');
+const dedent = require('dedent');
+const argv = require('minimist')(process.argv.slice(2));
+const localIp = require('my-local-ip');
+
+const configBuilder = require('../cli/config');
+const configAppBuilder = require('../cli/configApp');
+const { getPort, getPublicPath, findPort } = require('../webpack/helpers/source');
+
+const isInit = argv._.includes('init');
+const isDevServer = argv._.includes('dev-server');
+
+const {
+    config: appConfig,
+    path: appConfigPath,
+    apiUrl
+} = configAppBuilder(argv);
+
+async function main() {
+
+    // For any task BUT init we need to create a custom config for the app
+    if (!isInit) {
+        await fs.writeFile(appConfigPath, appConfig);
+    }
+
+    // Run the dev server, but first find an available port
+    if (isDevServer) {
+        const server = require('../cli/server');
+        const port = await findPort(getPort(argv));
+        const publicPath = getPublicPath(argv);
+
+        const log = (ip = 'localhost') => chalk.yellow(`http://${ip}:${port}${publicPath}`);
+        console.log(dedent`
+            ➙ Dev server: ${log()}
+            ➙ Dev server: ${log(localIp())}
+            ➙ API: ${chalk.yellow(apiUrl)}
+            \n
+        `);
+        const CONFIG = configBuilder({ port, publicPath });
+
+        const run = server(CONFIG);
+        run.listen(port);
+    }
+
+    // Init the application with the boilerplate
+    if (isInit) {
+        const initBasicProtonApp = require('../cli/initBasicProtonApp');
+        initBasicProtonApp();
+    }
+}
+
+main();

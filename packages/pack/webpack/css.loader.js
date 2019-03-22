@@ -2,14 +2,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 
 module.exports = ({ isProduction }) => {
-    const postcssPlugins = isProduction ? [
-        postcssPresetEnv({
-            autoprefixer: {
-                flexbox: 'no-2009',
-            },
-            stage: 3,
-        })
-    ] : [];
+    const postcssPlugins = isProduction
+        ? [
+              postcssPresetEnv({
+                  autoprefixer: {
+                      flexbox: 'no-2009'
+                  },
+                  stage: 3
+              })
+          ]
+        : [];
 
     return [
         {

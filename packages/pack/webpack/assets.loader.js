@@ -1,4 +1,5 @@
 const LIMIT = 10000;
+const DESIGN_SYSTEM_SVG = /sprite-icons.svg$/;
 
 module.exports = () => [
     {
@@ -6,16 +7,25 @@ module.exports = () => [
         loader: 'url-loader',
         options: {
             limit: LIMIT,
-            name: 'assets/img/[name].[hash:8].[ext]',
-        },
+            name: 'assets/img/[name].[hash:8].[ext]'
+        }
+    },
+    {
+        test: DESIGN_SYSTEM_SVG,
+        use: [
+            {
+                loader: 'svg-inline-loader'
+            }
+        ]
     },
     {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
+        exclude: DESIGN_SYSTEM_SVG,
         use: [
             {
                 loader: 'file-loader',
                 options: {
-                    name: 'assets/img/[name].[ext]',
+                    name: 'assets/img/[name].[ext]'
                 }
             }
         ]
@@ -26,16 +36,13 @@ module.exports = () => [
             {
                 loader: 'file-loader',
                 options: {
-                    name: 'assets/fonts/[name].[ext]',
+                    name: 'assets/fonts/[name].[ext]'
                 }
             }
         ]
     },
     {
         test: /\.po$/,
-        use: [
-            { loader: 'json-loader' },
-            { loader: 'po-gettext-loader' }
-        ]
+        use: [{ loader: 'json-loader' }, { loader: 'po-gettext-loader' }]
     }
 ];

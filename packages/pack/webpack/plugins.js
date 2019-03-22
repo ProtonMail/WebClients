@@ -12,6 +12,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const SriPlugin = require('webpack-subresource-integrity');
 
+const { getSource } = require('./helpers/source');
 const transformOpenpgpFiles = require('./helpers/openpgp');
 const { OPENPGP_FILES, OPENPGP_WORKERS, CHECK_COMPAT_APP } = require('./constants');
 
@@ -61,14 +62,16 @@ const PRODUCTION_PLUGINS = [
     })
 ];
 
-module.exports = ({ isProduction }) => {
+module.exports = ({ isProduction, publicPath }) => {
     const { main, worker, compat, definition } = transformOpenpgpFiles(
         OPENPGP_FILES,
         OPENPGP_WORKERS[0],
+        publicPath,
         isProduction
     );
 
     return [
+        new webpack.HotModuleReplacementPlugin(),
         isProduction ? new webpack.HashedModuleIdsPlugin() : new webpack.NamedModulesPlugin(),
 
         new WriteWebpackPlugin(
@@ -84,9 +87,9 @@ module.exports = ({ isProduction }) => {
         }),
 
         new HtmlWebpackPlugin({
-            template: 'src/app.ejs',
+            template: getSource('src/app.ejs'),
             inject: 'body',
-            minify: isProduction ? HTML_MINIFY : false
+            minify: isProduction && HTML_MINIFY
         }),
 
         new SriPlugin({
@@ -106,7 +109,6 @@ module.exports = ({ isProduction }) => {
             filename: isProduction ? '[name].[hash:8].js.map' : '[name].js.map'
         }),
 
-        ...isProduction ? PRODUCTION_PLUGINS : []
+        ...(isProduction ? PRODUCTION_PLUGINS : [])
     ];
 };
-
