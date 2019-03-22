@@ -32,7 +32,9 @@ const AddressCatchAll = ({ address, domain }) => {
         }
     };
 
-    return <Checkbox disabled={loading} checked={state} onClick={handleClick} onChange={handleChange} />;
+    return (
+        <Checkbox id={address.ID} disabled={loading} checked={state} onClick={handleClick} onChange={handleChange} />
+    );
 };
 
 AddressCatchAll.propTypes = {
