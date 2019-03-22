@@ -24,8 +24,8 @@ const DomainsSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Domains`}</SubTitle>
-            <Alert learnMore="todo">
+            <SubTitle>{c('Title').t`Manage custom domains`}</SubTitle>
+            <Alert learnMore="https://protonmail.com/support/categories/custom-domains/">
                 {c('Message')
                     .t`Add a custom filter to perform actions such as automatically labeling or archiving messages.`}
             </Alert>
