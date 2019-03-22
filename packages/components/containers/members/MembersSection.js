@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { c, jt } from 'ttag';
+import { c } from 'ttag';
 import {
     Table,
     TableHeader,
@@ -98,9 +98,10 @@ const MembersSection = () => {
                     })}
                 </TableBody>
             </Table>
-            <Alert>{jt`You can add and manage addresses for the user in your ${(
+            <Alert>
+                <span className="mr1">{c('Info').t`You can add and manage addresses for the user in your`}</span>
                 <Link to="/settings/addresses">{c('Link').t`Address Settings`}</Link>
-            )}.`}</Alert>
+            </Alert>
         </>
     );
 };
