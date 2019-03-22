@@ -1,16 +1,13 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Table, TableHeader, TableBody, TableRow, Alert } from 'react-components';
+import { Table, TableHeader, TableBody, TableRow } from 'react-components';
 
 import DomainStatus from './DomainStatus';
 import DomainActions from './DomainActions';
 import DomainName from './DomainName';
 
-const DomainsTable = ({ domains, loading }) => {
-    if (!loading && !domains.length) {
-        return <Alert>{c('Info').t`No domains yet`}</Alert>;
-    }
+const DomainsTable = ({ domains }) => {
     return (
         <Table>
             <TableHeader
@@ -20,7 +17,7 @@ const DomainsTable = ({ domains, loading }) => {
                     c('Header for addresses table').t`Actions`
                 ]}
             />
-            <TableBody loading={loading} colSpan={3}>
+            <TableBody>
                 {domains.map((domain) => {
                     const key = domain.ID;
                     return (
@@ -40,12 +37,7 @@ const DomainsTable = ({ domains, loading }) => {
 };
 
 DomainsTable.propTypes = {
-    domains: PropTypes.array.isRequired,
-    loading: PropTypes.bool.isRequired
-};
-
-DomainsTable.defaultProps = {
-    domains: []
+    domains: PropTypes.array.isRequired
 };
 
 export default DomainsTable;
