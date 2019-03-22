@@ -8,7 +8,7 @@ import inboxRowSvg from 'design-system/assets/img/pm-images/inbox-row.svg';
 
 const { COLUMN, ROW } = VIEW_LAYOUT;
 
-const ViewLayoutRadios = ({ viewLayout, handleChange, loading }) => {
+const ViewLayoutRadios = ({ viewLayout, onChange, loading }) => {
     const radioCardColumn = {
         value: COLUMN,
         checked: viewLayout === COLUMN,
@@ -16,7 +16,7 @@ const ViewLayoutRadios = ({ viewLayout, handleChange, loading }) => {
         disabled: loading,
         name: 'viewLayout',
         label: c('Label to change view layout').t`Column`,
-        onChange: handleChange(COLUMN),
+        onChange: () => onChange(COLUMN),
         children: <img alt="Column" src={inboxColumnSvg} />
     };
     const radioCardRow = {
@@ -26,7 +26,7 @@ const ViewLayoutRadios = ({ viewLayout, handleChange, loading }) => {
         disabled: loading,
         name: 'viewLayout',
         label: c('Label to change view layout').t`Row`,
-        onChange: handleChange(ROW),
+        onChange: () => onChange(ROW),
         children: <img alt="Row" src={inboxRowSvg} />
     };
 
@@ -35,7 +35,7 @@ const ViewLayoutRadios = ({ viewLayout, handleChange, loading }) => {
 
 ViewLayoutRadios.propTypes = {
     viewLayout: PropTypes.number.isRequired,
-    handleChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     loading: PropTypes.bool
 };
 

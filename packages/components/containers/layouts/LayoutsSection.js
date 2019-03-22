@@ -29,34 +29,41 @@ import ViewModeRadios from './ViewModeRadios';
 const LayoutsSection = () => {
     const [{ ComposerMode, ViewMode, ViewLayout, DraftMIMEType, RightToLeft, ShowMoved }] = useMailSettings();
     const { call } = useEventManager();
+
     const { request: requestComposerMode, loading: loadingComposerMode } = useApiWithoutResult(updateComposerMode);
     const { request: requestViewMode, loading: loadingViewMode } = useApiWithoutResult(updateViewMode);
     const { request: requestViewLayout, loading: loadingViewLayout } = useApiWithoutResult(updateViewLayout);
     const { request: requestDraftType, loading: loadingDraftType } = useApiWithoutResult(updateDraftType);
     const { request: requestRightToLeft, loading: loadingRightToLeft } = useApiWithoutResult(updateRightToLeft);
     const { request: requestShowMoved, loading: loadingShowMoved } = useApiWithoutResult(updateShowMoved);
-    const handleChangeComposerMode = (mode) => async () => {
+
+    const handleChangeComposerMode = async (mode) => {
         await requestComposerMode(mode);
         call();
     };
-    const handleChangeViewMode = (mode) => async () => {
+
+    const handleChangeViewMode = async (mode) => {
         await requestViewMode(mode);
         call();
     };
-    const handleChangeViewLayout = (mode) => async () => {
+
+    const handleChangeViewLayout = async (mode) => {
         await requestViewLayout(mode);
         call();
     };
-    const handleChangeDraftType = ({ target }) => async () => {
-        await requestDraftType(target.value);
+
+    const handleChangeDraftType = async (value) => {
+        await requestDraftType(value);
         call();
     };
-    const handleChangeRightToLeft = ({ target }) => async () => {
-        await requestRightToLeft(target.value);
+
+    const handleChangeRightToLeft = async (value) => {
+        await requestRightToLeft(value);
         call();
     };
-    const handleChangeShowMoved = ({ target }) => async () => {
-        await requestShowMoved(target.value);
+
+    const handleChangeShowMoved = async (value) => {
+        await requestShowMoved(value);
         call();
     };
 
@@ -75,7 +82,7 @@ const LayoutsSection = () => {
                 </Label>
                 <ComposerModeRadios
                     composerMode={ComposerMode}
-                    handleChange={handleChangeComposerMode}
+                    onChange={handleChangeComposerMode}
                     loading={loadingComposerMode}
                 />
             </Row>
@@ -88,7 +95,11 @@ const LayoutsSection = () => {
                             .t`ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.`}
                     />
                 </Label>
-                <ViewLayoutRadios viewMode={ViewMode} handleChange={handleChangeViewMode} loading={loadingViewMode} />
+                <ViewLayoutRadios
+                    viewLayout={ViewLayout}
+                    onChange={handleChangeViewLayout}
+                    loading={loadingViewLayout}
+                />
             </Row>
             <Row>
                 <Label>
@@ -98,17 +109,13 @@ const LayoutsSection = () => {
                             .t`Conversation Grouping automatically groups messages in the same conversation together.`}
                     />
                 </Label>
-                <ViewModeRadios
-                    viewLayout={ViewLayout}
-                    handleChange={handleChangeViewLayout}
-                    loading={loadingViewLayout}
-                />
+                <ViewModeRadios viewMode={ViewMode} onChange={handleChangeViewMode} loading={loadingViewMode} />
             </Row>
             <Row>
                 <Label>{c('Label').t`Composer Mode`}</Label>
                 <DraftTypeSelect
                     draftType={DraftMIMEType}
-                    handleChange={handleChangeDraftType}
+                    onChange={handleChangeDraftType}
                     loading={loadingDraftType}
                 />
             </Row>
@@ -116,7 +123,7 @@ const LayoutsSection = () => {
                 <Label>{c('Label').t`Composer Text Direction`}</Label>
                 <TextDirectionSelect
                     rightToLeft={RightToLeft}
-                    handleChange={handleChangeRightToLeft}
+                    onChange={handleChangeRightToLeft}
                     loading={loadingRightToLeft}
                 />
             </Row>
@@ -128,11 +135,7 @@ const LayoutsSection = () => {
                             .t`Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder.`}
                     />
                 </Label>
-                <ShowMovedSelect
-                    showMoved={ShowMoved}
-                    handleChange={handleChangeShowMoved}
-                    loading={loadingShowMoved}
-                />
+                <ShowMovedSelect showMoved={ShowMoved} onChange={handleChangeShowMoved} loading={loadingShowMoved} />
             </Row>
         </>
     );

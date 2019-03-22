@@ -8,7 +8,7 @@ import conversationSingleSvg from 'design-system/assets/img/pm-images/conversati
 
 const { GROUP, SINGLE } = VIEW_MODE;
 
-const ViewModeRadios = ({ viewMode, handleChange, loading }) => {
+const ViewModeRadios = ({ viewMode, onChange, loading }) => {
     const radioCardGroup = {
         value: GROUP,
         checked: viewMode === GROUP,
@@ -16,7 +16,7 @@ const ViewModeRadios = ({ viewMode, handleChange, loading }) => {
         disabled: loading,
         name: 'viewMode',
         label: c('Label to change view mode').t`Conversation group`,
-        onChange: handleChange(GROUP),
+        onChange: () => onChange(GROUP),
         children: <img alt="Group" src={conversationGroupSvg} />
     };
     const radioCardSingle = {
@@ -26,7 +26,7 @@ const ViewModeRadios = ({ viewMode, handleChange, loading }) => {
         disabled: loading,
         name: 'viewMode',
         label: c('Label to change view mode').t`Single messages`,
-        onChange: handleChange(SINGLE),
+        onChange: () => onChange(SINGLE),
         children: <img alt="Single" src={conversationSingleSvg} />
     };
 
@@ -35,7 +35,7 @@ const ViewModeRadios = ({ viewMode, handleChange, loading }) => {
 
 ViewModeRadios.propTypes = {
     viewMode: PropTypes.number.isRequired,
-    handleChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     loading: PropTypes.bool
 };
 

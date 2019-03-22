@@ -8,7 +8,7 @@ import composerMaximizedSvg from 'design-system/assets/img/design-system-website
 
 const { POPUP, MAXIMIZED } = COMPOSER_MODE;
 
-const ComposerModeRadios = ({ composerMode, handleChange, loading }) => {
+const ComposerModeRadios = ({ composerMode, onChange, loading }) => {
     const radioCardPopup = {
         value: POPUP,
         checked: composerMode === POPUP,
@@ -16,7 +16,7 @@ const ComposerModeRadios = ({ composerMode, handleChange, loading }) => {
         disabled: loading,
         name: 'composerMode',
         label: c('Label to change composer mode').t`Popup`,
-        onChange: handleChange(POPUP),
+        onChange: () => onChange(POPUP),
         children: <img alt="Popup" src={composerPopUpSvg} />
     };
     const radioCardMaximized = {
@@ -26,7 +26,7 @@ const ComposerModeRadios = ({ composerMode, handleChange, loading }) => {
         disabled: loading,
         name: 'composerMode',
         label: c('Label to change composer mode').t`Maximized`,
-        onChange: handleChange(MAXIMIZED),
+        onChange: () => onChange(MAXIMIZED),
         children: <img alt="Maximized" src={composerMaximizedSvg} />
     };
 
@@ -35,7 +35,7 @@ const ComposerModeRadios = ({ composerMode, handleChange, loading }) => {
 
 ComposerModeRadios.propTypes = {
     composerMode: PropTypes.number.isRequired,
-    handleChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     loading: PropTypes.bool
 };
 
