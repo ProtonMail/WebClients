@@ -46,7 +46,7 @@ const serializeItem = (value) => {
  */
 const saveSessionStorage = (keys = [], data) => {
     keys.forEach((key) => {
-        window.sessionStorage.setItem(key, serialize(data[key]));
+        window.sessionStorage.setItem(key, data[key]);
     }, {});
 };
 
@@ -57,7 +57,7 @@ const saveSessionStorage = (keys = [], data) => {
  */
 const readSessionStorage = (keys = []) => {
     return keys.reduce((acc, key) => {
-        acc[key] = deserialize(window.sessionStorage.getItem(key));
+        acc[key] = window.sessionStorage.getItem(key);
         window.sessionStorage.removeItem(key);
         return acc;
     }, {});
