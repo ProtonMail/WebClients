@@ -9,7 +9,7 @@ const wrapTooltip = (children, title) => <Tooltip title={title}>{children}</Tool
 const wrapLink = (children, url) => <Href url={url}>{children}</Href>;
 
 const Info = ({ url, title }) => {
-    let children = <Icon name="info" />;
+    let children = <Icon className="icon-16p fill-pm-blue" name="info" />;
 
     if (url) {
         children = wrapLink(children, url);
