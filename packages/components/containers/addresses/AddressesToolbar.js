@@ -6,8 +6,8 @@ import { ALL_MEMBERS_ID } from 'proton-shared/lib/constants';
 
 import AddAddressButton from './AddAddressButton';
 
-const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
-    const options = members.reduce(
+const getOptions = (members) => {
+    return members.reduce(
         (acc, { ID: value, Name, addresses }) => {
             acc.push({
                 text: `${Name} (${addresses.map(({ Email }) => Email).join(', ')})`,
@@ -15,13 +15,19 @@ const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
             });
             return acc;
         },
-        [
-            {
-                text: `${c('Option').t`All users`} (${members.map(({ Name }) => Name).join(', ')})`,
-                value: ALL_MEMBERS_ID
-            }
-        ]
+        members.length > 1
+            ? [
+                  {
+                      text: `${c('Option').t`All users`} (${members.map(({ Name }) => Name).join(', ')})`,
+                      value: ALL_MEMBERS_ID
+                  }
+              ]
+            : []
     );
+};
+
+const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
+    const options = getOptions(members);
 
     const handleChange = ({ target }) => {
         const newID = target.value;

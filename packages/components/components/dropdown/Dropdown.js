@@ -61,7 +61,7 @@ const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOu
 Dropdown.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node.isRequired,
-    content: PropTypes.node,
+    content: PropTypes.node.isRequired,
     isOpen: PropTypes.bool,
     autoClose: PropTypes.bool,
     autoCloseOutside: PropTypes.bool
