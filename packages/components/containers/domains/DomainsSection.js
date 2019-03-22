@@ -20,7 +20,6 @@ const DomainsSection = () => {
     const [organization] = useOrganization();
     const { isOpen, open, close } = useModal();
     const { UsedDomains, MaxDomains } = organization;
-
     const { call } = useEventManager(); // TODO: Use event manager or expose a refresh fn in the models?
 
     return (
@@ -35,7 +34,8 @@ const DomainsSection = () => {
                 <DomainModal show={isOpen} onClose={close} />
                 <Button disabled={loading} onClick={call}>{c('Action').t`Refresh status`}</Button>
             </Block>
-            <DomainsTable loading={loading} domains={domains} />
+            {!loading && !domains.length ? <Alert>{c('Info').t`No domains yet`}</Alert> : null}
+            {loading ? null : <DomainsTable domains={domains} />}
             <Block>
                 {UsedDomains} / {MaxDomains} {c('Info').t`domains used`}
             </Block>
