@@ -17,7 +17,7 @@ const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
         },
         [
             {
-                text: `${c('Option').t`All`} (${members.map(({ Name }) => Name).join(', ')})`,
+                text: `${c('Option').t`All users`} (${members.map(({ Name }) => Name).join(', ')})`,
                 value: ALL_MEMBERS_ID
             }
         ]
