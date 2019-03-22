@@ -37,6 +37,7 @@ const InvoiceTextModal = ({ show, onClose }) => {
                 </Block>
                 <TextArea
                     id="invoiceTextarea"
+                    autoFocus
                     value={invoiceText}
                     placeholder={c('Placeholder for custom invoice text')
                         .t`Add your name (or company name) and address to your invoices`}

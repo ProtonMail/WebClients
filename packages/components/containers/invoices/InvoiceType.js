@@ -1,5 +1,3 @@
-import React from 'react';
-import { Badge } from 'react-components';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { INVOICE_TYPE } from 'proton-shared/lib/constants';
@@ -13,7 +11,7 @@ const InvoiceType = ({ invoice }) => {
         [INVOICE_TYPE.DONATION]: c('Invoice type display as badge').t`Donation`
     };
 
-    return <Badge>{TYPES[invoice.Type]}</Badge>;
+    return TYPES[invoice.Type];
 };
 
 InvoiceType.propTypes = {
