@@ -153,6 +153,16 @@ export const COMPOSER_MODE = {
     MAXIMIZED: 1
 };
 
+export const VIEW_LAYOUT = {
+    COLUMN: 0,
+    ROW: 1
+};
+
+export const VIEW_MODE = {
+    GROUP: 0,
+    SINGLE: 1
+};
+
 export const DEFAULT_CYCLE = 12;
 
 export const CYCLE = {
