@@ -159,8 +159,7 @@ $width: 5.5em;
     top: 2px;
     left: 0;
     bottom: 2px;
-    transform: translateX( #{$width/2} ) translateX(- 2px);
-    // transform: translateX( calc( 2.5rem - 2px) ); does NOT work in IE11
+    transform: translateX(2px);
     border: 1px solid $pm-global-border;
   }
   & > .pm-toggle-label-text {
@@ -182,7 +181,7 @@ $width: 5.5em;
       &::before {
         left: auto;
         right: 0;
-        transform: translateX( -#{$width/2} ) translateX(1px);
+        transform: translateX(-2px);
       }
     }
   }
@@ -191,12 +190,13 @@ $width: 5.5em;
 .pm-toggle-checkbox {
   @extend .invisible;
   &:checked + .pm-toggle-label {
-    & > .pm-toggle-label-text:first-child {
+    & > .pm-toggle-label-text:last-child {
       fill: $white;
     }
     &::before {
       background: $pm-blue;
-      transform: translateX(2px);
+      transform: translateX( #{$width/2} ) translateX(-2px);
+      // transform: translateX( calc( 2.5rem - 2px) ); does NOT work in IE11
       border-color: $pm-blue-dark;
     }
   }
@@ -209,7 +209,7 @@ $width: 5.5em;
     .pm-toggle-checkbox {
       &:checked + .pm-toggle-label {
         &::before {
-          transform: translateX(-2px);
+          transform: translateX( -#{$width/2} ) translateX(2px);
         }
       }
     }
