@@ -11,7 +11,7 @@ const AddressVerificationSection = () => {
 
     // Handle updates from the Event Manager.
     useEffect(() => {
-        setPromptPin(mailSettings.PromptPin);
+        setPromptPin(!!mailSettings.PromptPin);
     }, [mailSettings.PromptPin]);
 
     const handleChange = async (newValue) => {
