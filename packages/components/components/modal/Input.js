@@ -53,7 +53,6 @@ InputModal.propTypes = {
     onSubmit: PropTypes.func,
     title: PropTypes.string,
     cancel: PropTypes.string.isRequired,
-    confirm: PropTypes.string.isRequired,
     show: PropTypes.bool.isRequired,
     placeholder: PropTypes.string,
     submit: PropTypes.string
