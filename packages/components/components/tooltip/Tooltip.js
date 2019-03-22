@@ -20,9 +20,9 @@ const Tooltip = ({ title, placement, html, trigger, delay, children }) => {
     }, []);
 
     return (
-        <div className="Tooltip" ref={tooltipRef}>
+        <span className="Tooltip" ref={tooltipRef}>
             {children}
-        </div>
+        </span>
     );
 };
 
