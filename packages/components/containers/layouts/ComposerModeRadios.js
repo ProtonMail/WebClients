@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { RadioCards } from 'react-components';
 import { COMPOSER_MODE } from 'proton-shared/lib/constants';
-import composerPopUpSvg from 'design-system/assets/img/design-system-website/popup.svg';
-import composerMaximizedSvg from 'design-system/assets/img/design-system-website/popup.svg';
+import composerPopUpSvg from 'design-system/assets/img/pm-images/composer-popup.svg';
+import composerMaximizedSvg from 'design-system/assets/img/pm-images/composer-maximized.svg';
 
 const { POPUP, MAXIMIZED } = COMPOSER_MODE;
 
