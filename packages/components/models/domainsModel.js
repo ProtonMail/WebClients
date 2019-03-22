@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { queryDomains } from 'proton-shared/lib/api/domains';
+import { queryDomains, queryDomainAddresses } from 'proton-shared/lib/api/domains';
 import { useApi } from 'react-components';
 
 import createProvider from './helpers/createProvider';
@@ -8,8 +8,17 @@ import createUseModelHook from './helpers/createUseModelHook';
 
 const useAsyncFn = () => {
     const api = useApi();
-    return () => {
-        return api(queryDomains()).then(({ Domains }) => Domains);
+    return async () => {
+        const Domains = await api(queryDomains()).then(({ Domains }) => Domains);
+        return Promise.all(
+            Domains.map(async (domain) => {
+                const { Addresses = [] } = await api(queryDomainAddresses(domain.ID));
+                return {
+                    ...domain,
+                    addresses: Addresses
+                };
+            })
+        );
     };
 };
 
