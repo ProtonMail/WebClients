@@ -14,7 +14,8 @@ const AddressVerificationSection = () => {
         setPromptPin(!!mailSettings.PromptPin);
     }, [mailSettings.PromptPin]);
 
-    const handleChange = async (newValue) => {
+    const handleChange = async ({ target }) => {
+        const newValue = target.checked;
         await request(+newValue);
         setPromptPin(newValue);
     };
@@ -35,7 +36,7 @@ const AddressVerificationSection = () => {
                             .t`When receiving an internal message from a sender that has no trusted keys in your contacts, show a banner asking if you want to enable trusted keys.`}
                     />
                 </Label>
-                <Toggle id="trustToggle" value={promptPin} onChange={handleChange} />
+                <Toggle id="trustToggle" checked={promptPin} onChange={handleChange} />
             </Row>
         </>
     );
