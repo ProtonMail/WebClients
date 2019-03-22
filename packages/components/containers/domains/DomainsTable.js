@@ -7,7 +7,7 @@ import DomainStatus from './DomainStatus';
 import DomainActions from './DomainActions';
 import DomainName from './DomainName';
 
-const DomainsTable = ({ domains = [], loading }) => {
+const DomainsTable = ({ domains, loading }) => {
     if (!loading && !domains.length) {
         return <Alert>{c('Info').t`No domains yet`}</Alert>;
     }
@@ -42,6 +42,10 @@ const DomainsTable = ({ domains = [], loading }) => {
 DomainsTable.propTypes = {
     domains: PropTypes.array.isRequired,
     loading: PropTypes.bool.isRequired
+};
+
+DomainsTable.defaultProps = {
+    domains: []
 };
 
 export default DomainsTable;
