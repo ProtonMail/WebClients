@@ -19,7 +19,7 @@ import AddressesToolbar from './AddressesToolbar';
 
 const AddressesSection = () => {
     const [addresses = []] = useAddresses();
-    const [members = [], loadMembers] = useMembers();
+    const [members = []] = useMembers();
     const [user] = useUser();
 
     const { request, loading } = useApiWithoutResult(queryAddresses);
@@ -44,10 +44,6 @@ const AddressesSection = () => {
         const currentUser = members.find(({ Self }) => Self);
         setMember(currentUser);
     }, [members]);
-
-    useEffect(() => {
-        loadMembers(); // TODO: handle initialized case
-    }, []);
 
     useEffect(() => {
         fetchAddresses();
