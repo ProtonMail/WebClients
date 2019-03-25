@@ -2,7 +2,7 @@ import { encodeUtf8Base64, decodeUtf8Base64 } from 'pmcrypto';
 
 import { MAILBOX_PASSWORD_KEY, UID_KEY } from './constants';
 
-const createAuthStore = ({ set, get, reset }) => {
+const createAuthStore = ({ set, get }) => {
     const setUID = (UID) => set(UID_KEY, UID);
     const getUID = () => get(UID_KEY);
 
@@ -19,8 +19,7 @@ const createAuthStore = ({ set, get, reset }) => {
         setUID,
         hasSession,
         setPassword,
-        getPassword,
-        reset
+        getPassword
     };
 };
 
