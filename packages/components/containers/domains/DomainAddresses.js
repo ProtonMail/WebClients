@@ -11,7 +11,7 @@ const DomainAddresses = ({ domain }) => {
 
     return (
         <>
-            <SmallButton title={title} className="pm-button-link" onClick={open}>
+            <SmallButton title={title} className="pm-button--link" onClick={open}>
                 {ngettext(msgid`${n} address`, `${n} addresses`, n)}
             </SmallButton>
             <CatchAllModal show={isOpen} onClose={close} domain={domain} />

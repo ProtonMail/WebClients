@@ -100,7 +100,7 @@ const AddressActions = ({ address, user }) => {
 
     return (
         <>
-            <Dropdown className="pm-button pm-button--small" content={c('Action').t`Options`}>
+            <Dropdown className="pm-button--small" content={c('Action').t`Options`}>
                 <DropdownMenu list={list} />
             </Dropdown>
             <EditAddressModal show={isOpen} onClose={close} address={address} />

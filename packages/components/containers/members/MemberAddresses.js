@@ -14,7 +14,11 @@ const MemberAddresses = ({ member }) => {
     const { isOpen, open, close } = useModal();
 
     return (
-        <Dropdown title={title} className="pm-button-link" content={ngettext(msgid`${n} address`, `${n} addresses`, n)}>
+        <Dropdown
+            title={title}
+            className="pm-button--link"
+            content={ngettext(msgid`${n} address`, `${n} addresses`, n)}
+        >
             <DropdownMenu list={list} />
             <div className="flex flex-spacebetween">
                 <Link className="pm-button pm-button--small" to="/settings/addresses">{c('Link for member addresses')
