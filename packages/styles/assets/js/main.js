@@ -752,25 +752,88 @@ moreEmails.forEach(function(elem) {
 
 
 
+function isScrolledToBottom(el) {
+   return (el.scrollHeight - el.scrollTop === el.clientHeight);
+}
+
+/**
+ * checks if the sidebar has a scrolling inside
+ */
 function detectScrollNav() {
   var navigation_container = document.body.querySelector('.js-sidebar-container');
   var navigation = document.body.querySelector('.js-navigation');
-  
-  if ( navigation.scrollHeight > navigation.clientHeight ) {
+
+  if ( navigation.scrollHeight > navigation.clientHeight) {
      navigation_container.classList.add('has-scroll-inside-navigation');
   }
   else { navigation_container.classList.remove('has-scroll-inside-navigation'); }
+
+  if ( isScrolledToBottom(navigation) ) {
+    navigation_container.classList.remove('has-scroll-inside-navigation');
+  }
 }
 
+// Select the node that will be observed for mutations
+function addMutationsObservers() {
+  var targetNode = [].slice.call(document.body.querySelectorAll('.js-expandmore-button'));
+  var config = { attributes: true, childList: true, subtree: true };
+  
+  var callback = function(mutationsList, observer) {
+    setTimeout( detectScrollNav, 500); // time for animation :)
+  };
+  // Create an observer instance linked to the callback function
+  var observer = new MutationObserver(callback);
+  // Start observing the target node for configured mutation
+  targetNode.forEach(function(elem) {
+    observer.observe(elem, config);
+  });
+}
 
-// // Select the node that will be observed for mutations
-// var navigation = document.body.querySelector('.js-navigation');
+// dirty way to launch it once DOM is set up
+setTimeout( addMutationsObservers, 1500);
 
-// // Options for the observer (which mutations to observe)
-// var config = { attributes: true, childList: true, subtree: true };
 
-// // Create an observer instance linked to the callback function
-// var observer = new MutationObserver(detectScrollNav);
 
-// // Start observing the target node for configured mutations
-// observer.observe(navigation, config);
+/**
+ * detectScrollNav launched when resive event
+ */
+var delay = 100; 
+var originalResize = function originalResize(evt) {
+  detectScrollNav();
+};
+
+(function () {
+  resizeTaskId = null;
+  window.addEventListener('resize', function (evt) {
+    if (resizeTaskId !== null) {
+      clearTimeout(resizeTaskId);
+    }
+
+    resizeTaskId = setTimeout(function () {
+      resizeTaskId = null;
+      originalResize(evt);
+    }, delay);
+  });
+})();
+
+
+
+/**
+ * check if we are at the bottom of sidebar container
+ */
+var last_known_scroll_position = 0;
+var ticking = false;
+var navigation = document.body.querySelector('.js-navigation');
+
+navigation.addEventListener('scroll', function(e) {
+  last_known_scroll_position = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      detectScrollNav();
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+});

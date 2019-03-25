@@ -107,7 +107,7 @@ body {
   right: 0;
   left: 0;
   height: 2em;
-  background: linear-gradient(to top, #000 0, rgba(0, 0, 0, 0) 2em);
+  background: linear-gradient(to top, rgba(0, 0, 0, .4) 0, rgba(0, 0, 0, 0) 2em);
 }
 
 .navigation__link:focus,
