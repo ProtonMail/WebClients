@@ -7,25 +7,6 @@ import Modal from './Modal';
 import Footer from './Footer';
 import Content from './Content';
 
-/*
-handleConfirm = () => {
-    callAPI();
-    this.setState({ showConfirm: false });
-};
-
-handleClose = () => {
-    this.setState({ showConfirm: false });
-};
-
-<Confirm
-    show={this.state.showConfirm}
-    onClose={this.handleClose}
-    title="Need to confirm"
-    onConfirm={this.handleConfirm}>
-    <p>Do you want to join our team?</p>
-</Confirm>
-*/
-
 const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm }) => {
     return (
         <Modal show={show} onClose={onClose} title={title} modalClassName="pm-modal--smaller">

@@ -26,7 +26,7 @@ const PmMePanel = () => {
             <>
                 <Alert learnMore="https://protonmail.com/support/knowledge-base/pm-me-addresses/">{c('Info')
                     .t`You can now also receive and send messages from your @pm.me address (short for ProtonMail me or Private Message me).`}</Alert>
-                <Paragraph>{c('Info').t`@pm.me is activated on your account.`}</Paragraph>
+                <Paragraph className="bold">{c('Info').t`@pm.me is activated on your account.`}</Paragraph>
                 <Link to="/settings/addresses">{c('Link').t`Add another address`}</Link>
             </>
         );

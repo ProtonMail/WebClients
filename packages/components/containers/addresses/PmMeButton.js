@@ -1,5 +1,5 @@
 import React from 'react';
-import { c } from 'ttag/types';
+import { c } from 'ttag';
 import { AddressModal, PrimaryButton, useMembers, useModal } from 'react-components';
 
 const PmMeButton = () => {

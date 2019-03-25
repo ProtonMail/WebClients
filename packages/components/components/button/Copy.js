@@ -7,13 +7,13 @@ import Button from './Button';
 import Icon from '../icon/Icon';
 import { getClasses } from '../../helpers/component';
 
-const Copy = ({ className }) => {
+const Copy = ({ className, value }) => {
     const [copied, setCopied] = useState(false);
 
     const handleClick = () => {
-        textToClipboard(this.props.value);
+        textToClipboard(value);
 
-        if (!this.state.copied) {
+        if (!copied) {
             setCopied(true);
         }
     };
