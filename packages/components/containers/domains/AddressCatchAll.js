@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Checkbox, useApiWithoutResult, useNotifications, useEventManager, useOrganization } from 'react-components';
+import { Checkbox, useApiWithoutResult, useNotifications, useOrganization } from 'react-components';
 import { updateCatchAll } from 'proton-shared/lib/api/domains';
 import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
 
-const AddressCatchAll = ({ address, domain }) => {
+const AddressCatchAll = ({ address, domain, onChange }) => {
     const [organization] = useOrganization();
-    const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateCatchAll);
     const { createNotification } = useNotifications();
     const [state, changeState] = useState(!!address.CatchAll);
@@ -16,8 +15,8 @@ const AddressCatchAll = ({ address, domain }) => {
     const handleChange = async ({ target }) => {
         const newValue = target.checked;
         await request(domain.ID, newValue ? address.ID : null);
-        await call();
         changeState(newValue);
+        onChange(newValue);
         createNotification({ text: c('Success').t`Catch-all address updated` });
     };
 
@@ -32,6 +31,10 @@ const AddressCatchAll = ({ address, domain }) => {
         }
     };
 
+    useEffect(() => {
+        changeState(!!address.CatchAll);
+    }, [address]);
+
     return (
         <Checkbox id={address.ID} disabled={loading} checked={state} onClick={handleClick} onChange={handleChange} />
     );
@@ -39,7 +42,8 @@ const AddressCatchAll = ({ address, domain }) => {
 
 AddressCatchAll.propTypes = {
     address: PropTypes.object.isRequired,
-    domain: PropTypes.object.isRequired
+    domain: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
 };
 
 export default AddressCatchAll;

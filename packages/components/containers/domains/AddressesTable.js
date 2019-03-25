@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { useMembers, Table, TableHeader, TableBody, TableRow, Info } from 'react-components';
@@ -7,12 +7,25 @@ import AddressStatus from './AddressStatus';
 import AddressCatchAll from './AddressCatchAll';
 
 const AddressesTable = ({ domain }) => {
+    const [addresses, setAddresses] = useState(domain.addresses);
     const [members = []] = useMembers();
 
     const getMemberName = (memberID) => {
         const { Name = '' } = members.find(({ ID }) => memberID === ID) || {};
         return Name;
     };
+
+    const handleChange = ({ ID }) => (newValue) => {
+        setAddresses(
+            addresses.map((address) => {
+                return {
+                    ...address,
+                    CatchAll: address.ID === ID ? +newValue : 0
+                };
+            })
+        );
+    };
+
     return (
         <Table>
             <TableHeader
@@ -27,7 +40,7 @@ const AddressesTable = ({ domain }) => {
                 ]}
             />
             <TableBody loading={members.loading} colSpan={4}>
-                {domain.addresses.map((address) => {
+                {addresses.map((address) => {
                     const key = address.ID;
                     return (
                         <TableRow
@@ -36,7 +49,12 @@ const AddressesTable = ({ domain }) => {
                                 address.Email,
                                 getMemberName(address.MemberID),
                                 <AddressStatus key={key} address={address} />,
-                                <AddressCatchAll key={key} address={address} domain={domain} />
+                                <AddressCatchAll
+                                    key={key}
+                                    address={address}
+                                    domain={domain}
+                                    onChange={handleChange(address)}
+                                />
                             ]}
                         />
                     );

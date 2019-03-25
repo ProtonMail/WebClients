@@ -1,43 +1,21 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render, fireEvent } from 'react-testing-library';
 
 import Dropdown from './Dropdown';
-import Button from '../button/Button';
 
-const myDropdown = () => {
-    return (
-        <Dropdown content="Profile">
-            <input />
-        </Dropdown>
-    );
-};
+describe('Dropdown component', () => {
+    const getContent = (container) => container.firstChild.querySelector('.dropDown-content');
 
-Enzyme.configure({ adapter: new Adapter() });
+    it('should display children when clicking on button', async () => {
+        const { container, getByText } = render(
+            <div>
+                <Dropdown content="clickOnMe">Boo</Dropdown>
+            </div>
+        );
+        const buttonNode = getByText('clickOnMe');
 
-describe('Dropdown', () => {
-    const wrapper = shallow(myDropdown());
-
-    it('renders without crashing', () => {
-        expect(wrapper.find(Button).shallow().text()).toBe('Profile');
-        expect(wrapper.find('input').exists()).toBe(false);
-    });
-
-    it('should display the children input after a click on the button', () => {
-        wrapper.find(Button).simulate('click');
-        expect(wrapper.find('input').exists()).toBe(true);
-    });
-
-    // it('should close the dropdown if we click outside', () => {
-    //     wrapper.find('.outside').simulate('click');
-    //     expect(wrapper.find('input').exists()).toBe(false);
-    // });
-
-    test('has a valid snapshot', () => {
-        const component = renderer.create(myDropdown());
-        const tree = component.toJSON();
-
-        expect(tree).toMatchSnapshot();
+        expect(getContent(container)).toBe(null);
+        fireEvent.click(buttonNode);
+        expect(getContent(container)).toContainHTML('<div class="dropDown-content">Boo</div>');
     });
 });

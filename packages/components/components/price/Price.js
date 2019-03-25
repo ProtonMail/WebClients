@@ -9,7 +9,7 @@ const CURRENCIES = {
 
 const Price = ({ children: amount = 0, currency = '', className = '', divisor }) => {
     const symbol = CURRENCIES[currency] || currency;
-    const value = Number(amount > 0 ? amount / divisor : amount).toFixed(2);
+    const value = Number(amount / divisor).toFixed(2);
     const prefix = value < 0 ? '-' : '';
     const absValue = Math.abs(value);
 
