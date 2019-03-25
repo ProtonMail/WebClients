@@ -6,6 +6,7 @@ import { Table, TableHeader, TableBody, TableRow } from 'react-components';
 import DomainStatus from './DomainStatus';
 import DomainActions from './DomainActions';
 import DomainName from './DomainName';
+import DomainAddresses from './DomainAddresses';
 
 const DomainsTable = ({ domains }) => {
     return (
@@ -14,6 +15,7 @@ const DomainsTable = ({ domains }) => {
                 cells={[
                     c('Header for addresses table').t`Domain`,
                     c('Header for addresses table').t`Status`,
+                    c('Header for addresses table').t`Addresses`,
                     c('Header for addresses table').t`Actions`
                 ]}
             />
@@ -26,6 +28,7 @@ const DomainsTable = ({ domains }) => {
                             cells={[
                                 <DomainName key={key} domain={domain} />,
                                 <DomainStatus key={key} domain={domain} />,
+                                <DomainAddresses key={key} domain={domain} />,
                                 <DomainActions key={key} domain={domain} />
                             ]}
                         />
