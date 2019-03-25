@@ -281,35 +281,35 @@
 
 /* aliases for buttons => different per project */
 /* primary/link/error/warning/info */
-.pm-button-primary {
+.pm-button--primary {
   @extend .pm-button-blue;
 }
-.pm-button-link {
+.pm-button--link {
   @extend .link;
   border-width: 0;
 }
-.pm-button-error,
-.pm-button-error:focus,
-.pm-button-error:hover,
-.pm-button-error:active {
+.pm-button--error,
+.pm-button--error:focus,
+.pm-button--error:hover,
+.pm-button--error:active {
   @extend .pm-button-blue;
   background-color: $pm-global-warning;
   border-color: $pm-global-warning; 
 }
-.pm-button-warning,
-.pm-button-warning:focus,
-.pm-button-warning:hover,
-.pm-button-warning:active {
+.pm-button--warning,
+.pm-button--warning:focus,
+.pm-button--warning:hover,
+.pm-button--warning:active {
   @extend .pm-button-blue;
   background-color: $pm-global-attention;
   border-color: $pm-global-attention; 
 }
-.pm-button-info {
+.pm-button--info {
   @extend .pm-button;
 }
 
 /* other aliases requested */
-.pm-button-redborder {
+.pm-button--redborder {
   @extend .pm-button;
   border: 1px solid $pm-global-warning;
   color: $pm-global-warning;
