@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ngettext, msgid } from 'ttag';
-import { Dropdown, DropdownMenu } from 'react-components';
+import { CatchAllModal, SmallButton, useModal } from 'react-components';
 
 const DomainAddresses = ({ domain }) => {
     const addresses = domain.addresses || [];
     const title = addresses.map(({ Email }) => Email).join(', ');
-    const list = addresses.map(({ Email: text }) => ({ text }));
-    const n = list.length;
+    const n = addresses.length;
+    const { isOpen, open, close } = useModal();
 
     return (
-        <Dropdown title={title} className="pm-button-link" content={ngettext(msgid`${n} address`, `${n} addresses`, n)}>
-            <DropdownMenu list={list} />
-        </Dropdown>
+        <>
+            <SmallButton title={title} className="pm-button-link" onClick={open}>
+                {ngettext(msgid`${n} address`, `${n} addresses`, n)}
+            </SmallButton>
+            <CatchAllModal show={isOpen} onClose={close} domain={domain} />
+        </>
     );
 };
 
