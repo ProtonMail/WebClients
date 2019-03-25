@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { queryAvailableDomains, queryPremiumDomains } from 'proton-shared/lib/api/domains';
-import { MEMBER_TYPE } from 'proton-shared/lib/constants';
 import { useUser, useDomains, Select, useApiWithoutResult } from 'react-components';
 
 import { fakeEvent } from '../../helpers/component';
@@ -27,15 +26,13 @@ const DomainsSelect = ({ member, onChange, className }) => {
         }, []);
 
     const queryDomains = async () => {
-        const [available, premium] = await Promise.all([
-            member.Type === MEMBER_TYPE.MEMBER ? requestAvailableDomains().then(({ Domains }) => Domains) : [],
-            member.Type === MEMBER_TYPE.MEMBER && user.isPaidMail
-                ? requestPremiumDomains().then(({ Domains }) => Domains)
-                : [],
+        const [premium, available] = await Promise.all([
+            member.Self && user.isPaidMail ? requestPremiumDomains().then(({ Domains }) => Domains) : [],
+            member.Self ? requestAvailableDomains().then(({ Domains }) => Domains) : [],
             user.isPaidMail ? fetchDomains() : []
         ]);
 
-        const domainNames = [].concat(available, premium, formatDomains(domains));
+        const domainNames = [].concat(premium, available, formatDomains(domains));
 
         setOptions(domainNames.map((text) => ({ text, value: text })));
         setDomain(domainNames[0]);
