@@ -5,7 +5,11 @@ import { getClasses } from '../../helpers/component';
 import Button from './Button';
 
 const LargeButton = ({ children, className, ...rest }) => {
-    return <Button className={getClasses('pm-button pm-button--large mr1', className)} {...rest}>{children}</Button>
+    return (
+        <Button className={getClasses('pm-button--large mr1', className)} {...rest}>
+            {children}
+        </Button>
+    );
 };
 
 LargeButton.propTypes = {

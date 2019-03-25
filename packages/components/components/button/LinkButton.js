@@ -5,7 +5,7 @@ import Button from './Button';
 
 const LinkButton = ({ children, className, ...rest }) => {
     return (
-        <Button className={`pm-button-link ${className}`} {...rest}>
+        <Button className={`pm-button--link ${className}`} {...rest}>
             {children}
         </Button>
     );
