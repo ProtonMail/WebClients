@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { c } from 'ttag';
 import keycode from 'keycode';
 
 import ModalWithPortal from './ModalWithPortal';
@@ -39,7 +38,7 @@ const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnO
 
     return (
         <ModalWithPortal>
-            <div className="pm-modalOverlay" title={c('Action').t`Close modal`} onClick={handleClickOutside}>
+            <div className="pm-modalOverlay" onClick={handleClickOutside}>
                 <dialog className={`pm-modal ${modalClassName}`} open aria-labelledby={modalTitleID}>
                     {title ? <Header onClose={onClose}>{title}</Header> : null}
                     {children}

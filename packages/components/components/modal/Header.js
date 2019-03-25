@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { t } from 'ttag';
+import { c } from 'ttag';
 
 import Button from '../button/Button';
 import { getClasses } from '../../helpers/component';
@@ -8,8 +8,14 @@ import { getClasses } from '../../helpers/component';
 const Header = ({ children, modalTitleID, className, hasClose, onClose, ...rest }) => {
     return (
         <header className={getClasses('pm-modalHeader', className)} {...rest}>
-            {hasClose ? <Button className="pm-modalClose" title={t`Close`} onClick={onClose}>x</Button> : null}
-            <h1 id={modalTitleID} className="pm-modalTitle">{children}</h1>
+            {hasClose ? (
+                <Button className="pm-modalClose" title={c('Action').t`Close modal`} onClick={onClose}>
+                    x
+                </Button>
+            ) : null}
+            <h1 id={modalTitleID} className="pm-modalTitle">
+                {children}
+            </h1>
         </header>
     );
 };
