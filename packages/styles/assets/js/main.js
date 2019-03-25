@@ -837,3 +837,12 @@ navigation.addEventListener('scroll', function(e) {
     ticking = true;
   }
 });
+
+
+
+
+
+/**
+ * undeterminate checkbox
+ */
+document.getElementById("id_field_indeterminate").indeterminate = true;

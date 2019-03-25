@@ -22,6 +22,9 @@ transform: rotateZ(90deg);
 .mirror {
 -webkit-transform: rotateY(180deg);
 transform: rotateY(180deg);
+}
+.low-opacity {
+opacity: .3;
 }</style> 
 
   <symbol id="symbol-search"> 
@@ -32,11 +35,16 @@ transform: rotateY(180deg);
   <symbol id="symbol-carret"> 
   <path d="M7.782 9.356l-4.44-4.111-.75.694 5.19 4.805 5.19-4.805-.749-.694z"/>
   </symbol> 
+
+  <symbol id="symbol-dash">
+  <rect x="2" y="7" width="10" height="1" />
+  </symbol>
   
   <use id="css-search" xlink:href="#symbol-search" class="black" />
   <use id="css-search-rtl" xlink:href="#symbol-search" class="black mirror" />
   <use id="css-carret" xlink:href="#symbol-carret" class="black" />
   <use id="css-greater" xlink:href="#symbol-carret" class="black rotated-right" />
   <use id="css-lesser" xlink:href="#symbol-carret" class="black rotated-left" />
+  <use id="css-dash" xlink:href="#symbol-dash" class="black low-opacity" />
 
 </svg>

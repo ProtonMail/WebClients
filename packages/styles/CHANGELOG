@@ -1,13 +1,22 @@
+# [1.4.10] - 2019-03-25
+
+## New
+
+- detect scroll on main navigation/display gradient
+- add `disabled` style for toggle
+- add `indeterminate` style for checkbox
+
+
 # [1.4.9] - 2019-03-22
 
 ## New
 
 - added carret icon
-- WIP: detect scroll on main navigation.
+- WIP: detect scroll on main navigation
 
 ## Updated/fixes
 
-- Update toggle component, also fixed it in RTL version.
+- Update toggle component, also fixed it in RTL version
 
 # [1.4.7] - 2019-03-21
 

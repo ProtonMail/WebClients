@@ -119,6 +119,21 @@ section: design
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
+    <span class="pm-label">
+    </span>
+    <span>
+        <label for="id_field_indeterminate">
+            <input type="checkbox" class="pm-checkbox" id="id_field_indeterminate">
+            <span class="pm-checkbox-fakecheck">
+                <svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
+                    <use xlink:href="#shape-on"></use>
+                </svg>
+            </span> 
+            This one is indeterminate
+        </label>
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
     <span class="pm-label" id="question">
         Do you speak martian?
     </span>
@@ -227,16 +242,36 @@ section: design
         <input type="checkbox" id="id_toogle" class="pm-toggle-checkbox" value="wozaaa" />
         <label for="id_toogle" class="pm-toggle-label">
             <span class="pm-toggle-label-text">
-                <svg viewBox="0 0 16 16" class="pm-toggle-label-img" role="img" focusable="false">
+                <svg viewBox="0 0 16 16" class="pm-toggle-label-img" aria-hidden="true" role="img" focusable="false">
                     <use xlink:href="#shape-off"></use>
                 </svg>
             </span>
             <span class="pm-toggle-label-text">
-                <svg viewBox="0 0 16 16" class="pm-toggle-label-img" role="img" focusable="false">
+                <svg viewBox="0 0 16 16" class="pm-toggle-label-img" aria-hidden="true" role="img" focusable="false">
                     <use xlink:href="#shape-on"></use>
                 </svg>
             </span>
+        </label>
+    </span>
+</div>
 
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_toogle_disabled" class="pm-label">
+        Shit, it's disabled
+    </label>
+    <span>
+        <input type="checkbox" id="id_toogle_disabled" disabled class="pm-toggle-checkbox" value="wozaaa" />
+        <label for="id_toogle_disabled" class="pm-toggle-label">
+            <span class="pm-toggle-label-text">
+                <svg viewBox="0 0 16 16" class="pm-toggle-label-img" aria-hidden="true" role="img" focusable="false">
+                    <use xlink:href="#shape-off"></use>
+                </svg>
+            </span>
+            <span class="pm-toggle-label-text">
+                <svg viewBox="0 0 16 16" class="pm-toggle-label-img" aria-hidden="true" role="img" focusable="false">
+                    <use xlink:href="#shape-on"></use>
+                </svg>
+            </span>
         </label>
     </span>
 </div>

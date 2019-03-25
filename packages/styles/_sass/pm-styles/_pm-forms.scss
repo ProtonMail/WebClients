@@ -101,8 +101,16 @@ select.pm-field {
   &:focus + .pm-checkbox-fakecheck {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
-  &[disabled] + .pm-checkbox-fakecheck {
+  &[disabled] + .pm-checkbox-fakecheck,
+  &:indeterminate + .pm-checkbox-fakecheck {
     background: $pm-global-muted;
+  }
+  &:indeterminate + .pm-checkbox-fakecheck {
+      content: '';
+      width: 1.6rem;
+      height: 1.6rem;
+      background-image: url("#{$path-images}sprite-for-css-only.svg#css-dash");
+      background-repeat: no-repeat;
   }
 }
 
@@ -202,6 +210,12 @@ $width: 5.5em;
   }
   &:focus + .pm-toggle-label {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+  }
+  &[disabled] + .pm-toggle-label  {
+    background: rgba($pm-global-muted, .6);
+    .pm-toggle-label-text {
+      opacity: .3;
+    }
   }
 }
 @if $rtl-option == true {
