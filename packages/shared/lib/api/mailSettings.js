@@ -39,6 +39,12 @@ export const updateSignature = (Signature) => ({
     data: { Signature }
 });
 
+export const updatePMSignature = (PMSignature) => ({
+    url: 'settings/mail/pmsignature',
+    method: 'put',
+    data: { PMSignature }
+});
+
 export const updateComposerMode = (ComposerMode) => ({
     url: 'settings/mail/composermode',
     method: 'put',
