@@ -115,9 +115,9 @@ const buildHost = () => {
  * - on deploy it's based on the branch name
  * @return {String}
  */
-const sentryConfig = () => {
+const sentryConfig = (branch) => {
     if (process.env.NODE_ENV === 'dist') {
-        const env = typeofBranch(argv.branch);
+        const env = typeofBranch(branch || argv.branch);
         process.env.NODE_ENV_SENTRY = env;
 
         // For production the release is the version else the hash where we ran the build
@@ -160,7 +160,8 @@ const getEnvDeploy = ({ env = process.env.NODE_ENV, config = true } = {}) => {
         api_version: `${argv['api-version'] || CONFIG_DEFAULT.api_version}`,
         articleLink: argv.article || CONFIG_DEFAULT.articleLink,
         changelogPath: env === 'dist' ? CONFIG_DEFAULT.changelogPath : 'changelog.tpl.html',
-        statsConfig: getStatsConfig(argv.branch)
+        statsConfig: getStatsConfig(argv.branch),
+        sentry: sentryConfig()
     };
 
     if (!config) {
@@ -169,10 +170,10 @@ const getEnvDeploy = ({ env = process.env.NODE_ENV, config = true } = {}) => {
     return opt;
 };
 
-const getConfig = (env = process.env.NODE_ENV) => ({
+const getConfig = (env = process.env.NODE_ENV, branch) => ({
     ...CONFIG_DEFAULT,
     ...getEnvDeploy(),
-    sentry: sentryConfig(),
+    sentry: sentryConfig(branch),
     commit: getBuildCommit()
 });
 
