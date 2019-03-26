@@ -11,7 +11,7 @@ const moment = require('moment');
 
 const { success, error, warn, json } = require('./helpers/log');
 const env = require('../env/config');
-const { apiUrl, branch, statsConfig } = env.getEnvDeploy({
+const { apiUrl, branch, statsConfig, sentry } = env.getEnvDeploy({
     env: 'dist',
     config: false
 });
@@ -45,6 +45,16 @@ const pullDist = async (branch, force) => {
     await bash('cd dist  && rm -rf *');
 };
 
+async function replace(rule) {
+    const files = "find dist -type f -name '*.chunk.js' ! -name 'vendor*' ! -name 'app*'";
+    // Because for the lulz. cf https://myshittycode.com/2014/07/24/os-x-sed-extra-characters-at-the-end-of-l-command-error/
+    if (os.platform() === 'darwin') {
+        await bash(`sed -i '' "${rule}" $(${files})`);
+    } else {
+        await bash(`sed -i "${rule}" $(${files})`);
+    }
+}
+
 /**
  * Create sub bundles of the app as the diff won't exist or
  * is only about one key for A/B testing (prod-b)
@@ -56,7 +66,8 @@ const pullDist = async (branch, force) => {
 const buildCustomApp = async (branch, { start, end, originBranch } = {}) => {
     const { abSiteId } = statsConfig;
     const { abSiteId: abSiteIdB } = env.getStatsConfig(branch);
-    const config = env.getConfig('dist');
+    const config = env.getConfig('dist', branch);
+    const { sentry: sentryB } = config;
 
     process.env.NODE_ENV_BRANCH = branch;
     process.env.NODE_ENV_API = config.apiUrl;
@@ -67,7 +78,10 @@ const buildCustomApp = async (branch, { start, end, originBranch } = {}) => {
     }
 
     // Backup build assets
-    const cli = ['rsync -av --progress distback/ distCurrent --exclude .git', 'rm -rf dist'];
+    const cli = [
+        'rsync -av --progress distback/ distCurrent --exclude .git',
+        'rm -rf dist'
+    ];
     await bash(cli.join(' && '));
     await pullDist(branch, true);
 
@@ -76,14 +90,11 @@ const buildCustomApp = async (branch, { start, end, originBranch } = {}) => {
 
     // A/B testing config
     if (/deploy-prod/.test(branch)) {
-        const files = "find distCurrent -type f -name '*.chunk.js' ! -name 'vendor*' ! -name 'app*'";
-        // Because for the lulz. cf https://myshittycode.com/2014/07/24/os-x-sed-extra-characters-at-the-end-of-l-command-error/
-        if (os.platform() === 'darwin') {
-            await bash(`sed -i '' "s/abSiteId:${abSiteId}/abSiteId:${abSiteIdB}/g;" $(${files})`);
-        } else {
-            await bash(`sed -i "s/abSiteId:${abSiteId}/abSiteId:${abSiteIdB}/g;" $(${files})`);
-        }
+        await replace(`s/abSiteId:${abSiteId}/abSiteId:${abSiteIdB}/g;`);
     }
+
+    // Replace the correct sentry URL
+    await replace(`s|${sentry.sentry}|${sentryB.sentry}|g;`);
 
     await bash('rm -rf distCurrent');
 
