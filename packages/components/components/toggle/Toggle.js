@@ -18,12 +18,18 @@ const label = (key) => {
 };
 
 const Toggle = ({ id, className, checked, onChange, disabled, ...rest }) => {
+    const handleChange = (event) => {
+        if (!disabled && onChange) {
+            onChange(event);
+        }
+    };
+
     return (
         <>
             <input
                 disabled={disabled}
                 id={id}
-                onChange={onChange}
+                onChange={handleChange}
                 type="checkbox"
                 className="pm-toggle-checkbox"
                 checked={checked}
