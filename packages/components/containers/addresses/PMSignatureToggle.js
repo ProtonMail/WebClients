@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, Toggle, useMailSettings, useToggle, useApiWithoutResult } from 'react-components';
+import { Alert, Bordered, Toggle, useMailSettings, useToggle, useApiWithoutResult } from 'react-components';
 import { PM_SIGNATURE } from 'proton-shared/lib/constants';
 import { updatePMSignature } from 'proton-shared/lib/api/mailSettings';
 
@@ -19,7 +19,7 @@ const PMSignatureToggle = ({ id }) => {
     if (isMandatory) {
         return (
             <>
-                <span dangerouslySetInnerHTML={{ __html: <div>{PM_SIGNATURE}</div> }} />
+                <Bordered dangerouslySetInnerHTML={{ __html: <div>{PM_SIGNATURE}</div> }} />
                 <Alert>{c('Info')
                     .t`A paid plan is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts.`}</Alert>
             </>
@@ -27,10 +27,10 @@ const PMSignatureToggle = ({ id }) => {
     }
 
     return (
-        <>
-            <Toggle disabled={loading} id={id} checked={state} onChange={handleChange} />
-            <span dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }} />
-        </>
+        <div className="flex flex-spacebetween">
+            <Toggle className="mr1" disabled={loading} id={id} checked={state} onChange={handleChange} />
+            <span className="pm-label" dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }} />
+        </div>
     );
 };
 
