@@ -8,4 +8,8 @@ Group.propTypes = {
     className: PropTypes.string
 };
 
+Group.defaultProps = {
+    className: ''
+};
+
 export default Group;

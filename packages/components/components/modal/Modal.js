@@ -63,7 +63,8 @@ Modal.defaultProps = {
     closeOnOuterClick: true,
     closeOnEscape: true,
     show: false,
-    modalTitleID: 'modalTitle'
+    modalTitleID: 'modalTitle',
+    modalClassName: ''
 };
 
 export default Modal;

@@ -16,4 +16,8 @@ LinkButton.propTypes = {
     className: PropTypes.string
 };
 
+LinkButton.defaultProps = {
+    className: ''
+};
+
 export default LinkButton;

@@ -8,4 +8,8 @@ Text.propTypes = {
     className: PropTypes.string
 };
 
+Text.defaultProps = {
+    className: ''
+};
+
 export default Text;

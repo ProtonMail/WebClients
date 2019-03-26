@@ -28,6 +28,7 @@ Price.propTypes = {
 };
 
 Price.defaultProps = {
+    className: '',
     children: 0,
     divisor: 100
 };
