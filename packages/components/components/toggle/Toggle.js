@@ -17,13 +17,21 @@ const label = (key) => {
     );
 };
 
-const Toggle = ({ id, className, ...rest }) => {
+const Toggle = ({ id, className, checked, onChange, disabled, ...rest }) => {
     return (
         <>
-            <input {...rest} type="checkbox" className="pm-toggle-checkbox" />
+            <input
+                disabled={disabled}
+                id={id}
+                onChange={onChange}
+                type="checkbox"
+                className="pm-toggle-checkbox"
+                checked={checked}
+                {...rest}
+            />
             <label htmlFor={id} className={`pm-toggle-label ${className}`}>
-                {label('on')}
                 {label('off')}
+                {label('on')}
             </label>
         </>
     );
@@ -33,7 +41,8 @@ Toggle.propTypes = {
     id: PropTypes.string.isRequired,
     checked: PropTypes.bool.isRequired,
     onChange: PropTypes.func.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    disabled: PropTypes.bool
 };
 
 Toggle.defaultProps = {
