@@ -843,6 +843,9 @@ navigation.addEventListener('scroll', function(e) {
 
 
 /**
- * undeterminate checkbox
+ * indeterminate checkbox
  */
-document.getElementById("id_field_indeterminate").indeterminate = true;
+var checkbox_indeterminate = document.getElementById("id_field_indeterminate");
+if ( checkbox_indeterminate ){
+  checkbox_indeterminate.indeterminate = true;
+}
