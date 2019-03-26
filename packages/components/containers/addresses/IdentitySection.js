@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { SmallButton, SubTitle, Label, Select, Text, Row, useAddresses, useModal } from 'react-components';
+import { SmallButton, SubTitle, Label, Select, Text, Info, Row, useAddresses, useModal } from 'react-components';
 import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from 'proton-shared/lib/constants';
 
 import EditAddressModal from './EditAddressModal';
@@ -30,7 +30,10 @@ const IdentitySection = () => {
                 <Select id="addressSelector" options={options} onChange={handleChange} />
             </Row>
             <Row>
-                <Label>{c('Label').t`Display name`}</Label>
+                <Label>
+                    {c('Label').t`Display name`}{' '}
+                    <Info url="https://protonmail.com/support/knowledge-base/display-name-and-signature/" />
+                </Label>
                 <div className="flex flex-spacebetween">
                     <Text>{address.DisplayName}</Text>
                     <SmallButton onClick={open}>{c('Action').t`Edit`}</SmallButton>
