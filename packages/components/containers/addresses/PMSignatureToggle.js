@@ -1,19 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, Bordered, Toggle, useMailSettings, useToggle, useApiWithoutResult } from 'react-components';
+import {
+    Alert,
+    Bordered,
+    Toggle,
+    useMailSettings,
+    useToggle,
+    useNotifications,
+    useApiWithoutResult
+} from 'react-components';
 import { PM_SIGNATURE } from 'proton-shared/lib/constants';
 import { updatePMSignature } from 'proton-shared/lib/api/mailSettings';
 
 const PMSignatureToggle = ({ id }) => {
+    const { createNotification } = useNotifications();
     const { request, loading } = useApiWithoutResult(updatePMSignature);
     const [{ PMSignature }] = useMailSettings();
     const { state, toggle } = useToggle(!!PMSignature);
     const isMandatory = PMSignature === 2;
 
     const handleChange = async ({ target }) => {
-        await request(+target.checked);
         toggle();
+        await request(+target.checked);
+        createNotification({ text: c('Success').t`Preference saved` });
     };
 
     if (isMandatory) {
