@@ -8,12 +8,14 @@ import {
     useMailSettings,
     useToggle,
     useNotifications,
+    useEventManager,
     useApiWithoutResult
 } from 'react-components';
 import { PM_SIGNATURE } from 'proton-shared/lib/constants';
 import { updatePMSignature } from 'proton-shared/lib/api/mailSettings';
 
 const PMSignatureToggle = ({ id }) => {
+    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { request, loading } = useApiWithoutResult(updatePMSignature);
     const [{ PMSignature }] = useMailSettings();
@@ -23,6 +25,7 @@ const PMSignatureToggle = ({ id }) => {
     const handleChange = async ({ target }) => {
         toggle();
         await request(+target.checked);
+        await call();
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
