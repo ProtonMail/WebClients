@@ -6,7 +6,7 @@ import Button from './Button';
 
 const SmallButton = ({ children, className, ...rest }) => {
     return (
-        <Button className={getClasses('pm-button--small mr1', className)} {...rest}>
+        <Button className={getClasses('pm-button--small', className)} {...rest}>
             {children}
         </Button>
     );

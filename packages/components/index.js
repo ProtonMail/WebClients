@@ -193,6 +193,7 @@ export { default as AuthenticationStoreContext } from './context/authenticationS
 export { default as ApiContext } from './context/api';
 export { default as PromptsContext } from './context/prompts';
 export { default as PmMePanel } from './containers/addresses/PmMePanel';
+export { default as IdentitySection } from './containers/addresses/IdentitySection';
 export { default as useStep } from './helpers/useStep';
 export { default as useApiWithoutResult } from './hooks/useApiWithoutResult';
 export { default as useEventManager } from './hooks/useEventManager';

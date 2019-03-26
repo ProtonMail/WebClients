@@ -3,11 +3,11 @@ import { render } from 'react-testing-library';
 
 import Href from './Href';
 
-describe('LearnMore component', () => {
+describe('Href component', () => {
     const url = 'https://protonmail.com';
     const text = 'panda';
 
-    it('should contain "Learn more" and be a link', () => {
+    it('should render a link with proper attributes', () => {
         const { getByText } = render(<Href url={url}>{text}</Href>);
         const linkNode = getByText(text);
 
