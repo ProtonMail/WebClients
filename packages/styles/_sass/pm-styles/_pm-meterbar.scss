@@ -1,0 +1,59 @@
+/*
+ * Space remaining bar
+ */
+
+.spacebar-container {
+    padding: 1rem 2rem;
+}
+
+.spacebar,
+.spacebar-gauge {
+  /* Reset the default appearance */
+  //-webkit-appearance: none; // well, because Chrome.
+  -moz-appearance: none;
+  //-ms-appearance: none;
+  appearance: none;
+
+  height: 6px;
+  border-radius: 3px;
+  background: $black;
+}
+.spacebar {
+  &::-webkit-meter-bar {
+    background: $black;
+    border-radius: 3px;
+  }
+
+  &::-webkit-meter-optimum-value {
+    background: $pm-blue; 
+    border-radius: 3px;
+  }
+  &::-webkit-meter-optimum-value {
+    background: $pm-blue; 
+    border-radius: 3px;
+  }
+  &:-moz-meter-optimum::-moz-meter-bar {
+    border-radius: 3px;
+    background: $pm-blue;
+  }
+  
+}
+
+.spacebar-percent {
+  border-radius: 3px;
+  background: $pm-blue;
+  height: 6px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* to target IE/EDGE: hack */
+_:-ms-input-placeholder, :root {
+  .spacebar {
+    visibility: hidden;
+  }
+  .spacebar-gauge {
+    visibility: visible;
+  }  
+}

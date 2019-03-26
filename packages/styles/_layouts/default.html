@@ -185,9 +185,13 @@
               
               </nav>
 
-              <div class="flex-item-noshrink relative nomobile progressBar-container aligncenter">
+              <div class="flex-item-noshrink relative nomobile spacebar-container aligncenter">
 
-                <progress class="progressBar" max="100" value="42" aria-describedby="sizeRemaining"></progress>
+                <meter class="spacebar inbl w100 alignleft" min="0" max="100" low="0" high="100" value="42" aria-describedby="sizeRemaining">
+                  <div class="spacebar-gauge inbl relative w100" aria-hidden="true">
+                    <span class="spacebar-percent inbl" style="width: 42%;"></span>
+                  </div>
+                </meter>
 
                 <span class="bl small m0" id="sizeRemaining">4.2 GB / 10 GB</span>
                 <span class="bl small m0">ProtonMail v4.00</span>
