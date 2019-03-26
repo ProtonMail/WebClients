@@ -1,25 +1,30 @@
 import React from 'react';
-import { render, waitForElement } from 'react-testing-library';
+import { render, fireEvent } from 'react-testing-library';
 
 import Button from './Button';
 
 describe('Button component', () => {
     const text = 'Panda';
 
-    it('should render a loading button', async () => {
-        const { container, getByText } = render(<Button loading={true}>{text}</Button>);
-        const { firstChild } = container;
+    it('should render a loading button', () => {
+        const { container } = render(<Button loading={true}>{text}</Button>);
+        const buttonNode = container.querySelector('button');
 
-        await waitForElement(() => getByText(text));
-        expect(firstChild.getAttribute('aria-busy')).toBe('true');
+        expect(buttonNode.getAttribute('aria-busy')).toBe('true');
     });
 
-    it('should render a disabled button', async () => {
-        const { container, getByText } = render(<Button disabled={true}>{text}</Button>);
-        const { firstChild } = container;
+    it('should render a disabled button', () => {
+        const mockOnClick = jest.fn();
+        const { container } = render(
+            <Button disabled={true} onClick={mockOnClick}>
+                {text}
+            </Button>
+        );
+        const buttonNode = container.querySelector('button');
 
-        await waitForElement(() => getByText(text));
-        expect(firstChild).toHaveAttribute('disabled');
-        expect(firstChild.getAttribute('tabIndex')).toBe('-1');
+        expect(buttonNode).toHaveAttribute('disabled');
+        expect(buttonNode.getAttribute('tabIndex')).toBe('-1');
+        fireEvent.click(buttonNode);
+        expect(mockOnClick).toHaveBeenCalledTimes(0);
     });
 });

@@ -2,17 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
 
-const Button = (props) => {
+const Button = ({
+    type,
+    role,
+    loading,
+    tabIndex,
+    buttonRef,
+    className,
+    children,
+    title,
+    disabled,
+    onClick,
+    onKeyDown,
+    onKeyUp,
+    onFocus,
+    onBlur,
+    ...rest
+}) => {
     const handleClick = (event) => {
-        const { onClick } = props;
-
-        if (onClick) {
+        if (!disabled && onClick) {
             onClick(event);
         }
     };
 
     const handleKeyDown = (event) => {
-        const { onKeyDown, onClick } = props;
         const key = keycode(event);
 
         if (onKeyDown) {
@@ -29,16 +42,12 @@ const Button = (props) => {
     };
 
     const handleKeyUp = (event) => {
-        const { onKeyUp } = props;
-
         if (onKeyUp) {
             onKeyUp(event);
         }
     };
 
     const handleFocus = (event) => {
-        const { disabled, onFocus } = props;
-
         if (disabled) {
             return;
         }
@@ -49,14 +58,10 @@ const Button = (props) => {
     };
 
     const handleBlur = (event) => {
-        const { onBlur } = props;
-
         if (onBlur) {
             onBlur(event);
         }
     };
-
-    const { type, role, loading, tabIndex, buttonRef, className, children, title, disabled, ...rest } = props;
 
     return (
         <button
