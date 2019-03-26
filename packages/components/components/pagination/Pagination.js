@@ -26,7 +26,7 @@ const Pagination = ({ onNext, onPrevious, onSelect, page, total, limit }) => {
             type: 'button',
             disabled: index === page,
             className: index === page ? 'is-active' : '',
-            onClick: onSelect(index)
+            onClick: () => onSelect(index)
         });
     }
 
