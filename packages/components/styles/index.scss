@@ -1,5 +1,9 @@
 $path-images: "~design-system/assets/img/shared/";
 
+@import "~react-quill/dist/quill.core.css";
+@import "~react-quill/dist/quill.bubble.css";
+@import "~react-quill/dist/quill.snow.css";
+
 @import "~design-system/_sass/reusable-components/design-system-config";
 @import "~design-system/_sass/reusable-components/design-system-reset";
 @import "~design-system/_sass/reusable-components/design-system-colors";
