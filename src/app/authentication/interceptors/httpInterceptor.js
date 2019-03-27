@@ -5,7 +5,8 @@ const {
     API_VERSION_INVALID,
     API_VERSION_BAD,
     API_OFFLINE,
-    HUMAN_VERIFICATION_REQUIRED
+    HUMAN_VERIFICATION_REQUIRED,
+    AUTH_AUTH_ACCOUNT_DISABLED
 } = API_CUSTOM_ERROR_CODES;
 
 /* @ngInject */
@@ -105,6 +106,11 @@ function httpInterceptor($q, $injector, AppModel, networkUtils) {
         if (errorCode === HUMAN_VERIFICATION_REQUIRED) {
             const handle9001 = $injector.get('handle9001');
             return handle9001(error.config);
+        }
+
+        if (errorCode === AUTH_AUTH_ACCOUNT_DISABLED) {
+            const handle10003 = $injector.get('handle10003');
+            return handle10003();
         }
 
         if (Array.isArray(config.suppress) && config.suppress.includes(errorCode)) {
