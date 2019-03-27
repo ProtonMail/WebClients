@@ -1,23 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
-import { Alert, SubTitle, Row, Label, Info, Toggle, useApiWithoutResult } from 'react-components';
+import {
+    Alert,
+    SubTitle,
+    Row,
+    Label,
+    Info,
+    Toggle,
+    useApiWithoutResult,
+    useToggle,
+    useEventManager
+} from 'react-components';
 import { useMailSettings } from '../../models/mailSettingsModel';
 
 const AddressVerificationSection = () => {
+    const { call } = useEventManager();
     const [mailSettings] = useMailSettings();
-    const [promptPin, setPromptPin] = useState(!!mailSettings.PromptPin);
+    const { state, toggle } = useToggle(!!mailSettings.PromptPin);
     const { request } = useApiWithoutResult(updatePromptPin);
-
-    // Handle updates from the Event Manager.
-    useEffect(() => {
-        setPromptPin(!!mailSettings.PromptPin);
-    }, [mailSettings.PromptPin]);
 
     const handleChange = async ({ target }) => {
         const newValue = target.checked;
         await request(+newValue);
-        setPromptPin(newValue);
+        await call();
+        toggle();
     };
 
     return (
@@ -36,7 +43,7 @@ const AddressVerificationSection = () => {
                             .t`When receiving an internal message from a sender that has no trusted keys in your contacts, show a banner asking if you want to enable trusted keys.`}
                     />
                 </Label>
-                <Toggle id="trustToggle" checked={promptPin} onChange={handleChange} />
+                <Toggle id="trustToggle" checked={state} onChange={handleChange} />
             </Row>
         </>
     );

@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Toggle, useApiWithoutResult, useEventManager } from 'react-components';
+import { Toggle, useApiWithoutResult, useEventManager, useToggle } from 'react-components';
 import { updateSign } from 'proton-shared/lib/api/mailSettings';
 
 const SignToggle = ({ id, sign }) => {
     const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateSign);
-    const [value, setValue] = useState(!!sign);
+    const { state, toggle } = useToggle(!!sign);
     const handleChange = async (newValue) => {
         await request(+newValue);
         await call();
-        setValue(newValue);
+        toggle();
     };
-    return <Toggle id={id} value={value} onChange={handleChange} disabled={loading} />;
+    return <Toggle id={id} checked={state} onChange={handleChange} disabled={loading} />;
 };
 
 SignToggle.propTypes = {

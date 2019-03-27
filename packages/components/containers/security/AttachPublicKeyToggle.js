@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { ConfirmModal, Toggle, Alert, useApiWithoutResult, useModal, useEventManager } from 'react-components';
+import {
+    ConfirmModal,
+    Toggle,
+    Alert,
+    useApiWithoutResult,
+    useModal,
+    useEventManager,
+    useToggle
+} from 'react-components';
 import { updateAttachPublicKey, updateSign } from 'proton-shared/lib/api/mailSettings';
 
 const AttachPublicKeyToggle = ({ id, attachPublicKey, sign }) => {
@@ -9,26 +17,30 @@ const AttachPublicKeyToggle = ({ id, attachPublicKey, sign }) => {
     const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateAttachPublicKey);
     const { request: requestSign } = useApiWithoutResult(updateSign);
-    const [value, setValue] = useState(!!attachPublicKey);
+    const { state, toggle } = useToggle(!!attachPublicKey);
+
     const handleConfirmSign = async () => {
         await requestSign(1);
         await call();
     };
+
     const handleChange = async (newValue) => {
         askSign();
         await request(+newValue);
         await call();
-        setValue(newValue);
+        toggle();
     };
+
     const askSign = (newValue) => {
         if (!newValue || sign) {
             return false;
         }
         open();
     };
+
     return (
         <>
-            <Toggle id={id} value={value} onChange={handleChange} disabled={loading} />
+            <Toggle id={id} checked={state} onChange={handleChange} disabled={loading} />
             <ConfirmModal
                 show={isOpen}
                 onClose={close}

@@ -23,9 +23,9 @@ const PMSignatureToggle = ({ id }) => {
     const isMandatory = PMSignature === 2;
 
     const handleChange = async ({ target }) => {
-        toggle();
         await request(+target.checked);
         await call();
+        toggle();
         createNotification({ text: c('Success').t`Preference saved` });
     };
 

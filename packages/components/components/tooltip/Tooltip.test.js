@@ -4,7 +4,7 @@ import { render } from 'react-testing-library';
 import Tooltip from './Tooltip';
 
 describe('Tooltip component', () => {
-    it('should add a tooltip around the children', async () => {
+    it('should add a tooltip around the children', () => {
         const title = 'panda';
         const { container } = render(
             <Tooltip title={title}>

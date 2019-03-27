@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, PrimaryButton, SmallButton, useApiResult } from 'react-components';
+import { Alert, PrimaryButton, SmallButton, useApiResult, Price } from 'react-components';
 import { createPayPalPayment } from 'proton-shared/lib/api/payments';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { parseURL } from 'proton-shared/lib/helpers/browser';
@@ -40,11 +40,15 @@ const PayPal = ({ amount, currency, onPay, type }) => {
     }, [ApprovalURL]);
 
     if (type === 'payment' && amount < MIN_PAYPAL_AMOUNT) {
-        return <Alert type="error">{c('Error').t`Amount above the maximum.`}</Alert>;
+        return (
+            <Alert type="error">
+                {c('Error').t`Amount below minimum.`} {`(${<Price currency={currency}>{MIN_PAYPAL_AMOUNT}</Price>})`}
+            </Alert>
+        );
     }
 
     if (amount > MAX_PAYPAL_AMOUNT) {
-        return <Alert type="error">{c('Error').t`Amount below minimum.`}</Alert>;
+        return <Alert type="error">{c('Error').t`Amount above the maximum.`}</Alert>;
     }
 
     if (error.Code === API_CUSTOM_ERROR_CODES.PAYMENTS_PAYPAL_CONNECTION_EXCEPTION) {
@@ -61,7 +65,7 @@ const PayPal = ({ amount, currency, onPay, type }) => {
         <>
             <Alert>{c('Info')
                 .t`You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.`}</Alert>
-            <PrimaryButton disabled={loading} onClick={handleClick}>{c('Action').t`Pay with PayPal`}</PrimaryButton>
+            <PrimaryButton loading={loading} onClick={handleClick}>{c('Action').t`Pay with PayPal`}</PrimaryButton>
         </>
     );
 };
