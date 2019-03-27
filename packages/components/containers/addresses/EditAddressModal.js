@@ -32,7 +32,7 @@ const EditAddressModal = ({ show, onClose, address }) => {
         createNotification({ text: c('Success').t`Address updated` });
     };
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Edit address`}>
+        <Modal show={show} onClose={onClose} title={c('Title').t`Edit address`} type="small">
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label>{c('Label').t`Address`}</Label>

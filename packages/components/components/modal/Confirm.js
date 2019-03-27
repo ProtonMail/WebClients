@@ -9,7 +9,7 @@ import Content from './Content';
 
 const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm }) => {
     return (
-        <Modal show={show} onClose={onClose} title={title} modalClassName="pm-modal--smaller">
+        <Modal show={show} onClose={onClose} title={title} type="small">
             <Content onSubmit={onConfirm} onReset={onClose}>
                 {children}
                 <Footer>

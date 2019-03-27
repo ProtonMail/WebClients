@@ -31,7 +31,7 @@ const PayInvoiceModal = ({ show, invoice, onClose, fetchInvoices }) => {
     };
 
     return (
-        <Modal modalClassName="pm-modal--smaller" show={show} onClose={onClose} title={c('Title').t`Pay invoice`}>
+        <Modal type="small" show={show} onClose={onClose} title={c('Title').t`Pay invoice`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 {loadingCheck ? null : (
                     <>

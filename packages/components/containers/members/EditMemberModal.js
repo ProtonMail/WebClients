@@ -43,7 +43,7 @@ const EditMemberModal = ({ show, onClose, member }) => {
         createNotification({ text: c('Success').t`User updated` });
     };
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Edit user`}>
+        <Modal show={show} onClose={onClose} title={c('Title').t`Edit user`} type="small">
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>

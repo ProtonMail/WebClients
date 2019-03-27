@@ -23,12 +23,7 @@ const InvoiceTextModal = ({ show, onClose }) => {
     const { request, loading } = useApiWithoutResult(() => updateInvoiceText(invoiceText));
 
     return (
-        <Modal
-            modalClassName="pm-modal--smaller"
-            show={show}
-            onClose={onClose}
-            title={c('Title').t`Add invoice details`}
-        >
+        <Modal type="small" show={show} onClose={onClose} title={c('Title').t`Add invoice details`}>
             <ContentModal onSubmit={request} onReset={onClose}>
                 <Alert>{c('Info message for custom invoice modal')
                     .t`Add your name (or company name) and address to your invoices.`}</Alert>

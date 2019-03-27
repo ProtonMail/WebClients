@@ -34,7 +34,7 @@ const DonateModal = ({ show, onClose }) => {
     };
 
     return (
-        <Modal modalClassName="pm-modal--smaller" show={show} onClose={onClose} title={c('Title').t`Donate`}>
+        <Modal type="small" show={show} onClose={onClose} title={c('Title').t`Donate`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Label>{c('Label').t`Amount`}</Label>
                 <PaymentSelector

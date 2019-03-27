@@ -35,7 +35,7 @@ const EditCardModal = ({ card: existingCard, show, onClose, onChange }) => {
     };
 
     return (
-        <Modal modalClassName="pm-modal--smaller" show={show} onClose={onClose} title={title}>
+        <Modal type="small" show={show} onClose={onClose} title={title}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Card card={card} errors={errors} onChange={updateCard} loading={loading} />
                 <FooterModal>

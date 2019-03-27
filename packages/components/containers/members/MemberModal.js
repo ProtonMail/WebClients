@@ -46,7 +46,7 @@ const MemberModal = ({ show, onClose, organization, domains }) => {
     };
 
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Add user`}>
+        <Modal show={show} onClose={onClose} title={c('Title').t`Add user`} type="small">
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>

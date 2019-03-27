@@ -6,7 +6,7 @@ import ModalWithPortal from './ModalWithPortal';
 
 import Header from './Header';
 
-const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnOuterClick, closeOnEscape, title }) => {
+const Modal = ({ show, onClose, type, children, modalTitleID, closeOnOuterClick, closeOnEscape, title }) => {
     const onKeydown = (event) => {
         const key = keycode(event);
 
@@ -39,7 +39,11 @@ const Modal = ({ show, onClose, modalClassName, children, modalTitleID, closeOnO
     return (
         <ModalWithPortal>
             <div className="pm-modalOverlay" onClick={handleClickOutside}>
-                <dialog className={`pm-modal ${modalClassName}`} open aria-labelledby={modalTitleID}>
+                <dialog
+                    className={`pm-modal ${type === 'small' ? 'pm-modal--smaller' : ''}`}
+                    open
+                    aria-labelledby={modalTitleID}
+                >
                     {title ? <Header onClose={onClose}>{title}</Header> : null}
                     {children}
                 </dialog>
@@ -53,7 +57,7 @@ Modal.propTypes = {
     closeOnOuterClick: PropTypes.bool,
     closeOnEscape: PropTypes.bool,
     onClose: PropTypes.func.isRequired,
-    modalClassName: PropTypes.string,
+    type: PropTypes.string,
     children: PropTypes.node.isRequired,
     modalTitleID: PropTypes.string.isRequired,
     title: PropTypes.string
@@ -63,8 +67,7 @@ Modal.defaultProps = {
     closeOnOuterClick: true,
     closeOnEscape: true,
     show: false,
-    modalTitleID: 'modalTitle',
-    modalClassName: ''
+    modalTitleID: 'modalTitle'
 };
 
 export default Modal;
