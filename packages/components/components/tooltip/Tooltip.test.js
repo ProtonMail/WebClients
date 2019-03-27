@@ -14,6 +14,6 @@ describe('Tooltip component', () => {
         const buttonNode = container.querySelector('button');
 
         expect(buttonNode).toBeDefined();
-        expect(container.firstChild.classList.contains('Tooltip')).toBeTruthy();
+        expect(container.firstChild.classList.contains('tooltip-container')).toBeTruthy();
     });
 });
