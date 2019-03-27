@@ -1,14 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import {
-    Dropdown,
-    DropdownMenu,
-    useApiWithoutResult,
-    useModal,
-    useNotifications,
-    useEventManager
-} from 'react-components';
+import { DropdownActions, useApiWithoutResult, useModal, useNotifications, useEventManager } from 'react-components';
 import { ADDRESS_TYPE, ADDRESS_STATUS, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
 
@@ -100,9 +93,7 @@ const AddressActions = ({ address, user }) => {
 
     return (
         <>
-            <Dropdown className="pm-button--small" content={c('Action').t`Options`}>
-                <DropdownMenu list={list} />
-            </Dropdown>
+            <DropdownActions list={list} className="pm-button--small" />
             <EditAddressModal show={isOpen} onClose={close} address={address} />
         </>
     );

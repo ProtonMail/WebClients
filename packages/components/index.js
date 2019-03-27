@@ -32,6 +32,7 @@ export { default as Info } from './components/link/Info';
 export { default as Href } from './components/link/Href';
 export { default as LearnMore } from './components/link/LearnMore';
 export { default as Time } from './components/time/Time';
+export { default as DropdownActions } from './components/dropdown/DropdownActions';
 export { default as DropdownItem } from './components/dropdown/DropdownItem';
 export { default as DropdownMenu } from './components/dropdown/DropdownMenu';
 export { default as Dropdown } from './components/dropdown/Dropdown';

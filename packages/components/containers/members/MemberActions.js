@@ -5,8 +5,7 @@ import {
     useModal,
     Alert,
     useApiWithoutResult,
-    Dropdown,
-    DropdownMenu,
+    DropdownActions,
     useNotifications,
     useEventManager
 } from 'react-components';
@@ -107,9 +106,7 @@ const MemberActions = ({ member, organization }) => {
 
     return (
         <>
-            <Dropdown className="pm-button pm-button--small" content={c('Action').t`Options`}>
-                <DropdownMenu list={list} />
-            </Dropdown>
+            <DropdownActions list={list} className="pm-button--small" />
             <EditMemberModal show={showEdit} onClose={closeEdit} member={member} />
             <ConfirmModal show={showDelete} onClose={closeDelete} onConfirm={handleConfirmDelete}>
                 <Alert>{c('Info')
