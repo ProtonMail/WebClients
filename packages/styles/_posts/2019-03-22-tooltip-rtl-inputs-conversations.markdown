@@ -13,7 +13,7 @@ categories: update
 - detect scroll on main navigation/display gradient
 - add `disabled` style for toggle
 - add `indeterminate` style for checkbox
-- added carret icon
+- added caret icon
 - Tooltips styles
 - RTL documentation: design system more RTL-friendly 
 - added class `.mirror` in `sprite-for-css-only.svg` and in `_design-system-layout-modules.scss`

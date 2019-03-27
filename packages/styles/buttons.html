@@ -271,6 +271,7 @@ subsection: buttons
     </span>
 </div>
 
+
 </div>
 
 <div id="button-aliases">
@@ -347,6 +348,35 @@ subsection: buttons
   &lt;button class="pm-group-button pv-button-greenborder <strong>is-active</strong>"&gt;button&lt;/button&gt;
   &lt;button class="pm-group-button pv-button-greenborder"&gt;button&lt;/button&gt;
   &lt;button class="pm-group-button pv-button-greenborder"&gt;button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+
+<h3 class="mt1">Modifier for buttons/icons</h3>
+
+<p>You may also use <code>.pm-button--for-icon</code> modifier, specially designed to adapt <code>padding</code> values for buttons that contains only an icon. Example:</p>
+
+  <div class="pm-group-buttons">
+    <button class="pm-button pm-button--for-icon pm-group-button">
+      <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false">
+        <use xlink:href="#shape-folder"></use>
+      </svg>
+    </button>
+    <button class="pm-button pm-button--for-icon pm-group-button">
+      <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false">
+        <use xlink:href="#shape-label"></use>
+      </svg>
+    </button>
+    <button class="pm-button pm-button--for-icon pm-group-button">
+      <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false">
+        <use xlink:href="#shape-caret"></use>
+      </svg>
+    </button>
+  </div>
+
+  <pre class=" language-markup"><code>&lt;div class="pm-group-buttons"&gt;
+  &lt;button class="pm-button <strong>pm-button--for-icon</strong>"&gt;…&lt;/button&gt;
+  &lt;button class="pm-button <strong>pm-button--for-icon</strong>"&gt;…&lt;/button&gt;
+  &lt;button class="pm-button <strong>pm-button--for-icon</strong>"&gt;…&lt;/button&gt;
 &lt;/div&gt;</code></pre>
 
 <h3 class="mt1">Loading button</h3>

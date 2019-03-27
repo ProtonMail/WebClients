@@ -32,7 +32,7 @@ opacity: .3;
   </symbol> 
 
   <!-- careful, this one is used by breadcrumb domain -->
-  <symbol id="symbol-carret"> 
+  <symbol id="symbol-caret"> 
   <path d="M7.782 9.356l-4.44-4.111-.75.694 5.19 4.805 5.19-4.805-.749-.694z"/>
   </symbol> 
 
@@ -42,9 +42,9 @@ opacity: .3;
   
   <use id="css-search" xlink:href="#symbol-search" class="black" />
   <use id="css-search-rtl" xlink:href="#symbol-search" class="black mirror" />
-  <use id="css-carret" xlink:href="#symbol-carret" class="black" />
-  <use id="css-greater" xlink:href="#symbol-carret" class="black rotated-right" />
-  <use id="css-lesser" xlink:href="#symbol-carret" class="black rotated-left" />
+  <use id="css-caret" xlink:href="#symbol-caret" class="black" />
+  <use id="css-greater" xlink:href="#symbol-caret" class="black rotated-right" />
+  <use id="css-lesser" xlink:href="#symbol-caret" class="black rotated-left" />
   <use id="css-dash" xlink:href="#symbol-dash" class="black low-opacity" />
 
 </svg>

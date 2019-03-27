@@ -1,8 +1,24 @@
+# [1.5.2] - 2019-03-27
+
+## New
+
+- styles for conversations
+
+## Updated/fixes
+
+- “caret” has a single “r”.
+- added modifier `.pm-button--for-icon` (for group button made of icons)
+- add missing ` !default` to some variables
+
+
 # [1.5.1] - 2019-03-26
 
 ## Updated/fixes
 
 - remove `progress` tag to `meter` (for space used)
+- added `white` classes (`fill-white` & `bg-white`)
+- added `opacity-50` class (=> `opacity: .5`)
+- doc for `flex-nowrap` class
 
 
 # [1.5.0] - 2019-03-25
@@ -21,7 +37,7 @@
 
 ## New
 
-- added carret icon
+- added caret icon
 - WIP: detect scroll on main navigation
 
 ## Updated/fixes

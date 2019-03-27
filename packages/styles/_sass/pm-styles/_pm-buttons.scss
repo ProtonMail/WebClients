@@ -238,6 +238,11 @@
   padding: em(1) em(12) em(2); // design want 26px height 
 }
 
+.pm-button--for-icon {
+  padding-left: .75em;
+  padding-right: .75em;
+}
+
 /* button group */
 .pm-group-buttons {
   @extend .inline-flex;

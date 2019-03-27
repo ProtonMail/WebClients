@@ -173,7 +173,7 @@ svg {
 .w100 { width: 100%; }
 
 /* here you may add px widths */
-$list-width: 150, 200, 500;
+$list-width: 150, 200, 500 !default;
 // ex .w500p { width: 500px; }
 
 @each $width in $list-width {
@@ -181,7 +181,7 @@ $list-width: 150, 200, 500;
   }
   
 /* here you may add em widths */
-$list-width-em: 400;
+$list-width-em: 400 !default;
 // ex .w500e { width: 60em; }
 
 @each $width in $list-width-em {
@@ -195,7 +195,7 @@ $list-width-em: 400;
 
 
 /* here you may add pixel max-widths */
-$list-max-width: 100;
+$list-max-width: 100 !default;
 
 @each $max-width in $list-max-width {
   .mw#{$max-width}p { max-width: #{$max-width}px; }
@@ -208,12 +208,17 @@ $list-max-width: 100;
 //   $size_em : em($max-width);
 //   .mw#{$max-width}e { max-width: $size_em; }
 //   }
+$list-min-width-em: 3 !default;
+
+@each $min-width in $list-min-width-em {
+  .min-w#{$min-width}e { min-width: #{$min-width}em; }
+}
 
 
 /* margins */
 
-$list-margins: mt, mr, mb, ml, m;
-$list-margins-values: 0, 0.5, 1, 1.5, 2; // specify 2.5 if needed
+$list-margins: mt, mr, mb, ml, m !default;
+$list-margins-values: 0, 0.25, 0.5, 1, 1.5, 2 !default; // specify 2.5 if needed
 
 @include margin-generator($list-margins, $list-margins-values);
 
@@ -238,8 +243,8 @@ $list-margins-values: 0, 0.5, 1, 1.5, 2; // specify 2.5 if needed
 
 /* paddings */
 
-$list-paddings: pt, pr, pb, pl, p;
-$list-paddings-values: 0, 0.25, 0.5, 1, 2; // specify 2.5 if needed
+$list-paddings: pt, pr, pb, pl, p !default;
+$list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 2 !default; // specify 2.5 if needed
 
 @include padding-generator($list-paddings, $list-paddings-values);
 
@@ -256,6 +261,8 @@ $list-paddings-values: 0, 0.25, 0.5, 1, 2; // specify 2.5 if needed
   width: 1px;
 }
 .nonvisible { visibility: hidden; }
+
+.opacity-50 { opacity: .5; }
 
 .hidden, [hidden]  { display: none; } /* hidden everywhere */
 .nodesktop { display: none; } /* hidden on desktop */
