@@ -1,42 +1,50 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-components';
+import { Button, Group, ButtonGroup, Icon } from 'react-components';
 import { c } from 'ttag';
 
 import Dropdown from './Dropdown';
 import DropdownMenu from './DropdownMenu';
 
-const DropdownActions = ({ list, content, className }) => {
+const DropdownActions = ({ list, className }) => {
     if (!list.length) {
         return null;
     }
 
+    const [{ text, ...restProps }, ...restList] = list;
+
     if (list.length === 1) {
-        const [{ text, ...rest }] = list;
         return (
-            <Button className={className} {...rest}>
+            <Button className={className} {...restProps}>
                 {text}
             </Button>
         );
     }
 
     return (
-        <Dropdown content={content} className={className}>
-            <DropdownMenu list={list} />
-        </Dropdown>
+        <Group>
+            <ButtonGroup className={className} {...restProps}>
+                {text}
+            </ButtonGroup>
+            <Dropdown
+                content={<Icon name="caret" />}
+                title={c('Action').t`More`}
+                className={`pm-group-button ${className}`}
+            >
+                <DropdownMenu list={restList} />
+            </Dropdown>
+        </Group>
     );
 };
 
 DropdownActions.propTypes = {
     list: PropTypes.array.isRequired,
-    className: PropTypes.string,
-    content: PropTypes.string
+    className: PropTypes.string
 };
 
 DropdownActions.defaultProps = {
     list: [],
-    className: '',
-    content: c('Action').t`Options`
+    className: ''
 };
 
 export default DropdownActions;
