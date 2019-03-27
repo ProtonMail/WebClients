@@ -9,9 +9,13 @@ function togglePassword(gettextCatalog, translator) {
         HIDE: gettextCatalog.getString('Hide password', null, 'toggle password')
     }));
 
-    const template = dedentTpl`<button type="button" class="togglePassword-btn-toggle">
-        <i class="togglePassword-icon-toText fa fa-eye" pt-tooltip="${I18N.SHOW}"></i>
-        <i class="togglePassword-icon-toPassword fa fa-eye-slash" pt-tooltip="${I18N.HIDE}"></i>
+    const template = dedentTpl`<button type="button" tabindex="0" class="togglePassword-btn-toggle">
+        <i class="togglePassword-icon-toText fa fa-eye" pt-tooltip="${I18N.SHOW}"><span class="sr-only">${
+        I18N.SHOW
+    }</span></i>
+        <i class="togglePassword-icon-toPassword fa fa-eye-slash" pt-tooltip="${I18N.HIDE}"><span class="sr-only">${
+        I18N.HIDE
+    }</span></i>
     </button>`;
 
     return {
