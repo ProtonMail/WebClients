@@ -1,6 +1,39 @@
 import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from 'pmcrypto';
 import getRandomValues from 'get-random-values';
 
+/**
+ * Partially inspired by http://www.thomasfrank.se/sessionvars.html
+ * However, we aim to deliberately be non-persistent. This is useful for
+ * data that wants to be preserved across refreshes, but is too sensitive
+ * to be safely written to disk. Unfortunately, although sessionStorage is
+ * deleted when a session ends, major browsers automatically write it
+ * to disk to enable a session recovery feature, so using sessionStorage
+ * alone is inappropriate.
+ *
+ * To achieve this, we do two tricks. The first trick is to delay writing
+ * any possibly persistent data until the user is actually leaving the
+ * page (onunload). This already prevents any persistence in the face of
+ * crashes, and severely limits the lifetime of any data in possibly
+ * persistent form on refresh.
+ *
+ * The second, more important trick is to split sensitive data between
+ * window.name and sessionStorage. window.name is a property that, like
+ * sessionStorage, is preserved across refresh and navigation within the
+ * same tab - however, it seems to never be stored persistently. This
+ * provides exactly the lifetime we want. Unfortunately, window.name is
+ * readable and transferable between domains, so any sensitive data stored
+ * in it would leak to random other websites.
+ *
+ * To avoid this leakage, we split sensitive data into two shares which
+ * xor to the sensitive information but which individually are completely
+ * random and give away nothing. One share is stored in window.name, while
+ * the other share is stored in sessionStorage. This construction provides
+ * security that is the best of both worlds - random websites can't read
+ * the data since they can't access sessionStorage, while disk inspections
+ * can't read the data since they can't access window.name. The lifetime
+ * of the data is therefore the smaller lifetime, that of window.name.
+ */
+
 const deserialize = (string) => {
     try {
         return JSON.parse(string);
