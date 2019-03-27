@@ -3,8 +3,9 @@ const DESIGN_SYSTEM_SVG = /sprite-icons.svg$/;
 
 module.exports = () => [
     {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        test: /\.(bmp|png|jpg|jpeg|gif|svg)$/,
         loader: 'url-loader',
+        exclude: DESIGN_SYSTEM_SVG,
         options: {
             limit: LIMIT,
             name: 'assets/img/[name].[hash:8].[ext]'
@@ -15,18 +16,6 @@ module.exports = () => [
         use: [
             {
                 loader: 'svg-inline-loader'
-            }
-        ]
-    },
-    {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
-        exclude: DESIGN_SYSTEM_SVG,
-        use: [
-            {
-                loader: 'file-loader',
-                options: {
-                    name: 'assets/img/[name].[ext]'
-                }
             }
         ]
     },
