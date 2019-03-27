@@ -1,3 +1,12 @@
+# [3.15.22] - 2019-03-27
+
+## Fixed
+- Keys in imported contacts were not validated in some cases
+- Forgot username link didn't redirect to correct localized pages
+- Show password button on signup was not vocalized
+- The language was not automatically detected in some locations
+- Trying to log in with a disabled account did not show the proper modal
+
 # [3.15.21] - 2019-03-19
 
 ## Fixed
