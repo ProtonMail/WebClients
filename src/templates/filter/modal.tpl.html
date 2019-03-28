@@ -100,7 +100,7 @@
                                             ng-model="condition.value"
                                             placeholder-translate="Text or pattern"
                                             placeholder-translate-context="Filter modal condition"
-                                            ng-keyup="$event.keyCode === 13 && ctrl.addValue(condition)"
+                                            ng-keypress="$event.keyCode === 13 && ctrl.addValue(condition, $event)"
                                             ng-blur="ctrl.addValue(condition)"  />
                                         <button
                                             class="filter-modal-add-condition-button pm_button"
