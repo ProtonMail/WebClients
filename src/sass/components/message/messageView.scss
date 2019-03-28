@@ -443,6 +443,7 @@
             zoom: 1;
             clear: left;
             overflow-x: auto;
+            box-sizing: content-box; // to avoid problems in some emails
 
             .bodyDecrypted { word-wrap: break-word; }
 
