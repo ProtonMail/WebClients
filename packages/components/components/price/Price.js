@@ -15,7 +15,7 @@ const Price = ({ children: amount = 0, currency = '', className = '', divisor })
 
     return (
         <span className={`price ${className}`}>
-            {currency === 'USD' ? `${prefix}${symbol}${absValue}` : `${prefix}${absValue} ${symbol}`}
+            {currency === 'USD' ? `${prefix}${symbol}${absValue}` : `${prefix}${absValue} ${symbol}`.trim()}
         </span>
     );
 };

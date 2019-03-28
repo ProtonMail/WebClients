@@ -13,4 +13,9 @@ describe('Price component', () => {
         const { container } = render(<Price currency="EUR">{1500}</Price>);
         expect(container.firstChild.textContent).toBe('15 €');
     });
+
+    it('should use the divisor defined', () => {
+        const { container } = render(<Price divisor={1}>{1500}</Price>);
+        expect(container.firstChild.textContent).toBe('1500');
+    });
 });
