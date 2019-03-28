@@ -113,35 +113,18 @@ angular
             const isSupport = toState.name.includes('support');
             const isAccount = toState.name === 'account';
             const isSignup = toState.name === 'signup' || toState.name === 'pre-invite';
-            const isUnlock = toState.name === 'login.unlock';
             const isOutside = toState.name.includes('eo');
             const isReset = toState.name.includes('reset');
             const isPgp = toState.name === 'pgp';
-            const { isLoggedIn, isLocked } = AppModel.query();
-
-            if (isUnlock && isLoggedIn) {
-                return;
-            }
-
-            if (isLoggedIn && !isLocked && isUnlock) {
-                // If already logged in and unlocked and on the unlock page: redirect to inbox
-                event.preventDefault();
-                $state.go('secured.inbox');
-                return;
-            }
 
             if (isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPgp) {
-                // if on the login, support, account, or signup pages dont require authentication
-                $log.debug(
-                    'appjs:(isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPgp)'
-                );
                 return; // no need to redirect
             }
 
             // now, redirect only not authenticated
             if (!authentication.isLoggedIn()) {
-                event.preventDefault(); // stop current execution
-                $state.go('login'); // go to login
+                event.preventDefault();
+                $state.go('login', undefined, { reload: true });
             }
         });
 

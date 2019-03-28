@@ -1,7 +1,9 @@
+import { setCookies } from 'proton-shared/lib/api/auth';
+
 import { getRandomString } from '../../../helpers/string';
 
 /* @ngInject */
-function authApi($http, url) {
+function authApi($http, compatApi, url) {
     const requestURL = url.build('auth');
     const unload = ({ data }) => data;
     return {
@@ -19,15 +21,16 @@ function authApi($http, url) {
          * @param {Object} params
          * @return {Promise}
          */
-        cookies({ UID, RefreshToken }) {
-            return $http.post(requestURL('cookies'), {
-                ResponseType: 'token',
-                GrantType: 'refresh_token',
-                RefreshToken,
-                UID,
-                RedirectURI: 'https://protonmail.com',
-                State: getRandomString(24)
-            });
+        cookies({ UID, AccessToken, RefreshToken }) {
+            return compatApi(
+                setCookies({
+                    UID,
+                    RefreshToken,
+                    AccessToken,
+                    RedirectURI: 'https://protonmail.com',
+                    State: getRandomString(24)
+                })
+            );
         },
         /**
          * Set up SRP authentication request

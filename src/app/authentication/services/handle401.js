@@ -4,7 +4,7 @@ import { API_CUSTOM_ERROR_CODES } from '../../errors';
 const { AUTH_COOKIES_REFRESH_INVALID, AUTH_REFRESH_TOKEN_INVALID } = API_CUSTOM_ERROR_CODES;
 
 /* @ngInject */
-function handle401($http, $q, authentication) {
+function handle401($http, $q, authentication, authApi) {
     let refreshPromise = null;
 
     const clearPromise = () => (refreshPromise = null);
@@ -27,9 +27,9 @@ function handle401($http, $q, authentication) {
         }
 
         if (!refreshPromise) {
-            refreshPromise = authentication
+            refreshPromise = authApi
                 // Don't display this error, the "invalid access token" error will be displayed.
-                .getRefreshCookie({ suppress: [AUTH_COOKIES_REFRESH_INVALID, AUTH_REFRESH_TOKEN_INVALID] })
+                .refresh({}, { suppress: [AUTH_COOKIES_REFRESH_INVALID, AUTH_REFRESH_TOKEN_INVALID] })
                 .then(clearPromise)
                 .catch(() => {
                     logout();

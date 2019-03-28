@@ -1,16 +1,4 @@
-body#reset {
-  background: $dark;
-  .alert:not(.alert-danger) {
-    color: $black;
-  }
-  .pm_panel {
-    display: flex;
-    align-items: center;
-  }
-
-}
-
-body#login-unlock,
+body.unlock,
 body#login-sub {
   height: 100%;
   background: $dark;
@@ -22,8 +10,8 @@ body#login-sub {
     display: none;
   }
 }
-body#login {
-  background-color: #667cbd;
+
+body#login:not(.unlock) {
   background: url(assets('img/login.jpg')) #667cbd center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -33,13 +21,12 @@ body#login {
     background-image: url('#hostURL#');
 }
 
-body#login-unlock,
-body#login-sub,
 body#login,
+body#login-sub,
 body#eo-unlock {
   #pm_login,
-  #pm_loginTwoFactor,
-  {
+  #pm_loginUnlock,
+  #pm_loginTwoFactor {
     img.logo {
       margin-bottom: 2rem;
     }
@@ -55,6 +42,7 @@ body#eo-unlock {
 }
 
 #pm_login,
+#pm_loginUnlock,
 #pm_loginTwoFactor,
 body#reset {
   text-transform: uppercase;
@@ -126,23 +114,20 @@ body#reset {
     :-ms-input-placeholder {
        color: $white;
     }
+}
 
-  &.loadingUnlock {
-    position: relative;
+.loadingUnlock-loader-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingUnlock-loader-container.pm_panel.alt {
     padding: 0;
-        .loadingUnlock-loader-container {
-            display: flex;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-        }
-        .unlock-panel { display: none }
-  }
-    .loadingUnlock-loader-container { display: none }
 }
 
 #pm_footer {

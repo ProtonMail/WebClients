@@ -137,7 +137,7 @@ function changeMailboxPassword(
                     newLoginPassword
                 })
             )
-            .then(() => authentication.savePassword(passwordComputed));
+            .then(() => authentication.setPassword(passwordComputed));
         networkActivityTracker.track(promise);
         return promise;
     };

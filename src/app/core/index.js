@@ -6,7 +6,6 @@ import SupportController from './controllers/support';
 import hideUpgrade from './directives/hideUpgrade';
 import placeholderProgress from './directives/placeholderProgress';
 import bugModalView from './directives/bugModalView';
-import supportMessage from './directives/supportMessage';
 import newVersion from './directives/newVersion';
 import formatResponseInterceptor from './interceptors/formatResponseInterceptor';
 import serverTimeInterceptor from './interceptors/serverTimeInterceptor';
@@ -46,7 +45,6 @@ export default angular
     .directive('hideUpgrade', hideUpgrade)
     .directive('placeholderProgress', placeholderProgress)
     .directive('bugModalView', bugModalView)
-    .directive('supportMessage', supportMessage)
     .directive('newVersion', newVersion)
     .factory('formatResponseInterceptor', formatResponseInterceptor)
     .factory('serverTimeInterceptor', serverTimeInterceptor)

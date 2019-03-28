@@ -1,6 +1,9 @@
-import LoginController from './controllers/login';
+import loginContainer from './directives/loginContainer';
+import loginSubContainer from './directives/loginSubContainer';
 import loginForm from './directives/loginForm';
+import loginUnlockForm from './directives/loginUnlockForm';
 import loginTwoFactorForm from './directives/loginTwoFactorForm';
+import loginSpinner from './directives/loginSpinner';
 import twoFaField from './directives/twoFaField';
 import httpInterceptor from './interceptors/httpInterceptor';
 import helpLoginModal from './modals/helpLoginModal';
@@ -9,6 +12,7 @@ import loginPasswordModal from './modals/loginPasswordModal';
 import loginPasswordInput from './directives/loginPasswordInput';
 import auth from './services/auth';
 import authApi from './services/authApi';
+import compatApi from './services/compatApi';
 import handle401 from './services/handle401';
 import handle429 from './services/handle429';
 import unlockUser from './services/unlockUser';
@@ -17,9 +21,7 @@ import handle10003 from './services/handle10003';
 import handleTryAgain from './services/handleTryAgain';
 import logoutManager from './services/logoutManager';
 import srp from './services/srp';
-import upgradePassword from './services/upgradePassword';
 import tryAgainModel from './factories/tryAgainModel';
-import loginWithFallback from './services/loginWithFallback';
 import activeSessionsModel from './factories/activeSessionsModel';
 
 export default angular
@@ -27,14 +29,14 @@ export default angular
     // Global functions
     .run((AppModel, authentication) => {
         authentication.detectAuthenticationState();
-        AppModel.set('isLoggedIn', authentication.isLoggedIn());
-        AppModel.set('isLocked', authentication.isLocked());
-        AppModel.set('isSecure', authentication.isSecured());
     })
-    .controller('LoginController', LoginController)
     .directive('loginForm', loginForm)
+    .directive('loginContainer', loginContainer)
+    .directive('loginSubContainer', loginSubContainer)
+    .directive('loginUnlockForm', loginUnlockForm)
     .directive('loginPasswordInput', loginPasswordInput)
     .directive('loginTwoFactorForm', loginTwoFactorForm)
+    .directive('loginSpinner', loginSpinner)
     .directive('twoFaField', twoFaField)
     .factory('httpInterceptor', httpInterceptor)
     .factory('helpLoginModal', helpLoginModal)
@@ -42,8 +44,8 @@ export default angular
     .factory('loginPasswordModal', loginPasswordModal)
     .factory('logoutManager', logoutManager)
     .factory('authentication', auth)
-    .factory('loginWithFallback', loginWithFallback)
     .factory('authApi', authApi)
+    .factory('compatApi', compatApi)
     .factory('handle401', handle401)
     .factory('handle429', handle429)
     .factory('unlockUser', unlockUser)
@@ -52,5 +54,4 @@ export default angular
     .factory('handleTryAgain', handleTryAgain)
     .factory('srp', srp)
     .factory('tryAgainModel', tryAgainModel)
-    .factory('activeSessionsModel', activeSessionsModel)
-    .factory('upgradePassword', upgradePassword).name;
+    .factory('activeSessionsModel', activeSessionsModel).name;

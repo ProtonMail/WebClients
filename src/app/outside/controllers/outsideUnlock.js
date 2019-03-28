@@ -1,4 +1,4 @@
-import { decryptMessage, encodeUtf8Base64, getMessage } from 'pmcrypto';
+import { decryptMessage, getMessage } from 'pmcrypto';
 
 /* @ngInject */
 function OutsideUnlockController(
@@ -8,7 +8,7 @@ function OutsideUnlockController(
     encryptedToken,
     networkActivityTracker,
     notification,
-    secureSessionStorage
+    eoStore
 ) {
     $scope.params = {
         MessagePassword: ''
@@ -25,8 +25,8 @@ function OutsideUnlockController(
         const message = await getMessage(encryptedToken);
         const { data } = await decryptMessage({ message, passwords: [password] });
 
-        secureSessionStorage.setItem('proton:decrypted_token', data);
-        secureSessionStorage.setItem('proton:encrypted_password', encodeUtf8Base64(password));
+        eoStore.setToken(data);
+        eoStore.setPassword(password);
 
         return $state.go('eo.message', { tag: $stateParams.tag });
     };

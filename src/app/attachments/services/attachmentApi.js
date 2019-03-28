@@ -1,11 +1,10 @@
 import { getMessage, decryptSessionKey } from 'pmcrypto';
 
 import CONFIG from '../../config';
-import { OAUTH_KEY } from '../../constants';
 import { uniqID } from '../../../helpers/string';
 
 /* @ngInject */
-function attachmentApi($http, url, $q, dispatchers, keysModel, secureSessionStorage, gettextCatalog) {
+function attachmentApi($http, url, $q, dispatchers, keysModel, authenticationStore, gettextCatalog) {
     const MAP = {
         message: {},
         request: {}
@@ -209,7 +208,7 @@ function attachmentApi($http, url, $q, dispatchers, keysModel, secureSessionStor
         xhr.setRequestHeader('Accept', 'application/vnd.protonmail.v1+json');
         xhr.setRequestHeader('x-pm-appversion', 'Web_' + CONFIG.app_version);
         xhr.setRequestHeader('x-pm-apiversion', CONFIG.api_version);
-        xhr.setRequestHeader('x-pm-uid', secureSessionStorage.getItem(OAUTH_KEY + ':UID'));
+        xhr.setRequestHeader('x-pm-uid', authenticationStore.getUID());
 
         xhr.send(makeFormUpload(packets, message, tempPacket));
 

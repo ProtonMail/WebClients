@@ -3,8 +3,8 @@ import { ROW_MODE } from '../../constants';
 import { isMac, isFirefox } from '../../../helpers/browser';
 
 const SCROLL_STATES = ['signup', 'login.setup', 'secured.print'];
-const LIGHT_STATES = ['support.reset-password', 'signup', 'login.setup', 'pre-invite', 'support.message'];
-const LOCKED_STATES = ['login', 'login.unlock', 'eo.unlock', 'eo.message', 'reset', 'eo.reply'];
+const LIGHT_STATES = ['support.reset-password', 'signup', 'login.setup', 'pre-invite'];
+const LOCKED_STATES = ['login', 'eo.unlock', 'eo.message', 'reset', 'eo.reply'];
 
 /* @ngInject */
 function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscriptionModel) {
@@ -32,14 +32,14 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
         moz: className('is-moz'),
         storageLimitReached: 'hasStickyMessages', // Note: Improve this if you need to add more sticky messages.
         isSecure: 'secure',
-        isLocked: 'unlock',
+        isUnlock: 'unlock',
         newVersion: 'newVersion'
     };
 
     return {
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
-            const { mobile, tablet, isSecure, isLocked, isLoggedIn } = AppModel.query();
+            const { mobile, tablet } = AppModel.query();
 
             const updateRows = () => {
                 const { ViewLayout } = mailSettingsModel.get();
@@ -60,19 +60,6 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
                 const className = mapClassNames[type];
                 className && toggleClass(className, data.value);
 
-                if (type === 'isLoggedIn') {
-                    const { isLoggedIn, isLocked } = AppModel.query();
-
-                    toggleClass('login', !isLoggedIn);
-                    toggleClass('locked', included(LOCKED_STATES) || (isLoggedIn && isLocked));
-                }
-
-                if (type === 'isLocked') {
-                    const { isLoggedIn, isLocked } = AppModel.query();
-
-                    toggleClass('locked', included(LOCKED_STATES) || (isLoggedIn && isLocked));
-                }
-
                 if (userStates.includes(type)) {
                     toggleClass(mapClassNames[type], data.value);
                 }
@@ -85,13 +72,11 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
             });
 
             on('$stateChangeSuccess', (e, toState) => {
-                const { isLoggedIn, isLocked } = AppModel.query();
-
                 el[0].id = toState.name.replace(/[.]+/g, '-');
 
                 toggleClass('scroll', included(SCROLL_STATES));
                 toggleClass('light', included(LIGHT_STATES));
-                toggleClass('locked', included(LOCKED_STATES) || (isLoggedIn && isLocked));
+                toggleClass('locked', included(LOCKED_STATES));
             });
 
             on('subscription', (e, { type }) => {
@@ -100,11 +85,8 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
                 }
             });
 
-            toggleClass('login', !isLoggedIn);
             toggleClass(mapClassNames.mobile, mobile);
             toggleClass(mapClassNames.tablet, tablet);
-            toggleClass(mapClassNames.isSecure, isSecure);
-            toggleClass(mapClassNames.isLocked, isLocked);
             updateRows();
 
             scope.$on('$destroy', unsubscribe);
