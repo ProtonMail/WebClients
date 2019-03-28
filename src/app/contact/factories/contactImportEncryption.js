@@ -97,7 +97,7 @@ function contactImportEncryption($injector, contactKey, contactAskEncryptionModa
                     return;
                 }
 
-                const parsedKeys = await Promise.all(keys.map(contactKey.parseKey));
+                const parsedKeys = await Promise.all(keys.map((key) => contactKey.parseKey(key).catch(() => false)));
                 const keyObjects = await Promise.all(
                     parsedKeys
                         .filter((k) => k)
