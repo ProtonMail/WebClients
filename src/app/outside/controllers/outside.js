@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { encryptMessage, getKeys, decodeUtf8Base64 } from 'pmcrypto';
+import { encryptMessage, getKeys } from 'pmcrypto';
 
 import { MIME_TYPES, MAX_OUTSIDE_REPLY } from '../../constants';
 
@@ -19,7 +19,7 @@ function OutsideController(
     notification,
     textToHtmlMail,
     networkActivityTracker,
-    secureSessionStorage,
+    eoStore,
     attachmentModelOutside,
     sanitize
 ) {
@@ -34,8 +34,8 @@ function OutsideController(
     };
 
     attachmentModelOutside.load();
-    const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
-    const password = decodeUtf8Base64(secureSessionStorage.getItem('proton:encrypted_password'));
+    const decryptedToken = eoStore.getToken();
+    const password = eoStore.getPassword();
     const tokenId = $stateParams.tag;
     const message = messageData;
 

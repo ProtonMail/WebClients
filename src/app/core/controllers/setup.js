@@ -5,7 +5,6 @@ function SetupController(
     $scope,
     $state,
     Address,
-    AppModel,
     authentication,
     domains,
     networkActivityTracker,
@@ -41,7 +40,9 @@ function SetupController(
     };
 
     $scope.submit = () => {
-        $scope.setupError = false;
+        $scope.$applyAsync(() => {
+            $scope.setupError = false;
+        });
         // Save password in separate variable to prevent extensions/etc
         // from modifying it during setup process
         passwordCopy = $scope.model.password;
@@ -53,7 +54,9 @@ function SetupController(
             .then(finishRedirect);
 
         networkActivityTracker.track(promise).catch(() => {
-            $scope.setupError = true;
+            $scope.$applyAsync(() => {
+                $scope.setupError = true;
+            });
         });
     };
 
@@ -73,14 +76,16 @@ function SetupController(
          */
         const Username = addresses.length ? addresses[0].Email : user.Name;
 
-        return authentication.loginWithCredentials({
-            Username,
-            Password: passwordCopy
+        return authentication.login({
+            username: Username,
+            password: passwordCopy
         });
     }
 
     async function setupAddress() {
-        $scope.filling = false;
+        $scope.$applyAsync(() => {
+            $scope.filling = false;
+        });
 
         if (!addresses.length) {
             return Address.setup({ Domain: $scope.model.domain.value }).then(({ data = {} } = {}) => {
@@ -91,7 +96,9 @@ function SetupController(
     }
 
     function generateKeys(addresses) {
-        $scope.genKeys = true;
+        $scope.$applyAsync(() => {
+            $scope.genKeys = true;
+        });
         return setupKeys.generate(addresses, passwordCopy);
     }
 
@@ -104,21 +111,22 @@ function SetupController(
 
         return setupKeys.setup(data, passwordCopy).then(() => {
             $scope.$applyAsync(() => {
-                authentication.savePassword(data.mailboxPassword);
-                AppModel.set('isLoggedIn', authentication.isLoggedIn());
-                AppModel.set('isLocked', authentication.isLocked());
-                AppModel.set('isSecure', authentication.isSecured());
+                authentication.setPassword(data.mailboxPassword);
             });
         });
     }
 
     function doGetUserInfo() {
-        $scope.getUserInfo = true;
+        $scope.$applyAsync(() => {
+            $scope.getUserInfo = true;
+        });
         return authentication.fetchUserInfo();
     }
 
     function finishRedirect() {
-        $scope.finishCreation = true;
+        $scope.$applyAsync(() => {
+            $scope.finishCreation = true;
+        });
 
         if (authentication.user.Delinquent < UNPAID_STATE.DELINQUENT) {
             return $state.go('secured.inbox', { welcome: WIZARD_ENABLED });

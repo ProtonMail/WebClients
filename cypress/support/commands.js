@@ -62,7 +62,6 @@ Cypress.Commands.add('login', (unlock, username) => {
     cy.get('#username').type(username || Cypress.env('login2'));
     cy.get('#password').type(Cypress.env('password2'));
     cy.get('#login_btn').click({ timeout: 5000 });
-    cy.url().should('include', '/login/unlock');
     cy.get('[name="mailbox-password"]').type(Cypress.env('unlockpassword2'));
     cy.get('#unlock_btn').click();
     cy.url().should('include', '/inbox');

@@ -5,6 +5,7 @@ function SupportController(
     $state,
     $log,
     authentication,
+    authApi,
     tempStorage,
     tools,
     gettextCatalog,
@@ -119,48 +120,38 @@ function SupportController(
         $scope.showTokenUsername = true;
     };
 
-    function doReset() {
-        return generateKeys().then(installKeys);
-    }
-
-    function generateKeys() {
-        $log.debug('generateKeys');
-        $scope.resetState = $scope.states.GENERATE;
-
-        return setupKeys.generate($scope.addresses, $scope.params.password);
-    }
-
-    function installKeys(data = {}) {
-        $log.debug('installKeys');
-        $scope.resetState = $scope.states.INSTALL;
-        $scope.resetAccount = true;
-
-        return setupKeys.reset(data, $scope.params.password, $scope.tokenParams);
-    }
-
-    function doLogUserIn() {
-        $scope.logUserIn = true;
-        return authentication
-            .loginWithCredentials({
-                Username: $scope.params.username,
-                Password: $scope.params.password
-            })
-            .then(({ data }) => {
-                AppModel.set('isLoggedIn', true);
-                return data;
-            });
-    }
-
-    function finishRedirect(authResponse) {
-        $log.debug('finishRedirect');
-        $scope.finishInstall = true;
-        const creds = {
+    async function doReset() {
+        const credentials = {
             username: $scope.params.username,
-            password: $scope.params.password,
-            authResponse
+            password: $scope.params.password
         };
-        tempStorage.setItem('creds', creds);
-        $state.go('login.unlock');
+
+        $scope.$applyAsync(() => {
+            $scope.resetState = $scope.states.GENERATE;
+        });
+
+        const { mailboxPassword, keySalt, keys } = await setupKeys.generate($scope.addresses, credentials.password);
+
+        $scope.$applyAsync(() => {
+            $scope.resetState = $scope.states.INSTALL;
+            $scope.resetAccount = true;
+        });
+
+        await setupKeys.reset({ keySalt, keys }, credentials.password, $scope.tokenParams);
+
+        $scope.$applyAsync(() => {
+            $scope.logUserIn = true;
+        });
+
+        await authentication.loginWithCookies(credentials);
+
+        authentication.setPassword(mailboxPassword);
+
+        $scope.$applyAsync(() => {
+            $scope.finishInstall = true;
+        });
+
+        return $state.go('secured.inbox');
     }
 
     /**
@@ -169,14 +160,11 @@ function SupportController(
      */
     $scope.resetPassword = () => {
         networkActivityTracker.track(
-            doReset()
-                .then(doLogUserIn)
-                .then(finishRedirect)
-                .catch((error) => {
-                    $log.error(error);
-                    resetState();
-                    throw error;
-                })
+            doReset().catch((error) => {
+                $log.error(error);
+                resetState();
+                throw error;
+            })
         );
     };
 

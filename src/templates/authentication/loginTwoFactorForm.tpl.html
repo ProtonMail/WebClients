@@ -1,20 +1,17 @@
 <form
     method="post"
     id="pm_loginTwoFactor"
-    name="loginTwoFactorForm"
-    class="pm_panel alt pm_panel-twofactors pm_form"
-    novalidate role="form"
-    autocomplete="off"
-    ng-submit="enterTwoFactor($event)"
-    action="loginTwoFactor">
+    name="twoFactorForm"
+    class="pm_panel alt pm_panel-twofactors pm_form loginFormTwoFa-container"
+    novalidate
+    role="form"
+    autocomplete="off">
 
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
     <h4 class="text-center margin-bottom">
         <i class="fa fa-user title-icon"></i> <span translate-context="Title" translate>Two-Factor Authentication</span>
     </h4>
-
-    <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
     <div class="margin">
         <label for="twoFactorCode" translate translate-context="Label">Two-factor passcode</label>
@@ -29,9 +26,19 @@
 
     <div class="loginForm-actions">
         <div class="loginForm-actions-column">
-            <button id="login_btn_2fa" type="submit" class="loginForm-actions-main  pm_button primary primary-white pull-right disabled-if-network-activity" ng-disabled="loginTwoFactorForm.$invalid" translate-context="Action" translate>Login</button>
-            <a class="pm_button link pull-left" ng-click="displayHelpModal()" translate-context="Action" translate-comment="link for login help" translate>Need help?</a>
+            <button
+                id="login_btn_2fa"
+                type="submit"
+                class="loginForm-actions-main pm_button primary primary-white pull-right disabled-if-network-activity"
+                ng-disabled="twoFactorForm.$invalid || loading"
+                translate-context="Action"
+                translate>Login</button>
+            <a
+                class="pm_button link pull-left"
+                data-action="help"
+                translate-context="Action"
+                translate-comment="link for login help"
+                translate>Need help?</a>
         </div>
     </div>
-
 </form>

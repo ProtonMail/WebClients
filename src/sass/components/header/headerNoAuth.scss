@@ -61,15 +61,19 @@
     color: currentColor;
 }
 
-/* 'login' class is applyied on body when !isLoggedIn */
+/* mobile */
+body.appConfigBody-is-mobile .headerNoAuth-item-report { display: none }
 
-/* authenticated */
-body:not(.login) .headerNoAuth-container [class*='__noAuth'] { display: none }
-/* not authenticated */
-.login .headerNoAuth-container [class*='__Auth'] { display: none }
-.login .headerNoAuth-container [class*='__noAuth'] { display: flex }
+body#login-sub,
+body#login-setup {
+    .headerNoAuth-item-noAuth { display: none }
+    .headerNoAuth-item-auth { display: flex }
+}
 
-body#signup .headerNoAuth-item-signup__noAuth { display: none }
+body#signup .headerNoAuth-signup { display: none }
+
+body.unlock .headerNoAuth-item-noAuth { display: none }
+body:not(.unlock) .headerNoAuth-item-auth { display: none }
 
 /* mobile */
 .appConfigBody-is-mobile .headerNoAuth-item-report { display: none }

@@ -12,7 +12,7 @@ function pmDomainModel(authentication, dispatchers, domainApi) {
     function fetch() {
         const promises = [domainApi.available()];
 
-        if (authentication.isSecured() && authentication.hasPaidMail()) {
+        if (authentication.isLoggedIn() && authentication.hasPaidMail()) {
             promises.push(domainApi.premium());
         }
 

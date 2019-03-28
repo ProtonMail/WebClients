@@ -1,12 +1,10 @@
 import _ from 'lodash';
-import { decodeUtf8Base64 } from 'pmcrypto';
 
 import {
     PAID_ADMIN_ROLE,
     PAID_MEMBER_ROLE,
     PRODUCT_TYPE,
     INVITE_URL,
-    OAUTH_KEY,
     MAILBOX_IDENTIFIERS,
     CURRENCIES,
     BILLING_CYCLE,
@@ -56,23 +54,12 @@ export default angular
                         templateUrl: require('../templates/layout/login.tpl.html')
                     },
                     'panel@login': {
-                        controller: 'LoginController',
-                        templateUrl: require('../templates/views/login.tpl.html')
+                        template: '<login-container/>'
                     }
                 },
                 resolve: {
                     lang(i18nLoader) {
                         return i18nLoader.translate();
-                    }
-                }
-            })
-
-            .state('login.unlock', {
-                url: '/unlock',
-                views: {
-                    'panel@login': {
-                        controller: 'LoginController',
-                        templateUrl: require('../templates/views/unlock.tpl.html')
                     }
                 }
             })
@@ -105,13 +92,8 @@ export default angular
                 url: '/sub',
                 views: {
                     'panel@login': {
-                        controller: 'LoginController',
-                        templateUrl: require('../templates/views/unlock.tpl.html')
+                        template: '<login-sub-container/>'
                     }
-                },
-                onEnter(AppModel) {
-                    AppModel.set('isLoggedIn', true);
-                    AppModel.set('domoArigato', true);
                 }
             })
 
@@ -262,21 +244,6 @@ export default angular
                 }
             })
 
-            // Generic Message View Template
-            .state('support.message', {
-                url: '/message',
-                onEnter($state, $stateParams) {
-                    if (!$stateParams.error) {
-                        $state.go('login');
-                    }
-                },
-                views: {
-                    'panel@support': {
-                        template: '<support-message></support-message>'
-                    }
-                }
-            })
-
             // Reset Login Password
             .state('support.reset-password', {
                 url: '/reset-login-password?username&token',
@@ -334,13 +301,10 @@ export default angular
                     app(lazyLoader, i18nLoader) {
                         return lazyLoader.app().then(i18nLoader.localizeDate);
                     },
-                    messageData(app, $stateParams, $q, Eo, messageModel, secureSessionStorage) {
-                        const password = decodeUtf8Base64(secureSessionStorage.getItem('proton:encrypted_password'));
+                    messageData(app, $stateParams, $q, Eo, messageModel, eoStore) {
+                        const password = eoStore.getPassword();
 
-                        return Eo.message(
-                            secureSessionStorage.getItem('proton:decrypted_token'),
-                            $stateParams.tag
-                        ).then(({ data = {} }) => {
+                        return Eo.message(eoStore.getToken(), $stateParams.tag).then(({ data = {} }) => {
                             const message = data.Message;
                             const promises = _.reduce(
                                 message.Replies,
@@ -369,10 +333,10 @@ export default angular
             .state('eo.reply', {
                 url: '/eo/reply/:tag',
                 resolve: {
-                    messageData($stateParams, Eo, messageModel, secureSessionStorage) {
+                    messageData($stateParams, Eo, messageModel, eoStore) {
                         const tokenId = $stateParams.tag;
-                        const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
-                        const password = decodeUtf8Base64(secureSessionStorage.getItem('proton:encrypted_password'));
+                        const decryptedToken = eoStore.getToken();
+                        const password = eoStore.getPassword();
 
                         return Eo.message(decryptedToken, tokenId).then((result) => {
                             const message = result.data.Message;
@@ -439,23 +403,11 @@ export default angular
                         return lazyLoader.app();
                     },
                     // Contains also labels and contacts
-                    user(app, authentication, $http, secureSessionStorage, i18nLoader, userSettingsModel) {
+                    user(app, authentication, $http, i18nLoader, userSettingsModel) {
                         const isAuth = Object.keys(authentication.user || {}).length > 0;
                         if (isAuth) {
                             i18nLoader.localizeDate();
                             return authentication.user;
-                        }
-
-                        const uid = secureSessionStorage.getItem(OAUTH_KEY + ':UID');
-
-                        if (uid) {
-                            $http.defaults.headers.common['x-pm-uid'] = uid;
-                        } else if (angular.isDefined(secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken'))) {
-                            $http.defaults.headers.common['x-pm-uid'] = decodeUtf8Base64(
-                                secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken') || ''
-                            );
-                            secureSessionStorage.setItem(OAUTH_KEY + ':UID', $http.defaults.headers.common['x-pm-uid']);
-                            secureSessionStorage.removeItem(OAUTH_KEY + ':SessionToken');
                         }
 
                         return authentication.fetchUserInfo().then((data) => {
@@ -485,9 +437,12 @@ export default angular
                         return premiumDomainModel.fetch();
                     }
                 },
-                onEnter(authentication) {
-                    // This will redirect to a login step if necessary
-                    authentication.redirectIfNecessary();
+                onEnter(AppModel, $state, authentication) {
+                    if (!authentication.isLoggedIn()) {
+                        return $state.go('login');
+                    }
+                    AppModel.set('isLoggedIn', true);
+                    AppModel.set('isSecure', true);
                 }
             })
 
@@ -970,8 +925,7 @@ export default angular
 
         $urlRouterProvider.otherwise(($injector) => {
             const $state = $injector.get('$state');
-            const stateName = $injector.get('authentication').state() || 'secured.inbox';
-
+            const stateName = $injector.get('authentication').isLoggedIn() ? 'secured.inbox' : 'login';
             return $state.href(stateName);
         });
 

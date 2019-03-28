@@ -2,7 +2,7 @@
     <ul class="headerNoAuth-list">
         <li class="headerNoAuth-item-back">
             <a
-                class="headerNoAuth-item-back-button__noAuth"
+                class="headerNoAuth-item-noAuth"
                 href="https://protonmail.com"
                 target="_self">
                 <span
@@ -10,7 +10,11 @@
                     translate-context="Action">Back to protonmail.com</span>
             </a>
             <a
-                class="headerNoAuth-item-back-btn__Auth"  href="/login" translate-title="Login" translate-title-context="Action">
+                class="headerNoAuth-item-auth"
+                ui-sref="login"
+                ui-sref-opts="{reload: true, notify: true}"
+                translate-title="Login"
+                translate-title-context="Action">
                 <span
                     translate
                     translate-context="Action">Back to login</span>
@@ -20,17 +24,18 @@
             <new-bug-report
                 class="headerNoAuth-item-report-button"></new-bug-report>
         </li>
-        <li class="headerNoAuth-item-signup__noAuth">
+        <li class="headerNoAuth-item-noAuth headerNoAuth-signup">
             <link-website
                 data-key="forFree"
                 class="headerNoAuth-item-signup-button pm_button primary"
                 class="loginForm-link-signup"
                 data-link="signup"></link-website>
         </li>
-        <li class="headerNoAuth-item-logout__Auth">
+        <li class="headerNoAuth-item-auth">
             <a
             class="headerNoAuth-item-logout-button pm_button primary"
                 ui-sref="login"
+                ui-sref-opts="{reload: true, notify: true}"
                 translate
                 translate-context="Action">Log out</a>
         </li>

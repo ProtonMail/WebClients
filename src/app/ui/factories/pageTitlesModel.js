@@ -22,7 +22,6 @@ function pageTitlesModel($injector, dispatchers, gettextCatalog, authentication,
     const loadI18N = () => ({
         'eo.message': gettextCatalog.getString('Encrypted Message', null, 'Title'),
         'eo.reply': gettextCatalog.getString('Encrypted Reply', null, 'Title'),
-        'support.message': gettextCatalog.getString('Error encountered', null, 'Title'),
         account: gettextCatalog.getString('Account', null, 'Title'),
         allDrafts: gettextCatalog.getString('Drafts', null, 'Title'),
         allmail: gettextCatalog.getString('All Mail', null, 'Title'),
@@ -63,7 +62,11 @@ function pageTitlesModel($injector, dispatchers, gettextCatalog, authentication,
 
     function getFirstSortedAddresses() {
         return (
-            flow(filter({ Status: 1, Receive: 1 }), sortBy('Order'), head)($injector.get('addressesModel').get()) || {}
+            flow(
+                filter({ Status: 1, Receive: 1 }),
+                sortBy('Order'),
+                head
+            )($injector.get('addressesModel').get()) || {}
         );
     }
 

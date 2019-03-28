@@ -5,9 +5,9 @@ const customTheme = (AppModel, dispatchers, mailSettingsModel, organizationModel
     link(scope, el) {
         const { on, unsubscribe } = dispatchers();
         const update = () => {
-            const { isLoggedIn, isLocked } = AppModel.query();
+            const { isLoggedIn } = AppModel.query();
 
-            if (isLoggedIn && !isLocked) {
+            if (isLoggedIn) {
                 const { Theme: organizationTheme } = organizationModel.get() || {};
                 const userTheme = mailSettingsModel.get('Theme');
                 el[0].textContent = organizationTheme || userTheme || '';

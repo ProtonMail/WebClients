@@ -24,7 +24,9 @@ import errorReporter from './services/errorReporter';
 import i18nLoader from './services/i18nLoader';
 import networkActivityTracker from './services/networkActivityTracker';
 import networkUtils from './services/networkUtils';
+import authenticationStore from './services/authenticationStore';
 import secureSessionStorage from './services/secureSessionStorage';
+import eoStore from './services/eoStore';
 import translateAttribute from './directives/translateAttribute';
 import lazyInject from './directives/lazyInject';
 import ptClipboard from './services/ptClipboard';
@@ -61,6 +63,8 @@ export default angular
     .factory('networkActivityTracker', networkActivityTracker)
     .factory('networkUtils', networkUtils)
     .factory('secureSessionStorage', secureSessionStorage)
+    .factory('authenticationStore', authenticationStore)
+    .factory('eoStore', eoStore)
     .directive('placeholderTranslate', translateAttribute.placeholder)
     .directive('titleTranslate', translateAttribute.title)
     .directive('lazyInject', lazyInject)

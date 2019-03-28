@@ -1,11 +1,11 @@
 import _ from 'lodash';
-import { decryptPrivateKey, encodeUtf8Base64, reformatKey } from 'pmcrypto';
+import { decryptPrivateKey, reformatKey } from 'pmcrypto';
 import { generateKeySalt, computeKeyPassword } from 'pm-srp';
 
-import { PAID_ADMIN_ROLE, MAILBOX_PASSWORD_KEY } from '../../constants';
+import { PAID_ADMIN_ROLE } from '../../constants';
 
 /* @ngInject */
-function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, secureSessionStorage) {
+function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, authenticationStore) {
     /**
      * Reformat organization keys
      * @param  {String} password
@@ -146,7 +146,7 @@ function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, secu
                 })
             )
             .then(() => {
-                secureSessionStorage.setItem(MAILBOX_PASSWORD_KEY, encodeUtf8Base64(passwordComputed));
+                authenticationStore.setPassword(passwordComputed);
             });
     };
 }

@@ -1,0 +1,46 @@
+<form
+    method="post"
+    id="pm_loginUnlock"
+    name="unlockForm"
+    class="pm_panel pm_form alt loginFormUnlock-container"
+    novalidate
+    role="form"
+    autocomplete="off">
+
+    <img src="/assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
+
+    <h4 class="text-center">
+        <span class="fa fa-inbox title-icon"></span> <span translate translate-context="Title">Decrypt Mailbox</span>
+    </h4>
+
+    <p class="text-center"></p>
+
+    <label for="password" class="sr-only" translate-context="Label" translate>Mailbox password</label>
+    <password
+        class="margin focus unlock-input-password"
+        data-id="mailboxPassword"
+        data-name="mailbox-password"
+        data-value="mailboxPassword"
+        data-form="unlockForm"
+        placeholder-translate-context="Placeholder"
+        placeholder-translate="Mailbox password"></password>
+
+    <div class="loginForm-actions">
+        <div class="loginForm-actions-column">
+            <button
+                id="unlock_btn"
+                class="loginForm-actions-main pm_button primary pull-right disabled-if-network-activity"
+                type="submit"
+                ng-disabled="unlockForm.$invalid || loading"
+                translate-context="Action"
+                translate>Unlock</button>
+            <button
+                type="button"
+                data-action="reset"
+                class="login-support pm_button color-white link pull-left unlock-btn-forgot"
+                translate-context="Action"
+                translate
+                translate-comment="link to reset mailbox">Forgot password?</button>
+        </div>
+    </div>
+</form>
