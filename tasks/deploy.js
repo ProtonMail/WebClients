@@ -56,6 +56,63 @@ async function replace(rule) {
 }
 
 /**
+ * Sync new SRI config:
+ *     - Generate hash for files with the modifications
+ *     - Replace them inside index.js
+ *     - Then we replace the SRI of index.js inside index.htmll
+ * @return {Promise}
+ */
+async function replaceSRI() {
+
+    const { stdout: stdoutNew } = await bash('./tasks/manageSRI get-new');
+    const { stdout: stdoutProd } = await bash('./tasks/manageSRI get-prod');
+
+    // Create {<file>:hash}
+    const toList = (input = '') => {
+        return input.split('\n').reduce((acc, value, i, list) => {
+            if (i % 2 === 0) {
+                acc[value] = '';
+            }
+            if (i % 2 === 1) {
+                acc[list[i - 1]] = value;
+            }
+            return acc;
+        }, {});
+    };
+
+    const HASHES_PROD = toList(stdoutProd);
+    const HASHES_NEW = toList(stdoutNew);
+
+    // Create sed string for the replace
+    const arg = Object.keys(HASHES_PROD).reduce((acc, key) => {
+        const file = key.replace('distCurrent', 'dist');
+        const oldHash = HASHES_PROD[key];
+        const newHash = HASHES_NEW[file];
+        if (oldHash !== newHash) {
+            acc.push(`s|${oldHash}|${newHash}|g;`);
+        }
+        return acc;
+    }, []).join('');
+
+    // Bind new hashes
+    await bash(`./tasks/manageSRI write-index "${arg}"`);
+    // Bind new hash for index.js
+    await bash('./tasks/manageSRI write-html');
+}
+
+/**
+ * Check if the sub-build is valid
+ *     - Correct SRI for updated files
+ *     - Correct SRI for the index
+ *     - Right config for A/B
+ *     - Right config for Sentry
+ * Stop the process if it fails
+ */
+async function validateBuild(branch) {
+    return bash(`./tasks/manageSRI validate ${branch.replace('deploy-', '')}`);
+}
+
+/**
  * Create sub bundles of the app as the diff won't exist or
  * is only about one key for A/B testing (prod-b)
  * @param  {String} branch
@@ -95,6 +152,8 @@ const buildCustomApp = async (branch, { start, end, originBranch } = {}) => {
 
     // Replace the correct sentry URL
     await replace(`s|${sentry.sentry}|${sentryB.sentry}|g;`);
+    await replaceSRI();
+    await validateBuild(branch);
 
     await bash('rm -rf distCurrent');
 
@@ -270,3 +329,4 @@ tasks
         isCI && success(`Build CI app to the directory: ${chalk.bold('dist')}`, { time });
     })
     .catch(error);
+
