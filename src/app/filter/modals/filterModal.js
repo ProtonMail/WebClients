@@ -313,7 +313,9 @@ function filterModal(
                 });
             };
 
-            ctrl.addValue = (condition) => {
+            ctrl.addValue = (condition, event) => {
+                event && event.preventDefault();
+
                 if (condition.Values.indexOf(condition.value) === -1) {
                     if (condition.value) {
                         condition.Values.push(condition.value);
