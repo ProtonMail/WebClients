@@ -294,7 +294,7 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
         const scheme = schemeProp ? toSchemeConstant(schemeProp.valueOf()) : null;
         const base64Keys = await reorderKeys(
             keyData,
-            await Promise.all(_.map(emailKeys, (prop) => contactKey.getBase64Value(prop)))
+            (await Promise.all(_.map(emailKeys, (prop) => contactKey.getBase64Value(prop)))).filter(Boolean) // In case the key is expired or revoked we don't get the base 64 value but false
         );
         const data = {
             encryptFlag:
