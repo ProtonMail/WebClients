@@ -106,8 +106,8 @@ const LogsSection = () => {
                             onClick={handleLogAuth(ADVANCED)}
                         >{c('Log preference').t`Advanced`}</ButtonGroup>
                     </Group>
-                    <Button onClick={fetchLogs}>{c('Action').t`Refresh`}</Button>
-                    {list.length ? <WipeLogsButton onWipe={handleWipe} /> : null}
+                    <Button className="mr1" onClick={fetchLogs}>{c('Action').t`Refresh`}</Button>
+                    {list.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
                     {list.length ? <Button onClick={handleDownload}>{c('Action').t`Download`}</Button> : null}
                 </div>
                 <Pagination
