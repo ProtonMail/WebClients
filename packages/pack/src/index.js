@@ -28,8 +28,10 @@ async function run(cb) {
 
     // pre-fetch everything
     const initPromise = cb();
-    const openpgpPromise = dl(hasModulesSupport() ? main : compat);
-    const workerPromise = dl(worker);
+    const openpgpFile = hasModulesSupport() ? main : compat;
+    // Fetch again if it fails, mainly to solve chrome bug (related to dev tools?) "body stream has been lost and cannot be disturbed"
+    const openpgpPromise = dl(openpgpFile).catch(() => dl(openpgpFile));
+    const workerPromise = dl(worker).catch(() => dl(worker));
 
     const openpgpContents = await openpgpPromise;
     // wait for the app to be fetched and openpgp main file to be initialized
