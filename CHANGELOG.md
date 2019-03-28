@@ -1,3 +1,14 @@
+# [3.15.23] - 2019-03-28
+
+## Fixed
+
+- Revoked or expired keys were not removed on import
+
+## Changed
+
+- Prevent auto-submit on input field in filter modal
+- Show error if the key parsing fails
+
 # [3.15.22] - 2019-03-27
 
 ## Fixed
