@@ -12,19 +12,30 @@ import {
     Block,
     ResetButton,
     useApiWithoutResult,
-    useUserSettings
+    useUserSettings,
+    useEventManager,
+    useNotifications
 } from 'react-components';
 import { updateInvoiceText } from 'proton-shared/lib/api/settings';
 
 const InvoiceTextModal = ({ show, onClose }) => {
     const [{ InvoiceText }] = useUserSettings();
+    const { createNotification } = useNotifications();
+    const { call } = useEventManager();
     const [invoiceText, setInvoiceText] = useState(InvoiceText);
     const handleChange = ({ target }) => setInvoiceText(target.value);
     const { request, loading } = useApiWithoutResult(() => updateInvoiceText(invoiceText));
 
+    const handleSubmit = async () => {
+        await request();
+        await call();
+        onClose();
+        createNotification({ text: c('Success').t`Invoice customized` });
+    };
+
     return (
         <Modal type="small" show={show} onClose={onClose} title={c('Title').t`Add invoice details`}>
-            <ContentModal onSubmit={request} onReset={onClose}>
+            <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Alert>{c('Info message for custom invoice modal')
                     .t`Add your name (or company name) and address to your invoices.`}</Alert>
                 <Block>
@@ -33,6 +44,7 @@ const InvoiceTextModal = ({ show, onClose }) => {
                 <TextArea
                     id="invoiceTextarea"
                     autoFocus
+                    required
                     value={invoiceText}
                     placeholder={c('Placeholder for custom invoice text')
                         .t`Add your name (or company name) and address to your invoices`}
