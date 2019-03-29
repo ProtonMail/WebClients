@@ -72,10 +72,17 @@ body {
 
 .logo {
   width: 148px;
-  height: 23px;
+  height: 36px;
+  margin-top: 5px;
 }
 .logo g {
   fill: $pm-global-light;
+}
+.logo .plan {
+  fill: #8ed60f;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .navigation__list {
