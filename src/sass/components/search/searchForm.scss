@@ -1,11 +1,8 @@
 .searchForm-container {
-    @include flexInline();
     position: relative;
-    height: 35px;
     width: calc(100% - 700px);
     max-width: 25%;
-    margin-left: 10px;
-    color: inherit
+    margin-left: 4rem;
 }
 
 .searchForm-container.searchForm-container-adv {

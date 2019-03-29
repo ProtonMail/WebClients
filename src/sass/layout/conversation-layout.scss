@@ -54,11 +54,7 @@ body {
         width: calc(100% - #{$sidebarWidth});
     }
     #wrapper {
-        position: relative; /* conversation-wrapper is absolute for sticky things*/
-        height: calc(100% - 56px); /* #pm_toolbar-desktop height */
-        overflow: auto;
         -webkit-overflow-scrolling: touch;
-        clear: both;
     }
     &, #body {
         min-height: 100%;

@@ -1,37 +1,42 @@
-<section class="pm_opensans sidebar sidebarApp-container" data-pt-dropzone>
-    <button
-        class="compose pm_button sidebar-btn-compose"
-        action-compose
-        action-compose-type="new"
-        translate-context="Action"
-        translate
-        translate-comment="compose button in sidebar">Compose</button>
+<div class="sidebar flex nomobile noprint" data-pt-dropzone>
+    <div class="flex no-scroll flex-column flex-nowrap js-sidebar-container">
 
-    <ul class="menu sidebarApp-menu">
-        <navigation-item
-            class="sidebarApp-item"
-            data-key="{{::state}}"
-            ng-repeat="state in listStates track by $id(state)"></navigation-item>
-    </ul>
-    <ul class="menu sidebarApp-menu" id="labelSettings">
-        <li class="sidebarApp-item">
-            <a ui-sref="secured.labels" class="sidebarApp-link">
-                <i class="fa fa-cog sidebarApp-icon"></i>
-                <span
-                    id="tour-label-settings"
-                    class="sidebarApp-label"
-                    translate-context="Action"
-                    translate>Folders / Labels</span>
-            </a>
-        </li>
-    </ul>
+        <button
+            class="pm-button-blue pm-button--large w100 ml1 mr1"
+            action-compose
+            action-compose-type="new"
+            translate-context="Action"
+            translate
+            translate-comment="compose button in sidebar">Compose</button>
+
+        <nav class="navigation flex flex-column flex-item-fluid scroll-if-needed js-navigation">
+        <ul class="navigation__list unstyled">
+            <navigation-item
+                class="sidebarApp-item navigation__item"
+                data-key="{{::state}}"
+                ng-repeat="state in listStates track by $id(state)"></navigation-item>
+        </ul>
+        <ul class="menu sidebarApp-menu" id="labelSettings">
+            <li class="sidebarApp-item">
+                <a ui-sref="secured.labels" class="sidebarApp-link">
+                    <i class="fa fa-cog sidebarApp-icon"></i>
+                    <span
+                        id="tour-label-settings"
+                        class="sidebarApp-label"
+                        translate-context="Action"
+                        translate>Folders / Labels</span>
+                </a>
+            </li>
+        </ul>
 
 
-    <sidebar-labels></sidebar-labels>
+        <sidebar-labels></sidebar-labels>
+        </nav>
 
 
-    <div class="footer">
-        <sidebar-progress class="wrap"></sidebar-progress>
-        <app-version class="version"></app-version>
+        <div class="flex-item-noshrink relative nomobile spacebar-container aligncenter">
+            <sidebar-progress class="wrap"></sidebar-progress>
+            <app-version class="version"></app-version>
+        </div>
     </div>
-</section>
+</div>

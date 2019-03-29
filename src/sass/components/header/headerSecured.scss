@@ -1,52 +1,7 @@
 // REGULAR
 .headerSecured-container {
-    display: block;
-    background: $header-background;
-    color: $header-font-color;
-    font-size: 12px;
-    position: relative;
-    font-family: sans-serif;
     opacity: .999; /* stacking context, don't remove it otherwise dropdown menus will fail */
     z-index: 150;
-}
-
-.headerSecuredDesktop-container,
-.headerSecuredMobile-container {
-    display: flex;
-    width: 100%;
-    height: $headerHeight;
-    align-items: center;
-}
-
-.headerSecuredDesktop-logo {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: $sidebarWidth;
-    height: $headerHeight;
-    background-color: $logo-background;
-    text-decoration: none;
-    padding: 5px 20px 0;
-}
-
-.headerSecuredDesktop-logo::before {
-    content: "";
-    height: 35px;
-    width: 116px;
-    background: url(assets('img/logo/logo.svg')) no-repeat center bottom;
-}
-
-.headerSecuredDesktop-logo::after {
-    position: relative;
-    width: 116px;
-    top: -8px;
-    text-align: right;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-size: .7em;
-    content: attr(data-plan-name);
 }
 
 

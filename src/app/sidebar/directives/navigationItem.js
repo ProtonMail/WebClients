@@ -3,7 +3,7 @@ import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
 function navigationItem($state, $stateParams, dispatchers, sidebarModel, eventManager, AppModel, storageWarning) {
-    const CLASS_ACTIVE = 'active';
+    const ATTR_ACTIVE = 'aria-current';
     const CLASS_SPIN = 'spinMe';
     const template = (key, { state, label, icon = '' }) => {
         const iconClassName = `sidebarApp-icon navigationItem-icon fa ${icon}`.trim();
@@ -12,7 +12,7 @@ function navigationItem($state, $stateParams, dispatchers, sidebarModel, eventMa
         return dedentTpl(`<a href="${$state.href(
             state,
             opt
-        )}" title="${label}" data-label="${label}" data-state="${key}" class="navigationItem-item" ${dropzone}>
+        )}" title="${label}" data-label="${label}" data-state="${key}" class="navigationItem-item navigation__link" ${dropzone}>
                 <i class="${iconClassName}"></i>
                 <span class="navigationItem-title">${label}</span>
                 <div class="navigationItem-aside">
@@ -60,7 +60,7 @@ function navigationItem($state, $stateParams, dispatchers, sidebarModel, eventMa
             };
             const updateActive = () => {
                 const { states = [], state = '' } = config;
-                const addActive = () => el[0].classList.add(CLASS_ACTIVE);
+                const addActive = () => el[0].setAttribute(ATTR_ACTIVE, 'page');
 
                 // Sent and Drafts have each 2 states
                 if (states.length && _.find(states, (route) => $state.includes(route))) {
@@ -71,7 +71,7 @@ function navigationItem($state, $stateParams, dispatchers, sidebarModel, eventMa
                     return addActive();
                 }
 
-                el[0].classList.remove(CLASS_ACTIVE);
+                el[0].removeAttribute(ATTR_ACTIVE);
             };
 
             updateActive(); // Check if we open the current state, mark it as active
