@@ -59,7 +59,7 @@ const LogsSection = () => {
     const handleDownload = () => {
         const data = logs.reduce(
             (acc, { Event, Time, IP }) => {
-                acc.push(`${EVENTS[Event]},${dayjs(Time * 1000)},${IP}`);
+                acc.push(`${EVENTS[Event]},${dayjs(Time * 1000).toISOString()},${IP}`);
                 return acc;
             },
             [['Event', 'Time', 'IP'].join(',')]
