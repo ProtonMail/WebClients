@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Select } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
@@ -13,11 +13,12 @@ const MemberStorageSelector = ({ member, organization, onChange }) => {
     const startNewMember = maxPadding > FIVE_GIGA ? FIVE_GIGA : maxPadding;
     const options = range(minPadding, maxPadding, GIGA).map((value) => ({ text: `${humanSize(value, 'GB')}`, value }));
     const [storage, setStorage] = useState(member.ID ? member.MaxSpace : startNewMember);
-    const handleChange = ({ target }) => setStorage(target.value);
 
-    useEffect(() => {
-        onChange(storage);
-    }, storage);
+    const handleChange = ({ target }) => {
+        const newValue = target.value;
+        setStorage(newValue);
+        onChange(newValue);
+    };
 
     return <Select value={storage} options={options} onChange={handleChange} />;
 };
