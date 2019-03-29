@@ -13,12 +13,12 @@ const NewsCheckboxes = () => {
     const { request, loading } = useApiWithoutResult(updateNews);
     const [news, setNews] = useState(News);
 
-    const handleChange = async (mask) => {
+    const handleChange = (mask) => async () => {
         const newNews = toggleBit(news, mask);
 
-        setNews(newNews);
         await request(newNews);
         await call();
+        setNews(newNews);
     };
 
     return (
