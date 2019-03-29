@@ -75,7 +75,8 @@
     "webpack-dev-server": "^3.1.14",
     "webpack-notifier": "^1.7.0",
     "webpack-subresource-integrity": "github:dhoko/webpack-subresource-integrity.git#b077a0037485ec74203f30746dc4d448eb8eac1d",
-    "write-webpack-plugin": "^1.1.0"
+    "write-webpack-plugin": "^1.1.0",
+    "design-system": "github:ProtonMail/design-system.git"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
