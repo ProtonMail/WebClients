@@ -56,9 +56,9 @@ export const setupCatche = async (user, api) => {
         UserSettingsModel,
         MailSettingsModel,
         AddressesModel,
-        !user.isFree && SubscriptionModel,
-        user.hasOrganization && OrganizationModel,
-        user.hasOrganization && MembersModel
+        user.isPaid && SubscriptionModel,
+        user.isPaid && OrganizationModel,
+        user.isPaid && MembersModel
     ].filter(Boolean);
 
     const result = await prefetchModels(api, modelsToPrefetch);
