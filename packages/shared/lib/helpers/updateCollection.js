@@ -6,7 +6,7 @@ const ACTIONS = {
     [EVENT_ACTIONS.UPDATE]: 'update'
 };
 
-const updateCollection = (events = [], model = []) => {
+const updateCollection = (model = [], events) => {
     const copy = [...model];
     const todo = events.reduce(
         (acc, task) => {

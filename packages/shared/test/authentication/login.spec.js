@@ -15,6 +15,7 @@ import {
     INFO_RESPONSE_NO_2FA,
     AUTH_RESPONSE_NO_UNLOCK
 } from './login.data';
+import { createSpy } from '../spy';
 
 const mockSrp = {
     getAuthVersionWithFallback,
@@ -46,18 +47,14 @@ const {
 } = requireInject.withEmptyCache('../../lib/authentication/loginActions', mocks);
 
 const mockApi = (responses) => {
-    const calls = [];
-    return {
-        api: async (config) => {
-            const response = responses[calls.length];
-            calls.push(config);
-            if (response instanceof Error) {
-                throw response;
-            }
-            return response;
-        },
-        calls
-    };
+    let i = 0;
+    return createSpy(async () => {
+        const response = responses[i++];
+        if (response instanceof Error) {
+            throw response;
+        }
+        return response;
+    });
 };
 
 const ACTIONS = {
@@ -125,10 +122,10 @@ describe('login', () => {
 
         const apiReturns = [INFO_RESPONSE_NO_2FA, AUTH_RESPONSE_NO_UNLOCK, COOKIE_RESPONSE];
 
-        const { api, calls } = mockApi(apiReturns);
+        const api = mockApi(apiReturns);
         const state = await runTest(userActions, assertions, { api });
 
-        assert.strictEqual(calls.length, apiReturns.length);
+        assert.strictEqual(api.calls.length, apiReturns.length);
         assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
         assert.strictEqual(state.form, FORM.LOGIN);
         assert.strictEqual(state.userResult, undefined);
@@ -186,11 +183,11 @@ describe('login', () => {
 
         const apiReturns = [INFO_RESPONSE, AUTH_RESPONSE, COOKIE_RESPONSE];
 
-        const { api, calls } = mockApi(apiReturns);
+        const api = mockApi(apiReturns);
         const state = await runTest(userActions, assertions, { api });
 
-        assert.strictEqual(calls.length, apiReturns.length);
-        assert.strictEqual(calls.length, 3);
+        assert.strictEqual(api.calls.length, apiReturns.length);
+        assert.strictEqual(api.calls.length, 3);
         assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
         assert.strictEqual(state.form, FORM.UNLOCK);
         assert.strictEqual(state.userResult, undefined);
@@ -252,10 +249,10 @@ describe('login', () => {
 
         const apiReturns = [INFO_RESPONSE, AUTH_RESPONSE_CLEARTEXT, COOKIE_RESPONSE, USER_RESPONSE, SALT_RESPONSE];
 
-        const { api, calls } = mockApi(apiReturns);
+        const api = mockApi(apiReturns);
         const state = await runTest(userActions, assertions, { api });
 
-        assert.strictEqual(calls.length, apiReturns.length);
+        assert.strictEqual(api.calls.length, apiReturns.length);
         assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
         assert.strictEqual(state.form, FORM.UNLOCK);
         assert.strictEqual(state.userResult, USER_RESPONSE.User);
@@ -311,10 +308,10 @@ describe('login', () => {
             SALT_RESPONSE
         ];
 
-        const { api, calls } = mockApi(apiReturns);
+        const api = mockApi(apiReturns);
         const state = await runTest(userActions, assertions, { api });
 
-        assert.strictEqual(calls.length, apiReturns.length);
+        assert.strictEqual(api.calls.length, apiReturns.length);
         assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
         assert.strictEqual(state.form, FORM.TOTP);
         assert.strictEqual(state.userResult, USER_RESPONSE_NO_KEYS.User);

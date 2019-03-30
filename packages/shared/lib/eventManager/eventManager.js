@@ -7,33 +7,78 @@ const FIBONACCI = [1, 1, 2, 3, 5, 8];
 /**
  * Create the event manager process.
  * @param {function} api - Function to call the API.
- * @param {String} initialEventId - Initial event ID to begin from
+ * @param {String} initialEventID - Initial event ID to begin from
  * @param {function} onSuccess - Function to handle the data from the event manager
  * @param {function} onError - Function to handle the error
+ * @param {Number} interval - Maximum interval time to wait between each call
  * @return {{call, setEventID, stop, start, reset}}
  */
-export default ({ api, eventId: initialEventId, onSuccess, onError }) => {
+export default ({ api, eventID: initialEventID, onSuccess, onError, interval = INTERVAL_EVENT_TIMER }) => {
+    if (!initialEventID) {
+        throw new Error('eventID must be provided.');
+    }
+
     let STATE = {
-        lastEventID: initialEventId,
+        lastEventID: initialEventID,
         timeoutHandle: undefined,
         retryIndex: 0,
         abortController: undefined
     };
 
+    /**
+     * @param {String} eventID
+     */
     const setEventID = (eventID) => {
         STATE.lastEventID = eventID;
     };
 
+    /**
+     * @return {String}
+     */
+    const getEventID = () => {
+        return STATE.lastEventID;
+    };
+
+    /**
+     * @param {Number} index
+     */
+    const setRetryIndex = (index) => {
+        STATE.retryIndex = index;
+    };
+
+    /**
+     * @return {number}
+     */
+    const getRetryIndex = () => {
+        return STATE.retryIndex;
+    };
+
+    const increaseRetryIndex = () => {
+        const index = getRetryIndex();
+        // Increase the retry index when the call fails to not spam.
+        if (index < FIBONACCI.length - 1) {
+            setRetryIndex(index + 1);
+        }
+    };
+
+    /**
+     * Start the event manager, does nothing if it is already started.
+     */
     const start = () => {
         const { timeoutHandle, retryIndex } = STATE;
+
         if (timeoutHandle) {
             return;
         }
-        const ms = INTERVAL_EVENT_TIMER * FIBONACCI[retryIndex];
+
+        const ms = interval * FIBONACCI[retryIndex];
         // eslint-disable-next-line
         STATE.timeoutHandle = setTimeout(call, ms);
     };
 
+    /**
+     * Stop the event manager, does nothing if it's already stopped.
+     */
     const stop = () => {
         const { timeoutHandle, abortController } = STATE;
 
@@ -48,43 +93,72 @@ export default ({ api, eventId: initialEventId, onSuccess, onError }) => {
         }
     };
 
+    /**
+     * Stop the event manager and reset its state.
+     */
     const reset = () => {
         stop();
         STATE = {};
     };
 
-    const run = async () => {
+    /**
+     * Call the api and the success handler.
+     * @param {String} eventID
+     * @param {AbortController} abortController
+     * @return {Promise}
+     */
+    const run = async (eventID, abortController) => {
         try {
-            const abortController = new AbortController();
-            STATE.abortController = abortController;
-            const { More, EventID, ...rest } = await api({
-                ...getEvents(STATE.lastEventID),
+            const { More, EventID: nextEventID, ...rest } = await api({
+                ...getEvents(eventID),
                 signal: abortController.signal
             });
 
             await onSuccess(rest);
-            setEventID(EventID);
-            STATE.retryIndex = 0;
 
-            if (More === 1) {
-                return run();
-            }
+            return {
+                hasMore: !!More,
+                nextEventID
+            };
         } catch (e) {
-            // Increase the retry index when the call fails to not spam.
-            if (STATE.retryIndex < FIBONACCI.length - 1) {
-                STATE.retryIndex++;
-            }
             onError(e);
             throw e;
         }
     };
 
+    /**
+     * Call the event manager. Either does it immediately, or queues the call until after the current call has finished.
+     * @return {Promise}
+     */
     const call = onceWithQueue(async () => {
         try {
             stop();
-            await run();
+
+            const abortController = new AbortController();
+            STATE.abortController = abortController;
+
+            for (;;) {
+                const eventID = getEventID();
+
+                if (!eventID) {
+                    throw new Error('EventID undefined');
+                }
+
+                const { hasMore, nextEventID } = await run(eventID, abortController);
+
+                setEventID(nextEventID);
+                setRetryIndex(0);
+
+                if (!hasMore) {
+                    break;
+                }
+            }
+
+            delete STATE.abortController;
             start();
         } catch (e) {
+            delete STATE.abortController;
+            increaseRetryIndex();
             start();
             throw e;
         }
@@ -92,6 +166,7 @@ export default ({ api, eventId: initialEventId, onSuccess, onError }) => {
 
     return {
         setEventID,
+        getEventID,
         start,
         stop,
         call,
