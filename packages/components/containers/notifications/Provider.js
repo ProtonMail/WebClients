@@ -1,18 +1,22 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import NotificationsContext from '../../context/notifications';
 import NotificationsContainer from './Container';
-import useInstance from '../../hooks/useInstance';
-import reducer from './reducer';
-import createManager from './manager';
 
-const NotificationsProvider = ({ children }) => {
-    const [notifications, dispatch] = useReducer(reducer, []);
-    const manager = useInstance(() => createManager(dispatch));
+const NotificationsProvider = ({ children, manager }) => {
+    const [notifications, setNotifications] = useState(manager.get());
 
     useEffect(() => {
-        return () => manager.clearNotifications();
+        const onChange = (newPrompts) => {
+            setNotifications(newPrompts);
+        };
+
+        const unsubscribe = manager.subscribe(onChange);
+        return () => {
+            unsubscribe();
+            manager.clearNotifications();
+        };
     }, []);
 
     return (
@@ -24,6 +28,7 @@ const NotificationsProvider = ({ children }) => {
 };
 
 NotificationsProvider.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    manager: PropTypes.object.isRequired
 };
 export default NotificationsProvider;

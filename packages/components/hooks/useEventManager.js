@@ -1,6 +1,9 @@
+import { useContext } from 'react';
+
+import Context from '../containers/eventManager/context';
+
 const useEventManager = () => {
-    const call = () => {};
-    return { call };
+    return useContext(Context);
 };
 
 export default useEventManager;

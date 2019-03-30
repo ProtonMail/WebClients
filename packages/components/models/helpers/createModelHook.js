@@ -1,118 +1,117 @@
-import { useReducer, useCallback, useRef, useEffect } from 'react';
-import { useIsMounted } from 'react-components';
+import { useEffect, useCallback, useState, useRef } from 'react';
+import { useApi, useCache, usePromiseCache } from 'react-components';
 
-const id = (x) => x;
-const defaultMerge = (oldState, newState) => newState;
+const PENDING = 1;
+const RESOLVED = 2;
+const REJECTED = 3;
 
-const init = (data) => {
-    return {
-        data,
-        loading: false,
-        initialized: !!data
-    };
+const getStateToSync = (dataValue, promiseValue) => {
+    const willInitialLoad = !dataValue && !promiseValue;
+
+    const { value, status } = promiseValue || {};
+
+    return [dataValue, status === PENDING || willInitialLoad, status === REJECTED ? value : undefined];
 };
 
-const reducer = (state, action) => {
-    if (action.type === 'loading') {
-        return {
-            ...state,
-            loading: true
-        };
-    }
-
-    if (action.type === 'success') {
-        return init(action.payload);
-    }
-
-    if (action.type === 'error') {
-        return {
-            data: state.data,
-            error: action.payload,
-            loading: false,
-            initialized: state.initialized
-        };
-    }
+const mergeCache = (cache, value) => {
+    cache.set({
+        ...cache.get(),
+        ...value
+    });
 };
 
 /**
  * Creates an async fn model hook.
- * @param {function} async fn
- * @param {function} transform
- * @param {function} merge
  * @return {function} the created hook
  */
-const createUseModelHook = ({ useAsyncFn, transform = id, merge = defaultMerge }) => {
-    return ({ initialValue } = {}) => {
-        const [state, dispatch] = useReducer(reducer, transform(initialValue), init);
-        const promiseRef = useRef({});
-        const stateRef = useRef();
-        const isMounted = useIsMounted();
-        const asyncFn = useAsyncFn();
+const createUseModelHook = ({ key, get }) => {
+    return () => {
+        const promiseCache = usePromiseCache();
+        const dataCache = useCache();
+        const api = useApi();
+        const dataValueRef = useRef();
+        const promiseValueRef = useRef();
 
-        /**
-         * stateRef to make sure the latest state value is always used for the merge fn.
-         * It's needed because the update function is initialized when creating e.g. the event manager
-         * and so it wouldn't get updates.
-         */
-        stateRef.current = state;
+        const [state, setState] = useState(() => {
+            const dataCacheState = dataCache.get();
+            const promiseCacheState = promiseCache.get();
 
-        const load = useCallback(() => {
-            const currentPromise = promiseRef.current.promise;
-            if (currentPromise) {
-                return currentPromise;
+            const dataValue = dataCacheState[key];
+            const promiseValue = promiseCacheState[key];
+
+            return getStateToSync(dataValue, promiseValue);
+        });
+
+        const load = useCallback(async () => {
+            const { status, value } = promiseCache.get()[key] || {};
+
+            if (status === PENDING) {
+                return value;
             }
 
-            dispatch({ type: 'loading' });
+            const promise = get(api);
 
-            const abortController = new AbortController();
-
-            const promise = asyncFn(abortController.signal)
-                .then((data) => {
-                    promiseRef.current = {};
-                    const payload = transform(data);
-                    if (isMounted()) {
-                        dispatch({ type: 'success', payload });
+            const getPromiseValue = (status, value) => {
+                return {
+                    [key]: {
+                        status,
+                        value
                     }
-                    return payload;
-                })
-                .catch((error) => {
-                    promiseRef.current = {};
-                    if (isMounted()) {
-                        dispatch({ type: 'error', payload: error });
-                    }
-                    throw error;
-                });
-
-            promiseRef.current = {
-                abortController,
-                promise
+                };
             };
 
-            return promise;
-        }, []);
+            mergeCache(promiseCache, getPromiseValue(PENDING, promise));
 
-        const update = useCallback((data) => {
-            const currentState = stateRef.current;
-            if (!currentState.initialized) {
-                return;
-            }
-            const payload = transform(merge(currentState, data));
-            dispatch({ type: 'success', payload });
-            return payload;
+            promise
+                .then((data) => {
+                    mergeCache(promiseCache, getPromiseValue(RESOLVED, data));
+                    mergeCache(dataCache, { [key]: data });
+                })
+                .catch((e) => {
+                    mergeCache(promiseCache, getPromiseValue(REJECTED, e));
+                });
         }, []);
 
         useEffect(() => {
-            return () => {
-                const abortController = promiseRef.current.abortController;
-                if (!abortController) {
+            const cacheListener = () => {
+                const dataValue = dataCache.get()[key];
+                const promiseValue = promiseCache.get()[key];
+
+                if (dataValueRef.current === dataValue && promiseValueRef.current === promiseValue) {
                     return;
                 }
-                abortController.abort();
-                promiseRef.current = {};
+
+                setState(getStateToSync(dataValue, promiseValue));
+
+                dataValueRef.current = dataValue;
+                promiseValueRef.current = promiseValue;
+            };
+
+            const unsubscribeCache = dataCache.subscribe(cacheListener);
+            const unsubscribePromiseCache = promiseCache.subscribe(cacheListener);
+
+            const initialLoad = () => {
+                const dataValue = dataCache.get()[key];
+                const promiseValue = promiseCache.get()[key];
+
+                dataValueRef.current = dataValue;
+                promiseValueRef.current = promiseValue;
+
+                // If data is not present in cache and not being fetched, load it
+                if (!dataValue && !promiseValue) {
+                    load();
+                }
+            };
+
+            initialLoad();
+
+            return () => {
+                unsubscribeCache();
+                unsubscribePromiseCache();
             };
         }, []);
 
-        return [state, load, update];
+        return [...state, load];
     };
 };
 

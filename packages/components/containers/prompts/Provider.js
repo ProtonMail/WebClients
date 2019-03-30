@@ -1,18 +1,23 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import PromptsContext from '../../context/prompts';
-import useInstance from '../../hooks/useInstance';
 import PromptsContainer from './Container';
-import reducer from './reducer';
-import createManager from './manager';
 
-const PromptsProvider = ({ children }) => {
-    const [prompts, dispatch] = useReducer(reducer, []);
-    const manager = useInstance(() => createManager(dispatch));
+const PromptsProvider = ({ children, manager }) => {
+    const [prompts, setPrompts] = useState(manager.get());
 
     useEffect(() => {
-        return () => manager.resetPrompts();
+        const onChange = (newPrompts) => {
+            setPrompts(newPrompts);
+        };
+
+        const unsubscribe = manager.subscribe(onChange);
+
+        return () => {
+            unsubscribe();
+            manager.resetPrompts();
+        };
     }, []);
 
     return (
@@ -24,6 +29,7 @@ const PromptsProvider = ({ children }) => {
 };
 
 PromptsProvider.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    manager: PropTypes.object.isRequired
 };
 export default PromptsProvider;
