@@ -51,7 +51,7 @@ const createHandleUpdateEvents = (api, models) => async (state, data) => {
  * @param {Function} api
  * @returns {Promise}
  */
-export const setupCatche = async (user, api) => {
+export const setupCache = async (user, api) => {
     const modelsToPrefetch = [
         UserSettingsModel,
         MailSettingsModel,
