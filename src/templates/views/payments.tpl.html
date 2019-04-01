@@ -12,11 +12,9 @@
 
                 <div class="settingsPayment-content">
                     <div class="margin">
-                        <button type="button" class="pm_button primary" ng-click="add()" translate-context="Action" translate>Add Payment
-                            Method</button>
+                        <button type="button" class="pm_button primary" ng-click="add()" translate-context="Action" translate>Add Payment Method</button>
                     </div>
-                    <p class="alert alert-info" ng-show="methods.length === 0" translate-context="Info" translate>You have no saved payment
-                        methods.</p>
+                    <p class="alert alert-info" ng-show="methods.length === 0" translate-context="Info" translate>You have no saved payment methods.</p>
 
                     <div class="pm_table">
                         <table ng-show="methods.length > 0" id="paymentMethodsTable">

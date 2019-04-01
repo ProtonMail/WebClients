@@ -4,27 +4,33 @@
     <div class="composerInputMeta-overlay">
         <label
             class="composerInputMeta-overlay-label"
-            translate
-            translate-context="Title">Recipients</label>
+            translate-context="Title"
+            translate>Recipients</label>
         <div class="composerInputMeta-overlay-list">
             <span class="svg-ellipsis-clipper"></span>
-            <span ng-if="message.ToList.length">
-                To:
-            </span>
+            <span
+                ng-if="message.ToList.length"
+                translate-context="Title"
+                translate-comment="To: addresses"
+                translate>To:</span>
             <composer-input-recipient
                 ng-repeat="email in message.ToList track by email.Address"
                 data-email="email"
                 data-message="message"></composer-input-recipient>
-            <span ng-if="message.CCList.length">
-                CC:
-            </span>
+            <span
+                ng-if="message.CCList.length"
+                translate-context="Title"
+                translate-comment="CC: addresses"
+                translate>CC:</span>
             <composer-input-recipient
                 ng-repeat="email in message.CCList track by email.Address"
                 data-email="email"
                 data-message="message"></composer-input-recipient>
-            <span ng-if="message.BCCList.length">
-                BCC:
-            </span>
+            <span
+                ng-if="message.BCCList.length"
+                translate-context="Title"
+                translate-comment="BCC: addresses"
+                translate>BCC:</span>
             <composer-input-recipient
                 ng-repeat="email in message.BCCList track by email.Address"
                 data-email="email"
@@ -55,5 +61,6 @@
         pt-placement="left"
         pt-tooltip-translate-context="Action">
         <i class="fa fa-angle-down"></i>
+        <span class="sr-only" translate-context="Action" translate>CC BCC</span>
     </button>
 </div>
