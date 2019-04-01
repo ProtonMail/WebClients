@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { InputModal } from 'react-components';
+import { Modal, ContentModal, Row, Label, Password, FooterModal, ResetButton, PrimaryButton } from 'react-components';
+import { generateUID } from '../../helpers/component';
 
 const AskPasswordModal = ({ onClose, onSubmit }) => {
+    const [input, set] = useState('');
+    const id = generateUID('password-modal');
+    const handleChange = ({ target }) => set(target.value);
+    const handleSubmit = () => onSubmit(input);
     return (
-        <InputModal
-            label={c('Label').t`Password`}
-            title={c('Title').t`Sign in again to continue`}
-            show={true}
-            cancel={c('Label').t`Cancel`}
-            confirm={c('Label').t`Submit`}
-            placeholder={c('Placeholder').t`Password`}
-            onSubmit={onSubmit}
-            onClose={onClose}
-        />
+        <Modal show={true} onClose={onClose} title={c('Title').t`Sign in again to continue`} type="small">
+            <ContentModal onSubmit={handleSubmit} onReset={onClose}>
+                <Row>
+                    <Label htmlFor={id}>{c('Label').t`Password`}</Label>
+                    <Password id={id} value={input} onChange={handleChange} autoFocus={true} required />
+                </Row>
+                <FooterModal>
+                    <ResetButton>{c('Label').t`Cancel`}</ResetButton>
+                    <PrimaryButton type="submit">{c('Label').t`Submit`}</PrimaryButton>
+                </FooterModal>
+            </ContentModal>
+        </Modal>
     );
 };
 
