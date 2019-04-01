@@ -1,3 +1,6 @@
-const updateObject = (model, newModel) => newModel;
+const updateObject = (model, newModel) => ({
+    ...model,
+    ...newModel
+});
 
 export default updateObject;

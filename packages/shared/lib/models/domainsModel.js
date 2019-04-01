@@ -23,6 +23,6 @@ export const getDomainsModel = (api) => {
 export const DomainsModel = {
     key: 'Domains',
     get: getDomainsModel,
-    update: updateCollection,
+    update: (model, events) => updateCollection(model, events, 'Domain'),
     sync: updateDomainsModel
 };

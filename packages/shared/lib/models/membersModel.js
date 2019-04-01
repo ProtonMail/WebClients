@@ -23,6 +23,6 @@ export const getMembersModel = (api) => {
 export const MembersModel = {
     key: 'Members',
     get: getMembersModel,
-    update: updateCollection,
+    update: (model, events) => updateCollection(model, events, 'Member'),
     sync: updateMembersModel
 };

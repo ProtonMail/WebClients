@@ -8,5 +8,5 @@ export const getLabelsModel = (api) => {
 export const LabelsModel = {
     key: 'Labels',
     get: getLabelsModel,
-    update: updateCollection
+    update: (model, events) => updateCollection(model, events, 'Label')
 };
