@@ -11,7 +11,7 @@ const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 const { STATUS_DISABLED, STATUS_ENABLED } = ADDRESS_STATUS;
 const { READABLE, UNREADABLE } = MEMBER_PRIVATE;
 
-const AddressActions = ({ address, user }) => {
+const AddressActions = ({ address, user, fetchAddresses }) => {
     const { call } = useEventManager();
     const { Status, Type, ID } = address;
     const { request: requestDelete } = useApiWithoutResult(deleteAddress);
@@ -26,28 +26,29 @@ const AddressActions = ({ address, user }) => {
         ((user.isAdmin && address.member.Private === READABLE) ||
             (address.member.Private === UNREADABLE && address.member.Self)) &&
         !address.HasKeys;
+    const fetchModel = address.member.Self ? call : fetchAddresses;
 
     const handleDelete = async () => {
         await requestDelete(ID);
-        await call();
+        await fetchModel();
         createNotification({ text: c('Success notification').t`Address deleted` });
     };
 
     const handleEnable = async () => {
         await requestEnable(ID);
-        await call();
+        await fetchModel();
         createNotification({ text: c('Success notification').t`Address enabled` });
     };
 
     const handleDisable = async () => {
         await requestDisable(ID);
-        await call();
+        await fetchModel();
         createNotification({ text: c('Success notification').t`Address disabled` });
     };
 
     const handleGenerate = async () => {
         // TODO generate missing keys
-        await call();
+        await fetchModel();
         createNotification({ text: c('Success notification').t`Keys generated` });
     };
 
@@ -101,7 +102,8 @@ const AddressActions = ({ address, user }) => {
 
 AddressActions.propTypes = {
     address: PropTypes.object.isRequired,
-    user: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
+    fetchAddresses: PropTypes.func.isRequired
 };
 
 export default AddressActions;

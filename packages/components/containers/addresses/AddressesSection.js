@@ -91,7 +91,14 @@ const AddressesSection = () => {
                                 cells={[
                                     address.Email,
                                     <AddressStatus key={key} address={address} index={index} />,
-                                    loadingMembers ? null : <AddressActions user={user} key={key} address={address} />
+                                    loadingMembers ? null : (
+                                        <AddressActions
+                                            user={user}
+                                            key={key}
+                                            address={address}
+                                            fetchAddresses={fetchAddresses}
+                                        />
+                                    )
                                 ]}
                             />
                         );
