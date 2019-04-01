@@ -23,7 +23,8 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
     return {
         replace: true,
         scope: {
-            model: '='
+            model: '=',
+            verificator: '='
         },
         templateUrl: require('../../../templates/user/humanVerification.tpl.html'),
         link(scope, el, { offerType = PRODUCT_TYPE.MAIL }) {
