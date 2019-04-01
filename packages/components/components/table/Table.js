@@ -1,12 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getClasses } from '../../helpers/component';
-
 const Table = ({ children, className }) => {
-    return (
-        <table className={getClasses('pm-simple-table', className)}>{children}</table>
-    );
+    return <table className={`pm-simple-table ${className}`}>{children}</table>;
 };
 
 Table.propTypes = {
@@ -15,7 +11,8 @@ Table.propTypes = {
 };
 
 Table.defaultProps = {
-    children: []
+    children: [],
+    className: ''
 };
 
 export default Table;

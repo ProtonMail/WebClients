@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getClasses } from '../../helpers/component';
 
 import Button from './Button';
 
 const LargeButton = ({ children, className, ...rest }) => {
     return (
-        <Button className={getClasses('pm-button--large', className)} {...rest}>
+        <Button className={`pm-button--large ${className}`} {...rest}>
             {children}
         </Button>
     );

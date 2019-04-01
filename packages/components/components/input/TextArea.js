@@ -55,7 +55,7 @@ const TextArea = ({ className, disabled, onPressEnter, onKeyDown, onChange, onFo
             onFocus={handleFocus}
             onKeyDown={handleKeyDown}
             {...rest}
-            />
+        />
     );
 };
 
@@ -63,6 +63,7 @@ TextArea.propTypes = {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     id: PropTypes.string,
+    onKeyDown: PropTypes.func,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
@@ -75,7 +76,8 @@ TextArea.propTypes = {
 };
 
 TextArea.defaultProps = {
-    rows: 5
+    rows: 5,
+    className: ''
 };
 
 export default TextArea;

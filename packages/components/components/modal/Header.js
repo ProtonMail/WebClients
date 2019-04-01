@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import Button from '../button/Button';
-import { getClasses } from '../../helpers/component';
 
 const Header = ({ children, modalTitleID, className, hasClose, onClose, ...rest }) => {
     return (
-        <header className={getClasses('pm-modalHeader', className)} {...rest}>
+        <header className={`pm-modalHeader ${className}`} {...rest}>
             {hasClose ? (
                 <Button className="pm-modalClose" title={c('Action').t`Close modal`} onClick={onClose}>
                     x
@@ -30,7 +29,8 @@ Header.propTypes = {
 
 Header.defaultProps = {
     hasClose: true,
-    modalTitleID: 'modalTitle'
+    modalTitleID: 'modalTitle',
+    className: ''
 };
 
 export default Header;

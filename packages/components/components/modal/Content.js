@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getClasses } from '../../helpers/component';
 import Loader from '../loader/Loader';
 
 const Content = ({ children, loading, className, onSubmit, onReset, autoComplete, ...rest }) => {
@@ -17,7 +16,7 @@ const Content = ({ children, loading, className, onSubmit, onReset, autoComplete
             onSubmit={handleSubmit}
             onReset={onReset}
             autoComplete={autoComplete}
-            className={getClasses('pm-modalContent', className)}
+            className={`pm-modalContent ${className}`}
             {...rest}
         >
             {children}
@@ -35,7 +34,8 @@ Content.propTypes = {
 };
 
 Content.defaultProps = {
-    autoComplete: 'off'
+    autoComplete: 'off',
+    className: ''
 };
 
 export default Content;

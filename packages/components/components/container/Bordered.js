@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getClasses } from '../../helpers/component';
 
 const Bordered = ({ children, className, ...rest }) => {
     return (
-        <div className={getClasses('bordered-container p1 mb1', className)} {...rest}>
+        <div className={`bordered-container p1 mb1 ${className}`} {...rest}>
             {children}
         </div>
     );
@@ -13,6 +12,10 @@ const Bordered = ({ children, className, ...rest }) => {
 Bordered.propTypes = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string
+};
+
+Bordered.defaultProps = {
+    className: ''
 };
 
 export default Bordered;

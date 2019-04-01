@@ -81,7 +81,8 @@ Input.propTypes = {
 
 Input.defaultProps = {
     type: 'text',
-    autoComplete: 'off'
+    autoComplete: 'off',
+    className: ''
 };
 
 export default Input;

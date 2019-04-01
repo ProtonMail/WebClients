@@ -4,12 +4,11 @@ import { NavLink } from 'react-router-dom';
 
 import Button from '../button/Button';
 import Icon from '../icon/Icon';
-import { getClasses } from '../../helpers/component';
 
 const DropdownItem = ({ type, link, text, iconName, className, onClick, disabled }) => {
     if (type === 'button') {
         return (
-            <li className={getClasses('DropdownItem', className)}>
+            <li className={`DropdownItem ${className}`}>
                 <Button onClick={onClick} disabled={disabled}>
                     {iconName && <Icon name={iconName} />}
                     {text}
@@ -20,7 +19,7 @@ const DropdownItem = ({ type, link, text, iconName, className, onClick, disabled
 
     if (type === 'link') {
         return (
-            <li className={getClasses('DropdownItem', className)}>
+            <li className={`DropdownItem ${className}`}>
                 <NavLink to={link}>
                     {iconName && <Icon name={iconName} />}
                     {text}
@@ -31,7 +30,7 @@ const DropdownItem = ({ type, link, text, iconName, className, onClick, disabled
 
     if (type === 'text') {
         return (
-            <li className={getClasses('DropdownItem', className)}>
+            <li className={`DropdownItem ${className}`}>
                 {iconName && <Icon name={iconName} />}
                 {text}
             </li>

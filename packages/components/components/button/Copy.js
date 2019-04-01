@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import Button from './Button';
 import Icon from '../icon/Icon';
-import { getClasses } from '../../helpers/component';
 
 const Copy = ({ className, value }) => {
     const [copied, setCopied] = useState(false);
@@ -21,7 +20,7 @@ const Copy = ({ className, value }) => {
     return (
         <Button
             onClick={handleClick}
-            className={getClasses(copied ? 'copied' : '', className)}
+            className={`${copied ? 'copied' : ''} ${className}`}
             title={copied ? c('Label').t`Copied` : c('Label').t`Copy`}
         >
             <Icon name="clipboard" />
@@ -32,6 +31,10 @@ const Copy = ({ className, value }) => {
 Copy.propTypes = {
     value: PropTypes.string.isRequired,
     className: PropTypes.string
+};
+
+Copy.defaultProps = {
+    className: ''
 };
 
 export default Copy;
