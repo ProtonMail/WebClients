@@ -1,7 +1,14 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Alert, SmallButton, ConfirmModal, useModal, useApiWithoutResult, useNotifications } from 'react-components';
+import {
+    Alert,
+    DropdownActions,
+    ConfirmModal,
+    useModal,
+    useApiWithoutResult,
+    useNotifications
+} from 'react-components';
 import { deleteDomain } from 'proton-shared/lib/api/domains';
 
 import DomainModal from './DomainModal';
@@ -18,11 +25,23 @@ const DomainActions = ({ domain }) => {
         createNotification({ text: c('Success message').t`Domain deleted` });
     };
 
+    const list = [
+        {
+            text: c('Action').t`Edit`,
+            type: 'button',
+            onClick: openEditModal
+        },
+        {
+            text: c('Action').t`Delete`,
+            type: 'button',
+            onClick: openDeleteModal
+        }
+    ];
+
     return (
         <>
-            <SmallButton onClick={openEditModal}>{c('Action').t`Edit`}</SmallButton>
+            <DropdownActions className="pm-button--small" list={list} />
             <DomainModal show={showEditModal} onClose={closeEditModal} domain={domain} />
-            <SmallButton onClick={openDeleteModal}>{c('Action').t`Delete`}</SmallButton>
             <ConfirmModal
                 loading={loading}
                 show={showDeleteModal}

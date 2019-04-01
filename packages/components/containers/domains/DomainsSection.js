@@ -30,7 +30,7 @@ const DomainsSection = () => {
                     .t`Add a custom filter to perform actions such as automatically labeling or archiving messages.`}
             </Alert>
             <Block>
-                <PrimaryButton onClick={open}>{c('Action').t`Add domain`}</PrimaryButton>
+                <PrimaryButton onClick={open} className="mr1">{c('Action').t`Add domain`}</PrimaryButton>
                 <DomainModal show={isOpen} onClose={close} />
                 <Button disabled={loading} onClick={call}>{c('Action').t`Refresh status`}</Button>
             </Block>
