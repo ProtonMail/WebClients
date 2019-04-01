@@ -64,8 +64,8 @@ const createUseModelHook = ({ key, get }) => {
 
             promise
                 .then((data) => {
-                    mergeCache(promiseCache, getPromiseValue(RESOLVED, data));
                     mergeCache(dataCache, { [key]: data });
+                    mergeCache(promiseCache, getPromiseValue(RESOLVED, data));
                 })
                 .catch((e) => {
                     mergeCache(promiseCache, getPromiseValue(REJECTED, e));
