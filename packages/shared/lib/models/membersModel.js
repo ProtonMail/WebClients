@@ -4,9 +4,6 @@ import updateCollection from '../helpers/updateCollection';
 export const updateMembersModel = (api, Members) => {
     return Promise.all(
         Members.map(async (member) => {
-            if (member.addresses) {
-                return member;
-            }
             const { Addresses = [] } = await api(queryAddresses(member.ID));
             return {
                 ...member,

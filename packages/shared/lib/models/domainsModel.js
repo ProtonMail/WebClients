@@ -4,9 +4,6 @@ import updateCollection from '../helpers/updateCollection';
 export const updateDomainsModel = (api, Domains) => {
     return Promise.all(
         Domains.map(async (domain) => {
-            if (!domain.addresses) {
-                return domain;
-            }
             const { Addresses = [] } = await api(queryDomainAddresses(domain.ID));
             return {
                 ...domain,
