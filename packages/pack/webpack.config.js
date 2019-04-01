@@ -48,12 +48,13 @@ function main({ port, publicPath }) {
         resolve: {
             symlinks: false,
             alias: {
-                // Ensure the same pmcrypto is used for pm-srp and angular if you symlink pm-srp to dev.
+                // Ensure that the correct package is used when symlinking
                 pmcrypto: path.resolve('./node_modules/pmcrypto'),
-                // Ensure the same react is used for npm links
                 react: path.resolve('./node_modules/react'),
                 'react-dom': path.resolve('./node_modules/react-dom'),
-                'design-system': path.resolve('./node_modules/design-system')
+                'design-system': path.resolve('./node_modules/design-system'),
+                'proton-shared': path.resolve('./node_modules/proton-shared'),
+                'react-components': path.resolve('./node_modules/react-components')
             }
         },
         entry: {
