@@ -1,20 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ngettext, msgid } from 'ttag';
-import { CatchAllModal, SmallButton, useModal } from 'react-components';
+import { Link } from 'react-router-dom';
+import { ngettext, msgid, c } from 'ttag';
+import { Dropdown, DropdownMenu, Icon } from 'react-components';
 
 const DomainAddresses = ({ domain }) => {
     const addresses = domain.addresses || [];
     const title = addresses.map(({ Email }) => Email).join(', ');
+    const list = addresses.map(({ Email: text }) => ({ text }));
     const n = addresses.length;
-    const { isOpen, open, close } = useModal();
 
     return (
         <>
-            <SmallButton title={title} className="pm-button--link" onClick={open}>
-                {ngettext(msgid`${n} address`, `${n} addresses`, n)}
-            </SmallButton>
-            <CatchAllModal show={isOpen} onClose={close} domain={domain} />
+            <Dropdown
+                title={title}
+                className="pm-button--link"
+                content={
+                    <>
+                        {ngettext(msgid`${n} address`, `${n} addresses`, n)} <Icon name="caret" />
+                    </>
+                }
+            >
+                <DropdownMenu list={list} />
+                <div className="alignright">
+                    <Link className="pm-button pm-button--small" to="/settings/addresses">{c('Link').t`Manage`}</Link>
+                </div>
+            </Dropdown>
         </>
     );
 };

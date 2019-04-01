@@ -12,12 +12,14 @@ import {
 import { deleteDomain } from 'proton-shared/lib/api/domains';
 
 import DomainModal from './DomainModal';
+import CatchAllModal from './CatchAllModal';
 
 const DomainActions = ({ domain }) => {
     const { request, loading } = useApiWithoutResult(deleteDomain);
     const { createNotification } = useNotifications();
     const { isOpen: showEditModal, open: openEditModal, close: closeEditModal } = useModal();
     const { isOpen: showDeleteModal, open: openDeleteModal, close: closeDeleteModal } = useModal();
+    const { isOpen: showCatchAllModal, open: openCatchAllModal, close: closeCatchAllModal } = useModal();
 
     const handleConfirmDelete = async () => {
         await request(domain.ID);
@@ -32,6 +34,11 @@ const DomainActions = ({ domain }) => {
             onClick: openEditModal
         },
         {
+            text: c('Action').t`Catch all`,
+            type: 'button',
+            onClick: openCatchAllModal
+        },
+        {
             text: c('Action').t`Delete`,
             type: 'button',
             onClick: openDeleteModal
@@ -42,6 +49,7 @@ const DomainActions = ({ domain }) => {
         <>
             <DropdownActions className="pm-button--small" list={list} />
             <DomainModal show={showEditModal} onClose={closeEditModal} domain={domain} />
+            <CatchAllModal show={showCatchAllModal} onClose={closeCatchAllModal} domain={domain} />
             <ConfirmModal
                 loading={loading}
                 show={showDeleteModal}

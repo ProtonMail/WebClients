@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { ngettext, msgid, c } from 'ttag';
-import { Dropdown, DropdownMenu } from 'react-components';
+import { Dropdown, DropdownMenu, Icon } from 'react-components';
 
 const MemberAddresses = ({ member }) => {
     const addresses = member.addresses || [];
@@ -15,13 +15,15 @@ const MemberAddresses = ({ member }) => {
             <Dropdown
                 title={title}
                 className="pm-button--link"
-                content={ngettext(msgid`${n} address`, `${n} addresses`, n)}
+                content={
+                    <>
+                        {ngettext(msgid`${n} address`, `${n} addresses`, n)} <Icon name="caret" />
+                    </>
+                }
             >
                 <DropdownMenu list={list} />
                 <div className="alignright">
-                    <Link className="pm-button pm-button--small" to="/settings/addresses">{c(
-                        'Link for member addresses'
-                    ).t`Manage`}</Link>
+                    <Link className="pm-button pm-button--small" to="/settings/addresses">{c('Link').t`Manage`}</Link>
                 </div>
             </Dropdown>
         </>
