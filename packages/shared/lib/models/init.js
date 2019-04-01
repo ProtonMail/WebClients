@@ -96,7 +96,7 @@ export const setupEventManager = (cache, eventID, api) => {
         const { User } = newState;
 
         // Necessary because there is no delete event for organizations
-        if (!User.hasOrganization) {
+        if (User.isFree) {
             delete newState[OrganizationModel.key];
             delete newState[MembersModel.key];
         }
