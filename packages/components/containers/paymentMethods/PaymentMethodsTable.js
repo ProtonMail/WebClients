@@ -14,9 +14,18 @@ const PaymentMethodsTable = ({ methods, loading, fetchMethods }) => {
     const getMethod = (method) => {
         switch (method.Type) {
             case 'card':
-                return `${method.Details.Brand} •••• ${method.Details.Last4}`;
+                return `${method.Details.Brand} (•••• ${method.Details.Last4})`;
             case 'paypal':
                 return 'PayPal';
+            default:
+                return '';
+        }
+    };
+
+    const getName = (method) => {
+        switch (method.Type) {
+            case 'card':
+                return method.Details.Name;
             default:
                 return '';
         }
@@ -27,6 +36,7 @@ const PaymentMethodsTable = ({ methods, loading, fetchMethods }) => {
             <TableHeader
                 cells={[
                     c('Title for payment methods table').t`Method`,
+                    c('Title for payment methods table').t`Name`,
                     c('Title for payment methods table').t`Status`,
                     c('Title for payment methods table').t`Actions`
                 ]}
@@ -38,6 +48,7 @@ const PaymentMethodsTable = ({ methods, loading, fetchMethods }) => {
                             key={method.ID}
                             cells={[
                                 getMethod(method),
+                                getName(method),
                                 <PaymentMethodState key={method.ID} method={method} index={index} />,
                                 <PaymentMethodActions key={method.ID} method={method} onChange={fetchMethods} />
                             ]}
