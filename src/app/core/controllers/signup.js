@@ -21,7 +21,6 @@ function SignupController(
     translator,
     signupUserProcess
 ) {
-
     const I18N = translator(() => ({
         validGiftCode: gettextCatalog.getString('Gift code applied', null, 'Success'),
         invalidGiftCode: gettextCatalog.getString('Invalid gift code', null, 'Error')

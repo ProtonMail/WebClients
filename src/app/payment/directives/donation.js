@@ -74,6 +74,7 @@ function donation(cardModel, gettextCatalog, dispatchers, paymentUtils, donateMo
 
             const onSubmit = (e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 scope.donationForm.$valid && donate(buildRequestOption());
             };
 
