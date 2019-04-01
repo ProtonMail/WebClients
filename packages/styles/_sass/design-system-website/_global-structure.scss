@@ -5,7 +5,7 @@ body {
 /* === page === */
 .aside {
   background: $pm-global-grey;
-  width: 4.5rem;
+  width: $aside-bar-width;
   min-height: 100vh;
   color: $pm-global-light;
   flex-shrink: 0;
@@ -58,12 +58,12 @@ body {
 
 .header {
   padding: 1rem 2rem;
-  height: 8rem;
+  height: $header-height;
 }
 .sidebar {
-  min-height: calc(100vh - 8rem);
-  max-height: calc(100vh - 8rem);
-  width: 180px;
+  min-height: calc(100vh - $header-height);
+  max-height: calc(100vh - $header-height);
+  width: $width-sidebar;
   visibility: visible;
   transition: visibility 0s ease, transform 1s ease, width .6s ease , opacity 1s ease ;
   transition-delay: 0s;
@@ -79,14 +79,8 @@ body {
   fill: $pm-global-light;
 }
 .logo .plan {
-  fill: #8ed60f;
+  fill: $plan-logo-color;
   font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.navigation__list {
-  margin-top: 0;
 }
 
 .navigation__link {
@@ -188,7 +182,7 @@ body {
   }
 }
 .toolbar {
-  min-height: 5rem;
+  min-height: $toolbar-height;
   background: $pm-global-altgrey;
   border-radius: 4px 4px 0 0;
 }
@@ -197,14 +191,14 @@ body {
 .main-full {
   background: $white;
   color: $pm-global-grey;
-  height: calc(100vh - 8rem );
+  height: calc(100vh - #{$header-height} );
   overflow: auto;
 }
 .main-area {
   border-radius: 4px 4px 0 0;
 }
 .main-area--withToolbar {
-  height: calc(100vh - 8rem - 5rem);  
+  height: calc(100vh - #{$header-height} - #{$toolbar-height} );  
 }
 .main-full {
   height: 100vh;
@@ -214,19 +208,20 @@ body {
   padding: 2em;
 }
 
-.subNav {
-  width: 250px;
+.subnav {
+  width: $subnav-width;
+  height: calc(100vh - #{$header-height} - #{$toolbar-height});
 }
-.subNav-inner {
+.subnav-inner {
   position: sticky;
   top: 0;
   padding: 2em;
 }
-.subNav-link {
+.subnav-link {
   @extend .nodecoration;
   @extend .color-global-grey;
 }
-[aria-current="true"].subNav-link {
+[aria-current="true"].subnav-link {
   font-weight: bold;
 }
 

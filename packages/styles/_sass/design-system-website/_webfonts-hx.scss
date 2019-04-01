@@ -1,58 +1,54 @@
-/* here the font faces */
-/*@font-face {
-
-}*/
-
 h1,
 .h1 {
   display: block;
-  @include flow-hr(36);
+  @include flow-hr($size-h1);
   font-weight: normal;
 }
 h2,
 .h2 {
   display: block;
-  @include flow-hr(28);
+  @include flow-hr($size-h2);
   font-weight: normal;
 }
 h3,
 .h3 {
   display: block;
-  @include flow-hr(20);
+  @include flow-hr($size-h3);
   font-weight: normal;
 }
 h4,
 .h4 {
   display: block;
-  @include flow-hr(18);
+  @include flow-hr($size-h4);
   font-weight: normal;
 }
 h5,
 .h5 {
   display: block;
-  @include flow-hr(17);
+  @include flow-hr($size-h5);
   font-weight: normal;
 }
 h6,
 .h6 {
   display: block;
-  @include flow-hr(16);
+  @include flow-hr($size-h6);
   font-weight: normal;
 }
 
 /* other useful classes */
 .smaller {
-  @include flow-other(10); // equiv 10px
+  @include flow-other($size-smaller);
 }
 .small {
-  @include flow-other(12); // equiv 12px
+  @include flow-other($size-small);
 }
 .big {
-  @include flow-other(16); // equiv 16px
+  @include flow-other($size-big);
 }
 .bigger {
-  @include flow-other(18); // equiv 18px
+  @include flow-other($size-bigger);
 }
 .biggest {
-  @include flow-other(20); // equiv 20px
+  @include flow-other($size-biggest);
 }
+ 

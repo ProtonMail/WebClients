@@ -1,3 +1,36 @@
+
+
+/**
+ * large breakpoint
+ */
+ @include respond-to($breakpoint-large) { 
+   
+  /**
+   * global structure adaptation (page / skip links / header / main content / footer)
+   */
+
+  
+  /**
+   * inside content (other styles for pages)
+   */
+  .colortile { width: 50%; }
+
+}
+
+
+/**
+ * large breakpoint
+ */
+ @include respond-to(1050) { 
+  
+  /**
+   * inside content (other styles for pages)
+   */
+  .colortile { width: 100%; }
+
+}
+
+
 /**
  * medium/tablet breakpoint
  */
@@ -43,7 +76,7 @@
    */
 
   .sidebar[aria-hidden="true"] {
-    transform: translateX(-180px);
+    transform: translateX(-#{$width-sidebar});
     width: 0;
     visibility: hidden;
     opacity: 0;
@@ -52,7 +85,7 @@
   @if $rtl-option == true {
     [dir="rtl"] {
       .sidebar[aria-hidden="true"] {
-        transform: translateX(+180px);
+        transform: translateX(#{$width-sidebar});
       }
     }
   }

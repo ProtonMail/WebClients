@@ -46,29 +46,24 @@ a[href^="mailto:"] {
 /* facto icons */
 [class*="icon-"] {
   @extend .alignmiddle;
+  @extend .inbl;
 }
 
+$list-icon-pixels: 16,25,100 !default; 
 
-.icon-100p {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-}
-.icon-25p {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-}
-.icon-16p {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
+@each $width in $list-icon-pixels {
+  .icon-#{$width}p { 
+    width: #{$width}px; 
+    height: #{$width}px; 
+  }
 }
 
-.icon-50 {
-  display: inline-block;
-  width: 50%;
-  height: 50%;
+$list-icon-percent: 50 !default;
+@each $width in $list-icon-percent {
+  .icon-#{$width} { 
+    width: percentage($width / 100); 
+    height: percentage($width / 100); 
+  }
 }
 
 .path2x {
@@ -77,5 +72,3 @@ a[href^="mailto:"] {
     stroke: $pm-global-light;   
   }
 }
-
-

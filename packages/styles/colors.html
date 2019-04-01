@@ -8,188 +8,57 @@ keywords: colors, proton, rules
 section: design
 ---
 
+{% assign listColors = "Global Grey#Global Alt Grey (gradient)#Global Alt Grey#Global light#Global border#Global muted#Global success#Global warning#Global attention#PM blue#PM blue dark#PM blue light#PV green#PV green dark#PV green light#White#Black" | split: '#' %}
+{% assign listColorsRgb = "262a33#dafuk#3c414e#f6f7fa#dde6ec#eeeff1#5db039#ec5858#eac819#657ee4#526ee0#788ee8#4da358#3e8447#5fb364#fff#000" | split: '#' %}
+{% assign listColorsHex = "38/42/51#dafuk#60/65/78#246/247/250#221/230/236#238/239/241#93/176/57#236/88/88#234/200/25#101/126/228#82/110/224#120/142/232#77/163/88#62/132/71#95/179/100#255/255/255#0/0/0" | split: '#' %}
+{% assign listColorsNames = "global-grey#dafuk#global-altgrey#global-light#global-border#global-muted#global-success#global-warning#global-attention#pm-blue#pm-blue-dark#pm-blue-light#pv-green#pv-green-light#pv-green-dark#white#black" | split: '#' %}
+{% assign listSassVars = "$pm-global-grey#dafuk#$pm-global-altgrey#$pm-global-light#$pm-global-border#$pm-global-muted#$pm-global-success#$pm-global-warning#$pm-global-attention#$pm-blue#$pm-blue-dark#$pm-blue-light#$pv-green#$pv-green-light#$pv-green-dark#$white#$black" | split: '#' %}
 
 <div class="flex pt2">
-  <div class="w33 ontablet-w100 pr1 pb1">
+{% for color in listColors %}
+ <div class="w33 colortile pr1 pb1">
 
-    <div class="flex flex-nowrap">
-        <div class="square-color bg-global-grey"></div>
-        <div class="flex-item-fluid pl1">
-            <h2 class="h5">Global Grey</h2>
-            <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#262a33</code></p>
-            <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">38/42/51</code></p>
-        </div>
-    </div>
+  {% if color == 'Global Alt Grey (gradient)' %}
 
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
+    <div class="flex flex-nowrap bordered-container p1 h100">
       <div class="square-color bg-global-altgrey-gradient"></div>
       <div class="flex-item-fluid pl1">
           <h2 class="h5">Global Alt Grey <br />(gradient)</h2>
           <p class="mb0-5"><code class="border bg-global-border p0-25 rounded">#262a33</code> → <code class="border bg-global-border p0-25 rounded">#3C414E</code></p>
           <p class="mt0-5"><code class="border bg-global-border p0-25 rounded">38/42/51</code> → <code class="border bg-global-border p0-25 rounded">60/65/78</code></p>
+          <p class="mt0-5 mb0-5">CSS classes:</p>
+          <p class="mt0-5 mb0-5"><code class="border p0-25 rounded bg-global-altgrey-gradient color-global-light">.bg-global-altgrey-gradient</code></p>
       </div>
     </div>
+  {% else %}
 
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-global-altgrey"></div>
+    {% if listColorsNames[forloop.index0] == 'global-light' or listColorsNames[forloop.index0] == 'global-border' or listColorsNames[forloop.index0] == 'global-muted' or listColorsNames[forloop.index0] == 'global-attention' or listColorsNames[forloop.index0] == 'white'  %}
+      {% assign colorText = 'global-grey' %}
+    {% else %}
+      {% assign colorText = 'global-light' %}
+    {% endif %}
+  <div class="flex flex-nowrap bordered-container p1 h100">
+      <div class="square-color bg-{{ listColorsNames[forloop.index0] }}"></div>
       <div class="flex-item-fluid pl1">
-          <h2 class="h5">Global Alt Grey</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#3C414E</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">60/65/78</code></p>
+          <h2 class="h5">{{ listColors[forloop.index0] }}</h2>
+          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#{{ listColorsRgb[forloop.index0] }}</code></p>
+          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">{{ listColorsHex[forloop.index0] }}</code></p>
+
+          <p class="mt0-5 mb0-5">CSS classes:</p>
+          <p class="mt0-5 mb0-5"><code class="border p0-25 rounded bg-{{ listColorsNames[forloop.index0] }} color-{{ colorText }}">.bg-{{ listColorsNames[forloop.index0] }}</code></p>
+          <p class="mt0-5"><code class="border p0-25 rounded color-{{ listColorsNames[forloop.index0] }} bg-{{ colorText }}">.color-{{ listColorsNames[forloop.index0] }}</code></p>
+          
+          <p class="mt0-5 mb0-5">For SVG bg<br> <code class="border p0-25 rounded bg-{{ listColorsNames[forloop.index0] }} color-{{ colorText }}">.fill-{{ listColorsNames[forloop.index0] }}</code></p>
+          <p class="mt0-5">Sass:<br> <code class="border bg-global-border p0-25 rounded">{{ listSassVars[forloop.index0] }}</code></p>
+
+
       </div>
-    </div>
-
   </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
 
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-global-light"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">Global light</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#F6F7FA</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">246/247/250</code></p>
-      </div>
-    </div>
-
+  {% endif %}
   </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
+{% endfor %}
 
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-global-border"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">Global border</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#DDE6EC</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">221/230/236</code></p>
-      </div>
-    </div>
-
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-global-muted"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">Global muted</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#EEEFF1</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">238/239/241</code></p>
-      </div>
-    </div>
-
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-global-success"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">Global success</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#5DB039</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">93/176/57</code></p>
-      </div>
-    </div>
-
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-global-warning"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">Global warning</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#EC5858</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">236/88/88</code></p>
-      </div>
-    </div>
-
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-global-attention"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">Global attention</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#EAC819</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">234/200/25</code></p>
-      </div>
-    </div>
-
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-pm-blue"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">PM blue</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#657EE4</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">101/126/228</code></p>
-      </div>
-    </div>
-
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-pm-blue-dark"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">PM blue dark</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#526EE0</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">82/110/224</code></p>
-      </div>
-    </div>
-
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-pm-blue-light"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">PM blue light</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#788EE8</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">120/142/232</code></p>
-      </div>
-    </div>
-
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-pv-green"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">PV green</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#4DA358</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">77/163/88</code></p>
-      </div>
-    </div>
-
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-pv-green-dark"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">PV green dark</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#3E8447</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">62/132/71</code></p>
-      </div>
-    </div>
-
-  </div>
-  <div class="w33 ontablet-w100 pr1 pb1">
-
-    <div class="flex flex-nowrap">
-      <div class="square-color bg-pv-green-light"></div>
-      <div class="flex-item-fluid pl1">
-          <h2 class="h5">PV green light</h2>
-          <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#5FB364</code></p>
-          <p class="mt0-5">RGB: <code class="border bg-global-border p0-25 rounded">95/179/100</code></p>
-      </div>
-    </div>
-
-  </div>
 </div>
 
 <h2>Color rules (to come)</h2>

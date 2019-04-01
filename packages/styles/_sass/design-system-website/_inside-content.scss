@@ -60,3 +60,14 @@
 .css-dash {
   background: url("/assets/img/shared/sprite-for-css-only.svg#css-dash") 50% 50% no-repeat;
 }
+
+
+/* Sass variables */
+.highlight {
+  animation: highlight 2s 3 linear; 
+  background-color: $pm-global-warning;
+}
+@keyframes highlight {
+  0% { background-color: $pm-global-warning; }
+  100% { background-color: inherit; }
+}

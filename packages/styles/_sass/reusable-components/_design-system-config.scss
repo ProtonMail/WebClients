@@ -5,6 +5,19 @@ $base-font             : 14 !default; // if "14" then 1em = 14px
 // default line-height
 $l-h                   : 1.5 !default;
 
+$size-h1               : 36 !default;
+$size-h2               : 28 !default;
+$size-h3               : 20 !default;
+$size-h4               : 18 !default;
+$size-h5               : 17 !default;
+$size-h6               : 16 !default;
+
+$size-smaller          : 10 !default;
+$size-small            : 12 !default;
+$size-big              : 16 !default;
+$size-bigger           : 18 !default;
+$size-biggest          : 20 !default;
+
 // fonts
 $font-family           : -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif !default;
 
@@ -31,15 +44,16 @@ $pv-green-light        : #5fb364;
 
 // not approved colors
 $pm-input-background   : #fcfdff;
+$plan-logo-color       : #8ed60f;
 
 // colors
 $color-links           : $pm-blue;
-$color-hover           : #000 !default;
+$color-hover           : $black !default;
 $color-hr              : $pm-global-grey;
 $hr-height             : 1px !default; 
 $color-alert           : $pm-global-warning;
-$color-bg-button       : #fff !default;
-$color-txt-button      : #000 !default;
+$color-bg-button       : $white !default;
+$color-txt-button      : $black !default;
 
 $global-border-radius  : 3px;
 
@@ -48,7 +62,7 @@ $input-defaut-size     : 250px !default;
 $input-defaut-border   : 1px solid $pm-global-border !default;
 
 // main breakpoints
-$breakpoint-big        : 1200 !default;
+$breakpoint-large      : 1600 !default;
 $breakpoint-medium     : 880 !default;
 $breakpoint-small      : 640 !default;
 $breakpoint-tiny       : 320 !default;
@@ -89,6 +103,15 @@ $use-old-ie-fallbacks  : true !default;
 
 // default config for webpack, can be overriden by "global config" in styles-pm.scss
 $path-images           : '../../assets/img/shared/' !default;
+
+
+// variables for global layouts, allowing you to use calc for components and adapt quickly if needed
+$aside-bar-width       : 4.5rem !default;
+$header-height         : 8rem !default;
+$width-sidebar         : 180px !default; // main navigation
+$toolbar-height        : 5rem !default;
+$subnav-width          : 250px !default; // quick nav on the right
+
 
 
 // Sass functions: don’t touch if you are not sure ;)

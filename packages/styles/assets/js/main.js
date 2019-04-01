@@ -849,3 +849,39 @@ var checkbox_indeterminate = document.getElementById("id_field_indeterminate");
 if ( checkbox_indeterminate ){
   checkbox_indeterminate.indeterminate = true;
 }
+
+
+
+
+
+/**
+ * Highlight elements
+ */
+function highlightElement( e ) {
+  var button = e.currentTarget;
+  var target = document.querySelector(button.getAttribute('data-href'));
+
+  var target_links = [].slice.call(document.body.querySelectorAll('.highlight'));
+
+  target_links.forEach(function(elem) {
+      elem.classList.remove('highlight');
+  });
+
+  if (target) {
+
+    target.classList.add('highlight');
+    setTimeout(function () {
+      target.classList.remove('highlight');
+      }, 6000);
+  }
+}
+
+
+
+var target_links = [].slice.call(document.body.querySelectorAll('.js-target-link'));
+
+target_links.forEach(function(elem) {
+    elem.addEventListener("click", highlightElement );
+    elem.addEventListener("mouseenter", highlightElement );
+    elem.addEventListener("focus", highlightElement );
+});

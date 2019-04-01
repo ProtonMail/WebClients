@@ -1,27 +1,33 @@
                 {% if page.subsection %} 
-                <div class="subNav notablet nomobile bg-global-light noprint">
+                <div class="subnav notablet nomobile bg-global-light noprint">
 
-                  <div class="subNav-inner">
+                  <div class="subnav-inner">
                       <p class="uppercase smaller">Navigation</p>
 
                       {% if page.subsection == 'buttons' %}
 
-                      <ul class="unstyled subNav-list">
-                        <li class="mb0-5"><a href="#button-states" class="subNav-link js-scrollTo">Buttons</a></li>
-                        <li class="mb0-5"><a href="#button-aliases" class="subNav-link js-scrollTo">Buttons aliases</a></li>
-                        <li class="mb0-5"><a href="#button-groups" class="subNav-link js-scrollTo">Groups</a></li>
+                      <ul class="unstyled subnav-list">
+                        <li class="mb0-5"><a href="#button-states" class="subnav-link js-scrollTo">Buttons</a></li>
+                        <li class="mb0-5"><a href="#button-aliases" class="subnav-link js-scrollTo">Buttons aliases</a></li>
+                        <li class="mb0-5"><a href="#button-groups" class="subnav-link js-scrollTo">Groups</a></li>
                       </ul>
 
                       {% endif %}
 
                       {% if page.subsection == 'icons' %}
 
-                      <ul class="unstyled subNav-list">
-                        <li class="mb0-5"><a href="#icon-lists" class="subNav-link js-scrollTo">Icon lists</a></li>
-                        <li class="mb0-5"><a href="#integration-cases" class="subNav-link js-scrollTo">Integration cases</a></li>
-                        <li class="mb0-5"><a href="#sizes-colors" class="subNav-link js-scrollTo">Sizes, colors</a></li>
-                        <li class="mb0-5"><a href="#css-sprite" class="subNav-link js-scrollTo">CSS SVG sprite</a></li>
+                      <ul class="unstyled subnav-list">
+                        <li class="mb0-5"><a href="#icon-lists" class="subnav-link js-scrollTo">Icon lists</a></li>
+                        <li class="mb0-5"><a href="#integration-cases" class="subnav-link js-scrollTo">Integration cases</a></li>
+                        <li class="mb0-5"><a href="#sizes-colors" class="subnav-link js-scrollTo">Sizes, colors</a></li>
+                        <li class="mb0-5"><a href="#css-sprite" class="subnav-link js-scrollTo">CSS SVG sprite</a></li>
                       </ul>
+
+                      {% endif %}
+
+                      {% if page.subsection == 'sass-variables' %}
+
+                      In case of.
 
                       {% endif %}
 
