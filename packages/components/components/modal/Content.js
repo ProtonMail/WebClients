@@ -8,6 +8,9 @@ const Content = ({ children, loading, className, onSubmit, onReset, autoComplete
         return <Loader />;
     }
     const handleSubmit = (event) => {
+        if (loading) {
+            return;
+        }
         event.preventDefault();
         onSubmit(event);
     };

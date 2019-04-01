@@ -7,14 +7,14 @@ import Modal from './Modal';
 import Footer from './Footer';
 import Content from './Content';
 
-const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm }) => {
+const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm, loading }) => {
     return (
         <Modal show={show} onClose={onClose} title={title} type="small">
-            <Content onSubmit={onConfirm} onReset={onClose}>
+            <Content onSubmit={onConfirm} onReset={onClose} loading={loading}>
                 {children}
                 <Footer>
-                    <ResetButton>{cancel}</ResetButton>
-                    <PrimaryButton type="submit" autoFocus={true}>
+                    <ResetButton disabled={loading}>{cancel}</ResetButton>
+                    <PrimaryButton type="submit" disabled={loading} autoFocus={true}>
                         {confirm}
                     </PrimaryButton>
                 </Footer>
@@ -30,7 +30,8 @@ Confirm.propTypes = {
     children: PropTypes.node.isRequired,
     cancel: PropTypes.string.isRequired,
     confirm: PropTypes.string.isRequired,
-    show: PropTypes.bool.isRequired
+    show: PropTypes.bool.isRequired,
+    loading: PropTypes.bool
 };
 
 Confirm.defaultProps = {
