@@ -16,7 +16,18 @@ Good candidates:
 - OpenVPN modal
 */
 
-const InputModal = ({ label, title, input: initialInput, show, onClose, onSubmit, cancel, submit, placeholder }) => {
+const InputModal = ({
+    label,
+    title,
+    input: initialInput,
+    show,
+    onClose,
+    onSubmit,
+    cancel,
+    submit,
+    placeholder,
+    loading
+}) => {
     const [input, set] = useState(initialInput);
     const id = generateUID('input-modal');
     const handleChange = ({ target }) => set(target.value);
@@ -24,7 +35,7 @@ const InputModal = ({ label, title, input: initialInput, show, onClose, onSubmit
 
     return (
         <Modal show={show} onClose={onClose} title={title} type="small">
-            <Content onSubmit={handleSubmit} onReset={onClose}>
+            <Content onSubmit={handleSubmit} onReset={onClose} loading={loading}>
                 <Row>
                     <Label htmlFor={id}>{label}</Label>
                     <Input
@@ -33,12 +44,15 @@ const InputModal = ({ label, title, input: initialInput, show, onClose, onSubmit
                         placeholder={placeholder}
                         onChange={handleChange}
                         autoFocus={true}
+                        readOnly={loading}
                         required
                     />
                 </Row>
                 <Footer>
-                    <ResetButton>{cancel}</ResetButton>
-                    <PrimaryButton type="submit">{submit}</PrimaryButton>
+                    <ResetButton disabled={loading}>{cancel}</ResetButton>
+                    <PrimaryButton type="submit" disabled={loading}>
+                        {submit}
+                    </PrimaryButton>
                 </Footer>
             </Content>
         </Modal>
@@ -54,7 +68,8 @@ InputModal.propTypes = {
     cancel: PropTypes.string.isRequired,
     show: PropTypes.bool.isRequired,
     placeholder: PropTypes.string,
-    submit: PropTypes.string
+    submit: PropTypes.string,
+    loading: PropTypes.bool
 };
 
 InputModal.defaultProps = {
