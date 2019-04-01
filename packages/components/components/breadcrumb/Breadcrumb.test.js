@@ -28,6 +28,7 @@ describe('Breadcrumb component', () => {
         const { container } = render(<Breadcrumb list={steps} current={currentStep} onClick={mockOnClick} />);
         const buttons = getButtons(container);
 
+        expect(mockOnClick).toHaveBeenCalledTimes(0);
         fireEvent.click(buttons[0]);
         expect(mockOnClick).toHaveBeenCalledTimes(1);
     });

@@ -27,6 +27,7 @@ describe('Toggle component', () => {
         const mockOnChange = jest.fn();
         const { container } = render(<Toggle id={id} checked={false} onChange={mockOnChange} />);
 
+        expect(mockOnChange).toHaveBeenCalledTimes(0);
         fireEvent.click(container.firstChild);
         expect(mockOnChange).toHaveBeenCalledTimes(1);
     });

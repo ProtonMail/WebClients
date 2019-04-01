@@ -32,7 +32,8 @@ describe('SignToggle component', () => {
         const { container } = render(wrap(<SignToggle id="sign" sign={1} />));
 
         const toggleNode = container.querySelector('.pm-toggle-checkbox');
-
+        expect(mockApi).toHaveBeenCalledTimes(0);
+        expect(mockEventManager.call).toHaveBeenCalledTimes(0);
         act(() => {
             fireEvent.click(toggleNode);
         });
