@@ -12,7 +12,6 @@ import { generateUID } from '../../helpers/component';
 Good candidates:
 - Gift code modal
 - Orgnization name modal
-- Password modal to unlock scope
 - Black/White list modal
 - OpenVPN modal
 */
@@ -20,7 +19,7 @@ Good candidates:
 const InputModal = ({ label, title, input: initialInput, show, onClose, onSubmit, cancel, submit, placeholder }) => {
     const [input, set] = useState(initialInput);
     const id = generateUID('input-modal');
-    const handleChange = (event) => set(event.target.value);
+    const handleChange = ({ target }) => set(target.value);
     const handleSubmit = () => onSubmit(input);
 
     return (

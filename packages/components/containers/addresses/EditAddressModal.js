@@ -23,7 +23,7 @@ const EditAddressModal = ({ show, onClose, address }) => {
     const { request } = useApiWithoutResult(updateAddress);
     const [model, updateModel] = useState({ displayName: address.DisplayName, signature: address.Signature });
     const { createNotification } = useNotifications();
-    const handleDisplayName = (event) => updateModel({ ...model, displayName: event.target.value });
+    const handleDisplayName = ({ target }) => updateModel({ ...model, displayName: target.value });
     const handleSignature = (value) => updateModel({ ...model, signature: value });
     const handleSubmit = async () => {
         await request(address.ID, { DisplayName: model.displayName, Signature: model.signature });

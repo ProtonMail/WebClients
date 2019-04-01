@@ -8,7 +8,7 @@ import { getFullList } from '../../helpers/countries';
 
 const Card = ({ card, errors, onChange, loading }) => {
     const countries = getFullList().map(({ value, label: text }) => ({ value, text }));
-    const handleChange = (key) => (event) => onChange(key, event.target.value);
+    const handleChange = (key) => ({ target }) => onChange(key, target.value);
     const currentYear = new Date().getFullYear();
     const months = range(1, 13).map((i) => {
         const value = `0${i}`.slice(-2);

@@ -28,7 +28,7 @@ const AddressModal = ({ show, onClose, member }) => {
     const { model, update } = useAddressModal(member);
     const { createNotification } = useNotifications();
 
-    const handleChange = (key) => (event) => update(key, event.target.value);
+    const handleChange = (key) => ({ target }) => update(key, target.value);
     const handleSignature = (value) => update('signature', value);
 
     const handleSubmit = async () => {

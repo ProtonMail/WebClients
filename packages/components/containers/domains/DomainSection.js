@@ -6,8 +6,8 @@ import { Alert, Row, Label, Input, Text } from 'react-components';
 const DomainSection = ({ domain, onChange }) => {
     const [domainName, updateDomainName] = useState(domain.DomainName || '');
 
-    const handleChange = (event) => {
-        const name = event.target.value;
+    const handleChange = ({ target }) => {
+        const name = target.value;
 
         onChange(name);
         updateDomainName(name);
