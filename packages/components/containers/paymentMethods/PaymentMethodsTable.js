@@ -50,7 +50,13 @@ const PaymentMethodsTable = ({ methods, loading, fetchMethods }) => {
                                 getMethod(method),
                                 getName(method),
                                 <PaymentMethodState key={method.ID} method={method} index={index} />,
-                                <PaymentMethodActions key={method.ID} method={method} onChange={fetchMethods} />
+                                <PaymentMethodActions
+                                    key={method.ID}
+                                    index={index}
+                                    methods={methods}
+                                    method={method}
+                                    onChange={fetchMethods}
+                                />
                             ]}
                         />
                     );

@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import {
-    SmallButton,
+    DropdownActions,
     useModal,
     ConfirmModal,
     Alert,
@@ -10,7 +10,7 @@ import {
     useApiWithoutResult,
     useNotifications
 } from 'react-components';
-import { deletePaymentMethod } from 'proton-shared/lib/api/payments';
+import { deletePaymentMethod, orderPaymentMethods } from 'proton-shared/lib/api/payments';
 
 const toCard = ({ Details }) => {
     return {
@@ -24,7 +24,7 @@ const toCard = ({ Details }) => {
     };
 };
 
-const PaymentMethodActions = ({ method, onChange }) => {
+const PaymentMethodActions = ({ method, onChange, methods, index }) => {
     const card = toCard(method);
     const { createNotification } = useNotifications();
     const { request } = useApiWithoutResult(deletePaymentMethod);
@@ -38,11 +38,45 @@ const PaymentMethodActions = ({ method, onChange }) => {
         createNotification({ text: c('Success').t`Payment method deleted` });
     };
 
+    const markAsDefault = async () => {
+        const IDs = methods.map(({ ID }) => ID);
+
+        IDs.splice(index, 1);
+        IDs.unshift(method.ID);
+
+        await orderPaymentMethods(IDs);
+        await onChange();
+        createNotification({ text: c('Success').t`Payment method updated` });
+    };
+
+    const list = [];
+
+    if (method.Type === 'card') {
+        list.push({
+            text: c('Action').t`Edit`,
+            type: 'button',
+            onClick: openEditModal
+        });
+    }
+
+    if (index > 0) {
+        list.push({
+            text: c('Action').t`Mark as default`,
+            type: 'button',
+            onClick: markAsDefault
+        });
+    }
+
+    list.push({
+        text: c('Action').t`Delete`,
+        type: 'button',
+        onClick: openDeleteModal
+    });
+
     return (
         <>
-            {method.Type === 'card' ? <SmallButton onClick={openEditModal}>{c('Action').t`Edit`}</SmallButton> : null}
+            <DropdownActions className="pm-button--small" list={list} />
             <EditCardModal card={card} show={editModal} onClose={closeEditModal} onChange={onChange} />
-            <SmallButton onClick={openDeleteModal}>{c('Action').t`Delete`}</SmallButton>
             <ConfirmModal
                 show={deleteModal}
                 onClose={closeDeleteModal}
@@ -58,6 +92,8 @@ const PaymentMethodActions = ({ method, onChange }) => {
 
 PaymentMethodActions.propTypes = {
     method: PropTypes.object.isRequired,
+    methods: PropTypes.array.isRequired,
+    index: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired
 };
 
