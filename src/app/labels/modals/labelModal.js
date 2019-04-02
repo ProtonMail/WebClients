@@ -1,7 +1,6 @@
 /* @ngInject */
 function labelModal(
     pmModal,
-    tools,
     gettextCatalog,
     networkActivityTracker,
     eventManager,

@@ -95,8 +95,7 @@ function dropdownFolders(AppModel, labelsModel, dispatchers, actionConversation,
                         params: {
                             label: {
                                 Name: scope.searchValue,
-                                Exclusive: 1,
-                                Notify: 0
+                                Exclusive: 1
                             },
                             close(folder) {
                                 labelModal.deactivate();
