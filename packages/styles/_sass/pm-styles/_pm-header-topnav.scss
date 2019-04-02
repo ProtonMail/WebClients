@@ -1,0 +1,20 @@
+.topnav-link {
+  border: 1px solid transparent;
+  padding: 1rem;
+  color: $white;
+  &:focus,
+  &:hover,
+  &:active,
+  &[aria-current="true"] {
+    color: $pm-blue;
+    text-decoration: none;
+    
+    > .topnav-icon {
+       fill: $pm-blue;
+    }
+  }
+  &[aria-current="true"] {
+    border: 1px solid $pm-blue;
+    font-weight: bold;
+  }
+}

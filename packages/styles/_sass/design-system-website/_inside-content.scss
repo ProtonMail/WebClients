@@ -64,10 +64,21 @@
 
 /* Sass variables */
 .highlight {
-  animation: highlight 2s 3 linear; 
-  background-color: $pm-global-warning;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 666;
+    animation: highlight 2s 3 linear; 
+    background-color: $pm-global-warning;
+  }
+  
 }
 @keyframes highlight {
-  0% { background-color: $pm-global-warning; }
-  100% { background-color: inherit; }
+  0% { opacity: .8; }
+  100% { opacity: 0; }
 }

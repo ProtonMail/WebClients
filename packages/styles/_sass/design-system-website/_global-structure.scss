@@ -70,6 +70,9 @@ body {
   overflow: auto;
 }
 
+.logo-container {
+  width: calc( #{$width-sidebar} - 2rem); //padding left .header
+}
 .logo {
   width: 148px;
   height: 36px;
@@ -82,6 +85,7 @@ body {
   fill: $plan-logo-color;
   font-size: 1rem;
 }
+
 
 .navigation__link {
   padding: .75rem 1rem .75rem 3rem;

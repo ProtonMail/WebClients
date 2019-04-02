@@ -1,0 +1,24 @@
+.searchbox-container {
+  width: $conversations-column-width;
+}
+.searchbox-container ::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.searchbox-field[type="search"] {
+  height: 4rem;
+  background-color: $black;
+  background-image: url("#{$path-images}sprite-for-css-only.svg#css-search-white");
+  background-position: 15px 50%;
+  border-color: $black;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  background-size: 2rem;
+  padding-left: calc(15px + 2rem + 15px);
+  color: $white;
+}
+.searchbox-advanced-search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0 1rem;
+}
