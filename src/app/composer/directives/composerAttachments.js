@@ -3,7 +3,6 @@ import { ENCRYPTED_STATUS } from '../../constants';
 
 /* @ngInject */
 function composerAttachments(embeddedUtils, gettextCatalog, dispatchers, translator) {
-
     const CLASS_CLOSED = 'composerAttachments-close';
     const CLASS_HIDDEN = 'composerAttachments-hidden';
     const I18N = translator(() => ({
@@ -27,7 +26,7 @@ function composerAttachments(embeddedUtils, gettextCatalog, dispatchers, transla
         const doAction = (action, label) => () => {
             action === 'remove' && el.classList.remove(CLASS_HIDDEN);
             el.classList[action](CLASS_CLOSED);
-            scope.$applyAsync(() => (scope.I18N = I18N[label]));
+            scope.$applyAsync(() => (scope.labelHeader = I18N[label]));
         };
 
         const open = doAction('remove', 'hide');
@@ -167,7 +166,7 @@ function composerAttachments(embeddedUtils, gettextCatalog, dispatchers, transla
             const { on, unsubscribe } = dispatchers();
 
             scope.list = formatAttachments(scope, scope.message.Attachments);
-            scope.I18N = I18N.show;
+            scope.labelHeader = I18N.show;
 
             const requestSet = {};
 
