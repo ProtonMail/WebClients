@@ -112,4 +112,112 @@ const encrypt = () => {
     };
 };
 
-module.exports = { expiration, encrypt };
+const helper = () => {
+    const composeBtnSelectr = '.sidebar-btn-compose';
+    const containerSelector = '.composer-container';
+    const headerSelector = '.composerHeader-container';
+    const headerButtonSelectors = {
+        exitFullscreen: '.composer-action-maximize[pt-tooltip="Exit fullscreen"',
+        fullscreen: '.composer-action-maximize[pt-tooltip="Fullscreen"',
+        close: '.composer-action-close'
+    };
+    const moreOptionsDropdownSelector = '.squireToolbar-action-modeEditor';
+    const composerModeSelector = '.squireToolbar-select-item:has( > span[translate-context="Composer Mode"])';
+    const composerTextDirectionSelector = '.squireToolbar-select-item:has( > span[translate-context="Option"])';
+
+    const open = () => {
+        cy.get(composeBtnSelectr).click();
+        return isOpen();
+    };
+
+    const close = () => {
+        cy.get(headerButtonSelectors.close).click();
+        return isOpen(false);
+    };
+
+    const isOpen = (open = true) => {
+        if (open) {
+            return cy.get(containerSelector).should('be.visible');
+        }
+        return cy.get(containerSelector).should('not.be.visible');
+    };
+
+    const maximize = () => {
+        cy.get(headerButtonSelectors.fullscreen).click();
+        return isMaximized();
+    };
+
+    const isMaximized = (shouldBeMaximised = true) => {
+        if (shouldBeMaximised) {
+            return cy.get(headerButtonSelectors.exitFullscreen).should('be.visible');
+        }
+        return cy.get(headerButtonSelectors.exitFullscreen).should('not.be.visible');
+    };
+
+    const isComposerOptionActive = (name = null, selector = null) => {
+        cy.get(moreOptionsDropdownSelector).click();
+
+        cy.get(selector).each((el) => {
+            let element = cy.wrap(el);
+            element.invoke('text').then((text) => {
+                let selectedElement = cy.wrap(el);
+                if (name.trim() == text.trim()) {
+                    selectedElement.within(() => {
+                        cy.get('.fa-check')
+                            .should('have.css', 'opacity')
+                            .and('match', /1/);
+                    });
+                } else {
+                    selectedElement.within(() => {
+                        cy.get('.fa-check')
+                            .should('have.css', 'opacity')
+                            .and('match', /0/);
+                    });
+                }
+            });
+        });
+    };
+
+    const isPlaintextMode = (shouldBe = true) => {
+        if (!shouldBe) {
+            return isNormalMode(true);
+        }
+        return isComposerOptionActive('Plain Text', composerModeSelector);
+    };
+
+    const isNormalMode = (shouldBe = true) => {
+        if (!shouldBe) {
+            return isPlaintextMode(true);
+        }
+        return isComposerOptionActive('Normal', composerModeSelector);
+    };
+
+    const isRightToLeft = (shouldBe = true) => {
+        if (!shouldBe) {
+            return isLeftToRight(true);
+        }
+
+        return isComposerOptionActive('Right to Left', composerTextDirectionSelector);
+    };
+
+    const isLeftToRight = (shouldBe = true) => {
+        if (!shouldBe) {
+            return isRightToLeft(true);
+        }
+        return isComposerOptionActive('Left to Right', composerTextDirectionSelector);
+    };
+
+    return {
+        open,
+        close,
+        isOpen,
+        maximize,
+        isMaximized,
+        isPlaintextMode,
+        isNormalMode,
+        isLeftToRight,
+        isRightToLeft
+    };
+};
+
+module.exports = { expiration, encrypt, helper };
