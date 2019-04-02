@@ -11,6 +11,7 @@ module.exports = {
         includedNodeModules: [
             'asmcrypto.js',
             'pmcrypto',
+            'proton-shared',
             'pm-srp',
             'get-random-values',
             'sieve.js',
