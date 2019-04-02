@@ -86,14 +86,14 @@ function LabelsController(
      * Open modal to create a new label
      */
     $scope.createLabel = () => {
-        openLabelModal({ Exclusive: 0, Notify: 1 });
+        openLabelModal({ Exclusive: 0 });
     };
 
     /**
      * Open modal to create a new folder
      */
     $scope.createFolder = () => {
-        openLabelModal({ Exclusive: 1, Notify: 0 });
+        openLabelModal({ Exclusive: 1 });
     };
 
     /**
