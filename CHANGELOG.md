@@ -1,3 +1,7 @@
+# [3.15.25] - 2019-04-03
+## Fixed
+- Labels / Folders are shown in scrolled view after login
+
 # [3.15.24] - 2019-04-03
 
 ## Fixed
