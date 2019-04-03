@@ -1,5 +1,4 @@
 /* color */
-
 .square-color {
     width: 100px;
     height: 100px;
@@ -82,3 +81,24 @@
   0% { opacity: .8; }
   100% { opacity: 0; }
 }
+
+
+/* widths for tests or examples for icons */
+.icon-800p {
+  display: inline-block;
+  width: 800px;
+  height: 800px;
+}
+
+.twitter-link > .icon-twitter {
+  fill: $pm-blue;
+}
+.twitter-link:focus,
+.twitter-link:hover,
+.twitter-link:active {
+  & > .icon-twitter {
+    fill: $pm-blue-dark;
+  }
+}
+
+

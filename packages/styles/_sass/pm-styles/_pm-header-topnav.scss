@@ -18,3 +18,12 @@
     font-weight: bold;
   }
 }
+
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .topnav-icon { 
+      margin-right: 0;
+      margin-left: .5em;
+    }
+  }
+}

@@ -76,7 +76,11 @@ $rtl-option: true;
 @import "pm-styles/pm-header-topnav";
 
 @import "design-system-website/global-structure";
+@import "design-system-website/prism";
+@import "design-system-website/whitemode";
 @import "design-system-website/inside-content"; 
+
+@import "pm-styles/pm-settings-home";
 
 @import "reusable-components/design-system-responsive";
 @import "design-system-website/responsive";
