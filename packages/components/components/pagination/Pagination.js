@@ -35,7 +35,14 @@ const Pagination = ({ onNext, onPrevious, onSelect, page, total, limit }) => {
             <ButtonGroup disabled={disablePrevious} onClick={onPrevious}>
                 <Icon name="arrow-left" />
             </ButtonGroup>
-            <Dropdown className="pm-group-button" content={page}>
+            <Dropdown
+                className="pm-group-button"
+                content={
+                    <>
+                        {page} <Icon name="caret" />
+                    </>
+                }
+            >
                 <DropdownMenu list={list} />
             </Dropdown>
             <ButtonGroup disabled={disableNext} onClick={onNext}>
