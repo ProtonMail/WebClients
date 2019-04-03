@@ -7,7 +7,6 @@ import {
     TableBody,
     TableRow,
     Time,
-    LearnMore,
     Pagination,
     Alert,
     Block,
@@ -64,7 +63,7 @@ const SessionsSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Sessions`}</SubTitle>
-            <Alert>{c('Info')
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/">{c('Info')
                 .t`Unless you explicitly logout or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity.`}</Alert>
             <Block className="flex flex-spacebetween">
                 <div>
@@ -72,7 +71,6 @@ const SessionsSection = () => {
                     <ConfirmModal show={showConfirmRevokeAll} onClose={closeConfirmRevokeAll} onConfirm={handleRevoke}>
                         <Alert>{c('Info').t`Do you want to revoke all other sessions than the current one?`}</Alert>
                     </ConfirmModal>
-                    <LearnMore url="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/" />
                 </div>
                 <Pagination
                     page={page}
