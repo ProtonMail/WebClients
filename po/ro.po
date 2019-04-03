@@ -11,14 +11,14 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2019-03-19 10:58\n"
+"PO-Revision-Date: 2019-04-03 09:23\n"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:59
+#: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
 msgid "contacts successfully imported."
 msgstr "contacte importate cu succes."
 
-#: ./src/app/contact/modals/contactLoaderModal.js:83
+#: ./src/app/contact/modals/contactLoaderModal.js:84
 msgctxt "1 of 2 contacts successfully merged."
 msgid "contacts successfully merged."
 msgstr "contacte unite cu succes."
@@ -365,13 +365,13 @@ msgstr "Îngroșat"
 #: ./src/templates/directives/composer/composerInputMeta.tpl.html:50
 msgctxt "Action"
 msgid "CC BCC"
-msgstr "CC BCC"
+msgstr "C CA"
 
 #. cancel reset process
 #. contact details
 #: ./src/templates/address/selectAddressModal.tpl.html:17
 #: ./src/templates/address/setupAddressModal.tpl.html:14
-#: ./src/templates/authentication/modals/helpLoginModal.tpl.html:24
+#: ./src/templates/authentication/modals/helpLoginModal.tpl.html:26
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:26
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:28
 #: ./src/templates/composer/composerEncrypt.tpl.html:66
@@ -385,7 +385,7 @@ msgstr "CC BCC"
 #: ./src/templates/contact/contactPhotoModal.tpl.html:13
 #: ./src/templates/contact/contactSelectorForm.tpl.html:71
 #: ./src/templates/contact/importContactModal.tpl.html:14
-#: ./src/templates/contact/removeContactListModal.tpl.html:55
+#: ./src/templates/contact/removeContactListModal.tpl.html:58
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
@@ -403,7 +403,7 @@ msgstr "CC BCC"
 #: ./src/templates/modals/expirationModal.tpl.html:49
 #: ./src/templates/modals/exportKeyModal.tpl.html:17
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:24
-#: ./src/templates/modals/generate.tpl.html:74
+#: ./src/templates/modals/generate.tpl.html:79
 #: ./src/templates/modals/generateOrganization.tpl.html:49
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
@@ -423,7 +423,7 @@ msgstr "CC BCC"
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
 #: ./src/templates/user/signupPayForm.tpl.html:100
 #: ./src/templates/views/outside.reply.tpl.html:31
-#: ./src/templates/views/reset-login-password.tpl.html:129
+#: ./src/templates/views/reset-login-password.tpl.html:132
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:16
 msgctxt "Action"
@@ -631,7 +631,7 @@ msgctxt "Action"
 msgid "Close"
 msgstr "Închidere"
 
-#: ./src/templates/authentication/modals/helpLoginModal.tpl.html:16
+#: ./src/templates/authentication/modals/helpLoginModal.tpl.html:18
 msgctxt "Action"
 msgid "Common login problems"
 msgstr "Probleme frecvente de conectare"
@@ -675,7 +675,7 @@ msgctxt "Action"
 msgid "Copy address"
 msgstr "Copiere adresă"
 
-#: ./src/app/user/directives/signupLink.js:7
+#: ./src/app/user/directives/linkWebsite.js:8
 #: ./src/templates/user/signupUserForm.tpl.html:66
 msgctxt "Action"
 msgid "Create Account"
@@ -735,7 +735,7 @@ msgstr "Decriptare"
 
 #. contacts toolbar menu option
 #: ./src/app/address/directives/addressBtnActions.js:8
-#: ./src/app/labels/directives/actionLabelBtn.js:16
+#: ./src/app/labels/directives/actionLabelBtn.js:17
 #: ./src/app/members/directives/memberEditBtn.js:6
 #: ./src/templates/address/addressKeysView.tpl.html:205
 #: ./src/templates/contact/contactMerger.tpl.html:41
@@ -799,7 +799,7 @@ msgctxt "Action"
 msgid "Display invoice"
 msgstr "Afișare factură"
 
-#: ./src/app/user/factories/storageWarning.js:34
+#: ./src/app/user/factories/storageWarning.js:36
 msgctxt "Action"
 msgid "Do not remind me"
 msgstr "Nu îmi aminti"
@@ -820,7 +820,7 @@ msgctxt "Action"
 msgid "Done"
 msgstr "Gata"
 
-#: ./src/app/attachments/services/attachmentDownloader.js:55
+#: ./src/app/attachments/services/attachmentDownloader.js:56
 #: ./src/templates/attachments/attachmentElement.tpl.html:6
 #: ./src/templates/attachments/eventsAttachments.tpl.html:19
 #: ./src/templates/invoices/invoiceList.tpl.html:22
@@ -839,7 +839,7 @@ msgid "Download"
 msgstr "Descărcare"
 
 #. contact details
-#: ./src/app/labels/directives/actionLabelBtn.js:15
+#: ./src/app/labels/directives/actionLabelBtn.js:16
 #: ./src/app/members/directives/memberEditBtn.js:4
 #: ./src/templates/contact/contactActionHeader.tpl.html:15
 #: ./src/templates/contact/contactPhotoRow.tpl.html:20
@@ -856,7 +856,7 @@ msgctxt "Action"
 msgid "Edit signature"
 msgstr "Editare semnătură"
 
-#: ./src/templates/authentication/modals/helpLoginModal.tpl.html:19
+#: ./src/templates/authentication/modals/helpLoginModal.tpl.html:21
 msgctxt "Action"
 msgid "Email our support team"
 msgstr "Scrieți echipei de suport"
@@ -962,7 +962,7 @@ msgctxt "Action"
 msgid "Expiration time"
 msgstr "Dată expirare"
 
-#: ./src/app/address/services/deleteKeyProcess.js:33
+#: ./src/app/address/services/deleteKeyProcess.js:34
 #: ./src/templates/address/addressKeysView.tpl.html:146
 #: ./src/templates/address/addressKeysView.tpl.html:160
 #: ./src/templates/message/message.tpl.html:242
@@ -990,9 +990,7 @@ msgctxt "Action"
 msgid "Forgot password?"
 msgstr "Ați uitat parola?"
 
-#. Make sure this string is short please
-#: ./src/templates/authentication/modals/helpLoginModal.tpl.html:13
-#: ./src/templates/views/reset-login-password.tpl.html:42
+#: ./src/app/user/directives/linkWebsite.js:6
 msgctxt "Action"
 msgid "Forgot username?"
 msgstr "Ați uitat numele de utilizator?"
@@ -1008,7 +1006,7 @@ msgctxt "Action"
 msgid "Fullscreen"
 msgstr "Pe tot ecranul"
 
-#: ./src/templates/modals/generate.tpl.html:75
+#: ./src/templates/modals/generate.tpl.html:80
 #: ./src/templates/modals/generateOrganization.tpl.html:55
 msgctxt "Action"
 msgid "Generate Keys"
@@ -1019,13 +1017,13 @@ msgctxt "Action"
 msgid "Generate missing keys"
 msgstr "Generare chei lipsă"
 
-#: ./src/app/user/factories/storageWarning.js:32
+#: ./src/app/user/factories/storageWarning.js:34
 msgctxt "Action"
 msgid "Go to dashboard"
 msgstr "Mergeți la tablou de bord"
 
 #. Make sure this string is short please
-#: ./src/templates/views/reset-login-password.tpl.html:43
+#: ./src/templates/views/reset-login-password.tpl.html:46
 msgctxt "Action"
 msgid "Have a reset code?"
 msgstr "Aveți un cod de resetare?"
@@ -1035,7 +1033,7 @@ msgctxt "Action"
 msgid "Help &amp; answers"
 msgstr "Ajutor &amp; Răspunsuri"
 
-#: ./src/app/composer/directives/composerAttachments.js:10
+#: ./src/app/composer/directives/composerAttachments.js:11
 #: ./src/templates/vpn/openVpnSection.tpl.html:50
 msgctxt "Action"
 msgid "Hide"
@@ -1062,7 +1060,7 @@ msgid "I have a question"
 msgstr "Am o întrebare"
 
 #: ./src/templates/contact/importContactModal.tpl.html:15
-#: ./src/templates/modals/generate.tpl.html:76
+#: ./src/templates/modals/generate.tpl.html:81
 msgctxt "Action"
 msgid "Import"
 msgstr "Importare"
@@ -1138,7 +1136,7 @@ msgid "Load image"
 msgstr "Încărcare imagine"
 
 #: ./src/templates/partials/sidebar-responsive.tpl.html:39
-#: ./src/templates/ui/header/headerNoAuth.tpl.html:30
+#: ./src/templates/ui/header/headerNoAuth.tpl.html:31
 msgctxt "Action"
 msgid "Log out"
 msgstr "Deconectare"
@@ -1341,7 +1339,7 @@ msgctxt "Action"
 msgid "Next tip"
 msgstr "Următorul sfat"
 
-#: ./src/app/user/directives/signupLink.js:8
+#: ./src/app/user/directives/linkWebsite.js:9
 msgctxt "Action"
 msgid "No"
 msgstr "Nu"
@@ -1358,7 +1356,7 @@ msgctxt "Action"
 msgid "OK"
 msgstr "OK"
 
-#: ./src/app/user/factories/storageWarning.js:33
+#: ./src/app/user/factories/storageWarning.js:35
 msgctxt "Action"
 msgid "Ok"
 msgstr "Ok"
@@ -1379,7 +1377,7 @@ msgctxt "Action"
 msgid "Page number"
 msgstr "Număr pagină"
 
-#: ./src/app/payment/directives/payInvoiceBtn.js:4
+#: ./src/app/payment/directives/payInvoiceBtn.js:12
 msgctxt "Action"
 msgid "Pay"
 msgstr "Plătesc"
@@ -1427,7 +1425,7 @@ msgctxt "Action"
 msgid "ProtonMail Shop"
 msgstr "Magazin ProtonMail"
 
-#: ./src/templates/views/reset-login-password.tpl.html:56
+#: ./src/templates/views/reset-login-password.tpl.html:59
 #: ./src/templates/views/reset-login-password.tpl.html:7
 #: ./src/templates/views/reset-login-password.tpl.html:8
 msgctxt "Action"
@@ -1454,7 +1452,7 @@ msgctxt "Action"
 msgid "Reactivate"
 msgstr "Reactivare"
 
-#: ./src/app/address/directives/reactivateKeysBtn.js:12
+#: ./src/app/address/directives/reactivateKeysBtn.js:13
 msgctxt "Action"
 msgid "Reactivate keys"
 msgstr "Reactivare chei"
@@ -1515,7 +1513,7 @@ msgctxt "Action"
 msgid "Report phishing"
 msgstr "Raportare înșelăciune"
 
-#: ./src/templates/views/reset-login-password.tpl.html:130
+#: ./src/templates/views/reset-login-password.tpl.html:133
 msgctxt "Action"
 msgid "Reset"
 msgstr "Resetare"
@@ -1529,19 +1527,19 @@ msgstr "Resetare chei"
 #. button to reset login password
 #. button to reset password
 #: ./src/templates/views/reset-login-password.tpl.html:39
-#: ./src/templates/views/reset-login-password.tpl.html:86
+#: ./src/templates/views/reset-login-password.tpl.html:89
 msgctxt "Action"
 msgid "Reset Password"
 msgstr "Resetare parolă"
 
-#: ./src/templates/views/reset-login-password.tpl.html:71
+#: ./src/templates/views/reset-login-password.tpl.html:74
 msgctxt "Action"
 msgid "Reset code"
 msgstr "Cod resetare"
 
 #. button to reset password
 #: ./src/templates/authentication/modals/helpLoginModal.tpl.html:10
-#: ./src/templates/views/reset-login-password.tpl.html:170
+#: ./src/templates/views/reset-login-password.tpl.html:173
 msgctxt "Action"
 msgid "Reset password"
 msgstr "Resetare parolă"
@@ -1585,7 +1583,7 @@ msgstr "Deconectare alte sesiuni"
 #: ./src/templates/contact/contactLoaderModal.tpl.html:120
 #: ./src/templates/contact/contactModal.tpl.html:23
 #: ./src/templates/contact/contactPhotoModal.tpl.html:19
-#: ./src/templates/contact/removeContactListModal.tpl.html:61
+#: ./src/templates/contact/removeContactListModal.tpl.html:64
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:42
 #: ./src/templates/dashboard/customVpnModal.tpl.html:20
 #: ./src/templates/directives/composer/composer.tpl.html:119
@@ -1649,7 +1647,7 @@ msgctxt "Action"
 msgid "Send"
 msgstr "Trimite"
 
-#: ./src/app/composer/services/validateMessage.js:31
+#: ./src/app/composer/services/validateMessage.js:32
 #: ./src/templates/modals/expirationModal.tpl.html:55
 msgctxt "Action"
 msgid "Send anyway"
@@ -1687,7 +1685,7 @@ msgctxt "Action"
 msgid "Setup Account"
 msgstr "Setare cont"
 
-#: ./src/app/composer/directives/composerAttachments.js:9
+#: ./src/app/composer/directives/composerAttachments.js:10
 #: ./src/templates/vpn/openVpnSection.tpl.html:49
 msgctxt "Action"
 msgid "Show"
@@ -1723,10 +1721,10 @@ msgctxt "Action"
 msgid "Show unread"
 msgstr "Afișare necitite"
 
-#: ./src/app/user/directives/signupLink.js:6
+#: ./src/app/user/directives/linkWebsite.js:7
 msgctxt "Action"
-msgid "Sign up"
-msgstr "Înscriere"
+msgid "Sign up for free"
+msgstr "Înscriere gratuită"
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:81
 msgctxt "Action"
@@ -1848,7 +1846,7 @@ msgctxt "Action"
 msgid "Unordered list"
 msgstr "Listă neordonată"
 
-#: ./src/app/message/directives/unsubscribePanel.js:13
+#: ./src/app/message/directives/unsubscribePanel.js:21
 msgctxt "Action"
 msgid "Unsubscribe"
 msgstr "Dezabonare"
@@ -1875,7 +1873,7 @@ msgid "Upgrade account"
 msgstr "Upgrade cont"
 
 #: ./src/templates/contact/contactEncrypted.tpl.html:15
-#: ./src/templates/contact/contactViewDetail.tpl.html:47
+#: ./src/templates/contact/contactViewDetail.tpl.html:48
 msgctxt "Action"
 msgid "Upgrade now"
 msgstr "Upgrade acum"
@@ -1928,7 +1926,7 @@ msgctxt "Action"
 msgid "Verify"
 msgstr "Verificare"
 
-#: ./src/templates/views/reset-login-password.tpl.html:98
+#: ./src/templates/views/reset-login-password.tpl.html:101
 msgctxt "Action"
 msgid "Verifying reset code"
 msgstr "Verificare cod de resetare"
@@ -2156,7 +2154,7 @@ msgctxt "App folder"
 msgid "Trash"
 msgstr "Gunoi"
 
-#: ./src/app/message/services/messageBuilder.js:197
+#: ./src/app/message/services/messageBuilder.js:201
 msgctxt "Ask user to use encrypted subject"
 msgid "The selected message has an encrypted subject.\n"
 "                ProtonMail does not support sending an encrypted subject.\n"
@@ -2276,7 +2274,7 @@ msgctxt "Bug report successfully"
 msgid "Bug reported"
 msgstr "Eroare raportată"
 
-#: ./src/app/dashboard/directives/addVpn.js:3
+#: ./src/app/dashboard/directives/addVpn.js:5
 msgctxt "Button"
 msgid "+ Add ProtonVPN"
 msgstr "+ Adăugare ProtonVPN"
@@ -2337,7 +2335,7 @@ msgctxt "Button to select plan on the dashboard"
 msgid "Upgrade to Visionary"
 msgstr "Upgrade la Visionary"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:46
+#: ./src/app/contact/modals/contactLoaderModal.js:47
 msgctxt "Cancelled during importation"
 msgid "Import cancelled. Rolling back."
 msgstr "Importare anulată. Refacere."
@@ -2347,42 +2345,52 @@ msgctxt "Clear user's logs (security)"
 msgid "Logs cleared"
 msgstr "Jurnale șterse"
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:10
+#: ./src/app/command/factories/autocompleteCommandModel.js:17
 msgctxt "Command palette action"
 msgid "Add folder"
 msgstr "Adăugare folder"
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:11
+#: ./src/app/command/factories/autocompleteCommandModel.js:18
 msgctxt "Command palette action"
 msgid "Add label"
 msgstr "Adăugare etichetă"
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:12
+#: ./src/app/command/factories/autocompleteCommandModel.js:19
 msgctxt "Command palette action"
 msgid "Remove label"
 msgstr "Eliminare etichetă"
 
-#: ./src/app/composer/directives/composerDropzone.js:32
+#: ./src/app/attachments/factories/attachmentModel.js:30
+msgctxt "Compose message"
+msgid "Error during file upload"
+msgstr "Eroare la încărcarea fișierului"
+
+#: ./src/app/attachments/factories/attachmentModel.js:31
+msgctxt "Compose message"
+msgid "Error encrypting attachment"
+msgstr "Eroare criptare atașament"
+
+#: ./src/app/composer/directives/composerDropzone.js:33
 msgctxt "Composer"
 msgid "Attachments are limited to {{number}} MB."
 msgstr "Atașamentele sunt limitate la {{number}} MB."
 
-#: ./src/app/composer/directives/composerDropzone.js:39
+#: ./src/app/composer/directives/composerDropzone.js:40
 msgctxt "Composer"
 msgid "Attachments are limited to {{number}} MB. Total attached would be: {{total}} MB."
 msgstr "Atașamentele sunt limitate la {{number}} MB. Total atașamente: {{total}} MB."
 
-#: ./src/app/composer/directives/composerDropzone.js:26
+#: ./src/app/composer/directives/composerDropzone.js:27
 msgctxt "Composer"
 msgid "Empty attachment"
 msgstr "Atașament gol"
 
-#: ./src/app/composer/directives/composerDropzone.js:47
+#: ./src/app/composer/directives/composerDropzone.js:46
 msgctxt "Composer"
 msgid "Maximum number of attachments (10) exceeded."
 msgstr "Număr maxim atașamente (10) depășit."
 
-#: ./src/app/composer/directives/composerDropzone.js:27
+#: ./src/app/composer/directives/composerDropzone.js:28
 msgctxt "Composer"
 msgid "Messages are limited to {{number}} attachments"
 msgstr "Mesajele pot avea maxim {{number}} atașamente"
@@ -2592,57 +2600,57 @@ msgstr[0] "O imagine detectată"
 msgstr[1] "{{$count}} imagini detectate"
 msgstr[2] "{{$count}} de imagini detectate"
 
-#: ./src/app/filter/modals/filterModal.js:34
+#: ./src/app/filter/modals/filterModal.js:35
 msgctxt "Condition for custom filter"
 msgid "begins with"
 msgstr "începe cu"
 
-#: ./src/app/filter/modals/filterModal.js:32
+#: ./src/app/filter/modals/filterModal.js:33
 msgctxt "Condition for custom filter"
 msgid "contains"
 msgstr "conține"
 
-#: ./src/app/filter/modals/filterModal.js:43
+#: ./src/app/filter/modals/filterModal.js:44
 msgctxt "Condition for custom filter"
 msgid "does not begin with"
 msgstr "nu începe cu"
 
-#: ./src/app/filter/modals/filterModal.js:38
+#: ./src/app/filter/modals/filterModal.js:39
 msgctxt "Condition for custom filter"
 msgid "does not contain"
 msgstr "nu conține"
 
-#: ./src/app/filter/modals/filterModal.js:47
+#: ./src/app/filter/modals/filterModal.js:48
 msgctxt "Condition for custom filter"
 msgid "does not end with"
 msgstr "nu se termină cu"
 
-#: ./src/app/filter/modals/filterModal.js:51
+#: ./src/app/filter/modals/filterModal.js:52
 msgctxt "Condition for custom filter"
 msgid "does not match"
 msgstr "nu se potrivește"
 
-#: ./src/app/filter/modals/filterModal.js:35
+#: ./src/app/filter/modals/filterModal.js:36
 msgctxt "Condition for custom filter"
 msgid "ends with"
 msgstr "se termină cu"
 
-#: ./src/app/filter/modals/filterModal.js:33
+#: ./src/app/filter/modals/filterModal.js:34
 msgctxt "Condition for custom filter"
 msgid "is exactly"
 msgstr "este exact"
 
-#: ./src/app/filter/modals/filterModal.js:41
+#: ./src/app/filter/modals/filterModal.js:42
 msgctxt "Condition for custom filter"
 msgid "is not"
 msgstr "nu este"
 
-#: ./src/app/filter/modals/filterModal.js:36
+#: ./src/app/filter/modals/filterModal.js:37
 msgctxt "Condition for custom filter"
 msgid "matches"
 msgstr "se potrivește"
 
-#: ./src/app/address/directives/addressKeysView.js:40
+#: ./src/app/address/directives/addressKeysView.js:42
 msgctxt "Confirm message"
 msgid "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails."
 msgstr "Sigur doriți să importați o cheie privată? Importarea unei chei private generate nesigure sau furată poate afecta securitatea mesajelor."
@@ -2652,7 +2660,7 @@ msgctxt "Confirm message"
 msgid "By cancelling, you will loose all your changes. Do you want to cancel anyway?"
 msgstr "Prin anulare, veți pierde toate modificările. Doriți totuși anularea?"
 
-#: ./src/app/address/services/deleteKeyProcess.js:26
+#: ./src/app/address/services/deleteKeyProcess.js:27
 msgctxt "Confirm message"
 msgid "Deleting your keys is irreversible.\n"
 "        To be able to access any message encrypted with this key, you might want to make a back up of this key for later use.\n"
@@ -2661,7 +2669,7 @@ msgstr "Ștergerea cheilor este reversibilă.\n"
 "        Pentru a accesa orice mesaj criptat cu această cheie, ar fi bine să faceți o copie de rezervă a acestei chei pentru utilizare ulterioară.\n"
 "        Doriți să exportați această cheie?"
 
-#: ./src/app/address/services/deleteKeyProcess.js:18
+#: ./src/app/address/services/deleteKeyProcess.js:19
 msgctxt "Confirm message"
 msgid "This feature is intended for advanced users only!\n"
 "        After deleting this key, you will not be able to decrypt any message that is encrypted with this key.\n"
@@ -2670,7 +2678,7 @@ msgstr "Această funcție este destinată numai utilizatorilor avansați!\n"
 "         După ștergerea acestei chei, nu veți putea decripta mesajele care sunt criptate cu această cheie.\n"
 "         Aceasta poate duce la pierderea datelor. Sigur doriți să continuați?"
 
-#: ./src/app/address/directives/addressKeysView.js:47
+#: ./src/app/address/directives/addressKeysView.js:49
 msgctxt "Confirm message"
 msgid "This key has not been activated. It is only possible to export the public key. Do you want to export the public key?"
 msgstr "Această cheie nu a fost activată. Este posibil doar exportul cheii publice. Doriți să exportați cheia publică?"
@@ -2690,27 +2698,27 @@ msgctxt "Confirm message"
 msgid "save"
 msgstr "salvare"
 
-#: ./src/app/settings/directives/encryptionView.js:15
+#: ./src/app/settings/directives/encryptionView.js:16
 msgctxt "Confirm modal title"
 msgid "Automatic sign outgoing messages?"
 msgstr "Semnare automată mesaje trimise?"
 
-#: ./src/app/address/directives/addressKeysView.js:46
+#: ./src/app/address/directives/addressKeysView.js:48
 msgctxt "Confirm modal title"
 msgid "Download Public Key"
 msgstr "Descărcare cheie publică"
 
-#: ./src/app/address/directives/addressKeysView.js:45
+#: ./src/app/address/directives/addressKeysView.js:47
 msgctxt "Confirm modal title"
 msgid "Import private key"
 msgstr "Importare cheie privată"
 
-#: ./src/app/settings/directives/encryptionView.js:26
+#: ./src/app/settings/directives/encryptionView.js:27
 msgctxt "Confirm text"
 msgid "No"
 msgstr "Nu"
 
-#: ./src/app/settings/directives/encryptionView.js:25
+#: ./src/app/settings/directives/encryptionView.js:26
 msgctxt "Confirm text"
 msgid "Yes"
 msgstr "Da"
@@ -2775,10 +2783,15 @@ msgctxt "Context"
 msgid "Gift code"
 msgstr "Cod cadou"
 
-#: ./src/app/payment/factories/paymentModel.js:17
+#: ./src/app/payment/factories/paymentModel.js:18
 msgctxt "Coupon code request"
 msgid "Coupon code accepted"
 msgstr "Cod cupon acceptat"
+
+#: ./src/app/formUtils/directives/cvcTooltip.js:6
+msgctxt "Credit card CVC"
+msgid "Security Code"
+msgstr "Cod de securitate"
 
 #: ./src/app/payment/modals/cardModal.js:25
 msgctxt "Credit card modal"
@@ -3209,19 +3222,19 @@ msgctxt "Day of the month select value"
 msgid "9th of the month"
 msgstr "9 a lunii"
 
-#: ./src/app/autoresponder/services/autoresponderLanguage.js:10
+#: ./src/app/autoresponder/services/autoresponderLanguage.js:11
 msgctxt "Default autoresponder message without signature (no regards, etcetera)"
 msgid "<div>I'm out of the office with limited access to my email.</div>"
 msgstr "<div>Nu sunt la birou și am acces limitat la e-mail.</div>"
 
-#: ./src/app/contact/factories/contactDetailsModel.js:29
+#: ./src/app/contact/factories/contactDetailsModel.js:30
 #: ./src/app/contact/factories/contactEncryption.js:87
-#: ./src/app/contact/factories/contactSchema.js:10
+#: ./src/app/contact/factories/contactSchema.js:11
 msgctxt "Default display name vcard"
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: ./src/app/contact/factories/contactUI.js:26
+#: ./src/app/contact/factories/contactUI.js:27
 msgctxt "Default encryption scheme"
 msgid "Use Global Default"
 msgstr "Utilizare cea implicită globală"
@@ -3231,7 +3244,7 @@ msgctxt "Default encryption scheme"
 msgid "Use global default"
 msgstr "Utilizare implicită global"
 
-#: ./src/app/contact/modals/contactModal.js:7
+#: ./src/app/contact/modals/contactModal.js:15
 msgctxt "Default error for the contact modal"
 msgid "Error with the request"
 msgstr "Eroare solicitare"
@@ -3283,7 +3296,7 @@ msgctxt "Delete all contacts button in the sidebar"
 msgid "Delete All"
 msgstr "Ștergere toate"
 
-#: ./src/app/settings/controllers/security.js:26
+#: ./src/app/settings/controllers/security.js:29
 msgctxt "Disable 2FA"
 msgid "Two-factor authentication disabled"
 msgstr "Autentificare cu doi factori dezactivată"
@@ -3323,7 +3336,7 @@ msgctxt "Donation modal"
 msgid "Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!"
 msgstr "Suportul dvs. este esențial pentru a păstra funcționarea ProtonMail. Vă mulțumim pentru sprijinirea confidențialității Internetului!"
 
-#: ./src/app/dashboard/factories/downgrade.js:19
+#: ./src/app/dashboard/factories/downgrade.js:20
 msgctxt "Downgrade account"
 msgid "You have successfully unsubscribed"
 msgstr "V-ați dezabonat cu succes"
@@ -3388,18 +3401,18 @@ msgctxt "Error"
 msgid "Add a description to help us improve ProtonMail"
 msgstr "Adăugați o descriere pentru a ne ajuta să îmbunătățim ProtonMail"
 
-#: ./src/app/members/services/membersValidator.js:47
+#: ./src/app/members/services/membersValidator.js:55
 msgctxt "Error"
 msgid "Address already associated to a user"
 msgstr "Adresă deja asociată unui utilizator"
 
-#: ./src/app/address/factories/addressModel.js:36
+#: ./src/app/address/factories/addressModel.js:37
 #: ./src/app/settings/controllers/domains.js:328
 msgctxt "Error"
 msgid "Administrator privileges must be activated"
 msgstr "Trebuie activate drepturile de administrator"
 
-#: ./src/app/members/services/membersValidator.js:31
+#: ./src/app/members/services/membersValidator.js:39
 msgctxt "Error"
 msgid "All storage space has been allocated. Please reduce storage allocated to other users."
 msgstr "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
@@ -3414,23 +3427,23 @@ msgctxt "Error"
 msgid "Are you sure your email address is correct ?"
 msgstr "Sunteți sigur că adresa de e-mail este corectă?"
 
-#: ./src/app/contact/factories/contactImporter.js:16
+#: ./src/app/contact/factories/contactImporter.js:17
 msgctxt "Error"
 msgid "Cannot convert the file"
 msgstr "Nu se poate converti fișierul"
 
-#: ./src/app/address/modals/addressModal.js:18
-#: ./src/app/members/services/membersValidator.js:46
+#: ./src/app/address/modals/addressModal.js:19
+#: ./src/app/members/services/membersValidator.js:54
 msgctxt "Error"
 msgid "Cannot decrypt organization key"
 msgstr "Nu se poate decripta cheia organizației"
 
-#: ./src/app/attachments/services/attachmentDownloader.js:57
+#: ./src/app/attachments/services/attachmentDownloader.js:58
 msgctxt "Error"
 msgid "Cannot generate a zip of your attachments."
 msgstr "Nu poate genera un fișier zip cu aceste atașamente."
 
-#: ./src/app/address/directives/addressKeysView.js:52
+#: ./src/app/address/directives/addressKeysView.js:54
 msgctxt "Error"
 msgid "Cannot read private key"
 msgstr "Nu se poate citi cheia privată"
@@ -3440,19 +3453,19 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr "Contactul nu are adresă de e-mail"
 
-#: ./src/app/composer/services/validateMessage.js:68
+#: ./src/app/composer/services/validateMessage.js:69
 msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr "Contactați administratorul organizației pentru a rezolva acest lucru."
 
-#: ./src/app/authentication/controllers/login.js:33
+#: ./src/app/authentication/controllers/login.js:34
 msgctxt "Error"
 msgid "Cookies are disabled.\n"
 "Please activate it and then reload the page.\n"
 "<a href=\"https://protonmail.com/support/knowledge-base/enabling-cookies/\" target=\"_blank\">More information here</a>."
 msgstr "Cookie-urile sunt dezactivate. Vă rugăm să le activați și apoi reîncărcați pagina. <a href=\"https://protonmail.com/support/knowledge-base/enabling-cookies/\" target=\"_blank\">Mai multe informații aici</a>."
 
-#: ./src/app/authentication/interceptors/httpInterceptor.js:27
+#: ./src/app/authentication/interceptors/httpInterceptor.js:28
 msgctxt "Error"
 msgid "Could not connect to server."
 msgstr "Nu s-a putut contacta serverul."
@@ -3467,7 +3480,7 @@ msgctxt "Error"
 msgid "Decryption of this message's encryption content failed."
 msgstr "Decriptarea conținutului criptat al acestui mesaj a eșuat."
 
-#: ./src/app/core/factories/downloadFile.js:7
+#: ./src/app/core/factories/downloadFile.js:8
 msgctxt "Error"
 msgid "Download requires a newer browser."
 msgstr "Descărcarea necesită un navigator mai recent."
@@ -3483,7 +3496,7 @@ msgid "Email required"
 msgstr "Adresa de e-mail este obligatorie"
 
 #. key generation progrss
-#: ./src/templates/modals/generate.tpl.html:64
+#: ./src/templates/modals/generate.tpl.html:69
 msgctxt "Error"
 msgid "Error"
 msgstr "Eroare"
@@ -3498,13 +3511,13 @@ msgctxt "Error"
 msgid "Error connecting to PayPal."
 msgstr "Eroare conectare la PayPal."
 
-#: ./src/app/message/factories/messageModel.js:38
+#: ./src/app/message/factories/messageModel.js:39
 #: ./src/app/outside/controllers/outside.js:33
 msgctxt "Error"
 msgid "Error encrypting message"
 msgstr "Eroare criptare mesaj"
 
-#: ./src/app/address/directives/addressKeysView.js:67
+#: ./src/app/address/directives/addressKeysView.js:69
 msgctxt "Error"
 msgid "Error reactivating key. Please try again"
 msgstr "Eroare la reactivarea cheii. Vă rugăm reîncercați."
@@ -3514,7 +3527,7 @@ msgctxt "Error"
 msgid "Error restoring organization keys"
 msgstr "Eroare restaurare chei organizație"
 
-#: ./src/app/message/directives/messagePublicKeyFound.js:18
+#: ./src/app/message/directives/messagePublicKeyFound.js:20
 msgctxt "Error"
 msgid "Error while adding the public key to the contacts"
 msgstr "Eroare la adăugarea cheii publice la contacte"
@@ -3524,17 +3537,17 @@ msgctxt "Error"
 msgid "Error while copying"
 msgstr "Eroare la copiere"
 
-#: ./src/app/attachments/services/AttachmentLoader.js:30
+#: ./src/app/attachments/services/AttachmentLoader.js:31
 msgctxt "Error"
 msgid "Failed to encrypt attachment. Please try again."
 msgstr "Eșuare criptare atașament. Reîncercați."
 
-#: ./src/app/ui/directives/autocompleteEmails.js:30
+#: ./src/app/ui/directives/autocompleteEmails.js:31
 msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
 msgstr "Nu s-au putut obține informațiile cheilor pentru {{emails}}. Se elimină din lista destinatarilor. Încercați din nou."
 
-#: ./src/app/address/factories/reactivateKeys.js:35
+#: ./src/app/address/factories/reactivateKeys.js:37
 msgctxt "Error"
 msgid "Failed to reactivate key"
 msgstr "Eșuare reactivare cheie"
@@ -3566,7 +3579,7 @@ msgctxt "Error"
 msgid "ICS parsing error:"
 msgstr "Eroare prelucrare ICS:"
 
-#: ./src/templates/views/reset-login-password.tpl.html:53
+#: ./src/templates/views/reset-login-password.tpl.html:56
 msgctxt "Error"
 msgid "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it."
 msgstr "IMPORTANT: Nu închideți această pagină și nu navigați în altă parte. Va trebui să introduceți codul de resetare în câmpul de mai jos după ce l-ați primit."
@@ -3581,7 +3594,7 @@ msgctxt "Error"
 msgid "Image upload failed"
 msgstr "Eșuare încărcare imagine"
 
-#: ./src/app/address/factories/reactivateKeys.js:26
+#: ./src/app/address/factories/reactivateKeys.js:27
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
@@ -3592,12 +3605,12 @@ msgctxt "Error"
 msgid "Invalid CVC"
 msgstr "CVC nevalid"
 
-#: ./src/app/members/services/membersValidator.js:45
+#: ./src/app/members/services/membersValidator.js:53
 msgctxt "Error"
 msgid "Invalid VPN quota"
 msgstr "Cotă de VPN nevalidă"
 
-#: ./src/app/members/services/membersValidator.js:43
+#: ./src/app/members/services/membersValidator.js:51
 msgctxt "Error"
 msgid "Invalid address"
 msgstr "Adresă incorectă"
@@ -3607,7 +3620,7 @@ msgctxt "Error"
 msgid "Invalid card number"
 msgstr "Număr card nevalid"
 
-#: ./src/app/payment/factories/paymentModel.js:15
+#: ./src/app/payment/factories/paymentModel.js:16
 msgctxt "Error"
 msgid "Invalid coupon code"
 msgstr "Cod de cupon invalid"
@@ -3622,13 +3635,13 @@ msgctxt "Error"
 msgid "Invalid email"
 msgstr "E-mail nevalid"
 
-#: ./src/app/composer/directives/composerExpiration.js:10
+#: ./src/app/composer/directives/composerExpiration.js:11
 msgctxt "Error"
 msgid "Invalid expiration time."
 msgstr "Data expirării nu este validă."
 
 #: ./src/app/contact/directives/importCardDropzone.js:9
-#: ./src/app/contact/factories/contactImporter.js:15
+#: ./src/app/contact/factories/contactImporter.js:16
 msgctxt "Error"
 msgid "Invalid file type"
 msgstr "Tip fișier nevalid"
@@ -3643,8 +3656,8 @@ msgctxt "Error"
 msgid "Invalid format (country and/or number)"
 msgstr "Format nevalid (țară și/sau număr)"
 
-#: ./src/app/core/controllers/signup.js:25
-#: ./src/app/payment/factories/paymentModel.js:16
+#: ./src/app/core/controllers/signup.js:27
+#: ./src/app/payment/factories/paymentModel.js:17
 #: ./src/templates/payment/giftCodeInput.tpl.html:15
 msgctxt "Error"
 msgid "Invalid gift code"
@@ -3655,7 +3668,7 @@ msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Legătură invitație nevalidă"
 
-#: ./src/app/members/services/membersValidator.js:41
+#: ./src/app/members/services/membersValidator.js:49
 msgctxt "Error"
 msgid "Invalid name"
 msgstr "Nume nevalid"
@@ -3671,7 +3684,7 @@ msgctxt "Error"
 msgid "Invalid number"
 msgstr "Număr nevalid"
 
-#: ./src/app/members/services/membersValidator.js:42
+#: ./src/app/members/services/membersValidator.js:50
 msgctxt "Error"
 msgid "Invalid password"
 msgstr "Parolă nevalidă"
@@ -3681,7 +3694,7 @@ msgctxt "Error"
 msgid "Invalid recovery email"
 msgstr "E-mail de recuperare nevalid"
 
-#: ./src/app/members/services/membersValidator.js:44
+#: ./src/app/members/services/membersValidator.js:52
 msgctxt "Error"
 msgid "Invalid storage quota"
 msgstr "Cotă spațiu de stocare nevalidă"
@@ -3691,7 +3704,7 @@ msgctxt "Error"
 msgid "Invoice text has too many lines (limit: 5)"
 msgstr "Textul facturii are prea multe linii (maxim: 5)"
 
-#: ./src/app/composer/directives/composerEncrypt.js:11
+#: ./src/app/composer/directives/composerEncrypt.js:13
 msgctxt "Error"
 msgid "Message passwords do not match."
 msgstr "Parolele mesajului nu se potrivesc."
@@ -3707,13 +3720,13 @@ msgctxt "Error"
 msgid "Name required."
 msgstr "Numele este obligatoriu."
 
-#: ./src/app/authentication/interceptors/httpInterceptor.js:26
+#: ./src/app/authentication/interceptors/httpInterceptor.js:27
 #: ./src/templates/user/usernameDomain.tpl.html:45
 msgctxt "Error"
 msgid "No Internet connection found."
 msgstr "Nu există conexiune la internet."
 
-#: ./src/app/composer/services/validateMessage.js:62
+#: ./src/app/composer/services/validateMessage.js:63
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr "Nu exista adrese cu chei disponibile pentru a compune un mesaj."
@@ -3723,18 +3736,18 @@ msgctxt "Error"
 msgid "No email address found."
 msgstr "Nu s-au găsit adrese de e-mail."
 
-#: ./src/app/contact/factories/contactImporter.js:14
+#: ./src/app/contact/factories/contactImporter.js:15
 msgctxt "Error"
 msgid "No files were selected"
 msgstr "Nu au fost selectate fișiere"
 
-#: ./src/app/keys/factories/changeMailboxPassword.js:104
-#: ./src/app/keys/factories/upgradeKeys.js:113
+#: ./src/app/keys/factories/changeMailboxPassword.js:105
+#: ./src/app/keys/factories/upgradeKeys.js:114
 msgctxt "Error"
 msgid "No keys to update"
 msgstr "Nu sunt chei de actualizat"
 
-#: ./src/app/authentication/interceptors/httpInterceptor.js:23
+#: ./src/app/authentication/interceptors/httpInterceptor.js:24
 msgctxt "Error"
 msgid "Non-integer API version requested."
 msgstr "Versiunea API solicitată trebuie să fie un număr întreg."
@@ -3744,7 +3757,7 @@ msgctxt "Error"
 msgid "Not a valid URL"
 msgstr "URL nevalid"
 
-#: ./src/app/organization/factories/organizationKeysModel.js:29
+#: ./src/app/organization/factories/organizationKeysModel.js:30
 msgctxt "Error"
 msgid "Organization keys already active"
 msgstr "Cheile organizației sunt deja active"
@@ -3754,7 +3767,7 @@ msgctxt "Error"
 msgid "Organization keys change successful"
 msgstr "Schimbare reușită chei organizație"
 
-#: ./src/app/organization/services/activateOrganizationKeys.js:14
+#: ./src/app/organization/services/activateOrganizationKeys.js:15
 msgctxt "Error"
 msgid "Password incorrect. Please try again"
 msgstr "Parolă incorectă. Vă rugăm reîncercați."
@@ -3764,38 +3777,38 @@ msgctxt "Error"
 msgid "Passwords do not match"
 msgstr "Parolele nu se potrivesc"
 
-#: ./src/app/members/services/memberSubLogin.js:15
-#: ./src/app/members/services/membersValidator.js:36
+#: ./src/app/members/services/memberSubLogin.js:16
+#: ./src/app/members/services/membersValidator.js:44
 msgctxt "Error"
 msgid "Permission denied, administrator privileges have been restricted."
 msgstr "Permisiune refuzată, drepturile de administrator au fost restricționate."
 
-#: ./src/app/address/factories/addressModel.js:53
+#: ./src/app/address/factories/addressModel.js:54
 msgctxt "Error"
 msgid "Please <a href=\"/dashboard\">upgrade</a> to a paid account to use this feature"
 msgstr "Vă rugăm să <a href=\"/dashboard\">treceți</a> la un cont plătit pentru a utiliza această funcție"
 
-#: ./src/app/composer/directives/composerEncrypt.js:10
+#: ./src/app/composer/directives/composerEncrypt.js:12
 msgctxt "Error"
 msgid "Please enter a password for this email."
 msgstr "Introduceți o parolă pentru acest mesaj."
 
-#: ./src/app/composer/services/validateMessage.js:46
+#: ./src/app/composer/services/validateMessage.js:47
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "Specificați cel puțin un destinatar."
 
-#: ./src/app/authentication/controllers/login.js:44
+#: ./src/app/authentication/controllers/login.js:45
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr "Introduceți codul de acces cu doi factori"
 
-#: ./src/app/keys/services/decryptKeys.js:10
+#: ./src/app/keys/services/decryptKeys.js:12
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr "Cheia primară pentru {{email}} nu poate fi decriptată. Nu veți putea citi sau scrie vreun mesaj de pe această adresă."
 
-#: ./src/app/authentication/interceptors/httpInterceptor.js:29
+#: ./src/app/authentication/interceptors/httpInterceptor.js:30
 msgctxt "Error"
 msgid "ProtonMail cannot be reached right now, please try again later."
 msgstr "ProtonMail nu poate fi contactat acum, reîncercați mai târziu."
@@ -3805,12 +3818,12 @@ msgctxt "Error"
 msgid "Recovery email invalid"
 msgstr "E-mail de recuperare nevalid"
 
-#: ./src/app/authentication/interceptors/httpInterceptor.js:28
+#: ./src/app/authentication/interceptors/httpInterceptor.js:29
 msgctxt "Error"
 msgid "Request timed out, please try again."
 msgstr "Solicitare expirată, încercați din nou."
 
-#: ./src/templates/views/reset-login-password.tpl.html:82
+#: ./src/templates/views/reset-login-password.tpl.html:85
 msgctxt "Error"
 msgid "Reset code is required"
 msgstr "Este necesar codul de resetare"
@@ -3835,17 +3848,17 @@ msgctxt "Error"
 msgid "Sign up failed"
 msgstr "Înscriere eșuată"
 
-#: ./src/app/composer/services/validateMessage.js:40
+#: ./src/app/composer/services/validateMessage.js:41
 msgctxt "Error"
 msgid "Some email addresses are invalid"
 msgstr "Unele adrese de e-mail nu sunt valide"
 
-#: ./src/app/user/services/signupUserProcess.js:26
+#: ./src/app/user/services/signupUserProcess.js:27
 msgctxt "Error"
 msgid "Something went wrong"
 msgstr "Ceva nu a funcționat corect"
 
-#: ./src/app/user/services/signupUserProcess.js:25
+#: ./src/app/user/services/signupUserProcess.js:26
 msgctxt "Error"
 msgid "Something went wrong during address creation"
 msgstr "Ceva nu a funcționat la crearea adresei"
@@ -3855,7 +3868,7 @@ msgctxt "Error"
 msgid "Sorry, this message does not exist or has already expired"
 msgstr "Ne pare rău, acest mesaj nu există sau a expirat deja"
 
-#: ./src/app/filter/modals/filterModal.js:59
+#: ./src/app/filter/modals/filterModal.js:60
 msgctxt "Error"
 msgid "Text or pattern already included"
 msgstr "Text sau model deja inclus"
@@ -3865,12 +3878,12 @@ msgctxt "Error"
 msgid "Thank you for your willingness to donate. The maximum we can accept in single donations is 999 999 at this moment. Thank you"
 msgstr "Vă mulțumim pentru disponibilitatea de a dona. Valoarea maximă pe care o putem accepta în donații unice este de 999 999 în acest moment. Vă mulțumim."
 
-#: ./src/app/authentication/interceptors/httpInterceptor.js:25
+#: ./src/app/authentication/interceptors/httpInterceptor.js:26
 msgctxt "Error"
 msgid "The ProtonMail API is offline:"
 msgstr "API-ul ProtonMail nu este funcțional:"
 
-#: ./src/app/attachments/services/attachmentDownloader.js:40
+#: ./src/app/attachments/services/attachmentDownloader.js:41
 msgctxt "Error"
 msgid "The attachment will be downloaded but it will still be encrypted."
 msgstr "Atașarea va fi descărcată, dar ea va fi în continuare criptată."
@@ -3887,7 +3900,7 @@ msgid "The code must contain at least 6\n"
 msgstr "Codul trebuie să conțină cel puțin 6\n"
 "                caractere"
 
-#: ./src/app/contact/services/manageContactGroup.js:40
+#: ./src/app/contact/services/manageContactGroup.js:41
 msgctxt "Error"
 msgid "The contact does not exist"
 msgid_plural "These {{$count}} contacts do not exist"
@@ -3905,27 +3918,27 @@ msgctxt "Error"
 msgid "The email body is not a valid MIME message."
 msgstr "Conținutul mesajului nu este un mesaj valid MIME."
 
-#: ./src/app/composer/services/validateMessage.js:38
+#: ./src/app/composer/services/validateMessage.js:39
 msgctxt "Error"
 msgid "The following addresses are not valid: {{emails}}"
 msgstr "Următoarele adrese nu sunt valide: {{emails}}"
 
-#: ./src/app/composer/directives/composerExpiration.js:9
+#: ./src/app/composer/directives/composerExpiration.js:10
 msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr "Perioada maximă de expirare este 4 săptămâni."
 
-#: ./src/app/composer/services/validateMessage.js:41
+#: ./src/app/composer/services/validateMessage.js:42
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr "Lungimea maximă a mesajului este 16.000.000 de caractere."
 
-#: ./src/app/composer/services/validateMessage.js:47
+#: ./src/app/composer/services/validateMessage.js:48
 msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
 msgstr "Lungimea maximă a subiectului este {{size}}."
 
-#: ./src/app/ui/directives/autocompleteEmails.js:23
+#: ./src/app/ui/directives/autocompleteEmails.js:24
 msgctxt "Error"
 msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
 msgstr "Numărul total de destinatari este ({{total}}) din maxim {{limit}}."
@@ -3935,7 +3948,7 @@ msgctxt "Error"
 msgid "The request failed"
 msgstr "Solicitare eșuată"
 
-#: ./src/app/authentication/controllers/login.js:27
+#: ./src/app/authentication/controllers/login.js:28
 msgctxt "Error"
 msgid "Unable to log you in. Please try again later."
 msgstr "Autentificare imposibilă. Reîncercați."
@@ -3950,29 +3963,24 @@ msgctxt "Error"
 msgid "Unable to upload file. Please try again"
 msgstr "Imposibil de încărcat fișierul. Reîncercați."
 
-#: ./src/app/authentication/interceptors/httpInterceptor.js:24
+#: ./src/app/authentication/interceptors/httpInterceptor.js:25
 msgctxt "Error"
 msgid "Unsupported API version."
 msgstr "Versiune API nesuportată."
-
-#: ./src/app/authentication/services/passwords.js:110
-msgctxt "Error"
-msgid "Unsupported auth version"
-msgstr "Versiune de autentificare nesuportată"
 
 #: ./src/app/keys/factories/importPrivateKey.js:63
 msgctxt "Error"
 msgid "Unsupported key"
 msgstr "Cheie nesuportată"
 
-#: ./src/app/composer/directives/composerSelectFrom.js:7
+#: ./src/app/composer/directives/composerSelectFrom.js:14
 msgctxt "Error"
 msgid "Upgrade to a paid plan to send from your {{email}} address"
 msgstr "Treceți la un plan plătit pentru a trimite de la adresa {{email}}"
 
 #: ./src/templates/user/usernameDomain.tpl.html:43
 #: ./src/templates/views/reset-login-password.tpl.html:20
-#: ./src/templates/views/reset-login-password.tpl.html:67
+#: ./src/templates/views/reset-login-password.tpl.html:70
 msgctxt "Error"
 msgid "Username required"
 msgstr "Nume de utilizator obligatoriu"
@@ -3982,12 +3990,12 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "Verificarea nu a reușit. Reîncercaţi într-o oră."
 
-#: ./src/app/composer/services/validateMessage.js:32
+#: ./src/app/composer/services/validateMessage.js:33
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr "Așteptați încărcarea atașamentului sau opriți încărcarea."
 
-#: ./src/app/squire/services/editorDropzone.js:11
+#: ./src/app/squire/services/editorDropzone.js:12
 msgctxt "Error"
 msgid "We do not support embedded SVG files inside the signature"
 msgstr "Nu sunt suportate fișierele SVG incluse în semnătură"
@@ -4002,7 +4010,7 @@ msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr "Ați făcut prea multe încercări, reîncercați mai târziu."
 
-#: ./src/app/authentication/controllers/login.js:28
+#: ./src/app/authentication/controllers/login.js:29
 msgctxt "Error"
 msgid "You are in Private Mode or have Session Storage disabled.\n"
 "Please deactivate Private Mode and then reload the page.\n"
@@ -4016,12 +4024,12 @@ msgctxt "Error"
 msgid "You are using an outdated version of ProtonMail, please refresh the page."
 msgstr "Folosiți o versiune mai veche a ProtonMail. Actualizați pagina."
 
-#: ./src/app/composer/services/validateMessage.js:61
+#: ./src/app/composer/services/validateMessage.js:62
 msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr "Puteți genera cheile aici"
 
-#: ./src/app/attachments/services/AttachmentLoader.js:31
+#: ./src/app/attachments/services/AttachmentLoader.js:32
 msgctxt "Error"
 msgid "You did not provide a file."
 msgstr "Nu ați furnizat un fișier."
@@ -4031,7 +4039,7 @@ msgctxt "Error"
 msgid "You don't have a group with such a name."
 msgstr "Nu aveți un grup cu acest nume."
 
-#: ./src/app/composer/services/autoPinPrimaryKeys.js:19
+#: ./src/app/composer/services/autoPinPrimaryKeys.js:25
 msgctxt "Error"
 msgid "You have enabled Address Verification with Trusted Keys for {{ emails }}, but no active encryption keys have been Trusted.\n"
 "                 You must Trust the primary key in order to send a message to this address."
@@ -4048,22 +4056,22 @@ msgctxt "Error"
 msgid "You have reached the max recipients ({{limit}}) per message"
 msgstr "Ați atins numărul maxim de destinatari {{limit}} per mesaj."
 
-#: ./src/app/address/factories/addressModel.js:31
+#: ./src/app/address/factories/addressModel.js:32
 msgctxt "Error"
 msgid "You have used all addresses in your plan. Please upgrade your plan to add a new address"
 msgstr "V-ați folosit toate adresele din plan. Vă rugăm să treceți la un plan plătit superior pentru a adăuga o adresă nouă."
 
-#: ./src/app/members/services/membersValidator.js:26
+#: ./src/app/members/services/membersValidator.js:34
 msgctxt "Error"
 msgid "You have used all addresses in your plan. Please upgrade your plan to add a new address."
 msgstr "V-ați folosit toate adresele din plan. Vă rugăm să treceți la un plan plătit superior pentru a adăuga o adresă nouă."
 
-#: ./src/app/members/services/membersValidator.js:21
+#: ./src/app/members/services/membersValidator.js:29
 msgctxt "Error"
 msgid "You have used all users in your plan. Please upgrade your plan to add a new user."
 msgstr "V-ați folosit toate adresele din plan. Vă rugăm să treceți la un plan plătit superior pentru a adăuga un utilizator nou."
 
-#: ./src/app/composer/services/validateMessage.js:53
+#: ./src/app/composer/services/validateMessage.js:54
 msgctxt "Error"
 msgid "You have {{total}} recipients. The maximum number is {{limit}}."
 msgstr "Aveți {{total}} destinatari. Numărul maxim este {{limit}}."
@@ -4073,7 +4081,7 @@ msgctxt "Error"
 msgid "You must add a password for the organization"
 msgstr "Trebuie să adăugați o parolă pentru organizație"
 
-#: ./src/app/organization/factories/organizationKeysModel.js:24
+#: ./src/app/organization/factories/organizationKeysModel.js:25
 msgctxt "Error"
 msgid "You must privatize all sub-accounts before generating new organization keys"
 msgstr "Trebuie să faceți private toate conturile subordonate înainte de a genera noi chei pentru organizație"
@@ -4094,32 +4102,32 @@ msgctxt "Error"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
 msgstr "Contul are în prezent o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
 
-#: ./src/app/attachments/services/attachmentDownloader.js:32
+#: ./src/app/attachments/services/attachmentDownloader.js:33
 msgctxt "Error"
 msgid "Your browser lacks features needed to download encrypted attachments directly."
 msgstr "Navigatorul folosit nu are funcțiile necesare pentru descărcarea directă a atașamentelor criptate."
 
-#: ./src/app/address/factories/reactivateKeys.js:28
+#: ./src/app/address/factories/reactivateKeys.js:29
 msgctxt "Error"
 msgid "{{n}} keys failed to decrypt due to an incorrect password"
 msgstr "{{n}} chei au eșuat decriptarea datorită parolei incorecte"
 
-#: ./src/app/address/factories/reactivateKeys.js:36
+#: ./src/app/address/factories/reactivateKeys.js:39
 msgctxt "Error"
 msgid "{{n}} keys failed to reactivate"
 msgstr "{{n}} chei au eșuat reactivarea"
 
-#: ./src/app/address/modals/addressModal.js:20
+#: ./src/app/address/modals/addressModal.js:21
 msgctxt "Error"
 msgid "{{username}} is your username. To create {{email}}, please go to Settings -> pm.me"
 msgstr "{{username}} vă este numele de utilizator. Pentru a vă crea adresa {{email}}, accesați Setări -> pm.me"
 
-#: ./src/app/contact/directives/contactDetails.js:25
+#: ./src/app/contact/directives/contactDetails.js:26
 msgctxt "Error displays when the user try to leave an unsaved and invalid contact details"
 msgid "This form is invalid"
 msgstr "Acest formular nu este valid"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:41
+#: ./src/app/contact/modals/contactLoaderModal.js:42
 msgctxt "Error during importation"
 msgid "Import failed. Please check the import file or try again."
 msgstr "Importare eșuată. Verificați fișierul importat și reîncercați."
@@ -4162,12 +4170,12 @@ msgctxt "Error input"
 msgid "Please enter a valid time."
 msgstr "Introduceți o oră validă."
 
-#: ./src/app/labels/modals/labelModal.js:12
+#: ./src/app/labels/modals/labelModal.js:22
 msgctxt "Error label modal"
 msgid "Invalid folder name"
 msgstr "Nume folder nevalid"
 
-#: ./src/app/labels/modals/labelModal.js:13
+#: ./src/app/labels/modals/labelModal.js:23
 msgctxt "Error label modal"
 msgid "Invalid label name"
 msgstr "Nume etichetă nevalid"
@@ -4182,7 +4190,7 @@ msgctxt "Error message"
 msgid "Uploaded key doesn't match selected key."
 msgstr "Cheia încărcată nu se potrivește cu cheia selectată."
 
-#: ./src/app/contact/directives/contactPublicKeys.js:20
+#: ./src/app/contact/directives/contactPublicKeys.js:21
 msgctxt "Error message"
 msgid "{{keys}} is not a valid PGP key."
 msgid_plural "{{keys}} are not valid PGP keys."
@@ -4190,7 +4198,7 @@ msgstr[0] "{{keys}} nu este o cheie PGP validă."
 msgstr[1] "{{keys}} nu sunt chei PGP valide."
 msgstr[2] "{{keys}} nu sunt chei PGP valide."
 
-#: ./src/app/message/directives/unsubscribePanel.js:5
+#: ./src/app/message/directives/unsubscribePanel.js:13
 msgctxt "Error message when unsubscribing to mail list"
 msgid "Cannot unsubscribe with {{email}}, please upgrade to a paid plan or enable the address"
 msgstr "Nu vă puteți dezabona cu adresa {{email}}. Treceți la un plan cu plată sau activați adresa."
@@ -4200,7 +4208,7 @@ msgctxt "Error notification in the bug report modal when the user upload file"
 msgid "No image selected"
 msgstr "Nici o imagine selectată"
 
-#: ./src/app/user/modals/deleteAccountModal.js:18
+#: ./src/app/user/modals/deleteAccountModal.js:19
 msgctxt "Error reported when the delete account form is invalid"
 msgid "Invalid email address or password"
 msgstr "Adresă de e-mail sau parolă nevalidă"
@@ -4287,12 +4295,12 @@ msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr "Trimitere autorăspuns"
 
-#: ./src/app/filter/modals/filterModal.js:56
+#: ./src/app/filter/modals/filterModal.js:57
 msgctxt "Filter modal operators"
 msgid "AND"
 msgstr "ȘI"
 
-#: ./src/app/filter/modals/filterModal.js:57
+#: ./src/app/filter/modals/filterModal.js:58
 msgctxt "Filter modal operators"
 msgid "OR"
 msgstr "SAU"
@@ -4302,27 +4310,27 @@ msgctxt "Filter modal title"
 msgid "Custom Filter"
 msgstr "Filtru personal"
 
-#: ./src/app/filter/modals/filterModal.js:25
+#: ./src/app/filter/modals/filterModal.js:26
 msgctxt "Filter modal type"
 msgid "Select"
 msgstr "Selectare"
 
-#: ./src/app/filter/modals/filterModal.js:29
+#: ./src/app/filter/modals/filterModal.js:30
 msgctxt "Filter modal type"
 msgid "the attachments"
 msgstr "atașamentele"
 
-#: ./src/app/filter/modals/filterModal.js:28
+#: ./src/app/filter/modals/filterModal.js:29
 msgctxt "Filter modal type"
 msgid "the recipient"
 msgstr "destinatarul"
 
-#: ./src/app/filter/modals/filterModal.js:27
+#: ./src/app/filter/modals/filterModal.js:28
 msgctxt "Filter modal type"
 msgid "the sender"
 msgstr "expeditorul"
 
-#: ./src/app/filter/modals/filterModal.js:26
+#: ./src/app/filter/modals/filterModal.js:27
 msgctxt "Filter modal type"
 msgid "the subject"
 msgstr "subiectul"
@@ -4361,18 +4369,18 @@ msgid "<span class=\"value\">14</span>\n"
 msgstr "<span class=\"value\">14</span>\n"
 "            <i class=\"fa fa-angle-down\"></i>"
 
-#: ./src/app/user/modals/generateModal.js:19
+#: ./src/app/user/modals/generateModal.js:20
 msgctxt "Generate key modal"
 msgid "Key created for {{email}}"
 msgstr "Cheie creată pentru {{email}}"
 
-#: ./src/app/payment/factories/paymentModel.js:18
+#: ./src/app/payment/factories/paymentModel.js:19
 msgctxt "Gift code request"
 msgid "Gift code accepted"
 msgstr "Cod cadou acceptat"
 
 #: ./src/templates/contact/contactSelectorForm.tpl.html:37
-#: ./src/templates/contact/removeContactListModal.tpl.html:33
+#: ./src/templates/contact/removeContactListModal.tpl.html:34
 msgctxt "Header"
 msgid "Email"
 msgstr "E-mail"
@@ -4387,6 +4395,11 @@ msgstr "Nume"
 msgctxt "Header"
 msgid "Public Key Information:"
 msgstr "Informații cheie publică:"
+
+#: ./src/templates/contact/removeContactListModal.tpl.html:33
+msgctxt "Header"
+msgid "Type"
+msgstr "Tip"
 
 #: ./src/templates/views/members.tpl.html:303
 msgctxt "Help"
@@ -4403,102 +4416,102 @@ msgctxt "Help"
 msgid "You can drag and drop custom filter to order them."
 msgstr "Puteți trage și plasa filtrele personale pentru a le ordona."
 
-#: ./src/app/utils/services/hotkeys.js:9
+#: ./src/app/utils/services/hotkeys.js:8
 msgctxt "Hotkey description"
 msgid "Create a reply"
 msgstr "Răspuns"
 
-#: ./src/app/utils/services/hotkeys.js:10
+#: ./src/app/utils/services/hotkeys.js:9
 msgctxt "Hotkey description"
 msgid "Create a reply all"
 msgstr "Răspuns tuturor"
 
-#: ./src/app/utils/services/hotkeys.js:11
+#: ./src/app/utils/services/hotkeys.js:10
 msgctxt "Hotkey description"
 msgid "Forward the message"
 msgstr "Redirecționare mesaj"
 
-#: ./src/app/utils/services/hotkeys.js:23
+#: ./src/app/utils/services/hotkeys.js:22
 msgctxt "Hotkey description"
 msgid "Go to archive"
 msgstr "Deplasare la arhivă"
 
-#: ./src/app/utils/services/hotkeys.js:20
+#: ./src/app/utils/services/hotkeys.js:19
 msgctxt "Hotkey description"
 msgid "Go to drafts"
 msgstr "Deplasare la ciorne"
 
-#: ./src/app/utils/services/hotkeys.js:19
+#: ./src/app/utils/services/hotkeys.js:18
 msgctxt "Hotkey description"
 msgid "Go to inbox"
 msgstr "Salt la «Primite»"
 
-#: ./src/app/utils/services/hotkeys.js:21
+#: ./src/app/utils/services/hotkeys.js:20
 msgctxt "Hotkey description"
 msgid "Go to sent"
 msgstr "Deplasare la mesaje trimise"
 
-#: ./src/app/utils/services/hotkeys.js:24
+#: ./src/app/utils/services/hotkeys.js:23
 msgctxt "Hotkey description"
 msgid "Go to spam"
 msgstr "Deplasare la spam"
 
-#: ./src/app/utils/services/hotkeys.js:22
+#: ./src/app/utils/services/hotkeys.js:21
 msgctxt "Hotkey description"
 msgid "Go to starred"
 msgstr "Deplasare la mesaje marcate"
 
-#: ./src/app/utils/services/hotkeys.js:25
+#: ./src/app/utils/services/hotkeys.js:24
 msgctxt "Hotkey description"
 msgid "Go to trash"
 msgstr "Deplasare la gunoi"
 
-#: ./src/app/utils/services/hotkeys.js:12
+#: ./src/app/utils/services/hotkeys.js:11
 msgctxt "Hotkey description"
 msgid "Mark as read"
 msgstr "Marcare ca citit"
 
-#: ./src/app/utils/services/hotkeys.js:13
+#: ./src/app/utils/services/hotkeys.js:12
 msgctxt "Hotkey description"
 msgid "Mark as unread"
 msgstr "Marcare ca necitit"
 
-#: ./src/app/utils/services/hotkeys.js:16
+#: ./src/app/utils/services/hotkeys.js:15
 msgctxt "Hotkey description"
 msgid "Move to archive"
 msgstr "Mutare în «Arhivă»"
 
-#: ./src/app/utils/services/hotkeys.js:14
+#: ./src/app/utils/services/hotkeys.js:13
 msgctxt "Hotkey description"
 msgid "Move to inbox"
 msgstr "Mutare în «Primite»"
 
-#: ./src/app/utils/services/hotkeys.js:17
+#: ./src/app/utils/services/hotkeys.js:16
 msgctxt "Hotkey description"
 msgid "Move to spam"
 msgstr "Mutare în «Spam»"
 
-#: ./src/app/utils/services/hotkeys.js:15
+#: ./src/app/utils/services/hotkeys.js:14
 msgctxt "Hotkey description"
 msgid "Move to trash"
 msgstr "Mutare în «Gunoi»"
 
-#: ./src/app/utils/services/hotkeys.js:8
+#: ./src/app/utils/services/hotkeys.js:7
 msgctxt "Hotkey description"
 msgid "Open the composer"
 msgstr "Deschidere fereastră compunere mesaj"
 
-#: ./src/app/utils/services/hotkeys.js:26
+#: ./src/app/utils/services/hotkeys.js:25
 msgctxt "Hotkey description"
 msgid "Select all elements"
 msgstr "Selectare toate elementele"
 
-#: ./src/app/utils/services/hotkeys.js:18
+#: ./src/app/utils/services/hotkeys.js:17
 msgctxt "Hotkey description"
 msgid "Show hotkeys available"
 msgstr "Afișare combinații taste disponibile"
 
-#: ./src/app/utils/services/hotkeys.js:27
+#: ./src/app/utils/services/hotkeys.js:26
 msgctxt "Hotkey description"
 msgid "Unselect all elements"
 msgstr "Deselectare toate elementele"
@@ -4509,7 +4522,7 @@ msgctxt "How many connections"
 msgid "VPN Connections"
 msgstr "Conexiuni VPN"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:58
+#: ./src/app/contact/modals/contactLoaderModal.js:59
 msgctxt "Import complete"
 msgid "Importing contacts complete!"
 msgstr "Importare contacte finalizată!"
@@ -4805,13 +4818,13 @@ msgctxt "Info"
 msgid "A <a ui-sref=\"secured.dashboard({scroll: true})\">paid plan</a> is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts."
 msgstr "Este necesar un <a ui-sref=\"secured.dashboard({scroll: true})\">plan plătit</a> pentru a ascunde semnătura ProtonMail. Veniturile din planurile cu plată ne permit să continuăm suportarea conturilor gratuite."
 
-#: ./src/app/authentication/interceptors/httpInterceptor.js:18
+#: ./src/app/authentication/interceptors/httpInterceptor.js:19
 msgctxt "Info"
 msgid "A new version of ProtonMail is available. Please refresh this page."
 msgstr "Este disponibilă o nouă versiune ProtonMail. Împrospătați pagina."
 
 #. reset warning 2/3
-#: ./src/templates/views/reset-login-password.tpl.html:106
+#: ./src/templates/views/reset-login-password.tpl.html:109
 msgctxt "Info"
 msgid "ALL YOUR DATA WILL BE LOST!"
 msgstr "TOATE DATELE VOR FI PIERDUTE!"
@@ -4838,32 +4851,32 @@ msgctxt "Info"
 msgid "Add your name (or company name) and address to your invoices."
 msgstr "Adăugare nume (sau nume companie) și adresă la facturile dvs."
 
-#: ./src/app/address/modals/addressModal.js:29
+#: ./src/app/address/modals/addressModal.js:30
 msgctxt "Info"
 msgid "Address added"
 msgstr "Adresă adăugată"
 
-#: ./src/app/address/factories/addressModel.js:39
+#: ./src/app/address/factories/addressModel.js:40
 msgctxt "Info"
 msgid "Address deleted"
 msgstr "Adresă ștearsă"
 
-#: ./src/app/address/factories/addressModel.js:37
+#: ./src/app/address/factories/addressModel.js:38
 msgctxt "Info"
 msgid "Address disabled"
 msgstr "Adresă dezactivată"
 
-#: ./src/app/address/factories/addressModel.js:38
+#: ./src/app/address/factories/addressModel.js:39
 msgctxt "Info"
 msgid "Address enabled"
 msgstr "Adresă activată"
 
-#: ./src/app/address/factories/addressModel.js:40
+#: ./src/app/address/factories/addressModel.js:41
 msgctxt "Info"
 msgid "Address updated"
 msgstr "Adresă actualizată"
 
-#: ./src/app/contact/factories/contactEncryptionSaver.js:19
+#: ./src/app/contact/factories/contactEncryptionSaver.js:21
 msgctxt "Info"
 msgid "Advanced settings saved"
 msgstr "Setări avansate salvate"
@@ -4888,7 +4901,7 @@ msgctxt "Info"
 msgid "An unknown public key has been detected for this recipient."
 msgstr "S-a detectat o cheie publică necunoscută pentru acest destinatar."
 
-#: ./src/app/user/directives/signupPayForm.js:11
+#: ./src/app/user/directives/signupPayForm.js:20
 msgctxt "Info"
 msgid "Annually"
 msgstr "Anual"
@@ -4903,23 +4916,23 @@ msgctxt "Info"
 msgid "Are you sure you want to delete all your contacts?"
 msgstr "Sigur doriți ștergerea tuturor contactelor?"
 
-#: ./src/app/labels/services/manageLabels.js:33
+#: ./src/app/labels/services/manageLabels.js:34
 msgctxt "Info"
 msgid "Are you sure you want to delete these contact groups ? Contacts in the group aren’t deleted if the contact group is deleted."
 msgstr "Sigur doriți să ștergeți aceste grupuri de contacte? Contactele din grupuri nu sunt șterse dacă grupurile sunt șterse."
 
-#: ./src/app/address/factories/addressModel.js:48
+#: ./src/app/address/factories/addressModel.js:49
 #: ./src/app/settings/controllers/domains.js:144
 msgctxt "Info"
 msgid "Are you sure you want to delete this address?"
 msgstr "Sigur doriți ștergerea acestei adrese?"
 
-#: ./src/app/contact/services/manageContactGroup.js:57
+#: ./src/app/contact/services/manageContactGroup.js:58
 msgctxt "Info"
 msgid "Are you sure you want to delete this contact ?"
 msgstr "Sigur doriți să ștergeți acest contact?"
 
-#: ./src/app/labels/services/manageLabels.js:40
+#: ./src/app/labels/services/manageLabels.js:41
 msgctxt "Info"
 msgid "Are you sure you want to delete this contact group ? Contacts in the group aren’t deleted if the contact group is deleted."
 msgstr "Sigur doriți să ștergeți acest grup de contacte? Contactele din grup nu sunt șterse dacă grupul este șters."
@@ -4937,14 +4950,14 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this filter?"
 msgstr "Sigur doriți ștergerea acestui filtru?"
 
-#: ./src/app/labels/services/manageLabels.js:48
-#: ./src/app/settings/controllers/labels.js:121
+#: ./src/app/labels/services/manageLabels.js:49
+#: ./src/app/settings/controllers/labels.js:122
 msgctxt "Info"
 msgid "Are you sure you want to delete this folder? Messages in the folders aren’t deleted if the folder is deleted, they can still be found in all mail. If you want to delete all messages in a folder, move them to trash."
 msgstr "Sigur doriți ștergerea acestui folder? Mesajele din folder nu sunt șterse dacă folderul este șters, ele încă putând fi găsite în toate mesajele. Dacă doriți să ștergeți toate mesajele dintr-un folder, mutați-le în gunoi."
 
-#: ./src/app/labels/services/manageLabels.js:54
-#: ./src/app/settings/controllers/labels.js:131
+#: ./src/app/labels/services/manageLabels.js:55
+#: ./src/app/settings/controllers/labels.js:132
 msgctxt "Info"
 msgid "Are you sure you want to delete this label? Removing a label will not remove the messages with that label."
 msgstr "Sigur doriți să ștergeți această etichetă? Ștergerea unei etichete nu va șterge mesajele etichetate cu ea."
@@ -4954,33 +4967,33 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this payment method?"
 msgstr "Sigur doriți să ștergeți această metodă de plată?"
 
-#: ./src/app/address/factories/addressModel.js:44
+#: ./src/app/address/factories/addressModel.js:45
 msgctxt "Info"
 msgid "Are you sure you want to disable this address?"
 msgstr "Sigur doriți să dezactivați această adresă?"
 
-#: ./src/app/settings/controllers/security.js:21
+#: ./src/app/settings/controllers/security.js:24
 msgctxt "Info"
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr "Sigur doriți dezactivarea autentificării cu doi factori?"
 
-#: ./src/app/members/services/memberActions.js:71
+#: ./src/app/members/services/memberActions.js:72
 msgctxt "Info"
 msgid "Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted."
 msgstr "Sigur doriți ștergerea permanentă a acestui utilizator? Mesajele și toate adresele asociate cu acest utilizator vor fi șterse."
 
-#: ./src/app/members/services/memberActions.js:63
+#: ./src/app/members/services/memberActions.js:64
 msgctxt "Info"
 msgid "Are you sure you want to permanently remove this user from your organization? The user will lose access to all the addresses of your organization."
 msgstr "Sigur doriți să eliminați permanent acest utilizator din organizație? Utilizatorul nu va mai avea acces la adresele organizației."
 
-#: ./src/app/members/services/memberActions.js:32
+#: ./src/app/members/services/memberActions.js:33
 msgctxt "Info"
 msgid "Are you sure you want to remove administrative privileges from this user?"
 msgstr "Sigur doriți să eliminați drepturile administrative ale acestui utilizator?"
 
 #: ./src/app/elements/directives/advancedFilterElement.js:46
-#: ./src/app/elements/services/removeElement.js:16
+#: ./src/app/elements/services/removeElement.js:17
 msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
 msgstr "Sunteți sigur(ă)? Această acțiune nu poate fi anulată."
@@ -5020,7 +5033,7 @@ msgctxt "Info"
 msgid "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar."
 msgstr "Înainte de a putea primi e-mailuri pentru adresele de domeniu particularizate la ProtonMail, trebuie să adăugați următoarele înregistrări MX în DNS. Acest lucru se poate face de obicei în panoul de control al registratorului numelui de domeniu."
 
-#: ./src/app/user/modals/generateModal.js:22
+#: ./src/app/user/modals/generateModal.js:23
 msgctxt "Info"
 msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them."
 msgstr "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creezi o cheie de criptare pentru ele."
@@ -5030,12 +5043,12 @@ msgctxt "Info"
 msgid "Below are optional settings you can use to customize your account. You can always find these on your Settings page."
 msgstr "Mai jos sunt setări opționale pe care le puteți folosi pentru a vă personaliza contul. Le puteți găsi oricând în pagina Setări."
 
-#: ./src/app/dashboard/directives/totalRows.js:23
+#: ./src/app/dashboard/directives/totalRows.js:24
 msgctxt "Info"
 msgid "Billed as {{amount}} /2-yr"
 msgstr "Facturat ca {{amount}}/2 ani"
 
-#: ./src/app/dashboard/directives/totalRows.js:19
+#: ./src/app/dashboard/directives/totalRows.js:20
 msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr "Facturat ca {{amount}}/an"
@@ -5071,17 +5084,17 @@ msgid "By clicking Submit, you agree to abide by"
 msgstr "Apăsând pe Trimitere, sunteți de acord să respectați"
 
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:401
+#: ./src/app/routes.js:406
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Părăsind pagina veți pierde ce ați scris în acest e-mail. Puteți salva o schiță în cazul în care doriți să reluați mesajul mai târziu."
 
-#: ./src/app/settings/services/composerSettings.js:15
+#: ./src/app/settings/services/composerSettings.js:22
 msgctxt "Info"
 msgid "Change composer mode to {{value}}"
 msgstr "Schimbare mod compunere la {{value}}"
 
-#: ./src/app/settings/services/composerSettings.js:18
+#: ./src/app/settings/services/composerSettings.js:25
 msgctxt "Info"
 msgid "Change default text direction to {{value}}"
 msgstr "Schimbare direcție implicită text {{value}}"
@@ -5265,12 +5278,12 @@ msgctxt "Info"
 msgid "Download the attachment {{name}}"
 msgstr "Descărcare atașamentul {{name}}"
 
-#: ./src/app/composer/directives/composerDropzone.js:53
+#: ./src/app/composer/directives/composerDropzone.js:47
 msgctxt "Info"
 msgid "Drop a file here to upload"
 msgstr "Plasați aici un fișier pentru a fi încărcat"
 
-#: ./src/app/squire/services/editorDropzone.js:10
+#: ./src/app/squire/services/editorDropzone.js:11
 #: ./src/templates/directives/squire.tpl.html:4
 msgctxt "Info"
 msgid "Drop an image here to insert"
@@ -5294,7 +5307,6 @@ msgstr "Mesajele criptate către destinatarii din afara ProtonMail expiră în 2
 #: ./src/app/message/directives/messageContactsIcon.js:58
 #: ./src/app/message/directives/messageContactsIcon.js:63
 #: ./src/app/message/directives/messageContactsIcon.js:68
-#: ./src/app/ui/services/encryptionStatus.js:45
 msgctxt "Info"
 msgid "End-to-end encrypted"
 msgstr "Criptat în ambele părți"
@@ -5302,7 +5314,6 @@ msgstr "Criptat în ambele părți"
 #: ./src/app/message/directives/messageContactsIcon.js:43
 #: ./src/app/message/directives/messageContactsIcon.js:48
 #: ./src/app/message/directives/messageContactsIcon.js:53
-#: ./src/app/ui/services/encryptionStatus.js:44
 msgctxt "Info"
 msgid "End-to-end encrypted to verified recipient"
 msgstr "Criptat în ambele părți spre destinatar verificat"
@@ -5317,7 +5328,7 @@ msgctxt "Info"
 msgid "Enter the Organization Password to restore administrator privileges. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Learn more</a>"
 msgstr "Introduceți parola organizației pentru a restaura drepturile de administrator. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Aflați mai multe</a>"
 
-#: ./src/app/user/directives/signupPayForm.js:13
+#: ./src/app/user/directives/signupPayForm.js:22
 msgctxt "Info"
 msgid "Every 2 years"
 msgstr "Bianual"
@@ -5338,12 +5349,12 @@ msgctxt "Info"
 msgid "Folders and labels are a powerful tool to manage your inbox."
 msgstr "Folderele și etichetele sunt unelte puternice de gestionare a mesajelor."
 
-#: ./src/app/formUtils/directives/cvcTooltip.js:10
+#: ./src/app/formUtils/directives/cvcTooltip.js:12
 msgctxt "Info"
 msgid "For American Express, the 4 digits on the front of your card."
 msgstr "Pentru American Express, cele 4 cifre de pe fața cardului."
 
-#: ./src/app/formUtils/directives/cvcTooltip.js:5
+#: ./src/app/formUtils/directives/cvcTooltip.js:7
 msgctxt "Info"
 msgid "For Visa, MasterCard and Discover, the 3 digits on the back of your card."
 msgstr "Pentru Visa, MasterCard și Discover, cele 3 cifre de pe spatele cardului."
@@ -5385,7 +5396,7 @@ msgctxt "Info"
 msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
 msgstr "Generarea cheilor pe 4096 biți poate bloca browserul dvs. Cheile pe 4096 biți sunt recomandate numai pentru calculatoare cu înalte performanțe - nu sunt recomandate pentru tablete sau dispozitive mobile."
 
-#: ./src/templates/modals/generate.tpl.html:33
+#: ./src/templates/modals/generate.tpl.html:38
 msgctxt "Info"
 msgid "Generating RSA 4096-bit encryption keys may crash or freeze your browser. RSA 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
 msgstr "Generarea cheilor RSA pe 4096 biți vă poate bloca sau îngheța navigatorul. Cheile RSA pe 4096 biți sunt recomandate numai pentru calculatoare cu performanțe ridicate - nu sunt recomandate pentru tablete sau dispozitive mobile."
@@ -5446,7 +5457,7 @@ msgctxt "Info"
 msgid "Important: Please make sure you saved the recovery codes. Otherwise you can permanently lose access to your account if you lose your 2FA device."
 msgstr "Important: Asigurați-vă că ați salvat codurile de recuperare. Altfel veți putea pierde permanent accesul la cont dacă vă veți pierde dispozitivul pentru autentificarea cu doi factori."
 
-#: ./src/app/payment/modals/payModal.js:13
+#: ./src/app/payment/modals/payModal.js:14
 #: ./src/app/settings/controllers/payments.js:147
 msgctxt "Info"
 msgid "Invoice paid"
@@ -5457,12 +5468,12 @@ msgctxt "Info"
 msgid "It can take up to a day for DNS changes to update."
 msgstr "Poate dura până la o zi pentru ca modificările DNS să fie actualizate."
 
-#: ./src/app/core/controllers/signup.js:114
+#: ./src/app/core/controllers/signup.js:116
 msgctxt "Info"
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
 msgstr "Momentan nu este posibilă abonarea la un plan plătit ProtonMail."
 
-#: ./src/templates/views/reset-login-password.tpl.html:140
+#: ./src/templates/views/reset-login-password.tpl.html:143
 msgctxt "Info"
 msgid "Keep this password safe--it cannot be recovered."
 msgstr "Păstrați această parolă în siguranță--nu poate fi recuperată."
@@ -5472,7 +5483,7 @@ msgctxt "Info"
 msgid "Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM"
 msgstr "Păstrați această înregistrare în DNS atât timp cât doriți să utilizați DKIM. Puteți să-i schimbați valoarea la <code>off</code> pentru a dezactiva DKIM."
 
-#: ./src/app/address/factories/reactivateKeys.js:21
+#: ./src/app/address/factories/reactivateKeys.js:22
 msgctxt "Info"
 msgid "Key reactivated"
 msgstr "Cheie reactivată"
@@ -5483,21 +5494,16 @@ msgctxt "Info"
 msgid "Layout saved"
 msgstr "Aspect salvat"
 
-#: ./src/app/message/directives/unsubscribePanel.js:12
+#: ./src/app/message/directives/unsubscribePanel.js:20
 #: ./src/templates/message/messageAutoGenerated.tpl.html:6
 msgctxt "Info"
 msgid "Learn more"
 msgstr "Aflați mai multe"
 
-#: ./src/app/core/factories/downloadFile.js:8
+#: ./src/app/core/factories/downloadFile.js:9
 msgctxt "Info"
 msgid "Learn more."
 msgstr "Aflați mai multe."
-
-#: ./src/app/ui/services/encryptionStatus.js:41
-msgctxt "Info"
-msgid "Loading encryption info..."
-msgstr "Încărcare informații criptare..."
 
 #: ./src/templates/views/appearance.tpl.html:159
 msgctxt "Info"
@@ -5537,12 +5543,12 @@ msgctxt "Info"
 msgid "Message discarded"
 msgstr "Mesaj anulat"
 
-#: ./src/app/user/directives/signupPayForm.js:12
+#: ./src/app/user/directives/signupPayForm.js:21
 msgctxt "Info"
 msgid "Monthly"
 msgstr "Lunar"
 
-#: ./src/app/members/services/membersValidator.js:6
+#: ./src/app/members/services/membersValidator.js:14
 msgctxt "Info"
 msgid "Multi-user support requires either a Professional or Visionary plan."
 msgstr "Suportul multiutilizator necesită planul Profesional sau Vizionar."
@@ -5579,7 +5585,7 @@ msgctxt "Info"
 msgid "No logs yet"
 msgstr "Încă nu sunt jurnale"
 
-#: ./src/app/composer/services/validateMessage.js:60
+#: ./src/app/composer/services/validateMessage.js:61
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr "Fără subiect, trimiteți așa?"
@@ -5594,28 +5600,28 @@ msgctxt "Info"
 msgid "Only change these settings if you are using PGP with non-ProtonMail recipients."
 msgstr "Modificați aceste setări doar dacă folosiți PGP cu destinatari non-ProtonMail."
 
-#: ./src/app/vpn/factories/changeVPNNameModal.js:10
+#: ./src/app/vpn/factories/changeVPNNameModal.js:8
 msgctxt "Info"
 msgid "OpenVPN login updated"
 msgstr "Conectare OpenVPN actualizată"
 
-#: ./src/app/vpn/factories/changeVPNPasswordModal.js:10
+#: ./src/app/vpn/factories/changeVPNPasswordModal.js:16
 msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "Parolă OpenVPN actualizată"
 
-#: ./src/app/settings/controllers/account.js:175
+#: ./src/app/settings/controllers/account.js:176
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Operația a expirat din motive de securitate, vă rugăm reîncercați"
 
-#: ./src/app/address/factories/addressModel.js:41
+#: ./src/app/address/factories/addressModel.js:42
 #: ./src/app/filter/directives/customFilterList.js:70
 msgctxt "Info"
 msgid "Order saved"
 msgstr "Ordine salvată"
 
-#: ./src/app/members/services/memberActions.js:55
+#: ./src/app/members/services/memberActions.js:56
 msgctxt "Info"
 msgid "Organization administrators will no longer be able to log in and control the user's account after privatization. This change is PERMANENT."
 msgstr "Administratorii organizației nu se vor mai putea autentifica și controla conturile utilizatorilor după ce sunt declarate private. Această modificare e PERMANENTĂ."
@@ -5635,7 +5641,7 @@ msgctxt "Info"
 msgid "Organization storage"
 msgstr "Spațiu organizație"
 
-#: ./src/app/organization/factories/organizationModel.js:20
+#: ./src/app/organization/factories/organizationModel.js:21
 msgctxt "Info"
 msgid "Organization updated"
 msgstr "Organizație actualizată"
@@ -5656,7 +5662,7 @@ msgctxt "Info"
 msgid "Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges."
 msgstr "Mai există și alți administratori în organizație. Trebuie să le comunicați noua parolă de recuperare pentru a-și putea reactiva drepturile de administrator."
 
-#: ./src/app/settings/directives/encryptionView.js:20
+#: ./src/app/settings/directives/encryptionView.js:21
 msgctxt "Info"
 msgid "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed."
 msgstr "Clienții PGP probabil vor detecta automat cheile PGP dacă mesajele trimise sunt semnate."
@@ -5665,14 +5671,12 @@ msgstr "Clienții PGP probabil vor detecta automat cheile PGP dacă mesajele tri
 #: ./src/app/message/directives/messageContactsIcon.js:23
 #: ./src/app/message/directives/messageContactsIcon.js:33
 #: ./src/app/message/directives/messageContactsIcon.js:38
-#: ./src/app/ui/services/encryptionStatus.js:43
 msgctxt "Info"
 msgid "PGP-encrypted"
 msgstr "Criptat cu PGP"
 
 #: ./src/app/message/directives/messageContactsIcon.js:13
 #: ./src/app/message/directives/messageContactsIcon.js:28
-#: ./src/app/ui/services/encryptionStatus.js:42
 msgctxt "Info"
 msgid "PGP-signed"
 msgstr "Semnat cu PGP"
@@ -5696,7 +5700,7 @@ msgctxt "Info"
 msgid "Paid users can add other @pm.me addresses from Settings --> Addresses/Users."
 msgstr "Utilizatorii cu plată pot adăuga alte adrese @pm.me din «Setări» -> «Adrese/Utilizatori»."
 
-#: ./src/app/organization/factories/organizationModel.js:21
+#: ./src/app/organization/factories/organizationModel.js:22
 msgctxt "Info"
 msgid "Password updated"
 msgstr "Parola actualizată"
@@ -5706,7 +5710,7 @@ msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr "PayPal nu este momentan disponibil, vă rugăm încercați mai târziu."
 
-#: ./src/app/payment/directives/payInvoiceBtn.js:5
+#: ./src/app/payment/directives/payInvoiceBtn.js:13
 msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
 msgstr "Plățile sunt momentan nedisponibile, vă rugăm încercați mai târziu."
@@ -5757,12 +5761,12 @@ msgctxt "Info"
 msgid "Please check your mobile and enter the code below:"
 msgstr "Verificați-vă telefonul mobil și introduceți mai jos codul:"
 
-#: ./src/app/members/services/membersValidator.js:16
+#: ./src/app/members/services/membersValidator.js:24
 msgctxt "Info"
 msgid "Please configure a custom domain before adding users to your organization."
 msgstr "Configurați un nume de domeniu personal înainte de a adăuga utilizatori la organizație."
 
-#: ./src/app/members/services/membersValidator.js:11
+#: ./src/app/members/services/membersValidator.js:19
 msgctxt "Info"
 msgid "Please enable multi-user support before adding users to your organization"
 msgstr "Activați suportul multiutilizator înainte de a adăuga utilizatori la organizație"
@@ -5777,17 +5781,17 @@ msgctxt "Info"
 msgid "Please give the address and temporary password to the new member so they can log in."
 msgstr "Transmiteți adresa și parola temporară noului membru pentru a se putea conecta."
 
-#: ./src/app/attachments/services/attachmentDownloader.js:27
+#: ./src/app/attachments/services/attachmentDownloader.js:28
 msgctxt "Info"
 msgid "Please right-click on the attachment and select Save/Download As."
 msgstr "Faceți clic dreapta pe atașament și alegeți Salvare/Salvare ca."
 
-#: ./src/app/attachments/services/attachmentDownloader.js:22
+#: ./src/app/attachments/services/attachmentDownloader.js:23
 msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "Atingeți și țineți apăsat pe atașament și selectați «Deschidere în filă nouă»."
 
-#: ./src/app/members/services/memberActions.js:80
+#: ./src/app/members/services/memberActions.js:81
 msgctxt "Info"
 msgid "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support."
 msgstr "Vă rugăm treceți la planul Profesional cu mai mult de un utilizator sau la cel Vizionar, pentru a avea suport pentru multiutilizatori."
@@ -5879,7 +5883,7 @@ msgid "Reset Password"
 msgstr "Resetare parolă"
 
 #. reset warning 1/3
-#: ./src/templates/views/reset-login-password.tpl.html:105
+#: ./src/templates/views/reset-login-password.tpl.html:108
 msgctxt "Info"
 msgid "Resetting your password will also reset your encryption keys, so you will be unable to read your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Learn More</a>."
 msgstr "Resetarea parolei va reseta și cheile de criptare, astfel încât nu veți mai putea să citiți mesajele existente. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Aflați mai multe</a>."
@@ -5891,7 +5895,7 @@ msgctxt "Info"
 msgid "Right-click on your attachment and choose 'Download linked file as...'"
 msgstr "Apăsați cu dreapta pe atașament și alegeți 'Descărcare fișier atașat ca...'"
 
-#: ./src/app/members/services/memberActions.js:78
+#: ./src/app/members/services/memberActions.js:79
 msgctxt "Info"
 msgid "Role updated"
 msgstr "Rol actualizat"
@@ -5928,12 +5932,12 @@ msgctxt "Info"
 msgid "Save your passwords somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Salvați parola într-un loc sigur. Apăsați pe pictograma <i class=\"fa fa-eye\"></i> pentru a confirma că ați introdus corect parola."
 
-#: ./src/app/address/directives/addressKeysView.js:35
+#: ./src/app/address/directives/addressKeysView.js:37
 msgctxt "Info"
 msgid "Select an address to which the imported key will be attached"
 msgstr "Selectați adresa la care va fi atașată cheia importată"
 
-#: ./src/app/address/directives/addressKeysView.js:30
+#: ./src/app/address/directives/addressKeysView.js:32
 msgctxt "Info"
 msgid "Select an address to which the new key will be attached"
 msgstr "Selectați adresa la care va fi atașată cheia nouă"
@@ -5962,12 +5966,12 @@ msgctxt "Info"
 msgid "Setting up account"
 msgstr "Setare cont"
 
-#: ./src/app/user/factories/signatureModel.js:13
+#: ./src/app/user/factories/signatureModel.js:14
 msgctxt "Info"
 msgid "Signature updated"
 msgstr "Semnătură actualizată"
 
-#: ./src/app/members/services/memberActions.js:79
+#: ./src/app/members/services/memberActions.js:80
 msgctxt "Info"
 msgid "Status Updated"
 msgstr "Stare actualizată"
@@ -6007,12 +6011,12 @@ msgctxt "Info"
 msgid "Take the time to review how we should import these groups."
 msgstr "Analizați modul în care ar trebui importate aceste grupuri."
 
-#: ./src/app/user/services/manageUser.js:21
+#: ./src/app/user/services/manageUser.js:22
 msgctxt "Info"
 msgid "The app will now be reloaded in a few seconds"
 msgstr "Aplicația va fi reîncărcată în câteva secunde"
 
-#: ./src/app/elements/services/removeElement.js:17
+#: ./src/app/elements/services/removeElement.js:18
 msgctxt "Info"
 msgid "The draft(s) selected is open in a composer, this action will close the composer and delete the message."
 msgstr "Ciornele selectate sunt în proces de compunere, această acțiune va închide compunerea și va șterge mesajul."
@@ -6037,7 +6041,7 @@ msgctxt "Info"
 msgid "These emails are also in your contacts. Remove them from your contacts?"
 msgstr "Aceste adrese de e-mail apar și în contacte. Le eliminați și din contacte?"
 
-#: ./src/templates/views/reset-login-password.tpl.html:183
+#: ./src/templates/views/reset-login-password.tpl.html:186
 #: ./src/templates/views/setup.tpl.html:79
 #: ./src/templates/views/signup.tpl.html:14
 msgctxt "Info"
@@ -6071,7 +6075,7 @@ msgstr "Această funcție este disponibilă doar pentru planul ProtonMail Profes
 
 #: ./src/app/bridge/directives/bridgeFreePanel.js:4
 #: ./src/templates/contact/contactEncrypted.tpl.html:20
-#: ./src/templates/contact/contactViewDetail.tpl.html:48
+#: ./src/templates/contact/contactViewDetail.tpl.html:49
 msgctxt "Info"
 msgid "This feature is only available for paid users."
 msgstr "Această opțiune este valabilă doar pentru utilizatorii cu plată."
@@ -6096,7 +6100,7 @@ msgctxt "Info"
 msgid "This message is automatically generated as a response to a previous message."
 msgstr "Acest mesaj este generat automat ca răspuns la un mesaj anterior."
 
-#: ./src/app/message/directives/unsubscribePanel.js:11
+#: ./src/app/message/directives/unsubscribePanel.js:19
 msgctxt "Info"
 msgid "This message is from a mailing list."
 msgstr "Acest mesaj este de la o listă de corespondență."
@@ -6138,7 +6142,7 @@ msgctxt "Info"
 msgid "This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it by clicking your username in the upper right corner."
 msgstr "Acest scurt tutorial vă va arata principalele funcții ale noului cont ProtonMail. Pentru mai multe funcții puteți verifica mesajul de bun venit primit pe e-mail pe care vi l-am trimis. Dacă doriți să mai vedeți acest tutorial ulterior, îl puteți accesa apăsând pe numele de utilizator din colțul din dreapta sus."
 
-#: ./src/app/members/services/memberActions.js:46
+#: ./src/app/members/services/memberActions.js:47
 msgctxt "Info"
 msgid "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization."
 msgstr "Acest utilizator este momentan răspunzător de plățile pentru organizația dvs. Prin retrogradarea membrului, veți deveni responsabil pentru plățile organizației."
@@ -6159,7 +6163,7 @@ msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
 msgstr "Aceasta va crea o cheie de criptare pentru organizație. Cheile de 4096 de biți funcționează doar pe calculatoare foarte performante. Pentru majoritatea utilizatorilor recomandăm utilizarea cheilor de 2048 de biți."
 
-#: ./src/app/dashboard/factories/downgrade.js:14
+#: ./src/app/dashboard/factories/downgrade.js:15
 msgctxt "Info"
 msgid "This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action."
 msgstr "Aceasta va transforma contul dvs. la un cont gratuit. ProtonMail este un program gratuit care este suportat din donații și conturi plătite. Vă rugăm să luați în considerare să faceți o donație astfel încât să putem oferi serviciul gratuit. <br /><br />Atenție: Toate datele pentru adresele adiționale, domeniile personale și utilizatori trebuie eliminate/dezactivate înainte de a efectua această operație."
@@ -6219,17 +6223,17 @@ msgctxt "Info"
 msgid "Use the following credentials when connecting to ProtonVPN with third party clients, for example: Tunnelblick on MacOS or OpenVPN on GNU/Linux."
 msgstr "Folosiți următoarele acreditări pentru a vă conecta la ProtonVPN cu clienți ai terțelor părți, de exemplu: Tunnelblick pe MacOS sau OpenVPN pe GNU/Linux."
 
-#: ./src/app/members/services/editMemberProcess.js:16
+#: ./src/app/members/services/editMemberProcess.js:17
 msgctxt "Info"
 msgid "User created"
 msgstr "Utilizator creat"
 
-#: ./src/app/members/services/memberActions.js:77
+#: ./src/app/members/services/memberActions.js:78
 msgctxt "Info"
 msgid "User removed"
 msgstr "Utilizator eliminat"
 
-#: ./src/app/members/services/editMemberProcess.js:15
+#: ./src/app/members/services/editMemberProcess.js:16
 msgctxt "Info"
 msgid "User updated"
 msgstr "Utilizator actualizat"
@@ -6283,7 +6287,7 @@ msgctxt "Info"
 msgid "WARNING: THIS ALSO DELETES ALL CONNECTED SERVICES (ex: <i>ProtonVPN</i>)"
 msgstr "ATENȚIE: ACEASTA VA ȘTERGE ȘI SERVICIILE ASOCIATE (ex: <i>ProtonVPN</i>)"
 
-#: ./src/templates/modals/generate.tpl.html:39
+#: ./src/templates/modals/generate.tpl.html:44
 msgctxt "Info"
 msgid "We are now generating encryption keys for your address, this may take several minutes and temporarily freeze your browser."
 msgstr "Acum se generează cheile de criptare pentru adresa dvs., ar putea dura câteva minute și să oprească temporar navigatorul."
@@ -6308,7 +6312,7 @@ msgctxt "Info"
 msgid "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
 msgstr "Se suportă importarea fișierelor CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte câteva aplicații. Se suportă și importarea fișierelor vCard. (codificate UTF-8). <a href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Doriți ajutor?</a>"
 
-#: ./src/app/message/directives/unsubscribePanel.js:16
+#: ./src/app/message/directives/unsubscribePanel.js:24
 msgctxt "Info"
 msgid "We will send a message from {{email}} to unsubscribe from this mailing list."
 msgstr "Vă vom trimite un mesaj de la {{email}} pentru a vă dezabona de la această listă de discuții."
@@ -6318,7 +6322,7 @@ msgctxt "Info"
 msgid "We will send a reset code to your <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"This is the optional email you used when first creating an account. This is the same as your notification email that is used for sending alerts about new messages.\">recovery email</a> to reset your password."
 msgstr "Vă vom trimite un cod de resetare pe adresa de <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"Aceasta este adresa opțională folosită la crearea contului. Este aceeași cu adresa de notificare folosită la trimiterea de alerte despre mesaje noi.\">e-mail de recuperare</a> pentru a vă reseta parola."
 
-#: ./src/templates/views/reset-login-password.tpl.html:50
+#: ./src/templates/views/reset-login-password.tpl.html:53
 msgctxt "Info"
 msgid "We've sent a reset code to your <strong>recovery email</strong>, valid for one hour or until you request a new code. Enter it below to continue."
 msgstr "Am trimis un cod de resetare la <strong>e-mailul de recuperare</strong>, valabil timp de o oră sau până când solicitați un nou cod. Introduceți-l mai jos pentru a continua."
@@ -6363,7 +6367,7 @@ msgctxt "Info"
 msgid "You can also add, delete, and edit them by clicking on <em>Folders / Labels</em> <strong>(3)</strong>."
 msgstr "Le puteți adăuga, șterge sau edita și apăsând pe <em>Foldere/Etichete</em><strong>(3)</strong>."
 
-#: ./src/app/attachments/services/attachmentDownloader.js:45
+#: ./src/app/attachments/services/attachmentDownloader.js:46
 msgctxt "Info"
 msgid "You can decrypt the file with a program such as {{link}} if you have the corresponding private key."
 msgstr "Puteți decripta fișierul cu un program ca {{link}} dacă aveți cheia privată corespunzătoare."
@@ -6383,7 +6387,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Acum puteți primi mesajele și pe adresele de tip @pm.me (prescurtare de la «ProtonMail me» sau «Private Message me»)."
 
-#: ./src/app/settings/controllers/account.js:106
+#: ./src/app/settings/controllers/account.js:107
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Aveți un mesaj nou"
@@ -6408,7 +6412,7 @@ msgctxt "Info"
 msgid "You have no custom filters."
 msgstr "Nu aveți filtre personale."
 
-#: ./src/app/contact/factories/contactMerger.js:21
+#: ./src/app/contact/factories/contactMerger.js:22
 msgctxt "Info"
 msgid "You have no duplicate contacts"
 msgstr "Nu aveți contacte duplicate"
@@ -6435,7 +6439,7 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "Trebuie să activați cheia privată a organizației cu parola de rezervă a cheii organizației primită de la administratorul organizației."
 
-#: ./src/app/members/services/memberActions.js:39
+#: ./src/app/members/services/memberActions.js:40
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
 msgstr "Trebui să furnizați acestui utilizator parola organizației pentru a putea activa complet drepturile de administrator."
@@ -6472,7 +6476,7 @@ msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
 msgstr "Contul dvs. VPN nu a fost încă activat, vizitați <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> pentru a vă înscrie și activa contul."
 
-#: ./src/app/composer/services/validateMessage.js:73
+#: ./src/app/composer/services/validateMessage.js:74
 #: ./src/templates/invoices/invoiceSection.tpl.html:50
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
@@ -6493,7 +6497,7 @@ msgctxt "Info"
 msgid "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices."
 msgstr "Contul sau organizația are în prezent o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
 
-#: ./src/app/user/services/manageUser.js:20
+#: ./src/app/user/services/manageUser.js:21
 msgctxt "Info"
 msgid "Your admin privileges have been revoked."
 msgstr "Drepturile administrative v-au fost revocate."
@@ -6557,8 +6561,8 @@ msgctxt "Info"
 msgid "is activated on your account."
 msgstr "este activat în contul dvs."
 
-#: ./src/app/dashboard/directives/totalPlan.js:6
-#: ./src/app/user/directives/signupPayForm.js:9
+#: ./src/app/dashboard/directives/totalPlan.js:14
+#: ./src/app/user/directives/signupPayForm.js:18
 msgctxt "Info"
 msgid "month"
 msgstr "lună"
@@ -6625,27 +6629,27 @@ msgstr[0] "Un mesaj selectat"
 msgstr[1] "{{$count}} mesaje selectate"
 msgstr[2] "{{$count}} de mesaje selectate"
 
-#: ./src/app/contact/services/manageContactGroup.js:30
+#: ./src/app/contact/services/manageContactGroup.js:31
 msgctxt "Info"
 msgid "{{Name}} created with {{total}} contact(s)"
 msgstr "{{Name}} creat cu {{total}} contacte(e)"
 
-#: ./src/app/contact/services/manageContactGroup.js:28
+#: ./src/app/contact/services/manageContactGroup.js:29
 msgctxt "Info"
 msgid "{{Name}} updated"
 msgstr "{{Name}} actualizat"
 
-#: ./src/app/address/factories/reactivateKeys.js:22
+#: ./src/app/address/factories/reactivateKeys.js:23
 msgctxt "Info"
 msgid "{{n}} keys reactivated"
 msgstr "{{n}} chei reactivate"
 
-#: ./src/app/contact/services/importContactGroups.js:21
+#: ./src/app/contact/services/importContactGroups.js:28
 msgctxt "Info"
 msgid "{{total}} groups added"
 msgstr "{{total}} grupuri adăugate"
 
-#: ./src/app/contact/services/importContactGroups.js:24
+#: ./src/app/contact/services/importContactGroups.js:31
 msgctxt "Info"
 msgid "{{total}} groups updated"
 msgstr "{{total}} grupuri actualizate"
@@ -6724,12 +6728,12 @@ msgctxt "Info present in the custom professional plan modal"
 msgid "Each user adds 5GB of storage and 5 addresses to your organization. Professional plans start with 5 addresses included. Storage and addresses can be distributed among users however you wish."
 msgstr "Fiecare utilizator adaugă 5 GB de spațiu și 5 adrese la organizația dvs. Planurile profesionale încep cu 5 adrese incluse. Spațiul și adresele pot fi distribuite utilizatorilor oricum doriți."
 
-#: ./src/app/pmMe/factories/pmMeModel.js:14
+#: ./src/app/pmMe/factories/pmMeModel.js:15
 msgctxt "Info to setup @pm.me address"
 msgid "Set a display name and signature for {{email}}"
 msgstr "Stabilire nume afișat și semnătură pentru {{email}}"
 
-#: ./src/app/elements/directives/searchLimitReached.js:3
+#: ./src/app/elements/directives/searchLimitReached.js:8
 msgctxt "Inform the user that he reach the search limit"
 msgid "Your search matched too many results. Please limit your search and try again."
 msgstr "Căutarea a găsit prea multe rezultate. Limitați căutarea și reîncercați."
@@ -6739,17 +6743,17 @@ msgctxt "Information about this user"
 msgid "Organization administrators cannot access the messages of private users."
 msgstr "Administratorii organizației nu pot accesa mesajele utilizatorilor privați."
 
-#: ./src/app/contact/modals/contactLoaderModal.js:67
+#: ./src/app/contact/modals/contactLoaderModal.js:68
 msgctxt "Information for the contacts exporter modal"
 msgid "Exporting contacts, this may take a few minutes. When the progress is completed, this modal will close and let you download the file."
 msgstr "Se exportă contactele, ar putea dura câteva minute. Când procesul s-a încheiat, această fereastră se va închide și vă va permite să descărcați fișierul."
 
-#: ./src/app/contact/modals/contactLoaderModal.js:52
+#: ./src/app/contact/modals/contactLoaderModal.js:53
 msgctxt "Information for the contacts importer modal"
 msgid "Importing contacts, this may take a few minutes."
 msgstr "Se importă contactele, ar putea dura câteva minute."
 
-#: ./src/app/contact/modals/contactLoaderModal.js:76
+#: ./src/app/contact/modals/contactLoaderModal.js:77
 msgctxt "Information for the contacts merging modal"
 msgid "Merging contacts, this may take a few minutes."
 msgstr "Se unesc contactele. Ar putea dura câteva minute."
@@ -6962,7 +6966,7 @@ msgctxt "Label"
 msgid "Country"
 msgstr "Țara"
 
-#: ./src/app/contact/services/importContactGroups.js:19
+#: ./src/app/contact/services/importContactGroups.js:26
 msgctxt "Label"
 msgid "Create a new group"
 msgstr "Creare grup nou"
@@ -6992,7 +6996,7 @@ msgctxt "Label"
 msgid "Display name"
 msgstr "Nume afișat"
 
-#: ./src/app/contact/services/importContactGroups.js:17
+#: ./src/app/contact/services/importContactGroups.js:24
 msgctxt "Label"
 msgid "Do not import group"
 msgstr "Nu se importă grupul"
@@ -7135,7 +7139,7 @@ msgctxt "Label"
 msgid "Major New Features (3-4 per year)"
 msgstr "Funcții noi majore (3-4 pe an)"
 
-#: ./src/app/contact/services/importContactGroups.js:18
+#: ./src/app/contact/services/importContactGroups.js:25
 msgctxt "Label"
 msgid "Merge with existing group"
 msgstr "Îmbinare cu grupul existent"
@@ -7268,7 +7272,7 @@ msgctxt "Label"
 msgid "Sent"
 msgstr "Trimise"
 
-#: ./src/app/elements/directives/movedSelect.js:15
+#: ./src/app/elements/directives/movedSelect.js:16
 msgctxt "Label"
 msgid "Sent / Drafts folders appearance"
 msgstr "Aspect foldere Trimise/Ciorne"
@@ -7461,17 +7465,17 @@ msgctxt "Label for the message size when displaying email details"
 msgid "Size:"
 msgstr "Mărime:"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:14
+#: ./src/app/contact/modals/contactLoaderModal.js:15
 msgctxt "Label for the progress bar displayed during the contact export"
 msgid "Decrypting contacts: {{progress}}%"
 msgstr "Decriptare contacte: {{progress}} %"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:7
+#: ./src/app/contact/modals/contactLoaderModal.js:8
 msgctxt "Label for the progress bar displayed during the contact import"
 msgid "Encrypting contacts: {{progress}}%"
 msgstr "Criptare contacte: {{progress}} %"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:21
+#: ./src/app/contact/modals/contactLoaderModal.js:22
 msgctxt "Label for the progress bar displayed during the contact import"
 msgid "Upload: {{progress}}%"
 msgstr "Încărcare: {{progress}} %"
@@ -7538,22 +7542,22 @@ msgctxt "Label information"
 msgid "You can drag and drop to rearrange the order of Labels/Folders."
 msgstr "Puteți trage și plasa pentru a rearanja ordinea etichetelor/folderelor."
 
-#: ./src/app/labels/modals/labelModal.js:10
+#: ./src/app/labels/modals/labelModal.js:20
 msgctxt "Label modal"
 msgid "Folder created"
 msgstr "Folder creat"
 
-#: ./src/app/labels/modals/labelModal.js:8
+#: ./src/app/labels/modals/labelModal.js:18
 msgctxt "Label modal"
 msgid "Folder updated"
 msgstr "Folder actualizat"
 
-#: ./src/app/labels/modals/labelModal.js:11
+#: ./src/app/labels/modals/labelModal.js:21
 msgctxt "Label modal"
 msgid "Label created"
 msgstr "Etichetă creată"
 
-#: ./src/app/labels/modals/labelModal.js:9
+#: ./src/app/labels/modals/labelModal.js:19
 msgctxt "Label modal"
 msgid "Label updated"
 msgstr "Etichetă actualizată"
@@ -7588,7 +7592,7 @@ msgctxt "Link"
 msgid "Homepage"
 msgstr "Prima pagină"
 
-#: ./src/app/elements/directives/movedButton.js:6
+#: ./src/app/elements/directives/movedButton.js:8
 msgctxt "Link"
 msgid "Include moved messages"
 msgstr "Includere mesaje mutate"
@@ -7601,10 +7605,10 @@ msgctxt "Link"
 msgid "Learn More"
 msgstr "Aflați mai multe"
 
-#: ./src/app/composer/services/autoPinPrimaryKeys.js:14
+#: ./src/app/composer/services/autoPinPrimaryKeys.js:21
 #: ./src/app/search/directives/wildcardCheckbox.js:5
-#: ./src/app/ui/directives/noResults.js:5
-#: ./src/app/user/factories/storageWarning.js:12
+#: ./src/app/ui/directives/noResults.js:6
+#: ./src/app/user/factories/storageWarning.js:13
 #: ./src/templates/autoresponder/autoresponder.tpl.html:26
 #: ./src/templates/contact/contactError.tpl.html:18
 #: ./src/templates/contact/contactError.tpl.html:37
@@ -7616,7 +7620,7 @@ msgstr "Aflați mai multe"
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:9
 #: ./src/templates/modals/confirm.tpl.html:13
 #: ./src/templates/modals/expirationModal.tpl.html:43
-#: ./src/templates/user/storageWarning.tpl.html:8
+#: ./src/templates/user/storageWarningView.tpl.html:8
 #: ./src/templates/views/account.tpl.html:141
 #: ./src/templates/views/account.tpl.html:172
 #: ./src/templates/views/account.tpl.html:225
@@ -7682,12 +7686,12 @@ msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr "Adăugați un domeniu personal înainte de a configura adresele."
 
-#: ./src/app/authentication/controllers/login.js:38
+#: ./src/app/authentication/controllers/login.js:39
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr "Introduceți numele de utilizator și parola"
 
-#: ./src/app/authentication/controllers/login.js:43
+#: ./src/app/authentication/controllers/login.js:44
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr "Lipsește parola"
@@ -7713,18 +7717,18 @@ msgid "Password"
 msgstr "Parola"
 
 #: ./src/app/contact/directives/contactMimetypeSelector.js:8
-#: ./src/app/contact/factories/contactUI.js:22
+#: ./src/app/contact/factories/contactUI.js:23
 msgctxt "MIME type"
 msgid "Automatic"
 msgstr "Automat"
 
-#: ./src/app/contact/factories/contactUI.js:27
+#: ./src/app/contact/factories/contactUI.js:28
 msgctxt "MIME type"
 msgid "Default"
 msgstr "Implicit"
 
 #: ./src/app/contact/directives/contactMimetypeSelector.js:9
-#: ./src/app/contact/factories/contactUI.js:23
+#: ./src/app/contact/factories/contactUI.js:24
 msgctxt "MIME type"
 msgid "Plain Text"
 msgstr "Text simplu"
@@ -7766,12 +7770,12 @@ msgctxt "MX configuration status badge"
 msgid "Required"
 msgstr "Obligatoriu"
 
-#: ./src/app/formUtils/directives/danger.js:3
+#: ./src/app/formUtils/directives/danger.js:4
 msgctxt "Make sure the DANGER string is translated"
 msgid "DANGER"
 msgstr "PERICOL"
 
-#: ./src/app/formUtils/directives/danger.js:4
+#: ./src/app/formUtils/directives/danger.js:5
 msgctxt "Make sure the DANGER string is translated"
 msgid "Enter the word 'DANGER' here."
 msgstr "Introduceți cuvântul 'PERICOL' aici."
@@ -7796,7 +7800,7 @@ msgctxt "Memory info"
 msgid "Already used"
 msgstr "Deja folosit"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:82
+#: ./src/app/contact/modals/contactLoaderModal.js:83
 msgctxt "Merge complete"
 msgid "Merging contacts complete"
 msgstr "Unire contacte finalizată"
@@ -7806,7 +7810,7 @@ msgctxt "Merge contacts"
 msgid "Merge"
 msgstr "Unire"
 
-#: ./src/app/user/factories/generateKeyModel.js:19
+#: ./src/app/user/factories/generateKeyModel.js:28
 msgctxt "Message"
 msgid "A key with the same encryption algorithm is already active for this address.\n"
 "Generating another key will cause slower account loading and deletion of this key can cause issues.\n"
@@ -7817,22 +7821,22 @@ msgstr "O cheie cu același algoritm este deja activă pentru această adresă.\
 "Dacă generați o cheie nouă deoarece cheia veche vă este compromisă, marcați mai întâi cheia respectivă ca fiind compromisă.\n"
 "Sigur doriți să continuați?"
 
-#: ./src/app/message/services/messageBuilder.js:189
+#: ./src/app/message/services/messageBuilder.js:192
 msgctxt "Message"
 msgid "Fw:"
 msgstr "Fw:"
 
-#: ./src/app/message/services/messageBuilder.js:293
+#: ./src/app/message/services/messageBuilder.js:297
 msgctxt "Message"
 msgid "On {{date}}, {{name}} {{address}} wrote:"
 msgstr "La {{date}}, {{name}} {{address}} a scris:"
 
-#: ./src/app/message/services/messageBuilder.js:188
+#: ./src/app/message/services/messageBuilder.js:191
 msgctxt "Message"
 msgid "Re:"
 msgstr "Re:"
 
-#: ./src/app/message/factories/messageModel.js:66
+#: ./src/app/message/factories/messageModel.js:41
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr "Mesajul este gol"
@@ -7842,27 +7846,27 @@ msgctxt "Message decryption error"
 msgid "Decryption error: Decryption of this message's encryption content failed."
 msgstr "Eroare decriptare: decriptarea conținutului criptat al acestui mesaj a eșuat."
 
-#: ./src/app/message/factories/getEncryptionType.js:50
+#: ./src/app/message/factories/getEncryptionType.js:46
 msgctxt "Message encryption status"
 msgid "Encrypted message"
 msgstr "Mesaj criptat"
 
-#: ./src/app/message/factories/getEncryptionType.js:13
+#: ./src/app/message/factories/getEncryptionType.js:15
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message"
 msgstr "Mesaj criptat în ambele părți"
 
-#: ./src/app/message/factories/getEncryptionType.js:14
+#: ./src/app/message/factories/getEncryptionType.js:16
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message from verified address"
 msgstr "Mesaj criptat în ambele părți de la adresă verificată"
 
-#: ./src/app/message/factories/getEncryptionType.js:23
+#: ./src/app/message/factories/getEncryptionType.js:24
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message"
 msgstr "Mesaj criptat cu PGP"
 
-#: ./src/app/message/factories/getEncryptionType.js:24
+#: ./src/app/message/factories/getEncryptionType.js:25
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message from verified address"
 msgstr "Mesaj criptat cu PGP de la adresă verificată"
@@ -7872,29 +7876,29 @@ msgctxt "Message encryption status"
 msgid "PGP-signed message from verified address"
 msgstr "Mesaj semnat cu PGP de la adresă verificată"
 
-#: ./src/app/message/factories/getEncryptionType.js:19
-#: ./src/app/message/factories/getEncryptionType.js:25
+#: ./src/app/message/factories/getEncryptionType.js:21
+#: ./src/app/message/factories/getEncryptionType.js:26
 #: ./src/app/message/factories/getEncryptionType.js:31
-#: ./src/app/message/factories/getEncryptionType.js:37
-#: ./src/app/message/factories/getEncryptionType.js:47
+#: ./src/app/message/factories/getEncryptionType.js:36
+#: ./src/app/message/factories/getEncryptionType.js:44
 msgctxt "Message encryption status"
 msgid "Sender verification failed"
 msgstr "Verificare eșuată expeditor"
 
-#: ./src/app/message/factories/getEncryptionType.js:41
+#: ./src/app/message/factories/getEncryptionType.js:39
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail with zero access encryption"
 msgstr "Trimis de ProtonMail cu criptare cu acces zero"
 
+#: ./src/app/message/factories/getEncryptionType.js:34
 #: ./src/app/message/factories/getEncryptionType.js:35
-#: ./src/app/message/factories/getEncryptionType.js:36
 msgctxt "Message encryption status"
 msgid "Sent by you with end-to-end encryption"
 msgstr "Trimis de dvs. cu criptare în ambele părți"
 
 #: ./src/app/message/factories/getEncryptionType.js:29
-#: ./src/app/message/factories/getEncryptionType.js:45
-#: ./src/app/message/factories/getEncryptionType.js:46
+#: ./src/app/message/factories/getEncryptionType.js:42
+#: ./src/app/message/factories/getEncryptionType.js:43
 msgctxt "Message encryption status"
 msgid "Stored with zero access encryption"
 msgstr "Stocat criptat cu acces exclusiv personal"
@@ -7914,7 +7918,7 @@ msgctxt "Message for encryption contact modal"
 msgid "The email <strong>{{ ::ctrl.email }}</strong> has PGP keys set. Do you want to enable PGP encryption for this contact?"
 msgstr "Mesajul <strong>{{ ::ctrl.email }}</strong> are setate chei PGP. Doriți să activați criptarea PGP pentru acest contact?"
 
-#: ./src/app/bugReport/factories/bugReportModel.js:18
+#: ./src/app/bugReport/factories/bugReportModel.js:19
 msgctxt "Message for report phishing modal"
 msgid "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full."
 msgstr "Raportarea unui mesaj ca fiind o încercare de înșelăciune ne va trimite și nouă mesajul pentru a-l analiza și îmbunătăți filtrele noastre. Aceasta înseamnă că vom putea vedea conținutul complet al mesajului."
@@ -8025,67 +8029,67 @@ msgctxt "No recipients to display in the message header"
 msgid "Undisclosed Recipients"
 msgstr "Destinatar nedivulgat"
 
-#: ./src/app/ui/directives/noResults.js:34
+#: ./src/app/ui/directives/noResults.js:36
 msgctxt "No results heading"
 msgid "All Mail"
 msgstr "Toate mesajele"
 
-#: ./src/app/ui/directives/noResults.js:38
+#: ./src/app/ui/directives/noResults.js:40
 msgctxt "No results heading"
 msgid "Archive"
 msgstr "Arhivă"
 
-#: ./src/app/ui/directives/noResults.js:14
+#: ./src/app/ui/directives/noResults.js:16
 msgctxt "No results heading"
 msgid "Drafts"
 msgstr "Ciorne"
 
-#: ./src/app/ui/directives/noResults.js:50
+#: ./src/app/ui/directives/noResults.js:52
 msgctxt "No results heading"
 msgid "Folder"
 msgstr "Folder"
 
-#: ./src/app/ui/directives/noResults.js:10
+#: ./src/app/ui/directives/noResults.js:12
 msgctxt "No results heading"
 msgid "Inbox"
 msgstr "Primite"
 
-#: ./src/app/ui/directives/noResults.js:46
+#: ./src/app/ui/directives/noResults.js:48
 msgctxt "No results heading"
 msgid "Label"
 msgstr "Eticheta"
 
-#: ./src/app/ui/directives/noResults.js:42
+#: ./src/app/ui/directives/noResults.js:44
 msgctxt "No results heading"
 msgid "Search"
 msgstr "Căutare"
 
-#: ./src/app/ui/directives/noResults.js:18
+#: ./src/app/ui/directives/noResults.js:20
 msgctxt "No results heading"
 msgid "Sent"
 msgstr "Trimise"
 
-#: ./src/app/ui/directives/noResults.js:26
+#: ./src/app/ui/directives/noResults.js:28
 msgctxt "No results heading"
 msgid "Spam"
 msgstr "Spam"
 
-#: ./src/app/ui/directives/noResults.js:30
+#: ./src/app/ui/directives/noResults.js:32
 msgctxt "No results heading"
 msgid "Starred"
 msgstr "Marcate"
 
-#: ./src/app/ui/directives/noResults.js:22
+#: ./src/app/ui/directives/noResults.js:24
 msgctxt "No results heading"
 msgid "Trash"
 msgstr "Gunoi"
 
-#: ./src/app/filter/modals/filterModal.js:61
+#: ./src/app/filter/modals/filterModal.js:62
 msgctxt "Notification"
 msgid "Filter created"
 msgstr "Filtru creat"
 
-#: ./src/app/filter/modals/filterModal.js:60
+#: ./src/app/filter/modals/filterModal.js:61
 msgctxt "Notification"
 msgid "Filter updated"
 msgstr "Filtru actualizat"
@@ -8120,12 +8124,12 @@ msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
 msgstr "Ați deschis numărul maxim de ferestre de compunere permise"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:28
+#: ./src/app/contact/modals/contactLoaderModal.js:29
 msgctxt "Number of failed contact during merge"
 msgid "{{number}} failed to merge."
 msgstr "{{number}} contacte nu au putut fi unite."
 
-#: ./src/app/contact/modals/contactLoaderModal.js:35
+#: ./src/app/contact/modals/contactLoaderModal.js:36
 msgctxt "Number of failed contact during the contact import"
 msgid "{{number}} failed to import."
 msgstr "{{number}} contacte nu s-au importat."
@@ -8136,12 +8140,12 @@ msgctxt "Option"
 msgid "Annually"
 msgstr "Anual"
 
-#: ./src/app/elements/directives/movedSelect.js:13
+#: ./src/app/elements/directives/movedSelect.js:14
 msgctxt "Option"
 msgid "Hide Moved"
 msgstr "Ascundere mutate"
 
-#: ./src/app/elements/directives/movedSelect.js:12
+#: ./src/app/elements/directives/movedSelect.js:13
 msgctxt "Option"
 msgid "Include Moved"
 msgstr "Includere mutate"
@@ -8294,12 +8298,12 @@ msgctxt "Pikaday"
 msgid "Previous Month"
 msgstr "Luna precedentă"
 
-#: ./src/app/contact/factories/contactUI.js:18
+#: ./src/app/contact/factories/contactUI.js:19
 msgctxt "Placeholder"
 msgid "A note"
 msgstr "O notă"
 
-#: ./src/app/contact/factories/contactUI.js:19
+#: ./src/app/contact/factories/contactUI.js:20
 #: ./src/templates/contact/contactAddressInput.tpl.html:2
 msgctxt "Placeholder"
 msgid "Address"
@@ -8346,12 +8350,12 @@ msgctxt "Placeholder"
 msgid "Country"
 msgstr "Țara"
 
-#: ./src/app/contact/factories/contactUI.js:20
+#: ./src/app/contact/factories/contactUI.js:21
 msgctxt "Placeholder"
 msgid "Custom"
 msgstr "Personalizat"
 
-#: ./src/app/contact/factories/contactUI.js:21
+#: ./src/app/contact/factories/contactUI.js:22
 msgctxt "Placeholder"
 msgid "Custom field"
 msgstr "Câmp personal"
@@ -8371,7 +8375,7 @@ msgctxt "Placeholder"
 msgid "Email Address"
 msgstr "Adresa de e-mail"
 
-#: ./src/app/contact/factories/contactUI.js:15
+#: ./src/app/contact/factories/contactUI.js:16
 msgctxt "Placeholder"
 msgid "Email address"
 msgstr "Adresă e-mail"
@@ -8411,7 +8415,7 @@ msgctxt "Placeholder"
 msgid "Image URL"
 msgstr "URL imagine"
 
-#: ./src/app/contact/factories/contactUI.js:17
+#: ./src/app/contact/factories/contactUI.js:18
 msgctxt "Placeholder"
 msgid "Information"
 msgstr "Informații"
@@ -8432,7 +8436,7 @@ msgctxt "Placeholder"
 msgid "Mailbox password"
 msgstr "Parolă mesaje"
 
-#: ./src/app/contact/factories/contactUI.js:13
+#: ./src/app/contact/factories/contactUI.js:14
 #: ./src/templates/modals/label.tpl.html:29
 msgctxt "Placeholder"
 msgid "Name"
@@ -8474,7 +8478,7 @@ msgctxt "Placeholder"
 msgid "Password"
 msgstr "Parola"
 
-#: ./src/app/contact/factories/contactUI.js:16
+#: ./src/app/contact/factories/contactUI.js:17
 msgctxt "Placeholder"
 msgid "Phone number"
 msgstr "Număr telefon"
@@ -8489,7 +8493,7 @@ msgctxt "Placeholder"
 msgid "Postal code"
 msgstr "Cod poștal"
 
-#: ./src/app/contact/factories/contactUI.js:14
+#: ./src/app/contact/factories/contactUI.js:15
 msgctxt "Placeholder"
 msgid "Public key"
 msgstr "Cheie publică"
@@ -8605,17 +8609,17 @@ msgctxt "Plan feature"
 msgid "Unlimited sending"
 msgstr "Trimiteri nelimitate"
 
-#: ./src/app/dashboard/directives/vpnRow.js:24
+#: ./src/app/dashboard/directives/vpnRow.js:25
 msgctxt "ProtonVPN with X connections"
 msgid "connections"
 msgstr "conexiuni"
 
-#: ./src/app/dashboard/directives/vpnRow.js:23
+#: ./src/app/dashboard/directives/vpnRow.js:24
 msgctxt "ProtonVPN with X connections"
 msgid "with"
 msgstr "cu"
 
-#: ./src/app/composer/services/postMessage.js:24
+#: ./src/app/composer/services/postMessage.js:25
 msgctxt "Record message"
 msgid "Message saved"
 msgstr "Mesaj salvat"
@@ -8630,7 +8634,7 @@ msgctxt "Remove button for the vpn form"
 msgid "Remove VPN protection"
 msgstr "Eliminare protecție VPN"
 
-#: ./src/app/elements/services/removeElement.js:27
+#: ./src/app/elements/services/removeElement.js:28
 msgctxt "Remove element"
 msgid "{{total}} {{item}} removed"
 msgstr "{{total}} {{item}} eliminat(e)"
@@ -8641,23 +8645,23 @@ msgctxt "Reset password"
 msgid "Recovery email"
 msgstr "E-mail de recuperare"
 
-#: ./src/templates/views/reset-login-password.tpl.html:152
-#: ./src/templates/views/reset-login-password.tpl.html:153
+#: ./src/templates/views/reset-login-password.tpl.html:155
+#: ./src/templates/views/reset-login-password.tpl.html:156
 msgctxt "Reset your login"
 msgid "Confirm new password"
 msgstr "Confirmare parolă nouă"
 
-#: ./src/templates/views/reset-login-password.tpl.html:164
+#: ./src/templates/views/reset-login-password.tpl.html:167
 msgctxt "Reset your login"
 msgid "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages."
 msgstr "NU uitați această parolă. Dacă o uitați, nu vă veți mai putea conecta sau decripta mesajele."
 
-#: ./src/templates/views/reset-login-password.tpl.html:165
+#: ./src/templates/views/reset-login-password.tpl.html:168
 msgctxt "Reset your login"
 msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Salvați parola într-un loc sigur. Apăsați pe pictograma <i class=\"fa fa-eye\"></i> pentru a confirma că ați introdus corect parola."
 
-#: ./src/templates/views/reset-login-password.tpl.html:143
+#: ./src/templates/views/reset-login-password.tpl.html:146
 msgctxt "Reset your password"
 msgid "Choose a new password"
 msgstr "Alegeți parola nouă"
@@ -8706,12 +8710,12 @@ msgctxt "Select your type of OS"
 msgid "Select your client below to get started with ProtonVPN"
 msgstr "Selectaţi clientul de mai jos pentru a începe cu ProtonVPN"
 
-#: ./src/app/composer/services/sendMessage.js:27
+#: ./src/app/composer/services/sendMessage.js:28
 msgctxt "Send message"
 msgid "Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, {{link}}click here"
 msgstr "Expirarea mesajelor către destinatarii din afara ProtonMail necesită setarea unei parole pentru mesaj. Pentru mai multe informații apăsați aici: {{link}}"
 
-#: ./src/app/composer/services/sendMessage.js:26
+#: ./src/app/composer/services/sendMessage.js:27
 msgctxt "Send message"
 msgid "Message sent"
 msgstr "Mesaj trimis"
@@ -8756,17 +8760,17 @@ msgctxt "Spam filtering"
 msgid "Search Whitelist and Blacklist"
 msgstr "Căutare în lista de acceptate și blocate"
 
-#: ./src/templates/user/storageWarning.tpl.html:6
+#: ./src/templates/user/storageWarningView.tpl.html:6
 msgctxt "Storage warning"
 msgid "Storage limit reached. Unable to send or receive emails."
 msgstr "S-a atins limita spațiului de stocare. Nu se pot trimite or primi mesaje."
 
-#: ./src/app/user/factories/storageWarning.js:24
+#: ./src/app/user/factories/storageWarning.js:25
 msgctxt "Storage warning"
 msgid "You have reached 100% of your storage capacity. You won't be able to send or receive emails\n"
-"            unless you permanently delete some emails or purchase more storage. {{learnMoreLink}}."
-msgstr "Ați ocupat spațiul de stocare in proporție de 100%. Nu veți mai putea trimite or primi mesaje\n"
-"             decât dacă stergeți din mesaje sau achiziționați spațiu de stocare adițional. {{learnMoreLink}}."
+"                unless you permanently delete some emails or purchase more storage. {{learnMoreLink}}."
+msgstr "Ați ocupat spațiul de stocare în proporție de 100%. Nu veți mai putea trimite sau primi mesaje\n"
+"             decât dacă ștergeți din mesaje sau achiziționați spațiu de stocare adițional. {{learnMoreLink}}."
 
 #: ./src/app/user/factories/storageWarning.js:15
 msgctxt "Storage warning"
@@ -8775,13 +8779,13 @@ msgid "You have reached {{ percentage }}% of your storage capacity. Consider fre
 msgstr "Ați ocupat spațiul de stocare în proporție de {{ percentage }}%. Considerați ștergerea mesajelor nefolositoare\n"
 "                sau achiziționați spațiu de stocare adițional."
 
-#: ./src/app/contact/directives/contactPublicKeys.js:28
+#: ./src/app/contact/directives/contactPublicKeys.js:29
 #: ./src/app/contact/factories/contactKey.js:20
 msgctxt "String separator"
 msgid "and"
 msgstr "și"
 
-#: ./src/app/message/services/messageBuilder.js:193
+#: ./src/app/message/services/messageBuilder.js:197
 msgctxt "Subject"
 msgid "Encrypted Subject"
 msgstr "Subiect criptat"
@@ -8806,7 +8810,7 @@ msgctxt "Success"
 msgid "Allocated to admin"
 msgstr "Alocate administratorului"
 
-#: ./src/app/contact/services/manageContactGroup.js:62
+#: ./src/app/contact/services/manageContactGroup.js:63
 msgctxt "Success"
 msgid "Apply group success"
 msgid_plural "Apply {{$count}} groups success"
@@ -8814,22 +8818,22 @@ msgstr[0] "Atribuire grup cu succes"
 msgstr[1] "Atribuire {{$count}} grupuri cu succes"
 msgstr[2] "Atribuire {{$count}} de grupuri cu succes"
 
-#: ./src/app/autoresponder/services/autoresponderLanguage.js:4
+#: ./src/app/autoresponder/services/autoresponderLanguage.js:9
 msgctxt "Success"
-msgid "Autoresponder activated"
-msgstr "Autorăspunsuri activate"
+msgid "Autoresponder installed"
+msgstr "Autorăspuns instalat"
 
-#: ./src/app/autoresponder/services/autoresponderLanguage.js:5
+#: ./src/app/autoresponder/services/autoresponderLanguage.js:10
 msgctxt "Success"
 msgid "Autoresponder removed"
 msgstr "Autorăspuns eliminat"
 
-#: ./src/app/autoresponder/services/autoresponderLanguage.js:3
+#: ./src/app/autoresponder/services/autoresponderLanguage.js:8
 msgctxt "Success"
 msgid "Autoresponder updated"
 msgstr "Autorăspuns actualizat"
 
-#: ./src/app/message/directives/messagePublicKeyPinning.js:10
+#: ./src/app/message/directives/messagePublicKeyPinning.js:12
 msgctxt "Success"
 msgid "Banner permanently hidden"
 msgstr "Banner permanent ascuns"
@@ -8857,12 +8861,12 @@ msgstr[0] "Contact șters"
 msgstr[1] "Contacte șterse"
 msgstr[2] "Contacte șterse"
 
-#: ./src/app/labels/services/manageLabels.js:19
+#: ./src/app/labels/services/manageLabels.js:20
 msgctxt "Success"
 msgid "Contact group order saved"
 msgstr "Ordine grupuri salvată"
 
-#: ./src/app/message/directives/messageResign.js:6
+#: ./src/app/message/directives/messageResign.js:14
 msgctxt "Success"
 msgid "Contact re-signed"
 msgstr "Contact reînregistrat"
@@ -8882,32 +8886,32 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Domeniu verificat"
 
-#: ./src/app/settings/controllers/account.js:316
+#: ./src/app/settings/controllers/account.js:317
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Preferințe e-mail actualizate"
 
-#: ./src/app/address/directives/addressKeysView.js:61
+#: ./src/app/address/directives/addressKeysView.js:63
 msgctxt "Success"
 msgid "Encryption and signature verification disabled"
 msgstr "Criptarea și verificarea semnăturii sunt dezactivate"
 
-#: ./src/app/address/directives/addressKeysView.js:59
+#: ./src/app/address/directives/addressKeysView.js:61
 msgctxt "Success"
 msgid "Encryption disabled"
 msgstr "Criptare dezactivată"
 
-#: ./src/app/address/directives/addressKeysView.js:66
+#: ./src/app/address/directives/addressKeysView.js:68
 msgctxt "Success"
 msgid "Encryption enabled"
 msgstr "Criptare activată"
 
-#: ./src/app/settings/directives/encryptionView.js:14
+#: ./src/app/settings/directives/encryptionView.js:15
 msgctxt "Success"
 msgid "Encryption setting updated"
 msgstr "Setări criptare actualizate"
 
-#: ./src/app/settings/controllers/labels.js:126
+#: ./src/app/settings/controllers/labels.js:127
 msgctxt "Success"
 msgid "Folder deleted"
 msgstr "Folder șters"
@@ -8917,49 +8921,49 @@ msgctxt "Success"
 msgid "Folder emptied"
 msgstr "Folder golit"
 
-#: ./src/app/settings/controllers/labels.js:22
+#: ./src/app/settings/controllers/labels.js:23
 msgctxt "Success"
 msgid "Folder updated"
 msgstr "Folder actualizat"
 
-#: ./src/app/core/controllers/signup.js:24
+#: ./src/app/core/controllers/signup.js:26
 msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Cod cadou aplicat"
 
-#: ./src/app/settings/controllers/account.js:288
+#: ./src/app/settings/controllers/account.js:289
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Preferințele pentru chei rapide au fost actualizate"
 
-#: ./src/app/settings/controllers/account.js:258
-#: ./src/app/settings/controllers/account.js:267
+#: ./src/app/settings/controllers/account.js:259
+#: ./src/app/settings/controllers/account.js:268
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Preferințe imagini actualizate"
 
-#: ./src/app/address/services/deleteKeyProcess.js:34
+#: ./src/app/address/services/deleteKeyProcess.js:35
 msgctxt "Success"
 msgid "Key deleted"
 msgstr "Cheie ștearsă"
 
-#: ./src/app/address/directives/reactivateKeysBtn.js:11
+#: ./src/app/address/directives/reactivateKeysBtn.js:12
 msgctxt "Success"
 msgid "Keys reactivated"
 msgstr "Chei reactivate"
 
-#: ./src/app/settings/controllers/labels.js:136
+#: ./src/app/settings/controllers/labels.js:137
 msgctxt "Success"
 msgid "Label deleted"
 msgstr "Etichetă ștearsă"
 
-#: ./src/app/labels/services/manageLabels.js:21
-#: ./src/app/settings/controllers/labels.js:170
+#: ./src/app/labels/services/manageLabels.js:22
+#: ./src/app/settings/controllers/labels.js:171
 msgctxt "Success"
 msgid "Label order saved"
 msgstr "Ordine etichete salvată"
 
-#: ./src/app/settings/controllers/labels.js:21
+#: ./src/app/settings/controllers/labels.js:22
 msgctxt "Success"
 msgid "Label updated"
 msgstr "Etichetă actualizată"
@@ -8969,7 +8973,7 @@ msgctxt "Success"
 msgid "Message sent"
 msgstr "Mesaj trimis"
 
-#: ./src/app/settings/controllers/security.js:29
+#: ./src/app/settings/controllers/security.js:32
 msgctxt "Success"
 msgid "Other sessions revoked"
 msgstr "Alte sesiuni refuzate"
@@ -8979,19 +8983,19 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Parolă actualizată"
 
-#: ./src/app/settings/controllers/account.js:138
-#: ./src/app/settings/controllers/account.js:158
-#: ./src/app/settings/controllers/account.js:249
+#: ./src/app/settings/controllers/account.js:139
+#: ./src/app/settings/controllers/account.js:159
+#: ./src/app/settings/controllers/account.js:250
 msgctxt "Success"
 msgid "Preference saved"
 msgstr "Preferințe salvate"
 
-#: ./src/app/address/directives/addressKeysView.js:58
+#: ./src/app/address/directives/addressKeysView.js:60
 msgctxt "Success"
 msgid "Primary key changed"
 msgstr "Cheie primară modificată"
 
-#: ./src/app/address/directives/addressKeysView.js:72
+#: ./src/app/address/directives/addressKeysView.js:74
 msgctxt "Success"
 msgid "Private key imported"
 msgid_plural "{{$count}} Private keys imported"
@@ -8999,22 +9003,22 @@ msgstr[0] "Cheie privată importată"
 msgstr[1] "{{$count}} chei private importate"
 msgstr[2] "{{$count}} de chei private importate"
 
-#: ./src/app/address/directives/addressKeysView.js:80
+#: ./src/app/address/directives/addressKeysView.js:82
 msgctxt "Success"
 msgid "Private key reactivated"
 msgstr "Cheie privată reactivată"
 
-#: ./src/app/message/directives/messagePublicKeyFound.js:17
+#: ./src/app/message/directives/messagePublicKeyFound.js:19
 msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Cheie publică aprobată"
 
-#: ./src/app/settings/controllers/account.js:123
+#: ./src/app/settings/controllers/account.js:124
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "E-mail recuperare/notificare salvat"
 
-#: ./src/app/contact/services/manageContactGroup.js:71
+#: ./src/app/contact/services/manageContactGroup.js:72
 msgctxt "Success"
 msgid "Remove group success"
 msgid_plural "Remove {{$count}} groups success"
@@ -9027,22 +9031,22 @@ msgctxt "Success"
 msgid "Search parameter updated"
 msgstr "Parametri căutare actualizați"
 
-#: ./src/app/settings/controllers/security.js:30
+#: ./src/app/settings/controllers/security.js:33
 msgctxt "Success"
 msgid "Session revoked"
 msgstr "Sesiune anulată"
 
-#: ./src/app/elements/directives/movedSelect.js:14
+#: ./src/app/elements/directives/movedSelect.js:15
 msgctxt "Success"
 msgid "Setting updated"
 msgstr "Setare actualizată"
 
-#: ./src/app/address/directives/addressKeysView.js:60
+#: ./src/app/address/directives/addressKeysView.js:62
 msgctxt "Success"
 msgid "Signature verification enabled"
 msgstr "Verificare semnătură activată"
 
-#: ./src/app/contact/factories/contactSpam.js:10
+#: ./src/app/contact/factories/contactSpam.js:20
 msgctxt "Success"
 msgid "{{total}} email removed from your contacts"
 msgid_plural "{{total}} emails removed from your contacts"
@@ -9050,7 +9054,7 @@ msgstr[0] "{{total}} adresă eliminată din contacte"
 msgstr[1] "{{total}} adrese eliminate din contacte"
 msgstr[2] "{{total}} de adrese eliminate din contacte"
 
-#: ./src/app/labels/services/manageLabels.js:61
+#: ./src/app/labels/services/manageLabels.js:62
 msgctxt "Success"
 msgid "{{type}} deleted."
 msgid_plural "{{$count}} {{type}} deleted."
@@ -9058,7 +9062,7 @@ msgstr[0] "{{type}} șters."
 msgstr[1] "{{$count}}{{type}} șterse."
 msgstr[2] "{{$count}}{{type}} șterse."
 
-#: ./src/app/contact/factories/contactEditor.js:29
+#: ./src/app/contact/factories/contactEditor.js:30
 msgctxt "Success message"
 msgid "Contact edited"
 msgstr "Contact modificat"
@@ -9068,7 +9072,7 @@ msgctxt "Success message"
 msgid "Screenshot(s) attached"
 msgstr "Captură(i) de ecran adăugate"
 
-#: ./src/app/contact/modals/contactModal.js:6
+#: ./src/app/contact/modals/contactModal.js:14
 msgctxt "Success message for the contact modal"
 msgid "Contact added"
 msgstr "Contact adăugat"
@@ -9088,7 +9092,7 @@ msgctxt "Success notification"
 msgid "Email removed"
 msgstr "E-mail eliminat"
 
-#: ./src/app/bugReport/factories/bugReportModel.js:23
+#: ./src/app/bugReport/factories/bugReportModel.js:24
 msgctxt "Success notification"
 msgid "Phishing reported"
 msgstr "Înșelăciune raportată"
@@ -9098,27 +9102,27 @@ msgctxt "Success notification"
 msgid "Read receipt sent"
 msgstr "Confirmare de citire trimisă"
 
-#: ./src/app/message/factories/unsubscribeModel.js:20
+#: ./src/app/message/factories/unsubscribeModel.js:23
 msgctxt "Success notification"
 msgid "Unsubscribed"
 msgstr "Dezabonat"
 
-#: ./src/app/pmMe/factories/pmMeModel.js:27
+#: ./src/app/pmMe/factories/pmMeModel.js:28
 msgctxt "Success notification for free user after @pm.me generation"
 msgid "You can now receive email to your new {{email}} address! To send from it, please upgrade to a paid ProtonMail plan"
 msgstr "Acum puteți primi mesaje pe noua adresă {{email}}! Pentru a trimite mesaje de pe ea, treceți la un plan ProtonMail cu plată."
 
-#: ./src/app/pmMe/factories/pmMeModel.js:20
+#: ./src/app/pmMe/factories/pmMeModel.js:21
 msgctxt "Success notification for paid user after @pm.me generation"
 msgid "You can now send and receive email from your new {{email}} address!"
 msgstr "Acum puteți trimite și primi mesaje de pe adresa {{email}}!"
 
-#: ./src/app/contact/factories/contactUI.js:25
+#: ./src/app/contact/factories/contactUI.js:26
 msgctxt "TLS type"
 msgid "Opportunistic"
 msgstr "Oportunist"
 
-#: ./src/app/contact/factories/contactUI.js:24
+#: ./src/app/contact/factories/contactUI.js:25
 msgctxt "TLS type"
 msgid "Require"
 msgstr "Solicitare"
@@ -9242,7 +9246,7 @@ msgstr "Teme adiționale"
 #: ./src/templates/contact/contactGroupModal.tpl.html:78
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:6
 #: ./src/templates/modals/domain/address.tpl.html:31
-#: ./src/templates/modals/generate.tpl.html:49
+#: ./src/templates/modals/generate.tpl.html:54
 #: ./src/templates/search/searchForm.tpl.html:111
 #: ./src/templates/views/domains.tpl.html:196
 msgctxt "Title"
@@ -9395,7 +9399,7 @@ msgstr "Salvare automată contacte"
 #: ./src/templates/utils/printMessage.tpl.html:29
 msgctxt "Title"
 msgid "BCC"
-msgstr "BCC"
+msgstr "CA"
 
 #: ./src/templates/squire/colorPopover.tpl.html:5
 msgctxt "Title"
@@ -9474,7 +9478,7 @@ msgctxt "Title"
 msgid "Change Password"
 msgstr "Schimbare parolă"
 
-#: ./src/app/members/services/memberActions.js:31
+#: ./src/app/members/services/memberActions.js:32
 msgctxt "Title"
 msgid "Change Role"
 msgstr "Schimbare rol"
@@ -9523,7 +9527,7 @@ msgctxt "Title"
 msgid "Confirm Reset Password"
 msgstr "Confirmare resetare parolă"
 
-#: ./src/app/dashboard/factories/downgrade.js:13
+#: ./src/app/dashboard/factories/downgrade.js:14
 msgctxt "Title"
 msgid "Confirm downgrade"
 msgstr "Confirmare modificare ofertă"
@@ -9602,12 +9606,12 @@ msgctxt "Title"
 msgid "Create Contact"
 msgstr "Creare contact"
 
-#: ./src/app/labels/modals/labelModal.js:6
+#: ./src/app/labels/modals/labelModal.js:16
 msgctxt "Title"
 msgid "Create new folder"
 msgstr "Creare folder"
 
-#: ./src/app/labels/modals/labelModal.js:7
+#: ./src/app/labels/modals/labelModal.js:17
 msgctxt "Title"
 msgid "Create new label"
 msgstr "Creare etichetă"
@@ -9706,7 +9710,7 @@ msgstr "Decriptare mesaj"
 
 #: ./src/app/composer/controllers/composeMessage.js:583
 #: ./src/app/contact/factories/contactEditor.js:338
-#: ./src/app/elements/services/removeElement.js:15
+#: ./src/app/elements/services/removeElement.js:16
 msgctxt "Title"
 msgid "Delete"
 msgstr "Ștergere"
@@ -9726,7 +9730,7 @@ msgctxt "Title"
 msgid "Delete account"
 msgstr "Ștergere cont"
 
-#: ./src/app/address/factories/addressModel.js:47
+#: ./src/app/address/factories/addressModel.js:48
 msgctxt "Title"
 msgid "Delete address"
 msgstr "Ștergere adresă"
@@ -9742,12 +9746,12 @@ msgctxt "Title"
 msgid "Delete domain"
 msgstr "Ștergere domeniu"
 
-#: ./src/app/settings/controllers/labels.js:114
+#: ./src/app/settings/controllers/labels.js:115
 msgctxt "Title"
 msgid "Delete folder"
 msgstr "Ștergere folder"
 
-#: ./src/app/settings/controllers/labels.js:115
+#: ./src/app/settings/controllers/labels.js:116
 msgctxt "Title"
 msgid "Delete label"
 msgstr "Ștergere etichetă"
@@ -9757,17 +9761,17 @@ msgctxt "Title"
 msgid "Delete payment method"
 msgstr "Ștergere metodă de plată"
 
-#: ./src/app/members/services/memberActions.js:70
+#: ./src/app/members/services/memberActions.js:71
 msgctxt "Title"
 msgid "Delete user"
 msgstr "Ștergere utilizator"
 
-#: ./src/app/contact/services/manageContactGroup.js:56
+#: ./src/app/contact/services/manageContactGroup.js:57
 msgctxt "Title"
 msgid "Delete {{Name}} from the group"
 msgstr "Eliminare {{Name}} din grup"
 
-#: ./src/app/labels/services/manageLabels.js:68
+#: ./src/app/labels/services/manageLabels.js:69
 msgctxt "Title"
 msgid "Delete {{type}}"
 msgstr "Eliminare {{type}}"
@@ -9783,12 +9787,12 @@ msgctxt "Title"
 msgid "Digital signature verified"
 msgstr "Semnătură digitală verificată"
 
-#: ./src/app/settings/controllers/security.js:20
+#: ./src/app/settings/controllers/security.js:23
 msgctxt "Title"
 msgid "Disable Two-Factor Authentication"
 msgstr "Dezactivare autentificare cu doi factori"
 
-#: ./src/app/address/factories/addressModel.js:43
+#: ./src/app/address/factories/addressModel.js:44
 msgctxt "Title"
 msgid "Disable address"
 msgstr "Dezactivare adresă"
@@ -9803,7 +9807,7 @@ msgctxt "Title"
 msgid "Display name"
 msgstr "Nume afișat"
 
-#: ./src/app/composer/services/autoPinPrimaryKeys.js:25
+#: ./src/app/composer/services/autoPinPrimaryKeys.js:33
 msgctxt "Title"
 msgid "Do you want to re-sign the contact?"
 msgstr "Doriți să reînregistrați contactul?"
@@ -9813,7 +9817,7 @@ msgctxt "Title"
 msgid "Do you want to remove contact(s) ?"
 msgstr "Doriți să eliminați contactul(ele)?"
 
-#: ./src/app/composer/services/autoPinPrimaryKeys.js:17
+#: ./src/app/composer/services/autoPinPrimaryKeys.js:22
 msgctxt "Title"
 msgid "Do you want to trust the primary key?"
 msgstr "Doriți să aprobați cheia primară?"
@@ -9861,12 +9865,12 @@ msgctxt "Title"
 msgid "Drafts"
 msgstr "Ciorne"
 
-#: ./src/app/labels/modals/labelModal.js:4
+#: ./src/app/labels/modals/labelModal.js:14
 msgctxt "Title"
 msgid "Edit folder"
 msgstr "Editare folder"
 
-#: ./src/app/labels/modals/labelModal.js:5
+#: ./src/app/labels/modals/labelModal.js:15
 msgctxt "Title"
 msgid "Edit label"
 msgstr "Editare etichetă"
@@ -9939,7 +9943,7 @@ msgctxt "Title"
 msgid "Error"
 msgstr "Eroare"
 
-#: ./src/app/attachments/services/attachmentDownloader.js:38
+#: ./src/app/attachments/services/attachmentDownloader.js:39
 msgctxt "Title"
 msgid "Error decrypting attachment"
 msgstr "Eroare la decriptarea atașamentelor"
@@ -10029,12 +10033,12 @@ msgctxt "Title"
 msgid "General"
 msgstr "Generale"
 
-#: ./src/templates/views/reset-login-password.tpl.html:197
+#: ./src/templates/views/reset-login-password.tpl.html:200
 msgctxt "Title"
 msgid "Generating keys"
 msgstr "Generare chei"
 
-#: ./src/templates/views/reset-login-password.tpl.html:181
+#: ./src/templates/views/reset-login-password.tpl.html:184
 #: ./src/templates/views/setup.tpl.html:77
 #: ./src/templates/views/signup.tpl.html:12
 msgctxt "Title"
@@ -10119,7 +10123,7 @@ msgctxt "Title"
 msgid "Identity"
 msgstr "Identitate"
 
-#: ./src/app/attachments/factories/attachmentModel.js:28
+#: ./src/app/attachments/factories/attachmentModel.js:32
 msgctxt "Title"
 msgid "Image"
 msgstr "Imagine"
@@ -10156,7 +10160,7 @@ msgctxt "Title"
 msgid "Key Activation"
 msgstr "Cheie de activare"
 
-#: ./src/app/address/services/deleteKeyProcess.js:25
+#: ./src/app/address/services/deleteKeyProcess.js:26
 msgctxt "Title"
 msgid "Key backup"
 msgstr "Conservare cheie"
@@ -10185,7 +10189,7 @@ msgctxt "Title"
 msgid "Keyboard Shortcuts"
 msgstr "Combinații taste"
 
-#: ./src/app/composer/services/validateMessage.js:67
+#: ./src/app/composer/services/validateMessage.js:68
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:68
 #: ./src/app/ui/factories/pageTitlesModel.js:44
 msgctxt "Title"
@@ -10232,7 +10236,7 @@ msgctxt "Title"
 msgid "Location"
 msgstr "Amplasare"
 
-#: ./src/templates/views/reset-login-password.tpl.html:205
+#: ./src/templates/views/reset-login-password.tpl.html:208
 msgctxt "Title"
 msgid "Logging in to your account"
 msgstr "Conectare în cont"
@@ -10266,7 +10270,7 @@ msgctxt "Title"
 msgid "Manage your email with folders and labels"
 msgstr "Gestionare mesaje cu foldere și etichete"
 
-#: ./src/app/contact/factories/contactMerger.js:20
+#: ./src/app/contact/factories/contactMerger.js:21
 msgctxt "Title"
 msgid "Merge contacts"
 msgstr "Îmbinare contacte"
@@ -10302,7 +10306,7 @@ msgctxt "Title"
 msgid "Name"
 msgstr "Nume"
 
-#: ./src/app/address/factories/addressModel.js:51
+#: ./src/app/address/factories/addressModel.js:52
 #: ./src/app/ui/factories/pageTitlesModel.js:53
 msgctxt "Title"
 msgid "Name / Signature"
@@ -10313,7 +10317,7 @@ msgctxt "Title"
 msgid "Navigation"
 msgstr "Navigare"
 
-#: ./src/app/address/directives/addressKeysView.js:69
+#: ./src/app/address/directives/addressKeysView.js:71
 msgctxt "Title"
 msgid "New Address Key ({{ email }})"
 msgstr "Cheie nouă adresă ({{ email }})"
@@ -10323,22 +10327,22 @@ msgctxt "Title"
 msgid "New message"
 msgstr "Mesaj nou"
 
-#: ./src/templates/views/reset-login-password.tpl.html:142
+#: ./src/templates/views/reset-login-password.tpl.html:145
 msgctxt "Title"
 msgid "New password:"
 msgstr "Parolă nouă:"
 
-#: ./src/app/ui/directives/noResults.js:70
+#: ./src/app/ui/directives/noResults.js:72
 msgctxt "Title"
 msgid "No conversations"
 msgstr "Nu există conversații"
 
-#: ./src/app/ui/directives/noResults.js:72
+#: ./src/app/ui/directives/noResults.js:74
 msgctxt "Title"
 msgid "No messages"
 msgstr "Nu sunt mesaje"
 
-#: ./src/app/composer/services/validateMessage.js:59
+#: ./src/app/composer/services/validateMessage.js:60
 msgctxt "Title"
 msgid "No subject"
 msgstr "Fără subiect"
@@ -10518,7 +10522,7 @@ msgctxt "Title"
 msgid "Private Key password required"
 msgstr "Parolă cheie privată obligatorie"
 
-#: ./src/app/members/services/memberActions.js:54
+#: ./src/app/members/services/memberActions.js:55
 msgctxt "Title"
 msgid "Privatize User"
 msgstr "Convertire în privat"
@@ -10570,7 +10574,7 @@ msgctxt "Title"
 msgid "Recovery email (optional)"
 msgstr "E-mail de recuperare (opțional)"
 
-#: ./src/templates/views/reset-login-password.tpl.html:209
+#: ./src/templates/views/reset-login-password.tpl.html:212
 msgctxt "Title"
 msgid "Redirecting"
 msgstr "Redirecționare"
@@ -10580,7 +10584,7 @@ msgctxt "Title"
 msgid "Release notes"
 msgstr "Note de lansare"
 
-#: ./src/app/members/services/memberActions.js:62
+#: ./src/app/members/services/memberActions.js:63
 msgctxt "Title"
 msgid "Remove user"
 msgstr "Eliminare utilizator"
@@ -10595,13 +10599,13 @@ msgctxt "Title"
 msgid "Request timed out, please try again."
 msgstr "Solicitare expirată, încercați din nou."
 
-#: ./src/templates/views/reset-login-password.tpl.html:139
-#: ./src/templates/views/reset-login-password.tpl.html:52
+#: ./src/templates/views/reset-login-password.tpl.html:142
+#: ./src/templates/views/reset-login-password.tpl.html:55
 msgctxt "Title"
 msgid "Reset Password"
 msgstr "Resetare parolă"
 
-#: ./src/templates/views/reset-login-password.tpl.html:70
+#: ./src/templates/views/reset-login-password.tpl.html:73
 msgctxt "Title"
 msgid "Reset code:"
 msgstr "Cod de resetare:"
@@ -10612,8 +10616,8 @@ msgctxt "Title"
 msgid "Reset/notification email"
 msgstr "E-mail de resetare/notificare"
 
-#: ./src/templates/views/reset-login-password.tpl.html:191
-#: ./src/templates/views/reset-login-password.tpl.html:201
+#: ./src/templates/views/reset-login-password.tpl.html:194
+#: ./src/templates/views/reset-login-password.tpl.html:204
 msgctxt "Title"
 msgid "Resetting your password"
 msgstr "Resetare parolă conectare"
@@ -10651,7 +10655,7 @@ msgctxt "Title"
 msgid "Search"
 msgstr "Căutare"
 
-#: ./src/app/search/directives/searchContact.js:5
+#: ./src/app/search/directives/searchContact.js:6
 msgctxt "Title"
 msgid "Search contacts"
 msgstr "Căutare contacte"
@@ -10734,7 +10738,7 @@ msgctxt "Title"
 msgid "Setting up account"
 msgstr "Setare cont"
 
-#: ./src/app/user/modals/generateModal.js:21
+#: ./src/app/user/modals/generateModal.js:22
 msgctxt "Title"
 msgid "Setting up your Addresses"
 msgstr "Configurare adresă"
@@ -10775,7 +10779,7 @@ msgctxt "Title"
 msgid "Signup"
 msgstr "Înscriere"
 
-#: ./src/app/user/factories/generateKeyModel.js:18
+#: ./src/app/user/factories/generateKeyModel.js:27
 msgctxt "Title"
 msgid "Similar Key Already Active!"
 msgstr "Cheie similară deja activă!"
@@ -10802,11 +10806,17 @@ msgctxt "Title"
 msgid "Start date"
 msgstr "Dată început"
 
+#. form option heading
+#: ./src/templates/modals/generate.tpl.html:34
+msgctxt "Title"
+msgid "State-of-the-art"
+msgstr "De ultimă oră"
+
 #. table heading
 #. table heading for the domains page table listing of addresses
 #: ./src/templates/address/addressKeysView.tpl.html:48
 #: ./src/templates/invoices/invoiceList.tpl.html:9
-#: ./src/templates/modals/generate.tpl.html:50
+#: ./src/templates/modals/generate.tpl.html:55
 #: ./src/templates/views/domains.tpl.html:197
 msgctxt "Title"
 msgid "Status"
@@ -10845,7 +10855,7 @@ msgctxt "Title"
 msgid "Thank you for your subscription!"
 msgstr "Vă mulțumim pentru abonare!"
 
-#: ./src/app/user/directives/signupPayForm.js:21
+#: ./src/app/user/directives/signupPayForm.js:30
 msgctxt "Title"
 msgid "Thank you for your support!"
 msgstr "Vă mulțumim pentru suport!"
@@ -10927,7 +10937,7 @@ msgctxt "Title"
 msgid "Type"
 msgstr "Tip"
 
-#: ./src/app/message/directives/unsubscribePanel.js:14
+#: ./src/app/message/directives/unsubscribePanel.js:22
 msgctxt "Title"
 msgid "Unsubscribe from mailing list?"
 msgstr "Vă dezabonați de la lista de discuții?"
@@ -10975,7 +10985,7 @@ msgctxt "Title"
 msgid "Username and domain"
 msgstr "Nume de utilizator și domeniu"
 
-#: ./src/templates/views/reset-login-password.tpl.html:55
+#: ./src/templates/views/reset-login-password.tpl.html:58
 msgctxt "Title"
 msgid "Username:"
 msgstr "Nume utilizator:"
@@ -11005,10 +11015,10 @@ msgctxt "Title"
 msgid "Verify"
 msgstr "Verificare"
 
-#: ./src/app/address/services/deleteKeyProcess.js:17
+#: ./src/app/address/services/deleteKeyProcess.js:18
 #: ./src/app/user/directives/signupUserForm.js:4
-#: ./src/app/user/factories/storageWarning.js:35
-#: ./src/templates/views/reset-login-password.tpl.html:104
+#: ./src/app/user/factories/storageWarning.js:37
+#: ./src/templates/views/reset-login-password.tpl.html:107
 msgctxt "Title"
 msgid "Warning"
 msgstr "Avertizare"
@@ -11038,7 +11048,7 @@ msgctxt "Title"
 msgid "Without Attachments"
 msgstr "Fără atașamente"
 
-#: ./src/app/address/directives/addressKeysView.js:53
+#: ./src/app/address/directives/addressKeysView.js:55
 msgctxt "Title"
 msgid "You can generate a new encryption key if you think your previous key has been compromised."
 msgstr "Puteți genera o nouă cheie de criptare dacă credeți că cea anterioară a fost compromisă."
@@ -11048,17 +11058,17 @@ msgctxt "Title"
 msgid "You now have an encrypted email account!"
 msgstr "Acum aveți un cont de e-mail criptat!"
 
-#: ./src/app/labels/services/manageLabels.js:16
+#: ./src/app/labels/services/manageLabels.js:17
 msgctxt "Title"
 msgid "contact group"
 msgstr "grup contacte"
 
-#: ./src/app/labels/services/manageLabels.js:14
+#: ./src/app/labels/services/manageLabels.js:15
 msgctxt "Title"
 msgid "folder"
 msgstr "folder"
 
-#: ./src/app/labels/services/manageLabels.js:15
+#: ./src/app/labels/services/manageLabels.js:16
 msgctxt "Title"
 msgid "label"
 msgstr "etichetă"
@@ -11095,7 +11105,7 @@ msgstr[0] "{{$count}} conexiune VPN"
 msgstr[1] "{{$count}} conexiuni VPN"
 msgstr[2] "{{$count}} de conexiuni VPN"
 
-#: ./src/app/contact/services/manageContactGroup.js:55
+#: ./src/app/contact/services/manageContactGroup.js:56
 msgctxt "Title"
 msgid "{{Name}} deleted"
 msgstr "{{Name}} șters"
@@ -11115,7 +11125,7 @@ msgctxt "Title for contact modal"
 msgid "Save Changes?"
 msgstr "Salvare modificări?"
 
-#: ./src/app/bugReport/factories/bugReportModel.js:17
+#: ./src/app/bugReport/factories/bugReportModel.js:18
 msgctxt "Title for report phishing modal"
 msgid "Confirm phishing report"
 msgstr "Confirmare raportare înșelăciune"
@@ -11125,17 +11135,17 @@ msgctxt "Title for the PGP modal"
 msgid "Message headers"
 msgstr "Antete mesaje"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:66
+#: ./src/app/contact/modals/contactLoaderModal.js:67
 msgctxt "Title for the contacts exporter modal"
 msgid "Exporting Contacts"
 msgstr "Exportare contacte"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:51
+#: ./src/app/contact/modals/contactLoaderModal.js:52
 msgctxt "Title for the contacts exporter modal"
 msgid "Importing Contacts"
 msgstr "Importare contacte"
 
-#: ./src/app/contact/modals/contactLoaderModal.js:75
+#: ./src/app/contact/modals/contactLoaderModal.js:76
 msgctxt "Title for the contacts merging modal"
 msgid "Merging contacts"
 msgstr "Unire contacte"
@@ -11155,7 +11165,7 @@ msgctxt "Title in the address modal"
 msgid "Name / Signature"
 msgstr "Nume/semnătura"
 
-#: ./src/app/invoices/factories/invoiceModel.js:6
+#: ./src/app/invoices/factories/invoiceModel.js:13
 msgctxt "Title invoice PDF"
 msgid "Invoice"
 msgstr "Factura"
@@ -11166,13 +11176,13 @@ msgid "Pasted-image"
 msgstr "Imagine inserată"
 
 #. reset warning 3/3
-#: ./src/templates/views/reset-login-password.tpl.html:108
+#: ./src/templates/views/reset-login-password.tpl.html:111
 msgctxt "To continue, type DANGER below:"
 msgid "To continue, type"
 msgstr "Pentru a continua, scrieți"
 
 #. reset warning 3/3
-#: ./src/templates/views/reset-login-password.tpl.html:110
+#: ./src/templates/views/reset-login-password.tpl.html:113
 msgctxt "To continue, type DANGER below:"
 msgid "below:"
 msgstr "mai jos:"
@@ -11273,11 +11283,21 @@ msgctxt "Tooltip"
 msgid "Edit contact"
 msgstr "Editare contact"
 
-#: ./src/templates/contact/contactViewDetail.tpl.html:34
-#: ./src/templates/contact/contactViewDetail.tpl.html:37
+#: ./src/templates/contact/contactViewDetail.tpl.html:35
+#: ./src/templates/contact/contactViewDetail.tpl.html:38
 msgctxt "Tooltip"
 msgid "Encrypted data with verified digital signature"
 msgstr "Date criptate cu semnătură digitală verificată"
+
+#: ./src/app/ui/services/encryptionStatus.js:45
+msgctxt "Tooltip"
+msgid "End-to-end encrypted"
+msgstr "Criptare la ambele capete"
+
+#: ./src/app/ui/services/encryptionStatus.js:44
+msgctxt "Tooltip"
+msgid "End-to-end encrypted to verified recipient"
+msgstr "Criptare la ambele capete la destinatar verificat"
 
 #: ./src/templates/views/setup.tpl.html:41
 msgctxt "Tooltip"
@@ -11304,6 +11324,11 @@ msgctxt "Tooltip"
 msgid "It is allowed to encrypt with this key"
 msgstr "Cu această cheie este permisă criptarea"
 
+#: ./src/app/ui/services/encryptionStatus.js:41
+msgctxt "Tooltip"
+msgid "Loading encryption info..."
+msgstr "Încărcare informații criptare..."
+
 #: ./src/templates/views/outside.unlock.tpl.html:15
 msgctxt "Tooltip"
 msgid "Message password"
@@ -11328,6 +11353,16 @@ msgstr "Mutare adresă în lista altele"
 msgctxt "Tooltip"
 msgid "Number of VPN connections which can be assigned to users."
 msgstr "Numărul de conexiuni VPN ce poate fi atribuit utilizatorilor."
+
+#: ./src/app/ui/services/encryptionStatus.js:43
+msgctxt "Tooltip"
+msgid "PGP-encrypted"
+msgstr "Criptat cu PGP"
+
+#: ./src/app/ui/services/encryptionStatus.js:42
+msgctxt "Tooltip"
+msgid "PGP-signed"
+msgstr "Semnat cu PGP"
 
 #: ./src/templates/contact/contactEncryptToggle.tpl.html:4
 msgctxt "Tooltip"
@@ -11427,7 +11462,7 @@ msgctxt "Tooltip default pgp scheme"
 msgid "Select the default PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info."
 msgstr "Selectare schemă PGP implicită ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple. Apăsați pentru mai multe informații."
 
-#: ./src/app/authentication/factories/activeSessionsModel.js:6
+#: ./src/app/authentication/factories/activeSessionsModel.js:15
 msgctxt "Tooltip display per session"
 msgid "Created on {{ date }}"
 msgstr "Creat la {{ date }}"
@@ -11489,7 +11524,7 @@ msgctxt "Two-factor code field"
 msgid "Two-factor passcode"
 msgstr "Parolă doi factori"
 
-#: ./src/app/elements/services/removeElement.js:24
+#: ./src/app/elements/services/removeElement.js:25
 msgctxt "Type element"
 msgid "conversation"
 msgid_plural "conversations"
@@ -11497,7 +11532,7 @@ msgstr[0] "conversație"
 msgstr[1] "conversații"
 msgstr[2] "de conversații"
 
-#: ./src/app/elements/services/removeElement.js:23
+#: ./src/app/elements/services/removeElement.js:24
 msgctxt "Type element"
 msgid "message"
 msgid_plural "messages"
@@ -11506,7 +11541,7 @@ msgstr[1] "mesaje"
 msgstr[2] "de mesaje"
 
 #: ./src/app/dnd/factories/ptDndNotification.js:15
-#: ./src/app/dnd/services/actionDnd.js:21
+#: ./src/app/dnd/services/actionDnd.js:22
 msgctxt "Type of item"
 msgid "conversation"
 msgid_plural "conversations"
@@ -11515,7 +11550,7 @@ msgstr[1] "conversații"
 msgstr[2] "de conversații"
 
 #: ./src/app/dnd/factories/ptDndNotification.js:14
-#: ./src/app/dnd/services/actionDnd.js:20
+#: ./src/app/dnd/services/actionDnd.js:21
 msgctxt "Type of item"
 msgid "message"
 msgid_plural "messages"
@@ -11553,27 +11588,27 @@ msgctxt "Type of label for a message/conversation"
 msgid "In trash"
 msgstr "În gunoi"
 
-#: ./src/app/message/services/messageBuilder.js:194
+#: ./src/app/message/services/messageBuilder.js:198
 msgctxt "Use encrypted subject as subject"
 msgid "Yes"
 msgstr "Da"
 
-#: ./src/app/message/services/messageBuilder.js:195
+#: ./src/app/message/services/messageBuilder.js:199
 msgctxt "Use unencrypted subject as subject"
 msgid "No"
 msgstr "Nu"
 
-#: ./src/app/members/factories/memberModel.js:14
+#: ./src/app/members/factories/memberModel.js:15
 msgctxt "User role"
 msgid "Admin"
 msgstr "Admin"
 
-#: ./src/app/members/factories/memberModel.js:15
+#: ./src/app/members/factories/memberModel.js:16
 msgctxt "User role"
 msgid "Member"
 msgstr "Membru"
 
-#: ./src/app/user/directives/identitySection.js:14
+#: ./src/app/user/directives/identitySection.js:15
 msgctxt "User's signature"
 msgid "Name / Signature saved"
 msgstr "Nume/Semnătură salvate"
@@ -11790,12 +11825,12 @@ msgctxt "VCard key name"
 msgid "Work"
 msgstr "Serviciu"
 
-#: ./src/templates/authentication/loginForm.tpl.html:90
+#: ./src/templates/authentication/loginForm.tpl.html:92
 msgctxt "Want to test the latest features? Log in on BETA"
 msgid "BETA"
 msgstr "BETA"
 
-#: ./src/templates/authentication/loginForm.tpl.html:90
+#: ./src/templates/authentication/loginForm.tpl.html:92
 msgctxt "Want to test the latest features? Log in on BETA"
 msgid "Want to test the latest features? Log in on"
 msgstr "Doriți să testați ultimele noutăți? Conectați-vă în"
@@ -11815,7 +11850,7 @@ msgctxt "Warning"
 msgid "Please disable PGP Sending for the following recipients"
 msgstr "Dezactivați trimiterea PGP pentru următorii destinatari"
 
-#: ./src/app/composer/services/autoPinPrimaryKeys.js:27
+#: ./src/app/composer/services/autoPinPrimaryKeys.js:36
 msgctxt "Warning"
 msgid "The verification of {{ emails }} has failed: the contact is not signed correctly.\n"
 "                    You must re-sign the contact in order to send a message to this address or edit the contact. This can also happen when\n"
@@ -11925,7 +11960,7 @@ msgctxt "configuration status badge"
 msgid "Not set"
 msgstr "Nesetat"
 
-#: ./src/app/commons/directives/appCopyright.js:5
+#: ./src/app/commons/directives/appCopyright.js:6
 msgctxt "copyright"
 msgid "ProtonMail.com - Made globally, hosted in Switzerland."
 msgstr "ProtonMail.com - Realizat global, găzduit în Elveția."
@@ -11999,32 +12034,32 @@ msgctxt "domains list"
 msgid "No custom domain found"
 msgstr "Nu s-au găsit domenii personale"
 
-#: ./src/app/labels/directives/dropdownLabels.js:7
+#: ./src/app/labels/directives/dropdownLabels.js:8
 msgctxt "dropdown label"
 msgid "Label Saved"
 msgstr "Etichetă salvată"
 
-#: ./src/app/labels/directives/dropdownLabels.js:6
+#: ./src/app/labels/directives/dropdownLabels.js:7
 msgctxt "dropdown label"
 msgid "Labels Saved"
 msgstr "Etichete salvate"
 
-#: ./src/app/contact/factories/contactEditor.js:28
+#: ./src/app/contact/factories/contactEditor.js:29
 msgctxt "error message"
 msgid "Error creating a contact"
 msgstr "Eroare creare contact"
 
-#: ./src/app/utils/filters/humanSize.js:17
+#: ./src/app/utils/filters/humanSize.js:16
 msgctxt "fileSize format"
 msgid "GB"
 msgstr "GB"
 
-#: ./src/app/utils/filters/humanSize.js:15
+#: ./src/app/utils/filters/humanSize.js:14
 msgctxt "fileSize format"
 msgid "KB"
 msgstr "KB"
 
-#: ./src/app/utils/filters/humanSize.js:16
+#: ./src/app/utils/filters/humanSize.js:15
 msgctxt "fileSize format"
 msgid "MB"
 msgstr "MB"
@@ -12064,22 +12099,22 @@ msgctxt "key flag info"
 msgid "This key cannot be used for encryption"
 msgstr "Această cheie nu poate fi folosită pentru criptare"
 
-#: ./src/templates/modals/generate.tpl.html:62
+#: ./src/templates/modals/generate.tpl.html:67
 msgctxt "key generation progrss"
 msgid "Done"
 msgstr "Gata"
 
-#: ./src/templates/modals/generate.tpl.html:61
+#: ./src/templates/modals/generate.tpl.html:66
 msgctxt "key generation progrss"
 msgid "Generating"
 msgstr "Se generează"
 
-#: ./src/templates/modals/generate.tpl.html:60
+#: ./src/templates/modals/generate.tpl.html:65
 msgctxt "key generation progrss"
 msgid "Queued"
 msgstr "În așteptare"
 
-#: ./src/templates/modals/generate.tpl.html:63
+#: ./src/templates/modals/generate.tpl.html:68
 msgctxt "key generation progrss"
 msgid "Saved"
 msgstr "Salvată"
@@ -12106,7 +12141,7 @@ msgctxt "month price"
 msgid "/mo"
 msgstr "/lună"
 
-#: ./src/app/dnd/services/actionDnd.js:18
+#: ./src/app/dnd/services/actionDnd.js:19
 msgctxt "notification drag and drop"
 msgid "Apply label"
 msgstr "Aplicare etichetă"
@@ -12116,7 +12151,7 @@ msgctxt "notification drag and drop"
 msgid "Move {{total}} {{type}}"
 msgstr "Mutare {{total}} {{type}}"
 
-#: ./src/app/dnd/services/actionDnd.js:22
+#: ./src/app/dnd/services/actionDnd.js:23
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Marcare {{total}} {{type}}"
@@ -12131,22 +12166,22 @@ msgctxt "printed message info"
 msgid "Sent:"
 msgstr "Trimis:"
 
-#: ./src/templates/views/reset-login-password.tpl.html:124
+#: ./src/templates/views/reset-login-password.tpl.html:127
 msgctxt "reset password"
 msgid "If you are resetting the Login password only, old messages can be recovered later if you know your existing Mailbox Password. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "Dacă resetați doar parola de conectare, mesajele vechi pot fi recuperate mai târziu dacă știți parola actuală a mesajelor. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Aflați mai multe</a>."
 
-#: ./src/templates/views/reset-login-password.tpl.html:117
+#: ./src/templates/views/reset-login-password.tpl.html:120
 msgctxt "reset password"
 msgid "If you remember your old password later, you can recover your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "Dacă vă mai amintiți ulterior vechea parolă, vă puteți recupera mesajele existente. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Aflați mai multe</a>."
 
-#: ./src/templates/views/reset-login-password.tpl.html:123
+#: ./src/templates/views/reset-login-password.tpl.html:126
 msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will make old messages unreadable."
 msgstr "Resetând fie parola de conectare fie cea a mesajelor va face imposibilă citirea mesajelor vechi."
 
-#: ./src/templates/views/reset-login-password.tpl.html:122
+#: ./src/templates/views/reset-login-password.tpl.html:125
 msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will switch you to <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Single Password Mode</a>."
 msgstr "Resetând fie parola de conectare, fie cea a mesajelor, veți fi comutat la <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Modul cu parolă unică</a>."
