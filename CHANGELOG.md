@@ -1,3 +1,17 @@
+# [3.15.24] - 2019-04-03
+
+## Fixed
+
+- 'Show attachments' button was missing in the composer
+- Label and Folder creation caused some issues with the notification toggle for Folders
+- Signup on IE11 was not working properly in some cases
+- Set up account panel was not centered in mobile view
+- Labels weren't displayed properly on IE
+
+## Added
+
+- Missing translations in Polish
+
 # [3.15.23] - 2019-03-28
 
 ## Fixed
