@@ -19,13 +19,11 @@ const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOu
     };
 
     const handleClickOutside = (event) => {
-        if (open) {
-            // Do nothing if clicking ref's element or descendent elements
-            if (!autoCloseOutside || !wrapperRef.current || wrapperRef.current.contains(event.target)) {
-                return;
-            }
-            setOpen(false);
+        // Do nothing if clicking ref's element or descendent elements
+        if (!autoCloseOutside || !wrapperRef.current || wrapperRef.current.contains(event.target)) {
+            return;
         }
+        setOpen(false);
     };
 
     const handleClickContent = () => {
