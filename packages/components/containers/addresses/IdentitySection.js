@@ -36,14 +36,14 @@ const IdentitySection = () => {
                 </Label>
                 <div className="flex flex-spacebetween">
                     <Text>{address.DisplayName}</Text>
-                    <SmallButton onClick={open}>{c('Action').t`Edit`}</SmallButton>
+                    <SmallButton className="pm-button--primary" onClick={open}>{c('Action').t`Edit`}</SmallButton>
                 </div>
             </Row>
             <Row>
                 <Label>{c('Label').t`Signature`}</Label>
-                <div className="flex flex-spacebetween">
-                    <div className="pm-label" dangerouslySetInnerHTML={{ __html: address.Signature }} />
-                    <SmallButton onClick={open}>{c('Action').t`Edit`}</SmallButton>
+                <div>
+                    <div className="pm-label mb1" dangerouslySetInnerHTML={{ __html: address.Signature }} />
+                    <SmallButton className="pm-button--primary" onClick={open}>{c('Action').t`Edit`}</SmallButton>
                 </div>
             </Row>
             <Row>
