@@ -211,6 +211,13 @@ $width: 5.5em;
   &:focus + .pm-toggle-label {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
+  &[aria-busy="true"] + .pm-toggle-label  {
+    &::before {
+      //background-color: $pm-blue;
+      transform: translateX( #{$width/4} ) translateX(-2px);
+      background: $pm-global-muted url(#{$path-images}loading.gif) 50% 50% no-repeat;
+    }
+  }
   &[disabled] + .pm-toggle-label  {
     background: rgba($pm-global-muted, .6);
     .pm-toggle-label-text {
@@ -224,6 +231,12 @@ $width: 5.5em;
       &:checked + .pm-toggle-label {
         &::before {
           transform: translateX( -#{$width/2} ) translateX(2px);
+        }
+      }
+      &[aria-busy="true"] + .pm-toggle-label  {
+        &::before {
+          //background-color: $pm-blue;
+          transform: translateX( -#{$width/4} ) translateX(2px);
         }
       }
     }

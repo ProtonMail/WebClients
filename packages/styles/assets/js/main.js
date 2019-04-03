@@ -885,3 +885,24 @@ target_links.forEach(function(elem) {
     elem.addEventListener("mouseenter", highlightElement );
     elem.addEventListener("focus", highlightElement );
 });
+
+
+
+/**
+ * slow toggle simulated in dirty way :)
+ */
+var toggle_slow = document.body.querySelector('#id_toogle_slow');
+
+if ( toggle_slow ){
+  toggle_slow.addEventListener('change', function(e) {
+    e.preventDefault();
+    var state_to_go = toggle_slow.checked;
+    toggle_slow.checked = !state_to_go;
+    toggle_slow.setAttribute('aria-busy', true);
+    setTimeout(function () {
+      toggle_slow.checked = state_to_go;
+      toggle_slow.removeAttribute('aria-busy');
+      }, 3000);
+
+  });
+}

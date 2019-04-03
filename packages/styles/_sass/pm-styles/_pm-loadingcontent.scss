@@ -23,7 +23,7 @@ td[aria-busy="true"] {
     right: 0;
     left: 0;
     bottom: 0;
-    background: #fff url(#{$path-images}loading.gif) 50% 50% no-repeat;
+    background: $white url(#{$path-images}loading.gif) 50% 50% no-repeat;
   }
 }
 
