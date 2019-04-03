@@ -5,7 +5,8 @@ function compatApi($http, url) {
      * @param {Object} config
      */
     return ({ url: urlString, ...restConfig }) => {
-        const urlWithBase = urlString.startsWith('http') ? urlString : `${url.get()}/${urlString}`;
+        const apiBase = url.get();
+        const urlWithBase = urlString.startsWith(apiBase) ? urlString : `${apiBase}/${urlString}`;
         return $http({ url: urlWithBase, ...restConfig }).then(({ data }) => data);
     };
 }
