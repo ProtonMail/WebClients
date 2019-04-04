@@ -71,6 +71,12 @@ export const getPaymentMethodStatus = () => ({
     method: 'get'
 });
 
+export const orderPaymentMethods = (PaymentMethodIDs) => ({
+    url: 'payments/methods/order',
+    method: 'put',
+    data: { PaymentMethodIDs }
+});
+
 export const donate = (data) => ({
     url: 'payments/donate',
     method: 'post',
