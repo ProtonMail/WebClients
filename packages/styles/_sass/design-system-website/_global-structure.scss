@@ -61,8 +61,8 @@ body {
   height: $header-height;
 }
 .sidebar {
-  min-height: calc(100vh -#{$header-height});
-  max-height: calc(100vh -#{$header-height});
+  min-height: calc(100vh - #{$header-height});
+  max-height: calc(100vh - #{$header-height});
   width: $width-sidebar;
   visibility: visible;
   transition: visibility 0s ease, transform 1s ease, width .6s ease , opacity 1s ease ;
