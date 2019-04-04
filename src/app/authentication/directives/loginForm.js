@@ -23,7 +23,7 @@ const loginForm = (helpLoginModal, gettextCatalog, translator, notification) => 
                 e.preventDefault();
                 e.stopPropagation();
 
-                const username = e.target.username.value;
+                const username = e.target.username.value.trim();
                 const password = e.target.password.value;
                 if (!username || !password) {
                     return notification.error(I18N.USERNAME_PASSWORD_ERROR);
