@@ -13,9 +13,18 @@
   /**
    * inside content (other styles for pages)
    */
+  
+  
   .colortile { width: 50%; }
 
+  /* color rules */
+  .color-tab:nth-child(-n+3) {
+    flex-basis: 33%;
+  }
+
 }
+
+
 
 
 /**
@@ -50,6 +59,10 @@
    * inside content (other styles for pages)
    */
 
+  .color-tab:nth-child(-n+3),
+  .color-tab {
+    flex-basis: 100%;
+  }
 
 }
 

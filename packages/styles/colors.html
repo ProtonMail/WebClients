@@ -11,8 +11,8 @@ section: design
 {% assign listColors = "Global Grey#Global Alt Grey (gradient)#Global Alt Grey#Global light#Global border#Global muted#Global success#Global warning#Global attention#PM blue#PM blue dark#PM blue light#PV green#PV green dark#PV green light#White#Black" | split: '#' %}
 {% assign listColorsRgb = "262a33#dafuk#3c414e#f6f7fa#dde6ec#eeeff1#5db039#ec5858#eac819#657ee4#526ee0#788ee8#4da358#3e8447#5fb364#fff#000" | split: '#' %}
 {% assign listColorsHex = "38/42/51#dafuk#60/65/78#246/247/250#221/230/236#238/239/241#93/176/57#236/88/88#234/200/25#101/126/228#82/110/224#120/142/232#77/163/88#62/132/71#95/179/100#255/255/255#0/0/0" | split: '#' %}
-{% assign listColorsNames = "global-grey#dafuk#global-altgrey#global-light#global-border#global-muted#global-success#global-warning#global-attention#pm-blue#pm-blue-dark#pm-blue-light#pv-green#pv-green-light#pv-green-dark#white#black" | split: '#' %}
-{% assign listSassVars = "$pm-global-grey#dafuk#$pm-global-altgrey#$pm-global-light#$pm-global-border#$pm-global-muted#$pm-global-success#$pm-global-warning#$pm-global-attention#$pm-blue#$pm-blue-dark#$pm-blue-light#$pv-green#$pv-green-light#$pv-green-dark#$white#$black" | split: '#' %}
+{% assign listColorsNames = "global-grey#dafuk#global-altgrey#global-light#global-border#global-muted#global-success#global-warning#global-attention#pm-blue#pm-blue-dark#pm-blue-light#pv-green#pv-green-dark#pv-green-light#white#black" | split: '#' %}
+{% assign listSassVars = "$pm-global-grey#dafuk#$pm-global-altgrey#$pm-global-light#$pm-global-border#$pm-global-muted#$pm-global-success#$pm-global-warning#$pm-global-attention#$pm-blue#$pm-blue-dark#$pm-blue-light#$pv-green#$pv-green-dark#$pv-green-light#$white#$black" | split: '#' %}
 
 <div class="flex pt2">
 {% for color in listColors %}
@@ -61,19 +61,171 @@ section: design
 
 </div>
 
-<h2>Color rules (to come)</h2>
+<h2>Color rules </h2>
 
-<div class="row w100 autotablet">
+<div class="flex bordered-container">
+  <div class="flex-item-fluid bg-global-grey p1 color-tab">
+    <h3 class="color-white">Text (Global grey)</h3>
+    <p class="color-pm-blue-light">Light Product Color on dark backgrounds.</p>
+    <p class="color-pv-green-light">Light Product Color on dark backgrounds.</p>
+    <p class="color-white">White on dark backgrounds.</p>
 
-   <div class="col autotablet pr1">
-      <h3>Light mode</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor lectus eu massa fermentum scelerisque. Praesent vitae massa vel nulla sodales consectetur in vitae urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor lectus eu massa fermentum scelerisque. Praesent vitae massa vel nulla sodales consectetur in vitae urna.</p>
-   </div>
-   <div class="col autotablet">
-      <h3>Dark mode</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor lectus eu massa fermentum scelerisque. Praesent vitae massa vel nulla sodales consectetur in vitae urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor lectus eu massa fermentum scelerisque. Praesent vitae massa vel nulla sodales consectetur in vitae urna.</p>
+    <h3 class="mt2 color-white">Shapes</h3>
+    <p class="color-white">Buttons and other elements with bigger surface, like logos, icons and headlines using the standard product color or white.</p>
+
+    <p class="row">
+      <span class="col aligncenter pr1">
+          <button type="button" class="pm-button-blue">Button</button>
+          <br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-pm-blue" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonmail"></use>
+          </svg><br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonmail"></use>
+          </svg>
+      </span> 
+      <span class="col aligncenter">
+          <button type="button" class="pv-button-green">Button</button>
+          <br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-pv-green" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonvpn"></use>
+          </svg><br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonvpn"></use>
+          </svg>
+      </span> 
+    </p>
+
   </div>
+  <div class="flex-item-fluid bg-global-altgrey p1 color-tab">
+    <h3 class="color-white">Text (Global Alt Grey)</h3>
+    <p class="color-pm-blue-light">Light Product Color on dark backgrounds.</p>
+    <p class="color-pv-green-light">Light Product Color on dark backgrounds.</p>
+    <p class="color-white">White on dark backgrounds.</p>
 
+    <h3 class="mt2 color-white">Shapes</h3>
+    <p class="color-white">Buttons and other elements with bigger surface, like logos, icons and headlines using the standard product color or white.</p>
+
+    <p class="row">
+      <span class="col aligncenter pr1">
+          <button type="button" class="pm-button-blue">Button</button>
+          <br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-pm-blue" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonmail"></use>
+          </svg><br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonmail"></use>
+          </svg>
+      </span> 
+      <span class="col aligncenter">
+          <button type="button" class="pv-button-green">Button</button>
+          <br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-pv-green" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonvpn"></use>
+          </svg><br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonvpn"></use>
+          </svg>
+      </span> 
+    </p>
+
+  </div>
+  <div class="flex-item-fluid bg-global-altgrey-gradient p1 color-tab">
+    <h3 class="color-white">Text (Grey Gradient)</h3>
+    <p class="color-pm-blue-light">Light Product Color on dark backgrounds.</p>
+    <p class="color-pv-green-light">Light Product Color on dark backgrounds.</p>
+    <p class="color-white">White on dark backgrounds.</p>
+
+    <h3 class="mt2 color-white">Shapes</h3>
+    <p class="color-white">Buttons and other elements with bigger surface, like logos, icons and headlines using the standard product color or white.</p>
+
+    <p class="row">
+      <span class="col aligncenter pr1">
+          <button type="button" class="pm-button-blue">Button</button>
+          <br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-pm-blue" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonmail"></use>
+          </svg><br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonmail"></use>
+          </svg>
+      </span> 
+      <span class="col aligncenter">
+          <button type="button" class="pv-button-green">Button</button>
+          <br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-pv-green" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonvpn"></use>
+          </svg><br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonvpn"></use>
+          </svg>
+      </span> 
+    </p>
+  </div>
+  <div class="flex-item-fluid bg-global-light p1 color-tab">
+    <h3>Text (Global Light)</h3>
+    <p class="color-pm-blue-dark">Dark Product Color on light backgrounds.</p>
+    <p class="color-pv-green-dark">Dark Product Color on light backgrounds.</p>
+    <p>Global Grey on light backgrounds.</p>
+
+    <h3 class="mt2">Shapes</h3>
+    <p>Buttons and other elements with bigger surface, like logos, icons and headlines using the standard product color or the global grey color.</p>
+
+    <p class="row">
+      <span class="col aligncenter pr1">
+          <button type="button" class="pm-button-blue">Button</button>
+          <br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-pm-blue" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonmail"></use>
+          </svg><br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-global-grey" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonmail"></use>
+          </svg>
+      </span> 
+      <span class="col aligncenter">
+          <button type="button" class="pv-button-green">Button</button>
+          <br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-pv-green" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonvpn"></use>
+          </svg><br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-global-grey" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonvpn"></use>
+          </svg>
+      </span> 
+    </p>
+  </div>
+  <div class="flex-item-fluid bg-white p1 color-tab">
+    <h3>Text (Global Light)</h3>
+    <p class="color-pm-blue-dark">Dark Product Color on light backgrounds.</p>
+    <p class="color-pv-green-dark">Dark Product Color on light backgrounds.</p>
+    <p>Global Grey on light backgrounds.</p>
+
+    <h3 class="mt2">Shapes</h3>
+    <p>Buttons and other elements with bigger surface, like logos, icons and headlines using the standard product color or the global grey color.</p>
+
+    <p class="row">
+      <span class="col aligncenter pr1">
+          <button type="button" class="pm-button-blue">Button</button>
+          <br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-pm-blue" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonmail"></use>
+          </svg><br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-global-grey" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonmail"></use>
+          </svg>
+      </span> 
+      <span class="col aligncenter">
+          <button type="button" class="pv-button-green">Button</button>
+          <br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-pv-green" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonvpn"></use>
+          </svg><br><br>
+          <svg viewBox="0 0 16 16" class="icon-25p fill-global-grey" aria-hidden="true" role="img" focusable="false">
+            <use xlink:href="#shape-protonvpn"></use>
+          </svg>
+      </span> 
+    </p>
+  </div>
 </div>
 
 
