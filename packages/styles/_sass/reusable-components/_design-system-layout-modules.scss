@@ -221,7 +221,7 @@ $list-min-width-em: 3 !default;
 
 /* margins */
 
-$list-margins: mt, mr, mb, ml, m !default;
+$list-margins: m, mt, mr, mb, ml !default;
 $list-margins-values: 0, 0.25, 0.5, 1, 1.5, 2 !default; // specify 2.5 if needed
 
 @include margin-generator($list-margins, $list-margins-values);
@@ -247,7 +247,7 @@ $list-margins-values: 0, 0.25, 0.5, 1, 1.5, 2 !default; // specify 2.5 if needed
 
 /* paddings */
 
-$list-paddings: pt, pr, pb, pl, p !default;
+$list-paddings: p, pt, pr, pb, pl !default;
 $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 2 !default; // specify 2.5 if needed
 
 @include padding-generator($list-paddings, $list-paddings-values);

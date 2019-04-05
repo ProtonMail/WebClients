@@ -24,13 +24,13 @@
   }
   
   /* margins */
-  $list-margins-tablet: mt, mr, mb, ml, m;
+  $list-margins-tablet: m, mt, mr, mb, ml;
   $list-margins-tablet-values: 0, 1, 2; // specify 2.5 if needed
 
   @include margin-generator($list-margins-tablet, $list-margins-tablet-values, "ontablet-");
 
   /* paddings */
-  $list-paddings-tablet: pt, pr, pb, pl, p;
+  $list-paddings-tablet: p, pt, pr, pb, pl;
   $list-paddings-tablet-values: 0, 1, 2; // specify 2.5 if needed
 
   @include padding-generator($list-paddings-tablet, $list-paddings-tablet-values, "ontablet-");
@@ -79,13 +79,13 @@
   }
   
   /* margins */
-  $list-margins-mobile: mt, mr, mb, ml, m;
+  $list-margins-mobile: m, mt, mr, mb, ml;
   $list-margins-mobile-values: 0, 1, 2; // specify 2.5 if needed
 
   @include margin-generator($list-margins-mobile, $list-margins-mobile-values, "onmobile-");
   
   /* paddings */
-  $list-paddings-mobile: pt, pr, pb, pl, p;
+  $list-paddings-mobile: p, pt, pr, pb, pl;
   $list-paddings-mobile-values: 0, 1, 2; // specify 2.5 if needed
 
   @include padding-generator($list-paddings-mobile, $list-paddings-mobile-values, "onmobile-");
@@ -152,13 +152,13 @@
   }
   
   /* margins */
-  //$list-margins-tinymobile: mt, mr, mb, ml, m;
+  //$list-margins-tinymobile: m, mt, mr, mb, ml;
   //$list-margins-tinymobile-values: 0, 1, 2; // specify 2.5 if needed
 
   //@include margin-generator($list-margins-tinymobile, $list-margins-tinymobile-values, "ontinymobile-");
 
   /* paddings */
-  //$list-paddings-tinymobile: pt, pr, pb, pl, p;
+  //$list-paddings-tinymobile: p, pt, pr, pb, pl;
   //$list-paddings-tinymobile-values: 0, 1, 2; // specify 2.5 if needed
 
   //@include padding-generator($list-paddings-tinymobile, $list-paddings-tinymobile-values, "ontinymobile-");  
