@@ -1,3 +1,7 @@
+# [3.15.26] - 2019-04-05
+## Fixed
+- "Invalid username" error if a blank space is added in the username field
+
 # [3.15.25] - 2019-04-03
 ## Fixed
 - Labels / Folders are shown in scrolled view after login
