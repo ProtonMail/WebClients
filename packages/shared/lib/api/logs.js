@@ -1,7 +1,7 @@
 export const queryLogs = ({ Page, PageSize } = {}) => ({
     method: 'get',
     url: 'logs/auth',
-    data: { Page, PageSize }
+    params: { Page, PageSize }
 });
 
 export const clearLogs = () => ({
