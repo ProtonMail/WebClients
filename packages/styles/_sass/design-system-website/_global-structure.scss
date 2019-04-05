@@ -207,9 +207,8 @@ body {
 .main-full {
   height: 100vh;
 }
-
-.main-area-content {
-  padding: 2em;
+.main-area--withToolbar.no-scroll {
+  overflow: hidden;
 }
 
 .subnav {

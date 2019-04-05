@@ -83,14 +83,14 @@
             <div class="toolbar noprint">
 
             </div>
-            <div class="main-area--withToolbar reset4print"><!-- can't apply flex on it directly, otherwise, stick will fail -->
+            <div class="main-area--withToolbar {% if page.pageId == 'conversations' %} no-scroll {% endif %} reset4print"><!-- can't apply flex on it directly, otherwise, stick will fail -->
               <div class="flex flex-reverse">
 
                 {% include sub-nav.html %}                
 
-                <main class="main-area-content flex-item-fluid">
+                <main class="main-area-content {% if page.pageId <> 'conversations' %} p2 {% endif %} flex-item-fluid">
               
-                  <h1>{{ page.title }}</h1>
+                  <h1{% if page.pageId == 'conversations' %} class="sr-only"{% endif %}>{{ page.title }}</h1>
 
                   {% if page.intro %}
                   <a href="/" class="right ml1 mb1">Back to home</a>

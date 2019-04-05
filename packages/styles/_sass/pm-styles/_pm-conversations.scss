@@ -1,6 +1,62 @@
 /*
  * Conversations
  */
+
+.conversations-column-list {
+  width: calc( (100% + #{$width-sidebar}) * #{$conversations-column-width/1%/100} );
+  border-right: 1px solid $pm-global-border;
+}
+
+.conversations-column-list,
+.conversation-column-detail {
+  height: calc(100vh - #{$header-height} - #{$toolbar-height} );
+}
+
+.conversation-container {
+  padding: em(16) em(12);
+  border-bottom: 1px solid $pm-global-border;
+}
+
+$conversation-icon-size: 4rem;
+.conversation-icon {
+  width: $conversation-icon-size;
+  height: $conversation-icon-size;
+  font-size: 1.2rem;
+  border: 1px solid $pm-global-border;
+  margin-right: 20px;
+}
+
+.conversation-titlesender {
+  line-height: 1.3;
+}
+
+.starbutton {
+  fill: $pm-global-grey;
+  width: 1.6rem;
+  height: 1.6rem;
+  &:hover {
+    fill: $pm-global-attention;
+  }
+  [class*="starbutton-icon"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .starbutton-icon-starred {
+    transform: scale(0);
+    transition: transform .15s ease;
+  }
+}
+.starbutton--is-starred {
+  fill: $pm-global-attention;
+  .starbutton-icon-starred {
+    transform: scale(1);
+  }
+}
+
+/*
+ * Conversations messages
+ */
 .message-container {
   border: 1px solid $pm-global-border;
   border-radius: $global-border-radius;

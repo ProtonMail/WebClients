@@ -906,3 +906,18 @@ if ( toggle_slow ){
 
   });
 }
+
+
+/**
+ * star button
+ */
+function starUnstar( e ) {
+  var button = e.currentTarget;
+  button.classList.toggle('starbutton--is-starred');
+}
+
+var starButtons = [].slice.call(document.body.querySelectorAll('.js-starbutton'));
+
+starButtons.forEach(function(elem) {
+    elem.addEventListener("click", starUnstar );
+});
