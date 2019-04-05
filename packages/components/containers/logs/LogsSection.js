@@ -8,11 +8,11 @@ import {
     Alert,
     Block,
     Pagination,
-    usePagination,
+    usePaginationAsync,
     SubTitle,
-    useLoading,
     useUserSettings,
-    useApi
+    useApiResult,
+    useApiWithoutResult
 } from 'react-components';
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
 import { updateLogAuth } from 'proton-shared/lib/api/settings';
@@ -32,28 +32,24 @@ const EVENTS = {
 const { DISABLE, BASIC, ADVANCED } = LOGS_STATE;
 
 const LogsSection = () => {
-    const api = useApi();
-    const [settings, settingsLoading] = useUserSettings();
-    const [logs, setLogs] = useState([]);
-    const { loading, loaded, load } = useLoading(settingsLoading);
+    const [settings] = useUserSettings();
     const [logAuth, setLogAuth] = useState(settings.LogAuth);
-    const { page, list, onNext, onPrevious, onSelect } = usePagination(logs, 1, ELEMENTS_PER_PAGE);
-
-    const fetchLogs = async () => {
-        try {
-            load();
-            const { Logs } = await api(queryLogs());
-            setLogs(Logs);
-            loaded();
-        } catch (error) {
-            loaded();
-            throw error;
-        }
-    };
+    const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
+    const { result = {}, loading, request: requestQueryLogs } = useApiResult(
+        () =>
+            queryLogs({
+                Page: page,
+                PageSize: ELEMENTS_PER_PAGE
+            }),
+        [page]
+    );
+    const { Logs: logs = [], Total: total = 0 } = result;
+    const { request: requestClearLogs } = useApiWithoutResult(clearLogs);
+    const { request: requestUpdateLogAuth } = useApiWithoutResult(updateLogAuth);
 
     const handleWipe = async () => {
-        await api(clearLogs());
-        setLogs([]);
+        await requestClearLogs();
+        await requestQueryLogs();
     };
 
     const handleDownload = () => {
@@ -73,7 +69,7 @@ const LogsSection = () => {
     };
 
     const handleLogAuth = (LogAuth) => async () => {
-        await api(updateLogAuth(LogAuth));
+        await requestUpdateLogAuth(LogAuth);
         setLogAuth(LogAuth);
     };
 
@@ -83,7 +79,7 @@ const LogsSection = () => {
     }, [settings.LogAuth]);
 
     useEffect(() => {
-        fetchLogs();
+        requestQueryLogs();
     }, [logAuth]);
 
     return (
@@ -106,20 +102,20 @@ const LogsSection = () => {
                             onClick={handleLogAuth(ADVANCED)}
                         >{c('Log preference').t`Advanced`}</ButtonGroup>
                     </Group>
-                    <Button className="mr1" onClick={fetchLogs}>{c('Action').t`Refresh`}</Button>
-                    {list.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
-                    {list.length ? <Button onClick={handleDownload}>{c('Action').t`Download`}</Button> : null}
+                    <Button className="mr1" onClick={requestQueryLogs}>{c('Action').t`Refresh`}</Button>
+                    {logs.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
+                    {logs.length ? <Button onClick={handleDownload}>{c('Action').t`Download`}</Button> : null}
                 </div>
                 <Pagination
                     onNext={onNext}
                     onPrevious={onPrevious}
                     onSelect={onSelect}
-                    total={logs.length}
+                    total={total}
                     page={page}
                     limit={ELEMENTS_PER_PAGE}
                 />
             </Block>
-            <LogsTable list={list} logAuth={logAuth} loading={loading} />
+            <LogsTable logs={logs} logAuth={logAuth} loading={loading} />
         </>
     );
 };

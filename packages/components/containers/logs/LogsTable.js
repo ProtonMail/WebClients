@@ -23,7 +23,7 @@ const ICONS = {
     [LOGIN_SUCCESS_AWAIT_2FA]: <Icon name="off" />
 };
 
-const LogsTable = ({ list, logAuth, loading }) => {
+const LogsTable = ({ logs, logAuth, loading }) => {
     if (logAuth === DISABLE) {
         return (
             <Alert>{c('Info')
@@ -31,7 +31,7 @@ const LogsTable = ({ list, logAuth, loading }) => {
         );
     }
 
-    if (!loading && !list.length) {
+    if (!loading && !logs.length) {
         return <Alert>{c('Info').t`No logs yet`}</Alert>;
     }
 
@@ -39,7 +39,7 @@ const LogsTable = ({ list, logAuth, loading }) => {
         <Table>
             <TableHeader cells={[c('Header').t`Event`, logAuth === ADVANCED ? 'IP' : '', c('Header').t`Time`]} />
             <TableBody loading={loading} colSpan={3}>
-                {list.map(({ Time: time, Event, IP }, index) => {
+                {logs.map(({ Time: time, Event, IP }, index) => {
                     const key = index.toString();
 
                     return (
@@ -63,7 +63,7 @@ const LogsTable = ({ list, logAuth, loading }) => {
 };
 
 LogsTable.propTypes = {
-    list: PropTypes.array.isRequired,
+    logs: PropTypes.array.isRequired,
     logAuth: PropTypes.number.isRequired,
     loading: PropTypes.bool.isRequired
 };
