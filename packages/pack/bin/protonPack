@@ -13,6 +13,7 @@ const { getPort, getPublicPath, findPort } = require('../webpack/helpers/source'
 
 const isInit = argv._.includes('init');
 const isDevServer = argv._.includes('dev-server');
+const isCompile = argv._.includes('compile');
 
 const {
     config: appConfig,
@@ -25,6 +26,14 @@ async function main() {
     // For any task BUT init we need to create a custom config for the app
     if (!isInit) {
         await fs.writeFile(appConfigPath, appConfig);
+    }
+
+    if (isCompile) {
+        const compile = require('../cli/compile');
+        const publicPath = getPublicPath(argv);
+        const CONFIG = configBuilder({ publicPath });
+        compile(CONFIG);
+        return;
     }
 
     // Run the dev server, but first find an available port

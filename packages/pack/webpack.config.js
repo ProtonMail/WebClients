@@ -32,7 +32,7 @@ function main({ port, publicPath }) {
             ]
         },
         devServer: {
-            hot: true,
+            hot: !isProduction,
             inline: true,
             compress: true,
             host: '0.0.0.0',
@@ -59,8 +59,9 @@ function main({ port, publicPath }) {
         },
         entry: {
             index: [
-                `webpack-dev-server/client?http://localhost:${port}/`,
-                'webpack/hot/dev-server',
+                ...(!isProduction
+                    ? [`webpack-dev-server/client?http://localhost:${port}/`, 'webpack/hot/dev-server']
+                    : []),
                 getSource('./src/app/index.js')
             ]
         },

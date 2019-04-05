@@ -71,8 +71,9 @@ module.exports = ({ isProduction, publicPath }) => {
     );
 
     return [
-        new webpack.HotModuleReplacementPlugin(),
-        isProduction ? new webpack.HashedModuleIdsPlugin() : new webpack.NamedModulesPlugin(),
+        ...(isProduction
+            ? [new webpack.HashedModuleIdsPlugin()]
+            : [new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin()]),
 
         new WriteWebpackPlugin(
             [main, compat, worker].map(({ filepath, contents }) => ({
