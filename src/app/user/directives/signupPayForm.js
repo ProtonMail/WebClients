@@ -4,16 +4,7 @@ import { getEventName } from '../../blackFriday/helpers/blackFridayHelper';
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
 /* @ngInject */
-function signupPayForm(
-    paymentUtils,
-    dispatchers,
-    cardModel,
-    notification,
-    gettextCatalog,
-    $filter,
-    translator
-) {
-
+function signupPayForm(paymentUtils, dispatchers, cardModel, notification, gettextCatalog, $filter, translator) {
     const I18N = translator(() => ({
         MONTH: gettextCatalog.getString('month', null, 'Info'),
         BILLING: {
@@ -222,7 +213,9 @@ function signupPayForm(
                 });
 
             const onApply = () => {
-                dispatchHelper('giftcode.submit', scope.giftCode);
+                scope.$applyAsync(() => {
+                    dispatchHelper('giftcode.submit', scope.giftCode || '');
+                });
             };
 
             setClassNames(el, scope.payment, scope.method, scope.errorPay);
