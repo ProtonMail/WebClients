@@ -4,7 +4,6 @@ import { Icons } from 'react-components';
 import { MAILBOX_PASSWORD_KEY, UID_KEY } from 'proton-shared/lib/constants';
 import createAuthenticationStore from 'proton-shared/lib/authenticationStore';
 import createSecureSessionStorage from 'proton-shared/lib/secureSessionStorage';
-import { createInit } from 'proton-shared/lib/models/init';
 
 import AuthenticatedApp from './AuthenticatedApp';
 import UnauthenticatedApp from './UnAuthenticatedApp';
@@ -47,8 +46,8 @@ export default (config, AuthenticatedSlot, UnAuthenticatedSlot) => {
             authenticationStore.setPassword(keyPassword);
 
             loginDataRef.current = {
-                userResult,
-                initialEventID: authResult.EventID
+                user: userResult,
+                eventID: authResult.EventID
             };
 
             setAuthenticated(true);
@@ -71,13 +70,11 @@ export default (config, AuthenticatedSlot, UnAuthenticatedSlot) => {
             );
         }
 
-        const initModels = createInit(loginDataRef.current);
-
         return wrap(
             <AuthenticatedApp
                 authenticationStore={authenticationStore}
                 initApi={initApi}
-                initModels={initModels}
+                loginData={loginDataRef.current}
                 onLogout={handleLogout}
             >
                 <AuthenticatedSlot onLogout={handleLogout} />

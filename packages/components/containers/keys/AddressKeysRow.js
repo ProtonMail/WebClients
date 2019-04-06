@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { TableRow, TableCell } from 'react-components';
 
 const AddressKeysRow = ({ email, fingerprint, type, children }) => {
-    const [expanded, setExpanded] = useState(true);
+    const [expanded, setExpanded] = useState(false);
 
     const AddressKeysEmail = () => {
         const handleOnClick = () => setExpanded(!expanded);

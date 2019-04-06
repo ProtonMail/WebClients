@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ApiContext, NotificationsProvider } from 'react-components';
-import createState from 'proton-shared/lib/state/state';
 import createNotificationsManager from 'proton-shared/lib/notifications/manager';
 
 const UnAuthenticatedApp = ({ initApi, children }) => {
     const api = initApi();
-    const notificationsManager = createNotificationsManager(createState([]));
+    const notificationsManager = createNotificationsManager();
 
     return (
         <NotificationsProvider manager={notificationsManager}>

@@ -57,16 +57,19 @@ const AddressesSection = () => {
     };
 
     useEffect(() => {
+        fetchAddresses();
+    }, [member]);
+
+    useEffect(() => {
+        if (addresses.length === 0) {
+            return;
+        }
         const currentUser = members.find(({ Self }) => Self);
 
         if (currentUser) {
             setMember(currentUser);
         }
-    }, [members]);
-
-    useEffect(() => {
-        fetchAddresses();
-    }, [member]);
+    }, [members, addresses]);
 
     return (
         <>

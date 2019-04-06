@@ -10,16 +10,15 @@ import {
     PromptsProvider
 } from 'react-components';
 import { getError } from 'proton-shared/lib/apiHandlers';
-import createState from 'proton-shared/lib/state/state';
 import createPromptsManager from 'proton-shared/lib/prompts/manager';
 import createNotificationsManager from 'proton-shared/lib/notifications/manager';
 import withAuthHandlers from 'proton-shared/lib/api/helpers/withAuthHandlers';
 
 import { queryUnlock } from 'proton-shared/lib/api/user';
 
-const AuthenticatedApp = ({ authenticationStore, onLogout, initApi, initModels, children }) => {
-    const notificationsManager = createNotificationsManager(createState([]));
-    const promptsManager = createPromptsManager(createState([]));
+const AuthenticatedApp = ({ authenticationStore, onLogout, initApi, loginData, children }) => {
+    const notificationsManager = createNotificationsManager();
+    const promptsManager = createPromptsManager();
 
     const handleError = (e) => {
         const { code, message, status } = getError(e);
@@ -59,7 +58,7 @@ const AuthenticatedApp = ({ authenticationStore, onLogout, initApi, initModels, 
         <NotificationsProvider manager={notificationsManager}>
             <ApiContext.Provider value={api}>
                 <AuthenticationStoreContext.Provider value={authenticationStoreWithLogout}>
-                    <ModelsProvider init={initModels}>
+                    <ModelsProvider loginData={loginData}>
                         <PromptsProvider manager={promptsManager}>{children}</PromptsProvider>
                     </ModelsProvider>
                 </AuthenticationStoreContext.Provider>
@@ -71,7 +70,7 @@ const AuthenticatedApp = ({ authenticationStore, onLogout, initApi, initModels, 
 AuthenticatedApp.propTypes = {
     authenticationStore: PropTypes.object.isRequired,
     initApi: PropTypes.func.isRequired,
-    initModels: PropTypes.func.isRequired,
+    loginData: PropTypes.object,
     onLogout: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired
 };

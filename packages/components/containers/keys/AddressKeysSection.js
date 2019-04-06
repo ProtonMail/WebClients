@@ -4,15 +4,18 @@ import AddressKeysHeader from './AddressKeysHeader';
 import ContactKeysHeader from './ContactKeysHeader';
 import AddressKeysTable from './AddressKeysTable';
 import { getAddressesKeys, getUserAddressKeys } from './AddressKeysSectionModel';
+import useUserKeys from '../../models/userKeysModel';
+import useAddressesKeys from '../../models/addressesKeysModel';
 import { useUser } from '../../models/userModel';
 import { useAddresses } from '../../models/addressesModel';
+import { ACTIONS } from './KeysActions';
 
 const AddressKeysSection = () => {
-    const [user] = useUser();
-    const [addresses] = useAddresses();
-    // TODO: Keys model
-    const addressKeys = getAddressesKeys(addresses, {});
-    const userAddressKeys = getUserAddressKeys(user, {});
+    const [User] = useUser();
+    const [Addresses, loadingAddresses] = useAddresses();
+
+    const [userKeys, loadingUserKeys] = useUserKeys(User);
+    const [addressesKeys, loadingAddressesKeys] = useAddressesKeys(User, Addresses);
 
     const handleAddKey = (...args) => {
         // eslint-disable-next-line
@@ -54,27 +57,46 @@ const AddressKeysSection = () => {
         console.log('mark compromised key', ...args);
     };
 
+    const handleReactivateKey = (...args) => {
+        // eslint-disable-next-line
+        console.log('mark reactivate key', ...args);
+    };
+
+    const handleMarkValidKey = (...args) => {
+        // eslint-disable-next-line
+        console.log('mark valid key', ...args);
+    };
+
     const headerHandlers = {
         handleAddKey,
         handleImportKey,
         handleReactivateKeys
     };
 
-    const tableHandlers = {
-        handleDeleteKey,
-        handleExportKey,
-        handleMakePrimaryKey,
-        handleMarkObsoleteKey,
-        handleMarkCompromisedKey
+    const keysHandlers = {
+        [ACTIONS.DELETE]: handleDeleteKey,
+        [ACTIONS.EXPORT]: handleExportKey,
+        [ACTIONS.PRIMARY]: handleMakePrimaryKey,
+        [ACTIONS.MARK_OBSOLETE]: handleMarkObsoleteKey,
+        [ACTIONS.MARK_VALID]: handleMarkValidKey,
+        [ACTIONS.MARK_COMPROMISED]: handleMarkCompromisedKey,
+        [ACTIONS.REACTIVATE]: handleReactivateKey
     };
+
+    const formattedAdressesKeys = getAddressesKeys(User, Addresses, addressesKeys, keysHandlers);
+    const formattedUserKeys = getUserAddressKeys(User, userKeys, keysHandlers);
 
     return (
         <>
             <AddressKeysHeader {...headerHandlers} />
-            <AddressKeysTable addressKeys={addressKeys} mode={'address'} {...tableHandlers} />
+            <AddressKeysTable
+                loading={loadingAddresses || loadingAddressesKeys}
+                addressKeys={formattedAdressesKeys}
+                mode={'address'}
+            />
 
             <ContactKeysHeader />
-            <AddressKeysTable addressKeys={userAddressKeys} mode={'user'} {...tableHandlers} />
+            <AddressKeysTable loading={loadingUserKeys} addressKeys={formattedUserKeys} mode={'user'} />
         </>
     );
 };

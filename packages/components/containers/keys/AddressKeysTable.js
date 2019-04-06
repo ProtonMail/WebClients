@@ -6,27 +6,11 @@ import { Table, TableHeader, TableBody } from 'react-components';
 import KeysTable from './KeysTable';
 import AddressKeysRow from './AddressKeysRow';
 
-const AddressKeysTable = ({
-    addressKeys,
-    mode,
-    handleDeleteKey,
-    handleExportKey,
-    handleMakePrimaryKey,
-    handleMarkObsoleteKey,
-    handleMarkCompromisedKey
-}) => {
+const AddressKeysTable = ({ addressKeys, mode, loading }) => {
     const list = addressKeys.map(({ fingerprint, email, type, keys }) => {
         return (
             <AddressKeysRow key={fingerprint} email={email} fingerprint={fingerprint} type={type}>
-                <KeysTable
-                    email={email}
-                    keys={keys}
-                    handleDeleteKey={handleDeleteKey}
-                    handleExportKey={handleExportKey}
-                    handleMakePrimaryKey={handleMakePrimaryKey}
-                    handleMarkObsoleteKey={handleMarkObsoleteKey}
-                    handleMarkCompromisedKey={handleMarkCompromisedKey}
-                />
+                <KeysTable keys={keys} />
             </AddressKeysRow>
         );
     });
@@ -43,7 +27,9 @@ const AddressKeysTable = ({
                     c('Title header for keys table').t`Key type`
                 ]}
             />
-            <TableBody>{list}</TableBody>
+            <TableBody loading={loading} colSpan={3}>
+                {list}
+            </TableBody>
         </Table>
     );
 };
@@ -51,11 +37,7 @@ const AddressKeysTable = ({
 AddressKeysTable.propTypes = {
     addressKeys: PropTypes.array.isRequired,
     mode: PropTypes.string.isRequired,
-    handleDeleteKey: PropTypes.func.isRequired,
-    handleExportKey: PropTypes.func.isRequired,
-    handleMakePrimaryKey: PropTypes.func.isRequired,
-    handleMarkObsoleteKey: PropTypes.func.isRequired,
-    handleMarkCompromisedKey: PropTypes.func.isRequired
+    loading: PropTypes.bool
 };
 
 export default AddressKeysTable;

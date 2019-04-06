@@ -1,14 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useApi, EventManagerProvider, CacheProvider, PromiseCacheProvider } from 'react-components';
-import createCache from 'proton-shared/lib/state/state';
-import { setupCache, setupEventManager } from 'proton-shared/lib/models/init';
+import { useApi, EventManagerProvider, CacheProvider } from 'react-components';
+import createCache from 'proton-shared/lib/helpers/cache';
+import { UserModel } from 'proton-shared/lib/models/userModel';
+import { UserSettingsModel } from 'proton-shared/lib/models/userSettingsModel';
+import { SubscriptionModel } from 'proton-shared/lib/models/subscriptionModel';
+import { OrganizationModel } from 'proton-shared/lib/models/organizationModel';
+import { setupEventManager, getEventID } from 'proton-shared/lib/models/setupEventManager';
+import { STATUS } from 'proton-shared/lib/models/cache';
 
-const ModelsProvider = ({ children, init }) => {
+const ModelsProvider = ({ children, loginData = {} }) => {
     const api = useApi();
     const eventManagerRef = useRef();
     const cacheRef = useRef();
-    const promiseCacheRef = useRef();
 
     const [{ loading, error }, setState] = useState({ loading: true });
 
@@ -17,14 +21,39 @@ const ModelsProvider = ({ children, init }) => {
         const apiWithAbort = (config) => api({ ...config, signal: abortController.signal });
 
         const setup = async () => {
-            const [user, eventID] = await init(api);
+            const [user, eventID, userSettingsModel] = await Promise.all([
+                loginData.user || UserModel.get(api),
+                loginData.eventID || getEventID(api),
+                UserSettingsModel.get(api)
+            ]);
 
-            const cache = await setupCache(user, api);
+            const models = [user.isPaid && SubscriptionModel, user.isPaid && OrganizationModel].filter(Boolean);
+            const modelsResult = await Promise.all(models.map(({ get }) => get(api)));
+
+            const initialCache = {
+                [UserModel.key]: user,
+                [UserSettingsModel.key]: userSettingsModel,
+                ...models.reduce((acc, cur, i) => {
+                    acc[cur.key] = modelsResult[i];
+                    return acc;
+                }, {})
+            };
+
+            const cache = createCache();
+            // TODO: Remove after test
+            window.cache = cache;
+
+            Object.keys(initialCache).forEach((key) => {
+                cache.set(key, {
+                    value: initialCache[key],
+                    status: STATUS.RESOLVED
+                });
+            });
+
             const eventManager = setupEventManager(cache, eventID, api);
 
             cacheRef.current = cache;
             eventManagerRef.current = eventManager;
-            promiseCacheRef.current = createCache({});
         };
 
         setup(apiWithAbort)
@@ -52,16 +81,14 @@ const ModelsProvider = ({ children, init }) => {
 
     return (
         <EventManagerProvider eventManager={eventManagerRef.current}>
-            <CacheProvider cache={cacheRef.current}>
-                <PromiseCacheProvider cache={promiseCacheRef.current}>{children}</PromiseCacheProvider>
-            </CacheProvider>
+            <CacheProvider cache={cacheRef.current}>{children}</CacheProvider>
         </EventManagerProvider>
     );
 };
 
 ModelsProvider.propTypes = {
     children: PropTypes.node.isRequired,
-    init: PropTypes.func.isRequired
+    loginData: PropTypes.object
 };
 
 export default ModelsProvider;

@@ -209,10 +209,9 @@ export { default as useAsync } from './hooks/useAsync';
 export { nestChildren } from './helpers/component';
 
 export { default as useCache } from './containers/cache/useCache';
-export { default as usePromiseCache } from './containers/cache/usePromiseCache';
+export { default as useCachedResult } from './containers/cache/useCachedResult';
 export { default as CacheProvider } from './containers/cache/CacheProvider';
 export { default as ModelsProvider } from './containers/cache/ModelsProvider';
-export { default as PromiseCacheProvider } from './containers/cache/PromiseCacheProvider';
 export { default as EventManagerProvider } from './containers/eventManager/EventManagerProvider';
 export { default as EventManagerContext } from './containers/eventManager/context';
 

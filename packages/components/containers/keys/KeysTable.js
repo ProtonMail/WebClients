@@ -7,28 +7,9 @@ import KeysRow from './KeysRow';
 import KeysActions from './KeysActions';
 import KeysStatus from './KeysStatus';
 
-const KeysTable = ({
-    email,
-    keys,
-    handleDeleteKey,
-    handleExportKey,
-    handleMakePrimaryKey,
-    handleMarkObsoleteKey,
-    handleMarkCompromisedKey
-}) => {
-    const list = keys.map(({ statuses, fingerprint, type }) => {
-        const handleAction = (fn) => () => fn({ email, fingerprint });
-
-        const keysActions = (
-            <KeysActions
-                handleDeleteKey={handleAction(handleDeleteKey)}
-                handleExportKey={handleAction(handleExportKey)}
-                handleMakePrimaryKey={handleAction(handleMakePrimaryKey)}
-                handleMarkObsoleteKey={handleAction(handleMarkObsoleteKey)}
-                handleMarkCompromisedKey={handleAction(handleMarkCompromisedKey)}
-            />
-        );
-
+const KeysTable = ({ keys = [] }) => {
+    const list = keys.map(({ actions, statuses, fingerprint, type }) => {
+        const keysActions = <KeysActions actions={actions} />;
         const keysStatus = <KeysStatus statuses={statuses} />;
 
         return (
@@ -58,9 +39,7 @@ const KeysTable = ({
 };
 
 KeysTable.propTypes = {
-    email: PropTypes.string.isRequired,
-    keys: PropTypes.array.isRequired,
-    ...KeysActions.propTypes
+    keys: PropTypes.array.isRequired
 };
 
 export default KeysTable;
