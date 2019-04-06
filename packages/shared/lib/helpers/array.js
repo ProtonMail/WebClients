@@ -17,3 +17,13 @@ export const chunk = (list = [], size = 1) => {
         return res;
     }, []);
 };
+
+export const compare = (a, b) => {
+    if (a > b) {
+        return 1;
+    }
+    if (a < b) {
+        return -1;
+    }
+    return 0;
+};

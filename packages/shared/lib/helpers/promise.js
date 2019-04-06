@@ -24,3 +24,15 @@ export const runChunksDelayed = async (chunks = [], cb, delay) => {
 
     return Promise.all(promises);
 };
+
+/**
+ * Create an exposed promise.
+ */
+export const createDefer = () => {
+    const result = {};
+    result.promise = new Promise((resolve, reject) => {
+        result.resolve = resolve;
+        result.reject = reject;
+    });
+    return result;
+};

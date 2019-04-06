@@ -1,16 +1,10 @@
-const createStore = (initialState) => {
-    let state = initialState;
+const createListeners = () => {
     let listeners = [];
 
-    const set = (value) => {
-        state = value;
+    const notify = (...args) => {
         listeners.forEach((listener) => {
-            listener(state);
+            listener(...args);
         });
-    };
-
-    const get = () => {
-        return state;
     };
 
     const subscribe = (listener) => {
@@ -20,17 +14,15 @@ const createStore = (initialState) => {
         };
     };
 
-    const reset = () => {
+    const clear = () => {
         listeners = [];
-        state = undefined;
     };
 
     return {
-        set,
-        get,
+        notify,
         subscribe,
-        reset
+        clear
     };
 };
 
-export default createStore;
+export default createListeners;

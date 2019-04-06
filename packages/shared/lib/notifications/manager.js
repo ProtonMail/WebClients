@@ -1,12 +1,18 @@
 import { clearAction, createAction, removeAction } from './actions';
 import reducer from './reducer';
+import createListeners from '../helpers/listeners';
 
-const createNotifications = ({ get, set, subscribe }) => {
+const createNotifications = () => {
     let idx = 0;
     let intervalIds = {};
+    let state = [];
+    const listeners = createListeners();
+
+    const get = () => state;
 
     const dispatch = (action) => {
-        set(reducer(get(), action));
+        state = reducer(state, action);
+        listeners.notify(state);
     };
 
     const removeNotification = (id) => {
@@ -47,7 +53,7 @@ const createNotifications = ({ get, set, subscribe }) => {
         removeNotification,
         clearNotifications,
         get,
-        subscribe
+        subscribe: listeners.subscribe
     };
 };
 

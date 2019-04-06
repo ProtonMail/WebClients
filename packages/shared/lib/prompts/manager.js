@@ -1,21 +1,19 @@
 import { createAction, resetAction, rejectAction, resolveAction } from './actions';
 import reducer from './reducer';
+import createListeners from '../helpers/listeners';
+import { createDefer } from '../helpers/promise';
 
-const createDefer = () => {
-    const result = {};
-    result.promise = new Promise((resolve, reject) => {
-        result.resolve = resolve;
-        result.reject = reject;
-    });
-    return result;
-};
-
-export default ({ set, get, subscribe }) => {
+const createPrompts = () => {
     let promiseMap = {};
     let idx = 0;
+    let state = [];
+    const listeners = createListeners();
+
+    const get = () => state;
 
     const dispatch = (action) => {
-        set(reducer(get(), action));
+        state = reducer(state, action);
+        listeners.notify(state);
     };
 
     const handle = (rejectOrResolve) => (id, value) => {
@@ -71,6 +69,8 @@ export default ({ set, get, subscribe }) => {
         createPrompt,
         resetPrompts,
         get,
-        subscribe
+        subscribe: listeners.subscribe
     };
 };
+
+export default createPrompts;

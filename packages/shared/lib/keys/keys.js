@@ -1,4 +1,4 @@
-import { decryptMessage, decryptPrivateKey, getMessage, keyInfo } from 'pmcrypto';
+import { decryptMessage, decryptPrivateKey, getMessage, keyInfo as getKeyInfo } from 'pmcrypto';
 
 const noop = () => {};
 
@@ -41,19 +41,39 @@ const decryptMemberToken = async (token, orgPrivateKey = {}) => {
 };
 
 /**
+ * Try to decrypt a private key and get metadata.
+ * @param {String} encryptedKey
+ * @param {String} keyPassword
+ * @param {object} cachedKeyResult
+ * @returns {Promise}
+ */
+const getDecryptedKeyWithMetadata = async (encryptedKey, keyPassword, cachedKeyResult = {}) => {
+    const { info: cachedInfo, decryptedPrivateKey: cachedDecryptedPrivateKey } = cachedKeyResult;
+
+    const [decryptedPrivateKey, info] = await Promise.all([
+        cachedDecryptedPrivateKey || decryptPrivateKey(encryptedKey, keyPassword).catch(noop),
+        cachedInfo || getKeyInfo(encryptedKey)
+    ]);
+
+    return {
+        decryptedPrivateKey,
+        info
+    };
+};
+
+/**
  * Decrypts a member key using the decrypted member token
  * @param  {Object} decryptedKey decrypted organization private key
  * @return {Object} decrypted key
  */
-const createDecryptKeyWithKey = (decryptedKey) => async (Key) => {
+const createDecryptKeyWithKey = (decryptedKey) => async (Key, cachedKeyResult) => {
     const { PrivateKey, Token, Activation } = Key;
     // TODO: Does it need to check Token || Activation?
-    const decryptedToken = await decryptMemberToken(Token || Activation, decryptedKey).catch(noop);
-    const decryptedPrivateKey = await decryptPrivateKey(PrivateKey, decryptedToken);
+    const decryptedToken = await decryptMemberToken(Token || Activation, decryptedKey);
+    const result = await getDecryptedKeyWithMetadata(PrivateKey, decryptedToken, cachedKeyResult);
     return {
-        decryptedPrivateKey,
         Key,
-        info: await keyInfo(PrivateKey)
+        ...result
     };
 };
 
@@ -62,54 +82,41 @@ const createDecryptKeyWithKey = (decryptedKey) => async (Key) => {
  * @param {String} keyPassword
  * @return {function}
  */
-const createDecryptKeyWithPassword = (keyPassword) => async (Key) => {
+const createDecryptKeyWithPassword = (keyPassword) => async (Key, cachedKeyResult) => {
     const { PrivateKey } = Key;
-    const decryptedPrivateKey = await decryptPrivateKey(PrivateKey, keyPassword).catch(noop);
+    const result = await getDecryptedKeyWithMetadata(PrivateKey, keyPassword, cachedKeyResult);
     return {
-        decryptedPrivateKey,
         Key,
-        info: await keyInfo(PrivateKey)
+        ...result
     };
-};
-
-/**
- * Decrypt a list of user keys.
- * @param {Array} UserKeys
- * @param {String} keyPassword
- * @param {String} [OrganizationPrivateKey]
- * @return {Promise}
- */
-export const prepareUserKeys = async (UserKeys = [], keyPassword, OrganizationPrivateKey) => {
-    const decryptKeyWithPassword = createDecryptKeyWithPassword(keyPassword);
-
-    if (OrganizationPrivateKey) {
-        const decryptedOrganizationKey = await decryptKeyWithPassword(OrganizationPrivateKey);
-        const decryptKeyWithKey = createDecryptKeyWithKey(decryptedOrganizationKey);
-        return Promise.all(UserKeys.map(decryptKeyWithKey));
-    }
-
-    return Promise.all(UserKeys.map(decryptKeyWithPassword));
 };
 
 /**
  * Format the address keys in an object where each ID corresponds to the list of decrypt keys.
  * @param {function} decryptKeyCb
  * @param {Array} Addresses
+ * @param {object} cache
  * @return {Promise}
  */
-const formatAddressKeys = async (decryptKeyCb, Addresses = []) => {
+const formatAddressKeys = async (decryptKeyCb, Addresses, cache) => {
     const addressKeys = await Promise.all(
         Addresses.map(async ({ ID, Keys: AddressKeys = [] }) => {
-            const keys = await Promise.all(AddressKeys.map(decryptKeyCb));
+            const keysCache = cache[ID] || {};
+            const keysWithMetadata = await Promise.all(AddressKeys.map((Key) => decryptKeyCb(Key, keysCache[Key.ID])));
+            const keysMap = keysWithMetadata.reduce((acc, keyData) => {
+                const { Key } = keyData;
+                acc[Key.ID] = keyData;
+                return acc;
+            }, {});
             return {
-                keys,
+                map: keysMap,
                 ID
             };
         })
     );
 
-    return addressKeys.reduce((acc, { ID, keys }) => {
-        acc[ID] = keys;
+    return addressKeys.reduce((acc, { ID, map }) => {
+        acc[ID] = map;
         return acc;
     }, {});
 };
@@ -119,16 +126,46 @@ const formatAddressKeys = async (decryptKeyCb, Addresses = []) => {
  * @param {Array} Addresses
  * @param {String} keyPassword
  * @param {String} [OrganizationPrivateKey]
+ * @param {object} [cache]
  * @return {Promise}
  */
-export const prepareAddressKeys = async (Addresses = [], keyPassword, OrganizationPrivateKey) => {
-    const decryptKeyWithPassword = createDecryptKeyWithPassword(keyPassword);
-
-    if (OrganizationPrivateKey) {
-        const decryptedOrganizationKey = await decryptKeyWithPassword(OrganizationPrivateKey);
-        const decryptKeyWithKey = createDecryptKeyWithKey(decryptedOrganizationKey);
-        return formatAddressKeys(decryptKeyWithKey, Addresses);
+export const prepareAddressKeys = async ({ Addresses = [], keyPassword, OrganizationPrivateKey, cache = {} }) => {
+    if (!keyPassword) {
+        throw new Error('Key password required');
     }
 
-    return formatAddressKeys(decryptKeyWithPassword, Addresses);
+    if (OrganizationPrivateKey) {
+        const decryptedOrganizationKey = await decryptPrivateKey(OrganizationPrivateKey, keyPassword);
+        const decryptKeyWithKey = createDecryptKeyWithKey(decryptedOrganizationKey);
+        return formatAddressKeys(decryptKeyWithKey, Addresses, cache);
+    }
+
+    const decryptKeyWithPassword = createDecryptKeyWithPassword(keyPassword);
+    return formatAddressKeys(decryptKeyWithPassword, Addresses, cache);
+};
+
+/**
+ * Decrypt a list of user keys.
+ * @param {Array} UserKeys
+ * @param {String} keyPassword
+ * @param {String} [OrganizationPrivateKey]
+ * @param {object} [cache]
+ * @return {Promise}
+ */
+export const prepareUserKeys = async ({ UserKeys = [], keyPassword, OrganizationPrivateKey, cache = {} }) => {
+    const KEY = 'userKeys';
+    const { [KEY]: keys } = await prepareAddressKeys({
+        Addresses: [
+            {
+                ID: KEY,
+                Keys: UserKeys
+            }
+        ],
+        keyPassword,
+        OrganizationPrivateKey,
+        cache: {
+            [KEY]: cache
+        }
+    });
+    return keys;
 };
