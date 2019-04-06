@@ -27,7 +27,7 @@ import ViewLayoutRadios from './ViewLayoutRadios';
 import ViewModeRadios from './ViewModeRadios';
 
 const LayoutsSection = () => {
-    const [{ ComposerMode, ViewMode, ViewLayout, DraftMIMEType, RightToLeft, ShowMoved }] = useMailSettings();
+    const [{ ComposerMode, ViewMode, ViewLayout, DraftMIMEType, RightToLeft, ShowMoved } = {}] = useMailSettings();
     const { call } = useEventManager();
 
     const { request: requestComposerMode, loading: loadingComposerMode } = useApiWithoutResult(updateComposerMode);
