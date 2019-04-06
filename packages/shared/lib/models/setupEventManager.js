@@ -76,8 +76,9 @@ export const setupEventManager = (cache, eventID, api) => {
             if (!model) {
                 return acc;
             }
-            return resolveModel(cache, api, model, data[key]);
-        });
+            acc.push(resolveModel(cache, api, model, data[key]));
+            return acc;
+        }, []);
 
         await Promise.all(promises);
 
