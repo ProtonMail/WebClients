@@ -1,3 +1,16 @@
+# [1.5.9] - 2019-04-05
+
+## New
+
+- add selected state for conversation styles
+- add a DO/DON’T
+
+## Updated/fixes
+
+- fixed a display bug in code sections with Prism
+- fixed a display bug in conversations
+
+
 # [1.5.8] - 2019-04-05
 
 ## New
@@ -133,7 +146,7 @@
 
 ## Misc
 
-- Fixed CSP issue on SVG sprite for CSS (Firefox... you really start to stress me up!)
+- Fixed CSP issue on SVG sprite for CSS (Firefox… you really start to stress me up!)
 
 # [1.4.6] - 2019-03-19
 
