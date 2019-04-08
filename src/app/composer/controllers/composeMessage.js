@@ -387,8 +387,8 @@ function ComposeMessageController(
             AppModel.set('maximizedComposer', true);
         }
 
-        message.attachmentsToggle =
-            message.Attachments.length - message.NumEmbedded > 0 && message.Attachments.length > message.NumEmbedded;
+        message.touched = false;
+        message.attachmentsToggle = message.Attachments.length > message.NumEmbedded;
         message.ccbcc = false;
         message.autocompletesFocussed = false;
 
@@ -462,6 +462,7 @@ function ComposeMessageController(
      * Return the subject title of the composer
      */
     $scope.subject = (message) => {
+        if (message.Subject) message.touched = true;
         return message.Subject || gettextCatalog.getString('New message', null, 'Title');
     };
 
@@ -561,13 +562,14 @@ function ComposeMessageController(
             }
         };
 
-        if (discard === true) {
+        if (!message.touched || discard === true) {
+            delete message.discardDontAutoSave;
             const ids = [message.ID];
             dispatcher.messageActions('delete', { ids });
         }
 
         $timeout.cancel(message.defferredSaveLater);
-        if (save === true) {
+        if (save === true && message.touched) {
             postMessage(message, { autosaving: true }).then(process);
         } else {
             process();

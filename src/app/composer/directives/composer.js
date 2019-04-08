@@ -57,6 +57,7 @@ function composer(AppModel, attachmentFileFormat, dispatchers, mailSettingsModel
                     return;
                 }
 
+                scope.message.touched = true;
                 switch (type) {
                     case 'dragenter':
                         onDragEnter(data.event);

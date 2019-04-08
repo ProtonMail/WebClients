@@ -66,6 +66,7 @@ function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, t
              * @return {void}
              */
             async function updateMessageModel(val, dispatchAction = false, forceUpdate = false) {
+                scope.message.touched = true;
                 if (scope.message.MIMEType === PLAINTEXT) {
                     if (forceUpdate) {
                         // The plaintext editor uses the message model so use $applyAsync
