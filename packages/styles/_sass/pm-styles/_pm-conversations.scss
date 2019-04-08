@@ -17,6 +17,10 @@
   border-bottom: 1px solid $pm-global-border;
 }
 
+.conversation-is-selected {
+  background: $conversation-selected-bg;
+}
+
 $conversation-icon-size: 4rem;
 .conversation-icon {
   width: $conversation-icon-size;

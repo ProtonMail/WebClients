@@ -49,7 +49,7 @@ a[href^="mailto:"] {
   @extend .inbl;
 }
 
-$list-icon-pixels: 16,25,100 !default; 
+$list-icon-pixels: 16,20,25,100 !default; 
 
 @each $width in $list-icon-pixels {
   .icon-#{$width}p { 
