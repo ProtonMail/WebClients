@@ -135,3 +135,15 @@ line-height: normal</code></pre>
   </div>
 </div>
 <p>Put a <code>title</code> in the button, an image with <code>alt</code> in it, a <code>span class="sr-only"</code> in it, but do not leave it empty, otherwise, will be vocalized “button” without any information for the user.</p>
+
+<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup p1 relative icon-ko"><code>&lt;button class="ellipsis"&gt;lorem dolor si amet…&lt;/button&gt;
+    </code></pre>
+  </div>
+  <div class="w49">
+    <pre class=" language-markup p1 relative icon-ok"><code>&lt;button class="ellipsis" title="lorem dolor si amet consegur"&gt;lorem dolor si amet…&lt;/button&gt;
+    </code></pre>
+  </div>
+</div>
+<p>When using the class <code>ellipsis</code>, add a <code>title</code> attribute with the full version.</p>
