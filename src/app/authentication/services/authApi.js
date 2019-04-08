@@ -9,12 +9,11 @@ function authApi($http, compatApi, url) {
     return {
         /**
          * Refresh an expired token
-         * @param {Object} params
          * @param {Object} config
          * @return {Promise}
          */
-        refresh(params = {}, config = {}) {
-            return $http.post(requestURL('refresh'), params, config);
+        refresh(config = {}) {
+            return $http.post(requestURL('refresh'), undefined, config);
         },
         /**
          * Set secure cookies, web app only
