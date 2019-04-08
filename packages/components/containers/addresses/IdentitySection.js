@@ -1,14 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { SmallButton, SubTitle, Label, Select, Text, Info, Row, useAddresses, useModal } from 'react-components';
+import {
+    SmallButton,
+    SubTitle,
+    Label,
+    Select,
+    Text,
+    Info,
+    Row,
+    Loader,
+    useAddresses,
+    useModal
+} from 'react-components';
 import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from 'proton-shared/lib/constants';
 
 import EditAddressModal from './EditAddressModal';
 import PMSignatureToggle from './PMSignatureToggle';
 
 const IdentitySection = () => {
-    const [addresses] = useAddresses();
+    const title = <SubTitle>{c('Title').t`Identity`}</SubTitle>;
+    const [addresses = [], loading] = useAddresses();
     const { isOpen, open, close } = useModal();
+    const [address, setAddress] = useState();
+
+    useEffect(() => {
+        if (addresses.length) {
+            const [address] = addresses;
+            setAddress(address);
+        }
+    }, [loading]);
+
+    if (loading || !address) {
+        return (
+            <>
+                {title}
+                <Loader />
+            </>
+        );
+    }
 
     const options = addresses
         .filter(
@@ -18,12 +47,12 @@ const IdentitySection = () => {
                 Send === SEND_ADDRESS.SEND_YES
         )
         .map(({ ID: value, Email: text }) => ({ text, value }));
-    const [address, setAddress] = useState(addresses[0]);
+
     const handleChange = ({ target }) => setAddress(addresses.find(({ ID }) => ID === target.value));
 
     return (
         <>
-            <SubTitle>{c('Title').t`Identity`}</SubTitle>
+            {title}
             <EditAddressModal show={isOpen} onClose={close} address={address} />
             <Row>
                 <Label htmlFor="addressSelector">{c('Label').t`Select an address`}</Label>

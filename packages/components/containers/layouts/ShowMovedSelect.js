@@ -17,7 +17,7 @@ const ShowMovedSelect = ({ showMoved, onChange, loading }) => {
 };
 
 ShowMovedSelect.propTypes = {
-    showMoved: PropTypes.string.isRequired,
+    showMoved: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
     loading: PropTypes.bool
 };

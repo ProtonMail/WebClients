@@ -4,6 +4,7 @@ import { useApi, EventManagerProvider, CacheProvider } from 'react-components';
 import createCache from 'proton-shared/lib/helpers/cache';
 import { UserModel } from 'proton-shared/lib/models/userModel';
 import { UserSettingsModel } from 'proton-shared/lib/models/userSettingsModel';
+import { MailSettingsModel } from 'proton-shared/lib/models/mailSettingsModel';
 import { SubscriptionModel } from 'proton-shared/lib/models/subscriptionModel';
 import { OrganizationModel } from 'proton-shared/lib/models/organizationModel';
 import { setupEventManager, getEventID } from 'proton-shared/lib/models/setupEventManager';
@@ -21,10 +22,11 @@ const ModelsProvider = ({ children, loginData = {} }) => {
         const apiWithAbort = (config) => api({ ...config, signal: abortController.signal });
 
         const setup = async () => {
-            const [user, eventID, userSettingsModel] = await Promise.all([
+            const [user, eventID, userSettingsModel, mailSettingsModel] = await Promise.all([
                 loginData.user || UserModel.get(api),
                 loginData.eventID || getEventID(api),
-                UserSettingsModel.get(api)
+                UserSettingsModel.get(api),
+                MailSettingsModel.get(api)
             ]);
 
             const models = [user.isPaid && SubscriptionModel, user.isPaid && OrganizationModel].filter(Boolean);
@@ -33,6 +35,7 @@ const ModelsProvider = ({ children, loginData = {} }) => {
             const initialCache = {
                 [UserModel.key]: user,
                 [UserSettingsModel.key]: userSettingsModel,
+                [MailSettingsModel.key]: mailSettingsModel,
                 ...models.reduce((acc, cur, i) => {
                     acc[cur.key] = modelsResult[i];
                     return acc;

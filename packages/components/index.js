@@ -192,8 +192,9 @@ export { default as MessageContentSection } from './containers/messages/MessageC
 export { default as NotificationsContext } from './context/notifications';
 export { default as AuthenticationStoreContext } from './context/authenticationStore';
 export { default as ApiContext } from './context/api';
+export { default as Loading } from './components/container/Loading';
 export { default as PromptsContext } from './context/prompts';
-export { default as PmMePanel } from './containers/addresses/PmMePanel';
+export { default as PmMeSection } from './containers/addresses/PmMeSection';
 export { default as IdentitySection } from './containers/addresses/IdentitySection';
 export { default as useStep } from './helpers/useStep';
 export { default as useApiWithoutResult } from './hooks/useApiWithoutResult';

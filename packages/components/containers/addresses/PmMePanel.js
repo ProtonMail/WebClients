@@ -2,13 +2,18 @@ import React from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
 import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
-import { Alert, Paragraph, useUser, useAddresses } from 'react-components';
+import { Alert, Paragraph, Loader, useUser, useAddresses } from 'react-components';
 
 import PmMeButton from './PmMeButton';
 
 const PmMePanel = () => {
     const [user] = useUser();
-    const [addresses] = useAddresses();
+    const [addresses, loading] = useAddresses();
+
+    if (loading) {
+        return <Loader />;
+    }
+
     const hasPremium = addresses.find(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
 
     if (!hasPremium) {
