@@ -29,7 +29,7 @@ function handle401($http, $q, authentication, authApi) {
         if (!refreshPromise) {
             refreshPromise = authApi
                 // Don't display this error, the "invalid access token" error will be displayed.
-                .refresh({}, { suppress: [AUTH_COOKIES_REFRESH_INVALID, AUTH_REFRESH_TOKEN_INVALID] })
+                .refresh({ suppress: [AUTH_COOKIES_REFRESH_INVALID, AUTH_REFRESH_TOKEN_INVALID] })
                 .then(clearPromise)
                 .catch(() => {
                     logout();
