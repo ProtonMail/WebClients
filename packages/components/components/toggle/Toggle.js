@@ -12,7 +12,7 @@ const label = (key) => {
 
     return (
         <span className="pm-toggle-label-text">
-            <Icon name={key} alt={I18N[key]} className="pm-toggle-label-img" />
+            <Icon name={key} alt={I18N[key]} fill="none" className="pm-toggle-label-img" />
         </span>
     );
 };
