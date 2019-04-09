@@ -1,10 +1,10 @@
-.conversation-container {
-    @include flexColumn();
-}
-.conversation-wrapper {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    flex: 1;
-}
+// .conversation-container {
+//     @include flexColumn();
+// }
+// .conversation-wrapper {
+//     overflow-y: scroll;
+//     -webkit-overflow-scrolling: touch;
+//     flex: 1;
+// }
 /* context */
 .hasElementsSelected [id="conversation-view"] { display: none !important }

@@ -11,6 +11,7 @@ function protonmailLogo(authentication, organizationModel, subscriptionModel, di
         replace: true,
         link(scope, element) {
             const { on, unsubscribe } = dispatchers();
+            const planText = element[0].querySelector('#plan');
 
             on('organizationChange', updateLogo);
             on('updateUser', updateLogo);
@@ -23,6 +24,7 @@ function protonmailLogo(authentication, organizationModel, subscriptionModel, di
                 const isLifetime = subscription.CouponCode === 'LIFETIME';
                 const isSubuser = authentication.user.subuser;
                 const isMember = authentication.user.Role === PAID_MEMBER_ROLE;
+
                 let planName = organization.PlanName;
 
                 if (isLifetime) {
@@ -33,6 +35,7 @@ function protonmailLogo(authentication, organizationModel, subscriptionModel, di
                 }
                 element.removeClass(PLANS_LIST).addClass(planName);
                 element.attr('data-plan-name', planName);
+                planText.innerHTML = planName;
             }
 
             scope.$on('$destroy', unsubscribe);

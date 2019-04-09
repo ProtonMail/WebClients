@@ -1,20 +1,25 @@
-<form method="post" class="searchForm-container">
+<form method="post" class="searchbox-container  flex">
 
-    <div class="search-form-fieldset">
-        <button class="searchForm-action-button-default">
+    <div class="relative w100 flex-item-centered-vert noprint">
+        <!-- <button class="searchForm-action-button-default">
             <i class="fa fa-search"></i>
-        </button>
-        <input
-            type="search"
-            placeholder-translate="Search messages"
-            placeholder-translate-context="Placeholder search"
-            autocomplete="off"
-            ng-model="query"
-            class="search-form-fieldset-input placeholder-white no-outline">
+        </button> -->
+        <label for="global_search">
+            <span class="sr-only" translate-context="Placeholder search" translate>Search messages</span>
+            <input
+                type="search"
+                id="global_search"
+                placeholder-translate="Search messages"
+                placeholder-translate-context="Placeholder search"
+                autocomplete="off"
+                ng-model="query"
+                class="pm-field w100 searchbox-field">
+        </label>
+
         <btn-advanced-search
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Advanced search"
-            pt-placement="bottom" class="searchForm-action-button-toggle"></btn-advanced-search>
+            pt-placement="bottom" class="searchbox-advanced-search-button"></btn-advanced-search>
         <btn-advanced-search
             data-action="close"
             class="searchForm-action-button-advanced"></btn-advanced-search>
