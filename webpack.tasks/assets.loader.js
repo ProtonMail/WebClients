@@ -1,51 +1,30 @@
-const MAX_SIZE = 24 * 1024;
+const LIMIT = 10000;
+const DESIGN_SYSTEM_SVG = /sprite-icons.svg$/;
 
 module.exports = [
     {
-        test: /\.(jpg|jpeg|gif|svg)$/,
+        test: /\.(bmp|png|jpg|jpeg|gif|svg)$/,
+        loader: 'url-loader',
+        exclude: DESIGN_SYSTEM_SVG,
+        options: {
+            limit: LIMIT,
+            name: 'assets/img/[name].[hash:8].[ext]'
+        }
+    },
+    {
+        test: DESIGN_SYSTEM_SVG,
         use: [
             {
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                    outputPath: 'assets/img/'
-                }
+                loader: 'svg-inline-loader'
             }
         ]
     },
     {
-        test: /\.png$/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
             {
                 loader: 'file-loader',
                 options: {
-                    limit: MAX_SIZE,
-                    name: 'assets/img/[name].[ext]',
-                    mimetype: 'image/png'
-                }
-            }
-        ]
-    },
-    {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: [
-            {
-                loader: 'file-loader',
-                options: {
-                    limit: MAX_SIZE,
-                    name: 'assets/fonts/[name].[ext]',
-                    mimetype: 'application/font-woff'
-                }
-            }
-        ]
-    },
-    {
-        test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: [
-            {
-                loader: 'file-loader',
-                options: {
-                    limit: MAX_SIZE,
                     name: 'assets/fonts/[name].[ext]'
                 }
             }
