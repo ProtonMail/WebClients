@@ -5,7 +5,7 @@ import { ButtonGroup, Group } from '../button';
 import { Dropdown, DropdownMenu } from '../dropdown';
 import Icon from '../icon/Icon';
 
-const Pagination = ({ onNext, onPrevious, onSelect, page, total, limit }) => {
+const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, total, limit }) => {
     if (!total) {
         return null;
     }
@@ -32,9 +32,11 @@ const Pagination = ({ onNext, onPrevious, onSelect, page, total, limit }) => {
 
     return (
         <Group>
-            <ButtonGroup disabled={disablePrevious} onClick={onPrevious}>
-                <Icon name="arrow-left" />
-            </ButtonGroup>
+            {hasPrevious ? (
+                <ButtonGroup disabled={disablePrevious} onClick={onPrevious}>
+                    <Icon name="arrow-left" />
+                </ButtonGroup>
+            ) : null}
             <Dropdown
                 className="pm-group-button"
                 content={
@@ -45,9 +47,11 @@ const Pagination = ({ onNext, onPrevious, onSelect, page, total, limit }) => {
             >
                 <DropdownMenu list={list} />
             </Dropdown>
-            <ButtonGroup disabled={disableNext} onClick={onNext}>
-                <Icon name="arrow-right" />
-            </ButtonGroup>
+            {hasNext ? (
+                <ButtonGroup disabled={disableNext} onClick={onNext}>
+                    <Icon name="arrow-right" />
+                </ButtonGroup>
+            ) : null}
         </Group>
     );
 };
@@ -58,11 +62,15 @@ Pagination.propTypes = {
     onSelect: PropTypes.func.isRequired,
     page: PropTypes.number.isRequired,
     total: PropTypes.number.isRequired,
-    limit: PropTypes.number.isRequired
+    limit: PropTypes.number.isRequired,
+    hasNext: PropTypes.bool.isRequired,
+    hasPrevious: PropTypes.bool.isRequired
 };
 
 Pagination.defaultProps = {
-    page: 1
+    page: 1,
+    hasNext: true,
+    hasPrevious: true
 };
 
 export default Pagination;
