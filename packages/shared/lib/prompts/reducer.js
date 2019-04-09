@@ -12,7 +12,7 @@ const filterOutId = (arr, removeId) => {
 export default (state, { type, payload }) => {
     if (type === CREATE_PROMISE) {
         const pendingPromise = createPromise(payload);
-        return [pendingPromise, ...state];
+        return [...state, pendingPromise];
     }
 
     if (type === RESOLVE_PROMISE || type === REJECT_PROMISE) {
