@@ -9,7 +9,7 @@ import {
     PrimaryButton,
     Row,
     Label,
-    Password,
+    PasswordInput,
     Input,
     Checkbox,
     Select,
@@ -72,14 +72,14 @@ const MemberModal = ({ show, onClose, organization, domains }) => {
                 <Row>
                     <Label>{c('Label').t`Password`}</Label>
                     <div className="flex-autogrid">
-                        <Password
+                        <PasswordInput
                             value={model.password}
                             className="flex-autogrid-item mb1"
                             onChange={handleChange('password')}
                             placeholder={c('Placeholder').t`Password`}
                             required
                         />
-                        <Password
+                        <PasswordInput
                             value={model.confirm}
                             className="flex-autogrid-item"
                             onChange={handleChange('confirm')}

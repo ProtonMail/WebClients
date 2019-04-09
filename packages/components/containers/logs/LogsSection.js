@@ -104,7 +104,7 @@ const LogsSection = () => {
                         >{c('Log preference').t`Advanced`}</ButtonGroup>
                     </Group>
                     <Button className="mr1" onClick={requestQueryLogs} title={c('Action').t`Refresh`}>
-                        <Icon name="refresh" />
+                        <Icon name="reload" />
                     </Button>
                     {logs.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
                     {logs.length ? <Button onClick={handleDownload}>{c('Action').t`Download`}</Button> : null}

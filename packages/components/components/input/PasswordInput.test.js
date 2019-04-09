@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
 
-import Password from './Password';
+import PasswordInput from './PasswordInput';
 
-describe('Password component', () => {
+describe('PasswordInput component', () => {
     const value = 'panda';
 
     it('should display a password input with a toggle button', () => {
-        const { container } = render(<Password value={value} />);
+        const { container } = render(<PasswordInput value={value} />);
         const inputNode = container.querySelector('input');
         const buttonNode = container.querySelector('button');
 
@@ -17,7 +17,7 @@ describe('Password component', () => {
     });
 
     it('should display the password', () => {
-        const { container } = render(<Password value={value} />);
+        const { container } = render(<PasswordInput value={value} />);
         const inputNode = container.querySelector('input');
         const buttonNode = container.querySelector('button');
 

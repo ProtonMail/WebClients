@@ -15,4 +15,8 @@ Label.propTypes = {
     htmlFor: PropTypes.string
 };
 
+Label.defaultProps = {
+    className: ''
+};
+
 export default Label;

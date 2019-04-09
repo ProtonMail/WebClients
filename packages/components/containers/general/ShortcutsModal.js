@@ -9,7 +9,7 @@ const ShortcutsModal = ({ show, onClose }) => {
     return (
         <Modal show={show} onClose={onClose} title={c('Title').t`Keyboard shortcuts`}>
             <ContentModal onReset={onClose}>
-                <Details open={true}>
+                <Details className="bordered-container mb1" open={true}>
                     <Summary className="bold h3">{c('Title').t`General`}</Summary>
                     <div className="flex-autogrid onmobile-flex-column">
                         <div className="flex-autogrid-item">
@@ -63,7 +63,7 @@ const ShortcutsModal = ({ show, onClose }) => {
                         </div>
                     </div>
                 </Details>
-                <Details>
+                <Details className="bordered-container mb1">
                     <Summary className="bold h3">{c('Title').t`Mail`}</Summary>
                     <div className="flex-autogrid onmobile-flex-column">
                         <div className="flex-autogrid-item">
@@ -174,7 +174,7 @@ const ShortcutsModal = ({ show, onClose }) => {
                         </div>
                     </div>
                 </Details>
-                <Details>
+                <Details className="bordered-container mb1">
                     <Summary className="bold h3">{c('Title').t`Contact`}</Summary>
                     <div className="flex-autogrid onmobile-flex-column">
                         <div className="flex-autogrid-item">
