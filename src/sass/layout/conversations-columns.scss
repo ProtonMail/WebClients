@@ -1,13 +1,6 @@
 // DEFAULT / ALL
 .conversation {
-    @include flexRow();
-    @include flexAlignCenter();
 
-    background: $white;
-
-    position: relative;
-    height: 61px;
-    overflow: hidden;
     border-bottom: 1px solid $border;
 
     .ptSelectConversation-container {
@@ -24,125 +17,131 @@
         }
     }
 
-    .conversation-meta {
-        @include flexColumn();
-        max-width: calc(100% - 38px);
+    // .conversation-meta {
+    //     @include flexColumn();
+    //     max-width: calc(100% - 38px);
+    // }
+
+    // .row {
+    //     @include flexRow();
+    //     padding-right: 10px;
+    //     height: 30px;
+
+    //     &.top {
+    //         @include flexAlignEnd();
+    //         padding-bottom: 2px;
+    //         .location {
+    //             width: 1.25rem;
+    //             float: left;
+    //             height: 20px;
+    //             line-height: 20px;
+    //             color: rgba(0,0,0,.35);
+    //         }
+    //     }
+    //     &.bottom {
+    //         padding-top: 4px;
+    //         padding-bottom: 10px;
+    //         max-width: 100%; /* long senders */
+    //         cursor: pointer;
+    //         background: inherit
+    //     }
+
+    //     h4,
+    //     .meta {
+    //         @include flexRow();
+    //         @include flexAlignEnd();
+    //         height: 20px;
+    //     }
+
+    //     h4 {
+    //         flex-grow: 1;
+    //         min-width: 1px;
+    //         font-size: 1em;
+    //         cursor: pointer;
+    //         color: set-invert-color($main-background, $black);
+
+    //         .fa-mail-reply,
+    //         .fa-mail-reply-all,
+    //         .fa-mail-forward {
+    //             margin-right: 2px;
+    //         }
+
+    //         .folderConversations-container {
+    //             display: block;
+    //             white-space: nowrap;
+    //             .fa { margin-right: 2px }
+    //         }
+
+    //         .subject-text {
+    //             flex: 1;
+    //             padding: 2px 0px; /*ellipsis*/
+    //             margin: -2px 0px;
+    //         }
+
+    //         .subject-num-message {
+    //             margin-right:5px;
+    //         }
+    //     }
+
+
+    //     .meta {
+    //         @include flexJustifyEnd();
+
+    //         .fa-star,
+    //         .fa-star-o,
+    //         .fa-paperclip {
+    //             text-decoration: none;
+    //             width: 1rem;
+    //         }
+
+    //         .fa-star, .fa-star-o { cursor: pointer }
+    //         .fa-star-o { color: inherit; opacity:.3 }
+    //         .fa-star { color: $yellow-star; }
+    //         .fa-start, .fa-star-o:hover { opacity: 1 }
+
+    //         time.time {
+    //             float: right;
+    //             text-align: right;
+    //             font-style: normal;
+    //             font-size: .9em;
+    //             white-space: nowrap;
+    //         }
+    //     }
+
+    //     .senders {
+    //         white-space: nowrap;
+    //         overflow: hidden;
+    //         text-overflow: ellipsis;
+    //         font-weight: 700;
+    //         font-size: .8em;
+    //         position: relative;
+    //         top: 1px;
+    //         cursor: pointer;
+
+    //         .senders-name::after {content: ', '}
+    //         .senders-name:last-of-type::after {display: none}
+    //         &.full {
+    //             width: 100%;
+    //             .senders-name::after {content: ', '}
+    //             .senders-name:last-of-type::after {display: none}
+    //         }
+    //     }
+
+
+    //     .labelsElement-container {
+    //         margin-left: auto;
+    //         display: inline-flex;
+    //         flex-wrap: nowrap;
+    //         z-index: 2;
+    //         width: auto;
+    //         height: 18px
+    //     }
+    //}
+    .folderConversations-container:empty {
+        margin: 0;
     }
-
-    .row {
-        @include flexRow();
-        padding-right: 10px;
-        height: 30px;
-
-        &.top {
-            @include flexAlignEnd();
-            padding-bottom: 2px;
-            .location {
-                width: 1.25rem;
-                float: left;
-                height: 20px;
-                line-height: 20px;
-                color: rgba(0,0,0,.35);
-            }
-        }
-        &.bottom {
-            padding-top: 4px;
-            padding-bottom: 10px;
-            max-width: 100%; /* long senders */
-            cursor: pointer;
-            background: inherit
-        }
-
-        h4,
-        .meta {
-            @include flexRow();
-            @include flexAlignEnd();
-            height: 20px;
-        }
-
-        h4 {
-            flex-grow: 1;
-            min-width: 1px;
-            font-size: 1em;
-            cursor: pointer;
-            color: set-invert-color($main-background, $black);
-
-            .fa-mail-reply,
-            .fa-mail-reply-all,
-            .fa-mail-forward {
-                margin-right: 2px;
-            }
-
-            .folderConversations-container {
-                display: block;
-                white-space: nowrap;
-                .fa { margin-right: 2px }
-            }
-
-            .subject-text {
-                flex: 1;
-                padding: 2px 0px; /*ellipsis*/
-                margin: -2px 0px;
-            }
-
-            .subject-num-message {
-                margin-right:5px;
-            }
-        }
-
-
-        .meta {
-            @include flexJustifyEnd();
-
-            .fa-star,
-            .fa-star-o,
-            .fa-paperclip {
-                text-decoration: none;
-                width: 1rem;
-            }
-
-            .fa-star, .fa-star-o { cursor: pointer }
-            .fa-star-o { color: inherit; opacity:.3 }
-            .fa-star { color: $yellow-star; }
-            .fa-start, .fa-star-o:hover { opacity: 1 }
-
-            time.time {
-                float: right;
-                text-align: right;
-                font-style: normal;
-                font-size: .9em;
-                white-space: nowrap;
-            }
-        }
-
-        .senders {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-weight: 700;
-            font-size: .8em;
-            position: relative;
-            top: 1px;
-            cursor: pointer;
-
-            .senders-name::after {content: ', '}
-            .senders-name:last-of-type::after {display: none}
-            &.full {
-                width: 100%;
-                .senders-name::after {content: ', '}
-                .senders-name:last-of-type::after {display: none}
-            }
-        }
-
-
-        .labelsElement-container {
-            margin-left: auto;
-            display: inline-flex;
-            flex-wrap: nowrap;
-            z-index: 2;
-            width: auto;
-            height: 18px
-        }
+    .folderConversations-container {
+        .fa + .fa { margin-left: .25em; }
     }
 
     .conversation-icon-attachment { visibility: hidden }
