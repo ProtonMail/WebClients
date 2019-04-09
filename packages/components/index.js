@@ -45,6 +45,7 @@ export { default as Search } from './components/input/Search';
 export { default as TextArea } from './components/input/TextArea';
 export { default as Input } from './components/input/Input';
 export { default as EmailInput } from './components/input/EmailInput';
+export { default as TwoFaInput } from './components/input/TwoFaInput';
 export { default as RadioCard } from './components/input/RadioCard';
 export { default as RadioCards } from './components/input/RadioCards';
 export { default as useDebounceInput } from './components/input/useDebounceInput';

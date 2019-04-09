@@ -7,7 +7,7 @@ import {
     TextArea,
     EmailInput,
     PasswordInput,
-    Input,
+    TwoFaInput,
     Text,
     Modal,
     ContentModal,
@@ -135,7 +135,7 @@ const DeleteAccountModal = ({ show, onClose, clientType }) => {
                 {TwoFactor ? (
                     <Row>
                         <Label htmlFor="twoFa">{c('Label').t`Two-factor passcode`}</Label>
-                        <Input
+                        <TwoFaInput
                             id="twoFa"
                             disabled={loading}
                             value={model.twoFa}
