@@ -120,7 +120,7 @@ export { default as SessionsSection } from './containers/sessions/SessionsSectio
 export { default as SessionAction } from './containers/sessions/SessionAction';
 export { default as PromptsContainer } from './containers/prompts/Container';
 export { default as PromptsProvider } from './containers/prompts/Provider';
-export { default as DesktopNotificationPanel } from './containers/notification/DesktopNotificationPanel';
+export { default as DesktopNotificationSection } from './containers/notification/DesktopNotificationSection';
 export { default as NewsCheckboxes } from './containers/notification/NewsCheckboxes';
 export { default as RecoveryEmailButton } from './containers/notification/RecoveryEmailButton';
 export { default as PasswordResetToggle } from './containers/notification/PasswordResetToggle';
@@ -188,7 +188,7 @@ export { default as ComposerModeRadios } from './containers/layouts/ComposerMode
 export { default as OrganizationSection } from './containers/organization/OrganizationSection';
 export { default as RemoteToggle } from './containers/messages/RemoteToggle';
 export { default as EmbeddedToggle } from './containers/messages/EmbeddedToggle';
-export { default as MessageContentSection } from './containers/messages/MessageContentSection';
+export { default as MessagesSection } from './containers/messages/MessagesSection';
 export { default as NotificationsContext } from './context/notifications';
 export { default as AuthenticationStoreContext } from './context/authenticationStore';
 export { default as ApiContext } from './context/api';

@@ -5,7 +5,7 @@ import { SubTitle, Row, Label, Info, useMailSettings } from 'react-components';
 import RemoteToggle from './RemoteToggle';
 import EmbeddedToggle from './EmbeddedToggle';
 
-const MessageContentSection = () => {
+const MessagesSection = () => {
     const [mailSettings] = useMailSettings();
     const [showImages, setShowImages] = useState(mailSettings.ShowImages);
 
@@ -18,7 +18,7 @@ const MessageContentSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Address verification`}</SubTitle>
+            <SubTitle>{c('Title').t`Messages`}</SubTitle>
             <Row>
                 <Label htmlFor="remoteToggle">
                     <span className="mr1">{c('Label').t`Auto-load remote content`}</span>
@@ -37,4 +37,4 @@ const MessageContentSection = () => {
     );
 };
 
-export default MessageContentSection;
+export default MessagesSection;
