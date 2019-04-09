@@ -1,56 +1,13 @@
-export const reportBug = ({
-    OS,
-    OSVersion,
-    Browser,
-    BrowserVersion,
-    BrowserExtensions,
-    Resolution,
-    DisplayMode,
-    Client,
-    ClientVersion,
-    ClientType,
-    Title,
-    Description,
-    Username,
-    Email,
-    Country,
-    ISP
-}) => ({
+export const reportBug = (data) => ({
     method: 'post',
     url: 'reports/bug',
-    data: {
-        OS,
-        OSVersion,
-        Browser,
-        BrowserVersion,
-        BrowserExtensions,
-        Resolution,
-        DisplayMode,
-        Client,
-        ClientVersion,
-        ClientType,
-        Title,
-        Description,
-        Username,
-        Email,
-        Country,
-        ISP
-    }
+    data
 });
 
-export const reportCrash = ({ OS, OSVersion, Browser, BrowserVersion, Client, ClientVersion, ClientType, Debug }) => ({
+export const reportCrash = (data) => ({
     method: 'post',
     url: 'reports/bug',
-    data: {
-        OS,
-        OSVersion,
-        Browser,
-        BrowserVersion,
-        Client,
-        ClientVersion,
-        ClientType,
-        Debug
-    }
+    data
 });
 
 // reportCrashSentryProxy  unclear API-spec
