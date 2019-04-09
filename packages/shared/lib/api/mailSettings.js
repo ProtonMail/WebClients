@@ -110,3 +110,9 @@ export const updateAttachPublicKey = (AttachPublicKey) => ({
     method: 'put',
     data: { AttachPublicKey }
 });
+
+export const updateHotkeys = (Hotkeys) => ({
+    url: 'settings/mail/hotkeys',
+    method: 'put',
+    data: { Hotkeys }
+});
