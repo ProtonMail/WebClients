@@ -11,8 +11,8 @@ const EmbeddedToggle = ({ id, showImages, onChange }) => {
     const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateShowImages);
     const { state, toggle } = useToggle(hasBit(showImages, EMBEDDED));
-    const handleChange = async (newValue) => {
-        const bit = newValue ? setBit(showImages, EMBEDDED) : clearBit(showImages, EMBEDDED);
+    const handleChange = async ({ target }) => {
+        const bit = target.checked ? setBit(showImages, EMBEDDED) : clearBit(showImages, EMBEDDED);
         await request(bit);
         await call();
         toggle();

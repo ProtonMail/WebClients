@@ -4,7 +4,6 @@ import { SubTitle, Label, Row, Info } from 'react-components';
 
 import PasswordResetToggle from './PasswordResetToggle';
 import DailyNotificationsToggle from './DailyNotificationsToggle';
-import DesktopNotificationPanel from './DesktopNotificationPanel';
 import NewsCheckboxes from './NewsCheckboxes';
 import RecoveryEmailButton from './RecoveryEmailButton';
 
@@ -30,13 +29,6 @@ const NotificationSection = () => {
                     />
                 </Label>
                 <DailyNotificationsToggle id="dailyNotificationsToggle" />
-            </Row>
-            <Row>
-                <Label>
-                    {c('Label').t`Desktop notification`}{' '}
-                    <Info url="https://protonmail.com/support/knowledge-base/desktop-notifications/" />
-                </Label>
-                <DesktopNotificationPanel />
             </Row>
             <Row>
                 <Label>{c('Label').t`Email subscriptions`}</Label>

@@ -9,7 +9,7 @@ const DailyNotificationsToggle = ({ id }) => {
     const { state, toggle } = useToggle(!!Email.Notify);
 
     const handleChange = async ({ target }) => {
-        await request(target.checked);
+        await request(+target.checked);
         await call();
         toggle();
     };

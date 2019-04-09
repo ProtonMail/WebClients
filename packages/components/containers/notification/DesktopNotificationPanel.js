@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import Push from 'push.js';
-import { Alert, Badge, Button } from 'react-components';
+import { Paragraph, Badge, SmallButton } from 'react-components';
 
 const DesktopNotificationPanel = () => {
     const [status, setStatus] = useState(Push.Permission.get() === Push.Permission.GRANTED);
@@ -33,20 +33,20 @@ const DesktopNotificationPanel = () => {
 
     if (!status) {
         return (
-            <Alert>
+            <Paragraph>
                 {c('Info').t`Desktop Notifications are currently`} <Badge type="error">{c('Badge').t`Disabled`}</Badge>
                 <br />
-                <Button onClick={request}>{c('Action').t`Enable desktop notification`}</Button>
-            </Alert>
+                <SmallButton onClick={request}>{c('Action').t`Enable desktop notification`}</SmallButton>
+            </Paragraph>
         );
     }
 
     return (
-        <Alert>
+        <Paragraph>
             {c('Info').t`Desktop Notifications are currently`} <Badge type="success">{c('Badge').t`Enabled`}</Badge>
             <br />
-            <Button onClick={test}>{c('Action').t`Send test notification`}</Button>
-        </Alert>
+            <SmallButton onClick={test}>{c('Action').t`Send test notification`}</SmallButton>
+        </Paragraph>
     );
 };
 

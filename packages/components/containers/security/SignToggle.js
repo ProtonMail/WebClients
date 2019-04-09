@@ -7,8 +7,8 @@ const SignToggle = ({ id, sign }) => {
     const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateSign);
     const { state, toggle } = useToggle(!!sign);
-    const handleChange = async (newValue) => {
-        await request(+newValue);
+    const handleChange = async ({ target }) => {
+        await request(+target.checked);
         await call();
         toggle();
     };

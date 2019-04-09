@@ -11,8 +11,8 @@ const RemoteToggle = ({ id, showImages, onChange }) => {
     const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateShowImages);
     const { state, toggle } = useToggle(hasBit(showImages, REMOTE));
-    const handleChange = async (newValue) => {
-        const bit = newValue ? setBit(showImages, REMOTE) : clearBit(showImages, REMOTE);
+    const handleChange = async ({ target }) => {
+        const bit = target.checked ? setBit(showImages, REMOTE) : clearBit(showImages, REMOTE);
         await request(bit);
         await call();
         toggle();

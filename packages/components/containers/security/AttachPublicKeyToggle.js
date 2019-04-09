@@ -24,9 +24,9 @@ const AttachPublicKeyToggle = ({ id, attachPublicKey, sign }) => {
         await call();
     };
 
-    const handleChange = async (newValue) => {
-        askSign();
-        await request(+newValue);
+    const handleChange = async ({ target }) => {
+        askSign(target.checked);
+        await request(+target.checked);
         await call();
         toggle();
     };
