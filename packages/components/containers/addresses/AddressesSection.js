@@ -4,6 +4,7 @@ import {
     useUser,
     useAddresses,
     useMembers,
+    Loader,
     SubTitle,
     Table,
     TableHeader,
@@ -61,7 +62,7 @@ const AddressesSection = () => {
     }, [member]);
 
     useEffect(() => {
-        if (addresses.length === 0) {
+        if (!addresses.length) {
             return;
         }
         const currentUser = members.find(({ Self }) => Self);
@@ -76,7 +77,9 @@ const AddressesSection = () => {
             <SubTitle>{c('Title').t`Addresses`}</SubTitle>
             {member ? (
                 <AddressesToolbar onChangeMember={setMember} loading={loading} members={members} member={member} />
-            ) : null}
+            ) : (
+                <Loader />
+            )}
             <Table>
                 <TableHeader
                     cells={[

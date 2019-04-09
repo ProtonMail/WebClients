@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { c, jt } from 'ttag';
+import { c } from 'ttag';
 import { Alert, Price, Button, useApiResult } from 'react-components';
 import { createBitcoinPayment } from 'proton-shared/lib/api/payments';
 import { MIN_BITCOIN_AMOUNT } from 'proton-shared/lib/constants';
@@ -17,7 +17,9 @@ const Bitcoin = ({ amount, currency, type }) => {
 
     if (amount < MIN_BITCOIN_AMOUNT) {
         return (
-            <Alert type="warning">{jt`Amount below minimum. (${<Price currency={currency}>{amount}</Price>})`}</Alert>
+            <Alert type="warning">{c('Info').jt`Amount below minimum. (${(
+                <Price currency={currency}>{amount}</Price>
+            )})`}</Alert>
         );
     }
 

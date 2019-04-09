@@ -1,10 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Loader = ({ className }) => <div className={className} aria-busy="true" />;
-
-Loader.propTypes = {
-    className: PropTypes.string
-};
+const Loader = () => <div className="square-color center mb2 mt0-5" aria-busy="true" />;
 
 export default Loader;
