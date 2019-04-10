@@ -24,4 +24,13 @@ describe('PasswordInput component', () => {
         fireEvent.click(buttonNode);
         expect(inputNode.getAttribute('type')).toBe('text');
     });
+
+    it('should disable input and button', () => {
+        const { container } = render(<PasswordInput disabled={true} />);
+        const inputNode = container.querySelector('input');
+        const buttonNode = container.querySelector('button');
+
+        expect(inputNode).toHaveAttribute('disabled');
+        expect(buttonNode).toHaveAttribute('disabled');
+    });
 });
