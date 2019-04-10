@@ -396,10 +396,10 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 2 !default; // specify 2.5 if need
       -ms-flex-positive: 0;
           flex-grow: 0;
 }
-.flex-item-grow-1-5 {
-  -webkit-box-flex: 1.5;
-      -ms-flex-positive: 1.5;
-          flex-grow: 1.5;
+.flex-item-grow-2 {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
 }
 
 .flex-self-vcenter {
