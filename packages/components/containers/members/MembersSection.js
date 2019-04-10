@@ -9,7 +9,6 @@ import {
     Alert,
     Search,
     TableBody,
-    ObserverSection,
     TableRow,
     useMembers
 } from 'react-components';
@@ -48,7 +47,7 @@ const MembersSection = () => {
     }, [keywords, members]);
 
     return (
-        <ObserverSection id="members">
+        <>
             <SubTitle>{c('Title').t`Users`}</SubTitle>
             <Alert learnMore="todo">
                 {c('Info for members section')
@@ -103,7 +102,7 @@ const MembersSection = () => {
                 <span className="mr1">{c('Info').t`You can add and manage addresses for the user in your`}</span>
                 <Link to="/settings/addresses">{c('Link').t`Address Settings`}</Link>
             </Alert>
-        </ObserverSection>
+        </>
     );
 };
 

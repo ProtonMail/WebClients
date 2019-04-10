@@ -19,10 +19,10 @@ const SubSidebar = ({ list, children }) => {
             <div className="subnav-inner">
                 <p className="uppercase smaller">{c('Title').t`Jump to`}</p>
                 <ul className="unstyled subnav-list">
-                    {list.map(({ id, text }) => {
+                    {list.map(({ id = '', text }) => {
                         return (
                             <li key={id} className="mb0-5">
-                                <a href={`#${id}`} aria-current={hash === id}>
+                                <a href={`${location.pathname}#${id}`} aria-current={hash === id}>
                                     {text}
                                 </a>
                             </li>

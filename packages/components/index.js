@@ -79,6 +79,7 @@ export { default as Label } from './components/label/Label';
 export { default as NavMenu } from './components/sidebar/NavMenu';
 export { default as NavItem } from './components/sidebar/NavItem';
 export { default as Sidebar } from './components/sidebar/Sidebar';
+export { default as SubSidebar } from './components/sidebar/SubSidebar';
 export { default as LoginContainer } from './containers/login/LoginContainer';
 export { default as TOTPForm } from './containers/login/TOTPForm';
 export { default as useLogin } from './containers/login/useLogin';
