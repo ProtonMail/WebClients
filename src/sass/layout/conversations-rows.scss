@@ -2,23 +2,23 @@
 body {
     #conversation-list-rows {
         .conversation {
-            height: 40px;
-            line-height: 40px;
-            padding: 0;
-            border-bottom:1px solid $border;
+            // height: 40px;
+            // line-height: 40px;
+            // padding: 0;
+            // border-bottom:1px solid $border;
             background: $white;
 
-            .ptSelectConversation-container {
-                @include flexRow();
-                @include flexAlignCenter();
-                @include flexJustifyCenter();
+            // .ptSelectConversation-container {
+            //     @include flexRow();
+            //     @include flexAlignCenter();
+            //     @include flexJustifyCenter();
 
-                position: relative;
-                float: left;
-                padding: 0;
-                text-align: center;
-                width: 38px; /*.elements-selector-check + (.pm_toolbar padding-left/2) + .marked */
-            }
+            //     position: relative;
+            //     float: left;
+            //     padding: 0;
+            //     text-align: center;
+            //     width: 38px; /*.elements-selector-check + (.pm_toolbar padding-left/2) + .marked */
+            // }
 
             .fa-star, .fa-star-o {
                 text-decoration: none;
@@ -29,79 +29,77 @@ body {
             .fa-star { color: $yellow-star }
 
             .senders {
-                width: 16%;
+                //width: 16%;
                 cursor: pointer;
                 .senders-name::after {content: ', '}
                 .senders-name:last-of-type::after {display: none}
             }
-            .subject {
-                position: relative;
+            // .subject {
+            //     position: relative;
 
-                display: inline-flex;
-                justify-content: space-between;
-                align-items: center;
+            //     display: inline-flex;
+            //     justify-content: space-between;
+            //     align-items: center;
 
-                width: calc(84% - 17rem);
-                padding-left: 4px;
-                background: inherit;
-                cursor: pointer;
+            //     width: calc(84% - 17rem);
+            //     padding-left: 4px;
+            //     background: inherit;
+            //     cursor: pointer;
 
-                h4 {
-                    @include flexRow();
-                    @include flexAlignCenter();
-                    height: 40px;
-                    margin: 0;
-                    font-size: 1em;
+            //     h4 {
+            //         @include flexRow();
+            //         @include flexAlignCenter();
+            //         height: 40px;
+            //         margin: 0;
+            //         font-size: 1em;
 
-                    color: $black;
-                    max-width: 90%;
+            //         color: $black;
+            //         max-width: 90%;
 
-                    .subject-text {
-                        flex: 1;
-                        padding: 2px 0px; /*ellipsis*/
-                        margin: -2px 0px;
-                    }
+            //         .subject-text {
+            //             flex: 1;
+            //             padding: 2px 0px; /*ellipsis*/
+            //             margin: -2px 0px;
+            //         }
 
-                    .subject-num-message { margin: 0px 2px }
+            //         .subject-num-message { margin: 0px 2px }
 
-                    .fa-mail-reply,
-                    .fa-mail-reply-all,
-                    .fa-mail-forward {
-                        margin-right: 2px;
-                    }
+            //         .fa-mail-reply,
+            //         .fa-mail-reply-all,
+            //         .fa-mail-forward {
+            //             margin-right: 2px;
+            //         }
 
-                    .folderConversations-container {
-                        display: block;
-                        white-space: nowrap;
-                        .fa { margin-right: 2px }
-                    }
+            //         .folderConversations-container {
+            //             display: block;
+            //             white-space: nowrap;
+            //             .fa { margin-right: 2px }
+            //         }
 
-                }
-                .location {
-                    width: 1.25rem;
-                    float: left;
-                    height: 40px;
-                    line-height: 40px;
-                    color: rgba(0,0,0,.35);
-                }
-                .labelsElement-container {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    display: flex;
-                    align-items: center;
-                    height: 100%;
-                    padding: 10px 0px;
-                }
-            }
+            //     }
+            //     .location {
+            //         width: 1.25rem;
+            //         float: left;
+            //         height: 40px;
+            //         line-height: 40px;
+            //         color: rgba(0,0,0,.35);
+            //     }
+            //     .labelsElement-container {
+            //         position: absolute;
+            //         right: 0;
+            //         top: 0;
+            //         display: flex;
+            //         align-items: center;
+            //         height: 100%;
+            //         padding: 10px 0px;
+            //     }
+            // }
 
-            .size,
-            .time { font-size: .9em }
+            // .size,
+            // .time { font-size: .9em }
 
             .size {
-                width: 6.5rem;
-                text-align: right;
-                padding-right: 1rem;
+                width: 6.5em;
             }
             time.time {
                 float: right;

@@ -34,9 +34,9 @@ html.protonmail {
 			#body {
 				height: initial;
 				overflow: initial !important;
-				#pm_main {
-					height: calc(100vh - 70px);
-				}
+				// #pm_main {
+				// 	height: calc(100vh - 70px);
+				// }
 			}
 		}
 		&.appConfigBody-is-tablet,
