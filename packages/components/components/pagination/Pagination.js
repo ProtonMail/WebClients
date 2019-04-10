@@ -33,12 +33,12 @@ const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, 
     return (
         <Group>
             {hasPrevious ? (
-                <ButtonGroup disabled={disablePrevious} onClick={onPrevious}>
+                <ButtonGroup className="previous-button" disabled={disablePrevious} onClick={onPrevious}>
                     <Icon name="arrow-left" />
                 </ButtonGroup>
             ) : null}
             <Dropdown
-                className="pm-group-button"
+                className="pm-group-button page-button"
                 content={
                     <>
                         {page} <Icon name="caret" />
@@ -48,7 +48,7 @@ const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, 
                 <DropdownMenu list={list} />
             </Dropdown>
             {hasNext ? (
-                <ButtonGroup disabled={disableNext} onClick={onNext}>
+                <ButtonGroup className="next-button" disabled={disableNext} onClick={onNext}>
                     <Icon name="arrow-right" />
                 </ButtonGroup>
             ) : null}
@@ -57,8 +57,8 @@ const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, 
 };
 
 Pagination.propTypes = {
-    onNext: PropTypes.func.isRequired,
-    onPrevious: PropTypes.func.isRequired,
+    onNext: PropTypes.func,
+    onPrevious: PropTypes.func,
     onSelect: PropTypes.func.isRequired,
     page: PropTypes.number.isRequired,
     total: PropTypes.number.isRequired,

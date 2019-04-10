@@ -4,12 +4,13 @@ import { render, fireEvent } from 'react-testing-library';
 import Pagination from './Pagination';
 
 describe('Pagination component', () => {
+    const total = 100;
+    const limit = 10;
+
     it('should render and setup Pagination properly', () => {
         const mockOnNext = jest.fn();
         const mockOnPrevious = jest.fn();
         const mockOnSelect = jest.fn();
-        const total = 100;
-        const limit = 10;
         const { container } = render(
             <Pagination
                 onNext={mockOnNext}
@@ -20,11 +21,9 @@ describe('Pagination component', () => {
                 limit={limit}
             />
         );
-        const previousButtonNode = container.firstChild.querySelector(
-            '.pm-group-buttons > .pm-group-button:first-child'
-        );
-        const pageButtonNode = container.firstChild.querySelector('.dropDown .pm-group-button');
-        const nextButtonNode = container.firstChild.querySelector('.pm-group-buttons > .pm-group-button:last-child');
+        const previousButtonNode = container.firstChild.querySelector('.previous-button');
+        const pageButtonNode = container.firstChild.querySelector('.page-button');
+        const nextButtonNode = container.firstChild.querySelector('.next-button');
 
         expect(previousButtonNode).not.toBe(null);
         expect(nextButtonNode).not.toBe(null);
@@ -42,5 +41,24 @@ describe('Pagination component', () => {
         expect(options.length).toBe(Math.ceil(total / limit));
         fireEvent.click(container.querySelector('li:last-child button'));
         expect(mockOnSelect).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not render NEXT and PREVIOUS buttons', () => {
+        const mockOnSelect = jest.fn();
+        const { container } = render(
+            <Pagination
+                onSelect={mockOnSelect}
+                page={1}
+                total={total}
+                limit={limit}
+                hasPrevious={false}
+                hasNext={false}
+            />
+        );
+        const previousButtonNode = container.firstChild.querySelector('.previous-button');
+        const nextButtonNode = container.firstChild.querySelector('.next-button');
+
+        expect(previousButtonNode).toBe(null);
+        expect(nextButtonNode).toBe(null);
     });
 });
