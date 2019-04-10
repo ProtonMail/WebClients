@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
@@ -35,48 +35,51 @@ const DeleteAccountModal = ({ show, onClose, clientType }) => {
     const [{ TwoFactor }] = useUserSettings();
     const [addresses = []] = useAddresses();
     const [{ Email } = {}] = addresses;
-    const { request: requestDeleteUser, loading: loadingDeleteUser } = useApiWithoutResult(deleteUser);
-    const { request: requestReportBug, loading: loadingReportBug } = useApiWithoutResult(reportBug);
+    const { request } = useApiWithoutResult(reportBug);
+    const [loading, setLoading] = useState(false);
     const [model, setModel] = useState({
         feedback: '',
         email: '',
         password: '',
         twoFa: ''
     });
-    const [loading, setLoading] = useState(false);
     const handleChange = (key) => ({ target }) => setModel({ ...model, [key]: target.value });
 
     const handleSubmit = async () => {
-        await srpAuth({
-            api,
-            credentials: { password: model.password, totp: model.twoFa },
-            config: requestDeleteUser()
-        });
-
-        if (isAdmin) {
-            await requestReportBug({
-                OS: '--',
-                OSVersion: '--',
-                Browser: '--',
-                BrowserVersion: '--',
-                BrowserExtensions: '--',
-                Client: '--',
-                ClientVersion: '--',
-                ClientType: clientType,
-                Title: `[DELETION FEEDBACK] ${Name}`,
-                Username: Name,
-                Email: model.email || Email,
-                Description: model.feedback
+        try {
+            setLoading(true);
+            await srpAuth({
+                api,
+                credentials: { password: model.password, totp: model.twoFa },
+                config: deleteUser()
             });
+
+            if (isAdmin) {
+                await request({
+                    OS: '--',
+                    OSVersion: '--',
+                    Browser: '--',
+                    BrowserVersion: '--',
+                    BrowserExtensions: '--',
+                    Client: '--',
+                    ClientVersion: '--',
+                    ClientType: clientType,
+                    Title: `[DELETION FEEDBACK] ${Name}`,
+                    Username: Name,
+                    Email: model.email || Email,
+                    Description: model.feedback
+                });
+            }
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+            throw error;
         }
+
         onClose();
         createNotification({ text: c('Success').t`Account deleted` });
         authenticationStore.logout();
     };
-
-    useEffect(() => {
-        setLoading(loadingDeleteUser || loadingReportBug);
-    }, [loadingDeleteUser, loadingReportBug]);
 
     return (
         <Modal show={show} onClose={onClose} title={c('Title').t`Delete account`} type="small">
