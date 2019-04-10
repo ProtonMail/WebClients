@@ -4,7 +4,17 @@ import 'intersection-observer';
 import { buildThresholds, indexOfMax } from 'react-components';
 import { debounce } from 'proton-shared/lib/helpers/function';
 
-const ObserverSection = ({ id, rootElement, rootMargin, granularity, index, setIntersectionData, wait, children }) => {
+const ObserverSection = ({
+    id,
+    className,
+    rootElement,
+    rootMargin,
+    granularity,
+    index,
+    setIntersectionData,
+    wait,
+    children
+}) => {
     const handleIntersect = (entries) => {
         entries.forEach((entry) => {
             setIntersectionData(({ intersectionRatios, listOfIds }) => {
@@ -36,10 +46,15 @@ const ObserverSection = ({ id, rootElement, rootMargin, granularity, index, setI
         };
     }, []);
 
-    return <section id={id}>{children}</section>;
+    return (
+        <section id={id} className={className}>
+            {children}
+        </section>
+    );
 };
 
 ObserverSection.propTypes = {
+    className: PropTypes.string,
     id: PropTypes.string.isRequired,
     rootElement: PropTypes.node,
     rootMargin: PropTypes.string,
@@ -51,6 +66,7 @@ ObserverSection.propTypes = {
 };
 
 ObserverSection.defaultProps = {
+    className: 'mb2',
     rootElement: null,
     rootMargin: '0px',
     granularity: 20,

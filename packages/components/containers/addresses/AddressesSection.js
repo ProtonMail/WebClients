@@ -5,6 +5,7 @@ import {
     useAddresses,
     useMembers,
     Loader,
+    ObserverSection,
     SubTitle,
     Table,
     TableHeader,
@@ -73,7 +74,7 @@ const AddressesSection = () => {
     }, [members, addresses]);
 
     return (
-        <>
+        <ObserverSection id="addresses">
             <SubTitle>{c('Title').t`Addresses`}</SubTitle>
             {member ? (
                 <AddressesToolbar onChangeMember={setMember} loading={loading} members={members} member={member} />
@@ -111,7 +112,7 @@ const AddressesSection = () => {
                     })}
                 </TableBody>
             </Table>
-        </>
+        </ObserverSection>
     );
 };
 
