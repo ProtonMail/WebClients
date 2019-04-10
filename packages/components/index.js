@@ -18,6 +18,8 @@ export { default as Bordered } from './components/container/Bordered';
 export { default as Block } from './components/container/Block';
 export { default as Row } from './components/container/Row';
 export { default as Information } from './components/container/Information';
+export { default as ObserverSection } from './components/container/ObserverSection';
+export { default as ObserverSections } from './components/container/ObserverSections';
 export { default as Tooltip } from './components/tooltip/Tooltip';
 export { default as PrimaryButton } from './components/button/PrimaryButton';
 export { default as WarningButton } from './components/button/WarningButton';
@@ -218,6 +220,7 @@ export { default as useApiResult } from './hooks/useApiResult';
 export { default as useAuthenticationStore } from './hooks/useAuthenticationStore';
 export { default as useAsync } from './hooks/useAsync';
 export { nestChildren } from './helpers/component';
+export { indexOfMax, buildThresholds } from './helpers/intersectionObserver';
 
 export { default as useCache } from './containers/cache/useCache';
 export { default as useCachedResult } from './containers/cache/useCachedResult';
