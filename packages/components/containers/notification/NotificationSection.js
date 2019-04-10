@@ -1,19 +1,21 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, Label, Row, Info } from 'react-components';
+import { Alert, SubTitle, Label, Row, Info } from 'react-components';
 
 import PasswordResetToggle from './PasswordResetToggle';
 import DailyNotificationsToggle from './DailyNotificationsToggle';
 
-import RecoveryEmailButton from './RecoveryEmailButton';
+import RecoveryEmail from './RecoveryEmail';
 
 const NotificationSection = () => {
     return (
         <>
-            <SubTitle>{c('Title').t`Notification`}</SubTitle>
+            <SubTitle>{c('Title').t`Recovery & notification`}</SubTitle>
+            <Alert>{c('Info')
+                .t`The selected method can be used to recover an account in the event you forget your password and to be notified about missed emails.`}</Alert>
             <Row>
-                <Label>{c('Label').t`Reset/notification email`}</Label>
-                <RecoveryEmailButton />
+                <Label>{c('Label').t`Email address`}</Label>
+                <RecoveryEmail />
             </Row>
             <Row>
                 <Label htmlFor="passwordResetToggle">{c('Label').t`Allow password reset`}</Label>

@@ -7,24 +7,40 @@ import {
     Row,
     Label,
     PasswordInput,
+    TwoFactorInput,
     FooterModal,
     ResetButton,
-    PrimaryButton
+    PrimaryButton,
+    useUserSettings
 } from 'react-components';
-import { generateUID } from '../../helpers/component';
 
 const AskPasswordModal = ({ onClose, onSubmit }) => {
-    const [input, set] = useState('');
-    const id = generateUID('password-modal');
-    const handleChange = ({ target }) => set(target.value);
-    const handleSubmit = () => onSubmit(input);
+    const [model, set] = useState({
+        password: '',
+        totp: ''
+    });
+    const handleChange = (key) => ({ target }) => set({ ...model, [key]: target.value });
+    const handleSubmit = () => onSubmit(model);
+    const [{ TwoFactor } = {}, loading] = useUserSettings();
     return (
         <Modal show={true} onClose={onClose} title={c('Title').t`Sign in again to continue`} type="small">
-            <ContentModal onSubmit={handleSubmit} onReset={onClose}>
+            <ContentModal loading={loading} onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
-                    <Label htmlFor={id}>{c('Label').t`Password`}</Label>
-                    <PasswordInput id={id} value={input} onChange={handleChange} autoFocus={true} required />
+                    <Label htmlFor="password">{c('Label').t`Password`}</Label>
+                    <PasswordInput
+                        id="password"
+                        value={model.password}
+                        onChange={handleChange('password')}
+                        autoFocus={true}
+                        required
+                    />
                 </Row>
+                {TwoFactor ? (
+                    <Row>
+                        <Label htmlFor="totp">{c('Label').t`Two factor code`}</Label>
+                        <TwoFactorInput id="totp" value={model.totp} onChange={handleChange('totp')} required />
+                    </Row>
+                ) : null}
                 <FooterModal>
                     <ResetButton>{c('Label').t`Cancel`}</ResetButton>
                     <PrimaryButton type="submit">{c('Label').t`Submit`}</PrimaryButton>

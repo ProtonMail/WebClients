@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import PromptsContext from '../context/prompts';
 
-const useNotifications = () => {
+const usePrompts = () => {
     return useContext(PromptsContext);
 };
 
-export default useNotifications;
+export default usePrompts;

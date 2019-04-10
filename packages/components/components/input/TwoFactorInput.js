@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Input from './Input';
 import { isNumber } from '../../helpers/validators';
 
-const TwoFaInput = ({ value, onChange, maxLength, ...rest }) => {
+const TwoFactorInput = ({ value, onChange, maxLength, ...rest }) => {
     const handleChange = (event) => {
         const { value = '' } = event.target;
 
@@ -16,14 +16,14 @@ const TwoFaInput = ({ value, onChange, maxLength, ...rest }) => {
     return <Input value={value} onChange={handleChange} {...rest} />;
 };
 
-TwoFaInput.propTypes = {
+TwoFactorInput.propTypes = {
     onChange: PropTypes.func,
-    value: PropTypes.number,
+    value: PropTypes.string,
     maxLength: PropTypes.number.isRequired
 };
 
-TwoFaInput.defaultProps = {
+TwoFactorInput.defaultProps = {
     maxLength: 6
 };
 
-export default TwoFaInput;
+export default TwoFactorInput;

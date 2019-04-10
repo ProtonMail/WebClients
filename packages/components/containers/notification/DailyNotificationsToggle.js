@@ -1,17 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Toggle, useToggle, useUserSettings, useApiWithoutResult, useEventManager } from 'react-components';
+import {
+    Toggle,
+    useToggle,
+    useUserSettings,
+    AskPasswordModal,
+    useApi,
+    usePrompts,
+    useEventManager
+} from 'react-components';
+import { updateNotifyEmail } from 'proton-shared/lib/api/settings';
+import { srpAuth } from 'proton-shared/lib/srp';
 
 const DailyNotificationsToggle = ({ id }) => {
+    const api = useApi();
     const { call } = useEventManager();
     const [{ Email }] = useUserSettings();
-    const { request, loading } = useApiWithoutResult(); // TODO add API config
+    const { createPrompt } = usePrompts();
     const { state, toggle } = useToggle(!!Email.Notify);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = async ({ target }) => {
-        await request(+target.checked);
-        await call();
-        toggle();
+        try {
+            setLoading(true);
+            const { password, totp } = await createPrompt((resolve, reject) => (
+                <AskPasswordModal onClose={reject} onSubmit={resolve} />
+            ));
+            await srpAuth({
+                api,
+                credentials: { password, totp },
+                config: updateNotifyEmail({ Notify: +target.checked })
+            });
+            await call();
+            toggle();
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+        }
     };
 
     return <Toggle disabled={loading} checked={state} id={id} onChange={handleChange} />;

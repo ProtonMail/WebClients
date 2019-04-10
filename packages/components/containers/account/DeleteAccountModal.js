@@ -7,7 +7,7 @@ import {
     TextArea,
     EmailInput,
     PasswordInput,
-    TwoFaInput,
+    TwoFactorInput,
     Text,
     Modal,
     ContentModal,
@@ -31,8 +31,8 @@ const DeleteAccountModal = ({ show, onClose, clientType }) => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const authenticationStore = useAuthenticationStore();
-    const [{ isAdmin, Name }] = useUser();
-    const [{ TwoFactor }] = useUserSettings();
+    const [{ isAdmin, Name } = {}] = useUser();
+    const [{ TwoFactor } = {}] = useUserSettings();
     const [addresses = []] = useAddresses();
     const [{ Email } = {}] = addresses;
     const { request } = useApiWithoutResult(reportBug);
@@ -138,7 +138,7 @@ const DeleteAccountModal = ({ show, onClose, clientType }) => {
                 {TwoFactor ? (
                     <Row>
                         <Label htmlFor="twoFa">{c('Label').t`Two-factor passcode`}</Label>
-                        <TwoFaInput
+                        <TwoFactorInput
                             id="twoFa"
                             disabled={loading}
                             value={model.twoFa}

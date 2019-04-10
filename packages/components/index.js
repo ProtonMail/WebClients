@@ -45,7 +45,7 @@ export { default as Search } from './components/input/Search';
 export { default as TextArea } from './components/input/TextArea';
 export { default as Input } from './components/input/Input';
 export { default as EmailInput } from './components/input/EmailInput';
-export { default as TwoFaInput } from './components/input/TwoFaInput';
+export { default as TwoFactorInput } from './components/input/TwoFactorInput';
 export { default as RadioCard } from './components/input/RadioCard';
 export { default as RadioCards } from './components/input/RadioCards';
 export { default as useDebounceInput } from './components/input/useDebounceInput';
@@ -132,7 +132,7 @@ export { default as DesktopNotificationSection } from './containers/notification
 export { default as NewsSection } from './containers/account/NewsSection';
 export { default as UsernameSection } from './containers/account/UsernameSection';
 export { default as DeleteSection } from './containers/account/DeleteSection';
-export { default as RecoveryEmailButton } from './containers/notification/RecoveryEmailButton';
+export { default as RecoveryEmail } from './containers/notification/RecoveryEmail';
 export { default as PasswordResetToggle } from './containers/notification/PasswordResetToggle';
 export { default as DailyNotificationsToggle } from './containers/notification/DailyNotificationsToggle';
 export { default as NotificationSection } from './containers/notification/NotificationSection';
