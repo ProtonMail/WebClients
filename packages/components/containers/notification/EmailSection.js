@@ -1,15 +1,15 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, SubTitle, Label, Row, Info } from 'react-components';
+import { Alert, SubTitle, Label, Row, Info, ObserverSection } from 'react-components';
 
 import PasswordResetToggle from './PasswordResetToggle';
 import DailyNotificationsToggle from './DailyNotificationsToggle';
 
 import RecoveryEmail from './RecoveryEmail';
 
-const NotificationSection = () => {
+const EmailSection = () => {
     return (
-        <>
+        <ObserverSection id="email">
             <SubTitle>{c('Title').t`Recovery & notification`}</SubTitle>
             <Alert>{c('Info')
                 .t`The selected method can be used to recover an account in the event you forget your password and to be notified about missed emails.`}</Alert>
@@ -32,8 +32,8 @@ const NotificationSection = () => {
                 </Label>
                 <DailyNotificationsToggle id="dailyNotificationsToggle" />
             </Row>
-        </>
+        </ObserverSection>
     );
 };
 
-export default NotificationSection;
+export default EmailSection;
