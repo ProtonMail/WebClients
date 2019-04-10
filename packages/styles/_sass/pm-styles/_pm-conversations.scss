@@ -12,9 +12,13 @@
   height: calc(100vh - #{$header-height} - #{$toolbar-height} );
 }
 
-.conversation-container {
+.conversation-container,
+.conversation-container-row {
   padding: em(16) em(12);
   border-bottom: 1px solid $pm-global-border;
+}
+.conversation-container-row {
+  padding: em(8) em(12);
 }
 
 .conversation-is-selected {
