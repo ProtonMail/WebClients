@@ -6,8 +6,8 @@
   @extend .color-white;
   @extend .inbl;
   font-size: em(11);
-  padding: 0 em(6) em(1.5); // design want 16px height 
-  line-height: 1.35;
+  padding: 0 em(6) em(2);
+  line-height: 1.4;
   border-radius: $global-border-radius;
 }
 .badgeLabel-success {
