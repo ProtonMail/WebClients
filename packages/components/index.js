@@ -170,6 +170,7 @@ export { default as AddressesSection } from './containers/addresses/AddressesSec
 export { default as WipeLogsButton } from './containers/logs/WipeLogsButton';
 export { default as LogsSection } from './containers/logs/LogsSection';
 export { default as LogsTable } from './containers/logs/LogsTable';
+export { default as RelatedSettingsSection } from './components/container/RelatedSettingsSection';
 export { default as PayInvoiceModal } from './containers/invoices/PayInvoiceModal';
 export { default as InvoiceState } from './containers/invoices/InvoiceState';
 export { default as InvoiceType } from './containers/invoices/InvoiceType';
