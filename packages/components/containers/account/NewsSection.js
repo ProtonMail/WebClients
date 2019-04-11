@@ -1,10 +1,15 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, Label, Row, useSubscription, MozillaInfoPanel } from 'react-components';
+import { SubTitle, Label, Row, useSubscription, useUser, MozillaInfoPanel } from 'react-components';
 import NewsCheckboxes from './NewsCheckboxes';
 
 const NewsSection = () => {
     const { isManagedByMozilla } = useSubscription();
+    const { isMember } = useUser();
+
+    if (isMember) {
+        return null;
+    }
 
     if (isManagedByMozilla) {
         return (
