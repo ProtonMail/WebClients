@@ -133,6 +133,7 @@ export { default as PromptsContainer } from './containers/prompts/Container';
 export { default as PromptsProvider } from './containers/prompts/Provider';
 export { default as DesktopNotificationSection } from './containers/notification/DesktopNotificationSection';
 export { default as NewsSection } from './containers/account/NewsSection';
+export { default as MozillaInfoPanel } from './containers/account/MozillaInfoPanel';
 export { default as UsernameSection } from './containers/account/UsernameSection';
 export { default as DeleteSection } from './containers/account/DeleteSection';
 export { default as RecoveryEmail } from './containers/notification/RecoveryEmail';
