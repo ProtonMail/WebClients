@@ -1,15 +1,34 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, PrimaryButton, Alert, Block, useApiResult, useModal } from 'react-components';
+import {
+    SubTitle,
+    PrimaryButton,
+    Alert,
+    Block,
+    MozillaInfoPanel,
+    useApiResult,
+    useModal,
+    useSubscription
+} from 'react-components';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 
 import EditCardModal from '../payments/EditCardModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
 const PaymentMethodsSection = () => {
+    const { isManagedByMozilla } = useSubscription();
     const { isOpen: showCardModal, open: openCardModal, close: closeCardModal } = useModal();
     const { result = {}, loading, request } = useApiResult(queryPaymentMethods, []);
     const { PaymentMethods: paymentMethods = [] } = result;
+
+    if (isManagedByMozilla) {
+        return (
+            <>
+                <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
+                <MozillaInfoPanel />
+            </>
+        );
+    }
 
     return (
         <>

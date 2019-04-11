@@ -8,13 +8,15 @@ import {
     Block,
     Button,
     Table,
+    MozillaInfoPanel,
     TableHeader,
     TableBody,
     Pagination,
     usePaginationAsync,
     TableRow,
     Time,
-    useModal
+    useModal,
+    useSubscription
 } from 'react-components';
 import { queryInvoices } from 'proton-shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE } from 'proton-shared/lib/constants';
@@ -29,6 +31,7 @@ import InvoiceTextModal from './InvoiceTextModal';
 const InvoicesSection = () => {
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
+    const { isManagedByMozilla } = useSubscription();
     const { isOpen, open, close } = useModal();
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
     const handleOwner = (own = USER) => () => setOwner(own);
@@ -43,6 +46,15 @@ const InvoicesSection = () => {
     const { result = {}, loading, request } = useApiResult(query, [page, owner]);
     const { Invoices: invoices = [], Total: total = 0 } = result;
     const hasUnpaid = invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
+
+    if (isManagedByMozilla) {
+        return (
+            <>
+                <SubTitle>{c('Title').t`Invoices`}</SubTitle>
+                <MozillaInfoPanel />
+            </>
+        );
+    }
 
     return (
         <>
