@@ -44,3 +44,30 @@ $block-info-border-width: 3px !default;
   border-color: $pm-global-warning;
 }
 // other colors might be added later
+
+
+/**
+ * details/summary
+ */
+details {
+  border-bottom: 1px solid $pm-global-border;
+  border-radius: $global-border-radius;
+
+  & > summary::-webkit-details-marker {
+    display: none;
+  }
+  &:first-child {
+    border-top: 1px solid $pm-global-border;
+  }
+  &[open] > summary {
+    background: url(#{$path-images}sprite-for-css-only.svg#css-caret-close) 0 50% no-repeat;
+  }
+
+}
+summary {
+  padding: 1em 0 1em 2rem;
+  background: url(#{$path-images}sprite-for-css-only.svg#css-caret) 0 50% no-repeat;
+  list-style: none;
+  border: 0;
+  cursor: pointer;
+}

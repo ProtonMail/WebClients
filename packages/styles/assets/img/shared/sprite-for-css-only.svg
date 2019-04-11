@@ -7,6 +7,7 @@ use:target { display: block; }
 .black { fill: #000; }
 .rotated-right,
 .rotated-left,
+.rotated-180,
 .mirror {
 -webkit-transform-origin: center;
 transform-origin: center;
@@ -18,6 +19,10 @@ transform: rotateZ(-90deg);
 .rotated-left {
 -webkit-transform: rotateZ(90deg);
 transform: rotateZ(90deg);
+}
+.rotated-180 {
+-webkit-transform: rotateZ(180deg);
+transform: rotateZ(180deg);
 }
 .mirror {
 -webkit-transform: rotateY(180deg);
@@ -45,6 +50,7 @@ opacity: .3;
   <use id="css-search-white" xlink:href="#symbol-search" class="white" />
   <use id="css-search-white-rtl" xlink:href="#symbol-search" class="white mirror" />
   <use id="css-caret" xlink:href="#symbol-caret" class="black" />
+  <use id="css-caret-close" xlink:href="#symbol-caret" class="black rotated-180" />
   <use id="css-greater" xlink:href="#symbol-caret" class="black rotated-right" />
   <use id="css-lesser" xlink:href="#symbol-caret" class="black rotated-left" />
   <use id="css-dash" xlink:href="#symbol-dash" class="black low-opacity" />
