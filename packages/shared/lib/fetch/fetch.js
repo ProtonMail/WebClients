@@ -1,4 +1,4 @@
-import { createUrl, checkStatus } from './helpers';
+import { createUrl, checkStatus, serializeData } from './helpers';
 
 const fetchHelper = ({ url: urlString, params, output, ...rest }) => {
     const config = {
@@ -15,20 +15,16 @@ const fetchHelper = ({ url: urlString, params, output, ...rest }) => {
         .then((response) => response[output]());
 };
 
-export const fetchJson = ({ data, headers, output = 'json', ...config }) => {
-    const extraHeaders = data
-        ? {
-              'Content-Type': 'application/json'
-          }
-        : undefined;
+export default ({ data, headers, input = 'json', output = 'json', ...config }) => {
+    const { headers: dataHeaders, body } = serializeData(data, input);
 
     return fetchHelper({
         ...config,
         headers: {
             ...headers,
-            ...extraHeaders
+            ...dataHeaders
         },
-        body: data ? JSON.stringify(data) : undefined,
+        body,
         output
     });
 };
