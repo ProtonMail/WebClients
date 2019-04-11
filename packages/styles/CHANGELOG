@@ -1,3 +1,20 @@
+# [1.5.??] - 2019-04-11
+
+## New
+
+- add `details`/`summary` styles
+- add `scroll-smooth-touch` class
+
+## Updated/fixes
+
+- fixed a minification issue with `::placeholder` for `searchbox-container` styles
+- updated reference for CSS icons `css-caret-close`
+
+## Misc
+
+- had to activate `unsafe-inline` for CSP `style-src` for design system website (bugs on Firefox/inline style)
+
+
 # [1.5.14] - 2019-04-10
 
 ## Updated/fixes
@@ -6,7 +23,6 @@
 
 
 # [1.5.11] - 2019-04-10
-
 
 ## Updated/fixes
 
