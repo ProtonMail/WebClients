@@ -7,6 +7,7 @@ import { AddressesModel } from './addressesModel';
 import { OrganizationModel } from './organizationModel';
 import { SubscriptionModel } from './subscriptionModel';
 import { LabelsModel } from './labelsModel';
+import { FiltersModel } from './filtersModel';
 import { MembersModel } from './membersModel';
 import { STATUS } from './cache';
 
@@ -17,6 +18,7 @@ const MODELS_MAP = [
     MailSettingsModel,
     AddressesModel,
     LabelsModel,
+    FiltersModel,
     SubscriptionModel,
     OrganizationModel,
     MembersModel
