@@ -9,6 +9,8 @@
 
 - fixed a minification issue with `::placeholder` for `searchbox-container` styles
 - updated reference for CSS icons `css-caret-close`
+- fix topnav “shrink” icons in rwd
+
 
 ## Misc
 
@@ -19,7 +21,7 @@
 
 ## Updated/fixes
 
-- removed `flex-item-grow-1-5` item to `flex-item-grow-2`.
+- remove `flex-item-grow-1-5` item to `flex-item-grow-2`.
 
 
 # [1.5.11] - 2019-04-10
@@ -27,8 +29,8 @@
 ## Updated/fixes
 
 - update badge height (Chrome bug)
-- added `flex-item-grow-1-5` item.
-- fixed sticky subnav
+- add `flex-item-grow-1-5` item.
+- fix sticky subnav
 
 
 # [1.5.11] - 2019-04-10
