@@ -1,6 +1,7 @@
-export const reportBug = (data) => ({
+export const reportBug = (data, input) => ({
     method: 'post',
     url: 'reports/bug',
+    input,
     data
 });
 
