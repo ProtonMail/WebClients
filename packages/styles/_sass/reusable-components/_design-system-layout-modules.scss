@@ -28,6 +28,10 @@ svg {
   overflow: hidden;
 }
 
+.scroll-smooth-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
 /* some floattings */
 .left {
   float: left;
