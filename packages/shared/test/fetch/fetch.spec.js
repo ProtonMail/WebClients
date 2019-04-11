@@ -94,9 +94,7 @@ describe('fetch', () => {
                 mode: 'cors',
                 credentials: 'include',
                 redirect: 'follow',
-                headers: {
-                    'Content-Type': undefined
-                },
+                headers: {},
                 body: fd
             }
         ]);
