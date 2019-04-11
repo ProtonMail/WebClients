@@ -2,6 +2,13 @@ import { EVENT_ACTIONS } from '../constants';
 
 const { DELETE, CREATE, UPDATE } = EVENT_ACTIONS;
 
+function sort(list = [], hasSort) {
+    if (!hasSort) {
+        return list;
+    }
+    return list.sort((itemA, itemB) => itemA.Order - itemB.Order);
+}
+
 const updateCollection = (model = [], events, itemModelName) => {
     const copy = [...model];
 
@@ -21,8 +28,11 @@ const updateCollection = (model = [], events, itemModelName) => {
         { [UPDATE]: [], [CREATE]: [], [DELETE]: {} }
     );
 
+    const todos = [].concat(todo[CREATE], todo[UPDATE]);
+    const hasSort = 'Order' in (todos[0] || {});
+
     // NOTE We cannot trust Action so "create" and "update" events need to be handle in the way
-    const { collection } = [].concat(todo[CREATE], todo[UPDATE]).reduce(
+    const { collection } = todos.reduce(
         (acc, element) => {
             const index = acc.MAP[element.ID];
 
@@ -47,11 +57,11 @@ const updateCollection = (model = [], events, itemModelName) => {
             MAP: copy.reduce((acc, element, index) => {
                 acc[element.ID] = index;
                 return acc;
-            }, {})
+            }, Object.create(null))
         }
     );
 
-    return collection.filter(({ ID }) => !todo[DELETE][ID]);
+    return sort(collection, hasSort).filter(({ ID }) => !todo[DELETE][ID]);
 };
 
 export default updateCollection;
