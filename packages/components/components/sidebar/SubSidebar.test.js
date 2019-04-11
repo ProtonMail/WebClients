@@ -25,7 +25,7 @@ describe('SubSidebar component', () => {
         expect(buttonNode.textContent).toBe(text);
 
         anchors.forEach((anchor, index) => {
-            expect(anchor.getAttribute('href')).toBe(`#${list[index].id}`);
+            expect(anchor.getAttribute('href')).toBe(`/#${list[index].id}`);
             expect(anchor.textContent).toBe(list[index].text);
         });
 
