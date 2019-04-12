@@ -8,9 +8,9 @@ import AddAddressButton from './AddAddressButton';
 
 const getOptions = (members) => {
     return members.reduce(
-        (acc, { ID: value, Name, addresses }) => {
+        (acc, { ID: value, Name }) => {
             acc.push({
-                text: `${Name} (${addresses.map(({ Email }) => Email).join(', ')})`,
+                text: Name,
                 value
             });
             return acc;
@@ -18,7 +18,7 @@ const getOptions = (members) => {
         members.length > 1
             ? [
                   {
-                      text: `${c('Option').t`All users`} (${members.map(({ Name }) => Name).join(', ')})`,
+                      text: c('Option').t`All users`,
                       value: ALL_MEMBERS_ID
                   }
               ]
