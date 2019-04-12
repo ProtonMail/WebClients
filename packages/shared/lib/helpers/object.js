@@ -16,3 +16,15 @@ export const fromBitmap = (value, keys = []) =>
         acc[key] = !!(value & (1 << index));
         return acc;
     }, {});
+
+/**
+ * This method creates an object composed of the own and inherited enumerable property paths of object that are not omitted.
+ * @param {object} model The source object.
+ * @param {Array} properties The property paths to omit.
+ * @retuns {Object} Returns the new object.
+ */
+export const omit = (model, properties = []) => {
+    return Object.entries(model)
+        .filter(([key]) => !properties.includes(key))
+        .reduce((obj, [key, val]) => Object.assign(obj, { [key]: val }), {});
+};
