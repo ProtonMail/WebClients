@@ -1,3 +1,5 @@
+import { toBase64 } from './file';
+
 /**
  * Convert base64 string to Image
  * @param  {String} base64str
@@ -130,3 +132,14 @@ export const isInlineEmbedded = (src = '') => src.startsWith('data:');
  * @returns {boolean}
  */
 export const isEmbedded = (src = '') => src.startsWith('cid:');
+
+/**
+ * Resize image file
+ * @param {File} fileImage
+ * @param {Number} maxSize in bytes
+ * @returns {Promise<String>} Base64
+ */
+export const resize = async (fileImage, maxSize) => {
+    const base64str = await toBase64(fileImage);
+    return downSize(base64str, maxSize, fileImage.type);
+};
