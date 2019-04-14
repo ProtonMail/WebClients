@@ -4,13 +4,15 @@ import {
     useUser,
     useAddresses,
     useMembers,
+    Block,
     Loader,
     SubTitle,
     Table,
     TableHeader,
     TableRow,
     TableBody,
-    useApiWithoutResult
+    useApiWithoutResult,
+    useOrganization
 } from 'react-components';
 import { queryAddresses } from 'proton-shared/lib/api/members';
 import { ALL_MEMBERS_ID } from 'proton-shared/lib/constants';
@@ -20,10 +22,11 @@ import AddressStatus from './AddressStatus';
 import AddressesToolbar from './AddressesToolbar';
 
 const AddressesSection = () => {
+    const [organization] = useOrganization();
     const [addresses = []] = useAddresses();
     const [members = [], loadingMembers] = useMembers();
     const [user] = useUser();
-
+    const { UsedAddresses, MaxAddresses } = organization;
     const { request, loading } = useApiWithoutResult(queryAddresses);
     const [selectedAddresses, setAddresses] = useState([]);
     const [member, setMember] = useState();
@@ -111,6 +114,11 @@ const AddressesSection = () => {
                     })}
                 </TableBody>
             </Table>
+            {MaxAddresses > 1 ? (
+                <Block>
+                    {UsedAddresses} / {MaxAddresses} {c('Info').t`addresses used`}
+                </Block>
+            ) : null}
         </>
     );
 };
