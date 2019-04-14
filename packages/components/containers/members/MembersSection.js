@@ -18,7 +18,7 @@ import { normalize } from 'proton-shared/lib/helpers/string';
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
 import AddMemberButton from './AddMemberButton';
-import MemberOptions from './MemberOptions';
+import MemberFeatures from './MemberFeatures';
 import MemberRole from './MemberRole';
 import MemberPrivate from './MemberPrivate';
 import { useOrganization } from '../../models/organizationModel';
@@ -66,7 +66,6 @@ const MembersSection = () => {
                 <TableHeader
                     cells={[
                         c('Title header for members table').t`Name`,
-                        c('Title header for members table').t`Addresses`,
                         <>
                             {c('Title header for members table').t`Role`}
                             <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
@@ -75,7 +74,8 @@ const MembersSection = () => {
                             {c('Title header for members table').t`Private`}
                             <Info url="https://protonmail.com/support/knowledge-base/private-members/" />
                         </>,
-                        c('Title header for members table').t`Options`,
+                        c('Title header for members table').t`Addresses`,
+                        c('Title header for members table').t`Features`,
                         c('Title header for members table').t`Actions`
                     ]}
                 />
@@ -90,7 +90,7 @@ const MembersSection = () => {
                                     <MemberAddresses key={key} member={member} />,
                                     <MemberRole key={key} member={member} />,
                                     <MemberPrivate key={key} member={member} />,
-                                    <MemberOptions key={key} member={member} />,
+                                    <MemberFeatures key={key} member={member} />,
                                     <MemberActions key={key} member={member} organization={organization} />
                                 ]}
                             />
