@@ -72,6 +72,7 @@ export { default as Progress } from './components/progress/Progress';
 export { default as Text } from './components/text/Text';
 export { default as Legend } from './components/text/Legend';
 export { default as LanguageSection } from './containers/general/LanguageSection';
+export { default as ContactsSection } from './containers/general/ContactsSection';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as Pagination } from './components/pagination/Pagination';
