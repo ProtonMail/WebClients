@@ -190,7 +190,7 @@ export { default as EditMemberModal } from './containers/members/EditMemberModal
 export { default as useMemberModal } from './containers/members/useMemberModal';
 export { default as MemberRole } from './containers/members/MemberRole';
 export { default as MemberStorageSelector } from './containers/members/MemberStorageSelector';
-export { default as MemberOptions } from './containers/members/MemberOptions';
+export { default as MemberFeatures } from './containers/members/MemberFeatures';
 export { default as MemberActions } from './containers/members/MemberActions';
 export { default as MemberVPNSelector } from './containers/members/MemberVPNSelector';
 export { default as MemberModal } from './containers/members/MemberModal';
