@@ -31,7 +31,7 @@ const AuthenticatedApp = ({ authenticationStore, onLogout, initApi, loginData, c
 
     const handleUnlock = async () => {
         const { password, totp } = await promptsManager.createPrompt((resolve, reject) => {
-            return <AskPasswordModal onClose={reject} onSubmit={resolve} />;
+            return <AskPasswordModal onClose={reject} onSubmit={resolve} hideTwoFactor={true} />;
         });
         return srpAuth({
             api,

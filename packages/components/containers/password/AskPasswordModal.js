@@ -14,7 +14,7 @@ import {
     useUserSettings
 } from 'react-components';
 
-const AskPasswordModal = ({ onClose, onSubmit }) => {
+const AskPasswordModal = ({ onClose, onSubmit, hideTwoFactor }) => {
     const [model, set] = useState({
         password: '',
         totp: ''
@@ -35,7 +35,7 @@ const AskPasswordModal = ({ onClose, onSubmit }) => {
                         required
                     />
                 </Row>
-                {TwoFactor ? (
+                {hideTwoFactor ? null : TwoFactor ? (
                     <Row>
                         <Label htmlFor="totp">{c('Label').t`Two factor code`}</Label>
                         <TwoFactorInput id="totp" value={model.totp} onChange={handleChange('totp')} required />
@@ -52,6 +52,12 @@ const AskPasswordModal = ({ onClose, onSubmit }) => {
 
 AskPasswordModal.propTypes = {
     onClose: PropTypes.func.isRequired,
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
+    hideTwoFactor: PropTypes.bool
 };
+
+AskPasswordModal.defaultProps = {
+    hideTwoFactor: false
+};
+
 export default AskPasswordModal;
