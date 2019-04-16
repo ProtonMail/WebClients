@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import dayjs from 'dayjs';
+import moment from 'moment';
 import {
     Button,
     ButtonGroup,
@@ -56,7 +56,7 @@ const LogsSection = () => {
     const handleDownload = () => {
         const data = logs.reduce(
             (acc, { Event, Time, IP }) => {
-                acc.push(`${EVENTS[Event]},${dayjs(Time * 1000).toISOString()},${IP}`);
+                acc.push(`${EVENTS[Event]},${moment(Time * 1000).toISOString()},${IP}`);
                 return acc;
             },
             [['Event', 'Time', 'IP'].join(',')]
