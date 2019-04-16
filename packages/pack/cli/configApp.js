@@ -52,6 +52,7 @@ function main({ api = 'dev' }) {
     const apiUrl = API_TARGETS[api] || API_TARGETS.prod;
     const config = dedent`
     export const CLIENT_ID = '${ENV_CONFIG.app.clientId || 'Web'}';
+    export const CLIENT_TYPE = '${ENV_CONFIG.app.clientType || 1}'
     export const APP_VERSION = '${ENV_CONFIG.pkg.version || '3.16.20'}';
     export const API_URL = '${apiUrl}';
     export const API_VERSION = '3';
