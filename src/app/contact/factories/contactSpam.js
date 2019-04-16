@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import { normalizeEmail } from '../../../helpers/string';
 import { wait } from '../../../helpers/promiseHelper';
 import vCardRemoveEmails from '../../../helpers/vCardRemoveEmails';
@@ -12,6 +14,7 @@ function contactSpam(
     notification,
     contactCache,
     contactEditor,
+    addressesModel,
     networkActivityTracker,
     translator
 ) {
@@ -33,9 +36,16 @@ function contactSpam(
      * @return {Object}        { list: Array<contact>, map:<Object:contact>}
      */
     const getContacts = (emails = []) => {
+        const MAP = _.groupBy(addressesModel.get(), 'Email');
+
         return emails.reduce(
             (acc, email) => {
                 const normalizedEmail = normalizeEmail(email);
+
+                // It's one of ours. Ex: a conv with a response from you -> move to spam, you're a sender
+                if (MAP[normalizedEmail]) {
+                    return acc;
+                }
 
                 // Email can be in more than 1 contact
                 const contacts = contactEmails.findAllByEmail(normalizedEmail, normalizeEmail);
