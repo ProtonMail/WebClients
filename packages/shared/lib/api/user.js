@@ -13,3 +13,9 @@ export const deleteUser = (data) => ({
     method: 'put',
     data
 });
+
+export const unlockPasswordChanges = (data) => ({
+    url: 'users/password',
+    method: 'put',
+    data
+});
