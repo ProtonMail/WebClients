@@ -1,3 +1,12 @@
+# [3.15.27] - 2019-04-17
+## Fixed
+- Email address was not shown in the To/CC/BCC fields if it was between `<>` signs
+- Applying a gift code on signup caused an error message in some cases
+
+## Changed
+- Member creation process was not working properly
+- Slight modification of mark as spam behavior on conversations
+
 # [3.15.26] - 2019-04-05
 ## Fixed
 - "Invalid username" error if a blank space is added in the username field
