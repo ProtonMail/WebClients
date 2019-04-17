@@ -36,7 +36,7 @@ function contactSpam(
      * @return {Object}        { list: Array<contact>, map:<Object:contact>}
      */
     const getContacts = (emails = []) => {
-        const MAP = _.groupBy(addressesModel.get(), 'Email');
+        const MAP = _.groupBy(addressesModel.get(), ({ Email }) => normalizeEmail(Email));
 
         return emails.reduce(
             (acc, email) => {
