@@ -46,9 +46,10 @@ section: design
     <label for="id_field4" class="pm-label">
         Error Form
     </label>
-    <span>
-        <input type="text" id="id_field4" class="pm-field ng-invalid" value="This is a mistake" />
-    </span>
+    <div>
+        <input type="text" id="id_field4" class="pm-field" aria-invalid="true" value="This is a mistake" aria-describedby="error1" />
+        <div class="color-global-warning error-zone" id="error1">There is an error. There is an error.<br> There is an error. There is an error. </div>
+    </div>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
     <label for="id_field5" class="pm-label">
@@ -78,6 +79,15 @@ section: design
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_textarea2" class="pm-label">
+        Another zone
+    </label>
+    <div>
+        <textarea name="textaread2" id="id_textarea2" class="pm-field" aria-invalid="true" cols="30" rows="5" aria-describedby="area_error_id"></textarea>
+        <div class="color-global-warning error-zone" id="area_error_id">There is an error. </div>
+    </div>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
     <label for="id_field6" class="pm-label">
         A select
     </label>
@@ -86,6 +96,18 @@ section: design
             <option value="">An loooooooooooooooooon option</option>
             <option value="">Another option</option>
         </select>
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field6b" class="pm-label">
+        Another select
+    </label>
+    <span>
+        <select id="id_field6b" class="pm-field" aria-invalid="true" id="area_select_id">
+            <option value="">An option</option>
+            <option value="">Another option</option>
+        </select>
+        <div class="color-global-warning error-zone" id="area_select_id">There is an error. </div>
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
