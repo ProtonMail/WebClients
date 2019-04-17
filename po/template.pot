@@ -1345,6 +1345,7 @@ msgid "OK"
 msgstr ""
 
 #: ./src/app/user/factories/storageWarning.js:35
+#: ./src/templates/contact/removeContactListModal.tpl.html:64
 msgctxt "Action"
 msgid "Ok"
 msgstr ""
@@ -1571,7 +1572,6 @@ msgstr ""
 #: ./src/templates/contact/contactLoaderModal.tpl.html:120
 #: ./src/templates/contact/contactModal.tpl.html:24
 #: ./src/templates/contact/contactPhotoModal.tpl.html:19
-#: ./src/templates/contact/removeContactListModal.tpl.html:64
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:42
 #: ./src/templates/dashboard/customVpnModal.tpl.html:20
 #: ./src/templates/directives/composer/composer.tpl.html:119
@@ -4157,7 +4157,7 @@ msgctxt "Error notification in the bug report modal when the user upload file"
 msgid "No image selected"
 msgstr ""
 
-#: ./src/app/user/modals/deleteAccountModal.js:19
+#: ./src/app/user/modals/deleteAccountModal.js:18
 msgctxt "Error reported when the delete account form is invalid"
 msgid "Invalid email address or password"
 msgstr ""
@@ -4847,7 +4847,7 @@ msgctxt "Info"
 msgid "An unknown public key has been detected for this recipient."
 msgstr ""
 
-#: ./src/app/user/directives/signupPayForm.js:20
+#: ./src/app/user/directives/signupPayForm.js:11
 msgctxt "Info"
 msgid "Annually"
 msgstr ""
@@ -5271,7 +5271,7 @@ msgctxt "Info"
 msgid "Enter the Organization Password to restore administrator privileges. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Learn more</a>"
 msgstr ""
 
-#: ./src/app/user/directives/signupPayForm.js:22
+#: ./src/app/user/directives/signupPayForm.js:13
 msgctxt "Info"
 msgid "Every 2 years"
 msgstr ""
@@ -5486,7 +5486,7 @@ msgctxt "Info"
 msgid "Message discarded"
 msgstr ""
 
-#: ./src/app/user/directives/signupPayForm.js:21
+#: ./src/app/user/directives/signupPayForm.js:12
 msgctxt "Info"
 msgid "Monthly"
 msgstr ""
@@ -6481,7 +6481,7 @@ msgid "is activated on your account."
 msgstr ""
 
 #: ./src/app/dashboard/directives/totalPlan.js:14
-#: ./src/app/user/directives/signupPayForm.js:18
+#: ./src/app/user/directives/signupPayForm.js:9
 msgctxt "Info"
 msgid "month"
 msgstr ""
@@ -8941,7 +8941,7 @@ msgctxt "Success"
 msgid "Signature verification enabled"
 msgstr ""
 
-#: ./src/app/contact/factories/contactSpam.js:20
+#: ./src/app/contact/factories/contactSpam.js:23
 msgctxt "Success"
 msgid "{{total}} email removed from your contacts"
 msgid_plural "{{total}} emails removed from your contacts"
@@ -10755,7 +10755,7 @@ msgctxt "Title"
 msgid "Thank you for your subscription!"
 msgstr ""
 
-#: ./src/app/user/directives/signupPayForm.js:30
+#: ./src/app/user/directives/signupPayForm.js:21
 msgctxt "Title"
 msgid "Thank you for your support!"
 msgstr ""
