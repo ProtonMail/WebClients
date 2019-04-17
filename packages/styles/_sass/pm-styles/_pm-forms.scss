@@ -15,7 +15,7 @@
     background-color: $white;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
-  &.ng-invalid:not(:focus) {
+  &[aria-invalid="true"]:not(:focus) {
     border-color: $pm-global-warning;
   }
   &.ng-valid:not(:focus) {
@@ -68,7 +68,18 @@ select.pm-field {
   }
 }
 
+/* errors */
+.error-zone {
+  transition: transform .15s linear;
+  transform: scaleY(1);
+  transform-origin: top center;
+  &:empty {
+    transform: scaleY(0);
+  }
+}
 
+
+/* sizes */
 .pm-field--small {
   padding: em(2) em(16);  // design want 26px height (actually 27 to avoid .5px)
 }
