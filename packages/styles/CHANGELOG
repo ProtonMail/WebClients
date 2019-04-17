@@ -1,7 +1,8 @@
-# [1.5.??] - 2019-04-11
+# [1.5.15] - 2019-04-17
 
 ## New
 
+- add error styles (using `aria-invalid="true"` and CSS transforms)
 - add `details`/`summary` styles
 - add `scroll-smooth-touch` class
 
@@ -10,7 +11,6 @@
 - fixed a minification issue with `::placeholder` for `searchbox-container` styles
 - updated reference for CSS icons `css-caret-close`
 - fix topnav “shrink” icons in rwd
-
 
 ## Misc
 
