@@ -139,7 +139,7 @@ function editMemberProcess(
                 Name: name,
                 Private: +!!model.private,
                 MaxSpace: quota,
-                MaxVPN: vpn
+                MaxVPN: +!!vpn
             });
 
             const { message, promise } = getPromise({ maxPadding, minPadding, maxVPNPadding }, member);
