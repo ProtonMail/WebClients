@@ -2,9 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
 
-const isDebug = process.argv.includes('--debug');
+const { success, spin } = require('./helpers/log')('proton-i18n');
+const isLint = process.argv.includes('--lint');
 
 function main() {
+    const spinner = spin('Parsing translations');
     const doc = fs.readFileSync(path.resolve('./i18n/templates.pot'));
     const translations = _.filter(doc.toString().split(/^\s*\n/gm), (str) => {
         const noCtx = (!str.includes('msgctxt') && !str.includes('Plural-Forms'))
@@ -12,15 +14,20 @@ function main() {
         return noCtx || emptyCyx;
     });
     const total = translations.length;
-    const verb = (total > 1) ? 'are' : 'is';
+    const word = (total > 1) ? 'translations' : 'translation';
+    spinner.stop();
 
-    if (!isDebug && total) {
-        throw new Error(`There ${verb} ${total} translation(s) without context !`);
+    if (!isLint && !total) {
+        success('All translations have a context, good job !');
     }
 
-    if (isDebug && total) {
+    if (isLint && total) {
+        throw new Error(`${total} ${word} without context !`);
+    }
+
+    if (!isLint && total) {
         console.log(translations.sort().join('\n'));
-        throw new Error(`There ${verb} ${total} translation(s) without context !`);
+        throw new Error(`${total} ${word} without context !`);
     }
 }
 

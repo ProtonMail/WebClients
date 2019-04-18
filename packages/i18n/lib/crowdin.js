@@ -7,9 +7,11 @@ const JSZip = require('jszip');
 const moment = require('moment');
 const argv = require('minimist')(process.argv.slice(2));
 const FormData = require('form-data');
+const dedent = require('dedent');
+
 require('dotenv').config({ path: 'env/.env' });
 
-const { error, json, title, success } = require('./helpers/log');
+const { error, json, title, success } = require('./helpers/log')('proton-i18n');
 
 const DEST_FILE = 'ProtonMail Web Application.pot';
 const PROJECT_NAME = 'protonmail';
@@ -17,12 +19,12 @@ const TEMPLATE_FILE = 'template.pot';
 const OUTPUT_I18N_DIR = path.join(path.resolve(__dirname, '..'), 'po');
 const TEMPLATE_FILE_PATH = path.join(OUTPUT_I18N_DIR, TEMPLATE_FILE);
 
-if (!process.env.CROWDIN_KEY_API) {
-    error(new Error('You must have env/.env to deploy. cf the Wiki'));
-}
+// if (!process.env.CROWDIN_KEY_API) {
+//     error(new Error('You must have env/.env to deploy. cf the Wiki'));
+// }
 
-console.log('Need to define PROJECT_NAME and DEST_FILE via the env');
-process.exit(1);
+// console.log('Need to define PROJECT_NAME and DEST_FILE via the env');
+// process.exit(1);
 
 const getURL = (scope, flag = '') => {
     const customFlag = flag ? `&${flag}` : '';
@@ -219,31 +221,33 @@ function main() {
     }
 
     if (argv.help) {
-        const def = {
-            '--sync|-s': `
-        Update app's translations with the ones from crowdin.
-        You can configure which translations you want to update by using a file i18n.txt.
-        each translations (ex: fr) = one line.
-        More informations on the Wiki`,
-            '--update|-u': `
-        Update crowdin with our export file from the app`,
-            '--check|-c': `
-        To check the progress of an export from crowdin (to know if it's done or not yet)`,
-            '--export|-e': `
-        Ask to crowdin to create an export of translations, as it needs some time to prepare them`,
-            '--list|-l': `
-        List translations available on crowdin sorted by most progress done. Usefull to export translations ex:
-        --list --type: only list the code of the translation
-        --list --type --limit=95: only list the code of the translation and limit progress >= 95 + approved >= 95
-        --list --type --limit=95 --ignore-approved: only list the code of the translation and limit progress >= 95
-        `
-        };
+        console.log(dedent`
+            Usage: $ proton-i18n crowdin <flag>
+            Available flags:
+              - ${chalk.blue('--sync|-s')}
+                  Update app's translations with the ones from crowdin.
+                  You can configure which translations you want to update by using a file i18n.txt.
+                  each translations (ex: fr) = one line.
+                  More informations on the Wiki
+              - ${chalk.blue('--update|-u')}
+                  Update crowdin with our export file from the app
+              - ${chalk.blue('--check|-c')}
+                  To check the progress of an export from crowdin (to know if it's done or not yet)
+              - ${chalk.blue('--export|-e')}
+                  Ask to crowdin to create an export of translations, as it needs some time to prepare them
+              - ${chalk.blue('--list|-l')}
+                  List translations available on crowdin sorted by most progress done.
+                  Usefull to export translations ex:
 
-        title('A command to manage crowdin');
-        Object.keys(def).forEach((key) => {
-            console.log(chalk.blue(key), def[key]);
-            console.log();
-        });
+                    $ proton-i18n crowdin --list --type
+                        only list the code of the translation
+
+                    $ proton-i18n crowdin --list --type --limit=95
+                        only list the code of the translation and limit progress >= 95 + approved >= 95
+
+                    $ proton-i18n crowdin --list --type --limit=95 --ignore-approved
+                        only list the code of the translation and limit progress >= 95
+        `);
     }
 
 }
