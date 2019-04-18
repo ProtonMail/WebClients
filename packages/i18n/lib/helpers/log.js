@@ -1,6 +1,6 @@
+const argv = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
 const ora = require('ora');
-
 
 module.exports = (scope) => {
 
@@ -37,8 +37,20 @@ module.exports = (scope) => {
 
     const spin = (text) => ora(text).start();
 
+    function debug(item) {
+        if (!(argv.v || argv.verbose)) {
+            return;
+        }
+        if (Array.isArray(item)) {
+            return json(item);
+        }
+
+        console.log(`[${scope}]`, item);
+    }
+
     return {
         success,
+        debug,
         title,
         error,
         json,

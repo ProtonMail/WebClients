@@ -11,20 +11,19 @@ const dedent = require('dedent');
 
 require('dotenv').config({ path: 'env/.env' });
 
-const { error, json, title, success } = require('./helpers/log')('proton-i18n');
+const { error, json, spin, success, debug } = require('./helpers/log')('proton-i18n');
 
-const DEST_FILE = 'ProtonMail Web Application.pot';
-const PROJECT_NAME = 'protonmail';
+const DEST_FILE = process.env.DEST_FILE;
+const PROJECT_NAME = process.env.PROJECT_NAME;
 const TEMPLATE_FILE = 'template.pot';
-const OUTPUT_I18N_DIR = path.join(path.resolve(__dirname, '..'), 'po');
+const OUTPUT_I18N_DIR = path.join(process.cwd(), 'po');
 const TEMPLATE_FILE_PATH = path.join(OUTPUT_I18N_DIR, TEMPLATE_FILE);
 
-// if (!process.env.CROWDIN_KEY_API) {
-//     error(new Error('You must have env/.env to deploy. cf the Wiki'));
-// }
 
-// console.log('Need to define PROJECT_NAME and DEST_FILE via the env');
-// process.exit(1);
+if (!process.env.CROWDIN_KEY_API || !process.env.DEST_FILE || !process.env.PROJECT_NAME) {
+    const keys = ['CROWDIN_KEY_API', 'DEST_FILE', 'PROJECT_NAME'].join(' - ');
+    error(new Error(`Missing one/many mandatory keys from the .env ( cf the Wiki): \n${keys}`));
+}
 
 const getURL = (scope, flag = '') => {
     const customFlag = flag ? `&${flag}` : '';
@@ -49,17 +48,6 @@ const translateLang = (input) => {
 };
 
 const extractXML = (key) => new RegExp(`(?<=<${key}>)[^<]+`);
-
-function debug(item) {
-    if (!(argv.v || argv.verbose)) {
-        return;
-    }
-    if (Array.isArray(item)) {
-        return json(item);
-    }
-
-    console.log(item);
-}
 
 /**
  * Check the export status on the API to see its progress
@@ -121,7 +109,7 @@ async function downloadAll() {
  * Download latest translations exported on the API, extract them
  * and update our selection specified inside the i18n.txt file.
  */
-async function fetchThemAll() {
+async function fetchThemAll(spinner) {
     if (!fs.existsSync('env/i18n.txt')) {
         throw new Error('You must create a file env/i18n.txt. More informations on the wiki');
     }
@@ -131,39 +119,45 @@ async function fetchThemAll() {
     debug(list);
     // Extract only files from our selection list
     const zip = await downloadAll();
+    spinner.stop();
+
+    const spinnerZip = spin('Extracting translations');
     const fileList = list.map(async (lang) => {
         const input = path.join(lang, `ProtonMail Web Application-${lang}.po`);
         const file = await zip.file(input).async('string');
         return { lang, file };
     });
     const files = await Promise.all(fileList);
+    spinnerZip.stop();
 
     // Write them on the project
     files.forEach(({ lang, file }) => {
         const fileName = `${translateLang(lang)}.po`;
         const output = path.join(OUTPUT_I18N_DIR, fileName);
+        debug(`[${lang}] Write: ${output}`);
         fs.writeFileSync(output, file);
-        success(`[${lang}] Import new translation`, { space: false });
+        success(`[${lang}] Import new translation`);
     });
 }
 
 /**
  * Update latest translations to crowdin
  */
-async function udpate() {
+async function udpate(spinner) {
     const url = getURL('update-file');
     const form = new FormData();
     form.append(`files[/${DEST_FILE}]`, fs.createReadStream(TEMPLATE_FILE_PATH), {
         filename: `@${TEMPLATE_FILE}`
     });
     const { body = '' } = await got.post(url, { body: form });
+    spinner.stop();
     debug(body);
     success('Update crowdin with latest template');
 }
 /**
  * Update latest translations to crowdin
  */
-async function listTranslations() {
+async function listTranslations(spinner) {
     const url = getURL('status', 'json');
     const { body = '' } = await got(url, { json: true });
 
@@ -188,7 +182,7 @@ async function listTranslations() {
         const approved = argv['ignore-approved'] ? true : (item.approved_progress >= argv.limit);
         return item.translated_progress >= argv.limit && approved;
     };
-
+    spinner.stop();
     debug(body);
     _.sortBy(body, [ 'translated_progress', 'approved_progress' ])
         .reverse()
@@ -198,56 +192,85 @@ async function listTranslations() {
         });
 }
 
-function main() {
+async function main() {
 
-    if (argv.c || argv.check) {
-        checkExport().catch(error);
-    }
+    const getSpinnerMessage = () => {
+        if (argv.c || argv.check) {
+            return 'Cheking the status of the current export';
+        }
 
-    if (argv.s || argv.sync) {
-        fetchThemAll().catch(error);
-    }
+        if (argv.s || argv.sync) {
+            return 'Downloading all translations';
+        }
 
-    if (argv.e || argv.export) {
-        createExport().catch(error);
-    }
+        if (argv.u || argv.update) {
+            return 'Uploading new translations';
+        }
 
-    if (argv.u || argv.update) {
-        udpate().catch(error);
-    }
+        if (argv.l || argv.list) {
+            return 'Loading the list of translations';
+        }
+    };
 
-    if (argv.l || argv.list) {
-        listTranslations().catch(error);
-    }
+    const msg = getSpinnerMessage();
+    const spinner = msg ? spin(msg) : { stop: () => {} };
 
-    if (argv.help) {
-        console.log(dedent`
-            Usage: $ proton-i18n crowdin <flag>
-            Available flags:
-              - ${chalk.blue('--sync|-s')}
-                  Update app's translations with the ones from crowdin.
-                  You can configure which translations you want to update by using a file i18n.txt.
-                  each translations (ex: fr) = one line.
-                  More informations on the Wiki
-              - ${chalk.blue('--update|-u')}
-                  Update crowdin with our export file from the app
-              - ${chalk.blue('--check|-c')}
-                  To check the progress of an export from crowdin (to know if it's done or not yet)
-              - ${chalk.blue('--export|-e')}
-                  Ask to crowdin to create an export of translations, as it needs some time to prepare them
-              - ${chalk.blue('--list|-l')}
-                  List translations available on crowdin sorted by most progress done.
-                  Usefull to export translations ex:
+    try {
+        if (argv.c || argv.check) {
+            await checkExport(spinner);
+        }
 
-                    $ proton-i18n crowdin --list --type
-                        only list the code of the translation
+        if (argv.s || argv.sync) {
+            await fetchThemAll(spinner);
+        }
 
-                    $ proton-i18n crowdin --list --type --limit=95
-                        only list the code of the translation and limit progress >= 95 + approved >= 95
+        if (argv.e || argv.export) {
+            await createExport();
+        }
 
-                    $ proton-i18n crowdin --list --type --limit=95 --ignore-approved
-                        only list the code of the translation and limit progress >= 95
-        `);
+        if (argv.u || argv.update) {
+            await udpate(spinner);
+        }
+
+        if (argv.l || argv.list) {
+            await listTranslations(spinner);
+        }
+
+        if (argv.help) {
+            spinner.stop();
+            console.log(dedent`
+                Usage: $ proton-i18n crowdin <flag>
+                Available flags:
+                  - ${chalk.blue('--sync|-s')}
+                      Update app's translations with the ones from crowdin.
+                      You can configure which translations you want to update by using a file i18n.txt.
+                      each translations (ex: fr) = one line.
+                      More informations on the Wiki
+                  - ${chalk.blue('--update|-u')}
+                      Update crowdin with our export file from the app
+                  - ${chalk.blue('--check|-c')}
+                      To check the progress of an export from crowdin (to know if it's done or not yet)
+                  - ${chalk.blue('--export|-e')}
+                      Ask to crowdin to create an export of translations, as it needs some time to prepare them
+                  - ${chalk.blue('--list|-l')}
+                      List translations available on crowdin sorted by most progress done.
+                      Usefull to export translations ex:
+
+                        $ proton-i18n crowdin --list --type
+                            only list the code of the translation
+
+                        $ proton-i18n crowdin --list --type --limit=95
+                            only list the code of the translation and limit progress >= 95 + approved >= 95
+
+                        $ proton-i18n crowdin --list --type --limit=95 --ignore-approved
+                            only list the code of the translation and limit progress >= 95
+            `);
+        }
+        spinner.stop();
+
+    } catch (e) {
+        spinner.stop();
+        throw e;
     }
 
 }

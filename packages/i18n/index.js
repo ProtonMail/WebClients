@@ -19,7 +19,7 @@ const isEmpty = () => !argv._.length;
 
 async function main() {
     if (is('crowdin')) {
-      require('./lib/crowdin')();
+      await require('./lib/crowdin')();
     }
 
     if (is('extract')) {
