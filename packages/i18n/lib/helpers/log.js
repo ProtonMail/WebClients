@@ -3,7 +3,6 @@ const chalk = require('chalk');
 const ora = require('ora');
 
 module.exports = (scope) => {
-
     const warn = (msg) => {
         console.log();
         console.log(`[${scope}] ${chalk.magenta('⚠')} ${chalk.magenta(msg)}.`);
@@ -29,7 +28,7 @@ module.exports = (scope) => {
     };
 
     const error = (e) => {
-        console.log(`[${scope}] ${chalk.red(' ⚠'), chalk.red(e.message)}`);
+        console.log(`[${scope}] ${(chalk.red(' ⚠'), chalk.red(e.message))}`);
         console.log();
         console.error(e);
         process.exit(1);
@@ -57,4 +56,4 @@ module.exports = (scope) => {
         warn,
         spin
     };
-}
+};

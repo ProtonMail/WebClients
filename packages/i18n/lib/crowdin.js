@@ -11,14 +11,13 @@ const dedent = require('dedent');
 
 require('dotenv').config({ path: 'env/.env' });
 
-const { error, json, spin, success, debug } = require('./helpers/log')('proton-i18n');
+const { error, spin, success, debug } = require('./helpers/log')('proton-i18n');
 
 const DEST_FILE = process.env.DEST_FILE;
 const PROJECT_NAME = process.env.PROJECT_NAME;
 const TEMPLATE_FILE = 'template.pot';
 const OUTPUT_I18N_DIR = path.join(process.cwd(), 'po');
 const TEMPLATE_FILE_PATH = path.join(OUTPUT_I18N_DIR, TEMPLATE_FILE);
-
 
 if (!process.env.CROWDIN_KEY_API || !process.env.DEST_FILE || !process.env.PROJECT_NAME) {
     const keys = ['CROWDIN_KEY_API', 'DEST_FILE', 'PROJECT_NAME'].join(' - ');
@@ -164,11 +163,11 @@ async function listTranslations(spinner) {
     /**
      * Format output of the function when we list translations
      */
-    const format = ({ name, code, translated_progress: progress, approved_progress }) => {
+    const format = ({ name, code, translated_progress: progress, approved_progress: approved }) => {
         if (argv.type || argv.t) {
             return [code];
         }
-        return ['-', chalk.cyan(code), name, `progress: ${progress}%`, `approved: ${approved_progress}%`];
+        return ['-', chalk.cyan(code), name, `progress: ${progress}%`, `approved: ${approved}%`];
     };
 
     /**
@@ -179,12 +178,12 @@ async function listTranslations(spinner) {
         if (!argv.limit) {
             return true;
         }
-        const approved = argv['ignore-approved'] ? true : (item.approved_progress >= argv.limit);
+        const approved = argv['ignore-approved'] ? true : item.approved_progress >= argv.limit;
         return item.translated_progress >= argv.limit && approved;
     };
     spinner.stop();
     debug(body);
-    _.sortBy(body, [ 'translated_progress', 'approved_progress' ])
+    _.sortBy(body, ['translated_progress', 'approved_progress'])
         .reverse()
         .filter(limit)
         .forEach((item) => {
@@ -193,7 +192,6 @@ async function listTranslations(spinner) {
 }
 
 async function main() {
-
     const getSpinnerMessage = () => {
         if (argv.c || argv.check) {
             return 'Cheking the status of the current export';
@@ -213,7 +211,7 @@ async function main() {
     };
 
     const msg = getSpinnerMessage();
-    const spinner = msg ? spin(msg) : { stop: () => {} };
+    const spinner = msg ? spin(msg) : { stop() {} };
 
     try {
         if (argv.c || argv.check) {
@@ -267,11 +265,9 @@ async function main() {
             `);
         }
         spinner.stop();
-
     } catch (e) {
         spinner.stop();
         throw e;
     }
-
 }
 module.exports = main;
