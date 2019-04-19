@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { c, msgid, ngettext } from 'ttag';
+import { c, msgid } from 'ttag';
 import { Badge } from 'react-components';
 import { DOMAIN_STATE, VERIFY_STATE, MX_STATE, SPF_STATE, DKIM_STATE, DMARC_STATE } from 'proton-shared/lib/constants';
 
@@ -45,7 +45,7 @@ const DomainStatus = ({ domain }) => {
     const badges = [
         { text: c('Domain label').t`Verified`, type: VERIFY_TYPES[domain.VerifyState] },
         {
-            text: ngettext(msgid`${n} address`, `${n} addresses`, n),
+            text: c('Info').ngettext(msgid`${n} address`, `${n} addresses`, n),
             type: domain.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE && n ? 'success' : 'error'
         },
         { text: 'MX', type: MX_TYPES[domain.MxState] },

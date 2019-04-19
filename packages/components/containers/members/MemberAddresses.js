@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { ngettext, msgid, c } from 'ttag';
+import { msgid, c } from 'ttag';
 import { Dropdown, DropdownMenu, Icon } from 'react-components';
 
 const MemberAddresses = ({ member }) => {
@@ -17,7 +17,7 @@ const MemberAddresses = ({ member }) => {
                 className="pm-button--link"
                 content={
                     <>
-                        {ngettext(msgid`${n} address`, `${n} addresses`, n)} <Icon name="caret" />
+                        {c('Info').ngettext(msgid`${n} address`, `${n} addresses`, n)} <Icon name="caret" />
                     </>
                 }
             >
