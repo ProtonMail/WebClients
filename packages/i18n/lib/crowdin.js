@@ -9,8 +9,6 @@ const argv = require('minimist')(process.argv.slice(2));
 const FormData = require('form-data');
 const dedent = require('dedent');
 
-require('dotenv').config({ path: 'env/.env' });
-
 const { error, spin, success, debug } = require('./helpers/log')('proton-i18n');
 
 const DEST_FILE = process.env.DEST_FILE;
