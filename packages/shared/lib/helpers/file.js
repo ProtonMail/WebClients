@@ -92,3 +92,31 @@ export const readDataUrl = (url = '') => {
 
     return binaryStringToArray(decodeBase64(base64));
 };
+
+/**
+ * Open new tab with blob
+ * @param {Blob} blob
+ * @param {String} filename
+ */
+export const openTabBlob = (blob, filename) => {
+    // IE doesn't allow using a blob object directly as link href
+    // instead it is necessary to use msSaveOrOpenBlob
+    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveOrOpenBlob(blob);
+        return;
+    }
+
+    // For other browsers:
+    // Create a link pointing to the ObjectURL containing the blob.
+    const data = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+
+    link.href = data;
+    link.download = filename;
+    link.click();
+
+    setTimeout(() => {
+        // For Firefox it is necessary to delay revoking the ObjectURL
+        window.URL.revokeObjectURL(data);
+    }, 100);
+};
