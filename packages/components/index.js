@@ -42,6 +42,7 @@ export { default as DropdownMenu } from './components/dropdown/DropdownMenu';
 export { default as Dropdown } from './components/dropdown/Dropdown';
 export { default as RichTextEditor } from './components/input/RichTextEditor';
 export { default as Checkbox } from './components/input/Checkbox';
+export { default as ColorPicker } from './components/input/ColorPicker';
 export { default as useInput } from './components/input/useInput';
 export { default as Search } from './components/input/Search';
 export { default as TextArea } from './components/input/TextArea';
