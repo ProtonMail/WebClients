@@ -107,16 +107,10 @@ export const openTabBlob = (blob, filename) => {
     }
 
     // For other browsers:
-    // Create a link pointing to the ObjectURL containing the blob.
-    const data = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    // Open a new window pointing to the ObjectURL containing the blob.
+    const url = window.URL.createObjectURL(blob);
+    const win = window.open(url, '_blank');
 
-    link.href = data;
-    link.download = filename;
-    link.click();
-
-    setTimeout(() => {
-        // For Firefox it is necessary to delay revoking the ObjectURL
-        window.URL.revokeObjectURL(data);
-    }, 100);
+    win.document.title = filename;
+    win.focus();
 };
