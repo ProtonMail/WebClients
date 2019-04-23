@@ -49,7 +49,7 @@ const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, onChange
     return (
         <input
             disabled={disabled}
-            className={`pm-field ${className} ${statusClasses}`}
+            className={`pm-field w100 ${className} ${statusClasses}`}
             onFocus={handleFocus}
             onBlur={handleBlur}
             onKeyDown={handleKeyDown}

@@ -1,5 +1,5 @@
 import React, { useRef, useState, Suspense } from 'react';
-import { Icons } from 'react-components';
+import { Icons, ConfigContext } from 'react-components';
 
 import { MAILBOX_PASSWORD_KEY, UID_KEY } from 'proton-shared/lib/constants';
 import createAuthenticationStore from 'proton-shared/lib/authenticationStore';
@@ -64,21 +64,25 @@ export default (config, AuthenticatedSlot, UnAuthenticatedSlot) => {
 
         if (!authenticated) {
             return wrap(
-                <UnauthenticatedApp initApi={initApi}>
-                    <UnAuthenticatedSlot onLogin={handleLogin} />
-                </UnauthenticatedApp>
+                <ConfigContext.Provider value={config}>
+                    <UnauthenticatedApp initApi={initApi}>
+                        <UnAuthenticatedSlot onLogin={handleLogin} />
+                    </UnauthenticatedApp>
+                </ConfigContext.Provider>
             );
         }
 
         return wrap(
-            <AuthenticatedApp
-                authenticationStore={authenticationStore}
-                initApi={initApi}
-                loginData={loginDataRef.current}
-                onLogout={handleLogout}
-            >
-                <AuthenticatedSlot onLogout={handleLogout} />
-            </AuthenticatedApp>
+            <ConfigContext.Provider value={config}>
+                <AuthenticatedApp
+                    authenticationStore={authenticationStore}
+                    initApi={initApi}
+                    loginData={loginDataRef.current}
+                    onLogout={handleLogout}
+                >
+                    <AuthenticatedSlot onLogout={handleLogout} />
+                </AuthenticatedApp>
+            </ConfigContext.Provider>
         );
     };
 };
