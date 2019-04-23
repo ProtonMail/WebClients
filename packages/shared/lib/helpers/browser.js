@@ -74,3 +74,17 @@ export const parseURL = (url = '') => {
         hash: parser.hash
     };
 };
+
+export const getActiveXObject = (name) => {
+    try {
+        // eslint-disable-next-line no-undef
+        return new ActiveXObject(name);
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(error);
+    }
+};
+
+export const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+export const hasAcrobatInstalled = () => getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl');
+export const hasPDFSupport = () => navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled() || isIos();
