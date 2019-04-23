@@ -180,12 +180,10 @@ export { default as CatchAllSection } from './containers/domains/CatchAllSection
 export { default as PayInvoiceModal } from './containers/invoices/PayInvoiceModal';
 export { default as InvoiceState } from './containers/invoices/InvoiceState';
 export { default as InvoiceType } from './containers/invoices/InvoiceType';
-export { default as DownloadInvoiceButton } from './containers/invoices/DownloadInvoiceButton';
 export { default as InvoiceAmount } from './containers/invoices/InvoiceAmount';
 export { default as InvoiceTextModal } from './containers/invoices/InvoiceTextModal';
 export { default as InvoicesSection } from './containers/invoices/InvoicesSection';
 export { default as InvoiceActions } from './containers/invoices/InvoiceActions';
-export { default as PayButton } from './containers/invoices/PayButton';
 export { default as AddMemberButton } from './containers/members/AddMemberButton';
 export { default as MembersSection } from './containers/members/MembersSection';
 export { default as MemberPrivate } from './containers/members/MemberPrivate';
