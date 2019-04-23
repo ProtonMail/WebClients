@@ -63,7 +63,9 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
     return (
         <>
             <DropdownActions list={list} className="pm-button--small" />
-            <PayInvoiceModal invoice={invoice} show={isOpen} onClose={close} fetchInvoices={fetchInvoices} />
+            {invoice.State === INVOICE_STATE.UNPAID ? (
+                <PayInvoiceModal invoice={invoice} show={isOpen} onClose={close} fetchInvoices={fetchInvoices} />
+            ) : null}
         </>
     );
 };
