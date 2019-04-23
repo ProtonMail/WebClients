@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Row, Input, Select } from 'react-components';
+import { Block, Input, Select } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
 import { getFullList } from '../../helpers/countries';
@@ -21,28 +21,28 @@ const Card = ({ card, errors, onChange, loading }) => {
 
     return (
         <>
-            <Row>
+            <Block>
                 <Input
                     value={card.fullname}
                     onChange={handleChange('fullname')}
-                    placeholder={c('Placeholder').t`Name on Card`}
+                    placeholder={c('Placeholder').t`Name on card`}
+                    error={errors.fullname}
                     disabled={loading}
                     required
                 />
-                {errors.fullname ? errors.fullname : null}
-            </Row>
-            <Row>
+            </Block>
+            <Block>
                 <Input
                     value={card.number}
                     onChange={handleChange('number')}
-                    placeholder={c('Placeholder').t`Card Number`}
+                    placeholder={c('Placeholder').t`Card number`}
+                    error={errors.number}
                     disabled={loading}
                     maxLength={20}
                     required
                 />
-                {errors.number ? errors.number : null}
-            </Row>
-            <Row>
+            </Block>
+            <Block>
                 <div className="flex-autogrid">
                     <Select
                         value={card.month}
@@ -58,31 +58,30 @@ const Card = ({ card, errors, onChange, loading }) => {
                         options={years}
                         disabled={loading}
                     />
-                    {errors.month ? errors.month : null}
                     <Input
                         value={card.cvc}
                         onChange={handleChange('cvc')}
                         className="flex-autogrid-item"
-                        placeholder={c('Placeholder').t`Security Code`}
+                        placeholder={c('Placeholder').t`Security code`}
+                        error={errors.cvc}
                         disabled={loading}
                         required
                     />
-                    {errors.cvc ? errors.cvc : null}
                 </div>
-            </Row>
-            <Row>
+            </Block>
+            <Block>
                 <div className="flex-autogrid">
                     <Input
                         value={card.zip}
                         onChange={handleChange('zip')}
                         className="flex-autogrid-item"
-                        placeholder={c('Placeholder').t`ZIP/Postal Code`}
+                        placeholder={c('Placeholder').t`ZIP/Postal code`}
+                        error={errors.zip}
                         disabled={loading}
                         minLength={3}
                         maxLength={9}
                         required
                     />
-                    {errors.zip ? errors.zip : null}
                     <Select
                         value={card.country}
                         onChange={handleChange('country')}
@@ -91,7 +90,7 @@ const Card = ({ card, errors, onChange, loading }) => {
                         disabled={loading}
                     />
                 </div>
-            </Row>
+            </Block>
         </>
     );
 };

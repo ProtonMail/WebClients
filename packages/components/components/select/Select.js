@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import useInput from '../input/useInput';
 
-const Select = ({ options, disabled, className, onChange, onBlur, onFocus, ...rest }) => {
-    const { blur, focus, change, statusClasses } = useInput();
+import { generateUID } from '../../helpers/component';
+import useInput from '../input/useInput';
+import ErrorZone from '../text/ErrorZone';
+
+const Select = ({ options, disabled, className, onChange, onBlur, onFocus, error, ...rest }) => {
+    const { blur, focus, change, statusClasses, status } = useInput();
+    const [uid] = useState(generateUID('select'));
 
     const handleFocus = (event) => {
         if (disabled) {
@@ -34,23 +38,27 @@ const Select = ({ options, disabled, className, onChange, onBlur, onFocus, ...re
     };
 
     return (
-        <select
-            className={`pm-field ${className} ${statusClasses}`}
-            onBlur={handleBlur}
-            onFocus={handleFocus}
-            onChange={handleChange}
-            {...rest}
-        >
-            {options.map(({ text, ...rest }, index) => (
-                <option key={index.toString()} {...rest}>
-                    {text}
-                </option>
-            ))}
-        </select>
+        <>
+            <select
+                className={`pm-field ${className} ${statusClasses}`}
+                onBlur={handleBlur}
+                onFocus={handleFocus}
+                onChange={handleChange}
+                {...rest}
+            >
+                {options.map(({ text, ...rest }, index) => (
+                    <option key={index.toString()} {...rest}>
+                        {text}
+                    </option>
+                ))}
+            </select>
+            <ErrorZone id={uid}>{error && status.dirty ? error : null}</ErrorZone>
+        </>
     );
 };
 
 Select.propTypes = {
+    error: PropTypes.string,
     disabled: PropTypes.bool,
     size: PropTypes.number.isRequired,
     onChange: PropTypes.func,

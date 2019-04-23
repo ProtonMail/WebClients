@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
 
+import { generateUID } from '../../helpers/component';
 import useInput from './useInput';
+import ErrorZone from '../text/ErrorZone';
 
-const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, onChange, onBlur, ...rest }) => {
-    const { focus, change, blur, statusClasses } = useInput();
+const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, onChange, onBlur, error, ...rest }) => {
+    const { focus, change, blur, statusClasses, status } = useInput();
+    const [uid] = useState(generateUID('input'));
+
     const handleFocus = (event) => {
         if (disabled) {
             return;
@@ -47,19 +51,25 @@ const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, onChange
     };
 
     return (
-        <input
-            disabled={disabled}
-            className={`pm-field w100 ${className} ${statusClasses}`}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onKeyDown={handleKeyDown}
-            onChange={handleChange}
-            {...rest}
-        />
+        <>
+            <input
+                disabled={disabled}
+                className={`pm-field w100 ${className} ${statusClasses}`}
+                aria-invalid={error && status.dirty}
+                aria-describedby={uid}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                onKeyDown={handleKeyDown}
+                onChange={handleChange}
+                {...rest}
+            />
+            <ErrorZone id={uid}>{error && status.dirty ? error : null}</ErrorZone>
+        </>
     );
 };
 
 Input.propTypes = {
+    error: PropTypes.string,
     autoComplete: PropTypes.string,
     autoFocus: PropTypes.bool,
     className: PropTypes.string,

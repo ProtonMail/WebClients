@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
 
+import { generateUID } from '../../helpers/component';
 import useInput from './useInput';
+import ErrorZone from '../text/ErrorZone';
 
-const TextArea = ({ className, disabled, onPressEnter, onKeyDown, onChange, onFocus, onBlur, ...rest }) => {
-    const { blur, change, focus, statusClasses } = useInput();
+const TextArea = ({ className, disabled, onPressEnter, onKeyDown, onChange, onFocus, onBlur, error, ...rest }) => {
+    const { blur, change, focus, statusClasses, status } = useInput();
+    const [uid] = useState(generateUID('textarea'));
 
     const handleFocus = (event) => {
         if (disabled) {
@@ -48,18 +51,24 @@ const TextArea = ({ className, disabled, onPressEnter, onKeyDown, onChange, onFo
     };
 
     return (
-        <textarea
-            className={`pm-field w100 ${className} ${statusClasses}`}
-            onBlur={handleBlur}
-            onChange={handleChange}
-            onFocus={handleFocus}
-            onKeyDown={handleKeyDown}
-            {...rest}
-        />
+        <>
+            <textarea
+                className={`pm-field w100 ${className} ${statusClasses}`}
+                aria-invalid={error && status.dirty}
+                aria-describedby={uid}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                onFocus={handleFocus}
+                onKeyDown={handleKeyDown}
+                {...rest}
+            />
+            <ErrorZone id={uid}>{error && status.dirty ? error : null}</ErrorZone>
+        </>
     );
 };
 
 TextArea.propTypes = {
+    error: PropTypes.string,
     className: PropTypes.string,
     disabled: PropTypes.bool,
     id: PropTypes.string,

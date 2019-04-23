@@ -10,7 +10,7 @@ const ErrorZone = ({ children, id }) => {
 };
 
 ErrorZone.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     id: PropTypes.string.isRequired
 };
 
