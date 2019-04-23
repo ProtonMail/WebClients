@@ -73,6 +73,7 @@ export { default as Price } from './components/price/Price';
 export { default as Progress } from './components/progress/Progress';
 export { default as Text } from './components/text/Text';
 export { default as Legend } from './components/text/Legend';
+export { default as ErrorZone } from './components/text/ErrorZone';
 export { default as LanguageSection } from './containers/general/LanguageSection';
 export { default as ContactsSection } from './containers/general/ContactsSection';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
