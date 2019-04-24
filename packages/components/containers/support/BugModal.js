@@ -20,8 +20,6 @@ import {
     ResetButton,
     PrimaryButton,
     useApiWithoutResult,
-    useUser,
-    useAddresses,
     useNotifications,
     useConfig
 } from 'react-components';
@@ -29,14 +27,11 @@ import {
 import AttachScreenshot from './AttachScreenshot';
 import { collectInfo, getClient } from '../../helpers/report';
 
-const BugModal = ({ show, onClose }) => {
+const BugModal = ({ show, onClose, username: Username, addresses }) => {
     const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
     const Client = getClient(CLIENT_ID);
-    const [{ Name = '' }] = useUser();
     const { createNotification } = useNotifications();
-    const [addresses = []] = useAddresses();
     const [{ Email = '' } = {}] = addresses;
-
     const [model, update] = useState({
         ...collectInfo(),
         Client,
@@ -44,7 +39,7 @@ const BugModal = ({ show, onClose }) => {
         ClientType: CLIENT_TYPE,
         Title: `[${Client}] Bug [${location.path}]`,
         Description: '',
-        Username: Name,
+        Username,
         Email
     });
     const { state: showDetails, toggle: toggleDetails } = useToggle(false);
@@ -78,6 +73,18 @@ const BugModal = ({ show, onClose }) => {
                 <Alert>{c('Info').jt`Refreshing the page or ${link} will automatically resolve most issues.`}</Alert>
                 <Alert type="warning">{c('Warning')
                     .t`Bug reports are not end-to-end encrypted, please do not send any sensitive information.`}</Alert>
+                {Username ? null : (
+                    <Row>
+                        <Label htmlFor="Username">{c('Label').t`Proton username`}</Label>
+                        <Input
+                            id="Username"
+                            value={model.Username}
+                            onChange={handleChange('Username')}
+                            placeholder={c('Placeholder').t`Proton username`}
+                            required
+                        />
+                    </Row>
+                )}
                 <Row>
                     <Label htmlFor="Email">{c('Label').t`Email address`}</Label>
                     <EmailInput
@@ -163,7 +170,14 @@ const BugModal = ({ show, onClose }) => {
 
 BugModal.propTypes = {
     show: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func.isRequired,
+    username: PropTypes.string,
+    addresses: PropTypes.array
+};
+
+BugModal.defaultProps = {
+    username: '',
+    addresses: []
 };
 
 export default BugModal;

@@ -105,6 +105,7 @@ export { default as MXSection } from './containers/domains/MXSection';
 export { default as DMARCSection } from './containers/domains/DMARCSection';
 export { default as CatchAllModal } from './containers/domains/CatchAllModal';
 export { default as BugModal } from './containers/support/BugModal';
+export { default as AuthenticatedBugModal } from './containers/support/AuthenticatedBugModal';
 export { default as DomainName } from './containers/domains/DomainName';
 export { default as DomainModal } from './containers/domains/DomainModal';
 export { default as DomainsSection } from './containers/domains/DomainsSection';
