@@ -52,7 +52,7 @@ const Select = ({ options, disabled, className, onChange, onBlur, onFocus, error
                     </option>
                 ))}
             </select>
-            <ErrorZone id={uid}>{error && status.dirty ? error : null}</ErrorZone>
+            <ErrorZone id={uid}>{error && status.dirty ? error : ''}</ErrorZone>
         </>
     );
 };

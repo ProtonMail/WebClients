@@ -62,7 +62,7 @@ const TextArea = ({ className, disabled, onPressEnter, onKeyDown, onChange, onFo
                 onKeyDown={handleKeyDown}
                 {...rest}
             />
-            <ErrorZone id={uid}>{error && status.dirty ? error : null}</ErrorZone>
+            <ErrorZone id={uid}>{error && status.dirty ? error : ''}</ErrorZone>
         </>
     );
 };

@@ -63,7 +63,7 @@ const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, onChange
                 onChange={handleChange}
                 {...rest}
             />
-            <ErrorZone id={uid}>{error && status.dirty ? error : null}</ErrorZone>
+            <ErrorZone id={uid}>{error && status.dirty ? error : ''}</ErrorZone>
         </>
     );
 };
