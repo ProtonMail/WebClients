@@ -8,7 +8,7 @@
     "design-system": "github:ProtonMail/design-system.git#master",
     "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:^6.0.0",
     "proton-shared": "github:ProtonMail/proton-shared.git#master",
-    "proton-pack": "github:ProtonMail/boilerplate.git#feat/binary",
+    "proton-pack": "github:ProtonMail/boilerplate.git#semver:^1.0.0",
     "react": "^16.8.1",
     "react-components": "github:ProtonMail/react-components.git#master",
     "react-dom": "^16.8.1",
@@ -31,8 +31,7 @@
     "lint": "eslint src --ext .js --quiet --cache",
     "pretty": "prettier --write  $(find src/app -type f -name '*.js')",
     "preversion": "git update-index --no-assume-unchanged package-lock.json",
-    "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags",
-    "postinstall": "git update-index --assume-unchanged package-lock.json"
+    "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags"
   },
   "lint-staged": {
     "*.js": [

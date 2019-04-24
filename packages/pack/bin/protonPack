@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const fs = require('fs').promises;
-const path = require('path');
 const chalk = require('chalk');
 const dedent = require('dedent');
 const argv = require('minimist')(process.argv.slice(2));
@@ -11,9 +10,7 @@ const configBuilder = require('../cli/config');
 const configAppBuilder = require('../cli/configApp');
 const { getPort, getPublicPath, findPort } = require('../webpack/helpers/source');
 
-const isInit = argv._.includes('init');
-const isDevServer = argv._.includes('dev-server');
-const isCompile = argv._.includes('compile');
+const is = (command) => argv._.includes(command);
 
 const {
     config: appConfig,
@@ -24,11 +21,11 @@ const {
 async function main() {
 
     // For any task BUT init we need to create a custom config for the app
-    if (!isInit) {
+    if (!is('init') && !is('help')) {
         await fs.writeFile(appConfigPath, appConfig);
     }
 
-    if (isCompile) {
+    if (is('compile')) {
         const compile = require('../cli/compile');
         const publicPath = getPublicPath(argv);
         const CONFIG = configBuilder({ publicPath });
@@ -37,7 +34,7 @@ async function main() {
     }
 
     // Run the dev server, but first find an available port
-    if (isDevServer) {
+    if (is('dev-server')) {
         const server = require('../cli/server');
         const port = await findPort(getPort(argv));
         const publicPath = getPublicPath(argv);
@@ -56,9 +53,31 @@ async function main() {
     }
 
     // Init the application with the boilerplate
-    if (isInit) {
-        const initBasicProtonApp = require('../cli/initBasicProtonApp');
-        initBasicProtonApp();
+    if (is('init')) {
+        const initProtonApp = require('../cli/initProtonApp');
+        initProtonApp(argv._[1]);
+    }
+
+    if (is('help')) {
+        console.log(dedent`
+        Usage: $ proton-pack <command>
+        Available commands:
+          - ${chalk.blue('init')} ${chalk.blue('<type>')}
+              Create a basic app with OpenPGP.
+                - type: default (default) basic app
+                - type: auth basic app with login + private routes
+
+          - ${chalk.blue('dev-server')}
+              Dev server, default port on ${chalk.bold('8080')}
+                - --api=<String>: Change the API, based on your env.json
+                - --port=<Number>: to use a custom port
+                - --publicPath=/settings/: to serve the app on /settings/
+
+          - ${chalk.blue('compile')}
+                - --api=<String>: Change the API, based on your env.json
+                - --publicPath=/settings/: to build the app based on /settings/
+              Build the app
+        `);
     }
 }
 

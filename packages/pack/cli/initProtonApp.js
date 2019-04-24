@@ -10,11 +10,14 @@ const TEMPLATE = path.resolve(__dirname, '..', 'template');
 const PATH_APP_PKG = path.join(process.cwd(), 'package.json');
 
 /**
- * Copy the template boilerplate into the root ap
+ * Copy the template boilerplate into the root app
+ *     - type: default (default) a boilerplate with everything but the auth
+ *     - type: auth a boilerplate + private routes
+ * @param {String} type type of boilerplate you want to setup
  */
-async function main() {
+async function main(type = 'default') {
     // Make a copy of the whole src repo
-    await bash(`cp -r ${TEMPLATE}/src src`);
+    await bash(`cp -r ${TEMPLATE}/${type} src`);
     // Copy hidden config files
     await bash(`cp -r ${TEMPLATE}/.{editorconfig,eslintrc.json,prettierrc} .`);
     // Copy custom gitignore as during the npm install .gitignore is removed... wtf
@@ -49,7 +52,8 @@ async function main() {
                 - ${chalk.yellow('start')}: dev server
                 - Hook postversion for pushing git tag
 
-        ➙ Now you can run ${chalk.yellow('npm start')}
+        ➙ Now you can run ${chalk.yellow('npm i')}
+        ➙ Once it's done: ${chalk.yellow('npm start')}
     `);
 }
 

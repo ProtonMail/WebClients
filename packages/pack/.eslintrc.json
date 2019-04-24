@@ -1,6 +1,7 @@
 {
     "parser": "babel-eslint",
     "plugins": [
+        "import",
         "react",
         "react-hooks"
     ],
@@ -28,6 +29,7 @@
         "plugin:react/recommended"
     ],
     "rules": {
+        "no-console": "off",
         "react/display-name": "off",
         "react/prop-types": "warn",
         "react-hooks/rules-of-hooks": "error",
