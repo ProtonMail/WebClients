@@ -7,7 +7,7 @@ import {
     SubTitle,
     Block,
     Alert,
-    Search,
+    SearchInput,
     TableBody,
     TableRow,
     useMembers
@@ -55,7 +55,7 @@ const MembersSection = () => {
             </Alert>
             <Block className="flex flex-spacebetween">
                 <AddMemberButton />
-                <Search
+                <SearchInput
                     onChange={handleSearch}
                     placeholder={c('Placeholder').t`Search for User and Addresses`}
                     delay={500}

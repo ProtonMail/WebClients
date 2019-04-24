@@ -4,13 +4,13 @@ import Input from './Input';
 import useDebounceInput from './useDebounceInput';
 
 /**
- * <Search delay={500} onChange={handleChange} value={keywords} />
+ * <SearchInput delay={500} onChange={handleChange} value={keywords} />
  * @param {Number} delay used to debounce search value (default: 0)
  * @param {Function} onChange returns directly the value and not the event
  * @param {String} value initial
  * @returns {React.Component}
  */
-const Search = ({ delay, onChange, value, ...rest }) => {
+const SearchInput = ({ delay, onChange, value, ...rest }) => {
     const [keywords, setKeywords] = useState(value);
     const words = useDebounceInput(keywords, delay);
     const handleChange = ({ target }) => setKeywords(target.value);
@@ -22,14 +22,14 @@ const Search = ({ delay, onChange, value, ...rest }) => {
     return <Input value={keywords} onChange={handleChange} type="search" {...rest} />;
 };
 
-Search.propTypes = {
+SearchInput.propTypes = {
     delay: PropTypes.number,
     onChange: PropTypes.func,
     value: PropTypes.string
 };
 
-Search.defaultProps = {
+SearchInput.defaultProps = {
     delay: 0
 };
 
-export default Search;
+export default SearchInput;

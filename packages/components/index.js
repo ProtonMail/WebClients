@@ -44,7 +44,7 @@ export { default as RichTextEditor } from './components/input/RichTextEditor';
 export { default as Checkbox } from './components/input/Checkbox';
 export { default as ColorPicker } from './components/input/ColorPicker';
 export { default as useInput } from './components/input/useInput';
-export { default as Search } from './components/input/Search';
+export { default as SearchInput } from './components/input/SearchInput';
 export { default as TextArea } from './components/input/TextArea';
 export { default as Input } from './components/input/Input';
 export { default as DateInput } from './components/input/DateInput';
