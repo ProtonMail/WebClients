@@ -4,6 +4,12 @@
   font-style: italic;
 }
 
+.pm-field-container {
+  width: 26rem;
+  @extend .mw100;
+  @extend .inbl;
+}
+
 .pm-field {
   border: $input-defaut-border;
   padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
@@ -18,7 +24,7 @@
   &[aria-invalid="true"]:not(:focus) {
     border-color: $pm-global-warning;
   }
-  &.ng-valid:not(:focus) {
+  &.is-valid:not(:focus) {
     border-color: $pm-global-success;
   }
   &[disabled] {
@@ -52,7 +58,8 @@ select.pm-field {
   background: $pm-input-background url("#{$path-images}sprite-for-css-only.svg#css-caret") calc(100% - 6px) 50% no-repeat;
   background-size: 1.5rem;
   padding-left: 1em;
-  padding-right: 25px;
+  padding-right: 20px;
+  text-overflow: ellipsis;
   &::-ms-expand {
     display: none;
   }
@@ -63,7 +70,7 @@ select.pm-field {
     select.pm-field {
       background-position: 6px 50%;
       padding-right: 1em;
-      padding-left: 25px;
+      padding-left: 20px;
     }
   }
 }
@@ -262,6 +269,6 @@ $width: 5.5em;
 
 /* label */
 .pm-label {
-  padding-top: .75em;
+  padding-top: .5em;
   min-width: 15em;
 }

@@ -15,7 +15,9 @@ section: design
         Disabled Form
     </label>
     <span>
-        <input type="text" id="id_field0" class="pm-field" value="Placeholder" disabled />
+        <span class="pm-field-container">
+            <input type="text" id="id_field0" class="pm-field w100" value="Placeholder" disabled />
+        </span>
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -23,7 +25,9 @@ section: design
         Active Form with placeholder
     </label>
     <span>
-        <input type="text" id="id_field00" class="pm-field" placeholder="A placeholder" />
+        <span class="pm-field-container">
+            <input type="text" id="id_field00" class="pm-field w100" placeholder="A placeholder" />
+        </span>
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -31,7 +35,9 @@ section: design
         Active Form with value
     </label>
     <span>
-        <input type="text" id="id_field1" class="pm-field" value="An active field with a value" />
+        <span class="pm-field-container">
+            <input type="text" id="id_field1" class="pm-field w100" value="An active field with a value" />
+        </span>
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -39,7 +45,9 @@ section: design
         Active Form + focus
     </label>
     <span>
-        <input type="text" id="id_field2" class="pm-field focus" value="An active field with focus" />
+        <span class="pm-field-container">
+            <input type="text" id="id_field2" class="pm-field w100 focus" value="An active field with focus" />
+        </span>
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -47,8 +55,10 @@ section: design
         Error Form
     </label>
     <div>
-        <input type="text" id="id_field4" class="pm-field" aria-invalid="true" value="This is a mistake" aria-describedby="error1" />
-        <div class="color-global-warning error-zone" id="error1">There is an error. There is an error.<br> There is an error. There is an error. </div>
+        <span class="pm-field-container">
+            <input type="text" id="id_field4" class="pm-field w100" aria-invalid="true" value="This is a mistake" aria-describedby="error1" />
+            <div class="color-global-warning error-zone" id="error1">There is an error. There is an error.<br> There is an error. There is an error. </div>
+        </span>
     </div>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -56,8 +66,10 @@ section: design
         Warning Form
     </label>
     <div>
-        <input type="text" id="id_field4bis" class="pm-field" value="This is the end" aria-describedby="warning1" />
-        <div class="color-global-attention error-zone" id="warning1">Are you sure? Hold your breath and count again. </div>
+        <span class="pm-field-container">
+            <input type="text" id="id_field4bis" class="pm-field w100" value="This is the end" aria-describedby="warning1" />
+            <div class="color-global-attention error-zone" id="warning1">Are you sure? Hold your breath and count again. </div>
+        </span>
     </div>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -65,9 +77,23 @@ section: design
         Success Form
     </label>
     <span>
-        <input type="text" id="id_field5" class="pm-field ng-valid" value="This is good!" />
+        <span class="pm-field-container">
+            <input type="text" id="id_field5" class="pm-field w100 is-valid" value="This is good!" />
+        </span>
     </span>
 </div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field6" class="pm-label">
+        Success Form
+    </label>
+    <span>
+        <span class="pm-field-container">
+            <input type="text" id="id_field6" class="pm-field w100" value="This is a test of alignment" />
+        </span>
+    </span>
+    <span class="ml1"><button class="pm-button-blue">OK</button></span>
+</div>
+
 
 <h2>Different form inputs</h2>
 
@@ -76,7 +102,9 @@ section: design
         Search form
     </label>
     <span>
-        <input type="search" id="id_field10" class="pm-field" placeholder="Search for something" value="" />
+        <span class="pm-field-container">
+            <input type="search" id="id_field10" class="pm-field w100" placeholder="Search for something" value="" />
+        </span>
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -84,7 +112,9 @@ section: design
         Textarea
     </label>
     <span>
-        <textarea name="textaread" id="id_textarea" class="pm-field" cols="30" rows="5"></textarea>
+        <span class="pm-field-container">
+            <textarea name="textaread" id="id_textarea" class="pm-field w100" cols="30" rows="5"></textarea>
+        </span>
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -92,8 +122,10 @@ section: design
         Another zone
     </label>
     <div>
-        <textarea name="textaread2" id="id_textarea2" class="pm-field" aria-invalid="true" cols="30" rows="5" aria-describedby="area_error_id"></textarea>
-        <div class="color-global-warning error-zone" id="area_error_id">There is an error. </div>
+        <span class="pm-field-container">
+            <textarea name="textaread2" id="id_textarea2" class="pm-field w100" aria-invalid="true" cols="30" rows="5" aria-describedby="area_error_id"></textarea>
+            <div class="color-global-warning error-zone" id="area_error_id">There is an error. </div>
+        </span>
     </div>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -101,10 +133,13 @@ section: design
         A select
     </label>
     <span>
-        <select id="id_field6" class="pm-field">
-            <option value="">An loooooooooooooooooon option</option>
-            <option value="">Another option</option>
-        </select>
+        <span class="pm-field-container">
+            <select id="id_field6" class="pm-field w100">
+                <option value="">An loooooooooooooooooong option</option>
+                <option value="">An veryyyyyyyyyyyyyyyyyyyy loooooooooooooooooong option</option>
+                <option value="">Another option</option>
+            </select>
+        </span>
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -112,11 +147,13 @@ section: design
         Another select
     </label>
     <span>
-        <select id="id_field6b" class="pm-field" aria-invalid="true" aria-describedby="area_select_id">
-            <option value="">An option</option>
-            <option value="">Another option</option>
-        </select>
-        <div class="color-global-warning error-zone" id="area_select_id">There is an error. </div>
+        <span class="pm-field-container">
+            <select id="id_field6b" class="pm-field w100" aria-invalid="true" aria-describedby="area_select_id">
+                <option value="">An option</option>
+                <option value="">Another option</option>
+            </select>
+            <div class="color-global-warning error-zone" id="area_select_id">There is an error. </div>
+        </span>
     </span>
 </div>
 <div class="flex flex-nowrap onmobile-flex-column mb1">
@@ -168,7 +205,7 @@ section: design
     <span class="pm-label" id="question">
         Do you speak martian?
     </span>
-    <span class="pt0-5">
+    <span class="pt0-25">
         <label for="id_field8" class="mr2">
             <input type="radio" name="martian" class="pm-radio" id="id_field8" value="yaisse" aria-describedby="question">
             <span class="pm-radio-fakeradio"></span> 
