@@ -85,7 +85,7 @@ const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
                         value={model.Title}
                         options={options}
                         onChange={handleChange('Title')}
-                        autofocus
+                        autoFocus
                     />
                 </Row>
                 {Username ? null : (
