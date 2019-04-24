@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { noop } from 'proton-shared/lib/helpers/function';
+
 import Input from './Input';
 import useDebounceInput from './useDebounceInput';
 
@@ -29,7 +31,9 @@ SearchInput.propTypes = {
 };
 
 SearchInput.defaultProps = {
-    delay: 0
+    delay: 0,
+    onChange: noop,
+    value: ''
 };
 
 export default SearchInput;
