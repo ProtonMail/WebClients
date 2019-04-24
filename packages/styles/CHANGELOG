@@ -1,3 +1,17 @@
+# [1.5.17] - 2019-04-24
+
+## New
+
+- add `prefers-reduced-motion: reduce` MQ (for vestibular disorder)
+
+## Updated/fixes
+
+- set up max width for input/select/textarea
+- fix select text overflow
+- updated `ng-valid` to `is-valid` (byebye Angular)
+- fix `pm-label` alignment
+
+
 # [1.5.16] - 2019-04-18
 
 ## New

@@ -1,0 +1,11 @@
+/**
+ * reduced motion MQ: for vestibular disorders
+ */
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after {
+    -webkit-animation: none !important;
+    animation: none !important;
+    -webkit-transition: none !important; 
+    transition: none !important;
+  }
+}
