@@ -40,7 +40,7 @@ const Select = ({ options, disabled, className, onChange, onBlur, onFocus, error
     return (
         <>
             <select
-                className={`pm-field ${className} ${statusClasses}`}
+                className={`pm-field w100 ${className} ${statusClasses}`}
                 onBlur={handleBlur}
                 onFocus={handleFocus}
                 onChange={handleChange}

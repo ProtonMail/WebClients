@@ -13,6 +13,7 @@ import {
     useToggle,
     Info,
     TextArea,
+    Select,
     Label,
     ContentModal,
     FooterModal,
@@ -27,17 +28,21 @@ import {
 import AttachScreenshot from './AttachScreenshot';
 import { collectInfo, getClient } from '../../helpers/report';
 
-const BugModal = ({ show, onClose, username: Username, addresses }) => {
+const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
     const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
     const Client = getClient(CLIENT_ID);
     const { createNotification } = useNotifications();
     const [{ Email = '' } = {}] = addresses;
+    const options = titles.map((title) => ({
+        text: title,
+        value: `[${Client}] Bug [${location.path}] ${title}`
+    }));
     const [model, update] = useState({
         ...collectInfo(),
         Client,
         ClientVersion: APP_VERSION,
         ClientType: CLIENT_TYPE,
-        Title: `[${Client}] Bug [${location.path}]`,
+        Title: options[0].value,
         Description: '',
         Username,
         Email
@@ -73,6 +78,16 @@ const BugModal = ({ show, onClose, username: Username, addresses }) => {
                 <Alert>{c('Info').jt`Refreshing the page or ${link} will automatically resolve most issues.`}</Alert>
                 <Alert type="warning">{c('Warning')
                     .t`Bug reports are not end-to-end encrypted, please do not send any sensitive information.`}</Alert>
+                <Row>
+                    <Label htmlFor="Title">{c('Label').t`Category`}</Label>
+                    <Select
+                        id="Title"
+                        value={model.Title}
+                        options={options}
+                        onChange={handleChange('Title')}
+                        autofocus
+                    />
+                </Row>
                 {Username ? null : (
                     <Row>
                         <Label htmlFor="Username">{c('Label').t`Proton username`}</Label>
@@ -172,12 +187,24 @@ BugModal.propTypes = {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     username: PropTypes.string,
-    addresses: PropTypes.array
+    addresses: PropTypes.array,
+    titles: PropTypes.array
 };
 
 BugModal.defaultProps = {
     username: '',
-    addresses: []
+    addresses: [],
+    titles: [
+        'Login problem',
+        'Sign up problem',
+        'Bridge problem',
+        'Import / export problem',
+        'Custom domains problem',
+        'Payments problem',
+        'VPN problem',
+        'Feature request',
+        'Other'
+    ]
 };
 
 export default BugModal;
