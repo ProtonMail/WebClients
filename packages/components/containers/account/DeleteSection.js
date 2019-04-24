@@ -14,8 +14,8 @@ import {
 import DeleteAccountModal from './DeleteAccountModal';
 
 const DeleteSection = () => {
-    const { isMember } = useUser();
-    const { isManagedByMozilla } = useSubscription();
+    const [{ isMember }] = useUser();
+    const [{ isManagedByMozilla }] = useSubscription();
     const { isOpen, open, close } = useModal();
     // TODO get clientType from config (proton-pack)
 
