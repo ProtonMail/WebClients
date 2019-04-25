@@ -9,10 +9,10 @@ const SignToggle = ({ id, sign }) => {
     const { state, toggle } = useToggle(!!sign);
     const handleChange = async ({ target }) => {
         await request(+target.checked);
-        await call();
+        call();
         toggle();
     };
-    return <Toggle id={id} checked={state} onChange={handleChange} disabled={loading} />;
+    return <Toggle id={id} checked={state} onChange={handleChange} loading={loading} />;
 };
 
 SignToggle.propTypes = {

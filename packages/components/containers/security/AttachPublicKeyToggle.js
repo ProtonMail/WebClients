@@ -27,7 +27,7 @@ const AttachPublicKeyToggle = ({ id, attachPublicKey, sign }) => {
     const handleChange = async ({ target }) => {
         askSign(target.checked);
         await request(+target.checked);
-        await call();
+        call();
         toggle();
     };
 
@@ -40,7 +40,7 @@ const AttachPublicKeyToggle = ({ id, attachPublicKey, sign }) => {
 
     return (
         <>
-            <Toggle id={id} checked={state} onChange={handleChange} disabled={loading} />
+            <Toggle id={id} checked={state} onChange={handleChange} loading={loading} />
             <ConfirmModal
                 show={isOpen}
                 onClose={close}

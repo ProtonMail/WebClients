@@ -19,12 +19,12 @@ const AddressVerificationSection = () => {
     const { call } = useEventManager();
     const [mailSettings] = useMailSettings();
     const { state, toggle } = useToggle(!!mailSettings.PromptPin);
-    const { request } = useApiWithoutResult(updatePromptPin);
+    const { request, loading } = useApiWithoutResult(updatePromptPin);
 
     const handleChange = async ({ target }) => {
         const newValue = target.checked;
         await request(+newValue);
-        await call();
+        call();
         toggle();
     };
 
@@ -45,7 +45,7 @@ const AddressVerificationSection = () => {
                     />
                 </Label>
                 <Field>
-                    <Toggle id="trustToggle" checked={state} onChange={handleChange} />
+                    <Toggle id="trustToggle" loading={loading} checked={state} onChange={handleChange} />
                 </Field>
             </Row>
         </>

@@ -39,7 +39,7 @@ const DailyNotificationsToggle = ({ id }) => {
         }
     };
 
-    return <Toggle disabled={loading} checked={state} id={id} onChange={handleChange} />;
+    return <Toggle loading={loading} checked={state} id={id} onChange={handleChange} />;
 };
 
 DailyNotificationsToggle.propTypes = {

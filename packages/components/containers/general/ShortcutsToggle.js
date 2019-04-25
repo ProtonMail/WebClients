@@ -11,12 +11,12 @@ const ShortcutsToggle = ({ id, hotkeys, onChange }) => {
     const { state, toggle } = useToggle(!!hotkeys);
     const handleChange = async ({ target }) => {
         await request(+target.checked);
-        await call();
+        call();
         toggle();
         onChange(+target.checked);
         createNotification({ text: c('Success').t`Hotkeys preferences updated` });
     };
-    return <Toggle id={id} checked={state} onChange={handleChange} disabled={loading} />;
+    return <Toggle id={id} checked={state} onChange={handleChange} loading={loading} />;
 };
 
 ShortcutsToggle.propTypes = {

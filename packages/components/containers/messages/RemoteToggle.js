@@ -14,11 +14,11 @@ const RemoteToggle = ({ id, showImages, onChange }) => {
     const handleChange = async ({ target }) => {
         const bit = target.checked ? setBit(showImages, REMOTE) : clearBit(showImages, REMOTE);
         await request(bit);
-        await call();
+        call();
         toggle();
         onChange(bit);
     };
-    return <Toggle id={id} checked={state} onChange={handleChange} disabled={loading} />;
+    return <Toggle id={id} checked={state} onChange={handleChange} loading={loading} />;
 };
 
 RemoteToggle.propTypes = {

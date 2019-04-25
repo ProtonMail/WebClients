@@ -24,7 +24,7 @@ const PMSignatureToggle = ({ id }) => {
 
     const handleChange = async ({ target }) => {
         await request(+target.checked);
-        await call();
+        call();
         toggle();
         createNotification({ text: c('Success').t`Preference saved` });
     };
@@ -41,7 +41,7 @@ const PMSignatureToggle = ({ id }) => {
 
     return (
         <div className="flex flex-spacebetween">
-            <Toggle className="mr1" disabled={loading} id={id} checked={state} onChange={handleChange} />
+            <Toggle className="mr1" loading={loading} id={id} checked={state} onChange={handleChange} />
             <span className="pm-label" dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }} />
         </div>
     );
