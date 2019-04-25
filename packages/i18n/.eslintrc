@@ -29,6 +29,7 @@
     "before": true
   },
   "rules": {
+    "import/no-dynamic-require": "off",
     "object-shorthand": ["error", "always", { "avoidExplicitReturnArrows": true }],
     "arrow-parens": ["error", "always"],
     "comma-dangle": ["error", "never"],

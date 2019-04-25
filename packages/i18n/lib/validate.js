@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+const execa = require('execa');
 const _ = require('lodash');
 
-const { success, spin } = require('./helpers/log')('proton-i18n');
+const { success, spin, debug } = require('./helpers/log')('proton-i18n');
 
 const isLint = process.argv.includes('--lint');
 
@@ -19,7 +20,30 @@ function findNoContext(doc) {
         return noCtx || emptyCyx;
     });
 }
-function main() {
+
+/**
+ * Validate the code to check if we use the correct format when
+ * we write ttag translations.
+ * @param  {String} arg path to lint
+ */
+async function validateFunctionFormat(arg = '') {
+    const cmd = path.resolve(__dirname, '..', 'scripts/lint.sh');
+    try {
+        await execa.shell(`${cmd} ${arg}`, {
+            shell: '/bin/bash'
+        });
+    } catch (e) {
+        console.log(e.message);
+        process.exit(1);
+    }
+}
+
+function main(mode, { path } = {}) {
+    if (mode === 'lint-functions') {
+        debug(`[lint-functions] validtion path:${path}`);
+        return validateFunctionFormat(path);
+    }
+
     const spinner = spin('Parsing translations');
     const doc = fs.readFileSync(path.resolve('./po/template.pot'));
     const translations = findNoContext(doc);
