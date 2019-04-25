@@ -1,6 +1,3 @@
-import { describe, it } from 'mocha';
-import assert from 'assert';
-
 import { wait } from '../../lib/helpers/promise';
 import { onceWithQueue } from '../../lib/helpers/onceWithQueue';
 
@@ -23,7 +20,7 @@ describe('onceWithQueue', () => {
         cb();
 
         await wait(DELAY);
-        assert.strictEqual(count, 1);
+        expect(count).toEqual(1);
     });
 
     it('should only execute once more if another callback is queued', async () => {
@@ -43,15 +40,15 @@ describe('onceWithQueue', () => {
 
         await wait(DELAY);
 
-        assert.strictEqual(count, 1);
+        expect(count).toEqual(1);
 
         await wait(DELAY + 1);
 
-        assert.strictEqual(count, 2);
+        expect(count).toEqual(2);
 
         await wait(DELAY * 2);
 
-        assert.strictEqual(count, 2);
+        expect(count).toEqual(2);
     });
 
     it('should await for its own callback', async () => {
@@ -63,25 +60,25 @@ describe('onceWithQueue', () => {
         });
 
         const p1 = cb().then(() => {
-            assert.strictEqual(count, 1);
+            expect(count).toEqual(1);
         });
 
         const p2 = cb().then(() => {
-            assert.strictEqual(count, 2);
+            expect(count).toEqual(2);
         });
 
         const p3 = cb().then(() => {
-            assert.strictEqual(count, 2);
+            expect(count).toEqual(2);
         });
 
         const p4 = cb().then(() => {
-            assert.strictEqual(count, 2);
+            expect(count).toEqual(2);
         });
 
         await Promise.all([p1, p2, p3, p4]);
 
         await cb().then(() => {
-            assert.strictEqual(count, 3);
+            expect(count).toEqual(3);
         });
     });
 });

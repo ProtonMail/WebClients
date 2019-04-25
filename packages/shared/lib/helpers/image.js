@@ -1,3 +1,4 @@
+import { REGEX_IMAGE_EXTENSION } from '../constants';
 import { toBase64 } from './file';
 
 /**
@@ -142,4 +143,25 @@ export const isEmbedded = (src = '') => src.startsWith('cid:');
 export const resize = async (fileImage, maxSize) => {
     const base64str = await toBase64(fileImage);
     return downSize(base64str, maxSize, fileImage.type);
+};
+
+/**
+ * Prepare image source to be display
+ * @param {String} value
+ * @return {String}
+ */
+export const formatImage = (value = '') => {
+    if (!value) {
+        return value;
+    }
+
+    if (REGEX_IMAGE_EXTENSION.test(value)) {
+        return value;
+    }
+
+    if (value.startsWith('data:')) {
+        return value;
+    }
+
+    return `data:image/png;base64,${value}`;
 };

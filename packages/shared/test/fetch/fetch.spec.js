@@ -1,7 +1,4 @@
-import { describe, it, beforeEach, afterEach } from 'mocha';
-import assert from 'assert';
 import performRequest from '../../lib/fetch/fetch';
-import { createSpy } from '../spy';
 
 class FormDataMock {
     constructor() {
@@ -29,7 +26,7 @@ describe('fetch', () => {
     });
 
     const setup = (fn) => {
-        const spy = createSpy(fn);
+        const spy = jasmine.createSpy('fetch').and.callFake(fn);
         global.fetch = spy;
         return spy;
     };
@@ -40,7 +37,7 @@ describe('fetch', () => {
             url: 'http://foo.com/'
         };
         const result = await performRequest(config);
-        assert.deepStrictEqual(result, { bar: 1 });
+        expect(result).toEqual({ bar: 1 });
     });
 
     it('should be able to receive blob data', async () => {
@@ -50,7 +47,7 @@ describe('fetch', () => {
             output: 'blob'
         };
         const result = await performRequest(config);
-        assert.deepStrictEqual(result, 123);
+        expect(result).toEqual(123);
     });
 
     it('should be able to send json data', async () => {
@@ -62,7 +59,7 @@ describe('fetch', () => {
             }
         };
         await performRequest(config);
-        assert.deepStrictEqual(spy.calls[0], [
+        expect(spy.calls.all()[0].args).toEqual([
             new URL(config.url),
             {
                 mode: 'cors',
@@ -88,7 +85,7 @@ describe('fetch', () => {
         await performRequest(config);
         const fd = new FormData();
         fd.append('foo', 'bar');
-        assert.deepStrictEqual(spy.calls[0], [
+        expect(spy.calls.all()[0].args).toEqual([
             new URL(config.url),
             {
                 mode: 'cors',
@@ -106,19 +103,21 @@ describe('fetch', () => {
             url: 'http://foo.com/',
             suppress: [123]
         };
-        await assert.rejects(performRequest(config), {
-            name: 'Error',
-            message: '',
-            status: 400,
-            data: { bar: 1 },
-            config: {
-                suppress: [123],
-                mode: 'cors',
-                credentials: 'include',
-                redirect: 'follow',
-                headers: {},
-                body: undefined
-            }
-        });
+        await expectAsync(performRequest(config)).toBeRejectedWith(
+            jasmine.objectContaining({
+                name: 'Error',
+                message: '',
+                status: 400,
+                data: { bar: 1 },
+                config: {
+                    suppress: [123],
+                    mode: 'cors',
+                    credentials: 'include',
+                    redirect: 'follow',
+                    headers: {},
+                    body: undefined
+                }
+            })
+        );
     });
 });

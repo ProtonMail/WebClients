@@ -2,7 +2,11 @@
     "extends": "airbnb-base",
     "env": {
         "browser": true,
+        "jasmine": true,
         "node": true
+    },
+    "globals": {
+        "expectAsync": true
     },
     "rules": {
         "arrow-parens": ["error", "always"],
@@ -29,7 +33,7 @@
             "code": 120,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
-            "ignoreRegExpLiterals": true,
+            "ignoreRegExpLiterals": true
         }]
     }
 }

@@ -231,3 +231,4 @@ export const LABEL_COLORS = [
     '#e6984c',
     '#dfb286'
 ];
+export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;

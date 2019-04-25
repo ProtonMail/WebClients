@@ -1,7 +1,3 @@
-import { describe, it } from 'mocha';
-import assert from 'assert';
-
-import { createSpy } from '../spy';
 import { runChunksDelayed, wait } from '../../lib/helpers/promise';
 
 describe('promise', () => {
@@ -14,15 +10,16 @@ describe('promise', () => {
                 a: 'baz',
                 b: 'qux'
             };
-            const cb = createSpy((value) => {
+            const cb = (value) => {
                 return resultMap[value];
-            });
-            const promise = runChunksDelayed(chunks, cb, 100);
+            };
+            const spy = jasmine.createSpy('result').and.callFake(cb);
+            const promise = runChunksDelayed(chunks, spy, 100);
             await wait(80);
-            assert.strictEqual(cb.calls.length, 2);
+            expect(spy.calls.all().length).toEqual(2);
             const result = await promise;
-            assert.strictEqual(cb.calls.length, 4);
-            assert.deepStrictEqual(result, ['foo', 'bar', 'baz', 'qux']);
+            expect(spy.calls.all().length).toEqual(4);
+            expect(result).toEqual(['foo', 'bar', 'baz', 'qux']);
         });
     });
 });

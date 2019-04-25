@@ -27,3 +27,15 @@ export const compare = (a, b) => {
     }
     return 0;
 };
+
+export const uniqueBy = (array, comparator) => {
+    const seen = new Set();
+    return array.filter((value) => {
+        const computed = comparator(value);
+        const hasSeen = seen.has(computed);
+        if (!hasSeen) {
+            seen.add(computed);
+        }
+        return !hasSeen;
+    });
+};

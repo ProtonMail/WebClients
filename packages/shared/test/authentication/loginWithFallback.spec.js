@@ -1,16 +1,13 @@
-import { describe, it } from 'mocha';
-import assert from 'assert';
-import requireInject from 'require-inject';
+import loginWithFallback from '../../lib/authentication/loginWithFallback';
+import { Modulus, ServerEphemeral, Salt, ServerProof } from './login.data';
 
-const mockSrp = {
-    srpAuth: ({ api }) => api({ url: 'auth' })
-};
-
-const mocks = {
-    '../../lib/srp': mockSrp
-};
-
-const { default: loginWithFallback } = requireInject('../../lib/authentication/loginWithFallback', mocks);
+const getInfoResult = (version) => ({
+    Username: 'test',
+    Version: version,
+    Modulus,
+    ServerEphemeral,
+    Salt
+});
 
 describe('login with fallback', () => {
     it('should login directly with auth version 4', async () => {
@@ -18,11 +15,14 @@ describe('login with fallback', () => {
 
         const mockApi = async ({ url }) => {
             if (url.includes('info')) {
-                return { Version: 4 };
+                return getInfoResult(4);
             }
             if (url === 'auth') {
                 authCalls++;
-                return 'foo';
+                return {
+                    ServerProof,
+                    foo: 'bar'
+                };
             }
         };
 
@@ -31,9 +31,9 @@ describe('login with fallback', () => {
             credentials: { username: 'test', password: '123' }
         });
 
-        assert.strictEqual(authVersion, 4);
-        assert.strictEqual(result, 'foo');
-        assert.strictEqual(authCalls, 1);
+        expect(authVersion).toEqual(4);
+        expect(result).toEqual(jasmine.objectContaining({ foo: 'bar' }));
+        expect(authCalls).toEqual(1);
     });
 
     it('should login when the fallback version is unknown', async () => {
@@ -43,7 +43,7 @@ describe('login with fallback', () => {
             const { url } = args;
 
             if (url.includes('info')) {
-                return { Version: 0 };
+                return getInfoResult(0);
             }
 
             if (url === 'auth') {
@@ -52,7 +52,11 @@ describe('login with fallback', () => {
                     // eslint-disable-next-line
                     return Promise.reject({ data: { Code: 8002 } });
                 }
-                return Promise.resolve(1);
+                return Promise.resolve({
+                    ServerProof:
+                        'ayugXfnft4D+YtSWCv/Kx1IIXAS850wY8R4BfnD1TwhvRWgu/Mzs0S3DuSwoIV6sE8BcjqimBhxFwZWW1L0Y059UM75FnJZ9H4D/o2CmMze3vOg2ShIpVdrfgMTV8BGlwhzHt6z2yH+m+6WfW7RSKmai46Q7Cj4brTrvxY7xWzsFtJVUbJcgwfSOmi6OBZ1Ouu/yKuwQi554tbBogaLky938SmMP3nDLpvhJCLM9j47eyN2QWU1kFOVu9yy9vN5i7ZuEhREApnX2D5qn3+63bWnxysB0Qx8LD30OnRrxGni4TgpxtsNXbbxMH1XdPrkkeyUxAL0Q25sbTZUdL+zfpA==',
+                    foo: 'bar'
+                });
             }
         };
 
@@ -61,9 +65,9 @@ describe('login with fallback', () => {
             credentials: { username: 'test', password: '123' }
         });
 
-        assert.strictEqual(authVersion, 0);
-        assert.strictEqual(result, 1);
-        assert.strictEqual(apiCalls.length, 2);
+        expect(authVersion).toEqual(0);
+        expect(result).toEqual(jasmine.objectContaining({ foo: 'bar' }));
+        expect(apiCalls.length).toEqual(2);
     });
 
     it('not login when the credentials are incorrect', async () => {
@@ -71,7 +75,7 @@ describe('login with fallback', () => {
             const { url } = args;
 
             if (url.includes('info')) {
-                return { Version: 4 };
+                return getInfoResult(4);
             }
 
             if (url === 'auth') {
@@ -85,7 +89,7 @@ describe('login with fallback', () => {
             credentials: { username: 'test', password: '123' }
         });
 
-        await assert.rejects(promise, {
+        await expectAsync(promise).toBeRejectedWith({
             data: { Code: 8002 }
         });
     });
@@ -95,7 +99,7 @@ describe('login with fallback', () => {
 
         const mockApi = async ({ url }) => {
             if (url.includes('info')) {
-                return { Version: 0 };
+                return getInfoResult(0);
             }
 
             if (url === 'auth') {
@@ -110,10 +114,10 @@ describe('login with fallback', () => {
             credentials: { username: 'test', password: '123' }
         });
 
-        await assert.rejects(promise, {
+        await expectAsync(promise).toBeRejectedWith({
             data: { Code: 8002 }
         });
 
-        assert.strictEqual(authCalls, 2);
+        expect(authCalls, 2);
     });
 });

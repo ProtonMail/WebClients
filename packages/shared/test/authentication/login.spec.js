@@ -1,8 +1,12 @@
-import { describe, it } from 'mocha';
-import assert from 'assert';
-import requireInject from 'require-inject';
-import { getAuthVersionWithFallback } from 'pm-srp';
 import { reducer, DEFAULT_STATE, ACTION_TYPES, FORM } from '../../lib/authentication/loginReducer';
+
+import {
+    handleLoginAction,
+    handleAuthAction,
+    handleDeprecationAction,
+    handleFinalizeAction,
+    handleUnlockAction
+} from '../../lib/authentication/loginActions';
 
 import {
     INFO_RESPONSE,
@@ -15,46 +19,17 @@ import {
     INFO_RESPONSE_NO_2FA,
     AUTH_RESPONSE_NO_UNLOCK
 } from './login.data';
-import { createSpy } from '../spy';
-
-const mockSrp = {
-    getAuthVersionWithFallback,
-    getSrp: () => ({
-        expectedServerProof: 'server-proof'
-    }),
-    computeKeyPassword: () => 'key-pw',
-    AUTH_VERSION: 4
-};
-
-const mockPmcrypto = {
-    decryptPrivateKey: async () => '',
-    getMessage: () => '',
-    decryptMessage: () => '',
-    keyInfo: () => ''
-};
-
-const mocks = {
-    'pm-srp': mockSrp,
-    pmcrypto: mockPmcrypto
-};
-
-const {
-    handleLoginAction,
-    handleAuthAction,
-    handleDeprecationAction,
-    handleFinalizeAction,
-    handleUnlockAction
-} = requireInject.withEmptyCache('../../lib/authentication/loginActions', mocks);
 
 const mockApi = (responses) => {
     let i = 0;
-    return createSpy(async () => {
+    const cb = async () => {
         const response = responses[i++];
         if (response instanceof Error) {
             throw response;
         }
         return response;
-    });
+    };
+    return jasmine.createSpy('mockApi').and.callFake(cb);
 };
 
 const ACTIONS = {
@@ -102,21 +77,21 @@ describe('login', () => {
         ];
 
         const assertions = [
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_LOGIN_EFFECT);
-                assert.strictEqual(state.form, FORM.LOGIN);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_LOGIN_EFFECT);
+                expect(form).toEqual(FORM.LOGIN);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_AUTH_EFFECT);
-                assert.strictEqual(state.form, FORM.LOGIN);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_AUTH_EFFECT);
+                expect(form).toEqual(FORM.LOGIN);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_UNLOCK_EFFECT);
-                assert.strictEqual(state.form, FORM.LOGIN);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_UNLOCK_EFFECT);
+                expect(form).toEqual(FORM.LOGIN);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
-                assert.strictEqual(state.form, FORM.LOGIN);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.FINALIZE_EFFECT);
+                expect(form).toEqual(FORM.LOGIN);
             }
         ];
 
@@ -124,15 +99,24 @@ describe('login', () => {
 
         const api = mockApi(apiReturns);
         const state = await runTest(userActions, assertions, { api });
-
-        assert.strictEqual(api.calls.length, apiReturns.length);
-        assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
-        assert.strictEqual(state.form, FORM.LOGIN);
-        assert.strictEqual(state.userResult, undefined);
-        assert.strictEqual(state.authVersion, 4);
-        assert.strictEqual(state.primaryKey.PrivateKey, AUTH_RESPONSE.PrivateKey);
-        assert.strictEqual(state.primaryKey.KeySalt, AUTH_RESPONSE.KeySalt);
-        assert.strictEqual(state.credentials.keyPassword, 'key-pw');
+        expect(state).toEqual(
+            jasmine.objectContaining({
+                action: ACTION_TYPES.FINALIZE_EFFECT,
+                form: FORM.LOGIN,
+                authVersion: 4,
+                primaryKey: {
+                    PrivateKey: AUTH_RESPONSE_NO_UNLOCK.PrivateKey,
+                    KeySalt: AUTH_RESPONSE_NO_UNLOCK.KeySalt
+                },
+                credentials: {
+                    username: 'test',
+                    password: '123',
+                    mailboxPassword: '123',
+                    keyPassword: 'be4p.vIng2.sjsUf5AXRe7qJAXnzDvW'
+                }
+            })
+        );
+        expect(api.calls.all().length).toEqual(apiReturns.length);
     });
 
     it('should login a user with totp in 2-password mode', async () => {
@@ -155,46 +139,56 @@ describe('login', () => {
         ];
 
         const assertions = [
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_LOGIN_EFFECT);
-                assert.strictEqual(state.form, FORM.LOGIN);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_LOGIN_EFFECT);
+                expect(form).toEqual(FORM.LOGIN);
             },
-            (state) => {
-                assert.strictEqual(state.action, undefined);
-                assert.strictEqual(state.form, FORM.TOTP);
+            ({ action, form }) => {
+                expect(action).toEqual(undefined);
+                expect(form).toEqual(FORM.TOTP);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_AUTH_EFFECT);
-                assert.strictEqual(state.form, FORM.TOTP);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_AUTH_EFFECT);
+                expect(form).toEqual(FORM.TOTP);
             },
-            (state) => {
-                assert.strictEqual(state.action, undefined);
-                assert.strictEqual(state.form, FORM.UNLOCK);
+            ({ action, form }) => {
+                expect(action).toEqual(undefined);
+                expect(form).toEqual(FORM.UNLOCK);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_UNLOCK_EFFECT);
-                assert.strictEqual(state.form, FORM.UNLOCK);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_UNLOCK_EFFECT);
+                expect(form).toEqual(FORM.UNLOCK);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
-                assert.strictEqual(state.form, FORM.UNLOCK);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.FINALIZE_EFFECT);
+                expect(form).toEqual(FORM.UNLOCK);
             }
         ];
 
         const apiReturns = [INFO_RESPONSE, AUTH_RESPONSE, COOKIE_RESPONSE];
 
         const api = mockApi(apiReturns);
-        const state = await runTest(userActions, assertions, { api });
+        const state = await runTest(userActions, assertions, { api }).catch((e) => console.error(e));
 
-        assert.strictEqual(api.calls.length, apiReturns.length);
-        assert.strictEqual(api.calls.length, 3);
-        assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
-        assert.strictEqual(state.form, FORM.UNLOCK);
-        assert.strictEqual(state.userResult, undefined);
-        assert.strictEqual(state.authVersion, 4);
-        assert.strictEqual(state.primaryKey.PrivateKey, AUTH_RESPONSE.PrivateKey);
-        assert.strictEqual(state.primaryKey.KeySalt, AUTH_RESPONSE.KeySalt);
-        assert.strictEqual(state.credentials.keyPassword, 'key-pw');
+        expect(state).toEqual(
+            jasmine.objectContaining({
+                action: ACTION_TYPES.FINALIZE_EFFECT,
+                form: FORM.UNLOCK,
+                authVersion: 4,
+                primaryKey: {
+                    PrivateKey: AUTH_RESPONSE.PrivateKey,
+                    KeySalt: AUTH_RESPONSE.KeySalt
+                },
+                credentials: {
+                    username: 'test',
+                    password: '123',
+                    totp: '123123',
+                    mailboxPassword: '1234',
+                    keyPassword: '/TVusgXVQZjOHBQsAPSOAxusX9gVFmm'
+                }
+            })
+        );
+        expect(api.calls.all().length).toEqual(apiReturns.length);
     });
 
     it('should login a user with clear text access token', async () => {
@@ -217,33 +211,33 @@ describe('login', () => {
         ];
 
         const assertions = [
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_LOGIN_EFFECT);
-                assert.strictEqual(state.form, FORM.LOGIN);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_LOGIN_EFFECT);
+                expect(form).toEqual(FORM.LOGIN);
             },
-            (state) => {
-                assert.strictEqual(state.action, undefined);
-                assert.strictEqual(state.form, FORM.TOTP);
+            ({ action, form }) => {
+                expect(action).toEqual(undefined);
+                expect(form).toEqual(FORM.TOTP);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_AUTH_EFFECT);
-                assert.strictEqual(state.form, FORM.TOTP);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_AUTH_EFFECT);
+                expect(form).toEqual(FORM.TOTP);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.PREPARE_DEPRECATION_EFFECT);
-                assert.strictEqual(state.form, FORM.TOTP);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.PREPARE_DEPRECATION_EFFECT);
+                expect(form).toEqual(FORM.TOTP);
             },
-            (state) => {
-                assert.strictEqual(state.action, undefined);
-                assert.strictEqual(state.form, FORM.UNLOCK);
+            ({ action, form }) => {
+                expect(action).toEqual(undefined);
+                expect(form).toEqual(FORM.UNLOCK);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_UNLOCK_EFFECT);
-                assert.strictEqual(state.form, FORM.UNLOCK);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_UNLOCK_EFFECT);
+                expect(form).toEqual(FORM.UNLOCK);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
-                assert.strictEqual(state.form, FORM.UNLOCK);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.FINALIZE_EFFECT);
+                expect(form).toEqual(FORM.UNLOCK);
             }
         ];
 
@@ -252,14 +246,25 @@ describe('login', () => {
         const api = mockApi(apiReturns);
         const state = await runTest(userActions, assertions, { api });
 
-        assert.strictEqual(api.calls.length, apiReturns.length);
-        assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
-        assert.strictEqual(state.form, FORM.UNLOCK);
-        assert.strictEqual(state.userResult, USER_RESPONSE.User);
-        assert.strictEqual(state.authVersion, 4);
-        assert.strictEqual(state.primaryKey.PrivateKey, USER_RESPONSE.User.Keys[0].PrivateKey);
-        assert.strictEqual(state.primaryKey.KeySalt, SALT_RESPONSE.KeySalts[0].KeySalt);
-        assert.strictEqual(state.credentials.keyPassword, 'key-pw');
+        expect(state).toEqual(
+            jasmine.objectContaining({
+                action: ACTION_TYPES.FINALIZE_EFFECT,
+                form: FORM.UNLOCK,
+                authVersion: 4,
+                userResult: USER_RESPONSE.User,
+                primaryKey: {
+                    PrivateKey: USER_RESPONSE.User.Keys[0].PrivateKey,
+                    KeySalt: SALT_RESPONSE.KeySalts[0].KeySalt
+                },
+                credentials: {
+                    username: 'test',
+                    password: '123',
+                    totp: '123123',
+                    mailboxPassword: '1234',
+                    keyPassword: 'pOvzDc/vsX1yWizwAO1JkpOBpOHz6Qi'
+                }
+            })
+        );
     });
 
     it('should login a user without any keys in clear text access token', async () => {
@@ -278,25 +283,25 @@ describe('login', () => {
         ];
 
         const assertions = [
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_LOGIN_EFFECT);
-                assert.strictEqual(state.form, FORM.LOGIN);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_LOGIN_EFFECT);
+                expect(form).toEqual(FORM.LOGIN);
             },
-            (state) => {
-                assert.strictEqual(state.action, undefined);
-                assert.strictEqual(state.form, FORM.TOTP);
+            ({ action, form }) => {
+                expect(action).toEqual(undefined);
+                expect(form).toEqual(FORM.TOTP);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.SUBMIT_AUTH_EFFECT);
-                assert.strictEqual(state.form, FORM.TOTP);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.SUBMIT_AUTH_EFFECT);
+                expect(form).toEqual(FORM.TOTP);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.PREPARE_DEPRECATION_EFFECT);
-                assert.strictEqual(state.form, FORM.TOTP);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.PREPARE_DEPRECATION_EFFECT);
+                expect(form).toEqual(FORM.TOTP);
             },
-            (state) => {
-                assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
-                assert.strictEqual(state.form, FORM.TOTP);
+            ({ action, form }) => {
+                expect(action).toEqual(ACTION_TYPES.FINALIZE_EFFECT);
+                expect(form).toEqual(FORM.TOTP);
             }
         ];
 
@@ -311,12 +316,18 @@ describe('login', () => {
         const api = mockApi(apiReturns);
         const state = await runTest(userActions, assertions, { api });
 
-        assert.strictEqual(api.calls.length, apiReturns.length);
-        assert.strictEqual(state.action, ACTION_TYPES.FINALIZE_EFFECT);
-        assert.strictEqual(state.form, FORM.TOTP);
-        assert.strictEqual(state.userResult, USER_RESPONSE_NO_KEYS.User);
-        assert.strictEqual(state.authVersion, 4);
-        assert.strictEqual(state.primaryKey, undefined);
-        assert.strictEqual(state.credentials.keyPassword, undefined);
+        expect(state).toEqual(
+            jasmine.objectContaining({
+                action: ACTION_TYPES.FINALIZE_EFFECT,
+                form: FORM.TOTP,
+                authVersion: 4,
+                userResult: USER_RESPONSE_NO_KEYS.User,
+                credentials: {
+                    username: 'test',
+                    password: '123',
+                    totp: '123123'
+                }
+            })
+        );
     });
 });

@@ -1,18 +1,15 @@
-import { describe, it } from 'mocha';
-import assert from 'assert';
-
 import createEventManager from '../../lib/eventManager/eventManager';
-import { createSpy } from '../spy';
 
 const mockApi = (responses) => {
     let i = 0;
-    return createSpy(async () => {
+    const cb = async () => {
         const response = responses[i++];
         if (response instanceof Error) {
             throw response;
         }
         return response;
-    });
+    };
+    return jasmine.createSpy('mockApi').and.callFake(cb);
 };
 
 /**
@@ -30,7 +27,7 @@ describe('event manager', () => {
             { EventID: '6', More: 0 }
         ]);
 
-        const onSuccess = createSpy();
+        const onSuccess = jasmine.createSpy();
 
         const eventManager = createEventManager({
             eventID: '1',
@@ -43,13 +40,13 @@ describe('event manager', () => {
 
         await eventManager.call();
 
-        assert.deepStrictEqual(api.calls.length, 6);
-        assert.deepStrictEqual(onSuccess.calls.length, 6);
+        expect(api.calls.all().length).toEqual(6);
+        expect(onSuccess.calls.all().length).toEqual(6);
 
         await eventManager.call();
 
-        assert.deepStrictEqual(api.calls.length, 7);
-        assert.deepStrictEqual(onSuccess.calls.length, 7);
+        expect(api.calls.all().length, 7);
+        expect(onSuccess.calls.all().length, 7);
 
         eventManager.stop();
     });

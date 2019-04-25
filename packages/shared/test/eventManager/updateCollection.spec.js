@@ -1,6 +1,3 @@
-import { describe, it } from 'mocha';
-import assert from 'assert';
-
 import updateCollection from '../../lib/helpers/updateCollection';
 import { EVENT_ACTIONS } from '../../lib/constants';
 
@@ -19,7 +16,7 @@ describe('update collection', () => {
             }
         ];
         const newLabels = updateCollection(labels, events, 'Label');
-        assert.deepStrictEqual(newLabels, []);
+        expect(newLabels).toEqual([]);
     });
 
     it('should add items', () => {
@@ -40,7 +37,7 @@ describe('update collection', () => {
             }
         ];
         const newLabels = updateCollection(labels, events, 'Label');
-        assert.deepStrictEqual(newLabels, [{ ID: '123', foo: 'bar' }, { ID: '124', foo: 'bar2' }]);
+        expect(newLabels).toEqual([{ ID: '123', foo: 'bar' }, { ID: '124', foo: 'bar2' }]);
     });
 
     it('should update items', () => {
@@ -62,7 +59,7 @@ describe('update collection', () => {
             }
         ];
         const newLabels = updateCollection(labels, events, 'Label');
-        assert.deepStrictEqual(newLabels, [{ ID: '123', foo: 'bar2', kept: true }]);
+        expect(newLabels).toEqual([{ ID: '123', foo: 'bar2', kept: true }]);
     });
 
     it('should delete, create and update items', () => {
@@ -103,7 +100,7 @@ describe('update collection', () => {
             }
         ];
         const newLabels = updateCollection(labels, events, 'Label');
-        assert.deepStrictEqual(newLabels, [{ ID: '124', foo: 'bar3' }]);
+        expect(newLabels).toEqual([{ ID: '124', foo: 'bar3' }]);
     });
 
     describe('Sort collection', () => {
@@ -144,7 +141,7 @@ describe('update collection', () => {
                 }
             ];
             const newLabels = updateCollection(labels, events, 'Label');
-            assert.deepStrictEqual(newLabels, [
+            expect(newLabels).toEqual([
                 { ID: '123', foo: 'bar2', Order: 1 },
                 { ID: '12345', foo: 'monique', Order: 2 },
                 { ID: '124', foo: 'bar', Order: 3 }
@@ -167,7 +164,7 @@ describe('update collection', () => {
             ];
 
             const newLabels2 = updateCollection(newLabels, events2, 'Label');
-            assert.deepStrictEqual(newLabels2, [
+            expect(newLabels2).toEqual([
                 { ID: '124', foo: 'bar3', Order: 1 },
                 { ID: '12345', foo: 'monique', Order: 2 }
             ]);
@@ -207,7 +204,7 @@ describe('update collection', () => {
                 }
             ];
             const newLabels = updateCollection(labels, events, 'Label');
-            assert.deepStrictEqual(newLabels, [
+            expect(newLabels).toEqual([
                 { ID: '123', foo: 'bar2' },
                 { ID: '12345', foo: 'monique' },
                 { ID: '124', foo: 'bar' }
@@ -229,7 +226,7 @@ describe('update collection', () => {
             ];
 
             const newLabels2 = updateCollection(newLabels, events2, 'Label');
-            assert.deepStrictEqual(newLabels2, [{ ID: '12345', foo: 'monique' }, { ID: '124', foo: 'bar3' }]);
+            expect(newLabels2).toEqual([{ ID: '12345', foo: 'monique' }, { ID: '124', foo: 'bar3' }]);
         });
     });
 });
