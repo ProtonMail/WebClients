@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Row, Label, Text } from 'react-components';
+import { Row, Label, Field } from 'react-components';
 
 const BitcoinDetails = ({ amount, address }) => {
     return (
         <figcaption>
             <Row>
                 <Label>{c('Label').t`Amount BTC`}</Label>
-                <Text>{amount}</Text>
+                <Field>{amount}</Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`BTC address`}</Label>
-                <Text>{address}</Text>
+                <Field>{address}</Field>
             </Row>
         </figcaption>
     );

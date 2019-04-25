@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Row, Label, Select } from 'react-components';
+import { Row, Field, Label, Select } from 'react-components';
 import { ALL_MEMBERS_ID } from 'proton-shared/lib/constants';
 
 import AddAddressButton from './AddAddressButton';
@@ -37,7 +37,7 @@ const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
     return (
         <Row>
             <Label htmlFor="memberSelect">{c('Label').t`User`}</Label>
-            <div>
+            <Field>
                 <Select
                     disabled={loading}
                     id="memberSelect"
@@ -47,7 +47,7 @@ const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
                     onChange={handleChange}
                 />
                 {member.ID === ALL_MEMBERS_ID ? null : <AddAddressButton loading={loading} member={member} />}
-            </div>
+            </Field>
         </Row>
     );
 };

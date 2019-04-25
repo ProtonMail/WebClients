@@ -4,6 +4,7 @@ import {
     SubTitle,
     Alert,
     Row,
+    Field,
     Label,
     Info,
     useMailSettings,
@@ -80,11 +81,13 @@ const LayoutsSection = () => {
                             .t`This sets the default composer size. Two sizes are available, a smaller popup composer, and a bigger full screen composer.`}
                     />
                 </Label>
-                <ComposerModeRadios
-                    composerMode={ComposerMode}
-                    onChange={handleChangeComposerMode}
-                    loading={loadingComposerMode}
-                />
+                <Field>
+                    <ComposerModeRadios
+                        composerMode={ComposerMode}
+                        onChange={handleChangeComposerMode}
+                        loading={loadingComposerMode}
+                    />
+                </Field>
             </Row>
             <Row>
                 <Label>
@@ -95,11 +98,13 @@ const LayoutsSection = () => {
                             .t`ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.`}
                     />
                 </Label>
-                <ViewLayoutRadios
-                    viewLayout={ViewLayout}
-                    onChange={handleChangeViewLayout}
-                    loading={loadingViewLayout}
-                />
+                <Field>
+                    <ViewLayoutRadios
+                        viewLayout={ViewLayout}
+                        onChange={handleChangeViewLayout}
+                        loading={loadingViewLayout}
+                    />
+                </Field>
             </Row>
             <Row>
                 <Label>
@@ -109,23 +114,29 @@ const LayoutsSection = () => {
                             .t`Conversation Grouping automatically groups messages in the same conversation together.`}
                     />
                 </Label>
-                <ViewModeRadios viewMode={ViewMode} onChange={handleChangeViewMode} loading={loadingViewMode} />
+                <Field>
+                    <ViewModeRadios viewMode={ViewMode} onChange={handleChangeViewMode} loading={loadingViewMode} />
+                </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`Composer Mode`}</Label>
-                <DraftTypeSelect
-                    draftType={DraftMIMEType}
-                    onChange={handleChangeDraftType}
-                    loading={loadingDraftType}
-                />
+                <Field>
+                    <DraftTypeSelect
+                        draftType={DraftMIMEType}
+                        onChange={handleChangeDraftType}
+                        loading={loadingDraftType}
+                    />
+                </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`Composer Text Direction`}</Label>
-                <TextDirectionSelect
-                    rightToLeft={RightToLeft}
-                    onChange={handleChangeRightToLeft}
-                    loading={loadingRightToLeft}
-                />
+                <Field>
+                    <TextDirectionSelect
+                        rightToLeft={RightToLeft}
+                        onChange={handleChangeRightToLeft}
+                        loading={loadingRightToLeft}
+                    />
+                </Field>
             </Row>
             <Row>
                 <Label>
@@ -135,7 +146,13 @@ const LayoutsSection = () => {
                             .t`Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder.`}
                     />
                 </Label>
-                <ShowMovedSelect showMoved={ShowMoved} onChange={handleChangeShowMoved} loading={loadingShowMoved} />
+                <Field>
+                    <ShowMovedSelect
+                        showMoved={ShowMoved}
+                        onChange={handleChangeShowMoved}
+                        loading={loadingShowMoved}
+                    />
+                </Field>
             </Row>
         </>
     );

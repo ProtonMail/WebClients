@@ -8,12 +8,12 @@ import {
     ResetButton,
     PrimaryButton,
     Row,
+    Field,
     Label,
     PasswordInput,
     Input,
     Checkbox,
     Select,
-    Text,
     useNotifications,
     useEventManager
 } from 'react-components';
@@ -50,7 +50,7 @@ const MemberModal = ({ show, onClose, organization, domains }) => {
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
-                    <div className="flex-autogrid">
+                    <Field className="flex-autogrid">
                         <Input
                             id="nameInput"
                             className="flex-autogrid-item"
@@ -62,7 +62,7 @@ const MemberModal = ({ show, onClose, organization, domains }) => {
                             <Checkbox checked={model.private} onChange={handleChangePrivate} />{' '}
                             {c('Label for new member').t`Private`}
                         </Label>
-                    </div>
+                    </Field>
                 </Row>
                 {model.private ? null : (
                     <Row>
@@ -71,7 +71,7 @@ const MemberModal = ({ show, onClose, organization, domains }) => {
                 )}
                 <Row>
                     <Label>{c('Label').t`Password`}</Label>
-                    <div className="flex-autogrid">
+                    <Field className="flex-autogrid">
                         <PasswordInput
                             value={model.password}
                             className="flex-autogrid-item mb1"
@@ -86,27 +86,31 @@ const MemberModal = ({ show, onClose, organization, domains }) => {
                             placeholder={c('Placeholder').t`Confirm Password`}
                             required
                         />
-                    </div>
+                    </Field>
                 </Row>
                 <Row>
                     <Label>{c('Label').t`Address`}</Label>
-                    <div className="flex-autogrid">
+                    <Field className="flex-autogrid">
                         <Input onChange={handleChange('address')} placeholder={c('Placeholder').t`Address`} required />
                         {domainOptions.length === 1 ? (
-                            <Text>{`@${domainOptions[0].value}`}</Text>
+                            `@${domainOptions[0].value}`
                         ) : (
                             <Select options={domainOptions} value={model.domain} onChange={handleChange('domain')} />
                         )}
-                    </div>
+                    </Field>
                 </Row>
                 <Row>
                     <Label>{c('Label').t`Account storage`}</Label>
-                    <MemberStorageSelector organization={organization} onChange={handleChangeStorage} />
+                    <Field>
+                        <MemberStorageSelector organization={organization} onChange={handleChangeStorage} />
+                    </Field>
                 </Row>
                 {hasVPN ? (
                     <Row>
                         <Label>{c('Label').t`VPN connections`}</Label>
-                        <MemberVPNSelector organization={organization} onChange={handleChangeVPN} />
+                        <Field>
+                            <MemberVPNSelector organization={organization} onChange={handleChangeVPN} />
+                        </Field>
                     </Row>
                 ) : null}
                 <FooterModal>

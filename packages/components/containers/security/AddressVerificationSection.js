@@ -5,6 +5,7 @@ import {
     Alert,
     SubTitle,
     Row,
+    Field,
     Label,
     Info,
     Toggle,
@@ -43,7 +44,9 @@ const AddressVerificationSection = () => {
                             .t`When receiving an internal message from a sender that has no trusted keys in your contacts, show a banner asking if you want to enable trusted keys.`}
                     />
                 </Label>
-                <Toggle id="trustToggle" checked={state} onChange={handleChange} />
+                <Field>
+                    <Toggle id="trustToggle" checked={state} onChange={handleChange} />
+                </Field>
             </Row>
         </>
     );

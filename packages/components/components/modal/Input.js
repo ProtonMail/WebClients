@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { ResetButton, PrimaryButton, Input, Label, Row } from 'react-components';
+import { ResetButton, PrimaryButton, Input, Label, Row, Field } from 'react-components';
 
 import Modal from './Modal';
 import Footer from './Footer';
@@ -38,15 +38,17 @@ const InputModal = ({
             <Content onSubmit={handleSubmit} onReset={onClose} loading={loading}>
                 <Row>
                     <Label htmlFor={id}>{label}</Label>
-                    <Input
-                        id={id}
-                        value={input}
-                        placeholder={placeholder}
-                        onChange={handleChange}
-                        autoFocus={true}
-                        readOnly={loading}
-                        required
-                    />
+                    <Field>
+                        <Input
+                            id={id}
+                            value={input}
+                            placeholder={placeholder}
+                            onChange={handleChange}
+                            autoFocus={true}
+                            readOnly={loading}
+                            required
+                        />
+                    </Field>
                 </Row>
                 <Footer>
                     <ResetButton disabled={loading}>{cancel}</ResetButton>

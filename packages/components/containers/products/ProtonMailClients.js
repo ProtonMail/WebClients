@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Text, Alert, Table, TableHeader, TableBody, TableRow, Href } from 'react-components';
+import { Alert, Table, TableHeader, TableBody, TableRow, Href } from 'react-components';
 
 const ProtonMailClients = () => {
     const clients = [
@@ -20,7 +20,7 @@ const ProtonMailClients = () => {
     ];
     return (
         <>
-            <Text className="bold">ProtonMail</Text>
+            <span className="bold">ProtonMail</span>
             <Alert learnMore="todo">{c('Info').t`Lorem ipsum`}</Alert>
             <Table>
                 <TableHeader

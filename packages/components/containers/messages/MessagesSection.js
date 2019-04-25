@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { SubTitle, Row, Label, Info, useMailSettings } from 'react-components';
+import { SubTitle, Row, Field, Label, Info, useMailSettings } from 'react-components';
 
 import RemoteToggle from './RemoteToggle';
 import EmbeddedToggle from './EmbeddedToggle';
@@ -24,14 +24,18 @@ const MessagesSection = () => {
                     <span className="mr1">{c('Label').t`Auto-load remote content`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/images-by-default/" />
                 </Label>
-                <RemoteToggle id="remoteToggle" showImages={showImages} onChange={handleChange} />
+                <Field>
+                    <RemoteToggle id="remoteToggle" showImages={showImages} onChange={handleChange} />
+                </Field>
             </Row>
             <Row>
                 <Label htmlFor="embeddedToggle">
                     <span className="mr1">{c('Label').t`Auto-load embedded images`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/images-by-default/" />
                 </Label>
-                <EmbeddedToggle id="embeddedToggle" showImages={showImages} onChange={handleChange} />
+                <Field>
+                    <EmbeddedToggle id="embeddedToggle" showImages={showImages} onChange={handleChange} />
+                </Field>
             </Row>
         </>
     );

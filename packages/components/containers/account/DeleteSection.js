@@ -4,6 +4,7 @@ import {
     SubTitle,
     Label,
     Row,
+    Field,
     MozillaInfoPanel,
     ErrorButton,
     useModal,
@@ -36,9 +37,11 @@ const DeleteSection = () => {
         <>
             <Row>
                 <Label htmlFor="deleteButton">{c('Label').t`Irreversible action`}</Label>
-                <ErrorButton id="deleteButton" onClick={open}>{c('Action').t`Delete your account`}</ErrorButton>
-                <DeleteAccountModal show={isOpen} onClose={close} clientType={1} />
+                <Field>
+                    <ErrorButton id="deleteButton" onClick={open}>{c('Action').t`Delete your account`}</ErrorButton>
+                </Field>
             </Row>
+            <DeleteAccountModal show={isOpen} onClose={close} clientType={1} />
         </>
     );
 };

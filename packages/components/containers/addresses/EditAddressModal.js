@@ -6,8 +6,8 @@ import {
     Modal,
     ContentModal,
     Row,
+    Field,
     Label,
-    Text,
     Input,
     RichTextEditor,
     ResetButton,
@@ -36,20 +36,24 @@ const EditAddressModal = ({ show, onClose, address }) => {
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label>{c('Label').t`Address`}</Label>
-                    <Text>{address.Email}</Text>
+                    <Field>{address.Email}</Field>
                 </Row>
                 <Row>
                     <Label>{c('Label').t`Display name`}</Label>
-                    <Input
-                        value={model.displayName}
-                        placeholder={c('Placeholder').t`Choose display name`}
-                        onChange={handleDisplayName}
-                        required
-                    />
+                    <Field>
+                        <Input
+                            value={model.displayName}
+                            placeholder={c('Placeholder').t`Choose display name`}
+                            onChange={handleDisplayName}
+                            required
+                        />
+                    </Field>
                 </Row>
                 <Row>
                     <Label>{c('Label').t`Signature`}</Label>
-                    <RichTextEditor value={model.signature} onChange={handleSignature} />
+                    <Field>
+                        <RichTextEditor value={model.signature} onChange={handleSignature} />
+                    </Field>
                 </Row>
                 <FooterModal>
                     <ResetButton>{c('Action').t`Cancel`}</ResetButton>

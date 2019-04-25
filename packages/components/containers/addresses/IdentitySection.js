@@ -5,9 +5,9 @@ import {
     SubTitle,
     Label,
     Select,
-    Text,
     Info,
     Row,
+    Field,
     Loader,
     useAddresses,
     useModal
@@ -56,28 +56,32 @@ const IdentitySection = () => {
             <EditAddressModal show={isOpen} onClose={close} address={address} />
             <Row>
                 <Label htmlFor="addressSelector">{c('Label').t`Select an address`}</Label>
-                <Select id="addressSelector" options={options} onChange={handleChange} />
+                <Field>
+                    <Select id="addressSelector" options={options} onChange={handleChange} />
+                </Field>
             </Row>
             <Row>
                 <Label>
                     {c('Label').t`Display name`}{' '}
                     <Info url="https://protonmail.com/support/knowledge-base/display-name-and-signature/" />
                 </Label>
-                <div className="flex flex-spacebetween">
-                    <Text>{address.DisplayName}</Text>
+                <Field className="flex flex-spacebetween">
+                    {address.DisplayName}{' '}
                     <SmallButton className="pm-button--primary" onClick={open}>{c('Action').t`Edit`}</SmallButton>
-                </div>
+                </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`Signature`}</Label>
-                <div>
+                <Field>
                     <div className="pm-label mb1" dangerouslySetInnerHTML={{ __html: address.Signature }} />
                     <SmallButton className="pm-button--primary" onClick={open}>{c('Action').t`Edit`}</SmallButton>
-                </div>
+                </Field>
             </Row>
             <Row>
                 <Label htmlFor="pmSignatureToggle">{c('Label').t`ProtonMail signature`}</Label>
-                <PMSignatureToggle id="pmSignatureToggle" />
+                <Field>
+                    <PMSignatureToggle id="pmSignatureToggle" />
+                </Field>
             </Row>
         </>
     );

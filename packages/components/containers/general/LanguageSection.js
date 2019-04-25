@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import { c, useLocale as setTtagLocale } from 'ttag';
-import { SubTitle, Row, Label, Select, useUserSettings, useApiWithoutResult, useNotifications } from 'react-components';
+import {
+    SubTitle,
+    Row,
+    Field,
+    Label,
+    Select,
+    useUserSettings,
+    useApiWithoutResult,
+    useNotifications
+} from 'react-components';
 import { updateLocale } from 'proton-shared/lib/api/settings';
 
 const LanguageSection = () => {
@@ -40,13 +49,15 @@ const LanguageSection = () => {
             <SubTitle>{c('Title').t`Language`}</SubTitle>
             <Row>
                 <Label htmlFor="languageSelect">{c('Label').t`Default language`}</Label>
-                <Select
-                    disabled={loading}
-                    value={locale}
-                    id="languageSelect"
-                    options={options}
-                    onChange={handleChange}
-                />
+                <Field>
+                    <Select
+                        disabled={loading}
+                        value={locale}
+                        id="languageSelect"
+                        options={options}
+                        onChange={handleChange}
+                    />
+                </Field>
             </Row>
         </>
     );

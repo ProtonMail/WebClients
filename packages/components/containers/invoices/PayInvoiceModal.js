@@ -8,6 +8,7 @@ import {
     ResetButton,
     PrimaryButton,
     Row,
+    Field,
     Label,
     Price,
     useApiWithoutResult,
@@ -37,15 +38,19 @@ const PayInvoiceModal = ({ show, invoice, onClose, fetchInvoices }) => {
                     <>
                         <Row>
                             <Label>{c('Label').t`Amount`}</Label>
-                            <Price className="pm-label" currency={Currency}>
-                                {Amount}
-                            </Price>
+                            <Field>
+                                <Price className="pm-label" currency={Currency}>
+                                    {Amount}
+                                </Price>
+                            </Field>
                         </Row>
                         <Row>
                             <Label>{c('Label').t`Amount due`}</Label>
-                            <Price className="pm-label" currency={Currency}>
-                                {AmountDue}
-                            </Price>
+                            <Field>
+                                <Price className="pm-label" currency={Currency}>
+                                    {AmountDue}
+                                </Price>
+                            </Field>
                         </Row>
                         <Payment
                             type="invoice"

@@ -8,6 +8,7 @@ import {
     ResetButton,
     PrimaryButton,
     Row,
+    Field,
     Label,
     Input,
     useApiWithoutResult,
@@ -47,22 +48,32 @@ const EditMemberModal = ({ show, onClose, member }) => {
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
-                    <Input
-                        value={model.name}
-                        id="nameInput"
-                        placeholder="Thomas A. Anderson"
-                        onChange={handleChangeName}
-                        required
-                    />
+                    <Field>
+                        <Input
+                            value={model.name}
+                            id="nameInput"
+                            placeholder="Thomas A. Anderson"
+                            onChange={handleChangeName}
+                            required
+                        />
+                    </Field>
                 </Row>
                 <Row>
                     <Label>{c('Label').t`Account storage`}</Label>
-                    <MemberStorageSelector organization={organization} member={member} onChange={handleChangeStorage} />
+                    <Field>
+                        <MemberStorageSelector
+                            organization={organization}
+                            member={member}
+                            onChange={handleChangeStorage}
+                        />
+                    </Field>
                 </Row>
                 {hasVPN ? (
                     <Row>
                         <Label>{c('Label').t`VPN connections`}</Label>
-                        <MemberVPNSelector organization={organization} member={member} onChange={handleChangeVPN} />
+                        <Field>
+                            <MemberVPNSelector organization={organization} member={member} onChange={handleChangeVPN} />
+                        </Field>
                     </Row>
                 ) : null}
                 <FooterModal>

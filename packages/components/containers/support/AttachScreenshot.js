@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { Text, Icon, Button, FileInput, useNotifications } from 'react-components';
+import { Icon, Button, FileInput, useNotifications } from 'react-components';
 import { toBlob, resize } from 'proton-shared/lib/helpers/image';
 import { MAX_SIZE_SCREENSHOT } from 'proton-shared/lib/constants';
 import PropTypes from 'prop-types';
@@ -40,9 +40,7 @@ const AttachScreenshot = ({ id, onUpload, onReset }) => {
     if (attached) {
         return (
             <>
-                <Text>
-                    <Icon name="insert-image" /> {c('Info').t`Screenshot(s) attached`}
-                </Text>
+                <Icon name="insert-image" /> {c('Info').t`Screenshot(s) attached`}
                 <Button onClick={handleClick}>{c('Action').t`Clear`}</Button>
             </>
         );

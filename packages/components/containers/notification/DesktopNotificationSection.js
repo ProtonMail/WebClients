@@ -1,5 +1,5 @@
 import React from 'react';
-import { SubTitle, Row, Label, Info } from 'react-components';
+import { SubTitle, Row, Field, Label, Info } from 'react-components';
 import DesktopNotificationPanel from './DesktopNotificationPanel';
 import { c } from 'ttag';
 
@@ -12,7 +12,9 @@ const DesktopNotificationSection = () => {
                     {c('Label').t`Desktop notification`}{' '}
                     <Info url="https://protonmail.com/support/knowledge-base/desktop-notifications/" />
                 </Label>
-                <DesktopNotificationPanel />
+                <Field>
+                    <DesktopNotificationPanel />
+                </Field>
             </Row>
         </>
     );

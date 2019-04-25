@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, SubTitle, Label, Row, Info } from 'react-components';
+import { Alert, SubTitle, Label, Row, Field, Info } from 'react-components';
 
 import PasswordResetToggle from './PasswordResetToggle';
 import DailyNotificationsToggle from './DailyNotificationsToggle';
@@ -19,7 +19,9 @@ const EmailSection = () => {
             </Row>
             <Row>
                 <Label htmlFor="passwordResetToggle">{c('Label').t`Allow password reset`}</Label>
-                <PasswordResetToggle id="passwordResetToggle" />
+                <Field>
+                    <PasswordResetToggle id="passwordResetToggle" />
+                </Field>
             </Row>
             <Row>
                 <Label htmlFor="dailyNotificationsToggle">
@@ -30,7 +32,9 @@ const EmailSection = () => {
                             .t`When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.`}
                     />
                 </Label>
-                <DailyNotificationsToggle id="dailyNotificationsToggle" />
+                <Field>
+                    <DailyNotificationsToggle id="dailyNotificationsToggle" />
+                </Field>
             </Row>
         </>
     );

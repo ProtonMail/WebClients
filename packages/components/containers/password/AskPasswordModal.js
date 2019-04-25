@@ -5,6 +5,7 @@ import {
     Modal,
     ContentModal,
     Row,
+    Field,
     Label,
     PasswordInput,
     TwoFactorInput,
@@ -27,18 +28,22 @@ const AskPasswordModal = ({ onClose, onSubmit, hideTwoFactor }) => {
             <ContentModal loading={loading} onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor="password">{c('Label').t`Password`}</Label>
-                    <PasswordInput
-                        id="password"
-                        value={model.password}
-                        onChange={handleChange('password')}
-                        autoFocus={true}
-                        required
-                    />
+                    <Field>
+                        <PasswordInput
+                            id="password"
+                            value={model.password}
+                            onChange={handleChange('password')}
+                            autoFocus={true}
+                            required
+                        />
+                    </Field>
                 </Row>
                 {hideTwoFactor ? null : TwoFactor ? (
                     <Row>
                         <Label htmlFor="totp">{c('Label').t`Two factor code`}</Label>
-                        <TwoFactorInput id="totp" value={model.totp} onChange={handleChange('totp')} required />
+                        <Field>
+                            <TwoFactorInput id="totp" value={model.totp} onChange={handleChange('totp')} required />
+                        </Field>
                     </Row>
                 ) : null}
                 <FooterModal>

@@ -5,8 +5,8 @@ import {
     SubTitle,
     Alert,
     Row,
+    Field,
     Label,
-    Text,
     SmallButton,
     useModal,
     useOrganization,
@@ -44,8 +44,8 @@ const OrganizationSection = () => {
             <Alert learnMore="todo">{c('Info').t`Lorem ipsum`}</Alert>
             <Row>
                 <Label>{c('Label').t`Organization name`}</Label>
-                <div>
-                    <Text className="mr1">{Name}</Text>
+                <Field>
+                    <span className="mr1">{Name}</span>
                     <SmallButton onClick={open}>{c('Action').t`Edit`}</SmallButton>
                     <InputModal
                         show={isOpen}
@@ -56,37 +56,37 @@ const OrganizationSection = () => {
                         onClose={close}
                         onSubmit={handleSubmit}
                     />
-                </div>
+                </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`Number of users`}</Label>
-                <Text>
+                <Field>
                     {`${UsedMembers}/${MaxMembers}`} <Link to="todo">{c('Link').t`Upgrade`}</Link>
-                </Text>
+                </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`Organization storage`}</Label>
-                <Text>
+                <Field>
                     {humanSize(MaxSpace)} <Link to="todo">{c('Link').t`Upgrade`}</Link>
-                </Text>
+                </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`VPN connections`}</Label>
-                <Text>
+                <Field>
                     {`${UsedVPN}/${MaxVPN}`} <Link to="todo">{c('Link').t`Upgrade`}</Link>
-                </Text>
+                </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`Addresses`}</Label>
-                <Text>
+                <Field>
                     {`${UsedAddresses}/${MaxAddresses}`} <Link to="todo">{c('Link').t`Upgrade`}</Link>
-                </Text>
+                </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`Domains`}</Label>
-                <Text>
+                <Field>
                     {`${UsedDomains}/${MaxDomains}`} <Link to="todo">{c('Link').t`Upgrade`}</Link>
-                </Text>
+                </Field>
             </Row>
         </>
     );

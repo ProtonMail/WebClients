@@ -8,6 +8,7 @@ import {
     Href,
     Alert,
     Row,
+    Field,
     Input,
     Button,
     useToggle,
@@ -87,50 +88,60 @@ const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
                 {Username ? null : (
                     <Row>
                         <Label htmlFor="Username">{c('Label').t`Proton username`}</Label>
-                        <Input
-                            id="Username"
-                            value={model.Username}
-                            onChange={handleChange('Username')}
-                            placeholder={c('Placeholder').t`Proton username`}
-                        />
+                        <Field>
+                            <Input
+                                id="Username"
+                                value={model.Username}
+                                onChange={handleChange('Username')}
+                                placeholder={c('Placeholder').t`Proton username`}
+                            />
+                        </Field>
                     </Row>
                 )}
                 <Row>
                     <Label htmlFor="Email">{c('Label').t`Email address`}</Label>
-                    <EmailInput
-                        id="Email"
-                        value={model.Email}
-                        onChange={handleChange('Email')}
-                        placeholder={c('Placeholder').t`Please make sure to give us a way to contact you`}
-                        required
-                    />
+                    <Field>
+                        <EmailInput
+                            id="Email"
+                            value={model.Email}
+                            onChange={handleChange('Email')}
+                            placeholder={c('Placeholder').t`Please make sure to give us a way to contact you`}
+                            required
+                        />
+                    </Field>
                 </Row>
                 <Row>
                     <Label htmlFor="Title">{c('Label').t`Category`}</Label>
-                    <Select
-                        id="Title"
-                        value={model.Title}
-                        options={options}
-                        onChange={handleChange('Title')}
-                        required
-                    />
+                    <Field>
+                        <Select
+                            id="Title"
+                            value={model.Title}
+                            options={options}
+                            onChange={handleChange('Title')}
+                            required
+                        />
+                    </Field>
                 </Row>
                 <Row>
                     <Label htmlFor="Description">{c('Label').t`What happened?`}</Label>
-                    <TextArea
-                        id="Description"
-                        value={model.Description}
-                        onChange={handleChange('Description')}
-                        placeholder={c('Placeholder').t`Please describe the problem and include any error messages`}
-                        required
-                    />
+                    <Field>
+                        <TextArea
+                            id="Description"
+                            value={model.Description}
+                            onChange={handleChange('Description')}
+                            placeholder={c('Placeholder').t`Please describe the problem and include any error messages`}
+                            required
+                        />
+                    </Field>
                 </Row>
                 <Row>
                     <Label htmlFor="Attachments">
                         {c('Label').t`Attach screenshots`}{' '}
                         <Info url="https://protonmail.com/support/knowledge-base/screenshot-reporting-bugs/" />
                     </Label>
-                    <AttachScreenshot id="Attachments" onUpload={setImages} onReset={() => setImages([])} />
+                    <Field>
+                        <AttachScreenshot id="Attachments" onUpload={setImages} onReset={() => setImages([])} />
+                    </Field>
                 </Row>
                 <Row>
                     <Label>{c('Label').t`System information`}</Label>
@@ -142,39 +153,47 @@ const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
                     <>
                         <Row>
                             <Label htmlFor="OS">{c('Label').t`Operating system`}</Label>
-                            <Input
-                                id="OS"
-                                value={model.OS}
-                                onChange={handleChange('OS')}
-                                placeholder={c('Placeholder').t`OS name`}
-                            />
+                            <Field>
+                                <Input
+                                    id="OS"
+                                    value={model.OS}
+                                    onChange={handleChange('OS')}
+                                    placeholder={c('Placeholder').t`OS name`}
+                                />
+                            </Field>
                         </Row>
                         <Row>
                             <Label htmlFor="OSVersion">{c('Label').t`Operating system version`}</Label>
-                            <Input
-                                id="OSVersion"
-                                value={model.OSVersion}
-                                onChange={handleChange('OSVersion')}
-                                placeholder={c('Placeholder').t`OS version`}
-                            />
+                            <Field>
+                                <Input
+                                    id="OSVersion"
+                                    value={model.OSVersion}
+                                    onChange={handleChange('OSVersion')}
+                                    placeholder={c('Placeholder').t`OS version`}
+                                />
+                            </Field>
                         </Row>
                         <Row>
                             <Label htmlFor="Browser">{c('Label').t`Browser`}</Label>
-                            <Input
-                                id="Browser"
-                                value={model.Browser}
-                                onChange={handleChange('Browser')}
-                                placeholder={c('Placeholder').t`Browser name`}
-                            />
+                            <Field>
+                                <Input
+                                    id="Browser"
+                                    value={model.Browser}
+                                    onChange={handleChange('Browser')}
+                                    placeholder={c('Placeholder').t`Browser name`}
+                                />
+                            </Field>
                         </Row>
                         <Row>
                             <Label htmlFor="BrowserVersion">{c('Label').t`Browser version`}</Label>
-                            <Input
-                                id="BrowserVersion"
-                                value={model.BrowserVersion}
-                                onChange={handleChange('BrowserVersion')}
-                                placeholder={c('Placeholder').t`Browser version`}
-                            />
+                            <Field>
+                                <Input
+                                    id="BrowserVersion"
+                                    value={model.BrowserVersion}
+                                    onChange={handleChange('BrowserVersion')}
+                                    placeholder={c('Placeholder').t`Browser version`}
+                                />
+                            </Field>
                         </Row>
                     </>
                 ) : null}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Text, Alert, Table, TableHeader, TableBody, TableRow, Href } from 'react-components';
+import { Alert, Table, TableHeader, TableBody, TableRow, Href } from 'react-components';
 
 const ProtonVPNClients = () => {
     const clients = [
@@ -20,7 +20,7 @@ const ProtonVPNClients = () => {
     ];
     return (
         <>
-            <Text className="bold">ProtonVPN</Text>
+            <span className="bold">ProtonVPN</span>
             <Alert learnMore="todo">{c('Info').t`Lorem ipsum`}</Alert>
             <Table>
                 <TableHeader

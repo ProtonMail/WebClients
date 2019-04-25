@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, SubTitle, Row, Label, Info, useMailSettings } from 'react-components';
+import { Alert, SubTitle, Row, Field, Label, Info, useMailSettings } from 'react-components';
 
 import AttachPublicKeyToggle from './AttachPublicKeyToggle';
 import SignToggle from './SignToggle';
@@ -24,7 +24,9 @@ const ExternalPGPSettingsSection = () => {
                             .t`Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below.`}
                     />
                 </Label>
-                <SignToggle id="signToggle" sign={mailSettings.Sign} />
+                <Field>
+                    <SignToggle id="signToggle" sign={mailSettings.Sign} />
+                </Field>
             </Row>
             <Row>
                 <Label htmlFor="attachPublicKeyToggle">
@@ -35,11 +37,13 @@ const ExternalPGPSettingsSection = () => {
                             .t`This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.`}
                     />
                 </Label>
-                <AttachPublicKeyToggle
-                    id="attachPublicKeyToggle"
-                    attachPublicKey={mailSettings.AttachPublicKey}
-                    sign={mailSettings.Sign}
-                />
+                <Field>
+                    <AttachPublicKeyToggle
+                        id="attachPublicKeyToggle"
+                        attachPublicKey={mailSettings.AttachPublicKey}
+                        sign={mailSettings.Sign}
+                    />
+                </Field>
             </Row>
             <Row>
                 <Label htmlFor="PGPSchemeSelect">
@@ -50,7 +54,9 @@ const ExternalPGPSettingsSection = () => {
                             .t`Select the default PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info.`}
                     />
                 </Label>
-                <PGPSchemeSelect id="PGPSchemeSelect" pgpScheme={mailSettings.PGPScheme} />
+                <Field>
+                    <PGPSchemeSelect id="PGPSchemeSelect" pgpScheme={mailSettings.PGPScheme} />
+                </Field>
             </Row>
         </>
     );

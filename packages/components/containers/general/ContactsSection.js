@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import {
     SubTitle,
     Row,
+    Field,
     Label,
     Toggle,
     Info,
@@ -34,7 +35,9 @@ const ContactsSection = () => {
                     {c('Label').t`Automatically save contacts`}{' '}
                     <Info url="https://protonmail.com/support/knowledge-base/autosave-contact-list/" />
                 </Label>
-                <Toggle id="saveContactToggle" disabled={loading} checked={state} onChange={handleChange} />
+                <Field>
+                    <Toggle id="saveContactToggle" disabled={loading} checked={state} onChange={handleChange} />
+                </Field>
             </Row>
         </>
     );

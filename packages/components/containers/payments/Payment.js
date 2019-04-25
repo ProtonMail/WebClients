@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Label, Row } from 'react-components';
+import { Label, Row, Field } from 'react-components';
 import { CYCLE } from 'proton-shared/lib/constants';
 
 import Method from './Method';
@@ -38,13 +38,15 @@ const Payment = ({ type, amount, currency, cycle, onParameters, onMethod, onVali
         <>
             <Row>
                 <Label>{c('Label').t`Select payment method`}</Label>
-                <PaymentMethodsSelect
-                    cycle={cycle}
-                    method={method}
-                    amount={amount}
-                    type={type}
-                    onChange={handleChangeMethod}
-                />
+                <Field>
+                    <PaymentMethodsSelect
+                        cycle={cycle}
+                        method={method}
+                        amount={amount}
+                        type={type}
+                        onChange={handleChangeMethod}
+                    />
+                </Field>
             </Row>
             <Method
                 amount={amount}

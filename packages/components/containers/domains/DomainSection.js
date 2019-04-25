@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Alert, Row, Label, Input, Text } from 'react-components';
+import { Alert, Row, Label, Input, Field } from 'react-components';
 
 const DomainSection = ({ domain, onChange }) => {
     const [domainName, updateDomainName] = useState(domain.DomainName || '');
@@ -20,17 +20,19 @@ const DomainSection = ({ domain, onChange }) => {
             </Alert>
             <Row>
                 <Label htmlFor="domainName">{c('Label').t`Enter your domain`}</Label>
-                {domain.ID ? (
-                    <Text>{domainName}</Text>
-                ) : (
-                    <Input
-                        id="domainName"
-                        value={domainName}
-                        placeholder={c('Placeholder').t`yourdomain.com`}
-                        onChange={handleChange}
-                        required
-                    />
-                )}
+                <Field>
+                    {domain.ID ? (
+                        { domainName }
+                    ) : (
+                        <Input
+                            id="domainName"
+                            value={domainName}
+                            placeholder={c('Placeholder').t`yourdomain.com`}
+                            onChange={handleChange}
+                            required
+                        />
+                    )}
+                </Field>
             </Row>
             {!domain.ID && domainName.toLowerCase().startsWith('www.') ? (
                 <Alert type="warning">{c('Domain modal')
