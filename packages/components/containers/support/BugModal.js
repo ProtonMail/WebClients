@@ -33,10 +33,16 @@ const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
     const Client = getClient(CLIENT_ID);
     const { createNotification } = useNotifications();
     const [{ Email = '' } = {}] = addresses;
-    const options = titles.map((title) => ({
-        text: title,
-        value: `[${Client}] Bug [${location.path}] ${title}`
-    }));
+    const options = titles.reduce(
+        (acc, title) => {
+            acc.push({
+                text: title,
+                value: `[${Client}] Bug [${location.path}] ${title}`
+            });
+            return acc;
+        },
+        [{ text: c('Option').t`Select`, value: '' }]
+    );
     const [model, update] = useState({
         ...collectInfo(),
         Client,
@@ -78,16 +84,6 @@ const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
                 <Alert>{c('Info').jt`Refreshing the page or ${link} will automatically resolve most issues.`}</Alert>
                 <Alert type="warning">{c('Warning')
                     .t`Bug reports are not end-to-end encrypted, please do not send any sensitive information.`}</Alert>
-                <Row>
-                    <Label htmlFor="Title">{c('Label').t`Category`}</Label>
-                    <Select
-                        id="Title"
-                        value={model.Title}
-                        options={options}
-                        onChange={handleChange('Title')}
-                        autoFocus
-                    />
-                </Row>
                 {Username ? null : (
                     <Row>
                         <Label htmlFor="Username">{c('Label').t`Proton username`}</Label>
@@ -96,7 +92,6 @@ const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
                             value={model.Username}
                             onChange={handleChange('Username')}
                             placeholder={c('Placeholder').t`Proton username`}
-                            required
                         />
                     </Row>
                 )}
@@ -107,6 +102,16 @@ const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
                         value={model.Email}
                         onChange={handleChange('Email')}
                         placeholder={c('Placeholder').t`Please make sure to give us a way to contact you`}
+                        required
+                    />
+                </Row>
+                <Row>
+                    <Label htmlFor="Title">{c('Label').t`Category`}</Label>
+                    <Select
+                        id="Title"
+                        value={model.Title}
+                        options={options}
+                        onChange={handleChange('Title')}
                         required
                     />
                 </Row>
