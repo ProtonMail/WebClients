@@ -69,6 +69,7 @@ export { default as InputModal } from './components/modal/Input';
 export { default as HeaderModal } from './components/modal/Header';
 export { default as useModal } from './components/modal/useModal';
 export { default as ConfirmModal } from './components/modal/Confirm';
+export { default as PreviewPDFModal } from './components/modal/PreviewPDFModal';
 export { default as Modal } from './components/modal/Modal';
 export { default as FooterModal } from './components/modal/Footer';
 export { default as Price } from './components/price/Price';

@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { INVOICE_STATE } from 'proton-shared/lib/constants';
-import { DropdownActions, useApiWithoutResult, useModal, useNotifications } from 'react-components';
+import { DropdownActions, useApiWithoutResult, useModal, useNotifications, PreviewPDFModal } from 'react-components';
 import { getInvoice, getPaymentMethodStatus } from 'proton-shared/lib/api/payments';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { hasPDFSupport } from 'proton-shared/lib/helpers/browser';
 
 import PayInvoiceModal from './PayInvoiceModal';
-import PreviewInvoiceModal from './PreviewInvoiceModal';
 
 const InvoiceActions = ({ invoice, fetchInvoices }) => {
+    const [url, setUrl] = useState();
+    const filename = c('Title for PDF file').t`ProtonMail invoice` + ` ${invoice.ID}.pdf`;
     const { isOpen: showPayInvoiceModal, open: openPayInvoiceModal, close: closePayInvoiceModal } = useModal();
     const {
         isOpen: showPreviewInvoiceModal,
@@ -21,15 +22,17 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
     const { createNotification } = useNotifications();
     const { request: requestGetPaymentMethodStatus } = useApiWithoutResult(getPaymentMethodStatus);
 
+    const get = async () => {
+        const buffer = await requestGetInvoice(invoice.ID);
+        return new Blob([buffer], { type: 'application/pdf' });
+    };
+
     const list = [
         {
             text: c('Action').t`Download`,
             type: 'button',
             async onClick() {
-                const buffer = await requestGetInvoice(invoice.ID);
-                const filename = c('Title for PDF file').t`ProtonMail invoice` + ` ${invoice.ID}.pdf`;
-                const blob = new Blob([buffer], { type: 'application/pdf' });
-
+                const blob = await get();
                 downloadFile(blob, filename);
             }
         }
@@ -39,7 +42,11 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
         list.unshift({
             text: c('Action').t`View`,
             type: 'button',
-            onClick: openPreviewInvoiceModal
+            async onClick() {
+                const blob = await get();
+                setUrl(URL.createObjectURL(blob));
+                openPreviewInvoiceModal();
+            }
         });
     }
 
@@ -66,7 +73,13 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
     return (
         <>
             <DropdownActions list={list} className="pm-button--small" />
-            <PreviewInvoiceModal show={showPreviewInvoiceModal} onClose={closePreviewInvoiceModal} invoice={invoice} />
+            <PreviewPDFModal
+                show={showPreviewInvoiceModal}
+                onClose={closePreviewInvoiceModal}
+                url={url}
+                title={c('Title').t`Preview invoice`}
+                filename={filename}
+            />
             {invoice.State === INVOICE_STATE.UNPAID ? (
                 <PayInvoiceModal
                     invoice={invoice}
