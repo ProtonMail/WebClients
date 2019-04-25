@@ -17,6 +17,7 @@
 
   &:hover,
   &:focus,
+  &:focus-within,
   &.is-hover {
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
   }
@@ -262,22 +263,22 @@
   position: relative;
   z-index: 10;
 }
-.pm-group-buttons > .pm-group-button:first-of-type {
+.pm-group-buttons > .pm-group-button:not(.pagination-expand):first-of-type {
   border-radius: $global-border-radius 0 0 $global-border-radius;
   border-left-width: 1px;
 }
-.pm-group-buttons > .pm-group-button:last-of-type {
+.pm-group-buttons > .pm-group-button:not(.pagination-expand):last-of-type {
   border-radius: 0 $global-border-radius $global-border-radius 0;
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .pm-group-buttons > .pm-group-button:first-of-type {
+    .pm-group-buttons > .pm-group-button:not(.pagination-expand):first-of-type {
       border-radius: 0 $global-border-radius $global-border-radius 0;
       border-right-width: 1px;
       border-left-width: 0;
     }
-    .pm-group-buttons > .pm-group-button:last-of-type {
+    .pm-group-buttons > .pm-group-button:not(.pagination-expand):last-of-type {
       border-radius: $global-border-radius 0 0 $global-border-radius;
       border-left-width: 1px;
     }

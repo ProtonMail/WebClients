@@ -2,7 +2,14 @@
 
 ## New
 
+- added pagination drop down
+- added button drop down
+- added class `.increase-surface-click` class (needed for pagination drop down, and could be used for other cases, to increase tap zone)
 - add `rotateX-180` helper
+
+## Updated/fixes
+
+- fixed documentation in group buttons
 
 
 # [1.5.17] - 2019-04-24

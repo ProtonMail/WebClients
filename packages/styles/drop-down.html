@@ -64,3 +64,126 @@ section: design
 &lt;/div&gt;</code></pre>
 
 
+<h2 class="mt2" id="pagination-dropdown">Drop down code (pagination)</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 aligncenter">
+    <nav class="pm-group-buttons">
+      <button class="pm-button pm-group-button pm-button--for-icon" title="Previous page">
+        <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false">
+          <use xlink:href="#shape-arrow-left"></use>
+        </svg>
+        <span class="sr-only">Previous page</span>
+      </button>
+      <div class="relative pm-button pm-group-button pm-button--for-icon pagination-expand">
+        <button class="increase-surface-click js-dropDown-button pagination-expand-button" aria-expanded="false" type="button" title="Open pagination">
+          1 
+          <svg viewBox="0 0 16 16" class="icon-12p pagination-expand-caret" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="#shape-caret"></use>
+          </svg>
+        </button>
+        <div class="js-dropDown-content unstyled dropDown-content dropDown-content--pagination" hidden>
+          <ul class="unstyled mt0-5 mb0-5 aligncenter">
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5" aria-current="page">1</button></li>
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">2</button></li>
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">3</button></li>
+            <li class="dropDown-item"><a class="w100 pt0-5 pb0-5 inbl nodecoration">link</a></li>
+          </ul>
+        </div>
+      </div>
+      <button class="pm-button pm-group-button pm-button--for-icon" title="Next page">
+        <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false">
+          <use xlink:href="#shape-arrow-right"></use>
+        </svg>
+        <span class="sr-only">Next page</span>
+      </button>
+    </nav> 
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;<strong>nav class="pm-group-buttons"</strong>&gt;
+
+  &lt;button <strong>class="pm-button pm-group-button pm-button--for-icon" title="Previous page"</strong>&gt;
+    &lt;svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false"&gt;
+      &lt;use xlink:href="#shape-arrow-left"&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+    <strong>&lt;span class="sr-only"&gt;Previous page&lt;/span&gt;</strong>
+  &lt;/button&gt;
+
+  &lt;div <strong>class="relative pm-button pm-group-button pm-button--for-icon pagination-expand"</strong>&gt;
+
+    &lt;button <strong>class="increase-surface-click pagination-expand-button"</strong> aria-expanded="false/true" type="button" title="Open pagination"&gt;
+      1 
+      &lt;svg viewBox="0 0 16 16" <strong>class="icon-12p pagination-expand-caret"</strong> role="img" aria-hidden="true" focusable="false"&gt;
+        &lt;use xlink:href="#shape-caret"&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+    &lt;div <strong>class="unstyled dropDown-content dropDown-content--pagination"</strong> hidden&gt;
+      &lt;ul <strong>class="unstyled mt0-5 mb0-5 aligncenter"</strong>&gt;
+        &lt;li class="dropDown-item"&gt;
+          &lt;button class="w100 pt0-5 pb0-5" <strong>aria-current="page"</strong>&gt;1&lt;/button&gt;
+        &lt;/li&gt;
+        &lt;li class="dropDown-item"&gt;
+          <strong>&lt;button class="w100 pt0-5 pb0-5"&gt;2&lt;/button&gt;</strong>
+        &lt;/li&gt;
+        &lt;li class="dropDown-item"&gt;
+          &lt;button class="w100 pt0-5 pb0-5"&gt;3&lt;/button&gt;
+        &lt;/li&gt;
+        &lt;li class="dropDown-item"&gt;
+          &lt;a class="w100 pt0-5 pb0-5 inbl nodecoration"&gt;link&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;button class="pm-button pm-group-button pm-button--for-icon" <strong>title="Next page"</strong>&gt;
+    &lt;svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false"&gt;
+      &lt;use xlink:href="#shape-arrow-right"&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+    <strong>&lt;span class="sr-only"&gt;Next page&lt;/span&gt;</strong>
+  &lt;/button&gt;
+&lt;/nav&gt; </code></pre>
+  </div>
+</div>
+
+
+
+<h2 class="mt2">Drop down code (simple buttons)</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 aligncenter">
+    <div class="dropDown inbl">
+      <button class="pm-button js-dropDown-button" aria-expanded="false" type="button">
+        button
+      </button>
+      <div class="js-dropDown-content unstyled dropDown-content" hidden>
+        <ul class="unstyled m0-5">
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">A first action</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">Another action</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">A third action</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div class="dropDown inbl"&gt;
+  &lt;button class="pm-button-blue" <strong>aria-expanded="false/true"</strong> type="button"&gt;
+    Drop Down button
+  &lt;/button&gt;
+  &lt;div <strong>class="dropDown-content" hidden</strong>&gt;
+    &lt;ul <strong>class="unstyled m0-5"</strong>&gt;
+      &lt;li <strong>class="dropDown-item</strong>"&gt;
+        &lt;button <strong>class="w100 pt0-5 pb0-5 alignleft"</strong>&gt;A first action&lt;/button&gt;
+      &lt;/li&gt;
+      &lt;li class="dropDown-item"&gt;
+        &lt;button class="w100 pt0-5 pb0-5 alignleft"&gt;Another action&lt;/button&gt;
+      &lt;/li&gt;
+      &lt;li class="dropDown-item"&gt;
+        &lt;button class="w100 pt0-5 pb0-5 alignleft"&gt;A third action&lt;/button&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br>

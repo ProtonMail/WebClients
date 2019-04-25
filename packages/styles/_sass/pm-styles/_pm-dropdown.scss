@@ -1,5 +1,7 @@
 /* dropdown examples */
 $dropDown-width: 200px !default;
+$dropDown-pagination-width: 8em !default;
+
 .dropDown,
 .dropDown-leftArrow,
 .dropDown-rightArrow {
@@ -19,12 +21,28 @@ $dropDown-width: 200px !default;
   visibility: visible;
   transition-delay: 0s;
   width: $dropDown-width; 
-  padding: 0;
+  padding: 1rem;
   background: $white;
   border-radius: $global-border-radius;
   box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
 }
 
+.dropDown-content--pagination {
+  left: calc(50% - #{$dropDown-pagination-width/2});
+  width: $dropDown-pagination-width;
+  padding: 0 1rem;
+}
+
+/* This is the hidden state */
+[hidden].dropDown-content {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1,0);
+  transition-delay: .15s, 0s, 0s;
+}
+
+/* position of dropDown variations */
 .dropDown-leftArrow .dropDown-content {
   left: 0;
 }
@@ -46,7 +64,7 @@ $dropDown-width: 200px !default;
   }
 }
 
-
+/* arrow on top of dropdown */
 .dropDown-content::before {
   content: '';
   position: absolute;
@@ -56,15 +74,6 @@ $dropDown-width: 200px !default;
   height: 1rem;
   border: 1rem solid transparent;
   border-bottom: 1rem solid $white;
-}
-
-/* This is the hidden state */
-[hidden].dropDown-content {
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(1,0);
-  transition-delay: .15s, 0s, 0s;
 }
 
 .dropDown-leftArrow .dropDown-content::before {
@@ -86,4 +95,18 @@ $dropDown-width: 200px !default;
       left: 1rem;
     }
   }
+}
+
+
+/* border on items */
+.dropDown-item {
+  border-bottom: 1px solid $pm-global-border;
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+/* pagination caret */
+.pagination-expand-button[aria-expanded="true"] > .pagination-expand-caret {
+  @extend .rotateX-180;
 }
