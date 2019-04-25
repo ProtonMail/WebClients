@@ -29,7 +29,7 @@ const DropdownActions = ({ list, className }) => {
             <Dropdown
                 content={<Icon name="caret" />}
                 title={c('Action').t`More`}
-                className={`pm-group-button ${className}`}
+                className={`pm-group-button pm-button--for-icon ${className}`}
             >
                 <DropdownMenu list={restList} />
             </Dropdown>
