@@ -42,39 +42,29 @@ const Card = ({ card, errors, onChange, loading }) => {
                     required
                 />
             </Block>
-            <Block>
-                <div className="flex-autogrid">
-                    <Select
-                        value={card.month}
-                        onChange={handleChange('month')}
-                        className="flex-autogrid-item"
-                        options={months}
-                        disabled={loading}
-                    />
-                    <Select
-                        value={card.year}
-                        onChange={handleChange('year')}
-                        className="flex-autogrid-item"
-                        options={years}
-                        disabled={loading}
-                    />
+            <div className="flex-autogrid">
+                <div className="flex-autogrid-item">
+                    <Select value={card.month} onChange={handleChange('month')} options={months} disabled={loading} />
+                </div>
+                <div className="flex-autogrid-item">
+                    <Select value={card.year} onChange={handleChange('year')} options={years} disabled={loading} />
+                </div>
+                <div className="flex-autogrid-item">
                     <Input
                         value={card.cvc}
                         onChange={handleChange('cvc')}
-                        className="flex-autogrid-item"
                         placeholder={c('Placeholder').t`Security code`}
                         error={errors.cvc}
                         disabled={loading}
                         required
                     />
                 </div>
-            </Block>
-            <Block>
-                <div className="flex-autogrid">
+            </div>
+            <div className="flex-autogrid">
+                <div className="flex-autogrid-item">
                     <Input
                         value={card.zip}
                         onChange={handleChange('zip')}
-                        className="flex-autogrid-item"
                         placeholder={c('Placeholder').t`ZIP/Postal code`}
                         error={errors.zip}
                         disabled={loading}
@@ -82,15 +72,16 @@ const Card = ({ card, errors, onChange, loading }) => {
                         maxLength={9}
                         required
                     />
+                </div>
+                <div className="flex-autogrid-item">
                     <Select
                         value={card.country}
                         onChange={handleChange('country')}
-                        className="flex-autogrid-item"
                         options={countries}
                         disabled={loading}
                     />
                 </div>
-            </Block>
+            </div>
         </>
     );
 };
