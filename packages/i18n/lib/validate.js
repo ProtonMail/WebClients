@@ -38,10 +38,10 @@ async function validateFunctionFormat(arg = '') {
     }
 }
 
-function main(mode, { path } = {}) {
+function main(mode, { dir } = {}) {
     if (mode === 'lint-functions') {
-        debug(`[lint-functions] validtion path:${path}`);
-        return validateFunctionFormat(path);
+        debug(`[lint-functions] validtion path:${dir}`);
+        return validateFunctionFormat(dir);
     }
 
     const spinner = spin('Parsing translations');

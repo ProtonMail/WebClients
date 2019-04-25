@@ -19,7 +19,7 @@ async function main() {
     }
 
     if (is('validate')) {
-        require('./lib/validate')(argv._[1], { path: argv._[2] });
+        require('./lib/validate')(argv._[1], { dir: argv._[2] });
     }
 
     if (is('compile')) {
