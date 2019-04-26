@@ -33,6 +33,7 @@ function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
 
         if (!dontAsk && isExternal(src) && domain && !PROTON_DOMAINS.includes(domain)) {
             e.preventDefault();
+            e.stopPropagation(); // Required for Safari
             return linkWarningModal.activate({
                 params: {
                     link: src,
