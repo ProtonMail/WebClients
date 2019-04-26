@@ -8,7 +8,7 @@ import { getItem } from '../../../helpers/storageHelper';
 function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
     const { dispatcher } = dispatchers(['composer.new']);
     const dispatch = (type, data = {}) => dispatcher['composer.new'](type, data);
-    const getSrc = (target) => (target.getAttribute('href') || '').toLowerCase();
+    const getSrc = (target) => target.getAttribute('href') || '';
 
     const onClick = (e) => {
         if (e.target.nodeName !== 'A') {
@@ -18,7 +18,7 @@ function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
         const src = getSrc(e.target);
 
         // We only handle anchor that begins with `mailto:`
-        if (src.startsWith('mailto:')) {
+        if (src.toLowerCase().startsWith('mailto:')) {
             e.preventDefault();
 
             const message = messageModel(mailUtils.mailtoParser(e.target.getAttribute('href')));
