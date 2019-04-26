@@ -24,8 +24,8 @@ export const isExternal = (url) => window.location.hostname !== getHostname(url)
 export const getDomain = (url) => {
     try {
         // parseDomain can be null if the domain is invalid
-        const { domain = '' } = parseDomain(url) || {};
-        return domain;
+        const { domain = '', tld = '' } = parseDomain(url) || {};
+        return `${domain}.${tld}`;
     } catch (e) {
         return '';
     }
