@@ -71,6 +71,12 @@ export const doNotTrack = () => {
  * @return {void}
  */
 export function openWindow(url) {
+    if (isIE11() || isFirefox()) {
+        const win = window.open();
+        win.opener = null;
+        win.location = url;
+        return;
+    }
     const anchor = document.createElement('A');
 
     anchor.setAttribute('rel', 'noreferrer nofollow noopener');
