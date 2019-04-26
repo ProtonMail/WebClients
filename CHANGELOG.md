@@ -1,3 +1,7 @@
+# [3.15.29] - 2019-04-26
+## Changed
+- Safari is still opening link even with preventDefault()
+
 # [3.15.28] - 2019-04-26
 
 ## Added
