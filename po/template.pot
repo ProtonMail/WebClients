@@ -410,6 +410,7 @@ msgstr ""
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:19
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
 #: ./src/templates/user/signupPayForm.tpl.html:100
+#: ./src/templates/utils/linkWarningModal.tpl.html:23
 #: ./src/templates/views/outside.reply.tpl.html:31
 #: ./src/templates/views/reset-login-password.tpl.html:132
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
@@ -611,6 +612,7 @@ msgstr ""
 #: ./src/templates/partials/wizard.tpl.html:6
 #: ./src/templates/payment/giftCodeModal.tpl.html:3
 #: ./src/templates/utils/discardModal.tpl.html:3
+#: ./src/templates/utils/linkWarningModal.tpl.html:3
 #: ./src/templates/utils/printModal.tpl.html:22
 #: ./src/templates/utils/printModal.tpl.html:3
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:4
@@ -656,6 +658,11 @@ msgstr ""
 #: ./src/templates/ui/navigation/navigation.tpl.html:19
 msgctxt "Action"
 msgid "Contacts"
+msgstr ""
+
+#: ./src/templates/utils/linkWarningModal.tpl.html:24
+msgctxt "Action"
+msgid "Continue"
 msgstr ""
 
 #: ./src/templates/message/messageAddressActionMenu.tpl.html:31
@@ -745,7 +752,7 @@ msgctxt "Action"
 msgid "Delete draft"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:375
+#: ./src/templates/views/account.tpl.html:394
 msgctxt "Action"
 msgid "Delete your account"
 msgstr ""
@@ -766,9 +773,11 @@ msgctxt "Action"
 msgid "Disable Two-Factor Authentication"
 msgstr ""
 
+#. form option
 #. notification settings option
 #: ./src/templates/security/logManager.tpl.html:29
-#: ./src/templates/views/account.tpl.html:305
+#: ./src/templates/views/account.tpl.html:290
+#: ./src/templates/views/account.tpl.html:324
 #: ./src/templates/views/account.tpl.html:64
 #: ./src/templates/views/account.tpl.html:88
 msgctxt "Action"
@@ -900,8 +909,10 @@ msgctxt "Action"
 msgid "Enable signature verification"
 msgstr ""
 
+#. form option
 #. notification settings option
-#: ./src/templates/views/account.tpl.html:299
+#: ./src/templates/views/account.tpl.html:296
+#: ./src/templates/views/account.tpl.html:318
 #: ./src/templates/views/account.tpl.html:58
 #: ./src/templates/views/account.tpl.html:82
 msgctxt "Action"
@@ -1919,7 +1930,7 @@ msgctxt "Action"
 msgid "Verifying reset code"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:313
+#: ./src/templates/views/account.tpl.html:332
 msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr ""
@@ -5553,7 +5564,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:176
+#: ./src/app/settings/controllers/account.js:178
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr ""
@@ -6271,6 +6282,11 @@ msgctxt "Info"
 msgid "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
 msgstr ""
 
+#: ./src/templates/utils/linkWarningModal.tpl.html:12
+msgctxt "Info"
+msgid "You are about to open another browser tab and visit:"
+msgstr ""
+
 #: ./src/templates/vpn/vpnView.tpl.html:12
 msgctxt "Info"
 msgid "You are using ProtonVPN Free. Upgrade to ProtonVPN Plus to get faster speeds and better privacy."
@@ -6311,7 +6327,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:107
+#: ./src/app/settings/controllers/account.js:109
 msgctxt "Info"
 msgid "You have a new email"
 msgstr ""
@@ -6910,6 +6926,11 @@ msgctxt "Label"
 msgid "Display name"
 msgstr ""
 
+#: ./src/templates/utils/linkWarningModal.tpl.html:18
+msgctxt "Label"
+msgid "Do not ask again"
+msgstr ""
+
 #: ./src/app/contact/services/importContactGroups.js:24
 msgctxt "Label"
 msgid "Do not import group"
@@ -7043,12 +7064,12 @@ msgctxt "Label"
 msgid "Mailbox password"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:339
+#: ./src/templates/views/account.tpl.html:358
 msgctxt "Label"
 msgid "Major Announcements (2-3 per year)"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:343
+#: ./src/templates/views/account.tpl.html:362
 msgctxt "Label"
 msgid "Major New Features (3-4 per year)"
 msgstr ""
@@ -7136,12 +7157,12 @@ msgctxt "Label"
 msgid "Prompt to trust keys"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:351
+#: ./src/templates/views/account.tpl.html:370
 msgctxt "Label"
 msgid "Proton Beta (~ 10-12 per year)"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:347
+#: ./src/templates/views/account.tpl.html:366
 msgctxt "Label"
 msgid "Proton Newsletter (5-6 per year)"
 msgstr ""
@@ -8783,7 +8804,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:317
+#: ./src/app/settings/controllers/account.js:328
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr ""
@@ -8828,13 +8849,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:289
+#: ./src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:259
-#: ./src/app/settings/controllers/account.js:268
+#: ./src/app/settings/controllers/account.js:261
+#: ./src/app/settings/controllers/account.js:270
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr ""
@@ -8880,11 +8901,16 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:139
-#: ./src/app/settings/controllers/account.js:159
-#: ./src/app/settings/controllers/account.js:250
+#: ./src/app/settings/controllers/account.js:141
+#: ./src/app/settings/controllers/account.js:161
+#: ./src/app/settings/controllers/account.js:252
 msgctxt "Success"
 msgid "Preference saved"
+msgstr ""
+
+#: ./src/app/settings/controllers/account.js:282
+msgctxt "Success"
+msgid "Preference updated"
 msgstr ""
 
 #: ./src/app/address/directives/addressKeysView.js:60
@@ -8909,7 +8935,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:124
+#: ./src/app/settings/controllers/account.js:126
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr ""
@@ -9146,7 +9172,7 @@ msgctxt "Title"
 msgid "Address"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:322
+#: ./src/templates/views/account.tpl.html:341
 msgctxt "Title"
 msgid "Address Priority"
 msgstr ""
@@ -9620,7 +9646,7 @@ msgctxt "Title"
 msgid "Delete"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:370
+#: ./src/templates/views/account.tpl.html:389
 msgctxt "Title"
 msgid "Delete Account"
 msgstr ""
@@ -9798,7 +9824,7 @@ msgctxt "Title"
 msgid "Email Content"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:332
+#: ./src/templates/views/account.tpl.html:351
 msgctxt "Title"
 msgid "Email Subscriptions"
 msgstr ""
@@ -10083,8 +10109,8 @@ msgctxt "Title"
 msgid "Key type"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:285
-#: ./src/templates/views/account.tpl.html:293
+#: ./src/templates/views/account.tpl.html:304
+#: ./src/templates/views/account.tpl.html:312
 msgctxt "Title"
 msgid "Keyboard Shortcuts"
 msgstr ""
@@ -10114,6 +10140,12 @@ msgstr ""
 #: ./src/templates/views/appearance.tpl.html:36
 msgctxt "Title"
 msgid "Layout"
+msgstr ""
+
+#: ./src/templates/utils/linkWarningModal.tpl.html:7
+#: ./src/templates/views/account.tpl.html:284
+msgctxt "Title"
+msgid "Link confirmation"
 msgstr ""
 
 #: ./src/templates/views/account.tpl.html:265
@@ -10550,7 +10582,7 @@ msgstr ""
 
 #. Section heading
 #: ./src/app/ui/factories/pageTitlesModel.js:49
-#: ./src/templates/views/account.tpl.html:359
+#: ./src/templates/views/account.tpl.html:378
 msgctxt "Title"
 msgid "Search"
 msgstr ""
