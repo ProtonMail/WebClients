@@ -1,5 +1,7 @@
+import parseDomain from 'parse-domain';
+
 import { PROTON_DOMAINS, LINK_WARNING } from '../../constants';
-import { getDomain, isExternal } from '../../../helpers/url';
+import { isExternal } from '../../../helpers/url';
 import { getItem } from '../../../helpers/storageHelper';
 
 /* @ngInject */
@@ -29,8 +31,9 @@ function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
         }
 
         const dontAsk = getItem(LINK_WARNING.KEY);
+        const { domain } = parseDomain(src);
 
-        if (!dontAsk && isExternal(src) && !PROTON_DOMAINS.includes(getDomain(src))) {
+        if (!dontAsk && isExternal(src) && !PROTON_DOMAINS.includes(domain)) {
             e.preventDefault();
             return linkWarningModal.activate({
                 params: {
