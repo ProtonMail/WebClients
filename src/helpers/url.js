@@ -1,3 +1,5 @@
+import parseDomain from 'parse-domain';
+
 const getHostname = (url) => {
     if (/^https?:\/\//.test(url)) {
         // Absolute URL.
@@ -11,3 +13,20 @@ const getHostname = (url) => {
 };
 
 export const isExternal = (url) => window.location.hostname !== getHostname(url);
+
+/**
+ * Extract domain from URL
+ * Wrap parseDomain to not break the process
+ * If the URL is malformated we co
+ * @param {String} url
+ * @returns {String}
+ */
+export const getDomain = (url) => {
+    try {
+        // parseDomain can be null if the domain is invalid
+        const { domain = '' } = parseDomain(url) || {};
+        return domain;
+    } catch (e) {
+        return '';
+    }
+};
