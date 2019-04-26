@@ -77,6 +77,9 @@ body#reset {
       color: $white;
     }
   }
+  input[name="mailbox-password"] {
+    background: rgba(255, 255, 255, 0.15);
+  }
 
   .password-container { line-height: 38px }
 
