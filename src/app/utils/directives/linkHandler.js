@@ -8,14 +8,14 @@ import { getItem } from '../../../helpers/storageHelper';
 function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
     const { dispatcher } = dispatchers(['composer.new']);
     const dispatch = (type, data = {}) => dispatcher['composer.new'](type, data);
-    const getSrc = ({ target }) => (target.getAttribute('href') || '').toLowerCase();
+    const getSrc = (target) => (target.getAttribute('href') || '').toLowerCase();
 
     const onClick = (e) => {
         if (e.target.nodeName !== 'A') {
             return;
         }
 
-        const src = getSrc(e);
+        const src = getSrc(e.target);
 
         // We only handle anchor that begins with `mailto:`
         if (src.startsWith('mailto:')) {
@@ -48,10 +48,10 @@ function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
 
     return {
         link(scope) {
-            document.body.addEventListener('click', onClick);
+            document.body.addEventListener('click', onClick, false);
 
             scope.$on('$destroy', () => {
-                document.body.removeEventListener('click', onClick);
+                document.body.removeEventListener('click', onClick, false);
             });
         }
     };
