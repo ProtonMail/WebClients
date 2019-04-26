@@ -21,9 +21,14 @@ module.exports = (scope) => {
         console.log();
     };
 
-    const json = (data) => {
+    const json = (data, output) => {
+        // only output for a command
+        if (output) {
+            return console.log(JSON.stringify(data, null, 2));
+        }
+
         console.log();
-        console.log(`[${scope}] `, JSON.stringify(data, null, 2));
+        console.log(`[${scope}]`, JSON.stringify(data, null, 2));
         console.log();
     };
 
@@ -40,7 +45,7 @@ module.exports = (scope) => {
         if (!(argv.v || argv.verbose)) {
             return;
         }
-        if (Array.isArray(item)) {
+        if (Array.isArray(item) || typeof item === 'object') {
             return json(item);
         }
 

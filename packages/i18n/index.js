@@ -3,15 +3,23 @@
 const dedent = require('dedent');
 const chalk = require('chalk');
 const argv = require('minimist')(process.argv.slice(2));
-require('dotenv').config({ path: 'env/.env' });
 
-const { error } = require('./lib/helpers/log')('proton-i18n');
+const CONFIG = require('./config');
+const { error, debug } = require('./lib/helpers/log')('proton-i18n');
+
+require('dotenv').config({ path: CONFIG.ENV_FILE });
 
 const is = (command) => argv._.includes(command);
 
 async function main() {
+    debug(CONFIG.getEnv());
+
     if (is('crowdin')) {
         await require('./lib/crowdin')();
+    }
+
+    if (is('commit')) {
+        await require('./lib/commit')(argv._[1]);
     }
 
     if (is('extract')) {
@@ -27,10 +35,10 @@ async function main() {
     }
 
     if (is('list')) {
-        require('./lib/cache').write();
+        require('./lib/cache').write(argv._[1]);
     }
 
-    if (is('help')) {
+    if (is('help') && !is('crowdin')) {
         console.log(dedent`
         Usage: $ proton-i18n <command>
         Available commands:
@@ -44,6 +52,19 @@ async function main() {
 
           - ${chalk.blue('extract')}
               Extract all translations from the projet
+
+          - ${chalk.blue('list')} ${chalk.blue('<type>')}
+              List all translations available
+                - type: default (default) write them inside a file po/lang.json
+                - type: show print JSON inside the console
+
+          - ${chalk.blue('compile')}
+              Compile all translations from the dir ./po to a JSON inside src/i18n/<lang>.json
+
+          - ${chalk.blue('commit')} ${chalk.blue('<type>')}
+              Commit translations
+              - type: update commit new extracted translations
+              - type: upgrade commit new translations (po, json)
     `);
     }
 }

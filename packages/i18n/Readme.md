@@ -16,15 +16,27 @@ $ npm i -D github:ProtonMail/proton-i18n.git#semver:^1.0.0
 
 ## Commands
 ```sh
-$ ./index.js --help
+$ npx proton-i18n help
 Usage: $ proton-i18n <command>
 Available commands:
   - crowdin
       To update, download etc. translations (--help to get more details)
-  - validate
+
+  - validate <type>
       To validate the translations, check if we have contexts
+        - type: default (default) validate we don't have missing context
+        - type: lint-functions check if we use the right format for ttag
+
   - extract
       Extract all translations from the projet
+
+  - list <type>
+      List all translations available
+        - type: default (default) write them inside a file po/lang.json
+        - type: show print JSON inside the console
+
+  - compile
+      Compile all translations from the dir ./po to a JSON inside src/i18n/<lang>.json
 ``` 
 
 ### Validate

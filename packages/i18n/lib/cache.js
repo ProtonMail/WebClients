@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const { success, spin } = require('./helpers/log')('proton-i18n');
+const { success, spin, debug, json } = require('./helpers/log')('proton-i18n');
+const { CACHE_FILE } = require('../config').getFiles();
 
-const PATH_ENV_I18N = path.resolve('./po/lang.json');
+const PATH_ENV_I18N = path.resolve(`./${CACHE_FILE}`);
 
 const getCountry = (lang) => {
     const key = lang === 'en' ? 'us' : lang;
@@ -51,11 +52,17 @@ const getLanguages = () => {
     Generate a cache files with transaltions keys
     - po/lang.json
  */
-async function write() {
+async function write(action) {
     const spinner = spin('Compiles translations');
     try {
         const list = await getLanguages();
         spinner.stop();
+
+        if (action === 'show') {
+            return json(list, true);
+        }
+
+        debug(list);
         fs.writeFileSync(PATH_ENV_I18N, JSON.stringify(list, null, 2));
         success('Generate cache app i18n');
     } catch (e) {

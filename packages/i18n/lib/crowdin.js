@@ -9,24 +9,16 @@ const argv = require('minimist')(process.argv.slice(2));
 const FormData = require('form-data');
 const dedent = require('dedent');
 
-const { error, spin, success, debug } = require('./helpers/log')('proton-i18n');
+const { spin, success, debug } = require('./helpers/log')('proton-i18n');
+const { getFiles, getCrowdin } = require('../config');
 
-const DEST_FILE = process.env.DEST_FILE;
-const PROJECT_NAME = process.env.PROJECT_NAME;
-const TEMPLATE_FILE = 'template.pot';
-const OUTPUT_I18N_DIR = path.join(process.cwd(), 'po');
-const TEMPLATE_FILE_PATH = path.join(OUTPUT_I18N_DIR, TEMPLATE_FILE);
+const { KEY_API, FILE_NAME, PROJECT_NAME } = getCrowdin();
 
-if (!process.env.CROWDIN_KEY_API || !process.env.DEST_FILE || !process.env.PROJECT_NAME) {
-    const keys = ['CROWDIN_KEY_API', 'DEST_FILE', 'PROJECT_NAME'].join(' - ');
-    error(new Error(`Missing one/many mandatory keys from the .env ( cf the Wiki): \n${keys}`));
-}
+const { TEMPLATE_NAME, I18N_OUTPUT_DIR, TEMPLATE_FILE_FULL } = getFiles();
 
 const getURL = (scope, flag = '') => {
     const customFlag = flag ? `&${flag}` : '';
-    return `https://api.crowdin.com/api/project/${PROJECT_NAME}/${scope}?key=${
-        process.env.CROWDIN_KEY_API
-    }${customFlag}`.trim();
+    return `https://api.crowdin.com/api/project/${PROJECT_NAME}/${scope}?key=${KEY_API}${customFlag}`.trim();
 };
 
 /**
@@ -98,9 +90,18 @@ async function downloadAll() {
     const fileName = 'all.zip';
     const url = getURL(`download/${fileName}`);
     const { body } = await got(url, { encoding: null });
-    debug(body);
     return JSZip.loadAsync(body);
 }
+
+/**
+ * Format the filename for a lang inside the ZipFile
+ * @param  {String} lang
+ * @return {String}
+ */
+const getFileNameLang = (lang) => {
+    const file = path.basename(FILE_NAME, '.pot');
+    return `${file}-${lang}.po`;
+};
 
 /**
  * Download latest translations exported on the API, extract them
@@ -120,7 +121,8 @@ async function fetchThemAll(spinner) {
 
     const spinnerZip = spin('Extracting translations');
     const fileList = list.map(async (lang) => {
-        const input = path.join(lang, `ProtonMail Web Application-${lang}.po`);
+        const input = path.join(lang, getFileNameLang(lang));
+        debug(input);
         const file = await zip.file(input).async('string');
         return { lang, file };
     });
@@ -130,7 +132,7 @@ async function fetchThemAll(spinner) {
     // Write them on the project
     files.forEach(({ lang, file }) => {
         const fileName = `${translateLang(lang)}.po`;
-        const output = path.join(OUTPUT_I18N_DIR, fileName);
+        const output = path.join(I18N_OUTPUT_DIR, fileName);
         debug(`[${lang}] Write: ${output}`);
         fs.writeFileSync(output, file);
         success(`[${lang}] Import new translation`);
@@ -143,8 +145,8 @@ async function fetchThemAll(spinner) {
 async function udpate(spinner) {
     const url = getURL('update-file');
     const form = new FormData();
-    form.append(`files[/${DEST_FILE}]`, fs.createReadStream(TEMPLATE_FILE_PATH), {
-        filename: `@${TEMPLATE_FILE}`
+    form.append(`files[/${FILE_NAME}]`, fs.createReadStream(TEMPLATE_FILE_FULL), {
+        filename: `@${TEMPLATE_NAME}`
     });
     const { body = '' } = await got.post(url, { body: form });
     spinner.stop();
