@@ -26,3 +26,16 @@ export const setItem = (key, value) => {
         console.error(e);
     }
 };
+
+/**
+ * Wrap localStorage remove item to not break the process.
+ * @param {String} key
+ * @returns {*}
+ */
+export const removeItem = (key) => {
+    try {
+        localStorage.removeItem(key);
+    } catch (e) {
+        console.error(e);
+    }
+};
