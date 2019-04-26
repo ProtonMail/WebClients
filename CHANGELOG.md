@@ -1,3 +1,9 @@
+# [3.15.28] - 2019-04-26
+
+## Added
+
+- We have added a new link confirmation feature to allow users to verify links before opening them for added protection against phishing.
+
 # [3.15.27] - 2019-04-17
 ## Fixed
 - Email address was not shown in the To/CC/BCC fields if it was between `<>` signs
