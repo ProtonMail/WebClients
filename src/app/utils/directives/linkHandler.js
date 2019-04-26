@@ -31,7 +31,7 @@ function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
         }
 
         const dontAsk = getItem(LINK_WARNING.KEY);
-        const { domain } = parseDomain(src);
+        const { domain = '' } = parseDomain(src) || {}; // parseDomain can be null if the domain is invalid
 
         if (!dontAsk && isExternal(src) && !PROTON_DOMAINS.includes(domain)) {
             e.preventDefault();
