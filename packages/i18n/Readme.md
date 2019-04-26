@@ -37,6 +37,11 @@ Available commands:
 
   - compile
       Compile all translations from the dir ./po to a JSON inside src/i18n/<lang>.json
+
+  - commit <type>
+      Commit translations
+      - type: update commit new extracted translations
+      - type: upgrade commit new translations (po, json)
 ``` 
 
 ### Validate
@@ -95,8 +100,10 @@ Available flags:
 You need to have a file `.env` inside the directory `<project>/env/`.
 ```sh
 CROWDIN_KEY_API=<API-KEY>
-PROJECT_NAME=<CROWDIN-PROJECT-NAME>
-DEST_FILE='ProtonMail Web Application.pot'
+CROWDIN_PROJECT_NAME=<CROWDIN-PROJECT-NAME>
+CROWDIN_FILE_NAME='<FILE NAME>.pot'
+I18N_EXTRACT_DIR:<OUTPUT DIR FOR POT FILE>
+I18N_JSON_DIR:<OUTPUT DIR FOR TRANSLATED JSON>
 ``` 
 
 You don't need these key if you don't manage crowdin, for extraction and validation we won't need them.
@@ -107,6 +114,12 @@ APP_KEY=Angular
 ```
 
 > We need this key to detect the project as we require some custom code for it.
+
+### About I18N custom OUTPUT dir
+
+You don't need to set the key, only if you want to change them.
+- `I18N_EXTRACT_DIR`: Default value -> `po`
+- `I18N_JSON_DIR`: Default value -> `src/i18n`
 
 ### Custom translations to update/add inside your app 
 

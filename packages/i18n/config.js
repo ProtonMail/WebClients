@@ -9,7 +9,7 @@ const PROTON_DEPENDENCIES = ['src/app'].concat(
 const getFiles = () => {
     const TEMPLATE_NAME = 'template.pot';
     const I18N_EXTRACT_DIR = process.env.I18N_EXTRACT_DIR || 'po';
-    const I18N_JSON_DIR = process.env.I18N_EXTRACT_DIR || 'src/i18n';
+    const I18N_JSON_DIR = process.env.I18N_JSON_DIR || 'src/i18n';
 
     return {
         TEMPLATE_NAME,
@@ -23,6 +23,8 @@ const getFiles = () => {
 };
 
 const getEnv = () => ({
+    I18N_EXTRACT_DIR: process.env.I18N_EXTRACT_DIR,
+    I18N_JSON_DIR: process.env.I18N_JSON_DIR,
     CROWDIN_KEY_API: process.env.CROWDIN_KEY_API,
     CROWDIN_FILE_NAME: process.env.CROWDIN_FILE_NAME,
     CROWDIN_PROJECT_NAME: process.env.CROWDIN_PROJECT_NAME,
