@@ -193,7 +193,9 @@ html.protonmail {
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
-
+	.break-word {
+		word-wrap: break-word;
+	}
 	.help-dnd {
 		font-style: italic;
 		opacity: .8
