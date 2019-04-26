@@ -675,6 +675,10 @@ body.appConfigBody-is-mobile {
     }
 }
 
+.message-body-container a * {
+    pointer-events: none;
+}
+
 .proton-message-blockquote-toggle ~ * {display: none !important}
 .print .proton-message-blockquote-toggle {
     display: none;
