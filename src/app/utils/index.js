@@ -28,9 +28,10 @@ import openStatePostMessage from './services/openStatePostMessage';
 import firstLoadState from './services/firstLoadState';
 import lazyLoader from './services/lazyLoader';
 import sanitize from './services/sanitize';
-import mailtoHandler from './directives/mailtoHandler';
+import linkHandler from './directives/linkHandler';
 import mailUtils from './services/mailUtils';
 import discardModal from './modals/discardModal';
+import linkWarningModal from './modals/linkWarningModal';
 import formatURL from './filters/formatURL';
 import formatBDay from './filters/formatBDay';
 import printModal from './modals/printModal';
@@ -45,8 +46,9 @@ export default angular
     .filter('formatURL', formatURL)
     .filter('formatBDay', formatBDay)
     .factory('discardModal', discardModal)
+    .factory('linkWarningModal', linkWarningModal)
     .factory('mailUtils', mailUtils)
-    .directive('mailtoHandler', mailtoHandler)
+    .directive('linkHandler', linkHandler)
     .service('lazyLoader', lazyLoader)
     .directive('detectTimeWidth', detectTimeWidth)
     .directive('dropzone', dropzone)

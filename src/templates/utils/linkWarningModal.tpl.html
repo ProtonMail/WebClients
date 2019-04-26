@@ -1,0 +1,28 @@
+<div class="pm_modal small {{ctrl.class}} discardModal-container" role="dialog">
+    <form name="linkWarningForm" class="modal-dialog" ng-submit="ctrl.continue()" novalidate>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close"
+            title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <header class="modal-header">
+                <h4 class="modal-title" translate-context="Title" translate>Link confirmation</h4>
+            </header>
+
+            <div class="modal-body pm_form">
+                <div class="alert alert-warning margin-bottom">
+                    <div class="margin-bottom" translate-context="Info" translate>You are about to open another browser tab and visit:</div>
+                    <span class="bold">{{ ::ctrl.link }}</span>
+                </div>
+
+                <label>
+                    <custom-checkbox data-custom-ng-model="ctrl.preference" />
+                    <span translate-context="Label" translate>Do not ask again</span>
+                </label>
+            </div>
+        </div>
+        <footer class="modal-footer">
+            <button type="button" ng-click="ctrl.cancel()" class="pm_button modal-footer-button" translate-context="Action" translate>Cancel</button>
+            <button autofocus class="pm_button primary modal-footer-button" translate-context="Action" translate>Continue</button>
+        </footer>
+    </form>
+    <div class="modal-overlay"></div>
+</div>

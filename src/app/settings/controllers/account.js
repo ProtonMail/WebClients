@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import { PAID_MEMBER_ROLE, REMOTE, EMBEDDED } from '../../constants';
+import { PAID_MEMBER_ROLE, REMOTE, EMBEDDED, LINK_WARNING } from '../../constants';
+import { getItem, setItem, removeItem } from '../../../helpers/storageHelper';
 
 /* @ngInject */
 function AccountController(
@@ -50,6 +51,7 @@ function AccountController(
 
     updateUserSettings();
     updateMailSettings();
+    $scope.requestLink = !!getItem(LINK_WARNING.KEY);
 
     function passwordModal(submit = angular.noop, onCancel = angular.noop) {
         loginPasswordModal.activate({
@@ -269,6 +271,15 @@ function AccountController(
         });
 
         networkActivityTracker.track(promise);
+    };
+
+    $scope.saveRequestLink = () => {
+        if ($scope.requestLink) {
+            setItem(LINK_WARNING.KEY, LINK_WARNING.VALUE);
+        } else {
+            removeItem(LINK_WARNING.KEY);
+        }
+        notification.success(gettextCatalog.getString('Preference updated', null, 'Success'));
     };
 
     $scope.openHotkeyModal = () => {
