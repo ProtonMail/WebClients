@@ -38,3 +38,14 @@ export const throttle = (func, ms = 50, context = window) => {
         }
     };
 };
+
+export function defer(cb, delay) {
+    const id = setTimeout(() => {
+        cb();
+        clearTimeout(id);
+    }, delay);
+}
+
+export function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}

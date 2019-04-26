@@ -200,6 +200,11 @@ export const EXPORT_CONTACTS_LIMIT = 50; // Maximum page size for export is 50 f
 export const CONTACTS_REQUESTS_PER_SECOND = 10;
 export const ALL_MEMBERS_ID = 'ALL';
 
+export const LABEL_TYPES = {
+    FOLDER: 1,
+    LABEL: 0
+};
+
 export const LABEL_COLORS = [
     '#7272a7',
     '#8989ac',
