@@ -1,16 +1,16 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Table, TableHeader, TableBody, TableRow, Href } from 'react-components';
+import { Table, TableHeader, TableBody, TableRow, Href, SubTitle } from 'react-components';
 
-const ProtonMailClients = () => {
+const ProtonMailAppsSection = () => {
     const clients = [
         {
-            name: 'ProtonMail',
+            name: 'ProtonMail - Encrypted Email',
             plateform: 'Android',
             link: 'https://play.google.com/store/apps/details?id=ch.protonmail.android'
         },
         {
-            name: 'ProtonMail',
+            name: 'ProtonMail - Encrypted Email',
             plateform: 'iOS',
             link: 'https://itunes.apple.com/app/protonmail-encrypted-email/id979659905'
         },
@@ -20,13 +20,12 @@ const ProtonMailClients = () => {
     ];
     return (
         <>
-            <span className="bold">ProtonMail</span>
-            <Alert learnMore="todo">{c('Info').t`Lorem ipsum`}</Alert>
+            <SubTitle>ProtonMail apps</SubTitle>
             <Table>
                 <TableHeader
                     cells={[
-                        c('Title for downloads section').t`Name`,
                         c('Title for downloads section').t`Platform`,
+                        c('Title for downloads section').t`Name`,
                         c('Title for downloads section').t`Action`
                     ]}
                 />
@@ -36,7 +35,7 @@ const ProtonMailClients = () => {
                         return (
                             <TableRow
                                 key={key}
-                                cells={[name, plateform, <Href key={key} url={link}>{c('Action').t`Download`}</Href>]}
+                                cells={[plateform, name, <Href key={key} url={link}>{c('Action').t`Download`}</Href>]}
                             />
                         );
                     })}
@@ -46,4 +45,4 @@ const ProtonMailClients = () => {
     );
 };
 
-export default ProtonMailClients;
+export default ProtonMailAppsSection;

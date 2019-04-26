@@ -1,26 +1,26 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Table, TableHeader, TableBody, TableRow, Href } from 'react-components';
+import { Alert, Table, TableHeader, TableBody, TableRow, Href } from './node_modules/react-components';
 
-const ProtonVPNClients = () => {
+const ProtonMailClients = () => {
     const clients = [
         {
-            name: 'ProtonVPN',
+            name: 'ProtonMail',
             plateform: 'Android',
-            link: 'https://play.google.com/store/apps/details?id=com.protonvpn.android'
+            link: 'https://play.google.com/store/apps/details?id=ch.protonmail.android'
         },
         {
-            name: 'ProtonVPN',
+            name: 'ProtonMail',
             plateform: 'iOS',
-            link: 'https://itunes.apple.com/us/app/protonvpn-fast-secure-vpn/id1437005085'
+            link: 'https://itunes.apple.com/app/protonmail-encrypted-email/id979659905'
         },
-        { name: 'ProtonVPN', plateform: 'Windows', link: 'https://protonvpn.com/download/' },
-        { name: 'ProtonVPN', plateform: 'MacOS', link: 'https://protonvpn.com/download/' },
-        { name: 'ProtonVPN', plateform: 'Linux', link: 'https://protonvpn.com/download/' }
+        { name: 'ProtonMail Bridge', plateform: 'Windows', link: 'https://protonmail.com/bridge/install' },
+        { name: 'ProtonMail Bridge', plateform: 'MacOS', link: 'https://protonmail.com/bridge/install' },
+        { name: 'ProtonMail Bridge', plateform: 'Linux', link: 'https://protonmail.com/bridge/install' }
     ];
     return (
         <>
-            <span className="bold">ProtonVPN</span>
+            <span className="bold">ProtonMail</span>
             <Alert learnMore="todo">{c('Info').t`Lorem ipsum`}</Alert>
             <Table>
                 <TableHeader
@@ -46,4 +46,4 @@ const ProtonVPNClients = () => {
     );
 };
 
-export default ProtonVPNClients;
+export default ProtonMailClients;
