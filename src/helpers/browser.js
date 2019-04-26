@@ -71,17 +71,13 @@ export const doNotTrack = () => {
  * @return {void}
  */
 export function openWindow(url) {
-    if (isSafari()) {
-        const anchor = document.createElement('A');
-        anchor.setAttribute('rel', 'noreferrer nofollow noopener');
-        anchor.setAttribute('target', '_blank');
-        anchor.href = url;
-        return anchor.click();
-    }
+    const anchor = document.createElement('A');
 
-    const win = window.open();
-    win.opener = null;
-    win.location = url;
+    anchor.setAttribute('rel', 'noreferrer nofollow noopener');
+    anchor.setAttribute('target', '_blank');
+    anchor.href = url;
+
+    return anchor.click();
 }
 
 export const parseURL = (url = '') => {
