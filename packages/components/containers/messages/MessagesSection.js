@@ -5,6 +5,7 @@ import { SubTitle, Row, Field, Label, Info, useMailSettings } from 'react-compon
 import RemoteToggle from './RemoteToggle';
 import EmbeddedToggle from './EmbeddedToggle';
 import ShowMovedToggle from './ShowMovedToggle';
+import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
 
 const MessagesSection = () => {
     const [{ ShowImages } = {}] = useMailSettings();
@@ -37,11 +38,18 @@ const MessagesSection = () => {
                     <span className="mr1">{c('Label').t`Sent/Drafts`}</span>
                     <Info
                         title={c('Tooltip')
-                            .t`Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder.`}
+                            .t`Setting to 'Include moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder.`}
                     />
                 </Label>
                 <Field>
                     <ShowMovedToggle id="showMovedToggle" />
+                    <Label htmlFor="showMovedToggle" className="ml1">{c('Label').t`Include moved`}</Label>
+                </Field>
+            </Row>
+            <Row>
+                <Label htmlFor="requestLinkConfirmationToggle">{c('Label').t`Request link confirmation`}</Label>
+                <Field>
+                    <RequestLinkConfirmationToggle id="requestLinkConfirmationToggle" />
                 </Field>
             </Row>
         </>
