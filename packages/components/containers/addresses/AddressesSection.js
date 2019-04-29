@@ -75,6 +75,20 @@ const AddressesSection = () => {
         }
     }, [members, addresses]);
 
+    const getHeaderCells = () => {
+        const cells = [
+            c('Header for addresses table').t`Address`,
+            c('Header for addresses table').t`Status`,
+            c('Header for addresses table').t`Actions`
+        ];
+
+        if (member.ID === ALL_MEMBERS_ID) {
+            cells.splice(1, 0, c('Header for addresses table').t`Username`);
+        }
+
+        return cells;
+    };
+
     return (
         <>
             <SubTitle>{c('Title').t`Addresses`}</SubTitle>
@@ -84,33 +98,28 @@ const AddressesSection = () => {
                 <Loader />
             )}
             <Table>
-                <TableHeader
-                    cells={[
-                        c('Header for addresses table').t`Address`,
-                        c('Header for addresses table').t`Status`,
-                        c('Header for addresses table').t`Actions`
-                    ]}
-                />
-                <TableBody loading={loading} colSpan={3}>
+                <TableHeader cells={getHeaderCells()} />
+                <TableBody loading={loading} colSpan={member.ID === ALL_MEMBERS_ID ? 4 : 3}>
                     {selectedAddresses.map((address, index) => {
                         const key = address.ID;
-                        return (
-                            <TableRow
-                                key={key}
-                                cells={[
-                                    address.Email,
-                                    <AddressStatus key={key} address={address} index={index} />,
-                                    loadingMembers ? null : (
-                                        <AddressActions
-                                            user={user}
-                                            key={key}
-                                            address={address}
-                                            fetchAddresses={fetchAddresses}
-                                        />
-                                    )
-                                ]}
-                            />
-                        );
+                        const cells = [
+                            address.Email,
+                            <AddressStatus key={key} address={address} index={index} />,
+                            loadingMembers ? null : (
+                                <AddressActions
+                                    user={user}
+                                    key={key}
+                                    address={address}
+                                    fetchAddresses={fetchAddresses}
+                                />
+                            )
+                        ];
+
+                        if (member.ID === ALL_MEMBERS_ID) {
+                            cells.splice(1, 0, address.member.Name);
+                        }
+
+                        return <TableRow key={key} cells={cells} />;
                     })}
                 </TableBody>
             </Table>
