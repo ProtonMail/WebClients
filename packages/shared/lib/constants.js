@@ -242,3 +242,24 @@ export const LINK_WARNING = {
     KEY: 'link_warning',
     VALUE: 'dontAsk'
 };
+
+export const PLAN_NAMES = {
+    PLUS: 'plus',
+    PROFESSIONAL: 'professional',
+    VISIONARY: 'visionary',
+    VPN_BASIC: 'vpnbasic',
+    VPN_PLUS: 'vpnplus'
+};
+
+export const ADDON_NAMES = {
+    ADDRESS: '5address',
+    MEMBER: '1member',
+    DOMAIN: '1domain',
+    SPACE: '1gb',
+    VPN: '1vpn'
+};
+
+export const PLAN_TYPES = {
+    PLAN: 1,
+    ADDON: 0
+};
