@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, Label, Row, Field, useSubscription, useUser, MozillaInfoPanel } from 'react-components';
+import { SubTitle, Alert, Label, Row, Field, useSubscription, useUser, MozillaInfoPanel } from 'react-components';
 import NewsCheckboxes from './NewsCheckboxes';
 
 const NewsSection = () => {
@@ -26,6 +26,8 @@ const NewsSection = () => {
             <Row>
                 <Label>{c('Label').t`Email subscriptions`}</Label>
                 <Field>
+                    <Alert>{c('Info')
+                        .t`To keep up with the latest development at Protonmail, you can subscribe to our various emails and visit our blog from time to time.`}</Alert>
                     <NewsCheckboxes />
                 </Field>
             </Row>
