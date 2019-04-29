@@ -203,7 +203,6 @@ export { default as MemberModal } from './containers/members/MemberModal';
 export { default as MemberAddresses } from './containers/members/MemberAddresses';
 export { default as DraftTypeSelect } from './containers/layouts/DraftTypeSelect';
 export { default as TextDirectionSelect } from './containers/layouts/TextDirectionSelect';
-export { default as ShowMovedSelect } from './containers/layouts/ShowMovedSelect';
 export { default as ViewModeRadios } from './containers/layouts/ViewModeRadios';
 export { default as LayoutsSection } from './containers/layouts/LayoutsSection';
 export { default as ToolbarsSection } from './containers/layouts/ToolbarsSection';

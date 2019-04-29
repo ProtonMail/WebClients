@@ -16,19 +16,17 @@ import {
     updateViewMode,
     updateViewLayout,
     updateDraftType,
-    updateRightToLeft,
-    updateShowMoved
+    updateRightToLeft
 } from 'proton-shared/lib/api/mailSettings';
 
 import DraftTypeSelect from './DraftTypeSelect';
 import TextDirectionSelect from './TextDirectionSelect';
-import ShowMovedSelect from './ShowMovedSelect';
 import ComposerModeRadios from './ComposerModeRadios';
 import ViewLayoutRadios from './ViewLayoutRadios';
 import ViewModeRadios from './ViewModeRadios';
 
 const LayoutsSection = () => {
-    const [{ ComposerMode, ViewMode, ViewLayout, DraftMIMEType, RightToLeft, ShowMoved } = {}] = useMailSettings();
+    const [{ ComposerMode, ViewMode, ViewLayout, DraftMIMEType, RightToLeft } = {}] = useMailSettings();
     const { call } = useEventManager();
 
     const { request: requestComposerMode, loading: loadingComposerMode } = useApiWithoutResult(updateComposerMode);
@@ -36,7 +34,6 @@ const LayoutsSection = () => {
     const { request: requestViewLayout, loading: loadingViewLayout } = useApiWithoutResult(updateViewLayout);
     const { request: requestDraftType, loading: loadingDraftType } = useApiWithoutResult(updateDraftType);
     const { request: requestRightToLeft, loading: loadingRightToLeft } = useApiWithoutResult(updateRightToLeft);
-    const { request: requestShowMoved, loading: loadingShowMoved } = useApiWithoutResult(updateShowMoved);
 
     const handleChangeComposerMode = async (mode) => {
         await requestComposerMode(mode);
@@ -60,11 +57,6 @@ const LayoutsSection = () => {
 
     const handleChangeRightToLeft = async (value) => {
         await requestRightToLeft(value);
-        call();
-    };
-
-    const handleChangeShowMoved = async (value) => {
-        await requestShowMoved(value);
         call();
     };
 
@@ -135,22 +127,6 @@ const LayoutsSection = () => {
                         rightToLeft={RightToLeft}
                         onChange={handleChangeRightToLeft}
                         loading={loadingRightToLeft}
-                    />
-                </Field>
-            </Row>
-            <Row>
-                <Label>
-                    <span className="mr1">{c('Label').t`Sent/Drafts`}</span>
-                    <Info
-                        title={c('Tooltip')
-                            .t`Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder.`}
-                    />
-                </Label>
-                <Field>
-                    <ShowMovedSelect
-                        showMoved={ShowMoved}
-                        onChange={handleChangeShowMoved}
-                        loading={loadingShowMoved}
                     />
                 </Field>
             </Row>
