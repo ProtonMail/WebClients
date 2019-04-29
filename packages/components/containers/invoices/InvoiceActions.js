@@ -28,6 +28,15 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
 
     const list = [
         {
+            text: c('Action').t`View`,
+            type: 'button',
+            async onClick() {
+                const blob = await get();
+                setUrl(URL.createObjectURL(blob));
+                openPreviewInvoiceModal();
+            }
+        },
+        {
             text: c('Action').t`Download`,
             type: 'button',
             async onClick() {
@@ -37,18 +46,8 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
         }
     ];
 
-    list.unshift({
-        text: c('Action').t`View`,
-        type: 'button',
-        async onClick() {
-            const blob = await get();
-            setUrl(URL.createObjectURL(blob));
-            openPreviewInvoiceModal();
-        }
-    });
-
     if (invoice.State === INVOICE_STATE.UNPAID) {
-        list.push({
+        list.unshift({
             text: c('Action').t`Pay`,
             type: 'button',
             async onClick() {
