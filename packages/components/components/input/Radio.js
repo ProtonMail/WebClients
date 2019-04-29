@@ -12,7 +12,8 @@ const Radio = ({ id, children, ...rest }) => {
 };
 
 Radio.propTypes = {
-    id: PropTypes.string
+    id: PropTypes.string,
+    children: PropTypes.node
 };
 
 export default Radio;

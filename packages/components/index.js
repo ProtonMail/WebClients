@@ -206,6 +206,7 @@ export { default as TextDirectionSelect } from './containers/layouts/TextDirecti
 export { default as ShowMovedSelect } from './containers/layouts/ShowMovedSelect';
 export { default as ViewModeRadios } from './containers/layouts/ViewModeRadios';
 export { default as LayoutsSection } from './containers/layouts/LayoutsSection';
+export { default as ToolbarsSection } from './containers/layouts/ToolbarsSection';
 export { default as ViewLayoutRadios } from './containers/layouts/ViewLayoutRadios';
 export { default as ComposerModeRadios } from './containers/layouts/ComposerModeRadios';
 export { default as OrganizationSection } from './containers/organization/OrganizationSection';
