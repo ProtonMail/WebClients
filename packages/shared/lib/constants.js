@@ -263,3 +263,8 @@ export const PLAN_TYPES = {
     PLAN: 1,
     ADDON: 0
 };
+
+export const PLAN_SERVICES = {
+    MAIL: 1,
+    VPN: 4
+};
