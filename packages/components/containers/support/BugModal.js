@@ -58,8 +58,10 @@ const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
     const [images, setImages] = useState([]);
     const { request, loading } = useApiWithoutResult(reportBug);
     const link = (
-        <Href url="https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/">{c('Link')
-            .t`clearing your browser cache`}</Href>
+        <Href
+            key="linkClearCache"
+            url="https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/"
+        >{c('Link').t`clearing your browser cache`}</Href>
     );
     const handleChange = (key) => ({ target }) => update({ ...model, [key]: target.value });
 

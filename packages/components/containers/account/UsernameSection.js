@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const UsernameSection = () => {
     const [{ Name }] = useUser();
-    const link = <Link to="/settings/identity">{c('Link').t`identity settings`}</Link>;
+    const link = <Link key="linkIdentity" to="/settings/identity">{c('Link').t`identity settings`}</Link>;
 
     return (
         <>
