@@ -78,7 +78,7 @@ const AddressActions = ({ address, user, fetchAddresses }) => {
 
     if (canGenerate) {
         list.push({
-            text: c('Address action').t`Generate missing keus`,
+            text: c('Address action').t`Generate missing keys`,
             type: 'button',
             onClick: handleGenerate
         });
