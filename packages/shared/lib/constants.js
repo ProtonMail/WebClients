@@ -268,3 +268,13 @@ export const PLAN_SERVICES = {
     MAIL: 1,
     VPN: 4
 };
+
+export const FREE_PLAN = {
+    Name: 'free',
+    Type: 1,
+    Services: 5
+};
+
+export const FREE_SUBSCRIPTION = {
+    Plans: [FREE_PLAN]
+};

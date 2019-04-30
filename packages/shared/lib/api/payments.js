@@ -14,10 +14,10 @@ export const queryInvoices = ({ Page, PageSize, Owner, State, Type }) => ({
     params: { Page, PageSize, Owner, State, Type }
 });
 
-export const queryPlans = (Currency, Cycle) => ({
+export const queryPlans = (params) => ({
     url: 'payments/plans',
     method: 'get',
-    params: { Currency, Cycle }
+    params
 });
 
 export const getInvoice = (invoiceID) => ({
