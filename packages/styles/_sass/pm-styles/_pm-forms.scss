@@ -87,6 +87,9 @@ select.pm-field {
 
 
 /* sizes */
+.pm-field--tiny {
+  padding: em(6); // useful for address group
+}
 .pm-field--small {
   padding: em(2) em(16);  // design want 26px height (actually 27 to avoid .5px)
 }
