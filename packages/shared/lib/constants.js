@@ -281,3 +281,5 @@ export const PLAN_NAMES = {
 export const COUPON_CODES = {
     BUNDLE: 'BUNDLE'
 };
+
+export const GIFT_CODE_LENGTH = 16;
