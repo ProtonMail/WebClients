@@ -88,3 +88,9 @@ export const buyCredit = (data) => ({
     method: 'post',
     data
 });
+
+export const validateCredit = (data) => ({
+    url: 'payments/credit/check',
+    method: 'post',
+    data
+});
