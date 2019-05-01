@@ -291,8 +291,16 @@
   @extend .pm-button-blue;
 }
 .pm-button--link {
-  @extend .link;
+  color: $color-links;
   border-width: 0;
+  box-shadow: none;
+  &:focus,
+  &:hover,
+  &:active {
+    color: $color-hover;
+    text-decoration: underline;
+    box-shadow: none;
+  }
 }
 .pm-button--error,
 .pm-button--error:focus,
