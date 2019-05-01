@@ -937,8 +937,7 @@ starButtons.forEach(function(elem) {
 function themePreview( e ) {
   var values = e.currentTarget.dataset,
       css = '',
-      digest = '',
-      hash256 = document.getElementById('hash-theme'),
+      css_mini = '', // useful for sha generation
       style = document.getElementById('user-style'),
       stylePreview = document.getElementById('css-preview');
 
@@ -968,12 +967,33 @@ function themePreview( e ) {
     css += '  --boxshadow-main: ' + values.boxshadowMain + ';' + "\n";
     css += '  --img-searchbox-path: ' + values.imgSearchbox + '; }' + "\n";
 
+    css_mini += ':root{';
+    css_mini += '--main-bg-color:' + values.mainBgColor + ';';
+    css_mini += '--secondary-bg-color:' + values.secondaryBgColor + ';';
+   
+    css_mini += '--bgcolor-searchbox-field:' + values.bgcolorSearchboxField + ';';
+    css_mini += '--bgcolor-spacebar:' + values.bgcolorSpacebar + ';';
+    css_mini += '--bgcolor-aside-link:' + values.bgcolorAsideLink + ';';
+    css_mini += '--bgcolor-toolbar:' + values.bgcolorToolbar + ';';
+   
+    css_mini += '--fillcolor-logo:' + values.fillcolorLogo + ';';
+    css_mini += '--fillcolor-icons:' + values.fillcolorIcons + ';';
+   
+    css_mini += '--color-nav-link:' + values.colorNavLink + ';';
+    css_mini += '--color-nav-active:' + values.colorNavActive + ';';
+    css_mini += '--color-standard-text:' + values.colorStandardText + ';';
+
+    css_mini += '--boxshadow-main:' + values.boxshadowMain + ';';
+    css_mini += '--img-searchbox-path:' + values.imgSearchbox + ';}';
+
+    //console.log(css_mini);
+
     if ( style ) {
-       style.innerHTML = css;
+       style.innerHTML = css_mini;
     }
     else {
       style = document.createElement('style');
-      style.appendChild(document.createTextNode(css));
+      style.appendChild(document.createTextNode(css_mini));
       style.setAttribute('id', 'user-style');
       head.appendChild(style);
     }
