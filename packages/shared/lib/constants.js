@@ -25,6 +25,7 @@ export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="
 export const DEFAULT_CURRENCY = 'EUR';
 export const CURRENCIES = ['EUR', 'USD', 'CHF'];
 export const MIN_BITCOIN_AMOUNT = 500;
+export const DEFAULT_CREDITS_AMOUNT = 2500;
 export const DEFAULT_DONATION_AMOUNT = 2500;
 export const BTC_DONATION_ADDRESS = '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8';
 export const AUTH_LOG_EVENTS = {
