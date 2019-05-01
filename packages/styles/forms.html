@@ -256,24 +256,29 @@ section: design
 
 <h2>Field sizes</h2>
 
-<p>Add <code>pm-field--large</code> or <code>pm-field--small</code> to the <code>input</code>:</p>
+<p>Add <code>pm-field--large</code> or <code>pm-field--small</code>/<code>pm-field--tiny</code> to the <code>input</code>:</p>
 
 <pre class="language-markup"><code>&lt;input type="text" class="pm-field <strong>pm-field--small</strong>" value="A field" /&gt;</code></pre>
 
 <div class="flex mt2 mb2 onmobile-flex-column">
     <span class="pr1">
-        <input type="text" class="pm-field pm-field--small auto" value="A field" />
+        <input type="text" class="pm-field pm-field--small auto" value="A field with pm-field--small" />
     </span>
     <span class="pr1">
-        <input type="text" class="pm-field auto" value="A field" />
+        <input type="text" class="pm-field auto" value="A normal field" />
     </span>
     <span class="pr1">
-        <input type="text" class="pm-field pm-field--large auto" value="A field" />
+        <input type="text" class="pm-field pm-field--large auto" value="A field with pm-field--large" />
     </span>
 </div>
 
+<div class="flex mt2 mb2 onmobile-flex-column">
+    <span class="pr1">
+        <input type="text" class="pm-field pm-field--tiny auto" value="pm-field--tiny, used in address group" />
+    </span>
+</div>
 
-<h2 id="toggle-state">Toggle state (to check from accessibility pov)</h2>
+<h2 id="toggle-state">Toggle states</h2>
 
 
 <div class="flex flex-nowrap onmobile-flex-column mb1">
