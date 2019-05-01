@@ -173,7 +173,6 @@ export const CYCLE = {
     TWO_YEARS: 24
 };
 
-export const BUNDLE_COUPON_CODE = 'BUNDLE';
 const BLACK_FRIDAY_YEAR = 2018;
 export const BLACK_FRIDAY = {
     YEAR: BLACK_FRIDAY_YEAR,
@@ -243,14 +242,6 @@ export const LINK_WARNING = {
     VALUE: 'dontAsk'
 };
 
-export const PLAN_NAMES = {
-    PLUS: 'plus',
-    PROFESSIONAL: 'professional',
-    VISIONARY: 'visionary',
-    VPN_BASIC: 'vpnbasic',
-    VPN_PLUS: 'vpnplus'
-};
-
 export const ADDON_NAMES = {
     ADDRESS: '5address',
     MEMBER: '1member',
@@ -277,4 +268,16 @@ export const FREE_PLAN = {
 
 export const FREE_SUBSCRIPTION = {
     Plans: [FREE_PLAN]
+};
+
+export const PLAN_NAMES = {
+    plus: 'Plus',
+    professional: 'Professional',
+    visionary: 'Visionary',
+    vpnbasic: 'Basic',
+    vpnplus: 'Plus'
+};
+
+export const COUPON_CODES = {
+    BUNDLE: 'BUNDLE'
 };
