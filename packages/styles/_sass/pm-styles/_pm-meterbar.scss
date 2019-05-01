@@ -3,11 +3,11 @@
  */
 
 .spacebar-container {
-    padding: 1rem 2rem;
+  padding: 1rem 2rem;
+  color: var(--color-standard-text, $white);
 }
 
-.spacebar,
-.spacebar-gauge {
+.spacebar { /* factor with .spacebar-gauge for IE11, but f*** IE11 */
   /* Reset the default appearance */
   //-webkit-appearance: none; // well, because Chrome.
   -moz-appearance: none;
@@ -16,18 +16,17 @@
 
   height: 6px;
   border-radius: 3px;
-  background: $black;
-}
-.spacebar {
+  background: var(--bgcolor-spacebar, $black);
+
   &::-webkit-meter-bar {
-    background: $black;
+    background: var(--bgcolor-spacebar, $black);
     border-radius: 3px;
   }
 
-  &::-webkit-meter-optimum-value {
-    background: $pm-blue; 
-    border-radius: 3px;
-  }
+  // &::-webkit-meter-optimum-value {
+  //   background: $pm-blue; 
+  //   border-radius: 3px;
+  // }
   &::-webkit-meter-optimum-value {
     background: $pm-blue; 
     border-radius: 3px;
@@ -39,21 +38,25 @@
   
 }
 
-.spacebar-percent {
-  border-radius: 3px;
-  background: $pm-blue;
-  height: 6px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+// .spacebar-percent {
+//   border-radius: 3px;
+//   background: $pm-blue;
+//   height: 6px;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
 
 /* to target IE/EDGE: hack */
-_:-ms-input-placeholder, :root {
-  .spacebar {
-    visibility: hidden;
-  }
-  .spacebar-gauge {
-    visibility: visible;
-  }  
-}
+// _:-ms-input-placeholder, :root {
+//   .spacebar {
+//     visibility: hidden;
+//   }
+//   .spacebar-gauge {
+//     visibility: visible;
+//   }  
+// }
+
+// .spacebar-version {
+//   color: rgba($white, .3);
+// }

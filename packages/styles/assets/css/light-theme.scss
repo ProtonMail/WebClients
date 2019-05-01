@@ -1,0 +1,24 @@
+---
+---
+/* 
+ * Light theme
+ */
+
+$path-images: "/assets/img/shared/";
+@import "reusable-components/design-system-config";
+
+$main-bg-color: $pm-global-light;
+$secondary-bg-color: $white;
+$bgcolor-searchbox-field: $white;
+$bgcolor-spacebar: rgba(0, 0, 0, 0.05);
+$bgcolor-aside-link: #e3e4e7;
+$bgcolor-toolbar: $pm-blue-light;
+$fillcolor-logo: $pm-global-light;
+$fillcolor-icons: $pm-global-grey;
+$color-nav-link: $pm-global-grey;
+$color-nav-active: $pm-blue-dark;
+$color-standard-text: $pm-global-grey;
+$boxshadow-main: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+$img-searchbox-path: url(#{$path-images}sprite-for-css-only.svg#css-search-black);
+
+@import "pm-styles/pm-theme-config";

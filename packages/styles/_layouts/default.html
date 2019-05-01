@@ -65,13 +65,13 @@
               <div class="flex-item-noshrink relative nomobile spacebar-container aligncenter">
 
                 <meter class="spacebar inbl w100 alignleft" min="0" max="100" low="0" high="100" value="42" aria-describedby="sizeRemaining">
-                  <div class="spacebar-gauge inbl relative w100" aria-hidden="true">
+                  <!-- <div class="spacebar-gauge inbl relative w100" aria-hidden="true">
                     <span class="spacebar-percent inbl" style="width: 42%;"></span>
-                  </div>
+                  </div> -->
                 </meter>
 
-                <span class="bl small m0" id="sizeRemaining">4.2 GB / 10 GB</span>
-                <span class="bl small m0">ProtonMail v4.00</span>
+                <span class="bl small m0 spacebar-size" id="sizeRemaining">4.2 GB / 10 GB</span>
+                <span class="bl small m0 spacebar-version">ProtonMail v4.00</span>
 
               </div>
 
@@ -83,7 +83,7 @@
             <div class="toolbar noprint">
 
             </div>
-            <div class="main-area--withToolbar {% if page.pageId == 'conversations' %} no-scroll {% endif %} reset4print"><!-- can't apply flex on it directly, otherwise, stick will fail -->
+            <div class="main-area--withToolbar {% if page.pageId == 'conversations' %} no-scroll {% endif %} reset4print scroll-smooth-touch"><!-- can't apply flex on it directly, otherwise, stick will fail -->
               <div class="flex flex-reverse">
 
                 {% include sub-nav.html %}                

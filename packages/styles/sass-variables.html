@@ -2,7 +2,7 @@
 layout: default
 lang: en
 pageId: sass-variables
-title: About Sass variables
+title: About Sass/CSS variables
 description: Some general rules about Sass variables
 keywords: structure, Sass, CSS, design system, proton
 section: fe-guidelines
@@ -10,8 +10,8 @@ subsection: sass-variables
 ---
 
 
-
-<h2>General rules</h2>
+<div id="sass-variables">
+<h2>General rules for Sass variables</h2>
 
 <ul>
   <li>If possible, create Sass variables, once a property or a value is often used in a module or if the information inside is useful for several modules.</li>
@@ -20,9 +20,9 @@ subsection: sass-variables
   <li>And if possible, do open an issue on Design System to document it. :)</li>
 </ul>
 
-<h2>List of all most important variables </h2>
+<h3>List of all most important Sass variables </h3>
 
-<h3>Global layout</h3>
+<h4>Global layout</h4>
 
 <ul>
   <li class="mb0-5"><code>$aside-bar-width</code>: <button type="button" data-href="#aside-bar" class="js-target-link pm-button">highlight aside bar</button></li>
@@ -35,10 +35,46 @@ subsection: sass-variables
 
 <p>For color variables, have a look at <a href="/colors/">colors section</a>.</p>
 
-
-
-<h2>Overwriting variables</h2>
+<h3>Overwriting variables</h3>
 
 <p>If you need (for your project) to set up different values than the default one of the design system, do overwrite variables in <code>styles-pm.scss</code>, <strong class="uppercase">not</strong> in Sass partials, as they could be updated later.</p>
 
 <p>Each variable in Sass partials <strong class="uppercase">must</strong> have <code>!default</code>, in order to avoid break layout on each project with different settings.</p>
+
+</div>
+
+
+
+<div id="css-custom-properties">
+
+<h2 class="mt2">CSS variables (custom properties)</h2>
+
+<p>These CSS custom properties are present to allow easy theming of the interface. You can see examples in action in <a href="/themes/">Themes section</a>.</p>
+
+<ul>
+  <li class="mb0-5"><code>--main-bg-color</code>: global main color</li>
+  <li class="mb0-5"><code>--secondary-bg-color</code>: secondary main color</li>
+  <li class="mb0-5"><code>--bgcolor-searchbox-field</code>: background-color of searchbox</li>
+  <li class="mb0-5"><code>--bgcolor-spacebar</code>: background-color of remaining space bar</li>
+  <li class="mb0-5"><code>--bgcolor-aside-link</code>: background-color of link icons in aside bar.</li>
+  <li class="mb0-5"><code>--bgcolor-toolbar</code>: background-color of the toolbar</li>
+  <li class="mb0-5"><code>--fillcolor-logo</code>: color used for filling SVG logo</li>
+  <li class="mb0-5"><code>--fillcolor-icons</code>: color used for filling icons</li>
+  <li class="mb0-5"><code>--color-nav-link</code>: color used for navigation links</li>
+  <li class="mb0-5"><code>--color-nav-active</code>: color used for navigation links when active</li>
+  <li class="mb0-5"><code>--color-standard-text</code>: color used for text</li>
+  <li class="mb0-5"><code>--boxshadow-main</code>: used to apply a box shadow on main content (used for light theme for example)</li>
+  <li class="mb0-5"><code>--img-searchbox-path</code>: the path for search icon in search box.</li>
+</ul>
+
+<p>Updating these custom properties allows to create simple themes without surcharging all the CSS stuff.</p>
+
+<p>If you need to check where they are used, perform a search of have a look at <code>design-system-website/_themes.scss</code>, it contains all rules that are using them. This partial should <strong class="uppercase">not</strong> be used in production, it is only for testing and reference purposes.</p>
+
+<h3>Static flat CSS files for themes</h3>
+
+<p>Sass files for themes are in <code>assets/css</code>, example <code>assets/css/blue-theme.scss</code>. They are using <code>/_pm-theme-config.scss</code> partial (not used in production, only for theming).</p>
+
+<p>Flat CSS files for themes are in <code>assets/css/themes-flat-css-files/</code> folder.</p>
+
+</div>

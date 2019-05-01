@@ -1,21 +1,26 @@
 .topnav-link {
   border: 1px solid transparent;
   padding: 1rem;
-  color: $white;
+  color: var(--color-nav-link, $white);
   &:focus,
   &:hover,
   &:active,
   &[aria-current="true"] {
-    color: $pm-blue;
+    color: var(--color-nav-active, $pm-blue);
     text-decoration: none;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.35);
     
     > .topnav-icon {
-       fill: $pm-blue;
+      fill: var(--color-nav-active, $pm-blue);
     }
   }
   &[aria-current="true"] {
-    border: 1px solid $pm-blue;
+    border-color: var(--color-nav-active, $pm-blue);
+    box-shadow: none;
     font-weight: bold;
+  }
+  & > svg {
+  fill: var(--fillcolor-icons, $white);
   }
 }
 
@@ -27,3 +32,5 @@
     }
   }
 }
+
+

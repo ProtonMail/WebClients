@@ -77,7 +77,8 @@ $rtl-option: true;
 
 @import "design-system-website/global-structure";
 @import "design-system-website/prism";
-@import "design-system-website/whitemode";
+//@import "design-system-website/themes"; // only useful for having all styles updated in real time
+// DO NOT USE IT IN PRODUCTION
 @import "design-system-website/inside-content"; 
 
 @import "pm-styles/pm-settings-home";

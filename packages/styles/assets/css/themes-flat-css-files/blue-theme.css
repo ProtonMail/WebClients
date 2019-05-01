@@ -1,0 +1,17 @@
+/* 
+ * Blue theme
+ */
+:root {
+  --main-bg-color: #526ee0;
+  --secondary-bg-color: #788ee8;
+  --bgcolor-searchbox-field: rgba(0, 0, 0, 0.2);
+  --bgcolor-spacebar: rgba(255, 255, 255, 0.1);
+  --bgcolor-aside-link: rgba(0, 0, 0, 0.3);
+  --bgcolor-toolbar: #788ee8;
+  --fillcolor-logo: #f6f7fa;
+  --fillcolor-icons: #fff;
+  --color-nav-link: #fff;
+  --color-nav-active: #fff;
+  --color-standard-text: #fff;
+  --boxshadow-main: none;
+  --img-searchbox-path: url(/assets/img/shared/sprite-for-css-only.svg#css-search-white); }

@@ -1,0 +1,78 @@
+---
+layout: default
+lang: en
+pageId: themes
+title: Theme previsualisation
+description: All color references and rules for Proton Products
+keywords: themes, color, proton, custom theme
+section: design
+---
+
+
+<p>Click on an image to preview a theme: </p>
+
+<button title="Activate dark theme" type="button" class="js-previewThemeButton"><img src="/assets/img/pm-images/theme-dark.svg" alt="Activate dark theme"></button>
+
+<button 
+    title="Activate blue theme" 
+    type="button" 
+    class="js-previewThemeButton" 
+    data-theme-name="Blue" 
+    data-main-bg-color="#526ee0" 
+    data-secondary-bg-color="#788ee8" 
+
+    data-bgcolor-searchbox-field="rgba(0, 0, 0, 0.2)"
+    data-bgcolor-aside-link="rgba(0, 0, 0, 0.3)" 
+    data-bgcolor-spacebar="rgba(255, 255, 255, 0.1)"
+    data-bgcolor-toolbar="#788ee8"
+    
+    data-fillcolor-logo="#f6f7fa"
+    data-fillcolor-icons="#fff"
+
+    data-color-nav-link="#fff"
+    data-color-nav-active="#fff"
+    data-color-standard-text="#fff"
+
+    data-boxshadow-main="none"
+    data-img-searchbox="url(/assets/img/shared/sprite-for-css-only.svg#css-search-white)">
+    <img src="/assets/img/pm-images/theme-blue.svg" alt="Activate blue theme">
+</button>
+
+<button 
+    title="Activate light theme" 
+    type="button" 
+    class="js-previewThemeButton" 
+    data-theme-name="Light" 
+    data-main-bg-color="#f6f7fa" 
+    data-secondary-bg-color="#fff" 
+
+    data-bgcolor-searchbox-field="#fff"
+    data-bgcolor-aside-link="#e3e4e7" 
+    data-bgcolor-spacebar="rgba(0, 0, 0, 0.05)"
+    data-bgcolor-toolbar="#f6f7fa"
+    
+    data-fillcolor-logo="#526ee0"
+    data-fillcolor-icons="#262a33"
+
+    data-color-nav-link="#262a33"
+    data-color-nav-active="#526ee0"
+    data-color-standard-text="#262a33"
+
+    data-boxshadow-main="0 0 15px 0 rgba(0, 0, 0, 0.1)"
+    data-img-searchbox="url(/assets/img/shared/sprite-for-css-only.svg#css-search-black)">
+    <img src="/assets/img/pm-images/theme-light.svg" alt="Activate light theme">
+</button>
+
+
+<h2 class="mt1">CSS code for custom theme</h2>
+
+<pre><code class=" language-css" id="css-preview">Default theme! No additional/custom styles.</code></pre>
+
+<h2 class="mt1">For creating a new theme/updating theming features</h2>
+
+<p>Simply duplicate <code>assets/css/blue-theme.scss</code> and customize. It will generate the static CSS file with new values for custom properties.<br>
+For creating a previsualisation in the Design System, duplicate the button in this page and update values, and update hashes for CSP <code>style-src</code>.</p>
+
+<p>Before committing new themes, do not forget to launch <code>copy-theme-flat-css-files.sh</code>, in order to have flat CSS files in the repo.</p>
+  
+<p>For a reference of all CSS custom properties used, have a look at <a href="/sass-variables/#css-custom-properties">Sass/CSS variables</a>. If an element needs to use a custom property in order to be “themable”, please do update <code>design-system-website/_themes.scss</code> for reference.</p>

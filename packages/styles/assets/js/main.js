@@ -11,6 +11,7 @@ Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,lookb
 Prism.languages.javascript=Prism.languages.extend("clike",{"class-name":[Prism.languages.clike["class-name"],{pattern:/(^|[^$\w\xA0-\uFFFF])[_$A-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\.(?:prototype|constructor))/,lookbehind:!0}],keyword:[{pattern:/((?:^|})\s*)(?:catch|finally)\b/,lookbehind:!0},/\b(?:as|async|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/],number:/\b(?:(?:0[xX][\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+)n?|\d+n|NaN|Infinity)\b|(?:\b\d+\.?\d*|\B\.\d+)(?:[Ee][+-]?\d+)?/,"function":/[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*\(|\.(?:apply|bind|call)\()/,operator:/-[-=]?|\+[+=]?|!=?=?|<<?=?|>>?>?=?|=(?:==?|>)?|&[&=]?|\|[|=]?|\*\*?=?|\/=?|~|\^=?|%=?|\?|\.{3}/}),Prism.languages.javascript["class-name"][0].pattern=/(\b(?:class|interface|extends|implements|instanceof|new)\s+)[\w.\\]+/,Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/((?:^|[^$\w\xA0-\uFFFF."'\])\s])\s*)\/(\[(?:[^\]\\\r\n]|\\.)*]|\\.|[^\/\\\[\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})\]]))/,lookbehind:!0,greedy:!0},"function-variable":{pattern:/[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\([^()]*\)|[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)\s*=>))/i,alias:"function"},parameter:[{pattern:/(function(?:\s+[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)?\s*\(\s*)[^\s()][^()]*?(?=\s*\))/,lookbehind:!0,inside:Prism.languages.javascript},{pattern:/[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*=>)/,inside:Prism.languages.javascript},{pattern:/(\(\s*)[^\s()][^()]*?(?=\s*\)\s*=>)/,lookbehind:!0,inside:Prism.languages.javascript},{pattern:/((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*\s*)\(\s*)[^\s()][^()]*?(?=\s*\)\s*\{)/,lookbehind:!0,inside:Prism.languages.javascript}],constant:/\b[A-Z][A-Z\d_]*\b/}),Prism.languages.insertBefore("javascript","string",{"template-string":{pattern:/`(?:\\[\s\S]|\${[^}]+}|[^\\`])*`/,greedy:!0,inside:{interpolation:{pattern:/\${[^}]+}/,inside:{"interpolation-punctuation":{pattern:/^\${|}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}}}),Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\s\S]*?>)[\s\S]*?(?=<\/script>)/i,lookbehind:!0,inside:Prism.languages.javascript,alias:"language-javascript",greedy:!0}}),Prism.languages.js=Prism.languages.javascript;
 !function(){"undefined"!=typeof self&&self.Prism&&self.document&&document.createRange&&(Prism.plugins.KeepMarkup=!0,Prism.hooks.add("before-highlight",function(e){if(e.element.children.length){var n=0,o=[],t=function(e,d){var r={};d||(r.clone=e.cloneNode(!1),r.posOpen=n,o.push(r));for(var a=0,s=e.childNodes.length;s>a;a++){var l=e.childNodes[a];1===l.nodeType?t(l):3===l.nodeType&&(n+=l.data.length)}d||(r.posClose=n)};t(e.element,!0),o&&o.length&&(e.keepMarkup=o)}}),Prism.hooks.add("after-highlight",function(e){if(e.keepMarkup&&e.keepMarkup.length){var n=function(e,o){for(var t=0,d=e.childNodes.length;d>t;t++){var r=e.childNodes[t];if(1===r.nodeType){if(!n(r,o))return!1}else 3===r.nodeType&&(!o.nodeStart&&o.pos+r.data.length>o.node.posOpen&&(o.nodeStart=r,o.nodeStartPos=o.node.posOpen-o.pos),o.nodeStart&&o.pos+r.data.length>=o.node.posClose&&(o.nodeEnd=r,o.nodeEndPos=o.node.posClose-o.pos),o.pos+=r.data.length);if(o.nodeStart&&o.nodeEnd){var a=document.createRange();return a.setStart(o.nodeStart,o.nodeStartPos),a.setEnd(o.nodeEnd,o.nodeEndPos),o.node.clone.appendChild(a.extractContents()),a.insertNode(o.node.clone),a.detach(),!1}}return!0};e.keepMarkup.forEach(function(o){n(e.element,{node:o,pos:0})}),e.highlightedCode=e.element.innerHTML}}))}();
 
+
 /**
  * van11y-accessible-hide-show-aria - ES2015 accessible hide-show system (collapsible regions), using ARIA (compatible IE9+ when transpiled)
  * @version v3.0.1
@@ -460,14 +461,17 @@ var whiteModeClass = 'is-whitemode';
 function resizeWindow(){
     var breakpoint = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/['"]+/g, '');
     var sidebar = document.body.querySelector('.js-sidebar');
-    sidebar.classList.remove('nomobile');
 
-    if ( breakpoint === 'mobile' ||  breakpoint === 'tinymobile' ){
-        sidebar.setAttribute('aria-hidden', true);
+    if ( sidebar ) {
+      sidebar.classList.remove('nomobile');
+
+      if ( breakpoint === 'mobile' ||  breakpoint === 'tinymobile' ){
+          sidebar.setAttribute('aria-hidden', true);
+      }
+      else { 
+          sidebar.removeAttribute('aria-hidden');
+          }
     }
-    else { 
-        sidebar.removeAttribute('aria-hidden');
-        }
 }
 
 resizeWindow();
@@ -479,19 +483,23 @@ function togglemenu(){
     var burger_nav = document.body.querySelector('.js-togglemenu');
     var sidebar = document.body.querySelector('.js-sidebar');
 
-    if (sidebar.getAttribute('aria-hidden') === null) {
+    if ( sidebar ) {
+      if (sidebar.getAttribute('aria-hidden') === null) {
         sidebar.setAttribute('aria-hidden', true);
         burger_nav.setAttribute('aria-expanded', false);
-    }
-    else { 
-        sidebar.removeAttribute('aria-hidden'); 
-        burger_nav.setAttribute('aria-expanded', true);
+      }
+      else { 
+          sidebar.removeAttribute('aria-hidden'); 
+          burger_nav.setAttribute('aria-expanded', true);
+      }
     }
 
 }
 
 var burger_nav = document.body.querySelector('.js-togglemenu');
-burger_nav.addEventListener('click', togglemenu);
+if ( burger_nav ){
+  burger_nav.addEventListener('click', togglemenu);
+}
 
 
 
@@ -920,4 +928,85 @@ var starButtons = [].slice.call(document.body.querySelectorAll('.js-starbutton')
 
 starButtons.forEach(function(elem) {
     elem.addEventListener("click", starUnstar );
+});
+
+
+/**
+ * Theme preview
+ */
+function themePreview( e ) {
+  var values = e.currentTarget.dataset,
+      css = '',
+      digest = '',
+      hash256 = document.getElementById('hash-theme'),
+      style = document.getElementById('user-style'),
+      stylePreview = document.getElementById('css-preview');
+
+  if ( values.mainBgColor ) {
+
+    var head = document.head || document.getElementsByTagName('head')[0];
+
+    css += '/* ' + "\n";
+    css += ' * ' + values.themeName + ' theme' + "\n";
+    css += ' */' + "\n";
+    css += ':root {' + "\n";
+    css += '  --main-bg-color: ' + values.mainBgColor + ';' + "\n";
+    css += '  --secondary-bg-color: ' + values.secondaryBgColor + ';' + "\n";
+   
+    css += '  --bgcolor-searchbox-field: ' + values.bgcolorSearchboxField + ';' + "\n";
+    css += '  --bgcolor-spacebar: ' + values.bgcolorSpacebar + ';' + "\n";
+    css += '  --bgcolor-aside-link: ' + values.bgcolorAsideLink + ';' + "\n";
+    css += '  --bgcolor-toolbar: ' + values.bgcolorToolbar + ';' + "\n";
+   
+    css += '  --fillcolor-logo: ' + values.fillcolorLogo + ';' + "\n";
+    css += '  --fillcolor-icons: ' + values.fillcolorIcons + ';' + "\n";
+   
+    css += '  --color-nav-link: ' + values.colorNavLink + ';' + "\n";
+    css += '  --color-nav-active: ' + values.colorNavActive + ';' + "\n";
+    css += '  --color-standard-text: ' + values.colorStandardText + ';' + "\n";
+
+    css += '  --boxshadow-main: ' + values.boxshadowMain + ';' + "\n";
+    css += '  --img-searchbox-path: ' + values.imgSearchbox + '; }' + "\n";
+
+    if ( style ) {
+       style.innerHTML = css;
+    }
+    else {
+      style = document.createElement('style');
+      style.appendChild(document.createTextNode(css));
+      style.setAttribute('id', 'user-style');
+      head.appendChild(style);
+    }
+    
+  }
+  else {
+
+    var style = document.getElementById('user-style');
+    if ( style ){
+      style.parentNode.removeChild(style);
+    }
+    
+  }
+
+  // update styles preview
+  if ( css !== '' ) {
+    if ( stylePreview ){
+      stylePreview.innerHTML = css;
+      Prism.highlightElement(stylePreview);
+    }
+  }
+  else { 
+    if ( stylePreview ){
+      stylePreview.innerHTML = 'Default theme! No additional/custom styles.'; 
+    }
+  }
+
+
+}
+
+
+var previewThemeButtons = [].slice.call(document.body.querySelectorAll('.js-previewThemeButton'));
+
+previewThemeButtons.forEach(function(elem) {
+    elem.addEventListener("click", themePreview );
 });

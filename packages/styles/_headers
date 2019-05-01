@@ -3,12 +3,16 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
-  Content-Security-Policy: "upgrade-insecure-requests;  block-all-mixed-content; default-src 'none' ;  script-src 'self' *.cloudfront.net ; style-src 'self' *.cloudfront.net 'unsafe-inline' ; img-src 'self'; font-src 'self';  connect-src 'self' ; child-src 'self' ; frame-src 'self' ; frame-ancestors 'self'  ; manifest-src 'self' ; worker-src 'self' ; base-uri 'self' ; form-action 'self' ; "
+  Content-Security-Policy: "upgrade-insecure-requests;  block-all-mixed-content; default-src 'none' ;  script-src 'self' *.cloudfront.net ; style-src 'self' *.cloudfront.net 'sha256-axJAleRYmgE2popQk1h5l7p2/lhfnH8jD0wqIpOTmDc=' 'sha256-BSotIw2cpD4FO1E2ZzaNY7y3BwHroOxKhlUxKNR9b6I=' 'sha256-6R/REfjZ9bcP4or3JlAAAnx1QxI3McMy+wpooXmKojc=' 'sha256-9jqinEzw6TlSuzzgD+LLz7u1o6bLn07G82BDX7ABus4=' ; img-src 'self'; font-src 'self';  connect-src 'self' ; child-src 'self' ; frame-src 'self' ; frame-ancestors 'self' ; manifest-src 'self' ; worker-src 'self' ; base-uri 'self' ; form-action 'self' ; "
   Feature-Policy: "geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'self'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'self'; fullscreen 'self'; payment 'none' ;"
 
 # 'sha256-axJAleRYmgE2popQk1h5l7p2/lhfnH8jD0wqIpOTmDc=' styles for SVG icons (Firefox bug)
 # 'sha256-BSotIw2cpD4FO1E2ZzaNY7y3BwHroOxKhlUxKNR9b6I=' styles for SVG image (Default composer, Firefox bug)
-# had to activate unsafe-inline for style for meter bar for IE11
+# need to activate unsafe-inline for style for meter bar for IE11 => f***, we won't support it, removed
+# 'sha256-6R/REfjZ9bcP4or3JlAAAnx1QxI3McMy+wpooXmKojc=' for inline CSS for blue theme
+# 'sha256-9jqinEzw6TlSuzzgD+LLz7u1o6bLn07G82BDX7ABus4=' for inline CSS for light theme
+
+
 
 /*.css
   Cache-Control: max-age=31536000, public

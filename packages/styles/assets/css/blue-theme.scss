@@ -1,0 +1,24 @@
+---
+---
+/* 
+ * Blue theme
+ */
+
+$path-images: "/assets/img/shared/";
+@import "reusable-components/design-system-config";
+
+$main-bg-color: $pm-blue-dark;
+$secondary-bg-color: $pm-blue-light;
+$bgcolor-searchbox-field: rgba(0, 0, 0, 0.2);
+$bgcolor-spacebar: rgba(255, 255, 255, 0.1);
+$bgcolor-aside-link: rgba(0, 0, 0, 0.3);
+$bgcolor-toolbar: $pm-blue-light;
+$fillcolor-logo: $pm-global-light;
+$fillcolor-icons: $white;
+$color-nav-link: $white;
+$color-nav-active: $white;
+$color-standard-text: $white;
+$boxshadow-main: none;
+$img-searchbox-path: url(#{$path-images}sprite-for-css-only.svg#css-search-white);
+
+@import "pm-styles/pm-theme-config";

@@ -72,6 +72,11 @@
               Login (no nav)
             </a>
           </li>
+          <li class="navigation__item">
+            <a href="/themes/" class="navigation__link"{% if page.pageId == 'themes' %} aria-current="page"{% endif %}>
+              Themes
+            </a>
+          </li>
         </ul>
         
         <p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Front-end Guidelines</p>
@@ -83,7 +88,7 @@
           </li>
           <li class="navigation__item">
             <a href="/sass-variables/" class="navigation__link"{% if page.pageId == 'sass-variables' %} aria-current="page"{% endif %}>
-              Sass variables
+              Sass/CSS variables
             </a>
           </li>
           <li class="navigation__item">

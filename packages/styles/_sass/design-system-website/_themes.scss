@@ -1,0 +1,101 @@
+/*
+ * styles only useful for theming
+ * THIS FILE IS ONLY USED TO ACTIVATE QUICKLY AND TEST RULES TO UPDATE
+ * ONCE TESTED, PLEASE UPDATE CSS FILES ACCORDINGLY
+ */
+
+.aside {
+  background: var(--main-bg-color, $pm-global-grey);
+}
+
+.logo g {
+  fill: var(--fillcolor-logo, $pm-global-light);
+}
+
+.toolbar {
+  background: var(--bgcolor-toolbar, $pm-global-altgrey);
+}
+
+.content {
+  background-image: -webkit-linear-gradient(top, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) ); 
+  background-image: linear-gradient(to bottom, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
+}
+
+.navigation__link,
+.navigation__link:focus,
+.navigation__link:hover,
+.animated-expandmore__button {
+  color:  var(--color-nav-link, $pm-global-light);
+}
+
+[aria-expanded="true"].animated-expandmore__button,
+[aria-current="page"].navigation__link,
+.animated-expandmore__button:active {
+  background: var(--main-bg-color, $pm-global-grey);
+  color: var(--color-nav-active, $pm-blue);
+}
+
+.has-scroll-inside-navigation > .spacebar-container::before {
+  background: linear-gradient(to top, var(--main-bg-color, rgba(0, 0, 0, .4) ) 0, rgba($black, 0) 2em);
+}
+
+.aside-link {
+  background: var(--bgcolor-aside-link, $pm-global-altgrey);
+}
+
+.searchbox-field[type="search"] {
+  background-color: var(--bgcolor-searchbox-field, $black);
+  border-color: var(--main-bg-color, $black);
+  background-image: var(--img-searchbox-path, url(#{$path-images}sprite-for-css-only.svg#css-search-white));
+}
+
+
+.spacebar {
+  background: var(--bgcolor-spacebar, $black);
+}
+.spacebar {
+  &::-webkit-meter-bar {
+    background: var(--bgcolor-spacebar, $black);
+  }  
+}
+
+.topnav-link {
+  color: var(--color-nav-link, $white);
+
+  &:focus,
+  &:hover,
+  &:active,
+  &[aria-current="true"] {
+    color: var(--color-nav-active, $pm-blue);
+    
+    > .topnav-icon {
+       fill: var(--color-nav-active, $pm-blue);
+    }
+  }
+  &[aria-current="true"] {
+    border-color: var(--color-nav-active, $pm-blue);
+  }
+}
+
+
+
+// icons
+.searchbox-advanced-search-button svg,
+.topnav-link svg,
+.toolbar svg {
+  fill: var(--fillcolor-icons, $white);
+}
+
+// if light theme, add drop shadow
+.main {
+  box-shadow: var(--boxshadow-main, none);
+}
+
+.spacebar-container,
+.searchbox-field[type="search"] {
+  color: var(--color-standard-text, $white);
+}
+.searchbox-container input::placeholder {
+  color: var(--color-standard-text, rgba(255, 255, 255, .6) );
+}
+
