@@ -1,3 +1,26 @@
+# [1.6.0] - 2019-05-01
+
+## New
+
+- added CSS custom properties
+- added generation of static CSS files for themes surcharge
+- added previsualisation in Design system website
+- added documentation for all of these
+- added `pm-field--tiny` modifier
+
+## Updated/fixes
+
+- Fix mismatch for `pm-button--link` when used with `pm-button`
+- also fixed layout of top nav #95
+
+
+## Misc
+
+- remove IE11 support for space bar (fuck off inline-styles 🎉 )
+- removed 'unsafe-inline' for CSS for design system website
+
+
+
 # [1.5.18] - 2019-04-25
 
 ## New
