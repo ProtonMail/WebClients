@@ -26,7 +26,7 @@ function validateMessage(
     addressWithoutKeys,
     sendPreferences,
     storageWarning,
-    translator,
+    translator
 ) {
     const I18N = translator(() => ({
         SEND_ANYWAY: gettextCatalog.getString('Send anyway', null, 'Action'),
@@ -177,7 +177,7 @@ function validateMessage(
     }
 
     /**
-     * Check if the message has the requirement if ExpirationTime is defined
+     * Check if the message has the requirement if ExpiresIn is defined
      * @param  {Object} message
      * @param {Array} emails list of email address (string)
      * @return {Promise}
@@ -197,7 +197,7 @@ function validateMessage(
         // Contacts which include encrypted PGP sending.
         const pgp = filterTypes(EXTERNAL_SCHEMES, true);
 
-        if (message.ExpirationTime && (pgp.length || clear.length)) {
+        if (message.ExpiresIn && (pgp.length || clear.length)) {
             return confirmExpiration({ pgp, clear });
         }
     }

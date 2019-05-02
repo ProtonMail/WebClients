@@ -78,7 +78,7 @@
             class="pm_button composer-btn-expiration"
             ng-class="{
                 'active': message.displayPanel && message.panelName == 'expiration',
-                'primary': message.ExpirationTime > 0
+                'primary': message.ExpiresIn > 0
             }"
             ng-disabled="message.disableOthers() || message !== selected"
             pt-placement="top"

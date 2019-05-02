@@ -26,7 +26,7 @@ function simpleSend(messageApi, User, srp, encryptMessage) {
         return {
             id: message.ID,
             AutoSaveContacts,
-            ExpirationTime: message.ExpirationTime,
+            ExpiresIn: message.ExpiresIn,
             Packages
         };
     }
