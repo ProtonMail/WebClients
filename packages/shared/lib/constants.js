@@ -25,8 +25,8 @@ export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="
 export const DEFAULT_CURRENCY = 'EUR';
 export const CURRENCIES = ['EUR', 'USD', 'CHF'];
 export const MIN_BITCOIN_AMOUNT = 500;
-export const DEFAULT_CREDITS_AMOUNT = 2500;
-export const DEFAULT_DONATION_AMOUNT = 2500;
+export const DEFAULT_CREDITS_AMOUNT = 5000;
+export const DEFAULT_DONATION_AMOUNT = 5000;
 export const BTC_DONATION_ADDRESS = '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8';
 export const AUTH_LOG_EVENTS = {
     LOGIN_FAILURE_PASSWORD: 0,
@@ -280,7 +280,9 @@ export const PLAN_NAMES = {
 };
 
 export const COUPON_CODES = {
-    BUNDLE: 'BUNDLE'
+    BUNDLE: 'BUNDLE',
+    PMTEAM: 'PMTEAM',
+    BLACK_FRIDAY_2018: 'TWO4ONE2018'
 };
 
 export const GIFT_CODE_LENGTH = 16;
