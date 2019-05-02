@@ -8,6 +8,12 @@ export const deleteSubscription = () => ({
     method: 'delete'
 });
 
+export const checkSubscription = (data) => ({
+    url: 'payments/subscription/check',
+    method: 'post',
+    data
+});
+
 export const queryInvoices = ({ Page, PageSize, Owner, State, Type }) => ({
     url: 'payments/invoices',
     method: 'get',
