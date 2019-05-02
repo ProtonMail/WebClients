@@ -9,11 +9,23 @@ function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
     const getSrc = (target) => target.getAttribute('href') || '';
 
     const onClick = (e) => {
-        if (e.target.nodeName !== 'A') {
+        /*
+            We can click on an image inside a link.
+            more informations inside the css, look at:
+                 .message-body-container a *:not(img)
+         */
+        if (!['A', 'IMG'].includes(e.target.nodeName)) {
             return;
         }
 
-        const src = getSrc(e.target);
+        const isIMG = e.target.nodeName === 'IMG';
+        const node = !isIMG ? e.target : e.target.parentElement;
+
+        if (node.nodeName !== 'A') {
+            return;
+        }
+
+        const src = getSrc(node);
 
         // We only handle anchor that begins with `mailto:`
         if (src.toLowerCase().startsWith('mailto:')) {
