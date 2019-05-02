@@ -675,7 +675,15 @@ body.appConfigBody-is-mobile {
     }
 }
 
-.message-body-container a * {
+.ua-safari .message-body-container a {
+    margin-left: 1px
+}
+
+/*
+    If the link is around an image by default its height = font-size + line-heigt ratio. Often < img height.
+    If pointer-events: none; on the image the link won't be extended by the browser to be around the whole image when we click.
+ */
+.message-body-container a *:not(img) {
     pointer-events: none;
 }
 
