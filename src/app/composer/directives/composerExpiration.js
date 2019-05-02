@@ -25,8 +25,8 @@ function composerExpiration(dispatchers, notification, gettextCatalog, translato
      * @param {Object} message
      */
     const initModel = (message) => {
-        if (angular.isDefined(message.ExpirationTime)) {
-            const deltaHours = message.ExpirationTime / 3600;
+        if (angular.isDefined(message.ExpiresIn)) {
+            const deltaHours = message.ExpiresIn / 3600;
             const deltaDays = Math.floor(deltaHours / 24);
 
             return {
@@ -68,14 +68,14 @@ function composerExpiration(dispatchers, notification, gettextCatalog, translato
                 }
 
                 scope.$applyAsync(() => {
-                    scope.message.ExpirationTime = hours * 3600; // seconds
+                    scope.message.ExpiresIn = hours * 3600; // seconds
                     dispatch('close.panel', scope.message);
                 });
             };
 
             const onCancel = () => {
                 scope.$applyAsync(() => {
-                    delete scope.message.ExpirationTime;
+                    delete scope.message.ExpiresIn;
                     scope.expirationForm.$setUntouched();
                     dispatch('close.panel', scope.message);
                 });

@@ -542,6 +542,7 @@ Est-ce que tu vas bien ?
                 Subject: '',
                 PasswordHint: '',
                 ExpirationTime: 0,
+                ExpiresIn: 0,
                 From: TESTABLE_ADDRESS_DEFAULT,
                 uploading: 0,
                 toFocussed: false,
@@ -1302,6 +1303,10 @@ Est-ce que tu vas bien ?
 
                 it('should set a value to ExpirationTime', () => {
                     expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
+                });
+
+                it('should set a value to ExpiresIn', () => {
+                    expect(item.ExpiresIn).toBe(DEFAULT_MESSAGE_COPY.ExpiresIn);
                 });
 
                 it('should set a value to From', () => {

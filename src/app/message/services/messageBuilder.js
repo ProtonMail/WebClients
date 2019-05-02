@@ -346,6 +346,7 @@ function messageBuilder(
             Subject: '',
             PasswordHint: '',
             ExpirationTime: 0,
+            ExpiresIn: 0,
             From: sender,
             uploading: 0,
             toFocussed: false,

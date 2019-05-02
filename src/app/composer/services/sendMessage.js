@@ -40,7 +40,9 @@ function sendMessage(
         message.encrypting = true;
         dispatchMessageAction(message);
         parameters.id = message.ID;
-        parameters.ExpirationTime = message.ExpirationTime;
+        if (message.ExpiresIn) {
+            parameters.ExpiresIn = message.ExpiresIn;
+        }
 
         // remove all the data sources
         if (!message.isPlainText()) {
