@@ -4,6 +4,16 @@
   font-style: italic;
 }
 
+/* removes X in input when typing in IE/EDGE */
+input::-ms-clear {
+  width: 0;
+  height: 0;
+}
+/* removes native password revealer for IE/EDGE */
+input::-ms-reveal {
+  display: none;
+}
+
 .pm-field-container {
   width: 26rem;
   @extend .mw100;
@@ -274,4 +284,21 @@ $width: 5.5em;
 .pm-label {
   padding-top: .5em;
   min-width: 15em;
+}
+
+
+
+/* Password revealer */
+.password-revealer {
+  position: absolute;
+  right: .75em;
+  top: .2em;
+}
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .password-revealer {
+      right: auto;
+      left: .75em;
+    }
+  }
 }

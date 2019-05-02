@@ -896,6 +896,39 @@ target_links.forEach(function(elem) {
 
 
 
+
+/**
+ * toogle password
+ */
+function togglePassword( e ) {
+  var button = e.currentTarget;
+  var text_sr_only = button.querySelector('span.sr-only');
+  var input = button.previousElementSibling;
+
+  if ( input.getAttribute('type') === 'password' ){
+     input.setAttribute('type','text');
+     button.setAttribute('title', 'Hide password to vilains');
+     text_sr_only.innerHTML = 'Hide password to vilains';
+  }
+  else { 
+    input.setAttribute('type','password'); 
+    button.setAttribute('title', 'Reveal Password');
+    text_sr_only.innerHTML = 'Reveal Password';
+  }
+
+}
+
+
+
+var toggle_passwords = [].slice.call(document.body.querySelectorAll('.js-toggle-password'));
+
+toggle_passwords.forEach(function(elem) {
+    elem.addEventListener("click", togglePassword );
+});
+
+
+
+
 /**
  * slow toggle simulated in dirty way :)
  */
