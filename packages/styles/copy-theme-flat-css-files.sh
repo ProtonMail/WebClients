@@ -1,1 +1,0 @@
-cp ./_site/assets/css/*theme.css assets/css/themes-flat-css-files/

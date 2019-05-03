@@ -1,11 +1,4 @@
----
----
-/* 
- * Blue theme
- */
-
-$path-images: "/assets/img/shared/";
-@import "reusable-components/design-system-config";
+@import "../reusable-components/design-system-config";
 
 $main-bg-color: $pm-blue-dark;
 $secondary-bg-color: $pm-blue-light;
@@ -21,4 +14,4 @@ $color-standard-text: $white;
 $boxshadow-main: none;
 $img-searchbox-path: url(#{$path-images}sprite-for-css-only.svg#css-search-white);
 
-@import "pm-styles/pm-theme-config";
+@import "./pm-theme-config";

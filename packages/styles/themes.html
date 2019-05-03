@@ -70,9 +70,7 @@ section: design
 
 <h2 class="mt1">For creating a new theme/updating theming features</h2>
 
-<p>Simply duplicate <code>assets/css/blue-theme.scss</code> and customize. It will generate the static CSS file with new values for custom properties.<br>
-For creating a previsualisation in the Design System, duplicate the button in this page and update values, and update hashes for CSP <code>style-src</code>.</p>
-
-<p>Before committing new themes, do not forget to launch <code>copy-theme-flat-css-files.sh</code>, in order to have flat CSS files in the repo.</p>
+<p>Simply duplicate <code>_sass/pm-styles/_pm-blue-theme.scss</code> and customize.<br>
+For creating a previsualisation in the Design System, duplicate the button in this page and update values, and update hashes for CSP <code>style-src</code> (not necessary in development, only needed for live).</p>
   
 <p>For a reference of all CSS custom properties used, have a look at <a href="/sass-variables/#css-custom-properties">Sass/CSS variables</a>. If an element needs to use a custom property in order to be “themable”, please do update <code>design-system-website/_themes.scss</code> for reference.</p>

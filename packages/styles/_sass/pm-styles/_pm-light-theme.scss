@@ -1,11 +1,4 @@
----
----
-/* 
- * Light theme
- */
-
-$path-images: "/assets/img/shared/";
-@import "reusable-components/design-system-config";
+@import "../reusable-components/design-system-config";
 
 $main-bg-color: $pm-global-light;
 $secondary-bg-color: $white;
@@ -21,4 +14,4 @@ $color-standard-text: $pm-global-grey;
 $boxshadow-main: 0 0 15px 0 rgba(0, 0, 0, 0.1);
 $img-searchbox-path: url(#{$path-images}sprite-for-css-only.svg#css-search-black);
 
-@import "pm-styles/pm-theme-config";
+@import "./pm-theme-config";
