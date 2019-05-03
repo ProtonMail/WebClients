@@ -10143,7 +10143,6 @@ msgid "Layout"
 msgstr ""
 
 #: ./src/templates/utils/linkWarningModal.tpl.html:7
-#: ./src/templates/views/account.tpl.html:284
 msgctxt "Title"
 msgid "Link confirmation"
 msgstr ""
@@ -10524,6 +10523,11 @@ msgstr ""
 #: ./src/templates/modals/bug.tpl.html:6
 msgctxt "Title"
 msgid "Report Bug"
+msgstr ""
+
+#: ./src/templates/views/account.tpl.html:284
+msgctxt "Title"
+msgid "Request link confirmation"
 msgstr ""
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:3
