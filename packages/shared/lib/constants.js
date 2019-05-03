@@ -261,15 +261,7 @@ export const PLAN_SERVICES = {
     VPN: 4
 };
 
-export const FREE_PLAN = {
-    Name: 'free',
-    Type: 1,
-    Services: 5
-};
-
-export const FREE_SUBSCRIPTION = {
-    Plans: [FREE_PLAN]
-};
+export const FREE_SUBSCRIPTION = {}; // You don't need more, use `user.isPaid`
 
 export const PLAN_NAMES = {
     plus: 'Plus',
