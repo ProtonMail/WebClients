@@ -1,17 +1,19 @@
 /*
  * Notifications
  */
-[class*="notification-"] {
+.notifications-container {
   position: absolute;
   top: 1em;
   left: 50%;
+  z-index: 666;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+
+[class*="notification-"] {
   border-radius: $global-border-radius;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
-  animation-name: notificationAnimation;
+  overflow: hidden;
+  display: block;
 }
 .notification {
   &-alert {
@@ -28,16 +30,57 @@
   }
 }
 
+.notification-appear {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-name: notificationAnimation;
+}
+
+.notification-crunch {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-name: notificationCrunch;
+}
+
 
 @keyframes notificationAnimation {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-50%) translateY(-50px);
-    transform:  translateX(-50%) translateY(-50px);
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(-50%) translateY(0);
-    transform:  translateX(-50%) translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes notificationCrunch {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    max-height: 0;
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+
+
+@include respond-to($breakpoint-small) { 
+
+  .notifications-container {
+    left: 1em;
+    right: 1em;
+    -webkit-transform: none;
+    transform: none;
   }
 }

@@ -528,34 +528,48 @@ copy_buttons.forEach(function(elem) {
 });
 
 
-function removeNotification(e){
-    var notification = e.currentTarget;
+function endNotificationAnimation(e){
+  var notification = e.currentTarget;
+  var animationName = e.animationName;
+
+  // when notification has finished appearing
+  if ( animationName === 'notificationAnimation' ) {
+    //notification.classList.remove('notification-appear'); // seems not mandatory
     setTimeout(function() {
-        notification.parentNode.removeChild(notification);
-    }, 3000);
-    
+      notification.classList.add('notification-crunch');
+    }, 6000);
+  }
+
+  // when notification has finished disappearing => remove
+  if ( animationName === 'notificationCrunch' ) {
+    notification.parentNode.removeChild(notification);
+  }
+  
+  
 }
+
 
 function triggerNotification(e){
     var launcher = e.currentTarget;
     var notificationText = launcher.dataset.notificationText;
     var notificationType = launcher.dataset.notificationType;
+    var notificationsContainer = document.querySelector('.js-notifications-containers');
 
-    var oldNotifs = document.body.querySelectorAll('.js-notification');
-    oldNotifs.forEach(function(notif) {
-        notif.parentNode.removeChild(notif);
-    });
+    // var oldNotifs = document.body.querySelectorAll('.js-notification');
+    // oldNotifs.forEach(function(notif) {
+    //     notif.parentNode.removeChild(notif);
+    // });
 
     var notification = document.createElement("div");
-    notification.classList.add('p1', 'js-notification', ('notification-' + notificationType) );
+    notification.classList.add('p1', 'js-notification', 'notification-appear', 'mb0-5', ('notification-' + notificationType) );
     //notification.setAttribute('aria-live', 'polite');
     notification.setAttribute('aria-atomic', 'true');
     notification.setAttribute('role', 'alert');
     notification.innerHTML = notificationText;
 
-    document.body.appendChild(notification);
+    notificationsContainer.appendChild(notification);
 
-    notification.addEventListener("animationend", removeNotification);
+    notification.addEventListener("animationend", endNotificationAnimation);
 };
 
 var notifications = [].slice.call(document.body.querySelectorAll('.js-trigger-notification'));

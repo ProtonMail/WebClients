@@ -378,6 +378,13 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 2 !default; // specify 2.5 if need
   align-self: center;
 }
 
+.flex-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+}
+
 .flex-item-fluid {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0px;
