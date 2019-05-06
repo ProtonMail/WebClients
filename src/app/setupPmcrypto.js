@@ -14,30 +14,10 @@ export const initMain = async (openpgpContents) => {
 
 export const initWorker = async (openpgpContents, openpgpWorkerContents) => {
     const workerUrl = URL.createObjectURL(
-        new Blob(['postMessage({ event: "load" });self.window = self;', openpgpContents, openpgpWorkerContents], {
+        new Blob(['self.window = self;', openpgpContents, openpgpWorkerContents], {
             type: 'text/javascript'
         })
     );
-
-    createWorker({
-        path: workerUrl
-    });
-
-    if (openpgp.getWorker()) {
-        // Wait until all workers are loaded
-        await Promise.all(
-            openpgp.getWorker().workers.map(
-                (worker) =>
-                    new Promise((resolve) => {
-                        const onmessage = worker.onmessage;
-                        worker.onmessage = () => {
-                            worker.onmessage = onmessage;
-                            resolve();
-                        };
-                    })
-            )
-        );
-    }
-
+    await createWorker({ path: workerUrl });
     URL.revokeObjectURL(workerUrl);
 };

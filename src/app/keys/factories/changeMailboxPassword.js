@@ -33,22 +33,19 @@ function changeMailboxPassword(
      * @param  {Object} user
      * @return {Promise}
      */
-    function manageOrganizationKeys(password = '', oldMailPwd = '', user = {}) {
-        if (user.Role === PAID_ADMIN_ROLE) {
-            // Get organization key
-            return organizationApi.getKeys().then(({ data = {} } = {}) => {
-                const privateKey = data.PrivateKey;
-
-                // Decrypt organization private key with the old mailbox password (current)
-                // then encrypt private key with the new mailbox password
-                // return 0 on failure to decrypt, other failures are fatal
-                return decryptPrivateKey(privateKey, oldMailPwd).then(
-                    (pkg) => encryptPrivateKey(pkg, password),
-                    () => 0
-                );
-            });
+    async function manageOrganizationKeys(password = '', oldMailPwd = '', user = {}) {
+        if (user.Role !== PAID_ADMIN_ROLE) {
+            return 0;
         }
-        return Promise.resolve(0);
+
+        const { PrivateKey } = await organizationApi.getKeys();
+
+        try {
+            const decryptedPrivateKey = await decryptPrivateKey(PrivateKey, oldMailPwd);
+            return encryptPrivateKey(decryptedPrivateKey, password);
+        } catch (e) {
+            return 0;
+        }
     }
 
     function manageUserKeys(password = '', oldMailPwd = '', user = {}) {

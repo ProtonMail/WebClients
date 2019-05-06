@@ -70,8 +70,20 @@ function importPrivateKey(
         Promise.all(privateKeys.map(decrypt))
             .then(_.flatten)
             .catch(() => null);
-    const reformat = (privateKeys, email) =>
-        Promise.all(privateKeys.map((privKey) => reformatKey(privKey, email, authentication.getPassword())));
+
+    const reformat = (privateKeys, email) => {
+        const passphrase = authentication.getPassword();
+        return Promise.all(
+            privateKeys.map(async (privateKey) => {
+                const { privateKeyArmored } = await reformatKey({
+                    privateKey,
+                    userIds: [{ name: email, email }],
+                    passphrase
+                });
+                return privateKeyArmored;
+            })
+        );
+    };
 
     const createKey = async (encryptedPrivateKey, addressID, keyID) => {
         const SignedKeyList = await keysModel.signedKeyList(addressID, {
