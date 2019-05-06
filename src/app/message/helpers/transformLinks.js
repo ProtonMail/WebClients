@@ -16,9 +16,9 @@ const getNormalizedHref = (link) => {
 
 const linkUsesProtocols = (link) => ALL_PROTOCOLS.some((proto) => getNormalizedHref(link).startsWith(proto));
 
-const isAnchor = (link) => {
+const isEmptyAnchor = (link) => {
     const href = getNormalizedHref(link);
-    return href === '' || href[0] === '#' || MAP[href];
+    return href === '' || MAP[href];
 };
 
 const noReferrerInfo = (link) => {
@@ -62,7 +62,7 @@ const sanitizeRelativeHttpLinks = (link) => {
  * opening them in a new tab will just open a empty page.
  */
 const disableAnchors = (link) => {
-    isAnchor(link) && (link.style.pointerEvents = 'none');
+    isEmptyAnchor(link) && (link.style.pointerEvents = 'none');
 };
 
 function transformLinks(html) {

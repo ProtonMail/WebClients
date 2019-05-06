@@ -43,6 +43,15 @@ function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
         const dontAsk = getItem(LINK_WARNING.KEY);
         const domain = getDomain(src);
 
+        /*
+            If the modal is already active --- do nothing
+            ex: click on a link, open the modal, inside the contnue button is an anchor with the same link.
+            Don't change anchors behavior
+         */
+        if (linkWarningModal.active() || src.startsWith('#')) {
+            return;
+        }
+
         if (!dontAsk && isExternal(src) && domain && !PROTON_DOMAINS.includes(domain)) {
             e.preventDefault();
             e.stopPropagation(); // Required for Safari
