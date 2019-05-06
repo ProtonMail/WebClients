@@ -12,7 +12,7 @@ function organizationApi($http, url, srp) {
      * Get organization keys
      * @return {Promise}
      */
-    const getKeys = () => $http.get(requestURL('keys'));
+    const getKeys = () => $http.get(requestURL('keys')).then(({ data }) => data);
 
     /**
      * Get organization keys

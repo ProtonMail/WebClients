@@ -13,19 +13,26 @@ function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, auth
      * @param  {Object} user
      * @return {Promise}
      */
-    function manageOrganizationKeys(password = '', oldSaltedPassword = '', user = {}) {
-        if (user.Role === PAID_ADMIN_ROLE) {
-            // Get organization key
-            return organizationApi.getKeys().then(({ data = {} } = {}) => {
-                const encryptPrivateKey = data.PrivateKey;
-                const [{ Email }] = $injector.get('addressesModel').getByUser(user) || {};
-                return decryptPrivateKey(encryptPrivateKey, oldSaltedPassword).then(
-                    (pkg) => reformatKey(pkg, Email, password),
-                    () => 0
-                );
-            });
+    async function manageOrganizationKeys(password = '', oldSaltedPassword = '', user = {}) {
+        if (user.Role !== PAID_ADMIN_ROLE) {
+            return 0;
         }
-        return Promise.resolve(0);
+
+        const { PrivateKey } = await organizationApi.getKeys();
+        const [{ Email: email }] = $injector.get('addressesModel').getByUser(user) || {};
+
+        try {
+            const decryptedPrivateKey = await decryptPrivateKey(PrivateKey, oldSaltedPassword);
+            const { privateKeyArmored } = await reformatKey({
+                privateKey: decryptedPrivateKey,
+                userIds: [{ name: email, email }],
+                passphrase: password
+            });
+            return privateKeyArmored;
+        } catch (e) {
+            // Ignore organization key if it can not be decrypted
+            return 0;
+        }
     }
 
     const collectUserKeys = ({ Keys = [] } = {}) => {
@@ -70,33 +77,38 @@ function upgradeKeys($log, $injector, gettextCatalog, Key, organizationApi, auth
      * @param  {String} password
      * @param  {String} oldSaltedPassword
      * @param  {Object} user
-     * @return {Promise}
+     * @return {Array<Promise>}
      */
     function manageUserKeys(password = '', oldSaltedPassword = '', user = {}) {
         const keysUser = collectUserKeys(user);
         const keysAddresses = collectAddressKeys();
+
         const inputKeys = [].concat(keysUser.keys, keysAddresses.keys);
-        const emailAddresses = _.extend({}, keysUser.emails, keysAddresses.emails);
+
+        const emailAddresses = {
+            ...keysUser.emails,
+            ...keysAddresses.emails
+        };
 
         // Reformat all keys, if they can be decrypted
-        const promises = inputKeys.map(({ PrivateKey, ID }) => {
-            // Decrypt private key with the old mailbox password
-            return decryptPrivateKey(PrivateKey, oldSaltedPassword).then((pkg) => ({ ID, pkg }));
-        });
+        return inputKeys.map(async ({ PrivateKey, ID }) => {
+            try {
+                const email = emailAddresses[ID];
+                const decryptedPrivateKey = await decryptPrivateKey(PrivateKey, oldSaltedPassword);
 
-        return promises.map((promise) => {
-            return (
-                promise
-                    // Encrypt the key with the new mailbox password
-                    .then(({ ID, pkg }) => {
-                        return reformatKey(pkg, emailAddresses[ID], password).then((PrivateKey) => ({
-                            ID,
-                            PrivateKey
-                        }));
-                    })
-                    // Cannot decrypt, return 0 (not an error)
-                    .then(null, () => 0)
-            );
+                const { privateKeyArmored } = await reformatKey({
+                    privateKey: decryptedPrivateKey,
+                    userIds: [{ name: email, email }],
+                    passphrase: password
+                });
+                return {
+                    ID,
+                    PrivateKey: privateKeyArmored
+                };
+            } catch (e) {
+                // Ignore keys that can't be decrypted
+                return 0;
+            }
         });
     }
     /**

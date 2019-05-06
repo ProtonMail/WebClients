@@ -36,7 +36,8 @@ const isUnsupportedWorker = () => {
 
     // pre-fetch everything
     const initPromise = import('./app');
-    const openpgpFile = hasModulesSupport() ? main : compat;
+    const isCompat = !hasModulesSupport();
+    const openpgpFile = isCompat ? compat : main;
     // Fetch again if it fails, mainly to solve chrome bug (related to dev tools?) "body stream has been lost and cannot be disturbed"
     const openpgpPromise = dl(openpgpFile).catch(() => dl(openpgpFile));
     const workerPromise = dl(worker).catch(() => dl(worker));
@@ -47,7 +48,8 @@ const isUnsupportedWorker = () => {
     // bootstrap the app
     app.default();
 
-    if (isUnsupportedWorker()) {
+    // Compat browsers do not support the worker.
+    if (isCompat || isUnsupportedWorker()) {
         return;
     }
 

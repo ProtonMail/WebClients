@@ -42,7 +42,7 @@ function organizationKeysModel(
     });
 
     function fetch() {
-        return organizationApi.getKeys().then(({ data = {} } = {}) => {
+        return organizationApi.getKeys().then((data) => {
             set('keys', data);
             return data;
         });
