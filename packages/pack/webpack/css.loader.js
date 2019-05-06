@@ -1,7 +1,14 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 
-module.exports = ({ isProduction }) => {
+const DESIGN_SYSTEM_THEME = /.*theme\.scss$/;
+
+// Set up the variables to the design system so that files are resolved properly.
+const PREPEND_SASS = `
+$path-images: "~design-system/assets/img/shared/";
+`;
+
+const getSassLoaders = (isProduction) => {
     const postcssPlugins = isProduction
         ? [
               postcssPresetEnv({
@@ -13,6 +20,27 @@ module.exports = ({ isProduction }) => {
           ]
         : [];
 
+    return [
+        'css-loader',
+        {
+            loader: 'postcss-loader',
+            options: {
+                ident: 'postcss',
+                plugins: postcssPlugins,
+                sourceMap: isProduction
+            }
+        },
+        {
+            loader: 'fast-sass-loader',
+            options: {
+                data: PREPEND_SASS
+            }
+        }
+    ];
+};
+
+module.exports = ({ isProduction }) => {
+    const sassLoaders = getSassLoaders(isProduction);
     return [
         {
             test: /\.css$/,
@@ -28,20 +56,13 @@ module.exports = ({ isProduction }) => {
         },
         {
             test: /\.scss$/,
-            use: [
-                'css-hot-loader',
-                MiniCssExtractPlugin.loader,
-                'css-loader',
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        ident: 'postcss',
-                        plugins: postcssPlugins,
-                        sourceMap: isProduction
-                    }
-                },
-                'fast-sass-loader'
-            ]
+            exclude: DESIGN_SYSTEM_THEME,
+            use: ['css-hot-loader', MiniCssExtractPlugin.loader, ...sassLoaders]
+        },
+        {
+            test: DESIGN_SYSTEM_THEME,
+            // Prevent loading the theme in <style>, we want to load it as a raw string
+            use: [...sassLoaders]
         }
     ];
 };
