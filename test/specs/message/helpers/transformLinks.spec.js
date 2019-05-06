@@ -58,12 +58,14 @@ describe('transformLinks service', () => {
             expect(output.querySelector('a:not([href])').outerHTML).toEqual(EMPTY_LINK);
         });
 
-        it('should add pointerEvents to an anchor', () => {
-            expect(output.querySelectorAll('[style]').length).toBe(3);
-            expect(output.querySelector('#anchorLink').style.pointerEvents).toBe('none');
+        it('should add pointerEvents to an empty anchor or invalid', () => {
+            expect(output.querySelectorAll('[style]').length).toBe(2);
             expect(output.querySelector('#emptyLink').style.pointerEvents).toBe('none');
             expect(output.querySelector('#hrefLink').style.pointerEvents).toBe('none');
+        });
 
+        it('should not escape the anchor link', () => {
+            expect(output.querySelector('#anchorLink').hasAttribute('style')).toBe(false);
         });
     });
 

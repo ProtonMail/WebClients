@@ -1,5 +1,5 @@
 <div class="pm_modal small {{ctrl.class}} discardModal-container" role="dialog">
-    <form name="linkWarningForm" class="modal-dialog" ng-submit="ctrl.continue()" novalidate>
+    <form name="linkWarningForm" class="modal-dialog" novalidate>
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close"
             title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
@@ -20,8 +20,21 @@
             </div>
         </div>
         <footer class="modal-footer">
-            <button type="button" ng-click="ctrl.cancel()" class="pm_button modal-footer-button" translate-context="Action" translate>Cancel</button>
-            <button autofocus class="pm_button primary modal-footer-button" translate-context="Action" translate>Continue</button>
+            <button
+                type="button"
+                ng-click="ctrl.cancel()"
+                class="pm_button modal-footer-button"
+                translate-context="Action"
+                translate>Cancel</button>
+            <a
+                target="_blank"
+                ng-href="{{ctrl.link}}"
+                ng-click="ctrl.continue()"
+                autofocus
+                rel="noreferrer nofollow noopener"
+                class="pm_button primary modal-footer-button"
+                translate-context="Action"
+                translate>Continue</a>
         </footer>
     </form>
     <div class="modal-overlay"></div>

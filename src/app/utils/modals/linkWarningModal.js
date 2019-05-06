@@ -1,6 +1,5 @@
 import { getItem, setItem, removeItem } from '../../../helpers/storageHelper';
 import { LINK_WARNING } from '../../constants';
-import { openWindow } from '../../../helpers/browser';
 
 const { KEY, VALUE } = LINK_WARNING;
 
@@ -23,7 +22,6 @@ function linkWarningModal(pmModal) {
                 }
 
                 params.close();
-                openWindow(this.link);
             };
         }
     });
