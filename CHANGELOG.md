@@ -1,5 +1,6 @@
 # [3.15.30] - 2019-05-03
-##Fixed
+
+## Fixed
 - Some URL links were not shown properly and could not be opened on Safari browsers.
 
 # [3.15.29] - 2019-04-26
