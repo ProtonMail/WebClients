@@ -23,12 +23,13 @@ const STATS_ID = {
 
 const ENV_CONFIG = Object.keys(ENV).reduce(
     (acc, key) => {
-        const { api, ...sentry } = ENV[key];
+        const { api, securedIframe, ...sentry } = ENV[key];
         acc.sentry[key] = sentry;
         api && (acc.api[key] = api);
+        securedIframe && (acc.securedIframe[key] = securedIframe);
         return acc;
     },
-    { sentry: {}, api: {} }
+    { sentry: {}, api: {}, securedIframe: {} }
 );
 
 const API_TARGETS = {
@@ -77,5 +78,6 @@ module.exports = {
     HOST_STAT_MACHINE,
     NO_STAT_MACHINE,
     STATS_CONFIG,
-    SENTRY_CONFIG
+    SENTRY_CONFIG,
+    SECURED_IFRAME: ENV_CONFIG.securedIframe
 };

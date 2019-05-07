@@ -29,6 +29,7 @@ import welcomeModal from './factories/welcomeModal';
 import windowModel from './factories/windowModel';
 import SidebarController from './controllers/sidebar';
 import confirm from './services/confirm';
+import signupIframe from './directives/signupIframe';
 
 export default angular
     .module('proton.core', ['proton.utils'])
@@ -46,6 +47,7 @@ export default angular
     .directive('placeholderProgress', placeholderProgress)
     .directive('bugModalView', bugModalView)
     .directive('newVersion', newVersion)
+    .directive('signupIframe', signupIframe)
     .factory('formatResponseInterceptor', formatResponseInterceptor)
     .factory('serverTimeInterceptor', serverTimeInterceptor)
     .factory('alertModal', alertModal)

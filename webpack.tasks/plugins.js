@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -43,6 +42,11 @@ const minify = () => {
     };
 };
 
+const hashHashier = () =>
+    `pt${Math.random()
+        .toString(32)
+        .slice(2, 12)}-${Date.now()}`;
+
 const list = [
     // HashedModuleIdsPlugin recommended for production https://webpack.js.org/guides/caching/
     isDistRelease ? new webpack.HashedModuleIdsPlugin() : new webpack.NamedModulesPlugin(),
@@ -54,8 +58,8 @@ const list = [
             to: 'assets/fonts',
             flatten: true
         })),
-
         { from: 'src/i18n', to: 'i18n' },
+        { from: CONFIG.externalFiles.formgenerator, to: 'form' },
         { from: 'src/assets', to: 'assets' }
     ]),
 
@@ -83,7 +87,9 @@ const list = [
     }),
 
     new webpack.DefinePlugin({
-        PM_OPENPGP: JSON.stringify(definition)
+        PM_OPENPGP: JSON.stringify(definition),
+        HASH_FORM_CHALLENG1: JSON.stringify(hashHashier()),
+        HASH_FORM_CHALLENG2: JSON.stringify(hashHashier())
     }),
 
     new ScriptExtHtmlWebpackPlugin({

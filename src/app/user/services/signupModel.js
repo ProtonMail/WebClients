@@ -79,7 +79,8 @@ function signupModel(User, $state, $stateParams, $location, dispatchers, Payment
             Username: get('username'),
             Email: get('notificationEmail'),
             Type: PRODUCT_TYPE.MAIL,
-            Referrer: $location.search().ref
+            Referrer: $location.search().ref,
+            Payload: get('payload')
         };
 
         if ($stateParams.inviteToken) {

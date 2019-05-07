@@ -11,6 +11,7 @@ const {
     API_TARGETS,
     AUTOPREFIXER_CONFIG,
     SENTRY_CONFIG,
+    SECURED_IFRAME,
     TOR_URL
 } = require('./config.constants');
 
@@ -155,6 +156,7 @@ const getHostURL = (encoded) => {
 const getEnvDeploy = ({ env = process.env.NODE_ENV, config = true } = {}) => {
     const opt = {
         debug: env === 'dist' ? false : 'debug-app' in argv ? argv['debug-app'] : true,
+        securedIframe: SECURED_IFRAME[argv.api],
         apiUrl: apiUrl(argv.api, argv.branch),
         app_version: argv['app-version'] || CONFIG_DEFAULT.app_version,
         api_version: `${argv['api-version'] || CONFIG_DEFAULT.api_version}`,

@@ -1,3 +1,28 @@
+.signupUserForm-container iframe {
+    width: 100%;
+    border: 0;
+    height: 3rem
+}
+
+.signupUserForm-container .bottom {
+    min-height: 14rem
+}
+
+.signupUserForm-container iframe[data-is-loading="true"],
+.signupUserForm-container iframe[data-is-available="true"],
+.signupUserForm-container iframe[data-has-error="true"] {
+    min-height: 7rem
+}
+
+.signupUserForm-container iframe[data-has-suggestions="true"] {
+    min-height: 13rem
+}
+
+.signupUserForm-container iframe.bottom[data-has-error="true"] {
+    min-height: 17rem
+}
+
+
 .signupUserForm-footer {
     display: flex;
     flex-direction: column;

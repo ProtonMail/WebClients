@@ -4,6 +4,7 @@ module.exports = {
     externalFiles: {
         openpgp: ['openpgp/dist/openpgp.min.js', 'openpgp/dist/compat/openpgp.min.js'].map(bindPrefix),
         openpgpWorker: bindPrefix('openpgp/dist/openpgp.worker.min.js'),
+        formgenerator: bindPrefix('pt-formgenerator/dist'),
         list: ['.htaccess', 'manifest.json', 'robots.txt']
     },
     babel: {
@@ -14,6 +15,7 @@ module.exports = {
             'proton-shared',
             'pm-srp',
             'get-random-values',
+            'pt-formgenerator',
             'sieve.js',
             'angular-ui-codemirror'
         ]

@@ -1,4 +1,6 @@
 <div class="signupUserForm-container">
+
+
     <div class="text-center header">
         <div>
             <img class="signupUserForm-header-logo" src="/assets/img/logo/logo-purple.svg" height="34" />
@@ -25,11 +27,15 @@
                 data-form="accountForm"
                 data-model="account"></username-domain>
 
+            <input type="text" name="username" autocomplete="off" class="hidden">
+
             <username-password
                 data-step="2"
                 data-form="accountForm"
                 data-model="account.login"></username-password>
+        </div>
 
+        <div class="wrapper margin">
             <section class="notificationEmail-container" data-step="3">
                 <label class="titleLabel" for="notificationEmail">
                     <span translate translate-context="Title">Recovery email (optional)</span>
@@ -37,39 +43,14 @@
 
                 <p class="help" translate-context="Info" translate>This is used to recover your account if you get locked out or forget your password.</p>
 
-                <input
-                    type="email"
-                    id="notificationEmail"
-                    name="notificationEmail"
-                    ng-model="account.notificationEmail"
-                    class="form-control"
-                    placeholder-translate-context="Placeholder"
-                    placeholder-translate="Recovery email"
-                    data-valid-email
-                    data-valid-recovery
-                    data-valid-recovery-username="account.username"
-                    data-valid-recovery-domain="account.domain.value">
+                <signup-iframe data-mode="bottom"></signup-iframe>
 
-                <div ng-messages="accountForm.notificationEmail.$error" class="signUpProcess-errors-recoveryEmail">
-                    <p ng-message="email" class="text-red" translate-context="Error" translate>Invalid email</p>
-                    <p ng-message="validRecovery" class="text-red" translate-context="Error" translate>Recovery email invalid</p>
-                </div>
             </section>
-        </div><!--/.wrapper-->
 
-        <footer class="signupUserForm-footer">
-            <p>
-                <span translate translate-context="Info">By clicking Create Account, you agree to abide by</span><br />
-                <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate-context="Title" translate>ProtonMail's Terms and Conditions</a>.
-            </p>
+        </div>
 
-            <button
-                type="submit"
-                class="pm_button primary large signUpProcess-btn-create disabled-if-network-activity"
-                translate-context="Action"
-                translate>Create Account</button>
-
-            <a ui-sref="login" class="link" translate-context="Action" translate translate-comment="link to login">Already have an account?</a>
-        </footer>
+        <!-- Hidden to trigger form validation when we submit from password input -->
+        <button class="hidden" translate-context="Action" translate>Submit</button>
     </form>
+
 </div>

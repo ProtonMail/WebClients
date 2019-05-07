@@ -138,6 +138,7 @@
     "pikaday": "^1.6.1",
     "pm-srp": "github:ProtonMail/pm-srp.git#semver:^1.0.0",
     "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:6.0.5",
+    "pt-formgenerator": "github:ProtonMail/pt-formgenerator.git#semver:^1.4.0",
     "popper.js": "^1.14.4",
     "prettier": "^1.15.3",
     "proton-shared": "github:ProtonMail/proton-shared.git#semver:1.0.0",
@@ -172,7 +173,7 @@
     "start:raw": "cross-env NODE_ENV=dev tasks/setupConfig.js",
     "poststart:raw": "npm run dev -- --no-transpile",
     "dev": "cross-env NODE_ENV=dev && webpack-dev-server --hot --progress",
-    "dist": "cross-env NODE_ENV=dist webpack --progress",
+    "dist": "cross-env NODE_ENV=dist webpack",
     "build": "cross-env NODE_ENV=dev tasks/setupConfig.js",
     "postbuild": "cross-env NODE_ENV=dev && webpack --progress",
     "deploy": "cross-env NODE_ENV=dist tasks/deploy.js",
@@ -194,12 +195,17 @@
     "cypress:open": "./tasks/lazyInstallVendor e2e && cypress open"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "env/env.json": [
-      "tasks/checkEnv.js"
+    "linters": {
+      "*.js": [
+        "prettier --write",
+        "git add"
+      ],
+      "env/env.json": [
+        "tasks/checkEnv.js"
+      ]
+    },
+    "ignore": [
+      "static/*"
     ]
   },
   "engines": {

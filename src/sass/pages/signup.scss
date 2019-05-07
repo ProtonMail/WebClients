@@ -71,8 +71,9 @@
     align-items: center;
 }
 
-.signUpProcess-step-1  .usernameWrap .usernameInput { flex-grow: 1 }
-.signUpProcess-step-1  .usernameWrap .usernameDomain { padding: 0 5px }
+.signUpProcess-step-1  .usernameWrap .signupIframe-container {
+    width: 100%;
+}
 
 /* humanVerification */
 
@@ -146,6 +147,10 @@
     justify-content: center;
 }
 
+.signUpProcess-step-3 {
+    // margin-top: 0;
+    padding-top: 0;
+}
 
 /* RESPONSIVE */
 

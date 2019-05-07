@@ -1,0 +1,14 @@
+.signupIframe-container.signupIframe-error,
+.signupIframe-container:not(.signupIframe-loaded) {
+    .signupIframe-iframe {
+        display: none
+    }
+}
+
+.signupIframe-container:not(.signupIframe-error) {
+    .signupIframe-error-message {
+        display: none
+    }
+}
+
+.signupIframe-loaded .signupIframe-loader {display: none}
