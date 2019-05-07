@@ -27,16 +27,26 @@ section: design
   <p>Yeah, for short text for sure.</p>
 </div>
 
-
-
 <p>
-    <button class="js-modal pm-button-blue" data-modal-prefix-class="pm" data-modal-content-id="mod_id3" data-modal-title="Title for your modal" data-modal-close-text="×" data-modal-close-title="Close it, really">Another modal please (with a long content)</button>
+  <button class="js-modal pm-button-blue" data-modal-prefix-class="pm" data-modal-content-id="mod_id3" data-modal-title="A freaking and horrible long title for your modal because we have to test every single case in order to make the force awakens" data-modal-close-text="×" data-modal-close-title="Close it, really">Another modal please (with long title and content)</button>
 </p>
 
-
 <div id="mod_id3" class="hidden">
-    <p>Yeah, with a <br><br><br><br><br>loooooooooooong <br><br><br><br><br><br><br><br>Looooooooooooooooong<br><br><br><br><br>loooooooooooong <br><br><br><br><br><br><br><br> content.</p>
+  <p>Yeah, with a <br><br><br><br><br>loooooooooooong <br><br><br><br><br><br><br><br>Looooooooooooooooong<br><br><br><br><br>loooooooooooong <br><br><br><br><br><br><br><br> content.</p>
 </div>
+
+<p>
+    <button class="js-modal pm-button-blue" data-modal-prefix-class="pm" data-modal-content-id="mod_id4" data-modal-title="Title for your modal" data-modal-close-text="×" data-modal-close-title="Close it, really">Another modal please (with a looooooong content)</button>
+</p>
+
+<div id="mod_id4" class="hidden">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
 
 
 <h2>Modal code</h2>
@@ -50,7 +60,7 @@ section: design
       &lt;h1 <strong>id="modalTitle" class="pm-modalTitle"</strong>&gt;Title for your modal&lt;/h1&gt;
     &lt;/header&gt;
     &lt;div <strong>class="pm-modalContent"</strong>&gt;
-      &lt;p&gt;…&lt;/p&gt;
+      &lt;div <strong>class="pm-modalContentInner"</strong>&gt;…&lt;/p&gt;
       &lt;footer <strong>class="pm-modalFooter</strong> flex flex-spacebetween"&gt;
         &lt;button class="pm-button-blueborder"&gt;No&lt;/button&gt;
         &lt;button class="pm-button-blue"&gt;Yes&lt;/button&gt;

@@ -72,7 +72,7 @@ Prism.languages.javascript=Prism.languages.extend("clike",{"class-name":[Prism.l
   var MODAL_CLOSE_TEXT_CLASS_SUFFIX = 'modal-close__text';
 
   var MODAL_TITLE_ID = 'modal-title';
-  var MODAL_TITLE_CLASS_SUFFIX = 'modal-title';
+  var MODAL_TITLE_CLASS_SUFFIX = 'modalTitle';
 
   var FOCUSABLE_ELEMENTS_STRING = "a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]";
   var WRAPPER_PAGE_JS = 'js-modal-page';
@@ -177,11 +177,12 @@ Prism.languages.javascript=Prism.languages.extend("clike",{"class-name":[Prism.l
     var modalAdditionnalClass = config.additionnalClass;
     var modalHeaderClassName = config.modalPrefixClass + MODAL_CLASS_SUFFIX + 'Header';
     var modalContentClassName = config.modalPrefixClass + MODAL_CLASS_SUFFIX + 'Content';
+    var modalContentInnerClassName = config.modalPrefixClass + MODAL_CLASS_SUFFIX + 'ContentInner';
     var modalFooterClassName = config.modalPrefixClass + MODAL_CLASS_SUFFIX + 'Footer';
-    var modalClassWrapper = config.modalPrefixClass + MODAL_WRAPPER_CLASS_SUFFIX;
+    //var modalClassWrapper = config.modalPrefixClass + MODAL_WRAPPER_CLASS_SUFFIX;
     var buttonCloseClassName = config.modalPrefixClass + MODAL_BUTTON_CLASS_SUFFIX;
     var buttonCloseInner = config.modalCloseImgPath ? '<img src="' + config.modalCloseImgPath + '" alt="' + config.modalCloseText + '" class="' + config.modalPrefixClass + MODAL_CLOSE_IMG_CLASS_SUFFIX + '" />' : '' + config.modalCloseText + '';
-    var contentClassName = config.modalPrefixClass + MODAL_CONTENT_CLASS_SUFFIX;
+    //var contentClassName = config.modalPrefixClass + MODAL_CONTENT_CLASS_SUFFIX;
     var titleClassName = config.modalPrefixClass + MODAL_TITLE_CLASS_SUFFIX;
     var title = config.modalTitle !== '' ? '<h1 id="' + MODAL_TITLE_ID + '" class="' + titleClassName + '">\n                                          ' + config.modalTitle + '\n                                         </h1>' : '';
     var button_close = '<button type="button" class="' + MODAL_BUTTON_JS_CLASS + ' ' + buttonCloseClassName + '" id="' + MODAL_BUTTON_JS_ID + '" title="' + config.modalCloseTitle + '" ' + MODAL_BUTTON_CONTENT_BACK_ID + '="' + config.modalContentId + '" ' + MODAL_BUTTON_FOCUS_BACK_ID + '="' + config.modalFocusBackId + '">' + buttonCloseInner + '</button>';
@@ -192,16 +193,21 @@ Prism.languages.javascript=Prism.languages.extend("clike",{"class-name":[Prism.l
     if (content === '' && config.modalContentId) {
       var contentFromId = findById(config.modalContentId);
       if (contentFromId) {
-        content = '<div id="' + MODAL_CONTENT_JS_ID + '">' + contentFromId.innerHTML + '</div>';
+        content = contentFromId.innerHTML;
         // we remove content from its source to avoid id duplicates, etc.
         contentFromId.innerHTML = '';
       }
     }
 
-    return '<div id="' + overlayId + '" class="' + overlayClass + '" ' + MODAL_OVERLAY_BG_ENABLED_ATTR + '="' + overlayBackgroundEnabled + '"><dialog id="' + id + '" class="' + modalClassName + ' ' + modalAdditionnalClass + '" ' + ATTR_ROLE + '="' + MODAL_ROLE + '" ' + describedById + ' ' + ATTR_OPEN + ' ' + ATTR_LABELLEDBY + '="' + MODAL_TITLE_ID + '"><header class="' + modalHeaderClassName + '">' + button_close + ' ' + title + ' </header>  <div class="' + modalContentClassName + '">' + content + '<footer class="' + modalFooterClassName + ' flex flex-spacebetween"><button class="pm-button-blueborder js-modal-close">No</button><button class="pm-button-blue js-modal-close">Yes</button></footer></div></dialog></div>';
+    return '<div id="' + overlayId + '" class="' + overlayClass + '" ' + MODAL_OVERLAY_BG_ENABLED_ATTR + '="' + overlayBackgroundEnabled + '"><dialog id="' + id + '" class="' + modalClassName + ' ' + modalAdditionnalClass + '" ' + ATTR_ROLE + '="' + MODAL_ROLE + '" ' + describedById + ' ' + ATTR_OPEN + ' ' + ATTR_LABELLEDBY + '="' + MODAL_TITLE_ID + '"><header class="' + modalHeaderClassName + '">' + button_close + ' ' + title + ' </header>  <div class="' + modalContentClassName + '"><div class="' + modalContentInnerClassName + '" id="' + MODAL_CONTENT_JS_ID + '">' + content + '</div><footer class="' + modalFooterClassName + ' flex flex-spacebetween"><button class="pm-button-blueborder js-modal-close">No</button><button class="pm-button-blue js-modal-close">Yes</button></footer></div></dialog></div>';
   };
 
   var closeModal = function closeModal(config) {
+
+    addClass(config.overlay, 'pm-modalOverlay--fadeOut');
+    addClass(config.modal, 'pm-modal--popOut');
+
+    setTimeout(function() {
 
     remove(config.modal);
     remove(config.overlay);
@@ -219,6 +225,8 @@ Prism.languages.javascript=Prism.languages.extend("clike",{"class-name":[Prism.l
         contentFocus.focus();
       }
     }
+  }, 250);
+
   };
 
   /** Find all modals inside a container
@@ -847,6 +855,8 @@ var last_known_scroll_position = 0;
 var ticking = false;
 var navigation = document.body.querySelector('.js-navigation');
 
+if ( navigation ){
+
 navigation.addEventListener('scroll', function(e) {
   last_known_scroll_position = window.scrollY;
 
@@ -859,6 +869,8 @@ navigation.addEventListener('scroll', function(e) {
     ticking = true;
   }
 });
+
+}
 
 
 

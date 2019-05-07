@@ -5,6 +5,8 @@
 $modal-width: 50% !default;
 $modal-min-width: 42em !default;
 
+$modal-max-height: 80% !default;
+
 $modal-smaller-width: 22em !default;
 
 .pm-modalOverlay {
@@ -28,9 +30,13 @@ $modal-smaller-width: 22em !default;
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.pm-modalOverlay[data-background-click="disabled"] {
-  cursor: auto;
+
+.pm-modalOverlay--fadeOut {
+  animation: fadeOut ease .5s 1  normal ;
+  animation-fill-mode: forwards;
 }
+
+
 @keyframes fade {
   0% {
     background: rgba( 0, 0, 0, 0 );
@@ -40,21 +46,24 @@ $modal-smaller-width: 22em !default;
   }
 }
 
+@keyframes fadeOut {
+  0% {
+    background: rgba( 0, 0, 0, .4 );
+  }
+  100% {
+    background: rgba( 0, 0, 0, 0 );
+  }
+}
+
+
 .pm-modal {
   position: relative;
   width: $modal-width;
   min-width: $modal-min-width;
-  margin-top: 10vh;
-  margin-left: auto; // no, because of IE11
-  margin-right: auto;
-  max-height: 80vh;
+  margin: auto;
+  max-height: $modal-max-height;
   max-width: 100%;
   flex: 0 1 auto;
-  /*
-  If you have problems with vh units 
-  top: 5%;
-  max-height: 90%;
-  */
   background: $white;
   color: $pm-global-grey;
   padding: 0;
@@ -86,14 +95,34 @@ $modal-smaller-width: 22em !default;
   }
 }
 
+@keyframes popOut {
+  0% {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	-webkit-transform: scale(1);
+	        transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	  -webkit-transform: scale(.8);
+	          transform: scale(.8);
+  }
+}
+
+.pm-modal--popOut {
+  animation: popOut ease .15s 1 normal ;
+  animation-fill-mode: forwards;
+}
+
 .pm-modal--smaller {
   width: $modal-smaller-width;
 }
 
 .pm-modalClose {
   position: absolute;
-  right: .5em;
-  top: .5em;
+  right: .5rem;
+  top: .5rem;
   background: transparent;
   border-radius: 1em;
   color: $pm-global-grey;
@@ -114,25 +143,74 @@ $modal-smaller-width: 22em !default;
 @if $rtl-option == true {
   [dir="rtl"] {
     .pm-modalClose {
-      left: .5em;
+      left: .5rem;
       right: auto;
     }
   }
 }
 
 .pm-modalContent{
-  padding: 0 rem(30);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
   overflow: auto;
 }
 
 .pm-modalHeader {
-  padding: rem(30) rem(30) 0 rem(30) ;
+  padding: rem(30) rem(30) rem(15) rem(30);
+  flex: 0;
+}
+.pm-modalTitle {
+  font-size: 2.2rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+  padding-right: 1em;
 }
 .pm-modalFooter {
-  padding: rem(30) 0;
+  padding: rem(15) rem(30) rem(30);
+  flex: 0;
 } 
+
+.pm-modalContentInner {
+  position: relative;
+  overflow: auto;
+  height: calc(100% - 3rem ); // footer button height
+  padding: 0 rem(30);
+  
+  background: $white no-repeat;
+  background-image: radial-gradient(farthest-side at 50% 0,#acb0bf,transparent),radial-gradient(farthest-side at 50% 100%,#acb0bf,transparent);
+  background-position: 50% 0, 0 100%;
+  background-size: calc(100% - 20px) 3px;
+}
+.pm-modalContentInner {
+  &::before,
+  &::after {
+    content: '';
+    position: relative;
+    display: block;
+    z-index: 1;
+    background: $white;
+    height: 10px;
+  }
+}
+.pm-modalContentInner > p:first-child {
+  margin-top: 0;
+}
+.pm-modalContentInner > p:last-child {
+  margin-bottom: 0;
+}
+
+// single button on right
 .pm-modalFooter [class*="pm-button"]:only-of-type {
   margin-left: auto;
+}
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .pm-modalFooter [class*="pm-button"]:only-of-type {
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
 }
 
 @media (max-width: $modal-min-width) {
