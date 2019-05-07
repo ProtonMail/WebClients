@@ -110,7 +110,7 @@ $modal-smaller-width: 22em !default;
   }
 }
 
-.pm-modal--popOut {
+.pm-modalOverlay--fadeOut > .pm-modal {
   animation: popOut ease .15s 1 normal ;
   animation-fill-mode: forwards;
 }

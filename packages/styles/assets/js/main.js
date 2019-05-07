@@ -205,7 +205,7 @@ Prism.languages.javascript=Prism.languages.extend("clike",{"class-name":[Prism.l
   var closeModal = function closeModal(config) {
 
     addClass(config.overlay, 'pm-modalOverlay--fadeOut');
-    addClass(config.modal, 'pm-modal--popOut');
+    //addClass(config.modal, 'pm-modal--popOut');
 
     setTimeout(function() {
 
