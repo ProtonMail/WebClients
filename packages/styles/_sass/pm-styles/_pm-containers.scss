@@ -6,6 +6,10 @@
   border-radius: $global-border-radius;
 }
 
+.border-bottom {
+  border-bottom: 1px solid $pm-global-border;
+}
+
 $block-info-border-width: 3px !default;
 [class*="block-info"] {
   padding: .5em 1.2em;
