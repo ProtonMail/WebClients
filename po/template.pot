@@ -289,8 +289,7 @@ msgctxt "Action"
 msgid "All Unstarred"
 msgstr ""
 
-#. link to login
-#: ./src/templates/user/signupUserForm.tpl.html:72
+#: ./src/app/core/directives/signupIframe.js:25
 msgctxt "Action"
 msgid "Already have an account?"
 msgstr ""
@@ -660,7 +659,7 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr ""
 
-#: ./src/templates/utils/linkWarningModal.tpl.html:24
+#: ./src/templates/utils/linkWarningModal.tpl.html:29
 msgctxt "Action"
 msgid "Continue"
 msgstr ""
@@ -670,8 +669,8 @@ msgctxt "Action"
 msgid "Copy address"
 msgstr ""
 
+#: ./src/app/core/directives/signupIframe.js:26
 #: ./src/app/user/directives/linkWebsite.js:8
-#: ./src/templates/user/signupUserForm.tpl.html:66
 msgctxt "Action"
 msgid "Create Account"
 msgstr ""
@@ -1758,6 +1757,7 @@ msgstr ""
 #: ./src/templates/modals/reactivate.tpl.html:25
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:23
 #: ./src/templates/modals/switchPasswordMode.tpl.html:74
+#: ./src/templates/user/signupUserForm.tpl.html:53
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:19
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:17
 msgctxt "Action"
@@ -3608,12 +3608,12 @@ msgctxt "Error"
 msgid "Invalid coupon code"
 msgstr ""
 
+#: ./src/app/core/directives/signupIframe.js:49
 #: ./src/templates/directives/contact/contactItem.tpl.html:136
 #: ./src/templates/directives/core/bugModalView.tpl.html:74
 #: ./src/templates/filter/filterAddressModal.tpl.html:28
 #: ./src/templates/formUtils/codeVerificator.tpl.html:34
 #: ./src/templates/message/trustPublicKeyTable.tpl.html:30
-#: ./src/templates/user/signupUserForm.tpl.html:54
 msgctxt "Error"
 msgid "Invalid email"
 msgstr ""
@@ -3682,9 +3682,19 @@ msgctxt "Error"
 msgid "Invalid storage quota"
 msgstr ""
 
+#: ./src/app/user/directives/signupUserForm.js:10
+msgctxt "Error"
+msgid "Invalid username"
+msgstr ""
+
 #: ./src/templates/modals/customizeInvoice.tpl.html:40
 msgctxt "Error"
 msgid "Invoice text has too many lines (limit: 5)"
+msgstr ""
+
+#: ./src/app/core/directives/signupIframe.js:35
+msgctxt "Error"
+msgid "It must contain only letters/digits or - and start with a letter/digit"
 msgstr ""
 
 #: ./src/app/composer/directives/composerEncrypt.js:13
@@ -3704,7 +3714,7 @@ msgid "Name required."
 msgstr ""
 
 #: ./src/app/authentication/interceptors/httpInterceptor.js:27
-#: ./src/templates/user/usernameDomain.tpl.html:45
+#: ./src/app/core/directives/signupIframe.js:45
 msgctxt "Error"
 msgid "No Internet connection found."
 msgstr ""
@@ -3724,8 +3734,8 @@ msgctxt "Error"
 msgid "No files were selected"
 msgstr ""
 
-#: ./src/app/keys/factories/changeMailboxPassword.js:105
-#: ./src/app/keys/factories/upgradeKeys.js:114
+#: ./src/app/keys/factories/changeMailboxPassword.js:102
+#: ./src/app/keys/factories/upgradeKeys.js:126
 msgctxt "Error"
 msgid "No keys to update"
 msgstr ""
@@ -3799,11 +3809,6 @@ msgstr ""
 #: ./src/app/authentication/interceptors/httpInterceptor.js:30
 msgctxt "Error"
 msgid "ProtonMail cannot be reached right now, please try again later."
-msgstr ""
-
-#: ./src/templates/user/signupUserForm.tpl.html:55
-msgctxt "Error"
-msgid "Recovery email invalid"
 msgstr ""
 
 #: ./src/app/authentication/interceptors/httpInterceptor.js:29
@@ -3918,7 +3923,7 @@ msgctxt "Error"
 msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:46
+#: ./src/app/core/directives/signupIframe.js:46
 msgctxt "Error"
 msgid "The request failed"
 msgstr ""
@@ -3948,7 +3953,7 @@ msgctxt "Error"
 msgid "Upgrade to a paid plan to send from your {{email}} address"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:43
+#: ./src/app/core/directives/signupIframe.js:29
 #: ./src/templates/views/reset-login-password.tpl.html:20
 #: ./src/templates/views/reset-login-password.tpl.html:70
 msgctxt "Error"
@@ -3975,7 +3980,7 @@ msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:44
+#: ./src/app/core/directives/signupIframe.js:40
 msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr ""
@@ -4068,6 +4073,11 @@ msgctxt "Error"
 msgid "Your browser lacks features needed to download encrypted attachments directly."
 msgstr ""
 
+#: ./src/app/core/directives/signupIframe.js:30
+msgctxt "Error"
+msgid "maximum length for a username is {{maxlength}} characters"
+msgstr ""
+
 #: ./src/app/address/factories/reactivateKeys.js:29
 msgctxt "Error"
 msgid "{{n}} keys failed to decrypt due to an incorrect password"
@@ -4141,7 +4151,7 @@ msgctxt "Error label modal"
 msgid "Invalid label name"
 msgstr ""
 
-#: ./src/app/keys/factories/importPrivateKey.js:119
+#: ./src/app/keys/factories/importPrivateKey.js:131
 msgctxt "Error message"
 msgid "Invalid private key file."
 msgstr ""
@@ -5024,7 +5034,7 @@ msgctxt "Info"
 msgid "Buttons position saved"
 msgstr ""
 
-#: ./src/templates/user/signupUserForm.tpl.html:62
+#: ./src/app/core/directives/signupIframe.js:23
 msgctxt "Info"
 msgid "By clicking Create Account, you agree to abide by"
 msgstr ""
@@ -5055,7 +5065,7 @@ msgctxt "Info"
 msgid "Change default text direction to {{value}}"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:40
+#: ./src/app/core/directives/signupIframe.js:54
 msgctxt "Info"
 msgid "Checking username"
 msgstr ""
@@ -5908,6 +5918,11 @@ msgctxt "Info"
 msgid "Signature updated"
 msgstr ""
 
+#: ./src/templates/core/signupIframe.tpl.html:7
+msgctxt "Info"
+msgid "Something went wrong, please refresh the page in order to proceed. If you still see this error message please contact our support team."
+msgstr ""
+
 #: ./src/app/members/services/memberActions.js:80
 msgctxt "Info"
 msgid "Status Updated"
@@ -5933,7 +5948,7 @@ msgctxt "Info"
 msgid "Summary"
 msgstr ""
 
-#: ./src/templates/user/signupUserForm.tpl.html:20
+#: ./src/templates/user/signupUserForm.tpl.html:22
 msgctxt "Info"
 msgid "Take back your privacy! Creating your secure email account takes less than 2 minutes."
 msgstr ""
@@ -6027,7 +6042,7 @@ msgctxt "Info"
 msgid "This is used to encrypt and decrypt your messages. Do not lose this password--we cannot recover it."
 msgstr ""
 
-#: ./src/templates/user/signupUserForm.tpl.html:38
+#: ./src/templates/user/signupUserForm.tpl.html:44
 msgctxt "Info"
 msgid "This is used to recover your account if you get locked out or forget your password."
 msgstr ""
@@ -6173,7 +6188,7 @@ msgctxt "Info"
 msgid "User updated"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:39
+#: ./src/app/core/directives/signupIframe.js:53
 msgctxt "Info"
 msgid "Username available"
 msgstr ""
@@ -8239,7 +8254,7 @@ msgctxt "Placeholder"
 msgid "Choose a password"
 msgstr ""
 
-#: ./src/templates/user/usernameDomain.tpl.html:12
+#: ./src/app/core/directives/signupIframe.js:19
 msgctxt "Placeholder"
 msgid "Choose username"
 msgstr ""
@@ -8418,7 +8433,7 @@ msgctxt "Placeholder"
 msgid "Public key"
 msgstr ""
 
-#: ./src/templates/user/signupUserForm.tpl.html:40
+#: ./src/app/core/directives/signupIframe.js:22
 msgctxt "Placeholder"
 msgid "Recovery email"
 msgstr ""
@@ -9128,6 +9143,11 @@ msgctxt "Title"
 msgid "Actions"
 msgstr ""
 
+#: ./src/app/core/directives/signupIframe.js:21
+msgctxt "Title"
+msgid "Add a recovery email"
+msgstr ""
+
 #: ./src/app/sidebar/directives/donateBtn.js:5
 #: ./src/templates/modals/donate.tpl.html:24
 msgctxt "Title"
@@ -9552,7 +9572,7 @@ msgctxt "Title"
 msgid "Create user"
 msgstr ""
 
-#: ./src/templates/user/signupUserForm.tpl.html:8
+#: ./src/templates/user/signupUserForm.tpl.html:10
 msgctxt "Title"
 msgid "Create your account"
 msgstr ""
@@ -10463,7 +10483,7 @@ msgctxt "Title"
 msgid "Proration"
 msgstr ""
 
-#: ./src/templates/user/signupUserForm.tpl.html:63
+#: ./src/app/core/directives/signupIframe.js:24
 #: ./src/templates/views/setup.tpl.html:66
 msgctxt "Title"
 msgid "ProtonMail's Terms and Conditions"
@@ -10500,7 +10520,7 @@ msgctxt "Title"
 msgid "Recipients"
 msgstr ""
 
-#: ./src/templates/user/signupUserForm.tpl.html:35
+#: ./src/templates/user/signupUserForm.tpl.html:41
 msgctxt "Title"
 msgid "Recovery email (optional)"
 msgstr ""
@@ -10601,6 +10621,11 @@ msgstr ""
 #: ./src/templates/views/members.tpl.html:311
 msgctxt "Title"
 msgid "Security"
+msgstr ""
+
+#: ./src/app/core/directives/signupIframe.js:20
+msgctxt "Title"
+msgid "Select a domain"
 msgstr ""
 
 #: ./src/templates/address/selectAddressModal.tpl.html:6
