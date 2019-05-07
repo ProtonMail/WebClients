@@ -88,7 +88,7 @@ section: fe-guidelines
 <p>These helpers may be prefixed by <code>ontablet-/onmobile-</code> to apply them only for tablets/mobiles.</p>
  
 
-<h2>Hiding elements</h2>
+<h2>Hiding/disabling elements</h2>
 
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
   <div class="w49">
@@ -118,6 +118,16 @@ section: fe-guidelines
   </div>
   <div class="w49 flex-self-vcenter">
     Makes element disappear but element remain vocalized by speech synthesis (<code>display: none</code>/<code>visibility: hidden</code> elements won't be vocalized)
+  </div>
+</div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;a <strong>class="no-pointer-events"</strong>&gt;Lorem ipsum dolor&lt;/a&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>pointer-events: none</code> to element.
   </div>
 </div>
 
