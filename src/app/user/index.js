@@ -27,9 +27,11 @@ import signupModel from './services/signupModel';
 import signupUserProcess from './services/signupUserProcess';
 import userType from './services/userType';
 import needUpgrade from './services/needUpgrade';
+import iframeVerifWizard from './services/iframeVerifWizard';
 
 export default angular
     .module('proton.user', [])
+    .factory('iframeVerifWizard', iframeVerifWizard)
     .factory('needUpgrade', needUpgrade)
     .service('userType', userType)
     .directive('humanVerification', humanVerification)

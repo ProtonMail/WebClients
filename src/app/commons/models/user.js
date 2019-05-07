@@ -10,13 +10,14 @@ function User($http, url, srp) {
     const check = () => (params) => $http.put(requestURL('check'), params);
     const direct = () => $http.get(requestURL('direct'));
     const lock = () => $http.put(requestURL('lock'));
-    const available = (params) => $http.get(requestURL('available'), params);
+    const available = (params, config) => $http.get(requestURL('available'), params, config);
 
     const unlock = (credentials) => srp.auth.put(credentials, requestURL('unlock'));
     const password = (credentials) => srp.auth.put(credentials, requestURL('password'));
     const remove = (credentials) => srp.auth.put(credentials, requestURL('delete'));
 
     return {
+        requestURL,
         available,
         create,
         get,

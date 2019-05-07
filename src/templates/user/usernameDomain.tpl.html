@@ -9,41 +9,6 @@
     <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
 
     <div class="usernameWrap">
-        <input
-            type="text"
-            ng-model="model.username"
-            name="username"
-            autofocus
-            placeholder-translate="Choose username"
-            placeholder-translate-context="Placeholder"
-            data-unique-username
-            required
-            id="username"
-            class="dead usernameInput"
-            ng-model-options="{
-                updateOn: 'default blur',
-                debounce: { 'default': 500, 'blur': 0 }
-            }"
-            ng-class="{'success':goodUsername,'error':badUsername}" />
-        <em class="usernameDomain">@</em>
-
-        <div class="pm_select inline bigger">
-            <select
-                class="selectDomain"
-                ng-model="model.domain"
-                ng-options="domain.label for domain in domains track by domain.value"></select>
-            <i class="fa fa-angle-down"></i>
-        </div>
-    </div>
-
-    <p ng-show="form.username.$valid" class="alert alert-success signUpProcess-about-success" translate translate-context="Info">Username available</p>
-    <p ng-show="form.$pending.unique" class="alert alert-info signUpProcess-about-pending" translate translate-context="Info">Checking username</p>
-
-    <div ng-messages="form.username.$error" ng-if="form.username.$dirty" class="signUpProcess-about-error">
-        <p ng-message="required" class="alert alert-danger" translate translate-context="Error">Username required</p>
-        <p ng-message="tooMuch" class="alert alert-danger" translate translate-context="Error">You are doing this too much, please try again later</p>
-        <p ng-message="offlineError" class="alert alert-danger" translate translate-context="Error">No Internet connection found.</p>
-        <p ng-message="requestError" class="alert alert-danger" translate translate-context="Error">The request failed</p>
-        <p ng-message="apiError" class="alert alert-danger">{{ apiErrorMessage }}</p>
+        <signup-iframe data-mode="top"></signup-iframe>
     </div>
 </div>

@@ -9,10 +9,12 @@ function pmDomainModel(authentication, dispatchers, domainApi) {
         domains.push(...list);
     }
 
+    const allowPremium = () => authentication.isLoggedIn() && authentication.hasPaidMail();
+
     function fetch() {
         const promises = [domainApi.available()];
 
-        if (authentication.isLoggedIn() && authentication.hasPaidMail()) {
+        if (allowPremium()) {
             promises.push(domainApi.premium());
         }
 
@@ -33,7 +35,7 @@ function pmDomainModel(authentication, dispatchers, domainApi) {
     }
 
     on('logout', () => {
-        clear();
+        allowPremium() && clear();
     });
 
     return { get, fetch, clear };
