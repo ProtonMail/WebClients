@@ -14,6 +14,12 @@ export const checkSubscription = (data) => ({
     data
 });
 
+export const subscribe = (data) => ({
+    url: 'payments/subscription',
+    method: 'post',
+    data
+});
+
 export const queryInvoices = ({ Page, PageSize, Owner, State, Type }) => ({
     url: 'payments/invoices',
     method: 'get',
