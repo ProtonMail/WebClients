@@ -1,3 +1,7 @@
+# [3.15.32] - 2019-05-08
+## Fixed
+- Signing up for a new account didn't properly redirect for come cases.
+
 # [3.15.31] - 2019-05-08
 ## Fixed
 - Creating a filter in some conditions displayed "e.replace is not a function" error message.
