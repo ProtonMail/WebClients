@@ -116,3 +116,9 @@ export const updateHotkeys = (Hotkeys) => ({
     method: 'put',
     data: { Hotkeys }
 });
+
+export const updateAutoresponder = (AutoResponder) => ({
+    url: 'settings/mail/autoresponder',
+    method: 'put',
+    data: { AutoResponder }
+});
