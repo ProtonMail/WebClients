@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { ResetButton, PrimaryButton, Input, Label, Row, Field } from 'react-components';
+import { ResetButton, PrimaryButton, Input, TextArea, Label, Row, Field } from 'react-components';
 
 import Modal from './Modal';
 import Footer from './Footer';
 import Content from './Content';
 import { generateUID } from '../../helpers/component';
+import { Alert } from '../..';
 
 /*
 Good candidates:
@@ -18,9 +19,10 @@ Good candidates:
 
 const InputModal = ({
     label,
+    type,
     title,
+    warning,
     input: initialInput,
-    show,
     onClose,
     onSubmit,
     cancel,
@@ -33,9 +35,26 @@ const InputModal = ({
     const handleChange = ({ target }) => set(target.value);
     const handleSubmit = () => onSubmit(input);
 
-    return (
-        <Modal show={show} onClose={onClose} title={title} type="small">
-            <Content onSubmit={handleSubmit} onReset={onClose} loading={loading}>
+    let InputField;
+    switch (type) {
+        case 'textarea':
+            InputField = (
+                <>
+                    {warning ? <Alert type="warning">{warning}</Alert> : null}
+                    <TextArea
+                        id={id}
+                        value={input}
+                        placeholder={placeholder}
+                        onChange={handleChange}
+                        autoFocus={true}
+                        readOnly={loading}
+                        required
+                    />
+                </>
+            );
+            break;
+        default:
+            InputField = (
                 <Row>
                     <Label htmlFor={id}>{label}</Label>
                     <Field>
@@ -50,6 +69,13 @@ const InputModal = ({
                         />
                     </Field>
                 </Row>
+            );
+    }
+
+    return (
+        <Modal onClose={onClose} title={title} type="small">
+            <Content onSubmit={handleSubmit} onReset={onClose} loading={loading}>
+                {InputField}
                 <Footer>
                     <ResetButton disabled={loading}>{cancel}</ResetButton>
                     <PrimaryButton type="submit" disabled={loading}>
@@ -62,22 +88,24 @@ const InputModal = ({
 };
 
 InputModal.propTypes = {
+    type: PropTypes.string.isRequired,
     input: PropTypes.string,
     onClose: PropTypes.func,
     label: PropTypes.string.isRequired,
     onSubmit: PropTypes.func,
     title: PropTypes.string,
+    warning: PropTypes.string,
     cancel: PropTypes.string.isRequired,
-    show: PropTypes.bool.isRequired,
     placeholder: PropTypes.string,
     submit: PropTypes.string,
     loading: PropTypes.bool
 };
 
 InputModal.defaultProps = {
-    show: false,
+    type: 'input',
     input: '',
     label: '',
+    warning: '',
     cancel: c('Action').t`Cancel`,
     submit: c('Action').t`Submit`
 };

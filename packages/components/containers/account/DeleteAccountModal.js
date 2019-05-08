@@ -27,7 +27,7 @@ import { deleteUser } from 'proton-shared/lib/api/user';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { srpAuth } from 'proton-shared/lib/srp';
 
-const DeleteAccountModal = ({ show, onClose, clientType }) => {
+const DeleteAccountModal = ({ onClose, clientType }) => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const authenticationStore = useAuthenticationStore();
@@ -82,7 +82,7 @@ const DeleteAccountModal = ({ show, onClose, clientType }) => {
     };
 
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Delete account`} type="small">
+        <Modal onClose={onClose} title={c('Title').t`Delete account`} type="small">
             <ContentModal onSubmit={handleSubmit} onReset={onClose} loading={loading}>
                 <Alert type="warning">
                     <div className="bold uppercase">{c('Info')
@@ -162,7 +162,6 @@ const DeleteAccountModal = ({ show, onClose, clientType }) => {
 
 DeleteAccountModal.propTypes = {
     clientType: PropTypes.number.isRequired,
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired
 };
 

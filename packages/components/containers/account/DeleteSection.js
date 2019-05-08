@@ -41,7 +41,7 @@ const DeleteSection = () => {
                     <ErrorButton id="deleteButton" onClick={open}>{c('Action').t`Delete your account`}</ErrorButton>
                 </Field>
             </Row>
-            <DeleteAccountModal show={isOpen} onClose={close} clientType={1} />
+            {isOpen ? <DeleteAccountModal onClose={close} clientType={1} /> : null}
         </>
     );
 };

@@ -79,7 +79,7 @@ const InvoicesSection = () => {
                         >{c('Action').t`Organization`}</ButtonGroup>
                     </Group>
                     <Button onClick={open}>{c('Action').t`Customize`}</Button>
-                    <InvoiceTextModal show={isOpen} onClose={close} />
+                    {isOpen ? <InvoiceTextModal onClose={close} /> : null}
                 </div>
                 <Pagination
                     page={page}

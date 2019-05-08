@@ -18,7 +18,7 @@ import {
 } from 'react-components';
 import { updateInvoiceText } from 'proton-shared/lib/api/settings';
 
-const InvoiceTextModal = ({ show, onClose }) => {
+const InvoiceTextModal = ({ onClose }) => {
     const [{ InvoiceText }] = useUserSettings();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -34,7 +34,7 @@ const InvoiceTextModal = ({ show, onClose }) => {
     };
 
     return (
-        <Modal type="small" show={show} onClose={onClose} title={c('Title').t`Add invoice details`}>
+        <Modal type="small" onClose={onClose} title={c('Title').t`Add invoice details`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Alert>{c('Info message for custom invoice modal')
                     .t`Add your name (or company name) and address to your invoices.`}</Alert>
@@ -61,7 +61,6 @@ const InvoiceTextModal = ({ show, onClose }) => {
 };
 
 InvoiceTextModal.propTypes = {
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired
 };
 

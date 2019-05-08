@@ -8,23 +8,8 @@ describe('Modal component', () => {
     const content = <div>panda</div>;
     const wrapper = (children) => <div className="modal-root">{children}</div>;
 
-    it('should not render the modal', () => {
-        const { container } = render(
-            <Modal show={false} onClose={mockOnClose}>
-                {content}
-            </Modal>
-        );
-        expect(container.firstChild).toBe(null);
-    });
-
     it('should render the modal content', () => {
-        const { container } = render(
-            wrapper(
-                <Modal show={true} onClose={mockOnClose}>
-                    {content}
-                </Modal>
-            )
-        );
+        const { container } = render(wrapper(<Modal onClose={mockOnClose}>{content}</Modal>));
         expect(container.firstChild).toBeDefined();
     });
 });

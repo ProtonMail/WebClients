@@ -53,7 +53,7 @@ const IdentitySection = () => {
     return (
         <>
             {title}
-            <EditAddressModal show={isOpen} onClose={close} address={address} />
+            {isOpen ? <EditAddressModal onClose={close} address={address} /> : null}
             <Row>
                 <Label htmlFor="addressSelector">{c('Label').t`Select an address`}</Label>
                 <Field>

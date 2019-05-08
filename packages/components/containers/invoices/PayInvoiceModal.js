@@ -19,7 +19,7 @@ import { checkInvoice, payInvoice } from 'proton-shared/lib/api/payments';
 import Payment from '../payments/Payment';
 import usePayment from '../payments/usePayment';
 
-const PayInvoiceModal = ({ show, invoice, onClose, fetchInvoices }) => {
+const PayInvoiceModal = ({ invoice, onClose, fetchInvoices }) => {
     const { request, loading: loadingPay } = useApiWithoutResult(payInvoice);
     const { result = {}, loading: loadingCheck } = useApiResult(() => checkInvoice(invoice.ID), []);
     const { AmountDue, Amount, Currency } = result;
@@ -32,7 +32,7 @@ const PayInvoiceModal = ({ show, invoice, onClose, fetchInvoices }) => {
     };
 
     return (
-        <Modal type="small" show={show} onClose={onClose} title={c('Title').t`Pay invoice`}>
+        <Modal type="small" onClose={onClose} title={c('Title').t`Pay invoice`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 {loadingCheck ? null : (
                     <>
@@ -76,7 +76,6 @@ const PayInvoiceModal = ({ show, invoice, onClose, fetchInvoices }) => {
 
 PayInvoiceModal.propTypes = {
     invoice: PropTypes.object.isRequired,
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     fetchInvoices: PropTypes.func.isRequired
 };

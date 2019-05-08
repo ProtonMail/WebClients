@@ -68,9 +68,11 @@ const SessionsSection = () => {
             <Block className="flex flex-spacebetween">
                 <div>
                     <Button onClick={openConfirmRevokeAll}>{c('Action').t`Revoke all other sessions`}</Button>
-                    <ConfirmModal show={showConfirmRevokeAll} onClose={closeConfirmRevokeAll} onConfirm={handleRevoke}>
-                        <Alert>{c('Info').t`Do you want to revoke all other sessions than the current one?`}</Alert>
-                    </ConfirmModal>
+                    {showConfirmRevokeAll ? (
+                        <ConfirmModal onClose={closeConfirmRevokeAll} onConfirm={handleRevoke}>
+                            <Alert>{c('Info').t`Do you want to revoke all other sessions than the current one?`}</Alert>
+                        </ConfirmModal>
+                    ) : null}
                 </div>
                 <Pagination
                     page={page}

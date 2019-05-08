@@ -5,9 +5,9 @@ import { Modal, ContentModal, FooterModal, ResetButton } from 'react-components'
 
 import AddressesTable from './AddressesTable';
 
-const CatchAllModal = ({ domain, show, onClose }) => {
+const CatchAllModal = ({ domain, onClose }) => {
     return (
-        <Modal type="small" show={show} onClose={onClose} title={c('Title').t`Catch all address`}>
+        <Modal type="small" onClose={onClose} title={c('Title').t`Catch all address`}>
             <ContentModal onReset={onClose}>
                 <AddressesTable domain={domain} />
                 <FooterModal>
@@ -19,7 +19,6 @@ const CatchAllModal = ({ domain, show, onClose }) => {
 };
 
 CatchAllModal.propTypes = {
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     domain: PropTypes.object.isRequired
 };

@@ -48,17 +48,18 @@ const DomainActions = ({ domain }) => {
     return (
         <>
             <DropdownActions className="pm-button--small" list={list} />
-            <DomainModal show={showEditModal} onClose={closeEditModal} domain={domain} />
-            <CatchAllModal show={showCatchAllModal} onClose={closeCatchAllModal} domain={domain} />
-            <ConfirmModal
-                loading={loading}
-                show={showDeleteModal}
-                onClose={closeDeleteModal}
-                onConfirm={handleConfirmDelete}
-                title={c('Title').t`Delete domain`}
-            >
-                <Alert>{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
-            </ConfirmModal>
+            {showEditModal ? <DomainModal onClose={closeEditModal} domain={domain} /> : null}
+            {showCatchAllModal ? <CatchAllModal onClose={closeCatchAllModal} domain={domain} /> : null}
+            {showDeleteModal ? (
+                <ConfirmModal
+                    loading={loading}
+                    onClose={closeDeleteModal}
+                    onConfirm={handleConfirmDelete}
+                    title={c('Title').t`Delete domain`}
+                >
+                    <Alert>{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
+                </ConfirmModal>
+            ) : null}
         </>
     );
 };

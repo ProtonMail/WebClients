@@ -7,9 +7,9 @@ import Modal from './Modal';
 import Footer from './Footer';
 import Content from './Content';
 
-const Confirm = ({ title, show, onClose, onConfirm, children, cancel, confirm, loading }) => {
+const Confirm = ({ title, onClose, onConfirm, children, cancel, confirm, loading }) => {
     return (
-        <Modal show={show} onClose={onClose} title={title} type="small">
+        <Modal onClose={onClose} title={title} type="small">
             <Content onSubmit={onConfirm} onReset={onClose} loading={loading}>
                 {children}
                 <Footer>

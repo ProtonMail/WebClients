@@ -18,7 +18,7 @@ import {
     useEventManager
 } from 'react-components';
 
-const EditAddressModal = ({ show, onClose, address }) => {
+const EditAddressModal = ({ onClose, address }) => {
     const { call } = useEventManager();
     const { request } = useApiWithoutResult(updateAddress);
     const [model, updateModel] = useState({ displayName: address.DisplayName, signature: address.Signature });
@@ -32,7 +32,7 @@ const EditAddressModal = ({ show, onClose, address }) => {
         createNotification({ text: c('Success').t`Address updated` });
     };
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Edit address`} type="small">
+        <Modal onClose={onClose} title={c('Title').t`Edit address`} type="small">
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label>{c('Label').t`Address`}</Label>
@@ -66,7 +66,6 @@ const EditAddressModal = ({ show, onClose, address }) => {
 
 EditAddressModal.propTypes = {
     address: PropTypes.object.isRequired,
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired
 };
 

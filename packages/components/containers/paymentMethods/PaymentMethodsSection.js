@@ -36,7 +36,7 @@ const PaymentMethodsSection = () => {
             <Alert learnMore="todo">{c('Info for payment methods').t`Lorem ipsum`}</Alert>
             <Block>
                 <PrimaryButton onClick={openCardModal}>{c('Action').t`Add payment method`}</PrimaryButton>
-                <EditCardModal show={showCardModal} onClose={closeCardModal} onChange={request} />
+                {showCardModal ? <EditCardModal onClose={closeCardModal} onChange={request} /> : null}
             </Block>
             <PaymentMethodsTable loading={loading} methods={paymentMethods} fetchMethods={request} />
         </>

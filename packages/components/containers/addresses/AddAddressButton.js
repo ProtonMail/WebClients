@@ -10,7 +10,7 @@ const AddAddressButton = ({ loading, member }) => {
     return (
         <>
             <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Add address`}</PrimaryButton>
-            <AddressModal show={isOpen} onClose={close} member={member} />
+            {isOpen ? <AddressModal onClose={close} member={member} /> : null}
         </>
     );
 };

@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { Modal, ContentModal, FooterModal, ResetButton } from 'react-components';
 
-const PreviewPDFModal = ({ show, onClose, url, title, filename }) => {
+const PreviewPDFModal = ({ onClose, url, title, filename }) => {
     return (
-        <Modal show={show} onClose={onClose} title={title}>
+        <Modal onClose={onClose} title={title}>
             <ContentModal onReset={onClose}>
                 <object data={url} className="w100" type="application/pdf" height={500} title={filename}>
                     <embed src={url} type="application/pdf" />

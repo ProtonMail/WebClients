@@ -10,7 +10,7 @@ const PmMeButton = () => {
     return (
         <>
             <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Activate`}</PrimaryButton>
-            <AddressModal show={isOpen} onClose={close} member={member} />
+            {isOpen ? <AddressModal onClose={close} member={member} /> : null}
         </>
     );
 };

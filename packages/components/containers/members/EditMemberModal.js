@@ -21,7 +21,7 @@ import MemberStorageSelector from './MemberStorageSelector';
 import MemberVPNSelector from './MemberVPNSelector';
 import { updateName, updateQuota, updateVPN } from 'proton-shared/lib/api/members';
 
-const EditMemberModal = ({ show, onClose, member }) => {
+const EditMemberModal = ({ onClose, member }) => {
     const [organization] = useOrganization();
     const { call } = useEventManager();
     const [model, updateModel] = useState({ name: member.Name, storage: member.MaxSpace, vpn: member.MaxVPN });
@@ -44,7 +44,7 @@ const EditMemberModal = ({ show, onClose, member }) => {
         createNotification({ text: c('Success').t`User updated` });
     };
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Edit user`} type="small">
+        <Modal onClose={onClose} title={c('Title').t`Edit user`} type="small">
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
@@ -86,7 +86,6 @@ const EditMemberModal = ({ show, onClose, member }) => {
 };
 
 EditMemberModal.propTypes = {
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     member: PropTypes.object.isRequired
 };

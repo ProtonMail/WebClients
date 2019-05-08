@@ -12,9 +12,11 @@ const WipeLogsButton = ({ onWipe, className }) => {
     return (
         <>
             <Button className={className} onClick={open}>{c('Action').t`Wipe`}</Button>
-            <ConfirmModal show={isOpen} onClose={close} onConfirm={handleConfirm}>
-                <Alert>{c('Message').t`Are you sure you want to clear all your logs?`}</Alert>
-            </ConfirmModal>
+            {isOpen ? (
+                <ConfirmModal onClose={close} onConfirm={handleConfirm}>
+                    <Alert>{c('Message').t`Are you sure you want to clear all your logs?`}</Alert>
+                </ConfirmModal>
+            ) : null}
         </>
     );
 };

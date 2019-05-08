@@ -107,11 +107,13 @@ const MemberActions = ({ member, organization }) => {
     return (
         <>
             <DropdownActions list={list} className="pm-button--small" />
-            <EditMemberModal show={showEdit} onClose={closeEdit} member={member} />
-            <ConfirmModal show={showDelete} onClose={closeDelete} onConfirm={handleConfirmDelete}>
-                <Alert>{c('Info')
-                    .t`Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted.`}</Alert>
-            </ConfirmModal>
+            {showEdit ? <EditMemberModal onClose={closeEdit} member={member} /> : null}
+            {showDelete ? (
+                <ConfirmModal onClose={closeDelete} onConfirm={handleConfirmDelete}>
+                    <Alert>{c('Info')
+                        .t`Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted.`}</Alert>
+                </ConfirmModal>
+            ) : null}
         </>
     );
 };

@@ -29,7 +29,7 @@ import {
 import AttachScreenshot from './AttachScreenshot';
 import { collectInfo, getClient } from '../../helpers/report';
 
-const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
+const BugModal = ({ onClose, username: Username, addresses, titles }) => {
     const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
     const Client = getClient(CLIENT_ID);
     const { createNotification } = useNotifications();
@@ -82,7 +82,7 @@ const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
     };
 
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Report bug`}>
+        <Modal onClose={onClose} title={c('Title').t`Report bug`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose} loading={loading}>
                 <Alert>{c('Info').jt`Refreshing the page or ${link} will automatically resolve most issues.`}</Alert>
                 <Alert type="warning">{c('Warning')
@@ -210,7 +210,6 @@ const BugModal = ({ show, onClose, username: Username, addresses, titles }) => {
 };
 
 BugModal.propTypes = {
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     username: PropTypes.string,
     addresses: PropTypes.array,

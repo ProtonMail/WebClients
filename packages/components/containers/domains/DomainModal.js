@@ -27,7 +27,7 @@ const { VERIFY_STATE_DEFAULT, VERIFY_STATE_EXIST, VERIFY_STATE_GOOD } = VERIFY_S
 const DOMAIN_STEP = 0;
 const VERIFY_STEP = 1;
 
-const DomainModal = ({ show, onClose, domain }) => {
+const DomainModal = ({ onClose, domain }) => {
     const [domainModel, setDomain] = useState(domain);
     const { createNotification } = useNotifications();
     const [domainName, updateDomainName] = useState(domainModel.DomainName);
@@ -102,11 +102,7 @@ const DomainModal = ({ show, onClose, domain }) => {
     };
 
     return (
-        <Modal
-            show={show}
-            onClose={onClose}
-            title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}
-        >
+        <Modal onClose={onClose} title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 {<Breadcrumb list={STEPS.map(({ label }) => label)} current={step} onClick={handleClick} />}
                 {STEPS[step].section}
@@ -122,7 +118,6 @@ const DomainModal = ({ show, onClose, domain }) => {
 };
 
 DomainModal.propTypes = {
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     domain: PropTypes.object.isRequired
 };

@@ -76,16 +76,17 @@ const PaymentMethodActions = ({ method, onChange, methods, index }) => {
     return (
         <>
             <DropdownActions className="pm-button--small" list={list} />
-            <EditCardModal card={card} show={editModal} onClose={closeEditModal} onChange={onChange} />
-            <ConfirmModal
-                show={deleteModal}
-                onClose={closeDeleteModal}
-                onConfirm={deleteMethod}
-                title={c('Confirmation title').t`Delete payment method`}
-            >
-                <Alert>{c('Confirmation message to delete payment method')
-                    .t`Are you sure you want to delete this payment method?`}</Alert>
-            </ConfirmModal>
+            {editModal ? <EditCardModal card={card} onClose={closeEditModal} onChange={onChange} /> : null}
+            {deleteModal ? (
+                <ConfirmModal
+                    onClose={closeDeleteModal}
+                    onConfirm={deleteMethod}
+                    title={c('Confirmation title').t`Delete payment method`}
+                >
+                    <Alert>{c('Confirmation message to delete payment method')
+                        .t`Are you sure you want to delete this payment method?`}</Alert>
+                </ConfirmModal>
+            ) : null}
         </>
     );
 };

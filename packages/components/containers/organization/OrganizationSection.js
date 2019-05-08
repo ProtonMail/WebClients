@@ -47,15 +47,16 @@ const OrganizationSection = () => {
                 <Field>
                     <span className="mr1">{Name}</span>
                     <SmallButton onClick={open}>{c('Action').t`Edit`}</SmallButton>
-                    <InputModal
-                        show={isOpen}
-                        input={Name}
-                        title={c('Title').t`Change organization name`}
-                        label={c('Label').t`Organization name`}
-                        placeholder={c('Placeholder').t`Choose a name`}
-                        onClose={close}
-                        onSubmit={handleSubmit}
-                    />
+                    {isOpen ? (
+                        <InputModal
+                            input={Name}
+                            title={c('Title').t`Change organization name`}
+                            label={c('Label').t`Organization name`}
+                            placeholder={c('Placeholder').t`Choose a name`}
+                            onClose={close}
+                            onSubmit={handleSubmit}
+                        />
+                    ) : null}
                 </Field>
             </Row>
             <Row>

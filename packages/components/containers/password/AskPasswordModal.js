@@ -24,7 +24,7 @@ const AskPasswordModal = ({ onClose, onSubmit, hideTwoFactor }) => {
     const handleSubmit = () => onSubmit(model);
     const [{ TwoFactor } = {}, loading] = useUserSettings();
     return (
-        <Modal show={true} onClose={onClose} title={c('Title').t`Sign in again to continue`} type="small">
+        <Modal onClose={onClose} title={c('Title').t`Sign in again to continue`} type="small">
             <ContentModal loading={loading} onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor="password">{c('Label').t`Password`}</Label>

@@ -24,7 +24,7 @@ const ShortcutsSection = () => {
                 <Field>
                     <ShortcutsToggle id="hotkeysToggle" hotkeys={hotkeys} onChange={handleChange} />
                     <SmallButton onClick={open}>{c('Action').t`View keyboard shortcuts`}</SmallButton>
-                    <ShortcutsModal show={isOpen} onClose={close} />
+                    {isOpen ? <ShortcutsModal onClose={close} /> : null}
                 </Field>
             </Row>
         </>

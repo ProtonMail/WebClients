@@ -41,17 +41,18 @@ const AttachPublicKeyToggle = ({ id, attachPublicKey, sign }) => {
     return (
         <>
             <Toggle id={id} checked={state} onChange={handleChange} loading={loading} />
-            <ConfirmModal
-                show={isOpen}
-                onClose={close}
-                confirm={c('Action').t`Yes`}
-                cancel={c('Action').t`No`}
-                title={c('Title').t`Automatic sign outgoing messages?`}
-                onConfirm={handleConfirmSign}
-            >
-                <Alert>{c('Info')
-                    .t`PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.`}</Alert>
-            </ConfirmModal>
+            {isOpen ? (
+                <ConfirmModal
+                    onClose={close}
+                    confirm={c('Action').t`Yes`}
+                    cancel={c('Action').t`No`}
+                    title={c('Title').t`Automatic sign outgoing messages?`}
+                    onConfirm={handleConfirmSign}
+                >
+                    <Alert>{c('Info')
+                        .t`PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.`}</Alert>
+                </ConfirmModal>
+            ) : null}
         </>
     );
 };

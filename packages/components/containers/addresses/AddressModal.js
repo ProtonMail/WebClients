@@ -22,7 +22,7 @@ import {
 import useAddressModal from './useAddressModal';
 import DomainsSelect from './DomainsSelect';
 
-const AddressModal = ({ show, onClose, member }) => {
+const AddressModal = ({ onClose, member }) => {
     const { call } = useEventManager();
     const { request } = useApiWithoutResult(createAddress);
     const { model, update } = useAddressModal(member);
@@ -48,7 +48,7 @@ const AddressModal = ({ show, onClose, member }) => {
     };
 
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Create address`}>
+        <Modal onClose={onClose} title={c('Title').t`Create address`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Alert learnMore="https://protonmail.com/support/knowledge-base/addresses-and-aliases/">
                     {c('Info')

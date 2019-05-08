@@ -17,7 +17,7 @@ import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
 import usePayment from './usePayment';
 
-const DonateModal = ({ show, onClose }) => {
+const DonateModal = ({ onClose }) => {
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment(handleSubmit);
     const { createNotification } = useNotifications();
     const { request, loading } = useApiWithoutResult();
@@ -34,7 +34,7 @@ const DonateModal = ({ show, onClose }) => {
     };
 
     return (
-        <Modal type="small" show={show} onClose={onClose} title={c('Title').t`Donate`}>
+        <Modal type="small" onClose={onClose} title={c('Title').t`Donate`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Label>{c('Label').t`Amount`}</Label>
                 <PaymentSelector
@@ -64,7 +64,6 @@ const DonateModal = ({ show, onClose }) => {
 };
 
 DonateModal.propTypes = {
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired
 };

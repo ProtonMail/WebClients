@@ -49,16 +49,17 @@ const RecoveryEmail = () => {
         <Field>
             {email}
             <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Edit`}</PrimaryButton>
-            <InputModal
-                loading={loading}
-                input={email}
-                title={c('Title').t`Update reset/notification email`}
-                label={c('Label').t`Email`}
-                placeholder="name@domain.com"
-                show={isOpen}
-                onSubmit={handleSubmit}
-                onClose={close}
-            />
+            {isOpen ? (
+                <InputModal
+                    loading={loading}
+                    input={email}
+                    title={c('Title').t`Update reset/notification email`}
+                    label={c('Label').t`Email`}
+                    placeholder="name@domain.com"
+                    onSubmit={handleSubmit}
+                    onClose={close}
+                />
+            ) : null}
         </Field>
     );
 };

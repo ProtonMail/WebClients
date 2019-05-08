@@ -16,7 +16,7 @@ import Card from './Card';
 import useCard from './useCard';
 import toDetails from './toDetails';
 
-const EditCardModal = ({ card: existingCard, show, onClose, onChange }) => {
+const EditCardModal = ({ card: existingCard, onClose, onChange }) => {
     const { loading, request } = useApiWithoutResult(setPaymentMethod);
     const { createNotification } = useNotifications();
     const title = existingCard ? c('Title').t`Edit credit card` : c('Title').t`Add credit card`;
@@ -35,7 +35,7 @@ const EditCardModal = ({ card: existingCard, show, onClose, onChange }) => {
     };
 
     return (
-        <Modal type="small" show={show} onClose={onClose} title={title}>
+        <Modal type="small" onClose={onClose} title={title}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Card card={card} errors={errors} onChange={updateCard} loading={loading} />
                 <FooterModal>
@@ -49,7 +49,6 @@ const EditCardModal = ({ card: existingCard, show, onClose, onChange }) => {
 
 EditCardModal.propTypes = {
     card: PropTypes.object,
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired
 };

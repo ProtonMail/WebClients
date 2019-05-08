@@ -4,10 +4,10 @@ import { c } from 'ttag';
 import { isMac } from 'proton-shared/lib/helpers/browser';
 import { Modal, ResetButton, FooterModal, ContentModal, Details, Summary, Legend } from 'react-components';
 
-const ShortcutsModal = ({ show, onClose }) => {
+const ShortcutsModal = ({ onClose }) => {
     const IS_MAC = isMac();
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Keyboard shortcuts`}>
+        <Modal onClose={onClose} title={c('Title').t`Keyboard shortcuts`}>
             <ContentModal onReset={onClose}>
                 <Details className="bordered-container mb1" open={true}>
                     <Summary className="bold h3">{c('Title').t`General`}</Summary>
@@ -217,8 +217,7 @@ const ShortcutsModal = ({ show, onClose }) => {
 };
 
 ShortcutsModal.propTypes = {
-    onClose: PropTypes.func,
-    show: PropTypes.bool.isRequired
+    onClose: PropTypes.func
 };
 
 export default ShortcutsModal;

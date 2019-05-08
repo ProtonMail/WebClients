@@ -6,7 +6,7 @@ import ModalWithPortal from './ModalWithPortal';
 
 import Header from './Header';
 
-const Modal = ({ show, onClose, type, children, modalTitleID, closeOnOuterClick, closeOnEscape, title }) => {
+const Modal = ({ onClose, type, children, modalTitleID, closeOnOuterClick, closeOnEscape, title }) => {
     const onKeydown = (event) => {
         const key = keycode(event);
 
@@ -32,10 +32,6 @@ const Modal = ({ show, onClose, type, children, modalTitleID, closeOnOuterClick,
         }
     };
 
-    if (!show) {
-        return null;
-    }
-
     return (
         <ModalWithPortal>
             <div className="pm-modalOverlay" onClick={handleClickOutside}>
@@ -53,7 +49,6 @@ const Modal = ({ show, onClose, type, children, modalTitleID, closeOnOuterClick,
 };
 
 Modal.propTypes = {
-    show: PropTypes.bool.isRequired,
     closeOnOuterClick: PropTypes.bool,
     closeOnEscape: PropTypes.bool,
     onClose: PropTypes.func.isRequired,
@@ -66,7 +61,6 @@ Modal.propTypes = {
 Modal.defaultProps = {
     closeOnOuterClick: true,
     closeOnEscape: true,
-    show: false,
     modalTitleID: 'modalTitle'
 };
 

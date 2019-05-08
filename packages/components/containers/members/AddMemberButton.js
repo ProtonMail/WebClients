@@ -72,9 +72,9 @@ const AddMemberButton = () => {
     return (
         <>
             <PrimaryButton disabled={domainsLoading} onClick={handleClick}>{c('Action').t`Add user`}</PrimaryButton>
-            {domainsLoading ? null : (
-                <MemberModal show={isOpen} onClose={close} organization={organization} domains={verifiedDomains} />
-            )}
+            {domainsLoading ? null : isOpen ? (
+                <MemberModal onClose={close} organization={organization} domains={verifiedDomains} />
+            ) : null}
         </>
     );
 };

@@ -31,7 +31,7 @@ const DomainsSection = () => {
             </Alert>
             <Block>
                 <PrimaryButton onClick={open} className="mr1">{c('Action').t`Add domain`}</PrimaryButton>
-                <DomainModal show={isOpen} onClose={close} />
+                {isOpen ? <DomainModal onClose={close} /> : null}
                 <Button disabled={loading} onClick={call}>{c('Action').t`Refresh status`}</Button>
             </Block>
             {!loading && !domains.length ? <Alert>{c('Info').t`No domains yet`}</Alert> : null}

@@ -22,7 +22,7 @@ import MemberStorageSelector from './MemberStorageSelector';
 import MemberVPNSelector from './MemberVPNSelector';
 import useMemberModal from './useMemberModal';
 
-const MemberModal = ({ show, onClose, organization, domains }) => {
+const MemberModal = ({ onClose, organization, domains }) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const { model, update, hasVPN, save, check } = useMemberModal(organization, domains);
@@ -46,7 +46,7 @@ const MemberModal = ({ show, onClose, organization, domains }) => {
     };
 
     return (
-        <Modal show={show} onClose={onClose} title={c('Title').t`Add user`} type="small">
+        <Modal onClose={onClose} title={c('Title').t`Add user`} type="small">
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
                 <Row>
                     <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
@@ -123,7 +123,6 @@ const MemberModal = ({ show, onClose, organization, domains }) => {
 };
 
 MemberModal.propTypes = {
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     organization: PropTypes.object.isRequired,
     domains: PropTypes.array.isRequired
