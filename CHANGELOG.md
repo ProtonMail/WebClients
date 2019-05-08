@@ -1,3 +1,12 @@
+# [3.15.31] - 2019-05-08
+## Fixed
+- Creating a filter in some conditions displayed "e.replace is not a function" error message.
+- Some variables in the sieve filters were not properly handled.
+
+## Changed
+- Some improvements on the signup process.
+- Some improvements for the open link modal.
+
 # [3.15.30] - 2019-05-03
 
 ## Fixed
