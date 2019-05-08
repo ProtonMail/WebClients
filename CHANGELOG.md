@@ -1,6 +1,6 @@
 # [3.15.32] - 2019-05-08
 ## Fixed
-- Signing up for a new account didn't properly redirect for come cases.
+- Signing up for a new account didn't properly redirect in some cases.
 
 # [3.15.31] - 2019-05-08
 ## Fixed
