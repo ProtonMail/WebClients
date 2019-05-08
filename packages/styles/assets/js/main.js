@@ -1023,8 +1023,7 @@ function themePreview( e ) {
     css += '  --color-nav-active: ' + values.colorNavActive + ';' + "\n";
     css += '  --color-standard-text: ' + values.colorStandardText + ';' + "\n";
 
-    css += '  --boxshadow-main: ' + values.boxshadowMain + ';' + "\n";
-    css += '  --img-searchbox-path: ' + values.imgSearchbox + '; }' + "\n";
+    css += '  --boxshadow-main: ' + values.boxshadowMain + '; }' + "\n";
 
     css_mini += ':root{';
     css_mini += '--main-bg-color:' + values.mainBgColor + ';';
@@ -1042,8 +1041,7 @@ function themePreview( e ) {
     css_mini += '--color-nav-active:' + values.colorNavActive + ';';
     css_mini += '--color-standard-text:' + values.colorStandardText + ';';
 
-    css_mini += '--boxshadow-main:' + values.boxshadowMain + ';';
-    css_mini += '--img-searchbox-path:' + values.imgSearchbox + ';}';
+    css_mini += '--boxshadow-main:' + values.boxshadowMain + ';}';
 
     //console.log(css_mini);
 

@@ -7,14 +7,23 @@
 .searchbox-field[type="search"] {
   height: 4rem;
   background-color: var(--bgcolor-searchbox-field, $black);
-  background-image: var(--img-searchbox-path, url(#{$path-images}sprite-for-css-only.svg#css-search-white));
-  background-position: 15px 50%;
+  background-image: none;
   border-color: var(--main-bg-color, $black);
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2);
   background-size: 2rem;
-  padding-left: calc(15px + 2rem + 15px);
+  padding-left: calc(2em + 2rem);
   padding-right: 4rem;
   color: var(--color-standard-text, $white);
+}
+.searchbox-search-button {
+  position: absolute;
+  left: 1em;
+  top: 0;
+  bottom: 0;
+  & > .searchbox-search-button-icon {
+    width: 2.2rem;
+    fill: var(--fillcolor-icons, $white);
+  }
 }
 .searchbox-advanced-search-button {
   position: absolute;
@@ -23,18 +32,21 @@
   bottom: 0;
   padding: 0 1rem;
   & > svg {
-    fill: var(--fillcolor-icons, $white)
+    fill: var(--fillcolor-icons, $white);
   }
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
     .searchbox-field[type="search"] { 
-      background-image: url("#{$path-images}sprite-for-css-only.svg#css-search-white-rtl");
-      background-position: calc(100% - 15px) 50%; 
-      padding-right: calc(15px + 2rem + 15px);
+      padding-right: calc(2em + 2rem);
       padding-left: 4rem;
+      background-image: none;
       background-size: 2rem;
+    }
+    .searchbox-search-button {
+      right: 1em;
+      left: auto;
     }
     .searchbox-advanced-search-button {
       right: auto;
