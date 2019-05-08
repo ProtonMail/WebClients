@@ -119,8 +119,11 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
         //         return `http://localhost:3333/dist/${file}`;
         //     });
         // }
+        //
 
-        return [`${CONFIG.apiUrl}/challenge/js?Type=${id}`];
+        const { apiUrl } = CONFIG;
+        const url = apiUrl.startsWith('/') ? `${window.location.origin}${apiUrl}` : apiUrl;
+        return [`${url}/challenge/js?Type=${id}`];
     };
 
     /**
