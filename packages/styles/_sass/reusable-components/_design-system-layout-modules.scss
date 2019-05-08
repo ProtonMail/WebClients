@@ -200,7 +200,7 @@ $list-width-em: 400 !default;
 
 
 /* here you may add pixel max-widths */
-$list-max-width: 100 !default;
+$list-max-width: 100, 650 !default;
 
 @each $max-width in $list-max-width {
   .mw#{$max-width}p { max-width: #{$max-width}px; }
