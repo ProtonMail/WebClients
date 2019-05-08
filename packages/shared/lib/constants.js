@@ -166,6 +166,25 @@ export const VIEW_MODE = {
     SINGLE: 1
 };
 
+export const THEMES = {
+    DARK: {
+        label: 'Dark (Default)',
+        identifier: '/* dark-theme */'
+    },
+    LIGHT: {
+        label: 'Light',
+        identifier: '/* light-theme */'
+    },
+    BLUE: {
+        label: 'Blue',
+        identifier: '/* blue-theme */'
+    },
+    CUSTOM: {
+        label: 'Custom theme',
+        identifier: '/* custom-theme */'
+    }
+};
+
 export const DEFAULT_CYCLE = 12;
 
 export const CYCLE = {
