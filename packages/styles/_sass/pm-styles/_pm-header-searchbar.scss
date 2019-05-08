@@ -31,7 +31,7 @@
   top: 0;
   bottom: 0;
   padding: 0 1rem;
-  & > svg {
+  & > .searchbox-advanced-search-icon {
     fill: var(--fillcolor-icons, $white);
   }
 }
@@ -43,6 +43,9 @@
       padding-left: 4rem;
       background-image: none;
       background-size: 2rem;
+    }
+    .searchbox-search-button-icon {
+      @extend .mirror;
     }
     .searchbox-search-button {
       right: 1em;
