@@ -204,8 +204,8 @@ Prism.languages.javascript=Prism.languages.extend("clike",{"class-name":[Prism.l
 
   var closeModal = function closeModal(config) {
 
-    addClass(config.overlay, 'pm-modalOverlay--fadeOut');
-    //addClass(config.modal, 'pm-modal--popOut');
+    addClass(config.overlay, 'pm-modalOverlayOut');
+    addClass(config.modal, 'pm-modalOut');
 
     setTimeout(function() {
 
@@ -541,15 +541,15 @@ function endNotificationAnimation(e){
   var animationName = e.animationName;
 
   // when notification has finished appearing
-  if ( animationName === 'notificationAnimation' ) {
+  if ( animationName === 'notificationIn' ) {
     //notification.classList.remove('notification-appear'); // seems not mandatory
     setTimeout(function() {
-      notification.classList.add('notification-crunch');
+      notification.classList.add('notificationOut');
     }, 6000);
   }
 
   // when notification has finished disappearing => remove
-  if ( animationName === 'notificationCrunch' ) {
+  if ( animationName === 'notificationOut' ) {
     notification.parentNode.removeChild(notification);
   }
   
@@ -569,7 +569,7 @@ function triggerNotification(e){
     // });
 
     var notification = document.createElement("div");
-    notification.classList.add('p1', 'js-notification', 'notification-appear', 'mb0-5', ('notification-' + notificationType) );
+    notification.classList.add('p1', 'js-notification', 'notificationIn', 'mb0-5', ('notification-' + notificationType) );
     //notification.setAttribute('aria-live', 'polite');
     notification.setAttribute('aria-atomic', 'true');
     notification.setAttribute('role', 'alert');

@@ -30,22 +30,22 @@
   }
 }
 
-.notification-appear {
+.notificationIn {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
-  animation-name: notificationAnimation;
+  animation-name: notificationIn;
 }
 
-.notification-crunch {
+.notificationOut {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
-  animation-name: notificationCrunch;
+  animation-name: notificationOut;
 }
 
 
-@keyframes notificationAnimation {
+@keyframes notificationIn {
   0% {
     opacity: 0;
     -webkit-transform: translateY(-50px);
@@ -58,7 +58,7 @@
   }
 }
 
-@keyframes notificationCrunch {
+@keyframes notificationOut {
   0% {
     opacity: 1;
     -webkit-transform: scale(1);

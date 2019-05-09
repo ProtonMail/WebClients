@@ -14,6 +14,7 @@ section: fe-guidelines
   <li>Component container: <code>.myComponent<strong>-container</strong></code></li>
   <li>Component child: <code>.myComponent<strong>-child</strong></code></li>
   <li>Component element state: <code>.myComponent<strong>-stateDescriptionElement</strong></code></li>
+  <li>Component modifier: <code>.myComponent<strong>--modifier</strong></code> (double dash)</li>
 </ol>
 
 <h2>Example, a contact list</h2>
@@ -23,5 +24,12 @@ section: fe-guidelines
   <li>Component container: <code>.contactList<strong>-container</strong></code></li>
   <li>Component child: <code>.contactList<strong>-table</strong></code>, <code>.contactList<strong>-item</strong></code>, etc.</li>
   <li>Component element state : <code>.contactList-item<strong>-activeCursorContact</strong></code>, <code>.contactList-item<strong>-activeContact</strong></code>, etc.</li>
+  <li>Component modifier: <code>.contactList-item<strong>--important</strong></code>, etc.</li>
 </ol>
 
+<p>If there are animations (for appearing/disappearing for example), please use this convention:</p>
+
+<ul>
+  <li>For animation names: <code>myComponentIn</code> and <code>myComponentOut</code></li>
+  <li>If you need a class to apply these changes: <code>.myComponentIn</code> and <code>.myComponentOut</code></li>
+</ul>

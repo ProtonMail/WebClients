@@ -69,5 +69,7 @@ section: design
   &lt;/dialog&gt;
 &lt;/div&gt;</code></pre>
 
-<p>When closing the modal, the class <code>pm-modalOverlay--fadeOut</code> is added on <code>pm-modalOverlay</code>, let this animation execute itself before removing the code in the DOM (500ms duration).</p>
+<p>When closing the modal, the class <code>pm-modalOverlayOut</code> is added on <code>pm-modalOverlay</code> and <code>pm-modalOut</code> is added on <code>pm-modal</code>, let this animation execute itself before removing the code in the DOM (500ms duration).</p>
+
+<p>In case of several modals, the modals that have to be put in background must have <code>pm-modal--inBackground</code> modifier class.</p>
 

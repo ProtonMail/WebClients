@@ -95,7 +95,7 @@ $modal-smaller-width: 22em !default;
   }
 }
 
-@keyframes popOut {
+@keyframes pm-modalOut {
   0% {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -110,14 +110,19 @@ $modal-smaller-width: 22em !default;
   }
 }
 
-.pm-modalOverlay--fadeOut > .pm-modal {
-  animation: popOut ease .15s 1 normal ;
+.pm-modalOut {
+  animation: pm-modalOut ease .15s 1 normal ;
   animation-fill-mode: forwards;
 }
 
 .pm-modal--smaller {
   width: $modal-smaller-width;
 }
+
+.pm-modal--inBackground {
+  z-index: 600;
+}
+
 
 .pm-modalClose {
   position: absolute;
