@@ -612,8 +612,8 @@ msgstr ""
 #: ./src/templates/payment/giftCodeModal.tpl.html:3
 #: ./src/templates/utils/discardModal.tpl.html:3
 #: ./src/templates/utils/linkWarningModal.tpl.html:3
-#: ./src/templates/utils/printModal.tpl.html:22
-#: ./src/templates/utils/printModal.tpl.html:3
+#: ./src/templates/utils/printModal.tpl.html:20
+#: ./src/templates/utils/printModal.tpl.html:39
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:4
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:4
 msgctxt "Action"
@@ -1401,7 +1401,7 @@ msgid "Previous"
 msgstr ""
 
 #: ./src/templates/message/message.tpl.html:246
-#: ./src/templates/utils/printModal.tpl.html:28
+#: ./src/templates/utils/printModal.tpl.html:45
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -7925,7 +7925,7 @@ msgctxt "Modal setup 2FA"
 msgid "This wizard will enable Two Factor Authentication (2FA) on your ProtonMail account. 2FA will make your ProtonMail account more secure so we recommend enabling it."
 msgstr ""
 
-#: ./src/templates/utils/printModal.tpl.html:13
+#: ./src/templates/utils/printModal.tpl.html:30
 msgctxt "Modal title"
 msgid "Print preview"
 msgstr ""
