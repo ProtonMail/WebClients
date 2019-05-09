@@ -18,7 +18,7 @@ $modal-smaller-width: 22em !default;
   background: rgba( 0, 0, 0, .4 );
   z-index: 666;
   cursor: pointer;
-  animation: fade ease .5s 1 normal ;
+  animation: pm-modalOverlayIn ease .5s 1 normal ;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,13 +31,13 @@ $modal-smaller-width: 22em !default;
           flex-direction: column;
 }
 
-.pm-modalOverlay--fadeOut {
-  animation: fadeOut ease .5s 1  normal ;
+.pm-modalOverlayOut {
+  animation: pm-modalOverlayOut ease .5s 1  normal ;
   animation-fill-mode: forwards;
 }
 
 
-@keyframes fade {
+@keyframes pm-modalIn {
   0% {
     background: rgba( 0, 0, 0, 0 );
   }
@@ -46,7 +46,7 @@ $modal-smaller-width: 22em !default;
   }
 }
 
-@keyframes fadeOut {
+@keyframes pm-modalOverlayOut {
   0% {
     background: rgba( 0, 0, 0, .4 );
   }
@@ -70,7 +70,7 @@ $modal-smaller-width: 22em !default;
   overflow: hidden;
   border-radius: $global-border-radius;
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
-  animation: pop ease .15s 1 normal ;
+  animation: pm-modalIn ease .15s 1 normal ;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,7 +80,7 @@ $modal-smaller-width: 22em !default;
           flex-direction: column;
   cursor: auto;
 }
-@keyframes pop {
+@keyframes pm-modalIn {
   0% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
