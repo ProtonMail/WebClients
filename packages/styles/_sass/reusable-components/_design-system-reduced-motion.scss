@@ -3,9 +3,7 @@
  */
 @media (prefers-reduced-motion: reduce) {
   *, *:before, *:after {
-    -webkit-animation-duration: 0 !important;
-    animation-duration: 0 !important;
-    -webkit-transition-duration: 0 !important;
-    transition-duration: 0 !important;
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
   }
 }
