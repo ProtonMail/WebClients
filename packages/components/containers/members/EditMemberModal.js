@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import {
     Modal,
     ContentModal,
+    InnerModal,
     FooterModal,
     ResetButton,
     PrimaryButton,
@@ -46,36 +47,42 @@ const EditMemberModal = ({ onClose, member }) => {
     return (
         <Modal onClose={onClose} title={c('Title').t`Edit user`} type="small">
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <Row>
-                    <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
-                    <Field>
-                        <Input
-                            value={model.name}
-                            id="nameInput"
-                            placeholder="Thomas A. Anderson"
-                            onChange={handleChangeName}
-                            required
-                        />
-                    </Field>
-                </Row>
-                <Row>
-                    <Label>{c('Label').t`Account storage`}</Label>
-                    <Field>
-                        <MemberStorageSelector
-                            organization={organization}
-                            member={member}
-                            onChange={handleChangeStorage}
-                        />
-                    </Field>
-                </Row>
-                {hasVPN ? (
+                <InnerModal>
                     <Row>
-                        <Label>{c('Label').t`VPN connections`}</Label>
+                        <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
                         <Field>
-                            <MemberVPNSelector organization={organization} member={member} onChange={handleChangeVPN} />
+                            <Input
+                                value={model.name}
+                                id="nameInput"
+                                placeholder="Thomas A. Anderson"
+                                onChange={handleChangeName}
+                                required
+                            />
                         </Field>
                     </Row>
-                ) : null}
+                    <Row>
+                        <Label>{c('Label').t`Account storage`}</Label>
+                        <Field>
+                            <MemberStorageSelector
+                                organization={organization}
+                                member={member}
+                                onChange={handleChangeStorage}
+                            />
+                        </Field>
+                    </Row>
+                    {hasVPN ? (
+                        <Row>
+                            <Label>{c('Label').t`VPN connections`}</Label>
+                            <Field>
+                                <MemberVPNSelector
+                                    organization={organization}
+                                    member={member}
+                                    onChange={handleChangeVPN}
+                                />
+                            </Field>
+                        </Row>
+                    ) : null}
+                </InnerModal>
                 <FooterModal>
                     <ResetButton>{c('Action').t`Cancel`}</ResetButton>
                     <PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>

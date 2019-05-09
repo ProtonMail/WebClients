@@ -5,6 +5,7 @@ import { updateAddress } from 'proton-shared/lib/api/addresses';
 import {
     Modal,
     ContentModal,
+    InnerModal,
     Row,
     Field,
     Label,
@@ -34,27 +35,29 @@ const EditAddressModal = ({ onClose, address }) => {
     return (
         <Modal onClose={onClose} title={c('Title').t`Edit address`} type="small">
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <Row>
-                    <Label>{c('Label').t`Address`}</Label>
-                    <Field>{address.Email}</Field>
-                </Row>
-                <Row>
-                    <Label>{c('Label').t`Display name`}</Label>
-                    <Field>
-                        <Input
-                            value={model.displayName}
-                            placeholder={c('Placeholder').t`Choose display name`}
-                            onChange={handleDisplayName}
-                            required
-                        />
-                    </Field>
-                </Row>
-                <Row>
-                    <Label>{c('Label').t`Signature`}</Label>
-                    <Field>
-                        <RichTextEditor value={model.signature} onChange={handleSignature} />
-                    </Field>
-                </Row>
+                <InnerModal>
+                    <Row>
+                        <Label>{c('Label').t`Address`}</Label>
+                        <Field>{address.Email}</Field>
+                    </Row>
+                    <Row>
+                        <Label>{c('Label').t`Display name`}</Label>
+                        <Field>
+                            <Input
+                                value={model.displayName}
+                                placeholder={c('Placeholder').t`Choose display name`}
+                                onChange={handleDisplayName}
+                                required
+                            />
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label>{c('Label').t`Signature`}</Label>
+                        <Field>
+                            <RichTextEditor value={model.signature} onChange={handleSignature} />
+                        </Field>
+                    </Row>
+                </InnerModal>
                 <FooterModal>
                     <ResetButton>{c('Action').t`Cancel`}</ResetButton>
                     <PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>

@@ -1,15 +1,17 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Modal, ContentModal, FooterModal, ResetButton } from 'react-components';
+import { Modal, ContentModal, FooterModal, ResetButton, InnerModal } from 'react-components';
 
 const PreviewPDFModal = ({ onClose, url, title, filename }) => {
     return (
         <Modal onClose={onClose} title={title}>
             <ContentModal onReset={onClose}>
-                <object data={url} className="w100" type="application/pdf" height={500} title={filename}>
-                    <embed src={url} type="application/pdf" />
-                </object>
+                <InnerModal>
+                    <object data={url} className="w100" type="application/pdf" height={500} title={filename}>
+                        <embed src={url} type="application/pdf" />
+                    </object>
+                </InnerModal>
                 <FooterModal>
                     <ResetButton>{c('Action').t`Close`}</ResetButton>
                 </FooterModal>

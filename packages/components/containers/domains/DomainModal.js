@@ -7,6 +7,7 @@ import {
     PrimaryButton,
     FooterModal,
     ContentModal,
+    InnerModal,
     useStep,
     Breadcrumb,
     useApiWithoutResult,
@@ -104,8 +105,10 @@ const DomainModal = ({ onClose, domain }) => {
     return (
         <Modal onClose={onClose} title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                {<Breadcrumb list={STEPS.map(({ label }) => label)} current={step} onClick={handleClick} />}
-                {STEPS[step].section}
+                <InnerModal>
+                    {<Breadcrumb list={STEPS.map(({ label }) => label)} current={step} onClick={handleClick} />}
+                    {STEPS[step].section}
+                </InnerModal>
                 <FooterModal>
                     <ResetButton>{c('Action').t`Close`}</ResetButton>
                     <PrimaryButton type="submit">

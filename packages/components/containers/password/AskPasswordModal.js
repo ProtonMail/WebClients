@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import {
     Modal,
     ContentModal,
+    InnerModal,
     Row,
     Field,
     Label,
@@ -26,26 +27,28 @@ const AskPasswordModal = ({ onClose, onSubmit, hideTwoFactor }) => {
     return (
         <Modal onClose={onClose} title={c('Title').t`Sign in again to continue`} type="small">
             <ContentModal loading={loading} onSubmit={handleSubmit} onReset={onClose}>
-                <Row>
-                    <Label htmlFor="password">{c('Label').t`Password`}</Label>
-                    <Field>
-                        <PasswordInput
-                            id="password"
-                            value={model.password}
-                            onChange={handleChange('password')}
-                            autoFocus={true}
-                            required
-                        />
-                    </Field>
-                </Row>
-                {hideTwoFactor ? null : TwoFactor ? (
+                <InnerModal>
                     <Row>
-                        <Label htmlFor="totp">{c('Label').t`Two factor code`}</Label>
+                        <Label htmlFor="password">{c('Label').t`Password`}</Label>
                         <Field>
-                            <TwoFactorInput id="totp" value={model.totp} onChange={handleChange('totp')} required />
+                            <PasswordInput
+                                id="password"
+                                value={model.password}
+                                onChange={handleChange('password')}
+                                autoFocus={true}
+                                required
+                            />
                         </Field>
                     </Row>
-                ) : null}
+                    {hideTwoFactor ? null : TwoFactor ? (
+                        <Row>
+                            <Label htmlFor="totp">{c('Label').t`Two factor code`}</Label>
+                            <Field>
+                                <TwoFactorInput id="totp" value={model.totp} onChange={handleChange('totp')} required />
+                            </Field>
+                        </Row>
+                    ) : null}
+                </InnerModal>
                 <FooterModal>
                     <ResetButton>{c('Label').t`Cancel`}</ResetButton>
                     <PrimaryButton type="submit">{c('Label').t`Submit`}</PrimaryButton>

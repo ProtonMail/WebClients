@@ -5,6 +5,7 @@ import {
     Label,
     Modal,
     ContentModal,
+    InnerModal,
     FooterModal,
     ResetButton,
     PrimaryButton,
@@ -36,22 +37,24 @@ const DonateModal = ({ onClose }) => {
     return (
         <Modal type="small" onClose={onClose} title={c('Title').t`Donate`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <Label>{c('Label').t`Amount`}</Label>
-                <PaymentSelector
-                    amount={amount}
-                    onChangeAmount={setAmount}
-                    currency={currency}
-                    onChangeCurrency={setCurrency}
-                />
-                <Payment
-                    type="donation"
-                    method={method}
-                    amount={amount}
-                    currency={currency}
-                    onParameters={setParameters}
-                    onMethod={setMethod}
-                    onValidCard={setCardValidity}
-                />
+                <InnerModal>
+                    <Label>{c('Label').t`Amount`}</Label>
+                    <PaymentSelector
+                        amount={amount}
+                        onChangeAmount={setAmount}
+                        currency={currency}
+                        onChangeCurrency={setCurrency}
+                    />
+                    <Payment
+                        type="donation"
+                        method={method}
+                        amount={amount}
+                        currency={currency}
+                        onParameters={setParameters}
+                        onMethod={setMethod}
+                        onValidCard={setCardValidity}
+                    />
+                </InnerModal>
                 <FooterModal>
                     <ResetButton>{c('Action').t`Cancel`}</ResetButton>
                     {canPay ? (

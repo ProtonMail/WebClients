@@ -6,6 +6,7 @@ import { ResetButton, PrimaryButton, Input, TextArea, Label, Row, Field } from '
 import Modal from './Modal';
 import Footer from './Footer';
 import Content from './Content';
+import Inner from './Inner';
 import { generateUID } from '../../helpers/component';
 
 const InputField = ({ type, id, input, placeholder, onChange }) => {
@@ -46,18 +47,20 @@ const InputModal = ({
     return (
         <Modal onClose={onClose} title={title} type="small">
             <Content onSubmit={handleSubmit} onReset={onClose} loading={loading}>
-                <Row>
-                    <Label htmlFor={id}>{label}</Label>
-                    <Field>
-                        <InputField
-                            type={type}
-                            id={id}
-                            value={input}
-                            placeholder={placeholder}
-                            onChange={handleChange}
-                        />
-                    </Field>
-                </Row>
+                <Inner>
+                    <Row>
+                        <Label htmlFor={id}>{label}</Label>
+                        <Field>
+                            <InputField
+                                type={type}
+                                id={id}
+                                value={input}
+                                placeholder={placeholder}
+                                onChange={handleChange}
+                            />
+                        </Field>
+                    </Row>
+                </Inner>
                 <Footer>
                     <ResetButton>{cancel}</ResetButton>
                     <PrimaryButton type="submit">{submit}</PrimaryButton>

@@ -5,6 +5,7 @@ import { createAddress } from 'proton-shared/lib/api/addresses';
 import {
     Modal,
     ContentModal,
+    InnerModal,
     FooterModal,
     ResetButton,
     PrimaryButton,
@@ -50,47 +51,49 @@ const AddressModal = ({ onClose, member }) => {
     return (
         <Modal onClose={onClose} title={c('Title').t`Create address`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <Alert learnMore="https://protonmail.com/support/knowledge-base/addresses-and-aliases/">
-                    {c('Info')
-                        .t`ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not.`}
-                </Alert>
-                <Row>
-                    <Label>{c('Label').t`User`}</Label>
-                    <Field className="strong">{member.Name}</Field>
-                </Row>
-                <Row>
-                    <Label>{c('Label').t`Address`}</Label>
-                    <Field className="flex-autogrid">
-                        <Input
-                            value={model.address}
-                            className="flex-autogrid-item"
-                            placeholder={c('Placeholder').t`Choose address`}
-                            onChange={handleChange('address')}
-                            required
-                        />
-                        <DomainsSelect
-                            className="flex-autogrid-item"
-                            member={member}
-                            onChange={handleChange('domain')}
-                        />
-                    </Field>
-                </Row>
-                <Row>
-                    <Label>{c('Label').t`Display name`}</Label>
-                    <Field>
-                        <Input
-                            value={model.name}
-                            placeholder={c('Placeholder').t`Choose display name`}
-                            onChange={handleChange('name')}
-                        />
-                    </Field>
-                </Row>
-                <Row>
-                    <Label>{c('Label').t`Signature`}</Label>
-                    <Field>
-                        <RichTextEditor value={model.signature} onChange={handleSignature} />
-                    </Field>
-                </Row>
+                <InnerModal>
+                    <Alert learnMore="https://protonmail.com/support/knowledge-base/addresses-and-aliases/">
+                        {c('Info')
+                            .t`ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not.`}
+                    </Alert>
+                    <Row>
+                        <Label>{c('Label').t`User`}</Label>
+                        <Field className="strong">{member.Name}</Field>
+                    </Row>
+                    <Row>
+                        <Label>{c('Label').t`Address`}</Label>
+                        <Field className="flex-autogrid">
+                            <Input
+                                value={model.address}
+                                className="flex-autogrid-item"
+                                placeholder={c('Placeholder').t`Choose address`}
+                                onChange={handleChange('address')}
+                                required
+                            />
+                            <DomainsSelect
+                                className="flex-autogrid-item"
+                                member={member}
+                                onChange={handleChange('domain')}
+                            />
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label>{c('Label').t`Display name`}</Label>
+                        <Field>
+                            <Input
+                                value={model.name}
+                                placeholder={c('Placeholder').t`Choose display name`}
+                                onChange={handleChange('name')}
+                            />
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label>{c('Label').t`Signature`}</Label>
+                        <Field>
+                            <RichTextEditor value={model.signature} onChange={handleSignature} />
+                        </Field>
+                    </Row>
+                </InnerModal>
                 <FooterModal>
                     <ResetButton>{c('Action').t`Cancel`}</ResetButton>
                     <PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>

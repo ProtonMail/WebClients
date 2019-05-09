@@ -5,6 +5,7 @@ import {
     Modal,
     Alert,
     ContentModal,
+    InnerModal,
     FooterModal,
     PrimaryButton,
     Label,
@@ -36,21 +37,23 @@ const InvoiceTextModal = ({ onClose }) => {
     return (
         <Modal type="small" onClose={onClose} title={c('Title').t`Add invoice details`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <Alert>{c('Info message for custom invoice modal')
-                    .t`Add your name (or company name) and address to your invoices.`}</Alert>
-                <Block>
-                    <Label htmlFor="invoiceTextarea">{c('Label').t`Customize invoices`}</Label>
-                </Block>
-                <TextArea
-                    id="invoiceTextarea"
-                    autoFocus
-                    required
-                    value={invoiceText}
-                    placeholder={c('Placeholder for custom invoice text')
-                        .t`Add your name (or company name) and address to your invoices`}
-                    onChange={handleChange}
-                    disabled={loading}
-                />
+                <InnerModal>
+                    <Alert>{c('Info message for custom invoice modal')
+                        .t`Add your name (or company name) and address to your invoices.`}</Alert>
+                    <Block>
+                        <Label htmlFor="invoiceTextarea">{c('Label').t`Customize invoices`}</Label>
+                    </Block>
+                    <TextArea
+                        id="invoiceTextarea"
+                        autoFocus
+                        required
+                        value={invoiceText}
+                        placeholder={c('Placeholder for custom invoice text')
+                            .t`Add your name (or company name) and address to your invoices`}
+                        onChange={handleChange}
+                        disabled={loading}
+                    />
+                </InnerModal>
                 <FooterModal>
                     <ResetButton disabled={loading}>{c('Action').t`Close`}</ResetButton>
                     <PrimaryButton loading={loading} type="submit">{c('Action').t`Save`}</PrimaryButton>

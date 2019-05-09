@@ -66,6 +66,7 @@ export { default as Loader } from './components/loader/Loader';
 export { default as Paragraph } from './components/paragraph/Paragraph';
 export { default as ModalWithPortalModal } from './components/modal/ModalWithPortal';
 export { default as ContentModal } from './components/modal/Content';
+export { default as InnerModal } from './components/modal/Inner';
 export { default as InputModal } from './components/modal/Input';
 export { default as HeaderModal } from './components/modal/Header';
 export { default as useModal } from './components/modal/useModal';

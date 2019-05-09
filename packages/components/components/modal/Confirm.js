@@ -6,12 +6,13 @@ import { ResetButton, PrimaryButton } from '../button';
 import Modal from './Modal';
 import Footer from './Footer';
 import Content from './Content';
+import Inner from './Inner';
 
 const Confirm = ({ title, onClose, onConfirm, children, cancel, confirm, loading }) => {
     return (
         <Modal onClose={onClose} title={title} type="small">
             <Content onSubmit={onConfirm} onReset={onClose} loading={loading}>
-                {children}
+                <Inner>{children}</Inner>
                 <Footer>
                     <ResetButton disabled={loading}>{cancel}</ResetButton>
                     <PrimaryButton type="submit" disabled={loading} autoFocus={true}>

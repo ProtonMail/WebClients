@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import {
     Modal,
     ContentModal,
+    InnerModal,
     FooterModal,
     ResetButton,
     PrimaryButton,
@@ -34,35 +35,37 @@ const PayInvoiceModal = ({ invoice, onClose, fetchInvoices }) => {
     return (
         <Modal type="small" onClose={onClose} title={c('Title').t`Pay invoice`}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                {loadingCheck ? null : (
-                    <>
-                        <Row>
-                            <Label>{c('Label').t`Amount`}</Label>
-                            <Field>
-                                <Price className="pm-label" currency={Currency}>
-                                    {Amount}
-                                </Price>
-                            </Field>
-                        </Row>
-                        <Row>
-                            <Label>{c('Label').t`Amount due`}</Label>
-                            <Field>
-                                <Price className="pm-label" currency={Currency}>
-                                    {AmountDue}
-                                </Price>
-                            </Field>
-                        </Row>
-                        <Payment
-                            type="invoice"
-                            method={method}
-                            amount={AmountDue}
-                            currency={Currency}
-                            onParameters={setParameters}
-                            onMethod={setMethod}
-                            onValidCard={setCardValidity}
-                        />
-                    </>
-                )}
+                <InnerModal>
+                    {loadingCheck ? null : (
+                        <>
+                            <Row>
+                                <Label>{c('Label').t`Amount`}</Label>
+                                <Field>
+                                    <Price className="pm-label" currency={Currency}>
+                                        {Amount}
+                                    </Price>
+                                </Field>
+                            </Row>
+                            <Row>
+                                <Label>{c('Label').t`Amount due`}</Label>
+                                <Field>
+                                    <Price className="pm-label" currency={Currency}>
+                                        {AmountDue}
+                                    </Price>
+                                </Field>
+                            </Row>
+                            <Payment
+                                type="invoice"
+                                method={method}
+                                amount={AmountDue}
+                                currency={Currency}
+                                onParameters={setParameters}
+                                onMethod={setMethod}
+                                onValidCard={setCardValidity}
+                            />
+                        </>
+                    )}
+                </InnerModal>
                 <FooterModal>
                     <ResetButton>{c('Action').t`Close`}</ResetButton>
                     {canPay ? (

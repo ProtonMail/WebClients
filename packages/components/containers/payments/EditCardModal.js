@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import {
     Modal,
     ContentModal,
+    InnerModal,
     FooterModal,
     ResetButton,
     PrimaryButton,
@@ -37,7 +38,9 @@ const EditCardModal = ({ card: existingCard, onClose, onChange }) => {
     return (
         <Modal type="small" onClose={onClose} title={title}>
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <Card card={card} errors={errors} onChange={updateCard} loading={loading} />
+                <InnerModal>
+                    <Card card={card} errors={errors} onChange={updateCard} loading={loading} />
+                </InnerModal>
                 <FooterModal>
                     <ResetButton disabled={loading}>{c('Action').t`Close`}</ResetButton>
                     <PrimaryButton loading={loading} type="submit">{c('Action').t`Save`}</PrimaryButton>

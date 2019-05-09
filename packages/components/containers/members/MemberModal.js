@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {
     Modal,
     ContentModal,
+    InnerModal,
     FooterModal,
     ResetButton,
     PrimaryButton,
@@ -48,71 +49,81 @@ const MemberModal = ({ onClose, organization, domains }) => {
     return (
         <Modal onClose={onClose} title={c('Title').t`Add user`} type="small">
             <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <Row>
-                    <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
-                    <Field className="flex-autogrid">
-                        <Input
-                            id="nameInput"
-                            className="flex-autogrid-item"
-                            placeholder="Thomas A. Anderson"
-                            onChange={handleChange('name')}
-                            required
-                        />
-                        <Label className="flex-autogrid-item">
-                            <Checkbox checked={model.private} onChange={handleChangePrivate} />{' '}
-                            {c('Label for new member').t`Private`}
-                        </Label>
-                    </Field>
-                </Row>
-                {model.private ? null : (
+                <InnerModal>
                     <Row>
-                        <Label>{c('Label').t`Key strength`}</Label>
-                    </Row>
-                )}
-                <Row>
-                    <Label>{c('Label').t`Password`}</Label>
-                    <Field className="flex-autogrid">
-                        <PasswordInput
-                            value={model.password}
-                            className="flex-autogrid-item mb1"
-                            onChange={handleChange('password')}
-                            placeholder={c('Placeholder').t`Password`}
-                            required
-                        />
-                        <PasswordInput
-                            value={model.confirm}
-                            className="flex-autogrid-item"
-                            onChange={handleChange('confirm')}
-                            placeholder={c('Placeholder').t`Confirm Password`}
-                            required
-                        />
-                    </Field>
-                </Row>
-                <Row>
-                    <Label>{c('Label').t`Address`}</Label>
-                    <Field className="flex-autogrid">
-                        <Input onChange={handleChange('address')} placeholder={c('Placeholder').t`Address`} required />
-                        {domainOptions.length === 1 ? (
-                            `@${domainOptions[0].value}`
-                        ) : (
-                            <Select options={domainOptions} value={model.domain} onChange={handleChange('domain')} />
-                        )}
-                    </Field>
-                </Row>
-                <Row>
-                    <Label>{c('Label').t`Account storage`}</Label>
-                    <Field>
-                        <MemberStorageSelector organization={organization} onChange={handleChangeStorage} />
-                    </Field>
-                </Row>
-                {hasVPN ? (
-                    <Row>
-                        <Label>{c('Label').t`VPN connections`}</Label>
-                        <Field>
-                            <MemberVPNSelector organization={organization} onChange={handleChangeVPN} />
+                        <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
+                        <Field className="flex-autogrid">
+                            <Input
+                                id="nameInput"
+                                className="flex-autogrid-item"
+                                placeholder="Thomas A. Anderson"
+                                onChange={handleChange('name')}
+                                required
+                            />
+                            <Label className="flex-autogrid-item">
+                                <Checkbox checked={model.private} onChange={handleChangePrivate} />{' '}
+                                {c('Label for new member').t`Private`}
+                            </Label>
                         </Field>
                     </Row>
-                ) : null}
+                    {model.private ? null : (
+                        <Row>
+                            <Label>{c('Label').t`Key strength`}</Label>
+                        </Row>
+                    )}
+                    <Row>
+                        <Label>{c('Label').t`Password`}</Label>
+                        <Field className="flex-autogrid">
+                            <PasswordInput
+                                value={model.password}
+                                className="flex-autogrid-item mb1"
+                                onChange={handleChange('password')}
+                                placeholder={c('Placeholder').t`Password`}
+                                required
+                            />
+                            <PasswordInput
+                                value={model.confirm}
+                                className="flex-autogrid-item"
+                                onChange={handleChange('confirm')}
+                                placeholder={c('Placeholder').t`Confirm Password`}
+                                required
+                            />
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label>{c('Label').t`Address`}</Label>
+                        <Field className="flex-autogrid">
+                            <Input
+                                onChange={handleChange('address')}
+                                placeholder={c('Placeholder').t`Address`}
+                                required
+                            />
+                            {domainOptions.length === 1 ? (
+                                `@${domainOptions[0].value}`
+                            ) : (
+                                <Select
+                                    options={domainOptions}
+                                    value={model.domain}
+                                    onChange={handleChange('domain')}
+                                />
+                            )}
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label>{c('Label').t`Account storage`}</Label>
+                        <Field>
+                            <MemberStorageSelector organization={organization} onChange={handleChangeStorage} />
+                        </Field>
+                    </Row>
+                    {hasVPN ? (
+                        <Row>
+                            <Label>{c('Label').t`VPN connections`}</Label>
+                            <Field>
+                                <MemberVPNSelector organization={organization} onChange={handleChangeVPN} />
+                            </Field>
+                        </Row>
+                    ) : null}
+                </InnerModal>
                 <FooterModal>
                     <ResetButton>{c('Action').t`Cancel`}</ResetButton>
                     <PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>
