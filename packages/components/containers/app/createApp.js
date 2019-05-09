@@ -14,7 +14,7 @@ const SECURE_SESSION_STORAGE_KEYS = [MAILBOX_PASSWORD_KEY, UID_KEY];
 
 const wrap = (child) => {
     return (
-        <div className="App body mod--hidden">
+        <div className="App body mod--hidden content">
             <ErrorBoundary>
                 <Suspense fallback={'Loading component dynamically'}>{child}</Suspense>
                 <Icons />

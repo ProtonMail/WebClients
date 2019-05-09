@@ -7,21 +7,29 @@ import Modal from './Modal';
 import Footer from './Footer';
 import Content from './Content';
 import { generateUID } from '../../helpers/component';
-import { Alert } from '../..';
 
-/*
-Good candidates:
-- Gift code modal
-- Orgnization name modal
-- Black/White list modal
-- OpenVPN modal
-*/
+const InputField = ({ type, id, input, placeholder, onChange }) => {
+    if (type === 'textarea') {
+        return (
+            <TextArea id={id} value={input} placeholder={placeholder} onChange={onChange} autoFocus={true} required />
+        );
+    }
+
+    return <Input id={id} value={input} placeholder={placeholder} onChange={onChange} autoFocus={true} required />;
+};
+
+InputField.propTypes = {
+    type: PropTypes.string,
+    id: PropTypes.string,
+    input: PropTypes.string,
+    placeholder: PropTypes.string,
+    onChange: PropTypes.func
+};
 
 const InputModal = ({
     label,
     type,
     title,
-    warning,
     input: initialInput,
     onClose,
     onSubmit,
@@ -35,52 +43,24 @@ const InputModal = ({
     const handleChange = ({ target }) => set(target.value);
     const handleSubmit = () => onSubmit(input);
 
-    let InputField;
-    switch (type) {
-        case 'textarea':
-            InputField = (
-                <>
-                    {warning ? <Alert type="warning">{warning}</Alert> : null}
-                    <TextArea
-                        id={id}
-                        value={input}
-                        placeholder={placeholder}
-                        onChange={handleChange}
-                        autoFocus={true}
-                        readOnly={loading}
-                        required
-                    />
-                </>
-            );
-            break;
-        default:
-            InputField = (
+    return (
+        <Modal onClose={onClose} title={title} type="small">
+            <Content onSubmit={handleSubmit} onReset={onClose} loading={loading}>
                 <Row>
                     <Label htmlFor={id}>{label}</Label>
                     <Field>
-                        <Input
+                        <InputField
+                            type={type}
                             id={id}
                             value={input}
                             placeholder={placeholder}
                             onChange={handleChange}
-                            autoFocus={true}
-                            readOnly={loading}
-                            required
                         />
                     </Field>
                 </Row>
-            );
-    }
-
-    return (
-        <Modal onClose={onClose} title={title} type="small">
-            <Content onSubmit={handleSubmit} onReset={onClose} loading={loading}>
-                {InputField}
                 <Footer>
-                    <ResetButton disabled={loading}>{cancel}</ResetButton>
-                    <PrimaryButton type="submit" disabled={loading}>
-                        {submit}
-                    </PrimaryButton>
+                    <ResetButton>{cancel}</ResetButton>
+                    <PrimaryButton type="submit">{submit}</PrimaryButton>
                 </Footer>
             </Content>
         </Modal>
@@ -93,9 +73,8 @@ InputModal.propTypes = {
     onClose: PropTypes.func,
     label: PropTypes.string.isRequired,
     onSubmit: PropTypes.func,
-    title: PropTypes.string,
-    warning: PropTypes.string,
-    cancel: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    cancel: PropTypes.string,
     placeholder: PropTypes.string,
     submit: PropTypes.string,
     loading: PropTypes.bool
@@ -104,8 +83,6 @@ InputModal.propTypes = {
 InputModal.defaultProps = {
     type: 'input',
     input: '',
-    label: '',
-    warning: '',
     cancel: c('Action').t`Cancel`,
     submit: c('Action').t`Submit`
 };

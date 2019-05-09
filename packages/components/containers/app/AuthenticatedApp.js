@@ -15,6 +15,7 @@ import createNotificationsManager from 'proton-shared/lib/notifications/manager'
 import withAuthHandlers from 'proton-shared/lib/api/helpers/withAuthHandlers';
 
 import { queryUnlock } from 'proton-shared/lib/api/user';
+import ThemeInjector from '../themes/ThemeInjector';
 
 const AuthenticatedApp = ({ authenticationStore, onLogout, initApi, loginData, children }) => {
     const notificationsManager = createNotificationsManager();
@@ -59,6 +60,7 @@ const AuthenticatedApp = ({ authenticationStore, onLogout, initApi, loginData, c
             <ApiContext.Provider value={api}>
                 <AuthenticationStoreContext.Provider value={authenticationStoreWithLogout}>
                     <ModelsProvider loginData={loginData}>
+                        <ThemeInjector />
                         <PromptsProvider manager={promptsManager}>{children}</PromptsProvider>
                     </ModelsProvider>
                 </AuthenticationStoreContext.Provider>
