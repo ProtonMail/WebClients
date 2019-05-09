@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { LearnMore } from 'react-components';
 
 const CLASSES = {
-    info: 'mb1 block-info',
-    standard: 'mb1 block-info-standard',
-    warning: 'mb1 block-info-error',
-    error: 'mb1 block-info-warning'
+    info: 'mb1 block-info-standard',
+    warning: 'mb1 block-info-standard-warning',
+    error: 'mb1 block-info-standard-error'
 };
 
 const Alert = ({ type, children, learnMore, className }) => {
