@@ -1,3 +1,9 @@
+# [3.15.33] - 2019-05-09
+## Fixed
+- Some legitimate username patterns were not always accepted on signup.
+- The move action was not working in row mode under certain conditions.
+- Printing with Edge browser printed more pages that the message contains.
+
 # [3.15.32] - 2019-05-08
 ## Fixed
 - Signing up for a new account didn't properly redirect in some cases.
