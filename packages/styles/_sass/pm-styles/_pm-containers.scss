@@ -47,6 +47,9 @@ $block-info-border-width: 3px !default;
 .block-info-standard-error {
   border-color: $pm-global-warning;
 }
+.block-info-standard-warning {
+  border-color: $pm-global-attention;
+}
 // other colors might be added later
 
 
