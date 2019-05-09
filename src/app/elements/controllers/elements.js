@@ -584,10 +584,7 @@ function ElementsController(
         const elements = _.filter(conversations, { Selected: true });
 
         if ($state.params.id && mailSettingsModel.get('ViewLayout') === ROW_MODE) {
-            return _.filter(
-                conversations,
-                ({ ID, ConversationID }) => ID === $state.params.id || ConversationID === $state.params.id
-            );
+            return [{ ID: $state.params.id }];
         }
 
         if (!elements.length && $scope.markedElement && includeMarked) {
