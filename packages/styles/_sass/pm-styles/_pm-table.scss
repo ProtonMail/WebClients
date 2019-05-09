@@ -14,6 +14,9 @@
 .pm-simple-table th {
   @extend .uppercase;
   @extend .alignleft;
+  &.aligncenter {
+    @extend .aligncenter;
+  }
 }
 
 /* simple dirty fix */
