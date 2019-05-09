@@ -48,6 +48,7 @@ export const reducer = (state, action) => {
             action: ACTION_TYPES.SUBMIT_LOGIN_EFFECT,
             form: state.form,
             error: undefined,
+            ignoreUnlock: action.payload.ignoreUnlock,
             credentials: {
                 username: action.payload.username,
                 password: action.payload.password
@@ -70,6 +71,7 @@ export const reducer = (state, action) => {
 
         return {
             ...rest,
+            ignoreUnlock: state.ignoreUnlock,
             credentials: state.credentials,
             infoResult
         };
@@ -92,6 +94,12 @@ export const reducer = (state, action) => {
         const needsUnlock = hasUnlock(authResult);
 
         const rest = (() => {
+            if (state.ignoreUnlock) {
+                return {
+                    action: ACTION_TYPES.FINALIZE_EFFECT
+                };
+            }
+
             // TODO: --Remove this once it's been deprecated in the API.
             const { PrivateKey, KeySalt } = authResult;
             if (PrivateKey && needsUnlock) {
@@ -127,6 +135,7 @@ export const reducer = (state, action) => {
         return {
             form: state.form,
             credentials: state.credentials,
+            ignoreUnlock: state.ignoreUnlock,
             ...rest,
             infoResult: state.infoResult,
             authVersion,

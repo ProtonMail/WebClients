@@ -21,9 +21,21 @@ export const handleFinalizeAction = async (state, { api }) => {
     try {
         const {
             credentials: { password },
-            authResult: { UID },
+            authResult: { AccessToken, UID, RefreshToken },
+            ignoreUnlock,
             authVersion
         } = state;
+
+        if (ignoreUnlock) {
+            await api(
+                setCookies({
+                    UID,
+                    AccessToken,
+                    RefreshToken,
+                    State: getRandomString(24)
+                })
+            );
+        }
 
         if (authVersion < AUTH_VERSION) {
             await srpVerify({
