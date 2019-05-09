@@ -1,4 +1,21 @@
 <div class="pm_modal {{ctrl.class}} printModal-container" role="dialog">
+    <style>
+    /* inline-styles only to fix a bug on Edge */
+    @media print {
+        body.secure #body,
+        .pm_modal .modal-dialog .close,
+        .pm_modal .modal-dialog .modal-content h4,
+        .pm_modal .modal-overlay,
+        .modal-footer,
+        button.fa.fa-ellipsis-h.pm_button.more,
+        .headerSecuredDesktop-container,
+        .noprint,
+        .protonLoader,
+        .listAttachments-container {
+        display: none !important;
+        }
+    }
+    </style>
     <div class="modal-dialog">
         <button
             type="button"
