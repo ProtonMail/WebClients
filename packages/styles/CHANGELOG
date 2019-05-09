@@ -1,3 +1,25 @@
+# [1.6.x] - 2019-05-09
+
+## New
+
+### Updated/standardized animations and classnames 
+
+- Update notifications/modals after discussion with @mmso
+- documentated in namespacing classes
+- added mention of modifier convention
+- documented modal modifier `pm-modal--inBackground` and animation names for modals
+
+### Others
+
+- add `shadow-container` class
+
+## Updated/fixes
+
+- add `block-info-standard-warning` class
+- fix `aligncenter` helper on `th`
+- update reduce motion MQ (compatibility with `animationEnd` listener)
+
+
 # [1.6.5] - 2019-05-08
 
 ## New

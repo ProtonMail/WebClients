@@ -10,6 +10,10 @@
   border-bottom: 1px solid $pm-global-border;
 }
 
+.shadow-container {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
+}
+
 $block-info-border-width: 3px !default;
 [class*="block-info"] {
   padding: .5em 1.2em;
