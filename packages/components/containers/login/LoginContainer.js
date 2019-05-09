@@ -19,8 +19,11 @@ const getErrorText = (error) => {
     return error.message;
 };
 
-const LoginContainer = ({ onLogin }) => {
-    const { form, error, loading, handleLoginSubmit, handleTotpSubmit, handleUnlockSubmit } = useLogin(onLogin);
+const LoginContainer = ({ onLogin, ignoreUnlock }) => {
+    const { form, error, loading, handleLoginSubmit, handleTotpSubmit, handleUnlockSubmit } = useLogin({
+        onLogin,
+        ignoreUnlock
+    });
     const { createNotification } = useNotifications();
 
     const formComponent = (() => {
@@ -57,7 +60,12 @@ const LoginContainer = ({ onLogin }) => {
 };
 
 LoginContainer.propTypes = {
-    onLogin: PropTypes.func.isRequired
+    onLogin: PropTypes.func.isRequired,
+    ignoreUnlock: PropTypes.bool
+};
+
+LoginContainer.defaultProps = {
+    ignoreUnlock: false
 };
 
 export default LoginContainer;

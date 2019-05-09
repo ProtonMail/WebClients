@@ -11,12 +11,12 @@ import {
 
 import useApi from '../../hooks/useApi';
 
-const useLogin = (onLogin) => {
+const useLogin = ({ onLogin, ignoreUnlock }) => {
     const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
     const api = useApi();
 
     const handleLoginSubmit = ({ username, password }) => {
-        dispatch({ type: ACTION_TYPES.SUBMIT_LOGIN, payload: { username, password } });
+        dispatch({ type: ACTION_TYPES.SUBMIT_LOGIN, payload: { username, password, ignoreUnlock } });
     };
 
     const handleTotpSubmit = ({ totp }) => {
