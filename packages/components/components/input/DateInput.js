@@ -12,8 +12,8 @@ const DateInput = ({ id, disabled, required, placeholder, className, ...rest }) 
             ...rest
         });
 
-        return picker.destroy;
-    });
+        return () => picker.destroy();
+    }, []);
 
     return (
         <input
@@ -37,7 +37,8 @@ DateInput.propTypes = {
 };
 
 DateInput.defaultProps = {
-    required: false
+    required: false,
+    className: ''
 };
 
 export default DateInput;
