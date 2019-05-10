@@ -14,11 +14,11 @@ describe('Alert component', () => {
     });
 
     it('has default class', () => {
-        expect(firstChild).toHaveClass('block-info');
+        expect(firstChild).toHaveClass('mb1 block-info-standard');
     });
 
     it('should have error class for warning type', () => {
         const { container } = render(<Alert type="warning">{text}</Alert>);
-        expect(container.firstChild).toHaveClass('block-info-error');
+        expect(container.firstChild).toHaveClass('mb1 block-info-standard-warning');
     });
 });
