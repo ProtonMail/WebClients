@@ -45,7 +45,7 @@ function main(mode, { dir } = {}) {
     }
 
     const spinner = spin('Parsing translations');
-    const doc = fs.readFileSync(path.resolve('./po/template.pot'));
+    const doc = fs.readFileSync(path.resolve(process.cwd(), 'po/template.pot'));
     const translations = findNoContext(doc);
     const total = translations.length;
     const word = total > 1 ? 'translations' : 'translation';
