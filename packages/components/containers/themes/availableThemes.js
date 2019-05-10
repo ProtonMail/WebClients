@@ -1,4 +1,3 @@
-import { c } from 'ttag';
 import { THEMES } from 'proton-shared/lib/constants';
 import themeDarkSvg from 'design-system/assets/img/pm-images/theme-dark.svg';
 import themeLightSvg from 'design-system/assets/img/pm-images/theme-light.svg';
@@ -14,7 +13,7 @@ const {
 } = THEMES;
 
 const themeDark = {
-    label: c('Theme label').t`${darkLabel}`,
+    label: darkLabel,
     id: darkId,
     alt: stripThemeIdentifier(darkId),
     src: themeDarkSvg,
@@ -22,7 +21,7 @@ const themeDark = {
 };
 
 const themeLight = {
-    label: c('Theme label').t`${lightLabel}`,
+    label: lightLabel,
     id: lightId,
     alt: stripThemeIdentifier(lightId),
     src: themeLightSvg,
@@ -30,7 +29,7 @@ const themeLight = {
 };
 
 const themeBlue = {
-    label: c('Theme label').t`${blueLabel}`,
+    label: blueLabel,
     id: blueId,
     alt: stripThemeIdentifier(blueId),
     src: themeBlueSvg,
@@ -38,7 +37,7 @@ const themeBlue = {
 };
 
 const themeCustom = {
-    label: c('Theme label').t`${customLabel}`,
+    label: customLabel,
     id: customId,
     alt: stripThemeIdentifier(customId),
     src: themeTestSvg,

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { c } from 'ttag';
 import { RadioCard } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
@@ -23,7 +22,7 @@ const ThemeCard = ({ label, id, alt, src, checked, onChange, disabled, customiza
 
     return (
         <RadioCard
-            label={c('Theme label').t`${label}`}
+            label={label}
             name="themeCard"
             id={id}
             checked={checked}
