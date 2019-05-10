@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 export const MAIN_USER_KEY = 'USER_KEYS';
 export const SECURE_SESSION_STORAGE_KEY = 'SECURE';
 export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
@@ -168,19 +170,19 @@ export const VIEW_MODE = {
 
 export const THEMES = {
     DARK: {
-        label: 'Dark (Default)',
+        label: c('Theme').t`Dark (Default)`,
         identifier: '/* dark-theme */'
     },
     LIGHT: {
-        label: 'Light',
+        label: c('Theme').t`Light`,
         identifier: '/* light-theme */'
     },
     BLUE: {
-        label: 'Blue',
+        label: c('Theme').t`Blue`,
         identifier: '/* blue-theme */'
     },
     CUSTOM: {
-        label: 'Custom theme',
+        label: c('Theme').t`Custom theme`,
         identifier: '/* custom-theme */'
     }
 };
