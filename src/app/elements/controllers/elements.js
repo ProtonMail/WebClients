@@ -580,12 +580,15 @@ function ElementsController(
      * @return {Array} elements
      */
     function getElementsSelected(includeMarked = true) {
+        if ($state.params.id && mailSettingsModel.get('ViewLayout') === ROW_MODE) {
+            const ID = $state.params.id;
+            const messageMode = tools.typeView() === 'message';
+            // We only test for the messageMode view as we will need the ConversationID
+            return [messageMode ? cache.getMessageCached(ID) : { ID }];
+        }
+
         const { conversations = [] } = $scope; // conversations can contains message list or conversation list
         const elements = _.filter(conversations, { Selected: true });
-
-        if ($state.params.id && mailSettingsModel.get('ViewLayout') === ROW_MODE) {
-            return [{ ID: $state.params.id }];
-        }
 
         if (!elements.length && $scope.markedElement && includeMarked) {
             return _.filter(
@@ -610,10 +613,9 @@ function ElementsController(
      * @return {String}
      */
     function getTypeSelected() {
-        const elementsSelected = getElementsSelected();
-
-        if (elementsSelected.length) {
-            return elementsSelected[0].ConversationID ? 'message' : 'conversation';
+        const [element] = getElementsSelected();
+        if (element) {
+            return element.ConversationID ? 'message' : 'conversation';
         }
         return tools.getTypeList();
     }
