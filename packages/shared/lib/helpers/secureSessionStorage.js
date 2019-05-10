@@ -76,7 +76,11 @@ const serializeItem = (value) => {
  */
 const saveSessionStorage = (keys = [], data) => {
     keys.forEach((key) => {
-        window.sessionStorage.setItem(key, data[key]);
+        const value = data[key];
+        if (!value) {
+            return;
+        }
+        window.sessionStorage.setItem(key, value);
     }, {});
 };
 

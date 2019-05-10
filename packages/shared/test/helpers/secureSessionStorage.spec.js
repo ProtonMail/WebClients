@@ -19,6 +19,22 @@ describe('secureSessionStorage', () => {
         expect(loadedData).toEqual(data);
     });
 
+    it('should allow undefined values', () => {
+        const data = { foo: undefined };
+        save(['foo'], data);
+        expect(window.name).toEqual(JSON.stringify({}));
+        expect(window.sessionStorage.getItem('foo')).toBeNull();
+        const loadedData = load(['foo']);
+        expect(loadedData).toEqual({});
+    });
+
+    it('should allow values and undefined values', () => {
+        const data = { foo: undefined, bar: '123' };
+        save(['foo', 'bar'], data);
+        const loadedData = load(['foo', 'bar']);
+        expect(loadedData).toEqual({ bar: '123' });
+    });
+
     it('should separate parts in two shares', () => {
         const { share1, share2 } = separateParts({
             a: '123',
