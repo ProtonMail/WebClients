@@ -1,3 +1,7 @@
+# [3.15.34] - 2019-05-10
+## Fixed
+- the buttons in message details view did not apply the correct actions
+
 # [3.15.33] - 2019-05-09
 ## Fixed
 - Some legitimate username patterns were not always accepted on signup.
