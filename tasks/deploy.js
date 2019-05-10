@@ -9,7 +9,7 @@ const del = require('del');
 const UpdaterRenderer = require('listr-update-renderer');
 const moment = require('moment');
 
-const { success, error, warn, json } = require('./helpers/log');
+const { success, error, warn, json, title } = require('./helpers/log');
 const env = require('../env/config');
 const { apiUrl, branch, statsConfig, sentry } = env.getEnvDeploy({
     env: 'dist',
@@ -19,7 +19,6 @@ const { externalFiles } = require('../env/conf.build');
 
 const bash = (cli) => execa.shell(cli, { shell: '/bin/bash' });
 const push = async (branch, { config, originBranch }) => {
-
     const commands = ['cd dist'];
 
     const message = /-prod-/.test(branch) ? `New Release ${config.app_version}` : 'New Release';
@@ -63,7 +62,6 @@ async function replace(rule) {
  * @return {Promise}
  */
 async function replaceSRI() {
-
     const { stdout: stdoutNew } = await bash('./tasks/manageSRI get-new');
     const { stdout: stdoutProd } = await bash('./tasks/manageSRI get-prod');
 
@@ -84,15 +82,17 @@ async function replaceSRI() {
     const HASHES_NEW = toList(stdoutNew);
 
     // Create sed string for the replace
-    const arg = Object.keys(HASHES_PROD).reduce((acc, key) => {
-        const file = key.replace('distCurrent', 'dist');
-        const oldHash = HASHES_PROD[key];
-        const newHash = HASHES_NEW[file];
-        if (oldHash !== newHash) {
-            acc.push(`s|${oldHash}|${newHash}|g;`);
-        }
-        return acc;
-    }, []).join('');
+    const arg = Object.keys(HASHES_PROD)
+        .reduce((acc, key) => {
+            const file = key.replace('distCurrent', 'dist');
+            const oldHash = HASHES_PROD[key];
+            const newHash = HASHES_NEW[file];
+            if (oldHash !== newHash) {
+                acc.push(`s|${oldHash}|${newHash}|g;`);
+            }
+            return acc;
+        }, [])
+        .join('');
 
     // Bind new hashes
     await bash(`./tasks/manageSRI write-index "${arg}"`);
@@ -135,10 +135,7 @@ const buildCustomApp = async (branch, { start, end, originBranch } = {}) => {
     }
 
     // Backup build assets
-    const cli = [
-        'rsync -av --progress distback/ distCurrent --exclude .git',
-        'rm -rf dist'
-    ];
+    const cli = ['rsync -av --progress distback/ distCurrent --exclude .git', 'rm -rf dist'];
     await bash(cli.join(' && '));
     await pullDist(branch, true);
 
@@ -318,7 +315,6 @@ const tasks = new Listr(getTasks(branch, { isCI, flowType, forceI18n }), {
 tasks
     .run()
     .then((ctx) => {
-
         env.argv.debug && json(ctx);
 
         const now = moment(Date.now());
@@ -327,6 +323,12 @@ tasks
 
         !isCI && success('App deployment done', { time });
         isCI && success(`Build CI app to the directory: ${chalk.bold('dist')}`, { time });
+
+        if (/prod/.test(branch) && !isCI) {
+            console.log('');
+            title('Hash commits');
+            const arg = flowType !== 'many' ? 'prod' : '';
+            return bash(`./tasks/logcommits.sh ${arg}`.trim()).then(({ stdout }) => console.log(stdout));
+        }
     })
     .catch(error);
-
