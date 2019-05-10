@@ -66,9 +66,6 @@ const deserializeItem = (value) => {
  * @return {String}
  */
 const serializeItem = (value) => {
-    if (!value) {
-        return;
-    }
     return encodeBase64(arrayToBinaryString(value));
 };
 
@@ -135,7 +132,12 @@ export const mergeParts = (share1, share2) =>
 export const separateParts = (data) =>
     Object.keys(data).reduce(
         (acc, key) => {
-            const item = binaryStringToArray(data[key]);
+            const value = data[key];
+            if (!value) {
+                return acc;
+            }
+
+            const item = binaryStringToArray(value);
             const paddedLength = Math.ceil(item.length / 256) * 256;
 
             const share1 = getRandomValues(new Uint8Array(paddedLength));
