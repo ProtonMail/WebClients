@@ -19,7 +19,13 @@ function notification() {
         'notify',
         '$cacheFactory',
         'sanitize',
-        (notify, $cacheFactory, sanitize) => {
+        'gettextCatalog',
+        'translator',
+        (notify, $cacheFactory, sanitize, gettextCatalog, translator) => {
+            const I18N = translator(() => ({
+                UNDO: gettextCatalog.getString('UNDO', null, 'Link in notification to undo an action')
+            }));
+
             // LRU cache containing notification texts -> timestamp
             const cache = $cacheFactory('notifications', { number: 5 });
 
@@ -33,6 +39,12 @@ function notification() {
                 if (htmlInfo.isHtml && !options.messageTemplate) {
                     const content = sanitize.input(message);
                     options.messageTemplate = htmlInfo.isWrapped ? content : `<div>${content}</div>`;
+                }
+
+                if (options.undo) {
+                    const content = sanitize.input(message);
+                    options.messageTemplate = `<div>${content} <a href="#">${I18N.UNDO}</a></div>`;
+                    options.onClose = options.undo;
                 }
 
                 /**

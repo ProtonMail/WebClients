@@ -1,4 +1,6 @@
+import _ from 'lodash';
 import notificationService from '../../../../src/app/commons/providers/notification';
+import translatorService from '../../../../src/app/commons/services/translator';
 import { generateModuleName } from '../../../utils/helpers';
 
 const tpl = require('../../../../src/templates/notifications/base.tpl.html');
@@ -7,9 +9,14 @@ const sanitize = () => ({
     input: (input) => input
 });
 const MODULE = generateModuleName();
+const gettextCatalog = () => ({
+    getString: _.identity
+});
 
 describe('notification service', () => {
     angular.module(MODULE, ['cgNotify', 'templates-app', 'ngSanitize'])
+        .factory('gettextCatalog', gettextCatalog)
+        .factory('translator', translatorService)
         .factory('sanitize', sanitize)
         .provider('notification', notificationService)
         .config((notificationProvider) => {

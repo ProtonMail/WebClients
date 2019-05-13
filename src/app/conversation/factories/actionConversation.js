@@ -393,6 +393,7 @@ function actionConversation(
      * @param {String} labelID
      */
     function move(conversationIDs = [], labelID = '') {
+        const currentLocation = tools.currentLocation();
         const folders = labelsModel.ids('folders');
         const labels = labelsModel.ids('labels');
         const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
@@ -410,7 +411,12 @@ function actionConversation(
             },
             'Info'
         );
-        const displaySuccess = () => notification.success(successMessage);
+        const displaySuccess = () =>
+            notification.success(successMessage, {
+                undo() {
+                    move(conversationIDs, currentLocation);
+                }
+            });
 
         const folderIDs = basicFolders.concat(folders).concat(toSpam || toTrash ? labels : []);
 
