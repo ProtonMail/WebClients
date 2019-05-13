@@ -7,25 +7,21 @@ function dropdownFolders(AppModel, labelsModel, dispatchers, actionConversation,
         {
             Name: gettextCatalog.getString('Inbox', null, 'Label'),
             ID: MAILBOX_IDENTIFIERS.inbox,
-            Order: 9999,
             className: 'fa-inbox'
         },
         {
             Name: gettextCatalog.getString('Archive', null, 'Label'),
             ID: MAILBOX_IDENTIFIERS.archive,
-            Order: 9999,
             className: 'fa-archive'
         },
         {
             Name: gettextCatalog.getString('Spam', null, 'Label'),
             ID: MAILBOX_IDENTIFIERS.spam,
-            Order: 9999,
             className: 'fa-ban'
         },
         {
             Name: gettextCatalog.getString('Trash', null, 'Label'),
             ID: MAILBOX_IDENTIFIERS.trash,
-            Order: 9999,
             className: 'fa-trash-o'
         }
     ];
@@ -69,7 +65,7 @@ function dropdownFolders(AppModel, labelsModel, dispatchers, actionConversation,
                     return folder;
                 });
                 scope.$applyAsync(() => {
-                    scope.labels = mailboxes.concat(exclusiveLabels);
+                    scope.labels = exclusiveLabels.concat(mailboxes);
                 });
                 const id = setTimeout(() => (search.focus(), clearTimeout(id)), 100);
             }

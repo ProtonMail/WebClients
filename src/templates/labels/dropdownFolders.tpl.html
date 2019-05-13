@@ -16,7 +16,7 @@
         <ul class="scrollbox-container-group">
             <li
                 class="dropdown-folder-scrollbox-group-item"
-                ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue} | orderBy: 'Order')) track by label.ID">
+                ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue})) track by label.ID">
                 <button class="dropdown-folder-scrollbox-group-item-button" data-folder-id="{{ ::label.ID }}">
                     <div>
                         <i class="fa dropdown-folder-scrollbox-group-item-icon" ng-class="label.className" ng-style="::color(label)"></i>
