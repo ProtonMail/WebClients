@@ -25,7 +25,7 @@ function messageActions(
 ) {
     const { on } = dispatchers();
 
-    const notifySuccess = (message) => notification.success(unicodeTag(message));
+    const notifySuccess = (message, options = {}) => notification.success(unicodeTag(message), options);
 
     const basicFolders = [
         MAILBOX_IDENTIFIERS.inbox,
@@ -87,6 +87,7 @@ function messageActions(
 
     // Message actions
     function move({ ids, labelID }) {
+        const currentLocation = tools.currentLocation();
         const folders = labelsModel.ids('folders');
         const labels = labelsModel.ids('labels');
         const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
@@ -187,11 +188,24 @@ function messageActions(
 
         if (tools.cacheContext()) {
             cache.events(events);
-            return notifySuccess(notification);
+            return notifySuccess(notification, {
+                undo() {
+                    move({ ids, labelID: currentLocation });
+                }
+            });
         }
 
         // Send cache events
-        promise.then(() => (cache.events(events), notifySuccess(notification)));
+        promise.then(
+            () => (
+                cache.events(events),
+                notifySuccess(notification, {
+                    undo() {
+                        move({ ids, labelID: currentLocation });
+                    }
+                })
+            )
+        );
         networkActivityTracker.track(promise);
     }
 
