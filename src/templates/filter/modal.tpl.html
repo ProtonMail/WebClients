@@ -185,7 +185,7 @@
 
                         <div class="col-1-4" ng-repeat="folder in ctrl.folders track by folder.ID">
                             <label class="filter-modal-label">
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.Name }}"></custom-radio>
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.Path }}"></custom-radio>
                                 <i class="filter-modal-label-item-icon fa" ng-class="{ 'fa-folder': folder.Exclusive, 'fa-tag': !folder.Exclusive }" ng-style="{ color: folder.Color }"></i>
                                 <span class="ellipsis" title="{{ ::folder.Name }}">{{ ::folder.Name }}</span>
                             </label>
