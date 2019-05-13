@@ -135,7 +135,9 @@ function filterModal(
             }
 
             const findCurrentMoveFolder = (list = []) => {
-                const map = labelsModel.get('folders').reduce((acc, label) => ((acc[label.Name] = label), acc), {});
+                const map = labelsModel
+                    .get('folders')
+                    .reduce((acc, label) => ((acc[label.Name] = label), (acc[label.Path] = label), acc), {});
                 const folder = _.find(list, (key) => MAILBOX_IDENTIFIERS[key] || map[key]);
                 return folder || '';
             };
@@ -150,7 +152,7 @@ function filterModal(
                 const move = findCurrentMoveFolder(FileInto);
                 const actions = {
                     Labels: labelsOrdered.map((label) => {
-                        label.Selected = FileInto.indexOf(label.Name) !== -1;
+                        label.Selected = FileInto.indexOf(label.Path) !== -1 || FileInto.indexOf(label.Name) !== -1;
                         return label;
                     }),
                     Move: move || 'inbox',
@@ -417,7 +419,7 @@ function filterModal(
 
                     if (ctrl.hasLabels === true) {
                         const labels = _.filter(clone.Simple.Actions.Labels, ({ Selected }) => Selected === true).map(
-                            ({ Name }) => Name
+                            ({ Path }) => Path
                         );
                         const fileInto = bindActions(clone.Simple.Actions, labels);
                         clone.Simple.Actions.FileInto = fileInto;
