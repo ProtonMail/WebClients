@@ -44,6 +44,11 @@ opacity: .3;
   <symbol id="symbol-dash">
   <rect x="2" y="7" width="10" height="1" />
   </symbol>
+
+  <symbol id="symbol-on">
+  <polygon points="6.68 14.28 1.14 8.74 1.84 8.03 6.53 12.72 14.03 1.8 14.85 2.37 6.68 14.28" />
+  </symbol>
+
   
   <use id="css-search" xlink:href="#symbol-search" class="black" />
   <use id="css-search-rtl" xlink:href="#symbol-search" class="black mirror" />
@@ -56,5 +61,6 @@ opacity: .3;
   <use id="css-greater" xlink:href="#symbol-caret" class="black rotated-right" />
   <use id="css-lesser" xlink:href="#symbol-caret" class="black rotated-left" />
   <use id="css-dash" xlink:href="#symbol-dash" class="black low-opacity" />
+  <use id="css-on" xlink:href="#symbol-on" class="white" />
 
 </svg>

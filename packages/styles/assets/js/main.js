@@ -1087,3 +1087,52 @@ var previewThemeButtons = [].slice.call(document.body.querySelectorAll('.js-prev
 previewThemeButtons.forEach(function(elem) {
     elem.addEventListener("click", themePreview );
 });
+
+
+
+/**
+ * Wizard preview
+ */
+function updateStepWizard( e ) { 
+  var param = e.currentTarget.dataset.action; // prev/next
+  
+  var itemsWizard = [].slice.call(document.body.querySelectorAll('.wizard-item')),
+      indexMax = itemsWizard.length-1,
+      itemSelected = document.querySelector('.wizard-item[aria-current="step"]'),
+      wizard = itemSelected.parentNode,
+      indexSelected = Array.prototype.indexOf.call(wizard.children, itemSelected);
+
+  if ( (indexSelected === 0 && param === 'prev') || ( indexSelected === indexMax && param === 'next') ){
+    return;
+  }
+
+  itemSelected.removeAttribute('aria-current');
+  itemsWizard.forEach(function(elem) {
+    elem.classList.remove('is-complete');
+  });
+
+  if ( param === 'prev' ){
+    indexSelected--;
+    itemsWizard[ indexSelected ].setAttribute('aria-current', 'step'); 
+  }
+  if ( param === 'next' ){
+    indexSelected++;
+    itemsWizard[ indexSelected ].setAttribute('aria-current', 'step');
+  }
+  for (var i=0 ; i<indexSelected ; i++) {
+    itemsWizard[i].classList.add('is-complete');
+  }
+
+
+}
+
+
+var previousStepWizardButton = document.body.querySelector('.js-previousStepWizard');
+var nextStepWizardButton = document.body.querySelector('.js-nextStepWizard');
+
+if ( previousStepWizardButton ) {
+  previousStepWizardButton.addEventListener("click", updateStepWizard );
+}
+if ( nextStepWizardButton ) {
+  nextStepWizardButton.addEventListener("click", updateStepWizard );
+}

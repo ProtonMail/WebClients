@@ -41,26 +41,34 @@
 
 
 /* CSS icons, for reference */
-.css-search {
-  background: url("/assets/img/shared/sprite-for-css-only.svg#css-search") 50% 50% no-repeat;
+[class*="sprite-css-"] {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
-.css-search-rtl {
-  background: url("/assets/img/shared/sprite-for-css-only.svg#css-search-rtl") 50% 50% no-repeat;
+
+.sprite-css-search {
+  background-image: url("#{$path-images}sprite-for-css-only.svg#css-search");
 }
-.css-caret {
-  background: url("/assets/img/shared/sprite-for-css-only.svg#css-caret") 50% 50% no-repeat;
+.sprite-css-search-rtl {
+  background-image: url("#{$path-images}sprite-for-css-only.svg#css-search-rtl");
 }
-.css-caret-close {
-  background: url("/assets/img/shared/sprite-for-css-only.svg#css-caret-close") 50% 50% no-repeat;
+.sprite-css-caret {
+  background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret");
 }
-.css-greater {
-  background: url("/assets/img/shared/sprite-for-css-only.svg#css-greater") 50% 50% no-repeat;
+.sprite-css-caret-close {
+  background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-close");
 }
-.css-lesser {
-  background: url("/assets/img/shared/sprite-for-css-only.svg#css-lesser") 50% 50% no-repeat;
+.sprite-css-greater {
+  background-image: url("#{$path-images}sprite-for-css-only.svg#css-greater");
 }
-.css-dash {
-  background: url("/assets/img/shared/sprite-for-css-only.svg#css-dash") 50% 50% no-repeat;
+.sprite-css-lesser {
+  background-image: url("#{$path-images}sprite-for-css-only.svg#css-lesser");
+}
+.sprite-css-dash {
+  background-image: url("#{$path-images}sprite-for-css-only.svg#css-dash");
+}
+.sprite-css-on {
+  background-image: url("#{$path-images}sprite-for-css-only.svg#css-on");
 }
 
 

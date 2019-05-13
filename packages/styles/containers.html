@@ -8,6 +8,68 @@ keywords: containers, proton, examples
 section: design
 ---
 
+<h2>Wizard</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 pt0-5">
+    <div class="wizard-container">
+      <ul class="wizard unstyled flex flex-nowrap flex-spacebetween">
+        <li class="wizard-item is-complete">
+          <span class="wizard-marker"></span>
+          <span class="wizard-item-inner">Destroy NY</span>
+        </li>
+        <li class="wizard-item" aria-current="step">
+          <span class="wizard-marker"></span>
+          <span class="wizard-item-inner">Destroy Sokovia</span>
+        </li>
+        <li class="wizard-item">
+          <span class="wizard-marker"></span>
+          <span class="wizard-item-inner">Civil War</span>
+        </li>
+        <li class="wizard-item">
+          <span class="wizard-marker"></span>
+          <span class="wizard-item-inner">Endgame</span>
+        </li>
+      </ul>
+    </div>
+    <div class="flex flex-spacebetween mb1">
+      <button class="pm-button js-previousStepWizard" data-action="prev">Previous step</button>
+      <button class="pm-button js-nextStepWizard" data-action="next">Next step</button>
+    </div>
+    <ul>
+      <li>When a step is the current one, add <code>aria-current="step"</code>.</li>
+      <li>When an element is completed, add <code>is-complete</code> class to it.</li>
+      <li>The last step can also have <code>is-complete</code> class on it (not displayed here but case is possible).</li>
+      <li>Buttons are just provided to test :)</li>
+    </ul>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div <strong>class="wizard-container"</strong>&gt;
+  &lt;ul <strong>class="wizard unstyled flex flex-nowrap flex-spacebetween"</strong>&gt;
+    &lt;li class="wizard-item <strong>is-complete</strong>"&gt;
+      &lt;span class="wizard-marker"&gt;&lt;/span&gt;
+      &lt;span class="wizard-item-inner"&gt;Destroy NY&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li <strong>class="wizard-item" aria-current="step"</strong>&gt;
+      &lt;span class="wizard-marker"&gt;&lt;/span&gt;
+      &lt;span class="wizard-item-inner"&gt;Destroy Sokovia&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li <strong>class="wizard-item"</strong>&gt;
+      &lt;span class="wizard-marker"&gt;&lt;/span&gt;
+      &lt;span class="wizard-item-inner"&gt;Civil War&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="wizard-item"&gt;
+      &lt;span class="wizard-marker"&gt;&lt;/span&gt;
+      &lt;span class="wizard-item-inner"&gt;Endgame&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+
+
 <h2>Container with border/shadow</h2>
 
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">

@@ -1,17 +1,14 @@
-# [1.6.x] - 2019-05-09
+# [1.6.6] - 2019-05-13
 
 ## New
 
-### Updated/standardized animations and classnames 
-
-- Update notifications/modals after discussion with @mmso
-- documentated in namespacing classes
-- added mention of modifier convention
-- documented modal modifier `pm-modal--inBackground` and animation names for modals
-
-### Others
-
+- wizard component
 - add `shadow-container` class
+- updated/standardized animations and classnames 
+  - update notifications/modals after discussion with @mmso
+  - documentated in namespacing classes
+  - added mention of modifier convention
+  - documented modal modifier `pm-modal--inBackground` and animation names for modals
 
 ## Updated/fixes
 

@@ -1,0 +1,94 @@
+/*
+ * wizard
+ */
+
+$height-wizard: 6px !default;
+$size-current-pin: 16px !default;
+
+.wizard-container {
+  position: relative;
+  padding-top: 1.5em;
+  padding-left: 2px; // "optical" alignment, difficult to align text and circle ^^
+}
+
+.wizard {
+  height: $height-wizard;
+  display: flex;
+}
+
+.wizard-marker {
+  display: flex;
+  width: $size-current-pin;
+  height: $size-current-pin;
+  border-radius: 50%;
+  position: relative;
+  top: -#{$height-wizard - 1};
+  background-image: radial-gradient(circle, $pm-blue 0, $pm-blue #{$height-wizard/2}, transparent #{$height-wizard/2});
+}
+
+.wizard-item {
+  
+  background: $pm-global-border;
+
+  &:not(:last-child) {
+    @extend .flex-item-fluid;
+  }
+  
+  // positionned first element always with a aria-current/is-complete
+  &:first-child {
+    background: none;
+    background-image: linear-gradient(to left, $pm-global-border 0,  $pm-global-border calc(100% - #{$height-wizard/2}), transparent calc(100% - #{$height-wizard/2}) );
+  }
+  &:last-child {
+    background: none;
+    background-image: linear-gradient(to right, $pm-global-border 0,  $pm-global-border 50%, transparent 50%);
+    &.is-complete::after {
+      content: none;
+    }
+  }
+  
+  &[aria-current="step"],
+  &.is-complete {
+    &::before {
+      content: '';
+      position: relative;
+      display: block;
+      border-radius: 50%;
+      z-index: 1;
+      top: -#{$height-wizard - 1};
+      left: -1px;
+      width: $size-current-pin;
+      height: $size-current-pin;
+    }
+
+    .wizard-marker {
+      display: none;
+    }
+  }
+  &[aria-current="step"]::before {
+    background-image: radial-gradient(circle, $white 0, $white #{$height-wizard/2}, $pm-blue #{$height-wizard/2});
+  }
+  &.is-complete::before {
+    background: $pm-blue url("#{$path-images}sprite-for-css-only.svg#css-on") 50% 50% no-repeat;
+    background-size: #{$size-current-pin - $height-wizard};
+  }
+  &.is-complete::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    height: $height-wizard;
+    top: -$size-current-pin;
+    background-color: $pm-blue;
+  }
+  &[aria-current="step"] .wizard-item-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  &:not([aria-current]) .wizard-item-inner {
+    @extend .invisible;
+  }
+}
