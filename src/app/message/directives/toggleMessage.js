@@ -42,12 +42,10 @@ function toggleMessage(dispatchers) {
                 }
             }
 
-            element.on('mouseup', mouseup);
-            element.on('touchend', mouseup);
+            element.on('click', mouseup);
 
             scope.$on('$destroy', () => {
-                element.off('mouseup', mouseup);
-                element.off('touchend', mouseup);
+                element.off('click', mouseup);
             });
         }
     };
