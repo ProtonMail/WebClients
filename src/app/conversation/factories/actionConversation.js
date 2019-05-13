@@ -392,7 +392,7 @@ function actionConversation(
      * @param {Array} conversationIDs
      * @param {String} labelID
      */
-    function move(conversationIDs = [], labelID = '') {
+    function move(conversationIDs = [], labelID = '', undo = true) {
         const currentLocation = tools.currentLocation();
         const folders = labelsModel.ids('folders');
         const labels = labelsModel.ids('labels');
@@ -400,6 +400,7 @@ function actionConversation(
         const toSpam = labelID === MAILBOX_IDENTIFIERS.spam;
         const promise = conversationApi.label(labelID, conversationIDs);
         const folderName = getFolderNameTranslated(labelID);
+        const notifyParameters = {};
 
         const successMessage = gettextCatalog.getPlural(
             conversationIDs.length,
@@ -411,12 +412,16 @@ function actionConversation(
             },
             'Info'
         );
-        const displaySuccess = () =>
-            notification.success(successMessage, {
-                undo() {
-                    move(conversationIDs, currentLocation);
-                }
-            });
+
+        if (undo) {
+            notifyParameters.undo = () => {
+                move(conversationIDs, currentLocation, false);
+            };
+        }
+
+        const displaySuccess = () => {
+            notification.success(successMessage, notifyParameters);
+        };
 
         const folderIDs = basicFolders.concat(folders).concat(toSpam || toTrash ? labels : []);
 

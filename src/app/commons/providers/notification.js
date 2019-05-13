@@ -41,12 +41,6 @@ function notification() {
                     options.messageTemplate = htmlInfo.isWrapped ? content : `<div>${content}</div>`;
                 }
 
-                if (options.undo) {
-                    const content = sanitize.input(message);
-                    options.messageTemplate = `<div>${content} <a href="#">${I18N.UNDO}</a></div>`;
-                    options.onClose = options.undo;
-                }
-
                 /**
                  * Check if this notification is already displayed. Useful because the app often makes multiple
                  * API calls and if they error out with e.g. force upgrade they could show up multiple times.
@@ -63,6 +57,13 @@ function notification() {
 
                 if (type === 'error' && typeof options.duration === 'undefined') {
                     options.duration = 10000;
+                }
+
+                if (options.undo) {
+                    const content = sanitize.input(message);
+                    options.onClickClose = true;
+                    options.onClick = options.undo;
+                    options.messageTemplate = `<div>${content} <a href="#">${I18N.UNDO}</a></div>`;
                 }
 
                 notify({ message, ...options, onClose });

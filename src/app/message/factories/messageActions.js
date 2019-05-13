@@ -86,13 +86,14 @@ function messageActions(
     });
 
     // Message actions
-    function move({ ids, labelID }) {
+    function move({ ids, labelID, undo = true }) {
         const currentLocation = tools.currentLocation();
         const folders = labelsModel.ids('folders');
         const labels = labelsModel.ids('labels');
         const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
         const toSpam = labelID === MAILBOX_IDENTIFIERS.spam;
         const folderIDs = toSpam || toTrash ? basicFolders.concat(folders, labels) : basicFolders.concat(folders);
+        const notifyParameters = {};
 
         // Generate cache events
         const { eventList, toSpamList } = _.reduce(
@@ -186,26 +187,19 @@ function messageActions(
 
         toSpamList.length && contactSpam(_.uniq(toSpamList));
 
+        if (undo) {
+            notifyParameters.undo = () => {
+                move({ ids, labelID: currentLocation, undo: false });
+            };
+        }
+
         if (tools.cacheContext()) {
             cache.events(events);
-            return notifySuccess(notification, {
-                undo() {
-                    move({ ids, labelID: currentLocation });
-                }
-            });
+            return notifySuccess(notification, notifyParameters);
         }
 
         // Send cache events
-        promise.then(
-            () => (
-                cache.events(events),
-                notifySuccess(notification, {
-                    undo() {
-                        move({ ids, labelID: currentLocation });
-                    }
-                })
-            )
-        );
+        promise.then(() => (cache.events(events), notifySuccess(notification, notifyParameters)));
         networkActivityTracker.track(promise);
     }
 
