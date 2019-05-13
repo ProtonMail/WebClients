@@ -50,6 +50,10 @@ function sendPreferences(dispatchers, addressesModel, contactEmails, Contact, co
         if (info.scheme === PACKAGE_TYPE.SEND_PGP_INLINE && (info.sign || info.encrypt)) {
             return 'text/plain';
         }
+        // If sending EO, respect the mime type of the composer, since it will be what the API returns when retrieving the message.
+        if (info.scheme === PACKAGE_TYPE.SEND_EO) {
+            return defaultMimetype;
+        }
         if (defaultMimetype === 'text/plain' || mimetype === null) {
             // NEVER upconvert
             return defaultMimetype;
