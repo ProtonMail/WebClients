@@ -45,7 +45,7 @@ function unsubscribeModel(
         }
 
         const to = mailto.substring(0, j);
-        const { searchObject = {} } = parseURL(mailto.substring(j + 1));
+        const { searchObject = {} } = parseURL(mailto);
 
         message.AddressID = address.ID;
         message.From = address;
