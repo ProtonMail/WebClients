@@ -6,7 +6,18 @@ import { generateUID } from '../../helpers/component';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 
-const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, onChange, onBlur, error, ...rest }) => {
+const Input = ({
+    className,
+    disabled,
+    onPressEnter,
+    onKeyDown,
+    onFocus,
+    onChange,
+    onBlur,
+    error,
+    inputRef,
+    ...rest
+}) => {
     const { focus, change, blur, statusClasses, status } = useInput();
     const [uid] = useState(generateUID('input'));
 
@@ -61,6 +72,7 @@ const Input = ({ className, disabled, onPressEnter, onKeyDown, onFocus, onChange
                 onBlur={handleBlur}
                 onKeyDown={handleKeyDown}
                 onChange={handleChange}
+                ref={inputRef}
                 {...rest}
             />
             <ErrorZone id={uid}>{error && status.dirty ? error : ''}</ErrorZone>

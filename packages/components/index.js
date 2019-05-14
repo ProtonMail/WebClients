@@ -1,3 +1,6 @@
+export { default as Autocomplete } from './components/autocomplete/Autocomplete';
+export { default as AutocompleteSelection } from './components/autocomplete/AutocompleteSelection';
+export { default as useAutocomplete } from './components/autocomplete/useAutocomplete';
 export { default as Table } from './components/table/Table';
 export { default as TableRowBusy } from './components/table/TableRowBusy';
 export { default as TableBody } from './components/table/TableBody';

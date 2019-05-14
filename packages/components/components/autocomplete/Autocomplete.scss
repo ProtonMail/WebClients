@@ -1,0 +1,29 @@
+.autocomplete-input {
+    flex: 1 0 15%;
+    outline: none;
+}
+
+.autocomplete-field {
+    padding: 0;
+}
+
+.autocomplete ul {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 5px);
+    z-index: 10;
+    list-style: none;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
+}
+
+.autocomplete li {
+    cursor: pointer;
+    padding: 0.5em;
+}
+
+.autocompleteSelection-closeButton {
+    height: 28px;
+    width: 28px;
+    border-radius: 0;
+    border-width: 0 0 0 1px;
+}
