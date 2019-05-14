@@ -1,10 +1,8 @@
 /* dropdown examples */
 $dropDown-width: 200px !default;
-$dropDown-pagination-width: 8em !default;
+$dropDown-narrow-width: 8em !default;
 
-.dropDown,
-.dropDown-leftArrow,
-.dropDown-rightArrow {
+.dropDown {
   @extend .relative;
 }
 .dropDown-content {
@@ -25,11 +23,12 @@ $dropDown-pagination-width: 8em !default;
   background: $white;
   border-radius: $global-border-radius;
   box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
+  color: $pm-global-grey;
 }
 
-.dropDown-content--pagination {
-  left: calc(50% - #{$dropDown-pagination-width/2});
-  width: $dropDown-pagination-width;
+.dropDown-content--narrow {
+  left: calc(50% - #{$dropDown-narrow-width/2});
+  width: $dropDown-narrow-width;
   padding: 0 1rem;
 }
 
@@ -43,21 +42,21 @@ $dropDown-pagination-width: 8em !default;
 }
 
 /* position of dropDown variations */
-.dropDown-leftArrow .dropDown-content {
+.dropDown--leftArrow .dropDown-content {
   left: 0;
 }
-.dropDown-rightArrow .dropDown-content {
+.dropDown--rightArrow .dropDown-content {
   left: auto;
   right: 0;
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .dropDown-leftArrow .dropDown-content {
+    .dropDown--leftArrow .dropDown-content {
       right: 0;
       left: auto;
     }
-    .dropDown-rightArrow .dropDown-content {
+    .dropDown--rightArrow .dropDown-content {
       left: 0;
       right: auto;
     }
@@ -76,21 +75,21 @@ $dropDown-pagination-width: 8em !default;
   border-bottom: 1rem solid $white;
 }
 
-.dropDown-leftArrow .dropDown-content::before {
+.dropDown--leftArrow .dropDown-content::before {
   left: 1rem;
 }
-.dropDown-rightArrow .dropDown-content::before {
+.dropDown--rightArrow .dropDown-content::before {
   left: auto;
   right: 1rem;
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .dropDown-leftArrow .dropDown-content::before {
+    .dropDown--leftArrow .dropDown-content::before {
       right: 1rem;
       left: auto;
     }
-    .dropDown-rightArrow .dropDown-content::before {
+    .dropDown--rightArrow .dropDown-content::before {
       right: auto;
       left: 1rem;
     }
@@ -107,6 +106,9 @@ $dropDown-pagination-width: 8em !default;
 }
 
 /* pagination caret */
-.pagination-expand-button[aria-expanded="true"] > .pagination-expand-caret {
+.expand-caret {
+  fill: currentColor;
+}
+.dropDown [aria-expanded="true"] .expand-caret {
   @extend .rotateX-180;
 }

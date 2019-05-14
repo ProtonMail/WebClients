@@ -11,6 +11,10 @@ $size-current-pin: 16px !default;
   padding-left: 2px; // "optical" alignment, difficult to align text and circle ^^
 }
 
+.wizard-container--noTextDisplayed {
+  padding-top: 0;
+}
+
 .wizard {
   height: $height-wizard;
   display: flex;
@@ -91,4 +95,8 @@ $size-current-pin: 16px !default;
   &:not([aria-current]) .wizard-item-inner {
     @extend .invisible;
   }
+}
+
+.wizard-container--noTextDisplayed .wizard-item[aria-current="step"] .wizard-item-inner {
+  @extend .invisible;
 }

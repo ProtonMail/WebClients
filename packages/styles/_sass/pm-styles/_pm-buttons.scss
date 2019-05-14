@@ -8,7 +8,11 @@
   padding: em(5) em(16) em(6); // design want 34px height
   border-style: solid;
   border-width: 1px;
+  & > button { // this is for drop down buttons
+    color: inherit;
+  }
 }
+
 
 .pm-button {
   border-color: $pm-global-border;
@@ -74,6 +78,7 @@
 
   &:focus,
   &:hover,
+  &:focus-within,
   &.is-hover {
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
     background: $pm-blue-dark;
@@ -87,7 +92,7 @@
   &[disabled] {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
-    border: 1px solid $pm-global-border;
+    border-color: $pm-global-border;
     pointer-events: none;
   }
   /* just to cancel examples  */
@@ -103,14 +108,15 @@
 
   &:focus,
   &:hover,
+  &:focus-within,
   &.is-hover {
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
-    border: 1px solid $pm-blue-dark;
+    border-color: $pm-blue-dark;
     color: $pm-blue-dark;
   }
   &:active,
   &.is-active {
-    border: 1px solid $pm-blue-dark;
+    border-color: $pm-blue-dark;
     color: $pm-blue-dark;
     background: radial-gradient(closest-side, $white, $pm-global-border 90%);
     box-shadow: none;
@@ -118,23 +124,24 @@
   &[disabled] {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
-    border: 1px solid $pm-global-border;
+    border-color: $pm-global-border;
     pointer-events: none;
   }
 }
 
 .pm-button-blueborder-dark {
-  border: 1px solid $pm-blue-light;
+  border-color: $pm-blue-light;
   color: $pm-blue-light;
   background-color: $pm-global-grey;
 
   &:focus,
   &:hover,
+  &:focus-within,
   &.is-hover,
   &:active,
   &.is-active {
     background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid $pm-blue-dark;
+    border-color: $pm-blue-light;
     color: $pm-blue-dark;
   }
   &:active,
@@ -144,7 +151,7 @@
   &[disabled] {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
-    border: 1px solid $pm-global-border;
+    border-color: $pm-global-border;
     pointer-events: none;
   }
 }
@@ -156,6 +163,7 @@
 
   &:focus,
   &:hover,
+  &:focus-within,
   &.is-hover {
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
     background: $pv-green-dark;
@@ -169,7 +177,7 @@
   &[disabled] {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
-    border: 1px solid $pm-global-border;
+    border-color: $pm-global-border;
     pointer-events: none;
   }
   /* just to cancel examples  */
@@ -185,14 +193,15 @@
 
   &:focus,
   &:hover,
+  &:focus-within,
   &.is-hover {
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
-    border: 1px solid $pv-green-dark;
+    border-color: $pv-green-dark;
     color: $pv-green-dark;
   }
   &:active,
   &.is-active {
-    border: 1px solid $pv-green-dark;
+    border-color: $pv-green-dark;
     color: $pv-green-dark;
     background: radial-gradient(closest-side, $white, $pm-global-border 90%);
     box-shadow: none;
@@ -212,11 +221,12 @@
 
   &:focus,
   &:hover,
+  &:focus-within,
   &.is-hover,
   &:active,
   &.is-active {
     background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid $pv-green-dark;
+    border-color: $pv-green-dark;
     color: $pv-green-dark;
   }
   &:active,
@@ -226,10 +236,12 @@
   &[disabled] {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
-    border: 1px solid $pm-global-border;
+    border-color: $pm-global-border;
     pointer-events: none;
   }
 }
+
+
 
 /* modifiers */
 .pm-button--large {
@@ -263,22 +275,22 @@
   position: relative;
   z-index: 10;
 }
-.pm-group-buttons > .pm-group-button:not(.pagination-expand):first-of-type {
+.pm-group-buttons > .pm-group-button:first-child {
   border-radius: $global-border-radius 0 0 $global-border-radius;
   border-left-width: 1px;
 }
-.pm-group-buttons > .pm-group-button:not(.pagination-expand):last-of-type {
+.pm-group-buttons > .pm-group-button:last-child {
   border-radius: 0 $global-border-radius $global-border-radius 0;
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .pm-group-buttons > .pm-group-button:not(.pagination-expand):first-of-type {
+    .pm-group-buttons > .pm-group-button:not(.pagination-expand):first-child {
       border-radius: 0 $global-border-radius $global-border-radius 0;
       border-right-width: 1px;
       border-left-width: 0;
     }
-    .pm-group-buttons > .pm-group-button:not(.pagination-expand):last-of-type {
+    .pm-group-buttons > .pm-group-button:not(.pagination-expand):last-child {
       border-radius: $global-border-radius 0 0 $global-border-radius;
       border-left-width: 1px;
     }
@@ -294,6 +306,7 @@
   color: $color-links;
   border-width: 0;
   box-shadow: none;
+  background-color: transparent; // to avoid heriting from other classes
   &:focus,
   &:hover,
   &:active {
