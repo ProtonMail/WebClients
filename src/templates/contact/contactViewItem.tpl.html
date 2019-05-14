@@ -27,7 +27,8 @@
             pt-tooltip-translate-context="Tooltip"
             class="contactViewItem-label-email">{{::info.value}}</a>
         <contact-groups-overview
-            data-email="info.value"
+            data-contact="contact"
+            data-email="info"
             class="contactViewItem-label-group"></contact-groups-overview>
     </div>
 
@@ -82,7 +83,8 @@
         <contact-groups-dropdown
             data-position="left"
             data-type="email"
-            data-model="info.value"
+            data-contact="contact"
+            data-model="info"
             class="contactViewItem-actions-dropdownGroup"
             ng-if="type === 'email'"></contact-groups-dropdown>
 

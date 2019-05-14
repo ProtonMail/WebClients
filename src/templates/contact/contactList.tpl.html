@@ -1,4 +1,4 @@
-<div class="contactList-container">
+<div class="contactList-container" data-pt-select-multiple-elements="contact">
 
     <request-timeout></request-timeout>
     <contact-no-result ng-if="!contacts.length"></contact-no-result>
@@ -38,6 +38,7 @@
                 <tr
                     class="contactList-item"
                     data-contact-id="{{ ::contact.ID }}"
+                    data-pt-draggable-contact
                     ng-class="{ 'contactList-item-activeCursorContact': isSelected(contact), 'contactList-item-activeContact': isActive(contact) }"
                     ng-repeat="contact in contacts track by contact.ID">
                     <td class="text-center contactList-checkbox">

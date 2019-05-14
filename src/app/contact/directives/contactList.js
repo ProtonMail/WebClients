@@ -111,6 +111,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
                     lastChecked = contact;
                 }
+
                 dispatcher.contacts('selectContacts', { contactIDs, isChecked });
             };
 

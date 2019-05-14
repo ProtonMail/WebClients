@@ -30,3 +30,7 @@
 .dropdownGroups-option-checkbox {
     width: auto;
 }
+
+.dropdownGroups-item + .dropdownGroups-item {
+    margin-top: .8rem;
+}

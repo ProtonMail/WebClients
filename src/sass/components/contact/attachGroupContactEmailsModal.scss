@@ -1,0 +1,25 @@
+.attachGroupContactEmailsModal-container, .attachGroupContactEmailsModal-container * { box-sizing: border-box }
+
+.attachGroupContactEmails-body {
+    max-height: 50vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.attachGroupContactEmailsModal-list {
+    list-style: none;
+    padding-left: 0
+}
+
+.attachGroupContactEmailsModal-item-email + .attachGroupContactEmailsModal-item-email {
+    margin-top: .5em
+}
+
+.attachGroupContactEmailsModal-label {
+    display: flex;
+    align-items: center;
+}
+
+.attachGroupContactEmailsModal-input {
+    width: 2rem;
+}

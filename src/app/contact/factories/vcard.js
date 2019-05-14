@@ -143,7 +143,6 @@ function vcard(notification, sanitize) {
             return vCards[0];
         }
         const newCard = new vCard();
-
         const properties = vCardPropertyMaker(vCards, { unicityGroup });
 
         /**
@@ -157,7 +156,6 @@ function vcard(notification, sanitize) {
             }
             build(makeUniq(properties[field]), newCard);
         });
-
         return newCard;
     };
 

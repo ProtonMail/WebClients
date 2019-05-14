@@ -1,67 +1,34 @@
-import { info as infoError } from '../../../helpers/errors';
-
 /* @ngInject */
 function dropdownGroups(
     contactGroupModal,
     contactGroupModel,
     dispatchers,
     networkActivityTracker,
-    manageContactGroup,
-    contactCache,
-    contactEmails
+    moveContactGroupHandler
 ) {
-    const mapGroups = (list = []) => {
-        return list.reduce((acc, { LabelIDs = [] }) => {
-            LabelIDs.forEach((id) => (!acc[id] ? (acc[id] = 1) : acc[id]++));
-            return acc;
-        }, Object.create(null));
-    };
-
-    const toError = infoError('dropdownGroups');
-
     return {
         scope: {
+            contact: '=',
             model: '=',
+            action: '=',
             type: '='
         },
         replace: true,
         restrict: 'E',
         templateUrl: require('../../../templates/contact/dropdownGroups.tpl.html'),
         link(scope, el) {
-            const { on, unsubscribe, dispatcher } = dispatchers(['contacts', 'dropdown']);
-            let MAP;
-            let selected;
             let latestId;
 
-            const manageGroup = manageContactGroup[scope.type || 'contact'];
-
-            if (!['contact', 'email'].includes(scope.type)) {
-                throw new Error(toError(`Wrong type: ${scope.type}`, 'Expected value: contact or email'));
-            }
+            const { on, unsubscribe, dispatcher } = dispatchers(['contacts', 'dropdown']);
+            const isContactAdd = scope.action === 'addToContact';
 
             scope.color = ({ Color: color = 'inherit' } = {}) => ({ color });
+            const manager = moveContactGroupHandler.manage(scope.action, scope.type, {
+                email: scope.model,
+                contact: scope.contact
+            });
 
-            /**
-             * Find groups to unlabel/label for a list of contacts.
-             * @param  {Array}  labels           List of groups
-             * @param  {Object} mapLabel         Ids of groups already attached to the list of contacts selected.   <ID:String>:<Quantity:Number>
-             * @param  {Array}  selectedContacts Contact selected from the contact list
-             */
-            const manageLabels = (labels = [], mapLabel = {}, selectedContacts = []) => {
-                const { label, unlabel } = labels.reduce(
-                    (acc, { Selected, ID }) => {
-                        // Null means it's attached to at least one contact but not all
-                        mapLabel[ID] && !Selected && Selected !== null && acc.unlabel.push(ID);
-                        Selected && acc.label.push(ID);
-                        return acc;
-                    },
-                    { unlabel: [], label: [] }
-                );
-
-                manageGroup.attach(label, selectedContacts);
-                manageGroup.detach(unlabel, selectedContacts);
-                dispatcher.dropdown('close');
-            };
+            debugger;
 
             const onClick = ({ target }) => {
                 if (target.dataset.action === 'create') {
@@ -78,18 +45,12 @@ function dropdownGroups(
                     });
                 }
 
-                if (target.dataset.action === 'apply' && selected) {
-                    scope.$applyAsync(() => {
-                        manageLabels(scope.labels, MAP, selected);
+                if (target.dataset.action === 'apply') {
+                    scope.$applyAsync(async () => {
+                        const { mode } = await manager(scope.labels);
+                        mode === 'submit' && dispatcher.dropdown('close');
                     });
                 }
-            };
-
-            const getSelected = () => {
-                if (scope.type === 'email') {
-                    return [contactEmails.findEmail(scope.model)];
-                }
-                return contactCache.get('selected');
             };
 
             /**
@@ -97,11 +58,18 @@ function dropdownGroups(
              * attached to the selected contacts
              */
             const showSelection = (extendID) => {
-                selected = getSelected();
-                MAP = mapGroups(selected);
+                const { map, selected } = moveContactGroupHandler.getEnv(scope.type, {
+                    email: scope.model,
+                    contact: scope.contact
+                });
 
                 const groups = contactGroupModel.get().map((group) => {
-                    const count = MAP[group.ID] || 0;
+                    // For this mode we ONLY add groups, no need to bind the selection
+                    if (isContactAdd) {
+                        return group;
+                    }
+
+                    const count = map[group.ID] || 0;
                     // At least one contact has this group, but not all contacts
                     if (count > 0 && count < selected.length) {
                         group.Selected = null;

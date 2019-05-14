@@ -44,7 +44,10 @@ function contactGroupsOverview(contactGroupModel, contactEmails, dispatchers) {
             unsubscribe.push(() => tooltip.dispose());
             node.appendChild(li);
         });
-        node.insertAdjacentHTML('beforeend', '<i class="fa fa-ellipsis-h contactGroupsOverview-ellipsis" aria-hidden="true"></i>');
+        node.insertAdjacentHTML(
+            'beforeend',
+            '<i class="fa fa-ellipsis-h contactGroupsOverview-ellipsis" aria-hidden="true"></i>'
+        );
         return unsubscribe;
     };
 
@@ -67,7 +70,13 @@ function contactGroupsOverview(contactGroupModel, contactEmails, dispatchers) {
             };
 
             const getLabels = () => {
-                const { LabelIDs = [] } = scope.contact || contactEmails.findEmail(scope.email) || {};
+                // Scope by contact as we might have the same email inside many contacts
+                if (scope.email) {
+                    const { LabelIDs = [] } = contactEmails.findByEmailVcard(scope.email, scope.contact.ID) || {};
+                    return LabelIDs;
+                }
+
+                const { LabelIDs = [] } = scope.contact || {};
                 return LabelIDs;
             };
 
@@ -99,7 +108,7 @@ function contactGroupsOverview(contactGroupModel, contactEmails, dispatchers) {
             const refresh = () => _.defer(build, 160);
 
             on('contacts', (e, { type }) => {
-                (type === 'contactsUpdated') && refresh();
+                type === 'contactsUpdated' && refresh();
             });
 
             on('contactGroupModel', (e, { type = '' }) => {

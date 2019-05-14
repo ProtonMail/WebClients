@@ -27,9 +27,10 @@ function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel,
         const cleanAttr = cleanName.replace(/"|'/g, '');
         const icon = Exclusive === 1 ? 'fa-folder' : 'fa-tag';
         const classIcon = !isContactState ? icon : 'fa-users';
+        const dropzoneType = !isContactState ? 'label' : 'group';
 
         return dedentTpl(`<li class="${className}">
-            <a href="${href}" title="${cleanAttr}" data-label="${cleanAttr}" class="btn menuLabel-link" data-pt-dropzone-item="${ID}" data-pt-dropzone-item-type="label">
+            <a href="${href}" title="${cleanAttr}" data-label="${cleanAttr}" class="btn menuLabel-link" data-pt-dropzone-item="${ID}" data-pt-dropzone-item-type="${dropzoneType}">
                 <i class="fa ${classIcon} menuLabel-icon" style="color: ${Color || '#CCC'}"></i>
                 <span class="menuLabel-title">${cleanName}</span>
                 <em class="menuLabel-counter" data-label-id="${ID}"></em>
@@ -52,7 +53,6 @@ function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel,
             /*
                 Click handler is delegate and inside sidebarlabels.
              */
-
             const { on, unsubscribe } = dispatchers();
             const updateCache = () => {
                 el[0].innerHTML = makeTemplate();

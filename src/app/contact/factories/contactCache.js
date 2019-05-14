@@ -13,7 +13,8 @@ function contactCache(
     Contact,
     contactDownloader,
     contactEmails,
-    contactImporter
+    contactImporter,
+    AppModel
 ) {
     const CONTACT_STATES = ['secured.contacts'];
     const CACHE = {
@@ -274,6 +275,7 @@ function contactCache(
             CACHE.map.all[id] && (CACHE.map.all[id].selected = isChecked);
         });
         sync([], 'selected');
+        AppModel.set('numberElementChecked', CACHE.map.selected.length);
     }
 
     function contactEvents({ events = [] }) {
