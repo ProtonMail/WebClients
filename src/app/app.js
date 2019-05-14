@@ -105,8 +105,6 @@ angular
         const { dispatcher, on } = dispatchers(['tooltip']);
 
         on('$stateChangeStart', (event, toState) => {
-            networkActivityTracker.clear();
-
             const isLogin = toState.name === 'login';
             const isSub = toState.name === 'login.sub';
             const isUpgrade = toState.name === 'upgrade';

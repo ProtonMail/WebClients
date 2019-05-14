@@ -14,6 +14,7 @@ function messageActions(
     $q,
     tools,
     cache,
+    canUndo,
     contactSpam,
     eventManager,
     messageApi,
@@ -187,7 +188,7 @@ function messageActions(
 
         toSpamList.length && contactSpam(_.uniq(toSpamList));
 
-        if (undo) {
+        if (undo && canUndo()) {
             notifyParameters.undo = () => {
                 move({ ids, labelID: currentLocation, undo: false });
             };
