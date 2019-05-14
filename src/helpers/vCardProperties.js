@@ -32,8 +32,8 @@ const canPushProp = (property, group) => {
  * @param {Array<vCard.Property>} properties
  * @return {Array}
  */
-export const makeUniq = (properties = []) =>
-    _.uniqBy(properties, (property) => {
+export const makeUniq = (properties = []) => {
+    return _.uniqBy(properties, (property) => {
         const type = property.getType();
         const value = property.valueOf();
 
@@ -41,8 +41,20 @@ export const makeUniq = (properties = []) =>
             return `${type} ${value}`;
         }
 
+        const field = property.getField();
+        /*
+            Type is undefined for categories, so for the unicity we need
+            to compare with the group too as a category can be attached to many
+            emails.
+         */
+        if (field === 'categories') {
+            const { group } = property.getParams() || {};
+            return `${type} ${value} ${group}`;
+        }
+
         return value;
     });
+};
 
 /**
  * Extract specific properties

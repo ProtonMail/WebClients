@@ -3,7 +3,9 @@ function contactGroupsDropdown(needUpgrade) {
     return {
         scope: {
             model: '=',
-            type: '@'
+            contact: '=',
+            type: '@',
+            action: '@'
         },
         replace: true,
         restrict: 'E',

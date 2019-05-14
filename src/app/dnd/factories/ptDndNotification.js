@@ -13,10 +13,19 @@ function ptDndNotification(AppModel, PTDNDCONSTANTS, gettextCatalog) {
     const getMessage = (total, item) => {
         const message = gettextCatalog.getPlural(total, 'message', 'messages', {}, 'Type of item');
         const conversation = gettextCatalog.getPlural(total, 'conversation', 'conversations', {}, 'Type of item');
+        const contact = gettextCatalog.getPlural(total, 'contact', 'contacts', {}, 'Type of item');
+
+        const getType = (type) => {
+            if (type === 'contact') {
+                return contact;
+            }
+            return type === 'conversation' ? conversation : message;
+        };
+
         return gettextCatalog.getString(
             'Move {{total}} {{type}}',
             {
-                type: item === 'conversation' ? conversation : message,
+                type: getType(item),
                 total
             },
             'notification drag and drop'

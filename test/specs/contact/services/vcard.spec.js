@@ -103,5 +103,50 @@ describe('vcard factory', () => {
             expect(emails).toEqual(expectedEmails);
             expect(categories).toEqual(expectedCategories);
         });
+
+        describe('Merge many categories with the same name', () => {
+            let contactA, contactB, mergedContact;
+            beforeEach(angular.mock.inject(() => {
+
+                contactA = new vCard();
+                contactB = new vCard();
+
+                contactA.set('fn', 'foo bar');
+                contactA.add('email', 'foo1@bar.com', { group: 'a1' });
+                contactA.add('email', 'foo2@bar.com', { group: 'a2' });
+                contactA.add('email', 'foo3@bar.com', { group: 'a3' });
+
+                contactB.add('categories', 'jeanne', { group: 'a1' });
+                contactB.add('categories', 'jeanne', { group: 'a2' });
+                contactB.add('categories', 'jeanne', { group: 'a3' });
+
+                mergedContact = factory.merge([contactA, contactB]);
+            }));
+
+            it('should keep 3 categories', () => {
+                expect(mergedContact.get('categories').length).toBe(3)
+            });
+
+            it('should keep 3 same categories', () => {
+                const [, card ] = mergedContact.toJSON();
+                const categories = card.reduce((acc, [ type, params,, value ]) => {
+                    if (type === 'categories') {
+                        acc.push({ type, params, value });
+                    }
+                    return acc;
+                }, []);
+
+                const expected = Array.from({ length: 3 }, (_, i) => ({
+                    value: 'jeanne',
+                    type: 'categories',
+                    params: {
+                        group: `item${i + 1}`
+                    }
+                }));
+
+                expect(categories).toEqual(expected);
+            });
+        })
     });
+
 });

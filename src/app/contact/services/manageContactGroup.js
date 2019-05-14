@@ -313,6 +313,7 @@ function manageContactGroup(
         if (!noEvent) {
             await eventManager.call();
         }
+
         !isSilent && notification.success(i18n(LabelIDs.length));
         return output;
     };

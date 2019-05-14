@@ -5,7 +5,7 @@
     <section class="conversation-wrapper">
         <div
             ng-repeat="conversation in conversations track by conversation.ID"
-            data-pt-draggable
+            data-pt-draggable-element
             data-elements-container
             class="conversation"
             ng-class="getClassNames(conversation, markedElement)">

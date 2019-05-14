@@ -16,6 +16,9 @@ const getCacheDefault = () => ({
 function contactEmails(Contact, dispatchers, sanitize) {
     let CACHE = getCacheDefault();
 
+    const { dispatcher, on } = dispatchers(['contacts']);
+    const emit = (contact) => dispatcher.contacts('refreshContactEmails', { ID: contact.ContactID, contact });
+
     const syncMap = (diff = []) => {
         const { map, emailMap } = _.reduce(
             diff,
@@ -43,14 +46,17 @@ function contactEmails(Contact, dispatchers, sanitize) {
     const getMap = () => CACHE.map;
     const clear = () => (CACHE = getCacheDefault());
 
-    const loadFilterEmails = (input, format = _.identity) => {
+    const loadFilterEmails = (input, format = _.identity, ID) => {
         const email = format(input);
-        const match = (input) => format(input) === email;
+        const match = (input, ContactID) => {
+            const isContact = ID ? ID === ContactID : true;
+            return format(input) === email && isContact;
+        };
         return {
-            noDefault({ Defaults, Email }) {
-                return !Defaults && match(Email);
+            noDefault({ Defaults, Email, ContactID }) {
+                return !Defaults && match(Email, ContactID);
             },
-            match: ({ Email }) => match(Email)
+            match: ({ Email, ContactID }) => match(Email, ContactID)
         };
     };
 
@@ -65,8 +71,8 @@ function contactEmails(Contact, dispatchers, sanitize) {
      * @param {Boolean} forceMatch True to force the match of all matching emails
      * @return {Function}
      */
-    const finderByEmail = (method, forceMatch) => (email, normalizer = _.identity) => {
-        const { noDefault, match } = loadFilterEmails(email, normalizer);
+    const finderByEmail = (method, forceMatch) => (email, normalizer = _.identity, ContactID) => {
+        const { noDefault, match } = loadFilterEmails(email, normalizer, ContactID);
         const getMethod = method === 'find' ? _.find : _.filter;
 
         if (!forceMatch) {
@@ -83,6 +89,25 @@ function contactEmails(Contact, dispatchers, sanitize) {
     // Force match all as we want all off them
     const findAllByEmail = finderByEmail('filter', true);
 
+    const findEmailByContactID = (email, { ID }) => {
+        return findEmail(email, _.identity, ID);
+    };
+
+    const findByEmailVcard = ({ value, type = '' }, contactID) => {
+        const list = findAllByEmail(value, _.identity, contactID);
+        return list.find((contact) => {
+            const { Type = [] } = contact;
+            return (
+                Type.length &&
+                Type.some((key) => {
+                    // Sometimes upper, sometimes lower :/
+                    const testKey = type.toLowerCase();
+                    return testKey.includes(key.toLowerCase());
+                })
+            );
+        });
+    };
+
     const findEmails = (list = [], format = normalizeEmail) => {
         /*
             Can be a list of undefined
@@ -90,9 +115,6 @@ function contactEmails(Contact, dispatchers, sanitize) {
          */
         return list.map((email) => findEmail(email, format)).filter(Boolean);
     };
-
-    const { dispatcher, on } = dispatchers(['contacts']);
-    const emit = (contact) => dispatcher.contacts('refreshContactEmails', { ID: contact.ContactID, contact });
 
     /**
      * Load first 100 emails via the user auth process
@@ -152,12 +174,14 @@ function contactEmails(Contact, dispatchers, sanitize) {
         getMap,
         getEmail,
         clear,
-        findIndex,
-        findEmail,
         load: loadCache,
         update,
+        findIndex,
+        findEmail,
         findEmails,
-        findAllByEmail
+        findAllByEmail,
+        findEmailByContactID,
+        findByEmailVcard
     };
 }
 export default contactEmails;

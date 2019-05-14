@@ -1,0 +1,68 @@
+<div class="pm_modal {{ctrl.class}} attachGroupContactEmailsModal-container" role="dialog">
+    <div class="modal-dialog">
+        <button
+            type="button"
+            ng-click="ctrl.cancel()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
+
+        <form
+            name="attachGroupContactEmails"
+            novalidate
+            ng-submit="ctrl.submit($event)"
+            class="modal-content">
+            <header class="modal-header">
+                <h4
+                    class="modal-title"
+                    translate-context="Title"
+                    translate>Add to Group</h4>
+                <p
+                    class="alert alert-info"
+                    translate-context="Info"
+                    translate>Please select which email address or adresses to add to this group.</p>
+            </header>
+
+            <div class="modal-body attachGroupContactEmails-body">
+
+                <fieldset
+                    ng-repeat="contact in ctrl.contacts track by contact.ID"
+                    class="attachGroupContactEmailsModal-contact">
+                    <legend>{{ ::contact.Name }}</legend>
+
+                    <ul class="attachGroupContactEmailsModal-list">
+                        <li
+                            ng-repeat="email in contact.Emails track by email.ID"
+                            class="attachGroupContactEmailsModal-item-email">
+                            <label class="attachGroupContactEmailsModal-label">
+                                <custom-checkbox
+                                    class="attachGroupContactEmailsModal-input"
+                                    data-custom-ng-model="email.isSelected"></custom-checkbox>
+                                <span class="attachGroupContactEmailsModal-email">{{ ::email.Email }}</span>
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+            </div>
+
+            <footer class="modal-footer text-right">
+                <button
+                    class="pm_button pull-left"
+                    type="button"
+                    ng-click="ctrl.cancel()"
+                    ng-disabled="ctrl.networkActivity"
+                    translate-context="Action"
+                    translate>Cancel</button>
+
+                <button
+                    class="pm_button primary"
+                    ng-disabled="ctrl.networkActivity"
+                    translate-context="Action"
+                    translate>Save</button>
+            </footer>
+        </form>
+    </div>
+    <div class="modal-overlay"></div>
+</div>

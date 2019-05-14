@@ -79,6 +79,12 @@ function ptDropzone(dispatchers, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
                 }
             });
 
+            on('contactGroupModel', (e, { type }) => {
+                if (type === 'cache.refresh' || type === 'cache.update') {
+                    refresh();
+                }
+            });
+
             // Check the current state to set the current one as active
             on('$stateChangeSuccess', () => {
                 _rAF(refresh);

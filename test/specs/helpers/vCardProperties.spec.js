@@ -16,5 +16,10 @@ describe('Helper vCardFields', () => {
             const newCard = removeProperty(cardUniqEmailSimple, 'email');
             expect(newCard.get('email')).toBeDefined();
         });
+
+        it('should not update the card if group is not mentionned', () => {
+            const newCard = removeProperty(cardUniqEmailSimple, 'email');
+            expect(newCard.toString()).toEqual(cardUniqEmailSimple.toString());
+        });
     });
 });

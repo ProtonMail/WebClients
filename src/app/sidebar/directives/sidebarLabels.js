@@ -74,7 +74,7 @@ const sidebarLabels = (dispatchers, manageContactGroup, needUpgrade) => ({
 
         const debouncedDe = _.debounce(dragEnter, 250);
 
-        if (type === 'groups') {
+        if (type === 'contact') {
             const onClick = (e) => {
                 if (e.target.nodeName === 'A' || e.currentTarget.nodeName === 'A') {
                     e.preventDefault();

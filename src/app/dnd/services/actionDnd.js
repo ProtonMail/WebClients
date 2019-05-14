@@ -13,6 +13,7 @@ function actionDnd(
     notification,
     ptDndNotification,
     mailSettingsModel,
+    moveContactGroupHandler,
     translator
 ) {
     const I18N = translator(() => ({
@@ -64,6 +65,12 @@ function actionDnd(
         notification.success(`${I18N.APPLY_LABEL} ${label.Name}`);
     };
 
+    const group = (list, type, ID) => {
+        const manager = moveContactGroupHandler.manage('addToContact', 'contact');
+        // We only need the ID, and Selected to filter labels
+        manager([{ ID, Selected: true }], list);
+    };
+
     const star = (list = [], type) => {
         list.forEach((model) => {
             dispatcher.elements('toggleStar', { model, type });
@@ -87,6 +94,10 @@ function actionDnd(
 
             if (data.type === 'label') {
                 return label(list, type, data.value);
+            }
+
+            if (data.type === 'group') {
+                return group(list, type, data.value);
             }
 
             if (data.value === 'starred') {
