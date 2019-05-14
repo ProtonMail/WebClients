@@ -19,8 +19,6 @@ function networkActivityTracker(AppModel, errorReporter, notification) {
      * @return {object} promise - Return the orginal promise to stay in the same context
      */
     const track = (promise, silent = false) => {
-        errorReporter.clear();
-
         // Display the loader
         if (!promises.length) {
             AppModel.set('networkActivity', true);
@@ -72,12 +70,6 @@ function networkActivityTracker(AppModel, errorReporter, notification) {
         return promise;
     };
 
-    const clear = () => {
-        errorReporter.clear();
-        promises.length = 0;
-        return promises;
-    };
-
-    return { loading, clear, track };
+    return { loading, track };
 }
 export default networkActivityTracker;

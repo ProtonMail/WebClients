@@ -9,6 +9,7 @@ import { getLabelIDsMoved } from '../../../helpers/message';
 /* @ngInject */
 function actionConversation(
     cache,
+    canUndo,
     contactSpam,
     conversationApi,
     dispatchers,
@@ -413,7 +414,7 @@ function actionConversation(
             'Info'
         );
 
-        if (undo) {
+        if (undo && canUndo()) {
             notifyParameters.undo = () => {
                 move(conversationIDs, currentLocation, false);
             };

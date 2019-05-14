@@ -17,6 +17,7 @@ import ptStar from './directives/ptStar';
 import searchLimitReached from './directives/searchLimitReached';
 import timeElement from './directives/timeElement';
 import elementsError from './factories/elementsError';
+import canUndo from './factories/canUndo';
 import limitElementsModel from './factories/limitElementsModel';
 import removeElement from './services/removeElement';
 import forgeRequestParameters from './services/forgeRequestParameters';
@@ -47,5 +48,6 @@ export default angular
     .directive('searchLimitReached', searchLimitReached)
     .directive('timeElement', timeElement)
     .factory('elementsError', elementsError)
+    .factory('canUndo', canUndo)
     .factory('limitElementsModel', limitElementsModel)
     .factory('removeElement', removeElement).name;
