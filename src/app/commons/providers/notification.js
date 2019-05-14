@@ -32,6 +32,7 @@ function notification() {
             const action = (type) => (input, options = {}) => {
                 const message = input instanceof Error ? input.message : input;
                 options.classes = `${options.classes || ''} ${CONFIG.classNames[type]}`.trim();
+                options.onClickClose = true;
 
                 const htmlInfo = isHTML(message);
 
@@ -61,7 +62,6 @@ function notification() {
 
                 if (options.undo) {
                     const content = sanitize.input(message);
-                    options.onClickClose = true;
                     options.onClick = options.undo;
                     options.messageTemplate = `<div>${content} <a href="#">${I18N.UNDO}</a></div>`;
                 }
