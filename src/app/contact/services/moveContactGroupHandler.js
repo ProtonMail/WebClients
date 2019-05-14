@@ -132,8 +132,6 @@ function moveContactGroupHandler(
 
             const manageGroup = manageContactGroup[type || 'contact'];
 
-            debugger;
-
             manageGroup.attach(label, selected);
             manageGroup.detach(unlabel, selected);
 

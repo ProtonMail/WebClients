@@ -287,6 +287,12 @@ function contactCache(
         emit(undefined, { todo });
     }
 
+    function unSelectOnStateChange({ name }) {
+        if (!CONTACT_STATES.includes(name)) {
+            selectContacts({ isChecked: false });
+        }
+    }
+
     on('contacts', (event, { type, data = {} }) => {
         type === 'contactEvents' && contactEvents(data);
         type === 'refreshContactEmails' && refreshContactEmails(data);
@@ -298,16 +304,10 @@ function contactCache(
         type === 'searchingContact' && searchingContact(data);
     });
 
-    on('$stateChangeSuccess', (event, toState) => {
-        if (!CONTACT_STATES.includes(toState.name)) {
-            selectContacts({ isChecked: false });
-        }
-    });
-
     on('logout', () => {
         clear();
     });
 
-    return { hydrate, isHydrated, clear, get, total, paginate, load, getItem };
+    return { hydrate, isHydrated, clear, get, total, paginate, load, getItem, unSelectOnStateChange };
 }
 export default contactCache;
