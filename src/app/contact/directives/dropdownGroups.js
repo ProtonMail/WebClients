@@ -28,8 +28,6 @@ function dropdownGroups(
                 contact: scope.contact
             });
 
-            debugger;
-
             const onClick = ({ target }) => {
                 if (target.dataset.action === 'create') {
                     contactGroupModal.activate({

@@ -236,6 +236,10 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 }
             });
 
+            on('$stateChangeSuccess', (event, toState) => {
+                contactCache.unSelectOnStateChange(toState);
+            });
+
             scope.$on('$destroy', () => {
                 element.off('click', onClick);
                 unsubscribe();
