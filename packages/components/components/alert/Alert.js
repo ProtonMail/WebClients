@@ -22,7 +22,7 @@ const Alert = ({ type, children, learnMore, className }) => {
 };
 
 Alert.propTypes = {
-    type: PropTypes.oneOf(['info', 'error', 'warning', 'standard']).isRequired,
+    type: PropTypes.oneOf(['info', 'error', 'warning']).isRequired,
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
     learnMore: PropTypes.string

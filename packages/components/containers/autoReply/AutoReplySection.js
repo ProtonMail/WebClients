@@ -32,11 +32,7 @@ const AutoReplySection = () => {
             {isOpen && <AutoReplyModal onClose={close} show={isOpen} />}
             <div className="p1">
                 <SubTitle>{c('Title').t`Auto-reply`}</SubTitle>
-                <Alert
-                    type="standard"
-                    className="mt1 mb1"
-                    learnMore="https://protonmail.com/support/knowledge-base/autoresponder/"
-                >
+                <Alert className="mt1 mb1" learnMore="https://protonmail.com/support/knowledge-base/autoresponder/">
                     {c('Info')
                         .t`Automatic replies can respond automatically to incoming messages (such as when you are on vacation and can't respond).`}
                 </Alert>
