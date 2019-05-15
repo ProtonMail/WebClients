@@ -1,3 +1,20 @@
+# [1.6.7] - 2019-05-14
+
+## Updated/fixes
+
+- fixed bug on button group with 2 buttons `last/first-of-type`
+- revamped drop down code (removed class, simplified, choosed classname more generic)
+- also moved button classes to drop down and generalised `focus-within` 
+- added group button example with colors
+- fixed color management for caret
+- updated leftArrow/rightArrow to modifier classes
+
+Bonuses: 
+- added modifier `wizard-container--noTextDisplayed` for wizard (hides the current step)
+- fixed button--link modifier (background transparent
+- documentation for drop down in button groups
+
+
 # [1.6.6] - 2019-05-13
 
 ## New
