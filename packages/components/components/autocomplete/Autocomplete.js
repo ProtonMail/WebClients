@@ -8,6 +8,8 @@ const Autocomplete = ({
     children,
     list,
     inputValue,
+    placeholder,
+    className,
     onKeyDown,
     onSubmit,
     onSelect,
@@ -69,7 +71,7 @@ const Autocomplete = ({
     }, [awesomplete, list]);
 
     return (
-        <form className="autocomplete awesomplete" onSubmit={handleSubmit}>
+        <div className={'autocomplete awesomplete '.concat(className)} onSubmit={handleSubmit}>
             <div className="autocomplete-container" ref={containerRef}>
                 <div className={`flex pm-field ${inputStyleModifier}`}>
                     {children.length > 0 && <div className="flex">{children}</div>}
@@ -80,6 +82,7 @@ const Autocomplete = ({
                         spellCheck={false}
                         autoComplete="off"
                         autoCapitalize="off"
+                        placeholder={placeholder}
                         onChange={handleInputValueChange}
                         ref={inputRef}
                         onBlur={handleSubmit}
@@ -88,13 +91,15 @@ const Autocomplete = ({
                 </div>
                 {/* <ul> injected here by awesomplete */}
             </div>
-        </form>
+        </div>
     );
 };
 
 Autocomplete.propTypes = {
     children: PropTypes.arrayOf(PropTypes.node),
     list: PropTypes.arrayOf(PropTypes.any),
+    placeholder: PropTypes.string,
+    className: PropTypes.string,
     inputValue: PropTypes.string,
     onInputValueChange: PropTypes.func,
     autoFirst: PropTypes.bool,
@@ -113,7 +118,9 @@ Autocomplete.propTypes = {
 Autocomplete.defaultProps = {
     children: [],
     list: [],
+    placeholder: '',
     inputValue: '',
+    className: '',
     onInputValueChange: noop,
     onKeyDown: noop,
     onSubmit: noop,
