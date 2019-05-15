@@ -11,7 +11,7 @@ describe('Pagination component', () => {
         const mockOnNext = jest.fn();
         const mockOnPrevious = jest.fn();
         const mockOnSelect = jest.fn();
-        const { container } = render(
+        const { container, getByTitle } = render(
             <Pagination
                 onNext={mockOnNext}
                 onPrevious={mockOnPrevious}
@@ -22,7 +22,7 @@ describe('Pagination component', () => {
             />
         );
         const previousButtonNode = container.firstChild.querySelector('.previous-button');
-        const pageButtonNode = container.firstChild.querySelector('.page-button');
+        const pageButtonNode = getByTitle('Open pagination');
         const nextButtonNode = container.firstChild.querySelector('.next-button');
 
         expect(previousButtonNode).not.toBe(null);

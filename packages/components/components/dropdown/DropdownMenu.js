@@ -1,23 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DropdownItem from './DropdownItem';
 
-const DropdownMenu = ({ list }) => {
+const DropdownMenu = ({ children, className }) => {
     return (
-        <ul className="unstyled">
-            {list.map((item, index) => (
-                <DropdownItem {...item} key={item.text + index} />
-            ))}
+        <ul className={`unstyled mt0-5 mb0-5 ${className}`}>
+            {React.Children.map(children, (child) => {
+                return (
+                    <li className={`dropDown-item`} key={child.key}>
+                        {child}
+                    </li>
+                );
+            })}
         </ul>
     );
 };
 
 DropdownMenu.propTypes = {
-    list: PropTypes.arrayOf(PropTypes.object)
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string
 };
 
 DropdownMenu.defaultProps = {
-    list: []
+    className: ''
 };
 
 export default DropdownMenu;

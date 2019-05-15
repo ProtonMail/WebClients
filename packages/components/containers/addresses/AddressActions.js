@@ -55,46 +55,29 @@ const AddressActions = ({ address, user, fetchAddresses }) => {
     const list = [
         {
             text: c('Address action').t`Edit`,
-            type: 'button',
             onClick: open
-        }
-    ];
-
-    if (canEnable) {
-        list.push({
+        },
+        canEnable && {
             text: c('Address action').t`Enable`,
-            type: 'button',
             onClick: handleEnable
-        });
-    }
-
-    if (canDisable) {
-        list.push({
+        },
+        canDisable && {
             text: c('Address action').t`Disable`,
-            type: 'button',
             onClick: handleDisable
-        });
-    }
-
-    if (canGenerate) {
-        list.push({
+        },
+        canGenerate && {
             text: c('Address action').t`Generate missing keys`,
-            type: 'button',
             onClick: handleGenerate
-        });
-    }
-
-    if (canDelete) {
-        list.push({
+        },
+        canDelete && {
             text: c('Address action').t`Delete`,
-            type: 'button',
             onClick: handleDelete
-        });
-    }
+        }
+    ].filter(Boolean);
 
     return (
         <>
-            <DropdownActions list={list} className="pm-button--small" />
+            <DropdownActions className="pm-button--small" list={list} />
             {isOpen ? <EditAddressModal onClose={close} address={address} /> : null}
         </>
     );

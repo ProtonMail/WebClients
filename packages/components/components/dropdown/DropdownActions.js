@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Group, ButtonGroup, Icon } from 'react-components';
+import { Button, Group, ButtonGroup } from 'react-components';
 import { c } from 'ttag';
 
 import Dropdown from './Dropdown';
 import DropdownMenu from './DropdownMenu';
+import DropdownButton from './DropdownButton';
 
 const DropdownActions = ({ list, className }) => {
     if (!list.length) {
@@ -27,11 +28,21 @@ const DropdownActions = ({ list, className }) => {
                 {text}
             </ButtonGroup>
             <Dropdown
-                content={<Icon name="caret" />}
-                title={c('Action').t`More`}
-                className={`pm-group-button pm-button--for-icon ${className}`}
+                align="right"
+                caret
+                className={`pm-button pm-group-button pm-button--for-icon ${className}`}
+                title={c('Title').t`Open actions dropdown`}
+                content={''}
             >
-                <DropdownMenu list={restList} />
+                <DropdownMenu>
+                    {restList.map(({ text, ...restProps }) => {
+                        return (
+                            <DropdownButton className="alignleft" key={text} {...restProps}>
+                                {text}
+                            </DropdownButton>
+                        );
+                    })}
+                </DropdownMenu>
             </Dropdown>
         </Group>
     );

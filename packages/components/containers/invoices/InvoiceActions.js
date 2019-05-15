@@ -29,7 +29,6 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
     const list = [
         {
             text: c('Action').t`View`,
-            type: 'button',
             async onClick() {
                 const blob = await get();
                 setUrl(URL.createObjectURL(blob));
@@ -38,18 +37,13 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
         },
         {
             text: c('Action').t`Download`,
-            type: 'button',
             async onClick() {
                 const blob = await get();
                 downloadFile(blob, filename);
             }
-        }
-    ];
-
-    if (invoice.State === INVOICE_STATE.UNPAID) {
-        list.unshift({
+        },
+        invoice.State === INVOICE_STATE.UNPAID && {
             text: c('Action').t`Pay`,
-            type: 'button',
             async onClick() {
                 const { Stripe, Paymentwall } = await requestGetPaymentMethodStatus();
                 const canPay = Stripe || Paymentwall;
@@ -63,8 +57,8 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
 
                 openPayInvoiceModal();
             }
-        });
-    }
+        }
+    ].filter(Boolean);
 
     return (
         <>

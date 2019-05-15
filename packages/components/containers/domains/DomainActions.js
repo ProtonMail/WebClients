@@ -30,17 +30,14 @@ const DomainActions = ({ domain }) => {
     const list = [
         {
             text: c('Action').t`Edit`,
-            type: 'button',
             onClick: openEditModal
         },
         {
             text: c('Action').t`Catch all`,
-            type: 'button',
             onClick: openCatchAllModal
         },
         {
             text: c('Action').t`Delete`,
-            type: 'button',
             onClick: openDeleteModal
         }
     ];

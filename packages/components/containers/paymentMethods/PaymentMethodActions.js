@@ -49,29 +49,20 @@ const PaymentMethodActions = ({ method, onChange, methods, index }) => {
         createNotification({ text: c('Success').t`Payment method updated` });
     };
 
-    const list = [];
-
-    if (method.Type === 'card') {
-        list.push({
+    const list = [
+        method.Type === 'card' && {
             text: c('Action').t`Edit`,
-            type: 'button',
             onClick: openEditModal
-        });
-    }
-
-    if (index > 0) {
-        list.push({
+        },
+        index > 0 && {
             text: c('Action').t`Mark as default`,
-            type: 'button',
             onClick: markAsDefault
-        });
-    }
-
-    list.push({
-        text: c('Action').t`Delete`,
-        type: 'button',
-        onClick: openDeleteModal
-    });
+        },
+        {
+            text: c('Action').t`Delete`,
+            onClick: openDeleteModal
+        }
+    ].filter(Boolean);
 
     return (
         <>

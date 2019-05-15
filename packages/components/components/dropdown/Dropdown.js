@@ -1,10 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
+import { Icon } from 'react-components';
 
-import Button from '../button/Button';
+const ALIGN_CLASSES = {
+    right: 'dropDown--rightArrow',
+    left: 'dropDown--leftArrow'
+};
 
-const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOutside }) => {
+const Dropdown = ({
+    isOpen,
+    content,
+    title,
+    children,
+    className,
+    autoClose,
+    autoCloseOutside,
+    align,
+    narrow,
+    caret
+}) => {
     const [open, setOpen] = useState(isOpen);
     const wrapperRef = useRef(null);
 
@@ -44,16 +59,27 @@ const Dropdown = ({ isOpen, children, className, content, autoClose, autoCloseOu
         };
     }, []);
 
+    const alignClass = ALIGN_CLASSES[align];
+    const dropdownClassName = `dropDown ${alignClass ? alignClass : ''} pm-button`;
+    const contentClassName = `dropDown-content ${narrow ? 'dropDown-content--narrow' : ''}`;
+    const caretContent = caret && <Icon className="expand-caret" size={12} name="caret" />;
+
     return (
-        <div className="dropDown" ref={wrapperRef}>
-            <Button className={className} onClick={handleClick} aria-expanded={open}>
-                {content}
-            </Button>
-            {open ? (
-                <div className="dropDown-content" onClick={handleClickContent}>
-                    {children}
-                </div>
-            ) : null}
+        <div className={`${dropdownClassName} ${className}`} ref={wrapperRef}>
+            <button
+                title={title}
+                className="increase-surface-click"
+                aria-expanded={open}
+                onClick={handleClick}
+                type="button"
+            >
+                <span className="mauto">
+                    {content} {caretContent}
+                </span>
+            </button>
+            <div className={contentClassName} onClick={handleClickContent} hidden={!open}>
+                {children}
+            </div>
         </div>
     );
 };
@@ -63,6 +89,10 @@ Dropdown.propTypes = {
     children: PropTypes.node.isRequired,
     content: PropTypes.node.isRequired,
     isOpen: PropTypes.bool,
+    align: PropTypes.string,
+    title: PropTypes.string,
+    caret: PropTypes.bool,
+    narrow: PropTypes.bool,
     autoClose: PropTypes.bool,
     autoCloseOutside: PropTypes.bool
 };
@@ -70,7 +100,11 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
     isOpen: false,
     autoClose: true,
-    autoCloseOutside: true
+    align: 'center',
+    narrow: false,
+    caret: false,
+    autoCloseOutside: true,
+    className: ''
 };
 
 export default Dropdown;

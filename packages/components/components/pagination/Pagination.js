@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
 
 import { ButtonGroup, Group } from '../button';
-import { Dropdown, DropdownMenu } from '../dropdown';
+import { Dropdown, DropdownMenu, DropdownButton } from '../dropdown';
 import Icon from '../icon/Icon';
 
 const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, total, limit }) => {
@@ -16,39 +17,45 @@ const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, 
         return null;
     }
 
-    const list = [];
+    const actions = Array.from({ length: pages }, (a, i) => {
+        const index = i + 1;
+        return (
+            <DropdownButton
+                key={index}
+                onClick={() => onSelect(index)}
+                disabled={index === page}
+                className={index === page ? 'is-active aligncenter' : 'aligncenter'}
+            >
+                {index.toString()}
+            </DropdownButton>
+        );
+    });
+
     const disablePrevious = page === 1;
     const disableNext = page === pages;
-
-    for (let index = 1; index <= pages; index++) {
-        list.push({
-            text: index.toString(),
-            type: 'button',
-            disabled: index === page,
-            className: index === page ? 'is-active' : '',
-            onClick: () => onSelect(index)
-        });
-    }
 
     return (
         <Group>
             {hasPrevious ? (
-                <ButtonGroup className="previous-button" disabled={disablePrevious} onClick={onPrevious}>
+                <ButtonGroup
+                    className="previous-button pm-button--for-icon"
+                    disabled={disablePrevious}
+                    onClick={onPrevious}
+                >
                     <Icon name="arrow-left" />
                 </ButtonGroup>
             ) : null}
             <Dropdown
-                className="pm-group-button page-button"
-                content={
-                    <>
-                        {page} <Icon name="caret" />
-                    </>
-                }
+                narrow
+                caret
+                className="pm-button pm-group-button pm-button--for-icon"
+                title={c('Title').t`Open pagination`}
+                content={page}
             >
-                <DropdownMenu list={list} />
+                <DropdownMenu>{actions}</DropdownMenu>
             </Dropdown>
             {hasNext ? (
-                <ButtonGroup className="next-button" disabled={disableNext} onClick={onNext}>
+                <ButtonGroup className="next-button pm-button--for-icon" disabled={disableNext} onClick={onNext}>
                     <Icon name="arrow-right" />
                 </ButtonGroup>
             ) : null}

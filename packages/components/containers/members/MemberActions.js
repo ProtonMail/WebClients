@@ -53,56 +53,42 @@ const MemberActions = ({ member, organization }) => {
         createNotification({ text: c('Success message').t`Status updated` });
     };
 
-    const list = [];
-
-    if (organization.HasKeys) {
-        list.push({
-            text: c('Member action').t`Edit`,
-            type: 'button',
-            onClick: openEdit
-        });
-    }
-
-    if (!member.Self) {
-        list.push({
-            text: c('Member action').t`Delete`,
-            type: 'button',
-            onClick: openDelete
-        });
-    }
-
-    if (!member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
-        list.push({
-            text: c('Member action').t`Make admin`,
-            type: 'button',
-            onClick: makeAdmin
-        });
-    }
-
-    if (!member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_OWNER) {
-        list.push({
-            text: c('Member action').t`Revoke admin`,
-            type: 'button',
-            onClick: revokeAdmin
-        });
-    }
+    const canMakeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER;
+    const canDelete = !member.Self;
+    const canEdit = organization.HasKeys;
+    const canRevoke = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_OWNER;
 
     // TODO fill member.Keys.length
-    if (!member.Self && member.Private === MEMBER_PRIVATE.READABLE && member.Keys.length && member.addresses.length) {
-        list.push({
-            text: c('Member action').t`Login`,
-            type: 'button',
-            onClick: login
-        });
-    }
+    const canLogin =
+        !member.Self && member.Private === MEMBER_PRIVATE.READABLE && member.Keys.length && member.addresses.length;
+    const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE;
 
-    if (member.Private === MEMBER_PRIVATE.READABLE) {
-        list.push({
+    const list = [
+        canEdit && {
+            text: c('Member action').t`Edit`,
+            onClick: openEdit
+        },
+        canDelete && {
+            text: c('Member action').t`Delete`,
+            onClick: openDelete
+        },
+        canMakeAdmin && {
+            text: c('Member action').t`Make admin`,
+            onClick: makeAdmin
+        },
+        canRevoke && {
+            text: c('Member action').t`Revoke admin`,
+            onClick: revokeAdmin
+        },
+        canLogin && {
+            text: c('Member action').t`Login`,
+            onClick: login
+        },
+        canMakePrivate && {
             text: c('Member action').t`Make private`,
-            type: 'button',
             onClick: makePrivate
-        });
-    }
+        }
+    ].filter(Boolean);
 
     return (
         <>
