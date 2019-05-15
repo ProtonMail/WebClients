@@ -168,6 +168,13 @@ export const VIEW_MODE = {
     SINGLE: 1
 };
 
+export const SHOW_MOVED = {
+    NONE: 0,
+    DRAFTS: 1,
+    SENT: 2,
+    DRAFTS_AND_SENT: 3
+};
+
 export const THEMES = {
     DARK: {
         label: c('Theme').t`Dark (Default)`,
