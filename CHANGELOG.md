@@ -1,3 +1,15 @@
+# [3.15.35] - 2019-05-15
+
+## Fixed
+- Messages in a conversation were quickly closed/opened on mobile.
+- Some moved messages were automatically returned to the original location.
+- The content of encrypted messages to non ProtonMail recipients were sometimes shown in one line.
+- Welcome wizard didn't completely disappear after logging out.
+
+## Changed
+- Notifications are now closed by default on click action.
+- The default folders are now properly shown at the bottom of the custom folders list.
+
 # [3.15.34] - 2019-05-10
 ## Fixed
 - the buttons in message details view did not apply the correct actions
