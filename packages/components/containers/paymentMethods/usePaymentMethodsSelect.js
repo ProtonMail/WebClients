@@ -14,21 +14,21 @@ const usePaymentMethodsSelect = ({ amount, cycle, coupon, type }) => {
     const isInvoice = type === 'invoice';
     const isSignup = type === 'signup';
 
-    const cardNumber = (details) => {
-        return `[${details.Brand}] •••• ${details.Last4} ${isExpired(details) ? `(${c('Info').t`Expired`})` : ''}`;
-    };
+    const cardNumber = (details) => `[${details.Brand}] •••• ${details.Last4}`;
 
     const methods = [
         {
             value: 'card',
-            text: c('Payment method option').t`Add new credit card`
+            text: c('Payment method option').t`Pay with credit card`
         }
     ];
 
     if (PaymentMethods.length) {
         methods.unshift(
-            ...PaymentMethods.map(({ ID: value, Details }) => ({
-                text: cardNumber(Details),
+            ...PaymentMethods.map(({ ID: value, Details }, index) => ({
+                text: `${cardNumber(Details)} ${isExpired(Details) ? `(${c('Info').t`Expired`})` : ''} ${
+                    !index ? `(${c('Info').t`default`})` : ''
+                }`.trim(),
                 value,
                 disabled: isExpired(Details)
             }))
@@ -38,19 +38,19 @@ const usePaymentMethodsSelect = ({ amount, cycle, coupon, type }) => {
     // Paypal doesn't work with IE11
     if (!isIE11() && (isYearly || isTwoYear || isMonthlyValid || isInvoice)) {
         methods.push({
-            text: 'PayPal',
+            text: c('Payment method option').t`Pay with PayPal`,
             value: 'paypal'
         });
     }
 
     if (!isSignup && coupon !== BLACK_FRIDAY.COUPON_CODE) {
         methods.push({
-            text: 'Bitcoin',
+            text: c('Payment method option').t`Pay with Bitcoin`,
             value: 'bitcoin'
         });
 
         methods.push({
-            text: c('Label').t`Cash`,
+            text: c('Label').t`Pay with cash`,
             value: 'cash'
         });
     }

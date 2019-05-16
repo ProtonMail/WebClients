@@ -37,25 +37,27 @@ const Payment = ({ type, amount, currency, cycle, onParameters, onMethod, onVali
     return (
         <>
             <Row>
-                <Label>{c('Label').t`Select payment method`}</Label>
-                <Field>
-                    <PaymentMethodsSelect
-                        cycle={cycle}
-                        method={method}
+                <Label>{c('Label').t`Payment method`}</Label>
+                <Field className="w100">
+                    <div className="mb1">
+                        <PaymentMethodsSelect
+                            cycle={cycle}
+                            method={method}
+                            amount={amount}
+                            type={type}
+                            onChange={handleChangeMethod}
+                        />
+                    </div>
+                    <Method
                         amount={amount}
+                        currency={currency}
+                        onCard={handleCard}
+                        onPayPal={handlePayPal}
                         type={type}
-                        onChange={handleChangeMethod}
+                        method={method}
                     />
                 </Field>
             </Row>
-            <Method
-                amount={amount}
-                currency={currency}
-                onCard={handleCard}
-                onPayPal={handlePayPal}
-                type={type}
-                method={method}
-            />
         </>
     );
 };
@@ -67,7 +69,7 @@ Payment.propTypes = {
     onParameters: PropTypes.func,
     onMethod: PropTypes.func,
     onValidCard: PropTypes.func,
-    cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEAR])
+    cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS])
 };
 
 export default Payment;

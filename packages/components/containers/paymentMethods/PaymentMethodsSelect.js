@@ -18,7 +18,7 @@ const PaymentMethodsSelect = ({ method, amount, cycle, coupon, type, onChange })
 PaymentMethodsSelect.propTypes = {
     method: PropTypes.string,
     amount: PropTypes.number.isRequired,
-    cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEAR]),
+    cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]),
     coupon: PropTypes.string,
     type: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired

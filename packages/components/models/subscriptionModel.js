@@ -1,4 +1,18 @@
+import { useCallback } from 'react';
+import { FREE_SUBSCRIPTION } from 'proton-shared/lib/constants';
 import { SubscriptionModel } from 'proton-shared/lib/models/subscriptionModel';
-import createUseModelHook from './helpers/createModelHook';
+import { useApi, useCache, useCachedResult, useUser } from 'react-components';
 
-export const useSubscription = createUseModelHook(SubscriptionModel);
+export const useSubscription = () => {
+    const [user] = useUser();
+    const api = useApi();
+    const cache = useCache();
+    const load = useCallback(() => {
+        if (user.isPaid) {
+            return SubscriptionModel.get(api);
+        }
+
+        return FREE_SUBSCRIPTION;
+    }, [user]);
+    return useCachedResult(cache, SubscriptionModel.key, load);
+};

@@ -37,6 +37,7 @@ const Modal = ({ onClose, type, children, modalTitleID, closeOnOuterClick, close
             <div className="pm-modalOverlay" onClick={handleClickOutside}>
                 <dialog
                     className={`pm-modal ${type === 'small' ? 'pm-modal--smaller' : ''}`}
+                    role="dialog"
                     open
                     aria-labelledby={modalTitleID}
                 >

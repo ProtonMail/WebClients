@@ -23,11 +23,11 @@ const NewsSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Email subscriptions`}</SubTitle>
+            <Alert>{c('Info')
+                .t`To keep up with the latest development at Protonmail, you can subscribe to our various emails and visit our blog from time to time.`}</Alert>
             <Row>
                 <Label>{c('Label').t`Email subscriptions`}</Label>
                 <Field>
-                    <Alert>{c('Info')
-                        .t`To keep up with the latest development at Protonmail, you can subscribe to our various emails and visit our blog from time to time.`}</Alert>
                     <NewsCheckboxes />
                 </Field>
             </Row>

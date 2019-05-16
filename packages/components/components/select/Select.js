@@ -40,7 +40,7 @@ const Select = ({ options, disabled, className, onChange, onBlur, onFocus, error
     return (
         <>
             <select
-                className={`pm-field w100 ${className} ${statusClasses}`}
+                className={`pm-field ${className} ${statusClasses}`}
                 onBlur={handleBlur}
                 onFocus={handleFocus}
                 onChange={handleChange}
@@ -71,7 +71,7 @@ Select.propTypes = {
 
 Select.defaultProps = {
     multiple: false,
-    className: '',
+    className: 'w100',
     size: 1
 };
 

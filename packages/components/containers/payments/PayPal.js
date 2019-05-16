@@ -65,7 +65,8 @@ const PayPal = ({ amount, currency, onPay, type }) => {
         <>
             <Alert>{c('Info')
                 .t`You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.`}</Alert>
-            <PrimaryButton loading={loading} onClick={handleClick}>{c('Action').t`Pay with PayPal`}</PrimaryButton>
+            <PrimaryButton loading={loading} onClick={handleClick}>{c('Action')
+                .t`Check out with PayPal`}</PrimaryButton>
         </>
     );
 };

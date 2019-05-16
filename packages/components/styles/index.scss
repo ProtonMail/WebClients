@@ -17,6 +17,7 @@ $path-images: "~design-system/assets/img/shared/";
 @import "~design-system/_sass/reusable-components/design-system-responsive";
 @import "~design-system/_sass/reusable-components/design-system-print";
 @import "~design-system/_sass/reusable-components/design-system-viewport-fix";
+@import "~design-system/_sass/reusable-components/design-system-reduced-motion";
 
 @import "~design-system/_sass/pm-styles/pm-buttons";
 @import "~design-system/_sass/pm-styles/pm-badges";
@@ -35,6 +36,7 @@ $path-images: "~design-system/assets/img/shared/";
 @import "~design-system/_sass/pm-styles/pm-header-searchbar";
 @import "~design-system/_sass/pm-styles/pm-header-topnav";
 @import "~design-system/_sass/pm-styles/pm-settings-home";
+@import "~design-system/_sass/pm-styles/pm-wizard";
 
 @import "~design-system/_sass/design-system-website/webfonts-hx";
 @import "~design-system/_sass/design-system-website/global-structure";

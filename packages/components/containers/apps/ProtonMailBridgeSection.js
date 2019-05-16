@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { SubTitle, Alert, PrimaryButton, useUser, useNotifications } from 'react-components';
 
 const ProtonMailBridgeSection = () => {
-    const [{ isPaidMail }] = useUser();
+    const [{ hasPaidMail }] = useUser();
     const { createNotification } = useNotifications();
     const handleClick = () =>
         createNotification({
@@ -15,7 +15,7 @@ const ProtonMailBridgeSection = () => {
             <SubTitle>ProtonMail Bridge</SubTitle>
             <Alert learnMore="https://protonmail.com/bridge/">{c('Info')
                 .t`ProtonMail Supports IMAP/SMTP via the ProtonMail Bridge application. Thunderbird, Microsoft Outlook, and Apple Mail are officially supported on both Windows and MacOS.`}</Alert>
-            {isPaidMail ? null : <PrimaryButton onClick={handleClick}>{c('Action').t`Activate`}</PrimaryButton>}
+            {hasPaidMail ? null : <PrimaryButton onClick={handleClick}>{c('Action').t`Activate`}</PrimaryButton>}
         </>
     );
 };

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Alert, Price, Button, useApiResult } from 'react-components';
 import { createBitcoinPayment } from 'proton-shared/lib/api/payments';
-import { MIN_BITCOIN_AMOUNT } from 'proton-shared/lib/constants';
+import { MIN_BITCOIN_AMOUNT, BTC_DONATION_ADDRESS } from 'proton-shared/lib/constants';
 
 import BitcoinQRCode from './BitcoinQRCode';
 import BitcoinDetails from './BitcoinDetails';
@@ -14,6 +14,7 @@ const Bitcoin = ({ amount, currency, type }) => {
         []
     );
     const { AmountBitcoin, Address } = result;
+    const address = type === 'donation' ? BTC_DONATION_ADDRESS : Address;
 
     if (amount < MIN_BITCOIN_AMOUNT) {
         const i18n = (amount) => c('Info').jt`Amount below minimum. (${amount})`;
@@ -36,8 +37,8 @@ const Bitcoin = ({ amount, currency, type }) => {
     return (
         <>
             <figure>
-                <BitcoinQRCode amount={AmountBitcoin} address={Address} type={type} />
-                <BitcoinDetails amount={AmountBitcoin} address={Address} />
+                <BitcoinQRCode amount={AmountBitcoin} address={address} type={type} />
+                <BitcoinDetails amount={AmountBitcoin} address={address} />
             </figure>
             {type === 'invoice' ? (
                 <Alert>{c('Info')

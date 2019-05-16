@@ -27,9 +27,9 @@ const DomainsSelect = ({ member, onChange, className }) => {
 
     const queryDomains = async () => {
         const [premium, available] = await Promise.all([
-            member.Self && user.isPaidMail ? requestPremiumDomains().then(({ Domains }) => Domains) : [],
+            member.Self && user.hasPaidMail ? requestPremiumDomains().then(({ Domains }) => Domains) : [],
             member.Self ? requestAvailableDomains().then(({ Domains }) => Domains) : [],
-            user.isPaidMail ? fetchDomains() : []
+            user.hasPaidMail ? fetchDomains() : []
         ]);
 
         const domainNames = [].concat(premium, available, formatDomains(domains));
