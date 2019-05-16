@@ -319,6 +319,10 @@ function autocompleteEmailsModel($injector, dispatchers, userType) {
             // If we have a match, remove it from the existing as it's not inside the autocomplete anymore.
             if (item) {
                 const key = Object.keys(LOCAL_CACHE.mapExisting).find((key) => {
+                    if (!item.ID) {
+                        return key === item.label;
+                    }
+
                     return LOCAL_CACHE.mapExisting[key].ID === item.ID;
                 });
                 delete LOCAL_CACHE.mapExisting[key];
