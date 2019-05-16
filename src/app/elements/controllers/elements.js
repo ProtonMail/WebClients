@@ -584,7 +584,7 @@ function ElementsController(
             const ID = $state.params.id;
             const messageMode = tools.typeView() === 'message';
             // We only test for the messageMode view as we will need the ConversationID
-            return [messageMode ? cache.getMessageCached(ID) : { ID }];
+            return [messageMode ? cache.getMessageCached(ID) : cache.getConversationCached(ID)];
         }
 
         const { conversations = [] } = $scope; // conversations can contains message list or conversation list
