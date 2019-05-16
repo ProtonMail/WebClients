@@ -262,7 +262,7 @@
                                                         <span class="pm_badge error" ng-show="address.Status === 0"  translate translate-comment="address state badge" translate-context="Address state badge">Disabled</span>
                                                         <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate translate-comment="address state badge" translate-context="Address state badge">Missing keys</span>
                                                         <span class="pm_badge warning" ng-show="address.DomainID === null"  translate translate-comment="address s tate badge" translate-context="Address state badge">Orphan</span>
-                                                        <span class="pm_badge primary" ng-show="$first" translate translate translate-comment="address state badge" translate-context="Address state badge">Default</span>
+                                                        <span class="pm_badge primary" ng-show="address.isDefault" translate translate translate-comment="address state badge" translate-context="Address state badge">Default</span>
                                                     </td>
                                                     <td class="text-right">
 
