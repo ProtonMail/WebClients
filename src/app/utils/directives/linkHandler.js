@@ -1,9 +1,8 @@
-import { PROTON_DOMAINS, LINK_WARNING } from '../../constants';
+import { PROTON_DOMAINS } from '../../constants';
 import { isExternal, getDomain } from '../../../helpers/url';
-import { getItem } from '../../../helpers/storageHelper';
 
 /* @ngInject */
-function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
+function linkHandler(dispatchers, messageModel, mailSettingsModel, mailUtils, linkWarningModal) {
     const { dispatcher } = dispatchers(['composer.new']);
     const dispatch = (type, data = {}) => dispatcher['composer.new'](type, data);
     const getSrc = (target) => target.getAttribute('href') || '';
@@ -40,7 +39,7 @@ function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
             return dispatch('new', { message, isAfter: true });
         }
 
-        const dontAsk = getItem(LINK_WARNING.KEY);
+        const askForConfirmation = mailSettingsModel.get('ConfirmLink');
         const domain = getDomain(src);
 
         /*
@@ -52,7 +51,7 @@ function linkHandler(dispatchers, messageModel, mailUtils, linkWarningModal) {
             return;
         }
 
-        if (!dontAsk && isExternal(src) && domain && !PROTON_DOMAINS.includes(domain)) {
+        if (askForConfirmation && isExternal(src) && domain && !PROTON_DOMAINS.includes(domain)) {
             e.preventDefault();
             e.stopPropagation(); // Required for Safari
             return linkWarningModal.activate({

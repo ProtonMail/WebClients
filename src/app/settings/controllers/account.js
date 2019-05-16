@@ -1,6 +1,5 @@
 import _ from 'lodash';
-import { PAID_MEMBER_ROLE, REMOTE, EMBEDDED, LINK_WARNING } from '../../constants';
-import { getItem, setItem, removeItem } from '../../../helpers/storageHelper';
+import { PAID_MEMBER_ROLE, REMOTE, EMBEDDED } from '../../constants';
 
 /* @ngInject */
 function AccountController(
@@ -51,7 +50,6 @@ function AccountController(
 
     updateUserSettings();
     updateMailSettings();
-    $scope.requestLink = !!getItem(LINK_WARNING.KEY);
 
     function passwordModal(submit = angular.noop, onCancel = angular.noop) {
         loginPasswordModal.activate({
@@ -237,8 +235,9 @@ function AccountController(
     }
 
     function updateMailSettings() {
-        const { Hotkeys, ShowImages, AutoSaveContacts } = mailSettingsModel.get();
+        const { Hotkeys, ShowImages, AutoSaveContacts, ConfirmLink } = mailSettingsModel.get();
 
+        $scope.requestLink = ConfirmLink;
         $scope.autosaveContacts = AutoSaveContacts;
         $scope.images = ShowImages & REMOTE ? 1 : 0;
         $scope.embedded = ShowImages & EMBEDDED ? 2 : 0;
@@ -274,12 +273,11 @@ function AccountController(
     };
 
     $scope.saveRequestLink = () => {
-        if ($scope.requestLink) {
-            setItem(LINK_WARNING.KEY, LINK_WARNING.VALUE);
-        } else {
-            removeItem(LINK_WARNING.KEY);
-        }
-        notification.success(gettextCatalog.getString('Preference updated', null, 'Success'));
+        const promise = settingsMailApi.updateConfirmLink({ ConfirmLink: $scope.requestLink }).then(() => {
+            notification.success(gettextCatalog.getString('Preference saved', null, 'Success'));
+        });
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.openHotkeyModal = () => {
