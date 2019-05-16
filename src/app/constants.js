@@ -446,11 +446,6 @@ export const STORAGE_WARNING = {
     REACHED_LIMIT: 99.99
 };
 
-export const LINK_WARNING = {
-    KEY: 'link_warning',
-    VALUE: 'dontAsk'
-};
-
 export const PROTON_DOMAINS = [
     'protonmail.com',
     'protonmail.ch',

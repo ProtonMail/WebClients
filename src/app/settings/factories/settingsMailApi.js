@@ -12,6 +12,7 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
     const updateAutoSaveContacts = (data) => handleResponse($http.put(requestURL('autocontacts'), data));
     const updateComposerMode = (data) => handleResponse($http.put(requestURL('composermode'), data));
     const updateMessageButtons = (data) => handleResponse($http.put(requestURL('messagebuttons'), data));
+    const updateConfirmLink = (data) => handleResponse($http.put(requestURL('confirmlink'), data));
     const updateShowImages = (data) => handleResponse($http.put(requestURL('images'), data));
     const updateShowMoved = (data) => handleResponse($http.put(requestURL('moved'), data));
     const updateViewMode = (data) => handleResponse($http.put(requestURL('viewmode'), data));
@@ -41,6 +42,7 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
         updateAutoSaveContacts,
         updateComposerMode,
         updateMessageButtons,
+        updateConfirmLink,
         updateShowImages,
         updateShowMoved,
         updateViewMode,
