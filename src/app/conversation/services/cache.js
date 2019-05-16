@@ -1153,7 +1153,10 @@ function cache(
     };
 
     on('$stateChangeStart', (event, toState, toParams, fromState) => {
-        if (tools.filteredState(fromState.name) !== tools.filteredState(toState.name)) {
+        const from = tools.filteredState(fromState.name);
+        const to = tools.filteredState(toState.name);
+
+        if (to === 'label' || to !== from) {
             api.reset();
         }
     });
