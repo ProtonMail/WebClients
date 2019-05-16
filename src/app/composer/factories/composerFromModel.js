@@ -64,8 +64,7 @@ function composerFromModel(
     }
 
     const isPmMeAddress = ({ Email = '' } = {}) => Email.endsWith(`@${premiumDomainModel.first()}`);
-    const findOrFirst = (addresses = [], ID) => _.find(addresses, { ID }) || _.first(addresses);
-    const canSend = ({ Send }) => Send === 1;
+    const findOrFirstSend = (addresses = [], ID) => _.find(addresses, { ID }) || _.find(addresses, { Send: 1 });
 
     /**
      * Return the address selected in the FROM select
@@ -74,10 +73,10 @@ function composerFromModel(
      * @return {Object} address
      */
     function find(addresses = [], ID) {
-        const address = findOrFirst(addresses, ID);
+        const address = findOrFirstSend(addresses, ID);
 
         if (!authentication.hasPaidMail() && isPmMeAddress(address)) {
-            const found = _.find(addresses, (address) => canSend(address) && !isPmMeAddress(address));
+            const found = _.find(addresses, { Send: 1 });
 
             if (!getItem(PM_ADDRESS_ITEM)) {
                 displayWarning(found.Email);

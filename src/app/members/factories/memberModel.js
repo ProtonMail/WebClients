@@ -4,10 +4,10 @@ import updateCollection from '../../utils/helpers/updateCollection';
 import { formatKeys } from '../../../helpers/key';
 
 import { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE } from '../../constants';
+import { markDefault } from '../../../helpers/addresses';
 
 /* @ngInject */
 function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication, translator) {
-
     let CACHE = [];
     const { dispatcher, on } = dispatchers(['members']);
     const I18N = translator(() => ({
@@ -40,7 +40,7 @@ function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, aut
         const { data = {} } = await memberApi.addresses(member.ID);
         const { Addresses = [] } = data;
 
-        member.Addresses = await formatKeys(Addresses);
+        member.Addresses = await formatKeys(markDefault(Addresses));
 
         return member;
     };
