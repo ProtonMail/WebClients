@@ -163,6 +163,11 @@ export const VIEW_LAYOUT = {
     ROW: 1
 };
 
+export const STICKY_LABELS = {
+    OFF: 0,
+    ON: 1
+};
+
 export const VIEW_MODE = {
     GROUP: 0,
     SINGLE: 1

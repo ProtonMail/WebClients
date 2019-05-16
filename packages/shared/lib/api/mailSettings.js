@@ -63,6 +63,12 @@ export const updateViewMode = (ViewMode) => ({
     data: { ViewMode }
 });
 
+export const updateStickyLabels = (StickyLabels) => ({
+    url: 'settings/mail/stickylabels',
+    method: 'put',
+    data: { StickyLabels }
+});
+
 export const updateDraftType = (MIMEType) => ({
     url: 'settings/mail/drafttype',
     method: 'put',
