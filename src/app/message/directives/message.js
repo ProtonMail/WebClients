@@ -101,7 +101,6 @@ function message(
                     .then(({ [scope.message.SenderAddress]: { pinned, scheme, isVerified } }) =>
                         scope.$applyAsync(() => {
                             const isInternal = scheme === SEND_TYPES.SEND_PM;
-                            isInternal && scope.message.addFlag(FLAG_INTERNAL);
                             scope.message.promptKeyPinning =
                                 !pinned && mailSettingsModel.get('PromptPin') && isInternal;
                             scope.message.askResign = pinned && !isVerified;
