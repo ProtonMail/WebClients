@@ -96,7 +96,6 @@
             </section>
 
             <section class="setting pm_form col-1-2">
-
                 <header-block class="settingsAppearance-header-conversation">
                     <h2
                         class="settingsAppearance-title-conversation"
@@ -105,12 +104,25 @@
                 </header-block>
 
                 <p class="alert alert-info" translate-context="Info" translate>Conversation Grouping automatically groups messages in the same conversation together.</p>
-                <div>
+                <div class="pm_grid">
                     <div class="col-1-2">
-                        <label for="changeViewMode" translate-context="Label" translate>Enable Conversation Grouping</label>
+                        <label for="changeViewMode" translate-context="Label" translate>Use conversation grouping</label>
                     </div>
                     <div class="col-1-2">
                         <toggle status="appearance.viewMode" name="changeViewMode" data-id="changeViewMode"></toggle>
+                    </div>
+                </div>
+                <div class="pm_grid" ng-show="appearance.viewMode">
+                    <div class="col-1-2">
+                        <label for="changeStickyLabels">
+                            <span translate-context="Label" translate>Use sticky labels</span>
+                            <i class="fa fa-info-circle"
+                                pt-tooltip-translate="When a label is added to a message in a conversation, all future messages you send or receive will have that same label automatically applied."
+                                pt-tooltip-translate-context="Tooltip"></i>
+                        </label>
+                    </div>
+                    <div class="col-1-2">
+                        <toggle status="appearance.stickyLabels" name="changeStickyLabels" data-id="changeStickyLabels"></toggle>
                     </div>
                 </div>
             </section>

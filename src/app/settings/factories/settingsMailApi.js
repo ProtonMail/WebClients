@@ -1,6 +1,5 @@
 /* @ngInject */
 function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
-
     const requestURL = url.build('settings/mail');
     const handleResult = ({ data = {} } = {}) => {
         mailSettingsModel.set('all', data.MailSettings);
@@ -34,6 +33,7 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
     const updateSign = (data) => handleResponse($http.put(requestURL('sign'), data));
     const updatePgpScheme = (data) => handleResponse($http.put(requestURL('pgpscheme'), data));
     const updatePromptPin = (data) => handleResponse($http.put(requestURL('promptpin'), data));
+    const updateStickyLabels = (data) => handleResponse($http.put(requestURL('stickylabels'), data));
 
     return {
         fetch,
@@ -61,7 +61,8 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
         updateAttachPublic,
         updateSign,
         updatePgpScheme,
-        updatePromptPin
+        updatePromptPin,
+        updateStickyLabels
     };
 }
 export default settingsMailApi;

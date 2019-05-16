@@ -17,16 +17,20 @@ function AppearanceController(
 ) {
     const { on, unsubscribe, dispatcher } = dispatchers(['appearance']);
 
-    const { Theme, ComposerMode, ViewLayout, MessageButtons, ViewMode } = mailSettingsModel.get();
+    const { Theme, ComposerMode, ViewLayout, MessageButtons, ViewMode, StickyLabels } = mailSettingsModel.get();
+
     $scope.appearance = {
         cssTheme: Theme,
         ComposerMode,
         ViewLayout,
         MessageButtons,
-        viewMode: !ViewMode // BE data is reversed
+        viewMode: !ViewMode, // BE data is reversed
+        stickyLabels: !!StickyLabels
     };
 
     on('changeViewMode', changeViewMode);
+    on('changeStickyLabels', changeStickyLabels);
+
     $scope.$on('$destroy', unsubscribe);
     $scope.loadThemeClassic = function() {
         $scope.appearance.cssTheme = 'CLASSIC';
@@ -101,8 +105,22 @@ function AppearanceController(
             .updateViewMode({ ViewMode })
             .then(() => eventManager.call())
             .then(() => {
-                notification.success(gettextCatalog.getString('View mode saved', null, 'Info'));
+                notification.success(gettextCatalog.getString('View mode saved', null, 'Success'));
                 dispatcher.appearance('viewModeChanged');
+            });
+
+        networkActivityTracker.track(promise);
+
+        return promise;
+    }
+
+    function changeStickyLabels(event, { data: { status } }) {
+        const StickyLabels = +status;
+        const promise = settingsMailApi
+            .updateStickyLabels({ StickyLabels })
+            .then(() => eventManager.call())
+            .then(() => {
+                notification.success(gettextCatalog.getString('Preference saved', null, 'Success'));
             });
 
         networkActivityTracker.track(promise);
