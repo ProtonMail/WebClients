@@ -1,10 +1,8 @@
 import _ from 'lodash';
 
-import { MESSAGE_FLAGS, SEND_TYPES } from '../../constants';
+import { SEND_TYPES } from '../../constants';
 import displaySignatureStatus from '../../../helpers/displaySignatureStatus';
 import { isDraft, isSent, isReplied, isRepliedAll, isForwarded } from '../../../helpers/message';
-
-const { FLAG_INTERNAL } = MESSAGE_FLAGS;
 
 const CLASSNAME = {
     UNDISCLOSED: 'message-undisclosed'
