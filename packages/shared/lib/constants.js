@@ -180,6 +180,16 @@ export const SHOW_MOVED = {
     DRAFTS_AND_SENT: 3
 };
 
+export const DRAFT_TYPE = {
+    NORMAL: 'text/html',
+    PLAIN_TEXT: 'text/plain'
+};
+
+export const RIGHT_TO_LEFT = {
+    OFF: 0,
+    ON: 1
+};
+
 export const THEMES = {
     DARK: {
         label: c('Theme').t`Dark (Default)`,
