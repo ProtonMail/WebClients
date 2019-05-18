@@ -1,4 +1,4 @@
-import { createUrl, checkStatus, serializeData } from './helpers';
+import { createUrl, checkStatus, checkDateHeader, serializeData } from './helpers';
 
 const fetchHelper = ({ url: urlString, params, output, ...rest }) => {
     const config = {
@@ -12,6 +12,7 @@ const fetchHelper = ({ url: urlString, params, output, ...rest }) => {
 
     return fetch(url, config)
         .then((response) => checkStatus(response, config))
+        .then(checkDateHeader)
         .then((response) => response[output]());
 };
 

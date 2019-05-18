@@ -1,3 +1,5 @@
+import { updateServerTime } from 'pmcrypto';
+
 /**
  * Create an API error.
  * @param {Object} response - Full response object
@@ -78,6 +80,24 @@ export const checkStatus = (response, config) => {
         .then((data) => {
             throw createApiError(response, data, config);
         });
+};
+
+/**
+ * Check if the date header exists, and set the latest servertime in pmcrypto.
+ * @param {Object} response - Full response
+ * @returns {Object}
+ */
+export const checkDateHeader = (response) => {
+    const { headers } = response;
+
+    const dateHeader = headers.get('date');
+    const newServerTime = new Date(dateHeader);
+
+    if (dateHeader && !Number.isNaN(+newServerTime)) {
+        updateServerTime(newServerTime);
+    }
+
+    return response;
 };
 
 /**

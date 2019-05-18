@@ -10,6 +10,10 @@ class FormDataMock {
     }
 }
 
+const headersMock = {
+    get: () => {}
+};
+
 describe('fetch', () => {
     let preFetch;
     let preFormData;
@@ -32,7 +36,7 @@ describe('fetch', () => {
     };
 
     it('should be able to receive json data', async () => {
-        setup(async () => ({ json: async () => ({ bar: 1 }), status: 200 }));
+        setup(async () => ({ json: async () => ({ bar: 1 }), status: 200, headers: headersMock }));
         const config = {
             url: 'http://foo.com/'
         };
@@ -41,7 +45,7 @@ describe('fetch', () => {
     });
 
     it('should be able to receive blob data', async () => {
-        setup(async () => ({ blob: async () => 123, status: 200 }));
+        setup(async () => ({ blob: async () => 123, status: 200, headers: headersMock }));
         const config = {
             url: 'http://foo.com/',
             output: 'blob'
@@ -51,7 +55,7 @@ describe('fetch', () => {
     });
 
     it('should be able to send json data', async () => {
-        const spy = setup(async () => ({ json: async () => ({ bar: 1 }), status: 200 }));
+        const spy = setup(async () => ({ json: async () => ({ bar: 1 }), status: 200, headers: headersMock }));
         const config = {
             url: 'http://foo.com/',
             data: {
@@ -74,7 +78,7 @@ describe('fetch', () => {
     });
 
     it('should be able to send form data', async () => {
-        const spy = setup(async () => ({ json: async () => ({ bar: 1 }), status: 200 }));
+        const spy = setup(async () => ({ json: async () => ({ bar: 1 }), status: 200, headers: headersMock }));
         const config = {
             url: 'http://foo.com/',
             input: 'form',
@@ -98,7 +102,7 @@ describe('fetch', () => {
     });
 
     it('should throw on 400 error and include the config, data and status', async () => {
-        setup(async () => ({ json: async () => ({ bar: 1 }), status: 400 }));
+        setup(async () => ({ json: async () => ({ bar: 1 }), status: 400, headers: headersMock }));
         const config = {
             url: 'http://foo.com/',
             suppress: [123]
