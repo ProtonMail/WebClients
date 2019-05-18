@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { ApiContext, NotificationsProvider } from 'react-components';
-import createNotificationsManager from 'proton-shared/lib/notifications/manager';
 
 const UnAuthenticatedApp = ({ initApi, children }) => {
-    const api = initApi();
-    const notificationsManager = createNotificationsManager();
+    const apiRef = useRef();
+    const notificationsRef = useRef();
+
+    if (!apiRef.current) {
+        apiRef.current = initApi();
+    }
 
     return (
-        <NotificationsProvider manager={notificationsManager}>
-            <ApiContext.Provider value={api}>{children}</ApiContext.Provider>
+        <NotificationsProvider ref={notificationsRef}>
+            <ApiContext.Provider value={apiRef.current}>{children}</ApiContext.Provider>
         </NotificationsProvider>
     );
 };
