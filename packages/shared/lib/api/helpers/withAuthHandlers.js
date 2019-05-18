@@ -1,10 +1,48 @@
-import { PASSWORD_WRONG_ERROR, setRefreshCookies } from '../auth';
-import { createOnceHandler, STATUS_CODE_UNAUTHORIZED, STATUS_CODE_UNLOCK } from '../../apiHandlers';
+import { setRefreshCookies } from '../auth';
+import {
+    createOnceHandler,
+    STATUS_CODE_TOO_MANY_REQUESTS,
+    STATUS_CODE_UNAUTHORIZED,
+    STATUS_CODE_UNLOCK
+} from '../../apiHandlers';
+import { MAX_RETRY_AFTER_ATTEMPT, MAX_RETRY_AFTER_TIMEOUT } from '../../constants';
+import { wait } from '../../helpers/promise';
 
-export const LogoutError = () => {
-    const error = new Error('Logout');
-    error.name = 'LogoutError';
+export const InactiveSessionError = () => {
+    const error = new Error('Inactive session');
+    error.name = 'InactiveSession';
     return error;
+};
+
+export const RetryError = () => {
+    const error = new Error('Retry-After');
+    error.name = 'RetryAfterError';
+    return error;
+};
+
+export const CancelUnlockError = () => {
+    const error = new Error('Cancel unlock');
+    error.name = 'CancelUnlock';
+    return error;
+};
+
+/**
+ * Handle retry-after
+ * @param {Error} e
+ * @returns {Promise}
+ */
+const retryHandler = (e) => {
+    const {
+        response: { headers }
+    } = e;
+
+    const retryAfterSeconds = parseInt(headers.get('retry-after'), 10);
+
+    if (!retryAfterSeconds || retryAfterSeconds <= 0 || retryAfterSeconds >= MAX_RETRY_AFTER_TIMEOUT) {
+        return Promise.reject(RetryError());
+    }
+
+    return wait(retryAfterSeconds * 1000);
 };
 
 /**
@@ -12,63 +50,59 @@ export const LogoutError = () => {
  * @param {function} call
  * @param {function} handleUnlock
  * @param {function} handleError
- * @param {function} handleLogout
  * @return {function}
  */
-export default ({ call, handleUnlock, handleError, handleLogout }) => {
+export default ({ call, handleUnlock, handleError }) => {
     let loggedOut = false;
 
     /**
      * Handle refresh token. Happens when the access token has expired.
      * Multiple calls can fail, so this ensures the refresh route is called once.
      */
-    const refresh = () => call(setRefreshCookies());
-    const refreshHandler = createOnceHandler(refresh, () => {
-        loggedOut = true;
-        handleLogout();
-    });
-
-    /**
-     * Handle unlock user.
-     */
-    const unlock = () => {
-        return handleUnlock().catch((e) => {
-            if (e.data && e.data.Code === PASSWORD_WRONG_ERROR) {
-                return unlock();
-            }
-            throw e;
-        });
-    };
-    const unlockHandler = createOnceHandler(unlock);
+    const refreshHandler = createOnceHandler(() => call(setRefreshCookies()));
+    const unlockHandler = createOnceHandler(handleUnlock);
 
     return (options) => {
-        // Don't allow any more calls when logged out. Have to create a new instance.
-        if (loggedOut) {
-            throw new LogoutError();
-        }
-
-        return call(options).catch((e) => {
+        const perform = (attempts) => {
             if (loggedOut) {
-                throw new LogoutError();
-            }
-
-            const { status } = e;
-
-            const retry = () => {
-                return call(options).catch((retryError) => {
-                    return handleError(retryError);
+                return Promise.resolve().then(() => {
+                    return handleError(InactiveSessionError());
                 });
-            };
-
-            if (status === STATUS_CODE_UNAUTHORIZED) {
-                return refreshHandler().then(retry);
             }
 
-            if (status === STATUS_CODE_UNLOCK) {
-                return unlockHandler().then(retry);
-            }
+            return call(options).catch((e) => {
+                if (loggedOut) {
+                    return handleError(InactiveSessionError());
+                }
 
-            return handleError(e);
-        });
+                if (attempts >= MAX_RETRY_AFTER_ATTEMPT) {
+                    return handleError(e);
+                }
+
+                const { status } = e;
+
+                if (status === STATUS_CODE_UNAUTHORIZED) {
+                    return refreshHandler().then(
+                        () => perform(attempts + 1),
+                        () => {
+                            loggedOut = true;
+                            return handleError(InactiveSessionError());
+                        }
+                    );
+                }
+
+                if (status === STATUS_CODE_UNLOCK) {
+                    return unlockHandler().then(() => perform(attempts + 1), (unlockError) => handleError(unlockError));
+                }
+
+                if (status === STATUS_CODE_TOO_MANY_REQUESTS) {
+                    return retryHandler(e).then(() => perform(attempts + 1), () => handleError(e));
+                }
+
+                return handleError(e);
+            });
+        };
+
+        return perform(1);
     };
 };

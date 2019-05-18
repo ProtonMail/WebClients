@@ -1,5 +1,8 @@
 import { c } from 'ttag';
 
+export const MAX_RETRY_AFTER_TIMEOUT = 10; // seconds
+export const MAX_RETRY_AFTER_ATTEMPT = 5; // how many times to try the same request
+
 export const MAIN_USER_KEY = 'USER_KEYS';
 export const SECURE_SESSION_STORAGE_KEY = 'SECURE';
 export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
