@@ -7,7 +7,7 @@ import {
     SubTitle,
     Alert,
     ThemeCards,
-    useModal,
+    useModals,
     useNotifications
 } from 'react-components';
 import { updateTheme } from 'proton-shared/lib/api/mailSettings';
@@ -23,7 +23,7 @@ const {
 
 const ThemesSection = () => {
     const { createNotification } = useNotifications();
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
     const [{ Theme }] = useMailSettings();
     const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateTheme);
@@ -32,7 +32,7 @@ const ThemesSection = () => {
 
     const handleChangeTheme = async (themeId) => {
         if (themeId === customId) {
-            return open();
+            return handleOpenModal();
         }
         await request(themeId);
         call();
@@ -43,6 +43,10 @@ const ThemesSection = () => {
         call();
         close();
         createNotification({ text: c('Success').t`Custom theme saved` });
+    };
+
+    const handleOpenModal = () => {
+        createModal(<CustomThemeModal theme={customCSS} onSave={handleSaveCustomTheme} />);
     };
 
     return (
@@ -56,10 +60,9 @@ const ThemesSection = () => {
                 list={availableThemes}
                 themeId={themeId}
                 onChange={handleChangeTheme}
-                onCustomization={open}
+                onCustomization={handleOpenModal}
                 disabled={loading}
             />
-            {isOpen ? <CustomThemeModal onClose={close} theme={customCSS} onSave={handleSaveCustomTheme} /> : null}
         </>
     );
 };

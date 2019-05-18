@@ -1,67 +1,89 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import { srpAuth } from 'proton-shared/lib/srp';
 import {
     ApiContext,
     AuthenticationStoreContext,
     AskPasswordModal,
     ModelsProvider,
     NotificationsProvider,
-    PromptsProvider
+    ModalsProvider
 } from 'react-components';
+import { srpAuth } from 'proton-shared/lib/srp';
 import { getError } from 'proton-shared/lib/apiHandlers';
-import createPromptsManager from 'proton-shared/lib/prompts/manager';
-import createNotificationsManager from 'proton-shared/lib/notifications/manager';
 import withAuthHandlers from 'proton-shared/lib/api/helpers/withAuthHandlers';
-
 import { queryUnlock } from 'proton-shared/lib/api/user';
+
 import ThemeInjector from '../themes/ThemeInjector';
 
 const AuthenticatedApp = ({ authenticationStore, onLogout, initApi, loginData, children }) => {
-    const notificationsManager = createNotificationsManager();
-    const promptsManager = createPromptsManager();
-
-    const handleError = (e) => {
-        const { code, message, status } = getError(e);
-        notificationsManager.createNotification({
-            type: 'error',
-            text: `${status} - ${code} - ${message}`
-        });
-        throw e;
-    };
-
-    const handleUnlock = async () => {
-        const { password, totp } = await promptsManager.createPrompt((resolve, reject) => {
-            return <AskPasswordModal onClose={reject} onSubmit={resolve} hideTwoFactor={true} />;
-        });
-        return srpAuth({
-            api,
-            credentials: { password, totp },
-            config: queryUnlock()
-        });
-    };
-
-    const UID = authenticationStore.getUID();
-    const call = initApi(UID);
-    const api = withAuthHandlers({
-        call,
-        handleError,
-        handleUnlock,
-        handleLogout: onLogout
-    });
-
-    const authenticationStoreWithLogout = {
+    const modalsRef = useRef();
+    const notificationsRef = useRef();
+    const apiRef = useRef();
+    const authenticationRef = useRef({
         ...authenticationStore,
         logout: onLogout
+    });
+
+    const getApi = () => {
+        if (apiRef.current) {
+            return apiRef.current;
+        }
+
+        const handleError = (e) => {
+            if (!notificationsRef.current) {
+                throw e;
+            }
+
+            const { code, message, status } = getError(e);
+
+            notificationsRef.current.createNotification({
+                type: 'error',
+                text: `${status} - ${code} - ${message}`
+            });
+
+            throw e;
+        };
+
+        const handleUnlock = async () => {
+            if (!modalsRef.current) {
+                throw new Error('could not create unlock modal');
+            }
+
+            const { password } = await new Promise((resolve, reject) => {
+                modalsRef.current.createModal(
+                    <AskPasswordModal onClose={reject} onSubmit={resolve} hideTwoFactor={true} />
+                );
+            });
+
+            return srpAuth({
+                api,
+                credentials: { password },
+                config: queryUnlock()
+            });
+        };
+
+        const UID = authenticationStore.getUID();
+        const call = initApi(UID);
+
+        apiRef.current = withAuthHandlers({
+            call,
+            handleError,
+            handleUnlock,
+            handleLogout: onLogout
+        });
+
+        return apiRef.current;
     };
 
+    const api = getApi();
+
     return (
-        <NotificationsProvider manager={notificationsManager}>
+        <NotificationsProvider ref={notificationsRef}>
             <ApiContext.Provider value={api}>
-                <AuthenticationStoreContext.Provider value={authenticationStoreWithLogout}>
+                <AuthenticationStoreContext.Provider value={authenticationRef.current}>
                     <ModelsProvider loginData={loginData}>
                         <ThemeInjector />
-                        <PromptsProvider manager={promptsManager}>{children}</PromptsProvider>
+                        <ModalsProvider ref={modalsRef}>{children}</ModalsProvider>
                     </ModelsProvider>
                 </AuthenticationStoreContext.Provider>
             </ApiContext.Provider>

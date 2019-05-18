@@ -12,7 +12,7 @@ export const useSubscription = () => {
             return SubscriptionModel.get(api);
         }
 
-        return FREE_SUBSCRIPTION;
+        return Promise.resolve(FREE_SUBSCRIPTION);
     }, [user]);
     return useCachedResult(cache, SubscriptionModel.key, load);
 };

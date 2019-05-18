@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
     ConfirmModal,
-    useModal,
+    useModals,
     Alert,
     useApiWithoutResult,
     DropdownActions,
@@ -21,13 +21,11 @@ const MemberActions = ({ member, organization }) => {
     const { request: requestRemoveMember } = useApiWithoutResult(removeMember);
     const { request: requestUpdateRole } = useApiWithoutResult(updateRole);
     const { request: requestPrivatize } = useApiWithoutResult(privatizeMember);
-    const { isOpen: showEdit, open: openEdit, close: closeEdit } = useModal();
-    const { isOpen: showDelete, open: openDelete, close: closeDelete } = useModal();
+    const { createModal } = useModals();
 
     const handleConfirmDelete = async () => {
         await requestRemoveMember(member.ID);
         await call();
-        closeDelete();
         createNotification({ text: c('Success message').t`User deleted` });
     };
 
@@ -63,6 +61,21 @@ const MemberActions = ({ member, organization }) => {
         !member.Self && member.Private === MEMBER_PRIVATE.READABLE && member.Keys.length && member.addresses.length;
     const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE;
 
+    const openEdit = () => {
+        createModal(<EditMemberModal member={member} />);
+    };
+
+    const openDelete = () => {
+        createModal(
+            <ConfirmModal onConfirm={handleConfirmDelete}>
+                <Alert>
+                    {c('Info')
+                        .t`Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted.`}
+                </Alert>
+            </ConfirmModal>
+        );
+    };
+
     const list = [
         canEdit && {
             text: c('Member action').t`Edit`,
@@ -90,18 +103,7 @@ const MemberActions = ({ member, organization }) => {
         }
     ].filter(Boolean);
 
-    return (
-        <>
-            <DropdownActions list={list} className="pm-button--small" />
-            {showEdit ? <EditMemberModal onClose={closeEdit} member={member} /> : null}
-            {showDelete ? (
-                <ConfirmModal onClose={closeDelete} onConfirm={handleConfirmDelete}>
-                    <Alert>{c('Info')
-                        .t`Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted.`}</Alert>
-                </ConfirmModal>
-            ) : null}
-        </>
-    );
+    return <DropdownActions list={list} className="pm-button--small" />;
 };
 
 MemberActions.propTypes = {

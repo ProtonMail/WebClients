@@ -9,7 +9,7 @@ import {
     PrimaryButton,
     Button,
     Block,
-    useModal
+    useModals
 } from 'react-components';
 
 import DomainModal from './DomainModal';
@@ -18,9 +18,13 @@ import DomainsTable from './DomainsTable';
 const DomainsSection = () => {
     const [domains, loading] = useDomains();
     const [organization] = useOrganization();
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
     const { UsedDomains, MaxDomains } = organization;
-    const { call } = useEventManager(); // TODO: Use event manager or expose a refresh fn in the models?
+    const { call } = useEventManager();
+
+    const open = () => {
+        createModal(<DomainModal />);
+    };
 
     return (
         <>
@@ -31,7 +35,6 @@ const DomainsSection = () => {
             </Alert>
             <Block>
                 <PrimaryButton onClick={open} className="mr1">{c('Action').t`Add domain`}</PrimaryButton>
-                {isOpen ? <DomainModal onClose={close} /> : null}
                 <Button disabled={loading} onClick={call}>{c('Action').t`Refresh status`}</Button>
             </Block>
             {!loading && !domains.length ? <Alert>{c('Info').t`No domains yet`}</Alert> : null}

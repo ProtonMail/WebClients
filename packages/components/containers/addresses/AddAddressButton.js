@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PrimaryButton, useModal } from 'react-components';
+import { PrimaryButton, useModals } from 'react-components';
 
 import AddressModal from './AddressModal';
 
 const AddAddressButton = ({ loading, member }) => {
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
+
     return (
-        <>
-            <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Add address`}</PrimaryButton>
-            {isOpen ? <AddressModal onClose={close} member={member} /> : null}
-        </>
+        <PrimaryButton disabled={loading} onClick={() => createModal(<AddressModal member={member} />)}>
+            {c('Action').t`Add address`}
+        </PrimaryButton>
     );
 };
 

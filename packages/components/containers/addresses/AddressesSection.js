@@ -82,7 +82,7 @@ const AddressesSection = () => {
             c('Header for addresses table').t`Actions`
         ];
 
-        if (member.ID === ALL_MEMBERS_ID) {
+        if (member && member.ID === ALL_MEMBERS_ID) {
             cells.splice(1, 0, c('Header for addresses table').t`Username`);
         }
 
@@ -99,7 +99,7 @@ const AddressesSection = () => {
             )}
             <Table>
                 <TableHeader cells={getHeaderCells()} />
-                <TableBody loading={loading} colSpan={member.ID === ALL_MEMBERS_ID ? 4 : 3}>
+                <TableBody loading={loading} colSpan={member && member.ID === ALL_MEMBERS_ID ? 4 : 3}>
                     {selectedAddresses.map((address, index) => {
                         const key = address.ID;
                         const cells = [
@@ -115,7 +115,7 @@ const AddressesSection = () => {
                             )
                         ];
 
-                        if (member.ID === ALL_MEMBERS_ID) {
+                        if (member && member.ID === ALL_MEMBERS_ID) {
                             cells.splice(1, 0, address.member.Name);
                         }
 

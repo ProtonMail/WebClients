@@ -17,7 +17,7 @@ import {
     usePlans,
     useUser,
     useToggle,
-    useModal,
+    useModals,
     useEventManager,
     useNotifications
 } from 'react-components';
@@ -36,7 +36,7 @@ const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 const PlansSection = () => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
     const [{ isPaid, hasPaidMail, hasPaidVpn }] = useUser();
     const [subscription = {}, loadingSubscription] = useSubscription();
     const [plans = [], loadingPlans] = usePlans();
@@ -44,8 +44,6 @@ const PlansSection = () => {
     const { state: showFeatures, toggle: toggleFeatures } = useToggle();
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [cycle, setCycle] = useState(DEFAULT_CYCLE);
-    const [subscriptionModal, setSubscriptionModal] = useState(null);
-    const resetModal = () => setSubscriptionModal(null);
     const { request: requestCheckSubscription } = useApiWithoutResult(checkSubscription);
     const { request: requestDeleteSubscription } = useApiWithoutResult(deleteSubscription);
     const bundleEligible = isBundleEligible(subscription);
@@ -56,9 +54,20 @@ const PlansSection = () => {
         createNotification({ text: c('Success').t`You have successfully unsubscribed` });
     };
 
+    const handleOpenModal = () => {
+        createModal(
+            <ConfirmModal title={c('Title').t`Confirm downgrade`} onConfirm={handleUnsubscribe}>
+                <Alert>{c('Info')
+                    .t`This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.`}</Alert>
+                <Alert type="warning">{c('Info')
+                    .t`Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action.`}</Alert>
+            </ConfirmModal>
+        );
+    };
+
     const handleModal = (newPlansMap) => async () => {
         if (!newPlansMap) {
-            open();
+            handleOpenModal();
             return;
         }
 
@@ -66,17 +75,7 @@ const PlansSection = () => {
         const { Coupon } = await requestCheckSubscription(getCheckParams({ plans, plansMap, currency, cycle, coupon }));
         const coupon = Coupon ? Coupon.Code : undefined; // Coupon can equals null
 
-        const modal = (
-            <SubscriptionModal
-                onClose={resetModal}
-                plansMap={plansMap}
-                coupon={coupon}
-                currency={currency}
-                cycle={cycle}
-            />
-        );
-
-        setSubscriptionModal(modal);
+        createModal(<SubscriptionModal plansMap={plansMap} coupon={coupon} currency={currency} cycle={cycle} />);
     };
 
     useEffect(() => {
@@ -434,15 +433,6 @@ const PlansSection = () => {
                     </table>
                     <p className="small">* {c('Info concerning plan features').t`denotes customizable features`}</p>
                 </>
-            ) : null}
-            {subscriptionModal}
-            {isOpen ? (
-                <ConfirmModal title={c('Title').t`Confirm downgrade`} onClose={close} onConfirm={handleUnsubscribe}>
-                    <Alert>{c('Info')
-                        .t`This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.`}</Alert>
-                    <Alert type="warning">{c('Info')
-                        .t`Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action.`}</Alert>
-                </ConfirmModal>
             ) : null}
         </>
     );

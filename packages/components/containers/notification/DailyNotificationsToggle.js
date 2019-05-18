@@ -6,7 +6,7 @@ import {
     useUserSettings,
     AskPasswordModal,
     useApi,
-    usePrompts,
+    useModals,
     useEventManager
 } from 'react-components';
 import { updateNotifyEmail } from 'proton-shared/lib/api/settings';
@@ -16,16 +16,16 @@ const DailyNotificationsToggle = ({ id }) => {
     const api = useApi();
     const { call } = useEventManager();
     const [{ Email }] = useUserSettings();
-    const { createPrompt } = usePrompts();
+    const { createModal } = useModals();
     const { state, toggle } = useToggle(!!Email.Notify);
     const [loading, setLoading] = useState(false);
 
     const handleChange = async ({ target }) => {
         try {
             setLoading(true);
-            const { password, totp } = await createPrompt((resolve, reject) => (
-                <AskPasswordModal onClose={reject} onSubmit={resolve} />
-            ));
+            const { password, totp } = await new Promise((resolve, reject) => {
+                createModal(<AskPasswordModal onClose={reject} onSubmit={resolve} />);
+            });
             await srpAuth({
                 api,
                 credentials: { password, totp },

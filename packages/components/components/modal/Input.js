@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { ResetButton, PrimaryButton, Input, TextArea, Label, Row, Field } from 'react-components';
+import { FormModal, Input, TextArea, Label, Row, Field } from 'react-components';
 
-import Modal from './Modal';
-import Footer from './Footer';
-import Content from './Content';
-import Inner from './Inner';
 import { generateUID } from '../../helpers/component';
 
 const InputField = ({ type, id, input, placeholder, onChange }) => {
@@ -37,36 +33,31 @@ const InputModal = ({
     cancel,
     submit,
     placeholder,
-    loading
+    ...rest
 }) => {
     const [input, set] = useState(initialInput);
     const id = generateUID('input-modal');
+
     const handleChange = ({ target }) => set(target.value);
     const handleSubmit = () => onSubmit(input);
 
     return (
-        <Modal onClose={onClose} title={title} type="small">
-            <Content onSubmit={handleSubmit} onReset={onClose} loading={loading}>
-                <Inner>
-                    <Row>
-                        <Label htmlFor={id}>{label}</Label>
-                        <Field>
-                            <InputField
-                                type={type}
-                                id={id}
-                                value={input}
-                                placeholder={placeholder}
-                                onChange={handleChange}
-                            />
-                        </Field>
-                    </Row>
-                </Inner>
-                <Footer>
-                    <ResetButton>{cancel}</ResetButton>
-                    <PrimaryButton type="submit">{submit}</PrimaryButton>
-                </Footer>
-            </Content>
-        </Modal>
+        <FormModal
+            onClose={onClose}
+            onSubmit={handleSubmit}
+            close={cancel}
+            submit={submit}
+            title={title}
+            small
+            {...rest}
+        >
+            <Row>
+                <Label htmlFor={id}>{label}</Label>
+                <Field>
+                    <InputField type={type} id={id} value={input} placeholder={placeholder} onChange={handleChange} />
+                </Field>
+            </Row>
+        </FormModal>
     );
 };
 

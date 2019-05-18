@@ -8,7 +8,7 @@ import {
     Field,
     Label,
     SmallButton,
-    useModal,
+    useModals,
     useOrganization,
     InputModal,
     useApiWithoutResult
@@ -31,11 +31,22 @@ const OrganizationSection = () => {
         UsedAddresses,
         MaxAddresses
     } = organization;
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
 
-    const handleSubmit = (name) => async () => {
+    const handleSubmit = async (name) => {
         await request(name);
-        close();
+    };
+
+    const handleOpenModal = () => {
+        createModal(
+            <InputModal
+                input={Name}
+                title={c('Title').t`Change organization name`}
+                label={c('Label').t`Organization name`}
+                placeholder={c('Placeholder').t`Choose a name`}
+                onSubmit={(name) => handleSubmit(name)}
+            />
+        );
     };
 
     return (
@@ -46,17 +57,7 @@ const OrganizationSection = () => {
                 <Label>{c('Label').t`Organization name`}</Label>
                 <Field>
                     <span className="mr1">{Name}</span>
-                    <SmallButton onClick={open}>{c('Action').t`Edit`}</SmallButton>
-                    {isOpen ? (
-                        <InputModal
-                            input={Name}
-                            title={c('Title').t`Change organization name`}
-                            label={c('Label').t`Organization name`}
-                            placeholder={c('Placeholder').t`Choose a name`}
-                            onClose={close}
-                            onSubmit={handleSubmit}
-                        />
-                    ) : null}
+                    <SmallButton onClick={handleOpenModal}>{c('Action').t`Edit`}</SmallButton>
                 </Field>
             </Row>
             <Row>

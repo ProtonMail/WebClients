@@ -3,73 +3,79 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { updateAddress } from 'proton-shared/lib/api/addresses';
 import {
-    Modal,
-    ContentModal,
-    InnerModal,
+    FormModal,
     Row,
     Field,
     Label,
     Input,
     RichTextEditor,
-    ResetButton,
-    PrimaryButton,
-    FooterModal,
-    useApiWithoutResult,
+    useApi,
     useNotifications,
     useEventManager
 } from 'react-components';
 
-const EditAddressModal = ({ onClose, address }) => {
+const EditAddressModal = ({ onClose, address, ...rest }) => {
     const { call } = useEventManager();
-    const { request } = useApiWithoutResult(updateAddress);
+    const api = useApi();
     const [model, updateModel] = useState({ displayName: address.DisplayName, signature: address.Signature });
+    const [loading, setLoading] = useState();
     const { createNotification } = useNotifications();
+
     const handleDisplayName = ({ target }) => updateModel({ ...model, displayName: target.value });
+
     const handleSignature = (value) => updateModel({ ...model, signature: value });
+
     const handleSubmit = async () => {
-        await request(address.ID, { DisplayName: model.displayName, Signature: model.signature });
-        await call();
-        onClose();
-        createNotification({ text: c('Success').t`Address updated` });
+        try {
+            setLoading(true);
+            await api(updateAddress(address.ID, { DisplayName: model.displayName, Signature: model.signature }));
+            await call();
+            onClose();
+            createNotification({ text: c('Success').t`Address updated` });
+        } catch (e) {
+            setLoading(false);
+        }
     };
+
     return (
-        <Modal onClose={onClose} title={c('Title').t`Edit address`} type="small">
-            <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <InnerModal>
-                    <Row>
-                        <Label>{c('Label').t`Address`}</Label>
-                        <Field>{address.Email}</Field>
-                    </Row>
-                    <Row>
-                        <Label>{c('Label').t`Display name`}</Label>
-                        <Field>
-                            <Input
-                                value={model.displayName}
-                                placeholder={c('Placeholder').t`Choose display name`}
-                                onChange={handleDisplayName}
-                                required
-                            />
-                        </Field>
-                    </Row>
-                    <Row>
-                        <Label>{c('Label').t`Signature`}</Label>
-                        <Field>
-                            <RichTextEditor value={model.signature} onChange={handleSignature} />
-                        </Field>
-                    </Row>
-                </InnerModal>
-                <FooterModal>
-                    <ResetButton>{c('Action').t`Cancel`}</ResetButton>
-                    <PrimaryButton type="submit">{c('Action').t`Save`}</PrimaryButton>
-                </FooterModal>
-            </ContentModal>
-        </Modal>
+        <FormModal
+            onClose={onClose}
+            onSubmit={handleSubmit}
+            title={c('Title').t`Edit address`}
+            close={c('Action').t`Cancel`}
+            submit={c('Action').t`Save`}
+            small
+            loading={loading}
+            {...rest}
+        >
+            <Row>
+                <Label>{c('Label').t`Address`}</Label>
+                <Field>{address.Email}</Field>
+            </Row>
+            <Row>
+                <Label>{c('Label').t`Display name`}</Label>
+                <Field>
+                    <Input
+                        value={model.displayName}
+                        placeholder={c('Placeholder').t`Choose display name`}
+                        onChange={handleDisplayName}
+                        required
+                    />
+                </Field>
+            </Row>
+            <Row>
+                <Label>{c('Label').t`Signature`}</Label>
+                <Field>
+                    <RichTextEditor value={model.signature} onChange={handleSignature} />
+                </Field>
+            </Row>
+        </FormModal>
     );
 };
 
 EditAddressModal.propTypes = {
     address: PropTypes.object.isRequired,
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func
 };
 
 export default EditAddressModal;

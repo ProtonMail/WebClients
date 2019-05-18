@@ -1,28 +1,21 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Modal, ContentModal, FooterModal, ResetButton, InnerModal } from 'react-components';
+import { FormModal } from 'react-components';
 
-const PreviewPDFModal = ({ onClose, url, title, filename }) => {
+const PreviewPDFModal = ({ url, title, filename, ...rest }) => {
     return (
-        <Modal onClose={onClose} title={title}>
-            <ContentModal onReset={onClose}>
-                <InnerModal>
-                    <object data={url} className="w100" type="application/pdf" height={500} title={filename}>
-                        <embed src={url} type="application/pdf" />
-                    </object>
-                </InnerModal>
-                <FooterModal>
-                    <ResetButton>{c('Action').t`Close`}</ResetButton>
-                </FooterModal>
-            </ContentModal>
-        </Modal>
+        <FormModal title={title} close={c('Action').t`Close`} {...rest}>
+            <object data={url} className="w100" type="application/pdf" height={500} title={filename}>
+                <embed src={url} type="application/pdf" />
+            </object>
+        </FormModal>
     );
 };
 
 PreviewPDFModal.propTypes = {
     show: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired,
+    onClose: PropTypes.func,
     url: PropTypes.string,
     title: PropTypes.string,
     filename: PropTypes.string

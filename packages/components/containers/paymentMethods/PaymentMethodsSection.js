@@ -7,7 +7,7 @@ import {
     Block,
     MozillaInfoPanel,
     useApiResult,
-    useModal,
+    useModals,
     useSubscription
 } from 'react-components';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
@@ -17,7 +17,7 @@ import PaymentMethodsTable from './PaymentMethodsTable';
 
 const PaymentMethodsSection = () => {
     const [{ isManagedByMozilla }] = useSubscription();
-    const { isOpen: showCardModal, open: openCardModal, close: closeCardModal } = useModal();
+    const { createModal } = useModals();
     const { result = {}, loading, request } = useApiResult(queryPaymentMethods, []);
     const { PaymentMethods: paymentMethods = [] } = result;
 
@@ -30,13 +30,16 @@ const PaymentMethodsSection = () => {
         );
     }
 
+    const handleOpenModal = () => {
+        createModal(<EditCardModal onChange={request} />);
+    };
+
     return (
         <>
             <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
             <Alert learnMore="todo">{c('Info for payment methods').t`Lorem ipsum`}</Alert>
             <Block>
-                <PrimaryButton onClick={openCardModal}>{c('Action').t`Add payment method`}</PrimaryButton>
-                {showCardModal ? <EditCardModal onClose={closeCardModal} onChange={request} /> : null}
+                <PrimaryButton onClick={handleOpenModal}>{c('Action').t`Add payment method`}</PrimaryButton>
             </Block>
             <PaymentMethodsTable loading={loading} methods={paymentMethods} fetchMethods={request} />
         </>

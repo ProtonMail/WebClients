@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { PrimaryButton, useModal, useNotifications, useDomains, useOrganization } from 'react-components';
+import { PrimaryButton, useModals, useNotifications, useDomains, useOrganization } from 'react-components';
 import { DOMAIN_STATE } from 'proton-shared/lib/constants';
 
 import MemberModal from './MemberModal';
@@ -13,7 +13,11 @@ const AddMemberButton = () => {
 
     const { createNotification } = useNotifications();
     const [verifiedDomains, setDomains] = useState([]);
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
+
+    const handleOpenModal = () => {
+        createModal(<MemberModal organization={organization} domains={verifiedDomains} />);
+    };
 
     const handleClick = () => {
         try {
@@ -62,7 +66,7 @@ const AddMemberButton = () => {
             throw error;
         }
 
-        open();
+        handleOpenModal();
     };
 
     useEffect(() => {
@@ -70,12 +74,9 @@ const AddMemberButton = () => {
     }, [domains]);
 
     return (
-        <>
-            <PrimaryButton disabled={domainsLoading} onClick={handleClick}>{c('Action').t`Add user`}</PrimaryButton>
-            {domainsLoading ? null : isOpen ? (
-                <MemberModal onClose={close} organization={organization} domains={verifiedDomains} />
-            ) : null}
-        </>
+        <PrimaryButton disabled={domainsLoading} onClick={handleClick}>
+            {c('Action').t`Add user`}
+        </PrimaryButton>
     );
 };
 

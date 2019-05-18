@@ -1,21 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NotificationsContainer = ({ notifications, remove }) => {
-    const list = notifications.map(({ id, type, text }) => {
+import Notification from './Notification';
+
+const NotificationsContainer = ({ notifications, removeNotification, hideNotification }) => {
+    const list = notifications.map(({ id, type, text, isClosing }) => {
         return (
-            <div onClick={() => remove(id)} key={id} className="notification notification-success">
-                {type} - {text}
-            </div>
+            <Notification
+                key={id}
+                isClosing={isClosing}
+                type={type}
+                onClick={() => hideNotification(id)}
+                onExit={() => removeNotification(id)}
+            >
+                {text}
+            </Notification>
         );
     });
 
-    return <div>{list}</div>;
+    return <div className="notifications-container flex flex-column flex-items-center">{list}</div>;
 };
 
 NotificationsContainer.propTypes = {
     notifications: PropTypes.arrayOf(PropTypes.object).isRequired,
-    remove: PropTypes.func.isRequired
+    removeNotification: PropTypes.func.isRequired,
+    hideNotification: PropTypes.func.isRequired
 };
 
 export default NotificationsContainer;

@@ -6,14 +6,14 @@ import {
     Toggle,
     Alert,
     useApiWithoutResult,
-    useModal,
+    useModals,
     useEventManager,
     useToggle
 } from 'react-components';
 import { updateAttachPublicKey, updateSign } from 'proton-shared/lib/api/mailSettings';
 
 const AttachPublicKeyToggle = ({ id, attachPublicKey, sign }) => {
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
     const { call } = useEventManager();
     const { request, loading } = useApiWithoutResult(updateAttachPublicKey);
     const { request: requestSign } = useApiWithoutResult(updateSign);
@@ -31,30 +31,30 @@ const AttachPublicKeyToggle = ({ id, attachPublicKey, sign }) => {
         toggle();
     };
 
+    const handleOpenModal = () => {
+        createModal(
+            <ConfirmModal
+                confirm={c('Action').t`Yes`}
+                cancel={c('Action').t`No`}
+                title={c('Title').t`Automatically sign outgoing messages?`}
+                onConfirm={handleConfirmSign}
+            >
+                <Alert>
+                    {c('Info')
+                        .t`PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.`}
+                </Alert>
+            </ConfirmModal>
+        );
+    };
+
     const askSign = (newValue) => {
         if (!newValue || sign) {
             return false;
         }
-        open();
+        handleOpenModal();
     };
 
-    return (
-        <>
-            <Toggle id={id} checked={state} onChange={handleChange} loading={loading} />
-            {isOpen ? (
-                <ConfirmModal
-                    onClose={close}
-                    confirm={c('Action').t`Yes`}
-                    cancel={c('Action').t`No`}
-                    title={c('Title').t`Automatic sign outgoing messages?`}
-                    onConfirm={handleConfirmSign}
-                >
-                    <Alert>{c('Info')
-                        .t`PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.`}</Alert>
-                </ConfirmModal>
-            ) : null}
-        </>
-    );
+    return <Toggle id={id} checked={state} onChange={handleChange} loading={loading} />;
 };
 
 AttachPublicKeyToggle.propTypes = {

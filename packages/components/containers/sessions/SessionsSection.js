@@ -12,7 +12,7 @@ import {
     Block,
     SubTitle,
     ConfirmModal,
-    useModal,
+    useModals,
     useLoading,
     usePagination
 } from 'react-components';
@@ -43,7 +43,7 @@ const SessionsSection = () => {
     const { loading, loaded } = useLoading();
     const [table, setTable] = useState({ sessions: [], total: 0 });
     const { page, list, onNext, onPrevious, onSelect } = usePagination(table.sessions);
-    const { isOpen: showConfirmRevokeAll, open: openConfirmRevokeAll, close: closeConfirmRevokeAll } = useModal();
+    const { createModal } = useModals();
     const currentUID = authenticationStore.getUID();
     const fetchSessions = async () => {
         const { Sessions } = await api(querySessions());
@@ -54,6 +54,14 @@ const SessionsSection = () => {
     const handleRevoke = (UID) => async () => {
         await api(UID ? revokeSession(UID) : revokeOtherSessions());
         fetchSessions();
+    };
+
+    const handleOpenModal = () => {
+        createModal(
+            <ConfirmModal onConfirm={handleRevoke}>
+                <Alert>{c('Info').t`Do you want to revoke all other sessions than the current one?`}</Alert>
+            </ConfirmModal>
+        );
     };
 
     useEffect(() => {
@@ -67,12 +75,7 @@ const SessionsSection = () => {
                 .t`Unless you explicitly logout or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity.`}</Alert>
             <Block className="flex flex-spacebetween">
                 <div>
-                    <Button onClick={openConfirmRevokeAll}>{c('Action').t`Revoke all other sessions`}</Button>
-                    {showConfirmRevokeAll ? (
-                        <ConfirmModal onClose={closeConfirmRevokeAll} onConfirm={handleRevoke}>
-                            <Alert>{c('Info').t`Do you want to revoke all other sessions than the current one?`}</Alert>
-                        </ConfirmModal>
-                    ) : null}
+                    <Button onClick={handleOpenModal}>{c('Action').t`Revoke all other sessions`}</Button>
                 </div>
                 <Pagination
                     page={page}

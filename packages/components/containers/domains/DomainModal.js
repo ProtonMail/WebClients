@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import {
-    Modal,
-    ResetButton,
-    PrimaryButton,
-    FooterModal,
-    ContentModal,
-    InnerModal,
-    useStep,
-    Breadcrumb,
-    useApiWithoutResult,
-    useNotifications
-} from 'react-components';
+import { FormModal, useApi, useStep, Breadcrumb, useNotifications } from 'react-components';
 import { addDomain, getDomain } from 'proton-shared/lib/api/domains';
 import { VERIFY_STATE } from 'proton-shared/lib/constants';
 
@@ -28,12 +17,11 @@ const { VERIFY_STATE_DEFAULT, VERIFY_STATE_EXIST, VERIFY_STATE_GOOD } = VERIFY_S
 const DOMAIN_STEP = 0;
 const VERIFY_STEP = 1;
 
-const DomainModal = ({ onClose, domain }) => {
+const DomainModal = ({ onClose, domain, ...rest }) => {
     const [domainModel, setDomain] = useState(domain);
     const { createNotification } = useNotifications();
     const [domainName, updateDomainName] = useState(domainModel.DomainName);
-    const { request: requestGetDomain } = useApiWithoutResult(getDomain);
-    const { request: requestAddDomain } = useApiWithoutResult(addDomain);
+    const api = useApi();
     const { step, next, goTo } = useStep();
     const handleClick = (index) => goTo(index);
 
@@ -61,7 +49,7 @@ const DomainModal = ({ onClose, domain }) => {
     }
 
     const verifyDomain = async () => {
-        const data = await requestGetDomain(domainModel.ID);
+        const data = await api(getDomain(domainModel.ID));
         const { VerifyState } = data.Domain || {};
 
         if (VerifyState === VERIFY_STATE_DEFAULT) {
@@ -80,7 +68,7 @@ const DomainModal = ({ onClose, domain }) => {
 
     const handleSubmit = async () => {
         if (step === DOMAIN_STEP && !domainModel.ID) {
-            const { Domain } = await requestAddDomain(domainName);
+            const { Domain } = await api(addDomain(domainName));
             setDomain(Domain);
             return next();
         }
@@ -103,25 +91,22 @@ const DomainModal = ({ onClose, domain }) => {
     };
 
     return (
-        <Modal onClose={onClose} title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}>
-            <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <InnerModal>
-                    {<Breadcrumb list={STEPS.map(({ label }) => label)} current={step} onClick={handleClick} />}
-                    {STEPS[step].section}
-                </InnerModal>
-                <FooterModal>
-                    <ResetButton>{c('Action').t`Close`}</ResetButton>
-                    <PrimaryButton type="submit">
-                        {step < STEPS.length - 1 ? c('Action').t`Next` : c('Action').t`Finish`}
-                    </PrimaryButton>
-                </FooterModal>
-            </ContentModal>
-        </Modal>
+        <FormModal
+            onClose={onClose}
+            onSubmit={handleSubmit}
+            close={c('Action').t`Close`}
+            submit={step < STEPS.length - 1 ? c('Action').t`Next` : c('Action').t`Finish`}
+            title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}
+            {...rest}
+        >
+            {<Breadcrumb list={STEPS.map(({ label }) => label)} current={step} onClick={handleClick} />}
+            {STEPS[step].section}
+        </FormModal>
     );
 };
 
 DomainModal.propTypes = {
-    onClose: PropTypes.func.isRequired,
+    onClose: PropTypes.func,
     domain: PropTypes.object.isRequired
 };
 

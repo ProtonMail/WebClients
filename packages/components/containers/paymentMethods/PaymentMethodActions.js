@@ -3,11 +3,11 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import {
     DropdownActions,
-    useModal,
+    useModals,
     ConfirmModal,
     Alert,
     EditCardModal,
-    useApiWithoutResult,
+    useApi,
     useNotifications
 } from 'react-components';
 import { deletePaymentMethod, orderPaymentMethods } from 'proton-shared/lib/api/payments';
@@ -27,14 +27,12 @@ const toCard = ({ Details }) => {
 const PaymentMethodActions = ({ method, onChange, methods, index }) => {
     const card = toCard(method);
     const { createNotification } = useNotifications();
-    const { request } = useApiWithoutResult(deletePaymentMethod);
-    const { isOpen: deleteModal, open: openDeleteModal, close: closeDeleteModal } = useModal();
-    const { isOpen: editModal, open: openEditModal, close: closeEditModal } = useModal();
+    const { createModal } = useModals();
+    const api = useApi();
 
     const deleteMethod = async () => {
-        await request(method.ID);
+        await api(deletePaymentMethod(method.ID));
         await onChange();
-        closeDeleteModal();
         createNotification({ text: c('Success').t`Payment method deleted` });
     };
 
@@ -52,7 +50,7 @@ const PaymentMethodActions = ({ method, onChange, methods, index }) => {
     const list = [
         method.Type === 'card' && {
             text: c('Action').t`Edit`,
-            onClick: openEditModal
+            onClick: () => createModal(<EditCardModal card={card} onChange={onChange} />)
         },
         index > 0 && {
             text: c('Action').t`Mark as default`,
@@ -60,26 +58,18 @@ const PaymentMethodActions = ({ method, onChange, methods, index }) => {
         },
         {
             text: c('Action').t`Delete`,
-            onClick: openDeleteModal
+            onClick: () => {
+                createModal(
+                    <ConfirmModal onConfirm={deleteMethod} title={c('Confirmation title').t`Delete payment method`}>
+                        <Alert>{c('Confirmation message to delete payment method')
+                            .t`Are you sure you want to delete this payment method?`}</Alert>
+                    </ConfirmModal>
+                );
+            }
         }
     ].filter(Boolean);
 
-    return (
-        <>
-            <DropdownActions className="pm-button--small" list={list} />
-            {editModal ? <EditCardModal card={card} onClose={closeEditModal} onChange={onChange} /> : null}
-            {deleteModal ? (
-                <ConfirmModal
-                    onClose={closeDeleteModal}
-                    onConfirm={deleteMethod}
-                    title={c('Confirmation title').t`Delete payment method`}
-                >
-                    <Alert>{c('Confirmation message to delete payment method')
-                        .t`Are you sure you want to delete this payment method?`}</Alert>
-                </ConfirmModal>
-            ) : null}
-        </>
-    );
+    return <DropdownActions className="pm-button--small" list={list} />;
 };
 
 PaymentMethodActions.propTypes = {

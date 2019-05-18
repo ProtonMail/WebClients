@@ -2,13 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
-    Modal,
+    FormModal,
     Alert,
-    ContentModal,
-    InnerModal,
-    FooterModal,
-    ResetButton,
-    PrimaryButton,
     Row,
     Field,
     Label,
@@ -20,7 +15,7 @@ import { validateCredit, buyCredit } from 'proton-shared/lib/api/payments';
 
 import GiftCodeInput from './GiftCodeInput';
 
-const GiftCodeModal = ({ onClose }) => {
+const GiftCodeModal = ({ onClose, ...rest }) => {
     const [loading, setLoading] = useState(false);
     const { request: requestBuyCredit } = useApiWithoutResult(buyCredit);
     const { request: requestValidateCredit } = useApiWithoutResult(validateCredit);
@@ -44,34 +39,35 @@ const GiftCodeModal = ({ onClose }) => {
     };
 
     return (
-        <Modal type="small" onClose={onClose} title={c('Title').t`Gift code`}>
-            <ContentModal onSubmit={handleSubmit} onReset={onClose} loading={loading}>
-                <InnerModal>
-                    <Alert>{c('Info').t`If you purchased or were given a gift code, add it here.`}</Alert>
-                    <Row>
-                        <Label htmlFor="giftCodeInput">{c('Label').t`Enter gift code`}</Label>
-                        <Field>
-                            <GiftCodeInput
-                                id="giftCodeInput"
-                                value={value}
-                                onChange={handleChange}
-                                required={true}
-                                autoFocus={true}
-                            />
-                        </Field>
-                    </Row>
-                </InnerModal>
-                <FooterModal>
-                    <ResetButton>{c('Action').t`Close`}</ResetButton>
-                    <PrimaryButton type="submit">{c('Action').t`Apply`}</PrimaryButton>
-                </FooterModal>
-            </ContentModal>
-        </Modal>
+        <FormModal
+            small
+            onClose={onClose}
+            onSubmit={handleSubmit}
+            loading={loading}
+            title={c('Title').t`Gift code`}
+            close={c('Action').t`Close`}
+            submit={c('Action').t`Apply`}
+            {...rest}
+        >
+            <Alert>{c('Info').t`If you purchased or were given a gift code, add it here.`}</Alert>
+            <Row>
+                <Label htmlFor="giftCodeInput">{c('Label').t`Enter gift code`}</Label>
+                <Field>
+                    <GiftCodeInput
+                        id="giftCodeInput"
+                        value={value}
+                        onChange={handleChange}
+                        required={true}
+                        autoFocus={true}
+                    />
+                </Field>
+            </Row>
+        </FormModal>
     );
 };
 
 GiftCodeModal.propTypes = {
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func
 };
 
 export default GiftCodeModal;

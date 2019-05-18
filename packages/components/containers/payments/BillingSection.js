@@ -10,7 +10,7 @@ import {
     Time,
     useUser,
     useSubscription,
-    useModal
+    useModals
 } from 'react-components';
 
 import { formatPlans } from './subscription/helpers';
@@ -42,8 +42,7 @@ const getSubTotal = (plans = []) => {
 };
 
 const BillingSection = () => {
-    const { isOpen: showCreditsModal, open: openCreditsModal, close: closeCreditsModal } = useModal();
-    const { isOpen: showGiftCodeModal, open: openGiftCodeModal, close: closeGiftCodeModal } = useModal();
+    const { createModal } = useModals();
     const [{ hasPaidMail, hasPaidVpn, Credit }] = useUser();
     const [
         { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd, isManagedByMozilla } = {},
@@ -70,6 +69,9 @@ const BillingSection = () => {
 
     const { mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } = formatPlans(Plans);
     const subTotal = getSubTotal(Plans);
+
+    const handleOpenGiftCodeModal = () => createModal(<GiftCodeModal />);
+    const handleOpenCreditsModal = () => createModal(<CreditsModal />);
 
     return (
         <>
@@ -225,7 +227,7 @@ const BillingSection = () => {
                             <Price currency={Currency}>{Amount}</Price>
                         </div>
                         <div className="flex-autogrid-item alignright">
-                            <SmallButton onClick={openGiftCodeModal}>{c('Action').t`Use gift code`}</SmallButton>
+                            <SmallButton onClick={handleOpenGiftCodeModal}>{c('Action').t`Use gift code`}</SmallButton>
                         </div>
                     </div>
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
@@ -233,7 +235,7 @@ const BillingSection = () => {
                         <div className="flex-autogrid-item" />
                         <div className="flex-autogrid-item bold">{Credit / 100}</div>
                         <div className="flex-autogrid-item alignright">
-                            <SmallButton onClick={openCreditsModal}>{c('Action').t`Add credits`}</SmallButton>
+                            <SmallButton onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</SmallButton>
                         </div>
                     </div>
                     <div className="flex-autogrid onmobile-flex-column w100">
@@ -246,8 +248,6 @@ const BillingSection = () => {
                     </div>
                 </div>
             </div>
-            {showGiftCodeModal ? <GiftCodeModal onClose={closeGiftCodeModal} /> : null}
-            {showCreditsModal ? <CreditsModal onClose={closeCreditsModal} /> : null}
         </>
     );
 };

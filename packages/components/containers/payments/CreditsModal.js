@@ -3,15 +3,10 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import {
     Label,
-    Modal,
+    FormModal,
     Row,
     Field,
     Alert,
-    ContentModal,
-    InnerModal,
-    FooterModal,
-    ResetButton,
-    PrimaryButton,
     useNotifications,
     useApiWithoutResult,
     useEventManager
@@ -29,7 +24,7 @@ const I18N_CURRENCIES = {
     USD: c('Monetary unit').t`Dollar`
 };
 
-const CreditsModal = ({ onClose }) => {
+const CreditsModal = ({ onClose, ...rest }) => {
     const { call } = useEventManager();
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment(handleSubmit);
     const { createNotification } = useNotifications();
@@ -46,47 +41,45 @@ const CreditsModal = ({ onClose }) => {
     };
 
     return (
-        <Modal type="small" onClose={onClose} title={c('Title').t`Add credits`}>
-            <ContentModal onSubmit={handleSubmit} onReset={onClose}>
-                <InnerModal>
-                    <Alert>{c('Info')
-                        .t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
-                    <Alert learnMore="https://protonmail.com/support/knowledge-base/credit-proration/">{c('Info')
-                        .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}</Alert>
-                    <Row>
-                        <Label>{c('Label').t`Amount`}</Label>
-                        <Field>
-                            <PaymentSelector
-                                amount={amount}
-                                onChangeAmount={setAmount}
-                                currency={currency}
-                                onChangeCurrency={setCurrency}
-                            />
-                        </Field>
-                    </Row>
-                    <Payment
-                        type="donation"
-                        method={method}
+        <FormModal
+            type="small"
+            onClose={onClose}
+            onSubmit={handleSubmit}
+            close={c('Action').t`Cancel`}
+            loading={loading}
+            submit={canPay && c('Action').t`Top up`}
+            title={c('Title').t`Add credits`}
+            {...rest}
+        >
+            <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/credit-proration/">{c('Info')
+                .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}</Alert>
+            <Row>
+                <Label>{c('Label').t`Amount`}</Label>
+                <Field>
+                    <PaymentSelector
                         amount={amount}
+                        onChangeAmount={setAmount}
                         currency={currency}
-                        onParameters={setParameters}
-                        onMethod={setMethod}
-                        onValidCard={setCardValidity}
+                        onChangeCurrency={setCurrency}
                     />
-                </InnerModal>
-                <FooterModal>
-                    <ResetButton>{c('Action').t`Cancel`}</ResetButton>
-                    {canPay ? (
-                        <PrimaryButton type="submit" loading={loading}>{c('Action').t`Top up`}</PrimaryButton>
-                    ) : null}
-                </FooterModal>
-            </ContentModal>
-        </Modal>
+                </Field>
+            </Row>
+            <Payment
+                type="donation"
+                method={method}
+                amount={amount}
+                currency={currency}
+                onParameters={setParameters}
+                onMethod={setMethod}
+                onValidCard={setCardValidity}
+            />
+        </FormModal>
     );
 };
 
 CreditsModal.propTypes = {
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func
 };
 
 export default CreditsModal;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { SubTitle, Row, Field, Label, useMailSettings, SmallButton, useModal } from 'react-components';
+import { SubTitle, Row, Field, Label, useMailSettings, SmallButton, useModals } from 'react-components';
 
 import ShortcutsToggle from './ShortcutsToggle';
 import ShortcutsModal from './ShortcutsModal';
@@ -8,7 +8,7 @@ import ShortcutsModal from './ShortcutsModal';
 const ShortcutsSection = () => {
     const [mailSettings] = useMailSettings();
     const [hotkeys, setHotkeys] = useState(mailSettings.Hotkeys);
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
 
     // Handle updates from the Event Manager.
     useEffect(() => {
@@ -16,6 +16,9 @@ const ShortcutsSection = () => {
     }, [mailSettings.Hotkeys]);
 
     const handleChange = (newValue) => setHotkeys(newValue);
+
+    const handleOpenModal = () => createModal(<ShortcutsModal />);
+
     return (
         <>
             <SubTitle>{c('Title').t`Shortcuts`}</SubTitle>
@@ -23,8 +26,7 @@ const ShortcutsSection = () => {
                 <Label htmlFor="hotkeysToggle">{c('Title').t`Keyboard shortcuts`}</Label>
                 <Field>
                     <ShortcutsToggle id="hotkeysToggle" hotkeys={hotkeys} onChange={handleChange} />
-                    <SmallButton onClick={open}>{c('Action').t`View keyboard shortcuts`}</SmallButton>
-                    {isOpen ? <ShortcutsModal onClose={close} /> : null}
+                    <SmallButton onClick={handleOpenModal}>{c('Action').t`View keyboard shortcuts`}</SmallButton>
                 </Field>
             </Row>
         </>

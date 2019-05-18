@@ -1,34 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useState, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 
 import NotificationsContext from '../../context/notifications';
 import NotificationsContainer from './Container';
+import createManager from './manager';
 
-const NotificationsProvider = ({ children, manager }) => {
-    const [notifications, setNotifications] = useState(manager.get());
+const NotificationsProvider = React.forwardRef(({ children }, ref) => {
+    const [notifications, setNotifications] = useState([]);
+    const managerRef = useRef();
 
-    useEffect(() => {
-        const onChange = (newPrompts) => {
-            setNotifications(newPrompts);
-        };
+    if (!managerRef.current) {
+        managerRef.current = createManager(setNotifications);
+    }
 
-        const unsubscribe = manager.subscribe(onChange);
-        return () => {
-            unsubscribe();
-            manager.clearNotifications();
-        };
-    }, []);
+    const manager = managerRef.current;
+
+    useImperativeHandle(ref, () => manager);
+
+    const { hideNotification, removeNotification } = manager;
 
     return (
         <NotificationsContext.Provider value={manager}>
             {children}
-            <NotificationsContainer notifications={notifications} remove={manager.removeNotification} />
+            <NotificationsContainer
+                notifications={notifications}
+                removeNotification={removeNotification}
+                hideNotification={hideNotification}
+            />
         </NotificationsContext.Provider>
     );
-};
+});
 
 NotificationsProvider.propTypes = {
-    children: PropTypes.node.isRequired,
-    manager: PropTypes.object.isRequired
+    children: PropTypes.node.isRequired
 };
 export default NotificationsProvider;

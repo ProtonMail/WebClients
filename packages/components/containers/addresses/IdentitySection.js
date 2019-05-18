@@ -10,7 +10,7 @@ import {
     Field,
     Loader,
     useAddresses,
-    useModal
+    useModals
 } from 'react-components';
 import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from 'proton-shared/lib/constants';
 
@@ -18,9 +18,8 @@ import EditAddressModal from './EditAddressModal';
 import PMSignatureToggle from './PMSignatureToggle';
 
 const IdentitySection = () => {
-    const title = <SubTitle>{c('Title').t`Identity`}</SubTitle>;
     const [addresses = [], loading] = useAddresses();
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
     const [address, setAddress] = useState();
 
     useEffect(() => {
@@ -29,6 +28,20 @@ const IdentitySection = () => {
             setAddress(address);
         }
     }, [loading]);
+
+    useEffect(() => {
+        if (!addresses.length || !address) {
+            return;
+        }
+        // Update the address when the event manager triggers
+        const newAddress = addresses.find(({ ID }) => ID === address.ID);
+        if (newAddress) {
+            return setAddress(newAddress);
+        }
+        setAddress(addresses[0]);
+    }, [addresses]);
+
+    const title = <SubTitle>{c('Title').t`Identity`}</SubTitle>;
 
     if (loading || !address) {
         return (
@@ -50,10 +63,11 @@ const IdentitySection = () => {
 
     const handleChange = ({ target }) => setAddress(addresses.find(({ ID }) => ID === target.value));
 
+    const handleOpenModal = () => createModal(<EditAddressModal address={address} />);
+
     return (
         <>
             {title}
-            {isOpen ? <EditAddressModal onClose={close} address={address} /> : null}
             <Row>
                 <Label htmlFor="addressSelector">{c('Label').t`Select an address`}</Label>
                 <Field>
@@ -67,7 +81,8 @@ const IdentitySection = () => {
                 </Label>
                 <Field className="flex flex-spacebetween">
                     {address.DisplayName}{' '}
-                    <SmallButton className="pm-button--primary" onClick={open}>{c('Action').t`Edit`}</SmallButton>
+                    <SmallButton className="pm-button--primary" onClick={handleOpenModal}>{c('Action')
+                        .t`Edit`}</SmallButton>
                 </Field>
             </Row>
             <Row>

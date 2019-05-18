@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import {
     SubTitle,
@@ -6,6 +6,7 @@ import {
     Loader,
     MozillaInfoPanel,
     Progress,
+    useModals,
     useSubscription,
     useOrganization,
     useUser
@@ -28,8 +29,8 @@ const CYCLES = {
 
 const SubscriptionSection = () => {
     const [{ hasPaidMail, hasPaidVpn, isPaid }] = useUser();
-    const [subscriptionModal, setSubscriptionModal] = useState(null);
     const [subscription, loadingSubscription] = useSubscription();
+    const { createModal } = useModals();
     const bundleEligible = isBundleEligible(subscription);
     const { Plans = [], Cycle, CouponCode, Currency } = subscription;
     const [
@@ -68,7 +69,6 @@ const SubscriptionSection = () => {
 
     const { mailPlan, vpnPlan } = formatPlans(Plans);
     const { Name: mailPlanName } = mailPlan || {};
-    const resetModal = () => setSubscriptionModal(null);
     const canRemoveCoupon = CouponCode && CouponCode !== BUNDLE;
 
     const handleModal = (action = '') => () => {
@@ -76,17 +76,7 @@ const SubscriptionSection = () => {
         const cycle = action === 'yearly' ? YEARLY : Cycle;
         const plansMap = isPaid ? toPlanNames(subscription.Plans) : { plus: 1, vpnplus: 1 };
 
-        const modal = (
-            <SubscriptionModal
-                onClose={resetModal}
-                plansMap={plansMap}
-                coupon={coupon}
-                currency={Currency}
-                cycle={cycle}
-            />
-        );
-
-        setSubscriptionModal(modal);
+        createModal(<SubscriptionModal plansMap={plansMap} coupon={coupon} currency={Currency} cycle={cycle} />);
     };
 
     return (
@@ -242,7 +232,6 @@ const SubscriptionSection = () => {
                     ) : null}
                 </div>
             </div>
-            {subscriptionModal}
         </>
     );
 };

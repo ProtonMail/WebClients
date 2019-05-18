@@ -4,14 +4,9 @@ import { c } from 'ttag';
 import {
     Alert,
     usePlans,
-    Modal,
-    ContentModal,
-    InnerModal,
-    FooterModal,
+    FormModal,
     Button,
-    ResetButton,
     Price,
-    PrimaryButton,
     usePayment,
     Payment,
     Paragraph,
@@ -35,7 +30,7 @@ import OrderSummary from './OrderSummary';
 import FeaturesList from './FeaturesList';
 import { getCheckParams } from './helpers';
 
-const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap }) => {
+const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest }) => {
     const api = useApi();
     const [loading, setLoading] = useState(false);
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment(handleSubmit);
@@ -191,21 +186,31 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap }) => {
     const hasNext = !hasClose;
     const steps = STEPS.map(({ title }) => title);
 
+    const close = (() => {
+        if (hasCancel) {
+            return c('Action').t`Cancel`;
+        }
+        if (hasClose) {
+            return c('Action').t`Close`;
+        }
+        if (hasPrevious) {
+            return <Button onClick={previous}>{c('Action').t`Previous`}</Button>;
+        }
+    })();
+
     return (
-        <Modal onClose={onClose} title={STEPS[step].title}>
-            <ContentModal onSubmit={STEPS[step].onSubmit} onReset={onClose} loading={loading}>
-                <InnerModal>
-                    <Wizard step={step} steps={steps} hideText={true} />
-                    {STEPS[step].section}
-                </InnerModal>
-                <FooterModal>
-                    {hasCancel && <ResetButton>{c('Action').t`Cancel`}</ResetButton>}
-                    {hasPrevious && <Button onClick={previous}>{c('Action').t`Previous`}</Button>}
-                    {hasNext && <PrimaryButton type="submit">{c('Action').t`Next`}</PrimaryButton>}
-                    {hasClose && <PrimaryButton type="reset">{c('Action').t`Close`}</PrimaryButton>}
-                </FooterModal>
-            </ContentModal>
-        </Modal>
+        <FormModal
+            onClose={onClose}
+            onSubmit={STEPS[step].onSubmit}
+            title={STEPS[step].title}
+            loading={loading}
+            close={close}
+            submit={hasNext && c('Action').t`Next`}
+            {...rest}
+        >
+            <Wizard step={step} steps={steps} hideText={true} />
+            {STEPS[step].section}
+        </FormModal>
     );
 };
 

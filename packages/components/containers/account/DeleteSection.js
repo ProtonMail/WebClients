@@ -7,7 +7,7 @@ import {
     Field,
     MozillaInfoPanel,
     ErrorButton,
-    useModal,
+    useModals,
     useUser,
     useSubscription
 } from 'react-components';
@@ -17,7 +17,7 @@ import DeleteAccountModal from './DeleteAccountModal';
 const DeleteSection = () => {
     const [{ isMember }] = useUser();
     const [{ isManagedByMozilla }] = useSubscription();
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
     // TODO get clientType from config (proton-pack)
 
     if (isMember) {
@@ -38,10 +38,11 @@ const DeleteSection = () => {
             <Row>
                 <Label htmlFor="deleteButton">{c('Label').t`Irreversible action`}</Label>
                 <Field>
-                    <ErrorButton id="deleteButton" onClick={open}>{c('Action').t`Delete your account`}</ErrorButton>
+                    <ErrorButton id="deleteButton" onClick={() => createModal(<DeleteAccountModal clientType={1} />)}>
+                        {c('Action').t`Delete your account`}
+                    </ErrorButton>
                 </Field>
             </Row>
-            {isOpen ? <DeleteAccountModal onClose={close} clientType={1} /> : null}
         </>
     );
 };

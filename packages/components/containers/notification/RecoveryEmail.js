@@ -5,20 +5,18 @@ import {
     InputModal,
     Field,
     AskPasswordModal,
-    useModal,
+    useModals,
     useApi,
     useUserSettings,
     useEventManager,
-    useNotifications,
-    usePrompts
+    useNotifications
 } from 'react-components';
 import { updateEmail } from 'proton-shared/lib/api/settings';
 import { srpAuth } from 'proton-shared/lib/srp';
 
 const RecoveryEmail = () => {
     const api = useApi();
-    const { isOpen, open, close } = useModal();
-    const { createPrompt } = usePrompts();
+    const { createModal } = useModals();
     const { call } = useEventManager();
     const [{ Email } = {}] = useUserSettings();
     const { createNotification } = useNotifications();
@@ -28,9 +26,9 @@ const RecoveryEmail = () => {
     const handleSubmit = async (newEmail) => {
         try {
             setLoading(true);
-            const { password, totp } = await createPrompt((resolve, reject) => (
-                <AskPasswordModal onClose={reject} onSubmit={resolve} />
-            ));
+            const { password, totp } = await new Promise((resolve, reject) => {
+                createModal(<AskPasswordModal onClose={reject} onSubmit={resolve} />);
+            });
             await srpAuth({
                 api,
                 credentials: { password, totp },
@@ -45,21 +43,23 @@ const RecoveryEmail = () => {
         }
     };
 
+    const open = () => {
+        createModal(
+            <InputModal
+                loading={loading}
+                input={email}
+                title={c('Title').t`Update reset/notification email`}
+                label={c('Label').t`Email`}
+                placeholder="name@domain.com"
+                onSubmit={handleSubmit}
+            />
+        );
+    };
+
     return (
         <Field>
             {email}
             <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Edit`}</PrimaryButton>
-            {isOpen ? (
-                <InputModal
-                    loading={loading}
-                    input={email}
-                    title={c('Title').t`Update reset/notification email`}
-                    label={c('Label').t`Email`}
-                    placeholder="name@domain.com"
-                    onSubmit={handleSubmit}
-                    onClose={close}
-                />
-            ) : null}
         </Field>
     );
 };

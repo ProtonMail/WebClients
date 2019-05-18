@@ -4,7 +4,7 @@ import {
     Row,
     Field,
     Label,
-    useModal,
+    useModals,
     useMailSettings,
     useEventManager,
     useApiWithoutResult,
@@ -17,7 +17,7 @@ import AutoReplyToggle from './AutoReplyToggle';
 import AutoReplyTemplate from './AutoReplyTemplate';
 
 const AutoReplySection = () => {
-    const { close, isOpen, open } = useModal();
+    const { createModal } = useModals();
     const [{ AutoResponder }] = useMailSettings();
     const { call } = useEventManager();
     const { request } = useApiWithoutResult(updateAutoresponder);
@@ -27,9 +27,12 @@ const AutoReplySection = () => {
         call();
     };
 
+    const handleOpenModal = () => {
+        createModal(<AutoReplyModal />);
+    };
+
     return (
         <>
-            {isOpen && <AutoReplyModal onClose={close} show={isOpen} />}
             <div className="p1">
                 <SubTitle>{c('Title').t`Auto-reply`}</SubTitle>
                 <Alert className="mt1 mb1" learnMore="https://protonmail.com/support/knowledge-base/autoresponder/">
@@ -49,7 +52,9 @@ const AutoReplySection = () => {
                     </Field>
                 </Row>
 
-                {AutoResponder.IsEnabled && <AutoReplyTemplate autoresponder={AutoResponder} onEdit={open} />}
+                {AutoResponder.IsEnabled && (
+                    <AutoReplyTemplate autoresponder={AutoResponder} onEdit={handleOpenModal} />
+                )}
             </div>
         </>
     );

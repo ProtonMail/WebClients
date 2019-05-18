@@ -27,7 +27,6 @@ Header.propTypes = {
 
 Header.defaultProps = {
     hasClose: true,
-    modalTitleID: 'modalTitle',
     className: ''
 };
 

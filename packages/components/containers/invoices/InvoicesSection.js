@@ -15,7 +15,7 @@ import {
     usePaginationAsync,
     TableRow,
     Time,
-    useModal,
+    useModals,
     useSubscription
 } from 'react-components';
 import { queryInvoices } from 'proton-shared/lib/api/payments';
@@ -32,7 +32,7 @@ const InvoicesSection = () => {
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
     const [{ isManagedByMozilla }] = useSubscription();
-    const { isOpen, open, close } = useModal();
+    const { createModal } = useModals();
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
     const handleOwner = (own = USER) => () => setOwner(own);
 
@@ -56,6 +56,10 @@ const InvoicesSection = () => {
         );
     }
 
+    const handleOpenModal = () => {
+        createModal(<InvoiceTextModal />);
+    };
+
     return (
         <>
             <SubTitle>{c('Title').t`Invoices`}</SubTitle>
@@ -78,8 +82,7 @@ const InvoicesSection = () => {
                             onClick={handleOwner(ORGANIZATION)}
                         >{c('Action').t`Organization`}</ButtonGroup>
                     </Group>
-                    <Button onClick={open}>{c('Action').t`Customize`}</Button>
-                    {isOpen ? <InvoiceTextModal onClose={close} /> : null}
+                    <Button onClick={handleOpenModal}>{c('Action').t`Customize`}</Button>
                 </div>
                 <Pagination
                     page={page}

@@ -11,7 +11,7 @@ const AuthenticatedBugModal = ({ onClose }) => {
 };
 
 AuthenticatedBugModal.propTypes = {
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func
 };
 
 export default AuthenticatedBugModal;

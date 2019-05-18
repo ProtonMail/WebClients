@@ -1,27 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Modal, ContentModal, FooterModal, ResetButton, InnerModal } from 'react-components';
+import { FormModal } from 'react-components';
 
 import AddressesTable from './AddressesTable';
 
-const CatchAllModal = ({ domain, onClose }) => {
+const CatchAllModal = ({ domain, onClose, ...rest }) => {
     return (
-        <Modal type="small" onClose={onClose} title={c('Title').t`Catch all address`}>
-            <ContentModal onReset={onClose}>
-                <InnerModal>
-                    <AddressesTable domain={domain} />
-                </InnerModal>
-                <FooterModal>
-                    <ResetButton>{c('Action').t`Close`}</ResetButton>
-                </FooterModal>
-            </ContentModal>
-        </Modal>
+        <FormModal
+            small
+            onClose={onClose}
+            close={c('Action').t`Close`}
+            title={c('Title').t`Catch all address`}
+            {...rest}
+        >
+            <AddressesTable domain={domain} />
+        </FormModal>
     );
 };
 
 CatchAllModal.propTypes = {
-    onClose: PropTypes.func.isRequired,
+    onClose: PropTypes.func,
     domain: PropTypes.object.isRequired
 };
 
