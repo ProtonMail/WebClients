@@ -29,10 +29,11 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
                 return;
             }
 
-            const { id, closeOnEscape } = modals[modals.length - 1];
+            const { id, closeOnEscape, content } = modals[modals.length - 1];
 
             if (closeOnEscape && event.which === ESC_KEY) {
                 event.preventDefault();
+                content.props.onClose && content.props.onClose();
                 hideModal(id);
             }
         };
@@ -51,6 +52,7 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
         const isLast = i === modals.length - 1;
 
         const handleModalExit = () => {
+            content.props.onExit && content.props.onExit();
             removeModal(id);
         };
 
@@ -73,10 +75,11 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
             return;
         }
 
-        const { id, closeOnOuterClick } = modals[modals.length - 1];
+        const { id, closeOnOuterClick, content } = modals[modals.length - 1];
 
         if (closeOnOuterClick) {
             event.preventDefault();
+            content.props.onClose && content.props.onClose();
             hideModal(id);
         }
     };
