@@ -78,7 +78,7 @@ function ptSelectMultipleElements(AppModel, dispatchers) {
                     const { list, item, selected } = configKeys;
 
                     scope[list][index][selected] = isChecked;
-                    AppModel.set('numberElementChecked', countChecked(scope[list]));
+                    AppModel.set('numberElementChecked', countChecked(scope[list], selected));
 
                     if (shiftKey && previous) {
                         const from = Math.min(index, previous.index);
