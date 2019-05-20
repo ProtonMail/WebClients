@@ -95,7 +95,7 @@ const MemberModal = ({ onClose, organization, domains, ...rest }) => {
                         value={model.confirm}
                         className="flex-autogrid-item"
                         onChange={handleChange('confirm')}
-                        placeholder={c('Placeholder').t`Confirm Password`}
+                        placeholder={c('Placeholder').t`Confirm password`}
                         required
                     />
                 </Field>

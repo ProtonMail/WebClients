@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { SubTitle, Alert } from 'react-components';
 
 const ContactKeysHeader = () => {
-    const title = c('Title').t`Contact Encryption Keys`;
+    const title = c('Title').t`Contact encryption keys`;
 
     return (
         <>

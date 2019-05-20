@@ -9,7 +9,7 @@ const { NORMAL, PLAIN_TEXT } = DRAFT_TYPE;
 const DraftTypeSelect = ({ draftType, onChange, loading }) => {
     const options = [
         { text: c('Option').t`Normal`, value: NORMAL },
-        { text: c('Option').t`Plain Text`, value: PLAIN_TEXT }
+        { text: c('Option').t`Plain text`, value: PLAIN_TEXT }
     ];
 
     const handleChange = ({ target }) => onChange(target.value);

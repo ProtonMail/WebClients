@@ -100,7 +100,7 @@ const MembersSection = () => {
             </Table>
             <Alert>
                 <span className="mr1">{c('Info').t`You can add and manage addresses for the user in your`}</span>
-                <Link to="/settings/addresses">{c('Link').t`Address Settings`}</Link>
+                <Link to="/settings/addresses">{c('Link').t`Address settings`}</Link>
             </Alert>
         </>
     );

@@ -20,7 +20,7 @@ const AutoReplyForm = ({ model, updateModel }) => {
         return (
             <>
                 <DurationField value={model.duration} onChange={updateModel('duration')} />
-                <Alert>{c('Info').t`Auto-reply is active from the start time to the end time`}</Alert>
+                <Alert>{c('Info').t`Auto-reply is active from the start time to the end time.`}</Alert>
                 <StartDateField value={model.startDate} onChange={updateModel('startDate')} />
                 <StartTimeField value={model.startTime} onChange={updateModel('startTime')} />
                 <EndDateField value={model.endDate} onChange={updateModel('endDate')} />

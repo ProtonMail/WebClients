@@ -9,7 +9,7 @@ const DesktopNotificationPanel = () => {
     const test = () => {
         if (status) {
             Push.create(c('Info').t`You have a new email`, {
-                body: 'Quarterly Operations Update - Q1 2016 ',
+                body: 'Quarterly operations update - Q1 2016 ',
                 icon: '/assets/img/notification-badge.gif',
                 onClick() {
                     window.focus();

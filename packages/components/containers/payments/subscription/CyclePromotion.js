@@ -17,10 +17,10 @@ const CyclePromotion = ({ model, onChange }) => {
                 </Alert>
             )}
             {model.cycle === YEARLY && (
-                <Alert>{c('Info').t`A 20% discount for annual billing has been automatically applied`}</Alert>
+                <Alert>{c('Info').t`A 20% discount for annual billing has been automatically applied.`}</Alert>
             )}
             {model.cycle === TWO_YEARS && (
-                <Alert>{c('Info').t`A 33% discount two year billing has been automatically applied`}</Alert>
+                <Alert>{c('Info').t`A 33% discount two year billing has been automatically applied.`}</Alert>
             )}
         </>
     );

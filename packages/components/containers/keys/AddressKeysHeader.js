@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { SubTitle, Alert, Block, PrimaryButton, Button } from 'react-components';
 
 const AddressKeysHeader = ({ handleAddKey, handleImportKey, handleReactivateKeys }) => {
-    const title = c('Title').t`Email Encryption Keys`;
+    const title = c('Title').t`Email encryption keys`;
 
     return (
         <>

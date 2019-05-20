@@ -261,7 +261,7 @@ const PlansSection = () => {
                                     <td className="bg-global-muted">{c('Header').t`Additional features`}</td>
                                     <td className="aligncenter">{c('Plan option').t`Only basic email features`}</td>
                                     <td className="aligncenter">{c('Plan option')
-                                        .t`Folders, Labels, Filters, Encrypted Contacts, Auto-responder and more`}</td>
+                                        .t`Folders, Labels, Filters, Encrypted contacts, Auto-responder and more`}</td>
                                     <td className="aligncenter">{c('Plan option')
                                         .t`All Plus features, and catch-all email, multi-user support and more`}</td>
                                     <td className="aligncenter">{c('Plan option')

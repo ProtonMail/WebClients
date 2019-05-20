@@ -25,7 +25,7 @@ const DKIMSection = ({ domain }) => {
                 </TableBody>
             </Table>
             <Alert type="warning">{c('Info')
-                .t`Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM`}</Alert>
+                .t`Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM.`}</Alert>
         </>
     );
 };

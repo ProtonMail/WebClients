@@ -7,7 +7,7 @@ const ProtonMailBetaSection = () => {
         <>
             <SubTitle>ProtonMail Beta</SubTitle>
             <Alert learnMore="https://protonmail.com/blog/how-to-become-protonmail-beta-tester/">{c('Info')
-                .t`Participating to beta programs gives you the opportunity to test new features and improvements beforee they get released to the general public. It offers a chance to have an active role in shaping the quality of our services`}</Alert>
+                .t`Participating in beta programs gives you the opportunity to test new features and improvements before they get released to the general public. It offers a chance to have an active role in shaping the quality of our services.`}</Alert>
         </>
     );
 };

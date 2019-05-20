@@ -32,7 +32,7 @@ const LogsTable = ({ logs, logAuth, loading }) => {
     }
 
     if (!loading && !logs.length) {
-        return <Alert>{c('Info').t`No logs yet`}</Alert>;
+        return <Alert>{c('Info').t`No logs yet.`}</Alert>;
     }
 
     return (

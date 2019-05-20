@@ -37,7 +37,7 @@ const DomainsSection = () => {
                 <PrimaryButton onClick={open} className="mr1">{c('Action').t`Add domain`}</PrimaryButton>
                 <Button disabled={loading} onClick={call}>{c('Action').t`Refresh status`}</Button>
             </Block>
-            {!loading && !domains.length ? <Alert>{c('Info').t`No domains yet`}</Alert> : null}
+            {!loading && !domains.length ? <Alert>{c('Info').t`No domains yet.`}</Alert> : null}
             {loading ? null : <DomainsTable domains={domains} />}
             <Block>
                 {UsedDomains} / {MaxDomains} {c('Info').t`domains used`}

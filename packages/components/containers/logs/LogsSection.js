@@ -102,7 +102,7 @@ const LogsSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Authentication Logs`}</SubTitle>
+            <SubTitle>{c('Title').t`Authentication logs`}</SubTitle>
             <Alert>{c('Info')
                 .t`Logs includes authentication attempts for all Proton services that use your Proton credentials.`}</Alert>
             <Block className="flex flex-spacebetween">

@@ -9,7 +9,7 @@ const ProtonMailBridgeSection = () => {
         <>
             <SubTitle>ProtonMail Bridge</SubTitle>
             <Alert learnMore="https://protonmail.com/bridge/">{c('Info')
-                .t`ProtonMail Supports IMAP/SMTP via the ProtonMail Bridge application. Thunderbird, Microsoft Outlook, and Apple Mail are officially supported on both Windows and MacOS.`}</Alert>
+                .t`ProtonMail supports IMAP/SMTP via the ProtonMail Bridge application. Thunderbird, Microsoft Outlook, and Apple Mail are officially supported on both Windows and MacOS.`}</Alert>
             {hasPaidMail ? null : (
                 <Link to="/settings/subscription" className="pm-button pm-button--primary">{c('Action')
                     .t`Upgrade`}</Link>

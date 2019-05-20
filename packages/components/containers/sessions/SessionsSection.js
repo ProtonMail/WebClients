@@ -29,7 +29,7 @@ const CLIENTS = {
     WebSettings: c('Badge').t`ProtonMail settings for web`,
     iOS: c('Badge').t`ProtonMail for iOS`,
     Android: c('Badge').t`ProtonMail for Android`,
-    ImportExport: c('Badge').t`ProtonMail Import-Export`,
+    ImportExport: c('Badge').t`ProtonMail import-export`,
     Bridge: c('Badge').t`ProtonMail Bridge`,
     WebVPN: c('Badge').t`ProtonVPN for web`,
     VPN: c('Badge').t`ProtonVPN for Windows`,

@@ -45,7 +45,7 @@ const Bitcoin = ({ amount, currency, type }) => {
                     .t`Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.`}</Alert>
             ) : (
                 <Alert learnMore="https://protonmail.com/support/knowledge-base/paying-with-bitcoin">{c('Info')
-                    .t`After making your Bitcoin payment, please follow the instructions below to upgrade`}</Alert>
+                    .t`After making your Bitcoin payment, please follow the instructions below to upgrade.`}</Alert>
             )}
         </>
     );

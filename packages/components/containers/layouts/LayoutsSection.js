@@ -122,7 +122,7 @@ const LayoutsSection = () => {
                     <span className="mr1">{c('Label').t`Conversations`}</span>
                     <Info
                         title={c('Tooltip')
-                            .t`Conversation Grouping automatically groups messages in the same conversation together.`}
+                            .t`Conversation grouping automatically groups messages in the same conversation together.`}
                     />
                 </Label>
                 <ViewModeRadios
@@ -152,7 +152,7 @@ const LayoutsSection = () => {
                 </Row>
             ) : null}
             <Row>
-                <Label htmlFor="draftType">{c('Label').t`Composer Mode`}</Label>
+                <Label htmlFor="draftType">{c('Label').t`Composer mode`}</Label>
                 <Field>
                     <DraftTypeSelect
                         id="draftTypeSelect"
@@ -163,7 +163,7 @@ const LayoutsSection = () => {
                 </Field>
             </Row>
             <Row>
-                <Label htmlFor="textDirection">{c('Label').t`Composer Text Direction`}</Label>
+                <Label htmlFor="textDirection">{c('Label').t`Composer text direction`}</Label>
                 <Field>
                     <TextDirectionSelect
                         id="textDirection"
