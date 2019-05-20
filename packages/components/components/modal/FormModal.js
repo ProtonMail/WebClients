@@ -9,8 +9,20 @@ import {
     ResetButton,
     PrimaryButton
 } from 'react-components';
+import { c } from 'ttag';
 
-const Modal = ({ onClose, onSubmit, title, close, submit, loading, children, modalTitleID, hasClose, ...rest }) => {
+const Modal = ({
+    onClose,
+    onSubmit,
+    title,
+    close = c('Action').t`Cancel`,
+    submit = c('Action').t`Submit`,
+    loading,
+    children,
+    modalTitleID,
+    hasClose,
+    ...rest
+}) => {
     return (
         <DialogModal modalTitleID={modalTitleID} {...rest}>
             {title ? (

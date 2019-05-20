@@ -1,65 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
-import {
-    PrimaryButton,
-    InputModal,
-    Field,
-    AskPasswordModal,
-    useModals,
-    useApi,
-    useUserSettings,
-    useEventManager,
-    useNotifications
-} from 'react-components';
-import { updateEmail } from 'proton-shared/lib/api/settings';
-import { srpAuth } from 'proton-shared/lib/srp';
+import { PrimaryButton, Field, useModals, useUserSettings } from 'react-components';
+
+import EmailModal from './EmailModal';
 
 const RecoveryEmail = () => {
-    const api = useApi();
     const { createModal } = useModals();
-    const { call } = useEventManager();
     const [{ Email } = {}] = useUserSettings();
-    const { createNotification } = useNotifications();
-    const [email, setEmail] = useState(Email.Value);
-    const [loading, setLoading] = useState(false);
-
-    const handleSubmit = async (newEmail) => {
-        try {
-            setLoading(true);
-            const { password, totp } = await new Promise((resolve, reject) => {
-                createModal(<AskPasswordModal onClose={reject} onSubmit={resolve} />);
-            });
-            await srpAuth({
-                api,
-                credentials: { password, totp },
-                config: updateEmail({ Email: newEmail })
-            });
-            await call();
-            setEmail(newEmail);
-            close();
-            createNotification({ text: c('Success').t`Email updated` });
-        } catch (error) {
-            setLoading(false);
-        }
-    };
+    const email = Email.Value;
 
     const open = () => {
-        createModal(
-            <InputModal
-                loading={loading}
-                input={email}
-                title={c('Title').t`Update reset/notification email`}
-                label={c('Label').t`Email`}
-                placeholder="name@domain.com"
-                onSubmit={handleSubmit}
-            />
-        );
+        createModal(<EmailModal email={email} />);
     };
 
     return (
         <Field className="w100">
             <span className="mr1">{email}</span>
-            <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Edit`}</PrimaryButton>
+            <PrimaryButton onClick={open}>{c('Action').t`Edit`}</PrimaryButton>
         </Field>
     );
 };
