@@ -8,7 +8,7 @@ import composerMaximizedSvg from 'design-system/assets/img/pm-images/composer-ma
 
 const { POPUP, MAXIMIZED } = COMPOSER_MODE;
 
-const ComposerModeRadios = ({ composerMode, onChange, loading }) => {
+const ComposerModeRadios = ({ composerMode, onChange, loading, id, ...rest }) => {
     const radioCardPopup = {
         value: POPUP,
         checked: composerMode === POPUP,
@@ -16,7 +16,9 @@ const ComposerModeRadios = ({ composerMode, onChange, loading }) => {
         disabled: loading,
         name: 'composerMode',
         label: c('Label to change composer mode').t`Popup`,
-        onChange: () => onChange(POPUP),
+        onChange() {
+            onChange(POPUP);
+        },
         children: <img alt="Popup" src={composerPopUpSvg} />
     };
     const radioCardMaximized = {
@@ -26,17 +28,20 @@ const ComposerModeRadios = ({ composerMode, onChange, loading }) => {
         disabled: loading,
         name: 'composerMode',
         label: c('Label to change composer mode').t`Maximized`,
-        onChange: () => onChange(MAXIMIZED),
+        onChange() {
+            onChange(MAXIMIZED);
+        },
         children: <img alt="Maximized" src={composerMaximizedSvg} />
     };
 
-    return <RadioCards list={[radioCardPopup, radioCardMaximized]} />;
+    return <RadioCards list={[radioCardPopup, radioCardMaximized]} id={id} {...rest} />;
 };
 
 ComposerModeRadios.propTypes = {
     composerMode: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
+    id: PropTypes.string
 };
 
 export default ComposerModeRadios;
