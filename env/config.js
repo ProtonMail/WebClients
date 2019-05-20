@@ -101,12 +101,21 @@ const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
     return API_TARGETS[type] || API_TARGETS.dev;
 };
 
-const buildHost = () => {
-    if (isTorBranch()) {
+const buildHost = (branch) => {
+    if (isTorBranch(branch)) {
         return TOR_URL;
     }
-    const host = isProdBranch() ? API_TARGETS.prod : process.env.NODE_ENV_API || apiUrl();
-    return host.replace(/\api$/, '');
+
+    const [, target] = (branch || argv.branch || '').match(/-(prod|beta|dev|old)/) || [];
+    if (target && API_TARGETS[target]) {
+        return API_TARGETS[target].replace(/\api$/, '');
+    }
+
+    if (isProdBranch(branch || argv.branch)) {
+        return API_TARGETS.prod.replace(/\api$/, '');
+    }
+
+    return API_TARGETS.build.replace(/\api$/, '');
 };
 
 /**
@@ -132,23 +141,27 @@ const sentryConfig = (branch) => {
     return {};
 };
 
-const getHostURL = (encoded) => {
-    const url = '/assets/host.png';
+const getHostURL = (encoded, branch) => {
+    const url = `${buildHost(branch)}assets/host.png`;
 
     if (encoded) {
-        const encoder = (input) => `%${input.charCodeAt(0).toString(16)}`;
-        return url
-            .split('/')
-            .map((chunk) => {
-                if (chunk === '/') {
-                    return chunk;
-                }
-                return chunk
-                    .split('')
-                    .map(encoder)
-                    .join('');
-            })
-            .join('/');
+        const encoder = (input) => (input !== ':' ? `%${input.charCodeAt(0).toString(16)}` : ':');
+        return url.split('/').reduce((acc, chunk, i) => {
+            if (!chunk) {
+                return acc;
+            }
+
+            // if encoded it will be evaluate as a relative URL
+            if (i === 0) {
+                return chunk + '/';
+            }
+            const val = chunk
+                .split('')
+                .map(encoder)
+                .join('');
+
+            return `${acc}/${val}`;
+        }, '');
     }
     return url;
 };

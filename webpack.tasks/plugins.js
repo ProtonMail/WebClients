@@ -120,6 +120,7 @@ if (isDistRelease) {
                 preset: [
                     'default',
                     {
+                        normalizeUrl: false, // ultra super very important
                         reduceInitial: false,
                         discardComments: {
                             removeAll: true

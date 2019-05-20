@@ -44,14 +44,17 @@ const pullDist = async (branch, force) => {
     await bash('cd dist  && rm -rf *');
 };
 
-async function replace(rule) {
-    const files = "find dist -type f -name '*.chunk.js' ! -name 'vendor*' ! -name 'app*'";
+function sed(rule, files) {
     // Because for the lulz. cf https://myshittycode.com/2014/07/24/os-x-sed-extra-characters-at-the-end-of-l-command-error/
     if (os.platform() === 'darwin') {
-        await bash(`sed -i '' "${rule}" $(${files})`);
-    } else {
-        await bash(`sed -i "${rule}" $(${files})`);
+        return bash(`sed -i '' "${rule}" $(${files})`);
     }
+    return bash(`sed -i "${rule}" $(${files})`);
+}
+
+async function replace(rule) {
+    const files = "find dist -type f -name '*.chunk.js' ! -name 'vendor*' ! -name 'app*'";
+    await sed(rule, files);
 }
 
 /**
@@ -101,6 +104,26 @@ async function replaceSRI() {
 }
 
 /**
+ * Sync new SRI config:
+ *     - Generate hash for files with the modifications
+ *     - Replace them inside index.js
+ *     - Then we replace the SRI of index.js inside index.htmll
+ * @return {Promise}
+ */
+async function replaceUrls(newBranch, oldBranch) {
+    const files = "find dist -type f -name '*.css'";
+    const rule = [false, true]
+        .map((test) => ({
+            from: env.getHostURL(test, oldBranch),
+            to: env.getHostURL(test, newBranch)
+        }))
+        .map(({ from, to }) => `s|${from}|${to}|`)
+        .join(';');
+
+    await sed(rule, files);
+}
+
+/**
  * Check if the sub-build is valid
  *     - Correct SRI for updated files
  *     - Correct SRI for the index
@@ -120,7 +143,7 @@ async function validateBuild(branch) {
  * @param  {Boolean} options.end   Remove cache dist dir
  * @return {Promise}
  */
-const buildCustomApp = async (branch, { start, end, originBranch } = {}) => {
+const buildCustomApp = async (branch, { start, end, originBranch, deployBranch } = {}) => {
     const { abSiteId } = statsConfig;
     const { abSiteId: abSiteIdB } = env.getStatsConfig(branch);
     const config = env.getConfig('dist', branch);
@@ -150,6 +173,7 @@ const buildCustomApp = async (branch, { start, end, originBranch } = {}) => {
     // Replace the correct sentry URL
     await replace(`s|${sentry.sentry}|${sentryB.sentry}|g;`);
     await replaceSRI();
+    await replaceUrls(branch, deployBranch);
     await validateBuild(branch);
 
     await bash('rm -rf distCurrent');
@@ -275,6 +299,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n }) => {
                 return buildCustomApp(`deploy-${key}`, {
                     start: i === 0,
                     end: i === arr.length - 1,
+                    deployBranch: branch,
                     originBranch: ctx.originBranch
                 });
             }
@@ -324,10 +349,16 @@ tasks
         !isCI && success('App deployment done', { time });
         isCI && success(`Build CI app to the directory: ${chalk.bold('dist')}`, { time });
 
-        if (/prod/.test(branch) && !isCI) {
+        if (!isCI) {
+            const [, target] = branch.match(/-(prod|beta|dev|old|tor)/) || [];
+
+            if (!target) {
+                return;
+            }
+
             console.log('');
             title('Hash commits');
-            const arg = flowType !== 'many' ? 'prod' : '';
+            const arg = flowType === 'many' ? '' : target;
             return bash(`./tasks/logcommits.sh ${arg}`.trim()).then(({ stdout }) => console.log(stdout));
         }
     })
