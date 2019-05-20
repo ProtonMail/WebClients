@@ -57,8 +57,8 @@ const RecoveryEmail = () => {
     };
 
     return (
-        <Field>
-            {email}
+        <Field className="w100">
+            <span className="mr1">{email}</span>
             <PrimaryButton disabled={loading} onClick={open}>{c('Action').t`Edit`}</PrimaryButton>
         </Field>
     );
