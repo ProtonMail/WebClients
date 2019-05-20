@@ -8,7 +8,7 @@ import ShowMovedToggle from './ShowMovedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
 
 const MessagesSection = () => {
-    const [{ ShowImages } = {}] = useMailSettings();
+    const [{ ShowImages, ConfirmLink } = {}] = useMailSettings();
     const [showImages, setShowImages] = useState(ShowImages);
     const handleChange = (newValue) => setShowImages(newValue);
 
@@ -49,7 +49,7 @@ const MessagesSection = () => {
             <Row>
                 <Label htmlFor="requestLinkConfirmationToggle">{c('Label').t`Request link confirmation`}</Label>
                 <Field>
-                    <RequestLinkConfirmationToggle id="requestLinkConfirmationToggle" />
+                    <RequestLinkConfirmationToggle confirmLink={ConfirmLink} id="requestLinkConfirmationToggle" />
                 </Field>
             </Row>
         </>
