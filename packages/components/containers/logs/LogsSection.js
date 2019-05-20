@@ -4,6 +4,7 @@ import moment from 'moment';
 import {
     Button,
     ButtonGroup,
+    ConfirmModal,
     Group,
     Alert,
     Block,
@@ -13,7 +14,8 @@ import {
     SubTitle,
     useUserSettings,
     useApiResult,
-    useApiWithoutResult
+    useApiWithoutResult,
+    useModals
 } from 'react-components';
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
 import { updateLogAuth } from 'proton-shared/lib/api/settings';
@@ -34,6 +36,7 @@ const { DISABLE, BASIC, ADVANCED } = LOGS_STATE;
 
 const LogsSection = () => {
     const [settings] = useUserSettings();
+    const { createModal } = useModals();
     const [logAuth, setLogAuth] = useState(settings.LogAuth);
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
     const { result = {}, loading, request: requestQueryLogs } = useApiResult(
@@ -69,7 +72,20 @@ const LogsSection = () => {
         downloadFile(blob, filename);
     };
 
+    const confirmDisable = () => {
+        return new Promise((resolve, reject) => {
+            createModal(
+                <ConfirmModal title={c('Title').t`Clear`} nConfirm={resolve} onClose={reject}>
+                    <Alert>{c('Message').t`Are you sure you want to clear all your logs?`}</Alert>
+                </ConfirmModal>
+            );
+        });
+    };
+
     const handleLogAuth = (LogAuth) => async () => {
+        if (total > 0 && LogAuth === DISABLE) {
+            await confirmDisable();
+        }
         await requestUpdateLogAuth(LogAuth);
         setLogAuth(LogAuth);
     };
