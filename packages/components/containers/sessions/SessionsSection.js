@@ -14,7 +14,8 @@ import {
     ConfirmModal,
     useModals,
     useLoading,
-    usePagination
+    usePagination,
+    useNotifications
 } from 'react-components';
 import useApi from '../../hooks/useApi';
 import { querySessions, revokeOtherSessions, revokeSession } from 'proton-shared/lib/api/auth';
@@ -25,6 +26,7 @@ import useAuthenticationStore from '../../hooks/useAuthenticationStore';
 
 const CLIENTS = {
     Web: c('Badge').t`ProtonMail for web`,
+    WebSettings: c('Badge').t`ProtonMail settings for web`,
     iOS: c('Badge').t`ProtonMail for iOS`,
     Android: c('Badge').t`ProtonMail for Android`,
     ImportExport: c('Badge').t`ProtonMail Import-Export`,
@@ -38,6 +40,7 @@ const CLIENTS = {
 };
 
 const SessionsSection = () => {
+    const { createNotification } = useNotifications();
     const api = useApi();
     const authenticationStore = useAuthenticationStore();
     const { loading, loaded } = useLoading();
@@ -54,6 +57,7 @@ const SessionsSection = () => {
     const handleRevoke = (UID) => async () => {
         await api(UID ? revokeSession(UID) : revokeOtherSessions());
         fetchSessions();
+        createNotification({ text: UID ? c('Success').t`Session revoked` : c('Success').t`Sessions revoked` });
     };
 
     const handleOpenModal = () => {
@@ -87,7 +91,7 @@ const SessionsSection = () => {
                 />
             </Block>
             <Table>
-                <TableHeader cells={[c('Title').t`Service`, c('Title').t`Time`, c('Title').t`Action`]} />
+                <TableHeader cells={[c('Title').t`App`, c('Title').t`Date`, c('Title').t`Action`]} />
                 <TableBody loading={loading} colSpan={3}>
                     {list.map((session) => {
                         const key = session.UID;
