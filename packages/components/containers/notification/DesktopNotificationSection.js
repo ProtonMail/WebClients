@@ -12,7 +12,7 @@ const DesktopNotificationSection = () => {
                     {c('Label').t`Desktop notification`}{' '}
                     <Info url="https://protonmail.com/support/knowledge-base/desktop-notifications/" />
                 </Label>
-                <Field>
+                <Field className="w100">
                     <DesktopNotificationPanel />
                 </Field>
             </Row>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import Push from 'push.js';
-import { Paragraph, Block, Badge, SmallButton } from 'react-components';
+import { Block, Badge, SmallButton } from 'react-components';
 
 const DesktopNotificationPanel = () => {
     const [status, setStatus] = useState(Push.Permission.get() === Push.Permission.GRANTED);
@@ -20,8 +20,14 @@ const DesktopNotificationPanel = () => {
 
     const request = async () => {
         try {
-            await Push.Permission.request();
-            setStatus(true);
+            Push.Permission.request(
+                () => {
+                    setStatus(true);
+                },
+                () => {
+                    setStatus(false);
+                }
+            );
         } catch (err) {
             /**
              * Hotfix to fix requesting the permission on non-promisified requests.
@@ -31,25 +37,22 @@ const DesktopNotificationPanel = () => {
         }
     };
 
-    if (!status) {
-        return (
-            <Paragraph>
-                <Block>
-                    {c('Info').t`Desktop Notifications are currently`}{' '}
-                    <Badge type="error">{c('Badge').t`Disabled`}</Badge>
-                </Block>
-                <SmallButton onClick={request}>{c('Action').t`Enable desktop notification`}</SmallButton>
-            </Paragraph>
-        );
-    }
-
     return (
-        <Paragraph>
+        <Block>
             <Block>
-                {c('Info').t`Desktop Notifications are currently`} <Badge type="success">{c('Badge').t`Enabled`}</Badge>
+                <span className="mr1">{c('Info').t`Desktop notifications are currently`}</span>
+                {status ? (
+                    <Badge type="success">{c('Badge').t`Enabled`}</Badge>
+                ) : (
+                    <Badge type="error">{c('Badge').t`Disabled`}</Badge>
+                )}
             </Block>
-            <SmallButton onClick={test}>{c('Action').t`Send test notification`}</SmallButton>
-        </Paragraph>
+            {status ? (
+                <SmallButton onClick={test}>{c('Action').t`Send test notification`}</SmallButton>
+            ) : (
+                <SmallButton onClick={request}>{c('Action').t`Enable desktop notification`}</SmallButton>
+            )}
+        </Block>
     );
 };
 
