@@ -39,7 +39,7 @@ const LogsSection = () => {
     const { result = {}, loading, request: requestQueryLogs } = useApiResult(
         () =>
             queryLogs({
-                Page: page,
+                Page: page - 1,
                 PageSize: ELEMENTS_PER_PAGE
             }),
         [page]
