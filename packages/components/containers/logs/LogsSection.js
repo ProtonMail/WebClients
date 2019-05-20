@@ -76,7 +76,8 @@ const LogsSection = () => {
         return new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal title={c('Title').t`Clear`} nConfirm={resolve} onClose={reject}>
-                    <Alert>{c('Message').t`Are you sure you want to clear all your logs?`}</Alert>
+                    <Alert type="warning">{c('Warning')
+                        .t`By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?`}</Alert>
                 </ConfirmModal>
             );
         });
