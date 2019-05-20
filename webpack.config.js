@@ -1,6 +1,5 @@
 const path = require('path');
 const env = require('./env/config');
-
 const BUILD_TARGET = !env.isDistRelease() ? 'build' : 'dist';
 
 /**
