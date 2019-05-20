@@ -24,9 +24,11 @@ const ShortcutsSection = () => {
             <SubTitle>{c('Title').t`Shortcuts`}</SubTitle>
             <Row>
                 <Label htmlFor="hotkeysToggle">{c('Title').t`Keyboard shortcuts`}</Label>
-                <Field>
-                    <ShortcutsToggle id="hotkeysToggle" hotkeys={hotkeys} onChange={handleChange} />
-                    <SmallButton onClick={handleOpenModal}>{c('Action').t`View keyboard shortcuts`}</SmallButton>
+                <Field className="w100">
+                    <ShortcutsToggle className="mr1" id="hotkeysToggle" hotkeys={hotkeys} onChange={handleChange} />
+                    {hotkeys ? (
+                        <SmallButton onClick={handleOpenModal}>{c('Action').t`View keyboard shortcuts`}</SmallButton>
+                    ) : null}
                 </Field>
             </Row>
         </>
