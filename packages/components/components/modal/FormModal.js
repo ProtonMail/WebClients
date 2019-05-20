@@ -23,6 +23,25 @@ const Modal = ({
     hasClose,
     ...rest
 }) => {
+    // Because we will forget
+    if (!['isClosing', 'isBehind', 'onExit'].every((key) => rest.hasOwnProperty(key))) {
+        console.warn(`You must pass props to <FormModal ...rest>,
+These props contains mandatory keys from the hook.
+Ex: onClose
+
+function DemoModal({ onAdd, ...rest }) {
+
+    const handleSubmit = () => {
+        // XXX
+        onAdd('XXX');
+        rest.onClose();
+    };
+
+    return (<FormModal onSubmit={handleSubmit} ...rest />);
+}
+`);
+    }
+
     return (
         <DialogModal modalTitleID={modalTitleID} {...rest}>
             {title ? (

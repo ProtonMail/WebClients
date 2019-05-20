@@ -29,6 +29,7 @@
   "rules": {
     "react/display-name": "off",
     "react/prop-types": "warn",
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+    "no-console": ["error", { "allow": ["warn", "error"] }]
   }
 }
