@@ -1,7 +1,15 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { DropdownActions, useApi, useModals, useNotifications, useEventManager } from 'react-components';
+import {
+    DropdownActions,
+    useApi,
+    useModals,
+    useNotifications,
+    useEventManager,
+    ConfirmModal,
+    Alert
+} from 'react-components';
 import { ADDRESS_TYPE, ADDRESS_STATUS, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
 
@@ -27,7 +35,19 @@ const AddressActions = ({ address, user, fetchAddresses }) => {
         !address.HasKeys;
     const fetchModel = address.member.Self ? call : fetchAddresses;
 
+    const confirmDelete = async () => {
+        return new Promise((resolve, reject) => {
+            createModal(
+                <ConfirmModal onConfirm={resolve} onClose={reject}>
+                    <Alert type="warning">{c('Warning')
+                        .t`By deleting this address, you will no longer be able to send or receive emails using this address. Are you sure you want to delete this address?`}</Alert>
+                </ConfirmModal>
+            );
+        });
+    };
+
     const handleDelete = async () => {
+        await confirmDelete();
         await api(deleteAddress(ID));
         await fetchModel();
         createNotification({ text: c('Success notification').t`Address deleted` });
@@ -39,7 +59,19 @@ const AddressActions = ({ address, user, fetchAddresses }) => {
         createNotification({ text: c('Success notification').t`Address enabled` });
     };
 
+    const confirmDisable = async () => {
+        return new Promise((resolve, reject) => {
+            createModal(
+                <ConfirmModal onConfirm={resolve} onClose={reject}>
+                    <Alert type="warning">{c('Warning')
+                        .t`By disabling this address, you will no longer be able to send or receive emails using this address. Are you sure you want to disable this address?`}</Alert>
+                </ConfirmModal>
+            );
+        });
+    };
+
     const handleDisable = async () => {
+        await confirmDisable();
         await api(disableAddress(ID));
         await fetchModel();
         createNotification({ text: c('Success notification').t`Address disabled` });
