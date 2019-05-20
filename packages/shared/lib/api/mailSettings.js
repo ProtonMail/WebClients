@@ -128,3 +128,9 @@ export const updateAutoresponder = (AutoResponder) => ({
     method: 'put',
     data: { AutoResponder }
 });
+
+export const updateConfirmLink = (ConfirmLink) => ({
+    url: 'settings/mail/confirmlink',
+    method: 'put',
+    data: { ConfirmLink }
+});
