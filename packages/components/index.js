@@ -113,6 +113,9 @@ export { default as AddressCatchAll } from './containers/domains/AddressCatchAll
 export { default as MXSection } from './containers/domains/MXSection';
 export { default as DMARCSection } from './containers/domains/DMARCSection';
 export { default as CatchAllModal } from './containers/domains/CatchAllModal';
+export { default as IndexSection } from './containers/overview/IndexSection';
+export { default as SummarySection } from './containers/overview/SummarySection';
+export { default as PromoteSection } from './containers/overview/PromoteSection';
 export { default as BugModal } from './containers/support/BugModal';
 export { default as AuthenticatedBugModal } from './containers/support/AuthenticatedBugModal';
 export { default as DomainName } from './containers/domains/DomainName';
