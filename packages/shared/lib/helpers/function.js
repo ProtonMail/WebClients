@@ -1,4 +1,5 @@
 export const noop = () => {};
+export const identity = (value) => value;
 
 export const debounce = (func, wait, immediate) => {
     let timeout;
