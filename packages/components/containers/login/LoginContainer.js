@@ -11,7 +11,7 @@ import useLogin from './useLogin';
 
 const getErrorText = (error) => {
     if (error.name === 'PasswordError') {
-        return c('Error').t('Incorrect decryption password');
+        return c('Error').t`Incorrect decryption password`;
     }
     if (error.data && error.data.Error) {
         return error.data.Error;
