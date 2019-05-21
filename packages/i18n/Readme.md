@@ -62,7 +62,7 @@ $ proton-i18n validate --lint
 ### Crowdin
 
 ```sh
-$ proton-i18n crowdin --help
+$ proton-i18n crowdin <flag>
 ``` 
 
 ```sh
@@ -80,6 +80,11 @@ Available flags:
       To check the progress of an export from crowdin (to know if it's done or not yet)
   - --export|-e
       Ask to crowdin to create an export of translations, as it needs some time to prepare them
+  - --members|-m
+      Get from crowdin the list of best contributors (top 30) for the project
+      Flag: --format=top(default)/full
+        top: list of top 30
+        full: Object with top:List of top 30, byLang:{<lang>:<Array top contributors>}
   - --list|-l
       List translations available on crowdin sorted by most progress done.
       Usefull to export translations ex:
@@ -92,8 +97,10 @@ Available flags:
 
         $ proton-i18n crowdin --list --type --limit=95 --ignore-approved
             only list the code of the translation and limit progress >= 95
-
 ``` 
+
+
+> :warning: `$ proton-i18n --members` takes several seconds as it needs to create an export then download the file.
 
 ## How to setup ?
 

@@ -4,6 +4,7 @@ const _ = require('lodash');
 const got = require('got');
 const chalk = require('chalk');
 const JSZip = require('jszip');
+const parseCSV = require('csv-parse/lib/sync');
 const moment = require('moment');
 const argv = require('minimist')(process.argv.slice(2));
 const FormData = require('form-data');
@@ -14,7 +15,7 @@ const { getFiles, getCrowdin } = require('../config');
 
 const { KEY_API, FILE_NAME, PROJECT_NAME } = getCrowdin();
 
-const { TEMPLATE_NAME, I18N_OUTPUT_DIR, TEMPLATE_FILE_FULL } = getFiles();
+const { TEMPLATE_NAME, I18N_OUTPUT_DIR, I18N_JSON_DIR, TEMPLATE_FILE_FULL } = getFiles();
 
 const getURL = (scope, flag = '') => {
     const customFlag = flag ? `&${flag}` : '';
@@ -191,6 +192,57 @@ async function listTranslations(spinner) {
         });
 }
 
+async function listMembers(spinner, format = 'top') {
+    const getExport = async () => {
+        const form = new FormData();
+        form.append('format', 'csv');
+        const request = got.post(getURL('reports/top-members/export'), { body: form });
+        const { body = '' } = await request;
+        const [hash] = body.match(extractXML('hash'));
+        debug(body);
+        return hash;
+    };
+
+    const makeOutput = (body) => {
+        const list = parseCSV(body, {
+            columns: true,
+            skip_empty_lines: true
+        });
+
+        const toProfile = (input = '') => {
+            const [name, value = ''] = input.split(' (');
+            const pseudo = !value ? name : value.replace(/\)$/, '');
+            const url = `https://crowdin.com/profile/${pseudo}`;
+            return { name, url };
+        };
+
+        const top = list.slice(0, 29).map(({ Name }) => toProfile(Name));
+        const byLang = list.reduce((acc, item) => {
+            const { Languages = '' } = item;
+            Languages.split('; ').forEach((lang) => {
+                lang && !acc[lang] && (acc[lang] = []);
+                lang && acc[lang].push(toProfile(item.Name));
+            });
+            return acc;
+        }, Object.create(null));
+        return {
+            full: { byLang, top },
+            top
+        };
+    };
+
+    const hash = await getExport();
+    const url = getURL('reports/top-members/download').concat(`&hash=${hash}`);
+    debug({ hash, url });
+    const { body = '' } = await got(url, { formData: { format: 'csv' } });
+    const data = makeOutput(body);
+
+    debug({ format, output: data[format] });
+    spinner.stop();
+    fs.writeFileSync(path.join(I18N_JSON_DIR, 'topMembers.json'), JSON.stringify(data[format]));
+    success('Export top members');
+}
+
 async function main() {
     const getSpinnerMessage = () => {
         if (argv.c || argv.check) {
@@ -207,6 +259,9 @@ async function main() {
 
         if (argv.l || argv.list) {
             return 'Loading the list of translations';
+        }
+        if (argv.m || argv.members) {
+            return 'Loading the list of members';
         }
     };
 
@@ -233,6 +288,9 @@ async function main() {
         if (argv.l || argv.list) {
             await listTranslations(spinner);
         }
+        if (argv.m || argv.members) {
+            await listMembers(spinner, argv.format);
+        }
 
         if (argv.help) {
             spinner.stop();
@@ -250,6 +308,11 @@ async function main() {
                       To check the progress of an export from crowdin (to know if it's done or not yet)
                   - ${chalk.blue('--export|-e')}
                       Ask to crowdin to create an export of translations, as it needs some time to prepare them
+                  - ${chalk.blue('--members|-m')}
+                      Get from crowdin the list of best contributors for the project
+                      Flag: --format=top(default)/full
+                            top: list of top 30
+                            full: Object with top:List of top 30, byLang:{<lang>:<Array top contributors>}
                   - ${chalk.blue('--list|-l')}
                       List translations available on crowdin sorted by most progress done.
                       Usefull to export translations ex:
