@@ -10,6 +10,7 @@ const { debug } = require('./helpers/log')('proton-i18n');
  */
 async function main(arg = '') {
     const cmd = path.resolve(__dirname, '..', 'scripts/commit.sh');
+    debug(`${cmd} ${I18N_EXTRACT_DIR} ${I18N_JSON_DIR} ${arg}`);
     const { stdout } = await execa.shell(`${cmd} ${I18N_EXTRACT_DIR} ${I18N_JSON_DIR} ${arg}`, {
         shell: '/bin/bash'
     });
