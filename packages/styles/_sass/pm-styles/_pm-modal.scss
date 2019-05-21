@@ -68,7 +68,7 @@ $modal-smaller-width: 22em !default;
   border-radius: $global-border-radius;
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
   animation: pm-modalIn ease .15s 1 normal;
-  animation-fill-mode: forwards;
+  animation-fill-mode: both;
   animation-delay: .001s; // stupid fix for Safari crazy display bug
   display: -webkit-box;
   display: -ms-flexbox;
