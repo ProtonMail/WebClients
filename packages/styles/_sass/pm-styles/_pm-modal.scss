@@ -3,7 +3,9 @@
  */
 /* overlay covers everything */
 $modal-width: 50% !default;
-$modal-min-width: 42em !default;
+
+$modal-breakpoint-width: 52em !default;
+$modal-breakpoint-height: 22em !default;
 
 $modal-max-height: 80% !default;
 
@@ -19,16 +21,6 @@ $modal-smaller-width: 22em !default;
   z-index: 666;
   cursor: pointer;
   animation: pm-modalOverlayIn ease .5s 1 normal ;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .pm-modalOverlayOut {
@@ -37,7 +29,7 @@ $modal-smaller-width: 22em !default;
 }
 
 
-@keyframes pm-modalIn {
+@keyframes pm-modalOverlayIn {
   0% {
     background: rgba( 0, 0, 0, 0 );
   }
@@ -57,10 +49,15 @@ $modal-smaller-width: 22em !default;
 
 
 .pm-modal {
-  position: relative;
+  position: absolute;
+  z-index: 667;
+  top: 50%;
+  left: calc(50% - #{$modal-width/2});
+  right: auto; // for blink, otherwise WTF bug
+  transform: translateY(-50%);
+  transform-origin: 50% 0 0;
   width: $modal-width;
-  min-width: $modal-min-width;
-  margin: auto;
+  //min-width: $modal-min-width;
   max-height: $modal-max-height;
   max-width: 100%;
   flex: 0 1 auto;
@@ -70,7 +67,9 @@ $modal-smaller-width: 22em !default;
   overflow: hidden;
   border-radius: $global-border-radius;
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
-  animation: pm-modalIn ease .15s 1 normal ;
+  animation: pm-modalIn ease .15s 1 normal;
+  animation-fill-mode: forwards;
+  animation-delay: .1s; // stupid fix for Safari crazy display bug
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,40 +82,33 @@ $modal-smaller-width: 22em !default;
 @keyframes pm-modalIn {
   0% {
     opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	  -webkit-transform: scale(.8);
-	          transform: scale(.8);
+	  transform: scale(.8) translateY(-50%);
   }
   100% {
     opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	-webkit-transform: scale(1);
-	        transform: scale(1);
+	  transform: scale(1) translateY(-50%);
   }
 }
 
 @keyframes pm-modalOut {
   0% {
     opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	-webkit-transform: scale(1);
-	        transform: scale(1);
+	  transform: scale(1) translateY(-50%);
   }
   100% {
     opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	  -webkit-transform: scale(.8);
-	          transform: scale(.8);
+	  transform: scale(.8) translateY(-50%);
   }
 }
 
 .pm-modalOut {
   animation: pm-modalOut ease .15s 1 normal ;
-  animation-fill-mode: forwards;
+  animation-fill-mode: both;
 }
 
 .pm-modal--smaller {
   width: $modal-smaller-width;
+  left: calc(50% - #{$modal-smaller-width/2});
 }
 
 .pm-modal--inBackground {
@@ -218,9 +210,11 @@ $modal-smaller-width: 22em !default;
   }
 }
 
-@media (max-width: $modal-min-width) {
+@media (max-width: $modal-breakpoint-width) {
   .pm-modal {
     margin: 1%;
+    left: 0;
+    top: 49%; // firefox...
     min-width: 0;
     width: 98%;
     max-height: 98%;
