@@ -5,7 +5,6 @@ import { AddressModal, PrimaryButton, useMembers, useModals } from 'react-compon
 const PmMeButton = () => {
     const [members = [], loading] = useMembers();
     const { createModal } = useModals();
-
     const member = members.find(({ Self }) => Self);
 
     return (

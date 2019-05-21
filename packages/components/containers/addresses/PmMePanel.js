@@ -14,19 +14,19 @@ const PmMePanel = () => {
         return <Loader />;
     }
 
-    const hasPremium = addresses.find(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
-
-    if (!hasPremium) {
-        return (
-            <>
-                <Alert learnMore="https://protonmail.com/support/knowledge-base/pm-me-addresses/">{c('Info')
-                    .t`ProtonMail now supports @pm.me email addresses (short for ProtonMail me or Private Message me). Paid users can add other @pm.me addresses.`}</Alert>
-                <PmMeButton />
-            </>
-        );
-    }
+    const hasPremium = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
 
     if (user.hasPaidMail) {
+        if (!hasPremium) {
+            return (
+                <>
+                    <Alert learnMore="https://protonmail.com/support/knowledge-base/pm-me-addresses/">{c('Info')
+                        .t`ProtonMail now supports @pm.me email addresses (short for ProtonMail me or Private Message me). Paid users can add other @pm.me addresses.`}</Alert>
+                    <PmMeButton />
+                </>
+            );
+        }
+
         return (
             <>
                 <Alert learnMore="https://protonmail.com/support/knowledge-base/pm-me-addresses/">{c('Info')

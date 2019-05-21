@@ -31,7 +31,7 @@ import InvoiceTextModal from './InvoiceTextModal';
 const InvoicesSection = () => {
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
-    const [{ isManagedByMozilla }] = useSubscription();
+    const [{ isManagedByMozilla } = {}] = useSubscription();
     const { createModal } = useModals();
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
     const handleOwner = (own = USER) => () => setOwner(own);

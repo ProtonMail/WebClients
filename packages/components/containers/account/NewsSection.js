@@ -4,7 +4,7 @@ import { SubTitle, Alert, Label, Row, Field, useSubscription, useUser, MozillaIn
 import NewsCheckboxes from './NewsCheckboxes';
 
 const NewsSection = () => {
-    const [{ isManagedByMozilla }] = useSubscription();
+    const [{ isManagedByMozilla } = {}] = useSubscription();
     const [{ isMember }] = useUser();
 
     if (isMember) {

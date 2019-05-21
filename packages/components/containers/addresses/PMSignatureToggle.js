@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
     Alert,
-    Bordered,
     Toggle,
     useMailSettings,
     useToggle,
@@ -32,7 +31,10 @@ const PMSignatureToggle = ({ id }) => {
     if (isMandatory) {
         return (
             <>
-                <Bordered dangerouslySetInnerHTML={{ __html: <div>{PM_SIGNATURE}</div> }} />
+                <div
+                    className="bordered-container p1 mb1"
+                    dangerouslySetInnerHTML={{ __html: `<div>${PM_SIGNATURE}</div>` }}
+                />
                 <Alert>{c('Info')
                     .t`A paid plan is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts.`}</Alert>
             </>

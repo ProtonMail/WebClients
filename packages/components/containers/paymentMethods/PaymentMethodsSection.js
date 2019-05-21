@@ -16,7 +16,7 @@ import EditCardModal from '../payments/EditCardModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
 const PaymentMethodsSection = () => {
-    const [{ isManagedByMozilla }] = useSubscription();
+    const [{ isManagedByMozilla } = {}] = useSubscription();
     const { createModal } = useModals();
     const { result = {}, loading, request } = useApiResult(queryPaymentMethods, []);
     const { PaymentMethods: paymentMethods = [] } = result;

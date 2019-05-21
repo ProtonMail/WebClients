@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { PLAN_NAMES, CYCLE } from 'proton-shared/lib/constants';
 import {
+    Alert,
     SubTitle,
     Price,
     Loader,
@@ -41,13 +43,22 @@ const getSubTotal = (plans = []) => {
     }, 0);
 };
 
-const BillingSection = () => {
+const BillingSection = ({ permission }) => {
     const { createModal } = useModals();
     const [{ hasPaidMail, hasPaidVpn, Credit }] = useUser();
     const [
         { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd, isManagedByMozilla } = {},
         loadingSubscription
     ] = useSubscription();
+
+    if (!permission) {
+        return (
+            <>
+                <SubTitle>{c('Title').t`Billing details`}</SubTitle>
+                <Alert>{c('Info').t`No billing details yet`}</Alert>
+            </>
+        );
+    }
 
     if (isManagedByMozilla) {
         return (
@@ -250,6 +261,10 @@ const BillingSection = () => {
             </div>
         </>
     );
+};
+
+BillingSection.propTypes = {
+    permission: PropTypes.bool
 };
 
 export default BillingSection;

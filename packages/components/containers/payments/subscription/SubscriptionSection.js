@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
+    Alert,
     SubTitle,
     SmallButton,
     Loader,
@@ -27,12 +29,10 @@ const CYCLES = {
     [TWO_YEARS]: c('Billing cycle').t`2-year`
 };
 
-const SubscriptionSection = () => {
+const SubscriptionSection = ({ permission }) => {
     const [{ hasPaidMail, hasPaidVpn, isPaid }] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
-    const bundleEligible = isBundleEligible(subscription);
-    const { Plans = [], Cycle, CouponCode, Currency } = subscription;
     const [
         {
             UsedDomains,
@@ -48,6 +48,18 @@ const SubscriptionSection = () => {
         } = {},
         loadingOrganization
     ] = useOrganization();
+
+    if (!permission) {
+        return (
+            <>
+                <SubTitle>{c('Title').t`Subscription`}</SubTitle>
+                <Alert>{c('Info').t`No subscription yet`}</Alert>
+            </>
+        );
+    }
+
+    const { Plans = [], Cycle, CouponCode, Currency } = subscription;
+    const bundleEligible = isBundleEligible(subscription);
 
     if (subscription.isManagedByMozilla) {
         return (
@@ -234,6 +246,10 @@ const SubscriptionSection = () => {
             </div>
         </>
     );
+};
+
+SubscriptionSection.propTypes = {
+    permission: PropTypes.bool
 };
 
 export default SubscriptionSection;

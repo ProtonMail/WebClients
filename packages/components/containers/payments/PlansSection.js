@@ -47,6 +47,7 @@ const PlansSection = () => {
     const { request: requestCheckSubscription } = useApiWithoutResult(checkSubscription);
     const { request: requestDeleteSubscription } = useApiWithoutResult(deleteSubscription);
     const bundleEligible = isBundleEligible(subscription);
+    const { Plans = [] } = subscription;
 
     const handleUnsubscribe = async () => {
         await requestDeleteSubscription();
@@ -102,7 +103,7 @@ const PlansSection = () => {
         );
     }
 
-    const currentPlan = subscription.Plans.find(({ Type, Services }) => Type === 1 && hasBit(Services, MAIL));
+    const currentPlan = Plans.find(({ Type, Services }) => Type === 1 && hasBit(Services, MAIL));
     const currentPlanName = hasPaidMail ? currentPlan.Name : 'free';
 
     const getPrice = (planName) => {
