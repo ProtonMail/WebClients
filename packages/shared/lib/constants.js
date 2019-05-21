@@ -324,3 +324,14 @@ export const COUPON_CODES = {
 };
 
 export const GIFT_CODE_LENGTH = 16;
+
+export const PERMISSIONS = {
+    ADMIN: 'admin',
+    MEMBER: 'member',
+    FREE: 'free',
+    UPGRADER: 'upgrader',
+    MULTI_USERS: 'multi-users',
+    PAID: 'paid',
+    PAID_MAIL: 'paid-mail',
+    PAID_VPN: 'paid-vpn'
+};
