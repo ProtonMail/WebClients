@@ -9,8 +9,10 @@ const Sections = ({ route, sections = [], text, permissions = [], pagePermission
         <ul className="unstyled mt0-5">
             {sections.length ? (
                 sections
-                    .reduce((acc, { text, id }) => {
-                        acc.push({ text, id, route: `${route}#${id}` });
+                    .reduce((acc, { text, id, hide }) => {
+                        if (!hide) {
+                            acc.push({ text, id, route: `${route}#${id}` });
+                        }
                         return acc;
                     }, [])
                     .map(({ text, id, route, permissions: sectionPermissions }) => {
