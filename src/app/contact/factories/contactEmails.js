@@ -97,14 +97,16 @@ function contactEmails(Contact, dispatchers, sanitize) {
         const list = findAllByEmail(value, _.identity, contactID);
         return list.find((contact) => {
             const { Type = [] } = contact;
-            return (
-                Type.length &&
-                Type.some((key) => {
+
+            if (Type.length) {
+                return Type.some((key) => {
                     // Sometimes upper, sometimes lower :/
                     const testKey = type.toLowerCase();
                     return testKey.includes(key.toLowerCase());
-                })
-            );
+                });
+            }
+
+            return true;
         });
     };
 

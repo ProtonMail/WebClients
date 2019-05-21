@@ -34,7 +34,8 @@ function moveContactGroupHandler(
 
     const getSelected = (type, { email = {}, contact = {} } = {}) => {
         if (type === 'email') {
-            return [contactEmails.findByEmailVcard(email, contact.ID)];
+            // Can be undefined
+            return [contactEmails.findByEmailVcard(email, contact.ID)].filter(Boolean);
         }
         return contactCache.get('selected');
     };
