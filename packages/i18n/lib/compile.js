@@ -23,7 +23,7 @@ async function run({ file, lang }) {
         });
     }
 
-    const cmd = `npx ttag po2json ${file} > ${output}`;
+    const cmd = `npx ttag po2json --format=compact ${file} > ${output}`;
     debug(cmd);
     return execa.shell(cmd, {
         shell: '/bin/bash'
@@ -38,7 +38,7 @@ async function main() {
         const list = config
             .filter(({ key }) => key !== 'en')
             .map(({ key, lang }) => {
-                return run({ file: `${I18N_EXTRACT_DIR}}/${key}.po`, lang }).then(() =>
+                return run({ file: `${I18N_EXTRACT_DIR}/${key}.po`, lang }).then(() =>
                     debug(`Compilation done for ${lang}`)
                 );
             });
