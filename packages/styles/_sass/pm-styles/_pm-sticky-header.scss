@@ -1,0 +1,25 @@
+/*
+ * sticky header and container for sections
+ */
+.sticky-title {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+  padding: .5em .75em;
+  background: inherit;
+  z-index: 9;
+}
+.sticky-title--onTop {
+  box-shadow: none;
+}
+
+.container-section-sticky {
+  padding: 3em 2em 0 2em;
+  max-width: 85ch; // avoid too long lines
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-section-sticky--fullwidth {
+  max-width: none;
+}

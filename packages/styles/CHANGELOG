@@ -1,4 +1,11 @@
-# [1.6.x] - 2019-05-20
+# [1.6.9] - 2019-05-21
+
+## New
+
+- sticky header for settings (using `.sticky-title` class, and `sticky-title--onTop` modifier to remove `box-shadow` at the top, has to be managed via JS)
+- added container `container-section-sticky` class for pages using sticky header (for each section)
+- also added modifier `container-section-sticky--fullwidth` modifier class to remove `max-width` if needed.
+- updated smooth scrolling feature on Design System website (used https://github.com/zengabor/zenscroll)
 
 ## Updated/fixes
 
