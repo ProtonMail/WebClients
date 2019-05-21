@@ -4,10 +4,10 @@ import { useUser, useAddresses } from 'react-components';
 
 import BugModal from './BugModal';
 
-const AuthenticatedBugModal = ({ onClose }) => {
+const AuthenticatedBugModal = (props) => {
     const [{ Name = '' }] = useUser();
     const [addresses = []] = useAddresses();
-    return <BugModal username={Name} addresses={addresses} onClose={onClose} />;
+    return <BugModal username={Name} addresses={addresses} {...props} />;
 };
 
 AuthenticatedBugModal.propTypes = {
