@@ -230,6 +230,7 @@ export { default as OrganizationSection } from './containers/organization/Organi
 export { default as RemoteToggle } from './containers/messages/RemoteToggle';
 export { default as EmbeddedToggle } from './containers/messages/EmbeddedToggle';
 export { default as MessagesSection } from './containers/messages/MessagesSection';
+export { default as SearchSection } from './containers/search/SearchSection';
 export { default as NotificationsContext } from './context/notifications';
 export { default as AuthenticationStoreContext } from './context/authenticationStore';
 export { default as ConfigContext } from './context/config';
@@ -253,6 +254,7 @@ export { default as useModals } from './hooks/useModals';
 export { default as useAuthenticationStore } from './hooks/useAuthenticationStore';
 export { default as useAsync } from './hooks/useAsync';
 export { default as usePlans } from './hooks/usePlans';
+export { default as usePermissions } from './hooks/usePermissions';
 export { nestChildren } from './helpers/component';
 export { indexOfMax, buildThresholds } from './helpers/intersectionObserver';
 
