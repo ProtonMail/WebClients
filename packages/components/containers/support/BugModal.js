@@ -141,7 +141,7 @@ const BugModal = ({ onClose, username: Username, addresses, titles, ...rest }) =
             </Row>
             <Row>
                 <Label htmlFor="Attachments">
-                    {c('Label').t`Attach screenshots`}{' '}
+                    <span className="mr1">{c('Label').t`Attach screenshots`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/screenshot-reporting-bugs/" />
                 </Label>
                 <Field>

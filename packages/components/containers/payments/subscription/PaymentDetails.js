@@ -40,7 +40,7 @@ const PaymentDetails = ({ check, model, onChange }) => {
             {check.Proration ? (
                 <div className="flex flex-spacebetween mb1 pb1 border-bottom">
                     <div>
-                        {c('Label').t`Proration`}{' '}
+                        <span className="mr1">{c('Label').t`Proration`}</span>
                         <Info url="https://protonmail.com/support/knowledge-base/credit-proration/" />
                     </div>
                     <div>

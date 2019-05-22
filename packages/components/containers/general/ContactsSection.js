@@ -32,7 +32,7 @@ const ContactsSection = () => {
             <SubTitle>{c('Title').t`Contacts`}</SubTitle>
             <Row>
                 <Label htmlFor="saveContactToggle">
-                    {c('Label').t`Automatically save contacts`}{' '}
+                    <span className="mr1">{c('Label').t`Automatically save contacts`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/autosave-contact-list/" />
                 </Label>
                 <Field>

@@ -25,7 +25,7 @@ const EmailSection = () => {
             </Row>
             <Row>
                 <Label htmlFor="dailyNotificationsToggle">
-                    {c('Label').t`Daily email notifications`}{' '}
+                    <span className="mr1">{c('Label').t`Daily email notifications`}</span>
                     <Info
                         url="https://protonmail.com/blog/notification-emails/"
                         title={c('Info')

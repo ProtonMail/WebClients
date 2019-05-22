@@ -12,7 +12,7 @@ const CyclePromotion = ({ model, onChange }) => {
         <>
             {model.cycle === MONTHLY && (
                 <Alert>
-                    {c('Info').t`Save 20% with annual`}{' '}
+                    <span className="mr1">{c('Info').t`Save 20% with annual`}</span>
                     <SmallButton onClick={handleClick}>{c('Action').t`Switch now`}</SmallButton>
                 </Alert>
             )}

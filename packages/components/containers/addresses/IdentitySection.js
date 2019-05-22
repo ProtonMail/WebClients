@@ -76,11 +76,11 @@ const IdentitySection = () => {
             </Row>
             <Row>
                 <Label>
-                    {c('Label').t`Display name`}{' '}
+                    <span className="mr1">{c('Label').t`Display name`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/display-name-and-signature/" />
                 </Label>
                 <Field className="flex flex-spacebetween">
-                    {address.DisplayName}{' '}
+                    <span className="mr1">{address.DisplayName}</span>
                     <SmallButton className="pm-button--primary" onClick={handleOpenModal}>{c('Action')
                         .t`Edit`}</SmallButton>
                 </Field>

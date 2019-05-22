@@ -71,7 +71,7 @@ const MemberModal = ({ onClose, organization, domains, ...rest }) => {
                         required
                     />
                     <Label className="flex-autogrid-item">
-                        <Checkbox checked={model.private} onChange={handleChangePrivate} />{' '}
+                        <Checkbox checked={model.private} className="mr1" onChange={handleChangePrivate} />
                         {c('Label for new member').t`Private`}
                     </Label>
                 </Field>
