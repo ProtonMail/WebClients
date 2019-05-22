@@ -9,10 +9,7 @@ import BitcoinQRCode from './BitcoinQRCode';
 import BitcoinDetails from './BitcoinDetails';
 
 const Bitcoin = ({ amount, currency, type }) => {
-    const { result = {}, loading, request, error = {} } = useApiResult(
-        () => createBitcoinPayment(amount, currency),
-        []
-    );
+    const { result = {}, request, error = {} } = useApiResult(() => createBitcoinPayment(amount, currency), []);
     const { AmountBitcoin, Address } = result;
     const address = type === 'donation' ? BTC_DONATION_ADDRESS : Address;
 
@@ -21,7 +18,7 @@ const Bitcoin = ({ amount, currency, type }) => {
         return <Alert type="warning">{i18n(<Price currency={currency}>{amount}</Price>)}</Alert>;
     }
 
-    if (loading) {
+    if (!AmountBitcoin || !Address) {
         return null;
     }
 
@@ -36,8 +33,8 @@ const Bitcoin = ({ amount, currency, type }) => {
 
     return (
         <>
-            <figure>
-                <BitcoinQRCode amount={AmountBitcoin} address={address} type={type} />
+            <figure role="group">
+                <BitcoinQRCode className="mb1 w50 center" amount={AmountBitcoin} address={address} type={type} />
                 <BitcoinDetails amount={AmountBitcoin} address={address} />
             </figure>
             {type === 'invoice' ? (

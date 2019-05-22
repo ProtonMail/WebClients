@@ -1,26 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import QRCode from 'qrcodejs2';
+import { QRCode } from 'react-components';
 
-const BitcoinQRCode = ({ amount, address, type }) => {
-    const divRef = useRef();
-
-    const getURL = () => {
-        if (type === 'donation') {
-            return `bitcoin:${address}`;
-        }
-
-        return `bitcoin:${address}?amount=${amount}`;
-    };
-
-    useEffect(() => {
-        const qrcode = new QRCode(divRef.current, getURL());
-        return () => {
-            qrcode.clear();
-        };
-    }, []);
-
-    return <div ref={divRef} />;
+const BitcoinQRCode = ({ amount, address, type, ...rest }) => {
+    const url = type === 'donation' ? `bitcoin:${address}` : `bitcoin:${address}?amount=${amount}`;
+    return <QRCode url={url} {...rest} />;
 };
 
 BitcoinQRCode.propTypes = {
