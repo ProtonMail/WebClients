@@ -1,8 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Link } from 'react-router-dom';
 import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
-import { Alert, Paragraph, Loader, useUser, useAddresses } from 'react-components';
+import { Alert, Loader, useUser, useAddresses } from 'react-components';
 
 import PmMeButton from './PmMeButton';
 
@@ -31,15 +30,14 @@ const PmMePanel = () => {
             <>
                 <Alert learnMore="https://protonmail.com/support/knowledge-base/pm-me-addresses/">{c('Info')
                     .t`You can now also receive and send messages from your @pm.me address (short for ProtonMail me or Private Message me).`}</Alert>
-                <Paragraph className="bold">{c('Info').t`@pm.me is activated on your account.`}</Paragraph>
-                <Link to="/settings/addresses">{c('Link').t`Add another address`}</Link>
+                <Alert type="success">{c('Info').t`The short domain @pm.me is active on your account.`}</Alert>
             </>
         );
     }
 
     return (
         <Alert>{c('Info')
-            .t`You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me). Upgrade to a paid account to also send emails from your @pm.me address.`}</Alert>
+            .t`ProtonMail now supports @pm.me email addresses (short for ProtonMail me or Private Message me). Upgrade to a paid account to also send emails from your @pm.me address.`}</Alert>
     );
 };
 

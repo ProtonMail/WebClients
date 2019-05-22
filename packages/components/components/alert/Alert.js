@@ -5,7 +5,8 @@ import { LearnMore } from 'react-components';
 const CLASSES = {
     info: 'mb1 block-info-standard',
     warning: 'mb1 block-info-standard-warning',
-    error: 'mb1 block-info-standard-error'
+    error: 'mb1 block-info-standard-error',
+    success: 'mb1 block-info-standard-success'
 };
 
 const Alert = ({ type, children, learnMore, className }) => {
@@ -22,7 +23,7 @@ const Alert = ({ type, children, learnMore, className }) => {
 };
 
 Alert.propTypes = {
-    type: PropTypes.oneOf(['info', 'error', 'warning']).isRequired,
+    type: PropTypes.oneOf(['info', 'error', 'warning', 'success']).isRequired,
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
     learnMore: PropTypes.string
