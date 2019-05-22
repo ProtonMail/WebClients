@@ -42,10 +42,10 @@ const PMSignatureToggle = ({ id }) => {
     }
 
     return (
-        <div className="flex flex-spacebetween">
-            <Toggle className="mr1" loading={loading} id={id} checked={state} onChange={handleChange} />
-            <span className="pm-label" dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }} />
-        </div>
+        <>
+            <div className="bordered-container p1 mb1" dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }} />
+            <Toggle loading={loading} id={id} checked={state} onChange={handleChange} />
+        </>
     );
 };
 

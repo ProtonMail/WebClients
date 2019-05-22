@@ -71,6 +71,10 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
     };
 
     const handleChangeModel = async (newModel = {}, requireCheck = false) => {
+        if (loading) {
+            return;
+        }
+
         if (requireCheck) {
             await callCheck(newModel);
         }

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import {
-    SmallButton,
+    Alert,
+    Button,
     SubTitle,
     Label,
     Select,
@@ -41,7 +42,7 @@ const IdentitySection = () => {
         setAddress(addresses[0]);
     }, [addresses]);
 
-    const title = <SubTitle>{c('Title').t`Identity`}</SubTitle>;
+    const title = <SubTitle>{c('Title').t`Display name & signature`}</SubTitle>;
 
     if (loading || !address) {
         return (
@@ -68,6 +69,7 @@ const IdentitySection = () => {
     return (
         <>
             {title}
+            <Alert>{c('Info').t`TODO`}</Alert>
             <Row>
                 <Label htmlFor="addressSelector">{c('Label').t`Select an address`}</Label>
                 <Field>
@@ -80,17 +82,18 @@ const IdentitySection = () => {
                     <Info url="https://protonmail.com/support/knowledge-base/display-name-and-signature/" />
                 </Label>
                 <Field className="flex flex-spacebetween">
-                    <span className="mr1">{address.DisplayName}</span>
-                    <SmallButton className="pm-button--primary" onClick={handleOpenModal}>{c('Action')
-                        .t`Edit`}</SmallButton>
+                    <span className="mt0-5 mr1">{address.DisplayName}</span>
+                    <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
                 </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`Signature`}</Label>
                 <Field>
-                    <div className="pm-label mb1" dangerouslySetInnerHTML={{ __html: address.Signature }} />
-                    <SmallButton className="pm-button--primary" onClick={handleOpenModal}>{c('Action')
-                        .t`Edit`}</SmallButton>
+                    <div
+                        className="bordered-container p1 mb1"
+                        dangerouslySetInnerHTML={{ __html: address.Signature }}
+                    />
+                    <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
                 </Field>
             </Row>
             <Row>
