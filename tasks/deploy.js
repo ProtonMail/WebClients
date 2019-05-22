@@ -172,8 +172,8 @@ const buildCustomApp = async (branch, { start, end, originBranch, deployBranch }
 
     // Replace the correct sentry URL
     await replace(`s|${sentry.sentry}|${sentryB.sentry}|g;`);
-    await replaceSRI();
     await replaceUrls(branch, deployBranch);
+    await replaceSRI();
     await validateBuild(branch);
 
     await bash('rm -rf distCurrent');
