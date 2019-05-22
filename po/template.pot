@@ -1120,12 +1120,12 @@ msgctxt "Action"
 msgid "Load"
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:162
+#: ./src/templates/views/appearance.tpl.html:174
 msgctxt "Action"
 msgid "Load classic theme"
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:163
+#: ./src/templates/views/appearance.tpl.html:175
 msgctxt "Action"
 msgid "Load edison theme"
 msgstr ""
@@ -1545,7 +1545,7 @@ msgctxt "Action"
 msgid "Reset password"
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:143
+#: ./src/templates/views/appearance.tpl.html:155
 msgctxt "Action"
 msgid "Reset theme"
 msgstr ""
@@ -1599,7 +1599,7 @@ msgstr ""
 #: ./src/templates/organization/organizationFormName.tpl.html:25
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:45
-#: ./src/templates/views/appearance.tpl.html:144
+#: ./src/templates/views/appearance.tpl.html:156
 msgctxt "Action"
 msgid "Save"
 msgstr ""
@@ -2264,7 +2264,7 @@ msgctxt "Bitcoin validation error"
 msgid "Amount below minimum. ({{ ::validator.amountMin / 100 }} {{::currency}})"
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:176
+#: ./src/templates/views/appearance.tpl.html:188
 msgctxt "Bubbule info in appearance sent and drafts folders"
 msgid "Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder."
 msgstr ""
@@ -3048,7 +3048,7 @@ msgctxt "Dashboard plan type"
 msgid "FREE"
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:132
+#: ./src/templates/views/appearance.tpl.html:144
 msgctxt "Dashboard, custom theme input"
 msgid "Paste your CSS code here (limited to 200,000 characters)"
 msgstr ""
@@ -5042,7 +5042,7 @@ msgctxt "Info"
 msgid "Bug reports are not end-to-end encrypted, please do not send any sensitive information."
 msgstr ""
 
-#: ./src/app/settings/controllers/appearance.js:87
+#: ./src/app/settings/controllers/appearance.js:91
 msgctxt "Info"
 msgid "Buttons position saved"
 msgstr ""
@@ -5112,7 +5112,7 @@ msgctxt "Info"
 msgid "Column"
 msgstr ""
 
-#: ./src/app/settings/controllers/appearance.js:63
+#: ./src/app/settings/controllers/appearance.js:67
 msgctxt "Info"
 msgid "Compose mode saved"
 msgstr ""
@@ -5122,7 +5122,7 @@ msgctxt "Info"
 msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> for critical security issues."
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:107
+#: ./src/templates/views/appearance.tpl.html:106
 msgctxt "Info"
 msgid "Conversation Grouping automatically groups messages in the same conversation together."
 msgstr ""
@@ -5167,7 +5167,7 @@ msgctxt "Info"
 msgid "Custom filters work on all new emails, including incoming emails as well as sent emails"
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:130
+#: ./src/templates/views/appearance.tpl.html:142
 msgctxt "Info"
 msgid "Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources."
 msgstr ""
@@ -5465,7 +5465,7 @@ msgctxt "Info"
 msgid "Key reactivated"
 msgstr ""
 
-#: ./src/app/settings/controllers/appearance.js:75
+#: ./src/app/settings/controllers/appearance.js:79
 #: ./src/app/ui/directives/chooseLayoutBtns.js:33
 msgctxt "Info"
 msgid "Layout saved"
@@ -5482,7 +5482,7 @@ msgctxt "Info"
 msgid "Learn more."
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:159
+#: ./src/templates/views/appearance.tpl.html:171
 msgctxt "Info"
 msgid "Loading themes will override your current theme!"
 msgstr ""
@@ -5594,7 +5594,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:178
+#: ./src/app/settings/controllers/account.js:176
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr ""
@@ -6008,7 +6008,7 @@ msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr ""
 
-#: ./src/app/settings/controllers/appearance.js:41
+#: ./src/app/settings/controllers/appearance.js:45
 msgctxt "Info"
 msgid "Theme saved"
 msgstr ""
@@ -6245,11 +6245,6 @@ msgctxt "Info"
 msgid "Verifying invite link..."
 msgstr ""
 
-#: ./src/app/settings/controllers/appearance.js:104
-msgctxt "Info"
-msgid "View mode saved"
-msgstr ""
-
 #. account deletion warning
 #: ./src/templates/modals/deleteAccount.tpl.html:10
 msgctxt "Info"
@@ -6367,7 +6362,7 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:109
+#: ./src/app/settings/controllers/account.js:107
 msgctxt "Info"
 msgid "You have a new email"
 msgstr ""
@@ -6946,7 +6941,7 @@ msgctxt "Label"
 msgid "Credit card"
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:131
+#: ./src/templates/views/appearance.tpl.html:143
 msgctxt "Label"
 msgid "Custom theme"
 msgstr ""
@@ -7004,11 +6999,6 @@ msgstr ""
 #: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:4
 msgctxt "Label"
 msgid "Enable"
-msgstr ""
-
-#: ./src/templates/views/appearance.tpl.html:110
-msgctxt "Label"
-msgid "Enable Conversation Grouping"
 msgstr ""
 
 #: ./src/templates/views/labels.tpl.html:53
@@ -7309,6 +7299,16 @@ msgctxt "Label"
 msgid "Upload picture"
 msgstr ""
 
+#: ./src/templates/views/appearance.tpl.html:109
+msgctxt "Label"
+msgid "Use conversation grouping"
+msgstr ""
+
+#: ./src/templates/views/appearance.tpl.html:118
+msgctxt "Label"
+msgid "Use sticky labels"
+msgstr ""
+
 #: ./src/templates/modals/addAddress.tpl.html:11
 msgctxt "Label"
 msgid "User"
@@ -7601,7 +7601,7 @@ msgstr ""
 #: ./src/templates/views/account.tpl.html:225
 #: ./src/templates/views/account.tpl.html:259
 #: ./src/templates/views/account.tpl.html:92
-#: ./src/templates/views/appearance.tpl.html:178
+#: ./src/templates/views/appearance.tpl.html:190
 #: ./src/templates/views/members.tpl.html:21
 #: ./src/templates/views/members.tpl.html:328
 #: ./src/templates/views/security.tpl.html:15
@@ -8849,7 +8849,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:328
+#: ./src/app/settings/controllers/account.js:326
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr ""
@@ -8894,13 +8894,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:300
+#: ./src/app/settings/controllers/account.js:298
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:261
-#: ./src/app/settings/controllers/account.js:270
+#: ./src/app/settings/controllers/account.js:260
+#: ./src/app/settings/controllers/account.js:269
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr ""
@@ -8946,16 +8946,13 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:141
-#: ./src/app/settings/controllers/account.js:161
-#: ./src/app/settings/controllers/account.js:252
+#: ./src/app/settings/controllers/account.js:139
+#: ./src/app/settings/controllers/account.js:159
+#: ./src/app/settings/controllers/account.js:251
+#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
-msgstr ""
-
-#: ./src/app/settings/controllers/account.js:282
-msgctxt "Success"
-msgid "Preference updated"
 msgstr ""
 
 #: ./src/app/address/directives/addressKeysView.js:60
@@ -8980,7 +8977,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr ""
 
-#: ./src/app/settings/controllers/account.js:126
+#: ./src/app/settings/controllers/account.js:124
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr ""
@@ -9010,6 +9007,11 @@ msgstr ""
 #: ./src/app/address/directives/addressKeysView.js:62
 msgctxt "Success"
 msgid "Signature verification enabled"
+msgstr ""
+
+#: ./src/app/settings/controllers/appearance.js:108
+msgctxt "Success"
+msgid "View mode saved"
 msgstr ""
 
 #: ./src/app/contact/factories/contactSpam.js:23
@@ -9210,7 +9212,7 @@ msgid "Add to Whitelist"
 msgstr ""
 
 #. legend / form heading for adding custom CSS theme code
-#: ./src/templates/views/appearance.tpl.html:151
+#: ./src/templates/views/appearance.tpl.html:163
 msgctxt "Title"
 msgid "Additional themes"
 msgstr ""
@@ -9487,13 +9489,13 @@ msgid "Composer"
 msgstr ""
 
 #. Section heading
-#: ./src/templates/views/appearance.tpl.html:197
+#: ./src/templates/views/appearance.tpl.html:209
 msgctxt "Title"
 msgid "Composer Text Direction"
 msgstr ""
 
 #. Choose the default composer mode
-#: ./src/templates/views/appearance.tpl.html:183
+#: ./src/templates/views/appearance.tpl.html:195
 msgctxt "Title"
 msgid "Composer mode"
 msgstr ""
@@ -9567,7 +9569,7 @@ msgctxt "Title"
 msgid "Contacts"
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:101
+#: ./src/templates/views/appearance.tpl.html:100
 msgctxt "Title"
 msgid "Conversation Grouping"
 msgstr ""
@@ -9644,7 +9646,7 @@ msgctxt "Title"
 msgid "Custom Filters"
 msgstr ""
 
-#: ./src/templates/views/appearance.tpl.html:123
+#: ./src/templates/views/appearance.tpl.html:135
 msgctxt "Title"
 msgid "Custom theme"
 msgstr ""
@@ -10693,7 +10695,7 @@ msgid "Sent"
 msgstr ""
 
 #. Section heading
-#: ./src/templates/views/appearance.tpl.html:170
+#: ./src/templates/views/appearance.tpl.html:182
 msgctxt "Title"
 msgid "Sent / Drafts folders appearance"
 msgstr ""
@@ -11438,6 +11440,11 @@ msgctxt "Tooltip"
 msgid ""
 "Using this key for encryption will encrypt outgoing messages\n"
 "                       to this address with this key and set this key as the primary PGP key for this address."
+msgstr ""
+
+#: ./src/templates/views/appearance.tpl.html:119
+msgctxt "Tooltip"
+msgid "When a label is added to a message in a conversation, all future messages you send or receive will have that same label automatically applied."
 msgstr ""
 
 #: ./src/templates/address/addressKeysView.tpl.html:69
