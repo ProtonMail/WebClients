@@ -40,6 +40,9 @@ $block-info-border-width: 3px !default;
 .block-info-warning {
   border-color: $pm-global-attention;
 }
+.block-info-success {
+  border-color: $pm-global-success;
+}
 
 [class*="block-info-standard"] {
   padding: .2em 1.2em;
@@ -53,6 +56,9 @@ $block-info-border-width: 3px !default;
 }
 .block-info-standard-warning {
   border-color: $pm-global-attention;
+}
+.block-info-standard-success {
+  border-color: $pm-global-success;
 }
 // other colors might be added later
 
