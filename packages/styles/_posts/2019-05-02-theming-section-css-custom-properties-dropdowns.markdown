@@ -113,6 +113,6 @@ See them in [Forms](/forms/).
 
 ## Misc
 
-- remove IE11 support for space bar (fuck off inline-styles 🎉 )
+- remove inline-styles for space bar (this is bad)
 - removed 'unsafe-inline' for CSS for design system website 🎉
 - we’re back to 100% at Dareboost tests 🎉🎉
