@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { useUser, useSubscription, Href } from 'react-components';
+import { useUser, useOrganization, Href } from 'react-components';
 import { Link } from 'react-router-dom';
 
 const FeaturesList = () => {
-    const [{ hasPaidMail }] = useUser();
-    const [{ MaxMembers }] = useSubscription();
+    const [{ hasPaidMail } = {}] = useUser();
+    const [{ MaxMembers } = {}] = useOrganization();
     const features = [
         ...(hasPaidMail
             ? [

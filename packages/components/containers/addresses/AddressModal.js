@@ -62,15 +62,20 @@ const AddressModal = ({ onClose, member, ...rest }) => {
             </Row>
             <Row>
                 <Label>{c('Label').t`Address`}</Label>
-                <Field className="flex-autogrid">
-                    <Input
-                        value={model.address}
-                        className="flex-autogrid-item"
-                        placeholder={c('Placeholder').t`Choose address`}
-                        onChange={handleChange('address')}
-                        required
-                    />
-                    <DomainsSelect className="flex-autogrid-item" member={member} onChange={handleChange('domain')} />
+                <Field>
+                    <div className="flex-autogrid">
+                        <div className="flex-autogrid-item pb0">
+                            <Input
+                                value={model.address}
+                                placeholder={c('Placeholder').t`Choose address`}
+                                onChange={handleChange('address')}
+                                required
+                            />
+                        </div>
+                        <div className="flex-autogrid-item pb0">
+                            <DomainsSelect member={member} onChange={handleChange('domain')} />
+                        </div>
+                    </div>
                 </Field>
             </Row>
             <Row>

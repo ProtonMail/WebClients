@@ -31,10 +31,7 @@ const PMSignatureToggle = ({ id }) => {
     if (isMandatory) {
         return (
             <>
-                <div
-                    className="bordered-container p1 mb1"
-                    dangerouslySetInnerHTML={{ __html: `<div>${PM_SIGNATURE}</div>` }}
-                />
+                <div className="bordered-container p1 mb1" dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }} />
                 <Alert>{c('Info')
                     .t`A paid plan is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts.`}</Alert>
             </>

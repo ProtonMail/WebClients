@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { PLAN_NAMES, CYCLE } from 'proton-shared/lib/constants';
 import {
+    Button,
     Alert,
     SubTitle,
     Price,
@@ -45,6 +46,8 @@ const getSubTotal = (plans = []) => {
 
 const BillingSection = ({ permission }) => {
     const { createModal } = useModals();
+    const handleOpenGiftCodeModal = () => createModal(<GiftCodeModal />);
+    const handleOpenCreditsModal = () => createModal(<CreditsModal />);
     const [{ hasPaidMail, hasPaidVpn, Credit }] = useUser();
     const [
         { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd, isManagedByMozilla } = {},
@@ -55,7 +58,9 @@ const BillingSection = ({ permission }) => {
         return (
             <>
                 <SubTitle>{c('Title').t`Billing details`}</SubTitle>
-                <Alert>{c('Info').t`No billing details yet`}</Alert>
+                <Alert>{c('Info').t`There are no billing details available for your current subscription.`}</Alert>
+                <Button onClick={handleOpenGiftCodeModal} className="mr1">{c('Action').t`Use gift code`}</Button>
+                <Button onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</Button>
             </>
         );
     }
@@ -80,9 +85,6 @@ const BillingSection = ({ permission }) => {
 
     const { mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } = formatPlans(Plans);
     const subTotal = getSubTotal(Plans);
-
-    const handleOpenGiftCodeModal = () => createModal(<GiftCodeModal />);
-    const handleOpenCreditsModal = () => createModal(<CreditsModal />);
 
     return (
         <>

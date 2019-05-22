@@ -55,12 +55,14 @@ const MembersSection = () => {
             </Alert>
             <Block className="flex flex-spacebetween">
                 <AddMemberButton />
-                <SearchInput
-                    onChange={handleSearch}
-                    placeholder={c('Placeholder').t`Search for User and Addresses`}
-                    delay={500}
-                    value={keywords}
-                />
+                <div>
+                    <SearchInput
+                        onChange={handleSearch}
+                        placeholder={c('Placeholder').t`Search for User and Addresses`}
+                        delay={500}
+                        value={keywords}
+                    />
+                </div>
             </Block>
             <Table>
                 <TableHeader

@@ -1,4 +1,4 @@
-import { useUser, useSubscription } from 'react-components';
+import { useUser, useOrganization } from 'react-components';
 import { USER_ROLES, PERMISSIONS } from 'proton-shared/lib/constants';
 
 const { MEMBER_ROLE, ADMIN_ROLE, FREE_ROLE } = USER_ROLES;
@@ -13,7 +13,7 @@ const ROLES = {
 const usePermissions = () => {
     const permissions = [];
     const [{ Role, isPaid, hasPaidMail, hasPaidVpn }] = useUser();
-    const [{ MaxMembers = 0 } = {}] = useSubscription();
+    const [{ MaxMembers = 0 } = {}] = useOrganization();
 
     permissions.push(ROLES[Role]);
 

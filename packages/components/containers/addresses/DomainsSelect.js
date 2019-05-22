@@ -7,7 +7,7 @@ import { fakeEvent } from '../../helpers/component';
 
 const DomainsSelect = ({ member, onChange, className }) => {
     const [user] = useUser();
-    const [domains, fetchDomains] = useDomains();
+    const [domains] = useDomains();
 
     const { request: requestAvailableDomains, loading } = useApiWithoutResult(queryAvailableDomains);
     const { request: requestPremiumDomains } = useApiWithoutResult(queryPremiumDomains);
@@ -29,7 +29,7 @@ const DomainsSelect = ({ member, onChange, className }) => {
         const [premium, available] = await Promise.all([
             member.Self && user.hasPaidMail ? requestPremiumDomains().then(({ Domains }) => Domains) : [],
             member.Self ? requestAvailableDomains().then(({ Domains }) => Domains) : [],
-            user.hasPaidMail ? fetchDomains() : []
+            user.hasPaidMail ? domains : []
         ]);
 
         const domainNames = [].concat(premium, available, formatDomains(domains));

@@ -15,18 +15,16 @@ const getOptions = (members) => {
             });
             return acc;
         },
-        members.length > 1
-            ? [
-                  {
-                      text: c('Option').t`All users`,
-                      value: ALL_MEMBERS_ID
-                  }
-              ]
-            : []
+        [
+            {
+                text: c('Option').t`All users`,
+                value: ALL_MEMBERS_ID
+            }
+        ]
     );
 };
 
-const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
+const AddressesToolbar = ({ member, onChangeMember, members }) => {
     const options = getOptions(members);
 
     const handleChange = ({ target }) => {
@@ -37,16 +35,9 @@ const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
     return (
         <Row>
             <Label htmlFor="memberSelect">{c('Label').t`User`}</Label>
-            <Field>
-                <Select
-                    disabled={loading}
-                    id="memberSelect"
-                    value={member.ID}
-                    options={options}
-                    className="mr1"
-                    onChange={handleChange}
-                />
-                {member.ID === ALL_MEMBERS_ID ? null : <AddAddressButton loading={loading} member={member} />}
+            <Field className="w100 flex">
+                <Select id="memberSelect" value={member.ID} options={options} className="mr1" onChange={handleChange} />
+                {member.ID === ALL_MEMBERS_ID ? null : <AddAddressButton member={member} />}
             </Field>
         </Row>
     );
@@ -55,8 +46,7 @@ const AddressesToolbar = ({ onChangeMember, member, members, loading }) => {
 AddressesToolbar.propTypes = {
     member: PropTypes.object,
     members: PropTypes.array,
-    onChangeMember: PropTypes.func.isRequired,
-    loading: PropTypes.bool.isRequired
+    onChangeMember: PropTypes.func.isRequired
 };
 
 export default AddressesToolbar;
