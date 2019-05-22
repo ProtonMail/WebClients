@@ -1,7 +1,7 @@
-export const isExpired = ({ ExpMonth, ExpYear } = {}) => {
+export const isExpired = ({ ExpMonth = 12, ExpYear = 9999 } = {}) => {
     const currentTime = new Date();
-    const month = currentTime.getMonth() + 1;
-    const year = currentTime.getFullYear();
+    const currentMonth = currentTime.getMonth() + 1;
+    const currentYear = currentTime.getFullYear();
 
-    return ExpMonth >= month && ExpYear >= year;
+    return currentMonth >= +ExpMonth && currentYear >= +ExpYear;
 };

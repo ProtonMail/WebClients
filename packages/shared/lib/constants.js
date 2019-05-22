@@ -308,6 +308,7 @@ export const PLAN_SERVICES = {
 };
 
 export const FREE_SUBSCRIPTION = {}; // You don't need more, use `user.isPaid`
+export const FREE_ORGANIZATION = {}; // You don't need more, use `user.isPaid`
 
 export const PLAN_NAMES = {
     plus: 'Plus',
