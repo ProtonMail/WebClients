@@ -22,6 +22,7 @@ export { default as Toggle } from './components/toggle/Toggle';
 export { default as Badge } from './components/badge/Badge';
 export { default as Bordered } from './components/container/Bordered';
 export { default as Block } from './components/container/Block';
+export { default as QRCode } from './components/image/QRCode';
 export { default as Row } from './components/container/Row';
 export { default as Field } from './components/container/Field';
 export { default as Information } from './components/container/Information';
