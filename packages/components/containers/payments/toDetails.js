@@ -5,11 +5,15 @@ const formatYear = (year) => {
     return `${pre}${year}`;
 };
 
-const toDetails = ({ number, month: Month, year, cvc: CVC, fullname, zip: ZIP, country: Country }) => {
+const toDetails = ({ number, month: ExpMonth, year, cvc: CVC, fullname, zip: ZIP, country: Country }) => {
     return {
-        Name: clean(fullname), Number: clean(number),
-        Month, Year: formatYear(year), CVC, // Don't clean ZIP, space is allowed
-        ZIP, Country
+        Name: clean(fullname),
+        Number: clean(number),
+        ExpMonth,
+        ExpYear: formatYear(year),
+        CVC, // Don't clean ZIP, space is allowed
+        ZIP,
+        Country
     };
 };
 
