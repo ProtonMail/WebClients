@@ -14,7 +14,10 @@ const BitcoinQRCode = ({ amount, address, type }) => {
     };
 
     useEffect(() => {
-        new QRCode(divRef.current, getURL());
+        const qrcode = new QRCode(divRef.current, getURL());
+        return () => {
+            qrcode.clear();
+        };
     }, []);
 
     return <div ref={divRef} />;
