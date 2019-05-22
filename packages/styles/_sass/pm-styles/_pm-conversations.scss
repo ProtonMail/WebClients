@@ -25,7 +25,7 @@
   background: $conversation-selected-bg;
 }
 
-$conversation-icon-size: 4rem;
+$conversation-icon-size: 4rem !default;
 .conversation-icon {
   width: $conversation-icon-size;
   height: $conversation-icon-size;
@@ -33,6 +33,34 @@ $conversation-icon-size: 4rem;
   border: 1px solid $pm-global-border;
   margin-right: 20px;
 }
+
+.conversation-checkbox {
+  & + .conversation-icon > .conversation-icon-fakecheck {
+    display: none;
+  }
+
+  &:checked + .conversation-icon {
+    background-color: $pm-blue;
+    & > .conversation-abbr {
+      display: none;
+    }
+    & > .conversation-icon-fakecheck {
+      display: flex;
+      
+      animation: conversationIconIn ease .15s;
+    }
+
+  }
+}
+@keyframes conversationIconIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 .conversation-titlesender {
   line-height: 1.3;
