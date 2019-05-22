@@ -43,4 +43,20 @@ describe('useAutocomplete hook', () => {
         expect(result.current.selectedItems).toEqual([newItem]);
         expect(result.current.inputValue).toBe(newItem.label);
     });
+
+    it('should emit onChange when item is added into the list', () => {
+        const onChangeSpy = jest.fn();
+        const newItem = { label: 'test2', value: 'T2' };
+        const initialSelectedItems = [{ label: 'test', value: 'T' }];
+        const { result } = renderHook(() =>
+            useAutocomplete({
+                multiple: true,
+                initialSelectedItems,
+                onChange: onChangeSpy
+            })
+        );
+        expect(onChangeSpy).toHaveBeenCalledTimes(0);
+        act(() => result.current.select(newItem, newItem.label));
+        expect(onChangeSpy).toHaveBeenCalledWith([...initialSelectedItems, newItem]);
+    });
 });

@@ -1,15 +1,26 @@
-import { useState } from 'react';
-
-const defaultItemToLabel = (label) => label;
+import { useState, useEffect, useRef } from 'react';
+import { noop, identity } from 'proton-shared/lib/helpers/function';
 
 const useAutocomplete = ({
     multiple = true,
     initialSelectedItems = [],
     initialInputValue = '',
-    labelToItem = defaultItemToLabel
+    labelToItem = identity,
+    onChange = noop
 } = {}) => {
+    const initializedRef = useRef(false);
     const [selectedItems, setSelectedItems] = useState(initialSelectedItems);
     const [inputValue, changeInputValue] = useState(initialInputValue);
+
+    // We want to emit onChange when items are selected or removed,
+    // but not with the initial values on mount
+    useEffect(() => {
+        if (initializedRef.current) {
+            onChange(selectedItems);
+        } else {
+            initializedRef.current = true;
+        }
+    }, [selectedItems]);
 
     const select = (item, label) => {
         changeInputValue(multiple ? '' : label);
