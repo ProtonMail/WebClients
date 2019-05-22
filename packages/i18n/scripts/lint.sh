@@ -8,7 +8,7 @@ TOTAL=0;
 # Test if we use an invalid format for our translations
 # ex: c('Action').t('Salut')
 function testInvalidFunctionFormat {
-    local TEST=$(awk '/c\(\x27(\w+| \w+ )+\x27\)\.t\(/ {print NR":"$0}' "$1");
+    local TEST=$(awk '/c\(\x27.+\x27\)\.t\(/ {print NR":"$0}' "$1");
     if [[ -n "$TEST" ]]; then
         LIST+=("$1");
 

@@ -29,6 +29,7 @@ function findNoContext(doc) {
 async function validateFunctionFormat(arg = '') {
     const cmd = path.resolve(__dirname, '..', 'scripts/lint.sh');
     try {
+        debug(cmd);
         await execa.shell(`${cmd} ${arg}`, {
             shell: '/bin/bash'
         });
@@ -40,7 +41,7 @@ async function validateFunctionFormat(arg = '') {
 
 function main(mode, { dir } = {}) {
     if (mode === 'lint-functions') {
-        debug(`[lint-functions] validtion path:${dir}`);
+        debug(`[lint-functions] validtion path: ${dir}`);
         return validateFunctionFormat(dir);
     }
 
