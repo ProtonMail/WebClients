@@ -21,10 +21,7 @@ const DomainsSection = () => {
     const { createModal } = useModals();
     const { UsedDomains, MaxDomains } = organization;
     const { call } = useEventManager();
-
-    const open = () => {
-        createModal(<DomainModal />);
-    };
+    const open = () => createModal(<DomainModal />);
 
     return (
         <>

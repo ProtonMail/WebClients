@@ -89,7 +89,8 @@ const IdentitySection = () => {
                 <Label>{c('Label').t`Signature`}</Label>
                 <Field>
                     <div className="pm-label mb1" dangerouslySetInnerHTML={{ __html: address.Signature }} />
-                    <SmallButton className="pm-button--primary" onClick={open}>{c('Action').t`Edit`}</SmallButton>
+                    <SmallButton className="pm-button--primary" onClick={handleOpenModal}>{c('Action')
+                        .t`Edit`}</SmallButton>
                 </Field>
             </Row>
             <Row>

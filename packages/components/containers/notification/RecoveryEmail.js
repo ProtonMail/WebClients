@@ -8,10 +8,7 @@ const RecoveryEmail = () => {
     const { createModal } = useModals();
     const [{ Email } = {}] = useUserSettings();
     const email = Email.Value;
-
-    const open = () => {
-        createModal(<EmailModal email={email} />);
-    };
+    const open = () => createModal(<EmailModal email={email} />);
 
     return (
         <Field className="w100">
