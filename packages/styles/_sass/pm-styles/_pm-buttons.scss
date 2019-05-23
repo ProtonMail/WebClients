@@ -38,7 +38,8 @@
     background: radial-gradient(closest-side, $white, $pm-global-border 90%);
     box-shadow: none;
   }
-  &[disabled] {
+  &[disabled],
+  &.is-disabled {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
     pointer-events: none;
@@ -67,7 +68,8 @@
   &.is-active {
     background: rgba(0, 0, 0, 0.5);
   }
-  &[disabled] {
+  &[disabled],
+  &.is-disabled {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
     pointer-events: none;
@@ -96,7 +98,8 @@
     text-shadow: 1px 1px 10px rgba( $white, .3 ),-1px -1px 10px rgba( $white, .3 );
     box-shadow: none;
   }
-  &[disabled] {
+  &[disabled],
+  &.is-disabled {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
     border-color: $pm-global-border;
@@ -128,7 +131,8 @@
     background: radial-gradient(closest-side, $white, $pm-global-border 90%);
     box-shadow: none;
   }
-  &[disabled] {
+  &[disabled],
+  &.is-disabled {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
     border-color: $pm-global-border;
@@ -155,7 +159,8 @@
   &.is-active {
     background: rgba(0, 0, 0, 0.5);
   }
-  &[disabled] {
+  &[disabled],
+  &.is-disabled {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
     border-color: $pm-global-border;
@@ -181,7 +186,8 @@
     text-shadow: 1px 1px 10px rgba( $white, .3 ),-1px -1px 10px rgba( $white, .3 );
     box-shadow: none;
   }
-  &[disabled] {
+  &[disabled],
+  &.is-disabled {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
     border-color: $pm-global-border;
@@ -213,7 +219,8 @@
     background: radial-gradient(closest-side, $white, $pm-global-border 90%);
     box-shadow: none;
   }
-  &[disabled] {
+  &[disabled],
+  &.is-disabled {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
     border: 1px solid $pm-global-border;
@@ -240,7 +247,8 @@
   &.is-active {
     background: rgba(0, 0, 0, 0.5);
   }
-  &[disabled] {
+  &[disabled],
+  &.is-disabled {
     background-color: $pm-global-muted;
     color: rgba( $pm-global-grey, .3 );
     border-color: $pm-global-border;
