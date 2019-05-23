@@ -24,7 +24,7 @@ const AutoReplySection = () => {
                     <Label htmlFor="autoReplyToggle" className="flex-item-centered-vert">{c('Label')
                         .t`Auto-reply`}</Label>
                     <Field>
-                        <AutoReplyToggle id="autoReplyToggle" />
+                        <AutoReplyToggle autoresponder={AutoResponder} id="autoReplyToggle" />
                     </Field>
                 </Row>
 

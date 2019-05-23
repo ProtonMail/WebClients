@@ -1,20 +1,31 @@
-import React from 'react';
-import { Toggle, useToggle, useEventManager, useApiWithoutResult, useMailSettings } from 'react-components';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Toggle, useToggle, useEventManager, useApiWithoutResult } from 'react-components';
 import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
 
-const AutoReplyToggle = ({ ...rest }) => {
-    const [{ AutoResponder }] = useMailSettings();
+const AutoReplyToggle = ({ autoresponder: AutoResponder, ...rest }) => {
     const { state, toggle } = useToggle(!!AutoResponder.IsEnabled);
     const { call } = useEventManager();
-    const { request, loading } = useApiWithoutResult(updateAutoresponder);
+    const { request } = useApiWithoutResult(updateAutoresponder);
+    const [loading, setLoading] = useState(false);
 
     const handleToggle = async ({ target }) => {
-        await request({ ...AutoResponder, IsEnabled: +target.checked });
-        await call();
-        toggle();
+        try {
+            setLoading(true);
+            await request({ ...AutoResponder, IsEnabled: target.checked });
+            await call();
+            setLoading(false);
+            toggle();
+        } catch (error) {
+            setLoading(false);
+        }
     };
 
     return <Toggle {...rest} loading={loading} checked={state} onChange={handleToggle} />;
+};
+
+AutoReplyToggle.propTypes = {
+    autoresponder: PropTypes.object
 };
 
 export default AutoReplyToggle;
