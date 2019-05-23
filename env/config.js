@@ -101,23 +101,6 @@ const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
     return API_TARGETS[type] || API_TARGETS.dev;
 };
 
-const buildHost = (branch) => {
-    if (isTorBranch(branch)) {
-        return TOR_URL;
-    }
-
-    const [, target] = (branch || argv.branch || '').match(/-(prod|beta|dev|old)/) || [];
-    if (target && API_TARGETS[target]) {
-        return API_TARGETS[target].replace(/\api$/, '');
-    }
-
-    if (isProdBranch(branch || argv.branch)) {
-        return API_TARGETS.prod.replace(/\api$/, '');
-    }
-
-    return API_TARGETS.build.replace(/\api$/, '');
-};
-
 /**
  * Get correct sentry UR/releaseL config for the current env
  * release can be undefined if we don't have a release available
@@ -141,8 +124,8 @@ const sentryConfig = (branch) => {
     return {};
 };
 
-const getHostURL = (encoded, branch) => {
-    const url = `${buildHost(branch)}assets/host.png`;
+const getHostURL = (encoded) => {
+    const url = `/assets/host.png`;
 
     if (encoded) {
         const encoder = (input) => (input !== ':' ? `%${input.charCodeAt(0).toString(16)}` : ':');
@@ -151,10 +134,6 @@ const getHostURL = (encoded, branch) => {
                 return acc;
             }
 
-            // if encoded it will be evaluate as a relative URL
-            if (i === 0) {
-                return chunk + '/';
-            }
             const val = chunk
                 .split('')
                 .map(encoder)
