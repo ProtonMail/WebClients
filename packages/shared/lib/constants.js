@@ -336,3 +336,8 @@ export const PERMISSIONS = {
     PAID_MAIL: 'paid-mail',
     PAID_VPN: 'paid-vpn'
 };
+
+export const MESSAGE_BUTTONS = {
+    READ_UNREAD: 0,
+    UNREAD_READ: 1
+};
