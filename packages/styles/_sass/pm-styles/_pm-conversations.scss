@@ -3,7 +3,7 @@
  */
 
 .conversations-column-list {
-  width: calc( (100% + #{$width-sidebar}) * #{$conversations-column-width/1%/100} );
+  width: calc( (100% + var(--width-sidebar, #{$width-sidebar}) ) * #{$conversations-column-width/1%/100} );
   border-right: 1px solid $pm-global-border;
 }
 

@@ -91,7 +91,7 @@
    */
 
   .sidebar[aria-hidden="true"] {
-    transform: translateX(-#{$width-sidebar});
+    transform: translateX(calc( var(--width-sidebar, #{$width-sidebar}) * (-1) ));
     width: 0;
     visibility: hidden;
     opacity: 0;
@@ -100,7 +100,7 @@
   @if $rtl-option == true {
     [dir="rtl"] {
       .sidebar[aria-hidden="true"] {
-        transform: translateX(#{$width-sidebar});
+        transform: translateX( var(--width-sidebar, #{$width-sidebar}) );
       }
     }
   }

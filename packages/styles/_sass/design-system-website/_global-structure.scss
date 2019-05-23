@@ -63,7 +63,7 @@ body {
 .sidebar {
   min-height: calc(100vh - #{$header-height});
   max-height: calc(100vh - #{$header-height});
-  width: $width-sidebar;
+  width: var(--width-sidebar, $width-sidebar);
   visibility: visible;
   transition: visibility 0s ease, transform 1s ease, width .6s ease , opacity 1s ease ;
   transition-delay: 0s;
@@ -71,7 +71,7 @@ body {
 }
 
 .logo-container {
-  width: calc( #{$width-sidebar} - 2rem); //padding left .header
+  width: calc( var(--width-sidebar, #{$width-sidebar}) - 2rem); //padding left .header
 }
 .logo {
   width: 148px;
@@ -214,7 +214,7 @@ body {
 }
 
 .subnav {
-  width: $subnav-width;
+  width: var(--width-subnav, $subnav-width);
 }
 .subnav-inner {
   position: -webkit-sticky;
