@@ -9,6 +9,7 @@ import { SubscriptionModel } from './subscriptionModel';
 import { LabelsModel } from './labelsModel';
 import { FiltersModel } from './filtersModel';
 import { MembersModel } from './membersModel';
+import { DomainsModel } from './domainsModel';
 import { STATUS } from './cache';
 
 // TODO: Should list all models.
@@ -17,6 +18,7 @@ const MODELS_MAP = [
     UserSettingsModel,
     MailSettingsModel,
     AddressesModel,
+    DomainsModel,
     LabelsModel,
     FiltersModel,
     SubscriptionModel,
