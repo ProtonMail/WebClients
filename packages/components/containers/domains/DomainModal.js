@@ -32,7 +32,7 @@ const DomainModal = ({ onClose, domain, ...rest }) => {
         }
     ];
 
-    if (domain.ID) {
+    if (domainModel.ID) {
         STEPS.push({ label: c('Label in domain modal').t`Verify`, section: <VerifySection domain={domainModel} /> });
     }
 
@@ -49,8 +49,8 @@ const DomainModal = ({ onClose, domain, ...rest }) => {
     }
 
     const verifyDomain = async () => {
-        const data = await api(getDomain(domainModel.ID));
-        const { VerifyState } = data.Domain || {};
+        const { Domain = {} } = await api(getDomain(domainModel.ID));
+        const { VerifyState } = Domain;
 
         if (VerifyState === VERIFY_STATE_DEFAULT) {
             throw new Error(c('Error').t`Verification did not succeed, please try again in an hour.`);
@@ -63,7 +63,7 @@ const DomainModal = ({ onClose, domain, ...rest }) => {
             );
         }
 
-        return data.Domain;
+        return Domain;
     };
 
     const handleSubmit = async () => {
@@ -95,7 +95,7 @@ const DomainModal = ({ onClose, domain, ...rest }) => {
             onClose={onClose}
             onSubmit={handleSubmit}
             close={c('Action').t`Close`}
-            submit={step < STEPS.length - 1 ? c('Action').t`Next` : c('Action').t`Finish`}
+            submit={c('Action').t`Next`}
             title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}
             {...rest}
         >

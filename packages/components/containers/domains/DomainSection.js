@@ -26,6 +26,7 @@ const DomainSection = ({ domain, onChange }) => {
                     ) : (
                         <Input
                             id="domainName"
+                            autoFocus={true}
                             value={domainName}
                             placeholder={c('Placeholder').t`yourdomain.com`}
                             onChange={handleChange}
