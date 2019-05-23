@@ -83,7 +83,8 @@ const list = [
 
     new SriPlugin({
         hashFuncNames: ['sha384'],
-        enabled: isDistRelease
+        enabled: isDistRelease,
+        ignored: /index.+\.css$/
     }),
 
     new webpack.DefinePlugin({

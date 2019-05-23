@@ -15,12 +15,7 @@ function bindHTMLSRI {
     local oldHashJS="$(sriGenerator "$oldIndexJS")";
     local newHashJS="$(sriGenerator "$newIndexJS")";
 
-    local oldIndexCSS="$(find distCurrent -type f -name 'index.*.css')";
-    local newIndexCSS="$(find dist -type f -name 'index.*.css')";
-    local oldHashCSS="$(sriGenerator "$oldIndexCSS")";
-    local newHashCSS="$(sriGenerator "$newIndexCSS")";
-
-    echo $HTML | sed "s|sha384-$oldHashJS|sha384-$newHashJS|g;s|sha384-$oldHashCSS|sha384-$newHashCSS|g;" > 'dist/index.html';
+    echo $HTML | sed "s|sha384-$oldHashJS|sha384-$newHashJS|g;" > 'dist/index.html';
 }
 
 # Update hashes for ref files inside the index.js
@@ -86,7 +81,6 @@ function validateConfigFile {
 #   - Check if SRI of new files are inside index.js
 #   - Check if the config is valid
 #   - Check if index.html contains the right SRI for index.js
-#   - Check if index.html contains the right SRI for index.css
 function validate {
     local files=$(find dist -type f -name '*.chunk.js' ! -name 'vendor*' ! -name 'app*');
     local newIndex="$(find dist -type f -name 'index.*.js')";
@@ -104,14 +98,6 @@ function validate {
     local hashIndex="$(sriGenerator "$newIndex")";
     if ! grep -q "$hashIndex" "dist/index.html"; then
         VALIDATE_ERRORS+=("[$1] Wrong SRI inside index.html for $newIndex");
-    fi;
-
-    local mainCSS=$(find dist -maxdepth 1 -type f -name 'index*.css' );
-    local hashCSS="$(sriGenerator "$mainCSS")";
-
-    if ! grep -q "$hashCSS" "dist/index.html"; then
-        echo "OKOKO"
-        VALIDATE_ERRORS+=("[$1] Wrong SRI inside index.html for $mainCSS");
     fi;
 
     # Log errors and break

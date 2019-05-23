@@ -104,26 +104,6 @@ async function replaceSRI() {
 }
 
 /**
- * Sync new SRI config:
- *     - Generate hash for files with the modifications
- *     - Replace them inside index.js
- *     - Then we replace the SRI of index.js inside index.htmll
- * @return {Promise}
- */
-async function replaceUrls(newBranch, oldBranch) {
-    const files = "find dist -type f -name '*.css'";
-    const rule = [false, true]
-        .map((test) => ({
-            from: env.getHostURL(test, oldBranch),
-            to: env.getHostURL(test, newBranch)
-        }))
-        .map(({ from, to }) => `s|${from}|${to}|`)
-        .join(';');
-
-    await sed(rule, files);
-}
-
-/**
  * Check if the sub-build is valid
  *     - Correct SRI for updated files
  *     - Correct SRI for the index
@@ -172,7 +152,6 @@ const buildCustomApp = async (branch, { start, end, originBranch, deployBranch }
 
     // Replace the correct sentry URL
     await replace(`s|${sentry.sentry}|${sentryB.sentry}|g;`);
-    await replaceUrls(branch, deployBranch);
     await replaceSRI();
     await validateBuild(branch);
 
