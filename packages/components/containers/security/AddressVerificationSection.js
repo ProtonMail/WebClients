@@ -11,11 +11,13 @@ import {
     Toggle,
     useApiWithoutResult,
     useToggle,
-    useEventManager
+    useEventManager,
+    useNotifications
 } from 'react-components';
 import { useMailSettings } from '../../models/mailSettingsModel';
 
 const AddressVerificationSection = () => {
+    const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [mailSettings] = useMailSettings();
     const { state, toggle } = useToggle(!!mailSettings.PromptPin);
@@ -24,8 +26,9 @@ const AddressVerificationSection = () => {
     const handleChange = async ({ target }) => {
         const newValue = target.checked;
         await request(+newValue);
-        call();
+        await call();
         toggle();
+        createNotification({ text: c('Success').t`Preference saved` });
     };
 
     return (

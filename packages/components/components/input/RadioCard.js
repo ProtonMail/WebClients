@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Bordered, Radio } from 'react-components';
+import { Radio } from 'react-components';
 
 const RadioCard = ({ value, checked, label, name, id, children, onChange, disabled, ...rest }) => {
     return (
-        <Bordered htmlFor={id} className="mr1">
-            <div className="flex mb1">
-                <Radio
-                    name={name}
-                    id={id}
-                    value={value}
-                    checked={checked}
-                    onChange={onChange}
-                    disabled={disabled}
-                    {...rest}
-                />
-                <span className="ml0-5">{label}</span>
-            </div>
+        <Radio
+            className="mr1 bordered-container p1 inbl"
+            name={name}
+            id={id}
+            value={value}
+            checked={checked}
+            onChange={onChange}
+            disabled={disabled}
+            {...rest}
+        >
+            <span className="ml0-5">{label}</span>
+            <br />
+            <br />
             {children}
-        </Bordered>
+        </Radio>
     );
 };
 

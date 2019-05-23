@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { SubTitle, Row, Field, Label, useMailSettings, SmallButton, useModals } from 'react-components';
+import { SubTitle, Row, Field, Label, useMailSettings, Button, useModals } from 'react-components';
 
 import ShortcutsToggle from './ShortcutsToggle';
 import ShortcutsModal from './ShortcutsModal';
@@ -27,7 +27,7 @@ const ShortcutsSection = () => {
                 <Field className="w100">
                     <ShortcutsToggle className="mr1" id="hotkeysToggle" hotkeys={hotkeys} onChange={handleChange} />
                     {hotkeys ? (
-                        <SmallButton onClick={handleOpenModal}>{c('Action').t`View keyboard shortcuts`}</SmallButton>
+                        <Button onClick={handleOpenModal}>{c('Action').t`View keyboard shortcuts`}</Button>
                     ) : null}
                 </Field>
             </Row>

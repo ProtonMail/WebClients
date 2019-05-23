@@ -1,16 +1,6 @@
 import React from 'react';
-import {
-    SubTitle,
-    Row,
-    Field,
-    Label,
-    useModals,
-    useMailSettings,
-    useEventManager,
-    useApiWithoutResult,
-    Alert
-} from 'react-components';
-import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
+import { SubTitle, Row, Field, Label, useModals, useMailSettings, Alert } from 'react-components';
+
 import { c } from 'ttag';
 import AutoReplyModal from './AutoReplyModal';
 import AutoReplyToggle from './AutoReplyToggle';
@@ -19,17 +9,7 @@ import AutoReplyTemplate from './AutoReplyTemplate';
 const AutoReplySection = () => {
     const { createModal } = useModals();
     const [{ AutoResponder }] = useMailSettings();
-    const { call } = useEventManager();
-    const { request } = useApiWithoutResult(updateAutoresponder);
-
-    const toggleEnabled = async () => {
-        await request({ ...AutoResponder, IsEnabled: !AutoResponder.IsEnabled });
-        call();
-    };
-
-    const handleOpenModal = () => {
-        createModal(<AutoReplyModal />);
-    };
+    const handleOpenModal = () => createModal(<AutoReplyModal />);
 
     return (
         <>
@@ -44,11 +24,7 @@ const AutoReplySection = () => {
                     <Label htmlFor="autoReplyToggle" className="flex-item-centered-vert">{c('Label')
                         .t`Auto-reply`}</Label>
                     <Field>
-                        <AutoReplyToggle
-                            id="autoReplyToggle"
-                            onToggle={toggleEnabled}
-                            enabled={AutoResponder.IsEnabled}
-                        />
+                        <AutoReplyToggle id="autoReplyToggle" />
                     </Field>
                 </Row>
 
