@@ -25,10 +25,10 @@ const DomainsSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Manage custom domains`}</SubTitle>
+            <SubTitle>{c('Title').t`Custom domains`}</SubTitle>
             <Alert learnMore="https://protonmail.com/support/categories/custom-domains/">
                 {c('Message')
-                    .t`Add a custom filter to perform actions such as automatically labeling or archiving messages.`}
+                    .t`Add a domain to receive emails to your custom email addresses and to add more users to your organization (Visionary and Professional accounts only).`}
             </Alert>
             <Block>
                 <PrimaryButton onClick={open} className="mr1">{c('Action').t`Add domain`}</PrimaryButton>

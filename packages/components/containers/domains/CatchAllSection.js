@@ -7,7 +7,7 @@ const CatchAllSection = () => {
         <>
             <SubTitle>{c('Title').t`Catch all `}</SubTitle>
             <Alert learnMore="TODO">{c('Info')
-                .t`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere libero nec nunc feugiat, id efficitur augue vestibulum. Mauris nec commodo turpis.`}</Alert>
+                .t`To select the catch-all email address of a domain, open the action dropdown menu and click on Set catch-all`}</Alert>
         </>
     );
 };

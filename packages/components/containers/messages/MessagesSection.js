@@ -17,7 +17,7 @@ const MessagesSection = () => {
             <SubTitle>{c('Title').t`Messages`}</SubTitle>
             <Row>
                 <Label htmlFor="remoteToggle">
-                    <span className="mr1">{c('Label').t`Auto-load remote content`}</span>
+                    <span className="mr0-5">{c('Label').t`Auto-load remote content`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/images-by-default/" />
                 </Label>
                 <Field>
@@ -26,7 +26,7 @@ const MessagesSection = () => {
             </Row>
             <Row>
                 <Label htmlFor="embeddedToggle">
-                    <span className="mr1">{c('Label').t`Auto-load embedded images`}</span>
+                    <span className="mr0-5">{c('Label').t`Auto-load embedded images`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/images-by-default/" />
                 </Label>
                 <Field>
@@ -35,7 +35,7 @@ const MessagesSection = () => {
             </Row>
             <Row>
                 <Label htmlFor="showMovedToggle">
-                    <span className="mr1">{c('Label').t`Sent/Drafts`}</span>
+                    <span className="mr0-5">{c('Label').t`Sent/Drafts`}</span>
                     <Info
                         title={c('Tooltip')
                             .t`Setting to 'Include moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder.`}

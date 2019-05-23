@@ -7,7 +7,8 @@ import {
     ConfirmModal,
     useModals,
     useApiWithoutResult,
-    useNotifications
+    useNotifications,
+    useEventManager
 } from 'react-components';
 import { deleteDomain } from 'proton-shared/lib/api/domains';
 
@@ -18,10 +19,11 @@ const DomainActions = ({ domain }) => {
     const { request } = useApiWithoutResult(deleteDomain);
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
+    const { call } = useEventManager();
 
     const handleConfirmDelete = async () => {
         await request(domain.ID);
-        // TODO: Show loader somewhere
+        await call();
         createNotification({ text: c('Success message').t`Domain deleted` });
     };
 
@@ -31,7 +33,7 @@ const DomainActions = ({ domain }) => {
             onClick: () => createModal(<DomainModal domain={domain} />)
         },
         {
-            text: c('Action').t`Catch all`,
+            text: c('Action').t`Set catch-all`,
             onClick: () => createModal(<CatchAllModal domain={domain} />)
         },
         {

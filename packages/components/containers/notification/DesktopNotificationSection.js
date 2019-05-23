@@ -9,7 +9,7 @@ const DesktopNotificationSection = () => {
             <SubTitle>{c('Title').t`Desktop notification`}</SubTitle>
             <Row>
                 <Label>
-                    <span className="mr1">{c('Label').t`Desktop notification`}</span>
+                    <span className="mr0-5">{c('Label').t`Desktop notification`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/desktop-notifications/" />
                 </Label>
                 <Field className="w100">

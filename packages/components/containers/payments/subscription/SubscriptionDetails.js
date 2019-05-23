@@ -107,7 +107,7 @@ const SubscriptionDetails = ({ model, plans, check, onChange }) => {
             {model.coupon ? (
                 <div className="flex flex-spacebetween mb1 pb1 border-bottom">
                     <div>
-                        <span className="mr1">
+                        <span className="mr0-5">
                             {c('Label').t`Coupon`} {model.coupon}
                         </span>
                         <CouponDiscountBadge code={model.coupon} />

@@ -7,7 +7,7 @@ import { c } from 'ttag';
 const LinkItem = ({ route, text, permission }) => {
     return (
         <Link to={route}>
-            <span className="mr1">{text}</span>
+            <span className="mr0-5">{text}</span>
             {permission ? null : (
                 <Tooltip title={c('Tag').t`Premium feature`}>
                     <Icon name="starfull" fill="attention" />

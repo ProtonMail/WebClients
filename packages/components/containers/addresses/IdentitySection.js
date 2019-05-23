@@ -78,7 +78,7 @@ const IdentitySection = () => {
             </Row>
             <Row>
                 <Label>
-                    <span className="mr1">{c('Label').t`Display name`}</span>
+                    <span className="mr0-5">{c('Label').t`Display name`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/display-name-and-signature/" />
                 </Label>
                 <Field className="flex flex-spacebetween">

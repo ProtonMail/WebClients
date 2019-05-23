@@ -199,7 +199,7 @@ const PlansSection = () => {
                             </tr>
                             <tr>
                                 <td className="bg-global-muted">
-                                    <span className="mr1">{c('Header').t`Messages per day`}</span>
+                                    <span className="mr0-5">{c('Header').t`Messages per day`}</span>
                                     <Info
                                         title={c('Tooltip').t`ProtonMail cannot be used for bulk sending or spamming`}
                                     />
@@ -229,7 +229,7 @@ const PlansSection = () => {
                             ) : null}
                             <tr>
                                 <td className="bg-global-muted">
-                                    <span className="mr1">{c('Header').t`Custom domains`}</span>
+                                    <span className="mr0-5">{c('Header').t`Custom domains`}</span>
                                     <Info title={c('Tooltip').t`Use your own domain name`} />
                                 </td>
                                 <td className="aligncenter">
@@ -241,7 +241,7 @@ const PlansSection = () => {
                             </tr>
                             <tr>
                                 <td className="bg-global-muted">
-                                    <span className="mr1">{c('Header').t`IMAP / SMTP support`}</span>
+                                    <span className="mr0-5">{c('Header').t`IMAP / SMTP support`}</span>
                                     <Info title={c('Tooltip').t`Use ProtonMail with a desktop email client`} />
                                 </td>
                                 <td className="aligncenter">
@@ -373,7 +373,7 @@ const PlansSection = () => {
                             ) : null}
                             <tr>
                                 <td className="bg-global-muted">
-                                    <span className="mr1">ProtonVPN</span>
+                                    <span className="mr0-5">ProtonVPN</span>
                                     <Info title={c('Tooltip').t`ProtonVPN keeps your Internet traffic private`} />
                                 </td>
                                 <td className="aligncenter">

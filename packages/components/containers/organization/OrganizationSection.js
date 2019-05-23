@@ -56,7 +56,7 @@ const OrganizationSection = () => {
             <Row>
                 <Label>{c('Label').t`Organization name`}</Label>
                 <Field>
-                    <span className="mr1">{Name}</span>
+                    <span className="mr0-5">{Name}</span>
                     <SmallButton onClick={handleOpenModal}>{c('Action').t`Edit`}</SmallButton>
                 </Field>
             </Row>

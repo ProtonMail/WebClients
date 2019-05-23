@@ -69,11 +69,11 @@ const MembersSection = () => {
                     cells={[
                         c('Title header for members table').t`Name`,
                         <>
-                            {c('Title header for members table').t`Role`}
+                            <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
                             <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
                         </>,
                         <>
-                            {c('Title header for members table').t`Private`}
+                            <span className="mr0-5">{c('Title header for members table').t`Private`}</span>
                             <Info url="https://protonmail.com/support/knowledge-base/private-members/" />
                         </>,
                         c('Title header for members table').t`Addresses`,
@@ -89,9 +89,9 @@ const MembersSection = () => {
                                 key={key}
                                 cells={[
                                     member.Name,
-                                    <MemberAddresses key={key} member={member} />,
                                     <MemberRole key={key} member={member} />,
                                     <MemberPrivate key={key} member={member} />,
+                                    <MemberAddresses key={key} member={member} />,
                                     <MemberFeatures key={key} member={member} />,
                                     <MemberActions key={key} member={member} organization={organization} />
                                 ]}
@@ -100,8 +100,11 @@ const MembersSection = () => {
                     })}
                 </TableBody>
             </Table>
+            <Block>
+                {organization.UsedMembers} / {organization.MaxMembers} {c('Info').t`members used`}
+            </Block>
             <Alert>
-                <span className="mr1">{c('Info').t`You can add and manage addresses for the user in your`}</span>
+                <span className="mr0-5">{c('Info').t`You can add and manage addresses for the user in your`}</span>
                 <Link to="/settings/addresses">{c('Link').t`Address settings`}</Link>
             </Alert>
         </>

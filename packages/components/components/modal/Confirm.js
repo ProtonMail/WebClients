@@ -29,12 +29,10 @@ Confirm.propTypes = {
     children: PropTypes.node.isRequired,
     cancel: PropTypes.string.isRequired,
     confirm: PropTypes.string.isRequired,
-    show: PropTypes.bool.isRequired,
     loading: PropTypes.bool
 };
 
 Confirm.defaultProps = {
-    show: false,
     cancel: c('Action').t`Cancel`,
     confirm: c('Action').t`Confirm`,
     title: c('Action').t`Confirm`

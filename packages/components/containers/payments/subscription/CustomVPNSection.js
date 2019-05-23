@@ -74,7 +74,7 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                     </tr>
                     <tr>
                         <td>
-                            <span className="mr1">{c('Header').t`Speed`}</span>
+                            <span className="mr0-5">{c('Header').t`Speed`}</span>
                             <Info title={c('Tooltip').t`Download and stream faster with a faster VPN connection.`} />
                         </td>
                         <td className="aligncenter">{c('VPN speed').t`High`}</td>
@@ -82,7 +82,7 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                     </tr>
                     <tr>
                         <td>
-                            <span className="mr1">{c('Header').t`Simultaneous connections`}</span>
+                            <span className="mr0-5">{c('Header').t`Simultaneous connections`}</span>
                             <Info
                                 title={c('Tooltip')
                                     .t`More connections allows more devices to use ProtonVPN at the same time.`}
@@ -146,7 +146,7 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                     </tr>
                     <tr>
                         <td>
-                            <span className="mr1">{c('Header').t`Tor over VPN`}</span>
+                            <span className="mr0-5">{c('Header').t`Tor over VPN`}</span>
                             <Info
                                 url="https://protonvpn.com/support/tor-vpn/"
                                 title={c('Tooltip').t`Easily route your traffic through the Tor anonymity network.`}
@@ -161,7 +161,7 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                     </tr>
                     <tr>
                         <td>
-                            <span className="mr1">{c('Header').t`Secure core`}</span>
+                            <span className="mr0-5">{c('Header').t`Secure core`}</span>
                             <Info
                                 url="https://protonvpn.com/support/secure-core-vpn/"
                                 title={c('Tooltip')

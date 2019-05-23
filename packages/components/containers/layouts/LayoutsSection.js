@@ -87,7 +87,7 @@ const LayoutsSection = () => {
             <Alert>{c('Info').t`Lorem ipsum`}</Alert>
             <Row>
                 <Label htmlFor="composerMode">
-                    <span className="mr1">{c('Label').t`Default Composer`}</span>
+                    <span className="mr0-5">{c('Label').t`Default Composer`}</span>
                     <Info
                         url="https://protonmail.com/support/knowledge-base/composer/"
                         title={c('Tooltip')
@@ -103,7 +103,7 @@ const LayoutsSection = () => {
             </Row>
             <Row>
                 <Label htmlFor="layoutMode">
-                    <span className="mr1">{c('Label').t`Default Inbox`}</span>
+                    <span className="mr0-5">{c('Label').t`Default Inbox`}</span>
                     <Info
                         url="https://protonmail.com/support/knowledge-base/change-inbox-layout/"
                         title={c('Tooltip')
@@ -119,7 +119,7 @@ const LayoutsSection = () => {
             </Row>
             <Row>
                 <Label htmlFor="viewMode">
-                    <span className="mr1">{c('Label').t`Conversations`}</span>
+                    <span className="mr0-5">{c('Label').t`Conversations`}</span>
                     <Info
                         title={c('Tooltip')
                             .t`Conversation grouping automatically groups messages in the same conversation together.`}
@@ -135,7 +135,7 @@ const LayoutsSection = () => {
             {ViewMode === GROUP ? (
                 <Row>
                     <Label htmlFor={'stickyLabelsToggle'}>
-                        <span className="mr1">{c('Label').t`Use sticky labels`}</span>
+                        <span className="mr0-5">{c('Label').t`Use sticky labels`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`When a label is added to a message in a conversation, all future messages you send or receive will have that same label automatically applied.`}

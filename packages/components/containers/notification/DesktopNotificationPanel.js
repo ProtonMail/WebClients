@@ -40,7 +40,7 @@ const DesktopNotificationPanel = () => {
     return (
         <Block>
             <Block>
-                <span className="mr1">{c('Info').t`Desktop notifications are currently`}</span>
+                <span className="mr0-5">{c('Info').t`Desktop notifications are currently`}</span>
                 {status ? (
                     <Badge type="success">{c('Badge').t`Enabled`}</Badge>
                 ) : (

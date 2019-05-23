@@ -12,7 +12,7 @@ const RecoveryEmail = () => {
 
     return (
         <Field className="w100">
-            <span className="mr1">{email}</span>
+            <span className="mr0-5">{email}</span>
             <PrimaryButton onClick={open}>{c('Action').t`Edit`}</PrimaryButton>
         </Field>
     );
