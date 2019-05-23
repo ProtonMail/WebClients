@@ -1,15 +1,20 @@
-# [3.15.36] - 2019-05-22
-## Added
-- Link confirmation is now saved on an account level
-
-## Fixed
-- Contact groups did not show as available in some cases
-- Moving multiple conversations did not always move all of them
-- Contact suggestions were not shown for all addresses
-- Label checkmarks were not shown in the Row layout
+# [3.15.37] - 2019-05-23
 
 ## Changed
-- @pm.me address remained in as a default one after downgrading
+- The web-app did not load properly in some rare situations.
+
+# [3.15.36] - 2019-05-22
+## Added
+- Link confirmation is now saved on an account level.
+
+## Fixed
+- Contact groups did not show as available in some cases.
+- Moving multiple conversations did not always move all of them.
+- Contact suggestions were not shown for all addresses.
+- Label checkmarks were not shown in the Row layout.
+
+## Changed
+- @pm.me address remained in as a default one after downgrading.
 
 # [3.15.35] - 2019-05-15
 
