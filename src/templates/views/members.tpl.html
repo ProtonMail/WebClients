@@ -246,6 +246,11 @@
                                                 class="pm_button link"
                                                 data-model="member"></member-edit-btn>
 
+                                            <member-edit-btn
+                                                ng-if="!member.Self"
+                                                data-action="revokeSessions"
+                                                class="pm_button link"
+                                                data-model="member"></member-edit-btn>
                                         </div>
                                     </div>
                                 </td>

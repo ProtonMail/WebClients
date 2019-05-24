@@ -26,6 +26,7 @@ function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, aut
     const remove = ({ ID }) => memberApi.remove(ID);
     const changeRole = ({ ID }, payload) => memberApi.role(ID, payload);
     const makePrivate = ({ ID }) => memberApi.privatize(ID);
+    const revokeSessions = ({ ID }) => memberApi.revokeSessions(ID);
     const login = ({ ID }, credentials) => memberApi.authenticate(ID, credentials);
     const formatUserMember = () => {
         _.extend(USER_MEMBER, {
@@ -119,6 +120,7 @@ function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, aut
         clear,
         remove,
         changeRole,
+        revokeSessions,
         makePrivate,
         login,
         getAll,

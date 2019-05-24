@@ -4,9 +4,7 @@ import { PAID_ADMIN_ROLE } from '../../constants';
 
 /* @ngInject */
 function memberActions(
-    addressModel,
     askPassword,
-    authentication,
     confirmModal,
     domainModel,
     eventManager,
@@ -51,6 +49,14 @@ function memberActions(
                 )
             }
         },
+        REVOKE_SESSIONS: {
+            title: gettextCatalog.getString('Revoke Sessions', null, 'Title'),
+            message: gettextCatalog.getString(
+                'You are about to revoke all sessions. The user will be automatically logged out of all sessions and pompted to log back in. Are you sure you want to revoke all sessions ?',
+                null,
+                'Info'
+            )
+        },
         MAKE_PRIVATE: {
             title: gettextCatalog.getString('Privatize User', null, 'Title'),
             message: gettextCatalog.getString(
@@ -75,6 +81,7 @@ function memberActions(
                 'Info'
             )
         },
+        SUCCESS_REVOKE: gettextCatalog.getString('All the sessions have been successfully revoked', null, 'Success'),
         SUCCESS_REMOVE: gettextCatalog.getString('User removed', null, 'Info'),
         SUCCESS_CHANGE_ROLE: gettextCatalog.getString('Role updated', null, 'Info'),
         SUCCESS_CHANGE_STATUS: gettextCatalog.getString('Status Updated', null, 'Info'),
@@ -170,6 +177,26 @@ function memberActions(
     const makeAdmin = changeRole(2);
     const revokeAdmin = changeRole(1);
 
+    const revokeSessions = (member) => {
+        const { title, message } = I18N.REVOKE_SESSIONS;
+        confirmModal.activate({
+            params: {
+                title,
+                message,
+                confirm() {
+                    const promise = memberModel.revokeSessions(member).then(() => {
+                        notification.success(I18N.SUCCESS_REVOKE);
+                        confirmModal.deactivate();
+                    });
+                    networkActivityTracker.track(promise);
+                },
+                cancel() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
     const makePrivate = (member) => {
         const { title, message } = I18N.MAKE_PRIVATE;
         confirmModal.activate({
@@ -237,6 +264,7 @@ function memberActions(
         revokeAdmin,
         makePrivate,
         enableSupport,
+        revokeSessions,
         addFromDomain
     };
 }
