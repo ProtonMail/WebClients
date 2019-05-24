@@ -14,9 +14,10 @@ const PGPSchemeSelect = ({ id, pgpScheme }) => {
     ];
 
     const handleChange = async ({ target }) => {
-        await request(target.value);
-        await call();
-        setValue(target.value);
+        const pgpScheme = +target.value;
+        await request(pgpScheme);
+        call();
+        setValue(pgpScheme);
     };
 
     return <Select id={id} value={value} options={options} disabled={loading} onChange={handleChange} />;
