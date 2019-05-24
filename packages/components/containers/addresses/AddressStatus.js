@@ -9,23 +9,23 @@ const AddressStatus = ({ address, index }) => {
     const { Status, Receive, DomainID, HasKeys } = address;
 
     if (!index) {
-        badges.push({ text: c('Badge').t`Default`, type: 'default' });
+        badges.push({ text: c('Address status').t`Default`, type: 'default' });
     }
 
     if (Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === RECEIVE_ADDRESS.RECEIVE_YES) {
-        badges.push({ text: c('Badge').t`Active`, type: 'success' });
+        badges.push({ text: c('Address status').t`Active`, type: 'success' });
     }
 
     if (Status === ADDRESS_STATUS.STATUS_DISABLED) {
-        badges.push({ text: c('Badge').t`Disabled`, type: 'warning' });
+        badges.push({ text: c('Address status').t`Disabled`, type: 'warning' });
     }
 
     if (DomainID === null) {
-        badges.push({ text: c('Badge').t`Orphan`, type: 'origin' });
+        badges.push({ text: c('Address status').t`Orphan`, type: 'origin' });
     }
 
     if (!HasKeys) {
-        badges.push({ text: c('Badge').t`Missing keys`, type: 'warning' });
+        badges.push({ text: c('Address status').t`Missing keys`, type: 'warning' });
     }
 
     return badges.map(({ text, type }, index) => (

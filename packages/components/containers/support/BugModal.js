@@ -38,7 +38,7 @@ const BugModal = ({ onClose, username: Username, addresses, titles, ...rest }) =
             });
             return acc;
         },
-        [{ text: c('Option').t`Select`, value: '' }]
+        [{ text: c('Action to select a title for the bug report modal').t`Select`, value: '' }]
     );
     const [model, update] = useState({
         ...collectInfo(),
