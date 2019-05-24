@@ -52,7 +52,7 @@ function memberActions(
         REVOKE_SESSIONS: {
             title: gettextCatalog.getString('Revoke Sessions', null, 'Title'),
             message: gettextCatalog.getString(
-                'You are about to revoke all sessions. The user will be automatically logged out of all sessions and pompted to log back in. Are you sure you want to revoke all sessions ?',
+                'You are about to revoke all sessions. The user will be automatically logged out of all sessions and prompted to log back in. Are you sure you want to revoke all sessions ?',
                 null,
                 'Info'
             )
