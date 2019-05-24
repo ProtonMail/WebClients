@@ -16,7 +16,7 @@ function unsubscribePanel(
                 'Error message when unsubscribing to mail list'
             );
         },
-        notice: gettextCatalog.getString('This message is from a mailing list.', null, 'Info'),
+        notice: gettextCatalog.getString('This message is from a mailing list', null, 'Info'),
         kb: gettextCatalog.getString('Learn more', null, 'Info'),
         button: gettextCatalog.getString('Unsubscribe', null, 'Action'),
         title: gettextCatalog.getString('Unsubscribe from mailing list?', null, 'Title'),
