@@ -41,6 +41,7 @@ const EmailModal = ({ email, onClose, ...rest }) => {
             createNotification({ text: c('Success').t`Email updated` });
         } catch (error) {
             setLoading(false);
+            throw error;
         }
     };
 

@@ -36,6 +36,7 @@ const DailyNotificationsToggle = ({ id }) => {
             setLoading(false);
         } catch (error) {
             setLoading(false);
+            throw error;
         }
     };
 

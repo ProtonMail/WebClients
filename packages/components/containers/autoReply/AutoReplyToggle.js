@@ -18,6 +18,7 @@ const AutoReplyToggle = ({ autoresponder: AutoResponder, ...rest }) => {
             toggle();
         } catch (error) {
             setLoading(false);
+            throw error;
         }
     };
 

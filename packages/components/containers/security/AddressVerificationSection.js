@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
 import {
@@ -21,14 +21,22 @@ const AddressVerificationSection = () => {
     const { call } = useEventManager();
     const [mailSettings] = useMailSettings();
     const { state, toggle } = useToggle(!!mailSettings.PromptPin);
-    const { request, loading } = useApiWithoutResult(updatePromptPin);
+    const { request } = useApiWithoutResult(updatePromptPin);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = async ({ target }) => {
-        const newValue = target.checked;
-        await request(+newValue);
-        await call();
-        toggle();
-        createNotification({ text: c('Success').t`Preference saved` });
+        try {
+            setLoading(true);
+            const newValue = target.checked;
+            await request(+newValue);
+            await call();
+            toggle();
+            setLoading(false);
+            createNotification({ text: c('Success').t`Preference saved` });
+        } catch (error) {
+            setLoading(false);
+            throw error;
+        }
     };
 
     return (

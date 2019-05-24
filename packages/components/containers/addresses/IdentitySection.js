@@ -82,7 +82,7 @@ const IdentitySection = () => {
                     <Info url="https://protonmail.com/support/knowledge-base/display-name-and-signature/" />
                 </Label>
                 <Field className="flex flex-spacebetween">
-                    <span className="mt0-5 mr1">{address.DisplayName}</span>
+                    <span className="mt0-5 mr0-5">{address.DisplayName}</span>
                     <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
                 </Field>
             </Row>
