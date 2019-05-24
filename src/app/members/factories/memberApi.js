@@ -1,6 +1,5 @@
 /* @ngInject */
 function memberApi($http, url, srp) {
-
     const requestUrl = url.build('members');
 
     const handleResult = ({ data = {} } = {}) => data;
@@ -97,6 +96,7 @@ function memberApi($http, url, srp) {
      * Revoke token.
      */
     const revoke = () => $http.delete(requestUrl('auth'));
+    const revokeSessions = (memberID) => $http.delete(requestUrl(memberID, 'sessions'));
     const addresses = (memberID) => $http.get(requestUrl(memberID, 'addresses'));
     const createKey = (memberID, params) => $http.post(requestUrl(memberID, 'keys'), params);
     const updateKey = (memberID, keyID, params) => $http.put(requestUrl(memberID, 'keys', keyID), params);
@@ -120,6 +120,7 @@ function memberApi($http, url, srp) {
         quota,
         remove,
         revoke,
+        revokeSessions,
         role,
         setupKey,
         updateKey,
