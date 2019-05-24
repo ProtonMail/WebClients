@@ -1,0 +1,40 @@
+<div class="pm_modal small {{ctrl.class}} dropIE11ModalModal-container" role="dialog">
+    <div class="modal-dialog">
+        <button
+            type="button"
+            ng-click="ctrl.cancel()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
+
+        <div class="modal-content">
+            <header class="modal-header">
+                <h4 class="modal-title" translate-context="Title" translate>Internet Explorer Support</h4>
+            </header>
+
+            <div class="modal-body">
+                <div class="alert alert-warning">
+                    <div translate-context="Info" translate>In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below.</div>
+                    <div><a href="https://protonmail.com/blog/internet-explorer-support/" translate-context="Link" translate>Learn more</a></div>
+
+                    <ul>
+                        <li><a href="https://firefox.com">Firefox</a></li>
+                        <li><a href="https://brave.com/">Brave</a></li>
+                        <li><a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge</a></li>
+                        <li><a href="https://www.google.com/chrome/">Chrome</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="modal-footer">
+            <button
+                class="pm_button modal-footer-button"
+                ng-click="ctrl.close()"
+                translate-context="Action"
+                translate>OK</button>
+        </footer>
+    </div>
+    <div class="modal-overlay"></div>
+</div>
