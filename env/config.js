@@ -2,7 +2,6 @@ const extend = require('lodash/extend');
 const { execSync } = require('child_process');
 const argv = require('minimist')(process.argv.slice(2));
 const CONFIG_DEFAULT = require('./configDefault');
-const i18nLoader = require('../tasks/translationsLoader');
 
 const {
     STATS_CONFIG,
@@ -177,7 +176,6 @@ module.exports = {
     getConfig,
     isDistRelease,
     getEnvDeploy,
-    getI18nMatchFile: i18nLoader.getI18nMatchFile,
     getStatsConfig,
     argv,
     getEnv,

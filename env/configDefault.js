@@ -1,8 +1,6 @@
+const _ = require('lodash');
 const i18n = require('../po/lang');
 const PACKAGE = require('../package');
-const i18nLoader = require('../tasks/translationsLoader');
-
-i18nLoader.set(i18n);
 
 module.exports = {
     app_version: PACKAGE.version,
@@ -14,5 +12,5 @@ module.exports = {
     articleLink: 'https://protonmail.com/blog/protonmail-v3-15-release-notes/',
     changelogPath: 'assets/changelog.tpl.html',
     versionPath: 'assets/version.json',
-    translations: i18nLoader.get('list')
+    translations: _.map(i18n, 'lang')
 };
