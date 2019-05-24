@@ -1,4 +1,4 @@
-import { getMessage, decryptMessage, decryptPrivateKey } from 'pmcrypto';
+import { getMessage, decryptMessage, decryptPrivateKey as decryptArmoredKey } from 'pmcrypto';
 import { computeKeyPassword } from 'pm-srp';
 
 export const hasTotp = ({ '2FA': { TOTP } }) => {
@@ -47,6 +47,6 @@ export const getAccessToken = async (AccessToken, PrivateKey, KeySalt, password)
         return AccessToken;
     }
     const keyPassword = await computeKeyPassword(password, KeySalt);
-    const privateKey = await decryptPrivateKey(PrivateKey, keyPassword);
+    const privateKey = await decryptArmoredKey(PrivateKey, keyPassword);
     return decryptAccessToken(AccessToken, privateKey);
 };

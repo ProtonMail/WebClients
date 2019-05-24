@@ -341,3 +341,26 @@ export const MESSAGE_BUTTONS = {
     READ_UNREAD: 0,
     UNREAD_READ: 1
 };
+
+export const KEY_FILE_EXTENSION = '.asc';
+
+export const ENCRYPTION_TYPES = {
+    RSA2048: 'RSA2048',
+    RSA4096: 'RSA4096',
+    X25519: 'X25519'
+};
+
+export const DEFAULT_ENCRYPTION_CONFIG = ENCRYPTION_TYPES.RSA2048;
+
+export const ENCRYPTION_CONFIGS = {
+    [ENCRYPTION_TYPES.X25519]: { curve: 'ed25519' },
+    [ENCRYPTION_TYPES.RSA4096]: { numBits: 4096 },
+    [ENCRYPTION_TYPES.RSA2048]: { numBits: 2048 }
+};
+
+export const KEY_FLAG = {
+    ENCRYPTED_AND_SIGNED: 3,
+    ENCRYPTED: 2,
+    SIGNED: 1,
+    CLEAR_TEXT: 0
+};

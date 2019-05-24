@@ -41,7 +41,7 @@ export const getEventID = (api) => api(getLatestID()).then(({ EventID }) => Even
  */
 const resolveModel = (cache, api, model, eventValue) => {
     const { key, update, sync } = model;
-    const { status, value: oldValue } = cache.get(key) || {};
+    const { status, value: oldValue, promise: oldPromise, dependencies: oldDependencies } = cache.get(key) || {};
 
     // Only relevant update if it's resolved or pending.
     if (status !== STATUS.RESOLVED && status !== STATUS.PENDING) {
@@ -50,19 +50,21 @@ const resolveModel = (cache, api, model, eventValue) => {
 
     // Wait for a pending request to a model to finish before it processes the events for it.
     // e.g. if a model is being dynamically loaded while an update is received.
-    const promise = status === STATUS.PENDING ? oldValue : Promise.resolve(oldValue);
+    const promise = status === STATUS.PENDING ? oldPromise : Promise.resolve(oldValue);
     return promise
         .then(async (value) => {
             const updatedValue = update(value, eventValue);
             cache.set(key, {
                 status: STATUS.RESOLVED,
-                value: model.sync ? await sync(api, updatedValue) : updatedValue
+                value: model.sync ? await sync(api, updatedValue) : updatedValue,
+                dependencies: oldDependencies
             });
         })
         .catch((e) => {
             cache.set(key, {
                 status: STATUS.REJECTED,
-                value: e
+                value: e,
+                dependencies: oldDependencies
             });
         });
 };
