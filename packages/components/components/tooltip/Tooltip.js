@@ -1,45 +1,36 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import TooltipJs from 'tooltip.js';
 
-const Tooltip = ({ title, placement, html, trigger, delay, children }) => {
-    const tooltipRef = useRef(null);
+import { generateUID } from '../../helpers/component';
 
-    useEffect(() => {
-        const tooltip = new TooltipJs(tooltipRef.current, {
-            title,
-            placement,
-            html,
-            trigger,
-            delay
-        });
-
-        return () => {
-            tooltip.dispose();
-        };
-    }, []);
+const Tooltip = ({ title, children, placement }) => {
+    const [uid] = useState(generateUID('tooltip'));
+    const [show, setShow] = useState(false);
 
     return (
-        <span className="tooltip-container" ref={tooltipRef}>
-            {children}
+        <span
+            className="tooltip-container"
+            onMouseEnter={() => setShow(true)}
+            onMouseLeave={() => setShow(false)}
+            onFocus={() => setShow(true)}
+            onBlur={() => setShow(false)}
+        >
+            <span aria-describedby={uid}>{children}</span>
+            <span className={`tooltip-${placement}`} id={uid} role="tooltip" aria-hidden={!show}>
+                {title}
+            </span>
         </span>
     );
 };
 
 Tooltip.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.node.isRequired,
     children: PropTypes.node.isRequired,
-    placement: PropTypes.string,
-    html: PropTypes.bool,
-    trigger: PropTypes.string,
-    delay: PropTypes.number
+    placement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']).isRequired
 };
 
 Tooltip.defaultProps = {
-    placement: 'top',
-    html: false,
-    trigger: 'hover focus',
-    delay: 0
+    placement: 'top'
 };
 
 export default Tooltip;
