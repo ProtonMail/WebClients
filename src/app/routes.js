@@ -13,6 +13,7 @@ import {
 } from './constants';
 import { isDealEvent } from './blackFriday/helpers/blackFridayHelper';
 import { decrypt } from '../helpers/message';
+import { isIE11 } from '../helpers/browser';
 
 export default angular
     .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.utils'])
@@ -49,6 +50,11 @@ export default angular
             // ------------
             .state('login', {
                 url: '/login',
+                onEnter(dropIE11ModalModal) {
+                    if (isIE11()) {
+                        dropIE11ModalModal.activate();
+                    }
+                },
                 views: {
                     'main@': {
                         templateUrl: require('../templates/layout/login.tpl.html')
