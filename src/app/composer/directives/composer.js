@@ -141,10 +141,7 @@ function composer(AppModel, attachmentFileFormat, dispatchers, mailSettingsModel
                         return;
                     }
                     if (mailSettingsModel.get('Hotkeys') === 1) {
-                        dispatcher['composer.update']('close.message', {
-                            message: scope.message,
-                            save: true
-                        });
+                        dispatcher.editorListener('pre.close.message', { message: scope.message });
                     }
                 }
             };

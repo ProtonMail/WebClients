@@ -24,19 +24,15 @@ function composerExpiration(dispatchers, notification, gettextCatalog, translato
      * Intialize the expiration panel
      * @param {Object} message
      */
-    const initModel = (message) => {
-        if (angular.isDefined(message.ExpiresIn)) {
-            const deltaHours = message.ExpiresIn / 3600;
-            const deltaDays = Math.floor(deltaHours / 24);
+    const initModel = ({ ExpiresIn = 0 }) => {
+        const deltaHours = ExpiresIn / 3600;
+        const deltaDays = Math.floor(deltaHours / 24);
 
-            return {
-                weeks: angular.copy(_.find(OPTIONS.week, { value: Math.floor(deltaDays / 7) })),
-                days: angular.copy(_.find(OPTIONS.day, { value: deltaDays % 7 })),
-                hours: angular.copy(_.find(OPTIONS.hour, { value: deltaHours % 24 }))
-            };
-        }
-
-        return { days: 0, hours: 0, weeks: 0 };
+        return {
+            weeks: angular.copy(_.find(OPTIONS.week, { value: Math.floor(deltaDays / 7) })),
+            days: angular.copy(_.find(OPTIONS.day, { value: deltaDays % 7 })),
+            hours: angular.copy(_.find(OPTIONS.hour, { value: deltaHours % 24 }))
+        };
     };
 
     const computeHours = ({ days, hours, weeks }) => hours.value + (days.value + weeks.value * 7) * 24;

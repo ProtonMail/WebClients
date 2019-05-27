@@ -65,18 +65,14 @@ function embeddedParser(
 
     const removeEmbeddedHTML = (message, Headers = {}, content = '') => {
         const cid = embeddedUtils.readCID(Headers);
-        const tempDOM = $(`<div>${content || message.getDecryptedBody()}</div>`);
+        const tempDOM = $(`<div>${content}</div>`);
         const nodes = tempDOM.find(
             `img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`
         );
-
         if (nodes.length) {
             nodes.remove();
-            message.NumEmbedded -= nodes.length;
-            message.setDecryptedBody(tempDOM.html(), true);
         }
-
-        return message.getDecryptedBody();
+        return tempDOM.html();
     };
 
     /**

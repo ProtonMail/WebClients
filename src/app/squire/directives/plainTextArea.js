@@ -20,7 +20,7 @@ function plainTextArea(dispatchers, mailSettingsModel, hotkeys) {
                 return;
             }
 
-            const { dispatcher } = dispatchers(['composer.update', 'plaintextarea']);
+            const { dispatcher } = dispatchers(['composer.update']);
 
             el[0].value = scope.message.DecryptedBody;
 
@@ -44,7 +44,7 @@ function plainTextArea(dispatchers, mailSettingsModel, hotkeys) {
             const onFocus = () => (isEditorFocused = true);
             const onBlur = () => (isEditorFocused = false);
             const onInput = _.debounce(() => {
-                isEditorFocused && dispatcher.plaintextarea('input', { message: scope.message });
+                isEditorFocused && dispatcher['composer.update']('autosave.message', { message: scope.message });
             }, SAVE_TIMEOUT_TIME);
 
             const onClick = () => {

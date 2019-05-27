@@ -41,7 +41,7 @@ function identitySection(
 
                 if (!firstTime) {
                     const { editor } = editorModel.find({ ID: EDITOR_ID });
-                    editor.fireEvent('refresh', { Body: signature });
+                    editor.fireEvent('refresh', { action: 'signature.update', data: signature });
                     return scope.$applyAsync(() => {
                         scope.address = { DisplayName, Signature: signature };
                     });

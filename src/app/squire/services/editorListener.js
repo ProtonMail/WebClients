@@ -1,3 +1,4 @@
+/* eslint no-underscore-dangle: "off" */
 import _ from 'lodash';
 import { flow, filter, each } from 'lodash/fp';
 
@@ -19,9 +20,6 @@ function editorListener(
     pasteImage
 ) {
     const testMac = isMac();
-
-    // Delay before updating the model as the process is slow
-    const TIMEOUTAPP = 300;
 
     /**
      * Check if this squire instance is for a message or not
@@ -72,11 +70,7 @@ function editorListener(
         editor.setKeyHandler(
             'escape',
             hotkeysEnabled(() => {
-                isMessage(typeContent) &&
-                    dispatcher['composer.update']('close.message', {
-                        message,
-                        save: true
-                    });
+                isMessage(typeContent) && dispatcher.editorListener('pre.close.message', { message });
             })
         );
 
@@ -174,36 +168,13 @@ function editorListener(
         });
     };
 
-    const listenerSaveMessage = (dispatcher, editor, message) => {
-        let isEditorFocused = false;
-        const onFocus = () => (isEditorFocused = true);
-        const onBlur = () => (isEditorFocused = false);
-        const onInput = _.debounce(() => {
-            isEditorFocused && dispatcher['squire.editor']('input', { message });
-        }, SAVE_TIMEOUT_TIME);
-
-        // proxy for autosave as Mousetrap doesn't work with iframe
-        const onKeyDown = (e) => {
-            // Check alt too cf Polish keyboard for S #5476
-            if (!e.altKey && (e.ctrlKey || e.metaKey) && e.keyCode === 83) {
-                e.preventDefault();
-                hotkeys.trigger('mod+s');
-            }
-        };
-
-        editor.addEventListener('input', onInput);
-        editor.addEventListener('blur', onBlur);
-        editor.addEventListener('focus', onFocus);
-        // eslint-disable-next-line no-underscore-dangle
-        editor._doc.addEventListener('keydown', onKeyDown);
-
-        return () => {
-            editor.removeEventListener('input', onInput);
-            editor.removeEventListener('blur', onBlur);
-            editor.removeEventListener('focus', onFocus);
-            // eslint-disable-next-line no-underscore-dangle
-            editor._doc.removeEventListener('keydown', onKeyDown);
-        };
+    // proxy for autosave as Mousetrap doesn't work with iframe
+    const onKeyDown = (e) => {
+        // Check alt too cf Polish keyboard for S #5476
+        if (!e.altKey && (e.ctrlKey || e.metaKey) && e.keyCode === 83) {
+            e.preventDefault();
+            hotkeys.trigger('mod+s');
+        }
     };
 
     /**
@@ -217,9 +188,6 @@ function editorListener(
      * @return {Function}             Bind events
      */
     return (scope, el, { typeContent, action }) => {
-        // For a type !== message vodoo magic "realtime"
-        const timeout = typeContent === 'message' ? TIMEOUTAPP : 32;
-
         return (updateModel, editor) => {
             const message = scope.message;
             const unsubscribe = [];
@@ -233,6 +201,14 @@ function editorListener(
             // Custom dropzone to insert content into the editor if it's not a composer
             if (!isMessage(typeContent)) {
                 unsubscribe.push(editorDropzone(el, message, editor));
+
+                // For a type !== message vodoo magic "realtime"
+                const onInput = _.debounce(() => updateModel(editor.getHTML()), 32);
+                editor.addEventListener('input', onInput);
+                unsubscribe.push(() => {
+                    onInput.cancel();
+                    editor.removeEventListener('input', onInput);
+                });
             }
 
             // Watcher to detect when the user remove an embedded image
@@ -246,10 +222,6 @@ function editorListener(
                 editor.addEventListener('input', onRemoveEmbedded);
                 unsubscribe.push(() => editor.removeEventListener('input', onRemoveEmbedded));
 
-                if (!$state.is('eo.reply')) {
-                    unsubscribe.push(listenerSaveMessage(dispatcher, editor, message));
-                }
-
                 /**
                  * Important to wait until updateModel has finished before sending or saving a message.
                  */
@@ -258,6 +230,11 @@ function editorListener(
                         return;
                     }
                     switch (type) {
+                        case 'pre.close.message': {
+                            await updateModel(editor.getHTML());
+                            dispatcher['composer.update']('close.message', { message, save: true });
+                            break;
+                        }
                         case 'pre.send.message': {
                             editor.disableInput();
                             await updateModel(editor.getHTML());
@@ -275,6 +252,20 @@ function editorListener(
                         }
                     }
                 });
+
+                editor._doc.addEventListener('keydown', onKeyDown);
+                unsubscribe.push(() => editor._doc.removeEventListener('keydown', onKeyDown));
+                const onInput = _.debounce(async () => {
+                    await updateModel(editor.getHTML());
+                    dispatcher['composer.update']('autosave.message', { message });
+                }, SAVE_TIMEOUT_TIME);
+
+                editor.addEventListener('input', onInput);
+                unsubscribe.push(() => {
+                    // Cancel the debounced function so that it's not called after the composer is closed.
+                    onInput.cancel();
+                    editor.removeEventListener('input', onInput);
+                });
             }
 
             ['dragleave', 'dragenter', 'drop'].forEach((key) => {
@@ -283,14 +274,13 @@ function editorListener(
                 unsubscribe.push(() => editor.removeEventListener(key, cb));
             });
 
-            // Only update the model every 300ms or at least 2 times before saving a draft
-            const onInput = _.throttle(() => updateModel(editor.getHTML()), timeout);
             const onBlur = () => el.removeClass('focus').triggerHandler('blur');
             const onMsctrlSelect = (event) => event.preventDefault();
 
-            const onRefresh = ({ Body = '', action = '', data } = {}) => {
+            const onRefresh = ({ action = '', data } = {}) => {
                 if (action === 'attachment.remove') {
-                    embedded.removeEmbedded(message, data, editor.getHTML());
+                    const html = embedded.removeEmbedded(message, data, editor.getHTML());
+                    return updateModel(html);
                 }
 
                 if (action === 'attachment.embedded') {
@@ -309,16 +299,10 @@ function editorListener(
                     return updateModel(html, true, true);
                 }
 
-                if (isMessage(typeContent)) {
-                    // Replace the embedded images with CID to keep the model updated
-                    return embedded
-                        .parser(message)
-                        .then((body) => (editor.setHTML(body), body))
-                        .then(updateModel);
+                if (action === 'signature.update') {
+                    editor.setHTML(data);
+                    return updateModel(data);
                 }
-
-                editor.setHTML(Body);
-                updateModel(Body);
             };
 
             const onFocus = () => {
@@ -350,7 +334,6 @@ function editorListener(
             editor.addEventListener('paste', onPaste);
             editor.addEventListener('paste.image', onPasteImage);
             editor.addEventListener('drop', onDrop);
-            editor.addEventListener('input', onInput);
             editor.addEventListener('refresh', onRefresh);
             editor.addEventListener('focus', onFocus);
             editor.addEventListener('blur', onBlur);
@@ -364,7 +347,6 @@ function editorListener(
                 editor.removeEventListener('paste', onPaste);
                 editor.removeEventListener('paste.image', onPasteImage);
                 editor.removeEventListener('drop', onDrop);
-                editor.removeEventListener('input', onInput);
                 editor.removeEventListener('refresh', onRefresh);
                 editor.removeEventListener('focus', onFocus);
                 editor.removeEventListener('blur', onBlur);
