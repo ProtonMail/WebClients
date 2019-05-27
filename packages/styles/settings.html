@@ -137,3 +137,57 @@ section: none
 </div>
 
 </div>
+
+
+<h2>Some toolbars</h2>
+
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 pt0-5">
+    <span id="desc1">1 of 4 domains</span> (value 25/100)<br>
+    <meter min="0" max="100" low="0" high="50" value="25" class="setting-meterbar inbl w100" aria-describedby="desc1" ></meter>
+    <br><br>
+    <span id="desc2">6 of 10 emails</span> (value 60/100)<br>
+    <meter min="0" max="100" low="0" high="50" value="60" class="setting-meterbar inbl w100" aria-describedby="desc2" ></meter>
+    <br><br>
+    <span id="desc3">9 of 10 emails</span> (value 90/100)<br>
+    <meter min="0" max="100" low="0" high="80" value="90" class="setting-meterbar setting-meterbar--high inbl w100" aria-describedby="desc3"></meter>
+    <br><br>
+    <span id="desc4">11 of 10 emails</span> (value 110/100)<br>
+    <meter min="0" max="100" low="0" high="80" value="110" class="setting-meterbar setting-meterbar--high inbl w100" aria-describedby="desc4"></meter>
+
+    <ul>
+      <li>For simplicity reasons, please do use <code>min="0" max="100" low="0" high="50"</code>.</li>
+      <li>If the value is superior to <code>80</code>, please do add <code>setting-meterbar--high</code> modifier and put <code>high</code> value to <code>80</code> (to display red color) </li>
+      <li>To sum up: 
+        <ul>
+          <li>green between <code>0</code> and <code>50</code></li>
+          <li>orange between <code>50</code> and <code>80</code></li>
+          <li>Red above <code>80</code> (including values &gt; <code>100</code>), with <code>setting-meterbar--high</code> modifier class</li>
+        </ul>
+      </li>
+      <li>Please do link <code>meter</code> tag to its description via <code>aria-describedby</code>.</li>
+    </ul>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;span id="desc1"&gt;1 of 4 domains&lt;/span&gt; (value 25/100)&lt;br&gt;
+&lt;meter <strong>min="0" max="100" low="0" high="50" value="25"</strong> class="<strong>setting-meterbar</strong> inbl w100" <strong>aria-describedby="desc1"</strong>&gt;&lt;/meter&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;span <strong>id="desc2"</strong>&gt;6 of 10 emails&lt;/span&gt; (value 60/100)&lt;br&gt;
+&lt;meter min="0" max="100" low="0" <strong>high="50" value="60"</strong> class="<strong>setting-meterbar</strong> inbl w100" <strong>aria-describedby="desc2"</strong>&gt;&lt;/meter&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;span id="desc3"&gt;9 of 10 emails&lt;/span&gt; (value 90/100)&lt;br&gt;
+&lt;meter min="0" max="100" low="0" <strong>high="80" value="90"</strong> class="setting-meterbar <strong>setting-meterbar--high</strong> inbl w100" aria-describedby="desc3"&gt;&lt;/meter&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;span id="desc4"&gt;11 of 10 emails&lt;/span&gt; (value 110/100)&lt;br&gt;
+&lt;meter min="0" max="100" low="0" <strong>high="80" value="110"</strong> class="setting-meterbar <strong>setting-meterbar--high</strong> inbl w100" aria-describedby="desc4"&gt;&lt;/meter&gt;
+</code></pre>
+  </div>
+</div>
+

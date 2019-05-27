@@ -7,7 +7,7 @@
   color: var(--color-standard-text, $white);
 }
 
-.spacebar { /* factor with .spacebar-gauge for IE11, but f*** IE11 */
+.spacebar {
   /* Reset the default appearance */
   //-webkit-appearance: none; // well, because Chrome.
   -moz-appearance: none;
@@ -60,3 +60,52 @@
 // .spacebar-version {
 //   color: rgba($white, .3);
 // }
+
+
+.setting-meterbar {
+  //-webkit-appearance: none;
+  -moz-appearance: none;
+  //-ms-appearance: none;
+  appearance: none;
+  height: 1.5rem;
+  background: $pm-global-muted;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+  &::-webkit-meter-bar {
+    background: none; /* Required to get rid of the default background property */
+    display: inherit;
+    border: 0; // For Edge
+  }
+  &::-moz-meter-bar {
+    display: inherit;
+  }
+  &::-webkit-meter-optimum-value {
+    background: $pm-global-success;
+  }
+  &::-webkit-meter-suboptimum-value {
+    background: $pm-global-attention;
+  }
+  &::-webkit-meter-even-less-good-value {
+    background: $pm-global-warning;
+  }
+
+  &:-moz-meter-optimum::-moz-meter-bar {
+    background: $pm-global-success;
+  }
+  &:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: $pm-global-attention;
+  }
+  &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: $pm-global-warning;
+  }
+
+}
+
+.setting-meterbar--high {
+  &::-webkit-meter-suboptimum-value {
+    background: $pm-global-warning;
+  }
+  &:-moz-meter-sub-optimum::-moz-meter-bar {
+    background-color: $pm-global-warning;
+  }
+}
