@@ -171,7 +171,7 @@ function ComposeMessageController(
         _.each($scope.messages, (message) => {
             if (messageID === message.ID) {
                 // Close the composer
-                $scope.close(message, false, false);
+                closeComposer(message);
             }
         });
     });
@@ -251,10 +251,7 @@ function ComposeMessageController(
                 const message = _.find($scope.messages, { focussed: true });
 
                 if (message) {
-                    postMessage(message, {
-                        autosaving: true,
-                        notification: true
-                    });
+                    dispatcher.editorListener('pre.save.message', { message });
                 }
             });
         }
@@ -277,6 +274,11 @@ function ComposeMessageController(
                 break;
             }
 
+            case 'autosave.message': {
+                $scope.saveLater(data.message);
+                break;
+            }
+
             case 'save.message': {
                 save(data.message, true, false);
                 break;
@@ -287,9 +289,19 @@ function ComposeMessageController(
                 break;
             }
 
-            case 'send.success':
+            case 'send.success': {
+                closeComposer(data.message);
+                break;
+            }
+
             case 'close.message': {
-                $scope.close(data.message, data.discard, data.save);
+                const { save: shouldSave, message } = data;
+                if (!shouldSave) {
+                    return closeComposer(message);
+                }
+                save(message, true, false).then(() => {
+                    closeComposer(message);
+                });
                 break;
             }
 
@@ -303,14 +315,6 @@ function ComposeMessageController(
     on('message', (e, { type, data: { message } }) => {
         // save when DOM is updated
         type === 'updated' && postMessage(message, { autosaving: true });
-    });
-
-    on('plaintextarea', (e, { type, data }) => {
-        type === 'input' && $scope.saveLater(data.message);
-    });
-
-    on('squire.editor', (e, { type, data }) => {
-        type === 'input' && $scope.saveLater(data.message);
     });
 
     on('attachment.upload', (e, { type, data }) => {
@@ -508,10 +512,6 @@ function ComposeMessageController(
         AppModel.set('maximizedComposer', isSmall);
     };
 
-    $scope.openCloseModal = (message, discard = false) => {
-        $scope.close(message, discard, !discard);
-    };
-
     /**
      * Remove a message from the list of messages
      * @param  {Array} list    List of messages
@@ -524,55 +524,44 @@ function ComposeMessageController(
 
     /**
      * Close the composer window
-     * @param {Object} message
-     * @param {Boolean} discard
-     * @param {Boolean} save
+     * @param {Object} msg
      */
-    $scope.close = closeComposer;
-    function closeComposer(msg, discard, save) {
+    function closeComposer(msg) {
         const message = messageModel(msg);
 
-        const process = () => {
-            // Remove message in composer controller
-            $scope.messages = removeMessage($scope.messages, message);
-            composerRequestModel.clear(message);
-            outsidersMap.remove(message.ID);
-            commitComposer(message, true);
+        // Remove message in composer controller
+        $scope.messages = removeMessage($scope.messages, message);
 
-            dispatcher.tooltip('hideAll');
+        composerRequestModel.clear(message);
+        outsidersMap.remove(message.ID);
+        commitComposer(message, true);
 
-            dispatcher['composer.update']('close', {
-                size: $scope.messages.length,
-                message
-            });
+        dispatcher.tooltip('hideAll');
 
-            /*
-                Refresh conversations to remove old drafts.
-             */
-            dispatcher.elements('refresh');
+        dispatcher['composer.update']('close', {
+            size: $scope.messages.length,
+            message
+        });
 
-            const stateDraft = dynamicStates.getDraftsState();
+        /*
+            Refresh conversations to remove old drafts.
+         */
+        dispatcher.elements('refresh');
 
-            if (
-                (message.ConversationID === $stateParams.id || message.ID === $stateParams.id) &&
-                $state.includes(stateDraft)
-            ) {
-                $state.go(stateDraft);
-            }
-        };
+        const stateDraft = dynamicStates.getDraftsState();
 
-        if (discard === true) {
-            const ids = [message.ID];
-            dispatcher.messageActions('delete', { ids });
-        }
-
-        $timeout.cancel(message.defferredSaveLater);
-        if (save === true) {
-            postMessage(message, { autosaving: true }).then(process);
-        } else {
-            process();
+        if (
+            (message.ConversationID === $stateParams.id || message.ID === $stateParams.id) &&
+            $state.includes(stateDraft)
+        ) {
+            $state.go(stateDraft);
         }
     }
+
+    $scope.saveAndClose = (msg) => {
+        const message = messageModel(msg);
+        dispatcher.editorListener('pre.close.message', { message });
+    };
 
     /**
      * Move draft message to trash
@@ -595,7 +584,8 @@ function ComposeMessageController(
                 title,
                 message: question,
                 confirm() {
-                    $scope.openCloseModal(message, true);
+                    dispatcher.messageActions('delete', { ids: [message.ID] });
+                    closeComposer(message);
                     // Delete it after the close message has run to be sure the save is not triggered.
                     delete message.discardDontAutoSave;
                     notification.success(gettextCatalog.getString('Message discarded', null, 'Info'));

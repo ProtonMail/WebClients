@@ -275,8 +275,11 @@ export default angular
                     }
                 },
                 resolve: {
-                    lang(i18nLoader) {
-                        return i18nLoader.translate();
+                    app(lazyLoader, i18nLoader) {
+                        return lazyLoader
+                            .app()
+                            .then(i18nLoader.translate)
+                            .then(i18nLoader.localizeDate);
                     }
                 }
             })
@@ -284,7 +287,7 @@ export default angular
             .state('eo.unlock', {
                 url: '/eo/:tag',
                 resolve: {
-                    encryptedToken(Eo, $stateParams) {
+                    encryptedToken(app, Eo, $stateParams) {
                         // Can be null if the network is down
                         return Eo.token($stateParams.tag)
                             .then(({ data = {} } = {}) => data.Token)
@@ -304,13 +307,19 @@ export default angular
             .state('eo.message', {
                 url: '/eo/message/:tag',
                 resolve: {
-                    app(lazyLoader, i18nLoader) {
-                        return lazyLoader.app().then(i18nLoader.localizeDate);
-                    },
-                    messageData(app, $stateParams, $q, Eo, messageModel, eoStore) {
+                    messageData(app, $state, $stateParams, $q, Eo, messageModel, eoStore) {
+                        const tokenId = $stateParams.tag;
+
+                        const decryptedToken = eoStore.getToken();
                         const password = eoStore.getPassword();
 
-                        return Eo.message(eoStore.getToken(), $stateParams.tag).then(({ data = {} }) => {
+                        // Can happen when a user goes directly to this URL.
+                        if (!decryptedToken) {
+                            $state.go('eo.unlock', { tag: tokenId });
+                            return Promise.reject();
+                        }
+
+                        return Eo.message(decryptedToken, tokenId).then(({ data = {} }) => {
                             const message = data.Message;
                             const promises = _.reduce(
                                 message.Replies,
@@ -339,10 +348,17 @@ export default angular
             .state('eo.reply', {
                 url: '/eo/reply/:tag',
                 resolve: {
-                    messageData($stateParams, Eo, messageModel, eoStore) {
+                    messageData(app, $state, $stateParams, Eo, messageModel, eoStore) {
                         const tokenId = $stateParams.tag;
+
                         const decryptedToken = eoStore.getToken();
                         const password = eoStore.getPassword();
+
+                        // Can happen when a user goes directly to this URL.
+                        if (!decryptedToken) {
+                            $state.go('eo.unlock', { tag: tokenId });
+                            return Promise.reject();
+                        }
 
                         return Eo.message(decryptedToken, tokenId).then((result) => {
                             const message = result.data.Message;

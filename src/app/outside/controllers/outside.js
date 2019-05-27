@@ -21,6 +21,7 @@ function OutsideController(
     networkActivityTracker,
     eoStore,
     attachmentModelOutside,
+    dispatchers,
     sanitize
 ) {
     const I18N = {
@@ -32,6 +33,8 @@ function OutsideController(
         ),
         ENCRYPTION_ERROR: gettextCatalog.getString('Error encrypting message', null, 'Error')
     };
+
+    const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'editorListener']);
 
     attachmentModelOutside.load();
     const decryptedToken = eoStore.getToken();
@@ -123,21 +126,22 @@ function OutsideController(
      * Send message
      */
     $scope.send = () => {
-        const { Replies = [] } = $scope.message;
+        dispatcher.editorListener('pre.send.message', { message: $scope.message });
+    };
+
+    const send = (message) => {
+        const { Replies = [] } = message;
 
         if (Replies.length >= MAX_OUTSIDE_REPLY) {
             const message = I18N.OUTSIDE_REPLY_ERROR;
             notification.info(message);
         }
-        const process = Promise.all([
-            embedded.parser($scope.message, { direction: 'cid' }),
-            getKeys($scope.message.publicKey)
-        ])
+        const process = Promise.all([embedded.parser(message, { direction: 'cid' }), getKeys(message.publicKey)])
             .then(([data, publicKeys]) =>
                 Promise.all([
                     encryptMessage({ data, publicKeys }),
                     encryptMessage({ data, passwords: password }),
-                    attachmentModelOutside.encrypt($scope.message).then((attachments) => {
+                    attachmentModelOutside.encrypt(message).then((attachments) => {
                         return attachments.reduce(
                             (acc, { Filename, DataPacket, MIMEType, KeyPackets, CID = '' }) => {
                                 acc.Filename.push(Filename);
@@ -175,6 +179,12 @@ function OutsideController(
         return networkActivityTracker.track(process);
     };
 
+    on('composer.update', (e, { type, data }) => {
+        if (type === 'send.message') {
+            send(data.message);
+        }
+    });
+
     $scope.cancel = () => {
         $state.go('eo.message', { tag: $stateParams.tag });
     };
@@ -187,5 +197,7 @@ function OutsideController(
     };
 
     initialization();
+
+    $scope.$on('$destroy', unsubscribe);
 }
 export default OutsideController;

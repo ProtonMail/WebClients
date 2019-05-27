@@ -5,10 +5,10 @@ function embeddedImgLoader($log, dispatchers, embedded) {
 
     const getPromiseImg = (img, src) => {
         const image = new Image();
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             image.src = src;
             image.onload = () => resolve({ img, src });
-            image.onerror = (error) => reject({ error, src });
+            image.onerror = () => resolve({ img, src: 'assets/img/icons/broken-img.png' });
         });
     };
 
@@ -44,34 +44,32 @@ function embeddedImgLoader($log, dispatchers, embedded) {
                 { map: {}, list: [] }
             );
 
-        Promise.all(list)
-            .then((images) => {
-                _rAF(() => {
-                    images.forEach(({ img, src }) => {
-                        img.src = src;
-                        img.classList.add('proton-embedded');
-                    });
-
-                    // Remove all the loaders !
-                    const loader = body ? body.querySelectorAll('.loading') : [];
-
-                    if (loader.length) {
-                        $(loader)
-                            .contents()
-                            .unwrap();
-                    }
-
-                    if (images.length) {
-                        dispatcher['message.open']('embedded.injected', {
-                            action,
-                            map,
-                            message,
-                            body: body.innerHTML
-                        });
-                    }
+        Promise.all(list).then((images) => {
+            _rAF(() => {
+                images.forEach(({ img, src }) => {
+                    img.src = src;
+                    img.classList.add('proton-embedded');
                 });
-            })
-            .catch($log.error);
+
+                // Remove all the loaders !
+                const loader = body ? body.querySelectorAll('.loading') : [];
+
+                if (loader.length) {
+                    $(loader)
+                        .contents()
+                        .unwrap();
+                }
+
+                if (images.length) {
+                    dispatcher['message.open']('embedded.injected', {
+                        action,
+                        map,
+                        message,
+                        body: body.innerHTML
+                    });
+                }
+            });
+        });
     };
 
     return {
