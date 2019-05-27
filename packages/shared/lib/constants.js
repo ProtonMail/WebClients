@@ -364,3 +364,12 @@ export const KEY_FLAG = {
     SIGNED: 1,
     CLEAR_TEXT: 0
 };
+
+export const USER_STATUS = {
+    DELETED: 0,
+    DISABLED: 1,
+    USER: 2,
+    VPN_ADMIN: 3,
+    ADMIN: 4,
+    SUPER_ADMIN: 5
+};
