@@ -81,20 +81,21 @@ const IdentitySection = () => {
                     <span className="mr0-5">{c('Label').t`Display name`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/display-name-and-signature/" />
                 </Label>
-                <Field className="flex flex-spacebetween">
-                    <span className="mt0-5 mr0-5">{address.DisplayName}</span>
-                    <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
+                <Field>
+                    <span className="mt0-5">{address.DisplayName}</span>
                 </Field>
+                <span className="ml1">
+                    <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
+                </span>
             </Row>
             <Row>
                 <Label>{c('Label').t`Signature`}</Label>
                 <Field>
-                    <div
-                        className="bordered-container p1 mb1"
-                        dangerouslySetInnerHTML={{ __html: address.Signature }}
-                    />
-                    <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
+                    <div className="bordered-container p1" dangerouslySetInnerHTML={{ __html: address.Signature }} />
                 </Field>
+                <span className="ml1">
+                    <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
+                </span>
             </Row>
             <Row>
                 <Label htmlFor="pmSignatureToggle">{c('Label').t`ProtonMail signature`}</Label>

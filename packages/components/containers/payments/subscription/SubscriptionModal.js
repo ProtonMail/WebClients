@@ -172,7 +172,7 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
                         <Label>{c('Label').t`Amount due`}</Label>
                         <Field className="w100">
                             <Input
-                                className="pm-field--highlight strong alignright"
+                                className="pm-field--highlight no-pointer-events strong alignright"
                                 readOnly={true}
                                 value={toPrice(check.AmountDue, model.currency)}
                             />
