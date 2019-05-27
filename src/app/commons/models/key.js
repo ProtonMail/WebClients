@@ -72,9 +72,9 @@ function Key($http, url, srp) {
      */
     const upgrade = (data = {}, Password = '') => {
         if (Password.length) {
-            return srp.verify.put({ Password }, requestURL('private', 'upgrade'), data);
+            return srp.verify.post({ Password }, requestURL('private', 'upgrade'), data);
         }
-        return $http.put(requestURL('private', 'upgrade'), data);
+        return $http.post(requestURL('private', 'upgrade'), data);
     };
     /**
      * Make a private key primary, only for activated keys

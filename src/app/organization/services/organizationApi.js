@@ -40,7 +40,7 @@ function organizationApi($http, url, srp) {
      * @param {Object} params
      * @return {Promise}
      */
-    const updateOrganizationKeys = (params) => $http.put(requestURL('keys'), params);
+    const updateOrganizationKeys = (params) => $http.post(requestURL('keys'), params);
 
     /**
      * Get organization keys
@@ -48,7 +48,7 @@ function organizationApi($http, url, srp) {
      * @param {Object} data
      * @return {Promise}
      */
-    const updateBackupKeys = (credentials, data) => srp.auth.put(credentials, requestURL('keys', 'backup'), data);
+    const updateBackupKeys = (credentials, data) => srp.auth.post(credentials, requestURL('keys', 'backup'), data);
 
     /**
      * Update organization name
