@@ -74,7 +74,7 @@ body {
 	       }
   }
   @else if $typo-unit == 'use_rem' {
-     font-size: rem($base-font);
+     font-size: var(--body-fontsize, rem($base-font));
   }
   @else if $typo-unit == 'use_rem_with_em_fallback' {
      @if $root-equiv-10-px == true {
