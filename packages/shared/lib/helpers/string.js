@@ -1,5 +1,11 @@
 import getRandomValues from 'get-random-values';
 
+const CURRENCIES = {
+    USD: '$',
+    EUR: '€',
+    CHF: 'CHF'
+};
+
 export const getRandomString = (length) => {
     const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let i;
@@ -17,3 +23,16 @@ export const getRandomString = (length) => {
 export const normalize = (value = '') => value.toLowerCase();
 
 export const replaceLineBreak = (content = '') => content.replace(/(?:\r\n|\r|\n)/g, '<br />');
+
+export const toPrice = (amount = 0, currency = 'EUR', divisor = 100) => {
+    const symbol = CURRENCIES[currency] || currency;
+    const value = Number(amount / divisor).toFixed(2);
+    const prefix = value < 0 ? '-' : '';
+    const absValue = Math.abs(value);
+
+    if (currency === 'USD') {
+        return `${prefix}${symbol}${absValue}`;
+    }
+
+    return `${prefix}${absValue} ${symbol}`;
+};
