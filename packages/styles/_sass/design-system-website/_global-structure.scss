@@ -57,7 +57,7 @@ body {
 }
 
 .header {
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 1rem 0;
   height: $header-height;
 }
 .sidebar {
@@ -71,7 +71,8 @@ body {
 }
 
 .logo-container {
-  width: calc( var(--width-sidebar, #{$width-sidebar}) - 2rem); //padding left .header
+  padding-left: 2rem;
+  width: var(--width-sidebar, #{$width-sidebar});
 }
 .logo {
   width: 148px;
