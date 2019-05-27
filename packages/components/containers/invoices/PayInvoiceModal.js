@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { FormModal, Row, Field, Label, Price, useApiWithoutResult, useApiResult } from 'react-components';
+import { Input, FormModal, Row, Field, Label, Price, useApiWithoutResult, useApiResult } from 'react-components';
 import { checkInvoice, payInvoice } from 'proton-shared/lib/api/payments';
+import { toPrice } from 'proton-shared/lib/helpers/string';
 
 import Payment from '../payments/Payment';
 import usePayment from '../payments/usePayment';
@@ -34,7 +35,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }) => {
                 <>
                     <Row>
                         <Label>{c('Label').t`Amount`}</Label>
-                        <Field>
+                        <Field className="alignright">
                             <Price className="pm-label" currency={Currency}>
                                 {Amount}
                             </Price>
@@ -42,10 +43,12 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }) => {
                     </Row>
                     <Row>
                         <Label>{c('Label').t`Amount due`}</Label>
-                        <Field>
-                            <Price className="pm-label" currency={Currency}>
-                                {AmountDue}
-                            </Price>
+                        <Field className="alignright">
+                            <Input
+                                className="pm-field--highlight strong"
+                                readOnly={true}
+                                value={toPrice(AmountDue, Currency)}
+                            />
                         </Field>
                     </Row>
                     <Payment

@@ -6,7 +6,7 @@ import {
     usePlans,
     FormModal,
     Button,
-    Price,
+    Input,
     usePayment,
     Payment,
     Paragraph,
@@ -24,6 +24,7 @@ import {
 } from 'react-components';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
+import { toPrice } from 'proton-shared/lib/helpers/string';
 
 import CustomMailSection from './CustomMailSection';
 import CustomVPNSection from './CustomVPNSection';
@@ -169,8 +170,12 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
                         .t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
                     <Row>
                         <Label>{c('Label').t`Amount due`}</Label>
-                        <Field>
-                            <Price currency={model.currency}>{check.AmountDue}</Price>
+                        <Field className="alignright">
+                            <Input
+                                className="pm-field--highlight strong"
+                                readOnly={true}
+                                value={toPrice(check.AmountDue, model.currency)}
+                            />
                         </Field>
                     </Row>
                     <Payment
