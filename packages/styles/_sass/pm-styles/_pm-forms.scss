@@ -95,7 +95,7 @@ select.pm-field {
 }
 
 
-/* sizes */
+/* sizes/other modifiers */
 .pm-field--tiny {
   padding: em(6); // useful for address group
 }
@@ -104,6 +104,11 @@ select.pm-field {
 }
 .pm-field--large {
   padding: em(10) em(16); // design want 42px height (actually 43 to avoid .5px)
+}
+.pm-field--highlight {
+  border-color: $pm-blue;
+  border-width: 2px;
+  background-color: rgba($pm-blue, .1);
 }
 
 /* checkboxes */
