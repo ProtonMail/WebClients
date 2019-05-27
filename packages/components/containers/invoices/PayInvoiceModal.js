@@ -35,7 +35,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }) => {
                 <>
                     <Row>
                         <Label>{c('Label').t`Amount`}</Label>
-                        <Field className="alignright">
+                        <Field className="w100 alignright">
                             <Price className="pm-label" currency={Currency}>
                                 {Amount}
                             </Price>
@@ -43,9 +43,9 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }) => {
                     </Row>
                     <Row>
                         <Label>{c('Label').t`Amount due`}</Label>
-                        <Field className="alignright">
+                        <Field className="w100">
                             <Input
-                                className="pm-field--highlight strong"
+                                className="pm-field--highlight strong alignright"
                                 readOnly={true}
                                 value={toPrice(AmountDue, Currency)}
                             />

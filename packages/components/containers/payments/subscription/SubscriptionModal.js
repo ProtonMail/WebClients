@@ -170,9 +170,9 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
                         .t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
                     <Row>
                         <Label>{c('Label').t`Amount due`}</Label>
-                        <Field className="alignright">
+                        <Field className="w100">
                             <Input
-                                className="pm-field--highlight strong"
+                                className="pm-field--highlight strong alignright"
                                 readOnly={true}
                                 value={toPrice(check.AmountDue, model.currency)}
                             />
