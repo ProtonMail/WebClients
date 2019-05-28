@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
     ConfirmModal,
@@ -11,6 +11,7 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { removeMember, updateRole, privatizeMember } from 'proton-shared/lib/api/members';
+import { revokeSessions } from 'proton-shared/lib/api/memberSessions';
 import { MEMBER_PRIVATE, MEMBER_ROLE } from 'proton-shared/lib/constants';
 
 import EditMemberModal from './EditMemberModal';
@@ -18,15 +19,24 @@ import EditMemberModal from './EditMemberModal';
 const MemberActions = ({ member, organization }) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
+    const [loading, setLoading] = useState(false);
     const { request: requestRemoveMember } = useApiWithoutResult(removeMember);
     const { request: requestUpdateRole } = useApiWithoutResult(updateRole);
     const { request: requestPrivatize } = useApiWithoutResult(privatizeMember);
+    const { request: requestRevokeSessions } = useApiWithoutResult(revokeSessions);
     const { createModal } = useModals();
 
     const handleConfirmDelete = async () => {
-        await requestRemoveMember(member.ID);
-        await call();
-        createNotification({ text: c('Success message').t`User deleted` });
+        try {
+            setLoading(true);
+            await requestRemoveMember(member.ID);
+            await call();
+            setLoading(false);
+            createNotification({ text: c('Success message').t`User deleted` });
+        } catch (error) {
+            setLoading(false);
+            throw error;
+        }
     };
 
     const login = () => {
@@ -34,27 +44,62 @@ const MemberActions = ({ member, organization }) => {
     };
 
     const makeAdmin = async () => {
-        await requestUpdateRole(member.ID, MEMBER_ROLE.ORGANIZATION_OWNER);
-        await call();
-        createNotification({ text: c('Success message').t`Role updated` });
+        try {
+            setLoading(true);
+            await requestUpdateRole(member.ID, MEMBER_ROLE.ORGANIZATION_OWNER);
+            await call();
+            setLoading(false);
+            createNotification({ text: c('Success message').t`Role updated` });
+        } catch (error) {
+            setLoading(false);
+            throw error;
+        }
     };
 
     const revokeAdmin = async () => {
-        await requestUpdateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER);
-        await call();
-        createNotification({ text: c('Success message').t`Role updated` });
+        try {
+            setLoading(true);
+            await requestUpdateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER);
+            await call();
+            setLoading(false);
+            createNotification({ text: c('Success message').t`Role updated` });
+        } catch (error) {
+            setLoading(false);
+            throw error;
+        }
     };
 
     const makePrivate = async () => {
-        await requestPrivatize(member.ID);
-        await call();
-        createNotification({ text: c('Success message').t`Status updated` });
+        try {
+            setLoading(true);
+            await requestPrivatize(member.ID);
+            await call();
+            setLoading(false);
+            createNotification({ text: c('Success message').t`Status updated` });
+        } catch (error) {
+            setLoading(false);
+            throw error;
+        }
+    };
+
+    const revokeMemberSessions = async () => {
+        try {
+            setLoading(true);
+            await requestRevokeSessions(member.ID);
+            await call();
+            setLoading(false);
+            createNotification({ text: c('Success message').t`Sessions revoked` });
+        } catch (error) {
+            setLoading(false);
+            throw error;
+        }
     };
 
     const canMakeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER;
     const canDelete = !member.Self;
     const canEdit = organization.HasKeys;
     const canRevoke = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_OWNER;
+    const canRevokeSessions = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_OWNER;
 
     // TODO fill member.Keys.length
     const canLogin =
@@ -100,10 +145,14 @@ const MemberActions = ({ member, organization }) => {
         canMakePrivate && {
             text: c('Member action').t`Make private`,
             onClick: makePrivate
+        },
+        canRevokeSessions && {
+            text: c('Member action').t`Revoke sessions`,
+            onClick: revokeMemberSessions
         }
     ].filter(Boolean);
 
-    return <DropdownActions list={list} className="pm-button--small" />;
+    return <DropdownActions loading={loading} list={list} className="pm-button--small" />;
 };
 
 MemberActions.propTypes = {
