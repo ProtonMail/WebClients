@@ -208,11 +208,13 @@ const AddressKeysSection = () => {
                 <KeysHeaderActions permissions={keysPermissions} onAction={handleKeysAction} />
             </Block>
             {Addresses.length > 1 ? (
-                <Select
-                    value={addressIndex}
-                    options={addressOptions}
-                    onChange={({ target: { value } }) => !loadingKeyID && setAddressIndex(+value)}
-                />
+                <Block>
+                    <Select
+                        value={addressIndex}
+                        options={addressOptions}
+                        onChange={({ target: { value } }) => !loadingKeyID && setAddressIndex(+value)}
+                    />
+                </Block>
             ) : null}
             <KeysTable keys={addressKeysFormatted} onAction={handleKeyAction} />
         </>

@@ -35,13 +35,13 @@ const KeysTable = ({ keys, onAction }) => {
                                     {fingerprint}
                                 </code>,
                                 algorithm,
+                                <KeysStatus key={2} {...rest} />,
                                 <KeysActions
-                                    key={2}
+                                    key={3}
                                     loading={isLoading}
                                     onAction={(action) => onAction(action, ID, idx)}
                                     {...rest}
-                                />,
-                                <KeysStatus key={3} {...rest} />
+                                />
                             ]}
                         />
                     );
