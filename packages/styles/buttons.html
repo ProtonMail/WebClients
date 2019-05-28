@@ -351,6 +351,20 @@ subsection: buttons
   &lt;button class="pm-group-button pv-button-greenborder"&gt;button&lt;/button&gt;
 &lt;/div&gt;</code></pre>
 
+<h3 class="mt1">Aligning buttons near button groups</h3>
+
+<p class="mt0">As button groups use flexbox, to avoid bad alignments*, please wrap the next button into a <code>div class="inline-flex ml1"</code>:</p>
+
+<div class="pm-group-buttons mb1">
+    <button class="pm-group-button pm-button-blueborder">button</button>
+    <button class="pm-group-button pm-button-blueborder">button</button>
+    <button class="pm-group-button pm-button-blueborder">button</button>
+    <button class="pm-group-button pm-button-blueborder">button</button>
+</div>
+
+<div class="inline-flex ml1"><button class="pm-button pm-button--primary">button</button></div>
+
+<p>* <small>CSS is awesome.</small></p>
 
 <h3 class="mt1">Modifier for buttons/icons</h3>
 
