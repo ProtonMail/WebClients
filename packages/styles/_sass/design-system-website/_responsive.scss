@@ -1,20 +1,23 @@
-
 /*
  * BIGGER than large breakpoint
  */
- @include respond-to(2500, 'min') { 
 
-  body {
-    --body-fontsize: 2rem;
+@include respond-to(1800, 'min') { 
+
+  :root {
+    --body-fontsize: 1.6rem;
+  }
+  .container-section-sticky {
+    max-width: 65em;
   }
 }
+
 
 @include respond-to($breakpoint-large, 'min') { 
 
   :root {
     --width-sidebar: 15vw;
     --width-subnav: 15vw;
-    --body-fontsize: 1.6rem;
   }
   .container-section-sticky {
     max-width: 55vw;
