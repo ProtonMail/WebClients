@@ -1,3 +1,11 @@
+# [3.15.38] - 2019-05-28
+## Added
+- Warning notification for IE11 users
+- Allow admin to revoke all member sessions
+
+## Fixed
+- Some embedded images were not loaded.
+
 # [3.15.37] - 2019-05-23
 
 ## Changed
