@@ -1,3 +1,5 @@
+import { isEdge, isIE11 } from '../../../helpers/browser';
+
 /* @ngInject */
 function linkWarningModal(pmModal, eventManager, mailSettingsModel, settingsMailApi, networkActivityTracker) {
     return pmModal({
@@ -8,7 +10,9 @@ function linkWarningModal(pmModal, eventManager, mailSettingsModel, settingsMail
             // Do not ask again
             this.preference = !mailSettingsModel.get('ConfirmLink');
             this.link = params.link;
-            this.cancel = params.close;
+
+            // Both are not able to open the link
+            this.punyCodeLinkIE = /:\/\/xn--/.test(params.link) && (isEdge() || isIE11());
 
             this.continue = () => {
                 params.close();

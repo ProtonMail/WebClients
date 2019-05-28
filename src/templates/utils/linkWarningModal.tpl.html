@@ -13,6 +13,10 @@
                     <span class="bold">{{ ::ctrl.link }}</span>
                 </div>
 
+                <div ng-if="ctrl.punyCodeLinkIE" class="alert alert-warning margin-bottom break-word">
+                    <div class="margin-bottom" translate-context="Info" translate>Internet Explorer and Edge browsers do not parse these links properly, so it is not possible to open them. If you are certain that the link is legitimate, please use a different browser to open it.</div>
+                </div>
+
                 <label>
                     <custom-checkbox data-custom-ng-model="ctrl.preference" />
                     <span translate-context="Label" translate>Do not ask again</span>
