@@ -39,37 +39,39 @@ async function main() {
     }
 
     if (is('upgrade')) {
-        require('./lib/upgrade')([
-            {
-                title: 'Get list of translations available',
-                task: () =>
-                    require('./lib/crowdin')({
-                        type: true,
-                        list: true,
-                        limit: 95,
-                        outputLang: true
-                    })
-            },
-            {
-                title: 'Upgrade our translations with ones from crowdin',
-                task: () =>
-                    require('./lib/crowdin')({
-                        sync: true
-                    })
-            },
-            {
-                title: 'Store a cache of translations available in the app',
-                task: () => require('./lib/cache').write()
-            },
-            {
-                title: 'Export translations as JSON',
-                task: () => require('./lib/compile')()
-            },
-            {
-                title: 'Commit translations',
-                task: () => require('./lib/commit')('upgrade')
-            }
-        ]);
+        require('./lib/upgrade')(
+            [
+                !argv.custom && {
+                    title: 'Get list of translations available',
+                    task: () =>
+                        require('./lib/crowdin')({
+                            type: true,
+                            list: true,
+                            limit: 95,
+                            outputLang: true
+                        })
+                },
+                {
+                    title: 'Upgrade our translations with ones from crowdin',
+                    task: () =>
+                        require('./lib/crowdin')({
+                            sync: true
+                        })
+                },
+                {
+                    title: 'Store a cache of translations available in the app',
+                    task: () => require('./lib/cache').write()
+                },
+                {
+                    title: 'Export translations as JSON',
+                    task: () => require('./lib/compile')()
+                },
+                {
+                    title: 'Commit translations',
+                    task: () => require('./lib/commit')('upgrade')
+                }
+            ].filter(Boolean)
+        );
     }
 
     if (is('help') && !is('crowdin')) {
@@ -103,7 +105,7 @@ async function main() {
               - type: update commit new extracted translations
               - type: upgrade commit new translations (po, json)
 
-          - ${chalk.blue('upgrade')}
+          - ${chalk.blue('upgrade')} ${chalk.blue('<flag>')}
               Upgrade translations inside your app from the latest version available on crowdin.
               It will:
                 - Get list of translations available
@@ -111,6 +113,9 @@ async function main() {
                 - Store a cache of translations available in the app
                 - Export translations as JSON
                 - Commit everything
+
+              - flag: default none, it will auto fetch latest translations (proton-i18n crowdin --list --type --limit=95)
+              - flag: --custom it will use your version of the file
     `);
     }
 }

@@ -46,7 +46,7 @@ Available commands:
       - type: update commit new extracted translations
       - type: upgrade commit new translations (po, json)
 
-  - upgrade
+  - upgrade <flag>
       Upgrade translations inside your app from the latest version available on crowdin.
       It will:
         - Get list of translations available
@@ -54,6 +54,9 @@ Available commands:
         - Store a cache of translations available in the app
         - Export translations as JSON
         - Commit everything
+
+      - flag: default none, it will auto fetch latest translations (proton-i18n crowdin --list --type --limit=95)
+      - flag: --custom it will use your version of the file
 ``` 
 
 ### Validate
