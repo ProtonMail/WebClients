@@ -85,6 +85,8 @@ export { default as Price } from './components/price/Price';
 export { default as Progress } from './components/progress/Progress';
 export { default as Legend } from './components/text/Legend';
 export { default as ErrorZone } from './components/text/ErrorZone';
+export { default as Preformatted } from './components/text/Preformatted';
+export { default as EditableText } from './components/editableText/EditableText';
 export { default as LanguageSection } from './containers/general/LanguageSection';
 export { default as ContactsSection } from './containers/general/ContactsSection';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
