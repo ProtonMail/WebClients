@@ -1,35 +1,98 @@
 import { useState } from 'react';
+import keycode from 'keycode';
 
-const FOCUSSED_CLASS = 'focussed';
-const BLURRED_CLASS = 'blured';
+const FOCUSED_CLASS = 'focused';
+const BLURRED_CLASS = 'blurred';
 const DIRTY_CLASS = 'dirty';
 const PRISTINE_CLASS = 'pristine';
 
-const DEFAULT_STATE = { focussed: false, blurred: false, dirty: false, pristine: true };
+const DEFAULT_STATE = {
+    isFocused: false,
+    isBlurred: false,
+    isDirty: false,
+    isPristine: true
+};
 
-const useInput = (initialState = DEFAULT_STATE, prefix = 'field') => {
+const useInput = (props, initialState = DEFAULT_STATE, prefix = 'field') => {
     const [status, changeStatus] = useState(initialState);
-    const change = () => !status.dirty && changeStatus({ ...status, dirty: true, pristine: false });
-    const blur = () => !status.blurred && changeStatus({ ...status, blurred: true, pristine: false });
-    const focus = () => !status.focussed && changeStatus({ ...status, focussed: true, pristine: false });
-    const reset = () => changeStatus({ ...DEFAULT_STATE });
+    const { isFocused, isBlurred, isPristine, isDirty } = status;
+
+    const reset = () => {
+        changeStatus({ ...DEFAULT_STATE });
+    };
+
     const classes = [];
 
-    if (status.pristine) {
+    if (isPristine) {
         classes.push(PRISTINE_CLASS);
     } else {
-        status.focussed && classes.push(`${prefix}-${FOCUSSED_CLASS}`);
-        status.blurred && classes.push(`${prefix}-${BLURRED_CLASS}`);
-        status.dirty && classes.push(`${prefix}-${DIRTY_CLASS}`);
+        isFocused && classes.push(`${prefix}-${FOCUSED_CLASS}`);
+        isBlurred && classes.push(`${prefix}-${BLURRED_CLASS}`);
+        isDirty && classes.push(`${prefix}-${DIRTY_CLASS}`);
     }
+
+    const { onFocus, onBlur, onChange, onPressEnter, onKeyDown, disabled } = props;
 
     return {
         status,
         statusClasses: classes.join(' '),
-        change,
-        blur,
-        focus,
-        reset
+        reset,
+        handlers: {
+            onFocus: (event) => {
+                if (disabled) {
+                    return;
+                }
+
+                if (!isFocused) {
+                    changeStatus({
+                        ...status,
+                        isFocused: true,
+                        isPristine: false
+                    });
+                }
+
+                if (onFocus) {
+                    onFocus(event);
+                }
+            },
+            onBlur: (event) => {
+                if (!isBlurred) {
+                    changeStatus({
+                        ...status,
+                        isBlurred: true,
+                        isPristine: false
+                    });
+                }
+
+                if (onBlur) {
+                    onBlur(event);
+                }
+            },
+            onChange: (event) => {
+                if (!isDirty) {
+                    changeStatus({
+                        ...status,
+                        isDirty: true,
+                        isPristine: false
+                    });
+                }
+
+                if (onChange) {
+                    onChange(event);
+                }
+            },
+            onKeyDown: (event) => {
+                const key = keycode(event);
+
+                if (key === 'enter' && onPressEnter) {
+                    onPressEnter(event);
+                }
+
+                if (onKeyDown) {
+                    onKeyDown(event);
+                }
+            }
+        }
     };
 };
 

@@ -5,54 +5,21 @@ import { generateUID } from '../../helpers/component';
 import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';
 
-const Select = ({ options, disabled, className, onChange, onBlur, onFocus, error, ...rest }) => {
-    const { blur, focus, change, statusClasses, status } = useInput();
+const Select = (props) => {
+    const { options, className, error, ...rest } = props;
+    const { handlers, statusClasses, status } = useInput(props);
     const [uid] = useState(generateUID('select'));
-
-    const handleFocus = (event) => {
-        if (disabled) {
-            return;
-        }
-
-        focus();
-
-        if (onFocus) {
-            onFocus(event);
-        }
-    };
-
-    const handleBlur = (event) => {
-        blur();
-
-        if (onBlur) {
-            onBlur(event);
-        }
-    };
-
-    const handleChange = (event) => {
-        change();
-
-        if (onChange) {
-            onChange(event);
-        }
-    };
 
     return (
         <>
-            <select
-                className={`pm-field ${className} ${statusClasses}`}
-                onBlur={handleBlur}
-                onFocus={handleFocus}
-                onChange={handleChange}
-                {...rest}
-            >
+            <select className={`pm-field ${className} ${statusClasses}`} {...rest} {...handlers}>
                 {options.map(({ text, ...rest }, index) => (
                     <option key={index.toString()} {...rest}>
                         {text}
                     </option>
                 ))}
             </select>
-            <ErrorZone id={uid}>{error && status.dirty ? error : ''}</ErrorZone>
+            <ErrorZone id={uid}>{error && status.isDirty ? error : ''}</ErrorZone>
         </>
     );
 };
