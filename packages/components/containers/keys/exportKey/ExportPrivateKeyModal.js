@@ -46,15 +46,15 @@ const ExportPrivateKeyModal = ({ name, privateKey, onSuccess, onClose, ...rest }
                 {c('Info')
                     .t`IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!`}
             </Alert>
+            <Alert>{c('Info').t`Please enter a password to encrypt your private key with before exporting.`}</Alert>
             <Row>
-                <Label htmlFor={id}>
-                    {c('Label').t`Please enter a password to encrypt your private key with before exporting.`}
-                </Label>
+                <Label htmlFor={id}>{c('Label').t`Enter password`}</Label>
                 <Field>
                     <PasswordInput
                         id={id}
                         value={password}
                         onChange={({ target: { value } }) => setPassword(value)}
+                        placeholder={c('Placeholder').t`Password`}
                         autoFocus={true}
                         required
                     />
