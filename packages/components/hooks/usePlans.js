@@ -1,18 +1,15 @@
-import { useCallback } from 'react';
-import { useCachedResult, useApi, useCache } from 'react-components';
+import { useCachedAsyncResult, useApi } from 'react-components';
 import { queryPlans } from 'proton-shared/lib/api/payments';
 import { CYCLE } from 'proton-shared/lib/constants';
 
 const { MONTHLY } = CYCLE;
 const KEY = 'plans';
 
+const getPlans = (api, Cycle) => api(queryPlans({ Cycle })).then(({ Plans }) => Plans);
+
 const usePlans = () => {
     const api = useApi();
-    const cache = useCache();
-    const getPlans = (Cycle) => api(queryPlans({ Cycle })).then(({ Plans }) => Plans);
-    const load = useCallback(() => getPlans(MONTHLY), []);
-
-    return useCachedResult(cache, KEY, load);
+    return useCachedAsyncResult(KEY, () => getPlans(api, MONTHLY), []);
 };
 
 export default usePlans;

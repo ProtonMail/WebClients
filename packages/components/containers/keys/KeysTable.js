@@ -1,45 +1,64 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Table, TableHeader, TableBody } from 'react-components';
+import { Table, TableCell, TableRow, TableBody } from 'react-components';
 
-import KeysRow from './KeysRow';
 import KeysActions from './KeysActions';
 import KeysStatus from './KeysStatus';
 
-const KeysTable = ({ keys = [] }) => {
-    const list = keys.map(({ actions, statuses, fingerprint, type }) => {
-        const keysActions = <KeysActions actions={actions} />;
-        const keysStatus = <KeysStatus statuses={statuses} />;
-
+const KeysTable = ({ keys, onAction }) => {
+    const headerCells = [
+        { node: c('Title header for keys table').t`Fingerprint`, className: 'w50' },
+        { node: c('Title header for keys table').t`Key type` },
+        { node: c('Title header for keys table').t`Status` },
+        { node: c('Title header for keys table').t`Actions` }
+    ].map(({ node, className = '' }, i) => {
         return (
-            <KeysRow
-                key={fingerprint}
-                fingerprint={fingerprint}
-                type={type}
-                status={keysStatus}
-                actions={keysActions}
-            />
+            <TableCell key={i.toString()} className={className} type="header">
+                {node}
+            </TableCell>
         );
     });
 
     return (
         <Table>
-            <TableHeader
-                cells={[
-                    c('Title header for keys table').t`Fingerprint`,
-                    c('Title header for keys table').t`Key type`,
-                    c('Title header for keys table').t`Status`,
-                    c('Title header for keys table').t`Actions`
-                ]}
-            />
-            <TableBody>{list}</TableBody>
+            <thead>
+                <tr>{headerCells}</tr>
+            </thead>
+            <TableBody colSpan={4}>
+                {keys.map(({ ID, fingerprint, algorithm, isLoading, ...rest }, idx) => {
+                    return (
+                        <TableRow
+                            key={ID}
+                            cells={[
+                                <code key={1} className="mw100 inbl ellipsis">
+                                    {fingerprint}
+                                </code>,
+                                algorithm,
+                                <KeysActions
+                                    key={2}
+                                    loading={isLoading}
+                                    onAction={(action) => onAction(action, ID, idx)}
+                                    {...rest}
+                                />,
+                                <KeysStatus key={3} {...rest} />
+                            ]}
+                        />
+                    );
+                })}
+            </TableBody>
         </Table>
     );
 };
 
 KeysTable.propTypes = {
-    keys: PropTypes.array.isRequired
+    keys: PropTypes.array,
+    onAction: PropTypes.func.isRequired,
+    loadingKeyID: PropTypes.bool
+};
+
+KeysTable.defaultProps = {
+    keys: []
 };
 
 export default KeysTable;

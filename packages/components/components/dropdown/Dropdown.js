@@ -18,6 +18,8 @@ const Dropdown = ({
     autoCloseOutside,
     align,
     narrow,
+    loading,
+    disabled,
     caret
 }) => {
     const [open, setOpen] = useState(isOpen);
@@ -60,7 +62,9 @@ const Dropdown = ({
     }, []);
 
     const alignClass = ALIGN_CLASSES[align];
-    const dropdownClassName = `dropDown ${alignClass ? alignClass : ''} pm-button`;
+    const dropdownClassName = ['dropDown pm-button', alignClass, (loading || disabled) && 'is-disabled', className]
+        .filter(Boolean)
+        .join(' ');
     const contentClassName = `dropDown-content ${narrow ? 'dropDown-content--narrow' : ''}`;
     const caretContent = caret && <Icon className="expand-caret" size={12} name="caret" />;
 
@@ -70,8 +74,10 @@ const Dropdown = ({
                 title={title}
                 className="increase-surface-click"
                 aria-expanded={open}
+                aria-busy={loading}
                 onClick={handleClick}
                 type="button"
+                disabled={loading || disabled}
             >
                 <span className="mauto">
                     {content} {caretContent}
@@ -92,6 +98,8 @@ Dropdown.propTypes = {
     align: PropTypes.string,
     title: PropTypes.string,
     caret: PropTypes.bool,
+    disabled: PropTypes.bool,
+    loading: PropTypes.bool,
     narrow: PropTypes.bool,
     autoClose: PropTypes.bool,
     autoCloseOutside: PropTypes.bool
@@ -103,6 +111,8 @@ Dropdown.defaultProps = {
     align: 'center',
     narrow: false,
     caret: false,
+    disabled: false,
+    loading: false,
     autoCloseOutside: true,
     className: ''
 };

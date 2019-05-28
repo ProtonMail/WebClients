@@ -1,5 +1,4 @@
-import { useCallback } from 'react';
-import { useApi, useCache, useCachedResult } from 'react-components';
+import { useApi, useCachedAsyncResult } from 'react-components';
 
 /**
  * Creates an async fn model hook.
@@ -8,11 +7,7 @@ import { useApi, useCache, useCachedResult } from 'react-components';
 const createUseModelHook = ({ key, get }) => {
     return () => {
         const api = useApi();
-        const cache = useCache();
-        const load = useCallback(() => {
-            return get(api);
-        }, []);
-        return useCachedResult(cache, key, load);
+        return useCachedAsyncResult(key, () => get(api), []);
     };
 };
 

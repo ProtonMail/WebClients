@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-const FileInput = ({ children, id, className, ...rest }) => {
+const FileInput = forwardRef(({ children, id, className, ...rest }, ref) => {
     return (
         <label className={'pm-button '.concat(className || '')} htmlFor={id}>
-            <input id={id} type="file" className="hidden" {...rest} />
+            <input id={id} type="file" className="hidden" {...rest} ref={ref} />
             {children}
         </label>
     );
-};
+});
 
 FileInput.propTypes = {
     children: PropTypes.node.isRequired,

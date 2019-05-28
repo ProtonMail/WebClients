@@ -1,4 +1,5 @@
 import React from 'react';
+import { c } from 'ttag';
 
 // https://reactjs.org/docs/error-boundaries.html#introducing-error-boundaries
 class ErrorBoundary extends React.Component {
@@ -8,28 +9,20 @@ class ErrorBoundary extends React.Component {
     }
 
     static getDerivedStateFromError(error) {
-        // Update state so the next render will show the fallback UI.
         return { hasError: true, error };
     }
 
-    componentDidCatch(error, info) {
-        const logErrorToMyService = () => {};
-        // You can also log the error to an error reporting service
-        logErrorToMyService(error, info);
-    }
-
     render() {
-        if (this.state.hasError) {
-            // You can render any custom fallback UI
-            return (
-                <>
-                    <h1>Something went wrong.</h1>
-                    <span>{this.state.error.stack.toString()}</span>
-                </>
-            );
+        if (!this.state.hasError) {
+            return this.props.children;
         }
-
-        return this.props.children;
+        const error = this.state.error ? this.state.error.toString() : undefined;
+        return (
+            <>
+                <h1>{c('Title').t`Something went wrong.`}</h1>
+                <span>{error}</span>
+            </>
+        );
     }
 }
 

@@ -7,7 +7,11 @@ const TableHeader = ({ cells, ...rest }) => {
     return (
         <thead {...rest}>
             <tr>
-                {cells.map((cell, index) => <TableCell key={index.toString()} type="header">{cell}</TableCell>)}
+                {cells.map((cell, index) => (
+                    <TableCell key={index.toString()} type="header">
+                        {cell}
+                    </TableCell>
+                ))}
             </tr>
         </thead>
     );
