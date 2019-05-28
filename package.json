@@ -76,7 +76,7 @@
     "webpack-subresource-integrity": "github:dhoko/webpack-subresource-integrity.git#b077a0037485ec74203f30746dc4d448eb8eac1d",
     "write-webpack-plugin": "^1.1.0"
   },
-    "dependencies": {
+  "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "angular": "^1.7.5",
     "angular-cookies": "^1.7.5",
@@ -209,7 +209,7 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "version": "3.15.37",
+  "version": "3.15.38",
   "husky": {
     "hooks": {
       "pre-commit": "git update-index --assume-unchanged package-lock.json && ./tasks/metrics.sh"
