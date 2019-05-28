@@ -100,8 +100,9 @@ const MembersSection = () => {
                     })}
                 </TableBody>
             </Table>
-            <Block>
-                {organization.UsedMembers} / {organization.MaxMembers} {c('Info').t`members used`}
+            <Block className="opacity-50">
+                {organization.UsedMembers} / {organization.MaxMembers}{' '}
+                {c('Info').ngettext('member used', 'members used', organization.UsedMembers)}
             </Block>
             <Alert>
                 <span className="mr0-5">{c('Info').t`You can add and manage addresses for the user in your`}</span>

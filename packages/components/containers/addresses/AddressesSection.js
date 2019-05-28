@@ -35,8 +35,9 @@ const AddressesSection = () => {
             <SubTitle>{c('Title').t`Addresses`}</SubTitle>
             {MaxMembers > 1 ? <AddressesWithMembers /> : <AddressesTable />}
             {MaxAddresses > 1 ? (
-                <Block>
-                    {UsedAddresses} / {MaxAddresses} {c('Info').t`addresses used`}
+                <Block className="opacity-50">
+                    {UsedAddresses} / {MaxAddresses}{' '}
+                    {c('Info').ngettext('address used', 'addresses used', UsedAddresses)}
                 </Block>
             ) : null}
         </>

@@ -36,8 +36,8 @@ const DomainsSection = () => {
             </Block>
             {!loading && !domains.length ? <Alert>{c('Info').t`No domains yet.`}</Alert> : null}
             {loading ? null : <DomainsTable domains={domains} />}
-            <Block>
-                {UsedDomains} / {MaxDomains} {c('Info').t`domains used`}
+            <Block className="opacity-50">
+                {UsedDomains} / {MaxDomains} {c('Info').ngettext('domain used', 'domains used', UsedDomains)}
             </Block>
         </>
     );
