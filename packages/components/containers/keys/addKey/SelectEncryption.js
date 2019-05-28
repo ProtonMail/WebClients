@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Alert, Radio, Row, Label } from 'react-components';
+import { Alert, Radio, Row } from 'react-components';
 import { ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
 
 const { RSA2048, RSA4096, X25519 } = ENCRYPTION_TYPES;
@@ -32,14 +32,9 @@ const SelectEncryption = ({ encryptionType, setEncryptionType }) => {
                 const id = i.toString();
                 return (
                     <Row key={i}>
-                        <Label htmlFor={id}>
-                            <Radio
-                                id={id}
-                                checked={value === encryptionType}
-                                onChange={() => setEncryptionType(value)}
-                            />
+                        <Radio id={id} checked={value === encryptionType} onChange={() => setEncryptionType(value)}>
                             {label}
-                        </Label>
+                        </Radio>
                     </Row>
                 );
             })}
