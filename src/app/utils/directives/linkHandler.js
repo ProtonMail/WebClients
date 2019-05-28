@@ -1,13 +1,83 @@
 import { PROTON_DOMAINS } from '../../constants';
 import { isExternal, getDomain } from '../../../helpers/url';
+import { isEdge, isIE11 } from '../../../helpers/browser';
 
 /* @ngInject */
-function linkHandler(dispatchers, messageModel, mailSettingsModel, mailUtils, linkWarningModal) {
+function linkHandler(
+    dispatchers,
+    messageModel,
+    mailSettingsModel,
+    mailUtils,
+    linkWarningModal,
+    notification,
+    gettextCatalog
+) {
     const { dispatcher } = dispatchers(['composer.new']);
     const dispatch = (type, data = {}) => dispatcher['composer.new'](type, data);
-    const getSrc = (target) => target.getAttribute('href') || '';
+    const getSrc = (target) => {
+        const extract = () => {
+            try {
+                return { encoded: target.toString() || '', raw: target.getAttribute('href') || '' };
+            } catch (e) {
+                /*
+                    Because for Edge/IE11
+                    <a href="http://xn--rotonmail-4sg.com" rel="noreferrer nofollow noopener">Protonmail.com</a>
+                    will crash --> Unspecified error. ¯\_(ツ)_/¯
+                    Don't worry, target.href/getAttribute will crash too ¯\_(ツ)_/¯
+                    Ivre, ...
+                 */
+                const attr = Array.from(target.attributes).find((attr) => (attr || {}).name === 'href');
+                return { raw: attr.nodeValue || '' };
+            }
+        };
 
-    const onClick = (e) => {
+        // Because even the fallback canq crash on IE11/Edge. (Now it's a matter of random env issue...)
+        try {
+            return extract();
+        } catch (e) {
+            notification.error(
+                gettextCatalog.getString(
+                    'This message may some URL links that cannot be properly opened by your current browser',
+                    null,
+                    'Error'
+                )
+            );
+        }
+    };
+
+    /**
+     * Encode the URL to Remove the punycode from it
+     * @param  {String} options.raw     getAttribute('href') -> browser won't encode it
+     * @param  {String} options.encoded toString() -> encoded value  USVString
+     * @return {String}
+     */
+    const encoder = async ({ raw = '', encoded }) => {
+        // https://en.wikipedia.org/wiki/Punycode#Internationalized_domain_names
+        const noEncoding = isIE11() || isEdge() || !/:\/\/xn--/.test(encoded || raw);
+        /*
+            Fallback, Some browsers don't support USVString at all (IE11, Edge)
+            Or when the support is "random".
+            Ex: PaleMoon (FF ESR 52) works well BUT for one case, where it's broken cf https://github.com/MoonchildProductions/UXP/issues/1125
+            Then when we detect there is no encoding done, we use the lib.
+         */
+        if (noEncoding) {
+            const { punycode } = await import(/* webpackChunkName: "vendorEncoder.module" */ '../../vendorEncoder');
+
+            const [protocol, url = ''] = raw.split('://');
+
+            // Sometimes Blink is enable to decode the URL to convert it again
+            const uri = !url.startsWith('%') ? url : decodeURIComponent(url);
+            const newUrl = uri
+                .split('/')
+                .map(punycode.toASCII)
+                .join('/');
+
+            return `${protocol}://${newUrl}`;
+        }
+        return encoded;
+    };
+
+    const onClick = async (e) => {
         /*
             We can click on an image inside a link.
             more informations inside the css, look at:
@@ -26,8 +96,14 @@ function linkHandler(dispatchers, messageModel, mailSettingsModel, mailUtils, li
 
         const src = getSrc(node);
 
+        // IE11 and Edge random env bug... (╯°□°）╯︵ ┻━┻
+        if (!src) {
+            e.preventDefault();
+            return false;
+        }
+
         // We only handle anchor that begins with `mailto:`
-        if (src.toLowerCase().startsWith('mailto:')) {
+        if (src.raw.toLowerCase().startsWith('mailto:')) {
             e.preventDefault();
 
             const message = messageModel(mailUtils.mailtoParser(e.target.getAttribute('href')));
@@ -40,26 +116,24 @@ function linkHandler(dispatchers, messageModel, mailSettingsModel, mailUtils, li
         }
 
         const askForConfirmation = mailSettingsModel.get('ConfirmLink');
-        const domain = getDomain(src);
+        const domain = getDomain(src.raw);
 
         /*
             If the modal is already active --- do nothing
             ex: click on a link, open the modal, inside the contnue button is an anchor with the same link.
             Don't change anchors behavior
          */
-        if (linkWarningModal.active() || src.startsWith('#')) {
+        if (linkWarningModal.active() || src.raw.startsWith('#')) {
             return;
         }
 
-        if (askForConfirmation && isExternal(src) && domain && !PROTON_DOMAINS.includes(domain)) {
+        if (askForConfirmation && isExternal(src.raw) && domain && !PROTON_DOMAINS.includes(domain)) {
             e.preventDefault();
             e.stopPropagation(); // Required for Safari
+
             return linkWarningModal.activate({
                 params: {
-                    link: src,
-                    close() {
-                        linkWarningModal.deactivate();
-                    }
+                    link: await encoder(src)
                 }
             });
         }

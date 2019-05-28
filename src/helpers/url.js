@@ -12,7 +12,18 @@ const getHostname = (url) => {
     return window.location.hostname; // Relative URL.
 };
 
-export const isExternal = (url) => window.location.hostname !== getHostname(url);
+export const isExternal = (url) => {
+    try {
+        return window.location.hostname !== getHostname(url);
+    } catch (e) {
+        /*
+            IE11/Edge are the worst, they crash when they try to parse
+            ex: http://xn--rotonmail-4sg.com
+            so if it does we know it's an external link (⌐■_■)
+         */
+        return true;
+    }
+};
 
 /**
  * Extract domain from URL

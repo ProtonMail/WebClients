@@ -99,7 +99,7 @@ const list = [
 
     new webpack.SourceMapDevToolPlugin({
         filename: '[file].map',
-        exclude: ['styles', 'vendor', 'vendorLazy', 'vendorLazy2']
+        exclude: ['styles', 'vendor', 'vendorLazy', 'vendorLazy2', 'vendorEncoder']
     })
 ];
 

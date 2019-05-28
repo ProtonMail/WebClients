@@ -76,7 +76,7 @@
     "webpack-subresource-integrity": "github:dhoko/webpack-subresource-integrity.git#b077a0037485ec74203f30746dc4d448eb8eac1d",
     "write-webpack-plugin": "^1.1.0"
   },
-  "dependencies": {
+    "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "angular": "^1.7.5",
     "angular-cookies": "^1.7.5",
@@ -135,11 +135,12 @@
     "pikaday": "^1.6.1",
     "pm-srp": "github:ProtonMail/pm-srp.git#semver:^1.0.0",
     "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:~6.0.6",
-    "pt-formgenerator": "github:ProtonMail/pt-formgenerator.git#semver:^1.4.0",
     "popper.js": "^1.14.4",
     "prettier": "^1.15.3",
-    "proton-shared": "github:ProtonMail/proton-shared.git#semver:^1.0.0",
     "proton-i18n": "github:ProtonMail/proton-i18n.git#semver:^1.3.0",
+    "proton-shared": "github:ProtonMail/proton-shared.git#semver:1.0.0",
+    "pt-formgenerator": "github:ProtonMail/pt-formgenerator.git#semver:^1.4.0",
+    "punycode": "^2.1.1",
     "push.js": "^1.0.7",
     "qrcodejs2": "0.0.2",
     "raven-js": "^3.27.0",
