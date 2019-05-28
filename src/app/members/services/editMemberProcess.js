@@ -43,7 +43,7 @@ function editMemberProcess(
         } = model;
 
         const quota = Math.round(storageSliderValue * unit);
-        const vpn = Math.round(vpnSliderValue);
+        const vpn = Math.round(vpnSliderValue) || 0; // vpn value coming from Slider can be NaN
 
         const updateName = (member) => {
             if (oldMember && oldMember.Name === name) {
@@ -139,7 +139,7 @@ function editMemberProcess(
                 Name: name,
                 Private: +!!model.private,
                 MaxSpace: quota,
-                MaxVPN: +!!vpn
+                MaxVPN: vpn
             });
 
             const { message, promise } = getPromise({ maxPadding, minPadding, maxVPNPadding }, member);
