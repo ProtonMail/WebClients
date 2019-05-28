@@ -27,8 +27,11 @@ Available commands:
         - type: default (default) validate we don't have missing context
         - type: lint-functions check if we use the right format for ttag
 
-  - extract
+  - extract <type>
       Extract all translations from the projet
+      - type: default (app) extract translations from the app and reactComponents + shared
+      - type: reactComponents extract only translations from react-components
+      - type: shared extract only translations from proton-shared
 
   - list <type>
       List all translations available

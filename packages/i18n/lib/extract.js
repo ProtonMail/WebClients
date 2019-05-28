@@ -6,7 +6,7 @@ const { getFiles, PROTON_DEPENDENCIES } = require('../config');
 
 const { TEMPLATE_FILE } = getFiles();
 
-async function extractor() {
+async function extractor(app = 'app') {
     if (process.env.APP_KEY === 'Angular') {
         const cmd = `npx angular-gettext-cli --files './src/+(app|templates)/**/**/*.+(js|html)' --dest ${TEMPLATE_FILE} --attributes "placeholder-translate","title-translate","pt-tooltip-translate","translate"`;
         debug(cmd);
@@ -15,7 +15,7 @@ async function extractor() {
         });
     }
 
-    const dest = PROTON_DEPENDENCIES.join(' ');
+    const dest = PROTON_DEPENDENCIES[app].join(' ');
     const cmd = `npx ttag extract $(find ${dest} -type f -name '*.js') -o ${TEMPLATE_FILE}`;
     debug(cmd);
     return execa.shell(cmd, {
@@ -33,11 +33,11 @@ async function hasDirectory() {
     }
 }
 
-async function main() {
+async function main(app) {
     const spinner = spin('Extracting translations');
     try {
         await hasDirectory();
-        const { stdout } = await extractor();
+        const { stdout } = await extractor(app);
         spinner.stop();
         debug(stdout);
         success(`Translations extracted to ${TEMPLATE_FILE}`);

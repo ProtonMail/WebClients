@@ -2,9 +2,13 @@ const path = require('path');
 const { error } = require('./lib/helpers/log')('proton-i18n');
 
 const ENV_FILE = 'env/.env';
-const PROTON_DEPENDENCIES = ['src/app'].concat(
-    ['react-components/{co*,helpers}', 'proton-shared/lib'].map((name) => `node_modules/${name}`)
-);
+const PROTON_DEPENDENCIES = {
+    app: ['src/app'].concat(
+        ['react-components/{co*,helpers}', 'proton-shared/lib'].map((name) => `node_modules/${name}`)
+    ),
+    reactComponents: ['{co*,helpers}'],
+    shared: ['lib']
+};
 
 const getFiles = () => {
     const TEMPLATE_NAME = 'template.pot';

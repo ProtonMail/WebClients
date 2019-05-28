@@ -23,7 +23,7 @@ async function main() {
     }
 
     if (is('extract')) {
-        await require('./lib/extract')();
+        await require('./lib/extract')(argv._[1]);
     }
 
     if (is('validate')) {
@@ -50,8 +50,11 @@ async function main() {
                 - type: default (default) validate we don't have missing context
                 - type: lint-functions check if we use the right format for ttag
 
-          - ${chalk.blue('extract')}
+          - ${chalk.blue('extract')} ${chalk.blue('<type>')}
               Extract all translations from the projet
+              - type: default (app) extract translations from the app and reactComponents + shared
+              - type: reactComponents extract only translations from react-components
+              - type: shared extract only translations from proton-shared
 
           - ${chalk.blue('list')} ${chalk.blue('<type>')}
               List all translations available

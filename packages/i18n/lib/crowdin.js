@@ -302,17 +302,22 @@ async function main() {
                       You can configure which translations you want to update by using a file i18n.txt.
                       each translations (ex: fr) = one line.
                       More informations on the Wiki
+
                   - ${chalk.blue('--update|-u')}
                       Update crowdin with our export file from the app
+
                   - ${chalk.blue('--check|-c')}
                       To check the progress of an export from crowdin (to know if it's done or not yet)
+
                   - ${chalk.blue('--export|-e')}
                       Ask to crowdin to create an export of translations, as it needs some time to prepare them
+
                   - ${chalk.blue('--members|-m')}
                       Get from crowdin the list of best contributors for the project
                       Flag: --format=top(default)/full
                             top: list of top 30
                             full: Object with top:List of top 30, byLang:{<lang>:<Array top contributors>}
+
                   - ${chalk.blue('--list|-l')}
                       List translations available on crowdin sorted by most progress done.
                       Usefull to export translations ex:
