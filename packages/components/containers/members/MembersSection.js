@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import {
     Table,
     TableHeader,
@@ -102,7 +102,7 @@ const MembersSection = () => {
             </Table>
             <Block className="opacity-50">
                 {organization.UsedMembers} / {organization.MaxMembers}{' '}
-                {c('Info').ngettext('member used', 'members used', organization.UsedMembers)}
+                {c('Info').ngettext(msgid`member used`, `members used`, organization.UsedMembers)}
             </Block>
             <Alert>
                 <span className="mr0-5">{c('Info').t`You can add and manage addresses for the user in your`}</span>

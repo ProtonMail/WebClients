@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { Block, Loader, SubTitle, useOrganization, useMembers } from 'react-components';
 
 import AddressesToolbar from './AddressesToolbar';
@@ -37,7 +37,7 @@ const AddressesSection = () => {
             {MaxAddresses > 1 ? (
                 <Block className="opacity-50">
                     {UsedAddresses} / {MaxAddresses}{' '}
-                    {c('Info').ngettext('address used', 'addresses used', UsedAddresses)}
+                    {c('Info').ngettext(msgid`address used`, `addresses used`, UsedAddresses)}
                 </Block>
             ) : null}
         </>

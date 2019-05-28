@@ -1,5 +1,5 @@
 import React from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import {
     useEventManager,
     useOrganization,
@@ -37,7 +37,7 @@ const DomainsSection = () => {
             {!loading && !domains.length ? <Alert>{c('Info').t`No domains yet.`}</Alert> : null}
             {loading ? null : <DomainsTable domains={domains} />}
             <Block className="opacity-50">
-                {UsedDomains} / {MaxDomains} {c('Info').ngettext('domain used', 'domains used', UsedDomains)}
+                {UsedDomains} / {MaxDomains} {c('Info').ngettext(msgid`domain used`, `domains used`, UsedDomains)}
             </Block>
         </>
     );
