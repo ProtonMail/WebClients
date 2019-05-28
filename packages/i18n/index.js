@@ -38,6 +38,40 @@ async function main() {
         require('./lib/cache').write(argv._[1]);
     }
 
+    if (is('upgrade')) {
+        require('./lib/upgrade')([
+            {
+                title: 'Get list of translations available',
+                task: () =>
+                    require('./lib/crowdin')({
+                        type: true,
+                        list: true,
+                        limit: 95,
+                        outputLang: true
+                    })
+            },
+            {
+                title: 'Upgrade our translations with ones from crowdin',
+                task: () =>
+                    require('./lib/crowdin')({
+                        sync: true
+                    })
+            },
+            {
+                title: 'Store a cache of translations available in the app',
+                task: () => require('./lib/cache').write()
+            },
+            {
+                title: 'Export translations as JSON',
+                task: () => require('./lib/compile')()
+            },
+            {
+                title: 'Commit translations',
+                task: () => require('./lib/commit')('upgrade')
+            }
+        ]);
+    }
+
     if (is('help') && !is('crowdin')) {
         console.log(dedent`
         Usage: $ proton-i18n <command>
@@ -68,6 +102,15 @@ async function main() {
               Commit translations
               - type: update commit new extracted translations
               - type: upgrade commit new translations (po, json)
+
+          - ${chalk.blue('upgrade')}
+              Upgrade translations inside your app from the latest version available on crowdin.
+              It will:
+                - Get list of translations available
+                - Upgrade our translations with ones from crowdin
+                - Store a cache of translations available in the app
+                - Export translations as JSON
+                - Commit everything
     `);
     }
 }

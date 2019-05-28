@@ -4,9 +4,8 @@ const { I18N_EXTRACT_DIR, I18N_JSON_DIR } = require('../config').getFiles();
 const { debug } = require('./helpers/log')('proton-i18n');
 
 /**
- * Validate the code to check if we use the correct format when
- * we write ttag translations.
- * @param  {String} arg path to lint
+ * Commit translations inside the app
+ * @param  {String} arg action for commit (upgrade|update)
  */
 async function main(arg = '') {
     const cmd = path.resolve(__dirname, '..', 'scripts/commit.sh');

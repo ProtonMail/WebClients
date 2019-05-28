@@ -14,11 +14,13 @@ const getFiles = () => {
     const TEMPLATE_NAME = 'template.pot';
     const I18N_EXTRACT_DIR = process.env.I18N_EXTRACT_DIR || 'po';
     const I18N_JSON_DIR = process.env.I18N_JSON_DIR || 'src/i18n';
+    const LANG_EXPORTABLE_LIST = path.join(process.cwd(), I18N_EXTRACT_DIR, 'i18n.txt');
 
     return {
         TEMPLATE_NAME,
         I18N_EXTRACT_DIR,
         I18N_JSON_DIR,
+        LANG_EXPORTABLE_LIST,
         CACHE_FILE: path.join(I18N_EXTRACT_DIR, 'lang.json'),
         I18N_OUTPUT_DIR: path.join(process.cwd(), I18N_EXTRACT_DIR),
         TEMPLATE_FILE: path.join(I18N_EXTRACT_DIR, TEMPLATE_NAME),

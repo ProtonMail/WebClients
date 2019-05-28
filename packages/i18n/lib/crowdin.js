@@ -15,7 +15,7 @@ const { getFiles, getCrowdin } = require('../config');
 
 const { KEY_API, FILE_NAME, PROJECT_NAME } = getCrowdin();
 
-const { TEMPLATE_NAME, I18N_OUTPUT_DIR, I18N_JSON_DIR, TEMPLATE_FILE_FULL } = getFiles();
+const { TEMPLATE_NAME, I18N_OUTPUT_DIR, I18N_JSON_DIR, TEMPLATE_FILE_FULL, LANG_EXPORTABLE_LIST } = getFiles();
 
 const getURL = (scope, flag = '') => {
     const customFlag = flag ? `&${flag}` : '';
@@ -31,6 +31,7 @@ const getURL = (scope, flag = '') => {
 const translateLang = (input) => {
     const map = {
         uk: 'ua',
+        'es-ES': 'es',
         'es-ES': 'es',
         'pt-BR': 'pt'
     };
@@ -109,11 +110,12 @@ const getFileNameLang = (lang) => {
  * and update our selection specified inside the i18n.txt file.
  */
 async function fetchThemAll(spinner) {
-    if (!fs.existsSync('env/i18n.txt')) {
-        throw new Error('You must create a file env/i18n.txt. More informations on the wiki');
+    debug(LANG_EXPORTABLE_LIST);
+    if (!fs.existsSync(LANG_EXPORTABLE_LIST)) {
+        throw new Error(`You must create a file ${LANG_EXPORTABLE_LIST}. More informations on the wiki`);
     }
 
-    const content = fs.readFileSync('env/i18n.txt', 'utf8').toString();
+    const content = fs.readFileSync(LANG_EXPORTABLE_LIST, 'utf8').toString();
     const list = content.split('\n').filter(Boolean);
     debug(list);
     // Extract only files from our selection list
@@ -157,7 +159,7 @@ async function udpate(spinner) {
 /**
  * Update latest translations to crowdin
  */
-async function listTranslations(spinner) {
+async function listTranslations(spinner, opt = {}) {
     const url = getURL('status', 'json');
     const { body = '' } = await got(url, { json: true });
 
@@ -165,7 +167,7 @@ async function listTranslations(spinner) {
      * Format output of the function when we list translations
      */
     const format = ({ name, code, translated_progress: progress, approved_progress: approved }) => {
-        if (argv.type || argv.t) {
+        if (argv.type || argv.t || opt.type) {
             return [code];
         }
         return ['-', chalk.cyan(code), name, `progress: ${progress}%`, `approved: ${approved}%`];
@@ -176,20 +178,31 @@ async function listTranslations(spinner) {
      * Based on the limit flag
      */
     const limit = (item) => {
-        if (!argv.limit) {
+        if (!argv.limit && !opt.limit) {
             return true;
         }
-        const approved = argv['ignore-approved'] ? true : item.approved_progress >= argv.limit;
-        return item.translated_progress >= argv.limit && approved;
+        const limit = argv.limit || opt.limit;
+        const approved = argv['ignore-approved'] ? true : item.approved_progress >= limit;
+        return item.translated_progress >= limit && approved;
     };
+
     spinner.stop();
     debug(body);
-    _.sortBy(body, ['translated_progress', 'approved_progress'])
+    const list = _.sortBy(body, ['translated_progress', 'approved_progress'])
         .reverse()
         .filter(limit)
-        .forEach((item) => {
-            console.log(...format(item));
-        });
+        .map(format);
+
+    if (opt.outputLang) {
+        const output = list.toString().replace(/,/g, '\n');
+        debug(output);
+        fs.writeFileSync(LANG_EXPORTABLE_LIST, output);
+        return success('Get list of translations available');
+    }
+
+    list.forEach((item) => {
+        console.log(...item);
+    });
 }
 
 async function listMembers(spinner, format = 'top') {
@@ -243,7 +256,7 @@ async function listMembers(spinner, format = 'top') {
     success('Export top members');
 }
 
-async function main() {
+async function main(opt = {}) {
     const getSpinnerMessage = () => {
         if (argv.c || argv.check) {
             return 'Cheking the status of the current export';
@@ -273,7 +286,7 @@ async function main() {
             await checkExport(spinner);
         }
 
-        if (argv.s || argv.sync) {
+        if (argv.s || argv.sync || opt.sync) {
             await fetchThemAll(spinner);
         }
 
@@ -285,8 +298,8 @@ async function main() {
             await udpate(spinner);
         }
 
-        if (argv.l || argv.list) {
-            await listTranslations(spinner);
+        if (argv.l || argv.list || opt.list) {
+            await listTranslations(spinner, opt);
         }
         if (argv.m || argv.members) {
             await listMembers(spinner, argv.format);

@@ -45,6 +45,15 @@ Available commands:
       Commit translations
       - type: update commit new extracted translations
       - type: upgrade commit new translations (po, json)
+
+  - upgrade
+      Upgrade translations inside your app from the latest version available on crowdin.
+      It will:
+        - Get list of translations available
+        - Upgrade our translations with ones from crowdin
+        - Store a cache of translations available in the app
+        - Export translations as JSON
+        - Commit everything
 ``` 
 
 ### Validate
@@ -133,7 +142,9 @@ You don't need to set the key, only if you want to change them.
 
 ### Custom translations to update/add inside your app 
 
-You will need to create the file `env/i18n.txt`. It's a file listing translations you want to add inside the app. 
+You will need to create the file `${I18N_EXTRACT_DIR}/i18n.txt`. It's a file listing translations you want to add inside the app. 
+
+> default I18N_EXTRACT_DIR = po cf https://github.com/ProtonMail/proton-i18n#about-i18n-custom-output-dir
 ex:
 ``` 
 cs
@@ -158,3 +169,11 @@ zh-TW
 
  :warning: YOU MUST FOLLOW THIS FORMAT when there is a locale.
  To find the format it's easy, look at the URL: https://crowdin.com/project/<prject-name>/pt-BR# -> ok it's pt-BR
+
+You can build this file inside your app via:
+
+```sh
+$ proton-i18n crowdin --list --type --limit=95 > po/i18n.txt
+``` 
+
+> _list based on the code of the translation and limit progress >= 95 + approved >= 95_
