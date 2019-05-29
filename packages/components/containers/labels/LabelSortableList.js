@@ -23,7 +23,7 @@ function LabelSortableList({ items, onEditLabel, onRemoveLabel, onToggleChange }
                         {c('Settings/labels - table').t`Notification`}
                     </th>
                     <th scope="col" className="w30">
-                        {c('Settings/labels - table').t`Action`}
+                        {c('Settings/labels - table').t`Actions`}
                     </th>
                 </tr>
             </thead>

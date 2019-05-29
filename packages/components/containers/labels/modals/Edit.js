@@ -16,17 +16,17 @@ function EditLabelModal({ label, mode, onEdit, onAdd, ...props }) {
     const reqUpdate = useApiWithoutResult(updateLabel);
 
     const I18N = {
-        edition({ Name, Exclusive } = {}) {
+        edition({ Exclusive } = {}) {
             if (Exclusive === LABEL_TYPES.LABEL) {
-                return c('Label/folder modal').t`Edit label: ${Name}`;
+                return c('Label/folder modal').t`Edit label`;
             }
-            return c('Label/folder modal').t`Edit folder: ${Name}`;
+            return c('Label/folder modal').t`Edit folder`;
         },
-        create({ Name } = {}, type) {
+        create(label, type) {
             if (type === 'label') {
-                return c('Label/folder modal').t`Create a new label: ${Name}`;
+                return c('Label/folder modal').t`Create a new label`;
             }
-            return c('Label/folder modal').t`Create a new folder: ${Name}`;
+            return c('Label/folder modal').t`Create a new folder`;
         }
     };
 

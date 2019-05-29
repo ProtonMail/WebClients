@@ -38,9 +38,9 @@ function LabelsSection() {
     return (
         <>
             <SubTitle>{c('LabelSettings').t`Folders and labels`}</SubTitle>
-            <Alert type="info" className="mt1 mb1" learnMore="https://protonmail.com">
+            <Alert type="info" className="mt1 mb1" learnMore="TODO">
                 {c('LabelSettings')
-                    .t`Multiple Labels can be applied to a single message, but a message can only be in a single Folder.`}
+                    .t`Multiple labels can be applied to a single message, but a message can only be in a single folder.`}
             </Alert>
             <nav className="mb1f flex">
                 <ActionsLabelToolbar />

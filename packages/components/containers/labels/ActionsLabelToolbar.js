@@ -17,11 +17,11 @@ function ActionsLabelToolbar({ onAdd }) {
         <>
             <PrimaryButton onClick={handleClickAdd('folder')}>
                 <Icon name="folder" style={{ fill: 'currentColor' }} className="mr0-5" />
-                {c('Action').t`Add Folder`}
+                {c('Action').t`Add folder`}
             </PrimaryButton>
             <PrimaryButton onClick={handleClickAdd('label')} className="ml1">
                 <Icon name="label" style={{ fill: 'currentColor' }} className="mr0-5" />
-                {c('Action').t`Add Label`}
+                {c('Action').t`Add label`}
             </PrimaryButton>
         </>
     );
