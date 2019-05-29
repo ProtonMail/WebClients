@@ -4,8 +4,8 @@ import { Loader, SubTitle, Alert, Paragraph, useLabels, useEventManager, useApiW
 import { arrayMove } from 'react-sortable-hoc';
 import { orderLabels } from 'proton-shared/lib/api/labels';
 
-import LabelSortableList from '../../containers/labels/LabelSortableList';
-import ActionsLabelToolbar from '../../containers/labels/ActionsLabelToolbar';
+import LabelSortableList from './LabelSortableList';
+import ActionsLabelToolbar from './ActionsLabelToolbar';
 
 function LabelsSection() {
     const [list = [], loading] = useLabels();

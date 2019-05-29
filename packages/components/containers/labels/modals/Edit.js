@@ -7,7 +7,7 @@ import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { createLabel, updateLabel } from 'proton-shared/lib/api/labels';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import NewLabelForm from '../../../containers/labels/NewLabelForm';
+import NewLabelForm from '../NewLabelForm';
 
 function EditLabelModal({ label, mode, onEdit, onAdd, ...props }) {
     const { call } = useEventManager();
@@ -92,7 +92,8 @@ EditLabelModal.propTypes = {
     label: PropTypes.object,
     mode: PropTypes.string,
     onAdd: PropTypes.func,
-    onEdit: PropTypes.func
+    onEdit: PropTypes.func,
+    onClose: PropTypes.func
 };
 
 EditLabelModal.defaultProps = {
