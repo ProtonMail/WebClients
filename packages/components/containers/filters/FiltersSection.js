@@ -13,10 +13,10 @@ import {
 import { arrayMove } from 'react-sortable-hoc';
 import { updateFilterOrder } from 'proton-shared/lib/api/filters';
 
-import FilterSortableList from '../../containers/filters/SortableList';
-import ActionsFilterToolbar from '../../containers/filters/ActionsFilterToolbar';
+import FilterSortableList from './SortableList';
+import ActionsFilterToolbar from './ActionsFilterToolbar';
 
-function FiltersContainer() {
+function FiltersSection() {
     const { call } = useEventManager();
     const [filters, loading] = useFilters();
     const orderRequest = useApiWithoutResult(updateFilterOrder);
@@ -67,4 +67,4 @@ function FiltersContainer() {
     );
 }
 
-export default FiltersContainer;
+export default FiltersSection;

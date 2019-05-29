@@ -7,7 +7,7 @@ import { orderLabels } from 'proton-shared/lib/api/labels';
 import LabelSortableList from '../../containers/labels/LabelSortableList';
 import ActionsLabelToolbar from '../../containers/labels/ActionsLabelToolbar';
 
-function LabelsContainer() {
+function LabelsSection() {
     const [list = [], loading] = useLabels();
     const { call } = useEventManager();
     const orderRequest = useApiWithoutResult(orderLabels);
@@ -62,4 +62,4 @@ function LabelsContainer() {
     );
 }
 
-export default LabelsContainer;
+export default LabelsSection;

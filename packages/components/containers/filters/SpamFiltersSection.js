@@ -5,8 +5,8 @@ import { getIncomingDefaults } from 'proton-shared/lib/api/incomingDefaults';
 import { MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
 
 import useSpamList from '../../hooks/useSpamList';
-import SpamListItem from '../../containers/filters/spamlist/SpamListItem';
-import SearchEmailIntoList from '../../containers/filters/spamlist/SearchEmailIntoList';
+import SpamListItem from './spamlist/SpamListItem';
+import SearchEmailIntoList from './spamlist/SearchEmailIntoList';
 
 const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
 const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
@@ -14,7 +14,7 @@ const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
 const getWhiteList = () => getIncomingDefaults({ Location: WHITELIST_TYPE });
 const getBlackList = () => getIncomingDefaults({ Location: BLACKLIST_TYPE });
 
-function SpamFiltersContainer() {
+function SpamFiltersSection() {
     const reqSearch = useApiWithoutResult(getIncomingDefaults);
     const { blackList, whiteList, refreshWhiteList, refreshBlackList, move, remove, search, create } = useSpamList();
 
@@ -82,4 +82,4 @@ function SpamFiltersContainer() {
     );
 }
 
-export default SpamFiltersContainer;
+export default SpamFiltersSection;

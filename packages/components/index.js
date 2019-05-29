@@ -263,10 +263,10 @@ export { default as EventManagerProvider } from './containers/eventManager/Event
 export { default as EventManagerContext } from './containers/eventManager/context';
 
 export { default as createApp } from './containers/app/createApp';
-export { default as LabelsContainer } from './containers/labels/Container';
+export { default as LabelsSection } from './containers/labels/LabelsSection';
 export { default as LabelsModal } from './containers/labels/modals/Edit';
-export { default as SpamContainer } from './containers/filters/SpamContainer';
-export { default as FilterContainer } from './containers/filters/Container';
+export { default as SpamFiltersSection } from './containers/filters/SpamFiltersSection';
+export { default as FiltersSection } from './containers/filters/FiltersSection';
 export { default as AddFilterModal } from './containers/filters/AddFilterModal';
 export { default as AddEmailToListModal } from './containers/filters/AddEmailToListModal';
 
