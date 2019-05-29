@@ -35,7 +35,7 @@ const DomainsSection = () => {
                 <Button disabled={loading} onClick={call}>{c('Action').t`Refresh status`}</Button>
             </Block>
             {!loading && !domains.length ? <Alert>{c('Info').t`No domains yet.`}</Alert> : null}
-            {loading ? null : <DomainsTable domains={domains} />}
+            {!loading && domains.length ? <DomainsTable domains={domains} /> : null}
             <Block className="opacity-50">
                 {UsedDomains} / {MaxDomains} {c('Info').ngettext(msgid`domain used`, `domains used`, UsedDomains)}
             </Block>
