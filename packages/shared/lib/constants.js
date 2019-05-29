@@ -9,6 +9,7 @@ export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
 export const UID_KEY = 'proton:oauth:UID';
 export const INTERVAL_EVENT_TIMER = 30 * 1000;
 export const MAX_SIZE_SCREENSHOT = 500 * 1000;
+export const FILTER_VERSION = 2;
 export const EVENT_ACTIONS = {
     DELETE: 0,
     CREATE: 1,
@@ -372,4 +373,27 @@ export const USER_STATUS = {
     VPN_ADMIN: 3,
     ADMIN: 4,
     SUPER_ADMIN: 5
+};
+
+export const MAILBOX_IDENTIFIERS = {
+    inbox: '0',
+    allDrafts: '1',
+    allSent: '2',
+    trash: '3',
+    spam: '4',
+    allmail: '5',
+    starred: '10',
+    archive: '6',
+    sent: '7',
+    drafts: '8',
+    search: 'search',
+    label: 'label'
+};
+
+/* eslint  no-useless-escape: "off" */
+export const REGEX_EMAIL = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
+
+export const FILTER_STATUS = {
+    ENABLED: 1,
+    DISABLED: 0
 };

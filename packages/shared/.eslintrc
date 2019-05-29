@@ -21,11 +21,16 @@
         "no-await-in-loop": "off",
         "arrow-body-style": "off",
         "space-before-function-paren": "off",
+        "no-sequences": "warn",
+        "no-param-reassign": "warn",
+        "no-return-assign": "warn",
         "operator-linebreak": "off",
         "implicit-arrow-linebreak": "off",
         "import/no-unresolved": ["error", {
             "ignore": ["^react$", "ttag"]
         }],
+        "no-shadow": "off",
+        "no-unused-expressions": ["error", { "allowShortCircuit": true }],
         "import/prefer-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "max-len": ["error", {

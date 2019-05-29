@@ -4,10 +4,10 @@ export const addSieveFilter = ({ Name, Sieve, Version }) => ({
     data: { Name, Sieve, Version }
 });
 
-export const addTreeFilter = ({ Name, Tree, Version }) => ({
+export const addTreeFilter = ({ ID, Name, Status, Version, Simple, Tree, Sieve }) => ({
     method: 'post',
     url: 'filters',
-    data: { Name, Tree, Version }
+    data: { ID, Name, Status, Version, Simple, Tree, Sieve }
 });
 
 export const queryFilters = () => ({
@@ -21,9 +21,10 @@ export const clearFilters = () => ({
 });
 
 // eslint-disable-next-line
-export const updateFilter = (filterID, { Name, Sieve, Tree, Version }) => ({
+export const updateFilter = (filterID, { Name, Status, Version, Sieve, Simple, Tree }) => ({
     method: 'put',
-    url: `filters/${filterID}`
+    url: `filters/${filterID}`,
+    data: { Name, Status, Version, Simple, Tree, Sieve }
 });
 
 export const checkSieveFilter = ({ Sieve, Version } = {}) => ({
@@ -41,6 +42,8 @@ export const disableFilter = (filterID) => ({
     method: 'put',
     url: `filters/${filterID}/disable`
 });
+
+export const toggleEnable = (ID, enable = true) => (enable ? enableFilter : disableFilter)(ID);
 
 export const deleteFilter = (filterID) => ({
     method: 'delete',
