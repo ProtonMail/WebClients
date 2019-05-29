@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { PrimaryButton, Icon, useModals } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import EditLabelModal from '../../containers/Labels/modals/Edit';
+import EditLabelModal from '../../containers/labels/modals/Edit';
 
 function ActionsLabelToolbar({ onAdd }) {
     const { createModal } = useModals();

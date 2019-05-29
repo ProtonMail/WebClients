@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { PrimaryButton, useModals } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import AddEmailToListModal from '../../../containers/Filters/AddEmailToListModal';
+import AddEmailToListModal from '../../../containers/filters/AddEmailToListModal';
 
 function AddEmailFilterListButton({ type, className, onAdd }) {
     const { createModal } = useModals();

@@ -94,12 +94,13 @@ function ConditionsEditor({ filter, onChange, errors }) {
     return (
         <>
             {model.Simple.Conditions.map((condition, index) => {
+                const n = index + 1;
                 return (
                     <Row key={`condition-${index}`}>
                         {condition.Type.value === 'attachments' ? (
                             <>
                                 <Label>
-                                    {c('Label').t`Conditions ${index + 1}`}
+                                    {c('Label').t`Conditions ${n}`}
                                     <SmallButton className="ml1" onClick={handleRemoveCondition(index)}>
                                         <Icon name="trash" />
                                     </SmallButton>
@@ -129,7 +130,7 @@ function ConditionsEditor({ filter, onChange, errors }) {
                         {condition.Type.value !== 'attachments' ? (
                             <>
                                 <Label>
-                                    {c('Label').t`Conditions ${index + 1}`}
+                                    {c('Label').t`Conditions ${n}`}
                                     <SmallButton className="ml1" onClick={handleRemoveCondition(index)}>
                                         <Icon name="trash" />
                                     </SmallButton>

@@ -15,12 +15,12 @@ import { validate, validateComplex } from 'proton-shared/lib/filters/validator';
 import { addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import ConditionsEditor from '../../components/Filters/editor/Conditions';
-import ActionsEditor from '../../components/Filters/editor/Actions';
-import OperatorEditor from '../../components/Filters/editor/Operator';
-import SieveEditor from '../../components/Filters/editor/Sieve';
-import PreviewFilter from '../../components/Filters/editor/Preview';
-import NameEditor from '../../components/Filters/editor/Name';
+import ConditionsEditor from '../../containers/filters/editor/Conditions';
+import ActionsEditor from '../../containers/filters/editor/Actions';
+import OperatorEditor from '../../containers/filters/editor/Operator';
+import SieveEditor from '../../containers/filters/editor/Sieve';
+import PreviewFilter from '../../containers/filters/editor/Preview';
+import NameEditor from '../../containers/filters/editor/Name';
 
 import './AddFilterModal.css';
 

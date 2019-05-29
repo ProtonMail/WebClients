@@ -13,8 +13,8 @@ import {
 import { arrayMove } from 'react-sortable-hoc';
 import { updateFilterOrder } from 'proton-shared/lib/api/filters';
 
-import FilterSortableList from '../../components/Filters/SortableList';
-import ActionsFilterToolbar from '../../components/Filters/ActionsFilterToolbar';
+import FilterSortableList from '../../containers/filters/SortableList';
+import ActionsFilterToolbar from '../../containers/filters/ActionsFilterToolbar';
 
 function FiltersContainer() {
     const { call } = useEventManager();

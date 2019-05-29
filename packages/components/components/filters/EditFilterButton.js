@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, useModals } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import AddFilterModal from '../../containers/Filters/AddFilterModal';
+import AddFilterModal from '../../containers/filters/AddFilterModal';
 
 function EditFilterButton({ filter, type, className, onEditFilter, textContent }) {
     const { createModal } = useModals();

@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { Button, PrimaryButton, useModals } from 'react-components';
 
-import AddFilterModal from '../../containers/Filters/AddFilterModal';
+import AddFilterModal from '../../containers/filters/AddFilterModal';
 
 function ActionsFilterToolbar() {
     const { createModal } = useModals();

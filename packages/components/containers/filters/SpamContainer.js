@@ -4,9 +4,10 @@ import { Alert, SubTitle, useApiResult, useApiWithoutResult } from 'react-compon
 import { getIncomingDefaults } from 'proton-shared/lib/api/incomingDefaults';
 import { MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
 
-import useSpamList from './useSpamList';
-import SpamListItem from '../../components/Filters/spamlist/SpamListItem';
-import SearchEmailIntoList from '../../components/Filters/spamlist/SearchEmailIntoList';
+import useSpamList from '../../hooks/useSpamList';
+import SpamListItem from '../../containers/filters/spamlist/SpamListItem';
+import SearchEmailIntoList from '../../containers/filters/spamlist/SearchEmailIntoList';
+
 const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
 const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
 
