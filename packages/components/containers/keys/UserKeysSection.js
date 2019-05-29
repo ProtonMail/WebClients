@@ -1,13 +1,12 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Block, Loader, SubTitle, useUser, useModals, useUserKeys } from 'react-components';
+import { Button, Block, Loader, SubTitle, useUser, useModals, useUserKeys } from 'react-components';
 
 import { convertKey, getPrimaryKey } from './helper';
 import { ACTIONS } from './KeysActions';
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
-import KeysHeaderActions, { ACTIONS as HEADER_ACTIONS } from './KeysHeaderActions';
 import KeysTable from './KeysTable';
 
 const UserKeysSections = () => {
@@ -26,22 +25,9 @@ const UserKeysSections = () => {
         );
     }
 
-    const keysFormatted = userKeysList.map(convertKey);
-    const { privateKey: primaryPrivateKey } = getPrimaryKey(userKeysList) || {};
-
     const { Name: userName } = User;
 
-    const keysPermissions = {
-        [HEADER_ACTIONS.EXPORT_PRIVATE_KEY]: primaryPrivateKey && primaryPrivateKey.isDecrypted()
-    };
-
-    const handleKeysAction = (action) => {
-        if (action === HEADER_ACTIONS.EXPORT_PRIVATE_KEY) {
-            return createModal(<ExportPrivateKeyModal name={userName} privateKey={primaryPrivateKey} />);
-        }
-    };
-
-    const handleAction = async (action, keyID, keyIndex) => {
+    const handleAction = async (action, keyIndex) => {
         const targetKey = userKeysList[keyIndex];
         const { privateKey } = targetKey;
 
@@ -63,12 +49,24 @@ const UserKeysSections = () => {
         }
     };
 
+    const keysFormatted = userKeysList.map(convertKey);
+    const { privateKey: primaryPrivateKey } = getPrimaryKey(userKeysList) || {};
+    const canExportPrivateKey = primaryPrivateKey && primaryPrivateKey.isDecrypted();
+
     return (
         <>
             {title}
-            <Block>
-                <KeysHeaderActions permissions={keysPermissions} onAction={handleKeysAction} />
-            </Block>
+            {canExportPrivateKey && (
+                <Block>
+                    <Button
+                        onClick={() => {
+                            createModal(<ExportPrivateKeyModal name={userName} privateKey={primaryPrivateKey} />);
+                        }}
+                    >
+                        {c('Action').t`Export private key`}
+                    </Button>
+                </Block>
+            )}
             <KeysTable keys={keysFormatted} onAction={handleAction} />
         </>
     );

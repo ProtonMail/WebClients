@@ -4,6 +4,7 @@ import {
     Block,
     Select,
     SubTitle,
+    PrimaryButton,
     Alert,
     useModals,
     useApi,
@@ -14,18 +15,16 @@ import {
 } from 'react-components';
 import createKeysManager from 'proton-shared/lib/keys/keysManager';
 
-import { getAllKeysToReactivate, convertKey, getNewKeyFlags, getPrimaryKey } from './helper';
+import { getAllKeysToReactivate, convertKey, getNewKeyFlags } from './helper';
 import { useUser } from '../../models/userModel';
 import { useAddresses } from '../../models/addressesModel';
-import KeysTable from './KeysTable';
+import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import { ACTIONS } from './KeysActions';
-import AddKeyModal from './addKey/AddKeyModal';
-import ImportKeyModal from './importKeys/ImportKeyModal';
+import KeysTable from './KeysTable';
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import DeleteKeyModal from './deleteKey/DeleteKeyModal';
-import KeysHeaderActions, { ACTIONS as HEADER_ACTIONS } from './KeysHeaderActions';
 
 const AddressKeysSection = () => {
     const { createModal } = useModals();
@@ -34,8 +33,8 @@ const AddressKeysSection = () => {
     const [User] = useUser();
     const [Addresses] = useAddresses();
     const [userKeysList] = useUserKeys(User);
-    const [addressesKeysMap = {}, loadingAddressesKeys] = useAddressesKeys(User, Addresses);
-    const [loadingKeyID, setLoadingKeyID] = useState();
+    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(User, Addresses);
+    const [loadingKeyIdx, setLoadingKeyIdx] = useState(-1);
     const [addressIndex, setAddressIndex] = useState(() => (Array.isArray(Addresses) ? 0 : -1));
 
     useEffect(() => {
@@ -66,7 +65,7 @@ const AddressKeysSection = () => {
 
     const address = Addresses[addressIndex];
     const { ID: addressID, Email: addressEmail } = address;
-    const addressKeys = addressesKeysMap[addressID];
+    const addressKeys = addressesKeysMap && addressesKeysMap[addressID];
 
     if (loadingAddressesKeys && !Array.isArray(addressKeys)) {
         return (
@@ -76,64 +75,6 @@ const AddressKeysSection = () => {
             </>
         );
     }
-
-    const addressKeysFormatted = addressKeys.map(({ Key, privateKey }) => {
-        const { ID } = Key;
-        return {
-            isLoading: loadingKeyID === ID,
-            ...convertKey({
-                Address: address,
-                Key,
-                privateKey
-            })
-        };
-    });
-
-    const addressOptions =
-        Addresses.length > 1
-            ? Addresses.map(({ Email, ID: addressID }, i) => {
-                  const primaryKey = getPrimaryKey(addressesKeysMap[addressID]);
-                  const postfix = primaryKey ? ` (${primaryKey.privateKey.getFingerprint()})` : '';
-                  return {
-                      text: Email + postfix,
-                      value: i
-                  };
-              })
-            : [];
-
-    const { isSubUser } = User;
-    const { privateKey: primaryPrivateKey } = getPrimaryKey(addressKeys) || {};
-    const allKeysToReactivate = getAllKeysToReactivate({ Addresses, User, addressesKeysMap, userKeysList });
-    const totalInactiveKeys = allKeysToReactivate.reduce((acc, { inactiveKeys }) => acc + inactiveKeys.length, 0);
-
-    const keysPermissions = {
-        [HEADER_ACTIONS.ADD]: !isSubUser,
-        [HEADER_ACTIONS.IMPORT]: !isSubUser,
-        [HEADER_ACTIONS.EXPORT_PRIVATE_KEY]: primaryPrivateKey && primaryPrivateKey.isDecrypted(),
-        [HEADER_ACTIONS.EXPORT_PUBLIC_KEY]: !!primaryPrivateKey,
-        [HEADER_ACTIONS.REACTIVATE]: !isSubUser && totalInactiveKeys >= 1
-    };
-
-    const handleKeysAction = (action) => {
-        if (loadingKeyID) {
-            return;
-        }
-        if (action === HEADER_ACTIONS.ADD) {
-            return createModal(<AddKeyModal Address={address} addressKeys={addressKeys} />);
-        }
-        if (action === HEADER_ACTIONS.IMPORT) {
-            return createModal(<ImportKeyModal Address={address} addressKeys={addressKeys} />);
-        }
-        if (action === HEADER_ACTIONS.EXPORT_PUBLIC_KEY) {
-            return createModal(<ExportPublicKeyModal name={addressEmail} privateKey={primaryPrivateKey} />);
-        }
-        if (action === HEADER_ACTIONS.EXPORT_PRIVATE_KEY) {
-            return createModal(<ExportPrivateKeyModal name={addressEmail} privateKey={primaryPrivateKey} />);
-        }
-        if (action === HEADER_ACTIONS.REACTIVATE) {
-            return createModal(<ReactivateKeysModal allKeys={allKeysToReactivate} />);
-        }
-    };
 
     const handleAction = async (action, targetKey) => {
         const {
@@ -182,20 +123,38 @@ const AddressKeysSection = () => {
         }
     };
 
-    const handleKeyAction = async (action, keyID, keyIndex) => {
+    const isLoadingKey = loadingKeyIdx !== -1;
+
+    const handleKeyAction = async (action, keyIdx) => {
         // Since an action affects the whole key list, only allow one at a time.
-        if (loadingKeyID) {
+        if (isLoadingKey) {
             return;
         }
         try {
-            setLoadingKeyID(keyID);
-            const targetKey = addressKeys[keyIndex];
+            setLoadingKeyIdx(keyIdx);
+            const targetKey = addressKeys[keyIdx];
             await handleAction(action, targetKey);
-            setLoadingKeyID();
+            setLoadingKeyIdx(-1);
         } catch (e) {
-            setLoadingKeyID();
+            setLoadingKeyIdx(-1);
         }
     };
+
+    const addressKeysFormatted = addressKeys.map(({ Key, privateKey }, idx) => {
+        return {
+            isLoading: loadingKeyIdx === idx,
+            ...convertKey({
+                Address: address,
+                Key,
+                privateKey
+            })
+        };
+    });
+
+    const { isSubUser } = User;
+    const allKeysToReactivate = getAllKeysToReactivate({ Addresses, User, addressesKeysMap, userKeysList });
+    const totalInactiveKeys = allKeysToReactivate.reduce((acc, { inactiveKeys }) => acc + inactiveKeys.length, 0);
+    const canReactivate = !isSubUser && totalInactiveKeys >= 1;
 
     return (
         <>
@@ -204,18 +163,32 @@ const AddressKeysSection = () => {
                 {c('Info')
                     .t`Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.`}
             </Alert>
-            <Block>
-                <KeysHeaderActions permissions={keysPermissions} onAction={handleKeysAction} />
-            </Block>
-            {Addresses.length > 1 ? (
+            {canReactivate && (
+                <Block>
+                    <PrimaryButton
+                        onClick={() => {
+                            !isLoadingKey && createModal(<ReactivateKeysModal allKeys={allKeysToReactivate} />);
+                        }}
+                    >
+                        {c('Action').t`Reactivate keys`}
+                    </PrimaryButton>
+                </Block>
+            )}
+            {Addresses.length > 1 && (
                 <Block>
                     <Select
                         value={addressIndex}
-                        options={addressOptions}
-                        onChange={({ target: { value } }) => !loadingKeyID && setAddressIndex(+value)}
+                        options={Addresses.map(({ Email }, i) => ({ text: Email, value: i }))}
+                        onChange={({ target: { value } }) => !isLoadingKey && setAddressIndex(+value)}
                     />
                 </Block>
-            ) : null}
+            )}
+            <AddressKeysHeaderActions
+                isLoadingKey={isLoadingKey}
+                User={User}
+                Address={address}
+                addressKeys={addressKeys}
+            />
             <KeysTable keys={addressKeysFormatted} onAction={handleKeyAction} />
         </>
     );

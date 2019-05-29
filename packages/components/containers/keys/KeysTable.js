@@ -26,7 +26,7 @@ const KeysTable = ({ keys, onAction }) => {
                 <tr>{headerCells}</tr>
             </thead>
             <TableBody colSpan={4}>
-                {keys.map(({ ID, fingerprint, algorithm, isLoading, ...rest }, idx) => {
+                {keys.map(({ ID, fingerprint, algorithm, isLoading, status, permissions }, idx) => {
                     return (
                         <TableRow
                             key={ID}
@@ -35,12 +35,12 @@ const KeysTable = ({ keys, onAction }) => {
                                     {fingerprint}
                                 </code>,
                                 algorithm,
-                                <KeysStatus key={2} {...rest} />,
+                                <KeysStatus key={2} {...status} />,
                                 <KeysActions
                                     key={3}
                                     loading={isLoading}
-                                    onAction={(action) => onAction(action, ID, idx)}
-                                    {...rest}
+                                    onAction={(action) => onAction(action, idx)}
+                                    {...permissions}
                                 />
                             ]}
                         />

@@ -26,23 +26,41 @@ export const convertKey = ({ Address, privateKey, Key: { ID, Primary, Flags } })
     const isDecrypted = privateKey.isDecrypted();
 
     const { Status } = Address || {};
+
     const isAddressDisabled = Status === 0;
+    const isAddressKey = !!Address;
+    const isPrimary = Primary === 1;
+    const isEncryptingAndSigning = Flags === ENCRYPTED_AND_SIGNED;
+    const isObsolete = isDecrypted && !isAddressDisabled && Flags === SIGNED;
+    const isCompromised = Flags === CLEAR_TEXT;
 
     const status = {
-        isAddressKey: !!Address,
-        isPrimary: Primary === 1,
+        isAddressDisabled,
+        isPrimary,
         isDecrypted,
-        isEncryptingAndSigning: Flags === ENCRYPTED_AND_SIGNED,
-        isCompromised: Flags === CLEAR_TEXT,
-        isObsolete: isDecrypted && !isAddressDisabled && Flags === SIGNED,
-        isAddressDisabled
+        isCompromised,
+        isObsolete
+    };
+
+    const canMark = isAddressKey && !isPrimary;
+    const permissions = {
+        canReactivate: !isDecrypted,
+        canExportPublicKey: true,
+        canExportPrivateKey: isDecrypted,
+        canMakePrimary: isAddressKey && !isPrimary && !isAddressDisabled && isDecrypted && isEncryptingAndSigning,
+        canMarkObsolete: canMark && !isAddressDisabled && isDecrypted && !isObsolete && !isCompromised,
+        canMarkNotObsolete: canMark && isObsolete,
+        canMarkCompromised: canMark && !isCompromised,
+        canMarkNotCompromised: canMark && isCompromised,
+        canDelete: isAddressKey && !isPrimary
     };
 
     return {
         ID,
         fingerprint,
         algorithm: describe(algorithmInfo),
-        ...status
+        status,
+        permissions
     };
 };
 

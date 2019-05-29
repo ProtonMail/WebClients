@@ -18,25 +18,16 @@ export const ACTIONS = {
 const KeysActions = ({
     onAction,
     loading,
-    isAddressKey,
-    isAddressDisabled,
-    isPrimary,
-    isDecrypted,
-    isEncryptingAndSigning,
-    isCompromised,
-    isObsolete
+    canReactivate,
+    canExportPublicKey,
+    canExportPrivateKey,
+    canMakePrimary,
+    canMarkObsolete,
+    canMarkNotObsolete,
+    canMarkCompromised,
+    canMarkNotCompromised,
+    canDelete
 }) => {
-    const canReactivate = !isDecrypted;
-    const canExportPublicKey = true;
-    const canExportPrivateKey = isDecrypted;
-    const canMakePrimary = isAddressKey && !isPrimary && !isAddressDisabled && isDecrypted && isEncryptingAndSigning;
-    const canMark = isAddressKey && !isPrimary;
-    const canMarkObsolete = canMark && !isAddressDisabled && isDecrypted && !isObsolete && !isCompromised;
-    const canMarkNotObsolete = canMark && isObsolete;
-    const canMarkCompromised = canMark && !isCompromised;
-    const canMarkNotCompromised = canMark && isCompromised;
-    const canDelete = isAddressKey && !isPrimary;
-
     const list = [
         canReactivate && {
             text: c('Keys actions').t`Reactivate`,
@@ -86,13 +77,15 @@ const KeysActions = ({
 KeysActions.propTypes = {
     onAction: PropTypes.func.isRequired,
     loading: PropTypes.bool,
-    isAddressKey: PropTypes.bool,
-    isPrimary: PropTypes.bool,
-    isDecrypted: PropTypes.bool,
-    isEncryptingAndSigning: PropTypes.bool,
-    isCompromised: PropTypes.bool,
-    isObsolete: PropTypes.bool,
-    isAddressDisabled: PropTypes.bool
+    canReactivate: PropTypes.bool,
+    canExportPublicKey: PropTypes.bool,
+    canExportPrivateKey: PropTypes.bool,
+    canMakePrimary: PropTypes.bool,
+    canMarkObsolete: PropTypes.bool,
+    canMarkNotObsolete: PropTypes.bool,
+    canMarkCompromised: PropTypes.bool,
+    canMarkNotCompromised: PropTypes.bool,
+    canDelete: PropTypes.bool
 };
 
 export default KeysActions;
