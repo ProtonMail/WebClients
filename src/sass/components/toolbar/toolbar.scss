@@ -1,16 +1,16 @@
-.pm_toolbar {
-    box-shadow: inset 0 -1px 0 $border;
-    width: 100%;
-    padding: 10px;
-    &.pm_toolbar_withSelector {
-        padding:  10px 10px 10px 4px;
-    }
-}
+// .pm_toolbar {
+//     box-shadow: inset 0 -1px 0 $border;
+//     width: 100%;
+//     padding: 10px;
+//     &.pm_toolbar_withSelector {
+//         padding:  10px 10px 10px 4px;
+//     }
+// }
 
 .toolbarDesktop-container {
-    height: 56px;
-    position: relative;
-    z-index: 8;
+    // height: 56px;
+    // position: relative;
+    // z-index: 8;
     display: flex;
     .toolbarDesktop-actions-right {
         @include flexRow();
@@ -28,19 +28,19 @@
     .fa-check-square {
         float: left;
     }
-    .fa-square-o,
-    .fa-check-square {
-        margin: 0 5px;
-    }
-    .layout a img {
-        display: block;
-        height: 16px;
-        width: 16px; /* IE10 */
-        position: relative;
-    }
-    .pm_dropdown {
-        z-index: auto;
-    }
+    // .fa-square-o,
+    // .fa-check-square {
+    //     margin: 0 5px;
+    // }
+    // .layout a img {
+    //     display: block;
+    //     height: 16px;
+    //     width: 16px; /* IE10 */
+    //     position: relative;
+    // }
+    // .pm_dropdown {
+    //     z-index: auto;
+    // }
 }
 
 .toolbarMobile-container {

@@ -10,15 +10,15 @@
 
     <elements-selector
         ng-if="displayPaginator()"
-        class="toolBar-select-all"></elements-selector>
+        class="toolBar-select-all mtauto mbauto"></elements-selector>
 
     <read-unread></read-unread>
     <move-element></move-element>
 
-    <div class="pm_buttons">
-        <div id="tour-folder-dropdown" class="pm_buttons" ng-class="{disabled: isDisabled()}">
+    <div class="flex">
+        <div id="tour-folder-dropdown" class="flex" ng-class="{disabled: isDisabled()}">
             <a
-                class="pm_trigger open-folder toolbarDesktop-select-folder"
+                class="pm_trigger p1 open-folder toolbarDesktop-select-folder"
                 data-dropdown
                 data-dropdown-no-auto-close="true"
                 ng-class="{disabled: isDisabled()}"
@@ -26,8 +26,8 @@
                 pt-tooltip-translate-context="Action toolbar"
                 tabindex="0"
                 role="button">
-                <i class="fa fa-folder"></i>
-                <i class="fa fa-angle-down"></i>
+                <icon data-name="folder" data-size="16" class="mauto"></icon>
+                <icon data-name="caret" data-size="16" class="mauto"></icon>
                 <span class="sr-only" translate-context="Action toolbar" translate>Move to</span>
             </a>
             <div class="pm_dropdown wide">
@@ -37,9 +37,9 @@
             </div>
         </div>
 
-        <div id="tour-label-dropdown" class="pm_buttons" ng-class="{disabled: isDisabled()}">
+        <div id="tour-label-dropdown" class="flex" ng-class="{disabled: isDisabled()}">
             <a
-                class="pm_trigger open-label toolbarDesktop-select-label"
+                class="pm_trigger p1 open-label toolbarDesktop-select-label"
                 data-dropdown
                 data-dropdown-no-auto-close="true"
                 ng-class="{disabled: isDisabled()}"
@@ -47,8 +47,8 @@
                 pt-tooltip-translate-context="Action toolbar"
                 tabindex="0"
                 role="button">
-                <i class="fa fa-tag"></i>
-                <i class="fa fa-angle-down"></i>
+                <icon data-name="label" data-size="16" class="mauto"></icon>
+                <icon data-name="caret" data-size="16" class="mauto"></icon>
                 <span class="sr-only" translate-context="Action toolbar" translate>Label as</span>
             </a>
             <div class="pm_dropdown wide">
@@ -62,7 +62,7 @@
 
     <advanced-filter-element></advanced-filter-element>
 
-    <div class="pull-right action toolbarDesktop-actions-right">
+    <div class="right action toolbarDesktop-actions-right">
         <choose-layout-btns id="tour-layout"></choose-layout-btns>
         <nav-elements></nav-elements>
         <paginator ng-if="displayPaginator()"></paginator>

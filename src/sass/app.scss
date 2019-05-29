@@ -71,7 +71,7 @@ $path-images: "~design-system/assets/img/shared/";
 
 //=== 👉 Common =============================//
 @import "commons/loaders";
-@import "commons/pm-button";
+//@import "commons/pm-button";
 @import "commons/pm-checkbox";
 @import "commons/pm-dropdown";
 @import "commons/pm-label";
@@ -107,7 +107,7 @@ $path-images: "~design-system/assets/img/shared/";
 @import "ui/atomLoader";
 @import "ui/protonLoader";
 @import "ui/readUnread";
-@import "ui/chooseLayoutBtns";
+//@import "ui/chooseLayoutBtns";
 @import "ui/slider";
 @import "ui/legends";
 @import "ui/ngScrollbars";
@@ -229,7 +229,7 @@ $path-images: "~design-system/assets/img/shared/";
 @import "components/elements/statesElements";
 @import "components/elements/selectElement";
 @import "components/element/moveElement";
-@import "components/element/toolbarDesktop.scss";
+//@import "components/element/toolbarDesktop.scss";
 @import "components/element/advancedFilterElement";
 @import "components/elements/navElements.scss";
 @import "components/elements/movedSelect.scss";

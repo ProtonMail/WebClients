@@ -1,12 +1,12 @@
-<div class="pm_buttons advancedFilterElement-container" ng-class="{
+<div class="flex advancedFilterElement-container" ng-class="{
     'advancedFilterElement-state-drafts': ('secured.drafts.**' | includedByState),
     'advancedFilterElement-state-all-drafts': ('secured.allDrafts.**' | includedByState),
     'advancedFilterElement-state-spam': ('secured.spam.**' | includedByState),
     'advancedFilterElement-state-trash': ('secured.trash.**' | includedByState)
 }">
-    <a tabindex="0" role="button" class="pm_trigger advancedFilterElement-btn-dropdown" dropdown>
-        <small translate-context="Action" translate>More</small>
-        <i class="fa fa-angle-down"></i>
+    <a tabindex="0" role="button" class="flex color-white advancedFilterElement-btn-dropdown" dropdown>
+        <span class="mauto" translate-context="Action" translate>More</span>
+        <icon data-name="caret" data-size="16" class="mauto"></icon>
     </a>
     <div class="pm_dropdown widest noPadding advancedFilterElement-content">
         <button

@@ -1,22 +1,24 @@
 <span
-    class="pm_buttons readUnread-container"
+    class="pm-group-buttons readUnread-container"
     data-ng-class="{ disabled: isDisabled(), 'readUnread-container-ur': messageButtons === 1 }">
     <a
         href="#"
         role="button"
-        class="fa fa-eye readUnread-btn-read"
+        class="pm-group-button p1"
         data-action="read"
         pt-tooltip-translate="Mark as read"
         pt-tooltip-translate-context="Action">
+        <icon data-name="unread" data-size="16" class="mauto"></icon>
         <span class="sr-only" translate-context="Action" translate>Mark as read</span>
     </a>
     <a
         href="#"
         role="button"
-        class="fa fa-eye-slash readUnread-btn-unread"
+        class="pm-group-button p1"
         data-action="unread"
         pt-tooltip-translate="Mark as unread"
         pt-tooltip-translate-context="Action">
+        <icon data-name="read" data-size="16"></icon>
         <span class="sr-only" translate-context="Action" translate>Mark as unread</span>
     </a>
 </span>

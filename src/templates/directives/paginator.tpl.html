@@ -1,25 +1,25 @@
 <span
-    class="pm_buttons paginator paginator-container">
+    class="flex paginator paginator-container">
     <a
         pt-tooltip-translate="Previous"
         pt-tooltip-translate-context="Action"
-        class="paginator-btn-previous"
+        class="paginator-btn-previous p1"
         tabindex="0"
         role="button">
-        <i class="fa fa-chevron-left"></i>
+        <icon data-name="arrow-left" data-size="16" class="mauto"></icon>
         <span class="sr-only" translate-context="Action" translate>Previous</span>
     </a>
     <span class="pull-left paginator-dropdown-list">
-        <a
-            class="pm_trigger paginator-dropdown"
+        <button
+            class="pm_trigger flex color-white paginator-dropdown"
             dropdown
             pt-tooltip-translate="Page number"
             pt-tooltip-translate-context="Action"
             tabindex="0"
             role="button">
-            <small>{{ ::page }}</small>
-            <i class="fa fa-angle-down"></i>
-        </a>
+            <span class="mauto">{{ ::page }}</span>
+            <icon data-name="caret" data-size="16" class="mauto"></icon>
+        </button>
         <span class="pm_dropdown right">
             <a
                 tabindex="0"
@@ -35,12 +35,12 @@
         </span>
     </span>
     <a
-        class="paginator-btn-next"
+        class="paginator-btn-next p1"
         pt-tooltip-translate="Next"
         pt-tooltip-translate-context="Action"
         tabindex="0"
         role="button">
-        <i class="fa fa-chevron-right"></i>
+        <icon data-name="arrow-right" data-size="16" class="mauto"></icon>
         <span class="sr-only" translate-context="Action" translate>Next</span>
     </a>
 </span>
