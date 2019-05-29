@@ -21,6 +21,7 @@ const Modal = ({
     children,
     modalTitleID,
     hasClose,
+    noValidate,
     ...rest
 }) => {
     // Because we will forget
@@ -49,7 +50,7 @@ function DemoModal({ onAdd, ...rest }) {
                     {title}
                 </HeaderModal>
             ) : null}
-            <ContentModal onSubmit={onSubmit} onReset={onClose}>
+            <ContentModal onSubmit={onSubmit} onReset={onClose} noValidate={noValidate}>
                 <InnerModal>{children}</InnerModal>
                 <FooterModal>
                     {typeof close === 'string' ? <ResetButton disabled={loading}>{close}</ResetButton> : close}
@@ -76,6 +77,7 @@ Modal.propTypes = {
     loading: PropTypes.bool,
     submit: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     close: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    noValidate: PropTypes.bool,
     small: PropTypes.bool,
     background: PropTypes.bool,
     hasClose: PropTypes.bool
@@ -87,6 +89,7 @@ Modal.defaultProps = {
     loading: false,
     isBehind: false,
     isClosing: false,
+    noValidate: false,
     hasClose: true,
     modalTitleID: 'modalTitle'
 };
