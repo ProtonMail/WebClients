@@ -5,11 +5,15 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { Icon } from 'react-components';
 
 import ToggleNotify from './ToggleNotify';
-import EditLabelButton from './EditLabelButton';
-import DeleteLabelButton from './DeleteLabelButton';
+import ActionsLabel from './ActionsLabel';
 
 function LabelItem({ label, onEditLabel, onRemoveLabel }) {
     const { Name, Color, Exclusive } = label;
+
+    const handleChange = (type, label) => {
+        type === 'update' && onEditLabel(label);
+        type === 'remove' && onRemoveLabel(label);
+    };
 
     return (
         <tr>
@@ -25,8 +29,7 @@ function LabelItem({ label, onEditLabel, onRemoveLabel }) {
                 <div className="w10">{Exclusive === 1 && <ToggleNotify label={label} />}</div>
             </td>
             <td>
-                <EditLabelButton onChange={onEditLabel} label={label} className="mr1" />
-                <DeleteLabelButton label={label} onRemove={onRemoveLabel} />
+                <ActionsLabel label={label} onChange={handleChange} />
             </td>
         </tr>
     );
