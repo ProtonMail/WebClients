@@ -25,12 +25,14 @@ async function main() {
         await fs.writeFile(appConfigPath, appConfig);
     }
 
-    if (is('compile')) {
+    if (is('compile') || is('extract-i18n')) {
         const compile = require('../cli/compile');
         const publicPath = getPublicPath(argv);
-        const CONFIG = configBuilder({ publicPath });
-        compile(CONFIG);
-        return;
+        const CONFIG = configBuilder({
+            publicPath,
+            ...is('extract-i18n') && { flow: 'i18n' }
+        });
+        return compile(CONFIG);
     }
 
     // Run the dev server, but first find an available port
@@ -77,6 +79,9 @@ async function main() {
                 - --api=<String>: Change the API, based on your env.json
                 - --publicPath=/settings/: to build the app based on /settings/
               Build the app
+
+          - ${chalk.blue('extract-i18n')}
+              Extract translations from a project (we use ttag)
         `);
     }
 }

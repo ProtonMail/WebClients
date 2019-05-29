@@ -3,7 +3,7 @@ const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('./constants
 
 const BABEL_PLUGINS_PRODUCTION = [['babel-plugin-transform-react-remove-prop-types', { removeImport: true }]];
 
-module.exports = ({ isProduction, isTranspile = true }) => {
+module.exports = ({ isProduction, isTranspile = true }, flow) => {
     const TRANSPILE_JS_LOADER = [
         {
             loader: 'babel-loader',
@@ -41,6 +41,27 @@ module.exports = ({ isProduction, isTranspile = true }) => {
             }
         }
     ];
+
+    if (flow === 'i18n') {
+        TRANSPILE_JS_LOADER[0].options.plugins.push([
+            'ttag',
+            {
+                extract: {
+                    output: 'i18n/template.pot'
+                }
+            }
+        ]);
+        return [
+            {
+                test: /\.js$/,
+                exclude: createRegex(
+                    excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
+                    excludeFiles(BABEL_EXCLUDE_FILES)
+                ),
+                use: TRANSPILE_JS_LOADER
+            }
+        ];
+    }
 
     return [
         {

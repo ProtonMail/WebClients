@@ -82,6 +82,8 @@ module.exports = ({ isProduction, publicPath }) => {
             }))
         ),
 
+        new CopyWebpackPlugin([{ from: 'src/i18n', to: 'i18n' }]),
+
         new MiniCssExtractPlugin({
             filename: isProduction ? '[name].[hash:8].css' : '[name].css',
             chunkFilename: isProduction ? '[id].[hash:8].css' : '[id].css'

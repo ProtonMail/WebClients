@@ -11,7 +11,7 @@ const { outputPath } = require('./webpack/paths');
 const { excludeNodeModulesExcept, excludeFiles, createRegex } = require('./webpack/helpers/regex');
 const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('./webpack/constants');
 
-function main({ port, publicPath }) {
+function main({ port, publicPath, flow }) {
     const conf = {
         isProduction: process.env.NODE_ENV === 'production',
         publicPath: publicPath || '/'
@@ -19,18 +19,15 @@ function main({ port, publicPath }) {
 
     const { isProduction } = conf;
 
-    return {
-        stats: 'minimal',
-        mode: !isProduction ? 'development' : 'production',
-        bail: isProduction,
-        devtool: false,
-        watchOptions: {
-            ignored: [
-                createRegex(excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES), excludeFiles(BABEL_EXCLUDE_FILES)),
-                'i18n/*.json',
-                /\*\.(gif|jpeg|jpg|ico|png)/
-            ]
+    const WEBPACK_EXTRA = {
+        module: {
+            rules: [...jsLoader(conf), ...cssLoader(conf), ...assetsLoader(conf)]
         },
+        plugins: plugins(conf),
+        optimization: optimization(conf)
+    };
+
+    const WEBPACK_DEV_SERVER = {
         devServer: {
             hot: !isProduction,
             inline: true,
@@ -44,6 +41,33 @@ function main({ port, publicPath }) {
             contentBase: outputPath,
             publicPath,
             stats: 'minimal'
+        }
+    };
+
+    if (flow === 'i18n') {
+        delete WEBPACK_DEV_SERVER.devServer;
+        delete WEBPACK_EXTRA.optimization;
+        WEBPACK_EXTRA.module.rules = [...jsLoader(conf, flow), ...cssLoader(conf), ...assetsLoader(conf)];
+    }
+
+    const SOURCES_DEV_SERVER = [];
+
+    if (!isProduction && flow !== 'i18n') {
+        SOURCES_DEV_SERVER.push(`webpack-dev-server/client?http://localhost:${port}/`);
+        SOURCES_DEV_SERVER.push('webpack/hot/dev-server');
+    }
+
+    const CONFIG = {
+        stats: 'minimal',
+        mode: !isProduction ? 'development' : 'production',
+        bail: isProduction,
+        devtool: false,
+        watchOptions: {
+            ignored: [
+                createRegex(excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES), excludeFiles(BABEL_EXCLUDE_FILES)),
+                'i18n/*.json',
+                /\*\.(gif|jpeg|jpg|ico|png)/
+            ]
         },
         resolve: {
             symlinks: false,
@@ -54,16 +78,13 @@ function main({ port, publicPath }) {
                 'react-dom': path.resolve('./node_modules/react-dom'),
                 'design-system': path.resolve('./node_modules/design-system'),
                 'proton-shared': path.resolve('./node_modules/proton-shared'),
-                'react-components': path.resolve('./node_modules/react-components')
+                'react-components': path.resolve('./node_modules/react-components'),
+                // Else it will use the one from react-component, shared etc. if we use npm link
+                ttag: path.resolve('./node_modules/ttag')
             }
         },
         entry: {
-            index: [
-                ...(!isProduction
-                    ? [`webpack-dev-server/client?http://localhost:${port}/`, 'webpack/hot/dev-server']
-                    : []),
-                getSource('./src/app/index.js')
-            ]
+            index: [...SOURCES_DEV_SERVER, getSource('./src/app/index.js')]
         },
         output: {
             path: outputPath,
@@ -72,12 +93,11 @@ function main({ port, publicPath }) {
             chunkFilename: isProduction ? '[name].[chunkhash:8].chunk.js' : '[name].chunk.js',
             crossOriginLoading: 'anonymous'
         },
-        module: {
-            rules: [...jsLoader(conf), ...cssLoader(conf), ...assetsLoader(conf)]
-        },
-        plugins: plugins(conf),
-        optimization: optimization(conf)
+        ...WEBPACK_DEV_SERVER,
+        ...WEBPACK_EXTRA
     };
+
+    return CONFIG;
 }
 
 module.exports = main;
