@@ -13,7 +13,7 @@ import CouponForm from './CouponForm';
 const { BUNDLE } = COUPON_CODES;
 const { MAIL, VPN } = PLAN_SERVICES;
 
-const TITLES = {
+const getTitlesI18N = () => ({
     mailfree: `ProtonMail (${c('Info').t`no subuscription`})`,
     vpnfree: `ProtonVPN (${c('Info').t`no subuscription`})`,
     plus: 'ProtonMail Plus',
@@ -21,16 +21,17 @@ const TITLES = {
     visionary: 'Proton Visionary',
     vpnplus: 'ProtonVPN Plus',
     vpnbasic: 'ProtonVPN Basic'
-};
+});
 
 const Rows = ({ model, plans }) => {
     const { visionary, plus, vpnbasic, vpnplus, professional } = model.plansMap;
+    const i18n = getTitlesI18N();
 
     if (visionary) {
         const visionaryPlan = getPlan(plans, { name: 'visionary' });
         return (
             <div className="flex flex-spacebetween mb1">
-                <div>{TITLES.visionary}</div>
+                <div>{i18n.visionary}</div>
                 <div>
                     <PlanPrice
                         amount={visionaryPlan.Pricing[model.cycle]}
@@ -48,8 +49,8 @@ const Rows = ({ model, plans }) => {
     const vpnPlan = vpnPlanName ? getPlan(plans, { name: vpnPlanName }) : '';
     const mailSubTotal = getSubTotal({ ...model, plans, services: MAIL });
     const vpnSubTotal = getSubTotal({ ...model, plans, services: VPN });
-    const mailTitle = `${plus || professional ? (plus ? TITLES.plus : TITLES.professional) : TITLES.mailfree}`;
-    const vpnTitle = `${vpnbasic || vpnplus ? (vpnbasic ? TITLES.vpnbasic : TITLES.vpnplus) : TITLES.vpnfree}`;
+    const mailTitle = `${plus || professional ? (plus ? i18n.plus : i18n.professional) : i18n.mailfree}`;
+    const vpnTitle = `${vpnbasic || vpnplus ? (vpnbasic ? i18n.vpnbasic : i18n.vpnplus) : i18n.vpnfree}`;
 
     return (
         <>

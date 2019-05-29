@@ -20,21 +20,24 @@ import {
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
 import { updateLogAuth } from 'proton-shared/lib/api/settings';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { ELEMENTS_PER_PAGE, LOGS_STATE } from 'proton-shared/lib/constants';
+import { ELEMENTS_PER_PAGE, LOGS_STATE, AUTH_LOG_EVENTS } from 'proton-shared/lib/constants';
 
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
 
-const EVENTS = {
-    0: c('Log event').t`Login password failure`,
-    1: c('Log event').t`Login success`,
-    2: c('Log event').t`Logout`,
-    3: c('Log event').t`2FA login failure`
-};
-
 const { DISABLE, BASIC, ADVANCED } = LOGS_STATE;
+const { LOGIN_FAILURE_PASSWORD, LOGIN_SUCCESS, LOGOUT, LOGIN_FAILURE_2FA, LOGIN_SUCCESS_AWAIT_2FA } = AUTH_LOG_EVENTS;
+
+const getEventsI18N = () => ({
+    [LOGIN_FAILURE_PASSWORD]: c('Log event').t`Login failure (password)`,
+    [LOGIN_SUCCESS]: c('Log event').t`Login success`,
+    [LOGOUT]: c('Log event').t`Logout`,
+    [LOGIN_FAILURE_2FA]: c('Log event').t`Login failure (2FA)`,
+    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Login failure (2FA)`
+});
 
 const LogsSection = () => {
+    const i18n = getEventsI18N();
     const [settings] = useUserSettings();
     const { createModal } = useModals();
     const [logAuth, setLogAuth] = useState(settings.LogAuth);
@@ -59,7 +62,7 @@ const LogsSection = () => {
     const handleDownload = () => {
         const data = logs.reduce(
             (acc, { Event, Time, IP }) => {
-                acc.push(`${EVENTS[Event]},${moment(Time * 1000).toISOString()},${IP}`);
+                acc.push(`${i18n[Event]},${moment(Time * 1000).toISOString()},${IP}`);
                 return acc;
             },
             [['Event', 'Time', 'IP'].join(',')]

@@ -23,11 +23,11 @@ import SubscriptionModal from './SubscriptionModal';
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 const { BUNDLE } = COUPON_CODES;
 
-const CYCLES = {
+const getCyclesi18n = () => ({
     [MONTHLY]: c('Billing cycle').t`Monthly`,
     [YEARLY]: c('Billing cycle').t`Yearly`,
     [TWO_YEARS]: c('Billing cycle').t`2-year`
-};
+});
 
 const SubscriptionSection = ({ permission }) => {
     const [{ hasPaidMail, hasPaidVpn, isPaid }] = useUser();
@@ -82,6 +82,7 @@ const SubscriptionSection = ({ permission }) => {
     const { mailPlan, vpnPlan } = formatPlans(Plans);
     const { Name: mailPlanName } = mailPlan || {};
     const canRemoveCoupon = CouponCode && CouponCode !== BUNDLE;
+    const i18n = getCyclesi18n();
 
     const handleModal = (action = '') => () => {
         const coupon = action === 'remove-coupon' ? '' : CouponCode ? CouponCode : undefined; // CouponCode can equals null
@@ -204,7 +205,7 @@ const SubscriptionSection = ({ permission }) => {
                     <div className="flex-autogrid onmobile-flex-column w100">
                         <div className="flex-autogrid-item">{c('Label').t`Billing cycle`}</div>
                         <div className="flex-autogrid-item">
-                            <strong>{CYCLES[Cycle]}</strong>
+                            <strong>{i18n[Cycle]}</strong>
                         </div>
                         {Cycle === MONTHLY && (
                             <div className="flex-autogrid-item">{c('Info')

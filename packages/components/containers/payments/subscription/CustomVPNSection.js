@@ -13,15 +13,15 @@ import CycleDiscountBadge from '../CycleDiscountBadge';
 
 const { VPN } = PLAN_SERVICES;
 
-const vpnOptions = range(5, 501).map((value, index) => ({
-    text: getTextOption('vpn', value, index),
-    value: index
-}));
-
 const CustomVPNSection = ({ plans, model, onChange }) => {
     const vpnBasicPlan = getPlan(plans, { name: 'vpnbasic' });
     const vpnPlusPlan = getPlan(plans, { name: 'vpnplus' });
     const vpnAddon = getAddon(plans, { name: '1vpn' });
+    const vpnOptions = range(5, 501).map((value, index) => ({
+        text: getTextOption('vpn', value, index),
+        value: index
+    }));
+
     const { state, toggle } = useToggle();
     const subTotal = getSubTotal({ ...model, plans, services: VPN });
 

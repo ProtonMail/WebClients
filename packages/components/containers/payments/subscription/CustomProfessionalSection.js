@@ -7,20 +7,18 @@ import { range } from 'proton-shared/lib/helpers/array';
 import PlanPrice from './PlanPrice';
 import { getTextOption, getPlan, getAddon } from './helpers';
 
-const memberOptions = range(1, 5001).map((value, index) => ({
-    text: getTextOption('member', value, index),
-    value: index
-}));
-
-const domainOptions = range(2, 101).map((value, index) => ({
-    text: getTextOption('domain', value, index),
-    value: index
-}));
-
 const CustomProfessionalSection = ({ plans, model, onChange }) => {
     const professionalPlan = getPlan(plans, { name: 'professional' });
     const memberAddon = getAddon(plans, { name: '1member' });
     const domainAddon = getAddon(plans, { name: '1domain' });
+    const memberOptions = range(1, 5001).map((value, index) => ({
+        text: getTextOption('member', value, index),
+        value: index
+    }));
+    const domainOptions = range(2, 101).map((value, index) => ({
+        text: getTextOption('domain', value, index),
+        value: index
+    }));
 
     const handleChange = (key) => ({ target }) => {
         onChange({ ...model, plansMap: { ...model.plansMap, [key]: +target.value } });

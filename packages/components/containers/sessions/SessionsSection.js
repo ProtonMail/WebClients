@@ -24,7 +24,7 @@ import { ELEMENTS_PER_PAGE } from 'proton-shared/lib/constants';
 import SessionAction from './SessionAction';
 import useAuthenticationStore from '../../hooks/useAuthenticationStore';
 
-const CLIENTS = {
+const getClientsI18N = () => ({
     Web: c('Badge').t`ProtonMail for web`,
     WebSettings: c('Badge').t`ProtonMail settings for web`,
     iOS: c('Badge').t`ProtonMail for iOS`,
@@ -37,7 +37,7 @@ const CLIENTS = {
     iOSVPN: c('Badge').t`ProtonVPN for iOS`,
     AndroidVPN: c('Badge').t`ProtonVPN for Android`,
     Admin: c('Badge').t`Admin`
-};
+});
 
 const SessionsSection = () => {
     const { createNotification } = useNotifications();
@@ -72,6 +72,8 @@ const SessionsSection = () => {
         fetchSessions();
     }, []);
 
+    const i18n = getClientsI18N();
+
     return (
         <>
             <SubTitle>{c('Title').t`Sessions`}</SubTitle>
@@ -99,7 +101,7 @@ const SessionsSection = () => {
                             <TableRow
                                 key={key}
                                 cells={[
-                                    CLIENTS[session.ClientID],
+                                    i18n[session.ClientID],
                                     <Time format="LLL" key={key}>
                                         {session.CreateTime}
                                     </Time>,

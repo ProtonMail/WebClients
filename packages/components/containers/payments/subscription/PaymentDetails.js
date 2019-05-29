@@ -7,21 +7,22 @@ import GiftCodeForm from './GiftCodeForm';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
-const BILLING_CYCLE = {
+const getBillingCycleI18N = () => ({
     [MONTHLY]: c('Info').t`monthly billing`,
     [YEARLY]: c('Info').t`annual billing`,
-    [TWO_YEARS]: c('Info').t`two year billing`
-};
+    [TWO_YEARS]: c('Info').t`two-year billing`
+});
 
 const PaymentDetails = ({ check, model, onChange }) => {
     const { state, toggle } = useToggle();
+    const i18n = getBillingCycleI18N();
 
     return (
         <>
             <div className="uppercase bold small mb1">{c('Title').t`Payment details`}</div>
             <div className="flex flex-spacebetween mb1 pb1 border-bottom">
                 <div className="bold">
-                    {c('Label').t`Total`} ({BILLING_CYCLE[model.cycle]})
+                    {c('Label').t`Total`} ({i18n[model.cycle]})
                 </div>
                 <div className="bold">
                     <Price currency={model.currency}>{check.Amount}</Price>

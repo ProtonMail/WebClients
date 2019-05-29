@@ -4,13 +4,6 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { INVOICE_STATE } from 'proton-shared/lib/constants';
 
-const STATES = {
-    [INVOICE_STATE.UNPAID]: c('Invoice state display as badge').t`Unpaid`,
-    [INVOICE_STATE.PAID]: c('Invoice state display as badge').t`Paid`,
-    [INVOICE_STATE.VOID]: c('Invoice state display as badge').t`Void`,
-    [INVOICE_STATE.BILLED]: c('Invoice state display as badge').t`Billed`
-};
-
 const TYPES = {
     [INVOICE_STATE.UNPAID]: 'error',
     [INVOICE_STATE.PAID]: 'success',
@@ -18,8 +11,17 @@ const TYPES = {
     [INVOICE_STATE.BILLED]: 'default'
 };
 
+const getStatesI18N = () => ({
+    [INVOICE_STATE.UNPAID]: c('Invoice state display as badge').t`Unpaid`,
+    [INVOICE_STATE.PAID]: c('Invoice state display as badge').t`Paid`,
+    [INVOICE_STATE.VOID]: c('Invoice state display as badge').t`Void`,
+    [INVOICE_STATE.BILLED]: c('Invoice state display as badge').t`Billed`
+});
+
 const InvoiceState = ({ invoice }) => {
-    return <Badge type={TYPES[invoice.State]}>{STATES[invoice.State]}</Badge>;
+    const i18n = getStatesI18N();
+
+    return <Badge type={TYPES[invoice.State]}>{i18n[invoice.State]}</Badge>;
 };
 
 InvoiceState.propTypes = {

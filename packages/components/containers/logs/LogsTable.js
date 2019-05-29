@@ -7,14 +7,6 @@ import { LOGS_STATE, AUTH_LOG_EVENTS } from 'proton-shared/lib/constants';
 const { DISABLE, ADVANCED } = LOGS_STATE;
 const { LOGIN_FAILURE_PASSWORD, LOGIN_SUCCESS, LOGOUT, LOGIN_FAILURE_2FA, LOGIN_SUCCESS_AWAIT_2FA } = AUTH_LOG_EVENTS;
 
-const EVENTS = {
-    [LOGIN_FAILURE_PASSWORD]: c('Logs status').t`Login failure (Password)`,
-    [LOGIN_SUCCESS]: c('Logs status').t`Login success`,
-    [LOGOUT]: c('Logs status').t`Logout`,
-    [LOGIN_FAILURE_2FA]: c('Logs status').t`Login failure (2FA)`,
-    [LOGIN_SUCCESS_AWAIT_2FA]: c('Logs status').t`Login failure (2FA)`
-};
-
 const ICONS = {
     [LOGIN_FAILURE_PASSWORD]: <Icon name="off" />,
     [LOGIN_SUCCESS]: <Icon name="on" />,
@@ -23,7 +15,17 @@ const ICONS = {
     [LOGIN_SUCCESS_AWAIT_2FA]: <Icon name="off" />
 };
 
+const getEventsI18N = () => ({
+    [LOGIN_FAILURE_PASSWORD]: c('Log event').t`Login failure (password)`,
+    [LOGIN_SUCCESS]: c('Log event').t`Login success`,
+    [LOGOUT]: c('Log event').t`Logout`,
+    [LOGIN_FAILURE_2FA]: c('Log event').t`Login failure (2FA)`,
+    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Login failure (2FA)`
+});
+
 const LogsTable = ({ logs, logAuth, loading }) => {
+    const i18n = getEventsI18N();
+
     if (logAuth === DISABLE) {
         return (
             <Alert>{c('Info')
@@ -47,7 +49,7 @@ const LogsTable = ({ logs, logAuth, loading }) => {
                             key={key}
                             cells={[
                                 <>
-                                    {ICONS[Event]} {EVENTS[Event]}
+                                    {ICONS[Event]} {i18n[Event]}
                                 </>,
                                 logAuth === ADVANCED ? IP : '',
                                 <Time key={key} format="LLL">

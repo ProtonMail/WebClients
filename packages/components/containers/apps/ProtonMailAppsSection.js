@@ -18,6 +18,7 @@ const ProtonMailAppsSection = () => {
         { name: 'ProtonMail Bridge', plateform: 'MacOS', link: 'https://protonmail.com/bridge/install' },
         { name: 'ProtonMail Bridge', plateform: 'Linux', link: 'https://protonmail.com/bridge/install' }
     ];
+
     return (
         <>
             <SubTitle>ProtonMail apps</SubTitle>

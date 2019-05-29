@@ -4,14 +4,16 @@ import { USER_ROLES } from 'proton-shared/lib/constants';
 
 const SUPER_ADMIN_ROLE = 'superman';
 
-const ROLES = {
+const getRolesI18N = () => ({
     [USER_ROLES.ADMIN_ROLE]: c('User role').t`Admin`,
     [USER_ROLES.MEMBER_ROLE]: c('User role').t`Member`,
     [SUPER_ADMIN_ROLE]: c('User role').t`Primary admin`
-};
+});
 
 const MemberRole = ({ member }) => {
-    return ROLES[member.Subscriber ? SUPER_ADMIN_ROLE : member.Role];
+    const i18n = getRolesI18N();
+
+    return i18n[member.Subscriber ? SUPER_ADMIN_ROLE : member.Role];
 };
 
 MemberRole.propTypes = {
