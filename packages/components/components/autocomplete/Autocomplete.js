@@ -71,7 +71,7 @@ const Autocomplete = ({
     }, [awesomplete, list]);
 
     return (
-        <div className={'autocomplete awesomplete '.concat(className)} onSubmit={handleSubmit}>
+        <div className={'autocomplete awesomplete w100'.concat(className)} onSubmit={handleSubmit}>
             <div className="autocomplete-container" ref={containerRef}>
                 <div className={`flex pm-field ${inputStyleModifier}`}>
                     {children.length > 0 && <div className="flex">{children}</div>}

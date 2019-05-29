@@ -12,7 +12,7 @@ const Select = (props) => {
 
     return (
         <>
-            <select className={`pm-field ${className} ${statusClasses}`} {...rest} {...handlers}>
+            <select className={`pm-field w100 ${className} ${statusClasses}`} {...rest} {...handlers}>
                 {options.map(({ text, ...rest }, index) => (
                     <option key={index.toString()} {...rest}>
                         {text}
@@ -38,7 +38,7 @@ Select.propTypes = {
 
 Select.defaultProps = {
     multiple: false,
-    className: 'w100',
+    className: '',
     size: 1
 };
 

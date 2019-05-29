@@ -20,6 +20,7 @@ const Modal = ({
     loading,
     children,
     modalTitleID,
+    footer,
     hasClose,
     noValidate,
     ...rest
@@ -43,6 +44,25 @@ function DemoModal({ onAdd, ...rest }) {
 `);
     }
 
+    const getFooter = () => {
+        if (footer) {
+            return <FooterModal>{footer}</FooterModal>;
+        }
+
+        return (
+            <FooterModal>
+                {typeof close === 'string' ? <ResetButton disabled={loading}>{close}</ResetButton> : close}
+                {typeof submit === 'string' ? (
+                    <PrimaryButton loading={loading} type="submit">
+                        {submit}
+                    </PrimaryButton>
+                ) : (
+                    submit
+                )}
+            </FooterModal>
+        );
+    };
+
     return (
         <DialogModal modalTitleID={modalTitleID} {...rest}>
             {title ? (
@@ -52,16 +72,7 @@ function DemoModal({ onAdd, ...rest }) {
             ) : null}
             <ContentModal onSubmit={onSubmit} onReset={onClose} noValidate={noValidate}>
                 <InnerModal>{children}</InnerModal>
-                <FooterModal>
-                    {typeof close === 'string' ? <ResetButton disabled={loading}>{close}</ResetButton> : close}
-                    {typeof submit === 'string' ? (
-                        <PrimaryButton loading={loading} type="submit">
-                            {submit}
-                        </PrimaryButton>
-                    ) : (
-                        submit
-                    )}
-                </FooterModal>
+                {getFooter()}
             </ContentModal>
         </DialogModal>
     );

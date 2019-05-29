@@ -26,7 +26,7 @@ const useAutocomplete = ({
         changeInputValue(multiple ? '' : label);
 
         const itemToAdd = !item && label ? labelToItem(label) : item;
-        setSelectedItems((selected) => (multiple ? [...selected, itemToAdd] : [itemToAdd]));
+        setSelectedItems((selected) => multiple ? [...selected, itemToAdd] : [itemToAdd]);
     };
 
     const submit = (label) => select(null, label);
