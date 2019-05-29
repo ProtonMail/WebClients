@@ -8,39 +8,39 @@ const find = (list = [], value) => list.find((item) => item.value === value);
 
 export const getI18n = () => ({
     TYPES: [
-        { label: c('Filter modal type').t('Select ...'), value: 'select' },
-        { label: c('Filter modal type').t('If the subject'), value: 'subject' },
-        { label: c('Filter modal type').t('If the sender'), value: 'sender' },
-        { label: c('Filter modal type').t('If the recipient'), value: 'recipient' },
-        { label: c('Filter modal type').t('If the attachments'), value: 'attachments' }
+        { label: c('Filter modal type').t`Select ...`, value: 'select' },
+        { label: c('Filter modal type').t`If the subject`, value: 'subject' },
+        { label: c('Filter modal type').t`If the sender`, value: 'sender' },
+        { label: c('Filter modal type').t`If the recipient`, value: 'recipient' },
+        { label: c('Filter modal type').t`If the attachments`, value: 'attachments' }
     ],
     COMPARATORS: [
-        { label: c('Condition for custom filter').t('contains'), value: 'contains' },
-        { label: c('Condition for custom filter').t('is exactly'), value: 'is' },
-        { label: c('Condition for custom filter').t('begins with'), value: 'starts' },
-        { label: c('Condition for custom filter').t('ends with'), value: 'ends' },
-        { label: c('Condition for custom filter').t('matches'), value: 'matches' },
+        { label: c('Condition for custom filter').t`contains`, value: 'contains' },
+        { label: c('Condition for custom filter').t`is exactly`, value: 'is' },
+        { label: c('Condition for custom filter').t`begins with`, value: 'starts' },
+        { label: c('Condition for custom filter').t`ends with`, value: 'ends' },
+        { label: c('Condition for custom filter').t`matches`, value: 'matches' },
         {
-            label: c('Condition for custom filter').t('does not contain'),
+            label: c('Condition for custom filter').t`does not contain`,
             value: '!contains'
         },
-        { label: c('Condition for custom filter').t('is not'), value: '!is' },
+        { label: c('Condition for custom filter').t`is not`, value: '!is' },
         {
-            label: c('Condition for custom filter').t('does not begin with'),
+            label: c('Condition for custom filter').t`does not begin with`,
             value: '!starts'
         },
         {
-            label: c('Condition for custom filter').t('does not end with'),
+            label: c('Condition for custom filter').t`does not end with`,
             value: '!ends'
         },
         {
-            label: c('Condition for custom filter').t('does not match'),
+            label: c('Condition for custom filter').t`does not match`,
             value: '!matches'
         }
     ],
     OPERATORS: [
-        { label: c('Filter modal operators').t('All conditions must be fulfilled (AND)'), value: 'all' },
-        { label: c('Filter modal operators').t('One condition must be fulfilled (OR)'), value: 'any' }
+        { label: c('Filter modal operators').t`All conditions must be fulfilled (AND)`, value: 'all' },
+        { label: c('Filter modal operators').t`One condition must be fulfilled (OR)`, value: 'any' }
     ]
 });
 
