@@ -21,7 +21,7 @@ export const getContactEmailsModel = (api) => {
         pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
         delayPerChunk: 1000
     }).then((pages) => {
-        return pages.map(({ ContactEmails }) => ContactEmails);
+        return pages.map(({ ContactEmails }) => ContactEmails).flat();
     });
 };
 
