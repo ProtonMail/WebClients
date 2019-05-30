@@ -272,9 +272,9 @@ export { default as AddEmailToListModal } from './containers/filters/AddEmailToL
 
 export { default as useCachedAsyncResult } from './hooks/useCachedAsyncResult';
 export { useAddresses } from './models/addressesModel';
-export { useContactEmails } from './models/contactEmailsModel';
 export { useDomains } from './models/domainsModel';
 export { useContacts } from './models/useContacts';
+export { useContactEmails } from './models/useContactEmails';
 export { useMailSettings } from './models/mailSettingsModel';
 export { useMembers } from './models/membersModel';
 export { useLabels } from './models/labelsModel';
