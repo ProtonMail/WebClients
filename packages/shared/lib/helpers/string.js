@@ -36,3 +36,7 @@ export const toPrice = (amount = 0, currency = 'EUR', divisor = 100) => {
 
     return `${prefix}${absValue} ${symbol}`;
 };
+
+export const addPlus = ([first = '', ...rest] = []) => {
+    return [first, rest.length && `+${rest.length}`].filter(Boolean).join(', ');
+};
