@@ -397,3 +397,10 @@ export const FILTER_STATUS = {
     ENABLED: 1,
     DISABLED: 0
 };
+export const VCARD_VERSION = '4.0';
+export const CONTACT_CARD_TYPE = {
+    ENCRYPTED_AND_SIGNED: 3,
+    SIGNED: 2,
+    ENCRYPTED: 1,
+    CLEAR_TEXT: 0
+};
