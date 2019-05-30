@@ -274,6 +274,7 @@ export { default as useCachedAsyncResult } from './hooks/useCachedAsyncResult';
 export { useAddresses } from './models/addressesModel';
 export { useContactEmails } from './models/contactEmailsModel';
 export { useDomains } from './models/domainsModel';
+export { useContacts } from './models/useContacts';
 export { useMailSettings } from './models/mailSettingsModel';
 export { useMembers } from './models/membersModel';
 export { useLabels } from './models/labelsModel';
