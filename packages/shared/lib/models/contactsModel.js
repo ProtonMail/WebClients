@@ -18,9 +18,9 @@ export const getContactsModel = (api) => {
         requestPage,
         pageSize,
         pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
-        delayPerChunk: 0
+        delayPerChunk: 100
     }).then((pages) => {
-        return pages.map(({ Contacts }) => Contacts);
+        return pages.map(({ Contacts }) => Contacts).flat();
     });
 };
 
