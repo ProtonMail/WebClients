@@ -20,6 +20,9 @@ async function main(type = 'default') {
     await bash(`cp -r ${TEMPLATE}/${type} src`);
     // Copy hidden config files
     await bash(`cp -r ${TEMPLATE}/.{editorconfig,eslintrc.json,prettierrc} .`);
+
+    // Copy config tmp
+    await bash(`cp -r ${TEMPLATE}/circle.yml .`);
     // Copy custom gitignore as during the npm install .gitignore is removed... wtf
     await bash(`cp -r ${TEMPLATE}/_gitignore .gitignore`);
 
@@ -46,10 +49,13 @@ async function main(type = 'default') {
             - EditorConfig
             - Eslint
             - Prettier
+            - Circle.ci config (lint js + i18n)
             - Husky + lint-staged
             - React
             - npm scripts
                 - ${chalk.yellow('start')}: dev server
+                - ${chalk.yellow('pretty')}: run prettier
+                - ${chalk.yellow('i18n:getlatest')}: upgrade translations inside your app
                 - Hook postversion for pushing git tag
 
         ➙ Now you can run ${chalk.yellow('npm i')}

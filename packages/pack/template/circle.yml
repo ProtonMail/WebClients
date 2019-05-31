@@ -1,0 +1,12 @@
+version: 2
+jobs:
+   build:
+     docker:
+       - image: circleci/node:10.9.0-stretch-browsers
+     steps:
+       - checkout
+       - run: npm i
+       - run: npx proton-pack
+       - run: npm run lint
+       - run: npm run i18n:validate
+       - run: npm run i18n:validate:context

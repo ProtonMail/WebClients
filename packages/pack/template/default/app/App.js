@@ -2,12 +2,7 @@ import React from 'react';
 import { addLocale, useLocale, c } from 'ttag';
 import { Title, SubTitle, Bordered, PrimaryButton, Icon, Icons } from 'react-components';
 
-import frLocale from '../i18n/fr.po';
-
 export default () => {
-    addLocale('fr', frLocale);
-    useLocale('fr');
-
     return () => {
         return (
             <>

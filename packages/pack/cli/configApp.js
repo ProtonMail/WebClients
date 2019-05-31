@@ -4,19 +4,19 @@ const argv = require('minimist')(process.argv.slice(2));
 
 const { warn } = require('./log');
 
-const isHelp = argv._.includes('help');
+const isSilent = argv._.includes('help') || argv._.includes('init');
 
 const readJSON = (file) => {
     const fileName = `${file}.json`;
 
-    if (file === 'env' && !isHelp) {
+    if (file === 'env' && !isSilent) {
         warn('[DEPREACTION NOTICE] Please rename your file env.json to appConfig.json');
     }
 
     try {
         return require(path.join(process.cwd(), fileName));
     } catch (e) {
-        !isHelp && warn(`Missing file ${fileName}`);
+        !isSilent && warn(`Missing file ${fileName}`);
     }
 };
 
