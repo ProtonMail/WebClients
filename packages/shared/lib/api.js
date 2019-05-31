@@ -2,7 +2,20 @@ export const getUIDHeaders = (UID) => ({
     'x-pm-uid': UID
 });
 
-export default ({ xhr, UID, API_URL, APP_VERSION, CLIENT_ID, API_VERSION }) => {
+const ADD_CLIENT_SECRET = ['auth', 'auth/info'];
+
+/**
+ * Create a function that can call the API with the correct parameters.
+ * @param {function} xhr - Fetch function
+ * @param {String} [UID] - The UID of the authenticated user, or nothing
+ * @param {String} API_URL - The URL to the API
+ * @param {String} APP_VERSION - The app version
+ * @param {String} CLIENT_ID - The id of the client
+ * @param {String} [CLIENT_SECRET] - Optional client secret
+ * @param {String} API_VERSION - The version of the api
+ * @return {function}
+ */
+export default ({ xhr, UID, API_URL, APP_VERSION, CLIENT_ID, CLIENT_SECRET, API_VERSION }) => {
     const authHeaders = UID ? getUIDHeaders(UID) : undefined;
 
     const defaultHeaders = {
@@ -13,9 +26,12 @@ export default ({ xhr, UID, API_URL, APP_VERSION, CLIENT_ID, API_VERSION }) => {
     };
 
     return ({ url, data, headers, ...rest }) => {
+        // Special case for the admin panel
+        const dataWithClientSecret =
+            CLIENT_SECRET && data && ADD_CLIENT_SECRET.includes(url) ? { ...data, ClientSecret: CLIENT_SECRET } : data;
         return xhr({
             url: `${API_URL}/${url}`,
-            data,
+            data: dataWithClientSecret,
             headers: {
                 ...defaultHeaders,
                 ...headers
