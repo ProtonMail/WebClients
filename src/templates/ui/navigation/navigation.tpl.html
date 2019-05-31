@@ -1,21 +1,21 @@
-<ul class="navigation">
+<div class="topnav-container flex-item-centered-vert flex-item-fluid noprint">
+<ul class="topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap" >
     <navigation-black-friday></navigation-black-friday>
 
-    <li class="navigation-upgrade-item" ng-if="isFree">
-        <a class="navigation-link" ui-sref="secured.dashboard({scroll: true})">
-            <i class="navigation-icon fa fa-cubes"></i>
+    <li class="mr1 navigation-upgrade-item" ng-if="isFree">
+        <a class="topnav-link inline-flex flex-nowrap nodecoration rounded" ui-sref="secured.dashboard({scroll: true})">
             <span class="navigation-title" translate translate-context="Action">Upgrade</span>
         </a>
     </li>
-    <li ng-class="{'active': activeSettings()}">
-        <a id="tour-settings" class="navigation-link" ui-sref="secured.account">
-            <i class="navigation-icon fa fa-cogs"></i>
+    <li class="mr1 " ng-class="{'active': activeSettings()}">
+        <a id="tour-settings" class="topnav-link inline-flex flex-nowrap nodecoration rounded" ui-sref="secured.account">
+            <icon data-name="settings" data-size="16" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
             <span class="navigation-title" translate translate-context="Action">Settings</span>
         </a>
     </li>
-    <li ui-sref-active="active">
-        <a class="navigation-link" ui-sref="secured.contacts">
-            <i class="navigation-icon fa fa-address-book-o"></i>
+    <li class="mr1" ui-sref-active="active">
+        <a class="topnav-link inline-flex flex-nowrap nodecoration rounded" ui-sref="secured.contacts">
+            <icon data-name="contacts" data-size="16" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
             <span class="navigation-title" translate translate-context="Action">Contacts</span>
         </a>
     </li>
@@ -23,3 +23,4 @@
     <navigation-report></navigation-report>
     <navigation-user></navigation-user>
 </ul>
+</div>
