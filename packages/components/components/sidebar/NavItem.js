@@ -17,7 +17,7 @@ const NavItem = ({ type, link, text, onClick, icon, list, color }) => {
     if (type === 'link') {
         return (
             <li className="navigation__item">
-                <NavLink className="navigation__link" to={link}>
+                <NavLink className="navigation__link ellipsis" to={link}>
                     {content}
                 </NavLink>
                 {list.length ? <NavMenu list={list} /> : null}
@@ -28,7 +28,7 @@ const NavItem = ({ type, link, text, onClick, icon, list, color }) => {
     if (type === 'text') {
         return (
             <li className="navigation__item">
-                <span className="navigation__link">
+                <span className="navigation__link ellipsis">
                     {content}
                     {list.length ? <NavMenu list={list} /> : null}
                 </span>
