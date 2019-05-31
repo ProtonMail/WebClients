@@ -81,3 +81,13 @@ export const removeKeyRoute = ({ ID, SignedKeyList }) => ({
         SignedKeyList
     }
 });
+
+export const updatePrivateKeyRoute = ({ KeySalt, Keys, OrganizationKey }) => ({
+    url: 'keys/private',
+    method: 'put',
+    data: {
+        KeySalt,
+        Keys,
+        OrganizationKey
+    }
+});

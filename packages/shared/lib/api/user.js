@@ -14,8 +14,12 @@ export const deleteUser = (data) => ({
     data
 });
 
-export const unlockPasswordChanges = (data) => ({
+export const unlockPasswordChanges = () => ({
     url: 'users/password',
-    method: 'put',
-    data
+    method: 'put'
+});
+
+export const lockSensitiveSettings = () => ({
+    url: 'users/lock',
+    method: 'put'
 });

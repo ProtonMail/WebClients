@@ -1,9 +1,4 @@
-import {
-    getKeys,
-    decryptMessage,
-    decryptPrivateKey as decryptArmoredKey,
-    getMessage
-} from 'pmcrypto';
+import { getKeys, decryptMessage, decryptPrivateKey as decryptArmoredKey, getMessage } from 'pmcrypto';
 
 import { VERIFICATION_STATUS } from 'pmcrypto/lib/constants';
 
@@ -40,7 +35,6 @@ const decryptMemberToken = async (token, decryptedOrganizationKey) => {
         publicKeys: decryptedOrganizationKey.toPublic()
     });
 
-
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         throw new Error('Signature verification failed');
     }
@@ -61,31 +55,37 @@ export const prepareKeys = async ({ Keys = [], keyPassword, OrganizationPrivateK
     }
 
     if (OrganizationPrivateKey) {
-        const decryptedOrganizationKey = await decryptArmoredKey(OrganizationPrivateKey, keyPassword);
+        const decryptedOrganizationKey = await decryptArmoredKey(OrganizationPrivateKey, keyPassword).catch(noop);
 
-        return Promise.all(Keys.map(async (Key) => {
-            const { PrivateKey, Token, Activation } = Key;
-            const decryptedToken = await decryptMemberToken(Token || Activation, decryptedOrganizationKey).catch(noop);
+        return Promise.all(
+            Keys.map(async (Key) => {
+                const { PrivateKey, Token, Activation } = Key;
+                const decryptedToken = await decryptMemberToken(Token || Activation, decryptedOrganizationKey).catch(
+                    noop
+                );
+
+                const [privateKey] = await getKeys(PrivateKey);
+                await privateKey.decrypt(decryptedToken).catch(noop);
+
+                return {
+                    Key,
+                    privateKey
+                };
+            })
+        );
+    }
+
+    return Promise.all(
+        Keys.map(async (Key) => {
+            const { PrivateKey } = Key;
 
             const [privateKey] = await getKeys(PrivateKey);
-            await privateKey.decrypt(decryptedToken).catch(noop);
+            await privateKey.decrypt(keyPassword).catch(noop);
 
             return {
                 Key,
                 privateKey
             };
-        }));
-    }
-
-    return Promise.all(Keys.map(async (Key) => {
-        const { PrivateKey } = Key;
-
-        const [privateKey] = await getKeys(PrivateKey);
-        await privateKey.decrypt(keyPassword).catch(noop);
-
-        return {
-            Key,
-            privateKey
-        };
-    }));
+        })
+    );
 };
