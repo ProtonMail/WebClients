@@ -1,7 +1,6 @@
-const TYPE = {
-    LABEL: 1,
-    CONTACT_GROUP: 2
-};
+import { LABEL_TYPE } from '../constants';
+
+const { LABEL, CONTACT_GROUP } = LABEL_TYPE;
 
 export const get = (Type) => ({
     url: 'labels',
@@ -14,7 +13,6 @@ export const order = ({ LabelIDs, Type }) => ({
     url: 'labels/order',
     data: { LabelIDs, Type }
 });
-
 
 export const create = ({ Name, Color, Display, Type, Exclusive, Notify }) => ({
     method: 'post',
@@ -33,11 +31,11 @@ export const deleteLabel = (labelID) => ({
     url: `labels/${labelID}`
 });
 
-export const getLabels = () => get(TYPE.LABEL);
-export const getContactGroup = () => get(TYPE.CONTACT_GROUP);
+export const getLabels = () => get(LABEL);
+export const getContactGroup = () => get(CONTACT_GROUP);
 
-export const orderLabels = (opt) => order({ ...opt, Type: TYPE.LABEL });
-export const orderContactGroup = (opt) => order({ ...opt, Type: TYPE.CONTACT_GROUP });
+export const orderLabels = (opt) => order({ ...opt, Type: LABEL });
+export const orderContactGroup = (opt) => order({ ...opt, Type: CONTACT_GROUP });
 
-export const createLabel = (opt) => create({ ...opt, Type: TYPE.LABEL });
-export const createContactGroup = (opt) => create({ ...opt, Type: TYPE.CONTACT_GROUP });
+export const createLabel = (opt) => create({ ...opt, Type: LABEL });
+export const createContactGroup = (opt) => create({ ...opt, Type: CONTACT_GROUP });

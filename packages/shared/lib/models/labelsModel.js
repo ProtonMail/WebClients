@@ -1,6 +1,6 @@
 import { getLabels } from '../api/labels';
 import updateCollection from '../helpers/updateCollection';
-import { LABEL_TYPES } from '../constants';
+import { LABEL_EXCLUSIVE } from '../constants';
 
 export const getLabelsModel = (api) => {
     return api(getLabels()).then(({ Labels }) => Labels);
@@ -17,7 +17,7 @@ const defaultMap = (label) => ({ key: label.Name, value: label });
 export function factory(list = [], { formatMapLabel = defaultMap, formatMapFolder = defaultMap } = {}) {
     const { folders, labels, mapLabels, mapFolders } = list.reduce(
         (acc, label) => {
-            if (label.Exclusive === LABEL_TYPES.LABEL) {
+            if (label.Exclusive === LABEL_EXCLUSIVE.LABEL) {
                 const { key, value } = formatMapLabel(label);
                 acc.mapLabels[key] = value;
                 acc.labels.push(label);

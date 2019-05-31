@@ -247,7 +247,7 @@ export const EXPORT_CONTACTS_LIMIT = 50; // Maximum page size for export is 50 f
 export const CONTACTS_REQUESTS_PER_SECOND = 10;
 export const ALL_MEMBERS_ID = 'ALL';
 
-export const LABEL_TYPES = {
+export const LABEL_EXCLUSIVE = {
     FOLDER: 1,
     LABEL: 0
 };
@@ -403,4 +403,10 @@ export const CONTACT_CARD_TYPE = {
     SIGNED: 2,
     ENCRYPTED: 1,
     CLEAR_TEXT: 0
+};
+
+export const LABEL_TYPE = {
+    MESSAGE: 1,
+    CONTACT_GROUP: 2,
+    MESSAGE_FOLDER: 3
 };
