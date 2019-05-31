@@ -29,6 +29,12 @@ export const omit = (model, properties = []) => {
         .reduce((obj, [key, val]) => Object.assign(obj, { [key]: val }), {});
 };
 
+export const pick = (model, properties = []) => {
+    return Object.entries(model)
+        .filter(([key]) => properties.includes(key))
+        .reduce((obj, [key, val]) => Object.assign(obj, { [key]: val }), {});
+};
+
 /**
  * Compare 2 objects
  * but not deeply
