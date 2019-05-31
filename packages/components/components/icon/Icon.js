@@ -12,11 +12,13 @@ import PropTypes from 'prop-types';
  * @param {String} alt used by screen reader
  * @return {React.Component}
  */
-const Icon = ({ name, className, viewBox, alt, fill, size, ...rest }) => {
+const Icon = ({ name, className, viewBox, alt, fill, color, size, ...rest }) => {
     const fillClass = fill ? `fill-global-${fill} ` : '';
+    const style = color ? { fill: color } : undefined;
     return (
         <>
             <svg
+                style={style}
                 viewBox={viewBox}
                 className={`icon-${size}p `.concat(fillClass, className).trim()}
                 role="img"
@@ -36,7 +38,8 @@ Icon.propTypes = {
     viewBox: PropTypes.string,
     className: PropTypes.string,
     fill: PropTypes.string,
-    size: PropTypes.number
+    size: PropTypes.number,
+    color: PropTypes.string
 };
 
 Icon.defaultProps = {

@@ -6,12 +6,19 @@ import Button from '../button/Button';
 import Icon from '../icon/Icon';
 import NavMenu from './NavMenu';
 
-const NavItem = ({ type, link, text, onClick, icon, list }) => {
+const NavItem = ({ type, link, text, onClick, icon, list, color }) => {
+    const content = (
+        <>
+            {icon && <Icon fill="light" name={icon} color={color} className="mr1" />}
+            {text}
+        </>
+    );
+
     if (type === 'link') {
         return (
             <li className="navigation__item">
                 <NavLink className="navigation__link" to={link}>
-                    {icon && <Icon fill="light" name={icon} />} {text}
+                    {content}
                 </NavLink>
                 {list.length ? <NavMenu list={list} /> : null}
             </li>
@@ -22,7 +29,7 @@ const NavItem = ({ type, link, text, onClick, icon, list }) => {
         return (
             <li className="navigation__item">
                 <span className="navigation__link">
-                    {icon && <Icon fill="light" name={icon} />} {text}
+                    {content}
                     {list.length ? <NavMenu list={list} /> : null}
                 </span>
             </li>
@@ -33,7 +40,7 @@ const NavItem = ({ type, link, text, onClick, icon, list }) => {
         return (
             <li className="navigation__item">
                 <Button className="w100" onClick={onClick}>
-                    {icon && <Icon fill="light" name={icon} />} {text}
+                    {content}
                 </Button>
                 {list.length ? <NavMenu list={list} /> : null}
             </li>
@@ -45,6 +52,7 @@ const NavItem = ({ type, link, text, onClick, icon, list }) => {
 
 NavItem.propTypes = {
     icon: PropTypes.string,
+    color: PropTypes.string,
     onClick: PropTypes.func,
     type: PropTypes.oneOf(['link', 'button', 'text']),
     link: PropTypes.string,
