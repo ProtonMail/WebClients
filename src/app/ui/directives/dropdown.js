@@ -13,6 +13,8 @@ function dropdown($document, dispatchers) {
             const parent = element.parent();
             const dropdown = parent.find('.pm_dropdown');
 
+            parent.addClass('pm_dropdown-container');
+
             function showDropdown() {
                 element.addClass('active');
                 element.attr(ATTR_EXPANDED, 'true');
@@ -49,8 +51,8 @@ function dropdown($document, dispatchers) {
 
             const onKeyDown = ({ key }) => {
                 if (key === SPACE_KEY || key === SPACE_KEY_OLD || key === RETURN_KEY) {
-                   click();
-                   return false;
+                    click();
+                    return false;
                 }
                 if (key === ESCAPE_KEY || key === ESCAPE_KEY_OLD) {
                     hideDropdown();
