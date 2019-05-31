@@ -84,7 +84,7 @@ section: design
             </svg>
           </span>
         </button>
-        <div class="js-dropDown-content unstyled dropDown-content dropDown-content--pagination" hidden>
+        <div class="js-dropDown-content unstyled dropDown-content dropDown-content--narrow" hidden>
           <ul class="unstyled mt0-5 mb0-5 aligncenter">
             <li class="dropDown-item"><button class="w100 pt0-5 pb0-5" aria-current="page">1</button></li>
             <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">2</button></li>
@@ -106,7 +106,52 @@ section: design
     <li>For “icons only” buttons, please add <code>pm-button--for-icon</code> modifier, and do not forget to add text using <code>sr-only</code> class.</li>
     <li>For the SVG caret icon, please add <code>expand-caret</code> class on it, this will manage the rotation when expanded/not expanded.</li>
     <li>Expand can contains links or buttons.</li>
+    <li>By default, the height of the drop down is not limited.</li>
   </ul>
+
+  <h3 class="alignleft">Looooooong pagination</h3>
+
+  <nav class="pm-group-buttons">
+    <button class="pm-button pm-group-button pm-button--for-icon" title="Previous page">
+      <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false">
+        <use xlink:href="#shape-arrow-left"></use>
+      </svg>
+      <span class="sr-only">Previous page</span>
+    </button>
+    <div class="dropDown pm-button pm-group-button pm-button--for-icon">
+      <button class="increase-surface-click js-dropDown-button" aria-expanded="false" type="button" title="Open pagination">
+        <span class="mauto">
+          1
+          <svg viewBox="0 0 16 16" class="icon-12p expand-caret" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="#shape-caret"></use>
+          </svg>
+        </span>
+      </button>
+      <div class="js-dropDown-content unstyled dropDown-content dropDown-content--narrow" hidden>
+        <ul class="unstyled p1 aligncenter dropDown-contentInner">
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5" aria-current="page">1</button></li>
+          {% for i in (2..20) %}
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">{{ i }} </button></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <button class="pm-button pm-group-button pm-button--for-icon" title="Next page">
+      <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false">
+        <use xlink:href="#shape-arrow-right"></use>
+      </svg>
+      <span class="sr-only">Next page</span>
+    </button>
+  </nav> 
+
+  <p class="alignleft">If you need to limit the height of the drop down, you may put <code>dropDown-contentInner</code> class on the first child of <code>dropDown-content</code>:</p>
+
+  <pre class=" language-markup"><code>&lt;div class="unstyled dropDown-content dropDown-content--narrow" hidden&gt;
+    &lt;ul class="unstyled p1 aligncenter <strong>dropDown-contentInner</strong>"&gt;
+</code></pre>
+
+   <p class="alignleft">This will add a <code>max-height</code> on the content and add also shadows to show there is so more content (same as for modals).</p>
+    
 
   </div>
   <div class="w49 aligncenter flex-self-vcenter">
@@ -177,7 +222,7 @@ section: design
         </span>
       </button>
       <div class="js-dropDown-content unstyled dropDown-content dropDown-content--narrow" hidden>
-        <ul class="unstyled mt0-5 mb0-5 aligncenter">
+        <ul class="unstyled mt0-5 mb0-5 ml1 mr1 aligncenter">
           <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
           <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
           <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
@@ -208,7 +253,7 @@ section: design
           </span>
         </button>
         <div class="js-dropDown-content unstyled dropDown-content dropDown-content--narrow" hidden>
-          <ul class="unstyled mt0-5 mb0-5 aligncenter">
+          <ul class="unstyled mt0-5 mb0-5 ml1 mr1 aligncenter">
             <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
             <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
             <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
@@ -233,7 +278,7 @@ section: design
       <strong>&lt;/span&gt;</strong>
     &lt;/button&gt;
     &lt;div class="js-dropDown-content unstyled dropDown-content <strong>dropDown-content--narrow</strong>" hidden&gt;
-      &lt;ul class="unstyled mt0-5 mb0-5 aligncenter"&gt;
+      &lt;ul class="unstyled mt0-5 mb0-5 ml1 mr1 aligncenter"&gt;
         &lt;li class="dropDown-item"&gt;&lt;button class="w100 pt0-5 pb0-5"&gt;Blah&lt;/button&gt;&lt;/li&gt;
         …
       &lt;/ul&gt;
@@ -254,7 +299,7 @@ section: design
         button
       </button>
       <div class="js-dropDown-content unstyled dropDown-content" hidden>
-        <ul class="unstyled m0-5">
+        <ul class="unstyled mt0-5 mb0-5 ml1 mr1">
           <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">A first action</button></li>
           <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">Another action</button></li>
           <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">A third action</button></li>
@@ -268,7 +313,7 @@ section: design
     Drop Down button
   &lt;/button&gt;
   &lt;div <strong>class="dropDown-content" hidden</strong>&gt;
-    &lt;ul <strong>class="unstyled m0-5"</strong>&gt;
+    &lt;ul <strong>class="unstyled mt0-5 mb0-5 ml1 mr1"</strong>&gt;
       &lt;li <strong>class="dropDown-item</strong>"&gt;
         &lt;button <strong>class="w100 pt0-5 pb0-5 alignleft"</strong>&gt;A first action&lt;/button&gt;
       &lt;/li&gt;

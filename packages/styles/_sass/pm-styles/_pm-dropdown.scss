@@ -19,7 +19,6 @@ $dropDown-narrow-width: 8em !default;
   visibility: visible;
   transition-delay: 0s;
   width: $dropDown-width; 
-  padding: 1rem;
   background: $white;
   border-radius: $global-border-radius;
   box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
@@ -29,7 +28,6 @@ $dropDown-narrow-width: 8em !default;
 .dropDown-content--narrow {
   left: calc(50% - #{$dropDown-narrow-width/2});
   width: $dropDown-narrow-width;
-  padding: 0 1rem;
 }
 
 /* This is the hidden state */
@@ -39,6 +37,36 @@ $dropDown-narrow-width: 8em !default;
   visibility: hidden;
   transform: scale(1,0);
   transition-delay: .15s, 0s, 0s;
+}
+
+.dropDown-contentInner {
+  position: relative;
+  overflow: auto;
+  min-height: 4em;
+  max-height: 30vh;
+  padding: 0; // no padding for the drop shadow :-\
+  margin: 0 0 0 1em;
+  
+  background: $white no-repeat;
+  background-image: radial-gradient(farthest-side at 50% 0,#acb0bf,transparent),radial-gradient(farthest-side at 50% 100%,#acb0bf,transparent);
+  background-position: 50% 0, 0 100%;
+  background-size: calc(100% - 20px) 3px;
+
+  > * {
+    margin-right: .5em;
+  }
+
+}
+.dropDown-contentInner {
+  &::before,
+  &::after {
+    content: '';
+    position: relative;
+    display: block;
+    z-index: 1;
+    background: $white;
+    height: 10px;
+  }
 }
 
 /* position of dropDown variations */
