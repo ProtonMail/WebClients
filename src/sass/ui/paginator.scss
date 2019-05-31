@@ -13,6 +13,7 @@
 
 .paginator-dropdown-list {
     @include flexInline();
+    position: relative;
 }
 .paginator-label { pointer-events: none }
 
