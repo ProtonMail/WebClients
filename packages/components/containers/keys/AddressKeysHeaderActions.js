@@ -13,15 +13,15 @@ const AddressKeysHeaderActions = ({
     isLoadingKey,
     Address,
     Address: { Email: emailAddress },
-    User: { isSubUser },
+    User: { isSubUser, isPrivate },
     addressKeys
 }) => {
     const { createModal } = useModals();
 
     const { privateKey: primaryPrivateKey } = getPrimaryKey(addressKeys) || {};
 
-    const canAdd = !isSubUser;
-    const canImport = !isSubUser;
+    const canAdd = !isSubUser && isPrivate;
+    const canImport = canAdd;
     const canExportPrivateKey = primaryPrivateKey && primaryPrivateKey.isDecrypted();
     const canExportPublicKey = !!primaryPrivateKey;
 
@@ -47,7 +47,7 @@ const AddressKeysHeaderActions = ({
         }
     ].filter(Boolean);
 
-    if (!exportActions.length || !createActions.length) {
+    if (!exportActions.length && !createActions.length) {
         return null;
     }
 

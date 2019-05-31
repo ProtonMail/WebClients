@@ -15,17 +15,19 @@ export const getPrimaryKey = (keys) => {
 
 /**
  * Convert a key for display in the view.
+ * @param {Object} User - The user
  * @param {Object} [Address] - The address the key belongs to
  * @param {Object} privateKey - Parsed pgp key
  * @param {Object} Key - Key result from the API
  * @returns {Object}
  */
-export const convertKey = ({ Address, privateKey, Key: { ID, Primary, Flags } }) => {
+export const convertKey = ({ User, Address, privateKey, Key: { ID, Primary, Flags } }) => {
     const algorithmInfo = privateKey.getAlgorithmInfo();
     const fingerprint = privateKey.getFingerprint();
     const isDecrypted = privateKey.isDecrypted();
 
     const { Status } = Address || {};
+    const { isSubUser, isPrivate } = User;
 
     const isAddressDisabled = Status === 0;
     const isAddressKey = !!Address;
@@ -42,17 +44,19 @@ export const convertKey = ({ Address, privateKey, Key: { ID, Primary, Flags } })
         isObsolete
     };
 
-    const canMark = isAddressKey && !isPrimary;
+    const hasUserPermission = !isSubUser || isPrivate;
+    const canModify = isAddressKey && hasUserPermission && !isPrimary;
+
     const permissions = {
-        canReactivate: !isDecrypted,
+        canReactivate: !isSubUser && !isDecrypted,
         canExportPublicKey: true,
         canExportPrivateKey: isDecrypted,
-        canMakePrimary: isAddressKey && !isPrimary && !isAddressDisabled && isDecrypted && isEncryptingAndSigning,
-        canMarkObsolete: canMark && !isAddressDisabled && isDecrypted && !isObsolete && !isCompromised,
-        canMarkNotObsolete: canMark && isObsolete,
-        canMarkCompromised: canMark && !isCompromised,
-        canMarkNotCompromised: canMark && isCompromised,
-        canDelete: isAddressKey && !isPrimary
+        canMakePrimary: canModify && !isAddressDisabled && isDecrypted && isEncryptingAndSigning,
+        canMarkObsolete: canModify && !isAddressDisabled && isDecrypted && !isObsolete && !isCompromised,
+        canMarkNotObsolete: canModify && isObsolete,
+        canMarkCompromised: canModify && !isCompromised,
+        canMarkNotCompromised: canModify && isCompromised,
+        canDelete: canModify
     };
 
     return {

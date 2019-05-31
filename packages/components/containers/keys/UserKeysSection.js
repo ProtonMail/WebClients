@@ -49,7 +49,9 @@ const UserKeysSections = () => {
         }
     };
 
-    const keysFormatted = userKeysList.map(convertKey);
+    const keysFormatted = userKeysList.map(({ Key, privateKey }) => {
+        return convertKey({ User, Key, privateKey });
+    });
     const { privateKey: primaryPrivateKey } = getPrimaryKey(userKeysList) || {};
     const canExportPrivateKey = primaryPrivateKey && primaryPrivateKey.isDecrypted();
 

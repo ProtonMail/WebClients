@@ -143,11 +143,7 @@ const AddressKeysSection = () => {
     const addressKeysFormatted = addressKeys.map(({ Key, privateKey }, idx) => {
         return {
             isLoading: loadingKeyIdx === idx,
-            ...convertKey({
-                Address: address,
-                Key,
-                privateKey
-            })
+            ...convertKey({ User, Address: address, Key, privateKey })
         };
     });
 
