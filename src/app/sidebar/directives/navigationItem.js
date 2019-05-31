@@ -2,18 +2,26 @@ import _ from 'lodash';
 import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function navigationItem($state, $stateParams, dispatchers, sidebarModel, eventManager, AppModel, storageWarning) {
+function navigationItem(
+    $state,
+    $stateParams,
+    dispatchers,
+    sidebarModel,
+    eventManager,
+    AppModel,
+    storageWarning,
+    $compile
+) {
     const ATTR_ACTIVE = 'aria-current';
     const CLASS_SPIN = 'spinMe';
     const template = (key, { state, label, icon = '' }) => {
-        const iconClassName = `sidebarApp-icon navigationItem-icon fa ${icon}`.trim();
         const opt = { sort: null, filter: null, page: null };
         const dropzone = key !== 'allmail' ? `data-pt-dropzone-item="${key}"` : '';
         return dedentTpl(`<a href="${$state.href(
             state,
             opt
         )}" title="${label}" data-label="${label}" data-state="${key}" class="navigationItem-item navigation__link" ${dropzone}>
-                <i class="${iconClassName}"></i>
+                <icon data-name="${icon}" data-size="16" class="mr0-5 flex-item-centered-vert fill-white"></icon>
                 <span class="navigationItem-title">${label}</span>
                 <div class="navigationItem-aside">
                     <em class="navigationItem-counter"></em>
@@ -50,7 +58,10 @@ function navigationItem($state, $stateParams, dispatchers, sidebarModel, eventMa
             let id;
             const STATES = sidebarModel.getStateConfig();
             const config = STATES[key];
-            const render = () => (el[0].innerHTML = template(key, config));
+
+            const render = () => {
+                el.empty().append($compile(template(key, config))(scope));
+            };
             const updateCounter = () => {
                 const $anchor = el[0].querySelector('.navigationItem-item');
                 const $counter = $anchor.querySelector('.navigationItem-counter');

@@ -10,43 +10,44 @@ function sidebarModel(tools, cacheCounters, gettextCatalog, dynamicStates, conta
             inbox: {
                 state: 'secured.inbox',
                 label: gettextCatalog.getString('Inbox', null, 'Title'),
-                icon: 'fa-inbox'
+                icon: 'inbox'
             },
             drafts: {
                 state: defaultDrafts,
                 states: ['secured.allDrafts', 'secured.drafts'],
                 label: gettextCatalog.getString('Drafts', null, 'Title'),
-                icon: 'fa-file-text-o'
+                icon: 'drafts'
             },
             sent: {
                 state: defaultSent,
                 states: ['secured.allSent', 'secured.sent'],
                 label: gettextCatalog.getString('Sent', null, 'Title'),
-                icon: 'fa-send'
+                icon: 'sent'
             },
             starred: {
                 state: 'secured.starred',
                 label: gettextCatalog.getString('Starred', null, 'Title'),
-                icon: 'fa-star-o'
+                icon: 'star'
             },
             archive: {
                 state: 'secured.archive',
                 label: gettextCatalog.getString('Archive', null, 'Title'),
-                icon: 'fa-archive'
+                icon: 'archive'
             },
             spam: {
                 state: 'secured.spam',
                 label: gettextCatalog.getString('Spam', null, 'Title'),
-                icon: 'fa-ban'
+                icon: 'spam'
             },
             trash: {
                 state: 'secured.trash',
                 label: gettextCatalog.getString('Trash', null, 'Title'),
-                icon: 'fa-trash-o'
+                icon: 'trash'
             },
             allmail: {
                 state: 'secured.allmail',
-                label: gettextCatalog.getString('All Mail', null, 'Title')
+                label: gettextCatalog.getString('All Mail', null, 'Title'),
+                icon: 'all-emails'
             }
         };
     };
