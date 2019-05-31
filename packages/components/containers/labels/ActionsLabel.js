@@ -10,7 +10,7 @@ import {
     useEventManager,
     useNotifications
 } from 'react-components';
-import { LABEL_TYPES } from 'proton-shared/lib/constants';
+import { LABEL_EXCLUSIVE } from 'proton-shared/lib/constants';
 import { deleteLabel } from 'proton-shared/lib/api/labels';
 
 import EditLabelModal from './modals/Edit';
@@ -22,12 +22,12 @@ function ActionsLabel({ label, onChange }) {
     const { createNotification } = useNotifications();
 
     const I18N = {
-        [LABEL_TYPES.LABEL]: {
+        [LABEL_EXCLUSIVE.LABEL]: {
             title: c('Title').t`Delete label`,
             content: c('Info')
                 .t`Are you sure you want to delete this label? Removing a label will not remove the messages with that label.`
         },
-        [LABEL_TYPES.FOLDER]: {
+        [LABEL_EXCLUSIVE.FOLDER]: {
             title: c('Title').t`Delete folder`,
             content: c('Info')
                 .t`Are you sure you want to delete this folder? Messages in the folders aren’t deleted if the folder is deleted, they can still be found in all mail. If you want to delete all messages in a folder, move them to trash.`

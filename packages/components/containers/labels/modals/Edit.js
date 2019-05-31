@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { FormModal, useEventManager, useNotifications, useApiWithoutResult } from 'react-components';
-import { LABEL_TYPES, LABEL_COLORS } from 'proton-shared/lib/constants';
+import { LABEL_EXCLUSIVE, LABEL_COLORS } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { createLabel, updateLabel } from 'proton-shared/lib/api/labels';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -17,7 +17,7 @@ function EditLabelModal({ label, mode, onEdit, onAdd, ...props }) {
 
     const I18N = {
         edition({ Exclusive } = {}) {
-            if (Exclusive === LABEL_TYPES.LABEL) {
+            if (Exclusive === LABEL_EXCLUSIVE.LABEL) {
                 return c('Label/folder modal').t`Edit label`;
             }
             return c('Label/folder modal').t`Edit folder`;
