@@ -77,6 +77,7 @@ function main({ api = 'dev' }) {
     export const CHANGELOG_PATH = 'assets/changelog.tpl.html';
     export const VERSION_PATH = 'assets/version.json';
     export const TRANSLATIONS = ${JSON.stringify(lang)};
+    export const TRANSLATIONS_URL = ${ENV_CONFIG.app.urlI18n || ''};
     `;
 
     return {
