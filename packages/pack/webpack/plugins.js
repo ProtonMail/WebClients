@@ -62,7 +62,7 @@ const PRODUCTION_PLUGINS = [
     })
 ];
 
-module.exports = ({ isProduction, publicPath }) => {
+module.exports = ({ isProduction, publicPath, appMode }) => {
     const { main, worker, compat, definition } = transformOpenpgpFiles(
         OPENPGP_FILES,
         OPENPGP_WORKERS[0],
@@ -101,7 +101,8 @@ module.exports = ({ isProduction, publicPath }) => {
         }),
 
         new webpack.DefinePlugin({
-            PM_OPENPGP: JSON.stringify(definition)
+            PM_OPENPGP: JSON.stringify(definition),
+            PL_IS_STANDALONE: appMode === 'standalone'
         }),
 
         new ScriptExtHtmlWebpackPlugin({

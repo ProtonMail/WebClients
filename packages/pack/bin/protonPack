@@ -17,6 +17,7 @@ const {
     path: appConfigPath,
     apiUrl
 } = configAppBuilder(argv);
+const APP_MODE = argv.appMode || 'bundle';
 
 async function main() {
 
@@ -30,6 +31,7 @@ async function main() {
         const publicPath = getPublicPath(argv);
         const CONFIG = configBuilder({
             publicPath,
+            appMode: APP_MODE,
             ...is('extract-i18n') && { flow: 'i18n' }
         });
         return compile(CONFIG);
@@ -48,7 +50,7 @@ async function main() {
             ➙ API: ${chalk.yellow(apiUrl)}
             \n
         `);
-        const CONFIG = configBuilder({ port, publicPath });
+        const CONFIG = configBuilder({ port, publicPath, appMode: APP_MODE });
 
         const run = server(CONFIG);
         run.listen(port);
