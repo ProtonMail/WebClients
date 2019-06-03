@@ -179,10 +179,10 @@ svg {
 .w100 { width: 100%; }
 
 /* here you may add px widths */
-$list-width: 150, 200, 500 !default;
+$list-width-px: 150, 200, 500 !default;
 // ex .w500p { width: 500px; }
 
-@each $width in $list-width {
+@each $width in $list-width-px {
   .w#{$width}p { width: #{$width}px; }
   }
   
@@ -201,9 +201,9 @@ $list-width-em: 400 !default;
 
 
 /* here you may add pixel max-widths */
-$list-max-width: 100, 650 !default;
+$list-max-width-px: 100, 650 !default;
 
-@each $max-width in $list-max-width {
+@each $max-width in $list-max-width-px {
   .mw#{$max-width}p { max-width: #{$max-width}px; }
   }
 
