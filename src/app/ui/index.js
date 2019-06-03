@@ -15,6 +15,8 @@ import customTheme from './directives/customTheme';
 import dateTimePicker from './directives/dateTimePicker';
 import dropdown from './directives/dropdown';
 import headerSecured from './directives/headerSecured';
+import icons from './directives/icons';
+import icon from './directives/icon';
 import legends from './directives/legends';
 import loaderTag from './directives/loaderTag';
 import monthdayTimePicker from './directives/monthdayTimePicker';
@@ -83,6 +85,8 @@ export default angular
     .directive('dateTimePicker', dateTimePicker)
     .directive('dropdown', dropdown)
     .directive('headerSecured', headerSecured)
+    .directive('icons', icons)
+    .directive('icon', icon)
     .directive('legends', legends)
     .directive('loaderTag', loaderTag)
     .directive('monthdayTimePicker', monthdayTimePicker)
