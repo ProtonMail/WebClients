@@ -1,10 +1,14 @@
 /*
  * containers
  */
+.bordered,
 .bordered-container {
   border: 1px solid $pm-global-border;
+}
+.bordered-container {
   border-radius: $global-border-radius;
 }
+
 
 .border-bottom {
   border-bottom: 1px solid $pm-global-border;
