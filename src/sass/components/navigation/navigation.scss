@@ -2,9 +2,9 @@
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    margin: 0 10px 0 0;
     padding: 0;
     height: 100%;
+    overflow: hidden;
 }
 
 .navigation > li {

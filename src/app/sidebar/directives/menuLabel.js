@@ -2,7 +2,7 @@ import _ from 'lodash';
 import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel, contactGroupModel) {
+function menuLabel(dispatchers, $compile, labelsModel, $stateParams, $state, sidebarModel, contactGroupModel) {
     const CLEANER = document.createElement('div');
     const getClassName = (ID) => {
         const isActiveLabel = $stateParams.label === ID;
@@ -25,13 +25,13 @@ function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel,
         const cleanName = stripHTML(Name);
         // Prevent XSS as we can break the title
         const cleanAttr = cleanName.replace(/"|'/g, '');
-        const icon = Exclusive === 1 ? 'fa-folder' : 'fa-tag';
-        const classIcon = !isContactState ? icon : 'fa-users';
+        const icon = Exclusive === 1 ? 'folder' : 'label';
+        const iconItem = !isContactState ? icon : 'contacts-groups';
         const dropzoneType = !isContactState ? 'label' : 'group';
 
         return dedentTpl(`<li class="${className}">
-            <a href="${href}" title="${cleanAttr}" data-label="${cleanAttr}" class="btn menuLabel-link" data-pt-dropzone-item="${ID}" data-pt-dropzone-item-type="${dropzoneType}">
-                <i class="fa ${classIcon} menuLabel-icon" style="color: ${Color || '#CCC'}"></i>
+            <a href="${href}" title="${cleanAttr}" data-label="${cleanAttr}" class="btn menuLabel-link navigation__link" data-pt-dropzone-item="${ID}" data-pt-dropzone-item-type="${dropzoneType}">
+                <icon data-name="${iconItem}" class="mr0-5" style="fill: ${Color || '#CCC'}"></icon>
                 <span class="menuLabel-title">${cleanName}</span>
                 <em class="menuLabel-counter" data-label-id="${ID}"></em>
             </a>
@@ -55,7 +55,7 @@ function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel,
              */
             const { on, unsubscribe } = dispatchers();
             const updateCache = () => {
-                el[0].innerHTML = makeTemplate();
+                el.empty().append($compile(makeTemplate())(scope));
             };
 
             const updateCounter = () => {

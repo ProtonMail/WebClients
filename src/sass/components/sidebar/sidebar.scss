@@ -12,7 +12,6 @@
     display: block;
     list-style-type: none;
     font-size: 14px;
-    margin: 0 -20px 10px -25px;
 
     .ico-protonvpn {
         height: 16px;
@@ -26,6 +25,7 @@
     display: flex;
     align-content: center;
     align-items: center;
+    max-width: $sidebarWidth
 }
 
 .sidebarApp-item .navigationItem-btn-refresh {
@@ -47,7 +47,6 @@
     width: 100%;
     height: 31px;
     text-decoration: none;
-    padding: 0 10px 0 20px;
     position: relative;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -70,7 +69,6 @@
 }
 
 .sidebarApp-menu .menuLabel-link {
-    padding: 0;
     height: 25px;
     color: rgba($sidebar-color, .5);
 }
@@ -128,6 +126,7 @@
 }
 .menuLabel-title {
     line-height: 1.3;
+    max-width: calc(#{$sidebarWidth} - 4em)
 }
 
 .menuLabel-item.active {
@@ -142,19 +141,20 @@
     min-height: 50px;
     flex: 1 1 auto;
     height: calc(100% - 400px);
-    margin: 0 -20px 10px -20px;
 
     /* Allow select item to go from right to left */
     .mCSB_container_wrapper>.mCSB_container { padding-right: 0 }
     /* scroll bar with a small margin half/margin padding */
-    .mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden+.mCSB_scrollTools.mCSB_scrollTools_vertical { right: 10px }
+
+    [id="mCSB_2_scrollbar_vertical"] {
+        margin-right: .5rem;
+    }
 
     .menuLabel-container {
         padding: 0;
         margin: 0;
     }
 
-    .menuLabel-link { padding: 0 25px 0px 15px }
 }
 
 .sidebarLabels-manageGroup {
