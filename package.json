@@ -76,8 +76,7 @@
     "webpack-dev-server": "^3.1.14",
     "webpack-notifier": "^1.7.0",
     "webpack-subresource-integrity": "github:dhoko/webpack-subresource-integrity.git#b077a0037485ec74203f30746dc4d448eb8eac1d",
-    "write-webpack-plugin": "^1.1.0",
-    "design-system": "github:ProtonMail/design-system.git"
+    "write-webpack-plugin": "^1.1.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
@@ -106,7 +105,7 @@
     "credit-card-type": "^8.3.0",
     "cssuseragent": "^2.1.31",
     "declassify": "^2.1.0",
-    "design-system": "github:ProtonMail/design-system.git#semver:^1.5.14",
+    "design-system": "github:ProtonMail/design-system.git#semver:^1.6.12",
     "dompurify": "^1.0.8",
     "dropzone": "^5.5.1",
     "fastclick": "^1.0.6",
