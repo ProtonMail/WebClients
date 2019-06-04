@@ -20,13 +20,15 @@ function navigationItem(
         return dedentTpl(`<a href="${$state.href(
             state,
             opt
-        )}" title="${label}" data-label="${label}" data-state="${key}" class="navigationItem-item navigation__link" ${dropzone}>
-                <icon data-name="${icon}" data-size="16" class="mr0-5 flex-item-centered-vert fill-white"></icon>
-                <span class="navigationItem-title">${label}</span>
-                <div class="navigationItem-aside">
-                    <em class="navigationItem-counter"></em>
-                    <button class="fa fa-repeat refresh navigationItem-btn-refresh"></button>
-                </div>
+        )}" title="${label}" data-label="${label}" data-state="${key}" class="navigation__link w100" ${dropzone}>
+                <span class="flex">
+                    <icon data-name="${icon}" data-size="16" class="mr0-5 flex-item-centered-vert fill-white"></icon>
+                    <span class="navigationItem-title">${label}</span>
+                    <span class="navigationItem-aside">
+                        <em class="navigationItem-counter"></em>
+                        <button class="fa fa-repeat refresh navigationItem-btn-refresh"></button>
+                    </span>
+                </span>
             </a>`);
     };
 
