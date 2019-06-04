@@ -4,7 +4,7 @@ const argv = require('minimist')(process.argv.slice(2));
 
 const { warn } = require('./log');
 
-const isSilent = argv._.includes('help') || argv._.includes('init');
+const isSilent = argv._.includes('help') || argv._.includes('init') || argv._.includes('print-config');
 
 const readJSON = (file) => {
     const fileName = `${file}.json`;
@@ -67,11 +67,18 @@ function main({ api = 'dev' }) {
     const apiUrl = API_TARGETS[api] || API_TARGETS.prod;
     const lang = CONFIG_ENV.lang.map(({ lang }) => lang);
 
+    const json = {
+        clientId: ENV_CONFIG.app.clientId || 'Web',
+        version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || '3.16.20',
+        apiUrl,
+        lang
+    };
+
     const config = dedent`
-    export const CLIENT_ID = '${ENV_CONFIG.app.clientId || 'Web'}';
+    export const CLIENT_ID = '${json.clientId}';
     export const CLIENT_TYPE = '${ENV_CONFIG.app.clientType || 1}';
     export const CLIENT_SECRET = '${ENV_CONFIG.app.clientSecret || ''}';
-    export const APP_VERSION = '${ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || '3.16.20'}';
+    export const APP_VERSION = '${json.version}';
     export const API_URL = '${apiUrl}';
     export const API_VERSION = '3';
     export const DATE_VERSION = '${new Date().toGMTString()}';
@@ -84,6 +91,7 @@ function main({ api = 'dev' }) {
     return {
         config,
         apiUrl,
+        json,
         path: path.join(process.cwd(), 'src', 'app', 'config.js')
     };
 }

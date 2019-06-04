@@ -8,6 +8,7 @@ const localIp = require('my-local-ip');
 
 const configBuilder = require('../cli/config');
 const configAppBuilder = require('../cli/configApp');
+const { json } = require('../cli/log');
 const { getPort, getPublicPath, findPort } = require('../webpack/helpers/source');
 
 const is = (command) => argv._.includes(command);
@@ -15,15 +16,20 @@ const is = (command) => argv._.includes(command);
 const {
     config: appConfig,
     path: appConfigPath,
-    apiUrl
+    apiUrl,
+    json: jsonConfig
 } = configAppBuilder(argv);
 const APP_MODE = argv.appMode || 'bundle';
 
 async function main() {
 
     // For any task BUT init we need to create a custom config for the app
-    if (!is('init') && !is('help')) {
+    if (!is('init') && !is('help') && !is('print-config')) {
         await fs.writeFile(appConfigPath, appConfig);
+    }
+
+    if (is('print-config')) {
+        return json(jsonConfig);
     }
 
     if (is('compile') || is('extract-i18n')) {
@@ -84,6 +90,9 @@ async function main() {
 
           - ${chalk.blue('extract-i18n')}
               Extract translations from a project (we use ttag)
+
+          - ${chalk.blue('print-config')}
+              Print as JSON the current config
         `);
     }
 }
