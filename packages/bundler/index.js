@@ -163,7 +163,7 @@ async function main() {
     isCI && success(`Build CI app to the directory: ${chalk.bold('dist')}`, { time });
 
     if (!isCI) {
-        return logCommits();
+        return logCommits(branch, flowType);
     }
 }
 
