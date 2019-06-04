@@ -1,3 +1,5 @@
+const path = require('path');
+
 const { success } = require('./helpers/log')('proton-bundler');
 
 const defaultHook = [];
@@ -9,7 +11,7 @@ const defaultHook = [];
  * We will use it to extend our config
  *
  * Format:
- *     (deployConfig) => {
+ *     (deployConfig, argv) => {
  *
  *         return {
  *             EXTERNAL_FILES,
@@ -37,9 +39,18 @@ const defaultHook = [];
  * @param  {Object} cfg Our own configuration
  * @return {Object}
  */
-function extend(cfg) {
+function extend(cfg, argv) {
+    const defaultConfig = {
+        EXTERNAL_FILES: cfg.EXTERNAL_FILES,
+        hookPreTasks: defaultHook,
+        hookPostTasks: defaultHook,
+        hookPostTaskClone: defaultHook,
+        hookPostTaskBuild: defaultHook
+    };
+
     try {
         const fromUser = require(path.join(process.cwd(), 'proton.bundler.js'));
+        success('Found proton.bundler.js, we can extend the deploy');
 
         if (typeof fromUser !== 'function') {
             const msg = [
@@ -51,17 +62,16 @@ function extend(cfg) {
             process.exit(1);
         }
 
-        const config = fromUser(cfg);
-        success('Found proton.bundler.js');
-        return config;
-    } catch (e) {
+        const config = fromUser(cfg, argv);
         return {
-            EXTERNAL_FILES: cfg.EXTERNAL_FILES,
-            hookPreTasks: defaultHook,
-            hookPostTasks: defaultHook,
-            hookPostTaskClone: defaultHook,
-            hookPostTaskBuild: defaultHook
+            ...defaultConfig,
+            ...config
         };
+    } catch (e) {
+        if (e.code !== 'MODULE_NOT_FOUND') {
+            throw e;
+        }
+        return defaultConfig;
     }
 }
 

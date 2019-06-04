@@ -1,7 +1,9 @@
+const os = require('os');
+
 const { bash } = require('./helpers/cli');
 const { title } = require('./helpers/log')('proton-bundler');
 
-async function push(branch, { tag, originCommit, originBranch }) {
+async function push(branch, { tag = 'v0.0.0', originCommit, originBranch }) {
     const commands = ['cd dist'];
 
     const message = /-prod-/.test(branch) ? `New Release ${tag}` : 'New Release';
@@ -30,9 +32,14 @@ async function pull(branch, force) {
 async function getConfig() {
     const { stdout: branch } = await bash('git rev-parse --abbrev-ref HEAD');
     const { stdout: commit } = await bash('git rev-parse HEAD');
-    const { stdout: tag } = await bash('git describe --abbrev=0');
 
-    return { branch, commit, tag };
+    try {
+        const { stdout: tag } = await bash('git describe --abbrev=0');
+        return { branch, commit, tag };
+    } catch (e) {
+        // If no tag it crashes
+        return { branch, commit };
+    }
 }
 
 function logCommits(branch, flowType) {
@@ -50,6 +57,7 @@ function logCommits(branch, flowType) {
 
 module.exports = {
     getConfig,
+    logCommits,
     push,
     pull
 };

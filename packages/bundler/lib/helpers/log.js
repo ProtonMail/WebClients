@@ -10,7 +10,7 @@ module.exports = (scope) => {
 
     const success = (msg, { time, space = false } = {}) => {
         const txt = chalk.green(chalk.bold('✔ '));
-        const message = [`[${scope}] `, txt, msg, time && `(${time})`].filter(Boolean).join('');
+        const message = [`[${scope}] `, txt, msg, time && ` (${time})`].filter(Boolean).join('');
         space && console.log();
         console.log(message);
     };
@@ -38,8 +38,6 @@ module.exports = (scope) => {
         process.exit(1);
     };
 
-    const spin = (text) => ora(text).start();
-
     function debug(item) {
         if (!(argv.v || argv.verbose)) {
             return;
@@ -51,13 +49,20 @@ module.exports = (scope) => {
         console.log(`[${scope}]`, item);
     }
 
+    function about(config) {
+        Object.keys(config).forEach((key) => {
+            console.log(`➙ ${key}: ${chalk.bgYellow(chalk.black(config[key]))}`);
+        });
+        console.log('');
+    }
+
     return {
         success,
+        about,
         debug,
         title,
         error,
         json,
-        warn,
-        spin
+        warn
     };
 };
