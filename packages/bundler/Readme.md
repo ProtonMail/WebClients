@@ -56,7 +56,8 @@ Format:
   }
 ```
 deployConfig:
-    - branch: <String> ~branch's name
+
+    - branch: <String> ~ branch's name
     - appMode: <String> ~ Type of app we build, standalone or bundle (default)
     - isCI: <Boolean>
     - flowType: <String> ~ Type of deploy ('single', or 'many')
@@ -64,6 +65,8 @@ deployConfig:
     - EXTERNAL_FILES: <Array> ~ List of assets to copy before the build
 
 We have a context available for tasks inside ( _hookPostTasks, hookPostTaskClone, hookPostTaskBuild_ ):
+
     - originCommit: Commit from where we create the deploy
     - originBranch: Branch from where we create the deploy
     - tag: Tag from where we deploy (usefull for prod)
+
