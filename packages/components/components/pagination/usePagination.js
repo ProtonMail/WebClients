@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const usePagination = (initialList = [], initialPage = 1, limit = 10) => {
     const [page, setPage] = useState(initialPage);
@@ -6,6 +6,13 @@ const usePagination = (initialList = [], initialPage = 1, limit = 10) => {
     const onPrevious = () => setPage(page - 1);
     const onSelect = (p) => setPage(p);
     const list = [...initialList].splice((page - 1) * limit, limit);
+
+    useEffect(() => {
+        const lastPage = Math.ceil(initialList.length / limit);
+        if (lastPage && page > lastPage) {
+            onSelect(lastPage);
+        }
+    }, [initialList.length]);
 
     return {
         page,
