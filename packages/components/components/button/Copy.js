@@ -6,7 +6,7 @@ import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import Button from './Button';
 import Icon from '../icon/Icon';
 
-const Copy = ({ value }) => {
+const Copy = ({ value, className }) => {
     const [copied, setCopied] = useState(false);
 
     const handleClick = () => {
@@ -20,7 +20,7 @@ const Copy = ({ value }) => {
     return (
         <Button
             onClick={handleClick}
-            className={`${copied ? 'copied' : ''} pm-button--for-icon`}
+            className={`pm-button--for-icon ${className} ${copied ? 'copied' : ''}`}
             title={copied ? c('Label').t`Copied` : c('Label').t`Copy`}
         >
             <Icon name="clipboard" />

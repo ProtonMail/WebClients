@@ -62,8 +62,13 @@ const DropdownActions = ({ loading, disabled, list, className }) => {
     );
 };
 
+const DropdownActionPropTypes = {
+    text: PropTypes.string,
+    onClick: PropTypes.func
+};
+
 DropdownActions.propTypes = {
-    list: PropTypes.array.isRequired,
+    list: PropTypes.arrayOf(PropTypes.shape(DropdownActionPropTypes)).isRequired,
     disabled: PropTypes.bool,
     loading: PropTypes.bool,
     className: PropTypes.string

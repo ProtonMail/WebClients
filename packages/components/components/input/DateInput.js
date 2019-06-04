@@ -18,7 +18,7 @@ const DateInput = ({ id, disabled, required, placeholder, className, ...rest }) 
     return (
         <input
             id={id}
-            className={`pm-field ${className}`}
+            className={`pm-field w100 ${className}`}
             placeholder={placeholder}
             disabled={disabled}
             required={required}
