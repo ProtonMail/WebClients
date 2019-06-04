@@ -2,19 +2,19 @@
     <sticky-messages></sticky-messages>
     <request-timeout></request-timeout>
     <no-results ng-if="conversations.length === 0 && elementsLoaded"></no-results>
-    <section class="conversation-wrapper">
+    <section class="item-wrapper">
         <div
             ng-repeat="conversation in conversations track by conversation.ID"
             data-pt-draggable-element
             data-elements-container
-            class="conversation relative conversation-container-row flex bg-global-light"
+            class="conversation relative item-container-row flex bg-global-light"
             ng-class="getClassNames(conversation, markedElement)">
             <span class="expiration">
                 <svg height="14" width="14" viewBox="0 0 14 14">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
                 </svg>
             </span>
-            <div class="conversation-icon rounded50 bg-white inline-flex">
+            <div class="item-icon rounded50 bg-white inline-flex">
                 <span class="mauto">
                     <pt-select-element data-index="{{ $index }}"></pt-select-element>
                 </span>
