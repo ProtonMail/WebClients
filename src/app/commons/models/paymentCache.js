@@ -38,6 +38,13 @@ function PaymentCache(Payment, $cacheFactory, dispatchers) {
         }
     });
 
+    /**
+     *Clear cache when the user changes for credits
+     */
+    on('updateUser', () => {
+        cache.removeAll();
+    });
+
     on('logout', () => {
         cache.removeAll();
     });
