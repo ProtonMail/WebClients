@@ -20,8 +20,8 @@ export const fromBitmap = (value, keys = []) =>
 /**
  * This method creates an object composed of the own and inherited enumerable property paths of object that are not omitted.
  * @param {object} model The source object.
- * @param {Array} properties The property paths to omit.
- * @retuns {Object} Returns the new object.
+ * @param {Array} properties Properties to omit.
+ * @retuns {Object} Returns a new object.
  */
 export const omit = (model, properties = []) => {
     return Object.entries(model)
@@ -29,6 +29,12 @@ export const omit = (model, properties = []) => {
         .reduce((obj, [key, val]) => Object.assign(obj, { [key]: val }), {});
 };
 
+/**
+ * Review of omit function
+ * @param {Object} model The source object.
+ * @param {Array} properties Properties to keep.
+ * @return {Object} Returns a new object.
+ */
 export const pick = (model, properties = []) => {
     return Object.entries(model)
         .filter(([key]) => properties.includes(key))
@@ -59,4 +65,17 @@ export const isEquivalent = (a, b) => {
     }
 
     return true;
+};
+
+/**
+ * Create a map from a collection
+ * @param {Array} collection
+ * @param {String} key
+ * @returns {Object}
+ */
+export const toMap = (collection = [], key = 'ID') => {
+    return collection.reduce((acc, item) => {
+        acc[item[key]] = item;
+        return acc;
+    }, Object.create(null));
 };

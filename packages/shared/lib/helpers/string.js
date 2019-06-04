@@ -20,7 +20,7 @@ export const getRandomString = (length) => {
     return result;
 };
 
-export const normalize = (value = '') => value.toLowerCase();
+export const normalize = (value = '') => value.toLowerCase().trim();
 
 export const replaceLineBreak = (content = '') => content.replace(/(?:\r\n|\r|\n)/g, '<br />');
 
