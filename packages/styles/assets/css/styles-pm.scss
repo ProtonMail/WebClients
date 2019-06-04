@@ -84,6 +84,9 @@ $rtl-option: true;
 // DO NOT USE IT IN PRODUCTION
 @import "design-system-website/inside-content"; 
 
+// DO NOT USE THIS ONE, ONLY FOR DESIGN SYSTEM WEBSITE
+@import "design-system-website/exceptions";
+
 @import "pm-styles/pm-settings-home";
 
 @import "reusable-components/design-system-responsive";
