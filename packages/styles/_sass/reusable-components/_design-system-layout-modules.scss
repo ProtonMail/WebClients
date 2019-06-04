@@ -386,6 +386,12 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 2 !default; // specify 2.5 if need
               -ms-grid-row-align: center;
           align-items: center;
 }
+.flex-items-end {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+              -ms-grid-row-align: flex-end;
+          align-items: flex-end;
+}
 
 .flex-item-fluid {
   -webkit-box-flex: 1;
@@ -393,12 +399,7 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 2 !default; // specify 2.5 if need
           flex: 1 1 0px;
 }
 
-.flex-item-end {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-              -ms-grid-row-align: flex-end;
-          align-items: flex-end;
-}
+
 
 .flex-item-noshrink {
   -ms-flex-negative: 0;
