@@ -39,11 +39,13 @@ module.exports = ({ branch }, argv) => {
     }
 };
 ```
+
 ### Documentation
 
 We use tasks from [Listr](https://github.com/SamVerschueren/listr#usage)
 
 Format:
+
 ```js
   (deployConfig, argv) => {
       return {
@@ -55,18 +57,18 @@ Format:
       }
   }
 ```
+
 deployConfig:
 
-    - branch: <String> ~ branch's name
-    - appMode: <String> ~ Type of app we build, standalone or bundle (default)
-    - isCI: <Boolean>
-    - flowType: <String> ~ Type of deploy ('single', or 'many')
-    - forceI18n: <Boolean>
-    - EXTERNAL_FILES: <Array> ~ List of assets to copy before the build
+- `branch: <String>` ~ branch's name
+- `appMode: <String>` ~ Type of app we build, standalone or bundle (default)
+- `isCI: <Boolean>`
+- `flowType: <String>` ~ Type of deploy ('single', or 'many')
+- `forceI18n: <Boolean>`
+- `EXTERNAL_FILES: <Array>` ~ List of assets to copy before the build
 
 We have a context available for tasks inside ( _hookPostTasks, hookPostTaskClone, hookPostTaskBuild_ ):
 
-    - originCommit: Commit from where we create the deploy
-    - originBranch: Branch from where we create the deploy
-    - tag: Tag from where we deploy (usefull for prod)
-
+- originCommit: Commit from where we create the deploy
+- originBranch: Branch from where we create the deploy
+- tag: Tag from where we deploy (usefull for prod)
