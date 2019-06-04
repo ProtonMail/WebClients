@@ -1,6 +1,5 @@
 const argv = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
-const ora = require('ora');
 
 module.exports = (scope) => {
     const warn = (msg) => {
