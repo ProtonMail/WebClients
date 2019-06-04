@@ -102,7 +102,7 @@ $path-images: "~design-system/assets/img/shared/";
 
 //=== 👉 UI Components =====================//
 @import "components/core/signupIframe";
-@import "ui/appVersion";
+//@import "ui/appVersion";
 @import "ui/appCopyright";
 @import "ui/atomLoader";
 @import "ui/protonLoader";
@@ -134,7 +134,7 @@ $path-images: "~design-system/assets/img/shared/";
 @import "ui/formUtils/codeVerificator";
 @import "ui/intlTelInput";
 @import "ui/starButton";
-@import "ui/storageBar";
+//@import "ui/storageBar";
 @import "ui/timepicker";
 @import "ui/scrollbox";
 @import "ui/arrowsToScroll";
@@ -372,6 +372,7 @@ $path-images: "~design-system/assets/img/shared/";
 
 //== 👉 Responsive override ==============================//
 @import "~design-system/_sass/reusable-components/design-system-responsive";
+@import "~design-system/_sass/design-system-website/responsive";
 
 
 @import "_responsive";

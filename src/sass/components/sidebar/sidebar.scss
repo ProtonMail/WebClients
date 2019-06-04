@@ -4,17 +4,17 @@
     text-align: left;
 }
 
-.sidebarApp-container a { cursor: pointer; }
+//.sidebarApp-container a { cursor: pointer; }
 
 .sidebarApp-menu {
     flex-shrink: 0;
     padding: 0;
     display: block;
-    list-style-type: none;
-    font-size: 14px;
+    //list-style-type: none;
+    //font-size: 14px;
 
     .ico-protonvpn {
-        height: 16px;
+        //height: 16px;
         opacity: .5;
     }
 }
@@ -25,7 +25,7 @@
     display: flex;
     align-content: center;
     align-items: center;
-    max-width: $sidebarWidth
+    // max-width: $sidebarWidth
 }
 
 .sidebarApp-item .navigationItem-btn-refresh {

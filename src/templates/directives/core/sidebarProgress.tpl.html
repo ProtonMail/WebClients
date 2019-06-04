@@ -1,13 +1,14 @@
-<div class="storageProgress-container">
+<div class="storageProgress-container flex-item-noshrink relative nomobile spacebar-container aligncenter">
+
+    <meter class="spacebar inbl w100 alignleft" min="0" max="100" low="0" high="100" ng-value="percentageValue()" aria-describedby="sizeRemaining">
+    </meter>
+
+    <span class="bl small m0 spacebar-size" id="sizeRemaining">{{ storageValue() }}</span>
+    <span class="bl small m0 spacebar-version opacity-30">ProtonMail <app-version class="version"></app-version></span>
+
     <div class="link" hide-upgrade="space">
-        <a ui-sref="secured.dashboard({scroll: true})">
+        <a ui-sref="secured.dashboard({scroll: true})" class="small nodecoration color-white">
             <span translate translate-context="Action">Upgrade storage</span>
         </a>
-    </div>
-    <div class="storage text-center">
-        <strong title="Storage">{{ storageValue() }}</strong>
-    </div>
-    <div class="storageBar">
-        <div class="storageBar-progress" ng-style="storageStyle()"></div>
     </div>
 </div>

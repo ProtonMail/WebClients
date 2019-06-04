@@ -9,6 +9,7 @@ function sidebarProgress(authentication, organizationModel, $filter) {
         replace: true,
         link(scope) {
             scope.storageStyle = () => ({ width: `${percentageValue()}%` });
+            scope.percentageValue = percentageValue;
             scope.storageValue = () =>
                 `${filter(authentication.user.UsedSpace)} / ${filter(authentication.user.MaxSpace)}`;
         }

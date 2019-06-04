@@ -1,5 +1,5 @@
 <div class="sidebar flex nomobile noprint" data-pt-dropzone>
-    <div class="flex no-scroll flex-column flex-nowrap js-sidebar-container">
+    <div class="flex w100 no-scroll flex-column flex-nowrap js-sidebar-container">
 
         <button
             class="pm-button-blue inline-flex pm-button--large ml1 mr1"
@@ -22,7 +22,7 @@
                 data-key="{{::state}}"
                 ng-repeat="state in listStates track by $id(state)"></navigation-item>
         </ul>
-        <ul class="menu sidebarApp-menu mauto" id="labelSettings">
+        <ul class="menu sidebarApp-menu unstyled " id="labelSettings">
             <li class="navigation__item">
                 <a ui-sref="secured.labels" class="navigation__link">
                     <icon data-name="settings" fill="white" class="mr0-5"></icon>
@@ -43,7 +43,6 @@
 
         <div class="flex-item-noshrink relative nomobile spacebar-container aligncenter">
             <sidebar-progress class="wrap"></sidebar-progress>
-            <app-version class="version"></app-version>
         </div>
     </div>
 </div>
