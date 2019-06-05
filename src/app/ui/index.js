@@ -54,6 +54,7 @@ import headerNoAuth from './directives/header/headerNoAuth';
 import encryptionStatus from './services/encryptionStatus';
 import dynamicStates from './factories/dynamicStates';
 import mozInfo from './directives/mozInfo';
+import initials from './filters/initials';
 import headerSecuredDesktop from './directives/header/headerSecuredDesktop';
 import headerSecuredMobile from './directives/header/headerSecuredMobile';
 import arrowsToScroll from './directives/navigation/arrowsToScroll';
@@ -64,6 +65,7 @@ import navigationUser from './directives/navigation/navigationUser';
 
 export default angular
     .module('proton.ui', [])
+    .filter('initials', initials)
     .directive('mozInfo', mozInfo)
     .factory('dynamicStates', dynamicStates)
     .run((backState) => backState.init())

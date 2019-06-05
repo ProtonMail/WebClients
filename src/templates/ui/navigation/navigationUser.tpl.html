@@ -1,12 +1,19 @@
 <li class="navigationUser mlauto mtauto mbauto relative">
+
     <button class="increase-surface-click color-white inline-flex dropDown-logout-button pm_trigger" dropdown>
         <span class="alignright">
             <span class="bl">{{ displayName || email }}</span>
             <span class="bl smaller m0 opacity-30 lh100">{{ email }}</span>
         </span>
-        <icon data-name="caret" aria-hidden="true" data-size="12" class="flex-item-noshrink ml0-5 mr0-5 expand-caret mtauto mbauto"></icon>
-        <span class="mtauto mbauto bordered rounded50 p0-5 inbl opacity-30 dropDown-logout-initials">DW</span>
+
+        <icon
+            data-name="caret"
+            aria-hidden="true"
+            data-size="12"
+            class="flex-item-noshrink ml0-5 mr0-5 expand-caret mtauto mbauto"></icon>
+        <span class="mtauto mbauto bordered rounded50 p0-5 inbl opacity-30 dropDown-logout-initials">{{ displayName | initials }}</span>
     </button>
+
     <span class="navigationUser-newVersion-info"></span>
     <span class="pm_dropdown navigationUser-dropdown wide right">
         <span class="navigationUser-head">
