@@ -14,11 +14,21 @@
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
                 </svg>
             </span>
-            <div class="item-icon rounded50 bg-white inline-flex">
-                <span class="mauto">
-                    <pt-select-element data-index="{{ $index }}"></pt-select-element>
+
+            <label>
+            <input type="checkbox"
+                class="item-checkbox sr-only"
+                ng-checked="conversations[$index].Selected"
+                data-custom-index="{{ $index }}"
+                aria-label="{{ conversation.Subject | unescape }}">
+            <span class="item-icon flex-item-noshrink rounded50 bg-white inline-flex">
+                <span class="mauto item-abbr">JT</span>
+                <span class="item-icon-fakecheck mauto">
+                  <icon data-name="on" data-fill="white" class="mr0-5 mauto" aria-hidden="true"></icon>
                 </span>
-            </div>
+            </span>
+            </label>
+
             <div class="flex-item-fluid mauto">
                 <span class="senders ellipsis">
                     <senders-name></senders-name>

@@ -2,10 +2,10 @@
     class="toolbar toolbarDesktop-container pm_toolbar pm_toolbar_withSelector">
 
     <span class="pm_buttons back" ng-if="idDefined() &&  viewLayout === 1">
-        <a href="#" ng-click="back()" pt-tooltip-translate="Back to list" pt-tooltip-translate-context="Action">
-            <i class="fa fa-long-arrow-left"></i>
+        <button ng-click="back()" class="flex" pt-tooltip-translate="Back to list" pt-tooltip-translate-context="Action">
+            <icon data-name="arrow-left" data-size="16" class="mauto"></icon>
             <span class="sr-only" translate-context="Action" translate>Back to list</span>
-        </a>
+        </button>
     </span>
 
     <elements-selector
