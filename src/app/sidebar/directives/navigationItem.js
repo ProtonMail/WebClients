@@ -65,7 +65,7 @@ function navigationItem(
                 el.empty().append($compile(template(key, config))(scope));
             };
             const updateCounter = () => {
-                const $anchor = el[0].querySelector('.navigationItem-item');
+                const $anchor = el[0].querySelector('.navigation__link');
                 const $counter = $anchor.querySelector('.navigationItem-counter');
                 const total = sidebarModel.unread(key);
                 $anchor.title = `${$anchor.getAttribute('data-label')} ${total}`.trim();
