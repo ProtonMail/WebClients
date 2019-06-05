@@ -9,7 +9,7 @@ const moment = require('moment');
 const argv = require('minimist')(process.argv.slice(2));
 
 const { debug, success, error, about } = require('./lib/helpers/log')('proton-bundler');
-const { bash } = require('./lib/helpers/cli');
+const { bash, script } = require('./lib/helpers/cli');
 const customDeploy = require('./lib/custom');
 const { pull, push, getConfig, logCommits } = require('./lib/git');
 
@@ -32,7 +32,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode }) => 
             title: 'Save dependencies if we need',
             enabled: () => !isCI && /dev|beta|alpha/.test(branch),
             task() {
-                return bash('./tasks/updatePackageLock.sh');
+                return script('updatePackageLock.sh', [argv['default-branch']]);
             }
         },
         {

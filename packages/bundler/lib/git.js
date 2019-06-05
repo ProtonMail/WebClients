@@ -1,6 +1,6 @@
 const os = require('os');
 
-const { bash } = require('./helpers/cli');
+const { bash, script } = require('./helpers/cli');
 const { title } = require('./helpers/log')('proton-bundler');
 
 async function push(branch, { tag = 'v0.0.0', originCommit, originBranch }) {
@@ -52,7 +52,7 @@ function logCommits(branch, flowType) {
     console.log('');
     title('Hash commits');
     const arg = flowType === 'many' ? '' : target;
-    return bash(`./tasks/logcommits.sh ${arg}`.trim()).then(({ stdout }) => console.log(stdout));
+    return script('logcommits.sh', [arg]).then(({ stdout }) => console.log(stdout));
 }
 
 module.exports = {
