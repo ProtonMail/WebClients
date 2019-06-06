@@ -41,10 +41,9 @@ function chooseLayoutBtns(
         replace: true,
         templateUrl: require('../../../templates/ui/chooseLayoutBtns.tpl.html'),
         link(scope, el) {
-            const $a = el.find('a');
-            const onClick = (e) => {
-                e.preventDefault();
-                changeTo(e.target.getAttribute('data-action'));
+            const $a = el.find('button');
+            const onClick = ({ currentTarget }) => {
+                changeTo(currentTarget.getAttribute('data-action'));
             };
             $a.on('click', onClick);
             scope.$on('$destroy', () => {
