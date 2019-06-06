@@ -1,3 +1,17 @@
+# [3.16.0] - 2019-06-06
+
+[![ProtonMail v3.16 has been released!](assets/img/v3-16.jpg)](https://protonmail.com/blog/protonmail-v3-16-release-notes/)
+
+[ProtonMail 3.16](https://protonmail.com/blog/protonmail-v3-16-release-notes/)
+
+## Added
+- Prevent homograph Attack while redirecting links (Punycode)
+
+## Fixed
+- Sanitization error was shown for some messages
+- Credits added via Bitcoin could not be used immediately
+- Adding more that one VPN connection to a user resulted in only one connection being applied
+
 # [3.15.38] - 2019-05-28
 ## Added
 - Warning notification for IE11 users
@@ -342,14 +356,3 @@
 - Email type dropdown was not closed when rearranging addresses
 - The printing font was very small for some documents
 - Some error messages appeared when accessing Advanced contact settings
-
-# [3.15.0] - 2018-11-20
-
-[![ProtonMail v3.15 has been released!](assets/img/v3-15.jpg)](https://protonmail.com/blog/protonmail-v3-15-release-notes/)
-
-[ProtonMail 3.15](https://protonmail.com/blog/protonmail-v3-15-release-notes/)
-
-## Added
-
-- Contact groups
-- Read receipts
