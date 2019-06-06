@@ -1,8 +1,10 @@
 const path = require('path');
+const argv = require('minimist')(process.argv.slice(2));
 
-const { success } = require('./helpers/log')('proton-bundler');
+const { success, debug } = require('./helpers/log')('proton-bundler');
 
 const defaultHook = [];
+const defaultCustom = () => ({ customConfig: {}, tasks: () => {} });
 
 /**
  * Allow custom extend of the deploy process via a config files
@@ -11,15 +13,21 @@ const defaultHook = [];
  * We will use it to extend our config
  *
  * Format:
- *     (deployConfig, argv) => {
+ *     (argv) => {
  *
- *         return {
- *             EXTERNAL_FILES,
+ *         const tasks = (deployConfig) => ({
  *             hookPreTasks: [...task]
  *             hookPostTasks: [...task]
  *             hookPostTaskClone: [...task]
  *             hookPostTaskBuild: [...task]
- *         }
+ *         });
+ *
+ *         const config = {
+ *             EXTERNAL_FILES: [...<String>],
+ *             apiUrl: <String>
+ *         };
+ *
+ *         return { tasks, config };
  *     }
  *
  * deployConfig:
@@ -39,40 +47,47 @@ const defaultHook = [];
  * @param  {Object} cfg Our own configuration
  * @return {Object}
  */
-function extend(cfg, argv) {
-    const defaultConfig = {
-        EXTERNAL_FILES: cfg.EXTERNAL_FILES,
-        hookPreTasks: defaultHook,
-        hookPostTasks: defaultHook,
-        hookPostTaskClone: defaultHook,
-        hookPostTaskBuild: defaultHook
-    };
+function loadCustomBundler(argv) {
+    if (argv._.includes('hosts')) {
+        return defaultCustom;
+    }
 
     try {
         const fromUser = require(path.join(process.cwd(), 'proton.bundler.js'));
         success('Found proton.bundler.js, we can extend the deploy');
 
-        if (typeof fromUser !== 'function') {
+        if (fromUser.tasks && typeof fromUser.tasks !== 'function') {
             const msg = [
                 '[proton-bundler] Error',
-                'The custom config from proton.bundler.js must export a function.',
+                'The custom config from proton.bundler.js must export a function, which returns { tasks: <Function>, config: <Object> }',
                 ''
             ].join('\n');
             console.error(msg);
             process.exit(1);
         }
 
-        const config = fromUser(cfg, argv);
-        return {
-            ...defaultConfig,
-            ...config
-        };
+        return fromUser(argv);
     } catch (e) {
+        debug(e);
         if (e.code !== 'MODULE_NOT_FOUND') {
             throw e;
         }
-        return defaultConfig;
+        return defaultCustom;
     }
 }
 
-module.exports = extend;
+function getCustomHooks(customConfig = {}) {
+    return {
+        customConfigSetup: defaultHook,
+        hookPreTasks: defaultHook,
+        hookPostTasks: defaultHook,
+        hookPostTaskClone: defaultHook,
+        hookPostTaskBuild: defaultHook,
+        ...customConfig
+    };
+}
+
+module.exports = {
+    customBundler: loadCustomBundler(argv),
+    getCustomHooks
+};
