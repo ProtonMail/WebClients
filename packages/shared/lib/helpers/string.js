@@ -40,3 +40,11 @@ export const toPrice = (amount = 0, currency = 'EUR', divisor = 100) => {
 export const addPlus = ([first = '', ...rest] = []) => {
     return [first, rest.length && `+${rest.length}`].filter(Boolean).join(', ');
 };
+
+export const getInitial = (value = '') => {
+    const [first, second] = value.split(' ');
+    return [first, second]
+        .filter(Boolean)
+        .map((letter = '') => letter.toUpperCase().charAt(0))
+        .join('');
+};
