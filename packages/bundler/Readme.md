@@ -133,6 +133,7 @@ module.exports = main;
 
 ### Output demo
 
+```shell
 [atlas]:~/dev/taf/Angular [feat/protonBundler]
 $ deploy dev
 
@@ -140,7 +141,7 @@ $ deploy dev
 > cross-env NODE_ENV=dist proton-bundler --default-branch v3 "--branch=deploy-demo" "--api=dev"
 
 [proton-bundler] ✔ Found proton.bundler.js, we can extend the deploy
-➙ branch: deploy-sky
+➙ branch: deploy-demo
 ➙ apiUrl: https://mail.protonmail.com/api
 ➙ appMode: bundle
 ➙ SENTRY: undefined
@@ -158,3 +159,4 @@ $ deploy dev
   ✔ Generate the version info
   ✔ Push dist to deploy-demo
  [proton-bundler] ✔ App deployment done (01:19)
+```
