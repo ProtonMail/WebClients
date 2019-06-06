@@ -23,9 +23,11 @@ import removeElement from './services/removeElement';
 import forgeRequestParameters from './services/forgeRequestParameters';
 import sendersName from './directives/sendersName';
 import statesElements from './directives/statesElements';
+import selectBoxElement from './directives/selectBoxElement';
 
 export default angular
     .module('proton.elements', [])
+    .directive('selectBoxElement', selectBoxElement)
     .directive('statesElements', statesElements)
     .directive('sendersName', sendersName)
     .factory('forgeRequestParameters', forgeRequestParameters)

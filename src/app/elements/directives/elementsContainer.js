@@ -8,7 +8,7 @@ function elementsContainer(dispatchers) {
             const { dispatcher } = dispatchers(['elements']);
             const onClick = _.debounce(({ target }) => {
                 // Prevent click onto the select checkbox
-                if (target && !/ptSelectConversation|customMaskInput/.test(target.className)) {
+                if (target && !/ptSelectConversation|customMaskInput|selectBoxElement/.test(target.className)) {
                     dispatcher.elements('open', {
                         element: scope.conversation
                     });

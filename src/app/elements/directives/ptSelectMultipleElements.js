@@ -68,10 +68,9 @@ function ptSelectMultipleElements(AppModel, dispatchers) {
             function onClick({ target, shiftKey }) {
                 const index = +target.getAttribute('data-index');
 
-                if (target.nodeName !== 'INPUT' || !/ptSelectConversation/.test(target.className)) {
+                if (target.nodeName !== 'INPUT' || !/ptSelectConversation|selectBoxElement/.test(target.className)) {
                     return;
                 }
-
                 const isChecked = target.checked;
 
                 scope.$applyAsync(() => {
