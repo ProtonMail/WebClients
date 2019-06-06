@@ -8,7 +8,7 @@
 }
 
 .items-column-list,
-.item-column-detail {
+.view-column-detail {
   height: calc(100vh - #{$header-height} - #{$toolbar-height} );
 }
 
