@@ -24,6 +24,7 @@ function ElementsController(
     markedScroll,
     forgeRequestParameters,
     removeElement,
+    cacheBase64,
     tools
 ) {
     const { on, unsubscribe, dispatcher } = dispatchers(['elements', 'messageActions', 'message.open']);
@@ -823,9 +824,9 @@ function ElementsController(
         }
         const route = $state.$current.name.replace('.element', '');
         $state.go(route + '.element', params);
+        cacheBase64.removeAll();
     }
 
-    // Call initialization
     initialization();
 }
 export default ElementsController;

@@ -1,9 +1,15 @@
-import transformEscape from '../../../../src/app/message/helpers/transformEscape';
+import transformEscape, { attachBase64Parser } from '../../../../src/app/message/helpers/transformEscape';
 
 describe('transformEscape', () => {
     let getAttribute;
 
     const USER_INJECT = 'user.inject';
+
+    const babase64 = `src="data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAABoIAAAVSCAYAAAAisOk2AAAMS2lDQ1BJQ0MgUHJv
+    ZmlsZQAASImVVwdYU8kWnltSSWiBUKSE3kQp0qWE0CIISBVshCSQUGJMCCJ2FlkF
+    1y4ioK7oqoiLrgWQtaKudVHs/aGIysq6WLCh8iYF1tXvvfe9831z758z5/ynZO69
+    MwDo1PKk0jxUF4B8SYEsITKUNTEtnUXqAgSgD1AwGozk8eVSdnx8DIAydP+nvLkO"`;
+
     const DOM = `<section>
     <svg width="5cm" height="4cm" version="1.1"
          xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">
@@ -27,6 +33,8 @@ describe('transformEscape', () => {
     <a href="jeanne-image.jpg">Alll</a>
     <div background="jeanne-image.jpg">Alll</div>
     <div background="jeanne-image2.jpg">Alll</div>
+
+    <img id="babase64" ${babase64}/>
 </section>`;
 
     const CODE_HTML_HIGHLIGHT = `
@@ -112,11 +120,85 @@ describe('transformEscape', () => {
 
     let output;
 
+    const cache = {
+        map: Object.create(null),
+        put(key, value) {
+            this.map[key] = value;
+        },
+        get(key) {
+            return this.map[key];
+        },
+        size() {
+            return Object.keys(this.map);
+        },
+        readMap() {
+            return this.map;
+        },
+        removeAll() {
+            this.map = Object.create(null);
+        }
+    };
+
+    describe('Replace base64', () => {
+        describe('No syntax hightlighting', () => {
+            beforeEach(() => {
+                cache.removeAll();
+                output = transformEscape(document.createElement('DIV'), {
+                    content: DOM,
+                    activeCache: true,
+                    cache
+                });
+            });
+
+            it('should remove the base64 from src', () => {
+                expect(output.querySelector('#babase64').src).toBe('');
+                expect(output.querySelector('#babase64').hasAttribute('src')).toBe(false);
+            });
+
+            it('should add a custom marker attribute', () => {
+                expect(output.querySelector('#babase64').hasAttribute('data-proton-replace-base')).toBe(true);
+                expect(output.querySelector('#babase64').getAttribute('data-proton-replace-base')).not.toBe('');
+            });
+
+            it('should add a custom marker attribute with a hash available inside the cache', () => {
+                const [ hash ] = Object.keys(cache.readMap());
+                expect(output.querySelector('#babase64').getAttribute('data-proton-replace-base')).toBe(hash);
+                expect(cache.get(hash)).toBe(babase64);
+            });
+
+            it('should attach the base64', () => {
+                const html = attachBase64Parser(output, cache);
+                const dom = document.createElement('DIV');
+                dom.innerHTML = html;
+
+                expect(dom.querySelector('#babase64').hasAttribute('data-proton-replace-base')).toBe(false);
+                expect(dom.querySelector('#babase64').hasAttribute('src')).toBe(true);
+
+                const value = babase64.replace(/^src="/, '').slice(0, 20);
+                expect(dom.querySelector('#babase64').src.startsWith(value)).toBe(true);
+            });
+        });
+
+        describe('Syntax hightlighting', () => {
+            beforeEach(() => {
+                output = transformEscape(document.createElement('DIV'), {
+                    content: CODE_HTML_HIGHLIGHT,
+                    activeCache: false
+                });
+            });
+
+            it('should not escape inside a <code> tag', () => {
+                expect(output.innerHTML).not.toMatch(/proton-/);
+            });
+        });
+    });
+
     describe('Escape <pre>', () => {
         describe('No syntax hightlighting', () => {
             beforeEach(() => {
                 output = transformEscape(document.createElement('DIV'), {
-                    content: CODE_HTML
+                    content: CODE_HTML,
+                    activeCache: false
                 });
             });
 
@@ -135,7 +217,8 @@ describe('transformEscape', () => {
         describe('Syntax hightlighting', () => {
             beforeEach(() => {
                 output = transformEscape(document.createElement('DIV'), {
-                    content: CODE_HTML_HIGHLIGHT
+                    content: CODE_HTML_HIGHLIGHT,
+                    activeCache: false
                 });
             });
 
@@ -148,7 +231,8 @@ describe('transformEscape', () => {
     describe('Escape everything with proton-', () => {
         beforeEach(() => {
             output = transformEscape(document.createElement('DIV'), {
-                content: DOM
+                content: DOM,
+                activeCache: false
             });
             getAttribute = (attribute) => {
                 return [].slice.call(output.querySelectorAll(`[${attribute}]`));
@@ -223,7 +307,8 @@ describe('transformEscape', () => {
     describe('No escape inside URL', () => {
         beforeEach(() => {
             output = transformEscape(document.createElement('DIV'), {
-                content: HTML_LINKS
+                content: HTML_LINKS,
+                activeCache: false
             });
         });
 
@@ -235,7 +320,8 @@ describe('transformEscape', () => {
     describe('No escape TXT', () => {
         beforeEach(() => {
             output = transformEscape(document.createElement('DIV'), {
-                content: TEXT
+                content: TEXT,
+                activeCache: false
             });
         });
 
@@ -247,7 +333,8 @@ describe('transformEscape', () => {
     describe('No escape EDGE_CASE', () => {
         beforeEach(() => {
             output = transformEscape(document.createElement('DIV'), {
-                content: EDGE_CASE
+                content: EDGE_CASE,
+                activeCache: false
             });
         });
 
@@ -259,7 +346,8 @@ describe('transformEscape', () => {
     describe('No escape EDGE_CASE2', () => {
         beforeEach(() => {
             output = transformEscape(document.createElement('DIV'), {
-                content: EDGE_CASE_2
+                content: EDGE_CASE_2,
+                activeCache: false
             });
         });
 
@@ -271,7 +359,8 @@ describe('transformEscape', () => {
     describe('No double escape', () => {
         beforeEach(() => {
             output = transformEscape(document.createElement('DIV'), {
-                content: DOM
+                content: DOM,
+                activeCache: false
             });
             output = transformEscape(document.createElement('DIV'), {
                 content: output.innerHTML
@@ -293,7 +382,8 @@ describe('transformEscape', () => {
 
         it('should escape all', () => {
             const html = transformEscape(document.createElement('DIV'), {
-                content: BACKGROUND_URL
+                content: BACKGROUND_URL,
+                activeCache: false
             });
             const list = getList(html);
 
@@ -304,7 +394,8 @@ describe('transformEscape', () => {
 
         it('should escape all encoded url', () => {
             const html = transformEscape(document.createElement('DIV'), {
-                content: BACKGROUND_URL_ESCAPED
+                content: BACKGROUND_URL_ESCAPED,
+                activeCache: false
             });
             const list = getList(html);
 
@@ -314,14 +405,16 @@ describe('transformEscape', () => {
         });
         it('should escape encoded url with escape \\r', () => {
             const html = transformEscape(document.createElement('DIV'), {
-                content: BACKGROUND_URL_ESCAPED_WTF
+                content: BACKGROUND_URL_ESCAPED_WTF,
+                activeCache: false
             });
             expect(html.innerHTML).toMatch(/proton-/);
         });
 
         it('should escape encoded url with escape standard wtf', () => {
             const html = transformEscape(document.createElement('DIV'), {
-                content: BACKGROUND_URL_ESCAPED_WTF2
+                content: BACKGROUND_URL_ESCAPED_WTF2,
+                activeCache: false
             });
             const list = getList(html);
 
@@ -332,7 +425,8 @@ describe('transformEscape', () => {
 
         it('should escape octal and hex encoded urls with escape', () => {
             const html = transformEscape(document.createElement('DIV'), {
-                content: BACKGROUND_URL_OCTAL_HEX_ENCODING
+                content: BACKGROUND_URL_OCTAL_HEX_ENCODING,
+                activeCache: false
             });
             const list = getList(html);
 
@@ -343,7 +437,8 @@ describe('transformEscape', () => {
 
         it('should not break the HTML', () => {
             const html = transformEscape(document.createElement('DIV'), {
-                content: EX_URL
+                content: EX_URL,
+                activeCache: false
             });
             expect(html.innerHTML).toEqual(EX_URL_CLEAN);
         });
@@ -353,7 +448,8 @@ describe('transformEscape', () => {
         beforeEach(() => {
             output = transformEscape(document.createElement('DIV'), {
                 content: BACKGROUND_URL,
-                action: USER_INJECT
+                action: USER_INJECT,
+                activeCache: false
             });
         });
 
@@ -364,7 +460,8 @@ describe('transformEscape', () => {
         it('should not break the HTML', () => {
             const html = transformEscape(document.createElement('DIV'), {
                 content: EX_URL,
-                action: USER_INJECT
+                action: USER_INJECT,
+                activeCache: false
             });
             expect(html.innerHTML).not.toMatch(/proton-/);
         });
@@ -373,7 +470,8 @@ describe('transformEscape', () => {
     describe('Ǹot escape BACKGROUND_URL', () => {
         beforeEach(() => {
             output = transformEscape(document.createElement('DIV'), {
-                content: BACKGROUND_URL_SAFE
+                content: BACKGROUND_URL_SAFE,
+                activeCache: false
             });
         });
 

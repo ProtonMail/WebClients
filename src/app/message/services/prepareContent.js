@@ -4,7 +4,7 @@ import transformEscape from '../helpers/transformEscape';
 import transformLinks from '../helpers/transformLinks';
 
 /* @ngInject */
-function prepareContent($injector, transformAttachements, transformRemote, transformEmbedded) {
+function prepareContent($injector, transformAttachements, transformRemote, transformEmbedded, cacheBase64) {
     const filters = ['transformEmbedded', 'transformWelcome', 'transformBlockquotes', 'transformStylesheet'].map(
         (name) => ({
             name,
@@ -48,6 +48,7 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
         return transformEscape(div, {
             action,
             content,
+            cache: cacheBase64,
             isDocument: typeof content !== 'string'
         });
     }
@@ -59,12 +60,14 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
         return input.querySelector('body').innerHTML;
     }
 
-    return (content, message, { blacklist = [], whitelist = [], action } = {}) => {
+    return (content, message, { blacklist = [], whitelist = [], action, countEmbedded } = {}) => {
         const transformers = getTransformers(blacklist, whitelist);
         const div = createParser(content, {
             action,
             isBlacklisted: _.includes(blacklist, 'transformRemote')
         });
+
+        countEmbedded && (message.NumEmbedded = message.countEmbedded(div));
 
         const body = transformers.reduceRight(
             (html, transformer) => transformer.action(html, message, { action }),

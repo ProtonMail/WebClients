@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 import transformBase from './transformBase';
-import { unescapeCSSEncoding } from '../../../helpers/string';
+import { unescapeCSSEncoding, uniqID } from '../../../helpers/string';
 
 /**
  * Prevent escape url on the textContent if you display some code
@@ -69,11 +69,11 @@ const REGEXP_IS_BREAK = new RegExp(VERIFY_UNIQUE + FORBIDDEN_HTML + VERIFY_ELEME
 const REGEXP_IS_STYLE = new RegExp(STYLE_ATTRIBUTE + ATTRIBUTE_VALUE + VERIFY_ELEMENT_END, 'gi');
 
 /*
-        This is valid
-            - background:&#117;r&#108;(
-            - background:url&lpar;
-            - etc.
-        */
+This is valid
+    - background:&#117;r&#108;(
+    - background:url&lpar;
+    - etc.
+*/
 const CSS_URL = '((url)(\\(|&(#40|#x00028|lpar);))';
 const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
@@ -112,6 +112,64 @@ const escapeURL = (input, action) => {
 };
 
 /**
+ * Parsing base64 is expensive and can create a crash.
+ * Here we can reduce input string from many Mb to less than 100kb, which is way easier to escape.
+ * So instead of escaping everything with it too, we remove them from the HTML
+ * and we replace it with an attribute with an uniq hash so we can load them
+ * later for the user via injectMessageMedia component.
+ * Store it inside inside a cache, an Angular Factory as we will need it for:
+ *     - lazy load the image post render message
+ *     - open the composer we need to lazy load it here too
+ *
+ * Source: regexp https://www.regextester.com/95505
+ * @param  {String} input       Raw unescaped HTML
+ * @param  {Object} cache       cacheBase64 factory
+ * @param  {Boolean} activeCache
+ * @return {String}
+ */
+function removeBase64(input, cache, activeCache) {
+    /* eslint no-useless-escape: "off" */
+    return input.replace(/src="data:image\/([a-zA-Z]*);base64,([^\"]*)\"/g, (match) => {
+        const hash = uniqID();
+        activeCache && cache.put(hash, match);
+        return `data-proton-replace-base="${hash}"`;
+    });
+}
+
+/**
+ * Parse the dom and find all matching base64 custom tags we added
+ * then replace them by the valid SRC for the base64.
+ * @param  {Element} node
+ * @param  {Object} cache cacheBase64 service
+ * @return {String}       HTML
+ */
+export function attachBase64Parser(node, cache) {
+    _.each(node.querySelectorAll('[data-proton-replace-base]'), (node) => {
+        const hash = node.getAttribute('data-proton-replace-base');
+
+        // Clean the string and remove \n else it won't load inside the browser
+        const src = (cache.get(hash) || '')
+            .replace(/^src="/, '')
+            .replace(/"$/, '')
+            .replace(/\n/, '');
+        src && node.setAttribute('src', src);
+        node.removeAttribute('data-proton-replace-base');
+    });
+    return node.innerHTML;
+}
+
+/**
+ * Attach escaped base64 to the dom if the input is a txt
+ * @param  {String} input HTML
+ * @param  {Object} cache cacheBase64 service
+ * @return {String}       HTML
+ */
+export function attachBase64(input, cache) {
+    const [$parser] = $.parseHTML(`<div>${input}</div>`);
+    return attachBase64Parser($parser, cache);
+}
+
+/**
  * Escape content for a message
  * Content can be a Document when we open a message, it's useful
  * in order to bind the base if it exists
@@ -121,9 +179,11 @@ const escapeURL = (input, action) => {
  * @param  {Boolean} options.isDocument      Type of content to escape
  * @return {Node}                            Parser
  */
-export default (html, { content = '', action, isDocument }) => {
+export default (html, { content = '', action, isDocument, cache, activeCache = true }) => {
     const input = isDocument ? content.querySelector('body').innerHTML : content;
-    const breakHtml = input.replace(REGEXP_IS_BREAK, '$1proton-$2');
+    const value = removeBase64(input, cache, activeCache);
+
+    const breakHtml = value.replace(REGEXP_IS_BREAK, '$1proton-$2');
     html.innerHTML = escapeURL(breakHtml, action);
     return syntaxHighlighterFilter((isDocument ? transformBase : _.identity)(html, content));
 };

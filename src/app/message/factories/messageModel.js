@@ -170,12 +170,11 @@ function messageModel(
             return (this.Attachments || []).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
         }
 
-        countEmbedded() {
+        countEmbedded(html) {
             if (this.isPlainText()) {
                 return 0;
             }
-            const body = this.getDecryptedBody();
-            const testDiv = embeddedUtils.getBodyParser(body);
+            const testDiv = html || embeddedUtils.getBodyParser(this.getDecryptedBody());
 
             return embeddedUtils.extractEmbedded(this.Attachments, testDiv).length;
         }
@@ -385,7 +384,7 @@ function messageModel(
             return attachedPublicKey.extractFromEmail(this);
         }
 
-        async clearTextBody(forceDecrypt = false) {
+        async clearTextBody(forceDecrypt = false, countEmbedded = true) {
             if (this.getDecryptedBody() && !forceDecrypt) {
                 return this.getDecryptedBody();
             }
@@ -414,7 +413,7 @@ function messageModel(
                     this.encryptedSubject = result.encryptedSubject;
                 }
                 this.NumAttachments = this.Attachments.length;
-                this.NumEmbedded = this.countEmbedded();
+                countEmbedded && (this.NumEmbedded = this.countEmbedded());
 
                 this.attachedPublicKey = await this.getAttachedPublicKey();
 
