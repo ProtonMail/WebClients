@@ -367,6 +367,7 @@ function messageBuilder(
         setDefaultsParams(newMsg);
         newMsg = await builder(action, currentMsg, newMsg);
         newMsg.setDecryptedBody(signatureBuilder.insert(newMsg, { action, isAfter }));
+
         return newMsg;
     }
 

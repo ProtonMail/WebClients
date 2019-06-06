@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import { MIME_TYPES } from '../../constants';
 import { setHtml, setPlaintext, setCursorStart, setSquireSelection } from '../helpers/textMode';
+import { attachBase64 } from '../../message/helpers/transformEscape';
 
 const { PLAINTEXT, DEFAULT } = MIME_TYPES;
 
@@ -23,7 +24,16 @@ const tabIndexAble = (iframe) => (isPlainText) => {
 };
 
 /* @ngInject */
-function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, toggleModeEditor, onCurrentMessage) {
+function squire(
+    squireEditor,
+    embedded,
+    editorListener,
+    dispatchers,
+    sanitize,
+    toggleModeEditor,
+    onCurrentMessage,
+    cacheBase64
+) {
     const CLASS_NAMES = {
         LOADED: 'squireEditor-loaded'
     };
@@ -111,9 +121,13 @@ function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, t
                 const textarea = el[0].querySelector('.plaintext-editor');
 
                 if (isMessage(typeContent)) {
-                    // On load we parse the body of the message in order to load its embedded images
-                    // Assume that the message has been sanitized in composer.load first
-                    const body = await embedded.parser(scope.message);
+                    /*
+                        On load we parse the body of the message in order to load its embedded images
+                        Assume that the message has been sanitized in composer.load first
+
+                        Ensure we always re-attach base64 inside the email
+                     */
+                    const body = attachBase64(await embedded.parser(scope.message), cacheBase64);
 
                     const isPlainText = scope.message.isPlainText();
                     bindTabIndex(isPlainText);

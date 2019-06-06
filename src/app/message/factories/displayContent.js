@@ -10,7 +10,7 @@ function displayContent(dispatchers, prepareContent, sanitize) {
 
     async function decrypt(message) {
         message.decrypting = true;
-        const body = await message.clearTextBody();
+        const body = await message.clearTextBody(false, false);
         message.decrypting = false;
         return body;
     }
@@ -33,9 +33,12 @@ function displayContent(dispatchers, prepareContent, sanitize) {
 
     function prepare(content, message) {
         if (content.type === 'html') {
-            content.body = prepareContent(content.body, message);
+            content.body = prepareContent(content.body, message, {
+                countEmbedded: true
+            });
         } else {
             content.body = linkit(content.body);
+            message.NumEmbedded = message.countEmbedded();
         }
 
         return content;

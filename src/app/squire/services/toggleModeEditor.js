@@ -70,7 +70,7 @@ function toggleModeEditor(dispatchers, embeddedUtils, attachmentModel, textToHtm
 
     const toPlainText = (message, htmlValue) => {
         const body = message.getDecryptedBody();
-        const testDiv = embeddedUtils.getBodyParser(body);
+        const testDiv = embeddedUtils.getBodyParser(body, true);
         const list = embeddedUtils.extractEmbedded(message.Attachments, testDiv);
         dispatcher['attachment.upload']('remove.all', { message, list });
         CACHE.ATTACHMENTS_PROCESSING[message.ID] = CACHE.ATTACHMENTS_PROCESSING[message.ID] || {};

@@ -1,9 +1,10 @@
 import _ from 'lodash';
 
 import { uniqID } from '../../../helpers/string';
+import { attachBase64Parser } from '../helpers/transformEscape';
 
 /* @ngInject */
-function injectMessageMedia(dispatchers, displayImages, displayEmbedded) {
+function injectMessageMedia(dispatchers, displayImages, displayEmbedded, cacheBase64) {
     const LOADING_CLASS = 'proton-loading';
 
     /**
@@ -153,9 +154,13 @@ function injectMessageMedia(dispatchers, displayImages, displayEmbedded) {
         });
     }
 
+    function injectBase64(el) {
+        attachBase64Parser(el[0], cacheBase64);
+    }
+
     return {
         link(scope, el) {
-            const { on, unsubscribe } = dispatchers();
+            const { on, unsubscribe } = dispatchers([]);
 
             on('message.open', (e, { type, data }) => {
                 if (data.message.ID !== scope.message.ID) {
@@ -186,6 +191,10 @@ function injectMessageMedia(dispatchers, displayImages, displayEmbedded) {
                         if (data.action === 'user.inject') {
                             return injectInlineEmbedded(el, data);
                         }
+                        break;
+
+                    case 'render':
+                        injectBase64(el);
                         break;
                 }
             });
