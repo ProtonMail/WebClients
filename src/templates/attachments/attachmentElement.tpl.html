@@ -1,11 +1,10 @@
-<div class="listAttachments-att pm_button">
+<li class="mr1 ">
     <a
         data-attachment-id="{{::attachment.ID}}"
-        class=" listAttachments-item"
+        class="message-attachment inline-flex pm-button listAttachments-item"
         ng-class="{ 'dead': attachment.decrypting, 'remove': ('eo.reply' | includedByState) }"
         data-download-text="{{ 'Download' | translate:'Action' }}"
         title="{{ ::attachment.Name }} ({{ ::attachment.Size | humanSize }})">
-            <em></em>
             <icon-attachment></icon-attachment>
             <i class="fa fa-cog fa-spin listAttachments-icon-loader"></i>
             <i class="fa fa-download listAttachments-icon-download listAttachments-signature-icon"></i>
@@ -33,10 +32,24 @@
                         <i class="fa fa-check-circle pt-fa-bg-white fa-stack-2x"></i>
                     </span>
             </div>
-            <strong class="name">{{ ::attachment.Name }}</strong>
-            <span class="size">{{ ::attachment.Size | humanSize }}</span>
+            <span class="inbl message-attachmentInfo">
+                <span class="bl">{{ ::attachment.Name }}</span>
+                <span class="bl message-attachmentSize">{{ ::attachment.Size | humanSize }}</span>
+            </span>
     </a>
     <button data-attachment-id="{{::attachment.ID}}" class="listAttachments-btn-action-remove removeButton">
         <i class="fa fa-times"></i>
     </button>
-</div>
+</li>
+
+<!-- <a class="message-attachment inline-flex pm-button">
+    <span class="flex message-attachmentIcon">
+      <svg viewBox="0 0 16 16" class="mauto icon-16p" role="img" focusable="false">
+        <use xlink:href="#shape-file-image"></use>
+      </svg>
+    </span>
+    <span class="inbl message-attachmentInfo">
+      <span class="bl">Attachmentname.jpg</span>
+      <span class="bl message-attachmentSize">JPG - 1 MB</span>
+    </span>
+  </a> -->

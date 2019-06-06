@@ -1,38 +1,38 @@
 #attachmentArea {
-	position: relative;
-	z-index: 0; /* dropdowns */
-	padding: 0 10px;
-	background: $white;
-	border-top: 1px solid $border;
-	header {
-		height: 40px;
-		line-height: 40px !important;
-		position: relative;
-		padding: 0 !important;
-		margin-bottom: 0 !important;
-		border-bottom: none !important;
-		.embedded{
-			color:$primary;
-		}
-	}
-	.title {
-		position: relative;
-		z-index: 2;
-		display: inline-block;
-		/* background-color: $white;*/
-		padding-right: 1rem;
-	}
-	em {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 20px;
-		height: 1px;
-		/* background: $border;*/
-		width: 100%;
-		display: block;
-		z-index: 1;
-	}
+	// position: relative;
+	// z-index: 0; /* dropdowns */
+	// padding: 0 10px;
+	// background: $white;
+	// border-top: 1px solid $border;
+	// header {
+	// 	height: 40px;
+	// 	line-height: 40px !important;
+	// 	position: relative;
+	// 	padding: 0 !important;
+	// 	margin-bottom: 0 !important;
+	// 	border-bottom: none !important;
+	// 	.embedded{
+	// 		color:$primary;
+	// 	}
+	// }
+	// .title {
+	// 	position: relative;
+	// 	z-index: 2;
+	// 	display: inline-block;
+	// 	/* background-color: $white;*/
+	// 	padding-right: 1rem;
+	// }
+	// em {
+	// 	position: absolute;
+	// 	left: 0;
+	// 	right: 0;
+	// 	top: 20px;
+	// 	height: 1px;
+	// 	/* background: $border;*/
+	// 	width: 100%;
+	// 	display: block;
+	// 	z-index: 1;
+	// }
 
 	.fa.fa-archive-o:before {
 	    content: "\f187";

@@ -1,4 +1,4 @@
-<div id="attachmentArea" class="listAttachments-container">
+<div id="attachmentArea" class="message-attachments">
     <header class="listAttachments-header">
         <span class="title">
             <strong class="listAttachments-title-size">{{ model.attachmentsSize() | humanSize }}</strong>
@@ -23,11 +23,11 @@
         </span>
     </header>
 
-    <section class="listAttachments-list">
+    <ul class="listAttachments-list unstyled flex mb0">
         <attachment-element
             ng-repeat="attachment in model.Attachments track by $id(attachment)"
             data-attachment="attachment"
             data-message="model">
         </attachment-element>
-    </section>
+    </ul>
 </div>

@@ -1,6 +1,6 @@
-<article class="message" ng-class="getClassNames(message, marked)">
+<article class="message-container mb1" ng-class="getClassNames(message, marked)">
 
-    <div class="summary" data-toggle-message>
+    <div class="message-header" data-toggle-message>
 
         <div class="summary-left">
             <div class="meta">
@@ -70,7 +70,7 @@
 
     <div ng-if="message.expand">
 
-        <div class="details">
+        <div class="message-content">
             <div class="recipients-summary">
                 <strong translate-context="Message recipient label" translate>To</strong>:
                 <span
@@ -124,64 +124,29 @@
             <div class="action-row">
 
                 <div class="actions pull-right" ng-if="message.decrypting === false">
-                    <div class="pm_buttons">
+                    <div class="pm-group-buttons">
                         <filter-button data-message="message"></filter-button>
-                        <div class="pm_buttons">
-                            <a role="button" class="pm_trigger open-folder pull-left" pt-tooltip-translate="Move to" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
-                                <small><i class="fa fa-folder"></i> <i class="fa fa-angle-down"></i></small>
+                        <div class="pm_buttons pm-group-button pm-button pm-button--for-icon ">
+                            <button class="pm_trigger open-folder " pt-tooltip-translate="Move to" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
+                                <icon data-name="folder" data-size="16" class=" mauto"></icon>
+                                <icon data-name="caret" data-size="12" class=" mauto expand-caret"></icon>
                                 <span class="sr-only" translate-context="Action" translate>Move to</span>
-                            </a>
+                            </button>
                             <div class="pm_dropdown right wide pull-left">
                                 <dropdown-folders data-elements="getElements"></dropdown-folders>
                             </div>
                         </div>
-                        <div class="pm_buttons">
-                            <a role="button" class="pm_trigger open-label pull-left" pt-tooltip-translate="Label as" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
-                                <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
+                        <div class="pm_buttons pm-group-button pm-button pm-button--for-icon ">
+                            <button class="pm_trigger open-label" pt-tooltip-translate="Label as" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
+                                <icon data-name="label" data-size="16" class=" mauto"></icon>
+                                <icon data-name="caret" data-size="12" class=" mauto expand-caret"></icon>
                                 <span class="sr-only" translate-context="Action" translate>Label as</span>
-                            </a>
+                            </button>
                             <div class="pm_dropdown right wide pull-left">
                                 <dropdown-labels data-messages="getMessage" data-message="message" data-save="saveLabels"></dropdown-labels>
                             </div>
                         </div>
-                    </div>
-                    <nav class="pm_buttons">
-                        <a
-                            class="dropdown-actions-nowrap-reply"
-                            data-action-compose="::message"
-                            data-action-compose-type="reply"
-                            pt-tooltip-translate="Reply"
-                            pt-tooltip-translate-context="Action"
-                            tabindex="0"
-                            role="button">
-
-                            <i class="fa fa-mail-reply"></i>
-                            <span class="sr-only" translate-context="Action" translate>Reply</span>
-                        </a>
-                        <a
-                            class="dropdown-actions-nowrap-replyall"
-                            data-action-compose="::message"
-                            data-action-compose-type="replyall"
-                            pt-tooltip-translate="Reply all"
-                            pt-tooltip-translate-context="Action"
-                            tabindex="0"
-                            role="button">
-                            <i class="fa fa-mail-reply-all"></i>
-                            <span class="sr-only" translate-context="Action" translate>Reply all</span>
-                        </a>
-
-                        <a
-                            class="dropdown-actions-nowrap-forward"
-                            data-action-compose="::message"
-                            data-action-compose-type="forward"
-                            pt-tooltip-translate="Forward"
-                            pt-tooltip-translate-context="Action"
-                            tabindex="0"
-                            role="button">
-                            <i class="fa fa-mail-forward"></i>
-                            <span class="sr-only" translate-context="Action" translate>Forward</span>
-                        </a>
-                        <a role="button" href="#" class="pm_trigger dropdown-actions-nowrap-more" dropdown pt-tooltip-translate="More" pt-tooltip-translate-context="Action">
+                        <a role="button" href="#" class="pm_trigger pm-group-button pm-button pm-button--for-icon  dropdown-actions-nowrap-more" dropdown pt-tooltip-translate="More" pt-tooltip-translate-context="Action">
                             <i class="fa fa-angle-down"></i>
                             <span class="sr-only" translate-context="Action" translate>More</span>
                         </a>
@@ -246,7 +211,39 @@
                                 <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Print</span>
                             </button>
                         </div>
-                    </nav>
+                    </div>
+                    <div class="pm-group-buttons">
+                        <button
+                            class="pm-group-button pm-button pm-button--for-icon dropdown-actions-nowrap-reply"
+                            data-action-compose="::message"
+                            data-action-compose-type="reply"
+                            pt-tooltip-translate="Reply"
+                            pt-tooltip-translate-context="Action"
+                            tabindex="0">
+                            <icon data-name="reply" data-size="16" class=" mauto"></icon>
+                            <span class="sr-only" translate-context="Action" translate>Reply</span>
+                        </button>
+                        <button
+                            class="pm-group-button pm-button pm-button--for-icon dropdown-actions-nowrap-replyall"
+                            data-action-compose="::message"
+                            data-action-compose-type="replyall"
+                            pt-tooltip-translate="Reply all"
+                            pt-tooltip-translate-context="Action"
+                            tabindex="0">
+                            <icon data-name="reply-all" data-size="16" class=" mauto"></icon>
+                            <span class="sr-only" translate-context="Action" translate>Reply all</span>
+                        </button>
+                        <button
+                            class="pm-group-button pm-button pm-button--for-icon dropdown-actions-nowrap-forward"
+                            data-action-compose="::message"
+                            data-action-compose-type="forward"
+                            pt-tooltip-translate="Forward"
+                            pt-tooltip-translate-context="Action"
+                            tabindex="0">
+                            <icon data-name="forward" data-size="16" class=" mauto"></icon>
+                            <span class="sr-only" translate-context="Action" translate>Forward</span>
+                        </button>
+                    </div>
                 </div>
 
                 <button class="toggleDetails" data-action-message="toggleDetails">

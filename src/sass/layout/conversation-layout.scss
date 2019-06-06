@@ -1,110 +1,110 @@
-#conversation-list-rows {
-    clear: both;
-}
+// #conversation-list-rows {
+//     clear: both;
+// }
 
-// REGULAR
-body {
-    // #conversation-list-columns {
-    //     width: 40%;
-    //     float: left;
-    //     height: 100%;
-    //     position: relative;
-    //     border-right:1px solid $border;
-    //     display: flex;
-    //     flex-direction: column;
-    // }
-    #conversation-view,
-    #pm_view {
-        width: calc( 100% - ((100% + (var(--width-sidebar, #{$width-sidebar})) ) * #{$conversations-column-width/1%/100}) );
-        height: 100%;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
+// // REGULAR
+// body {
+//     // #conversation-list-columns {
+//     //     width: 40%;
+//     //     float: left;
+//     //     height: 100%;
+//     //     position: relative;
+//     //     border-right:1px solid $border;
+//     //     display: flex;
+//     //     flex-direction: column;
+//     // }
+//     #conversation-view,
+//     #pm_view {
+//         width: calc( 100% - ((100% + (var(--width-sidebar, #{$width-sidebar})) ) * #{$conversations-column-width/1%/100}) );
+//         height: 100%;
+//         overflow: hidden;
+//         display: flex;
+//         flex-direction: column;
 
-        &.latest {
-            overflow-y: scroll;
-            overflow-x: hidden;
-        }
-    }
+//         &.latest {
+//             overflow-y: scroll;
+//             overflow-x: hidden;
+//         }
+//     }
 
-    &.appConfigBody-rows {
-        #conversation-view,
-        #pm_view {
-            width: 100%;
-        }
-    }
-    #pm_thread {
-        flex:1;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-        -webkit-transform: translate3d(0, 0, 0);
-    }
-    #conversation-list-mobile,
-    #conversation-list-rows {
-        height: 100%;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-    }
-    #pm_main {
-        height: calc(100% - 61px); /* #pm_header-desktop height */
-        float: left;
-        width: calc(100% - #{$sidebarWidth});
-    }
-    #wrapper {
-        -webkit-overflow-scrolling: touch;
-    }
-    &, #body {
-        min-height: 100%;
-    }
-    &.secure, &.secure #body {
-        overflow: hidden;
-        height: 100%;
-    }
-}
+//     &.appConfigBody-rows {
+//         #conversation-view,
+//         #pm_view {
+//             width: 100%;
+//         }
+//     }
+//     #pm_thread {
+//         flex:1;
+//         overflow: auto;
+//         -webkit-overflow-scrolling: touch;
+//         -webkit-transform: translate3d(0, 0, 0);
+//     }
+//     #conversation-list-mobile,
+//     #conversation-list-rows {
+//         height: 100%;
+//         position: relative;
+//         display: flex;
+//         flex-direction: column;
+//     }
+//     #pm_main {
+//         height: calc(100% - 61px); /* #pm_header-desktop height */
+//         float: left;
+//         width: calc(100% - #{$sidebarWidth});
+//     }
+//     #wrapper {
+//         -webkit-overflow-scrolling: touch;
+//     }
+//     &, #body {
+//         min-height: 100%;
+//     }
+//     &.secure, &.secure #body {
+//         overflow: hidden;
+//         height: 100%;
+//     }
+// }
 
-// MOBILE
-body.appConfigBody-is-mobile {
-    &, #body {
-        height: 100%;
-        overflow: hidden;
-    }
-    #pm_main {
-        float: left;
-        height: calc(100% - 60px);
-    }
-    #pm_main,
-    #conversation-list-rows {
-        width: 100%;
-    }
-    #wrapper,
-    #conversation-list-columns,
-    #conversation-view {
-        clear: both;
-        float: left;
-        width: 100%;
-    }
-    #wrapper {
-        height: calc(100% - 70px);
-    }
-    #pm_view {
-        width: 60%;
-        float: left;
-        height: 100%;
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
-    #conversation-list-columns,
-    #conversation-list-rows,
-    #conversation-view {
-        overflow-y: auto;
-        overflow-x: hidden;
-        height: 100%;
-    }
-}
+// // MOBILE
+// body.appConfigBody-is-mobile {
+//     &, #body {
+//         height: 100%;
+//         overflow: hidden;
+//     }
+//     #pm_main {
+//         float: left;
+//         height: calc(100% - 60px);
+//     }
+//     #pm_main,
+//     #conversation-list-rows {
+//         width: 100%;
+//     }
+//     #wrapper,
+//     #conversation-list-columns,
+//     #conversation-view {
+//         clear: both;
+//         float: left;
+//         width: 100%;
+//     }
+//     #wrapper {
+//         height: calc(100% - 70px);
+//     }
+//     #pm_view {
+//         width: 60%;
+//         float: left;
+//         height: 100%;
+//         overflow-y: scroll;
+//         overflow-x: hidden;
+//     }
+//     #conversation-list-columns,
+//     #conversation-list-rows,
+//     #conversation-view {
+//         overflow-y: auto;
+//         overflow-x: hidden;
+//         height: 100%;
+//     }
+// }
 
 body:not(.hasStickyMessages) .stickyMessages-container { display: none; }
 
-.stickyMessages-container {
-    padding: 6px;
-}
+// .stickyMessages-container {
+//     padding: 6px;
+// }
