@@ -13,6 +13,9 @@
 .border-bottom {
   border-bottom: 1px solid $pm-global-border;
 }
+.border-bottom--dashed {
+  border-style: dashed;
+}
 
 .shadow-container {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
