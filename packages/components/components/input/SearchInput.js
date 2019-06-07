@@ -31,7 +31,7 @@ SearchInput.propTypes = {
 };
 
 SearchInput.defaultProps = {
-    delay: 0,
+    delay: 200,
     onChange: noop,
     value: ''
 };
