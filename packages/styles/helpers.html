@@ -179,7 +179,7 @@ section: fe-guidelines
   <li><code>.mw100 </code> = <code> { max-width: 100%; }</code></li>
   <li><code>.h100 </code> = <code> { height: 100%; }</code></li>
 </ul>
-<p>Some other are available, please check in your Sass files the ones used, you can edit Sass variables to generate the ones your need:</p>
+<p>Some other are available, please check in your Sass files the ones used, you can define Sass variables to generate the ones your need:</p>
 
 <ul class="list-2columns ontablet-list-1column">
   <li><code>$list-width-px</code></li>
@@ -187,6 +187,22 @@ section: fe-guidelines
   <li><code>$list-max-width-px</code></li>
   <li><code>$list-min-width-em</code></li>
 </ul>
+
+<h2>Cursors</h2>
+
+<p>Hover the squares to see cursor change (inside, the class to use to apply the cursor change to element):</p>
+
+{% assign listCursors = "default#help#wait#grab#pointer" | split: '#' %}
+<div class="flex">
+{% for cursor in listCursors %}
+<div class="p1 bordered-container mb2 mt0-5 mr0-5 cursor-{{ cursor }}">
+  <code class="mauto">.cursor-{{ cursor }}</code>
+</div>
+{% endfor %}
+</div>
+
+<p><strong>Note</strong>: use this wisely only when you have to, do <strong class="uppercase">not</strong> change element native cursors.</p>
+
 
 <h2>Others</h2>
 

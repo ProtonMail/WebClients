@@ -30,9 +30,9 @@ section: fe-guidelines
   </li>
   <li class="mb0-5"><strong>pm-styles</strong>: styles used <strong>for ProtonMail V4</strong>.
     <ul>
-        {% assign sassFiles = "pm-badges|pm-layout|pm-notifications|pm-table|pm-modal|pm-buttons|pm-forms|pm-dropdown|pm-meterbar|pm-loadingcontent|pm-containers|pm-breadcrumb-domain|pm-panels|pm-conversations|pm-tooltips|pm-header-searchbar|pm-header-topnav|pm-settings-home|pm-theme-config|pm-blue-theme|pm-light-theme|pm-sticky-header|pm-dropdown-logout" | split: '|' %}
-        {% assign links = "/badges/|/containers/|/notifications/|/table/|/modals/|/buttons/|/forms/|/drop-down/|/|/loading-content/|/containers/|/containers/|/containers/|/conversations/|/tooltips/|null|null|/settings/|/themes/|null|null|/sass-variables/|null" | split: '|' %}
-        {% assign linksDesc = "badges|containers|notifications|tables|modals|buttons|forms|drop downs|on each page on the left bottom|loading content|containers|breadcrumb domain|information panels|conversations|tooltips|search bar on top|nav on top|settings|config for themes|blue theme|light theme|example on Sass variables page|example on the top" | split: '|' %}
+        {% assign sassFiles = "pm-cursors|pm-badges|pm-layout|pm-notifications|pm-table|pm-modal|pm-buttons|pm-forms|pm-dropdown|pm-meterbar|pm-loadingcontent|pm-containers|pm-breadcrumb-domain|pm-panels|pm-conversations|pm-tooltips|pm-header-searchbar|pm-header-topnav|pm-settings-home|pm-theme-config|pm-blue-theme|pm-light-theme|pm-sticky-header|pm-dropdown-logout" | split: '|' %}
+        {% assign links = "/helpers/|/badges/|/containers/|/notifications/|/table/|/modals/|/buttons/|/forms/|/drop-down/|/|/loading-content/|/containers/|/containers/|/containers/|/conversations/|/tooltips/|null|null|/settings/|/themes/|null|null|/sass-variables/|null" | split: '|' %}
+        {% assign linksDesc = "cursors|badges|containers|notifications|tables|modals|buttons|forms|drop downs|on each page on the left bottom|loading content|containers|breadcrumb domain|information panels|conversations|tooltips|search bar on top|nav on top|settings|config for themes|blue theme|light theme|example on Sass variables page|example on the top" | split: '|' %}
         {% for file in sassFiles %}
         <li><strong>_{{ file }}.scss</strong>: 
           {% if links[forloop.index0] != 'null' %}<a href="{{ links[forloop.index0] }}">{% endif %}

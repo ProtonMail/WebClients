@@ -1,0 +1,8 @@
+/*
+ * Cursors
+ */
+$list-cursors: default, help, wait, grab, pointer !default;
+
+@each $cursor in $list-cursors {
+  .cursor-#{$cursor} { cursor: #{$cursor}; }
+}
