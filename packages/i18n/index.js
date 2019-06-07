@@ -39,6 +39,7 @@ async function main() {
     }
 
     if (is('upgrade')) {
+        // Add custom limit if we don't use custom
         require('./lib/upgrade')(
             [
                 !argv.custom && {
@@ -47,7 +48,7 @@ async function main() {
                         require('./lib/crowdin')({
                             type: true,
                             list: true,
-                            limit: 95,
+                            limit: argv['limit-i18n'] || 90,
                             outputLang: true
                         })
                 },
@@ -116,6 +117,7 @@ async function main() {
 
               - flag: default none, it will auto fetch latest translations (proton-i18n crowdin --list --type --limit=95)
               - flag: --custom it will use your version of the file
+              - flag: --limit-i18n Custom limit to extract the list of translations available. Default 90.
     `);
     }
 }

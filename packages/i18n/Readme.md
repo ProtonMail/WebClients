@@ -57,6 +57,7 @@ Available commands:
 
       - flag: default none, it will auto fetch latest translations (proton-i18n crowdin --list --type --limit=95)
       - flag: --custom it will use your version of the file
+      - flag: --limit-i18n Custom limit to extract the list of translations available. Default 90.
 ``` 
 
 ### Validate
