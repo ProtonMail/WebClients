@@ -280,6 +280,7 @@ function editorListener(
             const onRefresh = ({ action = '', data } = {}) => {
                 if (action === 'attachment.remove') {
                     const html = embedded.removeEmbedded(message, data, editor.getHTML());
+                    editor.setHTML(html);
                     return updateModel(html);
                 }
 
