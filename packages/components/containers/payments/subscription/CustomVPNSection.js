@@ -48,7 +48,7 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
     return (
         <>
             <Alert>{c('Info')
-                .t`By using ProtonVPN to browser the web, your Internet connection is encrypted to ensure that your navigation is secure. ProtonVPN has servers located in 30+ countries around the world.`}</Alert>
+                .t`By using ProtonVPN to browse the web, your Internet connection is encrypted to ensure that your navigation is secure. ProtonVPN has servers located in 30+ countries around the world.`}</Alert>
             <CyclePromotion model={model} onChange={onChange} />
             <table className="pm-simple-table">
                 <thead>
