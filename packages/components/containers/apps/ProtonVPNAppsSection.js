@@ -13,7 +13,7 @@ const ProtonVPNAppsSection = () => {
                     .t`Download page`}</Href>
             </Block>
             <Alert learnMore="https://protonvpn.com/support/vpn-login/">{c('Info')
-                .t`To connect to ProtonVPN with third-party clients (e.g. Tunnelblick on MacOS or OpenVPN on GNU/Linux), you need specific credentials. to get these credentials, go to the Account settings when logged in at ProtonVPN.`}</Alert>
+                .t`To connect to ProtonVPN with third-party clients (e.g. Tunnelblick on MacOS or OpenVPN on GNU/Linux), you need specific credentials. To get these credentials, go to the Account settings when logged in at ProtonVPN.`}</Alert>
             <Block>
                 <Href url="https://account.protonvpn.com" className="pm-button pm-button--primary">{c('Link')
                     .t`ProtonVPN login`}</Href>
