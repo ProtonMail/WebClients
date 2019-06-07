@@ -9,9 +9,9 @@
                 <i class="history fa fa-reply-all" data-if-is="repliedall"></i>
                 <i class="history fa fa-mail-forward" data-if-is="forwarded"></i>
 
-                <div class="contact message-contact">
+                <div class="contact message-contact flex">
 
-                    <div class="from message-contact-from">
+                    <div class="from message-contact-from mr0-5">
                         <span translate translate-context="Message sender label" translate>From</span>:
                     </div>
 
@@ -70,7 +70,7 @@
 
     <div ng-if="message.expand">
 
-        <div class="message-content">
+        <div class="message-header">
             <div class="recipients-summary">
                 <strong translate-context="Message recipient label" translate>To</strong>:
                 <span
@@ -258,7 +258,7 @@
 
         <events-attachments data-model="message"></events-attachments>
 
-        <div class="frame message-frame" data-embedded-img-loader data-inject-message-media>
+        <div class="message-content frame message-frame" data-embedded-img-loader data-inject-message-media>
             <loader-tag ng-if="message.decrypting === true"></loader-tag>
             <div
                 class="bodyDecrypted email message-body-container"
