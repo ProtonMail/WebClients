@@ -57,14 +57,13 @@ function unsubscribePanel(
         replace: true,
         restrict: 'E',
         template: `
-                <div class="unsubscribePanel-container">
-                    <div class="unsubscribePanel-notice">
-                        <span class="unsubscribePanel-notice-text">${I18N.notice}</span>
-                        <a class="unsubscribePanel-notice-link" href="https://protonmail.com/support/knowledge-base/auto-unsubscribe" target="_blank">${
-                            I18N.kb
-                        }</a>
-                    </div>
-                    <button type="button" class="unsubscribePanel-button pm_button">${I18N.button}</button>
+                <div class="bg-white w100 rounded bordered-container p0-5 mb0-5 flex flex-nowrap">
+                    <icon data-name="email" data-size="16" class=" fill-global-grey mtauto mbauto" aria-hidden="true"></icon>
+                    <span class="pl0-5 pr0-5 flex-item-fluid">${I18N.notice}</span>
+                    <a class="bold mr1" href="https://protonmail.com/support/knowledge-base/auto-unsubscribe" target="_blank">${
+                        I18N.kb
+                    }</a>
+                    <button type="button" class="unsubscribePanel-button link underline bold">${I18N.button}</button>
                 </div>
             `,
         link(scope, element) {

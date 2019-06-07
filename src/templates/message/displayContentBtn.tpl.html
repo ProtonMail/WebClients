@@ -1,14 +1,14 @@
-<section
-    class="displayContentBtn-container"
+<div
+    class="displayContentBtn-container bg-white w100 rounded bordered-container p0-5 mb0-5 flex flex-nowrap"
     ng-class="{
         'displayContentBtn-type-embedded': message.showEmbedded === false,
         'displayContentBtn-type-remote': message.showImages === false}">
-        <div class="displayContentBtn-notice">
-            <span class="displayContentBtn-notice-text"></span>
-        </div>
-
-        <button
-            class="displayContentBtn-button pm_button"
-            translate
-            translate-context="Action">Load</button>
-</section>
+    <icon data-name="shape-insert-image" data-size="16" class="fill-global-grey mtauto mbauto" aria-hidden="true"></icon>
+    <span class="pl0-5 pr0-5  mtauto mbauto flex-item-fluid">
+        <span class="displayContentBtn-notice-text"></span>
+    </span>
+    <button
+        class="link bold underline"
+        translate
+        translate-context="Action">Load</button>
+</div>

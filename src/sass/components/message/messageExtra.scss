@@ -1,47 +1,47 @@
-.messageExtra-container > [class*='-container'] {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 5px 10px 5px 0px;
-    background: darken($tertiary, 4);
-    color: $secondary;
-    font-size: .9em;
-    border-radius: $border-radius;
-    min-height: 40px;
-}
+// .messageExtra-container > [class*='-container'] {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     width: 100%;
+//     padding: 5px 10px 5px 0px;
+//     background: darken($tertiary, 4);
+//     color: $secondary;
+//     font-size: .9em;
+//     border-radius: $border-radius;
+//     min-height: 40px;
+// }
 
 .messageExtra-container > [class*='-container']:not(:last-child) {
     margin-bottom: 5px;
 }
 
-.messageExtra-container > [class*='-container'] [class*='-notice-text'] { font-weight: bold }
-.messageExtra-container > [class*='-container'] > [class*='-notice'] {
-    position: relative;
-    padding-left: 2.2em;
-}
+// .messageExtra-container > [class*='-container'] [class*='-notice-text'] { font-weight: bold }
+// .messageExtra-container > [class*='-container'] > [class*='-notice'] {
+//     position: relative;
+//     padding-left: 2.2em;
+// }
 
-.messageExtra-container > [class*='-container'] > [class*='-notice']::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    display: inline-flex;
-    justify-content: center;
-    font-family: FontAwesome;
-    width: 2.2em;
-    font-size: 1.1em;
-}
+// .messageExtra-container > [class*='-container'] > [class*='-notice']::before {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     height: 100%;
+//     display: inline-flex;
+//     justify-content: center;
+//     font-family: FontAwesome;
+//     width: 2.2em;
+//     font-size: 1.1em;
+// }
 
-.messageExtra-container > [class*='-container'] [class*='-button'] {
-    white-space: nowrap;
-    height: 32px;
-    line-height: 32px;
-    background: $white;
-    flex-shrink: 0;
-}
+// .messageExtra-container > [class*='-container'] [class*='-button'] {
+//     white-space: nowrap;
+//     height: 32px;
+//     line-height: 32px;
+//     background: $white;
+//     flex-shrink: 0;
+// }
 
-.messageExtra-container >  [class*='-container'] a { color: $primary }
+// .messageExtra-container >  [class*='-container'] a { color: $primary }
 
 /* Errors / warning */
 .messageExtra-container > .messageExtra-container-error,
@@ -50,53 +50,53 @@
     border: none;
 }
 
-.messageExtra-container > .messageExtra-container-error {
-    background: $exp;
-    color: $white;
-    fill: $white;
-}
-.messageExtra-container > .messageExtra-container-warning {
-    background: $yellow;
-    color: $secondary;
-    fill: $secondary;
-}
+// .messageExtra-container > .messageExtra-container-error {
+//     background: $exp;
+//     color: $white;
+//     fill: $white;
+// }
+// .messageExtra-container > .messageExtra-container-warning {
+//     background: $yellow;
+//     color: $secondary;
+//     fill: $secondary;
+// }
 
-.messageExtra-container > .messageExtra-container-error a { color: $white }
-.messageExtra-container > .messageExtra-container-warning a { color: $secondary }
+// .messageExtra-container > .messageExtra-container-error a { color: $white }
+// .messageExtra-container > .messageExtra-container-warning a { color: $secondary }
 
 /* displayContentBtn */
 .displayContentBtn-container:not(.displayContentBtn-type-embedded)[data-action="embedded"],
 .displayContentBtn-container:not(.displayContentBtn-type-remote)[data-action="remote"] { display: none }
-.displayContentBtn-container[data-action="embedded"] .displayContentBtn-notice::before { content: "\f03e" }
-.displayContentBtn-container[data-action="remote"] .displayContentBtn-notice::before { content: "\f1c5" }
+// .displayContentBtn-container[data-action="embedded"] .displayContentBtn-notice::before { content: "\f03e" }
+// .displayContentBtn-container[data-action="remote"] .displayContentBtn-notice::before { content: "\f1c5" }
 
 /* messagePgpAttachments-container */
-.messageExtra-container > .messagePgpAttachments-container > [class*='-notice']::before { content: "\f0c6" }
+// .messageExtra-container > .messagePgpAttachments-container > [class*='-notice']::before { content: "\f0c6" }
 
 /* messageSpamScore-container */
-.messageExtra-container > .messageSpamScore-container > [class*='-notice']::before { content: "\f05e" }
+// .messageExtra-container > .messageSpamScore-container > [class*='-notice']::before { content: "\f05e" }
 
 /* unsubscribePanel */
-.messageExtra-container > .unsubscribePanel-container > [class*='-notice']::before { content: "\f1ea" }
-.messageExtra-container > .public-key-found-container > [class*='-notice']::before { content: "\f084" }
-.messageExtra-container > .message-pinning-container > [class*='-notice']::before { content: "\f08d" }
-.messageExtra-container > .message-resign-container > [class*='-notice']::before { content: "\f071" }
-.messageExtra-container > .message-pinning-container .pm_button.link {
-    height: auto;
-    line-height: normal;
-}
+// .messageExtra-container > .unsubscribePanel-container > [class*='-notice']::before { content: "\f1ea" }
+// .messageExtra-container > .public-key-found-container > [class*='-notice']::before { content: "\f084" }
+// .messageExtra-container > .message-pinning-container > [class*='-notice']::before { content: "\f08d" }
+// .messageExtra-container > .message-resign-container > [class*='-notice']::before { content: "\f071" }
+// .messageExtra-container > .message-pinning-container .pm_button.link {
+//     height: auto;
+//     line-height: normal;
+// }
 
 /* readReceiptPanel */
-.messageExtra-container > .readReceiptPanel-container > [class*='-notice']::before { content: "\f0f3" }
+//.messageExtra-container > .readReceiptPanel-container > [class*='-notice']::before { content: "\f0f3" }
 
 /* messageMimeParsing-container */
-.messageExtra-container > .messageMimeParsing-container > [class*='-notice']::before { content: "\f0f6" }
+// .messageExtra-container > .messageMimeParsing-container > [class*='-notice']::before { content: "\f0f6" }
 
-/* messageExpiration-container */
-.messageExtra-container > .messageExpiration-container > [class*='-notice']::before { content: "\f253" }
+// /* messageExpiration-container */
+// .messageExtra-container > .messageExpiration-container > [class*='-notice']::before { content: "\f253" }
 
-/* messageDisplayError-container */
-.messageExtra-container > .messageDisplayError-container > [class*='-notice']::before { content: "\f071" }
+// /* messageDisplayError-container */
+// .messageExtra-container > .messageDisplayError-container > [class*='-notice']::before { content: "\f071" }
 
 /* EO */
 

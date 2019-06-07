@@ -1,16 +1,17 @@
-<section class="messageDisplayError-container">
-    <div ng-if="message.failedDecryption && !message.networkError" class="messageDisplayError-notice">
-        <span class="messageDisplayError-notice-text" translate translate-context="Message decryption error">Decryption error: Decryption of this message's encryption content failed.</span>
-        <a href="#" data-reload-state translate-context="Action to reload the current state" translate>Try again</a>
-    </div>
+<div class="messageDisplayError-container color-white w100 bg-global-warning rounded p0-5 mb0-5 flex flex-nowrap">
+    <icon data-name="attention" data-size="16" class=" fill-white mtauto mbauto" aria-hidden="true"></icon>
+    <span ng-if="message.failedDecryption && !message.networkError" class="messageDisplayError-notice pl0-5 pr0-5 w100 mtauto mbauto flex">
+        <span class="messageDisplayError-notice-text flex-item-fluid" translate translate-context="Message decryption error">Decryption error: Decryption of this message's encryption content failed.</span>
+        <button type="button" class="color-white bold underline" data-reload-state translate-context="Action to reload the current state" translate>Try again</button>
+    </span>
 
-    <div ng-if="!message.failedDecryption && !message.networkError && message.errorInfo" class="messageDisplayError-notice">
+    <span ng-if="!message.failedDecryption && !message.networkError && message.errorInfo" class="messageDisplayError-notice pl0-5 pr0-5 w100 mtauto mbauto">
         <span class="messageDisplayError-notice-text" translate translate-context="Message network error">Sanitization error</span>
-        <a href="#" class="messageDisplayError-btn-report" translate-context="Action to report an error for the message" translate>Report problem</a>
-    </div>
+        <button type="button" class="messageDisplayError-btn-report color-white bold underline mlauto" translate-context="Action to report an error for the message" translate>Report problem</a>
+    </span>
 
-    <div ng-if="message.networkError" class="messageDisplayError-notice">
+    <span ng-if="message.networkError" class="messageDisplayError-notice pl0-5 pr0-5 w100 mtauto mbauto">
         <span class="messageDisplayError-notice-text" translate translate-context="Message network error">Network error: Please check your connection and try again.</span>
-        <a href="#" reload-state translate-context="Action to reload the current state" translate>Try again</a>
-    </div>
-</section>
+        <button type="button" class="color-white bold underline mlauto" reload-state translate-context="Action to reload the current state" translate>Try again</a>
+    </span>
+</div>
