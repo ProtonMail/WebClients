@@ -28,7 +28,6 @@ module.exports = {
             'dropzone/dist/dropzone.css',
             'awesomplete/awesomplete.css',
             'nouislider/distribute/nouislider.css',
-            'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
             'codemirror/lib/codemirror.css',
             'codemirror/addon/lint/lint.css',
             'normalize.css/normalize.css'

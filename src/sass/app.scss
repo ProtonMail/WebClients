@@ -42,7 +42,6 @@ $path-images: "~design-system/assets/img/shared/";
 @import "~dropzone/dist/dropzone.css";
 @import "~awesomplete/awesomplete.css";
 @import "~nouislider/distribute/nouislider.css";
-@import "~malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
 
 //=== 🚀 Setup ==============================//
 //== Base
@@ -110,7 +109,6 @@ $path-images: "~design-system/assets/img/shared/";
 //@import "ui/chooseLayoutBtns";
 @import "ui/slider";
 @import "ui/legends";
-@import "ui/ngScrollbars";
 @import "ui/asSortable";
 @import "ui/customMaskInput";
 @import "ui/copy";

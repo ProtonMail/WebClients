@@ -24,7 +24,6 @@ import security from './security/index';
 
 export default angular.module('protonLazy', [
     'as.sortable',
-    'ngScrollbars',
     'pikaday',
     'ui.indeterminate',
     invoices,
