@@ -24,7 +24,7 @@ module.exports = (config) => {
             mode: 'development',
             module: {
                 rules: [
-                    ...require('../webpack.tasks/js.loader'),
+                    // ...require('../webpack.tasks/js.loader'),
                      // Use a simple css loader because karma-webpack does not work with ours
                     ...require('../webpack.tasks/css.tests.loader'),
                     ...require('../webpack.tasks/templates.loader'),

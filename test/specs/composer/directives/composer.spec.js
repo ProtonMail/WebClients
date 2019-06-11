@@ -24,8 +24,8 @@ describe('composer directive', () => {
     beforeEach(angular.mock.module(MODULE));
 
     beforeEach(angular.mock.module(($provide) => {
-        $provide.service('embedded', () => ({}));
-        $provide.service('attachmentFileFormat', () => ({}));
+        $provide.service('embedded', function() { return {} });
+        $provide.service('attachmentFileFormat', function() { return {} });
     }));
 
     beforeEach(angular.mock.inject(($injector) => {

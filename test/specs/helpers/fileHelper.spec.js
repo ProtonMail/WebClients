@@ -2,7 +2,7 @@ import { toFile } from '../../../src/helpers/imageHelper';
 import { toBase64, readFileAsString, readFileAsBuffer } from '../../../src/helpers/fileHelper';
 import img from '../../media/img';
 
-describe('toBase64', async () => {
+describe('toBase64', () => {
     const type = 'image/png';
     const filename = 'image';
     let file;
@@ -41,7 +41,7 @@ describe('toBase64', async () => {
     });
 });
 
-describe('readFile', async () => {
+describe('readFile', () => {
     const filename = 'image';
     let file;
 
