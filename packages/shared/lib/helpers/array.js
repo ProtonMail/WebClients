@@ -39,3 +39,19 @@ export const uniqueBy = (array, comparator) => {
         return !hasSeen;
     });
 };
+
+/**
+ * Remove an item from an array.
+ * @param {Array} arr
+ * @param {Object} item The item to remove
+ * @returns {Array} copy of the updated array.
+ */
+export const remove = (arr, item) => {
+    const i = arr.indexOf(item);
+    if (i === -1) {
+        return arr;
+    }
+    const result = arr.slice();
+    result.splice(i, 1);
+    return result;
+};
