@@ -35,6 +35,7 @@ module.exports = ({ isProduction, isTranspile = true }, flow) => {
                     '@babel/plugin-syntax-dynamic-import',
                     '@babel/plugin-proposal-object-rest-spread',
                     ['@babel/plugin-proposal-class-properties', { loose: true }],
+                    require('babel-plugin-lodash'),
                     '@babel/plugin-transform-runtime',
                     ...(isProduction ? BABEL_PLUGINS_PRODUCTION : ['react-hot-loader/babel'])
                 ]
