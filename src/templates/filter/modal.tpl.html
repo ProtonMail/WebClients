@@ -110,7 +110,14 @@
                                 </div>
                             </div>
                             <div class="filter-modal-condition-remove">
-                                <button type="button" title="Remove" ng-hide="ctrl.filter.Simple.Conditions.length === 1" ng-click="ctrl.removeCondition(condition)" class="pm_button white">
+                                <button
+                                    type="button"
+                                    title="Remove"
+                                    pt-tooltip-translate="title"
+                                    pt-tooltip-translate-context="Action"
+                                    ng-hide="ctrl.filter.Simple.Conditions.length === 1"
+                                    ng-click="ctrl.removeCondition(condition)"
+                                    class="pm_button white">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>

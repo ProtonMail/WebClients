@@ -27,9 +27,22 @@
                         </label>
                         <toggle class="settingsFilters-sort-toggle small" data-status="filter.Status" data-name="changeCustomFilterStatus" data-id="{{ filter.ID }}"></toggle>
                         <div>
-                            <button class="pm_button link" ng-show="isSimple(filter)" ng-click="editCustomFilter(filter)">Edit</button>
-                            <button class="pm_button link" ng-click="editCustomFilter(filter, true)">Edit sieve</button>
-                            <button class="pm_button link text-red" ng-click="deleteCustomFilter(filter)">Delete</button>
+                            <button
+                                class="pm_button link"
+                                ng-show="isSimple(filter)"
+                                ng-click="editCustomFilter(filter)"
+                                translate-context="Action"
+                                translate>Edit</button>
+                            <button
+                                class="pm_button link"
+                                ng-click="editCustomFilter(filter, true)"
+                                translate-context="Action"
+                                translate>Edit sieve</button>
+                            <button
+                                class="pm_button link text-red"
+                                ng-click="deleteCustomFilter(filter)"
+                                translate-context="Action"
+                                translate>Delete</button>
                         </div>
                     </div>
                 </li>
