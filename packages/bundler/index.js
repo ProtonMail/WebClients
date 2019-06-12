@@ -176,8 +176,7 @@ async function main() {
         collapse: false
     });
 
-    const { context } = await tasks.run();
-    debug(context);
+    await tasks.run();
 
     const now = moment(Date.now());
     const total = now.diff(start, 'seconds');
