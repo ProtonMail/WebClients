@@ -4,7 +4,10 @@ const argv = require('minimist')(process.argv.slice(2));
 const { success, debug } = require('./helpers/log')('proton-bundler');
 
 const defaultHook = [];
-const defaultCustom = () => ({ customConfig: {}, tasks: () => {} });
+const defaultCustom = {
+    config: {},
+    tasks: () => {}
+};
 
 /**
  * Allow custom extend of the deploy process via a config files
@@ -68,7 +71,9 @@ function loadCustomBundler(argv) {
 
         return fromUser(argv);
     } catch (e) {
-        debug(e);
+        debug({
+            'Error loading custom config': e
+        });
         if (e.code !== 'MODULE_NOT_FOUND') {
             throw e;
         }

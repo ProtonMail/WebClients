@@ -6,7 +6,11 @@ const chalk = require('chalk');
 const del = require('del');
 const UpdaterRenderer = require('listr-update-renderer');
 const moment = require('moment');
-const argv = require('minimist')(process.argv.slice(2));
+const argv = require('minimist')(process.argv.slice(2), {
+    string: ['appMode'],
+    boolean: ['lint', 'i18n'],
+    default: { lint: true, i18n: false, appMode: 'bundle' }
+});
 
 const { debug, success, error, about } = require('./lib/helpers/log')('proton-bundler');
 const { bash, script } = require('./lib/helpers/cli');
@@ -59,6 +63,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode }) => 
         },
         {
             title: 'Lint sources',
+            enabled: () => argv.lint !== false,
             task: () => execa('npm', ['run', 'lint'])
         },
         ...configTasks,
@@ -143,8 +148,8 @@ async function main() {
     const isCI = process.env.NODE_ENV_DIST === 'ci';
     const branch = argv.branch;
     const flowType = argv.flow;
-    const forceI18n = argv.i18n || false;
-    const appMode = argv.appMode || 'bundle';
+    const forceI18n = argv.i18n;
+    const appMode = argv.appMode;
 
     debug({ customConfig, argv });
 

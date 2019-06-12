@@ -3,17 +3,17 @@
 CLI tools to bundle Proton web clients for deploys.
 
 Default tasks:
-- Save dependencies (update package-lock.json when we deploy a QA version or release )
+- Save dependencies (_update package-lock.json when we deploy a QA version or release_) cf `--default-branch`
 - Clear previous dist dir
-- Lint app before bundler
+- Lint app before bundler (_we can disable this via_ `--no-lint`) [How to setup](https://github.com/ProtonMail/proton-bundler#Lint-the-app)
 - Setup config for the app
-- Extract current git env (origin branch,tag,commit)
+- Extract current git env (_origin branch,tag,commit_)
 - Pull deploy branch to the dist dir
 - Copy htaccess
-- [beta/prod] Upgrade translations inside the app (json files)
-- Build the app
+- [beta/prod] Upgrade translations inside the app (_json files_) [How to setup](https://github.com/ProtonMail/proton-bundler#Sync-i18n)
+- Build the app [How to setup](https://github.com/ProtonMail/proton-bundler#Build-the-app)
 - Push to the deploy branch
-- Upgrade crowdin with latest translations from the app
+- Upgrade crowdin with latest translations from the app [How to setup](https://github.com/ProtonMail/proton-bundler#Sync-i18n)
 
 ## How to install ?
 
@@ -38,13 +38,29 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--i18n> <--appMo
 - `--api`: Typeof branch to deploy (dev/beta/build/etc.)
 - `--flow`: Type of flow (_Usefull only for WebClient_)
 - `--i18n`: To force the upgrade i18n task inside the app during any deploy (default only for prod/beta if not ci)
+- `--no-lint`: Ignore lint task on deploy
 - `--appMode`: Type of bundle for the app (ex: standalone is an option for protonmail-settings)
-- `--default-branch`: What's the default branch on your repository (usually master)
+- `--default-branch`: Default master, What's the default branch on your repository (usually master, usefull for the package-lock update)
 
 
 ## How to configure
 
 You can create a custom deploy task by using a file `proton.bundler.js` at the root of your app.
+
+### Commands
+
+#### Lint the app
+
+You must have `$ npm run lint` available inside your app
+
+#### Build the app
+
+You must have `$ npm run build` available inside your app
+
+#### Sync i18n
+
+You must have `$ npm run i18n:getlatest` available inside your app.
+You must have `$ npm run i18n:upgrade` available inside your app.
 
 ### Documentation
 
