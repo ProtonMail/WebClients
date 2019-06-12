@@ -11,9 +11,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title donateModal-title-donate" translate translate-context="Title">Release notes</h4>
-                <a data-prefix="v" href="{{::ctrl.articleLink}}" title="{{::ctrl.dateVersion}}" class="infoLink" target="_blank">
-                    More info
-                </a>
+                <a data-prefix="v" href="{{::ctrl.articleLink}}" title="{{::ctrl.dateVersion}}" class="infoLink" target="_blank">More info</a>
             </div>
             <div class="modal-body" lazy-inject="{{::ctrl.changelogPath}}">
             </div>
@@ -25,9 +23,7 @@
                 class="pm_button primary modal-footer-button"
                 ng-click="ctrl.close()"
                 translate
-                translate-context="Action">
-                Close
-            </button>
+                translate-context="Action">Close</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

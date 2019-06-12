@@ -1,13 +1,15 @@
 <contact-key-pinning ng-if="internalKeys.RecipientType === 1"></contact-key-pinning>
 
-<contact-public-key-label class="no-upload-button"
-                          ng-if="UI.items.length && BE.items.length"
-                          data-text-translate="Available Public Keys"
+<contact-public-key-label
+    class="no-upload-button"
+    ng-if="UI.items.length && BE.items.length"
+    data-text-translate="available"
 ></contact-public-key-label>
 
-<contact-public-key-label class="no-upload-button"
-                          ng-if="!UI.items.length && BE.items.length"
-                          data-text-translate="Public Keys"
+<contact-public-key-label
+    class="no-upload-button"
+    ng-if="!UI.items.length && BE.items.length"
+    data-text-translate="public"
 ></contact-public-key-label>
 
 <contact-public-key-table
@@ -18,21 +20,26 @@
     data-enable-delete="false"></contact-public-key-table>
 
 <div class="public-key-controls" ng-if="UI.items.length && BE.hasUntrusted">
-    <button class="pm_button link" type="button" data-action="moveAllToTrusted" translate-context="Action" translate>Add all</button>
+    <button
+        class="pm_button link"
+        type="button"
+        data-action="moveAllToTrusted"
+        translate-context="Action"
+        translate>Add all</button>
 </div>
 
 <contact-public-key-label
     ng-if="!!BE.items.length && UI.items.length"
     id="trusted-public-keys-label"
     class="no-upload-button"
-    data-text-translate="Trusted Public Keys"
+    data-text-translate="trusted"
 ></contact-public-key-label>
 
 <contact-public-key-label
     ng-if="!BE.items.length"
     id="public-keys-label"
     ng-class="{ 'no-upload-button': UI.items.length }"
-    data-text-translate="Public Keys"
+    data-text-translate="public"
 ></contact-public-key-label>
 
 <contact-public-key-table
@@ -43,7 +50,12 @@
     data-enable-delete="true"></contact-public-key-table>
 
 <div class="public-key-controls" ng-if="UI.items.length">
-    <button class="pm_button link" type="button" data-action="add" translate-context="Action" translate>Add key</button>
+    <button
+        class="pm_button link"
+        type="button"
+        data-action="add"
+        translate-context="Action"
+        translate>Add key</button>
 </div>
 
 <input type="file" class="upload-helper" multiple accept=".txt,.asc">
