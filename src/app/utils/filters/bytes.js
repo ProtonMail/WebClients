@@ -1,10 +1,12 @@
 import { BASE_SIZE } from '../../constants';
 
 /* @ngInject */
-function bytes() {
+function bytes(gettextCatalog) {
     const KB = BASE_SIZE;
-    const UNITS = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB'];
     return (bytes, precision = 1) => {
+        const i18n = gettextCatalog.getString('bytes', null, 'Size of a file');
+        const UNITS = [i18n, 'KB', 'MB', 'GB', 'TB', 'PB'];
+
         if (isNaN(parseFloat(bytes)) || !isFinite(bytes) || bytes === 0) {
             return '-';
         }
