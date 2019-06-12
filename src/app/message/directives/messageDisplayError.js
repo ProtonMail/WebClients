@@ -19,7 +19,9 @@ function messageDisplayError(dispatchers) {
                         content: dedentTpl`
 
 
+
                             === Debug stacktrace for the support ===
+                            ${scope.message.errorInfo.message}
                             ${scope.message.errorInfo.stack}
                         `
                     });
