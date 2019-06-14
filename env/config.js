@@ -71,10 +71,6 @@ const getDefaultApiTarget = (defaultType = 'dev') => {
             return type;
         }
 
-        if (/red|alpha/.test(argv.branch || '')) {
-            return 'dev';
-        }
-
         return 'build';
     }
 
