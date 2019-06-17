@@ -14,8 +14,8 @@ const { BUNDLE } = COUPON_CODES;
 const { MAIL, VPN } = PLAN_SERVICES;
 
 const getTitlesI18N = () => ({
-    mailfree: `ProtonMail (${c('Info').t`no subuscription`})`,
-    vpnfree: `ProtonVPN (${c('Info').t`no subuscription`})`,
+    mailfree: `ProtonMail (${c('Info').t`no subscription`})`,
+    vpnfree: `ProtonVPN (${c('Info').t`no subscription`})`,
     plus: 'ProtonMail Plus',
     professional: 'ProtonMail Professional',
     visionary: 'Proton Visionary',

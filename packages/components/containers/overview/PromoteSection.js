@@ -37,7 +37,7 @@ const PromoteSection = ({ subscription, user }) => {
     const MODELS = {
         member: {
             title: c('Title').t`Need help?`,
-            text: c('Info').t`Reach out to your system admnistrator for further assistance and support`,
+            text: c('Info').t`Reach out to your system administrator for further assistance and support`,
             link: '',
             image: '',
             action: c('Action').t`Need help?`
