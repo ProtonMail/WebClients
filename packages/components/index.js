@@ -91,6 +91,7 @@ export { default as Preformatted } from './components/text/Preformatted';
 export { default as EditableText } from './components/editableText/EditableText';
 export { default as LanguageSection } from './containers/general/LanguageSection';
 export { default as ContactsSection } from './containers/general/ContactsSection';
+export { default as AutoSaveContactsToggle } from './containers/general/AutoSaveContactsToggle';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as Pagination } from './components/pagination/Pagination';

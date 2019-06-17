@@ -1,32 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    SubTitle,
-    Row,
-    Field,
-    Label,
-    Toggle,
-    Info,
-    useToggle,
-    useNotifications,
-    useMailSettings,
-    useEventManager,
-    useApiWithoutResult
-} from 'react-components';
-import { updateAutoSaveContacts } from 'proton-shared/lib/api/mailSettings';
+import { SubTitle, Row, Field, Label, AutoSaveContactsToggle, Info, useMailSettings } from 'react-components';
 
 const ContactsSection = () => {
-    const { createNotification } = useNotifications();
-    const { call } = useEventManager();
     const [{ AutoSaveContacts } = {}] = useMailSettings();
-    const { request, loading } = useApiWithoutResult(updateAutoSaveContacts);
-    const { state, toggle } = useToggle(!!AutoSaveContacts);
-    const handleChange = async ({ target }) => {
-        await request(+target.checked);
-        call();
-        toggle();
-        createNotification({ text: c('Success').t`Preference saved` });
-    };
     return (
         <>
             <SubTitle>{c('Title').t`Contacts`}</SubTitle>
@@ -36,7 +13,7 @@ const ContactsSection = () => {
                     <Info url="https://protonmail.com/support/knowledge-base/autosave-contact-list/" />
                 </Label>
                 <Field>
-                    <Toggle id="saveContactToggle" loading={loading} checked={state} onChange={handleChange} />
+                    <AutoSaveContactsToggle autoSaveContacts={!!AutoSaveContacts} id="saveContactToggle" />
                 </Field>
             </Row>
         </>
