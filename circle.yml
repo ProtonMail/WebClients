@@ -2,7 +2,7 @@ version: 2
 jobs:
    build:
      docker:
-       - image: circleci/node:10.3.0-stretch-browsers
+       - image: circleci/node:12.4.0-stretch-browsers
      steps:
        - run: sudo apt-get install -y gawk
        - checkout
