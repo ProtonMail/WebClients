@@ -60,3 +60,41 @@ section: fe-guidelines
         </tr>
     </tbody>
 </table>
+
+<h2>In a <code>progress</code> bar</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+    <div class="w49 pt0-5">
+        <div class="aligncenter">
+
+            <img src="/assets/img/pm-images/contact-export-loader.gif" alt="">
+
+            <progress class="progress-contact w100" max="100" value="0" aria-describedby="description_progress"></progress>
+        
+            <p aria-atomic="true" aria-live="polite" id="description_progress">Decrypting contacts: <span class="js-fakeprogress">0</span>%</p>
+        
+            <p><button type="button" class="pm-button js-reset-progress">Reset</button></p>
+        
+        </div>
+  
+      <ul>
+        <li>Just update the <code>value</code> attribute of the progress bar and the text explaining the action in progress.</li>
+        <li>Please do note the <code>aria-atomic="true" aria-live="polite"</code> on the container describing the current progress (helps to vocalize correctly the description).</li>
+        <li>Please do link <code>progress</code> tag to its description via <code>aria-describedby</code>.</li>
+        <li>No need for <code>aria-busy</code> in this case</li>
+      </ul>
+    </div>
+    <div class="w49 aligncenter flex-self-vcenter">
+      <pre class=" language-markup"><code>&lt;progress 
+  class="<strong>progress-contact w100</strong>" 
+  <strong>aria-describedby="description_progress"</strong>&gt;
+&lt;/progress&gt;
+&lt;p 
+  <strong>aria-atomic="true" aria-live="polite"</strong>
+  <strong>id="description_progress"</strong>&gt;
+  Decrypting contacts: 0%
+&lt;/p&gt;
+</code></pre>
+    </div>
+</div>
+

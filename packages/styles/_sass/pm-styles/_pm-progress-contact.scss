@@ -1,0 +1,37 @@
+$progress-contact-height: 6px !default;
+
+.progress-contact {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+    
+  background: $pm-global-border;
+  // for Edge/IE
+  color: $pm-blue;
+
+  border-radius: #{$progress-contact-height/2};
+  height: $progress-contact-height;
+
+  &::-webkit-progress-bar {
+    background-color: $pm-global-border;
+    border-radius: #{$progress-contact-height/2};
+  }
+
+  &::-webkit-progress-value { 
+    border-radius: #{$progress-contact-height/2};
+    background: $pm-blue;
+    transition: .15s width ease;
+  }
+
+  &::-moz-progress-bar { 
+    border-radius: #{$progress-contact-height/2};
+    background: $pm-blue;
+    transition: .15s width ease;
+  }
+
+  &::-ms-fill {
+    border-color: currentColor;
+  }
+}

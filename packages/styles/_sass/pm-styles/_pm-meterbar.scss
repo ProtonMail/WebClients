@@ -1,6 +1,7 @@
 /*
  * Space remaining bar
  */
+$meterbar-height: 6px !default;
 
 .spacebar-container {
   padding: 1rem 2rem;
@@ -14,25 +15,25 @@
   //-ms-appearance: none;
   appearance: none;
 
-  height: 6px;
-  border-radius: 3px;
+  height: $meterbar-height;
+  border-radius: #{$meterbar-height/2};
   background: var(--bgcolor-spacebar, $black);
 
   &::-webkit-meter-bar {
     background: var(--bgcolor-spacebar, $black);
-    border-radius: 3px;
+    border-radius: #{$meterbar-height/2};
   }
 
   // &::-webkit-meter-optimum-value {
   //   background: $pm-blue; 
-  //   border-radius: 3px;
+  //   border-radius: #{$meterbar-height/2};
   // }
   &::-webkit-meter-optimum-value {
     background: $pm-blue; 
-    border-radius: 3px;
+    border-radius: #{$meterbar-height/2};
   }
   &:-moz-meter-optimum::-moz-meter-bar {
-    border-radius: 3px;
+    border-radius: #{$meterbar-height/2};
     background: $pm-blue;
   }
   

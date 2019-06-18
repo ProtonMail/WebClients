@@ -1167,3 +1167,42 @@ if ( stickyTitle ) {
   mainContainer.addEventListener("scroll", updateStickyTitle );
   updateStickyTitle();
 }
+
+
+
+
+
+function updateFakeProgress() {
+  var progressBar = document.body.querySelector('.progress-contact');
+  var progressText = document.body.querySelector('.js-fakeprogress');
+
+  progressBarValue = Number(progressBar.getAttribute('value'));
+
+  if ( progressBarValue != 100 ) {
+
+    progressBarValue += 20;
+    progressBar.setAttribute('value', progressBarValue);
+    progressText.innerHTML = progressBarValue;
+
+  }
+}
+
+var progressBar = document.body.querySelector('.progress-contact');
+
+if ( progressBar ) {
+  setInterval(updateFakeProgress, 3000 );
+}
+
+function resetProgress() {
+  var progressBar = document.body.querySelector('.progress-contact');
+  var progressText = document.body.querySelector('.js-fakeprogress');
+
+  progressBar.setAttribute('value', 0);
+  progressText.innerHTML = 0;
+}
+
+var buttonResetProgress = document.body.querySelector('.js-reset-progress');
+
+if ( buttonResetProgress ) {
+  buttonResetProgress.addEventListener("click", resetProgress );
+}
