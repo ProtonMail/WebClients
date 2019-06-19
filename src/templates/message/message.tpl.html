@@ -1,4 +1,4 @@
-<article class="message-container mb1" ng-class="getClassNames(message, marked)">
+<article class="message message-container mb1" ng-class="getClassNames(message, marked)">
 
     <div class="message-header flex cursor-pointer" data-toggle-message>
 
@@ -68,11 +68,11 @@
         </div>
     </div>
 
-    <div ng-if="message.expand">
+    <div ng-if="message.expand" class="message-expand-wrapper">
 
         <div class="message-header">
             <div class="recipients-summary">
-                <strong translate-context="Message recipient label" translate>To</strong>:
+                <span translate-context="Message recipient label" translate>To</span>:
                 <span
                     class="recipients-summary-label"
                     ng-repeat="email in recipients() track by $id(email)"

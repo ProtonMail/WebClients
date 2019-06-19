@@ -88,10 +88,10 @@
         }
     }
     .message {
-        border: 1px solid $border;
-        border-radius: 2px;
-        margin: 10px;
-        clear: both;
+        // border: 1px solid $border;
+        // border-radius: 2px;
+        // margin: 10px;
+        // clear: both;
 
         .recipients-details .messageContacts-email { margin-left: .5em; }
 
@@ -99,7 +99,9 @@
             .message-frame,
             .recipients-details-bccGroup,
             .message-contact-sender,
-            .recipients-details-ccGroup { display: none !important }
+            .recipients-details-ccGroup {
+                display: none !important;
+            }
 
             .summary { overflow: hidden }
         }
@@ -133,6 +135,12 @@
             }
         }
         &.open {
+            & > .message-header {
+                padding-bottom: 0;
+            }
+            & > .message-expand-wrapper > .message-header {
+                padding-top: 0;
+            }
             box-shadow: 0 1px 2px rgba(0,0,0,0.1);
             .summary {
                 .meta {
