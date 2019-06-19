@@ -6,7 +6,7 @@ function storageWarningView(storageWarning) {
         restrict: 'E',
         templateUrl: require('../../../templates/user/storageWarningView.tpl.html'),
         link(scope, el) {
-            const link = el[0].querySelector('.link');
+            const link = el[0].querySelector('.storageWarning-link');
 
             const onClick = (e) => {
                 e.preventDefault();
