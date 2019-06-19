@@ -179,7 +179,7 @@ section: design
     <span class="pm-label">
     </span>
     <span>
-        <label for="id_field7">
+        <label for="id_field7" class="inline-flex">
             <input type="checkbox" class="pm-checkbox" id="id_field7">
             <span class="pm-checkbox-fakecheck">
                 <svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
@@ -194,7 +194,7 @@ section: design
     <span class="pm-label">
     </span>
     <span>
-        <label for="id_field_osef">
+        <label for="id_field_osef" class="inline-flex">
             <input type="checkbox" class="pm-checkbox" id="id_field_osef" disabled>
             <span class="pm-checkbox-fakecheck">
                 <svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
@@ -209,7 +209,7 @@ section: design
     <span class="pm-label">
     </span>
     <span>
-        <label for="id_field_indeterminate">
+        <label for="id_field_indeterminate" class="inline-flex">
             <input type="checkbox" class="pm-checkbox" id="id_field_indeterminate">
             <span class="pm-checkbox-fakecheck">
                 <svg viewBox="0 0 16 16" class="pm-checkbox-fakecheck-img" aria-hidden="true" role="img" focusable="false">
@@ -225,12 +225,12 @@ section: design
         Do you speak martian?
     </span>
     <span class="pt0-25">
-        <label for="id_field8" class="mr2">
+        <label for="id_field8" class="mr2 inline-flex">
             <input type="radio" name="martian" class="pm-radio" id="id_field8" value="yaisse" aria-describedby="question">
             <span class="pm-radio-fakeradio"></span> 
             Yes
         </label>
-        <label for="id_field9">
+        <label for="id_field9" class="inline-flex">
             <input type="radio" name="martian" class="pm-radio" id="id_field9" value="nooooo" aria-describedby="question">
             <span class="pm-radio-fakeradio"></span> 
             No
@@ -241,7 +241,7 @@ section: design
     <span class="pm-label">
     </span>
     <span>
-        <label for="id_field_osefbis">
+        <label for="id_field_osefbis" class="inline-flex">
             <input type="radio" class="pm-radio" id="id_field_osefbis" disabled>
             <span class="pm-radio-fakeradio"></span>
             This one is disabled
@@ -251,7 +251,7 @@ section: design
 
 <p><strong class="bigger color-global-warning">⚠⚠</strong> when using radios and checkboxes (design is made by “fake” elements), please do include “real” and “fake” <code>input</code>s in the <code>label</code>, otherwise <strong>people</strong> won’t be able to use the <code>input</code>.</p>
 
-<pre class="language-markup"><code>&lt;<strong>label for="id_of_my_field"</strong>&gt;
+<pre class="language-markup"><code>&lt;<strong>label for="id_of_my_field" class="inline-flex"</strong>&gt;
   &lt;input type="checkbox" class="pm-checkbox" <strong>id="id_of_my_field"</strong>&gt;
   &lt;span class="pm-checkbox-fakecheck"&gt;
     …
@@ -265,12 +265,12 @@ section: design
 <pre class="language-markup"><code>&lt;span class="pm-label" <strong>id="question"</strong>&gt;
   Do you speak martian?
 &lt;/span&gt;
-&lt;label for="id_yes" class="mr2"&gt;
+&lt;label for="id_yes" class="mr2 inline-flex"&gt;
   &lt;input type="radio" name="martian" class="pm-radio" id="id_yes" value="yaisse" <strong>aria-describedby="question"</strong>&gt;
   &lt;span class="pm-radio-fakeradio"&gt;&lt;/span&gt; 
   Yes
 &lt;/label&gt;
-&lt;label for="id_no"&gt;
+&lt;label for="id_no" class="inline-flex"&gt;
   &lt;input type="radio" name="martian" class="pm-radio" id="id_no" value="nooooo" <strong>aria-describedby="question"</strong>&gt;
   &lt;span class="pm-radio-fakeradio"&gt;&lt;/span&gt; 
   No
