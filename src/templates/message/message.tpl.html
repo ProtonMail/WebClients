@@ -1,13 +1,13 @@
 <article class="message-container mb1" ng-class="getClassNames(message, marked)">
 
-    <div class="message-header cursor-pointer" data-toggle-message>
+    <div class="message-header flex cursor-pointer" data-toggle-message>
 
         <div class="summary-left">
             <div class="meta">
 
-                <i class="history fa fa-reply" data-if-is="replied"></i>
+                <!-- <i class="history fa fa-reply" data-if-is="replied"></i>
                 <i class="history fa fa-reply-all" data-if-is="repliedall"></i>
-                <i class="history fa fa-mail-forward" data-if-is="forwarded"></i>
+                <i class="history fa fa-mail-forward" data-if-is="forwarded"></i> -->
 
                 <div class="contact message-contact flex">
 
@@ -40,7 +40,7 @@
 
         </div>
 
-        <div class="summary-right">
+        <div class="summary-right mlauto flex">
             <div class="labels message-summary-labels">
                 <labels-element
                     data-button="remove"
@@ -128,8 +128,8 @@
                         <filter-button data-message="message"></filter-button>
                         <div class="pm_buttons pm-group-button pm-button pm-button--for-icon ">
                             <button class="pm_trigger open-folder " pt-tooltip-translate="Move to" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
-                                <icon data-name="folder" data-size="16" class=" mauto"></icon>
-                                <icon data-name="caret" data-size="12" class=" mauto expand-caret"></icon>
+                                <icon data-name="folder" data-size="16" class=" mauto" aria-hidden="true"></icon>
+                                <icon data-name="caret" data-size="12" class=" mauto expand-caret" aria-hidden="true"></icon>
                                 <span class="sr-only" translate-context="Action" translate>Move to</span>
                             </button>
                             <div class="pm_dropdown right wide pull-left">
@@ -138,8 +138,8 @@
                         </div>
                         <div class="pm_buttons pm-group-button pm-button pm-button--for-icon ">
                             <button class="pm_trigger open-label" pt-tooltip-translate="Label as" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
-                                <icon data-name="label" data-size="16" class=" mauto"></icon>
-                                <icon data-name="caret" data-size="12" class=" mauto expand-caret"></icon>
+                                <icon data-name="label" data-size="16" class=" mauto" aria-hidden="true"></icon>
+                                <icon data-name="caret" data-size="12" class=" mauto expand-caret" aria-hidden="true"></icon>
                                 <span class="sr-only" translate-context="Action" translate>Label as</span>
                             </button>
                             <div class="pm_dropdown right wide pull-left">
@@ -147,7 +147,7 @@
                             </div>
                         </div>
                         <a role="button" href="#" class="pm_trigger pm-group-button pm-button pm-button--for-icon  dropdown-actions-nowrap-more" dropdown pt-tooltip-translate="More" pt-tooltip-translate-context="Action">
-                            <i class="fa fa-angle-down"></i>
+                            <icon data-name="caret" data-size="12" class=" mauto expand-caret" aria-hidden="true"></icon>
                             <span class="sr-only" translate-context="Action" translate>More</span>
                         </a>
                         <div class="pm_dropdown wide dropdown-actions-nowrap right">
@@ -220,7 +220,7 @@
                             pt-tooltip-translate="Reply"
                             pt-tooltip-translate-context="Action"
                             tabindex="0">
-                            <icon data-name="reply" data-size="16" class=" mauto"></icon>
+                            <icon data-name="reply" data-size="16" class=" mauto" aria-hidden="true"></icon>
                             <span class="sr-only" translate-context="Action" translate>Reply</span>
                         </button>
                         <button
@@ -230,7 +230,7 @@
                             pt-tooltip-translate="Reply all"
                             pt-tooltip-translate-context="Action"
                             tabindex="0">
-                            <icon data-name="reply-all" data-size="16" class=" mauto"></icon>
+                            <icon data-name="reply-all" data-size="16" class=" mauto" aria-hidden="true"></icon>
                             <span class="sr-only" translate-context="Action" translate>Reply all</span>
                         </button>
                         <button
@@ -240,7 +240,7 @@
                             pt-tooltip-translate="Forward"
                             pt-tooltip-translate-context="Action"
                             tabindex="0">
-                            <icon data-name="forward" data-size="16" class=" mauto"></icon>
+                            <icon data-name="forward" data-size="16" class=" mauto" aria-hidden="true"></icon>
                             <span class="sr-only" translate-context="Action" translate>Forward</span>
                         </button>
                     </div>

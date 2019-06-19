@@ -27,7 +27,7 @@
                     <span class="flex-item-fluid flex">
                         <states-elements></states-elements>
                         <folders-element conversation="conversation"></folders-element>
-                        <span class="subject-num-message" ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+                        <span class="subject-num-message flex-item-noshrink" ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                         <span class="subject-text mw100 inbl ellipsis">{{ conversation.Subject  | unescape }}</span>
                     </span>
 

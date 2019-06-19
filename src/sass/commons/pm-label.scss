@@ -6,15 +6,15 @@
     background: inherit;
 
     [class*="-label"] {
-        display: flex;
-        background: inherit;
-        align-items: center;
+        // display: flex;
+        // background: inherit;
+        // align-items: center;
         margin-left: .25em;
-        border-radius: 3px;
+        // border-radius: 3px;
         max-width: 8rem;
-        border: 2px solid currentColor;
+        //border: 2px solid currentColor;
         transition: max-width .25s ease;
-        line-height: 1;
+        //line-height: 1;
         max-height: 100% /* Prevent wrong height on Edge ~ row mode */
     }
     [class*="-label"]:last-of-type {margin-right: 0}

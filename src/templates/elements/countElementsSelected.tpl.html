@@ -1,11 +1,13 @@
 <div class="countElementsSelected-container pm-flex-content-vertical-center">
-    <i class="fa fa-check-square countElementsSelected-icon"></i>
+    <span class="flex mlauto mrauto p0-25 rounded50 bg-global-grey">
+        <icon data-name="on" data-size="16" data-fill="white" class="mauto" aria-hidden="true"></icon>
+    </span>
     <number-element-selected
         class="countElementsSelected-title"
         data-number="numberElementChecked"></number-element-selected>
     <div>
         <button
-            class="pm_button
+            class="pm-button
             countElementsSelected-btn-unselect conversationPlaceholder-btn-unselect"
             ng-show="numberElementChecked > 0"
             translate
