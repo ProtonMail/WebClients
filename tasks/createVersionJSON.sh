@@ -11,7 +11,7 @@ function getCommit {
 }
 
 function toJSON {
-    local tpl='{ version: "#version", commit: "#commit" }';
+    local tpl='{ "version": "#version", "commit": "#commit" }';
     local commit=$(getCommit "$1");
     local version=$(getVersion "$2");
     echo "$tpl" | sed "s/#commit/$commit/; s/#version/$version/;"
