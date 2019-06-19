@@ -248,7 +248,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n }) => {
             task(ctx) {
                 const { versionPath, app_version, commit } = ctx.config;
                 const fileName = path.join('dist', versionPath);
-                return bash(`tasks/generateVersionInfo.js ${app_version} ${commit} ${fileName}`);
+                return bash(`tasks/createVersionJSON.sh ${commit} ${app_version} ${fileName}`);
             }
         },
         {
