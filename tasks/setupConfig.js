@@ -32,11 +32,7 @@ const generator = (() => {
         execa.shell(`tasks/generateChangelog.js ./CHANGELOG.md ${fileNameChangelog}`);
     };
 
-    const version = () => {
-        execa.shell(`tasks/generateVersionInfo.js ${CONFIG.app_version} ${CONFIG.commit} ${fileNameVersionInfo}`);
-    };
-
-    return { changelog, version };
+    return { changelog };
 })();
 
 // Debug mode npm start
@@ -48,8 +44,6 @@ if (process.env.NODE_ENV !== 'dist' && env.argv.debug) {
 }
 
 if (process.env.NODE_ENV !== 'dist' && process.env.NODE_ENV_MODE !== 'config') {
-    generator.version();
-
     if (!env.hasEnv() && !env.isWebClient()) {
         console.log();
         console.log(dedent`
