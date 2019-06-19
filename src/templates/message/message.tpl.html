@@ -72,16 +72,18 @@
 
         <div class="message-header">
             <div class="recipients-summary">
-                <span translate-context="Message recipient label" translate>To</span>:
-                <span
-                    class="recipients-summary-label"
-                    ng-repeat="email in recipients() track by $id(email)"
-                    title="{{ ::email | contact:'Address' }}">{{::email | contact: 'Name': true | nameRecipient}}</span>
-                <span
-                    ng-if="::noRecipients()"
-                    class="recipients-summary-label"
-                    translate-context="No recipients to display in the message header"
-                    translate>Undisclosed Recipients</span>
+                <span class="flex">
+                    <span class="opacity-50 flex-self-vcenter container-to" translate-context="Message recipient label" translate>To:</span>
+                    <span
+                        class="recipients-summary-label"
+                        ng-repeat="email in recipients() track by $id(email)"
+                        title="{{ ::email | contact:'Address' }}">{{::email | contact: 'Name': true | nameRecipient}}</span>
+                    <span
+                        ng-if="::noRecipients()"
+                        class="recipients-summary-label"
+                        translate-context="No recipients to display in the message header"
+                        translate>Undisclosed Recipients</span>
+                </span>
             </div>
 
             <div class="recipients-details">
@@ -246,7 +248,7 @@
                     </div>
                 </div>
 
-                <button class="toggleDetails" data-action-message="toggleDetails">
+                <button class="toggleDetails link" data-action-message="toggleDetails">
                     <span class="toggleDetails-label-show" translate translate-context="Action">Show details</span>
                     <span class="toggleDetails-label-hide" translate translate-context="Action">Hide details</span>
                 </button>

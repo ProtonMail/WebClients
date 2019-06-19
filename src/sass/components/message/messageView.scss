@@ -141,7 +141,7 @@
             & > .message-expand-wrapper > .message-header {
                 padding-top: 0;
             }
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            //box-shadow: 0 1px 2px rgba(0,0,0,0.1);
             .summary {
                 .meta {
                     .contact {
@@ -204,8 +204,8 @@
         }
         .summary {
             display: flex;
-            height: 40px;
-            line-height: 40px;
+            // height: 40px;
+            // line-height: 40px;
             background: $tertiary;
             border-radius: $border-radius;
             padding: 0 10px;
@@ -402,16 +402,16 @@
                 }
             }
             .recipients-details {
-                font-size: .9em;
-                line-height: 20px;
-                width: 100%;
+                //font-size: .9em;
+                //line-height: 20px;
+                //width: 100%;
             }
             .recipients-summary {
                 display: block;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                line-height: 20px;
+                //line-height: 20px;
 
                 .recipients-summary-label + .recipients-summary-label::before {
                         content: ', ';
@@ -436,20 +436,20 @@
                 width: 100%;
             }
         }
-        .toggleDetails {
-            color: $primary;
-            cursor: pointer;
-            height: 35px;
-            line-height: 35px; // height of the buttons on the same line
-            display: inline-block;
-            font-size: .9em;
-            border: 0;
-            background: transparent;
-        }
+        // .toggleDetails {
+        //     color: $primary;
+        //     cursor: pointer;
+        //     height: 35px;
+        //     line-height: 35px; // height of the buttons on the same line
+        //     display: inline-block;
+        //     font-size: .9em;
+        //     border: 0;
+        //     background: transparent;
+        // }
         .frame {
-            padding: 15px 30px;
-            zoom: 1;
-            clear: left;
+            padding: 1em;
+            // zoom: 1;
+            // clear: left;
             overflow-x: auto;
             box-sizing: content-box; // to avoid problems in some emails
 
