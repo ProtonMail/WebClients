@@ -6,15 +6,14 @@
     background: inherit;
 
     [class*="-label"] {
-        // display: flex;
-        // background: inherit;
-        // align-items: center;
+        display: flex;
+        background: inherit;
+        align-items: center;
         margin-left: .25em;
-        // border-radius: 3px;
-        max-width: 8rem;
-        //border: 2px solid currentColor;
+        border-radius: 1em;
+        border: 2px solid currentColor;
+        background-color: currentColor;
         transition: max-width .25s ease;
-        //line-height: 1;
         max-height: 100% /* Prevent wrong height on Edge ~ row mode */
     }
     [class*="-label"]:last-of-type {margin-right: 0}
@@ -23,17 +22,13 @@
 
     [class*="-name"] {
         padding: 0 .4rem;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis
     }
 
     [class*="-more"] {
         pointer-events: none;
         overflow: hidden;
         border-left-width: 0 !important;
-        border-radius: 0 3px 3px 0;
-        line-height: 14px;
+        border-radius: 0 1em 1em 0;
         color: rgba(0,0,0,.35);
         max-width: 1.5rem;
         width: 1.5rem;
@@ -54,20 +49,25 @@
 }
 
 .pm_labels[data-format="stack"] {
+
     [class*="-label"]:not(:first-of-type) {
-        max-width: .5rem;
+        max-width: 1rem;
         padding-right: 0;
         overflow: hidden;
         border-left-width: 0 !important;
-        border-radius: 0 3px 3px 0;
+        border-radius: 0 1em 1em 0;
+        background: transparent;
+        height: 1.65em;
+        align-self: center;
     }
 
     [class*="-label"]:not(:first-of-type):hover {
         border-left-width: 2px !important;
-        border-radius: 3px;
-        max-width: 8rem;
-        line-height: 14px;
+        border-radius: 1em;
+        max-width: 15rem;
         padding: 0 .4rem;
+        background: currentColor;
+        height: auto;
     }
 
 }
