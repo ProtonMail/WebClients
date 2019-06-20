@@ -46,13 +46,19 @@ export const INVOICE_TYPE = {
     SUBSCRIPTION: 1,
     CANCELLATION: 2,
     CREDIT: 3,
-    DONATION: 4
+    DONATION: 4,
+    CHARGEBACK: 5,
+    RENEWAL: 6,
+    REFUND: 7,
+    MODIFICATION: 8,
+    ADDITION: 9
 };
 export const INVOICE_STATE = {
     UNPAID: 0,
     PAID: 1,
     VOID: 2,
-    BILLED: 3
+    BILLED: 3,
+    WRITEOFF: 4
 };
 
 export const BASE_SIZE = 1024;
