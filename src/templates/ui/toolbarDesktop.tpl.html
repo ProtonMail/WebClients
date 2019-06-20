@@ -17,7 +17,7 @@
 
     <div class="flex">
         <div id="tour-folder-dropdown" class="flex" ng-class="{disabled: isDisabled()}">
-            <a
+            <button
                 class="pm_trigger p1 open-folder toolbarDesktop-select-folder"
                 data-dropdown
                 data-dropdown-no-auto-close="true"
@@ -25,11 +25,11 @@
                 pt-tooltip-translate="Move to"
                 pt-tooltip-translate-context="Action toolbar"
                 tabindex="0"
-                role="button">
+                type="button">
                 <icon data-name="folder" data-size="16" class="mauto"></icon>
                 <icon data-name="caret" data-size="16" class="mauto"></icon>
                 <span class="sr-only" translate-context="Action toolbar" translate>Move to</span>
-            </a>
+            </button>
             <div class="pm_dropdown wide">
                 <dropdown-folders
                     class="toolbarDesktop-dropdown-folders"
@@ -38,7 +38,7 @@
         </div>
 
         <div id="tour-label-dropdown" class="flex" ng-class="{disabled: isDisabled()}">
-            <a
+            <button
                 class="pm_trigger p1 open-label toolbarDesktop-select-label"
                 data-dropdown
                 data-dropdown-no-auto-close="true"
@@ -46,11 +46,11 @@
                 pt-tooltip-translate="Label as"
                 pt-tooltip-translate-context="Action toolbar"
                 tabindex="0"
-                role="button">
+                type="button">
                 <icon data-name="label" data-size="16" class="mauto"></icon>
                 <icon data-name="caret" data-size="16" class="mauto"></icon>
                 <span class="sr-only" translate-context="Action toolbar" translate>Label as</span>
-            </a>
+            </button>
             <div class="pm_dropdown wide">
                 <dropdown-labels
                     class="toolbarDesktop-dropdown-labels"
