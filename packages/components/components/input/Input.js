@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import { generateUID } from '../../helpers/component';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
+import { omit } from 'proton-shared/lib/helpers/object';
 
 const Input = React.forwardRef((props, ref) => {
-    const { className, error, ...rest } = props;
+    const { className, error, ...rest } = omit(props, ['onPressEnter']);
     const { handlers, statusClasses, status } = useInput(props);
     const [uid] = useState(generateUID('input'));
     return (
@@ -31,7 +32,6 @@ Input.propTypes = {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     id: PropTypes.string,
-    inputRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     name: PropTypes.string,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
