@@ -123,10 +123,10 @@
 
             <all-message-labels ng-if="message.toggleDetails"></all-message-labels>
 
-            <div class="action-row">
+            <div class="action-row mod mb0-5">
 
-                <div class="actions pull-right" ng-if="message.decrypting === false">
-                    <div class="pm-group-buttons">
+                <div class="actions flex pull-right" ng-if="message.decrypting === false">
+                    <div class="pm-group-buttons mr1">
                         <filter-button data-message="message"></filter-button>
                         <div class="pm_buttons pm-group-button pm-button pm-button--for-icon ">
                             <button class="pm_trigger open-folder " pt-tooltip-translate="Move to" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
