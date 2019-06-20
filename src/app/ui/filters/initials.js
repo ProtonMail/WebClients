@@ -4,7 +4,7 @@ function initials() {
 
     const formatString = (input = '') => {
         const [name, name2 = ''] = input.split(' ');
-        if (!name2) {
+        if (!name2 || !/^\w/.test(name2)) {
             return getLetter(name);
         }
 
