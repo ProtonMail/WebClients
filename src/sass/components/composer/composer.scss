@@ -36,6 +36,7 @@
         visibility: hidden;
         bottom: 1rem;
         z-index: 8888;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 
         /* STYLES */
         background:$white;
@@ -271,8 +272,8 @@
           & {
             width: 600px;
             /* STYLES */
-            box-shadow: $box-shadow;
-            border-radius: 2px;
+            //box-shadow: $box-shadow;
+            border-radius: 3px;
             overflow: hidden;
           }
         }

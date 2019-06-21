@@ -1,6 +1,7 @@
 .composerHeader-container {
     background: $composer-header-backgourd;
     color: set-color($composer-header-backgourd, $white);
+    border-bottom: 1px solid #acb0bf;
 }
 
 .composerHeader-subject {
