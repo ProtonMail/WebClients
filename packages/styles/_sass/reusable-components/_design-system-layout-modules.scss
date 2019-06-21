@@ -197,7 +197,12 @@ $list-width-em: 400 !default;
 
 
 /* max-block widths */
-.mw100 { max-width: 100%; }
+
+/* here you may add max-widths % */
+$list-max-widths: 80, 100 !default;
+@each $max-width in $list-max-widths {
+  .mw#{$max-width} { max-width: #{$max-width * 1%}; }
+  }
 
 
 /* here you may add pixel max-widths */
