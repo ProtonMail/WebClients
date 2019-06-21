@@ -55,13 +55,13 @@
         .ccRow .composerInputMeta-overlay-button,
         .bccRow .composerInputMeta-overlay-button { display: none }
 
-        .flex {
-            -webkit-flex:1; /* ipad */
-            flex:1;
-            display:-webkit-flex;
-            display: flex;
-            min-height: 0px; /* trigger height change */
-         }
+        // .flex {
+        //     -webkit-flex:1; /* ipad */
+        //     flex:1;
+        //     display:-webkit-flex;
+        //     display: flex;
+        //     min-height: 0px; /* trigger height change */
+        //  }
 
         .fill {
           -webkit-flex:1; /* ipad */

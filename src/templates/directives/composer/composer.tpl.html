@@ -38,7 +38,7 @@
 
         <composer-subject class="row subjectRow composer-field-Subject"></composer-subject>
     </div>
-    <section class="flex composer-section" ng-form="composeForm{{$index}}">
+    <section class="flex flex-item-fluid flex-column mb1 bordered-container composer-section" ng-form="composeForm{{$index}}">
         <div class="composeEditor fill">
             <composer-ask-embedded class="askEmbedding composer-askEmbedding"></composer-ask-embedded>
 
@@ -53,9 +53,12 @@
                 data-message="message"
                 data-allow-embedded="true"></squire>
         </div>
+
+        <composer-attachments data-model="message"></composer-attachments>
+
     </section>
 
-    <composer-attachments data-model="message"></composer-attachments>
+
 
     <footer class="composer-footer" ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
         <!-- needsClick is required to prevent fastClick (Safari Mobile click bug #4834) -->

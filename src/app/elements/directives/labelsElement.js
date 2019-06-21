@@ -78,7 +78,7 @@ function labelsElement(dispatchers, labelsModel, authentication, $state, contact
             });
 
             build(scope.element);
-            scope.color = ({ Color: color = 'inherit' } = {}) => ({ color: color });
+            scope.color = ({ Color: color = 'inherit' } = {}) => ({ color });
 
             el.on('click', onClick);
 
