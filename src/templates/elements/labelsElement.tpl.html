@@ -3,7 +3,7 @@
       ng-repeat="label in labels track by label.ID"
       data-label-id="{{ ::label.ID }}"
       title="{{ ::label.Name }}"
-      class="badgeLabel-grey-label"
+      class="labelsElement-label badgeLabel-grey-label"
       ng-style="::color(label)">
         <span class="labelsElement-name ellipsis color-white">{{ ::label.Name }}</span>
         <button class="labelsElement-btn-remove flex-item-noshrink" data-label-id="{{::label.ID}}">
