@@ -1,5 +1,5 @@
 <header data-responsive-composer="message" class="composerHeader-container">
-    <span ng-click="unminimize(message);" class="subject composerHeader-subject">{{subject(message)}}</span>
+    <span ng-click="unminimize(message);" class="subject composerHeader-subject ellipsis">{{subject(message)}}</span>
     <div class="composerHeader-actions actions text-right">
         <button
             type="button"
@@ -9,7 +9,8 @@
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Minimize"
             pt-placement="top">
-            <i class="fa fa-minus composerHeader-btn-icon"></i>
+            <icon data-name="minimize" data-size="16" class="mauto" aria-hidden="true"></icon>
+            <span class="sr-only" translate-context="Action" translate>Minimize</span>
         </button>
         <button
             type="button"
@@ -19,7 +20,8 @@
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Expand"
             pt-placement="top">
-            <i class="fa fa-minus composerHeader-btn-icon"></i>
+            <icon data-name="minimize" data-size="16" class="mauto rotateX-180" aria-hidden="true"></icon>
+            <span class="sr-only" translate-context="Action" translate>Expand</span>
         </button>
         <button
             type="button"
@@ -29,7 +31,8 @@
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Fullscreen"
             pt-placement="top">
-            <i class="fa fa-expand composerHeader-btn-icon"></i>
+            <icon data-name="expand" data-size="16" class="mauto" aria-hidden="true"></icon>
+            <span class="sr-only" translate-context="Action" translate>Fullscreen</span>
         </button>
         <button
             type="button"
@@ -40,6 +43,7 @@
             pt-tooltip-translate="Exit fullscreen"
             pt-placement="top">
             <i class="fa fa-compress composerHeader-btn-icon"></i>
+            <span class="sr-only" translate-context="Action" translate>Exit fullscreen</span>
         </button>
         <button
             type="button"
@@ -48,7 +52,8 @@
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Close"
             pt-placement="top">
-            <i class="fa fa-times composerHeader-btn-icon"></i>
+            <icon data-name="off" data-size="16" class="mauto" aria-hidden="true"></icon>
+            <span class="sr-only" translate-context="Action" translate>Close</span>
         </button>
     </div>
 </header>

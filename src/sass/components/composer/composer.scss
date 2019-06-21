@@ -42,9 +42,9 @@
         background:$white;
         will-change: transform;
 
-        header, footer {
-            line-height: $composerRowHeight;
-        }
+        // header, footer {
+        //     line-height: $composerRowHeight;
+        // }
 
         .row {
             line-height: #{$composerRowHeight+1px}; // fixes a zoom bug for Chrome
@@ -273,7 +273,7 @@
             width: 600px;
             /* STYLES */
             //box-shadow: $box-shadow;
-            border-radius: 3px;
+            //border-radius: 2px;
             overflow: hidden;
           }
         }
@@ -351,7 +351,7 @@
         }
 
         .row {
-          border-bottom:1px solid $border;
+          //border-bottom:1px solid $border;
           &.placeholder div{
                     color: $text;
                     overflow: hidden;
@@ -371,18 +371,18 @@
           }
         }
 
-        input, select {
-          font-size: 14px;
-          color: #333;
+        // input, select {
+        //   font-size: 14px;
+        //   color: #333;
 
-        }
+        // }
 
         .meta {
             color: $default-color-light;
-            input, select{
-                border:none;
-                padding:none; /* iOS */
-            }
+            // input, select{
+            //     border:none;
+            //     padding:none; /* iOS */
+            // }
         }
 
         .fromRow { color: $default-color }
@@ -400,11 +400,11 @@
           list-style: none;
         }
 
-        input,select {
-          -webkit-appearance: none; /* DRY */
-          -moz-appearance: none;
-          appearance: none;
-        }
+        // input,select {
+        //   -webkit-appearance: none; /* DRY */
+        //   -moz-appearance: none;
+        //   appearance: none;
+        // }
 
         select::-ms-expand {
             display: none;
@@ -422,11 +422,11 @@
 
 #pm_composer .composer, .squireEditor-loaded {
 
-    footer {
-        line-height: $composerRowHeight;
-        padding: 10px;
-        background: $tertiary;
-        border-top: 1px solid $border;
+    .composer-footer {
+        // line-height: $composerRowHeight;
+        // padding: 10px;
+        // background: $tertiary;
+        // border-top: 1px solid $border;
 
         &.disabled {
 
@@ -439,44 +439,44 @@
             }
         }
 
-        .pm_button {
-            line-height: $composerRowHeight;
-            height: $composerRowHeight;
-            padding: 0 1rem;
-            background: $white;
-            border: 1px solid $border;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            &.primary {
-                background: $primary;
-            }
-            &.disabled {
-                background: black;
-            }
-        }
+        // .pm_button {
+        //     line-height: $composerRowHeight;
+        //     height: $composerRowHeight;
+        //     padding: 0 1rem;
+        //     background: $white;
+        //     border: 1px solid $border;
+        //     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        //     &.primary {
+        //         background: $primary;
+        //     }
+        //     &.disabled {
+        //         background: black;
+        //     }
+        // }
 
-        .composer-btn-encryption {
-            padding-top: 1px;
+        // .composer-btn-encryption {
+        //     padding-top: 1px;
 
-            .fa {
-                font-size: 15px;
-            }
-        }
+        //     .fa {
+        //         font-size: 15px;
+        //     }
+        // }
 
-        .composer-btn-expiration {
-            padding-top: 2px
-        }
-        .composer-btn-expiration svg {
-            fill: $button-color
-        }
-        .composer-btn-expiration:hover svg,
-        .composer-btn-expiration:focus svg {
-            fill: $button-color-focus;
-        }
-        .composer-btn-expiration.primary:hover svg,
-        .composer-btn-expiration.primary:focus svg,
-        .composer-btn-expiration.primary svg {
-            fill: $white;
-        }
+        // .composer-btn-expiration {
+        //     padding-top: 2px
+        // }
+        // .composer-btn-expiration svg {
+        //     fill: $button-color
+        // }
+        // .composer-btn-expiration:hover svg,
+        // .composer-btn-expiration:focus svg {
+        //     fill: $button-color-focus;
+        // }
+        // .composer-btn-expiration.primary:hover svg,
+        // .composer-btn-expiration.primary:focus svg,
+        // .composer-btn-expiration.primary svg {
+        //     fill: $white;
+        // }
 
     }
 
@@ -495,16 +495,16 @@
             padding-right: 10px;
         }
 
-        input,
-        select{
-            height: $composerRowHeight;
-            line-height: $composerRowHeight;
-        }
+        // input,
+        // select{
+        //     height: $composerRowHeight;
+        //     line-height: $composerRowHeight;
+        // }
 
-        select {
-            z-index: 2;
-            background:transparent;
-        }
+        // select {
+        //     z-index: 2;
+        //     background:transparent;
+        // }
 
         .pm_button.link {
             position: absolute;

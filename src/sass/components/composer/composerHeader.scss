@@ -1,29 +1,25 @@
 .composerHeader-container {
     background: $composer-header-backgourd;
     color: set-color($composer-header-backgourd, $white);
-    border-bottom: 1px solid #acb0bf;
 }
 
 .composerHeader-subject {
     width: 22rem;
     max-width: 50%;
-    float:left;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    float: left;
     padding: 0 0 0 10px;
 }
 
 .composerHeader-actions { float:right }
 
 .composerHeader-btn {
-    color: #dadae5 !important;
-    float: left;
-    height: 32px !important;
-    line-height: 32px !important;
-    margin: 0 !important;
-    padding: 0;
-    text-align: center;
-    width: 32px;
+    // color: #dadae5 !important;
+    // float: left;
+    // height: 32px !important;
+    // line-height: 32px !important;
+    // margin: 0 !important;
+    // padding: 0;
+    // text-align: center;
+    // width: 32px;
 }
-.composerHeader-btn-icon { font-size: 14px }
+//.composerHeader-btn-icon { font-size: 14px }

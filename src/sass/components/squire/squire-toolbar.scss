@@ -27,7 +27,7 @@
     flex-wrap: wrap; // Wrap no matter the size, this will prevent the buttons from ever going outside the container
     flex: 1;
     min-height: $composerRowHeight; /* mobile devices */
-    background-color: $tertiary;
+    //background-color: $tertiary;
     border: 1px solid $border;
 
 }

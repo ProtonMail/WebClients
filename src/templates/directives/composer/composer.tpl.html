@@ -1,4 +1,4 @@
-<div class="composer animate composer-container" data-composer-id="{{::message.ID}}">
+<div class="composer animate p0-5 composer-container" data-composer-id="{{::message.ID}}">
 
     <div class="composer-dropzone-wrapper"></div>
 
@@ -57,9 +57,9 @@
 
     <composer-attachments data-model="message"></composer-attachments>
 
-    <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
+    <footer class="composer-footer" ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
         <!-- needsClick is required to prevent fastClick (Safari Mobile click bug #4834) -->
-        <button class="pm_button composer-btn-attachment needsclick"
+        <button class="pm-button pm-button--for-icon composer-btn-attachment needsclick"
             data-action-compose="::message"
             data-action-compose-type="addFile"
             ng-disabled="message.disableOthers() || message !== selected"
@@ -70,12 +70,12 @@
             pt-tooltip-translate="Attachments"
             pt-tooltip-translate-context="Tooltip"
             pt-placement="top">
-            <i class="fa fa-paperclip"></i>
+            <icon data-name="attach" data-size="16" class=" mauto" aria-hidden="true"></icon>
             <span class="sr-only" translate-context="Action" translate>Attachments</span>
         </button>
 
         <button
-            class="pm_button composer-btn-expiration"
+            class="pm-button pm-button--for-icon composer-btn-expiration"
             ng-class="{
                 'active': message.displayPanel && message.panelName == 'expiration',
                 'primary': message.ExpiresIn > 0
@@ -84,14 +84,12 @@
             pt-placement="top"
             pt-tooltip-translate="Expiration time"
             pt-tooltip-translate-context="Action">
-            <svg height="14" width="14" viewBox="0 0 14 14" role="img" focusable="false" aria-hidden="true">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
-            </svg>
+            <icon data-name="expiration" data-size="16" class=" mauto" aria-hidden="true"></icon>
             <span class="sr-only" translate-context="Action" translate>Expiration time</span>
         </button>
 
         <button
-            class="pm_button composer-btn-encryption"
+            class="pm-button pm-button--for-icon composer-btn-encryption"
             ng-class="{
                 'active': message.displayPanel && message.panelName == 'encrypt',
                 'primary': message.isEO()
@@ -100,33 +98,33 @@
             pt-placement="top"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Encryption">
-            <i class="fa fa-lock"></i>
+            <icon data-name="lock" data-size="16" class=" mauto" aria-hidden="true"></icon>
             <span class="sr-only" translate-context="Action" translate>Encryption</span>
         </button>
 
         <div class="pull-right">
-            <composer-time class="desktopOnly"></composer-time>
+            <composer-time class="desktopOnly mtauto mbauto"></composer-time>
             <button
-                class="pm_button composer-btn-discard"
+                class="pm-button pm-button--for-icon composer-btn-discard"
                 ng-disabled="message.disableDiscard()"
                 pt-tooltip-translate="Delete draft"
                 pt-tooltip-translate-context="Action"
                 pt-placement="top">
-                <i class="fa fa-trash-o"></i>
+                <icon data-name="trash" data-size="16" class=" mauto" aria-hidden="true"></icon>
                 <span class="composer-btn-discard-text" translate translate-context="Action">Discard</span>
             </button>
 
             <button
-                class="pm_button composer-btn-save"
+                class="pm-button pm-button--for-icon composer-btn-save"
                 ng-disabled="message.disableSave() || message !== selected"
                 pt-tooltip-translate="Save"
                 pt-placement="top"
                 pt-tooltip-translate-context="Action">
-                <i class="fa fa-floppy-o"></i>
+                <icon data-name="save" data-size="16" class=" mauto" aria-hidden="true"></icon>
                 <span class="composer-btn-save-text" translate translate-context="Action">Save</span>
             </button>
             <btn-send-message
-                class="pm_button primary mobileFull composer-btn-send"
+                class="pm-button-blue mobileFull composer-btn-send"
                 data-message="message"></btn-send-message>
         </div>
     </footer>
