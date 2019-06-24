@@ -1,40 +1,64 @@
 <div class="dropdown-folder-container">
-    <div class="dropdown-folder-title">
-        <p translate translate-context="title">Move to</p>
+
+    <div class="dropdown-folder-title p1">
+        <p translate translate-context="title" class="m0">Move to</p>
     </div>
-    <label class="dropdown-folder-search">
-        <i class="fa fa-search dropdown-folder-search-icon"></i>
-        <input
-            class="dropdown-folder-search-input"
-            type="search"
-            placeholder-translate="Filter folders"
-            placeholder-translate-context="Placeholder"
-            ng-model="searchValue"
-            ng-minlength="1">
+
+    <label class="flex flex-spacebetween mb1 pl1 pr1">
+        <icon data-name="search" fill="currentColor" class="mr0-5"></icon>
+        <div>
+            <input
+                class="dropdown-folder-search-input"
+                type="search"
+                placeholder-translate="Filter folders"
+                placeholder-translate-context="Placeholder"
+                ng-model="searchValue"
+                ng-minlength="1">
+        </div>
     </label>
-    <div class="dropdown-folder-fullwidth scrollbox-container" ng-if="labels.length > 0">
-        <ul class="scrollbox-container-group">
-            <li
-                class="dropdown-folder-scrollbox-group-item"
-                ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue})) track by label.ID">
-                <button class="dropdown-folder-scrollbox-group-item-button" data-folder-id="{{ ::label.ID }}">
-                    <div>
-                        <i class="fa dropdown-folder-scrollbox-group-item-icon" ng-class="label.className" ng-style="::color(label)"></i>
-                        <span class="ellipsis">{{ ::label.Name }}</span>
-                    </div>
-                </button>
-            </li>
-            <li
-                class="scrollbox-container-group-item-empty"
-                ng-if="filteredLabels.length === 0"
-                translate translate-context="Info">no folder found</li>
-        </ul>
-    </div>
-    <div class="dropdown-folder-create">
-        <button class="dropdown-folder-create-button">
-            <span
-                translate-context="Action"
-                translate>Create a new folder</span>
-            <i class="dropdown-folder-create-value">{{searchValue}}</i></button>
-    </div>
+
+    <ul class="dropDown-contentInner unstyled mt0-5 mb0-5">
+        <li
+            class="dropDown-item alignleft"
+            ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue})) track by label.ID">
+
+            <button class="w100 pt0-5 pb0-5" data-folder-id="{{ ::label.ID }}">
+                <div class="flex w100">
+                    <icon
+                        data-name="folder"
+                        class="mr0-5 dropdown-label-scrollbox-label-icon"
+                        ng-style="::color(label, 'fill')"></icon>
+                    <span class="ellipsis alignleft mw80">{{ ::label.Name }}</span>
+                </div>
+            </button>
+        </li>
+
+        <li
+            class="dropDown-item"
+            ng-repeat="label in (filteredLabels2 = (mailboxes | filter: {Name: searchValue})) track by label.ID">
+
+            <button class="w100 pt0-5 pb0-5" data-folder-id="{{ ::label.ID }}">
+                <div class="flex w100">
+                    <icon
+                        data-name="{{::label.icon}}"
+                        class="mr0-5 dropdown-label-scrollbox-label-icon"></icon>
+                    <span class="ellipsis alignleft">{{ ::label.Name }}</span>
+                </div>
+            </button>
+        </li>
+
+        <li
+            class="dropDown-item "
+            ng-if="!filteredLabels.length && !filteredLabels2.length"
+            translate
+            translate-context="Info">no folder found</li>
+    </ul>
+
+    <button
+        class="pm-button--link disabled-if-network-activity w100 dropdown-folder-create-button p1 mb0-5 mt0-5">
+        <span
+            translate-context="Action"
+            translate>Create a new folder</span>
+        <i class="dropdown-folder-create-value">{{searchValue}}</i>
+    </button>
 </div>

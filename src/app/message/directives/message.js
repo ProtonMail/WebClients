@@ -319,16 +319,6 @@ function message(
             // TODO need review with label dropdown
             scope.getMessage = () => [scope.message];
 
-            /**
-             * Method call when the user submit some labels to apply to this message
-             * @param {Array} labels
-             * @param {Boolean} alsoArchive
-             */
-            scope.saveLabels = (labels, alsoArchive) => {
-                const messages = [scope.message];
-                dispatcher.messageActions('label', { messages, labels, alsoArchive });
-            };
-
             scope.$on('$destroy', unsubscribe);
         }
     };

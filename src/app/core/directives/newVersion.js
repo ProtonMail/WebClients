@@ -1,9 +1,18 @@
+import dedent from '../../../helpers/dedent';
+
 /* @ngInject */
 function newVersion(dispatchers, AppModel, gettextCatalog) {
     const I18N = {
         version: (version) =>
             gettextCatalog.getString('New version {{ version }} available', { version }, 'New version'),
         reload: gettextCatalog.getString('Reload Tab', null, 'New version')
+    };
+
+    const template = (version) => {
+        return dedent`<div class="block-info-standard">
+            <p class="newVersion-txt">${I18N.version(version)}</p>
+            <a data-action="reload" class="newVersion-link">${I18N.reload}</a>
+        </div>`;
     };
 
     return {
@@ -15,20 +24,11 @@ function newVersion(dispatchers, AppModel, gettextCatalog) {
                 el[0].innerHTML = '';
 
                 if (!version) {
-                    return;
+                    return el[0].setAttribute('hidden', true);
                 }
 
-                const a = document.createElement('a');
-                a.textContent = I18N.reload;
-                a.className = 'newVersion-link';
-                a.dataset.action = 'reload';
-
-                const p = document.createElement('p');
-                p.textContent = I18N.version(version);
-                p.className = 'newVersion-text';
-
-                el[0].appendChild(p);
-                el[0].appendChild(a);
+                el[0].removeAttribute('hidden');
+                el[0].innerHTML = template(version);
             };
 
             on('AppModel', (e, { type, data = {} }) => {

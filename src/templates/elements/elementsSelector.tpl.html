@@ -1,24 +1,28 @@
 <div class="elements-selector" ng-class="{disabled: !conversations.length}" >
     <div class="elements-selector-check">
-        <label class="elements-selector-label">
-            <custom-checkbox
-                class="elements-selector-label"
-                ng-class="{disabled: !conversations.length}"
-                for="selectAll"
-                pt-tooltip-translate="Select messages"
-                pt-tooltip-translate-context="Action"
-                data-custom-id="selectAll"
-                data-custom-name="selectAll"
-                data-custom-class="elements-selector-checkbox element-selector-input"
-                data-custom-ng-checked="checkedSelectorState() && conversations.length"
-                data-custom-ng-click="$event.stopPropagation()"
-                data-custom-value="all"
-                data-custom-pt-select-elements
-                data-custom-ng-disabled="!conversations.length"></custom-checkbox>
-        </label>
+        <custom-checkbox
+            class="elements-selector-label"
+            ng-class="{disabled: !conversations.length}"
+            for="selectAll"
+            pt-tooltip-translate="Select messages"
+            pt-tooltip-translate-context="Action"
+            data-custom-id="selectAll"
+            data-custom-name="selectAll"
+            data-custom-class="elements-selector-checkbox element-selector-input"
+            data-custom-ng-checked="checkedSelectorState() && conversations.length"
+            data-custom-ng-click="$event.stopPropagation()"
+            data-custom-value="all"
+            data-custom-pt-select-elements
+            data-custom-ng-disabled="!conversations.length"></custom-checkbox>
     </div>
-    <a class="inheritPadding pm_trigger elements-selector-trigger-dropdown" dropdown ng-class="{disabled: !conversations.length}"  ng-if="!idDefined() || viewLayout === 0">
-        <icon data-name="caret" data-size="16" class="elements-selector-trigger-dropdown-fa-angle-down"></icon>
-    </a>
-    <span class="element-selector-set-scope pm_dropdown"></span>
+
+    <dropdown-container class="elementsSelector-dropdown">
+        <dropdown-button>
+            <icon data-name="caret"></icon>
+        </dropdown-button>
+
+        <dropdown-content>
+            <ul class="unstyled mt0-5 mb0-5 element-selector-set-scope"></ul>
+        </dropdown-content>
+    </dropdown-container>
 </div>

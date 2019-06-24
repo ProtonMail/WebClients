@@ -27,7 +27,12 @@ function ElementsController(
     cacheBase64,
     tools
 ) {
-    const { on, unsubscribe, dispatcher } = dispatchers(['elements', 'messageActions', 'message.open']);
+    const { on, unsubscribe, dispatcher } = dispatchers([
+        'elements',
+        'messageActions',
+        'message.open',
+        'requestElements'
+    ]);
     let unbindWatcherElements;
     const MINUTE = 60 * 1000;
     const { NumMessagePerPage, MessageButtons } = mailSettingsModel.get();
@@ -162,6 +167,20 @@ function ElementsController(
         }
         return LabelIDs.some((label) => label === MAILBOX_IDENTIFIERS.starred);
     }
+
+    on('requestElements', (e, { type, data = {} }) => {
+        if (type === 'get.selection') {
+            $scope.$applyAsync(() => {
+                dispatcher.requestElements('give.selection', getElementsSelected());
+            });
+        }
+        if (type === 'saveLabels') {
+            $scope.saveLabels(data.labels, data.alsoArchive);
+        }
+        if (type === 'moveTo') {
+            $scope.move(data.mailbox, data.folderID);
+        }
+    });
 
     $scope.startWatchingEvent = () => {
         let isOpened = !!$state.params.id;

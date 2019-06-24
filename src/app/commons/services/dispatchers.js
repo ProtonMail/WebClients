@@ -89,6 +89,20 @@ function dispatchers($rootScope) {
         };
 
         /**
+         * Register a listener once
+         * Must call unsubscribe in order to clean the listeners array.
+         * @param {String} type
+         * @param {Function} cb
+         */
+        const once = (type, cb) => {
+            const callback = !verbose ? cb : log(type, cb);
+            const unsubscribe = $rootScope.$on(type, (...arg) => {
+                callback(...arg);
+                unsubscribe();
+            });
+        };
+
+        /**
          * Unsubscribe from all listeners.
          */
         const unsubscribe = () => {
@@ -96,7 +110,7 @@ function dispatchers($rootScope) {
             listeners.length = 0;
         };
 
-        return { dispatcher, on, unsubscribe };
+        return { dispatcher, on, once, unsubscribe };
     };
 }
 export default dispatchers;

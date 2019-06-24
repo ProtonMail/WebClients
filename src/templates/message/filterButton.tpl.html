@@ -1,38 +1,87 @@
-<div class="pm_buttons pm-group-button pm-button pm-button--for-icon ">
-    <button class="pm_trigger open-label" pt-tooltip-translate="Custom Filter" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip"  dropdown dropdown-no-auto-close="true">
-        <icon data-name="filter" data-size="16" class=" mauto"></icon>
-        <icon data-name="caret" data-size="12" class=" mauto expand-caret"></icon>
-        <span class="sr-only" translate-context="Action" translate>Custom Filter</span>
-    </button>
-    <div class="pm_dropdown wide">
-        <ul class="filterButton-container">
-            <li><b translate-context="Filter message" translate>Filter on:</b></li>
-            <li class="filterButton-item">
-                <label class="filterButton-label">
-                <span class="filterButton-label-text" translate-context="Filter message" translate>Subject</span>
-                <custom-checkbox class="filterButton-checkbox" data-custom-ng-model="model.subject"></custom-checkbox>
-                </label>
-            </li>
-            <li class="filterButton-item">
-                <label class="filterButton-label">
-                    <span class="filterButton-label-text" translate-context="Filter message" translate>Sender</span>
-                    <custom-checkbox class="filterButton-checkbox" data-custom-ng-model="model.sender"></custom-checkbox>
-                </label>
-            </li>
-            <li class="filterButton-item">
-                <label class="filterButton-label">
-                    <span class="filterButton-label-text" translate-context="Filter message" translate>Recipient</span>
-                    <custom-checkbox class="filterButton-checkbox"  data-custom-ng-model="model.recipient"></custom-checkbox>
-                </label>
-            </li>
-            <li class="filterButton-item">
-                <label class="filterButton-label"><span class="filterButton-label-text" translate-context="Filter message" translate>Attachments</span>
-                    <custom-checkbox class="filterButton-checkbox" data-custom-ng-model="model.attachments"></custom-checkbox>
-                </label>
-            </li>
-        </ul>
-        <footer class="filterButton-footer">
-            <button class="pm_button primary filterButton-btn-next" translate-context="Filter message" translate>Next</button>
-        </footer>
-    </div>
+<div class="filterButton-container">
+    <dropdown-container data-position="left">
+        <dropdown-button
+            pt-tooltip-translate="Custom Filter"
+            pt-tooltip-translate-context="Action"
+            pt-tooltip-translate-comment="Tooltip">
+            <icon data-name="filter" data-size="16" class="mauto"></icon>
+            <icon data-name="caret" data-size="16" class="mauto"></icon>
+            <span class="sr-only" translate-context="Action toolbar" translate>Custom Filter</span>
+        </dropdown-button>
+
+        <dropdown-content>
+            <div class="p1">
+                <ul class="unstyled mt0-5 mb0-5">
+
+                    <li class="dropDown-item">
+                        <b
+                            class="pt0-5 pb0-5"
+                            translate-context="Filter message"
+                            translate>Filter on:</b>
+                    </li>
+
+                    <li class="dropDown-item">
+                        <label class="filterButton-label flex flex-spacebetween pt0-5 pb0-5">
+                            <span
+                                class="filterButton-label-text"
+                                translate-context="Filter message"
+                                translate>Subject</span>
+                            <div>
+                                <custom-checkbox
+                                    class="filterButton-checkbox"
+                                    data-custom-ng-model="model.subject"></custom-checkbox>
+                            </div>
+                        </label>
+                    </li>
+
+                    <li class="dropDown-item">
+                        <label class="filterButton-label flex flex-spacebetween pt0-5 pb0-5">
+                            <span
+                                class="filterButton-label-text"
+                                translate-context="Filter message"
+                                translate>Sender</span>
+                            <div>
+                                <custom-checkbox
+                                    class="filterButton-checkbox"
+                                    data-custom-ng-model="model.sender"></custom-checkbox>
+                            </div>
+                        </label>
+                    </li>
+
+                    <li class="dropDown-item">
+                        <label class="filterButton-label flex flex-spacebetween pt0-5 pb0-5">
+                            <span
+                                class="filterButton-label-text"
+                                translate-context="Filter message"
+                                translate>Recipient</span>
+                            <div>
+                                <custom-checkbox
+                                    class="filterButton-checkbox"
+                                    data-custom-ng-model="model.recipient"></custom-checkbox>
+                            </div>
+                        </label>
+                    </li>
+
+                    <li class="dropDown-item">
+                        <label class="filterButton-label flex flex-spacebetween pt0-5 pb0-5">
+                            <span
+                                class="filterButton-label-text"
+                                translate-context="Filter message"
+                                translate>Attachments</span>
+                            <div>
+                                <custom-checkbox
+                                    class="filterButton-checkbox"
+                                    data-custom-ng-model="model.attachments"></custom-checkbox>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+
+                <button
+                    class="pm-button-blue  filterButton-btn-next w100"
+                    translate-context="Filter message"
+                    translate>Next</button>
+            </div>
+        </dropdown-content>
+    </dropdown-container>
 </div>

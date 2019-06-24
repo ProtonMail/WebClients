@@ -65,9 +65,11 @@ import readReceiptPanel from './directives/readReceiptPanel';
 import readReceiptModel from './factories/readReceiptModel';
 import recipientsFormator from './services/recipientsFormator';
 import cacheBase64 from './factories/cacheBase64';
+import messageOptions from './directives/messageOptions';
 
 export default angular
     .module('proton.message', ['ngSanitize', 'proton.contact', 'proton.squire'])
+    .directive('messageOptions', messageOptions)
     .factory('cacheBase64', cacheBase64)
     .factory('readReceiptModel', readReceiptModel)
     .directive('readReceiptPanel', readReceiptPanel)

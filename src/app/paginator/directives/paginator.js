@@ -58,46 +58,44 @@ function paginator(dispatchers, $stateParams, paginationModel) {
             totalItems: '='
         },
         link(scope, el) {
-            const { on, unsubscribe } = dispatchers();
-
-            scope.pages = buildPageList(paginationModel.getMaxPage());
             scope.page = ~~$stateParams.page || 1;
-            const rawClassNames = el[0].className; // create a ghost as we need to update them later (onLoad)
-            el[0].className += ` ${buildClassNames(scope)}`;
 
-            const $next = el[0].querySelector('.paginator-btn-next');
-            const $previous = el[0].querySelector('.paginator-btn-previous');
-            const $dropdown = el[0].querySelector('.paginator-dropdown-list');
-            const onNext = onAction('next');
-            const onPrevious = onAction('previous');
+            scope.$applyAsync(() => {
+                const { on, unsubscribe } = dispatchers();
 
-            const onSelect = (e) => {
-                e.preventDefault();
-                const { target } = e;
+                scope.pages = buildPageList(paginationModel.getMaxPage());
+                const rawClassNames = el[0].className; // create a ghost as we need to update them later (onLoad)
+                el[0].className += ` ${buildClassNames(scope)}`;
 
-                if (target.classList.contains('paginator-dropdown-item')) {
+                const $next = el[0].querySelector('.paginator-btn-next');
+                const $previous = el[0].querySelector('.paginator-btn-previous');
+                const $dropdownBtn = el.find('.paginator-dropdown');
+                const onNext = onAction('next');
+                const onPrevious = onAction('previous');
+
+                const onClickPage = ({ target }) => {
                     paginationModel.to({ page: +target.getAttribute('data-value') });
-                }
-            };
+                };
 
-            $next.addEventListener('click', onNext, false);
-            $previous.addEventListener('click', onPrevious, false);
-            $dropdown.addEventListener('click', onSelect, false);
+                $next.addEventListener('click', onNext, false);
+                $previous.addEventListener('click', onPrevious, false);
+                $dropdownBtn.on('click', onClickPage);
 
-            on('app.cacheCounters', (event, { type, data }) => {
-                if (type === 'refresh.currentState') {
-                    scope.$applyAsync(() => {
-                        scope.pages = buildPages(data.value);
-                        el[0].className = `${rawClassNames} ${buildClassNames(scope)}`;
-                    });
-                }
-            });
+                on('app.cacheCounters', (event, { type, data }) => {
+                    if (type === 'refresh.currentState') {
+                        scope.$applyAsync(() => {
+                            scope.pages = buildPages(data.value);
+                            el[0].className = `${rawClassNames} ${buildClassNames(scope)}`;
+                        });
+                    }
+                });
 
-            scope.$on('$destroy', () => {
-                $next.removeEventListener('click', onNext);
-                $previous.removeEventListener('click', onPrevious);
-                $dropdown.removeEventListener('click', onSelect, false);
-                unsubscribe();
+                scope.$on('$destroy', () => {
+                    $next.removeEventListener('click', onNext);
+                    $previous.removeEventListener('click', onPrevious);
+                    $dropdownBtn.off('click', onClickPage);
+                    unsubscribe();
+                });
             });
         }
     };

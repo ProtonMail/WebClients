@@ -91,9 +91,6 @@ function actionMessage(dispatchers, downloadFile, mimeMessageBuilder, networkAct
                                 config: {
                                     message: scope.message,
                                     content: getMessageContent(scope.message, el)
-                                },
-                                cancel() {
-                                    printModal.deactivate();
                                 }
                             }
                         });
@@ -103,10 +100,7 @@ function actionMessage(dispatchers, downloadFile, mimeMessageBuilder, networkAct
                     case 'viewPgp': {
                         pgpModal.activate({
                             params: {
-                                message: scope.message,
-                                cancel() {
-                                    pgpModal.deactivate();
-                                }
+                                message: scope.message
                             }
                         });
                         break;

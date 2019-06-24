@@ -1,45 +1,76 @@
 <li class="navigationUser mlauto mtauto mbauto relative">
 
-    <button class="increase-surface-click color-white inline-flex dropDown-logout-button pm_trigger" dropdown>
-        <span class="alignright">
-            <span class="bl">{{ displayName || email }}</span>
-            <span class="bl smaller m0 opacity-30 lh100">{{ email }}</span>
-        </span>
+    <dropdown-container data-position="right">
 
-        <icon
-            data-name="caret"
-            aria-hidden="true"
-            data-size="12"
-            class="flex-item-noshrink ml0-5 mr0-5 expand-caret mtauto mbauto"></icon>
-        <span class="mtauto mbauto bordered rounded50 p0-5 inbl opacity-30 dropDown-logout-initials">{{ displayName | initials }}</span>
-    </button>
+        <dropdown-button class="navigationUser-button">
+            <div class="flex">
+                <span class="alignright">
+                    <span class="bl">{{ displayName || email }}</span>
+                    <span class="bl smaller m0 opacity-30 lh100">{{ email }}</span>
+                </span>
 
-    <span class="navigationUser-newVersion-info"></span>
-    <span class="pm_dropdown navigationUser-dropdown wide right">
-        <span class="navigationUser-head">
-            <strong class="navigationUser-head-display-name" title="{{ displayName }}">{{ displayName }}</strong>
-            <span class="navigationUser-head-email" title="{{ email }}">{{ email }}</span>
-            <span class="navigationUser-head-organization" title="{{ organization.DisplayName }}">{{ organization.DisplayName }}</span>
-        </span>
+                <div class="flex mlauto">
+                    <icon
+                        data-name="caret"
+                        aria-hidden="true"
+                        data-size="12"
+                        class="flex-item-noshrink ml0-5 mr0-5 expand-caret mtauto mbauto"></icon>
+                    <span class="mtauto mbauto bordered rounded50 p0-5 inbl opacity-30 dropDown-logout-initials">{{ displayName | initials }}</span>
+                </div>
+            </div>
+        </dropdown-button>
 
-        <div class="navigationUser-newVersion-container" data-new-version></div>
+        <dropdown-content>
+            <ul class="unstyled mt0-5 mb0-5">
 
-        <button class="navigationUser-help" ng-if="wizardEnabled" data-display-wizard-button>
-            <i class="fa fa-magic"></i>
-            <span translate translate-context="Action">Tutorial</span>
-        </button>
+                <li class="dropDown-item p1 flex flex-column">
+                    <strong title="{{ displayName }}">{{ displayName }}</strong>
+                    <span title="{{ email }}">{{ email }}</span>
+                    <span title="{{ organization.DisplayName }}">{{ organization.DisplayName }}</span>
+                </li>
 
-        <a class="navigationUser-help" target="_blank" href="https://protonmail.com/support">
-            <i class="fa fa-life-ring"></i>
-            <span translate translate-context="Action">Help &amp; answers</span>
-        </a>
-        <a class="navigationUser-help" target="_blank" href="https://shop.protonmail.com">
-            <i class="fa fa-shopping-cart"></i>
-            <span translate translate-context="Action">ProtonMail Shop</span>
-        </a>
-        <a ui-sref="login" class="pm_button primary text-center navigationUser-logout" translate translate-context="Action">Logout</a>
-        <app-version
-            class="navigationUser-version text-center"
-            data-prefix="ProtonMail "></app-version>
-    </span>
+                <li class="dropDown-item p1" data-new-version></li>
+
+                <li class="dropDown-item pl1 pr1">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        ng-if="wizardEnabled"
+                        data-display-wizard-button>
+                        <icon data-name="settings"></icon>
+                        <span translate translate-context="Action">Tutorial</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item pt0-5 pb0-5 pl1 pr1">
+                    <a
+                        class="w100 pm-button--link p0 navigationUser-link"
+                        target="_blank"
+                        href="https://protonmail.com/support">
+                        <icon data-name="support1"></icon>
+                        <span translate translate-context="Action">Help &amp; answers</span>
+                    </a>
+                </li>
+
+                <li class="dropDown-item pt0-5 pb0-5 pl1 pr1">
+                    <a
+                        class="w100 pm-button--link p0 navigationUser-link"
+                        target="_blank"
+                        href="https://shop.protonmail.com">
+                        <icon data-name="shop"></icon>
+                        <span translate translate-context="Action">ProtonMail Shop</span>
+                    </a>
+                </li>
+
+                <li class="dropDown-item p1 flex">
+                    <a
+                        ui-sref="login"
+                        class="w100 pm-button--primary aligncenter navigationUser-logout"
+                        translate
+                        translate-context="Action">Logout</a>
+                </li>
+
+            </ul>
+        </dropdown-content>
+    </dropdown-container>
+
 </li>

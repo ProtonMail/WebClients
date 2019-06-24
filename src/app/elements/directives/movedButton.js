@@ -19,14 +19,10 @@ function movedButton($state, gettextCatalog, tools, translator) {
         restrict: 'E',
         replace: true,
         scope: {},
-        template: `
-            <button class="movedButton-container">
-                <div>
-                    <i class="movedButton-icon fa fa-share-square-o"></i>
-                    <span class="movedButton-text">${I18N.INCLUDE_MOVED_MESSAGES}</span>
-                </div>
-            </button>
-            `,
+        template: `<button class="movedButton-container">
+            <icon class="movedButton-icon ml0-5" fill="currentColor" name="add"></icon>
+            <span class="movedButton-text">${I18N.INCLUDE_MOVED_MESSAGES}</span>
+        </button>`,
         link(scope, element) {
             const current = tools.filteredState();
             const onClick = () =>

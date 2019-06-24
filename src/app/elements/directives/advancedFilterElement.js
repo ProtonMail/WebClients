@@ -110,17 +110,18 @@ function advancedFilterElement(
         templateUrl: require('../../../templates/elements/advancedFilterElement.tpl.html'),
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
-            const $btns = el.find('button');
+
+            scope.title = gettextCatalog.getString('Plus', null, 'Label drodpdown');
+
             const onClick = (e) => {
+                if (e.target.nodeName !== 'BUTTON') {
+                    return;
+                }
+
                 e.preventDefault();
                 const action = e.target.getAttribute('data-action');
                 action && ACTIONS[action](e.target.getAttribute('data-action-arg'));
             };
-
-            _.each($btns, (button) => {
-                const cssClass = button.classList.item(0);
-                BUTTONS_CLASS[cssClass] && BUTTONS_CLASS[cssClass]() && button.classList.add(ACTIVE_CLASS);
-            });
 
             const bindClass = () => {
                 const labelID = $stateParams.label;
@@ -133,11 +134,19 @@ function advancedFilterElement(
 
             on('$stateChangeSuccess', bindClass);
 
-            bindClass();
+            scope.$applyAsync(() => {
+                _.each(el.find('button'), (button) => {
+                    const cssClass = [...button.classList].find((className) => /advancedFilterElement/.test(className));
+                    BUTTONS_CLASS[cssClass] &&
+                        BUTTONS_CLASS[cssClass]() &&
+                        button.parentElement.classList.add(ACTIVE_CLASS);
+                });
+                bindClass();
+            });
 
-            $btns.on('click', onClick);
+            el.on('click', onClick);
             scope.$on('$destroy', () => {
-                $btns.off('click', onClick);
+                el.off('click', onClick);
                 unsubscribe();
             });
         }

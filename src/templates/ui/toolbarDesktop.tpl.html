@@ -15,56 +15,23 @@
     <read-unread></read-unread>
     <move-element></move-element>
 
-    <div class="flex">
-        <div id="tour-folder-dropdown" class="flex" ng-class="{disabled: isDisabled()}">
-            <button
-                class="pm_trigger p1 open-folder toolbarDesktop-select-folder"
-                data-dropdown
-                data-dropdown-no-auto-close="true"
-                ng-class="{disabled: isDisabled()}"
-                pt-tooltip-translate="Move to"
-                pt-tooltip-translate-context="Action toolbar"
-                tabindex="0"
-                type="button">
-                <icon data-name="folder" data-size="16" class="mauto"></icon>
-                <icon data-name="caret" data-size="16" class="mauto"></icon>
-                <span class="sr-only" translate-context="Action toolbar" translate>Move to</span>
-            </button>
-            <div class="pm_dropdown wide">
-                <dropdown-folders
-                    class="toolbarDesktop-dropdown-folders"
-                    data-elements="getElements"></dropdown-folders>
-            </div>
-        </div>
+    <folder-selector-dropdown
+        id="tour-folder-dropdown"
+        class="toolbarDesktop-select-label p1"
+        ng-class="{disabled: isDisabled()}"></folder-selector-dropdown>
 
-        <div id="tour-label-dropdown" class="flex" ng-class="{disabled: isDisabled()}">
-            <button
-                class="pm_trigger p1 open-label toolbarDesktop-select-label"
-                data-dropdown
-                data-dropdown-no-auto-close="true"
-                ng-class="{disabled: isDisabled()}"
-                pt-tooltip-translate="Label as"
-                pt-tooltip-translate-context="Action toolbar"
-                tabindex="0"
-                type="button">
-                <icon data-name="label" data-size="16" class="mauto"></icon>
-                <icon data-name="caret" data-size="16" class="mauto"></icon>
-                <span class="sr-only" translate-context="Action toolbar" translate>Label as</span>
-            </button>
-            <div class="pm_dropdown wide">
-                <dropdown-labels
-                    class="toolbarDesktop-dropdown-labels"
-                    data-messages="getElements"
-                    data-save="saveLabels"></dropdown-labels>
-            </div>
-        </div>
-    </div>
+    <label-selector-dropdown
+        id="tour-label-dropdown"
+        class="toolbarDesktop-select-label p1"
+        ng-class="{disabled: isDisabled()}"></label-selector-dropdown>
 
     <advanced-filter-element></advanced-filter-element>
 
     <div class="right action toolbarDesktop-actions-right">
         <choose-layout-btns id="tour-layout"></choose-layout-btns>
         <nav-elements></nav-elements>
-        <paginator ng-if="displayPaginator()"></paginator>
+        <paginator
+            class="toolbarDesktop-select-page"
+            ng-if="displayPaginator()"></paginator>
     </div>
 </nav>

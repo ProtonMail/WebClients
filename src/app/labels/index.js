@@ -9,9 +9,13 @@ import labelCache from './factories/labelCache';
 import manageLabels from './services/manageLabels';
 import actionLabelBtn from './directives/actionLabelBtn';
 import labelNameInput from './directives/labelNameInput';
+import labelSelectorDropdown from './directives/labelSelectorDropdown';
+import folderSelectorDropdown from './directives/folderSelectorDropdown';
 
 export default angular
     .module('proton.labels', [])
+    .directive('folderSelectorDropdown', folderSelectorDropdown)
+    .directive('labelSelectorDropdown', labelSelectorDropdown)
     .directive('labelNameInput', labelNameInput)
     .directive('actionLabelBtn', actionLabelBtn)
     .factory('manageLabels', manageLabels)

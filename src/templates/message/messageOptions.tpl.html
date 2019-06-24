@@ -1,0 +1,117 @@
+<div class="messageOptions-container">
+
+    <dropdown-container>
+
+        <dropdown-button>
+            <icon
+                data-name="caret"
+                data-size="12"
+                class=" mauto expand-caret"
+                aria-hidden="true"
+                pt-tooltip-translate="More"
+                pt-tooltip-translate-context="Action"></icon>
+            <span class="sr-only" translate-context="Action" translate>More</span>
+        </dropdown-button>
+
+        <dropdown-content>
+            <ul class="unstyled mt0-5 mb0-5 messageOptions-list" data-message-mode="{{ message.viewMode }}">
+
+                <li class="dropDown-item pl1 pr1">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        data-action-message="move"
+                        data-action-message-type="inbox">
+                        <icon data-name="inbox"></icon>
+                        <span ranslate translate-context="Action" class="mauto">Move to inbox</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item pl1 pr1">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        data-action-message="move"
+                        data-action-message-type="trash">
+                        <icon data-name="trash"></icon>
+                        <span ranslate translate-context="Action" class="mauto">Move to trash</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item pl1 pr1">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        data-action-message="unread">
+                        <icon data-name="unread"></icon>
+                        <span ranslate translate-context="Action" class="mauto">Mark as unread</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item pl1 pr1" ng-hide="'secured.spam.**' | includedByState">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        data-action-message="move"
+                        data-action-message-type="spam">
+                        <icon data-name="spam"></icon>
+                        <span ranslate translate-context="Action" class="mauto">Mark as spam</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item pl1 pr1" ng-if="'secured.trash.**' | includedByState">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        data-action-message="delete">
+                        <icon data-name="delete"></icon>
+                        <span ranslate translate-context="Action" class="mauto">Delete</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item pl1 pr1" data-if-message-mode="html">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        data-action-message="togglePlainHtml">
+                        <icon data-name="view-source-code"></icon>
+                        <span ranslate translate-context="Action" class="mauto">View source code</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item pl1 pr1" data-if-message-mode="plain">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        data-action-message="togglePlainHtml">
+                            <icon data-name="view-html-code"></icon>
+                            <span ranslate translate-context="Action" class="mauto">View rendered HTML</span>
+
+                    </button>
+                </li>
+
+                <li class="dropDown-item pl1 pr1">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        data-action-message="viewPgp">
+                        <icon data-name="view-headers"></icon>
+                        <span ranslate translate-context="Action" class="mauto">View headers</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item pl1 pr1" ng-if="!message.failedDecryption">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        data-action-message="downloadEml">
+                        <icon data-name="export"></icon>
+                        <span ranslate translate-context="Action" class="mauto">Export</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item pl1 pr1">
+                    <button
+                        class="w100 pt0-5 pb0-5 alignleft"
+                        data-action-message="print">
+                        <icon data-name="print"></icon>
+                        <span ranslate translate-context="Action" class="mauto">Print</span>
+                    </button>
+                </li>
+
+            </ul>
+        </dropdown-content>
+
+    </dropdown-container>
+</div>

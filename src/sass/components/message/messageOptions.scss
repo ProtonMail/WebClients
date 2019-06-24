@@ -1,0 +1,5 @@
+.messageOptions-list[data-message-mode=''],
+.messageOptions-list[data-message-mode="html"] [data-if-message-mode="plain"],
+.messageOptions-list[data-message-mode="plain"] [data-if-message-mode="html"] {
+    display: none
+}

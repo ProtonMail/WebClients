@@ -1,6 +1,6 @@
 <article class="message message-container mb1" ng-class="getClassNames(message, marked)">
 
-    <div class="message-header flex cursor-pointer" data-toggle-message>
+    <div class="message-header flex cursor-pointer message-summary" data-toggle-message>
 
         <div class="summary-left">
             <div class="meta">
@@ -17,9 +17,9 @@
 
                     <div
                         class="from-value"
-                        pt-tooltip="{{ message.Sender | contact:'Name' }} {{ message.Sender | contact:'Address' }}">
-                        <strong>{{ message.Sender | contact:'Name' }}</strong>
-                        <em>{{ message.Sender | contact:'Address' }}</em>
+                        pt-tooltip="{{ ::message.Sender | contact:'Name' }} {{ ::message.Sender | contact:'Address' }}">
+                        <strong>{{ ::message.Sender | contact:'Name' }}</strong>
+                        <em>{{ ::message.Sender | contact:'Address' }}</em>
                     </div>
 
                     <message-address-actions
@@ -41,24 +41,28 @@
         </div>
 
         <div class="summary-right mlauto flex">
+
             <div class="labels message-summary-labels">
                 <labels-element
                     data-button="remove"
                     data-element="message"
                     class="message-summary-labels-list"></labels-element>
             </div>
+
             <div class="location message-summary-folder folders">
                 <folders-message></folders-message>
             </div>
+
             <div class="time">
                 <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
-                <time class="time-readable">{{ message.Time | localReadableTime }}</time>
+                <time class="time-readable">{{ ::message.Time | localReadableTime }}</time>
                 <time
                     class="time-machine"
-                    time-refreshed="{{ message.Time }}"
+                    time-refreshed="{{ ::message.Time }}"
                     time-filter="messageTime"
                     time-interval="30000"></time>
             </div>
+
             <div class="status">
                 <pt-star
                     data-model="message"
@@ -73,11 +77,16 @@
         <div class="message-header">
             <div class="recipients-summary">
                 <span class="flex">
-                    <span class="opacity-50 flex-self-vcenter container-to" translate-context="Message recipient label" translate>To:</span>
+                    <span
+                        class="opacity-50 flex-self-vcenter container-to"
+                        translate-context="Message recipient label"
+                        translate>To:</span>
+
                     <span
                         class="recipients-summary-label"
                         ng-repeat="email in recipients() track by $id(email)"
                         title="{{ ::email | contact:'Address' }}">{{::email | contact: 'Name': true | nameRecipient}}</span>
+
                     <span
                         ng-if="::noRecipients()"
                         class="recipients-summary-label"
@@ -110,9 +119,14 @@
                     data-list="BCC"
                     data-message-id="message.ID"
                 ></message-contacts>
+
                 <div class="recipients-details-size"><span translate-context="Label for the message size when displaying email details" translate>Size:</span> {{ ::message.Size | bytes }}</div>
+
                 <div class="encrypted-subject" ng-if="message.encryptedSubject">
-                    <i class="fa fa-lock encrypted-subject-icon" pt-tooltip-translate="Subject is end-to-end encrypted" pt-tooltip-translate-context="Tooltip"></i>
+                    <i
+                        class="fa fa-lock encrypted-subject-icon"
+                        pt-tooltip-translate="Subject is end-to-end encrypted"
+                        pt-tooltip-translate-context="Tooltip"></i>
                     <span
                         translate
                         translate-context="Title"
@@ -123,97 +137,27 @@
 
             <all-message-labels ng-if="message.toggleDetails"></all-message-labels>
 
-            <div class="action-row mod mb0-5">
+            <div class="action-row mb0-5">
 
                 <div class="actions flex pull-right" ng-if="message.decrypting === false">
+
                     <div class="pm-group-buttons mr1">
-                        <filter-button data-message="message"></filter-button>
-                        <div class="pm_buttons pm-group-button pm-button pm-button--for-icon ">
-                            <button class="pm_trigger open-folder " pt-tooltip-translate="Move to" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
-                                <icon data-name="folder" data-size="16" class=" mauto" aria-hidden="true"></icon>
-                                <icon data-name="caret" data-size="12" class=" mauto expand-caret" aria-hidden="true"></icon>
-                                <span class="sr-only" translate-context="Action" translate>Move to</span>
-                            </button>
-                            <div class="pm_dropdown right wide pull-left">
-                                <dropdown-folders data-elements="getElements"></dropdown-folders>
-                            </div>
-                        </div>
-                        <div class="pm_buttons pm-group-button pm-button pm-button--for-icon ">
-                            <button class="pm_trigger open-label" pt-tooltip-translate="Label as" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown data-dropdown-no-auto-close="true" tabindex="0">
-                                <icon data-name="label" data-size="16" class=" mauto" aria-hidden="true"></icon>
-                                <icon data-name="caret" data-size="12" class=" mauto expand-caret" aria-hidden="true"></icon>
-                                <span class="sr-only" translate-context="Action" translate>Label as</span>
-                            </button>
-                            <div class="pm_dropdown right wide pull-left">
-                                <dropdown-labels data-messages="getMessage" data-message="message" data-save="saveLabels"></dropdown-labels>
-                            </div>
-                        </div>
-                        <button type="button" class="pm_trigger pm-group-button pm-button pm-button--for-icon  dropdown-actions-nowrap-more" dropdown pt-tooltip-translate="More" pt-tooltip-translate-context="Action">
-                            <icon data-name="caret" data-size="12" class=" mauto expand-caret" aria-hidden="true"></icon>
-                            <span class="sr-only" translate-context="Action" translate>More</span>
-                        </button>
-                        <div class="pm_dropdown wide dropdown-actions-nowrap right">
-                            <button
-                                class="dropdown-actions-nowrap-button"
-                                data-action-message="move"
-                                data-action-message-type="inbox">
-                                <i class="fa fa-inbox dropdown-actions-nowrap-icon"></i>
-                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Move to inbox</span>
-                            </button>
-                            <button
-                                class="dropdown-actions-nowrap-button"
-                                data-action-message="move"
-                                data-action-message-type="trash">
-                                <i class="fa fa-trash-o dropdown-actions-nowrap-icon"></i>
-                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Move to trash</span>
-                            </button>
-                            <button
-                                class="dropdown-actions-nowrap-button"
-                                data-action-message="unread">
-                                <i class="fa fa-eye-slash dropdown-actions-nowrap-icon"></i>
-                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Mark as unread</span>
-                            </button>
-                            <button
-                                class="dropdown-actions-nowrap-button"
-                                data-action-message="move"
-                                data-action-message-type="spam"
-                                ng-hide="'secured.spam.**' | includedByState">
-                                <i class="fa fa-ban dropdown-actions-nowrap-icon"></i>
-                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Mark as spam</span>
-                            </button>
-                            <phishing-btn ng-if="!message.failedDecryption"></phishing-btn>
-                            <button
-                                class="dropdown-actions-nowrap-button"
-                                data-action-message="delete"
-                                ng-if="'secured.trash.**' | includedByState">
-                                <i class="fa fa-times dropdown-actions-nowrap-icon"></i>
-                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Delete</span>
-                            </button>
-                            <button class="dropdown-actions-nowrap-button" data-action-message="togglePlainHtml"
-                            data-message-mode="{{ message.viewMode }}">
-                                <span class="dropdown-actions-nowrap-button" data-if-message-mode="html">
-                                    <i class="fa fa-file-text-o dropdown-actions-nowrap-icon"></i>
-                                    <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">View source code</span>
-                                </span>
-                                <span class="dropdown-actions-nowrap-button" data-if-message-mode="plain">
-                                    <i class="fa fa-file-photo-o dropdown-actions-nowrap-icon"></i>
-                                    <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">View rendered HTML</span>
-                                </span>
-                            </button>
-                            <button class="dropdown-actions-nowrap-button" data-action-message="viewPgp">
-                                <i class="fa fa-code dropdown-actions-nowrap-icon"></i>
-                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">View headers</span>
-                            </button>
-                            <button class="dropdown-actions-nowrap-button" data-action-message="downloadEml" ng-if="!message.failedDecryption">
-                                <i class="fa fa-download dropdown-actions-nowrap-icon"></i>
-                                <span class="dropdown-actions-nowrap-textContainer" translate-context="Action" translate>Export</span>
-                            </button>
-                            <button class="dropdown-actions-nowrap-button" data-action-message="print">
-                                <i class="fa fa-print dropdown-actions-nowrap-icon"></i>
-                                <span class="dropdown-actions-nowrap-textContainer" translate translate-context="Action">Print</span>
-                            </button>
-                        </div>
+                        <filter-button
+                            data-message="message"
+                            class="p1 pm_buttons pm-group-button pm-button pm-button--for-icon"></filter-button>
+
+                        <folder-selector-dropdown
+                            data-message="message"
+                            class="p1 pm_buttons pm-group-button pm-button pm-button--for-icon"></folder-selector-dropdown>
+
+                        <label-selector-dropdown
+                            data-message="message"
+                            class="p1 pm_buttons pm-group-button pm-button pm-button--for-icon"></label-selector-dropdown>
+
+                        <message-options
+                            class="p1 pm_buttons pm-group-button pm-button pm-button--for-icon"></message-options>
                     </div>
+
                     <div class="pm-group-buttons">
                         <button
                             class="pm-group-button pm-button pm-button--for-icon dropdown-actions-nowrap-reply"
@@ -225,6 +169,7 @@
                             <icon data-name="reply" data-size="16" class=" mauto" aria-hidden="true"></icon>
                             <span class="sr-only" translate-context="Action" translate>Reply</span>
                         </button>
+
                         <button
                             class="pm-group-button pm-button pm-button--for-icon dropdown-actions-nowrap-replyall"
                             data-action-compose="::message"
@@ -235,6 +180,7 @@
                             <icon data-name="reply-all" data-size="16" class=" mauto" aria-hidden="true"></icon>
                             <span class="sr-only" translate-context="Action" translate>Reply all</span>
                         </button>
+
                         <button
                             class="pm-group-button pm-button pm-button--for-icon dropdown-actions-nowrap-forward"
                             data-action-compose="::message"

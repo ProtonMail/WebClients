@@ -4,56 +4,65 @@
     ng-class="{'dropdown-label-hasLabels': labels.length}"
     autocomplete="off">
 
-    <div class="dropdown-label-title">
-        <p class="dropdown-label-title-hasLabels" translate translate-context="title">Label as</p>
+    <div class="dropdown-label-title p1">
+        <p class="dropdown-label-title-hasLabels m0" translate translate-context="title">Label as</p>
         <p class="alert alert-info" translate translate-context="Info">No labels</p>
     </div>
 
-    <label class="dropdown-label-search">
-        <i class="fa fa-search dropdown-label-search-icon"></i>
-        <input
-            class="dropdown-label-search-input"
-            type="search"
-            placeholder-translate="Filter labels"
-            placeholder-translate-context="Action dropdowb labels"
-            ng-model="searchLabels"
-            ng-minlength="1">
+    <label class="flex flex-spacebetween pl1 pr1 mb0-5">
+        <icon data-name="search" fill="currentColor" class="mr0-5"></icon>
+        <div>
+            <input
+                class="dropdown-label-search-input"
+                type="search"
+                placeholder-translate="Filter labels"
+                placeholder-translate-context="Placeholder"
+                ng-model="searchLabels"
+                ng-minlength="1">
+        </div>
     </label>
 
-    <div class="dropdown-label-scrollbox scrollbox-container"  ng-if="labels.length > 0">
-        <ul class="scrollbox-container-group">
-            <li
-                class="scrollbox-container-group-item"
-                ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchLabels} | orderBy: 'Order')) track by label.ID"
+    <ul class="dropDown-contentInner unstyled mt0-5 mb0-5" ng-if="labels.length > 0">
+        <li
+            class="dropDown-item advancedFilterElement-item-old-to-new"
+            ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchLabels} | orderBy: 'Order')) track by label.ID"
+            data-label-id="{{::label.ID}}">
+
+            <label
+                class="flex flex-spacebetween w100 pt0-5 pb0-5"
                 data-label-id="{{::label.ID}}">
 
-                <label class="dropdown-label-scrollbox-label" data-label-id="{{::label.ID}}">
-                    <span class="dropdown-label-scrollbox-label-text" ng-style="::color(label)">
-                        <i class="dropdown-label-scrollbox-label-icon fa fa-tag" data-label-id="{{::label.ID}}"></i>
-                        <span class="dropdown-label-scrollbox-label-text-ellipsis ellipsis">{{ ::label.Name }}</span>
-                    </span>
-                    <div class="dropdown-label-scrollbox-label-checkbox">
-                        <custom-checkbox
-                            data-custom-ng-model="label.Selected"
-                            data-custom-class="scrollbox-container-group-item-empty"
-                            data-custom-ui-indeterminate="label.Selected === null"></custom-checkbox>
-                    </div>
-                </label>
-            </li>
-            <li
-                class="scrollbox-container-group-item-empty"
-                ng-show="filteredLabels.length === 0"
-                translate
-                translate-context="Info">no label found</li>
-        </ul>
-    </div>
+                <icon
+                    data-name="label"
+                    data-label-id="{{::label.ID}}"
+                    class="mr0-5 dropdown-label-scrollbox-label-icon"
+                    ng-style="::color(label, 'fill')"></icon>
+
+                <span
+                    ng-style="::color(label)"
+                    class="ellipsis w60">{{ ::label.Name }}</span>
+                <div>
+                    <custom-checkbox
+                        data-custom-id="l{{::label.ID}}"
+                        data-custom-ng-model="label.Selected"
+                        data-custom-class="scrollbox-container-group-item-empty"
+                        data-custom-ui-indeterminate="label.Selected === null"></custom-checkbox>
+                </div>
+            </label>
+        </li>
+        <li
+            class="scrollbox-container-group-item-empty dropDown-item "
+            ng-show="filteredLabels.length === 0"
+            translate
+            translate-context="Info">no label found</li>
+    </ul>
 
     <create-label
-        data-class="dropdown-label-create"
+        data-class="dropdown-label-create pl1 pr1 mb0-5 mt0-5"
         data-message="message"
         data-label-name="searchLabels"></create-label>
 
-    <label class="dropdown-label-alsoArchive">
+    <label class="dropdown-label-alsoArchive flex flex-spacebetween pl1 pr1 mt0-5">
         <span
             class="dropdown-label-alsoArchive-txt label-fillWidth"
             translate
@@ -66,9 +75,11 @@
         </div>
     </label>
 
-    <button
-        class="pm_button primary dropdown-label-apply disabled-if-network-activity"
-        tabindex="1"
-        translate-context="Action"
-        translate>Apply</button>
+    <footer class="p1">
+        <button
+            class="pm-button-blue dropdown-label-apply disabled-if-network-activity w100"
+            tabindex="1"
+            translate-context="Action"
+            translate>Apply</button>
+    </footer>
 </form>

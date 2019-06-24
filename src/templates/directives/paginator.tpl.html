@@ -1,46 +1,37 @@
-<span
-    class="flex paginator paginator-container">
-    <a
+<div>
+    <button
+        class="pm-button-dark pm-group-button pm-button--for-icon noborder paginator-btn-previous"
         pt-tooltip-translate="Previous"
-        pt-tooltip-translate-context="Action"
-        class="paginator-btn-previous p1"
-        tabindex="0"
-        role="button">
-        <icon data-name="caret" data-size="16" class="mauto rotateZ-90" aria-hidden="true"></icon>
+        pt-tooltip-translate-context="Action">
+        <icon name="arrow-left"></icon>
         <span class="sr-only" translate-context="Action" translate>Previous</span>
-    </a>
-    <span class="pull-left paginator-dropdown-list">
-        <button
-            class="pm_trigger flex color-white paginator-dropdown"
-            dropdown
-            pt-tooltip-translate="Page number"
-            pt-tooltip-translate-context="Action"
-            tabindex="0"
-            role="button">
+    </button>
+
+    <dropdown-container class="pm-group-buttons">
+        <dropdown-button class="pl0-5 pr0-5">
             <span class="mauto">{{ ::page }}</span>
-            <icon data-name="caret" data-size="16" class="mauto"></icon>
-        </button>
-        <span class="pm_dropdown right">
-            <a
-                tabindex="0"
-                role="button"
-                ng-repeat="p in pages track by p" data-value="{{::p}}"
-                class="paginator-dropdown-item">
-                <em
-                    class="paginator-label"
-                    translate
-                    translate-context="Title"
-                    translate-comment="current page dropdown in paginator">Page</em> {{ ::p }}
-            </a>
-        </span>
-    </span>
-    <a
-        class="paginator-btn-next p1"
+            <icon name="caret" class="dropdownv4-icon"></icon>
+        </dropdown-button>
+
+        <dropdown-content class="paginator-dropdown">
+            <ul class="unstyled mt0-5 mb0-5">
+                <li class="dropDown-item" ng-repeat="p in pages track by p">
+                    <button class="w100 pt0-5 pb0-5" data-value="{{::p}}">
+                        <em
+                            translate
+                            translate-context="Title"
+                            translate-comment="current page dropdown in paginator">Page</em> {{ ::p }}
+                    </button>
+                </li>
+            </ul>
+        </dropdown-content>
+    </dropdown-container>
+
+    <button
+        class="pm-button-dark pm-group-button pm-button--for-icon noborder paginator-btn-next"
         pt-tooltip-translate="Next"
-        pt-tooltip-translate-context="Action"
-        tabindex="0"
-        role="button">
-        <icon data-name="caret" data-size="16" class="mauto rotateZ-270" aria-hidden="true"></icon>
-        <span class="sr-only" translate-context="Action" translate>Next</span>
-    </a>
-</span>
+        pt-tooltip-translate-context="Action">
+        <icon name="arrow-right"></icon>
+        <span class="sr-only" translate-context="Action" translate>Previous</span>
+    </button>
+</div>

@@ -28,8 +28,10 @@
     border-radius: $border-radius;
     border: 1px solid $border;
     transition: border-color .1s ease-in;
-    pointer-events: none;
 }
+/*
+    No pointer-events none here as we use it ex toolbar > elements selector
+ */
 
 
 /* Shared state */

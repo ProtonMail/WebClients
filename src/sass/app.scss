@@ -140,6 +140,7 @@ $path-images: "~design-system/assets/img/shared/";
 @import "ui/dropzone";
 @import "ui/progressBar";
 @import "ui/networkActivity";
+@import "ui/dropdownButton";
 
 //== Ui
 @import "components/ui/mozInfo";
@@ -211,9 +212,9 @@ $path-images: "~design-system/assets/img/shared/";
 @import "components/message/allMessageLabels";
 @import "components/message/messageContacts";
 @import "components/message/messageComposeTo";
-@import "components/message/filterButton";
 @import "components/message/messageView";
 @import "components/message/messageExtra";
+@import "components/message/messageOptions";
 @import "components/message/phishingBtn";
 @import "components/message/trustPublicKeyModal.scss";
 
@@ -290,6 +291,8 @@ $path-images: "~design-system/assets/img/shared/";
 
 //== Labels
 @import "components/labels/labelModal";
+@import "components/labels/folderSelectorDropdown";
+@import "components/labels/labelSelectorDropdown";
 @import "components/labels/labelNameInput";
 @import "components/labels/labelColorSelector";
 @import "components/labels/labelsElement";

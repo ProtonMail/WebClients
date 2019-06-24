@@ -1,135 +1,169 @@
-<div class="flex advancedFilterElement-container" ng-class="{
-    'advancedFilterElement-state-drafts': ('secured.drafts.**' | includedByState),
-    'advancedFilterElement-state-all-drafts': ('secured.allDrafts.**' | includedByState),
-    'advancedFilterElement-state-spam': ('secured.spam.**' | includedByState),
-    'advancedFilterElement-state-trash': ('secured.trash.**' | includedByState)
-}">
-    <button tabindex="0" type="button" class="flex color-white advancedFilterElement-btn-dropdown" dropdown>
-        <span class="mauto" translate-context="Action" translate>More</span>
-        <icon data-name="caret" data-size="16" class="mauto"></icon>
-    </button>
-    <div class="pm_dropdown widest noPadding advancedFilterElement-content">
-        <button
-            class="advancedFilterElement-btn-drafts"
-            data-action="empty"
-            data-action-arg="drafts">
-            <div>
-                <i class="fa fa-times-circle-o"></i>
-                <span translate translate-context="Action">Empty drafts</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-all-drafts"
-            data-action="empty"
-            data-action-arg="allDrafts">
-            <div>
-                <i class="fa fa-times-circle-o"></i>
-                <span translate translate-context="Action">Empty drafts</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-spam"
-            data-action="empty"
-            data-action-arg="spam">
-            <div>
-                <i class="fa fa-times-circle-o"></i>
-                <span translate translate-context="Action">Empty spam</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-trash"
-            data-action="empty"
-            data-action-arg="trash">
-            <div>
-                <i class="fa fa-times-circle-o"></i>
-                <span translate translate-context="Action">Empty trash</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-folder"
-            data-action="empty"
-            data-action-arg="folder">
-            <div>
-                <i class="fa fa-times-circle-o"></i>
-                <span translate translate-context="Action">Empty folder</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-label"
-            data-action="empty"
-            data-action-arg="label">
-            <div>
-                <i class="fa fa-times-circle-o"></i>
-                <span translate translate-context="Action">Empty label</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-small-to-large"
-            data-action="orderBy"
-            data-action-arg="size">
-            <div>
-                <i class="fa fa-sort-amount-asc"></i>
-                <span translate translate-context="Action">Size: Small to large</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-large-to-small"
-            data-action="orderBy"
-            data-action-arg="-size">
-            <div>
-                <i class="fa fa-sort-amount-desc"></i>
-                <span translate translate-context="Action">Size: Large to small</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-new-to-old"
-            data-action="orderBy"
-            data-action-arg="-date">
-            <div>
-                <i class="fa fa-clock-o"></i>
-                <span translate translate-context="Action">Date: New to old</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-old-to-new"
-            data-action="orderBy"
-            data-action-arg="date">
-            <div>
-                <i class="fa fa-history"></i>
-                <span translate translate-context="Action">Date: Old to new</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-show-all"
-            data-action="clearFilter">
-            <div>
-                <i class="fa fa-list"></i>
-                <span translate translate-context="Action">Show all</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-unread"
-            data-action="filterBy"
-            data-action-arg="unread">
-            <div>
-                <i class="fa fa-eye-slash"></i>
-                <span translate translate-context="Action">Show unread</span>
-            </div>
-        </button>
-        <button
-            class="advancedFilterElement-btn-read"
-            data-action="filterBy"
-            data-action-arg="read">
-            <div>
-                <i class="fa fa-eye"></i>
-                <span translate translate-context="Action">Show read</span>
-            </div>
-        </button>
-        <moved-button class="advancedFilterElement-btn-moved" ng-if="
-            ('secured.drafts.**' | includedByState) ||
-            ('secured.allDrafts.**' | includedByState) ||
-            ('secured.sent.**' | includedByState) ||
-            ('secured.allSent.**' | includedByState)
-        "></moved-button>
-    </div>
+<div
+    class="advancedFilterElement-container pm_trigger p1 open-label"
+    ng-class="{
+        'advancedFilterElement-state-drafts': ('secured.drafts.**' | includedByState),
+        'advancedFilterElement-state-all-drafts': ('secured.allDrafts.**' | includedByState),
+        'advancedFilterElement-state-spam': ('secured.spam.**' | includedByState),
+        'advancedFilterElement-state-trash': ('secured.trash.**' | includedByState)
+    }">
+
+    <dropdown-container class="advancedFilterElement-dropdown">
+        <dropdown-button>
+            <span class="mauto" translate-context="Label dropdown" translate>Plus</span>
+            <icon name="caret" class="dropdownv4-icon"></icon>
+        </dropdown-button>
+
+        <dropdown-content>
+            <ul class="unstyled mt0-5 mb0-5">
+                <li class="dropDown-item advancedFilterElement-item-drafts pl1 pr1">
+                    <button
+                        data-action="empty"
+                        data-action-arg="drafts"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-drafts">
+                            <icon name="delete" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Empty drafts</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-all-drafts pl1 pr1">
+                    <button
+                        data-action="empty"
+                        data-action-arg="allDrafts"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-all-drafts">
+                            <icon name="delete" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Empty drafts</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-spam pl1 pr1">
+                    <button
+                        data-action="empty"
+                        data-action-arg="spam"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-spam">
+                            <icon name="delete" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Empty spam</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-trash pl1 pr1">
+                    <button
+                        data-action="empty"
+                        data-action-arg="trash"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-trash">
+                            <icon name="delete" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Empty trash</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-folder pl1 pr1">
+                    <button
+                        data-action="empty"
+                        data-action-arg="folder"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-folder">
+                            <icon name="delete" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Empty folder</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-label pl1 pr1">
+                    <button
+                        data-action="empty"
+                        data-action-arg="label"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-label">
+                            <icon name="delete" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Empty label</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-small-to-large pl1 pr1">
+                    <button
+                        data-action="orderBy"
+                        data-action-arg="size"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-small-to-large">
+                            <icon name="sort-small-large" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Size: Small to large</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-large-to-small pl1 pr1">
+                    <button
+                        data-action="orderBy"
+                        data-action-arg="-size"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-large-to-small">
+                            <icon name="sort-large-small" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Size: Large to small</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-new-to-old pl1 pr1">
+                    <button
+                        data-action="orderBy"
+                        data-action-arg="-date"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-new-to-old">
+                            <icon name="sort-new-old" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Date: New to old</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-old-to-new pl1 pr1">
+                    <button
+                        data-action="orderBy"
+                        data-action-arg="date"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-old-to-new">
+                            <icon name="sort-old-new" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Date: Old to new</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-show-all pl1 pr1">
+                    <button
+                        data-action="clearFilter"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-show-all">
+                            <icon name="read" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Show all</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-unread pl1 pr1">
+                    <button
+                        data-action="filterBy"
+                        data-action-arg="unread"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-unread">
+                            <icon name="unread" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Show unread</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item advancedFilterElement-item-read pl1 pr1">
+                    <button
+                        data-action="filterBy"
+                        data-action-arg="read"
+                        class="w100 pt0-5 pb0-5 alignleft advancedFilterElement-btn-read">
+                            <icon name="read" fill="currentColor" class="ml0-5 advancedFilterElement-icon-default"></icon>
+                            <icon name="on" fill="currentColor" class="ml0-5 advancedFilterElement-icon-active"></icon>
+                            <span class="mauto" translate translate-context="Action">Show read</span>
+                    </button>
+                </li>
+                <moved-button
+                    class="w100 pt0-5 pb0-5 alignleft  advancedFilterElement-btn-moved"
+                    ng-if="
+                    ('secured.drafts.**' | includedByState) ||
+                    ('secured.allDrafts.**' | includedByState) ||
+                    ('secured.sent.**' | includedByState) ||
+                    ('secured.allSent.**' | includedByState)"></moved-button>
+            </ul>
+        </dropdown-content>
+    </dropdown-container>
 </div>

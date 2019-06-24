@@ -93,26 +93,4 @@
 			display: block;
 		}
     }
-    &.dropdown-actions-nowrap {
-        .dropdown-actions-nowrap-button {
-            white-space: normal;
-            display: inline-flex;
-            height: auto !important;
-            line-height: 1.5 !important;
-            .dropdown-actions-nowrap-icon {
-                min-width: 25px;
-            }
-            .dropdown-actions-nowrap-textContainer {
-                padding-top: .5em;
-                padding-bottom: .5em;
-                align-self: center;
-            }
-        }
-    }
-    /* view source/HTML button */
-    .dropdown-actions-nowrap-button[data-message-mode=''],
-    .dropdown-actions-nowrap-button[data-message-mode="html"] [data-if-message-mode="plain"],
-    .dropdown-actions-nowrap-button[data-message-mode="plain"] [data-if-message-mode="html"] {
-        display: none
-    }
 }

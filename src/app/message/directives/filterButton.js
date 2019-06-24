@@ -18,8 +18,8 @@ function filterButton(dispatchers, filterModal, lazyLoader) {
         templateUrl: require('../../../templates/message/filterButton.tpl.html'),
         link(scope, el) {
             scope.model = {};
-            const $btn = el[0].querySelector('.filterButton-btn-next');
-            const { dispatcher } = dispatchers(['dropdown']);
+            const { dispatcher } = dispatchers(['dropdownApp', 'requestElements']);
+            const dropdownId = el[0].parentElement.getAttribute('data-dropdown-id');
 
             function initialize() {
                 scope.model.subject = false;
@@ -27,6 +27,11 @@ function filterButton(dispatchers, filterModal, lazyLoader) {
                 scope.model.recipient = false;
                 scope.model.attachments = false;
             }
+
+            const close = () => {
+                dispatcher.dropdownApp('action', { type: 'close', id: dropdownId });
+                initialize();
+            };
 
             initialize();
 
@@ -80,23 +85,22 @@ function filterButton(dispatchers, filterModal, lazyLoader) {
                         filterModal.activate({
                             params: {
                                 mode: 'simple',
-                                filter,
-                                close() {
-                                    filterModal.deactivate();
-                                }
+                                filter
                             }
                         });
                     });
 
-                    initialize();
-                    dispatcher.dropdown('close');
+                    close();
                 });
             };
 
-            $btn.addEventListener('click', onClick);
+            scope.$applyAsync(() => {
+                const $btn = el[0].querySelector('.filterButton-btn-next');
+                $btn.addEventListener('click', onClick);
 
-            scope.$on('$destroy', () => {
-                $btn.removeEventListener('click', onClick);
+                scope.$on('$destroy', () => {
+                    $btn.removeEventListener('click', onClick);
+                });
             });
         }
     };

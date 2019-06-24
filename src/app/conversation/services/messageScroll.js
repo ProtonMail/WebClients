@@ -23,7 +23,7 @@ function messageScroll() {
         const headerOffset = $header ? $header.getBoundingClientRect().top + $header.offsetHeight : 0;
         const amountScrolled = $thread ? $thread.scrollTop : 0;
         const paddingTop = ~~$thread.style.paddingTop.replace('px', '');
-        const summaryHeight = document.getElementsByClassName('summary')[0].getBoundingClientRect().height;
+        const summaryHeight = document.querySelector('.message-summary').getBoundingClientRect().height;
         const messageMargin = 10;
 
         let scrollTop = node ? node.getBoundingClientRect().top + amountScrolled - headerOffset - paddingTop : 0;

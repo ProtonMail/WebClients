@@ -2,34 +2,34 @@ import _ from 'lodash';
 import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
+function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog, $compile) {
     const ORDER_FALSY = ['all', 'read', 'unread', 'star', 'unstar'];
     const ORDER_TRUTHY = ['all', 'unread', 'read', 'unstar', 'star'];
 
     const ACTIONS = {
         all: {
             label: gettextCatalog.getString('Select All', null, 'Action'),
-            icon: 'fa-check-square-o',
+            icon: 'ordered-list',
             action: 'all'
         },
         unread: {
             label: gettextCatalog.getString('All Unread', null, 'Action'),
-            icon: 'fa-eye-slash',
+            icon: 'unread',
             action: 'unread'
         },
         read: {
             label: gettextCatalog.getString('All Read', null, 'Action'),
-            icon: 'fa-eye',
+            icon: 'read',
             action: 'read'
         },
         unstar: {
             label: gettextCatalog.getString('All Unstarred', null, 'Action'),
-            icon: 'fa-star-o',
+            icon: 'star',
             action: 'unstarred'
         },
         star: {
             label: gettextCatalog.getString('All Starred', null, 'Action'),
-            icon: 'fa-star',
+            icon: 'star-full',
             action: 'starred'
         }
     };
@@ -46,28 +46,29 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
     };
 
     const getTemplate = () => {
-        return orderActions().reduce((prev, { label, icon, action }) => {
-            return (
-                prev +
-                dedentTpl(`
-                    <button data-action="${action}" class="elementsSelector-btn-action">
-                        <i class="fa ${icon}"></i>
-                        <span>${label}</span>
-                    </button>
-                `)
-            );
+        return orderActions().reduce((acc, { label, icon, action }) => {
+            const tpl = dedentTpl`<li class="dropDown-item">
+                <button data-action="${action}" class="elementsSelector-btn-action w100 pt0-5 pb0-5 alignleft">
+                    <icon name="${icon}"></icon>
+                    <span>${label}</span>
+                </button>
+            </li>`;
+            return acc + tpl;
         }, '');
     };
 
     return {
         replace: true,
         templateUrl: require('../../../templates/elements/elementsSelector.tpl.html'),
-        compile(element) {
-            const dropdown = element[0].querySelector('.pm_dropdown');
-            dropdown.insertAdjacentHTML('beforeEnd', getTemplate());
+        link(scope, el) {
+            scope.$applyAsync(() => {
+                const dropdownId = el[0].querySelector('.elementsSelector-dropdown').getAttribute('data-dropdown-id');
 
-            return (scope, el) => {
-                const { dispatcher, on, unsubscribe } = dispatchers(['dropdown', 'selectElements']);
+                el.find('.element-selector-set-scope')
+                    .empty()
+                    .append($compile(getTemplate())(scope));
+
+                const { dispatcher, on, unsubscribe } = dispatchers(['dropdownApp', 'selectElements']);
                 const $btn = el.find('.elementsSelector-btn-action');
 
                 const allSelected = () => _.every(scope.conversations, { Selected: true });
@@ -88,7 +89,10 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
                 function onClick({ currentTarget }) {
                     const action = currentTarget.getAttribute('data-action');
                     dispatcher.selectElements(action, { isChecked: true });
-                    dispatcher.dropdown('close');
+                    dispatcher.dropdownApp('action', {
+                        type: 'close',
+                        id: dropdownId
+                    });
                 }
 
                 scope.checkedSelectorState = allSelected;
@@ -97,7 +101,7 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
                     unsubscribe();
                     $btn.off('click', onClick);
                 });
-            };
+            });
         }
     };
 }

@@ -8,7 +8,7 @@ const readUnread = () => ({
         // Actions are coming from elementCtrl
         const onClick = (e) => {
             e.preventDefault();
-            scope.$applyAsync(() => scope[e.target.getAttribute('data-action')]());
+            scope.$applyAsync(() => scope[e.currentTarget.getAttribute('data-action')]());
         };
         $a.on('click', onClick);
 
