@@ -35,21 +35,21 @@
             display: none;
         }
         select {
-            margin: 0;
-            height: 35px;
-            line-height: 35px;
-            padding-left: 10px;
-            padding-right: 25px;
-            position: relative;
-            z-index: 3;
-            background: transparent;
-            border: none;
-            width: 100%;
-            max-width: 100%;
-            min-width: 3rem;
-            -webkit-appearance: none;
-               -moz-appearance: none;
-                    appearance: none;
+            // margin: 0;
+            // height: 35px;
+            // line-height: 35px;
+            // padding-left: 10px;
+            // padding-right: 25px;
+            // position: relative;
+            // z-index: 3;
+            // background: transparent;
+            // border: none;
+            // width: 100%;
+            // max-width: 100%;
+            // min-width: 3rem;
+            // -webkit-appearance: none;
+            //    -moz-appearance: none;
+            //         appearance: none;
             &[disabled] {
                 background: rgba(0,0,0,0);
             }

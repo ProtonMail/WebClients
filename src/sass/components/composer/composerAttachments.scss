@@ -1,4 +1,4 @@
-//.composerAttachments-container { background: $tertiary }
+.composerAttachments-container { background: #fcfdff }
 .composerAttachments-hidden {display: none}
 
 .composerAttachments-close .composerAttachments-loaders {display: none}
@@ -21,7 +21,7 @@
 .composerAttachments-loaders {
     display: flex;
     flex-wrap: wrap;
-    max-height: 85px;
+    //max-height: 85px;
     overflow: auto;
     padding: 10px;
     border-top: 1px solid $border;
@@ -38,6 +38,6 @@
 .composerAttachments-loader:nth-child(even) { padding-left: 5px }
 .composerAttachments-loader:nth-child(odd) { padding-right: 5px }
 
-.composerAttachments-size {margin-right: 1em}
-.composerAttachments-action {margin-left: auto}
+//.composerAttachments-size {margin-right: 1em}
+//.composerAttachments-action {margin-left: auto}
 [class*="composerAttachments-counter-"] { margin-right:1em; }

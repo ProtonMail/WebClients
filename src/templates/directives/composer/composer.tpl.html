@@ -13,30 +13,30 @@
         data-message="message"
         ng-class="{ 'show': message.panelName == 'expiration' }" ></composer-expiration>
 
-    <div class="meta composer-meta" ng-class="{'composer-toggle-ccbcc': message.ccbcc}">
+    <div class="composer-meta" ng-class="{'composer-toggle-ccbcc': message.ccbcc}">
         <composer-select-from
-            class="row fromRow composer-field-From"
+            class="flex flex-row flex-nowrap fromRow composer-field-From"
             data-model="message"></composer-select-from>
 
         <composer-input-meta
             data-model="message"
             data-label="To"
             data-key="ToList"
-            class="row toRow composer-field-ToList"></composer-input-meta>
+            class="flex flex-row flex-nowrap toRow composer-field-ToList"></composer-input-meta>
 
         <composer-input-meta
             data-model="message"
             data-label="CC"
             data-key="CCList"
-            class="row ccRow composer-field-CCList"></composer-input-meta>
+            class="flex flex-row flex-nowrap ccRow composer-field-CCList"></composer-input-meta>
 
         <composer-input-meta
             data-model="message"
             data-label="BCC"
             data-key="BCCList"
-            class="row bccRow composer-field-BCCList"></composer-input-meta>
+            class="flex flex-row flex-nowrap bccRow composer-field-BCCList"></composer-input-meta>
 
-        <composer-subject class="row subjectRow composer-field-Subject"></composer-subject>
+        <composer-subject class="subjectRow composer-field-Subject"></composer-subject>
     </div>
     <section class="flex flex-item-fluid flex-column mb1 bordered-container composer-section" ng-form="composeForm{{$index}}">
         <div class="composeEditor fill">
@@ -73,7 +73,7 @@
             pt-tooltip-translate="Attachments"
             pt-tooltip-translate-context="Tooltip"
             pt-placement="top">
-            <icon data-name="attach" data-size="16" class=" mauto" aria-hidden="true"></icon>
+            <icon data-name="attach" data-size="16" class="no-pointer-events mauto" aria-hidden="true"></icon>
             <span class="sr-only" translate-context="Action" translate>Attachments</span>
         </button>
 
@@ -87,7 +87,7 @@
             pt-placement="top"
             pt-tooltip-translate="Expiration time"
             pt-tooltip-translate-context="Action">
-            <icon data-name="expiration" data-size="16" class=" mauto" aria-hidden="true"></icon>
+            <icon data-name="expiration" data-size="16" class="no-pointer-events mauto" aria-hidden="true"></icon>
             <span class="sr-only" translate-context="Action" translate>Expiration time</span>
         </button>
 
@@ -101,7 +101,7 @@
             pt-placement="top"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Encryption">
-            <icon data-name="lock" data-size="16" class=" mauto" aria-hidden="true"></icon>
+            <icon data-name="lock" data-size="16" class="no-pointer-events mauto" aria-hidden="true"></icon>
             <span class="sr-only" translate-context="Action" translate>Encryption</span>
         </button>
 

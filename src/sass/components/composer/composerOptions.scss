@@ -7,21 +7,14 @@
     padding: 2rem 10px;
     margin-bottom: 0 !important;
     z-index: 99999;
-    background: #fafafa;
+    background: $white;
     display: none;
     &.show {
-        display: block;
+        display: flex;
     }
     .pm_select {
         display: inline-block !important;
         margin: 0 .5rem 0 2rem;
-    }
-    footer {
-        position: absolute;
-        left: 0;
-        right:0;
-        background: #fafafa;
-        bottom: 0;
     }
     .clearfix {
         padding: 5px 0;

@@ -1,62 +1,58 @@
 <form class="composerExpiration-container" name="expirationForm">
-    <header class="composerExpiration-header">
-        <h3 translate translate-context="Title">Expiration time</h3>
-        <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">
-            <i class="fa fa-info-circle"></i>
-        </a>
-    </header>
-    <p translate translate-context="Info">This message will expire in</p>
-    <div class="pm_form alert text-center composerExpiration-fields-container">
-        <div class="composerExpiration-field-weeks">
-            <div class="pm_select">
+    <div class="shadow-container flex flex-column m1 p1">
+        <header class="composerExpiration-header">
+            <h3 translate translate-context="Title">Expiration time</h3>
+        </header>
+        <p class="block-info-standard" translate-context="Warning" translate>
+                If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.<br>
+                <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">
+                    Learn more
+                </a>
+        </p>
+        <p translate translate-context="Info" class="bold mt0">This message will expire in</p>
+        <div class="pm_form alert text-center flex_item-fluid composerExpiration-fields-container">
+            <div class="composerExpiration-field-weeks mr0-5">
                 <select
                     name="weeks"
                     id="weeks"
-                    class="composer-options-select-week"
+                    class="composer-options-select-week pm-field mr0-25"
                     ng-model="model.weeks"
-                    ng-options="option.label for option in options.week track by option.label"></select>
-                <i class="fa fa-angle-down"></i>
+                    ng-options="option.label for option in options.week track by option.label">
+                </select>
+                <label translate translate-context="Delay" for="weeks">Weeks</label>
             </div>
-            <label translate translate-context="Delay" for="weeks">Weeks</label>
-        </div>
 
-        <div class="composerExpiration-field-days">
-            <div class="pm_select">
+            <div class="composerExpiration-field-days mr0-5">
                 <select
                     name="days"
                     id="days"
-                    class="composer-options-select-day"
+                    class="composer-options-select-day pm-field mr0-25"
                     ng-model="model.days"
                     ng-options="option.label for option in options.day track by option.label"></select>
-                <i class="fa fa-angle-down"></i>
+                <label translate translate-context="Delay" for="days">Days</label>
             </div>
-            <label translate translate-context="Delay" for="days">Days</label>
-        </div>
 
-        <div class="composerExpiration-field-hours">
-            <div class="pm_select">
+            <div class="composerExpiration-field-hours">
                 <select
                     name="hours"
                     id="hours"
-                    class="composer-options-select-hour"
+                    class="composer-options-select-hour pm-field mr0-25"
                     ng-model="model.hours"
                     ng-options="option.label for option in options.hour track by option.label"></select>
-                <i class="fa fa-angle-down"></i>
+                <label translate translate-context="Delay" for="hours">Hours</label>
             </div>
-            <label translate translate-context="Delay" for="hours">Hours</label>
         </div>
-    </div>
-    <p class="alert alert-warning" translate-context="Warning" translate>If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.</p>
 
-    <footer class="text-right">
-        <button
-            type="button"
-            class="pm_button pull-left mobileFull composer-options-btn-cancel composerExpiration-btn-cancel"
-            translate
-            translate-context="Action">Cancel</button>
-        <button
-            class="pm_button primary mobileFull composer-options-btn-submit composerExpiration-btn-submit"
-            translate
-            translate-context="Action">Set</button>
-    </footer>
+        <footer class="text-right flex flex-spacebetween mtauto">
+            <button
+                type="button"
+                class="pm-button mobileFull composer-options-btn-cancel composerExpiration-btn-cancel"
+                translate
+                translate-context="Action">Cancel</button>
+            <button
+                class="pm-button-blue mobileFull composer-options-btn-submit composerExpiration-btn-submit"
+                translate
+                translate-context="Action">Set</button>
+        </footer>
+    </div>
 </form>

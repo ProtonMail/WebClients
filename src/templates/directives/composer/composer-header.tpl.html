@@ -1,10 +1,10 @@
-<header data-responsive-composer="message" class="composerHeader-container">
-    <span ng-click="unminimize(message);" class="subject composerHeader-subject ellipsis">{{subject(message)}}</span>
-    <div class="composerHeader-actions actions text-right">
+<header data-responsive-composer="message" class="composerHeader-container flex pb1">
+    <span ng-click="unminimize(message);" class="subject composerHeader-subject flex-self-vcenter pl0-5 ellipsis">{{subject(message)}}</span>
+    <div class="composerHeader-actions actions mlauto">
         <button
             type="button"
             ng-show="!!!message.minimized"
-            class="pm_button link minimize-button hidden-xs composerHeader-btn composer-action-minimize"
+            class="pl0-5 pr0-5 link minimize-button hidden-xs composerHeader-btn composer-action-minimize"
             ng-click="minimize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Minimize"
@@ -15,7 +15,7 @@
         <button
             type="button"
             ng-show="!!message.minimized"
-            class="pm_button link expand-button hidden-xs composerHeader-btn composer-action-expand"
+            class="pl0-5 pr0-5 link expand-button hidden-xs composerHeader-btn composer-action-expand"
             ng-click="unminimize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Expand"
@@ -26,7 +26,7 @@
         <button
             type="button"
             ng-show="!!!message.maximized"
-            class="pm_button link maximize-button hidden-xs hidden-sm composerHeader-btn composer-action-maximize"
+            class="pl0-5 pr0-5 link maximize-button hidden-xs hidden-sm composerHeader-btn composer-action-maximize"
             ng-click="normalize(message);maximize(message)"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Fullscreen"

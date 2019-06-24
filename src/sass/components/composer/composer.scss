@@ -42,26 +42,11 @@
         background:$white;
         will-change: transform;
 
-        // header, footer {
-        //     line-height: $composerRowHeight;
-        // }
-
-        .row {
-            line-height: #{$composerRowHeight+1px}; // fixes a zoom bug for Chrome
-        }
 
         .composer-meta:not(.composer-toggle-ccbcc) .ccRow,
         .composer-meta:not(.composer-toggle-ccbcc) .bccRow {display: none}
         .ccRow .composerInputMeta-overlay-button,
         .bccRow .composerInputMeta-overlay-button { display: none }
-
-        // .flex {
-        //     -webkit-flex:1; /* ipad */
-        //     flex:1;
-        //     display:-webkit-flex;
-        //     display: flex;
-        //     min-height: 0px; /* trigger height change */
-        //  }
 
         .fill {
           -webkit-flex:1; /* ipad */
@@ -172,17 +157,6 @@
             z-index: 7;
             border-top: 1px solid $border;
             background: $tertiary;
-            i {
-                font-style: normal;
-                &.embedded{
-                    color: $primary;
-                }
-            }
-            .fa {
-                display: inline-block;
-                line-height: $composerRowHeight;
-                height: $composerRowHeight;
-            }
         }
 
         .previews {
@@ -287,7 +261,7 @@
         &.minimized {
             height: $composerRowHeight !important;
             overflow: hidden;
-            padding: 0 !important;
+            padding: .25em !important;
             bottom: 0;
             header {
                 border-radius: 2px;
@@ -489,11 +463,11 @@
         flex-direction: row;
 
         position: relative;
-        padding: 0px 10px;
+        //padding: 0px 10px;
 
-        label{
-            padding-right: 10px;
-        }
+        // label{
+        //     padding-right: 10px;
+        // }
 
         // input,
         // select{

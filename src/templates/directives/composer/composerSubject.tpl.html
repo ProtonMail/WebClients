@@ -1,10 +1,15 @@
-<div class="composerSubject-container">
+<div class="composerSubject-container flex flex-nowrap flex-items-center pl0-5 mb0-5">
+    <label
+    translate
+    translate-context="Title"
+    for="subjectMessage{{::message.ID}}" class="pr2">From</label>
     <input
         title-translate="Subject"
         title-translate-context="info"
-        class="flex subject no-outline"
+        class="flex w100 pm-field"
         placeholder-translate="Subject"
         placeholder-translate-context="Placeholder"
         ng-model="message.Subject"
+        id="subjectMessage{{::message.ID}}"
         required>
 </div>

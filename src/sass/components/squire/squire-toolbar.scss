@@ -1,8 +1,9 @@
 .squireToolbar-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // position: relative
+    background: #fcfdff;
 }
 
 .squireToolbar-container.b .squireToolbar-action-bold,
@@ -37,7 +38,7 @@
 [class*="squireToolbar-row"] .squireToolbar-action-mode:hover,
 [class*="squireToolbar-row"] .squireToolbar-action-mode:active {
     background: #FFF;
-    border: 1px solid $border;
+    //border: 1px solid $border;
 }
 
 [class*="squireToolbar-row"] [class*="squireToolbar-action-"]:hover:not(:active) {
@@ -114,16 +115,16 @@
     transform: rotate(180deg);
 }
 
-.squireToolbar-show-subrow  .squireToolbar-action-color {
-    border: 1px solid $border;
-    margin-right: 4px
-}
+// .squireToolbar-show-subrow  .squireToolbar-action-color {
+//     border: 1px solid $border;
+//     margin-right: 4px
+// }
 
 
-.squireToolbar-show-subrow .squireToolbar-action-options {
-    background: #FFF;
-    border: 1px solid $border;
-}
+// .squireToolbar-show-subrow .squireToolbar-action-options {
+//     background: #FFF;
+//     border: 1px solid $border;
+// }
 
 .squireToolbar-show-subrow .squireToolbar-row-2 {
     display: flex;
@@ -144,23 +145,24 @@
 
 .squireToolbar-separator {
     width: 1px;
-    height: $composerRowHeight;
-    background: $border;
+    //height: $composerRowHeight;
+    align-self: stretch;
+    background: $pm-global-border;
 }
 
 [class*="squireToolbar-action-"] {
-    flex-shrink: 0;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    width: 36px;
-    height: 26px;
-    margin: 4px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    white-space: nowrap;
-    border-radius: $border-radius
+    // flex-shrink: 0;
+    // border: 0;
+    // padding: 0;
+    // background: transparent;
+    // width: 36px;
+    // height: 26px;
+    // margin: 4px;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // word-wrap: break-word;
+    // white-space: nowrap;
+    // border-radius: $border-radius
 }
 
 [name="signature"] [class*="squireToolbar-action-"] {
@@ -260,18 +262,15 @@
     position: absolute;
     z-index: 1005;
     background: $white;
-    border: 1px solid $border;
+    border: 1px solid $pm-global-border;
     white-space: nowrap;
-    top: 2.2rem;
+    top: 100%;
     left: 0;
     right: auto;
     min-width: 100%;
     min-height: 9em;
     max-height: 50%;
     overflow-y: auto;
-    margin: 0;
-    padding: 0;
-    list-style: none;
     border-radius: $border-radius;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
@@ -285,11 +284,11 @@
 .squireToolbar-select-view {
     justify-content: space-between;
     align-items: center;
-    background-color: #FFF;
-    margin: 4px 0px 4px 4px;
-    height: 26px;
-    border: 1px solid $border;
-    border-radius: $border-radius;
+    // background-color: #FFF;
+    // margin: 4px 0px 4px 4px;
+    // height: 26px;
+    // border: 1px solid $border;
+    // border-radius: $border-radius;
 }
 
 .squireToolbar-select-view button {
@@ -307,9 +306,9 @@
     width: 100%;
     text-align: left;
     margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // word-wrap: break-word;
     white-space: nowrap;
 
     &::after {
@@ -339,7 +338,7 @@
 .squireToolbar-dropdown-divider {
     height: 1px;
     margin: 4px 0;
-    background-color: $border;
+    background-color: $pm-global-border;
 }
 
 .squireToolbar-select-item {
@@ -387,7 +386,7 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 
 .squireToolbar-text-mode {
     min-width: auto;
-    margin-left: auto;
+    //margin-left: auto;
     margin-right: .5em;
 
     .squireToolbar-select-list {
@@ -398,8 +397,8 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
     .squireToolbar-action-mode {
         display: flex;
         justify-content: center;
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: .5em;
+        padding-right: .5em;
         background: inherit;
         box-shadow: none;
         border-color: transparent;
