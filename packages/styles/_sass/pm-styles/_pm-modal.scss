@@ -9,6 +9,7 @@ $modal-breakpoint-height: 22em !default;
 
 $modal-max-height: 80% !default;
 
+$modal-wider-width: 70% !default;
 $modal-smaller-width: 22em !default;
 
 .pm-modalOverlay {
@@ -109,6 +110,10 @@ $modal-smaller-width: 22em !default;
 .pm-modal--smaller {
   width: $modal-smaller-width;
   left: calc(50% - #{$modal-smaller-width/2});
+}
+.pm-modal--wider {
+  width: $modal-wider-width;
+  left: calc(50% - #{$modal-wider-width/2});
 }
 
 .pm-modal--inBackground {
