@@ -5,7 +5,7 @@
     </div>
 
     <label class="flex flex-spacebetween mb1 pl1 pr1">
-        <icon data-name="search" fill="currentColor" class="mr0-5"></icon>
+        <icon data-name="search" fill="currentColor" class="mr0-5" aria-hidden="true"></icon>
         <div>
             <input
                 class="dropdown-folder-search-input"
@@ -22,12 +22,12 @@
             class="dropDown-item alignleft"
             ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue})) track by label.ID">
 
-            <button class="w100 pt0-5 pb0-5" data-folder-id="{{ ::label.ID }}">
+            <button class="w100 flex pt0-5 pb0-5" data-folder-id="{{ ::label.ID }}">
                 <div class="flex w100">
                     <icon
                         data-name="folder"
-                        class="mr0-5 dropdown-label-scrollbox-label-icon"
-                        ng-style="::color(label, 'fill')"></icon>
+                        class="mr0-5 mtauto mbauto dropdown-label-scrollbox-label-icon"
+                        ng-style="::color(label, 'fill')" aria-hidden="true"></icon>
                     <span class="ellipsis alignleft mw80">{{ ::label.Name }}</span>
                 </div>
             </button>
@@ -37,11 +37,11 @@
             class="dropDown-item"
             ng-repeat="label in (filteredLabels2 = (mailboxes | filter: {Name: searchValue})) track by label.ID">
 
-            <button class="w100 pt0-5 pb0-5" data-folder-id="{{ ::label.ID }}">
+            <button class="w100 flex pt0-5 pb0-5" data-folder-id="{{ ::label.ID }}">
                 <div class="flex w100">
                     <icon
                         data-name="{{::label.icon}}"
-                        class="mr0-5 dropdown-label-scrollbox-label-icon"></icon>
+                        class="mr0-5 mtauto mbauto dropdown-label-scrollbox-label-icon" aria-hidden="true"></icon>
                     <span class="ellipsis alignleft">{{ ::label.Name }}</span>
                 </div>
             </button>

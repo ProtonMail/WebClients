@@ -1,21 +1,7 @@
 .dropdown-label-create .createLabel-button,
 .dropdown-label-create .createLabel-button:hover {
-	height: initial;
-	min-height: 30px;
-	width: 100%;
-    padding: 0;
-    border: 0;
-	line-height: 16px;
-    font-weight: bold;
-	background: transparent;
     word-wrap: break-word;
-    text-transform: none;
-	text-align: left;
-	color: $primary;
-	cursor: pointer;
-    box-shadow: none;
-    cursor: pointer;
-
+    line-height: 1.1;
     i {
         color: $black;
     }

@@ -1,9 +1,9 @@
 <nav
     class="toolbar toolbarDesktop-container pm_toolbar pm_toolbar_withSelector">
 
-    <span class="flex p1 back" ng-if="idDefined() &&  viewLayout === 1">
+    <span class="flex pl1 pr1 back" ng-if="idDefined() &&  viewLayout === 1">
         <button ng-click="back()" class="flex" pt-tooltip-translate="Back to list" pt-tooltip-translate-context="Action">
-            <icon data-name="arrow-left" data-size="16" class="mauto"></icon>
+            <icon data-name="arrow-left" data-size="16" class="mauto" aria-hidden="true"></icon>
             <span class="sr-only" translate-context="Action" translate>Back to list</span>
         </button>
     </span>
@@ -17,12 +17,12 @@
 
     <folder-selector-dropdown
         id="tour-folder-dropdown"
-        class="toolbarDesktop-select-label p1"
+        class="toolbarDesktop-select-label flex"
         ng-class="{disabled: isDisabled()}"></folder-selector-dropdown>
 
     <label-selector-dropdown
         id="tour-label-dropdown"
-        class="toolbarDesktop-select-label p1"
+        class="toolbarDesktop-select-label flex"
         ng-class="{disabled: isDisabled()}"></label-selector-dropdown>
 
     <advanced-filter-element></advanced-filter-element>

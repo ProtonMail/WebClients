@@ -29,18 +29,18 @@
             data-label-id="{{::label.ID}}">
 
             <label
-                class="flex flex-spacebetween w100 pt0-5 pb0-5"
+                class="flex w100 pt0-5 pb0-5"
                 data-label-id="{{::label.ID}}">
 
                 <icon
                     data-name="label"
                     data-label-id="{{::label.ID}}"
-                    class="mr0-5 dropdown-label-scrollbox-label-icon"
+                    class="mr0-5 mtauto mbauto dropdown-label-scrollbox-label-icon"
                     ng-style="::color(label, 'fill')"></icon>
 
                 <span
                     ng-style="::color(label)"
-                    class="ellipsis w60">{{ ::label.Name }}</span>
+                    class="ellipsis flex-item-fluid">{{ ::label.Name }}</span>
                 <div>
                     <custom-checkbox
                         data-custom-id="l{{::label.ID}}"
