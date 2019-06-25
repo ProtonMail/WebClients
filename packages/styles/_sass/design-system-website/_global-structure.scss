@@ -186,7 +186,7 @@ body {
   }
 }
 .toolbar {
-  min-height: $toolbar-height;
+  height: $toolbar-height;
   background: var(--bgcolor-toolbar, $pm-global-altgrey);
   border-radius: 4px 4px 0 0;
   & svg {
@@ -205,7 +205,7 @@ body {
   border-radius: 4px 4px 0 0;
 }
 .main-area--withToolbar {
-  height: calc(100vh - #{$header-height} - #{$toolbar-height} );  
+  max-height: calc(100vh - #{$header-height} - #{$toolbar-height} );  
 }
 .main-full {
   height: 100vh;
