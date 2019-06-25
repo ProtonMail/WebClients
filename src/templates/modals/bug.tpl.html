@@ -1,26 +1,44 @@
-<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
-    <form class="modal-dialog pm_form bugModalForm" ng-submit="bugModalForm.$valid && ctrl.submit()" name="bugModalForm" novalidate>
-        <button type="button" ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" translate translate-context="Title">Report Bug</h3>
-            </div>
-            <div class="modal-body">
-                <bug-modal-view data-form="bugModalForm" data-model="ctrl.form"></bug-modal-view>
-            </div>
-        </div>
-        <div class="modal-footer">
+<div class="pm-modalOverlay">
+    <dialog class="pm-modal pm-modal--wider" role="dialog" open aria-labelledby="modalTitle">
+
+        <header class="pm-modalHeader">
             <button
-                id="cancelModalBtn"
                 type="button"
-                class="pm_button modal-footer-button"
+                class="pm-modalClose"
                 ng-click="ctrl.cancel()"
-                translate-context="Action" translate>Cancel</button>
-            <button
-                id="confirmModalBtn"
-                class="pm_button primary modal-footer-button disabled-if-network-activity"
-                translate-context="Action" translate>Submit</button>
-        </div>
-    </form>
-    <div class="modal-overlay"></div>
+                title-translate="Close"
+                title-translate-context="Action">×</button>
+            <h1
+                id="modalTitle"
+                class="pm-modalTitle"
+                translate
+                translate-context="Title">Report Bug</h1>
+        </header>
+
+        <form
+            class="pm-modalContent"
+            ng-submit="bugModalForm.$valid && ctrl.submit()"
+            name="bugModalForm"
+            novalidate>
+
+            <div class="pm-modalContentInner">
+                <bug-modal-view
+                    data-form="bugModalForm"
+                    data-model="ctrl.form"></bug-modal-view>
+            </div>
+
+            <footer class="pm-modalFooter flex flex-spacebetween">
+                <button
+                    class="pm-button-blueborder"
+                    type="button"
+                    ng-click="ctrl.cancel()"
+                    translate-context="Action"
+                    translate>Cancel</button>
+                <button
+                    class="pm-button-blue disabled-if-network-activity"
+                    translate-context="Action"
+                    translate>Submit</button>
+            </footer>
+        </form>
+    </dialog>
 </div>

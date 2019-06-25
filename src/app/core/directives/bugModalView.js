@@ -27,13 +27,11 @@ function bugModalView(gettextCatalog, notification, translator) {
 
                 if (images.length) {
                     element[0].classList.add(UPLOADED_CLASS);
-
-                    scope.$applyAsync(() => {
+                    return scope.$applyAsync(() => {
                         scope.model.fileList = images;
                     });
-                } else {
-                    notification.error(I18N.noImageSelected);
                 }
+                notification.error(I18N.noImageSelected);
             };
 
             const onClick = () => {

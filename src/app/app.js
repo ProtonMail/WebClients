@@ -35,6 +35,7 @@ angular
         'gettext',
         'cgNotify',
         'ngCookies',
+        'ngAria',
         'ngMessages',
         'ngSanitize',
         'ui.router',

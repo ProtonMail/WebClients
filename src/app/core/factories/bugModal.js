@@ -9,11 +9,10 @@ function bugModal(pmModal) {
             const description = (params.form.Description || '').trim();
             this.form = {
                 ...params.form,
-                Description: `${description}\n\n\n ${params.content || ''}`
+                Description: `${description}\n\n\n ${params.content || ''}`.trim()
             };
 
-            this.submit = () => params.submit(this.form);
-            this.cancel = params.cancel;
+            this.submit = () => console.log(this.form) || params.submit(this.form);
         }
     });
 }
