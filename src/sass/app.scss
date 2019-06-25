@@ -184,7 +184,6 @@ $path-images: "~design-system/assets/img/shared/";
 @import "components/header/headerSecured";
 
 //== Bug report
-@import "components/bugReport/newBugReport";
 @import "components/bugReport/bugForm";
 
 //== Search
@@ -196,7 +195,6 @@ $path-images: "~design-system/assets/img/shared/";
 //== Navigation
 @import "components/navigation/navigation";
 @import "components/navigation/navigationUser";
-@import "components/navigation/navigationReport";
 
 //== Sidebar
 @import "components/sidebar/sidebar";
