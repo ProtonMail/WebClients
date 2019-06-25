@@ -1,6 +1,6 @@
-<div>
+<div class="flex">
     <button
-        class="pm-button-dark pm-group-button pm-button--for-icon noborder paginator-btn-previous"
+        class="pm-button--for-icon noborder paginator-btn-previous"
         pt-tooltip-translate="Previous"
         pt-tooltip-translate-context="Action">
         <icon name="arrow-left"></icon>
@@ -8,7 +8,7 @@
     </button>
 
     <dropdown-container class="pm-group-buttons">
-        <dropdown-button class="pl0-5 pr0-5">
+        <dropdown-button class="pl0-5 pr0-5 paginator-indicator">
             <span class="mauto">{{ ::page }}</span>
             <icon name="caret" class="dropdownv4-icon"></icon>
         </dropdown-button>
@@ -28,7 +28,7 @@
     </dropdown-container>
 
     <button
-        class="pm-button-dark pm-group-button pm-button--for-icon noborder paginator-btn-next"
+        class="pm-button--for-icon noborder paginator-btn-next"
         pt-tooltip-translate="Next"
         pt-tooltip-translate-context="Action">
         <icon name="arrow-right"></icon>

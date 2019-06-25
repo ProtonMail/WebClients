@@ -9,3 +9,8 @@
 .paginator-dropdown button * {
     pointer-events: none
 }
+
+.paginator-indicator { color: currentColor; }
+[class*="paginator-btn-"] {
+    border: 0;
+}
