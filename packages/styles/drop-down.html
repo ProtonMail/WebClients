@@ -290,6 +290,47 @@ section: design
 </div>
 
 
+<h2 class="mt2">Drop down wide (advanced search)</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 aligncenter">
+    <div class="dropDown inbl">
+      <button class="pm-button js-dropDown-button" aria-expanded="false" type="button">
+        Drop down wide
+      </button>
+      <div class="js-dropDown-content unstyled dropDown-content dropDown-content--wide" hidden>
+        <ul class="unstyled mt0-5 mb0-5 ml1 mr1">
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">A first action</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">Another action</button></li>
+          <li class="dropDown-item"><button class="w100 pt0-5 pb0-5 alignleft">A third action</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div class="dropDown inbl"&gt;
+  &lt;button class="pm-button-blue" <strong>aria-expanded="false/true"</strong> type="button"&gt;
+    Drop down wide
+  &lt;/button&gt;
+  &lt;div <strong>class="dropDown-content dropDown-content--wide" hidden</strong>&gt;
+    &lt;ul <strong>class="unstyled mt0-5 mb0-5 ml1 mr1"</strong>&gt;
+      &lt;li <strong>class="dropDown-item</strong>"&gt;
+        &lt;button class="w100 pt0-5 pb0-5 alignleft"&gt;A first action&lt;/button&gt;
+      &lt;/li&gt;
+      &lt;li class="dropDown-item"&gt;
+        &lt;button class="w100 pt0-5 pb0-5 alignleft"&gt;Another action&lt;/button&gt;
+      &lt;/li&gt;
+      &lt;li class="dropDown-item"&gt;
+        &lt;button class="w100 pt0-5 pb0-5 alignleft"&gt;A third action&lt;/button&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+
+
+
 <h2 class="mt2">Drop down code (simple buttons)</h2>
 
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
@@ -328,5 +369,3 @@ section: design
 &lt;/div&gt;</code></pre>
   </div>
 </div>
-
-<br><br><br><br><br><br><br>

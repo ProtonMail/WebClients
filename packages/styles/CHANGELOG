@@ -1,8 +1,15 @@
+# [1.6.xx] - 2019-06-xx
+
+## New 
+
+- added `dropDown-content--wide` modifier (super large drop down, for advanced search)
+
+
 # [1.6.17] - 2019-06-25
 
 ## New 
 
-- added `rotateZ-90` et `rotateZ-270` helpers
+- added `rotateZ-90` and `rotateZ-270` helpers
 - added Sass variables for `max-width` in percentages
 - added helper `flex-row`
 - added modifier `pm-modal--wider` for… wider modals.

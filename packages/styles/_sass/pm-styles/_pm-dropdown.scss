@@ -1,5 +1,6 @@
 /* dropdown examples */
 $dropDown-width: 200px !default;
+$dropDown-wide-width: 450px !default;
 $dropDown-narrow-width: 8em !default;
 
 .dropDown {
@@ -29,6 +30,12 @@ $dropDown-narrow-width: 8em !default;
   left: calc(50% - #{$dropDown-narrow-width/2});
   width: $dropDown-narrow-width;
 }
+
+.dropDown-content--wide {
+  left: calc(50% - #{$dropDown-wide-width/2});
+  width: $dropDown-wide-width;
+}
+
 
 /* This is the hidden state */
 [hidden].dropDown-content {
