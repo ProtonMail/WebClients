@@ -7,7 +7,7 @@
         ng-class="{
             'color-pm-blue': message.isInternal() || message.isSentEncrypted() || message.isDraft() || message.isAuto(),
         }">
-        <icon data-name="lock" data-size="16" data-fill="currentColor" class="mauto " aria-hidden="true"></icon>
+        <icon data-name="lock" data-size="16" data-fill="currentColor" class="mauto "></icon>
     </a>
 
     <a
@@ -15,7 +15,7 @@
         href="https://protonmail.com/support/knowledge-base/how-to-use-pgp"
         target="_blank"
         ng-if="!displaySignatureStatus() && message.isPGPEncrypted()">
-        <icon data-name="lock" data-size="16" data-fill="currentColor" class="mauto " aria-hidden="true"></icon>
+        <icon data-name="lock" data-size="16" data-fill="currentColor" class="mauto "></icon>
     </a>
 
     <a

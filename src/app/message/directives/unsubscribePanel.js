@@ -58,7 +58,7 @@ function unsubscribePanel(
         restrict: 'E',
         template: `
                 <div class="bg-white w100 rounded bordered-container p0-5 mb0-5 flex flex-nowrap">
-                    <icon data-name="email" data-size="16" class=" fill-global-grey mtauto mbauto" aria-hidden="true"></icon>
+                    <icon data-name="email" data-size="16" class=" fill-global-grey mtauto mbauto"></icon>
                     <span class="pl0-5 pr0-5 flex-item-fluid">${I18N.notice}</span>
                     <a class="bold mr1" href="https://protonmail.com/support/knowledge-base/auto-unsubscribe" target="_blank">${
                         I18N.kb

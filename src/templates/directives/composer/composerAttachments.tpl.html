@@ -3,7 +3,7 @@
 
         <composer-attachments-size class="composerAttachments-size"></composer-attachments-size>
         <span class="composerAttachments-counter-attachments" ng-show="message.Attachments.length > message.NumEmbedded">
-            <icon data-name="attach" data-size="16" class=" mauto" aria-hidden="true"></icon> {{ message.Attachments.length - message.NumEmbedded }} <span translate translate-n="message.Attachments.length - message.NumEmbedded" translate-plural="files attached" translate-context="Info">file attached</span>
+            <icon data-name="attach" data-size="16" class=" mauto"></icon> {{ message.Attachments.length - message.NumEmbedded }} <span translate translate-n="message.Attachments.length - message.NumEmbedded" translate-plural="files attached" translate-context="Info">file attached</span>
         </span>
         <span class="composerAttachments-counter-embedded" ng-show="message.NumEmbedded > 0">
             <i class="fa fa-image embedded"></i> {{ message.NumEmbedded }} <span translate translate-n="message.NumEmbedded" translate-plural="embedded images" translate-context="Info">embedded image</span>
