@@ -12,6 +12,7 @@ function autocompleteEmailsItem(
     autoPinPrimaryKeys,
     checkTypoEmails,
     keyCache,
+    $compile,
     dispatchers,
     manageContactGroup,
     contactGroupModel
@@ -58,7 +59,7 @@ function autocompleteEmailsItem(
     };
 
     const makeIconGroup = ({ Color }) =>
-        `<i aria-hidden="true" class="fa fa-users autocompleteEmailsItem-icon-group" style="color:${Color}"></i>`;
+        `<icon data-name="contacts-groups" data-size="12" class="autocompleteEmailsItem-icon-group mauto" style="fill:${Color}"></icon>`;
 
     function link(scope, el, { key }) {
         const { dispatcher, on, unsubscribe } = dispatchers(['recipient.update']);
@@ -70,7 +71,8 @@ function autocompleteEmailsItem(
 
         if (scope.email.isContactGroup) {
             const group = contactGroupModel.read(scope.email.Address, 'labels');
-            el[0].insertAdjacentHTML('afterBegin', makeIconGroup(group));
+            //el[0].insertAdjacentHTML('afterBegin', makeIconGroup(group));
+            el.prepend($compile(makeIconGroup(group))(scope));
         }
 
         const onClick = ({ target }) => {

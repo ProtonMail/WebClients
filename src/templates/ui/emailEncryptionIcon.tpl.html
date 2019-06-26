@@ -1,14 +1,17 @@
 <div class="autocompleteEmailsItem-icon">
-    <i
-        class="fa encryptionIcon"
+
+    <icon
+        data-name="lock"
+        data-size="12"
+        class="encryptionIcon"
         ng-show="!(email.encrypt && email.isPinned && !email.isEO)
-          && (email.encrypt || email.loadCryptInfo || email.isEO)"
+            && (email.encrypt || email.loadCryptInfo || email.isEO)"
         ng-class="{
             'encryptionIcon fa-lock': email.encrypt || email.isEO,
             'encryptionIcon fa-pencil': !email.encrypt && email.sign,
             'encryptionIcon fa-spinner fa-pulse': email.loadCryptInfo,
             'pgp-encryption-icon': email.isPgp
-        }"></i>
+        }"></icon>
 
     <svg
         width="18"

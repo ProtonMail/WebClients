@@ -21,19 +21,9 @@
 
 
 .autocompleteEmails-item {
-    border: 1px solid $default-color-light;
-    background-color: $tertiary;
-    margin-top: 5px;
+    background-color: $pm-global-light;
+    margin-bottom: 5px;
     text-shadow: none;
-    border-radius: 2px;
-    padding-left: 5px;
-    margin-right: 5px;
-    display: flex;
-    flex-direction: row;
-    line-height: 22px;
-    height: 22px;
-    max-width: 85%;
-    min-width: 0
 }
 
 .autocompleteEmails-item-invalid {
@@ -47,10 +37,8 @@
 }
 
 .autocompleteEmails-label {
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    overflow: hidden;
-    white-space: nowrap
+    border-left: 1px solid $pm-global-border;
+    border-right: 1px solid $pm-global-border;
 }
 /* Generated via autocompleteEmailsItem by the directive */
 .autocompleteEmailsItem-icon-group {
@@ -143,12 +131,6 @@
         pointer-events: none;
         display: none
     }
-}
-
-.autocompleteEmails-btn-remove {
-    cursor: pointer;
-    background: transparent;
-    border: 0
 }
 
 .autocompleteEmails-btn-remove:focus,
