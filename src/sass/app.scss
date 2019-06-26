@@ -39,7 +39,7 @@ $path-images: "~design-system/assets/img/shared/";
 //@import "~components-font-awesome/css/font-awesome.css";
 @import "~ng-sortable/dist/ng-sortable.css";
 //@import "~angular-notify/dist/angular-notify.css";
-//@import "~pikaday/css/pikaday.css";
+@import "~pikaday/css/pikaday.css";
 @import "~dropzone/dist/dropzone.css";
 @import "~awesomplete/awesomplete.css";
 @import "~nouislider/distribute/nouislider.css";
@@ -188,7 +188,6 @@ $path-images: "~design-system/assets/img/shared/";
 
 //== Search
 @import "components/search/searchForm";
-@import "components/search/btnAdvancedSearch";
 @import "components/search/advancedSearch";
 @import "components/search/searchLimit";
 

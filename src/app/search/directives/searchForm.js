@@ -38,11 +38,12 @@ function searchForm(
             searchDate.attr('placeholder', dateUtils.I18N.localizedDatePlaceholder);
 
             return (scope, el) => {
-                const { on, unsubscribe, dispatcher } = dispatchers(['advancedSearch']);
-
-                const dispatchHelper = (type, data = {}) => dispatcher.advancedSearch(type, data);
+                const { on, unsubscribe, dispatcher } = dispatchers(['dropdownApp']);
 
                 const { AutoWildcardSearch } = mailSettingsModel.get();
+                let dropdownID;
+                const getDropdownID = () =>
+                    dropdownID || el[0].querySelector('[data-dropdown-id]').getAttribute('data-dropdown-id');
 
                 let folders = searchModel.getFolderList();
                 const addresses = searchModel.getAddresses();
@@ -58,7 +59,10 @@ function searchForm(
 
                 const onOpen = () => {
                     // Auto get data from the query
-                    const parameters = _.extend({}, searchValue.extractParameters(scope.query, folders), $stateParams);
+                    const parameters = {
+                        ...searchValue.extractParameters(scope.query, folders),
+                        ...$stateParams
+                    };
 
                     scope.addresses = addresses;
                     scope.folders = folders;
@@ -84,13 +88,19 @@ function searchForm(
                     scope.query = searchValue.generateSearchString(folders);
                 });
 
-                on('advancedSearch', (e, { type, data }) => {
-                    if (type === 'open') {
-                        el[0].classList[data.visible ? 'add' : 'remove'](CLASS_OPEN);
-                        scope.$applyAsync(() => {
-                            onOpen();
-                            scope.advancedSearch = data.visible;
-                        });
+                on('dropdownApp', (e, { type, data }) => {
+                    if (!dropdownID) {
+                        dropdownID = getDropdownID();
+                    }
+
+                    if (data.id !== dropdownID) {
+                        return;
+                    }
+
+                    if (type === 'state') {
+                        const action = data.isOpened ? 'add' : 'remove';
+                        el[0].classList[action](CLASS_OPEN);
+                        data.isOpened && scope.$applyAsync(onOpen);
                     }
                 });
 
@@ -102,7 +112,10 @@ function searchForm(
 
                 const go = (state, data) => {
                     $state.go(state, data);
-                    dispatchHelper('open', { visible: false });
+                    dispatcher.dropdownApp('action', {
+                        type: 'close',
+                        id: dropdownID
+                    });
                 };
 
                 const onSubmit = () => {

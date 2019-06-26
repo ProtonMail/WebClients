@@ -1,10 +1,8 @@
-<form method="post" class="searchbox-container  flex">
+<form method="post" class="searchbox-container flex" novalidate>
 
-    <div class="relative w100 flex-item-centered-vert noprint">
-        <!-- <button class="searchForm-action-button-default">
-            <i class="fa fa-search"></i>
-        </button> -->
-        <label for="global_search">
+    <div class="relative w100 flex flex-item-centered-vert noprint">
+
+        <label for="global_search" class="w100">
             <span class="sr-only" translate-context="Placeholder search" translate>Search messages</span>
             <input
                 type="search"
@@ -13,161 +11,253 @@
                 placeholder-translate-context="Placeholder search"
                 autocomplete="off"
                 ng-model="query"
-                class="pm-field w100 searchbox-field">
+                class="pm-field w100 searchbox-field search-form-fieldset-input">
         </label>
+
         <button type="submit" class="searchbox-search-button flex">
-            <icon data-name="search" data-size="16" class="fill-white mauto searchbox-search-button-icon"></icon>
+            <icon
+                data-name="search"
+                data-fill="white"
+                class="mauto searchbox-search-button-icon"></icon>
             <span class="sr-only" translate-context="Placeholder search" translate>Search messages</span>
         </button>
 
-        <btn-advanced-search
-            pt-tooltip-translate-context="Action"
-            pt-tooltip-translate="Advanced search"
-            pt-placement="bottom" class="searchbox-advanced-search-button"></btn-advanced-search>
-        <btn-advanced-search
-            data-action="close"
-            class="searchForm-action-button-advanced"></btn-advanced-search>
-    </div>
+        <dropdown-container
+            data-position="right"
+            class="searchForm-dropdown searchbox-advanced-search-button">
 
-    <div class="searchForm-advanced-container pm_form pm_grid" ng-if="advancedSearch">
-        <section class="searchForm-advanced-main">
-                <div class="searchForm-advanced-keywords-container row">
-                    <input
-                        id="search_keywords"
-                        class="searchForm-advanced-keywords-input"
-                        type="text"
-                        placeholder-translate="Keywords"
-                        placeholder-translate-context="Placeholder search"
-                        ng-model="model.keyword">
-                </div>
-                <div class="row">
-                    <label class="searchForm-advanced-wildcard-container">
-                        <custom-checkbox data-custom-ng-model="model.wildcard"></custom-checkbox>
-                        <span
-                            translate-context="Info"
-                            translate>Do not require exact match</span>
-                        <a href="https://protonmail.com/support/knowledge-base/search/" target="_blank" class="text-purple">
-                            <i class="fa fa-info-circle"></i>
-                        </a>
-                    </label>
-                </div>
-        </section>
+            <dropdown-button
+                class="p1"
+                pt-tooltip-translate-context="Action"
+                pt-tooltip-translate="Advanced search">
+                <icon
+                    class="btnAdvancedSearch-icon-desktop"
+                    name="caret"
+                    fill="white"
+                    focusable="false"
+                    role="img"></icon>
+                <span class="sr-only" translate translate-context="Search form">Open advanced search</span>
+            </dropdown-button>
 
-        <div class="searchForm-advanced-wrapper">
-            <div class="row">
-                <label for="search_folder" translate translate-context="Title">Location</label>
-                <span class="pm_select">
-                    <select
-                        id="search_folder"
-                        ng-model="model.folder"
-                        ng-options="folder.label group by folder.group for folder in folders"></select>
-                    <i class="fa fa-angle-down"></i>
-                </span>
-            </di>
-            <div class="row margin">
-                <div class="col-1-2">
-                    <label for="search_sender" translate translate-context="Title">Sender</label>
-                    <autocomplete-email
-                        class="searchForm-autocomplete"
-                        data-email="model.from"
-                        data-custom-id="search_sender"
-                        data-custom-placeholder="{{'From' | translate:'Title'}}"></autocomplete-email>
-                </div>
-                <div class="col-1-2">
-                    <label for="search_recipient" translate translate-context="Title">Recipient</label>
-                    <autocomplete-email
-                        class="searchForm-autocomplete"
-                        data-email="model.to"
-                        data-custom-id="search_recipient"
-                        data-custom-placeholder="{{'To' | translate:'Title'}}"></autocomplete-email>
-                </div>
-            </div>
-            <div class="row margin">
-                <div class="col-1-2">
-                    <label for="search_start" translate translate-context="Title">Start date</label>
-                    <span class="input-icon">
-                        <em class="fa fa-calendar searchForm-icon"></em>
+            <dropdown-content data-type="wide">
 
-                        <input
-                            class="search-date"
-                            type="text"
-                            data-pikaday
-                            autocomplete="off"
-                            ng-model="model.begin"
-                            data-default-date="{{::model.beginRaw}}"
-                            data-max-date="model.end"
-                            id="search_start">
-                    </span>
-                </div>
-                <div class="col-1-2">
-                    <label for="search_end" translate translate-context="Title">End date</label>
-                    <span class="input-icon">
-                        <em class="fa fa-calendar searchForm-icon"></em>
-                        <input
-                            class="search-date"
-                            type="text"
-                            data-pikaday
-                            autocomplete="off"
-                            ng-model="model.end"
-                            data-default-date="{{::model.endRaw}}"
-                            data-min-date="model.begin"
-                            id="search_end">
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1-2">
-                    <label for="search_address" translate translate-context="Title">Address</label>
-                    <span class="pm_select">
-                        <select
-                            id="search_address"
-                            ng-model="model.address"
-                            ng-options="address.Email for address in addresses | orderBy: 'Order' track by address.ID"></select>
-                        <i class="fa fa-angle-down"></i>
-                    </span>
-                </div>
-                <div class="col-1-2">
-                    <label translate translate-context="Title" translate-comment="Search form option heading">Attachments</label>
-                    <div class="radio searchFrom-advanced-radio">
-                        <label>
-                            <custom-radio
-                                data-custom-id="attachments_all"
-                                data-custom-ng-model="model.attachments"
-                                data-custom-value="2"></custom-radio>
+                <div class="searchForm-keywords pl1 pr1 pt1">
+                    <div class="inline-flex w100">
+                        <label
+                            for="search_keywords"
+                            class="pm-label sr-only"
+                            translate
+                            translate-context="Title">Keywords</label>
+
+                        <div class="w100">
+                            <input
+                                class="pm-field w100 searchForm-input-keywords"
+                                id="search_keywords"
+                                name="search_keywords"
+                                placeholder-translate="Keywords"
+                                placeholder-translate-context="Placeholder search"
+                                ng-model="model.keyword">
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-nowrap onmobile-flex-column mt1 pb1">
+
+                        <label for="search_wildcaard" class="inline-flex">
+                            <div>
+                                <custom-checkbox
+                                    data-custom-id="search_wildcaard"
+                                    data-custom-ng-model="model.wildcard"></custom-checkbox>
+                            </div>
                             <span
-                                translate
-                                translate-context="Search action filter"
-                                translate-comment="form option">All</span>
-                        </label>
-                        <label>
-                            <custom-radio
-                                data-custom-id="attachments_yes"
-                                data-custom-ng-model="model.attachments"
-                                data-custom-value="1"></custom-radio>
-                            <span
-                                translate
-                                translate-context="Search action filter"
-                                translate-comment="form option">Yes</span>
-                        </label>
-                        <label>
-                            <custom-radio
-                                data-custom-id="attachments_no"
-                                data-custom-ng-model="model.attachments"
-                                data-custom-value="0"></custom-radio>
-                            <span
-                                translate
-                                translate-context="Search action filter"
-                                translate-comment="form option">No</span>
+                                class="mr0-5 ml1"
+                                translate-context="Info"
+                                translate>Do not require exact match</span>
+
+                            <a href="https://protonmail.com/support/knowledge-base/search/" target="_blank" class="text-purple">
+                                <icon data-name="info"></icon>
+                            </a>
                         </label>
                     </div>
                 </div>
-            </div>
-            <div class="row margin-top">
-                <button type="submit" class="searchForm-advanced-submit pm_button primary">
-                    <i class="fa fa-search"></i>
-                    <span translate translate-context="Action">Search</span>
-                </button>
-            </div>
-        </div>
+
+                <div class="searchForm-options p1">
+                    <div class="mb1 flex flex-column">
+                        <label
+                            for="search_folder"
+                            class="pm-label"
+                            translate
+                            translate-context="Title">Location</label>
+
+                        <div class="w100">
+                            <select
+                                id="search_folder"
+                                class="pm-field w100"
+                                ng-model="model.folder"
+                                ng-options="folder.label group by folder.group for folder in folders"></select>
+                        </div>
+                    </div>
+
+                    <div class="flex-autogrid">
+                        <div class="flex flex-column flex-autogrid-item">
+                            <label
+                                for="search_sender"
+                                class="pm-label"
+                                translate
+                                translate-context="Title">Sender</label>
+
+                            <div class="w100 relative">
+                                <autocomplete-email
+                                    class="searchForm-autocomplete"
+                                    data-email="model.from"
+                                    data-custom-id="search_sender"
+                                    data-custom-placeholder="{{'From' | translate:'Title'}}"></autocomplete-email>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-column flex-autogrid-item relative">
+                            <label
+                                for="search_recipient"
+                                class="pm-label"
+                                translate
+                                translate-context="Title">Recipient</label>
+
+                            <div class="w100 relative">
+                                <autocomplete-email
+                                    class="searchForm-autocomplete"
+                                    data-email="model.to"
+                                    data-custom-id="search_recipient"
+                                    data-custom-placeholder="{{'To' | translate:'Title'}}"></autocomplete-email>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="flex-autogrid">
+                        <div class="flex flex-column flex-autogrid-item relativesearchForm-datepiker">
+
+                            <label for="search_start" class="pm-label flex flex-items-center">
+                                <icon data-name="date"></icon>
+                                <span
+                                    class="ml0-5"
+                                    translate
+                                    translate-context="Title">Start date</span>
+                            </label>
+
+                            <input
+                                class="search-date pm-field w100"
+                                type="text"
+                                data-pikaday
+                                autocomplete="off"
+                                ng-model="model.begin"
+                                data-default-date="{{::model.beginRaw}}"
+                                data-max-date="model.end"
+                                id="search_start">
+                        </div>
+
+                        <div class="flex flex-column flex-autogrid-item relative">
+                            <label for="search_end" class="pm-label flex flex-items-center">
+                                <icon data-name="date"></icon>
+                                <span
+                                    class="ml0-5"
+                                    translate
+                                    translate-context="Title">End date</span>
+                            </label>
+
+                            <input
+                                class="search-date pm-field w100"
+                                type="text"
+                                data-pikaday
+                                autocomplete="off"
+                                ng-model="model.end"
+                                data-default-date="{{::model.endRaw}}"
+                                data-min-date="model.begin"
+                                id="search_end">
+                        </div>
+                    </div>
+
+                    <div class="flex-autogrid">
+                        <div class="flex-autogrid-item flex flex-column">
+                            <label
+                                for="search_address"
+                                class="pm-label"
+                                translate
+                                translate-context="Title">Address</label>
+
+                            <div class="w100">
+                                <select
+                                    id="search_address"
+                                    class="pm-field w100"
+                                    ng-model="model.address"
+                                    ng-options="address.Email for address in addresses | orderBy: 'Order' track by address.ID"></select>
+
+                            </div>
+                        </div>
+
+                        <div class="flex flex-column flex-autogrid-item">
+                            <label
+                                for="search_end"
+                                class="pm-label"
+                                translate
+                                translate-context="Search form option heading">Attachments</label>
+
+                            <div class="radio searchFrom-advanced-radio  flex-autogrid">
+                                <label class="flex flex-items-center flex-autogrid-item">
+                                    <div>
+                                        <custom-radio
+                                            data-custom-id="attachments_all"
+                                            data-custom-ng-model="model.attachments"
+                                            data-custom-value="2"></custom-radio>
+                                    </div>
+                                    <span
+                                        class="ml0-5"
+                                        translate
+                                        translate-context="Search action filter"
+                                        translate-comment="form option">All</span>
+                                </label>
+                                <label class="flex flex-items-center flex-autogrid-item">
+                                    <div>
+                                        <custom-radio
+                                            data-custom-id="attachments_yes"
+                                            data-custom-ng-model="model.attachments"
+                                            data-custom-value="1"></custom-radio>
+                                    </div>
+                                    <span
+                                        class="ml0-5"
+                                        translate
+                                        translate-context="Search action filter"
+                                        translate-comment="form option">Yes</span>
+                                </label>
+                                <label class="flex flex-items-center flex-autogrid-item">
+                                    <div>
+                                        <custom-radio
+                                            data-custom-id="attachments_no"
+                                            data-custom-ng-model="model.attachments"
+                                            data-custom-value="0"></custom-radio>
+                                    </div>
+                                    <span
+                                        class="ml0-5"
+                                        translate
+                                        translate-context="Search action filter"
+                                        translate-comment="form option">No</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pl1 pr1 pb1">
+                    <button
+                        type="submit"
+                        class="searchForm-advanced-submit pm-button-blue w100">
+                        <icon data-name="search" fill="white"></icon>
+                        <span translate translate-context="Action">Search</span>
+                    </button>
+                </div>
+
+            </dropdown-content>
+        </dropdown-container>
     </div>
+
 </form>
