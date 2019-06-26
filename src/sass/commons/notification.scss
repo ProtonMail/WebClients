@@ -8,6 +8,8 @@ body .cg-notify-message {
     padding: .75rem 1.25rem;
     z-index: 9999999 !important;
     font-size: 110%;
+    left: 50%;
+    transform: translateX(-50%);
     &.notification-success {
         background-color: $green;
     }
