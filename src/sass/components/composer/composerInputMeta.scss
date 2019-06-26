@@ -1,8 +1,7 @@
 .composerInputMeta-container {
     position: relative;
-    max-height: 32px;
+    max-height: 2.5em;
     overflow: hidden;
-    padding: 0 0 0 10px !important;
 }
 
 
@@ -12,19 +11,22 @@
     z-index: 2;
     background: white;
     color: #333;
-    width: 100%;
     height: 100%;
     left: 0;
-    padding: 0 10px;
+}
+
+.composerInputMeta-overlay-fakefield {
+    padding: .4em .85em;
+    max-height: 2.5em;
 }
 
 .composerInputMeta-overlay-label { color: #ccc }
-.composerInputMeta-overlay-list {
-    margin-right: 32px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+// .composerInputMeta-overlay-list {
+//     margin-right: 32px;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+// }
 
 .composerInputMeta-overlay-list {
 
