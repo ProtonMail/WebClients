@@ -33,6 +33,7 @@ export { default as PrimaryButton } from './components/button/PrimaryButton';
 export { default as WarningButton } from './components/button/WarningButton';
 export { default as ErrorButton } from './components/button/ErrorButton';
 export { default as SmallButton } from './components/button/SmallButton';
+export { default as IconButton } from './components/button/IconButton';
 export { default as Copy } from './components/button/Copy';
 export { default as ResetButton } from './components/button/ResetButton';
 export { default as Button } from './components/button/Button';
