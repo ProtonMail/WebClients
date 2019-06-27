@@ -71,7 +71,6 @@ function autocompleteEmailsItem(
 
         if (scope.email.isContactGroup) {
             const group = contactGroupModel.read(scope.email.Address, 'labels');
-            //el[0].insertAdjacentHTML('afterBegin', makeIconGroup(group));
             el.prepend($compile(makeIconGroup(group))(scope));
         }
 

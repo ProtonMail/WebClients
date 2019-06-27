@@ -34,9 +34,6 @@ $path-images: "~design-system/assets/img/shared/";
 @import "~design-system/_sass/design-system-website/global-structure";
 
 
-
-//@import "~normalize.css/normalize.css";
-//@import "~components-font-awesome/css/font-awesome.css";
 @import "~ng-sortable/dist/ng-sortable.css";
 //@import "~angular-notify/dist/angular-notify.css";
 @import "~pikaday/css/pikaday.css";
@@ -72,12 +69,10 @@ $path-images: "~design-system/assets/img/shared/";
 //=== 👉 Common =============================//
 @import "commons/pm-form";
 @import "commons/loaders";
-//@import "commons/pm-button";
 @import "commons/pm-checkbox";
 @import "commons/pm-dropdown";
 @import "commons/pm-label";
 @import "commons/pm-modal";
-//@import "commons/pm-form";
 @import "commons/pm-panel";
 @import "commons/pm-table";
 @import "commons/pm-toggle";
@@ -89,7 +84,6 @@ $path-images: "~design-system/assets/img/shared/";
 @import "commons/pm-badge";
 @import "commons/pm-flex";
 @import "commons/tooltip";
-//@import "commons/alert";
 @import "commons/notification";
 @import "commons/scrollbars";
 @import "commons/toggle-switch";
@@ -134,7 +128,6 @@ $path-images: "~design-system/assets/img/shared/";
 @import "ui/formUtils/codeVerificator";
 @import "ui/intlTelInput";
 @import "ui/starButton";
-//@import "ui/storageBar";
 @import "ui/timepicker";
 @import "ui/scrollbox";
 @import "ui/arrowsToScroll";
@@ -228,7 +221,6 @@ $path-images: "~design-system/assets/img/shared/";
 @import "components/elements/statesElements";
 @import "components/elements/selectElement";
 @import "components/element/moveElement";
-//@import "components/element/toolbarDesktop.scss";
 @import "components/element/advancedFilterElement";
 @import "components/elements/navElements.scss";
 @import "components/elements/movedSelect.scss";
