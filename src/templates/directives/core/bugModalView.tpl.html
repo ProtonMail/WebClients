@@ -91,7 +91,7 @@
             translate
             translate-context="bug report modal label">Email address</label>
 
-        <div class="w100">
+        <div class="flex-item-fluid">
             <input
                 type="email"
                 required
@@ -134,7 +134,7 @@
             translate
             translate-context="bug report modal label">What happened?</label>
 
-        <div class="w100">
+        <div class="flex-item-fluid">
             <textarea
                 class="pm-field w100"
                 placeholder-translate-context="bug report modal description"
@@ -158,13 +158,11 @@
         </div>
     </div>
 
-    <div class="pm_grid bugModalView-upload-row">
+    <div class="flex mb1">
 
-        <div class="col-1-4">
-            <label translate translate-context="Title" translate-comment="but report form heading label">Attach screenshot</label>
-        </div>
+        <label translate translate-context="Title" translate-comment="but report form heading label" class="pm-label">Attach screenshot</label>
 
-        <div class="col-3-4">
+        <div class="flex-item-fluid">
             <label
                 class="bugModalView-input-label"
                 for="bugModalView-upload"
