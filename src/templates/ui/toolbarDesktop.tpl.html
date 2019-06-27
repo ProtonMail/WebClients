@@ -15,17 +15,24 @@
     <read-unread></read-unread>
     <move-element></move-element>
 
-    <folder-selector-dropdown
-        id="tour-folder-dropdown"
-        class="toolbarDesktop-select-label flex"
-        ng-class="{disabled: isDisabled()}"></folder-selector-dropdown>
+    <div class="pl0-5 pr0-5 flex">
+        <folder-selector-dropdown
+            id="tour-folder-dropdown"
+            class="toolbarDesktop-select-label flex"
+            ng-class="{disabled: isDisabled()}"></folder-selector-dropdown>
+    </div>
 
-    <label-selector-dropdown
-        id="tour-label-dropdown"
-        class="toolbarDesktop-select-label flex"
-        ng-class="{disabled: isDisabled()}"></label-selector-dropdown>
+    <div class="pl0-5 pr0-5 flex">
+        <label-selector-dropdown
+            id="tour-label-dropdown"
+            class="toolbarDesktop-select-label flex"
+            ng-class="{disabled: isDisabled()}"></label-selector-dropdown>
+    </div>
 
-    <advanced-filter-element></advanced-filter-element>
+    <div class="pl0-5 pr0-5 flex">
+        <advanced-filter-element></advanced-filter-element>
+    </div>
+
 
     <div class="right action toolbarDesktop-actions-right">
         <choose-layout-btns id="tour-layout"></choose-layout-btns>
