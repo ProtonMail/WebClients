@@ -1,26 +1,15 @@
 body .cg-notify-message {
-    @include flexRow();
-    background: #43434f;
-    box-shadow: inset 0 -1px 0 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.5);
-    color: $white !important;
-    text-shadow: 0 1px 0 rgba(0,0,0,.1);
-    border: none;
-    padding: .75rem 1.25rem;
-    z-index: 9999999 !important;
-    font-size: 110%;
-    left: 50%;
-    transform: translateX(-50%);
     &.notification-success {
-        background-color: $green;
+        background-color: $pm-global-success;
     }
     &.notification-warning {
-        background-color: $yellow;
+        background-color: $pm-global-attention;
     }
     &.notification-danger {
-        background-color: $red;
+        background-color: $pm-global-warning;
     }
     &.notification-info {
-        background-color: $secondary;
+        background-color: $pm-global-altgrey;
     }
     &.bottom-right {
         right: 2rem !important;
