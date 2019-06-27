@@ -1,7 +1,16 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notification, gettextCatalog, translator) {
+function dropdownLabels(
+    $timeout,
+    AppModel,
+    dispatchers,
+    labelsModel,
+    notification,
+    gettextCatalog,
+    translator,
+    labelModal
+) {
     const I18N = translator(() => ({
         LABELS_SAVED: gettextCatalog.getString('Labels Saved', null, 'dropdown label'),
         LABEL_SAVED: gettextCatalog.getString('Label Saved', null, 'dropdown label')
@@ -30,6 +39,7 @@ function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notificati
 
         let dropdownId = getID();
         const $search = angular.element(el[0].querySelector('.dropdown-label-search-input'));
+        const $createBtn = el[0].querySelector('.dropdown-label-create');
 
         // When we use the message inside the scope... 💥 so --force works ¯\_(ツ)_/¯
         if (dropdownId === 'null') {
@@ -44,6 +54,8 @@ function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notificati
                 scope.alsoArchive = false;
             });
         };
+
+        const lockDropdown = (value = true) => dispatcher.dropdownApp('lock', { id: dropdownId, value });
 
         const close = () => {
             dispatcher.dropdownApp('action', { type: 'close', id: dropdownId });
@@ -87,11 +99,35 @@ function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notificati
             });
         };
 
-        on('createLabel', (e, { type, data = {} }) => {
-            if (type === 'new.label') {
-                scope.labels && scope.labels.push({ ...data.label, Selected: true });
-            }
-        });
+        const onClickCreate = () => {
+            lockDropdown();
+            labelModal.activate({
+                params: {
+                    label: {
+                        Name: scope.searchLabels,
+                        Exclusive: 0
+                    },
+                    hookClose: () => lockDropdown(false),
+                    onSuccess(label) {
+                        if (scope.message) {
+                            dispatcher.messageActions('label', {
+                                messages: [scope.message],
+                                labels: [{ ...label, Selected: true }]
+                            });
+                            return close();
+                        }
+
+                        scope.labels && scope.labels.push({ ...label, Selected: true });
+
+                        // Auto scroll to the latest item added
+                        setTimeout(() => {
+                            const $list = el[0].querySelector('.dropdownLabels-list');
+                            $list.scrollTo(0, $list.scrollHeight);
+                        }, 500);
+                    }
+                }
+            });
+        };
 
         on('dropdownApp', (e, { type, data = {} }) => {
             // Restrict the ID because we need to cache the content and prevent issues if we load the same content twice -> toolabr and message
@@ -128,11 +164,13 @@ function dropdownLabels($timeout, AppModel, dispatchers, labelsModel, notificati
         });
 
         el.on('submit', onSubmit);
+        $createBtn.addEventListener('click', onClickCreate);
 
         scope.color = ({ Color: color = 'inherit' } = {}, key = 'color') => ({ [key]: color });
 
         scope.$on('$destroy', () => {
             el.off('submit', onSubmit);
+            $createBtn.removeEventListener('click', onClickCreate);
             unsubscribe();
         });
     }

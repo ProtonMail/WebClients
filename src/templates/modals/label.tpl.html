@@ -1,34 +1,38 @@
-<section
-    class="pm_modal small important {{ctrl.class}} labelModal-container"
-    role="dialog"
-    id="labelModal">
+<div class="pm-modalOverlay">
+    <dialog class="pm-modal labelModal-container" id="labelModal">
 
-    <form
-        class="modal-dialog labelModal-form"
-        name="editLabelForm"
-        ng-submit="ctrl.create(editLabelForm)">
+        <header class="pm-modalHeader">
+            <button
+                type="button"
+                class="pm-modalClose"
+                ng-click="ctrl.cancel()"
+                title-translate="Close"
+                title-translate-context="Action">×</button>
+            <h1
+                ng-if="ctrl.title"
+                id="modalTitle"
+                class="pm-modalTitle">{{ ::ctrl.title }}</h1>
+        </header>
 
-        <button
-            ng-click="ctrl.cancel()"
-            type="button"
-            aria-hidden="true"
-            title-translate="Close"
-            title-translate-context="Action"
-            class="fa fa-times close"></button>
+        <form
+            class="pm-modalContent labelModal-form"
+            name="editLabelForm"
+            novalidate
+            ng-submit="ctrl.create(editLabelForm)">
 
-        <div class="modal-content">
 
-            <header class="modal-header" ng-show="ctrl.title">
-                <h3 class="modal-title">{{ ::ctrl.title }}</h3>
-            </header>
+            <div class="pm-modalContentInner">
+                <div class="flex flex-nowrap onmobile-flex-column mb1">
+                    <label
+                        for="labelName"
+                        class="pm-label"
+                        translate
+                        translate-context="Label">Name</label>
 
-            <div class="modal-body pm_form pm_grid">
-                <div class="row">
-                    <label for="labelName" class="col-1-4" translate translate-context="Label">Name</label>
-                    <div class="col-3-4 ng-message-wrapper">
+                    <div class="w100">
                         <input
                             type="text"
-                            class="form-control labelModal-input-name"
+                            class="pm-field labelModal-input-name"
                             autofocus
                             id="labelName"
                             name="label"
@@ -39,21 +43,30 @@
                             required>
 
                         <div
+                            class="error-zone"
                             ng-messages="editLabelForm.label.$error"
-                            role="alert"
-                            class="text-red labelModal-errors">
-                            <p ng-message="required" translate-context="Error" translate>You must set a name</p>
-                            <p ng-message="validLabel">
+                            ng-show="editLabelForm.label.$dirty || editLabelForm.$submitted">
+                            <p
+                                class="m0 color-global-warning"
+                                ng-message="required"
+                                translate-context="Error"
+                                translate>You must set a name</p>
+                            <p
+                                class="m0 color-global-warning"
+                                ng-message="validLabel">
                                 <span translate-context="Error" translate>Invalid name. Forbidden char. ex:</span>
                                 &#60;&#62;
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <label class="col-1-4" translate translate-context="Label">Color</label>
-                    <div class="col-3-4">
-                        <label-color-selector data-color="ctrl.color"></label-color-selector>
+
+                <div class="flex flex-nowrap onmobile-flex-column mb1">
+                    <label class="pm-label" translate translate-context="Label">Color</label>
+                    <div class="w100">
+                        <label-color-selector
+                            class="mw80"
+                            data-color="ctrl.color"></label-color-selector>
                     </div>
                 </div>
 
@@ -64,19 +77,19 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <footer class="modal-footer">
-            <button
-                class="pm_button labelModal-btn-cancel modal-footer-button disabled-if-network-activity"
-                type="reset"
-                ng-click="ctrl.cancel()"
-                translate
-                translate-context="Action">Cancel</button>
-            <button
-                class="pm_button primary modal-footer-button labelModal-btn-save disabled-if-network-activity"
-                translate
-                translate-context="Action">Save</button>
-        </footer>
-    </form>
-    <div class="modal-overlay"></div>
-</section>
+
+            <footer class="pm-modalFooter flex flex-spacebetween">
+                <button
+                    class="pm-button-blueborder labelModal-btn-cancel disabled-if-network-activity"
+                    type="reset"
+                    ng-click="ctrl.cancel()"
+                    translate
+                    translate-context="Action">Cancel</button>
+                <button
+                    class="pm-button-blue labelModal-btn-save disabled-if-network-activity"
+                    translate
+                    translate-context="Action">Save</button>
+            </footer>
+        </form>
+    </dialog>
+</div>

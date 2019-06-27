@@ -7,9 +7,9 @@
 .labelColorSelector-item {
     position: relative;
     display: inline-block;
-    height: 2rem;
-    width: 2rem;
-    min-width: 2rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    min-width: 3.5rem;
     border-radius: 50%;
     padding: 0;
     margin: 0 .35rem .35rem 0;
@@ -53,6 +53,8 @@
     margin: 0;
     cursor: pointer;
 }
+
+.labelColorSelector-input-color.labelColorSelector-input-color {width: 100%}
 
 .labelColorSelector-input-color:checked + .labelColorSelector-item-mask .fa { opacity: 1 }
 

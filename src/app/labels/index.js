@@ -1,4 +1,3 @@
-import createLabel from './directives/createLabel';
 import dropdownFolders from './directives/dropdownFolders';
 import dropdownLabels from './directives/dropdownLabels';
 import labelsModel from './factories/labelsModel';
@@ -22,7 +21,6 @@ export default angular
     .factory('labelCache', labelCache)
     .directive('labelColorSelector', labelColorSelector)
     .directive('validLabel', validLabel)
-    .directive('createLabel', createLabel)
     .directive('dropdownFolders', dropdownFolders)
     .directive('dropdownLabels', dropdownLabels)
     .factory('labelsModel', labelsModel)

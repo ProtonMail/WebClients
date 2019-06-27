@@ -16,6 +16,7 @@ function dropdownContainer(dispatchers) {
         const { dispatcher, on, unsubscribe } = dispatchers(['dropdownApp']);
 
         scope.$applyAsync(() => {
+            let isLocked = false;
             const $btn = el[0].querySelector('.dropdownButton-container');
             const $content = el[0].querySelector('.dropdownContent-container');
 
@@ -38,7 +39,7 @@ function dropdownContainer(dispatchers) {
             }
 
             function onClick({ target }) {
-                if (target !== el[0] && !el[0].contains(target)) {
+                if (target !== el[0] && !el[0].contains(target) && !isLocked) {
                     toggle(true);
                     attachListener(true);
                 }
@@ -61,8 +62,16 @@ function dropdownContainer(dispatchers) {
             $btn.addEventListener('click', onClickButton);
 
             on('dropdownApp', (e, { type, data = {} }) => {
-                if (type === 'action' && data.id === id) {
+                if (data.id !== id) {
+                    return;
+                }
+
+                if (type === 'action') {
                     toggle(data.type === 'close');
+                }
+
+                if (type === 'lock') {
+                    isLocked = data.value;
                 }
             });
 

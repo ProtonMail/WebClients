@@ -22,7 +22,7 @@
         </div>
     </label>
 
-    <ul class="dropDown-contentInner unstyled mt0-5 mb0-5" ng-if="labels.length > 0">
+    <ul class="dropDown-contentInner unstyled mt0-5 mb0-5 dropdownLabels-list" ng-if="labels.length > 0">
         <li
             class="dropDown-item advancedFilterElement-item-old-to-new"
             ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchLabels} | orderBy: 'Order')) track by label.ID"
@@ -57,10 +57,16 @@
             translate-context="Info">no label found</li>
     </ul>
 
-    <create-label
-        data-class="dropdown-label-create pl1 pr1 mb0-5 mt0-5"
-        data-message="message"
-        data-label-name="searchLabels"></create-label>
+    <button
+        class="pm-button--link dropdown-label-create pl1 pr1 mb0-5 mt0-5 alignleft w100 break no-pointer-events-children"
+        type="button"
+        ng-class="{'dropdown-label-create-withName': searchLabels.length}">
+        <span class="dropdown-label-create-new-name">
+            <span translate translate-context="Action"> Create label </span>
+            <i class="bold">"{{ searchLabels }}"</i> ?
+        </span>
+        <span class="dropdown-label-create-new-label" translate translate-context="Action">Create a new label</span>
+    </button>
 
     <label class="dropdown-label-alsoArchive flex flex-spacebetween pl1 pr1 mt0-5">
         <span

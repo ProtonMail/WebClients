@@ -2,4 +2,10 @@
 .dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-search,
 .dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-alsoArchive,
 .dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-apply,
-.dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-title-hasLabels { display: none }
+.dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-title-hasLabels,
+.dropdown-label-create.dropdown-label-create-withName .dropdown-label-create-new-label,
+.dropdown-label-create:not(.dropdown-label-create-withName) .dropdown-label-create-new-name,
+ { display: none }
+
+
+.dropdown-label-create-new-name i { color: $black; }
