@@ -175,7 +175,14 @@
 
     &.read {
         background: $read-background;
-        h4 { font-weight: normal; color: inherit; }
+        .subject-text { font-weight: normal; color: inherit; }
+    }
+    &:not(.read) {
+        background: $white;
+        .subject-text,
+        .senders,
+        .time,
+        .subject-num-message { font-weight: bold; }
     }
     &.marked::before {
         background-color: $primary;
