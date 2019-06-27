@@ -1,12 +1,6 @@
-[class*="chooseLayoutBtns-btn"] * { pointer-events: none }
-
 // Context
-body:not(.appConfigBody-rows) .chooseLayoutBtns-btn-column {
-    background: #e5e5e5;
-    box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.2);
-}
-
+body:not(.appConfigBody-rows) .chooseLayoutBtns-btn-column,
 .appConfigBody-rows .chooseLayoutBtns-btn-rows {
-    background: #e5e5e5;
-    box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.2);
+    opacity: .5;
+    pointer-events: none;
 }
