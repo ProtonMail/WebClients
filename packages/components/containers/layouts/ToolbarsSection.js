@@ -2,8 +2,6 @@ import React from 'react';
 import {
     SubTitle,
     Group,
-    ButtonGroup,
-    Icon,
     Row,
     Label,
     Field,
@@ -16,6 +14,7 @@ import {
 import { c } from 'ttag';
 import { updateMessageButtons } from 'proton-shared/lib/api/mailSettings';
 import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
+import IconButton from '../../components/button/IconButton';
 
 const { READ_UNREAD, UNREAD_READ } = MESSAGE_BUTTONS;
 
@@ -48,12 +47,8 @@ const ToolbarsSection = () => {
                             value={READ_UNREAD}
                         >
                             <Group className="ml1 no-pointer-events">
-                                <ButtonGroup className="pm-button--for-icon" title={c('Action').t`Read`}>
-                                    <Icon name="read" />
-                                </ButtonGroup>
-                                <ButtonGroup className="pm-button--for-icon" title={c('Action').t`Unread`}>
-                                    <Icon name="unread" />
-                                </ButtonGroup>
+                                <IconButton icon="read" className="pm-button-group" title={c('Action').t`Read`} />
+                                <IconButton icon="unread" className="pm-button-group" title={c('Action').t`Unread`} />
                             </Group>
                         </Radio>
                     </div>
@@ -65,12 +60,8 @@ const ToolbarsSection = () => {
                             value={UNREAD_READ}
                         >
                             <Group className="ml1 no-pointer-events">
-                                <ButtonGroup className="pm-button--for-icon" title={c('Action').t`Unread`}>
-                                    <Icon name="unread" />
-                                </ButtonGroup>
-                                <ButtonGroup className="pm-button--for-icon" title={c('Action').t`Read`}>
-                                    <Icon name="read" />
-                                </ButtonGroup>
+                                <IconButton icon="unread" className="pm-button-group" title={c('Action').t`Unread`} />
+                                <IconButton icon="read" className="pm-button-group" title={c('Action').t`Read`} />
                             </Group>
                         </Radio>
                     </div>

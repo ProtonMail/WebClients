@@ -23,7 +23,6 @@ const AutoReplyModal = ({ onClose, ...rest }) => {
     return (
         <FormModal
             title={c('Title').t`Create auto-reply`}
-            small
             onSubmit={handleSubmit}
             onClose={onClose}
             submit={c('Action').t`Update`}

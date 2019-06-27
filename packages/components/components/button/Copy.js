@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import Button from './Button';
-import Icon from '../icon/Icon';
+import IconButton from './IconButton';
 
 const Copy = ({ value, className }) => {
     const [copied, setCopied] = useState(false);
@@ -18,13 +17,12 @@ const Copy = ({ value, className }) => {
     };
 
     return (
-        <Button
+        <IconButton
             onClick={handleClick}
-            className={`pm-button--for-icon ${className} ${copied ? 'copied' : ''}`}
+            icon="clipboard"
+            className={`${className} ${copied ? 'copied' : ''}`}
             title={copied ? c('Label').t`Copied` : c('Label').t`Copy`}
-        >
-            <Icon name="clipboard" />
-        </Button>
+        />
     );
 };
 
