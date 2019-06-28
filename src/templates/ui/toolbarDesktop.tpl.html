@@ -12,8 +12,13 @@
         ng-if="displayPaginator()"
         class="toolBar-select-all mtauto mbauto"></elements-selector>
 
+    <span class="toolbar-separator ml0-5 mr0-5"></span>
+
     <read-unread></read-unread>
+    <span class="toolbar-separator ml0-5 mr0-5"></span>
     <move-element></move-element>
+
+    <span class="toolbar-separator ml0-5 mr0-5"></span>
 
     <div class="pl0-5 pr0-5 flex">
         <folder-selector-dropdown
@@ -29,6 +34,8 @@
             ng-class="{disabled: isDisabled()}"></label-selector-dropdown>
     </div>
 
+    <span class="toolbar-separator ml0-5 mr0-5"></span>
+
     <div class="pl0-5 pr0-5 flex">
         <advanced-filter-element></advanced-filter-element>
     </div>
@@ -37,6 +44,7 @@
     <div class="right action toolbarDesktop-actions-right">
         <choose-layout-btns id="tour-layout"></choose-layout-btns>
         <nav-elements></nav-elements>
+        <span class="toolbar-separator ml0-5 mr0-5"></span>
         <paginator
             class="toolbarDesktop-select-page"
             ng-if="displayPaginator()"></paginator>
