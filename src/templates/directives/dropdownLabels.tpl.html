@@ -41,12 +41,10 @@
                 <span
                     ng-style="::color(label)"
                     class="ellipsis flex-item-fluid">{{ ::label.Name }}</span>
-                <label>
                     <custom-checkbox
                         data-custom-id="l{{::label.ID}}"
                         data-custom-ng-model="label.Selected"
                         data-custom-ui-indeterminate="label.Selected === null"></custom-checkbox>
-                </label>
             </label>
         </li>
         <li
