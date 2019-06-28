@@ -189,9 +189,9 @@ body {
   height: $toolbar-height;
   background: var(--bgcolor-toolbar, $pm-global-altgrey);
   border-radius: 4px 4px 0 0;
-  & svg {
-    fill: var(--fillcolor-icons, $white);
-  }
+}
+.toolbar-icon {
+  fill: var(--fillcolor-icons, $white);
 }
 .main-area,
 .main-area--withToolbar,
