@@ -48,7 +48,7 @@ function menuLabel(dispatchers, $compile, labelsModel, $stateParams, $state, sid
 
     return {
         replace: true,
-        template: '<ul class="menuLabel-container"></ul>',
+        template: '<ul class="menuLabel-container m0 p0"></ul>',
         link(scope, el) {
             /*
                 Click handler is delegate and inside sidebarlabels.
