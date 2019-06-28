@@ -193,6 +193,10 @@ body {
 .toolbar-icon {
   fill: var(--fillcolor-icons, $white);
 }
+.toolbar-separator {
+  width: 2px;
+  background-image: linear-gradient(90deg, #4F5460 0, #4F5460 1px, #353A46 1px);
+}
 .main-area,
 .main-area--withToolbar,
 .main-full {
