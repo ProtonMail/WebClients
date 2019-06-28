@@ -77,7 +77,7 @@ function storageWarning(gettextCatalog, dispatchers, authentication, $state, con
             return;
         }
         return openModal({
-            icon: 'fa fa-exclamation-triangle',
+            icon: 'attention',
             title: I18N.WARNING,
             message: I18N.warningMessage(percentage),
             confirmText: I18N.OK,

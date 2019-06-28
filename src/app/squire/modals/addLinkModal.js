@@ -31,7 +31,6 @@ function addLinkModal(pmModal, gettextCatalog, translator) {
 
             this.submit = () => params.submit(this.link, this.form);
             this.delete = () => params.delete();
-            this.cancel = () => params.cancel();
         }
     });
 }

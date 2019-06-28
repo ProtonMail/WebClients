@@ -1,4 +1,17 @@
-<div class="pm_modal {{ctrl.class}} contactSelectorModal-container" role="dialog" style="display: block;">
-    <contact-selector-form></contact-selector-form>
-    <div class="modal-overlay"></div>
-</div>
+<dialog class="contactSelectorModal-container">
+    <header class="pm-modalHeader">
+        <button
+            type="button"
+            class="pm-modalClose"
+            ng-click="ctrl.cancel()"
+            title-translate="Close"
+            title-translate-context="Action">×</button>
+        <h1
+            id="modalTitle"
+            class="pm-modalTitle"
+            translate-context="Title"
+            translate>Add multiple recipients</h1>
+    </header>
+
+    <contact-selector-form class="pm-modalContent"></contact-selector-form>
+</dialog>

@@ -6,9 +6,9 @@ function confirmModal(pmModal, gettextCatalog, translator) {
     }));
 
     const getClassName = ({ isDanger = false, isWarning = false } = {}) => {
-        const danger = isDanger && 'alert-danger';
-        const warning = isWarning && 'alert-warning';
-        return ['alert', danger, warning].filter(Boolean).join(' ');
+        const danger = isDanger && 'block-info-error';
+        const warning = isWarning && 'block-info-warning';
+        return [danger, warning].filter(Boolean).join(' ');
     };
 
     return pmModal({
@@ -25,7 +25,7 @@ function confirmModal(pmModal, gettextCatalog, translator) {
             this.hideClose = params.hideClose;
             this.classNameMessage = !params.customAlert ? getClassName(params) : '';
             this.class = params.class;
-            this.confirmClass = params.confirmClass || 'primary';
+            this.confirmClass = params.confirmClass || 'pm-button-blue';
             this.cancelText = params.cancelText || I18N.cancel;
             this.confirm = () => (hotkeys.bind(['enter']), params.confirm());
             this.cancel = (type = 'cross') => (hotkeys.bind(['enter']), params.cancel(type));

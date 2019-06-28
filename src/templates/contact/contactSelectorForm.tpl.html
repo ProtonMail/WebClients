@@ -1,74 +1,113 @@
-<form class="contactSelectorForm-container modal-dialog pm_form" name="selectorForm" novalidate>
-    <button type="reset" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4
-                class="modal-title"
-                translate-context="Title"
-                translate>Add multiple recipients</h4>
-        </div>
-        <div class="modal-body">
-            <div class="contactSelectorForm-search-row">
-                <label class="contactSelectorForm-search-label" for="searchInput">
-                    <i class="fa fa-search contactSelectorForm-search-icon"></i>
-                </label>
+<form
+    class="contactSelectorForm-container"
+    name="selectorForm"
+    novalidate>
+
+    <div class="pm-modalContentInner">
+
+        <div class="contactSelectorForm-search-row mb1">
+            <label>
+                <span
+                    class="sr-only"
+                    translate-context="Label"
+                    translate>Search for emails</span>
                 <input
                     type="search"
-                    class="contactSelectorForm-search-input"
                     id="searchInput"
                     ng-model="searchValue"
+                    class="pm-field w100"
                     placeholder-translate-context="Placeholder"
                     placeholder-translate="Search for emails">
-            </div>
-            <p class="contactSelectorForm-warning-message">
-                <i class="fa fa-warning"></i> <span translate-context="Error" translate>You have reached the max recipients (25) per message</span>
-            </p>
-            <div class="pm_table contactSelectorForm-table-wrapper">
-                <table class="fixedLayout">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="checkbox">
+            </label>
+        </div>
+
+        <p class="contactSelectorForm-warning-message block-info-warning">
+            <icon data-name="attention"></icon>
+            <span translate-context="Error" translate>You have reached the max recipients (25) per message</span>
+        </p>
+
+        <div class="contactSelectorForm-table-wrapper">
+            <table class="pm-simple-table noborder border-collapse">
+                <thead>
+                    <tr>
+                        <th scope="col" class="w5">
+                            <label>
                                 <custom-checkbox
                                     data-custom-ng-model="checkAll"
                                     data-custom-ng-disabled="disableCheckAll"
                                     data-custom-ng-change="onSelectAll()"></custom-checkbox>
-                            </th>
-                            <th scope="col" translate-context="Header" translate>Name</th>
-                            <th scope="col" translate-context="Header" translate>Email</th>
-                        </tr>
-                    </thead>
-                    <tbody data-vs-repeat="{scrollParent: '.contactSelectorForm-table-wrapper'}">
-                        <tr ng-repeat="email in ctrl.list | filter: { Email: searchValue } track by $id(email)">
-                            <td class="checkbox">
-                                <custom-checkbox data-custom-ng-model="email.selected" data-custom-ng-change="onCheck()"></custom-checkbox>
-                            </td>
-                            <td>
-                                <span class="contactSelectorForm-name">{{ ::email.Name }}</span></td>
-                            <td>
-                                <span class="contactSelectorForm-email">{{ ::email.Email }}</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <ul class="contactSelectorForm-labels">
-                <li class="contactSelectorForm-label" ng-repeat="email in ctrl.others track by $id(email)" title="{{ ::email.Email }}">
-                    {{ ::(email.Name || email.Email) }}
-                    <button type="button" class="contactSelectorForm-remove-label-btn" title-translate="Remove" title-translate-context="Action" data-list="others" data-index="{{ $index }}">
-                        <i class="fa fa-close"></i>
-                    </button>
-                </li>
-                <li class="contactSelectorForm-label" ng-repeat="email in ctrl.list | filter: { selected: true } track by $id(email)" title="{{ ::email.Email }}">
-                    {{ ::(email.Name || email.Email) }}
-                    <button type="button" class="contactSelectorForm-remove-label-btn" title-translate="Remove" title-translate-context="Action" data-list="list" data-index="{{ $index }}">
-                        <i class="fa fa-close"></i>
-                    </button>
-                </li>
-            </ul>
+                            </label>
+                        </th>
+                        <th scope="col" translate-context="Header" translate>Name</th>
+                        <th scope="col" translate-context="Header" translate>Email</th>
+                    </tr>
+                </thead>
+
+                <tbody data-vs-repeat="{scrollParent: '.contactSelectorForm-table-wrapper'}">
+                    <tr ng-repeat="email in ctrl.list | filter: { Email: searchValue } track by $id(email)">
+                        <td>
+                            <label>
+                                <custom-checkbox
+                                    data-custom-ng-model="email.selected"
+                                    data-custom-ng-change="onCheck()"></custom-checkbox>
+                            </label>
+                        </td>
+                        <td>
+                            <span class="contactSelectorForm-name">{{ ::email.Name }}</span></td>
+                        <td>
+                            <span class="contactSelectorForm-email">{{ ::email.Email }}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
+        <ul class="contactSelectorForm-labels">
+            <li
+                class="contactSelectorForm-label"
+                ng-repeat="email in ctrl.others track by $id(email)"
+                title="{{ ::email.Email }}">
+                {{ ::(email.Name || email.Email) }}
+                <button
+                    type="button"
+                    class="contactSelectorForm-remove-label-btn"
+                    title-translate="Remove"
+                    title-translate-context="Action"
+                    data-list="others"
+                    data-index="{{ $index }}">
+                    <i class="fa fa-close"></i>
+                </button>
+            </li>
+
+            <li
+                class="contactSelectorForm-label"
+                ng-repeat="email in ctrl.list | filter: { selected: true } track by $id(email)"
+                title="{{ ::email.Email }}">
+                {{ ::(email.Name || email.Email) }}
+                <button
+                    type="button"
+                    class="contactSelectorForm-remove-label-btn"
+                    title-translate="Remove"
+                    title-translate-context="Action"
+                    data-list="list"
+                    data-index="{{ $index }}">
+                    <i class="fa fa-close"></i>
+                </button>
+            </li>
+        </ul>
+
     </div>
-    <div class="modal-footer">
-        <button type="reset" class="pm_button modal-footer-button" translate-context="Action" translate>Cancel</button>
-        <button class="pm_button primary modal-footer-button" translate-context="Action" translate>Add</button>
-    </div>
+
+    <footer class="pm-modalFooter flex flex-spacebetween">
+        <button
+            class="pm-button-blueborder disabled-if-network-activity"
+            type="reset"
+            translate-context="Action"
+            translate>Cancel</button>
+
+        <button
+            class="pm-button-blue disabled-if-network-activity"
+            translate-context="Action"
+            translate>Add</button>
+    </footer>
 </form>

@@ -123,6 +123,7 @@ function addLink(gettextCatalog, translator) {
              */
             const onLabelValueChange = ({ target }) => {
                 state.linkLabelDirty = target.value !== '';
+                linkTest.textContent = target.value || 'Test link';
             };
 
             onLinkTypeChange(scope.link.type);

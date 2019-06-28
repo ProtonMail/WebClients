@@ -1,19 +1,20 @@
 <div class="addLink-container clearfix">
-    <p class="alert alert-info" translate translate-context="Composer, add Link">In the first box, put the link/email/phone number the text should go to. In the second box, put the text you want to appear.</p>
+    <p
+        class="block-info"
+        translate
+        translate-context="Composer, add Link">In the first box, put the link/email/phone number the text should go to. In the second box, put the text you want to appear.</p>
 
-    <div class="row">
-        <label
-            for="urlLink"
-            class="col-3-8"
-            translate-context="Composer, add Link"
-            translate>URL link</label>
-
-        <div class="col-5-8">
+    <div class="flex flex-nowrap onmobile-flex-column mb1">
+        <label for="urlLink" class="pm-label flex flex-column">
+            <span translate-context="Composer, add Link" translate>URL link</span>
             <span class="addLink-urlLinkDescription"></span>
+        </label>
+
+        <div class="flex-item-fluid">
             <input
                 tabindex="2"
                 id="urlLink"
-                class="addLink-urlLinkInput"
+                class="addLink-urlLinkInput pm-field"
                 name="urlLink"
                 ng-model="link.url"
                 autocomplete="off"
@@ -22,60 +23,75 @@
                 placeholder-translate="Link URL"
                 placeholder-translate-context="Composer, add Link">
 
-            <div ng-messages="form.urlLink.$error" class="text-red">
-                <p ng-message="required" translate-context="Error" translate>Field required</p>
+            <div
+                class="error-zone"
+                ng-messages="form.urlLink.$error"
+                ng-show="form.urlLink.$dirty || form.$submitted">
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="required"
+                    translate-context="Error"
+                    translate>Field required</p>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-3-8">
-            <label
-                for="labelLink"
-                translate-context="Composer, add Link"
-                translate>Text to display</label>
-            <div class="addLink-linkTypes">
-                <label class="visual-label">
-                    <custom-radio
-                        data-custom-ng-model="link.type"
-                        data-custom-ng-value="linkTypes.WEB"></custom-radio>
-                    <span translate translate-context="Composer, add Link">Web address</span>
-                </label>
-                <label class="visual-label">
-                    <custom-radio
-                        data-custom-ng-model="link.type"
-                        data-custom-ng-value="linkTypes.EMAIL"></custom-radio>
-                    <span translate translate-context="Composer, add Link">Email address</span>
-                </label>
-                <label class="visual-label">
-                    <custom-radio
-                        data-custom-ng-model="link.type"
-                        data-custom-ng-value="linkTypes.PHONE"></custom-radio>
-                    <span translate translate-context="Composer, add Link">Phone number</span>
-                </label>
-            </div>
+    <div class="flex flex-nowrap onmobile-flex-column mb1">
+        <label
+            for="labelLink"
+            class="pm-label"
+            translate-context="Composer, add Link"
+            translate>Text to display</label>
+
+        <input
+            name="labelLink"
+            tabindex="1"
+            autocomplete="off"
+            type="text"
+            id="labelLink"
+            required
+            class="addLink-labelLinkInput pm-field"
+            placeholder-translate="Link label"
+            placeholder-translate-context="Composer, add Link"
+            ng-model="link.label">
+
+        <div
+            class="error-zone"
+            ng-messages="form.labelLink.$error"
+            ng-show="form.labelLink.$dirty || form.$submitted">
+            <p
+                class="m0 color-global-warning"
+                ng-message="required"
+                translate-context="Error"
+                translate>Field required</p>
         </div>
 
-        <div class="col-5-8">
-            <input
-                name="labelLink"
-                tabindex="1"
-                autocomplete="off"
-                type="text"
-                id="labelLink"
-                required
-                class="addLink-labelLinkInput"
-                placeholder-translate="Link label"
-                placeholder-translate-context="Composer, add Link"
-                ng-model="link.label">
+    </div>
+    <div class="addLink-linkTestContainer mb1">
+        <a class="addLink-linkTest pm-button--link" rel="noopener noreferrer nofollow" target="_blank">Test link</a>
+    </div>
 
-            <div ng-messages="form.labelLink.$error" class="text-red">
-                <p ng-message="required" translate-context="Error" translate>Field required</p>
-            </div>
+    <div class="addLink-linkTypes">
+        <label class="pm-label inline-flex">
+            <custom-radio
+                data-custom-ng-model="link.type"
+                data-custom-ng-value="linkTypes.WEB"></custom-radio>
+            <span translate translate-context="Composer, add Link">Web address</span>
+        </label>
 
-            <div class="addLink-linkTestContainer">
-                <a class="addLink-linkTest" rel="noopener noreferrer nofollow" target="_blank">Test link</a>
-            </div>
-        </div>
+        <label class="pm-label inline-flex">
+            <custom-radio
+                data-custom-ng-model="link.type"
+                data-custom-ng-value="linkTypes.EMAIL"></custom-radio>
+            <span translate translate-context="Composer, add Link">Email address</span>
+        </label>
+
+        <label class="pm-label inline-flex">
+            <custom-radio
+                data-custom-ng-model="link.type"
+                data-custom-ng-value="linkTypes.PHONE"></custom-radio>
+            <span translate translate-context="Composer, add Link">Phone number</span>
+        </label>
+
     </div>
 </div>

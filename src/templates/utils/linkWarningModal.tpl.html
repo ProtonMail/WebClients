@@ -1,45 +1,60 @@
-<div class="pm_modal small {{ctrl.class}} discardModal-container" role="dialog">
-    <form name="linkWarningForm" class="modal-dialog" novalidate>
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close"
-            title-translate-context="Action" class="fa fa-times close"></button>
-        <div class="modal-content">
-            <header class="modal-header">
-                <h4 class="modal-title" translate-context="Title" translate>Link confirmation</h4>
-            </header>
+<dialog class="pm-modal--smaller">
 
-            <div class="modal-body pm_form">
-                <div class="alert alert-warning margin-bottom break-word">
-                    <div class="margin-bottom" translate-context="Info" translate>You are about to open another browser tab and visit:</div>
-                    <span class="bold">{{ ::ctrl.link }}</span>
-                </div>
+    <header class="pm-modalHeader">
+        <button
+            type="button"
+            class="pm-modalClose"
+            ng-click="ctrl.cancel()"
+            title-translate="Close"
+            title-translate-context="Action">×</button>
+        <h1
+            id="modalTitle"
+            translate-context="Title"
+            translate
+            class="pm-modalTitle">Link confirmation</h1>
+    </header>
 
-                <div ng-if="ctrl.punyCodeLink && !ctrl.punyCodeLinkIE" class="alert alert-warning margin-bottom break-word">
-                    <div class="margin-bottom" translate-context="Info" translate>This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.</div>
-                    <a
-                        href="https://protonmail.com/support/knowledge-base/homograph-attacks/"
-                        title="What are homograph attacks?"
-                        target="_blank">Learn more.</a>
-                </div>
+    <div class="pm-modalContent">
 
-                <div ng-if="ctrl.punyCodeLinkIE" class="alert alert-warning margin-bottom break-word">
-                    <div class="margin-bottom" translate-context="Info" translate>This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.</div>
-                    <a
-                        href="https://protonmail.com/support/knowledge-base/homograph-attacks/"
-                        title="What are homograph attacks?"
-                        target="_blank">Learn more.</a>
-                </div>
+        <div class="pm-modalContentInner">
 
-                <label>
-                    <custom-checkbox data-custom-ng-model="ctrl.preference" />
-                    <span translate-context="Label" translate>Do not ask again</span>
+            <div class="block-info-warning mb1">
+                <div class="margin-bottom" translate-context="Info" translate>You are about to open another browser tab and visit:</div>
+            </div>
+
+            <span class="bold break">{{ ::ctrl.link }}</span>
+
+
+            <div ng-if="ctrl.punyCodeLink && !ctrl.punyCodeLinkIE" class="block-info-warning mt1">
+                <div class="margin-bottom" translate-context="Info" translate>This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.</div>
+                <a
+                    href="https://protonmail.com/support/knowledge-base/homograph-attacks/"
+                    title="What are homograph attacks?"
+                    target="_blank">Learn more.</a>
+            </div>
+
+            <div
+                ng-if="ctrl.punyCodeLinkIE"
+                class="block-info-warning mt1">
+                <div class="margin-bottom" translate-context="Info" translate>Internet Explorer and Edge browsers do not parse these links properly, so it is not possible to open them. If you are certain that the link is legitimate, please use a different browser to open it.</div>
+            </div>
+
+            <div class="flex flex-nowrap onmobile-flex-column mt1 pb1">
+                <label class="inline-flex">
+                    <custom-checkbox data-custom-ng-model="ctrl.preference"></custom-checkbox>
+                    <span
+                        class="mr0-5"
+                        translate-context="Label"
+                        translate>Do not ask again</span>
                 </label>
             </div>
         </div>
-        <footer class="modal-footer">
+
+        <footer class="pm-modalFooter flex flex-spacebetween">
             <button
                 type="button"
                 ng-click="ctrl.cancel()"
-                class="pm_button modal-footer-button"
+                class="pm-button-blueborder disabled-if-network-activity"
                 translate-context="Action"
                 translate>Cancel</button>
             <a
@@ -48,10 +63,9 @@
                 ng-click="ctrl.continue()"
                 autofocus
                 rel="noreferrer nofollow noopener"
-                class="pm_button primary modal-footer-button"
+                class="pm-button-blue disabled-if-network-activity"
                 translate-context="Action"
                 translate>Continue</a>
         </footer>
-    </form>
-    <div class="modal-overlay"></div>
-</div>
+    </div>
+</dialog>

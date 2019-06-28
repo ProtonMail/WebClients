@@ -1,36 +1,5 @@
-.contactSelectorForm-search-row {
-    position: relative;
-}
-
-.contactSelectorForm-name,
-.contactSelectorForm-email {
-    display: block;
-}
-
-.contactSelectorForm-search-label {
-    position: absolute;
-    z-index: 1;
-    width: 40px;
-}
-
-.contactSelectorForm-search-icon {
-    margin: auto;
-}
-
-.pm_form input[type="search"].contactSelectorForm-search-input {
-    padding-left: 40px;
-    margin-bottom: 20px;
-}
-
-.contactSelectorForm-warning-message {
-    border-radius: $border-radius;
-    background: $warning;
-    color: darken($warning, 50);
-    padding: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: .8rem;
-}
+.contactSelectorForm-container:not(.contactSelectorForm-limit-reached) .contactSelectorForm-warning-message,
+.contactSelectorForm-no-recipients .contactSelectorForm-labels { display: none }
 
 .contactSelectorForm-table-wrapper {
     border-radius: $border-radius;
@@ -72,17 +41,4 @@
 
 .contactSelectorForm-remove-label-btn * {
     pointer-events: none;
-}
-
-.contactSelectorForm-table-wrapper .customCheckbox-container {
-    top: -5px;
-}
-
-// Conditions
-.contactSelectorForm-container:not(.contactSelectorForm-limit-reached) .contactSelectorForm-warning-message { display: none }
-.contactSelectorForm-no-recipients .contactSelectorForm-labels { display: none }
-
-// Context
-.contactSelectorForm-container .pm_table table {
-    margin-bottom: 0;
 }

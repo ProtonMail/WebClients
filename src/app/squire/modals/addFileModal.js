@@ -28,7 +28,6 @@ function addFileModal(pmModal, gettextCatalog, translator) {
             this.submit = () => params.submit(this.image, this.form);
             this.addFile = () => params.addFile();
             this.delete = () => params.delete();
-            this.cancel = () => params.cancel();
         }
     });
 }

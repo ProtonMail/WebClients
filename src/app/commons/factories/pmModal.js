@@ -91,11 +91,13 @@ function pmModal(
         }
 
         function attach(html, locals) {
-            element = angular.element(html);
-            element.css('z-index', zIndex++);
-            if (element.length === 0) {
+            element = angular.element(`<div class="pm-modalOverlay">${html}</div>`);
+            if (!html || !element[0].children.length) {
                 throw new Error('The template contains no elements; you need to wrap text nodes');
             }
+
+            element[0].firstElementChild.classList.add('pm-modal');
+            element.css('z-index', zIndex++);
             scope = $rootScope.$new(true);
 
             /**
@@ -164,6 +166,8 @@ function pmModal(
             zIndex--;
 
             unsubscribe();
+            element[0].firstElementChild.classList.add('pm-modalOut');
+            element[0].classList.add('pm-modalOverlayOut');
 
             return $animate.leave(element).then(() => {
                 closeAllTooltips();
@@ -191,7 +195,6 @@ function pmModal(
                 element.remove();
                 element = null;
                 AppModel.set('modalOpen', false);
-                $('.modal-backdrop').remove();
             });
         }
 

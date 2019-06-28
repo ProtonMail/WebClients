@@ -3,7 +3,6 @@ import _ from 'lodash';
 /* @ngInject */
 function contactSelectorModel(contactEmails, contactSelectorModal, dispatchers) {
     const { dispatcher } = dispatchers(['composer.update']);
-    const close = () => contactSelectorModal.deactivate();
 
     /**
      * Prepare list of recipients for contactSelectorForm
@@ -18,7 +17,7 @@ function contactSelectorModel(contactEmails, contactSelectorModal, dispatchers) 
         const emailMap = emailList.reduce((acc, { Email = '' }, index) => {
             acc[Email] = index;
             return acc;
-        }, {});
+        }, Object.create(null));
 
         return _.reduce(
             recipients,
@@ -46,11 +45,9 @@ function contactSelectorModel(contactEmails, contactSelectorModal, dispatchers) 
 
         contactSelectorModal.activate({
             params: {
-                close,
                 list,
                 others,
                 submit(recipients) {
-                    close();
                     dispatcher['composer.update']('add.recipients', {
                         name,
                         recipients,

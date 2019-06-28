@@ -1,11 +1,13 @@
 <div class="addFile-container clearfix">
-    <div class="row">
+
+    <div class="flex flex-nowrap onmobile-flex-column mb1">
         <label
             for="address"
-            class="col-3-8"
+            class="pm-label"
             translate-context="Composer, add File"
             translate>Web address</label>
-        <div class="col-5-8">
+
+        <div class="flex-item-fluid">
             <input
                 name="addressInput"
                 tabindex="1"
@@ -13,29 +15,41 @@
                 required
                 type="text"
                 autocomplete="off"
-                class="addFile-addressInput"
+                class="addFile-addressInput pm-field"
                 placeholder-translate="Image URL"
                 placeholder-translate-context="Composer, add File"
                 ng-model="image.src">
 
-            <div ng-messages="form.addressInput.$error" class="text-red">
-                <p ng-message="required" translate-context="Error" translate>Field required</p>
-                <p ng-message="valid" translate-context="Error" translate>Not a valid URL</p>
+            <div
+                class="error-zone"
+                ng-messages="form.addressInput.$error"
+                ng-show="form.addressInput.$dirty || form.$submitted">
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="required"
+                    translate-context="Error"
+                    translate>Field required</p>
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="valid"
+                    translate-context="Error"
+                    translate>Not a valid URL</p>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="flex flex-nowrap onmobile-flex-column mb1">
+
         <label
-            class="col-3-8"
+            class="pm-label"
             translate-context="Composer, add File"
             translate>Image preview</label>
 
-        <div class="col-5-8 addFile-previewContainer">
+        <div class="flex-item-fluid addFile-previewContainer">
             <img class="addFile-preview" referrerPolicy="no-referrer">
 
             <div class="addFile-previewText">
-                <p class="alert alert-info" translate translate-context="Composer, add File">If your URL is correct, you'll see an image preview here. Large images may take a few minutes to appear.</p>
+                <p class="block-info" translate translate-context="Composer, add File">If your URL is correct, you'll see an image preview here. Large images may take a few minutes to appear.</p>
             </div>
 
             <span class="addFile-previewText-loading">
@@ -43,7 +57,7 @@
                 <span translate translate-context="Composer, add File">Loading image</span>
             </span>
 
-            <span class="addFile-previewText-error text-red" translate translate-context="Composer, add File">Error loading image</span>
+            <span class="addFile-previewText-error color-global-warning" translate translate-context="Composer, add File">Error loading image</span>
         </div>
     </div>
 </div>

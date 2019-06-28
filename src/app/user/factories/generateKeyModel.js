@@ -89,7 +89,7 @@ Are you sure you want to continue?`,
         new Promise((resolve, reject) => {
             confirmModal.activate({
                 params: {
-                    icon: 'fa fa-exclamation-triangle',
+                    icon: 'attention',
                     isDanger: true,
                     title: I18N.TITLE,
                     message: I18N.WARNING,

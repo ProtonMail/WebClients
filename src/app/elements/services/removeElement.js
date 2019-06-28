@@ -101,6 +101,7 @@ function removeElement(
             params: {
                 message,
                 title: I18N.TITLE,
+                isDanger: true,
                 cancel: confirmModal.deactivate,
                 async confirm() {
                     confirmModal.deactivate();

@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function contactSelectorModal(pmModal) {
     return pmModal({
@@ -7,7 +5,7 @@ function contactSelectorModal(pmModal) {
         templateUrl: require('../../../templates/contact/contactSelectorModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
-            _.extend(this, params);
+            Object.assign(this, params);
         }
     });
 }

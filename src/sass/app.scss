@@ -157,7 +157,6 @@ $path-images: "~design-system/assets/img/shared/";
 
 //== Composer
 @import "components/composer/composer";
-@import "components/composer/editComposerContactGroupModal";
 @import "components/composer/composerOptions";
 @import "components/composer/composerTime";
 @import "components/composer/composerExpiration";
@@ -266,7 +265,6 @@ $path-images: "~design-system/assets/img/shared/";
 //== Squire
 @import "components/squire/squire-toolbar";
 @import "components/squire/colorList";
-@import "components/squire/addLink";
 @import "components/squire/addFile";
 @import "components/squire/colorPopover";
 @import "components/squire/squire";
@@ -319,7 +317,6 @@ $path-images: "~design-system/assets/img/shared/";
 @import "components/vpn/openVpnSection";
 
 //== Utils
-@import "components/utils/discardModal";
 @import "components/utils/printMessage";
 @import "components/utils/printModal";
 

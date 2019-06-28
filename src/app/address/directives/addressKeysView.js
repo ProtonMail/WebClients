@@ -296,7 +296,7 @@ function addressKeysView(
                     params: {
                         title: I18N.IMPORT_TITLE,
                         message: I18N.IMPORT_MESSAGE,
-                        icon: 'fa fa-warning',
+                        icon: 'attention',
                         confirm() {
                             STATE = {
                                 type: 'import',
