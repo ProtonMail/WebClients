@@ -47,10 +47,10 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog, $compi
 
     const getTemplate = () => {
         return orderActions().reduce((acc, { label, icon, action }) => {
-            const tpl = dedentTpl`<li class="dropDown-item">
-                <button data-action="${action}" class="elementsSelector-btn-action w100 pt0-5 pb0-5 alignleft">
-                    <icon name="${icon}"></icon>
-                    <span>${label}</span>
+            const tpl = dedentTpl`<li class="dropDown-item pl1 pr1">
+                <button data-action="${action}" class="elementsSelector-btn-action flex w100 pt0-5 pb0-5 alignleft">
+                    <icon name="${icon}" class="mtauto mbauto"></icon>
+                    <span class="ml0-5 mtauto mbauto">${label}</span>
                 </button>
             </li>`;
             return acc + tpl;
