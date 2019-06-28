@@ -1,5 +1,12 @@
 # [1.6.18] - 2019-06-27
 
+## Updated/fixes
+
+- removed `.toolbar svg` for `.toolbar-icon` selector (limit depth of applicability for styles, always)
+
+
+# [1.6.18] - 2019-06-27
+
 ## New 
 
 - added `dropDown-content--wide` modifier (super large drop down, for advanced search)
