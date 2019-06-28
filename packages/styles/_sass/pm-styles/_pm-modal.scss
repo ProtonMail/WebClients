@@ -203,12 +203,12 @@ $modal-smaller-width: 22em !default;
 }
 
 // single button on right
-.pm-modalFooter [class*="pm-button"]:only-of-type {
+.pm-modalFooter [class*="pm-button"]:only-child {
   margin-left: auto;
 }
 @if $rtl-option == true {
   [dir="rtl"] {
-    .pm-modalFooter [class*="pm-button"]:only-of-type {
+    .pm-modalFooter [class*="pm-button"]:only-child {
       margin-right: auto;
       margin-left: 0;
     }
