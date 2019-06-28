@@ -8,8 +8,6 @@ function validatorTypoEmail(checkTypoEmails) {
             const ngMessages = el[0].nextElementSibling;
             const warningMessage = ngMessages.querySelector(`[ng-message-warning="${warningName}"]`);
 
-            debugger;
-
             const toggleWarning = (valid) => {
                 const method = valid ? 'add' : 'remove';
                 el[0].classList[method](className);
