@@ -13,8 +13,20 @@
                     <span class="bold">{{ ::ctrl.link }}</span>
                 </div>
 
+                <div ng-if="ctrl.punyCodeLink && !ctrl.punyCodeLinkIE" class="alert alert-warning margin-bottom break-word">
+                    <div class="margin-bottom" translate-context="Info" translate>This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.</div>
+                    <a
+                        href="https://protonmail.com/support/knowledge-base/homograph-attacks/"
+                        title="What are homograph attacks?"
+                        target="_blank">Learn more.</a>
+                </div>
+
                 <div ng-if="ctrl.punyCodeLinkIE" class="alert alert-warning margin-bottom break-word">
-                    <div class="margin-bottom" translate-context="Info" translate>Internet Explorer and Edge browsers do not parse these links properly, so it is not possible to open them. If you are certain that the link is legitimate, please use a different browser to open it.</div>
+                    <div class="margin-bottom" translate-context="Info" translate>This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.</div>
+                    <a
+                        href="https://protonmail.com/support/knowledge-base/homograph-attacks/"
+                        title="What are homograph attacks?"
+                        target="_blank">Learn more.</a>
                 </div>
 
                 <label>
