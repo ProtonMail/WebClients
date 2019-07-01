@@ -1,6 +1,6 @@
-import transformEscape, { attachBase64Parser } from '../../../../src/app/message/helpers/transformEscape';
+import transformEscape, { attachBase64Parser } from '../../../../src/app/message/helpers/transformEscapeCompat';
 
-describe('transformEscape', () => {
+describe('transformEscapeCompat', () => {
     let getAttribute;
 
     const USER_INJECT = 'user.inject';
@@ -27,8 +27,8 @@ describe('transformEscape', () => {
 
     <video src="fichiervideo.webm" autoplay poster="vignette2.jpg">
     </video>
-    <img src="mon-image.jpg" srcset="mon-imageHD.jpg 2x" width="" height="" alt="">
-    <img src="lol-image.jpg" srcset="lol-imageHD.jpg 2x" width="" height="" alt="">
+    <img id="srcset1" src="mon-image.jpg" srcset="mon-imageHD.jpg 2x" width="" height="" alt="">
+    <img id="srcset2" src="lol-image.jpg" srcset="lol-imageHD.jpg 2x" width="" height="" alt="">
     <img data-src="lol-image.jpg" width="" height="" alt="">
     <a href="lol-image.jpg">Alll</a>
     <a href="jeanne-image.jpg">Alll</a>
@@ -244,35 +244,13 @@ describe('transformEscape', () => {
                 expect(list.length).toBe(5);
             });
 
-            it('should add the prefix before data-src', () => {
-                const list = getAttribute('proton-data-src');
-                expect(list.length).toBe(1);
-            });
 
-            it('should add the prefix before srcset', () => {
-                const list = getAttribute('proton-srcset');
-                expect(list.length).toBe(2);
-            });
-
-            it('should add the prefix before background', () => {
-                const list = getAttribute('proton-background');
-                expect(list.length).toBe(2);
-            });
-
-            it('should add the prefix before poster', () => {
-                const list = getAttribute('proton-poster');
-                expect(list.length).toBe(2);
-            });
 
             it('should add the prefix for SVG', () => {
                 const list = output.querySelectorAll('proton-svg');
                 expect(list.length).toBe(1);
             });
 
-            it('should add the prefix for xlink:href', () => {
-                const list = output.innerHTML.match(/proton-xlink:href/g);
-                expect(list.length).toBe(2);
-            });
         });
 
         describe('Excape all the things !', () => {

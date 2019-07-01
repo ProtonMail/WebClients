@@ -5,7 +5,6 @@ import transformEscape from '../../message/helpers/transformEscape';
 
 /* @ngInject */
 function embeddedUtils(attachmentFileFormat, tools, cacheBase64) {
-    const DIV = document.createElement('DIV');
     const REGEXP_CID_START = /^cid:/g;
 
     /**
@@ -34,8 +33,7 @@ function embeddedUtils(attachmentFileFormat, tools, cacheBase64) {
      * @return {Node} Empty DIV
      */
     const getBodyParser = (content = '', activeCache = false) => {
-        return transformEscape(DIV, {
-            content,
+        return transformEscape(content, {
             action: '',
             activeCache,
             isDocument: false,

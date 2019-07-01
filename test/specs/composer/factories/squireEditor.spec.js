@@ -2,7 +2,6 @@ import _ from 'lodash';
 
 import service from '../../../../src/app/squire/factories/squireEditor';
 import editorModelService from '../../../../src/app/squire/factories/editorModel';
-import sanitizeService from '../../../../src/app/utils/services/sanitize';
 import dispatchersService from '../../../../src/app/commons/services/dispatchers';
 
 describe('squire editor', () => {
@@ -11,7 +10,9 @@ describe('squire editor', () => {
     let compile;
     let rootScope;
     let scope;
-    let sanitize;
+    const sanitize = {
+        content: _.identity
+    };
 
     beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
@@ -20,7 +21,6 @@ describe('squire editor', () => {
 
         const dispatchers = dispatchersService(rootScope);
         const editorModel = editorModelService();
-        sanitize = sanitizeService(_.identity);
         squireEditor = service(dispatchers, editorModel, sanitize);
     }));
 
