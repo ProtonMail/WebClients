@@ -86,19 +86,32 @@ export function openWindow(url) {
     return anchor.click();
 }
 
-export const parseURL = (url = '') => {
-    const parser = document.createElement('a');
-    const searchObject = {};
-    let split;
-    // Let the browser do the work
-    parser.href = url;
-    // Convert query string to object
-    const queries = parser.search.replace(/^\?/, '').split('&');
+const extractQueryParams = (input, parser) => {
+    try {
+        const url = new URL(input);
 
-    for (let i = 0; i < queries.length; i++) {
-        split = queries[i].split('=');
-        searchObject[split[0]] = split[1];
+        return Array.from(url.searchParams.entries()).reduce((acc, [key, value = '']) => {
+            const isBody = key === 'body';
+            acc[key] = isBody ? value : value.replace(/\n/g, '');
+            return acc;
+        }, {});
+    } catch (e) {
+        // If no support - fallback
+        return parser.search
+            .replace(/\?/g, '')
+            .split('&')
+            .reduce((acc, query) => {
+                const [key, value = ''] = query.split('=');
+                const isBody = key === 'body';
+                acc[key] = isBody ? value : value.replace(/\n/g, '');
+                return acc;
+            }, {});
     }
+};
+
+export const parseURL = (url = '') => {
+    const parser = document.createElement('A');
+    parser.href = url;
 
     return {
         protocol: parser.protocol,
@@ -107,7 +120,7 @@ export const parseURL = (url = '') => {
         port: parser.port,
         pathname: parser.pathname,
         search: parser.search,
-        searchObject,
+        searchObject: extractQueryParams(url, parser),
         hash: parser.hash
     };
 };
