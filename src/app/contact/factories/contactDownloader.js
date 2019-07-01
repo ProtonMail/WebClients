@@ -17,13 +17,27 @@ function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, dow
         return 'proton.vcf';
     };
 
+    /**
+     * We always export UTF-8 as the file encoding will be UTF-8.
+     * Else we will have issue if we re-import the file
+     * @param  {vCard} card
+     * @return {vCard}
+     */
+    const changeCharset = (card) => {
+        Object.keys(card.data).forEach((key) => {
+            const prop = card.data[key];
+            prop.charset && (prop.charset = 'UTF-8');
+        });
+        return card;
+    };
+
     const get = async (id, cancellationToken) => {
         if (id !== 'all') {
             const { vCard } = await Contact.get(id, cancellationToken.getCancelEvent());
-            return [vCard];
+            return [changeCharset(vCard)];
         }
         const list = await Contact.exportAll(EXPORT_CONTACTS_LIMIT, cancellationToken);
-        return list.map(({ vCard }) => vCard);
+        return list.map(({ vCard }) => changeCharset(vCard));
     };
 
     return async (id = 'all') => {

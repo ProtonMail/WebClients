@@ -25,7 +25,7 @@ function contactImporter(
         });
     };
 
-    const importVCF = async (reader) => dispatch(vcard.from(reader.result));
+    const importVCF = async (reader) => dispatch(vcard.from(reader));
     const importVCard = (file) => {
         return csvToVCard(file)
             .then((parsed = []) => parsed.length && dispatch(parsed))
@@ -40,27 +40,69 @@ function contactImporter(
         '.csv': importVCard
     };
 
-    const importFiles = (files = []) => {
+    /**
+     * Read the file and detect its encoding to have correct chars inside the output
+     * Some people work with Outlook, so as it's Windows the encoding is a bit ramdom.
+     * If we don't have something UTF-8 let's read it again with the file's encoding.
+     * @param  {File} file
+     * @param  {String} charset
+     * @param  {Boolean} options.ignoreFallback True if we re-read the file to prevent infinite loop
+     * @param  {Function} options.resolver       Resolve promise
+     * @param  {Function} options.rejection}    Reject promise
+     * @return {Promise:<result>}
+     */
+    function readFile(file, charset = 'utf-8', { ignoreFallback, resolver, rejection } = {}) {
+        const reader = new FileReader();
+        const extension = file.name.toLowerCase().slice(-4);
+
+        if (!MAP_SRC[extension]) {
+            notification.error(I18N.invalid);
+            return importContactModal.deactivate();
+        }
+
+        if (extension !== '.vcf') {
+            return file.result;
+        }
+
+        const action = (resolve, reject) => {
+            reader.onload = reject;
+            reader.onload = () => {
+                const [, charsetCustom = ''] = reader.result.match(/CHARSET=(.+):/) || [];
+                if (!ignoreFallback && !/utf-8/i.test(charsetCustom)) {
+                    return readFile(file, charsetCustom, {
+                        ignoreFallback: true,
+                        resolver: resolve,
+                        rejection: reject
+                    });
+                }
+
+                return resolve(reader.result);
+            };
+
+            reader.readAsText(file, charset);
+        };
+
+        if (ignoreFallback) {
+            return action(resolver, rejection);
+        }
+        return new Promise(action);
+    }
+
+    const importFiles = async (files = []) => {
         if (!files.length) {
             return notification.error(I18N.noFiles);
         }
-
-        const reader = new FileReader();
         const file = files[0];
         const extension = file.name.toLowerCase().slice(-4);
 
-        reader.onload = (e) => notification.error(e);
-        reader.onload = () => {
-            if (!MAP_SRC[extension]) {
-                notification.error(I18N.invalid);
-                return importContactModal.deactivate();
-            }
-            const parameter = extension === '.vcf' ? reader : file;
+        try {
+            const output = await readFile(file);
+            const parameter = extension === '.vcf' ? output : file.result;
             const promise = MAP_SRC[extension](parameter).then(() => importContactModal.deactivate());
             networkActivityTracker.track(promise);
-        };
-
-        reader.readAsText(file, 'utf-8');
+        } catch (e) {
+            notification.error(e);
+        }
     };
 
     return () => {
