@@ -4,3 +4,7 @@ body:not(.appConfigBody-rows) .chooseLayoutBtns-btn-column,
     opacity: .5;
     pointer-events: none;
 }
+
+body:not(.appConfigBody-rows) .separator-if-row-mode {
+    display: none;
+}

@@ -43,8 +43,9 @@
 
     <div class="right action toolbarDesktop-actions-right">
         <choose-layout-btns id="tour-layout"></choose-layout-btns>
+        <span class="toolbar-separator ml0-5 mr0-5 separator-if-row-mode"></span>
         <nav-elements></nav-elements>
-        <span class="toolbar-separator ml0-5 mr0-5"></span>
+        <span class="toolbar-separator ml0-5 mr0-5" ng-if="displayPaginator()"></span>
         <paginator
             class="toolbarDesktop-select-page"
             ng-if="displayPaginator()"></paginator>
