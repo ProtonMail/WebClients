@@ -12,7 +12,7 @@ const SmallButton = ({ children, className, ...rest }) => {
 };
 
 SmallButton.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     className: PropTypes.string
 };
 

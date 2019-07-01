@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PrimaryButton, Icon, useModals } from 'react-components';
+import { PrimaryButton, useModals } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import EditLabelModal from './modals/Edit';
@@ -15,12 +15,10 @@ function ActionsLabelToolbar({ onAdd }) {
 
     return (
         <>
-            <PrimaryButton onClick={handleClickAdd('folder')}>
-                <Icon name="folder" style={{ fill: 'currentColor' }} className="mr0-5" />
+            <PrimaryButton icon="folder" onClick={handleClickAdd('folder')}>
                 {c('Action').t`Add folder`}
             </PrimaryButton>
-            <PrimaryButton onClick={handleClickAdd('label')} className="ml1">
-                <Icon name="label" style={{ fill: 'currentColor' }} className="mr0-5" />
+            <PrimaryButton icon="folder" onClick={handleClickAdd('label')} className="ml1">
                 {c('Action').t`Add label`}
             </PrimaryButton>
         </>

@@ -93,7 +93,7 @@ const BillingSection = ({ permission }) => {
             <SubTitle>{c('Title').t`Billing details`}</SubTitle>
             <div className="shadow-container">
                 <div className="p1">
-                    {hasPaidMail ? (
+                    {hasPaidMail && mailPlan ? (
                         <div className="flex-autogrid onmobile-flex-column w100 mb1">
                             <div className="flex-autogrid-item">ProtonMail plan</div>
                             <div className="flex-autogrid-item bold">{PLAN_NAMES[mailPlan.Name]}</div>
@@ -173,7 +173,7 @@ const BillingSection = ({ permission }) => {
                             </div>
                         </div>
                     ) : null}
-                    {hasPaidVpn ? (
+                    {hasPaidVpn && vpnPlan ? (
                         <div className="flex-autogrid onmobile-flex-column w100 mb1">
                             <div className="flex-autogrid-item">ProtonVPN plan</div>
                             <div className="flex-autogrid-item bold">{PLAN_NAMES[vpnPlan.Name]}</div>

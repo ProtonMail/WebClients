@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import useToggle from '../toggle/useToggle';
 import Input from '../input/Input';
-import IconButton from '../button/IconButton';
+import { Button } from '../button';
 
 const EditableText = ({ icon, onSubmit, initialText, children, readOnly, ...rest }) => {
     const [inputValue, setInputValue] = useState(initialText);
@@ -36,16 +36,16 @@ const EditableText = ({ icon, onSubmit, initialText, children, readOnly, ...rest
                     <div className="flex">
                         <Input autoFocus value={inputValue} onChange={handleChangeInputValue} {...rest} />
                     </div>
-                    <IconButton icon="on" type="submit" className="ml0-5" title={c('Action').t`Confirm`} />
+                    <Button icon="on" type="submit" className="ml0-5" title={c('Action').t`Confirm`} />
                 </>
             )}
-            <IconButton icon="close" onClick={toggleEditing} className="ml0-5" title={c('Action').t`Close`} />
+            <Button icon="close" onClick={toggleEditing} className="ml0-5" title={c('Action').t`Close`} />
         </form>
     ) : (
         <>
             {initialText === null ? '--' : initialText}
             {!readOnly && (
-                <IconButton icon={icon} onClick={toggleEditing} className="ml0-5" title={c('Action').t`Toggle edit`} />
+                <Button icon={icon} onClick={toggleEditing} className="ml0-5" title={c('Action').t`Toggle edit`} />
             )}
         </>
     );

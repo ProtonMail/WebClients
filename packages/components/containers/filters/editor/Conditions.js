@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Label, Icon, Select, Row, SmallButton, PrimaryButton, ErrorZone } from 'react-components';
+import { Label, Select, Row, SmallButton, PrimaryButton, ErrorZone } from 'react-components';
 import { getI18n as getI18nFilter, newCondition } from 'proton-shared/lib/filters/factory';
 import { noop } from 'proton-shared/lib/helpers/function';
 
@@ -101,9 +101,7 @@ function ConditionsEditor({ filter, onChange, errors }) {
                             <>
                                 <Label>
                                     {c('Label').t`Conditions ${n}`}
-                                    <SmallButton className="ml1" onClick={handleRemoveCondition(index)}>
-                                        <Icon name="trash" />
-                                    </SmallButton>
+                                    <SmallButton icon="trash" className="ml1" onClick={handleRemoveCondition(index)} />
                                 </Label>
 
                                 <div className="w100">
@@ -131,9 +129,7 @@ function ConditionsEditor({ filter, onChange, errors }) {
                             <>
                                 <Label>
                                     {c('Label').t`Conditions ${n}`}
-                                    <SmallButton className="ml1" onClick={handleRemoveCondition(index)}>
-                                        <Icon name="trash" />
-                                    </SmallButton>
+                                    <SmallButton icon="trash" className="ml1" onClick={handleRemoveCondition(index)} />
                                 </Label>
 
                                 <div className="w100">

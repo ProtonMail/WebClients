@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-import { Group } from '../button';
+import { Group, Button } from '../button';
 import { Dropdown, DropdownMenu, DropdownButton } from '../dropdown';
-import IconButton from '../button/IconButton';
 
 const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, total, limit }) => {
     if (!total) {
@@ -37,7 +36,7 @@ const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, 
     return (
         <Group>
             {hasPrevious ? (
-                <IconButton
+                <Button
                     icon="arrow-left"
                     className="previous-button pm-group-button"
                     disabled={disablePrevious}
@@ -54,7 +53,7 @@ const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, 
                 <DropdownMenu>{actions}</DropdownMenu>
             </Dropdown>
             {hasNext ? (
-                <IconButton
+                <Button
                     icon="arrow-right"
                     className="next-button pm-group-button"
                     disabled={disableNext}

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
+import Icon from '../icon/Icon';
 
 const Button = ({
     type,
@@ -17,6 +18,7 @@ const Button = ({
     onKeyUp,
     onFocus,
     onBlur,
+    icon,
     ...rest
 }) => {
     const handleClick = (event) => {
@@ -63,11 +65,14 @@ const Button = ({
         }
     };
 
+    const iconComponent = typeof icon === 'string' ? <Icon name={icon} /> : icon;
+    const iconButtonClass = !children ? 'pm-button--for-icon' : '';
+
     return (
         <button
             role={role}
             disabled={loading ? true : disabled}
-            className={'pm-button '.concat(className || '')}
+            className={`pm-button ${iconButtonClass} ${className}`}
             type={type}
             tabIndex={disabled ? '-1' : tabIndex}
             title={title}
@@ -80,6 +85,7 @@ const Button = ({
             aria-busy={loading}
             {...rest}
         >
+            {iconComponent}
             {children}
         </button>
     );
@@ -99,6 +105,7 @@ Button.propTypes = {
     onFocus: PropTypes.func,
     type: PropTypes.string,
     className: PropTypes.string,
+    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     children: PropTypes.node
 };
 
@@ -106,7 +113,8 @@ Button.defaultProps = {
     role: 'button',
     type: 'button',
     disabled: false,
-    loading: false
+    loading: false,
+    className: ''
 };
 
 export default Button;

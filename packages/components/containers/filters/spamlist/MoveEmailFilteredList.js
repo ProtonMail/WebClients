@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { SmallButton, Icon, useApiWithoutResult, useNotifications } from 'react-components';
+import { SmallButton, useApiWithoutResult, useNotifications } from 'react-components';
 import { updateIncomingDefault } from 'proton-shared/lib/api/incomingDefaults';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
@@ -29,13 +29,7 @@ function MoveEmailFilteredList({ type, dest, email, className, onClick }) {
         onClick(dest, data);
     };
 
-    return (
-        <>
-            <SmallButton className={className} onClick={handleClick}>
-                <Icon name={iconName} />
-            </SmallButton>
-        </>
-    );
+    return <SmallButton icon={iconName} className={className} onClick={handleClick} />;
 }
 
 MoveEmailFilteredList.propTypes = {
