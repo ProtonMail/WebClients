@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { INVOICE_STATE } from 'proton-shared/lib/constants';
@@ -9,7 +9,6 @@ import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import PayInvoiceModal from './PayInvoiceModal';
 
 const InvoiceActions = ({ invoice, fetchInvoices }) => {
-    const [url, setUrl] = useState();
     const filename = c('Title for PDF file').t`ProtonMail invoice` + ` ${invoice.ID}.pdf`;
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -25,9 +24,14 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
             text: c('Action').t`View`,
             async onClick() {
                 const blob = await get();
-                setUrl(URL.createObjectURL(blob));
 
-                createModal(<PreviewPDFModal url={url} title={c('Title').t`Preview invoice`} filename={filename} />);
+                createModal(
+                    <PreviewPDFModal
+                        url={URL.createObjectURL(blob)}
+                        title={c('Title').t`Preview invoice`}
+                        filename={filename}
+                    />
+                );
             }
         },
         {

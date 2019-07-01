@@ -5,7 +5,7 @@ import { FormModal } from 'react-components';
 
 const PreviewPDFModal = ({ url, title, filename, ...rest }) => {
     return (
-        <FormModal title={title} close={c('Action').t`Close`} {...rest}>
+        <FormModal title={title} close={c('Action').t`Close`} hasSubmit={false} {...rest}>
             <object data={url} className="w100" type="application/pdf" height={500} title={filename}>
                 <embed src={url} type="application/pdf" />
             </object>
@@ -14,7 +14,6 @@ const PreviewPDFModal = ({ url, title, filename, ...rest }) => {
 };
 
 PreviewPDFModal.propTypes = {
-    show: PropTypes.bool.isRequired,
     onClose: PropTypes.func,
     url: PropTypes.string,
     title: PropTypes.string,

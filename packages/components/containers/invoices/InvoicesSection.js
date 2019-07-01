@@ -38,7 +38,7 @@ const InvoicesSection = () => {
 
     const query = () =>
         queryInvoices({
-            Page: page,
+            Page: page - 1,
             PageSize: ELEMENTS_PER_PAGE,
             Owner: owner
         });
