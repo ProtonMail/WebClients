@@ -45,9 +45,8 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
         }
 
         // Escape All the things !
-        return transformEscape(div, {
+        return transformEscape(content, {
             action,
-            content,
             cache: cacheBase64,
             isDocument: typeof content !== 'string'
         });

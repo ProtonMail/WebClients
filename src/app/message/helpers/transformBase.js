@@ -20,12 +20,11 @@ const getBaseURL = (base) => {
 
 /**
  * Append base url to any href/src if we need to
- * @param  {Node} html Mail parser
- * @param  {Document} doc  Output from DOMPurify
- * @return {Node}      Parser
+ * @param  {Node} html HTML document from DOMPurify
+ * @return {Node}      Dom based
  */
-function transformBase(html, doc) {
-    const base = doc.querySelector('base');
+function transformBase(html) {
+    const base = html.querySelector('base');
 
     if (!base || !base.getAttribute('href')) {
         return html;
