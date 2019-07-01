@@ -12,7 +12,8 @@ function linkWarningModal(pmModal, eventManager, mailSettingsModel, settingsMail
             this.link = params.link;
 
             // Both are not able to open the link
-            this.punyCodeLinkIE = /:\/\/xn--/.test(params.link) && (isEdge() || isIE11());
+            this.punyCodeLink = /:\/\/xn--/.test(params.link);
+            this.punyCodeLinkIE = this.punyCodeLink && (isEdge() || isIE11());
 
             this.continue = () => {
                 params.close();
