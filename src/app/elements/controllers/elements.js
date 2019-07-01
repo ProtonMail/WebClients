@@ -152,6 +152,17 @@ function ElementsController(
 
     $scope.displayType = displayType;
 
+    /**
+     * Check in LabelIDs and Labels to see if the conversation or message is starred
+     * @param {Object} item
+     */
+    function isStarred({ LabelIDs = [], Labels = [] }) {
+        if (Labels.length) {
+            return _.some(Labels, { ID: MAILBOX_IDENTIFIERS.starred });
+        }
+        return LabelIDs.some((label) => label === MAILBOX_IDENTIFIERS.starred);
+    }
+
     $scope.startWatchingEvent = () => {
         let isOpened = !!$state.params.id;
 
@@ -295,15 +306,29 @@ function ElementsController(
             $scope.unread();
         });
 
-        on('toggleStar', () => {
-            !isOpened && toggleStar();
-        });
+        on('toggleStar', toggleStar);
 
         function toggleStar() {
             const type = getTypeSelected();
-            getElementsSelected().forEach((model) => {
-                dispatcher.elements('toggleStar', { type, model });
-            });
+
+            const { unstar, star } = getElementsSelected().reduce(
+                (acc, model) => {
+                    const action = isStarred(model) ? 'unstar' : 'star';
+                    acc[action].push(model.ID);
+                    return acc;
+                },
+                { unstar: [], star: [] }
+            );
+
+            if (type === 'conversation') {
+                unstar.length && actionConversation.unstar(unstar);
+                star.length && actionConversation.star(star);
+            }
+
+            if (type === 'message') {
+                unstar.length && dispatcher.messageActions('unstar', { ids: unstar });
+                star.length && dispatcher.messageActions('star', { ids: star });
+            }
         }
 
         const markPrevious = onElement(() => {
@@ -567,13 +592,6 @@ function ElementsController(
 
         AppModel.set('numberElementChecked', _.filter($scope.conversations, { Selected: true }).length);
     };
-
-    function isStarred({ LabelIDs = [], Labels = [] }) {
-        if (LabelIDs.length) {
-            return _.includes(LabelIDs, MAILBOX_IDENTIFIERS.starred);
-        }
-        return _.some(Labels, { ID: MAILBOX_IDENTIFIERS.starred });
-    }
 
     /**
      * Return [Element] selected
