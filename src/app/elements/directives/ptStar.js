@@ -22,7 +22,7 @@ function ptStar(dispatchers, tools, actionConversation) {
         replace: true,
         templateUrl: require('../../../templates/elements/ptStar.tpl.html'),
         link(scope, el, attr) {
-            const { dispatcher, on, unsubscribe } = dispatchers(['messageActions']);
+            const { dispatcher } = dispatchers(['messageActions']);
             const type = attr.ptStarType || tools.getTypeList();
 
             scope.isStarred = () => isStarred(scope.model);
@@ -52,16 +52,9 @@ function ptStar(dispatchers, tools, actionConversation) {
                 }
             }
 
-            on('elements', (e, { type, data = {} }) => {
-                if (type === 'toggleStar') {
-                    toggleStar(data);
-                }
-            });
-
             el.on('click', onClick);
 
             scope.$on('$destroy', () => {
-                unsubscribe();
                 el.off('click', onClick);
             });
         }
