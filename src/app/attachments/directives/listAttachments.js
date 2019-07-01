@@ -37,10 +37,12 @@ function listAttachments($state, dispatchers, attachmentDownloader) {
 
                     node.classList.add(DECRYPTING_CLASSNAME);
 
-                    // Cf Safari
-                    if (attachmentDownloader.isNotSupported(e)) {
-                        return false;
-                    }
+                    /*
+                        Safari doesn't support [download] on iOS
+                        We need to display an error message to inform the user,
+                        what's need to be done to download the file.
+                     */
+                    attachmentDownloader.isNotSupported(e);
 
                     attachmentDownloader
                         .download(attachment, scope.model, node)
