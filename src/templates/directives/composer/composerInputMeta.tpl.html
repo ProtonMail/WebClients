@@ -21,27 +21,27 @@
             <span class="flex-item-fluid bordered-container flex composerInputMeta-overlay-fakefield">
                 <span class="ellipsis mw100">
                     <composer-input-recipient
-                    ng-repeat="email in message.ToList track by email.Address"
-                    data-email="email"
-                    data-message="message"></composer-input-recipient>
+                        ng-repeat="email in message.ToList track by email.Address"
+                        data-email="email"
+                        data-message="message"></composer-input-recipient>
                     <span
-                    ng-if="message.CCList.length"
-                    translate-context="Title"
-                    translate-comment="CC: addresses"
-                    translate>CC:</span>
+                        ng-if="message.CCList.length"
+                        translate-context="Title"
+                        translate-comment="CC: addresses"
+                        translate>CC:</span>
                     <composer-input-recipient
-                    ng-repeat="email in message.CCList track by email.Address"
-                    data-email="email"
-                    data-message="message"></composer-input-recipient>
+                        ng-repeat="email in message.CCList track by email.Address"
+                        data-email="email"
+                        data-message="message"></composer-input-recipient>
                     <span
-                    ng-if="message.BCCList.length"
-                    translate-context="Title"
-                    translate-comment="BCC: addresses"
-                    translate>BCC:</span>
+                        ng-if="message.BCCList.length"
+                        translate-context="Title"
+                        translate-comment="BCC: addresses"
+                        translate>BCC:</span>
                     <composer-input-recipient
-                    ng-repeat="email in message.BCCList track by email.Address"
-                    data-email="email"
-                    data-message="message"></composer-input-recipient>
+                        ng-repeat="email in message.BCCList track by email.Address"
+                        data-email="email"
+                        data-message="message"></composer-input-recipient>
                 </span>
             </span>
         </div>
