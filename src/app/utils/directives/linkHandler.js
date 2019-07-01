@@ -54,6 +54,7 @@ function linkHandler(
     const encoder = async ({ raw = '', encoded }) => {
         // https://en.wikipedia.org/wiki/Punycode#Internationalized_domain_names
         const noEncoding = isIE11() || isEdge() || !/:\/\/xn--/.test(encoded || raw);
+
         /*
             Fallback, Some browsers don't support USVString at all (IE11, Edge)
             Or when the support is "random".
@@ -63,15 +64,19 @@ function linkHandler(
         if (noEncoding) {
             const { punycode } = await import(/* webpackChunkName: "vendorEncoder.module" */ '../../vendorEncoder');
 
-            const [protocol, url = ''] = raw.split('://');
+            // Sometimes there is a queryParam with https:// inside so, we need to add them too :/
+            const [protocol, url = '', ...tracking] = raw.split('://');
 
-            // Sometimes Blink is enable to decode the URL to convert it again
-            const uri = !url.startsWith('%') ? url : decodeURIComponent(url);
-            const newUrl = uri
-                .split('/')
-                .map(punycode.toASCII)
-                .join('/');
+            const parser = (input) => {
+                // Sometimes Blink is enable to decode the URL to convert it again
+                const uri = !input.startsWith('%') ? input : decodeURIComponent(input);
+                return uri
+                    .split('/')
+                    .map(punycode.toASCII)
+                    .join('/');
+            };
 
+            const newUrl = [url, ...tracking].map(parser).join('://');
             return `${protocol}://${newUrl}`;
         }
         return encoded;
