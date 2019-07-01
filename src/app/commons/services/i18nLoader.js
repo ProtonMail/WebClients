@@ -59,7 +59,6 @@ function i18nLoader(dispatchers, gettextCatalog, $injector) {
 
         pikadayConfiguration.update({
             i18n: locale,
-            firstDay: moment.localeData().firstDayOfWeek(),
             format: moment.localeData().longDateFormat('L')
         });
     };
@@ -70,7 +69,6 @@ function i18nLoader(dispatchers, gettextCatalog, $injector) {
     const localizeDate = () => {
         const { translationLocale, browserLocale } = CACHE;
         $injector.get('dateUtils').init();
-
         moment.locale(selectLocale(translationLocale, browserLocale));
 
         localizePikaday();
