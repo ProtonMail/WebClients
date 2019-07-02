@@ -1,4 +1,4 @@
-<li class="navigationUser mlauto mtauto mbauto relative">
+<li class="navigationUser mlauto mtauto mbauto relative flex-item-noshrink">
 
     <dropdown-container data-position="right">
 
@@ -23,41 +23,56 @@
             <ul class="unstyled mt0-5 mb0-5">
 
                 <li class="dropDown-item p1 flex flex-column">
-                    <strong title="{{ displayName }}">{{ displayName }}</strong>
-                    <span title="{{ email }}">{{ email }}</span>
-                    <span title="{{ organization.DisplayName }}">{{ organization.DisplayName }}</span>
+                    <strong title="{{ displayName }}" class="ellipsis mw100">{{ displayName }}</strong>
+                    <span title="{{ email }}" class="ellipsis mw100">{{ email }}</span>
+                    <span title="{{ organization.DisplayName }}" class="ellipsis mw100">{{ organization.DisplayName }}</span>
                 </li>
 
                 <li class="dropDown-item p1" data-new-version></li>
 
                 <li class="dropDown-item pl1 pr1">
                     <button
-                        class="w100 pt0-5 pb0-5 alignleft"
+                        class="w100 flex link pt0-5 pb0-5 alignleft"
                         ng-if="wizardEnabled"
                         data-display-wizard-button>
-                        <icon data-name="settings"></icon>
+                        <icon data-name="settings" class="mt0-25 mr0-5" data-fill="currentColor"></icon>
                         <span translate translate-context="Action">Tutorial</span>
                     </button>
                 </li>
 
-                <li class="dropDown-item pt0-5 pb0-5 pl1 pr1">
+                <li class="dropDown-item pl1 pr1">
                     <a
-                        class="w100 pm-button--link p0 navigationUser-link"
+                        class="w100 flex pt0-5 pb0-5 nodecoration"
                         target="_blank"
                         href="https://protonmail.com/support">
-                        <icon data-name="support1"></icon>
+                        <icon data-name="support1" class="mt0-25 mr0-5" data-fill="currentColor"></icon>
                         <span translate translate-context="Action">Help &amp; answers</span>
                     </a>
                 </li>
 
+                <li class="dropDown-item pl1 pr1">
+                    <new-bug-report
+                        class="w100 flex link pt0-5 pb0-5 alignleft"
+                        id="reportBugBtn"></new-bug-report>
+                </li>
+
                 <li class="dropDown-item pt0-5 pb0-5 pl1 pr1">
                     <a
-                        class="w100 pm-button--link p0 navigationUser-link"
+                        class="w100 flex flex-nowrap pm-button--link p0 navigationUser-link"
                         target="_blank"
                         href="https://shop.protonmail.com">
-                        <icon data-name="shop"></icon>
+                        <icon data-name="shop" data-fill="currentColor" class="mt0-25 mr0-5"></icon>
                         <span translate translate-context="Action">ProtonMail Shop</span>
                     </a>
+                </li>
+
+                <li class="dropDown-item pt0-5 pb0-5 pl1 pr1">
+                    <button
+                        type="button"
+                        class="w100 flex link pt0-5 pb0-5 alignleft">
+                        <icon data-name="donate" class="mt0-25 mr0-5" data-fill="currentColor"></icon>
+                        <span translate translate-context="Action">Support us</span>
+                    </button>
                 </li>
 
                 <li class="dropDown-item p1 flex">

@@ -63,7 +63,6 @@ import headerSecuredMobile from './directives/header/headerSecuredMobile';
 import arrowsToScroll from './directives/navigation/arrowsToScroll';
 import navigation from './directives/navigation/navigation';
 import navigationBlackFriday from './directives/navigation/navigationBlackFriday';
-import navigationReport from './directives/navigation/navigationReport';
 import navigationUser from './directives/navigation/navigationUser';
 
 export default angular
@@ -134,5 +133,4 @@ export default angular
     .directive('arrowsToScroll', arrowsToScroll)
     .directive('navigation', navigation)
     .directive('navigationBlackFriday', navigationBlackFriday)
-    .directive('navigationReport', navigationReport)
     .directive('navigationUser', navigationUser).name;
