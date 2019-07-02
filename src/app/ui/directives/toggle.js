@@ -11,7 +11,7 @@ function toggle(dispatchers) {
             type: '@' // type send with the event
         },
         link(scope, el, { action }) {
-            const $checkbox = el.find('.pm_toggle-checkbox');
+            const $checkbox = el.find('input');
             const name = scope.name || action || 'toggle';
             const type = scope.type || '';
             const { dispatcher } = dispatchers([name]);

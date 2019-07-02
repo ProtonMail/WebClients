@@ -112,14 +112,7 @@ function customFilterList(
                     );
                 }
 
-                filterModal.activate({
-                    params: {
-                        mode: 'simple',
-                        close() {
-                            filterModal.deactivate();
-                        }
-                    }
-                });
+                filterModal.activate({ params: { mode: 'simple' } });
             };
 
             scope.addSieveFilter = () => {
@@ -135,14 +128,7 @@ function customFilterList(
                     );
                 }
 
-                filterModal.activate({
-                    params: {
-                        mode: 'complex',
-                        close() {
-                            filterModal.deactivate();
-                        }
-                    }
-                });
+                filterModal.activate({ params: { mode: 'complex' } });
             };
 
             scope.isSimple = (filter) => filter.Simple && Object.keys(filter.Simple).length;
@@ -177,9 +163,6 @@ function customFilterList(
                                 });
 
                             networkActivityTracker.track(promise);
-                            confirmModal.deactivate();
-                        },
-                        cancel() {
                             confirmModal.deactivate();
                         }
                     }

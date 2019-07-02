@@ -1,116 +1,186 @@
-<div
-    class="pm_modal {{ctrl.class}} filter-modal-container"
-    ng-class="ctrl.mode === 'complex' ? 'filter-modal-complex' : 'filter-modal-simple'"
-    role="dialog">
+<dialog
+    class="filter-modal-container"
+    ng-class="ctrl.mode === 'complex' ? 'filter-modal-complex' : 'filter-modal-simple'">
+
+    <header class="pm-modalHeader">
+        <button
+            type="button"
+            class="pm-modalClose"
+            ng-click="ctrl.cancel()"
+            title-translate="Close"
+            title-translate-context="Action">×</button>
+        <h1
+            id="modalTitle"
+            class="pm-modalTitle"
+            translate-context="Filter modal title"
+            translate>Custom Filter</h1>
+    </header>
 
     <form
-        class="modal-dialog"
+        class="pm-modalContent"
         name="addFilterModal"
         ng-click="ctrl.resetValidity()"
+        autocomplete="off"
         ng-submit="ctrl.save()"
-        data-validity="{{ctrl.validator}}"
         novalidate>
 
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="pm-modalContentInner">
 
-        <div class="modal-content">
+            <div class="AddFilterModal-editor">
+                <div class="flex flex-nowrap onmobile-flex-column mb1">
+                    <label
+                        for="filterName"
+                        translate
+                        translate-context="Title"
+                        class="pm-label">Name</label>
 
-            <div class="modal-header">
-                <h3 class="modal-title" translate-context="Filter modal title" translate>Custom Filter</h3>
-            </div>
+                    <div class="w100">
+                        <input
+                            class="pm-field w100"
+                            id="filterName"
+                            name="filterName"
+                            ng-model="ctrl.filter.Name"
+                            required
+                            autocomplete="off">
 
-            <div class="modal-body pm_form filter-form">
-                <p translate translate-context="Info" class="alert alert-info">Custom filters work on all new emails, including incoming emails as well as sent emails</p>
-                <div class="pm_grid">
-                    <div class="col-1-8">
-                        <label for="filterName" translate translate-context="Title">Name</label>
-                    </div>
-                    <div class="col-7-8">
-                        <input class="filter-modal-input-name" type="text" id="filterName" name="filterName" ng-model="ctrl.filter.Name" required/>
-                        <div ng-messages="addFilterModal.filterName.$error">
-                            <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
+                        <div
+                            class="error-zone"
+                            ng-messages="addFilterModal.filterName.$error"
+                            ng-show="addFilterModal.filterName.$dirty || addFilterModal.$submitted">
+                            <p
+                                ng-message="required"
+                                class="m0 color-global-warning"
+                                translate-context="Error"
+                                translate>Field required</p>
                         </div>
                     </div>
                 </div>
-                <p translate translate-context="Info" class="alert alert-info filter-complex-only">To find out how to write Sieve filters, <a target="_blank" href="https://protonmail.com/support/knowledge-base/sieve/">click here</a>.</p>
-                <sieve-label-input sieve="ctrl.filter.Sieve"></sieve-label-input>
 
-                <fieldset data-mode="conditions" class="filter-simple-only">
+                <div class="flex flex-nowrap onmobile-flex-column mb1">
+                    <label
+                        for="logic"
+                        class="pm-label"
+                        translate
+                        translate-context="Title">Logic</label>
 
-                    <legend translate-context="Title" translate translate-context="Title">Conditions</legend>
+                    <select
+                        size="1"
+                        class="pm-field w100 mlauto"
+                        name="logic"
+                        ng-model="ctrl.filter.Simple.Operator"
+                        ng-options="operator.label for operator in ctrl.operators"></select>
+                </div>
 
-                    <div class="filter-modal-conditions" ng-repeat="condition in ctrl.filter.Simple.Conditions">
-                        <p class="filter-modal-simple-condition bold text-center" ng-hide="$index === 0">
-                            <span class="pm_select inline">
-                                <select ng-model="ctrl.filter.Simple.Operator" ng-options="operator.label for operator in ctrl.operators"></select><i class="fa fa-angle-down"></i>
-                            </span>
-                        </p>
+                <div
+                    ng-repeat="condition in ctrl.filter.Simple.Conditions track by $id(condition)"
+                    ng-class="{
+                        'filterModal-error-condition': !ctrl.validator.conditions.errors[$index].isValid
+                    }"
+                    class="flex flex-nowrap onmobile-flex-column mb1">
 
-                        <div class="filter-modal-condition alert">
+                    <div class="pm-label">
+                        <span translate translate-context="Title">Conditions</span>
+                        <span>{{$index + 1}}</span>
+                        <button
+                            ng-click="ctrl.removeCondition(condition)"
+                            class="pm-button pm-button--small ml1"
+                            type="button">
+                            <icon data-name="trash"></icon>
+                        </button>
+                    </div>
 
-                            <div class="filter-modal-condition-settings-container">
-                                <div class="filter-modal-condition-settings">
-                                    <span class="filter-modal-condition-if bold" translate-context="Filter modal condition" translate>If</span>
-                                    <span class="pm_select">
-                                        <select ng-model="condition.Type" ng-options="type.label for type in ctrl.types"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
+                    <div class="w100">
+                        <select
+                            size="1"
+                            class="pm-field w100"
+                            name="conditionType"
+                            ng-model="condition.Type"
+                            ng-class="{
+                                'filterModal-error-condition-': !ctrl.validator.conditions.errors[$index].isValid
+                            }"
+                            aria-invalid="{{ctrl.validator.conditions.errors[$index].errors.includes('type')}}"
+                            ng-options="type.label for type in ctrl.types track by type.value"></select>
 
-                                    <span class="filter-modal-condition-attachments" ng-if="condition.Type.value === 'attachments'">
-                                            <label>
-                                                <custom-radio
-                                                    data-custom-ng-change="ctrl.onChangeAttachements(condition, 'contains')"
-                                                    data-custom-ng-model="condition.Comparator.value"
-                                                    data-custom-ng-value="'contains'"
-                                                    data-custom-value="contains"></custom-radio>
-                                                <span translate translate-context="Title">With Attachments</span>
-                                            </label>
+                        <div
+                            class="error-zone"
+                            ng-show="ctrl.validator.conditions.errors[$index].errors.includes('type') && addFilterModal.$submitted">
+                            <p
+                                class="m0 color-global-warning"
+                                translate-context="Error"
+                                translate>You must choose a type of condition</p>
+                        </div>
 
-                                            <label>
-                                                <custom-radio
-                                                    data-custom-ng-change="ctrl.onChangeAttachements(condition, '!contains')"
-                                                    data-custom-ng-model="condition.Comparator.value"
-                                                    data-custom-ng-value="'!contains'"
-                                                    data-custom-value="!contains"></custom-radio>
-                                                <span translate translate-context="Title">Without Attachments</span>
-                                            </label>
-                                    </span>
 
-                                    <span class="pm_select" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
-                                        <select class="autoWidth" ng-model="condition.Comparator" ng-options="comparator.label for comparator in ctrl.comparators"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
+                        <div
+                            class="filterModal-condition-attachments mt1 mb1"
+                            ng-if="condition.Type.value === 'attachments'">
+                                <label class="pm-label inline-flex">
+                                    <custom-radio
+                                        data-custom-ng-change="ctrl.onChangeAttachements(condition, 'contains')"
+                                        data-custom-ng-model="condition.Comparator.value"
+                                        data-custom-ng-value="'contains'"
+                                        data-custom-value="contains"></custom-radio>
+                                    <span translate translate-context="Title">With Attachments</span>
+                                </label>
 
-                                    <div class="filter-modal-condition-settings-item" ng-if="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
-                                        <div ng-if="condition.Values.length > 0">
-                                            <span class="filter-modal-condition-badges" ng-repeat="value in condition.Values track by $id(value)" title="{{ value }}">
-                                                <span class="filter-modal-condition-badge pm_badge default none"><span class="ellipsis filter-modal-condition-badge-value">{{ value }}</span> <a href="#" class="filter-modal-condition-badge-remove" ng-click="condition.Values.splice($index, 1)"><i class="fa fa-times"></i></a>
-                                                </span>
-                                                <span class="filter-modal-condition-or" translate-context="Filter modal value OR value" translate>or</span>
-                                            </span>
-                                        </div>
-                                    </div>
+                                <label class="pm-label inline-flex">
+                                    <custom-radio
+                                        data-custom-ng-change="ctrl.onChangeAttachements(condition, '!contains')"
+                                        data-custom-ng-model="condition.Comparator.value"
+                                        data-custom-ng-value="'!contains'"
+                                        data-custom-value="!contains"></custom-radio>
+                                    <span translate translate-context="Title">Without Attachments</span>
+                                </label>
+                        </div>
 
-                                    <div class="filter-modal-add-condition-settings-item filter-modal-add-condition" ng-if="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
-                                        <input
-                                            class="filter-modal-add-condition-input"
-                                            type="text"
-                                            ng-model="condition.value"
-                                            placeholder-translate="Text or pattern"
-                                            placeholder-translate-context="Filter modal condition"
-                                            ng-keypress="$event.keyCode === 13 && ctrl.addValue(condition, $event)"
-                                            ng-blur="ctrl.addValue(condition)"  />
-                                        <button
-                                            class="filter-modal-add-condition-button pm_button"
-                                            ng-disabled="!condition.value"
-                                            type="button">
-                                            <i class="fa fa-check"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filter-modal-condition-remove">
+                        <select
+                            size="1"
+                            class="pm-field w100 mt1"
+                            name="filterConditions"
+                            ng-model="condition.Comparator"
+                            ng-if="condition.Type.value  !== 'attachments'"aria-invalid="{{ctrl.validator.conditions.errors[$index].errors.includes('comparator')}}"
+                            ng-options="comparator.label for comparator in ctrl.comparators track by comparator.value"></select>
+
+                        <div
+                             ng-if="condition.Type.value !== 'attachments'"
+                            class="flex flex-column w100 mb1 mt1">
+
+                            <div
+                                class="flex flex-nowrap onmobile-flex-column mb1 EditConditionValue-container mb0-5"
+                                ng-if="condition.Values.length"
+                                ng-repeat="value in condition.Values track by value"
+                                data-info="Or">
+                                <input
+                                    class="pm-field w80"
+                                    type="text"
+                                    autocomplete="off"
+                                    ng-value="value">
+
                                 <button
+                                    role="button"
+                                    class="pm-button ml1"
+                                    type="button"
+                                    ng-click="condition.Values.splice($index, 1)"
+                                    translate
+                                    translate-context="Action">Delete</button>
+                            </div>
+
+                            <div class="flex flex-nowrap onmobile-flex-column">
+                                <input
+                                    class="pm-field w80"
+                                    id="textOrPattern"
+                                    placeholder-translate="Text or pattern"
+                                    placeholder-translate-context="Filter modal condition"
+                                    type="text"
+                                    ng-model="condition.value"
+                                    aria-invalid="{{ctrl.validator.conditions.errors[$index].errors.includes('value')}}"
+                                    ng-keypress="$event.keyCode === 13 && ctrl.addValue(condition, $event)"
+                                    ng-blur="ctrl.addValue(condition)"
+                                    autocomplete="off">
+                                <button
+                                    role="button"
+                                    ng-disabled="!condition.value"
+                                    class="pm-button ml1"
                                     type="button"
                                     pt-tooltip-translate="Remove"
                                     pt-tooltip-translate-context="Action"
@@ -120,141 +190,133 @@
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>
+
+                            <div
+                                class="error-zone"
+                                ng-show="ctrl.validator.conditions.errors[$index].errors.includes('value') && addFilterModal.$submitted">
+                                <p
+                                    class="m0 color-global-warning"
+                                    translate-context="Error"
+                                    translate>You must set a value</p>
+                            </div>
                         </div>
                     </div>
-                    <button type="button" class="pm_button filterModal-add-condition-button" ng-click="ctrl.addCondition()" translate translate-context="Action">Add condition</button>
-                </fieldset>
+                </div>
 
-                <fieldset data-mode="action" class="filter-simple-only">
-                    <legend translate-context="Title" translate translate-context="Title">Actions</legend>
-                    <label>
-                        <custom-checkbox
-                            class="filterModal-checkbox"
-                            data-custom-ng-model="ctrl.hasLabels"></custom-checkbox>
-                        <span translate-context="Filter modal label" translate>Apply labels</span>
-                    </label>
-
-                    <div class="alert pm_grid filter-modal-label-container" ng-show="ctrl.hasLabels">
-                        <div class="col-1-4" ng-repeat="label in ctrl.filter.Simple.Actions.Labels track by label.ID | orderBy: 'Order'">
-                            <label class="filter-modal-label">
-                                <custom-checkbox
-                                    data-custom-ng-model="label.Selected"></custom-checkbox>
-                                <i class="fa" ng-class="{ 'fa-folder': label.Exclusive, 'fa-tag': !label.Exclusive }" ng-style="{color: label.Color}"></i>
-                                <span class="ellipsis" title="{{ ::label.Name }}">{{ ::label.Name }}</span>
-                            </label>
-                        </div>
-                        <div class="col-1-4 filter-modal-label-add">
-                            <button type="button" class="pm_button white" ng-click="ctrl.addLabel()" translate translate-context="Action">Add label</button>
-                        </div>
+                <div class="flex flex-nowrap onmobile-flex-column mb1">
+                    <span class="pm-label"></span>
+                    <div class="w100">
+                        <button
+                            role="button"
+                            class="pm-button pm-button--primary"
+                            type="button"
+                            ng-click="ctrl.addCondition()"
+                            translate
+                            translate-context="Action">Add a new condition</button>
                     </div>
+                </div>
 
-                    <label>
-                        <custom-checkbox
-                            class="filterModal-checkbox"
-                            data-custom-ng-model="ctrl.hasMove"></custom-checkbox>
-                        <span translate-context="Filter modal label" translate>Move to</span>
-                    </label>
+                <div
+                    ng-class="{
+                        'filterModal-error-actions-': !ctrl.validator.actions.isValid
+                    }"
+                    class="flex flex-nowrap onmobile-flex-column mb1 mt1">
+                    <label
+                        for="actions"
+                        class="pm-label"
+                        translate-context="Title"
+                        translate>Actions</label>
 
-                    <div class="alert pm_grid" ng-show="ctrl.hasMove">
+                    <div class="w100">
+                        <div class="mb1">
+                            <autocomplete-labels></autocomplete-labels>
 
-                        <div class="col-1-4">
-                            <label class="filter-modal-label">
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="inbox"></custom-radio>
-                                <i class="fa fa-inbox"></i>
-                                <span class="ellipsis" translate translate-context="Label">Inbox</span>
-                            </label>
+                            <ul className="m0 mt1 mb1 p0 unstyled" ng-if="ctrl.selectedLabels.length">
+                                <li
+                                    class="flex filterModal-item-label"
+                                    ng-repeat="label in ctrl.selectedLabels track by label.ID">
+                                    <icon data-name="label" ng-style="{ fill: label.Color }" class="mr1"></icon>
+                                    <span class="ellipsis w70">{{::label.Name }}</span>
+                                    <button
+                                        type="button"
+                                        ng-click="ctrl.removeLabel($index, label)"
+                                        class="pm-button--small mlauto"
+                                        translate-context="Action"
+                                        translate>Remove</button>
+                                </li>
+                            </ul>
                         </div>
 
-                        <div class="col-1-4">
-                            <label class="filter-modal-label">
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="archive"></custom-radio>
-                                <i class="fa fa-archive"></i>
-                                <span class="ellipsis" translate translate-context="Label">Archive</span>
-                            </label>
+                        <div class="flex flex-nowrap onmobile-flex-column mb1">
+                            <select
+                                size="1"
+                                class="pm-field w100 mlauto"
+                                name="folderDest"
+                                ng-model="ctrl.filter.Simple.Actions.Move"
+                                ng-options="folder.value as folder.label for folder in ctrl.folders track by folder.value"></select>
                         </div>
 
-                        <div class="col-1-4">
-                            <label class="filter-modal-label">
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="spam"></custom-radio>
-                                <i class="fa fa-ban"></i>
-                                <span class="ellipsis" translate translate-context="Label">Spam</span>
-                            </label>
+                        <div class="flex flex-nowrap onmobile-flex-column mb1">
+                            <select
+                                size="1"
+                                class="pm-field w100 mlauto"
+                                name="markAs"
+                                ng-model="ctrl.markAsValue"
+                                ng-options="mark.value as mark.label for mark in ctrl.markAs track by mark.value"></select>
                         </div>
 
-                        <div class="col-1-4">
-                            <label class="filter-modal-label">
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="trash"></custom-radio>
-                                <i class="fa fa-trash-o"></i>
-                                <span class="ellipsis" translate translate-context="Label">Trash</span>
-                            </label>
+                        <div
+                            ng-if="::ctrl.isPaid"
+                            class="mb1">
+
+                            <div class="mb1">
+                                <toggle
+                                    data-id="toggleVacation"
+                                    data-status="ctrl.hasVacation"></toggle>
+                                <label
+                                    for="toggleVacation"
+                                    class="ml1"
+                                    translate-context="Filter modal label"
+                                    translate>Send auto reply</label>
+                            </div>
+
+                            <div
+                                class="bordered"
+                                ng-if="ctrl.hasVacation">
+                                <squire
+                                    id="vacationMessage"
+                                    class="no-resize error_tooltip"
+                                    allow-data-uri="true"
+                                    data-value="ctrl.filter.Simple.Actions.Vacation"
+                                    data-type-content="OOF-Message"></squire>
+                            </div>
+
                         </div>
 
-                        <div class="col-1-4" ng-repeat="folder in ctrl.folders track by folder.ID">
-                            <label class="filter-modal-label">
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.Path }}"></custom-radio>
-                                <i class="filter-modal-label-item-icon fa" ng-class="{ 'fa-folder': folder.Exclusive, 'fa-tag': !folder.Exclusive }" ng-style="{ color: folder.Color }"></i>
-                                <span class="ellipsis" title="{{ ::folder.Name }}">{{ ::folder.Name }}</span>
-                            </label>
-                        </div>
-
-                        <div class="col-1-4 filter-modal-folder-add">
-                            <button type="button" class="pm_button white" ng-click="ctrl.addFolder()" translate translate-context="Action">Add folder</button>
-                        </div>
+                        <div
+                            class="color-global-warning error-zone"
+                            ng-if="ctrl.validator.actions.isValid === false && addFilterModal.$submitted"
+                            id="ActionsError"
+                            translate-context="Error"
+                            translate>A filter must have an action</div>
                     </div>
-
-                    <label>
-                        <custom-checkbox
-                            class="filterModal-checkbox"
-                            data-custom-ng-model="ctrl.hasMark"></custom-checkbox>
-                        <span translate-context="Filter modal label" translate>Mark as</span>
-                    </label>
-
-                    <div class="alert pm_grid filter-modal-markdetails" ng-show="ctrl.hasMark">
-                        <div class="col-1-4">
-                            <label>
-                                <custom-checkbox data-custom-ng-model="ctrl.filter.Simple.Actions.Mark.Read"></custom-checkbox>
-                                <span class="ellipsis" translate translate-context="Label">Read</span>
-                            </label>
-                        </div>
-
-                        <div class="col-1-4">
-                            <label>
-                                <custom-checkbox data-custom-ng-model="ctrl.filter.Simple.Actions.Mark.Starred"></custom-checkbox>
-                                <span class="ellipsis" translate translate-context="Label">Starred</span>
-                            </label>
-                        </div>
-
-                    </div>
-
-                    <div ng-if="::ctrl.isPaid">
-                        <label>
-                            <custom-checkbox
-                                class="filterModal-checkbox"
-                                data-custom-ng-model="ctrl.hasVacation"></custom-checkbox>
-                            <span translate-context="Filter modal label" translate>Send auto reply</span>
-                        </label>
-
-                        <div class="alert pm_grid filter-modal-vacation" ng-show="ctrl.hasVacation">
-                            <squire id="vacationMessage" class="no-resize error_tooltip" allow-data-uri="true" data-value="ctrl.filter.Simple.Actions.Vacation"
-                                data-type-content="OOF-Message"></squire>
-                        </div>
-                    </div>
-                </fieldset>
+                </div>
             </div>
+
         </div>
 
-        <footer class="modal-footer">
+        <footer class="pm-modalFooter flex flex-spacebetween">
             <button
                 type="button"
-                class="pm_button modal-footer-button disabled-if-network-activity"
+                class="pm-button-blueborder disabled-if-network-activity"
                 ng-click="ctrl.cancel()"
                 translate
                 translate-context="Action">Cancel</button>
             <button
-                class="pm_button primary modal-footer-button disabled-if-network-activity"
+                class="pm-button-blue disabled-if-network-activity"
                 translate
                 translate-context="Action">Save</button>
         </footer>
     </form>
-    <div class="modal-overlay"></div>
-</div>
+
+</dialog>

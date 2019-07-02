@@ -10,9 +10,11 @@ import actionLabelBtn from './directives/actionLabelBtn';
 import labelNameInput from './directives/labelNameInput';
 import labelSelectorDropdown from './directives/labelSelectorDropdown';
 import folderSelectorDropdown from './directives/folderSelectorDropdown';
+import autocompleteLabels from './directives/autocompleteLabels';
 
 export default angular
     .module('proton.labels', [])
+    .directive('autocompleteLabels', autocompleteLabels)
     .directive('folderSelectorDropdown', folderSelectorDropdown)
     .directive('labelSelectorDropdown', labelSelectorDropdown)
     .directive('labelNameInput', labelNameInput)
