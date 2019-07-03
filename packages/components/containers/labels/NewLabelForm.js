@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Input, Label, Row } from 'react-components';
-
-import LabelColors from './LabelColors';
+import { Input, Label, Row, ColorSelector } from 'react-components';
 
 function NewLabelForm({ label, onChangeColor, onChangeName }) {
     return (
@@ -20,7 +18,7 @@ function NewLabelForm({ label, onChangeColor, onChangeName }) {
             </Row>
             <Row>
                 <Label htmlFor="accountType">{c('New Label form').t`Color`} </Label>
-                <LabelColors selected={label.Color} onChange={onChangeColor} />
+                <ColorSelector selected={label.Color} onChange={onChangeColor} />
             </Row>
         </div>
     );

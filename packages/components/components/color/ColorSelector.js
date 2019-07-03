@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import { Icon, Input } from 'react-components';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
 
-import './LabelColors.scss';
+import './ColorSelector.scss';
 
-function LabelColors({ selected, onChange, className }) {
+const ColorSelector = ({ selected, onChange, className, colors }) => {
     const getClass = (className, more) => {
         return [className, more].filter(Boolean).join(' ');
     };
     return (
-        <ul className={getClass('LabelColors-container unstyled', className)}>
-            {LABEL_COLORS.map((color, i) => {
+        <ul className={getClass('ColorSelector-container unstyled', className)}>
+            {colors.map((color, i) => {
                 return (
                     <li
                         key={'mykey' + i}
-                        className={getClass('LabelColors-item', selected === color && 'selected')}
+                        className={getClass('ColorSelector-item', selected === color && 'selected')}
                         style={{ color }}
                     >
                         <Input
@@ -24,9 +24,9 @@ function LabelColors({ selected, onChange, className }) {
                             value={color}
                             name="paletteColor"
                             aria-labelledby={`Color ${color}`}
-                            className="LabelColors-input-color"
+                            className="ColorSelector-input-color"
                         />
-                        <div className="LabelColors-item-mask">
+                        <div className="ColorSelector-item-mask">
                             <Icon name="on" className="mauto" fill="none" />
                         </div>
                     </li>
@@ -34,16 +34,17 @@ function LabelColors({ selected, onChange, className }) {
             })}
         </ul>
     );
-}
+};
 
-LabelColors.propTypes = {
+ColorSelector.propTypes = {
+    colors: PropTypes.array.isRequired,
     selected: PropTypes.string,
     className: PropTypes.string,
     onChange: PropTypes.func.isRequired
 };
 
-LabelColors.defaultProps = {
-    selected: ''
+ColorSelector.defaultProps = {
+    colors: LABEL_COLORS
 };
 
-export default LabelColors;
+export default ColorSelector;

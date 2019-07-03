@@ -50,6 +50,7 @@ export { default as DropdownMenu } from './components/dropdown/DropdownMenu';
 export { default as DropdownButton } from './components/dropdown/DropdownButton';
 export { default as DropdownLink } from './components/dropdown/DropdownLink';
 export { default as Dropdown } from './components/dropdown/Dropdown';
+export { default as ColorSelector } from './components/color/ColorSelector';
 export { default as RichTextEditor } from './components/input/RichTextEditor';
 export { default as Checkbox } from './components/input/Checkbox';
 export { default as ColorPicker } from './components/input/ColorPicker';

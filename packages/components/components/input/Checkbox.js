@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Icon from '../icon/Icon';
 
-const Checkbox = ({ id, checked, indeterminate, ...rest }) => {
+const Checkbox = ({ id, className, checked, indeterminate, ...rest }) => {
     const inputRef = useRef(null);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ const Checkbox = ({ id, checked, indeterminate, ...rest }) => {
     }, [indeterminate]);
 
     return (
-        <label htmlFor={id}>
+        <label htmlFor={id} className={className}>
             <input ref={inputRef} id={id} type="checkbox" className="pm-checkbox" checked={checked} {...rest} />
             <span className="pm-checkbox-fakecheck">
                 <Icon className="pm-checkbox-fakecheck-img" name="on" />
@@ -22,6 +22,7 @@ const Checkbox = ({ id, checked, indeterminate, ...rest }) => {
 
 Checkbox.propTypes = {
     id: PropTypes.string,
+    className: PropTypes.string,
     checked: PropTypes.bool.isRequired,
     indeterminate: PropTypes.bool
 };

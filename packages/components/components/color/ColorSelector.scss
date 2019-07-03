@@ -1,10 +1,10 @@
-.LabelColors-container, .LabelColors-container * {
+.ColorSelector-container, .ColorSelector-container * {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.LabelColors-item {
+.ColorSelector-item {
     position: relative;
     display: inline-block;
     height: 3.5rem;
@@ -17,16 +17,16 @@
     cursor: pointer;
 }
 
-.LabelColors-item svg {
+.ColorSelector-item svg {
     opacity: 0;
     color: white;
     display: inline-block;
     transition: opacity .1s linear;
 }
 
-.LabelColors-item:hover svg { opacity: .75 }
+.ColorSelector-item:hover svg { opacity: .75 }
 
-.LabelColors-item-mask {
+.ColorSelector-item-mask {
     position: absolute;
     display: inline-flex;
     justify-content: center;
@@ -43,7 +43,7 @@
     transition: border .1s ease-out;
 }
 
-.LabelColors-input-color[type="radio"] {
+.ColorSelector-input-color[type="radio"] {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -55,7 +55,7 @@
     cursor: pointer;
 }
 
-.selected .LabelColors-item-mask svg { opacity: 1 }
-.selected .LabelColors-item-mask {
+.selected .ColorSelector-item-mask svg { opacity: 1 }
+.selected .ColorSelector-item-mask {
     border:3px solid rgba(0, 0, 0, .1);
 }
