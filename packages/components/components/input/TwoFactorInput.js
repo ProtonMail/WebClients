@@ -8,7 +8,7 @@ const TwoFactorInput = ({ value, onChange, maxLength, ...rest }) => {
     const handleChange = (event) => {
         const { value = '' } = event.target;
 
-        if (isNumber(value) && value.length <= maxLength) {
+        if (value === '' || (isNumber(value) && value.length <= maxLength)) {
             onChange(event);
         }
     };

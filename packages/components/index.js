@@ -166,6 +166,7 @@ export { default as NewsSection } from './containers/account/NewsSection';
 export { default as MozillaInfoPanel } from './containers/account/MozillaInfoPanel';
 export { default as UsernameSection } from './containers/account/UsernameSection';
 export { default as DeleteSection } from './containers/account/DeleteSection';
+export { default as PasswordsSection } from './containers/account/PasswordsSection';
 export { default as RecoveryEmail } from './containers/notification/RecoveryEmail';
 export { default as PasswordResetToggle } from './containers/notification/PasswordResetToggle';
 export { default as DailyNotificationsToggle } from './containers/notification/DailyNotificationsToggle';
@@ -287,6 +288,7 @@ export { useSubscription } from './models/subscriptionModel';
 export { useUser } from './models/userModel';
 export { useUserSettings } from './models/userSettingsModel';
 
+export { default as useGetKeys } from './hooks/useGetKeys';
 export { default as useUserKeys } from './hooks/useUserKeys';
 export { default as useAddressesKeys } from './hooks/useAddressesKeys';
-export { default as useGetKeys } from './hooks/useGetKeys';
+export { default as useOrganizationKey } from './hooks/useOrganizationKey';

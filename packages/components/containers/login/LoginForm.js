@@ -42,6 +42,7 @@ const LoginForm = ({ onSubmit, loading }) => {
                     type="password"
                     name="password"
                     className="w100"
+                    autoComplete="current-password"
                     id="password"
                     required
                     value={password}
