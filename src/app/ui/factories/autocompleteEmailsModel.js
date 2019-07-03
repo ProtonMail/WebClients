@@ -320,7 +320,8 @@ function autocompleteEmailsModel($injector, dispatchers, userType) {
             if (item) {
                 const key = Object.keys(LOCAL_CACHE.mapExisting).find((key) => {
                     if (!item.ID) {
-                        return key === item.label;
+                        // Contact group label === Name (<count>)
+                        return key === item.Name || key === item.label;
                     }
 
                     return LOCAL_CACHE.mapExisting[key].ID === item.ID;
