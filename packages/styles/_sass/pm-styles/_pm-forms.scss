@@ -149,6 +149,17 @@ select.pm-field {
   }
 }
 
+// exception for toolbar
+.pm-select-all {
+  .pm-checkbox-fakecheck {
+    border: 1px solid var(--fillcolor-icons, $white);
+    background-color: var(--bgcolor-toolbar, $pm-global-altgrey);
+  }
+  .pm-checkbox-fakecheck-img {
+    fill: var(--fillcolor-icons, $white);
+  }
+}
+
 
 /* radios */
 .pm-radio-fakeradio {
