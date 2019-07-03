@@ -52,7 +52,7 @@
                         <thead>
                             <tr>
                                 <th scope="col" translate translate-context="Title" translate-comment="table heading">Address</th>
-                                <th scope="col" style="width: 6rem" class="text-right generate-status" translate translate-context="Title" translate-comment="table heading">Status</th>
+                                <th scope="col" style="width: 6rem" class="alignright generate-status" translate translate-context="Title" translate-comment="table heading">Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,7 +61,7 @@
                                 data-state="{{address.state}}"
                                 ng-repeat="address in ctrl.addresses | orderBy: 'Order' track by address.ID">
                                 <td>{{ ::address.Email }}</td>
-                                <td class="generate-status text-right">
+                                <td class="generate-status alignright">
                                     <span class="pm_badge generateModal-state-queued" translate translate-context="key generation progrss">Queued</span>
                                     <span class="generateModal-state-generating pm_badge"><i class="fa fa-spinner fa-spin"></i> <span translate translate-context="key generation progrss">Generating</span></span>
                                     <span class="generateModal-state-done pm_badge success" translate translate-context="key generation progrss">Done</span>

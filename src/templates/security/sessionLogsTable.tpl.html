@@ -5,8 +5,8 @@
         <thead>
             <tr>
                 <th scope="col" style="width:10rem" translate-context="Title" translate>Event</th>
-                <th scope="col" style="width:10rem" ng-if="model.doLogging == 2" class="text-right">IP</th>
-                <th scope="col" style="width:14rem" class="text-right" translate-context="Title" translate>Time</th>
+                <th scope="col" style="width:10rem" ng-if="model.doLogging == 2" class="alignright">IP</th>
+                <th scope="col" style="width:14rem" class="alignright" translate-context="Title" translate>Time</th>
             </tr>
         </thead>
         <tbody>
@@ -36,10 +36,10 @@
                         <span translate translate-context="auth log entry">Login success (two-factor)</span>
                     </span>
                 </td>
-                <td ng-if="model.doLogging == 2" class="text-right">
+                <td ng-if="model.doLogging == 2" class="alignright">
                     <kbd>{{ ::log.IP || '--' }}</kbd>
                 </td>
-                <td class="text-right">{{ ::log.Time * 1000 | date : 'medium' }}</td>
+                <td class="alignright">{{ ::log.Time * 1000 | date : 'medium' }}</td>
             </tr>
         </tbody>
     </table>

@@ -59,10 +59,10 @@
                 padding: 0;
                 text-align: left;
                 border: none;
-                &.text-center {
+                &.aligncenter {
                     text-align: center;
                 }
-                &.text-right {
+                &.alignright {
                     text-align: right;
                 }
             }
@@ -170,5 +170,3 @@
     }
 }
 
-
-body.appConfigBody-is-mobile {}

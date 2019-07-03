@@ -53,7 +53,7 @@
                                             </span>
                                             <span translate-context="Info" translate>used</span>
                                         </td>
-                                        <td class="text-right">
+                                        <td class="alignright">
                                             <span hide-upgrade="member">
                                                 <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
                                             </span>
@@ -66,7 +66,7 @@
                                         <td>
                                             <span class="nowrap">{{ organization.MaxSpace | humanSize }}</span>
                                         </td>
-                                        <td class="text-right">
+                                        <td class="alignright">
                                             <span hide-upgrade="space">
                                                 <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
                                             </span>
@@ -79,7 +79,7 @@
                                         <td>
                                             <span translate-context="Info" translate>{{ organization.MaxVPN - organization.UsedVPN }} </span>
                                         </td>
-                                        <td class="text-right">
+                                        <td class="alignright">
                                             <span hide-upgrade="member">
                                                 <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
                                             </span>
@@ -95,7 +95,7 @@
                                                  </span>
                                              </div>
                                         </th>
-                                        <td class="text-right">
+                                        <td class="alignright">
                                             <a ui-sref="secured.domains" class="pm_button link" translate-context="Action" translate-comment="link to domains" translate>Manage</a>
                                         </td>
                                     </tr>
@@ -269,7 +269,7 @@
                                                         <span class="pm_badge warning" ng-show="address.DomainID === null"  translate translate-comment="address s tate badge" translate-context="Address state badge">Orphan</span>
                                                         <span class="pm_badge primary" ng-show="address.isDefault" translate translate translate-comment="address state badge" translate-context="Address state badge">Default</span>
                                                     </td>
-                                                    <td class="text-right">
+                                                    <td class="alignright">
 
                                                         <address-btn-actions
                                                             data-model="address"

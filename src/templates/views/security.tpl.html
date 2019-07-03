@@ -37,7 +37,7 @@
                                     <code>{{ ::session.username }}</code>
                                     <time pt-tooltip="{{ ::session.CreateTime * 1000 | date : 'medium' }}">{{ ::session.createTime }}</time>
                                 </td>
-                                <td class="text-right">
+                                <td class="alignright">
                                     <span ng-if="session.isCurrentSession" class="pm_badge primary" translate-context="Badge in the active sessions table" translate>Current session</span>
                                     <button ng-if="session.Revocable && !session.isCurrentSession" ng-click="revoke(session.UID)" type="button" class="pm_button link" translate-context="Action in the active sessions table" translate>Revoke</button>
                                 </td>

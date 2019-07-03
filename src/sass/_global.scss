@@ -1,5 +1,4 @@
-html.protonmail {
-	height: 100%;
+.protonmail {
 	body {
 		height: 100%;
 		.blank { background: $white }
@@ -31,13 +30,6 @@ html.protonmail {
 					display: none;
 				}
 			}
-			#body {
-				height: initial;
-				overflow: initial !important;
-				// #pm_main {
-				// 	height: calc(100vh - 70px);
-				// }
-			}
 		}
 		&.appConfigBody-is-tablet,
 		&.appConfigBody-is-mobile {
@@ -48,27 +40,6 @@ html.protonmail {
             .notMobile { display: none }
             .onmobile-mb-30p { margin-bottom: 30px; }
 		}
-	}
-	.lifetime {
-		color: #5FDEFB;
-	}
-	.background-primary {
-		background: $primary;
-	}
-	.background-red-striped {
-		background: $red-stripped;
-	}
-	.background-yellow-striped {
-		background: $yellow-stripped;
-	}
-	.text-center {
-		text-align: center;
-	}
-	.text-left {
-		text-align: left;
-	}
-	.text-right {
-		text-align: right;
 	}
 	.text-notransform {
         text-transform: none;
@@ -175,61 +146,7 @@ html.protonmail {
 	.break-word {
 		word-wrap: break-word;
 	}
-	.help-dnd {
-		font-style: italic;
-		opacity: .8
-	}
-	.help-dnd:before {
-		margin-right: .5em;
-	    font-family: FontAwesome;
-		font-style: normal;
-		content: "\F047";
-	}
 
-	::-webkit-input-placeholder { color: #aaaabf }
-	:-moz-placeholder { color: #aaaabf }
-	::-moz-placeholder {  color: #aaaabf }
-	input:-ms-input-placeholder { color: #aaaabf }
-	::-ms-input-placeholder { color: #aaaabf }
-	:-ms-input-placeholder { color: #aaaabf }
-
-	.placeholder-white {
-		&::-webkit-input-placeholder { color: rgba(255,255,255,.75) }
-		&:-moz-placeholder { color: rgba(255,255,255,.75) }
-		&::-moz-placeholder {  color: rgba(255,255,255,.75) }
-		&input:-ms-input-placeholder { color: rgba(255,255,255,.75) }
-		&::-ms-input-placeholder { color: rgba(255,255,255,.75) }
-		&:-ms-input-placeholder { color: rgba(255,255,255,.75) }
-	}
-}
-
-input,
-textarea,
-select {
-    background: $white;
-}
-
-a[href],
-area[href],
-input:not([disabled]),
-select:not([disabled]),
-textarea:not([disabled]),
-button:not([disabled]),
-iframe,
-[tabindex],
-[contentEditable=true] {
-    &:not([tabindex='-1']):active {
-		/* activable elements */
-		outline: none;
-	}
-}
-
-button,
-input[type=button],
-input[type=reset],
-input[type=submit],
-[role=button] {
-	cursor: pointer;
 }
 
 fieldset {
@@ -237,16 +154,6 @@ fieldset {
 	padding: 1em;
 	border-radius: $border-radius;
 	margin-bottom: 1em;
-}
-
-/* removes X in input when typing in IE/EDGE */
-input::-ms-clear {
-    width: 0;
-    height: 0;
-}
-/* removes native password revealer for IE/EDGE */
-input::-ms-reveal {
-    display: none;
 }
 
 fieldset legend {

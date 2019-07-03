@@ -1,6 +1,6 @@
 <p>&nbsp;</p>
 <div class="pm_panel wide" ng-if="filling">
-    <div class="text-center header">
+    <div class="aligncenter header">
         <div>
             <img src="/assets/img/logo-dark.png" height="20" />
         </div>
@@ -62,7 +62,7 @@
             </div>
             <p>&nbsp;</p>
         </div><!--/.wrapper-->
-        <div class="text-center">
+        <div class="aligncenter">
             <p><span translate translate-context="Info">By clicking Setup Account, you agree to abide by</span><br /> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate-context="Title" translate>ProtonMail's Terms and Conditions</a>.</p>
             <p><button type="submit" class="pm_button primary large disabled-if-network-activity" translate-context="Action" translate>Setup Account</button></p>
         </div>
@@ -70,25 +70,25 @@
 </div>
 
 <div class="pm_panel wide" ng-show="genKeys">
-    <div class="text-center header">
+    <div class="aligncenter header">
         <div class="creating-loader-container">
             <atom-loader data-loader-theme="primary"></atom-loader>
         </div>
-        <h2 class="text-center" ng-show="!signupError" translate translate-context="Title">Generating keys...</h2>
+        <h2 class="aligncenter" ng-show="!signupError" translate translate-context="Title">Generating keys...</h2>
     </div>
     <p class="alert" translate-context="Info" translate>This can take a few seconds or a few minutes depending on your device.</p>
 </div>
 
 <div class="pm_panel wide" ng-show="creating" id="setUpProcess">
-    <div class="text-center header">
+    <div class="aligncenter header">
         <div class="creating-loader-container">
             <atom-loader data-loader-theme="primary"></atom-loader>
         </div>
-        <h2 class="text-center" ng-show="!setupError"  translate-context="Title" translate>Setting up account</h2>
-        <h2 class="text-center" ng-show="setupError" translate-context="Error" translate>Setup failed</h2>
+        <h2 class="aligncenter" ng-show="!setupError"  translate-context="Title" translate>Setting up account</h2>
+        <h2 class="aligncenter" ng-show="setupError" translate-context="Error" translate>Setup failed</h2>
     </div>
     <p class="alert alert-danger" ng-show="setupError">An error occured while setting up your account. To see common problems and solutions <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
-    <div class="wrapper text-left">
+    <div class="wrapper alignleft">
         <ol id="creationList">
             <li class="done">
                 <i class="show fa fa-check"></i>

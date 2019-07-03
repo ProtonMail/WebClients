@@ -37,7 +37,7 @@
                                         <span class="pm_badge" ng-show="$first" translate-context="Info" translate>Default</span>
                                         <span class="pm_badge error" ng-if="method.Type === 'card' && isExpired(method)" translate-context="Info" translate>Expired</span>
                                     </td>
-                                    <td class="text-right">
+                                    <td class="alignright">
                                         <button type="button" class="pm_button link" ng-hide="$first === true" ng-click="default(method)"
                                             translate-context="Action" translate>Make default</button>
                                         <button ng-if="method.Type === 'card'" type="button" class="pm_button link" ng-click="edit(method)" translate-context="Action"

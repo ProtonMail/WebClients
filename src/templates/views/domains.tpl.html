@@ -49,7 +49,7 @@
                             <tr>
                                 <th scope="col" style="width: 10rem" class="domain" translate-context="Title" translate>Domain</th>
                                 <th scope="col" style="width: 30rem" class="status" translate-context="Title" translate>Current status</th>
-                                <th scope="col" style="width: 6rem" class="text-right actions" translate-context="Title" translate>Actions</th>
+                                <th scope="col" style="width: 6rem" class="alignright actions" translate-context="Title" translate>Actions</th>
                             </tr>
                         </thead>
                         <tbody ng-repeat="domain in domains">
@@ -111,7 +111,7 @@
                                         }"></i> DMARC
                                     </button>
                                 </td>
-                                <td class="text-right">
+                                <td class="alignright">
                                     <button
                                         type="button"
                                         class="pm_button round"
@@ -212,7 +212,7 @@
                                             <i class="fa fa-info-circle" pt-tooltip-translate="Set a catch-all address for your domain." pt-tooltip-translate-context="Info"></i>
                                         </a>
                                     </th>
-                                    <th scope="col" class="text-right actions" translate-context="Title" translate>Actions</th>
+                                    <th scope="col" class="alignright actions" translate-context="Title" translate>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -234,7 +234,7 @@
                                             data-custom-ng-init="address.catchall = !!address.CatchAll"
                                             ></custom-checkbox>
                                     </td>
-                                    <td class="text-right">
+                                    <td class="alignright">
                                         <address-btn-actions
                                             data-model="address"
                                             data-action="enable"
