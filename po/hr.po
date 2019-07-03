@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Croatian\n"
 "Language: hr_HR\n"
-"PO-Revision-Date: 2019-05-10 10:22\n"
+"PO-Revision-Date: 2019-06-11 08:02\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -67,7 +67,7 @@ msgstr "<p>Prevelik broj ProtonMail računa je stvoren s vaše veze.</p>\n"
 "                <p>Zbog toga zahtjevamo dodatnu potvrdu kako bi utvrdili da ste čovjek, a ne spam bot.</p>\n"
 "                <p>Pošto su Tor i besplatni VPN-ovi često zloupotrebljavani od strane spamera, ovo provjera može biti aktivirana ako koristite Tor ili određeni VPN.</p>"
 
-#: ./src/app/message/factories/messageActions.js:175
+#: ./src/app/message/factories/messageActions.js:178
 msgctxt "Action"
 msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
@@ -375,6 +375,7 @@ msgstr "CC BCC"
 #: ./src/templates/composer/composerEncrypt.tpl.html:66
 #: ./src/templates/composer/composerExpiration.tpl.html:52
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:41
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:51
 #: ./src/templates/contact/contactActionHeader.tpl.html:23
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:28
 #: ./src/templates/contact/contactGroupModal.tpl.html:108
@@ -420,7 +421,7 @@ msgstr "CC BCC"
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:19
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
 #: ./src/templates/user/signupPayForm.tpl.html:100
-#: ./src/templates/utils/linkWarningModal.tpl.html:23
+#: ./src/templates/utils/linkWarningModal.tpl.html:27
 #: ./src/templates/views/outside.reply.tpl.html:31
 #: ./src/templates/views/reset-login-password.tpl.html:132
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
@@ -532,7 +533,9 @@ msgstr "Kliknite ovdje za ponovni pokušaj"
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:7
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:3
 #: ./src/templates/blackFriday/blackFridayModal.tpl.html:3
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:3
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:3
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:3
 #: ./src/templates/contact/contactDisplayModal.tpl.html:13
 #: ./src/templates/contact/contactDisplayModal.tpl.html:17
 #: ./src/templates/contact/contactDisplayModal.tpl.html:3
@@ -670,7 +673,7 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr "Kontakti"
 
-#: ./src/templates/utils/linkWarningModal.tpl.html:29
+#: ./src/templates/utils/linkWarningModal.tpl.html:33
 msgctxt "Action"
 msgid "Continue"
 msgstr "Nastavi"
@@ -1129,17 +1132,17 @@ msgctxt "Action"
 msgid "Load"
 msgstr "Učitaj"
 
-#: ./src/templates/views/appearance.tpl.html:162
+#: ./src/templates/views/appearance.tpl.html:174
 msgctxt "Action"
 msgid "Load classic theme"
 msgstr "Učitaj klasičnu temu"
 
-#: ./src/templates/views/appearance.tpl.html:163
+#: ./src/templates/views/appearance.tpl.html:175
 msgctxt "Action"
 msgid "Load edison theme"
 msgstr "Učitaj Edison temu"
 
-#: ./src/templates/contact/contactViewItem.tpl.html:56
+#: ./src/templates/contact/contactViewItem.tpl.html:57
 msgctxt "Action"
 msgid "Load image"
 msgstr "Učitaj sliku"
@@ -1359,6 +1362,7 @@ msgid "Not spam"
 msgstr "Nije neželjena pošta"
 
 #: ./src/app/composer/factories/composerFromModel.js:17
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:32
 #: ./src/templates/modals/abuseFraudModal.tpl.html:16
 #: ./src/templates/modals/alert.tpl.html:13
 msgctxt "Action"
@@ -1554,7 +1558,7 @@ msgctxt "Action"
 msgid "Reset password"
 msgstr "Ponovno postavljanje lozinke"
 
-#: ./src/templates/views/appearance.tpl.html:143
+#: ./src/templates/views/appearance.tpl.html:155
 msgctxt "Action"
 msgid "Reset theme"
 msgstr "Ponovno postavljanje teme"
@@ -1584,9 +1588,15 @@ msgctxt "Action"
 msgid "Revoke all other sessions"
 msgstr "Opozovi sve ostale sesije"
 
+#: ./src/app/members/directives/memberEditBtn.js:13
+msgctxt "Action"
+msgid "Revoke sessions"
+msgstr "Opozovi sesije"
+
 #. Save button for updating default identity on account page
 #. contact details
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:48
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:59
 #: ./src/templates/contact/contactActionHeader.tpl.html:31
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:39
 #: ./src/templates/contact/contactGroupModal.tpl.html:115
@@ -1607,7 +1617,7 @@ msgstr "Opozovi sve ostale sesije"
 #: ./src/templates/organization/organizationFormName.tpl.html:25
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:45
-#: ./src/templates/views/appearance.tpl.html:144
+#: ./src/templates/views/appearance.tpl.html:156
 msgctxt "Action"
 msgid "Save"
 msgstr "Spremi"
@@ -2088,7 +2098,7 @@ msgid "Set"
 msgstr "Postavi"
 
 #. address state badge
-#: ./src/templates/views/members.tpl.html:265
+#: ./src/templates/views/members.tpl.html:270
 msgctxt "Address state badge"
 msgid "Default"
 msgstr "Zadano"
@@ -2097,7 +2107,7 @@ msgstr "Zadano"
 #. form option
 #: ./src/templates/views/account.tpl.html:218
 #: ./src/templates/views/domains.tpl.html:215
-#: ./src/templates/views/members.tpl.html:262
+#: ./src/templates/views/members.tpl.html:267
 msgctxt "Address state badge"
 msgid "Disabled"
 msgstr "Onemogućeno"
@@ -2106,60 +2116,60 @@ msgstr "Onemogućeno"
 #. form option
 #: ./src/templates/views/account.tpl.html:209
 #: ./src/templates/views/domains.tpl.html:214
-#: ./src/templates/views/members.tpl.html:261
+#: ./src/templates/views/members.tpl.html:266
 msgctxt "Address state badge"
 msgid "Enabled"
 msgstr "Omogućeno"
 
 #. address state badge
 #: ./src/templates/views/domains.tpl.html:216
-#: ./src/templates/views/members.tpl.html:263
+#: ./src/templates/views/members.tpl.html:268
 msgctxt "Address state badge"
 msgid "Missing keys"
 msgstr "Nedostaju ključevi"
 
 #. address s tate badge
-#: ./src/templates/views/members.tpl.html:264
+#: ./src/templates/views/members.tpl.html:269
 msgctxt "Address state badge"
 msgid "Orphan"
 msgstr "Siroče"
 
-#: ./src/app/conversation/factories/actionConversation.js:43
-#: ./src/app/message/factories/messageActions.js:49
+#: ./src/app/conversation/factories/actionConversation.js:44
+#: ./src/app/message/factories/messageActions.js:50
 msgctxt "App folder"
 msgid "Archive"
 msgstr "Arhiva"
 
-#: ./src/app/conversation/factories/actionConversation.js:38
 #: ./src/app/conversation/factories/actionConversation.js:39
-#: ./src/app/message/factories/messageActions.js:44
+#: ./src/app/conversation/factories/actionConversation.js:40
 #: ./src/app/message/factories/messageActions.js:45
+#: ./src/app/message/factories/messageActions.js:46
 msgctxt "App folder"
 msgid "Drafts"
 msgstr "Skice"
 
-#: ./src/app/conversation/factories/actionConversation.js:36
-#: ./src/app/message/factories/messageActions.js:42
+#: ./src/app/conversation/factories/actionConversation.js:37
+#: ./src/app/message/factories/messageActions.js:43
 msgctxt "App folder"
 msgid "Inbox"
 msgstr "Pristigla pošta"
 
-#: ./src/app/conversation/factories/actionConversation.js:40
 #: ./src/app/conversation/factories/actionConversation.js:41
-#: ./src/app/message/factories/messageActions.js:46
+#: ./src/app/conversation/factories/actionConversation.js:42
 #: ./src/app/message/factories/messageActions.js:47
+#: ./src/app/message/factories/messageActions.js:48
 msgctxt "App folder"
 msgid "Sent"
 msgstr "Poslano"
 
-#: ./src/app/conversation/factories/actionConversation.js:37
-#: ./src/app/message/factories/messageActions.js:43
+#: ./src/app/conversation/factories/actionConversation.js:38
+#: ./src/app/message/factories/messageActions.js:44
 msgctxt "App folder"
 msgid "Spam"
 msgstr "Neželjena pošta"
 
-#: ./src/app/conversation/factories/actionConversation.js:42
-#: ./src/app/message/factories/messageActions.js:48
+#: ./src/app/conversation/factories/actionConversation.js:43
+#: ./src/app/message/factories/messageActions.js:49
 msgctxt "App folder"
 msgid "Trash"
 msgstr "Otpad"
@@ -2274,7 +2284,7 @@ msgctxt "Bitcoin validation error"
 msgid "Amount below minimum. ({{ ::validator.amountMin / 100 }} {{::currency}})"
 msgstr "Iznos ispod minimuma. ({{ ::validator.amountMin / 100 }} {{::currency}})"
 
-#: ./src/templates/views/appearance.tpl.html:176
+#: ./src/templates/views/appearance.tpl.html:188
 msgctxt "Bubbule info in appearance sent and drafts folders"
 msgid "Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder."
 msgstr "Postavka 'Uključi i premješteno' znači da će se poslane poruke i skice koje su premještene u druge mape i dalje prikazivati u mapi Poslano / Skice."
@@ -2994,7 +3004,7 @@ msgstr "Automatski odgovori"
 #: ./src/templates/dashboard/visionaryColumn.tpl.html:36
 msgctxt "Dashboard plan information"
 msgid "Catch-all email"
-msgstr "Uhvati svu e-poštu domene"
+msgstr "Dohvati svu e-poštu domene"
 
 #: ./src/templates/dashboard/freeColumn.tpl.html:17
 msgctxt "Dashboard plan information"
@@ -3062,7 +3072,7 @@ msgctxt "Dashboard plan type"
 msgid "FREE"
 msgstr "BESPLATNO"
 
-#: ./src/templates/views/appearance.tpl.html:132
+#: ./src/templates/views/appearance.tpl.html:144
 msgctxt "Dashboard, custom theme input"
 msgid "Paste your CSS code here (limited to 200,000 characters)"
 msgstr "Zalijepite ovdje svoj CSS kôd (ograničeno na 200 000 znakova)"
@@ -3263,7 +3273,7 @@ msgstr "Poništi"
 #: ./src/app/core/factories/confirmModal.js:4
 msgctxt "Default text for the confirm button in the confirm modal"
 msgid "Confirm"
-msgstr "Potvrda"
+msgstr "Potvrdi"
 
 #: ./src/app/utils/filters/delay.js:32
 #: ./src/templates/composer/composerExpiration.tpl.html:33
@@ -3511,7 +3521,7 @@ msgid "Error connecting to PayPal."
 msgstr "Greška pri povezivanju na PayPal."
 
 #: ./src/app/message/factories/messageModel.js:39
-#: ./src/app/outside/controllers/outside.js:33
+#: ./src/app/outside/controllers/outside.js:34
 msgctxt "Error"
 msgid "Error encrypting message"
 msgstr "Greška pri šifriranju poruke"
@@ -3663,7 +3673,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "Nevažeći darovni kôd"
 
-#: ./src/app/routes.js:109
+#: ./src/app/routes.js:115
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Nevažeća poveznica pozivnice"
@@ -3740,6 +3750,16 @@ msgstr "Nema internetske veze."
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr "Nema adrese s ključevima dostupnim za sastavljanje poruke."
+
+#: ./src/app/contact/services/moveContactGroupHandler.js:25
+msgctxt "Error"
+msgid "No contact group selected"
+msgstr "Nije odabrana nijedna grupa kontakata"
+
+#: ./src/app/contact/services/moveContactGroupHandler.js:24
+msgctxt "Error"
+msgid "No contact selected"
+msgstr "Kontakt nije odabran"
 
 #: ./src/templates/contact/autocompleteContacts.tpl.html:19
 msgctxt "Error"
@@ -3945,6 +3965,11 @@ msgstr "Prevelik broj primatelja ({{total}}). Maksimum je {{limit}}."
 msgctxt "Error"
 msgid "The request failed"
 msgstr "Zahtjev nije uspio"
+
+#: ./src/app/utils/directives/linkHandler.js:39
+msgctxt "Error"
+msgid "This message may some URL links that cannot be properly opened by your current browser"
+msgstr "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti"
 
 #: ./src/app/commons/models/eo.js:10
 msgctxt "Error"
@@ -4388,7 +4413,7 @@ msgctxt "Header"
 msgid "Type"
 msgstr "Vrsta"
 
-#: ./src/templates/views/members.tpl.html:303
+#: ./src/templates/views/members.tpl.html:308
 msgctxt "Help"
 msgid "To edit the signature(s) and reorder your addresses, <a ui-sref=\"secured.account\">go to account</a>"
 msgstr "Da biste uredili potpise i preuredili adrese, <a ui-sref=\"secured.account\">otiđite na račun</a>"
@@ -4544,7 +4569,7 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* Preporučujemo da prvo dodate e-poštu za oporavak. Inače nećete moći oporaviti račun u slučaju da nešto pođe po zlu."
 
-#: ./src/app/conversation/factories/actionConversation.js:403
+#: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
 msgid_plural "{{number}} conversations moved to {{folder}}"
@@ -4964,17 +4989,17 @@ msgctxt "Info"
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr "Jeste li sigurni da želite onemogućiti provjeru autentičnosti u dva koraka?"
 
-#: ./src/app/members/services/memberActions.js:72
+#: ./src/app/members/services/memberActions.js:78
 msgctxt "Info"
 msgid "Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted."
 msgstr "Jeste li sigurni da želite trajno izbrisati ovog korisnika? Pristigla pošta i sve adrese povezane s ovim korisnikom biti će izbrisane."
 
-#: ./src/app/members/services/memberActions.js:64
+#: ./src/app/members/services/memberActions.js:70
 msgctxt "Info"
 msgid "Are you sure you want to permanently remove this user from your organization? The user will lose access to all the addresses of your organization."
 msgstr "Jeste li sigurni da želite trajno ukloniti ovog korisnika iz vaše organizacije? Korisnik će izgubiti pristup svim adresama vaše organizacije."
 
-#: ./src/app/members/services/memberActions.js:33
+#: ./src/app/members/services/memberActions.js:31
 msgctxt "Info"
 msgid "Are you sure you want to remove administrative privileges from this user?"
 msgstr "Jeste li sigurni da želite ukloniti administrativne ovlasti ovog korisnika?"
@@ -5050,7 +5075,7 @@ msgctxt "Info"
 msgid "Bug reports are not end-to-end encrypted, please do not send any sensitive information."
 msgstr "Izvještaji o pogreškama nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
 
-#: ./src/app/settings/controllers/appearance.js:87
+#: ./src/app/settings/controllers/appearance.js:91
 msgctxt "Info"
 msgid "Buttons position saved"
 msgstr "Pozicija dugmadi je spremljena"
@@ -5071,7 +5096,7 @@ msgid "By clicking Submit, you agree to abide by"
 msgstr "Pritiskom na Pošalji, prihvaćate se pridržavati"
 
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:370
+#: ./src/app/routes.js:392
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Ukoliko napustite sada, izgubit ćete ono što ste napisali u ovoj e-poruci. Možete spremiti kao skicu ako kasnije želite koristiti."
@@ -5120,7 +5145,7 @@ msgctxt "Info"
 msgid "Column"
 msgstr "Stupac"
 
-#: ./src/app/settings/controllers/appearance.js:63
+#: ./src/app/settings/controllers/appearance.js:67
 msgctxt "Info"
 msgid "Compose mode saved"
 msgstr "Način rada za prozor nove poruke je spremljen"
@@ -5130,7 +5155,7 @@ msgctxt "Info"
 msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> for critical security issues."
 msgstr "Kontaktirajte nas na <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> za kritične sigurnosne probleme."
 
-#: ./src/templates/views/appearance.tpl.html:107
+#: ./src/templates/views/appearance.tpl.html:106
 msgctxt "Info"
 msgid "Conversation Grouping automatically groups messages in the same conversation together."
 msgstr "Grupiranje razgovora automatski grupira poruke zajedno u isti razgovor."
@@ -5175,7 +5200,7 @@ msgctxt "Info"
 msgid "Custom filters work on all new emails, including incoming emails as well as sent emails"
 msgstr "Prilagođeni filtri rade na svim novim porukama e-pošte, uključujući dolaznu e-poštu te poslanu e-poštu"
 
-#: ./src/templates/views/appearance.tpl.html:130
+#: ./src/templates/views/appearance.tpl.html:142
 msgctxt "Info"
 msgid "Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources."
 msgstr "Prilagođene teme od trećih strana potencijalno mogu ugroziti vašu privatnost. Koristite samo teme iz pouzdanih izvora."
@@ -5442,6 +5467,16 @@ msgctxt "Info"
 msgid "Important: Please make sure you saved the recovery codes. Otherwise you can permanently lose access to your account if you lose your 2FA device."
 msgstr "Važno: Molimo spremite kodove za oporavak. U suprotnom možete trajno izgubiti pristup računu ako izgubite svoj uređaj za provjeru autentičnosti u dva koraka (2FA)."
 
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:18
+msgctxt "Info"
+msgid "In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below."
+msgstr "U sljedećih nekoliko tjedana, ProtonMail će prekinuti podršku za Internet Explorer. Za normalnu upotrebu preuzmite jedan od modernih preglednika."
+
+#: ./src/templates/utils/linkWarningModal.tpl.html:17
+msgctxt "Info"
+msgid "Internet Explorer and Edge browsers do not parse these links properly, so it is not possible to open them. If you are certain that the link is legitimate, please use a different browser to open it."
+msgstr "Internet Explorer i Edge preglednik ne parsiraju ispravno ove poveznice, tako da ih nije moguće otvoriti. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste ga otvorili."
+
 #: ./src/app/payment/modals/payModal.js:14
 #: ./src/app/settings/controllers/payments.js:147
 msgctxt "Info"
@@ -5473,7 +5508,7 @@ msgctxt "Info"
 msgid "Key reactivated"
 msgstr "Ključ ponovno aktiviran"
 
-#: ./src/app/settings/controllers/appearance.js:75
+#: ./src/app/settings/controllers/appearance.js:79
 #: ./src/app/ui/directives/chooseLayoutBtns.js:33
 msgctxt "Info"
 msgid "Layout saved"
@@ -5490,7 +5525,7 @@ msgctxt "Info"
 msgid "Learn more."
 msgstr "Saznajte više."
 
-#: ./src/templates/views/appearance.tpl.html:159
+#: ./src/templates/views/appearance.tpl.html:171
 msgctxt "Info"
 msgid "Loading themes will override your current theme!"
 msgstr "Učitavanje tema će zamijeniti vašu trenutnu temu!"
@@ -5523,7 +5558,7 @@ msgctxt "Info"
 msgid "Maximized"
 msgstr "Maksimizirano"
 
-#: ./src/app/composer/controllers/composeMessage.js:601
+#: ./src/app/composer/controllers/composeMessage.js:591
 msgctxt "Info"
 msgid "Message discarded"
 msgstr "Poruka je odbačena"
@@ -5549,6 +5584,14 @@ msgstr "Preimenujte privitak iz \"nepoznato\" u neki ispravni naziv, te ne zabor
 msgctxt "Info"
 msgid "No contact found"
 msgstr "Nisu pronađeni kontakti"
+
+#: ./src/app/contact/services/moveContactGroupHandler.js:16
+msgctxt "Info"
+msgid "No emails for this contact"
+msgid_plural "No emails for these contacts"
+msgstr[0] "Nema e-pošte za ovaj kontakt"
+msgstr[1] "Nema e-pošte za ove kontakte"
+msgstr[2] "Nema e-pošte za ove kontakte"
 
 #: ./src/app/filter/directives/emailBlockList.js:13
 msgctxt "Info"
@@ -5595,7 +5638,7 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "Lozinka za OpenVPN je ažurirana"
 
-#: ./src/app/settings/controllers/account.js:178
+#: ./src/app/settings/controllers/account.js:176
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Operacija je istekla iz sigurnosnih razloga, molimo pokušajte ponovno"
@@ -5606,7 +5649,7 @@ msgctxt "Info"
 msgid "Order saved"
 msgstr "Redoslijed je spremljen"
 
-#: ./src/app/members/services/memberActions.js:56
+#: ./src/app/members/services/memberActions.js:62
 msgctxt "Info"
 msgid "Organization administrators will no longer be able to log in and control the user's account after privatization. This change is PERMANENT."
 msgstr "Administratori organizacije više se neće moći prijaviti i kontrolirati korisnički račun nakon privatizacije. Ova promjena je TRAJNA."
@@ -5696,7 +5739,7 @@ msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
 msgstr "Plaćanje trenutno nije dostupno, pokušajte ponovo kasnije"
 
-#: ./src/app/composer/controllers/composeMessage.js:584
+#: ./src/app/composer/controllers/composeMessage.js:573
 msgctxt "Info"
 msgid "Permanently delete this draft?"
 msgstr "Želite trajno izbrisati ovu skicu?"
@@ -5767,12 +5810,17 @@ msgctxt "Info"
 msgid "Please right-click on the attachment and select Save/Download As."
 msgstr "Kliknite desnom tipkom miša na privitak i odaberite Spremi/Spremi kao."
 
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:21
+msgctxt "Info"
+msgid "Please select which email address or adresses to add to this group."
+msgstr "Odaberite adresu ili adrese e-pošte koje želite dodati ovoj grupi."
+
 #: ./src/app/attachments/services/attachmentDownloader.js:23
 msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "Dodirnite i zadržite na privitku te odaberite Otvori u novoj kartici."
 
-#: ./src/app/members/services/memberActions.js:81
+#: ./src/app/members/services/memberActions.js:88
 msgctxt "Info"
 msgid "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support."
 msgstr "Nadogradite na Professional plan s više od jednog korisnika ili na Visionary plan, kako biste dobili podršku za više korisnika."
@@ -5866,7 +5914,7 @@ msgctxt "Info"
 msgid "Right-click on your attachment and choose 'Download linked file as...'"
 msgstr "Desnom tipkom miša kliknite na privitak i odaberite 'Preuzmi povezanu datoteku kao...'"
 
-#: ./src/app/members/services/memberActions.js:79
+#: ./src/app/members/services/memberActions.js:86
 msgctxt "Info"
 msgid "Role updated"
 msgstr "Ažurirana uloga"
@@ -5944,7 +5992,7 @@ msgctxt "Info"
 msgid "Something went wrong, please refresh the page in order to proceed. If you still see this error message please contact our support team."
 msgstr "Nešto je pošlo po zlu. Molimo osvježite stranicu kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš tim za podršku."
 
-#: ./src/app/members/services/memberActions.js:80
+#: ./src/app/members/services/memberActions.js:87
 msgctxt "Info"
 msgid "Status Updated"
 msgstr "Status je ažuriran"
@@ -5999,12 +6047,12 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "Potpis poruke nije mogao biti potvrđen jer je potpis na kontaktu nevažeći."
 
-#: ./src/app/routes.js:166
+#: ./src/app/routes.js:172
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "Tema ponovno postavljena! Preusmjeravanje..."
 
-#: ./src/app/settings/controllers/appearance.js:41
+#: ./src/app/settings/controllers/appearance.js:45
 msgctxt "Info"
 msgid "Theme saved"
 msgstr "Tema spremljena"
@@ -6075,8 +6123,8 @@ msgstr "Ova poruka se automatski generira kao odgovor na prethodnu poruku."
 
 #: ./src/app/message/directives/unsubscribePanel.js:19
 msgctxt "Info"
-msgid "This message is from a mailing list."
-msgstr "Ovo poruka je s mailing liste."
+msgid "This message is from a mailing list"
+msgstr "Ovo poruka je s mailing liste"
 
 #: ./src/templates/message/messagePublicKeyFound.tpl.html:9
 msgctxt "Info"
@@ -6102,8 +6150,8 @@ msgstr "Ova je stranica dostupna samo na uređajima s većom razlučivošću zas
 
 #: ./src/templates/message/messagePublicKeyPinning.tpl.html:3
 msgctxt "Info"
-msgid "This sender's public key has not been trusted yet."
-msgstr "Javni ključ ovog pošiljatelja još nije potvrđen."
+msgid "This sender's public key has not been trusted yet"
+msgstr "Javni ključ ovog pošiljatelja još nije potvrđen"
 
 #: ./src/templates/views/appearance.tpl.html:12
 msgctxt "Info"
@@ -6115,7 +6163,7 @@ msgctxt "Info"
 msgid "This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it by clicking your username in the upper right corner."
 msgstr "Ovaj kratki vodič će vam pokazati glavne značajke vašeg novog ProtonMail računa. Za više informacija, također možete provjeriti poruku e-pošte dobrodošlice koju smo vam poslali. Ako ikada poželite ponovo pogledati ovaj vodič, možete mu pristupiti klikom na korisničko ime u gornjem desnom kutu."
 
-#: ./src/app/members/services/memberActions.js:47
+#: ./src/app/members/services/memberActions.js:45
 msgctxt "Info"
 msgid "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization."
 msgstr "Ovaj je korisnik trenutno odgovoran za plaćanja za vašu organizaciju. Demotiranjem ovog člana postat ćete odgovorni za plaćanja za svoju organizaciju."
@@ -6199,7 +6247,7 @@ msgctxt "Info"
 msgid "User created"
 msgstr "Korisnik je stvoren"
 
-#: ./src/app/members/services/memberActions.js:78
+#: ./src/app/members/services/memberActions.js:85
 msgctxt "Info"
 msgid "User removed"
 msgstr "Korisnik uklonjen"
@@ -6240,11 +6288,6 @@ msgstr "Provjera potpisa ovog sadržaja nije uspjela"
 msgctxt "Info"
 msgid "Verifying invite link..."
 msgstr "Potvrđivanje poveznice pozivnice..."
-
-#: ./src/app/settings/controllers/appearance.js:104
-msgctxt "Info"
-msgid "View mode saved"
-msgstr "Način pregleda je spremljen"
 
 #. account deletion warning
 #: ./src/templates/modals/deleteAccount.tpl.html:10
@@ -6323,6 +6366,11 @@ msgctxt "Info"
 msgid "You are about to open another browser tab and visit:"
 msgstr "Otvoriti će te još jednu karticu preglednika i posjetiti:"
 
+#: ./src/app/members/services/memberActions.js:54
+msgctxt "Info"
+msgid "You are about to revoke all sessions. The user will be automatically logged out of all sessions and prompted to log back in. Are you sure you want to revoke all sessions ?"
+msgstr "Upravo ćete opozvati sve sesije. Korisnik će biti automatski odjavljen iz svih sesija i biti će zatraženo ponovno prijavljivanje. Jeste li sigurni da želite opozvati sve sesije?"
+
 #: ./src/templates/vpn/vpnView.tpl.html:12
 msgctxt "Info"
 msgid "You are using ProtonVPN Free. Upgrade to ProtonVPN Plus to get faster speeds and better privacy."
@@ -6363,12 +6411,12 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Sada možete primati poruke i na @pm.me adrese e-pošte (skraćeno od ProtonMail me ili Private Message me)."
 
-#: ./src/app/settings/controllers/account.js:109
+#: ./src/app/settings/controllers/account.js:107
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Imaš novu poruku"
 
-#: ./src/templates/views/members.tpl.html:339
+#: ./src/templates/views/members.tpl.html:344
 msgctxt "Info"
 msgid "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
 msgstr "Izgubili ste pristup ključevima organizacije. Bez obnove nećete moći stvarati nove korisnike, dodavati adrese postojećim korisnicima niti pristupati privatnim korisničkim računima."
@@ -6403,7 +6451,7 @@ msgctxt "Info"
 msgid "You have no saved payment methods."
 msgstr "Nemate spremljenih načina plaćanja."
 
-#: ./src/templates/views/members.tpl.html:331
+#: ./src/templates/views/members.tpl.html:336
 msgctxt "Info"
 msgid "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
 msgstr "Morate aktivirati ključeve vaše organizacije. Bez aktivacije nećete moći stvarati nove korisnike, dodavati adrese postojećim korisnicima niti pristupati neprivatnim korisničkim računima."
@@ -6413,7 +6461,7 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "Morate aktivirati privatni ključ organizacije, pomoću rezervne lozinke ključa organizacije koju vam je dao administrator organizacije."
 
-#: ./src/app/members/services/memberActions.js:40
+#: ./src/app/members/services/memberActions.js:38
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
 msgstr "Morate ovom korisniku pružiti lozinku od organizacije, kako bi se u potpunosti aktivirale administratorske ovlasti."
@@ -6645,13 +6693,13 @@ msgstr "Spremanje"
 
 #: ./src/templates/message/readReceiptPanel.tpl.html:3
 msgctxt "Info display in the read receipt panel (message view)"
-msgid "The sender has requested a read receipt."
-msgstr "Pošiljatelj je zatražio potvrdu o čitanju poruke."
+msgid "The sender has requested a read receipt"
+msgstr "Pošiljatelj je zatražio potvrdu o čitanju poruke"
 
 #: ./src/templates/contact/contactMimetypeSelector.tpl.html:4
 msgctxt "Info for contact MIMEType selector"
 msgid "Automatic indicates that the format in the composer is used to send to this user. Plain Text indicates that the message will always be converted to plain text on send."
-msgstr "Automatski - označava da će se oblikovanje teksta koji je prozoru za novu poruku koristi i kod slanja poruke ovom korisniku. Obični tekst - označava da će se poruka uvijek pretvoriti u običan tekst prilikom slanja."
+msgstr "Automatski - označava da se format teksta koji je u prozoru za novu poruku, koristi i kod slanja poruke ovom korisniku. Obični tekst - označava da će se poruka uvijek pretvoriti u običan tekst prilikom slanja."
 
 #: ./src/templates/contact/contactSchemeSelector.tpl.html:5
 msgctxt "Info for contact Scheme selector"
@@ -6877,7 +6925,7 @@ msgctxt "Label"
 msgid "Annually"
 msgstr "Godišnje"
 
-#: ./src/app/labels/directives/dropdownFolders.js:14
+#: ./src/app/labels/directives/dropdownFolders.js:13
 #: ./src/templates/filter/modal.tpl.html:166
 msgctxt "Label"
 msgid "Archive"
@@ -6950,7 +6998,7 @@ msgctxt "Label"
 msgid "Credit card"
 msgstr "Kreditna kartica"
 
-#: ./src/templates/views/appearance.tpl.html:131
+#: ./src/templates/views/appearance.tpl.html:143
 msgctxt "Label"
 msgid "Custom theme"
 msgstr "Prilagođena tema"
@@ -6970,7 +7018,7 @@ msgctxt "Label"
 msgid "Display name"
 msgstr "Zaslonsko ime"
 
-#: ./src/templates/utils/linkWarningModal.tpl.html:18
+#: ./src/templates/utils/linkWarningModal.tpl.html:22
 msgctxt "Label"
 msgid "Do not ask again"
 msgstr "Ne pitaj ponovno"
@@ -7009,11 +7057,6 @@ msgstr "Trajanje"
 msgctxt "Label"
 msgid "Enable"
 msgstr "Omogući"
-
-#: ./src/templates/views/appearance.tpl.html:110
-msgctxt "Label"
-msgid "Enable Conversation Grouping"
-msgstr "Omogućite grupiranje razgovora"
 
 #: ./src/templates/views/labels.tpl.html:53
 msgctxt "Label"
@@ -7266,7 +7309,7 @@ msgctxt "Label"
 msgid "Signature"
 msgstr "Potpis"
 
-#: ./src/app/labels/directives/dropdownFolders.js:20
+#: ./src/app/labels/directives/dropdownFolders.js:18
 #: ./src/templates/filter/modal.tpl.html:174
 msgctxt "Label"
 msgid "Spam"
@@ -7292,7 +7335,7 @@ msgctxt "Label"
 msgid "Time zone"
 msgstr "Vremenska zona"
 
-#: ./src/app/labels/directives/dropdownFolders.js:26
+#: ./src/app/labels/directives/dropdownFolders.js:23
 #: ./src/templates/filter/modal.tpl.html:182
 msgctxt "Label"
 msgid "Trash"
@@ -7312,6 +7355,16 @@ msgstr "Provjera autentičnosti u dva koraka"
 msgctxt "Label"
 msgid "Upload picture"
 msgstr "Učitaj sliku"
+
+#: ./src/templates/views/appearance.tpl.html:109
+msgctxt "Label"
+msgid "Use conversation grouping"
+msgstr "Koristi grupiranje razgovora"
+
+#: ./src/templates/views/appearance.tpl.html:118
+msgctxt "Label"
+msgid "Use sticky labels"
+msgstr "Koristi ljepljive oznake"
 
 #: ./src/templates/modals/addAddress.tpl.html:11
 msgctxt "Label"
@@ -7589,6 +7642,7 @@ msgstr "Saznaj više"
 #: ./src/app/ui/directives/noResults.js:6
 #: ./src/app/user/factories/storageWarning.js:13
 #: ./src/templates/autoresponder/autoresponder.tpl.html:26
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:19
 #: ./src/templates/contact/contactError.tpl.html:18
 #: ./src/templates/contact/contactError.tpl.html:37
 #: ./src/templates/dashboard/customVpnModal.tpl.html:10
@@ -7605,9 +7659,9 @@ msgstr "Saznaj više"
 #: ./src/templates/views/account.tpl.html:225
 #: ./src/templates/views/account.tpl.html:259
 #: ./src/templates/views/account.tpl.html:92
-#: ./src/templates/views/appearance.tpl.html:178
+#: ./src/templates/views/appearance.tpl.html:190
 #: ./src/templates/views/members.tpl.html:21
-#: ./src/templates/views/members.tpl.html:328
+#: ./src/templates/views/members.tpl.html:333
 #: ./src/templates/views/security.tpl.html:15
 #: ./src/templates/views/security.tpl.html:28
 msgctxt "Link"
@@ -7649,6 +7703,11 @@ msgstr "ovu proceduru"
 msgctxt "Link for the custom vpn modal"
 msgid "Upgrade to ProtonVPN Plus"
 msgstr "Nadogradite na ProtonVPN Plus"
+
+#: ./src/app/commons/providers/notification.js:26
+msgctxt "Link in notification to undo an action"
+msgid "UNDO"
+msgstr "PONIŠTI"
 
 #: ./src/templates/views/domains.tpl.html:252
 msgctxt "List domains"
@@ -8063,7 +8122,7 @@ msgctxt "Notification"
 msgid "Filter updated"
 msgstr "Filtar je ažuriran"
 
-#: ./src/app/outside/controllers/outside.js:28
+#: ./src/app/outside/controllers/outside.js:29
 msgctxt "Notification"
 msgid "ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>."
 msgstr "ProtonMailova Šifrirano izvana značajka dopušta samo 5 odgovora.<a href=\"https://protonmail.com/signup\" target=\"_blank\">Možete se prijaviti na ProtonMail za besprijekorno i neograničeno end-to-end šifriranje</a>."
@@ -8088,7 +8147,7 @@ msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr "Nova e-pošta od {{sender}}"
 
-#: ./src/app/composer/controllers/composeMessage.js:336
+#: ./src/app/composer/controllers/composeMessage.js:340
 msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
 msgstr "Maksimalan broj otvorenih prozora za novu poruku"
@@ -8606,7 +8665,7 @@ msgstr "Uklanjanje VPN zaštite"
 #: ./src/app/elements/services/removeElement.js:28
 msgctxt "Remove element"
 msgid "{{total}} {{item}} removed"
-msgstr "{{total}} {{item}} uklonjeno"
+msgstr "{{total}} {{item}} uklonjena"
 
 #: ./src/templates/views/reset-login-password.tpl.html:23
 #: ./src/templates/views/reset-login-password.tpl.html:24
@@ -8687,7 +8746,7 @@ msgstr "Poruke e-pošte s vremenskim istekom, poslane primateljima koji nisu na 
 #: ./src/app/composer/services/sendMessage.js:27
 msgctxt "Send message"
 msgid "Message sent"
-msgstr "Poruka poslana"
+msgstr "Poruka je poslana"
 
 #: ./src/templates/autoresponder/autoresponderMessage.tpl.html:23
 msgctxt "Settings autoresponder, how many bites inside the message"
@@ -8774,6 +8833,11 @@ msgctxt "Success"
 msgid "All contacts deleted"
 msgstr "Svi kontakti uklonjeni"
 
+#: ./src/app/members/services/memberActions.js:84
+msgctxt "Success"
+msgid "All the sessions have been successfully revoked"
+msgstr "Sve sesije su uspješno opozvane"
+
 #: ./src/app/organization/modals/setupOrganizationModal.js:53
 msgctxt "Success"
 msgid "Allocated to admin"
@@ -8855,7 +8919,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Domena je potvrđena"
 
-#: ./src/app/settings/controllers/account.js:328
+#: ./src/app/settings/controllers/account.js:326
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Ažurirana je postavka e-pošte"
@@ -8900,13 +8964,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Kôd darovnog kupona je primjenjen"
 
-#: ./src/app/settings/controllers/account.js:300
+#: ./src/app/settings/controllers/account.js:298
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Ažurirane su postavke prečaca"
 
-#: ./src/app/settings/controllers/account.js:261
-#: ./src/app/settings/controllers/account.js:270
+#: ./src/app/settings/controllers/account.js:260
+#: ./src/app/settings/controllers/account.js:269
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Postavke slike su ažurirane"
@@ -8937,10 +9001,10 @@ msgctxt "Success"
 msgid "Label updated"
 msgstr "Oznaka ažurirana"
 
-#: ./src/app/outside/controllers/outside.js:27
+#: ./src/app/outside/controllers/outside.js:28
 msgctxt "Success"
 msgid "Message sent"
-msgstr "Poruka poslana"
+msgstr "Poruka je poslana"
 
 #: ./src/app/settings/controllers/security.js:32
 msgctxt "Success"
@@ -8952,17 +9016,14 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Lozinka je ažurirana"
 
-#: ./src/app/settings/controllers/account.js:141
-#: ./src/app/settings/controllers/account.js:161
-#: ./src/app/settings/controllers/account.js:252
+#: ./src/app/settings/controllers/account.js:139
+#: ./src/app/settings/controllers/account.js:159
+#: ./src/app/settings/controllers/account.js:251
+#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
 msgstr "Postavke su spremljene"
-
-#: ./src/app/settings/controllers/account.js:282
-msgctxt "Success"
-msgid "Preference updated"
-msgstr "Postavke su ažurirane"
 
 #: ./src/app/address/directives/addressKeysView.js:60
 msgctxt "Success"
@@ -8987,7 +9048,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Pouzdani javni ključ"
 
-#: ./src/app/settings/controllers/account.js:126
+#: ./src/app/settings/controllers/account.js:124
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "Adresa e-pošte za oporavak/obavijesti je spremljena"
@@ -9019,6 +9080,11 @@ msgstr "Postavka je ažurirana"
 msgctxt "Success"
 msgid "Signature verification enabled"
 msgstr "Potvrda potpisa je omogućena"
+
+#: ./src/app/settings/controllers/appearance.js:108
+msgctxt "Success"
+msgid "View mode saved"
+msgstr "Način pregleda je spremljen"
 
 #: ./src/app/contact/factories/contactSpam.js:23
 msgctxt "Success"
@@ -9209,13 +9275,18 @@ msgctxt "Title"
 msgid "Add to Blacklist"
 msgstr "Dodaj na listu blokiranih"
 
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:17
+msgctxt "Title"
+msgid "Add to Group"
+msgstr "Dodaj u grupu"
+
 #: ./src/templates/filter/filterAddressModal.tpl.html:14
 msgctxt "Title"
 msgid "Add to Whitelist"
 msgstr "Dodaj na listu dopuštenih"
 
 #. legend / form heading for adding custom CSS theme code
-#: ./src/templates/views/appearance.tpl.html:151
+#: ./src/templates/views/appearance.tpl.html:163
 msgctxt "Title"
 msgid "Additional themes"
 msgstr "Dodatne teme"
@@ -9469,7 +9540,7 @@ msgctxt "Title"
 msgid "Change Password"
 msgstr "Promijeni lozinku"
 
-#: ./src/app/members/services/memberActions.js:32
+#: ./src/app/members/services/memberActions.js:30
 msgctxt "Title"
 msgid "Change Role"
 msgstr "Promjenite ulogu"
@@ -9492,13 +9563,13 @@ msgid "Composer"
 msgstr "Prozor za novu poruku"
 
 #. Section heading
-#: ./src/templates/views/appearance.tpl.html:197
+#: ./src/templates/views/appearance.tpl.html:209
 msgctxt "Title"
 msgid "Composer Text Direction"
 msgstr "Smjer teksta u prozoru za novu poruku"
 
 #. Choose the default composer mode
-#: ./src/templates/views/appearance.tpl.html:183
+#: ./src/templates/views/appearance.tpl.html:195
 msgctxt "Title"
 msgid "Composer mode"
 msgstr "Način rada prozora za novu poruku"
@@ -9572,7 +9643,7 @@ msgctxt "Title"
 msgid "Contacts"
 msgstr "Kontakti"
 
-#: ./src/templates/views/appearance.tpl.html:101
+#: ./src/templates/views/appearance.tpl.html:100
 msgctxt "Title"
 msgid "Conversation Grouping"
 msgstr "Grupiranje razgovora"
@@ -9649,7 +9720,7 @@ msgctxt "Title"
 msgid "Custom Filters"
 msgstr "Prilagođeni filtri"
 
-#: ./src/templates/views/appearance.tpl.html:123
+#: ./src/templates/views/appearance.tpl.html:135
 msgctxt "Title"
 msgid "Custom theme"
 msgstr "Prilagođena tema"
@@ -9699,7 +9770,7 @@ msgctxt "Title"
 msgid "Decrypt message"
 msgstr "Dešifriranje poruke"
 
-#: ./src/app/composer/controllers/composeMessage.js:583
+#: ./src/app/composer/controllers/composeMessage.js:572
 #: ./src/app/contact/factories/contactEditor.js:338
 #: ./src/app/elements/services/removeElement.js:16
 msgctxt "Title"
@@ -9752,7 +9823,7 @@ msgctxt "Title"
 msgid "Delete payment method"
 msgstr "Brisanje načina plaćanja"
 
-#: ./src/app/members/services/memberActions.js:71
+#: ./src/app/members/services/memberActions.js:77
 msgctxt "Title"
 msgid "Delete user"
 msgstr "Izbriši korisnika"
@@ -10125,6 +10196,11 @@ msgctxt "Title"
 msgid "Inbox"
 msgstr "Pristigla pošta"
 
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:13
+msgctxt "Title"
+msgid "Internet Explorer Support"
+msgstr "Internet Explorer podrška"
+
 #: ./src/app/attachments/services/invalidSignature.js:20
 msgctxt "Title"
 msgid "Invalid attachment signature"
@@ -10164,7 +10240,7 @@ msgstr "Lozinku za oporavak ključa"
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:20
 #: ./src/templates/address/addressKeysView.tpl.html:47
-#: ./src/templates/views/members.tpl.html:360
+#: ./src/templates/views/members.tpl.html:365
 msgctxt "Title"
 msgid "Key type"
 msgstr "Tip ključa"
@@ -10313,7 +10389,7 @@ msgctxt "Title"
 msgid "New Address Key ({{ email }})"
 msgstr "Novi ključ adrese ({{ email }})"
 
-#: ./src/app/composer/controllers/composeMessage.js:465
+#: ./src/app/composer/controllers/composeMessage.js:469
 msgctxt "Title"
 msgid "New message"
 msgstr "Nova poruka"
@@ -10381,7 +10457,7 @@ msgid "Organization"
 msgstr "Organizacija"
 
 #. table heading
-#: ./src/templates/views/members.tpl.html:355
+#: ./src/templates/views/members.tpl.html:360
 msgctxt "Title"
 msgid "Organization Key Fingerprint"
 msgstr "Otisak prsta ključa organizacije"
@@ -10513,7 +10589,7 @@ msgctxt "Title"
 msgid "Private Key password required"
 msgstr "Potrebna je lozinka privatnog ključa"
 
-#: ./src/app/members/services/memberActions.js:55
+#: ./src/app/members/services/memberActions.js:61
 msgctxt "Title"
 msgid "Privatize User"
 msgstr "Privatizirajte korisnika"
@@ -10575,7 +10651,7 @@ msgctxt "Title"
 msgid "Release notes"
 msgstr "Bilješke o izdanoj verziji"
 
-#: ./src/app/members/services/memberActions.js:63
+#: ./src/app/members/services/memberActions.js:69
 msgctxt "Title"
 msgid "Remove user"
 msgstr "Ukloni korisnika"
@@ -10628,6 +10704,11 @@ msgctxt "Title"
 msgid "Restore Administrator Privileges"
 msgstr "Vraćanje administratorskih ovlasti"
 
+#: ./src/app/members/services/memberActions.js:53
+msgctxt "Title"
+msgid "Revoke Sessions"
+msgstr "Opozovi sesije"
+
 #. table heading
 #: ./src/templates/views/members.tpl.html:147
 msgctxt "Title"
@@ -10658,7 +10739,7 @@ msgstr "Pretraži kontakte"
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:33
 #: ./src/app/ui/factories/pageTitlesModel.js:50
-#: ./src/templates/views/members.tpl.html:311
+#: ./src/templates/views/members.tpl.html:316
 msgctxt "Title"
 msgid "Security"
 msgstr "Sigurnost"
@@ -10698,7 +10779,7 @@ msgid "Sent"
 msgstr "Poslano"
 
 #. Section heading
-#: ./src/templates/views/appearance.tpl.html:170
+#: ./src/templates/views/appearance.tpl.html:182
 msgctxt "Title"
 msgid "Sent / Drafts folders appearance"
 msgstr "Izgled Poslano / Skice mapa"
@@ -11449,6 +11530,11 @@ msgid "Using this key for encryption will encrypt outgoing messages\n"
 msgstr "Korištenjem ovog ključa za šifriranje, šifriraju se odlazne poruke\n"
 "                        za ovu adresu s ovim ključem i postavi se ovaj ključ kao primarni PGP ključ za ovu adresu."
 
+#: ./src/templates/views/appearance.tpl.html:119
+msgctxt "Tooltip"
+msgid "When a label is added to a message in a conversation, all future messages you send or receive will have that same label automatically applied."
+msgstr "Kada se oznaka doda poruci u razgovoru, sve buduće poruke koje pošaljete ili primite, automatski će imati istu oznaku."
+
 #: ./src/templates/address/addressKeysView.tpl.html:69
 msgctxt "Tooltip"
 msgid "You have locally decrypted this key"
@@ -11547,8 +11633,16 @@ msgstr[0] "poruka"
 msgstr[1] "poruke"
 msgstr[2] "poruka"
 
+#: ./src/app/dnd/factories/ptDndNotification.js:16
+msgctxt "Type of item"
+msgid "contact"
+msgid_plural "contacts"
+msgstr[0] "kontakt"
+msgstr[1] "kontakata"
+msgstr[2] "kontakata"
+
 #: ./src/app/dnd/factories/ptDndNotification.js:15
-#: ./src/app/dnd/services/actionDnd.js:22
+#: ./src/app/dnd/services/actionDnd.js:23
 msgctxt "Type of item"
 msgid "conversation"
 msgid_plural "conversations"
@@ -11557,7 +11651,7 @@ msgstr[1] "razgovora"
 msgstr[2] "razgovora"
 
 #: ./src/app/dnd/factories/ptDndNotification.js:14
-#: ./src/app/dnd/services/actionDnd.js:21
+#: ./src/app/dnd/services/actionDnd.js:22
 msgctxt "Type of item"
 msgid "message"
 msgid_plural "messages"
@@ -12171,17 +12265,17 @@ msgctxt "month price"
 msgid "/mo"
 msgstr "/mj"
 
-#: ./src/app/dnd/services/actionDnd.js:19
+#: ./src/app/dnd/services/actionDnd.js:20
 msgctxt "notification drag and drop"
 msgid "Apply label"
 msgstr "Primjeni oznaku"
 
-#: ./src/app/dnd/factories/ptDndNotification.js:16
+#: ./src/app/dnd/factories/ptDndNotification.js:25
 msgctxt "notification drag and drop"
 msgid "Move {{total}} {{type}}"
 msgstr "Premjestite {{total}} {{type}}"
 
-#: ./src/app/dnd/services/actionDnd.js:23
+#: ./src/app/dnd/services/actionDnd.js:24
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Zvijezda {{total}} {{type}}"
