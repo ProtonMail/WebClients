@@ -8,8 +8,7 @@ import FilterItemRow from './FilterItemRow';
 
 function FilterSortableList({ items }) {
     return (
-        <Table className="noborder border-collapse mt1">
-            <caption className="sr-only">{c('Settings/filters').t`Filters`}</caption>
+        <Table className="noborder border-collapse mt1" caption={c('Settings/filters').t`Filters`}>
             <thead>
                 <tr>
                     <th scope="col" className="w5">
