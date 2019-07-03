@@ -1,9 +1,9 @@
-<div class="autocompleteEmailsItem-icon">
+<div class="autocompleteEmailsItem-icon flex">
 
     <icon
         data-name="lock"
         data-size="12"
-        class="encryptionIcon"
+        class="encryptionIcon mtauto mbauto"
         ng-show="!(email.encrypt && email.isPinned && !email.isEO)
             && (email.encrypt || email.loadCryptInfo || email.isEO)"
         ng-class="{
@@ -17,7 +17,7 @@
         width="18"
         viewBox="0 0 374.8 337.1"
         ng-if="email.encrypt && email.isPinned && !email.isEO"
-        class="encryptionIcon"
+        class="encryptionIcon mtauto mbauto"
         ng-class="{
             'pgp-encryption-icon': email.isPgp
         }">
@@ -30,7 +30,7 @@
         width="18"
         viewBox="0 0 374.8 337.1"
         ng-if="!email.encrypt && email.sign"
-        class="encryptionIcon big-encryption-icon"
+        class="encryptionIcon mtauto mbauto big-encryption-icon"
         ng-class="{
             'pgp-encryption-icon': email.isPgp
         }">

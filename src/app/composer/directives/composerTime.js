@@ -9,7 +9,7 @@ function composerTime(dispatchers, gettextCatalog, translator) {
     return {
         restrict: 'E',
         replace: true,
-        template: '<time class="composerTime-container" aria-live="polite" aria-atomic="true"></time>',
+        template: '<time class="composerTime-container mr0-25" aria-live="polite" aria-atomic="true"></time>',
         link(scope, element) {
             const { on, unsubscribe } = dispatchers();
             const update = (message) => {

@@ -19,13 +19,10 @@
 
 .autocompleteEmailsItem-icon {
     .encryptionIcon {
-        margin: 0px 5px 3px 5px;
-        line-height: 22px;
         color: $primary;
     }
 
     svg.encryptionIcon {
-        height: 1em;
         fill: $primary;
         // create more contrast on the checkmark (somewhat more than normal because default-color is already really black)
         color: darken($primary, 20);
