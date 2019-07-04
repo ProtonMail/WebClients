@@ -55,3 +55,11 @@ export const remove = (arr, item) => {
     result.splice(i, 1);
     return result;
 };
+
+/**
+ * Returns difference of two array of strings
+ * @param {Array} arr1
+ * @param {Array} arr2
+ * @returns {Array} diff
+ */
+export const diff = (arr1, arr2) => arr1.filter((a) => !arr2.includes(a));
