@@ -1,13 +1,9 @@
-.paginator-disabled-main .paginator-dropdown,
+.paginator-disabled-main .dropdownButton-container,
 .paginator-disabled-previous .paginator-btn-previous,
 .paginator-disabled-next .paginator-btn-next {
     pointer-events: none;
     box-shadow: none;
     opacity: .5
-}
-
-.paginator-dropdown button * {
-    pointer-events: none
 }
 
 .paginator-indicator { color: currentColor; }
