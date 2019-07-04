@@ -1,61 +1,78 @@
 <div class="messageAddressActionMenu-container">
-    <a class="message-address-trigger" dropdown></a>
-    <div class="pm_dropdown noPadding messageAddressActionMenu-dropdown">
-        <button
-            class="messageAddressActionMenu-btn-compose-to"
-            data-action="compose-to">
-            <div class="messageAddressActionMenu-label">
-                <i class="fa fa-envelope-o"></i>
-                <span
-                    class="messageAddressActionMenu-label-txt"
-                    translate
-                    translate-context="Action">Compose to</span>
-            </div>
-        </button>
-        <button
-            class="messageAddressActionMenu-btn-add-contact address-no-contact-only"
-            data-action="add-contact">
-            <div class="messageAddressActionMenu-label">
-                <i class="fa fa-user-plus"></i>
-                <span
-                    class="messageAddressActionMenu-label-txt"
-                    translate
-                    translate-context="Action">Add to contacts</span>
-            </div>
-        </button>
-        <button
-            class="messageAddressActionMenu-btn-copy-address"
-            data-action="contact-copy">
-            <div class="messageAddressActionMenu-label">
-                <i class="fa fa-copy"></i>
-                <span
-                    class="messageAddressActionMenu-label-txt"
-                    translate
-                    translate-context="Action">Copy address</span>
-            </div>
-        </button>
-        <button
-            class="messageAddressActionMenu-btn-show-contact address-contact-only"
-            data-action="contact-details">
-            <div class="messageAddressActionMenu-label">
-                <i class="fa fa-address-card-o"></i>
-                <span
-                    class="messageAddressActionMenu-label-txt"
-                    translate
-                    translate-context="Action">See contact details</span>
-            </div>
-        </button>
-        <button
-            ng-if="message.isInternal() && !message.isSentByMe()"
-            class="messageAddressActionMenu-btn-pin-public"
-            data-action="advanced-settings">
-            <div class="messageAddressActionMenu-label">
-                <i class="fa fa-key"></i>
-                <span
-                    class="messageAddressActionMenu-label-txt"
-                    translate
-                    translate-context="Action">Trust Public Keys</span>
-            </div>
-        </button>
-    </div>
+    <dropdown-container data-position="right" class="messageAddressActionMenu-drop">
+
+            <dropdown-button class="pb0-5 pt0-5 no-pointer-events-children">
+                <icon
+                    data-name="caret"
+                    data-size="12"
+                    data-fill="black"
+                    class="flex-item-noshrink ml0-5 mr0-5 mtauto mbauto"></icon>
+            </dropdown-button>
+
+            <dropdown-content>
+                <ul class="unstyled mt0-5 mb0-5">
+                    <li class="dropDown-item pl1 pr1 messageAddressActionMenu-action-composer">
+                       <button
+                           class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children"
+                           data-action="compose-to">
+                           <icon data-name="email-address" class="mt0-25 flex-item-noshrink"></icon>
+                           <span
+                               class="ml0-5 mtauto mbauto"
+                               translate
+                               translate-context="Action">Compose to</span>
+                       </button>
+                    </li>
+
+                    <li class="dropDown-item pl1 pr1 messageAddressActionMenu-action-add">
+                        <button
+                            class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children"
+                            data-action="add-contact">
+                            <icon data-name="contact-add" class="mt0-25 flex-item-noshrink"></icon>
+                            <span
+                                class="ml0-5 mtauto mbauto"
+                                translate
+                                translate-context="Action">Add to contacts</span>
+                        </button>
+                    </li>
+
+                    <li class="dropDown-item pl1 pr1 messageAddressActionMenu-action-copy">
+                        <button
+                            class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children"
+                            data-copy-item
+                            data-value="email.Address">
+                            <icon data-name="copy" class="mt0-25 flex-item-noshrink"></icon>
+                            <span
+                                class="ml0-5 mtauto mbauto"
+                                translate
+                                translate-context="Action">Copy address</span>
+                        </button>
+                    </li>
+
+                    <li class="dropDown-item pl1 pr1 messageAddressActionMenu-action-details">
+                        <button
+                            class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children"
+                            data-action="contact-details">
+                            <icon data-name="contacts" class="mt0-25 flex-item-noshrink"></icon>
+                            <span
+                                class="ml0-5 mtauto mbauto"
+                                translate
+                                translate-context="Action">See contact details</span>
+                        </button>
+                    </li>
+
+                    <li class="dropDown-item pl1 pr1 messageAddressActionMenu-action-trust">
+                        <button
+                            ng-if="message.isInternal() && !message.isSentByMe()"
+                            class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children"
+                            data-action="advanced-settings">
+                            <icon data-name="keys" class="mt0-25 flex-item-noshrink"></icon>
+                            <span
+                                class="ml0-5 mtauto mbauto"
+                                translate
+                                translate-context="Action">Trust Public Keys</span>
+                        </button>
+                    </li>
+                </ul>
+            </dropdown-content>
+        </dropdown-container>
 </div>
