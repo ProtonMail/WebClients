@@ -133,11 +133,8 @@ $dropDown-narrow-width: 8em !default;
 
 
 /* border on items */
-.dropDown-item {
-  border-bottom: 1px solid $pm-global-border;
-  &:last-of-type {
-    border-bottom: 0;
-  }
+.dropDown-item + .dropDown-item {
+  border-top: 1px solid $pm-global-border;
 }
 
 /* pagination caret */
