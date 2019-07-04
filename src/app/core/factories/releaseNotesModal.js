@@ -6,8 +6,7 @@ function releaseNoteModal(pmModal) {
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/releaseNotes.tpl.html'),
         /* @ngInject */
-        controller: function(params) {
-            this.close = params.close;
+        controller: function() {
             this.articleLink = CONFIG.articleLink;
             this.dateVersion = CONFIG.date_version;
             this.appVersion = CONFIG.app_version;

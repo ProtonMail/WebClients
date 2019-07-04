@@ -1,27 +1,26 @@
 <div class="contact-pgp-container pm_form">
     <p
-        class="alert alert-info pgp-external-only pgp-inline-only"
+        class="block-info pgp-external-only pgp-inline-only"
         translate
         translate-context="Info">PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs PGP/Inline messages.</p>
 
     <p
-        class="alert alert-info pgp-external-only pgp-mime-only"
+        class="block-info pgp-external-only pgp-mime-only"
         translate
         translate-context="Info">PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs PGP/MIME messages.</p>
 
     <contact-mimetype-selector
+        class="flex flex-nowrap onmobile-flex-column mb1"
         data-model="model.MIMEType"
         data-form="form"></contact-mimetype-selector>
 
-    <hr>
-
     <h5
-        class="encryption-title pgp-external-only"
+        class="encryption-title pgp-external-only h5 mb1"
         translate
         translate-context="Subtitle advanced settings">Configure External PGP (optional)</h5>
 
     <h5
-        class="encryption-title pgp-internal-only"
+        class="encryption-title pgp-internal-only h5 mb1"
         translate
         translate-context="Subtitle advanced settings">Address Verification with Trusted Keys (optional)</h5>
 
@@ -30,9 +29,9 @@
         translate-context="Danger"
         translate>Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.</p>
 
-    <p class="disabled-address alert alert-danger" translate-context="Danger" translate>This address is disabled. To be able to send to this address, the owner must first enable the address.</p>
+    <p class="disabled-address block-info-warning" translate-context="Danger" translate>This address is disabled. To be able to send to this address, the owner must first enable the address.</p>
 
-    <p class="alert alert-info pgp-internal-only">
+    <p class="block-info pgp-internal-only">
         <span translate translate-context="Info">To use Address Verification, you must enable Trusted Keys and trust one or more available public keys, including the primary key for this address. This prevents the encryption keys from being faked.</span>
         <a
             href="https://protonmail.com/support/knowledge-base/address-verification/"
@@ -42,7 +41,7 @@
             translate>Learn more</a>
     </p>
 
-    <p class="alert alert-info pgp-external-only pgp-not-signed">
+    <p class="block-info pgp-external-only pgp-not-signed">
         <span translate translate-context="Info">Only change these settings if you are using PGP with non-ProtonMail recipients.</span>
         <a
             href="https://protonmail.com/support/knowledge-base/how-to-use-pgp/"
@@ -52,7 +51,7 @@
             translate>Learn more</a>
     </p>
 
-    <p class="alert alert-danger expired-key-message">
+    <p class="block-info-warning expired-key-message">
         <span translate translate-context="Info">All uploaded keys are expired or revoked! Encryption is automatically disabled.</span>
         <a
             href="https://protonmail.com/support/knowledge-base/how-to-use-pgp/"
@@ -76,6 +75,7 @@
         data-form="form"
         data-model="model.Scheme"
         ></contact-scheme-selector>
+
     <contact-public-keys
         data-form="form"
         data-model="model.Keys"

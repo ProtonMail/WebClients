@@ -570,18 +570,6 @@ contact-pgp contact-item ul.contactItem-container {
     padding: .5em;
 }
 
-.contact-encryption-modal .modal-dialog {
-    width: 45rem;
-    margin-left: -20rem;
-    margin-top: 4rem;
-    margin-bottom: 0;
-
-    .contactItem-container {
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-}
-
 .contact-encryption-modal {
     z-index: 99999;
 }
@@ -599,3 +587,13 @@ contact-pgp contact-item ul.contactItem-container {
 .appConfigBody-is-mobile .contactItem-label { max-width: 100% }
 .appConfigBody-is-mobile .contactItem-label > input { width: 100% }
 .appConfigBody-is-mobile .contactItem-container .contactItem-row:not(:first-child) .contactItem-label > input { padding-left: 10px }
+
+
+
+.contactPublicKeysTable-invalid-key.p0 {
+    padding: 0
+}
+
+[class*="contactPublicKeysTable-btn"].p0-5 {
+    padding: .5rem
+}

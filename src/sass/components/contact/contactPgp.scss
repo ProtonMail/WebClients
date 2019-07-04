@@ -66,15 +66,6 @@ contact-public-keys .pm_table {
         }
     }
 
-    .invalid-key-column {
-        width: 10px;
-        padding-right: 0;
-        padding-left: 4px;
-    }
-
-    tr + .empty-table {
-        display: none;
-    }
 
     .warning-message {
         background-color: rgba(255, 165, 0, 0.4);
@@ -189,28 +180,19 @@ contact-public-keys button, .public-key-controls button {
     justify-content: flex-end;
 }
 
-.encryption-title {
-    margin-bottom: 1rem;
-}
-
-.contactMimetypeSelector-container,
 .contactSchemeSelector-container,
-.contactEncryptToggle-container,
-.contactSignToggle-container,
-.contactKeyPinning-container {
+.contactSignToggle-container{
     display: flex;
     margin-bottom: 1rem;
 }
 
 .contactMimetypeSelector-label,
-.contactSchemeSelector-label,
 .contactEncryptToggle-label,
 .contactSignToggle-label,
 .contactKeyPinning-label {
     width: 30%;
 }
 
-.contactMimetypeSelector-container .pm_select,
 .contactSchemeSelector-container .pm_select {
     flex-grow: 1;
 }
@@ -221,15 +203,12 @@ contact-public-keys button, .public-key-controls button {
 }
 
 .appConfigBody-is-mobile {
-    .contactMimetypeSelector-container,
     .contactSchemeSelector-container,
     .contactEncryptToggle-container,
-    .contactSignToggle-container,
-    .contactKeyPinning-container {
+    .contactSignToggle-container {
         flex-direction: column;
     }
 
-    .contactMimetypeSelector-label,
     .contactSchemeSelector-label,
     .contactEncryptToggle-label,
     .contactSignToggle-label,

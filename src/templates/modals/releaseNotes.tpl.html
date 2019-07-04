@@ -1,37 +1,36 @@
-<div role="dialog" class="pm_modal releaseNotesModal-container">
-    <div class="modal-dialog">
+<dialog class="releaseNotesModal-container">
+    <header class="pm-modalHeader">
         <button
             type="button"
-            ng-click="ctrl.close()"
-            aria-hidden="true"
+            class="pm-modalClose"
+            ng-click="ctrl.cancel()"
             title-translate="Close"
-            title-translate-context="Action"
-            class="fa fa-times close"></button>
+            title-translate-context="Action">×</button>
+        <h1
+            id="modalTitle"
+            class="pm-modalTitle flex">
+            <span translate translate-context="Title">Release notes</span>
+            <a
+                data-prefix="v"
+                href="{{::ctrl.articleLink}}"
+                title="{{::ctrl.dateVersion}}"
+                class="infoLink mlauto"
+                target="_blank"
+                translate-context="Link"
+                translate>More info</a>
+        </h1>
+    </header>
 
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title donateModal-title-donate" translate translate-context="Title">Release notes</h4>
-                <a
-                    data-prefix="v"
-                    href="{{::ctrl.articleLink}}"
-                    title="{{::ctrl.dateVersion}}"
-                    class="infoLink"
-                    target="_blank"
-                    translate-context="Link"
-                    translate>More info</a>
-            </div>
-            <div class="modal-body" lazy-inject="{{::ctrl.changelogPath}}">
-            </div>
-        </div>
-
-        <div class="modal-footer releaseNotes-group-btn">
-            <button
-                type="button"
-                class="pm_button primary modal-footer-button"
-                ng-click="ctrl.close()"
-                translate
-                translate-context="Action">Close</button>
-        </div>
+    <div class="pm-modalContent">
+        <div class="pm-modalContentInner" data-lazy-inject="{{::ctrl.changelogPath}}"></div>
     </div>
-    <div class="modal-overlay"></div>
-</div>
+
+    <footer class="pm-modalFooter flex flex-spacebetween">
+        <button
+            class="pm-button-blueborder mlauto"
+            type="button"
+            ng-click="ctrl.cancel()"
+            translate-context="Action"
+            translate>Cancel</button>
+    </footer>
+</dialog>

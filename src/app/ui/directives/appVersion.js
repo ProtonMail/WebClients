@@ -5,13 +5,7 @@ function appVersion(releaseNotesModal) {
     const onClick = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        releaseNotesModal.activate({
-            params: {
-                close() {
-                    releaseNotesModal.deactivate();
-                }
-            }
-        });
+        releaseNotesModal.activate();
     };
     return {
         replace: true,

@@ -6,13 +6,9 @@
         border-bottom: 1px solid $default-color;
         margin-bottom: 10px;
     }
-    .modal-header {
-        display: flex;
-        justify-content: space-between;
-    }
 
     .infoLink {
-        margin-top: 10px;
+        font-size: .8em;
         color: $dark;
     }
 

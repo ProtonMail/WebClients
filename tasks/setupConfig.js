@@ -53,6 +53,11 @@ if (process.env.NODE_ENV !== 'dist' && process.env.NODE_ENV_MODE !== 'config') {
         console.log();
     }
 
+    if (!fs.existsSync('build')) {
+        fs.mkdirSync('build');
+    }
+    generator.changelog();
+
     portfinder.getPortPromise().then((port) => {
         process.env.NODE_ENV_PORT = port;
         const server = (ip = 'localhost') => chalk.yellow(`http://${ip}:${port}`);

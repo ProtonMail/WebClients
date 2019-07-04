@@ -2,7 +2,7 @@
 
     /* some resets */
     .printModal-body,
-    .pm_modal .modal-dialog,
+    .pm-modal,
     .printModal-container,
     body {
         position: static;
@@ -10,6 +10,7 @@
         width: 100%;
         background: #fff!important;
         font-size: 16pt;
+        box-shadow: none;
     }
 
     .printMessage-subject-title {
@@ -18,8 +19,8 @@
     }
 
     /* remove border from modal */
-    .pm_modal .modal-dialog {
-        border: 0;
+    .pm-modalOverlay {
+        background: transparent;
     }
 
     /* Fix a crazy scrollbar display on Edge printing */
@@ -28,14 +29,15 @@
     }
 
     /* hide everything else not needed for print */
-    body.secure #body, /* app */
-    .pm_modal .modal-dialog .close, /* modal close button */
-    .pm_modal .modal-dialog .modal-content h4, /* modal text "print preview" */
-    .pm_modal .modal-overlay, /* overlay */
-    .modal-footer, /* modale footer buttons */
-    button.fa.fa-ellipsis-h.pm_button.more, /* more button */
-    .noprint /* helper */ {
-       display: none !important;
+    body.secure #body,
+    .pm-modalHeader,
+    .pm-modalFooter,
+    button.fa.fa-ellipsis-h.pm_button.more,
+    .headerSecuredDesktop-container,
+    .noprint,
+    .protonLoader,
+    .listAttachments-container {
+        display: none !important;
     }
 
     .protonmail_quote,
@@ -45,7 +47,7 @@
     }
 
     /* fix display */
-    .pm_modal .modal-dialog .modal-content .modal-body {
+    .printModal-body {
         box-shadow: none;
         padding: .5em;
     }

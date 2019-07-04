@@ -7,7 +7,6 @@ function printModal(pmModal) {
         controller: function(params) {
             this.type = params.type;
             this.config = params.config;
-            this.cancel = () => params.cancel();
             this.print = () => window.print();
 
             setTimeout(() => {

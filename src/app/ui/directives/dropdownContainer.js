@@ -57,11 +57,18 @@ function dropdownContainer(dispatchers) {
                 toggle(isOpen);
                 !isOpen && _rAF(() => attachListener(false));
                 isOpen && _rAF(() => attachListener(true));
+
+                // Force auto close all other dropdown
+                dispatcher.dropdownApp('closeOthers', { id });
             };
 
             $btn.addEventListener('click', onClickButton);
 
             on('dropdownApp', (e, { type, data = {} }) => {
+                if (type === 'closeOthers' && data.id !== id) {
+                    toggle(true);
+                }
+
                 if (data.id !== id) {
                     return;
                 }
