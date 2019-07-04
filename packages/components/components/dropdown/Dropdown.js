@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
 import { Icon } from 'react-components';
@@ -8,23 +8,25 @@ const ALIGN_CLASSES = {
     left: 'dropDown--leftArrow'
 };
 
-const Dropdown = ({
-    isOpen,
-    content,
-    title,
-    children,
-    className,
-    autoClose,
-    autoCloseOutside,
-    align,
-    narrow,
-    loading,
-    disabled,
-    caret
-}) => {
+const Dropdown = (
+    {
+        isOpen,
+        content,
+        title,
+        children,
+        className,
+        autoClose,
+        autoCloseOutside,
+        align,
+        narrow,
+        loading,
+        disabled,
+        caret
+    },
+    ref
+) => {
     const [open, setOpen] = useState(isOpen);
     const wrapperRef = useRef(null);
-
     const handleClick = () => setOpen(!open);
 
     const handleKeydown = (event) => {
@@ -48,6 +50,15 @@ const Dropdown = ({
             setOpen(false);
         }
     };
+
+    useImperativeHandle(ref, () => ({
+        close() {
+            setOpen(false);
+        },
+        open() {
+            setOpen(true);
+        }
+    }));
 
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
@@ -117,4 +128,4 @@ Dropdown.defaultProps = {
     className: ''
 };
 
-export default Dropdown;
+export default React.forwardRef(Dropdown);
