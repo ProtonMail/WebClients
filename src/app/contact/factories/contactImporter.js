@@ -97,7 +97,7 @@ function contactImporter(
 
         try {
             const output = await readFile(file);
-            const parameter = extension === '.vcf' ? output : file.result;
+            const parameter = extension === '.vcf' ? output : file;
             const promise = MAP_SRC[extension](parameter).then(() => importContactModal.deactivate());
             networkActivityTracker.track(promise);
         } catch (e) {
