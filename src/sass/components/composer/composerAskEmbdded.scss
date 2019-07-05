@@ -1,22 +1,7 @@
-.composerAskEmbdded-container {
-    display: flex;
-    font-size: 1.1rem;
-}
-.composerAskEmbdded-details {
-    position: relative;
-    padding: 40px 0;
-    width: 90%;
-    margin: 0 auto;
-    background: $white;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: 4px;
-    z-index: 1;
-}
 
-.composerAskEmbdded-title {
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    text-align: center
+.composerAskEmbdded-details {
+    padding: 40px 0;
+    z-index: 1;
 }
 
 [class*="composerAskEmbdded-btn-"] {
@@ -27,13 +12,6 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    width: 80px;
-    display: inline-block;
-    background: transparent;
-    border: 0;
-    font-size: .8rem;
-    line-height: 1.1rem;
-    cursor: pointer;
 }
 
 
