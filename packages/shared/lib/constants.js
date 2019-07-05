@@ -416,3 +416,4 @@ export const LABEL_TYPE = {
     CONTACT_GROUP: 2,
     MESSAGE_FOLDER: 3
 };
+export const DEFAULT_TRANSLATION = 'en_US';
