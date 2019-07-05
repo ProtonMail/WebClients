@@ -15,14 +15,12 @@ function messageAddressActionMenu(
         restrict: 'E',
         templateUrl: require('../../../templates/message/messageAddressActionMenu.tpl.html'),
         replace: true,
-        link(scope, elem) {
-            const STATE = {};
-            const trigger = elem.find('.message-address-trigger');
-            const menu = elem.find('.pm_dropdown');
-            const copyButton = elem.find('.messageAddressActionMenu-btn-copy-address');
-
-            const { dispatcher, unsubscribe, on } = dispatchers(['contacts', 'composer.new', 'dropdown']);
-            const { destroy } = ptClipboard(copyButton[0], () => STATE.address.address);
+        scope: {
+            message: '=',
+            email: '='
+        },
+        link(scope, el) {
+            const { dispatcher } = dispatchers(['composer.new']);
 
             const toggle = (node, className, value) => {
                 return elem[0].classList.contains(className) === value || node.classList.toggle(className);
@@ -38,11 +36,7 @@ function messageAddressActionMenu(
                 dispatcher['composer.new']('new', { message });
             };
 
-            const addContact = () => {
-                const { address: email, name } = STATE.address;
-                dispatcher.contacts('addContact', { email, name });
-            };
-
+            const advancedSettings = () => messageSenderSettings.showSettings(scope);
             const showContact = () => {
                 const { ContactID: id } = getContact(STATE.address.address) || {};
                 id && $state.go('secured.contacts.details', { id });
@@ -57,7 +51,6 @@ function messageAddressActionMenu(
 
             const ACTIONS = {
                 'compose-to': composeTo,
-                'add-contact': addContact,
                 'contact-details': showContact,
                 'advanced-settings': advancedSettings
             };
