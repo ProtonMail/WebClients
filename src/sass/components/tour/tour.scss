@@ -1,131 +1,82 @@
 .tooltip.tour {
-	background-color: $tour;
+	background-color: $pv-green;
 }
 .tooltip.tour[x-placement^="left"] .tooltip-arrow {
-    border-left-color: $tour;
+    border-left-color: $pv-green;
 }
 .tooltip.tour[x-placement^="top"] .tooltip-arrow {
-    border-top-color: $tour;
+    border-top-color: $pv-green;
 }
 .tooltip.tour[x-placement^="bottom"] .tooltip-arrow {
-    border-bottom-color: $tour;
+    border-bottom-color: $pv-green;
 }
 .tooltip.tour[x-placement^="right"] .tooltip-arrow {
-    border-right-color: $tour;
+    border-right-color: $pv-green;
 }
 
 .appConfigBody-tourActive {
 	.sidebarApp-link[href='/labels'] { overflow: visible }
 }
 
-#pm_wizard {
+.pm-wizard {
 	position: fixed;
 	left: 0;
 	bottom: 0;
 	right: 0;
 	z-index: 9999;
 	box-shadow: 0 -1rem 1rem rgba(0,0,0,.1);
-	width: 100%;
-	background: $white;
-	padding: 2rem 14rem 2rem 8rem;
 
-	[class^="step-"] {display: none}
 
-	.close {
-		display: block;
-		position: absolute;
-		right: 0;
-		top: 0;
-		padding: 0 1rem;
-		background: inherit;
-		border: 0;
-		line-height: 2rem;
-		cursor: pointer;
-		color: $primary;
-		text-decoration: none;
-		font-size: .8em;
-	}
-	.badge {
-		font-size: 2rem;
-		color: $default-color-light;
-		border: 1px solid $border;
-		border-radius: 4rem;
-		text-align: center;
-		line-height: 4rem;
-		width: 4rem;
-		display: block;
-		height: 4rem;
-		position: absolute;
-		left: 2rem;
-		font-weight: normal;
-		top: 3rem;
-	}
-	.navigation {
-		position: absolute;
-		right: 2rem;
-		top: 3.5rem;
-		width: 10rem;
-		display: block;
-		text-align: center;
-		.next {}
-		.pagination {
-			display: block;
-			list-style-type: none;
-			margin: 0;
-			padding: 1rem 0;
-			text-align: center;
-			li {
-				display: inline-block;
-				list-style-type: none;
-				margin: 0 1px;
-				padding: 0;
-				height: 12px;
-				width: 12px;
-				border-radius: 12px;
+    [class^="step-"] {display: none; }
 
-			}
+}
 
-			a {
-				display: block;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-				height: 12px;
-				width: 12px;
-				border-radius: 12px;
-				background-color: $border;
-			}
-		}
-	}
-	[class^="step-"] {
-		.title {}
-		.body {
-			strong {
-				color: $tour;
-			}
+.pm-wizard-close {
+	position: absolute;
+	right: .5em;
+	top: .5em;
+}
+.pm-wizard-badge {
+    font-size: 2rem;
+	color: $pm-blue;
+	border: 1px solid $pm-blue;
+	width: 4rem;
+	height: 4rem;
+    font-weight: normal;
+    line-height: 1;
+}
+
+[class*="pm-wizard-pagination-step-"] {
+	display: inline-block;
+	margin: 0 1px;
+}
+
+.pm-wizard-pagination-bullet {
+	height: 12px;
+	width: 12px;
+	background-color: $pm-global-border;
+}
+
+[class^="step-"] {
+	.body {
+		strong {
+			color: $pv-green;
 		}
 	}
 }
 
 
-#pm_wizard.wizardStep-1 .step-1 {display: block}
-#pm_wizard.wizardStep-2 .step-2 {display: block}
-#pm_wizard.wizardStep-3 .step-3 {display: block}
-#pm_wizard.wizardStep-4 .step-4 {display: block}
+#pm_wizard.wizardStep-1 .step-1,
+#pm_wizard.wizardStep-2 .step-2,
+#pm_wizard.wizardStep-3 .step-3,
+#pm_wizard.wizardStep-4 .step-4 {display: flex; }
 
-#pm_wizard.wizardStep-1 .pagination .pagination-step-1 a {background-color: $primary}
-#pm_wizard.wizardStep-2 .pagination .pagination-step-2 a {background-color: $primary}
-#pm_wizard.wizardStep-3 .pagination .pagination-step-3 a {background-color: $primary}
-#pm_wizard.wizardStep-4 .pagination .pagination-step-4 a {background-color: $primary}
+.wizardStep-1 .pm-wizard-pagination-step-1 .pm-wizard-pagination-bullet,
+.wizardStep-2 .pm-wizard-pagination-step-2 .pm-wizard-pagination-bullet,
+.wizardStep-3 .pm-wizard-pagination-step-3 .pm-wizard-pagination-bullet,
+.wizardStep-4 .pm-wizard-pagination-step-4 .pm-wizard-pagination-bullet {background-color: $pm-blue}
 
 .wizardStep-hidden {display: none}
-
-#welcomeModal {
-	.pm_form {
-		width: 80%;
-		margin: auto;
-	}
-}
 
 .monetize {
 	.modal-dialog .modal-content {

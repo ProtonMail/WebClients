@@ -1,78 +1,110 @@
-<div id="pm_wizard" class="wizardStep-1 wizardStep-hidden" tabindex="0">
+<div id="pm_wizard" class="pm-wizard wizardStep-1 wizardStep-hidden bg-white color-global-grey w100 p2">
 
     <div ng-if="tourActive === true">
-        <button data-display-wizard-button="tourEnd" class="close">
-            <i class="fa fa-times"></i>
-            <span translate translate-context="Action">Close</span>
+        <button data-display-wizard-button="tourEnd" class="pm-wizard-close flex">
+            <span translate translate-context="Action" class="mtauto mbauto">Close</span>
+            <icon data-name="close" class="mtauto mbauto"></icon>
         </button>
 
-        <div class="step-1">
-            <h1 class="badge tada">01</h1>
-            <h2 class="title fadeIn" translate translate-context="Title">Welcome to your new encrypted email account</h2>
-            <div class="body fadeIn">
-                <p translate translate-context="Info">This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it by clicking your username in the upper right corner.</p>
+        <div class="flex">
+            <div class="flex-item-fluid">
+                <div class="step-1 flex flew-nowrap">
+                    <h1 class="pm-wizard-badge rounded50 aligncenter tada flex flex-item-noshrink">
+                        <span class="mauto">01</span>
+                    </h1>
+                    <div class="flex-item-fluid ml1 mr1">
+                        <h2 class="title fadeIn" translate translate-context="Title">Welcome to your new encrypted email account</h2>
+                        <div class="body fadeIn">
+                            <p translate translate-context="Info">This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it by clicking your username in the upper right corner.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="step-2">
+                    <h1 class="pm-wizard-badge rounded50 aligncenter tada flex flex-item-noshrink">
+                        <span class="mauto">02</span>
+                    </h1>
+                    <div class="flex-item-fluid ml1 mr1">
+                        <h2 class="title fadeIn" translate translate-context="Title">Personalize your layout</h2>
+                        <div class="body fadeIn">
+                            <p translate translate-context="Info">ProtonMail allows you to fully customize your inbox experience. By clicking <strong>(1)</strong> you can quickly switch between two possible layouts. You can set a default layout, set your composer style, adjust button layouts, and even switch themes under <em>Settings</em> <span class="fa fa-chevron-right"></span> <em>Appearance</em> <strong>(2)</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-3">
+                    <h1 class="pm-wizard-badge rounded50 aligncenter tada flex flex-item-noshrink">
+                        <span class="mauto">03</span>
+                    </h1>
+                    <div class="flex-item-fluid ml1 mr1">
+                        <h2 class="title fadeIn" translate translate-context="Title">Manage your email with folders and labels</h2>
+                        <div class="body fadeIn">
+                            <p>
+                                <span translate translate-context="Info">Folders and labels are a powerful tool to manage your inbox.</span>
+                                <ul>
+                                    <li translate translate-context="Info">You can add and remove labels from selected emails by clicking the labels button <strong>(1)</strong>.</li>
+                                    <li translate translate-context="Info">You can add and remove folders from selected emails by clicking the folders button <strong>(2)</strong>.</li>
+                                    <li translate translate-context="Info">You can also add, delete, and edit them by clicking on <em>Folders / Labels</em> <strong>(3)</strong>.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-4">
+                    <h1 class="pm-wizard-badge rounded50 aligncenter tada flex flex-item-noshrink">
+                        <span class="mauto">04</span>
+                    </h1>
+                    <div class="flex-item-fluid ml1 mr1">
+                        <h2 class="title fadeIn" translate translate-context="Title">Help and support</h2>
+                        <div class="body fadeIn">
+                            <p translate translate-context="Info">If you have questions or need help, please visit <a href='https://protonmail.com/support' target='_blank'>our support page</a> to find troubleshooting guides and contact our support team. If you find a bug in ProtonMail, please let us know! You can send us a bug report by clicking <em>Report bug</em> <strong>(1)</strong></p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div class="pm-wizard-navigation flex-self-vcenter">
+                <button
+                    class="next pm_button pm-button"
+                    data-display-wizard-button="tourNext"
+                    ng-show="tourStep < 4"
+                    translate
+                    translate-context="Action">Next tip</button>
+                <button
+                    class="next pm_button pm-button"
+                    data-display-wizard-button="tourEnd"
+                    ng-show="tourStep === 4"
+                    translate
+                    translate-context="Action">Finish</button>
+                <ul class="pm-wizard-pagination bl unstyled m0 aligncenter">
+                    <li class="pm-wizard-pagination-step-1">
+                        <a href="#" class="inbl rounded50 pm-wizard-pagination-bullet" data-display-wizard-button="tourGo" data-display-position="1">
+                            <span class="sr-only">1</span>
+                        </a>
+                    </li>
+                    <li class="pm-wizard-pagination-step-2">
+                        <a href="#" class="inbl rounded50 pm-wizard-pagination-bullet" data-display-wizard-button="tourGo" data-display-position="2">
+                            <span class="sr-only">2</span>
+                        </a>
+                    </li>
+                    <li class="pm-wizard-pagination-step-3">
+                        <a href="#" class="inbl rounded50 pm-wizard-pagination-bullet" data-display-wizard-button="tourGo" data-display-position="3">
+                            <span class="sr-only">3</span>
+                        </a>
+                    </li>
+                    <li class="pm-wizard-pagination-step-4">
+                        <a href="#" class="inbl rounded50 pm-wizard-pagination-bullet" data-display-wizard-button="tourGo" data-display-position="4">
+                            <span class="sr-only">4</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="step-2">
-            <h1 class="badge tada">02</h1>
-            <h2 class="title fadeIn" translate translate-context="Title">Personalize your layout</h2>
-            <div class="body fadeIn">
-                <p translate translate-context="Info">ProtonMail allows you to fully customize your inbox experience. By clicking <strong>(1)</strong> you can quickly switch between two possible layouts. You can set a default layout, set your composer style, adjust button layouts, and even switch themes under <em>Settings</em> <span class="fa fa-chevron-right"></span> <em>Appearance</em> <strong>(2)</strong></p>
-            </div>
-        </div>
 
-        <div class="step-3">
-            <h1 class="badge tada">03</h1>
-            <h2 class="title fadeIn" translate translate-context="Title">Manage your email with folders and labels</h2>
-            <div class="body fadeIn">
-                <p>
-                    <span translate translate-context="Info">Folders and labels are a powerful tool to manage your inbox.</span>
-                    <ul>
-                        <li translate translate-context="Info">You can add and remove labels from selected emails by clicking the labels button <strong>(1)</strong>.</li>
-                        <li translate translate-context="Info">You can add and remove folders from selected emails by clicking the folders button <strong>(2)</strong>.</li>
-                        <li translate translate-context="Info">You can also add, delete, and edit them by clicking on <em>Folders / Labels</em> <strong>(3)</strong>.</li>
-                    </ul>
-                  </p>
-            </div>
-        </div>
-
-        <div class="step-4">
-            <h1 class="badge tada">04</h1>
-            <h2 class="title fadeIn" translate translate-context="Title">Help and support</h2>
-            <div class="body fadeIn">
-                <p translate translate-context="Info">If you have questions or need help, please visit <a href='https://protonmail.com/support' target='_blank'>our support page</a> to find troubleshooting guides and contact our support team. If you find a bug in ProtonMail, please let us know! You can send us a bug report by clicking <em>Report bug</em> <strong>(1)</strong></p>
-            </div>
-        </div>
-
-        <div class="navigation">
-            <button
-                class="next pm_button primary"
-                data-display-wizard-button="tourNext"
-                ng-show="tourStep < 4"
-                translate
-                translate-context="Action">Next tip</button>
-            <button
-                class="next pm_button primary"
-                data-display-wizard-button="tourEnd"
-                ng-show="tourStep === 4"
-                translate
-                translate-context="Action">Finish</button>
-            <ul class="pagination">
-                <li class="pagination-step-1">
-                    <a href="#" data-display-wizard-button="tourGo" data-display-position="1"></a>
-                </li>
-                <li class="pagination-step-2">
-                    <a href="#" data-display-wizard-button="tourGo" data-display-position="2"></a>
-                </li>
-                <li class="pagination-step-3">
-                    <a href="#" data-display-wizard-button="tourGo" data-display-position="3"></a>
-                </li>
-                <li class="pagination-step-4">
-                    <a href="#" data-display-wizard-button="tourGo" data-display-position="4"></a>
-                </li>
-            </ul>
-        </div>
     </div>
 
 </div>
