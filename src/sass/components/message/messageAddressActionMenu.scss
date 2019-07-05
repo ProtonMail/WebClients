@@ -8,33 +8,7 @@
     }
 }
 
-.messageAddressActionMenu-dropdown { width: 160px }
-[class*="messageAddressActionMenu-btn-"] { overflow: hidden }
-/* Force hover... specifity hell */
-[class*="messageAddressActionMenu-btn-"][class*="messageAddressActionMenu-btn-"]:hover {
-    background: #f8f8f8 !important
-}
-
-
-.messageAddressActionMenu-label {
-    width: 100%;
-    display: inline-flex;
-    align-items: center;
-    pointer-events: none;
-}
-
-.messageAddressActionMenu-label::before {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 35px;
-    margin-left: 5px;
-    font-size: .8em;
-}
-
-.messageAddressActionMenu-label-txt {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: currentColor !important;
+.messageAddressActionMenu-isGroup .messageAddressActionMenu-action-add,
+.messageAddressActionMenu-isGroup .messageAddressActionMenu-action-copy {
+    display: none
 }
