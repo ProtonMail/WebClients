@@ -158,6 +158,12 @@ export const PACKAGE_TYPE = {
     SEND_PGP_MIME: 16
 };
 
+export const MIME_TYPES = {
+    MIME: 'multipart/mixed',
+    PLAINTEXT: 'text/plain',
+    DEFAULT: 'text/html'
+};
+
 export const SHOW_IMAGES = {
     REMOTE: 1,
     EMBEDDED: 2
