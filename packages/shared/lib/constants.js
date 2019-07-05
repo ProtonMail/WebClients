@@ -164,6 +164,18 @@ export const MIME_TYPES = {
     DEFAULT: 'text/html'
 };
 
+export const RECIPIENT_TYPE = {
+    TYPE_INTERNAL: 1,
+    TYPE_EXTERNAL: 2,
+    TYPE_NO_RECEIVE: 3
+};
+
+export const KEY_FLAGS = {
+    DISABLED: 0,
+    ENABLE_VERIFICATION: 1,
+    ENABLE_ENCRYPTION: 2
+};
+
 export const SHOW_IMAGES = {
     REMOTE: 1,
     EMBEDDED: 2
