@@ -23,9 +23,7 @@ const wrap = (child) => {
     );
 };
 
-export default (config, AuthenticatedSlot, UnAuthenticatedSlot) => {
-    // TODO: locales?
-
+function main(config, AuthenticatedSlot, UnAuthenticatedSlot) {
     if (!config || !AuthenticatedSlot || !UnAuthenticatedSlot) {
         throw new Error('Config, AuthenticatedSlot and UnAuthenticatedSlot required');
     }
@@ -49,16 +47,13 @@ export default (config, AuthenticatedSlot, UnAuthenticatedSlot) => {
                 user: userResult,
                 eventID: authResult.EventID
             };
-
             setAuthenticated(true);
         };
 
         const handleLogout = () => {
             authenticationStore.setUID();
             authenticationStore.setPassword();
-
             loginDataRef.current = undefined;
-
             setAuthenticated(false);
         };
 
@@ -71,7 +66,6 @@ export default (config, AuthenticatedSlot, UnAuthenticatedSlot) => {
                 </ConfigContext.Provider>
             );
         }
-
         return wrap(
             <ConfigContext.Provider value={config}>
                 <AuthenticatedApp
@@ -85,4 +79,6 @@ export default (config, AuthenticatedSlot, UnAuthenticatedSlot) => {
             </ConfigContext.Provider>
         );
     };
-};
+}
+
+export default main;

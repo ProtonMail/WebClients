@@ -264,6 +264,7 @@ export { default as CacheProvider } from './containers/cache/CacheProvider';
 export { default as ModelsProvider } from './containers/cache/ModelsProvider';
 export { default as EventManagerProvider } from './containers/eventManager/EventManagerProvider';
 export { default as EventManagerContext } from './containers/eventManager/context';
+export * from './containers/Locale/Provider';
 
 export { default as createApp } from './containers/app/createApp';
 export { default as LabelsSection } from './containers/labels/LabelsSection';

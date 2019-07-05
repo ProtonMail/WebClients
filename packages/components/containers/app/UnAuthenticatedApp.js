@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import { ApiContext, NotificationsProvider } from 'react-components';
+import { ApiContext, NotificationsProvider, LocaleNonAuthProvider } from 'react-components';
 
 const UnAuthenticatedApp = ({ initApi, children }) => {
     const apiRef = useRef();
@@ -12,7 +12,9 @@ const UnAuthenticatedApp = ({ initApi, children }) => {
 
     return (
         <NotificationsProvider ref={notificationsRef}>
-            <ApiContext.Provider value={apiRef.current}>{children}</ApiContext.Provider>
+            <ApiContext.Provider value={apiRef.current}>
+                <LocaleNonAuthProvider>{children}</LocaleNonAuthProvider>
+            </ApiContext.Provider>
         </NotificationsProvider>
     );
 };
