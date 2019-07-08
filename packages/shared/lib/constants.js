@@ -435,3 +435,8 @@ export const LABEL_TYPE = {
     MESSAGE_FOLDER: 3
 };
 export const DEFAULT_TRANSLATION = 'en_US';
+
+export const PASSWORD_MODE = {
+    SINGLE: 1,
+    TWO_PASSWORD: 2
+};
