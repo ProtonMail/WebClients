@@ -40,6 +40,8 @@ export const uniqueBy = (array, comparator) => {
     });
 };
 
+export const move = (list = [], from, to) => list.splice(to, 0, list.splice(from, 1)[0]);
+
 /**
  * Remove an item from an array.
  * @param {Array} arr
