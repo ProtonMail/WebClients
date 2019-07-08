@@ -1,23 +1,15 @@
 RewriteEngine On
+DirectorySlash Off
 
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect nothing to app
-RewriteRule ^$ /index.html [NC,L]
-
-# Hide .git stuff
-RewriteRule ^.*?\.git.* /index.html [NC,L]
-
-RewriteCond %{REQUEST_FILENAME} -s [OR]
-RewriteCond %{REQUEST_FILENAME} -l [OR]
-RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^.*$ - [NC,L]
 
-RewriteRule ^(.*) /index.html [NC,L]
-
-# Error pages
-ErrorDocument 403   /assets/errors/403.html
+RewriteRule ^settings.* /settings/index.html [NC,L]
+RewriteRule ^contacts.* /contacts/index.html [NC,L]
+RewriteRule . /index.html [NC,L]
 
 <Files ~ "(index.html|version.json)">
     FileETag None

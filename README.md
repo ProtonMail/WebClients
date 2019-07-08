@@ -49,18 +49,26 @@ If you use Windows, you will need to have bash on your computer in order to exec
 
 [More informations](https://stackoverflow.com/questions/23243353/how-to-set-shell-for-npm-run-scripts-in-windows)
 
-#### If you have docker, and prefer to not install node (or anything else) locally
-
-- `make start` to start the app on a container (use `make localurl` to find the url where it's running)
-- `make test` to build the app (actual tests are still to come)
-
-There is a very good chance you won't be able to use the app locally because of various security headers and such. But you should be able to get the code running enough to poke around and inspect it.
-
-We are still in Beta and will have a more refined build process, installation instructions, unit tests, and all that good stuff once we exit Beta.
-
 ## Development
 
 We are very open to bug reports via Issues as well as Pull Requests.
+
+### Config
+
+To build the app with settings and contacts, you need a file `.env`;
+ex:
+
+```shell
+ROOT_DIR=/home/dhoko/dev/taf
+WEBCLIENT_APP=Angular
+SETTINGS_APP=settings
+CONTACTS_APP=contacts
+``` 
+
+- **ROOT_DIR**: _mandatory_ Direcotory where your apps are cf [Where should I clone them](https://github.com/ProtonMail/protonmail-settings#where-should-i-should-i-clone-them-) 
+- **WEBCLIENT_APP**: Current directory where the Webclient is (_by default `Angular`_)
+- **SETTINGS_APP**: Current directory where protonmail-settings is (_by default `protonmail-settings`_)
+- **CONTACTS_APP**: Current directory where protonmail-contacts is (_by default `protonmail-contacts`_)
 
 
 ### CI build - no minify
@@ -103,6 +111,8 @@ Each `deploy-<NAME>` will be available at `<NAME>.protonmail.com`.
 - `--api` : Set an API for the app (_dev, live, etc._)
 - `--debug`: turn on debug mode for the command (default false)
 - `--i18n`: Force sync translations (default false)
+- `--no-contacts`: Do not build the subproject proton-contacts
+- `--no-settings`: Do not build the subproject proton-settings
 
 ## I18n à la demande
 

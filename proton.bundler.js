@@ -191,12 +191,36 @@ function main(argv) {
             ],
             hookPostTaskBuild: [
                 {
+                    title: 'Build the settings application',
+                    skip() {
+                        if (argv.settings === false) {
+                            return 'Flag --no-settings inside the command.';
+                        }
+                    },
+                    task() {
+                        const args = process.argv.slice(3);
+                        return bash('npm', ['run', 'build:subproject', '--', '--deploy-subproject=settings', ...args]);
+                    }
+                },
+                {
+                    title: 'Build the contacts application',
+                    skip() {
+                        if (argv.contacts === false) {
+                            return 'Flag --no-contact inside the command.';
+                        }
+                    },
+                    task() {
+                        const args = process.argv.slice(3);
+                        return bash('npm', ['run', 'build:subproject', '--', '--deploy-subproject=contacts', ...args]);
+                    }
+                },
+                {
                     title: 'Generate the changelog',
                     enabled: () => !isCI,
                     task(ctx) {
                         const { changelogPath } = ctx.config;
                         const fileName = path.join('dist', changelogPath);
-                        return bash(`tasks/generateChangelog.js ./CHANGELOG.md ${fileName}`);
+                        return bash('tasks/generateChangelog.js', ['./CHANGELOG.md', fileName]);
                     }
                 }
             ],

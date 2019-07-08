@@ -76,7 +76,8 @@
     "webpack-dev-server": "^3.1.14",
     "webpack-notifier": "^1.7.0",
     "webpack-subresource-integrity": "github:dhoko/webpack-subresource-integrity.git#b077a0037485ec74203f30746dc4d448eb8eac1d",
-    "write-webpack-plugin": "^1.1.0"
+    "write-webpack-plugin": "^1.1.0",
+    "design-system": "github:ProtonMail/design-system.git"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
@@ -173,8 +174,11 @@
     "start:raw": "./node_modules/proton-bundler/scripts/createVersionJSON.sh && cross-env NODE_ENV=dev tasks/setupConfig.js",
     "poststart:raw": "npm run dev -- --no-transpile",
     "dev": "cross-env NODE_ENV=dev && webpack-dev-server --hot --progress",
-    "build": "cross-env NODE_ENV=dist webpack",
     "deploy": "cross-env NODE_ENV=dist proton-bundler --default-branch v3",
+    "dist": "cross-env NODE_ENV=dist webpack --progress",
+    "build:subproject": "cross-env NODE_ENV=dist tasks/buildSubproject.sh",
+    "build": "cross-env NODE_ENV=dev tasks/setupConfig.js",
+    "postbuild": "cross-env NODE_ENV=dev && webpack --progress",
     "deployProd": "npm run deploy -- --branch=deploy-prod-a --flow=many",
     "build:ci": "cross-env NODE_ENV=dist NODE_ENV_DIST=ci tasks/deploy.js",
     "releaser:unshift": "./tasks/unshiftReleaser.sh",
