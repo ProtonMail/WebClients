@@ -1,66 +1,181 @@
 <div class="cardView-container">
-    <div class="pm_grid card-name">
-        <label for="fullname" translate translate-context="Label">Name on card</label>
-        <div class="input-icon">
-            <i class="fa fa-user"></i>
-            <input type="text" autofocus id="fullname" name="fullname" ng-model="card.fullname" placeholder-translate-context="Example user" placeholder-translate="Thomas Anderson" required />
-            <div ng-messages="form.fullname.$error">
-                <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
+    <div class="card-name mb1">
+        <label
+            for="fullname"
+            class="pm-label sr-only"
+            translate
+            translate-context="Label">Name on card</label>
+        <div class="flex-item-fluid">
+            <input
+                type="text"
+                autofocus
+                id="fullname"
+                class="pm-field w100"
+                name="fullname"
+                ng-model="card.fullname"
+                placeholder-translate-context="Placeholder"
+                placeholder-translate="Name on the card"
+                required>
+            <div
+                class="error-zone"
+                ng-messages="form.fullname.$error"
+                ng-show="form.fullname.$dirty || form.$submitted">
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="required"
+                    translate-context="Error"
+                    translate>Field required</p>
             </div>
         </div>
     </div>
-    <div class="pm_grid card-number">
-        <label for="cardnumber" translate translate-context="Label">Card Number</label>
-        <div class="input-icon">
-            <card-icon class="card-number-icon" number="card.number"></card-icon>
-            <input type="text" id="cardnumber" name="cardnumber" ng-model="card.number" placeholder="0000 0000 0000 0000" data-card-number maxlength="20" required />
-            <div ng-messages="form.cardnumber.$error">
-                <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
-                <p ng-message="cardNumber" class="text-red" translate-context="Error" translate>Invalid card number</p>
+
+    <div class="card-number mb1">
+        <label
+            for="cardnumber"
+            class="pm-label sr-only"
+            translate
+            translate-context="Label">Card Number</label>
+
+        <div class="input-icon ">
+            <div class="relative">
+                <div data-card-icon class="flex"></div>
+                <input
+                    type="text"
+                    id="cardnumber"
+                    class="pm-field w100"
+                    name="cardnumber"
+                    ng-model="card.number"
+                    ng-model-option="{debounce: 200 }"
+                    class="pm-field"
+                    placeholder="0000 0000 0000 0000"
+                    data-card-number
+                    maxlength="20"
+                    required>
+            </div>
+
+            <div
+                class="error-zone"
+                ng-messages="form.cardnumber.$error"
+                ng-show="form.cardnumber.$dirty || form.$submitted">
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="required"
+                    translate-context="Error"
+                    translate>Field required</p>
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="cardNumber"
+                    translate-context="Error"
+                    translate>Invalid card number</p>
             </div>
         </div>
     </div>
-    <div class="pm_grid card-metas">
-        <div class="col-1-3 card-metas-expiry">
-            <label translate translate-context="Label">Expiry Date</label>
-            <span class="pm_select">
-                <select ng-model="card.month" ng-options="month for month in months" ng-init="card.month = months[0]"></select>
-                <i class="fa fa-angle-down"></i>
-            </span>
+
+    <div class="card-metas flex-autogrid mb1">
+        <div class="card-metas-expiry flex-autogrid-item">
+            <label
+                translate
+                class="pm-label sr-only"
+                translate-context="Label">Expiry Date</label>
+            <select
+                ng-model="card.month"
+                class="pm-field w100"
+                ng-options="month for month in months"></select>
         </div>
-        <div class="col-1-3 card-metas-year">
-            <label>&nbsp;</label>
-            <span class="pm_select">
-                <select ng-model="card.year" ng-options="year for year in years" ng-init="card.year = years[0]"></select>
-                <i class="fa fa-angle-down"></i>
-            </span>
+
+        <div class="card-metas-year flex-autogrid-item">
+            <label
+                translate
+                class="pm-label sr-only"
+                translate-context="Label">Expiry Date (Year)</label>
+
+            <select
+                ng-model="card.year"
+                class="pm-field w100"
+                ng-options="year for year in years"></select>
         </div>
-        <div class="col-1-3 card-metas-cvc">
-            <label for="cvc" translate translate-context="Label">Security Code</label>
-            <div class="input-icon right">
-                <i class="fa fa-question-circle" data-cvc-tooltip></i>
-                <input type="text" id="cvc" name="cvc" ng-model="card.cvc" maxlength="4" card-cvc required />
-                <div ng-messages="form.cvc.$error">
-                    <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
-                    <p ng-message="cardCvc" class="text-red" translate-context="Error" translate>Invalid CVC</p>
+
+        <div class="card-metas-cvc flex-autogrid-item">
+            <label
+                for="cvc"
+                class="pm-field sr-only"
+                translate
+                translate-context="Label">Security Code</label>
+            <div class="pm-field-container">
+                <input
+                    type="text"
+                    id="cvc"
+                    name="cvc"
+                    ng-model="card.cvc"
+                    maxlength="4"
+                    class="pm-field w100"
+                    placeholder-translate-context="Placeholder"
+                    placeholder-translate="Security code"
+                    data-cvc-tooltip
+                    data-card-cvc required>
+
+                <div
+                    class="error-zone"
+                    ng-messages="form.cvc.$error"
+                    ng-show="form.cvc.$dirty || form.$submitted">
+                    <p
+                        class="m0 color-global-warning"
+                        ng-message="required"
+                        translate-context="Error"
+                        translate>Field required</p>
+                    <p
+                        class="m0 color-global-warning"
+                        ng-message="cardCvc"
+                        translate-context="Error"
+                        translate>Invalid CVC</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="pm_grid card-zip">
-        <div class="col-1-2 card-zip-code">
-            <label for="zip" translate translate-context="Label">ZIP/Postal Code</label>
-            <input type="text" minlength="3" maxlength="9" id="zip" name="zip" ng-model="card.zip" required />
-            <div ng-messages="form.zip.$error">
-                <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
-            </div>
+
+    <div class="card-zip flex-autogrid mb1">
+        <div class="card-zip-country flex-autogrid-item">
+            <label
+                for="country"
+                class="sr-only"
+                translate
+                translate-context="Label">Country</label>
+            <select
+                id="country"
+                ng-model="card.country"
+                class="pm-field w100"
+                ng-options="country.label disable when country.disabled for country in countries"></select>
         </div>
-        <div class="col-1-2 card-zip-country">
-            <label for="country" translate translate-context="Label">Country</label>
-            <span class="pm_select">
-                <select id="country" ng-model="card.country" ng-options="country.label disable when country.disabled for country in countries"></select>
-                <i class="fa fa-angle-down"></i>
-            </span>
+
+        <div class="card-zip-code flex-autogrid-item">
+            <label
+                for="zip"
+                class="sr-only"
+                translate
+                translate-context="Label">ZIP/Postal Code</label>
+
+            <input
+                type="text"
+                minlength="3"
+                maxlength="9"
+                class="pm-field w100"
+                id="zip"
+                name="zip"
+                ng-model="card.zip"
+                placeholder-translate-context="Placeholder"
+                placeholder-translate="ZIP/Postal Code"
+                required>
+
+            <div
+                class="error-zone"
+                ng-messages="form.zip.$error"
+                ng-show="form.zip.$dirty || form.$submitted">
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="required"
+                    translate-context="Error"
+                    translate>Field required</p>
+            </div>
         </div>
     </div>
 </div>

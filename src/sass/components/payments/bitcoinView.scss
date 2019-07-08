@@ -7,26 +7,19 @@
 [class*="bitcoinView-type-"] {
 
     .bitcoinView-qrcode {
-        display: flex;
         justify-content: center;
     }
 
     [class*="bitcoinDetails-label-"]::after { content: ':'; margin-right: .5em }
-    .bitcoinDetails-item-address {
-        text-align: center;
-        margin-top: .5em;
-    }
 
-    .bitcoinDetails-label-address { display: block }
-    .bitcoinDetails-label-amount {display: inline-block}
 }
 
 .bitcoinView-btn-reload {
-      background: none;
-      border: 0;
-      padding: 0;
-      color: $black;
-      text-decoration: underline
+    background: none;
+    border: 0;
+    padding: 0;
+    color: $black;
+    text-decoration: underline
 }
 
 .bitcoinView-btn-reload:hover { text-decoration: none }

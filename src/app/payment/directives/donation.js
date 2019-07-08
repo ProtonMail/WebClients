@@ -75,7 +75,7 @@ function donation(
             scope.model = {
                 card: {},
                 method: selected,
-                amount: 25,
+                amount: 50,
                 currency: _.find(currencies, { value: authentication.user.Currency || DEFAULT_CURRENCY })
             };
 
@@ -85,12 +85,19 @@ function donation(
             const onSubmit = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+<<<<<<< HEAD
 
                 if (scope.donationForm.$valid) {
                     const promise = buildRequestOption().then(donate);
 
                     networkActivityTracker.track(promise);
                 }
+=======
+                scope.$applyAsync(() => {
+                    scope.donationForm.$setSubmitted();
+                    scope.donationForm.$valid && donate(buildRequestOption());
+                });
+>>>>>>> Donation Modal (#8924)
             };
 
             /**

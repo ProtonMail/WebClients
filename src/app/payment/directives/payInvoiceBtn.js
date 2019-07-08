@@ -29,6 +29,7 @@ function payInvoiceBtn(
         template: `<button class="payInvoiceBtn-container pm_button link">${I18N.message}</button>`,
         link(scope, el) {
             const onClick = () => {
+                console.log('---------- DEPRECATED CAN PAY IS ASYNC');
                 if (!paymentModel.canPay()) {
                     return notification.info(I18N.notAvailable);
                 }

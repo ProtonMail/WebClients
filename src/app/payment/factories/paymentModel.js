@@ -51,9 +51,18 @@ function paymentModel(
     const getStatus = load('status', loadStatus);
     const getMethods = load('methods', loadMethods);
 
-    const canPay = () => {
-        const { Stripe, Paymentwall } = get('status') || {};
-        return Stripe || Paymentwall;
+    const canPay = async () => {
+        const isAble = () => {
+            const { Stripe, Paymentwall } = get('status') || {};
+            return Stripe || Paymentwall;
+        };
+
+        if (!get('status')) {
+            await networkActivityTracker.track(getStatus());
+            return isAble();
+        }
+
+        return isAble();
     };
 
     function subscribe(config) {

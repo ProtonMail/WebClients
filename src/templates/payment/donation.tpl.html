@@ -10,99 +10,97 @@
     data-form-is-invalid
     novalidate>
 
-    <p class="alert alert-info donationForm-info" translate-context="Info" translate>Donations are added as credit to your ProtonMail account and can be used to purchase account upgrades.</p>
+    <p class="block-info-standard donationForm-info" translate-context="Info" translate>Your payment details are protected with TLS encryption and Swiss Privacy laws</p>
 
-    <label for="otherAmount" translate translate-context="Title">Amount</label>
-    <div class="pm_grid flex flex-mobileShrink donateModal-choose-amount">
-        <div class="col-1-4">
-            <button
-                type="button"
-                class="pm_button fullwidth donationForm-btn-amount"
-                ng-class="{ success: model.amount === 5 }"
-                data-amount="5">5</button>
-        </div>
-        <div class="col-1-4">
-            <button
-                type="button"
-                class="pm_button fullwidth donationForm-btn-amount"
-                ng-class="{ success: model.amount === 10 }"
-                data-amount="10">10</button>
-        </div>
-        <div class="col-1-4">
-            <button
-                type="button"
-                class="pm_button fullwidth donationForm-btn-amount"
-                ng-class="{ success: model.amount === 25 }"
-                data-amount="25">25</button>
-        </div>
-        <div class="col-1-4">
-            <button
-                type="button"
-                class="pm_button fullwidth donationForm-btn-amount"
-                ng-class="{ success: model.amount === 50 }"
-                data-amount="50">50</button>
-        </div>
-    </div>
-    <div class="pm_grid flex flex-mobileShrink donationForm-amount-row-2 donateModal-choose-amount">
-        <div class="col-1-4">
-            <button
-                type="button"
-                class="pm_button fullwidth donationForm-btn-amount"
-                ng-class="{ success: model.amount === 100 }"
-                data-amount="100">100</button>
 
-        </div>
+    <div class="flex flex-nowrap onmobile-flex-column mb1">
+        <label
+            for="otherAmount"
+            class="pm-label"
+            translate
+            translate-context="Title">Amount</label>
 
-        <div class="col-1-4">
-            <button
-                type="button"
-                class="pm_button fullwidth donationForm-btn-amount"
-                ng-class="{ success: model.amount === 250 }"
-                data-amount="250">250</button>
-        </div>
-        <div class="col-1-4 donateModal-choose-otheramount">
-            <input
-                type="number"
-                min="2"
-                max="999999"
-                id="otherAmount"
-                name="otherAmount"
-                ng-model="model.otherAmount"
-                ng-focus="onFocusOtherAmount()"
-                placeholder-translate-context="Other amount to donate"
-                placeholder-translate="Other">
-        </div>
-
-        <div class="col-1-4 donateModal-choose-currency">
-            <div class="pm_select">
-                <select
-                    class="donateModal-select-currency"
-                    ng-model="model.currency"
-                    ng-options="currency.label for currency in currencies"></select>
-                <i class="fa fa-angle-down"></i>
+        <div class="donateModal-choose-amount flex flex-items-end mlauto">
+            <div class="pm-group-buttons mlauto">
+             <button
+               class="pm-group-button pm-button donationForm-btn-amount"
+               ng-class="{ 'is-active': model.amount === 5 }"
+               type="button"
+               data-amount="5">5</button>
+             <button
+               class="pm-group-button pm-button donationForm-btn-amount"
+               ng-class="{ 'is-active': model.amount === 10 }"
+               type="button"
+               data-amount="10">10</button>
+             <button
+               class="pm-group-button pm-button donationForm-btn-amount"
+               ng-class="{ 'is-active': model.amount === 50 }"
+               type="button"
+               data-amount="50">50</button>
+             <button
+               class="pm-group-button pm-button donationForm-btn-amount"
+               ng-class="{ 'is-active': model.amount === 100 }"
+               type="button"
+               data-amount="100">100</button>
             </div>
-        </div>
-    </div>
 
-    <div class="donateModal-choose-errors" ng-messages="donationForm.otherAmount.$error">
-        <p ng-message="number" class="text-red" translate-context="Error" translate>Invalid number</p>
-        <p ng-message="min" class="text-red" translate-context="Error" translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
-        <p ng-message="max" class="text-red" translate-context="Error" translate>Thank you for your willingness to donate. The maximum we can accept in single donations is 999 999 at this moment. Thank you</p>
-    </div>
+            <input
+               type="number"
+               min="2"
+               max="999999"
+               class="pm-field w20 ml1"
+               id="otherAmount"
+               name="otherAmount"
+               ng-model="model.otherAmount"
+               ng-focus="onFocusOtherAmount()"
+               placeholder-translate-context="Other amount to donate"
+               placeholder-translate="Other">
 
-    <div class="donationForm-paymentMethod">
-        <label for="paymentMethod" translate-context="Title" translate>Select payment method:</label>
-        <div class="pm_select">
             <select
-                id="paymentMethod"
-                ng-model="model.method"
-                ng-options="method.label for method in methods"></select>
-            <i class="fa fa-angle-down"></i>
-        </div>
+               class="donateModal-select-currency pm-field"
+               ng-model="model.currency"
+               ng-options="currency.label for currency in currencies"></select>
+
+            <div
+                class="error-zone w100"
+                ng-messages="donationForm.$error"
+                ng-show="donationForm.otherAmount.$dirty || donationForm.$submitted">
+                <p
+                    ng-message="number"
+                    class="m0 color-global-warning"
+                    translate-context="Error"
+                    translate>Invalid number</p>
+                <p
+                    ng-message="min"
+                    class="m0 color-global-warning"
+                    translate-context="Error"
+                    translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
+                <p
+                    ng-message="max"
+                    class="m0 color-global-warning"
+                    translate-context="Error"
+                    translate>Thank you for your willingness to donate. The maximum we can accept in single donations is 999 999 at this moment. Thank you</p>
+
+            </div>
+       </div>
+   </div>
+
+
+    <div class="donationForm-paymentMethod flex flex-nowrap onmobile-flex-column mb2">
+        <label
+            for="paymentMethod"
+            class="pm-label"
+            translate-context="Title"
+            translate>Select payment method:</label>
+        <select
+            id="paymentMethod"
+            class="pm-field w100"
+            ng-model="model.method"
+            ng-options="method.label for method in methods"></select>
     </div>
     <p
         ng-if="model.method.value === 'cash'"
-        class="donationForm-about-cash alert alert-info"
+        class="donationForm-about-cash block-info-standard-warning"
         translate-context="Info"
         translate>To pay via Cash, please email us at <strong>contact@protonmail.com</strong> for instructions.</p>
 

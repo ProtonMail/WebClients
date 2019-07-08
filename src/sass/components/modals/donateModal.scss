@@ -2,10 +2,6 @@
     [class$="-topUp"] { display: none }
 }
 
-.donateModal-container {
-    .donationForm-cardView .pm_grid { margin-bottom: 0 }
-}
-
 .donateModal-container:not(.donateModal-mode-bitcoin):not(.donateModal-mode-cash) {
     .donateModal-btn-close { display: none }
 }
@@ -13,11 +9,6 @@
 .donateModal-container.donateModal-type-topUp {
     [class$="-donate"],
     .donateModal-about-bitcoin { display: none }
-}
-
-.donateModal-group-btn {
-    display: flex;
-    justify-content: space-between
 }
 
 .donateModal-container .donationForm-info,
@@ -41,8 +32,7 @@
 .donateModal-mode-paypal,
 .donateModal-mode-bitcoin,
 .donateModal-mode-cash {
-
-    .donateModal-group-btn { justify-content: flex-end }
+    .pm-modalFooter { justify-content: flex-end }
     .donateModal-btn-donation { display: none }
 }
 

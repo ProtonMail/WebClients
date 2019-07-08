@@ -1,36 +1,31 @@
 /* @ngInject */
-function cardIcon() {
+function cardIcon($compile) {
     const getCardType = $.payment.cardType;
 
-    const CLASS_TYPES = {
-        amex: 'fa-cc-amex',
-        dinersclub: 'fa-cc-diners-club',
-        discover: 'fa-cc-discover',
-        jcb: 'fa-cc-jcb',
-        mastercard: 'fa-cc-mastercard',
-        visa: 'fa-cc-visa',
-        visaelectron: 'fa-cc-visa',
-        maestro: 'fa-credit-card',
-        forbrugsforeningen: 'fa-credit-card',
-        dankort: 'fa-credit-card',
-        unionpay: 'fa-credit-card',
-        card: 'fa-credit-card'
+    const SHAPES = {
+        amex: '',
+        dinersclub: '',
+        discover: '',
+        jcb: '',
+        mastercard: '',
+        visa: '',
+        visaelectron: '',
+        maestro: '',
+        forbrugsforeningen: '',
+        dankort: '',
+        unionpay: '',
+        card: ''
     };
 
-    /**
-     * Default value comming from the lib is null :/
-     */
-    const getClassName = (type = 'card') => `cardIcon-container fa ${CLASS_TYPES[type || 'card']}`;
-
     return {
-        replace: true,
-        template: `<i class="cardIcon-container fa ${CLASS_TYPES.card}"></i>`,
-        scope: {
-            number: '='
-        },
+        restrict: 'A',
         link(scope, el) {
-            scope.$watch('number', (newValue) => {
-                el[0].className = getClassName(getCardType(newValue));
+            el[0].classList.add('cardIcon-container');
+            scope.$watch('card.number', (value) => {
+                console.log(value);
+                const shape = SHAPES[getCardType(scope.number)] || 'payments-type-card';
+                const tpl = `<icon class="mauto" data-name="${shape}"></icon>`;
+                el.html($compile(tpl)(scope));
             });
         }
     };

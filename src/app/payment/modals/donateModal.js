@@ -7,8 +7,7 @@ function donateModal(dispatchers, pmModal) {
         controller: function(params) {
             const { on, unsubscribe } = dispatchers();
 
-            this.typeOfModal = params.type;
-            this.close = params.close;
+            this.typeOfModal = params.type || 'donation';
 
             on('payments', (e, { type }) => {
                 if (/^(donation|topUp)\.request\.success/.test(type)) {

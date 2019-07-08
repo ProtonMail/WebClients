@@ -1,20 +1,12 @@
-.donationForm-container.donationForm-is-invalid {
-    &[class*="ng-invalid-"] .ng-invalid {
-       border: 1px solid $red
-    }
-
-    [ng-messages][ng-messages][ng-messages] { opacity: 1 }
-
-}
-
-.donationForm-container {
-    [ng-message] { margin: .5em 0 0 }
-}
-
-.donationForm-amount-row-2 { margin-bottom: 0 }
-.donationForm-cardView,
-.donationForm-paymentMethod { margin-top: 1em }
-
 .donationForm-method-payal .donationForm-btn-submit,
 .donationForm-method-cash .donationForm-btn-submit { display: none }
 
+.cardIcon-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: .7;
+    left: 1rem;
+}
+
+.cardIcon-container + input { padding-left: 3rem  }
