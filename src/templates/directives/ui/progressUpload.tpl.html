@@ -1,7 +1,8 @@
-<div class="progressLoader-container pm_button progressUpload-uploading">
+<div class="progressLoader-container pm_button progressUpload-uploading bg-white p0">
 
     <div class="progressLoader-attachment">
-        <i class="progressLoader-icon" ng-class="(model.packet.Inline === 1) ? 'fa fa-image embedded' : 'fa fa-paperclip'"></i>
+        <icon data-name="file-image" class="progressLoader-icon" ng-class="(model.packet.Inline !== 1) ? 'hidden' : ''"></icon>
+        <icon data-name="attach" class="progressLoader-icon" ng-class="(model.packet.Inline === 1) ? 'hidden' : ''"></icon>
         <span class="progressLoader-name">{{ ::model.packet.filename }}</span>
     </div>
 
