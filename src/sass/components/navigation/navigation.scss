@@ -1,57 +1,3 @@
-// .navigation {
-//     display: flex;
-//     justify-content: flex-end;
-//     padding: 0;
-//     height: 100%;
-//     overflow: hidden;
-// }
-
-// .navigation > li {
-//     position: relative;
-//     display: flex;
-//     flex: 0 0 115px;
-//     align-items: center;
-//     justify-content: center;
-//     list-style: none;
-//     border-top: 5px solid transparent;
-//     transition: border .15s ease-in-out;
-// }
-
-// .navigation > li.active,
-// .navigation > li:hover { border-color: $primary }
-
-// .navigation-link {
-//     display: flex;
-//     flex: 1;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     text-decoration: none;
-//     height: 100%;
-//     color: inherit;
-//     opacity: .9;
-// }
-
-// .navigation-icons, .navigation-icon {
-//     display: inline-flex;
-//     align-items: center;
-//     width: 20px;
-//     height: 20px;
-//     font-size: 15px;
-
-//     .fa-angle-down {
-//         font-size: 13px;
-//         margin-left: 2px;
-//     }
-// }
-
-// .navigation-title {
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//     white-space: nowrap;
-//     max-width: 115px;
-// }
-
 /* Decrease margins (was 1em) */
 @include respond-to(1500) {
 
@@ -85,16 +31,5 @@
 }
 
 
-.navigation:not(.navigation-is-black-friday) .navigationBlackFriday { display: none }
+.navigation:not(.navigation-is-black-friday) .navigationBlackFriday,
 .navigation.navigation-is-black-friday .navigation-upgrade-item { display: none }
-
-// @media (max-width: 980px) {
-//     .navigation.navigation-is-black-friday > li {
-//         flex: 0 0 95px;
-//     }
-// }
-// @media (max-width: 830px) {
-//     .navigation.navigation-is-black-friday > li {
-//         flex: 0 0 90px;
-//     }
-// }
