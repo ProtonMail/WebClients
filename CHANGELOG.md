@@ -1,3 +1,7 @@
+# [3.16.2] - 2019-07-08
+## Fixed
+- Cannot import `.csv` files to contact list.
+
 # [3.16.1] - 2019-07-03
 ## Fixed
 - Auto-reply calendar showed wrong day name in some languages
