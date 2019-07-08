@@ -4,8 +4,9 @@
 .dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-apply,
 .dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-title-hasLabels,
 .dropdown-label-create.dropdown-label-create-withName .dropdown-label-create-new-label,
-.dropdown-label-create:not(.dropdown-label-create-withName) .dropdown-label-create-new-name,
+.dropdown-label-create:not(.dropdown-label-create-withName) .dropdown-label-create-new-name
  { display: none }
 
-
-.dropdown-label-create-new-name i { color: $black; }
+.dropdown-label-container .dropDown-contentInner {
+    margin-right: .25em;
+}

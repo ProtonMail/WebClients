@@ -21,7 +21,7 @@
             class="dropDown-item alignleft"
             ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchValue})) track by label.ID">
 
-            <button class="w100 flex pt0-5 pb0-5" data-folder-id="{{ ::label.ID }}">
+            <button class="w100 flex pt0-5 pb0-5 no-pointer-events-children" data-folder-id="{{ ::label.ID }}">
                 <div class="flex w100">
                     <icon
                         data-name="folder"
@@ -36,7 +36,7 @@
             class="dropDown-item"
             ng-repeat="label in (filteredLabels2 = (mailboxes | filter: {Name: searchValue})) track by label.ID">
 
-            <button class="w100 flex pt0-5 pb0-5" data-folder-id="{{ ::label.ID }}">
+            <button class="w100 flex pt0-5 pb0-5 no-pointer-events-children" data-folder-id="{{ ::label.ID }}">
                 <div class="flex w100">
                     <icon
                         data-name="{{::label.icon}}"
@@ -54,7 +54,7 @@
     </ul>
 
     <button
-        class="pm-button--link disabled-if-network-activity w100 dropdown-folder-create-button p1 mb0-5 mt0-5">
+        class="pm-button--link disabled-if-network-activity w100 dropdown-folder-create-button p1 mb0-5 mt0-5 no-pointer-events-children">
         <span
             translate-context="Action"
             translate>Create a new folder</span>

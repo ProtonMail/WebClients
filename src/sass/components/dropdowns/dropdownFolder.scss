@@ -1,3 +1,7 @@
 .dropdown-folder-container button * {
     pointer-events: none
 }
+
+.folderSelectorDropdown-container .dropDown-contentInner {
+    margin-right: .5em;
+}
