@@ -36,7 +36,7 @@
                 <span class="sr-only" translate translate-context="Search form">Open advanced search</span>
             </dropdown-button>
 
-            <dropdown-content data-type="wide">
+            <dropdown-content data-type="wide" class="dropDown-content--advancedSearch">
 
                 <div class="searchForm-keywords pl1 pr1 pt1">
                     <div class="inline-flex w100">
@@ -199,8 +199,8 @@
                                 translate
                                 translate-context="Search form option heading">Attachments</label>
 
-                            <div class="radio searchFrom-advanced-radio  flex-autogrid">
-                                <label class="flex flex-items-center flex-autogrid-item">
+                            <div class="radio searchFrom-advanced-radio  flex pt0-5">
+                                <label class="flex flex-items-center flex-nowrap mr1">
                                     <div>
                                         <custom-radio
                                             data-custom-id="attachments_all"
@@ -208,12 +208,11 @@
                                             data-custom-value="2"></custom-radio>
                                     </div>
                                     <span
-                                        class="ml0-5"
                                         translate
                                         translate-context="Search action filter"
                                         translate-comment="form option">All</span>
                                 </label>
-                                <label class="flex flex-items-center flex-autogrid-item">
+                                <label class="flex flex-items-center flex-nowrap mr1">
                                     <div>
                                         <custom-radio
                                             data-custom-id="attachments_yes"
@@ -221,12 +220,11 @@
                                             data-custom-value="1"></custom-radio>
                                     </div>
                                     <span
-                                        class="ml0-5"
                                         translate
                                         translate-context="Search action filter"
                                         translate-comment="form option">Yes</span>
                                 </label>
-                                <label class="flex flex-items-center flex-autogrid-item">
+                                <label class="flex flex-items-center flex-nowrap">
                                     <div>
                                         <custom-radio
                                             data-custom-id="attachments_no"
@@ -234,7 +232,6 @@
                                             data-custom-value="0"></custom-radio>
                                     </div>
                                     <span
-                                        class="ml0-5"
                                         translate
                                         translate-context="Search action filter"
                                         translate-comment="form option">No</span>
