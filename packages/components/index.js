@@ -174,6 +174,7 @@ export { default as DailyNotificationsToggle } from './containers/notification/D
 export { default as EmailSection } from './containers/notification/EmailSection';
 export { default as AddressKeysSection } from './containers/keys/AddressKeysSection';
 export { default as UserKeysSection } from './containers/keys/UserKeysSection';
+export { default as SelectKeyFiles } from './containers/keys/SelectKeyFiles';
 export { default as PaymentMethodState } from './containers/paymentMethods/PaymentMethodState';
 export { default as PaymentMethodActions } from './containers/paymentMethods/PaymentMethodActions';
 export { default as PaymentMethodDetails } from './containers/paymentMethods/PaymentMethodDetails';
