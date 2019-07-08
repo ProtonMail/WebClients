@@ -216,4 +216,21 @@ describe('Merge contacts', () => {
         cy.wait(2000);
         notification.success('All contacts deleted');
     });
+
+    it('should import sample csv file', function() {
+        cy.get('[data-action="importContacts"]').click();
+
+        cy.dndFile('proton.csv', { wait: 5000 });
+
+        contactActions.footerClick(MERGE_CONTACT_MODAL.PRIMARY_BUTTON);
+        cy.wait(7000);
+        contactActions.footerClick(MERGE_CONTACT_MODAL.PM_BUTTON);
+    });
+
+    it('should delete imported csv contacts', () => {
+        cy.get('[data-action="deleteContacts"]').click();
+        cy.get('#confirmModalBtn').click();
+        cy.wait(2000);
+        notification.success('All contacts deleted');
+    });
 });
