@@ -38,10 +38,11 @@ const TOTPForm = ({ onSubmit, loading }) => {
                     value={totp}
                     placeholder={c('Placeholder').t`Two-factor code`}
                     onChange={onChange(setTotp)}
+                    data-cy-login="TOTP"
                 />
             </div>
             <div>
-                <Button type="submit" disabled={loading}>
+                <Button type="submit" disabled={loading} data-cy-login="submit TOTP">
                     Submit
                 </Button>
             </div>

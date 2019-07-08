@@ -34,6 +34,7 @@ const LoginForm = ({ onSubmit, loading }) => {
                     value={username}
                     placeholder={c('Placeholder').t`Username`}
                     onChange={onChange(setUsername)}
+                    data-cy-login="username"
                 />
             </Label>
             <Label htmlFor="password" className="bl mb1">
@@ -48,9 +49,10 @@ const LoginForm = ({ onSubmit, loading }) => {
                     value={password}
                     placeholder={c('Placeholder').t`Password`}
                     onChange={onChange(setPassword)}
+                    data-cy-login="password"
                 />
             </Label>
-            <Button type="submit" className="pm-button-blue w100" disabled={loading}>
+            <Button type="submit" className="pm-button-blue w100" disabled={loading} data-cy-login="submit">
                 Login
             </Button>
             <p>

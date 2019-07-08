@@ -31,10 +31,11 @@ const UnlockForm = ({ onSubmit, loading }) => {
                     value={password}
                     placeholder={c('Placeholder').t`Mailbox password`}
                     onChange={onChange(setPassword)}
+                    data-cy-login="mailbox password"
                 />
             </div>
             <div>
-                <Button type="submit" disabled={loading}>
+                <Button type="submit" disabled={loading} data-cy-login="submit mailbox password">
                     Submit
                 </Button>
             </div>
