@@ -40,7 +40,10 @@ export const uniqueBy = (array, comparator) => {
     });
 };
 
-export const move = (list = [], from, to) => list.splice(to, 0, list.splice(from, 1)[0]);
+export const move = (list = [], from, to) => {
+    const copy = list.slice(0);
+    return copy.splice(to, 0, copy.splice(from, 1)[0]);
+};
 
 /**
  * Remove an item from an array.
