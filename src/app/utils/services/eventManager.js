@@ -18,7 +18,7 @@ function eventManager(
     Events,
     gettextCatalog,
     mailSettingsModel,
-    notify,
+    notification,
     userSettingsModel
 ) {
     const FIBONACCI = [1, 1, 2, 3, 5, 8];
@@ -366,7 +366,7 @@ function eventManager(
         if (STATE.notification) {
             return;
         }
-        STATE.notification = notify({
+        STATE.notification = notification.warn('', {
             templateUrl: require('../../../templates/notifications/retry.tpl.html'),
             duration: '0',
             onClick() {

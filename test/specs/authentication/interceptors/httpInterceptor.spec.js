@@ -202,7 +202,6 @@ describe('http interceptor', () => {
                     .toHaveBeenCalled();
                 expect(MOCKS.notification.error)
                     .toHaveBeenCalledWith('API Message', {
-                        templateUrl: 'templates/notifications/badVersion.tpl.html',
                         duration: '0'
                     });
             });

@@ -1,12 +1,9 @@
-<div
-    class="proton-notification-template cg-notify-message"
-    ng-class="[$classes,
-        $position === 'center' ? 'cg-notify-message-center' : '',
-        $position === 'left' ? 'cg-notify-message-left' : '',
-        $position === 'right' ? 'cg-notify-message-right' : '']"
-    ng-style="{'margin-left': $centerMargin}"
-    role="alert">
-    <div class="cg-notify-message-content" ng-show="!$messageTemplate" ng-bind-html="$message"></div>
+<div class="p1 notificationIn mt0-5 flex" ng-class="$classes">
+    <div class="cg-notify-message-content flex flex-items-center" ng-show="!$messageTemplate">
+        <div ng-bind-html="$message"></div>
+        <a class="pm-button--link" ng-click="$close()">
+            <icon data-name="close"></icon>
+        </a>
+    </div>
     <div ng-show="$messageTemplate" class="cg-notify-message-template"></div>
-    <a class="cg-notify-text-muted" ng-click="$close()"><i class="fa fa-times"></i></a>
 </div>

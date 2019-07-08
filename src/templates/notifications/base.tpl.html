@@ -1,16 +1,7 @@
 <div
-ng-show="!$messageTemplate"
-class="proton-notification-template flex flex-column flex-items-center notifications-container notificationIn cg-notify-message"
-ng-click="$click()"
-ng-class="[$classes,
-$position === 'center' ? 'cg-notify-message-center' : '',
-$position === 'left' ? 'cg-notify-message-left' : '',
-$position === 'right' ? 'cg-notify-message-right' : '']"
-role="alert">
-
-    <div class="p1">
-    	<span>{{ ::$message }}</span>
-    </div>
-
+    class="p1 notificationIn mt0-5"
+    ng-click="$click()"
+    ng-class="$classes">
+    <span ng-show="!$messageTemplate">{{ ::$message }}</span>
     <div ng-show="$messageTemplate" class="cg-notify-message-template"></div>
 </div>

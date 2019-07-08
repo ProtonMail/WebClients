@@ -23,7 +23,6 @@ module.exports = {
     vendor_files: {
         css: [
             'ng-sortable/dist/ng-sortable.css',
-            'angular-notify/dist/angular-notify.css',
             'pikaday/css/pikaday.css',
             'dropzone/dist/dropzone.css',
             'awesomplete/awesomplete.css',

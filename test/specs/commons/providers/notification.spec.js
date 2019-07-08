@@ -48,7 +48,7 @@ describe('notification service', () => {
 
     it('should display error notification', () => {
         showNotification('hello', 'error');
-        expect(dom[0].querySelector('.notification-danger'))
+        expect(dom[0].querySelector('.notification-alert'))
             .toBeTruthy();
     });
 

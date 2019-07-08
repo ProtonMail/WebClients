@@ -4,7 +4,8 @@ import { isHTML } from '../../../helpers/domHelper';
 function notification() {
     const CONFIG = {
         classNames: {
-            error: 'notification-danger',
+            warning: 'notification-warning',
+            error: 'notification-alert',
             success: 'notification-success',
             info: 'notification-info'
         }
@@ -86,6 +87,7 @@ function notification() {
                 success: action('success'),
                 error: action('error'),
                 info: action('info'),
+                warn: action('warning'),
                 closeAll() {
                     if (STATE.disableClose) {
                         return;
