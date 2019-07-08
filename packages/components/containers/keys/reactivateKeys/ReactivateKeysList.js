@@ -95,7 +95,13 @@ const ReactivateKeysList = ({ loading, allKeys, onUpload }) => {
     return (
         <>
             {isUpload ? (
-                <SelectKeyFiles ref={selectRef} multiple={false} onFiles={handleFiles} autoClick={false} />
+                <SelectKeyFiles
+                    ref={selectRef}
+                    multiple={false}
+                    onFiles={handleFiles}
+                    className="hidden"
+                    autoClick={false}
+                />
             ) : null}
             <Table>
                 <TableHeader
