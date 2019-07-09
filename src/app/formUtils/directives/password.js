@@ -1,15 +1,4 @@
 import { uniqID } from '../../../helpers/string';
-import { isMac, isFirefox } from '../../../helpers/browser';
-
-const isMacOS = isMac();
-// Firefox doesn't work with text-security property :/
-if (isMacOS && isFirefox()) {
-    const link = document.createElement('LINK');
-    link.type = 'text/css';
-    link.rel = 'stylesheet';
-    link.href = '/assets/fonts/text-security-disc.css';
-    document.body.appendChild(link);
-}
 
 /* @ngInject */
 function password() {
@@ -22,12 +11,6 @@ function password() {
             const value = natives[key];
             value && input.setAttribute(key, value);
         });
-
-        // Issue with input password on MacOS -> dead keys don't work
-        // if (isMacOS) {
-        //     input.classList.add('password-input-mac');
-        //     input.type = 'text';
-        // }
 
         compare && input.setAttribute('data-compare-to', 'compare');
         autofocus && input.setAttribute('autofocus', true);
@@ -47,36 +30,26 @@ function password() {
 
             return (scope, el, { autofocus }) => {
                 const $input = el[0].querySelector('.password-input');
+                scope.input = scope.form[name];
                 scope.message = scope.form[name].$error;
 
                 if (autofocus && document.activeElement !== $input) {
                     _rAF(() => $input.focus());
                 }
 
-                // We need to re-force the type password on submit to allow the user to save the password
-                // if (!isMacOS) {
-                //     return;
-                // }
+                const onClick = ({ target }) => {
+                    const mode = target.dataset.mode;
+                    if (mode) {
+                        el[0].setAttribute('data-current-mode', mode);
+                        $input.type = mode === 'cleartext' ? 'text' : 'password';
+                    }
+                };
 
-                // const onFocus = ({ target }) => {
-                //     target.type = 'text';
-                // };
-                // const onBlur = ({ target }) => {
-                //     target.type = 'password';
-                // };
-                // const onEnter = ({ key }) => {
-                //     key === 'Enter' && onBlur({ target: $input });
-                // };
+                el.on('click', onClick);
 
-                // $input.addEventListener('blur', onBlur);
-                // $input.addEventListener('focus', onFocus);
-                // document.addEventListener('keydown', onEnter);
-
-                // scope.$on('$destroy', () => {
-                //     $input.removeEventListener('blur', onBlur);
-                //     $input.removeEventListener('focus', onFocus);
-                //     document.removeEventListener('keydown', onEnter);
-                // });
+                scope.$on('$destroy', () => {
+                    el.off('click', onClick);
+                });
             };
         }
     };

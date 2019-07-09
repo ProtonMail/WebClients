@@ -42,7 +42,6 @@ $path-images: "~design-system/assets/img/shared/";
 
 //=== 🚀 Setup ==============================//
 //== Base
-@import "_addon.scss";
 @import "_functions";
 @import "_variables";
 @import "_mixin";
@@ -297,7 +296,6 @@ $path-images: "~design-system/assets/img/shared/";
 @import "components/payments/featuresList";
 @import "components/payments/bitcoinView";
 @import "components/payments/donation";
-@import "components/payments/giftCode";
 
 //== FeedBack
 @import "components/feedback/feedback";

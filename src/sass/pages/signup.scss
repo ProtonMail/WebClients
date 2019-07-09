@@ -3,53 +3,32 @@
     margin-top: 3rem;
 }
 
-[class*='signUpProcess-step-'] .wrapper {
-    padding: 0 65px;
-    position: relative;
-    text-align: initial;
-}
-
 .signupUserForm-container .usernameDomain-container,
 .signupUserForm-container .usernamePassword-container,
 .signupUserForm-container .notificationEmail-container,
 .humanVerification-container .humanVerification-wrapper { margin-top: 2rem }
 
 /* HEADER */
-
-[class*='signUpProcess-step-'] > .header { margin-top: 1rem }
-
-.signupPayForm-header-title,
-.signupUserForm-header-title {
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+[class*='signUpProcess-step-'] [data-step] {
+    position: relative;
+    margin-bottom: 5rem
 }
-
-[class*='signUpProcess-step-'] [data-step] { position: relative;  }
 [class*='signUpProcess-step-'] [data-step]::before { content: attr(data-step) }
 
 [class*='signUpProcess-step-'] [data-step]::before {
     position: absolute;
-    width: 2rem;
     left: -65px;
-    font-weight: 700;
-    border-radius: 2rem;
-    background-color: $light;
-    text-align: center;
-    line-height: 2rem;
     display: block;
-    height: 2rem;
-    font-size: .8rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4rem;
+    background-color: $light;
+    line-height: 2.8;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.4rem;
     font-style: normal;
     color: $default-color
-}
-
-[class*='signUpProcess-step-'] .titleLabel {
-    position: relative;
-    font-weight: 700;
-    text-align: left;
-    color: $text;
-    font-weight: 700;
-    font-size: 1.1rem;
 }
 
 .signupUserForm-container .usernameDomain-container > .help,
@@ -71,36 +50,16 @@
     align-items: center;
 }
 
-.signUpProcess-step-1  .usernameWrap .signupIframe-container {
+.signUpProcess-step-1  .signupIframe-container {
     width: 100%;
 }
+
 
 /* humanVerification */
 
 .humanVerification-wrapper {
     width: 505px;
     margin: 0px auto;
-}
-
-/* creationList  */
-
-[class*='signUpProcess-step-'] ol#creationList,
-[class*='signUpProcess-step-'] ol#creationList li {
-    display: display;
-    list-style-type: none;
-    .fa {
-        width: 1.5rem;
-        display: inline-block;
-        opacity: 0;
-        -webkit-transition: opacity 1s ease;
-           -moz-transition: opacity 1s ease;
-            -ms-transition: opacity 1s ease;
-             -o-transition: opacity 1s ease;
-                transition: opacity 1s ease;
-        &.show {
-            opacity: 1;
-        }
-    }
 }
 
 
@@ -134,13 +93,6 @@
         background-color: $primary;
     }
 }
-
-[class*='signUpProcess-step-'] .signup-radio-label { height: 1.5rem }
-[class*='signUpProcess-step-'] .signup-radio-label-text {
-    color: #000;
-    font-size: 1rem;
-}
-
 [class*='signUpProcess-step-'] .genNewKeys-loader-container,
 [class*='signUpProcess-step-'] .creating-loader-container {
     display: flex;
@@ -148,7 +100,6 @@
 }
 
 .signUpProcess-step-3 {
-    // margin-top: 0;
     padding-top: 0;
 }
 
@@ -158,10 +109,8 @@ body.appConfigBody-is-mobile {
     [class*='signUpProcess-step-'],
     [class*='signUpProcess-step-'] .pm_panel { margin: 0; padding: 1em !important; max-width: none; }
     [class*='signUpProcess-step-'] [data-step]::before { display: none }
-    [class*='signUpProcess-step-'] .wrapper { padding: 0 }
-    [class*='signUpProcess-step-'] .wrapper label { margin-top: 1rem }
-    [class*='signUpProcess-step-'] .wrapper .customMaskInput-mask { margin-top: 0; }
-    [class*='signUpProcess-step-'] .wrapper .signup-radio-label {
+    [class*='signUpProcess-step-'] .customMaskInput-mask { margin-top: 0; }
+    [class*='signUpProcess-step-'] .signup-radio-label {
         margin-top: 1rem;
         margin-bottom: 2rem;
         position: relative;
@@ -179,4 +128,19 @@ body.appConfigBody-is-mobile {
         height: 4rem;
         line-height: 4rem;
     }
+}
+
+
+.signupPage-container {
+    color: $pm-global-grey;
+    background: $white;
+    max-width: 700px;
+    padding: 2rem 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.signupPayForm-header-logo,
+.signupUserForm-header-logo {
+    max-width: 25%
 }

@@ -1,25 +1,25 @@
 .signupUserForm-container iframe {
     width: 100%;
     border: 0;
-    height: 3rem
+    height: 5rem
 }
 
 .signupUserForm-container .bottom {
-    min-height: 14rem
+    min-height: 18rem
 }
 
 .signupUserForm-container iframe[data-is-loading="true"],
 .signupUserForm-container iframe[data-is-available="true"],
 .signupUserForm-container iframe[data-has-error="true"] {
-    min-height: 7rem
+    min-height: 9rem
 }
 
 .signupUserForm-container iframe[data-has-suggestions="true"] {
-    min-height: 13rem
+    min-height: 17rem
 }
 
 .signupUserForm-container iframe.bottom[data-has-error="true"] {
-    min-height: 17rem
+    min-height: 25rem
 }
 
 

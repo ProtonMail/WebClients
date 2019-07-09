@@ -156,9 +156,7 @@ body#reset {
   }
   &.static {
     position: static;
-    color: $default-color;
     a {
-      color: $default-color;
       text-decoration: none;
       &:hover {
         color: $black;

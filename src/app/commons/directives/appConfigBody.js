@@ -3,7 +3,6 @@ import { ROW_MODE } from '../../constants';
 import { isMac, isFirefox } from '../../../helpers/browser';
 
 const SCROLL_STATES = ['signup', 'login.setup', 'secured.print'];
-const LIGHT_STATES = ['support.reset-password', 'signup', 'login.setup', 'pre-invite'];
 const LOCKED_STATES = ['login', 'eo.unlock', 'eo.message', 'reset', 'eo.reply'];
 
 /* @ngInject */
@@ -75,7 +74,6 @@ function appConfigBody($state, AppModel, dispatchers, mailSettingsModel, subscri
                 el[0].id = toState.name.replace(/[.]+/g, '-');
 
                 toggleClass('scroll', included(SCROLL_STATES));
-                toggleClass('light', included(LIGHT_STATES));
                 toggleClass('locked', included(LOCKED_STATES));
             });
 

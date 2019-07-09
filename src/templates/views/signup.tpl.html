@@ -1,34 +1,36 @@
-<signup-user-form
-    class="pm_panel wide signUpProcess-step-1"
-    ng-if="step === 1"
-    data-account="account"
-    data-domains="domains"></signup-user-form>
+<div class="bordered-container mauto signupPage-container">
+    <signup-user-form
+        class="signUpProcess-step-1"
+        ng-if="step === 1"
+        data-account="account"
+        data-domains="domains"></signup-user-form>
 
-<div class="pm_panel wide signUpProcess-step-2" ng-show="step === 2">
-    <div class="aligncenter">
-        <div class="genNewKeys-loader-container">
-            <atom-loader data-loader-theme="primary"></atom-loader>
+    <div class="signUpProcess-step-2" ng-if="step === 2">
+        <div class="aligncenter">
+            <div class="genNewKeys-loader-container">
+                <atom-loader data-loader-theme="primary"></atom-loader>
+            </div>
+            <h2 class="aligncenter" ng-if="!signupError" translate translate-context="Title">Generating keys...</h2>
         </div>
-        <h2 class="aligncenter" ng-show="!signupError" translate translate-context="Title">Generating keys...</h2>
+        <p class="italic aligncenter" translate-context="Info" translate>This can take a few seconds or a few minutes depending on your device.</p>
     </div>
-    <p class="alert" translate-context="Info" translate>This can take a few seconds or a few minutes depending on your device.</p>
+
+    <signup-human-form
+        data-account="account"
+        class="signUpProcess-step-3"
+        ng-if="!isFromInvitation && step === 3"></signup-human-form>
+
+    <signup-pay-form
+        data-plans="plans"
+        data-payment="payment"
+        data-account="account"
+        class="signUpProcess-step-4"
+        ng-if="step === 4"></signup-pay-form>
+
+    <signup-creation-process
+        class="signUpProcess-step-5"
+        ng-if="step === 5"></signup-creation-process>
 </div>
-
-<signup-human-form
-    data-account="account"
-    class="signUpProcess-step-3"
-    ng-if="!isFromInvitation && step === 3"></signup-human-form>
-
-<signup-pay-form
-    data-plans="plans"
-    data-payment="payment"
-    data-account="account"
-    class="pm_panel wide signUpProcess-step-4"
-    ng-if="step === 4"></signup-pay-form>
-
-<signup-creation-process
-    class="pm_panel wide signUpProcess-step-5"
-    ng-show="step === 5"></signup-creation-process>
 
 <footer id="pm_footer" class="static">
     <app-copyright></app-copyright>

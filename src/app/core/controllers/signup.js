@@ -82,7 +82,8 @@ function SignupController(
             confirmation: '',
             password: ''
         },
-        confirmationType: ''
+        confirmationType: '',
+        card: {}
     };
 
     authentication.logout(false, authentication.isLoggedIn());

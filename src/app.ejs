@@ -35,26 +35,25 @@
     <meta name="google-play-app" content="app-id=ch.protonmail.android">
 </head>
 <body data-app-config-body>
+    <custom-theme></custom-theme>
 
-<custom-theme></custom-theme>
+    <proton-loader></proton-loader>
 
-<proton-loader></proton-loader>
-
-<div id="pm_slow" class="pm-loader-fullpage" ng-hide="networkActivity.loading() || loggingOut || isSecure">
-    <div class="atomLoader">
-        <div class="atomLoader-container">
-            <div class="atomLoader-item"></div>
-            <div class="atomLoader-item2"></div>
-            <div class="atomLoader-item3"></div>
-            <div class="atomLoader-proton"></div>
+    <div id="pm_slow" class="pm-loader-fullpage" ng-hide="networkActivity.loading() || loggingOut || isSecure">
+        <div class="atomLoader">
+            <div class="atomLoader-container">
+                <div class="atomLoader-item"></div>
+                <div class="atomLoader-item2"></div>
+                <div class="atomLoader-item3"></div>
+                <div class="atomLoader-proton"></div>
+            </div>
+          <p class="atomLoader-text">Loading ProtonMail</p>
         </div>
-      <p class="atomLoader-text">Loading ProtonMail</p>
     </div>
-</div>
-<div id="pm_slow2" style="display:none;">Loading Message...</div>
-<div ui-view="main" autoscroll="false" id="body" class="content flex-item-fluid reset4print"></div>
-<noscript class="pm_noscript">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
-<proton-svgs></proton-svgs>
-<icons></icons>
+    <div id="pm_slow2" style="display:none;">Loading Message...</div>
+    <div ui-view="main" autoscroll="false" id="body" class="flex-item-fluid reset4print"></div>
+    <noscript class="pm_noscript">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
+    <proton-svgs></proton-svgs>
+    <icons></icons>
 </body>
 </html>

@@ -11,13 +11,7 @@ function giftCodeBtn(dispatchers, giftCodeModal) {
         link(scope, element, { action }) {
             const onClick = () => {
                 if (action === 'modal') {
-                    giftCodeModal.activate({
-                        params: {
-                            close() {
-                                giftCodeModal.deactivate();
-                            }
-                        }
-                    });
+                    giftCodeModal.activate();
                 }
 
                 if (action === 'displayGiftSignup') {

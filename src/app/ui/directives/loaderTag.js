@@ -2,7 +2,6 @@
 const loaderTag = () => ({
     restrict: 'E',
     replace: true,
-    scope: {},
-    template: '<div class="loader"><em></em></div>'
+    template: '<div class="loader" aria-busy="true"></div>'
 });
 export default loaderTag;

@@ -10,10 +10,6 @@
     }
 }
 
-.signupPayForm-container label {
-    font-weight: bold;
-}
-
 .signupPayForm-method-hidden .signupPayForm-paymentInfo {
     display: none;
 }
@@ -21,27 +17,18 @@
 .signupPayForm-method-paypal .signupPayForm-footer,
 .signupPayForm-error .signupPayForm-btn-submit { display: none }
 
-.signupPayForm-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.signupPayForm-gift-col {
-    display: flex;
-}
-
-.signupPayForm-container .giftCodeInput-container {
-    flex: 1;
-}
-
-.signupPayForm-btn-apply {
-    margin-left: 20px;
-}
 
 .signupPayForm-show-gift .giftCodeBtn-container { display: none }
 .signupPayForm-container:not(.signupPayForm-show-gift) .signupPayForm-btn-apply,
 .signupPayForm-container:not(.signupPayForm-show-gift) .giftCodeInput-container { display: none }
 .signupPayForm-gift-applied .signupPayForm-gift-row { display: none }
-.signupPayForm-container .giftCodeBtn-text { text-transform: uppercase }
 
+
+.signupPayForm-container th {
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+.signupPayForm-container th:first-letter { text-transform: uppercase; }
+
+.signupPayForm-btn-apply { align-self: flex-start; }

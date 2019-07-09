@@ -2,3 +2,13 @@
     [class*="signupCreationProcess-error-"] { display: none }
 }
 .signupCreationProcess-error .signupCreationProcess-title { display: none }
+
+
+.signupCreationProcess-list svg {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.signupCreationProcess-list svg.show {
+    opacity: 1;
+}

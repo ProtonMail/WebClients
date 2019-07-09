@@ -9,7 +9,6 @@ import cvcTooltip from './directives/cvcTooltip';
 import danger from './directives/danger';
 import formIsInvalid from './directives/formIsInvalid';
 import password from './directives/password';
-import togglePassword from './directives/togglePassword';
 import uniqueUsername from './directives/uniqueUsername';
 import validRecovery from './directives/validRecovery';
 import validatorTypoEmail from './directives/validatorTypoEmail';
@@ -34,7 +33,6 @@ export default angular
     .directive('danger', danger)
     .directive('formIsInvalid', formIsInvalid)
     .directive('password', password)
-    .directive('togglePassword', togglePassword)
     .directive('uniqueUsername', uniqueUsername)
     .directive('validRecovery', validRecovery)
     .directive('validatorTypoEmail', validatorTypoEmail)

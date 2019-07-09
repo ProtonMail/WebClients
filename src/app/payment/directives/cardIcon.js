@@ -22,8 +22,7 @@ function cardIcon($compile) {
         link(scope, el) {
             el[0].classList.add('cardIcon-container');
             scope.$watch('card.number', (value) => {
-                console.log(value);
-                const shape = SHAPES[getCardType(scope.number)] || 'payments-type-card';
+                const shape = SHAPES[getCardType(value)] || 'payments-type-card';
                 const tpl = `<icon class="mauto" data-name="${shape}"></icon>`;
                 el.html($compile(tpl)(scope));
             });

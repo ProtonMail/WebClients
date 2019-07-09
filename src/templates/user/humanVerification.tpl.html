@@ -1,4 +1,4 @@
-<div class="pm_panel pm_form wide humanVerification-container">
+<div class="humanVerification-container">
     <div class="wrapper humanVerification-wrapper"
         id="verification-panel"
         ng-class="{
@@ -11,54 +11,62 @@
             'humanVerification-show-sms': showSms,
             'humanVerification-show-donation': showPayment,
         }">
-        <span class="titleLabel label" for="password" data-step="5">
-            <span translate translate-context="Title" translate-comment="Antispam section of account creation">Are you human?</span>
-        </span>
-        <p class="help" translate-context="Info" translate>To fight spam, please verify you are human.</p>
-        <p class="help humanVerification-help-privacy" translate-context="Info" translate>Your email or phone number will not be linked to the account created. It is only used during the signup process. A hash will be saved to prevent abuse of the ProtonMail systems.</p>
 
-        <div class="humanVerification-block-captcha">
-            <label for="id-signup-radio-captcha" class="signup-radio-label humanVerification-label-captcha">
+        <span class="pm-label" data-step="5">
+            <span
+                class="h6 mb0"
+                translate
+                translate-context="Title"
+                translate-comment="Antispam section of account creation">Are you human?</span>
+            <p class="help italic mt0" translate-context="Info" translate>To fight spam, please verify you are human.</p>
+        </span>
+
+        <p class="block-info-standard humanVerification-help-privacy" translate-context="Info" translate>Your email or phone number will not be linked to the account created. It is only used during the signup process. A hash will be saved to prevent abuse of the ProtonMail systems.</p>
+
+        <div class="humanVerification-block-captcha mb0-5">
+            <label
+                for="id-signup-radio-captcha"
+                class="signup-radio-label humanVerification-label-captcha inline-flex">
                 <custom-radio
                     data-custom-ng-model="verificator"
                     data-custom-value="captcha"
                     data-custom-id="id-signup-radio-captcha"></custom-radio>
-                <strong class="signup-radio-label-text">CAPTCHA</strong>
+                <span class="signup-radio-label-text">CAPTCHA</span>
             </label>
         </div>
-        <div class="humanVerification-block-email">
-            <label for="id-signup-radio-email" class="signup-radio-label">
+        <div class="humanVerification-block-email mb0-5">
+            <label for="id-signup-radio-email" class="signup-radio-label inline-flex">
                 <custom-radio
                     data-custom-ng-model="verificator"
                     data-custom-value="email"
                     data-custom-id="id-signup-radio-email"></custom-radio>
-                <strong class="signup-radio-label-text" translate translate-context="Title">Email</strong>
+                <span class="signup-radio-label-text" translate translate-context="Title">Email</span>
             </label>
         </div>
-        <div class="humanVerification-block-sms">
+        <div class="humanVerification-block-sms mb0-5">
 
             <span class="pull-right humanVerification-sms-details">(<a href="#" ng-click="whySMS = !whySMS"  translate-context="Link" translate>Why is this required?</a>)</span>
 
-            <label for="id-signup-radio-sms" class="signup-radio-label">
+            <label for="id-signup-radio-sms" class="signup-radio-label inline-flex">
                 <custom-radio
                     data-custom-ng-model="verificator"
                     data-custom-value="sms"
                     data-custom-id="id-signup-radio-sms"></custom-radio>
-                <strong class="signup-radio-label-text" translate translate-context="Title">SMS</strong>
+                <span class="signup-radio-label-text" translate translate-context="Title">SMS</span>
             </label>
         </div>
         <div class="humanVerification-block-donation">
-            <label for="id-signup-radio-donate" class="signup-radio-label">
+            <label for="id-signup-radio-donate" class="signup-radio-label inline-flex">
                 <custom-radio
                     data-custom-ng-model="verificator"
                     data-custom-value="donation"
                     data-custom-id="id-signup-radio-donate"></custom-radio>
-                <strong class="signup-radio-label-text" translate translate-context="Title">Donate</strong>
+                <span class="signup-radio-label-text" translate translate-context="Title">Donate</span>
             </label>
         </div>
 
-        <div ng-show="whySMS" class="spacing-top spacing-bottom">
-            <div class="alert alert-info" translate-context="About human verification" translate>
+        <div ng-if="whySMS" class="spacing-top spacing-bottom">
+            <div class="block-info-standard" translate-context="About human verification" translate>
                 <p>Too many ProtonMail accounts have been created from your connection.</p>
                 <p>Thus, we are requesting additional verification to ensure you are human and not a spam bot.</p>
                 <p>Because Tor or free VPNs are frequently abused by spammers, this check may be triggered because of the Tor or VPN exit node you are using.</p>
@@ -92,7 +100,7 @@
         <p class="aligncenter humanVerification-completeSetup" >
             <button
                 type="submit"
-                class="pm_button primary large humanVerification-completeSetup-create"
+                class="pm-button-blue pm-button--large humanVerification-completeSetup-create"
                 ng-disabled="model.emailCodeVerification === '' && model.captcha_token === false && model.smsCodeVerification === ''"
                 translate
                 translate-context="Action">Complete setup</button>

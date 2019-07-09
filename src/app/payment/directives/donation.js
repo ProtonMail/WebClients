@@ -75,7 +75,7 @@ function donation(
             scope.model = {
                 card: {},
                 method: selected,
-                amount: 50,
+                amount: 10,
                 currency: _.find(currencies, { value: authentication.user.Currency || DEFAULT_CURRENCY })
             };
 

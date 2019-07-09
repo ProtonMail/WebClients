@@ -1,12 +1,12 @@
 <form
     name="codeVerificatorForm"
-    class="codeVerificator-container pm_form"
+    class="codeVerificator-container"
     novalidate>
 
-    <div class="pm_grid codeVerificator-contact-section">
-        <div class="col-2-3 ng-message-wrapper">
+    <div class="codeVerificator-contact-section flex">
+        <div class="pm-field-container">
             <input
-                class="codeVerificator-email-input"
+                class="codeVerificator-email-input pm-field"
                 type="email"
                 name="emailVerification"
                 id="emailVerification"
@@ -17,7 +17,7 @@
                 placeholder-translate-context="Placeholder"
                 placeholder-translate="Email verification">
             <input
-                class="codeVerificator-sms-input"
+                class="codeVerificator-sms-input pm-field"
                 type="tel"
                 name="smsVerification"
                 ng-if="method === 'sms'"
@@ -25,34 +25,49 @@
                 id="smsVerification"
                 data-ng-intl-tel-input
                 ng-model="model.value">
-
             <div
+                class="error-zone"
                 ng-messages="codeVerificatorForm.emailVerification.$error"
-                ng-if="codeVerificatorForm.emailVerification.$dirty || codeVerificatorForm.$submitted"
-                class="text-red">
-                <p ng-message="required" translate translate-context="Error">Email required</p>
-                <p ng-message="email" translate-context="Error" translate>Invalid email</p>
+                ng-show="codeVerificatorForm.emailVerification.$dirty || codeVerificatorForm.$submitted">
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="required"
+                    translate-context="Error"
+                    translate>Email required</p>
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="email"
+                    translate-context="Error"
+                    translate>Invalid email</p>
             </div>
 
             <div
+                class="error-zone"
                 ng-messages="codeVerificatorForm.smsVerification.$error"
-                ng-if="codeVerificatorForm.smsVerification.$dirty || codeVerificatorForm.$submitted"
-                class="text-red">
-                <p ng-message="required" translate translate-context="Error">SMS number required</p>
-                <p ng-message="ngIntlTelInput" translate translate-context="Error">Invalid format (country and/or number)</p>
+                ng-show="codeVerificatorForm.smsVerification.$dirty || codeVerificatorForm.$submitted">
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="required"
+                    translate-context="Error"
+                    translate>SMS number required</p>
+                <p
+                    class="m0 color-global-warning"
+                    ng-message="ngIntlTelInput"
+                    translate-context="Error"
+                    translate>Invalid format (country and/or number)</p>
             </div>
         </div>
 
-        <div class="col-1-3">
+        <div class="w30">
             <button
-                class="pm_button primary codeVerificator-btn-send"
+                class="pm-button-blue codeVerificator-btn-send"
                 translate-context="Action"
                 translate>Send</button>
         </div>
     </div>
 
-    <div class="pm_grid codeVerificator-code-section">
-        <p class="alert alert-success">
+    <div class="codeVerificator-code-section mb2">
+        <p class="block-info-success">
             <strong translate-context="Info" translate>Verification code sent</strong><br />
             <span class="codeVerificator-email-instruction" translate-context="Info" translate>Please check your email and enter the code below:</span>
             <span class="codeVerificator-sms-instruction" translate-context="Info" translate>Please check your mobile and enter the code below:</span>
@@ -62,22 +77,24 @@
             type="text"
             name="codeValue"
             id="codeValue"
+            class="pm-field"
             ng-model="code"
             placeholder-translate-context="Input for the code sent"
             placeholder-translate="Verification code">
     </div>
 
-    <button
-        data-action="sendNewCode"
-        type="button"
-        class="pm_button link codeVerificator-new-code-button"
-        translate-context="Action"
-        translate>Send new code</button>
+    <div class="flex flex-spacebetween">
+        <button
+            data-action="sendNewCode"
+            type="button"
+            class="pm-button codeVerificator-new-code-button no-pointer-events-children"
+            translate-context="Action"
+            translate>Send new code</button>
 
-    <button
-        data-action="resetCode"
-        type="button"
-        class="pm_button link codeVerificator-reset-code-button">
+        <button
+            data-action="resetCode"
+            type="button"
+            class="pm-button codeVerificator-reset-code-button no-pointer-events-children">
             <span
                 class="codeVerificator-reset-button-email"
                 translate-context="Action"
@@ -87,5 +104,6 @@
                 translate-context="Action"
                 translate>Change verification number</span>
         </button>
+    </div>
 
 </form>

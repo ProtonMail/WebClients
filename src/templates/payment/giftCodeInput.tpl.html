@@ -1,17 +1,28 @@
-<div class="giftCodeInput-container">
-    <i class="giftCodeInput-icon fa fa-gift"></i>
+<div class="giftCodeInput-container pm-field-container">
     <input
         type="text"
         id="giftCodeInput"
-        class="giftCodeInput-input"
+        class="giftCodeInput-input pm-field"
         name="giftCodeInput"
         ng-model="code"
         placeholder="AAAA-BBBB-CCCC-DDDD"
         autocomplete="off"
-        gift-code-validator
+        data-gift-code-validator
         required>
-    <div ng-messages="form.giftCodeInput.$error" class="giftCodeInput-errors">
-        <p ng-message="required" class="giftCodeInput-errors" translate-context="Error" translate>Field required</p>
-        <p ng-message="giftCode" class="giftCodeInput-errors" translate-context="Error" translate>Invalid gift code</p>
+
+    <div
+        class="error-zone"
+        ng-messages="form.giftCodeInput.$error"
+        ng-show="form.giftCodeInput.$dirty || form.$submitted">
+        <p
+            class="m0 color-global-warning"
+            ng-message="required"
+            translate-context="Error"
+            translate>Field required</p>
+        <p
+            class="m0 color-global-warning"
+            ng-message="giftCode"
+            translate-context="Error"
+            translate>Invalid gift code</p>
     </div>
 </div>
