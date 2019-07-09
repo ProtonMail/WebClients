@@ -3,10 +3,10 @@ export const queryAddresses = () => ({
     method: 'get'
 });
 
-export const createAddress = ({ Local, Domain, DisplayName, Signature }) => ({
+export const createAddress = ({ MemberID, Local, Domain, DisplayName, Signature }) => ({
     url: 'addresses',
     method: 'post',
-    data: { Local, Domain, DisplayName, Signature }
+    data: { MemberID, Local, Domain, DisplayName, Signature }
 });
 
 export const orderAddress = (AddressIDs) => ({

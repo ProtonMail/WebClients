@@ -31,15 +31,8 @@ export const getResetKeys = (Keys, payload) => {
     return [newPrimary, ...resetKeys];
 };
 
-
 /**
- @typedef key
- @type {object}
- @property {object} Key - Result from API
- @property {number} privateKey - Private key from openpgp
- */
-/**
- * @param {Array<key>} keys - Old keys list
+ * @param {Array<{Key, privateKey}>} keys - Old keys list
  * @param {Object} action
  * @param {String} action.type
  * @param {Object} action.payload
@@ -49,9 +42,9 @@ export const keysReducer = (keys, { type, payload }) => {
     if (type === ACTIONS.ADD) {
         const keysLength = keys.length;
 
-        const { ID: newKeyID, decryptedPrivateKey, flags } = payload;
+        const { ID: newKeyID, privateKey, flags } = payload;
 
-        if (findKeyByFingerprint(keys, decryptedPrivateKey.getFingerprint()) || findKeyById(keys, newKeyID)) {
+        if (findKeyByFingerprint(keys, privateKey.getFingerprint()) || findKeyById(keys, newKeyID)) {
             throw new Error('Key already exists');
         }
 
@@ -59,7 +52,7 @@ export const keysReducer = (keys, { type, payload }) => {
         const isNewPrimary = !keysLength ? 1 : 0;
 
         const newKey = {
-            privateKey: decryptedPrivateKey,
+            privateKey,
             Key: {
                 ID: newKeyID,
                 Primary: isNewPrimary,
@@ -83,21 +76,19 @@ export const keysReducer = (keys, { type, payload }) => {
     };
 
     if (type === ACTIONS.REACTIVATE) {
-        const { ID: targetID, decryptedPrivateKey, flags } = payload;
+        const { ID: targetID, privateKey, flags } = payload;
 
         const oldKey = getAndAssertOldKey(targetID);
 
-        const newKey = {
-            privateKey: decryptedPrivateKey,
-            Key: {
-                ...oldKey.Key,
-                Flags: flags
-            }
-        };
-
         return keys.map((keyContainer) => {
             if (keyContainer === oldKey) {
-                return newKey;
+                return {
+                    privateKey,
+                    Key: {
+                        ...oldKey.Key,
+                        Flags: flags
+                    }
+                };
             }
             return keyContainer;
         });

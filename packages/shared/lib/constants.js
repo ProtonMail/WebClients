@@ -269,7 +269,7 @@ export const CONTACT_EMAILS_LIMIT = 1000;
 export const CONTACTS_LIMIT = 1000;
 export const EXPORT_CONTACTS_LIMIT = 50; // Maximum page size for export is 50 from API
 export const CONTACTS_REQUESTS_PER_SECOND = 10;
-export const ALL_MEMBERS_ID = 'ALL';
+export const ALL_MEMBERS_ID = -100;
 
 export const LABEL_EXCLUSIVE = {
     FOLDER: 1,

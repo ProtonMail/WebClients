@@ -7,23 +7,23 @@ export const ACTIONS = {
     SET_FLAGS: 'set-flags'
 };
 
-export const addKeyAction = ({ ID, decryptedPrivateKey, flags }) => {
+export const addKeyAction = ({ ID, privateKey, flags }) => {
     return {
         type: ACTIONS.ADD,
         payload: {
             ID,
-            decryptedPrivateKey,
+            privateKey,
             flags
         }
     };
 };
 
-export const reactivateKeyAction = ({ ID, decryptedPrivateKey, flags }) => {
+export const reactivateKeyAction = ({ ID, privateKey, flags }) => {
     return {
         type: ACTIONS.REACTIVATE,
         payload: {
             ID,
-            decryptedPrivateKey,
+            privateKey,
             flags
         }
     };

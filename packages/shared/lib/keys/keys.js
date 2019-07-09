@@ -1,5 +1,13 @@
-import { getKeys, decryptMessage, decryptPrivateKey as decryptArmoredKey, getMessage } from 'pmcrypto';
-
+import {
+    getKeys,
+    decryptMessage,
+    decryptPrivateKey as decryptArmoredKey,
+    getMessage,
+    encodeBase64,
+    arrayToBinaryString,
+    encryptMessage
+} from 'pmcrypto';
+import getRandomValues from 'get-random-values';
 import { VERIFICATION_STATUS } from 'pmcrypto/lib/constants';
 
 import { noop } from '../helpers/function';
@@ -28,7 +36,7 @@ export const getPrimaryKeyWithSalt = (Keys = [], KeySalts = []) => {
  * @param  {Object} decryptedOrganizationKey decrypted organization private key
  * @return {Object} {PrivateKey, decryptedToken}
  */
-const decryptMemberToken = async (token, decryptedOrganizationKey) => {
+export const decryptMemberToken = async (token, decryptedOrganizationKey) => {
     const { data: decryptedToken, verified } = await decryptMessage({
         message: await getMessage(token),
         privateKeys: [decryptedOrganizationKey],
@@ -43,36 +51,61 @@ const decryptMemberToken = async (token, decryptedOrganizationKey) => {
 };
 
 /**
+ * Generates the member token to decrypt its member key
+ * @return {Object}
+ */
+export const generateMemberToken = () => {
+    const value = getRandomValues(new Uint8Array(128));
+    return encodeBase64(arrayToBinaryString(value));
+};
+
+/**
+ * Encrypt the member key password with a key.
+ * @param  {String} token - The member key token
+ * @param  {Object} privateKey - The key to encrypt the token with
+ * @return {Object}
+ */
+export const encryptMemberToken = async (token, privateKey) => {
+    const { data: encryptedToken } = await encryptMessage({
+        data: token,
+        publicKeys: [privateKey.toPublic()],
+        privateKeys: [privateKey]
+    });
+    return encryptedToken;
+};
+
+/**
+ * Decrypt the list of member keys with the organization key.
+ * @param {Array} Keys
+ * @param {Object} organizationKey
+ * @return {Promise}
+ */
+export const prepareMemberKeys = (Keys, organizationKey) => {
+    return Promise.all(
+        Keys.map(async (Key) => {
+            const { PrivateKey, Token, Activation } = Key;
+            const decryptedToken = await decryptMemberToken(Token || Activation, organizationKey).catch(noop);
+
+            const [privateKey] = await getKeys(PrivateKey);
+            await privateKey.decrypt(decryptedToken).catch(noop);
+
+            return {
+                Key,
+                privateKey
+            };
+        })
+    );
+};
+
+/**
  * Decrypt the keys for a list of addresses.
  * @param {Array} Addresses
  * @param {String} keyPassword
- * @param {String} [OrganizationPrivateKey]
  * @return {Promise}
  */
-export const prepareKeys = async ({ Keys = [], keyPassword, OrganizationPrivateKey }) => {
+export const prepareKeys = async (Keys = [], keyPassword) => {
     if (!keyPassword) {
         throw new Error('Key password required');
-    }
-
-    if (OrganizationPrivateKey) {
-        const decryptedOrganizationKey = await decryptArmoredKey(OrganizationPrivateKey, keyPassword).catch(noop);
-
-        return Promise.all(
-            Keys.map(async (Key) => {
-                const { PrivateKey, Token, Activation } = Key;
-                const decryptedToken = await decryptMemberToken(Token || Activation, decryptedOrganizationKey).catch(
-                    noop
-                );
-
-                const [privateKey] = await getKeys(PrivateKey);
-                await privateKey.decrypt(decryptedToken).catch(noop);
-
-                return {
-                    Key,
-                    privateKey
-                };
-            })
-        );
     }
 
     return Promise.all(
