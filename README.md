@@ -68,7 +68,7 @@ CONTACTS_APP=contacts
 - **ROOT_DIR**: _mandatory_ Direcotory where your apps are cf [Where should I clone them](https://github.com/ProtonMail/protonmail-settings#where-should-i-should-i-clone-them-) 
 - **WEBCLIENT_APP**: Current directory where the Webclient is (_by default `Angular`_)
 - **SETTINGS_APP**: Current directory where protonmail-settings is (_by default `protonmail-settings`_)
-- **CONTACTS_APP**: Current directory where protonmail-contacts is (_by default `protonmail-contacts`_)
+- **CONTACTS_APP**: Current directory where proton-contacts is (_by default `proton-contacts`_)
 
 
 ### CI build - no minify

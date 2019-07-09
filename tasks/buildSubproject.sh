@@ -54,5 +54,5 @@ if [[ "$*" == *--deploy-subproject=settings* ]]; then
 fi
 
 if [[ "$*" == *--deploy-subproject=contacts* ]]; then
-    addSubProject "${CONTACTS_APP:-protonmail-contacts}" "$CONTACTS_DIST_DIR";
+    addSubProject "${CONTACTS_APP:-proton-contacts}" "$CONTACTS_DIST_DIR";
 fi
