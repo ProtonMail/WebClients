@@ -4,6 +4,7 @@ const execa = require('execa');
 const chalk = require('chalk');
 const dedent = require('dedent');
 
+const { success } = require('./log');
 const bash = (cli) => execa.shell(cli, { shell: '/bin/bash' });
 
 const TEMPLATE = path.resolve(__dirname, '..', 'template');
@@ -18,6 +19,8 @@ const PATH_APP_PKG = path.join(process.cwd(), 'package.json');
 async function main(type = 'default') {
     // Make a copy of the whole src repo
     await bash(`cp -r ${TEMPLATE}/${type} src`);
+    // Copy basic i18n setup
+    await bash(`cp -r ${TEMPLATE}/po po`);
     // Copy hidden config files
     await bash(`cp -r ${TEMPLATE}/.{editorconfig,eslintrc.json,prettierrc} .`);
 
@@ -25,6 +28,8 @@ async function main(type = 'default') {
     await bash(`cp -r ${TEMPLATE}/circle.yml .`);
     // Copy custom gitignore as during the npm install .gitignore is removed... wtf
     await bash(`cp -r ${TEMPLATE}/_gitignore .gitignore`);
+    await bash(`cp ${TEMPLATE}/Readme.md Readme.md`);
+    await bash('echo {} > appConfig.json');
 
     const pkgTpl = require('../template/package.json');
     const pkgApp = require(PATH_APP_PKG);
@@ -52,8 +57,10 @@ async function main(type = 'default') {
             - Circle.ci config (lint js + i18n)
             - Husky + lint-staged
             - React
+            - Deploy ready, you will need to create an empty branch: deploy-x
             - npm scripts
                 - ${chalk.yellow('start')}: dev server
+                - ${chalk.yellow('deploy')}: deploy
                 - ${chalk.yellow('pretty')}: run prettier
                 - ${chalk.yellow('i18n:getlatest')}: upgrade translations inside your app
                 - Hook postversion for pushing git tag
@@ -61,6 +68,8 @@ async function main(type = 'default') {
         ➙ Now you can run ${chalk.yellow('npm i')}
         ➙ Once it's done: ${chalk.yellow('npm start')}
     `);
+    console.log();
+    success('Setup done, do not forget about the appConfig.json');
 }
 
 module.exports = main;

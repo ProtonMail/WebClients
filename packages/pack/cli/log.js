@@ -1,4 +1,5 @@
 const chalk = require('chalk');
+
 const SCOPE = '[proton-pack]';
 
 const warn = (msg, info) => {

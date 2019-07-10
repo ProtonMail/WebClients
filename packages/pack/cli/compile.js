@@ -11,7 +11,7 @@ function main(config) {
         width: 60
     }).apply(compiler);
 
-    compiler.run(function(err, stats) {
+    compiler.run((err, stats) => {
         if (err) {
             error(err);
         }

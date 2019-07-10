@@ -1,4 +1,7 @@
 {
+  "config": {
+      "publicPathFlag": "--publicPath=/settings/"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "abortcontroller-polyfill": "^1.3.0",
@@ -13,7 +16,7 @@
     "react-components": "github:ProtonMail/react-components.git#master",
     "react-dom": "^16.8.6",
     "react-redux": "^6.0.0",
-    "react-dom": "^4.3.1",
+    "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.7",
@@ -25,7 +28,8 @@
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
     "prettier": "^1.17.1",
-    "proton-i18n": "github:ProtonMail/proton-i18n#semver:^1.40"
+    "proton-i18n": "github:ProtonMail/proton-i18n#semver:^1.4.0",
+    "proton-bundler": "github:ProtonMail/proton-bundler#semver:^1.2.0"
   },
   "scripts": {
     "start": "proton-pack dev-server",
@@ -36,7 +40,11 @@
     "i18n:validate": "proton-i18n validate lint-functions",
     "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
     "i18n:upgrade": "proton-i18n extract && proton-i18n crowdin -u && proton-i18n commit update",
-    "i18n:getlatest": "proton-i18n upgrade"
+    "i18n:getlatest": "proton-i18n upgrade",
+    "deploy": "proton-bundler",
+    "deploy:standalone": "proton-bundler --appMode standalone",
+    "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
+    "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone"
   },
   "lint-staged": {
     "*.js": [
