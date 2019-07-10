@@ -36,13 +36,7 @@ const loginForm = (helpLoginModal, gettextCatalog, translator, notification) => 
 
             const onClick = (e) => {
                 if (e.target.dataset.action === 'help') {
-                    helpLoginModal.activate({
-                        params: {
-                            close() {
-                                helpLoginModal.deactivate();
-                            }
-                        }
-                    });
+                    helpLoginModal.activate();
                 }
             };
 

@@ -9,7 +9,6 @@ function welcomeModal(pmModal, authentication, addressesModel, signatureModel) {
             const { DisplayName = '', Signature = '' } = addressesModel.getFirst();
 
             this.displayName = DisplayName || Name;
-            this.cancel = params.cancel;
             this.next = () => {
                 this.displayName.length &&
                     signatureModel.save({

@@ -45,43 +45,9 @@ body#eo-unlock {
 #pm_loginUnlock,
 #pm_loginTwoFactor,
 body#reset {
-  text-transform: uppercase;
-  #signUpProcess li {
-    text-align: left;
-  }
-  h4 {
-    padding: .9em 0;
-    line-height: 1.2em;
-    font-weight: 600;
-  }
-  a.pm_button.link {
-    text-decoration: underline;
-  }
-  img.logo {
-    display: block;
-    height: 20px;
-    width: auto;
-    margin: 0 auto;
-  }
-  input[type="text"],
-  input[type="number"],
-  input[type="password"],
-  input[type="email"] {
-    border-color: #dfdfdf;
-    background: rgba(107, 107, 107, 0.1);
-    color: $white;
-    line-height: 1;
-    height: 38px;
-    &:active,
-    &:focus {
-      color: $white;
-    }
-  }
   input[name="mailbox-password"] {
     background: rgba(255, 255, 255, 0.15);
   }
-
-  .password-container { line-height: 38px }
 
   .loginForm-input-password .password-messages,
   .unlock-input-password .password-messages { display: none }
@@ -93,96 +59,13 @@ body#reset {
     }
   }
 
-  p {
-    text-transform: initial;
-  }
-  ::-webkit-input-placeholder {
-     color: $white;
-  }
-
-  :-moz-placeholder {
-     color: $white;
-  }
-
-  ::-moz-placeholder {
-     color: $white;
-  }
-
-  input:-ms-input-placeholder {
-       color: $white;
-    }
-    ::-ms-input-placeholder {
-       color: $white;
-    }
-    :-ms-input-placeholder {
-       color: $white;
-    }
 }
 
 .loadingUnlock-loader-container {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.loadingUnlock-loader-container.pm_panel.alt {
-    padding: 0;
-}
-
-#pm_footer {
-  position: absolute;
-  text-align: center;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  color: $white;
-  text-transform: uppercase;
-  display: block;
-  padding: 1rem 0;
-  font-size: 90%;
-  p {
-    margin: 0;
-  }
-  a {
-    color: $white;
-    text-decoration: none;
-    &:hover {
-      color: #e5e5e5;
-    }
-  }
-  &.static {
-    position: static;
-    a {
-      text-decoration: none;
-      &:hover {
-        color: $black;
-      }
-    }
-  }
-}
-
-#pm_login,
-#pm_loginTwoFactor,
-body#reset,
-body#support-reset-password {
-  .alert-danger {
-    font-weight: bold;
-    color: #FFF;
-  }
-
-  .alert ul {
-    padding: 0;
-    font-size: .9em;
-  }
-
-  .alert ul li {
-    margin-bottom: .5em;
-  }
-}
 
 
 body.appConfigBody-is-mobile {
@@ -204,9 +87,4 @@ body.appConfigBody-is-mobile {
 
 .login-btn-oldversion::before { content: url('#hostURL2#'); }
 
-// Short resolutions
-@media (max-height: $short) {
-  #pm_footer {
-    position: static;
-  }
-}
+// Short resolutions to check

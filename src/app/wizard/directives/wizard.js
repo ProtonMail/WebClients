@@ -12,9 +12,6 @@ function wizard(dispatchers, $stateParams, $timeout, $state, welcomeModal, wizar
             const welcome = function() {
                 welcomeModal.activate({
                     params: {
-                        cancel() {
-                            welcomeModal.deactivate();
-                        },
                         next() {
                             welcomeModal.deactivate();
 

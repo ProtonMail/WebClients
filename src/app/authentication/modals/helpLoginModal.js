@@ -4,9 +4,7 @@ function helpLoginModal(pmModal) {
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/authentication/modals/helpLoginModal.tpl.html'),
         /* @ngInject */
-        controller: function(params) {
-            this.cancel = params.close;
-        }
+        controller: function() {}
     });
 }
 export default helpLoginModal;

@@ -1,41 +1,3 @@
-.loginForm-actions {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.loginForm-actions-row,
-.loginForm-actions-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.loginForm-actions-column {
-    flex-direction: column;
-}
-
-.loginForm-actions-row {
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.loginForm-actions-row > *,
-.loginForm-actions-column > * {
-    flex-grow: 1;
-    flex-shrink: 0;
-    margin: .5em 0 1em 0;
-    align-items: center;
-    text-align: center;
-    &:last-child { margin-right: 0 }
-}
-
-
-.loginForm-actions-row > * {
-    white-space: nowrap;
-}
-
 .loginForm-actions-forgot-reset {
     align-items: center;
     & > * {
@@ -54,63 +16,18 @@
     max-width: 100%;
 }
 
-.loginForm-actions-main {
-    width: 100%;
-    font-weight: bold;
-    font-size: 1em;
-    height: auto;
-    min-height: 45px; /*safari*/
-    line-height: 1.3em;
-    padding: .5em;
-    border-radius: $border-radius-large;
-    margin-top: 0;
-}
-
-
-
-.loginForm-btn-help {
-    background: none;
-    border: none;
-    padding: 0;
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.loginForm-link-signup,
-.loginForm-btn-oldversion {
-    text-transform: none;
-    font-weight: bold;
-}
-
-.loginForm-link-signup-button {
-    display: block;
-    border: 1px solid $white;
-    border-radius: $border-radius-large;
-    background: transparent;
-    text-decoration: none;
-    width: 100%;
-    padding: 1em .5em;
-    font-weight: bold;
-    color: $white;
-    transition: all .3s ease-out;
-
-    &:focus,
-    &:hover {
-        background: $white;
-        color: $dark !important;
-        transition: none;
-    }
-    &:active {
-        background: $primary;
-        border: 1px solid $primary;
-    }
-}
-
 .loginForm-actions-help,
 .loginForm-actions-new-container {
     width: 100%;
 }
 
+.white-link {
+    color: $white;
+    &:hover,
+    &:focus {
+        color: $white;
+    }
+}
 
 /* content with line-through around */
 .loginForm-actions-new-title {

@@ -5,13 +5,16 @@
     class="pm_panel pm_panel-login alt pm_form loginForm-container mauto"
     novalidate role="form"
     autocomplete="on">
-    <div class="pm_panel-login__inner">
+    <div class="pm_panel-login__inner bordered-container">
 
-    <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
+    <div class="mb2 aligncenter">
+        <img src="assets/img/logo.svg" height="20" width="148" alt="ProtonMail" />
+    </div>
 
-    <h4 class="aligncenter margin-bottom">
-        <i class="fa fa-user title-icon"></i> <span translate-context="Title" translate>User login</span>
-    </h4>
+    <h1 class="aligncenter h4 uppercase flex">
+        <icon data-name="account" data-fill="white" class="mr0-5 mtauto mbauto mlauto"></icon>
+        <span class="mrauto mtauto mbauto" translate-context="Title" translate>User login</span>
+    </h1>
 
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
@@ -26,12 +29,12 @@
         name="username"
         placeholder-translate-context="login form placeholder"
         placeholder-translate="Username"
-        class="margin loginForm-input-username"
+        class="mb1 pm-field w100 loginForm-input-username"
         required="" />
 
     <label for="password" class="sr-only" translate-context="Label" translate>Password</label>
     <password
-        class="margin loginForm-input-password"
+        class="mb1 loginForm-input-password"
         data-id="password"
         data-name="password"
         data-value="password"
@@ -46,14 +49,14 @@
                 id="login_btn"
                 type="submit"
                 ng-disabled="loading"
-                class="loginForm-actions-main pm_button primary primary-white pull-right loginForm-btn-submit disabled-if-network-activity"
+                class="loginForm-actions-main pm_button pm-button-blue pm-button--large w100 loginForm-btn-submit disabled-if-network-activity"
                 translate-context="Action"
                 translate>Login</button>
 
-            <div class="alignleft text-notransform loginForm-actions-help">
+            <div class="alignleft mt2 mb1 text-notransform loginForm-actions-help">
                 <span translate translate-context="Trouble logging in? Get help or try older version.">Trouble logging in? Get</span>
                 <button
-                    class="loginForm-btn-help "
+                    class="loginForm-btn-help alignbaseline color-white underline"
                     data-action="help"
                     type="button"
                     translate-comment="Action"
@@ -63,7 +66,7 @@
                 <span translate translate-context="Trouble logging in? Get help or try older version.">or try</span>
 
                 <a
-                    class="link loginForm-btn-oldversion"
+                    class="loginForm-btn-oldversion white-link"
                     href="https://old.protonmail.com/login"
                     target="_self"
                     translate-comment="Action"
@@ -72,11 +75,11 @@
             </div>
 
             <div class="loginForm-actions-new-container">
-                <div class="loginForm-actions-new-title text-notransform h4 margin-top" translate-context="title" translate>New to ProtonMail?</div>
+                <div class="loginForm-actions-new-title text-notransform h4 mt1" translate-context="title" translate>New to ProtonMail?</div>
 
-                <div class="loginForm-actions-create-container margin-top">
+                <div class="loginForm-actions-create-container mt1 mb1">
                     <link-website
-                        class="loginForm-link-signup-button loginForm-actions-right margin-bottom"
+                        class="loginForm-link-signup-button loginForm-actions-right inbl w100 mb1 pm-button--large aligncenter pm-button-blue color-white"
                         data-link="signup"></link-website>
                 </div>
             </div>
@@ -85,6 +88,6 @@
         </div>
     </div>
 </div>
-<div class="pm_panel-bottom text-notransform"><span translate translate-context="Want to test the latest features? Log in on BETA">Want to test the latest features? Log in on</span> <a href="https://beta.protonmail.com/" translate translate-context="Want to test the latest features? Log in on BETA">BETA</a>.</div>
+<div class="pm_panel-bottom text-notransform"><span translate translate-context="Want to test the latest features? Log in on BETA">Want to test the latest features? Log in on</span> <a href="https://beta.protonmail.com/" class="white-link" translate translate-context="Want to test the latest features? Log in on BETA">BETA</a>.</div>
 </form>
 

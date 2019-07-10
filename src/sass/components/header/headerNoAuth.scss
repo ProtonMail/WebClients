@@ -1,32 +1,7 @@
 .headerNoAuth-container {
-    height: 0; /* IE */
-    min-height: $headerHeight;
-    background: $secondary;
-    display: flex;
-    align-items: center;
-    padding: 0px 10px;
-    border-bottom-color: transparent;
-    color:$white;
-    font-family: sans-serif;
+    background: rgba( $black, 0.7 );
 }
 
-.headerNoAuth-list {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.headerNoAuth-list > [class*='headerNoAuth-item'] {
-    height: 35px;
-    max-width: 100%; /* ellipsis */
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
 
 .headerNoAuth-list > [class*='headerNoAuth-item'] a { color: inherit }
 .headerNoAuth-list > [class*='headerNoAuth-item'] a:not(:hover) { text-decoration: none }
@@ -37,28 +12,9 @@
     margin-right: auto;
 }
 
-.headerNoAuth-item-back::before {
-    content: "\f053";
-    font-family: FontAwesome;
-    margin-right: 4px;
- }
-
-.headerNoAuth-item-back,
-.headerNoAuth-item-report-button { font-size: 12px }
-
-.headerNoAuth-item-report-button {
-    height: 35px;
-    margin: 0px 20px 0px;
-    padding: 0px 10px;
-    border-radius: $border-radius;
-}
-
-.headerNoAuth-item-report-button:hover { background: rgba(0,0,0,0.2) }
-
-.headerNoAuth-btn-back {
-    flex: 1;
-    order: 0;
-    color: currentColor;
+[id="login"] .content {
+    background: transparent;
+    min-height: 100vh;
 }
 
 /* mobile */

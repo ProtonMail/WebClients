@@ -1,10 +1,11 @@
-<header class="pm_opensans headerNoAuth-container">
-    <ul class="headerNoAuth-list">
+<header class="headerNoAuth-container flex-item-noshrink p1">
+    <ul class="headerNoAuth-list flex flex-nowrap unstyled m0">
         <li class="headerNoAuth-item-back">
             <a
-                class="headerNoAuth-item-noAuth"
+                class="headerNoAuth-item-noAuth pm-button-dark"
                 href="https://protonmail.com"
                 target="_self">
+                <icon data-name="arrow-left" data-fill="currentColor"></icon>
                 <span
                     translate
                     translate-context="Action">Back to protonmail.com</span>
@@ -20,20 +21,19 @@
                     translate-context="Action">Back to login</span>
             </a>
         </li>
-        <li class="headerNoAuth-item-report">
+        <li class="headerNoAuth-item-report mlauto  mtauto mbauto mr2 ">
             <new-bug-report
                 class="headerNoAuth-item-report-button"></new-bug-report>
         </li>
-        <li class="headerNoAuth-item-noAuth headerNoAuth-signup">
+        <li class="headerNoAuth-item-noAuth headerNoAuth-signup mtauto mbauto">
             <link-website
                 data-key="forFree"
-                class="headerNoAuth-item-signup-button pm_button primary"
-                class="loginForm-link-signup"
+                class="headerNoAuth-item-signup-button pm-button-blue"
                 data-link="signup"></link-website>
         </li>
-        <li class="headerNoAuth-item-auth">
+        <li class="headerNoAuth-item-auth ellipsis">
             <a
-            class="headerNoAuth-item-logout-button pm_button primary"
+                class="headerNoAuth-item-logout-button pm_button primary"
                 ui-sref="login"
                 ui-sref-opts="{reload: true, notify: true}"
                 translate

@@ -1,19 +1,11 @@
 .pm_panel {
 	width: $panel;
-	margin: auto;
 	color: $white;
 	padding: 50px;
 	max-width: 100%;
 	&.alt {
-        position: relative;
-        background: rgba(255,255,255,.3);
-        border: 0;
-        border-radius: $border-radius-large;
-		margin-top: 8rem;
-		margin-bottom: 2rem;
 		padding: 50px 44px 0 44px;
 		min-height: 350px;
-        a { color: $white }
         &.pm_panel--twofactors {
             background: rgba(0,0,0,.1);
         }
