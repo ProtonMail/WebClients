@@ -5,6 +5,7 @@ const chalk = require('chalk');
 const dedent = require('dedent');
 
 const { success } = require('./log');
+
 const bash = (cli) => execa.shell(cli, { shell: '/bin/bash' });
 
 const TEMPLATE = path.resolve(__dirname, '..', 'template');
