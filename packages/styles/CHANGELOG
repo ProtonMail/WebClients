@@ -10,7 +10,7 @@
 
 - fixed `dropDown-item` border display
 - add exception for `pm-button` with `p0` (needed for dropdowns)
-- remove `margin` for `item-icon` (more reusable)
+- remove `margin` for `item-icon` (more reusable), replaced by a helper (`mr1-5`)
 - fixed some button designs for more stability for hover states
 
 
