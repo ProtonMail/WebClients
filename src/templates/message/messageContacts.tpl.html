@@ -1,17 +1,23 @@
-<div class="messageContacts-container">
+<div class="messageContacts-container inline-flex">
     <span class="messageContacts-where opacity-50 flex-self-vcenter container-to"></span>
-    <ul class="messageContacts-list">
-       <li class="messageContacts-list-item" ng-repeat="email in model track by $id(email)">
-            <div class="messageContacts-name-email" title="{{ ::email | contact:'Raw'}}">
+    <ul class="messageContacts-list unstyled m0">
+       <li
+        class="messageContacts-list-item flex"
+        ng-repeat="email in model track by $id(email)">
+            <div class="messageContacts-message-address-wrapper inline-flex flex-items-center">
+                <message-contacts-icon></message-contacts-icon>
+                <message-address-action-menu
+                    data-position="left"
+                    data-email="email"
+                    data-message="message"></message-address-action-menu>
+            </div>
+            <div
+                class="messageContacts-name-email"
+                title="{{ ::email | contact:'Raw'}}">
                 <span class="messageContacts-name ellipsis">{{ ::email | contact:'Name' }}</span>
                 <em class="messageContacts-email ellipsis">{{ ::email | contact:'Address' }}</em>
             </div>
-            <div class="messageContacts-message-address-wrapper">
-                <message-address-actions
-                    data-email="email"
-                    data-message-id="messageId"></message-address-actions>
-                <message-contacts-icon></message-contacts-icon>
-            </div>
+
         </li>
     </ul>
 </div>

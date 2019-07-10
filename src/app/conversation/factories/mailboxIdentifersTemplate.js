@@ -21,7 +21,7 @@ function mailboxIdentifersTemplate(labelsModel) {
     const templateLabel = (className = '', tooltip = '', color = '') => {
         const ptTooltip = stripHTML(tooltip).replace(/"|'/g, '');
         if (color) {
-            return `<i class="fa ${className}" pt-tooltip="${ptTooltip}" style="color: ${color}"></i>`;
+            return `<icon data-name="${className}" pt-tooltip="${ptTooltip}" style="color: ${color}" data-fill="currentColor" class="mailboxitem-folder"></icon>`;
         }
         return `<i class="fa ${className}" pt-tooltip="${ptTooltip}"></i>`;
     };
@@ -101,9 +101,6 @@ function mailboxIdentifersTemplate(labelsModel) {
          * @return {String}       Template
          */
         const getTemplateType = (type) => {
-            if (type === 2 || type === 3) {
-                return icon(MAP_TYPES.sent, templateTag);
-            }
             if (type === 1) {
                 return icon(MAP_TYPES.drafts, templateTag);
             }

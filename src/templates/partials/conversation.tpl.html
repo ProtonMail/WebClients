@@ -3,8 +3,12 @@
         <h1>
             <span ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
             <span>{{ conversation.Subject | unescape }}</span>
-            <pt-star data-model="conversation" data-pt-star-type="conversation" class="pm_buttons"></pt-star>
+            <labels-element data-element="conversation"></labels-element>
+            <pt-star
+                data-model="conversation"
+                data-pt-star-type="conversation"></pt-star>
         </h1>
+
         <div ng-hide="'secured.search.**' | includedByState" class="containsMessage">
             <p ng-if="showNotifier('trash')" class="bordered-container flex pt0-5 pb0-5 pl1 pr1">
                 <span ng-show="inTrash === false" translate translate-context="Info">This conversation contains trashed messages.</span>

@@ -1,4 +1,17 @@
-<div class="starButton" ng-class="isStarred() ? 'starButton-starred' : ''">
-  <a pt-tooltip-translate="Unstar" pt-tooltip-translate-context="Toggle Star message/conversation" class="starButton-unstar fa fa-star"></a>
-  <a pt-tooltip-translate="Star" pt-tooltip-translate-context="Toggle Star message/conversation" class="starButton-star fa fa-star-o"></a>
-</div>
+<button
+    class="starbutton relative"
+    type="button"
+    ng-class="isStarred() ? 'starbutton--is-starred' : ''">
+    <icon
+        pt-tooltip-translate="Star"
+        pt-tooltip-translate-context="Toggle Star message/conversation"
+        data-name="star"
+        data-no-fill="true"
+        class="starbutton-icon-star"></icon>
+    <icon
+        pt-tooltip-translate="Unstar"
+        pt-tooltip-translate-context="Toggle Star message/conversation"
+        data-name="starfull"
+        data-no-fill="true"
+        class="starbutton-icon-starred"></icon>
+</button>

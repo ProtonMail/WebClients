@@ -11,6 +11,61 @@ function messageAddressActionMenu(
 ) {
     const getContact = (Email) => _.find(contactEmails.get(), { Email });
 
+    function link(scope, el) {
+        const { dispatcher } = dispatchers(['composer.new']);
+
+        const toggle = (node, className, value) => {
+            return el[0].classList.contains(className) === value || node.classList.toggle(className);
+        };
+
+        const contact = getContact(scope.email.Address);
+        const contactInfo = {
+            Address: scope.email.Address,
+            Name: contactFilter(scope.email, 'Name'),
+            isContactGroup: !!scope.email.isContactGroup
+        };
+
+        toggle(el[0], 'messageAddressActionMenu-isContact', !!contact.ContactID);
+        toggle(el[0], 'messageAddressActionMenu-isSender', scope.message.Sender.Address === scope.email.Address);
+        toggle(el[0], 'messageAddressActionMenu-isGroup', !!scope.email.isContactGroup);
+
+        const advancedSettings = () => messageSenderSettings.showSettings(scope);
+        const showContact = () => {
+            const { ContactID: id } = getContact(contactInfo.Address);
+            id && $state.go('secured.contacts.details', { id });
+        };
+
+        const composeTo = () => {
+            const { Address, Name, isContactGroup } = contactInfo;
+            const message = messageModel({
+                ToList: [{ Address, Name, Group: isContactGroup ? Name : '' }]
+            });
+            dispatcher['composer.new']('new', { message });
+        };
+
+        const ACTIONS = {
+            'compose-to': composeTo,
+            'contact-details': showContact,
+            'advanced-settings': advancedSettings
+        };
+
+        const onClick = (e) => {
+            e.stopPropagation();
+            const { target } = e;
+            if (target.nodeName !== 'BUTTON') {
+                return;
+            }
+            const action = target.dataset.action;
+            ACTIONS[action] && ACTIONS[action]();
+        };
+
+        el.on('click', onClick);
+
+        scope.$on('$destroy', () => {
+            el.off('click', onClick);
+        });
+    }
+
     return {
         restrict: 'E',
         templateUrl: require('../../../templates/message/messageAddressActionMenu.tpl.html'),
@@ -19,71 +74,12 @@ function messageAddressActionMenu(
             message: '=',
             email: '='
         },
-        link(scope, el) {
-            const { dispatcher } = dispatchers(['composer.new']);
-
-            const toggle = (node, className, value) => {
-                return elem[0].classList.contains(className) === value || node.classList.toggle(className);
-            };
-
-            const advancedSettings = () => messageSenderSettings.showSettings(scope);
-            const composeTo = () => {
-                const { address: Address, name: Name, isContactGroup } = STATE.address;
-
-                const message = messageModel({
-                    ToList: [{ Address, Name, Group: isContactGroup ? Name : '' }]
-                });
-                dispatcher['composer.new']('new', { message });
-            };
-
-            const advancedSettings = () => messageSenderSettings.showSettings(scope);
-            const showContact = () => {
-                const { ContactID: id } = getContact(STATE.address.address) || {};
-                id && $state.go('secured.contacts.details', { id });
-            };
-
-            const openDropdown = (element) => {
-                dispatcher.dropdown('close');
-                trigger.click();
-                const { top: buttonTop, left: buttonLeft } = element.offset();
-                menu.offset({ top: buttonTop + 5, left: buttonLeft + 15 });
-            };
-
-            const ACTIONS = {
-                'compose-to': composeTo,
-                'contact-details': showContact,
-                'advanced-settings': advancedSettings
-            };
-
-            menu.on('click', ({ target }) => {
-                if (target.nodeName !== 'BUTTON') {
-                    return;
-                }
-                (ACTIONS[target.dataset.action] || _.noop)();
-                dispatcher.dropdown('close');
-            });
-
-            on('messageAddressActions', (e, { type, data: { messageID, address, element } }) => {
-                if (type === 'show' && scope.message.ID === messageID) {
-                    STATE.address = address;
-
-                    const isContact = !!getContact(address.address);
-                    toggle(elem[0], 'address-is-contact', isContact);
-                    toggle(elem[0], 'show-advanced-settings', scope.message.Sender.Address === address.address);
-                    toggle(elem[0], 'messageAddressActionMenu-isGroup', address.isContactGroup);
-
-                    openDropdown(element);
-                }
-
-                if (type === 'hide' && scope.message.ID === messageID) {
-                    dispatcher.dropdown('close');
-                }
-            });
-
-            scope.$on('$destroy', () => {
-                destroy();
-                unsubscribe();
-            });
+        compile(el, { position }) {
+            if (position) {
+                const node = el[0].querySelector('.messageAddressActionMenu-drop');
+                node.setAttribute('data-position', position);
+            }
+            return link;
         }
     };
 }

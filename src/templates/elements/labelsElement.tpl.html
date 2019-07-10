@@ -1,10 +1,10 @@
 <div class="pm_labels labelsElement-container" data-format="stack">
     <span
-      ng-repeat="label in labels track by label.ID"
-      data-label-id="{{ ::label.ID }}"
-      title="{{ ::label.Name }}"
-      class="labelsElement-label badgeLabel-grey-label cursor-pointer"
-      ng-style="::color(label)">
+        ng-repeat="label in labels track by label.ID"
+        data-label-id="{{ ::label.ID }}"
+        title="{{ ::label.Name }}"
+        class="labelsElement-label badgeLabel-grey-label cursor-pointer"
+        ng-style="::color(label)">
         <span class="labelsElement-name ellipsis color-white">{{ ::label.Name }}</span>
         <button class="labelsElement-btn-remove flex-item-noshrink" data-label-id="{{::label.ID}}">
             <icon data-name="off" data-fill="white" data-size="12" class="mauto"></icon>

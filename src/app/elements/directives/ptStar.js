@@ -10,7 +10,7 @@ function ptStar(dispatchers, tools, actionConversation) {
      */
     function isStarred({ LabelIDs = [], Labels = [] }) {
         if (Labels.length) {
-            return _.find(Labels, { ID: MAILBOX_IDENTIFIERS.starred });
+            return _.some(Labels, { ID: MAILBOX_IDENTIFIERS.starred });
         }
         return LabelIDs.some((label) => label === MAILBOX_IDENTIFIERS.starred);
     }
@@ -45,11 +45,8 @@ function ptStar(dispatchers, tools, actionConversation) {
             }
 
             function onClick(e) {
-                if (e.target.nodeName === 'A') {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleStar({ model: scope.model, type });
-                }
+                e.stopPropagation();
+                toggleStar({ model: scope.model, type });
             }
 
             el.on('click', onClick);

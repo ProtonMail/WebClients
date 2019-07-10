@@ -1,5 +1,4 @@
 import actionMessage from './directives/actionMessage';
-import allMessageLabels from './directives/allMessageLabels';
 import displayContentBtn from './directives/displayContentBtn';
 import embeddedImgLoader from './directives/embeddedImgLoader';
 import encryptionStatus from './directives/encryptionStatus';
@@ -79,7 +78,6 @@ export default angular
     .directive('messageDisplayError', messageDisplayError)
     .run((unsubscribeModel) => unsubscribeModel.init())
     .directive('actionMessage', actionMessage)
-    .directive('allMessageLabels', allMessageLabels)
     .directive('displayContentBtn', displayContentBtn)
     .directive('embeddedImgLoader', embeddedImgLoader)
     .directive('encryptionStatus', encryptionStatus)

@@ -2,6 +2,18 @@
     @include flexColumn();
 }
 
+.message-container.sent:not(.draft) .message-summary {
+    @extend .is-outbound
+
+}
+.message-container:not(.sent):not(.draft) .message-summary {
+    @extend .is-inbound
+}
+
+.message-container.draft {
+    border-color: $pm-global-muted;
+    .mailboxitem-folder { display: none }
+}
 
 @keyframes nodeInserted {
     from { opacity: 0.99; }
@@ -21,9 +33,6 @@
 }
 
 #conversation-view {
-    .fa-star {
-        color: $yellow-star;
-    }
     header {
 
         display:-webkit-flex;
@@ -62,23 +71,10 @@
             overflow-x: hidden;
             border-left: 1px solid transparent;
 
-            .starButton {
+            .starbutton {
                 position: absolute;
-                right: -10px;
+                right: 0;
                 top: 14px;
-                border: none;
-                margin-right: 0;
-                box-shadow: none;
-                a {
-                    background: transparent !important;
-                    line-height: 33px;
-                    height: 33px;
-                    padding: 0 10px;
-                    display: block;
-                    font-size: 1.5rem;
-                    box-shadow: none;
-                    border: 0;
-                }
             }
         }
         .containsMessage {
@@ -113,11 +109,8 @@
         }
 
         &.details {
-            .time-machine,
             .recipients-summary,
-            .message-summary-folder,
-            .toggleDetails-label-show,
-            .message-summary-labels { display: none !important }
+            .toggleDetails-label-show { display: none !important }
         }
 
         &:not(.hasSender) .message-contact {display: none}
@@ -191,15 +184,10 @@
             .meta .contact strong {
                 font-weight: 700;
             }
-            .time,
-            .status,
             .labels,
             .location.folders,
             .summary-right {
                 background: $white !important;
-            }
-            .time::after {
-                background: linear-gradient(to right,  rgba($white,0) 0%, $white 100%);
             }
         }
         .summary {
@@ -268,8 +256,6 @@
                 margin-left: .45rem;
             }
             .labels,
-            .time,
-            .status,
             .location.folders,
             .message-attachments {
                 display: inline-block;
@@ -279,10 +265,6 @@
             }
             .location.folders .pm_tag {
                 display: none;
-            }
-            .time {
-                position: relative;
-                z-index: 2;
             }
             .meta {
                 white-space: nowrap; /* single line for long from */
@@ -562,39 +544,6 @@ body.appConfigBody-is-mobile {
                     right: 23px;
                     bottom: 5px;
                     z-index: 5;
-                }
-                .time {
-                    position: absolute;
-                    right: 23px;
-                    top: 5px;
-                    background: $tertiary;
-                    max-width: 45%;
-                    min-width: 150px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    span {
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        display: inline-block;
-                        float: right;
-                        width: 100%;
-                    }
-                }
-                .status {
-                    position: absolute;
-                    right: 6px;
-                    top: 5px;
-                    .fa {
-                        display: inline-block;
-                        text-align: right;
-                        width: 1rem;
-                    }
-                    .signed-lock {
-                        width: 17px;
-                        height: 17px;
-                    }
                 }
             }
             & > div.details {

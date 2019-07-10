@@ -2,19 +2,19 @@
 function foldersMessage(dispatchers, gettextCatalog, $compile, mailboxIdentifersTemplate) {
     const MAP_LABELS = {
         archive: {
-            className: 'fa-archive',
+            className: 'archive',
             tooltip: gettextCatalog.getString('In archive', null, 'Tooltip')
         },
         trash: {
-            className: 'fa-trash-o',
+            className: 'trash',
             tooltip: gettextCatalog.getString('In trash', null, 'Tooltip')
         },
         spam: {
-            className: 'fa-ban',
+            className: 'spam',
             tooltip: gettextCatalog.getString('In spam', null, 'Tooltip')
         },
         folder: {
-            className: 'fa-folder'
+            className: 'folder'
         }
     };
 
@@ -22,10 +22,6 @@ function foldersMessage(dispatchers, gettextCatalog, $compile, mailboxIdentifers
         drafts: {
             className: 'pm_tag',
             tooltip: gettextCatalog.getString('Draft', null, 'Label')
-        },
-        sent: {
-            className: 'pm_tag',
-            tooltip: gettextCatalog.getString('Sent', null, 'Label')
         }
     };
 
