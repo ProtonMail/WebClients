@@ -63,12 +63,14 @@ ROOT_DIR=/home/dhoko/dev/taf
 WEBCLIENT_APP=Angular
 SETTINGS_APP=settings
 CONTACTS_APP=contacts
+CALENDAR_APP=calendar
 ``` 
 
 - **ROOT_DIR**: _mandatory_ Direcotory where your apps are cf [Where should I clone them](https://github.com/ProtonMail/protonmail-settings#where-should-i-should-i-clone-them-) 
 - **WEBCLIENT_APP**: Current directory where the Webclient is (_by default `Angular`_)
 - **SETTINGS_APP**: Current directory where protonmail-settings is (_by default `protonmail-settings`_)
 - **CONTACTS_APP**: Current directory where proton-contacts is (_by default `proton-contacts`_)
+- **CALENDAR_APP**: Current directory where proton-calendar is (_by default `proton-calendar`_)
 
 
 ### CI build - no minify
@@ -111,8 +113,9 @@ Each `deploy-<NAME>` will be available at `<NAME>.protonmail.com`.
 - `--api` : Set an API for the app (_dev, live, etc._)
 - `--debug`: turn on debug mode for the command (default false)
 - `--i18n`: Force sync translations (default false)
+- `--no-calendar`: Do not build the subproject proton-calendar
 - `--no-contacts`: Do not build the subproject proton-contacts
-- `--no-settings`: Do not build the subproject proton-settings
+- `--no-settings`: Do not build the subproject protonmail-settings
 
 ## I18n à la demande
 

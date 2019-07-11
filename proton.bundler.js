@@ -215,6 +215,18 @@ function main(argv) {
                     }
                 },
                 {
+                    title: 'Build the calendar application',
+                    skip() {
+                        if (argv.calendar === false) {
+                            return 'Flag --no-calendar inside the command.';
+                        }
+                    },
+                    task() {
+                        const args = process.argv.slice(3);
+                        return bash('npm', ['run', 'build:subproject', '--', '--deploy-subproject=calendar', ...args]);
+                    }
+                },
+                {
                     title: 'Generate the changelog',
                     enabled: () => !isCI,
                     task(ctx) {

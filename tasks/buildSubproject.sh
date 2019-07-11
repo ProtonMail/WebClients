@@ -36,6 +36,7 @@ WEBCLIENT_DIR="$ROOT_DIR/${WEBCLIENT_APP:-Angular}";
 # dist/settings will allow us to access to mail.protonmail.com/settings with protonmail-settings
 SETTINGS_DIST_DIR="dist/settings";
 CONTACTS_DIST_DIR="dist/contacts";
+CALENDAR_DIST_DIR="dist/calendar";
 
 function addSubProject {
     cd "$ROOT_DIR/$1";
@@ -55,4 +56,8 @@ fi
 
 if [[ "$*" == *--deploy-subproject=contacts* ]]; then
     addSubProject "${CONTACTS_APP:-proton-contacts}" "$CONTACTS_DIST_DIR";
+fi
+
+if [[ "$*" == *--deploy-subproject=calendar* ]]; then
+    addSubProject "${CALENDAR_APP:-proton-calendar}" "$CALENDAR_DIST_DIR";
 fi
