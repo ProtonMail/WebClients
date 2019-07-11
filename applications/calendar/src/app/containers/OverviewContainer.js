@@ -29,13 +29,8 @@ const OverviewContainer = () => {
     const [user] = useUser();
     const ref = useRef();
 
-    const handlePrev = () => {
-        ref.current.getInstance().prev();
-    };
-
-    const handleNext = () => {
-        ref.current.getInstance().next();
-    };
+    const handlePrev = () => ref.current.getInstance().prev();
+    const handleNext = () => ref.current.getInstance().next();
 
     return (
         <Main>
