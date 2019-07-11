@@ -16,29 +16,29 @@
     <div class="flex flex-nowrap onmobile-flex-column mb1">
         <label
             for="otherAmount"
-            class="pm-label"
+            class="w33 pt0-5 "
             translate
             translate-context="Title">Amount</label>
 
-        <div class="donateModal-choose-amount flex flex-items-end mlauto">
-            <div class="pm-group-buttons mlauto">
+        <div class="donateModal-choose-amount w66 flex flex-items-end">
+            <div class="pm-group-buttons">
              <button
-               class="pm-group-button pm-button donationForm-btn-amount"
+               class="pm-group-button pm-button pm-button--for-icon donationForm-btn-amount"
                ng-class="{ 'is-active': model.amount === 5 }"
                type="button"
                data-amount="5">5</button>
              <button
-               class="pm-group-button pm-button donationForm-btn-amount"
+               class="pm-group-button pm-button pm-button--for-icon donationForm-btn-amount"
                ng-class="{ 'is-active': model.amount === 10 }"
                type="button"
                data-amount="10">10</button>
              <button
-               class="pm-group-button pm-button donationForm-btn-amount"
+               class="pm-group-button pm-button pm-button--for-icon donationForm-btn-amount"
                ng-class="{ 'is-active': model.amount === 50 }"
                type="button"
                data-amount="50">50</button>
              <button
-               class="pm-group-button pm-button donationForm-btn-amount"
+               class="pm-group-button pm-button pm-button--for-icon donationForm-btn-amount"
                ng-class="{ 'is-active': model.amount === 100 }"
                type="button"
                data-amount="100">100</button>
@@ -48,7 +48,7 @@
                type="number"
                min="2"
                max="999999"
-               class="pm-field w20 ml1"
+               class="pm-field w20 ml0-5 mr0-5"
                id="otherAmount"
                name="otherAmount"
                ng-model="model.otherAmount"
@@ -57,7 +57,7 @@
                placeholder-translate="Other">
 
             <select
-               class="donateModal-select-currency pm-field"
+               class="donateModal-select-currency mlauto pm-field"
                ng-model="model.currency"
                ng-options="currency.label for currency in currencies"></select>
 
@@ -89,12 +89,12 @@
     <div class="donationForm-paymentMethod flex flex-nowrap onmobile-flex-column mb2">
         <label
             for="paymentMethod"
-            class="pm-label"
+            class="pt0-5 w33"
             translate-context="Title"
             translate>Select payment method:</label>
         <select
             id="paymentMethod"
-            class="pm-field w100"
+            class="pm-field flex-item-fluid"
             ng-model="model.method"
             ng-options="method.label for method in methods"></select>
     </div>

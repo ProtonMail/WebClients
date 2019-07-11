@@ -16,6 +16,9 @@
     background: transparent;
     min-height: 100vh;
 }
+[id="signup"] .content {
+    min-height: 100vh;
+}
 
 /* mobile */
 body.appConfigBody-is-mobile .headerNoAuth-item-report { display: none }
