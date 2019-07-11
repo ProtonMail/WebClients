@@ -1,44 +1,4 @@
-.listAttachments-container.hidden {display: none}
-
-// .listAttachments-container {padding: 0 10px}
-// .state-eoReply.listAttachments-container {padding: 0 35px}
-
-// .listAttachments-item {
-//     padding-left: 3rem;
-//     padding-right: .5rem;
-//     > * * { pointer-events: none }
-// }
-
-// [class*="listAttachments-icon"] {
-//     display: block;
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     bottom: 0;
-//     width: 2.5rem;
-//     height: 40px;
-//     line-height: 40px;
-//     text-align: center;
-//     z-index: 2;
-//     color: $default-color;
-//     font-size: 22px;
-
-//     &.file-inner-icon {
-//         font-size: 12px;
-//     }
-//     &.stuff {
-//         opacity: 0;
-//     }
-//     &.embedded{
-//         color:$primary;
-//     }
-//     &.stuff.fa-cog,
-//     &.stuff.fa-download {
-//         opacity: 1;
-//         border-right: none;
-//     }
-// }
-
+.listAttachments-container.hidden,
 .listAttachments-icon-loader,
 .listAttachments-icon-download { display: none }
 

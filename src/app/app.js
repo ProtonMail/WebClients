@@ -137,7 +137,7 @@ angular
             if (settingRoute) {
                 // we have a redirection ex: upgrade storage -> /dashboard to upgrade plans, now in /subsbscription
                 const route = settingRoute === 'dashboard' ? 'subscription' : settingRoute;
-                return document.location.assign(`${document.location.origin}/settings/${settingRoute}`);
+                return document.location.assign(`${document.location.origin}/settings/${route}`);
             }
 
             if (toState.name.includes('.contacts')) {
