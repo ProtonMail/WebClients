@@ -1,6 +1,8 @@
 import React from 'react';
 import { useModals, NavMenu } from 'react-components';
 import { c } from 'ttag';
+import moment from 'moment';
+
 import EventModal from '../modals/EventModal';
 import MiniCalendar from '../MiniCalendar';
 
@@ -26,7 +28,12 @@ const AuthSidebar = () => {
 
     return (
         <div className="sidebar flex noprint">
-            <MiniCalendar onSelect={handleSelect} />
+            <MiniCalendar
+                defaultDate={new Date()}
+                setDefaultDate
+                onSelect={handleSelect}
+                format={moment.localeData().longDateFormat('L')}
+            />
             <nav className="navigation flex-item-fluid scroll-if-needed mb1">
                 <NavMenu list={list} />
             </nav>
