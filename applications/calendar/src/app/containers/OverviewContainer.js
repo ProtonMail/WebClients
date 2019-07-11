@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useUser, PrimaryButton } from 'react-components';
+import { useUser, Button } from 'react-components';
 import { c } from 'ttag';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
@@ -39,9 +39,8 @@ const OverviewContainer = () => {
 
     return (
         <Main>
-            Hello {user.Name}
-            <PrimaryButton onClick={handlePrev}>{c('Action').t`<`}</PrimaryButton>
-            <PrimaryButton onClick={handleNext}>{c('Action').t`>`}</PrimaryButton>
+            <Button onClick={handlePrev}>{c('Action').t`<`}</Button>
+            <Button onClick={handleNext}>{c('Action').t`>`}</Button>
             <Calendar
                 usageStatistics={false}
                 ref={ref}
