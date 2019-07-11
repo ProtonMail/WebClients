@@ -18,7 +18,8 @@ function transformBlockquotes(gettextCatalog) {
                     const button = document.createElement('button');
                     const title = gettextCatalog.getString('Show previous message', null, 'Title');
 
-                    button.className = 'fa fa-ellipsis-h pm_button more proton-message-blockquote-toggle';
+                    button.className = 'pm-button pm-button--small more proton-message-blockquote-toggle';
+                    button.textContent = '...'; // perf issue we can't use <icon> as we don't want to compile.
                     button.setAttribute('title', title);
                     blockquote.parentNode.insertBefore(button, blockquote);
 
