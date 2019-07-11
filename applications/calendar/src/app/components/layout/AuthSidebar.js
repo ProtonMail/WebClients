@@ -27,7 +27,7 @@ const AuthSidebar = () => {
     ];
 
     return (
-        <div className="sidebar flex noprint">
+        <div className="sidebar flex flex-column noprint">
             <MiniCalendar
                 defaultDate={new Date()}
                 setDefaultDate
