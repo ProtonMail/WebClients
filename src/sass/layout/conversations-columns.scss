@@ -1,33 +1,16 @@
 // DEFAULT / ALL
 .conversation {
-
     border-bottom: 1px solid $border;
-
-    .ptSelectConversation-container {
-        @include flexRow();
-        @include flexAlignCenter();
-        @include flexJustifyCenter();
-
-        height: 100%;
-        width: 38px; /* .elements-selector-check + (.pm_toolbar padding-left*2) */
-        min-width: 38px;
-        text-align: center;
-        input[type="checkbox"] {
-            margin: 0;
-        }
-    }
 
     .size {
         width: 6.5em;
     }
 
-    .folderConversations-container:empty {
-        margin: 0;
-    }
     .folderConversations-container {
-        .fa + .fa { margin-left: .25em; }
+        svg + svg { margin-left: .25em; }
     }
 
+    .folderConversations-container:empty,
     &:not(.hasAttachments) .conversation-icon-attachment,
     &:not(.expiring) .conversation-icon-expiration { display: none }
 
@@ -57,9 +40,7 @@
         color: set-color($active-background,$white);
         border-bottom-color: $active-background;
         h4 { color: inherit }
-        .customMaskInput-mask { border-color: rgba(0,0,0,0.5) }
     }
-
 }
 
 

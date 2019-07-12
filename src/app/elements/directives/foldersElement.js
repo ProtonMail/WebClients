@@ -15,31 +15,31 @@ function foldersElement($state, dispatchers, gettextCatalog, $compile, mailboxId
     const isAllowedState = () => allowedStates.some((key) => $state.includes(key));
     const MAP_LABELS = {
         inbox: {
-            className: 'fa-inbox',
+            className: 'inbox',
             tooltip: gettextCatalog.getString('In inbox', null, 'Type of label for a message/conversation')
         },
         sent: {
-            className: 'fa-send',
+            className: 'sent',
             tooltip: gettextCatalog.getString('In sent', null, 'Type of label for a message/conversation')
         },
         drafts: {
-            className: 'fa-file-text-o',
+            className: 'drafts',
             tooltip: gettextCatalog.getString('In drafts', null, 'Type of label for a message/conversation')
         },
         archive: {
-            className: 'fa-archive',
+            className: 'archive',
             tooltip: gettextCatalog.getString('In archive', null, 'Type of label for a message/conversation')
         },
         trash: {
-            className: 'fa-trash-o',
+            className: 'trash',
             tooltip: gettextCatalog.getString('In trash', null, 'Type of label for a message/conversation')
         },
         spam: {
-            className: 'fa-ban',
+            className: 'spam',
             tooltip: gettextCatalog.getString('In spam', null, 'Type of label for a message/conversation')
         },
         folder: {
-            className: 'fa-folder'
+            className: 'folder'
         }
     };
 

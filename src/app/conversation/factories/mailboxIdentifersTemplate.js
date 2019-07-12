@@ -23,7 +23,7 @@ function mailboxIdentifersTemplate(labelsModel) {
         if (color) {
             return `<icon data-name="${className}" pt-tooltip="${ptTooltip}" style="color: ${color}" data-fill="currentColor" class="mailboxitem-folder"></icon>`;
         }
-        return `<i class="fa ${className}" pt-tooltip="${ptTooltip}"></i>`;
+        return `<icon data-name="${className}" pt-tooltip="${ptTooltip}"></icon>`;
     };
 
     const getFolder = (labelIDs = []) => {
