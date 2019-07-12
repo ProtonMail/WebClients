@@ -108,7 +108,7 @@ const SubscriptionSection = ({ permission }) => {
                         </div>
                         <div className="flex-autogrid-item alignright">
                             <SmallButton onClick={handleModal()}>
-                                {hasPaidMail ? c('Action').t`Manage` : c('Action').t`Upgrade`}
+                                {hasPaidMail ? c('Action').t`Update` : c('Action').t`Upgrade`}
                             </SmallButton>
                         </div>
                     </div>
@@ -183,7 +183,7 @@ const SubscriptionSection = ({ permission }) => {
                             </div>
                             <div className="flex-autogrid-item alignright">
                                 <SmallButton onClick={handleModal()}>
-                                    {hasPaidVpn ? c('Action').t`Manage` : c('Action').t`Upgrade`}
+                                    {hasPaidVpn ? c('Action').t`Update` : c('Action').t`Upgrade`}
                                 </SmallButton>
                             </div>
                         </div>

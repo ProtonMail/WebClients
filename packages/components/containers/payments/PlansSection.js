@@ -38,7 +38,7 @@ const PlansSection = () => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
-    const [{ isPaid, hasPaidMail, hasPaidVpn }] = useUser();
+    const [{ isFree, isPaid, hasPaidMail, hasPaidVpn }] = useUser();
     const [subscription = {}, loadingSubscription] = useSubscription();
     const [plans = [], loadingPlans] = usePlans();
     const { state: showPlans, toggle: togglePlans } = useToggle(!isPaid);
@@ -57,11 +57,14 @@ const PlansSection = () => {
     };
 
     const handleOpenModal = () => {
+        if (isFree) {
+            return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
+        }
         createModal(
             <ConfirmModal
                 title={c('Title').t`Confirm downgrade`}
                 onConfirm={handleUnsubscribe}
-                confirm={c('Action'.t`Downgrade`)}
+                confirm={c('Action').t`Downgrade`}
             >
                 <Paragraph>{c('Info')
                     .t`This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.`}</Paragraph>
@@ -414,25 +417,25 @@ const PlansSection = () => {
                                 </td>
                                 <td className="aligncenter">
                                     <SmallButton className="pm-button--primary" onClick={handleModal()}>{c('Action')
-                                        .t`Select`}</SmallButton>
+                                        .t`Update`}</SmallButton>
                                 </td>
                                 <td className="aligncenter">
                                     <SmallButton
                                         className="pm-button--primary"
                                         onClick={handleModal({ plus: 1, vpnplus: 1 })}
-                                    >{c('Action').t`Select`}</SmallButton>
+                                    >{c('Action').t`Update`}</SmallButton>
                                 </td>
                                 <td className="aligncenter">
                                     <SmallButton
                                         className="pm-button--primary"
                                         onClick={handleModal({ professional: 1, vpnplus: 1 })}
-                                    >{c('Action').t`Select`}</SmallButton>
+                                    >{c('Action').t`Update`}</SmallButton>
                                 </td>
                                 <td className="aligncenter">
                                     <SmallButton
                                         className="pm-button--primary"
                                         onClick={handleModal({ visionary: 1 })}
-                                    >{c('Action').t`Select`}</SmallButton>
+                                    >{c('Action').t`Update`}</SmallButton>
                                 </td>
                             </tr>
                         </tbody>
