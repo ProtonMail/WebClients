@@ -2,10 +2,6 @@
 .conversation {
     border-bottom: 1px solid $border;
 
-    .size {
-        width: 6.5em;
-    }
-
     .folderConversations-container {
         svg + svg { margin-left: .25em; }
     }
