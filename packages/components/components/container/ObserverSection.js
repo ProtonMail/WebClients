@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import 'intersection-observer';
 import { buildThresholds, indexOfMax } from 'react-components';
@@ -15,7 +15,14 @@ const ObserverSection = ({
     wait,
     children
 }) => {
+    const ref = useRef();
+    const unmounted = useRef();
+
     const handleIntersect = (entries) => {
+        // Needed due to the debounce
+        if (unmounted.current) {
+            return;
+        }
         entries.forEach((entry) => {
             setIntersectionData(({ intersectionRatios, listOfIds }) => {
                 const newIntersectionRatios = intersectionRatios.slice();
@@ -31,23 +38,26 @@ const ObserverSection = ({
     };
 
     useEffect(() => {
+        if (!ref.current) {
+            return;
+        }
+
         const options = {
             root: rootElement,
             rootMargin,
             threshold: buildThresholds(granularity)
         };
-        const target = document.getElementById(id);
 
         const observer = new IntersectionObserver(debounce(handleIntersect, wait), options);
-        observer.observe(target);
-
+        observer.observe(ref.current);
         return () => {
             observer.disconnect();
+            unmounted.current = true;
         };
-    }, []);
+    }, [ref.current]);
 
     return (
-        <section id={id} className={className}>
+        <section id={id} className={className} ref={ref}>
             {children}
         </section>
     );

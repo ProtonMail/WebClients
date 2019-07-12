@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { ObserverSection } from 'react-components';
+
 import useDebounceInput from '../input/useDebounceInput';
+import ObserverSection from './ObserverSection';
 
 const ObserverSections = ({ granularity, wait, children }) => {
     // throw error if any child does not have id
