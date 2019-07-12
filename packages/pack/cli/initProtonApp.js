@@ -1,6 +1,5 @@
 const path = require('path');
 const fs = require('fs').promises;
-const execa = require('execa');
 const chalk = require('chalk');
 const dedent = require('dedent');
 
