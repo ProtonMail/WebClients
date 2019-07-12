@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Button, Block, Loader, SubTitle, useUser, useModals, useUserKeys } from 'react-components';
+import { Alert, Button, Block, Loader, SubTitle, useUser, useModals, useUserKeys } from 'react-components';
 
 import { convertKey, getPrimaryKey } from './shared/helper';
 import { ACTIONS } from './KeysActions';
@@ -21,6 +21,16 @@ const UserKeysSections = () => {
             <>
                 {title}
                 <Loader />
+            </>
+        );
+    }
+
+    // E.g. vpn user
+    if (!userKeysList.length) {
+        return (
+            <>
+                {title}
+                <Alert>{c('Info').t`No contact encryption keys exist`}</Alert>
             </>
         );
     }
