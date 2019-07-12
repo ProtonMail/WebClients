@@ -2,20 +2,25 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Pikaday from 'pikaday';
 
-const MiniCalendar = ({ ...rest }) => {
+const MiniCalendar = ({ date, ...rest }) => {
     const inputRef = useRef();
     const containerRef = useRef();
+    const pickerRef = useRef();
 
     useEffect(() => {
-        const picker = new Pikaday({
+        pickerRef.current = new Pikaday({
             field: inputRef.current,
             container: containerRef.current,
             bound: false,
             ...rest
         });
 
-        return () => picker.destroy();
+        return () => pickerRef.current.destroy();
     });
+
+    useEffect(() => {
+        pickerRef.current.setDate(date, true);
+    }, [date]);
 
     return (
         <>
@@ -25,6 +30,8 @@ const MiniCalendar = ({ ...rest }) => {
     );
 };
 
-MiniCalendar.propTypes = {};
+MiniCalendar.propTypes = {
+    date: PropTypes.instanceOf(Date)
+};
 
 export default MiniCalendar;

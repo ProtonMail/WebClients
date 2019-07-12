@@ -15,7 +15,6 @@ import {
     ColorPicker
 } from 'react-components';
 import { c } from 'ttag';
-import tinycolor from 'tinycolor2';
 
 import EventForm from './EventForm';
 import AlarmForm from './AlarmForm';
@@ -44,7 +43,6 @@ const getDefaultModel = () => {
             .add(30 * Math.floor(moment().minutes() / 30), 'minutes')
             .valueOf() - endDate;
     return {
-        color: 'pink',
         type: 'event',
         description: '',
         allDay: false,
