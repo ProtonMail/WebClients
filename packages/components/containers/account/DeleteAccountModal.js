@@ -82,7 +82,6 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
 
     return (
         <FormModal
-            small
             onSubmit={handleSubmit}
             onClose={onClose}
             title={c('Title').t`Delete account`}
