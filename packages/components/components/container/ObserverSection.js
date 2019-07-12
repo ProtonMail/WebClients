@@ -18,29 +18,33 @@ const ObserverSection = ({
     const ref = useRef();
     const unmounted = useRef();
 
-    const handleIntersect = (entries) => {
-        // Needed due to the debounce
-        if (unmounted.current) {
-            return;
-        }
-        entries.forEach((entry) => {
-            setIntersectionData(({ intersectionRatios, listOfIds }) => {
-                const newIntersectionRatios = intersectionRatios.slice();
-                newIntersectionRatios[index] = Math.min(entry.intersectionRatio, 1); // manual fix for bug IntersectionObserverEntry.intersectionRatio > 1
-                const idToDisplay = listOfIds[indexOfMax(newIntersectionRatios)];
-                return {
-                    intersectionRatios: newIntersectionRatios,
-                    hashToDisplay: `#${idToDisplay}`,
-                    listOfIds
-                };
-            });
-        });
-    };
+    useEffect(() => {
+        return () => (unmounted.current = true);
+    }, []);
 
     useEffect(() => {
         if (!ref.current) {
             return;
         }
+
+        const handleIntersect = (entries) => {
+            // Needed due to the debounce
+            if (unmounted.current) {
+                return;
+            }
+            entries.forEach((entry) => {
+                setIntersectionData(({ intersectionRatios, listOfIds }) => {
+                    const newIntersectionRatios = intersectionRatios.slice();
+                    newIntersectionRatios[index] = Math.min(entry.intersectionRatio, 1); // manual fix for bug IntersectionObserverEntry.intersectionRatio > 1
+                    const idToDisplay = listOfIds[indexOfMax(newIntersectionRatios)];
+                    return {
+                        intersectionRatios: newIntersectionRatios,
+                        hashToDisplay: `#${idToDisplay}`,
+                        listOfIds
+                    };
+                });
+            });
+        };
 
         const options = {
             root: rootElement,
@@ -52,7 +56,6 @@ const ObserverSection = ({
         observer.observe(ref.current);
         return () => {
             observer.disconnect();
-            unmounted.current = true;
         };
     }, [ref.current]);
 
