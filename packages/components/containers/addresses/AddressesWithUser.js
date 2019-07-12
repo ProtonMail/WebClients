@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
-import { useAddresses, Table, TableHeader, TableBody, TableRow } from 'react-components';
+import { useAddresses, Alert, Table, TableHeader, TableBody, TableRow } from 'react-components';
 import PropTypes from 'prop-types';
 
 import AddressStatus from './AddressStatus';
@@ -10,6 +10,14 @@ import { getStatus } from './helper';
 const AddressesUser = ({ user }) => {
     const [addresses, loadingAddresses] = useAddresses();
     const member = useMemo(() => ({ Self: 1 }), []);
+
+    if (!loadingAddresses && !addresses.length) {
+        return (
+            <>
+                <Alert>{c('Info').t`No addresses exist`}</Alert>
+            </>
+        );
+    }
 
     return (
         <Table>

@@ -10,7 +10,8 @@ import {
     useNotifications,
     useMailSettings,
     useEventManager,
-    useApiWithoutResult
+    useLoading,
+    useApi
 } from 'react-components';
 import {
     updateComposerMode,
@@ -34,56 +35,58 @@ const { GROUP } = VIEW_MODE;
 const LayoutsSection = () => {
     const [{ ComposerMode, ViewMode, ViewLayout, StickyLabels, DraftMIMEType, RightToLeft } = {}] = useMailSettings();
     const { call } = useEventManager();
-
     const { createNotification } = useNotifications();
+    const api = useApi();
+    const [loadingComposerMode, withLoadingComposerMode] = useLoading();
+    const [loadingViewMode, withLoadingViewMode] = useLoading();
+    const [loadingViewLayout, withLoadingViewLayout] = useLoading();
+    const [loadingStickyLabels, withLoadingStickyLabels] = useLoading();
+    const [loadingDraftType, withLoadingDraftType] = useLoading();
+    const [loadingRightToLeft, withLoadingRightToLeft] = useLoading();
+
+    const subTitle = <SubTitle>{c('Title').t`Layouts`}</SubTitle>;
+
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
-    const { request: requestComposerMode, loading: loadingComposerMode } = useApiWithoutResult(updateComposerMode);
-    const { request: requestViewMode, loading: loadingViewMode } = useApiWithoutResult(updateViewMode);
-    const { request: requestViewLayout, loading: loadingViewLayout } = useApiWithoutResult(updateViewLayout);
-    const { request: requestStickyLabels, loading: loadingStickyLabels } = useApiWithoutResult(updateStickyLabels);
-    const { request: requestDraftType, loading: loadingDraftType } = useApiWithoutResult(updateDraftType);
-    const { request: requestRightToLeft, loading: loadingRightToLeft } = useApiWithoutResult(updateRightToLeft);
-
     const handleChangeComposerMode = async (mode) => {
-        await requestComposerMode(mode);
-        call();
+        await api(updateComposerMode(mode));
+        await call();
         notifyPreferenceSaved();
     };
 
     const handleChangeViewMode = async (mode) => {
-        await requestViewMode(mode);
-        call();
+        await api(updateViewMode(mode));
+        await call();
         notifyPreferenceSaved();
     };
 
     const handleChangeViewLayout = async (mode) => {
-        await requestViewLayout(mode);
-        call();
+        await api(updateViewLayout(mode));
+        await call();
         notifyPreferenceSaved();
     };
 
     const handleToggleStickyLabels = async (value) => {
-        await requestStickyLabels(value);
-        call();
+        await api(updateStickyLabels(value));
+        await call();
         notifyPreferenceSaved();
     };
 
     const handleChangeDraftType = async (value) => {
-        await requestDraftType(value);
-        call();
+        await api(updateDraftType(value));
+        await call();
         notifyPreferenceSaved();
     };
 
     const handleChangeRightToLeft = async (value) => {
-        await requestRightToLeft(value);
-        call();
+        await api(updateRightToLeft(value));
+        await call();
         notifyPreferenceSaved();
     };
 
     return (
         <>
-            <SubTitle>{c('Title').t`Layouts`}</SubTitle>
+            {subTitle}
             <Alert>{c('Info').t`Lorem ipsum`}</Alert>
             <Row>
                 <Label htmlFor="composerMode">
@@ -97,7 +100,7 @@ const LayoutsSection = () => {
                 <ComposerModeRadios
                     id="composerMode"
                     composerMode={ComposerMode}
-                    onChange={handleChangeComposerMode}
+                    onChange={(value) => withLoadingComposerMode(handleChangeComposerMode(value))}
                     loading={loadingComposerMode}
                 />
             </Row>
@@ -113,7 +116,7 @@ const LayoutsSection = () => {
                 <ViewLayoutRadios
                     id="layoutMode"
                     viewLayout={ViewLayout}
-                    onChange={handleChangeViewLayout}
+                    onChange={(value) => withLoadingViewLayout(handleChangeViewLayout(value))}
                     loading={loadingViewLayout}
                 />
             </Row>
@@ -127,7 +130,7 @@ const LayoutsSection = () => {
                 </Label>
                 <ViewModeRadios
                     viewMode={ViewMode}
-                    onChange={handleChangeViewMode}
+                    onChange={(value) => withLoadingViewMode(handleChangeViewMode(value))}
                     loading={loadingViewMode}
                     id="viewMode"
                 />
@@ -146,7 +149,7 @@ const LayoutsSection = () => {
                             id="stickyLabelsToggle"
                             stickyLabels={StickyLabels}
                             loading={loadingStickyLabels}
-                            onToggle={handleToggleStickyLabels}
+                            onToggle={(value) => withLoadingStickyLabels(handleToggleStickyLabels(value))}
                         />
                     </Field>
                 </Row>
@@ -157,7 +160,7 @@ const LayoutsSection = () => {
                     <DraftTypeSelect
                         id="draftTypeSelect"
                         draftType={DraftMIMEType}
-                        onChange={handleChangeDraftType}
+                        onChange={(value) => withLoadingDraftType(handleChangeDraftType(value))}
                         loading={loadingDraftType}
                     />
                 </Field>
@@ -168,7 +171,7 @@ const LayoutsSection = () => {
                     <TextDirectionSelect
                         id="textDirection"
                         rightToLeft={RightToLeft}
-                        onChange={handleChangeRightToLeft}
+                        onChange={(value) => withLoadingRightToLeft(handleChangeRightToLeft(value))}
                         loading={loadingRightToLeft}
                     />
                 </Field>
