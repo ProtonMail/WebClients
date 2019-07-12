@@ -1,7 +1,8 @@
-# [1.6.xx] - 2019-06-xx
+# [1.7.0] - 2019-07-12
 
 ## New
 
+- added `android`, `apple`, `facebook`, `github`, `instagram`, `linkedin`, `mastodon`, `reddit`, `youtube` (updated `twitter` one)
 - added design for checkbox for “select all”
 - added `w15` width helper
 - added icon `shape-contract-window` (for composer)
@@ -13,6 +14,14 @@
 - remove `margin` for `item-icon` (more reusable), replaced by a helper (`mr1-5`)
 - fixed some button designs for more stability for hover states
 - fixed notification container positionning
+- updated top nav responsive behaviour for better matching v4’s one.
+- removed `padding-left/right` for `pm-button--link`
+
+
+## Misc
+
+- added subsections for containers and helpers pages
+- enhanced responsive of Design System website
 
 
 # [1.6.18] - 2019-06-27

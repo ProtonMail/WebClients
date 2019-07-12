@@ -7,7 +7,7 @@
             </svg>
           </a>
 
-          <div class="searchbox-container relative flex-item-centered-vert noprint">
+          <div class="searchbox-container relative flex-item-centered-vert noprint nomobile">
             <label for="global_search">
                 <span class="sr-only">Search (not implemented)</span>
                 <input type="search" id="global_search" placeholder="Search (not implemented)" class="pm-field w100 searchbox-field ">
@@ -26,14 +26,14 @@
             </button>
           </div>
 
-          <div class="topnav-container flex-item-centered-vert flex-item-fluid noprint">
+          <div class="topnav-container flex-item-centered-vert flex-item-fluid noprint notablet nomobile">
             <ul class="topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap">
               <li class="mr1">
                 <a href="https://mail.protonmail.com/" class="topnav-link inline-flex flex-nowrap nodecoration rounded"{% if page.pageId != 'settings' %} aria-current="true"{% endif %}>
                   <svg viewBox="0 0 16 16" class="icon-16p flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-white" role="img" focusable="false" aria-hidden="true">
                     <use xlink:href="#shape-mailbox"></use>
                   </svg>
-                  Mailbox
+                  <span class="navigation-title topnav-linkText">Mailbox</span>
                 </a>
               </li>
               <li class="mr1">
@@ -41,7 +41,7 @@
                   <svg viewBox="0 0 16 16" class="icon-16p flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-white" role="img" focusable="false" aria-hidden="true">
                     <use xlink:href="#shape-settings"></use>
                   </svg>
-                  Settings
+                  <span class="navigation-title topnav-linkText">Settings</span>
                 </a>
               </li>
               <li class="mr1">
@@ -49,10 +49,10 @@
                   <svg viewBox="0 0 16 16" class="icon-16p flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-white" role="img" focusable="false" aria-hidden="true">
                     <use xlink:href="#shape-support1"></use>
                   </svg>
-                  Support
+                  <span class="navigation-title topnav-linkText">Support</span>
                 </a>
               </li>
-              <li class="mlauto mtauto mbauto">
+              <li class="mlauto mtauto mbauto flex-item-noshrink">
                 <div class="dropDown dropDown--rightArrow inbl dropDown-logout">
                   <button class="increase-surface-click color-white js-dropDown-button inline-flex dropDown-logout-button" type="button" aria-expanded="false">
                     <span class="alignright">

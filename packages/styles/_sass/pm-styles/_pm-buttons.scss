@@ -330,6 +330,8 @@
   border-width: 0;
   box-shadow: none;
   background-color: transparent; // to avoid heriting from other classes
+  padding-left: 0;
+  padding-right: 0;
   &:focus,
   &:hover,
   &:active {
