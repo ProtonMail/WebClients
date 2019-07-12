@@ -15,7 +15,7 @@ import { deleteDomain } from 'proton-shared/lib/api/domains';
 import DomainModal from './DomainModal';
 import CatchAllModal from './CatchAllModal';
 
-const DomainActions = ({ domain }) => {
+const DomainActions = ({ domain, onRedirect }) => {
     const { request } = useApiWithoutResult(deleteDomain);
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -30,7 +30,7 @@ const DomainActions = ({ domain }) => {
     const list = [
         {
             text: c('Action').t`Edit`,
-            onClick: () => createModal(<DomainModal domain={domain} />)
+            onClick: () => createModal(<DomainModal domain={domain} onRedirect={onRedirect} />)
         },
         {
             text: c('Action').t`Set catch-all`,
@@ -52,7 +52,8 @@ const DomainActions = ({ domain }) => {
 };
 
 DomainActions.propTypes = {
-    domain: PropTypes.object.isRequired
+    domain: PropTypes.object.isRequired,
+    onRedirect: PropTypes.func.isRequired
 };
 
 export default DomainActions;

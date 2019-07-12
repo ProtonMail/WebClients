@@ -6,7 +6,7 @@ const Block = ({ children, className }) => {
 };
 
 Block.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     className: PropTypes.string
 };
 

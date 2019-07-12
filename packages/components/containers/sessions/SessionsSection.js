@@ -43,33 +43,33 @@ const SessionsSection = () => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const authenticationStore = useAuthenticationStore();
-    const { loading, loaded } = useLoading();
+    const [loading, withLoading] = useLoading();
     const [table, setTable] = useState({ sessions: [], total: 0 });
     const { page, list, onNext, onPrevious, onSelect } = usePagination(table.sessions);
     const { createModal } = useModals();
     const currentUID = authenticationStore.getUID();
+
     const fetchSessions = async () => {
         const { Sessions } = await api(querySessions());
         setTable({ sessions: Sessions.reverse(), total: Sessions.length }); // Most recent, first
-        loaded();
     };
 
-    const handleRevoke = (UID) => async () => {
+    const handleRevoke = async (UID) => {
         await api(UID ? revokeSession(UID) : revokeOtherSessions());
-        fetchSessions();
+        await fetchSessions();
         createNotification({ text: UID ? c('Success').t`Session revoked` : c('Success').t`Sessions revoked` });
     };
 
     const handleOpenModal = () => {
         createModal(
-            <ConfirmModal onConfirm={handleRevoke}>
+            <ConfirmModal onConfirm={() => withLoading(handleRevoke())}>
                 <Alert>{c('Info').t`Do you want to revoke all other sessions than the current one?`}</Alert>
             </ConfirmModal>
         );
     };
 
     useEffect(() => {
-        fetchSessions();
+        withLoading(fetchSessions());
     }, []);
 
     const i18n = getClientsI18N();
@@ -109,7 +109,7 @@ const SessionsSection = () => {
                                         key={key}
                                         session={session}
                                         currentUID={currentUID}
-                                        onRevoke={handleRevoke(session.UID)}
+                                        onRevoke={() => withLoading(handleRevoke(session.UID))}
                                     />
                                 ]}
                             />

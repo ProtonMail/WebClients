@@ -1,52 +1,42 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Row, Field, Label, Select } from 'react-components';
+import { Block, Select } from 'react-components';
 import { ALL_MEMBERS_ID } from 'proton-shared/lib/constants';
 
 import AddAddressButton from './AddAddressButton';
 
-const getOptions = (members) => {
-    return members.reduce(
-        (acc, { ID: value, Name }) => {
-            acc.push({
-                text: Name,
-                value
-            });
-            return acc;
+const AddressesToolbar = ({ memberIndex, onChangeMemberIndex, members }) => {
+    const options = [
+        {
+            text: c('Option').t`All users`,
+            value: ALL_MEMBERS_ID
         },
-        [
-            {
-                text: c('Option').t`All users`,
-                value: ALL_MEMBERS_ID
-            }
-        ]
-    );
-};
-
-const AddressesToolbar = ({ member, onChangeMember, members }) => {
-    const options = getOptions(members);
-
-    const handleChange = ({ target }) => {
-        const newID = target.value;
-        onChangeMember(newID === ALL_MEMBERS_ID ? { ID: ALL_MEMBERS_ID } : members.find(({ ID }) => newID === ID));
-    };
+        ...members.map(({ Name }, i) => ({
+            text: Name,
+            value: i
+        }))
+    ];
 
     return (
-        <Row>
-            <Label htmlFor="memberSelect">{c('Label').t`User`}</Label>
-            <Field className="w100 flex">
-                <Select id="memberSelect" value={member.ID} options={options} className="mr1" onChange={handleChange} />
-                {member.ID === ALL_MEMBERS_ID ? null : <AddAddressButton member={member} />}
-            </Field>
-        </Row>
+        <>
+            <Block>
+                <Select
+                    id="memberSelect"
+                    value={memberIndex}
+                    options={options}
+                    onChange={({ target: { value } }) => onChangeMemberIndex(+value)}
+                />
+            </Block>
+            <Block>{memberIndex === ALL_MEMBERS_ID ? null : <AddAddressButton member={members[memberIndex]} />}</Block>
+        </>
     );
 };
 
 AddressesToolbar.propTypes = {
-    member: PropTypes.object,
+    memberIndex: PropTypes.number.isRequired,
     members: PropTypes.array,
-    onChangeMember: PropTypes.func.isRequired
+    onChangeMemberIndex: PropTypes.func.isRequired
 };
 
 export default AddressesToolbar;

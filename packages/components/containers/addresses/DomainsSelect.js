@@ -41,7 +41,7 @@ const DomainsSelect = ({ member, onChange, className }) => {
 
     useEffect(() => {
         queryDomains();
-    }, []);
+    }, [domains]);
 
     return <Select className={className} disabled={loading} value={domain} options={options} onChange={handleChange} />;
 };

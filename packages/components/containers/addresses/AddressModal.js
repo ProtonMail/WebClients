@@ -10,9 +10,10 @@ import {
     Label,
     Input,
     RichTextEditor,
-    useApiWithoutResult,
+    useLoading,
     useNotifications,
-    useEventManager
+    useEventManager,
+    useApi
 } from 'react-components';
 
 import useAddressModal from './useAddressModal';
@@ -20,25 +21,28 @@ import DomainsSelect from './DomainsSelect';
 
 const AddressModal = ({ onClose, member, ...rest }) => {
     const { call } = useEventManager();
-    const { request } = useApiWithoutResult(createAddress);
+    const api = useApi();
     const { model, update } = useAddressModal(member);
     const { createNotification } = useNotifications();
+    const [loading, withLoading] = useLoading();
 
     const handleChange = (key) => ({ target }) => update(key, target.value);
     const handleSignature = (value) => update('signature', value);
 
     const handleSubmit = async () => {
         const { name: DisplayName, signature: Signature, address: Local, domain: Domain } = model;
-        const parameters = {
-            MemberID: member.ID,
-            Local,
-            Domain,
-            DisplayName,
-            Signature
-        };
 
-        await request(parameters);
+        await api(
+            createAddress({
+                MemberID: member.ID,
+                Local,
+                Domain,
+                DisplayName,
+                Signature
+            })
+        );
         await call();
+
         onClose();
         createNotification({ text: c('Success').t`Address added` });
     };
@@ -48,7 +52,8 @@ const AddressModal = ({ onClose, member, ...rest }) => {
             title={c('Title').t`Create address`}
             submit={c('Action').t`Save`}
             cancel={c('Action').t`Cancel`}
-            onSubmit={handleSubmit}
+            loading={loading}
+            onSubmit={() => withLoading(handleSubmit())}
             onClose={onClose}
             {...rest}
         >

@@ -1,7 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
 import {
     useMembers,
     Alert,
@@ -14,11 +13,9 @@ import {
     TableRow
 } from 'react-components';
 
-const AddressesSection = ({ domain, history }) => {
-    const [members = []] = useMembers();
+const AddressesSection = ({ domain, onRedirect }) => {
+    const [members, loadingMembers] = useMembers();
 
-    const handleAddAddress = () => history.push('/addresses');
-    const handleAddUser = () => history.push('/members');
     const getMemberName = (memberID) => {
         const { Name = '' } = members.find(({ ID }) => ID === memberID);
         return Name;
@@ -29,18 +26,20 @@ const AddressesSection = ({ domain, history }) => {
             <Alert>{c('Info for domain modal')
                 .t`Please add addresses to send and receive email with this domain.`}</Alert>
             <Block>
-                <PrimaryButton onClick={handleAddAddress}>{c('Action').t`Add address`}</PrimaryButton>
-                <Button onClick={handleAddUser}>{c('Action').t`Add user`}</Button>
+                <PrimaryButton className="mr1" onClick={() => onRedirect('/settings/addresses')}>{c('Action')
+                    .t`Add address`}</PrimaryButton>
+                <Button onClick={() => onRedirect('/settings/members')}>{c('Action').t`Add user`}</Button>
             </Block>
             {domain.addresses.length ? (
                 <Table>
                     <TableHeader
                         cells={[c('Header for domain modal').t`User`, c('Header for domain modal').t`Address`]}
                     />
-                    <TableBody>
-                        {domain.addresses.map(({ ID, Email, MemberID }) => {
-                            return <TableRow key={ID} cells={[getMemberName(MemberID), Email]} />;
-                        })}
+                    <TableBody loading={loadingMembers} colSpan={2}>
+                        {members &&
+                            domain.addresses.map(({ ID, Email, MemberID }) => {
+                                return <TableRow key={ID} cells={[getMemberName(MemberID), Email]} />;
+                            })}
                     </TableBody>
                 </Table>
             ) : null}
@@ -50,7 +49,7 @@ const AddressesSection = ({ domain, history }) => {
 
 AddressesSection.propTypes = {
     domain: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
+    onRedirect: PropTypes.func.isRequired
 };
 
-export default withRouter(AddressesSection);
+export default AddressesSection;

@@ -10,11 +10,13 @@ import {
     useModals,
     Alert
 } from 'react-components';
-import createKeysManager from 'proton-shared/lib/keys/keysManager';
+import { getKeys } from 'pmcrypto';
 
 import SelectKeyFiles from '../shared/SelectKeyFiles';
 import ImportKeysList, { STATUS } from './ImportKeysList';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
+import { findKeyByFingerprint } from 'proton-shared/lib/keys/keysReducer';
+import { createKeyHelper, reactivateKeyHelper, reformatAddressKey } from '../shared/actionHelper';
 
 const STEPS = {
     WARNING: 1,
@@ -24,8 +26,8 @@ const STEPS = {
     FAILURE: 5
 };
 
-const addKey = (oldKeys, privateKey) => {
-    return [...oldKeys, { privateKey, fingerprint: privateKey.getFingerprint() }];
+const addKey = (oldKeys, uploadedPrivateKey) => {
+    return [...oldKeys, { uploadedPrivateKey, fingerprint: uploadedPrivateKey.getFingerprint() }];
 };
 
 const updateKey = (oldKeys, key, newKey) => {
@@ -49,18 +51,56 @@ const ImportKeyModal = ({ Address, addressKeys, onClose, ...rest }) => {
     const [keys, setKeys] = useState([]);
 
     const startProcess = async () => {
-        const keysManager = createKeysManager(addressKeys, api);
         const newPassword = authenticationStore.getPassword();
+        let updatedAddressKeys = addressKeys;
 
         for (const key of keys) {
             try {
-                const { privateKey } = key;
+                const { uploadedPrivateKey } = key;
 
-                await keysManager.importKey({
-                    Address,
-                    uploadedPrivateKey: privateKey,
-                    password: newPassword
-                });
+                const maybeOldKeyContainer = findKeyByFingerprint(keys, uploadedPrivateKey.getFingerprint());
+                if (maybeOldKeyContainer) {
+                    if (maybeOldKeyContainer.privateKey.isDecrypted()) {
+                        throw new Error(c('Error').t`Key is already decrypted`);
+                    }
+
+                    const {
+                        Key: { ID: keyID, PrivateKey }
+                    } = maybeOldKeyContainer;
+
+                    // When reactivating a key by importing it, get the email from the old armored private key to ensure it's correct for the contact keys
+                    const [oldPrivateKey] = await getKeys(PrivateKey);
+
+                    const { email } = oldPrivateKey.users[0].userId;
+                    const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
+                        email,
+                        passphrase: newPassword,
+                        privateKey: uploadedPrivateKey
+                    });
+
+                    updatedAddressKeys = await reactivateKeyHelper({
+                        api,
+                        keyID,
+                        privateKey: reformattedPrivateKey,
+                        privateKeyArmored,
+                        keys: updatedAddressKeys,
+                        Address
+                    });
+                } else {
+                    const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
+                        email: Address.Email,
+                        passphrase: newPassword,
+                        privateKey: uploadedPrivateKey
+                    });
+
+                    updatedAddressKeys = await createKeyHelper({
+                        api,
+                        privateKey: reformattedPrivateKey,
+                        privateKeyArmored,
+                        Address,
+                        keys: updatedAddressKeys
+                    });
+                }
 
                 setKeys((oldKeys) => updateKey(oldKeys, key, { status: STATUS.SUCCESS }));
             } catch (e) {
@@ -96,14 +136,15 @@ const ImportKeyModal = ({ Address, addressKeys, onClose, ...rest }) => {
         );
     };
 
-    const handleFiles = (files) => {
-        if (files.length === 0) {
+    const handleFiles = (keys) => {
+        const privateKeys = keys.filter((key) => key.isPrivate());
+        if (privateKeys.length === 0) {
             return createNotification({
                 type: 'error',
                 text: c('Error').t`Invalid private key file`
             });
         }
-        handleUpload(files);
+        handleUpload(privateKeys);
     };
 
     useEffect(() => {

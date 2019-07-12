@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useModals, Block, DropdownActions } from 'react-components';
 import PropTypes from 'prop-types';
 
-import { getPrimaryKey } from './helper';
+import { getPrimaryKey } from './shared/helper';
 import AddKeyModal from './addKey/AddKeyModal';
 import ImportKeyModal from './importKeys/ImportKeyModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';

@@ -1,55 +1,44 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
+    AuthModal,
     FormModal,
     Row,
     Label,
     Input,
     Field,
-    AskPasswordModal,
+    useLoading,
     useModals,
     useNotifications,
-    useApi,
     useEventManager
 } from 'react-components';
 import { c } from 'ttag';
-import { srpAuth } from 'proton-shared/lib/srp';
 import { updateEmail } from 'proton-shared/lib/api/settings';
 
 const EmailModal = ({ email, onClose, ...rest }) => {
     const [input, setInput] = useState(email);
-    const api = useApi();
-    const [loading, setLoading] = useState(false);
-    const handleChange = ({ target }) => setInput(target.value);
+    const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
 
+    const handleChange = ({ target }) => setInput(target.value);
+
     const handleSubmit = async () => {
-        try {
-            setLoading(true);
-            const { password, totp } = await new Promise((resolve, reject) => {
-                createModal(<AskPasswordModal onClose={reject} onSubmit={resolve} />);
-            });
-            await srpAuth({
-                api,
-                credentials: { password, totp },
-                config: updateEmail({ Email: input })
-            });
-            await call();
-            onClose();
-            createNotification({ text: c('Success').t`Email updated` });
-        } catch (error) {
-            setLoading(false);
-            throw error;
-        }
+        await new Promise((resolve, reject) => {
+            createModal(<AuthModal onClose={reject} onSuccess={resolve} config={updateEmail({ Email: input })} />);
+        });
+        await call();
+
+        createNotification({ text: c('Success').t`Email updated` });
+        onClose();
     };
 
     return (
         <FormModal
             loading={loading}
             onClose={onClose}
-            onSubmit={handleSubmit}
+            onSubmit={() => withLoading(handleSubmit())}
             title={c('Title').t`Update reset/notification email`}
             small
             {...rest}

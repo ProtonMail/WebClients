@@ -1,39 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { c, msgid } from 'ttag';
-import { Block, Loader, SubTitle, useOrganization, useMembers } from 'react-components';
+import { Block, Loader, SubTitle, useOrganization, useUser } from 'react-components';
 
-import AddressesToolbar from './AddressesToolbar';
-import AddressesTable from './AddressesTable';
+import AddressesWithMembers from './AddressesWithMembers';
+import AddressesWithUser from './AddressesWithUser';
 
-const AddressesWithMembers = () => {
-    const [member, setMember] = useState();
-    const [members = [], loading] = useMembers();
+const AddressesSection = () => {
+    const [user] = useUser();
+    const [organization, loadingOrganization] = useOrganization();
 
-    useEffect(() => {
-        if (members.length) {
-            setMember(members.find(({ Self }) => Self));
-        }
-    }, [loading]);
+    const { MaxMembers, UsedAddresses, MaxAddresses } = organization || {};
 
-    if (loading || !member) {
+    if (loadingOrganization) {
         return <Loader />;
     }
 
     return (
         <>
-            <AddressesToolbar onChangeMember={setMember} members={members} member={member} />
-            <AddressesTable member={member} members={members} />
-        </>
-    );
-};
-
-const AddressesSection = () => {
-    const [{ MaxMembers, UsedAddresses, MaxAddresses } = {}] = useOrganization();
-
-    return (
-        <>
             <SubTitle>{c('Title').t`Addresses`}</SubTitle>
-            {MaxMembers > 1 ? <AddressesWithMembers /> : <AddressesTable />}
+            {MaxMembers > 1 && user.isAdmin ? (
+                <AddressesWithMembers user={user} organization={organization} />
+            ) : (
+                <AddressesWithUser user={user} />
+            )}
             {MaxAddresses > 1 ? (
                 <Block className="opacity-50">
                     {UsedAddresses} / {MaxAddresses}{' '}

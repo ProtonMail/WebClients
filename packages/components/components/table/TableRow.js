@@ -6,7 +6,9 @@ import TableCell from './TableCell';
 const TableRow = ({ cells, ...rest }) => {
     return (
         <tr {...rest}>
-            {cells.map((cell, index) => <TableCell key={index.toString()}>{cell}</TableCell>)}
+            {cells.map((cell, index) => (
+                <TableCell key={index.toString()}>{cell}</TableCell>
+            ))}
         </tr>
     );
 };

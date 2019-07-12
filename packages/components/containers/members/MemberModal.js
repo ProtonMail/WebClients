@@ -10,19 +10,41 @@ import {
     Input,
     Checkbox,
     Select,
+    useApi,
     useNotifications,
     useEventManager
 } from 'react-components';
 
 import MemberStorageSelector from './MemberStorageSelector';
 import MemberVPNSelector from './MemberVPNSelector';
-import useMemberModal from './useMemberModal';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA } from 'proton-shared/lib/constants';
+import { createMember, createMemberAddress } from 'proton-shared/lib/api/members';
+import { setupMemberKey } from './actionHelper';
+import SelectEncryption from '../keys/addKey/SelectEncryption';
+import { srpVerify } from 'proton-shared/lib/srp';
 
-const MemberModal = ({ onClose, organization, domains, ...rest }) => {
+const FIVE_GIGA = 5 * GIGA;
+
+const MemberModal = ({ onClose, organization, organizationKey, domains, ...rest }) => {
     const { createNotification } = useNotifications();
-    const [loading, setLoading] = useState(false);
     const { call } = useEventManager();
-    const { model, update, hasVPN, save, check } = useMemberModal(organization, domains);
+    const api = useApi();
+    const [model, updateModel] = useState({
+        name: '',
+        private: false,
+        password: '',
+        confirm: '',
+        address: '',
+        domain: domains[0].DomainName,
+        vpn: 1,
+        storage: FIVE_GIGA
+    });
+    const update = (key, value) => updateModel({ ...model, [key]: value });
+
+    const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
+    const [loading, setLoading] = useState(false);
+
+    const hasVPN = !!organization.MaxVPN;
 
     const domainOptions = domains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
@@ -31,11 +53,66 @@ const MemberModal = ({ onClose, organization, domains, ...rest }) => {
     const handleChangeStorage = (value) => update('storage', value);
     const handleChangeVPN = (value) => update('vpn', value);
 
+    const save = async () => {
+        const { Member } = await srpVerify({
+            api,
+            credentials: { password: model.password },
+            config: createMember({
+                Name: model.name,
+                Private: +model.private,
+                MaxSpace: model.storage,
+                MaxVPN: model.vpn
+            })
+        });
+
+        const { Address } = await api(
+            createMemberAddress(Member.ID, {
+                Local: model.address,
+                Domain: model.domain
+            })
+        );
+
+        if (!model.private) {
+            await setupMemberKey({
+                api,
+                Member,
+                Address,
+                organizationKey,
+                encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
+                password: model.password
+            });
+        }
+    };
+
+    const validate = () => {
+        if (!model.name.length) {
+            return c('Error').t`Invalid name`;
+        }
+
+        if (!model.private && model.password !== model.confirm) {
+            return c('Error').t`Invalid password`;
+        }
+
+        if (!model.address.length) {
+            return c('Error').t`Invalid address`;
+        }
+
+        const domain = domains.find(({ DomainName }) => DomainName === model.domain);
+        const address = domain.addresses.find(({ Email }) => Email === `${model.address}@${model.domain}`);
+
+        if (address) {
+            return c('Error').t`Address already associated to a user`;
+        }
+
+        if (!model.private && !organizationKey) {
+            return c('Error').t`The organization key must be activated first.`;
+        }
+    };
+
     const handleSubmit = async () => {
-        try {
-            check();
-        } catch (error) {
-            return createNotification({ type: 'error', text: error.message });
+        const error = validate();
+        if (error) {
+            return createNotification({ type: 'error', text: error });
         }
 
         try {
@@ -52,7 +129,6 @@ const MemberModal = ({ onClose, organization, domains, ...rest }) => {
     return (
         <FormModal
             title={c('Title').t`Add user`}
-            small
             loading={loading}
             onSubmit={handleSubmit}
             onClose={onClose}
@@ -71,7 +147,7 @@ const MemberModal = ({ onClose, organization, domains, ...rest }) => {
                         required
                     />
                     <Label className="flex-autogrid-item">
-                        <Checkbox checked={model.private} className="mr1" onChange={handleChangePrivate} />
+                        <Checkbox checked={model.private} onChange={handleChangePrivate} />
                         {c('Label for new member').t`Private`}
                     </Label>
                 </Field>
@@ -79,6 +155,9 @@ const MemberModal = ({ onClose, organization, domains, ...rest }) => {
             {model.private ? null : (
                 <Row>
                     <Label>{c('Label').t`Key strength`}</Label>
+                    <Field className="flex-autogrid">
+                        <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
+                    </Field>
                 </Row>
             )}
             <Row>
@@ -132,6 +211,7 @@ const MemberModal = ({ onClose, organization, domains, ...rest }) => {
 MemberModal.propTypes = {
     onClose: PropTypes.func,
     organization: PropTypes.object.isRequired,
+    organizationKey: PropTypes.object.isRequired,
     domains: PropTypes.array.isRequired
 };
 

@@ -2,42 +2,46 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { Badge } from 'react-components';
-import { ADDRESS_STATUS, RECEIVE_ADDRESS } from 'proton-shared/lib/constants';
 
-const AddressStatus = ({ address, index }) => {
-    const badges = [];
-    const { Status, Receive, DomainID, HasKeys } = address;
-
-    if (!index) {
-        badges.push({ text: c('Address status').t`Default`, type: 'default' });
-    }
-
-    if (Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === RECEIVE_ADDRESS.RECEIVE_YES) {
-        badges.push({ text: c('Address status').t`Active`, type: 'success' });
-    }
-
-    if (Status === ADDRESS_STATUS.STATUS_DISABLED) {
-        badges.push({ text: c('Address status').t`Disabled`, type: 'warning' });
-    }
-
-    if (DomainID === null) {
-        badges.push({ text: c('Address status').t`Orphan`, type: 'origin' });
-    }
-
-    if (!HasKeys) {
-        badges.push({ text: c('Address status').t`Missing keys`, type: 'warning' });
-    }
-
-    return badges.map(({ text, type }, index) => (
-        <Badge type={type} key={index.toString()}>
-            {text}
-        </Badge>
-    ));
+const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKeys }) => {
+    return [
+        isDefault && {
+            text: c('Address status').t`Default`,
+            type: 'default'
+        },
+        isActive && {
+            text: c('Address status').t`Active`,
+            type: 'success'
+        },
+        isDisabled && {
+            text: c('Address status').t`Disabled`,
+            type: 'warning'
+        },
+        isOrphan && {
+            text: c('Address status').t`Orphan`,
+            type: 'origin'
+        },
+        isMissingKeys && {
+            text: c('Address status').t`Missing keys`,
+            type: 'warning'
+        }
+    ]
+        .filter(Boolean)
+        .map(({ text, type }) => {
+            return (
+                <Badge key={text} type={type}>
+                    {text}
+                </Badge>
+            );
+        });
 };
 
 AddressStatus.propTypes = {
-    address: PropTypes.object.isRequired,
-    index: PropTypes.number.isRequired
+    isDefault: PropTypes.bool,
+    isActive: PropTypes.bool,
+    isDisabled: PropTypes.bool,
+    isOrphan: PropTypes.bool,
+    isMissingKeys: PropTypes.bool
 };
 
 export default AddressStatus;

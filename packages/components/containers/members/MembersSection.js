@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import {
     Table,
@@ -10,51 +10,111 @@ import {
     SearchInput,
     TableBody,
     TableRow,
-    useMembers
+    PrimaryButton,
+    useMembers,
+    useOrganization,
+    useMemberAddresses,
+    useDomains,
+    useNotifications,
+    useModals,
+    useOrganizationKey
 } from 'react-components';
 import { Link } from 'react-router-dom';
 import { normalize } from 'proton-shared/lib/helpers/string';
+import { DOMAIN_STATE } from 'proton-shared/lib/constants';
 
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
-import AddMemberButton from './AddMemberButton';
 import MemberFeatures from './MemberFeatures';
 import MemberRole from './MemberRole';
 import MemberPrivate from './MemberPrivate';
-import { useOrganization } from '../../models/organizationModel';
+import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
+import MemberModal from './MemberModal';
+import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
+
+const validateAddUser = (organization, organizationKey, verifiedDomains) => {
+    const { isOrganizationKeyActive, hasOrganizationKey } = getOrganizationKeyInfo(organizationKey);
+    const { MaxMembers, HasKeys, UsedMembers, MaxAddresses, UsedAddresses, MaxSpace, AssignedSpace } = organization;
+    if (MaxMembers === 1) {
+        return c('Error').t`Multi-user support requires either a Professional or Visionary plan.`;
+    }
+    if (!HasKeys) {
+        return c('Error').t`Please enable multi-user support before adding users to your organization.`;
+    }
+    if (!verifiedDomains.length) {
+        return c('Error').t`Please configure a custom domain before adding users to your organization.`;
+    }
+    if (MaxMembers - UsedMembers < 1) {
+        return c('Error').t`You have used all users in your plan. Please upgrade your plan to add a new user.`;
+    }
+    if (MaxAddresses - UsedAddresses < 1) {
+        return c('Error').t`You have used all addresses in your plan. Please upgrade your plan to add a new address.`;
+    }
+    if (MaxSpace - AssignedSpace < 1) {
+        return c('Error').t`All storage space has been allocated. Please reduce storage allocated to other users.`;
+    }
+    if (!hasOrganizationKey) {
+        return c('Error').t`The organization key must be activated first.`;
+    }
+    if (!isOrganizationKeyActive) {
+        return c('Error').t`Permission denied, administrator privileges have been restricted.`;
+    }
+};
+
+const { DOMAIN_STATE_ACTIVE } = DOMAIN_STATE;
 
 const MembersSection = () => {
-    const [members = [], membersLoading] = useMembers();
-    const [organization] = useOrganization();
+    const [members, membersLoading] = useMembers();
+    const [organization, loadingOrganization] = useOrganization();
+    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const [domains, loadingDomains] = useDomains();
+    const [memberAddressesMap, memberAddressesLoading] = useMemberAddresses(members);
     const [keywords, setKeywords] = useState('');
-    const [membersSelected, setMembers] = useState(members);
+
+    const { createNotification } = useNotifications();
+    const { createModal } = useModals();
+
     const handleSearch = (value) => setKeywords(value);
 
-    const search = (members = []) => {
+    const membersSelected = useMemo(() => {
         if (!keywords) {
-            return members;
+            return members || [];
         }
 
         const normalizedWords = normalize(keywords);
-
         return members.filter(({ Name }) => {
             return normalize(Name).includes(normalizedWords);
         });
-    };
-
-    useEffect(() => {
-        setMembers(search(members));
     }, [keywords, members]);
+
+    const handleAddUser = () => {
+        const verifiedDomains = domains.filter(({ State }) => State === DOMAIN_STATE_ACTIVE);
+
+        const error = validateAddUser(organization, organizationKey, verifiedDomains);
+        if (error) {
+            return createNotification({ type: 'error', text: error });
+        }
+
+        createModal(
+            <MemberModal organization={organization} organizationKey={organizationKey} domains={verifiedDomains} />
+        );
+    };
 
     return (
         <>
+            <RestoreAdministratorPrivileges />
             <SubTitle>{c('Title').t`Users`}</SubTitle>
             <Alert learnMore="todo">
                 {c('Info for members section')
                     .t`Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.`}
             </Alert>
             <Block className="flex flex-spacebetween">
-                <AddMemberButton />
+                <PrimaryButton
+                    disabled={loadingOrganization || loadingDomains || loadingOrganizationKey}
+                    onClick={handleAddUser}
+                >
+                    {c('Action').t`Add user`}
+                </PrimaryButton>
                 <div>
                     <SearchInput
                         onChange={handleSearch}
@@ -81,9 +141,10 @@ const MembersSection = () => {
                         c('Title header for members table').t`Actions`
                     ]}
                 />
-                <TableBody loading={membersLoading} colSpan={6}>
+                <TableBody loading={membersLoading || memberAddressesLoading} colSpan={6}>
                     {membersSelected.map((member) => {
                         const key = member.ID;
+                        const memberAddresses = (memberAddressesMap && memberAddressesMap[member.ID]) || [];
                         return (
                             <TableRow
                                 key={key}
@@ -91,9 +152,14 @@ const MembersSection = () => {
                                     member.Name,
                                     <MemberRole key={key} member={member} />,
                                     <MemberPrivate key={key} member={member} />,
-                                    <MemberAddresses key={key} member={member} />,
+                                    <MemberAddresses key={key} addresses={memberAddresses} />,
                                     <MemberFeatures key={key} member={member} />,
-                                    <MemberActions key={key} member={member} organization={organization} />
+                                    <MemberActions
+                                        key={key}
+                                        member={member}
+                                        addresses={memberAddresses}
+                                        organization={organization}
+                                    />
                                 ]}
                             />
                         );

@@ -10,6 +10,7 @@ const useOrganizationKey = (Organization) => {
     const api = useApi();
     const [user] = useUser();
 
+    // Warning: This is modified externally from ReactivateOrganizationKeyModal.
     return useCachedAsyncResult(
         'ORGANIZATION_KEY',
         async () => {

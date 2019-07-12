@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Alert, FormModal, useEventManager, useAuthenticationStore, useApi } from 'react-components';
 import { getAlgorithmExists } from 'proton-shared/lib/keys/keysAlgorithm';
-import createKeysManager from 'proton-shared/lib/keys/keysManager';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
 
 import SelectEncryption from './SelectEncryption';
+import { createKeyHelper, generateAddressKey } from '../shared/actionHelper';
 
 const STEPS = {
     SELECT_ENCRYPTION: 1,
@@ -25,16 +25,15 @@ const AddKeyModal = ({ onClose, Address, addressKeys, ...rest }) => {
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
     const [newKeyFingerprint, setNewKeyFingerprint] = useState();
 
-    const generateKey = async () => {
-        const encryptionConfig = ENCRYPTION_CONFIGS[encryptionType];
-        const keysManager = createKeysManager(addressKeys, api);
-
-        const { privateKey } = await keysManager.createAddressKey({
-            Address,
-            password: authenticationStore.getPassword(),
-            encryptionConfig
+    const process = async () => {
+        const { privateKey, privateKeyArmored } = await generateAddressKey({
+            email: Address.Email,
+            passphrase: authenticationStore.getPassword(),
+            encryptionConfig: ENCRYPTION_CONFIGS[encryptionType]
         });
+        await createKeyHelper({ api, privateKey, privateKeyArmored, Address, keys: addressKeys });
         await call();
+
         setNewKeyFingerprint(privateKey.getFingerprint());
     };
 
@@ -42,7 +41,7 @@ const AddKeyModal = ({ onClose, Address, addressKeys, ...rest }) => {
         if (step !== STEPS.GENERATE_KEY) {
             return;
         }
-        generateKey()
+        process()
             .then(() => {
                 setStep(STEPS.DONE);
             })

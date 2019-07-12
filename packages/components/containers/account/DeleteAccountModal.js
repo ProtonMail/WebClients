@@ -17,14 +17,16 @@ import {
     useNotifications,
     useUserSettings,
     useApi,
-    useAuthenticationStore
+    useAuthenticationStore,
+    useConfig
 } from 'react-components';
 import { deleteUser } from 'proton-shared/lib/api/user';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { srpAuth } from 'proton-shared/lib/srp';
 
-const DeleteAccountModal = ({ onClose, clientType, ...rest }) => {
+const DeleteAccountModal = ({ onClose, ...rest }) => {
     const { createNotification } = useNotifications();
+    const { CLIENT_TYPE } = useConfig();
     const api = useApi();
     const authenticationStore = useAuthenticationStore();
     const [{ isAdmin, Name } = {}] = useUser();
@@ -60,7 +62,7 @@ const DeleteAccountModal = ({ onClose, clientType, ...rest }) => {
                     BrowserExtensions: '--',
                     Client: '--',
                     ClientVersion: '--',
-                    ClientType: clientType,
+                    ClientType: CLIENT_TYPE,
                     Title: `[DELETION FEEDBACK] ${Name}`,
                     Username: Name,
                     Email: model.email || Email,
@@ -159,7 +161,6 @@ const DeleteAccountModal = ({ onClose, clientType, ...rest }) => {
 };
 
 DeleteAccountModal.propTypes = {
-    clientType: PropTypes.number.isRequired,
     onClose: PropTypes.func
 };
 

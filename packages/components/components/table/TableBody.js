@@ -8,7 +8,7 @@ const TableBody = ({ children, loading, colSpan, ...rest }) => {
 };
 
 TableBody.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     loading: PropTypes.bool,
     colSpan: PropTypes.number
 };

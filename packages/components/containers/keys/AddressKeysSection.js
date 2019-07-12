@@ -10,14 +10,14 @@ import {
     useApi,
     useEventManager,
     useUserKeys,
+    useUser,
+    useAddresses,
     useAddressesKeys,
     Loader
 } from 'react-components';
-import createKeysManager from 'proton-shared/lib/keys/keysManager';
+import { setKeyPrimary, setKeyFlags } from 'proton-shared/lib/keys/keysManager';
 
-import { getAllKeysToReactivate, convertKey, getNewKeyFlags } from './helper';
-import { useUser } from '../../models/userModel';
-import { useAddresses } from '../../models/addressesModel';
+import { getAllKeysToReactivate, convertKey } from './shared/helper';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import { ACTIONS } from './KeysActions';
 import KeysTable from './KeysTable';
@@ -25,6 +25,31 @@ import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import DeleteKeyModal from './deleteKey/DeleteKeyModal';
+import { setKeyFlagsRoute, setKeyPrimaryRoute } from 'proton-shared/lib/api/keys';
+import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
+import { KEY_FLAG } from 'proton-shared/lib/constants';
+
+const { SIGNED, ENCRYPTED_AND_SIGNED, CLEAR_TEXT } = KEY_FLAG;
+
+/**
+ * @param {number} action
+ * @return {number}
+ */
+export const getNewKeyFlags = (action) => {
+    if (action === ACTIONS.MARK_OBSOLETE) {
+        return SIGNED;
+    }
+    if (action === ACTIONS.MARK_NOT_OBSOLETE) {
+        return ENCRYPTED_AND_SIGNED;
+    }
+    if (action === ACTIONS.MARK_COMPROMISED) {
+        return CLEAR_TEXT;
+    }
+    if (action === ACTIONS.MARK_NOT_COMPROMISED) {
+        return SIGNED;
+    }
+    throw new Error('Unknown action');
+};
 
 const AddressKeysSection = () => {
     const { createModal } = useModals();
@@ -104,8 +129,17 @@ const AddressKeysSection = () => {
             );
         }
         if (action === ACTIONS.PRIMARY) {
-            const keysManager = createKeysManager(addressKeys, api);
-            await keysManager.setKeyPrimary(ID);
+            const updatedKeys = setKeyPrimary({
+                keys: addressKeys,
+                keyID: ID
+            });
+            await api(
+                setKeyPrimaryRoute({
+                    ID,
+                    SignedKeyList: await getSignedKeyList(updatedKeys)
+                })
+            );
+
             return await call();
         }
         if (
@@ -116,9 +150,20 @@ const AddressKeysSection = () => {
                 ACTIONS.MARK_NOT_OBSOLETE
             ].includes(action)
         ) {
-            const newFlags = getNewKeyFlags(action);
-            const keysManager = createKeysManager(addressKeys, api);
-            await keysManager.setKeyFlags(ID, newFlags);
+            const newKeyFlags = getNewKeyFlags(action);
+            const updatedKeys = setKeyFlags({
+                keys: addressKeys,
+                keyID: ID,
+                flags: newKeyFlags
+            });
+            await api(
+                setKeyFlagsRoute({
+                    ID,
+                    Flags: newKeyFlags,
+                    SignedKeyList: await getSignedKeyList(updatedKeys)
+                })
+            );
+
             return await call();
         }
     };

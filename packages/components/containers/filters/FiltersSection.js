@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import {
-    SubTitle,
-    Group,
-    Paragraph,
-    Alert,
-    Loader,
-    useFilters,
-    useApiWithoutResult,
-    useEventManager
-} from 'react-components';
+import { SubTitle, Group, Alert, Loader, useFilters, useApiWithoutResult, useEventManager } from 'react-components';
 import { arrayMove } from 'react-sortable-hoc';
 import { updateFilterOrder } from 'proton-shared/lib/api/filters';
 
@@ -51,9 +42,9 @@ function FiltersSection() {
                 <ActionsFilterToolbar />
             </Group>
 
-            {loading ? <Loader /> : null}
-
-            {!loading && list.length ? (
+            {loading ? (
+                <Loader />
+            ) : list.length ? (
                 <FilterSortableList
                     getContainer={getScrollContainer}
                     pressDelay={200}
@@ -61,7 +52,7 @@ function FiltersSection() {
                     onSortEnd={onSortEnd}
                 />
             ) : (
-                <Paragraph>No filers available</Paragraph>
+                <Alert>{c('FilterSettings').t`No filters available`}</Alert>
             )}
         </>
     );

@@ -15,13 +15,14 @@ import {
     FormModal
 } from 'react-components';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
-import createKeysManager from 'proton-shared/lib/keys/keysManager';
-import { decryptPrivateKey } from 'pmcrypto';
+import { decryptPrivateKey, encryptPrivateKey, getKeys } from 'pmcrypto';
 import { computeKeyPassword } from 'pm-srp';
 import { createDecryptionError } from '../shared/DecryptionError';
 
 import ReactivateKeysList, { STATUS } from './ReactivateKeysList';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
+import { findKeyByFingerprint } from 'proton-shared/lib/keys/keysReducer';
+import { reactivateKeyHelper, reformatAddressKey } from '../shared/actionHelper';
 
 const STEPS = {
     INFO: 0,
@@ -120,7 +121,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onClose, ...rest }) => {
         const keySalts = keySaltsRef.current;
 
         for (const { Address, inactiveKeys, keys } of allKeys) {
-            const keysManager = createKeysManager(keys, api);
+            let updatedKeyList = keys;
 
             for (const inactiveKey of inactiveKeys) {
                 const {
@@ -130,24 +131,50 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onClose, ...rest }) => {
 
                 try {
                     if (uploadedPrivateKey) {
-                        await keysManager.reactivateKeyByImport({
-                            Address,
-                            uploadedPrivateKey,
-                            password: newPassword
+                        const fingerprint = uploadedPrivateKey.getFingerprint();
+                        const oldKeyContainer = findKeyByFingerprint(updatedKeyList, fingerprint);
+
+                        if (!oldKeyContainer) {
+                            throw new Error(c('Error').t`Key does not exist`);
+                        }
+                        if (!oldKeyContainer.Key.ID !== keyID) {
+                            throw new Error(c('Error').t`Key ID mismatch`);
+                        }
+
+                        // When reactivating a key by importing it, get the email from the old armored private key to ensure it's correct for the contact keys
+                        const [oldPrivateKey] = await getKeys(PrivateKey);
+                        const { email } = oldPrivateKey.users[0].userId;
+                        const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
+                            email,
+                            passphrase: newPassword,
+                            privateKey: uploadedPrivateKey
+                        });
+
+                        updatedKeyList = await reactivateKeyHelper({
+                            api,
+                            keyID,
+                            privateKey: reformattedPrivateKey,
+                            privateKeyArmored,
+                            keys: updatedKeyList,
+                            Address
                         });
                     } else {
                         const { KeySalt } = keySalts.find(({ ID: keySaltID }) => keyID === keySaltID) || {};
 
-                        const oldDecryptedPrivateKey = await decryptArmoredKey({
+                        const oldPrivateKey = await decryptArmoredKey({
                             armoredPrivateKey: PrivateKey,
                             keySalt: KeySalt,
                             password: oldPassword
                         });
-
-                        await keysManager.reactivateKey({
-                            Address,
-                            password: newPassword,
-                            oldDecryptedPrivateKey
+                        const privateKeyArmored = await encryptPrivateKey(oldPrivateKey, newPassword);
+                        const privateKey = await decryptPrivateKey(privateKeyArmored, newPassword);
+                        updatedKeyList = await reactivateKeyHelper({
+                            api,
+                            keyID,
+                            privateKey,
+                            privateKeyArmored,
+                            keys: updatedKeyList,
+                            Address
                         });
                     }
 
@@ -200,12 +227,13 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onClose, ...rest }) => {
         }
 
         if (step === STEPS.OR_UPLOAD) {
-            const handleUpload = (inactiveKey, files) => {
-                if (files.length === 0) {
+            const handleUpload = (inactiveKey, keys) => {
+                const privateKeys = keys.filter((key) => key.isPrivate());
+                if (privateKeys.length === 0) {
                     return notifyError(c('Error').t`Invalid private key file`);
                 }
 
-                const matchingKeys = files.filter((key) => key.getFingerprint() === inactiveKey.fingerprint);
+                const matchingKeys = privateKeys.filter((key) => key.getFingerprint() === inactiveKey.fingerprint);
                 if (matchingKeys.length === 0) {
                     return notifyError(c('Error').t`Uploaded key does not match fingerprint`);
                 }

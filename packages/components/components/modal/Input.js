@@ -5,20 +5,20 @@ import { FormModal, Input, TextArea, Label, Row, Field } from 'react-components'
 
 import { generateUID } from '../../helpers/component';
 
-const InputField = ({ type, id, input, placeholder, onChange }) => {
+const InputField = ({ type, id, value, placeholder, onChange }) => {
     if (type === 'textarea') {
         return (
-            <TextArea id={id} value={input} placeholder={placeholder} onChange={onChange} autoFocus={true} required />
+            <TextArea id={id} value={value} placeholder={placeholder} onChange={onChange} autoFocus={true} required />
         );
     }
 
-    return <Input id={id} value={input} placeholder={placeholder} onChange={onChange} autoFocus={true} required />;
+    return <Input id={id} value={value} placeholder={placeholder} onChange={onChange} autoFocus={true} required />;
 };
 
 InputField.propTypes = {
     type: PropTypes.string,
     id: PropTypes.string,
-    input: PropTypes.string,
+    value: PropTypes.string,
     placeholder: PropTypes.string,
     onChange: PropTypes.func
 };

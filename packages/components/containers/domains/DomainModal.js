@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { FormModal, useApi, useStep, Breadcrumb, useNotifications } from 'react-components';
+import { FormModal, useLoading, useApi, useStep, Breadcrumb, useNotifications } from 'react-components';
 import { addDomain, getDomain } from 'proton-shared/lib/api/domains';
 import { VERIFY_STATE } from 'proton-shared/lib/constants';
 
@@ -17,13 +17,19 @@ const { VERIFY_STATE_DEFAULT, VERIFY_STATE_EXIST, VERIFY_STATE_GOOD } = VERIFY_S
 const DOMAIN_STEP = 0;
 const VERIFY_STEP = 1;
 
-const DomainModal = ({ onClose, domain, ...rest }) => {
+const DomainModal = ({ onClose, onRedirect, domain, ...rest }) => {
     const [domainModel, setDomain] = useState(domain);
     const { createNotification } = useNotifications();
+    const [loading, withLoading] = useLoading();
     const [domainName, updateDomainName] = useState(domainModel.DomainName);
     const api = useApi();
     const { step, next, goTo } = useStep();
     const handleClick = (index) => goTo(index);
+
+    const handleRedirect = (route) => {
+        onRedirect(route);
+        onClose();
+    };
 
     const STEPS = [
         {
@@ -39,7 +45,10 @@ const DomainModal = ({ onClose, domain, ...rest }) => {
     if (domainModel.VerifyState === VERIFY_STATE_GOOD) {
         STEPS.push(
             ...[
-                { label: c('Label in domain modal').t`Addresses`, section: <AddressesSection domain={domainModel} /> },
+                {
+                    label: c('Label in domain modal').t`Addresses`,
+                    section: <AddressesSection onRedirect={handleRedirect} domain={domainModel} />
+                },
                 { label: 'MX', section: <MXSection /> },
                 { label: 'SPF', section: <SPFSection /> },
                 { label: 'DKIM', section: <DKIMSection domain={domainModel} /> },
@@ -48,22 +57,15 @@ const DomainModal = ({ onClose, domain, ...rest }) => {
         );
     }
 
-    const verifyDomain = async () => {
-        const { Domain = {} } = await api(getDomain(domainModel.ID));
-        const { VerifyState } = Domain;
-
+    const verifyDomain = ({ VerifyState }) => {
         if (VerifyState === VERIFY_STATE_DEFAULT) {
-            throw new Error(c('Error').t`Verification did not succeed, please try again in an hour.`);
+            return c('Error').t`Verification did not succeed, please try again in an hour.`;
         }
 
         if (VerifyState === VERIFY_STATE_EXIST) {
-            throw new Error(
-                c('Error')
-                    .t`Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.`
-            );
+            return c('Error')
+                .t`Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.`;
         }
-
-        return Domain;
     };
 
     const handleSubmit = async () => {
@@ -77,7 +79,11 @@ const DomainModal = ({ onClose, domain, ...rest }) => {
             step === VERIFY_STEP &&
             (domainModel.VerifyState === VERIFY_STATE_DEFAULT || domainModel.VerifyState === VERIFY_STATE_EXIST)
         ) {
-            const { Domain } = await verifyDomain();
+            const { Domain = {} } = await api(getDomain(domainModel.ID));
+            const error = verifyDomain(domain);
+            if (error) {
+                return createNotification({ text: error, type: 'error' });
+            }
             setDomain(Domain);
             createNotification({ text: c('Success').t`Domain verified` });
             return next();
@@ -93,10 +99,11 @@ const DomainModal = ({ onClose, domain, ...rest }) => {
     return (
         <FormModal
             onClose={onClose}
-            onSubmit={handleSubmit}
+            onSubmit={() => withLoading(handleSubmit())}
             close={c('Action').t`Close`}
             submit={c('Action').t`Next`}
             title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}
+            loading={loading}
             {...rest}
         >
             {<Breadcrumb list={STEPS.map(({ label }) => label)} current={step} onClick={handleClick} />}
@@ -107,6 +114,7 @@ const DomainModal = ({ onClose, domain, ...rest }) => {
 
 DomainModal.propTypes = {
     onClose: PropTypes.func,
+    onRedirect: PropTypes.func.isRequired,
     domain: PropTypes.object.isRequired
 };
 

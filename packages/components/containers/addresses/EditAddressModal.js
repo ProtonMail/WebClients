@@ -10,15 +10,19 @@ import {
     Input,
     RichTextEditor,
     useApi,
+    useLoading,
     useNotifications,
     useEventManager
 } from 'react-components';
 
 const EditAddressModal = ({ onClose, address, ...rest }) => {
-    const { call } = useEventManager();
     const api = useApi();
-    const [model, updateModel] = useState({ displayName: address.DisplayName, signature: address.Signature });
-    const [loading, setLoading] = useState();
+    const { call } = useEventManager();
+    const [loading, withLoading] = useLoading();
+    const [model, updateModel] = useState({
+        displayName: address.DisplayName,
+        signature: address.Signature
+    });
     const { createNotification } = useNotifications();
 
     const handleDisplayName = ({ target }) => updateModel({ ...model, displayName: target.value });
@@ -26,25 +30,19 @@ const EditAddressModal = ({ onClose, address, ...rest }) => {
     const handleSignature = (value) => updateModel({ ...model, signature: value });
 
     const handleSubmit = async () => {
-        try {
-            setLoading(true);
-            await api(updateAddress(address.ID, { DisplayName: model.displayName, Signature: model.signature }));
-            await call();
-            onClose();
-            createNotification({ text: c('Success').t`Address updated` });
-        } catch (e) {
-            setLoading(false);
-        }
+        await api(updateAddress(address.ID, { DisplayName: model.displayName, Signature: model.signature }));
+        await call();
+        onClose();
+        createNotification({ text: c('Success').t`Address updated` });
     };
 
     return (
         <FormModal
             onClose={onClose}
-            onSubmit={handleSubmit}
+            onSubmit={() => withLoading(handleSubmit())}
             title={c('Title').t`Edit address`}
             close={c('Action').t`Cancel`}
             submit={c('Action').t`Save`}
-            small
             loading={loading}
             {...rest}
         >

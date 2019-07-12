@@ -1,23 +1,14 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
-import {
-    SubTitle,
-    Alert,
-    Row,
-    Field,
-    Label,
-    SmallButton,
-    useModals,
-    useOrganization,
-    InputModal,
-    useApiWithoutResult
-} from 'react-components';
-import { updateOrganizationName } from 'proton-shared/lib/api/organization';
+import { SubTitle, Alert, Row, Field, Label, SmallButton, useModals, useOrganization } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
+import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
+import OrganizationNameModal from './OrganizationNameModal';
+import ActivateOrganizationButton from './ActivateOrganizationButton';
+
 const OrganizationSection = () => {
-    const { request } = useApiWithoutResult(updateOrganizationName);
     const [organization] = useOrganization();
     const {
         Name,
@@ -33,31 +24,30 @@ const OrganizationSection = () => {
     } = organization;
     const { createModal } = useModals();
 
-    const handleSubmit = async (name) => {
-        await request(name);
-    };
-
-    const handleOpenModal = () => {
-        createModal(
-            <InputModal
-                input={Name}
-                title={c('Title').t`Change organization name`}
-                label={c('Label').t`Organization name`}
-                placeholder={c('Placeholder').t`Choose a name`}
-                onSubmit={(name) => handleSubmit(name)}
-            />
+    if (!organization.HasKeys) {
+        return (
+            <>
+                <SubTitle>{c('Title').t`Multi-user support`}</SubTitle>
+                <Alert learnMore="https://protonmail.com/support/knowledge-base/business/">{c('Info')
+                    .t`Create and manage sub-accounts and assign them email addresses on your custom domain.`}</Alert>
+                <ActivateOrganizationButton />
+            </>
         );
-    };
+    }
 
     return (
         <>
+            <RestoreAdministratorPrivileges />
             <SubTitle>{c('Title').t`Organization`}</SubTitle>
-            <Alert learnMore="todo">{c('Info').t`Lorem ipsum`}</Alert>
+            <Alert learnMore="todo">{c('Info')
+                .t`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium enim nec massa fringilla, ac ultrices tortor posuere. Fusce sed quam vitae arcu pharetra congue. Quisque in elementum nibh.`}</Alert>
             <Row>
                 <Label>{c('Label').t`Organization name`}</Label>
                 <Field>
                     <span className="mr0-5">{Name}</span>
-                    <SmallButton onClick={handleOpenModal}>{c('Action').t`Edit`}</SmallButton>
+                    <SmallButton onClick={() => createModal(<OrganizationNameModal organizationName={Name} />)}>{c(
+                        'Action'
+                    ).t`Edit`}</SmallButton>
                 </Field>
             </Row>
             <Row>

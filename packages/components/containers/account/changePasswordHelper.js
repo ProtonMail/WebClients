@@ -66,8 +66,8 @@ export const getArmoredPrivateKeys = async ({ userKeysList, addressesKeysMap, or
 
     const armoredKeys = (await Promise.all(userKeysAndAddressesKeysPromises)).filter(Boolean);
 
-    // There should always be some decrypted in the mail application.
-    if (armoredKeys.length === 0) {
+    // A user may not have his key setup. But in that case the key password should not be set.
+    if (!keyPassword && armoredKeys.length === 0) {
         const decryptedError = new Error('No decrypted keys exist');
         decryptedError.name = 'NoDecryptedKeys';
         throw decryptedError;

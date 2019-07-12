@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Alert, FormModal, useEventManager, useModals, useApi } from 'react-components';
-import createKeysManager from 'proton-shared/lib/keys/keysManager';
+import { removeKey } from 'proton-shared/lib/keys/keysManager';
 import ExportPrivateKeyModal from '../exportKey/ExportPrivateKeyModal';
+import { removeKeyRoute } from 'proton-shared/lib/api/keys';
+import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
 
 const STEPS = {
     WARNING: 1,
@@ -21,8 +23,8 @@ const DeleteKeyModal = ({ onClose, Address, addressKeys, KeyID, privateKey, ...r
     const [step, setStep] = useState(STEPS.WARNING);
 
     const deleteKey = async () => {
-        const keysManager = createKeysManager(addressKeys, api);
-        await keysManager.removeKey(KeyID);
+        const updatedKeys = removeKey({ keys: addressKeys, keyID: KeyID });
+        await api(removeKeyRoute({ ID: KeyID, SignedKeyList: await getSignedKeyList(updatedKeys) }));
         await call();
     };
 
