@@ -17,9 +17,26 @@ function log {
       echo -e "\e[00;32m[$2] ✔ $3\e[00m";
       echo
     fi
-    if [[ "$1" = *"info"* ]]; then
+    if [[ "$1" = *"info"* ]] && $IS_VERBOSE; then
       echo "[$1] - $2";
     fi
+}
+
+function timestamp {
+    date +%s;
+}
+
+function isRunnable {
+    local tsnow="$(timestamp)";
+    local cache="node_modules/.proton-back-checkDep";
+    local latest="$(cat "$cache" 2>/dev/null || timestamp)";
+    local delta="$((tsnow - latest))";
+
+    if [[ "3600" -gt "$delta" ]] && [[ -e "$cache" ]]; then
+        exit;
+    fi;
+
+    echo "$tsnow" > "$cache";
 }
 
 function getRemoteVersion {
@@ -40,8 +57,10 @@ function checkDep {
     if [[ $local != $remote ]]; then
         ERRORS+=("$1 \n    [local]: $local\n    [latest]: $remote");
     fi;
-
 }
+
+# Run only the check every 1 hour to prevent limit rate API
+isRunnable;
 
 checkDep 'proton-pack';
 checkDep 'proton-bundler';
@@ -55,7 +74,5 @@ if [ -n "$ERRORS" ]; then
         log "error"  "➙ ${ERRORS[$i]}";
         echo
     done
-    log "info" "Please upgrade your dependencies."
-    log "info" "You can run npm update <dependency> or rm package-lock.json and node_modules".
     exit 1;
 fi;
