@@ -1,5 +1,5 @@
 const path = require('path');
-const { success } = require('./log');
+const { success } = require('./helpers/log');
 
 /**
  * Load the config for webpack

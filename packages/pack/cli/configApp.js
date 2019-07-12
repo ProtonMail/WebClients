@@ -2,7 +2,7 @@ const path = require('path');
 const dedent = require('dedent');
 const argv = require('minimist')(process.argv.slice(2));
 
-const { warn } = require('./log');
+const { warn } = require('./helpers/log');
 
 const isSilent = argv._.includes('help') || argv._.includes('init') || argv._.includes('print-config');
 

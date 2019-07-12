@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const { success, error } = require('./log');
+const { success, error } = require('./helpers/log');
 
 function main(config) {
     const compiler = webpack(config);
