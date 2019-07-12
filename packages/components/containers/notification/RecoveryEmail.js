@@ -1,21 +1,20 @@
 import React from 'react';
 import { c } from 'ttag';
-import { PrimaryButton, Field, useModals, useUserSettings } from 'react-components';
+import { PrimaryButton, Field } from 'react-components';
+import PropTypes from 'prop-types';
 
-import EmailModal from './EmailModal';
-
-const RecoveryEmail = () => {
-    const { createModal } = useModals();
-    const [{ Email } = {}] = useUserSettings();
-    const email = Email.Value;
-    const open = () => createModal(<EmailModal email={email} />);
-
+const RecoveryEmail = ({ email, onClick }) => {
     return (
         <Field className="w100">
             <span className="mr0-5">{email}</span>
-            <PrimaryButton onClick={open}>{c('Action').t`Edit`}</PrimaryButton>
+            <PrimaryButton onClick={onClick}>{c('Action').t`Edit`}</PrimaryButton>
         </Field>
     );
+};
+
+RecoveryEmail.propTypes = {
+    email: PropTypes.string,
+    onClick: PropTypes.func.isRequired
 };
 
 export default RecoveryEmail;

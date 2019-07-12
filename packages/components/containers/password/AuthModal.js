@@ -5,7 +5,7 @@ import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import { srpAuth } from 'proton-shared/lib/srp';
 import AskAuthModal from './AskAuthModal';
 
-const AuthModal = ({ onClose, onSuccess, config, ...rest }) => {
+const AuthModal = ({ onClose, onError, onSuccess, config, ...rest }) => {
     const api = useApi();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
@@ -20,14 +20,15 @@ const AuthModal = ({ onClose, onSuccess, config, ...rest }) => {
                 config
             });
 
-            onSuccess();
+            onSuccess({ password, totp });
             onClose();
         } catch (error) {
             const { data: { Code, Error } = {} } = error;
             if (Code === PASSWORD_WRONG_ERROR) {
                 setError(Error);
             }
-            setLoading(false);
+            onError && onError(error);
+            onClose();
         }
     };
 
@@ -37,6 +38,7 @@ const AuthModal = ({ onClose, onSuccess, config, ...rest }) => {
 AuthModal.propTypes = {
     onClose: PropTypes.func,
     onSuccess: PropTypes.func.isRequired,
+    onError: PropTypes.func,
     config: PropTypes.object.isRequired
 };
 

@@ -168,8 +168,6 @@ export { default as UsernameSection } from './containers/account/UsernameSection
 export { default as DeleteSection } from './containers/account/DeleteSection';
 export { default as PasswordsSection } from './containers/account/PasswordsSection';
 export { default as RecoveryEmail } from './containers/notification/RecoveryEmail';
-export { default as PasswordResetToggle } from './containers/notification/PasswordResetToggle';
-export { default as DailyNotificationsToggle } from './containers/notification/DailyNotificationsToggle';
 export { default as EmailSection } from './containers/notification/EmailSection';
 export { default as AddressKeysSection } from './containers/keys/AddressKeysSection';
 export { default as UserKeysSection } from './containers/keys/UserKeysSection';
