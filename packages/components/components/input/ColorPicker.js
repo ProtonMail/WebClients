@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Button } from 'react-components';
 import { ChromePicker } from 'react-color';
+
 import './ColorPicker.scss';
 
-const ColorPicker = ({ text, initialRgbaColor, onChange, ...rest }) => {
+const ColorPicker = ({ children, initialRgbaColor, onChange, ...rest }) => {
     const [display, setDisplay] = useState(false);
     const [rgbaColor, setRgbaColor] = useState(initialRgbaColor);
 
@@ -33,7 +34,7 @@ const ColorPicker = ({ text, initialRgbaColor, onChange, ...rest }) => {
     return (
         <div className="relative">
             <Button onClick={handleClick} style={{ backgroundColor: rgbaColorString(rgbaColor) }} {...rest}>
-                {text}
+                {children}
             </Button>
             {display ? picker : null}
         </div>
@@ -41,13 +42,12 @@ const ColorPicker = ({ text, initialRgbaColor, onChange, ...rest }) => {
 };
 
 ColorPicker.propTypes = {
-    text: PropTypes.string,
+    children: PropTypes.node.isRequired,
     initialRgbaColor: PropTypes.object,
     onChange: PropTypes.func
 };
 
 ColorPicker.defaultProps = {
-    text: '',
     initialRgbaColor: { r: 255, g: 255, b: 255, a: 1 }, // white
     onChange: noop
 };
