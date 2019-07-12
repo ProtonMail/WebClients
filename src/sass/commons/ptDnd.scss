@@ -17,12 +17,13 @@
     position: absolute;
     z-index: 99999;
     background: white;
-    border: 1px solid #929292;
+    border: 1px solid $pm-global-grey;
     padding: .5em 1em;
     font-size: .9em;
     top: 10px;
     left: 10px;
-    transform: translate(0, 0)
+    transform: translate(0, 0);
+    color: $pm-global-altgrey;
 }
 
 .ptdnd-notification-firefox { z-index: 0 }

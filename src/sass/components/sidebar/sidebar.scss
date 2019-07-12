@@ -4,14 +4,10 @@
     text-align: left;
 }
 
-//.sidebarApp-container a { cursor: pointer; }
-
 .sidebarApp-menu {
     flex-shrink: 0;
     padding: 0;
     display: block;
-    //list-style-type: none;
-    //font-size: 14px;
 
     .ico-protonvpn {
         //height: 16px;
@@ -23,7 +19,6 @@
     display: flex;
     align-content: center;
     align-items: center;
-    // max-width: $sidebarWidth
 }
 
 .sidebarApp-item .navigationItem-btn-refresh {
@@ -43,7 +38,6 @@
     display: inline-flex;
     align-items: center;
     width: 100%;
-    // height: 31px;
     text-decoration: none;
     position: relative;
     white-space: nowrap;
@@ -144,34 +138,10 @@
     margin: 1rem;
 }
 
-/* DnD */
 
-.sidebarApp-container .navigationItem-item,
-.sidebarApp-container .menuLabel-link {
-
-    .sidebarApp-icon  { transition: all .2s ease-in }
-
-    .menuLabel-counter,
-    .navigationItem-aside { transition: opacity .2s ease-in }
-
-    &.ptdnd-drag-hover {
-        box-shadow: inset 1px 2px 4px rgba(0,0,0,0.2), inset 1px -2px 4px rgba(0,0,0,0.2);
-        background-color: darken($sidebar-background, 10);
-
-        .sidebarApp-icon,
-        .navigationItem-title,
-        .menuLabel-title { color: #FFF }
-
-        .sidebarApp-icon,
-        .menuLabel-icon { transform: scale(1.25) }
-
-        .menuLabel-counter,
-        .navigationItem-aside {
-            opacity: 0;
-            filter: blur(10px);
-            background-color: transparent;
-        }
-    }
+/* IMPORTANT FOR DND */
+.navigation__link.ptdnd-drag-hover {
+    background-color: $pm-global-altgrey;
 }
 
 .appConfigBody-is-mobile #ptSidebar {
