@@ -1,28 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Toggle, useToggle, useApiWithoutResult, useEventManager, useNotifications } from 'react-components';
+import { Toggle, useApi, useLoading, useEventManager, useNotifications } from 'react-components';
 import { updateLabel } from 'proton-shared/lib/api/labels';
 
 const ToggleNotify = ({ label }) => {
-    const { toggle, state } = useToggle(label.Notify === 1);
+    const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const { request, loading } = useApiWithoutResult(updateLabel);
+    const [loading, withLoading] = useLoading();
 
     const handleChange = async ({ target }) => {
         const newLabel = {
             ...label,
             Notify: +target.checked
         };
-        await request(label.ID, newLabel);
+        await api(updateLabel(label.ID, newLabel));
         await call();
-        toggle();
         createNotification({
             text: c('label/folder notification').t`${label.Name} updated`
         });
     };
-    return <Toggle id={`item-${label.ID}`} checked={state} onChange={handleChange} loading={loading} />;
+    return (
+        <Toggle
+            id={`item-${label.ID}`}
+            checked={label.Notify === 1}
+            onChange={(e) => withLoading(handleChange(e))}
+            loading={loading}
+        />
+    );
 };
 
 ToggleNotify.propTypes = {

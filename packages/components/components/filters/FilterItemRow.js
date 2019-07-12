@@ -23,9 +23,7 @@ function FilterItemRow({ filter }) {
         await request(ID, !toggled);
         toggle();
         await call();
-        createNotification({
-            text: c('Success notification').t`Status updated`
-        });
+        createNotification({ text: c('Success notification').t`Status updated` });
     };
 
     return (

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { SubTitle, Group, Alert, Loader, useFilters, useApiWithoutResult, useEventManager } from 'react-components';
+import { SubTitle, Block, Alert, Loader, useFilters, useApiWithoutResult, useEventManager } from 'react-components';
 import { arrayMove } from 'react-sortable-hoc';
 import { updateFilterOrder } from 'proton-shared/lib/api/filters';
 
@@ -38,9 +38,9 @@ function FiltersSection() {
                     .t`Add a custom filter to perform actions suche as automatically labeling or archiving messages.`}
             </Alert>
 
-            <Group>
+            <Block>
                 <ActionsFilterToolbar />
-            </Group>
+            </Block>
 
             {loading ? (
                 <Loader />

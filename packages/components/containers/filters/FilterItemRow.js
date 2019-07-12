@@ -9,10 +9,9 @@ import {
     DropdownActions,
     ConfirmModal,
     useApi,
-    useToggle,
     useModals,
     useEventManager,
-    useApiWithoutResult,
+    useLoading,
     useNotifications
 } from 'react-components';
 import { isComplex } from 'proton-shared/lib/filters/factory';
@@ -22,14 +21,13 @@ import { toggleEnable, deleteFilter } from 'proton-shared/lib/api/filters';
 import AddFilterModal from './AddFilterModal';
 
 function FilterItemRow({ filter }) {
-    const { ID, Name, Status } = filter;
-    const { toggle, state: toggled } = useToggle(Status === FILTER_STATUS.ENABLED);
-
     const api = useApi();
+    const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
-    const { request, loading } = useApiWithoutResult(toggleEnable);
+
+    const { ID, Name, Status } = filter;
 
     const confirmDelete = async () => {
         return new Promise((resolve, reject) => {
@@ -41,9 +39,8 @@ function FilterItemRow({ filter }) {
         });
     };
 
-    const handleChangeStatus = async () => {
-        await request(ID, !toggled);
-        toggle();
+    const handleChangeStatus = async ({ target }) => {
+        await api(toggleEnable(ID, target.checked));
         await call();
         createNotification({
             text: c('Success notification').t`Status updated`
@@ -54,9 +51,7 @@ function FilterItemRow({ filter }) {
         await confirmDelete();
         await api(deleteFilter(filter.ID));
         await call();
-        createNotification({
-            text: c('Success notification').t`Filter removed`
-        });
+        createNotification({ text: c('Success notification').t`Filter removed` });
     };
 
     const handleEdit = (type) => () => {
@@ -86,7 +81,12 @@ function FilterItemRow({ filter }) {
             <td>{Name}</td>
             <td>
                 <div className="w10">
-                    <Toggle id={`item-${ID}`} loading={loading} checked={toggled} onChange={handleChangeStatus} />
+                    <Toggle
+                        id={`item-${ID}`}
+                        loading={loading}
+                        checked={Status === FILTER_STATUS.ENABLED}
+                        onChange={(e) => withLoading(handleChangeStatus(e))}
+                    />
                 </div>
             </td>
             <td>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { Loader, SubTitle, Alert, Paragraph, useLabels, useEventManager, useApiWithoutResult } from 'react-components';
+import { Loader, SubTitle, Alert, Block, useLabels, useEventManager, useApiWithoutResult } from 'react-components';
 import { arrayMove } from 'react-sortable-hoc';
 import { orderLabels } from 'proton-shared/lib/api/labels';
 
@@ -42,13 +42,13 @@ function LabelsSection() {
                 {c('LabelSettings')
                     .t`Multiple labels can be applied to a single message, but a message can only be in a single folder.`}
             </Alert>
-            <nav className="mb1f flex">
+            <Block>
                 <ActionsLabelToolbar />
-            </nav>
+            </Block>
 
-            {loading ? <Loader /> : null}
-
-            {!loading && labels.length ? (
+            {loading ? (
+                <Loader />
+            ) : labels.length ? (
                 <LabelSortableList
                     getContainer={getScrollContainer}
                     pressDelay={200}
@@ -56,7 +56,7 @@ function LabelsSection() {
                     onSortEnd={onSortEnd}
                 />
             ) : (
-                <Paragraph>{c('LabelSettings').t`No labels/folders available`}</Paragraph>
+                <Alert>{c('LabelSettings').t`No labels/folders available`}</Alert>
             )}
         </>
     );
