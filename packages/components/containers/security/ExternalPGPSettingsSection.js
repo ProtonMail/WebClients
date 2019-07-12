@@ -1,13 +1,75 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, SubTitle, Row, Field, Label, Info, useMailSettings } from 'react-components';
+import {
+    ConfirmModal,
+    Alert,
+    SubTitle,
+    Row,
+    Field,
+    Label,
+    Info,
+    Toggle,
+    useMailSettings,
+    useEventManager,
+    useApi,
+    useLoading,
+    useNotifications,
+    useModals
+} from 'react-components';
+import { updateAttachPublicKey, updatePGPScheme, updateSign } from 'proton-shared/lib/api/mailSettings';
 
-import AttachPublicKeyToggle from './AttachPublicKeyToggle';
-import SignToggle from './SignToggle';
 import PGPSchemeSelect from './PGPSchemeSelect';
 
 const ExternalPGPSettingsSection = () => {
-    const [mailSettings] = useMailSettings();
+    const [{ Sign, AttachPublicKey, PGPScheme } = {}] = useMailSettings();
+    const { call } = useEventManager();
+    const { createNotification } = useNotifications();
+    const { createModal } = useModals();
+    const api = useApi();
+    const [loadingSign, withLoadingSign] = useLoading();
+    const [loadingAttach, withLoadingAttach] = useLoading();
+    const [loadingScheme, withLoadingScheme] = useLoading();
+
+    const handleChangeSign = async ({ target }) => {
+        await api(updateSign(+target.checked));
+        await call();
+        createNotification({ text: c('Info').t`Encryption setting updated` });
+    };
+
+    const askSign = () => {
+        return new Promise((resolve) => {
+            createModal(
+                <ConfirmModal
+                    confirm={c('Action').t`Yes`}
+                    cancel={c('Action').t`No`}
+                    title={c('Title').t`Automatically sign outgoing messages?`}
+                    onConfirm={() => resolve(true)}
+                    onClose={() => resolve(false)}
+                >
+                    <Alert>
+                        {c('Info')
+                            .t`PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.`}
+                    </Alert>
+                </ConfirmModal>
+            );
+        });
+    };
+
+    const handleChangeAttach = async ({ target }) => {
+        const newValue = +target.checked;
+        if (newValue && !Sign && (await askSign(newValue))) {
+            await api(updateSign(1));
+        }
+        await api(updateAttachPublicKey(newValue));
+        await call();
+        createNotification({ text: c('Info').t`Encryption setting updated` });
+    };
+
+    const handleChangeScheme = async ({ target }) => {
+        await api(updatePGPScheme(+target.value));
+        await call();
+        createNotification({ text: c('Info').t`Encryption setting updated` });
+    };
 
     return (
         <>
@@ -25,7 +87,12 @@ const ExternalPGPSettingsSection = () => {
                     />
                 </Label>
                 <Field>
-                    <SignToggle id="signToggle" sign={mailSettings.Sign} />
+                    <Toggle
+                        id="signToggle"
+                        checked={!!Sign}
+                        onChange={(e) => withLoadingSign(handleChangeSign(e))}
+                        loading={loadingSign}
+                    />
                 </Field>
             </Row>
             <Row>
@@ -38,10 +105,11 @@ const ExternalPGPSettingsSection = () => {
                     />
                 </Label>
                 <Field>
-                    <AttachPublicKeyToggle
+                    <Toggle
                         id="attachPublicKeyToggle"
-                        attachPublicKey={mailSettings.AttachPublicKey}
-                        sign={mailSettings.Sign}
+                        checked={!!AttachPublicKey}
+                        onChange={(e) => withLoadingAttach(handleChangeAttach(e))}
+                        loading={loadingAttach}
                     />
                 </Field>
             </Row>
@@ -55,7 +123,12 @@ const ExternalPGPSettingsSection = () => {
                     />
                 </Label>
                 <Field>
-                    <PGPSchemeSelect id="PGPSchemeSelect" pgpScheme={mailSettings.PGPScheme} />
+                    <PGPSchemeSelect
+                        id="PGPSchemeSelect"
+                        pgpScheme={PGPScheme}
+                        onChange={(e) => withLoadingScheme(handleChangeScheme(e))}
+                        disabled={loadingScheme}
+                    />
                 </Field>
             </Row>
         </>

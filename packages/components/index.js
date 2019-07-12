@@ -181,9 +181,7 @@ export { default as PaymentMethodsTable } from './containers/paymentMethods/Paym
 export { default as PaymentMethodsSection } from './containers/paymentMethods/PaymentMethodsSection';
 export { default as usePaymentMethodsSelect } from './containers/paymentMethods/usePaymentMethodsSelect';
 export { default as PaymentMethodsSelect } from './containers/paymentMethods/PaymentMethodsSelect';
-export { default as SignToggle } from './containers/security/SignToggle';
 export { default as ExternalPGPSettingsSection } from './containers/security/ExternalPGPSettingsSection';
-export { default as AttachPublicKeyToggle } from './containers/security/AttachPublicKeyToggle';
 export { default as AddressVerificationSection } from './containers/security/AddressVerificationSection';
 export { default as PGPSchemeSelect } from './containers/security/PGPSchemeSelect';
 export { default as useAddressModal } from './containers/addresses/useAddressModal';

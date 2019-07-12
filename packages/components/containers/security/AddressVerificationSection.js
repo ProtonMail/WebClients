@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
 import {
@@ -9,34 +9,24 @@ import {
     Label,
     Info,
     Toggle,
-    useApiWithoutResult,
-    useToggle,
+    useApi,
+    useLoading,
+    useMailSettings,
     useEventManager,
     useNotifications
 } from 'react-components';
-import { useMailSettings } from '../../models/mailSettingsModel';
 
 const AddressVerificationSection = () => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const [mailSettings] = useMailSettings();
-    const { state, toggle } = useToggle(!!mailSettings.PromptPin);
-    const { request } = useApiWithoutResult(updatePromptPin);
-    const [loading, setLoading] = useState(false);
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
+    const [{ PromptPin } = {}] = useMailSettings();
 
     const handleChange = async ({ target }) => {
-        try {
-            setLoading(true);
-            const newValue = target.checked;
-            await request(+newValue);
-            await call();
-            toggle();
-            setLoading(false);
-            createNotification({ text: c('Success').t`Preference saved` });
-        } catch (error) {
-            setLoading(false);
-            throw error;
-        }
+        await api(updatePromptPin(+target.checked));
+        await call();
+        createNotification({ text: c('Success').t`Preference saved` });
     };
 
     return (
@@ -56,7 +46,12 @@ const AddressVerificationSection = () => {
                     />
                 </Label>
                 <Field>
-                    <Toggle id="trustToggle" loading={loading} checked={state} onChange={handleChange} />
+                    <Toggle
+                        id="trustToggle"
+                        loading={loading}
+                        checked={!!PromptPin}
+                        onChange={(e) => withLoading(handleChange(e))}
+                    />
                 </Field>
             </Row>
         </>

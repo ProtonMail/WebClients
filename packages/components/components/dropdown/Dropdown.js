@@ -130,4 +130,4 @@ Dropdown.defaultProps = {
     className: ''
 };
 
-export default React.forwardRef(Dropdown);
+export default Dropdown;
