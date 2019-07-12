@@ -205,6 +205,10 @@ body {
   color: $pm-global-grey;
   height: calc(100vh - #{$header-height} );
   overflow: auto;
+  
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 .main-area {
   border-radius: 4px 4px 0 0;
