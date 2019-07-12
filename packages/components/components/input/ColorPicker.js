@@ -41,7 +41,7 @@ ColorPicker.propTypes = {
 };
 
 ColorPicker.defaultProps = {
-    initialRgbaColor: { r: 255, g: 255, b: 255, a: 1 }, // white
+    color: 'blue',
     onChange: noop
 };
 
