@@ -65,13 +65,14 @@
         .subject-num-message { font-weight: bold; }
     }
     &.marked::before {
-        background-color: $primary;
+        background-color: $pm-blue;
         content: '';
         display: block;
         position: absolute;
         height: 100%;
         width: 5px;
-        top:0px;
+        top: 0;
+        left: 0;
     }
     &.active {
         background: $active-background;
