@@ -1,16 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    SubTitle,
-    Label,
-    Row,
-    Field,
-    MozillaInfoPanel,
-    ErrorButton,
-    useModals,
-    useUser,
-    useSubscription
-} from 'react-components';
+import { SubTitle, Alert, MozillaInfoPanel, ErrorButton, useModals, useUser, useSubscription } from 'react-components';
 
 import DeleteAccountModal from './DeleteAccountModal';
 
@@ -24,10 +14,12 @@ const DeleteSection = () => {
         return null;
     }
 
+    const subTitle = <SubTitle>{c('Title').t`Delete account`}</SubTitle>;
+
     if (isManagedByMozilla) {
         return (
             <>
-                <SubTitle>{c('Title').t`Delete account`}</SubTitle>
+                {subTitle}
                 <MozillaInfoPanel />
             </>
         );
@@ -35,14 +27,14 @@ const DeleteSection = () => {
 
     return (
         <>
-            <Row>
-                <Label htmlFor="deleteButton">{c('Label').t`Irreversible action`}</Label>
-                <Field>
-                    <ErrorButton id="deleteButton" onClick={() => createModal(<DeleteAccountModal />)}>
-                        {c('Action').t`Delete your account`}
-                    </ErrorButton>
-                </Field>
-            </Row>
+            {subTitle}
+            <Alert type="error">
+                {c('Info')
+                    .t`Deleting your account will permanently delete your emails, and you will lose your email address.`}
+            </Alert>
+            <ErrorButton id="deleteButton" onClick={() => createModal(<DeleteAccountModal />)}>
+                {c('Action').t`Delete your account`}
+            </ErrorButton>
         </>
     );
 };
