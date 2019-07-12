@@ -148,7 +148,7 @@ const getEnvDeploy = ({ env = process.env.NODE_ENV, config = true } = {}) => {
         app_version: argv['app-version'] || CONFIG_DEFAULT.app_version,
         api_version: `${argv['api-version'] || CONFIG_DEFAULT.api_version}`,
         articleLink: argv.article || CONFIG_DEFAULT.articleLink,
-        changelogPath: env === 'dist' ? CONFIG_DEFAULT.changelogPath : 'changelog.tpl.html',
+        changelogPath: CONFIG_DEFAULT.changelogPath,
         statsConfig: getStatsConfig(argv.branch),
         sentry: sentryConfig()
     };

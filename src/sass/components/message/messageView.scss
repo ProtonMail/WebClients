@@ -435,7 +435,10 @@
             overflow-x: auto;
             box-sizing: content-box; // to avoid problems in some emails
 
-            .bodyDecrypted { word-wrap: break-word; }
+            .bodyDecrypted {
+                word-wrap: break-word;
+                word-break: break-all;
+            }
 
             .email {
                 position: relative;
