@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { isEmail } from 'proton-shared/lib/helpers/validators';
 import {
     Row,
     Label,
@@ -10,6 +11,7 @@ import {
     TableBody,
     TableRow,
     Button,
+    SmallButton,
     useContactEmails
 } from 'react-components';
 import { c } from 'ttag';
@@ -28,12 +30,28 @@ const InviteForm = () => {
         return <Loader />;
     }
 
-    const list = contactEmails.map(({ Email }) => Email);
-    const handleSubmit = () => {};
+    const list = contactEmails.map(({ Email, Name, ID }) => ({
+        label: [Name, Email].filter(Boolean).join(' '),
+        value: ID
+    }));
 
-    const handleSelect = (newAttendee) => {
-        updateAttendees([...attendees, newAttendee]);
+    const handleSubmit = () => {
+        if (isEmail(newAttendee)) {
+            updateAttendees([...attendees, { name: '', email: newAttendee }]);
+            updateAttendee('');
+        }
+    };
+
+    const handleSelect = (contactEmailID) => {
+        const { Name: name, Email: email } = contactEmails.find(({ ID }) => ID === contactEmailID);
+        updateAttendees([...attendees, { name, email }]);
         updateAttendee('');
+    };
+
+    const handleRemove = (index) => () => {
+        const copy = [...attendees];
+        copy.splice(index, 1);
+        updateAttendees(copy);
     };
 
     return (
@@ -54,16 +72,23 @@ const InviteForm = () => {
                     {attendees.length ? null : <div className="mt1">{c('Info').t`No attendee yet`}</div>}
                 </Field>
                 <div>
-                    <Button onClick={handleAdd} className="ml1">{c('Action').t`Add`}</Button>
+                    <Button disabled={!newAttendee.length} onClick={handleAdd} className="ml1">{c('Action')
+                        .t`Add`}</Button>
                 </div>
             </Row>
             {attendees.length ? (
                 <Table>
                     <TableHeader cells={headers} />
                     <TableBody>
-                        {attendees.map(({ ID }) => {
-                            const cells = [];
-                            return <TableRow key={ID} cells={cells} />;
+                        {attendees.map(({ name, email }, index) => {
+                            const key = `${index}`;
+                            const cells = [
+                                name,
+                                email,
+                                <SmallButton key={key} onClick={handleRemove(index)}>{c('Action')
+                                    .t`Remove`}</SmallButton>
+                            ];
+                            return <TableRow key={key} cells={cells} />;
                         })}
                     </TableBody>
                 </Table>

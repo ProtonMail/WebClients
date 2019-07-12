@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Group, Select, Icon, ButtonGroup, useModals } from 'react-components';
+import { Group, Select, Icon, Button, ButtonGroup, useModals } from 'react-components';
 import { c } from 'ttag';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
@@ -35,6 +35,7 @@ const OverviewContainer = () => {
 
     const handlePrev = () => calendarRef.current.getInstance().prev();
     const handleNext = () => calendarRef.current.getInstance().next();
+    const handleToday = () => calendarRef.current.getInstance().today();
 
     const handleChangeView = ({ target }) => {
         const newView = target.value;
@@ -66,21 +67,25 @@ const OverviewContainer = () => {
         { text: c('Calendar view').t`Day`, value: 'day' },
         { text: c('Calendar view').t`Week`, value: 'week' },
         { text: c('Calendar view').t`Month`, value: 'month' },
-        { text: c('Calendar view').t`Year`, value: 'year' }
+        { text: c('Calendar view').t`Year`, value: 'year' },
+        { text: c('Calendar view').t`Planning`, value: 'planning' }
     ];
 
     return (
         <Main>
             <div className="flex flex-nowrap">
+                <Button className="mr1" onClick={handleToday}>{c('Action').t`Today`}</Button>
                 <Group className="mr1">
                     <ButtonGroup onClick={handlePrev}>
                         <Icon name="arrow-left" />
                     </ButtonGroup>
                     <ButtonGroup onClick={handleNext}>{<Icon name="arrow-right" />}</ButtonGroup>
                 </Group>
-                <Select options={views} value={view} onChange={handleChangeView} />
+                <div>
+                    <Select options={views} value={view} onChange={handleChangeView} />
+                </div>
             </div>
-            {VIEWS_HANDLED_BY_CALENDAR.includes(view) ? (
+            <div hidden={!VIEWS_HANDLED_BY_CALENDAR.includes(view)}>
                 <Calendar
                     onBeforeCreateSchedulecalendar={handleBeforeCreateSchedulecalendar}
                     onBeforeUpdateSchedule={handleBeforeUpdateSchedule}
@@ -180,9 +185,9 @@ const OverviewContainer = () => {
                         timezonesCollapsed: true
                     }}
                 />
-            ) : (
-                'TODO: year view'
-            )}
+            </div>
+            {view === 'year' ? 'TODO' : null}
+            {view === 'planning' ? 'TODO' : null}
         </Main>
     );
 };
