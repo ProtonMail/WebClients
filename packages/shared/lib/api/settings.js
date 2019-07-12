@@ -51,10 +51,10 @@ export const updateNotifyEmail = (Notify) => ({
     data: { Notify }
 });
 
-export const updateResetEmail = (data) => ({
+export const updateResetEmail = (Reset) => ({
     url: 'settings/email/reset',
     method: 'put',
-    data
+    data: { Reset }
 });
 
 export const verifyEmail = (Token) => ({
