@@ -74,5 +74,8 @@ if [ -n "$ERRORS" ]; then
         log "error"  "➙ ${ERRORS[$i]}";
         echo
     done
+
+    log "info" "Please upgrade your dependencies."
+    log "info" "You can run npm update <dependency> or rm package-lock.json and node_modules".
     exit 1;
 fi;
