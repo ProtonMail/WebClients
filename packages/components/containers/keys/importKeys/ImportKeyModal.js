@@ -58,7 +58,10 @@ const ImportKeyModal = ({ Address, addressKeys, onClose, ...rest }) => {
             try {
                 const { uploadedPrivateKey } = key;
 
-                const maybeOldKeyContainer = findKeyByFingerprint(keys, uploadedPrivateKey.getFingerprint());
+                const maybeOldKeyContainer = findKeyByFingerprint(
+                    updatedAddressKeys,
+                    uploadedPrivateKey.getFingerprint()
+                );
                 if (maybeOldKeyContainer) {
                     if (maybeOldKeyContainer.privateKey.isDecrypted()) {
                         throw new Error(c('Error').t`Key is already decrypted`);
