@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Input from './Input';
-import { isNumber } from '../../helpers/validators';
+import { isNumber } from 'proton-shared/lib/helpers/validators';
 
 const TwoFactorInput = ({ value, onChange, maxLength, ...rest }) => {
     const handleChange = (event) => {

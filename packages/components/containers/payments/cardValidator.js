@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import valid from 'card-validator';
-import { isEmpty } from '../../helpers/validators';
+import { isEmpty } from 'proton-shared/lib/helpers/validators';
 
 export const isCardNumber = (value) => valid.number(value).isValid;
 export const isCVV = (value) => valid.cvv(value).isValid;
