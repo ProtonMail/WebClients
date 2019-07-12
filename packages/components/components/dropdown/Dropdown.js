@@ -8,98 +8,100 @@ const ALIGN_CLASSES = {
     left: 'dropDown--leftArrow'
 };
 
-const Dropdown = (
-    {
-        isOpen,
-        content,
-        title,
-        children,
-        className,
-        autoClose,
-        autoCloseOutside,
-        align,
-        narrow,
-        loading,
-        disabled,
-        caret
-    },
-    ref
-) => {
-    const [open, setOpen] = useState(isOpen);
-    const wrapperRef = useRef(null);
-    const handleClick = () => setOpen(!open);
-
-    const handleKeydown = (event) => {
-        const key = keycode(event);
-
-        if (key === 'escape' && event.target === document.activeElement) {
-            setOpen(false);
-        }
-    };
-
-    const handleClickOutside = (event) => {
-        // Do nothing if clicking ref's element or descendent elements
-        if (!autoCloseOutside || !wrapperRef.current || wrapperRef.current.contains(event.target)) {
-            return;
-        }
-        setOpen(false);
-    };
-
-    const handleClickContent = () => {
-        if (autoClose) {
-            setOpen(false);
-        }
-    };
-
-    useImperativeHandle(ref, () => ({
-        close() {
-            setOpen(false);
+const Dropdown = React.forwardRef(
+    (
+        {
+            isOpen,
+            content,
+            title,
+            children,
+            className,
+            autoClose,
+            autoCloseOutside,
+            align,
+            narrow,
+            loading,
+            disabled,
+            caret
         },
-        open() {
-            setOpen(true);
-        }
-    }));
+        ref
+    ) => {
+        const [open, setOpen] = useState(isOpen);
+        const wrapperRef = useRef(null);
+        const handleClick = () => setOpen(!open);
 
-    useEffect(() => {
-        document.addEventListener('mousedown', handleClickOutside);
-        document.addEventListener('touchstart', handleClickOutside);
-        document.addEventListener('keydown', handleKeydown);
+        const handleKeydown = (event) => {
+            const key = keycode(event);
 
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-            document.removeEventListener('touchstart', handleClickOutside);
-            document.removeEventListener('keydown', handleKeydown);
+            if (key === 'escape' && event.target === document.activeElement) {
+                setOpen(false);
+            }
         };
-    }, []);
 
-    const alignClass = ALIGN_CLASSES[align];
-    const dropdownClassName = ['dropDown pm-button', alignClass, (loading || disabled) && 'is-disabled', className]
-        .filter(Boolean)
-        .join(' ');
-    const contentClassName = `dropDown-content ${narrow ? 'dropDown-content--narrow' : ''}`;
-    const caretContent = caret && <Icon className="expand-caret" size={12} name="caret" />;
+        const handleClickOutside = (event) => {
+            // Do nothing if clicking ref's element or descendent elements
+            if (!autoCloseOutside || !wrapperRef.current || wrapperRef.current.contains(event.target)) {
+                return;
+            }
+            setOpen(false);
+        };
 
-    return (
-        <div className={`${dropdownClassName} ${className}`} ref={wrapperRef}>
-            <button
-                title={title}
-                className="increase-surface-click"
-                aria-expanded={open}
-                aria-busy={loading}
-                onClick={handleClick}
-                type="button"
-                disabled={loading || disabled}
-            >
-                <span className="mauto">
-                    {content} {caretContent}
-                </span>
-            </button>
-            <div className={contentClassName} onClick={handleClickContent} hidden={!open}>
-                {children}
+        const handleClickContent = () => {
+            if (autoClose) {
+                setOpen(false);
+            }
+        };
+
+        useImperativeHandle(ref, () => ({
+            close() {
+                setOpen(false);
+            },
+            open() {
+                setOpen(true);
+            }
+        }));
+
+        useEffect(() => {
+            document.addEventListener('mousedown', handleClickOutside);
+            document.addEventListener('touchstart', handleClickOutside);
+            document.addEventListener('keydown', handleKeydown);
+
+            return () => {
+                document.removeEventListener('mousedown', handleClickOutside);
+                document.removeEventListener('touchstart', handleClickOutside);
+                document.removeEventListener('keydown', handleKeydown);
+            };
+        }, []);
+
+        const alignClass = ALIGN_CLASSES[align];
+        const dropdownClassName = ['dropDown pm-button', alignClass, (loading || disabled) && 'is-disabled', className]
+            .filter(Boolean)
+            .join(' ');
+        const contentClassName = `dropDown-content ${narrow ? 'dropDown-content--narrow' : ''}`;
+        const caretContent = caret && <Icon className="expand-caret" size={12} name="caret" />;
+
+        return (
+            <div className={`${dropdownClassName} ${className}`} ref={wrapperRef}>
+                <button
+                    title={title}
+                    className="increase-surface-click"
+                    aria-expanded={open}
+                    aria-busy={loading}
+                    onClick={handleClick}
+                    type="button"
+                    disabled={loading || disabled}
+                >
+                    <span className="mauto">
+                        {content} {caretContent}
+                    </span>
+                </button>
+                <div className={contentClassName} onClick={handleClickContent} hidden={!open}>
+                    {children}
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    }
+);
 
 Dropdown.propTypes = {
     className: PropTypes.string,
