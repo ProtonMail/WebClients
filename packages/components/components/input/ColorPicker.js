@@ -3,37 +3,27 @@ import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Button } from 'react-components';
 import { ChromePicker } from 'react-color';
+import tinycolor from 'tinycolor2';
 
 import './ColorPicker.scss';
 
-const ColorPicker = ({ children, initialRgbaColor, onChange, ...rest }) => {
+const ColorPicker = ({ children, color, onChange, ...rest }) => {
     const [display, setDisplay] = useState(false);
-    const [rgbaColor, setRgbaColor] = useState(initialRgbaColor);
-
-    const rgbaColorString = (rgbaColor) => {
-        return `rgba(${rgbaColor.r}, ${rgbaColor.g}, ${rgbaColor.b}, ${rgbaColor.a})`;
-    };
-    const handleClick = () => {
-        setDisplay(!display);
-    };
-    const handleClose = () => {
-        setDisplay(false);
-    };
-    const handleChange = (color) => {
-        setRgbaColor(color.rgb);
-        onChange(color);
-    };
+    const colorModel = tinycolor(color);
+    const backgroundColor = colorModel.isValid() ? colorModel.toHexString() : '';
+    const handleClick = () => setDisplay(!display);
+    const handleClose = () => setDisplay(false);
 
     const picker = (
         <div className="popover">
             <div className="cover" onClick={handleClose} />
-            <ChromePicker color={rgbaColor} onChange={handleChange} />
+            <ChromePicker color={color} onChange={onChange} />
         </div>
     );
 
     return (
         <div className="relative">
-            <Button onClick={handleClick} style={{ backgroundColor: rgbaColorString(rgbaColor) }} {...rest}>
+            <Button onClick={handleClick} style={{ backgroundColor }} {...rest}>
                 {children}
             </Button>
             {display ? picker : null}
@@ -43,7 +33,10 @@ const ColorPicker = ({ children, initialRgbaColor, onChange, ...rest }) => {
 
 ColorPicker.propTypes = {
     children: PropTypes.node.isRequired,
-    initialRgbaColor: PropTypes.object,
+    color: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({ r: PropTypes.number, g: PropTypes.number, b: PropTypes.number, a: PropTypes.number })
+    ]),
     onChange: PropTypes.func
 };
 
