@@ -2,22 +2,23 @@
     method="post"
     id="pm_loginUnlock"
     name="unlockForm"
-    class="pm_panel pm_form alt loginFormUnlock-container"
+    class="pm_panel pm_form alt loginFormUnlock-container pm_panel-login__inner bordered-container"
     novalidate
     role="form"
     autocomplete="off">
 
-    <img src="/assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
-    <h4 class="aligncenter">
-        <span class="fa fa-inbox title-icon"></span> <span translate translate-context="Title">Decrypt Mailbox</span>
-    </h4>
+    <div class="mb2 aligncenter">
+        <img src="assets/img/logo.svg" height="20" width="148" alt="ProtonMail" />
+    </div>
 
-    <p class="aligncenter"></p>
+    <h1 class="aligncenter h4 uppercase flex">
+        <span translate-context="Title" translate>Decrypt Mailbox</span>
+    </h1>
 
-    <label for="password" class="sr-only" translate-context="Label" translate>Mailbox password</label>
+    <label for="password" class="pb0-5 bl" translate-context="Label" translate>Mailbox password</label>
     <password
-        class="margin focus unlock-input-password"
+        class="mb1 focus unlock-input-password"
         data-id="mailboxPassword"
         data-name="mailbox-password"
         data-value="mailboxPassword"
@@ -29,18 +30,22 @@
         <div class="loginForm-actions-column">
             <button
                 id="unlock_btn"
-                class="loginForm-actions-main pm_button primary pull-right disabled-if-network-activity"
+                class="loginForm-actions-main pm-button--large mb1 w100 aligncenter pm-button-blue disabled-if-network-activity"
                 type="submit"
                 ng-disabled="unlockForm.$invalid || loading"
                 translate-context="Action"
                 translate>Unlock</button>
-            <button
-                type="button"
-                data-action="reset"
-                class="login-support pm_button color-white link pull-left unlock-btn-forgot"
-                translate-context="Action"
-                translate
-                translate-comment="link to reset mailbox">Forgot password?</button>
+
+            <div class="alignright pb1">
+                <button
+                    type="button"
+                    data-action="reset"
+                    class="login-support white-link unlock-btn-forgot"
+                    translate-context="Action"
+                    translate
+                    translate-comment="link to reset mailbox">Forgot password?</button>
+            </div>
+
         </div>
     </div>
 </form>

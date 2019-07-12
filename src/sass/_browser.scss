@@ -172,41 +172,6 @@ input:-moz-ui-invalid {
     .not-on-ie11 { display: none !important; }
 }
 
-/* 2FA inputs*/
-/* only apply to tested browser cause placeholder styling is tricky*/
-
-.ua-ie,
-.ua-safari,
-.ua-chrome,
-.ua-firefox {
-    .pm_form input[type="text"].TwoFA-input {
-
-        font-size: 1.1rem;
-        letter-spacing: 2px;
-
-        @mixin resetTwoFA-input() {
-            font-size: 14px;
-            letter-spacing: 0px;
-        }
-
-        &::-webkit-input-placeholder {
-            @include resetTwoFA-input();
-            line-height: 24px; /* safari */
-        }
-        &:-moz-placeholder {
-            /* Firefox 18- */
-            @include resetTwoFA-input()
-        }
-        &::-moz-placeholder {
-            /* Firefox 19+ */
-            @include resetTwoFA-input()
-        }
-        &:-ms-input-placeholder {
-            /*IE*/
-            @include resetTwoFA-input()
-        }
-    }
-}
 
 #pm_slow { display: flex !important }
 #pm_slow2 { display: none !important }

@@ -2,19 +2,21 @@
     method="post"
     id="pm_loginTwoFactor"
     name="twoFactorForm"
-    class="pm_panel alt pm_panel-twofactors pm_form loginFormTwoFa-container"
+    class="pm_panel alt pm_panel-twofactors pm_form loginFormTwoFa-container pm_panel-login__inner bordered-container"
     novalidate
     role="form"
     autocomplete="off">
 
-    <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
+    <div class="mb2 aligncenter">
+        <img src="assets/img/logo.svg" height="20" width="148" alt="ProtonMail" />
+    </div>
 
-    <h4 class="aligncenter margin-bottom">
-        <i class="fa fa-user title-icon"></i> <span translate-context="Title" translate>Two-Factor Authentication</span>
-    </h4>
+    <h1 class="aligncenter h4 uppercase flex">
+        <span translate-context="Title" translate>Two-Factor Authentication</span>
+    </h1>
 
-    <div class="margin">
-        <label for="twoFactorCode" translate translate-context="Label">Two-factor passcode</label>
+    <div class="mt2 pb1">
+        <label for="twoFactorCode" class="pb0-5 bl" translate translate-context="Label">Two-factor passcode</label>
         <two-fa-field
             ng-model="twoFactorCode"
             autofocus
@@ -29,16 +31,19 @@
             <button
                 id="login_btn_2fa"
                 type="submit"
-                class="loginForm-actions-main pm_button primary primary-white pull-right disabled-if-network-activity"
+                class="loginForm-actions-main pm-button--large mb1 w100 aligncenter pm-button-blue disabled-if-network-activity"
                 ng-disabled="twoFactorForm.$invalid || loading"
                 translate-context="Action"
                 translate>Login</button>
-            <a
-                class="pm_button link pull-left"
-                data-action="help"
-                translate-context="Action"
-                translate-comment="link for login help"
-                translate>Need help?</a>
+
+            <div class="alignright pb1">
+               <a
+                    class="pm_button white-link"
+                    data-action="help"
+                    translate-context="Action"
+                    translate-comment="link for login help"
+                    translate>Need help?</a>
+            </div>
         </div>
     </div>
 </form>

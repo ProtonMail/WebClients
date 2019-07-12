@@ -11,12 +11,6 @@ body#login-sub {
   }
 }
 
-body#login:not(.unlock) {
-  background: url(assets('img/login.jpg')) #667cbd center center no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
 #pm_login {
     background-image: url('#hostURL#');
 }
