@@ -7,7 +7,7 @@ const ENV = (() => {
 })();
 
 const AUTOPREFIXER_CONFIG = {
-    browsers: ['last 2 versions', 'iOS >= 8', 'Safari >= 8']
+    browsers: ['Defaults', 'not IE 11', 'iOS >= 10']
 };
 
 const STATS_ID = {
