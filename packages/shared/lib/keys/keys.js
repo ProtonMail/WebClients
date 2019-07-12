@@ -1,12 +1,4 @@
-import {
-    getKeys,
-    decryptMessage,
-    decryptPrivateKey as decryptArmoredKey,
-    getMessage,
-    encodeBase64,
-    arrayToBinaryString,
-    encryptMessage
-} from 'pmcrypto';
+import { getKeys, decryptMessage, getMessage, encodeBase64, arrayToBinaryString, encryptMessage } from 'pmcrypto';
 import getRandomValues from 'get-random-values';
 import { VERIFICATION_STATUS } from 'pmcrypto/lib/constants';
 
@@ -81,6 +73,9 @@ export const encryptMemberToken = async (token, privateKey) => {
  * @return {Promise}
  */
 export const prepareMemberKeys = (Keys, organizationKey) => {
+    if (!organizationKey && Keys.length > 0) {
+        throw new Error('Organization key required');
+    }
     return Promise.all(
         Keys.map(async (Key) => {
             const { PrivateKey, Token, Activation } = Key;
@@ -99,15 +94,14 @@ export const prepareMemberKeys = (Keys, organizationKey) => {
 
 /**
  * Decrypt the keys for a list of addresses.
- * @param {Array} Addresses
+ * @param {Array} Keys
  * @param {String} keyPassword
  * @return {Promise}
  */
 export const prepareKeys = async (Keys = [], keyPassword) => {
-    if (!keyPassword) {
+    if (!keyPassword && Keys.length > 0) {
         throw new Error('Key password required');
     }
-
     return Promise.all(
         Keys.map(async (Key) => {
             const { PrivateKey } = Key;
