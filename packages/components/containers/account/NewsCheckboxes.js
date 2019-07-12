@@ -1,6 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
-import { Label, Checkbox, useApiWithoutResult, useUserSettings, useEventManager } from 'react-components';
+import {
+    Label,
+    Checkbox,
+    useUserSettings,
+    useEventManager,
+    useNotifications,
+    useApi,
+    useLoading
+} from 'react-components';
 import { NEWS } from 'proton-shared/lib/constants';
 import { updateNews } from 'proton-shared/lib/api/settings';
 import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
@@ -8,18 +16,19 @@ import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
 const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA } = NEWS;
 
 const NewsCheckboxes = () => {
-    const [{ News }] = useUserSettings();
+    const [{ News: news }] = useUserSettings();
+    const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const { request, loading } = useApiWithoutResult(updateNews);
-    const [news, setNews] = useState(News);
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
 
-    const handleChange = (mask) => async () => {
-        const newNews = toggleBit(news, mask);
-
-        await request(newNews);
+    const update = async (mask) => {
+        await api(updateNews(toggleBit(news, mask)));
         await call();
-        setNews(newNews);
+        createNotification({ text: c('Info').t`Emailing preference updated` });
     };
+
+    const handleChange = (mask) => () => withLoading(update(mask));
 
     return (
         <ul className="unstyled">
