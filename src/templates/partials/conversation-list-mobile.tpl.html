@@ -12,12 +12,6 @@
             class="conversation"
             data-elements-container
             ng-class="getClassNames(conversation, markedElement)">
-            <span class="expiration">
-                <svg height="14" width="14" viewBox="0 0 14 14">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
-                </svg>
-            </span>
-
             <pt-select-element data-index="{{ $index }}"></pt-select-element>
             <div class="conversation-meta">
                 <div class="row top">
@@ -30,10 +24,17 @@
                         </span>
                     </h4>
                     <span class="meta">
-                        <i class="fa fa-paperclip conversation-icon-attachment"></i>
+                        <icon
+                            data-name="expiration"
+                            data-fill="global-warning"
+                            class="mauto conversation-icon-expiration"></icon>
+                        <icon
+                            data-name="attach"
+                            data-fill="global-success"
+                            class="mauto conversation-icon-attachment"></icon>
                         <pt-star
-                          data-model="conversation"
-                          class="singleStar"></pt-star>
+                            data-model="conversation"
+                            class="singleStar"></pt-star>
                         <time-element></time-element>
                     </span>
                 </div>

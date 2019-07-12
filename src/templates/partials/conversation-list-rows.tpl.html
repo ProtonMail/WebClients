@@ -9,9 +9,6 @@
             data-elements-container
             class="conversation relative item-container-row flex bg-global-light"
             ng-class="getClassNames(conversation, markedElement)">
-            <span class="expiration">
-                <icon data-name="expiration"></icon>
-            </span>
 
             <select-box-element class="mr1"></select-box-element>
 
@@ -30,8 +27,14 @@
                     </span>
 
                     <labels-element element="conversation"></labels-element>
-
-                    <i class="fa fa-paperclip conversation-icon-attachment mauto"></i>
+                    <icon
+                        data-name="expiration"
+                        data-fill="global-warning"
+                        class="mauto conversation-icon-expiration"></icon>
+                    <icon
+                        data-name="attach"
+                        data-fill="global-success"
+                        class="mauto conversation-icon-attachment"></icon>
                 </span>
             </div>
             <span class="size pr1 alignright mauto">{{ size(conversation)| bytes }}</span>
