@@ -9,15 +9,13 @@ import {
     Label,
     Input,
     Field,
-    useApi,
     useLoading,
     useModals,
     useNotifications,
     useEventManager
 } from 'react-components';
 import { c } from 'ttag';
-import { updateEmail, updateNotifyEmail, updateResetEmail } from 'proton-shared/lib/api/settings';
-import { srpAuth } from 'proton-shared/lib/srp';
+import { updateEmail } from 'proton-shared/lib/api/settings';
 
 const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }) => {
     const [input, setInput] = useState(email);
@@ -25,7 +23,6 @@ const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
-    const api = useApi();
 
     const handleChange = ({ target }) => setInput(target.value);
 
@@ -56,14 +53,9 @@ const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }) => {
             });
         }
 
-        const credentials = await new Promise((resolve, reject) => {
+        await new Promise((resolve, reject) => {
             createModal(<AuthModal onClose={reject} onSuccess={resolve} config={updateEmail({ Email: input })} />);
         });
-
-        if (!input) {
-            hasReset && (await srpAuth({ api, credentials, config: updateResetEmail(0) }));
-            hasNotify && (await api(updateNotifyEmail(0)));
-        }
 
         await call();
         createNotification({ text: c('Success').t`Email updated` });
