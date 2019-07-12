@@ -10,7 +10,6 @@
     display: block;
 
     .ico-protonvpn {
-        //height: 16px;
         opacity: .5;
     }
 }
@@ -138,7 +137,6 @@
     margin: 1rem;
 }
 
-
 /* IMPORTANT FOR DND */
 .navigation__link.ptdnd-drag-hover {
     background-color: $pm-global-altgrey;
@@ -198,6 +196,5 @@
         height: auto;
         overflow: visible;
         min-height: auto;
-        .mCSB_container_wrapper { position: relative }
     }
 }

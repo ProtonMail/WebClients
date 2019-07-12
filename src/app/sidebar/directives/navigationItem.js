@@ -73,10 +73,10 @@ function navigationItem(
             };
             const updateActive = () => {
                 const { states = [], state = '' } = config;
-                const addActive = () => el[0].setAttribute(ATTR_ACTIVE, 'page');
+                const addActive = () => el[0].firstElementChild.setAttribute(ATTR_ACTIVE, 'page');
 
                 // Sent and Drafts have each 2 states
-                if (states.length && _.find(states, (route) => $state.includes(route))) {
+                if (states.length && _.some(states, (route) => $state.includes(route))) {
                     return addActive();
                 }
 
@@ -84,12 +84,12 @@ function navigationItem(
                     return addActive();
                 }
 
-                el[0].removeAttribute(ATTR_ACTIVE);
+                el[0].firstElementChild.removeAttribute(ATTR_ACTIVE);
             };
 
-            updateActive(); // Check if we open the current state, mark it as active
             render();
             updateCounter();
+            updateActive(); // Check if we open the current state, mark it as active
 
             // Update the counter when we load then
             on('app.cacheCounters', (e, { type }) => {
