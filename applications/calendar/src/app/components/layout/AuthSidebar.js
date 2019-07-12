@@ -11,15 +11,14 @@ const AuthSidebar = ({ onSelectDate, currentDate }) => {
 
     const list = [
         {
-            icon: 'plus',
             text: c('Action').t`Add event`,
             type: 'button',
+            className: 'mb1 pm-button-blue',
             onClick() {
                 createModal(<EventModal />);
             }
         },
         {
-            icon: 'calendar',
             text: 'My calendar',
             link: '/calendar'
         }

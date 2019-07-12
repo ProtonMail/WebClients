@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Group, Select, Icon, Button, ButtonGroup, useModals } from 'react-components';
-import { c } from 'ttag';
+import { useModals } from 'react-components';
 import { Route } from 'react-router';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
@@ -12,6 +11,9 @@ import 'tui-time-picker/dist/tui-time-picker.css';
 import Main from '../components/Main';
 import EventModal from '../components/modals/EventModal';
 import AuthSidebar from '../components/layout/AuthSidebar';
+import Toolbar from '../components/Toolbar';
+import YearView from '../components/YearView';
+import PlanningView from '../components/PlanningView';
 
 const today = new Date();
 const DEFAULT_VIEW = 'week';
@@ -112,8 +114,7 @@ const OverviewContainer = () => {
         setDate(getCalendarDate());
     };
 
-    const handleChangeView = ({ target }) => {
-        const newView = target.value;
+    const handleChangeView = (newView) => {
         VIEWS_HANDLED_BY_CALENDAR.includes(newView) && calendarRef.current.getInstance().changeView(newView, true);
         setView(newView);
     };
@@ -139,14 +140,6 @@ const OverviewContainer = () => {
         console.log(event);
     };
 
-    const views = [
-        { text: c('Calendar view').t`Day`, value: 'day' },
-        { text: c('Calendar view').t`Week`, value: 'week' },
-        { text: c('Calendar view').t`Month`, value: 'month' },
-        { text: c('Calendar view').t`Year`, value: 'year' },
-        { text: c('Calendar view').t`Planning`, value: 'planning' }
-    ];
-
     useEffect(() => {
         calendarRef.current.getInstance().setDate(currentDate);
         // TODO call the API (date ranges)
@@ -161,18 +154,13 @@ const OverviewContainer = () => {
             <div className="main flex-item-fluid main-area">
                 <div className="flex flex-reverse">
                     <Main>
-                        <div className="flex flex-nowrap">
-                            <Button className="mr1" onClick={handleToday}>{c('Action').t`Today`}</Button>
-                            <Group className="mr1">
-                                <ButtonGroup onClick={handlePrev}>
-                                    <Icon name="arrow-left" />
-                                </ButtonGroup>
-                                <ButtonGroup onClick={handleNext}>{<Icon name="arrow-right" />}</ButtonGroup>
-                            </Group>
-                            <div>
-                                <Select options={views} value={view} onChange={handleChangeView} />
-                            </div>
-                        </div>
+                        <Toolbar
+                            view={view}
+                            onChangeView={handleChangeView}
+                            onNext={handleNext}
+                            onPrev={handlePrev}
+                            onToday={handleToday}
+                        />
                         <div hidden={!VIEWS_HANDLED_BY_CALENDAR.includes(view)}>
                             <Calendar
                                 onBeforeCreateSchedule={handleBeforeCreateSchedule}
@@ -221,8 +209,8 @@ const OverviewContainer = () => {
                                 }}
                             />
                         </div>
-                        {view === 'year' ? 'TODO' : null}
-                        {view === 'planning' ? 'TODO' : null}
+                        {view === 'year' ? <YearView currentDate={currentDate} /> : null}
+                        {view === 'planning' ? <PlanningView currentDate={currentDate} /> : null}
                     </Main>
                 </div>
             </div>
