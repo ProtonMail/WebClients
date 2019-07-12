@@ -16,7 +16,6 @@ function expirationModal(pmModal) {
                 clear: { toggle: shouldToggle(this.recipients.clear) }
             };
             this.confirm = params.confirm;
-            this.cancel = params.cancel;
         }
     });
 }

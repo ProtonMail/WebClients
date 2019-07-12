@@ -1,25 +1,17 @@
 /* @ngInject */
 function toggleExpand() {
-    const EXPAND_CLASS = 'fa-chevron-down';
-    const COLLAPSE_CLASS = 'fa-chevron-right';
     const ATTR_EXPANDED = 'aria-expanded';
     return {
         restrict: 'E',
         replace: true,
-        template: '<button class="pm_button link">{{text}} <i class="fa"></fa></button>',
+        template: '<button class="pm-button pm-button--small">{{::text}} <icon data-name="caret"></icon></button>',
         scope: { model: '=', text: '@' },
-        link(scope, element) {
-            const $i = element[0].querySelector('.fa');
+        link(scope, el) {
             scope.model.toggle = !!scope.model.toggle;
-
             toggleClass();
 
             function toggleClass() {
-                const toAdd = scope.model.toggle ? EXPAND_CLASS : COLLAPSE_CLASS;
-                const toRemove = scope.model.toggle ? COLLAPSE_CLASS : EXPAND_CLASS;
-                element[0].setAttribute(ATTR_EXPANDED, scope.model.toggle);
-                $i.classList.remove(toRemove);
-                $i.classList.add(toAdd);
+                el[0].setAttribute(ATTR_EXPANDED, scope.model.toggle);
             }
 
             function onClick() {
@@ -29,10 +21,10 @@ function toggleExpand() {
                 });
             }
 
-            element[0].addEventListener('click', onClick);
+            el.on('click', onClick);
 
             scope.$on('$destroy', () => {
-                element[0].removeEventListener('click', onClick);
+                el.off('click', onClick);
             });
         }
     };
