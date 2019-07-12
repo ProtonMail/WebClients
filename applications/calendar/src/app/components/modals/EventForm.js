@@ -2,7 +2,18 @@ import React from 'react';
 import moment from 'moment';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Row, Label, Field, Input, DateInput, TimeSelect, Select, Checkbox, RichTextEditor } from 'react-components';
+import {
+    Row,
+    Label,
+    Field,
+    Input,
+    DateInput,
+    TimeSelect,
+    Select,
+    Checkbox,
+    RichTextEditor,
+    LinkButton
+} from 'react-components';
 
 const EventForm = ({ model, updateModel }) => {
     const timezones = [];
@@ -16,7 +27,7 @@ const EventForm = ({ model, updateModel }) => {
     return (
         <>
             <Row>
-                <Label>{c('Label').t`Start`}</Label>
+                <Label htmlFor="startDate">{c('Label').t`Start`}</Label>
                 <Field className="flex flex-spacebetween flex-nowrap">
                     <DateInput
                         id="startDate"
@@ -33,9 +44,22 @@ const EventForm = ({ model, updateModel }) => {
                         />
                     )}
                 </Field>
+                <div className="ml1">
+                    {model.showTimezone ? null : (
+                        <LinkButton onClick={() => updateModel({ ...model, showTimezone: true })}>{c('Action')
+                            .t`Edit timezone`}</LinkButton>
+                    )}
+                    {model.showTimezone ? (
+                        <Select
+                            value={model.startTimezone}
+                            onChange={({ target }) => updateModel({ ...model, startTimezone: target.value })}
+                            options={timezones}
+                        />
+                    ) : null}
+                </div>
             </Row>
             <Row>
-                <Label>{c('Label').t`End`}</Label>
+                <Label htmlFor="endDate">{c('Label').t`End`}</Label>
                 <Field className="flex flex-spacebetween flex-nowrap">
                     <DateInput
                         id="endDate"
@@ -49,35 +73,33 @@ const EventForm = ({ model, updateModel }) => {
                         <TimeSelect value={model.endTime} onChange={(endTime) => updateModel({ ...model, endTime })} />
                     )}
                 </Field>
+                <div className="ml1">
+                    {model.showTimezone ? (
+                        <Select
+                            value={model.endTimezone}
+                            onChange={({ target }) => updateModel({ ...model, endTimezone: target.value })}
+                            options={timezones}
+                        />
+                    ) : null}
+                </div>
             </Row>
             <Row>
                 <Label>{c('Label').t`Frequency`}</Label>
-                <Field className="flex flex-spacebetween flex-nowrap">
-                    <div className="w50">
-                        <Checkbox
-                            id="event-allday-checkbox"
-                            checked={model.allDay}
-                            onChange={({ target }) => updateModel({ ...model, allDay: target.checked })}
-                        />
-                        <label htmlFor="event-allday-checkbox">{c('Label').t`All day`}</label>
-                    </div>
+                <Field>
                     <Select
                         value={model.frequency}
                         options={frequencies}
                         onChange={({ target }) => updateModel({ ...model, frequency: target.value })}
                     />
                 </Field>
-            </Row>
-            <Row>
-                <Label htmlFor="event-timezone-select">{c('Label').t`Timezone`}</Label>
-                <Field>
-                    <Select
-                        id="event-timezone-select"
-                        value={model.timezone}
-                        onChange={({ target }) => updateModel({ ...model, timezone: target.value })}
-                        options={timezones}
+                <label htmlFor="event-allday-checkbox" className="ml1 pt0-5">
+                    <Checkbox
+                        id="event-allday-checkbox"
+                        checked={model.allDay}
+                        onChange={({ target }) => updateModel({ ...model, allDay: target.checked })}
                     />
-                </Field>
+                    {c('Label').t`All day`}
+                </label>
             </Row>
             <Row>
                 <Label htmlFor="event-location-input">{c('Label').t`Location`}</Label>

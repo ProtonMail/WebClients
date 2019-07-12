@@ -32,21 +32,21 @@ const AlarmForm = ({ model, updateModel }) => {
             </Row>
             <Row>
                 <Label>{c('Label').t`Frequency`}</Label>
-                <Field className="flex flex-spacebetween flex-nowrap">
-                    <div className="w50">
-                        <Checkbox
-                            id="event-allday-checkbox"
-                            checked={model.allDay}
-                            onChange={({ target }) => updateModel({ ...model, allDay: target.checked })}
-                        />
-                        <label htmlFor="event-allday-checkbox">{c('Label').t`All day`}</label>
-                    </div>
+                <Field>
                     <Select
                         value={model.frequency}
                         options={frequencies}
                         onChange={({ target }) => updateModel({ ...model, frequency: target.value })}
                     />
                 </Field>
+                <label htmlFor="event-allday-checkbox" className="ml1 pt0-5">
+                    <Checkbox
+                        id="event-allday-checkbox"
+                        checked={model.allDay}
+                        onChange={({ target }) => updateModel({ ...model, allDay: target.checked })}
+                    />
+                    {c('Label').t`All day`}
+                </label>
             </Row>
         </>
     );

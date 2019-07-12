@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Group, Select, Icon, ButtonGroup } from 'react-components';
+import { Group, Select, Icon, ButtonGroup, useModals } from 'react-components';
 import { c } from 'ttag';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
@@ -9,6 +9,7 @@ import 'tui-date-picker/dist/tui-date-picker.css';
 import 'tui-time-picker/dist/tui-time-picker.css';
 
 import Main from '../components/Main';
+import EventModal from '../components/modals/EventModal';
 
 const today = new Date();
 const DEFAULT_VIEW = 'week';
@@ -30,6 +31,7 @@ const getDate = (type, start, value, operator) => {
 const OverviewContainer = () => {
     const calendarRef = useRef();
     const [view, setView] = useState(DEFAULT_VIEW);
+    const { createModal } = useModals();
 
     const handlePrev = () => calendarRef.current.getInstance().prev();
     const handleNext = () => calendarRef.current.getInstance().next();
@@ -38,6 +40,26 @@ const OverviewContainer = () => {
         const newView = target.value;
         VIEWS_HANDLED_BY_CALENDAR.includes(newView) && calendarRef.current.getInstance().changeView(newView, true);
         setView(newView);
+    };
+
+    // when click a schedule.
+    const handleSchedule = (event) => {
+        console.log(event);
+    };
+
+    // when click a schedule.
+    const handleMore = (event) => {
+        console.log(event);
+    };
+
+    // when select time period in daily, weekly, monthly.
+    const handleBeforeCreateSchedulecalendar = (event) => {
+        console.log(event);
+    };
+
+    // when drag a schedule to change time in daily, weekly, monthly.
+    const handleBeforeUpdateSchedule = () => {
+        console.log(event);
     };
 
     const views = [
@@ -60,6 +82,10 @@ const OverviewContainer = () => {
             </div>
             {VIEWS_HANDLED_BY_CALENDAR.includes(view) ? (
                 <Calendar
+                    onBeforeCreateSchedulecalendar={handleBeforeCreateSchedulecalendar}
+                    onBeforeUpdateSchedule={handleBeforeUpdateSchedule}
+                    onClickSchedule={handleSchedule}
+                    onClickMore={handleMore}
                     usageStatistics={false}
                     ref={calendarRef}
                     height="800px"

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import {
     FormModal,
     Row,
@@ -10,19 +11,47 @@ import {
     ErrorButton,
     Group,
     ButtonGroup,
-    useNotifications
+    useNotifications,
+    ColorPicker
 } from 'react-components';
 import { c } from 'ttag';
+import tinycolor from 'tinycolor2';
 
 import EventForm from './EventForm';
 import AlarmForm from './AlarmForm';
 import TaskForm from './TaskForm';
+import InviteForm from './InviteForm';
 
 const getDefaultModel = () => {
+    const startDate = moment
+        .utc()
+        .startOf('day')
+        .valueOf();
+    const endDate = moment
+        .utc()
+        .startOf('day')
+        .valueOf();
+    const startTime =
+        moment
+            .utc()
+            .startOf('hour')
+            .add(30 * Math.floor(moment().minutes() / 30), 'minutes')
+            .valueOf() - startDate;
+    const endTime =
+        moment
+            .utc()
+            .startOf('hour')
+            .add(30 * Math.floor(moment().minutes() / 30), 'minutes')
+            .valueOf() - endDate;
     return {
+        color: 'pink',
         type: 'event',
         description: '',
-        allDay: false
+        allDay: false,
+        startDate,
+        endDate,
+        startTime,
+        endTime
     };
 };
 
@@ -31,7 +60,7 @@ const EventModal = ({ eventID, ...rest }) => {
     const [loading, setLoading] = useState(false);
     const [model, updateModel] = useState(eventID ? {} : getDefaultModel());
     const api = useApi();
-    const title = eventID ? c('Title').t`Update event` : c('Title').t`Create event`;
+    const title = eventID ? c('Title').t`Update event` : c('Title').t`Create an event`;
 
     const handleSubmit = async () => {
         setLoading(true);
@@ -72,9 +101,20 @@ const EventModal = ({ eventID, ...rest }) => {
                         onChange={({ target }) => updateModel({ ...model, title: target.value })}
                     />
                 </Field>
-                {eventID ? (
-                    <ErrorButton disabled={loading} onClick={handleDelete}>{c('Action').t`Delete`}</ErrorButton>
-                ) : null}
+                <div>
+                    <ColorPicker
+                        className="ml1 mr1"
+                        color={model.color}
+                        onChange={({ hex: color }) => updateModel({ ...model, color })}
+                    >
+                        &nbsp;
+                    </ColorPicker>
+                    {eventID ? (
+                        <ErrorButton title={c('Tooltip').t`Delete event`} disabled={loading} onClick={handleDelete}>{c(
+                            'Action'
+                        ).t`Delete`}</ErrorButton>
+                    ) : null}
+                </div>
             </Row>
             <Row>
                 <Label>{c('Label').t`Type`}</Label>
@@ -96,6 +136,7 @@ const EventModal = ({ eventID, ...rest }) => {
                 </Field>
             </Row>
             {model.type === 'event' ? <EventForm model={model} updateModel={updateModel} /> : null}
+            {model.type === 'event' ? <InviteForm model={model} updateModel={updateModel} /> : null}
             {model.type === 'alarm' ? <AlarmForm model={model} updateModel={updateModel} /> : null}
             {model.type === 'task' ? <TaskForm model={model} updateModel={updateModel} /> : null}
         </FormModal>
