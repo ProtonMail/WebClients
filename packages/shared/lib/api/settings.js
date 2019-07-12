@@ -86,3 +86,14 @@ export const verifyPhone = (Token) => ({
     method: 'post',
     data: { Token }
 });
+
+export const setupTotp = (TOTPSharedSecret, TOTPConfirmation) => ({
+    url: 'settings/2fa/totp',
+    method: 'post',
+    data: { TOTPSharedSecret, TOTPConfirmation }
+});
+
+export const disableTotp = () => ({
+    url: 'settings/2fa',
+    method: 'put'
+});
