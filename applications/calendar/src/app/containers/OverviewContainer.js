@@ -15,8 +15,8 @@ import Toolbar from '../components/Toolbar';
 import YearView from '../components/YearView';
 import PlanningView from '../components/PlanningView';
 
-const today = new Date();
 const DEFAULT_VIEW = 'week';
+const today = new Date();
 const VIEWS_HANDLED_BY_CALENDAR = ['day', 'week', 'month'];
 
 const getDate = (type, start, value, operator) => {
@@ -130,9 +130,8 @@ const OverviewContainer = () => {
     };
 
     // when select time period in daily, weekly, monthly.
-    const handleBeforeCreateSchedule = (event) => {
-        console.log(event);
-        createModal(<EventModal />);
+    const handleBeforeCreateSchedule = ({ start, end, isAllDay }) => {
+        createModal(<EventModal start={start.toDate()} end={end.toDate()} allDay={isAllDay} />);
     };
 
     // when drag a schedule to change time in daily, weekly, monthly.
@@ -168,26 +167,18 @@ const OverviewContainer = () => {
                                 onClickSchedule={handleSchedule}
                                 onClickMore={handleMore}
                                 usageStatistics={false}
+                                disableDblClick={true}
                                 ref={calendarRef}
                                 height="800px"
                                 className="flex"
                                 calendars={calendars}
-                                defaultView={DEFAULT_VIEW}
-                                disableDblClick={true}
-                                isReadOnly={false}
                                 month={{
                                     startDayOfWeek: 0
                                 }}
                                 schedules={schedules}
                                 scheduleView
-                                taskView
+                                taskView={false}
                                 template={{
-                                    milestone(schedule) {
-                                        return `<span style="color:#fff;background-color: ${schedule.bgColor};">${schedule.title}</span>`;
-                                    },
-                                    milestoneTitle() {
-                                        return 'Milestone';
-                                    },
                                     allday(schedule) {
                                         return `${schedule.title}<i class="fa fa-refresh"></i>`;
                                     },

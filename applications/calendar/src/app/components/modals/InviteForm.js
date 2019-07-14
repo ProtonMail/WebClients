@@ -6,6 +6,7 @@ import {
     Field,
     Loader,
     Autocomplete,
+    Icon,
     Table,
     TableHeader,
     TableBody,
@@ -18,7 +19,7 @@ import { c } from 'ttag';
 
 const InviteForm = () => {
     const [contactEmails, loadingContactEmails] = useContactEmails();
-    const headers = [c('Header').t`Name`, c('Header').t`Email`, c('Header').t`Action`];
+    const headers = [c('Header').t`Name`, c('Header').t`Email`, c('Header').t`Status`, c('Header').t`Action`];
     const [attendees, updateAttendees] = useState([]);
     const [newAttendee, updateAttendee] = useState('');
 
@@ -85,6 +86,7 @@ const InviteForm = () => {
                             const cells = [
                                 name,
                                 email,
+                                <Icon key={key} name="on" />,
                                 <SmallButton key={key} onClick={handleRemove(index)}>{c('Action')
                                     .t`Remove`}</SmallButton>
                             ];

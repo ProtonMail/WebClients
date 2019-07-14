@@ -20,23 +20,13 @@ const AuthHeader = () => {
                         <path d="M8.263-.121S1.413-.343 0 7.125v5.086s.058.545 1.616 1.65c1.558 1.106 5.59 4.219 6.647 4.219 1.056 0 5.089-3.113 6.646-4.22 1.558-1.104 1.617-1.65 1.617-1.65V7.126C15.113-.343 8.263-.121 8.263-.121zm4.69 10.019h-9.38V7.125c.951-3.708 4.69-3.76 4.69-3.76s3.738.052 4.69 3.76z" />
                         <path d="M8.263 19.225s-1.062-.102-1.893-.67C5.54 17.99 0 14.1 0 14.1v7.7s.047.896 1.05.896h14.425c1.004 0 1.05-.895 1.05-.895v-7.7s-5.539 3.89-6.37 4.456c-.83.567-1.892.67-1.892.67z" />
                     </g>
-                    <title id="logo__title">ProtonMail</title>
+                    <title id="logo__title">ProtonCalendar</title>
                     <text textAnchor="end" className="plan uppercase bold" x="147" y="36" id="plan" focusable="false">
                         Plus
                     </text>
                 </svg>
             </a>
-            <div className="searchbox-container relative flex-item-centered-vert">
-                <label htmlFor="global_search">
-                    <span className="sr-only">{c('Placeholder').t`Search`}</span>
-                    <input
-                        type="search"
-                        id="global_search"
-                        placeholder={c('Placeholder').t`Search`}
-                        className="pm-field w100 searchbox-field "
-                    />
-                </label>
-            </div>
+            <div className="searchbox-container relative flex-item-centered-vert"></div>
             <div className="topnav-container flex-item-centered-vert flex-item-fluid">
                 <ul className="topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap">
                     <li className="mr1">

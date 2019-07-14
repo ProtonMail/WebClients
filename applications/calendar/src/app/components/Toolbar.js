@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Button, Group, ButtonGroup, Icon, Select } from 'react-components';
+import { Group, ButtonGroup, Icon, Select } from 'react-components';
 
 const Toolbar = ({ onToday, onPrev, onNext, view, onChangeView }) => {
     const views = [
@@ -15,13 +15,15 @@ const Toolbar = ({ onToday, onPrev, onNext, view, onChangeView }) => {
     const handleChangeView = ({ target }) => onChangeView(target.value);
 
     return (
-        <div className="flex flex-nowrap">
-            <Button className="mr1" onClick={onToday}>{c('Action').t`Today`}</Button>
-            <Group className="mr1">
+        <div className="flex flex-spacebetween">
+            <Group>
                 <ButtonGroup onClick={onPrev}>
                     <Icon name="arrow-left" />
                 </ButtonGroup>
-                <ButtonGroup onClick={onNext}>{<Icon name="arrow-right" />}</ButtonGroup>
+                <ButtonGroup onClick={onToday}>{c('Action').t`Today`}</ButtonGroup>
+                <ButtonGroup onClick={onNext}>
+                    <Icon name="arrow-right" />
+                </ButtonGroup>
             </Group>
             <div>
                 <Select options={views} value={view} onChange={handleChangeView} />

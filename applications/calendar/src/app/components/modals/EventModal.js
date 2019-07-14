@@ -21,13 +21,13 @@ import AlarmForm from './AlarmForm';
 import TaskForm from './TaskForm';
 import InviteForm from './InviteForm';
 
-const getDefaultModel = () => {
+const getModel = ({ event = {}, start = new Date(), end = new Date(), allDay = false, type = 'event' }) => {
     const startDate = moment
-        .utc()
+        .utc(start)
         .startOf('day')
         .valueOf();
     const endDate = moment
-        .utc()
+        .utc(end)
         .startOf('day')
         .valueOf();
     const startTime =
@@ -43,9 +43,9 @@ const getDefaultModel = () => {
             .add(30 * Math.floor(moment().minutes() / 30), 'minutes')
             .valueOf() - endDate;
     return {
-        type: 'event',
+        type,
         description: '',
-        allDay: false,
+        allDay,
         startDate,
         endDate,
         startTime,
@@ -53,11 +53,13 @@ const getDefaultModel = () => {
     };
 };
 
-const EventModal = ({ eventID, ...rest }) => {
+const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
+    const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, setLoading] = useState(false);
-    const [model, updateModel] = useState(eventID ? {} : getDefaultModel());
-    const api = useApi();
+    const [events] = [[]]; // useEvents();
+    const event = events.find(({ ID }) => ID === eventID);
+    const [model, updateModel] = useState(getModel({ event, start, end, allDay, type }));
     const title = eventID ? c('Title').t`Update event` : c('Title').t`Create an event`;
 
     const handleSubmit = async () => {
@@ -99,9 +101,9 @@ const EventModal = ({ eventID, ...rest }) => {
                         onChange={({ target }) => updateModel({ ...model, title: target.value })}
                     />
                 </Field>
-                <div>
+                <div className="ml1">
                     <ColorPicker
-                        className="ml1 mr1"
+                        className="mr1"
                         color={model.color}
                         onChange={({ hex: color }) => updateModel({ ...model, color })}
                     >
@@ -142,7 +144,11 @@ const EventModal = ({ eventID, ...rest }) => {
 };
 
 EventModal.propTypes = {
-    eventID: PropTypes.string
+    eventID: PropTypes.string,
+    type: PropTypes.oneOf(['event', 'alarm', 'task']),
+    start: PropTypes.instanceOf(Date),
+    end: PropTypes.instanceOf(Date),
+    allDay: PropTypes.bool
 };
 
 export default EventModal;
