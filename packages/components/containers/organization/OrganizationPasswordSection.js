@@ -44,7 +44,12 @@ const OrganizationSection = () => {
 
     // Organization is not setup.
     if (!organization.HasKeys) {
-        return title;
+        return (
+            <>
+                {title}
+                <Alert type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>
+            </>
+        );
     }
 
     const { hasOrganizationKey, isOrganizationKeyActive, isOrganizationKeyInactive } = getOrganizationKeyInfo(
