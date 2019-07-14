@@ -61,17 +61,12 @@ const EmailSection = () => {
                 <Label>{c('Label').t`Email address`}</Label>
                 <RecoveryEmail email={email} onClick={handleRecoveryEmail} />
             </Row>
-            {!email && Reset ? (
-                <Alert type="warning">
-                    {c('Warning').t`Password reset is enabled without an email address. Please set a recovery address.`}
-                </Alert>
-            ) : null}
             <Row>
                 <Label htmlFor="passwordResetToggle">{c('Label').t`Allow password reset`}</Label>
                 <Field>
                     <Toggle
                         loading={loadingReset}
-                        checked={!!Reset}
+                        checked={!!Reset && !!email}
                         id="passwordResetToggle"
                         onChange={({ target: { checked } }) => withLoadingReset(handleChangePasswordToggle(+checked))}
                     />
@@ -89,7 +84,7 @@ const EmailSection = () => {
                 <Field>
                     <Toggle
                         loading={loadingNotify}
-                        checked={!!Notify}
+                        checked={!!Notify && !!email}
                         id="dailyNotificationsToggle"
                         onChange={({ target: { checked } }) => withLoadingNotify(handleChangeEmailNotify(+checked))}
                     />
