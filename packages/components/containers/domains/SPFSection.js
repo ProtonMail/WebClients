@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import { Alert, Label, Table, TableHeader, TableBody, TableRow } from 'react-components';
 
 const SPFSection = () => {
+    const spf = <code>include:_spf.protonmail.ch</code>;
+    const spfValue = <code>v=spf1</code>;
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
@@ -24,7 +26,7 @@ const SPFSection = () => {
                 </TableBody>
             </Table>
             <Alert>{c('Info')
-                .t`If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. Do not create multiple SPF records.`}</Alert>
+                .jt`If you want to keep an existing SPF record, you can just add ${spf} to it after the ${spfValue}. Do not create multiple SPF records.`}</Alert>
         </>
     );
 };

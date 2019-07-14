@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Alert, Label, Table, TableHeader, TableBody, TableRow } from 'react-components';
 
 const DKIMSection = ({ domain }) => {
+    const off = <code>off</code>;
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
@@ -25,7 +26,7 @@ const DKIMSection = ({ domain }) => {
                 </TableBody>
             </Table>
             <Alert type="warning">{c('Info')
-                .t`Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM.`}</Alert>
+                .jt`Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to ${off} to disable DKIM.`}</Alert>
         </>
     );
 };
