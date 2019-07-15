@@ -1,3 +1,5 @@
+export const TOTP_WRONG_ERROR = 12060;
+
 export const getSettings = () => ({
     url: 'settings',
     method: 'get'
