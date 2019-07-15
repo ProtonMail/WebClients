@@ -1,7 +1,7 @@
 import React from 'react';
 
 const EventPopup = () => {
-    return null;
+    return <>TODO</>;
 };
 
 export default EventPopup;

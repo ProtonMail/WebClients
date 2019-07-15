@@ -92,7 +92,12 @@ const OverviewContainer = () => {
         }
     ]);
 
-    const handleSelectDate = (date) => setDate(date);
+    const handleSelectDate = (date) => {
+        setDate(date);
+    };
+    const handleSelectDateRange = (rangeStart, rangeEnd) => {
+        console.log('range selected', rangeStart, rangeEnd);
+    };
     const getCalendarDate = () =>
         calendarRef.current
             .getInstance()
@@ -148,7 +153,13 @@ const OverviewContainer = () => {
         <>
             <Route
                 path="/:path"
-                render={() => <AuthSidebar onSelectDate={handleSelectDate} currentDate={currentDate} />}
+                render={() => (
+                    <AuthSidebar
+                        onSelectDate={handleSelectDate}
+                        onSelectDateRange={handleSelectDateRange}
+                        currentDate={currentDate}
+                    />
+                )}
             />
             <div className="main flex-item-fluid main-area">
                 <div className="flex flex-reverse">

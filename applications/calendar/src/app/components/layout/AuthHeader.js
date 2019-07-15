@@ -1,5 +1,4 @@
 import React from 'react';
-import { c } from 'ttag';
 import { useModals, AuthenticatedBugModal } from 'react-components';
 
 const AuthHeader = () => {

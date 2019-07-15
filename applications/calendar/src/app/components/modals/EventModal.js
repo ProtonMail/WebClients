@@ -7,7 +7,6 @@ import {
     Label,
     Field,
     Input,
-    useApi,
     ErrorButton,
     Group,
     ButtonGroup,
@@ -21,7 +20,7 @@ import AlarmForm from './AlarmForm';
 import TaskForm from './TaskForm';
 import InviteForm from './InviteForm';
 
-const getModel = ({ event = {}, start = new Date(), end = new Date(), allDay = false, type = 'event' }) => {
+const getModel = ({ start = new Date(), end = new Date(), allDay = false, type = 'event' }) => {
     const startDate = moment
         .utc(start)
         .startOf('day')
@@ -55,7 +54,6 @@ const getModel = ({ event = {}, start = new Date(), end = new Date(), allDay = f
 };
 
 const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
-    const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, setLoading] = useState(false);
     const [events] = [[]]; // useEvents();

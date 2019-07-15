@@ -6,9 +6,9 @@ import { c } from 'ttag';
 import EventModal from '../modals/EventModal';
 import CalendarModal from '../modals/CalendarModal';
 import CalendarsModal from '../modals/CalendarsModal';
-import MiniCalendar from '../MiniCalendar';
+import MiniCalendar from '../miniCalendar/MiniCalendar';
 
-const AuthSidebar = ({ onSelectDate, currentDate }) => {
+const AuthSidebar = ({ onSelectDate, onSelectDateRange, currentDate }) => {
     const { createModal } = useModals();
 
     const list = [
@@ -60,7 +60,7 @@ const AuthSidebar = ({ onSelectDate, currentDate }) => {
             <div className="p1">
                 <DropdownActions className="pm-button-blue" list={createActions} />
             </div>
-            <MiniCalendar date={currentDate} onSelect={onSelectDate} />
+            <MiniCalendar date={currentDate} onSelectDate={onSelectDate} onSelectDateRange={onSelectDateRange} />
             <nav className="navigation flex-item-fluid scroll-if-needed mb1">
                 <NavMenu list={list} />
             </nav>
@@ -70,6 +70,7 @@ const AuthSidebar = ({ onSelectDate, currentDate }) => {
 
 AuthSidebar.propTypes = {
     onSelectDate: PropTypes.func,
+    onSelectDateRange: PropTypes.func,
     currentDate: PropTypes.instanceOf(Date)
 };
 
