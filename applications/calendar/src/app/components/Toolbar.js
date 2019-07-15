@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Group, ButtonGroup, Icon, Select } from 'react-components';
+import moment from 'moment';
 
 const Toolbar = ({ onToday, onPrev, onNext, view, onChangeView }) => {
     const views = [
@@ -13,20 +14,38 @@ const Toolbar = ({ onToday, onPrev, onNext, view, onChangeView }) => {
     ];
 
     const handleChangeView = ({ target }) => onChangeView(target.value);
+    const previous = {
+        day: c('Action').t`Previous day`,
+        week: c('Action').t`Previous week`,
+        month: c('Action').t`Previous month`,
+        year: c('Action').t`Previous year`
+    }[view];
+    const today = moment().format('LL');
+    const next = {
+        day: c('Action').t`Next day`,
+        week: c('Action').t`Next week`,
+        month: c('Action').t`Next month`,
+        year: c('Action').t`Next year`
+    }[view];
 
     return (
         <div className="flex flex-spacebetween">
             <Group>
-                <ButtonGroup onClick={onPrev}>
+                <ButtonGroup title={previous} onClick={onPrev}>
                     <Icon name="arrow-left" />
                 </ButtonGroup>
-                <ButtonGroup onClick={onToday}>{c('Action').t`Today`}</ButtonGroup>
-                <ButtonGroup onClick={onNext}>
+                <ButtonGroup title={today} onClick={onToday}>{c('Action').t`Today`}</ButtonGroup>
+                <ButtonGroup title={next} onClick={onNext}>
                     <Icon name="arrow-right" />
                 </ButtonGroup>
             </Group>
             <div>
-                <Select options={views} value={view} onChange={handleChangeView} />
+                <Select
+                    title={c('Action').t`Select calendar view`}
+                    options={views}
+                    value={view}
+                    onChange={handleChangeView}
+                />
             </div>
         </div>
     );

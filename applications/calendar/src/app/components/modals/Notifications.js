@@ -56,7 +56,7 @@ const Notifications = ({ model, updateModel }) => {
                 return (
                     <div key={key} className="mb1 flex flex-nowrap">
                         <Select className="mr1" value={type} options={types} onChange={handleChange(index, 'type')} />
-                        <Input className="mr1" value={time} onChange={handleChange(index, 'time')} />
+                        <Input type="number" className="mr1" value={time} onChange={handleChange(index, 'time')} />
                         <Select className="mr1" value={unit} options={units} onChange={handleChange(index, 'unit')} />
                         <Button
                             className="flex-item-noshrink"

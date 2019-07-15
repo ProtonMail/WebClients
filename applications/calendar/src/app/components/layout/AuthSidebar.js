@@ -57,7 +57,7 @@ const AuthSidebar = ({ onSelectDate, onSelectDateRange, currentDate }) => {
 
     return (
         <div className="sidebar flex flex-column noprint">
-            <div className="p1">
+            <div className="pl1 pr1 pb1">
                 <DropdownActions className="pm-button-blue" list={createActions} />
             </div>
             <MiniCalendar date={currentDate} onSelectDate={onSelectDate} onSelectDateRange={onSelectDateRange} />

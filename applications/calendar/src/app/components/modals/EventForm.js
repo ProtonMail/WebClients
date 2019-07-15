@@ -29,7 +29,7 @@ const EventForm = ({ model, updateModel }) => {
     return (
         <>
             <Row>
-                <Label htmlFor="startDate">{c('Label').t`Start`}</Label>
+                <Label htmlFor="startDate">{c('Label').t`From`}</Label>
                 <Field className="flex flex-spacebetween flex-nowrap">
                     <DateInput
                         id="startDate"
@@ -61,7 +61,7 @@ const EventForm = ({ model, updateModel }) => {
                 </div>
             </Row>
             <Row>
-                <Label htmlFor="endDate">{c('Label').t`End`}</Label>
+                <Label htmlFor="endDate">{c('Label').t`To`}</Label>
                 <Field className="flex flex-spacebetween flex-nowrap">
                     <DateInput
                         id="endDate"

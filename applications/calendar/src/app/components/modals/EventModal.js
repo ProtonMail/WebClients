@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import {
@@ -54,6 +54,7 @@ const getModel = ({ start = new Date(), end = new Date(), allDay = false, type =
 };
 
 const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
+    const titleRef = useRef();
     const { createNotification } = useNotifications();
     const [loading, setLoading] = useState(false);
     const [events] = [[]]; // useEvents();
@@ -85,6 +86,8 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
     useEffect(() => {
         if (eventID) {
             decrypt();
+        } else {
+            titleRef.current.focus();
         }
     }, []);
 
@@ -94,6 +97,7 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
                 <Label htmlFor="event-title-input">{c('Label').t`Title`}</Label>
                 <Field>
                     <Input
+                        ref={titleRef}
                         id="event-title-input"
                         placeholder={c('Placeholder').t`Add a title`}
                         value={model.title}
