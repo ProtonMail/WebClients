@@ -54,13 +54,36 @@ const getModel = ({ start = new Date(), end = new Date(), allDay = false, type =
 };
 
 const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
+    const i18n = {
+        event: {
+            create: c('Title').t`Create event`,
+            update: c('Title').t`Update event`,
+            updated: c('Success').t`Event updated`,
+            deleted: c('Success').t`Event deleted`,
+            delete: c('Tooltip').t`Delete event`
+        },
+        task: {
+            create: c('Title').t`Create task`,
+            update: c('Title').t`Update task`,
+            updated: c('Success').t`Task updated`,
+            deleted: c('Success').t`Task deleted`,
+            delete: c('Tooltip').t`Delete task`
+        },
+        alarm: {
+            create: c('Title').t`Create alarm`,
+            update: c('Title').t`Update alarm`,
+            updated: c('Success').t`Alarm updated`,
+            deleted: c('Success').t`Alarm deleted`,
+            delete: c('Tooltip').t`Delete alarm`
+        }
+    };
     const titleRef = useRef();
     const { createNotification } = useNotifications();
     const [loading, setLoading] = useState(false);
-    const [events] = [[]]; // useEvents();
+    const [events] = [[]]; // TODO useEvents();
     const event = events.find(({ ID }) => ID === eventID);
     const [model, updateModel] = useState(getModel({ event, start, end, allDay, type }));
-    const title = eventID ? c('Title').t`Update event` : c('Title').t`Create an event`;
+    const title = i18n[model.type][eventID ? 'update' : 'create'];
 
     const handleSubmit = async () => {
         setLoading(true);
@@ -68,7 +91,7 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
         // TODO save API call
         setLoading(false);
         rest.onClose();
-        createNotification({ text: eventID ? c('Success').t`Event updated` : c('Success').t`Event created` });
+        createNotification({ text: i18n[model.type][eventID ? 'updated' : 'created'] });
     };
 
     const handleDelete = async () => {
@@ -76,7 +99,7 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
         // TODO delete API call
         setLoading(false);
         rest.onClose();
-        createNotification({ text: c('Success').t`Event deleted` });
+        createNotification({ text: i18n[model.type].deleted });
     };
 
     const decrypt = () => {
@@ -113,9 +136,12 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
                         &nbsp;
                     </ColorPicker>
                     {eventID ? (
-                        <ErrorButton title={c('Tooltip').t`Delete event`} disabled={loading} onClick={handleDelete}>{c(
-                            'Action'
-                        ).t`Delete`}</ErrorButton>
+                        <ErrorButton
+                            title={i18n[model.type].delete}
+                            icon="trash"
+                            disabled={loading}
+                            onClick={handleDelete}
+                        />
                     ) : null}
                 </div>
             </Row>

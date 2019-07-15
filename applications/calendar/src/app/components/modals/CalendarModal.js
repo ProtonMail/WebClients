@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { FormModal, Row, Label, Field, Input, ColorPicker, TextArea } from 'react-components';
 
 const CalendarModal = ({ calendarID, ...rest }) => {
+    const nameRef = useRef();
     const [model, updateModel] = useState({});
     const title = calendarID ? c('Title').t`Update calendar` : c('Title').t`Create calendar`;
-    const handleSubmit = () => {};
+    const handleSubmit = () => {
+        // TODO
+    };
+
+    useEffect(() => {
+        if (!calendarID) {
+            nameRef.current.focus();
+        }
+    }, []);
 
     return (
         <FormModal
@@ -19,6 +28,7 @@ const CalendarModal = ({ calendarID, ...rest }) => {
                 <Label htmlFor="calendar-name-input">{c('Label').t`Name`}</Label>
                 <Field>
                     <Input
+                        ref={nameRef}
                         id="calendar-name-input"
                         value={model.name}
                         placeholder={c('Placeholder').t`Name`}
