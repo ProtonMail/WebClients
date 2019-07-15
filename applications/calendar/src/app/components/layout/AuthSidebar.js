@@ -36,19 +36,19 @@ const AuthSidebar = ({ onSelectDate, currentDate }) => {
 
     const createActions = [
         {
-            text: c('Action').t`Create event`,
+            text: c('Action').t`New event`,
             onClick() {
                 createModal(<EventModal />);
             }
         },
         {
-            text: c('Action').t`Create task`,
+            text: c('Action').t`New task`,
             onClick() {
                 createModal(<EventModal type="task" />);
             }
         },
         {
-            text: c('Action').t`Create alarm`,
+            text: c('Action').t`New alarm`,
             onClick() {
                 createModal(<EventModal type="alarm" />);
             }

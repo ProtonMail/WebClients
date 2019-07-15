@@ -11,9 +11,11 @@ import {
     TimeSelect,
     Select,
     Checkbox,
-    RichTextEditor,
-    LinkButton
+    LinkButton,
+    TextArea
 } from 'react-components';
+
+import Notifications from './Notifications';
 
 const EventForm = ({ model, updateModel }) => {
     const timezones = [];
@@ -113,13 +115,19 @@ const EventForm = ({ model, updateModel }) => {
                 </Field>
             </Row>
             <Row>
+                <Label>{c('Label').t`Notifications`}</Label>
+                <div>
+                    <Notifications model={model} updateModel={updateModel} />
+                </div>
+            </Row>
+            <Row>
                 <Label htmlFor="event-description-input">{c('Label').t`Description`}</Label>
                 <Field>
-                    <RichTextEditor
+                    <TextArea
                         id="event-description-input"
                         placeholder={c('Placeholder').t`Add a description`}
                         value={model.description}
-                        onChange={(description) => updateModel({ ...model, description })}
+                        onChange={({ target }) => updateModel({ ...model, description: target.value })}
                     />
                 </Field>
             </Row>

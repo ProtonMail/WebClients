@@ -44,6 +44,7 @@ const getModel = ({ event = {}, start = new Date(), end = new Date(), allDay = f
             .valueOf() - endDate;
     return {
         type,
+        notifications: [],
         description: '',
         allDay,
         startDate,
