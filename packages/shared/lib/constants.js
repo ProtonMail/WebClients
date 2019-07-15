@@ -440,3 +440,9 @@ export const PASSWORD_MODE = {
     SINGLE: 1,
     TWO_PASSWORD: 2
 };
+
+export const TWO_FA_CONFIG = {
+    PERIOD: 30,
+    DIGITS: 6,
+    ALGORITHM: 'SHA1'
+};
