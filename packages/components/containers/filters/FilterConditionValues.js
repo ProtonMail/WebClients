@@ -19,16 +19,10 @@ function FilterConditionValues({ condition, options, onDelete, onChangeCondition
                 value={condition.Comparator.value}
             />
 
-            <div className="flex flex-column w100 mb1">
+            <div className="flex flex-column w100">
                 {condition.Values.map((value, i) => {
                     return (
-                        <EditConditionValue
-                            className="mb0-5"
-                            value={value}
-                            onEdit={onEdit}
-                            onClickDelete={onDelete}
-                            key={'index' + i}
-                        />
+                        <EditConditionValue value={value} onEdit={onEdit} onClickDelete={onDelete} key={'index' + i} />
                     );
                 })}
 

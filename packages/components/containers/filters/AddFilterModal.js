@@ -120,7 +120,7 @@ function AddFilterModal({ filter, type, mode, onEdit, ...props }) {
         if (isPreview) {
             return (
                 <>
-                    <Button type="button" onClick={handleClickPreview}>{c('Action').t`Back`}</Button>
+                    <Button onClick={handleClickPreview}>{c('Action').t`Back`}</Button>
                     <PrimaryButton loading={loading}>{c('Action').t`Save`}</PrimaryButton>
                 </>
             );
@@ -130,9 +130,8 @@ function AddFilterModal({ filter, type, mode, onEdit, ...props }) {
             <>
                 <ResetButton disabled={loading}>{c('Action').t`Close`}</ResetButton>
                 {type !== 'complex' ? (
-                    <Button type="button" className="mlauto mr1" disabled={loading} onClick={handleClickPreview}>{c(
-                        'Action'
-                    ).t`Preview`}</Button>
+                    <Button className="mlauto mr1" disabled={loading} onClick={handleClickPreview}>{c('Action')
+                        .t`Preview`}</Button>
                 ) : null}
                 <PrimaryButton type="submit" loading={loading}>
                     {c('Action').t`Save`}
@@ -185,6 +184,7 @@ function AddFilterModal({ filter, type, mode, onEdit, ...props }) {
 
 AddFilterModal.propTypes = {
     onEdit: PropTypes.func,
+    onClose: PropTypes.func,
     mode: PropTypes.string,
     type: PropTypes.string
 };

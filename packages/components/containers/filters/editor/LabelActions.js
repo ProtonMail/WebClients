@@ -20,7 +20,6 @@ function LabelActions({ selection, labels, onChange }) {
 
     return (
         <>
-            <input />
             <Autocomplete
                 placeholder={c('Placeholder').t`Add a label ...`}
                 inputValue={inputValue}
@@ -33,13 +32,18 @@ function LabelActions({ selection, labels, onChange }) {
 
             <ul className="m0 mt1 mb1 p0">
                 {selectedItems.map(({ Color, Name }, i) => {
-                    const className = 'flex '.concat(i ? 'mt0-5' : '');
                     return (
-                        <li key={Name} className={className}>
-                            <Icon name="label" style={{ fill: Color }} className="mr1" alt={Name} />
-                            <span>{Name}</span>
-                            <SmallButton onClick={() => deselect(i)} className="mlauto">{c('Action')
-                                .t`Remove`}</SmallButton>
+                        <li key={Name} className="flex flex-nowrap flex-items-center mb0-5">
+                            <Icon name="label" style={{ fill: Color }} className="flex-item-noshrink mr1" alt={Name} />
+                            <span title={Name} className="ellipsis">
+                                {Name}
+                            </span>
+                            <SmallButton
+                                title={c('Action').t`Remove`}
+                                icon="close"
+                                onClick={() => deselect(i)}
+                                className="mlauto"
+                            />
                         </li>
                     );
                 })}

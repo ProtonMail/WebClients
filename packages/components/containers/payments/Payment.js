@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Label, Row, Field } from 'react-components';
+import { Label, Row } from 'react-components';
 import { CYCLE } from 'proton-shared/lib/constants';
 
 import Method from './Method';
@@ -38,7 +38,7 @@ const Payment = ({ type, amount, currency, cycle, onParameters, onMethod, onVali
         <>
             <Row>
                 <Label>{c('Label').t`Payment method`}</Label>
-                <Field className="w100">
+                <div className="w100">
                     <div className="mb1">
                         <PaymentMethodsSelect
                             cycle={cycle}
@@ -56,7 +56,7 @@ const Payment = ({ type, amount, currency, cycle, onParameters, onMethod, onVali
                         type={type}
                         method={method}
                     />
-                </Field>
+                </div>
             </Row>
         </>
     );

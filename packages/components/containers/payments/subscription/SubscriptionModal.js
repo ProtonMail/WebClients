@@ -19,7 +19,6 @@ import {
     SubTitle,
     Label,
     Row,
-    Field,
     Wizard
 } from 'react-components';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
@@ -170,13 +169,13 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
                         .t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
                     <Row>
                         <Label>{c('Label').t`Amount due`}</Label>
-                        <Field className="w100">
+                        <div className="w100">
                             <Input
                                 className="pm-field--highlight no-pointer-events strong alignright"
                                 readOnly={true}
                                 value={toPrice(check.AmountDue, model.currency)}
                             />
-                        </Field>
+                        </div>
                     </Row>
                     <Payment
                         type="subscription"

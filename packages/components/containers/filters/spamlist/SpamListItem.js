@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { SubTitle, Bordered, Loader, Alert } from 'react-components';
+import { SubTitle, Bordered, Loader, Alert, Group } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import AddEmailFilterListButton from './AddEmailFilterListButton';
@@ -22,9 +22,11 @@ function SpamListItem({ list, type, dest, onAction, className, loading }) {
 
     return (
         <Bordered className={'flex-autogrid-item '.concat(className)}>
-            <header className="flex">
+            <header className="mt1 flex flex-spacebetween">
                 <SubTitle>{I18N[type]}</SubTitle>
-                <AddEmailFilterListButton type={type} onAdd={onAction('create')} className="mlauto" />
+                <div>
+                    <AddEmailFilterListButton type={type} onAdd={onAction('create')} />
+                </div>
             </header>
 
             {loading ? (
@@ -35,14 +37,21 @@ function SpamListItem({ list, type, dest, onAction, className, loading }) {
                         return (
                             <li className="flex mb0-5 pl1" key={mail.ID}>
                                 <span className="ellipsis">{mail.Email}</span>
-                                <MoveEmailFilteredList
-                                    dest={dest}
-                                    type={type}
-                                    email={mail}
-                                    className="mlauto"
-                                    onClick={onAction('move')}
-                                />
-                                <RemoveEmailFilteredList type={type} email={mail} onClick={onAction('remove')} />
+                                <Group className="mlauto">
+                                    <MoveEmailFilteredList
+                                        dest={dest}
+                                        type={type}
+                                        email={mail}
+                                        className="pm-group-button"
+                                        onClick={onAction('move')}
+                                    />
+                                    <RemoveEmailFilteredList
+                                        className="pm-group-button"
+                                        type={type}
+                                        email={mail}
+                                        onClick={onAction('remove')}
+                                    />
+                                </Group>
                             </li>
                         );
                     })}

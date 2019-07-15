@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Loader, Label, Select, Row, Field, useFormattedLabels, ErrorZone } from 'react-components';
+import { Loader, Label, Field, Select, Row, useFormattedLabels, ErrorZone } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import LabelActions from './LabelActions';
@@ -95,15 +95,15 @@ function ActionsEditor({ filter, onChange, errors }) {
     return (
         <Row>
             <Label htmlFor="actions">{c('New Label form').t`Actions`}</Label>
-            <Field className="w100">
-                <div>
+            <Field>
+                <div className="mb1">
                     {loading ? (
                         <Loader />
                     ) : (
                         <LabelActions onChange={handleOnChangeLabel} labels={labels} selection={getSelectedLabels()} />
                     )}
                 </div>
-                <Row>
+                <div className="mb1">
                     {loading ? (
                         <Loader />
                     ) : (
@@ -114,16 +114,15 @@ function ActionsEditor({ filter, onChange, errors }) {
                             defaultValue={getDefaultValue('moveTo')}
                         />
                     )}
-                </Row>
-                <Row>
+                </div>
+                <div className="mb1">
                     <Select
                         options={MARK_AS}
                         onChange={handleChange('markAs')}
                         className="mlauto"
                         defaultValue={getDefaultValue('markAs')}
                     />
-                </Row>
-
+                </div>
                 {errors.isValid === false ? (
                     <ErrorZone id="ActionsError">{c('Error').t`A filter must have an action`}</ErrorZone>
                 ) : null}

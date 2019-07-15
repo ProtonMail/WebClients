@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Label, Select, Row, SmallButton, PrimaryButton, ErrorZone } from 'react-components';
+import { Label, Select, Row, Field, ErrorButton, PrimaryButton, ErrorZone } from 'react-components';
 import { getI18n as getI18nFilter, newCondition } from 'proton-shared/lib/filters/factory';
 import { noop } from 'proton-shared/lib/helpers/function';
 
@@ -97,82 +97,72 @@ function ConditionsEditor({ filter, onChange, errors }) {
                 const n = index + 1;
                 return (
                     <Row key={`condition-${index}`}>
+                        <Label>{c('Label').t`Conditions ${n}`}</Label>
                         {condition.Type.value === 'attachments' ? (
-                            <>
-                                <Label>
-                                    {c('Label').t`Conditions ${n}`}
-                                    <SmallButton icon="trash" className="ml1" onClick={handleRemoveCondition(index)} />
-                                </Label>
+                            <Field>
+                                <Select
+                                    onChange={handleChangeType({
+                                        scope: 'Type',
+                                        condition,
+                                        index
+                                    })}
+                                    className="mb1"
+                                    options={toOptions(TYPES)}
+                                    defaultValue={condition.Type.value}
+                                />
 
-                                <div className="w100">
-                                    <Row>
-                                        <Select
-                                            onChange={handleChangeType({
-                                                scope: 'Type',
-                                                condition,
-                                                index
-                                            })}
-                                            options={toOptions(TYPES)}
-                                            defaultValue={condition.Type.value}
-                                        />
-                                    </Row>
+                                <RadioContainsAttachements
+                                    comparator={condition.Comparator.value}
+                                    onChange={handleChangeAttachments({ scope: 'Comparator', condition, index })}
+                                />
+                            </Field>
+                        ) : (
+                            <Field>
+                                <Select
+                                    options={toOptions(TYPES)}
+                                    className="mb1"
+                                    defaultValue={condition.Type.value}
+                                    onChange={handleChangeType({
+                                        scope: 'Type',
+                                        condition,
+                                        index
+                                    })}
+                                />
 
-                                    <RadioContainsAttachements
-                                        comparator={condition.Comparator.value}
-                                        onChange={handleChangeAttachments({ scope: 'Comparator', condition, index })}
-                                    />
-                                </div>
-                            </>
-                        ) : null}
+                                {hasError('type', index) ? (
+                                    <ErrorZone id="ActionsError">{c('Error')
+                                        .t`You must choose a type of condition`}</ErrorZone>
+                                ) : null}
 
-                        {condition.Type.value !== 'attachments' ? (
-                            <>
-                                <Label>
-                                    {c('Label').t`Conditions ${n}`}
-                                    <SmallButton icon="trash" className="ml1" onClick={handleRemoveCondition(index)} />
-                                </Label>
-
-                                <div className="w100">
-                                    <Select
-                                        options={toOptions(TYPES)}
-                                        className="mb1"
-                                        defaultValue={condition.Type.value}
-                                        onChange={handleChangeType({
-                                            scope: 'Type',
-                                            condition,
-                                            index
-                                        })}
-                                    />
-
-                                    {hasError('type', index) ? (
-                                        <ErrorZone id="ActionsError">{c('Error')
-                                            .t`You must choose a type of condition`}</ErrorZone>
-                                    ) : null}
-
-                                    <FilterConditionValues
-                                        options={toOptions(COMPARATORS)}
-                                        condition={condition}
-                                        error={errors[index]}
-                                        onChangeCondition={handleChangeCondition({
-                                            scope: 'Comparator',
-                                            condition,
-                                            index
-                                        })}
-                                        onDelete={handleDeleteValue({ scope: 'Values', condition, index })}
-                                        onAdd={handleAddValue({ scope: 'Values', condition, index })}
-                                        onEdit={handleEditValue({ scope: 'Values', condition, index })}
-                                    />
-                                </div>
-                            </>
-                        ) : null}
+                                <FilterConditionValues
+                                    options={toOptions(COMPARATORS)}
+                                    condition={condition}
+                                    error={errors[index]}
+                                    onChangeCondition={handleChangeCondition({
+                                        scope: 'Comparator',
+                                        condition,
+                                        index
+                                    })}
+                                    onDelete={handleDeleteValue({ scope: 'Values', condition, index })}
+                                    onAdd={handleAddValue({ scope: 'Values', condition, index })}
+                                    onEdit={handleEditValue({ scope: 'Values', condition, index })}
+                                />
+                            </Field>
+                        )}
+                        <div className="ml1">
+                            <ErrorButton
+                                title={c('Action').t`Remove condition`}
+                                icon="trash"
+                                onClick={handleRemoveCondition(index)}
+                            />
+                        </div>
                     </Row>
                 );
             })}
 
             <Row>
                 <span className="pm-label" />
-                <PrimaryButton type="button" className="ml50" onClick={handleAddNewCondition}>{c('Action')
-                    .t`Add a new condition`}</PrimaryButton>
+                <PrimaryButton onClick={handleAddNewCondition}>{c('Action').t`Add a new condition`}</PrimaryButton>
             </Row>
         </>
     );

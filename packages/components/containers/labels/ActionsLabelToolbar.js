@@ -15,12 +15,10 @@ function ActionsLabelToolbar({ onAdd }) {
 
     return (
         <>
-            <PrimaryButton icon="folder" onClick={handleClickAdd('folder')}>
+            <PrimaryButton onClick={handleClickAdd('folder')} className="mr1">
                 {c('Action').t`Add folder`}
             </PrimaryButton>
-            <PrimaryButton icon="folder" onClick={handleClickAdd('label')} className="ml1">
-                {c('Action').t`Add label`}
-            </PrimaryButton>
+            <PrimaryButton onClick={handleClickAdd('label')}>{c('Action').t`Add label`}</PrimaryButton>
         </>
     );
 }

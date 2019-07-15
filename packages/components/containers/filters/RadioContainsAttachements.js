@@ -1,38 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Radio, Row } from 'react-components';
+import { useToggle, Toggle } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 function RadioContainsAttachements({ comparator, onChange }) {
-    const handleChange = ({ target }) => onChange(target.value);
+    const { state, toggle } = useToggle(comparator === 'contains');
+
+    const handleChange = ({ target }) => {
+        onChange(target.checked ? 'contains' : '!contains');
+        toggle();
+    };
 
     return (
-        <>
-            <Row>
-                <Radio
-                    checked={comparator === 'contains'}
-                    onChange={handleChange}
-                    name="contains"
-                    value="contains"
-                    id="contains"
-                >
-                    {c('Option Filter').t`With Attachments`}
-                </Radio>
-            </Row>
-
-            <Row>
-                <Radio
-                    checked={comparator === '!contains'}
-                    onChange={handleChange}
-                    name="contains"
-                    value="!contains"
-                    id="notcontains"
-                >
-                    {c('Option Filter').t`Without Attachments`}
-                </Radio>
-            </Row>
-        </>
+        <label className="flex flex-nowrap flex-items-center">
+            <Toggle className="mr0-5" checked={state} onChange={handleChange} />
+            <span>{c('Option Filter').t`With Attachments`}</span>
+        </label>
     );
 }
 

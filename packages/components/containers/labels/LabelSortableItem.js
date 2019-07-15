@@ -21,9 +21,14 @@ function LabelItem({ label, onEditLabel, onRemoveLabel }) {
                 <Icon name="text-justify" />
             </td>
             <td>
-                {Exclusive === 1 && <Icon name="folder" style={{ fill: Color }} className="icon-16p mr1" alt={Name} />}
-                {Exclusive === 0 && <Icon name="label" style={{ fill: Color }} className="icon-16p mr1" alt={Name} />}
-                <span>{Name}</span>
+                <div className="flex flex-nowrap">
+                    <Icon
+                        name={Exclusive ? 'folder' : 'label'}
+                        style={{ fill: Color }}
+                        className="icon-16p flex-item-noshrink mr1"
+                    />
+                    <span className="ellipsis">{Name}</span>
+                </div>
             </td>
             <td>
                 <div className="w10">{Exclusive === 1 && <ToggleNotify label={label} />}</div>

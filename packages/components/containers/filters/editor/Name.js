@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Label, Input, Row, ErrorZone } from 'react-components';
+import { Label, Input, Row, ErrorZone, Field } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 function NameEditor({ filter, onChange, error }) {
@@ -10,7 +10,7 @@ function NameEditor({ filter, onChange, error }) {
     return (
         <Row>
             <Label htmlFor="filterName">{c('Filter label').t`Name`}</Label>
-            <div className="w100">
+            <Field>
                 <Input
                     id="filterName"
                     type="text"
@@ -20,7 +20,7 @@ function NameEditor({ filter, onChange, error }) {
                     required
                 />
                 {error.isEmpty ? <ErrorZone id="filterNameError">{c('Error').t`Username required`}</ErrorZone> : null}
-            </div>
+            </Field>
         </Row>
     );
 }
