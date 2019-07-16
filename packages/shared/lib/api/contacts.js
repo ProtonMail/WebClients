@@ -4,7 +4,7 @@ export const queryContacts = ({ Page = 0, PageSize = 1000, LabelID } = {}) => ({
     params: { Page, PageSize, LabelID }
 });
 
-export const queryContactExport = ({ Page = 0, PageSize = 1000, LabelID } = {}) => ({
+export const queryContactExport = ({ Page = 0, PageSize = 50, LabelID } = {}) => ({
     url: 'contacts/export',
     method: 'get',
     params: { Page, PageSize, LabelID }
