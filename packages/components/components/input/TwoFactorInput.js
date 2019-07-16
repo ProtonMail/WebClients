@@ -2,18 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Input from './Input';
-import { isNumber } from 'proton-shared/lib/helpers/validators';
 
-const TwoFactorInput = ({ value, onChange, maxLength, ...rest }) => {
-    const handleChange = (event) => {
-        const { value = '' } = event.target;
-
-        if (value === '' || (isNumber(value) && value.length <= maxLength)) {
-            onChange(event);
-        }
-    };
-
-    return <Input value={value} onChange={handleChange} {...rest} />;
+/**
+ * The two-factor input needs to support recovery codes and totp codes.
+ * e.g. 0fac27c3 and 505037.
+ */
+const TwoFactorInput = ({ value, onChange, ...rest }) => {
+    return <Input value={value} onChange={onChange} {...rest} />;
 };
 
 TwoFactorInput.propTypes = {
@@ -23,7 +18,7 @@ TwoFactorInput.propTypes = {
 };
 
 TwoFactorInput.defaultProps = {
-    maxLength: 6
+    maxLength: 8
 };
 
 export default TwoFactorInput;

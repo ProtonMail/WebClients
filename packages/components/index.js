@@ -154,6 +154,7 @@ export { default as PayPal } from './containers/payments/PayPal';
 export { default as Details } from './components/container/Details';
 export { default as Summary } from './components/container/Summary';
 export { default as AuthModal } from './containers/password/AuthModal';
+export { default as PasswordTotpInputs } from './containers/password/PasswordTotpInputs';
 export { default as UnlockModal } from './containers/login/UnlockModal';
 export { default as NotificationsContainer } from './containers/notifications/Container';
 export { default as NotificationsProvider } from './containers/notifications/Provider';
@@ -167,6 +168,7 @@ export { default as MozillaInfoPanel } from './containers/account/MozillaInfoPan
 export { default as UsernameSection } from './containers/account/UsernameSection';
 export { default as DeleteSection } from './containers/account/DeleteSection';
 export { default as PasswordsSection } from './containers/account/PasswordsSection';
+export { default as TwoFactorSection } from './containers/account/TwoFactorSection';
 export { default as RecoveryEmail } from './containers/notification/RecoveryEmail';
 export { default as EmailSection } from './containers/notification/EmailSection';
 export { default as AddressKeysSection } from './containers/keys/AddressKeysSection';

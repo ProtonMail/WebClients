@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import keycode from 'keycode';
 
 const FOCUSED_CLASS = 'focused';
@@ -13,29 +13,34 @@ const DEFAULT_STATE = {
     isPristine: true
 };
 
-const useInput = (props, initialState = DEFAULT_STATE, prefix = 'field') => {
+const useInput = (
+    { onFocus, onBlur, onChange, onPressEnter, onKeyDown, disabled },
+    initialState = DEFAULT_STATE,
+    prefix = 'field'
+) => {
     const [status, changeStatus] = useState(initialState);
+
     const { isFocused, isBlurred, isPristine, isDirty } = status;
 
     const reset = () => {
         changeStatus({ ...DEFAULT_STATE });
     };
 
-    const classes = [];
-
-    if (isPristine) {
-        classes.push(PRISTINE_CLASS);
-    } else {
-        isFocused && classes.push(`${prefix}-${FOCUSED_CLASS}`);
-        isBlurred && classes.push(`${prefix}-${BLURRED_CLASS}`);
-        isDirty && classes.push(`${prefix}-${DIRTY_CLASS}`);
-    }
-
-    const { onFocus, onBlur, onChange, onPressEnter, onKeyDown, disabled } = props;
+    const statusClasses = useMemo(() => {
+        return [
+            isPristine && PRISTINE_CLASS,
+            isFocused && FOCUSED_CLASS,
+            isBlurred && BLURRED_CLASS,
+            isDirty && DIRTY_CLASS
+        ]
+            .filter(Boolean)
+            .map((className) => `${prefix}-${className}`)
+            .join(' ');
+    }, [status, prefix]);
 
     return {
         status,
-        statusClasses: classes.join(' '),
+        statusClasses,
         reset,
         handlers: {
             onFocus: (event) => {
@@ -46,6 +51,7 @@ const useInput = (props, initialState = DEFAULT_STATE, prefix = 'field') => {
                 if (!isFocused) {
                     changeStatus({
                         ...status,
+                        isBlurred: false,
                         isFocused: true,
                         isPristine: false
                     });
@@ -60,6 +66,7 @@ const useInput = (props, initialState = DEFAULT_STATE, prefix = 'field') => {
                     changeStatus({
                         ...status,
                         isBlurred: true,
+                        isFocused: false,
                         isPristine: false
                     });
                 }

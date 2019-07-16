@@ -143,14 +143,14 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
             </Row>
             {TwoFactor ? (
                 <Row>
-                    <Label htmlFor="twoFa">{c('Label').t`Two-factor passcode`}</Label>
+                    <Label htmlFor="twoFa">{c('Label').t`Two-factor code`}</Label>
                     <Field>
                         <TwoFactorInput
                             id="twoFa"
                             disabled={loading}
                             value={model.twoFa}
                             onChange={handleChange('twoFa')}
-                            placeholder={c('Placeholder').t`Two-factor passcode`}
+                            placeholder={c('Placeholder').t`Two-factor code`}
                         />
                     </Field>
                 </Row>

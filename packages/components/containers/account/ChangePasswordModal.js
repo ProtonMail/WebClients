@@ -334,14 +334,14 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
             )}
             {!isSecondPhase && hasTotp && (
                 <Row>
-                    <Label htmlFor="totp">{c('Label').t`Two factor code`}</Label>
+                    <Label htmlFor="totp">{c('Label').t`Two-factor code`}</Label>
                     <Field>
                         <TwoFactorInput
                             id="totp"
                             value={inputs.totp}
                             onChange={({ target: { value } }) => setInput({ totp: value })}
                             error={errors.loginError}
-                            placeholder={c('Placeholder').t`Two factor code`}
+                            placeholder={c('Placeholder').t`Two-factor code`}
                             required
                         />
                     </Field>
