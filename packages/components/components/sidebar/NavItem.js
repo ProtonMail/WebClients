@@ -37,7 +37,7 @@ const NavItem = ({ type, link, text, onClick, icon, list, color, className }) =>
 
     if (type === 'button') {
         return (
-            <li className="navigation__item pl1 pr1">
+            <li className="navigation__item">
                 <button type="button" className={`w100 navigation__link ellipsis ${className}`} onClick={onClick}>
                     {content}
                 </button>
