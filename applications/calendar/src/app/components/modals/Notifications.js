@@ -67,7 +67,7 @@ const Notifications = ({ model, updateModel }) => {
                     </div>
                 );
             })}
-            <div className="mb1">
+            <div>
                 <Button onClick={handleAdd}>{c('Action').t`Add notification`}</Button>
             </div>
         </>

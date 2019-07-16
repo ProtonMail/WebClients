@@ -100,7 +100,7 @@ const MiniCalendar = ({
 };
 
 MiniCalendar.propTypes = {
-    date: PropTypes.instanceOf(Date),
+    date: PropTypes.instanceOf(Date).isRequired,
     onSelectDate: PropTypes.func.isRequired,
     onSelectDateRange: PropTypes.func.isRequired,
     weekStartsOn: PropTypes.number,

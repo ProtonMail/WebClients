@@ -123,6 +123,7 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
                         ref={titleRef}
                         id="event-title-input"
                         placeholder={c('Placeholder').t`Add a title`}
+                        required
                         value={model.title}
                         onChange={({ target }) => updateModel({ ...model, title: target.value })}
                     />

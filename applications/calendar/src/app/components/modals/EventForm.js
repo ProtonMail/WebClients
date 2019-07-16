@@ -34,6 +34,7 @@ const EventForm = ({ model, updateModel }) => {
                     <DateInput
                         id="startDate"
                         className="mr1"
+                        required
                         defaultDate={new Date()}
                         setDefaultDate
                         onSelect={(date) => updateModel({ ...model, startDate: new Date(date).getTime() })}
@@ -65,6 +66,7 @@ const EventForm = ({ model, updateModel }) => {
                 <Field className="flex flex-spacebetween flex-nowrap">
                     <DateInput
                         id="endDate"
+                        required
                         className="mr1"
                         defaultDate={new Date()}
                         setDefaultDate

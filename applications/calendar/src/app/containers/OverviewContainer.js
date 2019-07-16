@@ -3,6 +3,7 @@ import { useModals } from 'react-components';
 import { Route } from 'react-router';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
+import { nextYear, previousYear } from 'proton-shared/lib/helpers/date';
 
 // If you use the default popups, use this.
 import 'tui-date-picker/dist/tui-date-picker.css';
@@ -35,6 +36,7 @@ const getDate = (type, start, value, operator) => {
 const OverviewContainer = () => {
     const calendarRef = useRef();
     const [view, setView] = useState(DEFAULT_VIEW);
+    const viewHandledByCalendarLibrary = VIEWS_HANDLED_BY_CALENDAR.includes(view);
     const { createModal } = useModals();
     const [currentDate, setDate] = useState(new Date());
     const [calendars] = useState([
@@ -105,18 +107,18 @@ const OverviewContainer = () => {
             .toDate();
 
     const handlePrev = () => {
-        calendarRef.current.getInstance().prev();
-        setDate(getCalendarDate());
+        viewHandledByCalendarLibrary && calendarRef.current.getInstance().prev();
+        setDate(viewHandledByCalendarLibrary ? getCalendarDate() : previousYear(currentDate));
     };
 
     const handleNext = () => {
-        calendarRef.current.getInstance().next();
-        setDate(getCalendarDate());
+        viewHandledByCalendarLibrary && calendarRef.current.getInstance().next();
+        setDate(viewHandledByCalendarLibrary ? getCalendarDate() : nextYear(currentDate));
     };
 
     const handleToday = () => {
-        calendarRef.current.getInstance().today();
-        setDate(getCalendarDate());
+        viewHandledByCalendarLibrary && calendarRef.current.getInstance().today();
+        setDate(new Date());
     };
 
     const handleChangeView = (newView) => {

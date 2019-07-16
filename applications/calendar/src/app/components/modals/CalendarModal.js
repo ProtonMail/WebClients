@@ -32,6 +32,7 @@ const CalendarModal = ({ calendarID, ...rest }) => {
                         id="calendar-name-input"
                         value={model.name}
                         placeholder={c('Placeholder').t`Name`}
+                        required
                         onChange={({ target }) => updateModel({ ...model, name: target.value })}
                     />
                 </Field>

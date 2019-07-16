@@ -19,6 +19,7 @@ const TaskForm = ({ model, updateModel }) => {
                 <Field className="flex flex-spacebetween flex-nowrap">
                     <DateInput
                         id="date"
+                        required
                         className="mr1"
                         defaultDate={new Date()}
                         setDefaultDate
