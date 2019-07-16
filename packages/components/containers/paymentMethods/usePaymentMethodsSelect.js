@@ -19,7 +19,7 @@ const usePaymentMethodsSelect = ({ amount, cycle, coupon, type }) => {
     const methods = [
         {
             value: 'card',
-            text: c('Payment method option').t`Pay with credit card`
+            text: c('Payment method option').t`Pay with credit/debit card`
         }
     ];
 

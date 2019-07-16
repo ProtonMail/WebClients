@@ -11,7 +11,7 @@ import toDetails from './toDetails';
 const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
     const { loading, request } = useApiWithoutResult(setPaymentMethod);
     const { createNotification } = useNotifications();
-    const title = existingCard ? c('Title').t`Edit credit card` : c('Title').t`Add credit card`;
+    const title = existingCard ? c('Title').t`Edit credit/debit card` : c('Title').t`Add credit/debit card`;
     const { card, updateCard, errors, isValid } = useCard(existingCard);
 
     const handleSubmit = async (event) => {
