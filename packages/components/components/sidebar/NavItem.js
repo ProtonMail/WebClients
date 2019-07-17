@@ -5,18 +5,18 @@ import { NavLink } from 'react-router-dom';
 import Icon from '../icon/Icon';
 import NavMenu from './NavMenu';
 
-const NavItem = ({ type, link, text, onClick, icon, list, color, className }) => {
+const NavItem = ({ type, link, isActive, exact, text, onClick, icon, list, color, className }) => {
     const content = (
-        <>
-            {icon && <Icon fill="light" name={icon} color={color} className="mr1" />}
-            {text}
-        </>
+        <div className="flex flex-nowrap flex-items-center">
+            {icon && <Icon fill="light" name={icon} color={color} className="mr1 flex-item-noshrink" />}
+            <span className="ellipsis inbl">{text}</span>
+        </div>
     );
 
     if (type === 'link') {
         return (
             <li className="navigation__item">
-                <NavLink className={`navigation__link ellipsis ${className}`} to={link}>
+                <NavLink className={`navigation__link ${className}`} exact={exact} isActive={isActive} to={link}>
                     {content}
                 </NavLink>
                 {list.length ? <NavMenu list={list} /> : null}
@@ -27,7 +27,7 @@ const NavItem = ({ type, link, text, onClick, icon, list, color, className }) =>
     if (type === 'text') {
         return (
             <li className="navigation__item">
-                <span className={`navigation__link ellipsis ${className}`}>
+                <span className={`navigation__link ${className}`}>
                     {content}
                     {list.length ? <NavMenu list={list} /> : null}
                 </span>
@@ -38,7 +38,7 @@ const NavItem = ({ type, link, text, onClick, icon, list, color, className }) =>
     if (type === 'button') {
         return (
             <li className="navigation__item">
-                <button type="button" className={`w100 navigation__link ellipsis ${className}`} onClick={onClick}>
+                <button type="button" className={`w100 navigation__link ${className}`} onClick={onClick}>
                     {content}
                 </button>
                 {list.length ? <NavMenu list={list} /> : null}
@@ -50,6 +50,8 @@ const NavItem = ({ type, link, text, onClick, icon, list, color, className }) =>
 };
 
 NavItem.propTypes = {
+    isActive: PropTypes.func,
+    exact: PropTypes.bool,
     icon: PropTypes.string,
     color: PropTypes.string,
     onClick: PropTypes.func,
