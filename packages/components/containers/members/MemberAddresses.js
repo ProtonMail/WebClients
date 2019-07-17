@@ -21,7 +21,7 @@ const MemberAddresses = ({ addresses }) => {
                 className="pm-button pm-button--link"
                 content={c('Info').ngettext(msgid`${n} address`, `${n} addresses`, n)}
             >
-                <DropdownMenu className="p0-5">{list}</DropdownMenu>
+                <DropdownMenu>{list}</DropdownMenu>
                 <div className="alignright p1">
                     <Link className="pm-button" to="/settings/addresses">{c('Link').t`Manage`}</Link>
                 </div>

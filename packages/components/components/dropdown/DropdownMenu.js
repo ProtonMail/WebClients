@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const DropdownMenu = ({ children, className }) => {
     return (
-        <ul className={`unstyled mt0-5 mb0-5 ${className}`}>
+        <ul className={`unstyled mt0-5 mb0-5 ml1 mr1 ${className}`}>
             {React.Children.toArray(children).map((child) => {
                 return (
                     <li className={`dropDown-item`} key={child.key}>
