@@ -20,38 +20,38 @@ const LoginForm = ({ onSubmit, loading }) => {
 
     return (
         <form name="loginForm" noValidate onSubmit={handleSubmit}>
-            <Label htmlFor="login" className="bl mb1">
-                <span className="sr-only">{c('Label').t`Username`}</span>
-                <Input
-                    type="text"
-                    name="login"
-                    className="w100"
-                    autoFocus
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    id="login"
-                    required
-                    value={username}
-                    placeholder={c('Placeholder').t`Username`}
-                    onChange={onChange(setUsername)}
-                    data-cy-login="username"
-                />
+            <Label htmlFor="login" className="bl sr-only">
+                {c('Label').t`Username`}
             </Label>
-            <Label htmlFor="password" className="bl mb1">
-                <span className="sr-only">{c('Label').t`Password`}</span>
-                <Input
-                    type="password"
-                    name="password"
-                    className="w100"
-                    autoComplete="current-password"
-                    id="password"
-                    required
-                    value={password}
-                    placeholder={c('Placeholder').t`Password`}
-                    onChange={onChange(setPassword)}
-                    data-cy-login="password"
-                />
+            <Input
+                type="text"
+                name="login"
+                className="w100 mb1"
+                autoFocus
+                autoCapitalize="off"
+                autoCorrect="off"
+                id="login"
+                required
+                value={username}
+                placeholder={c('Placeholder').t`Username`}
+                onChange={onChange(setUsername)}
+                data-cy-login="username"
+            />
+            <Label htmlFor="password" className="bl sr-only">
+                {c('Label').t`Password`}
             </Label>
+            <Input
+                type="password"
+                name="password"
+                className="w100 mb1"
+                autoComplete="current-password"
+                id="password"
+                required
+                value={password}
+                placeholder={c('Placeholder').t`Password`}
+                onChange={onChange(setPassword)}
+                data-cy-login="password"
+            />
             <Button type="submit" className="pm-button-blue w100" disabled={loading} data-cy-login="submit">
                 Login
             </Button>
