@@ -9,6 +9,7 @@ RewriteRule ^.*$ - [NC,L]
 
 RewriteRule ^settings.* /settings/index.html [NC,L]
 RewriteRule ^contacts.* /contacts/index.html [NC,L]
+RewriteRule ^calendar.* /calendar/index.html [NC,L]
 RewriteRule . /index.html [NC,L]
 
 <Files ~ "(index.html|version.json)">
