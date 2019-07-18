@@ -1,5 +1,7 @@
-import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from 'pmcrypto';
 import getRandomValues from 'get-random-values';
+
+// Not using openpgp to allow using this without having to depend on openpgp being loaded
+import { binaryStringToArray, arrayToBinaryString } from './string';
 
 /**
  * Partially inspired by http://www.thomasfrank.se/sessionvars.html
@@ -54,7 +56,7 @@ const deserializeItem = (value) => {
         return;
     }
     try {
-        return binaryStringToArray(decodeBase64(value));
+        return binaryStringToArray(atob(value));
     } catch (e) {
         return undefined;
     }
@@ -66,7 +68,7 @@ const deserializeItem = (value) => {
  * @return {String}
  */
 const serializeItem = (value) => {
-    return encodeBase64(arrayToBinaryString(value));
+    return btoa(arrayToBinaryString(value));
 };
 
 /**

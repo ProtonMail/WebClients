@@ -43,7 +43,7 @@ export const set = (appLocale, navigatorLocale) => {
         longDateFormat: navigatorLocaleData._config.longDateFormat
     });
 
-    return CUSTOM_LOCALE;
+    moment.locale(CUSTOM_LOCALE);
 };
 
 /**

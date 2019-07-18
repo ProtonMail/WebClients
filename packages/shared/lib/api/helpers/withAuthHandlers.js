@@ -48,11 +48,11 @@ const retryHandler = (e) => {
 /**
  * Attach a catch handler to every API call to handle 401, 403, and other errors.
  * @param {function} call
- * @param {function} handleUnlock
- * @param {function} handleError
+ * @param {function} onUnlock
+ * @param {function} onError
  * @return {function}
  */
-export default ({ call, handleUnlock, handleError }) => {
+export default ({ call, onUnlock, onError }) => {
     let loggedOut = false;
 
     /**
@@ -60,23 +60,23 @@ export default ({ call, handleUnlock, handleError }) => {
      * Multiple calls can fail, so this ensures the refresh route is called once.
      */
     const refreshHandler = createOnceHandler(() => call(setRefreshCookies()));
-    const unlockHandler = createOnceHandler(handleUnlock);
+    const unlockHandler = createOnceHandler(onUnlock);
 
     return (options) => {
         const perform = (attempts) => {
             if (loggedOut) {
                 return Promise.resolve().then(() => {
-                    return handleError(InactiveSessionError());
+                    return onError(InactiveSessionError());
                 });
             }
 
             return call(options).catch((e) => {
                 if (loggedOut) {
-                    return handleError(InactiveSessionError());
+                    return onError(InactiveSessionError());
                 }
 
                 if (attempts >= MAX_RETRY_AFTER_ATTEMPT) {
-                    return handleError(e);
+                    return onError(e);
                 }
 
                 const { status } = e;
@@ -86,20 +86,20 @@ export default ({ call, handleUnlock, handleError }) => {
                         () => perform(attempts + 1),
                         () => {
                             loggedOut = true;
-                            return handleError(InactiveSessionError());
+                            return onError(InactiveSessionError());
                         }
                     );
                 }
 
                 if (status === STATUS_CODE_UNLOCK) {
-                    return unlockHandler().then(() => perform(attempts + 1), (unlockError) => handleError(unlockError));
+                    return unlockHandler().then(() => perform(attempts + 1), (unlockError) => onError(unlockError));
                 }
 
                 if (status === STATUS_CODE_TOO_MANY_REQUESTS) {
-                    return retryHandler(e).then(() => perform(attempts + 1), () => handleError(e));
+                    return retryHandler(e).then(() => perform(attempts + 1), () => onError(e));
                 }
 
-                return handleError(e);
+                return onError(e);
             });
         };
 

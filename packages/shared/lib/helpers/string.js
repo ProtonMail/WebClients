@@ -48,3 +48,33 @@ export const getInitial = (value = '') => {
         .map((letter = '') => letter.toUpperCase().charAt(0))
         .join('');
 };
+
+/**
+ * NOTE: These functions exist in openpgp, but in order to load the application
+ * without having to load openpgpjs they are added here.
+ * @param {Uint8Array} bytes
+ * @return {string}
+ */
+export const arrayToBinaryString = (bytes) => {
+    const buffer = new Uint8Array(bytes);
+    const bs = 1 << 14;
+    const j = bytes.length;
+    const result = [];
+    for (let i = 0; i < j; i += bs) {
+        // eslint-disable-next-line prefer-spread
+        result.push(String.fromCharCode.apply(String, buffer.subarray(i, i + bs < j ? i + bs : j)));
+    }
+    return result.join('');
+};
+
+/**
+ * @param {String} str
+ * @return {Uint8Array}
+ */
+export const binaryStringToArray = (str) => {
+    const result = new Uint8Array(str.length);
+    for (let i = 0; i < str.length; i++) {
+        result[i] = str.charCodeAt(i);
+    }
+    return result;
+};

@@ -14,7 +14,7 @@ describe('auth handlers', () => {
             .createSpy('call')
             .and.returnValues(Promise.reject(getApiError({ status: 403 })), Promise.resolve('123'));
         const handleUnlock = jasmine.createSpy('unlock').and.returnValues(Promise.resolve());
-        const api = withAuthHandlers({ call, handleUnlock });
+        const api = withAuthHandlers({ call, onUnlock: handleUnlock });
         expect(await api({})).toBe('123');
         expect(handleUnlock).toHaveBeenCalledTimes(1);
         expect(call).toHaveBeenCalledTimes(2);
@@ -26,7 +26,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withAuthHandlers({ call, handleUnlock, handleError });
+        const api = withAuthHandlers({ call, onUnlock: handleUnlock, onError: handleError });
         const error = await api({}).catch((e) => e);
         expect(error.name).toBe('CancelUnlock');
         expect(handleError).toHaveBeenCalledTimes(1);
@@ -44,7 +44,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withAuthHandlers({ call, handleError });
+        const api = withAuthHandlers({ call, onError: handleError });
         expect(await api({})).toBe('123');
         expect(call).toHaveBeenCalledTimes(2);
         expect(handleError).toHaveBeenCalledTimes(0);
@@ -63,7 +63,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withAuthHandlers({ call, handleError });
+        const api = withAuthHandlers({ call, onError: handleError });
         const error = await api({}).catch((e) => e);
         expect(error.status).toBe(429);
         expect(call).toHaveBeenCalledTimes(5);
@@ -79,7 +79,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withAuthHandlers({ call, handleError });
+        const api = withAuthHandlers({ call, onError: handleError });
         const error = await api({}).catch((e) => e);
         expect(error.status).toBe(429);
         expect(call).toHaveBeenCalledTimes(1);
@@ -93,7 +93,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withAuthHandlers({ call, handleError });
+        const api = withAuthHandlers({ call, onError: handleError });
         const error = await api({}).catch((e) => e);
         expect(error.status).toBe(429);
         expect(call).toHaveBeenCalledTimes(1);
@@ -117,7 +117,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withAuthHandlers({ call, handleError });
+        const api = withAuthHandlers({ call, onError: handleError });
         const result = await Promise.all([api(123), api(231), api(321)]);
         expect(result).toEqual([123, 231, 321]);
         expect(call).toHaveBeenCalledTimes(7);
@@ -135,7 +135,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withAuthHandlers({ call, handleError });
+        const api = withAuthHandlers({ call, onError: handleError });
         const [p1, p2, p3] = [api(123), api(231), api(321)];
         await expectAsync(p1).toBeRejectedWith(InactiveSessionError());
         await expectAsync(p2).toBeRejectedWith(InactiveSessionError());
@@ -151,7 +151,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withAuthHandlers({ call, handleError });
+        const api = withAuthHandlers({ call, onError: handleError });
         await expectAsync(api()).toBeRejectedWith(InactiveSessionError());
         expect(call).toHaveBeenCalledTimes(2);
         await expectAsync(api()).toBeRejectedWith(InactiveSessionError());

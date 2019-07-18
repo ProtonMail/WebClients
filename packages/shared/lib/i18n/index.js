@@ -1,106 +1,76 @@
 import { addLocale, useLocale, setDefaultLang } from 'ttag';
-import { DEFAULT_TRANSLATION } from '../constants';
+
+import { DEFAULT_LOCALE } from '../constants';
 import { set as setMomentLocale } from './moment';
 
 /**
- * Return the entered locale or the first locale that the browser provides.
- * @param  {String} locale
+ * Gets the first specified locale from the browser, if any.
  * @return {String}
  */
-export const formatLocale = (locale) => {
-    const firstLanguage =
-        window.navigator.languages && window.navigator.languages.length ? window.navigator.languages[0] : null;
-    return locale || firstLanguage || window.navigator.userLanguage || window.navigator.language;
+export const getBrowserLocale = () => {
+    return window.navigator.languages && window.navigator.languages.length ? window.navigator.languages[0] : undefined;
 };
 
-const upperCaseLocale = (locale = '') => (locale === 'en' ? 'us' : locale).toUpperCase();
-
 /**
- * We expect it as fr_FR not fr-FR
+ * Get the closest matching locale.
  * @param {String} locale
- * @returns {string}
+ * @param {Object} locales
+ * @return {String}
  */
-const getTransformedLocale = (locale = '') => {
-    const changedLocale = locale.replace('-', '_');
-    // OS is in French (France) => navigator.language === fr
-    if (changedLocale.length === 2) {
-        return `${changedLocale}_${upperCaseLocale(changedLocale)}`;
+export const getBestMatch = (locale, locales) => {
+    if (!locale) {
+        return DEFAULT_LOCALE;
     }
-    return changedLocale;
+
+    const localeKeys = Object.keys(locales);
+    // First by language and country code.
+    const fullMatch = localeKeys.find((key) => key === locale);
+    if (fullMatch) {
+        return fullMatch;
+    }
+
+    // Language code.
+    const language = locale.substr(0, 2);
+    const languageMatch = localeKeys.find((key) => key.substr(0, 2) === language);
+    if (languageMatch) {
+        return languageMatch;
+    }
+
+    return DEFAULT_LOCALE;
 };
 
-const getBrowserLocale = () => {
-    // Doesn't work on IE11 ;)
-    try {
-        const queryParams = new window.URL(window.location).searchParams;
-        return getTransformedLocale(formatLocale(queryParams.get('language')));
-    } catch (e) {
-        // Match: xx_XX xx-XX xx 1192
-        const [, locale] = window.location.search.match(/language=(([a-z]{2,}(_|-)[A-Z]{2,})|([a-z]{2,}))/) || [];
-        return getTransformedLocale(formatLocale(locale));
-    }
-};
+// Since it affects the whole app it's just easier for now.
+// eslint-disable-next-line import/no-mutable-exports
+let currentLocale;
 
 /**
- * Return a matched locale if it exists in our supported translations.
- * Otherwise returns the default translation.
- * @param {String} browserLocale e.g. en_GB
- * @returns {String}
+ * Load a locale.
+ * If only a language is specified, try to get the first best match.
+ * @param {String} locale - E.g. fr, fr_FR, or en_US
+ * @param {Object} locales - An object of locale keys -> dynamic import functions
+ * @return {Promise} new locale or nothing
  */
-const getTranslation = (browserLocale = '', translations = []) => {
-    // Check if the full locale exists in the translations.
-    if (translations.includes(browserLocale)) {
-        return browserLocale;
+export const loadLocale = async (locale = '', locales = {}) => {
+    const bestMatch = getBestMatch(locale, locales);
+
+    // No need to update if it's the same.
+    if (currentLocale === bestMatch) {
+        return;
     }
 
-    // Try again, but only match on the language, not on the locale.
-    const browserLanguage = browserLocale.substr(0, 2);
-    const translationByLanguage = translations.find((lang) => lang.substr(0, 2) === browserLanguage);
-    if (translationByLanguage) {
-        return translationByLanguage;
+    const language = bestMatch.substr(0, 2);
+
+    if (bestMatch !== DEFAULT_LOCALE) {
+        const data = (await locales[bestMatch]()).default;
+        addLocale(locale, data);
     }
 
-    return DEFAULT_TRANSLATION;
+    setDefaultLang(language);
+    useLocale(locale);
+    setMomentLocale(locale, getBrowserLocale());
+
+    currentLocale = locale;
+    document.documentElement.lang = language;
 };
 
-export const getLocale = (lang, translations) => {
-    const browser = getBrowserLocale();
-    const locale = getTranslation(lang || browser, translations);
-    const language = locale.substr(0, 2);
-    return { browser, locale, language };
-};
-
-export function localeFactory({ TRANSLATIONS = [], TRANSLATIONS_URL } = {}) {
-    const toUrl = (scope) => {
-        const baseUrl = [TRANSLATIONS_URL, 'i18n'].filter(Boolean);
-        return ['', ...baseUrl].concat(`${scope}.json`).join('/');
-    };
-
-    return async (lang) => {
-        const { locale, browser, language } = getLocale(lang, TRANSLATIONS);
-
-        document.documentElement.lang = language;
-
-        // If it's the default translation, we don't need to load the json since it's loaded by default.
-        if (locale === DEFAULT_TRANSLATION) {
-            setDefaultLang(locale);
-            useLocale(locale);
-            return { locale, browser, language };
-        }
-
-        try {
-            const rep = await fetch(toUrl(locale));
-            const data = await rep.json();
-
-            addLocale(locale, data);
-            setDefaultLang(locale);
-            useLocale(locale);
-            setMomentLocale(locale);
-            return { locale, browser, language };
-        } catch (e) {
-            // ninja
-            console.error(e);
-            return { locale: lang };
-        }
-    };
-}
+export { currentLocale };

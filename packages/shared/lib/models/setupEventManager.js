@@ -1,35 +1,9 @@
-import { getLatestID } from '../api/events';
 import createEventManager from '../eventManager/eventManager';
 import { UserModel } from './userModel';
-import { UserSettingsModel } from './userSettingsModel';
-import { MailSettingsModel } from './mailSettingsModel';
-import { AddressesModel } from './addressesModel';
 import { OrganizationModel } from './organizationModel';
 import { SubscriptionModel } from './subscriptionModel';
-import { LabelsModel } from './labelsModel';
-import { FiltersModel } from './filtersModel';
 import { MembersModel } from './membersModel';
-import { DomainsModel } from './domainsModel';
 import { STATUS } from './cache';
-
-// TODO: Should list all models.
-const MODELS_MAP = [
-    UserModel,
-    UserSettingsModel,
-    MailSettingsModel,
-    AddressesModel,
-    DomainsModel,
-    LabelsModel,
-    FiltersModel,
-    SubscriptionModel,
-    OrganizationModel,
-    MembersModel
-].reduce((acc, model) => {
-    acc[model.key] = model;
-    return acc;
-}, {});
-
-export const getEventID = (api) => api(getLatestID()).then(({ EventID }) => EventID);
 
 /**
  * Resolve a model when receiving a new event for it.
@@ -56,7 +30,7 @@ const resolveModel = (cache, api, model, eventValue) => {
             const updatedValue = update(value, eventValue);
             cache.set(key, {
                 status: STATUS.RESOLVED,
-                value: model.sync ? await sync(api, updatedValue) : updatedValue,
+                value: sync ? await sync(api, updatedValue) : updatedValue,
                 dependencies: oldDependencies
             });
         })
@@ -71,14 +45,22 @@ const resolveModel = (cache, api, model, eventValue) => {
 
 /**
  * @param {Object} cache
+ * @param {Array} models
  * @param {String} eventID
  * @param {Function} api
  * @returns {Object}
  */
-export const setupEventManager = (cache, eventID, api) => {
+export const setupEventManager = ({ models, cache, eventID, api }) => {
+    const modelsMap = models.reduce((acc, model) => {
+        return {
+            ...acc,
+            [model.key]: model
+        };
+    }, {});
+
     const onSuccess = async (data) => {
         const promises = Object.keys(data).reduce((acc, key) => {
-            const model = MODELS_MAP[key];
+            const model = modelsMap[key];
             if (!model) {
                 return acc;
             }
@@ -88,11 +70,9 @@ export const setupEventManager = (cache, eventID, api) => {
 
         await Promise.all(promises);
 
-        // If new user, check the subscription
-        // TODO: Need to set a fake organization, subscription etc in case a view is already opened.
-        // Otherwise it would refetch and error out.
         if (data[UserModel.key]) {
             const { value: user } = cache.get(UserModel.key);
+            // Do not get any events for these models, so delete them.
             if (user.isFree) {
                 cache.delete(SubscriptionModel.key);
                 cache.delete(OrganizationModel.key);
