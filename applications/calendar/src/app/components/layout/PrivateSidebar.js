@@ -8,7 +8,7 @@ import CalendarModal from '../modals/CalendarModal';
 import CalendarsModal from '../modals/CalendarsModal';
 import MiniCalendar from '../miniCalendar/MiniCalendar';
 
-const AuthSidebar = ({ onSelectDate, onSelectDateRange, currentDate }) => {
+const PrivateSidebar = ({ onSelectDate, onSelectDateRange, currentDate }) => {
     const { createModal } = useModals();
 
     const list = [
@@ -68,10 +68,10 @@ const AuthSidebar = ({ onSelectDate, onSelectDateRange, currentDate }) => {
     );
 };
 
-AuthSidebar.propTypes = {
+PrivateSidebar.propTypes = {
     onSelectDate: PropTypes.func,
     onSelectDateRange: PropTypes.func,
     currentDate: PropTypes.instanceOf(Date)
 };
 
-export default AuthSidebar;
+export default PrivateSidebar;

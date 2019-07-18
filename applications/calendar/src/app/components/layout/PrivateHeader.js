@@ -1,7 +1,7 @@
 import React from 'react';
 import { useModals, AuthenticatedBugModal } from 'react-components';
 
-const AuthHeader = () => {
+const PrivateHeader = () => {
     const { createModal } = useModals();
     const handleClick = () => createModal(<AuthenticatedBugModal />);
     return (
@@ -83,4 +83,4 @@ const AuthHeader = () => {
     );
 };
 
-export default AuthHeader;
+export default PrivateHeader;

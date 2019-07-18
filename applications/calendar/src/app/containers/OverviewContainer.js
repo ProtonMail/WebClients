@@ -11,7 +11,7 @@ import 'tui-time-picker/dist/tui-time-picker.css';
 
 import Main from '../components/Main';
 import EventModal from '../components/modals/EventModal';
-import AuthSidebar from '../components/layout/AuthSidebar';
+import PrivateSidebar from '../components/layout/PrivateSidebar';
 import Toolbar from '../components/Toolbar';
 import YearView from '../components/YearView';
 import PlanningView from '../components/PlanningView';
@@ -156,7 +156,7 @@ const OverviewContainer = () => {
             <Route
                 path="/:path"
                 render={() => (
-                    <AuthSidebar
+                    <PrivateSidebar
                         onSelectDate={handleSelectDate}
                         onSelectDateRange={handleSelectDateRange}
                         currentDate={currentDate}

@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AuthHeader from './AuthHeader';
+import PrivateHeader from './PrivateHeader';
 
-const AuthLayout = ({ children }) => {
+const PrivateLayout = ({ children }) => {
     return (
         <>
-            <AuthHeader />
+            <PrivateHeader />
             <div className="flex flex-nowrap">{children}</div>
         </>
     );
 };
 
-AuthLayout.propTypes = {
+PrivateLayout.propTypes = {
     children: PropTypes.node.isRequired
 };
 
-export default AuthLayout;
+export default PrivateLayout;
