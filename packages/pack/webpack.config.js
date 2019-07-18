@@ -76,7 +76,9 @@ function main({ port, publicPath, flow, appMode }) {
                 // Ensure that the correct package is used when symlinking
                 pmcrypto: path.resolve('./node_modules/pmcrypto'),
                 react: path.resolve('./node_modules/react'),
-                'react-dom': path.resolve('./node_modules/react-dom'),
+                'react-dom': isProduction
+                    ? path.resolve('./node_modules/react-dom')
+                    : path.resolve('./node_modules/@hot-loader/react-dom'),
                 'design-system': path.resolve('./node_modules/design-system'),
                 'proton-shared': path.resolve('./node_modules/proton-shared'),
                 'react-components': path.resolve('./node_modules/react-components'),
