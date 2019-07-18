@@ -9,8 +9,6 @@ const SelectKeyFiles = forwardRef(({ onFiles, autoClick, multiple, className }, 
 
     const handleFileImport = async ({ target }) => {
         const keys = await parseKeyFiles(Array.from(target.files));
-        // Reset it to allow to select the same file again.
-        fileRef.current.value = '';
         onFiles(keys);
     };
 
