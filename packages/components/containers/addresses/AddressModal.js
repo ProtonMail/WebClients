@@ -9,7 +9,6 @@ import {
     Field,
     Label,
     Input,
-    RichTextEditor,
     useLoading,
     useNotifications,
     useEventManager,
@@ -27,18 +26,16 @@ const AddressModal = ({ onClose, member, ...rest }) => {
     const [loading, withLoading] = useLoading();
 
     const handleChange = (key) => ({ target }) => update(key, target.value);
-    const handleSignature = (value) => update('signature', value);
 
     const handleSubmit = async () => {
-        const { name: DisplayName, signature: Signature, address: Local, domain: Domain } = model;
+        const { name: DisplayName, address: Local, domain: Domain } = model;
 
         await api(
             createAddress({
                 MemberID: member.ID,
                 Local,
                 Domain,
-                DisplayName,
-                Signature
+                DisplayName
             })
         );
         await call();
@@ -91,12 +88,6 @@ const AddressModal = ({ onClose, member, ...rest }) => {
                         placeholder={c('Placeholder').t`Choose display name`}
                         onChange={handleChange('name')}
                     />
-                </Field>
-            </Row>
-            <Row>
-                <Label>{c('Label').t`Signature`}</Label>
-                <Field>
-                    <RichTextEditor value={model.signature} onChange={handleSignature} />
                 </Field>
             </Row>
         </FormModal>
