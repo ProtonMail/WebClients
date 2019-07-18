@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
     SubTitle,
@@ -6,49 +7,57 @@ import {
     Field,
     Label,
     Select,
-    useApiWithoutResult,
+    useApi,
+    useForceRefresh,
+    useLoading,
+    useNotifications,
     useEventManager,
-    useConfig,
-    useLocale
+    useUserSettings
 } from 'react-components';
 import { updateLocale } from 'proton-shared/lib/api/settings';
+import { loadLocale } from 'proton-shared/lib/i18n';
+import { DEFAULT_LOCALE } from 'proton-shared/lib/constants';
 
-function LanguageSection() {
-    const config = useConfig();
-    const locale = useLocale();
-    const { request, loading } = useApiWithoutResult(updateLocale);
+const LOCALES = {
+    cs_CZ: 'Čeština',
+    de_DE: 'Deutsch',
+    en_US: 'English',
+    es_ES: 'Español',
+    ca_ES: 'Español - català',
+    fr_FR: 'Français',
+    hr_HR: 'Hrvatski',
+    it_IT: 'Italiano',
+    ja_JP: '日本語',
+    nl_NL: 'Nederlands',
+    pl_PL: 'Polski',
+    pt_BR: 'Português, brasileiro',
+    ru_RU: 'Pусский',
+    ro_RO: 'Română',
+    tr_TR: 'Türkçe',
+    uk_UA: 'Українська',
+    zh_CN: '简体中文',
+    zh_TW: '繁體中'
+};
+
+function LanguageSection({ locales }) {
+    const [{ Locale }] = useUserSettings();
+    const api = useApi();
     const { call } = useEventManager();
+    const { createNotification } = useNotifications();
+    const [loading, withLoading] = useLoading();
+    const forceRefresh = useForceRefresh();
 
-    const LANG = {
-        cs_CZ: 'Čeština',
-        de_DE: 'Deutsch',
-        en_US: 'English',
-        es_ES: 'Español',
-        ca_ES: 'Español - català',
-        fr_FR: 'Français',
-        hr_HR: 'Hrvatski',
-        it_IT: 'Italiano',
-        ja_JP: '日本語',
-        nl_NL: 'Nederlands',
-        pl_PL: 'Polski',
-        pt_BR: 'Português, brasileiro',
-        ru_RU: 'Pусский',
-        ro_RO: 'Română',
-        tr_TR: 'Türkçe',
-        uk_UA: 'Українська',
-        zh_CN: '简体中文',
-        zh_TW: '繁體中'
-    };
-
-    const options = ['en_US'].concat(config.TRANSLATIONS).map((value) => ({
-        text: LANG[value],
+    const options = [DEFAULT_LOCALE].concat(Object.keys(locales)).map((value) => ({
+        text: LOCALES[value],
         value
     }));
 
     const handleChange = async ({ target }) => {
         const newLocale = target.value;
-        await request(newLocale);
-        await call(); // Then we sync the locale via LocaleProvider
+        await api(updateLocale(newLocale));
+        await loadLocale(newLocale, locales);
+        await call();
+        createNotification({ text: c('Success').t`Locale updated` });
     };
 
     return (
@@ -56,20 +65,28 @@ function LanguageSection() {
             <SubTitle>{c('Title').t`Language`}</SubTitle>
             <Row>
                 <Label htmlFor="languageSelect">
-                    {c('Label').t`Default language`} <kbd>{locale}</kbd>
+                    {c('Label').t`Default language`} <kbd>{Locale}</kbd>
                 </Label>
                 <Field>
                     <Select
                         disabled={loading}
-                        value={locale}
+                        value={Locale}
                         id="languageSelect"
                         options={options}
-                        onChange={handleChange}
+                        onChange={(e) => {
+                            withLoading(handleChange(e))
+                                // To avoid state change on unmounted component
+                                .then(forceRefresh);
+                        }}
                     />
                 </Field>
             </Row>
         </>
     );
 }
+
+LanguageSection.propTypes = {
+    locales: PropTypes.object.isRequired
+};
 
 export default LanguageSection;

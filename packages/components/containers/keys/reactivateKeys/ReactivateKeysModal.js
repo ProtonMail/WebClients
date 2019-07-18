@@ -8,7 +8,7 @@ import {
     Label,
     PasswordInput,
     useNotifications,
-    useAuthenticationStore,
+    useAuthentication,
     useEventManager,
     useModals,
     InlineLinkButton,
@@ -101,7 +101,7 @@ export const decryptArmoredKey = async ({ password, keySalt, armoredPrivateKey }
 
 const ReactivateKeysModal = ({ allKeys: initialAllKeys, onClose, ...rest }) => {
     const api = useApi();
-    const authenticationStore = useAuthenticationStore();
+    const authentication = useAuthentication();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const { createModal } = useModals();
@@ -117,7 +117,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onClose, ...rest }) => {
     };
 
     const startProcess = async () => {
-        const newPassword = authenticationStore.getPassword();
+        const newPassword = authentication.getPassword();
         const keySalts = keySaltsRef.current;
 
         for (const { Address, inactiveKeys, keys } of allKeys) {

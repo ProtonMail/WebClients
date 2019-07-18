@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import Context from './CacheContext';
+import Context from './cacheContext';
 
 const useCache = () => {
     return useContext(Context);

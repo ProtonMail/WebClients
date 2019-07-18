@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, FormModal, useEventManager, useAuthenticationStore, useApi } from 'react-components';
+import { Alert, FormModal, useEventManager, useAuthentication, useApi } from 'react-components';
 import { getAlgorithmExists } from 'proton-shared/lib/keys/keysAlgorithm';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
 
@@ -17,7 +17,7 @@ const STEPS = {
 };
 
 const AddKeyModal = ({ onClose, Address, addressKeys, ...rest }) => {
-    const authenticationStore = useAuthenticationStore();
+    const authentication = useAuthentication();
     const api = useApi();
     const { call } = useEventManager();
 
@@ -28,7 +28,7 @@ const AddKeyModal = ({ onClose, Address, addressKeys, ...rest }) => {
     const process = async () => {
         const { privateKey, privateKeyArmored } = await generateAddressKey({
             email: Address.Email,
-            passphrase: authenticationStore.getPassword(),
+            passphrase: authentication.getPassword(),
             encryptionConfig: ENCRYPTION_CONFIGS[encryptionType]
         });
         await createKeyHelper({ api, privateKey, privateKeyArmored, Address, keys: addressKeys });

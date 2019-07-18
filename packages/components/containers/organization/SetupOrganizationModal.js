@@ -16,7 +16,7 @@ import {
     useApi,
     useMembers,
     useEventManager,
-    useAuthenticationStore,
+    useAuthentication,
     useLoading,
     useNotifications
 } from 'react-components';
@@ -32,7 +32,7 @@ import { generateOrganizationKeys } from './helpers/organizationKeysHelper';
 
 const SetupOrganizationModal = ({ onClose, ...rest }) => {
     const api = useApi();
-    const authenticationStore = useAuthenticationStore();
+    const authentication = useAuthentication();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
@@ -146,7 +146,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }) => {
                         backupKeySalt,
                         backupArmoredPrivateKey
                     } = await generateOrganizationKeys({
-                        keyPassword: authenticationStore.getPassword(),
+                        keyPassword: authentication.getPassword(),
                         backupPassword: model.password,
                         encryptionConfig: ENCRYPTION_CONFIGS[encryptionType]
                     });

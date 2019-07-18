@@ -6,7 +6,7 @@ import {
     useCache,
     useLoading,
     useNotifications,
-    useAuthenticationStore,
+    useAuthentication,
     useApi,
     FormModal,
     LearnMore,
@@ -23,7 +23,7 @@ import { decryptArmoredKey } from '../keys/reactivateKeys/ReactivateKeysModal';
 const ReactivateOrganizationKeysModal = ({ onClose, mode, ...rest }) => {
     const cache = useCache();
     const { createNotification } = useNotifications();
-    const authenticationStore = useAuthenticationStore();
+    const authentication = useAuthentication();
     const api = useApi();
 
     const [loading, withLoading] = useLoading();
@@ -69,7 +69,7 @@ const ReactivateOrganizationKeysModal = ({ onClose, mode, ...rest }) => {
                 password: backupPassword,
                 keySalt: KeySalt
             });
-            const armoredPrivateKey = await encryptPrivateKey(decryptedPrivateKey, authenticationStore.getPassword());
+            const armoredPrivateKey = await encryptPrivateKey(decryptedPrivateKey, authentication.getPassword());
             await api(activateOrganizationKey(armoredPrivateKey));
 
             // Warning: Since there is no event for this, the organization key cache is reset.

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
     useApi,
-    useAuthenticationStore,
+    useAuthentication,
     FormModal,
     useEventManager,
     useNotifications,
@@ -41,7 +41,7 @@ const updateKey = (oldKeys, key, newKey) => {
 
 const ImportKeyModal = ({ Address, addressKeys, onClose, ...rest }) => {
     const api = useApi();
-    const authenticationStore = useAuthenticationStore();
+    const authentication = useAuthentication();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const { createModal } = useModals();
@@ -51,7 +51,7 @@ const ImportKeyModal = ({ Address, addressKeys, onClose, ...rest }) => {
     const [keys, setKeys] = useState([]);
 
     const startProcess = async () => {
-        const newPassword = authenticationStore.getPassword();
+        const newPassword = authentication.getPassword();
         let updatedAddressKeys = addressKeys;
 
         for (const key of keys) {

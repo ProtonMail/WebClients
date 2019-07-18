@@ -1,11 +1,11 @@
-import React, { useRef, useState, useImperativeHandle } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import NotificationsContext from '../../context/notifications';
+import NotificationsContext from './notificationsContext';
 import NotificationsContainer from './Container';
 import createManager from './manager';
 
-const NotificationsProvider = React.forwardRef(({ children }, ref) => {
+const NotificationsProvider = ({ children }) => {
     const [notifications, setNotifications] = useState([]);
     const managerRef = useRef();
 
@@ -14,8 +14,6 @@ const NotificationsProvider = React.forwardRef(({ children }, ref) => {
     }
 
     const manager = managerRef.current;
-
-    useImperativeHandle(ref, () => manager);
 
     const { hideNotification, removeNotification } = manager;
 
@@ -29,7 +27,7 @@ const NotificationsProvider = React.forwardRef(({ children }, ref) => {
             />
         </NotificationsContext.Provider>
     );
-});
+};
 
 NotificationsProvider.propTypes = {
     children: PropTypes.node.isRequired

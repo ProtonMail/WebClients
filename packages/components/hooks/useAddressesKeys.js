@@ -1,13 +1,13 @@
 import { decryptPrivateKey } from 'pmcrypto';
 import { prepareKeys, prepareMemberKeys } from 'proton-shared/lib/keys/keys';
-import { useCache, usePromiseResult, useAuthenticationStore } from 'react-components';
+import { useCache, usePromiseResult, useAuthentication } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { cachedPromise } from './helpers/cachedPromise';
 
 const useAddressesKeys = (user, addresses) => {
     const cache = useCache();
-    const authenticationStore = useAuthenticationStore();
+    const authentication = useAuthentication();
 
     return usePromiseResult(async () => {
         if (!Array.isArray(addresses)) {
@@ -15,7 +15,7 @@ const useAddressesKeys = (user, addresses) => {
         }
 
         const { OrganizationPrivateKey } = user;
-        const keyPassword = authenticationStore.getPassword();
+        const keyPassword = authentication.getPassword();
 
         const keys = await Promise.all(
             addresses.map((address) => {

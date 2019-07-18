@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import {
     Alert,
@@ -19,32 +19,13 @@ import EditAddressModal from './EditAddressModal';
 import PMSignatureToggle from './PMSignatureToggle';
 
 const IdentitySection = () => {
-    const [addresses = [], loading] = useAddresses();
+    const [addresses, loading] = useAddresses();
+    const [addressIndex, setAddressIndex] = useState(0);
     const { createModal } = useModals();
-    const [address, setAddress] = useState();
-
-    useEffect(() => {
-        if (addresses.length) {
-            const [address] = addresses;
-            setAddress(address);
-        }
-    }, [loading]);
-
-    useEffect(() => {
-        if (!addresses.length || !address) {
-            return;
-        }
-        // Update the address when the event manager triggers
-        const newAddress = addresses.find(({ ID }) => ID === address.ID);
-        if (newAddress) {
-            return setAddress(newAddress);
-        }
-        setAddress(addresses[0]);
-    }, [addresses]);
 
     const title = <SubTitle>{c('Title').t`Display name & signature`}</SubTitle>;
 
-    if (loading || !address) {
+    if (loading && !Array.isArray(addresses)) {
         return (
             <>
                 {title}
@@ -53,6 +34,16 @@ const IdentitySection = () => {
         );
     }
 
+    if (!addresses.length) {
+        return (
+            <>
+                <Alert>{c('Info').t`No addresses exist`}</Alert>
+            </>
+        );
+    }
+
+    const address = addresses[addressIndex];
+
     const options = addresses
         .filter(
             ({ Status, Receive, Send }) =>
@@ -60,11 +51,15 @@ const IdentitySection = () => {
                 Receive === RECEIVE_ADDRESS.RECEIVE_YES &&
                 Send === SEND_ADDRESS.SEND_YES
         )
-        .map(({ ID: value, Email: text }) => ({ text, value }));
+        .map(({ Email: text }, i) => ({ text, value: i }));
 
-    const handleChange = ({ target }) => setAddress(addresses.find(({ ID }) => ID === target.value));
+    const handleChange = ({ target }) => {
+        setAddressIndex(target.value);
+    };
 
-    const handleOpenModal = () => createModal(<EditAddressModal address={address} />);
+    const handleOpenModal = () => {
+        createModal(<EditAddressModal address={address} />);
+    };
 
     return (
         <>

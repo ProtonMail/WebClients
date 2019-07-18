@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from 'react';
 
 import useAsync from './useAsync';
-import useApi from './useApi';
+import useApi from '../containers/api/useApi';
 
 const useApiResult = (fn, dependencies) => {
     const request = useApi();

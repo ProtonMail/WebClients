@@ -7,7 +7,7 @@ import {
     useLoading,
     useModals,
     useNotifications,
-    useAuthenticationStore,
+    useAuthentication,
     useStep,
     useApi,
     AuthModal,
@@ -29,7 +29,7 @@ const ChangeOrganizationKeysModal = ({ onClose, organizationKey, hasOtherAdmins,
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
-    const authenticationStore = useAuthenticationStore();
+    const authentication = useAuthentication();
 
     const { step, next, previous } = useStep();
     const [loading, withLoading] = useLoading();
@@ -50,7 +50,7 @@ const ChangeOrganizationKeysModal = ({ onClose, organizationKey, hasOtherAdmins,
             backupKeySalt,
             backupArmoredPrivateKey
         } = await generateOrganizationKeys({
-            keyPassword: authenticationStore.getPassword(),
+            keyPassword: authentication.getPassword(),
             backupPassword: newPassword,
             encryptionConfig: ENCRYPTION_CONFIGS[encryptionType]
         });

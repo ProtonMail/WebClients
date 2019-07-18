@@ -11,7 +11,7 @@ import {
     Icon,
     FormModal,
     Loader,
-    useAuthenticationStore,
+    useAuthentication,
     useEventManager,
     useAddresses,
     useUser,
@@ -45,7 +45,7 @@ export const MODES = {
 const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
     const api = useApi();
     const { call } = useEventManager();
-    const authenticationStore = useAuthenticationStore();
+    const authentication = useAuthentication();
     const { createNotification } = useNotifications();
 
     const [User] = useUser();
@@ -175,7 +175,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
                             keyPassword
                         });
                         await handleChangeMailboxPassword({ api, keySalt, armoredOrganizationKey, armoredKeys });
-                        authenticationStore.setPassword(keyPassword);
+                        authentication.setPassword(keyPassword);
                         await api(lockSensitiveSettings());
                         await call();
 
@@ -227,7 +227,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
                         totp: inputs.totp
                     });
                 }
-                authenticationStore.setPassword(keyPassword);
+                authentication.setPassword(keyPassword);
                 await api(lockSensitiveSettings());
                 await call();
 

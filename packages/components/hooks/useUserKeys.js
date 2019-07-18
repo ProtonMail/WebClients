@@ -1,4 +1,4 @@
-import { useCache, usePromiseResult, useAuthenticationStore } from 'react-components';
+import { useCache, usePromiseResult, useAuthentication } from 'react-components';
 import { prepareKeys, prepareMemberKeys } from 'proton-shared/lib/keys/keys';
 import { decryptPrivateKey } from 'pmcrypto';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -7,7 +7,7 @@ import { cachedPromise } from './helpers/cachedPromise';
 
 const useUserKeys = (User) => {
     const cache = useCache();
-    const authenticationStore = useAuthenticationStore();
+    const authentication = useAuthentication();
 
     return usePromiseResult(() => {
         const { ID, OrganizationPrivateKey, Keys } = User;
@@ -16,7 +16,7 @@ const useUserKeys = (User) => {
             cache,
             ID,
             async () => {
-                const keyPassword = authenticationStore.getPassword();
+                const keyPassword = authentication.getPassword();
 
                 if (OrganizationPrivateKey) {
                     const organizationKey = await decryptPrivateKey(OrganizationPrivateKey, keyPassword).catch(noop);

@@ -1,8 +1,8 @@
 import React, { useRef, useState, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 
-import ModalsContext from '../../context/modals';
-import ModalsContainer from './Container';
+import ModalsContext from './modalsContext';
+import ModalsChildrenContext from './childrenContext';
 import createManager from './manager';
 
 const ModalsProvider = React.forwardRef(({ children }, ref) => {
@@ -17,12 +17,9 @@ const ModalsProvider = React.forwardRef(({ children }, ref) => {
 
     useImperativeHandle(ref, () => manager);
 
-    const { removeModal, hideModal } = manager;
-
     return (
         <ModalsContext.Provider value={manager}>
-            {children}
-            <ModalsContainer modals={modals} removeModal={removeModal} hideModal={hideModal} />
+            <ModalsChildrenContext.Provider value={modals}>{children}</ModalsChildrenContext.Provider>
         </ModalsContext.Provider>
     );
 });

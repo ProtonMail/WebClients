@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import 'intersection-observer';
-import { buildThresholds, indexOfMax } from 'react-components';
 import { debounce } from 'proton-shared/lib/helpers/function';
+
+import { buildThresholds, indexOfMax } from '../../helpers/intersectionObserver';
 
 const ObserverSection = ({
     id,

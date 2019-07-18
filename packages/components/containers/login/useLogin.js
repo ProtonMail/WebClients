@@ -9,7 +9,7 @@ import {
     handleFinalizeAction
 } from 'proton-shared/lib/authentication/loginActions';
 
-import useApi from '../../hooks/useApi';
+import useApi from '../../containers/api/useApi';
 
 const useLogin = ({ onLogin, ignoreUnlock }) => {
     const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);

@@ -12,7 +12,7 @@ const {
 } = THEMES;
 
 const ThemeInjector = () => {
-    const [{ Theme }] = useMailSettings();
+    const [{ Theme } = {}] = useMailSettings();
     const themeId = getThemeIdentifier(Theme);
     const [style, setStyle] = useState(Theme);
 

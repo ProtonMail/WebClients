@@ -1,32 +1,31 @@
-import { useAuthenticationStore, useUser, useApi } from 'react-components';
+import { usePromiseResult, useCache, useAuthentication, useUser, useApi } from 'react-components';
 import { getKeys } from 'pmcrypto';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getOrganizationKeys } from 'proton-shared/lib/api/organization';
 
-import useCachedAsyncResult from './useCachedAsyncResult';
+import { cachedPromise } from './helpers/cachedPromise';
 
-const useOrganizationKey = (Organization) => {
-    const authenticationStore = useAuthenticationStore();
+const useOrganizationKey = (organization) => {
+    const cache = useCache();
+    const authentication = useAuthentication();
     const api = useApi();
     const [user] = useUser();
 
-    // Warning: This is modified externally from ReactivateOrganizationKeyModal.
-    return useCachedAsyncResult(
-        'ORGANIZATION_KEY',
-        async () => {
-            if (!user.isAdmin || !Organization) {
-                return;
-            }
+    return usePromiseResult(() => {
+        if (!user.isAdmin || !organization) {
+            return Promise.resolve();
+        }
+        // Warning: This is modified externally from ReactivateOrganizationKeyModal.
+        return cachedPromise(cache, 'ORGANIZATION_KEY', async () => {
             const { PrivateKey } = await api(getOrganizationKeys());
             if (!PrivateKey) {
                 return;
             }
             const [privateKey] = await getKeys(PrivateKey);
-            await privateKey.decrypt(authenticationStore.getPassword()).catch(noop);
+            await privateKey.decrypt(authentication.getPassword()).catch(noop);
             return privateKey;
-        },
-        [Organization]
-    );
+        });
+    }, [user, organization]);
 };
 
 export default useOrganizationKey;

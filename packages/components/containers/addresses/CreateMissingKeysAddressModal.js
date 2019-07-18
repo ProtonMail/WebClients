@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
     useApi,
-    useAuthenticationStore,
+    useAuthentication,
     useNotifications,
     useEventManager,
     useLoading,
@@ -32,7 +32,7 @@ const updateAddress = (oldAddresses, address, status) => {
 
 const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizationKey, ...rest }) => {
     const api = useApi();
-    const authenticationStore = useAuthenticationStore();
+    const authentication = useAuthentication();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -98,7 +98,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
 
                     const { privateKey, privateKeyArmored } = await generateAddressKey({
                         email: address.Email,
-                        passphrase: authenticationStore.getPassword(),
+                        passphrase: authentication.getPassword(),
                         encryptionConfig
                     });
 
