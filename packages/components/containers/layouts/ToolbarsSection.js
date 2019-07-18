@@ -14,7 +14,7 @@ import {
 import { c } from 'ttag';
 import { updateMessageButtons } from 'proton-shared/lib/api/mailSettings';
 import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
-import { Button } from '../../components/button';
+import { ButtonGroup } from '../../components/button';
 
 const { READ_UNREAD, UNREAD_READ } = MESSAGE_BUTTONS;
 
@@ -47,8 +47,8 @@ const ToolbarsSection = () => {
                             value={READ_UNREAD}
                         >
                             <Group className="ml1 no-pointer-events">
-                                <Button icon="read" className="pm-button-group" title={c('Action').t`Read`} />
-                                <Button icon="unread" className="pm-button-group" title={c('Action').t`Unread`} />
+                                <ButtonGroup icon="read" title={c('Action').t`Read`} />
+                                <ButtonGroup icon="unread" title={c('Action').t`Unread`} />
                             </Group>
                         </Radio>
                     </div>
@@ -60,8 +60,8 @@ const ToolbarsSection = () => {
                             value={UNREAD_READ}
                         >
                             <Group className="ml1 no-pointer-events">
-                                <Button icon="unread" className="pm-button-group" title={c('Action').t`Unread`} />
-                                <Button icon="read" className="pm-button-group" title={c('Action').t`Read`} />
+                                <ButtonGroup icon="unread" title={c('Action').t`Unread`} />
+                                <ButtonGroup icon="read" title={c('Action').t`Read`} />
                             </Group>
                         </Radio>
                     </div>
