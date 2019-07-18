@@ -32,10 +32,8 @@ const readJSON = (file) => {
  */
 const CONFIG_ENV = (() => {
     const pkg = require(path.join(process.cwd(), 'package.json'));
-    const I18N_EXTRACT_DIR = 'po';
     // @todo load value from the env as it's done for proton-i19n
     return {
-        lang: readJSON(path.join(I18N_EXTRACT_DIR, 'lang')) || [],
         env: readJSON('appConfig') || readJSON('env') || {},
         pkg
     };
@@ -65,13 +63,11 @@ const API_TARGETS = {
 
 function main({ api = 'dev' }) {
     const apiUrl = API_TARGETS[api] || API_TARGETS.prod;
-    const lang = CONFIG_ENV.lang.map(({ lang }) => lang);
 
     const json = {
         clientId: ENV_CONFIG.app.clientId || 'Web',
         version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || '3.16.20',
-        apiUrl,
-        lang
+        apiUrl
     };
 
     const config = dedent`
@@ -84,8 +80,6 @@ function main({ api = 'dev' }) {
     export const DATE_VERSION = '${new Date().toGMTString()}';
     export const CHANGELOG_PATH = 'assets/changelog.tpl.html';
     export const VERSION_PATH = 'assets/version.json';
-    export const TRANSLATIONS = ${JSON.stringify(lang)};
-    export const TRANSLATIONS_URL = ${JSON.stringify(ENV_CONFIG.app.urlI18n || '')};
     `;
 
     return {
