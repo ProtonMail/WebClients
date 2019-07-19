@@ -37,7 +37,8 @@ const PaymentMethodsSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
-            <Alert learnMore="todo">{c('Info for payment methods').t`Lorem ipsum`}</Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/payment">{c('Info for payment methods')
+                .t`If you wish to pay by credit card, you can add your card below. Learn about other payment options.`}</Alert>
             <Block>
                 <PrimaryButton onClick={handleOpenModal}>{c('Action').t`Add payment method`}</PrimaryButton>
             </Block>

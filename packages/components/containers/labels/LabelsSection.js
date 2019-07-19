@@ -38,7 +38,11 @@ function LabelsSection() {
     return (
         <>
             <SubTitle>{c('LabelSettings').t`Folders and labels`}</SubTitle>
-            <Alert type="info" className="mt1 mb1" learnMore="TODO">
+            <Alert
+                type="info"
+                className="mt1 mb1"
+                learnMore="https://protonmail.com/support/knowledge-base/creating-folders/"
+            >
                 {c('LabelSettings')
                     .t`Multiple labels can be applied to a single message, but a message can only be in a single folder.`}
             </Alert>

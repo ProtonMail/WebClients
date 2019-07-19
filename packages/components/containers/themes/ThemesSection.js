@@ -52,8 +52,7 @@ const ThemesSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Themes`}</SubTitle>
-            <Alert>{c('Info')
-                .t`ProtonMail offers 3 default themes to select from. You can also import a custom theme using our CSS editor.`}</Alert>
+            <Alert>{c('Info').t`Choose the look and feel of your mailbox.`}</Alert>
             <Alert type="warning">{c('Info')
                 .t`Selecting another theme will override your current theme and any customization will be lost.`}</Alert>
             <ThemeCards

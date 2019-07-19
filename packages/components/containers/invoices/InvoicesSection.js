@@ -63,7 +63,7 @@ const InvoicesSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Invoices`}</SubTitle>
-            <Alert learnMore="todo">{c('Info').t`TODO`}</Alert>
+            <Alert>{c('Info').t`You can customize and download your invoices for accounting purposes.`}</Alert>
             {hasUnpaid ? (
                 <Alert type="error">{c('Error')
                     .t`Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.`}</Alert>
