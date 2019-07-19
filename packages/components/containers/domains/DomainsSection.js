@@ -11,8 +11,11 @@ import {
     PrimaryButton,
     Button,
     Block,
-    useModals
+    useModals,
+    useLoading,
+    Loader
 } from 'react-components';
+import { wait } from 'proton-shared/lib/helpers/promise';
 
 import DomainModal from './DomainModal';
 import DomainsTable from './DomainsTable';
@@ -20,14 +23,25 @@ import RestoreAdministratorPrivileges from '../organization/RestoreAdministrator
 
 const DomainsSection = ({ history }) => {
     const [domains, loadingDomains] = useDomains();
-    const [organization] = useOrganization();
+    const [organization, loadingOrganization] = useOrganization();
+    const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
     const { call } = useEventManager();
+
+    if (loadingOrganization) {
+        return <Loader />;
+    }
 
     const { UsedDomains, MaxDomains } = organization;
 
     const handleRedirect = (route) => {
         history.push(route);
+    };
+
+    const handleRefresh = async () => {
+        // To not spam the event manager.
+        await wait(200);
+        await call();
     };
 
     return (
@@ -42,7 +56,9 @@ const DomainsSection = ({ history }) => {
                 <PrimaryButton onClick={() => createModal(<DomainModal onRedirect={handleRedirect} />)} className="mr1">
                     {c('Action').t`Add domain`}
                 </PrimaryButton>
-                <Button disabled={loadingDomains} onClick={call}>{c('Action').t`Refresh status`}</Button>
+                <Button disabled={loadingDomains} loading={loading} onClick={() => withLoading(handleRefresh())}>{c(
+                    'Action'
+                ).t`Refresh status`}</Button>
             </Block>
             {!loadingDomains && !domains.length ? <Alert>{c('Info').t`No domains yet.`}</Alert> : null}
             {!loadingDomains && domains.length ? <DomainsTable domains={domains} onRedirect={handleRedirect} /> : null}
