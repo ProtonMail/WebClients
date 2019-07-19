@@ -17,6 +17,7 @@ import {
     useNotifications,
     SubTitle,
     Label,
+    Field,
     Row,
     Wizard
 } from 'react-components';
@@ -170,13 +171,13 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
                         .t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
                     <Row>
                         <Label>{c('Label').t`Amount due`}</Label>
-                        <div className="w100">
+                        <Field>
                             <Input
                                 className="pm-field--highlight no-pointer-events strong alignright"
                                 readOnly={true}
                                 value={toPrice(check.AmountDue, model.currency)}
                             />
-                        </div>
+                        </Field>
                     </Row>
                     <Payment
                         type="subscription"
