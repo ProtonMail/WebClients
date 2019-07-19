@@ -1,6 +1,6 @@
-import boilerplate from 'proton-pack';
-import './app.scss';
+import ReactDOM from 'react-dom';
+import React from 'react';
 
-boilerplate(() => {
-    return import('./init');
-});
+import App from './App';
+
+ReactDOM.render(<App />, document.querySelector('.app-root'));

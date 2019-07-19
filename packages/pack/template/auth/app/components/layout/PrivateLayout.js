@@ -18,7 +18,7 @@ const getSidebar = () => {
     ];
 };
 
-const AuthLayout = ({ children }) => {
+const PrivateLayout = ({ children }) => {
     return (
         <>
             <Header />
@@ -31,8 +31,8 @@ const AuthLayout = ({ children }) => {
     );
 };
 
-AuthLayout.propTypes = {
+PrivateLayout.propTypes = {
     children: PropTypes.node.isRequired
 };
 
-export default AuthLayout;
+export default PrivateLayout;

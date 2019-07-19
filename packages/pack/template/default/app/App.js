@@ -1,5 +1,5 @@
 import React from 'react';
-import { addLocale, useLocale, c } from 'ttag';
+import { c } from 'ttag';
 import { Title, SubTitle, Bordered, PrimaryButton, Icon, Icons } from 'react-components';
 
 export default () => {

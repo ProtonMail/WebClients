@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icons } from 'react-components';
 
-const UnAuthLayout = ({ children }) => {
+const PublicLayout = ({ children }) => {
     return (
         <>
             <div className="flex flex-nowrap">
@@ -13,8 +13,8 @@ const UnAuthLayout = ({ children }) => {
     );
 };
 
-UnAuthLayout.propTypes = {
+PublicLayout.propTypes = {
     children: PropTypes.node.isRequired
 };
 
-export default UnAuthLayout;
+export default PublicLayout;
