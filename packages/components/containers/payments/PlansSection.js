@@ -164,12 +164,11 @@ const PlansSection = () => {
                             <tr>
                                 <td className="bg-global-muted">
                                     <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>
-                                        <div className="mb1">{c('Header').t`Pricing`}</div>
-                                        <div className="flex-autogrid">
-                                            <div className="flex-autogrid-item">
+                                        <div className="flex flex-column">
+                                            <div className="mb0-5">
                                                 <CurrencySelector currency={currency} onSelect={setCurrency} />
                                             </div>
-                                            <div className="flex-autogrid-item">
+                                            <div>
                                                 <CycleSelector
                                                     cycle={cycle}
                                                     onSelect={setCycle}
