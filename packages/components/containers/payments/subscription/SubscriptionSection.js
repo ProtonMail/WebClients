@@ -49,11 +49,22 @@ const SubscriptionSection = ({ permission }) => {
         loadingOrganization
     ] = useOrganization();
 
+    const subTitle = <SubTitle>{c('Title').t`Subscription`}</SubTitle>;
+
     if (!permission) {
         return (
             <>
-                <SubTitle>{c('Title').t`Subscription`}</SubTitle>
+                {subTitle}
                 <Alert>{c('Info').t`No subscription yet`}</Alert>
+            </>
+        );
+    }
+
+    if (loadingSubscription || loadingOrganization) {
+        return (
+            <>
+                {subTitle}
+                <Loader />
             </>
         );
     }
@@ -64,17 +75,8 @@ const SubscriptionSection = ({ permission }) => {
     if (subscription.isManagedByMozilla) {
         return (
             <>
-                <SubTitle>{c('Title').t`Subscription`}</SubTitle>
+                {subTitle}
                 <MozillaInfoPanel />
-            </>
-        );
-    }
-
-    if (loadingSubscription || loadingOrganization) {
-        return (
-            <>
-                <SubTitle>{c('Title').t`Subscription`}</SubTitle>
-                <Loader />
             </>
         );
     }
@@ -94,7 +96,7 @@ const SubscriptionSection = ({ permission }) => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`Subscription`}</SubTitle>
+            {subTitle}
             <div className="shadow-container">
                 <div className="p1">
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
