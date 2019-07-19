@@ -46,7 +46,9 @@ const AddressesTable = ({ domain }) => {
                         <TableRow
                             key={key}
                             cells={[
-                                address.Email,
+                                <div key={key} className="ellipsis" title={address.Email}>
+                                    {address.Email}
+                                </div>,
                                 getMemberName(address.MemberID),
                                 <AddressStatus key={key} address={address} />,
                                 <AddressCatchAll

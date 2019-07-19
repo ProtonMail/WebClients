@@ -34,7 +34,9 @@ const AddressesUser = ({ user }) => {
                         <TableRow
                             key={address.ID}
                             cells={[
-                                address.Email,
+                                <div key={0} className="ellipsis" title={address.Email}>
+                                    {address.Email}
+                                </div>,
                                 <AddressStatus key={1} {...getStatus({ address, i })} />,
                                 <AddressActions key={2} member={member} address={address} user={user} />
                             ]}

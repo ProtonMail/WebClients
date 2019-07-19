@@ -64,9 +64,7 @@ function LanguageSection({ locales }) {
         <>
             <SubTitle>{c('Title').t`Language`}</SubTitle>
             <Row>
-                <Label htmlFor="languageSelect">
-                    {c('Label').t`Default language`} <kbd>{Locale}</kbd>
-                </Label>
+                <Label htmlFor="languageSelect">{c('Label').t`Default language`}</Label>
                 <Field>
                     <Select
                         disabled={loading}
