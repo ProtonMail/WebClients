@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
-import { SubTitle, Alert, Row, Field, Label, SmallButton, useModals, useOrganization } from 'react-components';
+import { SubTitle, Alert, Row, Loader, Field, Label, SmallButton, useModals, useOrganization } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
@@ -9,7 +9,12 @@ import OrganizationNameModal from './OrganizationNameModal';
 import ActivateOrganizationButton from './ActivateOrganizationButton';
 
 const OrganizationSection = () => {
-    const [organization] = useOrganization();
+    const [organization, loadingOrganization] = useOrganization();
+    const { createModal } = useModals();
+
+    if (loadingOrganization) {
+        return <Loader />;
+    }
     const {
         Name,
         UsedMembers,
@@ -22,7 +27,6 @@ const OrganizationSection = () => {
         UsedAddresses,
         MaxAddresses
     } = organization;
-    const { createModal } = useModals();
 
     if (!organization.HasKeys) {
         return (

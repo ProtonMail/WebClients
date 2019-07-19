@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import xhr from 'proton-shared/lib/fetch/fetch';
 import configureApi from 'proton-shared/lib/api';
 import withAuthHandlers, { CancelUnlockError } from 'proton-shared/lib/api/helpers/withAuthHandlers';
+import { getError } from 'proton-shared/lib/apiHandlers';
 
 import ApiContext from './apiContext';
 import useNotifications from '../notifications/useNotifications';
 import useModals from '../modals/useModals';
-import { getError } from 'proton-shared/lib/apiHandlers';
 import UnlockModal from '../login/UnlockModal';
 
 const ApiProvider = ({ config, onLogout, children, UID }) => {
