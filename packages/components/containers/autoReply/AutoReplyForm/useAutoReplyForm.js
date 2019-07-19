@@ -1,30 +1,14 @@
 import { useState } from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
+import { startOfDay, getRoundedHours } from '../utils';
 
+/* 
+    BE sends times and dates in UNIX format
+    FE always works with locale times and converts to specified timezone before saving
+*/
 const toModel = (AutoResponder) => {
-    const start = AutoResponder.StartTime * 1000;
-    const end = AutoResponder.EndTime * 1000;
-
-    const startDate = moment
-        .utc(start)
-        .startOf('day')
-        .valueOf();
-    const endDate = moment
-        .utc(end)
-        .startOf('day')
-        .valueOf();
-    const startTime =
-        moment
-            .utc(start)
-            .startOf('hour')
-            .add(30 * Math.floor(moment(start).minutes() / 30), 'minutes')
-            .valueOf() - startDate;
-    const endTime =
-        moment
-            .utc(end)
-            .startOf('hour')
-            .add(30 * Math.floor(moment(end).minutes() / 30), 'minutes')
-            .valueOf() - endDate;
+    const start = moment.unix(AutoResponder.StartTime).tz(AutoResponder.Zone);
+    const end = moment.unix(AutoResponder.EndTime).tz(AutoResponder.Zone);
 
     return {
         message: AutoResponder.Message,
@@ -33,11 +17,10 @@ const toModel = (AutoResponder) => {
         timeZone: AutoResponder.Zone,
         subject: AutoResponder.Subject,
         enabled: AutoResponder.IsEnabled,
-
-        startDate,
-        endDate,
-        startTime,
-        endTime
+        startDate: startOfDay(start),
+        endDate: startOfDay(end),
+        startTime: getRoundedHours(start),
+        endTime: getRoundedHours(end)
     };
 };
 
@@ -48,8 +31,12 @@ const toAutoResponder = (model) => ({
     Zone: model.timeZone,
     Subject: model.subject,
     IsEnabled: model.enabled,
-    StartTime: (model.startDate + model.startTime) / 1000,
-    EndTime: (model.endDate + model.endTime) / 1000
+    StartTime: moment(model.startDate + model.startTime)
+        .tz(model.timeZone, true)
+        .unix(),
+    EndTime: moment(model.endDate + model.endTime)
+        .tz(model.timeZone, true)
+        .unix()
 });
 
 const useAutoReplyForm = (AutoResponder) => {

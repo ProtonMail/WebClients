@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { Row, Label, DateInput, Field } from 'react-components';
 import { c } from 'ttag';
 import moment from 'moment';
+import { startOfDay } from '../../utils';
 
 const StartDateField = ({ value, onChange }) => {
-    const handleChange = (date) => onChange(new Date(date).getTime());
+    const handleChange = (date) => onChange(startOfDay(date));
 
     return (
         <Row className="flex-spacebetween">

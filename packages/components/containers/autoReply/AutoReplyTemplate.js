@@ -16,8 +16,9 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
     const durationLabel = getDurationOptions().find(({ value }) => value === autoresponder.Repeat).text;
     const timezone = getTimeZoneOptions().find(({ value }) => value === autoresponder.Zone).text;
 
-    const formatTime = (time) => {
-        const hours = moment.utc(time).format('LT');
+    const formatTime = (milliseconds) => {
+        const time = moment.tz(milliseconds, autoresponder.Zone);
+        const hours = time.format('LT');
 
         if (autoresponder.Repeat === AutoReplyDuration.DAILY) {
             const firstDayOfWeek = moment.localeData().firstDayOfWeek();
@@ -30,14 +31,14 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
                 ? c('Duration').t`Every ${weekdays} @ ${hours}`
                 : c('Duration').t`Every day @ ${hours}`;
         } else if (autoresponder.Repeat === AutoReplyDuration.FIXED) {
-            const date = moment(time).format('LL');
+            const date = time.format('LL');
             return `${date} @ ${hours}`;
         } else if (autoresponder.Repeat === AutoReplyDuration.WEEKLY) {
-            const dayOfWeek = moment.weekdays(Math.floor(time / DAY_MILLISECONDS));
+            const dayOfWeek = moment.weekdays(Math.floor(milliseconds / DAY_MILLISECONDS));
             return c('Duration').t`Every ${dayOfWeek} @ ${hours}`;
         } else if (autoresponder.Repeat === AutoReplyDuration.MONTHLY) {
             const dayOfMonth = getDaysOfMonthOptions().find(
-                ({ value }) => value === Math.floor(time / DAY_MILLISECONDS)
+                ({ value }) => value === Math.floor(milliseconds / DAY_MILLISECONDS)
             ).text;
             return c('Duration').t`Every ${dayOfMonth} @ ${hours}`;
         } else if (autoresponder.Repeat === AutoReplyDuration.PERMANENT) {
@@ -50,8 +51,12 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
             <table>
                 <tbody>
                     <InfoLine label={c('Label').t`Duration`}>{durationLabel}</InfoLine>
-                    <InfoLine label={c('Label').t`Start`}>{formatTime(autoresponder.StartTime * 1000)}</InfoLine>
-                    <InfoLine label={c('Label').t`End`}>{formatTime(autoresponder.EndTime * 1000)}</InfoLine>
+                    <InfoLine label={c('Label').t`Start`}>
+                        {formatTime(moment.unix(autoresponder.StartTime).valueOf())}
+                    </InfoLine>
+                    <InfoLine label={c('Label').t`End`}>
+                        {formatTime(moment.unix(autoresponder.EndTime).valueOf())}
+                    </InfoLine>
                     <InfoLine label={c('Label').t`Timezone`}>{timezone}</InfoLine>
                     <InfoLine plain label={c('Label').t`Message`}>
                         <div dangerouslySetInnerHTML={{ __html: autoresponder.Message }} />
