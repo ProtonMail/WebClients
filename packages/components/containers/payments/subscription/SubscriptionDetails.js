@@ -120,7 +120,7 @@ const SubscriptionDetails = ({ model, plans, check, onChange }) => {
                     <div>
                         <PlanPrice
                             className="color-global-success"
-                            amount={check.Amount - subTotal}
+                            amount={check.CouponDiscount}
                             cycle={model.cycle}
                             currency={model.currency}
                         />
@@ -130,7 +130,11 @@ const SubscriptionDetails = ({ model, plans, check, onChange }) => {
             <div className="flex flex-spacebetween">
                 <div className="bold">{c('Label').t`Total`}</div>
                 <div className="bold">
-                    <PlanPrice amount={check.Amount} cycle={model.cycle} currency={model.currency} />
+                    <PlanPrice
+                        amount={check.Amount + check.CouponDiscount}
+                        cycle={model.cycle}
+                        currency={model.currency}
+                    />
                 </div>
             </div>
             {model.coupon ? null : (
