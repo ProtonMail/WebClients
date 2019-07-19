@@ -61,9 +61,11 @@ describe('Format the locale', () => {
 describe('Load the locale', () => {
     const mockFR = mockTranslations('Wesh monique');
     const mockEn = mockTranslations('Hey monique');
+    const mockEs = mockTranslations('Buenos monique');
 
     describe('available inside the config', () => {
         beforeEach(() => {
+            document.documentElement.lang = '';
             setBrowserLanguages(['es_ES', 'fr_FR']);
         });
 
@@ -90,16 +92,20 @@ describe('Load the locale', () => {
         });
 
         it('should change the document.lang', async () => {
-            const { test } = mockEn;
+            const { test, response } = mockEs;
 
             expect(document.documentElement.lang).toEqual('');
 
-            await loadLocale('en_US');
+            await loadLocale('es_ES', {
+                es_ES: async () => {
+                    return { default: response };
+                }
+            });
 
             const { expectation, original } = test();
-            expect(expectation).toEqual(original);
+            expect(expectation).not.toEqual(original);
 
-            expect(document.documentElement.lang).toEqual('en');
+            expect(document.documentElement.lang).toEqual('es');
         });
     });
 });
