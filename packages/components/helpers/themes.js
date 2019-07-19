@@ -34,3 +34,10 @@ export const stripThemeIdentifier = (themeIdentifier) => {
     }
     return themeIdentifier;
 };
+
+/**
+ * Concat themes
+ * @param {Array<String>} themes
+ * @returns {String}
+ */
+export const toStyle = (themes = []) => themes.join('\n');
