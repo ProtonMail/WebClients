@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Toggle, useApi, useLoading, useEventManager, useNotifications } from 'react-components';
+import { Tooltip, Toggle, useApi, useLoading, useEventManager, useNotifications } from 'react-components';
 import { updateLabel } from 'proton-shared/lib/api/labels';
 
 const ToggleNotify = ({ label }) => {
@@ -22,12 +22,14 @@ const ToggleNotify = ({ label }) => {
         });
     };
     return (
-        <Toggle
-            id={`item-${label.ID}`}
-            checked={label.Notify === 1}
-            onChange={(e) => withLoading(handleChange(e))}
-            loading={loading}
-        />
+        <Tooltip title={c('Tooltip').t`Enable/disable desktop and mobile notifications`}>
+            <Toggle
+                id={`item-${label.ID}`}
+                checked={label.Notify === 1}
+                onChange={(e) => withLoading(handleChange(e))}
+                loading={loading}
+            />
+        </Tooltip>
     );
 };
 
