@@ -6,7 +6,7 @@ const Information = ({ icon, children }) => {
     return (
         <div className="information-panel bordered-container relative">
             <div className="information-panel-image flex bg-global-light">
-                <Icon name={icon} />
+                <Icon name={icon} className="mauto" />
             </div>
             <div className="information-panel-content">{children}</div>
         </div>
