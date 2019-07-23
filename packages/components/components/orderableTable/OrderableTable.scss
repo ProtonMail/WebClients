@@ -1,0 +1,22 @@
+.orderableHelper {
+    z-index: 666;
+    display: flex;
+    align-items: center;
+    color: black;
+    background: white;
+    border-top: 1px solid #dde6ec;
+    border-bottom: 1px solid #dde6ec;
+
+    /**
+     * We replace td with custom class here because we don't have direct access to it.
+     * See: https://github.com/ProtonMail/react-components/pull/113/files#r305374317
+     */
+    td {
+        flex: 1;
+        border: none;
+        &:first-child {
+            flex-grow: 0;
+            flex-basis: 35px;
+        }
+    }
+}
