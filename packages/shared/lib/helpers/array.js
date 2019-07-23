@@ -48,7 +48,7 @@ export const uniqueBy = (array, comparator) => {
  * @return {Array} New array with the item moved to the new position
  */
 export const move = (list = [], from, to) => {
-    const copy = list.slice(0);
+    const copy = list.slice();
     copy.splice(to < 0 ? copy.length + to : to, 0, copy.splice(from, 1)[0]);
     return copy;
 };
