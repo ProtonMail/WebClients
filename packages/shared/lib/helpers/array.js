@@ -40,9 +40,17 @@ export const uniqueBy = (array, comparator) => {
     });
 };
 
+/**
+ * Returns a new array with the item moved to the new position.
+ * @param {Array} array List of items
+ * @param {number} from Index of item to move. If negative, it will begin that many elements from the end.
+ * @param {number} to Index of where to move the item. If negative, it will begin that many elements from the end.
+ * @return {Array} New array with the item moved to the new position
+ */
 export const move = (list = [], from, to) => {
     const copy = list.slice(0);
-    return copy.splice(to, 0, copy.splice(from, 1)[0]);
+    copy.splice(to < 0 ? copy.length + to : to, 0, copy.splice(from, 1)[0]);
+    return copy;
 };
 
 /**
