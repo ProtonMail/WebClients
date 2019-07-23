@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { REGEX_EMAIL, MESSAGE_MAX_RECIPIENTS } from '../../constants';
+import { REGEX_EMAIL } from '../../constants';
 
 /* @ngInject */
 function autocompleteEmails(
@@ -20,13 +20,6 @@ function autocompleteEmails(
     const THROTTLE_TIMEOUT = 300;
 
     const I18N = translator(() => ({
-        langRecipientLimit(total) {
-            return gettextCatalog.getString(
-                'The maximum number ({{total}}) of Recipients is {{limit}}.',
-                { total, limit: MESSAGE_MAX_RECIPIENTS },
-                'Error'
-            );
-        },
         failedToFetch(list = []) {
             return gettextCatalog.getString(
                 'Failed to get key information for {{emails}}. Removing from recipient list. Please try again.',
@@ -261,23 +254,6 @@ function autocompleteEmails(
             type === 'remove' && removeItem(remove);
         });
 
-        /**
-         * We need to check the limit here. Otherwise autocompleteEmails can overflow the API (for PGP status testing).
-         */
-        const checkMessageLimit = (numberToAdd = 1) => {
-            const { ToList, CCList, BCCList } = scope.message;
-            const total = ToList.length + CCList.length + BCCList.length + numberToAdd;
-            if (total > MESSAGE_MAX_RECIPIENTS) {
-                notification.error(I18N.langRecipientLimit(total));
-                return false;
-            }
-            return true;
-        };
-
-        const resetValue = (target, emails) => {
-            target.value = emails.length ? emails[0] : '';
-        };
-
         const onInput = ({ target }) => {
             // Only way to clear the input if you add a comma.
             target.value === ',' && (target.value = '');
@@ -288,9 +264,6 @@ function autocompleteEmails(
              */
             if (target.value && isSplitable(target.value)) {
                 const emails = splitEmails(target.value);
-                if (!checkMessageLimit(emails.length)) {
-                    return resetValue(target, emails);
-                }
                 emails.forEach((value) => model.add({ label: value, value }));
                 syncModel();
                 return _rAF(() => ((awesomplete.input.value = ''), awesomplete.input.focus()));
@@ -343,9 +316,6 @@ function autocompleteEmails(
             const { value, clear } = getFormValue(e.target);
 
             if (value) {
-                if (!checkMessageLimit()) {
-                    return;
-                }
                 model.add(getConfigEmailInput(model, value));
                 clear();
                 syncModel();
@@ -405,9 +375,6 @@ function autocompleteEmails(
          * Update the model when an user select an option
          */
         awesomplete.replace = function replace(opt) {
-            if (!checkMessageLimit()) {
-                return;
-            }
             model.add(opt);
             this.input.value = '';
             syncModel();
