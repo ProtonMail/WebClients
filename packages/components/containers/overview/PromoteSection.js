@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Panel = ({ model }) => {
     return (
-        <div className="bg-global-altgrey color-white p1 mb1">
+        <div className="rounded bg-global-altgrey color-white p1 mb1">
             <div className="flex-autogrid onmobile-flex-column w100">
                 <div className="flex-autogrid-item flex flex-column flex-spacebetween">
                     <h4>{model.title}</h4>

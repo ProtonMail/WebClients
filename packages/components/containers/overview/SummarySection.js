@@ -58,7 +58,7 @@ const SummarySection = ({ subscription, user, userSettings }) => {
         [ADMIN_ROLE]: c('Role').t`Administrator`
     };
     return (
-        <div className="shadow-container mb1">
+        <div className="shadow-container rounded mb1">
             <div className="p1">
                 <div className="flex-autogrid onmobile-flex-column w100 mb1">
                     <div className="flex-autogrid-item">{c('Label').t`Username`}</div>
