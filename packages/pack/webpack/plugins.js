@@ -1,20 +1,17 @@
-const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteWebpackPlugin = require('write-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const AutoDllPlugin = require('autodll-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const SriPlugin = require('webpack-subresource-integrity');
 
 const { getSource } = require('./helpers/source');
 const transformOpenpgpFiles = require('./helpers/openpgp');
-const { OPENPGP_FILES, OPENPGP_WORKERS, CHECK_COMPAT_APP } = require('./constants');
+const { OPENPGP_FILES, OPENPGP_WORKERS } = require('./constants');
 
 const HTML_MINIFY = {
     removeAttributeQuotes: true,
@@ -34,7 +31,8 @@ const PRODUCTION_PLUGINS = [
                     reduceInitial: false,
                     discardComments: {
                         removeAll: true
-                    }
+                    },
+                    svgo: false
                 }
             ]
         }
