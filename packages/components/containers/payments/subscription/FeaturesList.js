@@ -19,22 +19,19 @@ const FeaturesList = () => {
         ...(MaxMembers > 1 ? [{ to: '/settings/members', text: c('Link').t`Add new users` }] : []),
         { to: 'https://protonvpn.com/download/', text: c('Link').t`Use ProtonVPN`, external: true }
     ];
-    features.push();
     return (
-        <ul className="unstyled">
+        <ul className="unstyled flex">
             {features.map(({ to, text, external, internal }, index) => {
-                if (external || internal) {
-                    return (
-                        <li key={index.toString()}>
+                const key = `${index}`;
+                return (
+                    <li key={key} className="w25 mb0-5">
+                        {external || internal ? (
                             <Href href={to} target={external ? '_blank' : '_self'}>
                                 {text}
                             </Href>
-                        </li>
-                    );
-                }
-                return (
-                    <li key={index.toString()}>
-                        <Link to={to}>{text}</Link>
+                        ) : (
+                            <Link to={to}>{text}</Link>
+                        )}
                     </li>
                 );
             })}
