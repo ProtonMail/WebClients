@@ -1,11 +1,4 @@
-import {
-    MAX_TITLE_LENGTH,
-    UNPAID_STATE,
-    REGEX_EMAIL,
-    MIME_TYPES,
-    PACKAGE_TYPE,
-    MESSAGE_MAX_RECIPIENTS
-} from '../../constants';
+import { MAX_TITLE_LENGTH, UNPAID_STATE, REGEX_EMAIL, MIME_TYPES, PACKAGE_TYPE } from '../../constants';
 
 import { normalizeRecipients, getRecipients } from '../../../helpers/message';
 
@@ -50,13 +43,6 @@ function validateMessage(
             { size: MAX_TITLE_LENGTH },
             'Error'
         ),
-        maxRecipients(total) {
-            return gettextCatalog.getString(
-                'You have {{total}} recipients. The maximum number is {{limit}}.',
-                { total, limit: MESSAGE_MAX_RECIPIENTS },
-                'Error'
-            );
-        },
         NO_SUBJECT_TITLE: gettextCatalog.getString('No subject', null, 'Title'),
         NO_SUBJECT_MESSAGE: gettextCatalog.getString('No subject, send anyway?', null, 'Info'),
         ERROR_ADDRESSES_INFO_PRIVATE: gettextCatalog.getString('You can generate your keys here', null, 'Error'),
@@ -110,11 +96,6 @@ function validateMessage(
 
         if (emailStats.invalid.length) {
             throw new Error(I18N.invalidEmails(emailStats.invalid.join(',')));
-        }
-
-        // MAX 100 to, cc, bcc
-        if (emailStats.total > MESSAGE_MAX_RECIPIENTS) {
-            throw new Error(I18N.maxRecipients(emailStats.total));
         }
 
         if (!emailStats.total) {

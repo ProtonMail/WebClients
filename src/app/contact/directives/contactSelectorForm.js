@@ -1,18 +1,10 @@
 import _ from 'lodash';
 
-import { MESSAGE_MAX_RECIPIENTS } from '../../constants';
-
 /* @ngInject */
 function contactSelectorForm(gettextCatalog, notification, translator) {
     const I18N = translator(() => ({
-        invalidForm: gettextCatalog.getString('Invalid form', null, 'Error'),
-        limitReached: gettextCatalog.getString(
-            'You have reached the max recipients ({{limit}}) per message',
-            { limit: MESSAGE_MAX_RECIPIENTS },
-            'Error'
-        )
+        invalidForm: gettextCatalog.getString('Invalid form', null, 'Error')
     }));
-    const LIMIT_REACHED_CLASS = 'contactSelectorForm-limit-reached';
     const NO_RECIPIENTS_CLASS = 'contactSelectorForm-no-recipients';
     return {
         restrict: 'E',
@@ -31,22 +23,13 @@ function contactSelectorForm(gettextCatalog, notification, translator) {
 
                 scope.$applyAsync(() => {
                     const recipients = getRecipients();
-
-                    if (recipients.length > MESSAGE_MAX_RECIPIENTS) {
-                        notification.error(I18N.limitReached);
-                        return;
-                    }
-
                     scope.ctrl.submit(recipients);
                 });
             };
 
             const updateView = () => {
                 const recipients = getRecipients();
-
-                el[0].classList[recipients.length > MESSAGE_MAX_RECIPIENTS ? 'add' : 'remove'](LIMIT_REACHED_CLASS);
                 el[0].classList[!recipients.length ? 'add' : 'remove'](NO_RECIPIENTS_CLASS);
-
                 scope.checkAll = scope.ctrl.list.length === _.filter(scope.ctrl.list, { selected: true }).length;
             };
 
