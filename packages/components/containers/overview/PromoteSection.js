@@ -45,7 +45,7 @@ const PromoteSection = ({ subscription, user }) => {
         free: {
             title: c('Title').t`TODO`,
             text: c('Info').t`TODO`,
-            link: '',
+            link: '/settings/subscription',
             image: '',
             action: c('Action').t`Upgrade`
         },

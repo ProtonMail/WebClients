@@ -33,7 +33,7 @@ function FiltersSection() {
     return (
         <>
             <SubTitle>{c('FilterSettings').t`Custom Filters`}</SubTitle>
-            <Alert learnMore="https://protonmail.com" type="info">
+            <Alert type="info">
                 {c('FilterSettings')
                     .t`Add a custom filter to perform actions suche as automatically labeling or archiving messages.`}
             </Alert>

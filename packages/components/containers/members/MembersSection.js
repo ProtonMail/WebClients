@@ -104,10 +104,7 @@ const MembersSection = () => {
         <>
             <RestoreAdministratorPrivileges />
             <SubTitle>{c('Title').t`Users`}</SubTitle>
-            <Alert learnMore="todo">
-                {c('Info for members section')
-                    .t`Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.`}
-            </Alert>
+            <Alert learnMore="todo">{c('Info for members section').t`Lorem`}</Alert>
             <Block className="flex flex-spacebetween">
                 <PrimaryButton
                     disabled={loadingOrganization || loadingDomains || loadingOrganizationKey}

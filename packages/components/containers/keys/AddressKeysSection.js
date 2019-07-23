@@ -200,7 +200,7 @@ const AddressKeysSection = () => {
     return (
         <>
             {title}
-            <Alert learnMore="todo">
+            <Alert>
                 {c('Info')
                     .t`Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.`}
             </Alert>

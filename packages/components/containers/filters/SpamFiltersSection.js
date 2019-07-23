@@ -54,7 +54,7 @@ function SpamFiltersSection() {
     return (
         <>
             <SubTitle>{c('FilterSettings').t`Spam Filters`}</SubTitle>
-            <Alert learnMore="https://protonmail.com">
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/spam-filtering/">
                 {c('FilterSettings')
                     .t`Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds it to the Whitelist.`}
             </Alert>
