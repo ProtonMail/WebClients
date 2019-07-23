@@ -23,3 +23,8 @@ export const lockSensitiveSettings = () => ({
     url: 'users/lock',
     method: 'put'
 });
+
+export const getHumanVerificationMethods = () => ({
+    url: 'users/human',
+    method: 'get'
+});
