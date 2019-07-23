@@ -4,11 +4,10 @@ import { c } from 'ttag';
 import { SearchInput } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-function SearchEmailIntoList({ className, onChange }) {
+function SearchEmailIntoList({ onChange }) {
     return (
         <SearchInput
             delay={300}
-            className={'w100 '.concat(className)}
             onChange={onChange}
             placeholder={c('FilterSettings').t`Search Whitelist and Blacklist`}
         />

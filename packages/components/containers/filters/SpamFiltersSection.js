@@ -58,10 +58,11 @@ function SpamFiltersSection() {
                 {c('FilterSettings')
                     .t`Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds it to the Whitelist.`}
             </Alert>
+            <div className="mb1">
+                <SearchEmailIntoList onChange={handleSearchChange} />
+            </div>
 
-            <SearchEmailIntoList className="w100" onChange={handleSearchChange} />
-
-            <div className="flex-autogrid p1">
+            <div className="flex-autogrid pl0-5 pr0-5">
                 <SpamListItem
                     list={whiteList}
                     type="whitelist"
