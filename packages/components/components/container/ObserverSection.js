@@ -4,6 +4,7 @@ import 'intersection-observer';
 import { debounce } from 'proton-shared/lib/helpers/function';
 
 import { buildThresholds, indexOfMax } from '../../helpers/intersectionObserver';
+import { withDecimalPrecision } from 'proton-shared/lib/helpers/math';
 
 const ObserverSection = ({
     id,
@@ -36,7 +37,7 @@ const ObserverSection = ({
             entries.forEach((entry) => {
                 setIntersectionData(({ intersectionRatios, listOfIds }) => {
                     const newIntersectionRatios = intersectionRatios.slice();
-                    newIntersectionRatios[index] = Math.min(entry.intersectionRatio, 1); // manual fix for bug IntersectionObserverEntry.intersectionRatio > 1
+                    newIntersectionRatios[index] = withDecimalPrecision(entry.intersectionRatio, 2);
                     const idToDisplay = listOfIds[indexOfMax(newIntersectionRatios)];
                     return {
                         intersectionRatios: newIntersectionRatios,
