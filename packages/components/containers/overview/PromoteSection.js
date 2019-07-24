@@ -3,10 +3,14 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { CYCLE } from 'proton-shared/lib/constants';
 import { Link } from 'react-router-dom';
+import thanksForYourSupportSvg from 'design-system/assets/img/pm-images/settings-illustrations_thanks-for-your-support.svg';
+import contactYourAdminSvg from 'design-system/assets/img/pm-images/settings-illustrations_contact-your-admin.svg';
+import upgradeToPaidPlanSvg from 'design-system/assets/img/pm-images/settings-illustrations_upgrade-to-paid-plan.svg';
+import get20PerscentDiscountSvg from 'design-system/assets/img/pm-images/settings-illustrations_get-20-percent-discount.svg';
 
 const Panel = ({ model }) => {
     return (
-        <div className="rounded bg-global-altgrey color-white p1 mb1">
+        <div className="rounded bg-global-altgrey color-white p1 mb1 flex">
             <div className="flex-autogrid onmobile-flex-column w100">
                 <div className="flex-autogrid-item flex flex-column flex-spacebetween">
                     <h4>{model.title}</h4>
@@ -21,8 +25,8 @@ const Panel = ({ model }) => {
                         )}
                     </div>
                 </div>
-                <div className="flex-autogrid-item">
-                    <img src={model.image} alt={model.title} />
+                <div className="flex-autogrid-item flex flex-column flex-items-end">
+                    <img className="h100" src={model.image} alt={model.title} />
                 </div>
             </div>
         </div>
@@ -38,29 +42,28 @@ const PromoteSection = ({ subscription, user }) => {
         member: {
             title: c('Title').t`Need help?`,
             text: c('Info').t`Reach out to your system administrator for further assistance and support`,
-            link: '',
-            image: '',
-            action: c('Action').t`Need help?`
+            image: contactYourAdminSvg
         },
         free: {
-            title: c('Title').t`TODO`,
-            text: c('Info').t`TODO`,
+            title: c('Title').t`Upgrade to a paid plan`,
+            text: c('Info').t`Get additional storage capacity and more addresses with ProtonMail Plus.`,
             link: '/settings/subscription',
-            image: '',
-            action: c('Action').t`Upgrade`
+            image: upgradeToPaidPlanSvg,
+            action: c('Action').t`Upgrade ProtonMail`
         },
         pay: {
             title: c('Title').t`Thanks for your support`,
-            text: c('Info').t`Help us improve our service by applying to our Beta programs.`,
+            text: c('Info')
+                .t`Help us improve our service and get early access to new features by enrolling in our Beta programs.`,
             link: '',
-            image: '',
-            action: c('Action').t`Apply`
+            image: thanksForYourSupportSvg,
+            action: c('Action').t`Join`
         },
         payMonthly: {
             title: c('Title').t`Get 20% discount`,
             text: c('Info').t`Pay for both ProtonMail and ProtonVPN and get 20% off your entire subscription.`,
             link: '',
-            image: '',
+            image: get20PerscentDiscountSvg,
             action: c('Action').t`Upgrade`
         }
     };
