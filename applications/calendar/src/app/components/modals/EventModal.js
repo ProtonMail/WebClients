@@ -44,6 +44,7 @@ const getModel = ({ start = new Date(), end = new Date(), allDay = false, type =
     return {
         type,
         notifications: [],
+        attendees: [],
         description: '',
         allDay,
         startDate,
