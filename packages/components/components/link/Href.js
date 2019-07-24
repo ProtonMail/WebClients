@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Href = ({ url, className, children }) => {
+const Href = ({ url, className, target, rel, children }) => {
     return (
-        <a href={url} className={className} target="_blank" rel="noopener noreferrer">
+        <a href={url} className={className} target={target} rel={rel}>
             {children}
         </a>
     );
@@ -12,11 +12,15 @@ const Href = ({ url, className, children }) => {
 Href.propTypes = {
     url: PropTypes.string,
     children: PropTypes.node.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    target: PropTypes.string,
+    rel: PropTypes.string
 };
 
 Href.defaultProps = {
-    url: '#'
+    url: '#',
+    target: '_blank',
+    rel: 'noopener noreferrer'
 };
 
 export default Href;
