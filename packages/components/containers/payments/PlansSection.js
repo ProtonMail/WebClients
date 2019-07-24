@@ -144,7 +144,7 @@ const PlansSection = () => {
         <>
             <SubTitle>{c('Title').t`Plans`}</SubTitle>
             {bundleEligible ? (
-                <Alert>{c('Info')
+                <Alert learnMore="https://protonmail.com/support/knowledge-base/paid-plans/">{c('Info')
                     .t`Get 20% bundle discount when you purchase ProtonMail and ProtonVPN together.`}</Alert>
             ) : null}
             <Button onClick={togglePlans}>{showPlans ? c('Action').t`Hide plans` : c('Action').t`Show plans`}</Button>

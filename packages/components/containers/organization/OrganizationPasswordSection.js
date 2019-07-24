@@ -79,8 +79,8 @@ const OrganizationSection = () => {
     return (
         <>
             {title}
-            <Alert learnMore="todo">{c('Info')
-                .t`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium enim nec massa fringilla, ac ultrices tortor posuere. Fusce sed quam vitae arcu pharetra congue. Quisque in elementum nibh.`}</Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/organization-key">{c('Info')
+                .t`Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.`}</Alert>
             <Block>
                 {isOrganizationKeyActive && (
                     <>

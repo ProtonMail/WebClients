@@ -104,7 +104,8 @@ const MembersSection = () => {
         <>
             <RestoreAdministratorPrivileges />
             <SubTitle>{c('Title').t`Users`}</SubTitle>
-            <Alert learnMore="todo">{c('Info for members section').t`Lorem`}</Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/user-roles/">{c('Info for members section')
+                .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more.`}</Alert>
             <Block className="flex flex-spacebetween">
                 <PrimaryButton
                     disabled={loadingOrganization || loadingDomains || loadingOrganizationKey}
