@@ -87,7 +87,8 @@ const LayoutsSection = () => {
     return (
         <>
             {subTitle}
-            <Alert>{c('Info').t`Lorem ipsum`}</Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/change-inbox-layout/">{c('Info')
+                .t`Choose the look and feel of your mailbox.`}</Alert>
             <Row>
                 <Label htmlFor="composerMode">
                     <span className="mr0-5">{c('Label').t`Default Composer`}</span>

@@ -64,7 +64,8 @@ const IdentitySection = () => {
     return (
         <>
             {title}
-            <Alert>{c('Info').t`TODO`}</Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/display-name-and-signature/">{c('Info')
+                .t`TODO`}</Alert>
             <Row>
                 <Label htmlFor="addressSelector">{c('Label').t`Select an address`}</Label>
                 <Field>
