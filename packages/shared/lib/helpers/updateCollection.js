@@ -9,7 +9,22 @@ function sort(list = [], hasSort) {
     return list.sort((itemA, itemB) => itemA.Order - itemB.Order);
 }
 
-const updateCollection = (model = [], events, itemModelName) => {
+const defaultMerge = (oldModel, newModel) => {
+    return {
+        ...oldModel,
+        ...newModel
+    };
+};
+
+/**
+ * Update a model collection with incoming events.
+ * @param {Array} model
+ * @param {Array} events
+ * @param {Function} item - A function to return the new model
+ * @param {Function} merge - A function to return the merged model
+ * @return {Array}
+ */
+const updateCollection = ({ model = [], events = [], item, merge = defaultMerge }) => {
     const copy = [...model];
 
     const todo = events.reduce(
@@ -21,7 +36,7 @@ const updateCollection = (model = [], events, itemModelName) => {
                 return acc;
             }
 
-            acc[Action].push(task[itemModelName]);
+            acc[Action].push(item(task));
 
             return acc;
         },
@@ -39,10 +54,7 @@ const updateCollection = (model = [], events, itemModelName) => {
             if (typeof index !== 'undefined') {
                 // index can be set to 0
                 // Update
-                acc.collection[index] = {
-                    ...acc.collection[index],
-                    ...element
-                };
+                acc.collection[index] = merge(acc.collection[index], element);
                 return acc;
             }
 

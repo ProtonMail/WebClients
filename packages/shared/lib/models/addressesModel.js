@@ -8,5 +8,5 @@ export const getAddressesModel = (api) => {
 export const AddressesModel = {
     key: 'Addresses',
     get: getAddressesModel,
-    update: (model, events) => updateCollection(model, events, 'Address')
+    update: (model, events) => updateCollection({ model, events, item: ({ Address }) => Address })
 };

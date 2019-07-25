@@ -27,14 +27,13 @@ describe('event manager', () => {
             { EventID: '6', More: 0 }
         ]);
 
-        const onSuccess = jasmine.createSpy();
-
         const eventManager = createEventManager({
             eventID: '1',
             api,
-            onSuccess,
             interval: 1000
         });
+        const onSuccess = jasmine.createSpy();
+        const unsubscribe = eventManager.subscribe(onSuccess);
 
         eventManager.start();
 
@@ -49,5 +48,6 @@ describe('event manager', () => {
         expect(onSuccess.calls.all().length, 7);
 
         eventManager.stop();
+        unsubscribe();
     });
 });

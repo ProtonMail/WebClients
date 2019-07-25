@@ -9,7 +9,7 @@ export const getLabelsModel = (api) => {
 export const LabelsModel = {
     key: 'Labels',
     get: getLabelsModel,
-    update: (model, events) => updateCollection(model, events, 'Label')
+    update: (model, events) => updateCollection({ model, events, item: ({ Label }) => Label })
 };
 
 const defaultMap = (label) => ({ key: label.Name, value: label });

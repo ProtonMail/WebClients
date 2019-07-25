@@ -2,8 +2,8 @@ const createListeners = () => {
     let listeners = [];
 
     const notify = (...args) => {
-        listeners.forEach((listener) => {
-            listener(...args);
+        return listeners.map((listener) => {
+            return listener(...args);
         });
     };
 

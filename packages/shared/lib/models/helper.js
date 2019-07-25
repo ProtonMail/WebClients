@@ -1,9 +1,4 @@
-import { UserModel } from './userModel';
 import { STATUS } from './cache';
-import { setupEventManager } from './setupEventManager';
-import { getLatestID } from '../api/events';
-
-const getEventID = (api) => api(getLatestID()).then(({ EventID }) => EventID);
 
 /**
  * Given a list of models, preload them and set them in the cache.
@@ -17,11 +12,10 @@ const getEventID = (api) => api(getLatestID()).then(({ EventID }) => EventID);
 export const loadModels = async (models = [], { api, cache }) => {
     const result = await Promise.all(
         models.map((model) => {
-            // Special case to not re-fetch it if it exists.
-            if (model === UserModel) {
-                if (cache.has(UserModel.key)) {
-                    return cache.get(UserModel.key).value;
-                }
+            // Special case to not re-fetch the model if it exists. This can happen for
+            // the user model which is set at login.
+            if (cache.has(model.key)) {
+                return cache.get(model.key).value;
             }
             return model.get(api);
         })
@@ -35,26 +29,4 @@ export const loadModels = async (models = [], { api, cache }) => {
     });
 
     return result;
-};
-
-/**
- * Create event manager.
- * @param {Array} models
- * @param {Function} api
- * @param {Map} cache
- * @return {Promise<{call, setEventID, stop, start, reset}>}
- */
-export const createEventManager = async (models = [], { api, cache }) => {
-    // Set from <ProtonApp/> on login.
-    const { eventID: tmpEventID } = cache.get('tmp') || {};
-    cache.set('tmp', undefined);
-
-    const eventID = await Promise.resolve(tmpEventID || getEventID(api));
-
-    return setupEventManager({
-        models,
-        api,
-        cache,
-        eventID
-    });
 };

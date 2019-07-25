@@ -8,5 +8,5 @@ export const getContactGroupsModel = (api) => {
 export const ContactGroupsModel = {
     key: 'Labels',
     get: getContactGroupsModel,
-    update: (model, events) => updateCollection(model, events, 'Label')
+    update: (model, events) => updateCollection({ model, events, item: ({ Label }) => Label })
 };

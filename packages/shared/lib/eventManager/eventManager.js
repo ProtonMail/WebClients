@@ -1,6 +1,7 @@
 import { INTERVAL_EVENT_TIMER } from '../constants';
 import { getEvents } from '../api/events';
 import { onceWithQueue } from '../helpers/onceWithQueue';
+import createListeners from '../helpers/listeners';
 
 const FIBONACCI = [1, 1, 2, 3, 5, 8];
 
@@ -8,12 +9,12 @@ const FIBONACCI = [1, 1, 2, 3, 5, 8];
  * Create the event manager process.
  * @param {function} api - Function to call the API.
  * @param {String} initialEventID - Initial event ID to begin from
- * @param {function} onSuccess - Function to handle the data from the event manager
- * @param {function} onError - Function to handle the error
  * @param {Number} interval - Maximum interval time to wait between each call
  * @return {{call, setEventID, stop, start, reset}}
  */
-export default ({ api, eventID: initialEventID, onSuccess, onError, interval = INTERVAL_EVENT_TIMER }) => {
+export default ({ api, eventID: initialEventID, interval = INTERVAL_EVENT_TIMER }) => {
+    const listeners = createListeners();
+
     if (!initialEventID) {
         throw new Error('eventID must be provided.');
     }
@@ -99,31 +100,7 @@ export default ({ api, eventID: initialEventID, onSuccess, onError, interval = I
     const reset = () => {
         stop();
         STATE = {};
-    };
-
-    /**
-     * Call the api and the success handler.
-     * @param {String} eventID
-     * @param {AbortController} abortController
-     * @return {Promise}
-     */
-    const run = async (eventID, abortController) => {
-        try {
-            const { More, EventID: nextEventID, ...rest } = await api({
-                ...getEvents(eventID),
-                signal: abortController.signal
-            });
-
-            await onSuccess(rest);
-
-            return {
-                hasMore: !!More,
-                nextEventID
-            };
-        } catch (e) {
-            onError(e);
-            throw e;
-        }
+        listeners.clear();
     };
 
     /**
@@ -144,23 +121,30 @@ export default ({ api, eventID: initialEventID, onSuccess, onError, interval = I
                     throw new Error('EventID undefined');
                 }
 
-                const { hasMore, nextEventID } = await run(eventID, abortController);
+                const result = await api({
+                    ...getEvents(eventID),
+                    signal: abortController.signal
+                });
 
+                await Promise.all(listeners.notify(result));
+
+                const { More, EventID: nextEventID } = result;
                 setEventID(nextEventID);
                 setRetryIndex(0);
 
-                if (!hasMore) {
+                if (!More) {
                     break;
                 }
             }
 
             delete STATE.abortController;
             start();
-        } catch (e) {
+        } catch (error) {
+            listeners.notify({ error });
             delete STATE.abortController;
             increaseRetryIndex();
             start();
-            throw e;
+            throw error;
         }
     });
 
@@ -170,6 +154,7 @@ export default ({ api, eventID: initialEventID, onSuccess, onError, interval = I
         start,
         stop,
         call,
-        reset
+        reset,
+        subscribe: listeners.subscribe
     };
 };
