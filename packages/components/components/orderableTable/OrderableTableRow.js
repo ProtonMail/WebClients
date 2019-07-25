@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 import { Icon } from 'react-components';
 
 import { TableRow } from '../table';
-import OrderableElement from '../orderable/OrderableElement';
+import { OrderableElement, OrderableHandle } from '../orderable';
 
 const OrderableTableRow = ({ index, cells, ...rest }) => (
     <OrderableElement index={index}>
-        <TableRow cells={[<Icon key="icon" name="text-justify" />, ...cells]} {...rest} />
+        <TableRow
+            cells={[
+                <OrderableHandle key="icon">
+                    <Icon style={{ cursor: 'row-resize' }} name="text-justify" />
+                </OrderableHandle>,
+                ...cells
+            ]}
+            {...rest}
+        />
     </OrderableElement>
 );
 
