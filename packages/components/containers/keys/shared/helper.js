@@ -4,14 +4,6 @@ import { KEY_FLAG } from 'proton-shared/lib/constants';
 const { SIGNED, ENCRYPTED_AND_SIGNED, CLEAR_TEXT } = KEY_FLAG;
 
 /**
- * @param {Array} keys
- * @return {Object}
- */
-export const getPrimaryKey = (keys) => {
-    return keys.find(({ Key: { Primary } }) => Primary === 1);
-};
-
-/**
  * Convert a key for display in the view.
  * @param {Object} User - The user
  * @param {Object} [Address] - The address the key belongs to

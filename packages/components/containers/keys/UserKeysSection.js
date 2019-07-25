@@ -1,8 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Alert, Button, Block, Loader, SubTitle, useUser, useModals, useUserKeys } from 'react-components';
+import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
 
-import { convertKey, getPrimaryKey } from './shared/helper';
+import { convertKey } from './shared/helper';
 import { ACTIONS } from './KeysActions';
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
