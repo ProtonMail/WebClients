@@ -1,5 +1,6 @@
 import useCachedModelResult from '../useCachedModelResult';
 import useApi from '../../containers/api/useApi';
+import useCache from '../../containers/cache/useCache';
 
 /**
  * Creates an async fn model hook.
@@ -8,7 +9,8 @@ import useApi from '../../containers/api/useApi';
 const createUseModelHook = ({ key, get }) => {
     return () => {
         const api = useApi();
-        return useCachedModelResult(key, () => get(api));
+        const cache = useCache();
+        return useCachedModelResult(cache, key, () => get(api));
     };
 };
 

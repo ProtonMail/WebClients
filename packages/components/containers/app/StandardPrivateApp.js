@@ -13,24 +13,35 @@ import {
 } from 'react-components';
 import { UserModel, UserSettingsModel } from 'proton-shared/lib/models';
 
-import { createEventManager, loadModels } from 'proton-shared/lib/models/helper';
+import createEventManager from 'proton-shared/lib/eventManager/eventManager';
+import { loadModels } from 'proton-shared/lib/models/helper';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { loadLocale } from 'proton-shared/lib/i18n';
 import { uniqueBy } from 'proton-shared/lib/helpers/array';
+import { getLatestID } from 'proton-shared/lib/api/events';
 
-const Preload = ({ locales, preloadModels, eventModels, onSuccess, onError }) => {
+import ModelListener from '../eventManager/ModelListener';
+
+const getEventID = ({ cache, api }) => {
+    // Set from <ProtonApp/> on login.
+    const { eventID: tmpEventID } = cache.get('tmp') || {};
+    cache.set('tmp', undefined);
+    return Promise.resolve(tmpEventID || api(getLatestID()).then(({ EventID }) => EventID));
+};
+
+const Preload = ({ locales, preloadModels, onSuccess, onError }) => {
     const api = useApi();
     const cache = useCache();
 
     useLayoutEffect(() => {
         (async () => {
-            const [[userSettings], ev] = await Promise.all([
+            const [[userSettings], eventID] = await Promise.all([
                 loadModels(uniqueBy([UserSettingsModel, UserModel, ...preloadModels], (x) => x), { api, cache }),
-                createEventManager(eventModels, { api, cache }),
+                getEventID({ api, cache }),
                 loadOpenPGP()
             ]);
             await loadLocale(userSettings.Locale, locales);
-            return ev;
+            return createEventManager({ api, eventID });
         })()
             .then(onSuccess)
             .catch(onError);
@@ -66,6 +77,7 @@ const StandardPrivateApp = ({ onLogout, locales, preloadModels, eventModels, chi
     return (
         <Router>
             <EventManagerProvider eventManager={eventManagerRef.current}>
+                <ModelListener models={eventModels} />
                 <ThemeInjector />
                 <LocaleInjector locales={locales} refresh={refreshRef} />
                 <ForceRefreshProvider ref={refreshRef}>

@@ -10,7 +10,7 @@ const useSubscription = () => {
     const cache = useCache();
     const api = useApi();
 
-    return useCachedModelResult(SubscriptionModel.key, () => {
+    return useCachedModelResult(cache, SubscriptionModel.key, () => {
         // Not using use user since it's better to read from the cache
         const user = cache.get(UserModel.key).value;
         if (user.isPaid) {

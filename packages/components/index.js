@@ -274,6 +274,7 @@ export { default as AddFilterModal } from './containers/filters/AddFilterModal';
 export { default as AddEmailToListModal } from './containers/filters/AddEmailToListModal';
 
 export { default as useUser } from './hooks/useUser';
+export { default as useCachedModelResult } from './hooks/useCachedModelResult';
 export { default as usePromiseResult } from './hooks/usePromiseResult';
 export { default as useAddresses } from './hooks/useAddresses';
 export { default as useDomains } from './hooks/useDomains';

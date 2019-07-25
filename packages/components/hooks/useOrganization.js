@@ -10,7 +10,7 @@ const useOrganization = () => {
     const cache = useCache();
     const api = useApi();
 
-    return useCachedModelResult(OrganizationModel.key, () => {
+    return useCachedModelResult(cache, OrganizationModel.key, () => {
         // Not using use user since it's better to read from the cache
         // It will be updated from the event manager.
         const user = cache.get(UserModel.key).value;
