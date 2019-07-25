@@ -5,14 +5,21 @@ import { VERIFICATION_STATUS } from 'pmcrypto/lib/constants';
 import { noop } from '../helpers/function';
 
 /**
+ * @param {Array} keys - Keys array that has been prepared by `prepareKeys`
+ * @return {Object}
+ */
+export const getPrimaryKey = (keys = []) => {
+    return keys.find(({ Key: { Primary } }) => Primary === 1);
+};
+
+/**
  * Given a list of keys and joining key salts, get the primary key and the corresponding key salt.
- * @param {Array} Keys
- * @param {Array} KeySalts
+ * @param {Array} Keys - Keys as received from the API
+ * @param {Array} KeySalts - KeySalts as received from the API
  * @return {{PrivateKey, KeySalt}}
  */
 export const getPrimaryKeyWithSalt = (Keys = [], KeySalts = []) => {
-    const [primaryKey] = Keys;
-    const { PrivateKey, ID } = primaryKey || {};
+    const { PrivateKey, ID } = Keys.find(({ Primary }) => Primary === 1) || {};
     const { KeySalt } = KeySalts.find(({ ID: keySaltID }) => ID === keySaltID) || {};
 
     // Not verifying that KeySalt exists because of old auth versions.
