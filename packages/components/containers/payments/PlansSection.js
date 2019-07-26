@@ -97,10 +97,7 @@ const PlansSection = () => {
     useEffect(() => {
         if (isFree) {
             createModal(
-                <UpgradeModal
-                    onComparePlans={() => !showPlans && togglePlans()}
-                    onUpgrade={handleModal({ plus: 1, vpnplus: 1 })}
-                />
+                <UpgradeModal onComparePlans={() => !showPlans && togglePlans()} onUpgrade={handleModal({ plus: 1 })} />
             );
         }
     }, []);
