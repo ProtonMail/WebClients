@@ -81,6 +81,7 @@ export { default as HeaderModal } from './components/modal/Header';
 export { default as FormModal } from './components/modal/FormModal';
 export { default as OverlayModal } from './components/modal/Overlay';
 export { default as ConfirmModal } from './components/modal/Confirm';
+export { default as SimpleModal } from './components/modal/SimpleModal';
 export { default as PreviewPDFModal } from './components/modal/PreviewPDFModal';
 export { default as FooterModal } from './components/modal/Footer';
 export { default as Price } from './components/price/Price';
@@ -139,6 +140,7 @@ export { default as BillingSection } from './containers/payments/BillingSection'
 export { default as GiftCodeInput } from './containers/payments/GiftCodeInput';
 export { default as PlansSection } from './containers/payments/PlansSection';
 export { default as SubscriptionSection } from './containers/payments/subscription/SubscriptionSection';
+export { default as UpgradeModal } from './containers/payments/subscription/UpgradeModal';
 export { default as AmountButton } from './containers/payments/AmountButton';
 export { default as Bitcoin } from './containers/payments/Bitcoin';
 export { default as CurrencySelector } from './containers/payments/CurrencySelector';

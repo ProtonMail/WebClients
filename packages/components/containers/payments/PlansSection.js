@@ -30,6 +30,7 @@ import CurrencySelector from './CurrencySelector';
 import CycleSelector from './CycleSelector';
 import SubscriptionModal from './subscription/SubscriptionModal';
 import { mergePlansMap, getCheckParams, isBundleEligible } from './subscription/helpers';
+import UpgradeModal from './subscription/UpgradeModal';
 
 const { MAIL } = PLAN_SERVICES;
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
@@ -92,6 +93,17 @@ const PlansSection = () => {
         setCurrency(subscription.Currency || Currency);
         setCycle(subscription.Cycle || Cycle);
     }, [loadingSubscription, loadingPlans]);
+
+    useEffect(() => {
+        if (isFree) {
+            createModal(
+                <UpgradeModal
+                    onComparePlans={() => !showPlans && togglePlans()}
+                    onUpgrade={handleModal({ plus: 1, vpnplus: 1 })}
+                />
+            );
+        }
+    }, []);
 
     if (subscription.isManagedByMozilla) {
         return (
