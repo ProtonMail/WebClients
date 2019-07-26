@@ -24,7 +24,7 @@ svg {
   overflow: auto;
 }
 .mod--hidden,
-.no-scroll { 
+.no-scroll {
   overflow: hidden;
 }
 
@@ -186,7 +186,7 @@ $list-width-px: 150, 200, 500 !default;
 @each $width in $list-width-px {
   .w#{$width}p { width: #{$width}px; }
   }
-  
+
 /* here you may add em widths */
 $list-width-em: 400 !default;
 // ex .w500e { width: 60em; }
@@ -246,12 +246,12 @@ $list-margins-values: 0, 0.25, 0.5, 1, 1.5, 2 !default; // specify 2.5 if needed
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .mrauto { 
-      margin-right: inherit; 
+    .mrauto {
+      margin-right: inherit;
       margin-left: auto;
     }
-    .mlauto { 
-      margin-left: inherit; 
+    .mlauto {
+      margin-left: inherit;
       margin-right: auto;
     }
   }
@@ -299,7 +299,7 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 2 !default; // specify 2.5 if need
     -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
     page-break-inside: avoid; /* Firefox */
          break-inside: avoid; /* IE 10+ */
-         break-inside: avoid-column; /* W3C */ 
+         break-inside: avoid-column; /* W3C */
   }
 }
 
@@ -372,7 +372,12 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 2 !default; // specify 2.5 if need
 .flex-spacebetween {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-      justify-content: space-between;	
+      justify-content: space-between;
+}
+.flex-spacearound {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+      justify-content: space-around;
 }
 .flex-nowrap {
   -ms-flex-wrap: nowrap;
