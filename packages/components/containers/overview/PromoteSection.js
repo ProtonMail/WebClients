@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { CYCLE } from 'proton-shared/lib/constants';
 import { Link } from 'react-router-dom';
-import thanksForYourSupportSvg from 'design-system/assets/img/pm-images/settings-illustrations_thanks-for-your-support.svg';
-import contactYourAdminSvg from 'design-system/assets/img/pm-images/settings-illustrations_contact-your-admin.svg';
-import upgradeToPaidPlanSvg from 'design-system/assets/img/pm-images/settings-illustrations_upgrade-to-paid-plan.svg';
-import get20PerscentDiscountSvg from 'design-system/assets/img/pm-images/settings-illustrations_get-20-percent-discount.svg';
+import thanksForYourSupportSvg from 'design-system/assets/img/pm-images/love.svg';
+import contactYourAdminSvg from 'design-system/assets/img/pm-images/settings.svg';
+import upgradeToPaidPlanSvg from 'design-system/assets/img/pm-images/upgrade.svg';
+import get20PerscentDiscountSvg from 'design-system/assets/img/pm-images/percent.svg';
 
 const Panel = ({ model }) => {
     return (
