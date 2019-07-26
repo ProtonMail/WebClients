@@ -103,6 +103,7 @@ export { default as Sidebar } from './components/sidebar/Sidebar';
 export { default as SubSidebar } from './components/sidebar/SubSidebar';
 export { default as OrderableContainer } from './components/orderable/OrderableContainer';
 export { default as OrderableElement } from './components/orderable/OrderableElement';
+export { default as OrderableHandle } from './components/orderable/OrderableHandle';
 export { default as OrderableTable } from './components/orderableTable/OrderableTable';
 export { default as OrderableTableHeader } from './components/orderableTable/OrderableTableHeader';
 export { default as OrderableTableBody } from './components/orderableTable/OrderableTableBody';
