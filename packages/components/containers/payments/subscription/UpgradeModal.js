@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SimpleModal, Icon, PrimaryButton, LinkButton, usePlans, Loader } from 'react-components';
+import { SimpleFormModal, Icon, PrimaryButton, LinkButton, usePlans, Loader } from 'react-components';
 import upgradeSvg from 'design-system/assets/img/pm-images/upgrade.svg';
 import { c } from 'ttag';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
@@ -21,7 +21,7 @@ const UpgradeModal = ({ onUpgrade, onComparePlans, ...rest }) => {
     ];
 
     return (
-        <SimpleModal className="upgradeModal-container" {...rest}>
+        <SimpleFormModal className="upgradeModal-container" {...rest}>
             <div className="alignright pt0-5 pr0-5 pb1">
                 <button type="reset">
                     <Icon name="close" fill="light" />
@@ -83,7 +83,7 @@ const UpgradeModal = ({ onUpgrade, onComparePlans, ...rest }) => {
                     })}
                 </ul>
             </div>
-        </SimpleModal>
+        </SimpleFormModal>
     );
 };
 

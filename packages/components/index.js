@@ -81,7 +81,7 @@ export { default as HeaderModal } from './components/modal/Header';
 export { default as FormModal } from './components/modal/FormModal';
 export { default as OverlayModal } from './components/modal/Overlay';
 export { default as ConfirmModal } from './components/modal/Confirm';
-export { default as SimpleModal } from './components/modal/SimpleModal';
+export { default as SimpleFormModal } from './components/modal/SimpleFormModal';
 export { default as PreviewPDFModal } from './components/modal/PreviewPDFModal';
 export { default as FooterModal } from './components/modal/Footer';
 export { default as Price } from './components/price/Price';
