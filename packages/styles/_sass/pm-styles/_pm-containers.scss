@@ -9,6 +9,13 @@
   border-radius: $global-border-radius;
 }
 
+.dashed,
+.dashed-container {
+  border: 1px dashed $pm-global-border;
+}
+.dashed-container {
+  border-radius: $global-border-radius;
+}
 
 .border-bottom {
   border-bottom: 1px solid $pm-global-border;
