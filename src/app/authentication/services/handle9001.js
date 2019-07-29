@@ -1,23 +1,31 @@
 /* @ngInject */
-function handle9001($q, $http, humanVerificationModal) {
-    return (config) => {
-        const deferred = $q.defer();
+function handle9001($http, humanVerificationModal) {
+    return (config, { VerifyMethods: methods = [], Token: token }) => {
+        const useParams = ['GET', 'DELETE'].includes(config.method);
+        return new Promise((resolve) => {
+            humanVerificationModal.activate({
+                params: {
+                    methods,
+                    token,
+                    close(parameters = false) {
+                        humanVerificationModal.deactivate();
 
-        humanVerificationModal.activate({
-            params: {
-                close(resend = false) {
-                    humanVerificationModal.deactivate();
-
-                    if (resend) {
-                        deferred.resolve($http(config));
-                    } else {
-                        deferred.resolve();
+                        if (parameters) {
+                            return resolve(
+                                $http({
+                                    ...config,
+                                    [useParams ? 'params' : 'data']: {
+                                        ...(config[useParams ? 'params' : 'data'] || {}),
+                                        ...parameters
+                                    }
+                                })
+                            );
+                        }
+                        return resolve();
                     }
                 }
-            }
+            });
         });
-
-        return deferred.promise;
     };
 }
 export default handle9001;

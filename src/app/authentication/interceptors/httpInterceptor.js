@@ -105,7 +105,7 @@ function httpInterceptor($q, $injector, AppModel, networkUtils) {
 
         if (errorCode === HUMAN_VERIFICATION_REQUIRED) {
             const handle9001 = $injector.get('handle9001');
-            return handle9001(error.config);
+            return handle9001(error.config, data);
         }
 
         if (errorCode === AUTH_AUTH_ACCOUNT_DISABLED) {
