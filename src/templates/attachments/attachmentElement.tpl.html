@@ -1,7 +1,7 @@
 <li class="mr1 ">
     <a
         data-attachment-id="{{::attachment.ID}}"
-        class="message-attachment inline-flex pm-button listAttachments-item relative no-pointer-events-children"
+        class="message-attachment inline-flex flex-nowrap mw100 pm-button listAttachments-item relative no-pointer-events-children"
         ng-class="{ 'dead': attachment.decrypting, 'remove': ('eo.reply' | includedByState) }"
         data-download-text="{{ 'Download' | translate:'Action' }}"
         title="{{ ::attachment.Name }} ({{ ::attachment.Size | humanSize }})">
@@ -37,8 +37,8 @@
                         <i class="fa fa-check-circle pt-fa-bg-white fa-stack-2x"></i>
                     </span>
             </div>
-            <span class="inbl message-attachmentInfo">
-                <span class="bl">{{ ::attachment.Name }}</span>
+            <span class="inbl ellipsis flex flex-column message-attachmentInfo">
+                <span class="bl ellipsis mw100">{{ ::attachment.Name }}</span>
                 <span class="bl message-attachmentSize">{{ ::attachment.Size | humanSize }}</span>
             </span>
     </a>
