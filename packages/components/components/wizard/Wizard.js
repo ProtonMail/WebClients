@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Wizard = ({ step, steps, hideText }) => {
+const Wizard = ({ step = 0, steps = [], hideText = false }) => {
     return (
         <div className={`wizard-container ${hideText ? 'wizard-container--noTextDisplayed' : ''}`}>
             <ul className="wizard unstyled flex flex-nowrap flex-spacebetween">
@@ -10,7 +10,7 @@ const Wizard = ({ step, steps, hideText }) => {
                         <li
                             key={index.toString()}
                             className={`wizard-item ${index < step ? 'is-complete' : ''}`}
-                            aria-current={index === step ? 'step' : ''}
+                            aria-current={index === step ? 'step' : null}
                         >
                             <span className="wizard-marker" />
                             <span className="wizard-item-inner">{text}</span>
@@ -29,12 +29,6 @@ Wizard.propTypes = {
     steps: PropTypes.arrayOf(PropTypes.string),
     // hide text for steps
     hideText: PropTypes.bool
-};
-
-Wizard.defaultProps = {
-    hideText: false,
-    steps: [],
-    step: 0
 };
 
 export default Wizard;
