@@ -3,7 +3,7 @@ import queryPagesThrottled from '../api/helpers/queryPagesThrottled';
 import updateCollection from '../helpers/updateCollection';
 
 export const getCalendars = (api) => {
-    const pageSize = 1000;
+    const pageSize = 150;
 
     const requestPage = (Page) =>
         api(
