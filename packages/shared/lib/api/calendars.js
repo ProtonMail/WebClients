@@ -11,128 +11,134 @@ export const createCalendar = (data) => ({
 });
 
 export const setupCalendar = (calendarID, data) => ({
-    url: `calendar/${calendarID}/keys`,
+    url: `calendars/${calendarID}/keys`,
     method: 'post',
     data
 });
 
 export const getCalendar = (calendarID) => ({
-    url: `calendar/${calendarID}`,
+    url: `calendars/${calendarID}`,
     method: 'get'
 });
 
 export const getFullCalendar = (calendarID) => ({
-    url: `calendar/${calendarID}/bootstrap`,
+    url: `calendars/${calendarID}/bootstrap`,
     method: 'get'
 });
 
 export const getCalendarKeys = (calendarID) => ({
-    url: `calendar/${calendarID}/keys`,
+    url: `calendars/${calendarID}/keys`,
     method: 'get'
 });
 
 export const getAllCalendarKeys = (calendarID) => ({
-    url: `calendar/${calendarID}/keys/all`,
+    url: `calendars/${calendarID}/keys/all`,
     method: 'get'
 });
 
 export const getPassphrases = (calendarID) => ({
-    url: `calendar/${calendarID}/passphrases`,
+    url: `calendars/${calendarID}/passphrases`,
     method: 'get'
 });
 
 export const getPassphrase = (calendarID) => ({
-    url: `calendar/${calendarID}/passphrase`,
+    url: `calendars/${calendarID}/passphrase`,
     method: 'get'
 });
 
 export const reactivateCalendarKey = (calendarID, keyID, data) => ({
-    url: `calendar/${calendarID}/keys/${keyID}`,
+    url: `calendars/${calendarID}/keys/${keyID}`,
     method: 'put',
     data
 });
 
 export const pinPassphrase = (calendarID, eaid, data) => ({
-    url: `calendar/${calendarID}/passphrase/members/${eaid}`,
+    url: `calendars/${calendarID}/passphrase/members/${eaid}`,
     method: 'put',
     data
 });
 
 export const updateCalendar = (calendarID, data) => ({
-    url: `calendar/${calendarID}`,
+    url: `calendars/${calendarID}`,
     method: 'put',
     data
 });
 
 export const removeCalendar = (calendarID) => ({
-    url: `calendar/${calendarID}`,
+    url: `calendars/${calendarID}`,
     method: 'delete'
 });
 
+export const queryMembers = (calendarID, params) => ({
+    url: `calendars/${calendarID}/members`,
+    method: 'get',
+    params
+});
+
 export const addMember = (calendarID, data) => ({
-    url: `calendar/${calendarID}`,
+    url: `calendars/${calendarID}`,
     method: 'post',
     data
 });
 
 export const updateMember = (calendarID, memberID, data) => ({
-    url: `calendar/${calendarID}/members/${memberID}`,
+    url: `calendars/${calendarID}/members/${memberID}`,
     method: 'put',
     data
 });
 
 export const removeMember = (calendarID, memberID) => ({
-    url: `calendar/${calendarID}/members/${memberID}`,
+    url: `calendars/${calendarID}/members/${memberID}`,
     method: 'delete'
 });
 
 export const createEvent = (calendarID, data) => ({
-    url: `calendar/${calendarID}/events`,
+    url: `calendars/${calendarID}/events`,
     method: 'post',
     data
 });
 
 export const queryEvents = (calendarID, params) => ({
-    url: `calendar/${calendarID}/events`,
+    url: `calendars/${calendarID}/events`,
     method: 'get',
     params
 });
 
 export const getEvent = (calendarID, eventID) => ({
-    url: `calendar/${calendarID}/events/${eventID}`,
+    url: `calendars/${calendarID}/events/${eventID}`,
     method: 'get'
 });
 
 export const getEventHistory = (calendarID, eventID, params) => ({
-    url: `calendar/${calendarID}/events/${eventID}/history`,
+    url: `calendars/${calendarID}/events/${eventID}/history`,
     method: 'get',
     params
 });
 
 export const updateEvent = (calendarID, eventID, data) => ({
-    url: `calendar/${calendarID}/events/${eventID}`,
+    url: `calendars/${calendarID}/events/${eventID}`,
     method: 'put',
     data
 });
 
 export const getAttendees = (calendarID, eventID) => ({
-    url: `calendar/${calendarID}/events/${eventID}/attendees`,
+    url: `calendars/${calendarID}/events/${eventID}/attendees`,
     method: 'get'
 });
 
 export const addAttendee = (calendarID, eventID, data) => ({
-    url: `calendar/${calendarID}/events/${eventID}/attendees`,
+    url: `calendars/${calendarID}/events/${eventID}/attendees`,
     method: 'post',
     data
 });
 
 export const removeAttendee = (calendarID, eventID, attendeeID) => ({
-    url: `calendar/${calendarID}/events/${eventID}/attendees/${attendeeID}`,
+    url: `calendars/${calendarID}/events/${eventID}/attendees/${attendeeID}`,
     method: 'delete'
 });
 
 export const updateAttendee = (calendarID, eventID, attendeeID, data) => ({
-    url: `calendar/${calendarID}/events/${eventID}/attendees/${attendeeID}`,
+    url: `calendars/${calendarID}/events/${eventID}/attendees/${attendeeID}`,
     method: 'put',
     data
 });
@@ -144,23 +150,23 @@ export const updateInvite = (uid, params) => ({
 });
 
 export const getCalendarSettings = (calendarID) => ({
-    url: `calendar/${calendarID}/settings`,
+    url: `calendars/${calendarID}/settings`,
     method: 'get'
 });
 
 export const updateCalendarSettings = (calendarID, data) => ({
-    url: `calendar/${calendarID}/settings`,
+    url: `calendars/${calendarID}/settings`,
     method: 'put',
     data
 });
 
 export const getUserSettings = () => ({
-    url: 'calendar/settings',
+    url: 'calendars/settings',
     method: 'get'
 });
 
 export const updateUserSettings = (data) => ({
-    url: 'calendar/settings',
+    url: 'calendars/settings',
     method: 'put',
     data
 });
