@@ -75,6 +75,11 @@ export const queryMembers = (calendarID, params) => ({
     params
 });
 
+export const getAllMembers = (calendarID) => ({
+    url: `calendars/${calendarID}/members/all`,
+    method: 'get'
+});
+
 export const addMember = (calendarID, data) => ({
     url: `calendars/${calendarID}`,
     method: 'post',
