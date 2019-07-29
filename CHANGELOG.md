@@ -1,3 +1,8 @@
+# [3.16.3] - 2019-07-29
+## Changed
+- Sending limits handling
+- Removed drag and drop in contacts list
+
 # [3.16.2] - 2019-07-08
 ## Fixed
 - Cannot import `.csv` files to contact list.
