@@ -281,6 +281,7 @@ export { default as useCachedModelResult } from './hooks/useCachedModelResult';
 export { default as usePromiseResult } from './hooks/usePromiseResult';
 export { default as useAddresses } from './hooks/useAddresses';
 export { default as useDomains } from './hooks/useDomains';
+export { default as useCalendars } from './hooks/useCalendars';
 export { default as useContacts } from './hooks/useContacts';
 export { default as useContactGroups } from './hooks/useContactGroups';
 export { default as useContactEmails } from './hooks/useContactEmails';
