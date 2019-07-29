@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2019-05-10 10:17\n"
+"PO-Revision-Date: 2019-07-19 09:26\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -67,7 +67,7 @@ msgstr "<p>あなたの接続から大量のProtonMailアカウント作成が�
 "                  <p>したがって、あなたが人間であり、スパムロボットではないことを確認する追加の検証が必要です。</p>\n"
 "                  <p>Torや無料のVPNはしばしばスパマーによって悪用されるため、TorやVPNの出口ノードを利用している場合、このチェックが求められる場合があります。</p>"
 
-#: ./src/app/message/factories/messageActions.js:175
+#: ./src/app/message/factories/messageActions.js:178
 msgctxt "Action"
 msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
@@ -144,7 +144,7 @@ msgctxt "Action"
 msgid "Add address"
 msgstr "アドレスを追加"
 
-#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:21
+#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:23
 msgctxt "Action"
 msgid "Add all"
 msgstr "全て追加"
@@ -154,7 +154,7 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr "自動返信を追加"
 
-#: ./src/templates/filter/modal.tpl.html:119
+#: ./src/templates/filter/modal.tpl.html:126
 msgctxt "Action"
 msgid "Add condition"
 msgstr "条件の追加"
@@ -192,18 +192,18 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr "フィルターを追加"
 
-#: ./src/templates/filter/modal.tpl.html:195
+#: ./src/templates/filter/modal.tpl.html:202
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
 msgstr "フォルダーを追加"
 
-#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:46
+#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:53
 msgctxt "Action"
 msgid "Add key"
 msgstr "鍵を追加"
 
-#: ./src/templates/filter/modal.tpl.html:141
+#: ./src/templates/filter/modal.tpl.html:148
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -373,6 +373,7 @@ msgstr "CCとBCC"
 #: ./src/templates/composer/composerEncrypt.tpl.html:66
 #: ./src/templates/composer/composerExpiration.tpl.html:52
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:41
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:51
 #: ./src/templates/contact/contactActionHeader.tpl.html:23
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:28
 #: ./src/templates/contact/contactGroupModal.tpl.html:108
@@ -385,7 +386,7 @@ msgstr "CCとBCC"
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
-#: ./src/templates/filter/modal.tpl.html:241
+#: ./src/templates/filter/modal.tpl.html:248
 #: ./src/templates/modals/activateOrganization.tpl.html:25
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -403,7 +404,7 @@ msgstr "CCとBCC"
 #: ./src/templates/modals/generateOrganization.tpl.html:49
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
-#: ./src/templates/modals/member.tpl.html:123
+#: ./src/templates/modals/member.tpl.html:121
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
@@ -418,7 +419,7 @@ msgstr "CCとBCC"
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:19
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
 #: ./src/templates/user/signupPayForm.tpl.html:100
-#: ./src/templates/utils/linkWarningModal.tpl.html:23
+#: ./src/templates/utils/linkWarningModal.tpl.html:39
 #: ./src/templates/views/outside.reply.tpl.html:31
 #: ./src/templates/views/reset-login-password.tpl.html:132
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
@@ -530,7 +531,9 @@ msgstr "ここをクリックして、もう一度やり直してください。
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:7
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:3
 #: ./src/templates/blackFriday/blackFridayModal.tpl.html:3
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:3
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:3
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:3
 #: ./src/templates/contact/contactDisplayModal.tpl.html:13
 #: ./src/templates/contact/contactDisplayModal.tpl.html:17
 #: ./src/templates/contact/contactDisplayModal.tpl.html:3
@@ -600,7 +603,7 @@ msgstr "ここをクリックして、もう一度やり直してください。
 #: ./src/templates/modals/payment/modal.tpl.html:63
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
-#: ./src/templates/modals/releaseNotes.tpl.html:23
+#: ./src/templates/modals/releaseNotes.tpl.html:28
 #: ./src/templates/modals/releaseNotes.tpl.html:3
 #: ./src/templates/modals/setupOrganization.tpl.html:3
 #: ./src/templates/modals/squire/addFile.tpl.html:9
@@ -668,7 +671,7 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr "連絡先"
 
-#: ./src/templates/utils/linkWarningModal.tpl.html:29
+#: ./src/templates/utils/linkWarningModal.tpl.html:45
 msgctxt "Action"
 msgid "Continue"
 msgstr "続行"
@@ -740,11 +743,12 @@ msgstr "復号化"
 #: ./src/app/address/directives/addressBtnActions.js:8
 #: ./src/app/labels/directives/actionLabelBtn.js:17
 #: ./src/app/members/directives/memberEditBtn.js:6
-#: ./src/templates/address/addressKeysView.tpl.html:205
+#: ./src/templates/address/addressKeysView.tpl.html:193
 #: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:34
 #: ./src/templates/elements/moveElement.tpl.html:40
+#: ./src/templates/filter/customFilterList.tpl.html:41
 #: ./src/templates/message/message.tpl.html:223
 #: ./src/templates/modals/deleteAccount.tpl.html:53
 #: ./src/templates/ui/toolbarMobile.tpl.html:52
@@ -849,12 +853,18 @@ msgstr "ダウンロード"
 #: ./src/templates/contact/contactActionHeader.tpl.html:15
 #: ./src/templates/contact/contactPhotoRow.tpl.html:20
 #: ./src/templates/dashboard/addonRow.tpl.html:8
+#: ./src/templates/filter/customFilterList.tpl.html:30
 #: ./src/templates/views/labels.tpl.html:58
 #: ./src/templates/vpn/openVpnSection.tpl.html:29
 #: ./src/templates/vpn/openVpnSection.tpl.html:54
 msgctxt "Action"
 msgid "Edit"
 msgstr "編集"
+
+#: ./src/templates/filter/customFilterList.tpl.html:36
+msgctxt "Action"
+msgid "Edit sieve"
+msgstr "振り分けの編集"
 
 #: ./src/app/address/directives/addressBtnActions.js:5
 msgctxt "Action"
@@ -902,7 +912,7 @@ msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
 msgstr "2 要素認証を有効にする"
 
-#: ./src/templates/address/addressKeysView.tpl.html:100
+#: ./src/templates/address/addressKeysView.tpl.html:98
 msgctxt "Action"
 msgid "Enable encryption"
 msgstr "暗号化を有効にする"
@@ -912,7 +922,7 @@ msgctxt "Action"
 msgid "Enable multi-user support"
 msgstr "複数ユーザーサポートを有効にする"
 
-#: ./src/templates/address/addressKeysView.tpl.html:123
+#: ./src/templates/address/addressKeysView.tpl.html:119
 msgctxt "Action"
 msgid "Enable signature verification"
 msgstr "署名の検証を有効にする"
@@ -970,8 +980,8 @@ msgid "Expiration time"
 msgstr "有効期限"
 
 #: ./src/app/address/services/deleteKeyProcess.js:34
-#: ./src/templates/address/addressKeysView.tpl.html:146
-#: ./src/templates/address/addressKeysView.tpl.html:160
+#: ./src/templates/address/addressKeysView.tpl.html:142
+#: ./src/templates/address/addressKeysView.tpl.html:154
 #: ./src/templates/message/message.tpl.html:242
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
@@ -1127,17 +1137,17 @@ msgctxt "Action"
 msgid "Load"
 msgstr "読み込む"
 
-#: ./src/templates/views/appearance.tpl.html:162
+#: ./src/templates/views/appearance.tpl.html:174
 msgctxt "Action"
 msgid "Load classic theme"
 msgstr "クラッシックテーマを読み込む"
 
-#: ./src/templates/views/appearance.tpl.html:163
+#: ./src/templates/views/appearance.tpl.html:175
 msgctxt "Action"
 msgid "Load edison theme"
 msgstr "エジソンテーマを読み込む"
 
-#: ./src/templates/contact/contactViewItem.tpl.html:56
+#: ./src/templates/contact/contactViewItem.tpl.html:57
 msgctxt "Action"
 msgid "Load image"
 msgstr "画像を読み込む"
@@ -1165,7 +1175,7 @@ msgctxt "Action"
 msgid "Make Admin"
 msgstr "管理者に設定"
 
-#: ./src/templates/address/addressKeysView.tpl.html:170
+#: ./src/templates/address/addressKeysView.tpl.html:162
 msgctxt "Action"
 msgid "Make Primary"
 msgstr "プライマリーにする"
@@ -1233,19 +1243,19 @@ msgctxt "Action"
 msgid "Mark as unread - Mark as read"
 msgstr "未読に戻す - 既読にする"
 
-#: ./src/templates/address/addressKeysView.tpl.html:192
+#: ./src/templates/address/addressKeysView.tpl.html:182
 msgctxt "Action"
 msgid "Mark compromised"
 msgstr "侵害された印をつける"
 
-#: ./src/templates/address/addressKeysView.tpl.html:179
+#: ./src/templates/address/addressKeysView.tpl.html:171
 msgctxt "Action"
 msgid "Mark obsolete"
 msgstr "廃止された印をつける"
 
 #. contacts toolbar menu option
 #: ./src/templates/contact/contactDisplayModal.tpl.html:14
-#: ./src/templates/contact/contactMergerModal.tpl.html:29
+#: ./src/templates/contact/contactMergerModal.tpl.html:27
 #: ./src/templates/contact/contactToolbar.tpl.html:35
 msgctxt "Action"
 msgid "Merge"
@@ -1357,6 +1367,7 @@ msgid "Not spam"
 msgstr "迷惑メールではない"
 
 #: ./src/app/composer/factories/composerFromModel.js:17
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:32
 #: ./src/templates/modals/abuseFraudModal.tpl.html:16
 #: ./src/templates/modals/alert.tpl.html:13
 msgctxt "Action"
@@ -1455,7 +1466,7 @@ msgctxt "Action"
 msgid "RE-SIGN"
 msgstr "再署名"
 
-#: ./src/templates/address/addressKeysView.tpl.html:138
+#: ./src/templates/address/addressKeysView.tpl.html:134
 msgctxt "Action"
 msgid "Reactivate"
 msgstr "再有効化"
@@ -1552,7 +1563,7 @@ msgctxt "Action"
 msgid "Reset password"
 msgstr "パスワードをリセット"
 
-#: ./src/templates/views/appearance.tpl.html:143
+#: ./src/templates/views/appearance.tpl.html:155
 msgctxt "Action"
 msgid "Reset theme"
 msgstr "テーマをリセット"
@@ -1582,9 +1593,15 @@ msgctxt "Action"
 msgid "Revoke all other sessions"
 msgstr "他の全てのセッションを取り消す"
 
+#: ./src/app/members/directives/memberEditBtn.js:13
+msgctxt "Action"
+msgid "Revoke sessions"
+msgstr "セッションを取り消す"
+
 #. Save button for updating default identity on account page
 #. contact details
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:48
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:59
 #: ./src/templates/contact/contactActionHeader.tpl.html:31
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:39
 #: ./src/templates/contact/contactGroupModal.tpl.html:115
@@ -1596,16 +1613,16 @@ msgstr "他の全てのセッションを取り消す"
 #: ./src/templates/directives/composer/composer.tpl.html:119
 #: ./src/templates/directives/composer/composer.tpl.html:126
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:247
+#: ./src/templates/filter/modal.tpl.html:254
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
 #: ./src/templates/modals/label.tpl.html:75
-#: ./src/templates/modals/member.tpl.html:124
+#: ./src/templates/modals/member.tpl.html:122
 #: ./src/templates/organization/organizationFormName.tpl.html:25
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:45
-#: ./src/templates/views/appearance.tpl.html:144
+#: ./src/templates/views/appearance.tpl.html:156
 msgctxt "Action"
 msgid "Save"
 msgstr "保存"
@@ -1691,6 +1708,11 @@ msgstr "設定"
 msgctxt "Action"
 msgid "Setup Account"
 msgstr "アカウントのセットアップ"
+
+#: ./src/templates/views/domains.tpl.html:143
+msgctxt "Action"
+msgid "Setup Wizard"
+msgstr "ウィザードのセットアップ"
 
 #: ./src/app/composer/directives/composerAttachments.js:9
 #: ./src/templates/vpn/openVpnSection.tpl.html:49
@@ -1897,7 +1919,7 @@ msgid "Upgrade storage"
 msgstr "ストレージ容量を増やす"
 
 #. link to dashboard page
-#: ./src/templates/views/domains.tpl.html:167
+#: ./src/templates/views/domains.tpl.html:178
 #: ./src/templates/views/domains.tpl.html:29
 #: ./src/templates/views/members.tpl.html:124
 msgctxt "Action"
@@ -1980,6 +2002,11 @@ msgctxt "Action"
 msgid "complete setup"
 msgstr "セットアップを完了"
 
+#: ./src/templates/filter/modal.tpl.html:113
+msgctxt "Action"
+msgid "title"
+msgstr "タイトル"
+
 #: ./src/templates/modals/donate.tpl.html:59
 msgctxt "Action"
 msgid "top Up"
@@ -2035,12 +2062,12 @@ msgctxt "Action notification error trying to connect to the API"
 msgid "Retry now"
 msgstr "再試行する"
 
-#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:18
+#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:16
 msgctxt "Action to not set PGP encryption on import contact"
 msgid "No"
 msgstr "いいえ"
 
-#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:19
+#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:17
 msgctxt "Action to not set PGP encryption on import contact"
 msgid "Yes"
 msgstr "はい"
@@ -2086,7 +2113,7 @@ msgid "Set"
 msgstr "設定"
 
 #. address state badge
-#: ./src/templates/views/members.tpl.html:265
+#: ./src/templates/views/members.tpl.html:270
 msgctxt "Address state badge"
 msgid "Default"
 msgstr "既定"
@@ -2094,8 +2121,8 @@ msgstr "既定"
 #. address state badge
 #. form option
 #: ./src/templates/views/account.tpl.html:218
-#: ./src/templates/views/domains.tpl.html:215
-#: ./src/templates/views/members.tpl.html:262
+#: ./src/templates/views/domains.tpl.html:226
+#: ./src/templates/views/members.tpl.html:267
 msgctxt "Address state badge"
 msgid "Disabled"
 msgstr "無効"
@@ -2103,61 +2130,61 @@ msgstr "無効"
 #. address state badge
 #. form option
 #: ./src/templates/views/account.tpl.html:209
-#: ./src/templates/views/domains.tpl.html:214
-#: ./src/templates/views/members.tpl.html:261
+#: ./src/templates/views/domains.tpl.html:225
+#: ./src/templates/views/members.tpl.html:266
 msgctxt "Address state badge"
 msgid "Enabled"
 msgstr "有効"
 
 #. address state badge
-#: ./src/templates/views/domains.tpl.html:216
-#: ./src/templates/views/members.tpl.html:263
+#: ./src/templates/views/domains.tpl.html:227
+#: ./src/templates/views/members.tpl.html:268
 msgctxt "Address state badge"
 msgid "Missing keys"
 msgstr "鍵なし"
 
 #. address s tate badge
-#: ./src/templates/views/members.tpl.html:264
+#: ./src/templates/views/members.tpl.html:269
 msgctxt "Address state badge"
 msgid "Orphan"
 msgstr "元ドメインなし"
 
-#: ./src/app/conversation/factories/actionConversation.js:43
-#: ./src/app/message/factories/messageActions.js:49
+#: ./src/app/conversation/factories/actionConversation.js:44
+#: ./src/app/message/factories/messageActions.js:50
 msgctxt "App folder"
 msgid "Archive"
 msgstr "アーカイブ"
 
-#: ./src/app/conversation/factories/actionConversation.js:38
 #: ./src/app/conversation/factories/actionConversation.js:39
-#: ./src/app/message/factories/messageActions.js:44
+#: ./src/app/conversation/factories/actionConversation.js:40
 #: ./src/app/message/factories/messageActions.js:45
+#: ./src/app/message/factories/messageActions.js:46
 msgctxt "App folder"
 msgid "Drafts"
 msgstr "下書き"
 
-#: ./src/app/conversation/factories/actionConversation.js:36
-#: ./src/app/message/factories/messageActions.js:42
+#: ./src/app/conversation/factories/actionConversation.js:37
+#: ./src/app/message/factories/messageActions.js:43
 msgctxt "App folder"
 msgid "Inbox"
 msgstr "受信箱"
 
-#: ./src/app/conversation/factories/actionConversation.js:40
 #: ./src/app/conversation/factories/actionConversation.js:41
-#: ./src/app/message/factories/messageActions.js:46
+#: ./src/app/conversation/factories/actionConversation.js:42
 #: ./src/app/message/factories/messageActions.js:47
+#: ./src/app/message/factories/messageActions.js:48
 msgctxt "App folder"
 msgid "Sent"
 msgstr "送信済み"
 
-#: ./src/app/conversation/factories/actionConversation.js:37
-#: ./src/app/message/factories/messageActions.js:43
+#: ./src/app/conversation/factories/actionConversation.js:38
+#: ./src/app/message/factories/messageActions.js:44
 msgctxt "App folder"
 msgid "Spam"
 msgstr "迷惑メール"
 
-#: ./src/app/conversation/factories/actionConversation.js:42
-#: ./src/app/message/factories/messageActions.js:48
+#: ./src/app/conversation/factories/actionConversation.js:43
+#: ./src/app/message/factories/messageActions.js:49
 msgctxt "App folder"
 msgid "Trash"
 msgstr "ごみ箱"
@@ -2187,17 +2214,17 @@ msgctxt "Attachment modifier tooltip"
 msgid "Unencrypted PGP/Inline attachment"
 msgstr "暗号化されていないPGP/Inline添付ファイル"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:57
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:49
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active each month between the selected start and end time."
 msgstr "自動返信は、毎月設定された日時の間有効です。"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:51
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:45
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active each week between the selected start and end time."
 msgstr "自動返信は、選択された曜日の開始時刻と終了時刻の間有効です。"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:39
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:37
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active from the start time to the end time."
 msgstr "自動返信は開始時刻と終了時刻の間有効です。"
@@ -2207,7 +2234,7 @@ msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active until you turn it off."
 msgstr "自動返信は、オフにするまで有効です。"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:45
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:41
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is always active on the days of the week you select, between the selected hours."
 msgstr "自動返信は、選択された曜日の開始時刻と終了時刻の間有効です。"
@@ -2271,7 +2298,7 @@ msgctxt "Bitcoin validation error"
 msgid "Amount below minimum. ({{ ::validator.amountMin / 100 }} {{::currency}})"
 msgstr "最少金額 ({{ ::validator.amountMin / 100 }} {{::currency}}) 以下です。"
 
-#: ./src/templates/views/appearance.tpl.html:176
+#: ./src/templates/views/appearance.tpl.html:188
 msgctxt "Bubbule info in appearance sent and drafts folders"
 msgid "Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder."
 msgstr "\"移動済みを含める\"とは、他のフォルダーに移動された送信済みや下書きのメッセージを、送信済みや下書きフォルダーにも引き続き表示する事を意味します。"
@@ -2461,7 +2488,7 @@ msgctxt "Composer, add File"
 msgid "Delete"
 msgstr "削除"
 
-#: ./src/templates/squire/addFile.tpl.html:48
+#: ./src/templates/squire/addFile.tpl.html:46
 msgctxt "Composer, add File"
 msgid "Error loading image"
 msgstr "画像の読み込みに失敗しました"
@@ -2469,7 +2496,7 @@ msgstr "画像の読み込みに失敗しました"
 #: ./src/templates/squire/addFile.tpl.html:38
 msgctxt "Composer, add File"
 msgid "If your URL is correct, you'll see an image preview here. Large images may take a few minutes to appear."
-msgstr ""
+msgstr "URLが正しい場合、ここに画像が表示されます。大きい画像の場合、数分を要する場合があります。"
 
 #: ./src/templates/squire/addFile.tpl.html:9
 msgctxt "Composer, add File"
@@ -2491,7 +2518,7 @@ msgctxt "Composer, add File"
 msgid "Insert image"
 msgstr "画像の挿入"
 
-#: ./src/templates/squire/addFile.tpl.html:45
+#: ./src/templates/squire/addFile.tpl.html:43
 msgctxt "Composer, add File"
 msgid "Loading image"
 msgstr "画像の読み込み中"
@@ -2527,7 +2554,7 @@ msgctxt "Composer, add Link"
 msgid "Edit link"
 msgstr "リンクを編集"
 
-#: ./src/templates/squire/addLink.tpl.html:50
+#: ./src/templates/squire/addLink.tpl.html:48
 msgctxt "Composer, add Link"
 msgid "Email address"
 msgstr "メールアドレス"
@@ -2535,7 +2562,8 @@ msgstr "メールアドレス"
 #: ./src/templates/squire/addLink.tpl.html:2
 msgctxt "Composer, add Link"
 msgid "In the first box, put the link/email/phone number the text should go to. In the second box, put the text you want to appear."
-msgstr ""
+msgstr "上段のテキストボックスにはリンク、メールアドレス、電話番号のいずれかを、\n"
+"下段のテキストボックスには、表示したいテキストを入力してください。"
 
 #: ./src/app/squire/modals/addLinkModal.js:6
 msgctxt "Composer, add Link"
@@ -2547,22 +2575,22 @@ msgctxt "Composer, add Link"
 msgid "Insert link"
 msgstr "リンクの挿入"
 
-#: ./src/templates/squire/addLink.tpl.html:15
+#: ./src/templates/squire/addLink.tpl.html:13
 msgctxt "Composer, add Link"
 msgid "Link URL"
 msgstr "リンクのURL"
 
-#: ./src/templates/squire/addLink.tpl.html:62
+#: ./src/templates/squire/addLink.tpl.html:60
 msgctxt "Composer, add Link"
 msgid "Link label"
 msgstr "表示するテキスト"
 
-#: ./src/templates/squire/addLink.tpl.html:56
+#: ./src/templates/squire/addLink.tpl.html:54
 msgctxt "Composer, add Link"
 msgid "Phone number"
 msgstr "電話番号"
 
-#: ./src/templates/squire/addLink.tpl.html:35
+#: ./src/templates/squire/addLink.tpl.html:33
 msgctxt "Composer, add Link"
 msgid "Text to display"
 msgstr "表示用のテキスト"
@@ -2582,7 +2610,7 @@ msgctxt "Composer, add Link"
 msgid "To what phone number should this link?"
 msgstr "これは誰の電話番号ですか？"
 
-#: ./src/templates/squire/addLink.tpl.html:7
+#: ./src/templates/squire/addLink.tpl.html:5
 msgctxt "Composer, add Link"
 msgid "URL link"
 msgstr "リンクのURL"
@@ -2592,7 +2620,7 @@ msgctxt "Composer, add Link"
 msgid "Update"
 msgstr "更新"
 
-#: ./src/templates/squire/addLink.tpl.html:44
+#: ./src/templates/squire/addLink.tpl.html:42
 msgctxt "Composer, add Link"
 msgid "Web address"
 msgstr "Webアドレス"
@@ -2866,9 +2894,9 @@ msgstr "拡張"
 #: ./src/templates/directives/contact/contactPgp.tpl.html:28
 msgctxt "Danger"
 msgid "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending."
-msgstr ""
+msgstr "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:35
+#: ./src/templates/directives/contact/contactPgp.tpl.html:33
 msgctxt "Danger"
 msgid "This address is disabled. To be able to send to this address, the owner must first enable the address."
 msgstr "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
@@ -3052,7 +3080,7 @@ msgctxt "Dashboard plan type"
 msgid "FREE"
 msgstr "無料"
 
-#: ./src/templates/views/appearance.tpl.html:132
+#: ./src/templates/views/appearance.tpl.html:144
 msgctxt "Dashboard, custom theme input"
 msgid "Paste your CSS code here (limited to 200,000 characters)"
 msgstr "ここにあなたのCSSコードを貼り付けてください(上限200,000 文字) "
@@ -3317,7 +3345,7 @@ msgctxt "Domains"
 msgid "Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade to ProtonMail Plus</a>."
 msgstr "ProtonMailであなたのドメインおよびメールアドレスを使用できます（例：yourname@yourdomain.com）。この機能を有効にするには<a ui-sref=\"secured.dashboard({scroll: true})\">ProtonMail PLUSプランにアップグレード</a>してください。"
 
-#: ./src/templates/views/domains.tpl.html:187
+#: ./src/templates/views/domains.tpl.html:198
 msgctxt "Domains information"
 msgid "Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted."
 msgstr "アドレスを削除する前に、アドレスを無効にする必要があります。アドレスを削除するには、そのアドレスに関連付けられた全てのメッセージを削除してください。"
@@ -3367,7 +3395,7 @@ msgctxt "Duration/repetition of autoresponder"
 msgid "Repeat weekly"
 msgstr "週次での繰り返し"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:106
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:104
 msgctxt "Empty table message"
 msgid "All available keys are trusted"
 msgstr "利用可能な鍵は全て信頼済みです"
@@ -3501,7 +3529,7 @@ msgid "Error connecting to PayPal."
 msgstr "PayPalへの接続でエラーが発生しました。"
 
 #: ./src/app/message/factories/messageModel.js:39
-#: ./src/app/outside/controllers/outside.js:33
+#: ./src/app/outside/controllers/outside.js:34
 msgctxt "Error"
 msgid "Error encrypting message"
 msgstr "メッセージの暗号化でエラーが発生しました。"
@@ -3519,7 +3547,7 @@ msgstr "組織用の鍵の復元にエラーが発生しました。"
 #: ./src/app/message/directives/messagePublicKeyFound.js:20
 msgctxt "Error"
 msgid "Error while adding the public key to the contacts"
-msgstr "連絡先への公開鍵の追加でエラー"
+msgstr "連絡先への公開鍵の追加でエラーが発生しました。"
 
 #: ./src/app/commons/services/ptClipboard.js:7
 msgctxt "Error"
@@ -3557,8 +3585,8 @@ msgstr "鍵の再有効化に失敗しました。"
 #: ./src/templates/organization/organizationFormName.tpl.html:20
 #: ./src/templates/payment/giftCodeInput.tpl.html:14
 #: ./src/templates/squire/addFile.tpl.html:22
-#: ./src/templates/squire/addLink.tpl.html:28
-#: ./src/templates/squire/addLink.tpl.html:75
+#: ./src/templates/squire/addLink.tpl.html:26
+#: ./src/templates/squire/addLink.tpl.html:73
 msgctxt "Error"
 msgid "Field required"
 msgstr "必須項目"
@@ -3653,7 +3681,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "無効なギフトコードです。"
 
-#: ./src/app/routes.js:109
+#: ./src/app/routes.js:115
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "無効な招待用のリンクです。"
@@ -3692,7 +3720,7 @@ msgstr "無効なストレージ容量の割り当てです。"
 #: ./src/app/user/directives/signupUserForm.js:10
 msgctxt "Error"
 msgid "Invalid username"
-msgstr ""
+msgstr "無効なユーザー名です"
 
 #: ./src/templates/modals/customizeInvoice.tpl.html:40
 msgctxt "Error"
@@ -3702,7 +3730,7 @@ msgstr "請求書本文の行数が多すぎます (上限： 5行)"
 #: ./src/app/core/directives/signupIframe.js:35
 msgctxt "Error"
 msgid "It must contain only letters/digits or - and start with a letter/digit"
-msgstr ""
+msgstr "文字または数字で始まり、文字または数字のみでなければなりません。"
 
 #: ./src/app/composer/directives/composerEncrypt.js:13
 msgctxt "Error"
@@ -3730,6 +3758,16 @@ msgstr "インターネットに接続されていません。"
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr "メールアドレスに有効な暗号鍵が設定さていないため、メッセージが作成できません。"
+
+#: ./src/app/contact/services/moveContactGroupHandler.js:25
+msgctxt "Error"
+msgid "No contact group selected"
+msgstr "連絡先のグループが選択されていません"
+
+#: ./src/app/contact/services/moveContactGroupHandler.js:24
+msgctxt "Error"
+msgid "No contact selected"
+msgstr "連絡先が選択されていません"
 
 #: ./src/templates/contact/autocompleteContacts.tpl.html:19
 msgctxt "Error"
@@ -3801,7 +3839,7 @@ msgstr "少なくとも1 つの宛先を入力してください。"
 #: ./src/app/authentication/directives/loginUnlockForm.js:4
 msgctxt "Error"
 msgid "Please enter your mailbox password"
-msgstr ""
+msgstr "パスワードを入力してください"
 
 #: ./src/app/authentication/directives/loginTwoFactorForm.js:4
 msgctxt "Error"
@@ -3886,7 +3924,7 @@ msgstr "このコードは長すぎます。最大で８文字です。"
 #: ./src/templates/authentication/loginPasswordInput.tpl.html:26
 msgctxt "Error"
 msgid "The code must contain at least 6 characters"
-msgstr ""
+msgstr "コードには少なくとも６文字が必要です。"
 
 #: ./src/app/contact/services/manageContactGroup.js:41
 msgctxt "Error"
@@ -3933,6 +3971,11 @@ msgstr "合計{{total}} の受信者が設定されています。最大{{limit}
 msgctxt "Error"
 msgid "The request failed"
 msgstr "処理に失敗しました。"
+
+#: ./src/app/utils/directives/linkHandler.js:39
+msgctxt "Error"
+msgid "This message may some URL links that cannot be properly opened by your current browser"
+msgstr "このメッセージは、現在お使いのブラウザでは適切に開くことができないURLを含んでいる可能性があります。"
 
 #: ./src/app/commons/models/eo.js:10
 msgctxt "Error"
@@ -4082,7 +4125,7 @@ msgstr "お使いのブラウザーには、暗号化された添付ファイル
 #: ./src/app/core/directives/signupIframe.js:30
 msgctxt "Error"
 msgid "maximum length for a username is {{maxlength}} characters"
-msgstr ""
+msgstr "ユーザ名の長さの上限は{{maxlength}} 文字です。"
 
 #: ./src/app/address/factories/reactivateKeys.js:29
 msgctxt "Error"
@@ -4109,12 +4152,12 @@ msgctxt "Error during importation"
 msgid "Import failed. Please check the import file or try again."
 msgstr "インポートに失敗しました。インポートするファイルを確認し、もう一度やり直してください。"
 
-#: ./src/templates/ui/dateTimePicker.tpl.html:26
+#: ./src/templates/ui/dateTimePicker.tpl.html:22
 msgctxt "Error input"
 msgid "Please enter a valid date and time."
 msgstr "正しい日時を入力してください。"
 
-#: ./src/templates/ui/dateTimePicker.tpl.html:23
+#: ./src/templates/ui/dateTimePicker.tpl.html:21
 msgctxt "Error input"
 msgid "Please enter a valid date."
 msgstr "正しい日付を入力してください。"
@@ -4129,12 +4172,12 @@ msgctxt "Error input"
 msgid "Please enter a valid day in the month."
 msgstr "正しい曜日を入力してください。"
 
-#: ./src/templates/ui/weekdayTimePicker.tpl.html:34
+#: ./src/templates/ui/weekdayTimePicker.tpl.html:30
 msgctxt "Error input"
 msgid "Please enter a valid day in the week and time."
 msgstr "正しい曜日と時刻を入力してください。"
 
-#: ./src/templates/ui/weekdayTimePicker.tpl.html:31
+#: ./src/templates/ui/weekdayTimePicker.tpl.html:29
 msgctxt "Error input"
 msgid "Please enter a valid day in the week."
 msgstr "正しい曜日を入力してください。"
@@ -4248,22 +4291,22 @@ msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr "テキストまたはパターン"
 
-#: ./src/templates/filter/modal.tpl.html:128
+#: ./src/templates/filter/modal.tpl.html:135
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr "ラベルの適用"
 
-#: ./src/templates/filter/modal.tpl.html:203
+#: ./src/templates/filter/modal.tpl.html:210
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr "印をつける"
 
-#: ./src/templates/filter/modal.tpl.html:149
+#: ./src/templates/filter/modal.tpl.html:156
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr "フォルダーに移動する"
 
-#: ./src/templates/filter/modal.tpl.html:228
+#: ./src/templates/filter/modal.tpl.html:235
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr "自動返信を送信"
@@ -4373,7 +4416,7 @@ msgctxt "Header"
 msgid "Type"
 msgstr "種類"
 
-#: ./src/templates/views/members.tpl.html:303
+#: ./src/templates/views/members.tpl.html:308
 msgctxt "Help"
 msgid "To edit the signature(s) and reorder your addresses, <a ui-sref=\"secured.account\">go to account</a>"
 msgstr "署名の編集やアドレスの並び替えをするには、<a ui-sref=\"secured.account\">アカウント</a>を開いてください。"
@@ -4529,7 +4572,7 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "* 最初に回復用のメールアドレスの追加をお勧めします。そうしなければ、何らかの障害時にアカウントの回復ができません。"
 
-#: ./src/app/conversation/factories/actionConversation.js:403
+#: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
 msgid_plural "{{number}} conversations moved to {{folder}}"
@@ -4851,7 +4894,7 @@ msgctxt "Info"
 msgid "Advanced settings saved"
 msgstr "拡張設定を保存しました。"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:64
+#: ./src/templates/directives/contact/contactPgp.tpl.html:56
 msgctxt "Info"
 msgid "All uploaded keys are expired or revoked! Encryption is automatically disabled."
 msgstr "全てのアップロードされた鍵は期限切れか取り消されています。暗号化は自動的に無効になります。"
@@ -4945,17 +4988,17 @@ msgctxt "Info"
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr "2 要素認証を無効にしてよろしいですか。"
 
-#: ./src/app/members/services/memberActions.js:72
+#: ./src/app/members/services/memberActions.js:78
 msgctxt "Info"
 msgid "Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted."
 msgstr "このユーザーを完全に削除してもよろしいですか？ 受信箱と、このユーザーに関連付けられている全てのアドレスが削除されます。"
 
-#: ./src/app/members/services/memberActions.js:64
+#: ./src/app/members/services/memberActions.js:70
 msgctxt "Info"
 msgid "Are you sure you want to permanently remove this user from your organization? The user will lose access to all the addresses of your organization."
 msgstr "組織からこのユーザーを永久に削除してよろしいですか？このユーザーは組織の全てのアドレスに対するアクセスが失われます。"
 
-#: ./src/app/members/services/memberActions.js:33
+#: ./src/app/members/services/memberActions.js:31
 msgctxt "Info"
 msgid "Are you sure you want to remove administrative privileges from this user?"
 msgstr "このユーザーから管理者特権を削除してもよろしいですか。"
@@ -5031,7 +5074,7 @@ msgctxt "Info"
 msgid "Bug reports are not end-to-end encrypted, please do not send any sensitive information."
 msgstr "バグ報告は暗号化されないため、個人情報は含めないでください。"
 
-#: ./src/app/settings/controllers/appearance.js:87
+#: ./src/app/settings/controllers/appearance.js:91
 msgctxt "Info"
 msgid "Buttons position saved"
 msgstr "ボタン位置が保存されました。"
@@ -5052,7 +5095,7 @@ msgid "By clicking Submit, you agree to abide by"
 msgstr "送信のクリックによって、次の規約への同意とみなされます。"
 
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:370
+#: ./src/app/routes.js:392
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "保存せずに閉じると記入内容は失われます。後からこのメールの編集を続けたい場合、下書きとして保存することができます。"
@@ -5101,7 +5144,7 @@ msgctxt "Info"
 msgid "Column"
 msgstr "列"
 
-#: ./src/app/settings/controllers/appearance.js:63
+#: ./src/app/settings/controllers/appearance.js:67
 msgctxt "Info"
 msgid "Compose mode saved"
 msgstr "メール作成モードが保存されました。"
@@ -5111,7 +5154,7 @@ msgctxt "Info"
 msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> for critical security issues."
 msgstr "深刻なセキュリティの問題については、<a href=\"mailto:security@protonmail.com\">security@protonmail.com</a>までご連絡ください。"
 
-#: ./src/templates/views/appearance.tpl.html:107
+#: ./src/templates/views/appearance.tpl.html:106
 msgctxt "Info"
 msgid "Conversation Grouping automatically groups messages in the same conversation together."
 msgstr "会話のグループ化は、同じ話題のメッセージを自動的にグループ化します。"
@@ -5154,9 +5197,9 @@ msgstr "仕分けフィルターが削除されました。"
 #: ./src/templates/filter/modal.tpl.html:23
 msgctxt "Info"
 msgid "Custom filters work on all new emails, including incoming emails as well as sent emails"
-msgstr ""
+msgstr "仕分けフィルターは、以降の送受信される全てのメールに適用されます。"
 
-#: ./src/templates/views/appearance.tpl.html:130
+#: ./src/templates/views/appearance.tpl.html:142
 msgctxt "Info"
 msgid "Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources."
 msgstr "外部製のカスタムテーマは、プライバシーを侵害する可能性があります。信頼できる提供元のテーマのみ使用してください。"
@@ -5423,6 +5466,11 @@ msgctxt "Info"
 msgid "Important: Please make sure you saved the recovery codes. Otherwise you can permanently lose access to your account if you lose your 2FA device."
 msgstr "重要：回復用コードの保存を確認してください。 そうしないと、2 要素認証機器を紛失した場合、アカウントへのアクセスが永久に失われます。"
 
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:18
+msgctxt "Info"
+msgid "In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below."
+msgstr "数週間中に、ProtonMailはInternet Explorerへのサーポートを廃止します。下記のブラウザからどれかをダウンロードしてください。"
+
 #: ./src/app/payment/modals/payModal.js:14
 #: ./src/app/settings/controllers/payments.js:147
 msgctxt "Info"
@@ -5454,14 +5502,14 @@ msgctxt "Info"
 msgid "Key reactivated"
 msgstr "鍵が再有効化されました。"
 
-#: ./src/app/settings/controllers/appearance.js:75
+#: ./src/app/settings/controllers/appearance.js:79
 #: ./src/app/ui/directives/chooseLayoutBtns.js:33
 msgctxt "Info"
 msgid "Layout saved"
 msgstr "配置が保存されました。"
 
 #: ./src/app/message/directives/unsubscribePanel.js:20
-#: ./src/templates/message/messageAutoGenerated.tpl.html:6
+#: ./src/templates/message/messageAutoGenerated.tpl.html:4
 msgctxt "Info"
 msgid "Learn more"
 msgstr "より詳しく"
@@ -5471,7 +5519,7 @@ msgctxt "Info"
 msgid "Learn more."
 msgstr "より詳しく"
 
-#: ./src/templates/views/appearance.tpl.html:159
+#: ./src/templates/views/appearance.tpl.html:171
 msgctxt "Info"
 msgid "Loading themes will override your current theme!"
 msgstr "テーマを読み込むと、現在のテーマは上書きされます。"
@@ -5504,7 +5552,7 @@ msgctxt "Info"
 msgid "Maximized"
 msgstr "最大化"
 
-#: ./src/app/composer/controllers/composeMessage.js:601
+#: ./src/app/composer/controllers/composeMessage.js:591
 msgctxt "Info"
 msgid "Message discarded"
 msgstr "メッセージが破棄されました。"
@@ -5530,6 +5578,17 @@ msgstr "添付ファイルに正しい名前を付けてください（ファイ
 msgctxt "Info"
 msgid "No contact found"
 msgstr "連絡先が見つかりませんでした。"
+
+#: ./src/templates/contact/contactGroupModal.tpl.html:68
+msgctxt "Info"
+msgid "No contacts added yet"
+msgstr "まだ連絡先が追加されていません。"
+
+#: ./src/app/contact/services/moveContactGroupHandler.js:16
+msgctxt "Info"
+msgid "No emails for this contact"
+msgid_plural "No emails for these contacts"
+msgstr[0] "この連絡先のメールはありません。"
 
 #: ./src/app/filter/directives/emailBlockList.js:13
 msgctxt "Info"
@@ -5561,7 +5620,7 @@ msgctxt "Info"
 msgid "Number of users"
 msgstr "ユーザー数"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:52
+#: ./src/templates/directives/contact/contactPgp.tpl.html:46
 msgctxt "Info"
 msgid "Only change these settings if you are using PGP with non-ProtonMail recipients."
 msgstr "ProtonMail以外でPGPを利用している受信者がいる場合にのみ、これらの設定を変更してください。"
@@ -5576,10 +5635,15 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "OpenVPNのパスワードが更新されました。"
 
-#: ./src/app/settings/controllers/account.js:178
+#: ./src/app/settings/controllers/account.js:176
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "セキュリティ上の理由から操作はタイムアウトしました。再度お試しください。"
+
+#: ./src/templates/composer/composerEncrypt.tpl.html:49
+msgctxt "Info"
+msgid "Optional"
+msgstr "オプション"
 
 #: ./src/app/address/factories/addressModel.js:42
 #: ./src/app/filter/directives/customFilterList.js:70
@@ -5587,7 +5651,7 @@ msgctxt "Info"
 msgid "Order saved"
 msgstr "並び順が保存されました。"
 
-#: ./src/app/members/services/memberActions.js:56
+#: ./src/app/members/services/memberActions.js:62
 msgctxt "Info"
 msgid "Organization administrators will no longer be able to log in and control the user's account after privatization. This change is PERMANENT."
 msgstr "私用化した後は組織の管理者であっても、ログインや制御ができなくなります。この変更は取り消せません。"
@@ -5652,7 +5716,7 @@ msgctxt "Info"
 msgid "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs PGP/Inline messages."
 msgstr "PGP/Inlineはプレーンテキスト形式としか互換性がありません。ProtonMailはPGP/Inlineメッセージに常に署名することに注意してください。"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:8
+#: ./src/templates/directives/contact/contactPgp.tpl.html:7
 msgctxt "Info"
 msgid "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs PGP/MIME messages."
 msgstr "PGP/MIME は自動的に現在の書式を使用してメッセージを送信します。ProtonMailはPGP/MIMEメッセージに常に署名することに注意してください。"
@@ -5660,7 +5724,7 @@ msgstr "PGP/MIME は自動的に現在の書式を使用してメッセージを
 #: ./src/templates/pmMe/pmMeView.tpl.html:12
 msgctxt "Info"
 msgid "Paid users can add other @pm.me addresses from Settings → Addresses/Users."
-msgstr ""
+msgstr "有料ユーザーは、設定--> メールアドレス/ユーザーから他の @pm.me のアドレスを追加できます。"
 
 #: ./src/app/organization/factories/organizationModel.js:22
 msgctxt "Info"
@@ -5677,7 +5741,7 @@ msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
 msgstr "お支払いが現在ご利用になれません。しばらくしてから再度お試し下さい。"
 
-#: ./src/app/composer/controllers/composeMessage.js:584
+#: ./src/app/composer/controllers/composeMessage.js:573
 msgctxt "Info"
 msgid "Permanently delete this draft?"
 msgstr "下書きを完全に削除しますか？"
@@ -5738,7 +5802,7 @@ msgctxt "Info"
 msgid "Please enter your organization recovery password:"
 msgstr "組織の回復用パスワードを入力してください。"
 
-#: ./src/templates/modals/member.tpl.html:119
+#: ./src/templates/modals/member.tpl.html:117
 msgctxt "Info"
 msgid "Please give the address and temporary password to the new member so they can log in."
 msgstr "新しいメンバーがログインできるように、メールアドレスと仮パスワードを設定してください。"
@@ -5748,12 +5812,17 @@ msgctxt "Info"
 msgid "Please right-click on the attachment and select Save/Download As."
 msgstr "添付ファイルを右クリックし、保存/ダウンロードを選択してください。"
 
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:21
+msgctxt "Info"
+msgid "Please select which email address or adresses to add to this group."
+msgstr "このグループにどのメールアドレスあるいは住所を追加するかを選んでください。"
+
 #: ./src/app/attachments/services/attachmentDownloader.js:23
 msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "添付ファイルを長押しして、新しいタブで開くを選択してください。"
 
-#: ./src/app/members/services/memberActions.js:81
+#: ./src/app/members/services/memberActions.js:88
 msgctxt "Info"
 msgid "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support."
 msgstr "複数ユーザーで利用する場合はPROFESSIONALプランもしくは、VISIONARYプランにアップグレードしてください。"
@@ -5776,7 +5845,7 @@ msgstr "管理責任者"
 #: ./src/templates/modals/addAddress.tpl.html:52
 msgctxt "Info"
 msgid "ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not. <a href=\"https://protonmail.com/support/knowledge-base/addresses-and-aliases/\" target=\"_blank\">Learn more</a>"
-msgstr ""
+msgstr "ProtonMailのアドレスを一旦追加したら削除はできません（無効にのみできます）。 そして、有効無効に関わらずアドレス数にカウントされますので注意してください。 <a href=\"https://protonmail.com/support/knowledge-base/addresses-and-aliases/\" target=\"_blank\">より詳しく</a>"
 
 #: ./src/templates/partials/wizard.tpl.html:21
 msgctxt "Info"
@@ -5847,7 +5916,7 @@ msgctxt "Info"
 msgid "Right-click on your attachment and choose 'Download linked file as...'"
 msgstr "添付ファイル上を右クリックし、「名前を付けてリンク先を保存」を選択してください"
 
-#: ./src/app/members/services/memberActions.js:79
+#: ./src/app/members/services/memberActions.js:86
 msgctxt "Info"
 msgid "Role updated"
 msgstr "役割が更新されました。"
@@ -5903,9 +5972,9 @@ msgstr "選択したプラン"
 #: ./src/templates/filter/spamLists.tpl.html:11
 msgctxt "Info"
 msgid "Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds the address to the Whitelist."
-msgstr ""
+msgstr "差出人毎に迷惑メールのルールをここで設定できます。ホワイトリストにある差出人からは受信箱に、ブラックリストにある差出人からは迷惑メールに振り分けられます。迷惑メールに設定したメールの差出人は、ブラックリストに追加されます。迷惑メールではないと設定したメール差出人は、ホワイトリストに追加されます。"
 
-#: ./src/templates/views/domains.tpl.html:201
+#: ./src/templates/views/domains.tpl.html:212
 msgctxt "Info"
 msgid "Set a catch-all address for your domain."
 msgstr "あなたのドメインにCatch-all用のメールアドレスを設定"
@@ -5923,9 +5992,9 @@ msgstr "署名が更新されました。"
 #: ./src/templates/core/signupIframe.tpl.html:7
 msgctxt "Info"
 msgid "Something went wrong, please refresh the page in order to proceed. If you still see this error message please contact our support team."
-msgstr ""
+msgstr "何らかの誤りがありました。ページを再度読み込ませてください。それでもなおエラーメッセージが表示されるようであれば、サポートにお問い合わせください。"
 
-#: ./src/app/members/services/memberActions.js:80
+#: ./src/app/members/services/memberActions.js:87
 msgctxt "Info"
 msgid "Status Updated"
 msgstr "状態が更新されました。"
@@ -5973,19 +6042,19 @@ msgstr "再読込みまで数秒お待ちください。"
 #: ./src/app/elements/services/removeElement.js:18
 msgctxt "Info"
 msgid "The draft(s) selected is open in a composer, this action will close the composer and delete the message."
-msgstr ""
+msgstr "選択された下書きは編集中です。この操作によって編集は中断され、メッセージが削除されます。"
 
 #: ./src/templates/message/messageResign.tpl.html:3
 msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "連絡先の署名が無効のため、メッセージの署名が検証できませんでした。"
 
-#: ./src/app/routes.js:166
+#: ./src/app/routes.js:172
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "テーマをリセットしました。 リダイレクトします..."
 
-#: ./src/app/settings/controllers/appearance.js:41
+#: ./src/app/settings/controllers/appearance.js:45
 msgctxt "Info"
 msgid "Theme saved"
 msgstr "テーマが保存されました。"
@@ -5993,7 +6062,7 @@ msgstr "テーマが保存されました。"
 #: ./src/templates/contact/removeContactListModal.tpl.html:18
 msgctxt "Info"
 msgid "These emails are also in your contacts. Remove them from your contacts?"
-msgstr ""
+msgstr "これらのメールは連絡先にもあります。連絡先からも削除しますか？"
 
 #: ./src/templates/views/reset-login-password.tpl.html:186
 #: ./src/templates/views/setup.tpl.html:79
@@ -6049,6 +6118,16 @@ msgctxt "Info"
 msgid "This is used to recover your account if you get locked out or forget your password."
 msgstr "これは、ロックアウトやパスワードを忘れた場合に、アカウントを回復するために使用されます。"
 
+#: ./src/templates/utils/linkWarningModal.tpl.html:25
+msgctxt "Info"
+msgid "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+msgstr ""
+
+#: ./src/templates/utils/linkWarningModal.tpl.html:17
+msgctxt "Info"
+msgid "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it."
+msgstr ""
+
 #: ./src/templates/message/messageAutoGenerated.tpl.html:3
 msgctxt "Info"
 msgid "This message is automatically generated as a response to a previous message."
@@ -6056,7 +6135,7 @@ msgstr "このメッセージは以前のメッセージに対する自動応答
 
 #: ./src/app/message/directives/unsubscribePanel.js:19
 msgctxt "Info"
-msgid "This message is from a mailing list."
+msgid "This message is from a mailing list"
 msgstr "これはメーリングリストからのメッセージです。"
 
 #: ./src/templates/message/messagePublicKeyFound.tpl.html:9
@@ -6083,7 +6162,7 @@ msgstr "このページは高解像度での閲覧用です。パソコンから
 
 #: ./src/templates/message/messagePublicKeyPinning.tpl.html:3
 msgctxt "Info"
-msgid "This sender's public key has not been trusted yet."
+msgid "This sender's public key has not been trusted yet"
 msgstr "この送信者の公開キーはまだ信頼されていません。"
 
 #: ./src/templates/views/appearance.tpl.html:12
@@ -6096,7 +6175,7 @@ msgctxt "Info"
 msgid "This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it by clicking your username in the upper right corner."
 msgstr "ProtonMailアカウントの主な機能を紹介する短いチュートリアルです。 詳細については、あなたに送ったウェルカムメールを参照してください。 右上隅のユーザー名をクリックすると、いつでもアクセスできます。"
 
-#: ./src/app/members/services/memberActions.js:47
+#: ./src/app/members/services/memberActions.js:45
 msgctxt "Info"
 msgid "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization."
 msgstr "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
@@ -6115,7 +6194,7 @@ msgstr "これがあなたのProtonMailアドレスになります。"
 #: ./src/templates/modals/setupOrganization.tpl.html:29
 msgctxt "Info"
 msgid "This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
-msgstr ""
+msgstr "組織用の暗号鍵を作成します。4096ビット鍵は高性能コンピューターでのみ動作します。ほとんどのユーザーには2048ビット鍵の使用をお勧めします。"
 
 #: ./src/app/dashboard/factories/downgrade.js:15
 msgctxt "Info"
@@ -6136,7 +6215,7 @@ msgstr "迷惑メール防止のため、人間である立証をお願いしま
 #: ./src/templates/filter/modal.tpl.html:35
 msgctxt "Info"
 msgid "To find out how to write Sieve filters, <a target=\"_blank\" href=\"https://protonmail.com/support/knowledge-base/sieve/\">click here</a>."
-msgstr ""
+msgstr "仕分けフィルターの作成方法については <a target=\"_blank\" href=\"https://protonmail.com/support/knowledge-base/sieve/\">ここをクリック</a>してください。"
 
 #: ./src/templates/modals/pay.tpl.html:88
 #: ./src/templates/payment/donation.tpl.html:103
@@ -6145,7 +6224,7 @@ msgctxt "Info"
 msgid "To pay via Cash, please email us at <strong>contact@protonmail.com</strong> for instructions."
 msgstr "現金での支払いを希望される場合は、 <strong>contact@protonmail.com</strong> までご連絡ください。"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:40
+#: ./src/templates/directives/contact/contactPgp.tpl.html:36
 msgctxt "Info"
 msgid "To use Address Verification, you must enable Trusted Keys and trust one or more available public keys, including the primary key for this address. This prevents the encryption keys from being faked."
 msgstr "アドレスの検証を使用するには、「信頼された鍵」を有効にし、このアドレスのプライマリー鍵を含む1 つ以上の公開鍵を信頼する必要があります。これによって暗号鍵が偽造されるを防ぎます。"
@@ -6180,7 +6259,7 @@ msgctxt "Info"
 msgid "User created"
 msgstr "ユーザーが作成されました。"
 
-#: ./src/app/members/services/memberActions.js:78
+#: ./src/app/members/services/memberActions.js:85
 msgctxt "Info"
 msgid "User removed"
 msgstr "ユーザーが削除されました。"
@@ -6222,11 +6301,6 @@ msgctxt "Info"
 msgid "Verifying invite link..."
 msgstr "招待リンクを検証しています..."
 
-#: ./src/app/settings/controllers/appearance.js:104
-msgctxt "Info"
-msgid "View mode saved"
-msgstr "表示モードが保存されました。"
-
 #. account deletion warning
 #: ./src/templates/modals/deleteAccount.tpl.html:10
 msgctxt "Info"
@@ -6247,7 +6321,7 @@ msgstr "暗号鍵を生成しています。これには数分を要し、一時
 #: ./src/templates/contact/contactLoaderModal.tpl.html:62
 msgctxt "Info"
 msgid "We picked up at least one group/organization from the list of contacts you are importing."
-msgstr ""
+msgstr "インポートされた連絡先から少なくとも一つのグループまたは組織をピックアップしました。"
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:67
 msgctxt "Info"
@@ -6304,6 +6378,11 @@ msgctxt "Info"
 msgid "You are about to open another browser tab and visit:"
 msgstr "別のタブで下記リンクを開こうとしています："
 
+#: ./src/app/members/services/memberActions.js:54
+msgctxt "Info"
+msgid "You are about to revoke all sessions. The user will be automatically logged out of all sessions and prompted to log back in. Are you sure you want to revoke all sessions ?"
+msgstr ""
+
 #: ./src/templates/vpn/vpnView.tpl.html:12
 msgctxt "Info"
 msgid "You are using ProtonVPN Free. Upgrade to ProtonVPN Plus to get faster speeds and better privacy."
@@ -6344,12 +6423,12 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "あなたの@ pm.meアドレス（ProtonMail meまたはPrivate Message meの略）でメッセージを受信することもできます。"
 
-#: ./src/app/settings/controllers/account.js:109
+#: ./src/app/settings/controllers/account.js:107
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "新しいメールがあります。"
 
-#: ./src/templates/views/members.tpl.html:339
+#: ./src/templates/views/members.tpl.html:344
 msgctxt "Info"
 msgid "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
 msgstr "組織用の鍵にアクセスできなくなりました。 修復しない限り、新規ユーザーの作成、既存ユーザーへのアドレスの追加並びに、ユーザーアカウントへのアクセスはできません。"
@@ -6382,9 +6461,9 @@ msgstr "ラベルはありません。"
 #: ./src/templates/views/payments.tpl.html:17
 msgctxt "Info"
 msgid "You have no saved payment methods."
-msgstr ""
+msgstr "支払い方法が登録されていません。"
 
-#: ./src/templates/views/members.tpl.html:331
+#: ./src/templates/views/members.tpl.html:336
 msgctxt "Info"
 msgid "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
 msgstr "組織用の鍵を有効にする必要があります。 有効にしない限り、新規ユーザーの作成、既存ユーザーへのアドレスの追加並びに、ユーザーアカウントへのアクセスはできません。"
@@ -6394,7 +6473,7 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "バックアップしてある組織用の鍵のパスワードで、組織用の秘密鍵を有効化する必要があります。"
 
-#: ./src/app/members/services/memberActions.js:40
+#: ./src/app/members/services/memberActions.js:38
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
 msgstr "管理者権限を与えるには、このユーザーに組織パスワードを伝える必要があります。"
@@ -6479,7 +6558,7 @@ msgid "Your organization password can be shared with other users you wish to giv
 msgstr "組織パスワードは、管理者権限を与えたい他のユーザーと共有できます。アカウントにアクセスができなくなった際の緊急回復コードとしても使用しますので、このパスワードは厳重に保管してください。"
 
 #. how many addresses are in use
-#: ./src/templates/views/domains.tpl.html:162
+#: ./src/templates/views/domains.tpl.html:173
 #: ./src/templates/views/members.tpl.html:120
 msgctxt "Info"
 msgid "addresses used."
@@ -6504,6 +6583,12 @@ msgctxt "Info"
 msgid "file attached"
 msgid_plural "files attached"
 msgstr[0] "ファイル添付されました"
+
+#. If you wish to delete this account in order to combine it with another one, do NOT delete it. You need to follow [link] instead
+#: ./src/templates/modals/deleteAccount.tpl.html:11
+msgctxt "Info"
+msgid "instead"
+msgstr ""
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:20
 msgctxt "Info"
@@ -6612,7 +6697,7 @@ msgstr "保存中"
 
 #: ./src/templates/message/readReceiptPanel.tpl.html:3
 msgctxt "Info display in the read receipt panel (message view)"
-msgid "The sender has requested a read receipt."
+msgid "The sender has requested a read receipt"
 msgstr "送信者は、開封確認を要求しています。"
 
 #: ./src/templates/contact/contactMimetypeSelector.tpl.html:4
@@ -6775,7 +6860,7 @@ msgctxt "Key state badge"
 msgid "Active"
 msgstr "活性"
 
-#: ./src/templates/address/addressKeysView.tpl.html:115
+#: ./src/templates/address/addressKeysView.tpl.html:113
 msgctxt "Key state badge"
 msgid "Compromised"
 msgstr "侵害された"
@@ -6844,16 +6929,21 @@ msgctxt "Label"
 msgid "Annually"
 msgstr "年払い"
 
-#: ./src/app/labels/directives/dropdownFolders.js:14
-#: ./src/templates/filter/modal.tpl.html:166
+#: ./src/app/labels/directives/dropdownFolders.js:13
+#: ./src/templates/filter/modal.tpl.html:173
 msgctxt "Label"
 msgid "Archive"
 msgstr "アーカイブ"
 
-#: ./src/templates/settings/encryptionView.tpl.html:50
+#: ./src/templates/settings/encryptionView.tpl.html:44
 msgctxt "Label"
 msgid "Automatically attach public key"
 msgstr "公開鍵の自動添付"
+
+#: ./src/app/contact/directives/contactPublicKeyLabel.js:4
+msgctxt "Label"
+msgid "Available Public Keys"
+msgstr "公開鍵が使用できます。"
 
 #: ./src/templates/modals/humanVerification.tpl.html:13
 msgctxt "Label"
@@ -6884,12 +6974,12 @@ msgstr "色"
 #: ./src/templates/settings/chooseRightToLeft.tpl.html:3
 msgctxt "Label"
 msgid "Composer Text Direction"
-msgstr ""
+msgstr "新規作成時のテキスト方向"
 
 #: ./src/templates/settings/chooseComposerMode.tpl.html:3
 msgctxt "Label"
 msgid "Composer mode"
-msgstr ""
+msgstr "作成モード"
 
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:13
 #: ./src/templates/modals/changePassword.tpl.html:24
@@ -6917,17 +7007,17 @@ msgctxt "Label"
 msgid "Credit card"
 msgstr "クレジットカード"
 
-#: ./src/templates/views/appearance.tpl.html:131
+#: ./src/templates/views/appearance.tpl.html:143
 msgctxt "Label"
 msgid "Custom theme"
 msgstr "カスタムテーマ"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:66
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:56
 msgctxt "Label"
 msgid "Days"
 msgstr "曜日"
 
-#: ./src/templates/settings/encryptionView.tpl.html:70
+#: ./src/templates/settings/encryptionView.tpl.html:62
 msgctxt "Label"
 msgid "Default PGP Scheme"
 msgstr "既定のPGP 方式"
@@ -6937,7 +7027,7 @@ msgctxt "Label"
 msgid "Display name"
 msgstr "表示名"
 
-#: ./src/templates/utils/linkWarningModal.tpl.html:18
+#: ./src/templates/utils/linkWarningModal.tpl.html:34
 msgctxt "Label"
 msgid "Do not ask again"
 msgstr "今後表示しない"
@@ -6945,7 +7035,7 @@ msgstr "今後表示しない"
 #: ./src/app/contact/services/importContactGroups.js:24
 msgctxt "Label"
 msgid "Do not import group"
-msgstr ""
+msgstr "グループをインポートしない"
 
 #: ./src/app/search/directives/wildcardCheckbox.js:4
 msgctxt "Label"
@@ -6977,17 +7067,12 @@ msgctxt "Label"
 msgid "Enable"
 msgstr "自動返信の有効化"
 
-#: ./src/templates/views/appearance.tpl.html:110
-msgctxt "Label"
-msgid "Enable Conversation Grouping"
-msgstr "会話のグループ化を有効にする"
-
 #: ./src/templates/views/labels.tpl.html:53
 msgctxt "Label"
 msgid "Enable/disable desktop and mobile notifications"
 msgstr "PCおよび、モバイルでの通知の有効/無効"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:95
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:85
 msgctxt "Label"
 msgid "End time"
 msgstr "終了時刻"
@@ -7055,7 +7140,7 @@ msgid "Highest security"
 msgstr "最高水準のセキュリティ"
 
 #: ./src/app/labels/directives/dropdownFolders.js:8
-#: ./src/templates/filter/modal.tpl.html:158
+#: ./src/templates/filter/modal.tpl.html:165
 msgctxt "Label"
 msgid "Inbox"
 msgstr "受信箱"
@@ -7063,7 +7148,7 @@ msgstr "受信箱"
 #: ./src/templates/modals/member.tpl.html:41
 msgctxt "Label"
 msgid "Key Strength"
-msgstr ""
+msgstr "鍵の強度"
 
 #: ./src/templates/vpn/openVpnSection.tpl.html:17
 msgctxt "Label"
@@ -7088,17 +7173,17 @@ msgstr "主な新機能(年に3-4回)"
 #: ./src/app/contact/services/importContactGroups.js:25
 msgctxt "Label"
 msgid "Merge with existing group"
-msgstr ""
+msgstr "既存のグループとマージする"
 
 #: ./src/templates/views/outside.unlock.tpl.html:14
 msgctxt "Label"
 msgid "Message password"
-msgstr ""
+msgstr "メッセージのパスワード"
 
 #: ./src/app/dashboard/directives/subscriptionSection.js:18
 msgctxt "Label"
 msgid "Monthly"
-msgstr ""
+msgstr "月額"
 
 #: ./src/templates/contact/contactGroupModal.tpl.html:28
 #: ./src/templates/modals/label.tpl.html:27
@@ -7163,7 +7248,7 @@ msgctxt "Label"
 msgid "Please tell us why you are leaving:"
 msgstr "退会の理由を教えてください。"
 
-#: ./src/templates/settings/encryptionView.tpl.html:122
+#: ./src/templates/settings/encryptionView.tpl.html:108
 msgctxt "Label"
 msgid "Prompt to trust keys"
 msgstr "鍵を信頼するか確認する"
@@ -7193,7 +7278,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr "ProtonVPN ホームページ"
 
-#: ./src/templates/filter/modal.tpl.html:210
+#: ./src/templates/filter/modal.tpl.html:217
 msgctxt "Label"
 msgid "Read"
 msgstr "既読"
@@ -7221,9 +7306,9 @@ msgstr "送信済み"
 #: ./src/app/elements/directives/movedSelect.js:16
 msgctxt "Label"
 msgid "Sent / Drafts folders appearance"
-msgstr ""
+msgstr "送信済み/下書きフォルダーの外観"
 
-#: ./src/templates/settings/encryptionView.tpl.html:28
+#: ./src/templates/settings/encryptionView.tpl.html:24
 msgctxt "Label"
 msgid "Sign external messages"
 msgstr "外部宛のメッセージへの署名"
@@ -7233,18 +7318,18 @@ msgctxt "Label"
 msgid "Signature"
 msgstr "署名"
 
-#: ./src/app/labels/directives/dropdownFolders.js:20
-#: ./src/templates/filter/modal.tpl.html:174
+#: ./src/app/labels/directives/dropdownFolders.js:18
+#: ./src/templates/filter/modal.tpl.html:181
 msgctxt "Label"
 msgid "Spam"
 msgstr "迷惑メール"
 
-#: ./src/templates/filter/modal.tpl.html:217
+#: ./src/templates/filter/modal.tpl.html:224
 msgctxt "Label"
 msgid "Starred"
 msgstr "星印"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:80
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:70
 msgctxt "Label"
 msgid "Start time"
 msgstr "開始時刻"
@@ -7254,16 +7339,21 @@ msgctxt "Label"
 msgid "Storage for members:"
 msgstr "メンバー用ストレージ"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:110
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:100
 msgctxt "Label"
 msgid "Time zone"
 msgstr "タイムゾーン"
 
-#: ./src/app/labels/directives/dropdownFolders.js:26
-#: ./src/templates/filter/modal.tpl.html:182
+#: ./src/app/labels/directives/dropdownFolders.js:23
+#: ./src/templates/filter/modal.tpl.html:189
 msgctxt "Label"
 msgid "Trash"
 msgstr "ごみ箱"
+
+#: ./src/app/contact/directives/contactPublicKeyLabel.js:6
+msgctxt "Label"
+msgid "Trusted Public Keys"
+msgstr "信頼された公開鍵"
 
 #: ./src/templates/directives/contact/contactKeyPinning.tpl.html:2
 msgctxt "Label"
@@ -7279,6 +7369,16 @@ msgstr "２要素認証のパスコード"
 msgctxt "Label"
 msgid "Upload picture"
 msgstr "写真のアップロード"
+
+#: ./src/templates/views/appearance.tpl.html:109
+msgctxt "Label"
+msgid "Use conversation grouping"
+msgstr "会話のグループ化を有効にする"
+
+#: ./src/templates/views/appearance.tpl.html:118
+msgctxt "Label"
+msgid "Use sticky labels"
+msgstr ""
 
 #: ./src/templates/modals/addAddress.tpl.html:11
 msgctxt "Label"
@@ -7464,7 +7564,7 @@ msgstr "エクスポートする前に、秘密鍵を暗号化するためのパ
 #: ./src/templates/modals/decryptImportKey.tpl.html:10
 msgctxt "Label in the modal which ask the user to enter his password or mailbox password"
 msgid "Enter the password for key with fingerprint <code class=\"flex-space-left\">{{ ctrl.fingerprint }}</code>."
-msgstr ""
+msgstr "フィンガープリント <code class=\"flex-space-left\">{{ ctrl.fingerprint }}をもつ鍵のパスワードを入力してください。"
 
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:10
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:10
@@ -7513,6 +7613,11 @@ msgctxt "Label select weekday"
 msgid "Select weekday"
 msgstr "曜日を選択"
 
+#: ./src/app/contact/directives/contactPublicKeyLabel.js:5
+msgctxt "Laebel"
+msgid "Public Keys"
+msgstr "公開鍵"
+
 #: ./src/templates/payment/paymentPlanOverview.tpl.html:16
 msgctxt "Link"
 msgid "(What is this?)"
@@ -7543,10 +7648,10 @@ msgctxt "Link"
 msgid "Include moved messages"
 msgstr "移動したメッセージも含む"
 
-#: ./src/templates/filter/spamLists.tpl.html:14
+#: ./src/templates/filter/spamLists.tpl.html:12
 #: ./src/templates/partials/conversation-placeholder.tpl.html:14
-#: ./src/templates/settings/encryptionView.tpl.html:109
-#: ./src/templates/settings/encryptionView.tpl.html:17
+#: ./src/templates/settings/encryptionView.tpl.html:15
+#: ./src/templates/settings/encryptionView.tpl.html:97
 msgctxt "Link"
 msgid "Learn More"
 msgstr "より詳しく"
@@ -7556,12 +7661,13 @@ msgstr "より詳しく"
 #: ./src/app/ui/directives/noResults.js:6
 #: ./src/app/user/factories/storageWarning.js:13
 #: ./src/templates/autoresponder/autoresponder.tpl.html:26
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:19
 #: ./src/templates/contact/contactError.tpl.html:18
 #: ./src/templates/contact/contactError.tpl.html:37
 #: ./src/templates/dashboard/customVpnModal.tpl.html:10
-#: ./src/templates/directives/contact/contactPgp.tpl.html:43
-#: ./src/templates/directives/contact/contactPgp.tpl.html:55
-#: ./src/templates/directives/contact/contactPgp.tpl.html:67
+#: ./src/templates/directives/contact/contactPgp.tpl.html:37
+#: ./src/templates/directives/contact/contactPgp.tpl.html:47
+#: ./src/templates/directives/contact/contactPgp.tpl.html:57
 #: ./src/templates/directives/core/bugModalView.tpl.html:110
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:9
 #: ./src/templates/modals/confirm.tpl.html:13
@@ -7572,15 +7678,16 @@ msgstr "より詳しく"
 #: ./src/templates/views/account.tpl.html:225
 #: ./src/templates/views/account.tpl.html:259
 #: ./src/templates/views/account.tpl.html:92
-#: ./src/templates/views/appearance.tpl.html:178
+#: ./src/templates/views/appearance.tpl.html:190
 #: ./src/templates/views/members.tpl.html:21
-#: ./src/templates/views/members.tpl.html:328
+#: ./src/templates/views/members.tpl.html:333
 #: ./src/templates/views/security.tpl.html:15
 #: ./src/templates/views/security.tpl.html:28
 msgctxt "Link"
 msgid "Learn more"
 msgstr "より詳しく"
 
+#: ./src/templates/modals/releaseNotes.tpl.html:14
 #: ./src/templates/pmMe/pmMeView.tpl.html:11
 #: ./src/templates/pmMe/pmMeView.tpl.html:23
 msgctxt "Link"
@@ -7617,12 +7724,17 @@ msgctxt "Link for the custom vpn modal"
 msgid "Upgrade to ProtonVPN Plus"
 msgstr "ProtonVPN PLUSにアップグレードする"
 
-#: ./src/templates/views/domains.tpl.html:252
+#: ./src/app/commons/providers/notification.js:26
+msgctxt "Link in notification to undo an action"
+msgid "UNDO"
+msgstr "取り消し"
+
+#: ./src/templates/views/domains.tpl.html:263
 msgctxt "List domains"
 msgid "No custom domain addresses found"
 msgstr "独自ドメインのアドレスは見つかりませんでした。"
 
-#: ./src/templates/views/domains.tpl.html:254
+#: ./src/templates/views/domains.tpl.html:265
 msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr "メールアドレスの設定前に、ドメインを追加してください。"
@@ -7864,7 +7976,7 @@ msgstr "下書き"
 #: ./src/templates/message/message.tpl.html:38
 msgctxt "Message label"
 msgid "Sent"
-msgstr ""
+msgstr "送信済"
 
 #: ./src/templates/message/messageDisplayError.tpl.html:13
 msgctxt "Message network error"
@@ -7922,7 +8034,7 @@ msgstr "このウィザードはProtonMailアカウントで２要素認証を�
 #: ./src/templates/utils/printModal.tpl.html:30
 msgctxt "Modal title"
 msgid "Print preview"
-msgstr ""
+msgstr "印刷プレビュー"
 
 #: ./src/app/keys/factories/keyCompression.js:9
 msgctxt "Modal title"
@@ -7937,7 +8049,7 @@ msgstr "公開鍵の添付"
 #: ./src/templates/squire/moreToggle.tpl.html:42
 msgctxt "More Toggles"
 msgid "Request Read Receipt"
-msgstr ""
+msgstr "開封確認の要求"
 
 #: ./src/templates/squire/moreToggle.tpl.html:32
 msgctxt "More Toggles"
@@ -8024,7 +8136,7 @@ msgctxt "Notification"
 msgid "Filter updated"
 msgstr "フィルターが更新されました。"
 
-#: ./src/app/outside/controllers/outside.js:28
+#: ./src/app/outside/controllers/outside.js:29
 msgctxt "Notification"
 msgid "ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>."
 msgstr "ProtonMail宛以外の暗号化は５回までとなります。制限なしの暗号化ProtonMailのアカウント登録は<a href=\"https://protonmail.com/signup\" target=\"_blank\">こちら</a>."
@@ -8049,7 +8161,7 @@ msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr "{{sender}}からの新着メールがあります。"
 
-#: ./src/app/composer/controllers/composeMessage.js:336
+#: ./src/app/composer/controllers/composeMessage.js:340
 msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
 msgstr "下書きの最大数に達しました。"
@@ -8090,7 +8202,7 @@ msgstr "左から右"
 #: ./src/templates/views/invoices.tpl.html:59
 msgctxt "Option"
 msgid "Monthly"
-msgstr ""
+msgstr "月額"
 
 #: ./src/templates/views/members.tpl.html:181
 msgctxt "Option"
@@ -8216,12 +8328,12 @@ msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr "最少金額以下です。"
 
-#: ./src/app/commons/services/i18nLoader.js:54
+#: ./src/app/commons/services/i18nLoader.js:55
 msgctxt "Pikaday"
 msgid "Next Month"
 msgstr "翌月"
 
-#: ./src/app/commons/services/i18nLoader.js:53
+#: ./src/app/commons/services/i18nLoader.js:54
 msgctxt "Pikaday"
 msgid "Previous Month"
 msgstr "前月"
@@ -8245,12 +8357,12 @@ msgstr "ブラウザ"
 #: ./src/templates/user/usernamePassword.tpl.html:9
 msgctxt "Placeholder"
 msgid "Choose a password"
-msgstr ""
+msgstr "パスワードの選択"
 
 #: ./src/app/core/directives/signupIframe.js:19
 msgctxt "Placeholder"
 msgid "Choose username"
-msgstr ""
+msgstr "ユーザー名の選択"
 
 #: ./src/templates/contact/contactAddressInput.tpl.html:10
 msgctxt "Placeholder"
@@ -8260,12 +8372,12 @@ msgstr "市町村"
 #: ./src/templates/modals/member.tpl.html:71
 msgctxt "Placeholder"
 msgid "Confirm Password"
-msgstr ""
+msgstr "パスワードの確認"
 
 #: ./src/templates/modals/setupOrganization.tpl.html:62
 msgctxt "Placeholder"
 msgid "Confirm organization password"
-msgstr ""
+msgstr "組織パスワードの確認"
 
 #: ./src/templates/composer/composerEncrypt.tpl.html:33
 #: ./src/templates/user/usernamePassword.tpl.html:19
@@ -8331,7 +8443,7 @@ msgstr "絞り込むフォルダ名"
 #: ./src/templates/ui/timePicker.tpl.html:3
 msgctxt "Placeholder"
 msgid "HH:MM"
-msgstr ""
+msgstr "時:分"
 
 #: ./src/templates/composer/composerEncrypt.tpl.html:52
 msgctxt "Placeholder"
@@ -8351,7 +8463,7 @@ msgstr "情報"
 #: ./src/templates/modals/reactivate.tpl.html:16
 msgctxt "Placeholder"
 msgid "Key password"
-msgstr ""
+msgstr "鍵のパスワード"
 
 #: ./src/templates/modals/deleteAccount.tpl.html:36
 #: ./src/templates/modals/reactivate.tpl.html:10
@@ -8388,12 +8500,12 @@ msgstr "OSのバージョン"
 #: ./src/templates/modals/setupOrganization.tpl.html:15
 msgctxt "Placeholder"
 msgid "Organization name"
-msgstr ""
+msgstr "組織名"
 
 #: ./src/templates/modals/setupOrganization.tpl.html:53
 msgctxt "Placeholder"
 msgid "Organization password"
-msgstr ""
+msgstr "組織のパスワード"
 
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:13
 #: ./src/templates/composer/composerEncrypt.tpl.html:15
@@ -8465,7 +8577,7 @@ msgstr "コマンドを入力してください"
 #: ./src/templates/autoresponder/subjectPrefix.tpl.html:1
 msgctxt "Placeholder"
 msgid "auto"
-msgstr ""
+msgstr "[自動返信]"
 
 #: ./src/templates/labels/labelNameInput.tpl.html:2
 msgctxt "Placeholder"
@@ -8552,7 +8664,7 @@ msgctxt "Record message"
 msgid "Message saved"
 msgstr "メッセージを保存しました。"
 
-#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:13
+#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:11
 msgctxt "Remember encryption choice encrypt"
 msgid "Remember my choice"
 msgstr "選択を記憶する"
@@ -8648,7 +8760,7 @@ msgctxt "Send message"
 msgid "Message sent"
 msgstr "メッセージを送信しました。"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:23
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:21
 msgctxt "Settings autoresponder, how many bites inside the message"
 msgid "bytes used"
 msgstr "バイト使用中"
@@ -8682,6 +8794,11 @@ msgstr "リダイレクト中"
 msgctxt "Signup step label"
 msgid "Setting up new account"
 msgstr "新しいアカウントを設定しています。"
+
+#: ./src/app/utils/filters/bytes.js:7
+msgctxt "Size of a file"
+msgid "bytes"
+msgstr "バイト"
 
 #: ./src/templates/filter/spamListSearch.tpl.html:3
 msgctxt "Spam filtering"
@@ -8731,6 +8848,11 @@ msgctxt "Success"
 msgid "All contacts deleted"
 msgstr "全ての連絡先が削除されました。"
 
+#: ./src/app/members/services/memberActions.js:84
+msgctxt "Success"
+msgid "All the sessions have been successfully revoked"
+msgstr ""
+
 #: ./src/app/organization/modals/setupOrganizationModal.js:53
 msgctxt "Success"
 msgid "Allocated to admin"
@@ -8745,7 +8867,7 @@ msgstr[0] ""
 #: ./src/app/autoresponder/services/autoresponderLanguage.js:9
 msgctxt "Success"
 msgid "Autoresponder installed"
-msgstr ""
+msgstr "自動返信が設定されました。"
 
 #: ./src/app/autoresponder/services/autoresponderLanguage.js:10
 msgctxt "Success"
@@ -8760,12 +8882,12 @@ msgstr "自動返信の設定が更新されました。"
 #: ./src/app/message/directives/messagePublicKeyPinning.js:12
 msgctxt "Success"
 msgid "Banner permanently hidden"
-msgstr ""
+msgstr "バナーは永久に非表示になります。"
 
 #: ./src/app/settings/controllers/domains.js:187
 msgctxt "Success"
 msgid "Catch-all address updated"
-msgstr ""
+msgstr "Catch-allアドレスの更新"
 
 #: ./src/app/payment/modals/giftCodeModal.js:4
 msgctxt "Success"
@@ -8791,7 +8913,7 @@ msgstr ""
 #: ./src/app/message/directives/messageResign.js:14
 msgctxt "Success"
 msgid "Contact re-signed"
-msgstr ""
+msgstr "連絡先が再署名されました"
 
 #: ./src/app/settings/controllers/domains.js:228
 msgctxt "Success"
@@ -8806,9 +8928,9 @@ msgstr "ドメインを削除しました"
 #: ./src/app/settings/controllers/domains.js:282
 msgctxt "Success"
 msgid "Domain verified"
-msgstr ""
+msgstr "ドメインが確認されました。"
 
-#: ./src/app/settings/controllers/account.js:328
+#: ./src/app/settings/controllers/account.js:326
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "メールの設定が更新されました。"
@@ -8841,7 +8963,7 @@ msgstr "フォルダを削除しました"
 #: ./src/app/elements/directives/advancedFilterElement.js:71
 msgctxt "Success"
 msgid "Folder emptied"
-msgstr ""
+msgstr "フォルダーを空にしました。"
 
 #: ./src/app/settings/controllers/labels.js:23
 msgctxt "Success"
@@ -8853,16 +8975,16 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "ギフトコードが適用されました。"
 
-#: ./src/app/settings/controllers/account.js:300
+#: ./src/app/settings/controllers/account.js:298
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
-msgstr ""
+msgstr "ホットキー設定が更新されました。"
 
-#: ./src/app/settings/controllers/account.js:261
-#: ./src/app/settings/controllers/account.js:270
+#: ./src/app/settings/controllers/account.js:260
+#: ./src/app/settings/controllers/account.js:269
 msgctxt "Success"
 msgid "Image preferences updated"
-msgstr ""
+msgstr "画像設定が更新されました。"
 
 #: ./src/app/address/services/deleteKeyProcess.js:35
 msgctxt "Success"
@@ -8883,17 +9005,17 @@ msgstr "ラベルを削除しました"
 #: ./src/app/settings/controllers/labels.js:171
 msgctxt "Success"
 msgid "Label order saved"
-msgstr ""
+msgstr "ラベルの並び順が保存されました。"
 
 #: ./src/app/settings/controllers/labels.js:22
 msgctxt "Success"
 msgid "Label updated"
 msgstr "ラベルが更新されました。"
 
-#: ./src/app/outside/controllers/outside.js:27
+#: ./src/app/outside/controllers/outside.js:28
 msgctxt "Success"
 msgid "Message sent"
-msgstr ""
+msgstr "送信されました"
 
 #: ./src/app/settings/controllers/security.js:32
 msgctxt "Success"
@@ -8905,17 +9027,14 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "パスワードを更新しました"
 
-#: ./src/app/settings/controllers/account.js:141
-#: ./src/app/settings/controllers/account.js:161
-#: ./src/app/settings/controllers/account.js:252
+#: ./src/app/settings/controllers/account.js:139
+#: ./src/app/settings/controllers/account.js:159
+#: ./src/app/settings/controllers/account.js:251
+#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
 msgstr "設定が保存されました。"
-
-#: ./src/app/settings/controllers/account.js:282
-msgctxt "Success"
-msgid "Preference updated"
-msgstr ""
 
 #: ./src/app/address/directives/addressKeysView.js:60
 msgctxt "Success"
@@ -8926,22 +9045,22 @@ msgstr "プライマリー鍵が変更されました"
 msgctxt "Success"
 msgid "Private key imported"
 msgid_plural "{{$count}} Private keys imported"
-msgstr[0] ""
+msgstr[0] "{{$count}} 秘密鍵がインポートされました"
 
 #: ./src/app/address/directives/addressKeysView.js:82
 msgctxt "Success"
 msgid "Private key reactivated"
-msgstr ""
+msgstr "秘密鍵が再有効化されました"
 
 #: ./src/app/message/directives/messagePublicKeyFound.js:19
 msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "公開鍵が信頼されました"
 
-#: ./src/app/settings/controllers/account.js:126
+#: ./src/app/settings/controllers/account.js:124
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
-msgstr ""
+msgstr "回復 / 通知用のメールアドレスが保存されました。"
 
 #: ./src/app/contact/services/manageContactGroup.js:72
 msgctxt "Success"
@@ -8968,6 +9087,11 @@ msgstr "設定が更新されました。"
 msgctxt "Success"
 msgid "Signature verification enabled"
 msgstr "署名の検証が有効になりました"
+
+#: ./src/app/settings/controllers/appearance.js:108
+msgctxt "Success"
+msgid "View mode saved"
+msgstr ""
 
 #: ./src/app/contact/factories/contactSpam.js:23
 msgctxt "Success"
@@ -9081,17 +9205,17 @@ msgctxt "Table Header"
 msgid "Type"
 msgstr "種類"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:27
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:25
 msgctxt "The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 1/3"
 msgid "The message contains too many bytes, only"
 msgstr "応答メッセージが長すぎます。"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:30
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:28
 msgctxt "The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 2/3"
 msgid "allowed (you are using"
 msgstr "バイトまで入力できます。（現在、"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:31
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:29
 msgctxt "The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 3/3"
 msgid "bytes)."
 msgstr "バイト使用されています）"
@@ -9115,10 +9239,10 @@ msgstr "アカウント"
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:49
-#: ./src/templates/filter/modal.tpl.html:123
+#: ./src/templates/filter/modal.tpl.html:130
 #: ./src/templates/invoices/invoiceList.tpl.html:7
 #: ./src/templates/modals/hotkey.tpl.html:73
-#: ./src/templates/views/domains.tpl.html:204
+#: ./src/templates/views/domains.tpl.html:215
 #: ./src/templates/views/domains.tpl.html:52
 #: ./src/templates/views/invoices.tpl.html:20
 #: ./src/templates/views/invoices.tpl.html:50
@@ -9154,13 +9278,18 @@ msgctxt "Title"
 msgid "Add to Blacklist"
 msgstr "ブラックリストに追加"
 
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:17
+msgctxt "Title"
+msgid "Add to Group"
+msgstr ""
+
 #: ./src/templates/filter/filterAddressModal.tpl.html:14
 msgctxt "Title"
 msgid "Add to Whitelist"
 msgstr "ホワイトリストに追加"
 
 #. legend / form heading for adding custom CSS theme code
-#: ./src/templates/views/appearance.tpl.html:151
+#: ./src/templates/views/appearance.tpl.html:163
 msgctxt "Title"
 msgid "Additional themes"
 msgstr "追加のテーマ"
@@ -9172,7 +9301,7 @@ msgstr "追加のテーマ"
 #: ./src/templates/modals/domain/address.tpl.html:31
 #: ./src/templates/modals/generate.tpl.html:54
 #: ./src/templates/search/searchForm.tpl.html:111
-#: ./src/templates/views/domains.tpl.html:196
+#: ./src/templates/views/domains.tpl.html:207
 msgctxt "Title"
 msgid "Address"
 msgstr "メールアドレス"
@@ -9182,7 +9311,7 @@ msgctxt "Title"
 msgid "Address Priority"
 msgstr "アドレスの優先順位"
 
-#: ./src/templates/settings/encryptionView.tpl.html:96
+#: ./src/templates/settings/encryptionView.tpl.html:88
 msgctxt "Title"
 msgid "Address Verification (optional)"
 msgstr "アドレスの検証（任意）"
@@ -9373,7 +9502,7 @@ msgid "CC:"
 msgstr ""
 
 #. table heading for the domains page table listing of addresses
-#: ./src/templates/views/domains.tpl.html:199
+#: ./src/templates/views/domains.tpl.html:210
 msgctxt "Title"
 msgid "Catch-All"
 msgstr "Catch-All"
@@ -9414,7 +9543,7 @@ msgctxt "Title"
 msgid "Change Password"
 msgstr "パスワードの変更"
 
-#: ./src/app/members/services/memberActions.js:32
+#: ./src/app/members/services/memberActions.js:30
 msgctxt "Title"
 msgid "Change Role"
 msgstr "役割の変更"
@@ -9437,13 +9566,13 @@ msgid "Composer"
 msgstr "メール作成"
 
 #. Section heading
-#: ./src/templates/views/appearance.tpl.html:197
+#: ./src/templates/views/appearance.tpl.html:209
 msgctxt "Title"
 msgid "Composer Text Direction"
 msgstr "新規作成時のテキスト方向"
 
 #. Choose the default composer mode
-#: ./src/templates/views/appearance.tpl.html:183
+#: ./src/templates/views/appearance.tpl.html:195
 msgctxt "Title"
 msgid "Composer mode"
 msgstr "作成時の書式"
@@ -9517,7 +9646,7 @@ msgctxt "Title"
 msgid "Contacts"
 msgstr "連絡先"
 
-#: ./src/templates/views/appearance.tpl.html:101
+#: ./src/templates/views/appearance.tpl.html:100
 msgctxt "Title"
 msgid "Conversation Grouping"
 msgstr "会話のグループ化"
@@ -9584,7 +9713,7 @@ msgctxt "Title"
 msgid "Current status"
 msgstr "現在の状態"
 
-#: ./src/templates/views/domains.tpl.html:155
+#: ./src/templates/views/domains.tpl.html:166
 msgctxt "Title"
 msgid "Custom Domain Addresses"
 msgstr "独自ドメインのアドレス"
@@ -9594,7 +9723,7 @@ msgctxt "Title"
 msgid "Custom Filters"
 msgstr "仕分けフィルター"
 
-#: ./src/templates/views/appearance.tpl.html:123
+#: ./src/templates/views/appearance.tpl.html:135
 msgctxt "Title"
 msgid "Custom theme"
 msgstr "カスタムテーマ"
@@ -9644,7 +9773,7 @@ msgctxt "Title"
 msgid "Decrypt message"
 msgstr "メッセージの復号"
 
-#: ./src/app/composer/controllers/composeMessage.js:583
+#: ./src/app/composer/controllers/composeMessage.js:572
 #: ./src/app/contact/factories/contactEditor.js:338
 #: ./src/app/elements/services/removeElement.js:16
 msgctxt "Title"
@@ -9697,7 +9826,7 @@ msgctxt "Title"
 msgid "Delete payment method"
 msgstr "支払い方法の削除"
 
-#: ./src/app/members/services/memberActions.js:71
+#: ./src/app/members/services/memberActions.js:77
 msgctxt "Title"
 msgid "Delete user"
 msgstr "ユーザーを削除"
@@ -9813,7 +9942,7 @@ msgstr "ラベルの編集"
 
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:17
-#: ./src/templates/contact/contactList.tpl.html:25
+#: ./src/templates/contact/contactList.tpl.html:23
 #: ./src/templates/user/humanVerification.tpl.html:35
 msgctxt "Title"
 msgid "Email"
@@ -10070,6 +10199,11 @@ msgctxt "Title"
 msgid "Inbox"
 msgstr "受信箱"
 
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:13
+msgctxt "Title"
+msgid "Internet Explorer Support"
+msgstr ""
+
 #: ./src/app/attachments/services/invalidSignature.js:20
 msgctxt "Title"
 msgid "Invalid attachment signature"
@@ -10109,7 +10243,7 @@ msgstr "鍵の回復用パスワード"
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:20
 #: ./src/templates/address/addressKeysView.tpl.html:47
-#: ./src/templates/views/members.tpl.html:360
+#: ./src/templates/views/members.tpl.html:365
 msgctxt "Title"
 msgid "Key type"
 msgstr "鍵の種類"
@@ -10201,6 +10335,11 @@ msgctxt "Title"
 msgid "Mailbox password"
 msgstr "メールボックスのパスワード"
 
+#: ./src/templates/contact/manageContactGroupModal.tpl.html:13
+msgctxt "Title"
+msgid "Manage Groups"
+msgstr ""
+
 #: ./src/templates/partials/wizard.tpl.html:27
 msgctxt "Title"
 msgid "Manage your email with folders and labels"
@@ -10236,7 +10375,7 @@ msgstr "登録内容"
 #: ./src/templates/contact/contactGroupModal.tpl.html:73
 #: ./src/templates/contact/contactList.tpl.html:14
 #: ./src/templates/filter/modal.tpl.html:26
-#: ./src/templates/views/domains.tpl.html:195
+#: ./src/templates/views/domains.tpl.html:206
 #: ./src/templates/views/members.tpl.html:144
 msgctxt "Title"
 msgid "Name"
@@ -10258,7 +10397,7 @@ msgctxt "Title"
 msgid "New Address Key ({{ email }})"
 msgstr "({{ email }}) 用の新しい鍵の生成"
 
-#: ./src/app/composer/controllers/composeMessage.js:465
+#: ./src/app/composer/controllers/composeMessage.js:469
 msgctxt "Title"
 msgid "New message"
 msgstr "新規メッセージ"
@@ -10326,7 +10465,7 @@ msgid "Organization"
 msgstr "組織"
 
 #. table heading
-#: ./src/templates/views/members.tpl.html:355
+#: ./src/templates/views/members.tpl.html:360
 msgctxt "Title"
 msgid "Organization Key Fingerprint"
 msgstr "組織用の鍵のフィンガープリント"
@@ -10458,7 +10597,7 @@ msgctxt "Title"
 msgid "Private Key password required"
 msgstr "秘密鍵のパスワード要求"
 
-#: ./src/app/members/services/memberActions.js:55
+#: ./src/app/members/services/memberActions.js:61
 msgctxt "Title"
 msgid "Privatize User"
 msgstr "ユーザーの私用化"
@@ -10520,7 +10659,7 @@ msgctxt "Title"
 msgid "Release notes"
 msgstr "リリースノート"
 
-#: ./src/app/members/services/memberActions.js:63
+#: ./src/app/members/services/memberActions.js:69
 msgctxt "Title"
 msgid "Remove user"
 msgstr "ユーザーの削除"
@@ -10573,6 +10712,11 @@ msgctxt "Title"
 msgid "Restore Administrator Privileges"
 msgstr "管理者権限の復元"
 
+#: ./src/app/members/services/memberActions.js:53
+msgctxt "Title"
+msgid "Revoke Sessions"
+msgstr ""
+
 #. table heading
 #: ./src/templates/views/members.tpl.html:147
 msgctxt "Title"
@@ -10603,7 +10747,7 @@ msgstr "連絡先の検索"
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:33
 #: ./src/app/ui/factories/pageTitlesModel.js:50
-#: ./src/templates/views/members.tpl.html:311
+#: ./src/templates/views/members.tpl.html:316
 msgctxt "Title"
 msgid "Security"
 msgstr "セキュリティ"
@@ -10643,7 +10787,7 @@ msgid "Sent"
 msgstr "送信済み"
 
 #. Section heading
-#: ./src/templates/views/appearance.tpl.html:170
+#: ./src/templates/views/appearance.tpl.html:182
 msgctxt "Title"
 msgid "Sent / Drafts folders appearance"
 msgstr "送信済み/下書きフォルダーの外観"
@@ -10763,7 +10907,7 @@ msgstr ""
 #: ./src/templates/address/addressKeysView.tpl.html:48
 #: ./src/templates/invoices/invoiceList.tpl.html:9
 #: ./src/templates/modals/generate.tpl.html:55
-#: ./src/templates/views/domains.tpl.html:197
+#: ./src/templates/views/domains.tpl.html:208
 msgctxt "Title"
 msgid "Status"
 msgstr "状態"
@@ -11217,7 +11361,7 @@ msgctxt "Tooltip"
 msgid "Digital signature verified"
 msgstr "デジタル署名の検証済み"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:77
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:75
 msgctxt "Tooltip"
 msgid "Download"
 msgstr "ダウンロード"
@@ -11339,7 +11483,7 @@ msgctxt "Tooltip"
 msgid "Provides additional protection against VPN server compromise by routing connections through our Secure Core network"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:85
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:83
 msgctxt "Tooltip"
 msgid "Remove"
 msgstr "削除"
@@ -11374,7 +11518,7 @@ msgctxt "Tooltip"
 msgid "This key is encrypted with an old password"
 msgstr "この鍵は旧いパスワードで暗号化されています。"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:93
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:91
 msgctxt "Tooltip"
 msgid "Trust"
 msgstr "信頼する"
@@ -11385,12 +11529,17 @@ msgid "Using this key for encryption will encrypt outgoing messages\n"
 "                       to this address with this key and set this key as the primary PGP key for this address."
 msgstr ""
 
+#: ./src/templates/views/appearance.tpl.html:119
+msgctxt "Tooltip"
+msgid "When a label is added to a message in a conversation, all future messages you send or receive will have that same label automatically applied."
+msgstr ""
+
 #: ./src/templates/address/addressKeysView.tpl.html:69
 msgctxt "Tooltip"
 msgid "You have locally decrypted this key"
 msgstr "復号された鍵をローカルに所持します。"
 
-#: ./src/templates/settings/encryptionView.tpl.html:56
+#: ./src/templates/settings/encryptionView.tpl.html:48
 msgctxt "Tooltip automatically attach public key"
 msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you."
 msgstr "これは送信メッセージに公開鍵を自動添付します。受信者はそれを使用して、メッセージの真正性の検証と送信メッセージの暗号化ができるようになります。"
@@ -11400,7 +11549,7 @@ msgctxt "Tooltip contact"
 msgid "Encrypted data with verified digital signature"
 msgstr "デジタル署名で検証済みの暗号化データ"
 
-#: ./src/templates/settings/encryptionView.tpl.html:72
+#: ./src/templates/settings/encryptionView.tpl.html:64
 msgctxt "Tooltip default pgp scheme"
 msgid "Select the default PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info."
 msgstr "署名とユーザーの暗号化に使用される、既定のPGP方式を選択してください。PGP/INLINEはプレーンテキストを強制します。詳細はここをクリックしてください。"
@@ -11410,12 +11559,12 @@ msgctxt "Tooltip display per session"
 msgid "Created on {{ date }}"
 msgstr "が{{ date }}に作成しました。"
 
-#: ./src/templates/settings/encryptionView.tpl.html:128
+#: ./src/templates/settings/encryptionView.tpl.html:112
 msgctxt "Tooltip prompt to trust keys"
 msgid "When receiving an internal message from a sender that has no trusted keys in your contacts, show a banner asking if you want to enable trusted keys."
 msgstr "信頼済みの鍵を設定していない連絡先からのメッセージを受信した際、鍵の信頼を有効にするかを問い合わせます。"
 
-#: ./src/templates/settings/encryptionView.tpl.html:36
+#: ./src/templates/settings/encryptionView.tpl.html:30
 msgctxt "Tooltip sign external messages"
 msgid "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
 msgstr "全送信メッセージに自動署名することで、受信者はメッセージの真正性の検証ができます。以下で選択した既定のPGP方式と組み合わせて使用されます。"
@@ -11479,15 +11628,21 @@ msgid "message"
 msgid_plural "messages"
 msgstr[0] "メッセージ"
 
+#: ./src/app/dnd/factories/ptDndNotification.js:16
+msgctxt "Type of item"
+msgid "contact"
+msgid_plural "contacts"
+msgstr[0] "連絡先"
+
 #: ./src/app/dnd/factories/ptDndNotification.js:15
-#: ./src/app/dnd/services/actionDnd.js:22
+#: ./src/app/dnd/services/actionDnd.js:23
 msgctxt "Type of item"
 msgid "conversation"
 msgid_plural "conversations"
 msgstr[0] "会話"
 
 #: ./src/app/dnd/factories/ptDndNotification.js:14
-#: ./src/app/dnd/services/actionDnd.js:21
+#: ./src/app/dnd/services/actionDnd.js:22
 msgctxt "Type of item"
 msgid "message"
 msgid_plural "messages"
@@ -11760,12 +11915,12 @@ msgctxt "VCard key name"
 msgid "Work"
 msgstr "職場"
 
-#: ./src/templates/authentication/loginForm.tpl.html:90
+#: ./src/templates/authentication/loginForm.tpl.html:88
 msgctxt "Want to test the latest features? Log in on BETA"
 msgid "BETA"
 msgstr "ベータ版にログオンする"
 
-#: ./src/templates/authentication/loginForm.tpl.html:90
+#: ./src/templates/authentication/loginForm.tpl.html:88
 msgctxt "Want to test the latest features? Log in on BETA"
 msgid "Want to test the latest features? Log in on"
 msgstr "最新の機能をテストしたいですか？"
@@ -11951,15 +12106,27 @@ msgctxt "domains"
 msgid "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?"
 msgstr "通常、'www' サブドメインはメールには使用されません。このサブドメイン（www）を本当に使用しますか？"
 
-#: ./src/templates/views/domains.tpl.html:148
+#: ./src/templates/views/domains.tpl.html:159
 msgctxt "domains list"
 msgid "Click on 'ADD CUSTOM DOMAIN' button to add a domain."
 msgstr "ドメインを追加するには「独自ドメインを追加」をクリックしてください。"
 
-#: ./src/templates/views/domains.tpl.html:146
+#: ./src/templates/views/domains.tpl.html:157
 msgctxt "domains list"
 msgid "No custom domain found"
 msgstr "独自ドメインは見つかりませんでした。"
+
+#. Setup Error: Please run the [setup wizard] to correct configuration errors
+#: ./src/templates/views/domains.tpl.html:138
+msgctxt "domains list"
+msgid "Setup Error: Please run the"
+msgstr ""
+
+#. Setup Error: Please run the [setup wizard] to correct configuration errors
+#: ./src/templates/views/domains.tpl.html:144
+msgctxt "domains list"
+msgid "to correct configuration errors."
+msgstr ""
 
 #: ./src/app/labels/directives/dropdownLabels.js:8
 msgctxt "dropdown label"
@@ -12024,17 +12191,17 @@ msgctxt "info link to Addresses/Users in Signatures page"
 msgid "New Addresses can be added on"
 msgstr "新規アドレスを追加するには："
 
-#: ./src/templates/address/addressKeysView.tpl.html:179
+#: ./src/templates/address/addressKeysView.tpl.html:171
 msgctxt "key flag info"
 msgid "Disables encryption with this key"
 msgstr "この鍵での暗号化を無効にします"
 
-#: ./src/templates/address/addressKeysView.tpl.html:192
+#: ./src/templates/address/addressKeysView.tpl.html:182
 msgctxt "key flag info"
 msgid "Disables signature verification and encryption with this key"
 msgstr "この鍵での暗号化および、署名の検証を無効にします"
 
-#: ./src/templates/address/addressKeysView.tpl.html:115
+#: ./src/templates/address/addressKeysView.tpl.html:113
 msgctxt "key flag info"
 msgid "Signatures produced by this key are treated as invalid and this key cannot be used for encryption"
 msgstr "この鍵でされた署名を無効なものとして扱い、暗号化にも使用できなくします"
@@ -12091,17 +12258,17 @@ msgctxt "month price"
 msgid "/mo"
 msgstr "/月"
 
-#: ./src/app/dnd/services/actionDnd.js:19
+#: ./src/app/dnd/services/actionDnd.js:20
 msgctxt "notification drag and drop"
 msgid "Apply label"
 msgstr "ラベルを適用"
 
-#: ./src/app/dnd/factories/ptDndNotification.js:16
+#: ./src/app/dnd/factories/ptDndNotification.js:25
 msgctxt "notification drag and drop"
 msgid "Move {{total}} {{type}}"
 msgstr "{{total}}{{type}}を移動"
 
-#: ./src/app/dnd/services/actionDnd.js:23
+#: ./src/app/dnd/services/actionDnd.js:24
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "{{total}} {type}}に星印を付ける"
@@ -12136,7 +12303,7 @@ msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will switch you to <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Single Password Mode</a>."
 msgstr "ログインまたはメールボックスのパスワードをリセットすると<a href=\"https://protonmail.com/support/knowledge-base/single-password/\"target=\"_blank\"> １パスワード モード</a> に切り替わります。"
 
-#: ./src/templates/settings/encryptionView.tpl.html:104
+#: ./src/templates/settings/encryptionView.tpl.html:94
 msgctxt "settings warning"
 msgid "Address Verification is an advanced security feature. Only turn this on if you know what it does."
 msgstr "アドレスの検証は先進的なセキュリティ機能です。動作の仕組みを理解している場合にのみ、有効にしてください。"

@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2019-05-10 10:20\n"
+"PO-Revision-Date: 2019-07-19 09:29\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -67,7 +67,7 @@ msgstr "<p>Bağlantınızdan çok fazla sayıda ProtonMail hesabı oluşturuldu.
 "<p>Bu nedenle, bir spam botu değil de insan olduğunuzdan emin olmak için ek doğrulama talep ediyoruz.</p>\n"
 "<p>Tor ya da ücretsiz VPN'ler spamcılar tarafından sıklıkla istismar edildiğinden dolayı kullandığınız Tor ya da VPN çıkış düğümü bu kontrolü tetikleyebilir.</p>"
 
-#: ./src/app/message/factories/messageActions.js:175
+#: ./src/app/message/factories/messageActions.js:178
 msgctxt "Action"
 msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
@@ -145,7 +145,7 @@ msgctxt "Action"
 msgid "Add address"
 msgstr "Adres ekle"
 
-#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:21
+#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:23
 msgctxt "Action"
 msgid "Add all"
 msgstr "Tümünü ekle"
@@ -155,7 +155,7 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr "Otomatik yanıt ekle"
 
-#: ./src/templates/filter/modal.tpl.html:119
+#: ./src/templates/filter/modal.tpl.html:126
 msgctxt "Action"
 msgid "Add condition"
 msgstr "Koşul ekle"
@@ -193,18 +193,18 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr "Filtre ekle"
 
-#: ./src/templates/filter/modal.tpl.html:195
+#: ./src/templates/filter/modal.tpl.html:202
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
 msgstr "Klasör ekle"
 
-#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:46
+#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:53
 msgctxt "Action"
 msgid "Add key"
 msgstr "Anahtar ekle"
 
-#: ./src/templates/filter/modal.tpl.html:141
+#: ./src/templates/filter/modal.tpl.html:148
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -374,6 +374,7 @@ msgstr "CC BCC"
 #: ./src/templates/composer/composerEncrypt.tpl.html:66
 #: ./src/templates/composer/composerExpiration.tpl.html:52
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:41
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:51
 #: ./src/templates/contact/contactActionHeader.tpl.html:23
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:28
 #: ./src/templates/contact/contactGroupModal.tpl.html:108
@@ -386,7 +387,7 @@ msgstr "CC BCC"
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
-#: ./src/templates/filter/modal.tpl.html:241
+#: ./src/templates/filter/modal.tpl.html:248
 #: ./src/templates/modals/activateOrganization.tpl.html:25
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -404,7 +405,7 @@ msgstr "CC BCC"
 #: ./src/templates/modals/generateOrganization.tpl.html:49
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
-#: ./src/templates/modals/member.tpl.html:123
+#: ./src/templates/modals/member.tpl.html:121
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
@@ -419,7 +420,7 @@ msgstr "CC BCC"
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:19
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
 #: ./src/templates/user/signupPayForm.tpl.html:100
-#: ./src/templates/utils/linkWarningModal.tpl.html:23
+#: ./src/templates/utils/linkWarningModal.tpl.html:39
 #: ./src/templates/views/outside.reply.tpl.html:31
 #: ./src/templates/views/reset-login-password.tpl.html:132
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
@@ -531,7 +532,9 @@ msgstr "Tekrar denemek için buraya tıklayın"
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:7
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:3
 #: ./src/templates/blackFriday/blackFridayModal.tpl.html:3
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:3
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:3
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:3
 #: ./src/templates/contact/contactDisplayModal.tpl.html:13
 #: ./src/templates/contact/contactDisplayModal.tpl.html:17
 #: ./src/templates/contact/contactDisplayModal.tpl.html:3
@@ -601,7 +604,7 @@ msgstr "Tekrar denemek için buraya tıklayın"
 #: ./src/templates/modals/payment/modal.tpl.html:63
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
-#: ./src/templates/modals/releaseNotes.tpl.html:23
+#: ./src/templates/modals/releaseNotes.tpl.html:28
 #: ./src/templates/modals/releaseNotes.tpl.html:3
 #: ./src/templates/modals/setupOrganization.tpl.html:3
 #: ./src/templates/modals/squire/addFile.tpl.html:9
@@ -669,7 +672,7 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr "Kişiler"
 
-#: ./src/templates/utils/linkWarningModal.tpl.html:29
+#: ./src/templates/utils/linkWarningModal.tpl.html:45
 msgctxt "Action"
 msgid "Continue"
 msgstr ""
@@ -741,11 +744,12 @@ msgstr "Şifreyi çöz"
 #: ./src/app/address/directives/addressBtnActions.js:8
 #: ./src/app/labels/directives/actionLabelBtn.js:17
 #: ./src/app/members/directives/memberEditBtn.js:6
-#: ./src/templates/address/addressKeysView.tpl.html:205
+#: ./src/templates/address/addressKeysView.tpl.html:193
 #: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:34
 #: ./src/templates/elements/moveElement.tpl.html:40
+#: ./src/templates/filter/customFilterList.tpl.html:41
 #: ./src/templates/message/message.tpl.html:223
 #: ./src/templates/modals/deleteAccount.tpl.html:53
 #: ./src/templates/ui/toolbarMobile.tpl.html:52
@@ -850,12 +854,18 @@ msgstr "İndir"
 #: ./src/templates/contact/contactActionHeader.tpl.html:15
 #: ./src/templates/contact/contactPhotoRow.tpl.html:20
 #: ./src/templates/dashboard/addonRow.tpl.html:8
+#: ./src/templates/filter/customFilterList.tpl.html:30
 #: ./src/templates/views/labels.tpl.html:58
 #: ./src/templates/vpn/openVpnSection.tpl.html:29
 #: ./src/templates/vpn/openVpnSection.tpl.html:54
 msgctxt "Action"
 msgid "Edit"
 msgstr "Düzenle"
+
+#: ./src/templates/filter/customFilterList.tpl.html:36
+msgctxt "Action"
+msgid "Edit sieve"
+msgstr ""
 
 #: ./src/app/address/directives/addressBtnActions.js:5
 msgctxt "Action"
@@ -903,7 +913,7 @@ msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
 msgstr "İki Adımlı Kimlik Doğrulamayı Etkinleştir"
 
-#: ./src/templates/address/addressKeysView.tpl.html:100
+#: ./src/templates/address/addressKeysView.tpl.html:98
 msgctxt "Action"
 msgid "Enable encryption"
 msgstr "Şifrelemeyi etkinleştir"
@@ -913,7 +923,7 @@ msgctxt "Action"
 msgid "Enable multi-user support"
 msgstr "Çoklu kullanıcı desteğini etkinleştir"
 
-#: ./src/templates/address/addressKeysView.tpl.html:123
+#: ./src/templates/address/addressKeysView.tpl.html:119
 msgctxt "Action"
 msgid "Enable signature verification"
 msgstr "İmza doğrulamayı etkinleştir"
@@ -971,8 +981,8 @@ msgid "Expiration time"
 msgstr "Bitiş tarihi"
 
 #: ./src/app/address/services/deleteKeyProcess.js:34
-#: ./src/templates/address/addressKeysView.tpl.html:146
-#: ./src/templates/address/addressKeysView.tpl.html:160
+#: ./src/templates/address/addressKeysView.tpl.html:142
+#: ./src/templates/address/addressKeysView.tpl.html:154
 #: ./src/templates/message/message.tpl.html:242
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
@@ -1128,17 +1138,17 @@ msgctxt "Action"
 msgid "Load"
 msgstr "Yükle"
 
-#: ./src/templates/views/appearance.tpl.html:162
+#: ./src/templates/views/appearance.tpl.html:174
 msgctxt "Action"
 msgid "Load classic theme"
 msgstr "Klasik temayı yükle"
 
-#: ./src/templates/views/appearance.tpl.html:163
+#: ./src/templates/views/appearance.tpl.html:175
 msgctxt "Action"
 msgid "Load edison theme"
 msgstr "Edison temasını yükle"
 
-#: ./src/templates/contact/contactViewItem.tpl.html:56
+#: ./src/templates/contact/contactViewItem.tpl.html:57
 msgctxt "Action"
 msgid "Load image"
 msgstr "Resmi yükle"
@@ -1166,7 +1176,7 @@ msgctxt "Action"
 msgid "Make Admin"
 msgstr "Yönetici yap"
 
-#: ./src/templates/address/addressKeysView.tpl.html:170
+#: ./src/templates/address/addressKeysView.tpl.html:162
 msgctxt "Action"
 msgid "Make Primary"
 msgstr "Birincil yap"
@@ -1234,19 +1244,19 @@ msgctxt "Action"
 msgid "Mark as unread - Mark as read"
 msgstr "Okunmadı olarak işaretle - Okundu olarak işaretle"
 
-#: ./src/templates/address/addressKeysView.tpl.html:192
+#: ./src/templates/address/addressKeysView.tpl.html:182
 msgctxt "Action"
 msgid "Mark compromised"
 msgstr "Tehlikeli olarak işaretle"
 
-#: ./src/templates/address/addressKeysView.tpl.html:179
+#: ./src/templates/address/addressKeysView.tpl.html:171
 msgctxt "Action"
 msgid "Mark obsolete"
 msgstr "Eski olarak işaretle"
 
 #. contacts toolbar menu option
 #: ./src/templates/contact/contactDisplayModal.tpl.html:14
-#: ./src/templates/contact/contactMergerModal.tpl.html:29
+#: ./src/templates/contact/contactMergerModal.tpl.html:27
 #: ./src/templates/contact/contactToolbar.tpl.html:35
 msgctxt "Action"
 msgid "Merge"
@@ -1358,6 +1368,7 @@ msgid "Not spam"
 msgstr "Gereksiz değil"
 
 #: ./src/app/composer/factories/composerFromModel.js:17
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:32
 #: ./src/templates/modals/abuseFraudModal.tpl.html:16
 #: ./src/templates/modals/alert.tpl.html:13
 msgctxt "Action"
@@ -1456,7 +1467,7 @@ msgctxt "Action"
 msgid "RE-SIGN"
 msgstr "TEKRAR OTURUM AÇ"
 
-#: ./src/templates/address/addressKeysView.tpl.html:138
+#: ./src/templates/address/addressKeysView.tpl.html:134
 msgctxt "Action"
 msgid "Reactivate"
 msgstr "Yeniden etkinleştir"
@@ -1553,7 +1564,7 @@ msgctxt "Action"
 msgid "Reset password"
 msgstr "Parolayı sıfırla"
 
-#: ./src/templates/views/appearance.tpl.html:143
+#: ./src/templates/views/appearance.tpl.html:155
 msgctxt "Action"
 msgid "Reset theme"
 msgstr "Temayı sıfırla"
@@ -1583,9 +1594,15 @@ msgctxt "Action"
 msgid "Revoke all other sessions"
 msgstr "Diğer tüm oturumları kaldır"
 
+#: ./src/app/members/directives/memberEditBtn.js:13
+msgctxt "Action"
+msgid "Revoke sessions"
+msgstr ""
+
 #. Save button for updating default identity on account page
 #. contact details
 #: ./src/templates/composer/editComposerContactGroupModal.tpl.html:48
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:59
 #: ./src/templates/contact/contactActionHeader.tpl.html:31
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:39
 #: ./src/templates/contact/contactGroupModal.tpl.html:115
@@ -1597,16 +1614,16 @@ msgstr "Diğer tüm oturumları kaldır"
 #: ./src/templates/directives/composer/composer.tpl.html:119
 #: ./src/templates/directives/composer/composer.tpl.html:126
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:247
+#: ./src/templates/filter/modal.tpl.html:254
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
 #: ./src/templates/modals/label.tpl.html:75
-#: ./src/templates/modals/member.tpl.html:124
+#: ./src/templates/modals/member.tpl.html:122
 #: ./src/templates/organization/organizationFormName.tpl.html:25
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:45
-#: ./src/templates/views/appearance.tpl.html:144
+#: ./src/templates/views/appearance.tpl.html:156
 msgctxt "Action"
 msgid "Save"
 msgstr "Kaydet"
@@ -1692,6 +1709,11 @@ msgstr "Ayarlar"
 msgctxt "Action"
 msgid "Setup Account"
 msgstr "Hesap oluştur"
+
+#: ./src/templates/views/domains.tpl.html:143
+msgctxt "Action"
+msgid "Setup Wizard"
+msgstr ""
 
 #: ./src/app/composer/directives/composerAttachments.js:9
 #: ./src/templates/vpn/openVpnSection.tpl.html:49
@@ -1898,7 +1920,7 @@ msgid "Upgrade storage"
 msgstr "Depolama alanını artırın"
 
 #. link to dashboard page
-#: ./src/templates/views/domains.tpl.html:167
+#: ./src/templates/views/domains.tpl.html:178
 #: ./src/templates/views/domains.tpl.html:29
 #: ./src/templates/views/members.tpl.html:124
 msgctxt "Action"
@@ -1981,6 +2003,11 @@ msgctxt "Action"
 msgid "complete setup"
 msgstr "kurulumu tamamla"
 
+#: ./src/templates/filter/modal.tpl.html:113
+msgctxt "Action"
+msgid "title"
+msgstr ""
+
 #: ./src/templates/modals/donate.tpl.html:59
 msgctxt "Action"
 msgid "top Up"
@@ -2036,12 +2063,12 @@ msgctxt "Action notification error trying to connect to the API"
 msgid "Retry now"
 msgstr "Şimdi yeniden dene"
 
-#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:18
+#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:16
 msgctxt "Action to not set PGP encryption on import contact"
 msgid "No"
 msgstr "Hayır"
 
-#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:19
+#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:17
 msgctxt "Action to not set PGP encryption on import contact"
 msgid "Yes"
 msgstr "Evet"
@@ -2087,7 +2114,7 @@ msgid "Set"
 msgstr "Ayarla"
 
 #. address state badge
-#: ./src/templates/views/members.tpl.html:265
+#: ./src/templates/views/members.tpl.html:270
 msgctxt "Address state badge"
 msgid "Default"
 msgstr "Varsayılan"
@@ -2095,8 +2122,8 @@ msgstr "Varsayılan"
 #. address state badge
 #. form option
 #: ./src/templates/views/account.tpl.html:218
-#: ./src/templates/views/domains.tpl.html:215
-#: ./src/templates/views/members.tpl.html:262
+#: ./src/templates/views/domains.tpl.html:226
+#: ./src/templates/views/members.tpl.html:267
 msgctxt "Address state badge"
 msgid "Disabled"
 msgstr "Devre dışı"
@@ -2104,61 +2131,61 @@ msgstr "Devre dışı"
 #. address state badge
 #. form option
 #: ./src/templates/views/account.tpl.html:209
-#: ./src/templates/views/domains.tpl.html:214
-#: ./src/templates/views/members.tpl.html:261
+#: ./src/templates/views/domains.tpl.html:225
+#: ./src/templates/views/members.tpl.html:266
 msgctxt "Address state badge"
 msgid "Enabled"
 msgstr "Etkin"
 
 #. address state badge
-#: ./src/templates/views/domains.tpl.html:216
-#: ./src/templates/views/members.tpl.html:263
+#: ./src/templates/views/domains.tpl.html:227
+#: ./src/templates/views/members.tpl.html:268
 msgctxt "Address state badge"
 msgid "Missing keys"
 msgstr "Eksik anahtarlar"
 
 #. address s tate badge
-#: ./src/templates/views/members.tpl.html:264
+#: ./src/templates/views/members.tpl.html:269
 msgctxt "Address state badge"
 msgid "Orphan"
 msgstr "Yetim"
 
-#: ./src/app/conversation/factories/actionConversation.js:43
-#: ./src/app/message/factories/messageActions.js:49
+#: ./src/app/conversation/factories/actionConversation.js:44
+#: ./src/app/message/factories/messageActions.js:50
 msgctxt "App folder"
 msgid "Archive"
 msgstr "Arşiv"
 
-#: ./src/app/conversation/factories/actionConversation.js:38
 #: ./src/app/conversation/factories/actionConversation.js:39
-#: ./src/app/message/factories/messageActions.js:44
+#: ./src/app/conversation/factories/actionConversation.js:40
 #: ./src/app/message/factories/messageActions.js:45
+#: ./src/app/message/factories/messageActions.js:46
 msgctxt "App folder"
 msgid "Drafts"
 msgstr "Taslaklar"
 
-#: ./src/app/conversation/factories/actionConversation.js:36
-#: ./src/app/message/factories/messageActions.js:42
+#: ./src/app/conversation/factories/actionConversation.js:37
+#: ./src/app/message/factories/messageActions.js:43
 msgctxt "App folder"
 msgid "Inbox"
 msgstr "Gelen kutusu"
 
-#: ./src/app/conversation/factories/actionConversation.js:40
 #: ./src/app/conversation/factories/actionConversation.js:41
-#: ./src/app/message/factories/messageActions.js:46
+#: ./src/app/conversation/factories/actionConversation.js:42
 #: ./src/app/message/factories/messageActions.js:47
+#: ./src/app/message/factories/messageActions.js:48
 msgctxt "App folder"
 msgid "Sent"
 msgstr "Gönderilen"
 
-#: ./src/app/conversation/factories/actionConversation.js:37
-#: ./src/app/message/factories/messageActions.js:43
+#: ./src/app/conversation/factories/actionConversation.js:38
+#: ./src/app/message/factories/messageActions.js:44
 msgctxt "App folder"
 msgid "Spam"
 msgstr "Gereksiz"
 
-#: ./src/app/conversation/factories/actionConversation.js:42
-#: ./src/app/message/factories/messageActions.js:48
+#: ./src/app/conversation/factories/actionConversation.js:43
+#: ./src/app/message/factories/messageActions.js:49
 msgctxt "App folder"
 msgid "Trash"
 msgstr "Çöp Kutusu"
@@ -2189,17 +2216,17 @@ msgctxt "Attachment modifier tooltip"
 msgid "Unencrypted PGP/Inline attachment"
 msgstr "Şifrelenmemiş PGP/Satır içi eki"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:57
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:49
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active each month between the selected start and end time."
 msgstr "Otomatik yanıtlama, seçilen başlangıç ve bitiş saatleri arasında her ay etkindir."
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:51
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:45
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active each week between the selected start and end time."
 msgstr "Otomatik yanıt, her hafta seçilen başlangıç ve bitiş zamanları arasında etkindir."
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:39
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:37
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active from the start time to the end time."
 msgstr "Otomatik yanıt, başlangıç zamanından bitiş zamanına kadar etkindir."
@@ -2209,7 +2236,7 @@ msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active until you turn it off."
 msgstr "Otomatik yanıtama, siz kapatana kadar etkindir."
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:45
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:41
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is always active on the days of the week you select, between the selected hours."
 msgstr "Otomatik yanıtlama, seçtiğiniz saatler arasında seçtiğiniz haftanın günlerinde her zaman etkindir."
@@ -2273,7 +2300,7 @@ msgctxt "Bitcoin validation error"
 msgid "Amount below minimum. ({{ ::validator.amountMin / 100 }} {{::currency}})"
 msgstr "En düşük tutarın altındaki miktar. ({{ ::validator.amountMin / 100 }} {{::currency}})"
 
-#: ./src/templates/views/appearance.tpl.html:176
+#: ./src/templates/views/appearance.tpl.html:188
 msgctxt "Bubbule info in appearance sent and drafts folders"
 msgid "Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder."
 msgstr "'Taşınanları dahil et' olarak ayarlama, başka klasörlere taşınan gönderilen/taslak iletilerinin gönderilen/taslaklar klasöründe görünmeye devam edeceği anlamına gelir."
@@ -2463,7 +2490,7 @@ msgctxt "Composer, add File"
 msgid "Delete"
 msgstr "Sil"
 
-#: ./src/templates/squire/addFile.tpl.html:48
+#: ./src/templates/squire/addFile.tpl.html:46
 msgctxt "Composer, add File"
 msgid "Error loading image"
 msgstr "Resim yüklenirken hata"
@@ -2493,7 +2520,7 @@ msgctxt "Composer, add File"
 msgid "Insert image"
 msgstr "Resim ekle"
 
-#: ./src/templates/squire/addFile.tpl.html:45
+#: ./src/templates/squire/addFile.tpl.html:43
 msgctxt "Composer, add File"
 msgid "Loading image"
 msgstr "Resim yükleniyor"
@@ -2529,7 +2556,7 @@ msgctxt "Composer, add Link"
 msgid "Edit link"
 msgstr "Bağlantıyı düzenle"
 
-#: ./src/templates/squire/addLink.tpl.html:50
+#: ./src/templates/squire/addLink.tpl.html:48
 msgctxt "Composer, add Link"
 msgid "Email address"
 msgstr "E-posta adresi"
@@ -2549,22 +2576,22 @@ msgctxt "Composer, add Link"
 msgid "Insert link"
 msgstr "Bağlantı ekle"
 
-#: ./src/templates/squire/addLink.tpl.html:15
+#: ./src/templates/squire/addLink.tpl.html:13
 msgctxt "Composer, add Link"
 msgid "Link URL"
 msgstr "Bağlantı URL'si"
 
-#: ./src/templates/squire/addLink.tpl.html:62
+#: ./src/templates/squire/addLink.tpl.html:60
 msgctxt "Composer, add Link"
 msgid "Link label"
 msgstr "Bağlantı etiketi"
 
-#: ./src/templates/squire/addLink.tpl.html:56
+#: ./src/templates/squire/addLink.tpl.html:54
 msgctxt "Composer, add Link"
 msgid "Phone number"
 msgstr "Telefon numarası"
 
-#: ./src/templates/squire/addLink.tpl.html:35
+#: ./src/templates/squire/addLink.tpl.html:33
 msgctxt "Composer, add Link"
 msgid "Text to display"
 msgstr "Görüntülenecek metin"
@@ -2584,7 +2611,7 @@ msgctxt "Composer, add Link"
 msgid "To what phone number should this link?"
 msgstr "Bu bağlantı hangi telefon numarasına yapılmalı?"
 
-#: ./src/templates/squire/addLink.tpl.html:7
+#: ./src/templates/squire/addLink.tpl.html:5
 msgctxt "Composer, add Link"
 msgid "URL link"
 msgstr "URL bağlantısı"
@@ -2594,7 +2621,7 @@ msgctxt "Composer, add Link"
 msgid "Update"
 msgstr "Güncelle"
 
-#: ./src/templates/squire/addLink.tpl.html:44
+#: ./src/templates/squire/addLink.tpl.html:42
 msgctxt "Composer, add Link"
 msgid "Web address"
 msgstr "Web adresi"
@@ -2875,7 +2902,7 @@ msgctxt "Danger"
 msgid "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending."
 msgstr "Bu adres için Güvenilir Anahtarlar ile Adres Doğrulama etkinleştirildi. Bu adrese gönderebilmek için, öncelikle göndermek için kullanılabilecek ortak anahtarlara güvenin."
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:35
+#: ./src/templates/directives/contact/contactPgp.tpl.html:33
 msgctxt "Danger"
 msgid "This address is disabled. To be able to send to this address, the owner must first enable the address."
 msgstr "Bu adres devre dışı. Bu adrese gönderebilmek için, adresin sahibi önce adresini etkinleştirmelidir."
@@ -3059,7 +3086,7 @@ msgctxt "Dashboard plan type"
 msgid "FREE"
 msgstr "ÜCRETSİZ"
 
-#: ./src/templates/views/appearance.tpl.html:132
+#: ./src/templates/views/appearance.tpl.html:144
 msgctxt "Dashboard, custom theme input"
 msgid "Paste your CSS code here (limited to 200,000 characters)"
 msgstr "CSS kodunuzu buraya yapıştırın (200.000 karakterle sınırlıdır)"
@@ -3324,7 +3351,7 @@ msgctxt "Domains"
 msgid "Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade to ProtonMail Plus</a>."
 msgstr "ProtonMail ile kendi etki alanınızı kullanın ve kendi e-posta adresinizi kullanın. Örn. adiniz@etkialaniniz.com. Bu özelliği etkinleştirmek için, <a ui-sref=\"secured.dashboard({scroll: true})\">ProtonMail Plus planına yükseltin</a>."
 
-#: ./src/templates/views/domains.tpl.html:187
+#: ./src/templates/views/domains.tpl.html:198
 msgctxt "Domains information"
 msgid "Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted."
 msgstr "Adreslerin silinmeden önce devre dışı bırakılmış olması gerekir. Adresler, yalnızca o adresle ilişkili tüm mesajlar silindiğinde silinebilir."
@@ -3374,7 +3401,7 @@ msgctxt "Duration/repetition of autoresponder"
 msgid "Repeat weekly"
 msgstr "Haftalık tekrarla"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:106
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:104
 msgctxt "Empty table message"
 msgid "All available keys are trusted"
 msgstr "Kullanılabilir tüm anahtarlar güvenilir"
@@ -3508,7 +3535,7 @@ msgid "Error connecting to PayPal."
 msgstr "PayPal'a bağlanma hatası."
 
 #: ./src/app/message/factories/messageModel.js:39
-#: ./src/app/outside/controllers/outside.js:33
+#: ./src/app/outside/controllers/outside.js:34
 msgctxt "Error"
 msgid "Error encrypting message"
 msgstr "İleti şifrelenirken hata oluştu"
@@ -3564,8 +3591,8 @@ msgstr "Anahtar yeniden etkinleştirilemedi"
 #: ./src/templates/organization/organizationFormName.tpl.html:20
 #: ./src/templates/payment/giftCodeInput.tpl.html:14
 #: ./src/templates/squire/addFile.tpl.html:22
-#: ./src/templates/squire/addLink.tpl.html:28
-#: ./src/templates/squire/addLink.tpl.html:75
+#: ./src/templates/squire/addLink.tpl.html:26
+#: ./src/templates/squire/addLink.tpl.html:73
 msgctxt "Error"
 msgid "Field required"
 msgstr "Alan gereklidir"
@@ -3660,7 +3687,7 @@ msgctxt "Error"
 msgid "Invalid gift code"
 msgstr "Geçersiz hediye kodu"
 
-#: ./src/app/routes.js:109
+#: ./src/app/routes.js:115
 msgctxt "Error"
 msgid "Invalid invite link"
 msgstr "Geçersiz davet bağlantısı"
@@ -3737,6 +3764,16 @@ msgstr "İnternet bağlantısı bulunamadı."
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr "İleti oluşturmak için anahtarları olan adres yok."
+
+#: ./src/app/contact/services/moveContactGroupHandler.js:25
+msgctxt "Error"
+msgid "No contact group selected"
+msgstr ""
+
+#: ./src/app/contact/services/moveContactGroupHandler.js:24
+msgctxt "Error"
+msgid "No contact selected"
+msgstr ""
 
 #: ./src/templates/contact/autocompleteContacts.tpl.html:19
 msgctxt "Error"
@@ -3942,6 +3979,11 @@ msgctxt "Error"
 msgid "The request failed"
 msgstr "İstek başarısız oldu"
 
+#: ./src/app/utils/directives/linkHandler.js:39
+msgctxt "Error"
+msgid "This message may some URL links that cannot be properly opened by your current browser"
+msgstr ""
+
 #: ./src/app/commons/models/eo.js:10
 msgctxt "Error"
 msgid "Unable to send the message."
@@ -4117,12 +4159,12 @@ msgctxt "Error during importation"
 msgid "Import failed. Please check the import file or try again."
 msgstr "İçe aktarma başarısız oldu. Lütfen içe aktarılan dosyayı kontrol edin veya tekrar deneyin."
 
-#: ./src/templates/ui/dateTimePicker.tpl.html:26
+#: ./src/templates/ui/dateTimePicker.tpl.html:22
 msgctxt "Error input"
 msgid "Please enter a valid date and time."
 msgstr "Lütfen geçerli bir tarih ve saat girin."
 
-#: ./src/templates/ui/dateTimePicker.tpl.html:23
+#: ./src/templates/ui/dateTimePicker.tpl.html:21
 msgctxt "Error input"
 msgid "Please enter a valid date."
 msgstr "Lütfen geçerli bir tarih girin."
@@ -4137,12 +4179,12 @@ msgctxt "Error input"
 msgid "Please enter a valid day in the month."
 msgstr "Lütfen ay içinde geçerli bir gün girin."
 
-#: ./src/templates/ui/weekdayTimePicker.tpl.html:34
+#: ./src/templates/ui/weekdayTimePicker.tpl.html:30
 msgctxt "Error input"
 msgid "Please enter a valid day in the week and time."
 msgstr "Lütfen hafta ve saat içinde geçerli bir gün girin."
 
-#: ./src/templates/ui/weekdayTimePicker.tpl.html:31
+#: ./src/templates/ui/weekdayTimePicker.tpl.html:29
 msgctxt "Error input"
 msgid "Please enter a valid day in the week."
 msgstr "Lütfen hafta içinde geçerli bir gün girin."
@@ -4257,22 +4299,22 @@ msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr "Metin ya da desen"
 
-#: ./src/templates/filter/modal.tpl.html:128
+#: ./src/templates/filter/modal.tpl.html:135
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr "Etiketleri uygula"
 
-#: ./src/templates/filter/modal.tpl.html:203
+#: ./src/templates/filter/modal.tpl.html:210
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr "Olarak işaretle"
 
-#: ./src/templates/filter/modal.tpl.html:149
+#: ./src/templates/filter/modal.tpl.html:156
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr "Şuraya taşı"
 
-#: ./src/templates/filter/modal.tpl.html:228
+#: ./src/templates/filter/modal.tpl.html:235
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr "Otomatik yanıt gönder"
@@ -4383,7 +4425,7 @@ msgctxt "Header"
 msgid "Type"
 msgstr "Tür"
 
-#: ./src/templates/views/members.tpl.html:303
+#: ./src/templates/views/members.tpl.html:308
 msgctxt "Help"
 msgid "To edit the signature(s) and reorder your addresses, <a ui-sref=\"secured.account\">go to account</a>"
 msgstr "İmzaları ve adreslerinizi yeniden düzenlemek için <a ui-sref=\"secured.account\">hesap bölümüne gidin</a>"
@@ -4539,7 +4581,7 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr "Önce bir kurtarma e-posta adresi eklemenizi öneririz. Aksi takdirde, bir şeyler ters giderse hesabınızı kurtaramazsınız."
 
-#: ./src/app/conversation/factories/actionConversation.js:403
+#: ./src/app/conversation/factories/actionConversation.js:406
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
 msgid_plural "{{number}} conversations moved to {{folder}}"
@@ -4863,7 +4905,7 @@ msgctxt "Info"
 msgid "Advanced settings saved"
 msgstr "Gelişmiş ayarlar kaydedildi"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:64
+#: ./src/templates/directives/contact/contactPgp.tpl.html:56
 msgctxt "Info"
 msgid "All uploaded keys are expired or revoked! Encryption is automatically disabled."
 msgstr "Yüklenen tüm anahtarların süresi dolmuş veya iptal edilmiş! Şifreleme otomatik olarak devre dışı bırakıldı."
@@ -4958,17 +5000,17 @@ msgctxt "Info"
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr "İki adımlı kimlik doğrulamasını devre dışı bırakmak istediğinize emin misiniz?"
 
-#: ./src/app/members/services/memberActions.js:72
+#: ./src/app/members/services/memberActions.js:78
 msgctxt "Info"
 msgid "Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted."
 msgstr "Bu kullanıcıyı kalıcı olarak silmek istediğinizden emin misiniz? Gelen kutusu ve bu kullanıcı ile ilişkili tüm adresler silinecek."
 
-#: ./src/app/members/services/memberActions.js:64
+#: ./src/app/members/services/memberActions.js:70
 msgctxt "Info"
 msgid "Are you sure you want to permanently remove this user from your organization? The user will lose access to all the addresses of your organization."
 msgstr "Bu kullanıcıyı kuruluşunuzdan kalıcı olarak kaldırmak istediğinizden emin misiniz? Kullanıcı, kuruluşunuzun tüm adreslerine erişimini kaybedecektir."
 
-#: ./src/app/members/services/memberActions.js:33
+#: ./src/app/members/services/memberActions.js:31
 msgctxt "Info"
 msgid "Are you sure you want to remove administrative privileges from this user?"
 msgstr "Yönetici ayrıcalıklarını bu kullanıcıdan kaldırmak istediğinizden emin misiniz?"
@@ -5044,7 +5086,7 @@ msgctxt "Info"
 msgid "Bug reports are not end-to-end encrypted, please do not send any sensitive information."
 msgstr "Hata raporları uçtan uca şifreli değildir, lütfen herhangi bir hassas bilgi göndermeyin."
 
-#: ./src/app/settings/controllers/appearance.js:87
+#: ./src/app/settings/controllers/appearance.js:91
 msgctxt "Info"
 msgid "Buttons position saved"
 msgstr "Düğme konumu kaydedildi"
@@ -5065,7 +5107,7 @@ msgid "By clicking Submit, you agree to abide by"
 msgstr "Gönder düğmesine tıklayarak şunlara uymayı kabul ediyorsunuz:"
 
 #: ./src/app/composer/controllers/composeMessage.js:140
-#: ./src/app/routes.js:370
+#: ./src/app/routes.js:392
 msgctxt "Info"
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Şimdi bırakarak, bu e-postada yazdıklarınızı kaybedeceksiniz. Daha sonra geri dönmek isterseniz bir taslak olarak saklayabilirsiniz."
@@ -5114,7 +5156,7 @@ msgctxt "Info"
 msgid "Column"
 msgstr "Sütun"
 
-#: ./src/app/settings/controllers/appearance.js:63
+#: ./src/app/settings/controllers/appearance.js:67
 msgctxt "Info"
 msgid "Compose mode saved"
 msgstr "Oluşturma modu kaydedildi"
@@ -5124,7 +5166,7 @@ msgctxt "Info"
 msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> for critical security issues."
 msgstr "Kritik güvenlik sorunları için bize <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> adresinden ulaşabilirsiniz."
 
-#: ./src/templates/views/appearance.tpl.html:107
+#: ./src/templates/views/appearance.tpl.html:106
 msgctxt "Info"
 msgid "Conversation Grouping automatically groups messages in the same conversation together."
 msgstr "Sohbet gruplama, aynı sohbetteki iletileri birlikte otomatik olarak gruplandırır."
@@ -5169,7 +5211,7 @@ msgctxt "Info"
 msgid "Custom filters work on all new emails, including incoming emails as well as sent emails"
 msgstr "Özel filtreler, gelen e-postaların yanı sıra gönderilen e-postalar da dahil olmak üzere tüm yeni e-postalarda çalışır"
 
-#: ./src/templates/views/appearance.tpl.html:130
+#: ./src/templates/views/appearance.tpl.html:142
 msgctxt "Info"
 msgid "Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources."
 msgstr "Üçüncü tarafların özel temaları, gizliliğinize potansiyel olarak ihanet edebilir. Yalnızca güvenilir kaynaklardan gelen temaları kullanın."
@@ -5436,6 +5478,11 @@ msgctxt "Info"
 msgid "Important: Please make sure you saved the recovery codes. Otherwise you can permanently lose access to your account if you lose your 2FA device."
 msgstr "Önemli: Lütfen kurtarma kodlarını kaydettiğinizden emin olun. Aksi takdirde, 2FA cihazınızı kaybederseniz hesabınıza erişiminizi kalıcı olarak kaybedebilirsiniz."
 
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:18
+msgctxt "Info"
+msgid "In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below."
+msgstr ""
+
 #: ./src/app/payment/modals/payModal.js:14
 #: ./src/app/settings/controllers/payments.js:147
 msgctxt "Info"
@@ -5467,14 +5514,14 @@ msgctxt "Info"
 msgid "Key reactivated"
 msgstr "Anahtar yeniden etkinleştirildi"
 
-#: ./src/app/settings/controllers/appearance.js:75
+#: ./src/app/settings/controllers/appearance.js:79
 #: ./src/app/ui/directives/chooseLayoutBtns.js:33
 msgctxt "Info"
 msgid "Layout saved"
 msgstr "Yerleşim kaydedildi"
 
 #: ./src/app/message/directives/unsubscribePanel.js:20
-#: ./src/templates/message/messageAutoGenerated.tpl.html:6
+#: ./src/templates/message/messageAutoGenerated.tpl.html:4
 msgctxt "Info"
 msgid "Learn more"
 msgstr "Daha fazla bilgi edinin"
@@ -5484,7 +5531,7 @@ msgctxt "Info"
 msgid "Learn more."
 msgstr "Daha fazla bilgi edinin."
 
-#: ./src/templates/views/appearance.tpl.html:159
+#: ./src/templates/views/appearance.tpl.html:171
 msgctxt "Info"
 msgid "Loading themes will override your current theme!"
 msgstr "Temaların yüklenmesi mevcut temanızı geçersiz kılar!"
@@ -5517,7 +5564,7 @@ msgctxt "Info"
 msgid "Maximized"
 msgstr "Ekran kaplandı"
 
-#: ./src/app/composer/controllers/composeMessage.js:601
+#: ./src/app/composer/controllers/composeMessage.js:591
 msgctxt "Info"
 msgid "Message discarded"
 msgstr "Mesaj atıldı"
@@ -5543,6 +5590,18 @@ msgstr "Ekinizi 'bilinmeyen' den, dosya uzantısı da dahil olmak üzere doğru 
 msgctxt "Info"
 msgid "No contact found"
 msgstr "Kişi bulunamadı"
+
+#: ./src/templates/contact/contactGroupModal.tpl.html:68
+msgctxt "Info"
+msgid "No contacts added yet"
+msgstr ""
+
+#: ./src/app/contact/services/moveContactGroupHandler.js:16
+msgctxt "Info"
+msgid "No emails for this contact"
+msgid_plural "No emails for these contacts"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ./src/app/filter/directives/emailBlockList.js:13
 msgctxt "Info"
@@ -5574,7 +5633,7 @@ msgctxt "Info"
 msgid "Number of users"
 msgstr "Kullanıcı sayısı"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:52
+#: ./src/templates/directives/contact/contactPgp.tpl.html:46
 msgctxt "Info"
 msgid "Only change these settings if you are using PGP with non-ProtonMail recipients."
 msgstr "ProtonMail dışındaki alıcılarla PGP kullanıyorsanız, bu ayarları değiştirin."
@@ -5589,10 +5648,15 @@ msgctxt "Info"
 msgid "OpenVPN password updated"
 msgstr "OpenVPN parolası güncellendi"
 
-#: ./src/app/settings/controllers/account.js:178
+#: ./src/app/settings/controllers/account.js:176
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Güvenlik nedeniyle işlem zaman aşımına uğradı. Lütfen tekrar deneyin"
+
+#: ./src/templates/composer/composerEncrypt.tpl.html:49
+msgctxt "Info"
+msgid "Optional"
+msgstr ""
 
 #: ./src/app/address/factories/addressModel.js:42
 #: ./src/app/filter/directives/customFilterList.js:70
@@ -5600,7 +5664,7 @@ msgctxt "Info"
 msgid "Order saved"
 msgstr "Sipariş kaydedildi"
 
-#: ./src/app/members/services/memberActions.js:56
+#: ./src/app/members/services/memberActions.js:62
 msgctxt "Info"
 msgid "Organization administrators will no longer be able to log in and control the user's account after privatization. This change is PERMANENT."
 msgstr "Kuruluş yöneticileri, özelleştirmeden sonra kullanıcının hesabına giriş yapıp kontrol edemeyecekler. Bu değişiklik kalıcıdır."
@@ -5665,7 +5729,7 @@ msgctxt "Info"
 msgid "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs PGP/Inline messages."
 msgstr "PGP/Satır içi yalnızca Düz Metin biçimiyle uyumludur. Lütfen ProtonMail’in her zaman PGP/Satır içi iletilerini imzaladığını unutmayın."
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:8
+#: ./src/templates/directives/contact/contactPgp.tpl.html:7
 msgctxt "Info"
 msgid "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs PGP/MIME messages."
 msgstr "PGP/MIME, geçerli besteci modunu kullanarak iletiyi otomatik olarak gönderir. Lütfen ProtonMail’in her zaman PGP/MIME iletilerini imzaladığını unutmayın."
@@ -5690,7 +5754,7 @@ msgctxt "Info"
 msgid "Payments are currently not available, please try again later"
 msgstr "Ödeme şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin"
 
-#: ./src/app/composer/controllers/composeMessage.js:584
+#: ./src/app/composer/controllers/composeMessage.js:573
 msgctxt "Info"
 msgid "Permanently delete this draft?"
 msgstr "Bu taslak kalıcı olarak silinsin mi?"
@@ -5751,7 +5815,7 @@ msgctxt "Info"
 msgid "Please enter your organization recovery password:"
 msgstr "Lütfen kuruluş kurtarma parolanızı girin:"
 
-#: ./src/templates/modals/member.tpl.html:119
+#: ./src/templates/modals/member.tpl.html:117
 msgctxt "Info"
 msgid "Please give the address and temporary password to the new member so they can log in."
 msgstr "Lütfen yeni üyeye, giriş yapabilmeleri için adres ve geçici parolayı verin."
@@ -5761,12 +5825,17 @@ msgctxt "Info"
 msgid "Please right-click on the attachment and select Save/Download As."
 msgstr "Lütfen eke sağ tıklayın ve Farklı Kaydet/İndir seçeneğini seçin."
 
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:21
+msgctxt "Info"
+msgid "Please select which email address or adresses to add to this group."
+msgstr ""
+
 #: ./src/app/attachments/services/attachmentDownloader.js:23
 msgctxt "Info"
 msgid "Please tap and hold on the attachment and select Open in New Tab."
 msgstr "Lütfen eke uzun dokunun ve Yeni Sekmede Aç seçeneğini seçin."
 
-#: ./src/app/members/services/memberActions.js:81
+#: ./src/app/members/services/memberActions.js:88
 msgctxt "Info"
 msgid "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support."
 msgstr "Çoklu kullanıcı desteğini almak için lütfen, birden fazla kullanıcıya sahip Profesyonel plana veya Vizyoner hesabına yükseltin."
@@ -5860,7 +5929,7 @@ msgctxt "Info"
 msgid "Right-click on your attachment and choose 'Download linked file as...'"
 msgstr "Ekinize sağ tıklayın ve 'Bağlantılı dosyayı farklı indir...' seçeneğini seçin"
 
-#: ./src/app/members/services/memberActions.js:79
+#: ./src/app/members/services/memberActions.js:86
 msgctxt "Info"
 msgid "Role updated"
 msgstr "Rol güncellendi"
@@ -5918,7 +5987,7 @@ msgctxt "Info"
 msgid "Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds the address to the Whitelist."
 msgstr "Gönderene özgü gereksiz kuralları burada uygulanabilir. Beyaz liste, adresleri her zaman gelen kutusuna; kara liste adresleri ise her zaman gereksiz kutusuna gider. Bir iletiyi, gereksiz olarak işaretlemek, adresi kara listeye ekler. Bir iletiyi gereksiz değil olarak işaretlemek, adresi beyaz listeye ekler."
 
-#: ./src/templates/views/domains.tpl.html:201
+#: ./src/templates/views/domains.tpl.html:212
 msgctxt "Info"
 msgid "Set a catch-all address for your domain."
 msgstr "Etki alanınız için bir tümünü yakalama adresi ayarlayın."
@@ -5938,7 +6007,7 @@ msgctxt "Info"
 msgid "Something went wrong, please refresh the page in order to proceed. If you still see this error message please contact our support team."
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:80
+#: ./src/app/members/services/memberActions.js:87
 msgctxt "Info"
 msgid "Status Updated"
 msgstr "Durum güncellendi"
@@ -5993,12 +6062,12 @@ msgctxt "Info"
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr "İleti imzası geçersiz olduğu için, ileti imzası doğrulanamadı."
 
-#: ./src/app/routes.js:166
+#: ./src/app/routes.js:172
 msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr "Tema sıfırlandı! Yönlendiriliyor..."
 
-#: ./src/app/settings/controllers/appearance.js:41
+#: ./src/app/settings/controllers/appearance.js:45
 msgctxt "Info"
 msgid "Theme saved"
 msgstr "Tema kaydedildi"
@@ -6062,6 +6131,16 @@ msgctxt "Info"
 msgid "This is used to recover your account if you get locked out or forget your password."
 msgstr "Şifrenizi unuttuğunuz veya kilitli kaldığınız durumlarda kullanılır."
 
+#: ./src/templates/utils/linkWarningModal.tpl.html:25
+msgctxt "Info"
+msgid "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+msgstr ""
+
+#: ./src/templates/utils/linkWarningModal.tpl.html:17
+msgctxt "Info"
+msgid "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it."
+msgstr ""
+
 #: ./src/templates/message/messageAutoGenerated.tpl.html:3
 msgctxt "Info"
 msgid "This message is automatically generated as a response to a previous message."
@@ -6069,8 +6148,8 @@ msgstr "Bu ileti, önceki bir iletiye yanıt olarak otomatik olarak oluşturulur
 
 #: ./src/app/message/directives/unsubscribePanel.js:19
 msgctxt "Info"
-msgid "This message is from a mailing list."
-msgstr "Bu ileti, bir posta listesinden alınmıştır."
+msgid "This message is from a mailing list"
+msgstr ""
 
 #: ./src/templates/message/messagePublicKeyFound.tpl.html:9
 msgctxt "Info"
@@ -6096,8 +6175,8 @@ msgstr "Bu sayfa, yalnızca daha büyük çözünürlüklü cihazlarda kullanıl
 
 #: ./src/templates/message/messagePublicKeyPinning.tpl.html:3
 msgctxt "Info"
-msgid "This sender's public key has not been trusted yet."
-msgstr "Bu gönderenin genel anahtarına henüz güvenilmedi."
+msgid "This sender's public key has not been trusted yet"
+msgstr ""
 
 #: ./src/templates/views/appearance.tpl.html:12
 msgctxt "Info"
@@ -6109,7 +6188,7 @@ msgctxt "Info"
 msgid "This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it by clicking your username in the upper right corner."
 msgstr "Bu kısa öğretici size yeni ProtonMail hesabınızın ana özelliklerini gösterecektir. Daha fazla bilgi için size gönderdiğimiz Hoş Geldiniz e-postasını da kontrol edebilirsiniz. Bu öğreticiyi tekrar görüntülemek isterseniz sağ üst köşedeki kullanıcı adınıza tıklayarak öğreticiye yeniden erişebilirsiniz."
 
-#: ./src/app/members/services/memberActions.js:47
+#: ./src/app/members/services/memberActions.js:45
 msgctxt "Info"
 msgid "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization."
 msgstr "Bu kullanıcı şu anda kuruluşunuzun ödemelerinden sorumludur. Bu üyeyi indirgeyerek, kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
@@ -6158,7 +6237,7 @@ msgctxt "Info"
 msgid "To pay via Cash, please email us at <strong>contact@protonmail.com</strong> for instructions."
 msgstr "Nakit yoluyla ödeme yapmak için lütfen talimatlar için <strong> contact@protonmail.com</strong>adresinden e-posta ile bize ulaşın."
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:40
+#: ./src/templates/directives/contact/contactPgp.tpl.html:36
 msgctxt "Info"
 msgid "To use Address Verification, you must enable Trusted Keys and trust one or more available public keys, including the primary key for this address. This prevents the encryption keys from being faked."
 msgstr "Adres doğrulamayı kullanmak için güvenilir anahtarları etkinleştirmeli ve bu adres için birincil anahtar da dahil olmak üzere bir veya daha fazla mevcut genel anahtara güvenmelisiniz. Bu, şifreleme anahtarlarının taklit edilmesini önler."
@@ -6193,7 +6272,7 @@ msgctxt "Info"
 msgid "User created"
 msgstr "Kullanıcı oluşturuldu"
 
-#: ./src/app/members/services/memberActions.js:78
+#: ./src/app/members/services/memberActions.js:85
 msgctxt "Info"
 msgid "User removed"
 msgstr "Kullanıcı kaldırıldı"
@@ -6234,11 +6313,6 @@ msgstr "Bu içeriğin imzasının doğrulanması başarısız oldu"
 msgctxt "Info"
 msgid "Verifying invite link..."
 msgstr "Davet bağlantısı doğrulanıyor..."
-
-#: ./src/app/settings/controllers/appearance.js:104
-msgctxt "Info"
-msgid "View mode saved"
-msgstr "Görünüm modu kaydedildi"
 
 #. account deletion warning
 #: ./src/templates/modals/deleteAccount.tpl.html:10
@@ -6317,6 +6391,11 @@ msgctxt "Info"
 msgid "You are about to open another browser tab and visit:"
 msgstr ""
 
+#: ./src/app/members/services/memberActions.js:54
+msgctxt "Info"
+msgid "You are about to revoke all sessions. The user will be automatically logged out of all sessions and prompted to log back in. Are you sure you want to revoke all sessions ?"
+msgstr ""
+
 #: ./src/templates/vpn/vpnView.tpl.html:12
 msgctxt "Info"
 msgid "You are using ProtonVPN Free. Upgrade to ProtonVPN Plus to get faster speeds and better privacy."
@@ -6357,12 +6436,12 @@ msgctxt "Info"
 msgid "You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me)."
 msgstr "Artık @pm.me adresinden de iletiler alabilirsiniz (ProtonMail için kısa ilet veya bana özel ileti)."
 
-#: ./src/app/settings/controllers/account.js:109
+#: ./src/app/settings/controllers/account.js:107
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Yeni bir e-postanız var"
 
-#: ./src/templates/views/members.tpl.html:339
+#: ./src/templates/views/members.tpl.html:344
 msgctxt "Info"
 msgid "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
 msgstr "Kuruluş anahtarlarınıza erişiminizi kaybettiniz. Geri yükleme olmadan; yeni kullanıcılar oluşturamaz, mevcut kullanıcılara adres ekleyemez veya özel olmayan kullanıcı hesaplarına erişemezsiniz."
@@ -6397,7 +6476,7 @@ msgctxt "Info"
 msgid "You have no saved payment methods."
 msgstr "Kayıtlı ödeme yönteminiz yok."
 
-#: ./src/templates/views/members.tpl.html:331
+#: ./src/templates/views/members.tpl.html:336
 msgctxt "Info"
 msgid "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
 msgstr "Kuruluş anahtarlarınızı etkinleştirmelisiniz. Etkinleştirme olmadan; yeni kullanıcılar oluşturamaz, mevcut kullanıcılara adres ekleyemez veya özel olmayan kullanıcı hesaplarına erişemezsiniz."
@@ -6407,7 +6486,7 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr "Kuruluşunuzun özel anahtarını, kuruluş yöneticiniz tarafından sağlanan yedekleme kuruluş anahtarı parolasıyla etkinleştirmelisiniz."
 
-#: ./src/app/members/services/memberActions.js:40
+#: ./src/app/members/services/memberActions.js:38
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
 msgstr "Yönetici ayrıcalıklarını tam olarak etkinleştirmek için bu kullanıcıya kuruluş parolasını sağlamalısınız."
@@ -6493,7 +6572,7 @@ msgid "Your organization password can be shared with other users you wish to giv
 msgstr "Kuruluş parolanız, yönetici ayrıcalıkları vermek istediğiniz diğer kullanıcılarla paylaşılabilir. Ayrıca, hesabınıza erişiminizi kaybetmeniz durumunda kuruluşunuza erişim sağlamak için acil durum kurtarma kodudur. Lütfen bu parolayı kaydedin ve güvende tutun."
 
 #. how many addresses are in use
-#: ./src/templates/views/domains.tpl.html:162
+#: ./src/templates/views/domains.tpl.html:173
 #: ./src/templates/views/members.tpl.html:120
 msgctxt "Info"
 msgid "addresses used."
@@ -6521,6 +6600,12 @@ msgid "file attached"
 msgid_plural "files attached"
 msgstr[0] "dosya eklendi"
 msgstr[1] "dosya eklendi"
+
+#. If you wish to delete this account in order to combine it with another one, do NOT delete it. You need to follow [link] instead
+#: ./src/templates/modals/deleteAccount.tpl.html:11
+msgctxt "Info"
+msgid "instead"
+msgstr ""
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:20
 msgctxt "Info"
@@ -6633,8 +6718,8 @@ msgstr "Kaydediliyor"
 
 #: ./src/templates/message/readReceiptPanel.tpl.html:3
 msgctxt "Info display in the read receipt panel (message view)"
-msgid "The sender has requested a read receipt."
-msgstr "Gönderen bir okundu bilgisi istedi."
+msgid "The sender has requested a read receipt"
+msgstr ""
 
 #: ./src/templates/contact/contactMimetypeSelector.tpl.html:4
 msgctxt "Info for contact MIMEType selector"
@@ -6796,7 +6881,7 @@ msgctxt "Key state badge"
 msgid "Active"
 msgstr "Etkin"
 
-#: ./src/templates/address/addressKeysView.tpl.html:115
+#: ./src/templates/address/addressKeysView.tpl.html:113
 msgctxt "Key state badge"
 msgid "Compromised"
 msgstr "Tehlikeli"
@@ -6865,16 +6950,21 @@ msgctxt "Label"
 msgid "Annually"
 msgstr "Yıllık"
 
-#: ./src/app/labels/directives/dropdownFolders.js:14
-#: ./src/templates/filter/modal.tpl.html:166
+#: ./src/app/labels/directives/dropdownFolders.js:13
+#: ./src/templates/filter/modal.tpl.html:173
 msgctxt "Label"
 msgid "Archive"
 msgstr "Arşiv"
 
-#: ./src/templates/settings/encryptionView.tpl.html:50
+#: ./src/templates/settings/encryptionView.tpl.html:44
 msgctxt "Label"
 msgid "Automatically attach public key"
 msgstr "Genel anahtarı otomatik olarak ekle"
+
+#: ./src/app/contact/directives/contactPublicKeyLabel.js:4
+msgctxt "Label"
+msgid "Available Public Keys"
+msgstr ""
 
 #: ./src/templates/modals/humanVerification.tpl.html:13
 msgctxt "Label"
@@ -6938,17 +7028,17 @@ msgctxt "Label"
 msgid "Credit card"
 msgstr "Kredi kartı"
 
-#: ./src/templates/views/appearance.tpl.html:131
+#: ./src/templates/views/appearance.tpl.html:143
 msgctxt "Label"
 msgid "Custom theme"
 msgstr "Özel tema"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:66
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:56
 msgctxt "Label"
 msgid "Days"
 msgstr "Gün"
 
-#: ./src/templates/settings/encryptionView.tpl.html:70
+#: ./src/templates/settings/encryptionView.tpl.html:62
 msgctxt "Label"
 msgid "Default PGP Scheme"
 msgstr "Varsayılan PGP Şeması"
@@ -6958,7 +7048,7 @@ msgctxt "Label"
 msgid "Display name"
 msgstr "Görünen isim"
 
-#: ./src/templates/utils/linkWarningModal.tpl.html:18
+#: ./src/templates/utils/linkWarningModal.tpl.html:34
 msgctxt "Label"
 msgid "Do not ask again"
 msgstr ""
@@ -6998,17 +7088,12 @@ msgctxt "Label"
 msgid "Enable"
 msgstr "Etkinleştir"
 
-#: ./src/templates/views/appearance.tpl.html:110
-msgctxt "Label"
-msgid "Enable Conversation Grouping"
-msgstr "Sohbet gruplamasını etkinleştir"
-
 #: ./src/templates/views/labels.tpl.html:53
 msgctxt "Label"
 msgid "Enable/disable desktop and mobile notifications"
 msgstr "Masaüstü ve mobil bildirimleri etkinleştir/devre dışı bırak"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:95
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:85
 msgctxt "Label"
 msgid "End time"
 msgstr "Bitiş zamanı"
@@ -7076,7 +7161,7 @@ msgid "Highest security"
 msgstr "En yüksek güvenlik"
 
 #: ./src/app/labels/directives/dropdownFolders.js:8
-#: ./src/templates/filter/modal.tpl.html:158
+#: ./src/templates/filter/modal.tpl.html:165
 msgctxt "Label"
 msgid "Inbox"
 msgstr "Gelen Kutusu"
@@ -7184,7 +7269,7 @@ msgctxt "Label"
 msgid "Please tell us why you are leaving:"
 msgstr "Lütfen neden ayrıldığınızı bize söyleyin:"
 
-#: ./src/templates/settings/encryptionView.tpl.html:122
+#: ./src/templates/settings/encryptionView.tpl.html:108
 msgctxt "Label"
 msgid "Prompt to trust keys"
 msgstr "Anahtarlara güvenme istemi"
@@ -7214,7 +7299,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr "ProtonVPN ana sayfası"
 
-#: ./src/templates/filter/modal.tpl.html:210
+#: ./src/templates/filter/modal.tpl.html:217
 msgctxt "Label"
 msgid "Read"
 msgstr "Oku"
@@ -7244,7 +7329,7 @@ msgctxt "Label"
 msgid "Sent / Drafts folders appearance"
 msgstr "Gönderilen / Taslaklar klasörü görünümü"
 
-#: ./src/templates/settings/encryptionView.tpl.html:28
+#: ./src/templates/settings/encryptionView.tpl.html:24
 msgctxt "Label"
 msgid "Sign external messages"
 msgstr "Dış iletileri imzala"
@@ -7254,18 +7339,18 @@ msgctxt "Label"
 msgid "Signature"
 msgstr "İmza"
 
-#: ./src/app/labels/directives/dropdownFolders.js:20
-#: ./src/templates/filter/modal.tpl.html:174
+#: ./src/app/labels/directives/dropdownFolders.js:18
+#: ./src/templates/filter/modal.tpl.html:181
 msgctxt "Label"
 msgid "Spam"
 msgstr "Gereksiz"
 
-#: ./src/templates/filter/modal.tpl.html:217
+#: ./src/templates/filter/modal.tpl.html:224
 msgctxt "Label"
 msgid "Starred"
 msgstr "Yıldızlı"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:80
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:70
 msgctxt "Label"
 msgid "Start time"
 msgstr "Başlama zamanı"
@@ -7275,16 +7360,21 @@ msgctxt "Label"
 msgid "Storage for members:"
 msgstr "Üyeler için depolama alanı:"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:110
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:100
 msgctxt "Label"
 msgid "Time zone"
 msgstr "Saat dilimi"
 
-#: ./src/app/labels/directives/dropdownFolders.js:26
-#: ./src/templates/filter/modal.tpl.html:182
+#: ./src/app/labels/directives/dropdownFolders.js:23
+#: ./src/templates/filter/modal.tpl.html:189
 msgctxt "Label"
 msgid "Trash"
 msgstr "Çöp Kutusu"
+
+#: ./src/app/contact/directives/contactPublicKeyLabel.js:6
+msgctxt "Label"
+msgid "Trusted Public Keys"
+msgstr ""
 
 #: ./src/templates/directives/contact/contactKeyPinning.tpl.html:2
 msgctxt "Label"
@@ -7300,6 +7390,16 @@ msgstr "İki adımlı parola"
 msgctxt "Label"
 msgid "Upload picture"
 msgstr "Resim yükle"
+
+#: ./src/templates/views/appearance.tpl.html:109
+msgctxt "Label"
+msgid "Use conversation grouping"
+msgstr ""
+
+#: ./src/templates/views/appearance.tpl.html:118
+msgctxt "Label"
+msgid "Use sticky labels"
+msgstr ""
 
 #: ./src/templates/modals/addAddress.tpl.html:11
 msgctxt "Label"
@@ -7534,6 +7634,11 @@ msgctxt "Label select weekday"
 msgid "Select weekday"
 msgstr "Hafta içi günü seçin"
 
+#: ./src/app/contact/directives/contactPublicKeyLabel.js:5
+msgctxt "Laebel"
+msgid "Public Keys"
+msgstr ""
+
 #: ./src/templates/payment/paymentPlanOverview.tpl.html:16
 msgctxt "Link"
 msgid "(What is this?)"
@@ -7564,10 +7669,10 @@ msgctxt "Link"
 msgid "Include moved messages"
 msgstr "Taşınan iletileri dahil et"
 
-#: ./src/templates/filter/spamLists.tpl.html:14
+#: ./src/templates/filter/spamLists.tpl.html:12
 #: ./src/templates/partials/conversation-placeholder.tpl.html:14
-#: ./src/templates/settings/encryptionView.tpl.html:109
-#: ./src/templates/settings/encryptionView.tpl.html:17
+#: ./src/templates/settings/encryptionView.tpl.html:15
+#: ./src/templates/settings/encryptionView.tpl.html:97
 msgctxt "Link"
 msgid "Learn More"
 msgstr "Daha fazlasını öğrenin"
@@ -7577,12 +7682,13 @@ msgstr "Daha fazlasını öğrenin"
 #: ./src/app/ui/directives/noResults.js:6
 #: ./src/app/user/factories/storageWarning.js:13
 #: ./src/templates/autoresponder/autoresponder.tpl.html:26
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:19
 #: ./src/templates/contact/contactError.tpl.html:18
 #: ./src/templates/contact/contactError.tpl.html:37
 #: ./src/templates/dashboard/customVpnModal.tpl.html:10
-#: ./src/templates/directives/contact/contactPgp.tpl.html:43
-#: ./src/templates/directives/contact/contactPgp.tpl.html:55
-#: ./src/templates/directives/contact/contactPgp.tpl.html:67
+#: ./src/templates/directives/contact/contactPgp.tpl.html:37
+#: ./src/templates/directives/contact/contactPgp.tpl.html:47
+#: ./src/templates/directives/contact/contactPgp.tpl.html:57
 #: ./src/templates/directives/core/bugModalView.tpl.html:110
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:9
 #: ./src/templates/modals/confirm.tpl.html:13
@@ -7593,15 +7699,16 @@ msgstr "Daha fazlasını öğrenin"
 #: ./src/templates/views/account.tpl.html:225
 #: ./src/templates/views/account.tpl.html:259
 #: ./src/templates/views/account.tpl.html:92
-#: ./src/templates/views/appearance.tpl.html:178
+#: ./src/templates/views/appearance.tpl.html:190
 #: ./src/templates/views/members.tpl.html:21
-#: ./src/templates/views/members.tpl.html:328
+#: ./src/templates/views/members.tpl.html:333
 #: ./src/templates/views/security.tpl.html:15
 #: ./src/templates/views/security.tpl.html:28
 msgctxt "Link"
 msgid "Learn more"
 msgstr "Daha fazla bilgi edinin"
 
+#: ./src/templates/modals/releaseNotes.tpl.html:14
 #: ./src/templates/pmMe/pmMeView.tpl.html:11
 #: ./src/templates/pmMe/pmMeView.tpl.html:23
 msgctxt "Link"
@@ -7638,12 +7745,17 @@ msgctxt "Link for the custom vpn modal"
 msgid "Upgrade to ProtonVPN Plus"
 msgstr "ProtonVPN Plus'a yükselt"
 
-#: ./src/templates/views/domains.tpl.html:252
+#: ./src/app/commons/providers/notification.js:26
+msgctxt "Link in notification to undo an action"
+msgid "UNDO"
+msgstr ""
+
+#: ./src/templates/views/domains.tpl.html:263
 msgctxt "List domains"
 msgid "No custom domain addresses found"
 msgstr "Özel etki alanı adresi bulunamadı"
 
-#: ./src/templates/views/domains.tpl.html:254
+#: ./src/templates/views/domains.tpl.html:265
 msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr "Lütfen adresleri yapılandırmadan önce özel bir etki alanı ekleyin."
@@ -8051,7 +8163,7 @@ msgctxt "Notification"
 msgid "Filter updated"
 msgstr "Filtre güncellendi"
 
-#: ./src/app/outside/controllers/outside.js:28
+#: ./src/app/outside/controllers/outside.js:29
 msgctxt "Notification"
 msgid "ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>."
 msgstr "ProtonMail'in Encrypted Outside özelliği, yalnızca 5 kez yanıt vermenize olanak sağlar. <a href=\"https://protonmail.com/signup\" target=\"_blank\">Sorunsuz ve sınırsız uçtan uca şifreleme için ProtonMail'e kaydolabilirsiniz</a>."
@@ -8076,7 +8188,7 @@ msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr "{{sender}} adresinden yeni posta"
 
-#: ./src/app/composer/controllers/composeMessage.js:336
+#: ./src/app/composer/controllers/composeMessage.js:340
 msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
 msgstr "En büyük besteciye ulaşıldı"
@@ -8244,12 +8356,12 @@ msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr "En düşük değerin altındaki tutar."
 
-#: ./src/app/commons/services/i18nLoader.js:54
+#: ./src/app/commons/services/i18nLoader.js:55
 msgctxt "Pikaday"
 msgid "Next Month"
 msgstr "Gelecek ay"
 
-#: ./src/app/commons/services/i18nLoader.js:53
+#: ./src/app/commons/services/i18nLoader.js:54
 msgctxt "Pikaday"
 msgid "Previous Month"
 msgstr "Önceki ay"
@@ -8580,7 +8692,7 @@ msgctxt "Record message"
 msgid "Message saved"
 msgstr "İleti kaydedildi"
 
-#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:13
+#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:11
 msgctxt "Remember encryption choice encrypt"
 msgid "Remember my choice"
 msgstr "Seçimimi hatırla"
@@ -8676,7 +8788,7 @@ msgctxt "Send message"
 msgid "Message sent"
 msgstr "İleti gönderildi"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:23
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:21
 msgctxt "Settings autoresponder, how many bites inside the message"
 msgid "bytes used"
 msgstr "kullanılan bayt"
@@ -8710,6 +8822,11 @@ msgstr "Yönlendiriliyor"
 msgctxt "Signup step label"
 msgid "Setting up new account"
 msgstr "Yeni hesap oluşturuluyor"
+
+#: ./src/app/utils/filters/bytes.js:7
+msgctxt "Size of a file"
+msgid "bytes"
+msgstr ""
 
 #: ./src/templates/filter/spamListSearch.tpl.html:3
 msgctxt "Spam filtering"
@@ -8758,6 +8875,11 @@ msgstr "Harici PGP'yi yapılandır (isteğe bağlı)"
 msgctxt "Success"
 msgid "All contacts deleted"
 msgstr "Tüm kişiler silindi"
+
+#: ./src/app/members/services/memberActions.js:84
+msgctxt "Success"
+msgid "All the sessions have been successfully revoked"
+msgstr ""
 
 #: ./src/app/organization/modals/setupOrganizationModal.js:53
 msgctxt "Success"
@@ -8838,7 +8960,7 @@ msgctxt "Success"
 msgid "Domain verified"
 msgstr "Etki alanı doğrulandı"
 
-#: ./src/app/settings/controllers/account.js:328
+#: ./src/app/settings/controllers/account.js:326
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "E-posta tercihi güncellendi"
@@ -8883,13 +9005,13 @@ msgctxt "Success"
 msgid "Gift code applied"
 msgstr "Hediye kodu uygulandı"
 
-#: ./src/app/settings/controllers/account.js:300
+#: ./src/app/settings/controllers/account.js:298
 msgctxt "Success"
 msgid "Hotkeys preferences updated"
 msgstr "Kısayol tercihleri güncellendi"
 
-#: ./src/app/settings/controllers/account.js:261
-#: ./src/app/settings/controllers/account.js:270
+#: ./src/app/settings/controllers/account.js:260
+#: ./src/app/settings/controllers/account.js:269
 msgctxt "Success"
 msgid "Image preferences updated"
 msgstr "Resim tercihleri güncellendi"
@@ -8920,7 +9042,7 @@ msgctxt "Success"
 msgid "Label updated"
 msgstr "Etiket güncellendi"
 
-#: ./src/app/outside/controllers/outside.js:27
+#: ./src/app/outside/controllers/outside.js:28
 msgctxt "Success"
 msgid "Message sent"
 msgstr "İleti gönderildi"
@@ -8935,17 +9057,14 @@ msgctxt "Success"
 msgid "Password updated"
 msgstr "Parola güncellendi"
 
-#: ./src/app/settings/controllers/account.js:141
-#: ./src/app/settings/controllers/account.js:161
-#: ./src/app/settings/controllers/account.js:252
+#: ./src/app/settings/controllers/account.js:139
+#: ./src/app/settings/controllers/account.js:159
+#: ./src/app/settings/controllers/account.js:251
+#: ./src/app/settings/controllers/account.js:277
+#: ./src/app/settings/controllers/appearance.js:123
 msgctxt "Success"
 msgid "Preference saved"
 msgstr "Tercih kaydedildi"
-
-#: ./src/app/settings/controllers/account.js:282
-msgctxt "Success"
-msgid "Preference updated"
-msgstr ""
 
 #: ./src/app/address/directives/addressKeysView.js:60
 msgctxt "Success"
@@ -8969,7 +9088,7 @@ msgctxt "Success"
 msgid "Public Key trusted"
 msgstr "Genel anahtar güvenilir"
 
-#: ./src/app/settings/controllers/account.js:126
+#: ./src/app/settings/controllers/account.js:124
 msgctxt "Success"
 msgid "Recovery/Notification email saved"
 msgstr "Kurtarma/bildirim e-postası kaydedildi"
@@ -9000,6 +9119,11 @@ msgstr "Ayarlar güncellendi"
 msgctxt "Success"
 msgid "Signature verification enabled"
 msgstr "İmza doğrulaması etkinleştirildi"
+
+#: ./src/app/settings/controllers/appearance.js:108
+msgctxt "Success"
+msgid "View mode saved"
+msgstr ""
 
 #: ./src/app/contact/factories/contactSpam.js:23
 msgctxt "Success"
@@ -9115,17 +9239,17 @@ msgctxt "Table Header"
 msgid "Type"
 msgstr "Tür"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:27
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:25
 msgctxt "The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 1/3"
 msgid "The message contains too many bytes, only"
 msgstr "İleti, çok fazla bayt içeriyor. Yalnızca"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:30
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:28
 msgctxt "The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 2/3"
 msgid "allowed (you are using"
 msgstr "izin veriliyor (kullanıyorsunuz:"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:31
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:29
 msgctxt "The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 3/3"
 msgid "bytes)."
 msgstr "bayt)."
@@ -9149,10 +9273,10 @@ msgstr "Hesap"
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:49
-#: ./src/templates/filter/modal.tpl.html:123
+#: ./src/templates/filter/modal.tpl.html:130
 #: ./src/templates/invoices/invoiceList.tpl.html:7
 #: ./src/templates/modals/hotkey.tpl.html:73
-#: ./src/templates/views/domains.tpl.html:204
+#: ./src/templates/views/domains.tpl.html:215
 #: ./src/templates/views/domains.tpl.html:52
 #: ./src/templates/views/invoices.tpl.html:20
 #: ./src/templates/views/invoices.tpl.html:50
@@ -9188,13 +9312,18 @@ msgctxt "Title"
 msgid "Add to Blacklist"
 msgstr "Kara listeye ekle"
 
+#: ./src/templates/contact/attachGroupContactEmailsModal.tpl.html:17
+msgctxt "Title"
+msgid "Add to Group"
+msgstr ""
+
 #: ./src/templates/filter/filterAddressModal.tpl.html:14
 msgctxt "Title"
 msgid "Add to Whitelist"
 msgstr "Beyaz listeye ekle"
 
 #. legend / form heading for adding custom CSS theme code
-#: ./src/templates/views/appearance.tpl.html:151
+#: ./src/templates/views/appearance.tpl.html:163
 msgctxt "Title"
 msgid "Additional themes"
 msgstr "Ek temalar"
@@ -9206,7 +9335,7 @@ msgstr "Ek temalar"
 #: ./src/templates/modals/domain/address.tpl.html:31
 #: ./src/templates/modals/generate.tpl.html:54
 #: ./src/templates/search/searchForm.tpl.html:111
-#: ./src/templates/views/domains.tpl.html:196
+#: ./src/templates/views/domains.tpl.html:207
 msgctxt "Title"
 msgid "Address"
 msgstr "Adres"
@@ -9216,7 +9345,7 @@ msgctxt "Title"
 msgid "Address Priority"
 msgstr "Adres önceliği"
 
-#: ./src/templates/settings/encryptionView.tpl.html:96
+#: ./src/templates/settings/encryptionView.tpl.html:88
 msgctxt "Title"
 msgid "Address Verification (optional)"
 msgstr "Adres Doğrulama (isteğe bağlı)"
@@ -9407,7 +9536,7 @@ msgid "CC:"
 msgstr "CC:"
 
 #. table heading for the domains page table listing of addresses
-#: ./src/templates/views/domains.tpl.html:199
+#: ./src/templates/views/domains.tpl.html:210
 msgctxt "Title"
 msgid "Catch-All"
 msgstr "Tümünü yakala"
@@ -9448,7 +9577,7 @@ msgctxt "Title"
 msgid "Change Password"
 msgstr "Parolayı Değiştir"
 
-#: ./src/app/members/services/memberActions.js:32
+#: ./src/app/members/services/memberActions.js:30
 msgctxt "Title"
 msgid "Change Role"
 msgstr "Rolü değiştir"
@@ -9471,13 +9600,13 @@ msgid "Composer"
 msgstr "Oluşturucu"
 
 #. Section heading
-#: ./src/templates/views/appearance.tpl.html:197
+#: ./src/templates/views/appearance.tpl.html:209
 msgctxt "Title"
 msgid "Composer Text Direction"
 msgstr "Metin yönü düzenleyicisi"
 
 #. Choose the default composer mode
-#: ./src/templates/views/appearance.tpl.html:183
+#: ./src/templates/views/appearance.tpl.html:195
 msgctxt "Title"
 msgid "Composer mode"
 msgstr "Besteci modu"
@@ -9551,7 +9680,7 @@ msgctxt "Title"
 msgid "Contacts"
 msgstr "Kişiler"
 
-#: ./src/templates/views/appearance.tpl.html:101
+#: ./src/templates/views/appearance.tpl.html:100
 msgctxt "Title"
 msgid "Conversation Grouping"
 msgstr "Sohbet Gruplama"
@@ -9618,7 +9747,7 @@ msgctxt "Title"
 msgid "Current status"
 msgstr "Geçerli durum"
 
-#: ./src/templates/views/domains.tpl.html:155
+#: ./src/templates/views/domains.tpl.html:166
 msgctxt "Title"
 msgid "Custom Domain Addresses"
 msgstr "Özel etki alanı adresleri"
@@ -9628,7 +9757,7 @@ msgctxt "Title"
 msgid "Custom Filters"
 msgstr "Özel Filtreler"
 
-#: ./src/templates/views/appearance.tpl.html:123
+#: ./src/templates/views/appearance.tpl.html:135
 msgctxt "Title"
 msgid "Custom theme"
 msgstr "Özel tema"
@@ -9678,7 +9807,7 @@ msgctxt "Title"
 msgid "Decrypt message"
 msgstr "İletinin şifresini çöz"
 
-#: ./src/app/composer/controllers/composeMessage.js:583
+#: ./src/app/composer/controllers/composeMessage.js:572
 #: ./src/app/contact/factories/contactEditor.js:338
 #: ./src/app/elements/services/removeElement.js:16
 msgctxt "Title"
@@ -9731,7 +9860,7 @@ msgctxt "Title"
 msgid "Delete payment method"
 msgstr "Ödeme yöntemini sil"
 
-#: ./src/app/members/services/memberActions.js:71
+#: ./src/app/members/services/memberActions.js:77
 msgctxt "Title"
 msgid "Delete user"
 msgstr "Kullanıcıyı sil"
@@ -9847,7 +9976,7 @@ msgstr "Etiketi düzenle"
 
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:17
-#: ./src/templates/contact/contactList.tpl.html:25
+#: ./src/templates/contact/contactList.tpl.html:23
 #: ./src/templates/user/humanVerification.tpl.html:35
 msgctxt "Title"
 msgid "Email"
@@ -10104,6 +10233,11 @@ msgctxt "Title"
 msgid "Inbox"
 msgstr "Gelen Kutusu"
 
+#: ./src/templates/browserSupport/dropIE11ModalModal.tpl.html:13
+msgctxt "Title"
+msgid "Internet Explorer Support"
+msgstr ""
+
 #: ./src/app/attachments/services/invalidSignature.js:20
 msgctxt "Title"
 msgid "Invalid attachment signature"
@@ -10143,7 +10277,7 @@ msgstr "Anahtar kurtarma parolası"
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:20
 #: ./src/templates/address/addressKeysView.tpl.html:47
-#: ./src/templates/views/members.tpl.html:360
+#: ./src/templates/views/members.tpl.html:365
 msgctxt "Title"
 msgid "Key type"
 msgstr "Anahtar türü"
@@ -10235,6 +10369,11 @@ msgctxt "Title"
 msgid "Mailbox password"
 msgstr "Posta kutusu parolası"
 
+#: ./src/templates/contact/manageContactGroupModal.tpl.html:13
+msgctxt "Title"
+msgid "Manage Groups"
+msgstr ""
+
 #: ./src/templates/partials/wizard.tpl.html:27
 msgctxt "Title"
 msgid "Manage your email with folders and labels"
@@ -10270,7 +10409,7 @@ msgstr "Aboneliklerim"
 #: ./src/templates/contact/contactGroupModal.tpl.html:73
 #: ./src/templates/contact/contactList.tpl.html:14
 #: ./src/templates/filter/modal.tpl.html:26
-#: ./src/templates/views/domains.tpl.html:195
+#: ./src/templates/views/domains.tpl.html:206
 #: ./src/templates/views/members.tpl.html:144
 msgctxt "Title"
 msgid "Name"
@@ -10292,7 +10431,7 @@ msgctxt "Title"
 msgid "New Address Key ({{ email }})"
 msgstr "Yeni adres anahtarı ({{ email }})"
 
-#: ./src/app/composer/controllers/composeMessage.js:465
+#: ./src/app/composer/controllers/composeMessage.js:469
 msgctxt "Title"
 msgid "New message"
 msgstr "Yeni ileti"
@@ -10360,7 +10499,7 @@ msgid "Organization"
 msgstr "Kuruluş"
 
 #. table heading
-#: ./src/templates/views/members.tpl.html:355
+#: ./src/templates/views/members.tpl.html:360
 msgctxt "Title"
 msgid "Organization Key Fingerprint"
 msgstr "Kuruluş anahtarı parmak izi"
@@ -10492,7 +10631,7 @@ msgctxt "Title"
 msgid "Private Key password required"
 msgstr "Gizli anahtar parolası gerekli"
 
-#: ./src/app/members/services/memberActions.js:55
+#: ./src/app/members/services/memberActions.js:61
 msgctxt "Title"
 msgid "Privatize User"
 msgstr "Kullanıcıyı özelleştir"
@@ -10554,7 +10693,7 @@ msgctxt "Title"
 msgid "Release notes"
 msgstr "Sürüm notları"
 
-#: ./src/app/members/services/memberActions.js:63
+#: ./src/app/members/services/memberActions.js:69
 msgctxt "Title"
 msgid "Remove user"
 msgstr "Kullanıcıyı kaldır"
@@ -10607,6 +10746,11 @@ msgctxt "Title"
 msgid "Restore Administrator Privileges"
 msgstr "Yönetici ayrıcalıklarını geri yükle"
 
+#: ./src/app/members/services/memberActions.js:53
+msgctxt "Title"
+msgid "Revoke Sessions"
+msgstr ""
+
 #. table heading
 #: ./src/templates/views/members.tpl.html:147
 msgctxt "Title"
@@ -10637,7 +10781,7 @@ msgstr "Kişileri ara"
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:33
 #: ./src/app/ui/factories/pageTitlesModel.js:50
-#: ./src/templates/views/members.tpl.html:311
+#: ./src/templates/views/members.tpl.html:316
 msgctxt "Title"
 msgid "Security"
 msgstr "Güvenlik"
@@ -10677,7 +10821,7 @@ msgid "Sent"
 msgstr "Gönderilen"
 
 #. Section heading
-#: ./src/templates/views/appearance.tpl.html:170
+#: ./src/templates/views/appearance.tpl.html:182
 msgctxt "Title"
 msgid "Sent / Drafts folders appearance"
 msgstr "Gönderilen/Taslaklar klasörlerinin görünümü"
@@ -10797,7 +10941,7 @@ msgstr "Teknoloji harikası"
 #: ./src/templates/address/addressKeysView.tpl.html:48
 #: ./src/templates/invoices/invoiceList.tpl.html:9
 #: ./src/templates/modals/generate.tpl.html:55
-#: ./src/templates/views/domains.tpl.html:197
+#: ./src/templates/views/domains.tpl.html:208
 msgctxt "Title"
 msgid "Status"
 msgstr "Durum"
@@ -11255,7 +11399,7 @@ msgctxt "Tooltip"
 msgid "Digital signature verified"
 msgstr "Dijital imza doğrulandı"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:77
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:75
 msgctxt "Tooltip"
 msgid "Download"
 msgstr "İndir"
@@ -11377,7 +11521,7 @@ msgctxt "Tooltip"
 msgid "Provides additional protection against VPN server compromise by routing connections through our Secure Core network"
 msgstr "Bağlantıları Secure Core ağımız üzerinden yönlendirerek, VPN sunucusunun tehlikeye karşı korunmasını sağlar"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:85
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:83
 msgctxt "Tooltip"
 msgid "Remove"
 msgstr "Sil"
@@ -11412,7 +11556,7 @@ msgctxt "Tooltip"
 msgid "This key is encrypted with an old password"
 msgstr "Bu anahtar, eski bir parola ile şifrelenmiş"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:93
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:91
 msgctxt "Tooltip"
 msgid "Trust"
 msgstr "Güven"
@@ -11424,12 +11568,17 @@ msgid "Using this key for encryption will encrypt outgoing messages\n"
 msgstr "Şifreleme için bu tuşun kullanılması, \n"
 "                       bu mesajla giden mesajları bu adresle şifreler ve bu anahtarı bu adres için birincil PGP anahtarı olarak ayarlar."
 
+#: ./src/templates/views/appearance.tpl.html:119
+msgctxt "Tooltip"
+msgid "When a label is added to a message in a conversation, all future messages you send or receive will have that same label automatically applied."
+msgstr ""
+
 #: ./src/templates/address/addressKeysView.tpl.html:69
 msgctxt "Tooltip"
 msgid "You have locally decrypted this key"
 msgstr "Bu anahtarın şifresini yerel olarak çözdünüz"
 
-#: ./src/templates/settings/encryptionView.tpl.html:56
+#: ./src/templates/settings/encryptionView.tpl.html:48
 msgctxt "Tooltip automatically attach public key"
 msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you."
 msgstr "Bu, gönderdiğiniz her iletiye otomatik olarak ortak anahtarınızı ekler. Alıcılar, iletilerinizin doğruluğunu doğrulamak ve şifreli iletileri size göndermek için kullanabilir."
@@ -11439,7 +11588,7 @@ msgctxt "Tooltip contact"
 msgid "Encrypted data with verified digital signature"
 msgstr "Doğrulanmış dijital imza ile şifrelenmiş veriler"
 
-#: ./src/templates/settings/encryptionView.tpl.html:72
+#: ./src/templates/settings/encryptionView.tpl.html:64
 msgctxt "Tooltip default pgp scheme"
 msgid "Select the default PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info."
 msgstr "Bir kullanıcıya imza verirken veya kullanıcı şifrelenirken kullanılacak varsayılan PGP düzenini seçin. PGP/Satır içi'nin düz metin iletilerini zorladığını unutmayın. Daha fazla bilgi için tıklayın."
@@ -11449,12 +11598,12 @@ msgctxt "Tooltip display per session"
 msgid "Created on {{ date }}"
 msgstr "{{ date }} tarihinde oluşturuldu"
 
-#: ./src/templates/settings/encryptionView.tpl.html:128
+#: ./src/templates/settings/encryptionView.tpl.html:112
 msgctxt "Tooltip prompt to trust keys"
 msgid "When receiving an internal message from a sender that has no trusted keys in your contacts, show a banner asking if you want to enable trusted keys."
 msgstr "Rehberinizde, güvenilir bir anahtarı olmayan bir göndericiden dahili ileti alırken, güvenilir anahtarları etkinleştirmek isteyip istemediğinizi soran bir seçenek gösterin."
 
-#: ./src/templates/settings/encryptionView.tpl.html:36
+#: ./src/templates/settings/encryptionView.tpl.html:30
 msgctxt "Tooltip sign external messages"
 msgid "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
 msgstr "Tüm giden iletilerinizi otomatik olarak imzalayın. Böylece kullanıcılar iletilerinizin orijinal olduğunu doğrulayabilir. Bu, aşağıda seçilen varsayılan PGP şeması ile birlikte yapılır."
@@ -11520,8 +11669,15 @@ msgid_plural "messages"
 msgstr[0] "ileti"
 msgstr[1] "ileti"
 
+#: ./src/app/dnd/factories/ptDndNotification.js:16
+msgctxt "Type of item"
+msgid "contact"
+msgid_plural "contacts"
+msgstr[0] ""
+msgstr[1] ""
+
 #: ./src/app/dnd/factories/ptDndNotification.js:15
-#: ./src/app/dnd/services/actionDnd.js:22
+#: ./src/app/dnd/services/actionDnd.js:23
 msgctxt "Type of item"
 msgid "conversation"
 msgid_plural "conversations"
@@ -11529,7 +11685,7 @@ msgstr[0] "sohbet"
 msgstr[1] "sohbet"
 
 #: ./src/app/dnd/factories/ptDndNotification.js:14
-#: ./src/app/dnd/services/actionDnd.js:21
+#: ./src/app/dnd/services/actionDnd.js:22
 msgctxt "Type of item"
 msgid "message"
 msgid_plural "messages"
@@ -11803,12 +11959,12 @@ msgctxt "VCard key name"
 msgid "Work"
 msgstr "İş"
 
-#: ./src/templates/authentication/loginForm.tpl.html:90
+#: ./src/templates/authentication/loginForm.tpl.html:88
 msgctxt "Want to test the latest features? Log in on BETA"
 msgid "BETA"
 msgstr "BETA"
 
-#: ./src/templates/authentication/loginForm.tpl.html:90
+#: ./src/templates/authentication/loginForm.tpl.html:88
 msgctxt "Want to test the latest features? Log in on BETA"
 msgid "Want to test the latest features? Log in on"
 msgstr "En son özellikleri denemek ister misiniz? Giriş yapın"
@@ -11998,15 +12154,27 @@ msgctxt "domains"
 msgid "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?"
 msgstr "'www' alt etki alanları genellikle e-posta için kullanılmaz. Bu etki alanı değerini kullanmak istediğinizden emin misiniz?"
 
-#: ./src/templates/views/domains.tpl.html:148
+#: ./src/templates/views/domains.tpl.html:159
 msgctxt "domains list"
 msgid "Click on 'ADD CUSTOM DOMAIN' button to add a domain."
 msgstr "Etki alanı eklemek için 'ÖZEL ETKİ ALANI EKLE' düğmesine tıklayın."
 
-#: ./src/templates/views/domains.tpl.html:146
+#: ./src/templates/views/domains.tpl.html:157
 msgctxt "domains list"
 msgid "No custom domain found"
 msgstr "Özel etki alanı bulunamadı"
+
+#. Setup Error: Please run the [setup wizard] to correct configuration errors
+#: ./src/templates/views/domains.tpl.html:138
+msgctxt "domains list"
+msgid "Setup Error: Please run the"
+msgstr ""
+
+#. Setup Error: Please run the [setup wizard] to correct configuration errors
+#: ./src/templates/views/domains.tpl.html:144
+msgctxt "domains list"
+msgid "to correct configuration errors."
+msgstr ""
 
 #: ./src/app/labels/directives/dropdownLabels.js:8
 msgctxt "dropdown label"
@@ -12071,17 +12239,17 @@ msgctxt "info link to Addresses/Users in Signatures page"
 msgid "New Addresses can be added on"
 msgstr "Yeni adresler şuradan eklenebilir"
 
-#: ./src/templates/address/addressKeysView.tpl.html:179
+#: ./src/templates/address/addressKeysView.tpl.html:171
 msgctxt "key flag info"
 msgid "Disables encryption with this key"
 msgstr "Bu anahtar ile şifrelemeyi devre dışı bırakır"
 
-#: ./src/templates/address/addressKeysView.tpl.html:192
+#: ./src/templates/address/addressKeysView.tpl.html:182
 msgctxt "key flag info"
 msgid "Disables signature verification and encryption with this key"
 msgstr "Bu anahtar ile imza doğrulamayı ve şifrelemeyi devre dışı bırakır"
 
-#: ./src/templates/address/addressKeysView.tpl.html:115
+#: ./src/templates/address/addressKeysView.tpl.html:113
 msgctxt "key flag info"
 msgid "Signatures produced by this key are treated as invalid and this key cannot be used for encryption"
 msgstr "Bu anahtar tarafından üretilen imzalar geçersiz olarak kabul edilir ve bu anahtar şifreleme için kullanılamaz"
@@ -12138,17 +12306,17 @@ msgctxt "month price"
 msgid "/mo"
 msgstr "/ay"
 
-#: ./src/app/dnd/services/actionDnd.js:19
+#: ./src/app/dnd/services/actionDnd.js:20
 msgctxt "notification drag and drop"
 msgid "Apply label"
 msgstr "Etiket atandı"
 
-#: ./src/app/dnd/factories/ptDndNotification.js:16
+#: ./src/app/dnd/factories/ptDndNotification.js:25
 msgctxt "notification drag and drop"
 msgid "Move {{total}} {{type}}"
 msgstr "Taşı {{total}} {{type}}"
 
-#: ./src/app/dnd/services/actionDnd.js:23
+#: ./src/app/dnd/services/actionDnd.js:24
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Yıldız {{total}} {{type}}"
@@ -12183,7 +12351,7 @@ msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will switch you to <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Single Password Mode</a>."
 msgstr "Giriş veya posta kutusu parolasını sıfırlamak, sizi <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">tek şifre moduna</a> dönüştürür."
 
-#: ./src/templates/settings/encryptionView.tpl.html:104
+#: ./src/templates/settings/encryptionView.tpl.html:94
 msgctxt "settings warning"
 msgid "Address Verification is an advanced security feature. Only turn this on if you know what it does."
 msgstr "Adres doğrulama, gelişmiş bir güvenlik özelliğidir. Sadece ne yaptığınızı biliyorsanız bunu açın."
