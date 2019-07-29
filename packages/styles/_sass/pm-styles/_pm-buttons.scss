@@ -366,3 +366,8 @@
   border: 1px solid $pm-global-warning;
   color: $pm-global-warning;
 }
+
+/* other modifiers requested */
+.pm-button--noborder {
+  border: 0;
+}
