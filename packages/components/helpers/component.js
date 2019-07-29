@@ -17,3 +17,16 @@ export const nestChildren = (components = [], initialChildren) => {
         return nest(Component, acc);
     }, initialChildren);
 };
+
+/**
+ * Group CSS class to string
+ * Usefull for className prop
+ * @param {Array} classNames
+ * @returns {String}
+ */
+export const classnames = (classNames = []) => {
+    return classNames
+        .filter(Boolean)
+        .join(' ')
+        .trim();
+};
