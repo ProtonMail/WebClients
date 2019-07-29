@@ -11,3 +11,4 @@ export { OrganizationModel } from './organizationModel';
 export { UserModel } from './userModel';
 export { UserSettingsModel } from './userSettingsModel';
 export { SubscriptionModel } from './subscriptionModel';
+export { CalendarsModel } from './calendarsModel';
