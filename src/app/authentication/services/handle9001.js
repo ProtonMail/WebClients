@@ -1,6 +1,7 @@
 /* @ngInject */
 function handle9001($http, humanVerificationModal) {
-    return (config, { VerifyMethods: methods = [], Token: token }) => {
+    return (config, { Details = {} }) => {
+        const { VerifyMethods: methods = [], Token: token } = Details;
         const useParams = ['GET', 'DELETE'].includes(config.method);
         return new Promise((resolve) => {
             humanVerificationModal.activate({
