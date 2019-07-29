@@ -1662,7 +1662,7 @@ msgctxt "Action"
 msgid "Send"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:32
+#: ./src/app/composer/services/validateMessage.js:25
 #: ./src/templates/modals/expirationModal.tpl.html:55
 msgctxt "Action"
 msgid "Send anyway"
@@ -3469,7 +3469,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:69
+#: ./src/app/composer/services/validateMessage.js:55
 msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr ""
@@ -3551,7 +3551,7 @@ msgctxt "Error"
 msgid "Failed to encrypt attachment. Please try again."
 msgstr ""
 
-#: ./src/app/ui/directives/autocompleteEmails.js:31
+#: ./src/app/ui/directives/autocompleteEmails.js:24
 msgctxt "Error"
 msgid "Failed to get key information for {{emails}}. Removing from recipient list. Please try again."
 msgstr ""
@@ -3656,7 +3656,7 @@ msgctxt "Error"
 msgid "Invalid file type"
 msgstr ""
 
-#: ./src/app/contact/directives/contactSelectorForm.js:8
+#: ./src/app/contact/directives/contactSelectorForm.js:6
 msgctxt "Error"
 msgid "Invalid form"
 msgstr ""
@@ -3746,7 +3746,7 @@ msgctxt "Error"
 msgid "No Internet connection found."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:63
+#: ./src/app/composer/services/validateMessage.js:49
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr ""
@@ -3823,7 +3823,7 @@ msgctxt "Error"
 msgid "Please enter a password for this email."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:47
+#: ./src/app/composer/services/validateMessage.js:40
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr ""
@@ -3878,7 +3878,7 @@ msgctxt "Error"
 msgid "Sign up failed"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:41
+#: ./src/app/composer/services/validateMessage.js:34
 msgctxt "Error"
 msgid "Some email addresses are invalid"
 msgstr ""
@@ -3935,7 +3935,7 @@ msgctxt "Error"
 msgid "The email body is not a valid MIME message."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:39
+#: ./src/app/composer/services/validateMessage.js:32
 msgctxt "Error"
 msgid "The following addresses are not valid: {{emails}}"
 msgstr ""
@@ -3945,19 +3945,14 @@ msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:42
+#: ./src/app/composer/services/validateMessage.js:35
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:48
+#: ./src/app/composer/services/validateMessage.js:41
 msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
-msgstr ""
-
-#: ./src/app/ui/directives/autocompleteEmails.js:24
-msgctxt "Error"
-msgid "The maximum number ({{total}}) of Recipients is {{limit}}."
 msgstr ""
 
 #: ./src/app/core/directives/signupIframe.js:46
@@ -4007,7 +4002,7 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:33
+#: ./src/app/composer/services/validateMessage.js:26
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr ""
@@ -4032,7 +4027,7 @@ msgctxt "Error"
 msgid "You are using an outdated version of ProtonMail, please refresh the page."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:62
+#: ./src/app/composer/services/validateMessage.js:48
 msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr ""
@@ -4059,11 +4054,6 @@ msgctxt "Error"
 msgid "You have reached the max recipients (25) per message"
 msgstr ""
 
-#: ./src/app/contact/directives/contactSelectorForm.js:9
-msgctxt "Error"
-msgid "You have reached the max recipients ({{limit}}) per message"
-msgstr ""
-
 #: ./src/app/address/factories/addressModel.js:32
 msgctxt "Error"
 msgid "You have used all addresses in your plan. Please upgrade your plan to add a new address"
@@ -4077,11 +4067,6 @@ msgstr ""
 #: ./src/app/members/services/membersValidator.js:29
 msgctxt "Error"
 msgid "You have used all users in your plan. Please upgrade your plan to add a new user."
-msgstr ""
-
-#: ./src/app/composer/services/validateMessage.js:54
-msgctxt "Error"
-msgid "You have {{total}} recipients. The maximum number is {{limit}}."
 msgstr ""
 
 #: ./src/app/organization/modals/setupOrganizationModal.js:26
@@ -5608,7 +5593,7 @@ msgctxt "Info"
 msgid "No logs yet"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:61
+#: ./src/app/composer/services/validateMessage.js:47
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr ""
@@ -6508,7 +6493,7 @@ msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:74
+#: ./src/app/composer/services/validateMessage.js:60
 #: ./src/templates/invoices/invoiceSection.tpl.html:50
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
@@ -10269,7 +10254,7 @@ msgctxt "Title"
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:68
+#: ./src/app/composer/services/validateMessage.js:54
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:68
 #: ./src/app/ui/factories/pageTitlesModel.js:43
 msgctxt "Title"
@@ -10432,7 +10417,7 @@ msgctxt "Title"
 msgid "No messages"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:60
+#: ./src/app/composer/services/validateMessage.js:46
 msgctxt "Title"
 msgid "No subject"
 msgstr ""
