@@ -6,7 +6,7 @@ const CatchAllSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Catch all `}</SubTitle>
-            <Alert>{c('Info')
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/catch-all/">{c('Info')
                 .t`To select the catch-all email address of a domain, open the action dropdown menu and click on Set catch-all`}</Alert>
         </>
     );
