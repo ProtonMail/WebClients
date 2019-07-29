@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator\n"
 "Language-Team: Croatian\n"
 "Language: hr_HR\n"
-"PO-Revision-Date: 2019-06-11 08:02\n"
+"PO-Revision-Date: 2019-07-19 09:32\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:60
 msgctxt "1 of 2 contacts successfully imported."
@@ -146,7 +146,7 @@ msgctxt "Action"
 msgid "Add address"
 msgstr "Dodaj adresu"
 
-#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:21
+#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:23
 msgctxt "Action"
 msgid "Add all"
 msgstr "Dodaj sve"
@@ -156,7 +156,7 @@ msgctxt "Action"
 msgid "Add auto-reply"
 msgstr "Dodaj automatski odgovor"
 
-#: ./src/templates/filter/modal.tpl.html:119
+#: ./src/templates/filter/modal.tpl.html:126
 msgctxt "Action"
 msgid "Add condition"
 msgstr "Dodaj uvjet"
@@ -194,18 +194,18 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr "Dodaj filtre"
 
-#: ./src/templates/filter/modal.tpl.html:195
+#: ./src/templates/filter/modal.tpl.html:202
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
 msgstr "Dodaj mapu"
 
-#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:46
+#: ./src/templates/directives/contact/contactPublicKeys.tpl.html:53
 msgctxt "Action"
 msgid "Add key"
 msgstr "Dodaj ključ"
 
-#: ./src/templates/filter/modal.tpl.html:141
+#: ./src/templates/filter/modal.tpl.html:148
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -388,7 +388,7 @@ msgstr "CC BCC"
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:35
-#: ./src/templates/filter/modal.tpl.html:241
+#: ./src/templates/filter/modal.tpl.html:248
 #: ./src/templates/modals/activateOrganization.tpl.html:25
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -406,7 +406,7 @@ msgstr "CC BCC"
 #: ./src/templates/modals/generateOrganization.tpl.html:49
 #: ./src/templates/modals/humanVerification.tpl.html:21
 #: ./src/templates/modals/label.tpl.html:69
-#: ./src/templates/modals/member.tpl.html:123
+#: ./src/templates/modals/member.tpl.html:121
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
@@ -421,7 +421,7 @@ msgstr "CC BCC"
 #: ./src/templates/modals/twofactor/twoFAIntroModal.tpl.html:19
 #: ./src/templates/payment/giftCodeModal.tpl.html:14
 #: ./src/templates/user/signupPayForm.tpl.html:100
-#: ./src/templates/utils/linkWarningModal.tpl.html:27
+#: ./src/templates/utils/linkWarningModal.tpl.html:39
 #: ./src/templates/views/outside.reply.tpl.html:31
 #: ./src/templates/views/reset-login-password.tpl.html:132
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:18
@@ -605,7 +605,7 @@ msgstr "Kliknite ovdje za ponovni pokušaj"
 #: ./src/templates/modals/payment/modal.tpl.html:63
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
-#: ./src/templates/modals/releaseNotes.tpl.html:23
+#: ./src/templates/modals/releaseNotes.tpl.html:28
 #: ./src/templates/modals/releaseNotes.tpl.html:3
 #: ./src/templates/modals/setupOrganization.tpl.html:3
 #: ./src/templates/modals/squire/addFile.tpl.html:9
@@ -673,7 +673,7 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr "Kontakti"
 
-#: ./src/templates/utils/linkWarningModal.tpl.html:33
+#: ./src/templates/utils/linkWarningModal.tpl.html:45
 msgctxt "Action"
 msgid "Continue"
 msgstr "Nastavi"
@@ -745,11 +745,12 @@ msgstr "Dešifriranje"
 #: ./src/app/address/directives/addressBtnActions.js:8
 #: ./src/app/labels/directives/actionLabelBtn.js:17
 #: ./src/app/members/directives/memberEditBtn.js:6
-#: ./src/templates/address/addressKeysView.tpl.html:205
+#: ./src/templates/address/addressKeysView.tpl.html:193
 #: ./src/templates/contact/contactMerger.tpl.html:41
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 #: ./src/templates/elements/moveElement.tpl.html:34
 #: ./src/templates/elements/moveElement.tpl.html:40
+#: ./src/templates/filter/customFilterList.tpl.html:41
 #: ./src/templates/message/message.tpl.html:223
 #: ./src/templates/modals/deleteAccount.tpl.html:53
 #: ./src/templates/ui/toolbarMobile.tpl.html:52
@@ -854,12 +855,18 @@ msgstr "Preuzmi"
 #: ./src/templates/contact/contactActionHeader.tpl.html:15
 #: ./src/templates/contact/contactPhotoRow.tpl.html:20
 #: ./src/templates/dashboard/addonRow.tpl.html:8
+#: ./src/templates/filter/customFilterList.tpl.html:30
 #: ./src/templates/views/labels.tpl.html:58
 #: ./src/templates/vpn/openVpnSection.tpl.html:29
 #: ./src/templates/vpn/openVpnSection.tpl.html:54
 msgctxt "Action"
 msgid "Edit"
 msgstr "Uredi"
+
+#: ./src/templates/filter/customFilterList.tpl.html:36
+msgctxt "Action"
+msgid "Edit sieve"
+msgstr "Uredi Sieve filtar"
 
 #: ./src/app/address/directives/addressBtnActions.js:5
 msgctxt "Action"
@@ -895,7 +902,7 @@ msgstr "Obriši svu neželjenu poštu"
 #: ./src/templates/elements/advancedFilterElement.tpl.html:45
 msgctxt "Action"
 msgid "Empty trash"
-msgstr "Isprazni smeće"
+msgstr "Isprazni otpad"
 
 #: ./src/app/address/directives/addressBtnActions.js:7
 msgctxt "Action"
@@ -907,7 +914,7 @@ msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
 msgstr "Omogući provjeru autentičnosti u dva koraka"
 
-#: ./src/templates/address/addressKeysView.tpl.html:100
+#: ./src/templates/address/addressKeysView.tpl.html:98
 msgctxt "Action"
 msgid "Enable encryption"
 msgstr "Omogući šifriranje"
@@ -917,7 +924,7 @@ msgctxt "Action"
 msgid "Enable multi-user support"
 msgstr "Omogući podršku za više korisnika"
 
-#: ./src/templates/address/addressKeysView.tpl.html:123
+#: ./src/templates/address/addressKeysView.tpl.html:119
 msgctxt "Action"
 msgid "Enable signature verification"
 msgstr "Omogući provjeru autentičnosti potpisa"
@@ -975,8 +982,8 @@ msgid "Expiration time"
 msgstr "Vrijeme isteka"
 
 #: ./src/app/address/services/deleteKeyProcess.js:34
-#: ./src/templates/address/addressKeysView.tpl.html:146
-#: ./src/templates/address/addressKeysView.tpl.html:160
+#: ./src/templates/address/addressKeysView.tpl.html:142
+#: ./src/templates/address/addressKeysView.tpl.html:154
 #: ./src/templates/message/message.tpl.html:242
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
@@ -1170,7 +1177,7 @@ msgctxt "Action"
 msgid "Make Admin"
 msgstr "Postavite za administratora"
 
-#: ./src/templates/address/addressKeysView.tpl.html:170
+#: ./src/templates/address/addressKeysView.tpl.html:162
 msgctxt "Action"
 msgid "Make Primary"
 msgstr "Označi kao glavni"
@@ -1238,19 +1245,19 @@ msgctxt "Action"
 msgid "Mark as unread - Mark as read"
 msgstr "Označi kao nepročitano - Označi kao pročitano"
 
-#: ./src/templates/address/addressKeysView.tpl.html:192
+#: ./src/templates/address/addressKeysView.tpl.html:182
 msgctxt "Action"
 msgid "Mark compromised"
 msgstr "Označi kao ugroženo"
 
-#: ./src/templates/address/addressKeysView.tpl.html:179
+#: ./src/templates/address/addressKeysView.tpl.html:171
 msgctxt "Action"
 msgid "Mark obsolete"
 msgstr "Označi kao zastarjelo"
 
 #. contacts toolbar menu option
 #: ./src/templates/contact/contactDisplayModal.tpl.html:14
-#: ./src/templates/contact/contactMergerModal.tpl.html:29
+#: ./src/templates/contact/contactMergerModal.tpl.html:27
 #: ./src/templates/contact/contactToolbar.tpl.html:35
 msgctxt "Action"
 msgid "Merge"
@@ -1461,7 +1468,7 @@ msgctxt "Action"
 msgid "RE-SIGN"
 msgstr "PONOVNO POTPIŠI"
 
-#: ./src/templates/address/addressKeysView.tpl.html:138
+#: ./src/templates/address/addressKeysView.tpl.html:134
 msgctxt "Action"
 msgid "Reactivate"
 msgstr "Ponovo aktiviraj"
@@ -1608,12 +1615,12 @@ msgstr "Opozovi sesije"
 #: ./src/templates/directives/composer/composer.tpl.html:119
 #: ./src/templates/directives/composer/composer.tpl.html:126
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:247
+#: ./src/templates/filter/modal.tpl.html:254
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
 #: ./src/templates/modals/label.tpl.html:75
-#: ./src/templates/modals/member.tpl.html:124
+#: ./src/templates/modals/member.tpl.html:122
 #: ./src/templates/organization/organizationFormName.tpl.html:25
 #: ./src/templates/user/identitySection.tpl.html:17
 #: ./src/templates/views/account.tpl.html:45
@@ -1703,6 +1710,11 @@ msgstr "Postavke"
 msgctxt "Action"
 msgid "Setup Account"
 msgstr "Postavljanje računa"
+
+#: ./src/templates/views/domains.tpl.html:143
+msgctxt "Action"
+msgid "Setup Wizard"
+msgstr "Čarobnjak za postavljanje"
 
 #: ./src/app/composer/directives/composerAttachments.js:9
 #: ./src/templates/vpn/openVpnSection.tpl.html:49
@@ -1834,7 +1846,7 @@ msgstr "Ključ povjerenja"
 #: ./src/templates/message/messageAddressActionMenu.tpl.html:54
 msgctxt "Action"
 msgid "Trust Public Keys"
-msgstr "Javni ključevi povjerenja"
+msgstr "Vjerujte ovim javnim ključevima"
 
 #: ./src/templates/directives/ui/requestTimeout.tpl.html:6
 msgctxt "Action"
@@ -1909,7 +1921,7 @@ msgid "Upgrade storage"
 msgstr "Nadogradi prostor za pohranu"
 
 #. link to dashboard page
-#: ./src/templates/views/domains.tpl.html:167
+#: ./src/templates/views/domains.tpl.html:178
 #: ./src/templates/views/domains.tpl.html:29
 #: ./src/templates/views/members.tpl.html:124
 msgctxt "Action"
@@ -1992,6 +2004,11 @@ msgctxt "Action"
 msgid "complete setup"
 msgstr "dovršite postavljanje"
 
+#: ./src/templates/filter/modal.tpl.html:113
+msgctxt "Action"
+msgid "title"
+msgstr "naslov"
+
 #: ./src/templates/modals/donate.tpl.html:59
 msgctxt "Action"
 msgid "top Up"
@@ -2047,12 +2064,12 @@ msgctxt "Action notification error trying to connect to the API"
 msgid "Retry now"
 msgstr "Pokušaj ponovno"
 
-#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:18
+#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:16
 msgctxt "Action to not set PGP encryption on import contact"
 msgid "No"
 msgstr "Ne"
 
-#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:19
+#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:17
 msgctxt "Action to not set PGP encryption on import contact"
 msgid "Yes"
 msgstr "Da"
@@ -2106,7 +2123,7 @@ msgstr "Zadano"
 #. address state badge
 #. form option
 #: ./src/templates/views/account.tpl.html:218
-#: ./src/templates/views/domains.tpl.html:215
+#: ./src/templates/views/domains.tpl.html:226
 #: ./src/templates/views/members.tpl.html:267
 msgctxt "Address state badge"
 msgid "Disabled"
@@ -2115,14 +2132,14 @@ msgstr "Onemogućeno"
 #. address state badge
 #. form option
 #: ./src/templates/views/account.tpl.html:209
-#: ./src/templates/views/domains.tpl.html:214
+#: ./src/templates/views/domains.tpl.html:225
 #: ./src/templates/views/members.tpl.html:266
 msgctxt "Address state badge"
 msgid "Enabled"
 msgstr "Omogućeno"
 
 #. address state badge
-#: ./src/templates/views/domains.tpl.html:216
+#: ./src/templates/views/domains.tpl.html:227
 #: ./src/templates/views/members.tpl.html:268
 msgctxt "Address state badge"
 msgid "Missing keys"
@@ -2200,17 +2217,17 @@ msgctxt "Attachment modifier tooltip"
 msgid "Unencrypted PGP/Inline attachment"
 msgstr "Ne šifrirani PGP/Inline privitak"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:57
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:49
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active each month between the selected start and end time."
 msgstr "Automatski odgovor je aktivan svaki mjesec između odabranog vremena početka i završetka."
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:51
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:45
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active each week between the selected start and end time."
 msgstr "Automatski odgovor je aktivan svaki tjedan između odabranog vremena početka i završetka."
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:39
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:37
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active from the start time to the end time."
 msgstr "Automatski odgovor je aktivan između odabranog vremena početka i završetka."
@@ -2220,7 +2237,7 @@ msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active until you turn it off."
 msgstr "Automatski odgovor je aktivan dokle ga Vi ne isključite."
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:45
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:41
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is always active on the days of the week you select, between the selected hours."
 msgstr "Automatski odgovor uvijek je aktivan u odabranim danima u tjednu i to između odabranih sati."
@@ -2474,7 +2491,7 @@ msgctxt "Composer, add File"
 msgid "Delete"
 msgstr "Obriši"
 
-#: ./src/templates/squire/addFile.tpl.html:48
+#: ./src/templates/squire/addFile.tpl.html:46
 msgctxt "Composer, add File"
 msgid "Error loading image"
 msgstr "Pogreška pri učitavanju slike"
@@ -2504,7 +2521,7 @@ msgctxt "Composer, add File"
 msgid "Insert image"
 msgstr "Umetni fotografiju"
 
-#: ./src/templates/squire/addFile.tpl.html:45
+#: ./src/templates/squire/addFile.tpl.html:43
 msgctxt "Composer, add File"
 msgid "Loading image"
 msgstr "Učitavanje slike"
@@ -2540,7 +2557,7 @@ msgctxt "Composer, add Link"
 msgid "Edit link"
 msgstr "Uredi poveznicu"
 
-#: ./src/templates/squire/addLink.tpl.html:50
+#: ./src/templates/squire/addLink.tpl.html:48
 msgctxt "Composer, add Link"
 msgid "Email address"
 msgstr "Adresa e-pošte"
@@ -2560,22 +2577,22 @@ msgctxt "Composer, add Link"
 msgid "Insert link"
 msgstr "Umetni poveznicu"
 
-#: ./src/templates/squire/addLink.tpl.html:15
+#: ./src/templates/squire/addLink.tpl.html:13
 msgctxt "Composer, add Link"
 msgid "Link URL"
 msgstr "URL poveznice"
 
-#: ./src/templates/squire/addLink.tpl.html:62
+#: ./src/templates/squire/addLink.tpl.html:60
 msgctxt "Composer, add Link"
 msgid "Link label"
 msgstr "Oznaka poveznice"
 
-#: ./src/templates/squire/addLink.tpl.html:56
+#: ./src/templates/squire/addLink.tpl.html:54
 msgctxt "Composer, add Link"
 msgid "Phone number"
 msgstr "Broj telefona"
 
-#: ./src/templates/squire/addLink.tpl.html:35
+#: ./src/templates/squire/addLink.tpl.html:33
 msgctxt "Composer, add Link"
 msgid "Text to display"
 msgstr "Tekst za prikaz"
@@ -2595,7 +2612,7 @@ msgctxt "Composer, add Link"
 msgid "To what phone number should this link?"
 msgstr "Na koji broj telefona treba ići ova poveznica?"
 
-#: ./src/templates/squire/addLink.tpl.html:7
+#: ./src/templates/squire/addLink.tpl.html:5
 msgctxt "Composer, add Link"
 msgid "URL link"
 msgstr "URL poveznica"
@@ -2605,7 +2622,7 @@ msgctxt "Composer, add Link"
 msgid "Update"
 msgstr "Ažuriraj"
 
-#: ./src/templates/squire/addLink.tpl.html:44
+#: ./src/templates/squire/addLink.tpl.html:42
 msgctxt "Composer, add Link"
 msgid "Web address"
 msgstr "Web adresa"
@@ -2888,7 +2905,7 @@ msgctxt "Danger"
 msgid "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending."
 msgstr "Za ovu adresu je omogućena potvrda adrese s pouzdanim ključevima. Da biste mogli slati na ovu adresu, prvo povjerite javne ključeve koji se mogu koristiti za slanje."
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:35
+#: ./src/templates/directives/contact/contactPgp.tpl.html:33
 msgctxt "Danger"
 msgid "This address is disabled. To be able to send to this address, the owner must first enable the address."
 msgstr "Ova adresa je onemogućena. Da biste mogli slati na ovu adresu, vlasnik najprije mora omogućiti adresu."
@@ -3337,7 +3354,7 @@ msgctxt "Domains"
 msgid "Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade to ProtonMail Plus</a>."
 msgstr "Koristite vlastitu domenu na ProtonMail tako i vlastitu adresu e-pošte, npr. vaseime@vasadomena.hr. Da biste omogućili tu značajku, <a ui-sref=\"secured.dashboard({scroll: true})\">nadogradite na ProtonMail Plus</a>."
 
-#: ./src/templates/views/domains.tpl.html:187
+#: ./src/templates/views/domains.tpl.html:198
 msgctxt "Domains information"
 msgid "Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted."
 msgstr "Adrese moraju biti onemogućene prije nego što se mogu izbrisati. Adrese se mogu izbrisati samo ako su izbrisane sve poruke povezane s tom adresom."
@@ -3387,7 +3404,7 @@ msgctxt "Duration/repetition of autoresponder"
 msgid "Repeat weekly"
 msgstr "Ponovi svaki tjedan"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:106
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:104
 msgctxt "Empty table message"
 msgid "All available keys are trusted"
 msgstr "Svi dostupni ključevi su pouzdani"
@@ -3577,8 +3594,8 @@ msgstr "Neuspješno ponovno aktiviranje ključa"
 #: ./src/templates/organization/organizationFormName.tpl.html:20
 #: ./src/templates/payment/giftCodeInput.tpl.html:14
 #: ./src/templates/squire/addFile.tpl.html:22
-#: ./src/templates/squire/addLink.tpl.html:28
-#: ./src/templates/squire/addLink.tpl.html:75
+#: ./src/templates/squire/addLink.tpl.html:26
+#: ./src/templates/squire/addLink.tpl.html:73
 msgctxt "Error"
 msgid "Field required"
 msgstr "Polje je potrebno"
@@ -4146,12 +4163,12 @@ msgctxt "Error during importation"
 msgid "Import failed. Please check the import file or try again."
 msgstr "Uvoz nije uspio. Provjerite datoteku za uvoz ili pokušajte ponovno."
 
-#: ./src/templates/ui/dateTimePicker.tpl.html:26
+#: ./src/templates/ui/dateTimePicker.tpl.html:22
 msgctxt "Error input"
 msgid "Please enter a valid date and time."
 msgstr "Molimo unesite valjani datum i vrijeme."
 
-#: ./src/templates/ui/dateTimePicker.tpl.html:23
+#: ./src/templates/ui/dateTimePicker.tpl.html:21
 msgctxt "Error input"
 msgid "Please enter a valid date."
 msgstr "Molimo, unesite valjani datum."
@@ -4166,12 +4183,12 @@ msgctxt "Error input"
 msgid "Please enter a valid day in the month."
 msgstr "Molimo unesite valjani dan u mjesecu."
 
-#: ./src/templates/ui/weekdayTimePicker.tpl.html:34
+#: ./src/templates/ui/weekdayTimePicker.tpl.html:30
 msgctxt "Error input"
 msgid "Please enter a valid day in the week and time."
 msgstr "Molimo unesite valjani dan u tjednu i vrijeme."
 
-#: ./src/templates/ui/weekdayTimePicker.tpl.html:31
+#: ./src/templates/ui/weekdayTimePicker.tpl.html:29
 msgctxt "Error input"
 msgid "Please enter a valid day in the week."
 msgstr "Molimo unesite valjani dan u tjednu."
@@ -4287,22 +4304,22 @@ msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr "Tekst ili uzorak"
 
-#: ./src/templates/filter/modal.tpl.html:128
+#: ./src/templates/filter/modal.tpl.html:135
 msgctxt "Filter modal label"
 msgid "Apply labels"
 msgstr "Primjeni oznake"
 
-#: ./src/templates/filter/modal.tpl.html:203
+#: ./src/templates/filter/modal.tpl.html:210
 msgctxt "Filter modal label"
 msgid "Mark as"
 msgstr "Označi kao"
 
-#: ./src/templates/filter/modal.tpl.html:149
+#: ./src/templates/filter/modal.tpl.html:156
 msgctxt "Filter modal label"
 msgid "Move to"
 msgstr "Premjesti u"
 
-#: ./src/templates/filter/modal.tpl.html:228
+#: ./src/templates/filter/modal.tpl.html:235
 msgctxt "Filter modal label"
 msgid "Send auto reply"
 msgstr "Pošalji automatski odgovor"
@@ -4893,7 +4910,7 @@ msgctxt "Info"
 msgid "Advanced settings saved"
 msgstr "Spremljene su napredne postavke"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:64
+#: ./src/templates/directives/contact/contactPgp.tpl.html:56
 msgctxt "Info"
 msgid "All uploaded keys are expired or revoked! Encryption is automatically disabled."
 msgstr "Svi učitani ključevi su istekli ili su opozvani! Šifriranje je automatski onemogućeno."
@@ -5472,11 +5489,6 @@ msgctxt "Info"
 msgid "In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below."
 msgstr "U sljedećih nekoliko tjedana, ProtonMail će prekinuti podršku za Internet Explorer. Za normalnu upotrebu preuzmite jedan od modernih preglednika."
 
-#: ./src/templates/utils/linkWarningModal.tpl.html:17
-msgctxt "Info"
-msgid "Internet Explorer and Edge browsers do not parse these links properly, so it is not possible to open them. If you are certain that the link is legitimate, please use a different browser to open it."
-msgstr "Internet Explorer i Edge preglednik ne parsiraju ispravno ove poveznice, tako da ih nije moguće otvoriti. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste ga otvorili."
-
 #: ./src/app/payment/modals/payModal.js:14
 #: ./src/app/settings/controllers/payments.js:147
 msgctxt "Info"
@@ -5515,7 +5527,7 @@ msgid "Layout saved"
 msgstr "Izgled spremljen"
 
 #: ./src/app/message/directives/unsubscribePanel.js:20
-#: ./src/templates/message/messageAutoGenerated.tpl.html:6
+#: ./src/templates/message/messageAutoGenerated.tpl.html:4
 msgctxt "Info"
 msgid "Learn more"
 msgstr "Saznajte više"
@@ -5585,6 +5597,11 @@ msgctxt "Info"
 msgid "No contact found"
 msgstr "Nisu pronađeni kontakti"
 
+#: ./src/templates/contact/contactGroupModal.tpl.html:68
+msgctxt "Info"
+msgid "No contacts added yet"
+msgstr "Nema dodanih kontakata"
+
 #: ./src/app/contact/services/moveContactGroupHandler.js:16
 msgctxt "Info"
 msgid "No emails for this contact"
@@ -5623,7 +5640,7 @@ msgctxt "Info"
 msgid "Number of users"
 msgstr "Broj korisnika"
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:52
+#: ./src/templates/directives/contact/contactPgp.tpl.html:46
 msgctxt "Info"
 msgid "Only change these settings if you are using PGP with non-ProtonMail recipients."
 msgstr "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
@@ -5642,6 +5659,11 @@ msgstr "Lozinka za OpenVPN je ažurirana"
 msgctxt "Info"
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Operacija je istekla iz sigurnosnih razloga, molimo pokušajte ponovno"
+
+#: ./src/templates/composer/composerEncrypt.tpl.html:49
+msgctxt "Info"
+msgid "Optional"
+msgstr "Neobavezno"
 
 #: ./src/app/address/factories/addressModel.js:42
 #: ./src/app/filter/directives/customFilterList.js:70
@@ -5714,7 +5736,7 @@ msgctxt "Info"
 msgid "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs PGP/Inline messages."
 msgstr "PGP/Inline je kompatibilan samo s običnim tekstualnim oblikom. Imajte na umu da ProtonMail uvijek potpisuje PGP/Inline poruke."
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:8
+#: ./src/templates/directives/contact/contactPgp.tpl.html:7
 msgctxt "Info"
 msgid "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs PGP/MIME messages."
 msgstr "PGP/MIME automatski šalje poruku koristeći trenutni način rada prozora za novu poruku. Imajte na umu da ProtonMail uvijek potpisuje PGP/MIME poruke."
@@ -5800,7 +5822,7 @@ msgctxt "Info"
 msgid "Please enter your organization recovery password:"
 msgstr "Unesite lozinku za oporavak od vaše organizacije:"
 
-#: ./src/templates/modals/member.tpl.html:119
+#: ./src/templates/modals/member.tpl.html:117
 msgctxt "Info"
 msgid "Please give the address and temporary password to the new member so they can log in."
 msgstr "Dostavite adresu i privremenu lozinku novom članu kako bi se mogao prijaviti."
@@ -5972,7 +5994,7 @@ msgctxt "Info"
 msgid "Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds the address to the Whitelist."
 msgstr "Ovdje se može primijeniti pravila neželjene pošte za neželjene pošiljatelje. Popis dopuštenih adresa uvijek ide u pristiglu poštu, dok adrese s liste neželjenih uvijek idu u neželjenu poštu. Označavanje poruke kao neželjene poruke dodaje adresu na listu neželjenih. Označavanje poruke kao željene poruke dodaje adresu na listu dopuštenih."
 
-#: ./src/templates/views/domains.tpl.html:201
+#: ./src/templates/views/domains.tpl.html:212
 msgctxt "Info"
 msgid "Set a catch-all address for your domain."
 msgstr "Postavite dohvati-sve adresu za vašu domenu."
@@ -6116,6 +6138,16 @@ msgctxt "Info"
 msgid "This is used to recover your account if you get locked out or forget your password."
 msgstr "Ovo se koristi za oporavak računa ako se račun zaključa ili zaboravite lozinku."
 
+#: ./src/templates/utils/linkWarningModal.tpl.html:25
+msgctxt "Info"
+msgid "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+msgstr "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Internet Explorer i Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
+
+#: ./src/templates/utils/linkWarningModal.tpl.html:17
+msgctxt "Info"
+msgid "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it."
+msgstr "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
+
 #: ./src/templates/message/messageAutoGenerated.tpl.html:3
 msgctxt "Info"
 msgid "This message is automatically generated as a response to a previous message."
@@ -6212,7 +6244,7 @@ msgctxt "Info"
 msgid "To pay via Cash, please email us at <strong>contact@protonmail.com</strong> for instructions."
 msgstr "Za plaćanje gotovinom, pošaljite nam e-poštu na <strong>contact@protonmail.com</strong> za uputstva."
 
-#: ./src/templates/directives/contact/contactPgp.tpl.html:40
+#: ./src/templates/directives/contact/contactPgp.tpl.html:36
 msgctxt "Info"
 msgid "To use Address Verification, you must enable Trusted Keys and trust one or more available public keys, including the primary key for this address. This prevents the encryption keys from being faked."
 msgstr "Da biste koristili Potvrdu adresa, morate omogućiti Pouzdane ključeve i pouzdati se u jedan ili više dostupnih javnih ključeva, uključujući primarni ključ za tu adresu. Time se sprječava lažiranje ključeva za šifriranje."
@@ -6546,7 +6578,7 @@ msgid "Your organization password can be shared with other users you wish to giv
 msgstr "Lozinka vaše organizacije može se dijeliti s drugim korisnicima kojima želite dati administratorske privilegije. To je i kôd za hitnu obnovu kako biste dobili pristup nad vašoj organizaciji u slučaju da izgubite pristup svom računu. Spremite ovu lozinku i čuvajte je na sigurnom."
 
 #. how many addresses are in use
-#: ./src/templates/views/domains.tpl.html:162
+#: ./src/templates/views/domains.tpl.html:173
 #: ./src/templates/views/members.tpl.html:120
 msgctxt "Info"
 msgid "addresses used."
@@ -6577,6 +6609,12 @@ msgid_plural "files attached"
 msgstr[0] "privitak dodan"
 msgstr[1] "privitka dodana"
 msgstr[2] "privitaka dodano"
+
+#. If you wish to delete this account in order to combine it with another one, do NOT delete it. You need to follow [link] instead
+#: ./src/templates/modals/deleteAccount.tpl.html:11
+msgctxt "Info"
+msgid "instead"
+msgstr "umjesto"
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:20
 msgctxt "Info"
@@ -6856,7 +6894,7 @@ msgctxt "Key state badge"
 msgid "Active"
 msgstr "Aktivno"
 
-#: ./src/templates/address/addressKeysView.tpl.html:115
+#: ./src/templates/address/addressKeysView.tpl.html:113
 msgctxt "Key state badge"
 msgid "Compromised"
 msgstr "Ugroženo"
@@ -6926,15 +6964,20 @@ msgid "Annually"
 msgstr "Godišnje"
 
 #: ./src/app/labels/directives/dropdownFolders.js:13
-#: ./src/templates/filter/modal.tpl.html:166
+#: ./src/templates/filter/modal.tpl.html:173
 msgctxt "Label"
 msgid "Archive"
 msgstr "Arhiva"
 
-#: ./src/templates/settings/encryptionView.tpl.html:50
+#: ./src/templates/settings/encryptionView.tpl.html:44
 msgctxt "Label"
 msgid "Automatically attach public key"
 msgstr "Automatski priloži javni ključ"
+
+#: ./src/app/contact/directives/contactPublicKeyLabel.js:4
+msgctxt "Label"
+msgid "Available Public Keys"
+msgstr "Dostupni javni ključevi"
 
 #: ./src/templates/modals/humanVerification.tpl.html:13
 msgctxt "Label"
@@ -7003,12 +7046,12 @@ msgctxt "Label"
 msgid "Custom theme"
 msgstr "Prilagođena tema"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:66
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:56
 msgctxt "Label"
 msgid "Days"
 msgstr "Dani"
 
-#: ./src/templates/settings/encryptionView.tpl.html:70
+#: ./src/templates/settings/encryptionView.tpl.html:62
 msgctxt "Label"
 msgid "Default PGP Scheme"
 msgstr "Zadana PGP shema"
@@ -7018,7 +7061,7 @@ msgctxt "Label"
 msgid "Display name"
 msgstr "Zaslonsko ime"
 
-#: ./src/templates/utils/linkWarningModal.tpl.html:22
+#: ./src/templates/utils/linkWarningModal.tpl.html:34
 msgctxt "Label"
 msgid "Do not ask again"
 msgstr "Ne pitaj ponovno"
@@ -7063,7 +7106,7 @@ msgctxt "Label"
 msgid "Enable/disable desktop and mobile notifications"
 msgstr "Omogući/onemogući desktop i mobilne obavijesti"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:95
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:85
 msgctxt "Label"
 msgid "End time"
 msgstr "Vrijeme završetka"
@@ -7131,7 +7174,7 @@ msgid "Highest security"
 msgstr "Najviša sigurnost"
 
 #: ./src/app/labels/directives/dropdownFolders.js:8
-#: ./src/templates/filter/modal.tpl.html:158
+#: ./src/templates/filter/modal.tpl.html:165
 msgctxt "Label"
 msgid "Inbox"
 msgstr "Pristigla pošta"
@@ -7239,7 +7282,7 @@ msgctxt "Label"
 msgid "Please tell us why you are leaving:"
 msgstr "Recite nam zašto odlazite:"
 
-#: ./src/templates/settings/encryptionView.tpl.html:122
+#: ./src/templates/settings/encryptionView.tpl.html:108
 msgctxt "Label"
 msgid "Prompt to trust keys"
 msgstr "Prozor za potvrdu valjanosti ključa"
@@ -7269,7 +7312,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr "ProtonVPN početna stranica"
 
-#: ./src/templates/filter/modal.tpl.html:210
+#: ./src/templates/filter/modal.tpl.html:217
 msgctxt "Label"
 msgid "Read"
 msgstr "Pročitano"
@@ -7299,7 +7342,7 @@ msgctxt "Label"
 msgid "Sent / Drafts folders appearance"
 msgstr "Izgled Poslano / Skice mapa"
 
-#: ./src/templates/settings/encryptionView.tpl.html:28
+#: ./src/templates/settings/encryptionView.tpl.html:24
 msgctxt "Label"
 msgid "Sign external messages"
 msgstr "Potpisivanje izlaznih poruka"
@@ -7310,17 +7353,17 @@ msgid "Signature"
 msgstr "Potpis"
 
 #: ./src/app/labels/directives/dropdownFolders.js:18
-#: ./src/templates/filter/modal.tpl.html:174
+#: ./src/templates/filter/modal.tpl.html:181
 msgctxt "Label"
 msgid "Spam"
 msgstr "Neželjena pošta"
 
-#: ./src/templates/filter/modal.tpl.html:217
+#: ./src/templates/filter/modal.tpl.html:224
 msgctxt "Label"
 msgid "Starred"
 msgstr "Sa zvjezdicom"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:80
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:70
 msgctxt "Label"
 msgid "Start time"
 msgstr "Vrijeme početka"
@@ -7330,16 +7373,21 @@ msgctxt "Label"
 msgid "Storage for members:"
 msgstr "Prostor za pohranu za korisnike:"
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:110
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:100
 msgctxt "Label"
 msgid "Time zone"
 msgstr "Vremenska zona"
 
 #: ./src/app/labels/directives/dropdownFolders.js:23
-#: ./src/templates/filter/modal.tpl.html:182
+#: ./src/templates/filter/modal.tpl.html:189
 msgctxt "Label"
 msgid "Trash"
 msgstr "Otpad"
+
+#: ./src/app/contact/directives/contactPublicKeyLabel.js:6
+msgctxt "Label"
+msgid "Trusted Public Keys"
+msgstr "Pouzdani javni ključevi"
 
 #: ./src/templates/directives/contact/contactKeyPinning.tpl.html:2
 msgctxt "Label"
@@ -7599,6 +7647,11 @@ msgctxt "Label select weekday"
 msgid "Select weekday"
 msgstr "Odaberite dan u tjednu"
 
+#: ./src/app/contact/directives/contactPublicKeyLabel.js:5
+msgctxt "Laebel"
+msgid "Public Keys"
+msgstr "Javni ključevi"
+
 #: ./src/templates/payment/paymentPlanOverview.tpl.html:16
 msgctxt "Link"
 msgid "(What is this?)"
@@ -7629,10 +7682,10 @@ msgctxt "Link"
 msgid "Include moved messages"
 msgstr "Uključi i premještene poruke"
 
-#: ./src/templates/filter/spamLists.tpl.html:14
+#: ./src/templates/filter/spamLists.tpl.html:12
 #: ./src/templates/partials/conversation-placeholder.tpl.html:14
-#: ./src/templates/settings/encryptionView.tpl.html:109
-#: ./src/templates/settings/encryptionView.tpl.html:17
+#: ./src/templates/settings/encryptionView.tpl.html:15
+#: ./src/templates/settings/encryptionView.tpl.html:97
 msgctxt "Link"
 msgid "Learn More"
 msgstr "Saznaj više"
@@ -7646,9 +7699,9 @@ msgstr "Saznaj više"
 #: ./src/templates/contact/contactError.tpl.html:18
 #: ./src/templates/contact/contactError.tpl.html:37
 #: ./src/templates/dashboard/customVpnModal.tpl.html:10
-#: ./src/templates/directives/contact/contactPgp.tpl.html:43
-#: ./src/templates/directives/contact/contactPgp.tpl.html:55
-#: ./src/templates/directives/contact/contactPgp.tpl.html:67
+#: ./src/templates/directives/contact/contactPgp.tpl.html:37
+#: ./src/templates/directives/contact/contactPgp.tpl.html:47
+#: ./src/templates/directives/contact/contactPgp.tpl.html:57
 #: ./src/templates/directives/core/bugModalView.tpl.html:110
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:9
 #: ./src/templates/modals/confirm.tpl.html:13
@@ -7668,6 +7721,7 @@ msgctxt "Link"
 msgid "Learn more"
 msgstr "Saznajte više"
 
+#: ./src/templates/modals/releaseNotes.tpl.html:14
 #: ./src/templates/pmMe/pmMeView.tpl.html:11
 #: ./src/templates/pmMe/pmMeView.tpl.html:23
 msgctxt "Link"
@@ -7709,12 +7763,12 @@ msgctxt "Link in notification to undo an action"
 msgid "UNDO"
 msgstr "PONIŠTI"
 
-#: ./src/templates/views/domains.tpl.html:252
+#: ./src/templates/views/domains.tpl.html:263
 msgctxt "List domains"
 msgid "No custom domain addresses found"
 msgstr "Nije pronađena nijedna adresa prilagođene domene"
 
-#: ./src/templates/views/domains.tpl.html:254
+#: ./src/templates/views/domains.tpl.html:265
 msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr "Molimo dodajte prilagođenu domenu prije postavljanja adresa."
@@ -8316,12 +8370,12 @@ msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr "Iznos ispod minimuma."
 
-#: ./src/app/commons/services/i18nLoader.js:54
+#: ./src/app/commons/services/i18nLoader.js:55
 msgctxt "Pikaday"
 msgid "Next Month"
 msgstr "Sljedeći mjesec"
 
-#: ./src/app/commons/services/i18nLoader.js:53
+#: ./src/app/commons/services/i18nLoader.js:54
 msgctxt "Pikaday"
 msgid "Previous Month"
 msgstr "Prethodni mjesec"
@@ -8652,7 +8706,7 @@ msgctxt "Record message"
 msgid "Message saved"
 msgstr "Poruka je spremljena"
 
-#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:13
+#: ./src/templates/contact/contactAskEncryptionModal.tpl.html:11
 msgctxt "Remember encryption choice encrypt"
 msgid "Remember my choice"
 msgstr "Zapamti moj odabir"
@@ -8748,7 +8802,7 @@ msgctxt "Send message"
 msgid "Message sent"
 msgstr "Poruka je poslana"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:23
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:21
 msgctxt "Settings autoresponder, how many bites inside the message"
 msgid "bytes used"
 msgstr "bajtova iskorišteno"
@@ -8782,6 +8836,11 @@ msgstr "Preusmjeravanje"
 msgctxt "Signup step label"
 msgid "Setting up new account"
 msgstr "Postavljanje novog računa"
+
+#: ./src/app/utils/filters/bytes.js:7
+msgctxt "Size of a file"
+msgid "bytes"
+msgstr "bajtova"
 
 #: ./src/templates/filter/spamListSearch.tpl.html:3
 msgctxt "Spam filtering"
@@ -9202,17 +9261,17 @@ msgctxt "Table Header"
 msgid "Type"
 msgstr "Vrsta"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:27
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:25
 msgctxt "The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 1/3"
 msgid "The message contains too many bytes, only"
 msgstr "Ova poruka sadrži prevelik broj bajtova, samo"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:30
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:28
 msgctxt "The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 2/3"
 msgid "allowed (you are using"
 msgstr "dopušteno (koristite"
 
-#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:31
+#: ./src/templates/autoresponder/autoresponderMessage.tpl.html:29
 msgctxt "The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 3/3"
 msgid "bytes)."
 msgstr "bajtova)."
@@ -9236,10 +9295,10 @@ msgstr "Korisnički račun"
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:49
-#: ./src/templates/filter/modal.tpl.html:123
+#: ./src/templates/filter/modal.tpl.html:130
 #: ./src/templates/invoices/invoiceList.tpl.html:7
 #: ./src/templates/modals/hotkey.tpl.html:73
-#: ./src/templates/views/domains.tpl.html:204
+#: ./src/templates/views/domains.tpl.html:215
 #: ./src/templates/views/domains.tpl.html:52
 #: ./src/templates/views/invoices.tpl.html:20
 #: ./src/templates/views/invoices.tpl.html:50
@@ -9298,7 +9357,7 @@ msgstr "Dodatne teme"
 #: ./src/templates/modals/domain/address.tpl.html:31
 #: ./src/templates/modals/generate.tpl.html:54
 #: ./src/templates/search/searchForm.tpl.html:111
-#: ./src/templates/views/domains.tpl.html:196
+#: ./src/templates/views/domains.tpl.html:207
 msgctxt "Title"
 msgid "Address"
 msgstr "Adresa"
@@ -9308,7 +9367,7 @@ msgctxt "Title"
 msgid "Address Priority"
 msgstr "Prioritet adresa"
 
-#: ./src/templates/settings/encryptionView.tpl.html:96
+#: ./src/templates/settings/encryptionView.tpl.html:88
 msgctxt "Title"
 msgid "Address Verification (optional)"
 msgstr "Potvrda adresa (neobavezno)"
@@ -9499,7 +9558,7 @@ msgid "CC:"
 msgstr "CC:"
 
 #. table heading for the domains page table listing of addresses
-#: ./src/templates/views/domains.tpl.html:199
+#: ./src/templates/views/domains.tpl.html:210
 msgctxt "Title"
 msgid "Catch-All"
 msgstr "Dohvati-sve"
@@ -9710,7 +9769,7 @@ msgctxt "Title"
 msgid "Current status"
 msgstr "Trenutni status"
 
-#: ./src/templates/views/domains.tpl.html:155
+#: ./src/templates/views/domains.tpl.html:166
 msgctxt "Title"
 msgid "Custom Domain Addresses"
 msgstr "Adrese prilagođene domene"
@@ -9939,7 +9998,7 @@ msgstr "Uredi oznaku"
 
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:17
-#: ./src/templates/contact/contactList.tpl.html:25
+#: ./src/templates/contact/contactList.tpl.html:23
 #: ./src/templates/user/humanVerification.tpl.html:35
 msgctxt "Title"
 msgid "Email"
@@ -10332,6 +10391,11 @@ msgctxt "Title"
 msgid "Mailbox password"
 msgstr "Lozinka sandučića e-pošte"
 
+#: ./src/templates/contact/manageContactGroupModal.tpl.html:13
+msgctxt "Title"
+msgid "Manage Groups"
+msgstr "Upravljanje grupama"
+
 #: ./src/templates/partials/wizard.tpl.html:27
 msgctxt "Title"
 msgid "Manage your email with folders and labels"
@@ -10367,7 +10431,7 @@ msgstr "Moja pretplata"
 #: ./src/templates/contact/contactGroupModal.tpl.html:73
 #: ./src/templates/contact/contactList.tpl.html:14
 #: ./src/templates/filter/modal.tpl.html:26
-#: ./src/templates/views/domains.tpl.html:195
+#: ./src/templates/views/domains.tpl.html:206
 #: ./src/templates/views/members.tpl.html:144
 msgctxt "Title"
 msgid "Name"
@@ -10899,7 +10963,7 @@ msgstr "Najmodernije"
 #: ./src/templates/address/addressKeysView.tpl.html:48
 #: ./src/templates/invoices/invoiceList.tpl.html:9
 #: ./src/templates/modals/generate.tpl.html:55
-#: ./src/templates/views/domains.tpl.html:197
+#: ./src/templates/views/domains.tpl.html:208
 msgctxt "Title"
 msgid "Status"
 msgstr "Status"
@@ -11361,7 +11425,7 @@ msgctxt "Tooltip"
 msgid "Digital signature verified"
 msgstr "Digitalni potpis je ovjeren"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:77
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:75
 msgctxt "Tooltip"
 msgid "Download"
 msgstr "Preuzmi"
@@ -11483,7 +11547,7 @@ msgctxt "Tooltip"
 msgid "Provides additional protection against VPN server compromise by routing connections through our Secure Core network"
 msgstr "Pruža dodatnu zaštitu od kompromitiranja VPN poslužitelja, usmjeravanjem veza kroz našu Secure Core mrežu"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:85
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:83
 msgctxt "Tooltip"
 msgid "Remove"
 msgstr "Ukloni"
@@ -11518,7 +11582,7 @@ msgctxt "Tooltip"
 msgid "This key is encrypted with an old password"
 msgstr "Ovaj ključ je šifriran s starom lozinkom"
 
-#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:93
+#: ./src/templates/directives/contact/contactPublicKeyTable.tpl.html:91
 msgctxt "Tooltip"
 msgid "Trust"
 msgstr "Povjerenje"
@@ -11540,7 +11604,7 @@ msgctxt "Tooltip"
 msgid "You have locally decrypted this key"
 msgstr "Lokalno ste dešifrirali ovaj ključ"
 
-#: ./src/templates/settings/encryptionView.tpl.html:56
+#: ./src/templates/settings/encryptionView.tpl.html:48
 msgctxt "Tooltip automatically attach public key"
 msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you."
 msgstr "Ovo automatski dodaje vaš javni ključ svakoj poruci koju šaljete. Primatelji mogu koristiti ovo za provjeru autentičnosti vaših poruka i slanje šifriranih poruka."
@@ -11550,7 +11614,7 @@ msgctxt "Tooltip contact"
 msgid "Encrypted data with verified digital signature"
 msgstr "Šifrirani podaci sa potvrđenim digitalnim potpisom"
 
-#: ./src/templates/settings/encryptionView.tpl.html:72
+#: ./src/templates/settings/encryptionView.tpl.html:64
 msgctxt "Tooltip default pgp scheme"
 msgid "Select the default PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info."
 msgstr "Odaberite zadanu PGP shemu koja će se koristiti prilikom potpisivanja ili šifriranja korisniku. Imajte na umu da PGP/Inline prisilno šalje obične tekstualne poruke. Pritisnite za više informacija."
@@ -11560,12 +11624,12 @@ msgctxt "Tooltip display per session"
 msgid "Created on {{ date }}"
 msgstr "Stvoreno {{ date }}"
 
-#: ./src/templates/settings/encryptionView.tpl.html:128
+#: ./src/templates/settings/encryptionView.tpl.html:112
 msgctxt "Tooltip prompt to trust keys"
 msgid "When receiving an internal message from a sender that has no trusted keys in your contacts, show a banner asking if you want to enable trusted keys."
 msgstr "Kada primite internu poruku od pošiljatelja koji nema pouzdane ključeve u vašim kontaktima, pokaži banner koji pita želite li omogućiti pouzdane ključeve."
 
-#: ./src/templates/settings/encryptionView.tpl.html:36
+#: ./src/templates/settings/encryptionView.tpl.html:30
 msgctxt "Tooltip sign external messages"
 msgid "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
 msgstr "Automatski potpišite sve svoje odlazne poruke kako bi korisnici mogli provjeriti autentičnost vaših poruka. To se radi u kombinaciji sa zadanom PGP shemom koja je odabrana dolje."
@@ -11926,12 +11990,12 @@ msgctxt "VCard key name"
 msgid "Work"
 msgstr "Posao"
 
-#: ./src/templates/authentication/loginForm.tpl.html:90
+#: ./src/templates/authentication/loginForm.tpl.html:88
 msgctxt "Want to test the latest features? Log in on BETA"
 msgid "BETA"
 msgstr "BETA"
 
-#: ./src/templates/authentication/loginForm.tpl.html:90
+#: ./src/templates/authentication/loginForm.tpl.html:88
 msgctxt "Want to test the latest features? Log in on BETA"
 msgid "Want to test the latest features? Log in on"
 msgstr "Želite li testirati najnovije značajke? Prijavite se na"
@@ -12125,15 +12189,27 @@ msgctxt "domains"
 msgid "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?"
 msgstr "Poddomene 'www' obično se ne koriste za e-poštu. Jeste li sigurni da želite koristiti ovu domenu?"
 
-#: ./src/templates/views/domains.tpl.html:148
+#: ./src/templates/views/domains.tpl.html:159
 msgctxt "domains list"
 msgid "Click on 'ADD CUSTOM DOMAIN' button to add a domain."
 msgstr "Pritisnite na 'DODAJ PRILAGOĐENU DOMENU' za dodavanje domene."
 
-#: ./src/templates/views/domains.tpl.html:146
+#: ./src/templates/views/domains.tpl.html:157
 msgctxt "domains list"
 msgid "No custom domain found"
 msgstr "Nije pronađena prilagođena domena"
+
+#. Setup Error: Please run the [setup wizard] to correct configuration errors
+#: ./src/templates/views/domains.tpl.html:138
+msgctxt "domains list"
+msgid "Setup Error: Please run the"
+msgstr "Pogreška prilikom postavljanja: Pokrenite"
+
+#. Setup Error: Please run the [setup wizard] to correct configuration errors
+#: ./src/templates/views/domains.tpl.html:144
+msgctxt "domains list"
+msgid "to correct configuration errors."
+msgstr "za ispravljanje konfiguracijskih pogrešaka."
 
 #: ./src/app/labels/directives/dropdownLabels.js:8
 msgctxt "dropdown label"
@@ -12198,17 +12274,17 @@ msgctxt "info link to Addresses/Users in Signatures page"
 msgid "New Addresses can be added on"
 msgstr "Nove adrese mogu biti dodane na"
 
-#: ./src/templates/address/addressKeysView.tpl.html:179
+#: ./src/templates/address/addressKeysView.tpl.html:171
 msgctxt "key flag info"
 msgid "Disables encryption with this key"
 msgstr "Onemogućavanje šifriranja s ovim ključem"
 
-#: ./src/templates/address/addressKeysView.tpl.html:192
+#: ./src/templates/address/addressKeysView.tpl.html:182
 msgctxt "key flag info"
 msgid "Disables signature verification and encryption with this key"
 msgstr "Onemogućuje provjeru potpisa i šifriranje s ovim ključem"
 
-#: ./src/templates/address/addressKeysView.tpl.html:115
+#: ./src/templates/address/addressKeysView.tpl.html:113
 msgctxt "key flag info"
 msgid "Signatures produced by this key are treated as invalid and this key cannot be used for encryption"
 msgstr "Potpisi proizvedeni ovim ključem tretiraju se kao nevažeći i ovaj ključ se ne može koristiti za šifriranje"
@@ -12310,7 +12386,7 @@ msgctxt "reset password"
 msgid "Resetting either Login or Mailbox password will switch you to <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Single Password Mode</a>."
 msgstr "Poništavanje lozinke za prijavu ili za sandučić e-pošte prebacit će vas na <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Način rada s jednom lozinkom</a>."
 
-#: ./src/templates/settings/encryptionView.tpl.html:104
+#: ./src/templates/settings/encryptionView.tpl.html:94
 msgctxt "settings warning"
 msgid "Address Verification is an advanced security feature. Only turn this on if you know what it does."
 msgstr "Potvrda adresa je napredna sigurnosna značajka. Uključite ovo samo ako znate što radi."
