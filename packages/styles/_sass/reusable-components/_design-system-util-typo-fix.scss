@@ -21,15 +21,6 @@ q {
 :lang(en) > q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
-// :lang(es) > q {
-//   quotes: "\00AB" "\00BB" "\201C" "\201D";
-// }
-// :lang(it) > q {
-//   quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D";
-// }
-// :lang(de) > q {
-//   quotes: "\201e" "\201c" "\201a" "\2018";
-// }
 q:before {
   content: open-quote;
 }
@@ -194,4 +185,8 @@ b, strong, .strong, .bold {
 
 .italic {
   font-style: italic;
+}
+
+.no-outline {
+  outline: 0;
 }
