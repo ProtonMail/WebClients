@@ -58,10 +58,38 @@ section: design
   {% endif %}
   </div>
 {% endfor %}
+</div>
 
 <p>Note: if you need the current color of the text for filling a SVG, you may use <code>fill-currentColor</code>.</p>
 
+<h3>Plan colors</h3>
+<div class="flex pt2 mb2">
+{% assign listColorsPlans = "Visionary#Plus#Professional" | split: '#' %}
+{% assign listColorsRgbPlans = "6ddcfb#c6e422#d4b46e" | split: '#' %}
+{% assign listColorsNamesPlans = "visionary#plus#professional" | split: '#' %}
+{% assign listSassVarsPlans = "$visionary#$plus#$professional" | split: '#' %}
+{% for color in listColorsPlans %}
+<div class="w33 colortile pr1 pb1">
+<div class="flex flex-nowrap bordered-container p1 h100">
+  <div class="square-color bg-{{ listColorsNamesPlans[forloop.index0] }}"></div>
+  <div class="flex-item-fluid pl1">
+      <h2 class="h5">{{ listColorsPlans[forloop.index0] }}</h2>
+      <p class="mb0-5">Hex: <code class="border bg-global-border p0-25 rounded">#{{ listColorsRgbPlans[forloop.index0] }}</code></p>
+
+      <p class="mt0-5 mb0-5">CSS classes:</p>
+      <p class="mt0-5 mb0-5"><code class="border p0-25 rounded bg-{{ listColorsNamesPlans[forloop.index0] }} color-{{ colorText }}">.bg-{{ listColorsNamesPlans[forloop.index0] }}</code></p>
+      <p class="mt0-5"><code class="border p0-25 rounded color-{{ listColorsNamesPlans[forloop.index0] }} bg-{{ colorText }}">.color-{{ listColorsNamesPlans[forloop.index0] }}</code></p>
+      
+      <p class="mt0-5 mb0-5">For SVG bg<br> <code class="border p0-25 rounded bg-{{ listColorsNamesPlans[forloop.index0] }} color-{{ colorText }}">.fill-{{ listColorsNamesPlans[forloop.index0] }}</code></p>
+      <p class="mt0-5">Sass:<br> <code class="border bg-global-border p0-25 rounded">{{ listSassVarsPlans[forloop.index0] }}</code></p>
+
+
+  </div>
 </div>
+</div>
+{% endfor %}
+</div>
+
 
 <h2>Color rules </h2>
 

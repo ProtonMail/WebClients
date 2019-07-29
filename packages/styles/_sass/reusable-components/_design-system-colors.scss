@@ -53,6 +53,16 @@
   background-color: $black;
 }
 
+.bg-visionary {
+  background-color: $visionary;
+}
+.bg-plus {
+  background-color: $plus;
+}
+.bg-professional {
+  background-color: $professional;
+}
+
 
 
 .fill-global-grey {
@@ -109,6 +119,16 @@
   fill: currentColor;
 }
 
+.fill-visionary {
+  fill: $visionary;
+}
+.fill-plus {
+  fill: $plus;
+}
+.fill-professional {
+  fill: $professional;
+}
+
 
 
 .color-global-grey {
@@ -160,4 +180,14 @@
 }
 .color-black {
   color: $black;
+}
+
+.color-visionary {
+  color: $visionary;
+}
+.color-plus {
+  color: $plus;
+}
+.color-professional {
+  color: $professional;
 }
