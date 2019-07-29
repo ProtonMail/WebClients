@@ -7,6 +7,7 @@ import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 
 import './UpgradeModal.scss';
 import PlanPrice from './PlanPrice';
+import FeaturesList from './FeaturesList';
 
 const UpgradeModal = ({ onUpgrade, onComparePlans, ...rest }) => {
     const [plans = [], loadingPlans] = usePlans();
@@ -69,19 +70,7 @@ const UpgradeModal = ({ onUpgrade, onComparePlans, ...rest }) => {
                 </div>
             </div>
             <div className="upgradeModal-footer">
-                <ul className="unstyled flex flex-nowrap flex-spacearound">
-                    {features.map((text, index) => {
-                        const key = `${index}`;
-                        return (
-                            <li key={key} className="aligncenter pl0-5 pr0-5">
-                                <div>
-                                    <Icon name="add" size={25} className="fill-pm-blue" />
-                                </div>
-                                {text}
-                            </li>
-                        );
-                    })}
-                </ul>
+                <FeaturesList features={features} />
             </div>
         </SimpleFormModal>
     );

@@ -1,0 +1,21 @@
+@import "~design-system/_sass/reusable-components/design-system-config";
+
+.pm-modal.thanks-modal-container {
+    background-color: $pm-global-altgrey;
+    color: $white;
+}
+
+.thanks-modal-container .pm-modalContentInner::before,
+.thanks-modal-container .pm-modalContentInner::after,
+.thanks-modal-container .pm-modalContentInner {
+    background-color: $pm-global-altgrey;
+}
+
+.thanks-modal-container .pm-modalFooter {
+    padding: 0;
+    background: linear-gradient($pm-global-grey, $pm-global-altgrey);
+}
+
+.thanks-modal-container [class*="icon-"] {
+    fill: $white;
+}

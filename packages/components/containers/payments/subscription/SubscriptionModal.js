@@ -9,13 +9,13 @@ import {
     Input,
     usePayment,
     Payment,
-    Paragraph,
     useStep,
     useApiWithoutResult,
     useApi,
     useEventManager,
     useNotifications,
-    SubTitle,
+    useUser,
+    useOrganization,
     Label,
     Field,
     Row,
@@ -25,14 +25,18 @@ import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { toPrice } from 'proton-shared/lib/helpers/string';
 
+import './SubscriptionModal.scss';
+import FeaturesList from './FeaturesList';
 import CustomMailSection from './CustomMailSection';
 import CustomVPNSection from './CustomVPNSection';
 import OrderSummary from './OrderSummary';
-import FeaturesList from './FeaturesList';
+import Thanks from './Thanks';
 import { getCheckParams } from './helpers';
 
 const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest }) => {
     const api = useApi();
+    const [{ hasPaidMail } = {}] = useUser();
+    const [{ MaxMembers } = {}] = useOrganization();
     const [loading, setLoading] = useState(false);
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment(handleSubmit);
     const { createNotification } = useNotifications();
@@ -42,6 +46,19 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
     const { call } = useEventManager();
     const { step, next, previous } = useStep(0);
     const { request } = useApiWithoutResult(subscribe);
+
+    const features = [
+        ...(hasPaidMail
+            ? [
+                  c('Link').t`Add auto-reply`,
+                  c('Link').t`Add custom domain`,
+                  c('Link').t`Add filters`,
+                  c('Link').t`Manage encrypted contacts`
+              ]
+            : []),
+        ...(MaxMembers > 1 ? [c('Link').t`Add new users`] : []),
+        c('Link').t`Use ProtonVPN`
+    ];
 
     const callCheck = async (m = model) => {
         try {
@@ -124,15 +141,11 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
             }
         },
         {
-            title: c('Title').t`Thank you!`,
-            section: (
-                <>
-                    <SubTitle>{c('Info').t`Thank you for your subscription`}</SubTitle>
-                    <Paragraph>{c('Info').t`Your new features are now available`}</Paragraph>
-                    <FeaturesList />
-                </>
-            ),
-            onSubmit: onClose
+            title: '',
+            noWizard: true,
+            footer: <FeaturesList features={features} />,
+            className: 'thanks-modal-container',
+            section: <Thanks onClose={onClose} />
         }
     ];
 
@@ -216,6 +229,8 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
 
     return (
         <FormModal
+            className={STEPS[step].className}
+            footer={STEPS[step].footer}
             onClose={onClose}
             onSubmit={STEPS[step].onSubmit}
             title={STEPS[step].title}
@@ -224,7 +239,7 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
             submit={hasNext && c('Action').t`Next`}
             {...rest}
         >
-            <Wizard step={step} steps={steps} hideText={true} />
+            {STEPS[step].noWizard ? null : <Wizard step={step} steps={steps} hideText={true} />}
             {STEPS[step].section}
         </FormModal>
     );
