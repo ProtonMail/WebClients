@@ -8,18 +8,18 @@
             <div class="modal-body pm_form">
                 <p class="alert alert-info" translate translate-context="Info">For security reasons, please verify that you are not a robot.</p>
                 <div ng-if="::ctrl.methods.length > 1">
-                    <label ng-if="ctrl.showCaptcha">
-                        <custom-radio data-custom-ng-model="ctrl.verificator" data-custom-value="captcha"></custom-radio>
+                    <label ng-if="ctrl.methods.includes('captcha')">
+                        <custom-radio data-custom-ng-model="ctrl.tokenType" data-custom-value="captcha"></custom-radio>
                         <span translate translate-context="Label">Captcha</span>
                     </label>
                     <hr />
                 </div>
-                <captcha-view ng-if="ctrl.verificator === 'captcha'" data-token="{{ ::ctrl.token }}"></captcha-view>
+                <captcha-view ng-if="ctrl.tokenType === 'captcha'" data-token="{{ ::ctrl.token }}"></captcha-view>
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="pm_button modal-footer-button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
-            <button type="submit" ng-disabled="!ctrl.tokens[ctrl.verificator]" class="pm_button primary modal-footer-button" translate translate-context="Action">Submit</button>
+            <button type="submit" ng-disabled="!ctrl.tokens[ctrl.tokenType]" class="pm_button primary modal-footer-button" translate translate-context="Action">Submit</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

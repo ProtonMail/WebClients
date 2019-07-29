@@ -31,7 +31,7 @@ function captchaView($httpParamSerializer, dispatchers, url) {
                 }
 
                 if (data.type === 'pm_captcha') {
-                    dispatcher['captcha.token'](data.token);
+                    dispatcher['captcha.token']('token', data.token);
                 }
 
                 if (data.type === 'pm_height') {
