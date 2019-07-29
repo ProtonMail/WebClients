@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Breadcrumb = ({ list, current, onClick }) => {
+const Breadcrumb = ({ list, current = 0, onClick }) => {
     const handleClick = (index) => () => {
         if (onClick) {
             onClick(index);
@@ -35,10 +35,6 @@ Breadcrumb.propTypes = {
     onClick: PropTypes.func,
     list: PropTypes.array.isRequired,
     current: PropTypes.number.isRequired
-};
-
-Breadcrumb.defaultProps = {
-    current: 0
 };
 
 export default Breadcrumb;

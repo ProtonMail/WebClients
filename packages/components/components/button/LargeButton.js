@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Button from './Button';
 
-const LargeButton = ({ children, className, ...rest }) => {
+const LargeButton = ({ children, className = '', ...rest }) => {
     return (
         <Button className={`pm-button--large ${className}`} {...rest}>
             {children}
@@ -14,10 +14,6 @@ const LargeButton = ({ children, className, ...rest }) => {
 LargeButton.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string
-};
-
-LargeButton.defaultProps = {
-    className: ''
 };
 
 export default LargeButton;

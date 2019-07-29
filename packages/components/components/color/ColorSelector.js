@@ -5,7 +5,7 @@ import { LABEL_COLORS } from 'proton-shared/lib/constants';
 
 import './ColorSelector.scss';
 
-const ColorSelector = ({ selected, onChange, className, colors }) => {
+const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS }) => {
     const getClass = (className, more) => {
         return [className, more].filter(Boolean).join(' ');
     };
@@ -41,10 +41,6 @@ ColorSelector.propTypes = {
     selected: PropTypes.string,
     className: PropTypes.string,
     onChange: PropTypes.func.isRequired
-};
-
-ColorSelector.defaultProps = {
-    colors: LABEL_COLORS
 };
 
 export default ColorSelector;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Button from './Button';
 
-const SmallButton = ({ children, className, ...rest }) => {
+const SmallButton = ({ children, className = '', ...rest }) => {
     return (
         <Button className={`pm-button--small ${className}`} {...rest}>
             {children}
@@ -14,10 +14,6 @@ const SmallButton = ({ children, className, ...rest }) => {
 SmallButton.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string
-};
-
-SmallButton.defaultProps = {
-    className: ''
 };
 
 export default SmallButton;

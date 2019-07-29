@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const InlineLinkButton = ({ children, className, ...rest }) => {
+const InlineLinkButton = ({ children, className = '', ...rest }) => {
     return (
         <button type="button" role="button" className={`link alignbaseline ${className}`} {...rest}>
             {children}
@@ -12,10 +12,6 @@ const InlineLinkButton = ({ children, className, ...rest }) => {
 InlineLinkButton.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string
-};
-
-InlineLinkButton.defaultProps = {
-    className: ''
 };
 
 export default InlineLinkButton;

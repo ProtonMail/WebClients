@@ -9,7 +9,7 @@ const CLASSES = {
     success: 'mb1 block-info-standard-success'
 };
 
-const Alert = ({ type, children, learnMore, className }) => {
+const Alert = ({ type = 'info', children, learnMore, className }) => {
     return (
         <div className={CLASSES[type].concat(` ${className || ''}`)}>
             <div>{children}</div>
@@ -27,10 +27,6 @@ Alert.propTypes = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
     learnMore: PropTypes.string
-};
-
-Alert.defaultProps = {
-    type: 'info'
 };
 
 export default Alert;

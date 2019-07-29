@@ -5,7 +5,7 @@ import useToggle from '../toggle/useToggle';
 import Input from '../input/Input';
 import { Button } from '../button';
 
-const EditableText = ({ icon, onSubmit, initialText, children, readOnly, ...rest }) => {
+const EditableText = ({ icon = 'compose', onSubmit, initialText = '', children, readOnly = false, ...rest }) => {
     const [inputValue, setInputValue] = useState(initialText);
     const { state: editing, toggle: toggleEditing, set: setEditing } = useToggle();
 
@@ -58,12 +58,6 @@ EditableText.propTypes = {
     children: PropTypes.func,
     icon: PropTypes.string,
     small: PropTypes.bool
-};
-
-EditableText.defaultProps = {
-    readOnly: false,
-    icon: 'compose',
-    initialText: ''
 };
 
 export default EditableText;

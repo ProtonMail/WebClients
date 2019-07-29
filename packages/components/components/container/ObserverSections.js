@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import useDebounceInput from '../input/useDebounceInput';
 import ObserverSection from './ObserverSection';
 
-const ObserverSections = ({ granularity, wait, children }) => {
+const ObserverSections = ({ granularity = 20, wait = 500, children }) => {
     // throw error if any child does not have id
     React.Children.forEach(children, (child) => {
         if (!child.props.id) throw new Error('All sections to be observed need an id');
@@ -47,11 +47,6 @@ ObserverSections.propTypes = {
     children: PropTypes.node.isRequired,
     granularity: PropTypes.number,
     wait: PropTypes.number
-};
-
-ObserverSections.defaultProps = {
-    granularity: 20,
-    wait: 500
 };
 
 export default ObserverSections;

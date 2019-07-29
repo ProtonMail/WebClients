@@ -6,12 +6,13 @@ import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 
 const TextArea = (props) => {
-    const { className, error, ...rest } = props;
+    const { className = '', rows = 5, error, ...rest } = props;
     const { handlers, statusClasses, status } = useInput(props);
     const [uid] = useState(generateUID('textarea'));
     return (
         <>
             <textarea
+                rows={rows}
                 className={`pm-field w100 ${className} ${statusClasses}`}
                 aria-invalid={error && status.isDirty}
                 aria-describedby={uid}
@@ -38,11 +39,6 @@ TextArea.propTypes = {
     rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     textareaRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-};
-
-TextArea.defaultProps = {
-    rows: 5,
-    className: ''
 };
 
 export default TextArea;

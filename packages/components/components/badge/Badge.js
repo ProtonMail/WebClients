@@ -12,7 +12,7 @@ const CLASSNAMES = {
 
 const wrapTooltip = (children, title) => <Tooltip title={title}>{children}</Tooltip>;
 
-const Badge = ({ children, type, tooltip }) => {
+const Badge = ({ children, type = 'default', tooltip }) => {
     let badge = <strong className={CLASSNAMES[type]}>{children}</strong>;
 
     if (tooltip) {
@@ -26,10 +26,6 @@ Badge.propTypes = {
     children: PropTypes.node.isRequired,
     type: PropTypes.string,
     tooltip: PropTypes.string
-};
-
-Badge.defaultProps = {
-    type: 'default'
 };
 
 export default Badge;

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import { Button } from '../button';
 
-const Copy = ({ value, className }) => {
+const Copy = ({ value, className = '' }) => {
     const [copied, setCopied] = useState(false);
 
     const handleClick = () => {
@@ -29,10 +29,6 @@ const Copy = ({ value, className }) => {
 Copy.propTypes = {
     value: PropTypes.string.isRequired,
     className: PropTypes.string
-};
-
-Copy.defaultProps = {
-    className: ''
 };
 
 export default Copy;

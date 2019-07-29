@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Content = ({ children, className, onSubmit, onReset, autoComplete, ...rest }) => {
+const Content = ({ children, className = '', onSubmit, onReset, autoComplete = 'off', ...rest }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         onSubmit(event);
@@ -25,11 +25,6 @@ Content.propTypes = {
     onSubmit: PropTypes.func,
     onReset: PropTypes.func,
     autoComplete: PropTypes.string.isRequired
-};
-
-Content.defaultProps = {
-    autoComplete: 'off',
-    className: ''
 };
 
 export default Content;

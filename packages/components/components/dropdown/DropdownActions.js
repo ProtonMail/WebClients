@@ -19,7 +19,7 @@ const wrapTooltip = (text, tooltip) => {
     );
 };
 
-const DropdownActions = ({ loading, disabled, list, className }) => {
+const DropdownActions = ({ loading = false, disabled = false, list = [], className = '' }) => {
     if (!list.length) {
         return null;
     }
@@ -72,13 +72,6 @@ DropdownActions.propTypes = {
     disabled: PropTypes.bool,
     loading: PropTypes.bool,
     className: PropTypes.string
-};
-
-DropdownActions.defaultProps = {
-    list: [],
-    disabled: false,
-    loading: false,
-    className: ''
 };
 
 export default DropdownActions;
