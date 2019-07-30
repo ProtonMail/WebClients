@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
-import { useModals, useCalendars } from 'react-components';
+import { useModals, useCalendars, useAddresses } from 'react-components';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
 import { nextYear, previousYear } from 'proton-shared/lib/helpers/date';
@@ -14,12 +14,14 @@ import OverviewSidebar from './OverviewSidebar';
 import OverviewToolbar from './OverviewToolbar';
 import YearView from '../components/YearView';
 import PlanningView from '../components/PlanningView';
-import CalendarModal from '../components/modals/CalendarModal';
+import WelcomeModal from '../components/modals/WelcomeModal';
 
 const DEFAULT_VIEW = 'week';
 const VIEWS_HANDLED_BY_CALENDAR = ['day', 'week', 'month'];
 
 const OverviewContainer = () => {
+    const [addresses] = useAddresses();
+    const welcomeRef = useRef();
     const calendarRef = useRef();
     const [view, setView] = useState(DEFAULT_VIEW);
     const { createModal } = useModals();
@@ -45,10 +47,17 @@ const OverviewContainer = () => {
     const schedules = [];
 
     useEffect(() => {
-        if (Array.isArray(calendars) && calendars.length === 0) {
-            createModal(<CalendarModal />);
+        if (
+            !welcomeRef.current &&
+            Array.isArray(calendars) &&
+            !calendars.length &&
+            Array.isArray(addresses) &&
+            addresses.length
+        ) {
+            createModal(<WelcomeModal addresses={addresses} />);
+            welcomeRef.current = true;
         }
-    }, [calendars]);
+    }, [calendars, addresses]);
 
     const handleSelectDate = (date) => {
         setDate(date);

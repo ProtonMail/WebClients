@@ -19,10 +19,11 @@ import {
     useApi,
     useNotifications
 } from 'react-components';
+import { normalize } from 'proton-shared/lib/helpers/string';
 import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
 import { createCalendar, updateCalendar, setupCalendar, queryMembers } from 'proton-shared/lib/api/calendars';
 
-import { setupKey } from '../../helpers/calendarModal';
+import { setupKey, setupCalendarKey } from '../../helpers/calendarModal';
 import { DEFAULT_CALENDAR_COLOR } from '../../constants';
 import Loader from 'react-components/components/loader/Loader';
 
@@ -73,14 +74,9 @@ const CalendarModal = ({ calendar, members = [], ...rest }) => {
 
         // Key setup
         if (!calendar) {
-            const { Members: members = [] } = await api(queryMembers(Calendar.ID));
-            const { MemberID } = members.find(({ AddressID }) => AddressID === addressID);
             const { Email: email = '' } = addresses.find(({ ID }) => ID === addressID);
             const addressKeys = addressesKeysMap[addressID];
-            const { privateKey } = getPrimaryKey(addressKeys) || {};
-            const memberPublicKeys = { [MemberID]: privateKey.toPublic() };
-            const data = await setupKey({ memberPublicKeys, email, addressID, privateKey });
-            await api(setupCalendar(Calendar.ID, data));
+            await setupCalendarKey({ api, addressID, addressKeys, calendarID: Calendar.ID, email });
         }
 
         await call();

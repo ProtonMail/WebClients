@@ -55,7 +55,7 @@ const CalendarsModal = ({ ...rest }) => {
                                     createModal(<CalendarModal calendar={calendar} />);
                                 }
                             },
-                            calendars.length > 1 && {
+                            calendars.length > 0 && {
                                 text: c('Action').t`Delete`,
                                 async onClick() {
                                     await new Promise((resolve, reject) => {

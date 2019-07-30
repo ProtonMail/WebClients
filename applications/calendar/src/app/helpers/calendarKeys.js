@@ -1,12 +1,4 @@
-import {
-    generateKey,
-    encryptMessage,
-    createCleartextMessage,
-    getMessage,
-    splitMessage,
-    encodeBase64,
-    arrayToBinaryString
-} from 'pmcrypto';
+import { generateKey, encryptMessage, getMessage, splitMessage, encodeBase64, arrayToBinaryString } from 'pmcrypto';
 
 import getRandomValues from 'get-random-values';
 
@@ -45,19 +37,20 @@ export const generateCalendarKey = async ({ email, passphrase, encryptionConfig 
  */
 export const encryptPassphrase = async ({ passphrase, privateKey, memberPublicKeys }) => {
     const { data, signature } = await encryptMessage({
-        data: createCleartextMessage(passphrase),
+        data: passphrase,
         publicKeys: Object.values(memberPublicKeys),
         privateKeys: [privateKey],
         detached: true
     });
     const message = await getMessage(data);
     const { asymmetric, encrypted } = await splitMessage(message);
+
     return {
         keyPackets: Object.entries(memberPublicKeys).reduce((acc, [memberID], index) => {
-            acc[memberID] = asymmetric[index];
+            acc[memberID] = encodeBase64(arrayToBinaryString(asymmetric[index]));
             return acc;
         }, Object.create(null)),
-        dataPacket: encrypted[0],
+        dataPacket: encodeBase64(arrayToBinaryString(encrypted[0])),
         signature
     };
 };

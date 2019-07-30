@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ErrorBoundary, StandardPrivateApp, AppsSidebar } from 'react-components';
 import { UserModel, UserSettingsModel, CalendarsModel } from 'proton-shared/lib/models';
+import { APPS } from 'proton-shared/lib/constants';
 
 import OverviewContainer from '../containers/OverviewContainer';
 import PrivateHeader from '../components/layout/PrivateHeader';
@@ -20,7 +21,7 @@ const PrivateApp = ({ onLogout }) => {
         >
             <ErrorBoundary>
                 <div className="flex flex-nowrap no-scroll">
-                    <AppsSidebar currentApp="protoncalendar" />
+                    <AppsSidebar currentApp={APPS.PROTONCALENDAR} />
                     <div className="content flex-item-fluid reset4print">
                         <PrivateHeader />
                         <div className="flex flex-nowrap">
