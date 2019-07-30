@@ -16,7 +16,7 @@ function humanVerificationModal(dispatchers, pmModal) {
 
             self.submit = () =>
                 params.close({
-                    Token: `${params.token}${self.tokens[self.tokenType]}`,
+                    Token: self.tokens[self.tokenType],
                     TokenType: self.tokenType
                 });
 
