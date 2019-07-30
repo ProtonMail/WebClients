@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Dropdown, DropdownMenu, useUser, useAuthenticationStore } from 'react-components';
+import { Dropdown, DropdownMenu, useUser, useAuthentication } from 'react-components';
 
 const Header = () => {
     const [user] = useUser();
-    const authenticationStore = useAuthenticationStore();
+    const authenticationStore = useAuthentication();
     const list = [
         {
             text: c('Link').t`Logout ${user.Name}`,
