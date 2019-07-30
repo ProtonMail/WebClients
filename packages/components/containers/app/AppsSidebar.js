@@ -1,14 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from 'react-components';
+import { APPS } from 'proton-shared/lib/constants';
+import { c } from 'ttag';
+
+const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONVPN_SETTINGS, PROTONMAIL_SETTINGS } = APPS;
 
 const AppsSidebar = ({ currentApp = '' }) => {
     const apps = [
-        { id: 'protonmail', icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
-        { id: 'protoncontacts', icon: 'contacts', title: 'ProtonContacts', link: '/contacts' },
-        { id: 'protoncalendar', icon: 'calendar', title: 'ProtonCalendar', link: '/calendar' },
-        { id: 'protonvpn', icon: 'protonvpn', title: 'ProtonVPN', link: 'https://account.protonvpn.com/login' },
-        { id: 'protonsettings', icon: 'settings', title: 'Settings', link: '/settings' }
+        { id: PROTONMAIL, icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
+        { id: PROTONCONTACTS, icon: 'contacts', title: 'ProtonContacts', link: '/contacts' },
+        { id: PROTONCALENDAR, icon: 'calendar', title: 'ProtonCalendar', link: '/calendar' },
+        {
+            id: PROTONVPN_SETTINGS,
+            icon: 'protonvpn',
+            title: c('Title').t`ProtonVPN settings`,
+            link: 'https://account.protonvpn.com/login'
+        },
+        { id: PROTONMAIL_SETTINGS, icon: 'settings', title: c('Title').t`ProtonMail settings`, link: '/settings' }
     ];
 
     return (
