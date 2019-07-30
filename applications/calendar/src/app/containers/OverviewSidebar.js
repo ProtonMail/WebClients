@@ -24,7 +24,7 @@ const OverviewSidebar = ({ calendars = [], loadingCalendars, onSelectDate, onSel
             return [<Loader key={0} />];
         }
         if (calendars.length === 0) {
-            return ['No calendars'];
+            return [];
         }
         return calendars.map(({ ID, Name, Display, Color }) => {
             return (
@@ -42,6 +42,7 @@ const OverviewSidebar = ({ calendars = [], loadingCalendars, onSelectDate, onSel
 
     const list = [
         {
+            icon: 'general',
             text: c('Header').t`Calendars`,
             type: 'button',
             className: 'alignleft',
@@ -51,6 +52,7 @@ const OverviewSidebar = ({ calendars = [], loadingCalendars, onSelectDate, onSel
         },
         ...calendarsView.map((node) => ({ type: 'text', text: node })),
         {
+            icon: 'add',
             text: c('Action').t`Add calendar`,
             type: 'button',
             className: 'alignleft',
