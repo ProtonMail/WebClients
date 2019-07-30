@@ -300,3 +300,4 @@ export { default as useOrganizationKey } from './hooks/useOrganizationKey';
 export { default as ErrorBoundary } from './containers/app/ErrorBoundary';
 export { default as ProtonApp } from './containers/app/ProtonApp';
 export { default as StandardPrivateApp } from './containers/app/StandardPrivateApp';
+export { default as AppsSidebar } from './containers/app/AppsSidebar';
