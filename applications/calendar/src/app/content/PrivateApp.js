@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ErrorBoundary, StandardPrivateApp } from 'react-components';
-import { UserModel, UserSettingsModel } from 'proton-shared/lib/models';
+import { UserModel, UserSettingsModel, CalendarsModel } from 'proton-shared/lib/models';
 
 import OverviewContainer from '../containers/OverviewContainer';
 import PrivateLayout from '../components/layout/PrivateLayout';
 
-const EVENT_MODELS = [UserModel, UserSettingsModel];
+const EVENT_MODELS = [UserModel, UserSettingsModel, CalendarsModel];
 
 const PRELOAD_MODELS = [UserSettingsModel, UserModel];
 

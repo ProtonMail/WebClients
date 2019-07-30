@@ -24,6 +24,9 @@
             "version": "detect"
         }
     },
+    "globals": {
+        "PL_IS_STANDALONE": true
+    },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended"

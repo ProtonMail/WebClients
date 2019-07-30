@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useModals, SmallButton } from 'react-components';
 
 import EventModal from './modals/EventModal';
 import { c } from 'ttag';
 
-const EventPopup = ({}) => {
+const EventPopup = () => {
     const { createModal } = useModals();
     const handleEdit = () => {
         createModal(<EventModal />);

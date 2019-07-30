@@ -1,6 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { useModals } from 'react-components';
-import { Route } from 'react-router';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
+import { useModals, useCalendars } from 'react-components';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
 import { nextYear, previousYear } from 'proton-shared/lib/helpers/date';
@@ -11,88 +10,45 @@ import 'tui-time-picker/dist/tui-time-picker.css';
 
 import Main from '../components/Main';
 import EventModal from '../components/modals/EventModal';
-import PrivateSidebar from '../components/layout/PrivateSidebar';
-import Toolbar from '../components/Toolbar';
+import OverviewSidebar from './OverviewSidebar';
+import OverviewToolbar from './OverviewToolbar';
 import YearView from '../components/YearView';
 import PlanningView from '../components/PlanningView';
+import CalendarModal from '../components/modals/CalendarModal';
 
 const DEFAULT_VIEW = 'week';
-const today = new Date();
 const VIEWS_HANDLED_BY_CALENDAR = ['day', 'week', 'month'];
-
-const getDate = (type, start, value, operator) => {
-    start = new Date(start);
-    type = type.charAt(0).toUpperCase() + type.slice(1);
-
-    if (operator === '+') {
-        start[`set${type}`](start[`get${type}`]() + value);
-    } else {
-        start[`set${type}`](start[`get${type}`]() - value);
-    }
-
-    return start;
-};
 
 const OverviewContainer = () => {
     const calendarRef = useRef();
     const [view, setView] = useState(DEFAULT_VIEW);
-    const viewHandledByCalendarLibrary = VIEWS_HANDLED_BY_CALENDAR.includes(view);
     const { createModal } = useModals();
     const [currentDate, setDate] = useState(new Date());
-    const [calendars] = useState([
-        {
-            id: '0',
-            name: 'Private',
-            bgColor: '#9e5fff',
-            borderColor: '#9e5fff'
-        },
-        {
-            id: '1',
-            name: 'Company',
-            bgColor: '#00a9ff',
-            borderColor: '#00a9ff'
+    const [calendars, loadingCalendars] = useCalendars();
+
+    const viewHandledByCalendarLibrary = VIEWS_HANDLED_BY_CALENDAR.includes(view);
+
+    const tuiCalendars = useMemo(() => {
+        if (!Array.isArray(calendars)) {
+            return [];
         }
-    ]);
-    const [schedules] = useState([
-        {
-            id: '1',
-            calendarId: '0',
-            title: 'TOAST UI Calendar Study',
-            category: 'time',
-            dueDateClass: '',
-            start: today.toISOString(),
-            end: getDate('hours', today, 3, '+').toISOString()
-        },
-        {
-            id: '2',
-            calendarId: '0',
-            title: 'Practice',
-            category: 'milestone',
-            dueDateClass: '',
-            start: getDate('date', today, 1, '+').toISOString(),
-            end: getDate('date', today, 1, '+').toISOString(),
-            isReadOnly: true
-        },
-        {
-            id: '3',
-            calendarId: '0',
-            title: 'FE Workshop',
-            category: 'allday',
-            dueDateClass: '',
-            start: getDate('date', today, 2, '-').toISOString(),
-            end: getDate('date', today, 1, '-').toISOString(),
-            isReadOnly: true
-        },
-        {
-            id: '4',
-            calendarId: '0',
-            title: 'Report',
-            category: 'time',
-            dueDateClass: '',
-            start: today.toISOString(),
-            end: getDate('hours', today, 1, '+').toISOString()
+        return calendars.map(({ ID, Name, Color }) => {
+            return {
+                id: ID,
+                name: Name,
+                bgColor: Color,
+                borderColor: Color
+            };
+        });
+    }, [calendars]);
+
+    const schedules = [];
+
+    useEffect(() => {
+        if (Array.isArray(calendars) && calendars.length === 0) {
+            createModal(<CalendarModal />);
         }
-    ]);
+    }, [calendars]);
 
     const handleSelectDate = (date) => {
         setDate(date);
@@ -153,20 +109,17 @@ const OverviewContainer = () => {
 
     return (
         <>
-            <Route
-                path="/:path"
-                render={() => (
-                    <PrivateSidebar
-                        onSelectDate={handleSelectDate}
-                        onSelectDateRange={handleSelectDateRange}
-                        currentDate={currentDate}
-                    />
-                )}
+            <OverviewSidebar
+                onSelectDate={handleSelectDate}
+                onSelectDateRange={handleSelectDateRange}
+                currentDate={currentDate}
+                calendars={calendars}
+                loadingCalendars={loadingCalendars}
             />
             <div className="main flex-item-fluid main-area">
                 <div className="flex flex-reverse">
                     <Main>
-                        <Toolbar
+                        <OverviewToolbar
                             view={view}
                             onChangeView={handleChangeView}
                             onNext={handleNext}
@@ -184,7 +137,7 @@ const OverviewContainer = () => {
                                 ref={calendarRef}
                                 height="800px"
                                 className="flex"
-                                calendars={calendars}
+                                calendars={tuiCalendars}
                                 month={{
                                     startDayOfWeek: 0
                                 }}

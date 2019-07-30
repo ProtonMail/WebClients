@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Group, ButtonGroup, Icon, Select } from 'react-components';
 import moment from 'moment';
 
-const Toolbar = ({ onToday, onPrev, onNext, view, onChangeView }) => {
+const OverviewToolbar = ({ onToday, onPrev, onNext, view, onChangeView }) => {
     const views = [
         { text: c('Calendar view').t`Day`, value: 'day' },
         { text: c('Calendar view').t`Week`, value: 'week' },
@@ -51,7 +51,7 @@ const Toolbar = ({ onToday, onPrev, onNext, view, onChangeView }) => {
     );
 };
 
-Toolbar.propTypes = {
+OverviewToolbar.propTypes = {
     onToday: PropTypes.func,
     onPrev: PropTypes.func,
     onNext: PropTypes.func,
@@ -59,4 +59,4 @@ Toolbar.propTypes = {
     onChangeView: PropTypes.func
 };
 
-export default Toolbar;
+export default OverviewToolbar;
