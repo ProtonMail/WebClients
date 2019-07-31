@@ -33,7 +33,7 @@
     color: $pm-global-grey;
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
   }
-  &:active,
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     //background-color: $pm-global-border;
     background: radial-gradient(closest-side, $white, $pm-global-border 90%);
@@ -70,7 +70,7 @@
     color: $white;
     background-color: rgba(0, 0, 0, 0.2);
   }
-  &:active,
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     background: rgba(0, 0, 0, 0.5);
   }
@@ -99,7 +99,7 @@
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
     background: $pm-blue-dark;
   }
-  &:active,
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     background: $pm-blue-dark;
     text-shadow: 1px 1px 10px rgba( $white, .3 ),-1px -1px 10px rgba( $white, .3 );
@@ -131,7 +131,7 @@
     border-color: $pm-blue-dark;
     color: $pm-blue-dark;
   }
-  &:active,
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     border-color: $pm-blue-dark;
     color: $pm-blue-dark;
@@ -156,7 +156,7 @@
   &:hover,
   &:focus-within,
   &.is-hover,
-  &:active,
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     background-color: rgba(0, 0, 0, 0.2);
     border-color: $pm-blue-light;
@@ -188,7 +188,7 @@
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
     background: $pv-green-dark;
   }
-  &:active,
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     background: $pv-green-dark;
     text-shadow: 1px 1px 10px rgba( $white, .3 ),-1px -1px 10px rgba( $white, .3 );
@@ -220,7 +220,7 @@
     border-color: $pv-green-dark;
     color: $pv-green-dark;
   }
-  &:active,
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     border-color: $pv-green-dark;
     color: $pv-green-dark;
@@ -251,7 +251,7 @@
     border-color: $pv-green-dark;
     color: $pv-green-dark;
   }
-  &:active,
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     background: rgba(0, 0, 0, 0.5);
   }
