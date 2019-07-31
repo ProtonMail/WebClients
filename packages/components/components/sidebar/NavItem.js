@@ -7,10 +7,10 @@ import NavMenu from './NavMenu';
 
 const NavItem = ({ type, link, isActive, text, onClick, icon, list, color, className }) => {
     const content = (
-        <div className="flex flex-nowrap flex-items-center">
+        <span className="flex flex-nowrap flex-items-center">
             {icon && <Icon fill="light" name={icon} color={color} className="mr1 flex-item-noshrink" />}
-            <span className="ellipsis inbl">{text}</span>
-        </div>
+            <span className="ellipsis mw100">{text}</span>
+        </span>
     );
 
     if (type === 'link') {
