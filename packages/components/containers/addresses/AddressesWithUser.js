@@ -1,15 +1,47 @@
-import React, { useMemo } from 'react';
-import { c } from 'ttag';
-import { useAddresses, Alert, Table, TableHeader, TableBody, TableRow } from 'react-components';
+import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
+import {
+    useApi,
+    useEventManager,
+    useAddresses,
+    Alert,
+    OrderableTable,
+    OrderableTableHeader,
+    OrderableTableBody,
+    OrderableTableRow
+} from 'react-components';
+import { move } from 'proton-shared/lib/helpers/array';
+import { orderAddress } from 'proton-shared/lib/api/addresses';
 
 import AddressStatus from './AddressStatus';
 import AddressActions from './AddressActions';
 import { getStatus } from './helper';
 
 const AddressesUser = ({ user }) => {
+    const api = useApi();
+    const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
+    const [list, setAddresses] = useState(addresses);
     const member = useMemo(() => ({ Self: 1 }), []);
+
+    useEffect(() => {
+        setAddresses(addresses);
+    }, [addresses]);
+
+    const handleSortEnd = useCallback(
+        async ({ oldIndex, newIndex }) => {
+            try {
+                const newList = move(list, oldIndex, newIndex);
+                setAddresses(newList);
+                await api(orderAddress(newList.map(({ ID }) => ID)));
+                call();
+            } catch (e) {
+                setAddresses(addresses);
+            }
+        },
+        [list, addresses]
+    );
 
     if (!loadingAddresses && !addresses.length) {
         return (
@@ -20,18 +52,19 @@ const AddressesUser = ({ user }) => {
     }
 
     return (
-        <Table>
-            <TableHeader
+        <OrderableTable onSortEnd={handleSortEnd}>
+            <OrderableTableHeader
                 cells={[
                     c('Header for addresses table').t`Address`,
                     c('Header for addresses table').t`Status`,
                     c('Header for addresses table').t`Actions`
                 ]}
             />
-            <TableBody colSpan={3} loading={loadingAddresses}>
-                {addresses &&
-                    addresses.map((address, i) => (
-                        <TableRow
+            <OrderableTableBody colSpan={3} loading={loadingAddresses}>
+                {list &&
+                    list.map((address, i) => (
+                        <OrderableTableRow
+                            index={i}
                             key={address.ID}
                             cells={[
                                 <div key={0} className="ellipsis" title={address.Email}>
@@ -42,8 +75,8 @@ const AddressesUser = ({ user }) => {
                             ]}
                         />
                     ))}
-            </TableBody>
-        </Table>
+            </OrderableTableBody>
+        </OrderableTable>
     );
 };
 
