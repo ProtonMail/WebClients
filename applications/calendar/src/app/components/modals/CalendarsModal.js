@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import {
+    Icon,
     Alert,
     FormModal,
     Table,
@@ -47,7 +48,7 @@ const CalendarsModal = ({ ...rest }) => {
                 <TableHeader cells={headers} />
                 <TableBody>
                     {calendars.map((calendar) => {
-                        const { ID, Name, Display } = calendar;
+                        const { ID, Name, Display, Color } = calendar;
                         const list = [
                             {
                                 text: c('Action').t`Edit`,
@@ -77,14 +78,21 @@ const CalendarsModal = ({ ...rest }) => {
                             <TableRow
                                 key={ID}
                                 cells={[
-                                    Name,
+                                    <div key={ID}>
+                                        <Icon name="calendar" color={Color} className="mr0-5" />
+                                        {Name}
+                                    </div>,
                                     <Toggle
                                         key={ID}
                                         loading={loading}
                                         checked={!!Display}
                                         onChange={({ target }) => withLoading(handleDisplay(ID, target.checked))}
                                     />,
-                                    <DropdownActions key={ID} list={list} />
+                                    <DropdownActions
+                                        className="pm-group-button pm-button--small"
+                                        key={ID}
+                                        list={list}
+                                    />
                                 ]}
                             />
                         );
