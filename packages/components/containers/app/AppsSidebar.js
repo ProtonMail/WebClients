@@ -24,6 +24,7 @@ const AppsSidebar = ({ currentApp = '' }) => {
         <aside className="aside noprint" id="aside-bar">
             <ul className="unstyled m0 aligncenter">
                 {apps.map(({ id, icon, title, link }) => {
+                    const isCurrent = currentApp === id;
                     return (
                         <li key={id} className="mb0-5">
                             <a
@@ -31,7 +32,8 @@ const AppsSidebar = ({ currentApp = '' }) => {
                                 target="_self"
                                 className="center flex js-notyet aside-link"
                                 title={title}
-                                aria-current={currentApp === id}
+                                disabled={isCurrent}
+                                aria-current={isCurrent}
                             >
                                 <Icon name={icon} />
                             </a>
