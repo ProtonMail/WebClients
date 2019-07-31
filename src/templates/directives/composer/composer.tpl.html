@@ -108,7 +108,7 @@
         <div class="pull-right">
             <composer-time class="desktopOnly mtauto mbauto"></composer-time>
             <button
-                class="pm-button pm-button--for-icon composer-btn-discard"
+                class="pm-button pm-button--for-icon no-pointer-events-children composer-btn-discard"
                 ng-disabled="message.disableDiscard()"
                 pt-tooltip-translate="Delete draft"
                 pt-tooltip-translate-context="Action"
@@ -118,7 +118,7 @@
             </button>
 
             <button
-                class="pm-button pm-button--for-icon composer-btn-save"
+                class="pm-button pm-button--for-icon no-pointer-events-children composer-btn-save"
                 ng-disabled="message.disableSave() || message !== selected"
                 pt-tooltip-translate="Save"
                 pt-placement="top"
