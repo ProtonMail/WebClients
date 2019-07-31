@@ -19,26 +19,38 @@ export const toImage = (base64str) => {
 };
 
 /**
- * Resizes a picture to a maximum length/width (based on largest dimension)
+ * Resizes a picture to a maximum height/width (preserving height/width ratio)
  * @param {String} original Base64 representation of image to be resized.
- * @param {Number} maxSize Amount of pixels that largest dimention (whether width or length) should have.
+ * @param {Number} maxWidth Maximum amount of pixels for the width of the resized image.
+ * @param {Number} maxHeight Maximum amount of pixels for the height of the resized image
  * @param {String} finalMimeType Mime type of the resulting resized image.
  * @param {Number} encoderOptions A Number between 0 and 1 indicating image quality if the requested type is image/jpeg or image/webp
  * @return {Promise} receives base64 string of resized image.
+ *
+ * @dev If maxWidth or maxHeight are equal to zero, the corresponding dimension is ignored
  */
-export const resizeImage = (original, maxSize, finalMimeType = 'image/jpeg', encoderOptions = 1) => {
+export const resizeImage = (
+    original,
+    maxWidth = 0,
+    maxHeight = 0,
+    finalMimeType = 'image/jpeg',
+    encoderOptions = 1
+) => {
     return toImage(original).then((image) => {
         // Resize the image
         const canvas = document.createElement('canvas');
-        let { width } = image;
-        let { height } = image;
+        let { width, height } = image;
 
-        if (width > height && width > maxSize) {
-            height *= maxSize / width;
-            width = maxSize;
-        } else if (height > maxSize) {
-            width *= maxSize / height;
-            height = maxSize;
+        const [widthRatio, heightRatio] = [maxWidth && width / maxWidth, maxHeight && height / maxHeight].map(Number);
+
+        if (widthRatio >= heightRatio && widthRatio > 1) {
+            height /= widthRatio;
+            width = maxWidth;
+        } else if (heightRatio > 1) {
+            width /= heightRatio;
+            height = maxHeight;
+        } else {
+            return image.src;
         }
 
         canvas.width = width;
@@ -99,25 +111,25 @@ export const toBlob = (base64str) => {
 /**
  * Down size image to reach the max size limit
  * @param  {String} base64str
- * @param  {} maxSize in bytes
+ * @param  {Number} maxSize in bytes
  * @param  {String} mimeType
  * @param  {Number} encoderOptions
  * @return {Promise}
  */
 export const downSize = (base64str, maxSize, mimeType = 'image/jpeg', encoderOptions = 1) => {
-    const process = (source, max) => {
-        return resizeImage(source, max, mimeType, encoderOptions).then((resized) => {
-            const { size } = toBlob(resized);
+    const process = (source, maxWidth, maxHeight) => {
+        return resizeImage(source, maxWidth, maxHeight, mimeType, encoderOptions).then((resized) => {
+            const { size } = new Blob([resized]);
 
             if (size <= maxSize) {
                 return resized;
             }
 
-            return process(resized, Math.round(max * 0.9));
+            return process(resized, Math.round(maxWidth * 0.9), Math.round(maxHeight * 0.9));
         });
     };
 
-    return toImage(base64str).then(({ height, width }) => process(base64str, height > width ? height : width));
+    return toImage(base64str).then(({ height, width }) => process(base64str, width, height));
 };
 
 /**
