@@ -6,7 +6,7 @@ import NavMenu from './NavMenu';
 const Sidebar = ({ list }) => {
     return (
         <div className="sidebar flex flex-column noprint">
-            <nav className="navigation flex-item-fluid scroll-if-needed mb1">
+            <nav className="navigation mw100 flex-item-fluid scroll-if-needed mb1">
                 <NavMenu list={list} />
             </nav>
         </div>
