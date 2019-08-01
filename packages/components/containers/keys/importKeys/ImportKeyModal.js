@@ -8,7 +8,8 @@ import {
     useEventManager,
     useNotifications,
     useModals,
-    Alert
+    Alert,
+    GenericError
 } from 'react-components';
 import { getKeys } from 'pmcrypto';
 
@@ -216,7 +217,7 @@ const ImportKeyModal = ({ Address, addressKeys, onClose, ...rest }) => {
         if (step === STEPS.FAILURE) {
             return {
                 submit: c('Action').t`Ok`,
-                children: <Alert type="error">{c('Error').t`Something went wrong`}</Alert>
+                children: <GenericError />
             };
         }
 

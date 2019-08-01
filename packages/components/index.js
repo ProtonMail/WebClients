@@ -245,6 +245,8 @@ export { default as ShortcutsSection } from './containers/general/ShortcutsSecti
 export { default as PmMeSection } from './containers/addresses/PmMeSection';
 export { default as IdentitySection } from './containers/addresses/IdentitySection';
 export { default as AutoReplySection } from './containers/autoReply/AutoReplySection';
+export { default as IllustrationPlaceholder } from './containers/illustration/IllustrationPlaceholder';
+export { default as GenericError } from './containers/error/GenericError';
 export { default as useStep } from './hooks/useStep';
 export { default as useApiWithoutResult } from './hooks/useApiWithoutResult';
 export { default as useEventManager } from './containers/eventManager/useEventManager';

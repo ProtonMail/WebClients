@@ -12,7 +12,8 @@ import {
     useEventManager,
     useModals,
     InlineLinkButton,
-    FormModal
+    FormModal,
+    GenericError
 } from 'react-components';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
 import { decryptPrivateKey, encryptPrivateKey, getKeys } from 'pmcrypto';
@@ -356,7 +357,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onClose, ...rest }) => {
         if (step === STEPS.FAILURE) {
             return {
                 submit: c('Action').t`Ok`,
-                children: <Alert type="error">{c('Error').t`Something went wrong`}</Alert>
+                children: <GenericError />
             };
         }
 

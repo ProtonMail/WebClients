@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, FormModal, useEventManager, useModals, useApi } from 'react-components';
+import { Alert, GenericError, FormModal, useEventManager, useModals, useApi } from 'react-components';
 import { removeKey } from 'proton-shared/lib/keys/keysManager';
 import ExportPrivateKeyModal from '../exportKey/ExportPrivateKeyModal';
 import { removeKeyRoute } from 'proton-shared/lib/api/keys';
@@ -101,7 +101,7 @@ const DeleteKeyModal = ({ onClose, Address, addressKeys, KeyID, privateKey, ...r
         if (step === STEPS.FAILURE) {
             return {
                 submit: c('Action').t`Ok`,
-                children: <Alert type="error">{c('Error').t`Something went wrong`}</Alert>
+                children: <GenericError />
             };
         }
 

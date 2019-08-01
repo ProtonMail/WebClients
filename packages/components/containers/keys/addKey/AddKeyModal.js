@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, FormModal, useEventManager, useAuthentication, useApi } from 'react-components';
+import { Alert, GenericError, FormModal, useEventManager, useAuthentication, useApi } from 'react-components';
 import { getAlgorithmExists } from 'proton-shared/lib/keys/keysAlgorithm';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
 
@@ -109,7 +109,7 @@ const AddKeyModal = ({ onClose, Address, addressKeys, ...rest }) => {
         if (step === STEPS.FAILURE) {
             return {
                 submit: c('Action').t`Ok`,
-                children: <Alert type="error">{c('Error').t`Something went wrong`}</Alert>
+                children: <GenericError />
             };
         }
 
