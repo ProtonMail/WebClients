@@ -77,9 +77,11 @@ const ChangeOrganizationKeysModal = ({ onClose, organizationKey, hasOtherAdmins,
             BackupKeySalt: backupKeySalt,
             Tokens: tokens
         });
+
         await new Promise((resolve, reject) => {
             createModal(<AuthModal onClose={reject} onSuccess={resolve} config={apiConfig} />);
         });
+
         await call();
         createNotification({ text: c('Success').t`Keys updated` });
         onClose();

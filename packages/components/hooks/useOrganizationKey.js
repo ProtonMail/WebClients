@@ -15,16 +15,22 @@ const useOrganizationKey = (organization) => {
         if (!user.isAdmin || !organization) {
             return Promise.resolve();
         }
-        // Warning: This is modified externally from ReactivateOrganizationKeyModal.
-        return cachedPromise(cache, 'ORGANIZATION_KEY', async () => {
-            const { PrivateKey } = await api(getOrganizationKeys());
-            if (!PrivateKey) {
-                return;
-            }
-            const [privateKey] = await getKeys(PrivateKey);
-            await privateKey.decrypt(authentication.getPassword()).catch(noop);
-            return privateKey;
-        });
+        // Warning: There is no event update coming for organization key changes, however, an update for the organization
+        // is received as the keys are changed. So each time it changes, it will redo this.
+        return cachedPromise(
+            cache,
+            'ORGANIZATION_KEY',
+            async () => {
+                const { PrivateKey } = await api(getOrganizationKeys());
+                if (!PrivateKey) {
+                    return;
+                }
+                const [privateKey] = await getKeys(PrivateKey);
+                await privateKey.decrypt(authentication.getPassword()).catch(noop);
+                return privateKey;
+            },
+            organization
+        );
     }, [user, organization]);
 };
 
