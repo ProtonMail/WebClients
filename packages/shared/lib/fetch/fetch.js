@@ -1,17 +1,35 @@
 import { createUrl, checkStatus, checkDateHeader, serializeData } from './helpers';
 
-const fetchHelper = ({ url: urlString, params, output, ...rest }) => {
+const DEFAULT_TIMEOUT = 30000;
+
+const fetchHelper = ({ url: urlString, params, output, signal, timeout = DEFAULT_TIMEOUT, ...rest }) => {
+    const abortController = new AbortController();
+
     const config = {
         mode: 'cors',
         credentials: 'include',
         redirect: 'follow',
+        signal: abortController.signal,
         ...rest
     };
 
     const url = createUrl(urlString, params);
 
+    // Will reject the promise with DOMException (e.name = 'AbortError') after timeout
+    const timeoutHandle = setTimeout(() => abortController.abort(), timeout);
+
+    if (signal) {
+        signal.addEventListener('abort', () => {
+            abortController.abort();
+            clearTimeout(timeoutHandle);
+        });
+    }
+
     return fetch(url, config)
-        .then((response) => checkStatus(response, config))
+        .then((response) => {
+            clearTimeout(timeoutHandle);
+            return checkStatus(response, config);
+        })
         .then(checkDateHeader)
         .then((response) => response[output]());
 };

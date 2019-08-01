@@ -65,7 +65,7 @@ describe('fetch', () => {
         await performRequest(config);
         expect(spy.calls.all()[0].args).toEqual([
             new URL(config.url),
-            {
+            jasmine.objectContaining({
                 mode: 'cors',
                 credentials: 'include',
                 redirect: 'follow',
@@ -73,7 +73,7 @@ describe('fetch', () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(config.data)
-            }
+            })
         ]);
     });
 
@@ -91,13 +91,13 @@ describe('fetch', () => {
         fd.append('foo', 'bar');
         expect(spy.calls.all()[0].args).toEqual([
             new URL(config.url),
-            {
+            jasmine.objectContaining({
                 mode: 'cors',
                 credentials: 'include',
                 redirect: 'follow',
                 headers: {},
                 body: fd
-            }
+            })
         ]);
     });
 
@@ -113,14 +113,14 @@ describe('fetch', () => {
                 message: '',
                 status: 400,
                 data: { bar: 1 },
-                config: {
+                config: jasmine.objectContaining({
                     suppress: [123],
                     mode: 'cors',
                     credentials: 'include',
                     redirect: 'follow',
                     headers: {},
                     body: undefined
-                }
+                })
             })
         );
     });
