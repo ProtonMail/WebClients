@@ -19,11 +19,10 @@ import {
     useApi,
     useNotifications
 } from 'react-components';
-import { normalize } from 'proton-shared/lib/helpers/string';
 import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
-import { createCalendar, updateCalendar, setupCalendar, queryMembers } from 'proton-shared/lib/api/calendars';
+import { createCalendar, updateCalendar } from 'proton-shared/lib/api/calendars';
 
-import { setupKey, setupCalendarKey } from '../../helpers/calendarModal';
+import { setupCalendarKey } from '../../helpers/calendarModal';
 import { DEFAULT_CALENDAR_COLOR } from '../../constants';
 import Loader from 'react-components/components/loader/Loader';
 
