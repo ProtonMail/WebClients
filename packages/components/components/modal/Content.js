@@ -24,7 +24,7 @@ Content.propTypes = {
     className: PropTypes.string,
     onSubmit: PropTypes.func,
     onReset: PropTypes.func,
-    autoComplete: PropTypes.string.isRequired
+    autoComplete: PropTypes.string
 };
 
 export default Content;
