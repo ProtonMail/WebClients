@@ -3,11 +3,7 @@
       "publicPathFlag": "--publicPath=/settings/"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
     "abortcontroller-polyfill": "^1.3.0",
-    "dayjs": "^1.8.14",
-    "file-saver": "^2.0.2",
-    "keycode": "^2.2.0",
     "design-system": "github:ProtonMail/design-system.git#master",
     "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:^6.0.0",
     "proton-shared": "github:ProtonMail/proton-shared.git#master",
@@ -15,12 +11,7 @@
     "react": "^16.8.6",
     "react-components": "github:ProtonMail/react-components.git#master",
     "react-dom": "^16.8.6",
-    "react-redux": "^6.0.0",
-    "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1",
-    "redux-devtools-extension": "^2.13.7",
-    "redux-thunk": "^2.3.0",
     "ttag": "^1.7.14",
     "yetch": "^1.1.0"
   },
