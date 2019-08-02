@@ -61,6 +61,18 @@ subsection: helpers
       <span class="italic">if you need to be italic</span> without using <code>em</code> or <code>i</code> tag
   </div>
 </div>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="lh-standard"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+      Applies standard <code>line-height</code> (defined with Sass variable <code>$l-h</code> in <code>design-system-config</code>) to element. This helps to fix some issues caused by vertical rythm formulas (if you want to reduce <code>line-height</code>, you may use <code>lh100</code>, but use it wisely, it may create issues with user-generated content).
+  </div>
+</div>
+
+
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
   <div class="w49">
     <pre class=" language-markup"><code>&lt;span <strong>class="cut"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
