@@ -16,9 +16,15 @@ module.exports = ({ isProduction, isTranspile = true }, flow) => {
                         '@babel/preset-env',
                         {
                             targets: {
-                                browsers: ['ie 11']
+                                browsers: isProduction
+                                    ? [
+                                          // To define better
+                                          '> 0.5%, not IE 11'
+                                      ]
+                                    : ['last 1 chrome version', 'last 1 firefox version', 'last 1 safari version']
                             },
                             useBuiltIns: 'entry',
+                            corejs: 3,
                             exclude: ['transform-typeof-symbol'] // Exclude transforms that make all code slower
                         }
                     ],

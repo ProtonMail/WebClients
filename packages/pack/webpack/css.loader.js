@@ -22,21 +22,24 @@ const getSassLoaders = (isProduction) => {
 
     return [
         'css-loader',
-        {
-            loader: 'postcss-loader',
-            options: {
-                ident: 'postcss',
-                plugins: postcssPlugins,
-                sourceMap: isProduction
-            }
-        },
+        // To get rid of "You did not set any plugins, parser, or stringifier. Right now, PostCSS does nothing."
+        postcssPlugins.length
+            ? {
+                  loader: 'postcss-loader',
+                  options: {
+                      ident: 'postcss',
+                      plugins: postcssPlugins,
+                      sourceMap: isProduction
+                  }
+              }
+            : undefined,
         {
             loader: 'fast-sass-loader',
             options: {
                 data: PREPEND_SASS
             }
         }
-    ];
+    ].filter(Boolean);
 };
 
 module.exports = ({ isProduction }) => {
