@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import ObserverSections from './ObserverSections';
 import { Bordered } from 'react-components';
 

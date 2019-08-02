@@ -1,7 +1,7 @@
 module.exports = {
     setupFilesAfterEnv: ['./rtl.setup.js'],
     verbose: true,
-    moduleDirectories: ['node_modules', 'node_modules/proton-shared'],
+    moduleDirectories: ['node_modules'],
     transform: {
         '^.+\\.js$': 'babel-jest'
     },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent } from '@testing-library/react';
 import Autocomplete from './Autocomplete';
 
 const rawText = (item) => (_, node) => node.textContent === item;
