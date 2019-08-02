@@ -40,6 +40,8 @@ export const uniqueBy = (array, comparator) => {
     });
 };
 
+export const unique = (array) => uniqueBy(array, (x) => x);
+
 /**
  * Returns a new array with the item moved to the new position.
  * @param {Array} array List of items

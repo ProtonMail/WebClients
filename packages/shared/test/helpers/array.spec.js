@@ -1,12 +1,20 @@
-import { uniqueBy, move } from '../../lib/helpers/array';
+import { unique, uniqueBy, move } from '../../lib/helpers/array';
 
 describe('array', () => {
+    describe('unique', () => {
+        it('should return same', async () => {
+            expect(unique([1, 2])).toEqual([1, 2]);
+        });
+        it('should only return unique items', async () => {
+            expect(unique([1, 2, 1])).toEqual([1, 2]);
+        });
+    });
+
     describe('unique by', () => {
         it('should only get unique items', async () => {
             const list = [{ foo: 'abc' }, { foo: 'bar' }, { foo: 'asd' }, { foo: 'bar' }, { foo: 'bar' }];
             expect(uniqueBy(list, ({ foo }) => foo)).toEqual([{ foo: 'abc' }, { foo: 'bar' }, { foo: 'asd' }]);
         });
-
         it('should only get unique items', async () => {
             const list = [{ foo: 'abc' }, { foo: 'bar' }];
             expect(uniqueBy(list, ({ foo }) => foo)).toEqual([{ foo: 'abc' }, { foo: 'bar' }]);
