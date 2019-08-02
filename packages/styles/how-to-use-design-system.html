@@ -19,7 +19,7 @@ section: fe-guidelines
 <p>Sass files of the Design System are splitted for the moment into 3 folders:</p>
 
 <ol>
-  <li class="mb0-5"><strong>reusable-components</strong>: a set of files/framework/etc. <strong>that can be used on every project</strong>.
+  <li class="mb0-5"><strong>reusable-components</strong>: a set of files/framework/etc. <strong>that can be used on every project, including static websites</strong>.
   <ul>
     {% assign sassFiles = "design-system-config#design-system-reset#design-system-colors#design-system-util-typo-fix#design-system-links-icons#design-system-layout-modules#design-system-forms#design-system-responsive#design-system-print#design-system-reduced-motion#design-system-viewport-fix" | split: '#' %}
     {% assign sassDescription = "config, Sass functions and variables#resets#colors classes (<code>background</code>, <code>color</code>, and <code>fill</code>)#typo fixes and typo helpers#icons sizes/links#all positionning helpers (including flex)#all resets for forms#all helpers for responsive#all helpers/resets for print#a media-query <code>prefers-reduced-motion: reduce</code> to cancel transitions/animations for users that need it (vestibular disorder)#some viewport fixes" | split: '#' %}
@@ -41,6 +41,15 @@ section: fe-guidelines
         </li>
         {% endfor %}
       </ul>
+  </li>
+  <li><strong>react-styles</strong>: these are dedicated styles for some react components (separated because of special needs incompatible between Design System website/React/Angular).
+    <ul>
+    {% assign sassFiles = "pm-dropdown#pm-tooltip" | split: '#' %}
+    {% assign sassDescription = "Drop downs#Tooltips" | split: '#' %}
+    {% for file in sassFiles %}
+    <li><strong>_{{ file }}.scss</strong>: {{ sassDescription[forloop.index0] }}</li>
+    {% endfor %}
+    </ul>
   </li>
   <li class="mb0-5"><strong>design-system-website</strong>: extra-styles only needed to make this website work properly.</li>
 </ol>
