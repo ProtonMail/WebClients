@@ -32,11 +32,27 @@
           </button>
         </li>
         <li class="mb0-5">
-          <a href="/" class="center flex aside-link" title="ProtonMail" aria-current="true">
+          <a href="/" class="center flex aside-link" title="ProtonMail" {% if page.pageId <> 'settings' %} aria-current="true"{% endif %}>
             <svg viewBox="0 0 16 16" class="aside-linkIcon mauto fill-global-light" role="img" focusable="false" aria-hidden="true">
               <use xlink:href="#shape-protonmail"></use>
             </svg>
             <span class="sr-only">ProtonMail</span>
+          </a>
+        </li>
+        <li class="mb0-5">
+          <a class="center flex aside-link js-notyet" title="Contacts">
+            <svg viewBox="0 0 16 16" class="aside-linkIcon mauto fill-global-light" role="img" focusable="false" aria-hidden="true">
+              <use xlink:href="#shape-contacts"></use>
+            </svg>
+            <span class="sr-only">Contacts</span>
+          </a>
+        </li>
+        <li class="mb0-5">
+          <a class="center flex aside-link js-notyet" title="Contacts">
+            <svg viewBox="0 0 16 16" class="aside-linkIcon mauto fill-global-light" role="img" focusable="false" aria-hidden="true">
+              <use xlink:href="#shape-calendar"></use>
+            </svg>
+            <span class="sr-only">Calendar</span>
           </a>
         </li>
         <li class="mb0-5">
@@ -45,6 +61,14 @@
               <use xlink:href="#shape-protonvpn"></use>
             </svg>
             <span class="sr-only">ProtonVPN</span>
+          </a>
+        </li>
+        <li class="mb0-5">
+          <a href="/settings/" class="center flex aside-link" title="Settings"{% if page.pageId == 'settings' %} aria-current="true"{% endif %}>
+            <svg viewBox="0 0 16 16" class="aside-linkIcon mauto fill-global-light" role="img" focusable="false" aria-hidden="true">
+              <use xlink:href="#shape-settings"></use>
+            </svg>
+            <span class="sr-only">Settings</span>
           </a>
         </li>
       </ul>

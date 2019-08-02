@@ -13,7 +13,7 @@ subsection: icons
   <h2>List of all <abbr title="Scalable Vector Graphics">SVG</abbr> sprites (square sprites)</h2>
   <!-- domain/domains settings-master/general view-source-code transform ? -->
   <h3>Icons with a “native” viewbox of 16×16</h3>
-  {% assign listIcons = "account#add#address#address-add#address-disable#alias#all-emails#android#anniversary#apple#apparence#apps#archive#arrow-cross#arrow-double-horizontal#arrow-double-vertical#arrow-down#arrow-left#arrow-right#arrow-up#attach#attention#auto-reply#auto-reply2#birthday#bullet-points#burger#caret#clipboard#close#compose#contact#contact-add#contact-photo#contacts#contacts-group#contacts-group-people#contacts-groups#contacts-group-add#contract-window#copy#dashboard#date#decrypt#delete#domains#donate#download#drafts#email#email-address#empty-folder#encrypt#encrypted-contacts-book#expand#expiration#export#facebook#fax#file-doc#file-docx#file-image#file-pdf#file-pot#file-ppt#file-pptx#file-rar-zip#file-unknown#file-video#file-xliff#file-xls#file-xslx#file-xml#filter#folder#folder-label#font-color#forward#gender#general#github#help-answer#html-message#identity#imap-smtp#import#inbox#info#insert-image#instagram#keys#label#language#layout-columns#layout-columns2#layout-rows#layout-rows2#link#linkedin#linux#lock#mailbox#mailing-list#mastodon#member-contact#merge#message-templates#minimize#mobile#mobile-add#more#note#note-add#notifications-disabled#notifications-enabled#off#on#ordered-list#organization#organization-users#payments#payments-type-bt#payments-type-card#payments-type-pp#phishing#phone#plaintext-message#pm-me#print#protonmail#protonvpn#read#reddit#reload#remove-text-formatting#reply#reply-all#report-bug#role#save#search#security#sent#settings#settings-master#settings-singular#shop#show-all-emails#sign-out#sort-large-small#sort-new-old#sort-old-new#sort-small-large#spam#star#starfull#support1#support2#text-align-left#text-align-right#text-bold#text-center#text-font#text-italic#text-justify#text-quote#text-underline#timezone1#timezone2#title#trash#tutorial#tutorial2#twitter#unread#upgrade-to-paid#view-headers#view-html-code#view-source-code#what-is-this#windows#youtube" | split: '#' %}
+  {% assign listIcons = "account#add#address#address-add#address-disable#alias#all-emails#android#anniversary#apple#apparence#apps#archive#arrow-cross#arrow-double-horizontal#arrow-double-vertical#arrow-down#arrow-left#arrow-right#arrow-up#attach#attention#auto-reply#auto-reply2#birthday#bullet-points#burger#calendar#caret#cc#check-circle#clipboard#close#compose#contact#contact-add#contact-photo#contacts#contacts-group#contacts-group-people#contacts-groups#contacts-group-add#contract-window#copy#dashboard#date#decrypt#delete#domains#donate#download#drafts#email#email-address#empty-folder#encrypt#encrypted-contacts-book#expand#expiration#export#facebook#fax#file-doc#file-docx#file-image#file-pdf#file-pot#file-ppt#file-pptx#file-rar-zip#file-unknown#file-video#file-xliff#file-xls#file-xslx#file-xml#filter#folder#folder-label#font-color#forward#gender#general#github#help-answer#html-message#identity#imap-smtp#import#inbox#info#insert-image#instagram#key#keys#label#language#layout-columns#layout-columns2#layout-rows#layout-rows2#link#linkedin#linux#lock#mailbox#mailing-list#mastodon#member-contact#merge#message-templates#minimize#mobile#mobile-add#more#note#note-add#notifications-disabled#notifications-enabled#off#on#ordered-list#organization#organization-users#payments#payments-type-bt#payments-type-card#payments-type-pp#phishing#phone#plaintext-message#pm-me#print#protonmail#protonvpn#read#reddit#reload#remove-text-formatting#reply#reply-all#report-bug#role#save#search#security#sent#settings#settings-master#settings-singular#shop#show-all-emails#sign-out#sort-large-small#sort-new-old#sort-old-new#sort-small-large#spam#star#starfull#support1#support2#text-align-left#text-align-right#text-bold#text-center#text-font#text-italic#text-justify#text-quote#text-underline#timezone1#timezone2#title#trash#tutorial#tutorial2#twitter#unread#upgrade-to-paid#user-storage#view-headers#view-html-code#view-source-code#what-is-this#windows#youtube" | split: '#' %}
 
   <div class="flex mb2">
     {% for icon in listIcons %}
@@ -28,6 +28,19 @@ subsection: icons
       … to come
     </div>
   </div>
+
+  <h3>Special cases (bank icons), with a “native” viewbox of 16×16</h3>
+
+  <p>These ones have their own styles, so they should be used as simple classic images. you may specify <code>width</code> attribute on <code>img</code> tag if you want to display them larger:</p>
+
+  <ul class="unstyled flex">
+      {% assign listBankIcons = "amex#dankort#dinnersclub#discover#forbrugs#jcb#maestro#mastercard#unionpay#visa#visaelectron" | split: '#' %}
+      {% assign listBankAlt = "American Express|Dankort|Dinners Club|Discover|Forbrugs|JCB|Maestro|Mastercard|UnionPay|VISA|VISA Electron" | split: '|' %}
+        
+      {% for icon in listBankIcons %}
+      <li class="mr1"><img src="/assets/img/shared/bank-icons/cc-{{ icon }}.svg" alt="{{ listBankAlt[forloop.index0] }}" width="50" /></li>
+      {% endfor %}
+  </ul>
 
   <h3>Other viewboxes</h3> 
 

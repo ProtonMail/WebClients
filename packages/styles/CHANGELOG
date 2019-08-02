@@ -14,11 +14,17 @@
 - updated logo
 - added react dedicated styles (and notes/documentation about them) 
 - added `lh-standard` class (standard `line-height`)
+- added `alias`, `calendar`, `cc`, `check-circle`, `key`, `user-storage` icons
+- added bank icon images (discover/jcb to clean up)
 
 ## Updated/fixes
 
 - added exception on `main-area` with `no-scroll`
-- 
+
+## Misc
+
+- added icons in left bar
+- has to change CSP policies (Firefox, when do you will fix this CSP bug for CSS in SVG?)
 
 
 # [1.7.0] - 2019-07-12
