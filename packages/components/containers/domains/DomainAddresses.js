@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { c, msgid } from 'ttag';
-import { Dropdown, DropdownMenu } from 'react-components';
+import { SimpleDropdown, DropdownMenu } from 'react-components';
 
 const DomainAddresses = ({ domain }) => {
     const addresses = domain.addresses || [];
@@ -12,17 +12,16 @@ const DomainAddresses = ({ domain }) => {
 
     return (
         <>
-            <Dropdown
-                caret
+            <SimpleDropdown
                 title={title}
-                className="pm-button pm-button--link"
+                className="pm-button--link"
                 content={c('Info').ngettext(msgid`${n} address`, `${n} addresses`, n)}
             >
                 <DropdownMenu>{list}</DropdownMenu>
                 <div className="alignright">
                     <Link className="pm-button pm-button--small" to="/settings/addresses">{c('Link').t`Manage`}</Link>
                 </div>
-            </Dropdown>
+            </SimpleDropdown>
         </>
     );
 };

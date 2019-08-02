@@ -1,133 +1,97 @@
-import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
-import { Icon } from 'react-components';
+import { classnames } from '../../helpers/component';
+import { usePopper, Popper } from '../Popper';
+import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
+import { noop } from 'proton-shared/lib/helpers/function';
 
-const ALIGN_CLASSES = {
-    right: 'dropDown--rightArrow',
-    left: 'dropDown--leftArrow'
+const Dropdown = ({
+    anchorRef,
+    children,
+    originalPlacement = 'bottom',
+    onClose = noop,
+    isOpen = false,
+    narrow = false,
+    autoClose = true,
+    autoCloseOutside = true,
+    ...rest
+}) => {
+    const { isRTL } = useRightToLeft();
+    const rtlAdjustedPlacement = originalPlacement.includes('right')
+        ? originalPlacement.replace('right', 'left')
+        : originalPlacement.replace('left', 'right');
+
+    const popperRef = useRef();
+    const { placement, position } = usePopper(popperRef, anchorRef, isOpen, {
+        originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
+        offset: 20,
+        scrollContainerClass: 'main'
+    });
+
+    const handleKeydown = (event) => {
+        const key = keycode(event);
+
+        if (key === 'escape' && event.target === document.activeElement) {
+            onClose();
+        }
+    };
+
+    const handleClickOutside = (event) => {
+        // Do nothing if clicking ref's element or descendent elements
+        if (
+            !autoCloseOutside ||
+            (anchorRef.current && anchorRef.current.contains(event.target)) ||
+            (popperRef.current && popperRef.current.contains(event.target))
+        ) {
+            return;
+        }
+        onClose();
+    };
+
+    const handleClickContent = () => {
+        if (autoClose) {
+            onClose();
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('touchstart', handleClickOutside);
+        document.addEventListener('keydown', handleKeydown);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('touchstart', handleClickOutside);
+            document.removeEventListener('keydown', handleKeydown);
+        };
+    }, []);
+
+    const contentClassName = classnames(['dropDown', `dropDown--${placement}`, narrow && 'dropDown--narrow']);
+    return (
+        <Popper
+            ref={popperRef}
+            position={position}
+            isOpen={isOpen}
+            role="dialog"
+            className={contentClassName}
+            onClick={handleClickContent}
+            {...rest}
+        >
+            {children}
+        </Popper>
+    );
 };
 
-const Dropdown = React.forwardRef(
-    (
-        {
-            isOpen,
-            content,
-            title,
-            children,
-            className,
-            autoClose,
-            autoCloseOutside,
-            align,
-            narrow,
-            loading,
-            disabled,
-            caret
-        },
-        ref
-    ) => {
-        const [open, setOpen] = useState(isOpen);
-        const wrapperRef = useRef(null);
-        const handleClick = () => setOpen(!open);
-
-        const handleKeydown = (event) => {
-            const key = keycode(event);
-
-            if (key === 'escape' && event.target === document.activeElement) {
-                setOpen(false);
-            }
-        };
-
-        const handleClickOutside = (event) => {
-            // Do nothing if clicking ref's element or descendent elements
-            if (!autoCloseOutside || !wrapperRef.current || wrapperRef.current.contains(event.target)) {
-                return;
-            }
-            setOpen(false);
-        };
-
-        const handleClickContent = () => {
-            if (autoClose) {
-                setOpen(false);
-            }
-        };
-
-        useImperativeHandle(ref, () => ({
-            close() {
-                setOpen(false);
-            },
-            open() {
-                setOpen(true);
-            }
-        }));
-
-        useEffect(() => {
-            document.addEventListener('mousedown', handleClickOutside);
-            document.addEventListener('touchstart', handleClickOutside);
-            document.addEventListener('keydown', handleKeydown);
-
-            return () => {
-                document.removeEventListener('mousedown', handleClickOutside);
-                document.removeEventListener('touchstart', handleClickOutside);
-                document.removeEventListener('keydown', handleKeydown);
-            };
-        }, []);
-
-        const alignClass = ALIGN_CLASSES[align];
-        const dropdownClassName = ['dropDown pm-button', alignClass, (loading || disabled) && 'is-disabled', className]
-            .filter(Boolean)
-            .join(' ');
-        const contentClassName = `dropDown-content ${narrow ? 'dropDown-content--narrow' : ''}`;
-        const caretContent = caret && <Icon className="expand-caret" size={12} name="caret" />;
-
-        return (
-            <div className={`${dropdownClassName} ${className}`} ref={wrapperRef}>
-                <button
-                    title={title}
-                    className="increase-surface-click"
-                    aria-expanded={open}
-                    aria-busy={loading}
-                    onClick={handleClick}
-                    type="button"
-                    disabled={loading || disabled}
-                >
-                    <span className="mauto">
-                        {content} {caretContent}
-                    </span>
-                </button>
-                <div className={contentClassName} onClick={handleClickContent} hidden={!open}>
-                    {children}
-                </div>
-            </div>
-        );
-    }
-);
-
 Dropdown.propTypes = {
-    className: PropTypes.string,
+    anchorRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
     children: PropTypes.node.isRequired,
-    content: PropTypes.node.isRequired,
+    onClose: PropTypes.func,
     isOpen: PropTypes.bool,
-    align: PropTypes.string,
-    title: PropTypes.string,
-    caret: PropTypes.bool,
-    disabled: PropTypes.bool,
-    loading: PropTypes.bool,
+    originalPlacement: PropTypes.string,
     narrow: PropTypes.bool,
     autoClose: PropTypes.bool,
     autoCloseOutside: PropTypes.bool
-};
-
-Dropdown.defaultProps = {
-    isOpen: false,
-    autoClose: true,
-    align: 'center',
-    narrow: false,
-    caret: false,
-    disabled: false,
-    loading: false,
-    autoCloseOutside: true,
-    className: ''
 };
 
 export default Dropdown;

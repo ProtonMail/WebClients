@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { msgid, c } from 'ttag';
-import { Dropdown, DropdownMenu } from 'react-components';
+import { SimpleDropdown, DropdownMenu } from 'react-components';
 
 const MemberAddresses = ({ addresses }) => {
     const list = addresses.map(({ ID, Email }) => (
@@ -15,17 +15,16 @@ const MemberAddresses = ({ addresses }) => {
 
     return (
         <>
-            <Dropdown
-                caret
+            <SimpleDropdown
                 title={title}
-                className="pm-button pm-button--link"
+                className="pm-button--link"
                 content={c('Info').ngettext(msgid`${n} address`, `${n} addresses`, n)}
             >
                 <DropdownMenu>{list}</DropdownMenu>
                 <div className="alignright p1">
                     <Link className="pm-button" to="/settings/addresses">{c('Link').t`Manage`}</Link>
                 </div>
-            </Dropdown>
+            </SimpleDropdown>
         </>
     );
 };

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Info, Button, Group, ButtonGroup } from 'react-components';
 import { c } from 'ttag';
 
-import Dropdown from './Dropdown';
 import DropdownMenu from './DropdownMenu';
-import DropdownButton from './DropdownButton';
+import DropdownMenuButton from './DropdownMenuButton';
+import SimpleDropdown from './SimpleDropdown';
 
 const wrapTooltip = (text, tooltip) => {
     if (!tooltip) {
@@ -39,25 +39,24 @@ const DropdownActions = ({ loading = false, disabled = false, list = [], classNa
             <ButtonGroup disabled={disabled} loading={loading} className={className} {...restProps}>
                 {wrapTooltip(text, tooltip)}
             </ButtonGroup>
-            <Dropdown
-                align="right"
-                caret
+            <SimpleDropdown
+                originalPlacement="bottom-right"
                 disabled={disabled}
                 loading={loading}
-                className={`pm-button pm-group-button pm-button--for-icon ${className}`}
+                className={`pm-group-button pm-button--for-icon ${className}`}
                 title={c('Title').t`Open actions dropdown`}
-                content={''}
+                content=""
             >
                 <DropdownMenu>
                     {restList.map(({ text, tooltip, key = text, ...restProps }) => {
                         return (
-                            <DropdownButton className="alignleft" key={key} {...restProps}>
+                            <DropdownMenuButton className="alignleft" key={key} {...restProps}>
                                 {wrapTooltip(text, tooltip)}
-                            </DropdownButton>
+                            </DropdownMenuButton>
                         );
                     })}
                 </DropdownMenu>
-            </Dropdown>
+            </SimpleDropdown>
         </Group>
     );
 };

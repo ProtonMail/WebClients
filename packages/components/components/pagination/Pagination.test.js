@@ -37,9 +37,9 @@ describe('Pagination component', () => {
         expect(mockOnNext).toHaveBeenCalledTimes(1);
 
         fireEvent.click(pageButtonNode);
-        const options = [].slice.call(container.querySelectorAll('li'));
+        const options = [].slice.call(document.querySelectorAll('body > .dropDown li'));
         expect(options.length).toBe(Math.ceil(total / limit));
-        fireEvent.click(container.querySelector('li:last-child button'));
+        fireEvent.click(document.querySelector('body > .dropDown li:last-child button'));
         expect(mockOnSelect).toHaveBeenCalledTimes(1);
     });
 

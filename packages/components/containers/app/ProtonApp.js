@@ -15,6 +15,7 @@ import ApiProvider from '../api/ApiProvider';
 import CacheProvider from '../cache/Provider';
 import AuthenticationProvider from '../authentication/Provider';
 import PublicApiProvider from '../api/PublicApiProvider';
+import { RightToLeftProvider } from '../..';
 
 const ProtonApp = ({ storage, config, children }) => {
     const authentication = useInstance(() => createAuthentication(storage));
@@ -76,27 +77,31 @@ const ProtonApp = ({ storage, config, children }) => {
         <CompatibilityCheck>
             <Icons />
             <ConfigProvider config={config}>
-                {UID ? (
-                    <React.Fragment key={UID}>
+                <RightToLeftProvider>
+                    {UID ? (
+                        <React.Fragment key={UID}>
+                            <NotificationsProvider>
+                                <ModalsProvider>
+                                    <ApiProvider UID={UID} config={config} onLogout={handleLogout}>
+                                        <AuthenticationProvider store={authenticationValue}>
+                                            <CacheProvider cache={cacheRef.current}>{children}</CacheProvider>
+                                        </AuthenticationProvider>
+                                    </ApiProvider>
+                                </ModalsProvider>
+                            </NotificationsProvider>
+                        </React.Fragment>
+                    ) : (
                         <NotificationsProvider>
                             <ModalsProvider>
-                                <ApiProvider UID={UID} config={config} onLogout={handleLogout}>
+                                <PublicApiProvider config={config}>
                                     <AuthenticationProvider store={authenticationValue}>
-                                        <CacheProvider cache={cacheRef.current}>{children}</CacheProvider>
+                                        {children}
                                     </AuthenticationProvider>
-                                </ApiProvider>
+                                </PublicApiProvider>
                             </ModalsProvider>
                         </NotificationsProvider>
-                    </React.Fragment>
-                ) : (
-                    <NotificationsProvider>
-                        <ModalsProvider>
-                            <PublicApiProvider config={config}>
-                                <AuthenticationProvider store={authenticationValue}>{children}</AuthenticationProvider>
-                            </PublicApiProvider>
-                        </ModalsProvider>
-                    </NotificationsProvider>
-                )}
+                    )}
+                </RightToLeftProvider>
             </ConfigProvider>
         </CompatibilityCheck>
     );

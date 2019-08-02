@@ -48,9 +48,13 @@ export { default as LearnMore } from './components/link/LearnMore';
 export { default as Time } from './components/time/Time';
 export { default as DropdownActions } from './components/dropdown/DropdownActions';
 export { default as DropdownMenu } from './components/dropdown/DropdownMenu';
+export { default as DropdownMenuButton } from './components/dropdown/DropdownMenuButton';
 export { default as DropdownButton } from './components/dropdown/DropdownButton';
-export { default as DropdownLink } from './components/dropdown/DropdownLink';
+export { default as DropdownCaret } from './components/dropdown/DropdownCaret';
+export { default as DropdownMenuLink } from './components/dropdown/DropdownMenuLink';
 export { default as Dropdown } from './components/dropdown/Dropdown';
+export { default as SimpleDropdown } from './components/dropdown/SimpleDropdown';
+export { usePopper, Popper, usePopperAnchor } from './components/Popper';
 export { default as ColorSelector } from './components/color/ColorSelector';
 export { default as RichTextEditor } from './components/input/RichTextEditor';
 export { default as Checkbox } from './components/input/Checkbox';
@@ -267,6 +271,9 @@ export { nestChildren, classnames } from './helpers/component';
 export { default as useCache } from './containers/cache/useCache';
 export { default as CacheProvider } from './containers/cache/Provider';
 export { default as EventManagerProvider } from './containers/eventManager/EventManagerProvider';
+
+export { default as useRightToLeft } from './containers/rightToLeft/useRightToLeft';
+export { default as RightToLeftProvider } from './containers/rightToLeft/Provider';
 
 export { default as useForceRefresh } from './containers/forceRefresh/useForceRefresh';
 export { default as ForceRefreshProvider } from './containers/forceRefresh/Provider';

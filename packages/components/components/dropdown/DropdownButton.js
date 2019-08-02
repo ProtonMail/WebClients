@@ -1,17 +1,23 @@
 import React from 'react';
+import Button from '../button/Button';
 import PropTypes from 'prop-types';
+import DropdownCaret from './DropdownCaret';
 
-const DropdownButton = ({ className = '', children, ...rest }) => {
+const DropdownButton = ({ hasCaret = false, isOpen, children, ...rest }) => {
     return (
-        <button className={`w100 pt0-5 pb0-5 ${className}`} {...rest}>
-            {children}
-        </button>
+        <Button aria-expanded={isOpen} {...rest}>
+            <span className="mauto">
+                {children}
+                {hasCaret && <DropdownCaret isOpen={isOpen} />}
+            </span>
+        </Button>
     );
 };
 
 DropdownButton.propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.node.isRequired
+    hasCaret: PropTypes.bool,
+    isOpen: PropTypes.bool,
+    children: PropTypes.node
 };
 
 export default DropdownButton;

@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-
 import { Group, Button } from '../button';
-import { Dropdown, DropdownMenu, DropdownButton } from '../dropdown';
+import DropdownMenuButton from '../dropdown/DropdownMenuButton';
+import DropdownMenu from '../dropdown/DropdownMenu';
+import SimpleDropdown from '../dropdown/SimpleDropdown';
 
-const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, total, limit }) => {
+const Pagination = ({ onNext, onPrevious, onSelect, hasNext = true, hasPrevious = true, page = 1, total, limit }) => {
     if (!total) {
         return null;
     }
@@ -19,14 +20,14 @@ const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, 
     const actions = Array.from({ length: pages }, (a, i) => {
         const index = i + 1;
         return (
-            <DropdownButton
+            <DropdownMenuButton
                 key={index}
                 onClick={() => onSelect(index)}
                 disabled={index === page}
                 className={index === page ? 'is-active aligncenter' : 'aligncenter'}
             >
                 {index.toString()}
-            </DropdownButton>
+            </DropdownMenuButton>
         );
     });
 
@@ -43,15 +44,14 @@ const Pagination = ({ onNext, onPrevious, onSelect, hasNext, hasPrevious, page, 
                     onClick={onPrevious}
                 />
             ) : null}
-            <Dropdown
+            <SimpleDropdown
                 narrow
-                caret
-                className="pm-button pm-group-button pm-button--for-icon"
+                className="pm-group-button pm-button--for-icon"
                 title={c('Title').t`Open pagination`}
                 content={page}
             >
                 <DropdownMenu>{actions}</DropdownMenu>
-            </Dropdown>
+            </SimpleDropdown>
             {hasNext ? (
                 <Button
                     icon="arrow-right"
@@ -73,12 +73,6 @@ Pagination.propTypes = {
     limit: PropTypes.number.isRequired,
     hasNext: PropTypes.bool.isRequired,
     hasPrevious: PropTypes.bool.isRequired
-};
-
-Pagination.defaultProps = {
-    page: 1,
-    hasNext: true,
-    hasPrevious: true
 };
 
 export default Pagination;
