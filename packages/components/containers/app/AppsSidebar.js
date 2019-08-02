@@ -4,7 +4,7 @@ import { Icon } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
-const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONVPN_SETTINGS, PROTONMAIL_SETTINGS } = APPS;
+const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONVPN_SETTINGS } = APPS;
 
 const AppsSidebar = ({ currentApp = '' }) => {
     const apps = [
@@ -16,8 +16,7 @@ const AppsSidebar = ({ currentApp = '' }) => {
             icon: 'protonvpn',
             title: c('Title').t`ProtonVPN settings`,
             link: 'https://account.protonvpn.com/login'
-        },
-        { id: PROTONMAIL_SETTINGS, icon: 'settings', title: c('Title').t`ProtonMail settings`, link: '/settings' }
+        }
     ];
 
     return (
