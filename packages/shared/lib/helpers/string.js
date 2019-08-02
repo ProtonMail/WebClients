@@ -41,11 +41,16 @@ export const addPlus = ([first = '', ...rest] = []) => {
     return [first, rest.length && `+${rest.length}`].filter(Boolean).join(', ');
 };
 
+/**
+ * Extract 2 first initials
+ * @param {String} value
+ * @retuns {String}
+ */
 export const getInitial = (value = '') => {
     const [first, second] = value.split(' ');
     return [first, second]
         .filter(Boolean)
-        .map((letter = '') => letter.toUpperCase().charAt(0))
+        .map((letter = '') => [...letter.toUpperCase()][0]) // We use the spread operator to support Unicode characters
         .join('');
 };
 
