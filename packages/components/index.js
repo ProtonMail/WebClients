@@ -77,6 +77,7 @@ export { default as Title } from './components/title/Title';
 export { default as useLoader } from './components/loader/useLoader';
 export { default as Loader } from './components/loader/Loader';
 export { default as LoaderIcon } from './components/loader/LoaderIcon';
+export { default as MainLogo } from './components/logo/MainLogo';
 export { default as Paragraph } from './components/paragraph/Paragraph';
 export { default as DialogModal } from './components/modal/Dialog';
 export { default as ContentModal } from './components/modal/Content';
