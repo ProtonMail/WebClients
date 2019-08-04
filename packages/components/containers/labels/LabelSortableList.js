@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { SortableContainer } from 'react-sortable-hoc';
-import { Icon, Table } from 'react-components';
+import { Table } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import LabelSortableItem from './LabelSortableItem';
@@ -13,9 +13,7 @@ function LabelSortableList({ items, onEditLabel, onRemoveLabel, onToggleChange }
             <caption className="sr-only">{c('Settings/labels').t`Labels/Folders`}</caption>
             <thead>
                 <tr>
-                    <th scope="col" className="w5">
-                        <Icon name="what-is-this" />
-                    </th>
+                    <th scope="col" className="w5" />
                     <th scope="col" className="w45">
                         {c('Settings/labels - table').t`Name`}
                     </th>

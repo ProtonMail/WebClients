@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { SortableContainer } from 'react-sortable-hoc';
-import { Icon, Table } from 'react-components';
+import { Table } from 'react-components';
 
 import FilterItemRow from './FilterItemRow';
 
@@ -12,9 +12,7 @@ function FilterSortableList({ items }) {
             <caption className="sr-only">{c('Settings/filters').t`Filters`}</caption>
             <thead>
                 <tr>
-                    <th scope="col" className="w5">
-                        <Icon name="what-is-this" />
-                    </th>
+                    <th scope="col" className="w5" />
                     <th scope="col" className="w45">
                         {c('Settings/filters - table').t`Name`}
                     </th>

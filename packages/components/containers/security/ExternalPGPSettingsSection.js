@@ -97,7 +97,7 @@ const ExternalPGPSettingsSection = () => {
             </Row>
             <Row>
                 <Label htmlFor="attachPublicKeyToggle">
-                    <span className="mr0-5">{c('Label').t`Automatically attach public key`}</span>
+                    <span className="mr0-5">{c('Label').t`Attach public key`}</span>
                     <Info
                         url="https://protonmail.com/support/knowledge-base/how-to-use-pgp"
                         title={c('Tooltip automatically attach public key')
