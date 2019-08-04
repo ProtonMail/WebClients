@@ -138,57 +138,55 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, ...rest 
         >
             <Row>
                 <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
-                <Field className="flex-autogrid">
-                    <Input
-                        id="nameInput"
-                        className="flex-autogrid-item"
-                        placeholder="Thomas A. Anderson"
-                        onChange={handleChange('name')}
-                        required
-                    />
-                    <Label className="flex-autogrid-item">
-                        <Checkbox checked={model.private} onChange={handleChangePrivate} />
-                        {c('Label for new member').t`Private`}
-                    </Label>
+                <Field>
+                    <Input id="nameInput" placeholder="Thomas A. Anderson" onChange={handleChange('name')} required />
                 </Field>
+                <div className="ml1 flex flex-nowrap flex-items-center">
+                    <Checkbox checked={model.private} onChange={handleChangePrivate} />
+                    {c('Label for new member').t`Private`}
+                </div>
             </Row>
             {model.private ? null : (
                 <Row>
                     <Label>{c('Label').t`Key strength`}</Label>
-                    <Field className="flex-autogrid">
+                    <div>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
-                    </Field>
+                    </div>
                 </Row>
             )}
             <Row>
                 <Label>{c('Label').t`Password`}</Label>
-                <Field className="flex-autogrid">
-                    <PasswordInput
-                        value={model.password}
-                        className="flex-autogrid-item mb1"
-                        onChange={handleChange('password')}
-                        placeholder={c('Placeholder').t`Password`}
-                        required
-                    />
-                    <PasswordInput
-                        value={model.confirm}
-                        className="flex-autogrid-item"
-                        onChange={handleChange('confirm')}
-                        placeholder={c('Placeholder').t`Confirm password`}
-                        required
-                    />
+                <Field>
+                    <div className="mb1">
+                        <PasswordInput
+                            value={model.password}
+                            onChange={handleChange('password')}
+                            placeholder={c('Placeholder').t`Password`}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <PasswordInput
+                            value={model.confirm}
+                            onChange={handleChange('confirm')}
+                            placeholder={c('Placeholder').t`Confirm password`}
+                            required
+                        />
+                    </div>
                 </Field>
             </Row>
             <Row>
                 <Label>{c('Label').t`Address`}</Label>
-                <Field className="flex-autogrid">
+                <Field>
                     <Input onChange={handleChange('address')} placeholder={c('Placeholder').t`Address`} required />
+                </Field>
+                <div className="ml1 flex flex-nowrap flex-items-center">
                     {domainOptions.length === 1 ? (
                         `@${domainOptions[0].value}`
                     ) : (
                         <Select options={domainOptions} value={model.domain} onChange={handleChange('domain')} />
                     )}
-                </Field>
+                </div>
             </Row>
             <Row>
                 <Label>{c('Label').t`Account storage`}</Label>
