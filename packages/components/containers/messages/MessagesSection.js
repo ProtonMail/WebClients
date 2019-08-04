@@ -38,7 +38,7 @@ const MessagesSection = () => {
                     <span className="mr0-5">{c('Label').t`Sent/Drafts`}</span>
                     <Info
                         title={c('Tooltip')
-                            .t`Setting to 'Include moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder.`}
+                            .t`Setting to 'Include moved' means that sent / draft messages that have been moved to other folders will continue to appear in the Sent/Drafts folder.`}
                     />
                 </Label>
                 <Field>
