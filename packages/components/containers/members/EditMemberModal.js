@@ -10,7 +10,8 @@ import {
     useApi,
     useNotifications,
     useEventManager,
-    useOrganization
+    useOrganization,
+    useLoading
 } from 'react-components';
 
 import MemberStorageSelector from './MemberStorageSelector';
@@ -21,7 +22,7 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
     const [organization] = useOrganization();
     const { call } = useEventManager();
     const [model, updateModel] = useState({ name: member.Name, storage: member.MaxSpace, vpn: member.MaxVPN });
-    const [loading, setLoading] = useState(false);
+    const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const api = useApi();
 
@@ -32,25 +33,20 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
     const handleChangeVPN = (vpn) => updateModel({ ...model, vpn });
 
     const handleSubmit = async () => {
-        try {
-            setLoading(true);
-            await api(updateName(member.ID, model.name));
-            await api(updateQuota(member.ID, model.storage));
-            if (hasVPN) {
-                await api(updateVPN(member.ID, model.vpn));
-            }
-            await call();
-            onClose();
-            createNotification({ text: c('Success').t`User updated` });
-        } catch (e) {
-            setLoading(false);
+        await api(updateName(member.ID, model.name));
+        await api(updateQuota(member.ID, model.storage));
+        if (hasVPN) {
+            await api(updateVPN(member.ID, model.vpn));
         }
+        await call();
+        onClose();
+        createNotification({ text: c('Success').t`User updated` });
     };
 
     return (
         <FormModal
             onClose={onClose}
-            onSubmit={handleSubmit}
+            onSubmit={() => withLoading(handleSubmit())}
             loading={loading}
             close={c('Action').t`Cancel`}
             save={c('Action').t`Save`}

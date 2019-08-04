@@ -12,7 +12,7 @@ const MemberVPNSelector = ({ member, organization, onChange }) => {
 
     useEffect(() => {
         onChange(vpn);
-    }, vpn);
+    }, [vpn]);
 
     return <Select value={vpn} options={options} onChange={handleChange} />;
 };

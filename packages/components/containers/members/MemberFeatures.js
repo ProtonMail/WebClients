@@ -8,8 +8,12 @@ const MemberFeatures = ({ member }) => {
 
     return (
         <>
-            <Icon name="alias" /> {humanSize(MaxSpace, 'GB')}
-            <Icon name="protonvpn" /> {MaxVPN}
+            <div>
+                <Icon name="user-storage" /> {humanSize(MaxSpace, 'GB')}
+            </div>
+            <div>
+                <Icon name="protonvpn" /> {MaxVPN}
+            </div>
         </>
     );
 };
