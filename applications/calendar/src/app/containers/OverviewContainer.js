@@ -13,7 +13,7 @@ import EventModal from '../components/modals/EventModal';
 import OverviewSidebar from './OverviewSidebar';
 import OverviewToolbar from './OverviewToolbar';
 import YearView from '../components/YearView';
-import PlanningView from '../components/AgendaView';
+import AgendaView from '../components/AgendaView';
 import WelcomeModal from '../components/modals/WelcomeModal';
 import { VIEWS } from '../constants';
 
@@ -132,6 +132,7 @@ const OverviewContainer = () => {
                     <Main>
                         <OverviewToolbar
                             view={view}
+                            currentDate={currentDate}
                             onChangeView={handleChangeView}
                             onNext={handleNext}
                             onPrev={handlePrev}

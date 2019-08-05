@@ -58,17 +58,22 @@ const MiniCalendar = ({
     const gridSize = '1fr';
     const style = {
         display: 'grid',
-        'grid-template-columns': `30px auto`,
+        'grid-template-columns': '30px auto',
         'grid-template-rows': 'auto'
     };
 
     return (
         <>
-            <div style={{ display: 'grid', 'grid-template-columns': `auto repeat(2, 30px)` }}>
-                {monthLabel}
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'space-between'
+                }}
+            >
                 <button onClick={() => handleSwitchMonth(-1)}>
                     <Icon color="white" name="arrow-left" />
                 </button>
+                <span>{monthLabel}</span>
                 <button onClick={() => handleSwitchMonth(1)}>
                     <Icon color="white" name="arrow-right" />
                 </button>
