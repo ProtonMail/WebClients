@@ -214,12 +214,12 @@ $list-max-width-px: 100, 650 !default;
   }
 
 /* here you may add em max-widths */
-// $list-max-width-em: 960;
+$list-max-width-em: 15 !default;
 
-// @each $max-width in $list-max-width-em {
-//   $size_em : em($max-width);
-//   .mw#{$max-width}e { max-width: $size_em; }
-//   }
+@each $max-width in $list-max-width-em {
+   .mw#{$max-width}e { max-width: #{$max-width}em; }
+}
+
 $list-min-width-em: 3 !default;
 
 @each $min-width in $list-min-width-em {
