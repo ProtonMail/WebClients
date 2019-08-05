@@ -1,5 +1,5 @@
 import { toFile } from '../../lib/helpers/image';
-import { toBase64, readFileAsString, readFileAsBuffer } from '../../lib/helpers/file';
+import { toBase64, readFileAsString, readFileAsBuffer, splitExtension } from '../../lib/helpers/file';
 import img from './file.data';
 
 describe('toBase64', () => {
@@ -66,5 +66,25 @@ describe('readFile', () => {
         } catch (e) {
             expect(typeof e.stack).toBe('string');
         }
+    });
+});
+
+describe('splitExtension', () => {
+    it('should return array with two empty strings for empty filename', async () => {
+        const split = splitExtension('');
+        expect(split).toEqual(['', '']);
+    });
+    it('should split files with no extension', async () => {
+        const split = splitExtension('myFile');
+        expect(split).toEqual(['myFile', '']);
+    });
+    it('should split properly files with strange characters', async () => {
+        const split = splitExtension('a-terrible.name/for_a.File.txt');
+        expect(split).toEqual(['a-terrible.name/for_a.File', 'txt']);
+    });
+    it('should split files as expected', async () => {
+        const fileNames = ['myFile0.c', 'myFile1.py', 'myFile2.txt', 'myFile3.jpeg'];
+        const expected = [['myFile0', 'c'], ['myFile1', 'py'], ['myFile2', 'txt'], ['myFile3', 'jpeg']];
+        expect(fileNames.map(splitExtension)).toEqual(expected);
     });
 });

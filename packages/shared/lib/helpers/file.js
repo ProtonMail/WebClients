@@ -92,3 +92,19 @@ export const readDataUrl = (url = '') => {
 
     return binaryStringToArray(decodeBase64(base64));
 };
+
+/**
+ * Split a filename into [name, extension]
+ * @param {String} filename
+ *
+ * @return {Array<String>}
+ */
+export const splitExtension = (filename = '') => {
+    if (!filename.includes('.')) {
+        return [filename, ''];
+    }
+    const parts = filename.split('.');
+    const ext = parts.pop();
+
+    return [parts.join('.'), ext];
+};
