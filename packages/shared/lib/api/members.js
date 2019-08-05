@@ -58,3 +58,8 @@ export const privatizeMember = (memberID) => ({
     method: 'put',
     url: `members/${memberID}/privatize`
 });
+
+export const authMember = (memberID) => ({
+    method: 'post',
+    url: `members/${memberID}/auth`
+});
