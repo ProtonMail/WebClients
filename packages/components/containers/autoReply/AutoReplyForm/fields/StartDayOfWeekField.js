@@ -8,7 +8,7 @@ const StartDayOfWeekField = ({ value, onChange }) => {
     const handleChange = ({ target }) => onChange(+target.value);
 
     return (
-        <Row className="flex-spacebetween">
+        <Row>
             <Label htmlFor="startDayOfWeek">{c('Label').t`Start weekday`}</Label>
             <Field>
                 <Select id="startDayOfWeek" options={getWeekdayOptions()} onChange={handleChange} value={value} />

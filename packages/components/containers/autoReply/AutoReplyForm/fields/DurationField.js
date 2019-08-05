@@ -8,7 +8,7 @@ const DurationField = ({ value, onChange }) => {
     const handleChange = ({ target }) => onChange(+target.value);
 
     return (
-        <Row className="flex-spacebetween">
+        <Row>
             <Label htmlFor="duration">{c('Label').t`Duration`}</Label>
             <Field>
                 <Select id="duration" value={value} onChange={handleChange} options={getDurationOptions()} />

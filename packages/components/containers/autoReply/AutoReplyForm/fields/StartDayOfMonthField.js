@@ -8,7 +8,7 @@ const StartDayOfMonthField = ({ value, onChange }) => {
     const handleChange = ({ target }) => onChange(+target.value);
 
     return (
-        <Row className="flex-spacebetween">
+        <Row>
             <Label htmlFor="startDayOfMonth">{c('Label').t`Start day of month`}</Label>
             <Field>
                 <Select id="startDayOfMonth" options={getDaysOfMonthOptions()} value={value} onChange={handleChange} />

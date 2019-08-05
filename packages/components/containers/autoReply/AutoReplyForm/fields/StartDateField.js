@@ -9,7 +9,7 @@ const StartDateField = ({ value, onChange }) => {
     const handleChange = (date) => onChange(startOfDay(date));
 
     return (
-        <Row className="flex-spacebetween">
+        <Row>
             <Label htmlFor="startDate">{c('Label').t`Start date`}</Label>
             <Field>
                 <DateInput

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const StartTimeField = ({ value, onChange }) => {
     return (
-        <Row className="flex-spacebetween">
+        <Row>
             <Label htmlFor="startTime">{c('Label').t`Start time`}</Label>
             <Field>
                 <TimeSelect id="startTime" value={value} onChange={onChange} />

@@ -8,7 +8,7 @@ const TimeZoneField = ({ value, onChange }) => {
     const handleChange = ({ target }) => onChange(target.value);
 
     return (
-        <Row className="flex-spacebetween">
+        <Row>
             <Label htmlFor="timezone">{c('Label').t`Timezone`}</Label>
             <Field>
                 <Select id="timezone" options={getTimeZoneOptions()} onChange={handleChange} value={value} />

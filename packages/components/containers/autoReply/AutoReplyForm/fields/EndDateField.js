@@ -9,7 +9,7 @@ const EndDateField = ({ value, onChange }) => {
     const handleChange = (date) => onChange(startOfDay(date));
 
     return (
-        <Row className="flex-spacebetween">
+        <Row>
             <Label htmlFor="endDate">{c('Label').t`End date`}</Label>
             <Field>
                 <DateInput

@@ -9,7 +9,7 @@ const DaysOfWeekField = ({ value, onChange }) => {
         onChange(value.includes(weekday) ? value.filter((existing) => weekday !== existing) : [...value, weekday]);
 
     return (
-        <Row className="flex-spacebetween">
+        <Row>
             <Label>{c('Label').t`Days of the week`}</Label>
             <Field>
                 <div className="flex flex-column">

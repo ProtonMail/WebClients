@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const EndTimeField = ({ value, onChange }) => {
     return (
-        <Row className="flex-spacebetween">
+        <Row>
             <Label htmlFor="endTime">{c('Label').t`End time`}</Label>
             <Field>
                 <TimeSelect id="endTime" value={value} onChange={onChange} />
