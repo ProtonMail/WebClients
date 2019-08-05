@@ -76,7 +76,6 @@ const MemberActions = ({ member, addresses = [], organization }) => {
     const canRevoke = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_OWNER;
     const canRevokeSessions = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_OWNER;
 
-    // TODO fill member.Keys.length
     const canLogin =
         !member.Self && member.Private === MEMBER_PRIVATE.READABLE && member.Keys.length && addresses.length;
     const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE;
