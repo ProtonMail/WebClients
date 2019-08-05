@@ -264,10 +264,7 @@
             padding: .25em !important;
             bottom: 0;
             header {
-                border-radius: 2px;
-                .fa.fa-minus {
-                    top: -5px;
-                }
+                border-radius: $global-border-radius;
             }
             & > div,
             & > footer {
@@ -276,7 +273,7 @@
         }
         &.maximized {
             position: absolute;
-            top: ($headerHeight + 20);
+            top: calc(#{$header-height} + 20px);
             right: 0;
             bottom: 20px;
             transition: none;
@@ -285,7 +282,8 @@
             height: auto !important;
             max-height: 100%;
             margin: 0;
-            overflow: auto;
+            overflow-y: auto;
+            overflow-x: hidden;
 
             header, footer {
                 border-radius: 0;
