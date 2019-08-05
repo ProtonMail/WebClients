@@ -14,13 +14,13 @@ const AuthModal = ({ onClose, onError, onSuccess, config, ...rest }) => {
         try {
             setLoading(true);
 
-            await srpAuth({
+            const result = await srpAuth({
                 api,
                 credentials: { password, totp },
                 config
             });
 
-            onSuccess({ password, totp });
+            onSuccess({ password, totp, result });
             onClose();
         } catch (error) {
             const { data: { Code, Error } = {} } = error;

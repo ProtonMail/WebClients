@@ -7,19 +7,23 @@ import {
     DropdownActions,
     useLoading,
     useApi,
+    useAuthentication,
     useNotifications,
     useEventManager
 } from 'react-components';
 import { c } from 'ttag';
-import { removeMember, updateRole, privatizeMember } from 'proton-shared/lib/api/members';
+import { authMember, removeMember, updateRole, privatizeMember } from 'proton-shared/lib/api/members';
 import { revokeSessions } from 'proton-shared/lib/api/memberSessions';
 import { MEMBER_PRIVATE, MEMBER_ROLE } from 'proton-shared/lib/constants';
+import memberLogin from 'proton-shared/lib/authentication/memberLogin';
 
 import EditMemberModal from './EditMemberModal';
+import AuthModal from '../password/AuthModal';
 
 const MemberActions = ({ member, addresses = [], organization }) => {
     const api = useApi();
     const { call } = useEventManager();
+    const authentication = useAuthentication();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
@@ -30,8 +34,16 @@ const MemberActions = ({ member, addresses = [], organization }) => {
         createNotification({ text: c('Success message').t`User deleted` });
     };
 
-    const login = () => {
-        // TODO
+    const login = async () => {
+        const apiConfig = authMember(member.ID);
+        const {
+            result: { UID }
+        } = await new Promise((resolve, reject) => {
+            createModal(<AuthModal onClose={reject} onSuccess={resolve} config={apiConfig} />);
+        });
+
+        const url = `${location.origin}/login/sub`;
+        await memberLogin({ UID, mailboxPassword: authentication.getPassword(), url: url });
     };
 
     const makeAdmin = async () => {
