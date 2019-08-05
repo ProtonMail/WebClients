@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { withRouter } from 'react-router';
 import { ALL_MEMBERS_ID } from 'proton-shared/lib/constants';
 import {
     useMembers,
@@ -19,7 +20,7 @@ import { getStatus } from './helper';
 import AddressActions from './AddressActions';
 import AddressesWithUser from './AddressesWithUser';
 
-const AddressesWithMembers = ({ user, organization }) => {
+const AddressesWithMembers = ({ match, user, organization }) => {
     const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [memberIndex, setMemberIndex] = useState(-1);
@@ -27,18 +28,22 @@ const AddressesWithMembers = ({ user, organization }) => {
 
     useEffect(() => {
         if (memberIndex === -1 && Array.isArray(members)) {
-            setMemberIndex(members.findIndex(({ Self }) => Self));
+            if (match.params.memberID) {
+                setMemberIndex(members.findIndex(({ ID }) => ID === match.params.memberID));
+            } else {
+                setMemberIndex(members.findIndex(({ Self }) => Self));
+            }
         }
     }, [members]);
 
     const selectedMembers = useMemo(() => {
-        if (memberIndex === -1) {
-            return [];
-        }
         if (memberIndex === ALL_MEMBERS_ID) {
             return members;
         }
-        return [members[memberIndex]];
+        if (members && memberIndex in members) {
+            return [members[memberIndex]];
+        }
+        return [];
     }, [members, memberIndex]);
 
     if (loadingMembers || memberIndex === -1 || (loadingMemberAddresses && !memberAddressesMap)) {
@@ -95,7 +100,8 @@ const AddressesWithMembers = ({ user, organization }) => {
 
 AddressesWithMembers.propTypes = {
     user: PropTypes.object.isRequired,
-    organization: PropTypes.object.isRequired
+    organization: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired
 };
 
-export default AddressesWithMembers;
+export default withRouter(AddressesWithMembers);

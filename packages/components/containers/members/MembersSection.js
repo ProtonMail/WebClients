@@ -150,7 +150,7 @@ const MembersSection = () => {
                                     member.Name,
                                     <MemberRole key={key} member={member} />,
                                     <MemberPrivate key={key} member={member} />,
-                                    <MemberAddresses key={key} addresses={memberAddresses} />,
+                                    <MemberAddresses key={key} member={member} addresses={memberAddresses} />,
                                     <MemberFeatures key={key} member={member} />,
                                     <MemberActions
                                         key={key}

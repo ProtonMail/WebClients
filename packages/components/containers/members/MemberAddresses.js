@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { msgid, c } from 'ttag';
 import { SimpleDropdown, DropdownMenu } from 'react-components';
 
-const MemberAddresses = ({ addresses }) => {
+const MemberAddresses = ({ member, addresses }) => {
     const list = addresses.map(({ ID, Email }) => (
         <div key={ID} className="inbl w100 pt0-5 pb0-5 ellipsis">
             {Email}
@@ -22,7 +22,7 @@ const MemberAddresses = ({ addresses }) => {
             >
                 <DropdownMenu>{list}</DropdownMenu>
                 <div className="alignright p1">
-                    <Link className="pm-button" to="/settings/addresses">{c('Link').t`Manage`}</Link>
+                    <Link className="pm-button" to={`/settings/addresses/${member.ID}`}>{c('Link').t`Manage`}</Link>
                 </div>
             </SimpleDropdown>
         </>
@@ -30,6 +30,7 @@ const MemberAddresses = ({ addresses }) => {
 };
 
 MemberAddresses.propTypes = {
+    member: PropTypes.object.isRequired,
     addresses: PropTypes.array.isRequired
 };
 
