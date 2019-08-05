@@ -11,6 +11,8 @@ import { CONTACTS_LIMIT, CONTACTS_REQUESTS_PER_SECOND } from '../constants';
  */
 const pick = ({ ID, Name, LabelIDs }) => ({ ID, Name, LabelIDs });
 
+const compareName = (a, b) => a.Name.localeCompare(b.Name);
+
 export const getContactsModel = (api) => {
     const pageSize = CONTACTS_LIMIT;
 
@@ -28,7 +30,10 @@ export const getContactsModel = (api) => {
         pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
         delayPerChunk: 100
     }).then((pages) => {
-        return pages.map(({ Contacts }) => Contacts.map(pick)).flat();
+        return pages
+            .map(({ Contacts }) => Contacts.map(pick))
+            .flat()
+            .sort(compareName);
     });
 };
 
@@ -46,5 +51,5 @@ export const ContactsModel = {
             events,
             item: ({ Contact }) => pick(Contact),
             merge: mergeModel
-        })
+        }).sort(compareName)
 };
