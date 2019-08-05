@@ -5,7 +5,7 @@ import { range } from 'proton-shared/lib/helpers/array';
 import { setDay } from 'proton-shared/lib/helpers/date';
 import { c } from 'ttag';
 
-const PlanningView = ({ currentDate, onSelectDate }) => {
+const AgendaView = ({ currentDate, onSelectDate }) => {
     const currentDay = getDate(currentDate);
     const days = [currentDate, ...range(0, 30).map((index) => setDay(currentDate, currentDay + index + 1))];
     const handleDate = (date) => () => onSelectDate(date);
@@ -63,10 +63,10 @@ const PlanningView = ({ currentDate, onSelectDate }) => {
     );
 };
 
-PlanningView.propTypes = {
+AgendaView.propTypes = {
     currentDate: PropTypes.instanceOf(Date),
     onSelectDate: PropTypes.func,
     schedules: PropTypes.array
 };
 
-export default PlanningView;
+export default AgendaView;

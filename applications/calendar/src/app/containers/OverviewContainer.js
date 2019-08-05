@@ -13,11 +13,13 @@ import EventModal from '../components/modals/EventModal';
 import OverviewSidebar from './OverviewSidebar';
 import OverviewToolbar from './OverviewToolbar';
 import YearView from '../components/YearView';
-import PlanningView from '../components/PlanningView';
+import PlanningView from '../components/AgendaView';
 import WelcomeModal from '../components/modals/WelcomeModal';
+import { VIEWS } from '../constants';
 
-const DEFAULT_VIEW = 'week';
-const VIEWS_HANDLED_BY_CALENDAR = ['day', 'week', 'month'];
+const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
+const DEFAULT_VIEW = WEEK;
+const VIEWS_HANDLED_BY_CALENDAR = [DAY, WEEK, MONTH];
 
 const OverviewContainer = () => {
     const [addresses] = useAddresses();
@@ -175,11 +177,11 @@ const OverviewContainer = () => {
                                 }}
                             />
                         </div>
-                        {view === 'year' ? <YearView currentDate={currentDate} /> : null}
-                        {view === 'planning' ? (
-                            <PlanningView
+                        {view === YEAR ? <YearView currentDate={currentDate} /> : null}
+                        {view === AGENDA ? (
+                            <AgendaView
                                 currentDate={currentDate}
-                                onSelectDate={(date) => (setDate(date), setView('week'))}
+                                onSelectDate={(date) => (setDate(date), setView(WEEK))}
                             />
                         ) : null}
                     </Main>

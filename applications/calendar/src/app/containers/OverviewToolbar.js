@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Group, ButtonGroup, Icon, Select } from 'react-components';
 import moment from 'moment';
+import { VIEWS } from '../constants';
+
+const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
 
 const OverviewToolbar = ({ onToday, onPrev, onNext, view, onChangeView }) => {
     const views = [
-        { text: c('Calendar view').t`Day`, value: 'day' },
-        { text: c('Calendar view').t`Week`, value: 'week' },
-        { text: c('Calendar view').t`Month`, value: 'month' },
-        { text: c('Calendar view').t`Year`, value: 'year' },
-        { text: c('Calendar view').t`Planning`, value: 'planning' }
+        { text: c('Calendar view').t`Day`, value: DAY },
+        { text: c('Calendar view').t`Week`, value: WEEK },
+        { text: c('Calendar view').t`Month`, value: MONTH },
+        { text: c('Calendar view').t`Year`, value: YEAR },
+        { text: c('Calendar view').t`Agenda`, value: AGENDA }
     ];
 
     const handleChangeView = ({ target }) => onChangeView(target.value);
@@ -29,23 +32,25 @@ const OverviewToolbar = ({ onToday, onPrev, onNext, view, onChangeView }) => {
     }[view];
 
     return (
-        <div className="flex flex-spacebetween">
-            <Group>
-                <ButtonGroup title={previous} onClick={onPrev}>
-                    <Icon name="arrow-left" />
-                </ButtonGroup>
-                <ButtonGroup title={today} onClick={onToday}>{c('Action').t`Today`}</ButtonGroup>
-                <ButtonGroup title={next} onClick={onNext}>
-                    <Icon name="arrow-right" />
-                </ButtonGroup>
-            </Group>
-            <div>
-                <Select
-                    title={c('Action').t`Select calendar view`}
-                    options={views}
-                    value={view}
-                    onChange={handleChangeView}
-                />
+        <div className=" toolbar noprint">
+            <div className="flex flex-spacebetween">
+                <Group>
+                    <ButtonGroup title={previous} onClick={onPrev}>
+                        <Icon name="arrow-left" />
+                    </ButtonGroup>
+                    <ButtonGroup title={today} onClick={onToday}>{c('Action').t`Today`}</ButtonGroup>
+                    <ButtonGroup title={next} onClick={onNext}>
+                        <Icon name="arrow-right" />
+                    </ButtonGroup>
+                </Group>
+                <div>
+                    <Select
+                        title={c('Action').t`Select calendar view`}
+                        options={views}
+                        value={view}
+                        onChange={handleChangeView}
+                    />
+                </div>
             </div>
         </div>
     );
