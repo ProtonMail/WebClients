@@ -42,6 +42,17 @@ export const addPlus = ([first = '', ...rest] = []) => {
 };
 
 /**
+ * Capitalize a string
+ * @param {String} str
+ */
+export const capitalize = (str) => {
+    if (str === '' || typeof str !== 'string') {
+        return '';
+    }
+    return str[0].toUpperCase() + str.slice(1);
+};
+
+/**
  * Extract 2 first initials
  * @param {String} value
  * @retuns {String}
