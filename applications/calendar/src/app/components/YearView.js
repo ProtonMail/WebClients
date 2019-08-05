@@ -7,11 +7,8 @@ import { getYear } from 'date-fns';
 
 import MiniCalendar from './miniCalendar/MiniCalendar';
 
-const YearView = ({ currentDate }) => {
+const YearView = ({ currentDate, onSelectDate }) => {
     const year = getYear(currentDate);
-    const handleSelectDate = () => {
-        // TODO popup day
-    };
     const months = [
         { title: c('Month').t`January`, date: new Date(year, 0, 1) },
         { title: c('Month').t`February`, date: new Date(year, 1, 1) },
@@ -32,7 +29,7 @@ const YearView = ({ currentDate }) => {
                 const key = `${index}`;
                 return (
                     <div className="w25 p1" key={key}>
-                        <MiniCalendar date={month.date} onSelectDate={handleSelectDate} onSelectDateRange={noop} />
+                        <MiniCalendar date={month.date} onSelectDate={onSelectDate} onSelectDateRange={noop} />
                     </div>
                 );
             })}
@@ -42,6 +39,7 @@ const YearView = ({ currentDate }) => {
 
 YearView.propTypes = {
     currentDate: PropTypes.instanceOf(Date),
+    onSelectDate: PropTypes.func,
     schedules: PropTypes.array
 };
 

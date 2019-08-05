@@ -178,7 +178,12 @@ const OverviewContainer = () => {
                                 }}
                             />
                         </div>
-                        {view === YEAR ? <YearView currentDate={currentDate} /> : null}
+                        {view === YEAR ? (
+                            <YearView
+                                currentDate={currentDate}
+                                onSelectDate={(date) => (setDate(date), setView(WEEK))}
+                            />
+                        ) : null}
                         {view === AGENDA ? (
                             <AgendaView
                                 currentDate={currentDate}
