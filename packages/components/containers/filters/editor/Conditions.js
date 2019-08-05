@@ -46,6 +46,7 @@ function ConditionsEditor({ filter, onChange, errors }) {
 
     const handleRemoveCondition = (index) => () => {
         const Conditions = model.Simple.Conditions.filter((item, i) => i !== index);
+        onChange(Conditions);
         setModel({
             ...model,
             Simple: {

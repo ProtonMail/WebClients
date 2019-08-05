@@ -21,7 +21,7 @@ function LabelActions({ selection, labels, onChange }) {
     return (
         <>
             <Autocomplete
-                placeholder={c('Placeholder').t`Add a label ...`}
+                placeholder={c('Placeholder').t`Add a label...`}
                 inputValue={inputValue}
                 onSelect={select}
                 onInputValueChange={changeInputValue}

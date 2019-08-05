@@ -183,6 +183,7 @@ function AddFilterModal({ filter, type, mode, onEdit, ...props }) {
 }
 
 AddFilterModal.propTypes = {
+    filter: PropTypes.object.isRequired,
     onEdit: PropTypes.func,
     onClose: PropTypes.func,
     mode: PropTypes.string,
