@@ -359,8 +359,6 @@
             // }
         }
 
-        .fromRow { color: $default-color }
-
         &.expandRecipients {
             overflow: hidden;
         }
@@ -369,16 +367,10 @@
         /* Probably to move as a global reset scope */
 
         ul {
-          margin:0px;
-          padding:0px;
-          list-style: none;
+          @extend .unstyled;
+          @extend .m0;
+          @extend .p0;
         }
-
-        // input,select {
-        //   -webkit-appearance: none; /* DRY */
-        //   -moz-appearance: none;
-        //   appearance: none;
-        // }
 
         select::-ms-expand {
             display: none;
