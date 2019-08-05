@@ -64,13 +64,13 @@
 
         <ul class="contactSelectorForm-labels bordered-container p1 unstyled scroll-if-needed">
             <li
-                class="contactSelectorForm-label inline-flex mw100 flex-nowrap bg-global-light mr0-5 rounded pl0-5 pr0-5 pt0-25 pb0-25 mb0-5"
+                class="contactSelectorForm-label inline-flex mw100 flex-nowrap bg-global-light mr0-5 rounded mb0-5 bordered-container"
                 ng-repeat="email in ctrl.others track by $id(email)"
                 title="{{ ::email.Email }}">
-                <span class="ellipsis">{{ ::(email.Name || email.Email) }}</span>
+                <span class="ellipsis contactSelectorForm-label-text pl0-5 pr0-5 pt0-25 pb0-25">{{ ::(email.Name || email.Email) }}</span>
                 <button
                     type="button"
-                    class="contactSelectorForm-remove-label-btn flex-item-noshrink"
+                    class="contactSelectorForm-remove-label-btn flex-item-noshrink pl0-5 pr0-5"
                     title-translate="Remove"
                     title-translate-context="Action"
                     data-list="others"
@@ -82,13 +82,13 @@
             </li>
 
             <li
-                class="contactSelectorForm-label inline-flex mw100 flex-nowrap bg-global-light mr0-5 rounded pl0-5 pr0-5 pt0-25 pb0-25 mb0-5"
+                class="contactSelectorForm-label inline-flex mw100 flex-nowrap bg-global-light mr0-5 rounded mb0-5 bordered-container"
                 ng-repeat="email in ctrl.list | filter: { selected: true } track by $id(email)"
                 title="{{ ::email.Email }}">
-                <span class="ellipsis">{{ ::(email.Name || email.Email) }}</span>
+                <span class="ellipsis contactSelectorForm-label-text pl0-5 pr0-5 pt0-25 pb0-25">{{ ::(email.Name || email.Email) }}</span>
                 <button
                     type="button"
-                    class="contactSelectorForm-remove-label-btn flex-item-noshrink"
+                    class="contactSelectorForm-remove-label-btn flex-item-noshrink pl0-5 pr0-5"
                     title-translate="Remove"
                     title-translate-context="Action"
                     data-list="list"
