@@ -9,16 +9,16 @@ import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
 import usePayment from './usePayment';
 
-const DonateModal = ({ onClose, ...rest }) => {
-    const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment(handleSubmit);
+const DonateModal = ({ ...rest }) => {
     const { createNotification } = useNotifications();
     const { request, loading } = useApiWithoutResult(donate);
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [amount, setAmount] = useState(DEFAULT_DONATION_AMOUNT);
+    const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment(handleSubmit);
 
     const handleSubmit = async () => {
         await request({ Amount: amount, Currency: currency, ...parameters });
-        onClose();
+        rest.onClose();
         createNotification({
             text: c('Success')
                 .t`Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!`
@@ -27,8 +27,6 @@ const DonateModal = ({ onClose, ...rest }) => {
 
     return (
         <FormModal
-            small
-            onClose={onClose}
             onSubmit={handleSubmit}
             loading={loading}
             close={c('Action').t`Cancel`}
@@ -62,8 +60,7 @@ const DonateModal = ({ onClose, ...rest }) => {
 };
 
 DonateModal.propTypes = {
-    onClose: PropTypes.func,
-    onSubmit: PropTypes.func.isRequired
+    onClose: PropTypes.func
 };
 
 export default DonateModal;
