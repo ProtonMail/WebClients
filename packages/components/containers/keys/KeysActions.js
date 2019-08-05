@@ -71,7 +71,7 @@ const KeysActions = ({
         }
     ].filter(Boolean);
 
-    return <DropdownActions loading={loading} list={list} />;
+    return <DropdownActions className="pm-button--small" loading={loading} list={list} />;
 };
 
 KeysActions.propTypes = {
