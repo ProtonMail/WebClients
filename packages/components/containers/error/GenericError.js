@@ -1,8 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
-import { PropTypes, IllustrationPlaceholder } from 'prop-types';
+import PropTypes from 'prop-types';
 
 import errorImg from 'design-system/assets/img/shared/generic-error.svg';
+
+import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
 const GenericError = ({ className }) => {
     return (
