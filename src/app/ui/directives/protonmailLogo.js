@@ -2,6 +2,7 @@ import { PLANS, PAID_MEMBER_ROLE } from '../../constants';
 
 const { PLUS, PROFESSIONAL, VISIONARY } = PLANS.PLAN;
 const PLANS_LIST = [PLUS, PROFESSIONAL, VISIONARY].join(' ');
+const PLANS_LIST_FILL = ['fill-plus', 'fill-professional', 'fill-visionary'].join(' ');
 
 /* @ngInject */
 function protonmailLogo(authentication, organizationModel, subscriptionModel, dispatchers) {
@@ -26,6 +27,8 @@ function protonmailLogo(authentication, organizationModel, subscriptionModel, di
                 const isMember = authentication.user.Role === PAID_MEMBER_ROLE;
 
                 let planName = organization.PlanName;
+                let planClass = 'fill-' + planName.toLowerCase();
+                let $planText = angular.element(planText);
 
                 if (isLifetime) {
                     planName = 'lifetime';
@@ -34,7 +37,7 @@ function protonmailLogo(authentication, organizationModel, subscriptionModel, di
                     planName = '';
                 }
                 element.removeClass(PLANS_LIST).addClass(planName);
-                element.attr('data-plan-name', planName);
+                $planText.removeClass(PLANS_LIST_FILL).addClass(planClass);
                 planText.innerHTML = planName;
             }
 
