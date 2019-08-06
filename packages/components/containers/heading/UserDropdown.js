@@ -57,14 +57,17 @@ const UserDropdown = (props) => {
                         ) : null}
                     </li>
                     <li className="dropDown-item pl1 pr1">
-                        <a className="w100 flex flex-nowrap pm-button--link p0" href="/settings">
+                        <a
+                            className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
+                            href="/settings"
+                        >
                             <Icon className="mt0-25 mr0-5 fill-currentColor" name="settings" />
                             {c('Action').t`Settings`}
                         </a>
                     </li>
                     <li className="dropDown-item pl1 pr1">
                         <a
-                            className="w100 flex flex-nowrap pm-button--link p0"
+                            className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
                             href="https://protonmail.com/support/"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -74,14 +77,18 @@ const UserDropdown = (props) => {
                         </a>
                     </li>
                     <li className="dropDown-item pl1 pr1">
-                        <button className="w100 flex link pt0-5 pb0-5 alignleft" onClick={handleBugReportClick}>
+                        <button
+                            type="button"
+                            className="w100 flex underline-hover pt0-5 pb0-5 alignleft"
+                            onClick={handleBugReportClick}
+                        >
                             <Icon className="mt0-25 mr0-5 fill-currentColor" name="report-bug" />
                             {c('Action').t`Report bug`}
                         </button>
                     </li>
                     <li className="dropDown-item pl1 pr1">
                         <a
-                            className="w100 flex flex-nowrap pm-button--link p0"
+                            className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
                             href="https://shop.protonmail.com"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -91,7 +98,11 @@ const UserDropdown = (props) => {
                         </a>
                     </li>
                     <li className="dropDown-item pl1 pr1">
-                        <button className="w100 flex link pt0-5 pb0-5 alignleft" onClick={handleSupportUsClick}>
+                        <button
+                            type="button"
+                            className="w100 flex underline-hover pt0-5 pb0-5 alignleft"
+                            onClick={handleSupportUsClick}
+                        >
                             <Icon className="mt0-25 mr0-5 fill-currentColor" name="donate" />
                             {c('Action').t`Support us`}
                         </button>
