@@ -1,12 +1,12 @@
 import React from 'react';
-import { Row } from 'react-components';
+import { Row, SubTitle } from 'react-components';
 import { c } from 'ttag';
 import VPNClientCard from './VPNClientCard';
 
 const ProtonVPNClientsSection = () => {
     return (
         <>
-            <h2>{c('Title').t`ProtonVPN Clients`}</h2>
+            <SubTitle>{c('Title').t`ProtonVPN Clients`}</SubTitle>
             <Row className="flex-autogrid">
                 <VPNClientCard
                     title="Android"
