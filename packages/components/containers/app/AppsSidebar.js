@@ -15,6 +15,7 @@ const AppsSidebar = ({ currentApp = '' }) => {
             id: PROTONVPN_SETTINGS,
             icon: 'protonvpn',
             title: c('Title').t`ProtonVPN settings`,
+            target: '_blank',
             link: 'https://account.protonvpn.com/login'
         }
     ];
@@ -22,13 +23,13 @@ const AppsSidebar = ({ currentApp = '' }) => {
     return (
         <aside className="aside noprint" id="aside-bar">
             <ul className="unstyled m0 aligncenter">
-                {apps.map(({ id, icon, title, link }) => {
+                {apps.map(({ id, icon, title, link, target }) => {
                     const isCurrent = currentApp === id;
                     return (
                         <li key={id} className="mb0-5">
                             <a
                                 href={link}
-                                target="_self"
+                                target={target ? target : '_self'}
                                 className="center flex js-notyet aside-link"
                                 title={title}
                                 disabled={isCurrent}
