@@ -24,6 +24,10 @@ img {
 .underline {
   text-decoration: underline;
 }
+.underline-hover:hover,
+.underline-hover:focus {
+  text-decoration: underline;
+}
 
 /* links with icons, may use DATA-URI */
 
