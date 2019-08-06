@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { PLAN_NAMES } from 'proton-shared/lib/constants';
+
 const MailLogo = ({ planName = '' }) => {
     return (
         <svg
@@ -29,7 +31,14 @@ const MailLogo = ({ planName = '' }) => {
             </g>
             <title id="logo__title">ProtonMail</title>
             {planName ? (
-                <text textAnchor="end" className="plan uppercase bold" x="147" y="42" id="plan" focusable="false">
+                <text
+                    textAnchor="end"
+                    className={`plan fill-${planName} uppercase bold`}
+                    x="147"
+                    y="42"
+                    id="plan"
+                    focusable={false}
+                >
                     {planName}
                 </text>
             ) : null}
@@ -38,7 +47,7 @@ const MailLogo = ({ planName = '' }) => {
 };
 
 MailLogo.propTypes = {
-    planName: PropTypes.string
+    planName: PropTypes.oneOf(Object.keys(PLAN_NAMES))
 };
 
 export default MailLogo;
