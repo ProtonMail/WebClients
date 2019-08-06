@@ -27,8 +27,8 @@ function protonmailLogo(authentication, organizationModel, subscriptionModel, di
                 const isMember = authentication.user.Role === PAID_MEMBER_ROLE;
 
                 let planName = organization.PlanName;
-                let planClass = 'fill-' + planName.toLowerCase();
-                let $planText = angular.element(planText);
+                const planClass = 'fill-' + planName.toLowerCase();
+                const $planText = angular.element(planText);
 
                 if (isLifetime) {
                     planName = 'lifetime';
