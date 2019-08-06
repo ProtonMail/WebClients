@@ -1,24 +1,22 @@
 
-# [1.7.xx] - 2019-08-xx
+# [1.7.1] - 2019-08-06
 
 ## New
 
 - added `dashed` and `dashed-container` containers 
-- added `language`, `timezone1`, and `timezone2` icons 
+- added `language`, `timezone1`, `timezone2`, `linux`, `windows`, `alias`, `calendar`, `cc`, `check-circle`, `key`, `user-storage` icons 
+- added bank icon images (discover/jcb to clean up)
 - added `pm-button--noborder` modifier
-- add plan colors and classes
-- add `no-outline` helper (god, please forgive me for having created it)
+- add plan colors/classes
+- add `no-outline` helper (god, please forgive me for having created this)
 - add class `mw100` on `navigation` element (fixes ellipsis bug in some cases)
 - fixed “button” active state when applied to `div` and triggered by dropdowns inside
-- added `linux` and `windows` icons 
 - updated logo
 - added react dedicated styles (and notes/documentation about them) 
 - added `lh-standard` class (standard `line-height`)
-- added `alias`, `calendar`, `cc`, `check-circle`, `key`, `user-storage` icons
-- added bank icon images (discover/jcb to clean up)
 - added `$list-max-width-em` feature (needed for composer)
 - added flags files in `assets/img/shared/flags`
-- added `pv-indicator` css file
+- added `pv-indicator` css file (and notes/documentation about `pv-styles`) 
 - added `.underline-hover` helper
 
 ## Updated/fixes
@@ -28,7 +26,7 @@
 ## Misc
 
 - added icons in left bar
-- has to change CSP policies (Firefox, when do you will fix this CSP bug for CSS in SVG?)
+- has to change CSP policies (Firefox, when do you will fix this CSP bug for CSS in SVG images?)
 
 
 # [1.7.0] - 2019-07-12
