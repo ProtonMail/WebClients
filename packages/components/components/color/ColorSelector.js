@@ -37,7 +37,7 @@ const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS })
 };
 
 ColorSelector.propTypes = {
-    colors: PropTypes.array.isRequired,
+    colors: PropTypes.array,
     selected: PropTypes.string,
     className: PropTypes.string,
     onChange: PropTypes.func.isRequired
