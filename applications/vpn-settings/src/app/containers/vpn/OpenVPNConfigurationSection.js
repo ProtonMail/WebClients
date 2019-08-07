@@ -92,7 +92,7 @@ const OpenVPNConfigurationSection = () => {
     const handleChangeProtocol = (protocol) => () => setProtocol(protocol);
 
     return (
-        <ObserverSection id="openvpn-configuration-files">
+        <>
             <SubTitle id="openvpn-configuration-files">{c('Title').t`OpenVPN Configuration Files`}</SubTitle>
             <Alert learnMore="todo">
                 {c('Info').t`Use this section to generate config files for third party VPN clients
@@ -221,7 +221,7 @@ const OpenVPNConfigurationSection = () => {
                 )}
                 <Button onClick={() => downloadAllConfigs()}>{c('Action').t`Download All Configurations`}</Button>
             </Block>
-        </ObserverSection>
+        </>
     );
 };
 
