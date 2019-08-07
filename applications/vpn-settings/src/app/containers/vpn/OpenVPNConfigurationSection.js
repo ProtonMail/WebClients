@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { Alert, Row, Radio, ButtonGroup, Group, useApiResult, SubTitle } from 'react-components';
-import { queryVPNLogicalServerInfo } from 'proton-shared/lib/api/vpn';
+import {
+    Alert,
+    Row,
+    Radio,
+    ButtonGroup,
+    Group,
+    useApiResult,
+    SubTitle,
+    useApiWithoutResult,
+    Button
+} from 'react-components';
+import { queryVPNLogicalServerInfo, getClientVPNInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import ConfigsTable from './ConfigsTable';
 import { isSecureCoreEnabled } from './utils';
 import { groupWith, minBy } from 'proton-shared/lib/helpers/array';
 import { getCountryByAbbr } from 'react-components/helpers/countries';
 import ServerConfigs from './ServerConfigs';
+import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 
 const PLATFORM = {
     MACOS: 'macOS',
@@ -35,20 +46,25 @@ const OpenVPNConfigurationSection = () => {
     const [platform, setPlatform] = useState(PLATFORM.MACOS);
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
     const [selectedConfig, selectConfig] = useState(CATEGORY.SECURE_CORE);
+    const { request } = useApiWithoutResult(getVPNServerConfig);
     const { loading, result = {} } = useApiResult(queryVPNLogicalServerInfo, []);
 
-    // const downloadAllConfigs = ({ category }) => {
-    //     const Tier = userAppModel.getTier();
-    //     const link = Vpn.all({
-    //         Category: category,
-    //         Platform: CACHE.platform,
-    //         Protocol: CACHE.protocol,
-    //         APIVersion: CONFIG.api_version,
-    //         Tier
-    //     });
-    //     console.log(link);
-    //     window.open(link, '_blank');
-    // }
+    // TODO: move to provider
+    const { result: vpnResult = {} } = useApiResult(getClientVPNInfo, []);
+    const vpnInfo = vpnResult.VPN;
+    const isTrial = () => vpnInfo.PlanName === 'trial';
+    const getTier = () => (isTrial() ? 0 : vpnInfo.MaxTier);
+
+    const downloadAllConfigs = async () => {
+        const buffer = await request({
+            Category: selectedConfig,
+            Platform: platform,
+            Protocol: protocol,
+            Tier: getTier()
+        });
+        const blob = new Blob([buffer], { type: 'application/zip' });
+        downloadFile(blob, 'ProtonVPN_server_configs.zip');
+    };
 
     const handleSelectConfig = (option) => () => selectConfig(option);
 
@@ -176,6 +192,7 @@ const OpenVPNConfigurationSection = () => {
             {selectedConfig === CATEGORY.SERVER && (
                 <ServerConfigs platform={platform} protocol={protocol} loading={loading} servers={allServers} />
             )}
+            <Button onClick={() => downloadAllConfigs()}>{c('Action').t`Download All Configs`}</Button>
         </>
     );
 };
