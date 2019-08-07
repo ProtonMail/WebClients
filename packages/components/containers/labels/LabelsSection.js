@@ -53,12 +53,7 @@ function LabelsSection() {
             {loading ? (
                 <Loader />
             ) : labels.length ? (
-                <LabelSortableList
-                    getContainer={getScrollContainer}
-                    pressDelay={200}
-                    items={labels}
-                    onSortEnd={onSortEnd}
-                />
+                <LabelSortableList getContainer={getScrollContainer} items={labels} onSortEnd={onSortEnd} />
             ) : (
                 <Alert>{c('LabelSettings').t`No labels/folders available`}</Alert>
             )}

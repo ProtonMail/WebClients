@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { TableHeader } from '../table';
 import './OrderableTableHeader.scss';
 
-const OrderableTableHeader = ({ cells, className, ...rest }) => (
+const OrderableTableHeader = ({ cells = [], className = '', children, ...rest }) => (
     <TableHeader
         cells={[
             null, // column for icon
@@ -12,17 +12,15 @@ const OrderableTableHeader = ({ cells, className, ...rest }) => (
         ]}
         className={`orderableTableHeader ${className}`}
         {...rest}
-    ></TableHeader>
+    >
+        {children}
+    </TableHeader>
 );
 
 OrderableTableHeader.propTypes = {
     cells: PropTypes.arrayOf(PropTypes.node),
-    className: PropTypes.string
-};
-
-OrderableTableHeader.defaultProps = {
-    cells: [],
-    className: ''
+    className: PropTypes.string,
+    children: PropTypes.node
 };
 
 export default OrderableTableHeader;

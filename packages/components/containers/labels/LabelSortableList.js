@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { SortableContainer } from 'react-sortable-hoc';
-import { Table } from 'react-components';
+import { OrderableTable, OrderableTableHeader, OrderableTableBody } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import LabelSortableItem from './LabelSortableItem';
 
-function LabelSortableList({ items, onEditLabel, onRemoveLabel, onToggleChange }) {
+function LabelSortableList({ items, onEditLabel, onRemoveLabel, ...rest }) {
     return (
-        <Table className="noborder border-collapse mt1">
+        <OrderableTable className="noborder border-collapse mt1" {...rest}>
             <caption className="sr-only">{c('Settings/labels').t`Labels/Folders`}</caption>
-            <thead>
+            <OrderableTableHeader>
                 <tr>
                     <th scope="col" className="w5" />
                     <th scope="col" className="w45">
@@ -24,21 +23,19 @@ function LabelSortableList({ items, onEditLabel, onRemoveLabel, onToggleChange }
                         {c('Settings/labels - table').t`Actions`}
                     </th>
                 </tr>
-            </thead>
-            <tbody>
+            </OrderableTableHeader>
+            <OrderableTableBody>
                 {items.map((label, index) => (
                     <LabelSortableItem
                         key={`item-${index}`}
                         index={index}
                         label={label}
-                        onToggleChange={onToggleChange}
                         onEditLabel={onEditLabel}
                         onRemoveLabel={onRemoveLabel}
-                        helperClass="LabelSortableItem-item"
                     />
                 ))}
-            </tbody>
-        </Table>
+            </OrderableTableBody>
+        </OrderableTable>
     );
 }
 
@@ -55,4 +52,4 @@ LabelSortableList.defaultProps = {
     onToggleChange: noop
 };
 
-export default SortableContainer(LabelSortableList);
+export default LabelSortableList;
