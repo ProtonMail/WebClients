@@ -9,7 +9,8 @@ import {
     useApiResult,
     SubTitle,
     useApiWithoutResult,
-    Button
+    Button,
+    Block
 } from 'react-components';
 import { queryVPNLogicalServerInfo, getClientVPNInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import ConfigsTable from './ConfigsTable';
@@ -70,8 +71,9 @@ const OpenVPNConfigurationSection = () => {
 
     const allServers = (result.LogicalServers || []).map((server) => {
         // Server returns UK instead of GB
-        const ExitCountry = server.ExitCountry === 'UK' ? 'GB' : server.ExitCountry;
-        const EntryCountry = server.EntryCountry === 'UK' ? 'GB' : server.EntryCountry;
+        const correctAbbr = (abbr) => (abbr === 'UK' ? 'GB' : abbr);
+        const ExitCountry = correctAbbr(server.ExitCountry);
+        const EntryCountry = correctAbbr(server.EntryCountry);
         return {
             ...server,
             Country: getCountryByAbbr(ExitCountry),
@@ -90,7 +92,7 @@ const OpenVPNConfigurationSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`OpenVPN Configuration Files`}</SubTitle>
+            <SubTitle id="openvpn-configuration-files">{c('Title').t`OpenVPN Configuration Files`}</SubTitle>
             <Alert learnMore="todo">
                 {c('Info').t`Use this section to generate config files for third party VPN clients
                     or when setting up a connection on a router. If you use a native ProtonVPN
@@ -178,21 +180,46 @@ const OpenVPNConfigurationSection = () => {
                 >{c('Tab').t`Server Configs`}</ButtonGroup>
             </Group>
 
-            <h3>{c('Title').t`Secure Core Configs`}</h3>
-            <Alert learnMore="todo">
-                {c('Info').t`Secure Core configurations add additional protection against VPN endpoint compromise.`}
-            </Alert>
-
-            {selectedConfig === CATEGORY.SECURE_CORE && (
-                <ConfigsTable platform={platform} protocol={protocol} loading={loading} servers={secureCoreServers} />
-            )}
-            {selectedConfig === CATEGORY.COUNTRY && (
-                <ConfigsTable platform={platform} protocol={protocol} loading={loading} servers={countryServers} />
-            )}
-            {selectedConfig === CATEGORY.SERVER && (
-                <ServerConfigs platform={platform} protocol={protocol} loading={loading} servers={allServers} />
-            )}
-            <Button onClick={() => downloadAllConfigs()}>{c('Action').t`Download All Configs`}</Button>
+            <Block>
+                {selectedConfig === CATEGORY.SECURE_CORE && (
+                    <>
+                        <h3>{c('Title').t`Secure Core Configs`}</h3>
+                        <Alert learnMore="todo">
+                            {c('Info')
+                                .t`Secure Core configurations add additional protection against VPN endpoint compromise.`}
+                        </Alert>
+                        <ConfigsTable
+                            platform={platform}
+                            protocol={protocol}
+                            loading={loading}
+                            servers={secureCoreServers}
+                        />
+                    </>
+                )}
+                {selectedConfig === CATEGORY.COUNTRY && (
+                    <>
+                        <h3>{c('Title').t`Country Configs`}</h3>
+                        <Alert>
+                            {c('Info')
+                                .t`Country Connect configuration files ensure a faster connection to the selected country on average.`}
+                        </Alert>
+                        <ConfigsTable
+                            platform={platform}
+                            protocol={protocol}
+                            loading={loading}
+                            servers={countryServers}
+                        />
+                    </>
+                )}
+                {selectedConfig === CATEGORY.SERVER && (
+                    <>
+                        <h3>{c('Title').t`Server Configs`}</h3>
+                        <Alert>{c('Info').t`Connect to a single server in the country of your choice.`}</Alert>
+                        <ServerConfigs platform={platform} protocol={protocol} loading={loading} servers={allServers} />
+                    </>
+                )}
+                <Button onClick={() => downloadAllConfigs()}>{c('Action').t`Download All Configurations`}</Button>
+            </Block>
         </>
     );
 };

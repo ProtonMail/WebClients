@@ -6,7 +6,7 @@ import VPNClientCard from './VPNClientCard';
 const ProtonVPNClientsSection = () => {
     return (
         <>
-            <SubTitle>{c('Title').t`ProtonVPN Clients`}</SubTitle>
+            <SubTitle id="protonvpn-clients">{c('Title').t`ProtonVPN Clients`}</SubTitle>
             <Row className="flex-autogrid">
                 <VPNClientCard
                     title="Android"
