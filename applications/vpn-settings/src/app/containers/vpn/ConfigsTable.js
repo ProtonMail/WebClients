@@ -1,11 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table, TableBody, TableRow, SmallButton, Tooltip, TableCell, useApiWithoutResult } from 'react-components';
+import {
+    Table,
+    TableBody,
+    TableRow,
+    SmallButton,
+    Tooltip,
+    TableCell,
+    useApiWithoutResult,
+    useSortedList
+} from 'react-components';
 import { c } from 'ttag';
 import LoadIndicator from './LoadIndicator';
 import Country from './Country';
 import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { getCountryByAbbr } from 'react-components/helpers/countries';
 
 const PlusBadge = () => (
     <Tooltip title="Plus">
@@ -32,6 +43,9 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol }) => {
         downloadFile(blob, `${Domain}.${protocol}.ovpn`);
     };
 
+    const serversWithCountry = servers.map((server) => ({ ...server, Country: getCountryByAbbr(server.ExitCountry) }));
+    const { sortedList } = useSortedList(serversWithCountry, { key: 'Country', direction: SORT_DIRECTION.ASC });
+
     return (
         <Table>
             <thead>
@@ -42,7 +56,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol }) => {
                 </tr>
             </thead>
             <TableBody loading={loading} colSpan={3}>
-                {servers.map((server) => {
+                {sortedList.map((server) => {
                     const { ID, EntryCountry, ExitCountry, Load, Tier } = server;
                     return (
                         <TableRow
