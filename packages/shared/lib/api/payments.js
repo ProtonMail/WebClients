@@ -106,3 +106,14 @@ export const validateCredit = (data) => ({
     method: 'post',
     data
 });
+
+export const createToken = (data) => ({
+    url: 'payments/tokens',
+    method: 'post',
+    data
+});
+
+export const getTokenStatus = (paymentToken) => ({
+    url: `payments/tokens/${paymentToken}`,
+    method: 'get'
+});
