@@ -1,12 +1,12 @@
 import React from 'react';
-import { Row, SubTitle } from 'react-components';
+import { Row, SubTitle, ObserverSection } from 'react-components';
 import { c } from 'ttag';
 import VPNClientCard from './VPNClientCard';
 
 const ProtonVPNClientsSection = () => {
     return (
-        <>
-            <SubTitle id="protonvpn-clients">{c('Title').t`ProtonVPN Clients`}</SubTitle>
+        <ObserverSection id="protonvpn-clients">
+            <SubTitle>{c('Title').t`ProtonVPN Clients`}</SubTitle>
             <Row className="flex-autogrid">
                 <VPNClientCard
                     title="Android"
@@ -22,7 +22,7 @@ const ProtonVPNClientsSection = () => {
                 <VPNClientCard title="MacOS" icon="apple" link="https://protonvpn.com/download/" />
                 <VPNClientCard title="Linux" icon="linux" link="https://protonvpn.com/support/linux-vpn-setup/" />
             </Row>
-        </>
+        </ObserverSection>
     );
 };
 
