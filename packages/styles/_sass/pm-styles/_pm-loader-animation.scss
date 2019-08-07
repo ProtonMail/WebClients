@@ -1,0 +1,95 @@
+$loader-size-big: 200px !default;
+$stroke-width-big: 4 !default;
+
+.loadingAnimation {  
+  animation: protonRotate 3s linear infinite;
+}
+
+
+@keyframes protonRotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.loadingAnimation-circle {
+  fill: transparent;
+  stroke: $pm-global-grey;
+  stroke-width: $stroke-width-big;
+  transform-origin: 50%;
+}
+
+.loadingAnimation-circle--pm-blue {
+  stroke: $pm-blue;
+}
+
+.loadingAnimation-orbit1 {
+  animation: protonOrbit1 3s linear infinite;
+}
+.loadingAnimation-orbit2 {
+  animation: protonOrbit2 3s linear infinite;
+}
+
+
+// Generates orbit animation function
+// @author Nicolas Hoffmann
+// @param {String} $name - animation name
+// @param {String} $stroke-width - Default stroke-width of your circle
+// @param {Float} $stroke-width-ratioplus - ratio to increase $stroke-width value (mitigates disparition effect during rotation)
+// @param {String} $type-rotate
+@mixin orbit( $name, $stroke-width, $stroke-width-ratioplus, $type-rotate ){
+  
+  @keyframes #{$name} {
+    0% {
+      transform: unquote("#{$type-rotate}(0)");
+      stroke-width: $stroke-width;
+    }
+  
+    25% {
+      stroke-width: $stroke-width*$stroke-width-ratioplus;
+    }
+  
+    50% {
+      stroke-width: $stroke-width;
+    }
+  
+    75% {
+      stroke-width: $stroke-width*$stroke-width-ratioplus;
+    }
+  
+    100% {
+      transform: unquote("#{$type-rotate}(360deg)");
+      stroke-width: $stroke-width;
+    }
+  }
+
+}
+
+@include orbit('protonOrbit1', $stroke-width-big, 2.5, 'rotateX');
+@include orbit('protonOrbit2', $stroke-width-big, 2.5, 'rotateY');
+
+
+
+/* smaller version */
+$loader-size-smaller: 20px !default;
+$stroke-width-smaller: 1 !default;
+
+.loadingAnimation-circle--smaller {
+  stroke-width: $stroke-width-smaller;
+}
+
+.loadingAnimation-orbit1--smaller {
+  animation: protonOrbit1-smaller 3s linear infinite;
+}
+.loadingAnimation-orbit2--smaller {
+  animation: protonOrbit2-smaller 3s linear infinite;
+}
+
+@include orbit('protonOrbit1-smaller', $stroke-width-smaller, 2, 'rotateX');
+@include orbit('protonOrbit2-smaller', $stroke-width-smaller, 2, 'rotateY');
+

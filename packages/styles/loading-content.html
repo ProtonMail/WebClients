@@ -3,10 +3,38 @@ layout: default
 lang: en
 pageId: loading-content
 title: Loading content (WIP)
-description: Using aria-busy="true" to show some loading content.
+description: Using aria-busy to show some loading content.
 keywords: loading, content, aria-busy, examples
 section: fe-guidelines
 ---
+
+<h2>SVG-inlined versions:</h2>
+
+<svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation" viewBox="0 0 200 200" width="200" height="200" >
+  <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit1" />
+  <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit2" />
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation" viewBox="0 0 200 200" width="80" height="80" >
+  <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit1" />
+  <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit2" />
+</svg>
+
+<p>Smaller version adapted (with smaller <code>stroke-width</code>):</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation loadingAnimation--smaller" viewBox="0 0 20 20" width="20" height="20">
+  <circle cx="10" cy="10" r="8" class="loadingAnimation-circle loadingAnimation-circle--smaller loadingAnimation-orbit1--smaller" />
+  <circle cx="10" cy="10" r="8" class="loadingAnimation-circle loadingAnimation-circle--smaller loadingAnimation-orbit2--smaller" />
+</svg>
+
+<h2>Standalone images</h2>
+
+<p>Both versions may also exist in standalone images <code>/assets/img/shared/loading-atom.svg</code>, and <code>/assets/img/shared/loading-atom-smaller.svg</code></p>
+
+<img src="/assets/img/shared/loading-atom.svg" alt="">
+<img src="/assets/img/shared/loading-atom-smaller.svg" alt="">
+
+<h2>Loading states</h2>
 
 <p>Basically, the idea is to rely on attribute <strong><code>aria-busy="true"</code></strong>.</p>
 
@@ -67,7 +95,10 @@ section: fe-guidelines
     <div class="w49 pt0-5">
         <div class="aligncenter">
 
-            <img src="/assets/img/pm-images/contact-export-loader.gif" alt="">
+          <svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation" viewBox="0 0 200 200" width="55" height="55" >
+            <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit1 loadingAnimation-circle--pm-blue" />
+            <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit2 loadingAnimation-circle--pm-blue" />
+          </svg>
 
             <progress class="progress-contact w100" max="100" value="0" aria-describedby="description_progress"></progress>
         

@@ -1,12 +1,12 @@
 [aria-busy="true"] {
-    background-image: url(#{$path-images}loading.gif);
+    background-image: url(#{$path-images}loading-atom-smaller.svg);
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
 
 button[aria-busy="true"] {
     background-position: 100% 50%;
-    background-size: 20px 20px;
+    background-size: 15px 15px;
 }
 
 tr[aria-busy="true"] {
@@ -23,30 +23,6 @@ td[aria-busy="true"] {
     right: 0;
     left: 0;
     bottom: 0;
-    background: $white url(#{$path-images}loading.gif) 50% 50% no-repeat;
-  }
-}
-
-.progressive[aria-busy="true"] {
-  position: relative;
-  background-image: none;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-image: none;
-    animation: backgroundLoading 1s linear infinite alternate;
-  }
-}
-
-@keyframes backgroundLoading {
-  0% {
-    background-color: $white;
-  }
-  100% {
-    background-color: #eee;
+    background: $white url(#{$path-images}loading-atom-smaller.svg) 50% 50% no-repeat;
   }
 }
