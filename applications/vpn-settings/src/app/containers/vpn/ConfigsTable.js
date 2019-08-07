@@ -8,7 +8,8 @@ import {
     Tooltip,
     TableCell,
     useApiWithoutResult,
-    useSortedList
+    useSortedList,
+    Icon
 } from 'react-components';
 import { c } from 'ttag';
 import LoadIndicator from './LoadIndicator';
@@ -21,6 +22,14 @@ const PlusBadge = () => (
     <Tooltip title="Plus">
         <div className="aligncenter color-white rounded bg-plus" style={{ width: 22, height: 22 }}>
             P
+        </div>
+    </Tooltip>
+);
+
+const ServerDown = () => (
+    <Tooltip title={c('Info').t`Server is currently down`}>
+        <div className="flex inline-flex-vcenter">
+            <Icon fill="warning" size={20} name="attention" />
         </div>
     </Tooltip>
 );
@@ -63,6 +72,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, isGroupedByCo
                             isGroupedByCountry ? server.Name : <Country key="country" server={server} />,
                             <div className="inline-flex-vcenter" key="status">
                                 <span className="mr1-5">{server.Tier === 2 && <PlusBadge />}</span>
+                                {!server.Status && <ServerDown />}
                                 <LoadIndicator server={server} />
                             </div>,
                             <SmallButton key="download" onClick={handleClickDownload(server)}>{c('Action')

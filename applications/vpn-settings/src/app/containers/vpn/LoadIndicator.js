@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Tooltip } from 'react-components';
+import { c } from 'ttag';
 
 const LoadIndicator = ({ server: { Load = 0 } }) => (
-    <>
-        <div className="load-indicator">
-            <div className="load-indicator-overlay" style={{ marginTop: `${-Load * 50}%` }}></div>
+    <Tooltip title={c('Info').t`Current server load`}>
+        <div className="flex inline-flex-vcenter">
+            <div className="load-indicator">
+                <div className="load-indicator-overlay" style={{ marginTop: `${-Load * 50}%` }}></div>
+            </div>
+            <div className="ml0-5">{Load}%</div>
         </div>
-        <div className="ml0-5">{Load}%</div>
-    </>
+    </Tooltip>
 );
 
 LoadIndicator.propTypes = {
