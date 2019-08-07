@@ -4,6 +4,9 @@ import { Alert, Row, Radio, ButtonGroup, Group, useApiResult, SubTitle } from 'r
 import { queryVPNLogicalServerInfo } from 'proton-shared/lib/api/vpn';
 import ConfigsTable from './ConfigsTable';
 import { isSecureCoreEnabled } from './utils';
+import { groupWith, minBy } from 'proton-shared/lib/helpers/array';
+import { getCountryByAbbr } from 'react-components/helpers/countries';
+import ServerConfigs from './ServerConfigs';
 
 const PLATFORM = {
     MACOS: 'macOS',
@@ -34,11 +37,37 @@ const OpenVPNConfigurationSection = () => {
     const [selectedConfig, selectConfig] = useState(CATEGORY.SECURE_CORE);
     const { loading, result = {} } = useApiResult(queryVPNLogicalServerInfo, []);
 
+    // const downloadAllConfigs = ({ category }) => {
+    //     const Tier = userAppModel.getTier();
+    //     const link = Vpn.all({
+    //         Category: category,
+    //         Platform: CACHE.platform,
+    //         Protocol: CACHE.protocol,
+    //         APIVersion: CONFIG.api_version,
+    //         Tier
+    //     });
+    //     console.log(link);
+    //     window.open(link, '_blank');
+    // }
+
     const handleSelectConfig = (option) => () => selectConfig(option);
 
-    const servers = result.LogicalServers || [];
-    const secureCoreServers = servers.filter(({ Features }) => isSecureCoreEnabled(Features));
-    const countryServers = servers.filter(({ Tier }) => Tier === 1);
+    const allServers = (result.LogicalServers || []).map((server) => {
+        // Server returns UK instead of GB
+        const ExitCountry = server.ExitCountry === 'UK' ? 'GB' : server.ExitCountry;
+        const EntryCountry = server.EntryCountry === 'UK' ? 'GB' : server.EntryCountry;
+        return {
+            ...server,
+            Country: getCountryByAbbr(ExitCountry),
+            ExitCountry,
+            EntryCountry
+        };
+    });
+    const secureCoreServers = allServers.filter(({ Features }) => isSecureCoreEnabled(Features));
+    const countryServers = groupWith(
+        (a, b) => a.ExitCountry === b.ExitCountry,
+        allServers.filter(({ Tier }) => Tier === 1)
+    ).map((groups) => minBy(({ Load }) => Number(Load), groups));
 
     const handleChangePlatform = (platform) => () => setPlatform(platform);
     const handleChangeProtocol = (protocol) => () => setProtocol(protocol);
@@ -144,7 +173,9 @@ const OpenVPNConfigurationSection = () => {
             {selectedConfig === CATEGORY.COUNTRY && (
                 <ConfigsTable platform={platform} protocol={protocol} loading={loading} servers={countryServers} />
             )}
-            {selectedConfig === CATEGORY.SERVER && 'TODO SERVER'}
+            {selectedConfig === CATEGORY.SERVER && (
+                <ServerConfigs platform={platform} protocol={protocol} loading={loading} servers={allServers} />
+            )}
         </>
     );
 };

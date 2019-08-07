@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LoadIndicator = ({ load = 0 }) => (
+const LoadIndicator = ({ server: { Load = 0 } }) => (
     <>
         <div className="load-indicator">
-            <div className="load-indicator-overlay" style={{ marginTop: `${-load * 50}%` }}></div>
+            <div className="load-indicator-overlay" style={{ marginTop: `${-Load * 50}%` }}></div>
         </div>
-        <div className="ml0-5">{load}%</div>
+        <div className="ml0-5">{Load}%</div>
     </>
 );
 
 LoadIndicator.propTypes = {
-    load: PropTypes.number
+    server: PropTypes.shape({
+        Load: PropTypes.number
+    })
 };
 
 export default LoadIndicator;

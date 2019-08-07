@@ -6,26 +6,25 @@ const flags = require.context('design-system/assets/img/shared/flags/4x3', true,
 
 const getFlagSvg = (abbreviation) => flags(`./${abbreviation.toLowerCase()}.svg`);
 
-const Country = ({ entry, exit }) => {
-    // Backend returns UK instead of GB
-    const abbrExit = exit === 'UK' ? 'GB' : exit;
-    const abbrEntry = entry === 'UK' ? 'GB' : entry;
-    const isRouted = abbrEntry && abbrEntry !== abbrExit;
+const Country = ({ server: { EntryCountry, ExitCountry } }) => {
+    const isRouted = EntryCountry && EntryCountry !== ExitCountry;
 
     return (
         <div className="inline-flex-vcenter">
-            <img width={20} className="mr0-5" src={getFlagSvg(abbrExit)} alt={`flag-${abbrExit}`} />
-            {getCountryByAbbr(abbrExit)}
+            <img width={20} className="mr0-5" src={getFlagSvg(ExitCountry)} alt={`flag-${ExitCountry}`} />
+            {getCountryByAbbr(ExitCountry)}
             {isRouted && (
-                <span className="ml0-25 opacity-50">{c('CountryInfo').t`(via ${getCountryByAbbr(abbrEntry)})`}</span>
+                <span className="ml0-25 opacity-50">{c('CountryInfo').t`(via ${getCountryByAbbr(EntryCountry)})`}</span>
             )}
         </div>
     );
 };
 
 Country.propTypes = {
-    entry: PropTypes.string,
-    exit: PropTypes.string.isRequired
+    server: PropTypes.shape({
+        EntryCountry: PropTypes.string,
+        ExitCountry: PropTypes.string
+    })
 };
 
 export default Country;

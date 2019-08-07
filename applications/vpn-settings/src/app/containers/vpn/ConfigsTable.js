@@ -16,7 +16,6 @@ import Country from './Country';
 import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import { getCountryByAbbr } from 'react-components/helpers/countries';
 
 const PlusBadge = () => (
     <Tooltip title="Plus">
@@ -28,7 +27,7 @@ const PlusBadge = () => (
 
 // TODO: show warning indicator and other missing stuff
 // TODO: user TIER free=0 otherwise vpn tier
-const ConfigsTable = ({ loading, servers = [], platform, protocol }) => {
+const ConfigsTable = ({ loading, servers = [], platform, protocol, isGroupedByCountry }) => {
     const { request } = useApiWithoutResult(getVPNServerConfig);
 
     const handleClickDownload = (server) => async () => {
@@ -43,50 +42,54 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol }) => {
         downloadFile(blob, `${Domain}.${protocol}.ovpn`);
     };
 
-    const serversWithCountry = servers.map((server) => ({ ...server, Country: getCountryByAbbr(server.ExitCountry) }));
-    const { sortedList } = useSortedList(serversWithCountry, { key: 'Country', direction: SORT_DIRECTION.ASC });
+    const { sortedList } = useSortedList(servers, { key: 'Country', direction: SORT_DIRECTION.ASC });
 
     return (
         <Table>
             <thead>
                 <tr>
-                    <TableCell className="w50" type="header">{c('TableHeader').t`Country`}</TableCell>
+                    <TableCell className="w50" type="header">
+                        {isGroupedByCountry ? c('TableHeader').t`Name` : c('TableHeader').t`Country`}
+                    </TableCell>
                     <TableCell className="w30" type="header">{c('TableHeader').t`Status`}</TableCell>
                     <TableCell className="w20" type="header">{c('TableHeader').t`Action`}</TableCell>
                 </tr>
             </thead>
             <TableBody loading={loading} colSpan={3}>
-                {sortedList.map((server) => {
-                    const { ID, EntryCountry, ExitCountry, Load, Tier } = server;
-                    return (
-                        <TableRow
-                            key={ID}
-                            cells={[
-                                <Country key="country" entry={EntryCountry} exit={ExitCountry} />,
-                                <div className="inline-flex-vcenter" key="status">
-                                    <span className="mr1-5">{Tier === 2 && <PlusBadge />}</span>
-                                    <LoadIndicator load={Load} />
-                                </div>,
-                                <SmallButton key="download" onClick={handleClickDownload(server)}>{c('Action')
-                                    .t`Download`}</SmallButton>
-                            ]}
-                        />
-                    );
-                })}
+                {sortedList.map((server) => (
+                    <TableRow
+                        key={server.ID}
+                        cells={[
+                            isGroupedByCountry ? server.Name : <Country key="country" server={server} />,
+                            <div className="inline-flex-vcenter" key="status">
+                                <span className="mr1-5">{server.Tier === 2 && <PlusBadge />}</span>
+                                <LoadIndicator server={server} />
+                            </div>,
+                            <SmallButton key="download" onClick={handleClickDownload(server)}>{c('Action')
+                                .t`Download`}</SmallButton>
+                        ]}
+                    />
+                ))}
             </TableBody>
         </Table>
     );
 };
 
 ConfigsTable.propTypes = {
+    isGroupedByCountry: PropTypes.bool,
     platform: PropTypes.string,
     protocol: PropTypes.string,
     loading: PropTypes.bool,
     servers: PropTypes.arrayOf(
         PropTypes.shape({
+            ID: PropTypes.string,
+            Country: PropTypes.string,
+            EntryCountry: PropTypes.string,
             ExitCountry: PropTypes.string,
+            Domain: PropTypes.string,
             Features: PropTypes.number,
-            Load: PropTypes.number
+            Load: PropTypes.number,
+            Tier: PropTypes.number
         })
     )
 };
