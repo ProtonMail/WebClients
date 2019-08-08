@@ -29,12 +29,18 @@ $scrollbar-thumb-height: 40px !default;
 /* Idea : make scroll appear only on hover */
 @media (hover: hover) and (pointer: fine) {
 
-  .customScrollBar-container::-webkit-scrollbar {
-    width: 0;
+  .customScrollBar-container::-webkit-scrollbar-track:vertical,
+  .customScrollBar-container::-webkit-scrollbar-track-piece,
+  .customScrollBar-container::-webkit-scrollbar-thumb:vertical  {
+	  background-color: transparent;
   }
 
-  .customScrollBar-container:hover::-webkit-scrollbar {
-    width: $scrollbar-width;
+  .customScrollBar-container:hover::-webkit-scrollbar-track:vertical,
+  .customScrollBar-container:hover::-webkit-scrollbar-track-piece {
+	  background-color: $black;
   }
+	.customScrollBar-container:hover::-webkit-scrollbar-thumb:vertical {
+	  background-color: $scrollbar-thumb-color;
+	}
 
 }
