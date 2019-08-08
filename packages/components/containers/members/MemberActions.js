@@ -74,7 +74,7 @@ const MemberActions = ({ member, addresses = [], organization }) => {
     const canDelete = !member.Self;
     const canEdit = organization.HasKeys;
     const canRevoke = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_OWNER;
-    const canRevokeSessions = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_OWNER;
+    const canRevokeSessions = !member.Self;
 
     const canLogin =
         !member.Self && member.Private === MEMBER_PRIVATE.READABLE && member.Keys.length && addresses.length;
