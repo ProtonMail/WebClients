@@ -174,6 +174,11 @@ const OpenVPNConfigurationSection = () => {
                             {c('Info')
                                 .t`Secure Core configurations add additional protection against VPN endpoint compromise.`}
                         </Alert>
+                        {isUpgradeRequiredForSecureCore() && (
+                            <Alert learnMore="https://account.protonvpn.com/dashboard">
+                                {c('Info').t`ProtonVPN Plus or Visionary required for Secure Core feature.`}
+                            </Alert>
+                        )}
                         <ConfigsTable
                             isUpgradeRequired={isUpgradeRequiredForSecureCore}
                             platform={platform}
@@ -190,6 +195,10 @@ const OpenVPNConfigurationSection = () => {
                             {c('Info')
                                 .t`Country Connect configuration files ensure a faster connection to the selected country on average.`}
                         </Alert>
+                        {isUpgradeRequiredForCountries() && (
+                            <Alert learnMore="https://account.protonvpn.com/dashboard">{c('Info')
+                                .t`ProtonVPN Basic, Plus or Visionary required for Country level connection.`}</Alert>
+                        )}
                         <ConfigsTable
                             isUpgradeRequired={isUpgradeRequiredForCountries}
                             platform={platform}
