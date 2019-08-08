@@ -465,5 +465,7 @@ export const PAYMENT_TOKEN_STATUS = {
 
 export const PAYMENT_METHOD_TYPES = {
     CARD: 'card',
-    PAYPAL: 'paypal'
+    PAYPAL: 'paypal',
+    BITCOIN: 'bitcoin',
+    CASH: 'cash'
 };
