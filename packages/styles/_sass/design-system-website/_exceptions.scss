@@ -1,6 +1,6 @@
 /*
  * Only present to manage exceptions for Design System website ONLY
- * DO NOT USE IT 
+ * DO NOT USE IT ANYWHERE ELSE !!!!!!!
  */
 
 .navigation__link {
@@ -9,4 +9,8 @@
 
 .logo .plan {
   fill: $plan-logo-color;
+}
+
+.customScrollBar-container {
+  max-height: 150px;
 }

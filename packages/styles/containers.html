@@ -9,6 +9,27 @@ section: design
 subsection: containers
 ---
 
+<div id="custom-scroll" class="container-section-sticky container-section-sticky--fullwidth">
+<h2>Custom scrollbars</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 pt0-5">
+    <div class="bordered-container scroll-if-needed customScrollBar-container p1">
+      A loong content lorem dolor ipsum.<br>A loong content lorem dolor ipsum.<br>A loong content lorem dolor ipsum.<br>A loong content lorem dolor ipsum.<br>A loong content lorem dolor ipsum.<br>A loong content lorem dolor ipsum.<br>A loong content lorem dolor ipsum.<br>A loong content lorem dolor ipsum.<br>A loong content lorem dolor ipsum.<br>A loong content lorem dolor ipsum.<br>A loong content lorem dolor ipsum.
+    </div>
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div class="customScrollBar-container"&gt;
+  …
+&lt;/div&gt;
+    </code></pre>
+  </div>
+</div>
+
+<p>The custom scrollbar will work on Chrome/Webkit browsers only. Other browsers will use their native scrollbars. For browsers/devices that have “hover” capabilities and precise pointers (mouse), custom scrollbar will appear only when hovering thanks to <code>@media (hover: hover) and (pointer: fine)</code> tweaks. </p>
+
+</div>
+
 <div id="wizard" class="container-section-sticky container-section-sticky--fullwidth">
 <h2>Wizard</h2>
 
