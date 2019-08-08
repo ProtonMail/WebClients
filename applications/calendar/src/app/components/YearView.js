@@ -29,7 +29,7 @@ const YearView = ({ currentDate, onSelectDate }) => {
                 const key = `${index}`;
                 return (
                     <div className="w25 p1" key={key}>
-                        <MiniCalendar date={month.date} onSelectDate={onSelectDate} onSelectDateRange={noop} />
+                        <MiniCalendar date={month.date} onSelectDate={onSelectDate} />
                     </div>
                 );
             })}

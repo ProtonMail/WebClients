@@ -2,7 +2,7 @@ import { isAfter, isSameDay, isSameMonth, isWithinRange } from 'date-fns';
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-const getDayStyle = ({ isActiveMonth, selectedDate, now, dayDate, rangeStart, rangeEnd }) => {
+const getDayStyle = ({ isActiveMonth, selectedDate, now, dayDate, range }) => {
     const color = (() => {
         if (isSameDay(now, dayDate)) {
             return 'red';
@@ -12,7 +12,11 @@ const getDayStyle = ({ isActiveMonth, selectedDate, now, dayDate, rangeStart, ra
         }
     })();
 
-    const range = (() => {
+    const rangeStyle = (() => {
+        if (!range) {
+            return {};
+        }
+        const [rangeStart, rangeEnd] = range;
         if (!rangeStart || !rangeEnd) {
             return {};
         }
@@ -34,7 +38,7 @@ const getDayStyle = ({ isActiveMonth, selectedDate, now, dayDate, rangeStart, ra
         cursor: 'pointer',
         opacity: !isActiveMonth ? '0.3' : '1',
         color,
-        ...range
+        ...rangeStyle
     };
 };
 
@@ -42,6 +46,7 @@ const MonthDays = ({
     days,
     onSelectDate,
     onSelectDateRange,
+    dateRange,
     now,
     selectedDate,
     activeDate,
@@ -49,8 +54,7 @@ const MonthDays = ({
     numberOfWeeks,
     gridSize
 }) => {
-    const [rangeStart, setRangeStart] = useState();
-    const [rangeEnd, setRangeEnd] = useState();
+    const [temporaryDateRange, setTemporaryDateRange] = useState();
     const rangeStartRef = useRef();
     const rangeEndRef = useRef();
 
@@ -71,26 +75,29 @@ const MonthDays = ({
             return;
         }
 
-        if (rangeStart) {
+        if (rangeStartRef.current) {
             return;
         }
 
         const targetDate = getDate(target);
-        setRangeStart(targetDate);
+
+        setTemporaryDateRange([targetDate, undefined]);
         rangeStartRef.current = targetDate;
 
         const handleMouseUp = () => {
-            document.removeEventListener('mouseup', handleMouseUp);
-
-            setRangeStart();
-            setRangeEnd();
-
             if (rangeEndRef.current && rangeStartRef.current) {
-                if (isAfter(rangeEndRef.current, rangeStartRef.current)) {
-                    return onSelectDateRange(rangeStartRef.current, rangeEndRef.current);
-                }
-                onSelectDateRange(rangeEndRef.current, rangeStartRef.current);
+                onSelectDateRange(
+                    isAfter(rangeEndRef.current, rangeStartRef.current)
+                        ? [rangeStartRef.current, rangeEndRef.current]
+                        : [rangeEndRef.current, rangeStartRef.current]
+                );
             }
+
+            setTemporaryDateRange();
+            rangeStartRef.current = undefined;
+            rangeEndRef.current = undefined;
+
+            document.removeEventListener('mouseup', handleMouseUp);
         };
 
         document.addEventListener('mouseup', handleMouseUp);
@@ -100,21 +107,19 @@ const MonthDays = ({
         if (typeof target.dataset.i === 'undefined') {
             return;
         }
-        if (!rangeStart) {
+
+        if (!rangeStartRef.current) {
             return;
         }
 
         const overDate = getDate(target);
         rangeEndRef.current = overDate;
 
-        if (isAfter(overDate, rangeStartRef.current)) {
-            setRangeStart(rangeStartRef.current);
-            setRangeEnd(overDate);
-            return;
-        }
-
-        setRangeStart(overDate);
-        setRangeEnd(rangeStartRef.current);
+        setTemporaryDateRange(
+            isAfter(overDate, rangeStartRef.current)
+                ? [rangeStartRef.current, overDate]
+                : [overDate, rangeStartRef.current]
+        );
     };
 
     const handleClick = ({ target }) => {
@@ -125,13 +130,24 @@ const MonthDays = ({
     };
 
     return (
-        <div style={style} onClick={handleClick} onMouseDown={handleMouseDown} onMouseOver={handleMouseOver}>
+        <div
+            style={style}
+            onClick={handleClick}
+            onMouseDown={onSelectDateRange ? handleMouseDown : null}
+            onMouseOver={onSelectDateRange ? handleMouseOver : null}
+        >
             {days.map((dayDate, i) => {
                 const isActiveMonth = isSameMonth(dayDate, activeDate);
                 return (
                     <span
                         key={dayDate.toString()}
-                        style={getDayStyle({ isActiveMonth, selectedDate, now, dayDate, rangeStart, rangeEnd })}
+                        style={getDayStyle({
+                            isActiveMonth,
+                            selectedDate,
+                            now,
+                            dayDate,
+                            range: temporaryDateRange || dateRange || undefined
+                        })}
                         data-i={i}
                     >
                         {dayDate.getDate()}
@@ -144,8 +160,9 @@ const MonthDays = ({
 
 MonthDays.propTypes = {
     days: PropTypes.array.isRequired,
+    dateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     onSelectDate: PropTypes.func.isRequired,
-    onSelectDateRange: PropTypes.func.isRequired,
+    onSelectDateRange: PropTypes.func,
     numberOfDays: PropTypes.number.isRequired,
     numberOfWeeks: PropTypes.number.isRequired,
     gridSize: PropTypes.string,

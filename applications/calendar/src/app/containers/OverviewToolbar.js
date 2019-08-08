@@ -15,7 +15,7 @@ const FORMATS = {
     [AGENDA]: 'MMMM GGGG'
 };
 
-const OverviewToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentDate }) => {
+const OverviewToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentDate, dateRange }) => {
     const views = [
         { text: c('Calendar view').t`Day`, value: DAY },
         { text: c('Calendar view').t`Week`, value: WEEK },
@@ -55,6 +55,9 @@ const OverviewToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentD
                     </Button>
                 </div>
                 <div>
+                    {dateRange[0].toISOString()} - {dateRange[1].toISOString()}
+                </div>
+                <div>
                     <Select
                         className="toolbar-select"
                         title={c('Action').t`Select calendar view`}
@@ -70,6 +73,7 @@ const OverviewToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentD
 
 OverviewToolbar.propTypes = {
     currentDate: PropTypes.instanceOf(Date),
+    dateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     onToday: PropTypes.func,
     onPrev: PropTypes.func,
     onNext: PropTypes.func,

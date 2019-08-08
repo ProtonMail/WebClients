@@ -1,8 +1,7 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react';
-import { useModals, useCalendars, useAddresses } from 'react-components';
+import React, { useMemo, useRef, useState, useEffect } from 'react';
+import { useModals, useCalendars, useAddresses, useAddressesKeys, useUser, Loader } from 'react-components';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
-import { nextYear, previousYear } from 'proton-shared/lib/helpers/date';
 
 // If you use the default popups, use this.
 import 'tui-date-picker/dist/tui-date-picker.css';
@@ -16,27 +15,47 @@ import YearView from '../components/YearView';
 import AgendaView from '../components/AgendaView';
 import WelcomeModal from '../components/modals/WelcomeModal';
 import { VIEWS } from '../constants';
+import useCalendarsBootstrap from './useCalendarsBootstrap';
+import useCalendarsKeys from './useCalendarsKeys';
+import useCalendarsEvents from './useCalendarsEvents';
+import MiniCalendar from '../components/miniCalendar/MiniCalendar';
+import { getDateDiff, getDateRange } from './helper';
+import { fromICAL } from '../helpers/vcard';
 
-const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
+const { DAY, WEEK, MONTH, YEAR, CUSTOM, AGENDA } = VIEWS;
 const DEFAULT_VIEW = WEEK;
-const VIEWS_HANDLED_BY_CALENDAR = [DAY, WEEK, MONTH];
+const VIEWS_HANDLED_BY_CALENDAR = [DAY, WEEK, MONTH, CUSTOM];
 
 const OverviewContainer = () => {
-    const [addresses] = useAddresses();
+    const [user] = useUser();
+    const [addresses, loadingAddresses] = useAddresses();
+    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(user, addresses);
+    const [calendars, loadingCalendars] = useCalendars();
+    const visibleCalendars = useMemo(() => {
+        return calendars ? calendars.filter(({ Display }) => !!Display) : undefined;
+    }, [calendars]);
+    const [calendarsBootstrap, loadingBootstrap] = useCalendarsBootstrap(visibleCalendars);
+    const [calendarsKeys, loadingCalendarsKeys] = useCalendarsKeys(
+        visibleCalendars,
+        calendarsBootstrap,
+        addresses,
+        addressesKeysMap
+    );
+    const weekStartsOn = 1; // Will come from calendar settings
+    const [view, setView] = useState(DEFAULT_VIEW);
+    const [currentDate, setCurrentDate] = useState(() => new Date());
+    const [dateRange, setDateRange] = useState(() => getDateRange(currentDate, view, weekStartsOn));
+    const [calendarsEvents, loadingEvents] = useCalendarsEvents(calendars, dateRange);
+
     const welcomeRef = useRef();
     const calendarRef = useRef();
-    const [view, setView] = useState(DEFAULT_VIEW);
     const { createModal } = useModals();
-    const [currentDate, setDate] = useState(new Date());
-    const [calendars, loadingCalendars] = useCalendars();
-
-    const viewHandledByCalendarLibrary = VIEWS_HANDLED_BY_CALENDAR.includes(view);
 
     const tuiCalendars = useMemo(() => {
-        if (!Array.isArray(calendars)) {
+        if (!Array.isArray(visibleCalendars)) {
             return [];
         }
-        return calendars.map(({ ID, Name, Color }) => {
+        return visibleCalendars.map(({ ID, Name, Color }) => {
             return {
                 id: ID,
                 name: Name,
@@ -44,9 +63,17 @@ const OverviewContainer = () => {
                 borderColor: Color
             };
         });
-    }, [calendars]);
-
-    const schedules = [];
+    }, [visibleCalendars]);
+    const tuiMonth = useMemo(() => {
+        return {
+            startDayOfWeek: weekStartsOn
+        };
+    }, [weekStartsOn]);
+    const tuiWeek = useMemo(() => {
+        return {
+            startDayOfWeek: weekStartsOn
+        };
+    }, [weekStartsOn]);
 
     useEffect(() => {
         if (
@@ -62,34 +89,52 @@ const OverviewContainer = () => {
     }, [calendars, addresses]);
 
     const handleSelectDate = (date) => {
-        setDate(date);
+        setCurrentDate(date);
+
+        if (view === CUSTOM) {
+            setDateRange(getDateRange(date, WEEK, weekStartsOn));
+            setView(WEEK);
+            return;
+        }
+
+        setDateRange(getDateRange(date, view, weekStartsOn));
     };
-    const handleSelectDateRange = (rangeStart, rangeEnd) => {
-        console.log('range selected', rangeStart, rangeEnd);
+
+    const handleSelectDateRange = ([rangeStart, rangeEnd]) => {
+        setDateRange([rangeStart, rangeEnd]);
+        setView(CUSTOM);
     };
-    const getCalendarDate = () =>
-        calendarRef.current
-            .getInstance()
-            .getDate()
-            .toDate();
 
     const handlePrev = () => {
-        viewHandledByCalendarLibrary && calendarRef.current.getInstance().prev();
-        setDate(viewHandledByCalendarLibrary ? getCalendarDate() : previousYear(currentDate));
+        const prevDate = getDateDiff(currentDate, view, -1);
+        setCurrentDate(prevDate);
+        setDateRange(getDateRange(prevDate, view, weekStartsOn));
     };
 
     const handleNext = () => {
-        viewHandledByCalendarLibrary && calendarRef.current.getInstance().next();
-        setDate(viewHandledByCalendarLibrary ? getCalendarDate() : nextYear(currentDate));
+        const nextDate = getDateDiff(currentDate, view, 1);
+        setCurrentDate(nextDate);
+        setDateRange(getDateRange(nextDate, view, weekStartsOn));
     };
 
-    const handleToday = () => {
-        viewHandledByCalendarLibrary && calendarRef.current.getInstance().today();
-        setDate(new Date());
+    const handleSelectToday = () => {
+        handleSelectDate(new Date());
+    };
+
+    const handleSelectDateYear = (date) => {
+        setCurrentDate(date);
+        setDateRange(getDateRange(date, WEEK, weekStartsOn));
+        setView(WEEK);
+    };
+
+    const handleSelectDateAgenda = (date) => {
+        setCurrentDate(date);
+        setDateRange(getDateRange(date, WEEK, weekStartsOn));
+        setView(WEEK);
     };
 
     const handleChangeView = (newView) => {
-        VIEWS_HANDLED_BY_CALENDAR.includes(newView) && calendarRef.current.getInstance().changeView(newView, true);
+        setDateRange(getDateRange(currentDate, newView, weekStartsOn));
         setView(newView);
     };
 
@@ -114,31 +159,86 @@ const OverviewContainer = () => {
     };
 
     useEffect(() => {
-        calendarRef.current.getInstance().setDate(currentDate);
-        // TODO call the API (date ranges)
+        if (calendarRef.current) {
+            calendarRef.current.getInstance().setDate(currentDate);
+        }
     }, [currentDate]);
+    useEffect(() => {
+        if (calendarRef.current && VIEWS_HANDLED_BY_CALENDAR.includes(view)) {
+            calendarRef.current.getInstance().changeView(view, true);
+        }
+    }, [view, calendarRef.current]);
+
+    const isLoading =
+        loadingAddresses || loadingAddressesKeys || loadingBootstrap || loadingCalendarsKeys || loadingEvents;
+
+    const tuiSchedules = useMemo(() => {
+        if (!Array.isArray(visibleCalendars) || !calendarsEvents) {
+            return [];
+        }
+        return visibleCalendars
+            .map(({ ID: CalendarID, Color }) => {
+                const calendarEvents = calendarsEvents[CalendarID] || [];
+                return calendarEvents.map(({ ID, Author, SharedEvents }) => {
+                    const { Data = '' } = SharedEvents.find(({ Type }) => Type === 2);
+                    const properties = fromICAL(Data);
+
+                    const start = new Date(properties.find(({ field }) => field === 'dtstart').value);
+                    const end = new Date(properties.find(({ field }) => field === 'dtend').value);
+
+                    return {
+                        id: ID,
+                        calendarId: CalendarID,
+                        bgColor: Color,
+                        title: `${Author} Encrypted`,
+                        category: 'time',
+                        start: start,
+                        end: end
+                    };
+                });
+            })
+            .flat();
+    }, [calendarsEvents]);
 
     return (
         <>
             <OverviewSidebar
-                onSelectDate={handleSelectDate}
-                onSelectDateRange={handleSelectDateRange}
-                currentDate={currentDate}
+                miniCalendar={
+                    <MiniCalendar
+                        onSelectDateRange={handleSelectDateRange}
+                        onSelectDate={handleSelectDate}
+                        date={currentDate}
+                        dateRange={view === CUSTOM ? dateRange : undefined}
+                        weekStartsOn={weekStartsOn}
+                    />
+                }
                 calendars={calendars}
                 loadingCalendars={loadingCalendars}
             />
+            <div
+                style={{
+                    position: 'fixed',
+                    bottom: '10px',
+                    left: '10px',
+                    background: '#fff',
+                    display: isLoading ? 'block' : 'none'
+                }}
+            >
+                <Loader />
+            </div>
             <div className="main flex-item-fluid main-area">
                 <div className="flex flex-reverse">
                     <Main>
                         <OverviewToolbar
                             view={view}
                             currentDate={currentDate}
+                            dateRange={dateRange}
                             onChangeView={handleChangeView}
                             onNext={handleNext}
                             onPrev={handlePrev}
-                            onToday={handleToday}
+                            onToday={handleSelectToday}
                         />
-                        <div hidden={!VIEWS_HANDLED_BY_CALENDAR.includes(view)}>
+                        {VIEWS_HANDLED_BY_CALENDAR.includes(view) ? (
                             <Calendar
                                 onBeforeCreateSchedule={handleBeforeCreateSchedule}
                                 onBeforeUpdateSchedule={handleBeforeUpdateSchedule}
@@ -150,45 +250,19 @@ const OverviewContainer = () => {
                                 height="800px"
                                 className="flex"
                                 calendars={tuiCalendars}
-                                month={{
-                                    startDayOfWeek: 0
-                                }}
-                                schedules={schedules}
+                                schedules={tuiSchedules}
+                                month={tuiMonth}
+                                week={tuiWeek}
                                 scheduleView
                                 taskView={false}
-                                template={{
-                                    allday(schedule) {
-                                        return `${schedule.title}<i class="fa fa-refresh"></i>`;
-                                    },
-                                    alldayTitle() {
-                                        return 'All Day';
-                                    }
-                                }}
-                                timezones={[
-                                    {
-                                        timezoneOffset: 120,
-                                        displayLabel: 'GMT+02:00',
-                                        tooltip: 'Seoul'
-                                    }
-                                ]}
                                 useDetailPopup
-                                week={{
-                                    showTimezoneCollapseButton: true,
-                                    timezonesCollapsed: true
-                                }}
-                            />
-                        </div>
-                        {view === YEAR ? (
-                            <YearView
-                                currentDate={currentDate}
-                                onSelectDate={(date) => (setDate(date), setView(WEEK))}
                             />
                         ) : null}
+                        {view === YEAR ? (
+                            <YearView currentDate={currentDate} onSelectDate={handleSelectDateYear} />
+                        ) : null}
                         {view === AGENDA ? (
-                            <AgendaView
-                                currentDate={currentDate}
-                                onSelectDate={(date) => (setDate(date), setView(WEEK))}
-                            />
+                            <AgendaView currentDate={currentDate} onSelectDate={handleSelectDateAgenda} />
                         ) : null}
                     </Main>
                 </div>

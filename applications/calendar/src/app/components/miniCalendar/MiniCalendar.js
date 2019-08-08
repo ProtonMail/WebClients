@@ -11,6 +11,7 @@ import WeekNumbers from './WeekNumbers';
 const MiniCalendar = ({
     now = new Date(),
     date: selectedDate,
+    dateRange,
     onSelectDate,
     onSelectDateRange,
     weekStartsOn = 1,
@@ -92,6 +93,7 @@ const MiniCalendar = ({
                         numberOfWeeks={numberOfWeeks}
                         numberOfDays={weekdays.length}
                         days={days}
+                        dateRange={dateRange}
                         onSelectDate={onSelectDate}
                         onSelectDateRange={onSelectDateRange}
                         now={now}
@@ -106,8 +108,9 @@ const MiniCalendar = ({
 
 MiniCalendar.propTypes = {
     date: PropTypes.instanceOf(Date).isRequired,
+    dateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     onSelectDate: PropTypes.func.isRequired,
-    onSelectDateRange: PropTypes.func.isRequired,
+    onSelectDateRange: PropTypes.func,
     weekStartsOn: PropTypes.number,
     numberOfWeeks: PropTypes.number,
     weekdays: PropTypes.array,

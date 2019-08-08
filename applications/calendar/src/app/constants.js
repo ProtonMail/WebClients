@@ -5,5 +5,6 @@ export const VIEWS = {
     WEEK: 'week',
     MONTH: 'month',
     YEAR: 'year',
-    AGENDA: 'agenda'
+    AGENDA: 'agenda',
+    CUSTOM: 'custom'
 };

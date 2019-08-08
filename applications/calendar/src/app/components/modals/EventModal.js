@@ -110,8 +110,6 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
     useEffect(() => {
         if (eventID) {
             decrypt();
-        } else {
-            titleRef.current.focus();
         }
     }, []);
 

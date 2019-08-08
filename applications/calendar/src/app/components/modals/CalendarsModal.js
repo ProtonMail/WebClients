@@ -21,7 +21,7 @@ import {
 import { updateCalendar, removeCalendar } from 'proton-shared/lib/api/calendars';
 import CalendarModal from './CalendarModal';
 
-const CalendarsModal = ({ ...rest }) => {
+const CalendarsModal = (props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createModal } = useModals();
@@ -42,12 +42,12 @@ const CalendarsModal = ({ ...rest }) => {
             hasSubmit={false}
             loading={loading || loadingCalendars}
             close={c('Action').t`Close`}
-            {...rest}
+            {...props}
         >
             <Table>
                 <TableHeader cells={headers} />
                 <TableBody>
-                    {calendars.map((calendar) => {
+                    {(calendars || []).map((calendar) => {
                         const { ID, Name, Display, Color } = calendar;
                         const list = [
                             {

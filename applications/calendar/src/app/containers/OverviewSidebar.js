@@ -9,7 +9,7 @@ import CalendarModal from '../components/modals/CalendarModal';
 import CalendarsModal from '../components/modals/CalendarsModal';
 import MiniCalendar from '../components/miniCalendar/MiniCalendar';
 
-const OverviewSidebar = ({ calendars = [], loadingCalendars, onSelectDate, onSelectDateRange, currentDate }) => {
+const OverviewSidebar = ({ calendars = [], loadingCalendars, miniCalendar }) => {
     const { createModal } = useModals();
     const { call } = useEventManager();
     const api = useApi();
@@ -88,7 +88,7 @@ const OverviewSidebar = ({ calendars = [], loadingCalendars, onSelectDate, onSel
             <div className="pl1 pr1 pb1">
                 <DropdownActions className="pm-button-blue" list={createActions} />
             </div>
-            <MiniCalendar date={currentDate} onSelectDate={onSelectDate} onSelectDateRange={onSelectDateRange} />
+            {miniCalendar}
             <nav className="navigation flex-item-fluid scroll-if-needed mb1">
                 <NavMenu list={list} />
             </nav>
