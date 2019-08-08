@@ -17,6 +17,13 @@ import Country from './Country';
 import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { isP2PEnabled, isTorEnabled } from './utils';
+
+export const CATEGORY = {
+    SECURE_CORE: 'SecureCore',
+    COUNTRY: 'Country',
+    SERVER: 'Server'
+};
 
 const PlusBadge = () => (
     <Tooltip title="Plus">
@@ -34,15 +41,26 @@ const ServerDown = () => (
     </Tooltip>
 );
 
-// TODO: show warning indicator and other missing stuff
-// TODO: user TIER free=0 otherwise vpn tier
-const ConfigsTable = ({ loading, servers = [], platform, protocol, isGroupedByCountry }) => {
+const P2P = () => (
+    <span className="ml0-5">
+        <Tooltip title={c('Info').t`P2P`}>p2p</Tooltip>
+    </span>
+);
+
+const Tor = () => (
+    <span className="ml0-5">
+        <Tooltip title={c('Info').t`Tor`}>tor</Tooltip>
+    </span>
+);
+
+// TODO: Add icons instead of text for p2p and tor when they are ready
+const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isUpgradeRequired }) => {
     const { request } = useApiWithoutResult(getVPNServerConfig);
 
     const handleClickDownload = (server) => async () => {
         const { ID, ExitCountry, Domain } = server;
         const buffer = await request({
-            LogicalID: ID,
+            LogicalID: category === CATEGORY.COUNTRY ? undefined : ID,
             Platform: platform,
             Protocol: protocol,
             Country: ExitCountry
@@ -58,7 +76,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, isGroupedByCo
             <thead>
                 <tr>
                     <TableCell className="w50" type="header">
-                        {isGroupedByCountry ? c('TableHeader').t`Name` : c('TableHeader').t`Country`}
+                        {(category = CATEGORY.SERVER ? c('TableHeader').t`Name` : c('TableHeader').t`Country`)}
                     </TableCell>
                     <TableCell className="w30" type="header">{c('TableHeader').t`Status`}</TableCell>
                     <TableCell className="w20" type="header">{c('TableHeader').t`Action`}</TableCell>
@@ -69,14 +87,22 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, isGroupedByCo
                     <TableRow
                         key={server.ID}
                         cells={[
-                            isGroupedByCountry ? server.Name : <Country key="country" server={server} />,
+                            (category = CATEGORY.SERVER ? server.Name : <Country key="country" server={server} />),
                             <div className="inline-flex-vcenter" key="status">
                                 <span className="mr1-5">{server.Tier === 2 && <PlusBadge />}</span>
                                 {!server.Status && <ServerDown />}
                                 <LoadIndicator server={server} />
+                                {isP2PEnabled(server.Features) && <P2P />}
+                                {isTorEnabled(server.Features) && <Tor />}
                             </div>,
-                            <SmallButton key="download" onClick={handleClickDownload(server)}>{c('Action')
-                                .t`Download`}</SmallButton>
+                            isUpgradeRequired(server) ? (
+                                <Tooltip key="download" title={c('Info').t`Plan upgrade required`}>
+                                    <SmallButton disabled>{c('Action').t`Download`}</SmallButton>
+                                </Tooltip>
+                            ) : (
+                                <SmallButton key="download" onClick={handleClickDownload(server)}>{c('Action')
+                                    .t`Download`}</SmallButton>
+                            )
                         ]}
                     />
                 ))}
@@ -86,7 +112,9 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, isGroupedByCo
 };
 
 ConfigsTable.propTypes = {
+    isUpgradeRequired: PropTypes.func.isRequired,
     isGroupedByCountry: PropTypes.bool,
+    category: PropTypes.oneOf([CATEGORY.SECURE_CORE, CATEGORY.COUNTRY, CATEGORY.SERVER]),
     platform: PropTypes.string,
     protocol: PropTypes.string,
     loading: PropTypes.bool,

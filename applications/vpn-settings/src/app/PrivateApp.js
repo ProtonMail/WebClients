@@ -5,6 +5,7 @@ import { UserModel, MailSettingsModel, UserSettingsModel } from 'proton-shared/l
 
 import PrivateLayout from './components/layout/PrivateLayout';
 import PrivateAppRoutes from './PrivateAppRoutes';
+import UserVPNProvider from './containers/vpn/userVPN/Provider';
 
 const PrivateApp = ({ onLogout }) => {
     return (
@@ -13,9 +14,11 @@ const PrivateApp = ({ onLogout }) => {
             preloadModels={[UserModel, UserSettingsModel]}
             eventModels={[UserModel, MailSettingsModel]}
         >
-            <PrivateLayout>
-                <PrivateAppRoutes />
-            </PrivateLayout>
+            <UserVPNProvider>
+                <PrivateLayout>
+                    <PrivateAppRoutes />
+                </PrivateLayout>
+            </UserVPNProvider>
         </StandardPrivateApp>
     );
 };

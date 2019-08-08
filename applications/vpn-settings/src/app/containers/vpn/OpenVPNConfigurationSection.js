@@ -11,15 +11,17 @@ import {
     useApiWithoutResult,
     Button,
     Block,
-    ObserverSection
+    useUser,
+    Tooltip
 } from 'react-components';
-import { queryVPNLogicalServerInfo, getClientVPNInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
-import ConfigsTable from './ConfigsTable';
+import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
+import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import { isSecureCoreEnabled } from './utils';
 import { groupWith, minBy } from 'proton-shared/lib/helpers/array';
-import { getCountryByAbbr } from 'react-components/helpers/countries';
 import ServerConfigs from './ServerConfigs';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import useUserVPN from './userVPN/useUserVPN';
+import { getCountryByAbbr } from 'react-components/helpers/countries';
 
 const PLATFORM = {
     MACOS: 'macOS',
@@ -35,40 +37,28 @@ const PROTOCOL = {
     UDP: 'udp'
 };
 
-const CATEGORY = {
-    SECURE_CORE: 'SecureCore',
-    COUNTRY: 'Country',
-    SERVER: 'Server'
-};
-
-// TODO: some options depend on users plan
 // TODO: learn more link
-// TODO: heading ids
 const OpenVPNConfigurationSection = () => {
     const [platform, setPlatform] = useState(PLATFORM.MACOS);
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
-    const [selectedConfig, selectConfig] = useState(CATEGORY.SECURE_CORE);
+    const [category, setCategory] = useState(CATEGORY.SECURE_CORE);
     const { request } = useApiWithoutResult(getVPNServerConfig);
     const { loading, result = {} } = useApiResult(queryVPNLogicalServerInfo, []);
-
-    // TODO: move to provider
-    const { result: vpnResult = {} } = useApiResult(getClientVPNInfo, []);
-    const vpnInfo = vpnResult.VPN;
-    const isTrial = () => vpnInfo.PlanName === 'trial';
-    const getTier = () => (isTrial() ? 0 : vpnInfo.MaxTier);
+    const { loading: vpnLoading, tier, isBasic, userVPN } = useUserVPN();
+    const { hasPaidVPN } = useUser();
 
     const downloadAllConfigs = async () => {
         const buffer = await request({
-            Category: selectedConfig,
+            Category: category,
             Platform: platform,
             Protocol: protocol,
-            Tier: getTier()
+            Tier: tier
         });
         const blob = new Blob([buffer], { type: 'application/zip' });
         downloadFile(blob, 'ProtonVPN_server_configs.zip');
     };
 
-    const handleSelectConfig = (option) => () => selectConfig(option);
+    const handleSelectConfig = (option) => () => setCategory(option);
 
     const allServers = (result.LogicalServers || []).map((server) => {
         // Server returns UK instead of GB
@@ -91,6 +81,11 @@ const OpenVPNConfigurationSection = () => {
     const handleChangePlatform = (platform) => () => setPlatform(platform);
     const handleChangeProtocol = (protocol) => () => setProtocol(protocol);
 
+    const isUpgradeRequiredForSecureCore = () => !userVPN || !hasPaidVPN || isBasic;
+    const isUpgradeRequiredForCountries = () => !userVPN || !hasPaidVPN;
+    const isUpgradeRequiredForDownloadAll =
+        !userVPN || (!hasPaidVPN && category !== CATEGORY.SERVER) || (isBasic && category === CATEGORY.SECURE_CORE);
+
     return (
         <>
             <SubTitle id="openvpn-configuration-files">{c('Title').t`OpenVPN Configuration Files`}</SubTitle>
@@ -108,42 +103,36 @@ const OpenVPNConfigurationSection = () => {
                     checked={platform === PLATFORM.MACOS}
                     name="platform"
                     className="mr2"
-                    id="platform-macos"
                 >{c('Option').t`MacOS`}</Radio>
                 <Radio
                     onChange={handleChangePlatform(PLATFORM.LINUX)}
                     checked={platform === PLATFORM.LINUX}
                     name="platform"
                     className="mr2"
-                    id="platform-linux"
                 >{c('Option').t`Linux`}</Radio>
                 <Radio
                     onChange={handleChangePlatform(PLATFORM.WINDOWS)}
                     checked={platform === PLATFORM.WINDOWS}
                     name="platform"
                     className="mr2"
-                    id="platform-windows"
                 >{c('Option').t`Windows`}</Radio>
                 <Radio
                     onChange={handleChangePlatform(PLATFORM.ANDROID)}
                     checked={platform === PLATFORM.ANDROID}
                     name="platform"
                     className="mr2"
-                    id="platform-android"
                 >{c('Option').t`Android`}</Radio>
                 <Radio
                     onChange={handleChangePlatform(PLATFORM.IOS)}
                     checked={platform === PLATFORM.IOS}
                     name="platform"
                     className="mr2"
-                    id="platform-ios"
                 >{c('Option').t`iOS`}</Radio>
                 <Radio
                     onChange={handleChangePlatform(PLATFORM.ROUTER)}
                     checked={platform === PLATFORM.ROUTER}
                     name="platform"
                     className="mr2"
-                    id="platform-router"
                 >{c('Option').t`Router`}</Radio>
             </Row>
 
@@ -154,14 +143,12 @@ const OpenVPNConfigurationSection = () => {
                     checked={protocol === PROTOCOL.UDP}
                     name="protocol"
                     className="mr2"
-                    id="protocol-udp"
                 >{c('Option').t`UDP`}</Radio>
                 <Radio
                     onChange={handleChangeProtocol(PROTOCOL.TCP)}
                     checked={protocol === PROTOCOL.TCP}
                     name="protocol"
                     className="mr2"
-                    id="protocol-tcp"
                 >{c('Option').t`TCP`}</Radio>
             </Row>
 
@@ -169,20 +156,18 @@ const OpenVPNConfigurationSection = () => {
             <Group className="mb1-5">
                 <ButtonGroup
                     onClick={handleSelectConfig(CATEGORY.SECURE_CORE)}
-                    disabled={selectedConfig === CATEGORY.SECURE_CORE}
+                    disabled={category === CATEGORY.SECURE_CORE}
                 >{c('Tab').t`Secure Core Configs`}</ButtonGroup>
-                <ButtonGroup
-                    onClick={handleSelectConfig(CATEGORY.COUNTRY)}
-                    disabled={selectedConfig === CATEGORY.COUNTRY}
-                >{c('Tab').t`Country Configs`}</ButtonGroup>
-                <ButtonGroup
-                    onClick={handleSelectConfig(CATEGORY.SERVER)}
-                    disabled={selectedConfig === CATEGORY.SERVER}
-                >{c('Tab').t`Server Configs`}</ButtonGroup>
+                <ButtonGroup onClick={handleSelectConfig(CATEGORY.COUNTRY)} disabled={category === CATEGORY.COUNTRY}>{c(
+                    'Tab'
+                ).t`Country Configs`}</ButtonGroup>
+                <ButtonGroup onClick={handleSelectConfig(CATEGORY.SERVER)} disabled={category === CATEGORY.SERVER}>{c(
+                    'Tab'
+                ).t`Server Configs`}</ButtonGroup>
             </Group>
 
             <Block>
-                {selectedConfig === CATEGORY.SECURE_CORE && (
+                {category === CATEGORY.SECURE_CORE && (
                     <>
                         <h3>{c('Title').t`Secure Core Configs`}</h3>
                         <Alert learnMore="todo">
@@ -190,6 +175,7 @@ const OpenVPNConfigurationSection = () => {
                                 .t`Secure Core configurations add additional protection against VPN endpoint compromise.`}
                         </Alert>
                         <ConfigsTable
+                            isUpgradeRequired={isUpgradeRequiredForSecureCore}
                             platform={platform}
                             protocol={protocol}
                             loading={loading}
@@ -197,7 +183,7 @@ const OpenVPNConfigurationSection = () => {
                         />
                     </>
                 )}
-                {selectedConfig === CATEGORY.COUNTRY && (
+                {category === CATEGORY.COUNTRY && (
                     <>
                         <h3>{c('Title').t`Country Configs`}</h3>
                         <Alert>
@@ -205,6 +191,7 @@ const OpenVPNConfigurationSection = () => {
                                 .t`Country Connect configuration files ensure a faster connection to the selected country on average.`}
                         </Alert>
                         <ConfigsTable
+                            isUpgradeRequired={isUpgradeRequiredForCountries}
                             platform={platform}
                             protocol={protocol}
                             loading={loading}
@@ -212,14 +199,21 @@ const OpenVPNConfigurationSection = () => {
                         />
                     </>
                 )}
-                {selectedConfig === CATEGORY.SERVER && (
+                {category === CATEGORY.SERVER && (
                     <>
                         <h3>{c('Title').t`Server Configs`}</h3>
                         <Alert>{c('Info').t`Connect to a single server in the country of your choice.`}</Alert>
                         <ServerConfigs platform={platform} protocol={protocol} loading={loading} servers={allServers} />
                     </>
                 )}
-                <Button onClick={() => downloadAllConfigs()}>{c('Action').t`Download All Configurations`}</Button>
+                {isUpgradeRequiredForDownloadAll ? (
+                    <Tooltip title={c('Info').t`Plan upgrade required`}>
+                        <Button loading={vpnLoading} disabled>{c('Action').t`Download All Configurations`}</Button>
+                    </Tooltip>
+                ) : (
+                    <Button loading={vpnLoading} onClick={() => downloadAllConfigs()}>{c('Action')
+                        .t`Download All Configurations`}</Button>
+                )}
             </Block>
         </>
     );

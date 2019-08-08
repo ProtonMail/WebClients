@@ -4,7 +4,7 @@ import { Tooltip } from 'react-components';
 import { c } from 'ttag';
 
 const LoadIndicator = ({ server: { Load = 0 } }) => (
-    <Tooltip title={c('Info').t`Current server load`}>
+    <Tooltip title={c('Info').t`Server load`}>
         <div className="flex inline-flex-vcenter">
             <div className="load-indicator">
                 <div className="load-indicator-overlay" style={{ marginTop: `${-Load * 50}%` }}></div>
