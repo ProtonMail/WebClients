@@ -462,3 +462,8 @@ export const PAYMENT_TOKEN_STATUS = {
     STATUS_CONSUMED: 3,
     STATUS_NOT_SUPPORTED: 4
 };
+
+export const PAYMENT_METHOD_TYPES = {
+    CARD: 'card',
+    PAYPAL: 'paypal'
+};
