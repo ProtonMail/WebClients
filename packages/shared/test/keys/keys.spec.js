@@ -1,7 +1,8 @@
 import { decryptPrivateKey } from 'pmcrypto';
 
 import { DecryptableKey, OrganizationPrivateKey, NotDecryptableKey, SubKey } from './keys.data';
-import { prepareKeys, prepareMemberKeys } from '../../lib/keys/keys';
+import { prepareKeys } from '../../lib/keys/keys';
+import { prepareMemberKeys } from '../../lib/keys/organizationKeys';
 
 describe('keys', () => {
     it('should prepare keys', async () => {
