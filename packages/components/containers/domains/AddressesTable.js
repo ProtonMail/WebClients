@@ -6,12 +6,12 @@ import { useMembers, Table, TableHeader, TableBody, TableRow, Info } from 'react
 import AddressStatus from './AddressStatus';
 import AddressCatchAll from './AddressCatchAll';
 
-const AddressesTable = ({ domain }) => {
-    const [addresses, setAddresses] = useState(domain.addresses);
-    const [members = []] = useMembers();
+const AddressesTable = ({ domain, domainAddresses }) => {
+    const [addresses, setAddresses] = useState(() => domainAddresses);
+    const [members, loadingMembers] = useMembers();
 
     const getMemberName = (memberID) => {
-        const { Name = '' } = members.find(({ ID }) => memberID === ID) || {};
+        const { Name = '' } = (members || []).find(({ ID }) => memberID === ID) || {};
         return Name;
     };
 
@@ -39,7 +39,7 @@ const AddressesTable = ({ domain }) => {
                     </>
                 ]}
             />
-            <TableBody loading={members.loading} colSpan={4}>
+            <TableBody loading={loadingMembers} colSpan={4}>
                 {addresses.map((address) => {
                     const key = address.ID;
                     return (
@@ -67,7 +67,8 @@ const AddressesTable = ({ domain }) => {
 };
 
 AddressesTable.propTypes = {
-    domain: PropTypes.object.isRequired
+    domain: PropTypes.object.isRequired,
+    domainAddresses: PropTypes.array.isRequired
 };
 
 export default AddressesTable;

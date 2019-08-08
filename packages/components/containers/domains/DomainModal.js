@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { FormModal, useLoading, useApi, useStep, Breadcrumb, useNotifications } from 'react-components';
+import { withRouter } from 'react-router-dom';
 import { addDomain, getDomain } from 'proton-shared/lib/api/domains';
 import { VERIFY_STATE } from 'proton-shared/lib/constants';
 
@@ -35,8 +36,8 @@ const verifyDomain = ({ VerifyState }) => {
     }
 };
 
-const DomainModal = ({ onClose, onRedirect, domain, ...rest }) => {
-    const [domainModel, setDomain] = useState(domain);
+const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, ...rest }) => {
+    const [domainModel, setDomain] = useState(() => ({ ...domain }));
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [domainName, updateDomainName] = useState(domainModel.DomainName);
@@ -56,8 +57,8 @@ const DomainModal = ({ onClose, onRedirect, domain, ...rest }) => {
     };
 
     const handleRedirect = (route) => {
-        onRedirect(route);
         onClose();
+        history.push(route);
     };
 
     const breadcrumbLabels = [
@@ -113,7 +114,7 @@ const DomainModal = ({ onClose, onRedirect, domain, ...rest }) => {
 
         if (step === STEPS.ADDRESSES) {
             return {
-                section: <AddressesSection onRedirect={handleRedirect} domain={domainModel} />,
+                section: <AddressesSection onRedirect={handleRedirect} domainAddresses={domainAddresses} />,
                 onSubmit: next
             };
         }
@@ -166,12 +167,9 @@ const DomainModal = ({ onClose, onRedirect, domain, ...rest }) => {
 
 DomainModal.propTypes = {
     onClose: PropTypes.func,
-    onRedirect: PropTypes.func.isRequired,
-    domain: PropTypes.object.isRequired
+    domain: PropTypes.object,
+    domainAddresses: PropTypes.array,
+    history: PropTypes.func.isRequired
 };
 
-DomainModal.defaultProps = {
-    domain: {}
-};
-
-export default DomainModal;
+export default withRouter(DomainModal);

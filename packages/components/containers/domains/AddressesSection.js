@@ -13,7 +13,7 @@ import {
     TableRow
 } from 'react-components';
 
-const AddressesSection = ({ domain, onRedirect }) => {
+const AddressesSection = ({ domainAddresses, onRedirect }) => {
     const [members, loadingMembers] = useMembers();
 
     const getMemberName = (memberID) => {
@@ -30,14 +30,14 @@ const AddressesSection = ({ domain, onRedirect }) => {
                     .t`Add address`}</PrimaryButton>
                 <Button onClick={() => onRedirect('/settings/members')}>{c('Action').t`Add user`}</Button>
             </Block>
-            {domain.addresses.length ? (
+            {domainAddresses.length ? (
                 <Table>
                     <TableHeader
                         cells={[c('Header for domain modal').t`User`, c('Header for domain modal').t`Address`]}
                     />
                     <TableBody loading={loadingMembers} colSpan={2}>
                         {members &&
-                            domain.addresses.map(({ ID, Email, MemberID }) => {
+                            domainAddresses.map(({ ID, Email, MemberID }) => {
                                 return <TableRow key={ID} cells={[getMemberName(MemberID), Email]} />;
                             })}
                     </TableBody>
@@ -48,7 +48,7 @@ const AddressesSection = ({ domain, onRedirect }) => {
 };
 
 AddressesSection.propTypes = {
-    domain: PropTypes.object.isRequired,
+    domainAddresses: PropTypes.array.isRequired,
     onRedirect: PropTypes.func.isRequired
 };
 

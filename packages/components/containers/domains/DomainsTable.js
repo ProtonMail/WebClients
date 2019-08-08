@@ -8,7 +8,7 @@ import DomainActions from './DomainActions';
 import DomainName from './DomainName';
 import DomainAddresses from './DomainAddresses';
 
-const DomainsTable = ({ domains, onRedirect }) => {
+const DomainsTable = ({ domains = [], domainsAddressesMap = {} }) => {
     return (
         <Table>
             <TableHeader
@@ -21,14 +21,15 @@ const DomainsTable = ({ domains, onRedirect }) => {
             />
             <TableBody>
                 {domains.map((domain) => {
+                    const domainAddresses = domainsAddressesMap[domain.ID] || [];
                     return (
                         <TableRow
                             key={domain.ID}
                             cells={[
                                 <DomainName key={0} domain={domain} />,
-                                <DomainStatus key={1} domain={domain} />,
-                                <DomainAddresses key={2} domain={domain} />,
-                                <DomainActions key={3} domain={domain} onRedirect={onRedirect} />
+                                <DomainStatus key={1} domain={domain} domainAddresses={domainAddresses} />,
+                                <DomainAddresses key={2} domainAddresses={domainAddresses} />,
+                                <DomainActions key={3} domain={domain} domainAddresses={domainAddresses} />
                             ]}
                         />
                     );
@@ -40,7 +41,7 @@ const DomainsTable = ({ domains, onRedirect }) => {
 
 DomainsTable.propTypes = {
     domains: PropTypes.array.isRequired,
-    onRedirect: PropTypes.func.isRequired
+    domainsAddressesMap: PropTypes.object.isRequired
 };
 
 export default DomainsTable;

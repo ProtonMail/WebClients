@@ -40,8 +40,9 @@ const DMARC_TYPES = {
     [DMARC_STATE.DMARC_STATE_GOOD]: 'success'
 };
 
-const DomainStatus = ({ domain }) => {
-    const n = domain.addresses.length;
+const DomainStatus = ({ domain, domainAddresses }) => {
+    const n = domainAddresses.length;
+
     const badges = [
         { text: c('Domain label').t`Verified`, type: VERIFY_TYPES[domain.VerifyState] },
         {
@@ -66,7 +67,8 @@ const DomainStatus = ({ domain }) => {
 };
 
 DomainStatus.propTypes = {
-    domain: PropTypes.object.isRequired
+    domain: PropTypes.object.isRequired,
+    domainAddresses: PropTypes.array.isRequired
 };
 
 export default DomainStatus;

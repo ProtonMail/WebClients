@@ -31,6 +31,7 @@ import MemberPrivate from './MemberPrivate';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import MemberModal from './MemberModal';
 import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
+import useDomainsAddresses from '../../hooks/useDomainsAddresses';
 
 const validateAddUser = (organization, organizationKey, verifiedDomains) => {
     const { isOrganizationKeyActive, hasOrganizationKey } = getOrganizationKeyInfo(organizationKey);
@@ -68,7 +69,8 @@ const MembersSection = () => {
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const [domains, loadingDomains] = useDomains();
-    const [memberAddressesMap, memberAddressesLoading] = useMemberAddresses(members);
+    const [domainsAddressesMap, loadingDomainAddresses] = useDomainsAddresses(domains);
+    const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [keywords, setKeywords] = useState('');
 
     const { createNotification } = useNotifications();
@@ -96,7 +98,12 @@ const MembersSection = () => {
         }
 
         createModal(
-            <MemberModal organization={organization} organizationKey={organizationKey} domains={verifiedDomains} />
+            <MemberModal
+                organization={organization}
+                organizationKey={organizationKey}
+                domains={verifiedDomains}
+                domainsAddressesMap={domainsAddressesMap}
+            />
         );
     };
 
@@ -108,7 +115,7 @@ const MembersSection = () => {
                 .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more.`}</Alert>
             <Block className="flex flex-spacebetween">
                 <PrimaryButton
-                    disabled={loadingOrganization || loadingDomains || loadingOrganizationKey}
+                    disabled={loadingOrganization || loadingDomains || loadingDomainAddresses || loadingOrganizationKey}
                     onClick={handleAddUser}
                 >
                     {c('Action').t`Add user`}
@@ -139,7 +146,7 @@ const MembersSection = () => {
                         c('Title header for members table').t`Actions`
                     ]}
                 />
-                <TableBody loading={membersLoading || memberAddressesLoading} colSpan={6}>
+                <TableBody loading={membersLoading || loadingMemberAddresses} colSpan={6}>
                     {membersSelected.map((member) => {
                         const key = member.ID;
                         const memberAddresses = (memberAddressesMap && memberAddressesMap[member.ID]) || [];

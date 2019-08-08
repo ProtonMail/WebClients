@@ -25,7 +25,7 @@ import { srpVerify } from 'proton-shared/lib/srp';
 
 const FIVE_GIGA = 5 * GIGA;
 
-const MemberModal = ({ onClose, organization, organizationKey, domains, ...rest }) => {
+const MemberModal = ({ onClose, organization, organizationKey, domains, domainsAddressesMap, ...rest }) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -98,7 +98,9 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, ...rest 
         }
 
         const domain = domains.find(({ DomainName }) => DomainName === model.domain);
-        const address = domain.addresses.find(({ Email }) => Email === `${model.address}@${model.domain}`);
+        const address = (domainsAddressesMap[domain.ID] || []).find(
+            ({ Email }) => Email === `${model.address}@${model.domain}`
+        );
 
         if (address) {
             return c('Error').t`Address already associated to a user`;
@@ -210,7 +212,8 @@ MemberModal.propTypes = {
     onClose: PropTypes.func,
     organization: PropTypes.object.isRequired,
     organizationKey: PropTypes.object.isRequired,
-    domains: PropTypes.array.isRequired
+    domains: PropTypes.array.isRequired,
+    domainsAddressesMap: PropTypes.object.isRequired
 };
 
 export default MemberModal;

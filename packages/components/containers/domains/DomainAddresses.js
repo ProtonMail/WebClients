@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 import { SimpleDropdown, DropdownMenu } from 'react-components';
 
-const DomainAddresses = ({ domain }) => {
-    const addresses = domain.addresses || [];
-    const title = addresses.map(({ Email }) => Email).join(', ');
-    const list = addresses.map(({ Email }) => Email);
-    const n = addresses.length;
+const DomainAddresses = ({ domainAddresses }) => {
+    const list = domainAddresses.map(({ ID, Email }) => (
+        <div key={ID} className="inbl w100 pt0-5 pb0-5 ellipsis">
+            {Email}
+        </div>
+    ));
+
+    const title = domainAddresses.map(({ Email }) => Email).join(', ');
+    const n = list.length;
 
     return (
         <>
@@ -18,8 +22,8 @@ const DomainAddresses = ({ domain }) => {
                 content={c('Info').ngettext(msgid`${n} address`, `${n} addresses`, n)}
             >
                 <DropdownMenu>{list}</DropdownMenu>
-                <div className="alignright">
-                    <Link className="pm-button pm-button--small" to="/settings/addresses">{c('Link').t`Manage`}</Link>
+                <div className="alignright p1">
+                    <Link className="pm-button" to="/settings/addresses">{c('Link').t`Manage`}</Link>
                 </div>
             </SimpleDropdown>
         </>
@@ -27,7 +31,7 @@ const DomainAddresses = ({ domain }) => {
 };
 
 DomainAddresses.propTypes = {
-    domain: PropTypes.object.isRequired
+    domainAddresses: PropTypes.array.isRequired
 };
 
 export default DomainAddresses;

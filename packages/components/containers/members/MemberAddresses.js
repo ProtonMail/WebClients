@@ -10,7 +10,7 @@ const MemberAddresses = ({ member, addresses }) => {
             {Email}
         </div>
     ));
-    const title = list.join(', ');
+    const title = addresses.map(({ Email }) => Email).join(', ');
     const n = list.length;
 
     return (
