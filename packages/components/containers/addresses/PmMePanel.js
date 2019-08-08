@@ -6,16 +6,15 @@ import { Alert, Loader, useUser, useAddresses } from 'react-components';
 import PmMeButton from './PmMeButton';
 
 const PmMePanel = () => {
-    const [user] = useUser();
+    const [{ isAdmin }] = useUser();
     const [addresses, loading] = useAddresses();
 
     if (loading) {
         return <Loader />;
     }
 
-    const hasPremium = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
-
-    if (user.hasPaidMail) {
+    if (isAdmin) {
+        const hasPremium = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
         if (!hasPremium) {
             return (
                 <>
