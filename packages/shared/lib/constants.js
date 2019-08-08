@@ -455,6 +455,19 @@ export const TWO_FA_CONFIG = {
     ALGORITHM: 'SHA1'
 };
 
+export const SORT_DIRECTION = {
+    ASC: 'ascending',
+    DESC: 'descending'
+};
+
+export const SERVER_FEATURES = {
+    SECURE_CORE: 1,
+    TOR: 2,
+    P2P: 4,
+    XOR: 8,
+    IPV6: 16
+};
+
 export const PAYMENT_TOKEN_STATUS = {
     STATUS_PENDING: 0,
     STATUS_CHARGEABLE: 1,

@@ -26,6 +26,7 @@ export const getLocation = () => ({
 export const getVPNServerConfig = ({ LogicalID, ServerID, Country, Category, Tier, Platform, Protocol }) => ({
     method: 'get',
     url: 'vpn/config',
+    output: 'arrayBuffer',
     params: { LogicalID, ServerID, Country, Category, Tier, Platform, Protocol }
 });
 

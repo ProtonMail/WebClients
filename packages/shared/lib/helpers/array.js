@@ -78,3 +78,32 @@ export const remove = (arr, item) => {
  * @returns {Array} diff
  */
 export const diff = (arr1, arr2) => arr1.filter((a) => !arr2.includes(a));
+
+/**
+ * Groups elements in an array by a provided comparison function. E.g. `[1, 1, 2, 3, 3] => [[1, 1], [2], [3, 3]]`
+ * @param {(a, b) => boolean} compare fn whose result tells if elements belong to the same group
+ * @param {Array} arr
+ */
+export const groupWith = (compare, arr = []) => {
+    const { groups } = arr.reduce(
+        ({ groups, remaining }, a) => {
+            const group = remaining.filter((b) => compare(a, b));
+            return group.length
+                ? {
+                      groups: [...groups, group],
+                      remaining: remaining.filter((b) => !compare(a, b))
+                  }
+                : { groups, remaining };
+        },
+        { groups: [], remaining: arr }
+    );
+
+    return groups;
+};
+
+/**
+ * Returns the item that has minimum value as determined by fn property selector function. E.g.: `minBy(({ a }) => a, [{a: 4}, {a: 2}, {a: 5}])` returns `{a: 2}`
+ * @param {(a) => number} fn object property selector
+ * @param {Array} arr array to search in
+ */
+export const minBy = (fn, arr = []) => arr.reduce((min, item) => (fn(item) < fn(min) ? item : min), arr[0]);
