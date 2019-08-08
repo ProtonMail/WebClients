@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
 import { classnames } from '../../helpers/component';
-import { usePopper, Popper } from '../Popper';
+import { usePopper, Popper } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { noop } from 'proton-shared/lib/helpers/function';
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from './Dropdown';
-import { usePopperAnchor } from '../Popper';
+import { usePopperAnchor } from '../popper';
 import DropdownButton from './DropdownButton';
 import { generateUID } from '../../helpers/component';
 

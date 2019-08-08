@@ -54,7 +54,7 @@ export { default as DropdownCaret } from './components/dropdown/DropdownCaret';
 export { default as DropdownMenuLink } from './components/dropdown/DropdownMenuLink';
 export { default as Dropdown } from './components/dropdown/Dropdown';
 export { default as SimpleDropdown } from './components/dropdown/SimpleDropdown';
-export { usePopper, Popper, usePopperAnchor } from './components/Popper';
+export { usePopper, Popper, usePopperAnchor } from './components/popper';
 export { default as ColorSelector } from './components/color/ColorSelector';
 export { default as RichTextEditor } from './components/input/RichTextEditor';
 export { default as Checkbox } from './components/input/Checkbox';

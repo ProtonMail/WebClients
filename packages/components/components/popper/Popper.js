@@ -1,13 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import Portal from '../portal/Portal';
 
 const Popper = React.forwardRef(({ children, position, isOpen, role = 'tooltip', ...rest }, ref) => {
-    return ReactDOM.createPortal(
-        <div {...rest} ref={ref} style={position} role={role} hidden={!isOpen} aria-hidden={!isOpen}>
-            {children}
-        </div>,
-        document.body
+    return (
+        <Portal>
+            <div {...rest} ref={ref} style={position} role={role} hidden={!isOpen} aria-hidden={!isOpen}>
+                {children}
+            </div>
+        </Portal>
     );
 });
 

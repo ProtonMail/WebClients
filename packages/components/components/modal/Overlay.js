@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Portal from '../portal/Portal';
 
 const CLASSES = {
     OVERLAY: 'pm-modalOverlay',
@@ -23,9 +24,11 @@ const Overlay = ({ children, isClosing, onClick, className: extraClassName, onEx
     const className = [CLASSES.OVERLAY, isClosing && CLASSES.OVERLAY_OUT, extraClassName].filter(Boolean).join(' ');
 
     return (
-        <div className={className} onClick={handleClick} onAnimationEnd={handleAnimationEnd} {...rest}>
-            {children}
-        </div>
+        <Portal>
+            <div className={className} onClick={handleClick} onAnimationEnd={handleAnimationEnd} {...rest}>
+                {children}
+            </div>
+        </Portal>
     );
 };
 

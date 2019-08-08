@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Portal from '../portal/Portal';
 
 const CLASSES = {
     MODAL: 'pm-modal',
@@ -35,17 +36,19 @@ const Dialog = ({
     };
 
     return (
-        <dialog
-            className={className}
-            aria-labelledby={modalTitleID}
-            aria-modal="true"
-            role="dialog"
-            open
-            onAnimationEnd={handleAnimationEnd}
-            {...rest}
-        >
-            {children}
-        </dialog>
+        <Portal>
+            <dialog
+                className={className}
+                aria-labelledby={modalTitleID}
+                aria-modal="true"
+                role="dialog"
+                open
+                onAnimationEnd={handleAnimationEnd}
+                {...rest}
+            >
+                {children}
+            </dialog>
+        </Portal>
     );
 };
 

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { generateUID, classnames } from '../../helpers/component';
-import { usePopper, Popper, usePopperAnchor } from '../Popper';
+import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 
 const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerClass = 'main' }) => {
