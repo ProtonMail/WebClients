@@ -68,11 +68,11 @@ Pagination.propTypes = {
     onNext: PropTypes.func,
     onPrevious: PropTypes.func,
     onSelect: PropTypes.func.isRequired,
-    page: PropTypes.number.isRequired,
+    page: PropTypes.number,
     total: PropTypes.number.isRequired,
     limit: PropTypes.number.isRequired,
-    hasNext: PropTypes.bool.isRequired,
-    hasPrevious: PropTypes.bool.isRequired
+    hasNext: PropTypes.bool,
+    hasPrevious: PropTypes.bool
 };
 
 export default Pagination;

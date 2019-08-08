@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { FormModal, useEventManager, useNotifications, useApiWithoutResult } from 'react-components';
+import { FormModal, useEventManager, useLoading, useApi, useNotifications } from 'react-components';
 import { LABEL_EXCLUSIVE, LABEL_COLORS } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { createLabel, updateLabel } from 'proton-shared/lib/api/labels';
@@ -12,8 +12,8 @@ import NewLabelForm from '../NewLabelForm';
 function EditLabelModal({ label, mode, onEdit, onAdd, ...props }) {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const reqCreate = useApiWithoutResult(createLabel);
-    const reqUpdate = useApiWithoutResult(updateLabel);
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
 
     const I18N = {
         edition({ Exclusive } = {}) {
@@ -39,7 +39,7 @@ function EditLabelModal({ label, mode, onEdit, onAdd, ...props }) {
     );
 
     const create = async (label) => {
-        const { Label } = await reqCreate.request(label);
+        const { Label } = await api(createLabel(label));
         await call();
         createNotification({
             text: c('label/folder notification').t`${Label.Name} created`
@@ -49,7 +49,7 @@ function EditLabelModal({ label, mode, onEdit, onAdd, ...props }) {
     };
 
     const update = async (label) => {
-        const { Label } = await reqUpdate.request(label.ID, label);
+        const { Label } = await api(updateLabel(label.ID, label));
         await call();
         createNotification({
             text: c('Filter notification').t`${Label.Name} updated`
@@ -60,7 +60,8 @@ function EditLabelModal({ label, mode, onEdit, onAdd, ...props }) {
 
     const ACTIONS = { create, edition: update };
 
-    const handleSubmit = () => ACTIONS[mode](model);
+    const handleSubmit = () => withLoading(ACTIONS[mode](model));
+
     const handleChangeColor = (Color) => () => {
         setModel({
             ...model,
@@ -76,12 +77,7 @@ function EditLabelModal({ label, mode, onEdit, onAdd, ...props }) {
     };
 
     return (
-        <FormModal
-            onSubmit={handleSubmit}
-            loading={reqCreate.loading || reqUpdate.loading}
-            title={I18N[mode](label, props.type)}
-            {...props}
-        >
+        <FormModal onSubmit={handleSubmit} loading={loading} title={I18N[mode](label, props.type)} {...props}>
             <NewLabelForm label={model} onChangeName={handleChangeName} onChangeColor={handleChangeColor} />
         </FormModal>
     );

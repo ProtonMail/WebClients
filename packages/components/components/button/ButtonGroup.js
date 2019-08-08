@@ -10,7 +10,7 @@ const ButtonGroup = ({ children, className = '', ...rest }) => (
 );
 
 ButtonGroup.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     className: PropTypes.string
 };
 

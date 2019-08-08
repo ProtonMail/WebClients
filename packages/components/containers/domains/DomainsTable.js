@@ -40,8 +40,8 @@ const DomainsTable = ({ domains = [], domainsAddressesMap = {} }) => {
 };
 
 DomainsTable.propTypes = {
-    domains: PropTypes.array.isRequired,
-    domainsAddressesMap: PropTypes.object.isRequired
+    domains: PropTypes.array,
+    domainsAddressesMap: PropTypes.object
 };
 
 export default DomainsTable;

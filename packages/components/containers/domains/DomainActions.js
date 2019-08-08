@@ -53,8 +53,7 @@ const DomainActions = ({ domain, domainAddresses }) => {
 
 DomainActions.propTypes = {
     domain: PropTypes.object.isRequired,
-    domainAddresses: PropTypes.array,
-    onRedirect: PropTypes.func.isRequired
+    domainAddresses: PropTypes.array
 };
 
 export default DomainActions;

@@ -66,8 +66,8 @@ describe('Autocomplete component', () => {
     });
 
     it('should render children', () => {
-        const children = 'test';
-        const { getByText } = render(<Autocomplete>{children}</Autocomplete>);
-        expect(getByText(children)).toBeDefined();
+        const children = <span className="test">test</span>;
+        const { container } = render(<Autocomplete>{children}</Autocomplete>);
+        expect(container.querySelector('.test')).toBeDefined();
     });
 });
