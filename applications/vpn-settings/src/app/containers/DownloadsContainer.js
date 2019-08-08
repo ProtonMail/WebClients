@@ -2,9 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import Page from '../components/page/Page';
-import ProtonVPNClientsSection from './vpn/ProtonVPNClientsSection';
-import OpenVPNConfigurationSection from './vpn/OpenVPNConfigurationSection';
-import { SubSidebar, ObserverSections } from 'react-components';
+import { SubSidebar, ObserverSections, ProtonVPNClientsSection, OpenVPNConfigurationSection } from 'react-components';
 
 export const getDownloadsPageSections = () => [
     {
