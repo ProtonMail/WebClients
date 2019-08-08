@@ -13,6 +13,7 @@ $meterbar-height: 6px !default;
   //-webkit-appearance: none; // well, because Chrome.
   -moz-appearance: none;
   //-ms-appearance: none;
+  /* autoprefixer: ignore next */
   appearance: none;
 
   height: $meterbar-height;
