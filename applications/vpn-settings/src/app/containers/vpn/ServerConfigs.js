@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { isSecureCoreEnabled } from './utils';
 import { groupWith } from 'proton-shared/lib/helpers/array';
-import { Details, Summary, useUser } from 'react-components';
+import { Details, Summary, useUser, useSortedList } from 'react-components';
 import ConfigsTable from './ConfigsTable';
 import Country from './Country';
 import useUserVPN from './userVPN/useUserVPN';

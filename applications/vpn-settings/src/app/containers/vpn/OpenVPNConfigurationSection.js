@@ -12,7 +12,8 @@ import {
     Button,
     Block,
     useUser,
-    Tooltip
+    Tooltip,
+    useSortedList
 } from 'react-components';
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
@@ -22,6 +23,7 @@ import ServerConfigs from './ServerConfigs';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import useUserVPN from './userVPN/useUserVPN';
 import { getCountryByAbbr } from 'react-components/helpers/countries';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 const PLATFORM = {
     MACOS: 'macOS',
@@ -60,7 +62,7 @@ const OpenVPNConfigurationSection = () => {
 
     const handleSelectConfig = (option) => () => setCategory(option);
 
-    const allServers = (result.LogicalServers || []).map((server) => {
+    const servers = (result.LogicalServers || []).map((server) => {
         // Server returns UK instead of GB
         const correctAbbr = (abbr) => (abbr === 'UK' ? 'GB' : abbr);
         const ExitCountry = correctAbbr(server.ExitCountry);
@@ -72,6 +74,9 @@ const OpenVPNConfigurationSection = () => {
             EntryCountry
         };
     });
+
+    const { sortedList: allServers } = useSortedList(servers, { key: 'Country', direction: SORT_DIRECTION.ASC });
+
     const secureCoreServers = allServers.filter(({ Features }) => isSecureCoreEnabled(Features));
     const countryServers = groupWith(
         (a, b) => a.ExitCountry === b.ExitCountry,

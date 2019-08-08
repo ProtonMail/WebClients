@@ -69,8 +69,6 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
         downloadFile(blob, `${Domain}.${protocol}.ovpn`);
     };
 
-    const { sortedList } = useSortedList(servers, { key: 'Country', direction: SORT_DIRECTION.ASC });
-
     return (
         <Table>
             <thead>
@@ -83,7 +81,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                 </tr>
             </thead>
             <TableBody loading={loading} colSpan={3}>
-                {sortedList.map((server) => (
+                {servers.map((server) => (
                     <TableRow
                         key={server.ID}
                         cells={[
