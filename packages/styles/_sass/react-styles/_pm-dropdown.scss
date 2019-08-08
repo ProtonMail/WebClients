@@ -4,7 +4,7 @@ $dropDown-narrow-width: 8em !default;
 
 .dropDown {
   position: fixed;
-  z-index: 10;
+  z-index: 666;
   display: block;
   opacity: 1;
   transition: visibility 0s ease, transform 0.15s ease, opacity 0.15s ease;

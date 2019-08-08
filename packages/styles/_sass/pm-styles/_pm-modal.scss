@@ -51,7 +51,7 @@ $modal-smaller-width: 22em !default;
 
 .pm-modal {
   position: absolute;
-  z-index: 667;
+  z-index: 666;
   top: 50%;
   left: calc(50% - #{$modal-width/2});
   right: auto; // for blink, otherwise WTF bug
