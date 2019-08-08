@@ -89,7 +89,7 @@ const OpenVPNConfigurationSection = () => {
     return (
         <>
             <SubTitle id="openvpn-configuration-files">{c('Title').t`OpenVPN Configuration Files`}</SubTitle>
-            <Alert learnMore="todo">
+            <Alert>
                 {c('Info').t`Use this section to generate config files for third party VPN clients
                     or when setting up a connection on a router. If you use a native ProtonVPN
                     client to connect, you do not need to manually handle these configuration files.
@@ -170,7 +170,7 @@ const OpenVPNConfigurationSection = () => {
                 {category === CATEGORY.SECURE_CORE && (
                     <>
                         <h3>{c('Title').t`Secure Core Configs`}</h3>
-                        <Alert learnMore="todo">
+                        <Alert learnMore="https://protonvpn.com/support/secure-core-vpn">
                             {c('Info')
                                 .t`Secure Core configurations add additional protection against VPN endpoint compromise.`}
                         </Alert>
