@@ -26,9 +26,9 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { updateOrganizationName, updateOrganizationKeys } from 'proton-shared/lib/api/organization';
 import { updateVPN, updateQuota } from 'proton-shared/lib/api/members';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
+import { generateOrganizationKeys } from 'proton-shared/lib/keys/organizationKeys';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
-import { generateOrganizationKeys } from './helpers/organizationKeysHelper';
 
 const SetupOrganizationModal = ({ onClose, ...rest }) => {
     const api = useApi();

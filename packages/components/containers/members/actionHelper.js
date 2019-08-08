@@ -1,6 +1,6 @@
 import { computeKeyPassword, generateKeySalt } from 'pm-srp';
 import { encryptPrivateKey } from 'pmcrypto';
-import { encryptMemberToken, generateMemberToken } from 'proton-shared/lib/keys/keys';
+import { encryptMemberToken, generateMemberToken } from 'proton-shared/lib/keys/organizationKeys';
 import { getKeyFlagsAddress } from 'proton-shared/lib/keys/keyFlags';
 import { createMemberKeyRoute, setupMemberKeyRoute } from 'proton-shared/lib/api/memberKeys';
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';

@@ -18,11 +18,11 @@ import {
     Field,
     PasswordInput
 } from 'react-components';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
+import { generateOrganizationKeys, reEncryptOrganizationTokens } from 'proton-shared/lib/keys/organizationKeys';
+import { queryAddresses } from 'proton-shared/lib/api/members';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
-import { generateOrganizationKeys, reEncryptOrganizationTokens } from './helpers/organizationKeysHelper';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
-import { queryAddresses } from 'proton-shared/lib/api/members';
 
 const ChangeOrganizationKeysModal = ({ onClose, organizationKey, hasOtherAdmins, nonPrivateMembers, ...rest }) => {
     const api = useApi();

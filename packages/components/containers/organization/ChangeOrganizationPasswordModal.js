@@ -15,8 +15,7 @@ import {
     Field,
     PasswordInput
 } from 'react-components';
-
-import { getBackupKeyData } from './helpers/organizationKeysHelper';
+import { getBackupKeyData } from 'proton-shared/lib/keys/organizationKeys';
 
 const ChangeOrganizationPasswordModal = ({ onClose, hasOtherAdmins, organizationKey, ...rest }) => {
     const { call } = useEventManager();

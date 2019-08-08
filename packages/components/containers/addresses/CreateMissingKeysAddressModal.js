@@ -14,7 +14,7 @@ import {
     TableRow
 } from 'react-components';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
-import { prepareMemberKeys } from 'proton-shared/lib/keys/keys';
+import { prepareMemberKeys } from 'proton-shared/lib/keys/organizationKeys';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 import MissingKeysStatus, { STATUS } from './MissingKeysStatus';
