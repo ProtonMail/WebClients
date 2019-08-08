@@ -27,14 +27,14 @@ $scrollbar-thumb-height: 40px !default;
 
 /* to target devices than can hover with a precise pointer (mouse) */
 /* Idea : make scroll appear only on hover */
-// @media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
 
-//   .customScrollBar-container::-webkit-scrollbar {
-//     width: 0;
-//   }
+  .customScrollBar-container::-webkit-scrollbar {
+    width: 0;
+  }
 
-//   .customScrollBar-container:hover::-webkit-scrollbar {
-//     width: $scrollbar-width;
-//   }
+  .customScrollBar-container:hover::-webkit-scrollbar {
+    width: $scrollbar-width;
+  }
 
-// }
+}
