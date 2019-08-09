@@ -8,3 +8,9 @@ export const VIEWS = {
     AGENDA: 'agenda',
     CUSTOM: 'custom'
 };
+
+export const WEEK_START = {
+    MONDAY: 'monday',
+    SATURDAY: 'saturday',
+    SUNDAY: 'sunday'
+};
