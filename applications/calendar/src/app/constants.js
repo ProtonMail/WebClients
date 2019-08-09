@@ -10,7 +10,8 @@ export const VIEWS = {
 };
 
 export const WEEK_START = {
-    MONDAY: 'monday',
-    SATURDAY: 'saturday',
-    SUNDAY: 'sunday'
+    // ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+    MONDAY: 1,
+    SATURDAY: 6,
+    SUNDAY: 0
 };

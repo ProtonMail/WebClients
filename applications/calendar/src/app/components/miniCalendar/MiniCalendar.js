@@ -30,7 +30,8 @@ const MiniCalendar = ({
         'November',
         'December'
     ],
-    numberOfWeeks = 6
+    numberOfWeeks = 6,
+    hasWeekNumbers = true
 }) => {
     const [temporaryDate, setTemporaryDate] = useState();
 
@@ -57,11 +58,13 @@ const MiniCalendar = ({
     }, [selectedDate]);
 
     const gridSize = '1fr';
-    const style = {
-        display: 'grid',
-        'grid-template-columns': '30px auto',
-        'grid-template-rows': 'auto'
-    };
+    const style = hasWeekNumbers
+        ? {
+              display: 'grid',
+              'grid-template-columns': '30px auto',
+              'grid-template-rows': 'auto'
+          }
+        : {};
 
     return (
         <>
@@ -80,7 +83,7 @@ const MiniCalendar = ({
                 </button>
             </div>
             <div style={style}>
-                <WeekNumbers gridSize={gridSize} numberOfWeeks={numberOfWeeks} days={days} />
+                {hasWeekNumbers ? <WeekNumbers gridSize={gridSize} numberOfWeeks={numberOfWeeks} days={days} /> : null}
                 <div>
                     <WeekDays
                         gridSize={gridSize}
@@ -115,7 +118,8 @@ MiniCalendar.propTypes = {
     numberOfWeeks: PropTypes.number,
     weekdays: PropTypes.array,
     months: PropTypes.array,
-    now: PropTypes.instanceOf(Date)
+    now: PropTypes.instanceOf(Date),
+    hasWeekNumbers: PropTypes.bool
 };
 
 export default MiniCalendar;

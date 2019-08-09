@@ -222,6 +222,7 @@ const CalendarContainer = () => {
                                 onSelectDateRange={handleSelectDateRange}
                                 onSelectDate={handleSelectDate}
                                 date={currentDate}
+                                hasWeekNumbers={false}
                                 dateRange={view === CUSTOM ? dateRange : undefined}
                                 weekStartsOn={weekStartsOn}
                             />
