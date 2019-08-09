@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from 'react-components';
 
-const Main = ({ children }) => {
-    return <main className="main-area-content bg-white relative flex-item-fluid">{children}</main>;
+const Main = ({ children, className }) => {
+    return (
+        <main className={classnames(['main-area-content bg-white relative flex-item-fluid', className])}>
+            {children}
+        </main>
+    );
 };
 
 Main.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string
 };
 
 export default Main;

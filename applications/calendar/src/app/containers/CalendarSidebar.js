@@ -5,11 +5,8 @@ import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
 
 import EventModal from '../components/modals/EventModal';
-import CalendarModal from '../components/modals/CalendarModal';
-import CalendarsModal from '../components/modals/CalendarsModal';
-import MiniCalendar from '../components/miniCalendar/MiniCalendar';
 
-const OverviewSidebar = ({ calendars = [], loadingCalendars, miniCalendar }) => {
+const CalendarSidebar = ({ calendars = [], loadingCalendars, miniCalendar }) => {
     const { createModal } = useModals();
     const { call } = useEventManager();
     const api = useApi();
@@ -44,22 +41,9 @@ const OverviewSidebar = ({ calendars = [], loadingCalendars, miniCalendar }) => 
         {
             icon: 'general',
             text: c('Header').t`Calendars`,
-            type: 'button',
-            className: 'alignleft',
-            onClick() {
-                createModal(<CalendarsModal />);
-            }
+            link: '/calendar/settings/calendars'
         },
-        ...calendarsView.map((node) => ({ type: 'text', text: node })),
-        {
-            icon: 'add',
-            text: c('Action').t`Add calendar`,
-            type: 'button',
-            className: 'alignleft',
-            onClick() {
-                createModal(<CalendarModal />);
-            }
-        }
+        ...calendarsView.map((node) => ({ type: 'text', text: node }))
     ];
 
     const createActions = [
@@ -68,19 +52,19 @@ const OverviewSidebar = ({ calendars = [], loadingCalendars, miniCalendar }) => 
             onClick() {
                 createModal(<EventModal />);
             }
-        },
-        {
-            text: c('Action').t`New task`,
-            onClick() {
-                createModal(<EventModal type="task" />);
-            }
-        },
-        {
-            text: c('Action').t`New alarm`,
-            onClick() {
-                createModal(<EventModal type="alarm" />);
-            }
         }
+        // {
+        //     text: c('Action').t`New task`,
+        //     onClick() {
+        //         createModal(<EventModal type="task" />);
+        //     }
+        // },
+        // {
+        //     text: c('Action').t`New alarm`,
+        //     onClick() {
+        //         createModal(<EventModal type="alarm" />);
+        //     }
+        // }
     ];
 
     return (
@@ -96,12 +80,10 @@ const OverviewSidebar = ({ calendars = [], loadingCalendars, miniCalendar }) => 
     );
 };
 
-OverviewSidebar.propTypes = {
-    onSelectDate: PropTypes.func,
-    onSelectDateRange: PropTypes.func,
-    currentDate: PropTypes.instanceOf(Date),
+CalendarSidebar.propTypes = {
+    miniCalendar: PropTypes.node,
     calendars: PropTypes.array,
     loadingCalendars: PropTypes.bool
 };
 
-export default OverviewSidebar;
+export default CalendarSidebar;

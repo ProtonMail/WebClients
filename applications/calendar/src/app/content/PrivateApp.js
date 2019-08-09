@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ErrorBoundary, StandardPrivateApp, AppsSidebar } from 'react-components';
+import { ErrorBoundary, StandardPrivateApp } from 'react-components';
 import { UserModel, UserSettingsModel, CalendarsModel } from 'proton-shared/lib/models';
-import { APPS } from 'proton-shared/lib/constants';
+import { Route, Switch } from 'react-router';
 
-import OverviewContainer from '../containers/OverviewContainer';
-import PrivateHeader from '../components/layout/PrivateHeader';
+import CalendarContainer from '../containers/CalendarContainer';
+import SettingsContainer from '../containers/SettingsContainer';
 
 const EVENT_MODELS = [UserModel, UserSettingsModel, CalendarsModel];
 
@@ -20,15 +20,10 @@ const PrivateApp = ({ onLogout }) => {
             eventModels={EVENT_MODELS}
         >
             <ErrorBoundary>
-                <div className="flex flex-nowrap no-scroll">
-                    <AppsSidebar currentApp={APPS.PROTONCALENDAR} />
-                    <div className="content flex-item-fluid reset4print">
-                        <PrivateHeader />
-                        <div className="flex flex-nowrap">
-                            <OverviewContainer />
-                        </div>
-                    </div>
-                </div>
+                <Switch>
+                    <Route path="/calendar/settings" component={SettingsContainer} />
+                    <Route path="/calendar" component={CalendarContainer} />
+                </Switch>
             </ErrorBoundary>
         </StandardPrivateApp>
     );

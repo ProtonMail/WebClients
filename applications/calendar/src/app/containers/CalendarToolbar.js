@@ -15,7 +15,7 @@ const FORMATS = {
     [AGENDA]: 'MMMM GGGG'
 };
 
-const OverviewToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentDate, dateRange }) => {
+const CalendarToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentDate, dateRange }) => {
     const views = [
         { text: c('Calendar view').t`Day`, value: DAY },
         { text: c('Calendar view').t`Week`, value: WEEK },
@@ -71,7 +71,7 @@ const OverviewToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentD
     );
 };
 
-OverviewToolbar.propTypes = {
+CalendarToolbar.propTypes = {
     currentDate: PropTypes.instanceOf(Date),
     dateRange: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     onToday: PropTypes.func,
@@ -81,4 +81,4 @@ OverviewToolbar.propTypes = {
     onChangeView: PropTypes.func
 };
 
-export default OverviewToolbar;
+export default CalendarToolbar;

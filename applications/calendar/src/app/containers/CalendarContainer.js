@@ -1,5 +1,14 @@
 import React, { useMemo, useRef, useState, useEffect } from 'react';
-import { useModals, useCalendars, useAddresses, useAddressesKeys, useUser, Loader } from 'react-components';
+import {
+    useModals,
+    useCalendars,
+    useAddresses,
+    useAddressesKeys,
+    useUser,
+    Loader,
+    AppsSidebar
+} from 'react-components';
+import { APPS } from 'proton-shared/lib/constants';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
 
@@ -9,8 +18,8 @@ import 'tui-time-picker/dist/tui-time-picker.css';
 
 import Main from '../components/Main';
 import EventModal from '../components/modals/EventModal';
-import OverviewSidebar from './OverviewSidebar';
-import OverviewToolbar from './OverviewToolbar';
+import CalendarSidebar from './CalendarSidebar';
+import CalendarToolbar from './CalendarToolbar';
 import YearView from '../components/YearView';
 import AgendaView from '../components/AgendaView';
 import WelcomeModal from '../components/modals/WelcomeModal';
@@ -21,12 +30,13 @@ import useCalendarsEvents from './useCalendarsEvents';
 import MiniCalendar from '../components/miniCalendar/MiniCalendar';
 import { getDateDiff, getDateRange } from './helper';
 import { fromICAL } from '../helpers/vcard';
+import PrivateHeader from '../components/layout/PrivateHeader';
 
 const { DAY, WEEK, MONTH, YEAR, CUSTOM, AGENDA } = VIEWS;
 const DEFAULT_VIEW = WEEK;
 const VIEWS_HANDLED_BY_CALENDAR = [DAY, WEEK, MONTH, CUSTOM];
 
-const OverviewContainer = () => {
+const CalendarContainer = () => {
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
     const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(user, addresses);
@@ -201,74 +211,80 @@ const OverviewContainer = () => {
     }, [calendarsEvents]);
 
     return (
-        <>
-            <OverviewSidebar
-                miniCalendar={
-                    <MiniCalendar
-                        onSelectDateRange={handleSelectDateRange}
-                        onSelectDate={handleSelectDate}
-                        date={currentDate}
-                        dateRange={view === CUSTOM ? dateRange : undefined}
-                        weekStartsOn={weekStartsOn}
-                    />
-                }
-                calendars={calendars}
-                loadingCalendars={loadingCalendars}
-            />
-            <div
-                style={{
-                    position: 'fixed',
-                    bottom: '10px',
-                    left: '10px',
-                    background: '#fff',
-                    display: isLoading ? 'block' : 'none'
-                }}
-            >
-                <Loader />
-            </div>
-            <div className="main flex-item-fluid main-area">
-                <div className="flex flex-reverse">
-                    <Main>
-                        <OverviewToolbar
-                            view={view}
-                            currentDate={currentDate}
-                            dateRange={dateRange}
-                            onChangeView={handleChangeView}
-                            onNext={handleNext}
-                            onPrev={handlePrev}
-                            onToday={handleSelectToday}
-                        />
-                        {VIEWS_HANDLED_BY_CALENDAR.includes(view) ? (
-                            <Calendar
-                                onBeforeCreateSchedule={handleBeforeCreateSchedule}
-                                onBeforeUpdateSchedule={handleBeforeUpdateSchedule}
-                                onClickSchedule={handleSchedule}
-                                onClickMore={handleMore}
-                                usageStatistics={false}
-                                disableDblClick={true}
-                                ref={calendarRef}
-                                height="800px"
-                                className="flex"
-                                calendars={tuiCalendars}
-                                schedules={tuiSchedules}
-                                month={tuiMonth}
-                                week={tuiWeek}
-                                scheduleView
-                                taskView={false}
-                                useDetailPopup
+        <div className="flex flex-nowrap no-scroll">
+            <AppsSidebar currentApp={APPS.PROTONCALENDAR} />
+            <div className="content flex-item-fluid reset4print">
+                <PrivateHeader />
+                <div className="flex flex-nowrap">
+                    <CalendarSidebar
+                        miniCalendar={
+                            <MiniCalendar
+                                onSelectDateRange={handleSelectDateRange}
+                                onSelectDate={handleSelectDate}
+                                date={currentDate}
+                                dateRange={view === CUSTOM ? dateRange : undefined}
+                                weekStartsOn={weekStartsOn}
                             />
-                        ) : null}
-                        {view === YEAR ? (
-                            <YearView currentDate={currentDate} onSelectDate={handleSelectDateYear} />
-                        ) : null}
-                        {view === AGENDA ? (
-                            <AgendaView currentDate={currentDate} onSelectDate={handleSelectDateAgenda} />
-                        ) : null}
-                    </Main>
+                        }
+                        calendars={calendars}
+                        loadingCalendars={loadingCalendars}
+                    />
+                    <div
+                        style={{
+                            position: 'fixed',
+                            bottom: '10px',
+                            left: '10px',
+                            background: '#fff',
+                            display: isLoading ? 'block' : 'none'
+                        }}
+                    >
+                        <Loader />
+                    </div>
+                    <div className="main flex-item-fluid main-area">
+                        <div className="flex flex-reverse">
+                            <Main>
+                                <CalendarToolbar
+                                    view={view}
+                                    currentDate={currentDate}
+                                    dateRange={dateRange}
+                                    onChangeView={handleChangeView}
+                                    onNext={handleNext}
+                                    onPrev={handlePrev}
+                                    onToday={handleSelectToday}
+                                />
+                                {VIEWS_HANDLED_BY_CALENDAR.includes(view) ? (
+                                    <Calendar
+                                        onBeforeCreateSchedule={handleBeforeCreateSchedule}
+                                        onBeforeUpdateSchedule={handleBeforeUpdateSchedule}
+                                        onClickSchedule={handleSchedule}
+                                        onClickMore={handleMore}
+                                        usageStatistics={false}
+                                        disableDblClick={true}
+                                        ref={calendarRef}
+                                        height="800px"
+                                        className="flex"
+                                        calendars={tuiCalendars}
+                                        schedules={tuiSchedules}
+                                        month={tuiMonth}
+                                        week={tuiWeek}
+                                        scheduleView
+                                        taskView={false}
+                                        useDetailPopup
+                                    />
+                                ) : null}
+                                {view === YEAR ? (
+                                    <YearView currentDate={currentDate} onSelectDate={handleSelectDateYear} />
+                                ) : null}
+                                {view === AGENDA ? (
+                                    <AgendaView currentDate={currentDate} onSelectDate={handleSelectDateAgenda} />
+                                ) : null}
+                            </Main>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
-export default OverviewContainer;
+export default CalendarContainer;
