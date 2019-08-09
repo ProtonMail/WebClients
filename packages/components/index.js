@@ -72,6 +72,7 @@ export { default as RadioCards } from './components/input/RadioCards';
 export { default as useDebounceInput } from './components/input/useDebounceInput';
 export { default as PasswordInput } from './components/input/PasswordInput';
 export { default as Radio } from './components/input/Radio';
+export { default as RadioGroup } from './components/input/RadioGroup';
 export { default as SubTitle } from './components/title/SubTitle';
 export { default as Title } from './components/title/Title';
 export { default as useLoader } from './components/loader/useLoader';
@@ -269,6 +270,7 @@ export { default as useLoading } from './hooks/useLoading';
 export { default as usePlans } from './hooks/usePlans';
 export { default as usePermissions } from './hooks/usePermissions';
 export { nestChildren, classnames } from './helpers/component';
+export { useUserVPN, UserVPNProvider } from './containers/userVPN';
 
 export { default as useCache } from './containers/cache/useCache';
 export { default as CacheProvider } from './containers/cache/Provider';
@@ -287,6 +289,11 @@ export { default as SpamFiltersSection } from './containers/filters/SpamFiltersS
 export { default as FiltersSection } from './containers/filters/FiltersSection';
 export { default as AddFilterModal } from './containers/filters/AddFilterModal';
 export { default as AddEmailToListModal } from './containers/filters/AddEmailToListModal';
+
+export {
+    default as OpenVPNConfigurationSection
+} from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
+export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNClientsSection/ProtonVPNClientsSection';
 
 export { default as useUser } from './hooks/useUser';
 export { default as useCachedModelResult } from './hooks/useCachedModelResult';
@@ -308,6 +315,7 @@ export { default as useMemberAddresses } from './hooks/useMemberAddresses';
 export { default as useUserKeys } from './hooks/useUserKeys';
 export { default as useAddressesKeys } from './hooks/useAddressesKeys';
 export { default as useOrganizationKey } from './hooks/useOrganizationKey';
+export { default as useSortedList } from './hooks/useSortedList';
 
 export { default as ErrorBoundary } from './containers/app/ErrorBoundary';
 export { default as ProtonApp } from './containers/app/ProtonApp';
