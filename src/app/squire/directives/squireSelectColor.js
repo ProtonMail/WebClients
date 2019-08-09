@@ -9,12 +9,12 @@ function squireSelectColor(editorState) {
         templateUrl: require('../../../templates/squire/squireSelectColor.tpl.html'),
         link(scope, el) {
             const ID = scope.message.ID;
-            const $i = el[0].querySelector('mark');
+            const $i = el[0].querySelector('.color-mark');
             const $popover = el[0].querySelector('.squireSelectColor-popover');
 
             const onStateChange = ({ popover: oldPopover, color: oldColor }, { color, popover }) => {
                 if (oldColor !== color) {
-                    $i.style.color = color;
+                    $i.style.fill = color;
                 }
                 if (popover === 'changeColor') {
                     $popover.classList.remove(CLASS_HIDDEN);

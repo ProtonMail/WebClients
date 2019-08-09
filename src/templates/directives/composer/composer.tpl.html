@@ -73,7 +73,13 @@
             pt-tooltip-translate="Attachments"
             pt-tooltip-translate-context="Tooltip"
             pt-placement="top">
-            <icon data-name="attach" data-size="16" class="no-pointer-events mauto"></icon>
+            <icon
+                data-name="attach"
+                data-size="16"
+                ng-class="{
+                    'fill-pm-blue': message.Attachments && message.Attachments.length > 0
+                }"
+                class="no-pointer-events mauto"></icon>
             <span class="sr-only" translate-context="Action" translate>Attachments</span>
         </button>
 
@@ -87,7 +93,13 @@
             pt-placement="top"
             pt-tooltip-translate="Expiration time"
             pt-tooltip-translate-context="Action">
-            <icon data-name="expiration" data-size="16" class="no-pointer-events mauto"></icon>
+            <icon
+                data-name="expiration"
+                data-size="16"
+                ng-class="{
+                    'fill-pm-blue': message.ExpiresIn > 0
+                }"
+                class="no-pointer-events mauto"></icon>
             <span class="sr-only" translate-context="Action" translate>Expiration time</span>
         </button>
 
@@ -101,7 +113,13 @@
             pt-placement="top"
             pt-tooltip-translate-context="Action"
             pt-tooltip-translate="Encryption">
-            <icon data-name="lock" data-size="16" class="no-pointer-events mauto"></icon>
+            <icon
+                data-name="lock"
+                data-size="16"
+                ng-class="{
+                    'fill-pm-blue': message.isEO()
+                }"
+                class="no-pointer-events mauto"></icon>
             <span class="sr-only" translate-context="Action" translate>Encryption</span>
         </button>
 

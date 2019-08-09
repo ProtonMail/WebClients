@@ -108,23 +108,13 @@
     left: 6px;
 }
 
-.moreToggle-container.squireDropdown-is-open .fa-caret-down,
-.squireSelectFontFamily-container.squireDropdown-is-open .fa-angle-down,
-.squireSelectFontSize-container.squireDropdown-is-open .fa-angle-down,
-.squireSelectColor-is-open .squireToolbar-action-color .fa-angle-down {
+.squireDropdown-is-open .squireToolbar-select-view .expand-caret,
+.squireToolbar-show-subrow .squireToolbar-action-options .expand-caret,
+.squireSelectFontFamily-container.squireDropdown-is-open .expand-caret,
+.squireSelectFontSize-container.squireDropdown-is-open .expand-caret,
+.squireSelectColor-container.squireSelectColor-is-open .expand-caret {
     transform: rotate(180deg);
 }
-
-// .squireToolbar-show-subrow  .squireToolbar-action-color {
-//     border: 1px solid $border;
-//     margin-right: 4px
-// }
-
-
-// .squireToolbar-show-subrow .squireToolbar-action-options {
-//     background: #FFF;
-//     border: 1px solid $border;
-// }
 
 .squireToolbar-show-subrow .squireToolbar-row-2 {
     display: flex;
@@ -148,21 +138,6 @@
     //height: $composerRowHeight;
     align-self: stretch;
     background: $pm-global-border;
-}
-
-[class*="squireToolbar-action-"] {
-    // flex-shrink: 0;
-    // border: 0;
-    // padding: 0;
-    // background: transparent;
-    // width: 36px;
-    // height: 26px;
-    // margin: 4px;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
-    // word-wrap: break-word;
-    // white-space: nowrap;
-    // border-radius: $border-radius
 }
 
 [name="signature"] [class*="squireToolbar-action-"] {
@@ -284,11 +259,6 @@
 .squireToolbar-select-view {
     justify-content: space-between;
     align-items: center;
-    // background-color: #FFF;
-    // margin: 4px 0px 4px 4px;
-    // height: 26px;
-    // border: 1px solid $border;
-    // border-radius: $border-radius;
 }
 
 .squireToolbar-select-view button {
@@ -306,9 +276,6 @@
     width: 100%;
     text-align: left;
     margin: 0;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
-    // word-wrap: break-word;
     white-space: nowrap;
 
     &::after {
@@ -344,11 +311,10 @@
 .squireToolbar-select-item {
     display: flex;
     align-items: center;
-    cursor: default;
-    padding: 0 .5rem;
+    cursor: pointer;
+    padding: 0 2.5rem 0 .5rem; // don't touch the padding right
     border-top: 1px dotted lighten( $border, 20% );
-    line-height: $composerRowHeight;
-    list-style-image: url(data:0); /* IE11 issue with list style */
+    line-height: 2;
     list-style: none;
 
     * { pointer-events: none }

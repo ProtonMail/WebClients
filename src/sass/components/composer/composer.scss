@@ -30,7 +30,7 @@
 
         position: absolute; /* better for iOS then fixed*/
         height: calc(100% - 100px) !important; // the drag directive tries to override this.
-        max-height: 510px;
+        max-height: 53rem;
         right:  0 !important;
         transform: translateX(-20px);
         visibility: hidden;
@@ -50,7 +50,7 @@
 
         .fill {
           -webkit-flex:1; /* ipad */
-          flex: 1;
+          flex: 1 1 0;
 
           display: flex;
           display: -webkit-flex;
