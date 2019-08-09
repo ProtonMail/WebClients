@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import Icon from '../icon/Icon';
 import NavMenu from './NavMenu';
 
-const NavItem = ({ type, link, isActive, text, onClick, icon, list, color, className }) => {
+const NavItem = ({ type = 'link', link, isActive, text, onClick, icon, list = [], color, className = '' }) => {
     const content = (
         <span className="flex flex-nowrap flex-items-center">
             {icon && <Icon fill="light" name={icon} color={color} className="mr1 flex-item-noshrink" />}
@@ -59,12 +59,6 @@ NavItem.propTypes = {
     text: PropTypes.string,
     list: PropTypes.arrayOf(PropTypes.object),
     className: PropTypes.string
-};
-
-NavItem.defaultProps = {
-    type: 'link',
-    className: '',
-    list: []
 };
 
 export default NavItem;
