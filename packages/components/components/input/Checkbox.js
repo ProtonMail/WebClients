@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers/component';
 
-const Checkbox = ({ id, className, checked, indeterminate, color, backgroundColor, ...rest }) => {
+const Checkbox = ({ id, className, checked, indeterminate = false, color, backgroundColor, children, ...rest }) => {
     const inputRef = useRef(null);
 
     useEffect(() => {
@@ -12,11 +12,12 @@ const Checkbox = ({ id, className, checked, indeterminate, color, backgroundColo
     }, [indeterminate]);
 
     return (
-        <label htmlFor={id} className={className}>
+        <label htmlFor={id} className={classnames(['inline-flex', className])}>
             <input ref={inputRef} id={id} type="checkbox" className="pm-checkbox" checked={checked} {...rest} />
             <span className="pm-checkbox-fakecheck" style={{ background: backgroundColor, color }}>
                 <Icon className={classnames(['pm-checkbox-fakecheck-img', color && 'fill-currentColor'])} name="on" />
             </span>
+            {children}
         </label>
     );
 };
@@ -27,11 +28,8 @@ Checkbox.propTypes = {
     id: PropTypes.string,
     className: PropTypes.string,
     checked: PropTypes.bool.isRequired,
-    indeterminate: PropTypes.bool
-};
-
-Checkbox.defaultProps = {
-    indeterminate: false
+    indeterminate: PropTypes.bool,
+    children: PropTypes.node
 };
 
 export default Checkbox;
