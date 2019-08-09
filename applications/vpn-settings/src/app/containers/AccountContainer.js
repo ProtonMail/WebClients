@@ -1,5 +1,12 @@
 import React from 'react';
-import { UsernameSection, PasswordsSection, TwoFactorSection, NewsSection, DeleteSection } from 'react-components';
+import {
+    UsernameSection,
+    PasswordsSection,
+    TwoFactorSection,
+    NewsSection,
+    DeleteSection,
+    OpenVPNAccountSection
+} from 'react-components';
 import { c } from 'ttag';
 
 import Page from '../components/page/Page';
@@ -10,6 +17,7 @@ const AccountContainer = () => {
             <UsernameSection />
             <PasswordsSection />
             <TwoFactorSection />
+            <OpenVPNAccountSection />
             <NewsSection />
             <DeleteSection />
         </Page>
