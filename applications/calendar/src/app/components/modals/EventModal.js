@@ -5,20 +5,17 @@ import {
     FormModal,
     Row,
     Label,
-    Field,
     Input,
-    ErrorButton,
-    Group,
-    ButtonGroup,
+    // Group,
+    // ButtonGroup,
     useNotifications,
-    ColorPicker
+    useCalendars
 } from 'react-components';
 import { c } from 'ttag';
 
 import EventForm from './EventForm';
 import AlarmForm from './AlarmForm';
 import TaskForm from './TaskForm';
-import InviteForm from './InviteForm';
 
 const getModel = ({ start = new Date(), end = new Date(), allDay = false, type = 'event' }) => {
     const startDate = moment
@@ -55,6 +52,7 @@ const getModel = ({ start = new Date(), end = new Date(), allDay = false, type =
 };
 
 const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
+    const [calendars] = useCalendars();
     const i18n = {
         event: {
             create: c('Title').t`Create event`,
@@ -95,13 +93,13 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
         createNotification({ text: i18n[model.type][eventID ? 'updated' : 'created'] });
     };
 
-    const handleDelete = async () => {
-        setLoading(true);
-        // TODO delete API call
-        setLoading(false);
-        rest.onClose();
-        createNotification({ text: i18n[model.type].deleted });
-    };
+    // const handleDelete = async () => {
+    //     setLoading(true);
+    //     // TODO delete API call
+    //     setLoading(false);
+    //     rest.onClose();
+    //     createNotification({ text: i18n[model.type].deleted });
+    // };
 
     const decrypt = () => {
         // TODO decrypt event data to build the model
@@ -117,7 +115,7 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
         <FormModal title={title} loading={loading} onSubmit={handleSubmit} submit={c('Action').t`Save`} {...rest}>
             <Row>
                 <Label htmlFor="event-title-input">{c('Label').t`Title`}</Label>
-                <Field>
+                <div className="flex-item-fluid">
                     <Input
                         ref={titleRef}
                         id="event-title-input"
@@ -126,26 +124,9 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
                         value={model.title}
                         onChange={({ target }) => updateModel({ ...model, title: target.value })}
                     />
-                </Field>
-                <div className="ml1">
-                    <ColorPicker
-                        className="mr1"
-                        color={model.color}
-                        onChange={({ hex: color }) => updateModel({ ...model, color })}
-                    >
-                        &nbsp;
-                    </ColorPicker>
-                    {eventID ? (
-                        <ErrorButton
-                            title={i18n[model.type].delete}
-                            icon="trash"
-                            disabled={loading}
-                            onClick={handleDelete}
-                        />
-                    ) : null}
                 </div>
             </Row>
-            <Row>
+            {/* <Row>
                 <Label>{c('Label').t`Type`}</Label>
                 <Field>
                     <Group>
@@ -163,9 +144,10 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
                         >{c('Event type').t`Task`}</ButtonGroup>
                     </Group>
                 </Field>
-            </Row>
-            {model.type === 'event' ? <EventForm model={model} updateModel={updateModel} /> : null}
-            {model.type === 'event' ? <InviteForm model={model} updateModel={updateModel} /> : null}
+            </Row> */}
+            {model.type === 'event' ? (
+                <EventForm calendars={calendars} model={model} updateModel={updateModel} />
+            ) : null}
             {model.type === 'alarm' ? <AlarmForm model={model} updateModel={updateModel} /> : null}
             {model.type === 'task' ? <TaskForm model={model} updateModel={updateModel} /> : null}
         </FormModal>

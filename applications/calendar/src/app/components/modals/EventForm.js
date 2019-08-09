@@ -5,19 +5,21 @@ import PropTypes from 'prop-types';
 import {
     Row,
     Label,
-    Field,
     Input,
     DateInput,
     TimeSelect,
     Select,
     Checkbox,
     LinkButton,
+    ColorPicker,
     TextArea
 } from 'react-components';
 
-import Notifications from './Notifications';
+import AttendeeRow from './AttendeeRow';
+import NotificationRow from './NotificationRow';
 
-const EventForm = ({ model, updateModel }) => {
+const EventForm = ({ calendars = [], model, updateModel }) => {
+    const calendarOptions = calendars.map(({ ID, Name }) => ({ text: Name, value: ID }));
     const timezones = [];
     const frequencies = [
         { text: c('Option').t`One time`, value: '' },
@@ -29,117 +31,129 @@ const EventForm = ({ model, updateModel }) => {
     return (
         <>
             <Row>
-                <Label htmlFor="startDate">{c('Label').t`From`}</Label>
-                <Field className="flex flex-spacebetween flex-nowrap">
-                    <DateInput
-                        id="startDate"
-                        className="mr1"
-                        required
-                        defaultDate={new Date()}
-                        setDefaultDate
-                        onSelect={(date) => updateModel({ ...model, startDate: new Date(date).getTime() })}
-                        format={moment.localeData().longDateFormat('L')}
-                    />
-                    {model.allDay ? null : (
-                        <TimeSelect
-                            value={model.startTime}
-                            onChange={(startTime) => updateModel({ ...model, startTime })}
-                        />
-                    )}
-                </Field>
-                <div className="ml1">
-                    {model.showTimezone ? null : (
-                        <LinkButton onClick={() => updateModel({ ...model, showTimezone: true })}>{c('Action')
-                            .t`Edit timezone`}</LinkButton>
-                    )}
-                    {model.showTimezone ? (
+                <Label htmlFor="startDate">{c('Label').t`Time`}</Label>
+                <div className="flex-item-fluid">
+                    <div className="flex flex-spacebetween flex-nowrap flex-items-center mb1">
+                        <div className="flex flex-nowrap">
+                            <DateInput
+                                className="mr0-5"
+                                required
+                                defaultDate={new Date()}
+                                setDefaultDate
+                                onSelect={(date) => updateModel({ ...model, startDate: new Date(date).getTime() })}
+                                format={moment.localeData().longDateFormat('L')}
+                            />
+                            {model.allDay ? null : (
+                                <TimeSelect
+                                    value={model.startTime}
+                                    onChange={(startTime) => updateModel({ ...model, startTime })}
+                                />
+                            )}
+                        </div>
+                        <div className="pl0-5 pr0-5">-</div>
+                        <div className="flex flex-nowrap">
+                            <DateInput
+                                required
+                                className="mr0-5"
+                                defaultDate={new Date()}
+                                setDefaultDate
+                                onSelect={(date) => updateModel({ ...model, endDate: new Date(date).getTime() })}
+                                format={moment.localeData().longDateFormat('L')}
+                            />
+                            {model.allDay ? null : (
+                                <TimeSelect
+                                    value={model.endTime}
+                                    onChange={(endTime) => updateModel({ ...model, endTime })}
+                                />
+                            )}
+                        </div>
+                    </div>
+                    <div className="flex flex-spacebetween flex-nowrap flex-items-center">
+                        <label htmlFor="event-allday-checkbox" className="pt0-5">
+                            <Checkbox
+                                id="event-allday-checkbox"
+                                checked={model.allDay}
+                                onChange={({ target }) => updateModel({ ...model, allDay: target.checked })}
+                            />
+                            {c('Label').t`All day event`}
+                        </label>
+                        {model.moreOptions ? null : (
+                            <LinkButton onClick={() => updateModel({ ...model, moreOptions: true })}>{c('Action')
+                                .t`More options`}</LinkButton>
+                        )}
+                    </div>
+                </div>
+            </Row>
+            {model.moreOptions ? (
+                <Row>
+                    <Label>{c('Label').t`Repetition`}</Label>
+                    <div>
                         <Select
-                            value={model.startTimezone}
+                            value={model.frequency}
+                            options={frequencies}
+                            onChange={({ target }) => updateModel({ ...model, frequency: target.value })}
+                        />
+                    </div>
+                </Row>
+            ) : null}
+            {model.moreOptions ? (
+                <Row>
+                    <Label>{c('Label').t`Timezone`}</Label>
+                    <div>
+                        <Select
+                            value={model.timezone}
                             onChange={({ target }) => updateModel({ ...model, startTimezone: target.value })}
                             options={timezones}
                         />
-                    ) : null}
-                </div>
-            </Row>
+                    </div>
+                </Row>
+            ) : null}
             <Row>
-                <Label htmlFor="endDate">{c('Label').t`To`}</Label>
-                <Field className="flex flex-spacebetween flex-nowrap">
-                    <DateInput
-                        id="endDate"
-                        required
-                        className="mr1"
-                        defaultDate={new Date()}
-                        setDefaultDate
-                        onSelect={(date) => updateModel({ ...model, endDate: new Date(date).getTime() })}
-                        format={moment.localeData().longDateFormat('L')}
-                    />
-                    {model.allDay ? null : (
-                        <TimeSelect value={model.endTime} onChange={(endTime) => updateModel({ ...model, endTime })} />
-                    )}
-                </Field>
-                <div className="ml1">
-                    {model.showTimezone ? (
-                        <Select
-                            value={model.endTimezone}
-                            onChange={({ target }) => updateModel({ ...model, endTimezone: target.value })}
-                            options={timezones}
-                        />
-                    ) : null}
-                </div>
-            </Row>
-            <Row>
-                <Label>{c('Label').t`Frequency`}</Label>
-                <Field>
+                <Label htmlFor="event-calendar-select">{c('Label').t`Calendar`}</Label>
+                <div className="flex flex-nowrap flex-item-fluid">
                     <Select
-                        value={model.frequency}
-                        options={frequencies}
-                        onChange={({ target }) => updateModel({ ...model, frequency: target.value })}
+                        className="mr1"
+                        options={calendarOptions}
+                        value={model.calendar}
+                        onChange={({ target }) => updateModel({ ...model, calendar: target.value })}
                     />
-                </Field>
-                <label htmlFor="event-allday-checkbox" className="ml1 pt0-5">
-                    <Checkbox
-                        id="event-allday-checkbox"
-                        checked={model.allDay}
-                        onChange={({ target }) => updateModel({ ...model, allDay: target.checked })}
-                    />
-                    {c('Label').t`All day`}
-                </label>
+                    <ColorPicker color={model.color} onChange={({ hex: color }) => updateModel({ ...model, color })}>
+                        &nbsp;
+                    </ColorPicker>
+                </div>
             </Row>
             <Row>
                 <Label htmlFor="event-location-input">{c('Label').t`Location`}</Label>
-                <Field>
+                <div className="flex-item-fluid">
                     <Input
                         id="event-location-input"
                         placeholder={c('Placeholder').t`Add a location`}
                         value={model.location}
                         onChange={({ target }) => updateModel({ ...model, location: target.value })}
                     />
-                </Field>
-            </Row>
-            <Row>
-                <Label>{c('Label').t`Notifications`}</Label>
-                <div>
-                    <Notifications model={model} updateModel={updateModel} />
                 </div>
             </Row>
             <Row>
                 <Label htmlFor="event-description-input">{c('Label').t`Description`}</Label>
-                <Field>
+                <div className="flex-item-fluid">
                     <TextArea
                         id="event-description-input"
                         placeholder={c('Placeholder').t`Add a description`}
                         value={model.description}
                         onChange={({ target }) => updateModel({ ...model, description: target.value })}
                     />
-                </Field>
+                </div>
             </Row>
+            <AttendeeRow model={model} updateModel={updateModel} />
+            <NotificationRow model={model} updateModel={updateModel} />
         </>
     );
 };
 
 EventForm.propTypes = {
     model: PropTypes.object,
-    updateModel: PropTypes.func
+    updateModel: PropTypes.func,
+    calendars: PropTypes.array
 };
 
 export default EventForm;
