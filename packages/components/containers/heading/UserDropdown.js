@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import {
-    useAddresses,
+    useUser,
     useOrganization,
     useAuthentication,
     useModals,
@@ -16,8 +16,7 @@ import {
 import UserDropdownButton from './UserDropdownButton';
 
 const UserDropdown = (props) => {
-    const [addresses] = useAddresses();
-    const [{ Email, DisplayName } = {}] = addresses || [];
+    const [{ DisplayName, Email }] = useUser();
     const [{ Name: organizationName } = {}] = useOrganization();
     const { logout } = useAuthentication();
     const { createModal } = useModals();
