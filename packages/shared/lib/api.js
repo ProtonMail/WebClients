@@ -2,6 +2,11 @@ export const getUIDHeaders = (UID) => ({
     'x-pm-uid': UID
 });
 
+export const getAuthHeaders = (UID, AccessToken) => ({
+    'x-pm-uid': UID,
+    Authorization: `Bearer ${AccessToken}`
+});
+
 const ADD_CLIENT_SECRET = ['auth', 'auth/info'];
 
 /**

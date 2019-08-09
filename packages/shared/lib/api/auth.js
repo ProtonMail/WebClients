@@ -6,6 +6,19 @@ export const auth = (data) => ({
     data
 });
 
+export const auth2FA = ({ totp, u2f, UID, AccessToken }) => ({
+    method: 'post',
+    url: 'auth/2fa',
+    data: {
+        TwoFactorCode: totp,
+        U2F: u2f
+    },
+    headers: {
+        Authorization: `Bearer ${AccessToken}`,
+        'x-pm-uid': UID
+    }
+});
+
 export const revoke = () => ({
     method: 'delete',
     url: 'auth'
