@@ -6,16 +6,12 @@ export const auth = (data) => ({
     data
 });
 
-export const auth2FA = ({ totp, u2f, UID, AccessToken }) => ({
+export const auth2FA = ({ totp, u2f }) => ({
     method: 'post',
     url: 'auth/2fa',
     data: {
         TwoFactorCode: totp,
         U2F: u2f
-    },
-    headers: {
-        Authorization: `Bearer ${AccessToken}`,
-        'x-pm-uid': UID
     }
 });
 
