@@ -6,6 +6,7 @@ import {
     useAuthentication,
     useModals,
     usePopperAnchor,
+    useApi,
     Icon,
     Dropdown,
     BugModal,
@@ -13,9 +14,11 @@ import {
     generateUID,
     PrimaryButton
 } from 'react-components';
+import { revoke } from 'proton-shared/lib/api/auth';
 import UserDropdownButton from './UserDropdownButton';
 
 const UserDropdown = (props) => {
+    const api = useApi();
     const [user] = useUser();
     const { DisplayName, Email } = user;
     const [{ Name: organizationName } = {}] = useOrganization();
@@ -30,6 +33,11 @@ const UserDropdown = (props) => {
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
+    };
+
+    const handleLogout = () => {
+        api(revoke()); // Kick off the revoke request, but don't care for the result.
+        logout();
     };
 
     return (
@@ -111,7 +119,7 @@ const UserDropdown = (props) => {
                         </button>
                     </li>
                     <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex">
-                        <PrimaryButton className="w100 aligncenter navigationUser-logout" onClick={logout}>
+                        <PrimaryButton className="w100 aligncenter navigationUser-logout" onClick={handleLogout}>
                             {c('Action').t`Logout`}
                         </PrimaryButton>
                     </li>

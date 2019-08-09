@@ -14,7 +14,7 @@ const TwoFactorInput = ({ value, onChange, maxLength = 8, ...rest }) => {
 TwoFactorInput.propTypes = {
     onChange: PropTypes.func,
     value: PropTypes.string,
-    maxLength: PropTypes.number.isRequired
+    maxLength: PropTypes.number
 };
 
 export default TwoFactorInput;

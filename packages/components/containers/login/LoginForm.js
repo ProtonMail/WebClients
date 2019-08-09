@@ -1,25 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { Input, Label, Button } from 'react-components';
+import { Input, Label } from 'react-components';
 
-const LoginForm = ({ onSubmit, loading }) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if (!username || !password) {
-            return;
-        }
-        onSubmit({ username, password });
-    };
-
-    const onChange = (set) => ({ target }) => set(target.value);
-
+const LoginForm = ({ username, setUsername, password, setPassword }) => {
     return (
-        <form name="loginForm" noValidate onSubmit={handleSubmit}>
+        <>
             <Label htmlFor="login" className="bl sr-only">
                 {c('Label').t`Username`}
             </Label>
@@ -34,7 +20,7 @@ const LoginForm = ({ onSubmit, loading }) => {
                 required
                 value={username}
                 placeholder={c('Placeholder').t`Username`}
-                onChange={onChange(setUsername)}
+                onChange={({ target: { value } }) => setUsername(value)}
                 data-cy-login="username"
             />
             <Label htmlFor="password" className="bl sr-only">
@@ -49,25 +35,18 @@ const LoginForm = ({ onSubmit, loading }) => {
                 required
                 value={password}
                 placeholder={c('Placeholder').t`Password`}
-                onChange={onChange(setPassword)}
+                onChange={({ target: { value } }) => setPassword(value)}
                 data-cy-login="password"
             />
-            <Button type="submit" className="pm-button-blue w100" disabled={loading} data-cy-login="submit">
-                Login
-            </Button>
-            <p>
-                <Link to="/support/login">Need help?</Link>
-            </p>
-            <p>
-                <Link to="/signup">Create an account</Link>
-            </p>
-        </form>
+        </>
     );
 };
 
 LoginForm.propTypes = {
-    loading: PropTypes.bool,
-    onSubmit: PropTypes.func
+    username: PropTypes.string,
+    password: PropTypes.string,
+    setUsername: PropTypes.func,
+    setPassword: PropTypes.func
 };
 
 export default LoginForm;

@@ -115,10 +115,6 @@ export { default as OrderableTableHeader } from './components/orderableTable/Ord
 export { default as OrderableTableBody } from './components/orderableTable/OrderableTableBody';
 export { default as OrderableTableRow } from './components/orderableTable/OrderableTableRow';
 export { default as LoginContainer } from './containers/login/LoginContainer';
-export { default as TOTPForm } from './containers/login/TOTPForm';
-export { default as useLogin } from './containers/login/useLogin';
-export { default as UnlockForm } from './containers/login/UnlockForm';
-export { default as LoginForm } from './containers/login/LoginForm';
 export { default as ProtonMailAppsSection } from './containers/apps/ProtonMailAppsSection';
 export { default as ProtonMailBetaSection } from './containers/apps/ProtonMailBetaSection';
 export { default as ProtonMailBridgeSection } from './containers/apps/ProtonMailBridgeSection';
