@@ -16,7 +16,8 @@ import {
 import UserDropdownButton from './UserDropdownButton';
 
 const UserDropdown = (props) => {
-    const [{ DisplayName, Email }] = useUser();
+    const [user] = useUser();
+    const { DisplayName, Email } = user;
     const [{ Name: organizationName } = {}] = useOrganization();
     const { logout } = useAuthentication();
     const { createModal } = useModals();
@@ -35,6 +36,7 @@ const UserDropdown = (props) => {
         <div className="userDropdown">
             <UserDropdownButton
                 {...props}
+                user={user}
                 aria-describedby={uid}
                 buttonRef={anchorRef}
                 isOpen={isOpen}
@@ -46,9 +48,11 @@ const UserDropdown = (props) => {
                         <strong title={DisplayName} className="ellipsis mw100 capitalize">
                             {DisplayName}
                         </strong>
-                        <span title={Email} className="ellipsis mw100">
-                            {Email}
-                        </span>
+                        {Email ? (
+                            <span title={Email} className="ellipsis mw100">
+                                {Email}
+                            </span>
+                        ) : null}
                         {organizationName ? (
                             <span title={organizationName} className="ellipsis mw100">
                                 {organizationName}
