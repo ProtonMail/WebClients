@@ -8,7 +8,7 @@ const UnlockForm = ({ password, setPassword }) => {
         <>
             <Label htmlFor="password">{c('Label').t`Mailbox password`}</Label>
             <Input
-                type="text"
+                type="password"
                 name="password"
                 autoFocus
                 autoCapitalize="off"
