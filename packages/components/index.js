@@ -266,7 +266,6 @@ export { default as useLoading } from './hooks/useLoading';
 export { default as usePlans } from './hooks/usePlans';
 export { default as usePermissions } from './hooks/usePermissions';
 export { nestChildren, classnames } from './helpers/component';
-export { useUserVPN, UserVPNProvider } from './containers/userVPN';
 
 export { default as useCache } from './containers/cache/useCache';
 export { default as CacheProvider } from './containers/cache/Provider';
@@ -290,6 +289,7 @@ export {
     default as OpenVPNConfigurationSection
 } from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNClientsSection/ProtonVPNClientsSection';
+export { default as OpenVPNAccountSection } from './containers/vpn/OpenVPNAccountSection/OpenVPNAccountSection';
 
 export { default as useUser } from './hooks/useUser';
 export { default as useCachedModelResult } from './hooks/useCachedModelResult';
@@ -311,7 +311,8 @@ export { default as useMemberAddresses } from './hooks/useMemberAddresses';
 export { default as useUserKeys } from './hooks/useUserKeys';
 export { default as useAddressesKeys } from './hooks/useAddressesKeys';
 export { default as useOrganizationKey } from './hooks/useOrganizationKey';
-export { default as useSortedList } from './hooks/useSortedList';
+export { default as useUserVPN } from './hooks/useUserVPN';
+export { default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
 
 export { default as ErrorBoundary } from './containers/app/ErrorBoundary';
 export { default as ProtonApp } from './containers/app/ProtonApp';

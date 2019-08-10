@@ -25,10 +25,14 @@ const ServerConfigs = ({ servers, ...rest }) => {
         return [...freeServers, ...otherServers];
     });
 
-    const { isBasic, userVPN } = useUserVPN();
     const { hasPaidVPN } = useUser();
+    const { result = {} } = useUserVPN();
+
+    const userVPN = result.VPN;
+    const isBasicVPN = userVPN && userVPN.PlanName === 'vpnbasic';
+
     const isUpgradeRequired = (server) =>
-        !userVPN || (!hasPaidVPN && server.Tier > 0) || (isBasic && server.Tier === 2);
+        !userVPN || (!hasPaidVPN && server.Tier > 0) || (isBasicVPN && server.Tier === 2);
 
     return (
         <div className="mb1-5">
