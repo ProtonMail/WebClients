@@ -184,6 +184,7 @@ export { default as PasswordsSection } from './containers/account/PasswordsSecti
 export { default as TwoFactorSection } from './containers/account/TwoFactorSection';
 export { default as UserDropdown } from './containers/heading/UserDropdown';
 export { default as UpgradeButton } from './containers/heading/UpgradeButton';
+export { default as SupportDropdown } from './containers/heading/SupportDropdown';
 export { default as RecoveryEmail } from './containers/notification/RecoveryEmail';
 export { default as EmailSection } from './containers/notification/EmailSection';
 export { default as AddressKeysSection } from './containers/keys/AddressKeysSection';
