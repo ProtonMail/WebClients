@@ -66,6 +66,7 @@ export { default as Input } from './components/input/Input';
 export { default as DateInput } from './components/input/DateInput';
 export { default as FileInput } from './components/input/FileInput';
 export { default as EmailInput } from './components/input/EmailInput';
+export { default as TelInput } from './components/input/TelInput';
 export { default as TwoFactorInput } from './components/input/TwoFactorInput';
 export { default as RadioCard } from './components/input/RadioCard';
 export { default as RadioCards } from './components/input/RadioCards';
