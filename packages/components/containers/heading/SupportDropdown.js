@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { SimpleDropdown, Icon, useModals, BugModal } from 'react-components';
 import { c } from 'ttag';
 
-const SupportDropdown = () => {
+const SupportDropdown = ({ className }) => {
     const { createModal } = useModals();
 
     const handleBugReportClick = () => {
@@ -10,7 +11,7 @@ const SupportDropdown = () => {
     };
 
     return (
-        <SimpleDropdown content={c('Button in header').t`Support`}>
+        <SimpleDropdown icon="support1" className={className} content={c('Button in header').t`Support`}>
             <ul className="unstyled mt0-5 mb0-5">
                 <li className="dropDown-item pl1 pr1">
                     <a
@@ -36,6 +37,10 @@ const SupportDropdown = () => {
             </ul>
         </SimpleDropdown>
     );
+};
+
+SupportDropdown.propTypes = {
+    className: PropTypes.string
 };
 
 export default SupportDropdown;

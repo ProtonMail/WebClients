@@ -9,8 +9,8 @@ const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONVPN_SETTINGS } = APPS;
 const AppsSidebar = ({ currentApp = '' }) => {
     const apps = [
         { id: PROTONMAIL, icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
-        { id: PROTONCONTACTS, icon: 'contacts', title: 'ProtonContacts', link: '/contacts' },
         { id: PROTONCALENDAR, icon: 'calendar', title: 'ProtonCalendar', link: '/calendar' },
+        { id: PROTONCONTACTS, icon: 'contacts', title: 'ProtonContacts', link: '/contacts' },
         {
             id: PROTONVPN_SETTINGS,
             icon: 'protonvpn',
