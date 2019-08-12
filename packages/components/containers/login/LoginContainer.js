@@ -14,6 +14,7 @@ import { srpVerify } from 'proton-shared/lib/srp';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { mergeHeaders } from 'proton-shared/lib/fetch/helpers';
 import { getAuthHeaders } from 'proton-shared/lib/api';
+import { HTTP_ERROR_CODES } from 'proton-shared/lib/errors';
 
 const withAuthHeaders = (UID, AccessToken, config) => mergeHeaders(config, getAuthHeaders(UID, AccessToken));
 
@@ -138,7 +139,15 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
             authResult: { UID, AccessToken }
         } = cacheRef.current;
 
-        await api(withAuthHeaders(UID, AccessToken, auth2FA({ totp })));
+        await api(withAuthHeaders(UID, AccessToken, auth2FA({ totp }))).catch((e) => {
+            if (e.status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
+                const error = new Error('Retry TOTP error');
+                error.name = 'RetryTOTPError';
+                error.data = e.data;
+                throw error;
+            }
+            throw e;
+        });
 
         return next(FORM.TOTP);
     };
@@ -216,8 +225,8 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
                     handleTotp().catch((e) => {
                         createNotification({ type: 'error', text: getErrorText(e) });
 
-                        // 422 -> incorrect attempt, and it can be retried. Any other valid code would cancel.
-                        if (e.status && e.status !== 422) {
+                        // In case of any other error than retry error, automatically cancel here to allow the user to retry.
+                        if (e.name !== 'RetryTOTPError') {
                             return handleCancel();
                         }
                     })
@@ -241,6 +250,11 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
                 withLoading(
                     handleUnlock(keyPassword).catch((e) => {
                         createNotification({ type: 'error', text: getErrorText(e) });
+
+                        // In case of any other error than password error, automatically cancel here to allow the user to retry.
+                        if (e.name !== 'PasswordError') {
+                            return handleCancel();
+                        }
                     })
                 );
             };
