@@ -450,6 +450,11 @@ export const PASSWORD_MODE = {
     TWO_PASSWORD: 2
 };
 
+export const TWO_FA_FLAGS = {
+    TOTP: 1,
+    U2F: 2
+};
+
 export const TWO_FA_CONFIG = {
     PERIOD: 30,
     DIGITS: 6,
