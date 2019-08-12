@@ -2,12 +2,14 @@ import { c } from 'ttag';
 import { computeKeyPassword } from 'pm-srp';
 import { decryptPrivateKey } from 'pmcrypto';
 import { getPrimaryKeyWithSalt } from 'proton-shared/lib/keys/keys';
+import { TWO_FA_FLAGS, PASSWORD_MODE } from 'proton-shared/lib/constants';
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
 export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode } = {}) => {
     return {
-        hasTotp: Enabled & 1,
-        hasU2F: Enabled & 2,
-        hasUnlock: PasswordMode !== 1
+        hasTotp: hasBit(Enabled, TWO_FA_FLAGS.TOTP),
+        hasU2F: hasBit(Enabled, TWO_FA_FLAGS.U2F),
+        hasUnlock: PasswordMode === PASSWORD_MODE.TWO_PASSWORD
     };
 };
 
