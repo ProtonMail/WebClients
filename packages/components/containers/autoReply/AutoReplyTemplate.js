@@ -59,7 +59,7 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
                     </InfoLine>
                     <InfoLine label={c('Label').t`Timezone`}>{timezone}</InfoLine>
                     <InfoLine plain label={c('Label').t`Message`}>
-                        <div dangerouslySetInnerHTML={{ __html: autoresponder.Message }} />
+                        <div className="cut" dangerouslySetInnerHTML={{ __html: autoresponder.Message }} />
                     </InfoLine>
                 </tbody>
             </table>
