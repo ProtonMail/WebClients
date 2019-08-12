@@ -8,6 +8,7 @@ export const CONTACT_ERROR = {
 export const HTTP_ERROR_CODES = {
     ABORTED: -1,
     TIMEOUT: 0,
+    UNPROCESSABLE_ENTITY: 422,
     TOO_MANY_REQUESTS: 429
 };
 
