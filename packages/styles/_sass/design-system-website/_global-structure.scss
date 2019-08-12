@@ -196,6 +196,12 @@ body {
   width: 2px;
   background-image: linear-gradient(90deg, #4F5460 0, #4F5460 1px, #353A46 1px);
 }
+.toolbar button[aria-disabled="true"],
+.toolbar .toolbar-button[aria-disabled="true"] {
+  opacity: .5;
+  pointer-events: none;
+}
+
 .main-area,
 .main-area--withToolbar,
 .main-full {
