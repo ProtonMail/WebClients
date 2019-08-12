@@ -85,7 +85,7 @@ li ul {
   samp,
   div,
   p {
-    word-wrap: break-word;
+    word-break: break-word;
   }
   @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
     textarea,
@@ -97,18 +97,18 @@ li ul {
     samp,
     div,
     p {
-      word-wrap: normal;
+      word-break: normal;
       @include vendor-prefix(hyphens, auto, webkit ms);
     }
   }
 }
 @else {
   .cut {
-    word-wrap: break-word;
+    word-break: break-word;
   }
   @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
     .cut {
-      word-wrap: normal;
+      word-break: normal;
       @include vendor-prefix(hyphens, auto, webkit ms);
     }
   }
