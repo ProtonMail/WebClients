@@ -3,6 +3,7 @@ $stroke-width-big: 4 !default;
 
 .loadingAnimation {  
   animation: protonRotate 3s linear infinite;
+  will-change: transform;
 }
 
 
@@ -22,6 +23,7 @@ $stroke-width-big: 4 !default;
   stroke: $pm-global-grey;
   stroke-width: $stroke-width-big;
   transform-origin: 50%;
+  will-change: transform;
 }
 
 .loadingAnimation-circle--pm-blue {
