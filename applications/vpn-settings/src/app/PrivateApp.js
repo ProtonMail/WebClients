@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StandardPrivateApp, UserVPNProvider } from 'react-components';
+import { StandardPrivateApp } from 'react-components';
 import { UserModel, MailSettingsModel, UserSettingsModel } from 'proton-shared/lib/models';
 
 import PrivateLayout from './components/layout/PrivateLayout';
@@ -13,11 +13,9 @@ const PrivateApp = ({ onLogout }) => {
             preloadModels={[UserModel, UserSettingsModel]}
             eventModels={[UserModel, MailSettingsModel]}
         >
-            <UserVPNProvider>
-                <PrivateLayout>
-                    <PrivateAppRoutes />
-                </PrivateLayout>
-            </UserVPNProvider>
+            <PrivateLayout>
+                <PrivateAppRoutes />
+            </PrivateLayout>
         </StandardPrivateApp>
     );
 };
