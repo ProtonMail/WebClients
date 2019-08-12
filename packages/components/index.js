@@ -294,6 +294,7 @@ export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNCl
 export { default as OpenVPNAccountSection } from './containers/vpn/OpenVPNAccountSection/OpenVPNAccountSection';
 
 export { default as useUser } from './hooks/useUser';
+export { default as useUserVPN } from './hooks/useUserVPN';
 export { default as useCachedModelResult } from './hooks/useCachedModelResult';
 export { default as usePromiseResult } from './hooks/usePromiseResult';
 export { default as useAddresses } from './hooks/useAddresses';
