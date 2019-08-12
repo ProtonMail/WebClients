@@ -27,6 +27,9 @@ $stroke-width-big: 4 !default;
 .loadingAnimation-circle--pm-blue {
   stroke: $pm-blue;
 }
+.loadingAnimation-circle--global-light {
+  stroke: $pm-global-light;
+}
 
 .loadingAnimation-orbit1 {
   animation: protonOrbit1 3s linear infinite;
