@@ -4,8 +4,9 @@ import { DropdownCaret } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 
 const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }) => {
-    const { Email, DisplayName } = user;
-    const initials = getInitial(DisplayName);
+    const { Email, DisplayName, Name } = user;
+    // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.
+    const initials = getInitial(DisplayName || Name || undefined);
 
     return (
         <button type="button" className="color-white inline-flex" aria-expanded={isOpen} ref={buttonRef} {...rest}>
