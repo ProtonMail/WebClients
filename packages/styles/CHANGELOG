@@ -3,19 +3,20 @@
 
 ## New
 
-- New loading images/animations
-- Fixed toggle “slow `aria-busy`” state animation
-- Removed `progressive[aria-busy="true"]` styles
-- Custom scrollbar (to test on several devices)
+- new loading images/animations
+- fixed toggle “slow `aria-busy`” state animation
+- removed `progressive[aria-busy="true"]` styles
+- custom scrollbar (to test on several devices)
 
 
 ## Updated/fixes
 
-- Remove `settings` icons in left sidebar
-- Fixed Chrome bug with `.spacebar` (autoprefixer issue)
-- Updated DropDown react styles
-- Added disabled state for toolbar button
-- Added alias `question` for `what-is-it` icon (to merge)
+- remove `settings` icons in left sidebar
+- fixed Chrome bug with `.spacebar` (autoprefixer issue)
+- updated DropDown react styles
+- added disabled state for toolbar button
+- added alias `question` for `what-is-it` icon (to merge)
+- added example of image in conversations
 
 
 # [1.7.1] - 2019-08-06
