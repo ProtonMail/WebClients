@@ -65,7 +65,7 @@ const Button = ({
         }
     };
 
-    const iconComponent = typeof icon === 'string' ? <Icon name={icon} /> : icon;
+    const iconComponent = typeof icon === 'string' ? <Icon className="flex-item-noshrink" name={icon} /> : icon;
     const iconButtonClass = !children ? 'pm-button--for-icon' : '';
 
     return (

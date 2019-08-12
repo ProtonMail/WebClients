@@ -60,30 +60,38 @@ const OpenVPNAccountSection = () => {
             <Row>
                 <Label htmlFor="openvpn-username">{c('Label').t`OpenVPN / IKEv2 username`}</Label>
                 <Field>
-                    <Input id="openvpn-username" value={username} onChange={handleChangeUsername} />
-                    <Row className="mt1">
-                        <Copy className="mr1" value={username} />
+                    <div className="mb1">
+                        <Input id="openvpn-username" value={username} onChange={handleChangeUsername} />
+                    </div>
+                    <div>
                         <PrimaryButton
                             disabled={!credentials || !credentials.username}
                             loading={loadingUsername}
                             onClick={handleUpdateUsername}
                         >{c('Action').t`Change username`}</PrimaryButton>
-                    </Row>
+                    </div>
                 </Field>
+                <div className="ml1">
+                    <Copy value={username} />
+                </div>
             </Row>
             <Row>
                 <Label htmlFor="openvpn-password">{c('Label').t`OpenVPN / IKEv2 password`}</Label>
                 <Field>
-                    <PasswordInput id="openvpn-password" value={password} onChange={handleChangePassword} />
-                    <Row className="mt1">
-                        <Copy className="mr1" value={password} />
+                    <div className="mb1">
+                        <PasswordInput id="openvpn-password" value={password} onChange={handleChangePassword} />
+                    </div>
+                    <div>
                         <PrimaryButton
                             disabled={!credentials || !credentials.password}
                             loading={loadingPassword}
                             onClick={handleUpdatePassword}
                         >{c('Action').t`Change password`}</PrimaryButton>
-                    </Row>
+                    </div>
                 </Field>
+                <div className="ml1">
+                    <Copy value={password} />
+                </div>
             </Row>
         </>
     );
