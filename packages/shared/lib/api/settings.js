@@ -96,6 +96,6 @@ export const setupTotp = (TOTPSharedSecret, TOTPConfirmation) => ({
 });
 
 export const disableTotp = () => ({
-    url: 'settings/2fa',
+    url: 'settings/2fa/totp',
     method: 'put'
 });
