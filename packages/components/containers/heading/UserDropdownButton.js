@@ -8,7 +8,7 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }) => {
     const initials = getInitial(DisplayName);
 
     return (
-        <button className="color-white inline-flex" aria-expanded={isOpen} ref={buttonRef} {...rest}>
+        <button type="button" className="color-white inline-flex" aria-expanded={isOpen} ref={buttonRef} {...rest}>
             <span className="alignright">
                 <span className="bl capitalize">{DisplayName}</span>
                 {Email ? <span className="bl smaller m0 opacity-30 lh100">{Email}</span> : null}

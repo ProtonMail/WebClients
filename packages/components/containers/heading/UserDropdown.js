@@ -84,7 +84,7 @@ const UserDropdown = (props) => {
                             rel="noopener noreferrer"
                         >
                             <Icon className="mt0-25 mr0-5 fill-currentColor" name="help-answer" />
-                            {c('Action').t`Contact support`}
+                            {c('Action').t`I have a question`}
                         </a>
                     </li>
                     <li className="dropDown-item pl1 pr1">
