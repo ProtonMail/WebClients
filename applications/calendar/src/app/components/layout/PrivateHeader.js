@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MainLogo, Icon, UpgradeButton, useUser, UserDropdown } from 'react-components';
+import { MainLogo, Icon, UpgradeButton, useUser, UserDropdown, SupportDropdown } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -43,6 +43,9 @@ const PrivateHeader = ({ location }) => {
                             <UpgradeButton className="topnav-link inline-flex flex-nowrap nodecoration rounded" />
                         </li>
                     ) : null}
+                    <li className="mr1">
+                        <SupportDropdown />
+                    </li>
                     <li className="mlauto mtauto mbauto relative flex-item-noshrink">
                         <UserDropdown />
                     </li>
