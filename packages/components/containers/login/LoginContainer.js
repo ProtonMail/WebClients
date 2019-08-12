@@ -55,6 +55,8 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
             userSaltResult: [{ User }] = [{}] // Default for case 1)
         } = cacheRef.current;
 
+        cacheRef.current = undefined;
+
         if (authVersion < AUTH_VERSION) {
             await srpVerify({
                 api,
@@ -62,8 +64,6 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
                 config: withAuthHeaders(UID, AccessToken, upgradePassword())
             });
         }
-
-        cacheRef.current = undefined;
 
         await api(setCookies({ UID, AccessToken, RefreshToken, State: getRandomString(24) }));
 
