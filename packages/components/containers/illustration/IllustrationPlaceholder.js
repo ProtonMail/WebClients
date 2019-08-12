@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const IllustrationPlaceholder = ({ className, title, text = '', url, uppercase, children }) => {
+const IllustrationPlaceholder = ({ className, title, text, url, uppercase, children }) => {
     const info = typeof text === 'string' ? <p>{text}</p> : text;
 
     return (
