@@ -98,7 +98,7 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
             return setForm(FORM.TOTP);
         }
 
-        if (previousForm === FORM.TOTP && hasU2F) {
+        if ((previousForm === FORM.LOGIN || previousForm === FORM.TOTP) && hasU2F) {
             return setForm(FORM.U2F);
         }
 
