@@ -25,7 +25,7 @@ const SupportDropdown = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <Icon className="mt0-25 mr0-5 fill-currentColor" name="help-answer" />
+                            <Icon className="mt0-25 mr0-5 fill-currentColor" name="what-is-this" />
                             {c('Action').t`I have a question`}
                         </a>
                     </li>
