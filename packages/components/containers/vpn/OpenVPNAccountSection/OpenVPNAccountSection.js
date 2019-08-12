@@ -51,14 +51,14 @@ const OpenVPNAccountSection = () => {
 
     return (
         <>
-            <SubTitle>{c('Title').t`OpenVPN / IKEv2 Username`}</SubTitle>
+            <SubTitle>{c('Title').t`OpenVPN / IKEv2 username`}</SubTitle>
             <Alert learnMore="https://protonvpn.com/support/vpn-login/">
                 {c('Info')
                     .t`Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on MacOS, OpenVPN on GNU/Linux.
                     Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard.`}
             </Alert>
             <Row>
-                <Label htmlFor="openvpn-username">{c('Label').t`OpenVPN / IKEv2 Username`}</Label>
+                <Label htmlFor="openvpn-username">{c('Label').t`OpenVPN / IKEv2 username`}</Label>
                 <Field>
                     <Input id="openvpn-username" value={username} onChange={handleChangeUsername} />
                     <Row className="mt1">
@@ -67,12 +67,12 @@ const OpenVPNAccountSection = () => {
                             disabled={!credentials || !credentials.username}
                             loading={loadingUsername}
                             onClick={handleUpdateUsername}
-                        >{c('Action').t`Change Username`}</PrimaryButton>
+                        >{c('Action').t`Change username`}</PrimaryButton>
                     </Row>
                 </Field>
             </Row>
             <Row>
-                <Label htmlFor="openvpn-password">{c('Label').t`OpenVPN / IKEv2 Password`}</Label>
+                <Label htmlFor="openvpn-password">{c('Label').t`OpenVPN / IKEv2 password`}</Label>
                 <Field>
                     <PasswordInput id="openvpn-password" value={password} onChange={handleChangePassword} />
                     <Row className="mt1">
@@ -81,7 +81,7 @@ const OpenVPNAccountSection = () => {
                             disabled={!credentials || !credentials.password}
                             loading={loadingPassword}
                             onClick={handleUpdatePassword}
-                        >{c('Action').t`Change Password`}</PrimaryButton>
+                        >{c('Action').t`Change password`}</PrimaryButton>
                     </Row>
                 </Field>
             </Row>

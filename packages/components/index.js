@@ -292,6 +292,12 @@ export {
 } from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNClientsSection/ProtonVPNClientsSection';
 export { default as OpenVPNAccountSection } from './containers/vpn/OpenVPNAccountSection/OpenVPNAccountSection';
+export {
+    default as ProtonVPNResourcesSection
+} from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
+export {
+    default as ProtonVPNCredentialsSection
+} from './containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
 
 export { default as useUser } from './hooks/useUser';
 export { default as useUserVPN } from './hooks/useUserVPN';

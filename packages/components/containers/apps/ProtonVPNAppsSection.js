@@ -5,7 +5,7 @@ import { Alert, SubTitle, Href, Block } from 'react-components';
 const ProtonVPNAppsSection = () => {
     return (
         <>
-            <SubTitle>ProtonVPN apps</SubTitle>
+            <SubTitle>{c('Title').t`ProtonVPN apps`}</SubTitle>
             <Alert learnMore="https://protonvpn.com/support/">{c('Info')
                 .t`Go to the download page to get ProtonVPN. You can use you ProtonMail credentials to the log into the ProtonVPN native clients.`}</Alert>
             <Block>

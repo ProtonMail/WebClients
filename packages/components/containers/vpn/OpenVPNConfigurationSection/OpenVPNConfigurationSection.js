@@ -96,7 +96,7 @@ const OpenVPNConfigurationSection = () => {
 
     return (
         <>
-            <SubTitle id="openvpn-configuration-files">{c('Title').t`OpenVPN Configuration Files`}</SubTitle>
+            <SubTitle id="openvpn-configuration-files">{c('Title').t`OpenVPN configuration files`}</SubTitle>
             <Alert>
                 {c('Info').t`Use this section to generate config files for third party VPN clients
                     or when setting up a connection on a router. If you use a native ProtonVPN
@@ -151,7 +151,7 @@ const OpenVPNConfigurationSection = () => {
             <Block>
                 {category === CATEGORY.SECURE_CORE && (
                     <>
-                        <h3>{c('Title').t`Secure Core Configs`}</h3>
+                        <h3>{c('Title').t`Secure core configs`}</h3>
                         <Alert learnMore="https://protonvpn.com/support/secure-core-vpn">
                             {c('Info')
                                 .t`Secure Core configurations add additional protection against VPN endpoint compromise.`}
@@ -172,7 +172,7 @@ const OpenVPNConfigurationSection = () => {
                 )}
                 {category === CATEGORY.COUNTRY && (
                     <>
-                        <h3>{c('Title').t`Country Configs`}</h3>
+                        <h3>{c('Title').t`Country configs`}</h3>
                         <Alert>
                             {c('Info')
                                 .t`Country Connect configuration files ensure a faster connection to the selected country on average.`}
@@ -192,7 +192,7 @@ const OpenVPNConfigurationSection = () => {
                 )}
                 {category === CATEGORY.SERVER && (
                     <>
-                        <h3>{c('Title').t`Server Configs`}</h3>
+                        <h3>{c('Title').t`Server configs`}</h3>
                         <Alert>{c('Info').t`Connect to a single server in the country of your choice.`}</Alert>
                         <ServerConfigs platform={platform} protocol={protocol} loading={loading} servers={allServers} />
                     </>
