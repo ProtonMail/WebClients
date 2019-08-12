@@ -5,17 +5,15 @@ import { c } from 'ttag';
 
 const VPNClientCard = ({ title, link, icon }) => {
     return (
-        <div className="aligncenter flex-autogrid-item">
-            <Bordered>
-                <div>
-                    <Icon size={25} name={icon} />
-                </div>
-                <Block>{title}</Block>
-                <a href={link}>
-                    <Button>{c('Action').t`Download`}</Button>
-                </a>
-            </Bordered>
-        </div>
+        <Bordered className="ml0-5 mr0-5 aligncenter">
+            <div>
+                <Icon size={25} name={icon} />
+            </div>
+            <Block>{title}</Block>
+            <a href={link}>
+                <Button>{c('Action').t`Download`}</Button>
+            </a>
+        </Bordered>
     );
 };
 

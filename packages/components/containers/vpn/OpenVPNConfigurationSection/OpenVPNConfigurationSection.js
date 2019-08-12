@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { c } from 'ttag';
 import {
     Alert,
@@ -64,18 +64,22 @@ const OpenVPNConfigurationSection = () => {
 
     const handleSelectConfig = (option) => () => setCategory(option);
 
-    const servers = (result.LogicalServers || []).map((server) => {
-        // Server returns UK instead of GB
-        const correctAbbr = (abbr) => (abbr === 'UK' ? 'GB' : abbr);
-        const ExitCountry = correctAbbr(server.ExitCountry);
-        const EntryCountry = correctAbbr(server.EntryCountry);
-        return {
-            ...server,
-            Country: getCountryByAbbr(ExitCountry),
-            ExitCountry,
-            EntryCountry
-        };
-    });
+    const servers = useMemo(
+        () =>
+            (result.LogicalServers || []).map((server) => {
+                // Server returns UK instead of GB
+                const correctAbbr = (abbr) => (abbr === 'UK' ? 'GB' : abbr);
+                const ExitCountry = correctAbbr(server.ExitCountry);
+                const EntryCountry = correctAbbr(server.EntryCountry);
+                return {
+                    ...server,
+                    Country: getCountryByAbbr(ExitCountry),
+                    ExitCountry,
+                    EntryCountry
+                };
+            }),
+        [result.LogicalServers]
+    );
 
     const { sortedList: allServers } = useSortedList(servers, { key: 'Country', direction: SORT_DIRECTION.ASC });
 

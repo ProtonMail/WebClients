@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { isSecureCoreEnabled } from './utils';
 import { groupWith, compare } from 'proton-shared/lib/helpers/array';
@@ -13,17 +13,19 @@ const serverNumAsc = (a, b) => compare(getServerNum(a), getServerNum(b));
 const serverNameAsc = (a, b) => serverRegionAsc(a, b) || serverNumAsc(a, b);
 
 const ServerConfigs = ({ servers, ...rest }) => {
-    const groupedServers = groupWith(
-        (a, b) => a.Country === b.Country,
-        servers.filter(({ Features = 0 }) => !isSecureCoreEnabled(Features))
-    );
-
     // Free servers at the top, then sorted by Name#ID
-    const sortedGroups = groupedServers.map((group) => {
-        const freeServers = group.filter(({ Name }) => Name.includes('FREE')).sort(serverNameAsc);
-        const otherServers = group.filter(({ Name }) => !Name.includes('FREE')).sort(serverNameAsc);
-        return [...freeServers, ...otherServers];
-    });
+    const sortedGroups = useMemo(() => {
+        const groupedServers = groupWith(
+            (a, b) => a.Country === b.Country,
+            servers.filter(({ Features = 0 }) => !isSecureCoreEnabled(Features))
+        );
+
+        return groupedServers.map((group) => {
+            const freeServers = group.filter(({ Name }) => Name.includes('FREE')).sort(serverNameAsc);
+            const otherServers = group.filter(({ Name }) => !Name.includes('FREE')).sort(serverNameAsc);
+            return [...freeServers, ...otherServers];
+        });
+    }, [servers]);
 
     const { hasPaidVPN } = useUser();
     const { result = {} } = useUserVPN();

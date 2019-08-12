@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 /**
@@ -20,11 +20,15 @@ const useSortedList = (list, initialConfig) => {
         return 0;
     };
 
-    const sortedList = config
-        ? config.direction === SORT_DIRECTION.ASC
-            ? [...list].sort(comparator)
-            : [...list].sort((a, b) => comparator(b, a))
-        : list;
+    const sortedList = useMemo(
+        () =>
+            config
+                ? config.direction === SORT_DIRECTION.ASC
+                    ? [...list].sort(comparator)
+                    : [...list].sort((a, b) => comparator(b, a))
+                : list,
+        [config, list]
+    );
 
     const toggleSort = (key) => {
         if (config && key === config.key) {

@@ -24,19 +24,23 @@ export const CATEGORY = {
 };
 
 const PlusBadge = () => (
-    <Tooltip title="Plus">
-        <div className="aligncenter color-white rounded bg-plus" style={{ width: 22, height: 22 }}>
-            P
-        </div>
-    </Tooltip>
+    <span className="ml0-5">
+        <Tooltip title="Plus">
+            <div className="aligncenter color-white rounded bg-plus" style={{ width: 22, height: 22 }}>
+                P
+            </div>
+        </Tooltip>
+    </span>
 );
 
 const ServerDown = () => (
-    <Tooltip title={c('Info').t`Server is currently down`}>
-        <div className="flex inline-flex-vcenter">
-            <Icon fill="warning" size={20} name="attention" />
-        </div>
-    </Tooltip>
+    <span className="ml0-5">
+        <Tooltip title={c('Info').t`Server is currently down`}>
+            <div className="flex inline-flex-vcenter">
+                <Icon fill="warning" size={20} name="attention" />
+            </div>
+        </Tooltip>
+    </span>
 );
 
 const P2P = () => (
@@ -85,9 +89,9 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                         cells={[
                             category === CATEGORY.SERVER ? server.Name : <Country key="country" server={server} />,
                             <div className="inline-flex-vcenter" key="status">
-                                <span className="mr1-5">{server.Tier === 2 && <PlusBadge />}</span>
-                                {!server.Status && <ServerDown />}
                                 <LoadIndicator server={server} />
+                                {server.Tier === 2 && <PlusBadge />}
+                                {!server.Status && <ServerDown />}
                                 {isP2PEnabled(server.Features) && <P2P />}
                                 {isTorEnabled(server.Features) && <Tor />}
                             </div>,
