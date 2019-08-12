@@ -7,17 +7,44 @@
             <span class="navigation-title topnav-linkText" translate translate-context="Action">Mailbox</span>
         </a>
     </li>
-    <li class="mr1 " ng-class="{'active': activeSettings()}">
-        <a id="tour-settings" class="topnav-link inline-flex flex-nowrap nodecoration rounded" ui-sref="secured.account">
+    <li class="mr1 ">
+        <a href="/settings" id="tour-settings" class="topnav-link inline-flex flex-nowrap nodecoration rounded" ui-sref="secured.account">
             <icon data-name="settings" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
             <span class="navigation-title topnav-linkText" translate translate-context="Action">Settings</span>
         </a>
     </li>
-    <li class="mr1" ui-sref-active="active">
-        <a class="topnav-link inline-flex flex-nowrap nodecoration rounded" ui-sref="secured.contacts">
-            <icon data-name="contacts" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
-            <span class="navigation-title topnav-linkText" translate translate-context="Action">Contacts</span>
-        </a>
+    <li class="mr1">
+
+        <dropdown-container>
+
+            <dropdown-button class="topnav-link inline-flex flex-nowrap nodecoration rounded">
+                <icon data-name="support1" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
+                <span translate translate-context="Action">Support</span>
+            </dropdown-button>
+
+            <dropdown-content>
+                <ul class="unstyled mt0-5 mb0-5">
+
+                    <li class="dropDown-item pl1 pr1">
+                        <a
+                            class="w100 color-global-grey flex pt0-5 pb0-5 nodecoration"
+                            target="_blank"
+                            href="https://protonmail.com/support">
+                            <icon data-name="support1" class="mt0-25 mr0-5" data-fill="currentColor"></icon>
+                            <span translate translate-context="Action">I have a question</span>
+                        </a>
+                    </li>
+
+                    <li class="dropDown-item pl1 pr1">
+                        <new-bug-report
+                            class="w100 flex underline-hover pt0-5 pb0-5 alignleft"
+                            id="reportBugBtn"></new-bug-report>
+                    </li>
+
+                </ul>
+            </dropdown-content>
+        </dropdown-container>
+
     </li>
     <li class="mr1 navigation-upgrade-item" ng-if="isFree">
         <a class="topnav-link inline-flex flex-nowrap nodecoration rounded" ui-sref="secured.dashboard({scroll: true})">
