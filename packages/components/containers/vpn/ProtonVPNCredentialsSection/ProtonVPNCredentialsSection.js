@@ -9,7 +9,8 @@ const ProtonVPNCredentialsSection = () => {
     const username = user.isMember ? user.Email : user.Name;
 
     const downloadLink = (
-        <Href className="mr0-5" url="https://protonvpn.com/download">{c('Link').t`ProtonVPN native clients.`}</Href>
+        <Href key="link" className="mr0-5" url="https://protonvpn.com/download">{c('Link')
+            .t`ProtonVPN native clients.`}</Href>
     );
 
     return (

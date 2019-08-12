@@ -19,7 +19,7 @@ import useNotifications from '../../notifications/useNotifications';
 const OpenVPNAccountSection = () => {
     const { createNotification } = useNotifications();
     const { result, fetch: fetchUserVPN } = useUserVPN();
-    const [credentials, setCredentials] = useState({});
+    const [credentials, setCredentials] = useState({ username: '', password: '' });
     const { loading: loadingUsername, request: updateUsername } = useApiWithoutResult(updateVPNName);
     const { loading: loadingPassword, request: updatePassword } = useApiWithoutResult(updateVPNPassword);
 
