@@ -11,13 +11,7 @@ const AppsSidebar = ({ currentApp = '' }) => {
         { id: PROTONMAIL, icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
         { id: PROTONCALENDAR, icon: 'calendar', title: 'ProtonCalendar', link: '/calendar' },
         { id: PROTONCONTACTS, icon: 'contacts', title: 'ProtonContacts', link: '/contacts' },
-        {
-            id: PROTONVPN_SETTINGS,
-            icon: 'protonvpn',
-            title: c('Title').t`ProtonVPN settings`,
-            target: '_blank',
-            link: 'https://account.protonvpn.com/login'
-        }
+        { id: PROTONVPN_SETTINGS, icon: 'protonvpn', title: c('Title').t`ProtonVPN settings`, link: '/settings/vpn' }
     ];
 
     return (
