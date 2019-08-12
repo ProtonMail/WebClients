@@ -42,14 +42,7 @@ const UserDropdown = (props) => {
 
     return (
         <div className="userDropdown">
-            <UserDropdownButton
-                {...props}
-                user={user}
-                aria-describedby={uid}
-                buttonRef={anchorRef}
-                isOpen={isOpen}
-                onClick={toggle}
-            />
+            <UserDropdownButton {...props} user={user} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-right">
                 <ul className="unstyled mt0-5 mb0-5">
                     <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">

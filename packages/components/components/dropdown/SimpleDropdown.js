@@ -12,14 +12,7 @@ const SimpleDropdown = ({ content, children, originalPlacement, narrow, autoClos
 
     return (
         <>
-            <DropdownButton
-                {...rest}
-                aria-describedby={uid}
-                buttonRef={anchorRef}
-                isOpen={isOpen}
-                onClick={toggle}
-                hasCaret
-            >
+            <DropdownButton {...rest} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret>
                 {content}
             </DropdownButton>
             <Dropdown
