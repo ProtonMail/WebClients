@@ -42,39 +42,18 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
     const [keyPassword, setKeyPassword] = useState('');
 
     /**
-     * Special case for the admin panel which does not need to unlock.
+     * Finalize login can be called without a key password in these cases:
+     * 1) The admin panel
+     * 2) Users who have no keys but are in 2-password mode
+     * @param {String} [keyPassword]
      * @return {Promise}
      */
-    const handleIgnoreUnlock = async () => {
-        const {
-            authResult: { UID, AccessToken, RefreshToken }
-        } = cacheRef.current;
-
-        cacheRef.current = undefined;
-
-        await api(setCookies({ UID, AccessToken, RefreshToken, State: getRandomString(24) }));
-        onLogin({ UID });
-    };
-
-    /**
-     * Step 3. Handle unlock.
-     * Attempt to decrypt the primary private key with the password.
-     * @return {Promise}
-     */
-    const handleUnlock = async (password) => {
+    const finalizeLogin = async (keyPassword) => {
         const {
             authVersion,
-            authResult: { UID, EventID, AccessToken, RefreshToken }
+            authResult: { UID, EventID, AccessToken, RefreshToken },
+            userSaltResult: [{ User }] = [{}] // Default for case 1)
         } = cacheRef.current;
-
-        const [{ User }, { KeySalts }] =
-            cacheRef.current.result ||
-            (await Promise.all([
-                api(withAuthHeaders(UID, AccessToken, getUser())),
-                api(withAuthHeaders(UID, AccessToken, getKeySalts()))
-            ]).then((result) => (cacheRef.current.result = result)));
-
-        const { keyPassword } = await handleUnlockKey(User, KeySalts, password);
 
         if (authVersion < AUTH_VERSION) {
             await srpVerify({
@@ -87,7 +66,66 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
         cacheRef.current = undefined;
 
         await api(setCookies({ UID, AccessToken, RefreshToken, State: getRandomString(24) }));
+
         onLogin({ UID, User, keyPassword, EventID });
+    };
+
+    /**
+     * Step 3. Handle unlock.
+     * Attempt to decrypt the primary private key with the password.
+     * @return {Promise}
+     */
+    const handleUnlock = async (password) => {
+        const {
+            userSaltResult: [{ User }, { KeySalts }]
+        } = cacheRef.current;
+
+        const { keyPassword } = await handleUnlockKey(User, KeySalts, password);
+
+        return finalizeLogin(keyPassword);
+    };
+
+    const next = async (previousForm) => {
+        const {
+            authResult,
+            authResult: { UID, AccessToken }
+        } = cacheRef.current;
+
+        const { hasTotp, hasU2F, hasUnlock } = getAuthTypes(authResult);
+
+        if (previousForm === FORM.LOGIN && hasTotp) {
+            return setForm(FORM.TOTP);
+        }
+
+        if (previousForm === FORM.TOTP && hasU2F) {
+            return setForm(FORM.U2F);
+        }
+
+        // Special case for the admin panel, return early since it can not get key salts.
+        if (ignoreUnlock) {
+            return finalizeLogin();
+        }
+
+        /**
+         * Handle the case for users who are in 2-password mode but have no keys setup.
+         * Typically happens for VPN users.
+         */
+        const [{ User }] =
+            cacheRef.current.userSaltResult ||
+            (await Promise.all([
+                api(withAuthHeaders(UID, AccessToken, getUser())),
+                api(withAuthHeaders(UID, AccessToken, getKeySalts()))
+            ]).then((result) => (cacheRef.current.userSaltResult = result)));
+
+        if (User.Keys.length === 0) {
+            return finalizeLogin();
+        }
+
+        if (hasUnlock) {
+            return setForm(FORM.UNLOCK);
+        }
+
+        return handleUnlock(password);
     };
 
     /**
@@ -97,27 +135,12 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
      */
     const handleTotp = async () => {
         const {
-            authResult,
             authResult: { UID, AccessToken }
         } = cacheRef.current;
 
         await api(withAuthHeaders(UID, AccessToken, auth2FA({ totp })));
 
-        const { hasU2F, hasUnlock } = getAuthTypes(authResult);
-
-        if (hasU2F) {
-            return setForm(FORM.U2F);
-        }
-
-        if (ignoreUnlock) {
-            return handleIgnoreUnlock();
-        }
-
-        if (hasUnlock) {
-            return setForm(FORM.UNLOCK);
-        }
-
-        return handleUnlock(password);
+        return next(FORM.TOTP);
     };
 
     /**
@@ -132,27 +155,10 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
             credentials: { username, password },
             initalAuthInfo: infoResult
         });
+
         cacheRef.current = { authVersion, authResult };
 
-        const { hasTotp, hasU2F, hasUnlock } = getAuthTypes(authResult);
-
-        if (hasTotp) {
-            return setForm(FORM.TOTP);
-        }
-
-        if (hasU2F) {
-            return setForm(FORM.U2F);
-        }
-
-        if (ignoreUnlock) {
-            return handleIgnoreUnlock();
-        }
-
-        if (hasUnlock) {
-            return setForm(FORM.UNLOCK);
-        }
-
-        return handleUnlock(password);
+        return next(FORM.LOGIN);
     };
 
     const handleCancel = () => {
