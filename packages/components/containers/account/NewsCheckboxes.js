@@ -13,7 +13,7 @@ import { NEWS } from 'proton-shared/lib/constants';
 import { updateNews } from 'proton-shared/lib/api/settings';
 import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
 
-const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA } = NEWS;
+const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA, BUSINESS } = NEWS;
 
 const NewsCheckboxes = () => {
     const [{ News: news }] = useUserSettings();
@@ -52,6 +52,17 @@ const NewsCheckboxes = () => {
                         onChange={handleChange(FEATURES)}
                     />
                     {c('Label for news').t`Major features (3-4 per year)`}
+                </Label>
+            </li>
+            <li>
+                <Label htmlFor="business">
+                    <Checkbox
+                        id="business"
+                        checked={hasBit(news, BUSINESS)}
+                        disabled={loading}
+                        onChange={handleChange(BUSINESS)}
+                    />
+                    {c('Label for news').t`Proton business (4-5 per year)`}
                 </Label>
             </li>
             <li>
