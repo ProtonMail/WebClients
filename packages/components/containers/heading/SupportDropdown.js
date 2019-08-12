@@ -16,7 +16,7 @@ const SupportDropdown = () => {
     return (
         <>
             <SupportDropdownButton aria-describedby={uid} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} />
-            <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-right">
+            <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom">
                 <ul className="unstyled mt0-5 mb0-5">
                     <li className="dropDown-item pl1 pr1">
                         <a
