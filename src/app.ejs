@@ -41,12 +41,10 @@
 
     <div id="pm_slow" class="pm-loader-fullpage" ng-hide="networkActivity.loading() || loggingOut || isSecure">
         <div class="atomLoader">
-            <div class="atomLoader-container">
-                <div class="atomLoader-item"></div>
-                <div class="atomLoader-item2"></div>
-                <div class="atomLoader-item3"></div>
-                <div class="atomLoader-proton"></div>
-            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="loadingAnimation" viewBox="0 0 200 200" width="200" height="200" >
+                <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit1 loadingAnimation-circle--global-light" />
+                <circle cx="100" cy="100" r="80" class="loadingAnimation-circle loadingAnimation-orbit2 loadingAnimation-circle--global-light" />
+            </svg>
           <p class="atomLoader-text">Loading ProtonMail</p>
         </div>
     </div>
