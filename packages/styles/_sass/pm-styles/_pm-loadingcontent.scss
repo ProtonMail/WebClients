@@ -26,3 +26,27 @@ td[aria-busy="true"] {
     background: $white url(#{$path-images}loading-atom-smaller.svg) 50% 50% no-repeat;
   }
 }
+
+.progressive[aria-busy="true"] {
+  position: relative;
+  background-image: none;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: none;
+    animation: backgroundLoading 1s linear infinite alternate;
+  }
+}
+
+@keyframes backgroundLoading {
+  0% {
+    background-color: $white;
+  }
+  100% {
+    background-color: #eee;
+  }
+}
