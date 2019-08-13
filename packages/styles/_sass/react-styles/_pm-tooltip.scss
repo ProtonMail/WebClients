@@ -25,6 +25,18 @@ $arrow-width: 0.5em;
 .tooltip--bottom-right {
   border-top-right-radius: 0;
 }
+.tooltip--left-bottom {
+  border-bottom-right-radius: 0;
+}
+.tooltip--right-bottom {
+  border-bottom-left-radius: 0;
+}
+.tooltip--left-top {
+  border-top-right-radius: 0;
+}
+.tooltip--right-top {
+  border-top-left-radius: 0;
+}
 
 /* pseudo-element to make arrows */
 .tooltip::before {
@@ -50,13 +62,15 @@ $arrow-width: 0.5em;
   bottom: 100%;
   border-bottom: $arrow-width solid $pm-global-grey;
 }
-.tooltip--right::before {
-  top: calc(50% - #{$arrow-width});
+.tooltip--right::before,
+.tooltip--right-top::before,
+.tooltip--right-bottom::before {
   left: -#{$arrow-width * 2};
   border-right: $arrow-width solid $pm-global-grey;
 }
-.tooltip--left::before {
-  top: calc(50% - #{$arrow-width});
+.tooltip--left::before,
+.tooltip--left-top::before,
+.tooltip--left-bottom::before {
   right: -#{$arrow-width * 2};
   border-left: $arrow-width solid $pm-global-grey;
 }
@@ -72,4 +86,17 @@ $arrow-width: 0.5em;
 .tooltip--top-right::before,
 .tooltip--bottom-right::before {
   right: 0;
+}
+
+.tooltip--left::before,
+.tooltip--right::before {
+  top: calc(50% - #{$arrow-width});
+}
+.tooltip--left-top::before,
+.tooltip--right-top::before {
+  top: 0;
+}
+.tooltip--left-bottom::before,
+.tooltip--right-bottom::before {
+  bottom: 0;
 }

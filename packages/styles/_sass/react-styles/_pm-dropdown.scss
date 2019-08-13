@@ -46,8 +46,20 @@ $dropDown-narrow-width: 8em !default;
 .dropDown--left {
   transform-origin: right center;
 }
+.dropDown--left-bottom {
+  transform-origin: right bottom;
+}
+.dropDown--left-top {
+  transform-origin: right top;
+}
 .dropDown--right {
   transform-origin: left center;
+}
+.dropDown--right-bottom {
+  transform-origin: left bottom;
+}
+.dropDown--right-top {
+  transform-origin: left top;
 }
 
 /* hidden dropdown state */
@@ -80,13 +92,15 @@ $dropDown-narrow-width: 8em !default;
   top: -2rem;
   border-bottom: 1rem solid $white;
 }
-.dropDown--left::before {
-  top: calc(50% - 1rem);
+.dropDown--left::before,
+.dropDown--left-top::before,
+.dropDown--left-bottom::before {
   left: 100%;
   border-left: 1rem solid $white;
 }
-.dropDown--right::before {
-  top: calc(50% - 1rem);
+.dropDown--right::before,
+.dropDown--right-top::before,
+.dropDown--right-bottom::before {
   left: -2rem;
   border-right: 1rem solid $white;
 }
@@ -103,6 +117,20 @@ $dropDown-narrow-width: 8em !default;
 .dropDown--bottom-right::before {
   left: auto;
   right: 1rem;
+}
+
+.dropDown--left::before,
+.dropDown--right::before {
+  top: calc(50% - 1rem);
+}
+.dropDown--left-top::before,
+.dropDown--right-top::before {
+  top: 1rem;
+}
+.dropDown--left-bottom::before,
+.dropDown--right-bottom::before {
+  top: auto;
+  bottom: 1rem;
 }
 
 /* scrollable insides of the dropdown */
