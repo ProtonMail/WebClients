@@ -15,11 +15,16 @@ import useDebounceInput from './useDebounceInput';
 const SearchInput = ({ delay, onChange, value, ...rest }) => {
     const [keywords, setKeywords] = useState(value);
     const words = useDebounceInput(keywords, delay);
+
     const handleChange = ({ target }) => setKeywords(target.value);
 
     useEffect(() => {
         onChange(words);
     }, [words]);
+
+    useEffect(() => {
+        setKeywords(value);
+    }, [value]);
 
     return <Input value={keywords} onChange={handleChange} type="search" {...rest} />;
 };
