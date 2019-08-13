@@ -229,7 +229,7 @@ subsection: helpers
 
 <p>Hover the squares to see cursor change (inside, the class to use to apply the cursor change to element):</p>
 
-{% assign listCursors = "default#help#wait#grab#pointer" | split: '#' %}
+{% assign listCursors = "default#help#wait#grab#row-resize#pointer" | split: '#' %}
 <div class="flex">
 {% for cursor in listCursors %}
 <div class="p1 bordered-container mb2 mt0-5 mr0-5 cursor-{{ cursor }}">
