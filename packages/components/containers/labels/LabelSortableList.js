@@ -16,12 +16,8 @@ function LabelSortableList({ items, onEditLabel, onRemoveLabel, ...rest }) {
                     <th scope="col" className="w45">
                         {c('Settings/labels - table').t`Name`}
                     </th>
-                    <th scope="col" className="w15">
-                        {c('Settings/labels - table').t`Notification`}
-                    </th>
-                    <th scope="col" className="w30">
-                        {c('Settings/labels - table').t`Actions`}
-                    </th>
+                    <th scope="col">{c('Settings/labels - table').t`Notification`}</th>
+                    <th scope="col">{c('Settings/labels - table').t`Actions`}</th>
                 </tr>
             </OrderableTableHeader>
             <OrderableTableBody>

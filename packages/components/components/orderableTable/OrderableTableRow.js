@@ -10,7 +10,9 @@ const OrderableTableRow = ({ index, cells, ...rest }) => (
         <TableRow
             cells={[
                 <OrderableHandle key="icon">
-                    <Icon style={{ cursor: 'row-resize' }} name="text-justify" />
+                    <span className="flex">
+                        <Icon className="mtauto mbauto cursor-row-resize" name="text-justify" />
+                    </span>
                 </OrderableHandle>,
                 ...cells
             ]}

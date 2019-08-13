@@ -21,7 +21,7 @@ function LabelItem({ label, onEditLabel, onRemoveLabel, ...rest }) {
                     <Icon
                         name={Exclusive ? 'folder' : 'label'}
                         style={{ fill: Color }}
-                        className="icon-16p flex-item-noshrink mr1"
+                        className="icon-16p flex-item-noshrink mr1 mtauto mbauto"
                     />
                     <span className="ellipsis">{Name}</span>
                 </div>,
