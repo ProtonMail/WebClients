@@ -8,44 +8,93 @@ export const ALL_PLACEMENTS = [
     'top-left',
     'top-right',
     'left',
-    'right'
+    'left-bottom',
+    'left-top',
+    'right',
+    'right-bottom',
+    'right-top'
 ];
 
-// First checks the same orientation (all bottom-* if bottom, etc.) then alignment
-const orderPlacements = (originalPlacement, placements = ALL_PLACEMENTS) => {
+const inverted = {
+    left: 'right',
+    right: 'left',
+    bottom: 'top',
+    top: 'bottom'
+};
+
+/**
+ * Tries to maintain placement as close to the original as possible.
+ * Places in this order of preference:
+ * - same orientation as original (e.g. bottom-left, bottom, bottom-right)
+ * - same orientation as original alignment (e.g. left-bottom => bottom-*)
+ * - inverted orientation than original (e.g. top => bottom)
+ * - whatever is left
+ *
+ * always prefers alignment to be the same as original alignment or orientation.
+ */
+export const orderPlacements = (originalPlacement, placements = ALL_PLACEMENTS) => {
     const orientation = originalPlacement.split('-')[0];
     const alignment = originalPlacement.split('-')[1];
-    return [...placements].sort((a, b) => {
-        if (a.startsWith(orientation) && !b.startsWith(orientation)) {
+
+    const compareAlignment = (a, b) => {
+        if (
+            (b.endsWith(alignment) && !b.startsWith(alignment) && !a.endsWith(alignment)) ||
+            (b.endsWith(orientation) && !b.startsWith(orientation) && !a.endsWith(orientation))
+        ) {
+            return 1;
+        }
+
+        if (
+            (a.endsWith(alignment) && !a.startsWith(alignment) && !b.endsWith(alignment)) ||
+            (a.endsWith(orientation) && !a.startsWith(orientation) && !b.endsWith(orientation))
+        ) {
             return -1;
         }
-        if (a.endsWith(alignment) && !a.startsWith(alignment) && !b.endsWith(alignment)) {
-            return -1;
-        }
+
         return 0;
-    });
+    };
+
+    const sameOrientation = placements.filter((placement) => placement.startsWith(orientation)).sort(compareAlignment);
+    const sameOrientationAsAlignment = placements
+        .filter((placement) => placement.startsWith(alignment))
+        .sort(compareAlignment);
+    const invertedOrientation = placements
+        .filter((placement) => placement.startsWith(inverted[orientation]))
+        .sort(compareAlignment);
+    const preferred = [...sameOrientation, ...sameOrientationAsAlignment, ...invertedOrientation];
+    const remaining = placements.filter((placement) => !preferred.includes(placement)).sort(compareAlignment);
+    return [...preferred, ...remaining];
 };
 
 const calculatePosition = (target, tooltip, placement, offset = DEFAULT_TOOLTIP_OFFSET) => {
-    const center = {
+    const alignCenter = {
         top: target.top + target.height / 2 - tooltip.height / 2,
         left: target.left + target.width / 2 - tooltip.width / 2
     };
 
-    const alignAbove = target.top - tooltip.height - offset;
-    const alignBelow = target.top + target.height + offset;
-    const alignLeft = target.left - tooltip.width - offset;
-    const alignRight = target.left + target.width + offset;
+    const alignTop = target.top;
+    const alignBottom = target.top + target.height - tooltip.height;
+    const alignLeft = target.left;
+    const alignRight = target.left - tooltip.width + target.width;
+
+    const placeAbove = target.top - tooltip.height - offset;
+    const placeBelow = target.top + target.height + offset;
+    const placeLeft = target.left - tooltip.width - offset;
+    const placeRight = target.left + target.width + offset;
 
     return {
-        top: { left: center.left, top: alignAbove },
-        bottom: { left: center.left, top: alignBelow },
-        left: { top: center.top, left: alignLeft },
-        right: { top: center.top, left: alignRight },
-        'bottom-left': { left: target.left, top: alignBelow },
-        'top-left': { left: target.left, top: alignAbove },
-        'bottom-right': { left: target.left - tooltip.width + target.width, top: alignBelow },
-        'top-right': { left: target.left - tooltip.width + target.width, top: alignAbove }
+        top: { left: alignCenter.left, top: placeAbove },
+        bottom: { left: alignCenter.left, top: placeBelow },
+        left: { left: placeLeft, top: alignCenter.top },
+        right: { left: placeRight, top: alignCenter.top },
+        'bottom-left': { left: alignLeft, top: placeBelow },
+        'top-left': { left: alignLeft, top: placeAbove },
+        'bottom-right': { left: alignRight, top: placeBelow },
+        'top-right': { left: alignRight, top: placeAbove },
+        'right-bottom': { left: placeRight, top: alignBottom },
+        'right-top': { left: placeRight, top: alignTop },
+        'left-bottom': { left: placeLeft, top: alignBottom },
+        'left-top': { left: placeLeft, top: alignTop }
     }[placement];
 };
 
@@ -73,6 +122,7 @@ const optimisePositionAndPlacement = (target, tooltip, offset, availablePlacemen
 export const adjustPosition = (target, tooltip, placement, offset, availablePlacements = ALL_PLACEMENTS) => {
     const placementsByPriority = orderPlacements(placement, availablePlacements);
     const optimalLocation = optimisePositionAndPlacement(target, tooltip, offset, placementsByPriority);
+
     if (!optimalLocation) {
         // No good position on screen, fallback to original
         const position = calculatePosition(target, tooltip, placement, offset);
