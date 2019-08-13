@@ -1,29 +1,41 @@
 <div
     id="conversation-list-mobile"
-    class="elementList-container-mobile"
+    class="elementList-container-mobile w100"
     data-pt-select-multiple-elements>
 
     <sticky-messages></sticky-messages>
     <request-timeout></request-timeout>
     <no-results ng-if="conversations.length === 0 && elementsLoaded"></no-results>
-    <section class="conversation-wrapper">
+    <section class="item-wrapper">
         <div
             ng-repeat="conversation in conversations track by conversation.ID"
-            class="conversation"
+            class="conversation relative item-container flex bg-global-light "
             data-elements-container
             ng-class="getClassNames(conversation, markedElement)">
-            <pt-select-element data-index="{{ $index }}"></pt-select-element>
-            <div class="conversation-meta">
-                <div class="row top">
-                    <h4 class="subject">
+
+            <select-box-element class="mr1"></select-box-element>
+            <div class="flex-item-fluid flex flex-column flex-spacebetween item-titlesender">
+                <div class="flex">
+                    <div class="subject flex-item-fluid flex flex-nowrap w0 pr1" ng-attr-title="{{ conversation.Subject | unescape }}">
                         <states-elements></states-elements>
-                        <folders-element conversation="conversation"></folders-element>
-                        <span class="subject-num-message flex-item-noshrink" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-                        <span class="subject-text ellipsis">
-                            {{ conversation.Subject | unescape }}
-                        </span>
-                    </h4>
+                        <folders-element data-conversation="conversation"></folders-element>
+                        <span class="subject-num-message flex-item-noshrink" ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+                        <span class="subject-text inbl mw100 ellipsis">{{ conversation.Subject | unescape }}</span>
+                    </div>
                     <span class="meta">
+                        <time-element></time-element>
+                    </span>
+                </div>
+                <div class="flex">
+                    <span
+                    class="senders flex-item-fluid pr1"
+                    ng-class="{ 'full': !hasLabels(conversation) }">
+                        <span class="inbl mw100 ellipsis">
+                            <senders-name></senders-name>
+                        </span>
+                    </span>
+                    <div class="conversation-icons">
+                        <labels-element data-element="conversation"></labels-element>
                         <icon
                             data-name="expiration"
                             data-fill="global-warning"
@@ -35,16 +47,8 @@
                         <pt-star
                             data-model="conversation"
                             class="singleStar"></pt-star>
-                        <time-element></time-element>
-                    </span>
-                </div>
-                <div class="row bottom">
-                    <span
-                    class="senders ellipsis"
-                    ng-class="{ 'full': !hasLabels(conversation) }">
-                        <senders-name></senders-name>
-                    </span>
-                    <labels-element element="conversation"></labels-element>
+                    </div>
+
                 </div>
             </div>
         </div>
