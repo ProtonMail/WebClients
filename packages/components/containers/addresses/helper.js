@@ -20,16 +20,17 @@ export const getStatus = ({ address: { Status, Receive, DomainID, HasKeys }, i }
 
 export const getPermissions = ({
     member: { Private, Self },
-    address: { Status, HasKeys, Type },
+    address: { Status, HasKeys, Type, Order },
     user: { isAdmin },
     organizationKey
 }) => {
     const isSpecialAddress = Type === TYPE_ORIGINAL && Type === TYPE_PREMIUM;
+    const isPrimaryAddress = Order === 1;
 
     const canGenerateMember = organizationKey && isAdmin && Private === READABLE;
     return {
         canGenerate: !HasKeys && (canGenerateMember || Self),
-        canDisable: Status === ADDRESS_STATUS.STATUS_ENABLED && isAdmin && !isSpecialAddress,
+        canDisable: Status === ADDRESS_STATUS.STATUS_ENABLED && isAdmin && !isSpecialAddress && !isPrimaryAddress,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
         canDelete: Type === TYPE_CUSTOM_DOMAIN,
         canEdit: !!Self

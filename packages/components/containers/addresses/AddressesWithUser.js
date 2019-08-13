@@ -17,9 +17,11 @@ import { orderAddress } from 'proton-shared/lib/api/addresses';
 import AddressStatus from './AddressStatus';
 import AddressActions from './AddressActions';
 import { getStatus } from './helper';
+import useNotifications from '../notifications/useNotifications';
 
 const AddressesUser = ({ user }) => {
     const api = useApi();
+    const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState(addresses);
@@ -33,6 +35,17 @@ const AddressesUser = ({ user }) => {
         async ({ oldIndex, newIndex }) => {
             try {
                 const newList = move(list, oldIndex, newIndex);
+                const { isDisabled, isDefault } = getStatus({ address: newList[0], i: 0 });
+
+                if (isDisabled && isDefault) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Notification').t`A disabled address cannot be primary`
+                    });
+                    setAddresses(addresses);
+                    return;
+                }
+
                 setAddresses(newList);
                 await api(orderAddress(newList.map(({ ID }) => ID)));
                 call();
