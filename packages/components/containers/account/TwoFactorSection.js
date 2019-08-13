@@ -22,7 +22,7 @@ const TwoFactorSection = () => {
             <Row>
                 <Label htmlFor="twoFactorToggle">
                     <span className="mr0-5">{c('Label').t`Two-factor authentication`}</span>
-                    <Info url="https://protonmail.com/support/knowledge-base/single-password" />
+                    <Info url="https://protonmail.com/support/knowledge-base/two-factor-authentication/" />
                 </Label>
                 <Field>
                     <Toggle checked={!!Enabled} id="twoFactorToggle" onChange={handleChange} />
