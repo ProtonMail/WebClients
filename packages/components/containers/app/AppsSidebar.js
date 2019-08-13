@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'react-components';
+import { Icon, useUser } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONVPN_SETTINGS } = APPS;
 
 const AppsSidebar = ({ currentApp = '' }) => {
+    const [{ isPaid }] = useUser();
     const apps = [
         { id: PROTONMAIL, icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
-        { id: PROTONCALENDAR, icon: 'calendar', title: 'ProtonCalendar', link: '/calendar' },
+        isPaid && { id: PROTONCALENDAR, icon: 'calendar', title: 'ProtonCalendar', link: '/calendar' },
         { id: PROTONCONTACTS, icon: 'contacts', title: 'ProtonContacts', link: '/contacts' },
         { id: PROTONVPN_SETTINGS, icon: 'protonvpn', title: c('Title').t`ProtonVPN settings`, link: '/settings/vpn' }
-    ];
+    ].filter(Boolean);
 
     return (
         <aside className="aside noprint" id="aside-bar">
