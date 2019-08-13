@@ -25,6 +25,10 @@ $dropDown-narrow-width: 8em !default;
   width: $dropDown-wide-width;
 }
 
+.dropDown--auto {
+  width: auto;
+}
+
 .dropDown--top {
   transform-origin: bottom center;
 }
