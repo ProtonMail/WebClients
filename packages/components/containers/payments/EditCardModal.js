@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { FormModal, useApiWithoutResult, useNotifications } from 'react-components';
 import { setPaymentMethod } from 'proton-shared/lib/api/payments';
+import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
 import Card from './Card';
 import useCard from './useCard';
@@ -20,7 +21,7 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
             return;
         }
 
-        await request({ Type: 'card', Details: toDetails(card) });
+        await request({ Type: PAYMENT_METHOD_TYPES.CARD, Details: toDetails(card) });
         await onChange();
         onClose();
         createNotification({ text: c('Success').t`Payment method updated` });

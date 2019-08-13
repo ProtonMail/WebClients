@@ -9,7 +9,8 @@ import {
     Alert,
     useNotifications,
     useApiWithoutResult,
-    useEventManager
+    useEventManager,
+    useApi
 } from 'react-components';
 import { buyCredit } from 'proton-shared/lib/api/payments';
 import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT } from 'proton-shared/lib/constants';
@@ -17,6 +18,7 @@ import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT } from 'proton-shared/lib/cons
 import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
 import usePayment from './usePayment';
+import { handle3DS } from './paymentTokenHelper';
 
 const getCurrenciesI18N = () => ({
     EUR: c('Monetary unit').t`Euro`,
@@ -25,8 +27,9 @@ const getCurrenciesI18N = () => ({
 });
 
 const CreditsModal = ({ onClose, ...rest }) => {
+    const api = useApi();
     const { call } = useEventManager();
-    const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment(handleSubmit);
+    const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
     const { createNotification } = useNotifications();
     const { request, loading } = useApiWithoutResult(buyCredit);
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
@@ -35,8 +38,9 @@ const CreditsModal = ({ onClose, ...rest }) => {
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
 
-    const handleSubmit = async () => {
-        await request({ Amount: amount, Currency: currency, ...parameters });
+    const handleSubmit = async (params = parameters) => {
+        const requestBody = await handle3DS({ ...params, Amount: amount, Currency: currency }, api);
+        await request(requestBody);
         await call();
         onClose();
         createNotification({ text: c('Success').t`Credits added` });
@@ -46,7 +50,7 @@ const CreditsModal = ({ onClose, ...rest }) => {
         <FormModal
             type="small"
             onClose={onClose}
-            onSubmit={handleSubmit}
+            onSubmit={() => handleSubmit()}
             close={c('Action').t`Cancel`}
             loading={loading}
             submit={canPay && c('Action').t`Top up`}
@@ -68,13 +72,15 @@ const CreditsModal = ({ onClose, ...rest }) => {
                 </Field>
             </Row>
             <Payment
-                type="donation"
+                type="credit"
                 method={method}
                 amount={amount}
                 currency={currency}
+                parameters={parameters}
                 onParameters={setParameters}
                 onMethod={setMethod}
                 onValidCard={setCardValidity}
+                onPay={handleSubmit}
             />
         </FormModal>
     );

@@ -1,62 +1,59 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, PrimaryButton, SmallButton, useApiResult, Price } from 'react-components';
-import { createPayPalPayment } from 'proton-shared/lib/api/payments';
-import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
-import { parseURL } from 'proton-shared/lib/helpers/browser';
+import { Alert, PrimaryButton, SmallButton, Price, useApi, useLoading } from 'react-components';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from 'proton-shared/lib/constants';
 
-const PayPal = ({ amount, currency, onPay, type }) => {
-    const { result = {}, loading, error = {}, request } = useApiResult(() => createPayPalPayment(amount, currency), []);
-    const { ApprovalURL } = result;
-    const reset = () => window.removeEventListener('message', receivePaypalMessage, false);
-    const handleClick = () => window.open(ApprovalURL, 'PayPal');
+import { handle3DS } from './paymentTokenHelper';
 
-    const receivePaypalMessage = (event) => {
-        const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
+    const [loading, withLoading] = useLoading();
+    const api = useApi();
+    const [error, setError] = useState();
 
-        if (origin !== 'https://secure.protonmail.com') {
-            return;
+    const handleClick = async () => {
+        try {
+            const requestBody = await handle3DS(
+                {
+                    Amount,
+                    Currency,
+                    Payment: {
+                        Type: 'paypal'
+                    }
+                },
+                api
+            );
+            onPay(requestBody);
+        } catch (error) {
+            setError(error);
         }
-
-        const { payerID: PayerID, paymentID: PaymentID, cancel: Cancel, token } = event.data;
-        const { searchObject = {} } = parseURL(ApprovalURL);
-
-        if (token !== searchObject.token) {
-            return;
-        }
-
-        reset();
-        onPay({ PayerID, PaymentID, Cancel });
     };
 
-    useEffect(() => {
-        reset();
-        window.addEventListener('message', receivePaypalMessage, false);
-        return () => {
-            reset();
-        };
-    }, [ApprovalURL]);
-
-    if (type === 'payment' && amount < MIN_PAYPAL_AMOUNT) {
+    if (type === 'payment' && Amount < MIN_PAYPAL_AMOUNT) {
         return (
             <Alert type="error">
-                {c('Error').t`Amount below minimum.`} {`(${<Price currency={currency}>{MIN_PAYPAL_AMOUNT}</Price>})`}
+                {c('Error').t`Amount below minimum.`} {`(${<Price currency={Currency}>{MIN_PAYPAL_AMOUNT}</Price>})`}
             </Alert>
         );
     }
 
-    if (amount > MAX_PAYPAL_AMOUNT) {
+    if (Amount > MAX_PAYPAL_AMOUNT) {
         return <Alert type="error">{c('Error').t`Amount above the maximum.`}</Alert>;
     }
 
-    if (error.Code === API_CUSTOM_ERROR_CODES.PAYMENTS_PAYPAL_CONNECTION_EXCEPTION) {
+    if (error) {
         return (
             <Alert type="error">
-                {c('Error').t`Error connecting to PayPal.`}
-                <br />
-                <SmallButton onClick={request}>{c('Action').t`Click here to try again`}</SmallButton>
+                <div className="mb0-5">{error.message}</div>
+                <div>
+                    <SmallButton
+                        loading={loading}
+                        onClick={() => {
+                            setError();
+                            withLoading(handleClick());
+                        }}
+                    >{c('Action').t`Try again`}</SmallButton>
+                </div>
             </Alert>
         );
     }
@@ -65,7 +62,7 @@ const PayPal = ({ amount, currency, onPay, type }) => {
         <>
             <Alert>{c('Info')
                 .t`You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.`}</Alert>
-            <PrimaryButton loading={loading} onClick={handleClick}>{c('Action')
+            <PrimaryButton onClick={() => withLoading(handleClick())} loading={loading}>{c('Action')
                 .t`Check out with PayPal`}</PrimaryButton>
         </>
     );

@@ -49,7 +49,7 @@ const PlansSection = () => {
     const { request: requestCheckSubscription } = useApiWithoutResult(checkSubscription);
     const { request: requestDeleteSubscription } = useApiWithoutResult(deleteSubscription);
     const bundleEligible = isBundleEligible(subscription);
-    const { Plans = [] } = subscription;
+    const { Plans = [], CouponCode } = subscription;
 
     const handleUnsubscribe = async () => {
         await requestDeleteSubscription();
@@ -82,7 +82,10 @@ const PlansSection = () => {
         }
 
         const plansMap = mergePlansMap(newPlansMap, subscription);
-        const { Coupon } = await requestCheckSubscription(getCheckParams({ plans, plansMap, currency, cycle, coupon }));
+        const couponCode = CouponCode ? CouponCode : undefined; // From current subscription; CouponCode can be null
+        const { Coupon } = await requestCheckSubscription(
+            getCheckParams({ plans, plansMap, currency, cycle, coupon: couponCode })
+        );
         const coupon = Coupon ? Coupon.Code : undefined; // Coupon can equals null
 
         createModal(<SubscriptionModal plansMap={plansMap} coupon={coupon} currency={currency} cycle={cycle} />);

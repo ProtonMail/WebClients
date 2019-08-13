@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { useApiResult } from 'react-components';
-import { CYCLE, BLACK_FRIDAY } from 'proton-shared/lib/constants';
+import { CYCLE, BLACK_FRIDAY, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 import { isIE11 } from 'proton-shared/lib/helpers/browser';
 import { isExpired } from 'proton-shared/lib/helpers/card';
@@ -14,21 +14,34 @@ const usePaymentMethodsSelect = ({ amount, cycle, coupon, type }) => {
     const isInvoice = type === 'invoice';
     const isSignup = type === 'signup';
 
-    const cardNumber = (details) => `[${details.Brand}] •••• ${details.Last4}`;
+    const getMethod = (type, { Brand = '', Last4 = '', Payer = '' }) => {
+        switch (type) {
+            case PAYMENT_METHOD_TYPES.CARD:
+                return `[${Brand}] •••• ${Last4}`;
+            case PAYMENT_METHOD_TYPES.PAYPAL:
+                return `[PayPal] ${Payer}`;
+            default:
+                return '';
+        }
+    };
 
     const methods = [
         {
-            value: 'card',
+            value: PAYMENT_METHOD_TYPES.CARD,
             text: c('Payment method option').t`Pay with credit/debit card`
         }
     ];
 
     if (PaymentMethods.length) {
         methods.unshift(
-            ...PaymentMethods.map(({ ID: value, Details }, index) => ({
-                text: `${cardNumber(Details)} ${isExpired(Details) ? `(${c('Info').t`Expired`})` : ''} ${
-                    !index ? `(${c('Info').t`default`})` : ''
-                }`.trim(),
+            ...PaymentMethods.map(({ ID: value, Details, Type }, index) => ({
+                text: [
+                    getMethod(Type, Details),
+                    isExpired(Details) && `(${c('Info').t`Expired`})`,
+                    index === 0 && `(${c('Info').t`default`})`
+                ]
+                    .filter(Boolean)
+                    .join(' '),
                 value,
                 disabled: isExpired(Details)
             }))
@@ -39,7 +52,7 @@ const usePaymentMethodsSelect = ({ amount, cycle, coupon, type }) => {
     if (!isIE11() && (isYearly || isTwoYear || isMonthlyValid || isInvoice)) {
         methods.push({
             text: c('Payment method option').t`Pay with PayPal`,
-            value: 'paypal'
+            value: PAYMENT_METHOD_TYPES.PAYPAL
         });
     }
 

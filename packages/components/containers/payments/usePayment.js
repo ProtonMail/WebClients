@@ -1,27 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
-const usePayment = (submit) => {
+const { CARD, BITCOIN, CASH, PAYPAL } = PAYMENT_METHOD_TYPES;
+
+const usePayment = () => {
     const [method, setMethod] = useState('');
     const [parameters, setParameters] = useState({});
     const [isCardValid, setCardValidity] = useState(false);
 
+    const hasToken = () => {
+        const { Payment = {} } = parameters;
+        const { Details = {} } = Payment;
+        const { Token } = Details;
+        return !!Token;
+    };
+
     const canPay = () => {
-        if (['paypal', 'bitcoin', 'cash'].includes(method)) {
+        if ([BITCOIN, CASH].includes(method)) {
             return false;
         }
 
-        if (method === 'card' && !isCardValid) {
+        if (method === CARD && !isCardValid) {
+            return false;
+        }
+
+        if (method === PAYPAL && !hasToken()) {
             return false;
         }
 
         return true;
     };
-
-    useEffect(() => {
-        if (method === 'paypal') {
-            submit();
-        }
-    }, [parameters]);
 
     return {
         method,

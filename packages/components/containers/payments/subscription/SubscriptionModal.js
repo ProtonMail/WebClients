@@ -32,13 +32,14 @@ import CustomVPNSection from './CustomVPNSection';
 import OrderSummary from './OrderSummary';
 import Thanks from './Thanks';
 import { getCheckParams } from './helpers';
+import { handle3DS } from '../paymentTokenHelper';
 
 const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest }) => {
     const api = useApi();
     const [{ hasPaidMail } = {}] = useUser();
     const [{ MaxMembers } = {}] = useOrganization();
     const [loading, setLoading] = useState(false);
-    const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment(handleSubmit);
+    const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
     const { createNotification } = useNotifications();
     const [check, setCheck] = useState({});
     const [plans] = usePlans();
@@ -102,14 +103,18 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
         setModel(newModel);
     };
 
-    const handleSubmit = async () => {
-        if (!canPay) {
-            return;
-        }
-
+    const handleSubmit = async (params = parameters) => {
         try {
             setLoading(true);
-            await request({ Amount: check.AmountDue, ...getCheckParams({ ...model, plans }), ...parameters });
+            const checkParams = getCheckParams({ ...model, plans });
+            const requestBody = await handle3DS(
+                { ...params, Amount: check.AmountDue, Currency: checkParams.Currency },
+                api
+            );
+            await request({
+                ...checkParams,
+                ...requestBody
+            });
             await call();
             setLoading(false);
             next();
@@ -196,16 +201,24 @@ const SubscriptionModal = ({ onClose, cycle, currency, coupon, plansMap, ...rest
                         type="subscription"
                         method={method}
                         amount={check.AmountDue}
+                        cycle={model.cycle}
                         currency={model.currency}
+                        parameters={parameters}
                         onParameters={setParameters}
                         onMethod={setMethod}
                         onValidCard={setCardValidity}
+                        onPay={handleSubmit}
                     />
                     <Alert type="warning" learnMore="https://protonmail.com/terms-and-conditions">{c('Info')
                         .t`By clicking Next, you agree to abide by ProtonMail's terms and conditions.`}</Alert>
                 </>
             ),
-            onSubmit: handleSubmit
+            onSubmit: () => {
+                if (!canPay) {
+                    return;
+                }
+                handleSubmit();
+            }
         });
     }
 

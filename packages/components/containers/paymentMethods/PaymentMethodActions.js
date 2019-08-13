@@ -11,6 +11,7 @@ import {
     useNotifications
 } from 'react-components';
 import { deletePaymentMethod, orderPaymentMethods } from 'proton-shared/lib/api/payments';
+import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
 const toCard = ({ Details }) => {
     return {
@@ -48,7 +49,7 @@ const PaymentMethodActions = ({ method, onChange, methods, index }) => {
     };
 
     const list = [
-        method.Type === 'card' && {
+        method.Type === PAYMENT_METHOD_TYPES.CARD && {
             text: c('Action').t`Edit`,
             onClick: () => createModal(<EditCardModal card={card} onChange={onChange} />)
         },
