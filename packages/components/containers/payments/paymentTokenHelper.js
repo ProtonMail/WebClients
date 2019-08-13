@@ -103,13 +103,13 @@ const process = ({ ApprovalURL, Token, api }) => {
 
 const toParams = (params, Token) => {
     return {
+        ...params,
         Payment: {
             Type: 'token',
             Details: {
                 Token
             }
-        },
-        ...params
+        }
     };
 };
 
