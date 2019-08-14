@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Tooltip, Icon, CurrencySelector, CycleSelector, SmallButton } from 'react-components';
+import { Tooltip, Icon, CurrencySelector, CycleSelector, SmallButton, Info } from 'react-components';
 import { c } from 'ttag';
 import { CYCLE, PLANS, DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 
@@ -61,14 +61,20 @@ const PlansTable = ({
                     </td>
                 </tr>
                 <tr>
-                    <td className="bg-global-muted">{c('Header').t`Countries`}</td>
+                    <td className="bg-global-muted">
+                        <span className="mr0-5">{c('Header').t`Countries`}</span>
+                        <Info title={c('Tooltip').t`Access to VPN servers`} />
+                    </td>
                     <td className="aligncenter">3</td>
-                    <td className="aligncenter">{c('Plan option').t`All Countries`}</td>
-                    <td className="aligncenter">{c('Plan option').t`All Countries`}</td>
-                    <td className="aligncenter">{c('Plan option').t`All Countries`}</td>
+                    <td className="aligncenter">{c('Plan details').t`All Countries`}</td>
+                    <td className="aligncenter">{c('Plan details').t`All Countries`}</td>
+                    <td className="aligncenter">{c('Plan details').t`All Countries`}</td>
                 </tr>
                 <tr>
-                    <td className="bg-global-muted">{c('Header').t`Devices`}</td>
+                    <td className="bg-global-muted">
+                        <span className="mr0-5">{c('Header').t`Devices`}</span>
+                        <Info title={c('Tooltip').t`Number of simultaneous connections`} />
+                    </td>
                     <td className="aligncenter">1</td>
                     <td className="aligncenter">2</td>
                     <td className="aligncenter">5</td>
@@ -76,28 +82,19 @@ const PlansTable = ({
                 </tr>
                 <tr>
                     <td className="bg-global-muted">{c('Header').t`Speed`}</td>
-                    <td className="aligncenter">{c('Plan option').t`Low`}</td>
-                    <td className="aligncenter">{c('Plan option').t`High`}</td>
-                    <td className="aligncenter">{c('Plan option').t`Highest`}</td>
-                    <td className="aligncenter">{c('Plan option').t`Highest`}</td>
+                    <td className="aligncenter">{c('Plan details').t`Low`}</td>
+                    <td className="aligncenter">{c('Plan details').t`High`}</td>
+                    <td className="aligncenter">{c('Plan details').t`Highest`}</td>
+                    <td className="aligncenter">{c('Plan details').t`Highest`}</td>
                 </tr>
                 <tr>
-                    <td className="bg-global-muted">{c('Header').t`Plus servers`}</td>
-                    <td className="aligncenter">
-                        <Icon name="off" />
+                    <td className="bg-global-muted">
+                        <span className="mr0-5">{c('Header').t`Plus servers`}</span>
+                        <Info
+                            title={c('Tooltip')
+                                .t`Exclusive servers only available to Plus and Visionary users with higher speed`}
+                        />
                     </td>
-                    <td className="aligncenter">
-                        <Icon name="off" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                </tr>
-                <tr>
-                    <td className="bg-global-muted">{c('Header').t`Secure core`}</td>
                     <td className="aligncenter">
                         <Icon name="off" />
                     </td>
@@ -112,7 +109,13 @@ const PlansTable = ({
                     </td>
                 </tr>
                 <tr>
-                    <td className="bg-global-muted">{c('Header').t`Tor servers`}</td>
+                    <td className="bg-global-muted">
+                        <span className="mr0-5">{c('Header').t`Secure core`}</span>
+                        <Info
+                            title={c('Tooltip')
+                                .t`Provides additional protection against VPN server compromise by routing connections through our Secure Core network`}
+                        />
+                    </td>
                     <td className="aligncenter">
                         <Icon name="off" />
                     </td>
@@ -127,7 +130,30 @@ const PlansTable = ({
                     </td>
                 </tr>
                 <tr>
-                    <td className="bg-global-muted">ProtonMail Visionary</td>
+                    <td className="bg-global-muted">
+                        <span className="mr0-5">{c('Header').t`Tor servers`}</span>
+                        <Info
+                            title={c('Tooltip').t`Send all your traffic through the Tor network with a single click`}
+                        />
+                    </td>
+                    <td className="aligncenter">
+                        <Icon name="off" />
+                    </td>
+                    <td className="aligncenter">
+                        <Icon name="off" />
+                    </td>
+                    <td className="aligncenter">
+                        <Icon name="on" />
+                    </td>
+                    <td className="aligncenter">
+                        <Icon name="on" />
+                    </td>
+                </tr>
+                <tr>
+                    <td className="bg-global-muted">
+                        <span className="mr0-5">ProtonMail Visionary</span>
+                        <Info title={c('Tooltip').t`Includes ProtonMail encrypted email with all features`} />
+                    </td>
                     <td className="aligncenter">
                         <Icon name="off" />
                     </td>
