@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Route } from 'react-router';
-import { Sidebar, AppsSidebar } from 'react-components';
-import { APPS } from 'proton-shared/lib/constants';
+import { Sidebar } from 'react-components';
 
 import PrivateHeader from './PrivateHeader';
 
@@ -32,7 +31,6 @@ const PrivateLayout = ({ children }) => {
     ];
     return (
         <div className="flex flex-nowrap no-scroll">
-            <AppsSidebar currentApp={APPS.PROTONVPN_SETTINGS} />
             <div className="content flex-item-fluid reset4print">
                 <PrivateHeader />
                 <div className="flex flex-nowrap">
