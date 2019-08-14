@@ -9,7 +9,7 @@ const { MEMBER_ROLE, ADMIN_ROLE } = USER_ROLES;
 import { formatPlans } from '../payments/subscription/helpers';
 
 const Rows = ({ subscription, user }) => {
-    const { mailPlan, vpnPlan } = formatPlans(subscription.Plans);
+    const { mailPlan = {}, vpnPlan = {} } = formatPlans(subscription.Plans);
 
     if (user.hasPaidMail && mailPlan.Name === 'visionary') {
         return (
