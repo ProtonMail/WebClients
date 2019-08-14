@@ -29,7 +29,7 @@ const getCyclesi18n = () => ({
     [TWO_YEARS]: c('Billing cycle').t`2-year`
 });
 
-const SubscriptionSection = ({ permission }) => {
+const SubscriptionSection = ({ permission, currentApp = '' }) => {
     const [{ hasPaidMail, hasPaidVpn, isPaid }] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
@@ -91,7 +91,15 @@ const SubscriptionSection = ({ permission }) => {
         const cycle = action === 'yearly' ? YEARLY : Cycle;
         const plansMap = isPaid ? toPlanNames(subscription.Plans) : { plus: 1, vpnplus: 1 };
 
-        createModal(<SubscriptionModal plansMap={plansMap} coupon={coupon} currency={Currency} cycle={cycle} />);
+        createModal(
+            <SubscriptionModal
+                currentApp={currentApp}
+                plansMap={plansMap}
+                coupon={coupon}
+                currency={Currency}
+                cycle={cycle}
+            />
+        );
     };
 
     return (
@@ -252,7 +260,8 @@ const SubscriptionSection = ({ permission }) => {
 };
 
 SubscriptionSection.propTypes = {
-    permission: PropTypes.bool
+    permission: PropTypes.bool,
+    currentApp: PropTypes.string
 };
 
 export default SubscriptionSection;

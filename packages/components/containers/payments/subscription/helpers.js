@@ -31,13 +31,14 @@ const I18N = {
  * Possible entries for plansMap
  * {}
  * { vpnplus: 1 }
+ * { vpnbasic: 1 }
  * { plus: 1 }, { vpnplus: 1, plus: 1 }
  * { professional: 1 }, { vpnplus: 1, professional: 1 }
  * { visionary: 1 }
  * @param {Array} subscription.Plans
  * @returns {Object} plansMap
  */
-export const mergePlansMap = (plansMap, { Plans = [] }) => {
+export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
     // Free user subscribing
     if (!Plans.length) {
         return plansMap;
@@ -52,9 +53,10 @@ export const mergePlansMap = (plansMap, { Plans = [] }) => {
 
     const currentPlansMap = toPlanNames(Plans);
 
-    if (isEquivalent(plansMap, { vpnplus: 1 })) {
+    if (isEquivalent(plansMap, { vpnplus: 1 }) || isEquivalent(plansMap, { vpnbasic: 1 })) {
         return {
             ...plansMap,
+            plus: currentPlansMap.plus,
             ['1vpn']: currentPlansMap['1vpn']
         };
     }
