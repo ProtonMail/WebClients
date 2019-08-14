@@ -185,8 +185,8 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
 
                 withLoading(
                     handleLogin().catch((e) => {
-                        createNotification({ type: 'error', text: getErrorText(e) });
                         cacheRef.current = undefined;
+                        console.error(e);
                     })
                 );
             };
@@ -223,10 +223,9 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
 
                 withLoading(
                     handleTotp().catch((e) => {
-                        createNotification({ type: 'error', text: getErrorText(e) });
-
                         // In case of any other error than retry error, automatically cancel here to allow the user to retry.
                         if (e.name !== 'RetryTOTPError') {
+                            console.error(e);
                             return handleCancel();
                         }
                     })
@@ -249,11 +248,12 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
 
                 withLoading(
                     handleUnlock(keyPassword).catch((e) => {
-                        createNotification({ type: 'error', text: getErrorText(e) });
-
                         // In case of any other error than password error, automatically cancel here to allow the user to retry.
                         if (e.name !== 'PasswordError') {
+                            console.error(e);
                             return handleCancel();
+                        } else {
+                            createNotification({ type: 'error', text: getErrorText(e) });
                         }
                     })
                 );

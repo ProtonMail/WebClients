@@ -14,7 +14,6 @@ import ModalsProvider from '../modals/Provider';
 import ApiProvider from '../api/ApiProvider';
 import CacheProvider from '../cache/Provider';
 import AuthenticationProvider from '../authentication/Provider';
-import PublicApiProvider from '../api/PublicApiProvider';
 import { RightToLeftProvider } from '../..';
 
 const ProtonApp = ({ storage, config, children }) => {
@@ -90,11 +89,11 @@ const ProtonApp = ({ storage, config, children }) => {
                     ) : (
                         <NotificationsProvider>
                             <ModalsProvider>
-                                <PublicApiProvider config={config}>
+                                <ApiProvider config={config}>
                                     <AuthenticationProvider store={authenticationValue}>
                                         {children}
                                     </AuthenticationProvider>
-                                </PublicApiProvider>
+                                </ApiProvider>
                             </ModalsProvider>
                         </NotificationsProvider>
                     )}
