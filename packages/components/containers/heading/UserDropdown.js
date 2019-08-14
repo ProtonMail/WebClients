@@ -41,7 +41,7 @@ const UserDropdown = (props) => {
     };
 
     return (
-        <div className="userDropdown">
+        <div className="userDropdown" data-cy-header="userDropdown">
             <UserDropdownButton {...props} user={user} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-right">
                 <ul className="unstyled mt0-5 mb0-5">
@@ -112,7 +112,7 @@ const UserDropdown = (props) => {
                         </button>
                     </li>
                     <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex">
-                        <PrimaryButton className="w100 aligncenter navigationUser-logout" onClick={handleLogout}>
+                        <PrimaryButton className="w100 aligncenter navigationUser-logout" onClick={handleLogout} data-cy-header-user-dropdown="logout" >
                             {c('Action').t`Logout`}
                         </PrimaryButton>
                     </li>
