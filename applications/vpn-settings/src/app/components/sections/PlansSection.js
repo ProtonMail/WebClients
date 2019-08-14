@@ -67,8 +67,6 @@ const PlansSection = () => {
         }
 
         const plansMap = mergePlansMap({ [planName]: 1 }, subscription);
-        console.log(plansMap);
-        debugger;
         const couponCode = CouponCode ? CouponCode : undefined; // From current subscription; CouponCode can be null
         const PlanIDs = Object.entries(plansMap).reduce((acc, [planName, quantity]) => {
             if (quantity) {
