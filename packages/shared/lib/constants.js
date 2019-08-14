@@ -344,12 +344,20 @@ export const PLAN_SERVICES = {
 export const FREE_SUBSCRIPTION = {}; // You don't need more, use `user.isPaid`
 export const FREE_ORGANIZATION = {}; // You don't need more, use `user.isPaid`
 
+export const PLANS = {
+    PLUS: 'plus',
+    PROFESSIONAL: 'professional',
+    VISIONARY: 'visionary',
+    VPNBASIC: 'vpnbasic',
+    VPNPLUS: 'vpnplus'
+};
+
 export const PLAN_NAMES = {
-    plus: 'Plus',
-    professional: 'Professional',
-    visionary: 'Visionary',
-    vpnbasic: 'Basic',
-    vpnplus: 'Plus'
+    [PLANS.PLUS]: 'Plus',
+    [PLANS.PROFESSIONAL]: 'Professional',
+    [PLANS.VISIONARY]: 'Visionary',
+    [PLANS.VPNBASIC]: 'Basic',
+    [PLANS.VPNPLUS]: 'Plus'
 };
 
 export const COUPON_CODES = {
