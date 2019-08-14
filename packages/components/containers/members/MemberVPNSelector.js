@@ -4,9 +4,10 @@ import { Select } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
 const MemberVPNSelector = ({ member, organization, onChange }) => {
+    const step = 1;
     const minPadding = 0;
-    const maxPadding = organization.MaxVPN - organization.UsedVPN;
-    const options = range(minPadding, maxPadding).map((value) => ({ text: value, value }));
+    const maxPadding = organization.MaxVPN - organization.UsedVPN + member.MaxVPN + step;
+    const options = range(minPadding, maxPadding, step).map((value) => ({ text: value, value }));
     const [vpn, setVpn] = useState(member.ID ? member.MaxVPN : 1);
     const handleChange = ({ target }) => setVpn(target.value);
 
