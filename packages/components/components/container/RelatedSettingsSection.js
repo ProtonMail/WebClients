@@ -4,7 +4,8 @@ import { c } from 'ttag';
 import { SubTitle, Information, Paragraph } from 'react-components';
 import { Link } from 'react-router-dom';
 
-const RelatedSettingsSection = ({ list }) => {
+// list = [{ icon, text, to, link }]
+const RelatedSettingsSection = ({ list = [{}] }) => {
     if (list.length > 2) {
         throw new Error('You can only display 2 blocks in RelatedSettingsSection');
     }
@@ -32,11 +33,7 @@ const RelatedSettingsSection = ({ list }) => {
 };
 
 RelatedSettingsSection.propTypes = {
-    list: PropTypes.array.isRequired
-};
-
-RelatedSettingsSection.defaultProps = {
-    list: [] // [{ icon, text, to, link }]
+    list: PropTypes.array
 };
 
 export default RelatedSettingsSection;

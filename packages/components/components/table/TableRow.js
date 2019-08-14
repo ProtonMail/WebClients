@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import TableCell from './TableCell';
 
-const TableRow = ({ cells, ...rest }) => {
+const TableRow = ({ cells = [], ...rest }) => {
     return (
         <tr {...rest}>
             {cells.map((cell, index) => (
@@ -15,10 +15,6 @@ const TableRow = ({ cells, ...rest }) => {
 
 TableRow.propTypes = {
     cells: PropTypes.arrayOf(PropTypes.node)
-};
-
-TableRow.defaultProps = {
-    cells: []
 };
 
 export default TableRow;

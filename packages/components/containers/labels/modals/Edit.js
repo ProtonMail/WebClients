@@ -9,7 +9,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import NewLabelForm from '../NewLabelForm';
 
-function EditLabelModal({ label, mode, onEdit, onAdd, ...props }) {
+function EditLabelModal({ label, mode = 'create', onEdit = noop, onAdd = noop, ...props }) {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -90,12 +90,6 @@ EditLabelModal.propTypes = {
     onAdd: PropTypes.func,
     onEdit: PropTypes.func,
     onClose: PropTypes.func
-};
-
-EditLabelModal.defaultProps = {
-    onAdd: noop,
-    onEdit: noop,
-    mode: 'create'
 };
 
 export default EditLabelModal;

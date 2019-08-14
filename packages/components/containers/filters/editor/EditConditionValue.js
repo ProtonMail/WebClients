@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Input, Button } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-function EditConditionValue({ value, onClickDelete, onEdit }) {
+function EditConditionValue({ value, onClickDelete = noop, onEdit = noop }) {
     const handleClick = () => onClickDelete(value);
     const handleInput = ({ target }) => onEdit({ before: value, value: target.value });
 
@@ -21,12 +21,6 @@ EditConditionValue.propTypes = {
     value: PropTypes.string.isRequired,
     onEdit: PropTypes.func,
     onClickDelete: PropTypes.func
-};
-
-EditConditionValue.defaultProps = {
-    className: '',
-    onEdit: noop,
-    onClickDelete: noop
 };
 
 export default EditConditionValue;

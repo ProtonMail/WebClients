@@ -17,13 +17,13 @@ const Modal = ({
     title,
     close = c('Action').t`Cancel`,
     submit = c('Action').t`Submit`,
-    loading,
+    loading = false,
     children,
-    modalTitleID,
+    modalTitleID = 'modalTitle',
     footer,
-    hasSubmit,
-    hasClose,
-    noValidate,
+    hasSubmit = true,
+    hasClose = true,
+    noValidate = false,
     ...rest
 }) => {
     // Because we will forget
@@ -98,18 +98,6 @@ Modal.propTypes = {
     background: PropTypes.bool,
     hasSubmit: PropTypes.bool,
     hasClose: PropTypes.bool
-};
-
-Modal.defaultProps = {
-    className: '',
-    small: false,
-    loading: false,
-    isBehind: false,
-    isClosing: false,
-    noValidate: false,
-    hasClose: true,
-    hasSubmit: true,
-    modalTitleID: 'modalTitle'
 };
 
 export default Modal;

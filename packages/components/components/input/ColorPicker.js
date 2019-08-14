@@ -7,7 +7,7 @@ import tinycolor from 'tinycolor2';
 
 import './ColorPicker.scss';
 
-const ColorPicker = ({ children, color, onChange, ...rest }) => {
+const ColorPicker = ({ children, color = 'blue', onChange = noop, ...rest }) => {
     const [display, setDisplay] = useState(false);
     const colorModel = tinycolor(color);
     const backgroundColor = colorModel.isValid() ? colorModel.toHexString() : '';
@@ -38,11 +38,6 @@ ColorPicker.propTypes = {
         PropTypes.shape({ r: PropTypes.number, g: PropTypes.number, b: PropTypes.number, a: PropTypes.number })
     ]),
     onChange: PropTypes.func
-};
-
-ColorPicker.defaultProps = {
-    color: 'blue',
-    onChange: noop
 };
 
 export default ColorPicker;

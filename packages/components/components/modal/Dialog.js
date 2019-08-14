@@ -11,12 +11,12 @@ const CLASSES = {
 
 const Dialog = ({
     onExit,
-    small: isSmall,
-    isClosing,
-    isBehind,
+    small: isSmall = false,
+    isClosing = false,
+    isBehind = false,
     modalTitleID,
     children,
-    className: extraClassNames,
+    className: extraClassNames = '',
     ...rest
 }) => {
     const className = [
@@ -60,13 +60,6 @@ Dialog.propTypes = {
     small: PropTypes.bool,
     isBehind: PropTypes.bool,
     isClosing: PropTypes.bool
-};
-
-Dialog.defaultProps = {
-    className: '',
-    small: false,
-    isBehind: false,
-    isClosing: false
 };
 
 export default Dialog;

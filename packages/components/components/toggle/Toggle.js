@@ -17,7 +17,7 @@ const label = (key) => {
     );
 };
 
-const Toggle = ({ id, className, checked, loading, onChange, disabled, ...rest }) => {
+const Toggle = ({ id = 'toggle', className = '', checked = false, loading, onChange, disabled, ...rest }) => {
     const handleChange = (event) => {
         if (!disabled && onChange) {
             onChange(event);
@@ -45,18 +45,12 @@ const Toggle = ({ id, className, checked, loading, onChange, disabled, ...rest }
 };
 
 Toggle.propTypes = {
-    id: PropTypes.string.isRequired,
-    checked: PropTypes.bool.isRequired,
+    id: PropTypes.string,
+    checked: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
     className: PropTypes.string,
     disabled: PropTypes.bool,
     loading: PropTypes.bool
-};
-
-Toggle.defaultProps = {
-    id: 'toggle',
-    className: '',
-    loading: false
 };
 
 export default Toggle;

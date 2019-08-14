@@ -6,7 +6,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import LabelActions from './LabelActions';
 
-function ActionsEditor({ filter, onChange, errors }) {
+function ActionsEditor({ filter, onChange = noop, errors = {} }) {
     const { Actions } = filter.Simple;
     const [labelModel = [], loading] = useFormattedLabels();
 
@@ -135,11 +135,6 @@ ActionsEditor.propTypes = {
     filter: PropTypes.object.isRequired,
     errors: PropTypes.object,
     onChange: PropTypes.func
-};
-
-ActionsEditor.defaultProps = {
-    errors: {},
-    onChange: noop
 };
 
 export default ActionsEditor;

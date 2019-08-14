@@ -3,7 +3,18 @@ import PropTypes from 'prop-types';
 import { RadioCard } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-const ThemeCard = ({ label, id, alt, src, checked, onChange, disabled, customizable, onCustomization, ...rest }) => {
+const ThemeCard = ({
+    label,
+    id,
+    alt,
+    src,
+    checked,
+    onChange,
+    disabled,
+    customizable = false,
+    onCustomization,
+    ...rest
+}) => {
     const handleClick = checked ? onCustomization : noop;
 
     const customize = customizable ? (
@@ -46,10 +57,6 @@ ThemeCard.propTypes = {
     customizable: PropTypes.bool,
     onChange: PropTypes.func,
     onCustomization: PropTypes.func
-};
-
-ThemeCard.defaultProps = {
-    customizable: false
 };
 
 export default ThemeCard;

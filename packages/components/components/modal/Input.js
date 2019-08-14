@@ -25,13 +25,13 @@ InputField.propTypes = {
 
 const InputModal = ({
     label,
-    type,
+    type = 'input',
     title,
-    input: initialInput,
+    input: initialInput = '',
     onClose,
     onSubmit,
-    cancel,
-    submit,
+    cancel = c('Action').t`Cancel`,
+    submit = c('Action').t`Submit`,
     placeholder,
     ...rest
 }) => {
@@ -62,7 +62,7 @@ const InputModal = ({
 };
 
 InputModal.propTypes = {
-    type: PropTypes.string.isRequired,
+    type: PropTypes.string,
     input: PropTypes.string,
     onClose: PropTypes.func,
     label: PropTypes.string.isRequired,
@@ -72,13 +72,6 @@ InputModal.propTypes = {
     placeholder: PropTypes.string,
     submit: PropTypes.string,
     loading: PropTypes.bool
-};
-
-InputModal.defaultProps = {
-    type: 'input',
-    input: '',
-    cancel: c('Action').t`Cancel`,
-    submit: c('Action').t`Submit`
 };
 
 export default InputModal;

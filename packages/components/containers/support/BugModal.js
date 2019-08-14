@@ -25,7 +25,19 @@ import {
 import AttachScreenshot from './AttachScreenshot';
 import { collectInfo, getClient } from '../../helpers/report';
 
-const BugModal = ({ onClose, username: Username, addresses, titles, ...rest }) => {
+const defaultTitles = [
+    'Login problem',
+    'Sign up problem',
+    'Bridge problem',
+    'Import / export problem',
+    'Custom domains problem',
+    'Payments problem',
+    'VPN problem',
+    'Feature request',
+    'Other'
+];
+
+const BugModal = ({ onClose, username: Username = '', addresses = [], titles = defaultTitles, ...rest }) => {
     const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
     const Client = getClient(CLIENT_ID);
     const { createNotification } = useNotifications();
@@ -212,22 +224,6 @@ BugModal.propTypes = {
     username: PropTypes.string,
     addresses: PropTypes.array,
     titles: PropTypes.array
-};
-
-BugModal.defaultProps = {
-    username: '',
-    addresses: [],
-    titles: [
-        'Login problem',
-        'Sign up problem',
-        'Bridge problem',
-        'Import / export problem',
-        'Custom domains problem',
-        'Payments problem',
-        'VPN problem',
-        'Feature request',
-        'Other'
-    ]
 };
 
 export default BugModal;

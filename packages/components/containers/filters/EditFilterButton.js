@@ -5,7 +5,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import AddFilterModal from '../../containers/filters/AddFilterModal';
 
-function EditFilterButton({ filter, type, className, onEditFilter, textContent }) {
+function EditFilterButton({ filter, type, className, onEditFilter = noop, textContent }) {
     const { createModal } = useModals();
 
     const handleClick = () =>
@@ -20,12 +20,10 @@ function EditFilterButton({ filter, type, className, onEditFilter, textContent }
 
 EditFilterButton.propTypes = {
     filter: PropTypes.object.isRequired,
+    type: PropTypes.string,
     className: PropTypes.string,
-    onEditFilter: PropTypes.func
-};
-
-EditFilterButton.defaultProps = {
-    onEditFilter: noop
+    onEditFilter: PropTypes.func,
+    textContent: PropTypes.string
 };
 
 export default EditFilterButton;

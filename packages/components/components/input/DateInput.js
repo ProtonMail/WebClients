@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Pikaday from 'pikaday';
 
 // Configuration: https://github.com/Pikaday/Pikaday#configuration
-const DateInput = ({ id, disabled, required, placeholder, className, ...rest }) => {
+const DateInput = ({ id, disabled, required = false, placeholder, className = '', ...rest }) => {
     const inputRef = useRef();
 
     useEffect(() => {
@@ -34,11 +34,6 @@ DateInput.propTypes = {
     required: PropTypes.bool,
     placeholder: PropTypes.string,
     className: PropTypes.string
-};
-
-DateInput.defaultProps = {
-    required: false,
-    className: ''
 };
 
 export default DateInput;

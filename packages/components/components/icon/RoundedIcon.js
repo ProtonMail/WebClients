@@ -9,7 +9,7 @@ const TYPES = {
     error: 'bg-global-warning'
 };
 
-const RoundedIcon = ({ className, type, padding, ...rest }) => {
+const RoundedIcon = ({ className = 'inline-flex rounded50', type = 'success', padding = 'p0-25', ...rest }) => {
     return (
         <span className={`${className} ${padding} ${TYPES[type]}`}>
             <Icon {...rest} />
@@ -21,12 +21,6 @@ RoundedIcon.propTypes = {
     className: PropTypes.string,
     type: PropTypes.string,
     padding: PropTypes.string
-};
-
-RoundedIcon.defaultProps = {
-    className: 'inline-flex rounded50',
-    type: 'success',
-    padding: 'p0-25'
 };
 
 export default RoundedIcon;

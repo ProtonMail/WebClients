@@ -39,10 +39,10 @@ const { PROTONMAIL_SETTINGS } = APPS;
 const SubscriptionModal = ({
     currentApp = PROTONMAIL_SETTINGS,
     onClose,
-    cycle,
-    currency,
-    coupon,
-    plansMap,
+    cycle = DEFAULT_CYCLE,
+    currency = DEFAULT_CURRENCY,
+    coupon = '',
+    plansMap = {},
     ...rest
 }) => {
     const api = useApi();
@@ -275,13 +275,6 @@ SubscriptionModal.propTypes = {
     currency: PropTypes.string,
     plansMap: PropTypes.object,
     currentApp: PropTypes.string
-};
-
-SubscriptionModal.defaultProps = {
-    coupon: '',
-    currency: DEFAULT_CURRENCY,
-    cycle: DEFAULT_CYCLE,
-    plansMap: {}
 };
 
 export default SubscriptionModal;

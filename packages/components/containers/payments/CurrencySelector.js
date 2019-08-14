@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Select } from 'react-components';
 import { CURRENCIES, DEFAULT_CURRENCY } from 'proton-shared/lib/constants';
 
-const CurrencySelector = ({ currency, onSelect, ...rest }) => {
+const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, ...rest }) => {
     const handleChange = ({ target }) => onSelect(target.value);
     const options = CURRENCIES.map((c) => ({ text: c, value: c }));
 
@@ -11,12 +11,8 @@ const CurrencySelector = ({ currency, onSelect, ...rest }) => {
 };
 
 CurrencySelector.propTypes = {
-    currency: PropTypes.string.isRequired,
+    currency: PropTypes.string,
     onSelect: PropTypes.func.isRequired
-};
-
-CurrencySelector.defaultProps = {
-    currency: DEFAULT_CURRENCY
 };
 
 export default CurrencySelector;

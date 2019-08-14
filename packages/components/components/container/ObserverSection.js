@@ -8,13 +8,13 @@ import { withDecimalPrecision } from 'proton-shared/lib/helpers/math';
 
 const ObserverSection = ({
     id,
-    className,
-    rootElement,
-    rootMargin,
-    granularity,
+    className = 'mb2',
+    rootElement = null,
+    rootMargin = '0px',
+    granularity = 20,
     index,
     setIntersectionData,
-    wait,
+    wait = 500,
     children
 }) => {
     const ref = useRef();
@@ -78,14 +78,6 @@ ObserverSection.propTypes = {
     setIntersectionData: PropTypes.func.isRequired,
     wait: PropTypes.number,
     children: PropTypes.node.isRequired
-};
-
-ObserverSection.defaultProps = {
-    className: 'mb2',
-    rootElement: null,
-    rootMargin: '0px',
-    granularity: 20,
-    wait: 500
 };
 
 export default ObserverSection;

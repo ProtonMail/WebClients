@@ -7,7 +7,15 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import EditConditionValue from './editor/EditConditionValue';
 import AddConditionValue from './editor/AddConditionValue';
 
-function FilterConditionValues({ condition, options, onDelete, onChangeCondition, onAdd, onEdit, error }) {
+function FilterConditionValues({
+    condition,
+    options,
+    onDelete = noop,
+    onChangeCondition = noop,
+    onAdd = noop,
+    onEdit = noop,
+    error = {}
+}) {
     const hasError = (key) => (error.errors || []).includes(key);
     return (
         <>
@@ -43,14 +51,6 @@ FilterConditionValues.propTypes = {
     onChangeCondition: PropTypes.func,
     onAdd: PropTypes.func,
     onEdit: PropTypes.func
-};
-
-FilterConditionValues.defaultProps = {
-    error: {},
-    onDelete: noop,
-    onChangeCondition: noop,
-    onAdd: noop,
-    onEdit: noop
 };
 
 export default FilterConditionValues;

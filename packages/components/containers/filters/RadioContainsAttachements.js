@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { useToggle, Toggle } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-function RadioContainsAttachements({ comparator, onChange }) {
+function RadioContainsAttachements({ comparator, onChange = noop }) {
     const { state, toggle } = useToggle(comparator === 'contains');
 
     const handleChange = ({ target }) => {
@@ -23,10 +23,6 @@ function RadioContainsAttachements({ comparator, onChange }) {
 RadioContainsAttachements.propTypes = {
     comparator: PropTypes.string,
     onChange: PropTypes.func
-};
-
-RadioContainsAttachements.defaultProps = {
-    onChange: noop
 };
 
 export default RadioContainsAttachements;

@@ -4,15 +4,15 @@ import keycode from 'keycode';
 import Icon from '../icon/Icon';
 
 const Button = ({
-    type,
-    role,
-    loading,
+    type = 'button',
+    role = 'button',
+    loading = false,
     tabIndex,
     buttonRef,
-    className,
+    className = '',
     children,
     title,
-    disabled,
+    disabled = false,
     onClick,
     onKeyDown,
     onKeyUp,
@@ -107,14 +107,6 @@ Button.propTypes = {
     className: PropTypes.string,
     icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     children: PropTypes.node
-};
-
-Button.defaultProps = {
-    role: 'button',
-    type: 'button',
-    disabled: false,
-    loading: false,
-    className: ''
 };
 
 export default Button;

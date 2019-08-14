@@ -10,7 +10,7 @@ import RemoveEmailFilteredList from './RemoveEmailFilteredList';
 
 import './SpamListItem.scss';
 
-function SpamListItem({ list, type, dest, onAction, className, loading }) {
+function SpamListItem({ list, type, dest, onAction = noop, className, loading }) {
     const I18N = {
         whitelist: c('Title').t`Whitelist`,
         blacklist: c('Title').t`BlackList`,
@@ -67,11 +67,8 @@ SpamListItem.propTypes = {
     className: PropTypes.string,
     loading: PropTypes.bool,
     type: PropTypes.string.isRequired,
+    dest: PropTypes.string.isRequired,
     onAction: PropTypes.func
-};
-
-SpamListItem.defaultProps = {
-    onAction: noop
 };
 
 export default SpamListItem;

@@ -11,7 +11,7 @@ import AddEmailToList from '../../containers/filters/spamlist/AddEmailToList';
 const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
 const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
 
-function AddEmailToListModal({ type, onAdd, onClose, ...rest }) {
+function AddEmailToListModal({ type, onAdd = noop, onClose, ...rest }) {
     const I18N = {
         blacklist: c('Title').t`Add to Blacklist`,
         whitelist: c('Title').t`Add to Whitelist`
@@ -48,11 +48,8 @@ function AddEmailToListModal({ type, onAdd, onClose, ...rest }) {
 
 AddEmailToListModal.propTypes = {
     type: PropTypes.oneOf(['blacklist', 'whitelist']).isRequired,
-    onAdd: PropTypes.func.isRequired
-};
-
-AddEmailToListModal.defaultProps = {
-    onAdd: noop
+    onAdd: PropTypes.func,
+    onClose: PropTypes.func
 };
 
 export default AddEmailToListModal;

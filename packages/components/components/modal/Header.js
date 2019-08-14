@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-const Header = ({ children, modalTitleID, className, hasClose, onClose, ...rest }) => {
+const Header = ({ children, modalTitleID, className = '', hasClose = true, onClose, ...rest }) => {
     return (
         <header className={`pm-modalHeader ${className}`} {...rest}>
             {hasClose ? (
@@ -23,11 +23,6 @@ Header.propTypes = {
     onClose: PropTypes.func,
     className: PropTypes.string,
     modalTitleID: PropTypes.string.isRequired
-};
-
-Header.defaultProps = {
-    hasClose: true,
-    className: ''
 };
 
 export default Header;

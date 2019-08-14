@@ -5,7 +5,7 @@ import { Icon } from 'react-components';
 import { TableRow } from '../table';
 import { OrderableElement, OrderableHandle } from '../orderable';
 
-const OrderableTableRow = ({ index, cells, ...rest }) => (
+const OrderableTableRow = ({ index, cells = [], ...rest }) => (
     <OrderableElement index={index}>
         <TableRow
             cells={[
@@ -24,10 +24,6 @@ const OrderableTableRow = ({ index, cells, ...rest }) => (
 OrderableTableRow.propTypes = {
     index: PropTypes.number.isRequired,
     cells: PropTypes.arrayOf(PropTypes.node)
-};
-
-OrderableTableRow.defaultProps = {
-    cells: []
 };
 
 export default OrderableTableRow;

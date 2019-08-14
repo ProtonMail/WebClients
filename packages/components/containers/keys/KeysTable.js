@@ -6,7 +6,7 @@ import { Table, TableCell, TableRow, TableBody } from 'react-components';
 import KeysActions from './KeysActions';
 import KeysStatus from './KeysStatus';
 
-const KeysTable = ({ keys, onAction }) => {
+const KeysTable = ({ keys = [], onAction }) => {
     const headerCells = [
         { node: c('Title header for keys table').t`Fingerprint`, className: 'w50' },
         { node: c('Title header for keys table').t`Key type` },
@@ -55,10 +55,6 @@ KeysTable.propTypes = {
     keys: PropTypes.array,
     onAction: PropTypes.func.isRequired,
     loadingKeyID: PropTypes.bool
-};
-
-KeysTable.defaultProps = {
-    keys: []
 };
 
 export default KeysTable;

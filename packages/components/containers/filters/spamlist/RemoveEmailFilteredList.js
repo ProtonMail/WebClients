@@ -5,7 +5,7 @@ import { SmallButton, useApiWithoutResult, useNotifications } from 'react-compon
 import { deleteIncomingDefaults } from 'proton-shared/lib/api/incomingDefaults';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-function RemoveEmailFilteredList({ type, email, className, onClick }) {
+function RemoveEmailFilteredList({ type, email, className, onClick = noop }) {
     const { createNotification } = useNotifications();
     const { request, loading } = useApiWithoutResult(deleteIncomingDefaults);
 
@@ -31,10 +31,6 @@ RemoveEmailFilteredList.propTypes = {
     email: PropTypes.object.isRequired,
     type: PropTypes.string.isRequired,
     onClick: PropTypes.func
-};
-
-RemoveEmailFilteredList.defaultProps = {
-    onClick: noop
 };
 
 export default RemoveEmailFilteredList;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 
-const SubSidebar = ({ list, children }) => {
+const SubSidebar = ({ list = [], children }) => {
     const clean = (h = '') => h.replace(/#/g, '');
     const [hash, setHash] = useState(clean(location.hash));
     const onHashChange = () => setHash(clean(location.hash));
@@ -42,12 +42,8 @@ const SubSidebar = ({ list, children }) => {
 };
 
 SubSidebar.propTypes = {
-    list: PropTypes.array.isRequired,
+    list: PropTypes.array,
     children: PropTypes.node
-};
-
-SubSidebar.defaultProps = {
-    list: []
 };
 
 export default SubSidebar;

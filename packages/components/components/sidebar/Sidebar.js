@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import NavMenu from './NavMenu';
 
-const Sidebar = ({ list }) => {
+const Sidebar = ({ list = [] }) => {
     return (
         <div className="sidebar flex flex-column noprint">
             <nav className="navigation mw100 flex-item-fluid scroll-if-needed mb1">
@@ -15,10 +15,6 @@ const Sidebar = ({ list }) => {
 
 Sidebar.propTypes = {
     list: PropTypes.arrayOf(PropTypes.object)
-};
-
-Sidebar.defaultProps = {
-    list: []
 };
 
 export default Sidebar;

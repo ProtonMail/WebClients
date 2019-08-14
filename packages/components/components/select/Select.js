@@ -5,14 +5,19 @@ import { generateUID } from '../../helpers/component';
 import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';
 
-const Select = (props) => {
-    const { options, className, error, ...rest } = props;
-    const { handlers, statusClasses, status } = useInput(props);
+const Select = ({ options, error, size = 1, className = '', multiple = false, ...rest }) => {
+    const { handlers, statusClasses, status } = useInput({ ...rest });
     const [uid] = useState(generateUID('select'));
 
     return (
         <>
-            <select className={`pm-field w100 ${className} ${statusClasses}`} {...rest} {...handlers}>
+            <select
+                className={`pm-field w100 ${className} ${statusClasses}`}
+                size={size}
+                multiple={multiple}
+                {...rest}
+                {...handlers}
+            >
                 {options.map(({ text, ...rest }, index) => (
                     <option key={index.toString()} {...rest}>
                         {text}
@@ -34,12 +39,6 @@ Select.propTypes = {
     options: PropTypes.arrayOf(PropTypes.object).isRequired,
     multiple: PropTypes.bool,
     className: PropTypes.string
-};
-
-Select.defaultProps = {
-    multiple: false,
-    className: '',
-    size: 1
 };
 
 export default Select;

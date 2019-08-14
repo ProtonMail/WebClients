@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DialogModal, ContentModal } from 'react-components';
 
-const SimpleFormModal = ({ modalTitleID, children, onSubmit, onClose, ...rest }) => {
+const SimpleFormModal = ({ modalTitleID = 'modalTitle', children, onSubmit, onClose, ...rest }) => {
     return (
         <DialogModal modalTitleID={modalTitleID} {...rest}>
             <ContentModal onSubmit={onSubmit} onReset={onClose}>
@@ -17,10 +17,6 @@ SimpleFormModal.propTypes = {
     children: PropTypes.node.isRequired,
     onSubmit: PropTypes.func,
     onClose: PropTypes.func.isRequired
-};
-
-SimpleFormModal.defaultProps = {
-    modalTitleID: 'modalTitle'
 };
 
 export default SimpleFormModal;

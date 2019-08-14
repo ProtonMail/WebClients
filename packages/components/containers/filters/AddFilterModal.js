@@ -24,7 +24,7 @@ import NameEditor from '../../containers/filters/editor/Name';
 
 import './AddFilterModal.css';
 
-function AddFilterModal({ filter, type, mode, onEdit, ...props }) {
+function AddFilterModal({ filter, type, mode = 'create', onEdit = noop, ...props }) {
     const [filterModel] = useState(() => newFilter(filter, type));
     const [errors, setErrors] = useState({});
     const [model, setModel] = useState(filterModel);
@@ -188,11 +188,6 @@ AddFilterModal.propTypes = {
     onClose: PropTypes.func,
     mode: PropTypes.string,
     type: PropTypes.string
-};
-
-AddFilterModal.defaultProps = {
-    onEdit: noop,
-    mode: 'create'
 };
 
 export default AddFilterModal;

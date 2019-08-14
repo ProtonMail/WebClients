@@ -6,7 +6,7 @@ import { range } from 'proton-shared/lib/helpers/array';
 
 import { getFullList } from '../../helpers/countries';
 
-const Card = ({ card, errors, onChange, loading }) => {
+const Card = ({ card, errors, onChange, loading = false }) => {
     const countries = getFullList().map(({ value, label: text }) => ({ value, text }));
     const handleChange = (key) => ({ target }) => onChange(key, target.value);
     const currentYear = new Date().getFullYear();
@@ -87,14 +87,10 @@ const Card = ({ card, errors, onChange, loading }) => {
 };
 
 Card.propTypes = {
-    loading: PropTypes.bool.isRequired,
+    loading: PropTypes.bool,
     card: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired
-};
-
-Card.defaultProps = {
-    loading: false
 };
 
 export default Card;

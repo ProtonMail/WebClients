@@ -36,7 +36,7 @@ codemirror.registerHelper(
     }, 500)
 );
 
-function FilterEditorSieve({ filter, onChangeBeforeLint, onChange }) {
+function FilterEditorSieve({ filter, onChangeBeforeLint = noop, onChange = noop }) {
     const api = useApi();
 
     useEffect(() => {
@@ -56,7 +56,7 @@ function FilterEditorSieve({ filter, onChangeBeforeLint, onChange }) {
         };
     }, []);
 
-    const handleChange = (editor, opt, input) => {
+    const handleChange = (_editor, _opt, input) => {
         onChangeBeforeLint(clean(input));
     };
 
@@ -85,11 +85,6 @@ FilterEditorSieve.propTypes = {
     filter: PropTypes.object.isRequired,
     onChangeBeforeLint: PropTypes.func,
     onChange: PropTypes.func
-};
-
-FilterEditorSieve.defaultProps = {
-    onChangeBeforeLint: noop,
-    onChange: noop
 };
 
 export default FilterEditorSieve;

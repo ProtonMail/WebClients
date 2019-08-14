@@ -5,7 +5,7 @@ import { Table } from '../table';
 import OrderableContainer from '../orderable/OrderableContainer';
 import './OrderableTable.scss';
 
-const OrderableTable = ({ children, className, caption, ...props }) => (
+const OrderableTable = ({ children = [], className = '', caption, ...props }) => (
     <OrderableContainer helperClass="orderableHelper pm-simple-table" useDragHandle {...props}>
         <Table caption={caption} className={`orderableTable ${className}`}>
             {children}
@@ -15,13 +15,8 @@ const OrderableTable = ({ children, className, caption, ...props }) => (
 
 OrderableTable.propTypes = {
     className: PropTypes.string,
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     caption: PropTypes.string
-};
-
-OrderableTable.defaultProps = {
-    children: [],
-    className: ''
 };
 
 export default OrderableTable;

@@ -6,7 +6,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import EditLabelModal from './modals/Edit';
 
-function ActionsLabelToolbar({ onAdd }) {
+function ActionsLabelToolbar({ onAdd = noop }) {
     const { createModal } = useModals();
 
     const handleClickAdd = (type) => () => {
@@ -24,13 +24,7 @@ function ActionsLabelToolbar({ onAdd }) {
 }
 
 ActionsLabelToolbar.propTypes = {
-    onAdd: PropTypes.func,
-    onSort: PropTypes.func
-};
-
-ActionsLabelToolbar.defaultProps = {
-    onAdd: noop,
-    onSort: noop
+    onAdd: PropTypes.func
 };
 
 export default ActionsLabelToolbar;

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Input, Button } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-function AddCondtionValue({ onAdd }) {
+function AddCondtionValue({ onAdd = noop }) {
     const [state, setState] = useState('');
 
     const addEffect = () => {
@@ -42,10 +42,6 @@ function AddCondtionValue({ onAdd }) {
 
 AddCondtionValue.propTypes = {
     onAdd: PropTypes.func
-};
-
-AddCondtionValue.defaultProps = {
-    onAdd: noop
 };
 
 export default AddCondtionValue;

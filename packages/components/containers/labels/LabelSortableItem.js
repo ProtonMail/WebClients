@@ -6,7 +6,7 @@ import { OrderableTableRow, Icon } from 'react-components';
 import ToggleNotify from './ToggleNotify';
 import ActionsLabel from './ActionsLabel';
 
-function LabelItem({ label, onEditLabel, onRemoveLabel, ...rest }) {
+function LabelItem({ label, onEditLabel = noop, onRemoveLabel = noop, ...rest }) {
     const { Name, Color, Exclusive } = label;
 
     const handleChange = (type, label) => {
@@ -40,11 +40,6 @@ LabelItem.propTypes = {
     onEditLabel: PropTypes.func,
     onRemoveLabel: PropTypes.func,
     index: PropTypes.number.isRequired
-};
-
-LabelItem.defaultProps = {
-    onEditLabel: noop,
-    onRemoveLabel: noop
 };
 
 export default LabelItem;

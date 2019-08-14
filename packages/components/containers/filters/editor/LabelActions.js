@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Icon, SmallButton, Autocomplete, useAutocomplete } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-function LabelActions({ selection, labels, onChange }) {
+function LabelActions({ selection = [], labels = [], onChange = noop }) {
     const itemMapper = (label) => ({
         label: label.Name,
         value: label
@@ -56,12 +56,6 @@ LabelActions.propTypes = {
     selection: PropTypes.array,
     labels: PropTypes.array,
     onChange: PropTypes.func
-};
-
-LabelActions.defaultProps = {
-    selection: [],
-    labels: [],
-    onChange: noop
 };
 
 export default LabelActions;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import TableCell from './TableCell';
 
-const TableHeader = ({ cells, children, ...rest }) => {
+const TableHeader = ({ cells = [], children, ...rest }) => {
     return (
         <thead {...rest}>
             {children || (
@@ -22,10 +22,6 @@ const TableHeader = ({ cells, children, ...rest }) => {
 TableHeader.propTypes = {
     cells: PropTypes.arrayOf(PropTypes.node),
     children: PropTypes.node
-};
-
-TableHeader.defaultProps = {
-    cells: []
 };
 
 export default TableHeader;

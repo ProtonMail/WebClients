@@ -6,7 +6,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import LabelSortableItem from './LabelSortableItem';
 
-function LabelSortableList({ items, onEditLabel, onRemoveLabel, ...rest }) {
+function LabelSortableList({ items, onEditLabel = noop, onRemoveLabel = noop, ...rest }) {
     return (
         <OrderableTable className="noborder border-collapse mt1" {...rest}>
             <caption className="sr-only">{c('Settings/labels').t`Labels/Folders`}</caption>
@@ -38,14 +38,7 @@ function LabelSortableList({ items, onEditLabel, onRemoveLabel, ...rest }) {
 LabelSortableList.propTypes = {
     items: PropTypes.array.isRequired,
     onEditLabel: PropTypes.func,
-    onRemoveLabel: PropTypes.func,
-    onToggleChange: PropTypes.func
-};
-
-LabelSortableList.defaultProps = {
-    onEditLabel: noop,
-    onRemoveLabel: noop,
-    onToggleChange: noop
+    onRemoveLabel: PropTypes.func
 };
 
 export default LabelSortableList;

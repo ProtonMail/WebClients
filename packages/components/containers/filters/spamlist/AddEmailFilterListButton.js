@@ -6,7 +6,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import AddEmailToListModal from '../../../containers/filters/AddEmailToListModal';
 
-function AddEmailFilterListButton({ type, className, onAdd }) {
+function AddEmailFilterListButton({ type, className, onAdd = noop }) {
     const { createModal } = useModals();
 
     const handleClick = () => createModal(<AddEmailToListModal type={type} onAdd={onAdd} />);
@@ -21,12 +21,9 @@ function AddEmailFilterListButton({ type, className, onAdd }) {
 }
 
 AddEmailFilterListButton.propTypes = {
+    type: PropTypes.string,
     className: PropTypes.string,
     onAdd: PropTypes.func
-};
-
-AddEmailFilterListButton.defaultProps = {
-    onAdd: noop
 };
 
 export default AddEmailFilterListButton;

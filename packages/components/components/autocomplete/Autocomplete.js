@@ -6,17 +6,17 @@ import './Autocomplete.scss';
 
 const Autocomplete = ({
     children,
-    list,
-    inputValue,
-    placeholder,
-    className,
-    onKeyDown,
-    onSubmit,
-    onSelect,
-    onInputValueChange,
-    onOpen,
-    onClose,
-    onHighlight,
+    list = [],
+    inputValue = '',
+    placeholder = '',
+    className = '',
+    onKeyDown = noop,
+    onSubmit = noop,
+    onSelect = noop,
+    onInputValueChange = noop,
+    onOpen = noop,
+    onClose = noop,
+    onHighlight = noop,
     ...rest
 }) => {
     const [awesomplete, setAwesomplete] = useState();
@@ -114,20 +114,6 @@ Autocomplete.propTypes = {
     maxItems: PropTypes.number,
     filter: PropTypes.func,
     data: PropTypes.func
-};
-
-Autocomplete.defaultProps = {
-    list: [],
-    placeholder: '',
-    inputValue: '',
-    className: '',
-    onInputValueChange: noop,
-    onKeyDown: noop,
-    onSubmit: noop,
-    onSelect: noop,
-    onOpen: noop,
-    onClose: noop,
-    onHighlight: noop
 };
 
 export default Autocomplete;

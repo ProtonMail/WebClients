@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
  * @param {String} alt used by screen reader
  * @return {React.Component}
  */
-const Icon = ({ name, className, viewBox, alt, fill, color, size, ...rest }) => {
+const Icon = ({ name, className = '', viewBox = '0 0 16 16', alt, fill = 'grey', color, size = 16, ...rest }) => {
     const fillClass = fill ? `fill-global-${fill} ` : '';
     const style = color ? { fill: color } : undefined;
     return (
@@ -40,13 +40,6 @@ Icon.propTypes = {
     fill: PropTypes.string,
     size: PropTypes.number,
     color: PropTypes.string
-};
-
-Icon.defaultProps = {
-    viewBox: '0 0 16 16',
-    size: 16,
-    fill: 'grey',
-    className: ''
 };
 
 export default Icon;

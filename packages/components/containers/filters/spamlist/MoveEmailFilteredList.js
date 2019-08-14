@@ -9,7 +9,7 @@ import { MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
 const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
 const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
 
-function MoveEmailFilteredList({ type, dest, email, className, onClick }) {
+function MoveEmailFilteredList({ type, dest, email, className, onClick = noop }) {
     const { createNotification } = useNotifications();
     const { request } = useApiWithoutResult(updateIncomingDefault);
     const iconName = type === 'whitelist' ? `arrow-right` : `arrow-left`;
@@ -38,10 +38,6 @@ MoveEmailFilteredList.propTypes = {
     dest: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     onClick: PropTypes.func
-};
-
-MoveEmailFilteredList.defaultProps = {
-    onClick: noop
 };
 
 export default MoveEmailFilteredList;

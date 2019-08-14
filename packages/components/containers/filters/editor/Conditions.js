@@ -8,13 +8,13 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import FilterConditionValues from '../FilterConditionValues';
 import RadioContainsAttachements from '../RadioContainsAttachements';
 
-function ConditionsEditor({ filter, onChange, errors }) {
+function ConditionsEditor({ filter, onChange = noop, errors = [] }) {
     const [model, setModel] = useState(filter);
 
     const { COMPARATORS, TYPES } = getI18nFilter();
     const toOptions = (list = []) => list.map(({ label: text, value }) => ({ text, value }));
 
-    function syncModel(value, { scope, condition, index }, newScoped) {
+    function syncModel(_value, { scope, condition, index }, newScoped) {
         const newConditions = model.Simple.Conditions.map((item, i) => {
             if (i === index) {
                 return {
@@ -45,7 +45,7 @@ function ConditionsEditor({ filter, onChange, errors }) {
     };
 
     const handleRemoveCondition = (index) => () => {
-        const Conditions = model.Simple.Conditions.filter((item, i) => i !== index);
+        const Conditions = model.Simple.Conditions.filter((_item, i) => i !== index);
         onChange(Conditions);
         setModel({
             ...model,
@@ -174,10 +174,4 @@ ConditionsEditor.propTypes = {
     errors: PropTypes.array,
     onChange: PropTypes.func
 };
-
-ConditionsEditor.defaultProps = {
-    errors: [],
-    onChange: noop
-};
-
 export default ConditionsEditor;

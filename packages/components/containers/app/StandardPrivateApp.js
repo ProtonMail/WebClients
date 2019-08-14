@@ -29,7 +29,7 @@ const getEventID = ({ cache, api }) => {
     return Promise.resolve(tmpEventID || api(getLatestID()).then(({ EventID }) => EventID));
 };
 
-const Preload = ({ locales, preloadModels, onSuccess, onError }) => {
+const Preload = ({ locales = {}, preloadModels = [], onSuccess, onError }) => {
     const api = useApi();
     const cache = useCache();
 
@@ -50,7 +50,7 @@ const Preload = ({ locales, preloadModels, onSuccess, onError }) => {
     return null;
 };
 
-const StandardPrivateApp = ({ onLogout, locales, preloadModels, eventModels, children }) => {
+const StandardPrivateApp = ({ onLogout, locales = {}, preloadModels = [], eventModels = [], children }) => {
     const [loading, setLoading] = useState(true);
     const eventManagerRef = useRef();
     const refreshRef = useRef();
@@ -95,12 +95,6 @@ StandardPrivateApp.propTypes = {
     locales: PropTypes.object,
     preloadModels: PropTypes.array,
     eventModels: PropTypes.array
-};
-
-StandardPrivateApp.defaultProps = {
-    locales: {},
-    preloadModels: [],
-    eventModels: []
 };
 
 export default StandardPrivateApp;

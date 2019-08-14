@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { FormModal } from 'react-components';
 
-const Confirm = ({ title, onClose, onConfirm, children, cancel, confirm, ...rest }) => {
+const Confirm = ({
+    title,
+    onClose,
+    onConfirm,
+    children,
+    cancel = c('Action').t`Cancel`,
+    confirm = c('Action').t`Confirm`,
+    ...rest
+}) => {
     return (
         <FormModal
             onClose={onClose}
@@ -25,17 +33,11 @@ const Confirm = ({ title, onClose, onConfirm, children, cancel, confirm, ...rest
 Confirm.propTypes = {
     onClose: PropTypes.func,
     onConfirm: PropTypes.func,
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
-    cancel: PropTypes.string.isRequired,
-    confirm: PropTypes.string.isRequired,
+    cancel: PropTypes.string,
+    confirm: PropTypes.string,
     loading: PropTypes.bool
-};
-
-Confirm.defaultProps = {
-    cancel: c('Action').t`Cancel`,
-    confirm: c('Action').t`Confirm`,
-    title: c('Action').t`Confirm`
 };
 
 export default Confirm;

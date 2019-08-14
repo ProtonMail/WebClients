@@ -7,7 +7,7 @@ const CLASSES = {
     OVERLAY_OUT: 'pm-modalOverlayOut'
 };
 
-const Overlay = ({ children, isClosing, onClick, className: extraClassName, onExit, ...rest }) => {
+const Overlay = ({ children, isClosing = false, onClick, className: extraClassName = '', onExit, ...rest }) => {
     const handleAnimationEnd = ({ animationName }) => {
         if (animationName === CLASSES.OVERLAY_OUT && isClosing && onExit) {
             onExit();
@@ -38,11 +38,6 @@ Overlay.propTypes = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
     isClosing: PropTypes.bool
-};
-
-Overlay.defaultProps = {
-    className: '',
-    isClosing: false
 };
 
 export default Overlay;

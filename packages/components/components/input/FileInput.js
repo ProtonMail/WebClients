@@ -1,7 +1,7 @@
 import React, { forwardRef, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-const FileInput = forwardRef(({ children, id, className, onChange, ...rest }, ref) => {
+const FileInput = forwardRef(({ children, id = 'fileInput', className, onChange, ...rest }, ref) => {
     const newRef = useRef();
     const fileRef = ref || newRef;
 
@@ -21,12 +21,9 @@ const FileInput = forwardRef(({ children, id, className, onChange, ...rest }, re
 
 FileInput.propTypes = {
     children: PropTypes.node.isRequired,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    onChange: PropTypes.func,
     className: PropTypes.string
-};
-
-FileInput.defaultProps = {
-    id: 'fileInput'
 };
 
 export default FileInput;

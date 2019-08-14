@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Label, Input, Row, ErrorZone, Field } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-function NameEditor({ filter, onChange, error }) {
+function NameEditor({ filter, onChange = noop, error = {} }) {
     const handleChange = ({ target }) => onChange(target.value);
 
     return (
@@ -29,11 +29,6 @@ NameEditor.propTypes = {
     filter: PropTypes.object.isRequired,
     error: PropTypes.object,
     onChange: PropTypes.func
-};
-
-NameEditor.defaultProps = {
-    onChange: noop,
-    error: {}
 };
 
 export default NameEditor;

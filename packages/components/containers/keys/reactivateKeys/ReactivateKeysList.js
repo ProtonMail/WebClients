@@ -40,7 +40,7 @@ const getStatus = (status, result) => {
     }
 };
 
-const ReactivateKeysList = ({ loading, allKeys, onUpload }) => {
+const ReactivateKeysList = ({ loading = false, allKeys, onUpload }) => {
     const inactiveKeyRef = useRef();
     const selectRef = useRef();
 
@@ -123,10 +123,6 @@ ReactivateKeysList.propTypes = {
     onUpload: PropTypes.func,
     loading: PropTypes.bool,
     onError: PropTypes.func
-};
-
-ReactivateKeysList.defaultProps = {
-    loading: false
 };
 
 export default ReactivateKeysList;

@@ -4,26 +4,29 @@ import PropTypes from 'prop-types';
 import { generateUID } from '../../helpers/component';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
-import { omit } from 'proton-shared/lib/helpers/object';
 
-const Input = React.forwardRef((props, ref) => {
-    const { className, error, ...rest } = omit(props, ['onPressEnter']);
-    const { handlers, statusClasses, status } = useInput(props);
-    const [uid] = useState(generateUID('input'));
-    return (
-        <>
-            <input
-                className={`pm-field w100 ${className} ${statusClasses}`}
-                aria-invalid={error && status.isDirty}
-                aria-describedby={uid}
-                ref={ref}
-                {...rest}
-                {...handlers}
-            />
-            <ErrorZone id={uid}>{error && status.isDirty ? error : ''}</ErrorZone>
-        </>
-    );
-});
+const Input = React.forwardRef(
+    ({ error, autoComplete = 'off', className = '', type = 'text', onPressEnter, ...rest }, ref) => {
+        const { handlers, statusClasses, status } = useInput({ onPressEnter, ...rest });
+        const [uid] = useState(generateUID('input'));
+
+        return (
+            <>
+                <input
+                    className={`pm-field w100 ${className} ${statusClasses}`}
+                    aria-invalid={error && status.isDirty}
+                    aria-describedby={uid}
+                    ref={ref}
+                    type={type}
+                    autoComplete={autoComplete}
+                    {...rest}
+                    {...handlers}
+                />
+                <ErrorZone id={uid}>{error && status.isDirty ? error : ''}</ErrorZone>
+            </>
+        );
+    }
+);
 
 Input.propTypes = {
     error: PropTypes.string,
@@ -44,12 +47,6 @@ Input.propTypes = {
     required: PropTypes.bool,
     type: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool])
-};
-
-Input.defaultProps = {
-    type: 'text',
-    autoComplete: 'off',
-    className: ''
 };
 
 export default Input;

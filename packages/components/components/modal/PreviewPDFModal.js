@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { FormModal } from 'react-components';
 
-const PreviewPDFModal = ({ url, title, filename, ...rest }) => {
+const PreviewPDFModal = ({ url, title = c('Title').t`Preview`, filename, ...rest }) => {
     return (
         <FormModal title={title} close={c('Action').t`Close`} hasSubmit={false} {...rest}>
             <object data={url} className="w100" type="application/pdf" height={500} title={filename}>
@@ -18,10 +18,6 @@ PreviewPDFModal.propTypes = {
     url: PropTypes.string,
     title: PropTypes.string,
     filename: PropTypes.string
-};
-
-PreviewPDFModal.defaultProps = {
-    title: c('Title').t`Preview`
 };
 
 export default PreviewPDFModal;
