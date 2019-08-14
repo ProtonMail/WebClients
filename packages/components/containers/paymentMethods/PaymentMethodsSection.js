@@ -13,6 +13,7 @@ import {
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 
 import EditCardModal from '../payments/EditCardModal';
+import PayPalModal from '../payments/PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
 const PaymentMethodsSection = () => {
@@ -30,8 +31,12 @@ const PaymentMethodsSection = () => {
         );
     }
 
-    const handleOpenModal = () => {
+    const handleCard = () => {
         createModal(<EditCardModal onChange={request} />);
+    };
+
+    const handlePayPal = () => {
+        createModal(<PayPalModal onChange={request} />);
     };
 
     return (
@@ -40,7 +45,8 @@ const PaymentMethodsSection = () => {
             <Alert learnMore="https://protonmail.com/support/knowledge-base/payment">{c('Info for payment methods')
                 .t`If you wish to pay by credit card, you can add your card below. Learn about other payment options.`}</Alert>
             <Block>
-                <PrimaryButton onClick={handleOpenModal}>{c('Action').t`Add payment method`}</PrimaryButton>
+                <PrimaryButton className="mr1" onClick={handleCard}>{c('Action').t`Add credit card`}</PrimaryButton>
+                <PrimaryButton onClick={handlePayPal}>{c('Action').t`Add PayPal`}</PrimaryButton>
             </Block>
             <PaymentMethodsTable loading={loading} methods={paymentMethods} fetchMethods={request} />
         </>

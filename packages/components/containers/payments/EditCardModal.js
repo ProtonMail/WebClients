@@ -23,7 +23,7 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
             return;
         }
         // 1 CHF to allow card authorizations
-        const requestBody = await handle3DS({
+        const { Payment } = await handle3DS({
             Amount: 100,
             Currency: 'CHF',
             Payment: {
@@ -31,7 +31,7 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
                 Details: toDetails(card)
             }
         });
-        await api(setPaymentMethod(requestBody.Payment));
+        await api(setPaymentMethod(Payment));
         await onChange();
         onClose();
         createNotification({ text: c('Success').t`Payment method updated` });

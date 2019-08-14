@@ -72,7 +72,7 @@ PayPal.propTypes = {
     amount: PropTypes.number.isRequired,
     currency: PropTypes.string.isRequired,
     onPay: PropTypes.func.isRequired,
-    type: PropTypes.string
+    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update'])
 };
 
 export default PayPal;
