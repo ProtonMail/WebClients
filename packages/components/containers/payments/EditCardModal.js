@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { FormModal, useApiWithoutResult, useNotifications } from 'react-components';
+import { FormModal, useNotifications, useApi, useLoading } from 'react-components';
 import { setPaymentMethod } from 'proton-shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
 import Card from './Card';
 import useCard from './useCard';
 import toDetails from './toDetails';
+import { handle3DS } from './paymentTokenHelper';
 
 const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
-    const { loading, request } = useApiWithoutResult(setPaymentMethod);
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const title = existingCard ? c('Title').t`Edit credit/debit card` : c('Title').t`Add credit/debit card`;
     const { card, updateCard, errors, isValid } = useCard(existingCard);
@@ -20,8 +22,16 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
             event.preventDefault();
             return;
         }
-
-        await request({ Type: PAYMENT_METHOD_TYPES.CARD, Details: toDetails(card) });
+        // 1 CHF to allow card authorizations
+        const requestBody = await handle3DS({
+            Amount: 100,
+            Currency: 'CHF',
+            Payment: {
+                Type: PAYMENT_METHOD_TYPES.CARD,
+                Details: toDetails(card)
+            }
+        });
+        await api(setPaymentMethod(requestBody.Payment));
         await onChange();
         onClose();
         createNotification({ text: c('Success').t`Payment method updated` });
@@ -30,7 +40,7 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
     return (
         <FormModal
             small
-            onSubmit={handleSubmit}
+            onSubmit={() => withLoading(handleSubmit())}
             onClose={onClose}
             title={title}
             loading={loading}
