@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import { Link } from 'react-router-dom';
 import {
     useUser,
     useOrganization,
@@ -15,9 +17,13 @@ import {
     PrimaryButton
 } from 'react-components';
 import { revoke } from 'proton-shared/lib/api/auth';
+import { APPS } from 'proton-shared/lib/constants';
+
 import UserDropdownButton from './UserDropdownButton';
 
-const UserDropdown = (props) => {
+const { PROTONMAIL_SETTINGS, PROTONVPN_SETTINGS } = APPS;
+
+const UserDropdown = ({ currentApp = '', ...rest }) => {
     const api = useApi();
     const [user] = useUser();
     const { DisplayName, Email } = user;
@@ -42,7 +48,7 @@ const UserDropdown = (props) => {
 
     return (
         <div className="userDropdown" data-cy-header="userDropdown">
-            <UserDropdownButton {...props} user={user} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} />
+            <UserDropdownButton {...rest} user={user} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-right">
                 <ul className="unstyled mt0-5 mb0-5">
                     <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
@@ -60,21 +66,37 @@ const UserDropdown = (props) => {
                             </span>
                         ) : null}
                     </li>
+                    {currentApp === PROTONVPN_SETTINGS ? null : (
+                        <li className="dropDown-item pl1 pr1">
+                            {currentApp === PROTONMAIL_SETTINGS ? (
+                                <Link
+                                    to="/settings"
+                                    className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
+                                >
+                                    <Icon className="mt0-25 mr0-5 fill-currentColor" name="settings" />
+                                    {c('Action').t`Settings`}
+                                </Link>
+                            ) : (
+                                <a
+                                    className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
+                                    href="/settings"
+                                >
+                                    <Icon className="mt0-25 mr0-5 fill-currentColor" name="settings" />
+                                    {c('Action').t`Settings`}
+                                </a>
+                            )}
+                        </li>
+                    )}
                     <li className="dropDown-item pl1 pr1">
                         <a
                             className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
-                            href="/settings"
-                        >
-                            <Icon className="mt0-25 mr0-5 fill-currentColor" name="settings" />
-                            {c('Action').t`Settings`}
-                        </a>
-                    </li>
-                    <li className="dropDown-item pl1 pr1">
-                        <a
-                            className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
-                            href="https://protonmail.com/support/"
+                            href={
+                                currentApp === PROTONVPN_SETTINGS
+                                    ? 'https://protonvpn.com/support/'
+                                    : 'https://protonmail.com/support/'
+                            }
+                            // eslint-disable-next-line react/jsx-no-target-blank
                             target="_blank"
-                            rel="noopener noreferrer"
                         >
                             <Icon className="mt0-25 mr0-5 fill-currentColor" name="what-is-this" />
                             {c('Action').t`I have a question`}
@@ -94,8 +116,8 @@ const UserDropdown = (props) => {
                         <a
                             className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
                             href="https://shop.protonmail.com"
+                            // eslint-disable-next-line react/jsx-no-target-blank
                             target="_blank"
-                            rel="noopener noreferrer"
                         >
                             <Icon className="mt0-25 mr0-5 fill-currentColor" name="shop" />
                             {c('Action').t`Proton shop`}
@@ -112,7 +134,11 @@ const UserDropdown = (props) => {
                         </button>
                     </li>
                     <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex">
-                        <PrimaryButton className="w100 aligncenter navigationUser-logout" onClick={handleLogout} data-cy-header-user-dropdown="logout" >
+                        <PrimaryButton
+                            className="w100 aligncenter navigationUser-logout"
+                            onClick={handleLogout}
+                            data-cy-header-user-dropdown="logout"
+                        >
                             {c('Action').t`Logout`}
                         </PrimaryButton>
                     </li>
@@ -120,6 +146,10 @@ const UserDropdown = (props) => {
             </Dropdown>
         </div>
     );
+};
+
+UserDropdown.propTypes = {
+    currentApp: PropTypes.string
 };
 
 export default UserDropdown;
