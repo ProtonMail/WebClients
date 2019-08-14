@@ -6,6 +6,7 @@ import {
     Toggle,
     FormModal,
     useUser,
+    useUserKeys,
     useAddressesKeys,
     useAddresses,
     useLoading,
@@ -30,8 +31,9 @@ const CalendarModal = ({ calendar, members = [], ...rest }) => {
     const api = useApi();
     const { call } = useEventManager();
     const [user] = useUser();
+    const [userKeysList] = useUserKeys(user);
     const [addresses, loadingAddresses] = useAddresses();
-    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(user, addresses);
+    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(user, addresses, userKeysList);
     const loadedRef = useRef();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();

@@ -2,6 +2,7 @@ import React, { useMemo, useRef, useState, useEffect } from 'react';
 import {
     useModals,
     useCalendars,
+    useUserKeys,
     useAddresses,
     useAddressesKeys,
     useUser,
@@ -38,8 +39,9 @@ const VIEWS_HANDLED_BY_CALENDAR = [DAY, WEEK, MONTH, CUSTOM];
 
 const CalendarContainer = () => {
     const [user] = useUser();
+    const [userKeysList] = useUserKeys(user);
     const [addresses, loadingAddresses] = useAddresses();
-    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(user, addresses);
+    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(user, addresses, userKeysList);
     const [calendars, loadingCalendars] = useCalendars();
     const visibleCalendars = useMemo(() => {
         return calendars ? calendars.filter(({ Display }) => !!Display) : undefined;

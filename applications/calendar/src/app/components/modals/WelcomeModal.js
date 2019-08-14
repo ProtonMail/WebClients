@@ -9,7 +9,8 @@ import {
     useEventManager,
     useApi,
     useAddressesKeys,
-    useModals
+    useModals,
+    useUserKeys
 } from 'react-components';
 import { createCalendar } from 'proton-shared/lib/api/calendars';
 
@@ -23,7 +24,8 @@ const WelcomeModal = ({ addresses, ...rest }) => {
     const { call } = useEventManager();
     const api = useApi();
     const [user] = useUser();
-    const [addressesKeysMap, loadingAddressKeys] = useAddressesKeys(user, addresses);
+    const [userKeysList] = useUserKeys(user);
+    const [addressesKeysMap, loadingAddressKeys] = useAddressesKeys(user, addresses, userKeysList);
     const [loading, withLoading] = useLoading();
     const title = loading ? c('Title').t`Preparing your calendar` : c('Title').t`Welcome`;
 
