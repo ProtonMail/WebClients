@@ -8,15 +8,12 @@
   &[aria-current="true"] {
     color: var(--color-nav-active, $pm-blue);
     text-decoration: none;
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.35);
     
     > .topnav-icon {
       fill: var(--color-nav-active, $pm-blue);
     }
   }
   &[aria-current="true"] {
-    border-color: var(--color-nav-active, $pm-blue);
-    box-shadow: none;
     font-weight: bold;
   }
   & > svg {
