@@ -1,9 +1,10 @@
 import React from 'react';
 import { SubscriptionSection, BillingSection } from 'react-components';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
+import { PERMISSIONS, APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import Page from '../components/page/Page';
+import PlansSection from '../components/sections/PlansSection';
 
 const { UPGRADER, PAID } = PERMISSIONS;
 
@@ -14,6 +15,10 @@ export const getDashboardPage = () => {
         icon: 'dashboard',
         permissions: [UPGRADER],
         sections: [
+            {
+                text: c('Title').t`Plans`,
+                id: 'plans'
+            },
             {
                 text: c('Title').t`Subscription`,
                 id: 'subscription',
@@ -31,7 +36,8 @@ export const getDashboardPage = () => {
 const DashboardContainer = () => {
     return (
         <Page config={getDashboardPage()}>
-            <SubscriptionSection />
+            <PlansSection />
+            <SubscriptionSection currentApp={APPS.PROTONVPN_SETTINGS} />
             <BillingSection />
         </Page>
     );
