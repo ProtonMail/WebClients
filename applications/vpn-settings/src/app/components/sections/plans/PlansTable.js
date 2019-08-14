@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Tooltip, Icon, CurrencySelector, CycleSelector, SmallButton } from 'react-components';
 import { c } from 'ttag';
 import { CYCLE, PLANS, DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
+
 import PlanPrice from './PlanPrice';
 
 const { TWO_YEARS } = CYCLE;

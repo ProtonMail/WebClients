@@ -4,7 +4,7 @@ import { PERMISSIONS, APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import Page from '../components/page/Page';
-import PlansSection from '../components/sections/PlansSection';
+import PlansSection from '../components/sections/plans/PlansSection';
 
 const { UPGRADER, PAID } = PERMISSIONS;
 
