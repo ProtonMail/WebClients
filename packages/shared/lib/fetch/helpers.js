@@ -85,7 +85,7 @@ export const checkStatus = (response, config) => {
 };
 
 /**
- * Get the date header if it exists, and set the latest servertime in pmcrypto.
+ * Get the date header if it exists.
  * @param {Object} headers - Full headers from the response
  * @returns {Date}
  */
