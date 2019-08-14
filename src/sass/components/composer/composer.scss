@@ -21,6 +21,10 @@
     /* Button toggle BCC/CC */
     //.composer-field-ToList .autocompleteEmails-admin { padding-right: 20px  }
 
+    .autocompleteEmails-autocomplete {
+        width: calc(100% - 1.25em - 0.5em); // width - left/right padding to be aligned to container/fields
+    }
+
     .composer {
         display: -webkit-flex;
         display: flex;
