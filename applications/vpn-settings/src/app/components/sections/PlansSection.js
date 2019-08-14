@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
+    Button,
     SubTitle,
     useApi,
     usePlans,
@@ -13,7 +14,8 @@ import {
     useLoading,
     useEventManager,
     useNotifications,
-    useUser
+    useUser,
+    useToggle
 } from 'react-components';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
@@ -33,6 +35,7 @@ const PlansSection = () => {
     const [loading, withLoading] = useLoading();
     const [currency, updateCurrency] = useState();
     const [cycle, updateCycle] = useState();
+    const { state: showPlans, toggle: togglePlans } = useToggle(isFree);
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const { CouponCode } = subscription || {};
@@ -115,16 +118,19 @@ const PlansSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Plans`}</SubTitle>
-            <PlansTable
-                onSelect={(planName) => () => withLoading(handleSelectPlan(planName))}
-                loading={loading}
-                currency={currency}
-                cycle={cycle}
-                updateCurrency={updateCurrency}
-                updateCycle={updateCycle}
-                plans={plans}
-                subscription={subscription}
-            />
+            <Button onClick={togglePlans}>{showPlans ? c('Action').t`Hide plans` : c('Action').t`Show plans`}</Button>
+            {showPlans ? (
+                <PlansTable
+                    onSelect={(planName) => () => withLoading(handleSelectPlan(planName))}
+                    loading={loading}
+                    currency={currency}
+                    cycle={cycle}
+                    updateCurrency={updateCurrency}
+                    updateCycle={updateCycle}
+                    plans={plans}
+                    subscription={subscription}
+                />
+            ) : null}
         </>
     );
 };
