@@ -1,17 +1,19 @@
-import { updateServerTime } from 'pmcrypto';
-
 /**
  * Create an API error.
+ * @param {String} name - Name of error
  * @param {Object} response - Full response object
- * @param {any} data - Data received
+ * @param {Object} [data] - JSON data received
  * @param {Object} config - Config used
  * @returns {Error}
  */
-export const createApiError = (response, data, config) => {
-    const error = new Error(response.statusText);
+export const createApiError = ({ response, data, config, name }) => {
+    const { statusText, status } = response;
 
+    const error = new Error(statusText);
+
+    error.name = name;
     error.response = response;
-    error.status = response.status;
+    error.status = status;
     error.data = data;
     error.config = config;
 
@@ -76,28 +78,27 @@ export const checkStatus = (response, config) => {
 
     return response
         .json()
-        .catch(() => '')
+        .catch(() => {})
         .then((data) => {
-            throw createApiError(response, data, config);
+            throw createApiError({ name: 'StatusCodeError', response, data, config });
         });
 };
 
 /**
- * Check if the date header exists, and set the latest servertime in pmcrypto.
- * @param {Object} response - Full response
- * @returns {Object}
+ * Get the date header if it exists, and set the latest servertime in pmcrypto.
+ * @param {Object} headers - Full headers from the response
+ * @returns {Date}
  */
-export const checkDateHeader = (response) => {
-    const { headers } = response;
-
+export const getDateHeader = (headers) => {
     const dateHeader = headers.get('date');
-    const newServerTime = new Date(dateHeader);
-
-    if (dateHeader && !Number.isNaN(+newServerTime)) {
-        updateServerTime(newServerTime);
+    if (!dateHeader) {
+        return;
     }
-
-    return response;
+    const newServerTime = new Date(dateHeader);
+    if (Number.isNaN(+newServerTime)) {
+        return;
+    }
+    return newServerTime;
 };
 
 /**

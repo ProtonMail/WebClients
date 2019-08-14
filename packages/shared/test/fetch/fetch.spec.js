@@ -40,7 +40,7 @@ describe('fetch', () => {
         const config = {
             url: 'http://foo.com/'
         };
-        const result = await performRequest(config);
+        const result = await performRequest(config).then((response) => response.json());
         expect(result).toEqual({ bar: 1 });
     });
 
@@ -50,7 +50,7 @@ describe('fetch', () => {
             url: 'http://foo.com/',
             output: 'blob'
         };
-        const result = await performRequest(config);
+        const result = await performRequest(config).then((response) => response.blob());
         expect(result).toEqual(123);
     });
 
@@ -62,7 +62,7 @@ describe('fetch', () => {
                 foo: 'bar'
             }
         };
-        await performRequest(config);
+        await performRequest(config).then((response) => response.json());
         expect(spy.calls.all()[0].args).toEqual([
             new URL(config.url),
             jasmine.objectContaining({
@@ -86,7 +86,7 @@ describe('fetch', () => {
                 foo: 'bar'
             }
         };
-        await performRequest(config);
+        await performRequest(config).then((response) => response.json());
         const fd = new FormData();
         fd.append('foo', 'bar');
         expect(spy.calls.all()[0].args).toEqual([
@@ -109,7 +109,7 @@ describe('fetch', () => {
         };
         await expectAsync(performRequest(config)).toBeRejectedWith(
             jasmine.objectContaining({
-                name: 'Error',
+                name: 'StatusCodeError',
                 message: '',
                 status: 400,
                 data: { bar: 1 },

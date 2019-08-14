@@ -1,7 +1,3 @@
-export const STATUS_CODE_UNAUTHORIZED = 401;
-export const STATUS_CODE_UNLOCK = 403;
-export const STATUS_CODE_TOO_MANY_REQUESTS = 429;
-
 export const getError = (e) => {
     const { data, status } = e;
 

@@ -1,9 +1,10 @@
-import { createUrl, checkStatus, checkDateHeader, serializeData } from './helpers';
+import { createUrl, checkStatus, serializeData, createApiError } from './helpers';
 
 const DEFAULT_TIMEOUT = 30000;
 
-const fetchHelper = ({ url: urlString, params, output, signal, timeout = DEFAULT_TIMEOUT, ...rest }) => {
+const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT, ...rest }) => {
     const abortController = new AbortController();
+    let isTimeout = false;
 
     const config = {
         mode: 'cors',
@@ -15,8 +16,10 @@ const fetchHelper = ({ url: urlString, params, output, signal, timeout = DEFAULT
 
     const url = createUrl(urlString, params);
 
-    // Will reject the promise with DOMException (e.name = 'AbortError') after timeout
-    const timeoutHandle = setTimeout(() => abortController.abort(), timeout);
+    const timeoutHandle = setTimeout(() => {
+        isTimeout = true;
+        abortController.abort();
+    }, timeout);
 
     if (signal) {
         signal.addEventListener('abort', () => {
@@ -26,15 +29,28 @@ const fetchHelper = ({ url: urlString, params, output, signal, timeout = DEFAULT
     }
 
     return fetch(url, config)
+        .catch(() => {
+            if (isTimeout) {
+                throw createApiError({
+                    name: 'TimeoutError',
+                    response: { status: -1, statusText: 'Request timed out' },
+                    config
+                });
+            }
+            // Assume any other error is offline error.
+            throw createApiError({
+                name: 'OfflineError',
+                response: { status: 0, statusText: 'No network connection' },
+                config
+            });
+        })
         .then((response) => {
             clearTimeout(timeoutHandle);
             return checkStatus(response, config);
-        })
-        .then(checkDateHeader)
-        .then((response) => response[output]());
+        });
 };
 
-export default ({ data, headers, input = 'json', output = 'json', ...config }) => {
+export default ({ data, headers, input = 'json', ...config }) => {
     const { headers: dataHeaders, body } = serializeData(data, input);
 
     return fetchHelper({
@@ -43,7 +59,6 @@ export default ({ data, headers, input = 'json', output = 'json', ...config }) =
             ...headers,
             ...dataHeaders
         },
-        body,
-        output
+        body
     });
 };

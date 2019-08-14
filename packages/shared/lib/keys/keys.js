@@ -97,13 +97,16 @@ export const decryptAddressKeyToken = async ({ Token, Signature, privateKeys, pu
  * @return {Promise}
  */
 export const decryptPrivateKey = (privateKey, keyPassword) => {
-    return privateKey.decrypt(keyPassword).then((success) => {
-        if (!success) {
-            const error = new Error(c('Error').t`Incorrect decryption password`);
-            error.name = 'PasswordError';
-            throw error;
-        }
-    });
+    return privateKey
+        .decrypt(keyPassword)
+        .catch(() => {})
+        .then((success) => {
+            if (!success) {
+                const error = new Error(c('Error').t`Incorrect decryption password`);
+                error.name = 'PasswordError';
+                throw error;
+            }
+        });
 };
 
 /**

@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
-export const MAX_RETRY_AFTER_TIMEOUT = 10; // seconds
-export const MAX_RETRY_AFTER_ATTEMPT = 5; // how many times to try the same request
+export const RETRY_DELAY_MAX = 10; // seconds
+export const RETRY_ATTEMPTS_MAX = 5; // how many times to try the same request
+export const OFFLINE_RETRY_DELAY = 2000; // how much time in ms to wait before retrying an offline request
+export const OFFLINE_RETRY_ATTEMPTS_MAX = 3; // how many times to try the same request when offline
 export const APPS = {
     PROTONMAIL: 'protonmail',
     PROTONMAIL_SETTINGS: 'protonmail-settings',
