@@ -4,9 +4,10 @@ import { c } from 'ttag';
 import { Alert, GenericError, FormModal, useEventManager, useAuthentication, useApi } from 'react-components';
 import { getAlgorithmExists } from 'proton-shared/lib/keys/keysAlgorithm';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
+import { generateAddressKey } from 'proton-shared/lib/keys/keys';
 
 import SelectEncryption from './SelectEncryption';
-import { createKeyHelper, generateAddressKey } from '../shared/actionHelper';
+import { createKeyHelper } from '../shared/actionHelper';
 
 const STEPS = {
     SELECT_ENCRYPTION: 1,

@@ -6,7 +6,7 @@ import { createMemberKeyRoute, setupMemberKeyRoute } from 'proton-shared/lib/api
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
 import { srpVerify } from 'proton-shared/lib/srp';
 import { createKey } from 'proton-shared/lib/keys/keysManager';
-import { generateAddressKey } from '../keys/shared/actionHelper';
+import { generateAddressKey } from 'proton-shared/lib/keys/keys';
 
 /**
  * Setup the primary key for a member.
@@ -72,41 +72,6 @@ export const setupMemberKey = async ({ api, Member, Address, password, organizat
     newKey.Key = Key;
 
     return updatedKeys;
-};
-
-/**
- * Generate member address for non-private users.
- * It requires that the user has been set up with a primary key first.
- * @param {Object} address - The address to generate keys for.
- * @param {Object} primaryKey - The primary key of the member.
- * @param {Object} organizationKey - The organization key.
- * @param {Object} encryptionConfig - The selected encryption config.
- * @return {Promise}
- */
-export const generateMemberAddressKey = async ({ email, primaryKey, organizationKey, encryptionConfig }) => {
-    const memberKeyToken = generateMemberToken();
-    const orgKeyToken = generateMemberToken();
-
-    const { privateKey, privateKeyArmored } = await generateAddressKey({
-        email,
-        passphrase: memberKeyToken,
-        encryptionConfig
-    });
-
-    const privateKeyArmoredOrganization = await encryptPrivateKey(privateKey, orgKeyToken);
-
-    const [activationToken, organizationToken] = await Promise.all([
-        encryptMemberToken(memberKeyToken, primaryKey),
-        encryptMemberToken(memberKeyToken, organizationKey)
-    ]);
-
-    return {
-        privateKey,
-        privateKeyArmored,
-        activationToken,
-        privateKeyArmoredOrganization,
-        organizationToken
-    };
 };
 
 /**

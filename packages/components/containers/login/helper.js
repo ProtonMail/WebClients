@@ -1,7 +1,5 @@
-import { c } from 'ttag';
 import { computeKeyPassword } from 'pm-srp';
-import { decryptPrivateKey } from 'pmcrypto';
-import { getPrimaryKeyWithSalt } from 'proton-shared/lib/keys/keys';
+import { getPrimaryKeyWithSalt, decryptPrivateKeyArmored } from 'proton-shared/lib/keys/keys';
 import { TWO_FA_FLAGS, PASSWORD_MODE } from 'proton-shared/lib/constants';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
@@ -14,9 +12,6 @@ export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode } = {}) => {
 };
 
 export const getErrorText = (error) => {
-    if (error.name === 'PasswordError') {
-        return c('Error').t`Incorrect decryption password`;
-    }
     if (error.data && error.data.Error) {
         return error.data.Error;
     }
@@ -28,11 +23,7 @@ export const handleUnlockKey = async (User, KeySalts, rawKeyPassword) => {
 
     // Support for versions without a key salt.
     const keyPassword = KeySalt ? await computeKeyPassword(rawKeyPassword, KeySalt) : rawKeyPassword;
-    const primaryKey = await decryptPrivateKey(PrivateKey, keyPassword).catch(() => {
-        const error = new Error('Wrong private key password');
-        error.name = 'PasswordError';
-        throw error;
-    });
+    const primaryKey = await decryptPrivateKeyArmored(PrivateKey, keyPassword);
 
     return { primaryKey, keyPassword };
 };

@@ -52,10 +52,10 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
     const [User] = useUser();
     const [{ '2FA': { Enabled } } = {}, loadingUserSettings] = useUserSettings();
     const [Addresses, loadingAddresses] = useAddresses();
-    const [Organization, loadingOrganization] = useOrganization();
+    const [organization, loadingOrganization] = useOrganization();
+    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const [userKeysList, loadingUserKeys] = useUserKeys(User);
-    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(User, Addresses);
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(Organization);
+    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(User, Addresses, userKeysList);
 
     const [inputs, setInputs] = useState({
         oldPassword: '',

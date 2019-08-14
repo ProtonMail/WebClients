@@ -6,6 +6,7 @@ import {
     Info,
     SubTitle,
     Block,
+    Loader,
     Alert,
     SearchInput,
     TableBody,
@@ -106,6 +107,10 @@ const MembersSection = () => {
             />
         );
     };
+
+    if (loadingOrganization) {
+        return <Loader />;
+    }
 
     return (
         <>

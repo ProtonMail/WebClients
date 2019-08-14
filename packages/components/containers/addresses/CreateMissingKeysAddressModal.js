@@ -14,12 +14,13 @@ import {
     TableRow
 } from 'react-components';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
-import { prepareMemberKeys } from 'proton-shared/lib/keys/organizationKeys';
+import { decryptMemberToken, generateMemberAddressKey } from 'proton-shared/lib/keys/organizationKeys';
+import { decryptPrivateKeyArmored, generateAddressKey } from 'proton-shared/lib/keys/keys';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 import MissingKeysStatus, { STATUS } from './MissingKeysStatus';
-import { createMemberAddressKeys, generateMemberAddressKey } from '../members/actionHelper';
-import { createKeyHelper, generateAddressKey } from '../keys/shared/actionHelper';
+import { createMemberAddressKeys } from '../members/actionHelper';
+import { createKeyHelper } from '../keys/shared/actionHelper';
 
 const updateAddress = (oldAddresses, address, status) => {
     return oldAddresses.map((oldAddress) => {
@@ -51,12 +52,14 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
     const processMember = async () => {
         const encryptionConfig = ENCRYPTION_CONFIGS[encryptionType];
 
-        const preparedMemberKeys = await prepareMemberKeys(member.Keys, organizationKey);
-        const { privateKey: primaryMemberKey } = preparedMemberKeys.find(({ Key: { Primary } }) => Primary === 1) || {};
+        const PrimaryKey = member.Keys.find(({ Primary }) => Primary === 1);
 
-        if (!primaryMemberKey) {
+        if (!PrimaryKey) {
             return createNotification({ text: c('Error').t`Member keys are not set up.` });
         }
+
+        const decryptedToken = await decryptMemberToken(PrimaryKey.Token, organizationKey);
+        const primaryMemberKey = await decryptPrivateKeyArmored(PrimaryKey.PrivateKey, decryptedToken);
 
         await Promise.all(
             addresses.map(async (address) => {

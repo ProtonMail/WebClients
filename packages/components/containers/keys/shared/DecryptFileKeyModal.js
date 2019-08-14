@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Alert, Row, Label, Field, PasswordInput, FormModal } from 'react-components';
 import { c } from 'ttag';
+import { decryptPrivateKey } from 'proton-shared/lib/keys/keys';
 
 import { generateUID } from '../../../helpers/component';
-import { createDecryptionError } from './DecryptionError';
 
 const DecryptFileKeyModal = ({ privateKey, onSuccess, onClose, ...rest }) => {
     const id = generateUID('decryptKey');
@@ -20,9 +20,7 @@ const DecryptFileKeyModal = ({ privateKey, onSuccess, onClose, ...rest }) => {
             setDecrypting(true);
             setError();
 
-            if (!(await privateKey.decrypt(password))) {
-                throw createDecryptionError();
-            }
+            await decryptPrivateKey(privateKey, password);
 
             onSuccess(privateKey);
             onClose();

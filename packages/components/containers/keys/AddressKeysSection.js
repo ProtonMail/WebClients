@@ -58,7 +58,7 @@ const AddressKeysSection = () => {
     const [User] = useUser();
     const [Addresses] = useAddresses();
     const [userKeysList] = useUserKeys(User);
-    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(User, Addresses);
+    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(User, Addresses, userKeysList);
     const [loadingKeyIdx, setLoadingKeyIdx] = useState(-1);
     const [addressIndex, setAddressIndex] = useState(() => (Array.isArray(Addresses) ? 0 : -1));
 
@@ -92,7 +92,7 @@ const AddressKeysSection = () => {
     const { ID: addressID, Email: addressEmail } = address;
     const addressKeys = addressesKeysMap && addressesKeysMap[addressID];
 
-    if (loadingAddressesKeys && !Array.isArray(addressKeys)) {
+    if (loadingAddressesKeys || !Array.isArray(addressKeys)) {
         return (
             <>
                 {title}

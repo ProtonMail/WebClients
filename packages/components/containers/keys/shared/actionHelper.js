@@ -1,44 +1,7 @@
-import { generateKey, reformatKey } from 'pmcrypto';
 import { createKey, reactivateKey } from 'proton-shared/lib/keys/keysManager';
 import { getKeyFlagsAddress, getKeyFlagsUser } from 'proton-shared/lib/keys/keyFlags';
 import { createAddressKeyRoute, reactivateKeyRoute } from 'proton-shared/lib/api/keys';
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
-
-/**
- * @param {String} email
- * @param {String} passphrase
- * @param {Object} encryptionConfig
- * @return {Promise<{privateKeyArmored, privateKey}>}
- */
-export const generateAddressKey = async ({ email, passphrase, encryptionConfig }) => {
-    const { key: privateKey, privateKeyArmored } = await generateKey({
-        userIds: [{ name: email, email }],
-        passphrase,
-        ...encryptionConfig
-    });
-
-    await privateKey.decrypt(passphrase);
-
-    return { privateKey, privateKeyArmored };
-};
-
-/**
- * @param {String} email
- * @param {String} passphrase
- * @param {Object} originalKey
- * @return {Promise<{privateKeyArmored, privateKey}>}
- */
-export const reformatAddressKey = async ({ email, passphrase, privateKey: originalKey }) => {
-    const { key: privateKey, privateKeyArmored } = await reformatKey({
-        userIds: [{ name: email, email }],
-        passphrase,
-        privateKey: originalKey
-    });
-
-    await privateKey.decrypt(passphrase);
-
-    return { privateKey, privateKeyArmored };
-};
 
 /**
  * Add a private key to the list of address keys.

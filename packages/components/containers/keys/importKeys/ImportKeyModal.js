@@ -12,12 +12,13 @@ import {
     GenericError
 } from 'react-components';
 import { getKeys } from 'pmcrypto';
-
-import SelectKeyFiles from '../shared/SelectKeyFiles';
-import ImportKeysList, { STATUS } from './ImportKeysList';
-import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 import { findKeyByFingerprint } from 'proton-shared/lib/keys/keysReducer';
-import { createKeyHelper, reactivateKeyHelper, reformatAddressKey } from '../shared/actionHelper';
+import { reformatAddressKey } from 'proton-shared/lib/keys/keys';
+
+import ImportKeysList, { STATUS } from './ImportKeysList';
+import SelectKeyFiles from '../shared/SelectKeyFiles';
+import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
+import { createKeyHelper, reactivateKeyHelper } from '../shared/actionHelper';
 
 const STEPS = {
     WARNING: 1,

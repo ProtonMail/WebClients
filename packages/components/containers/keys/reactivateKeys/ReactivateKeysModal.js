@@ -15,15 +15,16 @@ import {
     FormModal,
     GenericError
 } from 'react-components';
-import { getKeySalts } from 'proton-shared/lib/api/keys';
-import { decryptPrivateKey, encryptPrivateKey, getKeys } from 'pmcrypto';
+import { encryptPrivateKey, getKeys } from 'pmcrypto';
 import { computeKeyPassword } from 'pm-srp';
-import { createDecryptionError } from '../shared/DecryptionError';
+import { getKeySalts } from 'proton-shared/lib/api/keys';
+import { reformatAddressKey } from 'proton-shared/lib/keys/keys';
+import { decryptPrivateKeyArmored } from 'proton-shared/lib/keys/keys';
+import { findKeyByFingerprint } from 'proton-shared/lib/keys/keysReducer';
 
 import ReactivateKeysList, { STATUS } from './ReactivateKeysList';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
-import { findKeyByFingerprint } from 'proton-shared/lib/keys/keysReducer';
-import { reactivateKeyHelper, reformatAddressKey } from '../shared/actionHelper';
+import { reactivateKeyHelper } from '../shared/actionHelper';
 
 const STEPS = {
     INFO: 0,
@@ -95,9 +96,7 @@ const getUploadedKeys = (allKeys) => {
 
 export const decryptArmoredKey = async ({ password, keySalt, armoredPrivateKey }) => {
     const keyPassword = keySalt ? await computeKeyPassword(password, keySalt) : password;
-    return decryptPrivateKey(armoredPrivateKey, keyPassword).catch(() => {
-        throw createDecryptionError();
-    });
+    return decryptPrivateKeyArmored(armoredPrivateKey, keyPassword);
 };
 
 const ReactivateKeysModal = ({ allKeys: initialAllKeys, onClose, ...rest }) => {
@@ -168,7 +167,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onClose, ...rest }) => {
                             password: oldPassword
                         });
                         const privateKeyArmored = await encryptPrivateKey(oldPrivateKey, newPassword);
-                        const privateKey = await decryptPrivateKey(privateKeyArmored, newPassword);
+                        const privateKey = await decryptPrivateKeyArmored(privateKeyArmored, newPassword);
                         updatedKeyList = await reactivateKeyHelper({
                             api,
                             keyID,
