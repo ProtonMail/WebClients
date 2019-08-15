@@ -32,11 +32,11 @@ const Select = ({ options, error, size = 1, className = '', multiple = false, ..
 Select.propTypes = {
     error: PropTypes.string,
     disabled: PropTypes.bool,
-    size: PropTypes.number.isRequired,
+    size: PropTypes.number,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
     onFocus: PropTypes.func,
-    options: PropTypes.arrayOf(PropTypes.object).isRequired,
+    options: PropTypes.arrayOf(PropTypes.object),
     multiple: PropTypes.bool,
     className: PropTypes.string
 };
