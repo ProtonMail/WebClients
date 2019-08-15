@@ -15,8 +15,8 @@ import {
 import { createCalendar } from 'proton-shared/lib/api/calendars';
 
 import { setupCalendarKey } from '../../helpers/calendarModal';
-import { DEFAULT_CALENDAR_NAME, DEFAULT_CALENDAR_COLOR, DEFAULT_CALENDAR } from '../../constants';
-import CalendarModal from './CalendarModal';
+import { DEFAULT_CALENDAR } from '../../constants';
+import CalendarModal from './calendar/CalendarModal';
 
 const WelcomeModal = ({ addresses, ...rest }) => {
     const [calendar, setCalendar] = useState();

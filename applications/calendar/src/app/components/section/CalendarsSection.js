@@ -3,7 +3,7 @@ import { SubTitle, PrimaryButton, useModals } from 'react-components';
 import { c } from 'ttag';
 
 import CalendarsTable from './CalendarsTable';
-import CalendarModal from '../modals/CalendarModal';
+import CalendarModal from '../modals/calendar/CalendarModal';
 
 const CalendarsSection = () => {
     const { createModal } = useModals();

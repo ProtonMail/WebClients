@@ -5,17 +5,34 @@ export const DEFAULT_CALENDAR = {
 };
 
 export const VIEWS = {
-    DAY: 'day',
-    WEEK: 'week',
-    MONTH: 'month',
-    YEAR: 'year',
-    AGENDA: 'agenda',
-    CUSTOM: 'custom'
+    DAY: 0,
+    WEEK: 1,
+    MONTH: 2,
+    YEAR: 3,
+    AGENDA: 4
 };
 
 export const WEEK_START = {
     // ['S', 'M', 'T', 'W', 'T', 'F', 'S']
     MONDAY: 1,
     SATURDAY: 6,
-    SUNDAY: 0
+    SUNDAY: 7
 };
+
+export const MINUTE = 60;
+export const HOUR = MINUTE * 60;
+export const DAY = HOUR * 24;
+export const WEEK = DAY * 7;
+
+export const BEFORE = '-';
+export const AFTER = '';
+
+export const NOTIFICATION_TYPE = {
+    EMAIL: 'email',
+    DEVICE: 'device'
+};
+
+export const DDMMYYYY = 0;
+export const MMDDYYYY = 1;
+export const H24 = 0;
+export const H12 = 1;

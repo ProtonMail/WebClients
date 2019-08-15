@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Select, Input, Row, Label, LinkButton } from 'react-components';
+import { Row, Label, LinkButton } from 'react-components';
 import { c } from 'ttag';
 
-const MINUTE = 60;
-const HOUR = MINUTE * 60;
-const DAY = HOUR * 24;
-const WEEK = DAY * 7;
+import NotificationInput from './NotificationInput';
+import { MINUTE } from '../../constants';
 
 const DEFAULT_NOTIFICATION = {
     type: 'email',
@@ -15,17 +13,6 @@ const DEFAULT_NOTIFICATION = {
 };
 
 const NotificationRow = ({ model, updateModel }) => {
-    // const types = [
-    //     { text: c('Notification type').t`Notification`, value: 'notification' },
-    //     { text: c('Notification type').t`Email`, value: 'email' }
-    // ];
-    const units = [
-        { text: c('Time unit').t`Minutes`, value: MINUTE },
-        { text: c('Time unit').t`Hours`, value: HOUR },
-        { text: c('Time unit').t`Days`, value: DAY },
-        { text: c('Time unit').t`Weeks`, value: WEEK }
-    ];
-
     const handleAdd = () => {
         const notifications = [...model.notifications, DEFAULT_NOTIFICATION];
         updateModel({ ...model, notifications });
@@ -37,9 +24,9 @@ const NotificationRow = ({ model, updateModel }) => {
         updateModel({ ...model, notifications });
     };
 
-    const handleChange = (index, key) => ({ target }) => {
+    const handleChange = (index, key, value) => {
         const notifications = [...model.notifications];
-        notifications[index][key] = target.value;
+        notifications[index][key] = value;
         updateModel({ ...model, notifications });
     };
 
@@ -53,17 +40,19 @@ const NotificationRow = ({ model, updateModel }) => {
         <Row>
             <Label>{c('Label').t`Email notifications`}</Label>
             <div>
-                {model.notifications.map(({ time, unit }, index) => {
+                {model.notifications.map(({ type, time, unit, trigger }, index) => {
                     const key = `${index}`;
                     return (
                         <div key={key} className="mb1 flex flex-nowrap">
-                            {/* <Select className="mr1" value={type} options={types} onChange={handleChange(index, 'type')} /> */}
-                            <Input type="number" className="mr1" value={time} onChange={handleChange(index, 'time')} />
-                            <Select
-                                className="mr1"
-                                value={unit}
-                                options={units}
-                                onChange={handleChange(index, 'unit')}
+                            <NotificationInput
+                                type={type}
+                                time={time}
+                                unit={unit}
+                                trigger={trigger}
+                                onChangeType={(newType) => handleChange(index, 'type', newType)}
+                                onChangeTime={(newTime) => handleChange(index, 'time', newTime)}
+                                onChangeUnit={(newUnit) => handleChange(index, 'unit', newUnit)}
+                                onChangeTrigger={(newTrigger) => handleChange(index, 'trigger', newTrigger)}
                             />
                             <LinkButton
                                 className="flex-item-noshrink"

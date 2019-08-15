@@ -7,41 +7,32 @@ import {
     TableHeader,
     TableBody,
     TableRow,
-    Toggle,
     DropdownActions,
     useCalendars,
     useApi,
     useEventManager,
     useNotifications,
-    useLoading,
     useModals,
     ConfirmModal
 } from 'react-components';
-import { updateCalendar, removeCalendar } from 'proton-shared/lib/api/calendars';
+import { removeCalendar } from 'proton-shared/lib/api/calendars';
 
-import CalendarModal from '../modals/CalendarModal';
+import CalendarModal from '../modals/calendar/CalendarModal';
 
 const CalendarsTable = () => {
     const api = useApi();
     const { call } = useEventManager();
     const { createModal } = useModals();
-    const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const [calendars, loadingCalendars] = useCalendars();
-    const headers = [c('Header').t`Name`, c('Header').t`Display`, c('Header').t`Actions`];
-
-    const handleDisplay = async (calendarID, checked) => {
-        await api(updateCalendar(calendarID, { Display: +checked }));
-        await call();
-        createNotification({ text: c('Success').t`Preference saved` });
-    };
+    const headers = [c('Header').t`Name`, c('Header').t`Actions`];
 
     return (
         <Table loading={loadingCalendars}>
             <TableHeader cells={headers} />
             <TableBody>
                 {(calendars || []).map((calendar) => {
-                    const { ID, Name, Display, Color } = calendar;
+                    const { ID, Name, Color } = calendar;
                     const list = [
                         {
                             text: c('Action').t`Edit`,
@@ -74,12 +65,6 @@ const CalendarsTable = () => {
                                     <Icon name="calendar" color={Color} className="mr0-5" />
                                     {Name}
                                 </div>,
-                                <Toggle
-                                    key={ID}
-                                    loading={loading}
-                                    checked={!!Display}
-                                    onChange={({ target }) => withLoading(handleDisplay(ID, target.checked))}
-                                />,
                                 <DropdownActions className="pm-group-button pm-button--small" key={ID} list={list} />
                             ]}
                         />

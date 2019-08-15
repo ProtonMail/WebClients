@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { classnames } from 'react-components';
 import { c } from 'ttag';
 
 import { VIEWS } from '../constants';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
 
-const ViewSelector = ({ view, updateView }) => {
+const ViewSelector = ({ className = 'pm-field w100', view, onChangeView, ...rest }) => {
     const options = [
         { text: c('Calendar view').t`Day`, value: DAY },
         { text: c('Calendar view').t`Week`, value: WEEK },
@@ -16,44 +15,29 @@ const ViewSelector = ({ view, updateView }) => {
         { text: c('Calendar view').t`Agenda`, value: AGENDA }
     ];
 
-    const handleChangeSelect = ({ target }) => updateView(target.value);
-
     return (
-        <>
-            <select
-                className="toolbar-select nodesktop"
-                title={c('Action').t`Select calendar view`}
-                value={view}
-                onChange={handleChangeSelect}
-            >
-                {options.map(({ text, ...rest }, index) => (
-                    <option key={index.toString()} {...rest}>
+        <select
+            className={className}
+            title={c('Action').t`Select calendar view`}
+            value={view}
+            onChange={({ target }) => onChangeView(target.value)}
+            {...rest}
+        >
+            {options.map(({ text, value }) => {
+                return (
+                    <option key={value} value={value}>
                         {text}
                     </option>
-                ))}
-            </select>
-            <div className="nomobile notablet">
-                {options.map(({ text, value }) => {
-                    return (
-                        <button
-                            type="button"
-                            key={value}
-                            className={classnames(['toolbar-button', value === view && 'is-active'])}
-                            role="button"
-                            onClick={() => updateView(value)}
-                        >
-                            {text}
-                        </button>
-                    );
-                })}
-            </div>
-        </>
+                );
+            })}
+        </select>
     );
 };
 
 ViewSelector.propTypes = {
+    className: PropTypes.string,
     view: PropTypes.oneOf([DAY, WEEK, MONTH, YEAR, AGENDA]),
-    updateView: PropTypes.func
+    onChangeView: PropTypes.func
 };
 
 export default ViewSelector;

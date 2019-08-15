@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Icon, Select } from 'react-components';
+import { Icon } from 'react-components';
 import moment from 'moment';
 
 import { VIEWS } from '../constants';
 import ViewSelector from '../components/ViewSelector';
+import TimezoneSelector from '../components/TimezoneSelector';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
 
@@ -17,7 +18,17 @@ const FORMATS = {
     [AGENDA]: 'MMMM GGGG'
 };
 
-const CalendarToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentDate, dateRange }) => {
+const CalendarToolbar = ({
+    onToday,
+    onPrev,
+    onNext,
+    view,
+    onChangeView,
+    currentDate,
+    dateRange,
+    timezone,
+    onChangeTimezone
+}) => {
     const previous = {
         day: c('Action').t`Previous day`,
         week: c('Action').t`Previous week`,
@@ -51,8 +62,9 @@ const CalendarToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentD
                 <div>
                     {dateRange[0].toISOString()} - {dateRange[1].toISOString()}
                 </div>
-                <div>
-                    <ViewSelector view={view} updateView={onChangeView} />
+                <div className="flex flex-nowrap">
+                    <TimezoneSelector className="" timezone={timezone} onChangeTimezone={onChangeTimezone} />
+                    <ViewSelector view={view} onChangeView={onChangeView} />
                 </div>
             </div>
         </div>
@@ -66,7 +78,9 @@ CalendarToolbar.propTypes = {
     onPrev: PropTypes.func,
     onNext: PropTypes.func,
     view: PropTypes.string,
-    onChangeView: PropTypes.func
+    timezone: PropTypes.string,
+    onChangeView: PropTypes.func,
+    onChangeTimezone: PropTypes.func
 };
 
 export default CalendarToolbar;
