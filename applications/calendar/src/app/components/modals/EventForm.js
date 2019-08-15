@@ -112,6 +112,7 @@ const EventForm = ({ calendars = [], model, updateModel }) => {
                 <Label htmlFor="event-calendar-select">{c('Label').t`Calendar`}</Label>
                 <div className="flex flex-nowrap flex-item-fluid">
                     <Select
+                        id="event-calendar-select"
                         className="mr1"
                         options={calendarOptions}
                         value={model.calendar}

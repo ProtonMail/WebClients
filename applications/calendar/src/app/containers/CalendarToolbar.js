@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Icon, Select, Button } from 'react-components';
+import { Icon, Select } from 'react-components';
 import moment from 'moment';
 
 import { VIEWS } from '../constants';
+import ViewSelector from '../components/ViewSelector';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
+
 const FORMATS = {
     [DAY]: 'MMMM GGGG',
     [WEEK]: 'MMMM GGGG',
@@ -16,15 +18,6 @@ const FORMATS = {
 };
 
 const CalendarToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentDate, dateRange }) => {
-    const views = [
-        { text: c('Calendar view').t`Day`, value: DAY },
-        { text: c('Calendar view').t`Week`, value: WEEK },
-        { text: c('Calendar view').t`Month`, value: MONTH },
-        { text: c('Calendar view').t`Year`, value: YEAR },
-        { text: c('Calendar view').t`Agenda`, value: AGENDA }
-    ];
-
-    const handleChangeView = ({ target }) => onChangeView(target.value);
     const previous = {
         day: c('Action').t`Previous day`,
         week: c('Action').t`Previous week`,
@@ -44,27 +37,22 @@ const CalendarToolbar = ({ onToday, onPrev, onNext, view, onChangeView, currentD
         <div className="toolbar noprint">
             <div className="flex flex-spacebetween">
                 <div className="flex flex-items-center">
-                    <Button className="toolbar-button" title={today} onClick={onToday}>{c('Action').t`Today`}</Button>
+                    <button type="button" className="toolbar-button" title={today} onClick={onToday}>{c('Action')
+                        .t`Today`}</button>
                     <span className="toolbar-separator ml0-5 mr0-5"></span>
-                    <Button className="toolbar-button" title={previous} onClick={onPrev}>
+                    <button type="button" className="toolbar-button" title={previous} onClick={onPrev}>
                         <Icon name="arrow-left" />
-                    </Button>
+                    </button>
                     <span className="pl0-5 pr0-5">{currentRange}</span>
-                    <Button className="toolbar-button" title={next} onClick={onNext}>
+                    <button type="button" className="toolbar-button" title={next} onClick={onNext}>
                         <Icon name="arrow-right" />
-                    </Button>
+                    </button>
                 </div>
                 <div>
                     {dateRange[0].toISOString()} - {dateRange[1].toISOString()}
                 </div>
                 <div>
-                    <Select
-                        className="toolbar-select"
-                        title={c('Action').t`Select calendar view`}
-                        options={views}
-                        value={view}
-                        onChange={handleChangeView}
-                    />
+                    <ViewSelector view={view} updateView={onChangeView} />
                 </div>
             </div>
         </div>
