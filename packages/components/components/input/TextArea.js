@@ -2,13 +2,26 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { generateUID } from '../../helpers/component';
+import useAutoGrow from '../../hooks/useAutoGrow';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 
 const TextArea = (props) => {
-    const { className = '', rows = 5, error, ...rest } = props;
-    const { handlers, statusClasses, status } = useInput(props);
+    const { className = '', error, rows: maxRows = 5, minRows = 1, autoGrow = false, onChange, ...rest } = props;
+    const { rows, updateTextArea } = useAutoGrow({ maxRows, minRows, autoGrow });
+    const { handlers, statusClasses, status } = useInput({
+        ...props,
+        onChange(e) {
+            if (updateTextArea) {
+                updateTextArea(e);
+            }
+            if (onChange) {
+                onChange(e);
+            }
+        }
+    });
     const [uid] = useState(generateUID('textarea'));
+
     return (
         <>
             <textarea
@@ -26,6 +39,7 @@ const TextArea = (props) => {
 
 TextArea.propTypes = {
     error: PropTypes.string,
+    autoGrow: PropTypes.bool,
     className: PropTypes.string,
     disabled: PropTypes.bool,
     id: PropTypes.string,
@@ -37,6 +51,7 @@ TextArea.propTypes = {
     placeholder: PropTypes.string,
     required: PropTypes.bool,
     rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    minRows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     textareaRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
