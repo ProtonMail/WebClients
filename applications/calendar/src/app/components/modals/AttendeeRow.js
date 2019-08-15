@@ -98,37 +98,29 @@ const AttendeeRow = ({ model, updateModel }) => {
                     )}
                     {model.attendees.length ? (
                         <>
-                            <div>
+                            <div className="mb0-5">
                                 <Checkbox
-                                    id="send"
                                     checked={model.send}
                                     onChange={({ target }) => updateModel({ ...model, send: target.checked })}
-                                />
-                                <label htmlFor="send">{c('Label').t`Send invite/update to all guests`}</label>
+                                >{c('Label').t`Send invite/update to all guests`}</Checkbox>
                             </div>
-                            <div>
+                            <div className="mb0-5">
                                 <Checkbox
-                                    id="invite"
                                     checked={model.invite}
                                     onChange={({ target }) => updateModel({ ...model, invite: target.checked })}
-                                />
-                                <label htmlFor="invite">{c('Label').t`Attendees can invite others`}</label>
+                                >{c('Label').t`Attendees can invite others`}</Checkbox>
                             </div>
-                            <div>
+                            <div className="mb0-5">
                                 <Checkbox
-                                    id="modify"
                                     checked={model.modify}
                                     onChange={({ target }) => updateModel({ ...model, modify: target.checked })}
-                                />
-                                <label htmlFor="modify">{c('Label').t`Attendees can modify`}</label>
+                                >{c('Label').t`Attendees can modify`}</Checkbox>
                             </div>
                             <div>
                                 <Checkbox
-                                    id="see"
                                     checked={model.see}
                                     onChange={({ target }) => updateModel({ ...model, see: target.checked })}
-                                />
-                                <label htmlFor="see">{c('Label').t`Attendees can see attendees list`}</label>
+                                >{c('Label').t`Attendees can see attendees list`}</Checkbox>
                             </div>
                         </>
                     ) : null}
