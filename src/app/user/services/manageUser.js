@@ -27,11 +27,6 @@ function manageUser(
     }));
 
     const CACHE = {};
-    const getPromise = async ({ OrganizationPrivateKey } = {}, password) => {
-        if (OrganizationPrivateKey) {
-            return decryptPrivateKey(OrganizationPrivateKey, password);
-        }
-    };
 
     /**
      * Upgrade addesses for a user based on what's coming from
@@ -141,7 +136,11 @@ function manageUser(
             const mailboxPassword = authentication.getPassword();
             // User can be undefined when we update Addresses, that's why we `authentication.user`
             const isSubUser = authentication.user.subuser;
-            const organizationKey = await getPromise(User, mailboxPassword);
+            const organizationPrivateKey = User.OrganizationPrivateKey || authentication.user.OrganizationPrivateKey;
+            const organizationKey = organizationPrivateKey
+                ? await decryptPrivateKey(organizationPrivateKey, mailboxPassword)
+                : undefined;
+
             const { dirtyAddresses, keys } = await decryptKeys({
                 user: User,
                 addresses: addressesModel.get(),

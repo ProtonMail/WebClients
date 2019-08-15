@@ -1,12 +1,10 @@
 import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
 
-
 import { MAIN_KEY } from '../../constants';
-import { getKeyInfo } from '../../../helpers/key';
+import { decryptAddressKeyToken, getKeyInfo } from '../../../helpers/key';
 
 /* @ngInject */
 function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, translator) {
-
     const I18N = translator(() => ({
         errorPrimaryKey({ Email: email = '' }) {
             return gettextCatalog.getString(
@@ -78,7 +76,7 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, tr
      * @param  {Boolean} options.isSubUser
      * @return {Object} {keys, dirtyAddresses} decrypted keys, addresses without keys
      */
-    return async ({ user = {}, addresses = [], organizationKey = {}, mailboxPassword, isSubUser }) => {
+    return async ({ user = {}, addresses = [], organizationKey, mailboxPassword, isSubUser }) => {
         const privateUser = user.Private === 1;
 
         // All user key are decrypted and stored
@@ -95,18 +93,34 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, tr
         });
 
         const primaryKeys = await Promise.all(list);
+        const [primaryKey] = primaryKeys;
 
         // All address keys are decrypted and stored
         const { promises, dirtyAddresses } = addresses.reduce(
             (acc, address) => {
                 if (address.Keys.length) {
-                    const promises = address.Keys.map((key, index) => {
+                    const promises = address.Keys.map(async (key, index) => {
+                        const { Activation, Token, Signature, PrivateKey } = key;
+                        // New format
+                        if (Token && Signature) {
+                            const decryptedToken = await decryptAddressKeyToken({
+                                Token,
+                                Signature,
+                                privateKeys: [primaryKey.pkg],
+                                // For non-private members, verify the token against the organization key when signed in as an admin
+                                publicKeys: organizationKey ? [organizationKey.toPublic()] : [primaryKey.pkg.toPublic()]
+                            });
+                            return decryptPrivateKey(PrivateKey, decryptedToken).then(
+                                (pkg) => formatKey({ key, pkg, address }),
+                                () => skipKey({ key, address, index })
+                            );
+                        }
                         if (isSubUser) {
                             return setupKeys
                                 .decryptMemberKey(key, organizationKey)
                                 .then((pkg) => formatKey({ key, pkg, address }));
                         }
-                        if (key.Activation) {
+                        if (Activation) {
                             const signingKey = primaryKeys.length
                                 ? primaryKeys[0].pkg
                                 : keysModel.getPrivateKeys(MAIN_KEY)[0];
@@ -115,7 +129,7 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, tr
                                 .then((pkg) => activateKey({ key, pkg, mailboxPassword, address }))
                                 .then((pkg) => formatKey({ key, pkg, address }));
                         }
-                        return decryptPrivateKey(key.PrivateKey, mailboxPassword).then(
+                        return decryptPrivateKey(PrivateKey, mailboxPassword).then(
                             (pkg) => formatKey({ key, pkg, address }),
                             () => skipKey({ key, address, index })
                         );
