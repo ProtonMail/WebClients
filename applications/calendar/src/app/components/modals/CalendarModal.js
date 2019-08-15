@@ -22,10 +22,10 @@ import {
 } from 'react-components';
 import { getPrimaryKey } from 'proton-shared/lib/keys/keys';
 import { createCalendar, updateCalendar } from 'proton-shared/lib/api/calendars';
+import Loader from 'react-components/components/loader/Loader';
 
 import { setupCalendarKey } from '../../helpers/calendarModal';
-import { DEFAULT_CALENDAR_COLOR } from '../../constants';
-import Loader from 'react-components/components/loader/Loader';
+import { DEFAULT_CALENDAR } from '../../constants';
 
 const CalendarModal = ({ calendar, members = [], ...rest }) => {
     const api = useApi();
@@ -53,7 +53,7 @@ const CalendarModal = ({ calendar, members = [], ...rest }) => {
 
     const [model, updateModel] = useState({
         name: calendar ? calendar.Name : '',
-        color: calendar ? calendar.Color : DEFAULT_CALENDAR_COLOR,
+        color: calendar ? calendar.Color : DEFAULT_CALENDAR.color,
         display: calendar ? !!calendar.Display : true,
         addressID: calendar ? AddressID : ''
     });
@@ -64,7 +64,8 @@ const CalendarModal = ({ calendar, members = [], ...rest }) => {
         const data = {
             Name: model.name,
             Color: model.color,
-            Display: +model.display
+            Display: +model.display,
+            Description: model.description
         };
 
         if (!calendar) {

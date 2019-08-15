@@ -1,5 +1,9 @@
-export const DEFAULT_CALENDAR_COLOR = '#657ee4';
-export const DEFAULT_CALENDAR_NAME = 'My calendar';
+export const DEFAULT_CALENDAR = {
+    name: 'My calendar',
+    color: '#657ee4',
+    description: ''
+};
+
 export const VIEWS = {
     DAY: 'day',
     WEEK: 'week',

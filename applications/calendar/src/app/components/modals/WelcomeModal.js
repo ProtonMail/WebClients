@@ -15,7 +15,7 @@ import {
 import { createCalendar } from 'proton-shared/lib/api/calendars';
 
 import { setupCalendarKey } from '../../helpers/calendarModal';
-import { DEFAULT_CALENDAR_NAME, DEFAULT_CALENDAR_COLOR } from '../../constants';
+import { DEFAULT_CALENDAR_NAME, DEFAULT_CALENDAR_COLOR, DEFAULT_CALENDAR } from '../../constants';
 import CalendarModal from './CalendarModal';
 
 const WelcomeModal = ({ addresses, ...rest }) => {
@@ -41,8 +41,9 @@ const WelcomeModal = ({ addresses, ...rest }) => {
         const { Calendar = {} } = await api(
             createCalendar({
                 AddressID: addressID,
-                Name: DEFAULT_CALENDAR_NAME,
-                Color: DEFAULT_CALENDAR_COLOR,
+                Name: DEFAULT_CALENDAR.name,
+                Color: DEFAULT_CALENDAR.color,
+                Description: DEFAULT_CALENDAR.description,
                 Display: 1
             })
         );
