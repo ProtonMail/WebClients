@@ -1,0 +1,42 @@
+.tabs-list {
+  margin: 0;
+  padding: 0;
+  @extend .unstyled;
+  @extend .flex;
+  border-bottom: 1px solid $pm-global-border;
+}
+
+.tabs-list-item {
+  margin-right: 1rem;
+}
+
+.tabs-list-link {
+  @extend .flex;
+  color: $pm-global-grey;
+  border-bottom: 2px solid $pm-global-border; 
+  padding: .5em;
+  @extend .nodecoration;
+  @extend .relative;
+  top: 1px;
+  &:focus,
+  &:hover {
+    font-weight: bold;
+    @extend .nodecoration;
+  }
+  &[disabled] {
+    opacity: .4;
+    cursor: default;
+    pointer-events: none;
+    &:focus,
+    &:hover {
+      font-weight: normal;
+    } 
+  }
+}
+
+[aria-selected="true"].tabs-list-link {
+  font-weight: bold;
+  border-bottom: 2px solid $pm-blue;
+}
+
+/* hidden state for content is not necessary for React, added in exception for Design system website */

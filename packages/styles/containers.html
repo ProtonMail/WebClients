@@ -30,6 +30,71 @@ subsection: containers
 
 </div>
 
+
+
+<div id="tabs" class="container-section-sticky container-section-sticky--fullwidth">
+  <h2>Tabs</h2>
+
+  <div class="js-tabs">
+    <ul class="js-tablist" data-hx="h3">
+      <li class="js-tablist__item">
+        <a href="#first-tab" class="js-tablist__link">A tab</a>
+      </li>
+      <li class="js-tablist__item">
+        <a href="third-tab" class="js-tablist__link" disabled>Disabled</a>
+      </li>
+      <li class="js-tablist__item">
+        <a href="second-tab" class="js-tablist__link">A tab</a>
+      </li>
+    </ul>
+    <div id="first-tab" class="js-tabcontent">
+      <div class="pt1 pb1 pr1">Here the content of 1st tab</div>
+    </div>
+    <div id="third-tab" class="js-tabcontent">
+      <div class="pt1 pb1 pr1">This tab is sad, he will maybe never be displayed.</div>
+    </div>
+    <div id="second-tab" class="js-tabcontent">
+      <div class="pt1 pb1 pr1">Here the content of 2nd tab</div>
+    </div>
+  </div>
+  
+  <div class="flex flex-spacebetween mb2 onmobile-flex-column">
+    <div class="w49 pt0-5">
+
+      <ul>
+        <li>Please note the link between tabs and tab panels using <code>aria-controls</code> and <code>aria-labelledby</code>.
+        </li>
+        <li>Please note the use of <code>role="tablist/presentation/tab/tabpanel"</code>.</li>
+        <li>A selected tab has <code>aria-selected="true"</code>, <code>aria-selected="false"</code> if not.</li>
+        <li>If you need a tab to be disabled, just add <code>disabled</code> attribute to the <code>a</code>.</li>
+      </ul>
+      
+    </div>
+    <div class="w49 aligncenter flex-self-vcenter">
+      <pre class=" language-markup"><code>&lt;div class="tabs-container"&gt;
+  &lt;ul class="tabs-list" <strong>role="tablist"</strong>&gt;
+    &lt;li class="tabs-list-item" <strong>role="presentation"</strong>&gt;
+      &lt;a class="tabs-list-link" id="label_tab1" <strong>role="tab"</strong> aria-controls="tab1"
+        tabindex="0" <strong>aria-selected="true"</strong>&gt;A tab&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="tabs-list-item" role="presentation"&gt;
+      &lt;a class="tabs-list-link" <strong>id="label_tab2"</strong> role="tab" <strong>aria-controls="tab2"</strong>
+        tabindex="0" aria-selected="false"&gt;A tab&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="tab1" className="tabs-tabcontent" <strong>role="tabpanel"</strong> aria-labelledby="label_tab1"&gt;…&lt;/div&gt;
+  &lt;div <strong>id="tab2"</strong> className="tabs-tabcontent" role="tabpanel" <strong>aria-labelledby="label_tab2"</strong>&gt;…&lt;/div&gt;
+  …
+&lt;/div&gt;
+      </code></pre>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
 <div id="wizard" class="container-section-sticky container-section-sticky--fullwidth">
 <h2>Wizard</h2>
 

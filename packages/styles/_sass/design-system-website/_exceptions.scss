@@ -4,7 +4,7 @@
  */
 
 .navigation__link {
-  padding: .75rem 1rem .75rem 3rem;
+  padding: 1.1rem 1rem 1.1rem 3rem;
 }
 
 .logo .plan {
@@ -13,4 +13,9 @@
 
 .customScrollBar-container {
   max-height: 150px;
+}
+
+
+[aria-hidden="true"].tabs-tabcontent {
+  display: none;
 }
