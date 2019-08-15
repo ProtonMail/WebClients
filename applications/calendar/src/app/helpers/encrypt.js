@@ -22,7 +22,7 @@ export const CALENDAR_CARD_TYPE = {
     ENCRYPTED: 1
 };
 
-const { ENCRYPTED, ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
+const { ENCRYPTED_AND_SIGNED, SIGNED } = CALENDAR_CARD_TYPE;
 
 /**
  * Generates a calendar UID of the form 'proton-web-uuid'

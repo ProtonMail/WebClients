@@ -47,7 +47,7 @@ const CalendarContainer = () => {
         return calendars ? calendars.filter(({ Display }) => !!Display) : undefined;
     }, [calendars]);
     const [calendarsBootstrap, loadingBootstrap] = useCalendarsBootstrap(visibleCalendars);
-    const [calendarsKeys, loadingCalendarsKeys] = useCalendarsKeys(
+    const [, loadingCalendarsKeys] = useCalendarsKeys(
         visibleCalendars,
         calendarsBootstrap,
         addresses,

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {} from 'react-components';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
 import { getYear } from 'date-fns';
 
 import MiniCalendar from './miniCalendar/MiniCalendar';
