@@ -313,6 +313,7 @@ export { default as useContacts } from './hooks/useContacts';
 export { default as useContactGroups } from './hooks/useContactGroups';
 export { default as useContactEmails } from './hooks/useContactEmails';
 export { default as useMailSettings } from './hooks/useMailSettings';
+export { default as useCalendarSettings } from './hooks/useCalendarSettings';
 export { default as useMembers } from './hooks/useMembers';
 export { useLabels, useFormattedLabels } from './hooks/useLabels';
 export { default as useFilters } from './hooks/useFilters';
