@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import 'intersection-observer';
 import { debounce } from 'proton-shared/lib/helpers/function';
+import { withDecimalPrecision } from 'proton-shared/lib/helpers/math';
 
 import { buildThresholds, indexOfMax } from '../../helpers/intersectionObserver';
-import { withDecimalPrecision } from 'proton-shared/lib/helpers/math';
 
 const ObserverSection = ({
     id,
-    className = 'mb2',
+    className = 'container-section-sticky-section',
     rootElement = null,
     rootMargin = '0px',
     granularity = 20,
