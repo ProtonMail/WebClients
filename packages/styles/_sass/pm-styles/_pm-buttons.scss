@@ -329,6 +329,7 @@
   color: $color-links;
   border-width: 0;
   box-shadow: none;
+  text-decoration: underline;
   background-color: transparent; // to avoid heriting from other classes
   padding-left: 0;
   padding-right: 0;
@@ -338,6 +339,13 @@
     color: $color-hover;
     text-decoration: underline;
     box-shadow: none;
+  }
+  &[disabled],
+  &.is-disabled {
+    color: rgba( $pm-global-grey, .5 );
+    pointer-events: none;
+    text-decoration: none;
+    background-color: transparent; // to avoid heriting from other classes
   }
 }
 .pm-button--error,
