@@ -983,6 +983,22 @@ if ( toggle_slow ){
   });
 }
 
+var toggle_slow_small = document.body.querySelector('#id_toogle_slowsmall');
+
+if ( toggle_slow_small ){
+  toggle_slow_small.addEventListener('change', function(e) {
+    e.preventDefault();
+    var state_to_go = toggle_slow_small.checked;
+    toggle_slow_small.checked = !state_to_go;
+    toggle_slow_small.setAttribute('aria-busy', true);
+    setTimeout(function () {
+      toggle_slow_small.checked = state_to_go;
+      toggle_slow_small.removeAttribute('aria-busy');
+      }, 3000);
+
+  });
+}
+
 
 /**
  * star button

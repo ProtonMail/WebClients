@@ -192,7 +192,7 @@ select.pm-field {
 
 
 /* toogle */
-$width: 5.5em;
+$width: 5.5em !default;
 .pm-toggle-label {
   margin-top: .5em;
   // height: 2em;
@@ -296,6 +296,14 @@ $width: 5.5em;
   margin: auto;
   width: 1.6rem;
   height: 1.6rem;
+}
+
+.pm-toggle-label--small {
+  font-size: .8em;
+  & .pm-toggle-label-img {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
 }
 
 
