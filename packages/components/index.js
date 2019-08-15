@@ -25,6 +25,8 @@ export { default as Block } from './components/container/Block';
 export { default as RemoteImage } from './components/image/RemoteImage';
 export { default as QRCode } from './components/image/QRCode';
 export { default as Row } from './components/container/Row';
+export { default as Tabs } from './components/container/Tabs';
+export { default as SimpleTabs } from './components/container/SimpleTabs';
 export { default as Field } from './components/container/Field';
 export { default as Information } from './components/container/Information';
 export { default as ObserverSection } from './components/container/ObserverSection';
