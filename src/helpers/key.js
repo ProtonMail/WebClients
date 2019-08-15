@@ -1,4 +1,13 @@
-import { keyInfo, getKeys, encodeBase64, arrayToBinaryString, stripArmor } from 'pmcrypto';
+import {
+    keyInfo,
+    getKeys,
+    encodeBase64,
+    arrayToBinaryString,
+    stripArmor,
+    decryptMessage,
+    getMessage,
+    getSignature
+} from 'pmcrypto';
 
 /**
  * Extract public key from the private key
@@ -78,4 +87,27 @@ export const formatKeys = async (addresses = []) => {
 export const getKeyAsUri = async (key) => {
     const data = typeof key === 'string' ? await stripArmor(key) : key;
     return 'data:application/pgp-keys;base64,' + encodeBase64(arrayToBinaryString(data));
+};
+
+/**
+ * Decrypt an address key token and verify the detached signature.
+ * @param {String} Token
+ * @param {String} Signature
+ * @param {Array} privateKeys
+ * @param {Array} publicKeys
+ * @return {Promise<String>}
+ */
+export const decryptAddressKeyToken = async ({ Token, Signature, privateKeys, publicKeys }) => {
+    const { data: decryptedToken, verified } = await decryptMessage({
+        message: await getMessage(Token),
+        signature: await getSignature(Signature),
+        privateKeys,
+        publicKeys
+    });
+
+    if (verified !== 1) {
+        throw new Error('Signature verification failed');
+    }
+
+    return decryptedToken;
 };
