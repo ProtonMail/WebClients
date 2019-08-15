@@ -17,6 +17,9 @@
   &.aligncenter {
     @extend .aligncenter;
   }
+  &.alignright {
+    @extend .alignright;
+  }
 }
 
 /* simple dirty fix */
