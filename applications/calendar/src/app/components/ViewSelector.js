@@ -20,7 +20,7 @@ const ViewSelector = ({ className = 'pm-field w100', view, onChangeView, ...rest
             className={className}
             title={c('Action').t`Select calendar view`}
             value={view}
-            onChange={({ target }) => onChangeView(target.value)}
+            onChange={({ target }) => onChangeView(+target.value)}
             {...rest}
         >
             {options.map(({ text, value }) => {
