@@ -98,8 +98,8 @@ function Key($http, url, srp) {
      * Get salts
      * @return {Promise}
      */
-    const salts = () => {
-        return $http.get(requestURL('salts')).then(unload);
+    const salts = (config) => {
+        return $http.get(requestURL('salts'), config).then(unload);
     };
     /**
      * Update the key flags

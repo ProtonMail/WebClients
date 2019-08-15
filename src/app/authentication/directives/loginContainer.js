@@ -1,38 +1,58 @@
-import { reducer, DEFAULT_STATE, FORM, ACTION_TYPES } from 'proton-shared/lib/authentication/loginReducer';
-import {
-    handleFinalizeAction,
-    handleUnlockAction,
-    handleDeprecationAction,
-    handleAuthAction,
-    handleLoginAction
-} from 'proton-shared/lib/authentication/loginActions';
+import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallback';
+import { getPrimaryKeyWithSalt } from 'proton-shared/lib/keys/keys';
+import { AUTH_VERSION, computeKeyPassword } from 'pm-srp';
+import { decryptPrivateKey } from 'pmcrypto';
+
+import { getAuthHeaders } from '../services/authApi';
+
+const FORM = {
+    LOGIN: 'LOGIN',
+    TOTP: 'TOTP',
+    U2F: 'U2F',
+    UNLOCK: 'UNLOCK'
+};
+
+export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode } = {}) => {
+    return {
+        hasTotp: Enabled & 1,
+        hasU2F: Enabled & 2,
+        hasUnlock: PasswordMode !== 1
+    };
+};
+
+export const handleUnlockKey = async (User, KeySalts, rawKeyPassword) => {
+    const { KeySalt, PrivateKey } = getPrimaryKeyWithSalt(User.Keys, KeySalts);
+
+    // Support for versions without a key salt.
+    const keyPassword = KeySalt ? await computeKeyPassword(rawKeyPassword, KeySalt) : rawKeyPassword;
+    const primaryKey = await decryptPrivateKey(PrivateKey, keyPassword).catch(() => {
+        const error = new Error('Wrong private key password');
+        error.name = 'PasswordError';
+        throw error;
+    });
+
+    return { primaryKey, keyPassword };
+};
 
 /* @ngInject */
 const loginContainer = (
     $state,
     eventManager,
+    authApi,
     compatApi,
     tempStorage,
     AppModel,
+    settingsApi,
     notification,
+    User,
+    Key,
     translator,
     gettextCatalog,
     networkActivityTracker,
     authentication
 ) => {
-    const FORM_MAP = {
-        [FORM.LOGIN]: 'LOGIN',
-        [FORM.TOTP]: 'TOTP',
-        [FORM.UNLOCK]: 'UNLOCK'
-    };
-
-    const ACTION_MAP = {
-        [ACTION_TYPES.SUBMIT_LOGIN_EFFECT]: handleLoginAction,
-        [ACTION_TYPES.SUBMIT_AUTH_EFFECT]: handleAuthAction,
-        [ACTION_TYPES.PREPARE_DEPRECATION_EFFECT]: handleDeprecationAction,
-        [ACTION_TYPES.SUBMIT_UNLOCK_EFFECT]: handleUnlockAction,
-        [ACTION_TYPES.FINALIZE_EFFECT]: handleFinalizeAction
-    };
+    const userApi = User;
+    const keysApi = Key;
 
     const I18N = translator(() => ({
         PASSWORD_ERROR: gettextCatalog.getString('Incorrect decryption password', null, 'Error')
@@ -40,22 +60,20 @@ const loginContainer = (
 
     const track = networkActivityTracker.track;
 
-    const handleLogin = (state = {}) => {
-        const {
-            authResult: { UID, EventID },
-            credentials: { keyPassword, mailboxPassword },
-            userResult
-        } = state;
-
-        tempStorage.setItem('plainMailboxPass', mailboxPassword);
-        tempStorage.setItem('userResult', userResult);
+    const handleSuccess = ({ UID, EventID, User, mailboxPassword, plainMailboxPassword }) => {
+        tempStorage.setItem('plainMailboxPass', plainMailboxPassword);
+        tempStorage.setItem('userResult', User);
 
         authentication.setUID(UID);
-        authentication.setPassword(keyPassword);
+        authentication.setPassword(mailboxPassword);
 
         eventManager.initialize(EventID);
 
         $state.go('secured.inbox');
+    };
+
+    const setBodyUnlock = (value) => {
+        AppModel.set('isUnlock', value);
     };
 
     return {
@@ -63,73 +81,176 @@ const loginContainer = (
         restrict: 'E',
         templateUrl: require('../../../templates/views/login.tpl.html'),
         link(scope) {
-            let destroyed = false;
+            let state = {};
 
-            const setBodyUnlock = (value) => {
-                AppModel.set('isUnlock', value);
-            };
-
-            const show = (type, loading) => {
+            const show = (type) => {
                 scope.$applyAsync(() => {
-                    scope.loading = !!loading;
                     scope.show = type;
-                    setBodyUnlock(type === 'UNLOCK' || type === 'DECRYPTING');
+                    setBodyUnlock(type === FORM.UNLOCK || type === 'DECRYPTING');
                 });
             };
 
-            const update = (oldState, newState) => {
-                if (newState.action) {
-                    const promise = ACTION_MAP[newState.action](newState, { api: compatApi }).then((result) => {
-                        dispatch(result); // eslint-disable-line
-                    });
-                    track(promise);
-                }
-
-                // Other errors are shown from the API listener.
-                if (newState.error && newState.error.name === 'PasswordError') {
-                    notification.error(I18N.PASSWORD_ERROR);
-                }
-
-                show(FORM_MAP[newState.form], !!newState.action);
-            };
-
-            let state = DEFAULT_STATE;
-
-            const dispatch = (action) => {
-                if (destroyed) {
-                    return;
-                }
-                const oldState = state;
-                if (action.type === ACTION_TYPES.DONE) {
-                    show('DECRYPTING', true);
-                    handleLogin(oldState);
-                    return;
-                }
-                state = reducer(oldState, action);
-                update(oldState, state);
-            };
-
-            scope.show = 'LOGIN';
+            scope.show = FORM.LOGIN;
             scope.username = '';
 
+            const finalizeLogin = async (plainMailboxPassword, mailboxPassword) => {
+                const {
+                    authVersion,
+                    authResult: { UID, AccessToken, RefreshToken, EventID },
+                    userSaltResult: [User],
+                    password
+                } = state;
+
+                state = undefined;
+
+                const authHeaders = getAuthHeaders({ UID, AccessToken });
+
+                if (authVersion < AUTH_VERSION) {
+                    await settingsApi.passwordUpgrade({ Password: password }, {}, authHeaders);
+                }
+
+                await authApi.cookies({ UID, AccessToken, RefreshToken }, authHeaders);
+                show('DECRYPTING');
+                handleSuccess({ UID, User, mailboxPassword, plainMailboxPassword, EventID });
+            };
+
+            /**
+             * Step 3. Handle unlock.
+             * Attempt to decrypt the primary private key with the password.
+             * @param {String} password
+             * @return {Promise}
+             */
+            const handleUnlock = async (password) => {
+                const {
+                    userSaltResult: [User, { KeySalts }]
+                } = state;
+
+                const { keyPassword } = await handleUnlockKey(User, KeySalts, password);
+                return finalizeLogin(password, keyPassword);
+            };
+
+            const next = async (previousForm) => {
+                const {
+                    authResult,
+                    authResult: { UID, AccessToken },
+                    password
+                } = state;
+                const { hasTotp, hasU2F, hasUnlock } = getAuthTypes(authResult);
+
+                if (previousForm === FORM.LOGIN && hasTotp) {
+                    return show(FORM.TOTP);
+                }
+
+                if ((previousForm === FORM.LOGIN || previousForm === FORM.TOTP) && hasU2F) {
+                    return show(FORM.U2F);
+                }
+
+                /**
+                 * Handle the case for users who are in 2-password mode but have no keys setup.
+                 * Typically happens for VPN users.
+                 */
+                const authHeaders = getAuthHeaders({ UID, AccessToken });
+                const [User] =
+                    state.userSaltResult ||
+                    (await Promise.all([userApi.get(authHeaders), keysApi.salts(authHeaders)]).then(
+                        (result) => (state.userSaltResult = result)
+                    ));
+
+                if (User.Keys.length === 0) {
+                    return finalizeLogin();
+                }
+
+                if (hasUnlock) {
+                    return show(FORM.UNLOCK);
+                }
+
+                return handleUnlock(password);
+            };
+
+            /**
+             * Step 2. Handle TOTP.
+             * Unless there is another auth type active, the flow will continue until it's logged in.
+             * @param {String} totp
+             * @return {Promise}
+             */
+            const handleTotp = async (totp) => {
+                const {
+                    authResult: { UID, AccessToken }
+                } = state;
+
+                await authApi.auth2fa({ TwoFactorCode: totp }, getAuthHeaders({ UID, AccessToken })).catch((e) => {
+                    e.canRetryTOTP = e.status === 422;
+                    throw e;
+                });
+
+                return next(FORM.TOTP);
+            };
+
+            /**
+             * Step 1. Handle the initial auth.
+             * Unless there is an auth type active, the flow will continue until it's logged in.
+             * @param {String} username
+             * @param {String} password
+             * @return {Promise}
+             */
+            const handleLogin = async (username, password) => {
+                const infoResult = await authApi.info(username);
+                const { authVersion, result: authResult } = await loginWithFallback({
+                    api: compatApi,
+                    credentials: { username, password },
+                    initalAuthInfo: infoResult
+                });
+
+                state = { authVersion, authResult, username, password };
+
+                return next(FORM.LOGIN);
+            };
+
+            const handleCancel = () => {
+                scope.$applyAsync(() => {
+                    scope.username = state.username;
+                });
+                state = {};
+                show(FORM.LOGIN);
+            };
+
+            scope.onCancel = handleCancel;
+
             scope.onSubmitLogin = async ({ username, password }) => {
-                // Remember username if login fails.
-                scope.username = username;
-                dispatch({ type: ACTION_TYPES.SUBMIT_LOGIN, payload: { username, password } });
+                track(
+                    handleLogin(username, password).catch((e) => {
+                        state = {};
+                        console.log(e);
+                    })
+                );
             };
 
             scope.onSubmitTotp = async ({ totp }) => {
-                dispatch({ type: ACTION_TYPES.SUBMIT_TOTP, payload: totp });
+                track(
+                    handleTotp(totp).catch((e) => {
+                        if (!e.canRetryTOTP) {
+                            return handleCancel();
+                        }
+                    })
+                );
             };
 
             scope.onSubmitUnlock = async ({ password }) => {
-                dispatch({ type: ACTION_TYPES.SUBMIT_UNLOCK, payload: password });
+                track(
+                    handleUnlock(password).catch((e) => {
+                        console.log(e);
+                        if (e.name !== 'PasswordError') {
+                            handleCancel();
+                        } else {
+                            notification.error(I18N.PASSWORD_ERROR);
+                        }
+                    })
+                );
             };
 
             scope.$on('$destroy', () => {
                 setBodyUnlock(false);
-                state = DEFAULT_STATE;
-                destroyed = true;
+                state = undefined;
             });
         }
     };
