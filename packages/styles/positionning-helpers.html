@@ -38,6 +38,46 @@ section: fe-guidelines
   </div>
 </div>
 
+<h2>Absolute/relative positionning</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="relative"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>position: relative</code> to element.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="absolute"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>position: absolute</code> to element + <code>z-index: 1</code>.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="centered-absolute"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Centers absolute-positionned element via <code>top: 50%; left: 50%; transform: translate(-50%, -50%);</code>.
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;span <strong>class="top-right"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    Applies <code>top: 0; right: 0;</code> to absolute-positionned element.
+  </div>
+</div>
+
+
 <h2>Table-design using CSS</h2>
 
 <pre class=" language-css"><code>/* table-design in CSS */
