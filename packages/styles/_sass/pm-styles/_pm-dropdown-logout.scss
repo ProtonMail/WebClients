@@ -1,5 +1,23 @@
 .dropDown-logout-button {
   color: var(--color-nav-link, $white);
+  .expand-caret {
+    display: none;
+  }
+  &:focus,
+  &:hover,
+  &[aria-expanded="true"] {
+    .expand-caret {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .dropDown-logout-text {
+      opacity: 0;
+    }
+  }
 }
 .dropDown-logout-initials {
   border-color: var(--color-nav-link, $pm-global-border);
