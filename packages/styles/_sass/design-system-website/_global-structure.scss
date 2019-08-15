@@ -64,6 +64,7 @@ body {
   min-height: calc(100vh - #{$header-height});
   max-height: calc(100vh - #{$header-height});
   width: var(--width-sidebar, $width-sidebar);
+  max-width: 22rem; // design request
   visibility: visible;
   transition: visibility 0s ease, transform 1s ease, width .6s ease , opacity 1s ease ;
   transition-delay: 0s;
@@ -73,6 +74,7 @@ body {
 .logo-container {
   padding-left: 2rem;
   width: var(--width-sidebar, #{$width-sidebar});
+  max-width: 22rem; // design request
 }
 .logo {
   width: 148px;
@@ -87,9 +89,9 @@ body {
 
 
 .navigation__link {
-  padding: .75rem 1rem .75rem 2rem;
+  padding: 1.1rem 1rem 1.1rem 2rem;
   line-height: 1.3;
-  color:  var(--color-nav-link, $pm-global-light);
+  color:  var(--color-nav-link, $white);
   text-decoration: none;
   display: block;
 }
@@ -121,14 +123,14 @@ body {
 
 .animated-expandmore__button {
   color:  var(--color-nav-link, $pm-global-light);
-  padding: 1rem 1rem 1rem 2rem;
+  padding: 1.1rem 1rem 1.1rem 2rem;
   width: 100%;
   text-align: left;
 }
 @if $rtl-option == true {
   [dir="rtl"] {
     .animated-expandmore__button {
-      padding: 1rem 2rem 1rem 1rem;
+      padding: 1.1rem 2rem 1.1rem 1rem;
       text-align: right;
     }
   }

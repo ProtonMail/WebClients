@@ -4,9 +4,10 @@
 
 @include respond-to(1800, 'min') { 
 
-  :root {
-    --body-fontsize: 1.6rem;
-  }
+  // :root {
+  //   --body-fontsize: 1.6rem;
+  // }
+  // it will be back
   .container-section-sticky {
     max-width: 65em;
   }
@@ -19,6 +20,7 @@
     --width-sidebar: 15vw;
     --width-subnav: 15vw;
   }
+
   .container-section-sticky {
     max-width: 55vw;
   }
