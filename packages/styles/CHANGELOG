@@ -8,6 +8,9 @@
 - custom scrollbar
 - added small toggle: add `pm-toggle-label--small` to `pm-toggle-label` and maaaagic
 - added class `container-section-sticky-section` to increase margin between sections
+- added tabs styles
+- added documentation for square container/`ratio-container-*` helpers (padding-hack technique, use it wisely young jedis)
+- added documentation for `nodecoration`, `underline` and `underline-hover`
 
 
 ## Updated/fixes
@@ -25,6 +28,9 @@
 - add state `disabled` to `pm-button--link`
 - documentation for absolute/relative helpers + `opacity` helpers
 - fixed `alignright` helper of `th` element
+- added `max-width` to sidebar (equiv 220px max)
+- fixed `background-color` of search field
+- updated logout dropdown layout (with caret icon on hover, etc.)
 
 
 # [1.7.1] - 2019-08-06

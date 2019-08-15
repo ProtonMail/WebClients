@@ -129,7 +129,8 @@ section: fe-guidelines
 
 <p>These vertical alignment also work for simple texts.</p>
 
-<h2>inline-block helper</h2>
+
+<h2>Inline-block helper</h2>
 
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
   <div class="w49">
@@ -223,3 +224,31 @@ section: fe-guidelines
   </div>
 </div>
 
+
+<h2>Square and ratio helpers</h2>
+
+<p>For some components/special cases (responsive <code>iframe</code>, making a responsive square shape, etc.), we have to use the “padding-hack” technique, which is basically:</p>
+
+<ul>
+  <li>A container uses padding-hack to get the desired ratio</li>
+  <li>And content inside is positionned in absolute and takes all available space.</li>
+</ul>
+
+<div class="mod mb2">
+  <div class="left bordered-container w20">
+    <div class="ratio-container-square">
+      <div class="inner-ratio-container p1">
+        Some content in a square box with <code>ratio-container-square</code> class.
+      </div>
+    </div>
+  </div>
+  <div class="right bordered-container w30">
+    <div class="ratio-container-16-9">
+      <div class="inner-ratio-container p1">
+        Some content in a 16/9 ratio box with <code>ratio-container-16-9</code> class.
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>This is a bit hacky, better not using it often.</p>
