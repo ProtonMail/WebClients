@@ -1,6 +1,13 @@
-import { setCookies } from 'proton-shared/lib/api/auth';
-
 import { getRandomString } from '../../../helpers/string';
+
+export const getAuthHeaders = ({ UID, AccessToken }) => {
+    return {
+        headers: {
+            'x-pm-uid': UID,
+            Authorization: `Bearer ${AccessToken}`
+        }
+    };
+};
 
 /* @ngInject */
 function authApi($http, compatApi, url) {
@@ -17,18 +24,22 @@ function authApi($http, compatApi, url) {
         },
         /**
          * Set secure cookies, web app only
-         * @param {Object} params
+         * @param {Object} config
          * @return {Promise}
          */
-        cookies({ UID, AccessToken, RefreshToken }) {
-            return compatApi(
-                setCookies({
+        cookies({ UID, AccessToken, RefreshToken }, config) {
+            return $http.post(
+                requestURL('cookies'),
+                {
                     UID,
                     RefreshToken,
                     AccessToken,
+                    ResponseType: 'token',
+                    GrantType: 'refresh_token',
                     RedirectURI: 'https://protonmail.com',
                     State: getRandomString(24)
-                })
+                },
+                config
             );
         },
         /**
@@ -38,6 +49,12 @@ function authApi($http, compatApi, url) {
          */
         info(Username) {
             return $http.post(requestURL('info'), { Username }).then(unload);
+        },
+        /**
+         * @return {Promise}
+         */
+        auth2fa(data, config) {
+            return $http.post(requestURL('2fa'), data, config).then(unload);
         },
         /**
          * @return {Promise}

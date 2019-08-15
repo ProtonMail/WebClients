@@ -3,7 +3,7 @@ function User($http, url, srp) {
     const requestURL = url.build('users');
 
     const create = (data, Password) => srp.verify.post({ Password }, requestURL(), data);
-    const get = () => $http.get(requestURL()).then(({ data = {} } = {}) => data.User);
+    const get = (config = {}) => $http.get(requestURL(), config).then(({ data = {} } = {}) => data.User);
     const code = (params) => $http.post(requestURL('code'), params);
     const human = () => $http.get(requestURL('human'));
     const verifyHuman = (params) => $http.post(requestURL('human'), params);

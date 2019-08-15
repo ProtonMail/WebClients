@@ -12,9 +12,10 @@ function settingsApi($http, url, srp, userSettingsModel) {
         srp.auth.put(credentials, requestURL('email', 'reset'), data).then(handleResult);
     const updateEmail = (credentials, data) => srp.auth.put(credentials, requestURL('email'), data).then(handleResult);
     const enableTwoFactor = (credentials, data) =>
-        srp.auth.post(credentials, requestURL('2fa'), data).then(handleResult);
-    const disableTwoFactor = (credentials) => srp.auth.put(credentials, requestURL('2fa')).then(handleResult);
-    const passwordUpgrade = (credentials) => srp.verify.put(credentials, requestURL('password', 'upgrade'));
+        srp.auth.post(credentials, requestURL('2fa', 'totp'), data).then(handleResult);
+    const disableTwoFactor = (credentials) => srp.auth.put(credentials, requestURL('2fa', 'totp')).then(handleResult);
+    const passwordUpgrade = (credentials, data, config) =>
+        srp.verify.put(credentials, requestURL('password', 'upgrade'), data, config);
 
     const fetch = () => $http.get(requestURL()).then(handleResult);
     const setLogging = (params) => $http.put(requestURL('logauth'), params).then(handleResult);

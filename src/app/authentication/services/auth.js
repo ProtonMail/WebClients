@@ -1,6 +1,6 @@
 import { decryptPrivateKey } from 'pmcrypto';
 import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallback';
-import { getAccessToken } from 'proton-shared/lib/authentication/helpers';
+import { getAuthHeaders } from './authApi';
 
 /* @ngInject */
 function authentication(
@@ -72,14 +72,12 @@ function authentication(
     /**
      * Login and set cookies and UID.
      * NOTE: Assumes user is in 1-password mode, which is always true for reset password and signup.
-     * TODO: Remove encrypted access token after it's been removed in the API.
      * @param {Object} credentials
      * @returns {Promise}
      */
     const loginWithCookies = async (credentials) => {
-        const { UID, AccessToken, RefreshToken, PrivateKey, KeySalt } = await login(credentials);
-        const accessToken = await getAccessToken(AccessToken, PrivateKey, KeySalt, credentials.password);
-        await authApi.cookies({ UID, AccessToken: accessToken, RefreshToken });
+        const { UID, AccessToken, RefreshToken } = await login(credentials);
+        await authApi.cookies({ UID, AccessToken, RefreshToken }, getAuthHeaders({ UID, AccessToken }));
         setUID(UID);
     };
 
