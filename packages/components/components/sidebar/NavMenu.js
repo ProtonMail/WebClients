@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
 import NavItem from './NavItem';
 
-const NavMenu = ({ list = [{}] }) => {
+const NavMenu = ({ className, list = [{}] }) => {
     return (
-        <ul className="navigation__list unstyled">
+        <ul className={classnames(['navigation__list unstyled', className])}>
             {list.map((item, index) => (
-                <NavItem {...item} key={item.text + index}></NavItem>
+                <NavItem {...item} key={item.text + index} />
             ))}
         </ul>
     );
 };
 
 NavMenu.propTypes = {
+    className: PropTypes.string,
     list: PropTypes.arrayOf(PropTypes.object)
 };
 

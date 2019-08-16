@@ -22,7 +22,7 @@ const Tabs = ({ tabs = [], selectedTab, updateSelectedTab }) => {
                                 id={label}
                                 role="tab"
                                 aria-controls={key}
-                                tabIndex={selectedTab === index ? '0' : '-1'}
+                                tabIndex="0"
                                 aria-selected={selectedTab === index}
                             >
                                 {title}
@@ -31,7 +31,7 @@ const Tabs = ({ tabs = [], selectedTab, updateSelectedTab }) => {
                     );
                 })}
             </ul>
-            <div id={key} className="tabs-tabcontent" role="tabpanel" aria-labelledby={label}>
+            <div id={key} className="tabs-tabcontent pt1" role="tabpanel" aria-labelledby={label}>
                 {content}
             </div>
         </div>
