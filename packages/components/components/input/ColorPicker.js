@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { Button } from 'react-components';
+import { Button, Icon } from 'react-components';
 import { ChromePicker } from 'react-color';
 import tinycolor from 'tinycolor2';
 
 import './ColorPicker.scss';
+import { classnames } from '../../helpers/component';
 
-const ColorPicker = ({ children, color = 'blue', onChange = noop, ...rest }) => {
+const ColorPicker = ({ color = 'blue', onChange = noop, className = '', ...rest }) => {
     const [display, setDisplay] = useState(false);
     const colorModel = tinycolor(color);
-    const backgroundColor = colorModel.isValid() ? colorModel.toHexString() : '';
+    const iconColor = colorModel.isValid() ? colorModel.toHexString() : '';
     const handleClick = () => setDisplay(!display);
     const handleClose = () => setDisplay(false);
 
@@ -21,10 +22,11 @@ const ColorPicker = ({ children, color = 'blue', onChange = noop, ...rest }) => 
         </div>
     );
 
+    // TODO replace alias by proper icon (circle)
     return (
         <div className="relative">
-            <Button onClick={handleClick} style={{ backgroundColor }} {...rest}>
-                {children}
+            <Button className={classnames(['pm-button--for-icon', className])} onClick={handleClick} {...rest}>
+                <Icon className="flex-item-noshrink" name="alias" color={iconColor} />
             </Button>
             {display ? picker : null}
         </div>
@@ -32,7 +34,7 @@ const ColorPicker = ({ children, color = 'blue', onChange = noop, ...rest }) => 
 };
 
 ColorPicker.propTypes = {
-    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
     color: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.shape({ r: PropTypes.number, g: PropTypes.number, b: PropTypes.number, a: PropTypes.number })
