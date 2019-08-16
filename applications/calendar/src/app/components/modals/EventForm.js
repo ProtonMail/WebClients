@@ -17,10 +17,12 @@ import {
 
 import AttendeeRow from './AttendeeRow';
 import NotificationRow from './NotificationRow';
+import TimezoneSelector from '../TimezoneSelector';
+import { getTimezone } from '../../helpers/timezone';
 
 const EventForm = ({ calendars = [], model, updateModel }) => {
+    const timezone = getTimezone();
     const calendarOptions = calendars.map(({ ID, Name }) => ({ text: Name, value: ID }));
-    const timezones = [];
     const frequencies = [
         { text: c('Option').t`One time`, value: '' },
         { text: c('Option').t`Every week`, value: '' },
@@ -82,32 +84,40 @@ const EventForm = ({ calendars = [], model, updateModel }) => {
                                 .t`More options`}</LinkButton>
                         )}
                     </div>
+                    {model.moreOptions ? (
+                        <div className="mt1">
+                            <Row>
+                                <Label>{c('Label').t`Repetition`}</Label>
+                                <div className="flex flex-nowrap flex-item-fluid">
+                                    <Select
+                                        value={model.frequency}
+                                        options={frequencies}
+                                        onChange={({ target }) => updateModel({ ...model, frequency: target.value })}
+                                    />
+                                </div>
+                            </Row>
+                            <Row>
+                                <Label>{c('Label').t`Start timezone`}</Label>
+                                <div className="flex flex-nowrap flex-item-fluid">
+                                    <TimezoneSelector
+                                        timezone={model.startTimezone || timezone}
+                                        onChangeTimezone={(startTimezone) => updateModel({ ...model, startTimezone })}
+                                    />
+                                </div>
+                            </Row>
+                            <div className="flex flex-nowrap onmobile-flex-column">
+                                <Label>{c('Label').t`End timezone`}</Label>
+                                <div className="flex flex-nowrap flex-item-fluid">
+                                    <TimezoneSelector
+                                        timezone={model.endTimezone || timezone}
+                                        onChangeTimezone={(endTimezone) => updateModel({ ...model, endTimezone })}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    ) : null}
                 </div>
             </Row>
-            {model.moreOptions ? (
-                <Row>
-                    <Label>{c('Label').t`Repetition`}</Label>
-                    <div>
-                        <Select
-                            value={model.frequency}
-                            options={frequencies}
-                            onChange={({ target }) => updateModel({ ...model, frequency: target.value })}
-                        />
-                    </div>
-                </Row>
-            ) : null}
-            {model.moreOptions ? (
-                <Row>
-                    <Label>{c('Label').t`Timezone`}</Label>
-                    <div>
-                        <Select
-                            value={model.timezone}
-                            onChange={({ target }) => updateModel({ ...model, startTimezone: target.value })}
-                            options={timezones}
-                        />
-                    </div>
-                </Row>
-            ) : null}
             <Row>
                 <Label htmlFor="event-calendar-select">{c('Label').t`Calendar`}</Label>
                 <div className="flex flex-nowrap flex-item-fluid">

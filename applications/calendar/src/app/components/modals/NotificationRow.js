@@ -45,6 +45,8 @@ const NotificationRow = ({ model, updateModel }) => {
                     return (
                         <div key={key} className="mb1 flex flex-nowrap">
                             <NotificationInput
+                                allDay={model.allDay}
+                                className="mr1"
                                 type={type}
                                 time={time}
                                 unit={unit}

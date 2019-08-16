@@ -76,7 +76,7 @@ const CalendarSidebar = ({ calendars = [], loadingCalendars, miniCalendar }) => 
             </div>
             {miniCalendar}
             <nav className="navigation flex-item-fluid scroll-if-needed mb1">
-                <NavMenu list={list} />
+                <NavMenu list={list} className="mb0" />
                 {calendarsListView}
             </nav>
         </div>

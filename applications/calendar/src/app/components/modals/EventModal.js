@@ -6,10 +6,14 @@ import {
     Row,
     Label,
     Input,
+    ResetButton,
+    PrimaryButton,
+    Button,
     // Group,
     // ButtonGroup,
     useNotifications,
-    useCalendars
+    useCalendars,
+    ErrorButton
 } from 'react-components';
 import { c } from 'ttag';
 
@@ -93,13 +97,13 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
         createNotification({ text: i18n[model.type][eventID ? 'updated' : 'created'] });
     };
 
-    // const handleDelete = async () => {
-    //     setLoading(true);
-    //     // TODO delete API call
-    //     setLoading(false);
-    //     rest.onClose();
-    //     createNotification({ text: i18n[model.type].deleted });
-    // };
+    const handleDelete = async () => {
+        setLoading(true);
+        // TODO delete API call
+        setLoading(false);
+        rest.onClose();
+        createNotification({ text: i18n[model.type].deleted });
+    };
 
     const decrypt = () => {
         // TODO decrypt event data to build the model
@@ -112,7 +116,24 @@ const EventModal = ({ eventID, start, end, allDay, type, ...rest }) => {
     }, []);
 
     return (
-        <FormModal title={title} loading={loading} onSubmit={handleSubmit} submit={c('Action').t`Save`} {...rest}>
+        <FormModal
+            title={title}
+            loading={loading}
+            onSubmit={handleSubmit}
+            footer={
+                <div className="flex flex-spacebetween w100">
+                    <ResetButton loading={loading}>{c('Action').t`Cancel`}</ResetButton>
+                    <div>
+                        {eventID ? (
+                            <ErrorButton onClick={handleDelete} loading={loading} className="mr1">{c('Action')
+                                .t`Delete`}</ErrorButton>
+                        ) : null}
+                        <PrimaryButton loading={loading} type="submit">{c('Action').t`Save`}</PrimaryButton>
+                    </div>
+                </div>
+            }
+            {...rest}
+        >
             <Row>
                 <Label htmlFor="event-title-input">{c('Label').t`Title`}</Label>
                 <div className="flex-item-fluid">

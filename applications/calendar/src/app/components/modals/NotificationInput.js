@@ -1,15 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, Select } from 'react-components';
+import { Input, Select, TimeSelect, classnames } from 'react-components';
 import { c } from 'ttag';
 
 import { MINUTE, HOUR, DAY, WEEK, BEFORE, AFTER, NOTIFICATION_TYPE } from '../../constants';
 
 const { EMAIL, DEVICE } = NOTIFICATION_TYPE;
 
-const NotificationInput = ({ trigger, time, unit, onChangeUnit, onChangeTime, onChangeTrigger }) => {
+const NotificationInput = ({
+    trigger,
+    time,
+    limit,
+    unit,
+    onChangeUnit,
+    onChangeTime,
+    onChangeTrigger,
+    onChangeLimit,
+    className,
+    allDay = false
+}) => {
     return (
-        <div className="flex flex-nowrap">
+        <div className={classnames(['flex flex-nowrap', className])}>
             {/* <Select
                 className="mr1"
                 value={type}
@@ -30,27 +41,46 @@ const NotificationInput = ({ trigger, time, unit, onChangeUnit, onChangeTime, on
                 ]}
                 onChange={({ target }) => onChangeUnit(target.value)}
             />
-            <Select
-                value={trigger}
-                options={[
-                    { text: c('Event trigger').t`Before`, value: BEFORE },
-                    { text: c('Event trigger').t`After`, value: AFTER }
-                ]}
-                onChange={({ target }) => onChangeTrigger(target.value)}
-            />
+            {allDay ? (
+                <Select
+                    value={trigger}
+                    options={[
+                        { text: c('Event trigger').t`Before`, value: BEFORE },
+                        { text: c('Event trigger').t`After`, value: AFTER }
+                    ]}
+                    onChange={({ target }) => onChangeTrigger(target.value)}
+                />
+            ) : (
+                <>
+                    <Select
+                        className="mr1"
+                        value={trigger}
+                        options={[
+                            { text: c('Event trigger').t`Before at`, value: BEFORE },
+                            { text: c('Event trigger').t`After at`, value: AFTER }
+                        ]}
+                        onChange={({ target }) => onChangeTrigger(target.value)}
+                    />
+                    <TimeSelect value={limit} onChange={(l) => onChangeLimit(l)} />
+                </>
+            )}
         </div>
     );
 };
 
 NotificationInput.propTypes = {
+    allDay: PropTypes.bool,
     time: PropTypes.number,
+    limit: PropTypes.number,
     unit: PropTypes.string,
     type: PropTypes.oneOf([EMAIL, DEVICE]),
     trigger: PropTypes.oneOf([BEFORE, AFTER]),
     onChangeTime: PropTypes.func,
     onChangeUnit: PropTypes.func,
     onChangeTrigger: PropTypes.func,
-    onChangeType: PropTypes.func
+    onChangeType: PropTypes.func,
+    onChangeLimit: PropTypes.func,
+    className: PropTypes.string
 };
 
 export default NotificationInput;
