@@ -8,7 +8,7 @@ const TimezoneSelector = ({
     loading = false,
     disabled = false,
     timezone,
-    onChangeTimezone,
+    onChange,
     ...rest
 }) => {
     const date = new Date();
@@ -25,7 +25,7 @@ const TimezoneSelector = ({
             className={className}
             title={c('Action').t`Select timezone`}
             value={timezone}
-            onChange={({ target }) => onChangeTimezone(target.value)}
+            onChange={({ target }) => onChange(target.value)}
             {...rest}
         >
             {options.map(({ text, value }) => {
@@ -41,7 +41,7 @@ const TimezoneSelector = ({
 
 TimezoneSelector.propTypes = {
     timezone: PropTypes.string,
-    onChangeTimezone: PropTypes.func,
+    onChange: PropTypes.func,
     className: PropTypes.string,
     disabled: PropTypes.bool,
     loading: PropTypes.bool

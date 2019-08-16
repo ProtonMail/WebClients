@@ -61,9 +61,7 @@ const CalendarSettingsTab = ({ calendar, addressesKeysMap, addresses = [], model
                     />
                 </Field>
                 <div className="ml1">
-                    <ColorPicker color={model.color} onChange={({ hex: color }) => updateModel({ ...model, color })}>
-                        &nbsp;
-                    </ColorPicker>
+                    <ColorPicker color={model.color} onChange={({ hex: color }) => updateModel({ ...model, color })} />
                 </div>
             </Row>
             {calendar ? null : (

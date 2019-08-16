@@ -101,7 +101,7 @@ const EventForm = ({ calendars = [], model, updateModel }) => {
                                 <div className="flex flex-nowrap flex-item-fluid">
                                     <TimezoneSelector
                                         timezone={model.startTimezone || timezone}
-                                        onChangeTimezone={(startTimezone) => updateModel({ ...model, startTimezone })}
+                                        onChange={(startTimezone) => updateModel({ ...model, startTimezone })}
                                     />
                                 </div>
                             </Row>
@@ -110,7 +110,7 @@ const EventForm = ({ calendars = [], model, updateModel }) => {
                                 <div className="flex flex-nowrap flex-item-fluid">
                                     <TimezoneSelector
                                         timezone={model.endTimezone || timezone}
-                                        onChangeTimezone={(endTimezone) => updateModel({ ...model, endTimezone })}
+                                        onChange={(endTimezone) => updateModel({ ...model, endTimezone })}
                                     />
                                 </div>
                             </div>
@@ -128,9 +128,7 @@ const EventForm = ({ calendars = [], model, updateModel }) => {
                         value={model.calendar}
                         onChange={({ target }) => updateModel({ ...model, calendar: target.value })}
                     />
-                    <ColorPicker color={model.color} onChange={({ hex: color }) => updateModel({ ...model, color })}>
-                        &nbsp;
-                    </ColorPicker>
+                    <ColorPicker color={model.color} onChange={({ hex: color }) => updateModel({ ...model, color })} />
                 </div>
             </Row>
             <Row>

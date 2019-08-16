@@ -51,7 +51,7 @@ const LayoutSection = () => {
                         id="view-select"
                         view={ViewPreference}
                         loading={loading}
-                        onChangeView={(ViewPreference) => withLoading(handleChange({ ViewPreference }))}
+                        onChange={(ViewPreference) => withLoading(handleChange({ ViewPreference }))}
                     />
                 </Field>
             </Row>

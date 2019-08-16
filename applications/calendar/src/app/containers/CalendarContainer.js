@@ -268,14 +268,14 @@ const CalendarContainer = () => {
                                         <ViewSelector
                                             className="toolbar-select"
                                             view={view}
-                                            onChangeView={handleChangeView}
+                                            onChange={handleChangeView}
                                         />
                                     }
                                     timezoneSelector={
                                         <TimezoneSelector
                                             className="toolbar-select"
                                             timezone={timezone}
-                                            onChangeTimezone={setTimezone}
+                                            onChange={setTimezone}
                                         />
                                     }
                                 />
