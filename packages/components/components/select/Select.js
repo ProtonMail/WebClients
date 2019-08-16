@@ -5,7 +5,7 @@ import { generateUID } from '../../helpers/component';
 import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';
 
-const Select = ({ options, error, size = 1, className = '', multiple = false, ...rest }) => {
+const Select = ({ options, error, size = 1, className = '', multiple = false, loading = false, ...rest }) => {
     const { handlers, statusClasses, status } = useInput({ ...rest });
     const [uid] = useState(generateUID('select'));
 
@@ -15,6 +15,7 @@ const Select = ({ options, error, size = 1, className = '', multiple = false, ..
                 className={`pm-field w100 ${className} ${statusClasses}`}
                 size={size}
                 multiple={multiple}
+                disabled={loading || rest.disabled}
                 {...rest}
                 {...handlers}
             >
@@ -32,6 +33,7 @@ const Select = ({ options, error, size = 1, className = '', multiple = false, ..
 Select.propTypes = {
     error: PropTypes.string,
     disabled: PropTypes.bool,
+    loading: PropTypes.bool,
     size: PropTypes.number,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,

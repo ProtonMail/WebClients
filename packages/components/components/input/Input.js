@@ -6,7 +6,7 @@ import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 
 const Input = React.forwardRef(
-    ({ error, autoComplete = 'off', className = '', type = 'text', onPressEnter, ...rest }, ref) => {
+    ({ error, autoComplete = 'off', className = '', type = 'text', onPressEnter, loading = false, ...rest }, ref) => {
         const { handlers, statusClasses, status } = useInput({ onPressEnter, ...rest });
         const [uid] = useState(generateUID('input'));
 
@@ -19,6 +19,7 @@ const Input = React.forwardRef(
                     ref={ref}
                     type={type}
                     autoComplete={autoComplete}
+                    disabled={loading || rest.disabled}
                     {...rest}
                     {...handlers}
                 />
@@ -34,6 +35,7 @@ Input.propTypes = {
     autoFocus: PropTypes.bool,
     className: PropTypes.string,
     disabled: PropTypes.bool,
+    loading: PropTypes.bool,
     id: PropTypes.string,
     name: PropTypes.string,
     onBlur: PropTypes.func,
