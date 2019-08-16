@@ -13,7 +13,6 @@ export const VIEWS = {
 };
 
 export const WEEK_START = {
-    // ['S', 'M', 'T', 'W', 'T', 'F', 'S']
     MONDAY: 1,
     SATURDAY: 6,
     SUNDAY: 7
@@ -34,5 +33,6 @@ export const NOTIFICATION_TYPE = {
 
 export const DDMMYYYY = 0;
 export const MMDDYYYY = 1;
+export const YYYYMMDD = 2;
 export const H24 = 0;
 export const H12 = 1;

@@ -60,8 +60,8 @@ const MonthDays = ({
 
     const style = {
         display: 'grid',
-        'grid-template-columns': `repeat(${numberOfDays}, ${gridSize})`,
-        'grid-template-rows': `repeat(${numberOfWeeks}, ${gridSize})`,
+        gridTemplateColumns: `repeat(${numberOfDays}, ${gridSize})`,
+        gridTemplateRows: `repeat(${numberOfWeeks}, ${gridSize})`,
         textAlign: 'center',
         userSelect: 'none'
     };

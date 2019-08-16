@@ -1,22 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { listTimeZones } from 'timezone-support';
+import { listTimeZones, findTimeZone, getZonedTime } from 'timezone-support';
+import { c } from 'ttag';
 
 const TimezoneSelector = ({
     className = 'pm-field w100',
     loading = false,
     disabled = false,
     timezone,
-    updateTimezone,
+    onChangeTimezone,
     ...rest
 }) => {
-    const options = listTimeZones().map((text) => ({ text, value: text }));
+    const date = new Date();
+    const options = listTimeZones().map((tz) => {
+        const { zone = {} } = getZonedTime(date, findTimeZone(tz));
+        return {
+            text: `${tz} ${zone.abbreviation}`,
+            value: tz
+        };
+    });
     return (
         <select
             disabled={loading || disabled}
             className={className}
+            title={c('Action').t`Select timezone`}
             value={timezone}
-            onChange={({ target }) => updateTimezone(target.value)}
+            onChange={({ target }) => onChangeTimezone(target.value)}
             {...rest}
         >
             {options.map(({ text, value }) => {
@@ -32,7 +41,7 @@ const TimezoneSelector = ({
 
 TimezoneSelector.propTypes = {
     timezone: PropTypes.string,
-    updateTimezone: PropTypes.func,
+    onChangeTimezone: PropTypes.func,
     className: PropTypes.string,
     disabled: PropTypes.bool,
     loading: PropTypes.bool

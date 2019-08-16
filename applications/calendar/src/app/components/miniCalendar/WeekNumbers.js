@@ -6,8 +6,8 @@ import { getWeek } from './helper';
 const WeekNumbers = ({ gridSize, days, numberOfWeeks }) => {
     const style = {
         display: 'grid',
-        'grid-template-columns': gridSize,
-        'grid-template-rows': `repeat(${numberOfWeeks + 1}, ${gridSize})`,
+        gridTemplateColumns: gridSize,
+        gridTemplateRows: `repeat(${numberOfWeeks + 1}, ${gridSize})`,
         opacity: '0.3',
         textAlign: 'center'
     };

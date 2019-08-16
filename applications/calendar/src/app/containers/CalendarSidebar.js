@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useModals, NavMenu, DropdownActions, Checkbox, Loader, useEventManager, useApi } from 'react-components';
+import { useModals, NavMenu, DropdownActions, Checkbox, useEventManager, useApi } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
 
@@ -16,22 +16,25 @@ const CalendarSidebar = ({ calendars = [], loadingCalendars, miniCalendar }) => 
         await call();
     };
 
-    const calendarsView = (() => {
+    const calendarsListView = (() => {
         if (loadingCalendars || !Array.isArray(calendars)) {
-            return [<Loader key={0} />];
+            return null;
         }
         if (calendars.length === 0) {
-            return [];
+            return null;
         }
         return calendars.map(({ ID, Name, Display, Color }) => {
             return (
-                <div key={ID}>
-                    <Checkbox
-                        backgroundColor={Color}
-                        checked={!!Display}
-                        onClick={({ target: { checked } }) => handleVisibility(ID, checked)}
-                    />
-                    {Name}
+                <div className="navigation__link" key={ID}>
+                    <span className="flex flex-nowrap flex-items-center">
+                        <Checkbox
+                            className="mr1"
+                            backgroundColor={Color}
+                            checked={!!Display}
+                            onChange={({ target: { checked } }) => handleVisibility(ID, checked)}
+                        />
+                        <span className="ellipsis mw100">{Name}</span>
+                    </span>
                 </div>
             );
         });
@@ -42,8 +45,7 @@ const CalendarSidebar = ({ calendars = [], loadingCalendars, miniCalendar }) => 
             icon: 'general',
             text: c('Header').t`Calendars`,
             link: '/calendar/settings/calendars'
-        },
-        ...calendarsView.map((node) => ({ type: 'text', text: node }))
+        }
     ];
 
     const createActions = [
@@ -75,6 +77,7 @@ const CalendarSidebar = ({ calendars = [], loadingCalendars, miniCalendar }) => 
             {miniCalendar}
             <nav className="navigation flex-item-fluid scroll-if-needed mb1">
                 <NavMenu list={list} />
+                {calendarsListView}
             </nav>
         </div>
     );

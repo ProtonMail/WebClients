@@ -7,7 +7,8 @@ import {
     useAddressesKeys,
     useUser,
     Loader,
-    AppsSidebar
+    AppsSidebar,
+    useCalendarSettings
 } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 import Calendar from '@toast-ui/react-calendar';
@@ -29,18 +30,30 @@ import useCalendarsBootstrap from './useCalendarsBootstrap';
 import useCalendarsKeys from './useCalendarsKeys';
 import useCalendarsEvents from './useCalendarsEvents';
 import MiniCalendar from '../components/miniCalendar/MiniCalendar';
-import { getDateDiff, getDateRange } from './helper';
+import { getDateRange } from './helper';
 import { fromICAL } from '../helpers/vcard';
 import PrivateHeader from '../components/layout/PrivateHeader';
+import TimezoneSelector from '../components/TimezoneSelector';
+import ViewSelector from '../components/ViewSelector';
+import DateCursorButtons from '../components/DateCursorButtons';
+import { getTimezone } from '../helpers/timezone';
 
 const { DAY, WEEK, MONTH, YEAR, CUSTOM, AGENDA } = VIEWS;
 const DEFAULT_VIEW = WEEK;
 const VIEWS_HANDLED_BY_CALENDAR = [DAY, WEEK, MONTH, CUSTOM];
 
+const CALENDAR_VIEWS = {
+    [DAY]: 'day',
+    [WEEK]: 'week',
+    [MONTH]: 'month'
+};
+
 const CalendarContainer = () => {
     const [user] = useUser();
     const [userKeysList] = useUserKeys(user);
+    const [timezone, setTimezone] = useState(getTimezone());
     const [addresses, loadingAddresses] = useAddresses();
+    const [calendarSettings, loadingCalendarSettings] = useCalendarSettings();
     const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys(user, addresses, userKeysList);
     const [calendars, loadingCalendars] = useCalendars();
     const visibleCalendars = useMemo(() => {
@@ -100,6 +113,12 @@ const CalendarContainer = () => {
         }
     }, [calendars, addresses]);
 
+    useEffect(() => {
+        if (calendarSettings) {
+            setTimezone(calendarSettings.PrimaryTimezone || getTimezone());
+        }
+    }, [calendarSettings]);
+
     const handleSelectDate = (date) => {
         setCurrentDate(date);
 
@@ -117,22 +136,6 @@ const CalendarContainer = () => {
         setView(CUSTOM);
     };
 
-    const handlePrev = () => {
-        const prevDate = getDateDiff(currentDate, view, -1);
-        setCurrentDate(prevDate);
-        setDateRange(getDateRange(prevDate, view, weekStartsOn));
-    };
-
-    const handleNext = () => {
-        const nextDate = getDateDiff(currentDate, view, 1);
-        setCurrentDate(nextDate);
-        setDateRange(getDateRange(nextDate, view, weekStartsOn));
-    };
-
-    const handleSelectToday = () => {
-        handleSelectDate(new Date());
-    };
-
     const handleSelectDateYear = (date) => {
         setCurrentDate(date);
         setDateRange(getDateRange(date, WEEK, weekStartsOn));
@@ -148,6 +151,11 @@ const CalendarContainer = () => {
     const handleChangeView = (newView) => {
         setDateRange(getDateRange(currentDate, newView, weekStartsOn));
         setView(newView);
+    };
+
+    const handleDate = (date) => {
+        setCurrentDate(date);
+        setDateRange(getDateRange(date, view, weekStartsOn));
     };
 
     // when click a schedule.
@@ -177,12 +185,17 @@ const CalendarContainer = () => {
     }, [currentDate]);
     useEffect(() => {
         if (calendarRef.current && VIEWS_HANDLED_BY_CALENDAR.includes(view)) {
-            calendarRef.current.getInstance().changeView(view, true);
+            calendarRef.current.getInstance().changeView(CALENDAR_VIEWS[view], true);
         }
     }, [view, calendarRef.current]);
 
     const isLoading =
-        loadingAddresses || loadingAddressesKeys || loadingBootstrap || loadingCalendarsKeys || loadingEvents;
+        loadingAddresses ||
+        loadingAddressesKeys ||
+        loadingBootstrap ||
+        loadingCalendarsKeys ||
+        loadingEvents ||
+        loadingCalendarSettings;
 
     const tuiSchedules = useMemo(() => {
         if (!Array.isArray(visibleCalendars) || !calendarsEvents) {
@@ -247,13 +260,24 @@ const CalendarContainer = () => {
                         <div className="flex flex-reverse">
                             <Main>
                                 <CalendarToolbar
-                                    view={view}
-                                    currentDate={currentDate}
                                     dateRange={dateRange}
-                                    onChangeView={handleChangeView}
-                                    onNext={handleNext}
-                                    onPrev={handlePrev}
-                                    onToday={handleSelectToday}
+                                    dateCursorButtons={
+                                        <DateCursorButtons view={view} currentDate={currentDate} onDate={handleDate} />
+                                    }
+                                    viewSelector={
+                                        <ViewSelector
+                                            className="toolbar-select"
+                                            view={view}
+                                            onChangeView={handleChangeView}
+                                        />
+                                    }
+                                    timezoneSelector={
+                                        <TimezoneSelector
+                                            className="toolbar-select"
+                                            timezone={timezone}
+                                            onChangeTimezone={setTimezone}
+                                        />
+                                    }
                                 />
                                 {VIEWS_HANDLED_BY_CALENDAR.includes(view) ? (
                                     <Calendar

@@ -17,9 +17,13 @@ import { c } from 'ttag';
 import { updateCalendarSettings } from 'proton-shared/lib/api/calendarSettings';
 
 import TimezoneSelector from '../TimezoneSelector';
-import { MMDDYYYY, DDMMYYYY, H24, H12 } from '../../constants';
+import { MMDDYYYY, DDMMYYYY, YYYYMMDD, H24, H12 } from '../../constants';
+import { getTimezone } from '../../helpers/timezone';
 
 const TimeSection = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const timezone = getTimezone();
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -60,8 +64,12 @@ const TimeSection = () => {
                         id="date-format-select"
                         loading={loading}
                         onChange={({ target }) => withLoading(handleChange({ DateFormat: +target.value }))}
-                        value={DateFormat}
-                        options={[{ text: '12/31/2019', value: DDMMYYYY }, { text: '31/12/2019', value: MMDDYYYY }]}
+                        value={DateFormat ? DateFormat : MMDDYYYY}
+                        options={[
+                            { text: `12/31/${year}`, value: DDMMYYYY },
+                            { text: `31/12/${year}`, value: MMDDYYYY },
+                            { text: `${year}-12-31`, value: YYYYMMDD }
+                        ]}
                     />
                 </Field>
             </Row>
@@ -72,7 +80,7 @@ const TimeSection = () => {
                         id="time-format-select"
                         loading={loading}
                         onChange={({ target }) => withLoading(handleChange({ TimeFormat: +target.value }))}
-                        value={TimeFormat}
+                        value={TimeFormat ? TimeFormat : H12}
                         options={[{ text: '1pm', value: H12 }, { text: '13:00', value: H24 }]}
                     />
                 </Field>
@@ -82,7 +90,7 @@ const TimeSection = () => {
                 <Field>
                     <div className="mb1">
                         <Checkbox
-                            loading={loading}
+                            disabled={loading}
                             checked={!!AutoDetectPrimaryTimezone}
                             onChange={({ target }) =>
                                 withLoading(handleChange({ AutoDetectPrimaryTimezone: +target.checked }))
@@ -93,7 +101,7 @@ const TimeSection = () => {
                         <TimezoneSelector
                             loading={loading}
                             disabled={!!AutoDetectPrimaryTimezone}
-                            timezone={PrimaryTimezone}
+                            timezone={AutoDetectPrimaryTimezone ? timezone : PrimaryTimezone || timezone}
                             onChange={(PrimaryTimezone) => withLoading(handleChange({ PrimaryTimezone }))}
                         />
                     </div>
@@ -104,7 +112,7 @@ const TimeSection = () => {
                 <Field>
                     <div className="mb1">
                         <Checkbox
-                            loading={loading}
+                            disabled={loading}
                             checked={!!DisplaySecondaryTimezone}
                             onChange={({ target }) =>
                                 withLoading(handleChange({ DisplaySecondaryTimezone: +target.checked }))
@@ -115,7 +123,9 @@ const TimeSection = () => {
                         <TimezoneSelector
                             loading={loading}
                             disabled={!DisplaySecondaryTimezone}
-                            timezone={SecondaryTimezone}
+                            timezone={
+                                DisplaySecondaryTimezone ? SecondaryTimezone || timezone : PrimaryTimezone || timezone
+                            }
                             onChange={(SecondaryTimezone) => withLoading(handleChange({ SecondaryTimezone }))}
                         />
                     </div>

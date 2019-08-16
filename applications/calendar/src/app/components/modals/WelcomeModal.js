@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import {
     Alert,
     FormModal,
+    Icon,
     useLoading,
     useUser,
     useEventManager,
@@ -29,6 +30,7 @@ const WelcomeModal = ({ addresses, ...rest }) => {
     const [addressesKeysMap, loadingAddressKeys] = useAddressesKeys(user, addresses, userKeysList);
     const [loading, withLoading] = useLoading();
     const title = loading ? c('Title').t`Preparing your calendar` : c('Title').t`Welcome to ProtonCalendar!`;
+    const supportIcon = <Icon name="support1" />;
 
     const handleStart = () => rest.onClose();
 
@@ -83,7 +85,7 @@ const WelcomeModal = ({ addresses, ...rest }) => {
                 <img src={calendarSvg} alt={c('Alt image').t`Calendar`} />
             </div>
             <Alert>{c('Info')
-                .t`If you encounter a problem, you can reach our support team by clicking the button.`}</Alert>
+                .jt`If you encounter a problem, you can reach our support team by clicking the ${supportIcon} button.`}</Alert>
         </FormModal>
     );
 };

@@ -6,7 +6,14 @@ import { VIEWS } from '../constants';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA } = VIEWS;
 
-const ViewSelector = ({ className = 'pm-field w100', view, onChangeView, ...rest }) => {
+const ViewSelector = ({
+    className = 'pm-field w100',
+    loading = false,
+    disabled = false,
+    view,
+    onChangeView,
+    ...rest
+}) => {
     const options = [
         { text: c('Calendar view').t`Day`, value: DAY },
         { text: c('Calendar view').t`Week`, value: WEEK },
@@ -17,6 +24,7 @@ const ViewSelector = ({ className = 'pm-field w100', view, onChangeView, ...rest
 
     return (
         <select
+            disabled={loading || disabled}
             className={className}
             title={c('Action').t`Select calendar view`}
             value={view}
@@ -35,6 +43,8 @@ const ViewSelector = ({ className = 'pm-field w100', view, onChangeView, ...rest
 };
 
 ViewSelector.propTypes = {
+    disabled: PropTypes.bool,
+    loading: PropTypes.bool,
     className: PropTypes.string,
     view: PropTypes.oneOf([DAY, WEEK, MONTH, YEAR, AGENDA]),
     onChangeView: PropTypes.func

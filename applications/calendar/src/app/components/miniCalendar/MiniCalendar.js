@@ -61,8 +61,8 @@ const MiniCalendar = ({
     const style = hasWeekNumbers
         ? {
               display: 'grid',
-              'grid-template-columns': '30px auto',
-              'grid-template-rows': 'auto'
+              gridTemplateColumns: '30px auto',
+              gridTemplateRows: 'auto'
           }
         : {};
 

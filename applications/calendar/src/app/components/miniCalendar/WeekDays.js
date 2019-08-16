@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const WeekDays = ({ weekdays, weekStartsOn, gridSize, numberOfDays }) => {
     const style = {
         display: 'grid',
-        'grid-template-columns': `repeat(${numberOfDays}, ${gridSize})`,
-        'grid-template-rows': gridSize,
+        gridTemplateColumns: `repeat(${numberOfDays}, ${gridSize})`,
+        gridTemplateRows: gridSize,
         opacity: '0.3',
         textAlign: 'center'
     };
