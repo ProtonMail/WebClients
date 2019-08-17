@@ -4,24 +4,25 @@ import { Icon, useUser } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
-const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONVPN_SETTINGS } = APPS;
+const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONMAIL_SETTINGS, PROTONVPN_SETTINGS } = APPS;
 
 const AppsSidebar = ({ currentApp = '' }) => {
     const [{ isPaid }] = useUser();
     const apps = [
-        { id: PROTONMAIL, icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
-        isPaid && { id: PROTONCALENDAR, icon: 'calendar', title: 'ProtonCalendar', link: '/calendar' },
-        { id: PROTONCONTACTS, icon: 'contacts', title: 'ProtonContacts', link: '/contacts' },
-        { id: PROTONVPN_SETTINGS, icon: 'protonvpn', title: c('Title').t`ProtonVPN settings`, link: '/settings/vpn' }
+        { ids: [PROTONMAIL, PROTONMAIL_SETTINGS], icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
+        isPaid && { ids: [PROTONCALENDAR], icon: 'calendar', title: 'ProtonCalendar', link: '/calendar' },
+        { ids: [PROTONCONTACTS], icon: 'contacts', title: 'ProtonContacts', link: '/contacts' },
+        { ids: [PROTONVPN_SETTINGS], icon: 'protonvpn', title: c('Title').t`ProtonVPN settings`, link: '/settings/vpn' }
     ].filter(Boolean);
 
     return (
         <aside className="aside noprint" id="aside-bar">
             <ul className="unstyled m0 aligncenter">
-                {apps.map(({ id, icon, title, link, target }) => {
-                    const isCurrent = currentApp === id;
+                {apps.map(({ ids = [], icon, title, link, target }, index) => {
+                    const isCurrent = ids.includes(currentApp);
+                    const key = `${index}`;
                     return (
-                        <li key={id} className="mb0-5">
+                        <li key={key} className="mb0-5">
                             <a
                                 href={link}
                                 target={target ? target : '_self'}
