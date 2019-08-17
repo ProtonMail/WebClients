@@ -15,17 +15,18 @@ import {
 } from 'react-components';
 import { createCalendar } from 'proton-shared/lib/api/calendars';
 import calendarSvg from 'design-system/assets/img/pm-images/calendar.svg';
+import { redirectTo } from 'proton-shared/lib/helpers/browser';
 
 import { setupCalendarKey } from '../../helpers/calendarModal';
 import { DEFAULT_CALENDAR } from '../../constants';
 import CalendarModal from './calendar/CalendarModal';
 
-const WelcomeModal = ({ addresses, ...rest }) => {
+const WelcomeModal = ({ user, addresses, ...rest }) => {
+    const { isFree, isPaid } = user;
     const [calendar, setCalendar] = useState();
     const { createModal } = useModals();
     const { call } = useEventManager();
     const api = useApi();
-    const [user] = useUser();
     const [userKeysList] = useUserKeys(user);
     const [addressesKeysMap, loadingAddressKeys] = useAddressesKeys(user, addresses, userKeysList);
     const [loading, withLoading] = useLoading();
@@ -64,6 +65,14 @@ const WelcomeModal = ({ addresses, ...rest }) => {
     };
 
     useEffect(() => {
+        if (isFree) {
+            return () => {
+                if (isFree) {
+                    redirectTo('/inbox');
+                }
+            };
+        }
+
         if (!loadingAddressKeys && addressesKeysMap) {
             withLoading(setup());
         }
@@ -73,25 +82,35 @@ const WelcomeModal = ({ addresses, ...rest }) => {
         <FormModal
             loading={loading || loadingAddressKeys}
             title={title}
+            hasClose={isPaid}
             close={c('Action').t`Customize calendar`}
-            submit={c('Action').t`Continue`}
+            submit={isPaid ? c('Action').t`Continue` : c('Action').t`Back to ProtonMail`}
             onSubmit={handleStart}
             onClose={handleCustomize}
             {...rest}
         >
-            <Alert>{c('Info')
-                .t`Your new calendar is now ready. All events in your calendar are encrypted and inaccessible to anybody other than you or the people you invite.`}</Alert>
             <div className="w50 center">
                 <img src={calendarSvg} alt={c('Alt image').t`Calendar`} />
             </div>
-            <Alert>{c('Info')
-                .jt`If you encounter a problem, you can reach our support team by clicking the ${supportIcon} button.`}</Alert>
+            {isFree ? (
+                <Alert>{c('Info')
+                    .t`ProtonCalendar is currently in Beta and is only available to paid users of ProtonMail. If you would like to participate in our Beta program today, consider upgrading to a paid plan. ProtonCalendar will be available to free users upon launch.`}</Alert>
+            ) : null}
+            {isPaid ? (
+                <Alert>
+                    <div className="mb1">{c('Info')
+                        .t`Your new calendar is now ready. All events in your calendar are encrypted and inaccessible to anybody other than you or the people you invite.`}</div>
+                    <div>{c('Info')
+                        .jt`If you encounter a problem, you can reach our support team by clicking the ${supportIcon} button.`}</div>
+                </Alert>
+            ) : null}
         </FormModal>
     );
 };
 
 WelcomeModal.propTypes = {
-    addresses: PropTypes.array
+    addresses: PropTypes.array,
+    user: PropTypes.object
 };
 
 export default WelcomeModal;

@@ -108,7 +108,7 @@ const CalendarContainer = () => {
             Array.isArray(addresses) &&
             addresses.length
         ) {
-            createModal(<WelcomeModal addresses={addresses} />);
+            createModal(<WelcomeModal user={user} addresses={addresses} />);
             welcomeRef.current = true;
         }
     }, [calendars, addresses]);
