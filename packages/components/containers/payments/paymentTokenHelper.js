@@ -47,10 +47,16 @@ const pull = async ({ timer = 0, Token, api }) => {
     throw new Error(c('Error').t`Unknown payment token status`);
 };
 
-const process = ({ ApprovalURL, Token, api }) => {
+/**
+ *
+ * @param {String} ApprovalURL
+ * @param {String} String
+ * @param {Object} api useApi
+ * @param {Object} tab window instance
+ */
+const process = ({ ApprovalURL, Token, api, tab }) => {
     return new Promise((resolve, reject) => {
         let listen = false;
-        const tab = window.open(ApprovalURL, '3DS support');
 
         const reset = () => {
             listen = false;
@@ -95,6 +101,7 @@ const process = ({ ApprovalURL, Token, api }) => {
                 .catch(reject);
         };
 
+        tab.location = ApprovalURL;
         window.addEventListener('message', onMessage, false);
         listen = true;
         listenTab();
@@ -121,12 +128,15 @@ export const handle3DS = async (params = {}, api) => {
         return params;
     }
 
+    // We open a tab first because Safari is blocking by default tab if it's not a direct interaction
+    const tab = window.open(''); // It's important to keep it before await
     const { Token, Status, ApprovalURL } = await api(createToken(params));
 
     if (Status === STATUS_CHARGEABLE) {
+        tab.close();
         return toParams(params, Token);
     }
 
-    await process({ ApprovalURL, Token, api });
+    await process({ ApprovalURL, Token, api, tab });
     return toParams(params, Token);
 };
