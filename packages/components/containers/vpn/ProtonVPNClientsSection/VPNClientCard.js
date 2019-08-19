@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Bordered, Icon, Button, Block } from 'react-components';
+import { Bordered, Icon, Button, Block, Href } from 'react-components';
 import { c } from 'ttag';
 
 const VPNClientCard = ({ title, link, icon }) => {
@@ -10,9 +10,9 @@ const VPNClientCard = ({ title, link, icon }) => {
                 <Icon size={25} name={icon} />
             </div>
             <Block>{title}</Block>
-            <a href={link}>
+            <Href url={link}>
                 <Button>{c('Action').t`Download`}</Button>
-            </a>
+            </Href>
         </Bordered>
     );
 };
