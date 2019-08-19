@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONMAIL_SETTINGS, PROTONVPN_SETTINGS } = APPS;
 
-const AppsSidebar = ({ currentApp = '' }) => {
+const AppsSidebar = ({ currentApp = '', items = [] }) => {
     const [{ isPaid }] = useUser();
     const apps = [
         { ids: [PROTONMAIL, PROTONMAIL_SETTINGS], icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
@@ -17,7 +17,7 @@ const AppsSidebar = ({ currentApp = '' }) => {
 
     return (
         <aside className="aside noprint" id="aside-bar">
-            <ul className="unstyled m0 aligncenter">
+            <ul className="unstyled m0 aligncenter  flex flex-column h100">
                 {apps.map(({ ids = [], icon, title, link, target }, index) => {
                     const isCurrent = ids.includes(currentApp);
                     const key = `${index}`;
@@ -36,13 +36,25 @@ const AppsSidebar = ({ currentApp = '' }) => {
                         </li>
                     );
                 })}
+                <li className="flex-item-fluid" />
+                {items.map((item, index) => (
+                    <li key={index} className="mb0-5">
+                        {item}
+                    </li>
+                ))}
             </ul>
         </aside>
     );
 };
 
 AppsSidebar.propTypes = {
-    currentApp: PropTypes.string
+    currentApp: PropTypes.string,
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            item: PropTypes.node.isRequired,
+            key: PropTypes.string.isRequired
+        }).isRequired
+    )
 };
 
 export default AppsSidebar;

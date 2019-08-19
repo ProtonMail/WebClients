@@ -1,0 +1,11 @@
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    user-select: none;
+    cursor: pointer;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 3.5;
+}

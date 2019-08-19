@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Href = ({ url = '#', className = '', target = '_blank', rel = 'noopener noreferrer', children }) => {
-    return (
-        <a href={url} className={className} target={target} rel={rel}>
-            {children}
-        </a>
-    );
-};
+const Href = ({ url = '#', className = '', target = '_blank', rel = 'noopener noreferrer', children }) => (
+    <a href={url} className={className} target={target} rel={rel}>
+        {children}
+    </a>
+);
 
 Href.propTypes = {
     url: PropTypes.string,

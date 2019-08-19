@@ -45,7 +45,7 @@ const Pagination = ({ onNext, onPrevious, onSelect, hasNext = true, hasPrevious 
                 />
             ) : null}
             <SimpleDropdown
-                narrow
+                size="narrow"
                 className="pm-group-button pm-button--for-icon"
                 title={c('Title').t`Open pagination`}
                 content={page}

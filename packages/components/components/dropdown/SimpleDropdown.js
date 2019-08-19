@@ -5,7 +5,7 @@ import { usePopperAnchor } from '../popper';
 import DropdownButton from './DropdownButton';
 import { generateUID } from '../../helpers/component';
 
-const SimpleDropdown = ({ content, children, originalPlacement, narrow, autoClose, ...rest }) => {
+const SimpleDropdown = ({ content, children, originalPlacement, size, autoClose, ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
@@ -18,7 +18,7 @@ const SimpleDropdown = ({ content, children, originalPlacement, narrow, autoClos
             <Dropdown
                 id={uid}
                 originalPlacement={originalPlacement}
-                narrow={narrow}
+                size={size}
                 autoClose={autoClose}
                 isOpen={isOpen}
                 anchorRef={anchorRef}
@@ -34,7 +34,7 @@ SimpleDropdown.propTypes = {
     content: PropTypes.node,
     children: PropTypes.node,
     originalPlacement: PropTypes.string,
-    narrow: PropTypes.bool,
+    size: PropTypes.string,
     autoClose: PropTypes.bool
 };
 
