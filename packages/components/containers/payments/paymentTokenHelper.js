@@ -130,13 +130,20 @@ export const handle3DS = async (params = {}, api) => {
 
     // We open a tab first because Safari is blocking by default tab if it's not a direct interaction
     const tab = window.open(''); // It's important to keep it before await
-    const { Token, Status, ApprovalURL } = await api(createToken(params));
 
-    if (Status === STATUS_CHARGEABLE) {
-        tab.close();
+    try {
+        const { Token, Status, ApprovalURL } = await api(createToken(params));
+
+        if (Status === STATUS_CHARGEABLE) {
+            tab.close();
+            return toParams(params, Token);
+        }
+
+        await process({ ApprovalURL, Token, api, tab });
+
         return toParams(params, Token);
+    } catch (error) {
+        tab.close();
+        throw error;
     }
-
-    await process({ ApprovalURL, Token, api, tab });
-    return toParams(params, Token);
 };
