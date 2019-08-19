@@ -20,6 +20,7 @@ export { default as Icons } from './components/icon/Icons';
 export { default as useToggle } from './components/toggle/useToggle';
 export { default as Toggle } from './components/toggle/Toggle';
 export { default as Badge } from './components/badge/Badge';
+export { default as SettingsTitle } from './components/container/SettingsTitle';
 export { default as Bordered } from './components/container/Bordered';
 export { default as Block } from './components/container/Block';
 export { default as RemoteImage } from './components/image/RemoteImage';
@@ -325,6 +326,7 @@ export { default as useUserKeys } from './hooks/useUserKeys';
 export { default as useAddressesKeys } from './hooks/useAddressesKeys';
 export { default as useOrganizationKey } from './hooks/useOrganizationKey';
 export { default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
+export { useMainArea, MainAreaContext } from './hooks/useMainArea';
 
 export { default as ErrorBoundary } from './containers/app/ErrorBoundary';
 export { default as ProtonApp } from './containers/app/ProtonApp';
