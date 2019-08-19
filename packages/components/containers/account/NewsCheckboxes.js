@@ -16,14 +16,14 @@ import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
 const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA, BUSINESS } = NEWS;
 
 const NewsCheckboxes = () => {
-    const [{ News: news }] = useUserSettings();
+    const [{ News } = {}] = useUserSettings();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
     const [loading, withLoading] = useLoading();
 
     const update = async (mask) => {
-        await api(updateNews(toggleBit(news, mask)));
+        await api(updateNews(toggleBit(News, mask)));
         await call();
         createNotification({ text: c('Info').t`Emailing preference updated` });
     };
@@ -36,7 +36,7 @@ const NewsCheckboxes = () => {
                 <Label htmlFor="announcements">
                     <Checkbox
                         id="announcements"
-                        checked={hasBit(news, ANNOUNCEMENTS)}
+                        checked={hasBit(News, ANNOUNCEMENTS)}
                         disabled={loading}
                         onChange={handleChange(ANNOUNCEMENTS)}
                     />
@@ -47,7 +47,7 @@ const NewsCheckboxes = () => {
                 <Label htmlFor="features">
                     <Checkbox
                         id="features"
-                        checked={hasBit(news, FEATURES)}
+                        checked={hasBit(News, FEATURES)}
                         disabled={loading}
                         onChange={handleChange(FEATURES)}
                     />
@@ -58,7 +58,7 @@ const NewsCheckboxes = () => {
                 <Label htmlFor="business">
                     <Checkbox
                         id="business"
-                        checked={hasBit(news, BUSINESS)}
+                        checked={hasBit(News, BUSINESS)}
                         disabled={loading}
                         onChange={handleChange(BUSINESS)}
                     />
@@ -69,7 +69,7 @@ const NewsCheckboxes = () => {
                 <Label htmlFor="newsletter">
                     <Checkbox
                         id="newsletter"
-                        checked={hasBit(news, NEWSLETTER)}
+                        checked={hasBit(News, NEWSLETTER)}
                         disabled={loading}
                         onChange={handleChange(NEWSLETTER)}
                     />
@@ -78,7 +78,7 @@ const NewsCheckboxes = () => {
             </li>
             <li>
                 <Label htmlFor="beta">
-                    <Checkbox id="beta" checked={hasBit(news, BETA)} disabled={loading} onChange={handleChange(BETA)} />
+                    <Checkbox id="beta" checked={hasBit(News, BETA)} disabled={loading} onChange={handleChange(BETA)} />
                     {c('Label for news').t`Proton Beta (10-12 per year)`}
                 </Label>
             </li>
