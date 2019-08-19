@@ -6,7 +6,6 @@ import {
     FormModal,
     Icon,
     useLoading,
-    useUser,
     useEventManager,
     useApi,
     useAddressesKeys,
@@ -67,13 +66,13 @@ const WelcomeModal = ({ user, addresses, ...rest }) => {
     useEffect(() => {
         if (isFree) {
             return () => {
-                if (isFree) {
-                    redirectTo('/inbox');
-                }
+                redirectTo('/inbox');
             };
         }
+    }, []);
 
-        if (!loadingAddressKeys && addressesKeysMap) {
+    useEffect(() => {
+        if (isPaid && !loadingAddressKeys && addressesKeysMap) {
             withLoading(setup());
         }
     }, [addresses, addressesKeysMap]);
