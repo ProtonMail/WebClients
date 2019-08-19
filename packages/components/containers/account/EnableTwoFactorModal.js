@@ -182,9 +182,14 @@ const EnableTwoFactorModal = (props) => {
                     setStep(STEPS.RECOVERY_CODES);
                 } catch (error) {
                     const { data: { Code, Error } = {} } = error;
+
+                    setPasswordError();
+                    setTotpError();
+
                     if (Code === PASSWORD_WRONG_ERROR) {
                         setPasswordError(Error);
                     }
+
                     if (Code === TOTP_WRONG_ERROR) {
                         setTotpError(Error);
                     }
