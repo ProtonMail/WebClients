@@ -50,7 +50,7 @@ const BugModal = ({ onClose, username: Username = '', addresses = [], titles = d
             });
             return acc;
         },
-        [{ text: c('Action to select a title for the bug report modal').t`Select`, value: '' }]
+        [{ text: c('Action to select a title for the bug report modal').t`Select`, value: '', disabled: true }]
     );
     const [model, update] = useState({
         ...collectInfo(),
