@@ -88,7 +88,7 @@ const EnableTwoFactorModal = (props) => {
                     <>
                         <Block>
                             {c('Info')
-                                .t`This wizard will enable Two Factor Authentication (2FA) on your ProtonMail account. 2FA will make your ProtonMail account more secure so we recommend enabling it.`}
+                                .t`This wizard will enable Two Factor Authentication (2FA) on your Proton account. 2FA will make your Proton account more secure so we recommend enabling it.`}
                         </Block>
                         <Alert>
                             {c('Info').jt`If you have never used 2FA before, we strongly recommend you ${guideButton}.`}
