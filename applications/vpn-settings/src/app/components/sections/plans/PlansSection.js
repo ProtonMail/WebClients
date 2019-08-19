@@ -18,7 +18,7 @@ import {
     useToggle
 } from 'react-components';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { mergePlansMap } from 'react-components/containers/payments/subscription/helpers';
 
@@ -28,13 +28,13 @@ const { PROTONVPN_SETTINGS } = APPS;
 
 const PlansSection = () => {
     const api = useApi();
-    const [{ isFree }] = useUser();
+    const [{ isFree, isPaid }] = useUser();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
-    const [currency, updateCurrency] = useState();
-    const [cycle, updateCycle] = useState();
+    const [currency, updateCurrency] = useState(DEFAULT_CURRENCY);
+    const [cycle, updateCycle] = useState(DEFAULT_CYCLE);
     const { state: showPlans, toggle: togglePlans } = useToggle(isFree);
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
@@ -79,7 +79,7 @@ const PlansSection = () => {
             return acc;
         }, Object.create(null));
 
-        const { Coupon: coupon } = await api(
+        const { Coupon } = await api(
             checkSubscription({
                 PlanIDs,
                 CouponCode: couponCode,
@@ -87,6 +87,8 @@ const PlansSection = () => {
                 Cycle: cycle
             })
         );
+
+        const coupon = Coupon ? Coupon.Code : undefined; // Coupon can equals null
 
         createModal(
             <SubscriptionModal
@@ -100,9 +102,17 @@ const PlansSection = () => {
     };
 
     useEffect(() => {
-        if (subscription) {
-            updateCurrency(subscription.Currency);
-            updateCycle(subscription.Cycle);
+        if (isFree) {
+            const [{ Currency } = {}] = plans || [];
+            updateCurrency(Currency);
+        }
+    }, [plans]);
+
+    useEffect(() => {
+        if (isPaid) {
+            const { Currency, Cycle } = subscription || {};
+            updateCurrency(Currency);
+            updateCycle(Cycle);
         }
     }, [subscription]);
 
