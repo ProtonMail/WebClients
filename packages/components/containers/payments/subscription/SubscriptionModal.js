@@ -137,6 +137,7 @@ const SubscriptionModal = ({
     const STEPS = [
         {
             title: c('Title').t`Order summary`,
+            checkCouponCode: true,
             closeIfSubscriptionChange: true,
             section: <OrderSummary plans={plans} model={model} check={check} onChange={handleChangeModel} />,
             async onSubmit() {
