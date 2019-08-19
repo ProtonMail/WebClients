@@ -62,26 +62,24 @@ const PasswordsSection = () => {
             </Row>
             {hasAddresses && (
                 <>
-                    {isOnePasswordMode && (
-                        <Row>
-                            <Label htmlFor="passwordModeToggle">
-                                <span className="mr0-5">{c('Label').t`Two password mode`}</span>
-                                <Info url="https://protonmail.com/support/knowledge-base/single-password" />
-                            </Label>
-                            <Field>
-                                <Toggle
-                                    loading={loadingUserSettings}
-                                    checked={!isOnePasswordMode}
-                                    id="passwordModeToggle"
-                                    onChange={() =>
-                                        handleChangePassword(
-                                            isOnePasswordMode ? MODES.SWITCH_TWO_PASSWORD : MODES.SWITCH_ONE_PASSWORD
-                                        )
-                                    }
-                                />
-                            </Field>
-                        </Row>
-                    )}
+                    <Row>
+                        <Label htmlFor="passwordModeToggle">
+                            <span className="mr0-5">{c('Label').t`Two password mode`}</span>
+                            <Info url="https://protonmail.com/support/knowledge-base/single-password" />
+                        </Label>
+                        <Field>
+                            <Toggle
+                                loading={loadingUserSettings}
+                                checked={!isOnePasswordMode}
+                                id="passwordModeToggle"
+                                onChange={() =>
+                                    handleChangePassword(
+                                        isOnePasswordMode ? MODES.SWITCH_TWO_PASSWORD : MODES.SWITCH_ONE_PASSWORD
+                                    )
+                                }
+                            />
+                        </Field>
+                    </Row>
                     {!isOnePasswordMode && (
                         <Row>
                             <Label htmlFor="passwordModeToggle">
