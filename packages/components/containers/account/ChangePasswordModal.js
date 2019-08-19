@@ -231,7 +231,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
                 authentication.setPassword(keyPassword);
                 await api(lockSensitiveSettings());
                 await call();
-
+                createNotification({ text: c('Success').t`Password updated` });
                 onClose();
             } catch (e) {
                 setLoading(false);
