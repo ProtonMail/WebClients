@@ -203,10 +203,7 @@ const EnableTwoFactorModal = (props) => {
                         showTotp={true}
                     />
                 ),
-                onClose() {
-                    setStep(STEPS.SCAN_CODE);
-                },
-                close: c('Action').t`Back`,
+                close: <Button type="button" onClick={() => setStep(STEPS.SCAN_CODE)}>{c('Action').t`Back`}</Button>,
                 onSubmit() {
                     withLoading(handleSubmit());
                 },
