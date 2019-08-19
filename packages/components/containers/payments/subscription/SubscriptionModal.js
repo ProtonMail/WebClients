@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
@@ -249,6 +249,10 @@ const SubscriptionModal = ({
             return <Button onClick={previous}>{c('Action').t`Previous`}</Button>;
         }
     })();
+
+    useEffect(() => {
+        callCheck();
+    }, []);
 
     return (
         <FormModal
