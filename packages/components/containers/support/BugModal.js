@@ -32,6 +32,8 @@ const defaultTitles = [
     'Import / export problem',
     'Custom domains problem',
     'Payments problem',
+    'Connection problem',
+    'Slow speed problem',
     'VPN problem',
     'Feature request',
     'Other'
