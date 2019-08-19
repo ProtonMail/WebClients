@@ -139,7 +139,7 @@ async function getAPIUrl() {
     const args = process.argv.slice(2);
     const { stdout } = await bash('npx proton-pack print-config', args);
     debug(stdout);
-    const [, url] = stdout.match(/apiUrl": "(.+)",/);
+    const [, url] = stdout.match(/apiUrl": "(.+)"(,*?)/);
     return url;
 }
 
