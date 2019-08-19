@@ -90,6 +90,10 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
         }
     };
 
+    const notifySuccess = () => {
+        createNotification({ text: c('Success').t`Password updated` });
+    };
+
     const setInput = (object) => setInputs((oldState) => ({ ...oldState, ...object }));
     const resetErrors = () => setErrors({});
 
@@ -112,6 +116,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
                         await handleChangeLoginPassword({ api, newPassword: inputs.newPassword, totp: inputs.totp });
                         await api(lockSensitiveSettings());
 
+                        notifySuccess();
                         onClose();
                     } catch (e) {
                         setLoading(false);
@@ -180,6 +185,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
                         await api(lockSensitiveSettings());
                         await call();
 
+                        notifySuccess();
                         onClose();
                     } catch (e) {
                         setLoading(false);
@@ -231,7 +237,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
                 authentication.setPassword(keyPassword);
                 await api(lockSensitiveSettings());
                 await call();
-                createNotification({ text: c('Success').t`Password updated` });
+
+                notifySuccess();
                 onClose();
             } catch (e) {
                 setLoading(false);
