@@ -20,7 +20,7 @@ function navigationItem(
         return dedentTpl(`<a href="${$state.href(
             state,
             opt
-        )}" title="${label}" data-label="${label}" data-state="${key}" class="navigation__link w100" ${dropzone}>
+        )}" title="${label}" data-label="${label}" data-state="${key}" class="navigation__link w100" ${dropzone} internal-link>
                 <span class="flex">
                     <icon data-name="${icon}" data-size="16" class="mr0-5 flex-item-centered-vert fill-white"></icon>
                     <span class="navigationItem-title">${label}</span>

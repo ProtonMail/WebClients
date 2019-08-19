@@ -972,5 +972,9 @@ export default angular
             return $state.href(stateName);
         });
 
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: true,
+            rewriteLinks: 'internal-link' // If we set href="xxx" for internal state we need to have this attribute internal-link else angular ignores it.
+        });
     }).name;

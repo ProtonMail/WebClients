@@ -142,6 +142,12 @@ angular
 
             if (toState.name.includes('.contacts')) {
                 const url = ['contacts', toStateParam.id].filter(Boolean).join('/');
+
+                // If no ui-sref we don't want the interceptor to run else, infinite loop.
+                if (document.location.pathname === `/${url}`) {
+                    return;
+                }
+
                 return document.location.assign(`${document.location.origin}/${url}`);
             }
 
