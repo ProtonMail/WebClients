@@ -64,7 +64,7 @@ function notification() {
                 if (options.undo) {
                     const content = sanitize.input(message);
                     options.onClick = options.undo;
-                    options.messageTemplate = `<div>${content} <a href="#">${I18N.UNDO}</a></div>`;
+                    options.messageTemplate = `<div>${content} <a href="#" internal-link>${I18N.UNDO}</a></div>`;
                 }
 
                 notify({ message, ...options, onClose });
