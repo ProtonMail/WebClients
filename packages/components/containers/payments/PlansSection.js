@@ -33,7 +33,7 @@ import { mergePlansMap, getCheckParams, isBundleEligible } from './subscription/
 import UpgradeModal from './subscription/UpgradeModal';
 
 const { MAIL } = PLAN_SERVICES;
-const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
+const { MONTHLY, YEARLY } = CYCLE;
 
 const PlansSection = () => {
     const { call } = useEventManager();
@@ -181,11 +181,7 @@ const PlansSection = () => {
                                                 <CurrencySelector currency={currency} onSelect={setCurrency} />
                                             </div>
                                             <div>
-                                                <CycleSelector
-                                                    cycle={cycle}
-                                                    onSelect={setCycle}
-                                                    twoYear={subscription.Cycle === TWO_YEARS}
-                                                />
+                                                <CycleSelector cycle={cycle} onSelect={setCycle} />
                                             </div>
                                         </div>
                                     </Tooltip>
