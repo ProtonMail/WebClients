@@ -6,7 +6,15 @@ const OPENPGP_FILES = ['openpgp/dist/openpgp.min.js', 'openpgp/dist/compat/openp
 
 const OPENPGP_WORKERS = ['openpgp/dist/openpgp.worker.min.js'].map(bindNodeModulesPrefix);
 
-const BABEL_INCLUDE_NODE_MODULES = ['asmcrypto.js', 'pmcrypto', 'proton-pack', 'pm-srp', 'react-components'];
+const BABEL_INCLUDE_NODE_MODULES = [
+    'asmcrypto.js',
+    'pmcrypto',
+    'proton-pack',
+    'proton-shared',
+    'sieve.js',
+    'pm-srp',
+    'react-components'
+];
 const BABEL_EXCLUDE_FILES = ['mailparser.js'];
 
 module.exports = {
