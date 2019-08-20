@@ -38,7 +38,7 @@ const DashboardContainer = () => {
         <Page config={getDashboardPage()}>
             <PlansSection />
             <SubscriptionSection currentApp={APPS.PROTONVPN_SETTINGS} />
-            <BillingSection />
+            <BillingSection currentApp={APPS.PROTONVPN_SETTINGS} />
         </Page>
     );
 };
