@@ -38,7 +38,7 @@ const AppsSidebar = ({ currentApp = '', items = [] }) => {
                 })}
                 <li className="flex-item-fluid" />
                 {items.map((item, index) => (
-                    <li key={index} className="mb0-5">
+                    <li key={`${index}`} className="mb0-5">
                         {item}
                     </li>
                 ))}
@@ -49,12 +49,7 @@ const AppsSidebar = ({ currentApp = '', items = [] }) => {
 
 AppsSidebar.propTypes = {
     currentApp: PropTypes.string,
-    items: PropTypes.arrayOf(
-        PropTypes.shape({
-            item: PropTypes.node.isRequired,
-            key: PropTypes.string.isRequired
-        }).isRequired
-    )
+    items: PropTypes.arrayOf(PropTypes.node)
 };
 
 export default AppsSidebar;
