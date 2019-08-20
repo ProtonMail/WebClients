@@ -116,6 +116,9 @@ Each `deploy-<NAME>` will be available at `<NAME>.protonmail.com`.
 - `--no-calendar`: Do not build the subproject proton-calendar
 - `--no-contacts`: Do not build the subproject proton-contacts
 - `--no-settings`: Do not build the subproject protonmail-settings
+- `--remote-pm-settings`: Build protonmail-settings from the git repository (_no need to have a local copy_)
+- `--remote-calendar`: Build proton-calendar from the git repository (_no need to have a local copy_)
+- `--remote-contacts`: Build proton-contacts from the git repository (_no need to have a local copy_)
 
 ## I18n à la demande
 

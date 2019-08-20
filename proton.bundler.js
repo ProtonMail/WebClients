@@ -168,6 +168,10 @@ function main(argv) {
             });
         }
 
+        const suffixRemote = (target) => {
+            return argv[`remote-${target}`] ? '(remote)' : '(local)';
+        };
+
         return {
             customConfigSetup: [
                 {
@@ -191,7 +195,7 @@ function main(argv) {
             ],
             hookPostTaskBuild: [
                 {
-                    title: 'Build the settings application',
+                    title: `Build the settings application ${suffixRemote('pm-settings')}`,
                     skip() {
                         if (argv.settings === false) {
                             return 'Flag --no-settings inside the command.';
@@ -199,11 +203,12 @@ function main(argv) {
                     },
                     task() {
                         const args = process.argv.slice(3);
+
                         return bash('npm', ['run', 'build:subproject', '--', '--deploy-subproject=settings', ...args]);
                     }
                 },
                 {
-                    title: 'Build the contacts application',
+                    title: `Build the contacts application ${suffixRemote('contacts')}`,
                     skip() {
                         if (argv.contacts === false) {
                             return 'Flag --no-contact inside the command.';
@@ -216,6 +221,7 @@ function main(argv) {
                 },
                 {
                     title: 'Build the calendar application',
+                    title: `Build the calendar application ${suffixRemote('calendar')}`,
                     skip() {
                         if (argv.calendar === false) {
                             return 'Flag --no-calendar inside the command.';

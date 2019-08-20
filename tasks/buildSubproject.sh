@@ -43,33 +43,59 @@ API="${API_FLAG:-build}";
 SETTINGS_DIST_DIR="dist/settings";
 CONTACTS_DIST_DIR="dist/contacts";
 CALENDAR_DIST_DIR="dist/calendar";
+ARGS="$*";
+
+function getRemote {
+    echo "[clone] from git@github.com:ProtonMail/$1.git" >> build.log;
+    cd /tmp;
+    rm -rf "/tmp/$1";
+    git clone --depth 1 "git@github.com:ProtonMail/$1.git";
+}
+
+function loadProject {
+    if [[ "$ARGS" =~ "$1" ]]; then
+        echo "[load.project] remote $2" >> build.log;
+        getRemote "$2";
+        cd "/tmp/$2";
+    else
+        echo "[load.project] local $2" >> build.log;
+        cd "$ROOT_DIR/$2";
+    fi
+}
 
 function addSubProject {
-    cd "$ROOT_DIR/$1";
 
     if [ ! -d "./node_modules/react" ]; then
-        npm ci;
+        if [[ -f "./package-lock.json" ]]; then
+            npm ci;
+        else
+            npm i;
+        fi;
     fi
 
     rm -rf dist;
+    echo $(pwd)
     npm run build -- $@ "--api=$API"
-    cp -r dist/ "$WEBCLIENT_DIR/$2";
+    cp -r dist/ "$WEBCLIENT_DIR/$1";
 }
 
+
 echo "[sub.build] $@" >> build.log;
-echo "[sub.build.api] $API" >> build.log;
 
 if [[ "$*" == *--deploy-subproject=settings* ]]; then
     echo "[build] settings" >> build.log;
-    addSubProject "${SETTINGS_APP:-protonmail-settings}" "$SETTINGS_DIST_DIR";
+    loadProject "--remote-pm-settings" "${SETTINGS_APP:-protonmail-settings}";
+    addSubProject "$SETTINGS_DIST_DIR";
 fi
 
 if [[ "$*" == *--deploy-subproject=contacts* ]]; then
     echo "[build] contacts" >> build.log;
-    addSubProject "${CONTACTS_APP:-proton-contacts}" "$CONTACTS_DIST_DIR" ;
+    loadProject "--remote-contacts" "${CONTACTS_APP:-protonmail-contacts}";
+    addSubProject "$CONTACTS_DIST_DIR";
 fi
 
 if [[ "$*" == *--deploy-subproject=calendar* ]]; then
     echo "[build] calendar" >> build.log;
-    addSubProject "${CALENDAR_APP:-proton-calendar}" "$CALENDAR_DIST_DIR";
+    loadProject "--remote-calendar" "${CALENDAR_APP:-proton-calendar}";
+    addSubProject "$CALENDAR_DIST_DIR";
 fi
