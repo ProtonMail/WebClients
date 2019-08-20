@@ -8,10 +8,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const SriPlugin = require('webpack-subresource-integrity');
+const WebappWebpackPlugin = require('webapp-webpack-plugin');
 
 const { getSource } = require('./helpers/source');
 const transformOpenpgpFiles = require('./helpers/openpgp');
 const { OPENPGP_FILES, OPENPGP_WORKERS } = require('./constants');
+const { logo, ...logoConfig } = require(getSource('src/assets/logoConfig.js'));
 
 const HTML_MINIFY = {
     removeAttributeQuotes: true,
@@ -89,6 +91,11 @@ module.exports = ({ isProduction, publicPath, appMode }) => {
             template: getSource('src/app.ejs'),
             inject: 'body',
             minify: isProduction && HTML_MINIFY
+        }),
+
+        new WebappWebpackPlugin({
+            logo: getSource(logo),
+            ...logoConfig
         }),
 
         new SriPlugin({
