@@ -46,7 +46,7 @@ const OpenVPNConfigurationSection = () => {
     const { request } = useApiWithoutResult(getVPNServerConfig);
     const { loading, result = {} } = useApiResult(queryVPNLogicalServerInfo, []);
     const { result: vpnResult = {}, loading: vpnLoading } = useUserVPN();
-    const { hasPaidVPN } = useUser();
+    const [{ hasPaidVpn }] = useUser();
 
     const userVPN = vpnResult.VPN;
     const isBasicVPN = userVPN && userVPN.PlanName === 'vpnbasic';
@@ -89,10 +89,10 @@ const OpenVPNConfigurationSection = () => {
         allServers.filter(({ Tier }) => Tier === 1)
     ).map((groups) => minBy(({ Load }) => Number(Load), groups));
 
-    const isUpgradeRequiredForSecureCore = () => !userVPN || !hasPaidVPN || isBasicVPN;
-    const isUpgradeRequiredForCountries = () => !userVPN || !hasPaidVPN;
+    const isUpgradeRequiredForSecureCore = () => !userVPN || !hasPaidVpn || isBasicVPN;
+    const isUpgradeRequiredForCountries = () => !userVPN || !hasPaidVpn;
     const isUpgradeRequiredForDownloadAll =
-        !userVPN || (!hasPaidVPN && category !== CATEGORY.SERVER) || (isBasicVPN && category === CATEGORY.SECURE_CORE);
+        !userVPN || !hasPaidVpn || (isBasicVPN && category === CATEGORY.SECURE_CORE);
 
     return (
         <>
