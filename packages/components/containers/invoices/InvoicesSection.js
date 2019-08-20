@@ -16,7 +16,8 @@ import {
     TableRow,
     Time,
     useModals,
-    useSubscription
+    useSubscription,
+    useUser
 } from 'react-components';
 import { queryInvoices } from 'proton-shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE } from 'proton-shared/lib/constants';
@@ -29,6 +30,7 @@ import InvoiceActions from './InvoiceActions';
 import InvoiceTextModal from './InvoiceTextModal';
 
 const InvoicesSection = () => {
+    const [user] = useUser();
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
     const [{ isManagedByMozilla } = {}] = useSubscription();
@@ -70,15 +72,18 @@ const InvoicesSection = () => {
             ) : null}
             <Block className="flex flex-spacebetween">
                 <div>
-                    <Group className="mr1">
-                        <ButtonGroup className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>{c(
-                            'Action'
-                        ).t`User`}</ButtonGroup>
-                        <ButtonGroup
-                            className={owner === ORGANIZATION ? 'is-active' : ''}
-                            onClick={handleOwner(ORGANIZATION)}
-                        >{c('Action').t`Organization`}</ButtonGroup>
-                    </Group>
+                    {user.isPaid ? (
+                        <Group className="mr1">
+                            <ButtonGroup className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>{c(
+                                'Action'
+                            ).t`User`}</ButtonGroup>
+                            ?{' '}
+                            <ButtonGroup
+                                className={owner === ORGANIZATION ? 'is-active' : ''}
+                                onClick={handleOwner(ORGANIZATION)}
+                            >{c('Action').t`Organization`}</ButtonGroup>
+                        </Group>
+                    ) : null}
                     <Button onClick={handleOpenModal}>{c('Action').t`Customize`}</Button>
                 </div>
                 <Pagination
