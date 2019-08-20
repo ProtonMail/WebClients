@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { reportBug } from 'proton-shared/lib/api/reports';
-
+import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import {
     FormModal,
@@ -25,30 +25,53 @@ import {
 import AttachScreenshot from './AttachScreenshot';
 import { collectInfo, getClient } from '../../helpers/report';
 
-const defaultTitles = [
-    'Login problem',
-    'Sign up problem',
-    'Bridge problem',
-    'Import / export problem',
-    'Custom domains problem',
-    'Payments problem',
-    'Connection problem',
-    'Slow speed problem',
-    'VPN problem',
-    'Feature request',
-    'Other'
-];
+const { PROTONMAIL, PROTONVPN_SETTINGS } = APPS;
 
-const BugModal = ({ onClose, username: Username = '', addresses = [], titles = defaultTitles, ...rest }) => {
+const BugModal = ({ currentApp = PROTONMAIL, onClose, username: Username = '', addresses = [], ...rest }) => {
+    const mailTitles = [
+        { value: 'Login problem', text: c('Bug category').t`Login problem` },
+        { value: 'Sign up problem', text: c('Bug category').t`Sign up problem` },
+        { value: 'Bridge problem', text: c('Bug category').t`Bridge problem` },
+        { value: 'Import / export problem', text: c('Bug category').t`Import / export problem` },
+        { value: 'Custom domains problem', text: c('Bug category').t`Custom domains problem` },
+        { value: 'Payments problem', text: c('Bug category').t`Payments problem` },
+        { value: 'Connection problem', text: c('Bug category').t`Connection problem` },
+        { value: 'Slow speed problem', text: c('Bug category').t`Slow speed problem` },
+        { value: 'VPN problem', text: c('Bug category').t`VPN problem` },
+        { value: 'Feature request', text: c('Bug category').t`Feature request` },
+        { value: 'Other', text: c('Bug category').t`Other` }
+    ];
+
+    const vpnTitles = [
+        { value: 'Login problem', text: c('Bug category').t`Login problem` },
+        { value: 'Signup problem', text: c('Bug category').t`Signup problem` },
+        { value: 'Payments problem', text: c('Bug category').t`Payments problem` },
+        { value: 'Installation problem', text: c('Bug category').t`Installation problem` },
+        { value: 'Update problem', text: c('Bug category').t`Update problem` },
+        { value: 'Application problem', text: c('Bug category').t`Application problem` },
+        { value: 'Connection problem', text: c('Bug category').t`Connection problem` },
+        { value: 'Speed problem', text: c('Bug category').t`Speed problem` },
+        { value: 'Manual setup problem', text: c('Bug category').t`Manual setup problem` },
+        { value: 'Website access problem', text: c('Bug category').t`Website access problem` },
+        { value: 'Streaming problem', text: c('Bug category').t`Streaming problem` },
+        { value: 'Feature request', text: c('Bug category').t`Feature request` }
+    ];
+
+    const titles = currentApp === PROTONVPN_SETTINGS ? vpnTitles : mailTitles;
+    const criticalEmail = currentApp === PROTONVPN_SETTINGS ? 'contact@protonvpn.com' : 'security@protonmail.com';
+    const clearCacheLink =
+        currentApp === PROTONVPN_SETTINGS
+            ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
+            : 'https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/';
     const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
     const Client = getClient(CLIENT_ID);
     const { createNotification } = useNotifications();
     const [{ Email = '' } = {}] = addresses;
     const options = titles.reduce(
-        (acc, title) => {
+        (acc, { text, value }) => {
             acc.push({
-                text: title,
-                value: `[${Client}] Bug [${location.path}] ${title}`
+                text,
+                value: `[${Client}] Bug [${location.path}] ${value}`
             });
             return acc;
         },
@@ -67,12 +90,7 @@ const BugModal = ({ onClose, username: Username = '', addresses = [], titles = d
     const { state: showDetails, toggle: toggleDetails } = useToggle(false);
     const [images, setImages] = useState([]);
     const { request, loading } = useApiWithoutResult(reportBug);
-    const link = (
-        <Href
-            key="linkClearCache"
-            url="https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/"
-        >{c('Link').t`clearing your browser cache`}</Href>
-    );
+    const link = <Href key="linkClearCache" url={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
     const handleChange = (key) => ({ target }) => update({ ...model, [key]: target.value });
 
     const getParameters = () => {
@@ -216,16 +234,16 @@ const BugModal = ({ onClose, username: Username = '', addresses = [], titles = d
                     </Row>
                 </>
             ) : null}
-            <Alert>{c('Info').t`Contact us at security@protonmail.com for critical security issues.`}</Alert>
+            <Alert>{c('Info').t`Contact us at ${criticalEmail} for critical security issues.`}</Alert>
         </FormModal>
     );
 };
 
 BugModal.propTypes = {
+    currentApp: PropTypes.string,
     onClose: PropTypes.func,
     username: PropTypes.string,
-    addresses: PropTypes.array,
-    titles: PropTypes.array
+    addresses: PropTypes.array
 };
 
 export default BugModal;

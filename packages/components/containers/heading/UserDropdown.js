@@ -34,7 +34,7 @@ const UserDropdown = ({ currentApp = '', ...rest }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
 
     const handleBugReportClick = () => {
-        createModal(<BugModal />);
+        createModal(<BugModal currentApp={currentApp} />);
     };
 
     const handleSupportUsClick = () => {
