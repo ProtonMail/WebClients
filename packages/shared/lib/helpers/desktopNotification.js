@@ -6,12 +6,12 @@ import { noop } from './function';
  * To find out whether or not Push has permission to show notifications
  * @returns {Boolean}
  */
-export const isEnabled = Push.Permission.has;
+export const isEnabled = () => Push.Permission.has();
 
 /**
  * Clear all open notifications
  */
-export const clear = Push.clear();
+export const clear = () => Push.clear();
 
 /**
  * Request notification permission
@@ -37,7 +37,7 @@ export const request = (onGranted = noop, onDenied = noop) => {
  * @returns {Promise(notification)} notification.close();
  */
 export const create = async (title = '', params = {}) => {
-    if (isEnabled()) {
+    if (!isEnabled()) {
         return;
     }
     return Push.create(title, params);
