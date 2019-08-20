@@ -8,11 +8,14 @@ import {
     useUser,
     Loader,
     AppsSidebar,
-    useCalendarSettings
+    useCalendarSettings,
+    StorageSpaceStatus,
+    Href
 } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
+import { c } from 'ttag';
 
 // If you use the default popups, use this.
 import 'tui-date-picker/dist/tui-date-picker.css';
@@ -227,7 +230,16 @@ const CalendarContainer = () => {
 
     return (
         <div className="flex flex-nowrap no-scroll">
-            <AppsSidebar currentApp={APPS.PROTONCALENDAR} />
+            <AppsSidebar
+                currentApp={APPS.PROTONCALENDAR}
+                items={[
+                    <StorageSpaceStatus key="storage">
+                        <Href url="/settings/subscription" className="pm-button pm-button--primary">
+                            {c('Action').t`Upgrade`}
+                        </Href>
+                    </StorageSpaceStatus>
+                ]}
+            />
             <div className="content flex-item-fluid reset4print">
                 <PrivateHeader />
                 <div className="flex flex-nowrap">
