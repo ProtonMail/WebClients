@@ -26,9 +26,9 @@ const PlansTable = ({
                 <tr>
                     <th />
                     <th className="aligncenter">FREE</th>
-                    <th className="aligncenter">BASIC</th>
-                    <th className="aligncenter">PLUS</th>
-                    <th className="aligncenter">VISIONARY</th>
+                    <th className="aligncenter color-vpnbasic">BASIC</th>
+                    <th className="aligncenter color-vpnplus">PLUS</th>
+                    <th className="aligncenter color-visionary">VISIONARY</th>
                 </tr>
             </thead>
             <tbody>
