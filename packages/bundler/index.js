@@ -9,7 +9,7 @@ const moment = require('moment');
 const argv = require('minimist')(process.argv.slice(2), {
     string: ['appMode'],
     boolean: ['lint', 'i18n'],
-    default: { lint: true, i18n: false, appMode: 'bundle' }
+    default: { lint: true, i18n: true, localize: false, appMode: 'bundle' }
 });
 
 const { debug, success, error, about } = require('./lib/helpers/log')('proton-bundler');
@@ -21,7 +21,7 @@ const {
 } = require('./lib/custom');
 const { pull, push, getConfig, logCommits } = require('./lib/git');
 
-const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode }) => {
+const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI18n }) => {
     const { EXTERNAL_FILES = ['.htaccess'] } = customConfig;
     const { hookPreTasks, hookPostTasks, hookPostTaskClone, hookPostTaskBuild, customConfigSetup } = getCustomHooks(
         customTasks({
@@ -29,7 +29,8 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode }) => 
             isCI,
             flowType,
             appMode,
-            forceI18n
+            forceI18n,
+            runI18n
         })
     );
 
@@ -92,7 +93,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode }) => 
         },
         {
             title: 'Upgrade translations inside the app',
-            enabled: () => forceI18n || (!isCI && /prod|beta/.test(branch)),
+            enabled: () => forceI18n || (runI18n && !isCI && /prod|beta/.test(branch)),
             task() {
                 return execa('npm', ['run', 'i18n:getlatest']);
             }
@@ -116,7 +117,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode }) => 
         },
         {
             title: 'Update crowdin with latest translations',
-            enabled: () => !isCI && /prod|beta/.test(branch),
+            enabled: () => runI18n && !isCI && /prod|beta/.test(branch),
             task() {
                 return execa('npm', ['run', 'i18n:upgrade']);
             }
@@ -148,7 +149,8 @@ async function main() {
     const isCI = process.env.NODE_ENV_DIST === 'ci';
     const branch = argv.branch;
     const flowType = argv.flow;
-    const forceI18n = argv.i18n;
+    const runI18n = argv.i18n;
+    const forceI18n = argv.localize;
     const appMode = argv.appMode;
 
     debug({ customConfig, argv });
@@ -170,7 +172,7 @@ async function main() {
     });
 
     const start = moment(Date.now());
-    const listTasks = getTasks(branch, { isCI, flowType, forceI18n, appMode });
+    const listTasks = getTasks(branch, { isCI, flowType, forceI18n, appMode, runI18n });
     const tasks = new Listr(listTasks, {
         renderer: UpdaterRenderer,
         collapse: false

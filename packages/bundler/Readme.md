@@ -37,8 +37,9 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--i18n> <--appMo
 - `--branch`: **Mandatory** ex: deploy-settings 
 - `--api`: Typeof branch to deploy (dev/beta/build/etc.)
 - `--flow`: Type of flow (_Usefull only for WebClient_)
-- `--i18n`: To force the upgrade i18n task inside the app during any deploy (default only for prod/beta if not ci)
+- `--localize`: To force the upgrade i18n task inside the app during any deploy (default only for prod/beta if not ci and not with --no-i18n)
 - `--no-lint`: Ignore lint task on deploy
+- `--no-i18n`: Ignore i18n tasks on deploy
 - `--appMode`: Type of bundle for the app (ex: standalone is an option for protonmail-settings)
 - `--default-branch`: Default master, What's the default branch on your repository (usually master, usefull for the package-lock update)
 
@@ -49,7 +50,7 @@ You can create a custom deploy task by using a file `proton.bundler.js` at the r
 
 ### Commands
 
-#### Lint the app
+#### Lint the app (to ignore --no-lint)
 
 You must have `$ npm run lint` available inside your app
 
@@ -57,7 +58,7 @@ You must have `$ npm run lint` available inside your app
 
 You must have `$ npm run build` available inside your app
 
-#### Sync i18n
+#### Sync i18n (to ignore --no-i18n)
 
 You must have `$ npm run i18n:getlatest` available inside your app.
 You must have `$ npm run i18n:upgrade` available inside your app.
@@ -93,7 +94,8 @@ deployConfig:
 - `appMode: <String>` ~ Type of app we build, standalone or bundle (default)
 - `isCI: <Boolean>`
 - `flowType: <String>` ~ Type of deploy ('single', or 'many')
-- `forceI18n: <Boolean>`
+- `forceI18n: <Boolean>` ~ Force run the i18n task
+- `runI18n: <Boolean>` ~ Should we run the i18n tasks ?
 
 We have a context available for tasks inside ( _hookPostTasks, hookPostTaskClone, hookPostTaskBuild_ ):
 
