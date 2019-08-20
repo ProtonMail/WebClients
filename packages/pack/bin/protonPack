@@ -8,7 +8,7 @@ const localIp = require('my-local-ip');
 
 const configBuilder = require('../cli/config');
 const configAppBuilder = require('../cli/configApp');
-const { json } = require('../cli/helpers/log');
+const { json, debug } = require('../cli/helpers/log');
 const { script } = require('../cli/helpers/cli');
 const { getPort, getPublicPath, findPort } = require('../webpack/helpers/source');
 
@@ -26,6 +26,7 @@ async function main() {
 
     // For any task BUT init we need to create a custom config for the app
     if (!is('init') && !is('help') && !is('print-config')) {
+        debug(appConfig, 'app config');
         await fs.writeFile(appConfigPath, appConfig);
         await script('checkDep.sh');
     }

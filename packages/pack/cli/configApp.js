@@ -2,7 +2,8 @@ const path = require('path');
 const dedent = require('dedent');
 const argv = require('minimist')(process.argv.slice(2));
 
-const { warn } = require('./helpers/log');
+const { warn, error } = require('./helpers/log');
+const prepareSentry = require('./helpers/sentry');
 
 const isSilent = argv._.includes('help') || argv._.includes('init') || argv._.includes('print-config');
 
@@ -17,6 +18,9 @@ const readJSON = (file) => {
         return require(path.join(process.cwd(), fileName));
     } catch (e) {
         !isSilent && warn(`Missing file ${fileName}`);
+        if (/SyntaxError/.test(e.stack)) {
+            error(e);
+        }
     }
 };
 
@@ -70,6 +74,8 @@ function main({ api = 'dev' }) {
         apiUrl
     };
 
+    const { SENTRY_RELEASE = '', SENTRY_DSN = '' } = prepareSentry(ENV_CONFIG, json, api);
+
     const config = dedent`
     export const CLIENT_ID = '${json.clientId}';
     export const CLIENT_TYPE = '${ENV_CONFIG.app.clientType || 1}';
@@ -80,6 +86,8 @@ function main({ api = 'dev' }) {
     export const DATE_VERSION = '${new Date().toGMTString()}';
     export const CHANGELOG_PATH = 'assets/changelog.tpl.html';
     export const VERSION_PATH = 'assets/version.json';
+    export const SENTRY_RELEASE = '${SENTRY_RELEASE}';
+    export const SENTRY_DSN = '${SENTRY_DSN}';
     `;
 
     return {

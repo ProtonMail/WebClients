@@ -1,4 +1,5 @@
 const chalk = require('chalk');
+const argv = require('minimist')(process.argv.slice(2));
 
 const SCOPE = '[proton-pack]';
 
@@ -21,7 +22,7 @@ const success = (msg, { time, space = false } = {}) => {
 
 const json = (data) => {
     console.log();
-    console.log(JSON.stringify(data, null, 2));
+    console.log(JSON.stringify(data, null, 2).trim());
     console.log();
 };
 
@@ -33,9 +34,22 @@ const error = (e) => {
     process.exit(1);
 };
 
+function debug(item, message = 'debug') {
+    if (!(argv.v || argv.verbose)) {
+        return;
+    }
+    if (Array.isArray(item) || typeof item === 'object') {
+        console.log(`${SCOPE} ${message}`);
+        return json(item);
+    }
+
+    console.log(`${SCOPE} ${message}\n`, item);
+}
+
 module.exports = {
     success,
     error,
     json,
+    debug,
     warn
 };

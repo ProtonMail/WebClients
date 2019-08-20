@@ -6,5 +6,6 @@ const script = (cli, args = []) => {
     const cmd = path.resolve(__dirname, '..', '..', 'scripts', cli);
     return bash(cmd, args);
 };
+const sync = (cli) => execa.sync(cli, { shell: true });
 
-module.exports = { bash, script };
+module.exports = { bash, script, sync };
