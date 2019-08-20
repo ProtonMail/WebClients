@@ -57,6 +57,14 @@ function loadProject {
         echo "[load.project] remote $2" >> build.log;
         getRemote "$2";
         cd "/tmp/$2";
+
+        # We need the env to be able to deploy
+        if [ -d "$ROOT_DIR/$2" ]; then
+            # No, no, no, no, no, no, no, no, no, no, no, no there's no limit
+            # https://www.youtube.com/watch?v=qM5W7Xn7FiA
+            cp $ROOT_DIR/$2/{appConfig,env}.json . 2>/dev/null || :
+        fi
+
     else
         echo "[load.project] local $2" >> build.log;
         cd "$ROOT_DIR/$2";
@@ -74,13 +82,13 @@ function addSubProject {
     fi
 
     rm -rf dist;
-    echo $(pwd)
     npm run build -- $@ "--api=$API"
     cp -r dist/ "$WEBCLIENT_DIR/$1";
 }
 
 
 echo "[sub.build] $@" >> build.log;
+echo "[sub.build] api:$API" >> build.log;
 
 if [[ "$*" == *--deploy-subproject=settings* ]]; then
     echo "[build] settings" >> build.log;
@@ -90,7 +98,7 @@ fi
 
 if [[ "$*" == *--deploy-subproject=contacts* ]]; then
     echo "[build] contacts" >> build.log;
-    loadProject "--remote-contacts" "${CONTACTS_APP:-protonmail-contacts}";
+    loadProject "--remote-contacts" "${CONTACTS_APP:-proton-contacts}";
     addSubProject "$CONTACTS_DIST_DIR";
 fi
 
