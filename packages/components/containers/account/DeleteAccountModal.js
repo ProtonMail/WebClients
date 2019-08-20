@@ -92,7 +92,7 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
         >
             <Alert type="warning">
                 <div className="bold uppercase">{c('Info').t`Warning: This also deletes all connected services`}</div>
-                <div>{c('Info').t`Example: ProtonContact ProtonVPN, ProtonWallet, ProtonDrive, ProtonCalendar`}</div>
+                <div>{c('Info').t`Example: ProtonMail, ProtonContact, ProtonVPN, ProtonDrive, ProtonCalendar`}</div>
             </Alert>
             <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/combine-accounts/">
                 <div className="bold uppercase">{c('Info').t`Warning: deletion is permanent`}</div>
