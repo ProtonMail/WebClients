@@ -47,7 +47,7 @@ section: design
           <p class="mt0-5 mb0-5">CSS classes:</p>
           <p class="mt0-5 mb0-5"><code class="border p0-25 rounded bg-{{ listColorsNames[forloop.index0] }} color-{{ colorText }}">.bg-{{ listColorsNames[forloop.index0] }}</code></p>
           <p class="mt0-5"><code class="border p0-25 rounded color-{{ listColorsNames[forloop.index0] }} bg-{{ colorText }}">.color-{{ listColorsNames[forloop.index0] }}</code></p>
-          
+
           <p class="mt0-5 mb0-5">For SVG bg<br> <code class="border p0-25 rounded bg-{{ listColorsNames[forloop.index0] }} color-{{ colorText }}">.fill-{{ listColorsNames[forloop.index0] }}</code></p>
           <p class="mt0-5">Sass:<br> <code class="border bg-global-border p0-25 rounded">{{ listSassVars[forloop.index0] }}</code></p>
 
@@ -64,10 +64,10 @@ section: design
 
 <h3>Plan colors</h3>
 <div class="flex pt2 mb2">
-{% assign listColorsPlans = "Visionary#Plus#Professional" | split: '#' %}
-{% assign listColorsRgbPlans = "6ddcfb#c6e422#d4b46e" | split: '#' %}
-{% assign listColorsNamesPlans = "visionary#plus#professional" | split: '#' %}
-{% assign listSassVarsPlans = "$visionary#$plus#$professional" | split: '#' %}
+{% assign listColorsPlans = "Visionary#Plus#Professional#VPNBasic#VPNPlus" | split: '#' %}
+{% assign listColorsRgbPlans = "6ddcfb#c6e422#d4b46e#f67f60#9ccc23" | split: '#' %}
+{% assign listColorsNamesPlans = "visionary#plus#professional#vpnbasic#vpnplus" | split: '#' %}
+{% assign listSassVarsPlans = "$visionary#$plus#$professional#$vpnbasic#$vpnplus" | split: '#' %}
 {% for color in listColorsPlans %}
 <div class="w33 colortile pr1 pb1">
 <div class="flex flex-nowrap bordered-container p1 h100">
@@ -79,7 +79,7 @@ section: design
       <p class="mt0-5 mb0-5">CSS classes:</p>
       <p class="mt0-5 mb0-5"><code class="border p0-25 rounded bg-{{ listColorsNamesPlans[forloop.index0] }} color-{{ colorText }}">.bg-{{ listColorsNamesPlans[forloop.index0] }}</code></p>
       <p class="mt0-5"><code class="border p0-25 rounded color-{{ listColorsNamesPlans[forloop.index0] }} bg-{{ colorText }}">.color-{{ listColorsNamesPlans[forloop.index0] }}</code></p>
-      
+
       <p class="mt0-5 mb0-5">For SVG bg<br> <code class="border p0-25 rounded bg-{{ listColorsNamesPlans[forloop.index0] }} color-{{ colorText }}">.fill-{{ listColorsNamesPlans[forloop.index0] }}</code></p>
       <p class="mt0-5">Sass:<br> <code class="border bg-global-border p0-25 rounded">{{ listSassVarsPlans[forloop.index0] }}</code></p>
 
@@ -113,7 +113,7 @@ section: design
           <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
             <use xlink:href="#shape-protonmail"></use>
           </svg>
-      </span> 
+      </span>
       <span class="col aligncenter">
           <button type="button" class="pv-button-green">Button</button>
           <br><br>
@@ -123,7 +123,7 @@ section: design
           <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
             <use xlink:href="#shape-protonvpn"></use>
           </svg>
-      </span> 
+      </span>
     </p>
 
   </div>
@@ -146,7 +146,7 @@ section: design
           <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
             <use xlink:href="#shape-protonmail"></use>
           </svg>
-      </span> 
+      </span>
       <span class="col aligncenter">
           <button type="button" class="pv-button-green">Button</button>
           <br><br>
@@ -156,7 +156,7 @@ section: design
           <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
             <use xlink:href="#shape-protonvpn"></use>
           </svg>
-      </span> 
+      </span>
     </p>
 
   </div>
@@ -179,7 +179,7 @@ section: design
           <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
             <use xlink:href="#shape-protonmail"></use>
           </svg>
-      </span> 
+      </span>
       <span class="col aligncenter">
           <button type="button" class="pv-button-green">Button</button>
           <br><br>
@@ -189,7 +189,7 @@ section: design
           <svg viewBox="0 0 16 16" class="icon-25p fill-white" aria-hidden="true" role="img" focusable="false">
             <use xlink:href="#shape-protonvpn"></use>
           </svg>
-      </span> 
+      </span>
     </p>
   </div>
   <div class="flex-item-fluid bg-global-light p1 color-tab">
@@ -211,7 +211,7 @@ section: design
           <svg viewBox="0 0 16 16" class="icon-25p fill-global-grey" aria-hidden="true" role="img" focusable="false">
             <use xlink:href="#shape-protonmail"></use>
           </svg>
-      </span> 
+      </span>
       <span class="col aligncenter">
           <button type="button" class="pv-button-green">Button</button>
           <br><br>
@@ -221,7 +221,7 @@ section: design
           <svg viewBox="0 0 16 16" class="icon-25p fill-global-grey" aria-hidden="true" role="img" focusable="false">
             <use xlink:href="#shape-protonvpn"></use>
           </svg>
-      </span> 
+      </span>
     </p>
   </div>
   <div class="flex-item-fluid bg-white p1 color-tab">
@@ -243,7 +243,7 @@ section: design
           <svg viewBox="0 0 16 16" class="icon-25p fill-global-grey" aria-hidden="true" role="img" focusable="false">
             <use xlink:href="#shape-protonmail"></use>
           </svg>
-      </span> 
+      </span>
       <span class="col aligncenter">
           <button type="button" class="pv-button-green">Button</button>
           <br><br>
@@ -253,7 +253,7 @@ section: design
           <svg viewBox="0 0 16 16" class="icon-25p fill-global-grey" aria-hidden="true" role="img" focusable="false">
             <use xlink:href="#shape-protonvpn"></use>
           </svg>
-      </span> 
+      </span>
     </p>
   </div>
 </div>

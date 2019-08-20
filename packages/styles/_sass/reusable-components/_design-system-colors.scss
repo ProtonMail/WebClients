@@ -62,8 +62,12 @@
 .bg-professional {
   background-color: $professional;
 }
-
-
+.bg-vpnbasic {
+  background-color: $vpnbasic;
+}
+.bg-vpnplus {
+  background-color: $vpnplus;
+}
 
 .fill-global-grey {
   fill: $pm-global-grey;
@@ -128,8 +132,12 @@
 .fill-professional {
   fill: $professional;
 }
-
-
+.fill-vpnbasic {
+  fill: $vpnbasic;
+}
+.fill-vpnplus {
+  fill: $vpnplus;
+}
 
 .color-global-grey {
   color: $pm-global-grey;
@@ -190,4 +198,10 @@
 }
 .color-professional {
   color: $professional;
+}
+.color-vpnbasic {
+  color: $vpnbasic;
+}
+.color-vpnplus {
+  color: $vpnplus;
 }

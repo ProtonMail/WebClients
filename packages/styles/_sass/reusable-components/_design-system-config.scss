@@ -46,6 +46,8 @@ $pv-green-light        : #5fb364 !default;
 $visionary             : #6ddcfb !default;
 $plus                  : #c6e422 !default;
 $professional          : #d4b46e !default;
+$vpnbasic              : #f67f60 !default;
+$vpnplus               : #9ccc23 !default;
 
 // not approved colors
 $pm-input-background   : #fcfdff !default;
@@ -56,7 +58,7 @@ $conversation-selected-bg: #e3e7f6 !default;
 $color-links           : $pm-blue !default;
 $color-hover           : $black !default;
 $color-hr              : $pm-global-border !default;
-$hr-height             : 1px !default; 
+$hr-height             : 1px !default;
 $color-alert           : $pm-global-warning !default;
 $color-bg-button       : $white !default;
 $color-txt-button      : $black !default;
@@ -87,7 +89,7 @@ $use-clearleft_right   : false !default;
 $use-clearhidden       : false !default;
 $use-clearfix          : false !default;
 
-// vertical rythm  
+// vertical rythm
 // possible values     : 'double_top_single_bottom',  'single_top', 'single_bottom'
 $vertical-rythm        : 'single_bottom' !default;
 
@@ -160,7 +162,7 @@ $conversations-column-width: 35% !default;  // used also to align search bar on 
   $other_coef: ceil($base-height * $base-font / $font-size);
   $height: ($base-font * $base-height / $font-size) ;
   $margin: ($height * $coef );
-    
+
   @if $type-vr == 'double_top_single_bottom' {
      @return ( ($margin * $other_coef)*1em 0 ( ($margin/2) * $other_coef) *1em 0 );
   }
@@ -197,7 +199,7 @@ $conversations-column-width: 35% !default;  // used also to align search bar on 
      font-size: rem($value);
   }
   line-height: line-height($value, $l-h, $base-font, $type-vr);
-  margin: margin-em($value, $l-h, $base-font, $type-vr) ;   
+  margin: margin-em($value, $l-h, $base-font, $type-vr) ;
 
 }
 
@@ -215,7 +217,7 @@ $conversations-column-width: 35% !default;  // used also to align search bar on 
      font-size: rem($value);
   }
   line-height: line-height($value, $l-h, $base-font, $type-vr);
-  margin: margin-em-other($value, $l-h, $base-font, $type-vr) ;   
+  margin: margin-em-other($value, $l-h, $base-font, $type-vr) ;
 
 }
 
@@ -274,9 +276,9 @@ $conversations-column-width: 35% !default;  // used also to align search bar on 
      @each $margin in $list-margin-values {
         //$temp_m : str-slice($margin-type, 0, 1);
         $temp_t : str-slice($margin-type, 2, 3);
-        
+
         $property: margin;
-        
+
         @if $temp_t == t {
            $property: margin-top;
         } @else if $temp_t == r {
@@ -286,27 +288,27 @@ $conversations-column-width: 35% !default;  // used also to align search bar on 
         } @else if $temp_t == l {
            $property: margin-left;
         }
-        
-        
+
+
         $value : $margin + 0em;
         /* #{$value} */
 
         @if $margin == 0 {
            $value : $margin;
-        } 
-        
+        }
+
         // convert to string
         $text-margin: $margin + '';
         // 1.5 = 1-5
         $property-class: str-replace($text-margin, '.', '-');
-        
+
         // . mr 1-5 { margin-right: 1.5em ;}
         .#{$prefix}#{$margin-type}#{$property-class} { #{$property}: #{$value}; }
-  
-  
+
+
         }
      }
-   
+
 }
 
 
@@ -322,9 +324,9 @@ $conversations-column-width: 35% !default;  // used also to align search bar on 
      @each $padding in $list-padding-values {
         //$temp_p : str-slice($padding-type, 0, 1);
         $temp_t : str-slice($padding-type, 2, 3);
-        
+
         $property: padding;
-        
+
         @if $temp_t == t {
            $property: padding-top;
         } @else if $temp_t == r {
@@ -334,27 +336,27 @@ $conversations-column-width: 35% !default;  // used also to align search bar on 
         } @else if $temp_t == l {
            $property: padding-left;
         }
-        
+
         $value : $padding + 0em;
         @if $padding == 0 {
            $value : $padding;
-        } 
-        
+        }
+
         // convert to string
         $text-padding: $padding + '';
         // 1.5 = 1-5
         $property-class: str-replace($text-padding, '.', '-');
-        
+
         .#{$prefix}#{$padding-type}#{$property-class} { #{$property}: #{$value}; }
-  
-  
+
+
         }
      }
 }
 
 
 //
-// Responsive management in em 
+// Responsive management in em
 //
 
 @mixin respond-to ($breakpoint, $query-type : 'max') {
@@ -363,20 +365,20 @@ $conversations-column-width: 35% !default;  // used also to align search bar on 
       @content;
     }
   }
- 
+
   @else if $query-type == "min" {
      @media (min-width: em($breakpoint, $root-default-font-size)) {
       @content;
     }
   }
- 
+
   @else  {
     @warn "Type non supported.";
   }
 }
 
 
-// 
+//
 // body::before: to get current breakpoint in JS
 //
 @mixin body-before ($value-content, $display-none : false) {
