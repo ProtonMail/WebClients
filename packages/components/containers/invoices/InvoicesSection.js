@@ -77,7 +77,6 @@ const InvoicesSection = () => {
                             <ButtonGroup className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>{c(
                                 'Action'
                             ).t`User`}</ButtonGroup>
-                            ?{' '}
                             <ButtonGroup
                                 className={owner === ORGANIZATION ? 'is-active' : ''}
                                 onClick={handleOwner(ORGANIZATION)}
