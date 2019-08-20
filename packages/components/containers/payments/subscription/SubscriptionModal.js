@@ -34,7 +34,7 @@ import Thanks from './Thanks';
 import { getCheckParams } from './helpers';
 import { handle3DS } from '../paymentTokenHelper';
 
-const { PROTONMAIL_SETTINGS } = APPS;
+const { PROTONMAIL_SETTINGS, PROTONVPN_SETTINGS } = APPS;
 
 const SubscriptionModal = ({
     currentApp = PROTONMAIL_SETTINGS,
@@ -220,8 +220,14 @@ const SubscriptionModal = ({
                         onValidCard={setCardValidity}
                         onPay={handleSubmit}
                     />
-                    <Alert type="warning" learnMore="https://protonmail.com/terms-and-conditions">{c('Info')
-                        .t`By clicking Next, you agree to abide by ProtonMail's terms and conditions.`}</Alert>
+                    <Alert
+                        type="warning"
+                        learnMore={
+                            currentApp === PROTONVPN_SETTINGS
+                                ? 'https://protonvpn.com/terms-and-conditions'
+                                : 'https://protonmail.com/terms-and-conditions'
+                        }
+                    >{c('Info').t`By clicking Next, you agree to abide by Proton's terms and conditions.`}</Alert>
                 </>
             ),
             onSubmit: () => {
