@@ -1,5 +1,6 @@
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from 'proton-shared/lib/constants';
 import { createToken, getTokenStatus } from 'proton-shared/lib/api/payments';
+import { isSafari } from 'proton-shared/lib/helpers/browser';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { c } from 'ttag';
 
@@ -11,7 +12,7 @@ const {
     STATUS_NOT_SUPPORTED
 } = PAYMENT_TOKEN_STATUS;
 
-const { CARD, PAYPAL } = PAYMENT_METHOD_TYPES;
+const { BITCOIN, CASH } = PAYMENT_METHOD_TYPES;
 
 const DELAY_PULLING = 5000;
 const DELAY_LISTENING = 1000;
@@ -101,7 +102,12 @@ const process = ({ ApprovalURL, Token, api, tab }) => {
                 .catch(reject);
         };
 
-        tab.location = ApprovalURL;
+        if (isSafari()) {
+            tab.location = ApprovalURL;
+        } else {
+            tab = window.open(ApprovalURL);
+        }
+
         window.addEventListener('message', onMessage, false);
         listen = true;
         listenTab();
@@ -121,21 +127,24 @@ const toParams = (params, Token) => {
 };
 
 export const handle3DS = async (params = {}, api) => {
+    let tab;
     const { Payment = {} } = params;
     const { Type } = Payment;
 
-    if (![CARD, PAYPAL].includes(Type)) {
+    if ([CASH, BITCOIN].includes(Type)) {
         return params;
     }
 
-    // We open a tab first because Safari is blocking by default tab if it's not a direct interaction
-    const tab = window.open(''); // It's important to keep it before await
+    if (isSafari()) {
+        // We open a tab first because Safari is blocking by default tab if it's not a direct interaction
+        tab = window.open('');
+    }
 
     try {
         const { Token, Status, ApprovalURL } = await api(createToken(params));
 
         if (Status === STATUS_CHARGEABLE) {
-            tab.close();
+            tab && tab.close();
             return toParams(params, Token);
         }
 
@@ -143,7 +152,7 @@ export const handle3DS = async (params = {}, api) => {
 
         return toParams(params, Token);
     } catch (error) {
-        tab.close();
+        tab && tab.close();
         throw error;
     }
 };
