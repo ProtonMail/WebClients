@@ -11,7 +11,7 @@ const Provider = ({ children }) => {
         if (isRTL) {
             document.documentElement.dir = 'rtl';
         } else {
-            document.documentElement.dir = undefined;
+            document.documentElement.dir = 'ltr';
         }
     }, [isRTL]);
 
