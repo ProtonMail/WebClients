@@ -3,10 +3,19 @@ import PropTypes from 'prop-types';
 import { Input } from 'react-components';
 import { isValid } from 'proton-shared/lib/helpers/giftCode';
 import { c } from 'ttag';
+import { GIFT_CODE_LENGTH } from 'proton-shared/lib/constants';
 
 const GiftCodeInput = ({ value, ...rest }) => {
     const error = isValid(value) ? undefined : c('Error').t`Invalid gift code`;
-    return <Input placeholder="AAAA-BBBB-CCCC-DDDD" error={error} {...rest} />;
+    return (
+        <Input
+            maxlength={GIFT_CODE_LENGTH}
+            minlength={GIFT_CODE_LENGTH}
+            placeholder="AAAA-BBBB-CCCC-DDDD"
+            error={error}
+            {...rest}
+        />
+    );
 };
 
 GiftCodeInput.propTypes = {
