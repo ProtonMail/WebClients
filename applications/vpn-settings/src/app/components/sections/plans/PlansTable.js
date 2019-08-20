@@ -40,11 +40,7 @@ const PlansTable = ({
                                     <CurrencySelector currency={currency} onSelect={updateCurrency} />
                                 </div>
                                 <div>
-                                    <CycleSelector
-                                        cycle={cycle}
-                                        onSelect={updateCycle}
-                                        twoYear={subscription.Cycle === TWO_YEARS}
-                                    />
+                                    <CycleSelector cycle={cycle} onSelect={updateCycle} twoYear={true} />
                                 </div>
                             </div>
                         </Tooltip>
