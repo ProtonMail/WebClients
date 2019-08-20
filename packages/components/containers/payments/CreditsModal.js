@@ -13,7 +13,7 @@ import {
     useApi
 } from 'react-components';
 import { buyCredit } from 'proton-shared/lib/api/payments';
-import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT } from 'proton-shared/lib/constants';
+import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT, APPS } from 'proton-shared/lib/constants';
 
 import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
@@ -26,7 +26,9 @@ const getCurrenciesI18N = () => ({
     USD: c('Monetary unit').t`Dollar`
 });
 
-const CreditsModal = ({ onClose, ...rest }) => {
+const { PROTONVPN_SETTINGS, PROTONMAIL_SETTINGS } = APPS;
+
+const CreditsModal = ({ currentApp = PROTONMAIL_SETTINGS, onClose, ...rest }) => {
     const api = useApi();
     const { call } = useEventManager();
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
@@ -58,7 +60,13 @@ const CreditsModal = ({ onClose, ...rest }) => {
             {...rest}
         >
             <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/credit-proration/">{c('Info')
+            <Alert
+                learnMore={
+                    currentApp === PROTONVPN_SETTINGS
+                        ? 'https://protonvpn.com/support/vpn-credit-proration/'
+                        : 'https://protonmail.com/support/knowledge-base/credit-proration/'
+                }
+            >{c('Info')
                 .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}</Alert>
             <Row>
                 <Label>{c('Label').t`Amount`}</Label>
@@ -87,6 +95,7 @@ const CreditsModal = ({ onClose, ...rest }) => {
 };
 
 CreditsModal.propTypes = {
+    currentApp: PropTypes.string,
     onClose: PropTypes.func
 };
 
