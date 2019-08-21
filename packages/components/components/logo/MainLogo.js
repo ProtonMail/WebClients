@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSubscription, Href, useConfig } from 'react-components';
+import { Link } from 'react-router-dom';
 
 import { formatPlans } from '../../containers/payments/subscription/helpers';
 import { APPS } from 'proton-shared/lib/constants';
@@ -10,9 +11,15 @@ import VpnLogo from './VpnLogo';
 
 const { PROTONMAIL, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR, PROTONVPN_SETTINGS, PROTONMAIL_SETTINGS } = APPS;
 
-const MainLogo = ({ url = 'https://mail.protonmail.com/' }) => {
+/**
+ * MainLogo component
+ * @param {String} url
+ * @param {Boolean} external true for external link
+ */
+const MainLogo = ({ url = '/inbox', external = false }) => {
     const { APP_NAME } = useConfig();
     const [{ Plans } = {}] = useSubscription();
+    const className = 'logo-container nodecoration flex-item-centered-vert';
 
     const { mailPlan = {}, vpnPlan = {} } = formatPlans(Plans);
 
@@ -27,15 +34,24 @@ const MainLogo = ({ url = 'https://mail.protonmail.com/' }) => {
         return null;
     })();
 
+    if (external) {
+        return (
+            <Href url={url} rel="noreferrer help" className={className}>
+                {logo}
+            </Href>
+        );
+    }
+
     return (
-        <Href url={url} rel="noreferrer help" className="logo-container nodecoration flex-item-centered-vert">
+        <Link to={url} className={className}>
             {logo}
-        </Href>
+        </Link>
     );
 };
 
 MainLogo.propTypes = {
-    url: PropTypes.string
+    url: PropTypes.string,
+    external: PropTypes.bool
 };
 
 export default MainLogo;
