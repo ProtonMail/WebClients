@@ -6,18 +6,26 @@ import { useMainArea } from '../../hooks/useMainArea';
 
 const SettingsTitle = ({ children }) => {
     const mainAreaRef = useMainArea();
-    const [topClass, setClass] = useState('');
-
-    const onScroll = () => {
-        setClass(mainAreaRef.current.scrollTop ? '' : 'sticky-title--onTop');
-    };
+    const [topClass, setClass] = useState('sticky-title--onTop');
 
     useEffect(() => {
-        mainAreaRef.current.addEventListener('scroll', onScroll);
-        return () => {
-            mainAreaRef.current.removeEventListener('scroll', onScroll);
+        if (!mainAreaRef.current) {
+            return;
+        }
+
+        const el = mainAreaRef.current;
+
+        const onScroll = () => {
+            setClass(el.scrollTop ? '' : 'sticky-title--onTop');
         };
-    }, []);
+
+        onScroll();
+
+        el.addEventListener('scroll', onScroll);
+        return () => {
+            el.removeEventListener('scroll', onScroll);
+        };
+    }, [mainAreaRef.current]);
 
     return <h1 className={classnames(['sticky-title', topClass])}>{children}</h1>;
 };
