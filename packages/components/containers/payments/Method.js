@@ -11,38 +11,40 @@ import PayPal from './PayPal';
 import Cash from './Cash';
 import Bitcoin from './Bitcoin';
 
+const { CARD, PAYPAL, BITCOIN, CASH } = PAYMENT_METHOD_TYPES;
+
 const Method = ({ type, amount = 0, currency, onCard, onPayPal, method }) => {
     const { result = {} } = useApiResult(queryPaymentMethods, []);
     const { PaymentMethods = [] } = result;
     const { card, updateCard, errors, isValid } = useCard();
 
-    const render = () => {
-        switch (method) {
-            case PAYMENT_METHOD_TYPES.CARD:
-                return <Card card={card} errors={errors} onChange={updateCard} />;
-            case 'cash':
-                return <Cash />;
-            case 'bitcoin':
-                return <Bitcoin amount={amount} currency={currency} type={type} />;
-            case PAYMENT_METHOD_TYPES.PAYPAL:
-                return <PayPal amount={amount} currency={currency} onPay={onPayPal} type={type} />;
-            default: {
-                const { Details, Type } = PaymentMethods.find(({ ID }) => method === ID) || {};
-
-                if (Details) {
-                    return <PaymentMethodDetails type={Type} details={Details} />;
-                }
-
-                return null;
-            }
-        }
-    };
-
     useEffect(() => {
         onCard({ card, isValid });
     }, [card]);
 
-    return render();
+    if (method === CARD) {
+        return <Card card={card} errors={errors} onChange={updateCard} />;
+    }
+
+    if (method === CASH) {
+        return <Cash />;
+    }
+
+    if (method === BITCOIN) {
+        return <Bitcoin amount={amount} currency={currency} type={type} />;
+    }
+
+    if (method === PAYPAL) {
+        return <PayPal amount={amount} currency={currency} onPay={onPayPal} type={type} />;
+    }
+
+    const { Details, Type } = PaymentMethods.find(({ ID }) => method === ID) || {};
+
+    if (Details) {
+        return <PaymentMethodDetails type={Type} details={Details} />;
+    }
+
+    return null;
 };
 
 Method.propTypes = {
