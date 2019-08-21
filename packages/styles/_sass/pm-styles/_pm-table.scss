@@ -22,6 +22,13 @@
   }
 }
 
+.pm-simple-table--has-actions {
+  td:last-child,
+  th:last-child {
+    @extend .alignright;
+  }
+}
+
 /* simple dirty fix */
 .pm-simple-table button svg {
   @extend .relative;
