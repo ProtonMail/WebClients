@@ -12,7 +12,6 @@ import {
     StorageSpaceStatus,
     Href
 } from 'react-components';
-import { APPS } from 'proton-shared/lib/constants';
 import Calendar from '@toast-ui/react-calendar';
 import 'tui-calendar/dist/tui-calendar.css';
 import { c } from 'ttag';
@@ -231,7 +230,6 @@ const CalendarContainer = () => {
     return (
         <div className="flex flex-nowrap no-scroll">
             <AppsSidebar
-                currentApp={APPS.PROTONCALENDAR}
                 items={[
                     <StorageSpaceStatus key="storage">
                         <Href url="/settings/subscription" className="pm-button pm-button--primary">

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MainLogo, Icon, UpgradeButton, useUser, UserDropdown, SupportDropdown } from 'react-components';
-import { APPS } from 'proton-shared/lib/constants';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
@@ -11,7 +10,7 @@ const PrivateHeader = ({ location }) => {
     const inSettings = location.pathname.startsWith('/calendar/settings');
     return (
         <header className="header flex flex-nowrap reset4print">
-            <MainLogo currentApp={APPS.PROTONCALENDAR} />
+            <MainLogo />
             <div className="searchbox-container relative flex-item-centered-vert"></div>
             <div className="topnav-container flex-item-centered-vert flex-item-fluid">
                 <ul className="topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap">

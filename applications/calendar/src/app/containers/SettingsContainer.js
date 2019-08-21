@@ -1,6 +1,5 @@
 import React from 'react';
 import { AppsSidebar, Sidebar, StorageSpaceStatus, Href } from 'react-components';
-import { APPS } from 'proton-shared/lib/constants';
 import { Route, Switch } from 'react-router';
 import { c } from 'ttag';
 
@@ -17,7 +16,6 @@ const SettingsContainer = () => {
     return (
         <div className="flex flex-nowrap no-scroll">
             <AppsSidebar
-                currentApp={APPS.PROTONCALENDAR}
                 items={[
                     <StorageSpaceStatus key="storage">
                         <Href url="/settings/subscription" className="pm-button pm-button--primary">
