@@ -12,7 +12,7 @@ const {
     STATUS_NOT_SUPPORTED
 } = PAYMENT_TOKEN_STATUS;
 
-const { BITCOIN, CASH } = PAYMENT_METHOD_TYPES;
+const { BITCOIN, CASH, TOKEN } = PAYMENT_METHOD_TYPES;
 
 const DELAY_PULLING = 5000;
 const DELAY_LISTENING = 1000;
@@ -118,7 +118,7 @@ const toParams = (params, Token) => {
     return {
         ...params,
         Payment: {
-            Type: 'token',
+            Type: TOKEN,
             Details: {
                 Token
             }
@@ -131,7 +131,7 @@ export const handle3DS = async (params = {}, api) => {
     const { Payment = {} } = params;
     const { Type } = Payment;
 
-    if ([CASH, BITCOIN].includes(Type)) {
+    if ([CASH, BITCOIN, TOKEN].includes(Type)) {
         return params;
     }
 
