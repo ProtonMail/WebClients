@@ -2,6 +2,8 @@ import React from 'react';
 import { GenericError } from 'react-components';
 import { PropTypes } from 'prop-types';
 
+import { traceError } from 'proton-shared/lib/helpers/sentry';
+
 // https://reactjs.org/docs/error-boundaries.html#introducing-error-boundaries
 class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -15,6 +17,7 @@ class ErrorBoundary extends React.Component {
 
     componentDidCatch(error, info) {
         this.props.onError && this.props.onError(error, info);
+        traceError(error);
         console.error(error);
     }
 
