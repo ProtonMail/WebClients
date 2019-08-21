@@ -23,14 +23,17 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
             return;
         }
         // 1 CHF to allow card authorizations
-        const { Payment } = await handle3DS({
-            Amount: 100,
-            Currency: 'CHF',
-            Payment: {
-                Type: PAYMENT_METHOD_TYPES.CARD,
-                Details: toDetails(card)
-            }
-        });
+        const { Payment } = await handle3DS(
+            {
+                Amount: 100,
+                Currency: 'CHF',
+                Payment: {
+                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Details: toDetails(card)
+                }
+            },
+            api
+        );
         await api(setPaymentMethod(Payment));
         await onChange();
         onClose();
