@@ -69,7 +69,8 @@ function main({ api = 'dev' }) {
     const apiUrl = API_TARGETS[api] || API_TARGETS.prod;
 
     const json = {
-        clientId: ENV_CONFIG.app.clientId || 'Web',
+        clientId: ENV_CONFIG.app.clientId || 'WebMail',
+        appName: ENV_CONFIG.app.appName || ENV_CONFIG.pkg.name || 'protonmail',
         version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || '3.16.20',
         apiUrl
     };
@@ -81,6 +82,7 @@ function main({ api = 'dev' }) {
     export const CLIENT_TYPE = '${ENV_CONFIG.app.clientType || 1}';
     export const CLIENT_SECRET = '${ENV_CONFIG.app.clientSecret || ''}';
     export const APP_VERSION = '${json.version}';
+    export const APP_NAME = '${json.appName}';
     export const API_URL = '${apiUrl}';
     export const API_VERSION = '3';
     export const DATE_VERSION = '${new Date().toGMTString()}';
