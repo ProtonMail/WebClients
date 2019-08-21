@@ -1,6 +1,6 @@
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from 'proton-shared/lib/constants';
 import { createToken, getTokenStatus } from 'proton-shared/lib/api/payments';
-import { isSafari } from 'proton-shared/lib/helpers/browser';
+import { isSafari, isFirefox } from 'proton-shared/lib/helpers/browser';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { c } from 'ttag';
 
@@ -16,6 +16,8 @@ const { BITCOIN, CASH, TOKEN } = PAYMENT_METHOD_TYPES;
 
 const DELAY_PULLING = 5000;
 const DELAY_LISTENING = 1000;
+
+const isAnnoying = () => isSafari() || isFirefox();
 
 const pull = async ({ timer = 0, Token, api }) => {
     if (timer > DELAY_PULLING * 30) {
@@ -81,7 +83,7 @@ const process = ({ ApprovalURL, Token, api, tab }) => {
         const onMessage = (event) => {
             const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
-            if (origin !== 'https://secure.protonmail.com') {
+            if (origin !== 'https://secure.protonmail.blue') {
                 return;
             }
 
@@ -102,7 +104,7 @@ const process = ({ ApprovalURL, Token, api, tab }) => {
                 .catch(reject);
         };
 
-        if (isSafari()) {
+        if (isAnnoying()) {
             tab.location = ApprovalURL;
         } else {
             tab = window.open(ApprovalURL);
@@ -135,8 +137,8 @@ export const handle3DS = async (params = {}, api) => {
         return params;
     }
 
-    if (isSafari()) {
-        // We open a tab first because Safari is blocking by default tab if it's not a direct interaction
+    if (isAnnoying()) {
+        // We open a tab first because Safari and Firefox are blocking by default tab if it's not a direct interaction
         tab = window.open('');
     }
 
