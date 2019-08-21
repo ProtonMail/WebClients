@@ -6,7 +6,8 @@ import {
     MailSettingsModel,
     UserSettingsModel,
     SubscriptionModel,
-    OrganizationModel
+    OrganizationModel,
+    AddressesModel
 } from 'proton-shared/lib/models';
 
 import PrivateLayout from './components/layout/PrivateLayout';
@@ -17,7 +18,14 @@ const PrivateApp = ({ onLogout }) => {
         <StandardPrivateApp
             onLogout={onLogout}
             preloadModels={[UserModel, UserSettingsModel]}
-            eventModels={[UserModel, MailSettingsModel, UserSettingsModel, SubscriptionModel, OrganizationModel]}
+            eventModels={[
+                UserModel,
+                AddressesModel,
+                MailSettingsModel,
+                UserSettingsModel,
+                SubscriptionModel,
+                OrganizationModel
+            ]}
         >
             <PrivateLayout>
                 <PrivateAppRoutes />
