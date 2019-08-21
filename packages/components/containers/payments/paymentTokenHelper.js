@@ -130,7 +130,7 @@ const toParams = (params, Token) => {
 
 export const handle3DS = async (params = {}, api) => {
     let tab;
-    const { Payment = {} } = params;
+    const { Payment = {}, Amount, Currency } = params;
     const { Type } = Payment;
 
     if ([CASH, BITCOIN, TOKEN].includes(Type)) {
@@ -143,7 +143,7 @@ export const handle3DS = async (params = {}, api) => {
     }
 
     try {
-        const { Token, Status, ApprovalURL } = await api(createToken(params));
+        const { Token, Status, ApprovalURL } = await api(createToken({ Payment, Amount, Currency }));
 
         if (Status === STATUS_CHARGEABLE) {
             tab && tab.close();
