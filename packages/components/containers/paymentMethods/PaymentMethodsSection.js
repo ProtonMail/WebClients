@@ -8,15 +8,20 @@ import {
     MozillaInfoPanel,
     useApiResult,
     useModals,
-    useSubscription
+    useSubscription,
+    useConfig
 } from 'react-components';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
+import { APPS } from 'proton-shared/lib/constants';
 
 import EditCardModal from '../payments/EditCardModal';
 import PayPalModal from '../payments/PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
+const { PROTONVPN_SETTINGS } = APPS;
+
 const PaymentMethodsSection = () => {
+    const { APP_NAME } = useConfig();
     const [{ isManagedByMozilla } = {}] = useSubscription();
     const { createModal } = useModals();
     const { result = {}, loading, request } = useApiResult(queryPaymentMethods, []);
@@ -42,7 +47,13 @@ const PaymentMethodsSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/payment">{c('Info for payment methods')
+            <Alert
+                learnMore={
+                    APP_NAME === PROTONVPN_SETTINGS
+                        ? 'https://protonvpn.com/support/payment-options/'
+                        : 'https://protonmail.com/support/knowledge-base/payment'
+                }
+            >{c('Info for payment methods')
                 .t`If you wish to pay by credit card, you can add your card below. Learn about other payment options.`}</Alert>
             <Block>
                 <PrimaryButton className="mr1" onClick={handleCard}>{c('Action').t`Add credit card`}</PrimaryButton>
