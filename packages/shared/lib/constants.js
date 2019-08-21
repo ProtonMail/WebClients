@@ -41,6 +41,8 @@ export const INVOICE_OWNER = {
 export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
 export const DEFAULT_CURRENCY = 'EUR';
 export const CURRENCIES = ['EUR', 'USD', 'CHF'];
+export const MIN_DONATION_AMOUNT = 50;
+export const MIN_CREDIT_AMOUNT = 500;
 export const MIN_BITCOIN_AMOUNT = 500;
 export const DEFAULT_CREDITS_AMOUNT = 5000;
 export const DEFAULT_DONATION_AMOUNT = 5000;
