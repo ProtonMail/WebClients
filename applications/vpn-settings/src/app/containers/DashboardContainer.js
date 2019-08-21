@@ -1,6 +1,6 @@
 import React from 'react';
 import { SubscriptionSection, BillingSection } from 'react-components';
-import { PERMISSIONS, APPS } from 'proton-shared/lib/constants';
+import { PERMISSIONS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import Page from '../components/page/Page';
@@ -37,8 +37,8 @@ const DashboardContainer = () => {
     return (
         <Page config={getDashboardPage()}>
             <PlansSection />
-            <SubscriptionSection currentApp={APPS.PROTONVPN_SETTINGS} />
-            <BillingSection currentApp={APPS.PROTONVPN_SETTINGS} />
+            <SubscriptionSection />
+            <BillingSection />
         </Page>
     );
 };

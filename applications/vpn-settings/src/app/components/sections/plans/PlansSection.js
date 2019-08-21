@@ -18,13 +18,11 @@ import {
     useToggle
 } from 'react-components';
 import { c } from 'ttag';
-import { APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { mergePlansMap } from 'react-components/containers/payments/subscription/helpers';
 
 import PlansTable from './PlansTable';
-
-const { PROTONVPN_SETTINGS } = APPS;
 
 const PlansSection = () => {
     const api = useApi();
@@ -90,15 +88,7 @@ const PlansSection = () => {
 
         const coupon = Coupon ? Coupon.Code : undefined; // Coupon can equals null
 
-        createModal(
-            <SubscriptionModal
-                currentApp={PROTONVPN_SETTINGS}
-                cycle={cycle}
-                currency={currency}
-                coupon={coupon}
-                plansMap={plansMap}
-            />
-        );
+        createModal(<SubscriptionModal cycle={cycle} currency={currency} coupon={coupon} plansMap={plansMap} />);
     };
 
     useEffect(() => {
