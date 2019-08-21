@@ -1,4 +1,4 @@
-import { capitalize, getRandomString } from '../../lib/helpers/string';
+import { capitalize, getRandomString, getInitial } from '../../lib/helpers/string';
 
 describe('string', () => {
     describe('getRandomString', () => {
@@ -19,6 +19,24 @@ describe('string', () => {
             const cases = ['', 'n', 'A', 'NY', 'name', 'once upon a time...'];
             const expected = ['', 'N', 'A', 'NY', 'Name', 'Once upon a time...'];
             expect(cases.map(capitalize)).toEqual(expected);
+        });
+    });
+
+    describe('getInitial', () => {
+        it('should handle empty parameter', () => {
+            expect(getInitial()).toEqual('');
+        });
+
+        it('should handle uniq word', () => {
+            expect(getInitial('熊猫')).toEqual('熊');
+        });
+
+        it('should return 2 first initials and capitalize it', () => {
+            expect(getInitial('Lorem ipsum dolor sit amet')).toEqual('LI');
+        });
+
+        it('should handle emoji', () => {
+            expect(getInitial('🐼')).toEqual('🐼');
         });
     });
 });
