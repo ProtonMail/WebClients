@@ -1,23 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, useUser } from 'react-components';
+import { Icon, useUser, useConfig } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 
 const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONMAIL_SETTINGS } = APPS;
 
-const AppsSidebar = ({ currentApp = '', items = [] }) => {
+const AppsSidebar = ({ items = [] }) => {
+    const { APP_NAME } = useConfig();
     const [{ isPaid }] = useUser();
     const apps = [
-        { ids: [PROTONMAIL, PROTONMAIL_SETTINGS], icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
-        isPaid && { ids: [PROTONCALENDAR], icon: 'calendar', title: 'ProtonCalendar', link: '/calendar' },
-        { ids: [PROTONCONTACTS], icon: 'contacts', title: 'ProtonContacts', link: '/contacts' }
+        { appNames: [PROTONMAIL, PROTONMAIL_SETTINGS], icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
+        isPaid && { appNames: [PROTONCALENDAR], icon: 'calendar', title: 'ProtonCalendar', link: '/calendar' },
+        { appNames: [PROTONCONTACTS], icon: 'contacts', title: 'ProtonContacts', link: '/contacts' }
     ].filter(Boolean);
 
     return (
         <aside className="aside noprint" id="aside-bar">
             <ul className="unstyled m0 aligncenter  flex flex-column h100">
-                {apps.map(({ ids = [], icon, title, link, target }, index) => {
-                    const isCurrent = ids.includes(currentApp);
+                {apps.map(({ appNames = [], icon, title, link, target }, index) => {
+                    const isCurrent = appNames.includes(APP_NAME);
                     const key = `${index}`;
                     return (
                         <li key={key} className="mb0-5">
@@ -46,7 +47,6 @@ const AppsSidebar = ({ currentApp = '', items = [] }) => {
 };
 
 AppsSidebar.propTypes = {
-    currentApp: PropTypes.string,
     items: PropTypes.arrayOf(PropTypes.node)
 };
 

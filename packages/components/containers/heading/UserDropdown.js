@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
 import {
@@ -14,7 +13,8 @@ import {
     BugModal,
     DonateModal,
     generateUID,
-    PrimaryButton
+    PrimaryButton,
+    useConfig
 } from 'react-components';
 import { revoke } from 'proton-shared/lib/api/auth';
 import { APPS } from 'proton-shared/lib/constants';
@@ -23,7 +23,8 @@ import UserDropdownButton from './UserDropdownButton';
 
 const { PROTONMAIL_SETTINGS, PROTONVPN_SETTINGS } = APPS;
 
-const UserDropdown = ({ currentApp = '', ...rest }) => {
+const UserDropdown = ({ ...rest }) => {
+    const { APP_NAME } = useConfig();
     const api = useApi();
     const [user] = useUser();
     const { DisplayName, Email } = user;
@@ -34,7 +35,7 @@ const UserDropdown = ({ currentApp = '', ...rest }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
 
     const handleBugReportClick = () => {
-        createModal(<BugModal currentApp={currentApp} />);
+        createModal(<BugModal />);
     };
 
     const handleSupportUsClick = () => {
@@ -66,9 +67,9 @@ const UserDropdown = ({ currentApp = '', ...rest }) => {
                             </span>
                         ) : null}
                     </li>
-                    {currentApp === PROTONVPN_SETTINGS ? null : (
+                    {APP_NAME === PROTONVPN_SETTINGS ? null : (
                         <li className="dropDown-item pl1 pr1">
-                            {currentApp === PROTONMAIL_SETTINGS ? (
+                            {APP_NAME === PROTONMAIL_SETTINGS ? (
                                 <Link
                                     to="/settings"
                                     className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
@@ -91,7 +92,7 @@ const UserDropdown = ({ currentApp = '', ...rest }) => {
                         <a
                             className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
                             href={
-                                currentApp === PROTONVPN_SETTINGS
+                                APP_NAME === PROTONVPN_SETTINGS
                                     ? 'https://protonvpn.com/support/'
                                     : 'https://protonmail.com/support/'
                             }
@@ -146,10 +147,6 @@ const UserDropdown = ({ currentApp = '', ...rest }) => {
             </Dropdown>
         </div>
     );
-};
-
-UserDropdown.propTypes = {
-    currentApp: PropTypes.string
 };
 
 export default UserDropdown;

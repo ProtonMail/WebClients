@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Icon, Dropdown, useModals, BugModal, usePopperAnchor, generateUID } from 'react-components';
+import { Icon, Dropdown, useModals, BugModal, usePopperAnchor, generateUID, useConfig } from 'react-components';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 
@@ -8,13 +7,14 @@ import SupportDropdownButton from './SupportDropdownButton';
 
 const { PROTONVPN_SETTINGS } = APPS;
 
-const SupportDropdown = ({ currentApp = '' }) => {
+const SupportDropdown = () => {
+    const { APP_NAME } = useConfig();
     const { createModal } = useModals();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
 
     const handleBugReportClick = () => {
-        createModal(<BugModal currentApp={currentApp} />);
+        createModal(<BugModal />);
     };
 
     return (
@@ -26,7 +26,7 @@ const SupportDropdown = ({ currentApp = '' }) => {
                         <a
                             className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
                             href={
-                                currentApp === PROTONVPN_SETTINGS
+                                APP_NAME === PROTONVPN_SETTINGS
                                     ? 'https://protonvpn.com/support/'
                                     : 'https://protonmail.com/support/'
                             }
@@ -51,10 +51,6 @@ const SupportDropdown = ({ currentApp = '' }) => {
             </Dropdown>
         </>
     );
-};
-
-SupportDropdown.propTypes = {
-    currentApp: PropTypes.string
 };
 
 export default SupportDropdown;

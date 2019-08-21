@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, Price, Button, useApiResult } from 'react-components';
+import { Alert, Price, Button, useApiResult, useConfig } from 'react-components';
 import { createBitcoinPayment } from 'proton-shared/lib/api/payments';
-import { MIN_BITCOIN_AMOUNT, BTC_DONATION_ADDRESS } from 'proton-shared/lib/constants';
+import { MIN_BITCOIN_AMOUNT, BTC_DONATION_ADDRESS, APPS } from 'proton-shared/lib/constants';
 
 import BitcoinQRCode from './BitcoinQRCode';
 import BitcoinDetails from './BitcoinDetails';
 
+const { PROTONVPN_SETTINGS } = APPS;
+
 const Bitcoin = ({ amount, currency, type }) => {
+    const { APP_NAME } = useConfig();
     const { result = {}, request, error = {} } = useApiResult(() => createBitcoinPayment(amount, currency), []);
     const { AmountBitcoin, Address } = result;
     const address = type === 'donation' ? BTC_DONATION_ADDRESS : Address;
@@ -41,7 +44,13 @@ const Bitcoin = ({ amount, currency, type }) => {
                 <Alert>{c('Info')
                     .t`Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.`}</Alert>
             ) : (
-                <Alert learnMore="https://protonmail.com/support/knowledge-base/paying-with-bitcoin">{c('Info')
+                <Alert
+                    learnMore={
+                        APP_NAME === PROTONVPN_SETTINGS
+                            ? 'https://protonvpn.com/support/vpn-bitcoin-payments/'
+                            : 'https://protonmail.com/support/knowledge-base/paying-with-bitcoin'
+                    }
+                >{c('Info')
                     .t`After making your Bitcoin payment, please follow the instructions below to upgrade.`}</Alert>
             )}
         </>

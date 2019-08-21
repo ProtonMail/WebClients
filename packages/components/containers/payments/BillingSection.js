@@ -44,12 +44,12 @@ const getSubTotal = (plans = []) => {
     }, 0);
 };
 
-const BillingSection = ({ currentApp, permission }) => {
+const BillingSection = ({ permission }) => {
     const i18n = getCyclesI18N();
 
     const { createModal } = useModals();
     const handleOpenGiftCodeModal = () => createModal(<GiftCodeModal />);
-    const handleOpenCreditsModal = () => createModal(<CreditsModal currentApp={currentApp} />);
+    const handleOpenCreditsModal = () => createModal(<CreditsModal />);
     const [{ hasPaidMail, hasPaidVpn, Credit }] = useUser();
     const [
         { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd, isManagedByMozilla } = {},
@@ -268,7 +268,6 @@ const BillingSection = ({ currentApp, permission }) => {
 };
 
 BillingSection.propTypes = {
-    currentApp: PropTypes.string,
     permission: PropTypes.bool
 };
 

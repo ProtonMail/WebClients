@@ -25,9 +25,10 @@ import {
 import AttachScreenshot from './AttachScreenshot';
 import { collectInfo, getClient } from '../../helpers/report';
 
-const { PROTONMAIL, PROTONVPN_SETTINGS } = APPS;
+const { PROTONVPN_SETTINGS } = APPS;
 
-const BugModal = ({ currentApp = PROTONMAIL, onClose, username: Username = '', addresses = [], ...rest }) => {
+const BugModal = ({ onClose, username: Username = '', addresses = [], ...rest }) => {
+    const { APP_NAME } = useConfig();
     const mailTitles = [
         { value: 'Login problem', text: c('Bug category').t`Login problem` },
         { value: 'Sign up problem', text: c('Bug category').t`Sign up problem` },
@@ -57,10 +58,10 @@ const BugModal = ({ currentApp = PROTONMAIL, onClose, username: Username = '', a
         { value: 'Feature request', text: c('Bug category').t`Feature request` }
     ];
 
-    const titles = currentApp === PROTONVPN_SETTINGS ? vpnTitles : mailTitles;
-    const criticalEmail = currentApp === PROTONVPN_SETTINGS ? 'contact@protonvpn.com' : 'security@protonmail.com';
+    const titles = APP_NAME === PROTONVPN_SETTINGS ? vpnTitles : mailTitles;
+    const criticalEmail = APP_NAME === PROTONVPN_SETTINGS ? 'contact@protonvpn.com' : 'security@protonmail.com';
     const clearCacheLink =
-        currentApp === PROTONVPN_SETTINGS
+        APP_NAME === PROTONVPN_SETTINGS
             ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
             : 'https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/';
     const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
@@ -240,7 +241,6 @@ const BugModal = ({ currentApp = PROTONMAIL, onClose, username: Username = '', a
 };
 
 BugModal.propTypes = {
-    currentApp: PropTypes.string,
     onClose: PropTypes.func,
     username: PropTypes.string,
     addresses: PropTypes.array

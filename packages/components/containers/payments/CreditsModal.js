@@ -10,7 +10,8 @@ import {
     useNotifications,
     useApiWithoutResult,
     useEventManager,
-    useApi
+    useApi,
+    useConfig
 } from 'react-components';
 import { buyCredit } from 'proton-shared/lib/api/payments';
 import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT, APPS } from 'proton-shared/lib/constants';
@@ -26,9 +27,10 @@ const getCurrenciesI18N = () => ({
     USD: c('Monetary unit').t`Dollar`
 });
 
-const { PROTONVPN_SETTINGS, PROTONMAIL_SETTINGS } = APPS;
+const { PROTONVPN_SETTINGS } = APPS;
 
-const CreditsModal = ({ currentApp = PROTONMAIL_SETTINGS, onClose, ...rest }) => {
+const CreditsModal = ({ onClose, ...rest }) => {
+    const { APP_NAME } = useConfig();
     const api = useApi();
     const { call } = useEventManager();
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
@@ -62,7 +64,7 @@ const CreditsModal = ({ currentApp = PROTONMAIL_SETTINGS, onClose, ...rest }) =>
             <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
             <Alert
                 learnMore={
-                    currentApp === PROTONVPN_SETTINGS
+                    APP_NAME === PROTONVPN_SETTINGS
                         ? 'https://protonvpn.com/support/vpn-credit-proration/'
                         : 'https://protonmail.com/support/knowledge-base/credit-proration/'
                 }
@@ -95,7 +97,6 @@ const CreditsModal = ({ currentApp = PROTONMAIL_SETTINGS, onClose, ...rest }) =>
 };
 
 CreditsModal.propTypes = {
-    currentApp: PropTypes.string,
     onClose: PropTypes.func
 };
 

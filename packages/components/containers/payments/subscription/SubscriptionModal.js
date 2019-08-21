@@ -20,7 +20,8 @@ import {
     Label,
     Field,
     Row,
-    Wizard
+    Wizard,
+    useConfig
 } from 'react-components';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, APPS } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
@@ -38,7 +39,6 @@ import { handle3DS } from '../paymentTokenHelper';
 const { PROTONMAIL_SETTINGS, PROTONVPN_SETTINGS } = APPS;
 
 const SubscriptionModal = ({
-    currentApp = PROTONMAIL_SETTINGS,
     onClose,
     cycle = DEFAULT_CYCLE,
     currency = DEFAULT_CURRENCY,
@@ -46,6 +46,7 @@ const SubscriptionModal = ({
     plansMap = {},
     ...rest
 }) => {
+    const { APP_NAME } = useConfig();
     const api = useApi();
     const [{ hasPaidMail } = {}] = useUser();
     const [{ MaxMembers } = {}] = useOrganization();
@@ -178,7 +179,7 @@ const SubscriptionModal = ({
         });
     }
 
-    if (currentApp === PROTONMAIL_SETTINGS && (plansMap.plus || plansMap.professional)) {
+    if (APP_NAME === PROTONMAIL_SETTINGS && (plansMap.plus || plansMap.professional)) {
         STEPS.unshift({
             title: c('Title').t`Customization`,
             closeIfSubscriptionChange: true,
@@ -224,7 +225,7 @@ const SubscriptionModal = ({
                     <Alert
                         type="warning"
                         learnMore={
-                            currentApp === PROTONVPN_SETTINGS
+                            APP_NAME === PROTONVPN_SETTINGS
                                 ? 'https://protonvpn.com/terms-and-conditions'
                                 : 'https://protonmail.com/terms-and-conditions'
                         }
@@ -289,8 +290,7 @@ SubscriptionModal.propTypes = {
     cycle: PropTypes.number,
     coupon: PropTypes.string,
     currency: PropTypes.string,
-    plansMap: PropTypes.object,
-    currentApp: PropTypes.string
+    plansMap: PropTypes.object
 };
 
 export default SubscriptionModal;
