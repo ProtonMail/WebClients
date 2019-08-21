@@ -15,7 +15,14 @@ const VpnLogo = ({ planName = '' }) => {
             </g>
             <title id="logo__title">ProtonVPN</title>
             {planName ? (
-                <text textAnchor="end" className="plan uppercase bold" x="147" y="42" id="plan" focusable="false">
+                <text
+                    textAnchor="end"
+                    className={`plan fill-${planName} uppercase bold`}
+                    x="147"
+                    y="42"
+                    id="plan"
+                    focusable={false}
+                >
                     {planName}
                 </text>
             ) : null}
