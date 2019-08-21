@@ -17,7 +17,7 @@ const getBuildCommit = () => {
  * @return {Object}
  */
 function getSentryConfig({ sentry = {} }, { version }, api) {
-    if (api === 'blue') {
+    if (api === 'blue' || process.env.NODE_ENV !== 'production') {
         return {};
     }
 

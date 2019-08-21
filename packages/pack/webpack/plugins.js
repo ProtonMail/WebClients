@@ -113,7 +113,8 @@ module.exports = ({ isProduction, publicPath, appMode }) => {
         }),
 
         new webpack.SourceMapDevToolPlugin({
-            filename: isProduction ? '[name].[hash:8].js.map' : '[name].js.map'
+            test: /.js$/,
+            filename: '[file].map'
         }),
 
         ...(isProduction ? PRODUCTION_PLUGINS : [])
