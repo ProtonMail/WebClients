@@ -9,14 +9,16 @@ import {
     Label,
     useApiWithoutResult,
     useEventManager,
-    useNotifications
+    useNotifications,
+    useLoading
 } from 'react-components';
 import { validateCredit, buyCredit } from 'proton-shared/lib/api/payments';
+import { isValid } from 'proton-shared/lib/helpers/giftCode';
 
 import GiftCodeInput from './GiftCodeInput';
 
 const GiftCodeModal = ({ onClose, ...rest }) => {
-    const [loading, setLoading] = useState(false);
+    const [loading, withLoading] = useLoading();
     const { request: requestBuyCredit } = useApiWithoutResult(buyCredit);
     const { request: requestValidateCredit } = useApiWithoutResult(validateCredit);
     const { call } = useEventManager();
@@ -25,24 +27,23 @@ const GiftCodeModal = ({ onClose, ...rest }) => {
     const handleChange = ({ target }) => setValue(target.value);
 
     const handleSubmit = async () => {
-        try {
-            setLoading(true);
-            await requestValidateCredit({ GiftCode: value });
-            await requestBuyCredit({ GiftCode: value, Amount: 0 });
-            await call();
-            onClose();
-            createNotification({ text: c('Success').t`Gift code applied` });
-        } catch (error) {
-            setLoading(false);
-            throw error;
+        if (!isValid(value)) {
+            createNotification({ text: c('Error').t`Invalid gift code` });
+            return;
         }
+
+        await requestValidateCredit({ GiftCode: value });
+        await requestBuyCredit({ GiftCode: value, Amount: 0 });
+        await call();
+        onClose();
+        createNotification({ text: c('Success').t`Gift code applied` });
     };
 
     return (
         <FormModal
             small
             onClose={onClose}
-            onSubmit={handleSubmit}
+            onSubmit={() => withLoading(handleSubmit())}
             loading={loading}
             title={c('Title').t`Gift code`}
             close={c('Action').t`Close`}

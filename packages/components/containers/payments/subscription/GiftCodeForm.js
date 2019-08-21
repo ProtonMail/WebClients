@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PrimaryButton, GiftCodeInput } from 'react-components';
+import { PrimaryButton, GiftCodeInput, useNotifications } from 'react-components';
+import { isValid } from 'proton-shared/lib/helpers/giftCode';
 
 const GiftCodeForm = ({ onChange, model }) => {
+    const { createNotification } = useNotifications();
     const [gift, setGift] = useState(model.gift || '');
     const handleChange = ({ target }) => setGift(target.value);
-    const handleClick = () => onChange({ ...model, gift }, true);
+
+    const handleClick = () => {
+        if (!isValid(gift)) {
+            createNotification({ text: c('Error').t`Invalid gift code` });
+            return;
+        }
+        onChange({ ...model, gift }, true);
+    };
 
     return (
         <div className="flex">
