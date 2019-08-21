@@ -68,7 +68,7 @@ const PlansSection = () => {
                 confirm={c('Action').t`Downgrade`}
             >
                 <Paragraph>{c('Info')
-                    .t`This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.`}</Paragraph>
+                    .t`This will downgrade your account to a free account. This Proton product is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.`}</Paragraph>
                 <Alert>{c('Info')
                     .t`Additional addresses, custom domains, and users must be removed/disabled before performing this action.`}</Alert>
             </ConfirmModal>
