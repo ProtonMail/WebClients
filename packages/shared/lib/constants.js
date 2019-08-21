@@ -11,7 +11,8 @@ export const APPS = {
     PROTONDRIVE: 'protondrive',
     PROTONCALENDAR: 'protoncalendar',
     PROTONWALLET: 'protonwallet',
-    PROTONVPN_SETTINGS: 'protonvpn-settings'
+    PROTONVPN_SETTINGS: 'protonvpn-settings',
+    PROTONADMIN: 'protonadmin'
 };
 export const MAIN_USER_KEY = 'USER_KEYS';
 export const SECURE_SESSION_STORAGE_KEY = 'SECURE';
