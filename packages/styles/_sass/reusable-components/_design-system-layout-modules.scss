@@ -50,7 +50,6 @@ svg {
   }
 }
 
-
 /* clear floats */
 .clear {
   clear: both;
@@ -116,10 +115,18 @@ svg {
 }
 
 /* alignments */
-.aligntop    { vertical-align: top; }
-.alignbottom { vertical-align: bottom; }
-.alignmiddle { vertical-align: middle; }
-.alignbaseline { vertical-align: baseline; }
+.aligntop {
+  vertical-align: top;
+}
+.alignbottom {
+  vertical-align: bottom;
+}
+.alignmiddle {
+  vertical-align: middle;
+}
+.alignbaseline {
+  vertical-align: baseline;
+}
 
 /* block */
 .bl {
@@ -173,83 +180,134 @@ svg {
   @include vendor-prefix(transform, translateZ(0));
 }
 
-
-
 /* block widths */
-.w0   { width: 0; }
-.w1   { width: 1%; }
-.w2   { width: 2%; }
-.w3   { width: 3%; }
-.w5   { width: 5%; }
-.w10  { width: 10%; }
-.w15  { width: 15%; }
-.w20  { width: 20%; }
-.w25  { width: 25%; }
-.w30  { width: 30%; }
-.w33  { width: 33.333%; }
-.w40  { width: 40%; }
-.w45  { width: 45%; }
-.w49  { width: 49%; }
-.w50  { width: 50%; }
-.w60  { width: 60%; }
-.w66  { width: 66.666%; }
-.w70  { width: 70%; }
-.w75  { width: 75%; }
-.w80  { width: 80%; }
-.w90  { width: 90%; }
-.w100 { width: 100%; }
+.w0 {
+  width: 0;
+}
+.w1 {
+  width: 1%;
+}
+.w2 {
+  width: 2%;
+}
+.w3 {
+  width: 3%;
+}
+.w5 {
+  width: 5%;
+}
+.w10 {
+  width: 10%;
+}
+.w15 {
+  width: 15%;
+}
+.w20 {
+  width: 20%;
+}
+.w25 {
+  width: 25%;
+}
+.w30 {
+  width: 30%;
+}
+.w33 {
+  width: 33.333%;
+}
+.w40 {
+  width: 40%;
+}
+.w45 {
+  width: 45%;
+}
+.w49 {
+  width: 49%;
+}
+.w50 {
+  width: 50%;
+}
+.w60 {
+  width: 60%;
+}
+.w66 {
+  width: 66.666%;
+}
+.w70 {
+  width: 70%;
+}
+.w75 {
+  width: 75%;
+}
+.w80 {
+  width: 80%;
+}
+.w90 {
+  width: 90%;
+}
+.w100 {
+  width: 100%;
+}
 
 /* here you may add px widths */
 $list-width-px: 150, 200, 500 !default;
 // ex .w500p { width: 500px; }
 
 @each $width in $list-width-px {
-  .w#{$width}p { width: #{$width}px; }
+  .w#{$width}p {
+    width: #{$width}px;
   }
+}
 
 /* here you may add em widths */
 $list-width-em: 400 !default;
 // ex .w500e { width: 60em; }
 
 @each $width in $list-width-em {
-  $size_em : em($width);
-  .w#{$width}e { width: $size_em; }
+  $size_em: em($width);
+  .w#{$width}e {
+    width: $size_em;
   }
-
+}
 
 /* max-block widths */
 
 /* here you may add max-widths % */
 $list-max-widths: 80, 100 !default;
 @each $max-width in $list-max-widths {
-  .mw#{$max-width} { max-width: #{$max-width * 1%}; }
+  .mw#{$max-width} {
+    max-width: #{$max-width * 1%};
   }
-
+}
 
 /* here you may add pixel max-widths */
 $list-max-width-px: 100, 650 !default;
 
 @each $max-width in $list-max-width-px {
-  .mw#{$max-width}p { max-width: #{$max-width}px; }
+  .mw#{$max-width}p {
+    max-width: #{$max-width}px;
   }
+}
 
 /* here you may add em max-widths */
 $list-max-width-em: 15 !default;
 
 @each $max-width in $list-max-width-em {
-   .mw#{$max-width}e { max-width: #{$max-width}em; }
+  .mw#{$max-width}e {
+    max-width: #{$max-width}em;
+  }
 }
 
 $list-min-width-em: 3 !default;
 
 @each $min-width in $list-min-width-em {
-  .min-w#{$min-width}e { min-width: #{$min-width}em; }
+  .min-w#{$min-width}e {
+    min-width: #{$min-width}em;
+  }
 }
 
-
-.h100 { height: 100%; }
-
-
+.h100 {
+  height: 100%;
+}
 
 /* margins */
 
@@ -258,11 +316,21 @@ $list-margins-values: 0, 0.25, 0.5, 1, 1.5, 2 !default; // specify 2.5 if needed
 
 @include margin-generator($list-margins, $list-margins-values);
 
-.mtauto { margin-top: auto; }
-.mrauto { margin-right: auto; }
-.mbauto { margin-bottom: auto; }
-.mlauto { margin-left: auto; }
-.mauto  { margin: auto; }
+.mtauto {
+  margin-top: auto;
+}
+.mrauto {
+  margin-right: auto;
+}
+.mbauto {
+  margin-bottom: auto;
+}
+.mlauto {
+  margin-left: auto;
+}
+.mauto {
+  margin: auto;
+}
 
 @if $rtl-option == true {
   [dir="rtl"] {
@@ -284,9 +352,9 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 2 !default; // specify 2.5 i
 
 @include padding-generator($list-paddings, $list-paddings-values);
 
-
 /* to hide text with accessibility… a11y */
-.invisible, .sr-only {
+.invisible,
+.sr-only {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -296,31 +364,44 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 2 !default; // specify 2.5 i
   position: absolute;
   width: 1px;
 }
-.nonvisible { visibility: hidden; }
+.nonvisible {
+  visibility: hidden;
+}
 
-.opacity-50 { opacity: .5; }
-.opacity-40 { opacity: .4; }
-.opacity-30 { opacity: .3; }
+.opacity-50 {
+  opacity: 0.5;
+}
+.opacity-40 {
+  opacity: 0.4;
+}
+.opacity-30 {
+  opacity: 0.3;
+}
 
-.hidden, [hidden]  { display: none; } /* hidden everywhere */
-.nodesktop { display: none; } /* hidden on desktop */
+.hidden,
+[hidden] {
+  display: none;
+} /* hidden everywhere */
+.nodesktop {
+  display: none;
+} /* hidden on desktop */
 /*.noprint   {} /* hidden on print */
 /*.notablet  {} /* hidden on tablets */
 /*.nomobile  {} /* hidden on mobile */
 
 .list-2columns {
   -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
   -webkit-column-gap: 0;
-     -moz-column-gap: 0;
-          column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0;
 
   & > li {
     -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
     page-break-inside: avoid; /* Firefox */
-         break-inside: avoid; /* IE 10+ */
-         break-inside: avoid-column; /* W3C */
+    break-inside: avoid; /* IE 10+ */
+    break-inside: avoid-column; /* W3C */
   }
 }
 
@@ -347,7 +428,6 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 2 !default; // specify 2.5 i
   bottom: 0;
 }
 
-
 /*
  * Flexbox helpers, also name tartiflex
  */
@@ -356,53 +436,53 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 2 !default; // specify 2.5 i
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .flex-row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 .flex-reverse {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 .flex-column {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 .flex-column-reverse {
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 .flex-spacebetween {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
 }
 .flex-spacearound {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 .flex-nowrap {
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
 /* fix aspect ratio */
@@ -420,43 +500,41 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 2 !default; // specify 2.5 i
 
 .flex-items-center {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-              -ms-grid-row-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
 }
 .flex-items-end {
   -webkit-box-align: end;
-      -ms-flex-align: end;
-              -ms-grid-row-align: flex-end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  -ms-grid-row-align: flex-end;
+  align-items: flex-end;
 }
 
 .flex-item-fluid {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 0px;
-          flex: 1 1 0px;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0px;
 }
-
-
 
 .flex-item-noshrink {
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
 }
 .flex-item-nogrow {
   -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
 }
 .flex-item-grow-2 {
   -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
 }
 
 .flex-self-vcenter {
   -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 .flex-autogrid {
@@ -466,12 +544,11 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 2 !default; // specify 2.5 i
 }
 .flex-autogrid-item {
   @extend .flex-item-fluid;
-  padding: 0 .5em 1em;
+  padding: 0 0.5em 1em;
 }
 .flex-autogrid-item.pb0 {
   padding-bottom: 0;
 }
-
 
 /* RTL/others */
 .mirror {
@@ -492,7 +569,7 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 2 !default; // specify 2.5 i
 }
 /* increase surface click/tap */
 .increase-surface-click::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
