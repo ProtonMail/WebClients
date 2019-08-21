@@ -6,6 +6,7 @@ import {
     usePlans,
     FormModal,
     Button,
+    PrimaryButton,
     Input,
     usePayment,
     Payment,
@@ -230,10 +231,14 @@ const SubscriptionModal = ({
                     >{c('Info').t`By clicking Next, you agree to abide by Proton's terms and conditions.`}</Alert>
                 </>
             ),
+            footer: (
+                <>
+                    <Button onClick={previous} loading={loading}>{c('Action').t`Previous`}</Button>
+                    <PrimaryButton type="submit" disabled={!canPay} loading={loading}>{c('Action')
+                        .t`Next`}</PrimaryButton>
+                </>
+            ),
             onSubmit: () => {
-                if (!canPay) {
-                    return;
-                }
                 handleSubmit();
             }
         });
@@ -253,7 +258,7 @@ const SubscriptionModal = ({
             return c('Action').t`Close`;
         }
         if (hasPrevious) {
-            return <Button onClick={previous}>{c('Action').t`Previous`}</Button>;
+            return <Button loading={loading} onClick={previous}>{c('Action').t`Previous`}</Button>;
         }
     })();
 

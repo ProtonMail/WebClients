@@ -121,7 +121,7 @@ function AddFilterModal({ filter, type, mode = 'create', onEdit = noop, ...props
             return (
                 <>
                     <Button onClick={handleClickPreview}>{c('Action').t`Back`}</Button>
-                    <PrimaryButton loading={loading}>{c('Action').t`Save`}</PrimaryButton>
+                    <PrimaryButton type="submit" loading={loading}>{c('Action').t`Save`}</PrimaryButton>
                 </>
             );
         }
