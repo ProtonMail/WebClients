@@ -41,7 +41,6 @@ const EditAddressModal = ({ onClose, address, ...rest }) => {
             onClose={onClose}
             onSubmit={() => withLoading(handleSubmit())}
             title={c('Title').t`Edit address`}
-            close={c('Action').t`Cancel`}
             submit={c('Action').t`Save`}
             loading={loading}
             {...rest}

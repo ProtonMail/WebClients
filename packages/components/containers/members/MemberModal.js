@@ -134,7 +134,6 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
             loading={loading}
             onSubmit={handleSubmit}
             onClose={onClose}
-            close={c('Action').t`Cancel`}
             submit={c('Action').t`Save`}
             {...rest}
         >

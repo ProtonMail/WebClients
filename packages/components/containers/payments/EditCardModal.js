@@ -44,7 +44,6 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
             onClose={onClose}
             title={title}
             loading={loading}
-            close={c('Action').t`Close`}
             submit={c('Action').t`Save`}
             {...rest}
         >

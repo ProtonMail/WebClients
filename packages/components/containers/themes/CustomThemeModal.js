@@ -14,7 +14,6 @@ const CustomThemeModal = ({ onClose, onSave, theme: initialTheme = '', ...rest }
             onClose={onClose}
             onSubmit={handleSubmit}
             submit={c('Action').t`Save`}
-            close={c('Action').t`Cancel`}
             title={c('Title').t`Custom Theme`}
             small
             {...rest}

@@ -86,7 +86,6 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
             onClose={onClose}
             title={c('Title').t`Delete account`}
             loading={loading}
-            close={c('Action').t`Cancel`}
             submit={c('Action').t`Delete`}
             {...rest}
         >

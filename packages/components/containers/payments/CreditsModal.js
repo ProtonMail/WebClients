@@ -55,7 +55,6 @@ const CreditsModal = ({ onClose, ...rest }) => {
             type="small"
             onClose={onClose}
             onSubmit={() => handleSubmit()}
-            close={c('Action').t`Cancel`}
             loading={loading}
             submit={canPay && c('Action').t`Top up`}
             title={c('Title').t`Add credits`}

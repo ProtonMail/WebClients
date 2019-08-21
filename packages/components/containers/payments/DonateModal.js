@@ -32,7 +32,6 @@ const DonateModal = ({ ...rest }) => {
         <FormModal
             onSubmit={() => withLoading(handleSubmit())}
             loading={loading}
-            close={c('Action').t`Cancel`}
             title={c('Title').t`Make a donation`}
             submit={canPay && c('Action').t`Donate`}
             {...rest}

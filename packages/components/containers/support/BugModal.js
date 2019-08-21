@@ -116,7 +116,6 @@ const BugModal = ({ onClose, username: Username = '', addresses = [], ...rest })
             onSubmit={handleSubmit}
             loading={loading}
             submit={c('Action').t`Submit`}
-            close={c('Action').t`Cancel`}
             title={c('Title').t`Report bug`}
             {...rest}
         >

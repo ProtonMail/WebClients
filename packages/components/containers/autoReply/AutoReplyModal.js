@@ -26,7 +26,6 @@ const AutoReplyModal = ({ onClose, ...rest }) => {
             onSubmit={handleSubmit}
             onClose={onClose}
             submit={c('Action').t`Update`}
-            close={c('Action').t`Cancel`}
             {...rest}
         >
             <AutoReplyForm model={model} updateModel={updateModel} />

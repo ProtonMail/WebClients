@@ -48,7 +48,6 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
             onClose={onClose}
             onSubmit={() => withLoading(handleSubmit())}
             loading={loading}
-            close={c('Action').t`Cancel`}
             save={c('Action').t`Save`}
             title={c('Title').t`Edit user`}
             small

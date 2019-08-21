@@ -111,7 +111,6 @@ const DeleteKeyModal = ({ onClose, Address, addressKeys, KeyID, privateKey, ...r
     return (
         <FormModal
             title={c('Title').t`Delete key`}
-            close={c('Action').t`Cancel`}
             submit={c('Action').t`Yes`}
             onClose={onClose}
             onSubmit={onClose}
