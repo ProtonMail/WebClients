@@ -4,15 +4,14 @@ export const RETRY_DELAY_MAX = 10; // seconds
 export const RETRY_ATTEMPTS_MAX = 5; // how many times to try the same request
 export const OFFLINE_RETRY_DELAY = 2000; // how much time in ms to wait before retrying an offline request
 export const OFFLINE_RETRY_ATTEMPTS_MAX = 3; // how many times to try the same request when offline
-
 export const APPS = {
-    PROTONMAIL: 'WebMail',
-    PROTONMAIL_SETTINGS: 'WebMailSettings',
-    PROTONCONTACTS: 'WebContacts',
-    PROTONDRIVE: 'WebDrive',
-    PROTONCALENDAR: 'WebCalendar',
-    PROTONVPN_SETTINGS: 'WebVPNSettings',
-    PROTONADMIN: 'Admin'
+    PROTONMAIL: 'protonmail',
+    PROTONMAIL_SETTINGS: 'protonmail-settings',
+    PROTONCONTACTS: 'protoncontacts',
+    PROTONDRIVE: 'protondrive',
+    PROTONCALENDAR: 'protoncalendar',
+    PROTONWALLET: 'protonwallet',
+    PROTONVPN_SETTINGS: 'protonvpn-settings'
 };
 export const MAIN_USER_KEY = 'USER_KEYS';
 export const SECURE_SESSION_STORAGE_KEY = 'SECURE';
