@@ -11,7 +11,7 @@ const GiftCodeForm = ({ onChange, model }) => {
 
     const handleClick = () => {
         if (!isValid(gift)) {
-            createNotification({ text: c('Error').t`Invalid gift code` });
+            createNotification({ text: c('Error').t`Invalid gift code`, type: 'error' });
             return;
         }
         onChange({ ...model, gift }, true);

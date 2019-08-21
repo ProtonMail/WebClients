@@ -28,7 +28,7 @@ const GiftCodeModal = ({ onClose, ...rest }) => {
 
     const handleSubmit = async () => {
         if (!isValid(value)) {
-            createNotification({ text: c('Error').t`Invalid gift code` });
+            createNotification({ text: c('Error').t`Invalid gift code`, type: 'error' });
             return;
         }
 
