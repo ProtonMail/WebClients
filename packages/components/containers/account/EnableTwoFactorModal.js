@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
     Alert,
@@ -243,7 +244,7 @@ const EnableTwoFactorModal = (props) => {
                                     const blob = new Blob([recoveryCodes.join('\r\n')], {
                                         type: 'text/plain;charset=utf-8;'
                                     });
-                                    const filename = 'protonmail_recovery_codes.txt';
+                                    const filename = 'proton_recovery_codes.txt';
                                     downloadFile(blob, filename);
                                 }}
                             >
@@ -271,6 +272,10 @@ const EnableTwoFactorModal = (props) => {
             {section}
         </FormModal>
     );
+};
+
+EnableTwoFactorModal.propTypes = {
+    onClose: PropTypes.func
 };
 
 export default EnableTwoFactorModal;
