@@ -2,17 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip, Icon, CurrencySelector, CycleSelector, SmallButton, Info } from 'react-components';
 import { c } from 'ttag';
-import { CYCLE, PLANS, DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
+import { PLANS, DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 
 import PlanPrice from './PlanPrice';
 
-const { TWO_YEARS } = CYCLE;
 const { VISIONARY, VPNBASIC, VPNPLUS } = PLANS;
 
 const PlansTable = ({
     plans = [],
     loading,
-    subscription = {},
     onSelect,
     cycle = DEFAULT_CYCLE,
     updateCycle,
@@ -193,7 +191,6 @@ const PlansTable = ({
 PlansTable.propTypes = {
     loading: PropTypes.bool,
     plans: PropTypes.array,
-    subscription: PropTypes.object,
     onSelect: PropTypes.func,
     currency: PropTypes.string,
     cycle: PropTypes.number,
