@@ -1,6 +1,6 @@
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from 'proton-shared/lib/constants';
 import { createToken, getTokenStatus } from 'proton-shared/lib/api/payments';
-import { isSafari, isFirefox } from 'proton-shared/lib/helpers/browser';
+import { requireDirectAction } from 'proton-shared/lib/helpers/browser';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { c } from 'ttag';
 
@@ -17,8 +17,13 @@ const { BITCOIN, CASH, TOKEN } = PAYMENT_METHOD_TYPES;
 const DELAY_PULLING = 5000;
 const DELAY_LISTENING = 1000;
 
-const isAnnoying = () => isSafari() || isFirefox();
-
+/**
+ * Recursive function to check token status
+ * @param {Number} timer
+ * @param {String} Token
+ * @param {Object} api useApi
+ * @returns {Promise}
+ */
 const pull = async ({ timer = 0, Token, api }) => {
     if (timer > DELAY_PULLING * 30) {
         throw new Error(c('Error').t`Payment process cancelled`);
@@ -51,7 +56,7 @@ const pull = async ({ timer = 0, Token, api }) => {
 };
 
 /**
- *
+ * Initialize new tab and listen it
  * @param {String} ApprovalURL
  * @param {String} String
  * @param {Object} api useApi
@@ -104,18 +109,25 @@ const process = ({ ApprovalURL, Token, api, tab }) => {
                 .catch(reject);
         };
 
-        if (isAnnoying()) {
+        window.addEventListener('message', onMessage, false);
+
+        if (requireDirectAction()) {
             tab.location = ApprovalURL;
         } else {
             tab = window.open(ApprovalURL);
         }
 
-        window.addEventListener('message', onMessage, false);
         listen = true;
         listenTab();
     });
 };
 
+/**
+ * Prepare parameters to be sent to API
+ * @param {Object} params
+ * @param {String} Token
+ * @returns {Object}
+ */
 const toParams = (params, Token) => {
     return {
         ...params,
@@ -128,6 +140,12 @@ const toParams = (params, Token) => {
     };
 };
 
+/**
+ * Generate token if needed for credit card and paypal payments
+ * @param {Object} params to send to the API
+ * @param {Object} api useApi
+ * @returns {Promise<Object>} parameters to send to the API for payment
+ */
 export const handle3DS = async (params = {}, api) => {
     let tab;
     const { Payment, Amount, Currency, PaymentMethodID } = params;
@@ -137,7 +155,7 @@ export const handle3DS = async (params = {}, api) => {
         return params;
     }
 
-    if (isAnnoying()) {
+    if (requireDirectAction()) {
         // We open a tab first because Safari and Firefox are blocking by default tab if it's not a direct interaction
         tab = window.open('');
     }
