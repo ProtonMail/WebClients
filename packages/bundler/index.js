@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const path = require('path');
 const Listr = require('listr');
 const execa = require('execa');
 const chalk = require('chalk');
@@ -9,19 +10,21 @@ const moment = require('moment');
 const argv = require('minimist')(process.argv.slice(2), {
     string: ['appMode'],
     boolean: ['lint', 'i18n'],
-    default: { lint: true, i18n: true, localize: false, appMode: 'bundle' }
+    default: { lint: true, i18n: true, localize: false, appMode: 'bundle', remote: false }
 });
 
 const { debug, success, error, about } = require('./lib/helpers/log')('proton-bundler');
 const { bash, script } = require('./lib/helpers/cli');
-
 const {
     customBundler: { tasks: customTasks, config: customConfig },
     getCustomHooks
 } = require('./lib/custom');
 const { pull, push, getConfig, logCommits } = require('./lib/git');
+const buildRemote = require('./lib/buildRemote');
 
-const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI18n }) => {
+const PKG = require(path.join(process.cwd(), 'package.json'));
+
+const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI18n, isRemoteBuild }) => {
     const { EXTERNAL_FILES = ['.htaccess'] } = customConfig;
     const { hookPreTasks, hookPostTasks, hookPostTaskClone, hookPostTaskBuild, customConfigSetup } = getCustomHooks(
         customTasks({
@@ -30,7 +33,8 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
             flowType,
             appMode,
             forceI18n,
-            runI18n
+            runI18n,
+            isRemoteBuild
         })
     );
 
@@ -50,7 +54,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         ...hookPreTasks,
         {
             title: 'Save dependencies if we need',
-            enabled: () => !isCI && /dev|beta|alpha/.test(branch),
+            enabled: () => !isRemoteBuild && !isCI && /dev|beta|alpha/.test(branch),
             task() {
                 return script('updatePackageLock.sh', [argv['default-branch']]);
             }
@@ -64,7 +68,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         },
         {
             title: 'Lint sources',
-            enabled: () => argv.lint !== false,
+            enabled: () => argv.lint !== false && !isRemoteBuild,
             task: () => execa('npm', ['run', 'lint'])
         },
         ...configTasks,
@@ -145,6 +149,19 @@ async function getAPIUrl() {
 }
 
 async function main() {
+    /*
+        If we build from the remote repository we need to:
+            - clone the repository inside /tmp
+            - install dependencies
+            - run the deploy command again from this directory
+        So let's put an end to the current deploy.
+     */
+    if (argv.remote) {
+        await buildRemote(PKG);
+        const args = process.argv.slice(2).filter((key) => !/--remote/.test(key));
+        return script('builder.sh', [PKG.name, ...args], 'inherit'); // inherit for the colors ;)
+    }
+
     // Custom local deploy for the CI
     const isCI = process.env.NODE_ENV_DIST === 'ci';
     const branch = argv.branch;
@@ -152,6 +169,7 @@ async function main() {
     const runI18n = argv.i18n;
     const forceI18n = argv.localize;
     const appMode = argv.appMode;
+    const isRemoteBuild = argv.source === 'remote';
 
     debug({ customConfig, argv });
 
@@ -168,11 +186,12 @@ async function main() {
         ...(!isCI && { branch }),
         apiUrl,
         appMode,
+        isRemoteBuild,
         SENTRY: process.env.NODE_ENV_SENTRY
     });
 
     const start = moment(Date.now());
-    const listTasks = getTasks(branch, { isCI, flowType, forceI18n, appMode, runI18n });
+    const listTasks = getTasks(branch, { isCI, flowType, forceI18n, appMode, runI18n, isRemoteBuild });
     const tasks = new Listr(listTasks, {
         renderer: UpdaterRenderer,
         collapse: false

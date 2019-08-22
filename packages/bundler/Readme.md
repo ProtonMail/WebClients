@@ -34,6 +34,7 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--i18n> <--appMo
 - `hosts` : to create new deploy targets (branch) on a repository
 
 ### flags
+- `--remote`: Build the current app from master via a git clone
 - `--branch`: **Mandatory** ex: deploy-settings 
 - `--api`: Typeof branch to deploy (dev/beta/build/etc.)
 - `--flow`: Type of flow (_Usefull only for WebClient_)
@@ -96,6 +97,7 @@ deployConfig:
 - `flowType: <String>` ~ Type of deploy ('single', or 'many')
 - `forceI18n: <Boolean>` ~ Force run the i18n task
 - `runI18n: <Boolean>` ~ Should we run the i18n tasks ?
+- `isRemoteBuild: <Boolean>` ~ Is it the deploy of a remote build ?
 
 We have a context available for tasks inside ( _hookPostTasks, hookPostTaskClone, hookPostTaskBuild_ ):
 
