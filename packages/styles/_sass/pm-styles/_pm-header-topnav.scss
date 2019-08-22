@@ -6,11 +6,11 @@
   &:hover,
   &:active,
   &[aria-current="true"] {
-    color: var(--color-nav-active, $pm-blue);
+    color: var(--color-nav-active, $pm-primary);
     text-decoration: none;
     
     > .topnav-icon {
-      fill: var(--color-nav-active, $pm-blue);
+      fill: var(--color-nav-active, $pm-primary);
     }
   }
   &[aria-current="true"] {

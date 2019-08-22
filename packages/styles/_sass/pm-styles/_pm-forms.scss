@@ -106,9 +106,9 @@ select.pm-field {
   padding: em(10) em(16); // design want 42px height (actually 43 to avoid .5px)
 }
 .pm-field--highlight {
-  border-color: $pm-blue;
+  border-color: $pm-primary;
   border-width: 2px;
-  background-color: rgba($pm-blue, .1);
+  background-color: rgba($pm-primary, .1);
 }
 
 /* checkboxes */
@@ -179,7 +179,7 @@ select.pm-field {
 .pm-radio {
   @extend .sr-only;
   &:checked + .pm-radio-fakeradio::before {
-    background: $pm-blue;
+    background: $pm-primary;
     transform: scale(1);
   }
   &:focus + .pm-radio-fakeradio {
@@ -248,10 +248,10 @@ $width: 5.5em !default;
       fill: $white;
     }
     &::before {
-      background: $pm-blue;
+      background: $pm-primary;
       transform: translateX( #{$width/2} ) translateX(-2px);
       // transform: translateX( calc( 2.5rem - 2px) ); does NOT work in IE11
-      border-color: $pm-blue-dark;
+      border-color: $pm-primary-dark;
     }
   }
   &:focus + .pm-toggle-label {
@@ -285,7 +285,7 @@ $width: 5.5em !default;
       }
       &[aria-busy="true"] + .pm-toggle-label  {
         &::before {
-          //background-color: $pm-blue;
+          //background-color: $pm-primary;
           transform: translateX( -#{$width/4} ) translateX(2px);
         }
       }

@@ -88,8 +88,8 @@
 
 .pm-button-blue {
   color: $white;
-  background-color: $pm-blue;
-  border: 1px solid $pm-blue;
+  background-color: $pm-primary;
+  border: 1px solid $pm-primary;
 
   &:focus,
   &:hover,
@@ -97,11 +97,11 @@
   &.is-hover {
     color: $white;
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
-    background: $pm-blue-dark;
+    background: $pm-primary-dark;
   }
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
-    background: $pm-blue-dark;
+    background: $pm-primary-dark;
     text-shadow: 1px 1px 10px rgba( $white, .3 ),-1px -1px 10px rgba( $white, .3 );
     box-shadow: none;
   }
@@ -114,13 +114,13 @@
   }
   /* just to cancel examples  */
   &.is-hover:hover {
-    background-color: $pm-blue-dark;
+    background-color: $pm-primary-dark;
   }
 }
 
 .pm-button-blueborder {
-  border-color: $pm-blue;
-  color: $pm-blue;
+  border-color: $pm-primary;
+  color: $pm-primary;
   background-color: $white;
 
   &:focus,
@@ -128,13 +128,13 @@
   &:focus-within,
   &.is-hover {
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
-    border-color: $pm-blue-dark;
-    color: $pm-blue-dark;
+    border-color: $pm-primary-dark;
+    color: $pm-primary-dark;
   }
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
-    border-color: $pm-blue-dark;
-    color: $pm-blue-dark;
+    border-color: $pm-primary-dark;
+    color: $pm-primary-dark;
     background: radial-gradient(closest-side, $white, $pm-global-border 90%);
     box-shadow: none;
   }
@@ -148,8 +148,8 @@
 }
 
 .pm-button-blueborder-dark {
-  border-color: $pm-blue-light;
-  color: $pm-blue-light;
+  border-color: $pm-primary-light;
+  color: $pm-primary-light;
   background-color: $pm-global-grey;
 
   &:focus,
@@ -159,8 +159,8 @@
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     background-color: rgba(0, 0, 0, 0.2);
-    border-color: $pm-blue-light;
-    color: $pm-blue-dark;
+    border-color: $pm-primary-light;
+    color: $pm-primary-dark;
   }
   &:active,
   &.is-active {

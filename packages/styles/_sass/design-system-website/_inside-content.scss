@@ -102,12 +102,12 @@
 }
 
 .twitter-link > .icon-twitter {
-  fill: $pm-blue;
+  fill: $pm-primary;
 }
 .twitter-link:focus,
 .twitter-link:hover,
 .twitter-link:active {
   & > .icon-twitter {
-    fill: $pm-blue-dark;
+    fill: $pm-primary-dark;
   }
 }

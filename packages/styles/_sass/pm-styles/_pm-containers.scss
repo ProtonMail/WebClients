@@ -52,7 +52,7 @@ $block-info-border-width: 3px !default;
   }
 }
 .block-info {
-  border-color: $pm-blue;
+  border-color: $pm-primary;
 }
 .block-info-error {
   border-color: $pm-global-warning;
@@ -69,7 +69,7 @@ $block-info-border-width: 3px !default;
   background-color: transparent;
 }
 .block-info-standard {
-  border-color: $pm-blue;
+  border-color: $pm-primary;
 }
 .block-info-standard-error {
   border-color: $pm-global-warning;

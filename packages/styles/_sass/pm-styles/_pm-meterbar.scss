@@ -26,23 +26,23 @@ $meterbar-height: 6px !default;
   }
 
   // &::-webkit-meter-optimum-value {
-  //   background: $pm-blue; 
+  //   background: $pm-primary; 
   //   border-radius: #{$meterbar-height/2};
   // }
   &::-webkit-meter-optimum-value {
-    background: $pm-blue; 
+    background: $pm-primary; 
     border-radius: #{$meterbar-height/2};
   }
   &:-moz-meter-optimum::-moz-meter-bar {
     border-radius: #{$meterbar-height/2};
-    background: $pm-blue;
+    background: $pm-primary;
   }
   
 }
 
 // .spacebar-percent {
 //   border-radius: 3px;
-//   background: $pm-blue;
+//   background: $pm-primary;
 //   height: 6px;
 //   position: absolute;
 //   top: 0;

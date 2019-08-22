@@ -27,7 +27,7 @@ $size-current-pin: 16px !default;
   border-radius: 50%;
   position: relative;
   top: -#{$height-wizard - 1};
-  background-image: radial-gradient(circle, $pm-blue 0, $pm-blue #{$height-wizard/2}, transparent #{$height-wizard/2});
+  background-image: radial-gradient(circle, $pm-primary 0, $pm-primary #{$height-wizard/2}, transparent #{$height-wizard/2});
 }
 
 .wizard-item {
@@ -70,10 +70,10 @@ $size-current-pin: 16px !default;
     }
   }
   &[aria-current="step"]::before {
-    background-image: radial-gradient(circle, $white 0, $white #{$height-wizard/2}, $pm-blue #{$height-wizard/2});
+    background-image: radial-gradient(circle, $white 0, $white #{$height-wizard/2}, $pm-primary #{$height-wizard/2});
   }
   &.is-complete::before {
-    background: $pm-blue url("#{$path-images}sprite-for-css-only.svg#css-on") 50% 50% no-repeat;
+    background: $pm-primary url("#{$path-images}sprite-for-css-only.svg#css-on") 50% 50% no-repeat;
     background-size: #{$size-current-pin - $height-wizard};
   }
   &.is-complete::after {
@@ -83,7 +83,7 @@ $size-current-pin: 16px !default;
     width: 100%;
     height: $height-wizard;
     top: -$size-current-pin;
-    background-color: $pm-blue;
+    background-color: $pm-primary;
   }
   &[aria-current="step"] .wizard-item-inner {
     position: absolute;

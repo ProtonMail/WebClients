@@ -26,10 +26,10 @@ body {
   &:active,
   &[aria-current="true"] {
     background: $white;
-    color: $pm-blue;
+    color: $pm-primary;
 
     .aside-linkIcon {
-      fill: $pm-blue;
+      fill: $pm-primary;
     }
 
   }
@@ -143,7 +143,7 @@ body {
 .animated-expandmore__button:active,
 [aria-current="page"].navigation__link {
   background: var(--main-bg-color, $pm-global-grey);
-  color: var(--color-nav-active, $pm-blue);
+  color: var(--color-nav-active, $pm-primary);
   font-weight: bold;
 }
 
