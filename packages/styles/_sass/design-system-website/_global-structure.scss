@@ -217,6 +217,10 @@ body {
     background-color: #2F333E;
   }
 }
+.toolbar-button--dropdown {
+  padding-left: em(12, $base-font);
+  padding-right: em(12, $base-font);
+}
 .toolbar-icon {
   fill: var(--fillcolor-icons, $white);
 }
