@@ -53,6 +53,7 @@ function contactSelectorModel(contactEmails, contactSelectorModal, dispatchers) 
                         recipients,
                         messageID: message.ID
                     });
+                    contactSelectorModal.deactivate();
                 }
             }
         });
