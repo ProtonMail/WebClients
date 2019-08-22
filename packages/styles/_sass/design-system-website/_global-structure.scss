@@ -149,8 +149,8 @@ body {
   border: unset;
   border-radius: unset;
 
-  padding-left: em(20, $base-font);
-  padding-right: em(20, $base-font);
+  padding-left: em(16, $base-font);
+  padding-right: em(16, $base-font);
   display: flex; // alignment fix on Chrome
 
   &:hover {
