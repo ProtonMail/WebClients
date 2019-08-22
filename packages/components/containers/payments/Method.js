@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useApiResult } from 'react-components';
-import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { Loader } from 'react-components';
 
 import Card from './Card';
 import useCard from './useCard';
@@ -13,14 +12,16 @@ import Bitcoin from './Bitcoin';
 
 const { CARD, PAYPAL, BITCOIN, CASH } = PAYMENT_METHOD_TYPES;
 
-const Method = ({ type, amount = 0, currency, onCard, onPayPal, method }) => {
-    const { result = {} } = useApiResult(queryPaymentMethods, []);
-    const { PaymentMethods = [] } = result;
+const Method = ({ type, amount = 0, currency, onCard, onPayPal, method, methods, loading }) => {
     const { card, updateCard, errors, isValid } = useCard();
 
     useEffect(() => {
         onCard({ card, isValid });
     }, [card]);
+
+    if (loading) {
+        return <Loader />;
+    }
 
     if (method === CARD) {
         return <Card card={card} errors={errors} onChange={updateCard} />;
@@ -38,7 +39,7 @@ const Method = ({ type, amount = 0, currency, onCard, onPayPal, method }) => {
         return <PayPal amount={amount} currency={currency} onPay={onPayPal} type={type} />;
     }
 
-    const { Details, Type } = PaymentMethods.find(({ ID }) => method === ID) || {};
+    const { Details, Type } = methods.find(({ ID }) => method === ID) || {};
 
     if (Details) {
         return <PaymentMethodDetails type={Type} details={Details} />;
@@ -48,7 +49,9 @@ const Method = ({ type, amount = 0, currency, onCard, onPayPal, method }) => {
 };
 
 Method.propTypes = {
+    loading: PropTypes.bool,
     method: PropTypes.string.isRequired,
+    methods: PropTypes.array,
     type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit']),
     amount: PropTypes.number,
     onCard: PropTypes.func,

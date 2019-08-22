@@ -1,26 +1,24 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Select } from 'react-components';
-import usePaymentMethodsSelect from './usePaymentMethodsSelect';
-import { CYCLE } from 'proton-shared/lib/constants';
 
-const PaymentMethodsSelect = ({ method, amount, cycle, coupon, type, onChange }) => {
-    const { methods, loading } = usePaymentMethodsSelect({ amount, cycle, coupon, type });
+const PaymentMethodsSelect = ({ method, methods, onChange, loading }) => {
     const handleChange = ({ target }) => onChange(target.value);
 
     useEffect(() => {
-        onChange(methods[0].value); // Select first payment method after all methods are loaded
+        // Select first payment method after all methods are loaded
+        if (methods.length) {
+            onChange(methods[0].value);
+        }
     }, [methods.length]);
 
-    return <Select disabled={loading} value={method} options={methods} onChange={handleChange} />;
+    return <Select loading={loading} value={method} options={methods} onChange={handleChange} />;
 };
 
 PaymentMethodsSelect.propTypes = {
     method: PropTypes.string,
-    amount: PropTypes.number.isRequired,
-    cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]),
-    coupon: PropTypes.string,
-    type: PropTypes.string.isRequired,
+    methods: PropTypes.array,
+    loading: PropTypes.bool,
     onChange: PropTypes.func.isRequired
 };
 

@@ -200,7 +200,7 @@ export { default as PaymentMethodActions } from './containers/paymentMethods/Pay
 export { default as PaymentMethodDetails } from './containers/paymentMethods/PaymentMethodDetails';
 export { default as PaymentMethodsTable } from './containers/paymentMethods/PaymentMethodsTable';
 export { default as PaymentMethodsSection } from './containers/paymentMethods/PaymentMethodsSection';
-export { default as usePaymentMethodsSelect } from './containers/paymentMethods/usePaymentMethodsSelect';
+export { default as usePaymentMethods } from './containers/paymentMethods/usePaymentMethods';
 export { default as PaymentMethodsSelect } from './containers/paymentMethods/PaymentMethodsSelect';
 export { default as ExternalPGPSettingsSection } from './containers/security/ExternalPGPSettingsSection';
 export { default as AddressVerificationSection } from './containers/security/AddressVerificationSection';

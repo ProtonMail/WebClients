@@ -5,12 +5,15 @@ import { Label, Row, Field, Alert, Price } from 'react-components';
 import { CYCLE, PAYMENT_METHOD_TYPES, MIN_DONATION_AMOUNT, MIN_CREDIT_AMOUNT } from 'proton-shared/lib/constants';
 
 import Method from './Method';
-import PaymentMethodsSelect from '../paymentMethods/PaymentMethodsSelect';
 import toDetails from './toDetails';
+import PaymentMethodsSelect from '../paymentMethods/PaymentMethodsSelect';
+import usePaymentMethods from '../paymentMethods/usePaymentMethods';
 
 const { CARD, PAYPAL, CASH, BITCOIN } = PAYMENT_METHOD_TYPES;
 
-const Payment = ({ type, amount, currency, cycle, onParameters, method, onMethod, onValidCard, onPay }) => {
+const Payment = ({ type, amount, currency, coupon, cycle, onParameters, method, onMethod, onValidCard, onPay }) => {
+    const { methods, options, loading } = usePaymentMethods({ amount, cycle, coupon, type });
+
     const handleCard = ({ card, isValid }) => {
         onValidCard(isValid);
         isValid && onParameters({ Payment: { Type: CARD, Details: toDetails(card) } });
@@ -58,20 +61,24 @@ const Payment = ({ type, amount, currency, cycle, onParameters, method, onMethod
                 <Field>
                     <div className="mb1">
                         <PaymentMethodsSelect
+                            loading={loading}
                             cycle={cycle}
                             method={method}
+                            methods={options}
                             amount={amount}
                             type={type}
                             onChange={handleChangeMethod}
                         />
                     </div>
                     <Method
+                        loading={loading}
                         amount={amount}
                         currency={currency}
                         onCard={handleCard}
                         onPayPal={onPay}
                         type={type}
                         method={method}
+                        methods={methods}
                     />
                 </Field>
             </Row>
@@ -82,6 +89,7 @@ const Payment = ({ type, amount, currency, cycle, onParameters, method, onMethod
 Payment.propTypes = {
     type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit']),
     amount: PropTypes.number.isRequired,
+    coupon: PropTypes.string,
     currency: PropTypes.oneOf(['EUR', 'CHF', 'USD']),
     parameters: PropTypes.object,
     onParameters: PropTypes.func,

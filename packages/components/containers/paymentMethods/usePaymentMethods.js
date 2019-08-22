@@ -1,13 +1,18 @@
+import { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { useApiResult } from 'react-components';
+import { useApi, useLoading, useAuthentication } from 'react-components';
 import { CYCLE, BLACK_FRIDAY, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 import { isIE11 } from 'proton-shared/lib/helpers/browser';
 import { isExpired } from 'proton-shared/lib/helpers/card';
 
-const usePaymentMethodsSelect = ({ amount, cycle, coupon, type }) => {
-    const { result = {}, loading } = useApiResult(queryPaymentMethods, []);
-    const { PaymentMethods = [] } = result;
+const usePaymentMethods = ({ amount, cycle, coupon, type }) => {
+    const api = useApi();
+    const { UID } = useAuthentication();
+    const isAuthenticated = !!UID;
+    const [methods, setMethods] = useState([]);
+    const [loading, withLoading] = useLoading();
+
     const isMonthlyValid = amount > 5000 && cycle === CYCLE.MONTHLY;
     const isYearly = cycle === CYCLE.YEARLY;
     const isTwoYear = cycle === CYCLE.TWO_YEARS;
@@ -25,16 +30,16 @@ const usePaymentMethodsSelect = ({ amount, cycle, coupon, type }) => {
         }
     };
 
-    const methods = [
+    const options = [
         {
             value: PAYMENT_METHOD_TYPES.CARD,
             text: c('Payment method option').t`Pay with credit/debit card`
         }
     ];
 
-    if (PaymentMethods.length) {
-        methods.unshift(
-            ...PaymentMethods.map(({ ID: value, Details, Type }, index) => ({
+    if (methods.length) {
+        options.unshift(
+            ...methods.map(({ ID: value, Details, Type }, index) => ({
                 text: [
                     getMethod(Type, Details),
                     isExpired(Details) && `(${c('Info').t`Expired`})`,
@@ -50,28 +55,35 @@ const usePaymentMethodsSelect = ({ amount, cycle, coupon, type }) => {
 
     // Paypal doesn't work with IE11
     if (!isIE11() && (isYearly || isTwoYear || isMonthlyValid || isInvoice)) {
-        methods.push({
+        options.push({
             text: c('Payment method option').t`Pay with PayPal`,
             value: PAYMENT_METHOD_TYPES.PAYPAL
         });
     }
 
     if (!isSignup && coupon !== BLACK_FRIDAY.COUPON_CODE) {
-        methods.push({
+        options.push({
             text: c('Payment method option').t`Pay with Bitcoin`,
             value: 'bitcoin'
         });
 
-        methods.push({
+        options.push({
             text: c('Label').t`Pay with cash`,
             value: 'cash'
         });
     }
 
+    useEffect(() => {
+        if (isAuthenticated) {
+            withLoading(api(queryPaymentMethods()).then(({ PaymentMethods = [] }) => setMethods(PaymentMethods)));
+        }
+    }, []);
+
     return {
         methods,
-        loading
+        loading,
+        options
     };
 };
 
-export default usePaymentMethodsSelect;
+export default usePaymentMethods;
