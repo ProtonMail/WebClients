@@ -1,8 +1,8 @@
 <nav
     class="toolbar toolbarDesktop-container pm_toolbar pm_toolbar_withSelector">
 
-    <span class="flex pl1 pr1 back" ng-if="idDefined() &&  viewLayout === 1">
-        <button ng-click="back()" class="flex" pt-tooltip-translate="Back to list" pt-tooltip-translate-context="Action">
+    <span class="flex back" ng-if="idDefined() &&  viewLayout === 1">
+        <button ng-click="back()" class="flex toolbar-button" pt-tooltip-translate="Back to list" pt-tooltip-translate-context="Action">
             <icon data-name="arrow-left" data-size="16" class="mauto toolbar-icon"></icon>
             <span class="sr-only" translate-context="Action" translate>Back to list</span>
         </button>
@@ -12,40 +12,40 @@
         ng-if="displayPaginator()"
         class="toolBar-select-all mtauto mbauto"></elements-selector>
 
-    <span class="toolbar-separator ml0-5 mr0-5"></span>
+    <span class="toolbar-separator"></span>
 
     <read-unread></read-unread>
-    <span class="toolbar-separator ml0-5 mr0-5"></span>
+    <span class="toolbar-separator"></span>
     <move-element></move-element>
 
-    <span class="toolbar-separator ml0-5 mr0-5"></span>
+    <span class="toolbar-separator"></span>
 
-    <div class="pl0-5 pr0-5 flex">
+    <div class="flex">
         <folder-selector-dropdown
             id="tour-folder-dropdown"
             class="toolbarDesktop-select-label flex"
             ng-class="{disabled: isDisabled()}"></folder-selector-dropdown>
     </div>
 
-    <div class="pl0-5 pr0-5 flex">
+    <div class="flex">
         <label-selector-dropdown
             id="tour-label-dropdown"
             class="toolbarDesktop-select-label flex"
             ng-class="{disabled: isDisabled()}"></label-selector-dropdown>
     </div>
 
-    <span class="toolbar-separator ml0-5 mr0-5"></span>
+    <span class="toolbar-separator"></span>
 
-    <div class="pl0-5 pr0-5 flex">
+    <div class="flex">
         <advanced-filter-element></advanced-filter-element>
     </div>
 
 
     <div class="right action toolbarDesktop-actions-right">
         <choose-layout-btns id="tour-layout"></choose-layout-btns>
-        <span class="toolbar-separator ml0-5 mr0-5 separator-if-row-mode"></span>
+        <span class="toolbar-separator separator-if-row-mode"></span>
         <nav-elements></nav-elements>
-        <span class="toolbar-separator ml0-5 mr0-5" ng-if="displayPaginator()"></span>
+        <span class="toolbar-separator" ng-if="displayPaginator()"></span>
         <paginator
             class="toolbarDesktop-select-page"
             ng-if="displayPaginator()"></paginator>

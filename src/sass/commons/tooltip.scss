@@ -5,7 +5,7 @@
 	max-width: 500px;
 	text-align: center;
 	color: $white;
-	background-color: darken($secondary, 10%);
+	background-color: $black;
 	border-radius: 2px;
 }
 
@@ -19,7 +19,7 @@
 	height: 0;
 	border-style: solid;
 	margin: 5px;
-	border-color: darken($secondary, 10%);
+	border-color: $black;
 }
 
 .tooltip[x-placement^="top"] {

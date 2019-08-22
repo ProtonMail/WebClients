@@ -1,6 +1,6 @@
 <div class="flex">
     <button
-        class="pm-button--for-icon flex noborder paginator-btn-previous"
+        class="toolbar-button flex noborder paginator-btn-previous"
         pt-tooltip-translate="Previous"
         pt-tooltip-translate-context="Action">
         <icon data-name="caret" data-size="16" class="mauto rotateZ-90 toolbar-icon"></icon>
@@ -8,9 +8,9 @@
     </button>
 
     <dropdown-container class="pm-group-buttons">
-        <dropdown-button class="pl0-5 pr0-5 paginator-indicator">
+        <dropdown-button class="toolbar-button toolbar-button--dropdown paginator-indicator">
             <span class="mauto">{{ ::page }}</span>
-            <icon name="caret" class="dropdownv4-icon mauto toolbar-icon"></icon>
+            <icon name="caret" class="dropdownv4-icon mauto toolbar-icon ml0-25"></icon>
         </dropdown-button>
 
         <dropdown-content class="paginator-dropdown">
@@ -28,7 +28,7 @@
     </dropdown-container>
 
     <button
-        class="pm-button--for-icon flex noborder paginator-btn-next"
+        class="toolbar-button flex noborder paginator-btn-next"
         pt-tooltip-translate="Next"
         pt-tooltip-translate-context="Action">
         <icon data-name="caret" data-size="16" class="mauto rotateZ-270 toolbar-icon"></icon>

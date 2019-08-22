@@ -8,10 +8,6 @@
     @include flexAlignCenter();
 }
 
-.elements-selector-check {
-    width: 30px;
-}
-
 .elements-selector:not(.disabled) {
     .elements-selector-check {
         cursor: pointer;
