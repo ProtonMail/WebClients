@@ -28,6 +28,10 @@
     background: $pm-global-attention;
     color: $pm-global-grey;
   }
+  &-info {
+    background: $pm-primary;
+    color: $white;
+  }
 }
 
 .notificationIn {
