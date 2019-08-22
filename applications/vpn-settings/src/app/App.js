@@ -3,12 +3,15 @@ import React from 'react';
 import { ProtonApp, useAuthentication, useInstance } from 'react-components';
 import createSecureSessionStorage from 'proton-shared/lib/createSecureSessionStorage';
 import { MAILBOX_PASSWORD_KEY, UID_KEY } from 'proton-shared/lib/constants';
+import sentry from 'proton-shared/lib/helpers/sentry';
 
 import * as config from './config';
 import PrivateApp from './PrivateApp';
 import PublicApp from './PublicApp';
 
 import './app.scss';
+
+sentry(config);
 
 const Setup = () => {
     const { UID, login, logout } = useAuthentication();
