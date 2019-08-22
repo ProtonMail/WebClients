@@ -8,6 +8,10 @@
 - added paypal logo in bank images
 - added `$pm-primary`, `$pm-primary-light`, `$pm-primary-dark` Sass variables (aliases for main colors)
 
+## Updated/fixes
+
+- increased `z-index` of notifications, in order for them to be on the top of modals :)
+
 
 # [1.7.2] - 2019-08-15
 
