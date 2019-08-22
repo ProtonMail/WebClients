@@ -61,8 +61,23 @@ const BillingSection = ({ permission }) => {
             <>
                 <SubTitle>{c('Title').t`Billing details`}</SubTitle>
                 <Alert>{c('Info').t`There are no billing details available for your current subscription.`}</Alert>
+                {Credit ? (
+                    <div className="shadow-container mb1">
+                        <div className="p1 bg-global-light">
+                            <div className="flex-autogrid onmobile-flex-column w100">
+                                <div className="flex-autogrid-item pb0">{c('Label').t`Credits`}</div>
+                                <div className="flex-autogrid-item pb0" />
+                                <div className="flex-autogrid-item pb0 bold">{Credit / 100}</div>
+                                <div className="flex-autogrid-item pb0 alignright">
+                                    <SmallButton onClick={handleOpenCreditsModal}>{c('Action')
+                                        .t`Add credits`}</SmallButton>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ) : null}
                 <Button onClick={handleOpenGiftCodeModal} className="mr1">{c('Action').t`Use gift code`}</Button>
-                <Button onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</Button>
+                {Credit ? null : <Button onClick={handleOpenCreditsModal}>{c('Action').t`Add credits`}</Button>}
             </>
         );
     }
