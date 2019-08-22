@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { useSubscription, Href, useConfig } from 'react-components';
 import { Link } from 'react-router-dom';
 
-import { formatPlans } from '../../containers/payments/subscription/helpers';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS, PLAN_TYPES, PLAN_SERVICES } from 'proton-shared/lib/constants';
 
 import MailLogo from './MailLogo';
 import VpnLogo from './VpnLogo';
 
+const { PLAN } = PLAN_TYPES;
+const { MAIL, VPN } = PLAN_SERVICES;
 const { PROTONMAIL, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR, PROTONVPN_SETTINGS, PROTONMAIL_SETTINGS } = APPS;
 
 /**
@@ -18,18 +19,20 @@ const { PROTONMAIL, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR, PROTONVPN_SETTI
  */
 const MainLogo = ({ url = '/inbox', external = false }) => {
     const { APP_NAME } = useConfig();
-    const [{ Plans } = {}] = useSubscription();
+    const [{ Plans = [] } = {}] = useSubscription();
     const className = 'logo-container nodecoration flex-item-centered-vert';
-
-    const { mailPlan = {}, vpnPlan = {} } = formatPlans(Plans);
+    const { Name } =
+        Plans.find(
+            ({ Services, Type }) => Type === PLAN && Services & (APP_NAME === PROTONVPN_SETTINGS ? VPN : MAIL)
+        ) || {};
 
     const logo = (() => {
         // we do not have the proper logos for all the products yet. Use mail logo in the meantime
         if ([PROTONMAIL, PROTONMAIL_SETTINGS, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR].includes(APP_NAME)) {
-            return <MailLogo planName={mailPlan.Name} />;
+            return <MailLogo planName={Name} />;
         }
         if (APP_NAME === PROTONVPN_SETTINGS) {
-            return <VpnLogo planName={vpnPlan.Name} />;
+            return <VpnLogo planName={Name} />;
         }
         return null;
     })();
