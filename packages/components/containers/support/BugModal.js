@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { APPS } from 'proton-shared/lib/constants';
@@ -109,6 +109,13 @@ const BugModal = ({ onClose, username: Username = '', addresses = [], ...rest })
         onClose();
         createNotification({ text: c('Success').t`Bug reported` });
     };
+
+    useEffect(() => {
+        if (!model.Email && addresses.length) {
+            const [{ Email = '' }] = addresses;
+            update({ ...model, Email });
+        }
+    }, [addresses]);
 
     return (
         <FormModal

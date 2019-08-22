@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Icon, Dropdown, useModals, BugModal, usePopperAnchor, generateUID, useConfig } from 'react-components';
+import {
+    Icon,
+    Dropdown,
+    useModals,
+    AuthenticatedBugModal,
+    usePopperAnchor,
+    generateUID,
+    useConfig
+} from 'react-components';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 
@@ -14,7 +22,7 @@ const SupportDropdown = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
 
     const handleBugReportClick = () => {
-        createModal(<BugModal />);
+        createModal(<AuthenticatedBugModal />);
     };
 
     return (

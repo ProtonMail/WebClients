@@ -40,14 +40,17 @@ const AttachScreenshot = ({ id, onUpload, onReset }) => {
     if (attached) {
         return (
             <>
-                <Icon name="insert-image" /> {c('Info').t`Screenshot(s) attached`}
-                <Button onClick={handleClick}>{c('Action').t`Clear`}</Button>
+                <div className="flex flex-nowrap flex-items-center">
+                    <Icon name="insert-image" className="mr0-5" />
+                    <span className="mr1">{c('Info').t`Screenshot(s) attached`}</span>
+                    <Button onClick={handleClick}>{c('Action').t`Clear`}</Button>
+                </div>
             </>
         );
     }
 
     return (
-        <FileInput className="mr1" multiple accept="image/*" id={id} onChange={handleChange}>{c('Action')
+        <FileInput multiple accept="image/*" id={id} onChange={handleChange}>{c('Action')
             .t`Add screenshot(s)`}</FileInput>
     );
 };

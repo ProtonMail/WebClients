@@ -10,7 +10,7 @@ import {
     useApi,
     Icon,
     Dropdown,
-    BugModal,
+    AuthenticatedBugModal,
     DonateModal,
     generateUID,
     PrimaryButton,
@@ -35,7 +35,7 @@ const UserDropdown = ({ ...rest }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
 
     const handleBugReportClick = () => {
-        createModal(<BugModal />);
+        createModal(<AuthenticatedBugModal />);
     };
 
     const handleSupportUsClick = () => {
