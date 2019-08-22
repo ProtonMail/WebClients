@@ -1,11 +1,13 @@
 import { useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
-import { UserModel } from 'proton-shared/lib/models';
+import { ContactEmailsModel, ContactsModel, UserModel } from 'proton-shared/lib/models';
 import { useEventManager, useCache } from 'react-components';
 import { STATUS } from 'proton-shared/lib/models/cache';
 import { SubscriptionModel } from 'proton-shared/lib/models/subscriptionModel';
 import { OrganizationModel } from 'proton-shared/lib/models/organizationModel';
 import { MembersModel } from 'proton-shared/lib/models/membersModel';
+import { EVENT_ERRORS } from 'proton-shared/lib/errors';
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
 const ModelListener = ({ models }) => {
     const { subscribe } = useEventManager();
@@ -38,6 +40,11 @@ const ModelListener = ({ models }) => {
                         value: model.update(oldValue, data[key])
                     });
                 }
+            }
+
+            if (hasBit(data.Refresh, EVENT_ERRORS.CONTACTS)) {
+                cache.delete(ContactsModel.key);
+                cache.delete(ContactEmailsModel.key);
             }
 
             // If user model was changed.
