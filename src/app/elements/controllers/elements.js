@@ -298,6 +298,7 @@ function ElementsController(
             if (type === 'move') {
                 const idDefined = $scope.idDefined();
                 const isScope = !idDefined || (idDefined && AppModel.get('numberElementChecked') > 0);
+
                 /**
                  * Move item only when nothing is opened
                  * and we have a selection
@@ -306,7 +307,7 @@ function ElementsController(
                  * Hack: defer to prevent children to check an empty value...
                  * @todo  we need to KILL this controller and rfr
                  */
-                if (!isOpened && isScope) {
+                if ((!isOpened && isScope) || (AppModel.get('numberElementChecked') > 0 && isOpened)) {
                     e.preventDefault();
                     _.defer(() => $scope.move(to));
                 }
