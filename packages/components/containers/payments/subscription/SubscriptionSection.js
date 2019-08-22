@@ -30,7 +30,7 @@ const getCyclesi18n = () => ({
 });
 
 const SubscriptionSection = ({ permission }) => {
-    const [{ hasPaidMail, hasPaidVpn, isPaid }] = useUser();
+    const [{ hasPaidMail, hasPaidVpn }] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
     const [
@@ -86,10 +86,14 @@ const SubscriptionSection = ({ permission }) => {
     const canRemoveCoupon = CouponCode && CouponCode !== BUNDLE;
     const i18n = getCyclesi18n();
 
+    /**
+     * Open subscription modal with criteria
+     * @param {String} action remove-coupon, yearly, upgrade, update
+     */
     const handleModal = (action = '') => () => {
         const coupon = action === 'remove-coupon' ? '' : CouponCode ? CouponCode : undefined; // CouponCode can equals null
         const cycle = action === 'yearly' ? YEARLY : Cycle;
-        const plansMap = isPaid ? toPlanNames(subscription.Plans) : { plus: 1, vpnplus: 1 };
+        const plansMap = action === 'upgrade' ? { plus: 1, vpnplus: 1 } : toPlanNames(subscription.Plans);
 
         createModal(<SubscriptionModal plansMap={plansMap} coupon={coupon} currency={Currency} cycle={cycle} />);
     };
@@ -109,7 +113,7 @@ const SubscriptionSection = ({ permission }) => {
                                 c('Info').t`Combine paid ProtonMail and ProtonVPN and get a 20% discount on both`}
                         </div>
                         <div className="flex-autogrid-item alignright">
-                            <SmallButton onClick={handleModal()}>
+                            <SmallButton onClick={handleModal(hasPaidMail ? 'update' : 'upgrade')}>
                                 {hasPaidMail ? c('Action').t`Update` : c('Action').t`Upgrade`}
                             </SmallButton>
                         </div>
@@ -184,7 +188,7 @@ const SubscriptionSection = ({ permission }) => {
                                     c('Info').t`Combine paid ProtonMail and ProtonVPN and get a 20% discount on both`}
                             </div>
                             <div className="flex-autogrid-item alignright">
-                                <SmallButton onClick={handleModal()}>
+                                <SmallButton onClick={handleModal(hasPaidVpn ? 'update' : 'upgrade')}>
                                     {hasPaidVpn ? c('Action').t`Update` : c('Action').t`Upgrade`}
                                 </SmallButton>
                             </div>
