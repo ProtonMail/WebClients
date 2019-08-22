@@ -40,6 +40,7 @@ $conversation-icon-size: 4rem !default;
 
   &:checked + .item-icon {
     background-color: $pm-primary;
+    border-color: $pm-primary;
     & > .item-abbr {
       display: none;
     }
