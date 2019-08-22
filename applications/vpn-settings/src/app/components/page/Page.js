@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React, { Children, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Alert, ObserverSections, SubSidebar, SettingsTitle, usePermissions } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
@@ -10,6 +10,10 @@ import Main from './Main';
 const Page = ({ config, children }) => {
     const userPermissions = usePermissions();
     const { sections = [], permissions: pagePermissions, text } = config;
+
+    useEffect(() => {
+        document.title = `${text} - ProtonVPN`;
+    }, [text]);
 
     if (!hasPermission(userPermissions, pagePermissions)) {
         return (
