@@ -72,6 +72,9 @@ CALENDAR_APP=calendar
 - **CONTACTS_APP**: Current directory where proton-contacts is (_by default `proton-contacts`_)
 - **CALENDAR_APP**: Current directory where proton-calendar is (_by default `proton-calendar`_)
 
+### Deploy v4 with remote version of subprojects
+
+`npm run deploy:v4`
 
 ### CI build - no minify
 

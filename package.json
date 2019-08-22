@@ -196,7 +196,8 @@
     "cypress:open": "./tasks/lazyInstallVendor e2e && cypress open",
     "i18n:getlatest": "cross-env APP_KEY=Angular proton-i18n upgrade --custom",
     "bundle": "./node_modules/proton-bundler/scripts/createVersionJSON.sh && cross-env NODE_ENV=dev tasks/setupConfig.js",
-    "postbundle": "cross-env NODE_ENV_DIST=bundle-only NODE_ENV=dist proton-bundler"
+    "postbundle": "cross-env NODE_ENV_DIST=bundle-only NODE_ENV=dist proton-bundler",
+    "deploy:v4": "npm run deploy -- --branch=deploy-v4 --remote-pm-settings --remote-calendar --remote-contacts"
   },
   "lint-staged": {
     "linters": {
