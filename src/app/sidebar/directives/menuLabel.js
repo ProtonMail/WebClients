@@ -30,7 +30,7 @@ function menuLabel(dispatchers, $compile, labelsModel, $stateParams, $state, sid
         const dropzoneType = !isContactState ? 'label' : 'group';
 
         return dedentTpl(`<li class="${className}">
-            <a href="${href}" title="${cleanAttr}" data-label="${cleanAttr}" class="btn menuLabel-link navigation__link" data-pt-dropzone-item="${ID}" data-pt-dropzone-item-type="${dropzoneType}">
+            <a href="${href}" internal-link title="${cleanAttr}" data-label="${cleanAttr}" class="btn menuLabel-link navigation__link" data-pt-dropzone-item="${ID}" data-pt-dropzone-item-type="${dropzoneType}">
                 <icon data-name="${iconItem}" class="mr0-5 flex-item-noshrink" style="fill: ${Color || '#CCC'}"></icon>
                 <span class="menuLabel-title">${cleanName}</span>
                 <em class="menuLabel-counter" data-label-id="${ID}"></em>
