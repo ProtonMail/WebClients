@@ -96,9 +96,9 @@
           </div>
             
           <div class="main flex-item-fluid">
-            <div class="toolbar noprint">
+            
+            {% include toolbar.html %}   
 
-            </div>
             <div class="main-area--withToolbar js-main-area {% if page.pageId == 'conversations' %} no-scroll {% endif %} reset4print scroll-smooth-touch"><!-- can't apply flex on it directly, otherwise, stick will fail -->
               <div class="flex flex-reverse">
 

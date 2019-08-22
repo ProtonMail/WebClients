@@ -191,6 +191,32 @@ body {
   border-radius: 4px 4px 0 0;
   box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.2);
 }
+.toolbar-button {
+  // resets to avoid pm-button styles
+  padding: unset;
+  background: unset;
+  border: unset;
+  border-radius: unset;
+
+  padding-left: em(20, $base-font);
+  padding-right: em(20, $base-font);
+  display: flex; // alignment fix on Chrome
+
+  &:hover {
+    box-shadow: unset;
+    background-color: #505560;
+  }
+  &[disabled] {
+    background: unset;
+    opacity: .4;
+  }
+  &:active,
+  &.is-active,
+  &:not(div):active {
+    background: unset;
+    background-color: #2F333E;
+  }
+}
 .toolbar-icon {
   fill: var(--fillcolor-icons, $white);
 }
