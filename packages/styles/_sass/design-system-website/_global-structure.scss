@@ -163,7 +163,8 @@ body {
   }
   &:active,
   &.is-active,
-  &:not(div):active {
+  &:not(div):active,
+  [aria-expanded="true"] {
     background: unset;
     background-color: #2F333E;
   }
