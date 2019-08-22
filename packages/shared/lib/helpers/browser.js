@@ -89,3 +89,10 @@ export const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !wind
 export const hasAcrobatInstalled = () => getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl');
 export const hasPDFSupport = () => navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled() || isIos();
 export const redirectTo = (url = '') => document.location.replace(`${document.location.origin}${url}`);
+
+/**
+ * Detect browser requiring direct action
+ * Like opening a new tab
+ * @returns {Boolean}
+ */
+export const requireDirectAction = () => isSafari() || isFirefox();
