@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const Listr = require('listr');
 const UpdaterRenderer = require('listr-update-renderer');
 
@@ -13,9 +15,23 @@ async function main({ name }) {
             }
         },
         {
-            title: `Install dependencies`,
+            title: 'Install dependencies',
             async task() {
                 await script('manageRemote.sh', ['install', name]);
+            }
+        },
+        {
+            title: 'Import appConfig.json',
+            async task() {
+                const input = path.join(process.cwd(), 'appConfig.json');
+                const deprecatedInput = path.join(process.cwd(), 'env.json');
+                const output = path.join('/tmp', name, 'appConfig.json');
+
+                if (fs.existsSync(deprecatedInput)) {
+                    return fs.createReadStream(deprecatedInput).pipe(fs.createWriteStream());
+                }
+
+                fs.createReadStream(input).pipe(fs.createWriteStream(output));
             }
         }
     ];
