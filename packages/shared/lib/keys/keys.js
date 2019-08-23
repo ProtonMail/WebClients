@@ -118,3 +118,22 @@ export const decryptPrivateKeyArmored = async (armoredPrivateKey, keyPassword) =
     const [privateKey] = await getKeys(armoredPrivateKey);
     return decryptPrivateKey(privateKey, keyPassword).then(() => privateKey);
 };
+
+/**
+ * @param {Array} keys
+ * @param {Boolean} onlyDecrypted
+ * @return {Object}
+ */
+export const splitKeys = (keys = [], onlyDecrypted = true) => {
+    return keys.reduce(
+        (acc, { privateKey, publicKey }) => {
+            if (onlyDecrypted && !privateKey.isDecrypted()) {
+                return acc;
+            }
+            acc.publicKeys.push(publicKey);
+            acc.privateKeys.push(privateKey);
+            return acc;
+        },
+        { publicKeys: [], privateKeys: [] }
+    );
+};
