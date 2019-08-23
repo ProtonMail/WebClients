@@ -8,7 +8,8 @@ const parseCSV = require('csv-parse/lib/sync');
 const moment = require('moment');
 const argv = require('minimist')(process.argv.slice(2));
 const FormData = require('form-data');
-const dedent = require('dedent');
+const renderHelp = require('./helpers/help');
+const coucou = require('./helpers/coucou');
 
 const { spin, success, debug } = require('./helpers/log')('proton-i18n');
 const { getFiles, getCrowdin } = require('../config');
@@ -31,7 +32,6 @@ const getURL = (scope, flag = '') => {
 const translateLang = (input) => {
     const map = {
         uk: 'ua',
-        'es-ES': 'es',
         'es-ES': 'es',
         'pt-BR': 'pt'
     };
@@ -155,6 +155,9 @@ async function udpate(spinner) {
     spinner.stop();
     debug(body);
     success('Update crowdin with latest template');
+
+    // Inform us about the change 📢
+    coucou.send();
 }
 /**
  * Update latest translations to crowdin
@@ -307,44 +310,9 @@ async function main(opt = {}) {
 
         if (argv.help) {
             spinner.stop();
-            console.log(dedent`
-                Usage: $ proton-i18n crowdin <flag>
-                Available flags:
-                  - ${chalk.blue('--sync|-s')}
-                      Update app's translations with the ones from crowdin.
-                      You can configure which translations you want to update by using a file i18n.txt.
-                      each translations (ex: fr) = one line.
-                      More informations on the Wiki
-
-                  - ${chalk.blue('--update|-u')}
-                      Update crowdin with our export file from the app
-
-                  - ${chalk.blue('--check|-c')}
-                      To check the progress of an export from crowdin (to know if it's done or not yet)
-
-                  - ${chalk.blue('--export|-e')}
-                      Ask to crowdin to create an export of translations, as it needs some time to prepare them
-
-                  - ${chalk.blue('--members|-m')}
-                      Get from crowdin the list of best contributors for the project
-                      Flag: --format=top(default)/full
-                            top: list of top 30
-                            full: Object with top:List of top 30, byLang:{<lang>:<Array top contributors>}
-
-                  - ${chalk.blue('--list|-l')}
-                      List translations available on crowdin sorted by most progress done.
-                      Usefull to export translations ex:
-
-                        $ proton-i18n crowdin --list --type
-                            only list the code of the translation
-
-                        $ proton-i18n crowdin --list --type --limit=95
-                            only list the code of the translation and limit progress >= 95 + approved >= 95
-
-                        $ proton-i18n crowdin --list --type --limit=95 --ignore-approved
-                            only list the code of the translation and limit progress >= 95
-            `);
+            renderHelp('help-crowdin');
         }
+
         spinner.stop();
     } catch (e) {
         spinner.stop();
