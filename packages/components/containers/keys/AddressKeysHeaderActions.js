@@ -18,7 +18,7 @@ const AddressKeysHeaderActions = ({
 }) => {
     const { createModal } = useModals();
 
-    const { privateKey: primaryPrivateKey } = getPrimaryKey(addressKeys) || {};
+    const { privateKey: primaryPrivateKey, publicKey } = getPrimaryKey(addressKeys) || {};
 
     const canAdd = !isSubUser && isPrivate;
     const canImport = canAdd;
@@ -39,7 +39,7 @@ const AddressKeysHeaderActions = ({
     const exportActions = [
         canExportPublicKey && {
             text: c('Action').t`Export`,
-            onClick: () => createModal(<ExportPublicKeyModal name={emailAddress} privateKey={primaryPrivateKey} />)
+            onClick: () => createModal(<ExportPublicKeyModal name={emailAddress} publicKey={publicKey} />)
         },
         canExportPrivateKey && {
             text: c('Address action').t`Export private key`,
