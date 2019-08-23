@@ -1,6 +1,9 @@
 .searchbox-container {
   width: $conversations-column-width;
 }
+.searchbox-container:empty {
+  width: 0;
+}
 .searchbox-container input::placeholder {
   color: var(--color-standard-text, rgba(255, 255, 255, .6) );
 }
