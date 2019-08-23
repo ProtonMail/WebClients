@@ -6,7 +6,7 @@ const { success, debug } = require('./helpers/log')('proton-bundler');
 const defaultHook = [];
 const defaultCustom = {
     config: {},
-    tasks: () => {}
+    tasks() {}
 };
 
 /**
