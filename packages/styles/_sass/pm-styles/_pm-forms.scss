@@ -328,6 +328,7 @@ $width: 5.5em !default;
   position: absolute;
   right: .75em;
   top: .2em;
+  background-color: $pm-input-background;
 }
 @if $rtl-option == true {
   [dir="rtl"] {
