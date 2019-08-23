@@ -53,9 +53,9 @@ const useAddressesKeys = (user, addresses, userKeysList) => {
                                 ? await getAddressKeyToken({ Token, Signature, organizationKey, primaryUserKey })
                                 : keyPassword;
                             await decryptPrivateKey(privateKey, privateKeyPassword);
-                            return { Key, privateKey };
+                            return { Key, privateKey, publicKey: privateKey.toPublic() };
                         } catch (e) {
-                            return { Key, privateKey, error: e };
+                            return { Key, privateKey, publicKey: privateKey.toPublic(), error: e };
                         }
                     })
                 );

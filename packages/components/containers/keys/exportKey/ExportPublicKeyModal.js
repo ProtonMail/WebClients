@@ -5,11 +5,11 @@ import { Alert, FormModal } from 'react-components';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { KEY_FILE_EXTENSION } from 'proton-shared/lib/constants';
 
-const ExportPublicKeyModal = ({ name, privateKey, onClose, ...rest }) => {
+const ExportPublicKeyModal = ({ name, publicKey, onClose, ...rest }) => {
     const handleSubmit = () => {
-        const fingerprint = privateKey.getFingerprint();
+        const fingerprint = publicKey.getFingerprint();
         const filename = ['publickey.', name, '-', fingerprint, KEY_FILE_EXTENSION].join('');
-        const armoredPublicKey = privateKey.toPublic().armor();
+        const armoredPublicKey = publicKey.armor();
         const blob = new Blob([armoredPublicKey], { type: 'data:text/plain;charset=utf-8;' });
         downloadFile(blob, filename);
         onClose();
@@ -34,7 +34,7 @@ const ExportPublicKeyModal = ({ name, privateKey, onClose, ...rest }) => {
 
 ExportPublicKeyModal.propTypes = {
     onClose: PropTypes.func,
-    privateKey: PropTypes.object.isRequired,
+    publicKey: PropTypes.object.isRequired,
     name: PropTypes.string.isRequired
 };
 

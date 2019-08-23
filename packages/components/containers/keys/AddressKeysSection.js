@@ -104,7 +104,8 @@ const AddressKeysSection = () => {
     const handleAction = async (action, targetKey) => {
         const {
             Key: { ID },
-            privateKey
+            privateKey,
+            publicKey
         } = targetKey;
 
         if (action === ACTIONS.REACTIVATE) {
@@ -118,7 +119,7 @@ const AddressKeysSection = () => {
             return createModal(<ReactivateKeysModal allKeys={addressKeysToReactivate} />);
         }
         if (action === ACTIONS.EXPORT_PUBLIC_KEY) {
-            return createModal(<ExportPublicKeyModal name={addressEmail} privateKey={privateKey} />);
+            return createModal(<ExportPublicKeyModal name={addressEmail} publicKey={publicKey} />);
         }
         if (action === ACTIONS.EXPORT_PRIVATE_KEY) {
             return createModal(<ExportPrivateKeyModal name={addressEmail} privateKey={privateKey} />);

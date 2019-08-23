@@ -24,9 +24,9 @@ const useUserKeys = (User) => {
                 try {
                     const privateKeyPassword = Token ? await decryptMemberToken(Token, organizationKey) : keyPassword;
                     await decryptPrivateKey(privateKey, privateKeyPassword);
-                    return { Key, privateKey };
+                    return { Key, privateKey, publicKey: privateKey.toPublic() };
                 } catch (e) {
-                    return { Key, privateKey, error: e };
+                    return { Key, privateKey, publicKey: privateKey.toPublic(), error: e };
                 }
             })
         );
