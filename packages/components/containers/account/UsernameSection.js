@@ -10,7 +10,7 @@ const UsernameSection = () => {
             <SubTitle>{c('Title').t`Username`}</SubTitle>
             <Row>
                 <Label>{c('Label').t`Name`}</Label>
-                <Field>
+                <Field className="pt0-5">
                     <strong>{Name}</strong>
                 </Field>
             </Row>
