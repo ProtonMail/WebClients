@@ -7,7 +7,7 @@ const DropdownButton = ({ hasCaret = false, isOpen, children, ...rest }) => {
     return (
         <Button aria-expanded={isOpen} {...rest}>
             <span className="mauto">
-                <span className={hasCaret ? 'mr0-5' : ''}>{children}</span>
+                <span className={hasCaret && children ? 'mr0-5' : ''}>{children}</span>
                 {hasCaret && <DropdownCaret isOpen={isOpen} />}
             </span>
         </Button>
