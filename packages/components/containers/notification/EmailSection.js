@@ -57,8 +57,8 @@ const EmailSection = () => {
             <SubTitle>{c('Title').t`Recovery & notification`}</SubTitle>
             <Alert>{c('Info')
                 .t`The selected method can be used to recover an account in the event you forget your password and to be notified about missed emails.`}</Alert>
-            <Row>
-                <Label>{c('Label').t`Email address`}</Label>
+            <Row className="flex-items-center">
+                <Label className="pt0">{c('Label').t`Email address`}</Label>
                 <RecoveryEmail email={email} onClick={handleRecoveryEmail} />
             </Row>
             <Row>
