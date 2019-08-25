@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import { APPS, PLAN_TYPES, PLAN_SERVICES } from 'proton-shared/lib/constants';
 
+import CalendarLogo from './CalendarLogo';
+import ContactsLogo from './ContactsLogo';
 import MailLogo from './MailLogo';
 import VpnLogo from './VpnLogo';
 
@@ -28,8 +30,14 @@ const MainLogo = ({ url = '/inbox', external = false }) => {
 
     const logo = (() => {
         // we do not have the proper logos for all the products yet. Use mail logo in the meantime
-        if ([PROTONMAIL, PROTONMAIL_SETTINGS, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR].includes(APP_NAME)) {
+        if ([PROTONMAIL, PROTONMAIL_SETTINGS, PROTONDRIVE].includes(APP_NAME)) {
             return <MailLogo planName={Name} />;
+        }
+        if (APP_NAME === PROTONCALENDAR) {
+            return <CalendarLogo planName={Name} />;
+        }
+        if (APP_NAME === PROTONCONTACTS) {
+            return <ContactsLogo planName={Name} />;
         }
         if (APP_NAME === PROTONVPN_SETTINGS) {
             return <VpnLogo planName={Name} />;
