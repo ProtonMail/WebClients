@@ -9,13 +9,22 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }) => {
     const initials = getInitial(DisplayName || Name || undefined);
 
     return (
-        <button type="button" className="color-white inline-flex" aria-expanded={isOpen} ref={buttonRef} {...rest}>
-            <span className="alignright">
+        <button
+            type="button"
+            className="color-white inline-flex dropDown-logout-button"
+            aria-expanded={isOpen}
+            ref={buttonRef}
+            {...rest}
+        >
+            <span className="alignright mr0-5">
                 <span className="bl capitalize">{DisplayName}</span>
                 {Email ? <span className="bl smaller m0 opacity-30 lh100">{Email}</span> : null}
             </span>
-            <DropdownCaret isOpen={isOpen} className="icon-12p ml0-5 mr0-5 expand-caret mtauto mbauto" />
-            <span className="mtauto mbauto bordered rounded50 p0-5 inbl dropDown-logout-initials">{initials}</span>
+
+            <span className="mtauto mbauto bordered rounded50 p0-5 inbl dropDown-logout-initials relative">
+                <span className="dropDown-logout-text center">{initials}</span>
+                <DropdownCaret isOpen={isOpen} className="icon-12p expand-caret mauto" />
+            </span>
         </button>
     );
 };
