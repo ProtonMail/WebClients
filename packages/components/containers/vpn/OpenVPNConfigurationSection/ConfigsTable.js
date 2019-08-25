@@ -72,7 +72,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
     };
 
     return (
-        <Table>
+        <Table className="pm-simple-table--has-actions">
             <thead>
                 <tr>
                     <TableCell className="w50" type="header">

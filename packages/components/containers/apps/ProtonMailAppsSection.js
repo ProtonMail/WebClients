@@ -22,7 +22,7 @@ const ProtonMailAppsSection = () => {
     return (
         <>
             <SubTitle>ProtonMail apps</SubTitle>
-            <Table>
+            <Table className="pm-simple-table--has-actions">
                 <TableHeader
                     cells={[
                         c('Title for downloads section').t`Platform`,

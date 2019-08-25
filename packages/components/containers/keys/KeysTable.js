@@ -21,7 +21,7 @@ const KeysTable = ({ keys = [], onAction }) => {
     });
 
     return (
-        <Table>
+        <Table className="pm-simple-table--has-actions">
             <thead>
                 <tr>{headerCells}</tr>
             </thead>

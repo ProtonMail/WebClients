@@ -24,7 +24,7 @@ const PaymentMethodsTable = ({ methods, loading, fetchMethods }) => {
     };
 
     return (
-        <Table>
+        <Table className="pm-simple-table--has-actions">
             <TableHeader
                 cells={[
                     c('Title for payment methods table').t`Method`,

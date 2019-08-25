@@ -59,7 +59,7 @@ const AddressesWithMembers = ({ match, user, organization }) => {
             {selectedSelf ? (
                 <AddressesWithUser user={user} />
             ) : (
-                <Table>
+                <Table className="pm-simple-table--has-actions">
                     <TableHeader
                         cells={[
                             c('Header for addresses table').t`Address`,
