@@ -16,7 +16,7 @@ const AppsSidebar = ({ items = [] }) => {
 
     return (
         <aside className="aside noprint" id="aside-bar">
-            <ul className="unstyled m0 aligncenter  flex flex-column h100">
+            <ul className="unstyled m0 aligncenter flex flex-column h100">
                 {apps.map(({ appNames = [], icon, title, link, target }, index) => {
                     const isCurrent = appNames.includes(APP_NAME);
                     const key = `${index}`;
@@ -25,12 +25,12 @@ const AppsSidebar = ({ items = [] }) => {
                             <a
                                 href={link}
                                 target={target ? target : '_self'}
-                                className="center flex js-notyet aside-link"
+                                className="center flex aside-link"
                                 title={title}
                                 disabled={isCurrent}
                                 aria-current={isCurrent}
                             >
-                                <Icon name={icon} />
+                                <Icon name={icon} className="aside-linkIcon mauto fill-global-light" />
                             </a>
                         </li>
                     );
