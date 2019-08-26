@@ -31,9 +31,15 @@
 
         <div class="summary-right mlauto flex flex-column">
 
-            <div class="inline-flex mlauto">
+            <div class="inline-flex mlauto flex-items-center">
+
+                <icon
+                    ng-if="message.NumAttachments && !message.expand"
+                    data-name="attach"
+                    class="mr0-5"></icon>
 
                 <folders-message ng-if="message.isDraft()"></folders-message>
+
 
                 <time
                     class="time-machine"
@@ -49,7 +55,7 @@
            </div>
 
 
-            <div ng-if="message.expand" class="inline-flex flex-items-center">
+            <div ng-if="message.expand && message.toggleDetails" class="inline-flex flex-items-center flex-justify-end">
                 <icon
                     ng-if="message.NumAttachments"
                     data-name="attach"
@@ -85,7 +91,30 @@
                 <div class="recipients-details-size"><span translate-context="Label for the message size when displaying email details" translate>Size:</span> {{ ::message.Size | bytes }}</div>
             </div>
 
-            <div class="recipients-summary">
+            <div class="recipients-summary flex flex-reverse flex-spacebetween flex-items-center mb0-5">
+                <div class="inline-flex flex-items-center flex-justify-end pull-right">
+                    <icon
+                        ng-if="message.NumAttachments"
+                        data-name="attach"
+                        class="mr0-5"></icon>
+
+                    <div class="labels message-summary-labels">
+                        <labels-element
+                            data-button="remove"
+                            data-element="message"
+                            class="message-summary-labels-list"></labels-element>
+                    </div>
+
+                    <div class="location message-summary-folder folders">
+                        <folders-message></folders-message>
+                    </div>
+
+                    <pt-star
+                        data-model="message"
+                        class="singleStar ml0-5"
+                        data-pt-star-type="message"></pt-star>
+                </div>
+
                 <span class="flex">
                     <span
                         class="opacity-50 flex-self-vcenter container-to"
@@ -143,22 +172,27 @@
                 </div>
             </div>
 
-            <div class="action-row mb0-5">
+            <div class="action-row mb0-5 flex flex-spacebetween">
 
-                <div class="actions flex pull-right" ng-if="message.decrypting === false">
+                <button class="toggleDetails link" data-action-message="toggleDetails">
+                    <span class="toggleDetails-label-show" translate translate-context="Action">Show details</span>
+                    <span class="toggleDetails-label-hide" translate translate-context="Action">Hide details</span>
+                </button>
+
+                <div class="actions flex" ng-if="message.decrypting === false">
 
                     <div class="pm-group-buttons mr1">
                         <filter-button
                             data-message="message"
-                            class="pm_buttons flex pm-group-button pm-button pm-button--for-icon"></filter-button>
+                            class="pm_buttons flex pm-group-button pm-button p0"></filter-button>
 
                         <folder-selector-dropdown
                             data-message="message"
-                            class="pm_buttons flex pm-group-button pm-button pm-button--for-icon"></folder-selector-dropdown>
+                            class="pm_buttons flex pm-group-button pm-button p0"></folder-selector-dropdown>
 
                         <label-selector-dropdown
                             data-message="message"
-                            class="pm_buttons flex pm-group-button pm-button pm-button--for-icon"></label-selector-dropdown>
+                            class="pm_buttons flex pm-group-button pm-button p0"></label-selector-dropdown>
 
                         <message-options
                             class="pm_buttons flex pm-group-button pm-button p0"></message-options>
@@ -172,7 +206,7 @@
                             pt-tooltip-translate="Reply"
                             pt-tooltip-translate-context="Action"
                             tabindex="0">
-                            <icon data-name="reply" data-size="16" class=" mauto"></icon>
+                            <icon data-name="reply" class=" mauto"></icon>
                             <span class="sr-only" translate-context="Action" translate>Reply</span>
                         </button>
 
@@ -183,7 +217,7 @@
                             pt-tooltip-translate="Reply all"
                             pt-tooltip-translate-context="Action"
                             tabindex="0">
-                            <icon data-name="reply-all" data-size="16" class=" mauto"></icon>
+                            <icon data-name="reply-all" class=" mauto"></icon>
                             <span class="sr-only" translate-context="Action" translate>Reply all</span>
                         </button>
 
@@ -194,20 +228,14 @@
                             pt-tooltip-translate="Forward"
                             pt-tooltip-translate-context="Action"
                             tabindex="0">
-                            <icon data-name="forward" data-size="16" class=" mauto"></icon>
+                            <icon data-name="forward"  class=" mauto"></icon>
                             <span class="sr-only" translate-context="Action" translate>Forward</span>
                         </button>
                     </div>
                 </div>
-
-                <button class="toggleDetails link" data-action-message="toggleDetails">
-                    <span class="toggleDetails-label-show" translate translate-context="Action">Show details</span>
-                    <span class="toggleDetails-label-hide" translate translate-context="Action">Hide details</span>
-                </button>
-
             </div>
 
-            <message-extra></message-extra>
+            <message-extra class="mt0-5"></message-extra>
         </div>
 
         <events-attachments data-model="message"></events-attachments>

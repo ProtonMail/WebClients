@@ -7,8 +7,17 @@ function dropdownContainer(dispatchers) {
         right: 'dropDown--rightArrow'
     };
 
-    function link(scope, el, { position }) {
+    function link(scope, el, { position, mode }) {
         const id = generateUID();
+
+        // Handle toolbar style by hand POST digest else compile will remove them
+        if (mode === 'toolbar') {
+            scope.$applyAsync(() => {
+                // IE11 compat
+                el[0].firstElementChild.classList.add('toolbar-button');
+                el[0].firstElementChild.classList.add('toolbar-button--dropdown');
+            });
+        }
 
         position && el[0].classList.add(CLASSNAMES[position]);
         el[0].setAttribute('data-dropdown-id', id);
