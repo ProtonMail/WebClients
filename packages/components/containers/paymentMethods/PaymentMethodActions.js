@@ -17,9 +17,9 @@ const toCard = ({ Details }) => {
     return {
         fullname: Details.Name,
         month: Details.ExpMonth,
-        number: `•••• •••• •••• ${Details.Last4}`,
+        number: '',
         year: Details.ExpYear,
-        cvc: '•••',
+        cvc: '',
         zip: Details.ZIP,
         country: Details.Country
     };
