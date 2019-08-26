@@ -95,4 +95,4 @@ export const redirectTo = (url = '') => document.location.replace(`${document.lo
  * Like opening a new tab
  * @returns {Boolean}
  */
-export const requireDirectAction = () => isSafari() || isFirefox();
+export const requireDirectAction = () => isSafari() || isFirefox() || isEdge();
