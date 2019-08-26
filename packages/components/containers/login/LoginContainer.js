@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { useApi, useLoading, LinkButton, PrimaryButton, SubTitle, useNotifications } from 'react-components';
-import { Link } from 'react-router-dom';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
 import { getUser } from 'proton-shared/lib/api/user';
 import { auth2FA, getInfo, setCookies } from 'proton-shared/lib/api/auth';
@@ -30,7 +29,7 @@ const FORM = {
     UNLOCK: 3
 };
 
-const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
+const LoginContainer = ({ onLogin, needHelp, ignoreUnlock = false }) => {
     const { createNotification } = useNotifications();
     const cacheRef = useRef();
     const api = useApi();
@@ -198,15 +197,12 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
                         password={password}
                         setPassword={loading ? noop : setPassword}
                     />
-                    <PrimaryButton type="submit" className="w100" loading={loading} data-cy-login="submit">
-                        {c('Action').t`Login`}
-                    </PrimaryButton>
-                    <p>
-                        <Link to="/support/login">{c('Action').t`Need help?`}</Link>
-                    </p>
-                    <p>
-                        <Link to="/signup">{c('Action').t`Create an account`}</Link>
-                    </p>
+                    <div className="flex flex-spacebetween">
+                        {needHelp}
+                        <PrimaryButton type="submit" loading={loading} data-cy-login="submit">
+                            {c('Action').t`Login`}
+                        </PrimaryButton>
+                    </div>
                 </form>
             );
         }
@@ -291,6 +287,7 @@ const LoginContainer = ({ onLogin, ignoreUnlock = false }) => {
 
 LoginContainer.propTypes = {
     onLogin: PropTypes.func.isRequired,
+    needHelp: PropTypes.node,
     ignoreUnlock: PropTypes.bool
 };
 

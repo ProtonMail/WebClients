@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Input, Label } from 'react-components';
+import { Input, Label, PasswordInput } from 'react-components';
 
 const LoginForm = ({ username, setUsername, password, setPassword }) => {
     return (
@@ -19,15 +19,14 @@ const LoginForm = ({ username, setUsername, password, setPassword }) => {
                 id="login"
                 required
                 value={username}
-                placeholder={c('Placeholder').t`Username`}
+                placeholder={c('Placeholder').t`Username or email`}
                 onChange={({ target: { value } }) => setUsername(value)}
                 data-cy-login="username"
             />
             <Label htmlFor="password" className="bl sr-only">
                 {c('Label').t`Password`}
             </Label>
-            <Input
-                type="password"
+            <PasswordInput
                 name="password"
                 className="w100 mb1"
                 autoComplete="current-password"
