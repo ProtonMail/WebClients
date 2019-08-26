@@ -149,7 +149,7 @@ const BugModal = ({ onClose, username: Username = '', addresses = [], ...rest })
                         id="Email"
                         value={model.Email}
                         onChange={handleChange('Email')}
-                        placeholder={c('Placeholder').t`Please make sure to give us a way to contact you`}
+                        placeholder={c('Placeholder').t`A way to contact you`}
                         required
                     />
                 </Field>
