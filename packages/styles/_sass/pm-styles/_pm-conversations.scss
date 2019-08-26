@@ -70,8 +70,11 @@ $conversation-icon-size: 4rem !default;
   fill: $pm-global-grey;
   width: 1.6rem;
   height: 1.6rem;
+  opacity: .5;
+  &:focus,
   &:hover {
     fill: $pm-global-attention;
+    opacity: 1;
   }
   [class*="starbutton-icon"] {
     position: absolute;
@@ -84,6 +87,7 @@ $conversation-icon-size: 4rem !default;
   }
 }
 .starbutton--is-starred {
+  opacity: 1;
   fill: $pm-global-attention;
   .starbutton-icon-starred {
     transform: scale(1);

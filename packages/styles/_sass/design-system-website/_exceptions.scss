@@ -26,8 +26,7 @@
   background: rgba(255,255,255,.05);
 }
 [aria-expanded="true"].animated-expandmore__button,
-.animated-expandmore__button:active,
-[aria-current="page"].navigation__link {
+.animated-expandmore__button:active {
   background: var(--main-bg-color, $pm-global-grey);
   color: var(--color-nav-active, $pm-primary);
   font-weight: bold;

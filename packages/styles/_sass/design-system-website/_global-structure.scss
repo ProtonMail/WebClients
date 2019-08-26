@@ -114,11 +114,37 @@ body {
   background: linear-gradient(to top, var(--main-bg-color, rgba(0, 0, 0, .4) ) 0, rgba($black, 0) 2em);
 }
 
+.navigation__icon {
+  fill: #6D7178;
+}
+
 .navigation__link:focus,
 .navigation__link:hover {
   background: rgba(255,255,255,.05);
   color:  var(--color-nav-link, $pm-global-light);
   text-decoration: none;
+  .navigation__icon {
+     fill: $white;
+  }
+}
+[aria-current="page"].navigation__link {
+  background: var(--main-bg-color, $pm-global-grey);
+  color: var(--color-nav-active, $pm-primary);
+  font-weight: bold;
+  
+  &:hover .navigation__icon,
+  .navigation__icon {
+    fill: var(--color-nav-active, $pm-primary);
+  }
+}
+.navigation__counterItem {
+  background: rgba($white, 0.1);
+  font-size: 1.1rem;
+  padding: .1em .1em .2em;
+  font-weight: normal;
+  &:empty {
+      display: none; // removes a bug on Webkit
+  }
 }
 
 
