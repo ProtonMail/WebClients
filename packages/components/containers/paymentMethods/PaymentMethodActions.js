@@ -42,8 +42,7 @@ const PaymentMethodActions = ({ method, onChange, methods, index }) => {
 
         IDs.splice(index, 1);
         IDs.unshift(method.ID);
-
-        await orderPaymentMethods(IDs);
+        await api(orderPaymentMethods(IDs));
         await onChange();
         createNotification({ text: c('Success').t`Payment method updated` });
     };
