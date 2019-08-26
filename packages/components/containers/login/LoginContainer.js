@@ -200,7 +200,7 @@ const LoginContainer = ({ onLogin, needHelp, ignoreUnlock = false }) => {
                     <div className="flex flex-spacebetween">
                         {needHelp}
                         <PrimaryButton type="submit" loading={loading} data-cy-login="submit">
-                            {c('Action').t`Login`}
+                            {c('Action').t`Log in`}
                         </PrimaryButton>
                     </div>
                 </form>
@@ -279,7 +279,7 @@ const LoginContainer = ({ onLogin, needHelp, ignoreUnlock = false }) => {
 
     return (
         <div className="mauto w400e mw100 p2 bordered-container flex-item-noshrink">
-            <SubTitle>{c('Login').t`User login`}</SubTitle>
+            <SubTitle>{c('Title').t`User log in`}</SubTitle>
             {formComponent}
         </div>
     );
