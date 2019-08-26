@@ -1,6 +1,22 @@
 <div class="messageView-contaniner">
-    <header id="conversationHeader">
-        <h1>{{message.Subject}}</h1>
+    <header id="conversationHeader" class="flex conversationHeader-header relative">
+        <h1 class="cut">{{message.Subject}}</h1>
+        <div
+            class="inline-flex flex-items-center flex-justify-end conversationHeader-about"
+            ng-if="message">
+
+            <div class="labels message-summary-labels">
+                <labels-element
+                    data-button="remove"
+                    data-element="message"
+                    class="message-summary-labels-list"></labels-element>
+            </div>
+
+            <pt-star
+                data-model="message"
+                class="singleStar ml0-5"
+                data-pt-star-type="message"></pt-star>
+        </div>
     </header>
     <div id="pm_thread" class="no-outline" tabindex="-1">
         <message ng-if="message" data-model="message" data-last="true" data-index="0"></message>
