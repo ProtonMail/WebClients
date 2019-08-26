@@ -38,6 +38,13 @@
     }
 }
 
+.message-expand-right-info {
+    position: absolute;
+    z-index: 8;
+    right: 0.75em;
+    top: 0;
+}
+
 .conversationHeader-about {
     position: absolute;
     right: 0;

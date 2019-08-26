@@ -30,7 +30,6 @@
         </div>
 
         <div class="summary-right mlauto flex flex-column">
-
             <div class="inline-flex mlauto flex-items-center">
 
                 <icon
@@ -53,35 +52,33 @@
                     ng-if="!message.expand"
                     data-pt-star-type="message"></pt-star>
            </div>
-
-
-            <div ng-if="message.expand && message.toggleDetails" class="inline-flex flex-items-center flex-justify-end">
-                <icon
-                    ng-if="message.NumAttachments"
-                    data-name="attach"
-                    class="mr0-5"></icon>
-
-                <div class="labels message-summary-labels">
-                    <labels-element
-                        data-button="remove"
-                        data-element="message"
-                        class="message-summary-labels-list"></labels-element>
-                </div>
-
-                <div class="location message-summary-folder folders">
-                    <folders-message></folders-message>
-                </div>
-
-                <pt-star
-                    data-model="message"
-                    class="singleStar ml0-5"
-                    data-pt-star-type="message"></pt-star>
-            </div>
-
         </div>
     </div>
 
-    <div ng-if="message.expand" class="message-expand-wrapper">
+    <div ng-if="message.expand" class="message-expand-wrapper relative">
+
+        <div class="inline-flex flex-items-center flex-justify-end message-expand-right-info">
+            <icon
+                ng-if="message.NumAttachments"
+                data-name="attach"
+                class="mr0-5"></icon>
+
+            <div class="labels message-summary-labels">
+                <labels-element
+                    data-button="remove"
+                    data-element="message"
+                    class="message-summary-labels-list"></labels-element>
+            </div>
+
+            <div class="location message-summary-folder folders">
+                <folders-message></folders-message>
+            </div>
+
+            <pt-star
+                data-model="message"
+                class="singleStar ml0-5"
+                data-pt-star-type="message"></pt-star>
+        </div>
 
         <div class="message-header">
 
@@ -91,30 +88,7 @@
                 <div class="recipients-details-size"><span translate-context="Label for the message size when displaying email details" translate>Size:</span> {{ ::message.Size | bytes }}</div>
             </div>
 
-            <div class="recipients-summary flex flex-reverse flex-spacebetween flex-items-center mb0-5">
-                <div class="inline-flex flex-items-center flex-justify-end pull-right">
-                    <icon
-                        ng-if="message.NumAttachments"
-                        data-name="attach"
-                        class="mr0-5"></icon>
-
-                    <div class="labels message-summary-labels">
-                        <labels-element
-                            data-button="remove"
-                            data-element="message"
-                            class="message-summary-labels-list"></labels-element>
-                    </div>
-
-                    <div class="location message-summary-folder folders">
-                        <folders-message></folders-message>
-                    </div>
-
-                    <pt-star
-                        data-model="message"
-                        class="singleStar ml0-5"
-                        data-pt-star-type="message"></pt-star>
-                </div>
-
+            <div class="recipients-summary mb0-5">
                 <span class="flex">
                     <span
                         class="opacity-50 flex-self-vcenter container-to"
