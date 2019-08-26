@@ -90,7 +90,7 @@ function sidebarModel(tools, cacheCounters, gettextCatalog, dynamicStates, conta
             return '';
         }
 
-        return `(${count})`;
+        return count;
     };
 
     /**
@@ -100,7 +100,7 @@ function sidebarModel(tools, cacheCounters, gettextCatalog, dynamicStates, conta
      */
     const totalMember = (ID) => {
         const count = contactGroupModel.getNumber(ID);
-        return count <= 0 ? '' : `(${count})`;
+        return count <= 0 ? '' : count;
     };
 
     return { unread, getStateConfig, totalMember };
