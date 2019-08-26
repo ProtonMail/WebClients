@@ -5,7 +5,7 @@
   @extend .uppercase;
   @extend .color-white;
   @extend .inbl;
-  font-size: em(11);
+  font-size: rem(11); // to be sure this is the same height everywhere
   padding: 0 em(6) em(2);
   line-height: 1.4;
   border-radius: $global-border-radius;
