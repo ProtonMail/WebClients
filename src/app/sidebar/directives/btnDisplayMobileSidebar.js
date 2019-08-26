@@ -1,15 +1,16 @@
 /* @ngInject */
 function btnDisplayMobileSidebar(AppModel) {
     const CLASS_ICONS = {
-        show: 'fa-bars',
-        hide: 'fa-times'
+        show: 'burger',
+        hide: 'close'
     };
 
     return {
         replace: true,
-        template: '<button class="btnDisplayMobileSidebar-container"><i class="fa"></i></button>',
+        template:
+            '<button class="btnDisplayMobileSidebar-container"><icon data-name="burger" data-fill="white"></icon></button>',
         compile(element, { type = 'show' }) {
-            element[0].querySelector('i').classList.add(CLASS_ICONS[type]);
+            element[0].querySelector('icon').setAttribute('data-name', CLASS_ICONS[type]);
 
             return (scope, el, { type = 'show' }) => {
                 const onClick = () => AppModel.set('showSidebar', type === 'show');

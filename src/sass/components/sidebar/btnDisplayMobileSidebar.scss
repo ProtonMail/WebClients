@@ -1,18 +1,4 @@
 .btnDisplayMobileSidebar-container {
     background: transparent;
-    border: 0;
-    padding: 0;
     cursor: pointer;
-
-    &.round i {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 30px;
-        width: 30px;
-        background: rgba(255,255,255,.1);
-        border-radius: 50%;
-        color: $white;
-    }
 }
