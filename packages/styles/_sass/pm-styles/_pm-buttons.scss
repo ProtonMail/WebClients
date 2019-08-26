@@ -296,7 +296,6 @@
 .pm-group-button:focus,
 .pm-group-button:active {
   position: relative;
-  z-index: 10;
 }
 .pm-group-buttons > .pm-group-button:first-child {
   border-radius: $global-border-radius 0 0 $global-border-radius;
