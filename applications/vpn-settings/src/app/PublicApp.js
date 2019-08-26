@@ -1,10 +1,11 @@
 import React, { useState, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Loader, LoginContainer, ModalsChildren } from 'react-components';
+import { Loader, ModalsChildren } from 'react-components';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
 import PublicLayout from './components/layout/PublicLayout';
+import LoginContainer from './containers/LoginContainer';
 
 const PublicApp = ({ onLogin }) => {
     const [loading, setLoading] = useState(true);
