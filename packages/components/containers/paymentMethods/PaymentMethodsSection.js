@@ -56,7 +56,8 @@ const PaymentMethodsSection = () => {
             >{c('Info for payment methods')
                 .t`If you wish to pay by credit card, you can add your card below. Learn about other payment options.`}</Alert>
             <Block>
-                <PrimaryButton className="mr1" onClick={handleCard}>{c('Action').t`Add credit card`}</PrimaryButton>
+                <PrimaryButton className="mr1" onClick={handleCard}>{c('Action')
+                    .t`Add credit / debit card`}</PrimaryButton>
                 <PrimaryButton onClick={handlePayPal}>{c('Action').t`Add PayPal`}</PrimaryButton>
             </Block>
             <PaymentMethodsTable loading={loading} methods={paymentMethods} fetchMethods={request} />
