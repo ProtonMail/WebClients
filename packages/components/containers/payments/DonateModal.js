@@ -24,7 +24,7 @@ const DonateModal = ({ ...rest }) => {
         rest.onClose();
         createNotification({
             text: c('Success')
-                .t`Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!`
+                .t`Your support is essential to keeping Proton running. Thank you for supporting internet privacy!`
         });
     };
 
