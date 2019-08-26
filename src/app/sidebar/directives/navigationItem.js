@@ -20,13 +20,16 @@ function navigationItem(
         return dedentTpl(`<a href="${$state.href(
             state,
             opt
-        )}" title="${label}" data-label="${label}" data-state="${key}" class="navigation__link w100" ${dropzone} internal-link>
-                <span class="flex">
-                    <icon data-name="${icon}" data-size="16" class="mr0-5 flex-item-centered-vert fill-white"></icon>
-                    <span class="navigationItem-title">${label}</span>
-                    <span class="navigationItem-aside">
-                        <em class="navigationItem-counter"></em>
-                        <button class="fa fa-repeat refresh navigationItem-btn-refresh"></button>
+        )}" title="${label}" data-label="${label}" data-state="${key}" class="navigation__link navigationItem-container w100" ${dropzone} internal-link>
+                <span class="flex flex-nowrap">
+                    <icon data-name="${icon}" class="mr0-5 flex-item-centered-vert navigation__icon"></icon>
+                    <span class="navigationItem-title flex-item-fluid">${label}</span>
+                    <span class="navigationItem-aside flex">
+                        <button class="refresh navigationItem-btn-refresh">
+                            <icon data-name="reload" fill="global-light" class="mr0-5"></icon>
+                            <span class="sr-only" translate-context="Action" translate>refresh</span>
+                        </button>
+                        <span class="navigationItem-counter navigation__counterItem flex-item-noshrink rounded mr0-5"></span>
                     </span>
                 </span>
             </a>`);
@@ -118,7 +121,7 @@ function navigationItem(
                     }
 
                     AppModel.set('showSidebar', false);
-                    return (id = setSpinner(el[0].querySelector('.refresh'), id));
+                    return (id = setSpinner(el[0].querySelector('.refresh svg'), id));
                 }
             };
 

@@ -20,17 +20,6 @@
     align-items: center;
 }
 
-.sidebarApp-item .navigationItem-btn-refresh {
-    padding: 0;
-    cursor: pointer;
-    margin: 0 0 0 auto;
-    background: transparent;
-    color: rgba($sidebar-color, .35);
-    border: 0;
-
-    &:hover { color: $white }
-}
-
 .sidebarApp-item .sidebarApp-link,
 .sidebarApp-menu .menuLabel-link,
 .sidebarApp-item .navigationItem-item {
@@ -72,32 +61,6 @@
     color: rgba($sidebar-color, .5);
     text-align: center;
 }
-
-.navigationItem-title {
-    overflow: hidden;
-    padding-right: 10px;
-}
-
-.sidebarApp-item.active .navigationItem-aside {
-    /* check _theme reset */
-    background: linear-gradient(to right, rgba($sidebar-active, 0), $sidebar-active 4px)
-}
-
-.navigationItem-counter {
-    flex: 1;
-    margin-right: .3em;
-}
-
-.sidebarApp-menu .menuLabel-counter,
-.sidebarApp-item .navigationItem-counter {
-    font-style: normal;
-    font-weight: 400;
-    color: rgba($sidebar-color, .35);
-}
-
-.sidebarApp-item .navigationItem-counter,
-.menuLabel-item .menuLabel-counter { margin-left: .3em }
-
 
 .sidebarApp-item.active .navigationItem-item,
 .sidebarApp-item.active .sidebarApp-link,
