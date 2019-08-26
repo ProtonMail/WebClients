@@ -1,7 +1,7 @@
 import { COLUMN_MODE, ROW_MODE } from '../../constants';
 
 /* @ngInject */
-function chooseLayoutBtns(
+function toogleModeElementsDropdown(
     dispatchers,
     networkActivityTracker,
     tools,
@@ -23,7 +23,7 @@ function chooseLayoutBtns(
         }
     };
 
-    const changeTo = (mode) => {
+    const changeTo = async (mode) => {
         const newLayout = getLayout(mode);
 
         if (angular.isDefined(newLayout)) {
@@ -33,23 +33,38 @@ function chooseLayoutBtns(
                 notification.success(gettextCatalog.getString('Layout saved', null, 'Info'));
             });
 
-            networkActivityTracker.track(promise);
+            await networkActivityTracker.track(promise);
         }
+
+        return newLayout;
     };
 
+    const setLayout = (value) => (value === COLUMN_MODE ? 'col' : 'rows');
+
     return {
+        scope: {},
         replace: true,
-        templateUrl: require('../../../templates/ui/chooseLayoutBtns.tpl.html'),
+        restrict: 'E',
+        templateUrl: require('../../../templates/ui/toogleModeElementsDropdown.tpl.html'),
         link(scope, el) {
-            const $a = el.find('button');
-            const onClick = ({ currentTarget }) => {
-                changeTo(currentTarget.getAttribute('data-action'));
+            const { ViewLayout } = mailSettingsModel.get();
+            scope.layout = setLayout(ViewLayout);
+
+            const onClick = async ({ target }) => {
+                if (target.classList.contains('toogleModeElementsDropdown-btn-action')) {
+                    const newLayout = await changeTo(target.getAttribute('data-action'));
+                    scope.$applyAsync(() => {
+                        scope.layout = setLayout(newLayout);
+                    });
+                }
             };
-            $a.on('click', onClick);
+
+            el.on('click', onClick);
+
             scope.$on('$destroy', () => {
-                $a.off('click', onClick);
+                el.off('click', onClick);
             });
         }
     };
 }
-export default chooseLayoutBtns;
+export default toogleModeElementsDropdown;

@@ -82,12 +82,6 @@ function advancedFilterElement(
     };
 
     /**
-     * Order the list by a specific parameter
-     * @param {String} criterion
-     */
-    const orderBy = (sort) => switchState({ sort: sort === '-date' ? undefined : sort });
-
-    /**
      * Filter current list
      * @param {String}
      */
@@ -103,7 +97,7 @@ function advancedFilterElement(
             trashspam: angular.isDefined($state.params.trashspam) ? undefined : 0
         });
 
-    const ACTIONS = { empty, orderBy, filterBy, clearFilter, toggleTrashSpam };
+    const ACTIONS = { empty, filterBy, clearFilter, toggleTrashSpam };
 
     return {
         replace: true,

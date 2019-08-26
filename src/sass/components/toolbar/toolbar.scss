@@ -81,3 +81,21 @@
         }
     }
 }
+
+.toogleModeElementsDropdown-container[data-layout="rows"] [data-if="col"],
+.toogleModeElementsDropdown-container[data-layout="col"] [data-if="rows"],
+.sortViewDropdown-container[data-layout="-date"] [data-if]:not([data-if="-date"]),
+.sortViewDropdown-container[data-layout="date"] [data-if]:not([data-if="date"]),
+.sortViewDropdown-container[data-layout="-size"] [data-if]:not([data-if="-size"]),
+.sortViewDropdown-container[data-layout="size"] [data-if]:not([data-if="size"]) {
+    display: none
+}
+
+.sortViewDropdown-container[data-layout="-date"] [data-mode="-date"],
+.sortViewDropdown-container[data-layout="date"] [data-mode="date"],
+.sortViewDropdown-container[data-layout="-size"] [data-mode="-size"],
+.sortViewDropdown-container[data-layout="size"] [data-mode="size"],
+.toogleModeElementsDropdown-container[data-layout="col"] [data-mode="columns"],
+.toogleModeElementsDropdown-container[data-layout="rows"] [data-mode="rows"] {
+    background-color: rgba(0, 0, 0, .04)
+}

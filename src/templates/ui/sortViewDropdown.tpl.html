@@ -1,0 +1,73 @@
+<div class="sortViewDropdown-container flex" data-layout="{{layout}}">
+
+    <dropdown-container class="sortViewDropdown-dropdown flex">
+        <dropdown-button class="toolbar-button toolbar-button--dropdown">
+            <icon
+                data-if="size"
+                name="sort-small-large"
+                class="mauto toolbar-icon"></icon>
+            <icon
+                data-if="-size"
+                name="sort-large-small"
+                class="mauto toolbar-icon"></icon>
+            <icon
+                data-if="-date"
+                name="sort-new-old"
+                class="mauto toolbar-icon"></icon>
+            <icon
+                data-if="date"
+                name="sort-old-new"
+                class="mauto toolbar-icon"></icon>
+            <span class="sr-only" translate-context="Action" translate>Sort view messages/conversations</span>
+            <icon name="caret" class="dropdownv4-icon mauto toolbar-icon ml0-25"></icon>
+        </dropdown-button>
+
+        <dropdown-content>
+            <ul class="unstyled mt0 mb0">
+                <li class="dropDown-item sortViewDropdown-item-small-to-large pl1 pr1" data-mode="size">
+                      <button
+                          data-action="orderBy"
+                          data-action-arg="size"
+                          type="button"
+                          class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft sortViewDropdown-btn-small-to-large no-pointer-events-children">
+                              <icon name="sort-small-large" fill="currentColor" class="mt0-25  sortViewDropdown-icon-default flex-item-noshrink"></icon>
+                              <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Size: Small to large</span>
+                      </button>
+                  </li>
+
+                  <li class="dropDown-item sortViewDropdown-item-large-to-small pl1 pr1" data-mode="-size">
+                      <button
+                          data-action="orderBy"
+                          data-action-arg="-size"
+                          type="button"
+                          class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft sortViewDropdown-btn-large-to-small no-pointer-events-children">
+                              <icon name="sort-large-small" fill="currentColor" class="mt0-25  sortViewDropdown-icon-default flex-item-noshrink"></icon>
+                              <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Size: Large to small</span>
+                      </button>
+                  </li>
+
+                  <li class="dropDown-item sortViewDropdown-item-new-to-old pl1 pr1" data-mode="-date">
+                      <button
+                          data-action="orderBy"
+                          data-action-arg="-date"
+                          type="button"
+                          class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft sortViewDropdown-btn-new-to-old no-pointer-events-children">
+                              <icon name="sort-new-old" fill="currentColor" class="mt0-25  sortViewDropdown-icon-default flex-item-noshrink"></icon>
+                              <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Date: New to old</span>
+                      </button>
+                  </li>
+
+                  <li class="dropDown-item sortViewDropdown-item-old-to-new pl1 pr1" data-mode="date">
+                      <button
+                          data-action="orderBy"
+                          data-action-arg="date"
+                          type="button"
+                          class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft sortViewDropdown-btn-old-to-new no-pointer-events-children">
+                              <icon name="sort-old-new" fill="currentColor" class="mt0-25  sortViewDropdown-icon-default flex-item-noshrink"></icon>
+                              <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Date: Old to new</span>
+                      </button>
+                  </li>
+            </ul>
+        </dropdown-content>
+    </dropdown-container>
+</div>

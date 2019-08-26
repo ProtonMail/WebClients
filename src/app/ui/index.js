@@ -7,7 +7,6 @@ import autocompleteEmail from './directives/autocompleteEmail';
 import autocompleteEmails from './directives/autocompleteEmails';
 import autocompleteEmailsItem from './directives/autocompleteEmailsItem';
 import emailEncryptionIcon from './directives/emailEncryptionIcon';
-import chooseLayoutBtns from './directives/chooseLayoutBtns';
 import currencySelector from './directives/currencySelector';
 import customCheckbox from './directives/customCheckbox';
 import customRadio from './directives/customRadio';
@@ -58,6 +57,8 @@ import initials from './filters/initials';
 import dropdownContainer from './directives/dropdownContainer';
 import dropdownButton from './directives/dropdownButton';
 import dropdownContent from './directives/dropdownContent';
+import toogleModeElementsDropdown from './directives/toogleModeElementsDropdown';
+import sortViewDropdown from './directives/sortViewDropdown';
 import headerSecuredDesktop from './directives/header/headerSecuredDesktop';
 import headerSecuredMobile from './directives/header/headerSecuredMobile';
 import arrowsToScroll from './directives/navigation/arrowsToScroll';
@@ -67,6 +68,8 @@ import navigationUser from './directives/navigation/navigationUser';
 
 export default angular
     .module('proton.ui', [])
+    .directive('sortViewDropdown', sortViewDropdown)
+    .directive('toogleModeElementsDropdown', toogleModeElementsDropdown)
     .directive('dropdownContent', dropdownContent)
     .directive('dropdownButton', dropdownButton)
     .directive('dropdownContainer', dropdownContainer)
@@ -84,7 +87,6 @@ export default angular
     .directive('autocompleteEmails', autocompleteEmails)
     .directive('autocompleteEmailsItem', autocompleteEmailsItem)
     .directive('emailEncryptionIcon', emailEncryptionIcon)
-    .directive('chooseLayoutBtns', chooseLayoutBtns)
     .directive('currencySelector', currencySelector)
     .directive('customCheckbox', customCheckbox)
     .directive('customRadio', customRadio)

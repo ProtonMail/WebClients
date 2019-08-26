@@ -34,16 +34,10 @@
             ng-class="{disabled: isDisabled()}"></label-selector-dropdown>
     </div>
 
-    <span class="toolbar-separator"></span>
-
-    <div class="flex">
-        <advanced-filter-element></advanced-filter-element>
-    </div>
-
-
     <div class="right action toolbarDesktop-actions-right">
-        <choose-layout-btns id="tour-layout"></choose-layout-btns>
-        <span class="toolbar-separator separator-if-row-mode"></span>
+        <advanced-filter-element></advanced-filter-element>
+        <sort-view-dropdown></sort-view-dropdown>
+        <toogle-mode-elements-dropdown id="tour-layout"></toogle-mode-elements-dropdown>
         <nav-elements></nav-elements>
         <span class="toolbar-separator" ng-if="displayPaginator()"></span>
         <paginator

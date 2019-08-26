@@ -9,12 +9,13 @@
 
     <dropdown-container class="advancedFilterElement-dropdown flex">
         <dropdown-button class="toolbar-button toolbar-button--dropdown">
-            <span class="mauto" translate-context="Label dropdown" translate>Plus</span>
+            <icon name="bullet-points" class="mauto toolbar-icon"></icon>
+            <span class="mauto sr-only" translate-context="Label dropdown" translate>Plus</span>
             <icon name="caret" class="dropdownv4-icon mauto toolbar-icon ml0-25"></icon>
         </dropdown-button>
 
         <dropdown-content>
-            <ul class="unstyled mt0-5 mb0-5">
+            <ul class="unstyled mt0 mb0">
                 <li class="dropDown-item advancedFilterElement-item-drafts pl1 pr1">
                     <button
                         data-action="empty"
@@ -78,50 +79,6 @@
                             <icon name="delete" fill="currentColor" class="mt0-25  advancedFilterElement-icon-default flex-item-noshrink"></icon>
                             <icon name="on" fill="currentColor" class="mt0-25  advancedFilterElement-icon-active flex-item-noshrink"></icon>
                             <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Empty label</span>
-                    </button>
-                </li>
-
-                <li class="dropDown-item advancedFilterElement-item-small-to-large pl1 pr1">
-                    <button
-                        data-action="orderBy"
-                        data-action-arg="size"
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft advancedFilterElement-btn-small-to-large">
-                            <icon name="sort-small-large" fill="currentColor" class="mt0-25  advancedFilterElement-icon-default flex-item-noshrink"></icon>
-                            <icon name="on" fill="currentColor" class="mt0-25  advancedFilterElement-icon-active flex-item-noshrink"></icon>
-                            <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Size: Small to large</span>
-                    </button>
-                </li>
-
-                <li class="dropDown-item advancedFilterElement-item-large-to-small pl1 pr1">
-                    <button
-                        data-action="orderBy"
-                        data-action-arg="-size"
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft advancedFilterElement-btn-large-to-small">
-                            <icon name="sort-large-small" fill="currentColor" class="mt0-25  advancedFilterElement-icon-default flex-item-noshrink"></icon>
-                            <icon name="on" fill="currentColor" class="mt0-25  advancedFilterElement-icon-active flex-item-noshrink"></icon>
-                            <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Size: Large to small</span>
-                    </button>
-                </li>
-
-                <li class="dropDown-item advancedFilterElement-item-new-to-old pl1 pr1">
-                    <button
-                        data-action="orderBy"
-                        data-action-arg="-date"
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft advancedFilterElement-btn-new-to-old">
-                            <icon name="sort-new-old" fill="currentColor" class="mt0-25  advancedFilterElement-icon-default flex-item-noshrink"></icon>
-                            <icon name="on" fill="currentColor" class="mt0-25  advancedFilterElement-icon-active flex-item-noshrink"></icon>
-                            <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Date: New to old</span>
-                    </button>
-                </li>
-
-                <li class="dropDown-item advancedFilterElement-item-old-to-new pl1 pr1">
-                    <button
-                        data-action="orderBy"
-                        data-action-arg="date"
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft advancedFilterElement-btn-old-to-new">
-                            <icon name="sort-old-new" fill="currentColor" class="mt0-25  advancedFilterElement-icon-default flex-item-noshrink"></icon>
-                            <icon name="on" fill="currentColor" class="mt0-25  advancedFilterElement-icon-active flex-item-noshrink"></icon>
-                            <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Date: Old to new</span>
                     </button>
                 </li>
 
