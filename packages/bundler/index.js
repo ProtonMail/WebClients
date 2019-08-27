@@ -126,7 +126,15 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
                 return execa('npm', ['run', 'i18n:upgrade']);
             }
         },
-        ...hookPostTasks
+        ...hookPostTasks,
+        {
+            title: 'Inform us about new translations available',
+            enabled: () => runI18n && !isCI && /prod|beta/.test(branch),
+            task() {
+                const [, type] = branch.match(/deploy-(\w+)/) || [];
+                return execa('npx', ['proton-i18n', 'coucou', type]);
+            }
+        }
     ];
     return list;
 };
