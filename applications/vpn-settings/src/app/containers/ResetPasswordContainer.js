@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { c } from 'ttag';
-import { Link } from 'react-router-dom';
 import { useApi, useLoading, useNotifications } from 'react-components';
 import { requestLoginResetToken, validateResetToken } from 'proton-shared/lib/api/reset';
 
 import SignInLayout from '../components/layout/SignInLayout';
-import ResetPasswordForm from '../components/form/ResetPasswordForm';
+import RequestResetTokenForm from '../components/form/RequestResetTokenForm';
 import ValidateResetTokenForm from '../components/form/ValidateResetTokenForm';
 import DangerVerificationForm from '../components/form/DangerVerificationForm';
 import NewPasswordForm from '../components/form/NewPasswordForm';
@@ -23,6 +22,7 @@ const ResetPasswordContainer = ({ history }) => {
     const [username, updateUsername] = useState('');
     const api = useApi();
     const [loading, withLoading] = useLoading();
+    const addressesRef = useRef([]);
 
     const handleSubmit = async (data) => {
         if (step === REQUEST_RESET_TOKEN_STEP) {
@@ -33,7 +33,8 @@ const ResetPasswordContainer = ({ history }) => {
 
         if (step === VALIDATE_RESET_TOKEN_STEP) {
             // data is token
-            await api(validateResetToken(username, data));
+            const { Addresses = [] } = await api(validateResetToken(username, data));
+            addressesRef.current = Addresses;
             updateStep(DANGER_VERIFICATION_STEP);
         }
 
@@ -47,6 +48,7 @@ const ResetPasswordContainer = ({ history }) => {
                 type: 'info'
             });
             // data is password
+            // Addresses are stored in addressesRef.current
             await api(); // TODO @mmso
             history.push('/login');
         }
@@ -55,7 +57,7 @@ const ResetPasswordContainer = ({ history }) => {
     return (
         <SignInLayout title={c('Title').t`Reset password`}>
             {step === REQUEST_RESET_TOKEN_STEP ? (
-                <ResetPasswordForm
+                <RequestResetTokenForm
                     username={username}
                     updateUsername={updateUsername}
                     onSubmit={(data) => withLoading(handleSubmit(data))}
@@ -69,10 +71,6 @@ const ResetPasswordContainer = ({ history }) => {
             {step === NEW_PASSWORD_STEP ? (
                 <NewPasswordForm onSubmit={(data) => withLoading(handleSubmit(data))} loading={loading} />
             ) : null}
-            <div className="flex flex-nowrap flex-spacebetween">
-                <Link to="/login">{c('Link').t`Back to login`}</Link>
-                <Link to="/forgot-username">{c('Link').t`Forgot username?`}</Link>
-            </div>
         </SignInLayout>
     );
 };

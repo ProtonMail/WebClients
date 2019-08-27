@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Input, EmailInput, Alert, PrimaryButton, ConfirmModal, useModals } from 'react-components';
 
-const ResetPasswordForm = ({ username, updateUsername, onSubmit, loading }) => {
+const RequestResetTokenForm = ({ username, updateUsername, onSubmit, loading }) => {
     const { createModal } = useModals();
     const [email, updateEmail] = useState('');
 
@@ -52,15 +53,19 @@ const ResetPasswordForm = ({ username, updateUsername, onSubmit, loading }) => {
             <div className="mb1">
                 <PrimaryButton loading={loading} type="submit">{c('Action').t`Get a new password`}</PrimaryButton>
             </div>
+            <div className="flex flex-nowrap flex-spacebetween mb1">
+                <Link to="/login">{c('Link').t`Back to login`}</Link>
+                <Link to="/forgot-username">{c('Link').t`Forgot username?`}</Link>
+            </div>
         </form>
     );
 };
 
-ResetPasswordForm.propTypes = {
+RequestResetTokenForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     loading: PropTypes.bool,
     username: PropTypes.string,
     updateUsername: PropTypes.func.isRequired
 };
 
-export default ResetPasswordForm;
+export default RequestResetTokenForm;
