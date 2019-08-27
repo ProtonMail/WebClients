@@ -6,7 +6,10 @@ title: Tables
 description: The design of tables used in Proton products.
 keywords: table, styles, rules
 section: design
+subsection: tables
 ---
+
+<div id="simple-table" class="container-section-sticky container-section-sticky--fullwidth">
 
 <h2>Style <code>simple-table</code></h2>
 <table class="pm-simple-table noborder border-collapse">
@@ -162,3 +165,90 @@ section: design
 &lt;/table&gt;
 </code></pre>
 
+</div>
+
+
+<div id="plans-table" class="container-section-sticky container-section-sticky--fullwidth">
+<h2>“Plans” table, highlight plan styles</h2>
+
+<table class="pm-plans-table pm-table--highlight noborder" data-plan-number="2">
+  <caption>VPN Plans</caption>
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col" class="aligncenter" data-highlight="Free subscription">Free</th>
+      <th scope="col" class="aligncenter color-vpnbasic" data-highlight="This is good">Basic</th>
+      <th scope="col" class="aligncenter color-vpnplus" data-highlight="This is better">Plus</th>
+      <th scope="col" class="aligncenter color-visionary" data-highlight="My Lord.">Visionary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" class="pm-simple-table-row-th alignleft bg-global-light">Pricing</th>
+      <td class="aligncenter bg-global-light">123456</td>
+      <td class="aligncenter bg-global-light">123456</td>
+      <td class="aligncenter bg-global-light">123456</td>
+      <td class="aligncenter bg-global-light">123456</td>
+    </tr>
+    <tr>
+      <th scope="row" class="pm-simple-table-row-th alignleft">Countries</th>
+      <td class="aligncenter">123456</td>
+      <td class="aligncenter">123456</td>
+      <td class="aligncenter">123456</td>
+      <td class="aligncenter">123456</td>
+    </tr>
+    <tr>
+      <th scope="row" class="pm-simple-table-row-th alignleft">Lorem ipsum</th>
+      <td class="aligncenter">123456</td>
+      <td class="aligncenter">123456</td>
+      <td class="aligncenter">123456</td>
+      <td class="aligncenter">123456</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Use <code>pm-plans-table</code> class on <code>table</code>.</li>
+  <li>To highlight the 2nd plan: 
+    <ul>
+      <li>use class <code>pm-table--highlight</code> and specify <code>data-plan-number="2"</code> attribute on <code>table</code> tag</li>
+      <li>and specify the text in <code>data-highlight=""</code> attribute on first line, on each <code>th</code>.</li>
+    </ul> 
+  </li>
+  <li>For the first cell of lines, use <code>th scope="row"</code> and <code>pm-simple-table-row</code> class applied to it.</li>
+  <li>If there are more than 4 plans, remember to update <code>$nb-plans-max</code> Sass variable.</li>
+</ul>
+
+
+<pre class=" language-markup"><code>
+&lt;table class="<strong>pm-plans-table pm-table--highlight</strong> noborder" <strong>data-plan-number="2"</strong>&gt;
+  &lt;caption&gt;VPN Plans&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;&lt;/th&gt;
+      &lt;th <strong>scope="col"</strong> class="aligncenter" data-highlight="Free subscription"&gt;Free&lt;/th&gt;
+      &lt;th scope="col" class="aligncenter color-vpnbasic" <strong>data-highlight="This is good"</strong>&gt;Basic&lt;/th&gt;
+      &lt;th scope="col" class="aligncenter color-vpnplus" data-highlight="This is better"&gt;Plus&lt;/th&gt;
+      &lt;th scope="col" class="aligncenter color-visionary" data-highlight="My Lord."&gt;Visionary&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;<strong>th scope="row" class="pm-simple-table-row alignleft bg-global-light</strong>"&gt;Pricing&lt;/th&gt;
+      &lt;td class="aligncenter bg-global-light"&gt;123456&lt;/td&gt;
+      &lt;td class="aligncenter bg-global-light"&gt;123456&lt;/td&gt;
+      &lt;td class="aligncenter bg-global-light"&gt;123456&lt;/td&gt;
+      &lt;td class="aligncenter bg-global-light"&gt;123456&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;<strong>th scope="row" class="pm-simple-table-row alignleft"</strong>&gt;Countries&lt;/th&gt;
+      &lt;td class="aligncenter"&gt;123456&lt;/td&gt;
+      &lt;td class="aligncenter"&gt;123456&lt;/td&gt;
+      &lt;td class="aligncenter"&gt;123456&lt;/td&gt;
+      &lt;td class="aligncenter"&gt;123456&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+
+</div>

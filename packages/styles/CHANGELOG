@@ -9,6 +9,7 @@
 - added `$pm-primary`, `$pm-primary-light`, `$pm-primary-dark` Sass variables (aliases for main colors)
 - added styles for toolbar elements (and clean up a bit this mess)
 - added `flex-justify-end` helper
+- added plans tables
 
 ## Updated/fixes
 
@@ -25,6 +26,7 @@
 - fixed `padding-right` value on `navigation__link` (alignment with compose button)
 - fixed navigation icons/display 
 - fixed star button color
+- fixed a bug for `caption` tag on Firefox
 
 
 # [1.7.2] - 2019-08-15
