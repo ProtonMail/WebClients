@@ -13,20 +13,21 @@ const NewPasswordForm = ({ onSubmit, loading }) => {
                 onSubmit(password);
             }}
         >
-            <PasswordInput
-                className="w100 mb1"
-                value={password}
-                placeholder={c('Placeholder').t`Choose a new password`}
-                onChange={({ target }) => updatePassword(target.value)}
-                required
-            />
-            <PasswordInput
-                className="w100 mb1"
-                placeholder={c('Password').t`Confirm new password`}
-                pattern={password}
-                required
-            />
-            <Alert>{c('Info').t`Save your password somewhere safe.`}</Alert>
+            <Alert type="warning">{c('Info').t`Keep this password safe, it cannot be recovered.`}</Alert>
+            <div className="mb1">
+                <PasswordInput
+                    autoFocus
+                    value={password}
+                    placeholder={c('Placeholder').t`Choose a new password`}
+                    onChange={({ target }) => updatePassword(target.value)}
+                    required
+                />
+            </div>
+            <div className="mb1">
+                <PasswordInput placeholder={c('Password').t`Confirm new password`} pattern={password} required />
+            </div>
+            <Alert type="warning">{c('Info')
+                .t`Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.`}</Alert>
             <div className="mb1">
                 <PrimaryButton loading={loading} type="submit">{c('Action').t`Submit`}</PrimaryButton>
             </div>

@@ -13,18 +13,19 @@ const ForgotUsernameForm = ({ onSubmit, loading }) => {
                 onSubmit(email);
             }}
         >
-            <EmailInput
-                name="email"
-                className="w100 mb1"
-                autoFocus
-                autoCapitalize="off"
-                autoCorrect="off"
-                id="email"
-                placeholder={c('Placeholder').t`Email`}
-                value={email}
-                onChange={({ target }) => updateEmail(target.value)}
-                required
-            />
+            <div className="mb1">
+                <EmailInput
+                    name="email"
+                    autoFocus
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    id="email"
+                    placeholder={c('Placeholder').t`Email`}
+                    value={email}
+                    onChange={({ target }) => updateEmail(target.value)}
+                    required
+                />
+            </div>
             <Alert>{c('Info')
                 .t`Enter your email address (notification / recovery email) and we will send you your username(s). Your account recovery email. It is usually the email you provided during signup`}</Alert>
             <div className="mb1">

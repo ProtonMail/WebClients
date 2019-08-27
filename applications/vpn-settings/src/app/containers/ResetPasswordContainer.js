@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
-import { useApi, useLoading } from 'react-components';
+import { useApi, useLoading, useNotifications } from 'react-components';
 import { requestLoginResetToken, validateResetToken } from 'proton-shared/lib/api/reset';
 
 import SignInLayout from '../components/layout/SignInLayout';
@@ -19,6 +19,7 @@ const NEW_PASSWORD_STEP = 3;
 
 const ResetPasswordContainer = ({ history }) => {
     const [step, updateStep] = useState(REQUEST_RESET_TOKEN_STEP);
+    const { createNotification } = useNotifications();
     const [username, updateUsername] = useState('');
     const api = useApi();
     const [loading, withLoading] = useLoading();
@@ -41,7 +42,12 @@ const ResetPasswordContainer = ({ history }) => {
         }
 
         if (step === NEW_PASSWORD_STEP) {
-            await api(); // TODO
+            createNotification({
+                text: c('Info').t`This can take a few seconds or a few minutes depending on your device.`,
+                type: 'info'
+            });
+            // data is password
+            await api(); // TODO @mmso
             history.push('/login');
         }
     };

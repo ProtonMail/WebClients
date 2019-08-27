@@ -24,29 +24,31 @@ const ResetPasswordForm = ({ username, updateUsername, onSubmit, loading }) => {
         <form onSubmit={handleSubmit}>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/set-forgot-password-options/">{c('Info')
                 .t`We will send a reset code to your recovery email to reset your password.`}</Alert>
-            <Input
-                name="username"
-                className="w100 mb1"
-                autoFocus
-                autoCapitalize="off"
-                autoCorrect="off"
-                id="username"
-                placeholder={c('Placeholder').t`Username`}
-                value={username}
-                onChange={({ target }) => updateUsername(target.value)}
-                required
-            />
-            <EmailInput
-                name="email"
-                className="w100 mb1"
-                autoCapitalize="off"
-                autoCorrect="off"
-                id="email"
-                placeholder={c('Placeholder').t`Recovery email`}
-                value={email}
-                onChange={({ target }) => updateEmail(target.value)}
-                required
-            />
+            <div className="mb1">
+                <Input
+                    name="username"
+                    autoFocus
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    id="username"
+                    placeholder={c('Placeholder').t`Username`}
+                    value={username}
+                    onChange={({ target }) => updateUsername(target.value)}
+                    required
+                />
+            </div>
+            <div className="mb1">
+                <EmailInput
+                    name="email"
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    id="email"
+                    placeholder={c('Placeholder').t`Recovery email`}
+                    value={email}
+                    onChange={({ target }) => updateEmail(target.value)}
+                    required
+                />
+            </div>
             <div className="mb1">
                 <PrimaryButton loading={loading} type="submit">{c('Action').t`Get a new password`}</PrimaryButton>
             </div>

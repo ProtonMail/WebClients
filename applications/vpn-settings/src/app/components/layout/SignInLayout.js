@@ -13,7 +13,7 @@ const SignInLayout = ({ children, title }) => {
         <>
             <header className="flex flex-nowrap flex-spacebetween">
                 <Href url="https://protonvpn.com" target="_self">{c('Link').t`Back to protonvpn.com`}</Href>
-                <Link className="pm-button--link bold" to="/signup">{c('Link').t`Sign up for free`}</Link>
+                <Link className="pv-button-greenborder" to="/signup">{c('Link').t`Sign up for free`}</Link>
             </header>
             <div className="aligncenter">
                 <VpnLogo />

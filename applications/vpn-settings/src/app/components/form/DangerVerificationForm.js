@@ -15,14 +15,15 @@ const DangerVerificationForm = ({ onSubmit }) => {
             >{c('Info')
                 .t`Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them here.`}</Alert>
             <Alert type="warning">{c('Info').t`ALL YOUR DATA WILL BE LOST!`}</Alert>
-            <Input
-                className="w100 mb1"
-                placeholder={c('Placeholder').t`Enter the word '${WORD}' here`}
-                value={value}
-                pattern={WORD}
-                onChange={({ target }) => updateValue(target.value)}
-                required
-            />
+            <div className="mb1">
+                <Input
+                    placeholder={c('Placeholder').t`Enter the word '${WORD}' here`}
+                    value={value}
+                    pattern={WORD}
+                    onChange={({ target }) => updateValue(target.value)}
+                    required
+                />
+            </div>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/">{c('Info')
                 .t`If you remember your old password later, you can recover your existing messages.`}</Alert>
             <div className="mb1">
