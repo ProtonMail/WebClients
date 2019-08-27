@@ -9,34 +9,36 @@ const LoginForm = ({ username, setUsername, password, setPassword }) => {
             <Label htmlFor="login" className="bl sr-only">
                 {c('Label').t`Username`}
             </Label>
-            <Input
-                type="text"
-                name="login"
-                className="w100 mb1"
-                autoFocus
-                autoCapitalize="off"
-                autoCorrect="off"
-                id="login"
-                required
-                value={username}
-                placeholder={c('Placeholder').t`Username or email`}
-                onChange={({ target: { value } }) => setUsername(value)}
-                data-cy-login="username"
-            />
+            <div className="mb1">
+                <Input
+                    type="text"
+                    name="login"
+                    autoFocus
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    id="login"
+                    required
+                    value={username}
+                    placeholder={c('Placeholder').t`Username or email`}
+                    onChange={({ target: { value } }) => setUsername(value)}
+                    data-cy-login="username"
+                />
+            </div>
             <Label htmlFor="password" className="bl sr-only">
                 {c('Label').t`Password`}
             </Label>
-            <PasswordInput
-                name="password"
-                className="w100 mb1"
-                autoComplete="current-password"
-                id="password"
-                required
-                value={password}
-                placeholder={c('Placeholder').t`Password`}
-                onChange={({ target: { value } }) => setPassword(value)}
-                data-cy-login="password"
-            />
+            <div className="mb1">
+                <PasswordInput
+                    name="password"
+                    autoComplete="current-password"
+                    id="password"
+                    required
+                    value={password}
+                    placeholder={c('Placeholder').t`Password`}
+                    onChange={({ target: { value } }) => setPassword(value)}
+                    data-cy-login="password"
+                />
+            </div>
         </>
     );
 };
