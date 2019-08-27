@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { useApi, useNotifications, useLoading } from 'react-components';
 import { requestUsername } from 'proton-shared/lib/api/reset';
@@ -25,6 +26,9 @@ const ForgotUsernameContainer = ({ history }) => {
     return (
         <SignInLayout title={c('Title').t`Forgot your username?`}>
             <ForgotUsernameForm onSubmit={(data) => withLoading(handleSubmit(data))} loading={loading} />
+            <div>
+                <Link to="/login">{c('Link').t`Back to login`}</Link>
+            </div>
         </SignInLayout>
     );
 };
