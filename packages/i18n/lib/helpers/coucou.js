@@ -6,7 +6,7 @@ async function send(type, message = '') {
     const map = {
         coucou: `:rocket: *translations available for the env*: _${message}_`,
         update: `:new: *new translations uploaded*: _${process.env.CROWDIN_FILE_NAME}_`,
-        upgrade: `:information_source: *new version of translations added inside the app* (_inside the source, github_)`
+        upgrade: ':information_source: *new version of translations added inside the app* (_inside the source, github_)'
     };
 
     try {
