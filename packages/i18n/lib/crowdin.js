@@ -157,7 +157,7 @@ async function udpate(spinner) {
     success('Update crowdin with latest template');
 
     // Inform us about the change 📢
-    coucou.send();
+    coucou.send('update');
 }
 /**
  * Update latest translations to crowdin

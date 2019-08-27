@@ -5,6 +5,7 @@ const argv = require('minimist')(process.argv.slice(2));
 const CONFIG = require('./config');
 const { error, debug } = require('./lib/helpers/log')('proton-i18n');
 const renderHelp = require('./lib/helpers/help');
+const coucou = require('./lib/helpers/coucou');
 
 require('dotenv').config({ path: CONFIG.ENV_FILE });
 
@@ -35,6 +36,10 @@ async function main() {
 
     if (is('list')) {
         require('./lib/cache').write(argv._[1]);
+    }
+
+    if (is('coucou')) {
+        coucou.send('coucou', argv._[1]);
     }
 
     if (is('upgrade')) {
@@ -69,6 +74,10 @@ async function main() {
                 {
                     title: 'Commit translations',
                     task: () => require('./lib/commit')('upgrade')
+                },
+                {
+                    title: 'ha que coucou',
+                    task: () => coucou.send('upgrade')
                 }
             ].filter(Boolean)
         );
