@@ -230,10 +230,12 @@ const LoginContainer = ({ onLogin, needHelp, ignoreUnlock = false }) => {
             return (
                 <form name="totpForm" onSubmit={handleSubmit}>
                     <TOTPForm totp={totp} setTotp={loading ? noop : setTotp} />
-                    <PrimaryButton type="submit" className="w100" loading={loading} data-cy-login="submit TOTP">
-                        {c('Action').t`Submit`}
-                    </PrimaryButton>
-                    <p>{cancelButton}</p>
+                    <div className="flex flex-spacebetween">
+                        {cancelButton}
+                        <PrimaryButton type="submit" loading={loading} data-cy-login="submit TOTP">
+                            {c('Action').t`Submit`}
+                        </PrimaryButton>
+                    </div>
                 </form>
             );
         }
@@ -257,15 +259,12 @@ const LoginContainer = ({ onLogin, needHelp, ignoreUnlock = false }) => {
             return (
                 <form name="unlockForm" onSubmit={handleSubmit}>
                     <UnlockForm password={keyPassword} setPassword={loading ? noop : setKeyPassword} />
-                    <PrimaryButton
-                        type="submit"
-                        className="w100"
-                        loading={loading}
-                        data-cy-login="submit mailbox password"
-                    >
-                        {c('Action').t`Submit`}
-                    </PrimaryButton>
-                    <p>{cancelButton}</p>
+                    <div className="flex flex-spacebetween">
+                        {cancelButton}
+                        <PrimaryButton type="submit" loading={loading} data-cy-login="submit mailbox password">
+                            {c('Action').t`Submit`}
+                        </PrimaryButton>
+                    </div>
                 </form>
             );
         }
