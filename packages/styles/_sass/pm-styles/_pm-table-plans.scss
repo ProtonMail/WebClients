@@ -57,10 +57,10 @@
     }
   }
   tbody tr {
-    .pm-simple-table-row {
+    .pm-simple-table-row-th {
       padding-left: 2em;
     }
-    &:first-of-type .pm-simple-table-row {
+    &:first-of-type .pm-simple-table-row-th {
       border-top-left-radius: $global-border-radius;
     }
   }
