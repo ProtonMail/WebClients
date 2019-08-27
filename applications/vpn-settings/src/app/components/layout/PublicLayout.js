@@ -5,9 +5,7 @@ import { Icons } from 'react-components';
 const PublicLayout = ({ children }) => {
     return (
         <>
-            <div className="flex flex-nowrap">
-                <main className="main flex-item-fluid main-area">{children}</main>
-            </div>
+            <main className="main-full pt1 pb1 pl2 pr2 flex flex-column flex-nowrap reset4print">{children}</main>
             <Icons />
         </>
     );

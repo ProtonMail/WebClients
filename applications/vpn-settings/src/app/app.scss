@@ -1,2 +1,8 @@
+@import "~design-system/_sass/reusable-components/design-system-config";
+
+$pm-primary: $pv-green;
+$pm-primary-dark: $pv-green-dark;
+$pm-primary-light: $pv-green-light;
+
 @import '~react-components/styles/index';
 @import '~design-system/_sass/pv-styles/pv-indicator';

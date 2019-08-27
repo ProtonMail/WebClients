@@ -6,6 +6,9 @@ import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
 import PublicLayout from './components/layout/PublicLayout';
 import LoginContainer from './containers/LoginContainer';
+import ResetPasswordContainer from './containers/ResetPasswordContainer';
+import ForgotUsernameContainer from './containers/ForgotUsernameContainer';
+import RedeemContainer from './containers/RedeemContainer';
 
 const PublicApp = ({ onLogin }) => {
     const [loading, setLoading] = useState(true);
@@ -33,6 +36,9 @@ const PublicApp = ({ onLogin }) => {
             <PublicLayout>
                 <Router>
                     <Switch>
+                        <Route path="/redeem" component={RedeemContainer} />
+                        <Route path="/reset-password" component={ResetPasswordContainer} />
+                        <Route path="/forgot-username" component={ForgotUsernameContainer} />
                         <Route render={() => <LoginContainer onLogin={onLogin} />} />
                     </Switch>
                 </Router>

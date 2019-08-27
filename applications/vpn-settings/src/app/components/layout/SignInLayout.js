@@ -11,7 +11,7 @@ const SignInLayout = ({ children, title }) => {
 
     return (
         <>
-            <header className="pl1 pr1 pt0-5 flex flex-nowrap flex-spacebetween">
+            <header className="flex flex-nowrap flex-spacebetween">
                 <Href url="https://protonvpn.com" target="_self">{c('Link').t`Back to protonvpn.com`}</Href>
                 <Link className="pm-button--link bold" to="/signup">{c('Link').t`Sign up for free`}</Link>
             </header>
@@ -19,7 +19,7 @@ const SignInLayout = ({ children, title }) => {
                 <VpnLogo />
                 <Title>{title}</Title>
             </div>
-            {children}
+            <div className="mauto w400e mw100 p2 bg-white flex-item-noshrink">{children}</div>
             <div className="aligncenter">
                 <Link className="pm-button--link bold" to="/signup">{c('Link')
                     .t`Don't have an account yet? Sign up for free!`}</Link>
