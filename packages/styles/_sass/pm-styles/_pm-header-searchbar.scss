@@ -10,9 +10,11 @@
 
     & .topnav-list {
       justify-content: flex-end;
+
       & > li:last-child {
         margin-left: 0;
       }
+
     }
 
   }
