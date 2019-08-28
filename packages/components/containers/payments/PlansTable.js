@@ -36,7 +36,7 @@ const PlansTable = ({
     const getPrice = (planName) => {
         const plan = plans.find(({ Name }) => Name === planName);
         const monthlyPrice = (
-            <Price className="h3" currency={currency} suffix={planName === 'professional' ? '/mo/user' : '/mo'}>
+            <Price className="h3 mb0" currency={currency} suffix={planName === 'professional' ? '/mo/user' : '/mo'}>
                 {plan.Pricing[cycle] / cycle}
             </Price>
         );
@@ -63,7 +63,7 @@ const PlansTable = ({
         <table className="pm-plans-table pm-table--highlight noborder" data-plan-number={PLAN_NUMBERS[planName]}>
             <thead>
                 <tr>
-                    <th />
+                    <th className="is-empty" />
                     <th scope="col" data-highlight={mySubscription} className="aligncenter">
                         FREE
                     </th>
@@ -80,7 +80,7 @@ const PlansTable = ({
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>
                             <div className="flex flex-column">
                                 <div className="mb0-5">
@@ -92,13 +92,13 @@ const PlansTable = ({
                             </div>
                         </Tooltip>
                     </th>
-                    <td className="bg-global-muted aligncenter">FREE</td>
-                    <td className="bg-global-muted aligncenter">{getPrice('plus')}</td>
-                    <td className="bg-global-muted aligncenter">{getPrice('professional')}</td>
-                    <td className="bg-global-muted aligncenter">{getPrice('visionary')}</td>
+                    <td className="bg-global-light aligncenter">FREE</td>
+                    <td className="bg-global-light aligncenter">{getPrice('plus')}</td>
+                    <td className="bg-global-light aligncenter">{getPrice('professional')}</td>
+                    <td className="bg-global-light aligncenter">{getPrice('visionary')}</td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                         .t`Users`}</th>
                     <td className="aligncenter">1</td>
                     <td className="aligncenter">1</td>
@@ -106,7 +106,7 @@ const PlansTable = ({
                     <td className="aligncenter">6</td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                         .t`Email addresses`}</th>
                     <td className="aligncenter">1</td>
                     <td className="aligncenter">5*</td>
@@ -114,7 +114,7 @@ const PlansTable = ({
                     <td className="aligncenter">25</td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                         .t`Storage capacity (GB)`}</th>
                     <td className="aligncenter">0.5</td>
                     <td className="aligncenter">5*</td>
@@ -122,7 +122,7 @@ const PlansTable = ({
                     <td className="aligncenter">30</td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">{c('Header').t`Messages per day`}</span>
                         <Info title={c('Tooltip').t`ProtonMail cannot be used for bulk sending or spamming`} />
                     </th>
@@ -133,7 +133,7 @@ const PlansTable = ({
                 </tr>
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                             .t`Folders`}</th>
                         <td className="aligncenter">3</td>
                         <td className="aligncenter">200</td>
@@ -143,7 +143,7 @@ const PlansTable = ({
                 ) : null}
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                             .t`Labels`}</th>
                         <td className="aligncenter">3</td>
                         <td className="aligncenter">200</td>
@@ -152,7 +152,7 @@ const PlansTable = ({
                     </tr>
                 ) : null}
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">{c('Header').t`Custom domains`}</span>
                         <Info title={c('Tooltip').t`Use your own domain name`} />
                     </th>
@@ -164,7 +164,7 @@ const PlansTable = ({
                     <td className="aligncenter">10</td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">{c('Header').t`IMAP / SMTP support`}</span>
                         <Info title={c('Tooltip').t`Use ProtonMail with a desktop email client`} />
                     </th>
@@ -183,7 +183,7 @@ const PlansTable = ({
                 </tr>
                 {state ? null : (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                             .t`Additional features`}</th>
                         <td className="aligncenter">{c('Plan option').t`Only basic email features`}</td>
                         <td className="aligncenter">{c('Plan option')
@@ -196,7 +196,7 @@ const PlansTable = ({
                 )}
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                             .t`Encrypted contact details`}</th>
                         <td className="aligncenter">
                             <Icon name="off" />
@@ -214,7 +214,7 @@ const PlansTable = ({
                 ) : null}
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                             .t`Short address (@pm.me)`}</th>
                         <td className="aligncenter">
                             <Icon name="off" />
@@ -232,7 +232,7 @@ const PlansTable = ({
                 ) : null}
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                             .t`Auto-reply`}</th>
                         <td className="aligncenter">
                             <Icon name="off" />
@@ -250,7 +250,7 @@ const PlansTable = ({
                 ) : null}
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                             .t`Catch-all email`}</th>
                         <td className="aligncenter">
                             <Icon name="off" />
@@ -268,7 +268,7 @@ const PlansTable = ({
                 ) : null}
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                             .t`Multi-user support`}</th>
                         <td className="aligncenter">
                             <Icon name="off" />
@@ -286,7 +286,7 @@ const PlansTable = ({
                 ) : null}
                 {state ? (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">{c('Header')
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                             .t`Priority customer support`}</th>
                         <td className="aligncenter">
                             <Icon name="off" />
@@ -303,7 +303,7 @@ const PlansTable = ({
                     </tr>
                 ) : null}
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">ProtonVPN</span>
                         <Info title={c('Tooltip').t`ProtonVPN keeps your Internet traffic private`} />
                     </th>
@@ -325,7 +325,7 @@ const PlansTable = ({
                     <td className="aligncenter">{c('Plan option').t`Included`}</td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft bg-global-muted">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <SmallButton className="pm-button--link" onClick={toggle}>
                             {state ? c('Action').t`Hide additional features` : c('Action').t`Compare all features`}
                         </SmallButton>
