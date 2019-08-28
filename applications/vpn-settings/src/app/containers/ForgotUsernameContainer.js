@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { useApi, useNotifications, useLoading } from 'react-components';
+import { useApi, useNotifications, useLoading, ForgotUsernameForm } from 'react-components';
 import { requestUsername } from 'proton-shared/lib/api/reset';
 
 import SignInLayout from '../components/layout/SignInLayout';
-import ForgotUsernameForm from '../components/form/ForgotUsernameForm';
 
 const ForgotUsernameContainer = ({ history }) => {
     const api = useApi();
