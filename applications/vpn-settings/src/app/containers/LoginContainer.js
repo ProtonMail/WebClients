@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { LoginContainer as LoginFormContainer, SimpleDropdown, DropdownMenu, Href } from 'react-components';
+import { LoginForm, SimpleDropdown, DropdownMenu, Href } from 'react-components';
 
 import SignInLayout from '../components/layout/SignInLayout';
 
 const LoginContainer = ({ onLogin }) => {
     return (
         <SignInLayout title={c('Title').t`Log in`}>
-            <LoginFormContainer
+            <LoginForm
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
                         <DropdownMenu>
