@@ -6,7 +6,11 @@ import { LoginForm, SimpleDropdown, DropdownMenu, Href } from 'react-components'
 
 import SignInLayout from '../components/layout/SignInLayout';
 
-const LoginContainer = ({ onLogin }) => {
+const LoginContainer = ({ history, onLogin }) => {
+    const handleLogin = (...args) => {
+        history.push('/dashboard');
+        onLogin(...args);
+    };
     return (
         <SignInLayout title={c('Title').t`Log in`}>
             <LoginForm
@@ -29,13 +33,14 @@ const LoginContainer = ({ onLogin }) => {
                         </DropdownMenu>
                     </SimpleDropdown>
                 }
-                onLogin={onLogin}
+                onLogin={handleLogin}
             />
         </SignInLayout>
     );
 };
 
 LoginContainer.propTypes = {
+    history: PropTypes.object.isRequired,
     onLogin: PropTypes.func.isRequired
 };
 

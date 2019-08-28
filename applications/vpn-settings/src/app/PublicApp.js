@@ -42,7 +42,7 @@ const PublicApp = ({ onLogin }) => {
                             render={({ history }) => <ResetPasswordContainer history={history} onLogin={onLogin} />}
                         />
                         <Route path="/forgot-username" component={ForgotUsernameContainer} />
-                        <Route render={() => <LoginContainer onLogin={onLogin} />} />
+                        <Route render={({ history }) => <LoginContainer history={history} onLogin={onLogin} />} />
                     </Switch>
                 </Router>
             </PublicLayout>
