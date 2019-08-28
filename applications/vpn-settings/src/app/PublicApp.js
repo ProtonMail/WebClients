@@ -9,6 +9,7 @@ import LoginContainer from './containers/LoginContainer';
 import ResetPasswordContainer from './containers/ResetPasswordContainer';
 import ForgotUsernameContainer from './containers/ForgotUsernameContainer';
 import RedeemContainer from './containers/RedeemContainer';
+import PreInviteContainer from './containers/PreInviteContainer';
 
 const PublicApp = ({ onLogin }) => {
     const [loading, setLoading] = useState(true);
@@ -42,6 +43,10 @@ const PublicApp = ({ onLogin }) => {
                             render={({ history }) => <ResetPasswordContainer history={history} onLogin={onLogin} />}
                         />
                         <Route path="/forgot-username" component={ForgotUsernameContainer} />
+                        <Route
+                            path="/pre-invite/:selector/:token"
+                            render={({ history, match }) => <PreInviteContainer history={history} match={match} />}
+                        />
                         <Route render={({ history }) => <LoginContainer history={history} onLogin={onLogin} />} />
                     </Switch>
                 </Router>
