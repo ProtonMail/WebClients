@@ -35,24 +35,24 @@ const PlansTable = ({
         <table className="pm-plans-table pm-table--highlight noborder" data-plan-number={PLAN_NUMBERS[Name]}>
             <thead>
                 <tr>
-                    <th />
+                    <th className="is-empty" />
                     <th className="aligncenter" data-highlight={mySuscriptionText}>
                         FREE
                     </th>
-                    <th className="aligncenter color-vpnbasic" data-highlight={mySuscriptionText}>
+                    <th className="aligncenter" data-highlight={mySuscriptionText}>
                         BASIC
                     </th>
-                    <th className="aligncenter color-vpnplus" data-highlight={mySuscriptionText}>
+                    <th className="aligncenter" data-highlight={mySuscriptionText}>
                         PLUS
                     </th>
-                    <th className="aligncenter color-visionary" data-highlight={mySuscriptionText}>
+                    <th className="aligncenter" data-highlight={mySuscriptionText}>
                         VISIONARY
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft bg-global-light">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>
                             <div className="flex flex-column">
                                 <div className="mb0-5">
@@ -76,7 +76,7 @@ const PlansTable = ({
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">{c('Header').t`Countries`}</span>
                         <Info title={c('Tooltip').t`Access to VPN servers`} />
                     </th>
@@ -86,7 +86,7 @@ const PlansTable = ({
                     <td className="aligncenter">{c('Plan details').t`All Countries`}</td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">{c('Header').t`Devices`}</span>
                         <Info title={c('Tooltip').t`Number of simultaneous connections`} />
                     </th>
@@ -96,14 +96,15 @@ const PlansTable = ({
                     <td className="aligncenter">10</td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft">{c('Header').t`Speed`}</th>
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
+                        .t`Speed`}</th>
                     <td className="aligncenter">{c('Plan details').t`Low`}</td>
                     <td className="aligncenter">{c('Plan details').t`High`}</td>
                     <td className="aligncenter">{c('Plan details').t`Highest`}</td>
                     <td className="aligncenter">{c('Plan details').t`Highest`}</td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">{c('Header').t`Plus servers`}</span>
                         <Info
                             title={c('Tooltip')
@@ -124,7 +125,7 @@ const PlansTable = ({
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">{c('Header').t`Secure core`}</span>
                         <Info
                             title={c('Tooltip')
@@ -145,7 +146,7 @@ const PlansTable = ({
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">{c('Header').t`Tor servers`}</span>
                         <Info
                             title={c('Tooltip').t`Send all your traffic through the Tor network with a single click`}
@@ -165,7 +166,7 @@ const PlansTable = ({
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft">
+                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">ProtonMail Visionary</span>
                         <Info title={c('Tooltip').t`Includes ProtonMail encrypted email with all features`} />
                     </th>
@@ -183,25 +184,34 @@ const PlansTable = ({
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row" className="pm-simple-table-row alignleft" />
+                    <th scope="row" className="pm-simple-table-row-th alignleft" />
                     <td className="aligncenter">
-                        <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect()}>{c('Action')
-                            .t`Update`}</SmallButton>
+                        <SmallButton
+                            disabled={loading}
+                            className="pm-button--primary"
+                            onClick={onSelect()}
+                        >{c('Action').t`Update`}</SmallButton>
                     </td>
                     <td className="aligncenter">
-                        <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect(VPNBASIC)}>{c(
-                            'Action'
-                        ).t`Update`}</SmallButton>
+                        <SmallButton
+                            disabled={loading}
+                            className="pm-button--primary"
+                            onClick={onSelect(VPNBASIC)}
+                        >{c('Action').t`Update`}</SmallButton>
                     </td>
                     <td className="aligncenter">
-                        <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect(VPNPLUS)}>{c(
-                            'Action'
-                        ).t`Update`}</SmallButton>
+                        <SmallButton
+                            disabled={loading}
+                            className="pm-button--primary"
+                            onClick={onSelect(VPNPLUS)}
+                        >{c('Action').t`Update`}</SmallButton>
                     </td>
                     <td className="aligncenter">
-                        <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect(VISIONARY)}>{c(
-                            'Action'
-                        ).t`Update`}</SmallButton>
+                        <SmallButton
+                            disabled={loading}
+                            className="pm-button--primary"
+                            onClick={onSelect(VISIONARY)}
+                        >{c('Action').t`Update`}</SmallButton>
                     </td>
                 </tr>
             </tbody>

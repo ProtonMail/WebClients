@@ -8,7 +8,7 @@ const { MONTHLY, YEARLY } = CYCLE;
 
 const MonthlyPrice = ({ plan, cycle, currency }) => {
     return (
-        <Price className="h3" currency={currency} suffix={plan.Name === 'professional' ? '/mo/user' : '/mo'}>
+        <Price className="h3 mb0" currency={currency} suffix={plan.Name === 'professional' ? '/mo/user' : '/mo'}>
             {plan.Pricing[cycle] / cycle}
         </Price>
     );
