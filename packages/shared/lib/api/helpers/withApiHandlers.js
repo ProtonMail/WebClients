@@ -50,12 +50,13 @@ const retryHandler = (e) => {
 /**
  * Attach a catch handler to every API call to handle 401, 403, and other errors.
  * @param {function} call
+ * @param {boolean} hasSession
  * @param {function} onUnlock
  * @param {function} onError
  * @param {function} onVerification
  * @return {function}
  */
-export default ({ call, onUnlock, onError, onVerification }) => {
+export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
     let loggedOut = false;
 
     /**
@@ -92,7 +93,7 @@ export default ({ call, onUnlock, onError, onVerification }) => {
                     return perform(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX);
                 }
 
-                if (status === HTTP_ERROR_CODES.UNAUTHORIZED) {
+                if (hasSession && status === HTTP_ERROR_CODES.UNAUTHORIZED) {
                     return refreshHandler().then(
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
                         () => {
