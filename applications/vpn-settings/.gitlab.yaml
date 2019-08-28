@@ -1,0 +1,59 @@
+image: node:latest
+
+stages:
+    - setup
+    - test
+    - deploy
+    - deploy-beta
+    - deploy-beta
+
+variables:
+    NODE_OPTIONS: --max-old-space-size=4096
+
+cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+        - node_modules/
+
+setup:
+    stage: setup
+    script:
+        - npm install --no-audit
+        - npx proton-pack config
+    artifacts:
+        paths:
+            - node_modules/
+            - src/app/config.js
+
+lint:
+    stage: test
+    script:
+        - npm run lint
+
+i18n:
+    stage: test
+    script:
+        - npm run i18n:extract
+        - npm run i18n:validate
+        - npm run i18n:validate:context
+
+deploy:
+    stage: deploy
+    script:
+        - npm i --no-audit
+        - npm run deploy -- --branch=deploy-$BRANCH_DEPLOY
+    when: manual
+
+deploy-beta:
+    stage: deploy-beta
+    script:
+        - npm i --no-audit
+        - npm run deploy -- --branch=deploy-beta
+    when: manual
+
+deploy-prod:
+    stage: deploy-prod
+    script:
+        - npm i --no-audit
+        - npm run deploy -- --branch=deploy-prod
+    when: manual
