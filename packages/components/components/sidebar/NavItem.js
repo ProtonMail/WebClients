@@ -10,10 +10,9 @@ const NavItem = ({ type = 'link', link, isActive, text, onClick, icon, list = []
         <span className="flex flex-nowrap flex-items-center">
             {icon && (
                 <Icon
-                    fill="light"
                     name={icon}
                     color={color}
-                    className="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert"
+                    className="flex-item-noshrink navigation__icon mr0-5 flex-item-centered-vert"
                 />
             )}
             <span className="ellipsis mw100">{text}</span>
