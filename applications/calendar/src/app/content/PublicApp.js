@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Loader, LoginContainer, ModalsChildren } from 'react-components';
+import { Loader, LoginForm, ModalsChildren } from 'react-components';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
 const PublicApp = ({ onLogin }) => {
@@ -33,7 +33,7 @@ const PublicApp = ({ onLogin }) => {
             <ModalsChildren />
             <Router>
                 <Switch>
-                    <Route render={() => <LoginContainer onLogin={onLogin} />} />
+                    <Route render={() => <LoginForm onLogin={onLogin} />} />
                 </Switch>
             </Router>
         </>
