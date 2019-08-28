@@ -3,6 +3,19 @@
 }
 .searchbox-container:empty {
   width: 0;
+
+  // if there is no search bar, the next element (navigation) is pushed to the right (VPN/settings/etc.)
+
+  & + .topnav-container {
+
+    & .topnav-list {
+      justify-content: flex-end;
+      & > li:last-child {
+        margin-left: 0;
+      }
+    }
+
+  }
 }
 .searchbox-container input::placeholder {
   color: var(--color-standard-text, rgba(255, 255, 255, .6) );

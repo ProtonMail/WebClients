@@ -11,6 +11,7 @@
 - added styles for toolbar elements (and clean up a bit this mess)
 - added `flex-justify-end` helper
 - added plans tables
+- updated searchbar styles: if there is no search bar, the next element (navigation) is pushed to the right (VPN/settings/etc.)
 
 ## Updated/fixes
 
@@ -28,6 +29,7 @@
 - fixed navigation icons/display 
 - fixed star button color
 - fixed a bug for `caption` tag on Firefox
+- removed responsive adaptation for top navigation (might add it only for Mail or project that do really need it)
 
 
 # [1.7.2] - 2019-08-15
