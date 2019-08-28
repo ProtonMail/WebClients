@@ -123,6 +123,7 @@ export { default as OrderableTableBody } from './components/orderableTable/Order
 export { default as OrderableTableRow } from './components/orderableTable/OrderableTableRow';
 export { default as LoginForm } from './containers/login/LoginForm';
 export { default as ResetPasswordForm } from './containers/resetPassword/ResetPasswordForm';
+export { default as ForgotUsernameForm } from './containers/resetPassword/ForgotUsernameForm';
 export { default as ProtonMailAppsSection } from './containers/apps/ProtonMailAppsSection';
 export { default as ProtonMailBetaSection } from './containers/apps/ProtonMailBetaSection';
 export { default as ProtonMailBridgeSection } from './containers/apps/ProtonMailBridgeSection';
