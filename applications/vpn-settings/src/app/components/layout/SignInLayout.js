@@ -11,21 +11,36 @@ const SignInLayout = ({ children, title }) => {
 
     return (
         <>
-            <header className="flex flex-nowrap flex-spacebetween">
-                <Href url="https://protonvpn.com" target="_self">{c('Link').t`Back to protonvpn.com`}</Href>
-                <Link className="pv-button-greenborder" to="/signup">{c('Link').t`Sign up for free`}</Link>
+            <header className="flex-item-noshrink flex flex-items-center noprint mb2">
+                <div className="nomobile flex-item-fluid">
+                    <span className="opacity-50">{c('Label').t`Back to:`}</span>{' '}
+                    <Href
+                        url="https://protonvpn.com"
+                        className="inbl color-white nodecoration hover-same-color"
+                        target="_self"
+                    >{c('Link').t`protonvpn.com`}</Href>
+                </div>
+                <div className="w150p center">
+                    <VpnLogo className="fill-primary" />
+                </div>
+                <div className="nomobile flex-item-fluid alignright">
+                    <Link className="pv-button-greenborder-dark" to="/signup">{c('Link').t`Sign up for free`}</Link>
+                </div>
             </header>
-            <div className="aligncenter">
-                <VpnLogo />
-                <Title>{title}</Title>
+            <Title className="flex-item-noshrink aligncenter color-primary">{title}</Title>
+            <div className="flex-item-fluid flex-item-noshrink flex flex-column flex-nowrap">
+                <div className="flex flex-column flex-nowrap flex-item-noshrink">
+                    <div className="center bg-white color-global-grey mt2 mw40e w100 p2 bordered-container flex-item-noshrink">
+                        {children}
+                    </div>
+                    <p className="aligncenter flex-item-noshrink">
+                        <Link className="bold nodecoration primary-link" to="/signup">{c('Link')
+                            .t`Don't have an account yet? Sign up for free!`}</Link>
+                    </p>
+                </div>
+                <footer className="opacity-50 mtauto flex-item-noshrink aligncenter pb1">{c('Footer')
+                    .t`2019 ProtonVPN.com - Made globally, hosted in Switzerland.`}</footer>
             </div>
-            <div className="mauto w400e mw100 p2 bg-white flex-item-noshrink">{children}</div>
-            <div className="aligncenter">
-                <Link className="pm-button--link bold" to="/signup">{c('Link')
-                    .t`Don't have an account yet? Sign up for free!`}</Link>
-            </div>
-            <footer className="aligncenter">{c('Footer')
-                .t`2019 ProtonVPN.com - Made globally, hosted in Switzerland.`}</footer>
         </>
     );
 };
