@@ -121,7 +121,8 @@ export { default as OrderableTable } from './components/orderableTable/Orderable
 export { default as OrderableTableHeader } from './components/orderableTable/OrderableTableHeader';
 export { default as OrderableTableBody } from './components/orderableTable/OrderableTableBody';
 export { default as OrderableTableRow } from './components/orderableTable/OrderableTableRow';
-export { default as LoginContainer } from './containers/login/LoginContainer';
+export { default as LoginForm } from './containers/login/LoginForm';
+export { default as ResetPasswordForm } from './containers/resetPassword/ResetPasswordForm';
 export { default as ProtonMailAppsSection } from './containers/apps/ProtonMailAppsSection';
 export { default as ProtonMailBetaSection } from './containers/apps/ProtonMailBetaSection';
 export { default as ProtonMailBridgeSection } from './containers/apps/ProtonMailBridgeSection';

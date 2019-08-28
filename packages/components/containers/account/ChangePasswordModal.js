@@ -31,9 +31,9 @@ import {
     handleChangeMailboxPassword,
     handleChangeLoginPassword,
     handleChangeOnePassword,
-    generateKeySaltAndPassword,
     getArmoredPrivateKeys
 } from './changePasswordHelper';
+import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
 
 export const MODES = {
     CHANGE_ONE_PASSWORD_MODE: 1,
@@ -173,7 +173,9 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
                         resetErrors();
                         setLoading(true);
 
-                        const { keyPassword, keySalt } = await generateKeySaltAndPassword(inputs.newPassword);
+                        const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(
+                            inputs.newPassword
+                        );
                         const { armoredOrganizationKey, armoredKeys } = await getArmoredPrivateKeys({
                             userKeysList,
                             addressesKeysMap,
@@ -213,7 +215,9 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }) => {
                 resetErrors();
                 setLoading(true);
 
-                const { keyPassword, keySalt } = await generateKeySaltAndPassword(inputs.newPassword);
+                const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(
+                    inputs.newPassword
+                );
                 const { armoredOrganizationKey, armoredKeys } = await getArmoredPrivateKeys({
                     userKeysList,
                     addressesKeysMap,

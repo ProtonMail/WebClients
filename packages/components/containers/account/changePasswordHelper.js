@@ -1,4 +1,3 @@
-import { computeKeyPassword, generateKeySalt } from 'pm-srp';
 import { encryptPrivateKey } from 'pmcrypto';
 import { srpAuth, srpVerify } from 'proton-shared/lib/srp';
 import { unlockPasswordChanges } from 'proton-shared/lib/api/user';
@@ -35,19 +34,6 @@ const getEncryptedArmoredOrganizationKey = (organizationKey, newKeyPassword) => 
         return;
     }
     return encryptPrivateKey(organizationKey, newKeyPassword).catch(noop);
-};
-
-/**
- * Get the new key salt and password.
- * @param {String} newPassword
- * @return {Promise}
- */
-export const generateKeySaltAndPassword = async (newPassword) => {
-    const newKeySalt = generateKeySalt();
-    return {
-        keySalt: newKeySalt,
-        keyPassword: await computeKeyPassword(newPassword, newKeySalt)
-    };
 };
 
 /**
