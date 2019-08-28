@@ -20,6 +20,6 @@ export const getPlan = ({ Plans = [] } = {}, service = MAIL) => {
  * @returns {String} plan name
  */
 export const getPlanName = (subscription = {}, service = MAIL) => {
-    const { Name = 'free' } = getPlan(subscription, service);
+    const { Name = '' } = getPlan(subscription, service);
     return Name;
 };
