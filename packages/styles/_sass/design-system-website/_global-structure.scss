@@ -213,8 +213,7 @@ body {
 }
 
 .main-area,
-.main-area--withToolbar,
-.main-full {
+.main-area--withToolbar {
   background: $white;
   color: $pm-global-grey;
   height: calc(100vh - #{$header-height} );
@@ -232,6 +231,8 @@ body {
 }
 .main-full {
   height: 100vh;
+  overflow: auto;
+  @extend .bg-global-altgrey-gradient;
 }
 .main-area--withToolbar.no-scroll {
   overflow: hidden;

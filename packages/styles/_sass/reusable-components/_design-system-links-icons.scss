@@ -29,6 +29,22 @@ img {
   text-decoration: underline;
 }
 
+.primary-link {
+  &:focus,
+  &:hover {
+    color: $pm-primary;
+  }
+}
+
+.hover-same-color {
+  &:focus,
+  &:hover {
+    &.color-white {
+      color: $white;
+    }
+  }
+}
+
 /* links with icons, may use DATA-URI */
 
 /* external links */

@@ -2,26 +2,32 @@
 layout: login
 lang: en
 pageId: login
-title: Login page (WIP)
+title: Login page
 description: An example of the login page, using flexbox microframework
 keywords: login, flexbox, example
 section: home
 ---
+    <div class="flex-item-fluid flex-item-noshrink flex flex-column flex-nowrap">
+        <div class="flex flex-column flex-nowrap flex-item-noshrink">
+            <div class="center bg-white color-global-grey mt2 mw40e w100 p2 bordered-container flex-item-noshrink">
+                <h2>User log in</h2>
+                
+                <div class="mt2">
+                    <label for="login" class="bl mb1">
+                        <span class="sr-only">Username</span>
+                        <input type="text" name="login" id="login" class="pm-field w100" placeholder="Username">
+                    </label>
+                    <label for="pass" class="bl mb1">
+                        <span class="sr-only">Password</span>
+                        <input type="password" name="pass" id="pass" class="pm-field w100" placeholder="Password">
+                    </label>
+                    <button class="pm-button-blue w100">Log in</button>
+                    <p class="pl1 pr1">Trouble logging in? Get help or try older version. </p>
+                </div>
 
-    <div class="mauto w400e mw100 p2 bordered-container flex-item-noshrink">
-        <h2>User Login</h2>
-        
-        <div class="mt2">
-            <label for="login" class="bl mb1">
-                <span class="sr-only">Username</span>
-                <input type="text" name="login" id="login" class="pm-field w100" placeholder="Username">
-            </label>
-            <label for="pass" class="bl mb1">
-                <span class="sr-only">Password</span>
-                <input type="password" name="pass" id="pass" class="pm-field w100" placeholder="Password">
-            </label>
-            <button class="pm-button-blue w100">Log in</button>
-            <p class="pl1 pr1">Trouble logging in? Get help or try older version. </p>
+            </div>
+            <p class="aligncenter flex-item-noshrink"><a href="#" class="bold nodecoration primary-link">Don't have an account yet? Sign up for free!</a></p>
         </div>
 
+        <p class="opacity-50 mtauto flex-item-noshrink aligncenter pb1">2019 ProtonMail.com - Made globally, hosted in Switzerland.</p>
     </div>
