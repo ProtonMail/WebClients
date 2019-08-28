@@ -27,7 +27,7 @@ const PlansTable = ({
     updateCurrency,
     subscription
 }) => {
-    const mySuscriptionText = c('Title').t`My subscription`;
+    const mySubscriptionText = c('Title').t`My subscription`;
     const { Plans = [] } = subscription || {};
     const { Name = 'free' } = Plans.find(({ Services, Type }) => Type === PLAN && Services & VPN) || {};
 
@@ -36,16 +36,16 @@ const PlansTable = ({
             <thead>
                 <tr>
                     <th className="is-empty" />
-                    <th className="aligncenter" data-highlight={mySuscriptionText}>
+                    <th className="aligncenter" data-highlight={mySubscriptionText}>
                         FREE
                     </th>
-                    <th className="aligncenter" data-highlight={mySuscriptionText}>
+                    <th className="aligncenter" data-highlight={mySubscriptionText}>
                         BASIC
                     </th>
-                    <th className="aligncenter" data-highlight={mySuscriptionText}>
+                    <th className="aligncenter" data-highlight={mySubscriptionText}>
                         PLUS
                     </th>
-                    <th className="aligncenter" data-highlight={mySuscriptionText}>
+                    <th className="aligncenter" data-highlight={mySubscriptionText}>
                         VISIONARY
                     </th>
                 </tr>
