@@ -502,3 +502,8 @@ export const PAYMENT_METHOD_TYPES = {
     CASH: 'cash',
     TOKEN: 'token'
 };
+
+export const INVITE_TYPES = {
+    MAIL: 1,
+    VPN: 2
+};
