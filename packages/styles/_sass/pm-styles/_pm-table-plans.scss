@@ -85,14 +85,14 @@ $nb-plans-max: 4 !default;
   .pm-table--highlight[data-plan-number="#{$i}"] {
     & tr td:nth-child(#{$i+1}),
     & tr th:nth-child(#{$i+1}) {
-      border-left: #{$border-width} solid $pm-global-success;
-      border-right: #{$border-width} solid $pm-global-success;
+      border-left: #{$border-width} solid $pm-primary;
+      border-right: #{$border-width} solid $pm-primary;
     }
     & tr:last-child td:nth-child(#{$i+1}) {
-      border-bottom: #{$border-width} solid $pm-global-success;
+      border-bottom: #{$border-width} solid $pm-primary;
     }
     & tr th:nth-child(#{$i+1}) {
-      border-top: #{$border-width} solid $pm-global-success;
+      border-top: #{$border-width} solid $pm-primary;
       position: relative;
       &:before {
         content: attr(data-highlight);
@@ -101,7 +101,7 @@ $nb-plans-max: 4 !default;
         bottom: 100%;
         left: -#{$border-width};
         right: -#{$border-width};
-        background-color: $pm-global-success;
+        background-color: $pm-primary;
         color: $white;
         text-align: center;
         font-weight: bold;
