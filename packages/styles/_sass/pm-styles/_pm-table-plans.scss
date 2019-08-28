@@ -23,13 +23,14 @@
     border-bottom: 0;
     border-right: 0;
   }
-  th:empty {
+  th.is-empty {
     border: 0;
   }
   th:not(.pm-simple-table-row-th) {
     @extend .uppercase;
   }
-  tr :last-child {
+  tr td:last-child,
+  tr th:last-child {
     border-right: 1px solid $pm-global-border;
   }
   thead {
@@ -94,6 +95,7 @@ $nb-plans-max: 4 !default;
     & tr th:nth-child(#{$i+1}) {
       border-top: #{$border-width} solid $pm-primary;
       position: relative;
+      color: $pm-primary;
       &:before {
         content: attr(data-highlight);
         display: block;
@@ -105,7 +107,7 @@ $nb-plans-max: 4 !default;
         color: $white;
         text-align: center;
         font-weight: bold;
-        text-transform: none;
+        text-transform: uppercase;
         font-size: 1.2rem;
         padding: .25em;
         border-radius: $global-border-radius $global-border-radius 0 0;

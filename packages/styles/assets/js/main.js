@@ -1265,13 +1265,15 @@ function detectScrollNav() {
   var navigation_container = document.body.querySelector('.js-sidebar-container');
   var navigation = document.body.querySelector('.js-navigation');
 
-  if ( navigation.scrollHeight > navigation.clientHeight) {
-     navigation_container.classList.add('has-scroll-inside-navigation');
-  }
-  else { navigation_container.classList.remove('has-scroll-inside-navigation'); }
+  if ( navigation && navigation_container ) {
+    if ( navigation.scrollHeight > navigation.clientHeight) {
+      navigation_container.classList.add('has-scroll-inside-navigation');
+    }
+    else { navigation_container.classList.remove('has-scroll-inside-navigation'); }
 
-  if ( isScrolledToBottom(navigation) ) {
-    navigation_container.classList.remove('has-scroll-inside-navigation');
+    if ( isScrolledToBottom(navigation) ) {
+      navigation_container.classList.remove('has-scroll-inside-navigation');
+    }
   }
 }
 

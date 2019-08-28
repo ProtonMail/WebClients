@@ -68,6 +68,9 @@
 .bg-vpnplus {
   background-color: $vpnplus;
 }
+.bg-primary {
+  background-color: $pm-primary;
+}
 
 .fill-global-grey {
   fill: $pm-global-grey;
@@ -121,6 +124,9 @@
 }
 .fill-currentColor {
   fill: currentColor;
+}
+.fill-primary {
+  fill: $pm-primary;
 }
 
 .fill-visionary {
@@ -192,6 +198,10 @@
 .stroke-currentColor {
   stroke: currentColor;
 }
+.stroke-primary {
+  stroke: $pm-primary;
+}
+
 
 .stroke-visionary {
   stroke: $visionary;
@@ -260,6 +270,9 @@
 }
 .color-black {
   color: $black;
+}
+.color-primary {
+  color: $pm-primary;
 }
 
 .color-visionary {

@@ -7,6 +7,7 @@
 - added `stroke-*` classes (for SVG `stroke` properties)
 - added paypal logo in bank images
 - added `$pm-primary`, `$pm-primary-light`, `$pm-primary-dark` Sass variables (aliases for main colors)
+- added class aliases for primary colors: `color-primary`, `bg-primary`, `fill-primary`, `stroke-primary`
 - added styles for toolbar elements (and clean up a bit this mess)
 - added `flex-justify-end` helper
 - added plans tables
