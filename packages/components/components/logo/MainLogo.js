@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { useSubscription, Href, useConfig } from 'react-components';
 import { Link } from 'react-router-dom';
 
-import { APPS, PLAN_TYPES, PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { APPS, PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { getPlanName } from 'proton-shared/lib/helpers/subscription';
 
 import CalendarLogo from './CalendarLogo';
 import ContactsLogo from './ContactsLogo';
 import MailLogo from './MailLogo';
 import VpnLogo from './VpnLogo';
 
-const { PLAN } = PLAN_TYPES;
 const { MAIL, VPN } = PLAN_SERVICES;
 const { PROTONMAIL, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR, PROTONVPN_SETTINGS, PROTONMAIL_SETTINGS } = APPS;
 
@@ -21,33 +21,30 @@ const { PROTONMAIL, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR, PROTONVPN_SETTI
  */
 const MainLogo = ({ url = '/inbox', external = false }) => {
     const { APP_NAME } = useConfig();
-    const [{ Plans = [] } = {}] = useSubscription();
+    const [subscription] = useSubscription();
     const className = 'logo-container nodecoration flex-item-centered-vert';
-    const { Name } =
-        Plans.find(
-            ({ Services, Type }) => Type === PLAN && Services & (APP_NAME === PROTONVPN_SETTINGS ? VPN : MAIL)
-        ) || {};
+    const planName = getPlanName(subscription, APP_NAME === PROTONVPN_SETTINGS ? VPN : MAIL);
 
     const logo = (() => {
         // we do not have the proper logos for all the products yet. Use mail logo in the meantime
         if ([PROTONMAIL, PROTONMAIL_SETTINGS, PROTONDRIVE].includes(APP_NAME)) {
-            return <MailLogo planName={Name} />;
+            return <MailLogo planName={planName} />;
         }
         if (APP_NAME === PROTONCALENDAR) {
-            return <CalendarLogo planName={Name} />;
+            return <CalendarLogo planName={planName} />;
         }
         if (APP_NAME === PROTONCONTACTS) {
-            return <ContactsLogo planName={Name} />;
+            return <ContactsLogo planName={planName} />;
         }
         if (APP_NAME === PROTONVPN_SETTINGS) {
-            return <VpnLogo planName={Name} />;
+            return <VpnLogo planName={planName} />;
         }
         return null;
     })();
 
     if (external) {
         return (
-            <Href url={url} rel="noreferrer help" className={className}>
+            <Href url={url} target="_self" rel="noreferrer help" className={className}>
                 {logo}
             </Href>
         );
