@@ -7,7 +7,7 @@ const { MAIL } = PLAN_SERVICES;
  * Get plan from current subscription
  * @param {Array} subscription.Plans
  * @param {Integer} service
- * @returns {Object}
+ * @returns {Object} plan
  */
 export const getPlan = ({ Plans = [] } = {}, service = MAIL) => {
     return Plans.find(({ Services, Type }) => Type === PLAN && Services & service) || {};
