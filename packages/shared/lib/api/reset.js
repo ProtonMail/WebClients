@@ -14,3 +14,9 @@ export const requestLoginResetToken = (data) => ({
     method: 'post',
     data
 });
+
+export const reset = (data) => ({
+    url: 'reset',
+    method: 'post',
+    data
+});

@@ -97,3 +97,15 @@ export const updatePrivateKeyRoute = ({ KeySalt, Keys, OrganizationKey }) => ({
         OrganizationKey
     }
 });
+
+export const resetKeysRoute = ({ Username, PrimaryKey, Token, KeySalt, AddressKeys }) => ({
+    url: 'keys/reset',
+    method: 'post',
+    data: {
+        Username,
+        PrimaryKey,
+        Token,
+        KeySalt,
+        AddressKeys
+    }
+});

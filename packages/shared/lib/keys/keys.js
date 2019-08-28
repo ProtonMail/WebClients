@@ -1,6 +1,19 @@
 import { decryptMessage, generateKey, getKeys, getMessage, getSignature, reformatKey } from 'pmcrypto';
 import { VERIFICATION_STATUS } from 'pmcrypto/lib/constants';
 import { c } from 'ttag';
+import { computeKeyPassword, generateKeySalt } from 'pm-srp';
+
+/**
+ * @param {String} password
+ * @return {Promise<{salt, passphrase}>}
+ */
+export const generateKeySaltAndPassphrase = async (password) => {
+    const salt = generateKeySalt();
+    return {
+        salt,
+        passphrase: await computeKeyPassword(password, salt)
+    };
+};
 
 /**
  * @param {Array} keys - Keys array that has been prepared by `prepareKeys`

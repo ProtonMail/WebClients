@@ -1,8 +1,4 @@
-import { KEY_FLAG } from '../constants';
-import { clearBit } from '../helpers/bitset';
 import { ACTIONS } from './keysReducerActions';
-
-const { SIGNED, ENCRYPTED, ENCRYPTED_AND_SIGNED } = KEY_FLAG;
 
 export const findKeyByFingerprint = (keys, keyFingerprint) => {
     return keys.find(({ privateKey }) => privateKey.getFingerprint() === keyFingerprint);
@@ -10,25 +6,6 @@ export const findKeyByFingerprint = (keys, keyFingerprint) => {
 
 const findKeyById = (keys, keyID) => {
     return keys.find(({ Key: { ID } }) => ID === keyID);
-};
-
-export const getResetKeys = (Keys, payload) => {
-    const resetKeys = Keys.map((Key) => {
-        return {
-            ...Key,
-            Primary: 0,
-            Flags: clearBit(Key.Flags, ENCRYPTED)
-        };
-    });
-
-    const { canReceive } = payload;
-
-    const newPrimary = {
-        Primary: 1,
-        Flags: !canReceive ? SIGNED : ENCRYPTED_AND_SIGNED
-    };
-
-    return [newPrimary, ...resetKeys];
 };
 
 /**

@@ -1,6 +1,6 @@
 import { signMessage } from 'pmcrypto';
 
-const getSignature = async (Data, primaryKey) => {
+export const getSignature = async (Data, primaryKey) => {
     const { signature } = await signMessage({
         data: Data,
         privateKeys: [primaryKey],
