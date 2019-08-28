@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const VpnLogo = ({ planName = '' }) => {
+const VpnLogo = ({ planName = '', className = 'logo' }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="logo"
+            className={className}
             aria-labelledby="logo__title plan"
             width="148"
             height="36"
@@ -31,7 +31,8 @@ const VpnLogo = ({ planName = '' }) => {
 };
 
 VpnLogo.propTypes = {
-    planName: PropTypes.string
+    planName: PropTypes.string,
+    className: PropTypes.string
 };
 
 export default VpnLogo;

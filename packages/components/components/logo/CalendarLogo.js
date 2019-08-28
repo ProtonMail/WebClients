@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CalendarLogo = ({ planName = '' }) => {
+const CalendarLogo = ({ planName = '', className = 'logo' }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="logo"
+            className={className}
             aria-labelledby="logo__title plan"
             width="148"
             height="36"
@@ -35,7 +35,8 @@ const CalendarLogo = ({ planName = '' }) => {
 };
 
 CalendarLogo.propTypes = {
-    planName: PropTypes.string
+    planName: PropTypes.string,
+    className: PropTypes.string
 };
 
 export default CalendarLogo;

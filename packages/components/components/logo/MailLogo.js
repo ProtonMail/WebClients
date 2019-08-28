@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MailLogo = ({ planName = '' }) => {
+const MailLogo = ({ planName = '', className = 'logo' }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="logo"
+            className={className}
             aria-labelledby="logo__title plan"
             width="148"
             height="36"
@@ -45,7 +45,8 @@ const MailLogo = ({ planName = '' }) => {
 };
 
 MailLogo.propTypes = {
-    planName: PropTypes.string
+    planName: PropTypes.string,
+    className: PropTypes.string
 };
 
 export default MailLogo;
