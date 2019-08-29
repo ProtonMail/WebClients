@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { useApi, useLoading, LinkButton, PrimaryButton, useNotifications } from 'react-components';
+import { useApi, useLoading, LinkButton, PrimaryButton, useNotifications, useModals } from 'react-components';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
 import { getUser } from 'proton-shared/lib/api/user';
 import { auth2FA, getInfo, setCookies } from 'proton-shared/lib/api/auth';
@@ -13,7 +13,7 @@ import { srpVerify } from 'proton-shared/lib/srp';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { mergeHeaders } from 'proton-shared/lib/fetch/helpers';
 import { getAuthHeaders } from 'proton-shared/lib/api';
-import { HTTP_ERROR_CODES } from 'proton-shared/lib/errors';
+import { HTTP_ERROR_CODES, API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 
 const withAuthHeaders = (UID, AccessToken, config) => mergeHeaders(config, getAuthHeaders(UID, AccessToken));
 
@@ -21,6 +21,7 @@ import PasswordForm from './PasswordForm';
 import TOTPForm from './TOTPForm';
 import UnlockForm from './UnlockForm';
 import { getAuthTypes, getErrorText, handleUnlockKey } from './helper';
+import AbuseModal from './AbuseModal';
 
 const FORM = {
     LOGIN: 0,
@@ -31,6 +32,7 @@ const FORM = {
 
 const LoginForm = ({ onLogin, needHelp, ignoreUnlock = false }) => {
     const { createNotification } = useNotifications();
+    const { createModal } = useModals();
     const cacheRef = useRef();
     const api = useApi();
 
@@ -184,7 +186,9 @@ const LoginForm = ({ onLogin, needHelp, ignoreUnlock = false }) => {
             withLoading(
                 handleLogin().catch((e) => {
                     cacheRef.current = undefined;
-                    console.error(e);
+                    if (e.data && e.data.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
+                        createModal(<AbuseModal />);
+                    }
                 })
             );
         };
