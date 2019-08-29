@@ -1,16 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { OverlayModal } from 'react-components';
+import { withRouter } from 'react-router-dom';
 
-const ESC_KEY = 27;
-
-const ModalsContainer = ({ modals, removeModal, hideModal }) => {
-    const latestModals = useRef(modals);
+const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
     const [containerIsClosing, setContainerIsClosing] = useState(false);
 
     useEffect(() => {
-        latestModals.current = modals;
+        modals.forEach(({ id, content }) => {
+            content.props.onClose && content.props.onClose();
+            hideModal(id);
+        });
+    }, [location]);
 
+    useEffect(() => {
         // Start hiding the container if the last modal wants to close
         if (modals.length === 1 && modals[0].isClosing) {
             return setContainerIsClosing(true);
@@ -19,19 +22,19 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
         if (modals.length >= 1) {
             return setContainerIsClosing(false);
         }
-    }, [latestModals, modals]);
+    }, [modals]);
 
     useEffect(() => {
+        if (modals.length === 0) {
+            return;
+        }
+
+        const lastModal = modals[modals.length - 1];
+
         const onKeydown = (event) => {
-            const modals = latestModals.current;
+            const { id, closeOnEscape, content } = lastModal;
 
-            if (modals.length === 0) {
-                return;
-            }
-
-            const { id, closeOnEscape, content } = modals[modals.length - 1];
-
-            if (closeOnEscape && event.which === ESC_KEY) {
+            if (closeOnEscape && event.key === 'Escape') {
                 event.preventDefault();
                 content.props.onClose && content.props.onClose();
                 hideModal(id);
@@ -42,7 +45,7 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
         return () => {
             document.removeEventListener('keydown', onKeydown);
         };
-    }, []);
+    }, [modals]);
 
     if (modals.length === 0 && !containerIsClosing) {
         return null;
@@ -98,7 +101,8 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
 ModalsContainer.propTypes = {
     modals: PropTypes.arrayOf(PropTypes.object).isRequired,
     removeModal: PropTypes.func.isRequired,
-    hideModal: PropTypes.func.isRequired
+    hideModal: PropTypes.func.isRequired,
+    location: PropTypes.object
 };
 
-export default ModalsContainer;
+export default withRouter(ModalsContainer);

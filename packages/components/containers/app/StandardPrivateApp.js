@@ -1,6 +1,5 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router } from 'react-router-dom';
 import {
     EventManagerProvider,
     ForceRefreshProvider,
@@ -75,17 +74,15 @@ const StandardPrivateApp = ({ onLogout, locales = {}, preloadModels = [], eventM
     }
 
     return (
-        <Router>
-            <EventManagerProvider eventManager={eventManagerRef.current}>
-                <ModelListener models={eventModels} />
-                <ThemeInjector />
-                <LocaleInjector locales={locales} refresh={refreshRef} />
-                <ForceRefreshProvider ref={refreshRef}>
-                    <ModalsChildren />
-                    {children}
-                </ForceRefreshProvider>
-            </EventManagerProvider>
-        </Router>
+        <EventManagerProvider eventManager={eventManagerRef.current}>
+            <ModelListener models={eventModels} />
+            <ThemeInjector />
+            <LocaleInjector locales={locales} refresh={refreshRef} />
+            <ForceRefreshProvider ref={refreshRef}>
+                <ModalsChildren />
+                {children}
+            </ForceRefreshProvider>
+        </EventManagerProvider>
     );
 };
 

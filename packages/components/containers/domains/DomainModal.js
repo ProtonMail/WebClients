@@ -36,7 +36,9 @@ const verifyDomain = ({ VerifyState }) => {
     }
 };
 
-const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, ...rest }) => {
+// Pull staticContext to avoid it being passed with rest
+// eslint-disable-next-line no-unused-vars
+const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, staticContext, ...rest }) => {
     const [domainModel, setDomain] = useState(() => ({ ...domain }));
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -169,7 +171,8 @@ DomainModal.propTypes = {
     onClose: PropTypes.func,
     domain: PropTypes.object,
     domainAddresses: PropTypes.array,
-    history: PropTypes.func.isRequired
+    history: PropTypes.object.isRequired,
+    staticContext: PropTypes.object
 };
 
 export default withRouter(DomainModal);

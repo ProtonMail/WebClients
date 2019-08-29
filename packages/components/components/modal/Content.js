@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { noop } from 'proton-shared/lib/helpers/function';
 
-const Content = ({ children, className = '', onSubmit, onReset, autoComplete = 'off', ...rest }) => {
+const Content = ({ children, className = '', onSubmit = noop, onReset = noop, autoComplete = 'off', ...rest }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         onSubmit(event);

@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { BrowserRouter as Router } from 'react-router-dom';
 import createAuthentication from 'proton-shared/lib/authenticationStore';
 import createCache from 'proton-shared/lib/helpers/cache';
 import { formatUser, UserModel } from 'proton-shared/lib/models/userModel';
@@ -22,7 +23,7 @@ const ProtonApp = ({ storage, config, children }) => {
     const [UID, setUID] = useState(() => authentication.getUID());
     const tempDataRef = useRef({});
 
-    if (UID && !cacheRef.current) {
+    if (!cacheRef.current) {
         cacheRef.current = createCache();
     }
 
@@ -30,6 +31,7 @@ const ProtonApp = ({ storage, config, children }) => {
         authentication.setUID(newUID);
         authentication.setPassword(keyPassword);
 
+        cacheRef.current.reset();
         const cache = createCache();
 
         // If the user was received from the login call, pre-set it directly.
@@ -49,10 +51,11 @@ const ProtonApp = ({ storage, config, children }) => {
         authentication.setUID();
         authentication.setPassword();
 
-        setUID();
-
         tempDataRef.current = {};
-        cacheRef.current = undefined;
+        cacheRef.current.reset();
+        cacheRef.current = createCache();
+
+        setUID();
     }, []);
 
     const authenticationValue = useMemo(() => {
@@ -74,7 +77,7 @@ const ProtonApp = ({ storage, config, children }) => {
             <Icons />
             <ConfigProvider config={config}>
                 <RightToLeftProvider>
-                    {UID ? (
+                    <Router>
                         <React.Fragment key={UID}>
                             <NotificationsProvider>
                                 <ModalsProvider>
@@ -86,17 +89,7 @@ const ProtonApp = ({ storage, config, children }) => {
                                 </ModalsProvider>
                             </NotificationsProvider>
                         </React.Fragment>
-                    ) : (
-                        <NotificationsProvider>
-                            <ModalsProvider>
-                                <ApiProvider config={config}>
-                                    <AuthenticationProvider store={authenticationValue}>
-                                        {children}
-                                    </AuthenticationProvider>
-                                </ApiProvider>
-                            </ModalsProvider>
-                        </NotificationsProvider>
-                    )}
+                    </Router>
                 </RightToLeftProvider>
             </ConfigProvider>
         </CompatibilityCheck>
