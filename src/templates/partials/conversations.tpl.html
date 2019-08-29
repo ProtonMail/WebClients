@@ -6,6 +6,6 @@
     <list-mobile ng-if="displayType('mobile')"></list-mobile>
     <list-columns ng-if="displayType('columns')"></list-columns>
 
-	<div id="conversation-view" ui-view="view" class="view-column-detail p2 flex-item-fluid scroll-if-needed"></div>
-    <conversation-placeholder id="pm_view" class="columns flex flex-item-fluid" ng-class="{ 'latest': !idDefined() }" ng-if="displayType('placeholder')"></conversation-placeholder>
+	<div id="conversation-view" ui-view="view" class="view-column-detail scroll-smooth-touch p2 flex-item-fluid scroll-if-needed"></div>
+    <conversation-placeholder id="pm_view" class="columns view-column-detail scroll-if-needed flex-item-fluid scroll-smooth-touch" ng-class="{ 'latest': !idDefined() }" ng-if="displayType('placeholder')"></conversation-placeholder>
 </div>
