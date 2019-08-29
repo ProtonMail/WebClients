@@ -5,8 +5,9 @@
 }
 
 button[aria-busy="true"] {
-    background-position: 100% 50%;
-    background-size: 15px 15px;
+    background-image: url(#{$path-images}loading-atom-smaller-disabled.svg);
+    background-position: calc(100% - 4px) 50%;
+    background-size: 10px 10px;
 }
 
 tr[aria-busy="true"] {
