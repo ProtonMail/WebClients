@@ -20,6 +20,7 @@ import { uniqueBy } from 'proton-shared/lib/helpers/array';
 import { getLatestID } from 'proton-shared/lib/api/events';
 
 import ModelListener from '../eventManager/ModelListener';
+import EventNotices from '../eventManager/EventNotices';
 
 const getEventID = ({ cache, api }) => {
     // Set from <ProtonApp/> on login.
@@ -76,6 +77,7 @@ const StandardPrivateApp = ({ onLogout, locales = {}, preloadModels = [], eventM
     return (
         <EventManagerProvider eventManager={eventManagerRef.current}>
             <ModelListener models={eventModels} />
+            <EventNotices />
             <ThemeInjector />
             <LocaleInjector locales={locales} refresh={refreshRef} />
             <ForceRefreshProvider ref={refreshRef}>
