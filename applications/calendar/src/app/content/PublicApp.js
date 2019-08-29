@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Loader, LoginForm, ModalsChildren } from 'react-components';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
@@ -31,11 +31,9 @@ const PublicApp = ({ onLogin }) => {
     return (
         <>
             <ModalsChildren />
-            <Router>
-                <Switch>
-                    <Route render={() => <LoginForm onLogin={onLogin} />} />
-                </Switch>
-            </Router>
+            <Switch>
+                <Route render={() => <LoginForm onLogin={onLogin} />} />
+            </Switch>
         </>
     );
 };
