@@ -507,3 +507,13 @@ export const INVITE_TYPES = {
     MAIL: 1,
     VPN: 2
 };
+
+export const CLIENT_IDS = {
+    WebMail: 'Web Mail',
+    WebMailSettings: 'Web Mail Settings',
+    WebCalendar: 'Web Calendar',
+    WebContacts: 'Web Contacts',
+    WebVPNSettings: 'Web VPN Settings',
+    WebDrive: 'Web Drive',
+    Admin: 'Web Admin'
+};
