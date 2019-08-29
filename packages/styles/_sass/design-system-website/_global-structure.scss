@@ -60,6 +60,16 @@ body {
   padding: 1rem 2rem 1rem 0;
   height: $header-height;
 }
+
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .header {
+      padding: 1rem 0 1rem 2rem;
+    }
+  }
+
+}
+
 .sidebar {
   min-height: calc(100vh - #{$header-height});
   max-height: calc(100vh - #{$header-height});
@@ -85,6 +95,15 @@ body {
 }
 .logo .plan {
   font-size: 1rem;
+}
+
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .topnav-list { 
+      margin-left: 0;
+      margin-right: 1em;
+    }
+  }
 }
 
 

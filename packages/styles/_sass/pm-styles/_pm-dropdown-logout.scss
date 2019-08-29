@@ -23,3 +23,12 @@
   border-color: var(--color-nav-link, $pm-global-border);
   min-width: 2.7em;
 }
+
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .dropDown-logout-button > span:first-child {
+      margin-left: .5em;
+      margin-right: 0;
+    }
+  }
+}

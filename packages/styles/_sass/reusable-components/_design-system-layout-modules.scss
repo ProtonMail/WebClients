@@ -335,11 +335,11 @@ $list-margins-values: 0, 0.25, 0.5, 1, 1.5, 2 !default; // specify 2.5 if needed
 @if $rtl-option == true {
   [dir="rtl"] {
     .mrauto {
-      margin-right: inherit;
+      margin-right: 0;
       margin-left: auto;
     }
     .mlauto {
-      margin-left: inherit;
+      margin-left: 0;
       margin-right: auto;
     }
   }

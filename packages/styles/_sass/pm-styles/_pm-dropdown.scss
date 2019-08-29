@@ -120,6 +120,11 @@ $dropDown-narrow-width: 8em !default;
 
 @if $rtl-option == true {
   [dir="rtl"] {
+    .dropDown-content::before {
+      right: calc(50% - 1rem);
+      left: auto;
+    }
+
     .dropDown--leftArrow .dropDown-content::before {
       right: 1rem;
       left: auto;
