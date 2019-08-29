@@ -79,7 +79,7 @@ function main({ api = 'dev' }) {
 
     const config = dedent`
     export const CLIENT_ID = '${json.clientId}';
-    export const CLIENT_TYPE = '${ENV_CONFIG.app.clientType || 1}';
+    export const CLIENT_TYPE = ${ENV_CONFIG.app.clientType || 1};
     export const CLIENT_SECRET = '${ENV_CONFIG.app.clientSecret || ''}';
     export const APP_VERSION = '${json.version}';
     export const APP_NAME = '${json.appName}';
