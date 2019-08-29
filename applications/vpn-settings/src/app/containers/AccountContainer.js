@@ -5,6 +5,7 @@ import {
     TwoFactorSection,
     NewsSection,
     DeleteSection,
+    EmailSection,
     OpenVPNAccountSection
 } from 'react-components';
 import { c } from 'ttag';
@@ -34,6 +35,10 @@ export const getAccountPage = () => {
                 id: 'openvpn'
             },
             {
+                text: c('Title').t`Recovery & notification`,
+                id: 'email'
+            },
+            {
                 text: c('Title').t`Email subscriptions`,
                 id: 'news'
             },
@@ -52,6 +57,7 @@ const AccountContainer = () => {
             <PasswordsSection />
             <TwoFactorSection />
             <OpenVPNAccountSection />
+            <EmailSection />
             <NewsSection />
             <DeleteSection />
         </Page>
