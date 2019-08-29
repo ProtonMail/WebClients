@@ -23,7 +23,8 @@ const ForgotUsernameContainer = ({ history }) => {
     };
 
     return (
-        <SignInLayout title={c('Title').t`Forgot your username?`}>
+        <SignInLayout title={c('Title').t`Log in`}>
+            <h2>{c('Title').t`Forgot your username?`}</h2>
             <ForgotUsernameForm onSubmit={(data) => withLoading(handleSubmit(data))} loading={loading} />
             <div>
                 <Link to="/login">{c('Link').t`Back to login`}</Link>

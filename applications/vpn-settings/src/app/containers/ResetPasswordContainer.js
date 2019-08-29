@@ -12,7 +12,8 @@ const ResetPasswordContainer = ({ onLogin, history }) => {
     };
 
     return (
-        <SignInLayout title={c('Title').t`Reset password`}>
+        <SignInLayout title={c('Title').t`Log in`}>
+            <h2>{c('Title').t`Reset password`}</h2>
             <ResetPasswordForm onLogin={handleLogin} />
         </SignInLayout>
     );

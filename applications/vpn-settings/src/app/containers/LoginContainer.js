@@ -13,6 +13,7 @@ const LoginContainer = ({ history, onLogin }) => {
     };
     return (
         <SignInLayout title={c('Title').t`Log in`}>
+            <h2>{c('Title').t`User log in`}</h2>
             <LoginForm
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
