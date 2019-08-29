@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import keycode from 'keycode';
 import { classnames } from '../../helpers/component';
 import { usePopper, Popper } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
@@ -31,9 +30,7 @@ const Dropdown = ({
     });
 
     const handleKeydown = (event) => {
-        const key = keycode(event);
-
-        if (key === 'escape' && event.target === document.activeElement) {
+        if (event.key === 'Escape' && event.target === document.activeElement) {
             onClose();
         }
     };

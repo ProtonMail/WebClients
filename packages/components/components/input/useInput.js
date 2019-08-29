@@ -1,5 +1,4 @@
 import { useState, useMemo } from 'react';
-import keycode from 'keycode';
 
 const FOCUSED_CLASS = 'focused';
 const BLURRED_CLASS = 'blurred';
@@ -89,9 +88,7 @@ const useInput = (
                 }
             },
             onKeyDown: (event) => {
-                const key = keycode(event);
-
-                if (key === 'enter' && onPressEnter) {
+                if (event.key === 'Enter' && onPressEnter) {
                     onPressEnter(event);
                 }
 
