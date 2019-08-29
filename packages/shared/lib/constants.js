@@ -517,3 +517,8 @@ export const CLIENT_IDS = {
     WebDrive: 'Web Drive',
     Admin: 'Web Admin'
 };
+
+export const CLIENT_TYPES = {
+    MAIL: 1,
+    VPN: 2
+};
