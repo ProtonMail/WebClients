@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
@@ -27,7 +28,7 @@ import { collectInfo, getClient } from '../../helpers/report';
 
 const { PROTONVPN_SETTINGS } = APPS;
 
-const BugModal = ({ onClose, username: Username = '', addresses = [], ...rest }) => {
+const BugModal = ({ onClose, username: Username = '', location, addresses = [], ...rest }) => {
     const { APP_NAME } = useConfig();
     const mailTitles = [
         { value: 'Login problem', text: c('Bug category').t`Login problem` },
@@ -72,7 +73,7 @@ const BugModal = ({ onClose, username: Username = '', addresses = [], ...rest })
         (acc, { text, value }) => {
             acc.push({
                 text,
-                value: `[${Client}] Bug [${location.path}] ${value}`
+                value: `[${Client}] Bug [${location.pathname}] ${value}`
             });
             return acc;
         },
@@ -249,7 +250,8 @@ const BugModal = ({ onClose, username: Username = '', addresses = [], ...rest })
 BugModal.propTypes = {
     onClose: PropTypes.func,
     username: PropTypes.string,
-    addresses: PropTypes.array
+    addresses: PropTypes.array,
+    location: PropTypes.object.isRequired
 };
 
-export default BugModal;
+export default withRouter(BugModal);

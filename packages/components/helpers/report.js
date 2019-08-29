@@ -1,17 +1,7 @@
 import { getOS, getBrowser, getDevice } from 'proton-shared/lib/helpers/browser';
+import { CLIENT_IDS } from 'proton-shared/lib/constants';
 
-const CLIENTS = {
-    Web: 'Angular',
-    ProtonMailReact: 'ProtonMail React',
-    ProtonContactReact: 'ProtonContact React',
-    ProtonMailSettingsReact: 'ProtonMail Settings React',
-    ProtonCalendarReact: 'ProtonCalendar React',
-    ProtonDriveReact: 'ProtonDrive React',
-    ProtonWalletReact: 'ProtonWallet React',
-    ProtonVPN: 'ProtonVPN React'
-};
-
-export const getClient = (clientID) => CLIENTS[clientID];
+export const getClient = (clientID) => CLIENT_IDS[clientID];
 
 export const collectInfo = () => {
     const os = getOS();
