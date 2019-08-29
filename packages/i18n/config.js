@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const { error } = require('./lib/helpers/log')('proton-i18n');
 
