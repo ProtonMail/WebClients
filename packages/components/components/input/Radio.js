@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { classnames } from '../../helpers/component';
-
-const Radio = ({ id, children, className, ...rest }) => {
+const Radio = ({ id, children, className = 'inline-flex', ...rest }) => {
     return (
-        <label htmlFor={id} className={classnames(['inline-flex', className])}>
+        <label htmlFor={id} className={className}>
             <input id={id} type="radio" className="pm-radio" {...rest} />
             <span className="pm-radio-fakeradio" />
             {children}
