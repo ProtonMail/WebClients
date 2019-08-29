@@ -11,7 +11,14 @@ const moment = require('moment');
 const argv = require('minimist')(process.argv.slice(2), {
     string: ['appMode'],
     boolean: ['lint', 'i18n'],
-    default: { lint: true, i18n: true, localize: false, appMode: 'bundle', remote: false }
+    default: {
+        lint: true,
+        i18n: true,
+        localize: false,
+        appMode: 'bundle',
+        remote: false,
+        forceFetch: false
+    }
 });
 
 // Compat mode WebClient
@@ -91,7 +98,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         {
             title: `Pull dist branch ${branch}`,
             enabled: () => !isCI,
-            task: () => pull(branch)
+            task: () => pull(branch, argv.forceFetch)
         },
         ...hookPostTaskClone,
         {
