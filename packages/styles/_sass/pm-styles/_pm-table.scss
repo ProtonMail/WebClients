@@ -25,10 +25,11 @@
   }
 }
 
+
 .pm-simple-table--has-actions {
   td:last-child,
   th:last-child {
-    @extend .alignright;
+    text-align: right;
   }
 }
 
