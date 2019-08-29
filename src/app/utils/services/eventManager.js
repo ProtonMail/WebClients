@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { arrayToHexString, binaryStringToArray, encodeUtf8, unsafeMD5 } from 'pmcrypto';
 
 import { CONVERSATION_VIEW_MODE, EVENTS_MS, MAILBOX_IDENTIFIERS, STATUS, LABEL_TYPE } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, EVENT_ERRORS } from '../../errors';
@@ -227,27 +228,33 @@ function eventManager(
     }
 
     function manageNotices(notices) {
-        if (angular.isDefined(notices) && notices.length > 0) {
-            // 2 week expiration
-            const now = new Date();
-            const expires = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 14);
-            const onClose = (name) => $cookies.put(name, 'true', { expires });
-
-            for (let i = 0; i < notices.length; i++) {
-                const message = notices[i];
-                const cookieName =
-                    'NOTICE-' + openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
-
-                if (!$cookies.get(cookieName)) {
-                    notify({
-                        message,
-                        templateUrl: require('../../../templates/notifications/cross.tpl.html'),
-                        duration: '0',
-                        onClose: onClose(cookieName)
-                    });
-                }
-            }
+        if (!Array.isArray(notices) || notices.length === 0) {
+            return;
         }
+
+        // 2 week expiration
+        const now = new Date();
+        const expires = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 14);
+
+        const onClose = (name) => $cookies.put(name, 'true', { expires });
+
+        notices.forEach(async (message) => {
+            const id = arrayToHexString(
+                await unsafeMD5(binaryStringToArray(encodeUtf8(`${authentication.user.ID}${message}`)))
+            );
+            const cookieName = 'NOTICE-' + id;
+
+            if ($cookies.get(cookieName)) {
+                return;
+            }
+
+            notify({
+                message,
+                templateUrl: require('../../../templates/notifications/cross.tpl.html'),
+                duration: '0',
+                onClose: onClose(cookieName)
+            });
+        });
     }
 
     /**
