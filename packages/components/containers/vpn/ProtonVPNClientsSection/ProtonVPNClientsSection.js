@@ -27,7 +27,7 @@ const ProtonVPNClientsSection = () => {
                 <VPNClientCard
                     title={c('VPNClient').t`Linux`}
                     icon="linux"
-                    link="https://protonvpn.com/support/linux-vpn-setup/"
+                    link="https://protonvpn.com/support/linux-vpn-tool/"
                 />
             </div>
         </>
