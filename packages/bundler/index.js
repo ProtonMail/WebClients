@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const fs = require('fs');
 const path = require('path');
 const Listr = require('listr');
 const execa = require('execa');
@@ -13,7 +14,12 @@ const argv = require('minimist')(process.argv.slice(2), {
     default: { lint: true, i18n: true, localize: false, appMode: 'bundle', remote: false }
 });
 
+// Compat mode WebClient
+const ENV_FILE = fs.existsSync('.env') ? '.env' : 'env/.env';
+require('dotenv').config({ path: ENV_FILE });
+
 const { debug, success, error, about } = require('./lib/helpers/log')('proton-bundler');
+const coucou = require('./lib/helpers/coucou');
 const { bash, script } = require('./lib/helpers/cli');
 const {
     customBundler: { tasks: customTasks, config: customConfig },
@@ -215,7 +221,9 @@ async function main() {
     isCI && success(`Build CI app to the directory: ${chalk.bold('dist')}`, { time });
 
     if (!isCI) {
-        return logCommits(branch, flowType);
+        return logCommits(branch, flowType).then((data) => {
+            coucou.send(data);
+        });
     }
 }
 

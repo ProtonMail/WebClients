@@ -52,7 +52,8 @@ function logCommits(branch, flowType) {
     console.log('');
     title('Hash commits');
     const arg = flowType === 'many' ? '' : target;
-    return script('logcommits.sh', [arg]).then(({ stdout }) => console.log(stdout));
+    // Keep log active.
+    return script('logcommits.sh', [arg]).then(({ stdout }) => console.log(stdout) || stdout);
 }
 
 module.exports = {
