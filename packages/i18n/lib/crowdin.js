@@ -11,7 +11,7 @@ const FormData = require('form-data');
 const renderHelp = require('./helpers/help');
 const coucou = require('./helpers/coucou');
 
-const { spin, success, debug } = require('./helpers/log')('proton-i18n');
+const { spin, success, debug, warn } = require('./helpers/log')('proton-i18n');
 const { getFiles, getCrowdin } = require('../config');
 
 const { KEY_API, FILE_NAME, PROJECT_NAME } = getCrowdin();
@@ -151,14 +151,31 @@ async function udpate(spinner) {
     form.append(`files[/${FILE_NAME}]`, fs.createReadStream(TEMPLATE_FILE_FULL), {
         filename: `@${TEMPLATE_NAME}`
     });
-    const { body = '' } = await got.post(url, { body: form });
-    spinner.stop();
-    debug(body);
-    success('Update crowdin with latest template');
 
-    // Inform us about the change 📢
-    coucou.send('update');
+    async function sendOrCreate(form) {
+        try {
+            const { body = '' } = await got.post(url, { body: form });
+            spinner.stop();
+            success('Update crowdin with latest template');
+            return { body, mode: 'update' };
+        } catch (e) {
+            if (/404/.test(e.message)) {
+                warn('Cannot update it, we need to create it');
+                const { body = '' } = await got.post(getURL('add-file'), { body: form });
+                spinner.stop();
+                success('Create new template on crowdin');
+                return { body, mode: 'create' };
+            }
+
+            throw e;
+        }
+    }
+
+    const { body, mode } = await sendOrCreate(form);
+    coucou.send(mode); // Inform us about the change 📢
+    debug(body);
 }
+
 /**
  * Update latest translations to crowdin
  */
