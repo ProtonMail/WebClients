@@ -20,7 +20,7 @@ const PasswordInput = (props) => {
 
     return (
         <>
-            <span className="relative">
+            <span className="relative password-revealer-container">
                 <input
                     className={`pm-field w100 ${className} ${statusClasses}`}
                     aria-invalid={error && status.isDirty}
