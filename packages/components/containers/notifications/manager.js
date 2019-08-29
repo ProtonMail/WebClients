@@ -8,7 +8,9 @@ export default (setNotifications) => {
             return;
         }
 
-        clearTimeout(intervalId);
+        if (intervalId !== -1) {
+            clearTimeout(intervalId);
+        }
         delete intervalIds[id];
 
         return setNotifications((oldNotifications) => {
@@ -24,11 +26,7 @@ export default (setNotifications) => {
             idx = 0;
         }
 
-        const clear = () => {
-            hideNotification(id);
-        };
-
-        intervalIds[id] = setTimeout(clear, expiration);
+        intervalIds[id] = expiration === -1 ? -1 : setTimeout(() => hideNotification(id), expiration);
 
         return setNotifications((oldNotifications) => {
             return [
