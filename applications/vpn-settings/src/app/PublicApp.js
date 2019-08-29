@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Loader, ModalsChildren, GenericError } from 'react-components';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
@@ -35,21 +35,19 @@ const PublicApp = ({ onLogin }) => {
         <>
             <ModalsChildren />
             <PublicLayout>
-                <Router>
-                    <Switch>
-                        <Route path="/redeem" component={RedeemContainer} />
-                        <Route
-                            path="/reset-password"
-                            render={({ history }) => <ResetPasswordContainer history={history} onLogin={onLogin} />}
-                        />
-                        <Route path="/forgot-username" component={ForgotUsernameContainer} />
-                        <Route
-                            path="/pre-invite/:selector/:token"
-                            render={({ history, match }) => <PreInviteContainer history={history} match={match} />}
-                        />
-                        <Route render={({ history }) => <LoginContainer history={history} onLogin={onLogin} />} />
-                    </Switch>
-                </Router>
+                <Switch>
+                    <Route path="/redeem" component={RedeemContainer} />
+                    <Route
+                        path="/reset-password"
+                        render={({ history }) => <ResetPasswordContainer history={history} onLogin={onLogin} />}
+                    />
+                    <Route path="/forgot-username" component={ForgotUsernameContainer} />
+                    <Route
+                        path="/pre-invite/:selector/:token"
+                        render={({ history, match }) => <PreInviteContainer history={history} match={match} />}
+                    />
+                    <Route render={({ history }) => <LoginContainer history={history} onLogin={onLogin} />} />
+                </Switch>
             </PublicLayout>
         </>
     );
