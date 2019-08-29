@@ -22,6 +22,11 @@ RewriteRule . /index.html [NC,L]
 
 <IfModule mod_mime.c>
   AddType application/font-woff2 .woff2
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddCharset utf-8 .webmanifest
 </IfModule>
 
 <IfModule mod_deflate.c>
