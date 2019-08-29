@@ -1,14 +1,38 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SubTitle, Alert, MozillaInfoPanel, ErrorButton, useModals, useUser, useSubscription } from 'react-components';
+import {
+    SubTitle,
+    Alert,
+    MozillaInfoPanel,
+    ErrorButton,
+    useModals,
+    useUser,
+    useSubscription,
+    Loader,
+    useAddresses,
+    useConfig
+} from 'react-components';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 import DeleteAccountModal from './DeleteAccountModal';
 
+const { VPN } = CLIENT_TYPES;
+
 const DeleteSection = () => {
     const [{ isMember }] = useUser();
+    const [addresses, loading] = useAddresses();
     const [{ isManagedByMozilla } = {}] = useSubscription();
     const { createModal } = useModals();
-    // TODO get clientType from config (proton-pack)
+    const { CLIENT_TYPE } = useConfig();
+
+    if (loading) {
+        return <Loader />;
+    }
+
+    // For ProtonVPN, if the user has PM mailbox, we don't display this section to avoid mistake
+    if (CLIENT_TYPE === VPN && addresses.length) {
+        return null;
+    }
 
     if (isMember) {
         return null;
