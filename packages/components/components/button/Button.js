@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import keycode from 'keycode';
 import Icon from '../icon/Icon';
 
 const Button = ({
@@ -13,58 +12,9 @@ const Button = ({
     children,
     title,
     disabled = false,
-    onClick,
-    onKeyDown,
-    onKeyUp,
-    onFocus,
-    onBlur,
     icon,
     ...rest
 }) => {
-    const handleClick = (event) => {
-        if (!disabled && onClick) {
-            onClick(event);
-        }
-    };
-
-    const handleKeyDown = (event) => {
-        const key = keycode(event);
-
-        if (onKeyDown) {
-            onKeyDown(event);
-        }
-
-        if (event.target === event.currentTarget && (key === 'space' || key === 'enter')) {
-            event.preventDefault();
-
-            if (onClick) {
-                onClick(event);
-            }
-        }
-    };
-
-    const handleKeyUp = (event) => {
-        if (onKeyUp) {
-            onKeyUp(event);
-        }
-    };
-
-    const handleFocus = (event) => {
-        if (disabled) {
-            return;
-        }
-
-        if (onFocus) {
-            onFocus(event);
-        }
-    };
-
-    const handleBlur = (event) => {
-        if (onBlur) {
-            onBlur(event);
-        }
-    };
-
     const iconComponent = typeof icon === 'string' ? <Icon className="flex-item-noshrink" name={icon} /> : icon;
     const iconButtonClass = !children ? 'pm-button--for-icon' : '';
 
@@ -77,11 +27,6 @@ const Button = ({
             tabIndex={disabled ? '-1' : tabIndex}
             title={title}
             ref={buttonRef}
-            onClick={handleClick}
-            onBlur={handleBlur}
-            onFocus={handleFocus}
-            onKeyDown={handleKeyDown}
-            onKeyUp={handleKeyUp}
             aria-busy={loading}
             {...rest}
         >
