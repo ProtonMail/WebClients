@@ -169,8 +169,7 @@ $modal-smaller-width: 28em !default;
 .pm-modalFooter {
   padding: rem(15) rem(30) rem(30);
   flex: 0;
-  border: 1px solid green;
-  [class*="pm-button-"] {
+  [class*="pm-button-"] { // only for Safari the ugly
     min-height: 3.4rem;
   }
 } 
@@ -179,9 +178,7 @@ $modal-smaller-width: 28em !default;
   position: relative;
   overflow: auto;
   flex: 1 1 auto;
-  //height: calc(100% - 3rem ); // footer button height
   padding: 0 rem(30);
-  border: 1px solid red;
   
   background: $white no-repeat;
   background-image: radial-gradient(farthest-side at 50% 0,#acb0bf,transparent),radial-gradient(farthest-side at 50% 100%,#acb0bf,transparent);
