@@ -234,9 +234,9 @@ const SubscriptionModal = ({
             ),
             footer: (
                 <>
-                    <Button onClick={previous} loading={loading}>{c('Action').t`Previous`}</Button>
+                    <Button onClick={previous} disabled={loading}>{c('Action').t`Previous`}</Button>
                     <PrimaryButton type="submit" disabled={!canPay} loading={loading}>{c('Action')
-                        .t`Next`}</PrimaryButton>
+                        .t`Upgrade`}</PrimaryButton>
                 </>
             ),
             onSubmit: () => {
