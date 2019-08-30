@@ -216,21 +216,21 @@ $modal-smaller-width: 28em !default;
 
 
 // To keep modals centered when their max-width is reached on big viewports
-$breakpoint-modal-max-width: ( (($modal-max-width*2) / 1rem) * 10 ); // case of $root-equiv-10-px set to true
+$breakpoint-modal-max-width: ( ($modal-max-width / 1rem) * 10) / ($modal-width/100%); // case of $root-equiv-10-px set to true
 @if ($root-equiv-10-px == false){
-  $breakpoint-modal-max-width: ( (($modal-max-width*2) / 1rem) * $root-default-font-size );
+  $breakpoint-modal-max-width: ( ($modal-max-width / 1rem) * $root-default-font-size) / ($modal-width/100%);
 }
 @include respond-to( $breakpoint-modal-max-width, 'min') { 
-  .pm-modal:not(.pm-modal--smaller) {
+  .pm-modal:not(.pm-modal--smaller):not(.pm-modal--wider) {
     left: calc(50% - #{$modal-max-width/2});
   }
 }
 
-$breakpoint-wider-modal-max-width: ( (($modal-wider-max-width*2) / 1rem) * 10 ); // case of $root-equiv-10-px set to true
+$breakpoint-wider-modal-max-width: ( ($modal-wider-max-width / 1rem) * 10) / ($modal-wider-width/100%); // case of $root-equiv-10-px set to true
 @if ($root-equiv-10-px == false){
-  $breakpoint-wider-modal-max-width: ( (($modal-wider-max-width*2) / 1rem) * $root-default-font-size );
+  $breakpoint-wider-modal-max-width: ( ($modal-wider-max-width / 1rem) * $root-default-font-size) / ($modal-wider-width/100%);
 }
-@include respond-to( $breakpoint-modal-max-width, 'min') { 
+@include respond-to( $breakpoint-wider-modal-max-width, 'min') { 
   .pm-modal--wider {
     left: calc(50% - #{$modal-wider-max-width/2});
   }
