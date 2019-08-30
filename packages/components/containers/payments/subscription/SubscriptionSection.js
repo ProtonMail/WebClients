@@ -194,7 +194,7 @@ const SubscriptionSection = ({ permission }) => {
                             </div>
                         </div>
                     )}
-                    {hasPaidVpn ? (
+                    {hasPaidVpn && mailPlanName !== 'visionary' ? (
                         <div className="flex-autogrid onmobile-flex-column w100 mb1">
                             <div className="flex-autogrid-item pl1">{c('Label').t`VPN connections`}</div>
                             <div className="flex-autogrid-item">
