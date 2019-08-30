@@ -29,6 +29,9 @@ const LoginContainer = ({ history, onLogin }) => {
                                 <Href url="https://protonvpn.com/support/login-problems/">{c('Link')
                                     .t`Common login problems`}</Href>
                             </div>
+                            <div className="inbl w100 pt0-5 pb0-5 ellipsis">
+                                <Href url="https://protonvpn.com/support/">{c('Link').t`Contact support`}</Href>
+                            </div>
                         </DropdownMenu>
                     </SimpleDropdown>
                 }
