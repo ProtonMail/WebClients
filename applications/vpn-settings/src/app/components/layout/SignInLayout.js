@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { VpnLogo, Title, Href } from 'react-components';
+import SupportDropdown from '../header/SupportDropdown';
 
-const SignInLayout = ({ children, title }) => {
+const SignInLayout = ({ children, title, support }) => {
     useEffect(() => {
         document.title = `${title} - ProtonVPN`;
     }, []);
@@ -24,7 +25,8 @@ const SignInLayout = ({ children, title }) => {
                     <VpnLogo className="fill-primary" />
                 </div>
                 <div className="nomobile flex-item-fluid alignright">
-                    <Link className="pv-button-greenborder-dark" to="/signup">{c('Link').t`Sign up for free`}</Link>
+                    <SupportDropdown className="mr1 pv-button-greenborder-dark">{support}</SupportDropdown>
+                    <Link className="pm-button--primary" to="/signup">{c('Link').t`Sign up for free`}</Link>
                 </div>
             </header>
             <Title className="flex-item-noshrink aligncenter color-primary">{title}</Title>
@@ -47,7 +49,8 @@ const SignInLayout = ({ children, title }) => {
 
 SignInLayout.propTypes = {
     children: PropTypes.node.isRequired,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    support: PropTypes.node
 };
 
 export default SignInLayout;
