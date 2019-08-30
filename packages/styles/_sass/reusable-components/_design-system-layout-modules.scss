@@ -288,6 +288,15 @@ $list-max-width-px: 100, 650 !default;
   }
 }
 
+/* here you may add ch max-widths */
+$list-max-width-ch: 70 !default;
+
+@each $max-width in $list-max-width-ch {
+  .mw#{$max-width}ch {
+    max-width: #{$max-width}ch;
+  }
+}
+
 /* here you may add em max-widths */
 $list-max-width-em: 15, 40 !default;
 
