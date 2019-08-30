@@ -72,7 +72,7 @@ $modal-smaller-width: 28em !default;
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
   animation: pm-modalIn ease .15s 1 normal;
   animation-fill-mode: both;
-  animation-delay: .01s; // stupid fix for Safari crazy display bug
+  animation-delay: .1s; // stupid fix for Safari crazy display bug
   display: flex;
   flex-direction: column;
   cursor: auto;
