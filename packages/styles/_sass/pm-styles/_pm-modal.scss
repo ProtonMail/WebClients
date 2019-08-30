@@ -170,6 +170,9 @@ $modal-smaller-width: 28em !default;
   padding: rem(15) rem(30) rem(30);
   flex: 0;
   border: 1px solid green;
+  [class*="pm-button-"] {
+    min-height: 3.4rem;
+  }
 } 
 
 .pm-modalContentInner {
