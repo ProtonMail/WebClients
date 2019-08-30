@@ -31,7 +31,7 @@ const MainLogo = ({ url = '/inbox', external = false }) => {
             return <MailLogo planName={planName} />;
         }
         if (APP_NAME === PROTONCALENDAR) {
-            return <CalendarLogo planName={planName} />;
+            return <CalendarLogo planName="beta" />;
         }
         if (APP_NAME === PROTONCONTACTS) {
             return <ContactsLogo planName={planName} />;
