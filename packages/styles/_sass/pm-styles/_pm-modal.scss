@@ -3,6 +3,7 @@
  */
 /* overlay covers everything */
 $modal-width: 50% !default;
+$modal-max-width: 70rem;
 
 $modal-breakpoint-width: 52em !default;
 $modal-breakpoint-height: 22em !default;
@@ -10,7 +11,9 @@ $modal-breakpoint-height: 22em !default;
 $modal-max-height: 80% !default;
 
 $modal-wider-width: 70% !default;
-$modal-smaller-width: 25em !default;
+$modal-wider-max-width: 100rem;
+
+$modal-smaller-width: 28em !default;
 
 .pm-modalOverlay {
   position: fixed;
@@ -58,9 +61,8 @@ $modal-smaller-width: 25em !default;
   transform: translateY(-50%);
   transform-origin: 50% 0 0;
   width: $modal-width;
-  //min-width: $modal-min-width;
   max-height: $modal-max-height;
-  max-width: 100%;
+  max-width: $modal-max-width;
   flex: 0 1 auto;
   background: $white;
   color: $pm-global-grey;
@@ -71,13 +73,8 @@ $modal-smaller-width: 25em !default;
   animation: pm-modalIn ease .15s 1 normal;
   animation-fill-mode: both;
   animation-delay: .01s; // stupid fix for Safari crazy display bug
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   cursor: auto;
 }
 @keyframes pm-modalIn {
@@ -113,6 +110,7 @@ $modal-smaller-width: 25em !default;
 }
 .pm-modal--wider {
   width: $modal-wider-width;
+  max-width: $modal-wider-max-width;
   left: calc(50% - #{$modal-wider-width/2});
 }
 
@@ -215,6 +213,30 @@ $modal-smaller-width: 25em !default;
   }
 }
 
+
+
+// To keep modals centered when their max-width is reached on big viewports
+$breakpoint-modal-max-width: ( (($modal-max-width*2) / 1rem) * 10 ); // case of $root-equiv-10-px set to true
+@if ($root-equiv-10-px == false){
+  $breakpoint-modal-max-width: ( (($modal-max-width*2) / 1rem) * $root-default-font-size );
+}
+@include respond-to( $breakpoint-modal-max-width, 'min') { 
+  .pm-modal:not(.pm-modal--smaller) {
+    left: calc(50% - #{$modal-max-width/2});
+  }
+}
+
+$breakpoint-wider-modal-max-width: ( (($modal-wider-max-width*2) / 1rem) * 10 ); // case of $root-equiv-10-px set to true
+@if ($root-equiv-10-px == false){
+  $breakpoint-wider-modal-max-width: ( (($modal-wider-max-width*2) / 1rem) * $root-default-font-size );
+}
+@include respond-to( $breakpoint-modal-max-width, 'min') { 
+  .pm-modal--wider {
+    left: calc(50% - #{$modal-wider-max-width/2});
+  }
+}
+
+// small viewports
 @media (max-width: $modal-breakpoint-width) {
   .pm-modal {
     margin: 1%;
@@ -226,3 +248,4 @@ $modal-smaller-width: 25em !default;
     align-self: center;
   }
 }
+
