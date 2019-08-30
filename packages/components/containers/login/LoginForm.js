@@ -30,7 +30,7 @@ const FORM = {
     UNLOCK: 3
 };
 
-const LoginForm = ({ onLogin, ignoreUnlock = false }) => {
+const LoginForm = ({ onLogin, ignoreUnlock = false, needHelp }) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const cacheRef = useRef();
@@ -200,7 +200,8 @@ const LoginForm = ({ onLogin, ignoreUnlock = false }) => {
                     password={password}
                     setPassword={loading ? noop : setPassword}
                 />
-                <div className="alignright">
+                <div className="flex flex-spacebetween">
+                    {needHelp}
                     <PrimaryButton type="submit" loading={loading} data-cy-login="submit">
                         {c('Action').t`Log in`}
                     </PrimaryButton>
@@ -278,6 +279,7 @@ const LoginForm = ({ onLogin, ignoreUnlock = false }) => {
 
 LoginForm.propTypes = {
     onLogin: PropTypes.func.isRequired,
+    needHelp: PropTypes.node,
     ignoreUnlock: PropTypes.bool
 };
 
