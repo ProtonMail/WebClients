@@ -244,6 +244,7 @@ $breakpoint-wider-modal-max-width: ( ($modal-wider-max-width / 1rem) * 10) / ($m
     top: 49%; // firefox...
     min-width: 0;
     width: 98%;
+    max-width: 98%;
     max-height: 98%;
     align-self: center;
   }
