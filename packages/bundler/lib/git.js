@@ -22,11 +22,16 @@ async function push(branch, { tag = 'v0.0.0', originCommit, originBranch }) {
     return bash(commands.join(' && '));
 }
 
-async function pull(branch, force) {
+async function pull(branch, force, fromCi) {
     const flag = force ? '-f' : '';
     await bash(`git fetch ${flag} origin ${branch}:${branch}`);
     await bash(`git clone file://$PWD --depth 1 --single-branch --branch ${branch} dist`);
     await bash('cd dist && rm -rf *');
+
+    // For the CI to force SSH
+    if (process.env.GIT_REMOTE_URL_CI && fromCi) {
+        await bash(`git remote set-url origin ${process.env.GIT_REMOTE_URL_CI}`);
+    }
 }
 
 async function getConfig() {

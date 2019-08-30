@@ -13,6 +13,7 @@ const argv = require('minimist')(process.argv.slice(2), {
     boolean: ['lint', 'i18n'],
     default: {
         lint: true,
+        fromCi: false,
         i18n: true,
         localize: false,
         appMode: 'bundle',
@@ -98,7 +99,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
         {
             title: `Pull dist branch ${branch}`,
             enabled: () => !isCI,
-            task: () => pull(branch, argv.forceFetch)
+            task: () => pull(branch, argv.forceFetch, argv.fromCi)
         },
         ...hookPostTaskClone,
         {
