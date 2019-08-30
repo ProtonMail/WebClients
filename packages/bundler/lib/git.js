@@ -1,7 +1,7 @@
 const os = require('os');
 
 const { bash, script } = require('./helpers/cli');
-const { title } = require('./helpers/log')('proton-bundler');
+const { title, debug, IS_VERBOSE } = require('./helpers/log')('proton-bundler');
 
 async function push(branch, { tag = 'v0.0.0', originCommit, originBranch }) {
     const commands = ['cd dist'];
@@ -24,6 +24,14 @@ async function push(branch, { tag = 'v0.0.0', originCommit, originBranch }) {
 
 async function pull(branch, force, fromCi) {
     const flag = force ? '-f' : '';
+
+    debug({
+        branch,
+        force,
+        fromCi,
+        GIT_REMOTE_URL_CI: process.env.GIT_REMOTE_URL_CI
+    });
+
     await bash(`git fetch ${flag} origin ${branch}:${branch}`);
     await bash(`git clone file://$PWD --depth 1 --single-branch --branch ${branch} dist`);
     await bash('cd dist && rm -rf *');
@@ -31,6 +39,11 @@ async function pull(branch, force, fromCi) {
     // For the CI to force SSH
     if (process.env.GIT_REMOTE_URL_CI && fromCi) {
         await bash(`git remote set-url origin ${process.env.GIT_REMOTE_URL_CI}`);
+    }
+
+    if (IS_VERBOSE) {
+        const { stdout } = await bash('git remote show origin');
+        debug(stdout);
     }
 }
 

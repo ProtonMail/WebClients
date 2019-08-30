@@ -2,6 +2,8 @@ const argv = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
 
 module.exports = (scope) => {
+    const IS_VERBOSE = argv.v || argv.verbose;
+
     const warn = (msg) => {
         console.log();
         console.log(`[${scope}] ${chalk.magenta('⚠')} ${chalk.magenta(msg)}.`);
@@ -39,7 +41,7 @@ module.exports = (scope) => {
     };
 
     function debug(item) {
-        if (!(argv.v || argv.verbose)) {
+        if (!IS_VERBOSE) {
             return;
         }
         if (Array.isArray(item) || typeof item === 'object') {
@@ -63,6 +65,7 @@ module.exports = (scope) => {
         title,
         error,
         json,
-        warn
+        warn,
+        IS_VERBOSE
     };
 };
