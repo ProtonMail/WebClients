@@ -26,7 +26,7 @@ const DangerVerificationForm = ({ onSubmit }) => {
             </div>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/">{c('Info')
                 .t`If you remember your old password later, you can recover your existing messages.`}</Alert>
-            <div className="mb1">
+            <div className="alignright mb1">
                 <PrimaryButton type="submit">{c('Action').t`Reset my password`}</PrimaryButton>
             </div>
         </form>

@@ -23,7 +23,7 @@ const NewPasswordForm = ({ onSubmit, loading }) => {
                     required
                 />
             </div>
-            <div className="mb1">
+            <div className="alignright mb1">
                 <PasswordInput placeholder={c('Password').t`Confirm new password`} pattern={password} required />
             </div>
             <Alert type="warning">{c('Info')

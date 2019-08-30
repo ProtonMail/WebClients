@@ -26,7 +26,7 @@ const ValidateResetTokenForm = ({ onSubmit, loading, token, setToken }) => {
             </div>
             <Alert type="warning">{c('Info')
                 .t`IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.`}</Alert>
-            <div className="mb1">
+            <div className="alignright mb1">
                 <PrimaryButton loading={loading} type="submit">{c('Action').t`Reset password`}</PrimaryButton>
             </div>
         </form>
