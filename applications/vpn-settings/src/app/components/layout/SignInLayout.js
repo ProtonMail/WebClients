@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { VpnLogo, Title, Href } from 'react-components';
 import SupportDropdown from '../header/SupportDropdown';
 
-const SignInLayout = ({ children, title, support }) => {
+const SignInLayout = ({ children, title }) => {
     useEffect(() => {
         document.title = `${title} - ProtonVPN`;
     }, []);
@@ -25,7 +25,7 @@ const SignInLayout = ({ children, title, support }) => {
                     <VpnLogo className="fill-primary" />
                 </div>
                 <div className="nomobile flex-item-fluid alignright">
-                    <SupportDropdown className="mr1 pv-button-greenborder-dark">{support}</SupportDropdown>
+                    <SupportDropdown className="mr1 pv-button-greenborder-dark" />
                     <Link className="pm-button--primary" to="/signup">{c('Link').t`Sign up for free`}</Link>
                 </div>
             </header>
