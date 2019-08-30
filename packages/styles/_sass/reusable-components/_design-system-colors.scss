@@ -144,6 +144,11 @@
 .fill-vpnplus {
   fill: $vpnplus;
 }
+.fill-beta.fill-beta { // specificity because bold class is applied and after
+  fill: $pm-primary-dark;
+  font-weight: normal;
+  font-style: italic;
+}
 
 .stroke-global-grey {
   stroke: $pm-global-grey;
