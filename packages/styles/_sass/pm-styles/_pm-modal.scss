@@ -175,7 +175,8 @@ $modal-smaller-width: 28em !default;
 .pm-modalContentInner {
   position: relative;
   overflow: auto;
-  height: calc(100% - 3rem ); // footer button height
+  flex: 1 1 auto;
+  //height: calc(100% - 3rem ); // footer button height
   padding: 0 rem(30);
   border: 1px solid red;
   
