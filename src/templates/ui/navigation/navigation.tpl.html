@@ -8,7 +8,10 @@
         </a>
     </li>
     <li class="mr1 ">
-        <a href="/settings/" id="tour-settings" class="topnav-link inline-flex flex-nowrap nodecoration rounded" ui-sref="secured.account">
+        <a
+            href="/settings"
+            id="tour-settings"
+            class="topnav-link inline-flex flex-nowrap nodecoration rounded">
             <icon data-name="settings" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
             <span class="navigation-title topnav-linkText" translate translate-context="Action">Settings</span>
         </a>
@@ -51,7 +54,9 @@
 
     </li>
     <li class="mr1 navigation-upgrade-item" ng-if="isFree">
-        <a class="topnav-link inline-flex flex-nowrap nodecoration rounded" ui-sref="secured.dashboard({scroll: true})">
+        <a
+            class="topnav-link inline-flex flex-nowrap nodecoration rounded"
+            href="/settings/subscription">
             <icon data-name="upgrade-to-paid" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
             <span class="navigation-title topnav-linkText" translate translate-context="Action">Upgrade</span>
         </a>
