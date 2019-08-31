@@ -12,7 +12,7 @@ const CLASSES = {
 const Alert = ({ type = 'info', children, learnMore, className }) => {
     return (
         <div className={CLASSES[type].concat(` ${className || ''}`)}>
-            <div>{children}</div>
+            <div className="mw70ch">{children}</div>
             {learnMore ? (
                 <div>
                     <LearnMore url={learnMore} />
