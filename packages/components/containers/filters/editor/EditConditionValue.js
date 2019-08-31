@@ -11,7 +11,7 @@ function EditConditionValue({ value, onClickDelete = noop, onEdit = noop }) {
     return (
         <div className="flex flex-nowrap mb1" data-info={c('Filter condition').t`Or`}>
             <Input className="mr1" onInput={handleInput} value={value} />
-            <Button onClick={handleClick}>{c('Action').t`Delete`}</Button>
+            <Button className="flex-item-noshrink" onClick={handleClick}>{c('Action').t`Delete`}</Button>
         </div>
     );
 }

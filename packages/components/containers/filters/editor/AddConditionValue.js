@@ -35,7 +35,7 @@ function AddCondtionValue({ onAdd = noop }) {
                 onInput={handleInput}
                 placeholder={c('Info').t`Text or pattern`}
             />
-            <Button disabled={!state} onClick={handleClick}>{c('Action').t`Add`}</Button>
+            <Button className="flex-item-noshrink" disabled={!state} onClick={handleClick}>{c('Action').t`Add`}</Button>
         </div>
     );
 }
