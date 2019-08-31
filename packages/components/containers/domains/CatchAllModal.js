@@ -8,7 +8,6 @@ import AddressesTable from './AddressesTable';
 const CatchAllModal = ({ domain, domainAddresses, onClose, ...rest }) => {
     return (
         <FormModal
-            small
             onClose={onClose}
             close={c('Action').t`Close`}
             title={c('Title').t`Catch all address`}
