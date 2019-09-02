@@ -52,6 +52,7 @@ const RedeemCouponForm = ({ history }) => {
     return (
         <form className="redeem-form w100 col flex flex-column pb2" onSubmit={(e) => withLoading(handleSubmit(e))}>
             <Input
+                autoFocus={true}
                 className="redeem-coupon-code-input"
                 placeholder={c('Placeholder').t`Enter coupon code`}
                 onChange={handleCouponCodeChange}
