@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
-const ErrorZone = ({ children, id }) => {
+const ErrorZone = ({ children, id, className }) => {
     return (
-        <div className="color-global-warning error-zone" id={id}>
+        <div className={classnames(['color-global-warning error-zone', className])} id={id}>
             {children}
         </div>
     );
@@ -11,7 +12,8 @@ const ErrorZone = ({ children, id }) => {
 
 ErrorZone.propTypes = {
     children: PropTypes.node,
-    id: PropTypes.string.isRequired
+    id: PropTypes.string,
+    className: PropTypes.string
 };
 
 export default ErrorZone;
