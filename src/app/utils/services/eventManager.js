@@ -18,7 +18,7 @@ function eventManager(
     Events,
     gettextCatalog,
     mailSettingsModel,
-    notification,
+    notify,
     userSettingsModel
 ) {
     const FIBONACCI = [1, 1, 2, 3, 5, 8];
