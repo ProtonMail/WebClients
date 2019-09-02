@@ -19,10 +19,10 @@ const { PROTONMAIL, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR, PROTONVPN_SETTI
  * @param {String} url
  * @param {Boolean} external true for external link
  */
-const MainLogo = ({ url = '/inbox', external = false }) => {
+const MainLogo = ({ url = '/inbox', external = false, className = '' }) => {
     const { APP_NAME } = useConfig();
     const [subscription] = useSubscription();
-    const className = 'logo-container nodecoration flex-item-centered-vert';
+    const classNames = `logo-container nodecoration flex-item-centered-vert ${className}`;
     const planName = getPlanName(subscription, APP_NAME === PROTONVPN_SETTINGS ? VPN : MAIL);
 
     const logo = (() => {
@@ -44,14 +44,14 @@ const MainLogo = ({ url = '/inbox', external = false }) => {
 
     if (external) {
         return (
-            <Href url={url} target="_self" rel="noreferrer help" className={className}>
+            <Href url={url} target="_self" rel="noreferrer help" className={classNames}>
                 {logo}
             </Href>
         );
     }
 
     return (
-        <Link to={url} className={className}>
+        <Link to={url} className={classNames}>
             {logo}
         </Link>
     );
@@ -59,6 +59,7 @@ const MainLogo = ({ url = '/inbox', external = false }) => {
 
 MainLogo.propTypes = {
     url: PropTypes.string,
+    className: PropTypes.string,
     external: PropTypes.bool
 };
 
