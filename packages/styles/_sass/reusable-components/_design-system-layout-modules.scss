@@ -489,6 +489,11 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 2 !default; // specify 2.5 i
   -ms-flex-pack: justify;
   justify-content: space-around;
 }
+.flex-justify-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
 .flex-justify-end {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
