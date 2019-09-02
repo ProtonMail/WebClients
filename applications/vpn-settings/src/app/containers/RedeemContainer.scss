@@ -36,3 +36,9 @@
     max-width: 40px;
     max-height: 40px;
 }
+
+@include respond-to($breakpoint-medium) {
+    .redeem-heading-title {
+        font-size: 3rem;
+    }
+}
