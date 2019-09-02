@@ -5,14 +5,12 @@ import { useApi, useConfig, PrimaryButton, Input, useLoading } from 'react-compo
 import { queryCheckVerificationCode } from 'proton-shared/lib/api/user';
 import { checkSubscription } from 'proton-shared/lib/api/payments';
 import { TOKEN_TYPES } from 'proton-shared/lib/constants';
-import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 
 const RedeemCouponForm = ({ history }) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { CLIENT_TYPE } = useConfig();
     const [couponCode, setCouponCode] = useState();
-    const [validationError, setValidationError] = useState();
 
     const handleCouponCodeChange = useCallback(({ target: { value } }) => {
         setCouponCode(value);
@@ -21,32 +19,22 @@ const RedeemCouponForm = ({ history }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const {
-                Plans: [{ ID, Currency, Cycle, Quantity }]
-            } = await api(queryCheckVerificationCode(couponCode, TOKEN_TYPES.COUPON, CLIENT_TYPE));
+        const { Plans = [] } = await api(queryCheckVerificationCode(couponCode, TOKEN_TYPES.COUPON, CLIENT_TYPE));
+        const [{ Currency, Cycle }] = Plans;
+        const PlanIDs = Plans.reduce((acc, { ID, Quantity }) => {
+            acc[ID] = Quantity;
+            return acc;
+        }, {});
+        const response = await api(
+            checkSubscription({
+                CouponCode: couponCode,
+                Currency,
+                Cycle,
+                PlanIDs
+            })
+        );
 
-            const response = await api(
-                checkSubscription({
-                    CouponCode: couponCode,
-                    Currency,
-                    Cycle,
-                    PlanIDs: {
-                        [ID]: Quantity
-                    }
-                })
-            );
-
-            history.push('/signup', response);
-        } catch (e) {
-            if (!e.data) {
-                throw e;
-            } else if (e.data.Code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
-                setValidationError('Invalid coupon');
-            } else {
-                setValidationError(e.data.Error);
-            }
-        }
+        history.push('/signup', response);
     };
 
     return (
@@ -56,8 +44,6 @@ const RedeemCouponForm = ({ history }) => {
                 className="redeem-coupon-code-input"
                 placeholder={c('Placeholder').t`Enter coupon code`}
                 onChange={handleCouponCodeChange}
-                error={validationError}
-                errorZoneClassName="bg-global-warning color-white aligncenter p0-5"
             />
             <PrimaryButton
                 loading={loading}
