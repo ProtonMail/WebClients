@@ -1,0 +1,142 @@
+image: node:latest
+
+stages:
+    - setup
+    - test
+    - deploy
+    - deploy-qa
+    - deploy-old
+    - deploy-dev
+    - deploy-beta
+    - deploy-prod
+    - i18n-upgrade-app
+    - i18n-to-crowdin
+
+variables:
+    NODE_OPTIONS: --max-old-space-size=4096
+
+before_script:
+ - apt-get -y update
+ - 'which ssh-agent || apt-get -y install openssh-client'
+ - eval $(ssh-agent -s)
+ - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+ - git config --global user.email $GIT_CI_EMAIL
+ - git config --global user.name $GIT_CI_USERNAME
+ - mkdir ~/.ssh 2> /dev/null
+ - ssh-keyscan -t rsa ${CI_SERVER_HOST} > ~/.ssh/known_hosts
+
+setup:
+    stage: setup
+    script:
+        - npm ci --no-audit
+        - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@${CONFIG_GIT} ${CI_PROJECT_DIR}/configApp
+        - cp ${CI_PROJECT_DIR}/configApp/.gitconfig ${CI_PROJECT_DIR}/.gitconfig
+        - cp ${CI_PROJECT_DIR}/configApp/Angular/appConfig.json ${CI_PROJECT_DIR}/env/env.json
+        - cat ${CI_PROJECT_DIR}/configApp/.env > ${CI_PROJECT_DIR}/env/.env
+        - echo >> ${CI_PROJECT_DIR}/env/.env
+        - cat ${CI_PROJECT_DIR}/configApp/Angular/.env >> ${CI_PROJECT_DIR}/env/.env
+        - cat ${CI_PROJECT_DIR}/env/{.env,env.json}
+        - npm run config
+    artifacts:
+        expire_in: 1 days
+        paths:
+            - node_modules/
+            - src/app/config.js
+            - env/.env
+            - .gitconfig
+            - env/env.json
+
+lint:
+    stage: test
+    script:
+        - npm run lint
+        - ./tasks/checkInjector.sh --lint
+
+i18n:
+    stage: test
+    script:
+        - npm run i18n:extract
+        - npm run i18n:check -- --debug
+
+i18n-upgrade-app:
+    stage: i18n-upgrade-app
+    tags:
+        - heavy
+    script:
+        - npm run i18n:getlatest
+    when: manual
+
+i18n-to-crowdin:
+    stage: i18n-to-crowdin
+    tags:
+        - heavy
+    script:
+        - npm run i18n:upgrade -- --limit-i18n=${I18N_APPROVED}
+    when: manual
+
+deploy:
+    stage: deploy
+    tags:
+        - heavy
+    script:
+        - npm run deploy -- --branch=deploy-$BRANCH_DEPLOY --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual
+
+deploy-qa:
+    stage: deploy-qa
+    tags:
+        - heavy
+    script:
+        - npm run deploy -- --branch=deploy-alpha --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual
+
+deploy-v4:
+    stage: deploy-v4
+    tags:
+        - heavy
+    script:
+        - git checkout v4
+        - npm i --no-audit
+        - npm run deploy -- --branch=deploy-v4 --remote-pm-settings --remote-calendar --remote-contacts --fromCi --api=$API_DEPLOY
+    when: manual
+
+deploy-dev:
+    stage: deploy-dev
+    tags:
+        - heavy
+    script:
+        - npm run deploy -- --branch=deploy-dev --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual
+
+deploy-old:
+    stage: deploy-old
+    tags:
+        - heavy
+    script:
+        - npm run deploy -- --branch=deploy-old --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual
+
+deploy-beta:
+    stage: deploy-beta
+    tags:
+        - heavy
+    script:
+        - npm run deploy -- --branch=deploy-beta --api=beta --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual
+
+deploy-prod-all:
+    stage: deploy-prod-all
+    tags:
+        - heavy
+    script:
+        - npm run deployProd --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual
+
+deploy-prod-only:
+    stage: deploy-prod-all
+    tags:
+        - heavy
+    script:
+        - npm run deploy -- --branch=deploy-prod-a --verbose --no-i18n --no-lint --forceFetch --fromCi
+        - npm run deploy -- --branch=deploy-prod-b --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual

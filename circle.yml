@@ -8,7 +8,7 @@ jobs:
        - checkout
        - restore_cache:
            key: npm-deps-{{ checksum "package.json" }}-{{ checksum "tasks/lazyInstallVendor" }}
-       - run: npm i
+       - run: npm i --no-audit
        - run: ./tasks/lazyInstallVendor test
        - save_cache:
            key: npm-deps-{{ checksum "package.json" }}-{{ checksum "tasks/lazyInstallVendor" }}
