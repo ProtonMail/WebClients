@@ -1,14 +1,13 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { withRouter } from 'react-router-dom';
 import { useApi, useConfig, PrimaryButton, Input, useLoading } from 'react-components';
 import { queryCheckVerificationCode } from 'proton-shared/lib/api/user';
 import { checkSubscription } from 'proton-shared/lib/api/payments';
 import { TOKEN_TYPES } from 'proton-shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 
-const RedeemCouponForm = () => {
+const RedeemCouponForm = ({ history }) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { CLIENT_TYPE } = useConfig();
@@ -74,4 +73,4 @@ RedeemCouponForm.propTypes = {
     history: PropTypes.object
 };
 
-export default withRouter(RedeemCouponForm);
+export default RedeemCouponForm;

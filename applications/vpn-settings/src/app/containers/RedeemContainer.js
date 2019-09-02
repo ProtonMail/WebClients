@@ -13,16 +13,18 @@ import KillSwitchIcon from 'design-system/assets/img/pv-images/redeem/kill_switc
 import DNSIcon from 'design-system/assets/img/pv-images/redeem/dns.svg';
 import EncryptionIcon from 'design-system/assets/img/pv-images/redeem/encryption.svg';
 
-const RedeemContainer = () => (
+const RedeemContainer = ({ history }) => (
     <div>
-        <PublicHeader />
+        <div className="pt2 pl2 pr2">
+            <PublicHeader />
+        </div>
         <div className="redeem-heading-bg pt1">
             <div className="mw80 center">
                 <Title className="redeem-heading-title mt2 mb1-5 color-white bold">
                     {c('Title').t`Redeem your coupon and start protecting your online privacy`}
                 </Title>
                 <div className="flex">
-                    <RedeemCouponForm />
+                    <RedeemCouponForm history={history} />
                     <div className="col center nomobile notablet">
                         <img
                             src={GadgetImage}

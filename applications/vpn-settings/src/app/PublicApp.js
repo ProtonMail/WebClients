@@ -36,7 +36,7 @@ const PublicApp = ({ onLogin }) => {
             <ModalsChildren />
             <PublicLayout>
                 <Switch>
-                    <Route path="/redeem" component={RedeemContainer} />
+                    <Route path="/redeem" render={({ history }) => <RedeemContainer history={history} />} />
                     <Route
                         path="/reset-password"
                         render={({ history }) => <ResetPasswordContainer history={history} onLogin={onLogin} />}
