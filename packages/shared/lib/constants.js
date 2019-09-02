@@ -522,3 +522,11 @@ export const CLIENT_TYPES = {
     MAIL: 1,
     VPN: 2
 };
+
+export const TOKEN_TYPES = {
+    EMAIL: 'email',
+    SMS: 'sms',
+    INVITE: 'invite',
+    COUPON: 'coupon',
+    PAYMENT: 'payment'
+};

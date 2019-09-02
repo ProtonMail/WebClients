@@ -117,3 +117,9 @@ export const getTokenStatus = (paymentToken) => ({
     url: `payments/tokens/${paymentToken}`,
     method: 'get'
 });
+
+export const verifyPayment = ({ Amount, Credit, Currency, Payment, GiftCode }) => ({
+    url: 'payments/verify',
+    method: 'post',
+    data: { Amount, Credit, Currency, Payment, GiftCode }
+});
