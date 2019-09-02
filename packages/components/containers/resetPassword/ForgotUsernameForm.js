@@ -15,7 +15,7 @@ const ForgotUsernameForm = ({ onSubmit, loading }) => {
             }}
         >
             <Alert>{c('Info')
-                .t`Enter your email address (notification / recovery email) and we will send you your username(s). Your account recovery email. It is usually the email you provided during signup`}</Alert>
+                .t`Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)`}</Alert>
             <div className="mb1">
                 <EmailInput
                     name="email"
