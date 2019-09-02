@@ -165,6 +165,7 @@ export { default as toDetails } from './containers/payments/toDetails';
 export { default as Payment } from './containers/payments/Payment';
 export { default as useCard } from './containers/payments/useCard';
 export { default as BitcoinDetails } from './containers/payments/BitcoinDetails';
+export { default as PaymentVerificationModal } from './containers/payments/PaymentVerificationModal';
 export { default as Method } from './containers/payments/Method';
 export { default as PaymentSelector } from './containers/payments/PaymentSelector';
 export { default as EditCardModal } from './containers/payments/EditCardModal';

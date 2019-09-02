@@ -1,8 +1,9 @@
+import React from 'react';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from 'proton-shared/lib/constants';
-import { createToken, getTokenStatus } from 'proton-shared/lib/api/payments';
-import { requireDirectAction } from 'proton-shared/lib/helpers/browser';
+import { getTokenStatus, createToken } from 'proton-shared/lib/api/payments';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { c } from 'ttag';
+import { PaymentVerificationModal } from 'react-components';
 
 const {
     STATUS_PENDING,
@@ -12,7 +13,7 @@ const {
     STATUS_NOT_SUPPORTED
 } = PAYMENT_TOKEN_STATUS;
 
-const { BITCOIN, CASH, TOKEN } = PAYMENT_METHOD_TYPES;
+const { TOKEN, BITCOIN, CASH } = PAYMENT_METHOD_TYPES;
 
 const DELAY_PULLING = 5000;
 const DELAY_LISTENING = 1000;
@@ -57,12 +58,11 @@ const pull = async ({ timer = 0, Token, api }) => {
 
 /**
  * Initialize new tab and listen it
- * @param {String} ApprovalURL
  * @param {String} String
  * @param {Object} api useApi
  * @param {Object} tab window instance
  */
-const process = ({ ApprovalURL, Token, api, tab }) => {
+export const process = ({ Token, api, tab }) => {
     return new Promise((resolve, reject) => {
         let listen = false;
 
@@ -110,13 +110,6 @@ const process = ({ ApprovalURL, Token, api, tab }) => {
         };
 
         window.addEventListener('message', onMessage, false);
-
-        if (requireDirectAction()) {
-            tab.location = ApprovalURL;
-        } else {
-            tab = window.open(ApprovalURL);
-        }
-
         listen = true;
         listenTab();
     });
@@ -128,7 +121,7 @@ const process = ({ ApprovalURL, Token, api, tab }) => {
  * @param {String} Token
  * @returns {Object}
  */
-const toParams = (params, Token) => {
+export const toParams = (params, Token) => {
     return {
         ...params,
         Payment: {
@@ -140,14 +133,7 @@ const toParams = (params, Token) => {
     };
 };
 
-/**
- * Generate token if needed for credit card and paypal payments
- * @param {Object} params to send to the API
- * @param {Object} api useApi
- * @returns {Promise<Object>} parameters to send to the API for payment
- */
-export const handle3DS = async (params = {}, api) => {
-    let tab;
+export const handlePaymentToken = async ({ params, api, createModal }) => {
     const { Payment, Amount, Currency, PaymentMethodID } = params;
     const { Type } = Payment || {};
 
@@ -155,24 +141,21 @@ export const handle3DS = async (params = {}, api) => {
         return params;
     }
 
-    if (requireDirectAction()) {
-        // We open a tab first because Safari and Firefox are blocking by default tab if it's not a direct interaction
-        tab = window.open('');
-    }
+    const { Token, Status, ApprovalURL } = await api(createToken({ Payment, Amount, Currency, PaymentMethodID }));
 
-    try {
-        const { Token, Status, ApprovalURL } = await api(createToken({ Payment, Amount, Currency, PaymentMethodID }));
-
-        if (Status === STATUS_CHARGEABLE) {
-            tab && tab.close();
-            return toParams(params, Token);
-        }
-
-        await process({ ApprovalURL, Token, api, tab });
-
+    if (Status === STATUS_CHARGEABLE) {
         return toParams(params, Token);
-    } catch (error) {
-        tab && tab.close();
-        throw error;
     }
+
+    return new Promise((resolve, reject) => {
+        createModal(
+            <PaymentVerificationModal
+                params={params}
+                url={ApprovalURL}
+                token={Token}
+                onSubmit={resolve}
+                onClose={reject}
+            />
+        );
+    });
 };

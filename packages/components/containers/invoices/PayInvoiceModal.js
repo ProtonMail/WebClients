@@ -8,27 +8,33 @@ import {
     Label,
     Field,
     Price,
-    useApiWithoutResult,
     useApiResult,
-    useApi
+    useModals,
+    useApi,
+    useLoading
 } from 'react-components';
 import { checkInvoice, payInvoice } from 'proton-shared/lib/api/payments';
 import { toPrice } from 'proton-shared/lib/helpers/string';
 
 import Payment from '../payments/Payment';
 import usePayment from '../payments/usePayment';
-import { handle3DS } from '../payments/paymentTokenHelper';
+import { handlePaymentToken } from '../payments/paymentTokenHelper';
 
 const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
+    const { createModal } = useModals();
+    const [loading, withLoading] = useLoading();
     const api = useApi();
-    const { request, loading: loadingPay } = useApiWithoutResult(payInvoice);
     const { result = {}, loading: loadingCheck } = useApiResult(() => checkInvoice(invoice.ID), []);
     const { AmountDue, Amount, Currency } = result;
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
 
     const handleSubmit = async (params = parameters) => {
-        const requestBody = await handle3DS({ ...params, Amount: AmountDue, Currency }, api);
-        await request(invoice.ID, requestBody);
+        const requestBody = await handlePaymentToken({
+            params: { ...params, Amount: AmountDue, Currency },
+            api,
+            createModal
+        });
+        await api(payInvoice(invoice.ID, requestBody));
         fetchInvoices();
         rest.onClose();
     };
@@ -36,8 +42,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
     return (
         <FormModal
             small
-            onSubmit={() => handleSubmit()}
-            loading={loadingPay}
+            onSubmit={() => withLoading(handleSubmit())}
+            loading={loading}
             close={c('Action').t`Close`}
             submit={canPay && c('Action').t`Pay`}
             title={c('Title').t`Pay invoice`}

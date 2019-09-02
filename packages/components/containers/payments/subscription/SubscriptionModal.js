@@ -11,7 +11,6 @@ import {
     usePayment,
     Payment,
     useStep,
-    useApiWithoutResult,
     useApi,
     useEventManager,
     useNotifications,
@@ -21,7 +20,8 @@ import {
     Field,
     Row,
     Wizard,
-    useConfig
+    useConfig,
+    useModals
 } from 'react-components';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, APPS } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
@@ -34,7 +34,7 @@ import CustomVPNSection from './CustomVPNSection';
 import OrderSummary from './OrderSummary';
 import Thanks from './Thanks';
 import { getCheckParams } from './helpers';
-import { handle3DS } from '../paymentTokenHelper';
+import { handlePaymentToken } from '../paymentTokenHelper';
 
 const { PROTONMAIL_SETTINGS, PROTONVPN_SETTINGS } = APPS;
 
@@ -48,6 +48,7 @@ const SubscriptionModal = ({
 }) => {
     const { APP_NAME } = useConfig();
     const api = useApi();
+    const { createModal } = useModals();
     const [{ hasPaidMail } = {}] = useUser();
     const [{ MaxMembers } = {}] = useOrganization();
     const [loading, setLoading] = useState(false);
@@ -58,7 +59,6 @@ const SubscriptionModal = ({
     const [model, setModel] = useState({ cycle, currency, coupon, plansMap });
     const { call } = useEventManager();
     const { step, next, previous } = useStep(0);
-    const { request } = useApiWithoutResult(subscribe);
 
     const features = [
         ...(hasPaidMail
@@ -119,14 +119,17 @@ const SubscriptionModal = ({
         try {
             setLoading(true);
             const checkParams = getCheckParams({ ...model, plans });
-            const requestBody = await handle3DS(
-                { ...params, Amount: check.AmountDue, Currency: checkParams.Currency },
-                api
-            );
-            await request({
-                ...checkParams,
-                ...requestBody
+            const requestBody = await handlePaymentToken({
+                params: { ...params, Amount: check.AmountDue, Currency: checkParams.Currency },
+                api,
+                createModal
             });
+            await api(
+                subscribe({
+                    ...checkParams,
+                    ...requestBody
+                })
+            );
             await call();
             setLoading(false);
             next();
@@ -147,7 +150,7 @@ const SubscriptionModal = ({
                 if (!checkResult.AmountDue) {
                     try {
                         setLoading(true);
-                        await request({ Amount: checkResult.AmountDue, ...getCheckParams({ ...model, plans }) });
+                        await api(subscribe({ Amount: checkResult.AmountDue, ...getCheckParams({ ...model, plans }) }));
                         await call();
                         setLoading(false);
                     } catch (error) {
