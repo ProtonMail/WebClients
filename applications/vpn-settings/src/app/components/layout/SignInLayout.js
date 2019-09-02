@@ -11,7 +11,7 @@ const SignInLayout = ({ children, title }) => {
     }, []);
 
     return (
-        <>
+        <div className="pt1 pb1 pl2 pr2">
             <header className="flex-item-noshrink flex flex-items-center noprint mb2">
                 <div className="nomobile flex-item-fluid">
                     <span className="opacity-50">{c('Label').t`Back to:`}</span>{' '}
@@ -44,7 +44,7 @@ const SignInLayout = ({ children, title }) => {
                 <footer className="opacity-50 mtauto flex-item-noshrink aligncenter pb1">{c('Footer')
                     .t`2019 ProtonVPN.com - Made globally, hosted in Switzerland.`}</footer>
             </div>
-        </>
+        </div>
     );
 };
 

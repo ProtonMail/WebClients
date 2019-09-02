@@ -1,0 +1,38 @@
+.redeem-header-wrapper {
+    border-top: solid 1px $pm-global-altgrey;
+}
+
+.redeem-heading-bg {
+    background-image: url(~design-system/assets/img/pv-images/redeem/background.jpg);
+    background-size: cover;
+    flex: 1;
+}
+
+.redeem-heading-title {
+    font-size: 4.8rem;
+    max-width: em(200);
+}
+
+.redeem-form {
+    max-width: 32.5rem;
+}
+
+.redeem-coupon-code-input {
+    font-size: 1.6rem;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border-radius: 0;
+}
+
+.redeem-submit-button {
+    border-radius: 25px;
+    font-size: 1.4rem;
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+.redeem-promo-img {
+    display: block;
+    max-width: 40px;
+    max-height: 40px;
+}

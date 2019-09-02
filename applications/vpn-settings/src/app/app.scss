@@ -1,4 +1,4 @@
-@import "~design-system/_sass/reusable-components/design-system-config";
+@import '~design-system/_sass/reusable-components/design-system-config';
 
 $pm-primary: $pv-green;
 $pm-primary-dark: $pv-green-dark;
@@ -7,3 +7,5 @@ $color-links: $pm-primary;
 
 @import '~react-components/styles/index';
 @import '~design-system/_sass/pv-styles/pv-indicator';
+
+@import './containers/RedeemContainer.scss';
