@@ -25,8 +25,9 @@ const SignInLayout = ({ children, title }) => {
                     <VpnLogo className="fill-primary" />
                 </div>
                 <div className="nomobile flex-item-fluid alignright">
-                    <SupportDropdown className="mr1 pv-button-greenborder-dark" />
-                    <Link className="pm-button--primary" to="/signup">{c('Link').t`Sign up for free`}</Link>
+                    <SupportDropdown className="pv-button-greenborder-dark" />
+                    <Link className="ml1 notablet pm-button--primary" to="/signup">{c('Link')
+                        .t`Sign up for free`}</Link>
                 </div>
             </header>
             <Title className="flex-item-noshrink aligncenter color-primary">{title}</Title>
