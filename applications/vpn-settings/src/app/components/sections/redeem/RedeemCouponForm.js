@@ -42,7 +42,7 @@ const RedeemCouponForm = ({ history }) => {
             if (!e.data) {
                 throw e;
             } else if (e.data.Code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
-                setValidationError('Invalid coupon. Please try again.');
+                setValidationError('Invalid coupon');
             } else {
                 setValidationError(e.data.Error);
             }
