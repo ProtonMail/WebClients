@@ -6,7 +6,7 @@ async function send(data) {
     try {
         const body = JSON.stringify({
             text: dedent`
-                ${process.env.DEPLOY_MESSAGE} ${process.env.DEPLOY_MESSAGE_URL}
+                ${process.env.DEPLOY_MESSAGE} ${process.env.DEPLOY_MESSAGE_URL} ?
 
                 ${data}
             `.trim()
