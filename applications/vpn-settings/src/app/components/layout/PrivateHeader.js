@@ -4,11 +4,11 @@ import { MainLogo, SupportDropdown, UserDropdown } from 'react-components';
 const PrivateHeader = () => {
     return (
         <header className="header flex flex-nowrap reset4print">
-            <MainLogo url="/account" />
-            <div className="searchbox-container"></div>
+            <MainLogo url="/account" className="nomobile" />
+            <div className="searchbox-container nomobile"></div>
             <div className="topnav-container flex-item-centered-vert flex-item-fluid">
                 <ul className="topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap">
-                    <li className="mr1">
+                    <li className="mr1 nomobile">
                         <SupportDropdown />
                     </li>
                     <li className="mlauto mtauto mbauto relative flex-item-noshrink">
