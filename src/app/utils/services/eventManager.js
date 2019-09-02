@@ -18,6 +18,7 @@ function eventManager(
     Events,
     gettextCatalog,
     mailSettingsModel,
+    notification,
     notify,
     userSettingsModel
 ) {
