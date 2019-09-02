@@ -60,7 +60,7 @@ async function getConfig() {
     }
 }
 
-function logCommits(branch, flowType) {
+async function logCommits(branch, flowType) {
     const [, target] = branch.match(/-(prod|beta|dev|old|tor)/) || [];
 
     if (!target) {
