@@ -61,7 +61,12 @@ const OpenVPNAccountSection = () => {
                 <Label htmlFor="openvpn-username">{c('Label').t`OpenVPN / IKEv2 username`}</Label>
                 <Field>
                     <div className="mb0-5">
-                        <Input id="openvpn-username" value={username} onChange={handleChangeUsername} />
+                        <Input
+                            id="openvpn-username"
+                            autocomplete="off"
+                            value={username}
+                            onChange={handleChangeUsername}
+                        />
                     </div>
                     <div>
                         <PrimaryButton
@@ -79,7 +84,12 @@ const OpenVPNAccountSection = () => {
                 <Label htmlFor="openvpn-password">{c('Label').t`OpenVPN / IKEv2 password`}</Label>
                 <Field>
                     <div className="mb0-5">
-                        <PasswordInput id="openvpn-password" value={password} onChange={handleChangePassword} />
+                        <PasswordInput
+                            id="openvpn-password"
+                            autocomplete="off"
+                            value={password}
+                            onChange={handleChangePassword}
+                        />
                     </div>
                     <div>
                         <PrimaryButton
