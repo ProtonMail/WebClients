@@ -27,3 +27,11 @@
 .container-section-sticky-section {
   margin-bottom: 8rem;
 }
+
+// not sticky on mobile
+@include respond-to($breakpoint-small) { 
+  .sticky-title {
+    position: static;
+    box-shadow: none;
+  }
+}
