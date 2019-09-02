@@ -87,7 +87,13 @@ function main({ port, publicPath, flow, appMode }) {
             }
         },
         entry: {
-            index: [...SOURCES_DEV_SERVER, getSource('./src/app/index.js')]
+            // The order is important. The supported.js file sets a global variable that is used by unsupported.js to detect if the main bundle could be parsed.
+            index: [
+                ...SOURCES_DEV_SERVER,
+                getSource('./src/app/index.js'),
+                getSource('./node_modules/proton-shared/lib/browser/supported.js')
+            ],
+            unsupported: [getSource('./node_modules/proton-shared/lib/browser/unsupported.js')]
         },
         output: {
             path: outputPath,

@@ -23,8 +23,7 @@ const minimizer = [
         sourceMap: true,
         terserOptions: {
             mangle: true,
-            compress: true,
-            safari10: true
+            compress: true
         }
     })
 ];

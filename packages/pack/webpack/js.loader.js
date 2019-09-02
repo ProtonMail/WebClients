@@ -3,6 +3,28 @@ const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('./constants
 
 const BABEL_PLUGINS_PRODUCTION = [['babel-plugin-transform-react-remove-prop-types', { removeImport: true }]];
 
+const UNSUPPORTED_JS_LOADER = [
+    {
+        loader: 'babel-loader',
+        options: {
+            cacheDirectory: true,
+            cacheCompression: true,
+            compact: true,
+            presets: [
+                [
+                    '@babel/preset-env',
+                    {
+                        targets: { browsers: ['ie 11'] },
+                        useBuiltIns: 'entry',
+                        corejs: 3
+                    }
+                ]
+            ],
+            plugins: []
+        }
+    }
+];
+
 module.exports = ({ isProduction }, flow) => {
     const TRANSPILE_JS_LOADER = [
         {
@@ -18,8 +40,8 @@ module.exports = ({ isProduction }, flow) => {
                             targets: {
                                 browsers: isProduction
                                     ? [
-                                          // To define better
-                                          '> 0.5%, not IE 11'
+                                          // TODO: Only browsers that support es6
+                                          '> 0.5%, not IE 11, Firefox ESR'
                                       ]
                                     : ['last 1 chrome version', 'last 1 firefox version', 'last 1 safari version']
                             },
@@ -77,10 +99,14 @@ module.exports = ({ isProduction }, flow) => {
             enforce: 'pre'
         },
         {
+            test: /unsupported\.js$/,
+            use: UNSUPPORTED_JS_LOADER
+        },
+        {
             test: /\.js$/,
             exclude: createRegex(
                 excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
-                excludeFiles(BABEL_EXCLUDE_FILES)
+                excludeFiles([...BABEL_EXCLUDE_FILES, 'unsupported.js'])
             ),
             use: TRANSPILE_JS_LOADER
         }
