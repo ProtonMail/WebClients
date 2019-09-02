@@ -138,14 +138,16 @@ const OpenVPNConfigurationSection = () => {
             <Group className="mb1-5">
                 <ButtonGroup
                     onClick={handleSelectConfig(CATEGORY.SECURE_CORE)}
-                    disabled={category === CATEGORY.SECURE_CORE}
-                >{c('Tab').t`Secure Core Configs`}</ButtonGroup>
-                <ButtonGroup onClick={handleSelectConfig(CATEGORY.COUNTRY)} disabled={category === CATEGORY.COUNTRY}>{c(
-                    'Tab'
-                ).t`Country Configs`}</ButtonGroup>
-                <ButtonGroup onClick={handleSelectConfig(CATEGORY.SERVER)} disabled={category === CATEGORY.SERVER}>{c(
-                    'Tab'
-                ).t`Server Configs`}</ButtonGroup>
+                    className={category === CATEGORY.SECURE_CORE ? 'is-active' : ''}
+                >{c('Tab').t`Secure Core configs`}</ButtonGroup>
+                <ButtonGroup
+                    onClick={handleSelectConfig(CATEGORY.COUNTRY)}
+                    className={category === CATEGORY.COUNTRY ? 'is-active' : ''}
+                >{c('Tab').t`Country configs`}</ButtonGroup>
+                <ButtonGroup
+                    onClick={handleSelectConfig(CATEGORY.SERVER)}
+                    className={category === CATEGORY.SERVER ? 'is-active' : ''}
+                >{c('Tab').t`Server configs`}</ButtonGroup>
             </Group>
 
             <Block>
