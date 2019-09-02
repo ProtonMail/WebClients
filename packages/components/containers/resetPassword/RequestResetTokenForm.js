@@ -2,12 +2,25 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Input, EmailInput, Alert, PrimaryButton, ConfirmModal, useModals, useLoading } from 'react-components';
+import {
+    Input,
+    EmailInput,
+    Alert,
+    PrimaryButton,
+    ConfirmModal,
+    useModals,
+    useLoading,
+    useConfig
+} from 'react-components';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+
+const { VPN } = CLIENT_TYPES;
 
 const RequestResetTokenForm = ({ username, setUsername, onSubmit, loading }) => {
     const { createModal } = useModals();
     const [loadingConfirm, withLoadingConfirm] = useLoading();
     const [email, setEmail] = useState('');
+    const { CLIENT_TYPE } = useConfig();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,8 +37,13 @@ const RequestResetTokenForm = ({ username, setUsername, onSubmit, loading }) => 
 
     return (
         <form onSubmit={(e) => withLoadingConfirm(handleSubmit(e))}>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/set-forgot-password-options/">{c('Info')
-                .t`We will send a reset code to your recovery email to reset your password.`}</Alert>
+            <Alert
+                learnMore={
+                    CLIENT_TYPE === VPN
+                        ? 'https://protonvpn.com/support/reset-protonvpn-account-password/'
+                        : 'https://protonmail.com/support/knowledge-base/set-forgot-password-options/'
+                }
+            >{c('Info').t`We will send a reset code to your recovery email to reset your password.`}</Alert>
             <div className="mb1">
                 <Input
                     name="username"
