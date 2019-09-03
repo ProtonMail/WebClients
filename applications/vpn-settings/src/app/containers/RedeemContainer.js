@@ -18,8 +18,8 @@ const RedeemContainer = ({ history }) => (
         <div className="pt2 pl2 pr2">
             <PublicHeader />
         </div>
-        <div className="redeem-heading-bg pt1">
-            <div className="mw80 center">
+        <div className="redeem-heading-bg pt1 pl2 pr2">
+            <div className="mw80 ontablet-mw100 center">
                 <Title className="redeem-heading-title mt2 mb1-5 color-white bold">
                     {c('Title').t`Redeem your coupon and start protecting your online privacy`}
                 </Title>
@@ -34,8 +34,8 @@ const RedeemContainer = ({ history }) => (
                 </div>
             </div>
         </div>
-        <div className="bg-global-light pt2 pb2">
-            <div className="flex flex-spacebetween onmobile-flex-column aligncenter w70 center mt2">
+        <div className="bg-global-light p2">
+            <div className="flex flex-spacebetween onmobile-flex-column aligncenter ontablet-mw100 mw80 center mt2">
                 {[
                     {
                         icon: SwissBasedIcon,

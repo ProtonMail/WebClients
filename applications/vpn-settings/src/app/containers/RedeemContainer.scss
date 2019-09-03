@@ -40,5 +40,6 @@
 @include respond-to($breakpoint-medium) {
     .redeem-heading-title {
         font-size: 3rem;
+        font-weight: normal;
     }
 }
