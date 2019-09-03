@@ -63,7 +63,7 @@ const OpenVPNAccountSection = () => {
                     <div className="mb0-5">
                         <Input
                             id="openvpn-username"
-                            autocomplete="off"
+                            autoComplete="off"
                             value={username}
                             onChange={handleChangeUsername}
                         />
@@ -86,7 +86,7 @@ const OpenVPNAccountSection = () => {
                     <div className="mb0-5">
                         <PasswordInput
                             id="openvpn-password"
-                            autocomplete="off"
+                            autoComplete="off"
                             value={password}
                             onChange={handleChangePassword}
                         />
