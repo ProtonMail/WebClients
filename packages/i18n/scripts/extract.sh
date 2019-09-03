@@ -3,7 +3,7 @@ set -eo pipefail
 
 function main {
     if [ ! -d "/tmp/sourcemapper" ]; then
-        git clone --depth 1 git@github.com:dhoko/sourcemapper.git "/tmp/sourcemapper";
+        git clone --depth 1 https://github.com/ProtonMail/proton-i18n.git "/tmp/sourcemapper";
     else
         echo "we have a cache"
     fi;
