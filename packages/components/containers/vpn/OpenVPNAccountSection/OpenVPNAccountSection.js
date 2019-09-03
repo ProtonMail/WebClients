@@ -76,7 +76,7 @@ const OpenVPNAccountSection = () => {
                         >{c('Action').t`Change username`}</PrimaryButton>
                     </div>
                 </Field>
-                <div className="ml1">
+                <div className="ml1 flex-item-noshrink onmobile-ml0 onmobile-mt0-5">
                     <Copy value={username} />
                 </div>
             </Row>
@@ -99,7 +99,7 @@ const OpenVPNAccountSection = () => {
                         >{c('Action').t`Change password`}</PrimaryButton>
                     </div>
                 </Field>
-                <div className="ml1">
+                <div className="ml1 flex-item-noshrink onmobile-ml0 onmobile-mt0-5">
                     <Copy value={password} />
                 </div>
             </Row>
