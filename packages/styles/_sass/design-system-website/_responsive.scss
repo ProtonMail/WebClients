@@ -92,12 +92,12 @@
     transition: 0s visibility ease, .25s transform ease;
     transition-delay: 0s;
   }
-  .sidebar[aria-hidden="true"] {
+  .sidebar[data-expanded="false"] {
     transform: translateX(-100%);
     visibility: hidden;
     transition-delay: .25s, 0s;
   }
-  .sidebar[aria-hidden="false"] {
+  .sidebar[aria-hidden="true"] {
     transform: translateX(0);
   }
   
