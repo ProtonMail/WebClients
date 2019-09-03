@@ -70,6 +70,36 @@
 }
 
 
+.pm-plans-table {
+  @extend .noborder;
+  @extend .w100; 
+  border-collapse: separate;
+  border-spacing: 0;
+  @extend .min-w35e;
+}
+
+.pm-simple-table-row-th {
+  font-weight: normal;
+}
+
+@include respond-to($breakpoint-medium) { 
+
+  .pm-plans-table {
+    td,
+    th {
+      padding: em(10);
+    }
+    tbody tr {
+      .pm-simple-table-row-th {
+        padding: em(10);
+      }
+    }
+
+  }
+
+}
+
+
 
 /* modifiers for highlighting a plan */
 /* ADR : 

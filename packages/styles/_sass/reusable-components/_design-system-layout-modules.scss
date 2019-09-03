@@ -23,6 +23,9 @@ svg {
 .scroll-if-needed {
   overflow: auto;
 }
+.scroll-horizontal-if-needed {
+  overflow-x: auto;
+}
 .mod--hidden,
 .no-scroll {
   overflow: hidden;
@@ -306,7 +309,7 @@ $list-max-width-em: 15, 40 !default;
   }
 }
 
-$list-min-width-em: 3, 5 !default;
+$list-min-width-em: 3, 5, 35 !default;
 
 @each $min-width in $list-min-width-em {
   .min-w#{$min-width}e {
