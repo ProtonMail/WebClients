@@ -50,50 +50,56 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
             <Alert>{c('Info')
                 .t`By using ProtonVPN to browse the web, your Internet connection is encrypted to ensure that your navigation is secure. ProtonVPN has servers located in 30+ countries around the world.`}</Alert>
             <CyclePromotion model={model} onChange={onChange} />
-            <table className="pm-simple-table">
+            <table className="pm-plans-table noborder">
                 <thead>
                     <tr>
-                        <th />
-                        <th className="aligncenter">BASIC</th>
-                        <th className="aligncenter">PLUS</th>
+                        <th className="is-empty" />
+                        <th scope="col" className="aligncenter">
+                            BASIC
+                        </th>
+                        <th scope="col" className="aligncenter">
+                            PLUS
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td className="bg-global-muted">{c('Header').t`Pricing`}</td>
-                        <td className="bg-global-muted aligncenter">
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
+                            .t`Pricing`}</th>
+                        <td className="bg-global-light aligncenter">
                             <Price currency={model.currency} suffix={c('Suffix').t`/mo`}>
                                 {vpnBasicPlan.Pricing[model.cycle] / model.cycle}
                             </Price>
                         </td>
-                        <td className="bg-global-muted aligncenter">
+                        <td className="bg-global-light aligncenter">
                             <Price currency={model.currency} suffix={c('Suffix').t`/mo`}>
                                 {vpnPlusPlan.Pricing[model.cycle] / model.cycle}
                             </Price>
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th scope="row" className="pm-simple-table-row-th alignleft">
                             <span className="mr0-5">{c('Header').t`Speed`}</span>
                             <Info title={c('Tooltip').t`Download and stream faster with a faster VPN connection.`} />
-                        </td>
+                        </th>
                         <td className="aligncenter">{c('VPN speed').t`High`}</td>
                         <td className="aligncenter">{c('VPN speed').t`Highest`}</td>
                     </tr>
                     <tr>
-                        <td>
+                        <th scope="row" className="pm-simple-table-row-th alignleft">
                             <span className="mr0-5">{c('Header').t`Simultaneous connections`}</span>
                             <Info
                                 title={c('Tooltip')
                                     .t`More connections allows more devices to use ProtonVPN at the same time.`}
                             />
-                        </td>
+                        </th>
                         <td className="aligncenter">2</td>
                         <td className="aligncenter">5</td>
                     </tr>
                     {state ? (
                         <tr>
-                            <td>{c('Header').t`Advanced encryption`}</td>
+                            <th scope="row" className="pm-simple-table-row-th alignleft">{c('Header')
+                                .t`Advanced encryption`}</th>
                             <td className="aligncenter">
                                 <Icon name="on" />
                             </td>
@@ -104,7 +110,8 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                     ) : null}
                     {state ? (
                         <tr>
-                            <td>{c('Header').t`No logs policy`}</td>
+                            <th scope="row" className="pm-simple-table-row-th alignleft">{c('Header')
+                                .t`No logs policy`}</th>
                             <td className="aligncenter">
                                 <Icon name="on" />
                             </td>
@@ -115,7 +122,8 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                     ) : null}
                     {state ? (
                         <tr>
-                            <td>{c('Header').t`No data limits`}</td>
+                            <th scope="row" className="pm-simple-table-row-th alignleft">{c('Header')
+                                .t`No data limits`}</th>
                             <td className="aligncenter">
                                 <Icon name="on" />
                             </td>
@@ -126,7 +134,8 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                     ) : null}
                     {state ? (
                         <tr>
-                            <td>{c('Header').t`P2P support`}</td>
+                            <th scope="row" className="pm-simple-table-row-th alignleft">{c('Header')
+                                .t`P2P support`}</th>
                             <td className="aligncenter">
                                 <Icon name="on" />
                             </td>
@@ -136,7 +145,8 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                         </tr>
                     ) : null}
                     <tr>
-                        <td>{c('Header').t`Secure streaming`}</td>
+                        <th scope="row" className="pm-simple-table-row-th alignleft">{c('Header')
+                            .t`Secure streaming`}</th>
                         <td className="aligncenter">
                             <Icon name="off" />
                         </td>
@@ -145,13 +155,13 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th scope="row" className="pm-simple-table-row-th alignleft">
                             <span className="mr0-5">{c('Header').t`Tor over VPN`}</span>
                             <Info
                                 url="https://protonvpn.com/support/tor-vpn/"
                                 title={c('Tooltip').t`Easily route your traffic through the Tor anonymity network.`}
                             />
-                        </td>
+                        </th>
                         <td className="aligncenter">
                             <Icon name="off" />
                         </td>
@@ -160,14 +170,14 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th scope="row" className="pm-simple-table-row-th alignleft">
                             <span className="mr0-5">{c('Header').t`Secure core`}</span>
                             <Info
                                 url="https://protonvpn.com/support/secure-core-vpn/"
                                 title={c('Tooltip')
                                     .t`Additional protection by routing your traffic through multiple locations before leaving the ProtonVPN network.`}
                             />
-                        </td>
+                        </th>
                         <td className="aligncenter">
                             <Icon name="off" />
                         </td>
@@ -176,11 +186,11 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th scope="row" className="pm-simple-table-row-th alignleft ">
                             <SmallButton className="pm-button--link" onClick={toggle}>
                                 {state ? c('Action').t`Hide additional features` : c('Action').t`Compare all features`}
                             </SmallButton>
-                        </td>
+                        </th>
                         <td className="aligncenter">
                             <Checkbox checked={!!model.plansMap.vpnbasic} onChange={handleCheckboxChange('vpnbasic')} />
                         </td>
