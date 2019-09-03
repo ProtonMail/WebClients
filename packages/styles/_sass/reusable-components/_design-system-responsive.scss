@@ -80,7 +80,7 @@
   
   /* margins */
   $list-margins-mobile: m, mt, mr, mb, ml;
-  $list-margins-mobile-values: 0, 1, 2; // specify 2.5 if needed
+  $list-margins-mobile-values: 0, 0.5, 1, 2; // specify 2.5 if needed
 
   @include margin-generator($list-margins-mobile, $list-margins-mobile-values, "onmobile-");
   
