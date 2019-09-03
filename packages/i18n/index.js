@@ -65,12 +65,10 @@ async function main() {
                 },
                 {
                     title: 'Store a cache of translations available in the app',
-                    enabled: () => process.env.APP_KEY === 'Angular',
                     task: () => require('./lib/cache').write()
                 },
                 {
                     title: 'Export translations as JSON',
-                    enabled: () => process.env.APP_KEY === 'Angular',
                     task: () => require('./lib/compile')()
                 },
                 {
