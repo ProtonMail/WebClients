@@ -10,6 +10,9 @@ import ResetPasswordContainer from './containers/ResetPasswordContainer';
 import ForgotUsernameContainer from './containers/ForgotUsernameContainer';
 import RedeemContainer from './containers/RedeemContainer';
 import PreInviteContainer from './containers/PreInviteContainer';
+import { getBrowserLocale, loadLocale } from 'proton-shared/lib/i18n';
+
+import locales from './locales';
 
 const PublicApp = ({ onLogin }) => {
     const [loading, setLoading] = useState(true);
@@ -17,7 +20,7 @@ const PublicApp = ({ onLogin }) => {
 
     useLayoutEffect(() => {
         (async () => {
-            await Promise.all([loadOpenPGP()]);
+            await Promise.all([loadOpenPGP(), loadLocale(getBrowserLocale(), locales)]);
         })()
             .then(() => setLoading(false))
             .catch(() => setError(true));
