@@ -6,12 +6,12 @@ const Hamburger = ({ sidebarId, expanded = true, onToggle }) => {
     return (
         <button
             type="button"
-            className="hamburger nodesktop notablet"
+            className="hamburger p1 nodesktop notablet"
             aria-expanded={expanded}
             aria-controls={sidebarId}
             onClick={onToggle}
         >
-            <Icon className="fill-currentColor" name="burger" />
+            <Icon size="25" className="fill-currentColor" name="burger" />
         </button>
     );
 };
