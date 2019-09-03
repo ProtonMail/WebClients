@@ -17,7 +17,7 @@ const SubSidebar = ({ list = [], children }) => {
     return (
         <div className="subnav notablet nomobile bg-global-light noprint">
             <div className="subnav-inner">
-                <p className="uppercase smaller">{c('Title').t`Jump to`}</p>
+                <p className="uppercase smaller">{c('Title').t`Navigation`}</p>
                 <ul className="unstyled subnav-list">
                     {list.map(({ id = '', text }) => {
                         const isCurrent = hash === id;
