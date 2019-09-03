@@ -6,15 +6,25 @@ import { PrimaryButton, Input } from 'react-components';
 const CouponForm = ({ onChange, model }) => {
     const [coupon, setCoupon] = useState(model.coupon);
     const handleChange = ({ target }) => setCoupon(target.value);
-    const handleClick = () => onChange({ ...model, coupon }, true);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onChange({ ...model, coupon }, true);
+    };
 
     return (
         <div className="flex flex-spacebetween mb1">
             <div className="mr1">
-                <Input placeholder={c('Placeholder').t`Coupon`} value={coupon} onChange={handleChange} />
+                <Input
+                    autoFocus={true}
+                    placeholder={c('Placeholder').t`Coupon`}
+                    value={coupon}
+                    onChange={handleChange}
+                    onPressEnter={handleSubmit}
+                />
             </div>
             <div>
-                <PrimaryButton onClick={handleClick}>{c('Action').t`Apply`}</PrimaryButton>
+                <PrimaryButton onClick={handleSubmit}>{c('Action').t`Apply`}</PrimaryButton>
             </div>
         </div>
     );
