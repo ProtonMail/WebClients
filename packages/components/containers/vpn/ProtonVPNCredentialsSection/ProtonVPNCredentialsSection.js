@@ -10,13 +10,13 @@ const ProtonVPNCredentialsSection = () => {
 
     const downloadLink = (
         <Href key="link" className="mr0-5" url="https://protonvpn.com/download">{c('Link')
-            .t`ProtonVPN native clients.`}</Href>
+            .t`ProtonVPN native clients`}</Href>
     );
 
     return (
         <>
             <SubTitle>{c('Title').t`ProtonVPN credentials`}</SubTitle>
-            <Alert>{c('Info').jt`Use the following credentials to log into the ${downloadLink}`}</Alert>
+            <Alert>{c('Info').jt`Use the following credentials to log into the ${downloadLink}.`}</Alert>
             <Row>
                 <Label>{c('Label').t`Proton username`}</Label>
                 <Field className="mt0-5">
