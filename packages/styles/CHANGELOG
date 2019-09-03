@@ -4,6 +4,7 @@
 
 - added `$list-max-width-ch` Sass variable, ex. `.mw70ch`: `max-width: 70ch`
 - added `flex-justify-start` helper
+- added `onmobile-wauto` and `min-w5e` helper classes
 
 ## Updated/fixes
 
@@ -11,6 +12,7 @@
 - rwd adaptation for sticky title/space between sections
 - rwd adaptation of navigation
 - added some margin helpers on mobile
+- fixed `textarea` with `pristine` class (Firefox bug)
 
 
 # [1.7.3] - 2019-08-30

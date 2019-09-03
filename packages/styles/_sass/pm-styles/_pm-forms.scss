@@ -75,6 +75,11 @@ select.pm-field {
   }
 }
 
+/* firefox bug */
+textarea[required].pm-field.field-pristine:invalid {
+  box-shadow: none;
+}
+
 @if $rtl-option == true {
   [dir="rtl"] {
     select.pm-field {
