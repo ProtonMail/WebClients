@@ -118,18 +118,22 @@ const PlansSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Plans`}</SubTitle>
-            <Button onClick={togglePlans}>{showPlans ? c('Action').t`Hide plans` : c('Action').t`Show plans`}</Button>
+            <Button className="mb2" onClick={togglePlans}>
+                {showPlans ? c('Action').t`Hide plans` : c('Action').t`Show plans`}
+            </Button>
             {showPlans ? (
-                <PlansTable
-                    onSelect={(planName) => () => withLoading(handleSelectPlan(planName))}
-                    loading={loading}
-                    currency={currency}
-                    cycle={cycle}
-                    updateCurrency={updateCurrency}
-                    updateCycle={updateCycle}
-                    plans={plans}
-                    subscription={subscription}
-                />
+                <div className="scroll-horizontal-if-needed pt3">
+                    <PlansTable
+                        onSelect={(planName) => () => withLoading(handleSelectPlan(planName))}
+                        loading={loading}
+                        currency={currency}
+                        cycle={cycle}
+                        updateCurrency={updateCurrency}
+                        updateCycle={updateCycle}
+                        plans={plans}
+                        subscription={subscription}
+                    />
+                </div>
             ) : null}
         </>
     );
