@@ -16,7 +16,7 @@ const PaymentVerificationModal = ({ params, token, url, onSubmit, ...rest }) => 
         const tab = window.open(url);
 
         try {
-            await process({ ApprovalURL: url, Token: token, api, tab });
+            await process({ Token: token, api, tab });
             onSubmit(toParams(params, token));
             rest.onClose();
         } catch (error) {
