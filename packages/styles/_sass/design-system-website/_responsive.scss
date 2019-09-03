@@ -89,10 +89,13 @@
     z-index: 500;
     background-image: linear-gradient(to bottom, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
     transform-origin: 0 50%;
-	  transition: .25s transform ease;
+    transition: 0s visibility ease, .25s transform ease;
+    transition-delay: 0s;
   }
   .sidebar[aria-hidden="true"] {
     transform: translateX(-100%);
+    visibility: hidden;
+    transition-delay: .25s, 0s;
   }
   .sidebar[aria-hidden="false"] {
     transform: translateX(0);
