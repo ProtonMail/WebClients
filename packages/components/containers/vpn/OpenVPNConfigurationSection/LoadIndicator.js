@@ -4,7 +4,7 @@ import { Tooltip } from 'react-components';
 import { c } from 'ttag';
 
 const LoadIndicator = ({ server: { Load = 0 } }) => (
-    <span style={{ minWidth: '5em' }}>
+    <span className="min-w5e nomobile">
         <Tooltip title={c('Info').t`Server load`}>
             <div className="flex inline-flex-vcenter">
                 <div className="load-indicator">

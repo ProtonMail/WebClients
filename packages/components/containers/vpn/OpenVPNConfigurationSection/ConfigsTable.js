@@ -75,11 +75,11 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
         <Table className="pm-simple-table--has-actions">
             <thead>
                 <tr>
-                    <TableCell className="w50" type="header">
+                    <TableCell className="w50 onmobile-wauto" type="header">
                         {category === CATEGORY.SERVER ? c('TableHeader').t`Name` : c('TableHeader').t`Country`}
                     </TableCell>
-                    <TableCell className="w30" type="header">{c('TableHeader').t`Status`}</TableCell>
-                    <TableCell className="w20" type="header">{c('TableHeader').t`Action`}</TableCell>
+                    <TableCell className="w30 onmobile-wauto" type="header">{c('TableHeader').t`Status`}</TableCell>
+                    <TableCell className="w20 onmobile-wauto" type="header">{c('TableHeader').t`Action`}</TableCell>
                 </tr>
             </thead>
             <TableBody loading={loading} colSpan={3}>
