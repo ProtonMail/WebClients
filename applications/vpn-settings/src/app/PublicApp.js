@@ -1,7 +1,7 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
-import { Loader, ModalsChildren, GenericError } from 'react-components';
+import { LoaderPage, ModalsChildren, GenericError } from 'react-components';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
 import PublicLayout from './components/layout/PublicLayout';
@@ -18,7 +18,7 @@ const PublicApp = ({ onLogin }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         (async () => {
             await Promise.all([loadOpenPGP(), loadLocale(getBrowserLocale(), locales)]);
         })()
@@ -31,7 +31,7 @@ const PublicApp = ({ onLogin }) => {
     }
 
     if (loading) {
-        return <Loader />;
+        return <LoaderPage />;
     }
 
     return (
