@@ -1,26 +1,20 @@
 const { promises: fs, constants: FS_CONSTANTS } = require('fs');
 const path = require('path');
-const execa = require('execa');
-const { success, spin, warn, debug } = require('./helpers/log')('proton-i18n');
-const { getFiles, PROTON_DEPENDENCIES } = require('../config');
+
+const { success, warn, debug } = require('./helpers/log')('proton-i18n');
+const { script, bash } = require('./helpers/cli');
+const { getFiles } = require('../config');
 
 const { TEMPLATE_FILE } = getFiles();
 
-async function extractor(app = 'app') {
+async function extractor() {
     if (process.env.APP_KEY === 'Angular') {
         const cmd = `npx angular-gettext-cli --files './src/+(app|templates)/**/**/*.+(js|html)' --dest ${TEMPLATE_FILE} --attributes "placeholder-translate","title-translate","pt-tooltip-translate","translate"`;
         debug(cmd);
-        return execa.shell(cmd, {
-            shell: '/bin/bash'
-        });
+        return bash(cmd);
     }
 
-    const dest = PROTON_DEPENDENCIES[app].join(' ');
-    const cmd = `npx ttag extract $(find ${dest} -type f -name '*.js') -o ${TEMPLATE_FILE}`;
-    debug(cmd);
-    return execa.shell(cmd, {
-        shell: '/bin/bash'
-    });
+    return script('extract.sh', [TEMPLATE_FILE], 'inherit');
 }
 
 async function hasDirectory() {
@@ -34,17 +28,10 @@ async function hasDirectory() {
 }
 
 async function main(app) {
-    const spinner = spin('Extracting translations');
-    try {
-        await hasDirectory();
-        const { stdout } = await extractor(app);
-        spinner.stop();
-        debug(stdout);
-        success(`Translations extracted to ${TEMPLATE_FILE}`);
-    } catch (e) {
-        spinner.stop();
-        throw e;
-    }
+    await hasDirectory();
+    const { stdout } = await extractor(app);
+    debug(stdout);
+    success(`Translations extracted to ${TEMPLATE_FILE}`);
 }
 
 module.exports = main;
