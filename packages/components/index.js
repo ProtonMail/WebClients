@@ -112,6 +112,7 @@ export { default as Pagination } from './components/pagination/Pagination';
 export { default as Label } from './components/label/Label';
 export { default as NavMenu } from './components/sidebar/NavMenu';
 export { default as NavItem } from './components/sidebar/NavItem';
+export { default as Hamburger } from './components/sidebar/Hamburger';
 export { default as Sidebar } from './components/sidebar/Sidebar';
 export { default as SubSidebar } from './components/sidebar/SubSidebar';
 export { default as OrderableContainer } from './components/orderable/OrderableContainer';
