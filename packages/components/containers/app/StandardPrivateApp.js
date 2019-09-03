@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {
     EventManagerProvider,
     ForceRefreshProvider,
-    Loader,
     ModalsChildren,
     ThemeInjector,
     LocaleInjector,
@@ -21,6 +20,7 @@ import { getLatestID } from 'proton-shared/lib/api/events';
 
 import ModelListener from '../eventManager/ModelListener';
 import EventNotices from '../eventManager/EventNotices';
+import LoaderPage from './LoaderPage';
 
 const getEventID = ({ cache, api }) => {
     // Set from <ProtonApp/> on login.
@@ -69,7 +69,7 @@ const StandardPrivateApp = ({ onLogout, locales = {}, preloadModels = [], eventM
                     onError={onLogout}
                 />
                 <ModalsChildren />
-                <Loader />
+                <LoaderPage />
             </>
         );
     }
