@@ -13,6 +13,7 @@
 - rwd adaptation of navigation
 - added some margin helpers on mobile
 - fixed `textarea` with `pristine` class (Firefox bug)
+- updated `pm-buttons` (replaced `@extend .nodecoration` to `text-decoration: none`) to fix a crazy bug on Edge 🥴
 
 
 # [1.7.3] - 2019-08-30

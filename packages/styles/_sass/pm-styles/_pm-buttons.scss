@@ -8,7 +8,7 @@
   padding: em(5) em(16) em(6); // design want 34px height
   border-style: solid;
   border-width: 1px;
-  @extend .nodecoration;
+  text-decoration: none;
   & > button { // this is for drop down buttons
     color: inherit;
   }
@@ -16,7 +16,7 @@
   &:focus,
   &:focus-within,
   &:active {
-    @extend .nodecoration;
+    text-decoration: none;
   }
 }
 
