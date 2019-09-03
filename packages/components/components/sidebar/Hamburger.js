@@ -11,7 +11,7 @@ const Hamburger = ({ sidebarId, expanded = true, onToggle }) => {
             aria-controls={sidebarId}
             onClick={onToggle}
         >
-            <Icon size={25} className="fill-currentColor" name="burger" />
+            <Icon size={25} className="fill-currentColor" name={expanded ? 'off' : 'burger'} />
         </button>
     );
 };
