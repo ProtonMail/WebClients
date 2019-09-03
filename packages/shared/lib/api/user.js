@@ -35,22 +35,10 @@ export const getHumanVerificationMethods = () => ({
     method: 'get'
 });
 
-export const querySMSVerificationCode = (Phone) => ({
+export const queryVerificationCode = (Type, Destination) => ({
     url: 'users/code',
     method: 'post',
-    data: {
-        Type: 'sms',
-        Destination: { Phone }
-    }
-});
-
-export const queryEmailVerificationCode = (Address) => ({
-    url: 'users/code',
-    method: 'post',
-    data: {
-        Type: 'email',
-        Destination: { Address }
-    }
+    data: { Type, Destination }
 });
 
 export const queryCheckUsernameAvailability = (Name) => ({
