@@ -61,7 +61,7 @@ export const loadLocale = async (locale = '', locales = {}) => {
     const language = bestMatch.substr(0, 2);
 
     if (bestMatch !== DEFAULT_LOCALE) {
-        const data = (await locales[bestMatch]()).default;
+        const data = await locales[bestMatch]();
         addLocale(locale, data);
     }
 

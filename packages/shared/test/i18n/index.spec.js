@@ -73,9 +73,7 @@ describe('Load the locale', () => {
             const { test, response } = mockFR;
 
             await loadLocale('fr_FR', {
-                fr_FR: async () => {
-                    return { default: response };
-                }
+                fr_FR: async () => response
             });
 
             const { expectation, original } = test();
@@ -97,9 +95,7 @@ describe('Load the locale', () => {
             expect(document.documentElement.lang).toEqual('');
 
             await loadLocale('es_ES', {
-                es_ES: async () => {
-                    return { default: response };
-                }
+                es_ES: async () => response
             });
 
             const { expectation, original } = test();
