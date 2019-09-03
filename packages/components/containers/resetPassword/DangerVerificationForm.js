@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Input, Alert, PrimaryButton } from 'react-components';
+import { Input, Alert, PrimaryButton, useConfig } from 'react-components';
 import { c } from 'ttag';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+
+const { VPN } = CLIENT_TYPES;
 
 const DangerVerificationForm = ({ onSubmit }) => {
     const [value, updateValue] = useState('');
     const WORD = 'DANGER';
+    const { CLIENT_TYPE } = useConfig();
 
     return (
         <form onSubmit={onSubmit}>
@@ -24,8 +28,10 @@ const DangerVerificationForm = ({ onSubmit }) => {
                     required
                 />
             </div>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/">{c('Info')
-                .t`If you remember your old password later, you can recover your existing messages.`}</Alert>
+            {CLIENT_TYPE === VPN ? null : (
+                <Alert learnMore="https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/">{c('Info')
+                    .t`If you remember your old password later, you can recover your existing messages.`}</Alert>
+            )}
             <div className="alignright mb1">
                 <PrimaryButton type="submit">{c('Action').t`Reset my password`}</PrimaryButton>
             </div>
