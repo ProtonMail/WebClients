@@ -1,12 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Route } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import { Sidebar, MainAreaContext } from 'react-components';
 
 import PrivateHeader from './PrivateHeader';
 
-const PrivateLayout = ({ children }) => {
+const PrivateLayout = ({ children, location }) => {
     const mainAreaRef = useRef();
     const [expanded, setExpand] = useState(false);
     const list = [
@@ -31,6 +32,11 @@ const PrivateLayout = ({ children }) => {
             link: '/payments'
         }
     ];
+
+    useEffect(() => {
+        setExpand(false);
+    }, [location.pathname]);
+
     return (
         <div className="flex flex-nowrap no-scroll">
             <div className="content flex-item-fluid reset4print">
@@ -49,7 +55,8 @@ const PrivateLayout = ({ children }) => {
 };
 
 PrivateLayout.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    location: PropTypes.object.isRequired
 };
 
-export default PrivateLayout;
+export default withRouter(PrivateLayout);
