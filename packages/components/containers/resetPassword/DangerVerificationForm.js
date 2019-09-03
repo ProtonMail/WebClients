@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Input, Alert, PrimaryButton, useConfig } from 'react-components';
+import { Input, Alert, PrimaryButton, Href, useConfig } from 'react-components';
 import { c } from 'ttag';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
@@ -10,6 +10,7 @@ const DangerVerificationForm = ({ onSubmit }) => {
     const [value, updateValue] = useState('');
     const WORD = 'DANGER';
     const { CLIENT_TYPE } = useConfig();
+    const loginLink = <Href key="0" url="https://mail.protonmail.com/login">{c('Link').t`here`}</Href>;
 
     return (
         <form onSubmit={onSubmit}>
@@ -17,7 +18,7 @@ const DangerVerificationForm = ({ onSubmit }) => {
                 type="warning"
                 learnMore="https://protonmail.com/support/knowledge-base/updating-your-login-password/"
             >{c('Info')
-                .t`Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them here.`}</Alert>
+                .jt`Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${loginLink}.`}</Alert>
             <Alert type="warning">{c('Info').t`ALL YOUR DATA WILL BE LOST!`}</Alert>
             <div className="mb1">
                 <Input
