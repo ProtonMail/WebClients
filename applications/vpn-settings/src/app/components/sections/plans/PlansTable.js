@@ -98,7 +98,7 @@ const PlansTable = ({
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">{c('Header')
                         .t`Speed`}</th>
-                    <td className="aligncenter">{c('Plan details').t`Low`}</td>
+                    <td className="aligncenter">{c('Plan details').t`Medium`}</td>
                     <td className="aligncenter">{c('Plan details').t`High`}</td>
                     <td className="aligncenter">{c('Plan details').t`Highest`}</td>
                     <td className="aligncenter">{c('Plan details').t`Highest`}</td>
@@ -186,32 +186,23 @@ const PlansTable = ({
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft" />
                     <td className="aligncenter">
-                        <SmallButton
-                            disabled={loading}
-                            className="pm-button--primary"
-                            onClick={onSelect()}
-                        >{c('Action').t`Update`}</SmallButton>
+                        <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect()}>{c('Action')
+                            .t`Update`}</SmallButton>
                     </td>
                     <td className="aligncenter">
-                        <SmallButton
-                            disabled={loading}
-                            className="pm-button--primary"
-                            onClick={onSelect(VPNBASIC)}
-                        >{c('Action').t`Update`}</SmallButton>
+                        <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect(VPNBASIC)}>{c(
+                            'Action'
+                        ).t`Update`}</SmallButton>
                     </td>
                     <td className="aligncenter">
-                        <SmallButton
-                            disabled={loading}
-                            className="pm-button--primary"
-                            onClick={onSelect(VPNPLUS)}
-                        >{c('Action').t`Update`}</SmallButton>
+                        <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect(VPNPLUS)}>{c(
+                            'Action'
+                        ).t`Update`}</SmallButton>
                     </td>
                     <td className="aligncenter">
-                        <SmallButton
-                            disabled={loading}
-                            className="pm-button--primary"
-                            onClick={onSelect(VISIONARY)}
-                        >{c('Action').t`Update`}</SmallButton>
+                        <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect(VISIONARY)}>{c(
+                            'Action'
+                        ).t`Update`}</SmallButton>
                     </td>
                 </tr>
             </tbody>
