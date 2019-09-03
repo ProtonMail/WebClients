@@ -96,7 +96,11 @@ $rtl-option: true;
 @import "pm-styles/pm-settings-home";
 
 @import "reusable-components/design-system-responsive";
-@import "design-system-website/responsive";
+// DO NOT USE THIS ONE ON DESIGN SYSTEM WEBSITE, BUT FOR ALL APPS
+//@import "design-system-website/responsive";
+
+// DO NOT USE THIS ONE, ONLY FOR DESIGN SYSTEM WEBSITE
+@import "design-system-website/exceptions-responsive";
 
 @import "reusable-components/design-system-print";
 @import "design-system-website/print";

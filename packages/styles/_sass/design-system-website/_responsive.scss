@@ -2,19 +2,25 @@
  * BIGGER than large breakpoint
  */
 
-@include respond-to(1800, 'min') { 
+ @include respond-to(1800, 'min') { 
 
+  // it will be back, so left in comment :-]
   // :root {
   //   --body-fontsize: 1.6rem;
   // }
-  // it will be back
   .container-section-sticky {
     max-width: 65em;
   }
 }
 
 
-@include respond-to($breakpoint-large, 'min') { 
+
+
+
+/**
+ * large breakpoint
+ */
+ @include respond-to($breakpoint-large, 'min') { 
 
   :root {
     --width-sidebar: 15vw;
@@ -25,48 +31,21 @@
     max-width: 55vw;
   }
 }
-
-
-/**
- * large breakpoint
- */
- @include respond-to($breakpoint-large) { 
+//  @include respond-to($breakpoint-large) { 
    
-  /**
-   * global structure adaptation (page / skip links / header / main content / footer)
-   */
-
+//   /**
+//    * global structure adaptation (page / skip links / header / main content / footer)
+//    */
   
-  /**
-   * inside content (other styles for pages)
-   */
-  
-  
-  .colortile { width: 50%; }
+//   /**
+//    * inside content (other styles for pages)
+//    */
 
-  /* color rules */
-  .color-tab:nth-child(-n+3) {
-    flex-basis: 33%;
-  }
 
-}
+// }
 
 
 
-
-/**
- * large breakpoint
- */
- @include respond-to(1050) { 
-  
-  /**
-   * inside content (other styles for pages)
-   */
-  .colortile { width: 100%; }
-
-  .toggle-color-mode { display: none; }
-
-}
 
 
 /**
@@ -88,11 +67,6 @@
    * inside content (other styles for pages)
    */
 
-  .color-tab:nth-child(-n+3),
-  .color-tab {
-    flex-basis: 100%;
-  }
-
 }
 
 
@@ -107,35 +81,29 @@
    * global structure adaptation (page / skip links / header / main content / footer)
    */
   .main {
-    margin-right: 10px;
+    margin-right: 0;
+    border-radius: 0;
   }
-  .aside:not(.aside-noBurger) {
-    padding-top: .25em;
+  .sidebar {
+    position: fixed;
+    z-index: 500;
+    background-image: linear-gradient(to bottom, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
+    transform-origin: 0 50%;
+	  transition: .25s transform ease;
+  }
+  .sidebar[aria-hidden="true"] {
+    transform: translateX(-100%);
+  }
+  .sidebar[aria-hidden="false"] {
+    transform: translateX(0);
   }
   
   /**
    * inside content (other styles for pages)
    */
 
-  .sidebar[aria-hidden="true"] {
-    transform: translateX(calc( var(--width-sidebar, #{$width-sidebar}) * (-1) ));
-    width: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition-delay: 1s, 0s, 0s, 0s;
-  }
-  @if $rtl-option == true {
-    [dir="rtl"] {
-      .sidebar[aria-hidden="true"] {
-        transform: translateX( var(--width-sidebar, #{$width-sidebar}) );
-      }
-    }
-  }
-  /* nesting visibility, see https://codepen.io/nico3333fr/pen/OaBOwa for explanation */
-  .sidebar[aria-hidden="true"] .animated-expandmore__to_expand {
-    visibility: hidden;
-    transition-delay: 1s, 0s, 0s, 0s;
-  }
+
+
 
 }
 
@@ -144,10 +112,10 @@
 /**
  * tiny/small mobile breakpoint
  */
-@include respond-to($breakpoint-tiny) { 
+// @include respond-to($breakpoint-tiny) { 
 
-  /**
-   * global structure adaptation (page / skip links / header / main content / footer)
-   */
+//   /**
+//    * global structure adaptation (page / skip links / header / main content / footer)
+//    */
 
-}
+// }
