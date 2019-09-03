@@ -11,7 +11,7 @@ const RadioGroup = ({ name, options, onChange, value }) => {
             onChange={handleChangePlatform(option.value)}
             checked={value === option.value}
             name={name}
-            className="mr2 flex inline-flex-vcenter"
+            className="mr2 mb0-5 flex inline-flex-vcenter"
         >
             {option.label}
         </Radio>

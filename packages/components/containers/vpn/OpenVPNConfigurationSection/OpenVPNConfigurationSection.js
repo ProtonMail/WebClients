@@ -2,7 +2,6 @@ import React, { useState, useMemo } from 'react';
 import { c } from 'ttag';
 import {
     Alert,
-    Row,
     ButtonGroup,
     Group,
     useApiResult,
@@ -105,7 +104,7 @@ const OpenVPNConfigurationSection = () => {
             </Alert>
 
             <h3 className="mt2">{c('Title').t`1. Select platform`}</h3>
-            <Row>
+            <div className="flex onmobile-flex-column mb1">
                 <RadioGroup
                     name="platform"
                     value={platform}
@@ -119,10 +118,10 @@ const OpenVPNConfigurationSection = () => {
                         { value: PLATFORM.ROUTER, label: c('Option').t`Router` }
                     ]}
                 />
-            </Row>
+            </div>
 
             <h3 className="mt2">{c('Title').t`2. Select protocol`}</h3>
-            <Row>
+            <div className="flex onmobile-flex-column mb1">
                 <RadioGroup
                     name="protocol"
                     value={protocol}
@@ -132,7 +131,7 @@ const OpenVPNConfigurationSection = () => {
                         { value: PROTOCOL.TCP, label: c('Option').t`TCP` }
                     ]}
                 />
-            </Row>
+            </div>
 
             <h3 className="mt2">{c('Title').t`3. Select connection and download`}</h3>
             <Group className="mb1-5">
