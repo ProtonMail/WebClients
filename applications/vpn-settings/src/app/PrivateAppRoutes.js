@@ -13,7 +13,7 @@ const PrivateAppRoutes = () => {
     return (
         <Route
             render={({ location }) => (
-                <ErrorBoundary key={location.key}>
+                <ErrorBoundary key={location.pathname}>
                     <Switch>
                         <Route path="/dashboard" exact component={DashboardContainer} />
                         <Route path="/account" exact component={AccountContainer} />
