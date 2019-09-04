@@ -5,6 +5,8 @@ import createAuthentication from 'proton-shared/lib/authenticationStore';
 import createCache from 'proton-shared/lib/helpers/cache';
 import { formatUser, UserModel } from 'proton-shared/lib/models/userModel';
 import { STATUS } from 'proton-shared/lib/models/cache';
+import createSecureSessionStorage from 'proton-shared/lib/createSecureSessionStorage';
+import { MAILBOX_PASSWORD_KEY, UID_KEY } from 'proton-shared/lib/constants';
 
 import CompatibilityCheck from './CompatibilityCheck';
 import Icons from '../../components/icon/Icons';
@@ -15,10 +17,12 @@ import ModalsProvider from '../modals/Provider';
 import ApiProvider from '../api/ApiProvider';
 import CacheProvider from '../cache/Provider';
 import AuthenticationProvider from '../authentication/Provider';
-import { RightToLeftProvider } from '../..';
+import RightToLeftProvider from '../rightToLeft/Provider';
 
-const ProtonApp = ({ storage, config, children }) => {
-    const authentication = useInstance(() => createAuthentication(storage));
+const ProtonApp = ({ config, children }) => {
+    const authentication = useInstance(() =>
+        createAuthentication(createSecureSessionStorage([MAILBOX_PASSWORD_KEY, UID_KEY]))
+    );
     const cacheRef = useRef();
     const [UID, setUID] = useState(() => authentication.getUID());
     const tempDataRef = useRef({});
@@ -97,10 +101,6 @@ const ProtonApp = ({ storage, config, children }) => {
 };
 
 ProtonApp.propTypes = {
-    storage: PropTypes.shape({
-        set: PropTypes.func,
-        get: PropTypes.func
-    }).isRequired,
     config: PropTypes.object.isRequired,
     children: PropTypes.node.isRequired
 };
