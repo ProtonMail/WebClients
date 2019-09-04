@@ -10,16 +10,34 @@ const isGoodPrngAvailable = () => {
     return typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function';
 };
 
+const hasCookies = () => {
+    try {
+        return navigator.cookieEnabled === true;
+    } catch (e) {
+        // Safari throws SecurityError if storage is disabled
+        return false;
+    }
+};
+
+const hasSessionStorage = () => {
+    try {
+        return !!window.sessionStorage;
+    } catch (e) {
+        // Safari throws SecurityError if storage is disabled
+        return false;
+    }
+};
+
 // Locale is not loaded here so no translations
 const compats = [
     {
         name: 'Cookies',
-        valid: navigator.cookieEnabled === true,
+        valid: hasCookies(),
         text: 'Please enable cookies in your browser.'
     },
     {
         name: 'Storage',
-        valid: typeof sessionStorage !== 'undefined',
+        valid: hasSessionStorage(),
         text: 'Please enable sessionStorage in your browser.'
     },
     {
