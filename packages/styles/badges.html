@@ -18,14 +18,14 @@ section: design
         </tr>
     </thead>
     <tbody>
-        {% assign listColors = "success#blue#grey#warning#error" | split: '#' %}
-        {% assign messages = "active#default#origin#disabled#error" | split: '#' %}
+        {% assign listColors = "success#blue#green#primary#grey#warning#error" | split: '#' %}
+        {% assign messages = "active#blue#green#primary color#origin#disabled#error" | split: '#' %}
 
         {% for color in listColors %}
         <tr>
             <td><span class="badgeLabel-{{ color }}">{{ messages[forloop.index0] }}</span></td>
             <td><pre class=" language-markup"><code>&lt;span class="<strong>badgeLabel-{{ color }}</strong>"&gt;{{ messages[forloop.index0] }}&lt;/span&gt;
-{% if color == 'blue' %}
+{% if color == 'primary' %}
 &lt;span class="<strong>badgeLabel</strong>"&gt;{{ messages[forloop.index0] }}&lt;/span&gt;
 {% endif %}</code></pre></td>
             <td><code class="sr-only">&lt;span class="badgeLabel-{{ color }}"&gt;{{ messages[forloop.index0] }}&lt;/span&gt;</code> 

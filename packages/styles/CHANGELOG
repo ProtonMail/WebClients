@@ -12,6 +12,8 @@
 - added `ontablet-mw100` helper
 - added aliases `pm-button--primaryborder`, `pm-button--primaryborder-dark` (based on `$pm-primary` value)
 - added `header-height-anchor` for scrolling issues
+- added `badgeLabel-primary` and set this one by default
+- added `flex-item-fluid-auto` helper: `flex: 1 1 auto`
 
 ## Updated/fixes
 

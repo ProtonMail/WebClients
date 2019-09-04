@@ -13,9 +13,23 @@
 .badgeLabel-success {
   @extend .bg-global-success;
 }
-.badgeLabel-blue,
-.badgeLabel {
+.badgeLabel-blue {
   @extend .bg-pm-blue;
+}
+.badgeLabel-green {
+  @extend .bg-pv-green;
+}
+@if ($pm-primary == $pm-blue) {
+  .badgeLabel-primary,
+  .badgeLabel {
+    @extend .bg-pm-blue;
+  }
+}
+@else {
+  .badgeLabel-primary,
+  .badgeLabel {
+    @extend .bg-pv-green;
+  }
 }
 .badgeLabel-grey {
   @extend .bg-global-grey;
