@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip, Icon, CurrencySelector, CycleSelector, SmallButton, Info } from 'react-components';
 import { c } from 'ttag';
-import { PLANS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { PLANS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLAN_SERVICES, CYCLE } from 'proton-shared/lib/constants';
 
 import PlanPrice from './PlanPrice';
 
@@ -31,6 +31,14 @@ const PlansTable = ({
     const { Plans = [] } = subscription || {};
     const { Name = 'free' } = Plans.find(({ Services, Type }) => Type === PLAN && Services & VPN) || {};
 
+    const addCycleTooltip = (comp) => {
+        if (cycle === CYCLE.MONTHLY) {
+            return <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>{comp}</Tooltip>;
+        }
+
+        return comp;
+    };
+
     return (
         <table className="pm-plans-table pm-table--highlight noborder" data-plan-number={PLAN_NUMBERS[Name]}>
             <thead>
@@ -53,7 +61,7 @@ const PlansTable = ({
             <tbody>
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>
+                        {addCycleTooltip(
                             <div className="flex flex-column">
                                 <div className="mb0-5">
                                     <CurrencySelector currency={currency} onSelect={updateCurrency} />
@@ -62,7 +70,7 @@ const PlansTable = ({
                                     <CycleSelector cycle={cycle} onSelect={updateCycle} />
                                 </div>
                             </div>
-                        </Tooltip>
+                        )}
                     </th>
                     <td className="aligncenter bg-global-light">FREE</td>
                     <td className="aligncenter bg-global-light">
