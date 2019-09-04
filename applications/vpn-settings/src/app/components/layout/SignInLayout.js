@@ -16,9 +16,11 @@ const SignInLayout = ({ children, title }) => {
             <PublicHeader
                 action={
                     <>
-                        <SupportDropdown className="pv-button-greenborder-dark" />
-                        <Link className="ml1 notablet pm-button--primary" to="/signup">{c('Link')
-                            .t`Sign up for free`}</Link>
+                        <div className="flex flex-justify-end">
+                            <SupportDropdown className="pm-button--primaryborder-dark" />
+                            <Link className="ml1 notablet pm-button--primary" to="/signup">{c('Link')
+                                .t`Sign up for free`}</Link>
+                        </div>
                     </>
                 }
             />
