@@ -1,9 +1,10 @@
-import { useState, useCallback, useEffect, useMemo } from 'react';
+import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import { getClientVPNInfo } from 'proton-shared/lib/api/vpn';
 import { useApi, useCache } from 'react-components';
 
 const useUserVPN = () => {
     const api = useApi();
+    const mountedRef = useRef(true);
     const cache = useCache();
     const [state, setState] = useState(() => ({ result: cache.get('vpn'), loading: false }));
 
@@ -11,9 +12,9 @@ const useUserVPN = () => {
         try {
             const result = await api(getClientVPNInfo());
             cache.set('vpn', result);
-            setState({ result, loading: false });
+            mountedRef.current && setState({ result, loading: false });
         } catch (e) {
-            setState({ error: e, loading: false });
+            mountedRef.current && setState({ error: e, loading: false });
         }
     }, []);
 
@@ -21,6 +22,9 @@ const useUserVPN = () => {
         if (!cache.has('vpn')) {
             fetch();
         }
+        return () => {
+            mountedRef.current = false;
+        };
     }, []);
 
     return useMemo(
