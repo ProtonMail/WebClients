@@ -3,13 +3,20 @@ const path = require('path');
 
 const { success, warn, debug } = require('./helpers/log')('proton-i18n');
 const { script, bash } = require('./helpers/cli');
-const { getFiles } = require('../config');
+const { getFiles, PROTON_DEPENDENCIES } = require('../config');
 
 const { TEMPLATE_FILE } = getFiles();
 
-async function extractor() {
+async function extractor(app = 'app') {
     if (process.env.APP_KEY === 'Angular') {
         const cmd = `npx angular-gettext-cli --files './src/+(app|templates)/**/**/*.+(js|html)' --dest ${TEMPLATE_FILE} --attributes "placeholder-translate","title-translate","pt-tooltip-translate","translate"`;
+        debug(cmd);
+        return bash(cmd);
+    }
+
+    if (app !== 'app') {
+        const dest = PROTON_DEPENDENCIES[app].join(' ');
+        const cmd = `npx ttag extract $(find ${dest} -type f -name '*.js') -o ${TEMPLATE_FILE}`;
         debug(cmd);
         return bash(cmd);
     }
