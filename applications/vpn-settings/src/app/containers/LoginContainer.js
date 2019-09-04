@@ -6,9 +6,12 @@ import { LoginForm, Href, SimpleDropdown, DropdownMenu } from 'react-components'
 
 import SignInLayout from '../components/layout/SignInLayout';
 
-const LoginContainer = ({ history, onLogin }) => {
+const LoginContainer = ({ history, location, onLogin }) => {
     const handleLogin = (...args) => {
-        history.push('/dashboard');
+        // Redirect to referrer if it was set.
+        if (location.state && location.state.from) {
+            history.push(location.state.from, { ignoreRedirect: true });
+        }
         onLogin(...args);
     };
     return (
@@ -42,6 +45,7 @@ const LoginContainer = ({ history, onLogin }) => {
 
 LoginContainer.propTypes = {
     history: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
     onLogin: PropTypes.func.isRequired
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { LoaderPage, ModalsChildren, GenericError } from 'react-components';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
@@ -40,16 +40,37 @@ const PublicApp = ({ onLogin }) => {
             <PublicLayout>
                 <Switch>
                     <Route path="/redeem" render={({ history }) => <RedeemContainer history={history} />} />
-                    <Route
-                        path="/reset-password"
-                        render={({ history }) => <ResetPasswordContainer history={history} onLogin={onLogin} />}
-                    />
+                    <Route path="/reset-password" render={() => <ResetPasswordContainer onLogin={onLogin} />} />
                     <Route path="/forgot-username" component={ForgotUsernameContainer} />
                     <Route
                         path="/pre-invite/:selector/:token"
                         render={({ history, match }) => <PreInviteContainer history={history} match={match} />}
                     />
-                    <Route render={({ history }) => <LoginContainer history={history} onLogin={onLogin} />} />
+                    <Route
+                        path="/login"
+                        render={({ history, location }) => (
+                            <LoginContainer history={history} location={location} onLogin={onLogin} />
+                        )}
+                    />
+                    <Route
+                        render={({ location }) => {
+                            /**
+                             * Ignore redirect if state is set.
+                             * Needed due to the race condition between onLogin and history.push
+                             */
+                            if (location.state) {
+                                return null;
+                            }
+                            return (
+                                <Redirect
+                                    to={{
+                                        pathname: '/login',
+                                        state: { from: location }
+                                    }}
+                                />
+                            );
+                        }}
+                    />
                 </Switch>
             </PublicLayout>
         </>
