@@ -62,9 +62,20 @@ const InvoicesSection = () => {
         createModal(<InvoiceTextModal />);
     };
 
+    const subTitle = <SubTitle>{c('Title').t`Invoices`}</SubTitle>;
+
+    if (page === 1 && !loading && invoices.length === 0) {
+        return (
+            <>
+                {subTitle}
+                <Alert>{c('Error').t`You have no invoices.`}</Alert>
+            </>
+        );
+    }
+
     return (
         <>
-            <SubTitle>{c('Title').t`Invoices`}</SubTitle>
+            {subTitle}
             <Alert>{c('Info').t`You can customize and download your invoices for accounting purposes.`}</Alert>
             {hasUnpaid ? (
                 <Alert type="error">{c('Error')
