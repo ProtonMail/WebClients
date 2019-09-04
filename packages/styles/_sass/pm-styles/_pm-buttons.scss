@@ -324,6 +324,22 @@
 .pm-button--primary {
   @extend .pm-button-blue;
 }
+@if ($pm-primary == $pm-blue) {
+  .pm-button--primaryborder {
+    @extend .pm-button-blueborder;
+  }
+  .pm-button--primaryborder-dark {
+    @extend .pm-button-blueborder-dark;
+  }
+}
+@else {
+  .pm-button--primaryborder {
+    @extend .pv-button-greenborder;
+  }
+  .pm-button--primaryborder-dark {
+    @extend .pv-button-greenborder-dark;
+  }
+}
 .pm-button--link {
   color: $color-links;
   border-width: 0;
