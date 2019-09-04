@@ -22,6 +22,8 @@ function main {
     # ignore pmcrypto as it contains mailparser :/
     npx ttag extract $(find ./i18n-js -type f -name '*.js' -not -path "*/pmcrypto/*" -not -path "*/core-js/*") -o "$1";
 
+    # Remove useless path
+    sed -i 's|i18n-js/webpack:/||g' "$1";
     rm -rf "./i18n-js";
     ls -lh ./po
 }
