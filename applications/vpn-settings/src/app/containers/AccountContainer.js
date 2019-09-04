@@ -28,7 +28,7 @@ export const getAccountPage = () => {
             },
             {
                 text: c('Title').t`Two-factor authentication`,
-                id: '2fa'
+                id: 'two-fa'
             },
             {
                 text: c('Title').t`OpenVPN / IKEv2 username`,
