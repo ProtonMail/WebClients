@@ -1,5 +1,7 @@
 import React from 'react';
 import { Href } from 'react-components';
+import PropTypes from 'prop-types';
+import unsupportedBrowserSettings from 'design-system/assets/img/shared/unsupported-browser-settings.svg';
 
 const isGoodPrngAvailable = () => {
     if (window.crypto && window.crypto.getRandomValues) {
@@ -27,33 +29,46 @@ const compats = [
     }
 ];
 
-const notCompat = compats.some(({ valid }) => !valid);
+const compat = compats.every(({ valid }) => valid);
 
 const CompatibilityCheck = ({ children }) => {
-    if (notCompat) {
-        const list = compats
-            .filter(({ valid }) => !valid)
-            .map(({ name, text }, i) => {
-                return (
-                    <li key={i}>
-                        {name}: {text}
-                    </li>
-                );
-            });
-        return (
-            <>
-                <h1>Compatibility Check</h1>
-                <p>
-                    ProtonMail requires a modern web browser with cutting edge support for{' '}
-                    <Href href="http://caniuse.com/#feat=cryptography">WebCrypto (PRNG)</Href> and{' '}
-                    <Href href="http://caniuse.com/#feat=namevalue-storage">Web Storage</Href>.
-                </p>
-                <ul>{list}</ul>
-            </>
-        );
+    if (compat) {
+        return children;
     }
 
-    return children;
+    const list = compats
+        .filter(({ valid }) => !valid)
+        .map(({ name, text }, i) => {
+            return (
+                <li key={i}>
+                    {name}: {text}
+                </li>
+            );
+        });
+    return (
+        <div className="w50 p2 mt2 center big automobile">
+            <div className="aligncenter">
+                <h1>Compatibility Check</h1>
+                <p>
+                    ProtonMail requires a modern web browser with cutting edge support for <Href className="primary-link" url="http://caniuse.com/#feat=cryptography">WebCrypto (PRNG)</Href> and <Href className="primary-link" url="http://caniuse.com/#feat=namevalue-storage">Web Storage</Href>.
+                </p>
+                <Href
+                    className="primary-link bold"
+                    url="https://protonmail.com/support/knowledge-base/browsers-supported/"
+                >
+                    More info
+                </Href>
+            </div>
+            <div className="mt2 aligncenter">
+                <img src={unsupportedBrowserSettings} alt="Compatibility check" />
+            </div>
+            <ul>{list}</ul>
+        </div>
+    );
+};
+
+CompatibilityCheck.propTypes = {
+    children: PropTypes.node
 };
 
 export default CompatibilityCheck;
