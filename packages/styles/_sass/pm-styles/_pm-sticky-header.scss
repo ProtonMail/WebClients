@@ -1,6 +1,8 @@
 /*
  * sticky header and container for sections
  */
+
+$sticky-title-height: 10rem !default;
 .sticky-title {
   position: -webkit-sticky;
   position: sticky;
@@ -37,4 +39,11 @@
   .container-section-sticky-section {
     margin-bottom: 8rem;
   }
+}
+
+
+/* trick for fixing anchor links */
+.header-height-anchor {
+  position: absolute;
+  top: -#{$sticky-title-height};
 }
