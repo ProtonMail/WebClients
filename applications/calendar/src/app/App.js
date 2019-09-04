@@ -1,8 +1,6 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
-import { ProtonApp, Loader, useAuthentication, useInstance } from 'react-components';
-import createSecureSessionStorage from 'proton-shared/lib/createSecureSessionStorage';
-import { MAILBOX_PASSWORD_KEY, UID_KEY } from 'proton-shared/lib/constants';
+import { ProtonApp, Loader, useAuthentication } from 'react-components';
 import sentry from 'proton-shared/lib/helpers/sentry';
 
 import * as config from './config';
@@ -33,13 +31,10 @@ const Setup = () => {
 };
 
 const App = () => {
-    const storage = useInstance(() => createSecureSessionStorage([MAILBOX_PASSWORD_KEY, UID_KEY]));
     return (
-        <div className="App body mod--hidden content">
-            <ProtonApp config={config} storage={storage}>
-                <Setup />
-            </ProtonApp>
-        </div>
+        <ProtonApp config={config}>
+            <Setup />
+        </ProtonApp>
     );
 };
 
