@@ -94,3 +94,8 @@ export const binaryStringToArray = (str) => {
     }
     return result;
 };
+
+export const hasProtonDomain = (email = '') => {
+    const protonmailRegex = /@(protonmail\.(com|ch)|pm\.me|)$/i;
+    return protonmailRegex.test(email);
+};
