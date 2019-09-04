@@ -41,41 +41,42 @@ const RedeemContainer = ({ history }) => (
                         icon: SwissBasedIcon,
                         alt: c('Image alt').t`Swiss based`,
                         title: c('Title').t`Swiss Based`,
-                        about: c('About').t`Protect yourself with some of the world's toughest Swiss Privacy laws.`
+                        about: c('About')
+                            .t`Protect your data with Swiss privacy laws, some of the strongest in the world`
                     },
                     {
                         icon: SecureCoreIcon,
                         alt: c('Image alt').t`Secure core servers`,
                         title: c('Title').t`Secure Core Servers`,
                         about: c('About')
-                            .t`Enable military-grade network defense using Secure Core servers located below the surface.`
+                            .t`Defend yourself against advanced network-based attacks by routing your traffic through hardened servers`
                     },
                     {
                         icon: NoLogsIcon,
                         alt: c('Image alt').t`No logs`,
                         title: c('Title').t`No Logs`,
-                        about: c('About').t`Shield your privacy with strict ProtonVPN no logs policy.`
+                        about: c('About')
+                            .t`Keep your browsing history private - we do not keep any records of our users' online activity`
                     },
                     {
                         icon: KillSwitchIcon,
                         alt: c('Image alt').t`Kill switch to prevent IP exposure`,
                         title: c('Title').t`Kill Switch`,
-                        about: c('About')
-                            .t`Prevent your IP address from online exposure with built-in Kill Switch feature.`
+                        about: c('About').t`Keep your data secure even if you are disconnected from your VPN server`
                     },
                     {
                         icon: DNSIcon,
                         alt: c('Image alt').t`DNS leak prevention`,
                         title: c('Title').t`DNS leak prevention`,
                         about: c('About')
-                            .t`Keep your online activities to yourself as we prevent your DNS queries from leaking.`
+                            .t`Prevent your DNS requests from revealing your browsing history by encrypting all your DNS queries`
                     },
                     {
                         icon: EncryptionIcon,
                         alt: c('Image alt').t`Strong encryption`,
                         title: c('Title').t`Strong encryption`,
                         about: c('About')
-                            .t`Protect your internet connection with the highest strengh encryption for the most secure connection possible.`
+                            .t`Defend your Internet connection with AES-256, the highest strength encryption.`
                     }
                 ].map(({ icon, alt, title, about }) => (
                     <figure key={title} className="shadow-container w30 mb2 bg-white color-global-altgrey p1">
