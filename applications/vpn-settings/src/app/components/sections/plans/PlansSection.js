@@ -4,11 +4,9 @@ import {
     SubTitle,
     useApi,
     usePlans,
-    Paragraph,
-    Alert,
     Loader,
     useSubscription,
-    ConfirmModal,
+    DowngradeModal,
     useModals,
     SubscriptionModal,
     useLoading,
@@ -43,19 +41,7 @@ const PlansSection = () => {
             return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
         }
         await new Promise((resolve, reject) => {
-            createModal(
-                <ConfirmModal
-                    title={c('Title').t`Confirm downgrade`}
-                    onConfirm={resolve}
-                    onClose={reject}
-                    confirm={c('Action').t`Downgrade`}
-                >
-                    <Paragraph>{c('Info')
-                        .t`This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.`}</Paragraph>
-                    <Alert>{c('Info')
-                        .t`Additional addresses, custom domains, and users must be removed/disabled before performing this action.`}</Alert>
-                </ConfirmModal>
-            );
+            createModal(<DowngradeModal onConfirm={resolve} onClose={reject} />);
         });
         await api(deleteSubscription());
         await call();
