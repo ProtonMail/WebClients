@@ -71,7 +71,7 @@ function SecuredController(
         });
     });
 
-    const ONBOARD_MODAL_COOKIE = 'protonmail-onboard-modal';
+    const ONBOARD_MODAL_COOKIE = 'protonmail-v4-onboard-modal';
 
     if (!$cookies.get(ONBOARD_MODAL_COOKIE)) {
         _.defer(() => {

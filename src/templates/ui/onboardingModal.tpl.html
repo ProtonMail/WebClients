@@ -26,7 +26,7 @@
 
 
     <div class="pm-modalContent">
-        <div class="pm-modalContentInner aligncenter" ng-if="ctrl.step === 0">
+        <div class="pm-modalContentInner" ng-if="ctrl.step === 0">
 
             <p translate-context="Info" translate>ProtonMail 4.0 is a brand new inbox which contains many new features while continuing to improve the privacy and security that Proton is known for.</p>
 
@@ -37,26 +37,32 @@
 
             <p translate-context="Info" translate>All Proton services (Mail, Calendar, Contacts) are available from the Sidebar</p>
 
-            <img src="/assets/v4-onboad/protonmail.jpg">
+            <div class="flex flex-spacearound">
+                <img src="/assets/v4-onboad/protonmail.jpg">
+            </div>
         </div>
 
-        <div class="pm-modalContentInner aligncenter" ng-if="ctrl.step === 1">
+        <div class="pm-modalContentInner" ng-if="ctrl.step === 1">
 
             <p translate-context="Info" translate>ProtonCalendar is a new encrypted calendar to go with ProtonMail. Now you can create events which are encrypted in a way that even we cannot see the details of your events.</p>
 
             <p translate-context="Info" translate>ProtonCalendar beta can be accessed by all paid Proton users (it will also be made available to free users later on.)</p>
 
-            <img src="/assets/v4-onboad/calendar.jpg">
+            <div class="flex flex-spacearound">
+                <img src="/assets/v4-onboad/calendar.jpg">
+            </div>
         </div>
 
 
-        <div class="pm-modalContentInner aligncenter" ng-if="ctrl.step === 2">
+        <div class="pm-modalContentInner" ng-if="ctrl.step === 2">
 
             <p translate-context="Info" translate>Like the new design? Can’t find something? Want to say hello?</p>
 
             <p translate-context="Info" translate>Get help or give feedback direct from within ProtonMail v4, right from the top bar. Report bug will send your comments directly to our team.</p>
 
-            <img src="/assets/v4-onboad/question.jpg">
+            <div class="flex flex-spacearound">
+                <img src="/assets/v4-onboad/question.jpg">
+            </div>
         </div>
 
 
@@ -89,7 +95,7 @@
                 ng-click="ctrl.cancel()"
                 ng-if="ctrl.step === 2"
                 translate-context="Action"
-                translate>Start Exploring</button>
+                translate>Start exploring</button>
         </footer>
     </div>
 </dialog>
