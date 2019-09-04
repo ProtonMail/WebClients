@@ -59,6 +59,7 @@ import dropdownButton from './directives/dropdownButton';
 import dropdownContent from './directives/dropdownContent';
 import toogleModeElementsDropdown from './directives/toogleModeElementsDropdown';
 import sortViewDropdown from './directives/sortViewDropdown';
+import onboardingModal from './modals/onboardingModal';
 import headerSecuredDesktop from './directives/header/headerSecuredDesktop';
 import headerSecuredMobile from './directives/header/headerSecuredMobile';
 import arrowsToScroll from './directives/navigation/arrowsToScroll';
@@ -68,6 +69,7 @@ import navigationUser from './directives/navigation/navigationUser';
 
 export default angular
     .module('proton.ui', [])
+    .factory('onboardingModal', onboardingModal)
     .directive('sortViewDropdown', sortViewDropdown)
     .directive('toogleModeElementsDropdown', toogleModeElementsDropdown)
     .directive('dropdownContent', dropdownContent)

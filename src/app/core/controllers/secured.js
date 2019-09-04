@@ -18,6 +18,8 @@ function SecuredController(
     versionInfoModel,
     blackFridayHandler,
     prepareDraft,
+    onboardingModal,
+    $cookies,
     userType
 ) {
     const { on, unsubscribe } = dispatchers();
@@ -68,6 +70,20 @@ function SecuredController(
             setUserType();
         });
     });
+
+    const ONBOARD_MODAL_COOKIE = 'protonmail-onboard-modal';
+
+    if (!$cookies.get(ONBOARD_MODAL_COOKIE)) {
+        _.defer(() => {
+            onboardingModal.activate({
+                params: {
+                    hookClose() {
+                        $cookies.put(ONBOARD_MODAL_COOKIE, 'true');
+                    }
+                }
+            });
+        }, 1000);
+    }
 
     $scope.idDefined = () => $state.params.id && $state.params.id.length > 0;
     $scope.isMobile = () => AppModel.is('mobile');
