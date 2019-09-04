@@ -8,7 +8,7 @@ import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS } from 'proton-shared/lib
 import CurrencySelector from './CurrencySelector';
 import CycleSelector from './CycleSelector';
 
-const { MONTHLY, YEARLY } = CYCLE;
+const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 const { PLUS, PROFESSIONAL, VISIONARY } = PLANS;
 
 const PLAN_NUMBERS = {
@@ -59,6 +59,14 @@ const PlansTable = ({
         );
     };
 
+    const addCycleTooltip = (comp) => {
+        if (cycle === TWO_YEARS) {
+            return comp;
+        }
+
+        return <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>{comp}</Tooltip>;
+    };
+
     return (
         <table className="pm-plans-table pm-table--highlight noborder" data-plan-number={PLAN_NUMBERS[planName]}>
             <thead>
@@ -81,7 +89,7 @@ const PlansTable = ({
             <tbody>
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>
+                        {addCycleTooltip(
                             <div className="flex flex-column">
                                 <div className="mb0-5">
                                     <CurrencySelector currency={currency} onSelect={updateCurrency} />
@@ -90,7 +98,7 @@ const PlansTable = ({
                                     <CycleSelector cycle={cycle} onSelect={updateCycle} />
                                 </div>
                             </div>
-                        </Tooltip>
+                        )}
                     </th>
                     <td className="bg-global-light aligncenter">FREE</td>
                     <td className="bg-global-light aligncenter">{getPrice('plus')}</td>
