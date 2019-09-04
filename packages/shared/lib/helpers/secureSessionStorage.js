@@ -86,6 +86,15 @@ const saveSessionStorage = (keys = [], data) => {
     }, {});
 };
 
+const hasSessionStorage = () => {
+    // Wrap in try-catch to avoid throwing SecurityError on safari when storage is disabled.
+    try {
+        return !!window.sessionStorage;
+    } catch (e) {
+        return false;
+    }
+};
+
 /**
  * TODO: Replace this with one key when the other apps have been updated.
  * @param {Array} keys
@@ -167,6 +176,10 @@ export const separateParts = (data) =>
  * @param {Object} data
  */
 export const save = (keys, data) => {
+    if (!hasSessionStorage()) {
+        return;
+    }
+
     const { share1, share2 } = separateParts(data);
 
     window.name = serialize(share1);
@@ -179,6 +192,10 @@ export const save = (keys, data) => {
  * @return {Object}
  */
 export const load = (keys) => {
+    if (!hasSessionStorage()) {
+        return {};
+    }
+
     const nameStorage = deserialize(window.name);
     window.name = '';
 
