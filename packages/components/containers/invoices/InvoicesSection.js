@@ -36,7 +36,11 @@ const InvoicesSection = () => {
     const [{ isManagedByMozilla } = {}] = useSubscription();
     const { createModal } = useModals();
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
-    const handleOwner = (own = USER) => () => setOwner(own);
+
+    const handleOwner = (own = USER) => () => {
+        setOwner(own);
+        onSelect(1);
+    };
 
     const query = () =>
         queryInvoices({
