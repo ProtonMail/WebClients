@@ -23,11 +23,9 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
             event.preventDefault();
             return;
         }
-        // 1 CHF to allow card authorizations
+
         const { Payment } = await handlePaymentToken({
             params: {
-                Amount: 100,
-                Currency: 'CHF',
                 Payment: {
                     Type: PAYMENT_METHOD_TYPES.CARD,
                     Details: toDetails(card)
