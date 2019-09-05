@@ -57,11 +57,12 @@ const EnableTwoFactorModal = (props) => {
 
         const generatedSharedSecret = generateSharedSecret();
         const primaryAddress = addresses.find(({ Keys = [] }) => Keys.length > 0);
-        const identifier = (primaryAddress && primaryAddress.Email) || `${user.Name}@protonmail`;
+        const identifier = (primaryAddress && primaryAddress.Email) || user.Name;
 
         setTotpData({
             uri: getUri({
                 identifier,
+                issuer: 'Proton',
                 sharedSecret: generatedSharedSecret,
                 period: PERIOD,
                 digits: DIGITS,
