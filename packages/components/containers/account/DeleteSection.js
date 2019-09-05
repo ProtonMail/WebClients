@@ -53,8 +53,11 @@ const DeleteSection = () => {
         <>
             {subTitle}
             <Alert type="error">
-                {c('Info')
-                    .t`Deleting your account will permanently delete your emails, and you will lose your email address.`}
+                {addresses.length
+                    ? c('Info')
+                          .t`Deleting your account will permanently delete your emails, and you will lose your email address.`
+                    : c('Info')
+                          .t`Deleting your account will permanently delete all data associated with it and it cannot be recovered. You will no longer be able to use the same username should you decide to create a new account.`}
             </Alert>
             <ErrorButton id="deleteButton" onClick={() => createModal(<DeleteAccountModal />)}>
                 {c('Action').t`Delete your account`}
