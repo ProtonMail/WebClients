@@ -1,7 +1,7 @@
 import { PLAN_SERVICES, PLAN_TYPES } from 'proton-shared/lib/constants';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { c, msgid } from 'ttag';
-import { isEquivalent } from 'proton-shared/lib/helpers/object';
+import { isEquivalent, pick } from 'proton-shared/lib/helpers/object';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL, VPN } = PLAN_SERVICES;
@@ -24,6 +24,14 @@ const I18N = {
         return c('Option').ngettext(msgid`1 VPN connection`, `${value} VPN connections`, value);
     }
 };
+
+/**
+ * Check if a plans map contains at least b plans map
+ * @param {Object} a plans map
+ * @param {Object} b plans map
+ * @returns {Boolean}
+ */
+const containsSamePlans = (a, b) => isEquivalent(pick(a, Object.keys(b)), b);
 
 /**
  * Build plansMap from current subscription and user demand
@@ -53,7 +61,7 @@ export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
 
     const currentPlansMap = toPlanNames(Plans);
 
-    if (isEquivalent(plansMap, { vpnplus: 1 }) || isEquivalent(plansMap, { vpnbasic: 1 })) {
+    if (containsSamePlans(plansMap, { vpnplus: 1 }) || containsSamePlans(plansMap, { vpnbasic: 1 })) {
         return {
             ...plansMap,
             plus: currentPlansMap.plus,
@@ -61,7 +69,7 @@ export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
         };
     }
 
-    if (isEquivalent(plansMap, { vpnplus: 1, plus: 1 })) {
+    if (containsSamePlans(plansMap, { vpnplus: 1, plus: 1 })) {
         return {
             ...plansMap,
             ['1domain']: currentPlansMap['1domain'],
@@ -71,7 +79,7 @@ export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
         };
     }
 
-    if (isEquivalent(plansMap, { vpnplus: 1, professional: 1 })) {
+    if (containsSamePlans(plansMap, { vpnplus: 1, professional: 1 })) {
         return {
             ...plansMap,
             ['1domain']: currentPlansMap['1domain'] > 1 ? currentPlansMap['1domain'] : undefined, // pro starts with 2 custom domain
