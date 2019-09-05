@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Block, Input, Select } from 'react-components';
+import { Block, Input, Select, ErrorZone } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
 import { getFullList } from '../../helpers/countries';
@@ -43,11 +43,18 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                 />
             </Block>
             <div className="flex-autogrid">
-                <div className="flex-autogrid-item">
-                    <Select value={card.month} onChange={handleChange('month')} options={months} disabled={loading} />
-                </div>
-                <div className="flex-autogrid-item">
-                    <Select value={card.year} onChange={handleChange('year')} options={years} disabled={loading} />
+                <div className="flex-autogrid-item ">
+                    <div className="flex flex-nowrap">
+                        <Select
+                            value={card.month}
+                            className="mr1"
+                            onChange={handleChange('month')}
+                            options={months}
+                            disabled={loading}
+                        />
+                        <Select value={card.year} onChange={handleChange('year')} options={years} disabled={loading} />
+                    </div>
+                    {errors.month ? <ErrorZone>{errors.month}</ErrorZone> : null}
                 </div>
                 <div className="flex-autogrid-item">
                     <Input
