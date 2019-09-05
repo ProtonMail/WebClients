@@ -9,8 +9,8 @@ const GiftCodeInput = ({ value, ...rest }) => {
     const error = isValid(value) ? undefined : c('Error').t`Invalid gift code`;
     return (
         <Input
-            maxlength={GIFT_CODE_LENGTH}
-            minlength={GIFT_CODE_LENGTH}
+            maxLength={GIFT_CODE_LENGTH}
+            minLength={GIFT_CODE_LENGTH}
             placeholder="AAAA-BBBB-CCCC-DDDD"
             error={error}
             {...rest}
