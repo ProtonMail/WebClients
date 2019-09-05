@@ -70,7 +70,6 @@ function iframeVerifWizard(dispatchers, User, $q) {
                 action((iframe) => {
                     iframe.setAttribute('data-is-loading', data.isLoading);
                     iframe.setAttribute('data-has-error', data.isError);
-                    iframe.setAttribute('data-has-suggestions', !!data.suggestions.length);
                     iframe.setAttribute('data-is-available', data.isAvailable);
                 });
             }
@@ -195,6 +194,10 @@ function iframeVerifWizard(dispatchers, User, $q) {
             CACHE_REQUEST.request = params.Name;
             CACHE_REQUEST.deferred = $q.defer();
 
+            if (!params.Name) {
+                return { data: {}, success: false };
+            }
+
             User.available({ params, noNotify: true, timeout: CACHE_REQUEST.deferred.promise })
                 .then(({ data }) => ({ data, success: true }))
                 .catch((e) => {
@@ -215,7 +218,7 @@ function iframeVerifWizard(dispatchers, User, $q) {
                     }
 
                     // Send this message to all iframes to trigger crunch data
-                    data &&
+                    if (data) {
                         list.forEach(
                             postMessage(
                                 {
@@ -226,6 +229,10 @@ function iframeVerifWizard(dispatchers, User, $q) {
                                 name
                             )
                         );
+
+                        // Inform the signup about the state, we can try to signup
+                        dispatcher.signup('iframe.message.valid', data);
+                    }
                 });
         }
 
