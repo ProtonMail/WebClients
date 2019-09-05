@@ -163,6 +163,7 @@ const OpenVPNConfigurationSection = () => {
                             </Alert>
                         )}
                         <ConfigsTable
+                            category={CATEGORY.SECURE_CORE}
                             isUpgradeRequired={isUpgradeRequiredForSecureCore}
                             platform={platform}
                             protocol={protocol}
@@ -183,6 +184,7 @@ const OpenVPNConfigurationSection = () => {
                                 .t`ProtonVPN Basic, Plus or Visionary required for Country level connection.`}</Alert>
                         )}
                         <ConfigsTable
+                            category={CATEGORY.COUNTRY}
                             isUpgradeRequired={isUpgradeRequiredForCountries}
                             platform={platform}
                             protocol={protocol}
@@ -200,11 +202,11 @@ const OpenVPNConfigurationSection = () => {
                 )}
                 {isUpgradeRequiredForDownloadAll ? (
                     <Tooltip title={c('Info').t`Plan upgrade required`}>
-                        <Button loading={vpnLoading} disabled>{c('Action').t`Download All Configurations`}</Button>
+                        <Button loading={vpnLoading} disabled>{c('Action').t`Download all configurations`}</Button>
                     </Tooltip>
                 ) : (
                     <Button loading={vpnLoading} onClick={() => downloadAllConfigs()}>{c('Action')
-                        .t`Download All Configurations`}</Button>
+                        .t`Download all configurations`}</Button>
                 )}
             </Block>
         </>
