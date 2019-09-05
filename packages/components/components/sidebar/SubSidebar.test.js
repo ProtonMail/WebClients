@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 
 import Button from '../button/Button';
 import SubSidebar from './SubSidebar';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('SubSidebar component', () => {
     const text = 'chocolat';
@@ -12,9 +13,11 @@ describe('SubSidebar component', () => {
         location.hash = `#${list[0].id}`;
 
         const { container } = render(
-            <SubSidebar list={list}>
-                <Button>{text}</Button>
-            </SubSidebar>
+            <Router>
+                <SubSidebar list={list}>
+                    <Button>{text}</Button>
+                </SubSidebar>
+            </Router>
         );
 
         const anchors = [].slice.call(container.querySelectorAll('a'));

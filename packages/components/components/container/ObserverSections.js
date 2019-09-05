@@ -1,42 +1,73 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import 'intersection-observer';
 
-import useDebounceInput from '../input/useDebounceInput';
 import ObserverSection from './ObserverSection';
 
-const ObserverSections = ({ granularity = 20, wait = 500, children }) => {
-    // throw error if any child does not have id
+const ObserverSections = ({ children, history, location }) => {
     React.Children.forEach(children, (child) => {
         if (!child.props.id) throw new Error('All sections to be observed need an id');
     });
-
-    const [intersectionData, setIntersectionData] = useState({
-        intersectionRatios: Array(React.Children.count(children))
-            .fill(1)
-            .fill(0, 1),
-        listOfIds: React.Children.map(children, (child) => child.props.id),
-        hashToDisplay: ''
-    });
-    const debouncedHashToDisplay = useDebounceInput(intersectionData.hashToDisplay, wait);
+    const [targetID, setNewTarget] = useState();
+    const [observer, setObserver] = useState();
 
     useEffect(() => {
-        const currentURL = document.URL;
-        const newURL = /#/.test(currentURL)
-            ? currentURL.replace(/#(.*)/, debouncedHashToDisplay)
-            : currentURL + debouncedHashToDisplay;
-        history.replaceState('', '', newURL);
-        window.dispatchEvent(new HashChangeEvent('hashchange'));
-    }, [debouncedHashToDisplay]);
+        const newHash = `#${targetID}`;
+        if (!targetID || location.hash === newHash) {
+            return;
+        }
+        history.replace(newHash);
+    }, [targetID]);
 
-    return React.Children.map(children, (child, index) => {
+    useEffect(() => {
+        const map = {};
+        const keys = [];
+
+        const handleIntersect = (elements) => {
+            elements.forEach((element) => {
+                const { target, intersectionRatio } = element;
+                const id = target.dataset.targetId;
+                if (!map[id]) {
+                    keys.push(id);
+                }
+                map[id] = intersectionRatio;
+            });
+
+            const { id } = keys.reduce(
+                (cur, id) => {
+                    const otherValue = map[id];
+                    if (otherValue > cur.value) {
+                        return { value: otherValue, id };
+                    }
+                    return cur;
+                },
+                { value: map[keys[0]], id: keys[0] }
+            );
+
+            setNewTarget(id);
+        };
+
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: [0.5, 0.99]
+            /*
+                A 0.5 threshold takes care of observing changes in big sections, while the 0.99 takes care of small sections.
+                Using 0.99 instead of 1 should help in case intersectionRatio doesn't fully reach 1, which has been observed to happen
+            */
+        };
+
+        const observer = new IntersectionObserver(handleIntersect, options);
+        setObserver(observer);
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+    return React.Children.map(children, (child) => {
         return (
-            <ObserverSection
-                id={child.props.id}
-                granularity={granularity}
-                index={index}
-                setIntersectionData={setIntersectionData}
-                wait={wait}
-            >
+            <ObserverSection id={child.props.id} observer={observer}>
                 {child}
             </ObserverSection>
         );
@@ -45,8 +76,8 @@ const ObserverSections = ({ granularity = 20, wait = 500, children }) => {
 
 ObserverSections.propTypes = {
     children: PropTypes.node.isRequired,
-    granularity: PropTypes.number,
-    wait: PropTypes.number
+    history: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
 };
 
-export default ObserverSections;
+export default withRouter(ObserverSections);

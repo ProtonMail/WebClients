@@ -1,17 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
-const SubSidebar = ({ list = [], children }) => {
-    const clean = (h = '') => h.replace(/#/g, '');
-    const [hash, setHash] = useState(clean(location.hash));
-    const onHashChange = () => setHash(clean(location.hash));
+const SubSidebar = ({ list = [], children, location }) => {
+    const hash = useMemo(() => location.hash.slice(1), [location.hash]);
+
+    const handleClick = (event) => {
+        const el = document.querySelector(`#${event.currentTarget.dataset.targetId}`);
+        // If the element was found, no need to set the hash since the intersection observer will do it
+        if (el) {
+            event.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
     useEffect(() => {
-        window.addEventListener('hashchange', onHashChange);
-        return () => {
-            window.removeEventListener('hashchange', onHashChange);
-        };
+        if (!location.hash) {
+            return;
+        }
+        /**
+         * Purpose is to scroll into view on first page load.
+         * It relies on the fact that when clicking a link, no hash is set.
+         * This has some caveats because if sections are dynamic they can grow / shrink
+         * and thus go to the wrong section.
+         */
+        const el = document.querySelector(location.hash);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }, []);
 
     return (
@@ -26,6 +43,8 @@ const SubSidebar = ({ list = [], children }) => {
                                 <a
                                     href={`${location.pathname}#${id}`}
                                     className="subnav-link"
+                                    data-target-id={id}
+                                    onClick={handleClick}
                                     disabled={isCurrent}
                                     aria-current={isCurrent}
                                 >
@@ -43,7 +62,8 @@ const SubSidebar = ({ list = [], children }) => {
 
 SubSidebar.propTypes = {
     list: PropTypes.array,
-    children: PropTypes.node
+    children: PropTypes.node,
+    location: PropTypes.object.isRequired
 };
 
-export default SubSidebar;
+export default withRouter(SubSidebar);
