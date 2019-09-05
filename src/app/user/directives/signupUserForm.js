@@ -59,7 +59,7 @@ function signupUserForm(confirmModal, dispatchers, gettextCatalog, translator, i
                 };
             };
 
-            const onSubmit = ({ user = {}, data }) => {
+            const onSubmit = ({ user = {}, data } = {}) => {
                 if (!user.username) {
                     return notification.error(I18N.ERROR_NO_USERNAME);
                 }
@@ -94,11 +94,18 @@ function signupUserForm(confirmModal, dispatchers, gettextCatalog, translator, i
                 });
             };
 
+            let cache;
             on('signup', (e, { type, data }) => {
                 if (type === 'iframe.message') {
-                    scope.$applyAsync(() => {
-                        onSubmit(data);
-                    });
+                    cache = data;
+                }
+
+                if (type === 'iframe.message.valid') {
+                    // cache is always up to date as iframe.message comes BEFORE this event
+                    data.success &&
+                        scope.$applyAsync(() => {
+                            onSubmit(cache);
+                        });
                 }
             });
 
