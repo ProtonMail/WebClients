@@ -11,6 +11,7 @@ import {
     useNotifications
 } from 'react-components';
 import { deletePaymentMethod, orderPaymentMethods } from 'proton-shared/lib/api/payments';
+import { isExpired } from 'proton-shared/lib/helpers/card';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
 const toCard = ({ Details }) => {
@@ -52,10 +53,11 @@ const PaymentMethodActions = ({ method, onChange, methods, index }) => {
             text: c('Action').t`Edit`,
             onClick: () => createModal(<EditCardModal card={card} onChange={onChange} />)
         },
-        index > 0 && {
-            text: c('Action').t`Mark as default`,
-            onClick: markAsDefault
-        },
+        index > 0 &&
+            !isExpired(method.Details) && {
+                text: c('Action').t`Mark as default`,
+                onClick: markAsDefault
+            },
         {
             text: c('Action').t`Delete`,
             onClick: () => {
