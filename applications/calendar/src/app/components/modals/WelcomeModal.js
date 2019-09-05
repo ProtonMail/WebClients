@@ -5,6 +5,7 @@ import {
     Alert,
     FormModal,
     Icon,
+    Loader,
     useLoading,
     useEventManager,
     useApi,
@@ -14,11 +15,60 @@ import {
 } from 'react-components';
 import { createCalendar } from 'proton-shared/lib/api/calendars';
 import calendarSvg from 'design-system/assets/img/pm-images/calendar.svg';
+import betaSvg from 'design-system/assets/img/pm-images/beta.svg';
 import { redirectTo } from 'proton-shared/lib/helpers/browser';
+import { wait } from 'proton-shared/lib/helpers/promise';
 
 import { setupCalendarKey } from '../../helpers/calendarModal';
 import { DEFAULT_CALENDAR } from '../../constants';
 import CalendarModal from './calendar/CalendarModal';
+
+const WelcomeContent = ({ loading, isFree }) => {
+    if (isFree) {
+        return (
+            <>
+                <div className="w50 center">
+                    <img src={betaSvg} alt="Beta" />
+                    <p>{c('Info')
+                        .t`ProtonCalendar is currently in Beta and is only available to paid users of ProtonMail.`}</p>
+                </div>
+                <Alert>{c('Info')
+                    .t`If you only would like to participate in our Beta program today, consider upgrading to a paid plan. ProtonCalendar will be available to free users upon launch.`}</Alert>
+            </>
+        );
+    }
+
+    if (loading) {
+        return (
+            <>
+                <Alert>{c('Info').t`Give us a moment while we prepare your calendar.`}</Alert>
+                <div className="w50 center">
+                    <Loader />
+                    <p>{c('Info').t`Creating your calendar...`}</p>
+                </div>
+            </>
+        );
+    }
+
+    const supportIcon = <Icon name="support1" />;
+
+    return (
+        <>
+            <Alert>{c('Info')
+                .t`Your new calendar is now ready. All events in your calendar are encrypted and inaccessible to anybody other than you.`}</Alert>
+            <div className="w50 center">
+                <img src={calendarSvg} alt="Calendar" />
+            </div>
+            <Alert>{c('Info')
+                .jt`If you encounter a problem, you can reach our support team by clicking the ${supportIcon} button.`}</Alert>
+        </>
+    );
+};
+
+WelcomeContent.propTypes = {
+    loading: PropTypes.bool,
+    isFree: PropTypes.bool
+};
 
 const WelcomeModal = ({ user, addresses, ...rest }) => {
     const { isFree, isPaid } = user;
@@ -30,8 +80,6 @@ const WelcomeModal = ({ user, addresses, ...rest }) => {
     const [addressesKeysMap, loadingAddressKeys] = useAddressesKeys(user, addresses, userKeysList);
     const [loading, withLoading] = useLoading();
     const title = loading ? c('Title').t`Preparing your calendar` : c('Title').t`Welcome to ProtonCalendar!`;
-    const supportIcon = <Icon name="support1" />;
-
     const handleStart = () => rest.onClose();
 
     const handleCustomize = () => {
@@ -73,7 +121,7 @@ const WelcomeModal = ({ user, addresses, ...rest }) => {
 
     useEffect(() => {
         if (isPaid && !loadingAddressKeys && addressesKeysMap) {
-            withLoading(setup());
+            withLoading(Promise.all([setup(), wait(2000)])); // We are waiting intentionaly 2 seconds to let the user see the loading state
         }
     }, [addresses, addressesKeysMap]);
 
@@ -81,28 +129,14 @@ const WelcomeModal = ({ user, addresses, ...rest }) => {
         <FormModal
             loading={loading || loadingAddressKeys}
             title={title}
-            hasClose={isPaid}
+            hasClose={false}
             close={c('Action').t`Customize calendar`}
             submit={isPaid ? c('Action').t`Continue` : c('Action').t`Back to ProtonMail`}
             onSubmit={handleStart}
             onClose={handleCustomize}
             {...rest}
         >
-            <div className="w50 center">
-                <img src={calendarSvg} alt={c('Alt image').t`Calendar`} />
-            </div>
-            {isFree ? (
-                <Alert>{c('Info')
-                    .t`ProtonCalendar is currently in Beta and is only available to paid users of ProtonMail. If you would like to participate in our Beta program today, consider upgrading to a paid plan. ProtonCalendar will be available to free users upon launch.`}</Alert>
-            ) : null}
-            {isPaid ? (
-                <Alert>
-                    <div className="mb1">{c('Info')
-                        .t`Your new calendar is now ready. All events in your calendar are encrypted and inaccessible to anybody other than you or the people you invite.`}</div>
-                    <div>{c('Info')
-                        .jt`If you encounter a problem, you can reach our support team by clicking the ${supportIcon} button.`}</div>
-                </Alert>
-            ) : null}
+            <WelcomeContent isFree={isFree} loading={loading || loadingAddressKeys} />
         </FormModal>
     );
 };
