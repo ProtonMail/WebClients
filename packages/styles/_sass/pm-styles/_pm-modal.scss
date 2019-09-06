@@ -169,7 +169,7 @@ $modal-smaller-width: 28em !default;
 .pm-modalFooter {
   padding: rem(15) rem(30) rem(30);
   flex: 0;
-  [class*="pm-button-"] { // only for Safari the ugly
+  [class*="pm-button"] { // only for Safari the ugly
     min-height: 3.4rem;
   }
 } 
