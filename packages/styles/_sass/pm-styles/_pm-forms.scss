@@ -348,6 +348,7 @@ $width: 5.5em !default;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: 0;
+    min-width: 0;
     &:focus + .password-revealer {
       background-color: $white;
       box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, .06),4px -4px 8px 0 rgba(0, 0, 0, .06);
