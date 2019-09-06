@@ -23,6 +23,9 @@ input::-ms-reveal {
   width: 26rem;
   @extend .mw100;
   @extend .inbl;
+  &.auto {
+    @extend .auto;
+  }
 }
 
 .pm-field {
