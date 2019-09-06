@@ -18,6 +18,10 @@
   margin-right: 0;
 }
 
+.plan-card-image {
+  height: 7rem;
+}
+
 .plan-price {
   min-height: 8em;
 }
@@ -46,5 +50,15 @@
     background: url("#{$path-images}sprite-for-css-only.svg#css-minus")
       no-repeat;
     background-position: left 0.25em;
+  }
+}
+
+
+@include respond-to( $breakpoint-medium) { 
+  .plan-card-mostPopular {
+    position: absolute;
+    top: calc(-7rem - 2.5em); // height of image container + some text
+    left: 0;
+    right: 0;
   }
 }
