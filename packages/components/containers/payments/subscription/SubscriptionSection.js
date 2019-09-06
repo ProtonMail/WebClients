@@ -43,7 +43,6 @@ const SubscriptionSection = ({ permission }) => {
             MaxAddresses,
             UsedMembers,
             MaxMembers,
-            UsedVPN,
             MaxVPN
         } = {},
         loadingOrganization
@@ -167,11 +166,9 @@ const SubscriptionSection = ({ permission }) => {
                                 <div className="flex-autogrid onmobile-flex-column w100 mb1">
                                     <div className="flex-autogrid-item pl1">{c('Label').t`VPN connections`}</div>
                                     <div className="flex-autogrid-item">
-                                        <strong>{`${UsedVPN}/${MaxVPN}`}</strong>
+                                        <strong>{`${MaxVPN}`}</strong>
                                     </div>
-                                    <div className="flex-autogrid-item">
-                                        <Progress value={(UsedVPN * 100) / MaxVPN} />
-                                    </div>
+                                    <div className="flex-autogrid-item" />
                                     <div className="flex-autogrid-item alignright" />
                                 </div>
                             ) : null}
@@ -198,11 +195,9 @@ const SubscriptionSection = ({ permission }) => {
                         <div className="flex-autogrid onmobile-flex-column w100 mb1">
                             <div className="flex-autogrid-item pl1">{c('Label').t`VPN connections`}</div>
                             <div className="flex-autogrid-item">
-                                <strong>{`${UsedVPN}/${MaxVPN}`}</strong>
+                                <strong>{`${MaxVPN}`}</strong>
                             </div>
-                            <div className="flex-autogrid-item">
-                                <Progress value={(UsedVPN * 100) / MaxVPN} />
-                            </div>
+                            <div className="flex-autogrid-item" />
                             <div className="flex-autogrid-item alignright" />
                         </div>
                     ) : null}
