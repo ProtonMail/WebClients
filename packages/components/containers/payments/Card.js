@@ -62,7 +62,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                         placeholder={c('Placeholder').t`CVV`}
                         error={errors.cvc}
                         disabled={loading}
-                        title={c('Placeholder').t`Security code`}
+                        title={c('Title').t`Security code`}
                         required
                     />
                 </div>
@@ -72,7 +72,8 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                     <Input
                         value={card.zip}
                         onChange={handleChange('zip')}
-                        placeholder={c('Placeholder').t`ZIP/Postal code`}
+                        placeholder={card.country === 'US' ? c('Placeholder').t`ZIP` : c('Placeholder').t`Postal code`}
+                        title={c('Title').t`ZIP / postal code`}
                         error={errors.zip}
                         disabled={loading}
                         minLength={3}
