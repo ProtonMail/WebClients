@@ -91,7 +91,7 @@ const OpenVPNConfigurationSection = () => {
     const isUpgradeRequiredForSecureCore = () => !userVPN || !hasPaidVpn || isBasicVPN;
     const isUpgradeRequiredForCountries = () => !userVPN || !hasPaidVpn;
     const isUpgradeRequiredForDownloadAll =
-        !userVPN || !hasPaidVpn || (isBasicVPN && category === CATEGORY.SECURE_CORE);
+        !userVPN || (!hasPaidVpn && category !== CATEGORY.SERVER) || (isBasicVPN && category === CATEGORY.SECURE_CORE);
 
     return (
         <>
