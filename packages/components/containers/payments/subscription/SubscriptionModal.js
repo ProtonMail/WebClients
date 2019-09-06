@@ -44,6 +44,7 @@ const SubscriptionModal = ({
     currency = DEFAULT_CURRENCY,
     coupon = '',
     plansMap = {},
+    step: initialStep = 0,
     ...rest
 }) => {
     const { APP_NAME } = useConfig();
@@ -58,7 +59,7 @@ const SubscriptionModal = ({
     const [plans] = usePlans();
     const [model, setModel] = useState({ cycle, currency, coupon, plansMap });
     const { call } = useEventManager();
-    const { step, next, previous } = useStep(0);
+    const { step, next, previous } = useStep(initialStep);
 
     const features = [
         ...(hasPaidMail
@@ -290,6 +291,7 @@ const SubscriptionModal = ({
 
 SubscriptionModal.propTypes = {
     onClose: PropTypes.func,
+    step: PropTypes.number.isRequired,
     cycle: PropTypes.number,
     coupon: PropTypes.string,
     currency: PropTypes.string,
