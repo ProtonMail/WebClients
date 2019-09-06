@@ -21,6 +21,7 @@ const AccountForm = ({ onSubmit }) => {
     const api = useApi();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [email, setEmail] = useState('');
     const [usernameError, setUsernameError] = useState();
     const [loading, withLoading] = useLoading();
@@ -33,6 +34,7 @@ const AccountForm = ({ onSubmit }) => {
     };
 
     const handleChangePassword = ({ target }) => setPassword(target.value);
+    const handleChangeConfirmPassword = ({ target }) => setConfirmPassword(target.value);
     const handleChangeEmail = ({ target }) => setEmail(target.value);
 
     const handleSubmit = async (e) => {
@@ -98,8 +100,12 @@ const AccountForm = ({ onSubmit }) => {
                     </div>
                     <PasswordInput
                         id="passwordConfirmation"
-                        name="passwordConfirmation"
+                        required
+                        value={confirmPassword}
+                        onChange={handleChangeConfirmPassword}
+                        error={password !== confirmPassword && c('Error').t`Passwords do not match`}
                         pattern={password}
+                        name="passwordConfirmation"
                         placeholder={c('Placeholder').t`Confirm password`}
                     />
                 </Field>
