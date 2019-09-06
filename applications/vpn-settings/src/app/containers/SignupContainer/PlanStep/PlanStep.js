@@ -28,9 +28,9 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
 
     return (
         <>
-            <Row className="flex-items-vcenter border-top pt3">
+            <Row className="flex-items-center border-top pt3 mb2">
                 <div className="flex-item-fluid">
-                    <SubTitle>{c('Title').t`Select a plan`}</SubTitle>
+                    <SubTitle className="m0">{c('Title').t`Select a plan`}</SubTitle>
                 </div>
                 <div className="mlauto">
                     <Field className="mr1 auto">

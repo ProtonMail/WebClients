@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Loader, Row, Button, Title } from 'react-components';
+import { Loader, Button, Title } from 'react-components';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
 import useSignup from './useSignup';
@@ -119,7 +119,7 @@ const SignupContainer = ({ history, onLogin }) => {
     return (
         <main className="flex flex-item-fluid main-area">
             <div className="center p2 container-plans-signup">
-                <Row>
+                <div className="flex flex-nowrap mb1">
                     <div className="flex-item-fluid">
                         <Button onClick={handleBackClick}>
                             {prevStep ? c('Action').t`Back` : c('Action').t`Homepage`}
@@ -131,7 +131,7 @@ const SignupContainer = ({ history, onLogin }) => {
                     <div className="flex-item-fluid alignright">
                         <SupportDropdown content={c('Action').t`Need help`} />
                     </div>
-                </Row>
+                </div>
                 {isLoading ? (
                     <Loader />
                 ) : (

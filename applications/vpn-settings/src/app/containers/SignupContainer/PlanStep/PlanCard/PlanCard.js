@@ -27,13 +27,11 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
                 isActive && 'plan-card--active'
             ])}
         >
-            <div style={{ height: 70 }} className="mb1 flex flex-items-end">
-                {plan.image}
-            </div>
-            <div className="flex flex-items-center">
+            <div className="mb1 plan-card-image flex flex-items-end">{plan.image}</div>
+            <div className="flex flex-items-center relative">
                 <strong className="biggest mt0 mb0">{plan.title}</strong>
                 {plan.isBest && (
-                    <div className="mlauto">
+                    <div className="mlauto plan-card-mostPopular">
                         <Badge>{c('Plan info').t`Most popular`}</Badge>
                     </div>
                 )}

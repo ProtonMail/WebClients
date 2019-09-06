@@ -9,13 +9,16 @@ const SupportDropdown = ({ className, content = c('Link').t`Support` }) => {
         <SimpleDropdown className={className} content={content}>
             <DropdownMenu>
                 <div className="inbl w100 pt0-5 pb0-5 ellipsis">
-                    <Href url="https://protonvpn.com/support/">
+                    <Href className="w100 flex flex-items-center pt0-5 pb0-5" url="https://protonvpn.com/support/">
                         <Icon className="mr0-5 fill-currentColor" name="what-is-this" />
                         {c('Action').t`I have a question`}
                     </Href>
                 </div>
                 <div className="inbl w100 pt0-5 pb0-5 ellipsis">
-                    <LinkButton onClick={() => createModal(<BugModal />)}>
+                    <LinkButton
+                        className="w100 flex flex-items-center pt0-5 pb0-5"
+                        onClick={() => createModal(<BugModal />)}
+                    >
                         <Icon className="mr0-5 fill-currentColor" name="report-bug" />
                         {c('Action').t`Report bug`}
                     </LinkButton>
