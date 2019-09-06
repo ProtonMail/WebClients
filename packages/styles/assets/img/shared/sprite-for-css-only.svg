@@ -5,6 +5,7 @@
 use:target { display: block; }
 .white { fill: #fff; }
 .black { fill: #000; }
+.success { fill: #5db039; }
 .rotated-right,
 .rotated-left,
 .rotated-180,
@@ -48,7 +49,6 @@ opacity: .3;
   <symbol id="symbol-on">
   <polygon points="6.68 14.28 1.14 8.74 1.84 8.03 6.53 12.72 14.03 1.8 14.85 2.37 6.68 14.28" />
   </symbol>
-
   
   <use id="css-search" xlink:href="#symbol-search" class="black" />
   <use id="css-search-rtl" xlink:href="#symbol-search" class="black mirror" />
@@ -62,5 +62,7 @@ opacity: .3;
   <use id="css-lesser" xlink:href="#symbol-caret" class="black rotated-left" />
   <use id="css-dash" xlink:href="#symbol-dash" class="black low-opacity" />
   <use id="css-on" xlink:href="#symbol-on" class="white" />
+  <use id="css-check" xlink:href="#symbol-on" class="success" />
+  <use id="css-minus" xlink:href="#symbol-dash" class="black" />
 
 </svg>

@@ -23,6 +23,9 @@
 .border-bottom--dashed {
   border-bottom-style: dashed;
 }
+.border-top {
+  border-top: 1px solid $pm-global-border;
+}
 
 .shadow-container {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
@@ -36,7 +39,7 @@
 
 $block-info-border-width: 3px !default;
 [class*="block-info"] {
-  padding: .5em 1.2em;
+  padding: 0.5em 1.2em;
   color: $pm-global-grey;
   background-color: $pm-global-light;
   border-left-width: $block-info-border-width;
@@ -65,7 +68,7 @@ $block-info-border-width: 3px !default;
 }
 
 [class*="block-info-standard"] {
-  padding: .2em 1.2em;
+  padding: 0.2em 1.2em;
   background-color: transparent;
 }
 .block-info-standard {
@@ -82,7 +85,6 @@ $block-info-border-width: 3px !default;
 }
 // other colors might be added later
 
-
 /**
  * details/summary
  */
@@ -97,13 +99,14 @@ details {
     border-top: 1px solid $pm-global-border;
   }
   &[open] > summary {
-    background: url(#{$path-images}sprite-for-css-only.svg#css-caret-close) 0 50% no-repeat;
+    background: url(#{$path-images}sprite-for-css-only.svg#css-caret-close) 0
+      50% no-repeat;
   }
-
 }
 summary {
   padding: 1em 0 1em 2rem;
-  background: url(#{$path-images}sprite-for-css-only.svg#css-caret) 0 50% no-repeat;
+  background: url(#{$path-images}sprite-for-css-only.svg#css-caret) 0 50%
+    no-repeat;
   list-style: none;
   border: 0;
   cursor: pointer;

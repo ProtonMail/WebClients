@@ -1,0 +1,50 @@
+.container-plans-signup {
+  max-width: 150rem;
+}
+
+.container-plans-signup span[aria-describedby] {
+  position: relative;
+  z-index: 5;
+}
+
+.plan-card {
+  margin-right: 2em;
+}
+.plan-card:nth-of-type(3) {
+  margin-right: 0;
+}
+.plan-card:last-of-type {
+  margin-left: 2em;
+  margin-right: 0;
+}
+
+.plan-price {
+  min-height: 8em;
+}
+
+.plan-card:hover,
+.plan-card--active {
+  .border-top {
+    border-color: $pm-primary;
+  }
+}
+
+.selected-plan {
+  width: 285px;
+}
+
+.selected-plan-list {
+  li {
+    background: url("#{$path-images}sprite-for-css-only.svg#css-check")
+      no-repeat;
+    background-size: 1em;
+    background-position: left center;
+    padding-left: 2em;
+  }
+
+  &.selected-plan-list--negative li {
+    background: url("#{$path-images}sprite-for-css-only.svg#css-minus")
+      no-repeat;
+    background-position: left 0.25em;
+  }
+}
