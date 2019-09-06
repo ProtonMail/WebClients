@@ -8,10 +8,10 @@ const OpenVPNAccountSection = () => {
     const { createModal } = useModals();
     const { result = {}, fetch: fetchUserVPN } = useUserVPN();
     const { VPN = {} } = result;
-    const { username = '', password = '' } = VPN;
+    const { Name = '', Password = '' } = VPN;
 
     const handleEditCredentials = () => {
-        createModal(<OpenVPNCredentialsModal username={username} password={password} fetchUserVPN={fetchUserVPN} />);
+        createModal(<OpenVPNCredentialsModal username={Name} password={Password} fetchUserVPN={fetchUserVPN} />);
     };
 
     return (
@@ -26,24 +26,24 @@ const OpenVPNAccountSection = () => {
                 <Label>{c('Label').t`OpenVPN / IKEv2 username`}</Label>
                 <Field>
                     <div className="pt0-5">
-                        <strong>{username}</strong>
+                        <strong>{Name}</strong>
                     </div>
                 </Field>
                 <div className="ml1 flex-item-noshrink onmobile-ml0 onmobile-mt0-5">
-                    <Copy value={username} />
+                    <Copy value={Name} />
                 </div>
             </Row>
             <Row>
                 <Label>{c('Label').t`OpenVPN / IKEv2 password`}</Label>
                 <Field>
                     <div className="mb1 pt0-5">
-                        <strong>{password}</strong>
+                        <strong>{Password}</strong>
                     </div>
-                    <PrimaryButton disabled={!username || !password} onClick={handleEditCredentials}>{c('Action')
+                    <PrimaryButton disabled={!Name || !Password} onClick={handleEditCredentials}>{c('Action')
                         .t`Edit credentials`}</PrimaryButton>
                 </Field>
                 <div className="ml1 flex-item-noshrink onmobile-ml0 onmobile-mt0-5">
-                    <Copy value={password} />
+                    <Copy value={Password} />
                 </div>
             </Row>
         </>
