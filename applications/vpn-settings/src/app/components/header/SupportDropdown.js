@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { SimpleDropdown, DropdownMenu, BugModal, Href, LinkButton, Icon, useModals } from 'react-components';
 
-const SupportDropdown = ({ className }) => {
+const SupportDropdown = ({ className, content = c('Link').t`Support` }) => {
     const { createModal } = useModals();
     return (
-        <SimpleDropdown className={className} content={c('Link').t`Support`}>
+        <SimpleDropdown className={className} content={content}>
             <DropdownMenu>
                 <div className="inbl w100 pt0-5 pb0-5 ellipsis">
                     <Href url="https://protonvpn.com/support/">
@@ -26,7 +26,8 @@ const SupportDropdown = ({ className }) => {
 };
 
 SupportDropdown.propTypes = {
-    className: PropTypes.string
+    className: PropTypes.string,
+    content: PropTypes.string
 };
 
 export default SupportDropdown;

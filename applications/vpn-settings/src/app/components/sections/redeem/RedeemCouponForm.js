@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { useApi, useConfig, PrimaryButton, Input, useLoading } from 'react-components';
 import { queryCheckVerificationCode } from 'proton-shared/lib/api/user';
-import { checkSubscription } from 'proton-shared/lib/api/payments';
 import { TOKEN_TYPES } from 'proton-shared/lib/constants';
 
 const RedeemCouponForm = ({ history }) => {
@@ -20,21 +19,12 @@ const RedeemCouponForm = ({ history }) => {
         e.preventDefault();
 
         const { Plans = [] } = await api(queryCheckVerificationCode(couponCode, TOKEN_TYPES.COUPON, CLIENT_TYPE));
-        const [{ Currency, Cycle }] = Plans;
-        const PlanIDs = Plans.reduce((acc, { ID, Quantity }) => {
-            acc[ID] = Quantity;
-            return acc;
-        }, {});
-        const response = await api(
-            checkSubscription({
-                CouponCode: couponCode,
-                Currency,
-                Cycle,
-                PlanIDs
-            })
-        );
+        const [{ Cycle, Name }] = Plans;
 
-        history.push('/signup', response);
+        history.push({
+            pathname: '/signup',
+            state: { coupon: { code: couponCode, cycle: Cycle, plan: Name } }
+        });
     };
 
     return (

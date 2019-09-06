@@ -11,6 +11,7 @@ import ForgotUsernameContainer from './containers/ForgotUsernameContainer';
 import RedeemContainer from './containers/RedeemContainer';
 import PreInviteContainer from './containers/PreInviteContainer';
 import { getBrowserLocale, loadLocale } from 'proton-shared/lib/i18n';
+import SignupContainer from './containers/SignupContainer/SignupContainer';
 
 import locales from './locales';
 
@@ -45,6 +46,11 @@ const PublicApp = ({ onLogin }) => {
                     <Route
                         path="/pre-invite/:selector/:token"
                         render={({ history, match }) => <PreInviteContainer history={history} match={match} />}
+                    />
+                    <Route
+                        exact
+                        path="/signup"
+                        render={({ history }) => <SignupContainer history={history} onLogin={onLogin} />}
                     />
                     <Route
                         path="/login"

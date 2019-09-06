@@ -32,7 +32,7 @@ const PreInviteContainer = ({ history, match }) => {
 
                 history.push({
                     pathname: '/signup',
-                    state: { selector, token }
+                    state: { invite: { selector, token } }
                 });
             })
             .catch(() => {
