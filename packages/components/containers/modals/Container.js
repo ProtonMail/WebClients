@@ -11,7 +11,7 @@ const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
             content.props.onClose && content.props.onClose();
             hideModal(id);
         });
-    }, [location]);
+    }, [location && location.pathname]);
 
     useEffect(() => {
         // Start hiding the container if the last modal wants to close
