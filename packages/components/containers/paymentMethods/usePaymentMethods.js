@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { useApi, useLoading, useAuthentication } from 'react-components';
 import { CYCLE, BLACK_FRIDAY, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 import { isIE11 } from 'proton-shared/lib/helpers/browser';
 import { isExpired } from 'proton-shared/lib/helpers/card';
+import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 
 const usePaymentMethods = ({ amount, cycle, coupon, type }) => {
     const api = useApi();

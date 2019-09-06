@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Block, Input, Select, ErrorZone } from 'react-components';
+import { Block, Input, Select, ErrorZone, TelInput } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
 import { getFullList } from '../../helpers/countries';
@@ -32,7 +32,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                 />
             </Block>
             <Block>
-                <Input
+                <TelInput
                     value={card.number}
                     onChange={handleChange('number')}
                     placeholder={c('Placeholder').t`Card number`}

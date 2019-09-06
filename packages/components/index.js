@@ -337,6 +337,7 @@ export { default as useAddressesKeys } from './hooks/useAddressesKeys';
 export { default as useOrganizationKey } from './hooks/useOrganizationKey';
 export { default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
 export { useMainArea, MainAreaContext } from './hooks/useMainArea';
+export { default as useVPNCountries } from './hooks/useVPNCountries';
 
 export { default as ErrorBoundary } from './containers/app/ErrorBoundary';
 export { default as ProtonApp } from './containers/app/ProtonApp';
