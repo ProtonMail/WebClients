@@ -89,7 +89,7 @@ const SignupContainer = ({ history, onLogin }) => {
     const handleExtendCycle = () => setModel({ ...model, cycle: CYCLE.YEARLY });
 
     const selectedPlanComponent = (
-        <div className="ml1 selected-plan">
+        <div className="ml1 onmobile-ml0 onmobile-mt2 selected-plan">
             <PlanDetails selectedPlan={selectedPlan} cycle={model.cycle} currency={model.currency} />
             <PlanUpsell
                 selectedPlan={selectedPlan}
