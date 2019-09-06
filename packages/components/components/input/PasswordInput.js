@@ -37,7 +37,7 @@ const PasswordInput = (props) => {
                     type="button"
                     onClick={toggle}
                 >
-                    <Icon name={type === 'password' ? 'read' : 'unread'} />
+                    <Icon className="mauto" name={type === 'password' ? 'read' : 'unread'} />
                 </button>
             </span>
             <ErrorZone id={uid}>{error && status.isDirty ? error : ''}</ErrorZone>
