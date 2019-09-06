@@ -114,21 +114,23 @@ const AccountForm = ({ onSubmit }) => {
                     />
                 </Label>
                 <Field>
-                    <EmailInput
-                        id="email"
-                        required
-                        value={email}
-                        onChange={handleChangeEmail}
-                        placeholder={c('Placeholder').t`user@domain.com`}
-                    />
+                    <div className="mb1">
+                        <EmailInput
+                            id="email"
+                            required
+                            value={email}
+                            onChange={handleChangeEmail}
+                            placeholder={c('Placeholder').t`user@domain.com`}
+                        />
+                    </div>
+                    <Alert>
+                        {c('Info')
+                            .jt`By clicking Create account you agree to abide by ProtonVPN's ${termsAndConditionsLink}.`}
+                    </Alert>
+
+                    <PrimaryButton loading={loading} type="submit">{c('Action').t`Create account`}</PrimaryButton>
                 </Field>
             </Row>
-
-            <Alert>
-                {c('Info').jt`By clicking Create account you agree to abide by ProtonVPN's ${termsAndConditionsLink}.`}
-            </Alert>
-
-            <PrimaryButton loading={loading} type="submit">{c('Action').t`Create account`}</PrimaryButton>
         </form>
     );
 };
