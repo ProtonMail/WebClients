@@ -125,7 +125,7 @@ const AccountForm = ({ onSubmit }) => {
                     </div>
                     <Alert>
                         {c('Info')
-                            .jt`By clicking Create account you agree to abide by ProtonVPN's ${termsAndConditionsLink}.`}
+                            .jt`By clicking Create account you agree to abide by Proton's ${termsAndConditionsLink}.`}
                     </Alert>
 
                     <PrimaryButton loading={loading} type="submit">{c('Action').t`Create account`}</PrimaryButton>
