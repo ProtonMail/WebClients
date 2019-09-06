@@ -65,6 +65,9 @@ body {
   background: $pm-global-grey;
   color: $pm-global-light;
   font-family: $font-family;
+  text-rendering: geometricPrecision; 
+  -webkit-font-smoothing: antialiased;
+  
   @if $typo-unit == 'use_em' {
      @if $root-equiv-10-px == true {
        font-size: em($base-font, 10);
