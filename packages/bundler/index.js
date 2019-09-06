@@ -231,7 +231,9 @@ async function main() {
     if (!isCI) {
         return logCommits(branch, flowType).then((data) => {
             const isDev = process.env.APP_KEY === 'Angular' && branch === 'deploy-dev';
-            /deploy-(beta|prod|old)/.test(branch) || (isDev && coucou.send(data));
+            if (isDev || /deploy-(beta|prod|old)/.test(branch)) {
+                coucou.send(data);
+            }
         });
     }
 }
