@@ -48,7 +48,7 @@ const PlansSection = () => {
         createNotification({ text: c('Success').t`You have successfully unsubscribed` });
     };
 
-    const handleSelectPlan = async (planName) => {
+    const handleSelectPlan = async (planName, step = 0) => {
         if (!planName) {
             return unsubscribe();
         }
@@ -74,7 +74,9 @@ const PlansSection = () => {
 
         const coupon = Coupon ? Coupon.Code : undefined; // Coupon can equals null
 
-        createModal(<SubscriptionModal cycle={cycle} currency={currency} coupon={coupon} plansMap={plansMap} />);
+        createModal(
+            <SubscriptionModal step={step} cycle={cycle} currency={currency} coupon={coupon} plansMap={plansMap} />
+        );
     };
 
     useEffect(() => {
@@ -110,7 +112,7 @@ const PlansSection = () => {
             {showPlans ? (
                 <div className="scroll-horizontal-if-needed pt3">
                     <PlansTable
-                        onSelect={(planName) => () => withLoading(handleSelectPlan(planName))}
+                        onSelect={(planName, step) => () => withLoading(handleSelectPlan(planName, step))}
                         loading={loading}
                         currency={currency}
                         cycle={cycle}

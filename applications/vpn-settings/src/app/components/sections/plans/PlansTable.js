@@ -327,30 +327,36 @@ const PlansTable = ({
                     <tr>
                         <th scope="row" className="pm-simple-table-row-th alignleft" />
                         <td className="aligncenter">
-                            <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect()}>{c(
-                                'Action'
-                            ).t`Update`}</SmallButton>
+                            <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect()}>
+                                {Name === 'free' ? c('Action').t`Update` : c('Action').t`Select`}
+                            </SmallButton>
                         </td>
                         <td className="aligncenter">
                             <SmallButton
                                 disabled={loading}
                                 className="pm-button--primary"
-                                onClick={onSelect(VPNBASIC)}
-                            >{c('Action').t`Update`}</SmallButton>
+                                onClick={onSelect(VPNBASIC, +!(Name === VPNBASIC))}
+                            >
+                                {Name === VPNBASIC ? c('Action').t`Update` : c('Action').t`Select`}
+                            </SmallButton>
                         </td>
                         <td className="aligncenter">
                             <SmallButton
                                 disabled={loading}
                                 className="pm-button--primary"
-                                onClick={onSelect(VPNPLUS)}
-                            >{c('Action').t`Update`}</SmallButton>
+                                onClick={onSelect(VPNPLUS, +!(Name === VPNPLUS))}
+                            >
+                                {Name === VPNPLUS ? c('Action').t`Update` : c('Action').t`Select`}
+                            </SmallButton>
                         </td>
                         <td className="aligncenter">
                             <SmallButton
                                 disabled={loading}
                                 className="pm-button--primary"
                                 onClick={onSelect(VISIONARY)}
-                            >{c('Action').t`Update`}</SmallButton>
+                            >
+                                {Name === VISIONARY ? c('Action').t`Update` : c('Action').t`Select`}
+                            </SmallButton>
                         </td>
                     </tr>
                 )}
