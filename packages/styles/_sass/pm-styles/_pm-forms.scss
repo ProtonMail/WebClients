@@ -4,6 +4,11 @@
   font-style: italic;
 }
 
+// fix "autofill state"
+input:-webkit-autofill{
+  box-shadow: 200px 200px 100px $pm-input-background inset; 
+}
+
 /* removes X in input when typing in IE/EDGE */
 input::-ms-clear {
   width: 0;
