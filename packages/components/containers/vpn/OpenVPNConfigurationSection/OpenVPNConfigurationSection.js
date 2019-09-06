@@ -111,7 +111,7 @@ const OpenVPNConfigurationSection = () => {
                     onChange={setPlatform}
                     options={[
                         { value: PLATFORM.MACOS, label: c('Option').t`MacOS` },
-                        { value: PLATFORM.LINUX, label: c('Option').t`Linux` },
+                        { value: PLATFORM.LINUX, label: c('Option').t`GNU/Linux` },
                         { value: PLATFORM.WINDOWS, label: c('Option').t`Windows` },
                         { value: PLATFORM.ANDROID, label: c('Option').t`Android` },
                         { value: PLATFORM.IOS, label: c('Option').t`iOS` },
