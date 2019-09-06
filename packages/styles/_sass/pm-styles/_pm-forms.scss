@@ -330,24 +330,45 @@ $width: 5.5em !default;
 
 
 /* Password revealer */
-.password-revealer-container > .pm-field {
-  padding-right: 2em;
+.password-revealer-container {
+  display: flex;
+  flex-wrap: nowrap; 
+
+  > .pm-field {
+    width: calc(100% - 1.5em);
+    @extend .flex-item-fluid;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    &:focus + .password-revealer {
+      background-color: $white;
+      box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, .06),4px -4px 8px 0 rgba(0, 0, 0, .06);
+    }
+  }
 }
 .password-revealer {
-  position: absolute;
-  right: .75em;
-  top: .25em;
+  border: $input-defaut-border;
+  border-left: 0;
+  background-color: $pm-input-background;
+  border-radius: 0 $global-border-radius $global-border-radius 0;
+  padding-left: .2em;
+  padding-right: .2em;
 }
 @if $rtl-option == true {
   [dir="rtl"] {
-    .password-revealer {
-      right: auto;
-      left: .75em;
-    }
     .password-revealer-container > .pm-field {
-      padding-left: 2em;
-      padding-right: em(16);
+      border-radius: 0 $global-border-radius $global-border-radius 0;
+      border-left: 0;
+      border-right: 1px solid $pm-global-border;
+      &:focus + .password-revealer {
+        box-shadow: -4px -4px 8px 0 rgba(0, 0, 0, .06),-4px 4px 8px 0 rgba(0, 0, 0, .06);
+      }
+    }
+    .password-revealer {
+      border-radius: $global-border-radius 0 0 $global-border-radius;
+      border: $input-defaut-border;
+      border-left: 1px solid $pm-global-border;
+      border-right: 0;
     }
   }
-
 }
