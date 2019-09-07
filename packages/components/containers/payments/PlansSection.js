@@ -19,6 +19,7 @@ import {
 
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
+import { getPlans } from 'proton-shared/lib/helpers/su';
 
 import SubscriptionModal from './subscription/SubscriptionModal';
 import { mergePlansMap, getCheckParams, isBundleEligible } from './subscription/helpers';
@@ -40,7 +41,10 @@ const PlansSection = () => {
     const { request: requestCheckSubscription } = useApiWithoutResult(checkSubscription);
     const { request: requestDeleteSubscription } = useApiWithoutResult(deleteSubscription);
     const bundleEligible = isBundleEligible(subscription);
-    const { CouponCode } = subscription;
+    const { CouponCode, Plans = [] } = subscription;
+    const names = getPlans(subscription)
+        .map(({ Title }) => Title)
+        .join(c('Separator, spacing is important').t` and `);
 
     const handleUnsubscribe = async () => {
         await requestDeleteSubscription();
@@ -106,10 +110,13 @@ const PlansSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Plans`}</SubTitle>
-            {bundleEligible ? (
-                <Alert learnMore="https://protonmail.com/support/knowledge-base/paid-plans/">{c('Info')
-                    .t`Get 20% bundle discount when you purchase ProtonMail and ProtonVPN together.`}</Alert>
-            ) : null}
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/paid-plans/">
+                {bundleEligible ? (
+                    <div>{c('Info')
+                        .t`Get 20% bundle discount when you purchase ProtonMail and ProtonVPN together.`}</div>
+                ) : null}
+                {Plans.length ? <div>{c('Info').t`You are currently subscribed to ${names}.`}</div> : null}
+            </Alert>
             <Button onClick={toggle}>{state ? c('Action').t`Hide plans` : c('Action').t`Show plans`}</Button>
             {state ? (
                 <>
