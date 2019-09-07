@@ -1,6 +1,6 @@
 import { PLAN_TYPES, PLAN_SERVICES } from '../constants';
 
-const { PLAN } = PLAN_TYPES;
+const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL } = PLAN_SERVICES;
 
 /**
@@ -12,6 +12,9 @@ const { MAIL } = PLAN_SERVICES;
 export const getPlan = ({ Plans = [] } = {}, service = MAIL) => {
     return Plans.find(({ Services, Type }) => Type === PLAN && Services & service) || {};
 };
+
+export const getPlans = ({ Plans = [] } = {}) => Plans.filter(({ Type }) => Type === PLAN);
+export const getAddons = ({ Plans = [] } = {}) => Plans.filter(({ Type }) => Type === ADDON);
 
 /**
  *
