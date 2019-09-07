@@ -332,20 +332,12 @@ const PlansTable = ({
                             </SmallButton>
                         </td>
                         <td className="aligncenter">
-                            <SmallButton
-                                disabled={loading}
-                                className="pm-button--primary"
-                                onClick={onSelect(VPNBASIC, +!(Name === VPNBASIC))}
-                            >
+                            <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect(VPNBASIC)}>
                                 {Name === VPNBASIC ? c('Action').t`Update` : c('Action').t`Select`}
                             </SmallButton>
                         </td>
                         <td className="aligncenter">
-                            <SmallButton
-                                disabled={loading}
-                                className="pm-button--primary"
-                                onClick={onSelect(VPNPLUS, +!(Name === VPNPLUS))}
-                            >
+                            <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect(VPNPLUS)}>
                                 {Name === VPNPLUS ? c('Action').t`Update` : c('Action').t`Select`}
                             </SmallButton>
                         </td>
