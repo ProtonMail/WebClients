@@ -19,7 +19,7 @@ import {
 
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
-import { getPlans } from 'proton-shared/lib/helpers/su';
+import { getPlans } from 'proton-shared/lib/helpers/subscription';
 
 import SubscriptionModal from './subscription/SubscriptionModal';
 import { mergePlansMap, getCheckParams, isBundleEligible } from './subscription/helpers';
