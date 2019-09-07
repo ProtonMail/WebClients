@@ -26,6 +26,7 @@ import {
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, APPS } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { toPrice } from 'proton-shared/lib/helpers/string';
+import { getPlans } from 'proton-shared/lib/helpers/subscription';
 
 import './SubscriptionModal.scss';
 import FeaturesList from './FeaturesList';
@@ -33,12 +34,14 @@ import CustomMailSection from './CustomMailSection';
 import CustomVPNSection from './CustomVPNSection';
 import OrderSummary from './OrderSummary';
 import Thanks from './Thanks';
-import { getCheckParams } from './helpers';
+import { getCheckParams, toPlanMap, containsSamePlans } from './helpers';
 import { handlePaymentToken } from '../paymentTokenHelper';
 
 const { PROTONMAIL_SETTINGS, PROTONVPN_SETTINGS } = APPS;
+const ORDER_SUMMARY_ID = 'order-summary';
 
 const SubscriptionModal = ({
+    subscription = {},
     onClose,
     cycle = DEFAULT_CYCLE,
     currency = DEFAULT_CURRENCY,
@@ -59,7 +62,7 @@ const SubscriptionModal = ({
     const [plans] = usePlans();
     const [model, setModel] = useState({ cycle, currency, coupon, plansMap });
     const { call } = useEventManager();
-    const { step, next, previous } = useStep(initialStep);
+    const { step, next, previous, goTo } = useStep(initialStep);
 
     const features = [
         ...(hasPaidMail
@@ -143,6 +146,7 @@ const SubscriptionModal = ({
     const STEPS = [
         {
             title: c('Title').t`Order summary`,
+            id: ORDER_SUMMARY_ID,
             checkCouponCode: true,
             closeIfSubscriptionChange: true,
             section: <OrderSummary plans={plans} model={model} check={check} onChange={handleChangeModel} />,
@@ -269,6 +273,12 @@ const SubscriptionModal = ({
 
     useEffect(() => {
         callCheck();
+
+        // Display order summary first if the current plans don't change
+        if (containsSamePlans(plansMap, toPlanMap(getPlans(subscription)))) {
+            const index = STEPS.findIndex(({ id }) => id === ORDER_SUMMARY_ID);
+            goTo(index);
+        }
     }, []);
 
     return (
@@ -290,6 +300,7 @@ const SubscriptionModal = ({
 };
 
 SubscriptionModal.propTypes = {
+    subscription: PropTypes.object,
     onClose: PropTypes.func,
     step: PropTypes.number.isRequired,
     cycle: PropTypes.number,

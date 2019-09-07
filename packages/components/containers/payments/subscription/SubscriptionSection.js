@@ -94,7 +94,15 @@ const SubscriptionSection = ({ permission }) => {
         const cycle = action === 'yearly' ? YEARLY : Cycle;
         const plansMap = action === 'upgrade' ? { plus: 1, vpnplus: 1 } : toPlanNames(subscription.Plans);
 
-        createModal(<SubscriptionModal plansMap={plansMap} coupon={coupon} currency={Currency} cycle={cycle} />);
+        createModal(
+            <SubscriptionModal
+                subscription={subscription}
+                plansMap={plansMap}
+                coupon={coupon}
+                currency={Currency}
+                cycle={cycle}
+            />
+        );
     };
 
     return (

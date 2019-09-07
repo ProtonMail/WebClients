@@ -31,7 +31,7 @@ const I18N = {
  * @param {Object} b plans map
  * @returns {Boolean}
  */
-const containsSamePlans = (a, b) => isEquivalent(pick(a, Object.keys(b)), b);
+export const containsSamePlans = (a, b) => isEquivalent(pick(a, Object.keys(b)), b);
 
 /**
  * Build plansMap from current subscription and user demand

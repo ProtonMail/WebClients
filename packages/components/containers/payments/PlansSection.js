@@ -72,7 +72,15 @@ const PlansSection = () => {
         );
         const coupon = Coupon ? Coupon.Code : undefined; // Coupon can equals null
 
-        createModal(<SubscriptionModal plansMap={plansMap} coupon={coupon} currency={currency} cycle={cycle} />);
+        createModal(
+            <SubscriptionModal
+                subscription={subscription}
+                plansMap={plansMap}
+                coupon={coupon}
+                currency={currency}
+                cycle={cycle}
+            />
+        );
     };
 
     useEffect(() => {
