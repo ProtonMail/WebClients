@@ -283,9 +283,13 @@ export const getCheckParams = ({
  * @param {String} Subscription.CouponCode
  * @returns {Boolean} is eligible to BUNDLE
  */
-export const isBundleEligible = ({ Plans, CouponCode } = {}) => {
+export const isBundleEligible = ({ Plans = [], CouponCode = '' } = {}) => {
     if (CouponCode) {
         return false;
+    }
+
+    if (!Plans.length) {
+        return true;
     }
 
     const { plus, professional, visionary, vpnplus, vpnbasic } = toPlanNames(Plans);
