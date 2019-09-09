@@ -24,7 +24,7 @@ const Info = ({ url, title, ...rest }) => {
 
 Info.propTypes = {
     url: PropTypes.string,
-    title: PropTypes.string
+    title: PropTypes.node
 };
 
 export default Info;

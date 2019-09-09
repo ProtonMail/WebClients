@@ -11,7 +11,19 @@ import usePaymentMethods from '../paymentMethods/usePaymentMethods';
 
 const { CARD, PAYPAL, CASH, BITCOIN } = PAYMENT_METHOD_TYPES;
 
-const Payment = ({ type, amount, currency, coupon, cycle, onParameters, method, onMethod, onValidCard, onPay }) => {
+const Payment = ({
+    children,
+    type,
+    amount,
+    currency,
+    coupon,
+    cycle,
+    onParameters,
+    method,
+    onMethod,
+    onValidCard,
+    onPay
+}) => {
     const { methods, options, loading } = usePaymentMethods({ amount, cycle, coupon, type });
 
     const handleCard = ({ card, isValid }) => {
@@ -80,6 +92,7 @@ const Payment = ({ type, amount, currency, coupon, cycle, onParameters, method, 
                         method={method}
                         methods={methods}
                     />
+                    {children}
                 </Field>
             </Row>
         </>
@@ -87,6 +100,7 @@ const Payment = ({ type, amount, currency, coupon, cycle, onParameters, method, 
 };
 
 Payment.propTypes = {
+    children: PropTypes.node,
     type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit']),
     amount: PropTypes.number.isRequired,
     coupon: PropTypes.string,

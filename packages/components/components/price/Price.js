@@ -29,7 +29,7 @@ const Price = ({ children: amount = 0, currency = '', className = '', divisor = 
         <span className={`price ${className}`} data-currency={currency}>
             {p}
             {v}
-            {c}
+            {currency ? <> {c}</> : null}
             {s}
         </span>
     ); // -2 EUR/month
