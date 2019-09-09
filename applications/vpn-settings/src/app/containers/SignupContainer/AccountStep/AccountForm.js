@@ -51,8 +51,12 @@ const AccountForm = ({ onSubmit }) => {
         }
     };
 
-    const termsAndConditionsLink = (
-        <Href key="terms" url="https://protonvpn.com/terms-and-conditions">{c('Link').t`terms and conditions`}</Href>
+    const termsOfServiceLink = (
+        <Href key="terms" url="https://protonvpn.com/terms-and-conditions">{c('Link').t`Terms of Service`}</Href>
+    );
+
+    const privacyPolicyLink = (
+        <Href key="privacy" url="https://protonvpn.com/privacy-policy">{c('Link').t`Privacy Policy`}</Href>
     );
 
     return (
@@ -131,7 +135,7 @@ const AccountForm = ({ onSubmit }) => {
                     </div>
                     <Alert>
                         {c('Info')
-                            .jt`By clicking Create account you agree to abide by Proton's ${termsAndConditionsLink}.`}
+                            .jt`By clicking Create account you agree to abide by our ${termsOfServiceLink} and ${privacyPolicyLink}.`}
                     </Alert>
 
                     <PrimaryButton loading={loading} type="submit">{c('Action').t`Create account`}</PrimaryButton>
