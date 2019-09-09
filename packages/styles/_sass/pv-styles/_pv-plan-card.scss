@@ -72,4 +72,9 @@
   .plan-card:last-of-type {
     margin: 0;
   }
+  .plan-back-button,
+  .plan-help-button {
+    order: -1;
+    flex-basis: auto;
+  }
 }

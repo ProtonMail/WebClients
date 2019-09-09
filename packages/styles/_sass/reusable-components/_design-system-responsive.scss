@@ -121,6 +121,12 @@
     &wauto {
       width: auto;
     }
+    &flex-wrap {
+      flex-wrap: wrap;
+    }
+    &min-w100 {
+      min-width: 100%;
+    }
   }
   
 
