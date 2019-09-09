@@ -4,7 +4,7 @@ import { DialogModal, ContentModal } from 'react-components';
 
 const SimpleFormModal = ({ modalTitleID = 'modalTitle', children, onSubmit, onClose, ...rest }) => {
     return (
-        <DialogModal modalTitleID={modalTitleID} {...rest}>
+        <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
             <ContentModal onSubmit={onSubmit} onReset={onClose}>
                 {children}
             </ContentModal>
