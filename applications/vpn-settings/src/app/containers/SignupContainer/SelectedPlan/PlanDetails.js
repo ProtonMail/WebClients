@@ -10,7 +10,7 @@ const PlanDetails = ({ selectedPlan, cycle, currency }) => {
     const { planName, title, additionalFeatures, features } = selectedPlan;
     return (
         <div className="flex flex-column bordered-container">
-            <h6 className="p0-5 mb0 w100 aligncenter bg-primary color-white">{c('Title').t`${title} plan details`}</h6>
+            <h6 className="p0-5 mb0 w100 aligncenter color-primary">{c('Title').t`${title} plan details`}</h6>
             <div className="p1">
                 <ul
                     className={classnames([
