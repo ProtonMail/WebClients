@@ -32,9 +32,7 @@ const PriceInfo = ({ plan, cycle, currency }) => {
                     <span className="mr0-25">
                         {plan.title} - {billingCycle.label}
                     </span>
-                    <Price currency={currency} suffix={c('Suffix').t`/ month`}>
-                        {plan.price.totalMonthly}
-                    </Price>
+                    <Price currency={currency}>{plan.price.monthly * cycle}</Price>
                 </div>
             )}
             {(plan.couponDiscount || billingCycle.discount) && (
