@@ -1,4 +1,4 @@
-import React, { Children, useEffect } from 'react';
+import React, { Children, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Alert, ObserverSections, SubSidebar, SettingsTitle, usePermissions } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
@@ -10,6 +10,7 @@ import Main from './Main';
 const Page = ({ config, children }) => {
     const userPermissions = usePermissions();
     const { sections = [], permissions: pagePermissions, text } = config;
+    const [activeSection, setActiveSection] = useState('');
 
     useEffect(() => {
         document.title = `${text} - ProtonVPN`;
@@ -30,11 +31,11 @@ const Page = ({ config, children }) => {
 
     return (
         <>
-            {sections.length ? <SubSidebar list={sections} /> : null}
+            {sections.length ? <SubSidebar activeSection={activeSection} list={sections} /> : null}
             <Main>
                 <SettingsTitle>{text}</SettingsTitle>
                 <div className="container-section-sticky">
-                    <ObserverSections>
+                    <ObserverSections activeSection={activeSection} setActiveSection={setActiveSection}>
                         {Children.map(children, (child, index) => {
                             const { id, permissions: sectionPermissions = [] } = sections[index] || {};
                             return React.cloneElement(child, {
