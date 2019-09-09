@@ -35,6 +35,11 @@ const SignupContainer = ({ history, onLogin }) => {
     const invite = historyState.invite;
     const coupon = historyState.coupon;
 
+    const handleLogin = (...args) => {
+        history.push('/downloads', { ignoreRedirect: true });
+        onLogin(...args);
+    };
+
     const {
         model,
         setModel,
@@ -46,7 +51,7 @@ const SignupContainer = ({ history, onLogin }) => {
         isLoading,
         appliedCoupon,
         appliedInvite
-    } = useSignup(onLogin, coupon, invite, {
+    } = useSignup(handleLogin, coupon, invite, {
         planName: searchParams.get('plan'),
         cycle: Number(searchParams.get('cycle')),
         currency: searchParams.get('currency')
