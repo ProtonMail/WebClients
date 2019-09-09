@@ -123,7 +123,7 @@ const SignupContainer = ({ history, onLogin }) => {
 
     return (
         <main className="flex flex-item-fluid main-area">
-            <div className="center p2 container-plans-signup">
+            <div className="center p2 container-plans-signup onmobile-p1">
                 <div className="flex flex-nowrap mb1">
                     <div className="flex-item-fluid">
                         <Button onClick={handleBackClick}>

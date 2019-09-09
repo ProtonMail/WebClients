@@ -7,12 +7,12 @@ const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
 const PlansGroupButtons = ({ plans, onSelectPlan, model, ...rest }) => {
     return (
-        <Group {...rest}>
+        <Group {...rest} className="w100">
             {plans.map(({ planName, title }) => {
                 return (
                     <ButtonGroup
                         key={planName}
-                        className={classnames([planName === model.planName && 'is-active'])}
+                        className={classnames(['flex-item-fluid', planName === model.planName && 'is-active'])}
                         onClick={() => onSelectPlan({ ...model, planName })}
                     >
                         {title}

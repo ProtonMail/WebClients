@@ -30,10 +30,10 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
     return (
         <>
             <Row className="flex-items-center border-top pt3 mb2">
-                <div className="flex-item-fluid">
+                <div className="flex-item-fluid-auto">
                     <SubTitle className="m0">{c('Title').t`Select a plan`}</SubTitle>
                 </div>
-                <div className="mlauto">
+                <div className="mlauto onmobile-alignright">
                     <Field className="mr1 auto">
                         <CycleSelector
                             cycle={model.cycle}
@@ -50,12 +50,9 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
                     </Field>
                 </div>
             </Row>
-            <PlansGroupButtons
-                className="mb1 nodesktop notablet"
-                plans={plans}
-                model={model}
-                onSelectPlan={onSelectPlan}
-            />
+            <div className="mb2 nodesktop notablet">
+                <PlansGroupButtons plans={plans} model={model} onSelectPlan={onSelectPlan} />
+            </div>
             <div className="flex flex-nowrap">
                 {plans.map((plan) => (
                     <PlanCard
