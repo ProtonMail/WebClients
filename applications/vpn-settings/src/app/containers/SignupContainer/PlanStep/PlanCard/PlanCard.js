@@ -24,7 +24,7 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
         <div
             className={classnames([
                 'plan-card flex-item-fluid flex flex-column relative',
-                isActive && 'plan-card--active'
+                isActive ? 'plan-card--active' : 'nomobile'
             ])}
         >
             <div className="mb1 plan-card-image flex flex-items-end">{plan.image}</div>

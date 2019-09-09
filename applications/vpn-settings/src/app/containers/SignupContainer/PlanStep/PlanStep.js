@@ -6,13 +6,14 @@ import { CURRENCIES, CYCLE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import PlanComparisonModal from './PlanComparisonModal';
 import OSIcon from './OSIcon';
+import PlansGroupButtons from './PlansGroupButtons';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
 const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model, signupAvailability }) => {
     const { createModal } = useModals();
 
-    const handleSelect = (planName) => () => onSelectPlan({ ...model, planName });
+    const handleSelect = (planName) => () => onSelectPlan({ ...model, planName }, true);
     const handleComparisonClick = () =>
         createModal(<PlanComparisonModal defaultCycle={model.cycle} defaultCurrency={model.currency} />);
 
@@ -49,6 +50,12 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
                     </Field>
                 </div>
             </Row>
+            <PlansGroupButtons
+                className="mb1 nodesktop notablet"
+                plans={plans}
+                model={model}
+                onSelectPlan={onSelectPlan}
+            />
             <div className="flex flex-nowrap">
                 {plans.map((plan) => (
                     <PlanCard

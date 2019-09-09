@@ -49,9 +49,9 @@ const SignupContainer = ({ history, onLogin }) => {
         currency: searchParams.get('currency')
     });
 
-    const handleSelectPlan = (model) => {
+    const handleSelectPlan = (model, next = false) => {
         setModel(model);
-        setSignupState(SignupState.Account);
+        next && setSignupState(SignupState.Account);
     };
 
     const handleCreateAccount = async (model) => {
