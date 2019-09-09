@@ -25,7 +25,6 @@ const SubSidebar = ({ list = [], children, activeSection }) => {
                                     className="subnav-link"
                                     data-target-id={id}
                                     onClick={handleClick}
-                                    disabled={isCurrent}
                                     aria-current={isCurrent}
                                 >
                                     {text}

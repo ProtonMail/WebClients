@@ -3,21 +3,16 @@ import { render } from '@testing-library/react';
 
 import Button from '../button/Button';
 import SubSidebar from './SubSidebar';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('SubSidebar component', () => {
     const text = 'chocolat';
     const list = [{ text: 'panda', id: 'panda' }, { text: 'tiger', id: 'tiger' }, { text: 'turtle', id: 'turtle' }];
 
     it('should render the sub sidebar properly', () => {
-        location.hash = `#${list[0].id}`;
-
         const { container } = render(
-            <Router>
-                <SubSidebar list={list}>
-                    <Button>{text}</Button>
-                </SubSidebar>
-            </Router>
+            <SubSidebar activeSection={list[0].id} list={list}>
+                <Button>{text}</Button>
+            </SubSidebar>
         );
 
         const anchors = [].slice.call(container.querySelectorAll('a'));
@@ -28,7 +23,7 @@ describe('SubSidebar component', () => {
         expect(buttonNode.textContent).toBe(text);
 
         anchors.forEach((anchor, index) => {
-            expect(anchor.getAttribute('href')).toBe(`/#${list[index].id}`);
+            expect(anchor.getAttribute('href')).toBe(null);
             expect(anchor.textContent).toBe(list[index].text);
         });
 
