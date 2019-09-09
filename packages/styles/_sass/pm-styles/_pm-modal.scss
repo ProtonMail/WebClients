@@ -27,6 +27,20 @@ $modal-smaller-width: 28em !default;
   animation: pm-modalOverlayIn ease .5s 1 normal ;
 }
 
+.pm-modalContainer {
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 666;
+}
+
+.pm-modalContainer--inBackground {
+  z-index: 600;
+}
+
 .pm-modalOverlayOut {
   animation: pm-modalOverlayOut ease .5s 1  normal ;
   animation-fill-mode: forwards;
@@ -51,19 +65,11 @@ $modal-smaller-width: 28em !default;
   }
 }
 
-
 .pm-modal {
-  position: absolute;
-  z-index: 666;
-  top: 50%;
-  left: calc(50% - #{$modal-width/2});
-  right: auto; // for blink, otherwise WTF bug
-  transform: translateY(-50%);
-  transform-origin: 50% 0 0;
+  position: relative;
   width: $modal-width;
   max-height: $modal-max-height;
   max-width: $modal-max-width;
-  flex: 0 1 auto;
   background: $white;
   color: $pm-global-grey;
   padding: 0;
@@ -73,6 +79,7 @@ $modal-smaller-width: 28em !default;
   animation: pm-modalIn ease .15s 1 normal;
   animation-fill-mode: both;
   animation-delay: .1s; // stupid fix for Safari crazy display bug
+  margin: auto;
   display: flex;
   flex-direction: column;
   cursor: auto;
@@ -80,22 +87,22 @@ $modal-smaller-width: 28em !default;
 @keyframes pm-modalIn {
   0% {
     opacity: 0;
-	  transform: scale(.8) translateY(-50%);
+	  transform: scale(.8);
   }
   100% {
     opacity: 1;
-	  transform: scale(1) translateY(-50%);
+	  transform: scale(1);
   }
 }
 
 @keyframes pm-modalOut {
   0% {
     opacity: 1;
-	  transform: scale(1) translateY(-50%);
+	  transform: scale(1);
   }
   100% {
     opacity: 0;
-	  transform: scale(.8) translateY(-50%);
+	  transform: scale(.8);
   }
 }
 
@@ -106,17 +113,12 @@ $modal-smaller-width: 28em !default;
 
 .pm-modal--smaller {
   width: $modal-smaller-width;
-  left: calc(50% - #{$modal-smaller-width/2});
 }
 .pm-modal--wider {
   width: $modal-wider-width;
   max-width: $modal-wider-max-width;
-  left: calc(50% - #{$modal-wider-width/2});
 }
 
-.pm-modal--inBackground {
-  z-index: 600;
-}
 
 
 .pm-modalClose {
@@ -172,14 +174,14 @@ $modal-smaller-width: 28em !default;
   [class*="pm-button"] { // only for Safari the ugly
     min-height: 3.4rem;
   }
-} 
+}
 
 .pm-modalContentInner {
   position: relative;
   overflow: auto;
   flex: 1 1 auto;
   padding: 0 rem(30);
-  
+
   background: $white no-repeat;
   background-image: radial-gradient(farthest-side at 50% 0,#acb0bf,transparent),radial-gradient(farthest-side at 50% 100%,#acb0bf,transparent);
   background-position: 50% 0, 0 100%;
@@ -216,35 +218,10 @@ $modal-smaller-width: 28em !default;
   }
 }
 
-
-
-// To keep modals centered when their max-width is reached on big viewports
-$breakpoint-modal-max-width: ( ($modal-max-width / 1rem) * 10) / ($modal-width/100%); // case of $root-equiv-10-px set to true
-@if ($root-equiv-10-px == false){
-  $breakpoint-modal-max-width: ( ($modal-max-width / 1rem) * $root-default-font-size) / ($modal-width/100%);
-}
-@include respond-to( $breakpoint-modal-max-width, 'min') { 
-  .pm-modal:not(.pm-modal--smaller):not(.pm-modal--wider) {
-    left: calc(50% - #{$modal-max-width/2});
-  }
-}
-
-$breakpoint-wider-modal-max-width: ( ($modal-wider-max-width / 1rem) * 10) / ($modal-wider-width/100%); // case of $root-equiv-10-px set to true
-@if ($root-equiv-10-px == false){
-  $breakpoint-wider-modal-max-width: ( ($modal-wider-max-width / 1rem) * $root-default-font-size) / ($modal-wider-width/100%);
-}
-@include respond-to( $breakpoint-wider-modal-max-width, 'min') { 
-  .pm-modal--wider {
-    left: calc(50% - #{$modal-wider-max-width/2});
-  }
-}
-
 // small viewports
 @media (max-width: $modal-breakpoint-width) {
   .pm-modal {
     margin: 1%;
-    left: 0;
-    top: 49%; // firefox…
     min-width: 0;
     width: 98%;
     max-width: 98%;
