@@ -7,35 +7,24 @@ const CLASSES = {
     OVERLAY_OUT: 'pm-modalOverlayOut'
 };
 
-const Overlay = ({ children, isClosing = false, onClick, className: extraClassName = '', onExit, ...rest }) => {
+const Overlay = ({ isClosing = false, className: extraClassName = '', onExit, ...rest }) => {
     const handleAnimationEnd = ({ animationName }) => {
         if (animationName === CLASSES.OVERLAY_OUT && isClosing && onExit) {
             onExit();
         }
     };
 
-    const handleClick = (e) => {
-        if (!e.target.classList.contains(CLASSES.OVERLAY)) {
-            return;
-        }
-        onClick(e);
-    };
-
     const className = [CLASSES.OVERLAY, isClosing && CLASSES.OVERLAY_OUT, extraClassName].filter(Boolean).join(' ');
 
     return (
         <Portal>
-            <div className={className} onClick={handleClick} onAnimationEnd={handleAnimationEnd} {...rest}>
-                {children}
-            </div>
+            <div className={className} onAnimationEnd={handleAnimationEnd} {...rest} />
         </Portal>
     );
 };
 
 Overlay.propTypes = {
     onExit: PropTypes.func.isRequired,
-    onClick: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired,
     className: PropTypes.string,
     isClosing: PropTypes.bool
 };

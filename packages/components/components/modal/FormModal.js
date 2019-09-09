@@ -69,7 +69,7 @@ function DemoModal({ onAdd, ...rest }) {
     };
 
     return (
-        <DialogModal modalTitleID={modalTitleID} {...rest}>
+        <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
             {title ? (
                 <HeaderModal hasClose={hasClose} modalTitleID={modalTitleID} onClose={onClose}>
                     {title}

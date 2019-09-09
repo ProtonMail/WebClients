@@ -73,28 +73,15 @@ const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
         });
     });
 
-    const handleClickOutside = (event) => {
-        if (modals.length === 0) {
-            return;
-        }
-
-        const { id, closeOnOuterClick, content } = modals[modals.length - 1];
-
-        if (closeOnOuterClick) {
-            event.preventDefault();
-            content.props.onClose && content.props.onClose();
-            hideModal(id);
-        }
-    };
-
     const handleContainerAnimationEnd = () => {
         setContainerIsClosing(false);
     };
 
     return (
-        <OverlayModal isClosing={containerIsClosing} onClick={handleClickOutside} onExit={handleContainerAnimationEnd}>
+        <>
+            <OverlayModal isClosing={containerIsClosing} onExit={handleContainerAnimationEnd} />
             {list}
-        </OverlayModal>
+        </>
     );
 };
 
