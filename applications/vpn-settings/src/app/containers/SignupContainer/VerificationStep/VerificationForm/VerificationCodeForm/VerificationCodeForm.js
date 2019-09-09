@@ -34,7 +34,12 @@ const VerificationCodeForm = ({ onSubmit, onResend, onBack, destination }) => {
     return (
         <div>
             <h3>{c('Title').t`Enter verification code`}</h3>
-            <Alert>{c('Info').jt`Enter the verification code that was sent to ${destinationText}`}</Alert>
+            <Alert>
+                <div>{c('Info').jt`Enter the verification code that was sent to ${destinationText}.`}</div>
+                {destination.Email ? (
+                    <div>{c('Info').t`If you don't find the email in your inbox, please check your spam folder.`}</div>
+                ) : null}
+            </Alert>
             <form onSubmit={handleSubmit}>
                 <Row>
                     <Label htmlFor="code">{c('Label').t`6-digit code`}</Label>
