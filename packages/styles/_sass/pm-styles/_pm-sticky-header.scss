@@ -30,6 +30,13 @@ $sticky-title-height: 10rem !default;
   margin-bottom: 12rem;
 }
 
+
+/* trick for fixing anchor links */
+.header-height-anchor {
+  position: absolute;
+  top: -#{$sticky-title-height};
+}
+
 // not sticky on mobile
 @include respond-to($breakpoint-small) { 
   .sticky-title {
@@ -39,11 +46,9 @@ $sticky-title-height: 10rem !default;
   .container-section-sticky-section {
     margin-bottom: 8rem;
   }
+  .header-height-anchor {
+    position: static;
+    top: 0;
+  }
 }
 
-
-/* trick for fixing anchor links */
-.header-height-anchor {
-  position: absolute;
-  top: -#{$sticky-title-height};
-}
