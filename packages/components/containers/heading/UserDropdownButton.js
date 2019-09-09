@@ -17,7 +17,7 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }) => {
             {...rest}
         >
             <span className="alignright mr0-5">
-                <span className="bl capitalize">{DisplayName}</span>
+                <span className="bl capitalize">{DisplayName || Name}</span>
                 {Email ? <span className="bl smaller m0 opacity-30 lh100">{Email}</span> : null}
             </span>
 

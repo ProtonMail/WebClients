@@ -27,7 +27,7 @@ const UserDropdown = ({ ...rest }) => {
     const { APP_NAME } = useConfig();
     const api = useApi();
     const [user] = useUser();
-    const { DisplayName, Email } = user;
+    const { DisplayName, Email, Name } = user;
     const [{ Name: organizationName } = {}] = useOrganization();
     const { logout } = useAuthentication();
     const { createModal } = useModals();
@@ -53,8 +53,8 @@ const UserDropdown = ({ ...rest }) => {
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-right">
                 <ul className="unstyled mt0-5 mb0-5">
                     <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
-                        <strong title={DisplayName} className="ellipsis mw100 capitalize">
-                            {DisplayName}
+                        <strong title={DisplayName || Name} className="ellipsis mw100 capitalize">
+                            {DisplayName || Name}
                         </strong>
                         {Email ? (
                             <span title={Email} className="ellipsis mw100">
