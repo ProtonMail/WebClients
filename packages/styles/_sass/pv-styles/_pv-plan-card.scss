@@ -6,6 +6,7 @@
 .container-plans-signup span[aria-describedby] {
   position: relative;
   z-index: 5;
+  background-color: transparent
 }
 
 .plan-card {
@@ -31,6 +32,25 @@
 .plan-card--active {
   .border-top {
     border-color: $pm-primary;
+  }
+}
+
+/* use nesting to restrict styles only for VPN signup page */
+.plan-price-area {
+  vertical-align: bottom;
+  display: inline-block;
+  .amount {
+    font-size: 5rem;
+    line-height: 1;
+  }
+  .currency {
+    order: -1;
+    font-size: 2rem;
+    line-height: 1;
+    position: relative;
+    top: .5rem; // magic value
+    color: rgba(70, 74, 78, 0.7);
+    margin-right: .5rem;
   }
 }
 
