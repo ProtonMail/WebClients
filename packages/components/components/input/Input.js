@@ -17,13 +17,14 @@ const Input = React.forwardRef(
             onPressEnter,
             loading = false,
             required = false,
+            value,
             ...rest
         },
         ref
     ) => {
         const { handlers, statusClasses, status } = useInput({ onPressEnter, ...rest });
         const [uid] = useState(generateUID('input'));
-        const errorZone = required && !error ? c('Error').t`This field is required` : error;
+        const errorZone = required && !value && !error ? c('Error').t`This field is required` : error;
 
         return (
             <>
@@ -33,6 +34,7 @@ const Input = React.forwardRef(
                     aria-describedby={uid}
                     ref={ref}
                     type={type}
+                    value={value}
                     autoComplete={autoComplete}
                     disabled={loading || rest.disabled}
                     {...rest}
