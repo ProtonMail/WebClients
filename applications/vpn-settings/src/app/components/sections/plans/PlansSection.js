@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
+    Alert,
     Button,
     SubTitle,
     useApi,
@@ -18,6 +19,7 @@ import {
 import { c } from 'ttag';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
+import { isBundleEligible, getPlans } from 'proton-shared/lib/helpers/subscription';
 import { mergePlansMap } from 'react-components/containers/payments/subscription/helpers';
 
 import PlansTable from './PlansTable';
@@ -34,7 +36,11 @@ const PlansSection = () => {
     const { state: showPlans, toggle: togglePlans } = useToggle(isFree);
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
-    const { CouponCode } = subscription || {};
+    const bundleEligible = isBundleEligible(subscription);
+    const names = getPlans(subscription)
+        .map(({ Title }) => Title)
+        .join(c('Separator, spacing is important').t` and `);
+    const { CouponCode, Plans = [] } = subscription || {};
 
     const unsubscribe = async () => {
         if (isFree) {
@@ -112,6 +118,13 @@ const PlansSection = () => {
     return (
         <>
             <SubTitle>{c('Title').t`Plans`}</SubTitle>
+            <Alert>
+                {bundleEligible ? (
+                    <div>{c('Info')
+                        .t`Get 20% bundle discount when you purchase ProtonMail and ProtonVPN together.`}</div>
+                ) : null}
+                {Plans.length ? <div>{c('Info').t`You are currently subscribed to ${names}.`}</div> : null}
+            </Alert>
             <Button className="mb2" onClick={togglePlans}>
                 {showPlans ? c('Action').t`Hide plans` : c('Action').t`Show plans`}
             </Button>
