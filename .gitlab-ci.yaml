@@ -5,10 +5,7 @@ stages:
     - test
     - deploy
     - deploy-qa
-    - deploy-old
-    - deploy-dev
-    - deploy-beta
-    - deploy-prod
+    - deploy-v4
     - i18n-upgrade-app
     - i18n-to-crowdin
 
@@ -69,7 +66,7 @@ i18n-upgrade-app:
 i18n-to-crowdin:
     stage: i18n-to-crowdin
     tags:
-        - heavy
+        - dind
     script:
         - npm run i18n:upgrade -- --limit-i18n=${I18N_APPROVED}
     when: manual
@@ -77,7 +74,7 @@ i18n-to-crowdin:
 deploy:
     stage: deploy
     tags:
-        - heavy
+        - dind
     script:
         - npm run deploy -- --branch=deploy-$BRANCH_DEPLOY --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
     when: manual
@@ -85,7 +82,7 @@ deploy:
 deploy-qa:
     stage: deploy-qa
     tags:
-        - heavy
+        - dind
     script:
         - npm run deploy -- --branch=deploy-alpha --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
     when: manual
@@ -93,50 +90,9 @@ deploy-qa:
 deploy-v4:
     stage: deploy-v4
     tags:
-        - heavy
+        - dind
     script:
         - git checkout v4
         - npm i --no-audit
         - npm run deploy -- --branch=deploy-v4 --remote-pm-settings --remote-calendar --remote-contacts --fromCi --api=$API_DEPLOY
-    when: manual
-
-deploy-dev:
-    stage: deploy-dev
-    tags:
-        - heavy
-    script:
-        - npm run deploy -- --branch=deploy-dev --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
-    when: manual
-
-deploy-old:
-    stage: deploy-old
-    tags:
-        - heavy
-    script:
-        - npm run deploy -- --branch=deploy-old --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
-    when: manual
-
-deploy-beta:
-    stage: deploy-beta
-    tags:
-        - heavy
-    script:
-        - npm run deploy -- --branch=deploy-beta --api=beta --verbose --no-i18n --no-lint --forceFetch --fromCi
-    when: manual
-
-deploy-prod-all:
-    stage: deploy-prod-all
-    tags:
-        - heavy
-    script:
-        - npm run deployProd --verbose --no-i18n --no-lint --forceFetch --fromCi
-    when: manual
-
-deploy-prod-only:
-    stage: deploy-prod-all
-    tags:
-        - heavy
-    script:
-        - npm run deploy -- --branch=deploy-prod-a --verbose --no-i18n --no-lint --forceFetch --fromCi
-        - npm run deploy -- --branch=deploy-prod-b --verbose --no-i18n --no-lint --forceFetch --fromCi
     when: manual
