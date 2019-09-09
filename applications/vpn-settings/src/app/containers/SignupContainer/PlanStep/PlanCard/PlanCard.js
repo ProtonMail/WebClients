@@ -27,7 +27,7 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
                 isActive ? 'plan-card--active' : 'nomobile'
             ])}
         >
-            <div className="mb1 plan-card-image flex flex-items-end">{plan.image}</div>
+            <div className="mb1 plan-card-image flex flex-items-end nomobile">{plan.image}</div>
             <div className="flex flex-items-center relative">
                 <strong className="biggest mt0 mb0">{plan.title}</strong>
                 {plan.isBest && (
