@@ -27,7 +27,7 @@ const PlanUpsell = ({ disabled, selectedPlan, getPlanByName, cycle, currency, on
         onUpgrade(upsell.planName);
     };
 
-    const totalMonthlyText = (
+    const totalMonthlyText = upsellPlan && (
         <Price currency={currency} suffix={c('Suffix').t`/ month`}>
             {upsellPlan.price.totalMonthly}
         </Price>
