@@ -124,16 +124,16 @@ const SignupContainer = ({ history, onLogin }) => {
     return (
         <main className="flex flex-item-fluid main-area">
             <div className="center p2 container-plans-signup onmobile-p1">
-                <div className="flex flex-nowrap mb1">
-                    <div className="flex-item-fluid">
+                <div className="flex flex-nowrap onmobile-flex-wrap mb1">
+                    <div className="flex-item-fluid plan-back-button">
                         <Button onClick={handleBackClick}>
                             {prevStep ? c('Action').t`Back` : c('Action').t`Homepage`}
                         </Button>
                     </div>
-                    <div className="w">
+                    <div className="onmobile-min-w100 onmobile-aligncenter onmobile-mt0-5">
                         <Title>{c('Title').t`Sign up`}</Title>
                     </div>
-                    <div className="flex-item-fluid alignright">
+                    <div className="flex-item-fluid alignright plan-help-button">
                         <SupportDropdown content={c('Action').t`Need help`} />
                     </div>
                 </div>

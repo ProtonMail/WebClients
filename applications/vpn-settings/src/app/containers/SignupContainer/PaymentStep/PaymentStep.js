@@ -11,7 +11,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
     const handlePayment = () => withLoading(onPay(model, parameters));
 
     return (
-        <>
+        <div className="border-top pt3 mb2">
             <SubTitle>{c('Title').t`Provide payment details`}</SubTitle>
             <Row>
                 <div>
@@ -40,7 +40,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                 </div>
                 {children}
             </Row>
-        </>
+        </div>
     );
 };
 

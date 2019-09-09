@@ -16,7 +16,7 @@ const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, childr
     };
 
     return (
-        <>
+        <div className="border-top pt3 mb2">
             <SubTitle>{c('Title').t`Are you human?`}</SubTitle>
             <Row>
                 <div>
@@ -30,7 +30,7 @@ const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, childr
                 </div>
                 {children}
             </Row>
-        </>
+        </div>
     );
 };
 
