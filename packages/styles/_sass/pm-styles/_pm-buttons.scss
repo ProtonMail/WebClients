@@ -321,10 +321,10 @@
 
 /* aliases for buttons => different per project */
 /* primary/link/error/warning/info */
-.pm-button--primary {
-  @extend .pm-button-blue;
-}
 @if ($pm-primary == $pm-blue) {
+  .pm-button--primary {
+    @extend .pm-button-blue;
+  }
   .pm-button--primaryborder {
     @extend .pm-button-blueborder;
   }
@@ -333,6 +333,9 @@
   }
 }
 @else {
+  .pm-button--primary {
+    @extend .pv-button-green;
+  }
   .pm-button--primaryborder {
     @extend .pv-button-greenborder;
   }
