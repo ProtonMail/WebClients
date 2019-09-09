@@ -51,7 +51,7 @@ const PaymentMethodActions = ({ method, onChange, methods, index }) => {
     const list = [
         method.Type === PAYMENT_METHOD_TYPES.CARD && {
             text: c('Action').t`Edit`,
-            onClick: () => createModal(<EditCardModal card={card} onChange={onChange} />)
+            onClick: () => createModal(<EditCardModal methodID={method.ID} card={card} onChange={onChange} />)
         },
         index > 0 &&
             !isExpired(method.Details) && {

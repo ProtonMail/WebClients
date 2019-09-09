@@ -10,7 +10,7 @@ import useCard from './useCard';
 import toDetails from './toDetails';
 import { handlePaymentToken } from './paymentTokenHelper';
 
-const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
+const EditCardModal = ({ methodID = '', card: existingCard, onClose, onChange, ...rest }) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -50,12 +50,13 @@ const EditCardModal = ({ card: existingCard, onClose, onChange, ...rest }) => {
             submit={c('Action').t`Save`}
             {...rest}
         >
-            <Card card={card} errors={errors} onChange={updateCard} loading={loading} />
+            <Card disableNumber={!!methodID} card={card} errors={errors} onChange={updateCard} loading={loading} />
         </FormModal>
     );
 };
 
 EditCardModal.propTypes = {
+    methodID: PropTypes.string,
     card: PropTypes.object,
     onClose: PropTypes.func,
     onChange: PropTypes.func.isRequired

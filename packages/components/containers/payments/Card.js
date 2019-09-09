@@ -6,7 +6,7 @@ import { range } from 'proton-shared/lib/helpers/array';
 
 import { getFullList } from '../../helpers/countries';
 
-const Card = ({ card, errors, onChange, loading = false }) => {
+const Card = ({ disableNumber = false, card, errors, onChange, loading = false }) => {
     const countries = getFullList().map(({ value, label: text }) => ({ value, text }));
     const handleChange = (key) => ({ target }) => onChange(key, target.value);
     const currentYear = new Date().getFullYear();
@@ -37,7 +37,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                     onChange={handleChange('number')}
                     placeholder={c('Placeholder').t`Card number`}
                     error={errors.number}
-                    disabled={loading}
+                    disabled={loading || disableNumber}
                     maxLength={20}
                     required
                 />
@@ -95,6 +95,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
 };
 
 Card.propTypes = {
+    disableNumber: PropTypes.bool,
     loading: PropTypes.bool,
     card: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired,
