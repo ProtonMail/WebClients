@@ -20,7 +20,7 @@ const PlanUpsell = ({ disabled, selectedPlan, getPlanByName, cycle, currency, on
     const handleUpgrade = () => onUpgrade(upsell.planName);
 
     const totalMonthlyText = upsellPlan && (
-        <Price currency={currency} suffix={c('Suffix').t`/ month`}>
+        <Price key="upgrade-price" currency={currency} suffix={c('Suffix').t`/ month`}>
             {upsellPlan.price.totalMonthly}
         </Price>
     );

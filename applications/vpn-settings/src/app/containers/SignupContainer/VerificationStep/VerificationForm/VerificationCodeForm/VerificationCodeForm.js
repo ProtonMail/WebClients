@@ -18,7 +18,7 @@ const VerificationCodeForm = ({ onSubmit, onResend, onBack, destination }) => {
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const [code, setCode] = useState('');
-    const destinationText = <strong>{destination}</strong>;
+    const destinationText = <strong key="destination">{destination.Email || destination.Phone}</strong>;
 
     const handleResend = () => {
         createModal(<ResendCodeModal onBack={onBack} onResend={onResend} destination={destination} />);
@@ -61,7 +61,10 @@ VerificationCodeForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onResend: PropTypes.func.isRequired,
     onBack: PropTypes.func.isRequired,
-    destination: PropTypes.string.isRequired
+    destination: PropTypes.shape({
+        Phone: PropTypes.string,
+        Email: PropTypes.string
+    })
 };
 
 export default VerificationCodeForm;

@@ -15,18 +15,23 @@ const PlanPrice = ({ plan, cycle, currency }) => {
     );
     const totalBilledText =
         cycle === CYCLE.MONTHLY ? (
-            <Price currency={currency} suffix={c('Suffix').t`monthly`}>
+            <Price key="billed-price" currency={currency} suffix={c('Suffix').t`monthly`}>
                 {plan.price.totalMonthly}
             </Price>
         ) : (
             <Price
+                key="billed-price"
                 currency={currency}
                 suffix={cycle === CYCLE.TWO_YEARS ? c('Suffix').t`/2-year` : c('Suffix').t`/year`}
             >
                 {plan.price.total}
             </Price>
         );
-    const discountText = <Price currency={currency}>{discount}</Price>;
+    const discountText = (
+        <Price key="discount" currency={currency}>
+            {discount}
+        </Price>
+    );
     return (
         <div className="border-top pt1 plan-price">
             <div className="mb0-5">{c('PlanPrice').jt`${totalMonthlyPriceText} / mo`}</div>

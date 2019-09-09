@@ -5,18 +5,19 @@ import { c } from 'ttag';
 
 const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destination, onClose, ...rest }) => {
     const editI18n = c('Action').t`Edit`;
-    const destinationText = <strong>{destination}</strong>;
+    const destinationText = <strong key="destination">{destination.Email || destination.Phone}</strong>;
 
     return (
-        <DialogModal {...rest}>
+        <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
             <HeaderModal hasClose modalTitleID={modalTitleID} onClose={onClose}>
                 {c('Title').t`Resend code`}
             </HeaderModal>
             <div className="pm-modalContent">
                 <InnerModal>
                     <p>
-                        {c('Info')
-                            .jt`Click below to resend the code to ${destinationText}. If ${destinationText} is incorrect, please click "${editI18n}".`}
+                        {c('Info').jt`Click below to resend the code to ${destinationText}. If ${
+                            destination.Email ? c('VerificationType').t`email` : c('VerificationType').t`phone`
+                        } is incorrect, please click "${editI18n}".`}
                     </p>
                 </InnerModal>
                 <FooterModal>
@@ -47,10 +48,14 @@ const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destin
 };
 
 ResendCodeModal.propTypes = {
-    ...DialogModal.propTypes,
-    destination: PropTypes.string.isRequired,
+    modalTitleID: PropTypes.string,
+    destination: PropTypes.shape({
+        Phone: PropTypes.string,
+        Email: PropTypes.string
+    }).isRequired,
     onResend: PropTypes.func.isRequired,
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
+    onBack: PropTypes.func
 };
 
 export default ResendCodeModal;

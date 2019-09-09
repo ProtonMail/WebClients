@@ -52,7 +52,7 @@ const AccountForm = ({ onSubmit }) => {
     };
 
     const termsAndConditionsLink = (
-        <Href key="0" url="https://protonvpn.com/terms-and-conditions">{c('Link').t`terms and conditions`}</Href>
+        <Href key="terms" url="https://protonvpn.com/terms-and-conditions">{c('Link').t`terms and conditions`}</Href>
     );
 
     return (
@@ -103,7 +103,7 @@ const AccountForm = ({ onSubmit }) => {
                         required
                         value={confirmPassword}
                         onChange={handleChangeConfirmPassword}
-                        error={password !== confirmPassword && c('Error').t`Passwords do not match`}
+                        error={password !== confirmPassword ? c('Error').t`Passwords do not match` : undefined}
                         pattern={password}
                         name="passwordConfirmation"
                         placeholder={c('Placeholder').t`Confirm password`}

@@ -18,13 +18,13 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
         createModal(<PlanComparisonModal defaultCycle={model.cycle} defaultCurrency={model.currency} />);
 
     const supportedOS = (
-        <>
+        <React.Fragment key="os">
             <OSIcon os="android" />
             <OSIcon os="windows" />
             <OSIcon os="macos" />
             <OSIcon os="ios" />
             <OSIcon os="linux" />
-        </>
+        </React.Fragment>
     );
 
     return (

@@ -37,7 +37,7 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
                                 <Radio
                                     className="mb1 block"
                                     checked={method === VERIFICATION_METHOD.EMAIL}
-                                    onClick={handleSelectMethod(VERIFICATION_METHOD.EMAIL)}
+                                    onChange={handleSelectMethod(VERIFICATION_METHOD.EMAIL)}
                                 >{c('Option').t`Email address`}</Radio>
                             </div>
                         ) : null}
@@ -45,7 +45,7 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
                             <div className="mb1">
                                 <Radio
                                     checked={method === VERIFICATION_METHOD.SMS}
-                                    onClick={handleSelectMethod(VERIFICATION_METHOD.SMS)}
+                                    onChange={handleSelectMethod(VERIFICATION_METHOD.SMS)}
                                 >{c('Option').t`SMS`}</Radio>
                             </div>
                         )}

@@ -27,16 +27,14 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                         onMethod={setMethod}
                         onValidCard={setCardValidity}
                         onPay={handlePayment}
-                    />
-                    {method === PAYMENT_METHOD_TYPES.CARD && (
-                        <Row>
-                            <Label></Label>
+                    >
+                        {method === PAYMENT_METHOD_TYPES.CARD && (
                             <Field>
                                 <PrimaryButton loading={loading} disabled={!canPay} onClick={handlePayment}>{c('Action')
                                     .t`Confirm payment`}</PrimaryButton>
                             </Field>
-                        </Row>
-                    )}
+                        )}
+                    </Payment>
                 </div>
                 {children}
             </Row>

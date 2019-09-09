@@ -38,7 +38,7 @@ const VerificationForm = ({ defaultEmail, allowedMethods, onRequestCode, onSubmi
 
     return (
         <VerificationCodeForm
-            destination={params.Destination.Phone || params.Destination.Address}
+            destination={params.Destination}
             onSubmit={handleSubmitCode}
             onBack={handleBack}
             onResend={handleResendCode}
