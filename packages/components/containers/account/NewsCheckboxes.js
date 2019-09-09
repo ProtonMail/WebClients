@@ -62,7 +62,7 @@ const NewsCheckboxes = () => {
                         disabled={loading}
                         onChange={handleChange(BUSINESS)}
                     />
-                    {c('Label for news').t`Proton business (4-5 per year)`}
+                    {c('Label for news').t`Proton Business (4-5 per year)`}
                 </Label>
             </li>
             <li>
