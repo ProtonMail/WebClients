@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { generateUID } from '../../helpers/component';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
+import { c } from 'ttag';
 
 const Input = React.forwardRef(
     (
@@ -15,18 +16,20 @@ const Input = React.forwardRef(
             type = 'text',
             onPressEnter,
             loading = false,
+            required = false,
             ...rest
         },
         ref
     ) => {
         const { handlers, statusClasses, status } = useInput({ onPressEnter, ...rest });
         const [uid] = useState(generateUID('input'));
+        const errorZone = required && !error ? c('Error').t`This field is required` : error;
 
         return (
             <>
                 <input
                     className={`pm-field w100 ${className} ${statusClasses}`}
-                    aria-invalid={error && status.isDirty}
+                    aria-invalid={errorZone && status.isDirty}
                     aria-describedby={uid}
                     ref={ref}
                     type={type}
@@ -36,7 +39,7 @@ const Input = React.forwardRef(
                     {...handlers}
                 />
                 <ErrorZone className={errorZoneClassName} id={uid}>
-                    {error && status.isDirty ? error : ''}
+                    {errorZone && status.isDirty ? errorZone : ''}
                 </ErrorZone>
             </>
         );
