@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { PLAN } from '../plans';
@@ -6,26 +6,18 @@ import { PrimaryButton, Price } from 'react-components';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 
 const PlanUpsell = ({ disabled, selectedPlan, getPlanByName, cycle, currency, onExtendCycle, onUpgrade }) => {
-    const [upsellDone, setUpsellDone] = useState(false);
     const { planName, upsell } = selectedPlan;
     const upsellCycle = cycle === CYCLE.MONTHLY && planName !== PLAN.FREE;
 
-    if (upsellDone || (!upsell && !upsellCycle)) {
+    if (!upsell && !upsellCycle) {
         return null; // No upsell needed
     }
 
     const yearlyPlan = getPlanByName(selectedPlan.planName, CYCLE.YEARLY);
     const upsellPlan = upsell && getPlanByName(upsell.planName);
 
-    const handleExtendCycle = () => {
-        setUpsellDone(true);
-        onExtendCycle();
-    };
-
-    const handleUpgrade = () => () => {
-        setUpsellDone(true);
-        onUpgrade(upsell.planName);
-    };
+    const handleExtendCycle = () => onExtendCycle();
+    const handleUpgrade = () => onUpgrade(upsell.planName);
 
     const totalMonthlyText = upsellPlan && (
         <Price currency={currency} suffix={c('Suffix').t`/ month`}>
@@ -67,7 +59,7 @@ const PlanUpsell = ({ disabled, selectedPlan, getPlanByName, cycle, currency, on
                                 <li key={i}>{feature}</li>
                             ))}
                         </ul>
-                        <PrimaryButton disabled={disabled} className="w100 mt1" onClick={handleUpgrade()}>{c('Action')
+                        <PrimaryButton disabled={disabled} className="w100 mt1" onClick={handleUpgrade}>{c('Action')
                             .jt`Try ${upsellPlan.title} for only ${totalMonthlyText}`}</PrimaryButton>
                     </>
                 )}

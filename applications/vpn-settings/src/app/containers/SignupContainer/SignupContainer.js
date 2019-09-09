@@ -29,6 +29,7 @@ const SignupContainer = ({ history, onLogin }) => {
 
     const searchParams = new URLSearchParams(history.location.search);
     const [signupState, setSignupState] = useState(SignupState.Plan);
+    const [upsellDone, setUpsellDone] = useState(false);
     const [loading, withLoading] = useLoading(false);
     const historyState = history.location.state || {};
     const invite = historyState.invite;
@@ -83,6 +84,7 @@ const SignupContainer = ({ history, onLogin }) => {
 
     const handleUpgrade = (planName) => {
         setModel({ ...model, planName });
+        setUpsellDone(true);
         if (planName !== PLAN.FREE && signupState === SignupState.Verification) {
             setSignupState(SignupState.Payment);
         } else if (planName === PLAN.FREE && signupState === SignupState.Payment) {
@@ -90,20 +92,25 @@ const SignupContainer = ({ history, onLogin }) => {
         }
     };
 
-    const handleExtendCycle = () => setModel({ ...model, cycle: CYCLE.YEARLY });
+    const handleExtendCycle = () => {
+        setModel({ ...model, cycle: CYCLE.YEARLY });
+        setUpsellDone(true);
+    };
 
     const selectedPlanComponent = (
         <div className="ml1 onmobile-ml0 onmobile-mt2 selected-plan">
             <PlanDetails selectedPlan={selectedPlan} cycle={model.cycle} currency={model.currency} />
-            <PlanUpsell
-                disabled={loading}
-                selectedPlan={selectedPlan}
-                getPlanByName={getPlanByName}
-                onExtendCycle={handleExtendCycle}
-                onUpgrade={handleUpgrade}
-                cycle={model.cycle}
-                currency={model.currency}
-            />
+            {!upsellDone && (
+                <PlanUpsell
+                    disabled={loading}
+                    selectedPlan={selectedPlan}
+                    getPlanByName={getPlanByName}
+                    onExtendCycle={handleExtendCycle}
+                    onUpgrade={handleUpgrade}
+                    cycle={model.cycle}
+                    currency={model.currency}
+                />
+            )}
         </div>
     );
 
