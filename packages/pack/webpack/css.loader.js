@@ -55,12 +55,14 @@ module.exports = ({ isProduction }) => {
                         importLoaders: 1
                     }
                 }
-            ]
+            ],
+            sideEffects: true
         },
         {
             test: /\.scss$/,
             exclude: DESIGN_SYSTEM_THEME,
-            use: ['css-hot-loader', MiniCssExtractPlugin.loader, ...sassLoaders]
+            use: ['css-hot-loader', MiniCssExtractPlugin.loader, ...sassLoaders],
+            sideEffects: true
         },
         {
             test: DESIGN_SYSTEM_THEME,
