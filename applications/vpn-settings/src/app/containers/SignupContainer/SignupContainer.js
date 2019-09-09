@@ -103,7 +103,7 @@ const SignupContainer = ({ history, onLogin }) => {
     };
 
     const selectedPlanComponent = (
-        <div className="ml1 onmobile-ml0 onmobile-mt2 selected-plan">
+        <div className="ml1 onmobile-ml0 flex-item-fluid-auto onmobile-mt2 selected-plan">
             <PlanDetails selectedPlan={selectedPlan} cycle={model.cycle} currency={model.currency} />
             {!upsellDone && (
                 <PlanUpsell

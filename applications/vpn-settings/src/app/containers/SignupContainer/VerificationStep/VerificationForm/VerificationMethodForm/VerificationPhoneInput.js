@@ -14,7 +14,9 @@ const VerificationPhoneInput = ({ onSendClick, loading }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <TelInput value={phone} onChange={handleChangePhone} placeholder="(201) 555-0123" />
+            <div className="mt2 pt0-75">
+                <TelInput value={phone} onChange={handleChangePhone} placeholder="(201) 555-0123" />
+            </div>
             <div className="mt1 flex flex-justify-end">
                 <PrimaryButton type="submit" disabled={!phone} loading={loading}>{c('Action').t`Send`}</PrimaryButton>
             </div>
