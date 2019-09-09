@@ -130,11 +130,11 @@ const useSignup = (onLogin, coupon, invite, initialModel = {}) => {
     }, [invite, signupAvailability]);
 
     /**
-     * Verifies if payment was done and saves payment details for signup
+     * Makes payment, verifies it and saves payment details for signup
      * @param {*=} paymentParameters payment parameters from usePayment
      * @returns {Promise<{ VerifyCode, Payment }>} - paymentDetails
      */
-    const checkPayment = async (model, paymentParameters) => {
+    const makePayment = async (model, paymentParameters) => {
         const selectedPlan = getPlanByName(model.planName, model.cycle);
         const amount = selectedPlan.price.total;
 
@@ -231,7 +231,7 @@ const useSignup = (onLogin, coupon, invite, initialModel = {}) => {
         appliedCoupon,
         appliedInvite,
 
-        checkPayment,
+        makePayment,
         setModel,
         signup
     };

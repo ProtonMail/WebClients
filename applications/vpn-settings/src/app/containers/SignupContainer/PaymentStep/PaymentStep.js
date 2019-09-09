@@ -4,11 +4,11 @@ import { Alert, Payment, usePayment, PrimaryButton, Field, Label, Row, useLoadin
 import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 
-const PaymentStep = ({ onPaymentDone, paymentAmount, model, children }) => {
+const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
     const [loading, withLoading] = useLoading();
     const { method, setMethod, parameters, canPay, setParameters, setCardValidity } = usePayment();
 
-    const handlePaymentDone = () => withLoading(onPaymentDone(model, parameters));
+    const handlePayment = () => withLoading(onPay(model, parameters));
 
     return (
         <>
@@ -26,15 +26,14 @@ const PaymentStep = ({ onPaymentDone, paymentAmount, model, children }) => {
                         onParameters={setParameters}
                         onMethod={setMethod}
                         onValidCard={setCardValidity}
-                        onPay={handlePaymentDone}
+                        onPay={handlePayment}
                     />
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <Row>
                             <Label></Label>
                             <Field>
-                                <PrimaryButton loading={loading} disabled={!canPay} onClick={handlePaymentDone}>{c(
-                                    'Action'
-                                ).t`Confirm payment`}</PrimaryButton>
+                                <PrimaryButton loading={loading} disabled={!canPay} onClick={handlePayment}>{c('Action')
+                                    .t`Confirm payment`}</PrimaryButton>
                             </Field>
                         </Row>
                     )}
@@ -51,7 +50,7 @@ PaymentStep.propTypes = {
         cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]).isRequired,
         currency: PropTypes.oneOf(CURRENCIES).isRequired
     }),
-    onPaymentDone: PropTypes.func.isRequired,
+    onPay: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired
 };
 

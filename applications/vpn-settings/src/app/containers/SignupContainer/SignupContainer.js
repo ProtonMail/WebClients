@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Loader, Button, Title } from 'react-components';
+import { Loader, Button, Title, useLoading } from 'react-components';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
 import useSignup from './useSignup';
@@ -12,6 +12,7 @@ import SupportDropdown from '../../components/header/SupportDropdown';
 import { CYCLE } from 'proton-shared/lib/constants';
 import PlanDetails from './SelectedPlan/PlanDetails';
 import PlanUpsell from './SelectedPlan/PlanUpsell';
+import useVerification from './VerificationStep/useVerification';
 
 const SignupState = {
     Plan: 'plan',
@@ -28,6 +29,7 @@ const SignupContainer = ({ history, onLogin }) => {
 
     const searchParams = new URLSearchParams(history.location.search);
     const [signupState, setSignupState] = useState(SignupState.Plan);
+    const [loading, withLoading] = useLoading(false);
     const historyState = history.location.state || {};
     const invite = historyState.invite;
     const coupon = historyState.coupon;
@@ -37,7 +39,7 @@ const SignupContainer = ({ history, onLogin }) => {
         setModel,
         signup,
         selectedPlan,
-        checkPayment,
+        makePayment,
         signupAvailability,
         getPlanByName,
         isLoading,
@@ -48,6 +50,7 @@ const SignupContainer = ({ history, onLogin }) => {
         cycle: Number(searchParams.get('cycle')),
         currency: searchParams.get('currency')
     });
+    const { verify, requestCode } = useVerification();
 
     const handleSelectPlan = (model, next = false) => {
         setModel(model);
@@ -66,15 +69,16 @@ const SignupContainer = ({ history, onLogin }) => {
         }
     };
 
-    const handleVerificationDone = async (model, verificationToken) => {
-        setModel(model);
+    const handleVerification = async (model, code, params) => {
+        const verificationToken = await verify(code, params);
         await signup(model, { verificationToken });
+        setModel(model);
     };
 
-    const handlePaymentDone = async (model, paymentParameters) => {
-        setModel(model);
-        const paymentDetails = await checkPayment(model, paymentParameters);
+    const handlePayment = async (model, paymentParameters) => {
+        const paymentDetails = await makePayment(model, paymentParameters);
         await signup(model, { paymentDetails });
+        setModel(model);
     };
 
     const handleUpgrade = (planName) => {
@@ -92,6 +96,7 @@ const SignupContainer = ({ history, onLogin }) => {
         <div className="ml1 onmobile-ml0 onmobile-mt2 selected-plan">
             <PlanDetails selectedPlan={selectedPlan} cycle={model.cycle} currency={model.currency} />
             <PlanUpsell
+                disabled={loading}
                 selectedPlan={selectedPlan}
                 getPlanByName={getPlanByName}
                 onExtendCycle={handleExtendCycle}
@@ -157,7 +162,8 @@ const SignupContainer = ({ history, onLogin }) => {
                             <VerificationStep
                                 model={model}
                                 allowedMethods={signupAvailability.allowedMethods}
-                                onVerificationDone={handleVerificationDone}
+                                onVerify={(...rest) => withLoading(handleVerification(...rest))}
+                                requestCode={requestCode}
                             >
                                 {selectedPlanComponent}
                             </VerificationStep>
@@ -167,7 +173,7 @@ const SignupContainer = ({ history, onLogin }) => {
                             <PaymentStep
                                 model={model}
                                 paymentAmount={selectedPlan.price.total}
-                                onPaymentDone={handlePaymentDone}
+                                onPay={(...rest) => withLoading(handlePayment(...rest))}
                             >
                                 {selectedPlanComponent}
                             </PaymentStep>

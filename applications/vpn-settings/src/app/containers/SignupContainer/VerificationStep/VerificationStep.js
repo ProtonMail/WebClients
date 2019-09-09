@@ -2,19 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Alert, SubTitle } from 'react-components';
 import VerificationForm from './VerificationForm/VerificationForm';
-import useVerification from './useVerification';
 import { c } from 'ttag';
 
-const VerificationStep = ({ onVerificationDone, allowedMethods, model, children }) => {
-    const { verify, requestCode } = useVerification();
-
+const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, children }) => {
     const handleSubmit = async (code, params) => {
         const newEmail = params.Destination.Address;
-        const verificationToken = await verify(code, params);
 
-        await onVerificationDone(
+        await onVerify(
             { ...model, email: newEmail && newEmail !== model.email ? newEmail : model.email },
-            verificationToken
+            code,
+            params
         );
     };
 
@@ -42,7 +39,8 @@ VerificationStep.propTypes = {
         email: PropTypes.string
     }).isRequired,
     allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onVerificationDone: PropTypes.func.isRequired,
+    onVerify: PropTypes.func.isRequired,
+    requestCode: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired
 };
 

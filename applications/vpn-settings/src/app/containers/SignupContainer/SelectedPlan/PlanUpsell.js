@@ -5,7 +5,7 @@ import { PLAN } from '../plans';
 import { PrimaryButton, Price } from 'react-components';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 
-const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycle, onUpgrade }) => {
+const PlanUpsell = ({ disabled, selectedPlan, getPlanByName, cycle, currency, onExtendCycle, onUpgrade }) => {
     const [upsellDone, setUpsellDone] = useState(false);
     const { planName, upsell } = selectedPlan;
     const upsellCycle = cycle === CYCLE.MONTHLY && planName !== PLAN.FREE;
@@ -55,7 +55,7 @@ const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycl
                                 {yearlyPlan.price.totalMonthly}
                             </Price>
                         </div>
-                        <PrimaryButton className="w100 mt1" onClick={handleExtendCycle}>{c('Action')
+                        <PrimaryButton disabled={disabled} className="w100 mt1" onClick={handleExtendCycle}>{c('Action')
                             .t`Pay annually and save 20%`}</PrimaryButton>
                     </>
                 )}
@@ -67,7 +67,7 @@ const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycl
                                 <li key={i}>{feature}</li>
                             ))}
                         </ul>
-                        <PrimaryButton className="w100 mt1" onClick={handleUpgrade()}>{c('Action')
+                        <PrimaryButton disabled={disabled} className="w100 mt1" onClick={handleUpgrade()}>{c('Action')
                             .jt`Try ${upsellPlan.title} for only ${totalMonthlyText}`}</PrimaryButton>
                     </>
                 )}
@@ -77,6 +77,7 @@ const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycl
 };
 
 PlanUpsell.propTypes = {
+    disabled: PropTypes.bool,
     selectedPlan: PropTypes.object.isRequired,
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]).isRequired,
     currency: PropTypes.oneOf(CURRENCIES).isRequired,
