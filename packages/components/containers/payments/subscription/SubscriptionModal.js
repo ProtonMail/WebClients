@@ -237,7 +237,7 @@ const SubscriptionModal = ({
                                 ? 'https://protonvpn.com/terms-and-conditions'
                                 : 'https://protonmail.com/terms-and-conditions'
                         }
-                    >{c('Info').t`By clicking Next, you agree to abide by Proton's terms and conditions.`}</Alert>
+                    >{c('Info').t`By clicking Upgrade, you agree to abide by Proton's terms and conditions.`}</Alert>
                 </>
             ),
             footer: (
