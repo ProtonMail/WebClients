@@ -28,7 +28,9 @@ const PlanUpsell = ({ disabled, selectedPlan, getPlanByName, cycle, currency, on
     return (
         <div className="flex mt1 flex-column bordered-container">
             <h6 className="p0-5 mb0 w100 aligncenter color-primary">
-                {planName === PLAN.FREE ? c('Title').t`Upgrade and get more` : c('Title').t`Summary`}
+                {[PLAN.FREE, PLAN.BASIC].includes(planName)
+                    ? c('Title').t`Upgrade and get more`
+                    : c('Title').t`Summary`}
             </h6>
             <div className="p1">
                 {upsellCycle && (
