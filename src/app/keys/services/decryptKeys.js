@@ -93,27 +93,32 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, tr
         });
 
         const primaryKeys = await Promise.all(list);
-        const [primaryKey] = primaryKeys;
+        const decryptedUserKeys = primaryKeys.filter(({ pkg }) => !!pkg).map(({ pkg }) => pkg);
+        const decryptedUserKeysPublic = decryptedUserKeys.map((pkg) => pkg.toPublic());
 
         // All address keys are decrypted and stored
         const { promises, dirtyAddresses } = addresses.reduce(
             (acc, address) => {
                 if (address.Keys.length) {
-                    const promises = address.Keys.map(async (key, index) => {
+                    const promises = address.Keys.map((key, index) => {
                         const { Activation, Token, Signature, PrivateKey } = key;
                         // New format
                         if (Token && Signature) {
-                            const decryptedToken = await decryptAddressKeyToken({
+                            return decryptAddressKeyToken({
                                 Token,
                                 Signature,
-                                privateKeys: [primaryKey.pkg],
+                                privateKeys: decryptedUserKeys,
                                 // For non-private members, verify the token against the organization key when signed in as an admin
-                                publicKeys: organizationKey ? [organizationKey.toPublic()] : [primaryKey.pkg.toPublic()]
-                            });
-                            return decryptPrivateKey(PrivateKey, decryptedToken).then(
-                                (pkg) => formatKey({ key, pkg, address }),
-                                () => skipKey({ key, address, index })
-                            );
+                                publicKeys: organizationKey ? [organizationKey.toPublic()] : decryptedUserKeysPublic
+                            })
+                                .then((token) => {
+                                    return decryptPrivateKey(PrivateKey, token).then((pkg) =>
+                                        formatKey({ key, pkg, address })
+                                    );
+                                })
+                                .catch(() => {
+                                    return skipKey({ key, address, index });
+                                });
                         }
                         if (isSubUser) {
                             return setupKeys
