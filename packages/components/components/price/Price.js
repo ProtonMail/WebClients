@@ -16,7 +16,7 @@ const Price = ({ children: amount = 0, currency = '', className = '', divisor = 
 
     if (currency === 'USD') {
         return (
-            <span className={`price ${className}`}>
+            <span className={`price ${className}`} data-currency={currency}>
                 {p}
                 {c}
                 {v}
@@ -26,9 +26,10 @@ const Price = ({ children: amount = 0, currency = '', className = '', divisor = 
     }
 
     return (
-        <span className={`price ${className}`}>
+        <span className={`price ${className}`} data-currency={currency}>
             {p}
-            {v} {c}
+            {v}
+            {c}
             {s}
         </span>
     ); // -2 EUR/month
