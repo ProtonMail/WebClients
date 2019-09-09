@@ -15,8 +15,9 @@ import {
 } from 'react-components';
 import { CYCLE, PLAN_NAMES, COUPON_CODES } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { isBundleEligible } from 'proton-shared/lib/helpers/subscription';
 
-import { formatPlans, toPlanNames, isBundleEligible } from './helpers';
+import { formatPlans, toPlanNames } from './helpers';
 import CouponDiscountBadge from '../CouponDiscountBadge';
 import SubscriptionModal from './SubscriptionModal';
 

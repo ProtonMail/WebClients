@@ -276,30 +276,3 @@ export const getCheckParams = ({
         ...rest
     };
 };
-
-/**
- * Check if a subscription is eligible to BUNDLE coupon
- * @param {Array} Subscription.Plans
- * @param {String} Subscription.CouponCode
- * @returns {Boolean} is eligible to BUNDLE
- */
-export const isBundleEligible = ({ Plans = [], CouponCode = '' } = {}) => {
-    if (CouponCode) {
-        return false;
-    }
-
-    if (!Plans.length) {
-        return true;
-    }
-
-    const { plus, professional, visionary, vpnplus, vpnbasic } = toPlanNames(Plans);
-
-    if (visionary) {
-        return false;
-    }
-
-    const mailPlan = plus || professional;
-    const vpnPlan = vpnplus || vpnbasic;
-
-    return (mailPlan && !vpnPlan) || (!mailPlan && vpnplus);
-};
