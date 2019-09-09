@@ -7,11 +7,11 @@ import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 const PlanPrice = ({ plan, cycle, currency }) => {
     const discount = plan.couponDiscount || plan.price.saved;
     const totalMonthlyPriceText = (
-        <strong>
-            <Price className="biggest" currency={currency}>
+        <span className="plan-price-area">
+            <Price className="inline-flex" currency={currency}>
                 {plan.price.totalMonthly}
             </Price>
-        </strong>
+        </span>
     );
     const totalBilledText =
         cycle === CYCLE.MONTHLY ? (
