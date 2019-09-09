@@ -1,26 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 import 'intersection-observer';
 
 import ObserverSection from './ObserverSection';
 
-const ObserverSections = ({ children, history, location }) => {
+const ObserverSections = ({ children, setActiveSection }) => {
     React.Children.forEach(children, (child) => {
         if (!child.props.id) throw new Error('All sections to be observed need an id');
     });
-    const [targetID, setNewTarget] = useState();
     const [observer, setObserver] = useState();
 
     useEffect(() => {
-        const newHash = `#${targetID}`;
-        if (!targetID || location.hash === newHash) {
+        if (!setActiveSection) {
             return;
         }
-        history.replace(newHash);
-    }, [targetID]);
 
-    useEffect(() => {
         const map = {};
         const keys = [];
 
@@ -45,7 +39,7 @@ const ObserverSections = ({ children, history, location }) => {
                 { value: map[keys[0]], id: keys[0] }
             );
 
-            setNewTarget(id);
+            setActiveSection(id);
         };
 
         const options = {
@@ -76,8 +70,7 @@ const ObserverSections = ({ children, history, location }) => {
 
 ObserverSections.propTypes = {
     children: PropTypes.node.isRequired,
-    history: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired
+    setActiveSection: PropTypes.func
 };
 
-export default withRouter(ObserverSections);
+export default ObserverSections;
