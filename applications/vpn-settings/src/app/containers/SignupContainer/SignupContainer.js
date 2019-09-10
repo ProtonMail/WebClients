@@ -22,7 +22,7 @@ const SignupState = {
 };
 
 // TODO: Flexible urls and plans for reuse between project
-const SignupContainer = ({ history, onLogin }) => {
+const SignupContainer = ({ history, onLogin, stopRedirect }) => {
     useEffect(() => {
         document.title = c('Title').t`Sign up - ProtonVPN`;
     }, []);
@@ -36,7 +36,8 @@ const SignupContainer = ({ history, onLogin }) => {
     const coupon = historyState.coupon;
 
     const handleLogin = (...args) => {
-        history.push('/downloads', { ignoreRedirect: true });
+        stopRedirect();
+        history.push('/downloads');
         onLogin(...args);
     };
 
@@ -198,6 +199,7 @@ const SignupContainer = ({ history, onLogin }) => {
 };
 
 SignupContainer.propTypes = {
+    stopRedirect: PropTypes.func.isRequired,
     onLogin: PropTypes.func.isRequired,
     history: PropTypes.shape({
         push: PropTypes.func.isRequired,

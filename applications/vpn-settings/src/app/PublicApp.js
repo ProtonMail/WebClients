@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { LoaderPage, ModalsChildren, GenericError } from 'react-components';
@@ -16,6 +16,7 @@ import SignupContainer from './containers/SignupContainer/SignupContainer';
 import locales from './locales';
 
 const PublicApp = ({ onLogin }) => {
+    const hasStopRedirect = useRef(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
@@ -35,6 +36,8 @@ const PublicApp = ({ onLogin }) => {
         return <LoaderPage />;
     }
 
+    const stopRedirect = () => (hasStopRedirect.current = true);
+
     return (
         <>
             <ModalsChildren />
@@ -50,12 +53,19 @@ const PublicApp = ({ onLogin }) => {
                     <Route
                         exact
                         path="/signup"
-                        render={({ history }) => <SignupContainer history={history} onLogin={onLogin} />}
+                        render={({ history }) => (
+                            <SignupContainer stopRedirect={stopRedirect} history={history} onLogin={onLogin} />
+                        )}
                     />
                     <Route
                         path="/login"
                         render={({ history, location }) => (
-                            <LoginContainer history={history} location={location} onLogin={onLogin} />
+                            <LoginContainer
+                                stopRedirect={stopRedirect}
+                                history={history}
+                                location={location}
+                                onLogin={onLogin}
+                            />
                         )}
                     />
                     <Route
@@ -63,8 +73,9 @@ const PublicApp = ({ onLogin }) => {
                             /**
                              * Ignore redirect if state is set.
                              * Needed due to the race condition between onLogin and history.push
+                             * A state on the location is not possible because the location is not changed when logging out.
                              */
-                            if (location.state) {
+                            if (hasStopRedirect.current) {
                                 return null;
                             }
                             return (
