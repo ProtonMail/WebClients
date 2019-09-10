@@ -22,7 +22,8 @@ const Payment = ({
     method,
     onMethod,
     onValidCard,
-    onPay
+    onPay,
+    fieldClassName
 }) => {
     const { methods, options, loading } = usePaymentMethods({ amount, cycle, coupon, type });
 
@@ -70,7 +71,7 @@ const Payment = ({
         <>
             <Row>
                 <Label>{c('Label').t`Payment method`}</Label>
-                <Field>
+                <Field className={fieldClassName}>
                     <div className="mb1">
                         <PaymentMethodsSelect
                             loading={loading}
@@ -111,7 +112,8 @@ Payment.propTypes = {
     onMethod: PropTypes.func,
     onValidCard: PropTypes.func,
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]),
-    onPay: PropTypes.func
+    onPay: PropTypes.func,
+    fieldClassName: PropTypes.string
 };
 
 export default Payment;
