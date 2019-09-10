@@ -8,7 +8,8 @@ import {
     SmallButton,
     Info,
     Loader,
-    useVPNCountries
+    useVPNCountries,
+    useToggle
 } from 'react-components';
 import { c } from 'ttag';
 import { PLANS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLAN_SERVICES, CYCLE } from 'proton-shared/lib/constants';
@@ -34,8 +35,10 @@ const PlansTable = ({
     updateCycle,
     currency = DEFAULT_CURRENCY,
     updateCurrency,
-    subscription
+    subscription,
+    expand = false
 }) => {
+    const { state, toggle } = useToggle(expand);
     const mySubscriptionText = c('Title').t`My subscription`;
     const { Plans = [] } = subscription || {};
     const { Name = 'free' } = Plans.find(({ Services, Type }) => Type === PLAN && Services & VPN) || {};
@@ -101,92 +104,22 @@ const PlansTable = ({
 
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <span className="mr0-5">{c('Header').t`Apps for Android / Linux / iOS / Windows`}</span>
+                        <span className="mr0-5">{c('Header').t`Simultaneous connections`}</span>
                     </th>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
+                    <td className="aligncenter">1</td>
+                    <td className="aligncenter">{getPlan(VPNBASIC).MaxVPN}</td>
+                    <td className="aligncenter">{getPlan(VPNPLUS).MaxVPN}</td>
+                    <td className="aligncenter">{getPlan(VISIONARY).MaxVPN}</td>
                 </tr>
 
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <span className="mr0-5">{c('Header').t`Advanced encryption`}</span>
+                        <span className="mr0-5">{c('Header').t`Countries`}</span>
                     </th>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <span className="mr0-5">{c('Header').t`Kill Switch / Always-on`}</span>
-                    </th>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <span className="mr0-5">{c('Header').t`No logs policy`}</span>
-                    </th>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <span className="mr0-5">{c('Header').t`No data limits`}</span>
-                    </th>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
+                    <td className="aligncenter">{countriesLoading ? <Loader /> : countries.free.length}</td>
+                    <td className="aligncenter">{countriesLoading ? <Loader /> : countries.basic.length}</td>
+                    <td className="aligncenter">{countriesLoading ? <Loader /> : countries.all.length}</td>
+                    <td className="aligncenter">{countriesLoading ? <Loader /> : countries.all.length}</td>
                 </tr>
 
                 <tr>
@@ -197,6 +130,7 @@ const PlansTable = ({
                     <td className="aligncenter">{c('Plan details').t`Highest`}</td>
                     <td className="aligncenter">{c('Plan details').t`Highest`}</td>
                 </tr>
+
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">{c('Header').t`P2P support (BitTorrent, etc.)`}</span>
@@ -214,6 +148,7 @@ const PlansTable = ({
                         <Icon name="on" />
                     </td>
                 </tr>
+
                 <tr>
                     <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
                         <span className="mr0-5">{c('Header').t`Tor over VPN`}</span>
@@ -254,78 +189,172 @@ const PlansTable = ({
                     </td>
                 </tr>
 
-                <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <span className="mr0-5">{c('Header').t`Stream geo-blocked content`}</span>
-                    </th>
-                    <td className="aligncenter">
-                        <Icon name="off" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="off" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                </tr>
+                {state ? (
+                    <tr>
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                            <span className="mr0-5">{c('Header').t`Apps for Android / Linux / iOS / Windows`}</span>
+                        </th>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                    </tr>
+                ) : null}
 
-                <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <span className="mr0-5">{c('Header').t`Simultaneous connections`}</span>
-                    </th>
-                    <td className="aligncenter">1</td>
-                    <td className="aligncenter">{getPlan(VPNBASIC).MaxVPN}</td>
-                    <td className="aligncenter">{getPlan(VPNPLUS).MaxVPN}</td>
-                    <td className="aligncenter">{getPlan(VISIONARY).MaxVPN}</td>
-                </tr>
-                <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <span className="mr0-5">{c('Header').t`Countries`}</span>
-                    </th>
-                    <td className="aligncenter">{countriesLoading ? <Loader /> : countries.free.length}</td>
-                    <td className="aligncenter">{countriesLoading ? <Loader /> : countries.basic.length}</td>
-                    <td className="aligncenter">{countriesLoading ? <Loader /> : countries.all.length}</td>
-                    <td className="aligncenter">{countriesLoading ? <Loader /> : countries.all.length}</td>
-                </tr>
-                <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <span className="mr0-5">ProtonMail Visionary</span>
-                        <Info title={c('Tooltip').t`Includes ProtonMail encrypted email with all features`} />
-                    </th>
-                    <td className="aligncenter">
-                        <Icon name="off" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="off" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="off" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
-                        <span className="mr0-5">{c('Header').t`30-day money-back guarantee`}</span>
-                    </th>
-                    <td className="aligncenter" />
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                    <td className="aligncenter">
-                        <Icon name="on" />
-                    </td>
-                </tr>
+                {state ? (
+                    <tr>
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                            <span className="mr0-5">{c('Header').t`Advanced encryption`}</span>
+                        </th>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                    </tr>
+                ) : null}
+
+                {state ? (
+                    <tr>
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                            <span className="mr0-5">{c('Header').t`Kill Switch / Always-on`}</span>
+                        </th>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                    </tr>
+                ) : null}
+
+                {state ? (
+                    <tr>
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                            <span className="mr0-5">{c('Header').t`No logs policy`}</span>
+                        </th>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                    </tr>
+                ) : null}
+
+                {state ? (
+                    <tr>
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                            <span className="mr0-5">{c('Header').t`No data limits`}</span>
+                        </th>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                    </tr>
+                ) : null}
+
+                {state ? (
+                    <tr>
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                            <span className="mr0-5">{c('Header').t`Stream geo-blocked content`}</span>
+                        </th>
+                        <td className="aligncenter">
+                            <Icon name="off" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="off" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                    </tr>
+                ) : null}
+
+                {state ? (
+                    <tr>
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                            <span className="mr0-5">ProtonMail Visionary</span>
+                            <Info title={c('Tooltip').t`Includes ProtonMail encrypted email with all features`} />
+                        </th>
+                        <td className="aligncenter">
+                            <Icon name="off" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="off" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="off" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                    </tr>
+                ) : null}
+
+                {state ? (
+                    <tr>
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                            <span className="mr0-5">{c('Header').t`30-day money-back guarantee`}</span>
+                        </th>
+                        <td className="aligncenter" />
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                        <td className="aligncenter">
+                            <Icon name="on" />
+                        </td>
+                    </tr>
+                ) : null}
+
                 {onSelect && (
                     <tr>
-                        <th scope="row" className="pm-simple-table-row-th alignleft" />
+                        <th scope="row" className="pm-simple-table-row-th alignleft bg-global-light">
+                            <SmallButton className="pm-button--link" onClick={toggle}>
+                                {state ? c('Action').t`Hide additional features` : c('Action').t`Compare all features`}
+                            </SmallButton>
+                        </th>
                         <td className="aligncenter">
                             <SmallButton disabled={loading} className="pm-button--primary" onClick={onSelect()}>
                                 {Name === 'free' ? c('Action').t`Update` : c('Action').t`Select`}
@@ -359,6 +388,7 @@ const PlansTable = ({
 
 PlansTable.propTypes = {
     loading: PropTypes.bool,
+    expand: PropTypes.bool,
     plans: PropTypes.array,
     onSelect: PropTypes.func,
     currency: PropTypes.string,
