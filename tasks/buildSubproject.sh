@@ -46,6 +46,11 @@ CONTACTS_DIST_DIR="dist/contacts";
 CALENDAR_DIST_DIR="dist/calendar";
 ARGS="$*";
 
+
+echo "[sub.build] $(date)" >> build.log;
+echo "[sub.build] $@" >> build.log;
+echo "[sub.build] api:$API" >> build.log;
+echo "[init.project] $API_FLAG" >> build.log;
 echo "[init.project] remote $ARGS" >> build.log;
 
 function getRemote {
@@ -94,11 +99,6 @@ function addSubProject {
     cp -r dist/ "$WEBCLIENT_DIR/$1";
 }
 
-
-echo "[sub.build] $(date)" >> build.log;
-echo "[sub.build] $@" >> build.log;
-echo "[sub.build] api:$API" >> build.log;
-
 if [[ "$*" == *--deploy-subproject=settings* ]]; then
     echo "[build] settings" >> build.log;
     loadProject "--remote-pm-settings" "${SETTINGS_APP:-proton-mail-settings}";
@@ -117,5 +117,7 @@ if [[ "$*" == *--deploy-subproject=calendar* ]]; then
     addSubProject "$CALENDAR_DIST_DIR";
 fi
 
-echo "" >> build.log;
-echo "" >> build.log;
+echo -e "\n" >> build.log
+echo -e "\n" >> build.log
+echo "[awk] $(awk --version)" >> build.log
+echo -e "\n" >> build.log
