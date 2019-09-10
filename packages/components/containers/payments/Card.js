@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Block, Input, Select, TelInput } from 'react-components';
+import { Block, Input, Select } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
 import { getFullList } from '../../helpers/countries';
@@ -23,17 +23,21 @@ const Card = ({ disableNumber = false, card, errors, onChange, loading = false }
         <>
             <Block>
                 <Input
+                    autocomplete="cc-name"
+                    name="ccname"
                     value={card.fullname}
                     onChange={handleChange('fullname')}
-                    placeholder={c('Placeholder').t`Name on card`}
+                    placeholder={c('Placeholder').t`Full name`}
                     error={errors.fullname}
                     disabled={loading}
                     required
                 />
             </Block>
             <Block>
-                <TelInput
+                <Input
+                    autocomplete="cc-number"
                     value={card.number}
+                    name="cardnumber"
                     onChange={handleChange('number')}
                     placeholder={c('Placeholder').t`Card number`}
                     error={errors.number}
@@ -57,6 +61,8 @@ const Card = ({ disableNumber = false, card, errors, onChange, loading = false }
                 </div>
                 <div className="flex-autogrid-item">
                     <Input
+                        autocomplete="cc-csc"
+                        name="cvc"
                         value={card.cvc}
                         onChange={handleChange('cvc')}
                         placeholder={c('Placeholder').t`CVV`}
