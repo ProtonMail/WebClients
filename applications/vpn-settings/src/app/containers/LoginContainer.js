@@ -6,12 +6,9 @@ import { LoginForm, Href, SimpleDropdown, DropdownMenu } from 'react-components'
 
 import SignInLayout from '../components/layout/SignInLayout';
 
-const LoginContainer = ({ history, location, onLogin }) => {
+const LoginContainer = ({ history, onLogin }) => {
     const handleLogin = (...args) => {
-        // Redirect to referrer if it was set.
-        if (location.state && location.state.from) {
-            history.push(location.state.from, { ignoreRedirect: true });
-        }
+        history.push('/dashboard', { ignoreRedirect: true });
         onLogin(...args);
     };
     return (
