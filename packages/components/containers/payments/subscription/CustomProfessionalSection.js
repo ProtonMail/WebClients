@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Select, Info } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
+import { ADDON_NAMES, PLANS } from 'proton-shared/lib/constants';
 
 import PlanPrice from './PlanPrice';
 import { getTextOption, getPlan, getAddon } from './helpers';
 
 const CustomProfessionalSection = ({ plans, model, onChange }) => {
-    const professionalPlan = getPlan(plans, { name: 'professional' });
-    const memberAddon = getAddon(plans, { name: '1member' });
-    const domainAddon = getAddon(plans, { name: '1domain' });
+    const professionalPlan = getPlan(plans, { name: PLANS.PROFESSIONAL });
+    const memberAddon = getAddon(plans, { name: ADDON_NAMES.MEMBER });
+    const domainAddon = getAddon(plans, { name: ADDON_NAMES.DOMAIN });
     const memberOptions = range(1, 5001).map((value, index) => ({
         text: getTextOption('member', value, index),
         value: index
@@ -41,8 +42,8 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
                 <div>
                     <Select
                         options={memberOptions}
-                        value={model.plansMap['1member']}
-                        onChange={handleChange('1member')}
+                        value={model.plansMap[ADDON_NAMES.MEMBER]}
+                        onChange={handleChange(ADDON_NAMES.MEMBER)}
                     />
                     <Info
                         title={c('Tooltip')
@@ -50,9 +51,9 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
                     />
                 </div>
                 <div>
-                    {model.plansMap['1member'] ? (
+                    {model.plansMap[ADDON_NAMES.MEMBER] ? (
                         <PlanPrice
-                            quantity={model.plansMap['1member']}
+                            quantity={model.plansMap[ADDON_NAMES.MEMBER]}
                             currency={model.currency}
                             amount={memberAddon.Pricing[model.cycle]}
                             cycle={model.cycle}
@@ -66,8 +67,8 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
                 <div>
                     <Select
                         options={domainOptions}
-                        value={model.plansMap['1domain']}
-                        onChange={handleChange('1domain')}
+                        value={model.plansMap[ADDON_NAMES.DOMAIN]}
+                        onChange={handleChange(ADDON_NAMES.DOMAIN)}
                     />
                     <Info
                         title={c('Tooltip')
@@ -75,9 +76,9 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
                     />
                 </div>
                 <div>
-                    {model.plansMap['1domain'] ? (
+                    {model.plansMap[ADDON_NAMES.DOMAIN] ? (
                         <PlanPrice
-                            quantity={model.plansMap['1domain']}
+                            quantity={model.plansMap[ADDON_NAMES.DOMAIN]}
                             currency={model.currency}
                             amount={domainAddon.Pricing[model.cycle]}
                             cycle={model.cycle}

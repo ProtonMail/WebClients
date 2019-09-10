@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Select, Info } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
+import { ADDON_NAMES, PLANS } from 'proton-shared/lib/constants';
 
 import PlanPrice from './PlanPrice';
 import { getTextOption, getPlan, getAddon } from './helpers';
 
 const CustomPlusSection = ({ plans, model, onChange }) => {
-    const plusPlan = getPlan(plans, { name: 'plus' });
-    const spaceAddon = getAddon(plans, { name: '1gb' });
-    const addressAddon = getAddon(plans, { name: '5address' });
-    const domainAddon = getAddon(plans, { name: '1domain' });
+    const plusPlan = getPlan(plans, { name: PLANS.PLUS });
+    const spaceAddon = getAddon(plans, { name: ADDON_NAMES.SPACE });
+    const addressAddon = getAddon(plans, { name: ADDON_NAMES.ADDRESS });
+    const domainAddon = getAddon(plans, { name: ADDON_NAMES.DOMAIN });
     const spaceOptions = range(5, 21).map((value, index) => ({
         text: getTextOption('space', value, index),
         value: index
@@ -44,12 +45,16 @@ const CustomPlusSection = ({ plans, model, onChange }) => {
             </div>
             <div className="flex flex-spacebetween pb1 mb1 border-bottom">
                 <div>
-                    <Select options={spaceOptions} value={model.plansMap['1gb']} onChange={handleChange('1gb')} />
+                    <Select
+                        options={spaceOptions}
+                        value={model.plansMap[ADDON_NAMES.SPACE]}
+                        onChange={handleChange(ADDON_NAMES.SPACE)}
+                    />
                 </div>
                 <div>
-                    {model.plansMap['1gb'] ? (
+                    {model.plansMap[ADDON_NAMES.SPACE] ? (
                         <PlanPrice
-                            quantity={model.plansMap['1gb']}
+                            quantity={model.plansMap[ADDON_NAMES.SPACE]}
                             currency={model.currency}
                             amount={spaceAddon.Pricing[model.cycle]}
                             cycle={model.cycle}
@@ -63,15 +68,15 @@ const CustomPlusSection = ({ plans, model, onChange }) => {
                 <div>
                     <Select
                         options={addressOptions}
-                        value={model.plansMap['5address']}
-                        onChange={handleChange('5address')}
+                        value={model.plansMap[ADDON_NAMES.ADDRESS]}
+                        onChange={handleChange(ADDON_NAMES.ADDRESS)}
                     />
                     <Info title={c('Tooltip').t`Add additional addresses to your account.`} />
                 </div>
                 <div>
-                    {model.plansMap['5address'] ? (
+                    {model.plansMap[ADDON_NAMES.ADDRESS] ? (
                         <PlanPrice
-                            quantity={model.plansMap['5address']}
+                            quantity={model.plansMap[ADDON_NAMES.ADDRESS]}
                             currency={model.currency}
                             amount={addressAddon.Pricing[model.cycle]}
                             cycle={model.cycle}
@@ -85,15 +90,15 @@ const CustomPlusSection = ({ plans, model, onChange }) => {
                 <div>
                     <Select
                         options={domainOptions}
-                        value={model.plansMap['1domain']}
-                        onChange={handleChange('1domain')}
+                        value={model.plansMap[ADDON_NAMES.DOMAIN]}
+                        onChange={handleChange(ADDON_NAMES.DOMAIN)}
                     />
                     <Info title={c('Tooltip').t`Use your own domain name.`} />
                 </div>
                 <div>
-                    {model.plansMap['1domain'] ? (
+                    {model.plansMap[ADDON_NAMES.DOMAIN] ? (
                         <PlanPrice
-                            quantity={model.plansMap['1domain']}
+                            quantity={model.plansMap[ADDON_NAMES.DOMAIN]}
                             currency={model.currency}
                             amount={domainAddon.Pricing[model.cycle]}
                             cycle={model.cycle}

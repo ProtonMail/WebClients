@@ -1,4 +1,4 @@
-import { PLAN_SERVICES, PLAN_TYPES } from 'proton-shared/lib/constants';
+import { PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES } from 'proton-shared/lib/constants';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { c, msgid } from 'ttag';
 import { isEquivalent, pick } from 'proton-shared/lib/helpers/object';
@@ -65,26 +65,27 @@ export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
         return {
             ...plansMap,
             plus: currentPlansMap.plus,
-            ['1vpn']: currentPlansMap['1vpn']
+            [ADDON_NAMES.VPN]: currentPlansMap[ADDON_NAMES.VPN]
         };
     }
 
     if (containsSamePlans(plansMap, { vpnplus: 1, plus: 1 })) {
         return {
             ...plansMap,
-            ['1domain']: currentPlansMap['1domain'],
-            ['5address']: currentPlansMap['5address'],
-            ['1gb']: currentPlansMap['1gb'],
-            ['1vpn']: currentPlansMap['1vpn']
+            [ADDON_NAMES.DOMAIN]: currentPlansMap[ADDON_NAMES.DOMAIN],
+            [ADDON_NAMES.ADDRESS]: currentPlansMap[ADDON_NAMES.ADDRESS],
+            [ADDON_NAMES.SPACE]: currentPlansMap[ADDON_NAMES.SPACE],
+            [ADDON_NAMES.VPN]: currentPlansMap[ADDON_NAMES.VPN]
         };
     }
 
     if (containsSamePlans(plansMap, { vpnplus: 1, professional: 1 })) {
         return {
             ...plansMap,
-            ['1domain']: currentPlansMap['1domain'] > 1 ? currentPlansMap['1domain'] : undefined, // pro starts with 2 custom domain
-            ['1member']: currentPlansMap['1member'],
-            ['1vpn']: currentPlansMap['1vpn']
+            [ADDON_NAMES.DOMAIN]:
+                currentPlansMap[ADDON_NAMES.DOMAIN] > 1 ? currentPlansMap[ADDON_NAMES.DOMAIN] : undefined, // pro starts with 2 custom domain
+            [ADDON_NAMES.MEMBER]: currentPlansMap[ADDON_NAMES.MEMBER],
+            [ADDON_NAMES.VPN]: currentPlansMap[ADDON_NAMES.VPN]
         };
     }
 
@@ -186,19 +187,19 @@ export const formatPlans = (plans = []) => {
         }
 
         if (plan.Type === ADDON) {
-            if (plan.Name === '1domain') {
+            if (plan.Name === ADDON_NAMES.DOMAIN) {
                 acc.domainAddon = mergeAddons(acc.domainAddon, plan);
             }
-            if (plan.Name === '1member') {
+            if (plan.Name === ADDON_NAMES.MEMBER) {
                 acc.memberAddon = mergeAddons(acc.memberAddon, plan);
             }
-            if (plan.Name === '1vpn') {
+            if (plan.Name === ADDON_NAMES.VPN) {
                 acc.vpnAddon = mergeAddons(acc.vpnAddon, plan);
             }
-            if (plan.Name === '5address') {
+            if (plan.Name === ADDON_NAMES.ADDRESS) {
                 acc.addressAddon = mergeAddons(acc.addressAddon, plan);
             }
-            if (plan.Name === '1gb') {
+            if (plan.Name === ADDON_NAMES.SPACE) {
                 acc.spaceAddon = mergeAddons(acc.spaceAddon, plan);
             }
             return acc;
@@ -211,7 +212,7 @@ export const formatPlans = (plans = []) => {
 /**
  * Helper to find plans from Subscription.Plans or Plans
  * @param {Array} plans from Subscription.Plans or Plans
- * @param {String} params.planName examples: 'plus', 'vpnplus', 'visionary', '5address', '1member'
+ * @param {String} params.planName examples: 'plus', 'vpnplus', 'visionary', ADDON_NAMES.ADDRESS, ADDON_NAMES.MEMBER
  * @param {String} params.id plan ID
  * @param {Number} params.type default: plan
  * @returns {Object} plan Object

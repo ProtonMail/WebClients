@@ -4,7 +4,7 @@ import { Alert, Price, Icon, Info, Checkbox, Select, useToggle, SmallButton } fr
 import { c } from 'ttag';
 import { range } from 'proton-shared/lib/helpers/array';
 import { omit } from 'proton-shared/lib/helpers/object';
-import { PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { PLAN_SERVICES, ADDON_NAMES } from 'proton-shared/lib/constants';
 
 import PlanPrice from './PlanPrice';
 import { getTextOption, getPlan, getAddon, getSubTotal } from './helpers';
@@ -16,7 +16,7 @@ const { VPN } = PLAN_SERVICES;
 const CustomVPNSection = ({ plans, model, onChange }) => {
     const vpnBasicPlan = getPlan(plans, { name: 'vpnbasic' });
     const vpnPlusPlan = getPlan(plans, { name: 'vpnplus' });
-    const vpnAddon = getAddon(plans, { name: '1vpn' });
+    const vpnAddon = getAddon(plans, { name: ADDON_NAMES.VPN });
     const vpnOptions = range(5, 501).map((value, index) => ({
         text: getTextOption('vpn', value, index),
         value: index
@@ -29,7 +29,7 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
         const toOmit = ['vpnbasic', 'vpnplus'];
 
         if (key !== 'plus' || !target.checked) {
-            toOmit.push('vpn');
+            toOmit.push(ADDON_NAMES.VPN);
         }
 
         const plansMap = omit(model.plansMap, toOmit);
@@ -42,7 +42,7 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
     };
 
     const handleSelectChange = ({ target }) => {
-        onChange({ ...model, plansMap: { ...model.plansMap, ['1vpn']: +target.value } });
+        onChange({ ...model, plansMap: { ...model.plansMap, [ADDON_NAMES.VPN]: +target.value } });
     };
 
     return (
@@ -203,16 +203,20 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
             {model.plansMap.vpnplus ? (
                 <div className="flex flex-spacebetween pb1 border-bottom">
                     <div>
-                        <Select options={vpnOptions} value={model.plansMap['1vpn']} onChange={handleSelectChange} />
+                        <Select
+                            options={vpnOptions}
+                            value={model.plansMap[ADDON_NAMES.VPN]}
+                            onChange={handleSelectChange}
+                        />
                         <Info
                             title={c('Tooltip')
                                 .t`Order additional connections to provide ProtonVPN to other users with your organization`}
                         />
                     </div>
                     <div>
-                        {model.plansMap['1vpn'] ? (
+                        {model.plansMap[ADDON_NAMES.VPN] ? (
                             <PlanPrice
-                                quantity={model.plansMap['1vpn']}
+                                quantity={model.plansMap[ADDON_NAMES.VPN]}
                                 currency={model.currency}
                                 amount={vpnAddon.Pricing[model.cycle]}
                                 cycle={model.cycle}
