@@ -15,7 +15,7 @@ import {
     useLoading
 } from 'react-components';
 import { buyCredit } from 'proton-shared/lib/api/payments';
-import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT, APPS } from 'proton-shared/lib/constants';
+import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT, APPS, MIN_CREDIT_AMOUNT } from 'proton-shared/lib/constants';
 
 import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
@@ -62,7 +62,7 @@ const CreditsModal = ({ onClose, ...rest }) => {
             onClose={onClose}
             onSubmit={() => withLoading(handleSubmit())}
             loading={loading}
-            submit={canPay && c('Action').t`Top up`}
+            submit={canPay && amount >= MIN_CREDIT_AMOUNT && c('Action').t`Top up`}
             title={c('Title').t`Add credits`}
             {...rest}
         >
