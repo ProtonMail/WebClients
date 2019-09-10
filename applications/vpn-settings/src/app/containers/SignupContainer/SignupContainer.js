@@ -54,7 +54,7 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
         appliedInvite
     } = useSignup(handleLogin, coupon, invite, {
         planName: searchParams.get('plan'),
-        cycle: Number(searchParams.get('cycle')),
+        cycle: Number(searchParams.get('billing')),
         currency: searchParams.get('currency')
     });
     const { verify, requestCode } = useVerification();

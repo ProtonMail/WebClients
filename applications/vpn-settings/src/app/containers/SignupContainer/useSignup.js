@@ -102,11 +102,11 @@ const useSignup = (onLogin, coupon, invite, initialModel = {}) => {
             setPlansWithCoupons(plansWithCoupons);
         };
 
-        if (!plans || !signupAvailability) {
+        if (!plans || !result) {
             return;
         }
 
-        if (coupon && !signupAvailability.allowedMethods.includes(TOKEN_TYPES.COUPON)) {
+        if (coupon && !result.VerifyMethods.includes(TOKEN_TYPES.COUPON)) {
             createNotification({ type: 'error', text: c('Notification').t`Coupons are temporarily disabled` });
         }
 
@@ -115,7 +115,7 @@ const useSignup = (onLogin, coupon, invite, initialModel = {}) => {
         } else {
             setPlansWithCoupons(plans);
         }
-    }, [signupAvailability, plans, coupon, model.cycle, model.currency]);
+    }, [result, plans, coupon, model.cycle, model.currency]);
 
     useEffect(() => {
         if (!invite || !signupAvailability) {
