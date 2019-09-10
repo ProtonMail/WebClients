@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
     Alert,
-    Button,
     SubTitle,
     useApi,
     usePlans,
@@ -13,8 +12,7 @@ import {
     useLoading,
     useEventManager,
     useNotifications,
-    useUser,
-    useToggle
+    useUser
 } from 'react-components';
 import { c } from 'ttag';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
@@ -33,7 +31,6 @@ const PlansSection = () => {
     const [loading, withLoading] = useLoading();
     const [currency, updateCurrency] = useState(DEFAULT_CURRENCY);
     const [cycle, updateCycle] = useState(DEFAULT_CYCLE);
-    const { state: showPlans, toggle: togglePlans } = useToggle(isFree);
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const bundleEligible = isBundleEligible(subscription);
@@ -125,23 +122,18 @@ const PlansSection = () => {
                 ) : null}
                 {Plans.length ? <div>{c('Info').t`You are currently subscribed to ${names}.`}</div> : null}
             </Alert>
-            <Button className="mb2" onClick={togglePlans}>
-                {showPlans ? c('Action').t`Hide plans` : c('Action').t`Show plans`}
-            </Button>
-            {showPlans ? (
-                <div className="scroll-horizontal-if-needed pt3">
-                    <PlansTable
-                        onSelect={(planName) => () => withLoading(handleSelectPlan(planName))}
-                        loading={loading}
-                        currency={currency}
-                        cycle={cycle}
-                        updateCurrency={updateCurrency}
-                        updateCycle={updateCycle}
-                        plans={plans}
-                        subscription={subscription}
-                    />
-                </div>
-            ) : null}
+            <div className="scroll-horizontal-if-needed pt3">
+                <PlansTable
+                    onSelect={(planName) => () => withLoading(handleSelectPlan(planName))}
+                    loading={loading}
+                    currency={currency}
+                    cycle={cycle}
+                    updateCurrency={updateCurrency}
+                    updateCycle={updateCycle}
+                    plans={plans}
+                    subscription={subscription}
+                />
+            </div>
         </>
     );
 };
