@@ -18,8 +18,8 @@ const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, childr
     return (
         <div className="border-top pt3 mb2">
             <SubTitle>{c('Title').t`Are you human?`}</SubTitle>
-            <Row>
-                <div>
+            <Row className="auto flex-item-fluid-auto">
+                <div className="w100">
                     <Alert>{c('Info')
                         .t`To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.`}</Alert>
                     <VerificationForm

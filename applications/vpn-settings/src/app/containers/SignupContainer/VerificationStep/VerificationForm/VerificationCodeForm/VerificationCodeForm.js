@@ -43,7 +43,7 @@ const VerificationCodeForm = ({ onSubmit, onResend, onBack, destination }) => {
             <form onSubmit={handleSubmit}>
                 <Row>
                     <Label htmlFor="code">{c('Label').t`6-digit code`}</Label>
-                    <Field className="mr1">
+                    <Field className="mr1 auto flex-item-fluid">
                         <Input id="code" value={code} onChange={handleChangeCode} placeholder="123456" />
                         <Row className="flex-spacebetween mt1">
                             <InlineLinkButton className="mr0-5" onClick={handleResend}>{c('Action')

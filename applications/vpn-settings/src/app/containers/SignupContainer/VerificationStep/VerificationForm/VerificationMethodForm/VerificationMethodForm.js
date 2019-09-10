@@ -50,7 +50,7 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
                             </div>
                         )}
                     </Label>
-                    <Field>
+                    <Field className="auto flex-item-fluid-auto">
                         {method === VERIFICATION_METHOD.EMAIL && (
                             <VerificationEmailInput
                                 loading={loading}
