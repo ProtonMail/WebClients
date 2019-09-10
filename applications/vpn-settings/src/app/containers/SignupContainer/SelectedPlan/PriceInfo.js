@@ -8,17 +8,17 @@ const PriceInfo = ({ plan, cycle, currency }) => {
     const billingCycleI18n = {
         [CYCLE.MONTHLY]: {
             label: c('Label').t`1 month`,
-            total: c('Label').t`Total due`
+            total: c('Label').t`Total price`
         },
         [CYCLE.YEARLY]: {
             label: c('Label').t`12 months`,
             discount: c('Label').t`Annual discount (20%)`,
-            total: c('Label').t`Total (annual plan)`
+            total: c('Label').t`Total price (annually)`
         },
         [CYCLE.TWO_YEARS]: {
             label: c('Label').t`24 months`,
             discount: c('Label').t`Two-year discount (33%)`,
-            total: c('Label').t`Total (two-year plan)`
+            total: c('Label').t`Total price (two-year)`
         }
     };
 
