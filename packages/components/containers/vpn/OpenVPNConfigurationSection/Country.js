@@ -3,10 +3,19 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { getCountryByAbbr } from 'react-components/helpers/countries';
 
-// require.context would be replaced by a dummy function in tests
 const flags = require.context('design-system/assets/img/shared/flags/4x3', true, /.svg$/);
+const flagsMap = flags.keys().reduce((acc, key) => {
+    acc[key] = () => flags(key);
+    return acc;
+}, {});
 
-const getFlagSvg = (abbreviation) => flags(`./${abbreviation.toLowerCase()}.svg`);
+const getFlagSvg = (abbreviation) => {
+    const key = `./${abbreviation.toLowerCase()}.svg`;
+    if (!flagsMap[key]) {
+        return;
+    }
+    return flagsMap[key]();
+};
 
 const Country = ({ server: { EntryCountry, ExitCountry } }) => {
     const isRouted = EntryCountry && EntryCountry !== ExitCountry;
