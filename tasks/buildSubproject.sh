@@ -92,7 +92,7 @@ echo "[sub.build] api:$API" >> build.log;
 
 if [[ "$*" == *--deploy-subproject=settings* ]]; then
     echo "[build] settings" >> build.log;
-    loadProject "--remote-pm-settings" "${SETTINGS_APP:-protonmail-settings}";
+    loadProject "--remote-pm-settings" "${SETTINGS_APP:-proton-mail-settings}";
     addSubProject "$SETTINGS_DIST_DIR";
 fi
 
