@@ -668,7 +668,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
 
-    return '<div id="' + overlayId + '" class="' + overlayClass + '" ' + MODAL_OVERLAY_BG_ENABLED_ATTR + '="' + overlayBackgroundEnabled + '"><dialog id="' + id + '" class="' + modalClassName + ' ' + modalAdditionnalClass + '" ' + ATTR_ROLE + '="' + MODAL_ROLE + '" ' + describedById + ' ' + ATTR_OPEN + ' ' + ATTR_LABELLEDBY + '="' + MODAL_TITLE_ID + '"><header class="' + modalHeaderClassName + '">' + button_close + ' ' + title + ' </header>  <div class="' + modalContentClassName + '"><div class="' + modalContentInnerClassName + '" id="' + MODAL_CONTENT_JS_ID + '">' + content + '</div><footer class="' + modalFooterClassName + ' flex flex-spacebetween"><button class="pm-button-blueborder js-modal-close">No</button><button class="pm-button-blue js-modal-close">Yes</button></footer></div></dialog></div>';
+    return '<div id="' + overlayId + '" class="' + overlayClass + '" ' + MODAL_OVERLAY_BG_ENABLED_ATTR + '="' + overlayBackgroundEnabled + '"><div class="pm-modalContainer"><dialog id="' + id + '" class="' + modalClassName + ' ' + modalAdditionnalClass + '" ' + ATTR_ROLE + '="' + MODAL_ROLE + '" ' + describedById + ' ' + ATTR_OPEN + ' ' + ATTR_LABELLEDBY + '="' + MODAL_TITLE_ID + '"><header class="' + modalHeaderClassName + '">' + button_close + ' ' + title + ' </header>  <div class="' + modalContentClassName + '"><div class="' + modalContentInnerClassName + '" id="' + MODAL_CONTENT_JS_ID + '">' + content + '</div><footer class="' + modalFooterClassName + ' flex flex-spacebetween"><button class="pm-button-blueborder js-modal-close">No</button><button class="pm-button-blue js-modal-close">Yes</button></footer></div></div></dialog></div>';
   };
 
   var closeModal = function closeModal(config) {
@@ -804,7 +804,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           // click on close button or on overlay not blocked
           var parentButton = searchParent(e.target, MODAL_BUTTON_JS_CLASS);
-          if ((e.target.getAttribute('id') === MODAL_BUTTON_JS_ID || parentButton !== '' || e.target.getAttribute('id') === MODAL_OVERLAY_ID || hasClass(e.target, MODAL_BUTTON_JS_CLASS) === true) && eventName === 'click') {
+          if ((e.target.getAttribute('id') === MODAL_BUTTON_JS_ID || parentButton !== '' || e.target.getAttribute('id') === MODAL_OVERLAY_ID || e.target.getAttribute('class') === 'pm-modalContainer' || hasClass(e.target, MODAL_BUTTON_JS_CLASS) === true) && eventName === 'click') {
             var body = doc.querySelector('body');
             var wrapperBody = findById(WRAPPER_PAGE_JS);
             var modal = findById(MODAL_JS_ID);
@@ -815,8 +815,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             var contentBackId = modalButtonClose.getAttribute(MODAL_BUTTON_CONTENT_BACK_ID);
             var backgroundEnabled = overlay.getAttribute(MODAL_OVERLAY_BG_ENABLED_ATTR);
 
-            if (!(e.target.getAttribute('id') === MODAL_OVERLAY_ID && backgroundEnabled === 'disabled')) {
-
+            if (!( (e.target.getAttribute('id') === MODAL_OVERLAY_ID || e.target.getAttribute('class') === 'pm-modalContainer') && backgroundEnabled === 'disabled')) {
+              
               closeModal({
                 modal: modal,
                 modalContent: modalContent,
