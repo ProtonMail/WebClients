@@ -26,7 +26,7 @@ function protonmailLogo(authentication, organizationModel, subscriptionModel, di
                 const isSubuser = authentication.user.subuser;
                 const isMember = authentication.user.Role === PAID_MEMBER_ROLE;
 
-                let planName = organization.PlanName;
+                let planName = organization.PlanName || '';
                 const planClass = 'fill-' + planName.toLowerCase();
                 const $planText = angular.element(planText);
 
