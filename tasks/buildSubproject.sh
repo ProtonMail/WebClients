@@ -46,6 +46,8 @@ CONTACTS_DIST_DIR="dist/contacts";
 CALENDAR_DIST_DIR="dist/calendar";
 ARGS="$*";
 
+echo "[init.project] remote $ARGS" >> build.log;
+
 function getRemote {
     echo "[clone] from git@github.com:ProtonMail/$1.git" >> build.log;
     cd /tmp;
@@ -64,6 +66,10 @@ function loadProject {
             # No, no, no, no, no, no, no, no, no, no, no, no there's no limit
             # https://www.youtube.com/watch?v=qM5W7Xn7FiA
             cp $ROOT_DIR/$2/{appConfig,env}.json . 2>/dev/null || :
+
+            echo "[config.project] write from  $ROOT_DIR/$2/{appConfig,env}.json" >> build.log;
+            echo "[config.project] write from  $(cat appConfig.json)" >> build.log;
+
         fi
 
     else
@@ -82,12 +88,14 @@ function addSubProject {
         fi;
     fi
 
+    echo "[build.project] npm run build -- $@ "--api=$API" --verbose" >> build.log;
     rm -rf dist;
     npm run build -- $@ "--api=$API" --verbose
     cp -r dist/ "$WEBCLIENT_DIR/$1";
 }
 
 
+echo "[sub.build] $(date)" >> build.log;
 echo "[sub.build] $@" >> build.log;
 echo "[sub.build] api:$API" >> build.log;
 
@@ -108,3 +116,6 @@ if [[ "$*" == *--deploy-subproject=calendar* ]]; then
     loadProject "--remote-calendar" "${CALENDAR_APP:-proton-calendar}";
     addSubProject "$CALENDAR_DIST_DIR";
 fi
+
+echo "" >> build.log;
+echo "" >> build.log;
