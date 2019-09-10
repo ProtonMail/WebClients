@@ -13,6 +13,7 @@ if [ -f "env/.env" ]; then
     echo "⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠ [DEPRECATION NOTICE] ⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠"
     echo " Plz copy your file env/.env to the .env"
     echo "⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠ [/DEPRECATION NOTICE] ⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠"
+
     echo ""
     echo ""
 fi;
@@ -82,7 +83,7 @@ function addSubProject {
     fi
 
     rm -rf dist;
-    npm run build -- $@ "--api=$API"
+    npm run build -- $@ "--api=$API" --verbose
     cp -r dist/ "$WEBCLIENT_DIR/$1";
 }
 
