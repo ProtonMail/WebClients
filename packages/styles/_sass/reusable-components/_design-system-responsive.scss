@@ -103,6 +103,7 @@
       flex-direction: column;
       & > * {
         width: 100%;
+        flex-basis: auto;
       }
       &.flex-autogrid {
         margin: 0;
