@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { hasProtonDomain } from 'proton-shared/lib/helpers/string';
 
 import LoginPromptModal from './LoginPromptModal';
+import LoginPanel from '../LoginPanel';
 
 const AccountStep = ({ onContinue, model, children }) => {
     const { createModal } = useModals();
@@ -22,7 +23,10 @@ const AccountStep = ({ onContinue, model, children }) => {
         <div className="border-top pt3 mb2">
             <SubTitle>{c('Title').t`Create an account`}</SubTitle>
             <Row>
-                <AccountForm onSubmit={handleSubmit} />
+                <div>
+                    <AccountForm onSubmit={handleSubmit} />
+                    <LoginPanel />
+                </div>
                 {children}
             </Row>
         </div>

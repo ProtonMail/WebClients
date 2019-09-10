@@ -14,8 +14,10 @@ const VerificationEmailInput = ({ defaultEmail = '', onSendClick, loading }) => 
 
     return (
         <form onSubmit={handleSubmit}>
-            <EmailInput value={email} onChange={handleChange} placeholder={c('Placeholder').t`Email`} />
-            <div className="mt1 flex flex-justify-end">
+            <div className="mb1">
+                <EmailInput value={email} onChange={handleChange} placeholder={c('Placeholder').t`Email`} />
+            </div>
+            <div>
                 <PrimaryButton type="submit" disabled={!email} loading={loading}>{c('Action').t`Send`}</PrimaryButton>
             </div>
         </form>

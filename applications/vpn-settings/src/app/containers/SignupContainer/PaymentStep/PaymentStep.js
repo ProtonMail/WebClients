@@ -4,6 +4,8 @@ import { Alert, Payment, usePayment, PrimaryButton, Field, Row, useLoading, SubT
 import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 
+import LoginPanel from '../LoginPanel';
+
 const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
     const [loading, withLoading] = useLoading();
     const { method, setMethod, parameters, canPay, setParameters, setCardValidity } = usePayment();
@@ -36,6 +38,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                             </Field>
                         )}
                     </Payment>
+                    <LoginPanel />
                 </div>
                 {children}
             </Row>

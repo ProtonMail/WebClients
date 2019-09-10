@@ -44,17 +44,27 @@ const VerificationCodeForm = ({ onSubmit, onResend, onBack, destination }) => {
                 <Row>
                     <Label htmlFor="code">{c('Label').t`6-digit code`}</Label>
                     <Field className="mr1 auto flex-item-fluid">
-                        <Input id="code" value={code} onChange={handleChangeCode} placeholder="123456" />
-                        <Row className="flex-spacebetween mt1">
-                            <InlineLinkButton className="mr0-5" onClick={handleResend}>{c('Action')
+                        <Input
+                            id="code"
+                            className="mb1"
+                            value={code}
+                            onChange={handleChangeCode}
+                            placeholder="123456"
+                            autoFocus={true}
+                            required
+                        />
+                        <div className="mb1">
+                            <PrimaryButton disabled={!code} type="submit" loading={loading}>{c('Action')
+                                .t`Verify`}</PrimaryButton>
+                        </div>
+                        <div className="mb1">
+                            <InlineLinkButton onClick={handleResend}>{c('Action')
                                 .t`Did not receive the code?`}</InlineLinkButton>
-                            <div>
-                                <PrimaryButton disabled={!code} type="submit" loading={loading}>{c('Action')
-                                    .t`Verify`}</PrimaryButton>
-                            </div>
-                        </Row>
-                        <InlineLinkButton className="mt2 mr0-5" onClick={onBack}>{c('Action')
-                            .t`Use another verification method`}</InlineLinkButton>
+                        </div>
+                        <div>
+                            <InlineLinkButton className="mr0-5" onClick={onBack}>{c('Action')
+                                .t`Use another verification method`}</InlineLinkButton>
+                        </div>
                     </Field>
                 </Row>
             </form>

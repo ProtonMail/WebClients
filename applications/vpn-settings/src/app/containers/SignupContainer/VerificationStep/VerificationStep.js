@@ -4,6 +4,8 @@ import { Row, Alert, SubTitle } from 'react-components';
 import VerificationForm from './VerificationForm/VerificationForm';
 import { c } from 'ttag';
 
+import LoginPanel from '../LoginPanel';
+
 const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, children }) => {
     const handleSubmit = async (code, params) => {
         const newEmail = params.Destination.Address;
@@ -28,6 +30,7 @@ const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, childr
                         onRequestCode={requestCode}
                         onSubmit={handleSubmit}
                     />
+                    <LoginPanel />
                 </div>
                 {children}
             </Row>

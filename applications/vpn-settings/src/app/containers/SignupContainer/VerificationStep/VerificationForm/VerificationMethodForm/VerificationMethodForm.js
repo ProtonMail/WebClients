@@ -31,36 +31,35 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
 
             {allowedMethods.length ? (
                 <Row>
-                    <Label>
-                        {isMethodAllowed(VERIFICATION_METHOD.EMAIL) ? (
-                            <div className="mb1">
+                    <Label>{c('Label').t`Verification method`}</Label>
+                    <Field className="auto flex-item-fluid-auto">
+                        <div className="pt0-5 mb1">
+                            {isMethodAllowed(VERIFICATION_METHOD.EMAIL) ? (
                                 <Radio
-                                    className="mb1 block"
+                                    className="mr1"
                                     checked={method === VERIFICATION_METHOD.EMAIL}
                                     onChange={handleSelectMethod(VERIFICATION_METHOD.EMAIL)}
                                 >{c('Option').t`Email address`}</Radio>
-                            </div>
-                        ) : null}
-                        {isMethodAllowed(VERIFICATION_METHOD.SMS) && (
-                            <div className="mb1">
+                            ) : null}
+                            {isMethodAllowed(VERIFICATION_METHOD.SMS) && (
                                 <Radio
                                     checked={method === VERIFICATION_METHOD.SMS}
                                     onChange={handleSelectMethod(VERIFICATION_METHOD.SMS)}
                                 >{c('Option').t`SMS`}</Radio>
-                            </div>
-                        )}
-                    </Label>
-                    <Field className="auto flex-item-fluid-auto">
-                        {method === VERIFICATION_METHOD.EMAIL && (
-                            <VerificationEmailInput
-                                loading={loading}
-                                defaultEmail={defaultEmail}
-                                onSendClick={handleSendEmailCode}
-                            />
-                        )}
-                        {method === VERIFICATION_METHOD.SMS && (
-                            <VerificationPhoneInput loading={loading} onSendClick={handleSendSMSCode} />
-                        )}
+                            )}
+                        </div>
+                        <div>
+                            {method === VERIFICATION_METHOD.EMAIL && (
+                                <VerificationEmailInput
+                                    loading={loading}
+                                    defaultEmail={defaultEmail}
+                                    onSendClick={handleSendEmailCode}
+                                />
+                            )}
+                            {method === VERIFICATION_METHOD.SMS && (
+                                <VerificationPhoneInput loading={loading} onSendClick={handleSendSMSCode} />
+                            )}
+                        </div>
                     </Field>
                 </Row>
             ) : null}
