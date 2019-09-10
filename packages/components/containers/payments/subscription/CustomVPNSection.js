@@ -200,7 +200,7 @@ const CustomVPNSection = ({ plans, model, onChange }) => {
                     </tr>
                 </tbody>
             </table>
-            {model.plansMap.vpnplus ? (
+            {model.plansMap.vpnplus && model.plansMap.professional ? (
                 <div className="flex flex-spacebetween pb1 border-bottom">
                     <div>
                         <Select
