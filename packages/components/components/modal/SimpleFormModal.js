@@ -14,6 +14,7 @@ const SimpleFormModal = ({ modalTitleID = 'modalTitle', children, onSubmit, onCl
 
 SimpleFormModal.propTypes = {
     ...DialogModal.propTypes,
+    modalTitleID: PropTypes.string,
     children: PropTypes.node.isRequired,
     onSubmit: PropTypes.func,
     onClose: PropTypes.func.isRequired

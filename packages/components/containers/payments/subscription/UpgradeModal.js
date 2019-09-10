@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SimpleFormModal, Icon, PrimaryButton, LinkButton, usePlans, Loader } from 'react-components';
+import { SimpleFormModal, Icon, PrimaryButton, LinkButton } from 'react-components';
 import upgradeSvg from 'design-system/assets/img/pm-images/upgrade.svg';
 import { c } from 'ttag';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
@@ -9,8 +9,7 @@ import './UpgradeModal.scss';
 import PlanPrice from './PlanPrice';
 import FeaturesList from './FeaturesList';
 
-const UpgradeModal = ({ onUpgrade, onComparePlans, ...rest }) => {
-    const [plans = [], loadingPlans] = usePlans();
+const UpgradeModal = ({ plans, onUpgrade, onComparePlans, ...rest }) => {
     const { Pricing = {} } = plans.find(({ Name }) => Name === 'plus') || {};
 
     const features = [
@@ -32,22 +31,18 @@ const UpgradeModal = ({ onUpgrade, onComparePlans, ...rest }) => {
                 <div className="flex-autogrid onmobile-flex-column">
                     <div className="flex-autogrid-item flex flex-column flex-spacebetween">
                         <h3 className="bold">{c('Title').t`Upgrade now!`}</h3>
-                        {loadingPlans ? (
-                            <Loader />
-                        ) : (
-                            <div className="mb2">
-                                <div>{c('Info').t`Unlock additional features with`}</div>
-                                <div>
-                                    {c('Info').t`ProtonMail Plus for as low as`}{' '}
-                                    <PlanPrice
-                                        className="bold color-pm-blue"
-                                        amount={Pricing[DEFAULT_CYCLE]}
-                                        cycle={DEFAULT_CYCLE}
-                                        currency={DEFAULT_CURRENCY}
-                                    />
-                                </div>
+                        <div className="mb2">
+                            <div>{c('Info').t`Unlock additional features with`}</div>
+                            <div>
+                                {c('Info').t`ProtonMail Plus for as low as`}{' '}
+                                <PlanPrice
+                                    className="bold color-pm-blue"
+                                    amount={Pricing[DEFAULT_CYCLE]}
+                                    cycle={DEFAULT_CYCLE}
+                                    currency={DEFAULT_CURRENCY}
+                                />
                             </div>
-                        )}
+                        </div>
                         <div>
                             <PrimaryButton
                                 className="mr1"
@@ -77,6 +72,7 @@ const UpgradeModal = ({ onUpgrade, onComparePlans, ...rest }) => {
 };
 
 UpgradeModal.propTypes = {
+    plans: PropTypes.array.isRequired,
     onUpgrade: PropTypes.func,
     onComparePlans: PropTypes.func
 };

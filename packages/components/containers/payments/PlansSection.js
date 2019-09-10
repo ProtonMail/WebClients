@@ -6,10 +6,10 @@ import {
     DowngradeModal,
     MozillaInfoPanel,
     useSubscription,
-    useApiWithoutResult,
     Button,
     Loader,
     usePlans,
+    useApi,
     useUser,
     useToggle,
     useModals,
@@ -35,11 +35,11 @@ const PlansSection = () => {
     const [subscription = {}, loadingSubscription] = useSubscription();
     const [plans = [], loadingPlans] = usePlans();
     const { state, toggle } = useToggle(!isPaid);
+    const api = useApi();
 
+    const [showUpgradeModal, setShowUpgradeModel] = useState(false);
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [cycle, setCycle] = useState(DEFAULT_CYCLE);
-    const { request: requestCheckSubscription } = useApiWithoutResult(checkSubscription);
-    const { request: requestDeleteSubscription } = useApiWithoutResult(deleteSubscription);
     const bundleEligible = isBundleEligible(subscription);
     const { CouponCode, Plans = [] } = subscription;
     const names = getPlans(subscription)
@@ -47,7 +47,7 @@ const PlansSection = () => {
         .join(c('Separator, spacing is important').t` and `);
 
     const handleUnsubscribe = async () => {
-        await requestDeleteSubscription();
+        await api(deleteSubscription());
         await call();
         createNotification({ text: c('Success').t`You have successfully unsubscribed` });
     };
@@ -67,8 +67,8 @@ const PlansSection = () => {
 
         const plansMap = mergePlansMap(newPlansMap, subscription);
         const couponCode = CouponCode ? CouponCode : undefined; // From current subscription; CouponCode can be null
-        const { Coupon } = await requestCheckSubscription(
-            getCheckParams({ plans, plansMap, currency, cycle, coupon: couponCode })
+        const { Coupon } = await api(
+            checkSubscription(getCheckParams({ plans, plansMap, currency, cycle, coupon: couponCode }))
         );
         const coupon = Coupon ? Coupon.Code : undefined; // Coupon can equals null
 
@@ -84,18 +84,28 @@ const PlansSection = () => {
     };
 
     useEffect(() => {
+        if (loadingPlans || loadingSubscription) {
+            return;
+        }
         const [{ Currency, Cycle } = {}] = plans;
         setCurrency(subscription.Currency || Currency);
         setCycle(subscription.Cycle || Cycle);
+        if (isFree) {
+            setShowUpgradeModel(true);
+        }
     }, [loadingSubscription, loadingPlans]);
 
     useEffect(() => {
-        if (isFree) {
+        if (showUpgradeModal) {
             createModal(
-                <UpgradeModal onComparePlans={() => !state && toggle()} onUpgrade={handleModal({ plus: 1 })} />
+                <UpgradeModal
+                    plans={plans}
+                    onComparePlans={() => !state && toggle()}
+                    onUpgrade={handleModal({ plus: 1 })}
+                />
             );
         }
-    }, []);
+    }, [showUpgradeModal]);
 
     if (subscription.isManagedByMozilla) {
         return (
