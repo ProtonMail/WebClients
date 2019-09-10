@@ -6,6 +6,8 @@ import { c } from 'ttag';
 const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destination, onClose, ...rest }) => {
     const editI18n = c('Action').t`Edit`;
     const destinationText = <strong key="destination">{destination.Email || destination.Phone}</strong>;
+    const email = c('VerificationType').t`email`;
+    const phone = c('VerificationType').t`phone`;
 
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
@@ -16,7 +18,7 @@ const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destin
                 <InnerModal>
                     <p>
                         {c('Info').jt`Click below to resend the code to ${destinationText}. If ${
-                            destination.Email ? c('VerificationType').t`email` : c('VerificationType').t`phone`
+                            destination.Email ? email : phone
                         } is incorrect, please click "${editI18n}".`}
                     </p>
                 </InnerModal>
