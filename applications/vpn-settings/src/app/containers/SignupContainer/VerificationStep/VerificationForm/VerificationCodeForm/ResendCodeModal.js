@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destination, onClose, ...rest }) => {
     const editI18n = c('Action').t`Edit`;
-    const destinationText = <strong key="destination">{destination.Email || destination.Phone}</strong>;
-    const destinationType = destination.Email ? c('VerificationType').t`email` : c('VerificationType').t`phone`;
+    const destinationText = <strong key="destination">{destination.Address || destination.Phone}</strong>;
+    const destinationType = destination.Address ? c('VerificationType').t`email` : c('VerificationType').t`phone`;
 
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
@@ -51,7 +51,7 @@ ResendCodeModal.propTypes = {
     modalTitleID: PropTypes.string,
     destination: PropTypes.shape({
         Phone: PropTypes.string,
-        Email: PropTypes.string
+        Address: PropTypes.string
     }).isRequired,
     onResend: PropTypes.func.isRequired,
     onClose: PropTypes.func,
