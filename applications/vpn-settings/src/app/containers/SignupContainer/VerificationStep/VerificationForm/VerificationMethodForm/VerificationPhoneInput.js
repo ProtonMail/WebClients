@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { PrimaryButton, TelInput } from 'react-components';
+import { PrimaryButton, IntlTelInput } from 'react-components';
 import { c } from 'ttag';
 
 const VerificationPhoneInput = ({ onSendClick, loading }) => {
     const [phone, setPhone] = useState('');
 
-    const handleChangePhone = ({ target }) => setPhone(target.value);
+    const handleChangePhone = (status, value, countryData, number) => {
+        setPhone(number);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         onSendClick(phone);
@@ -15,7 +18,12 @@ const VerificationPhoneInput = ({ onSendClick, loading }) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="mb1">
-                <TelInput value={phone} onChange={handleChangePhone} placeholder="(201) 555-0123" />
+                <IntlTelInput
+                    containerClassName="w100"
+                    inputClassName="w100"
+                    onPhoneNumberChange={handleChangePhone}
+                    onPhoneNumberBlur={handleChangePhone}
+                />
             </div>
             <div>
                 <PrimaryButton type="submit" disabled={!phone} loading={loading}>{c('Action').t`Send`}</PrimaryButton>
