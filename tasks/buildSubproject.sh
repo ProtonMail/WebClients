@@ -77,7 +77,7 @@ function addSubProject {
         if [[ -f "./package-lock.json" ]]; then
             npm ci;
         else
-            npm i;
+            npm i --no-audit --no-package-lock;
         fi;
     fi
 
