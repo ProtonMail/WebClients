@@ -15,6 +15,7 @@
 - added `badgeLabel-primary` and set this one by default
 - added `flex-item-fluid-auto` helper: `flex: 1 1 auto`
 - added `onmobile-flex-wrap` and `onmobile-min-w100` helpers
+- added `rounded0`, `rounded0-left` and `rounded0-right` helpers
 
 ## Updated/fixes
 
@@ -30,6 +31,8 @@
 - fixed `meter` display on Chrome
 - fixed password revealer
 - updated `.pm-field-container` with use case of `auto`
+- updated modal positionning
+- fixed `error-zone` display (with `password-revealer` container and classic `pm-field`)
 
 
 # [1.7.3] - 2019-08-30

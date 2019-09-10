@@ -100,13 +100,22 @@ textarea[required].pm-field.field-pristine:invalid {
 
 /* errors */
 .error-zone {
-  transition: transform .15s linear;
+  transition: transform .15s linear, max-height .15s linear;
   transform: scaleY(1);
   transform-origin: top center;
   &:empty {
     transform: scaleY(0);
   }
 }
+// if focus is inside password-revealer-container => don't display error
+// general rule: if focus is on the field => don't display error yet
+.password-revealer-container:focus-within + .error-zone,
+.pm-field:focus + .error-zone {
+  transform: scaleY(0);
+  max-height: 0;
+}
+
+
 
 
 /* sizes/other modifiers */
