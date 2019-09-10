@@ -77,6 +77,7 @@ export { default as useDebounceInput } from './components/input/useDebounceInput
 export { default as PasswordInput } from './components/input/PasswordInput';
 export { default as Radio } from './components/input/Radio';
 export { default as RadioGroup } from './components/input/RadioGroup';
+export { default as IntlTelInput } from './components/input/IntlTelInput';
 export { default as SubTitle } from './components/title/SubTitle';
 export { default as Title } from './components/title/Title';
 export { default as useLoader } from './components/loader/useLoader';
