@@ -20,6 +20,7 @@ const PlanComparisonModal = ({ modalTitleID = 'modalTitle', onClose, defaultCycl
             <div className="pm-modalContent">
                 <InnerModal>
                     <PlansTable
+                        expand={true}
                         subscription={null}
                         loading={loadingPlans}
                         currency={currency}
