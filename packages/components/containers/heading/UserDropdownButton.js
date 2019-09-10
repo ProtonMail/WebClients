@@ -11,7 +11,7 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }) => {
     return (
         <button
             type="button"
-            className="inline-flex dropDown-logout-button"
+            className="inline-flex flex-items-center dropDown-logout-button"
             aria-expanded={isOpen}
             ref={buttonRef}
             {...rest}
