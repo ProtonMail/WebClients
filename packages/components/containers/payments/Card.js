@@ -23,7 +23,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
         <>
             <Block>
                 <Input
-                    autocomplete="cc-name"
+                    autoComplete="cc-name"
                     name="ccname"
                     value={card.fullname}
                     onChange={handleChange('fullname')}
@@ -35,7 +35,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
             </Block>
             <Block>
                 <Input
-                    autocomplete="cc-number"
+                    autoComplete="cc-number"
                     value={card.number}
                     name="cardnumber"
                     onChange={handleChange('number')}
@@ -61,7 +61,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                 </div>
                 <div className="flex-autogrid-item">
                     <Input
-                        autocomplete="cc-csc"
+                        autoComplete="cc-csc"
                         name="cvc"
                         value={card.cvc}
                         onChange={handleChange('cvc')}
