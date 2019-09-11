@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Title, useLoading, LoaderPage } from 'react-components';
+import { Button, Title, useLoading, Loader } from 'react-components';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
 import useSignup from './useSignup';
@@ -153,17 +153,19 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
                         )}
                     </div>
                     <div className="onmobile-min-w100 onmobile-aligncenter onmobile-mt0-5">
-                        {!creatingAccount && <Title>{c('Title').t`Sign up`}</Title>}
+                        <Title>{c('Title').t`Sign up`}</Title>
                     </div>
                     <div className="flex-item-fluid alignright plan-help-button">
                         <SupportDropdown content={c('Action').t`Need help`} />
                     </div>
                 </div>
                 {isLoading || creatingAccount ? (
-                    <LoaderPage
-                        color="pm-blue"
-                        text={isLoading ? c('Info').t`Loading` : c('Info').t`Creating your account`}
-                    />
+                    <div className="aligncenter">
+                        <Loader size="big" />
+                        <div className="atomLoader-text">
+                            {isLoading ? c('Info').t`Loading` : c('Info').t`Creating your account`}
+                        </div>
+                    </div>
                 ) : (
                     <>
                         {signupState === SignupState.Plan && (
