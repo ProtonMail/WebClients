@@ -18,8 +18,8 @@ const Loader = ({ size = 'small' }) => {
         <div className="center mb2 mt2">
             <img
                 src={IMAGES[size]}
-                width={size === 'medium' && MEDIUM_WIDTH}
-                height={size === 'medium' && MEDIUM_HEIGHT}
+                width={size === 'medium' ? MEDIUM_WIDTH : undefined}
+                height={size === 'medium' ? MEDIUM_HEIGHT : undefined}
                 alt={c('Info').t`Loading`}
             />
         </div>
