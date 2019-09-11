@@ -49,7 +49,7 @@ const Bitcoin = ({ amount, currency, type }) => {
         return (
             <>
                 <Alert type="error">{c('Error').t`Error connecting to the Bitcoin API.`}</Alert>
-                <Button onClick={() => withLoading(request)}>{c('Action').t`Try again`}</Button>
+                <Button onClick={() => withLoading(request())}>{c('Action').t`Try again`}</Button>
             </>
         );
     }
