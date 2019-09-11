@@ -3,6 +3,28 @@
   width: 100%;
 }
 
+.signup-title {
+  display: flex;
+  width: 100%;
+  font-weight: bold;
+  font-size: 2.2rem;
+
+  &::before,
+  &::after {
+      content: "";
+      flex: 1;
+      align-self: center;
+      border-bottom: 1px solid $pm-global-border;
+      margin-top: .25em;
+  }
+  &::before {
+      margin-right: 1em;
+  }
+  &::after {
+      margin-left: 1em;
+  }
+}
+
 .container-plans-signup span[aria-describedby] {
   position: relative;
   z-index: 5;
