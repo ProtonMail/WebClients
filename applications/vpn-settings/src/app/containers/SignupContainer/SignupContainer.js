@@ -153,7 +153,7 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
                         )}
                     </div>
                     <div className="onmobile-min-w100 onmobile-aligncenter onmobile-mt0-5">
-                        <Title>{c('Title').t`Sign up`}</Title>
+                        {!creatingAccount && <Title>{c('Title').t`Sign up`}</Title>}
                     </div>
                     <div className="flex-item-fluid alignright plan-help-button">
                         <SupportDropdown content={c('Action').t`Need help`} />
