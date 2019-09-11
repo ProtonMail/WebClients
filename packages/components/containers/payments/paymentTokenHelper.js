@@ -88,7 +88,7 @@ export const process = ({ Token, api, tab }) => {
         const onMessage = (event) => {
             const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
-            if (origin !== 'https://secure.protonmail.blue') {
+            if (origin !== 'https://secure.protonmail.com') {
                 return;
             }
 
