@@ -1,3 +1,15 @@
+# [3.16.4] - 2019-09-11
+## Added
+- Support for payments with 3DS enabled credit cards
+
+## Fixed
+- Attachments were not shown when printing a message
+- Decryption error was shown for certain messages
+- Some error messages were not properly displayed
+
+## Changed
+- PayPal payments improvements
+
 # [3.16.3] - 2019-07-29
 ## Changed
 - Sending limits handling
