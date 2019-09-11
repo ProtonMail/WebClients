@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { UNPAID_STATE } from '../../constants';
+import { isExpired } from '../../../helpers/card';
 
 /* @ngInject */
 function PaymentsController(
@@ -152,6 +153,8 @@ function PaymentsController(
             })
         );
     };
+
+    $scope.isExpired = isExpired;
 
     updateUser();
 

@@ -95,7 +95,7 @@ export const HD_BREAKPOINT = 1920;
 export const DESKTOP_BREAKPOINT = 1200;
 export const ROW_BREAKPOINT = 960;
 export const MOBILE_BREAKPOINT = 800;
-export const MIN_PAYPAL_AMOUNT = 500;
+export const MIN_PAYPAL_AMOUNT = 200;
 export const MAX_PAYPAL_AMOUNT = 99999900;
 export const SIGNATURE_START = 1546300800; // January 1, 2019
 export const MIN_BITCOIN_AMOUNT = 500;
@@ -536,6 +536,14 @@ export const LABEL_COLORS = [
     '#e6984c',
     '#dfb286'
 ];
+
+export const PAYMENT_TOKEN_STATUS = {
+    STATUS_PENDING: 0,
+    STATUS_CHARGEABLE: 1,
+    STATUS_FAILED: 2,
+    STATUS_CONSUMED: 3,
+    STATUS_NOT_SUPPORTED: 4
+};
 
 export const SRP_MODULUS_KEY = `
 -----BEGIN PGP PUBLIC KEY BLOCK-----

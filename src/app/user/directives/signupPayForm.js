@@ -142,7 +142,7 @@ function signupPayForm(paymentUtils, dispatchers, cardModel, notification, gette
             };
 
             scope.onPaypalSuccess = (Details) => {
-                dispatchPayformSubmit({ Type: 'paypal', Details });
+                dispatchPayformSubmit({ Type: 'token', Details });
             };
 
             /**

@@ -1,9 +1,19 @@
 import _ from 'lodash';
 
 import { DEFAULT_CURRENCY, CURRENCIES } from '../../constants';
+import { handlePaymentToken } from '../helpers/paymentToken';
 
 /* @ngInject */
-function donation(cardModel, gettextCatalog, dispatchers, paymentUtils, donateModel, authentication) {
+function donation(
+    cardModel,
+    Payment,
+    dispatchers,
+    paymentUtils,
+    donateModel,
+    authentication,
+    networkActivityTracker,
+    paymentVerificationModal
+) {
     const SELECTOR = {
         BTN_AMOUNT: 'donationForm-btn-amount',
         BTN_SUBMIT: 'donationForm-btn-submit',
@@ -34,12 +44,12 @@ function donation(cardModel, gettextCatalog, dispatchers, paymentUtils, donateMo
 
         if (scope.model.method.value === 'paypal') {
             parameters.Payment = {
-                Type: 'paypal',
+                Type: 'token',
                 Details: paypalConfig
             };
         }
 
-        return parameters;
+        return handlePaymentToken({ params: parameters, paymentApi: Payment, paymentVerificationModal });
     };
 
     return {
@@ -75,7 +85,12 @@ function donation(cardModel, gettextCatalog, dispatchers, paymentUtils, donateMo
             const onSubmit = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                scope.donationForm.$valid && donate(buildRequestOption());
+
+                if (scope.donationForm.$valid) {
+                    const promise = buildRequestOption().then(donate);
+
+                    networkActivityTracker.track(promise);
+                }
             };
 
             /**
@@ -94,7 +109,7 @@ function donation(cardModel, gettextCatalog, dispatchers, paymentUtils, donateMo
 
             scope.getAmount = () => (scope.model.otherAmount || scope.model.amount || 0) * 100;
             scope.onFocusOtherAmount = () => (scope.model.amount = null);
-            scope.paypalCallback = (config) => donate(buildRequestOption(config));
+            scope.paypalCallback = async (config) => donate(await buildRequestOption(config));
 
             const onClick = ({ target }) => {
                 if (target.classList.contains(SELECTOR.BTN_AMOUNT)) {
@@ -127,7 +142,7 @@ function donation(cardModel, gettextCatalog, dispatchers, paymentUtils, donateMo
                 }
 
                 if (type === 'donation.input.submit') {
-                    _rAF(() => el.triggerHandler('submit'));
+                    el.triggerHandler('submit');
                 }
             });
 

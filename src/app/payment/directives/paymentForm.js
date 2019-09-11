@@ -1,17 +1,19 @@
 import _ from 'lodash';
 
 import { getPlansMap } from '../../../helpers/paymentHelper';
+import { handlePaymentToken } from '../helpers/paymentToken';
 
 /* @ngInject */
 function paymentForm(
     dispatchers,
-    notification,
     eventManager,
     cardModel,
     paymentModel,
+    Payment,
     paymentUtils,
-    dashboardModel,
-    paymentModalModel
+    paymentModalModel,
+    networkActivityTracker,
+    paymentVerificationModal
 ) {
     const { dispatcher } = dispatchers(['modal.payment']);
     const disp = (plan) => (type, data = {}) => {
@@ -93,12 +95,12 @@ function paymentForm(
 
                 if (ctrl.method.value === 'paypal') {
                     parameters.Payment = {
-                        Type: 'paypal',
+                        Type: 'token',
                         Details: ctrl.paypalConfig
                     };
                 }
 
-                return parameters;
+                return handlePaymentToken({ params: parameters, paymentApi: Payment, paymentVerificationModal });
             };
 
             const finish = () => {
@@ -106,16 +108,21 @@ function paymentForm(
                 dispatch('process.success');
             };
 
+            const paymentRequest = async () => {
+                const parameters = await getParameters();
+                await paymentModel.subscribe(parameters);
+                return eventManager.call();
+            };
+
             ctrl.submit = () => {
                 ctrl.step = 'process';
-
-                paymentModel
-                    .subscribe(getParameters())
-                    .then(eventManager.call)
-                    .then(finish)
-                    .catch(() => {
+                const promise = paymentRequest()
+                    .then(() => finish())
+                    .catch((error) => {
                         ctrl.step = 'payment';
+                        throw error;
                     });
+                networkActivityTracker.track(promise);
             };
 
             function getAddParameters(thing) {

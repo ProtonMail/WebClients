@@ -1,5 +1,15 @@
+import { handlePaymentToken } from '../helpers/paymentToken';
+
 /* @ngInject */
-function cardModal(pmModal, Payment, gettextCatalog, cardModel, networkActivityTracker, paymentModel) {
+function cardModal(
+    pmModal,
+    Payment,
+    gettextCatalog,
+    cardModel,
+    networkActivityTracker,
+    paymentModel,
+    paymentVerificationModal
+) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/card.tpl.html'),
@@ -27,14 +37,22 @@ function cardModal(pmModal, Payment, gettextCatalog, cardModel, networkActivityT
             }
 
             // Functions
-            const method = () => {
+            const method = async () => {
                 if (self.mode === 'edition') {
                     const card = cardModel(self.card);
-                    return Payment.updateMethod({ Type: 'card', Details: card.details() }).then(
-                        ({ data = {} } = {}) => data.PaymentMethod
-                    );
+                    const requestBody = await handlePaymentToken({
+                        params: {
+                            Payment: {
+                                Type: 'card',
+                                Details: card.details()
+                            }
+                        },
+                        paymentApi: Payment,
+                        paymentVerificationModal
+                    });
+                    const { data = {} } = await Payment.updateMethod(requestBody.Payment);
+                    return data.PaymentMethod;
                 }
-                return Promise.resolve();
             };
 
             self.edit = () => {
