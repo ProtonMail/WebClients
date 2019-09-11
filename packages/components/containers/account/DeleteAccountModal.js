@@ -12,8 +12,6 @@ import {
     FormModal,
     Alert,
     useEventManager,
-    useAddresses,
-    useApiWithoutResult,
     useUser,
     useNotifications,
     useUserSettings,
@@ -34,9 +32,6 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
     const authentication = useAuthentication();
     const [{ isAdmin, Name } = {}] = useUser();
     const [{ TwoFactor } = {}] = useUserSettings();
-    const [addresses = []] = useAddresses();
-    const [{ Email } = {}] = addresses;
-    const { request } = useApiWithoutResult(reportBug);
     const [loading, setLoading] = useState(false);
     const [model, setModel] = useState({
         feedback: '',
@@ -61,20 +56,22 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
             });
 
             if (isAdmin) {
-                await request({
-                    OS: '--',
-                    OSVersion: '--',
-                    Browser: '--',
-                    BrowserVersion: '--',
-                    BrowserExtensions: '--',
-                    Client: '--',
-                    ClientVersion: '--',
-                    ClientType: CLIENT_TYPE,
-                    Title: `[DELETION FEEDBACK] ${Name}`,
-                    Username: Name,
-                    Email: model.email || Email,
-                    Description: model.feedback
-                });
+                await api(
+                    reportBug({
+                        OS: '--',
+                        OSVersion: '--',
+                        Browser: '--',
+                        BrowserVersion: '--',
+                        BrowserExtensions: '--',
+                        Client: '--',
+                        ClientVersion: '--',
+                        ClientType: CLIENT_TYPE,
+                        Title: `[DELETION FEEDBACK] ${Name}`,
+                        Username: Name,
+                        Email: model.email || 'noemail@example.com',
+                        Description: model.feedback
+                    })
+                );
             }
 
             await srpAuth({
