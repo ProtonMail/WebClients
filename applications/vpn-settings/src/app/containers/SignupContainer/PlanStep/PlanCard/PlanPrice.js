@@ -38,9 +38,7 @@ const PlanPrice = ({ plan, cycle, currency }) => {
 
             <div>
                 <div className="opacity-50">{c('PlanPrice').jt`Billed as ${totalBilledText}`}</div>
-                {discount > 0 && (
-                    <div className="bold ml0-25 color-primary">{c('PlanPrice').jt`SAVE ${discountText}`}</div>
-                )}
+                {discount > 0 && <div className="bold color-primary">{c('PlanPrice').jt`SAVE ${discountText}`}</div>}
             </div>
         </div>
     );
