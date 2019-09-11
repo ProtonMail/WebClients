@@ -22,6 +22,7 @@ export const PLAN_NAMES = {
 };
 
 export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
+export const BEST_DEAL_PLANS = [PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 
 const getPlanFeatures = (plan, maxConnections, countries) =>
     ({

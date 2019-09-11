@@ -39,10 +39,15 @@ const getSignupAvailability = (isDirectSignupEnabled, allowedMethods = []) => {
 const withAuthHeaders = (UID, AccessToken, config) => mergeHeaders(config, getAuthHeaders(UID, AccessToken));
 
 /**
- * @param {Function} onLogin
- * @param {{ plan, code, cycle }} coupon - is ignored if method is not allowed
+ * @param {Function} onLogin - callback after login that is done after registration
+ * @param {{
+ *  coupon: { plan, code, cycle },
+ *  invite: String
+ *  availablePlans: string[]
+ * }} config -  coupon/invite is ignored if method is not allowed
+ * @param {Object} initialModel - initially set values
  */
-const useSignup = (onLogin, coupon, invite, initialModel = {}) => {
+const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {}, initialModel = {}) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -75,7 +80,9 @@ const useSignup = (onLogin, coupon, invite, initialModel = {}) => {
     // Until we can query plans+coupons at once, we need to check each plan individually
     useEffect(() => {
         const applyCoupon = async () => {
-            const vpnPlans = plans.filter(({ Name, Type }) => Type === PLAN_TYPES.PLAN && VPN_PLANS.includes(Name));
+            const vpnPlans = plans.filter(
+                ({ Name, Type }) => Type === PLAN_TYPES.PLAN && availablePlans.includes(Name)
+            );
             const plansWithCoupons = await Promise.all(
                 vpnPlans.map(async (plan) => {
                     const {
@@ -115,7 +122,7 @@ const useSignup = (onLogin, coupon, invite, initialModel = {}) => {
         } else {
             setPlansWithCoupons(plans);
         }
-    }, [result, plans, coupon, model.cycle, model.currency]);
+    }, [availablePlans, result, plans, coupon, model.cycle, model.currency]);
 
     useEffect(() => {
         if (!invite || !signupAvailability) {

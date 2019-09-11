@@ -7,12 +7,13 @@ import useSignup from './useSignup';
 import { c } from 'ttag';
 import VerificationStep from './VerificationStep/VerificationStep';
 import PaymentStep from './PaymentStep/PaymentStep';
-import { PLAN, VPN_PLANS } from './plans';
+import { PLAN, VPN_PLANS, BEST_DEAL_PLANS } from './plans';
 import SupportDropdown from '../../components/header/SupportDropdown';
 import { CYCLE } from 'proton-shared/lib/constants';
 import PlanDetails from './SelectedPlan/PlanDetails';
 import PlanUpsell from './SelectedPlan/PlanUpsell';
 import useVerification from './VerificationStep/useVerification';
+import { checkCookie } from 'proton-shared/lib/helpers/cookies';
 
 const SignupState = {
     Plan: 'plan',
@@ -28,7 +29,10 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
     }, []);
 
     const searchParams = new URLSearchParams(history.location.search);
-    const [signupState, setSignupState] = useState(SignupState.Plan);
+    const preSelectedPlan = searchParams.get('plan');
+    const availablePlans = checkCookie('offer', 'bestdeal') ? BEST_DEAL_PLANS : VPN_PLANS;
+
+    const [signupState, setSignupState] = useState(preSelectedPlan ? SignupState.Account : SignupState.Plan);
     const [upsellDone, setUpsellDone] = useState(false);
     const [loading, withLoading] = useLoading(false);
     const historyState = history.location.state || {};
@@ -52,11 +56,15 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
         isLoading,
         appliedCoupon,
         appliedInvite
-    } = useSignup(handleLogin, coupon, invite, {
-        planName: searchParams.get('plan'),
-        cycle: Number(searchParams.get('billing')),
-        currency: searchParams.get('currency')
-    });
+    } = useSignup(
+        handleLogin,
+        { coupon, invite, availablePlans },
+        {
+            planName: preSelectedPlan,
+            cycle: Number(searchParams.get('billing')),
+            currency: searchParams.get('currency')
+        }
+    );
     const { verify, requestCode } = useVerification();
 
     const handleSelectPlan = (model, next = false) => {
@@ -156,7 +164,7 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
                     <>
                         {signupState === SignupState.Plan && (
                             <PlanStep
-                                plans={VPN_PLANS.map((plan) => getPlanByName(plan))}
+                                plans={availablePlans.map((plan) => getPlanByName(plan))}
                                 model={model}
                                 onChangeCycle={(cycle) => setModel({ ...model, cycle })}
                                 onChangeCurrency={(currency) => setModel({ ...model, currency })}
