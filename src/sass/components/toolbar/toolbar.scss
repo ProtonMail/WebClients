@@ -12,75 +12,7 @@
     @extend .toolbar-icon
 }
 
-.toolbarMobile-container {
-    height: 70px;
-    padding: 10px;
 
-    .pm_buttons,
-    .pm_buttons a,
-    .pm_buttons button {
-        height: 48px;
-        border-radius: 2px;
-    }
-    .pm_buttons a {
-        padding: 0 8px;
-    }
-    & > .pm_buttons,
-    & > .pull-right {
-        margin-top: 0;
-    }
-
-    .pm_buttons {
-        & > button:only-of-type {
-            border-radius: 2px;
-        }
-        button.toolbarMobile-btn-select-folder {
-            border-radius: 2px 0 0 2px;
-        }
-        button.open-label {
-            border-radius: 0 2px 2px 0;
-        }
-    }
-
-    .pm_checkbox {
-        float: left;
-        margin-right: 10px;
-        padding-top: 10px;
-        input[type="checkbox"] {
-            margin: 0;
-        }
-    }
-    .pm_buttons {
-        position: static;
-    }
-    .pm_dropdown {
-        left: 0 !important;
-        right: 0 !important;
-        top: 134px;
-        width: 100%;
-        z-index: 888;
-        & a,
-        & button {
-            border-top: 0;
-            border-left: 0;
-            border-right: 0;
-        }
-    }
-    .toolbarMobile-btn-select-folder {
-        border-right: 0;
-    }
-}
-
-@media (max-width: $mobile-tiny) {
-    .toolbarMobile-container {
-        .pm_buttons a,
-        .toolbarMobile-btn-select-folder,
-        .open-label,
-        .pm_trigger {
-            padding: 0 6px;
-        }
-    }
-}
 
 .toogleModeElementsDropdown-container[data-layout="rows"] [data-if="col"],
 .toogleModeElementsDropdown-container[data-layout="col"] [data-if="rows"],

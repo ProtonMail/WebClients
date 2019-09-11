@@ -1,6 +1,8 @@
 //$path-images  : '../img/shared/';
 $path-images: "~design-system/assets/img/shared/";
 
+$breakpoint-medium: 1000;
+
 @import "~design-system/_sass/reusable-components/design-system-config";
 @import "~design-system/_sass/reusable-components/design-system-reset";
 @import "~design-system/_sass/reusable-components/design-system-colors";

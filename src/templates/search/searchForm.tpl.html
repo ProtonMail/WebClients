@@ -2,7 +2,7 @@
 
     <div class="relative w100 flex flex-item-centered-vert noprint">
 
-        <label for="global_search" class="w100">
+        <label for="global_search" class="w100 nomobile">
             <span class="sr-only" translate-context="Placeholder search" translate>Search messages</span>
             <input
                 type="search"
@@ -14,7 +14,7 @@
                 class="pm-field w100 searchbox-field search-form-fieldset-input">
         </label>
 
-        <button type="submit" class="searchbox-search-button flex">
+        <button type="submit" class="searchbox-search-button nomobile flex">
             <icon
                 data-name="search"
                 data-fill="white"
@@ -30,9 +30,14 @@
                 pt-tooltip-translate-context="Action"
                 pt-tooltip-translate="Advanced search">
                 <icon
-                    class="btnAdvancedSearch-icon-desktop mtauto mbauto"
+                    class="btnAdvancedSearch-icon-desktop nomobile mtauto mbauto"
                     name="caret"
                     fill="white"></icon>
+                <icon
+                    class="btnAdvancedSearch-icon-desktop nodesktop notablet mtauto mbauto"
+                    name="search"
+                    fill="white"
+                    size="25"></icon>
                 <span class="sr-only" translate translate-context="Search form">Open advanced search</span>
             </dropdown-button>
 

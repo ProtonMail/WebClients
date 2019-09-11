@@ -8,7 +8,7 @@ function btnDisplayMobileSidebar(AppModel) {
     return {
         replace: true,
         template:
-            '<button class="btnDisplayMobileSidebar-container"><icon data-name="burger" data-fill="white"></icon></button>',
+            '<button class="btnDisplayMobileSidebar-container flex"><icon data-name="burger" data-fill="white" data-size="25" class="mauto"></icon></button>',
         compile(element, { type = 'show' }) {
             element[0].querySelector('icon').setAttribute('data-name', CLASS_ICONS[type]);
 

@@ -1,17 +1,24 @@
-<nav class="toolbarMobile-container pm_toolbar">
+<nav class="toolbarMobile-container toolbar flex pm_toolbar">
 
-    <span class="pm_buttons back" ng-if="idDefined() && (viewLayout === 1 || mobileMode)">
-        <a ng-click="back()">
-            <i class="fa fa-long-arrow-left"></i>
-        </a>
+    <span class="pm_buttons flex back" ng-if="idDefined() && (viewLayout === 1 || mobileMode)">
+        <button ng-click="back()" class="flex toolbar-button" pt-tooltip-translate="Back to list" pt-tooltip-translate-context="Action">
+            <icon data-name="arrow-left" data-size="16" class="mauto toolbar-icon"></icon>
+            <span class="sr-only" translate-context="Action" translate>Back to list</span>
+        </button>
     </span>
 
-    <span class="pm_buttons" ng-class="{ disabled: isDisabled()}">
-        <a href="#" tabindex="0" role="button" class="pm_trigger" dropdown ng-disabled="isDisabled()">
-            <em><i class="fa fa-eye-slash"></i>
-            <i class="fa fa-angle-down"></i></em>
+    <elements-selector
+        ng-if="!idDefined()"
+        class="toolBar-select-all mtauto mbauto"></elements-selector>
+
+    <span class="toolbar-separator" ng-if="displayPaginator()"></span>
+
+    <span class="pm_buttons flex" ng-class="{ disabled: isDisabled()}">
+        <button class="pm_trigger toolbar-button" dropdown ng-disabled="isDisabled()">
+            <icon data-name="unread" data-size="16" class="mauto no-pointer-events toolbar-icon"></icon>
+            <icon data-name="caret" data-size="16" class="mauto toolbar-icon ml0-25"></icon>
             <span class="sr-only" translate-context="Action" translate>Mark as read/unread</span>
-        </a>
+        </button>
         <span class="pm_dropdown wide">
             <a ng-click="unread()">
                 <i class="fa fa-eye-slash"></i>
@@ -24,10 +31,10 @@
         </span>
     </span>
 
-    <span class="pm_buttons" ng-class="{ disabled: isDisabled() }">
-        <button class="pm_trigger" dropdown ng-disabled="isDisabled()">
-            <em><i class="fa fa-trash-o"></i>
-            <i class="fa fa-angle-down"></i></em>
+    <span class="pm_buttons flex" ng-class="{ disabled: isDisabled() }">
+        <button class="pm_trigger toolbar-button" dropdown ng-disabled="isDisabled()">
+            <icon data-name="trash" data-size="16" class="mauto no-pointer-events toolbar-icon"></icon>
+            <icon data-name="caret" data-size="16" class="mauto toolbar-icon ml0-25"></icon>
             <span class="sr-only" translate-context="Action" translate>Move to</span>
         </button>
         <span class="pm_dropdown wide">
@@ -57,21 +64,22 @@
             </button>
         </span>
     </span>
-    <span class="pm_buttons">
-        <span class="pm_buttons" ng-class="{ disabled: isDisabled() }">
-            <button class="pm_trigger open-folder toolbarMobile-btn-select-folder" data-dropdown data-dropdown-no-auto-close="true" ng-class="{ disabled: isDisabled() }">
-                <i class="fa fa-folder"></i>
-                <i class="fa fa-angle-down"></i>
+    <span class="toolbar-separator"></span>
+    <span class="pm_buttons flex">
+        <span class="pm_buttons flex" ng-class="{ disabled: isDisabled() }">
+            <button class="pm_trigger toolbar-button open-folder toolbarMobile-btn-select-folder" data-dropdown data-dropdown-no-auto-close="true" ng-class="{ disabled: isDisabled() }">
+                <icon data-name="folder" class="mtauto mbauto no-pointer-events folderSelectorDropdown-icon"></icon>
+                <icon data-name="caret" class="mtauto mbauto no-pointer-events folderSelectorDropdown-icon ml0-25"></icon>
                 <span class="sr-only" translate-context="Action toolbar" translate>Move to</span>
             </button>
             <span class="pm_dropdown wide right">
                 <dropdown-folders data-elements="getElements"></dropdown-folders>
             </span>
         </span>
-        <span class="pm_buttons" ng-class="{ disabled: isDisabled() }">
-            <button class="pm_trigger open-label" data-dropdown data-dropdown-no-auto-close="true" ng-class="{ disabled: isDisabled() }">
-                <i class="fa fa-tag"></i>
-                <i class="fa fa-angle-down"></i>
+        <span class="pm_buttons flex" ng-class="{ disabled: isDisabled() }">
+            <button class="pm_trigger toolbar-button open-label" data-dropdown data-dropdown-no-auto-close="true" ng-class="{ disabled: isDisabled() }">
+                <icon data-name="label" class="mtauto mbauto labelSelectorDropdown-icon"></icon>
+                <icon data-name="caret" class="mtauto mbauto labelSelectorDropdown-icon ml0-25"></icon>
                 <span class="sr-only" translate-context="Action toolbar" translate>Label as</span>
             </button>
             <span class="pm_dropdown wide right">
@@ -80,7 +88,7 @@
         </span>
     </span>
 
-    <div class="pull-right">
+    <div class="mlauto flex">
         <nav-elements></nav-elements>
         <paginator ng-if="!idDefined()"></paginator>
     </div>
