@@ -11,7 +11,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
     const { method, setMethod, parameters, canPay, setParameters, setCardValidity } = usePayment();
 
     return (
-        <div className="border-top pt3 mb2">
+        <div className="pt2 mb2">
             <SubTitle>{c('Title').t`Provide payment details`}</SubTitle>
             <Row>
                 <div>

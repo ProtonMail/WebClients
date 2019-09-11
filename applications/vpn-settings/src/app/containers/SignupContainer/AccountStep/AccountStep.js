@@ -20,7 +20,7 @@ const AccountStep = ({ onContinue, model, children }) => {
     };
 
     return (
-        <div className="border-top pt3 mb2">
+        <div className="pt2 mb2">
             <SubTitle>{c('Title').t`Create an account`}</SubTitle>
             <Row>
                 <div>

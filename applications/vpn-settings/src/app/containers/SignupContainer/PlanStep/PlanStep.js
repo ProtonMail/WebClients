@@ -29,7 +29,7 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
 
     return (
         <>
-            <Row className="flex-items-center border-top pt3 mb2">
+            <Row className="flex-items-center pt2 mb2">
                 <div className="flex-item-fluid-auto">
                     <SubTitle className="m0">{c('Title').t`Select a plan`}</SubTitle>
                 </div>

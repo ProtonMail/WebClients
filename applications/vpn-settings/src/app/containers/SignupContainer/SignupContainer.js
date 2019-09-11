@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Title, useLoading, Loader } from 'react-components';
+import { Button, Title, useLoading, Loader, VpnLogo, Href } from 'react-components';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
 import useSignup from './useSignup';
@@ -153,12 +153,17 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
                         )}
                     </div>
                     <div className="onmobile-min-w100 onmobile-aligncenter onmobile-mt0-5">
-                        <Title>{c('Title').t`Sign up`}</Title>
+                        <Href url="https://protonvpn.com" target="_self">
+                            <VpnLogo className="fill-primary" />
+                        </Href>
                     </div>
                     <div className="flex-item-fluid alignright plan-help-button">
                         <SupportDropdown content={c('Action').t`Need help`} />
                     </div>
                 </div>
+
+                <Title className="signup-title mt1-5">{c('Title').t`Sign up`}</Title>
+
                 {isLoading || creatingAccount ? (
                     <div className="aligncenter">
                         <Loader size="big" />

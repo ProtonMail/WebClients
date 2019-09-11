@@ -18,7 +18,7 @@ const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, childr
     };
 
     return (
-        <div className="border-top pt3 mb2">
+        <div className="pt2 mb2">
             <SubTitle>{c('Title').t`Are you human?`}</SubTitle>
             <Row className="auto flex-item-fluid-auto">
                 <div className="w100">
