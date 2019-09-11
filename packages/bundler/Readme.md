@@ -32,6 +32,7 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--i18n> <--appMo
 :warning: Default no action to bundle the app
 
 - `hosts` : to create new deploy targets (branch) on a repository
+- `log-commits` : Send a message with log commits (arg: branch flow)
 
 ### flags
 - `--remote`: Build the current app from master via a git clone
@@ -42,6 +43,7 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--i18n> <--appMo
 - `--no-lint`: Ignore lint task on deploy
 - `--no-i18n`: Ignore i18n tasks on deploy
 - `--appMode`: Type of bundle for the app (ex: standalone is an option for protonmail-settings)
+- `--silentMessage`: No messages sent if dev/prod/beta dist
 - `--default-branch`: Default master, What's the default branch on your repository (usually master, usefull for the package-lock update)
 
 

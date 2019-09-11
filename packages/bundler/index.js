@@ -18,7 +18,8 @@ const argv = require('minimist')(process.argv.slice(2), {
         localize: false,
         appMode: 'bundle',
         remote: false,
-        forceFetch: false
+        forceFetch: false,
+        silentMessage: false
     }
 });
 
@@ -228,11 +229,11 @@ async function main() {
     !isCI && success('App deployment done', { time });
     isCI && success(`Build CI app to the directory: ${chalk.bold('dist')}`, { time });
 
-    if (!isCI) {
+    if (!isCI && !argv.silentMessage) {
         return logCommits(branch, flowType).then((data) => {
-            const isDev = process.env.APP_KEY === 'Angular' && branch === 'deploy-dev';
-            if (isDev || /deploy-(beta|prod|old)/.test(branch)) {
-                coucou.send(data);
+            if (/deploy-(beta|prod|old|tor|dev)/.test(branch)) {
+                const [, env] = branch.match(/deploy-(beta|prod|old|tor|dev)/);
+                coucou.send(data, env, PKG);
             }
         });
     }
@@ -240,6 +241,16 @@ async function main() {
 
 if (argv._.includes('hosts')) {
     return script('createNewDeployBranch.sh', process.argv.slice(3)).then(({ stdout }) => console.log(stdout));
+}
+
+if (argv._.includes('log-commits')) {
+    const branch = argv.branch;
+    return logCommits(branch, argv.flow).then((data) => {
+        if (/deploy-(beta|prod|old|tor|dev)/.test(branch)) {
+            const [, env] = branch.match(/deploy-(beta|prod|old|tor|dev)/);
+            coucou.send(data, env, PKG);
+        }
+    });
 }
 
 main().catch(error);

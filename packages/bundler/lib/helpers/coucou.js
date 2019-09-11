@@ -2,12 +2,17 @@ const https = require('https');
 const dedent = require('dedent');
 const { error, success } = require('./log')('proton-bundler');
 
-async function send(data) {
+async function send(data, env, { name } = {}) {
     try {
         const body = JSON.stringify({
+            mrkdwn: true,
             text: dedent`
-                ${process.env.DEPLOY_MESSAGE} ${process.env.DEPLOY_MESSAGE_URL} ?
+                ${process.env.DEPLOY_MESSAGE} ${name};
 
+                ENV: ${env}
+                URL: ${process.env.DEPLOY_MESSAGE_URL}
+
+                Informations:
                 ${data}
             `.trim()
         });
