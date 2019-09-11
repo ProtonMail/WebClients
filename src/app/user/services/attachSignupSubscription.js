@@ -1,5 +1,5 @@
 /* @ngInject */
-function attachSignupSubscription(authentication, Payment) {
+function attachSignupSubscription(Payment) {
     /**
      * Subscribe to the plans chosen at signup.
      * @param {Object} planIds
@@ -30,8 +30,8 @@ function attachSignupSubscription(authentication, Payment) {
      * @param {Object} method
      * @returns {Promise|*}
      */
-    const processPaymentMethod = (method = {}) => {
-        if (method.Type === 'card') {
+    const processPaymentMethod = async (method = {}) => {
+        if (['token'].includes(method.Type)) {
             return Payment.updateMethod(method, { noNotify: true }).catch(() => {
                 /**
                  * Silently catch any errors when attaching the payment method.

@@ -26,6 +26,7 @@ import customizeInvoiceModal from './modals/customizeInvoiceModal';
 import donateModal from './modals/donateModal';
 import giftCodeModal from './modals/giftCodeModal';
 import payModal from './modals/payModal';
+import paymentVerificationModal from './modals/paymentVerificationModal';
 import paymentModal from './modals/paymentModal';
 
 export default angular
@@ -58,4 +59,5 @@ export default angular
     .factory('donateModal', donateModal)
     .factory('giftCodeModal', giftCodeModal)
     .factory('payModal', payModal)
+    .factory('paymentVerificationModal', paymentVerificationModal)
     .factory('paymentModal', paymentModal).name;

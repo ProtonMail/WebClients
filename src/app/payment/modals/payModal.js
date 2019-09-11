@@ -1,3 +1,5 @@
+import { handlePaymentToken } from '../helpers/paymentToken';
+
 /* @ngInject */
 function payModal(
     pmModal,
@@ -8,7 +10,8 @@ function payModal(
     paymentUtils,
     networkActivityTracker,
     cardModel,
-    translator
+    translator,
+    paymentVerificationModal
 ) {
     const I18N = translator(() => ({
         success: gettextCatalog.getString('Invoice paid', null, 'Info')
@@ -58,12 +61,12 @@ function payModal(
 
                 if (this.method.value === 'paypal') {
                     parameters.Payment = {
-                        Type: 'paypal',
+                        Type: 'token',
                         Details: this.paypalConfig
                     };
                 }
 
-                return parameters;
+                return handlePaymentToken({ params: parameters, paymentApi: Payment, paymentVerificationModal });
             };
 
             this.getPaypalAmount = () => this.checkInvoice.AmountDue / 100;
@@ -72,13 +75,14 @@ function payModal(
                 this.submit();
             };
 
-            this.submit = () => {
+            this.submit = async () => {
                 this.process = true;
-                pay(params.invoice.ID, getParameters())
-                    .then(eventManager.call)
-                    .then(() => (this.process = false))
-                    .then(() => params.close(true))
-                    .then(() => notification.success(I18N.success));
+                const parameters = await getParameters();
+                await pay(params.invoice.ID, parameters);
+                await eventManager.call();
+                this.process = false;
+                params.close(true);
+                notification.success(I18N.success);
             };
         }
     });

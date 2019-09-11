@@ -1,10 +1,6 @@
 <div class="paypal-container">
 
-    <p class="alert alert-info" ng-show="!paypalNetworkError" translate-context="Info" translate>You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
-
-    <p class="alert alert-danger" ng-show="paypalNetworkError">
-        <span translate-context="Error" translate>Error connecting to PayPal.</span> <a href="#" ng-click="initPaypal()" translate-context="Action" translate>Click here to try again</a>.
-    </p>
+    <p class="alert alert-info" translate-context="Info" translate>You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
 
     <p class="alert alert-danger paypal-error-amount" ng-if="errorDetails" data-type="{{errorDetails.validator}}">
         <span
@@ -17,14 +13,14 @@
             translate>Amount below minimum.</span> ({{ errorDetails.amount / 100 }} {{ currency }})
     </p>
 
-    <div class="text-center" ng-show="!approvalURL && !paypalNetworkError && !errorDetails">
-        <i class="fa fa-spin fa-spinner"></i>
-        <span translate-context="Info" translate>Loading...</span>
-    </div>
-
-    <div class="text-center" ng-show="approvalURL">
-        <a href="#" ng-click="openPaypalTab()">
-            <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
-        </a>
-    </div>
+    <p class="text-center" ng-if="!errorDetails">
+        <button
+            type="button"
+            class="pm_button primary"
+            ng-disabled="loading"
+            ng-click="openTab()">
+            <span translate-context="Action" translate>Checkout with PayPal</span>
+        </button>
+        <loader-tag ng-if="loading"></loader-tag>
+    </p>
 </div>
