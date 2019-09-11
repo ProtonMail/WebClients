@@ -37,6 +37,7 @@ const Input = React.forwardRef(
                     value={value}
                     autoComplete={autoComplete}
                     disabled={loading || rest.disabled}
+                    required={required}
                     {...rest}
                     {...handlers}
                 />
