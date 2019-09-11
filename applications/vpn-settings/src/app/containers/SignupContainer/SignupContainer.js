@@ -133,24 +133,18 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
         [SignupState.Verification]: SignupState.Account
     }[signupState];
 
-    const handleBackClick = () => {
-        if (prevStep) {
-            setSignupState(prevStep);
-        } else {
-            history.push('/');
-        }
-    };
-
     return (
         <main className="flex flex-item-fluid main-area">
             <div className="center p2 container-plans-signup onmobile-p1">
                 <div className="flex flex-nowrap onmobile-flex-wrap mb1">
                     <div className="flex-item-fluid plan-back-button">
-                        {!creatingAccount && (
-                            <Button onClick={handleBackClick}>
-                                {prevStep ? c('Action').t`Back` : c('Action').t`Homepage`}
-                            </Button>
-                        )}
+                        {!creatingAccount &&
+                            (prevStep ? (
+                                <Button onClick={() => setSignupState(prevStep)}>{c('Action').t`Back`}</Button>
+                            ) : (
+                                <Href className="pm-button" url="https://protonvpn.com" target="_self">{c('Action')
+                                    .t`Homepage`}</Href>
+                            ))}
                     </div>
                     <div className="onmobile-min-w100 onmobile-aligncenter onmobile-mt0-5">
                         <Href url="https://protonvpn.com" target="_self">
