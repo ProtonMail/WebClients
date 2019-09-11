@@ -149,6 +149,7 @@ const SubscriptionModal = ({
             id: ORDER_SUMMARY_ID,
             checkCouponCode: true,
             closeIfSubscriptionChange: true,
+            submit: check.AmountDue ? c('Action').t`Next` : c('Action').t`Upgrade`,
             section: <OrderSummary plans={plans} model={model} check={check} onChange={handleChangeModel} />,
             async onSubmit() {
                 const checkResult = await callCheck(); // Use check result instead of state because it's not yet updated
@@ -178,6 +179,7 @@ const SubscriptionModal = ({
     if (plansMap.vpnplus || plansMap.vpnbasic) {
         STEPS.unshift({
             title: c('Title').t`VPN protection`,
+            submit: c('Action').t`Next`,
             closeIfSubscriptionChange: true,
             section: <CustomVPNSection plans={plans} model={model} onChange={handleChangeModel} />,
             async onSubmit() {
@@ -190,6 +192,7 @@ const SubscriptionModal = ({
     if (APP_NAME === PROTONMAIL_SETTINGS && (plansMap.plus || plansMap.professional)) {
         STEPS.unshift({
             title: c('Title').t`Customization`,
+            submit: c('Action').t`Next`,
             closeIfSubscriptionChange: true,
             section: <CustomMailSection plans={plans} model={model} onChange={handleChangeModel} />,
             async onSubmit() {
@@ -256,7 +259,6 @@ const SubscriptionModal = ({
     const hasCancel = !step;
     const hasClose = step === STEPS.length - 1;
     const hasPrevious = !hasClose && step > 0;
-    const hasNext = !hasClose;
     const steps = STEPS.map(({ title }) => title);
 
     const close = (() => {
@@ -290,7 +292,7 @@ const SubscriptionModal = ({
             title={STEPS[step].title}
             loading={loading}
             close={close}
-            submit={hasNext && c('Action').t`Next`}
+            submit={STEPS[step].submit}
             {...rest}
         >
             {STEPS[step].noWizard ? null : <Wizard step={step} steps={steps} hideText={true} />}
