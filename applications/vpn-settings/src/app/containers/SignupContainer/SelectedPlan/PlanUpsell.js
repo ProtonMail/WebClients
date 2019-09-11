@@ -5,7 +5,7 @@ import { PLAN } from '../plans';
 import { PrimaryButton, Price } from 'react-components';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 
-const PlanUpsell = ({ disabled, selectedPlan, getPlanByName, cycle, currency, onExtendCycle, onUpgrade }) => {
+const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycle, onUpgrade }) => {
     const { planName, upsell } = selectedPlan;
     const upsellCycle = cycle === CYCLE.MONTHLY && planName !== PLAN.FREE;
 
@@ -49,7 +49,7 @@ const PlanUpsell = ({ disabled, selectedPlan, getPlanByName, cycle, currency, on
                                 {yearlyPlan.price.totalMonthly}
                             </Price>
                         </div>
-                        <PrimaryButton disabled={disabled} className="w100 mt1" onClick={handleExtendCycle}>{c('Action')
+                        <PrimaryButton className="w100 mt1" onClick={handleExtendCycle}>{c('Action')
                             .t`Pay annually and save 20%`}</PrimaryButton>
                     </>
                 )}
@@ -61,7 +61,7 @@ const PlanUpsell = ({ disabled, selectedPlan, getPlanByName, cycle, currency, on
                                 <li key={i}>{feature}</li>
                             ))}
                         </ul>
-                        <PrimaryButton disabled={disabled} className="w100 mt1" onClick={handleUpgrade}>{c('Action')
+                        <PrimaryButton className="w100 mt1" onClick={handleUpgrade}>{c('Action')
                             .jt`Try ${upsellPlan.title} for only ${totalMonthlyText}`}</PrimaryButton>
                     </>
                 )}
@@ -71,7 +71,6 @@ const PlanUpsell = ({ disabled, selectedPlan, getPlanByName, cycle, currency, on
 };
 
 PlanUpsell.propTypes = {
-    disabled: PropTypes.bool,
     selectedPlan: PropTypes.object.isRequired,
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]).isRequired,
     currency: PropTypes.oneOf(CURRENCIES).isRequired,
