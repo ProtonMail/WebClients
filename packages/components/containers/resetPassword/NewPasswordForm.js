@@ -5,11 +5,17 @@ import { c } from 'ttag';
 
 const NewPasswordForm = ({ onSubmit, loading }) => {
     const [password, updatePassword] = useState('');
+    const [confirmPassword, updateConfirmPassword] = useState('');
 
     return (
         <form
             onSubmit={(e) => {
                 e.preventDefault();
+
+                if (password !== confirmPassword) {
+                    return;
+                }
+
                 onSubmit(password);
             }}
         >
@@ -24,7 +30,13 @@ const NewPasswordForm = ({ onSubmit, loading }) => {
                 />
             </div>
             <div className="alignright mb1">
-                <PasswordInput placeholder={c('Password').t`Confirm new password`} pattern={password} required />
+                <PasswordInput
+                    value={confirmPassword}
+                    placeholder={c('Password').t`Confirm new password`}
+                    onChange={({ target }) => updateConfirmPassword(target.value)}
+                    error={password !== confirmPassword ? c('Error').t`Passwords do not match` : undefined}
+                    required
+                />
             </div>
             <Alert type="warning">{c('Info')
                 .t`Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.`}</Alert>
