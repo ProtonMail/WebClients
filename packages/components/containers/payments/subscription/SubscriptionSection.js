@@ -11,7 +11,8 @@ import {
     useModals,
     useSubscription,
     useOrganization,
-    useUser
+    useUser,
+    useAddresses
 } from 'react-components';
 import { CYCLE, PLAN_NAMES, COUPON_CODES } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
@@ -32,6 +33,7 @@ const getCyclesi18n = () => ({
 
 const SubscriptionSection = ({ permission }) => {
     const [{ hasPaidMail, hasPaidVpn }] = useUser();
+    const [addresses = [], loadingAddresses] = useAddresses();
     const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
     const [
@@ -60,7 +62,7 @@ const SubscriptionSection = ({ permission }) => {
         );
     }
 
-    if (loadingSubscription || loadingOrganization) {
+    if (loadingSubscription || loadingOrganization || loadingAddresses) {
         return (
             <>
                 {subTitle}
@@ -114,7 +116,13 @@ const SubscriptionSection = ({ permission }) => {
                     <div className="flex-autogrid onmobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">ProtonMail plan</div>
                         <div className="flex-autogrid-item">
-                            <strong>{hasPaidMail ? PLAN_NAMES[mailPlanName] : c('Plan').t`Free`}</strong>
+                            <strong>
+                                {hasPaidMail
+                                    ? PLAN_NAMES[mailPlanName]
+                                    : addresses.length
+                                    ? c('Plan').t`Free`
+                                    : c('Info').t`Not activated`}
+                            </strong>
                         </div>
                         <div className="flex-autogrid-item">
                             {bundleEligible &&
