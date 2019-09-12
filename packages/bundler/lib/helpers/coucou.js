@@ -2,13 +2,32 @@ const https = require('https');
 const dedent = require('dedent');
 const { error, success, debug } = require('./log')('proton-bundler');
 
+const URLS = {
+    'protonmail-web': {
+        prod: 'mail',
+        tor: 'https://protonirockerxow.onion/'
+    },
+    'proton-vpn-settings': {
+        prod: 'account'
+    }
+};
+
+const getURL = (name, env) => {
+    const { [env]: scope = env } = URLS[name] || {};
+
+    if (env === 'tor') {
+        return scope;
+    }
+    return `${scope}.${process.env.DEPLOY_MESSAGE_URL}`;
+};
+
 async function send(data, env, { name } = {}) {
     try {
         const text = dedent`
-            ${process.env.DEPLOY_MESSAGE} *${name}*;
+            ${process.env.DEPLOY_MESSAGE} *${name}*?
 
-            ENV: ${env}
-            URL: ${process.env.DEPLOY_MESSAGE_URL}
+            ENV: _${env}_
+            URL: ${getURL(name, env)}
 
             Informations:
             ${data}
