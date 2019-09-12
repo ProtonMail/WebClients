@@ -100,6 +100,12 @@ function paymentModel(
         return promise;
     }
 
+    on('payments', (e, { type }) => {
+        if (/^(donation|topUp)\.request\.success/.test(type)) {
+            loadMethods();
+        }
+    });
+
     on('logout', () => {
         clear();
     });
