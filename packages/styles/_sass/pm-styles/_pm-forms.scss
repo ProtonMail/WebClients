@@ -365,6 +365,17 @@ $width: 5.5em !default;
     }
   }
 }
+.password-revealer-container--invalid {
+  > .password-revealer {
+    border-color: $pm-global-warning;
+  }
+  &:focus-within {
+    > .password-revealer,
+    > .pm-field {
+      border-color: $pm-global-border;
+    }
+  }
+}
 .password-revealer {
   border: $input-defaut-border;
   border-left: 0;
