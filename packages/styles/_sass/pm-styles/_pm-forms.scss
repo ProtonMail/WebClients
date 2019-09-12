@@ -29,6 +29,7 @@ input::-ms-reveal {
 }
 
 .pm-field {
+  filter: none; // fixes Firefox autofill color
   border: $input-defaut-border;
   padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
   background-color: $pm-input-background;
@@ -40,6 +41,7 @@ input::-ms-reveal {
   }
   &[aria-invalid="true"]:not(:focus) {
     border-color: $pm-global-warning;
+    box-shadow: none;
   }
   &.is-valid:not(:focus) {
     border-color: $pm-global-success;
@@ -50,6 +52,9 @@ input::-ms-reveal {
   }
   &.w100 {
     width: 100%;
+  }
+  &:-moz-ui-invalid { // fixes some Firefox issues with HTML5 validation
+    box-shadow: none;
   }
 
   &[type="search"] {
