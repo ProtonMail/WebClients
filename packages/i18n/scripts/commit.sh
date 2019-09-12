@@ -6,9 +6,21 @@ LAST_COMMIT=$(git rev-parse HEAD);
 # Short version, enough to create a unique commit
 LAST_COMMIT_SHORT="${LAST_COMMIT:0:12}";
 
+echo;
+printf '%-25s' "[LAST_COMMIT]";
+printf '%-25s' "$LAST_COMMIT";
+echo;
+printf '%-25s' "[LAST_COMMIT_SHORT]";
+printf '%-25s' "$LAST_COMMIT_SHORT";
+echo;
+printf '%-25s' "[BRANCH]";
+printf '%-25s' "$(git rev-parse --abbrev-ref HEAD)";
+echo;
+
 if [ "$3" = 'update' ]; then
-    git add -f "$1/template.pot"
-    (git commit -m "[I18N@$LAST_COMMIT_SHORT] build translation release" -m "Based on the commit: $LAST_COMMIT" && git push origin $(git rev-parse --abbrev-ref HEAD)) || echo "[i18n] No changes to commit"
+    git add -f "$1/template.pot";
+    git commit -m "[I18N@$LAST_COMMIT_SHORT] build translation release" -m "Based on the commit: $LAST_COMMIT" || echo "[i18n] Nothing to commit";
+    git push origin "$(git rev-parse --abbrev-ref HEAD)" --verbose || echo "[i18n] Nothing to push";
 fi
 
 if [ "$3" = 'upgrade' ]; then
