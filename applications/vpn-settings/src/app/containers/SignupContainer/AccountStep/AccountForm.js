@@ -38,6 +38,11 @@ const AccountForm = ({ onSubmit }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (password !== confirmPassword) {
+            return;
+        }
+
         try {
             await api(queryCheckUsernameAvailability(username));
             await onSubmit({
@@ -107,7 +112,6 @@ const AccountForm = ({ onSubmit }) => {
                         value={confirmPassword}
                         onChange={handleChangeConfirmPassword}
                         error={password !== confirmPassword ? c('Error').t`Passwords do not match` : undefined}
-                        pattern={password}
                         name="passwordConfirmation"
                         placeholder={c('Placeholder').t`Confirm password`}
                     />
