@@ -14,12 +14,14 @@ import PlanDetails from './SelectedPlan/PlanDetails';
 import PlanUpsell from './SelectedPlan/PlanUpsell';
 import useVerification from './VerificationStep/useVerification';
 import { checkCookie } from 'proton-shared/lib/helpers/cookies';
+import MobileRedirectionStep from './MobileRedirectionStep/MobileRedirectionStep';
 
 const SignupState = {
     Plan: 'plan',
     Account: 'account',
     Verification: 'verification',
-    Payment: 'payment'
+    Payment: 'payment',
+    MobileRedirection: 'mobile-redirection'
 };
 
 // TODO: Flexible urls and plans for reuse between project
@@ -41,12 +43,11 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
     const coupon = historyState.coupon;
 
     const handleLogin = (...args) => {
-        stopRedirect();
-
         if (redirectToMobile) {
-            return (document.location = 'protonvpn://registered');
+            return setSignupState(SignupState.MobileRedirection);
         }
 
+        stopRedirect();
         history.push('/downloads');
         onLogin(...args);
     };
@@ -210,6 +211,8 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
                                 {selectedPlanComponent}
                             </PaymentStep>
                         )}
+
+                        {signupState === SignupState.MobileRedirection && <MobileRedirectionStep model={model} />}
                     </>
                 )}
             </div>
