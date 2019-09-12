@@ -1,4 +1,4 @@
-# [1.7.xx] - 2019-08-xx
+# [1.7.4] - 2019-09-12
 
 ## New
 
@@ -20,7 +20,7 @@
 
 ## Updated/fixes
 
-- Fixed `height` of `select` (alignment in settings)
+- fixed `height` of `select` (alignment in settings)
 - rwd adaptation for sticky title/space between sections
 - rwd adaptation of navigation
 - added some margin helpers on mobile
@@ -28,14 +28,15 @@
 - updated `pm-buttons` (replaced `@extend .nodecoration` to `text-decoration: none`) to fix a crazy bug on Edge 🥴
 - update table plan responsive behaviour
 - fixed contrasts of placeholder, yeah!
-- WIP fix blurry modals
+- fixed blurry modals/updated modal positionning/fixed on design system website
 - fixed `meter` display on Chrome
 - fixed password revealer
 - updated `.pm-field-container` with use case of `auto`
-- updated modal positionning/fixed on design system website
 - fixed `error-zone` display (with `password-revealer` container and classic `pm-field`)
 - fixed drop down logout display
-- fix `pm-toggle` `aria-busy="true"` and `disabled` states
+- fixed `pm-toggle` `aria-busy="true"` and `disabled` states
+- fixed responsive issues with flex helpers
+- increased mobile breakpoint value
 
 
 # [1.7.3] - 2019-08-30
