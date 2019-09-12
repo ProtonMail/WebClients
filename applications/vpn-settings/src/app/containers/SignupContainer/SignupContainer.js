@@ -30,6 +30,7 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
 
     const searchParams = new URLSearchParams(history.location.search);
     const preSelectedPlan = searchParams.get('plan');
+    const redirectToMobile = searchParams.get('from') === 'mobile';
     const availablePlans = checkCookie('offer', 'bestdeal') ? BEST_DEAL_PLANS : VPN_PLANS;
 
     const [signupState, setSignupState] = useState(preSelectedPlan ? SignupState.Account : SignupState.Plan);
@@ -41,6 +42,11 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
 
     const handleLogin = (...args) => {
         stopRedirect();
+
+        if (redirectToMobile) {
+            return (document.location = 'protonvpn://registered');
+        }
+
         history.push('/downloads');
         onLogin(...args);
     };
