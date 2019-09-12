@@ -25,15 +25,21 @@ body.appConfigBody-is-mobile .navigationBlackFriday {list-style: none}
 .headerSecuredMobile-searchBtn { width: 3em }
 
 .headerSecuredMobile-compose {
-    background: transparent;
-    border: 0;
-    color: $white;
-    max-width: 4rem;
-    min-width: 4rem;
-    text-align: center;
-    width: auto;
-    &:hover { background: transparent }
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 77;
+    height: 6.6rem;
+    width: 6.6rem;
+    border-radius: 50%;
+    padding: .5em;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
 }
+
+.appConfigBody-is-mobile .dropDown-content--advancedSearch {
+    width: calc(100vw - 4rem);
+}
+
 
 // Composer maximized
 @media (max-width: $tablet-landscape) {
