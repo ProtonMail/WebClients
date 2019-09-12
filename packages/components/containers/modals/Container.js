@@ -7,6 +7,9 @@ const ModalsContainer = ({ modals, removeModal, hideModal, location }) => {
     const [containerIsClosing, setContainerIsClosing] = useState(false);
 
     useEffect(() => {
+        if (location.state && location.state.ignoreClose) {
+            return;
+        }
         modals.forEach(({ id, content }) => {
             content.props.onClose && content.props.onClose();
             hideModal(id);
