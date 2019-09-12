@@ -21,13 +21,13 @@ module.exports = (scope) => {
         console.log();
     };
 
-    const json = (data, output) => {
+    const json = (data, output, extraLine = true) => {
         // only output for a command
         if (output) {
             return console.log(JSON.stringify(data, null, 2));
         }
 
-        console.log();
+        extraLine && console.log();
         console.log(`[${scope}]`, JSON.stringify(data, null, 2));
         console.log();
     };
@@ -41,15 +41,16 @@ module.exports = (scope) => {
 
     const spin = (text) => ora(text).start();
 
-    function debug(item) {
+    function debug(item, message = 'debug') {
         if (!(argv.v || argv.verbose)) {
             return;
         }
         if (Array.isArray(item) || typeof item === 'object') {
-            return json(item);
+            console.log(`[${scope}]`, message);
+            return json(item, false, false);
         }
 
-        console.log(`[${scope}]`, item);
+        console.log(`[${scope}] ${message} \n`, item);
     }
 
     return {

@@ -12,7 +12,7 @@ require('dotenv').config({ path: CONFIG.ENV_FILE });
 const is = (command) => argv._.includes(command);
 
 async function main() {
-    debug(CONFIG.getEnv());
+    debug(CONFIG.getEnv(), 'ENV');
 
     if (is('crowdin')) {
         await require('./lib/crowdin')();
