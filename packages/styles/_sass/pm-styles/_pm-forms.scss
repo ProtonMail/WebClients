@@ -280,6 +280,12 @@ $width: 5.5em !default;
   &:focus + .pm-toggle-label {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
+  &[disabled] + .pm-toggle-label  {
+    background: rgba($pm-global-muted, .6);
+    .pm-toggle-label-text {
+      opacity: .3;
+    }
+  }
   &[aria-busy="true"] + .pm-toggle-label  {
     border-color: $pm-global-border;
     &::before {
@@ -291,12 +297,7 @@ $width: 5.5em !default;
       opacity: 0;
     }
   }
-  &[disabled] + .pm-toggle-label  {
-    background: rgba($pm-global-muted, .6);
-    .pm-toggle-label-text {
-      opacity: .3;
-    }
-  }
+
 }
 @if $rtl-option == true {
   [dir="rtl"] {
