@@ -1,21 +1,24 @@
 const https = require('https');
 const dedent = require('dedent');
-const { error, success } = require('./log')('proton-bundler');
+const { error, success, debug } = require('./log')('proton-bundler');
 
 async function send(data, env, { name } = {}) {
     try {
+        const text = dedent`
+            ${process.env.DEPLOY_MESSAGE} *${name}*;
+
+            ENV: ${env}
+            URL: ${process.env.DEPLOY_MESSAGE_URL}
+
+            Informations:
+            ${data}
+        `.trim();
         const body = JSON.stringify({
             mrkdwn: true,
-            text: dedent`
-                ${process.env.DEPLOY_MESSAGE} ${name};
-
-                ENV: ${env}
-                URL: ${process.env.DEPLOY_MESSAGE_URL}
-
-                Informations:
-                ${data}
-            `.trim()
+            text
         });
+
+        debug(text, 'body message');
 
         const { pathname, host } = new URL(process.env.DEPLOY_MESSAGES_HOOK);
 
@@ -31,6 +34,12 @@ async function send(data, env, { name } = {}) {
                 }
             },
             (res) => {
+                debug(res.statusCode);
+
+                res.on('data', (d) => {
+                    process.stdout.write(d);
+                });
+
                 if (res.statusCode === 200) {
                     success('Message sent !');
                 }

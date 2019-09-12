@@ -245,6 +245,7 @@ if (argv._.includes('hosts')) {
 
 if (argv._.includes('log-commits')) {
     const branch = argv.branch;
+    debug(argv);
     return logCommits(branch, argv.flow).then((data) => {
         if (/deploy-(beta|prod|old|tor|dev)/.test(branch)) {
             const [, env] = branch.match(/deploy-(beta|prod|old|tor|dev)/);

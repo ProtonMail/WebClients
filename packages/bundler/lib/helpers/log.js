@@ -40,15 +40,15 @@ module.exports = (scope) => {
         process.exit(1);
     };
 
-    function debug(item) {
+    function debug(item, message = 'debug') {
         if (!IS_VERBOSE) {
             return;
         }
         if (Array.isArray(item) || typeof item === 'object') {
+            console.log(`[${scope}]`, message);
             return json(item);
         }
-
-        console.log(`[${scope}]`, item);
+        console.log(`[${scope}] ${message} \n`, item);
     }
 
     function about(config) {
