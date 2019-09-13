@@ -13,7 +13,7 @@ const PlanComparisonModal = ({ modalTitleID = 'modalTitle', onClose, defaultCycl
     const [plans, loadingPlans] = usePlans();
 
     return (
-        <DialogModal {...rest} className="pm-modal--wider">
+        <DialogModal {...rest} onClose={onClose} className="pm-modal--wider">
             <HeaderModal hasClose modalTitleID={modalTitleID} onClose={onClose}>
                 {c('Title').t`ProtonVPN plan comparison`}
             </HeaderModal>
