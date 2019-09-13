@@ -1,12 +1,18 @@
 {
     "extends": "airbnb-base",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
     "env": {
         "browser": true,
-        "jasmine": true,
-        "node": true
+        "node": true,
+        "jasmine": true
     },
     "globals": {
-        "expectAsync": true
+        "document": "readonly",
+        "window": "readonly",
+        "expectAsync": "readonly"
     },
     "rules": {
         "arrow-parens": ["error", "always"],
@@ -24,13 +30,15 @@
         "no-sequences": "warn",
         "no-param-reassign": "warn",
         "no-return-assign": "warn",
-        "operator-linebreak": "off",
-        "implicit-arrow-linebreak": "off",
-        "import/no-unresolved": ["error", {
-            "ignore": ["^react$", "ttag"]
-        }],
         "no-shadow": "off",
         "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+        "operator-linebreak": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/no-unresolved": "error",
+        "import/named": "error",
+        "import/namespace": "error",
+        "import/default": "error",
+        "import/export": "error",
         "import/prefer-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "max-len": ["error", {
