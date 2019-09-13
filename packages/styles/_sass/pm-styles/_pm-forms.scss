@@ -386,7 +386,9 @@ $width: 5.5em !default;
   border-left: 0;
   background-color: $pm-input-background;
   border-radius: 0 $global-border-radius $global-border-radius 0;
-  padding: em(3) em(4);
+  padding-left: .2em;
+  padding-right: .2em;
+  height: 3.5rem;
 }
 @if $rtl-option == true {
   [dir="rtl"] {
