@@ -46,6 +46,10 @@ function DemoModal({ onAdd, ...rest }) {
     }
 
     const getFooter = () => {
+        if (footer === null) {
+            return null;
+        }
+
         if (footer) {
             return <FooterModal>{footer}</FooterModal>;
         }

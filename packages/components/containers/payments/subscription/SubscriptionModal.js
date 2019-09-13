@@ -14,8 +14,6 @@ import {
     useApi,
     useEventManager,
     useNotifications,
-    useUser,
-    useOrganization,
     Label,
     Field,
     Row,
@@ -29,7 +27,6 @@ import { toPrice } from 'proton-shared/lib/helpers/string';
 import { getPlans } from 'proton-shared/lib/helpers/subscription';
 
 import './SubscriptionModal.scss';
-import FeaturesList from './FeaturesList';
 import CustomMailSection from './CustomMailSection';
 import CustomVPNSection from './CustomVPNSection';
 import OrderSummary from './OrderSummary';
@@ -53,8 +50,6 @@ const SubscriptionModal = ({
     const { APP_NAME } = useConfig();
     const api = useApi();
     const { createModal } = useModals();
-    const [{ hasPaidMail } = {}] = useUser();
-    const [{ MaxMembers } = {}] = useOrganization();
     const [loading, setLoading] = useState(false);
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
     const { createNotification } = useNotifications();
@@ -63,19 +58,6 @@ const SubscriptionModal = ({
     const [model, setModel] = useState({ cycle, currency, coupon, plansMap });
     const { call } = useEventManager();
     const { step, next, previous, goTo } = useStep(initialStep);
-
-    const features = [
-        ...(hasPaidMail
-            ? [
-                  c('Link').t`Add auto-reply`,
-                  c('Link').t`Add custom domain`,
-                  c('Link').t`Add filters`,
-                  c('Link').t`Manage encrypted contacts`
-              ]
-            : []),
-        ...(MaxMembers > 1 ? [c('Link').t`Add new users`] : []),
-        c('Link').t`Use ProtonVPN`
-    ];
 
     const callCheck = async (m = model) => {
         try {
@@ -170,7 +152,7 @@ const SubscriptionModal = ({
         {
             title: '',
             noWizard: true,
-            footer: <FeaturesList features={features} />,
+            footer: null,
             className: 'thanks-modal-container',
             section: <Thanks onClose={onClose} />
         }

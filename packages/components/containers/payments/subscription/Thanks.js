@@ -16,7 +16,7 @@ const Thanks = ({ onClose }) => {
                 <div className="flex-autogrid-item flex flex-column flex-spacebetween">
                     <h3 className="bold">{c('Title').t`Thank you!`}</h3>
                     <div className="mb2">
-                        <div className="bold color-pm-blue-light">{c('Info').t`Thank you for your subscription.`}</div>
+                        <div className="bold color-primary">{c('Info').t`Thank you for your subscription.`}</div>
                         <div>{c('Info').t`Your new features are now available.`}</div>
                     </div>
                     <div>
