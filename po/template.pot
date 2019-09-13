@@ -399,6 +399,7 @@ msgstr ""
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
 #: ./src/templates/modals/payment/modal.tpl.html:56
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:16
 #: ./src/templates/modals/reactivate.tpl.html:24
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:101
@@ -500,6 +501,11 @@ msgctxt "Action"
 msgid "Change verification number"
 msgstr ""
 
+#: ./src/templates/payment/paypalView.tpl.html:22
+msgctxt "Action"
+msgid "Checkout with PayPal"
+msgstr ""
+
 #: ./src/templates/contact/contactPhotoRow.tpl.html:27
 #: ./src/templates/directives/core/bugModalView.tpl.html:113
 msgctxt "Action"
@@ -509,11 +515,6 @@ msgstr ""
 #: ./src/templates/squire/squireToolbar.tpl.html:84
 msgctxt "Action"
 msgid "Clear all formatting"
-msgstr ""
-
-#: ./src/templates/payment/paypalView.tpl.html:6
-msgctxt "Action"
-msgid "Click here to try again"
 msgstr ""
 
 #: ./src/templates/address/selectAddressModal.tpl.html:3
@@ -592,6 +593,7 @@ msgstr ""
 #: ./src/templates/modals/pay.tpl.html:16
 #: ./src/templates/modals/payment/modal.tpl.html:19
 #: ./src/templates/modals/payment/modal.tpl.html:63
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:3
 #: ./src/templates/modals/reactivate.tpl.html:3
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:3
 #: ./src/templates/modals/releaseNotes.tpl.html:28
@@ -615,8 +617,8 @@ msgstr ""
 #: ./src/templates/payment/giftCodeModal.tpl.html:3
 #: ./src/templates/utils/discardModal.tpl.html:3
 #: ./src/templates/utils/linkWarningModal.tpl.html:3
-#: ./src/templates/utils/printModal.tpl.html:20
-#: ./src/templates/utils/printModal.tpl.html:39
+#: ./src/templates/utils/printModal.tpl.html:19
+#: ./src/templates/utils/printModal.tpl.html:38
 #: ./src/templates/vpn/changeVPNNameModal.tpl.html:4
 #: ./src/templates/vpn/changeVPNPasswordModal.tpl.html:4
 msgctxt "Action"
@@ -745,7 +747,7 @@ msgstr ""
 #: ./src/templates/ui/toolbarMobile.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:124
 #: ./src/templates/views/labels.tpl.html:63
-#: ./src/templates/views/payments.tpl.html:42
+#: ./src/templates/views/payments.tpl.html:45
 msgctxt "Action"
 msgid "Delete"
 msgstr ""
@@ -1177,7 +1179,7 @@ msgid "Make Private"
 msgstr ""
 
 #: ./src/app/address/directives/addressBtnActions.js:4
-#: ./src/templates/views/payments.tpl.html:38
+#: ./src/templates/views/payments.tpl.html:41
 msgctxt "Action"
 msgid "Make default"
 msgstr ""
@@ -1412,7 +1414,7 @@ msgid "Previous"
 msgstr ""
 
 #: ./src/templates/message/message.tpl.html:246
-#: ./src/templates/utils/printModal.tpl.html:45
+#: ./src/templates/utils/printModal.tpl.html:44
 #: ./src/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -1872,7 +1874,7 @@ msgctxt "Action"
 msgid "Unsubscribe"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:40
+#: ./src/templates/views/payments.tpl.html:43
 msgctxt "Action"
 msgid "Update"
 msgstr ""
@@ -1945,6 +1947,11 @@ msgstr ""
 #: ./src/templates/modals/domain/verification.tpl.html:38
 msgctxt "Action"
 msgid "Verify"
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:17
+msgctxt "Action"
+msgid "Verify payment"
 msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:101
@@ -2812,12 +2819,12 @@ msgctxt "Credit card CVC"
 msgid "Security Code"
 msgstr ""
 
-#: ./src/app/payment/modals/cardModal.js:25
+#: ./src/app/payment/modals/cardModal.js:35
 msgctxt "Credit card modal"
 msgid "Add a credit card."
 msgstr ""
 
-#: ./src/app/payment/modals/cardModal.js:13
+#: ./src/app/payment/modals/cardModal.js:23
 msgctxt "Credit card modal"
 msgid "Update your credit card information."
 msgstr ""
@@ -3515,11 +3522,6 @@ msgctxt "Error"
 msgid "Error activating organization keys"
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:6
-msgctxt "Error"
-msgid "Error connecting to PayPal."
-msgstr ""
-
 #: ./src/app/message/factories/messageModel.js:39
 #: ./src/app/outside/controllers/outside.js:34
 msgctxt "Error"
@@ -3604,7 +3606,7 @@ msgid "Image upload failed"
 msgstr ""
 
 #: ./src/app/address/factories/reactivateKeys.js:27
-#: ./src/app/authentication/directives/loginContainer.js:38
+#: ./src/app/authentication/directives/loginContainer.js:58
 #: ./src/app/keys/factories/decryptImportKeyModal.js:28
 msgctxt "Error"
 msgid "Incorrect decryption password"
@@ -3807,6 +3809,11 @@ msgctxt "Error"
 msgid "Passwords do not match"
 msgstr ""
 
+#: ./src/app/payment/modals/paymentVerificationModal.js:17
+msgctxt "Error"
+msgid "Payment verification modal closed"
+msgstr ""
+
 #: ./src/app/members/services/memberSubLogin.js:16
 #: ./src/app/members/services/membersValidator.js:44
 msgctxt "Error"
@@ -3838,7 +3845,7 @@ msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr ""
 
-#: ./src/app/keys/services/decryptKeys.js:12
+#: ./src/app/keys/services/decryptKeys.js:10
 msgctxt "Error"
 msgid "Primary key for address {{email}} cannot be decrypted. You will not be able to read or write any email from this address"
 msgstr ""
@@ -4812,6 +4819,11 @@ msgctxt "Info"
 msgid "A <a ui-sref=\"secured.dashboard({scroll: true})\">paid plan</a> is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts."
 msgstr ""
 
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:12
+msgctxt "Info"
+msgid "A new tab will open to confirm the payment, please disable any popup blockers."
+msgstr ""
+
 #: ./src/app/authentication/interceptors/httpInterceptor.js:19
 msgctxt "Info"
 msgid "A new version of ProtonMail is available. Please refresh this page."
@@ -4955,7 +4967,7 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this label? Removing a label will not remove the messages with that label."
 msgstr ""
 
-#: ./src/app/settings/controllers/payments.js:87
+#: ./src/app/settings/controllers/payments.js:88
 msgctxt "Info"
 msgid "Are you sure you want to delete this payment method?"
 msgstr ""
@@ -5199,7 +5211,7 @@ msgid "Decryption of this content failed"
 msgstr ""
 
 #: ./src/templates/user/addressesSection.tpl.html:34
-#: ./src/templates/views/payments.tpl.html:35
+#: ./src/templates/views/payments.tpl.html:37
 msgctxt "Info"
 msgid "Default"
 msgstr ""
@@ -5322,6 +5334,11 @@ msgstr ""
 #: ./src/app/user/directives/signupPayForm.js:13
 msgctxt "Info"
 msgid "Every 2 years"
+msgstr ""
+
+#: ./src/templates/views/payments.tpl.html:38
+msgctxt "Info"
+msgid "Expired"
 msgstr ""
 
 #: ./src/templates/contact/contactActionHeader.tpl.html:47
@@ -5453,8 +5470,8 @@ msgctxt "Info"
 msgid "In the next few weeks, ProtonMail will drop support for Internet Explorer. Download one of the modern browsers below."
 msgstr ""
 
-#: ./src/app/payment/modals/payModal.js:14
-#: ./src/app/settings/controllers/payments.js:147
+#: ./src/app/payment/modals/payModal.js:17
+#: ./src/app/settings/controllers/payments.js:148
 msgctxt "Info"
 msgid "Invoice paid"
 msgstr ""
@@ -5507,7 +5524,6 @@ msgid "Loading themes will override your current theme!"
 msgstr ""
 
 #: ./src/templates/formUtils/captcha.tpl.html:2
-#: ./src/templates/payment/paypalView.tpl.html:22
 msgctxt "Info"
 msgid "Loading..."
 msgstr ""
@@ -5813,6 +5829,11 @@ msgstr ""
 #: ./src/app/user/services/needUpgrade.js:4
 msgctxt "Info"
 msgid "Please upgrade to a paid plan to use this premium feature."
+msgstr ""
+
+#: ./src/templates/modals/payment/paymentVerificationModal.tpl.html:11
+msgctxt "Info"
+msgid "Please verify the payment in the new tab."
 msgstr ""
 
 #: ./src/app/formUtils/directives/codeVerificator.js:10
@@ -8022,7 +8043,7 @@ msgctxt "Modal setup 2FA"
 msgid "This wizard will enable Two Factor Authentication (2FA) on your ProtonMail account. 2FA will make your ProtonMail account more secure so we recommend enabling it."
 msgstr ""
 
-#: ./src/templates/utils/printModal.tpl.html:30
+#: ./src/templates/utils/printModal.tpl.html:29
 msgctxt "Modal title"
 msgid "Print preview"
 msgstr ""
@@ -8147,7 +8168,7 @@ msgctxt "Notification update"
 msgid "The public key with fingerprint {{ fingerprint }} was replaced with a revoked key."
 msgstr ""
 
-#: ./src/app/utils/services/eventManager.js:163
+#: ./src/app/utils/services/eventManager.js:164
 msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr ""
@@ -8280,12 +8301,12 @@ msgid_plural "User IDs mismatch. The emails {{emails}} are assigned to this key.
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/settings/controllers/payments.js:99
+#: ./src/app/settings/controllers/payments.js:100
 msgctxt "Payment"
 msgid "Payment method deleted"
 msgstr ""
 
-#: ./src/app/settings/controllers/payments.js:78
+#: ./src/app/settings/controllers/payments.js:79
 msgctxt "Payment"
 msgid "Payment method updated"
 msgstr ""
@@ -8310,12 +8331,12 @@ msgctxt "Payment method"
 msgid "Credit Card"
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:10
+#: ./src/templates/payment/paypalView.tpl.html:6
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
 msgstr ""
 
-#: ./src/templates/payment/paypalView.tpl.html:14
+#: ./src/templates/payment/paypalView.tpl.html:10
 msgctxt "Paypal error"
 msgid "Amount below minimum."
 msgstr ""
@@ -9247,7 +9268,7 @@ msgstr ""
 #: ./src/templates/views/invoices.tpl.html:20
 #: ./src/templates/views/invoices.tpl.html:50
 #: ./src/templates/views/members.tpl.html:159
-#: ./src/templates/views/payments.tpl.html:26
+#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Actions"
 msgstr ""
@@ -9821,7 +9842,7 @@ msgctxt "Title"
 msgid "Delete label"
 msgstr ""
 
-#: ./src/app/settings/controllers/payments.js:86
+#: ./src/app/settings/controllers/payments.js:87
 msgctxt "Title"
 msgid "Delete payment method"
 msgstr ""
@@ -10019,11 +10040,6 @@ msgstr ""
 #: ./src/templates/views/invoices.tpl.html:48
 msgctxt "Title"
 msgid "Event"
-msgstr ""
-
-#: ./src/templates/views/payments.tpl.html:24
-msgctxt "Title"
-msgid "Expiration"
 msgstr ""
 
 #: ./src/templates/composer/composerExpiration.tpl.html:3
@@ -10360,6 +10376,11 @@ msgctxt "Title"
 msgid "Message headers"
 msgstr ""
 
+#: ./src/templates/views/payments.tpl.html:23
+msgctxt "Title"
+msgid "Method"
+msgstr ""
+
 #: ./src/templates/views/members.tpl.html:9
 msgctxt "Title"
 msgid "Multi-User Support"
@@ -10437,11 +10458,6 @@ msgstr ""
 #: ./src/templates/views/account.tpl.html:19
 msgctxt "Title"
 msgid "Notifications"
-msgstr ""
-
-#: ./src/templates/views/payments.tpl.html:23
-msgctxt "Title"
-msgid "Number"
 msgstr ""
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:19
@@ -10544,6 +10560,16 @@ msgstr ""
 #: ./src/templates/views/payments.tpl.html:7
 msgctxt "Title"
 msgid "Payment methods"
+msgstr ""
+
+#: ./src/app/payment/modals/paymentVerificationModal.js:14
+msgctxt "Title"
+msgid "Payment verification"
+msgstr ""
+
+#: ./src/app/payment/modals/paymentVerificationModal.js:13
+msgctxt "Title"
+msgid "Payment verification in progress"
 msgstr ""
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:63
@@ -10908,6 +10934,7 @@ msgstr ""
 #: ./src/templates/invoices/invoiceList.tpl.html:9
 #: ./src/templates/modals/generate.tpl.html:55
 #: ./src/templates/views/domains.tpl.html:208
+#: ./src/templates/views/payments.tpl.html:24
 msgctxt "Title"
 msgid "Status"
 msgstr ""
@@ -11028,7 +11055,6 @@ msgstr ""
 #: ./src/templates/modals/domain/mx.tpl.html:20
 #: ./src/templates/modals/domain/spf.tpl.html:19
 #: ./src/templates/modals/domain/verification.tpl.html:20
-#: ./src/templates/views/payments.tpl.html:25
 msgctxt "Title"
 msgid "Type"
 msgstr ""
