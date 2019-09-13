@@ -91,12 +91,14 @@ function pmModal(
         }
 
         function attach(html, locals) {
-            element = angular.element(`<div class="pm-modalOverlay">${html}</div>`);
+            element = angular.element(
+                `<div class="pm-modalOverlay"><div class="pm-modalContainer">${html}</div></div>`
+            );
             if (!html || !element[0].children.length) {
                 throw new Error('The template contains no elements; you need to wrap text nodes');
             }
 
-            element[0].firstElementChild.classList.add('pm-modal');
+            element[0].firstElementChild.firstElementChild.classList.add('pm-modal');
             element.css('z-index', zIndex++);
             scope = $rootScope.$new(true);
 
@@ -166,7 +168,7 @@ function pmModal(
             zIndex--;
 
             unsubscribe();
-            element[0].firstElementChild.classList.add('pm-modalOut');
+            element[0].firstElementChild.firstElementChild.classList.add('pm-modalOut');
             element[0].classList.add('pm-modalOverlayOut');
 
             return $animate.leave(element).then(() => {
