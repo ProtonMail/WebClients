@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FullLoader, useConfig } from 'react-components';
+import { FullLoader, TextLoader, useConfig } from 'react-components';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 
@@ -14,7 +14,7 @@ const LoaderPage = ({ text, color = 'global-light' }) => {
     return (
         <div className="centered-absolute aligncenter">
             <FullLoader color={color} size={200} />
-            <p className="atomLoader-text">{text || c('Info').t`Loading ${appName}`}</p>
+            <TextLoader>{text || c('Info').t`Loading ${appName}`}</TextLoader>
         </div>
     );
 };

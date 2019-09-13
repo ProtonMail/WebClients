@@ -83,6 +83,7 @@ export { default as Title } from './components/title/Title';
 export { default as useLoader } from './components/loader/useLoader';
 export { default as Loader } from './components/loader/Loader';
 export { default as FullLoader } from './components/loader/FullLoader';
+export { default as TextLoader } from './components/loader/TextLoader';
 export { default as LoaderIcon } from './components/loader/LoaderIcon';
 export { default as MainLogo } from './components/logo/MainLogo';
 export { default as VpnLogo } from './components/logo/VpnLogo';
