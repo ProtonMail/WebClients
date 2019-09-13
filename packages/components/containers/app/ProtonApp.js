@@ -77,9 +77,9 @@ const ProtonApp = ({ config, children }) => {
     }, [UID]);
 
     return (
-        <CompatibilityCheck>
-            <Icons />
-            <ConfigProvider config={config}>
+        <ConfigProvider config={config}>
+            <CompatibilityCheck>
+                <Icons />
                 <RightToLeftProvider>
                     <Router>
                         <React.Fragment key={UID}>
@@ -95,8 +95,8 @@ const ProtonApp = ({ config, children }) => {
                         </React.Fragment>
                     </Router>
                 </RightToLeftProvider>
-            </ConfigProvider>
-        </CompatibilityCheck>
+            </CompatibilityCheck>
+        </ConfigProvider>
     );
 };
 

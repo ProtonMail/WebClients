@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { Href } from 'react-components';
+import { Href, useConfig } from 'react-components';
 import PropTypes from 'prop-types';
 import unsupportedBrowserSettings from 'design-system/assets/img/shared/unsupported-browser-settings.svg';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 const isGoodPrngAvailable = () => {
     if (window.crypto && window.crypto.getRandomValues) {
@@ -50,6 +51,8 @@ const compats = [
 const compat = compats.every(({ valid }) => valid);
 
 const CompatibilityCheck = ({ children }) => {
+    const { CLIENT_TYPE } = useConfig();
+
     useEffect(() => {
         if (!compat) {
             document.title = 'Compatibility check';
@@ -70,6 +73,11 @@ const CompatibilityCheck = ({ children }) => {
             );
         });
 
+    const isProtonVPN = CLIENT_TYPE === CLIENT_TYPES.VPN;
+    const kbUrl = isProtonVPN
+        ? 'https://protonvpn.com/support/browsers-supported/'
+        : 'https://protonmail.com/support/knowledge-base/browsers-supported/';
+
     return (
         <div className="w50 p2 mt2 center big automobile">
             <div className="aligncenter">
@@ -85,10 +93,7 @@ const CompatibilityCheck = ({ children }) => {
                     </Href>
                     .
                 </p>
-                <Href
-                    className="primary-link bold"
-                    url="https://protonmail.com/support/knowledge-base/browsers-supported/"
-                >
+                <Href className="primary-link bold" url={kbUrl} target="_self">
                     More info
                 </Href>
             </div>
