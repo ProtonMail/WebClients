@@ -11,7 +11,7 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
             disabled={isDisabled}
             onClick={onSelect}
             className={classnames([
-                'w100 mtauto increase-surface-click',
+                'w100 mtauto',
                 !isActive && 'pm-button--primaryborder',
                 isActive && 'pm-button--primary'
             ])}
