@@ -7,7 +7,7 @@ function messageAddressActionMenu(
     $state,
     contactEmails,
     messageSenderSettings,
-    ptClipboard
+    contactFilter
 ) {
     const getContact = (Email) => _.find(contactEmails.get(), { Email });
 
