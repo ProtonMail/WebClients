@@ -5,7 +5,7 @@ const { error, success, debug } = require('./log')('proton-bundler');
 const URLS = {
     'protonmail-web': {
         prod: 'mail',
-        tor: 'https://protonirockerxow.onion/'
+        tor: 'https://protonirockerxow.onion'
     },
     'proton-vpn-settings': {
         prod: 'account'
@@ -21,13 +21,26 @@ const getURL = (name, env) => {
     return `${scope}.${process.env.DEPLOY_MESSAGE_URL}`;
 };
 
-async function send(data, env, { name } = {}) {
+const listURLs = (flowType, env) => {
+    if (flowType === 'many') {
+        return ['prod', 'beta', 'dev', 'tor'];
+    }
+    return [env];
+};
+
+const generateTplURL = (env, name, flowType) => {
+    return listURLs(flowType, env)
+        .map((scope) => `- *[${scope}]*: ${getURL(name, scope)}`)
+        .join('\n');
+};
+
+async function send(data, { env, flowType }, { name } = {}) {
     try {
         const text = dedent`
             ${process.env.DEPLOY_MESSAGE} *${name}*?
 
-            ENV: _${env}_
-            URL: ${getURL(name, env)}
+            _url(s)_:
+            ${generateTplURL(env, name, flowType)}
 
             Informations:
             ${data}
