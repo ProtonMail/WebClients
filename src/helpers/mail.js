@@ -1,22 +1,7 @@
 import _ from 'lodash';
-import { MailParser } from 'pmcrypto';
+import { parseMail } from 'pmcrypto';
 
 import { toList } from './arrayHelper';
-
-/**
- * Parse a mail into an object format, splitting, headers, html, text/plain and attachments. The result is defined
- * by the MailParser. This function wraps the mailparser to make it a promise.
- * @param data
- * @return {Promise}
- */
-export const parseMail = (data) => {
-    return new Promise((resolve) => {
-        const mailparser = new MailParser({ defaultCharset: 'UTF-8' });
-        mailparser.on('end', resolve);
-        mailparser.write(data);
-        mailparser.end();
-    });
-};
 
 /**
  * Overwrites the headers in baseHeader by the headers defined in extraHeaders.
