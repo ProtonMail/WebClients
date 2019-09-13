@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Href } from 'react-components';
 import PropTypes from 'prop-types';
 import unsupportedBrowserSettings from 'design-system/assets/img/shared/unsupported-browser-settings.svg';
@@ -50,6 +50,12 @@ const compats = [
 const compat = compats.every(({ valid }) => valid);
 
 const CompatibilityCheck = ({ children }) => {
+    useEffect(() => {
+        if (!compat) {
+            document.title = 'Compatibility check';
+        }
+    }, []);
+
     if (compat) {
         return children;
     }
@@ -63,10 +69,11 @@ const CompatibilityCheck = ({ children }) => {
                 </li>
             );
         });
+
     return (
         <div className="w50 p2 mt2 center big automobile">
             <div className="aligncenter">
-                <h1>Compatibility Check</h1>
+                <h1>Compatibility check</h1>
                 <p>
                     Proton apps requires a modern web browser with cutting edge support for{' '}
                     <Href className="primary-link" url="http://caniuse.com/#feat=cryptography">
