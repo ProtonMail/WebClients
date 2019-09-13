@@ -68,7 +68,15 @@ const CompatibilityCheck = ({ children }) => {
             <div className="aligncenter">
                 <h1>Compatibility Check</h1>
                 <p>
-                    ProtonMail requires a modern web browser with cutting edge support for <Href className="primary-link" url="http://caniuse.com/#feat=cryptography">WebCrypto (PRNG)</Href> and <Href className="primary-link" url="http://caniuse.com/#feat=namevalue-storage">Web Storage</Href>.
+                    Proton apps requires a modern web browser with cutting edge support for{' '}
+                    <Href className="primary-link" url="http://caniuse.com/#feat=cryptography">
+                        WebCrypto (PRNG)
+                    </Href>{' '}
+                    and{' '}
+                    <Href className="primary-link" url="http://caniuse.com/#feat=namevalue-storage">
+                        Web Storage
+                    </Href>
+                    .
                 </p>
                 <Href
                     className="primary-link bold"
