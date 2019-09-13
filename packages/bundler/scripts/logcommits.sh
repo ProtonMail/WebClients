@@ -23,7 +23,7 @@ fi
 if [ "$1" = 'prod' ]; then
     for branch in $(git branch -a);
     do
-        if [[ ${branch} =~ origin/deploy-prod- ]]; then
+        if [[ ${branch} =~ origin/deploy-prod ]]; then
             logCommit "$branch";
         fi;
     done;
