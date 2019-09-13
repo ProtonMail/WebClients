@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Title, useLoading, Loader, VpnLogo, Href } from 'react-components';
+import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader } from 'react-components';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
 import useSignup from './useSignup';
@@ -166,11 +166,9 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
                 <Title className="signup-title mt1-5">{c('Title').t`Sign up`}</Title>
 
                 {isLoading || creatingAccount ? (
-                    <div className="aligncenter">
-                        <Loader size="big" />
-                        <div className="atomLoader-text">
-                            {isLoading ? c('Info').t`Loading` : c('Info').t`Creating your account`}
-                        </div>
+                    <div className="aligncenter mt2">
+                        <FullLoader color="pm-primary" size={200} />
+                        <TextLoader>{isLoading ? c('Info').t`Loading` : c('Info').t`Creating your account`}</TextLoader>
                     </div>
                 ) : (
                     <>
