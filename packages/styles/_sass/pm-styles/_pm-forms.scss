@@ -356,6 +356,7 @@ $width: 5.5em !default;
 .password-revealer-container {
   display: flex;
   flex-wrap: nowrap; 
+  @extend .flex-items-center;
 
   > .pm-field {
     width: calc(100% - 1.5em);
