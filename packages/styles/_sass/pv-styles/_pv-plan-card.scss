@@ -75,6 +75,10 @@
   }
 }
 
+.plan-price-suffix:not([data-suffix^="/"]) {
+  margin-left: .5em;
+}
+
 .selected-plan {
   min-width: 285px;
 }
