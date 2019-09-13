@@ -143,7 +143,7 @@ const SignupContainer = ({ history, onLogin, stopRedirect }) => {
     return (
         <main className="flex flex-item-fluid main-area">
             <div className="center p2 container-plans-signup onmobile-p1">
-                <div className="flex flex-nowrap onmobile-flex-wrap mb1">
+                <div className="flex flex-nowrap flex-items-center onmobile-flex-wrap mb1">
                     <div className="flex-item-fluid plan-back-button">
                         {!creatingAccount &&
                             (prevStep ? (
