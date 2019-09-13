@@ -29,7 +29,8 @@ function activeSessionsModel(
         macOSVPN: 'ProtonVPN for macOS',
         iOSVPN: 'ProtonVPN for iOS',
         AndroidVPN: 'ProtonVPN for Android',
-        Admin: 'Admin'
+        Admin: 'Admin',
+        WebVPNSettings: 'ProtonVPN for web'
     };
     const format = (newSessions = []) => {
         const currentUID = authentication.getUID();
