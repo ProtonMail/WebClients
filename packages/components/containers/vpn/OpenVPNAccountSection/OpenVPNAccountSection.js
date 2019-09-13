@@ -55,7 +55,7 @@ const OpenVPNAccountSection = () => {
                         .t`Edit credentials`}</PrimaryButton>
                 </Field>
                 <div className="ml1 flex-item-noshrink onmobile-ml0 onmobile-mt0-5">
-                    <Copy value={Password} />
+                    <Copy className="mr1" value={Password} />
                     <Button
                         icon={show ? 'unread' : 'read'}
                         onClick={() => setShow(!show)}
