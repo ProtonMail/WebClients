@@ -43,7 +43,7 @@ const PrivateLayout = ({ children, location }) => {
                 <PrivateHeader expanded={expanded} onToggleExpand={() => setExpand(!expanded)} />
                 <div className="flex flex-nowrap">
                     <Route path="/:path" render={() => <Sidebar url="/account" expanded={expanded} list={list} />} />
-                    <div className="main flex-item-fluid main-area" ref={mainAreaRef}>
+                    <div className="main flex-item-fluid main-area scroll-smooth-touch" ref={mainAreaRef}>
                         <div className="flex flex-reverse">
                             <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
                         </div>
