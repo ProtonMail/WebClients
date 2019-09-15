@@ -286,7 +286,7 @@ const SubscriptionModal = ({
 SubscriptionModal.propTypes = {
     subscription: PropTypes.object,
     onClose: PropTypes.func,
-    step: PropTypes.number.isRequired,
+    step: PropTypes.number,
     cycle: PropTypes.number,
     coupon: PropTypes.string,
     currency: PropTypes.string,
