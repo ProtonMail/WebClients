@@ -15,7 +15,7 @@ import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 import { APPS } from 'proton-shared/lib/constants';
 
 import EditCardModal from '../payments/EditCardModal';
-// import PayPalModal from '../payments/PayPalModal';
+import PayPalModal from '../payments/PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
 const { PROTONVPN_SETTINGS } = APPS;
@@ -40,9 +40,9 @@ const PaymentMethodsSection = () => {
         createModal(<EditCardModal onChange={request} />);
     };
 
-    // const handlePayPal = () => {
-    //     createModal(<PayPalModal onChange={request} />);
-    // };
+    const handlePayPal = () => {
+        createModal(<PayPalModal onChange={request} />);
+    };
 
     return (
         <>
@@ -58,7 +58,7 @@ const PaymentMethodsSection = () => {
             <Block>
                 <PrimaryButton className="mr1" onClick={handleCard}>{c('Action')
                     .t`Add credit / debit card`}</PrimaryButton>
-                {/* <PrimaryButton onClick={handlePayPal}>{c('Action').t`Add PayPal`}</PrimaryButton> */}
+                <PrimaryButton onClick={handlePayPal}>{c('Action').t`Add PayPal`}</PrimaryButton>
             </Block>
             <PaymentMethodsTable loading={loading} methods={paymentMethods} fetchMethods={request} />
         </>
