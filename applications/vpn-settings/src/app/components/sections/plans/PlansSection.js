@@ -12,13 +12,15 @@ import {
     useLoading,
     useEventManager,
     useNotifications,
-    useUser
+    useUser,
+    ConfirmModal
 } from 'react-components';
 import { c } from 'ttag';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
-import { isBundleEligible, getPlans } from 'proton-shared/lib/helpers/subscription';
+import { isBundleEligible, getPlans, getPlan } from 'proton-shared/lib/helpers/subscription';
 import { mergePlansMap } from 'react-components/containers/payments/subscription/helpers';
+import { PLANS } from 'proton-shared/lib/constants';
 
 import PlansTable from './PlansTable';
 
@@ -43,6 +45,21 @@ const PlansSection = () => {
         if (isFree) {
             return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
         }
+
+        const mailPlan = getPlan(subscription);
+
+        if (mailPlan && mailPlan.Name !== PLANS.VISIONARY) {
+            await new Promise((resolve, reject) => {
+                createModal(
+                    <ConfirmModal title={c('Title').t`Confirm downgrade`} onConfirm={resolve} onClose={reject}>
+                        <Alert type="warning">{c('Info')
+                            .t`This will downgrade your VPN to a free subscription. ProtonVPN is free software that is possible thanks to donations and paid accounts. Please consider making a donation so we can continue to enable secure internet anywhere for everyone.`}</Alert>
+                    </ConfirmModal>
+                );
+            });
+            return handleSelectPlan(mailPlan.Name);
+        }
+
         await new Promise((resolve, reject) => {
             createModal(<DowngradeModal onConfirm={resolve} onClose={reject} />);
         });
