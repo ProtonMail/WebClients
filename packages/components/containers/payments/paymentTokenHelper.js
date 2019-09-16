@@ -73,7 +73,6 @@ export const process = ({ Token, api, approvalURL, secureURL }) => {
         const reset = () => {
             listen = false;
             window.removeEventListener('message', onMessage, false);
-            tab.close();
         };
 
         const listenTab = async () => {
@@ -82,7 +81,8 @@ export const process = ({ Token, api, approvalURL, secureURL }) => {
             }
 
             if (tab.closed) {
-                reject(new Error(c('Error').t`Tab closed`));
+                reset();
+                return reject(new Error(c('Error').t`Tab closed`));
             }
 
             await wait(DELAY_LISTENING);
@@ -101,6 +101,7 @@ export const process = ({ Token, api, approvalURL, secureURL }) => {
             }
 
             reset();
+            tab.close();
 
             const { cancel } = event.data;
 
