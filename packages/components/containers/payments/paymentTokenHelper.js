@@ -142,6 +142,10 @@ export const handlePaymentToken = async ({ params, api, createModal }) => {
     const { Payment, Amount, Currency, PaymentMethodID } = params;
     const { Type } = Payment || {};
 
+    if (Amount === 0) {
+        return params;
+    }
+
     if ([CASH, BITCOIN, TOKEN].includes(Type)) {
         return params;
     }

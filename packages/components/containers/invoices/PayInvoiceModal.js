@@ -25,7 +25,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
     const [loading, withLoading] = useLoading();
     const api = useApi();
     const { result = {}, loading: loadingCheck } = useApiResult(() => checkInvoice(invoice.ID), []);
-    const { AmountDue, Amount, Currency } = result;
+    const { AmountDue, Amount, Currency, Credit } = result;
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
 
     const handleSubmit = async (params = parameters) => {
@@ -59,6 +59,16 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
                             </Price>
                         </Field>
                     </Row>
+                    {Credit ? (
+                        <Row>
+                            <Label>{c('Label').t`Credits used`}</Label>
+                            <Field className="alignright">
+                                <Price className="pm-label" currency={Currency}>
+                                    {Credit}
+                                </Price>
+                            </Field>
+                        </Row>
+                    ) : null}
                     <Row>
                         <Label>{c('Label').t`Amount due`}</Label>
                         <Field>
@@ -69,17 +79,19 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
                             />
                         </Field>
                     </Row>
-                    <Payment
-                        type="invoice"
-                        method={method}
-                        amount={AmountDue}
-                        currency={Currency}
-                        parameters={parameters}
-                        onParameters={setParameters}
-                        onMethod={setMethod}
-                        onValidCard={setCardValidity}
-                        onPay={handleSubmit}
-                    />
+                    {AmountDue > 0 ? (
+                        <Payment
+                            type="invoice"
+                            method={method}
+                            amount={AmountDue}
+                            currency={Currency}
+                            parameters={parameters}
+                            onParameters={setParameters}
+                            onMethod={setMethod}
+                            onValidCard={setCardValidity}
+                            onPay={handleSubmit}
+                        />
+                    ) : null}
                 </>
             )}
         </FormModal>
