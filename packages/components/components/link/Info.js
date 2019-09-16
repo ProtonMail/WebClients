@@ -41,15 +41,17 @@ const Info = ({ url, title, originalPlacement = 'top', scrollContainerClass = 'm
             >
                 <Icon className="icon-16p fill-primary" name="info" {...rest} />
             </button>
-            <Popper
-                ref={popperRef}
-                id={uid}
-                isOpen={isOpen}
-                position={position}
-                className={classnames(['tooltip', `tooltip--${placement}`])}
-            >
-                {title}
-            </Popper>
+            {title ? (
+                <Popper
+                    ref={popperRef}
+                    id={uid}
+                    isOpen={isOpen}
+                    position={position}
+                    className={classnames(['tooltip', `tooltip--${placement}`])}
+                >
+                    {title}
+                </Popper>
+            ) : null}
         </>
     );
 };
