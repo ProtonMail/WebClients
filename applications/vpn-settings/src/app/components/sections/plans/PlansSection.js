@@ -46,9 +46,9 @@ const PlansSection = () => {
             return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
         }
 
-        const mailPlan = getPlan(subscription);
+        const { Name = '' } = getPlan(subscription);
 
-        if (mailPlan && mailPlan.Name !== PLANS.VISIONARY) {
+        if (Name && Name !== PLANS.VISIONARY) {
             await new Promise((resolve, reject) => {
                 createModal(
                     <ConfirmModal title={c('Title').t`Confirm downgrade`} onConfirm={resolve} onClose={reject}>
@@ -57,7 +57,7 @@ const PlansSection = () => {
                     </ConfirmModal>
                 );
             });
-            return handleSelectPlan(mailPlan.Name);
+            return handleSelectPlan(Name);
         }
 
         await new Promise((resolve, reject) => {
