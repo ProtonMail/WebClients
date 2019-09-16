@@ -1,5 +1,9 @@
 # [1.7.x] - 2019-09-xx
 
+## New
+
+- added `flex-item-start` helper
+
 ## Updated/fixes
 
 - added a modifier for invalid password container `.password-revealer-container--invalid`
@@ -7,6 +11,7 @@
 - updated `loadingAnimation-circle--pm-blue` class to `loadingAnimation-circle--pm-primary`
 - fixed flicker effect when tapping on modal
 - fixed a display bug on Safari for password revealer
+- added modifier `pm-field-container--address` (container for address on contacts) 
 
 # [1.7.4] - 2019-09-12
 
