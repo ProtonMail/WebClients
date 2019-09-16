@@ -28,6 +28,7 @@ const Info = ({ url, title, originalPlacement = 'top', scrollContainerClass = 'm
     return (
         <>
             <button
+                tabIndex="-1"
                 className="inline-flex"
                 onClick={handleClick}
                 ref={anchorRef}
