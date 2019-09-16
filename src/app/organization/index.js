@@ -1,5 +1,5 @@
-import organizationBtnActions from './directives/organizationBtnActions';
-import organizationFormName from './directives/organizationFormName';
+// import organizationBtnActions from './directives/organizationBtnActions';
+// import organizationFormName from './directives/organizationFormName';
 import organizationKeysModel from './factories/organizationKeysModel';
 import organizationModel from './factories/organizationModel';
 import subscriptionModel from './factories/subscriptionModel';
@@ -13,8 +13,8 @@ import organizationApi from './services/organizationApi';
 
 export default angular
     .module('proton.organization', [])
-    .directive('organizationBtnActions', organizationBtnActions)
-    .directive('organizationFormName', organizationFormName)
+    // .directive('organizationBtnActions', organizationBtnActions)
+    // .directive('organizationFormName', organizationFormName)
     .factory('organizationKeysModel', organizationKeysModel)
     .factory('organizationModel', organizationModel)
     .factory('subscriptionModel', subscriptionModel)

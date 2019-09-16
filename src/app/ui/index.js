@@ -1,6 +1,6 @@
 import autocompleteEmailsModel from './factories/autocompleteEmailsModel';
 import pageTitlesModel from './factories/pageTitlesModel';
-import timepickerModel from './factories/timepickerModel';
+// import timepickerModel from './factories/timepickerModel';
 import appVersion from './directives/appVersion';
 import atomLoader from './directives/atomLoader';
 import autocompleteEmail from './directives/autocompleteEmail';
@@ -18,7 +18,7 @@ import icons from './directives/icons';
 import icon from './directives/icon';
 import legends from './directives/legends';
 import loaderTag from './directives/loaderTag';
-import monthdayTimePicker from './directives/monthdayTimePicker';
+// import monthdayTimePicker from './directives/monthdayTimePicker';
 import multiselect from './directives/multiselect';
 import noResults from './directives/noResults';
 import numberElementSelected from './directives/numberElementSelected';
@@ -31,16 +31,16 @@ import protonSvgs from './directives/protonSvgs';
 import ptTooltip from './directives/ptTooltip';
 import readUnread from './directives/readUnread';
 import requestTimeout from './directives/requestTimeout';
-import settingsMenu from './directives/settingsMenu';
+// import settingsMenu from './directives/settingsMenu';
 import slider from './directives/slider';
-import timePicker from './directives/timePicker';
+// import timePicker from './directives/timePicker';
 import title from './directives/title';
 import toggle from './directives/toggle';
 import toggleExpand from './directives/toggleExpand';
 import toolbarDesktop from './directives/toolbarDesktop';
 import toolbarMobile from './directives/toolbarMobile';
 import twitterLink from './directives/twitterLink';
-import weekdayTimePicker from './directives/weekdayTimePicker';
+// import weekdayTimePicker from './directives/weekdayTimePicker';
 import labelAutocomplete from './filters/labelAutocomplete';
 import unescape from './filters/unescape';
 import autocompleteBuilder from './services/autocompleteBuilder';
@@ -82,7 +82,7 @@ export default angular
     .factory('encryptionStatus', encryptionStatus)
     .factory('autocompleteEmailsModel', autocompleteEmailsModel)
     .factory('pageTitlesModel', pageTitlesModel)
-    .factory('timepickerModel', timepickerModel)
+    // .factory('timepickerModel', timepickerModel)
     .directive('appVersion', appVersion)
     .directive('atomLoader', atomLoader)
     .directive('autocompleteEmail', autocompleteEmail)
@@ -100,7 +100,7 @@ export default angular
     .directive('icon', icon)
     .directive('legends', legends)
     .directive('loaderTag', loaderTag)
-    .directive('monthdayTimePicker', monthdayTimePicker)
+    // .directive('monthdayTimePicker', monthdayTimePicker)
     .directive('multiselect', multiselect)
     .directive('noResults', noResults)
     .directive('numberElementSelected', numberElementSelected)
@@ -113,16 +113,16 @@ export default angular
     .directive('ptTooltip', ptTooltip)
     .directive('readUnread', readUnread)
     .directive('requestTimeout', requestTimeout)
-    .directive('settingsMenu', settingsMenu)
+    // .directive('settingsMenu', settingsMenu)
     .directive('slider', slider)
-    .directive('timePicker', timePicker)
+    // .directive('timePicker', timePicker)
     .directive('title', title)
     .directive('toggle', toggle)
     .directive('toggleExpand', toggleExpand)
     .directive('toolbarDesktop', toolbarDesktop)
     .directive('toolbarMobile', toolbarMobile)
     .directive('twitterLink', twitterLink)
-    .directive('weekdayTimePicker', weekdayTimePicker)
+    // .directive('weekdayTimePicker', weekdayTimePicker)
     .filter('labelAutocomplete', labelAutocomplete)
     .filter('unescape', unescape)
     .factory('autocompleteBuilder', autocompleteBuilder)

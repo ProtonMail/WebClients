@@ -1,7 +1,7 @@
-import addressBtnActions from './directives/addressBtnActions';
-import addressKeysView from './directives/addressKeysView';
-import pmMeTooltip from './directives/pmMeTooltip';
-import reactivateKeysBtn from './directives/reactivateKeysBtn';
+// import addressBtnActions from './directives/addressBtnActions';
+// import addressKeysView from './directives/addressKeysView';
+// import pmMeTooltip from './directives/pmMeTooltip';
+// import reactivateKeysBtn from './directives/reactivateKeysBtn';
 import reactivateKeys from './factories/reactivateKeys';
 import addressModel from './factories/addressModel';
 import addressWithoutKeys from './factories/addressWithoutKeys';
@@ -15,10 +15,10 @@ import deleteKeyProcess from './services/deleteKeyProcess';
 
 export default angular
     .module('proton.address', [])
-    .directive('addressBtnActions', addressBtnActions)
-    .directive('addressKeysView', addressKeysView)
-    .directive('pmMeTooltip', pmMeTooltip)
-    .directive('reactivateKeysBtn', reactivateKeysBtn)
+    // .directive('addressBtnActions', addressBtnActions)
+    // .directive('addressKeysView', addressKeysView)
+    // .directive('pmMeTooltip', pmMeTooltip)
+    // .directive('reactivateKeysBtn', reactivateKeysBtn)
     .factory('reactivateKeys', reactivateKeys)
     .factory('addressModel', addressModel)
     .factory('addressWithoutKeys', addressWithoutKeys)
