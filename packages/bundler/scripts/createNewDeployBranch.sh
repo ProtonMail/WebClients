@@ -27,13 +27,9 @@ function log {
 }
 
 
-# Check if the command is valid
+# Check if the command is valid if not, ask for branches
 if [ -z "$BRANCHES" ]; then
-  log "error" "You must pass a list of host to create";
-  echo "Exemple:"
-  echo -e "\t <cmd> dark,sky"
-  echo -e "\t <cmd> dark"
-  exit 1;
+  read -p "Name of the branches to create (deploy-<name>. ex: dark,sky): " BRANCHES;
 fi
 
 
