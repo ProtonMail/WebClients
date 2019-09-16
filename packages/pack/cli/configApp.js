@@ -49,12 +49,13 @@ const ENV_CONFIG = Object.keys(CONFIG_ENV.env).reduce(
             acc.app = CONFIG_ENV.env[key];
             return acc;
         }
-        const { api, ...sentry } = CONFIG_ENV.env[key];
+        const { api, secure, ...sentry } = CONFIG_ENV.env[key];
         acc.sentry[key] = sentry;
         api && (acc.api[key] = api);
+        secure && (acc.secure[key] = secure);
         return acc;
     },
-    { sentry: {}, api: {}, pkg: CONFIG_ENV.pkg, app: {} }
+    { sentry: {}, api: {}, secure: {}, pkg: CONFIG_ENV.pkg, app: {} }
 );
 
 const API_TARGETS = {
@@ -65,8 +66,14 @@ const API_TARGETS = {
     ...ENV_CONFIG.api
 };
 
+const SECURE_URL = {
+    prod: 'https://secure.protonmail.com',
+    ...ENV_CONFIG.secure
+};
+
 function main({ api = 'dev' }) {
     const apiUrl = API_TARGETS[api] || API_TARGETS.prod;
+    const secureUrl = SECURE_URL[api] || SECURE_URL.prod;
 
     const json = {
         clientId: ENV_CONFIG.app.clientId || 'WebMail',
@@ -84,6 +91,7 @@ function main({ api = 'dev' }) {
     export const APP_VERSION = '${json.version}';
     export const APP_NAME = '${json.appName}';
     export const API_URL = '${apiUrl}';
+    export const SECURE_URL = '${secureUrl}';
     export const API_VERSION = '3';
     export const DATE_VERSION = '${new Date().toGMTString()}';
     export const CHANGELOG_PATH = 'assets/changelog.tpl.html';
