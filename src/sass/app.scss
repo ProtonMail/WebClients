@@ -293,8 +293,8 @@ $breakpoint-small: 800;
 //@import "components/payments/paymentPlanOverview";
 // @import "components/payments/payInvoiceModal";
 // @import "components/payments/featuresList";
-// @import "components/payments/bitcoinView";
-// @import "components/payments/donation";
+@import "components/payments/bitcoinView";
+@import "components/payments/donation";
 
 //== FeedBack
 // @import "components/feedback/feedback";

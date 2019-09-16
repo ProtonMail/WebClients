@@ -1,6 +1,6 @@
-import bitcoinDetails from './directives/bitcoinDetails';
-import bitcoinQrcode from './directives/bitcoinQrcode';
-import bitcoinView from './directives/bitcoinView';
+// import bitcoinDetails from './directives/bitcoinDetails';
+// import bitcoinQrcode from './directives/bitcoinQrcode';
+// import bitcoinView from './directives/bitcoinView';
 import cardIcon from './directives/cardIcon';
 import cardPanel from './directives/cardPanel';
 import donation from './directives/donation';
@@ -32,9 +32,9 @@ import paymentModal from './modals/paymentModal';
 
 export default angular
     .module('proton.payment', [])
-    .directive('bitcoinDetails', bitcoinDetails)
-    .directive('bitcoinQrcode', bitcoinQrcode)
-    .directive('bitcoinView', bitcoinView)
+    // .directive('bitcoinDetails', bitcoinDetails)
+    // .directive('bitcoinQrcode', bitcoinQrcode)
+    // .directive('bitcoinView', bitcoinView)
     .directive('cardIcon', cardIcon)
     .directive('cardPanel', cardPanel)
     .directive('donation', donation)

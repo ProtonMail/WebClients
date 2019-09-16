@@ -54,7 +54,7 @@
 }
 
 // All Windows
-.ua-windows_nt { }
+// .ua-windows_nt { }
 
 // Win 7 Firefox
 .ua-windows_nt-6-1.ua_firefox {
@@ -75,83 +75,31 @@
 }
 
 // All Firefox
-.ua-firefox {
-    /* remove extra padding on button */
-    button::-moz-focus-inner { padding: 0; border: 0 }
-    .pm_labels {
-        label {
-            line-height: -moz-block-height;
-            &.closed:hover {
-                line-height: -moz-block-height;
-            }
-        }
-    }
-    .pm_button {
-        line-height: -moz-block-height;
-    }
-    #pm_composer .composer footer .pm_button {
-        line-height: -moz-block-height;
-    }
-    form.searchForm fieldset button,
-    form.searchForm fieldset button .fa {
-        line-height: 32px;
-    }
-    .pm_tag {
-        position: relative;
-        top: -2px;
-    }
-    .pm_labels.inline label { }
-    .pm_table th .pm_button, .pm_table td .pm_button {
-        line-height: 36px;
-    }
-}
+// .ua-firefox {
+// }
 
 // All Windows, Firefox
-.ua-windows_nt.ua-firefox {
-    &.ua-firefox {
-        #pm_composer .composer .pm_button {
-            line-height: -moz-block-height;
-        }
-        .pm_buttons a,
-        .pm_button {
-            line-height: -moz-block-height;
-        }
-        #pm_sidebar section.sidebar .pm_button.round {
-            line-height: 30px;
-        }
-        .pm_table th,
-        .pm_table td {
-            .pm_button.round {
-                line-height: 32px;
-                position: relative;
-            }
-        }
-    }
-}
+// .ua-windows_nt.ua-firefox {
+//     &.ua-firefox {
+//     }
+// }
 
 // Windows 7, IE 11
-.ua-windows_nt-6.ua-ie-11-0 {
-    #pm_settings #plans .plans .plan .features li .pm_select {
-        position: relative;
-        top: 10px;
-    }
-}
+// .ua-windows_nt-6.ua-ie-11-0 {
 
-.ua-firefox {
-    .pm_button,
-    .pm_buttons a {
-        overflow: hidden;
-    }
-}
+// }
 
-input:invalid,
-input:-moz-ui-invalid {
-    border:0;
-    outline:none;
-    box-shadow:none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
-}
+// .ua-firefox {
+// }
+
+// input:invalid,
+// input:-moz-ui-invalid {
+//     border:0;
+//     outline:none;
+//     box-shadow:none;
+//     -moz-box-shadow:none;
+//     -webkit-box-shadow:none;
+// }
 
 /* removes "clear button" on WebKit/Blink */
 .searchInput-noClearSearch::-webkit-search-cancel-button {
@@ -164,13 +112,13 @@ input:-moz-ui-invalid {
     #conversation-view .message > div.summary .labels .pm_labels { top: 0 }
 }
 // IE11
-.on-ie11-only { display: none !important; }
-.ua-ie-11 {
-    #conversation-list-rows .conversation .subject { display: inline-block }
+// .on-ie11-only { display: none !important; }
+// .ua-ie-11 {
+//     #conversation-list-rows .conversation .subject { display: inline-block }
 
-    .on-ie11-only { display: block !important; }
-    .not-on-ie11 { display: none !important; }
-}
+//     .on-ie11-only { display: block !important; }
+//     .not-on-ie11 { display: none !important; }
+// }
 
 
 #pm_slow { display: flex !important }
