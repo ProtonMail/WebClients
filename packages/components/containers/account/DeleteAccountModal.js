@@ -23,10 +23,10 @@ import {
 import { deleteUser, unlockPasswordChanges } from 'proton-shared/lib/api/user';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { srpAuth } from 'proton-shared/lib/srp';
+import { collectInfo, getClient } from '../../helpers/report';
 
 const DeleteAccountModal = ({ onClose, ...rest }) => {
     const { createNotification } = useNotifications();
-    const { CLIENT_TYPE } = useConfig();
     const eventManager = useEventManager();
     const api = useApi();
     const authentication = useAuthentication();
@@ -39,6 +39,8 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
         password: '',
         twoFa: ''
     });
+    const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
+    const Client = getClient(CLIENT_ID);
 
     const handleChange = (key) => ({ target }) => setModel({ ...model, [key]: target.value });
 
@@ -58,17 +60,13 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
             if (isAdmin) {
                 await api(
                     reportBug({
-                        OS: '--',
-                        OSVersion: '--',
-                        Browser: '--',
-                        BrowserVersion: '--',
-                        BrowserExtensions: '--',
-                        Client: '--',
-                        ClientVersion: '--',
+                        ...collectInfo(),
+                        Client,
+                        ClientVersion: APP_VERSION,
                         ClientType: CLIENT_TYPE,
                         Title: `[DELETION FEEDBACK] ${Name}`,
                         Username: Name,
-                        Email: model.email || 'noemail@example.com',
+                        Email: model.email,
                         Description: model.feedback
                     })
                 );
@@ -124,10 +122,11 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
                 </Field>
             </Row>
             <Row>
-                <Label htmlFor="email">{c('Label').t`Email address (optional)`}</Label>
+                <Label htmlFor="email">{c('Label').t`Email address`}</Label>
                 <Field>
                     <EmailInput
                         id="email"
+                        required={true}
                         disabled={loading}
                         value={model.email}
                         onChange={handleChange('email')}
