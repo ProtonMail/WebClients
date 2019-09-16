@@ -277,11 +277,11 @@ $breakpoint-small: 800;
 @import "components/dropdowns/dropdownLabel";
 
 //== Filters
-@import "components/filters/emailBlockList";
+//@import "components/filters/emailBlockList";
 @import "components/filters/filtersModal";
 
 //== Address
-@import "components/address/addressKeysView";
+//@import "components/address/addressKeysView";
 
 //== Toolbar
 @import "components/toolbar/toolbar";
@@ -290,59 +290,59 @@ $breakpoint-small: 800;
 @import "components/tour/tour";
 
 //== Payments
-@import "components/payments/paymentPlanOverview";
-@import "components/payments/payInvoiceModal";
-@import "components/payments/featuresList";
-@import "components/payments/bitcoinView";
-@import "components/payments/donation";
+//@import "components/payments/paymentPlanOverview";
+// @import "components/payments/payInvoiceModal";
+// @import "components/payments/featuresList";
+// @import "components/payments/bitcoinView";
+// @import "components/payments/donation";
 
 //== FeedBack
-@import "components/feedback/feedback";
+// @import "components/feedback/feedback";
 
 
-//== Black Friday
-@import "components/blackFriday/navigationBlackFriday";
-@import "components/blackFriday/blackFridayModal";
-@import "components/blackFriday/blackFriday";
+//== Black Friday (to keep)
+// @import "components/blackFriday/navigationBlackFriday";
+// @import "components/blackFriday/blackFridayModal";
+// @import "components/blackFriday/blackFriday";
 
 //== VPN
-@import "components/vpn/openVpnSection";
+// @import "components/vpn/openVpnSection";
 
 //== Utils
 @import "components/utils/printMessage";
 @import "components/utils/printModal";
 
 //== Security
-@import "components/security/logManager";
-@import "components/security/sessionLogsTable";
+// @import "components/security/logManager";
+// @import "components/security/sessionLogsTable";
 
 //== Invoices
-@import "components/invoices/invoiceList";
-@import "components/invoices/invoiceSection";
+// @import "components/invoices/invoiceList";
+// @import "components/invoices/invoiceSection";
 
 //== Modals
 @import "components/modals/index";
 
 //=== 📄 Pages =============================//
-@import "pages/autoresponder";
-@import "pages/dashboard/_dashboard";
-@import "pages/vpn/_vpn";
+// @import "pages/autoresponder";
+// @import "pages/dashboard/_dashboard";
+// @import "pages/vpn/_vpn";
 @import "pages/login";
 @import "pages/pgp";
-@import "pages/signatures";
-@import "pages/contacts";
-@import "pages/keysView";
-@import "pages/settings";
+// @import "pages/signatures";
+// @import "pages/contacts";
+// @import "pages/keysView";
+// @import "pages/settings";
 @import "pages/setup";
 @import "pages/signup";
 @import "pages/outside";
 @import "pages/loginForm";
 @import "pages/loginPasswordInput";
 @import "pages/unlockForm";
-@import "pages/security";
-@import "pages/members";
-@import "pages/filters";
-@import "pages/domains";
+// @import "pages/security";
+// @import "pages/members";
+// @import "pages/filters";
+// @import "pages/domains";
 
 
 //== 👉 Responsive override ==============================//
@@ -353,10 +353,10 @@ $breakpoint-small: 800;
 @import "_responsive";
 
 //=== i18n custom ========================//
-@import "_lang";
+// @import "_lang";
 
 //=== 👻 Reset default behavior to facilitate users theming
-@import "_theme";
+// @import "_theme";
 
 //=== 💣 Dangerous ========================//
 //@import "_dangerous";
