@@ -66,11 +66,7 @@ const API_TARGETS = {
     ...ENV_CONFIG.api
 };
 
-const SECURE_URL = {
-    prod: 'https://secure.protonmail.com',
-    blue: 'https://secure.protonmail.blue',
-    ...ENV_CONFIG.secure
-};
+const SECURE_URL = ENV_CONFIG.secure;
 
 function main({ api = 'dev' }) {
     const apiUrl = API_TARGETS[api] || API_TARGETS.prod;
