@@ -60,9 +60,13 @@ const pull = async ({ timer = 0, Token, api }) => {
  * Initialize new tab and listen it
  * @param {String} String
  * @param {Object} api useApi
- * @param {Object} tab window instance
+ * @param {String} approvalURL
+ * @param {String} secureURL
+ * @returns {Promise}
  */
-export const process = ({ Token, api, tab }) => {
+export const process = ({ Token, api, approvalURL, secureURL }) => {
+    const tab = window.open(approvalURL);
+
     return new Promise((resolve, reject) => {
         let listen = false;
 
@@ -88,7 +92,7 @@ export const process = ({ Token, api, tab }) => {
         const onMessage = (event) => {
             const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
-            if (origin !== 'https://secure.protonmail.com') {
+            if (origin !== secureURL) {
                 return;
             }
 
@@ -151,7 +155,7 @@ export const handlePaymentToken = async ({ params, api, createModal }) => {
         createModal(
             <PaymentVerificationModal
                 params={params}
-                url={ApprovalURL}
+                approvalURL={ApprovalURL}
                 token={Token}
                 onSubmit={resolve}
                 onClose={reject}

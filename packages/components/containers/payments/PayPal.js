@@ -1,35 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, PrimaryButton, SmallButton, Price, useApi, useModals, useLoading } from 'react-components';
+import { Alert, Loader, SmallButton, Price, useApi, useLoading, PrimaryButton, useConfig } from 'react-components';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from 'proton-shared/lib/constants';
+import { createToken } from 'proton-shared/lib/api/payments';
 
-import { handlePaymentToken } from './paymentTokenHelper';
+import { toParams, process } from './paymentTokenHelper';
 
 const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     const api = useApi();
-    const [loading, withLoading] = useLoading();
-    const { createModal } = useModals();
+    const [loadingToken, withLoadingToken] = useLoading();
+    const [loadingVerification, withLoadingVerification] = useLoading();
     const [error, setError] = useState();
+    const [approvalURL, setApprovalURL] = useState();
+    const [token, setToken] = useState();
+    const { SECURE_URL: secureURL } = useConfig();
 
     const handleClick = async () => {
         try {
-            const requestBody = await handlePaymentToken({
-                params: {
-                    Amount,
-                    Currency,
-                    Payment: {
-                        Type: 'paypal'
-                    }
-                },
-                api,
-                createModal
-            });
-            onPay(requestBody);
+            await process({ Token: token, api, approvalURL, secureURL });
+            onPay(toParams({ Amount, Currency }, token));
         } catch (error) {
             setError(error);
         }
     };
+
+    const generateToken = async () => {
+        const { Token, ApprovalURL } = await api(
+            createToken({
+                Amount,
+                Currency,
+                Payment: {
+                    Type: 'paypal'
+                }
+            })
+        );
+        setApprovalURL(ApprovalURL);
+        setToken(Token);
+    };
+
+    useEffect(() => {
+        withLoadingToken(generateToken());
+    }, [Amount, Currency]);
 
     if (type === 'payment' && Amount < MIN_PAYPAL_AMOUNT) {
         return (
@@ -49,10 +61,10 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
                 <div className="mb0-5">{error.message}</div>
                 <div>
                     <SmallButton
-                        loading={loading}
+                        loading={loadingToken}
                         onClick={() => {
                             setError();
-                            withLoading(handleClick());
+                            withLoadingToken(generateToken());
                         }}
                     >{c('Action').t`Try again`}</SmallButton>
                 </div>
@@ -60,11 +72,22 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
         );
     }
 
+    if (loadingToken) {
+        return <Loader />;
+    }
+
     return (
         <>
-            <Alert>{c('Info')
-                .t`You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.`}</Alert>
-            <PrimaryButton onClick={() => withLoading(handleClick())} loading={loading}>{c('Action')
+            {loadingVerification ? (
+                <>
+                    <Loader />
+                    <Alert>{c('Info').t`Please verify the payment in the new tab.`}</Alert>
+                </>
+            ) : (
+                <Alert>{c('Info')
+                    .t`You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.`}</Alert>
+            )}
+            <PrimaryButton onClick={() => withLoadingVerification(handleClick())}>{c('Action')
                 .t`Check out with PayPal`}</PrimaryButton>
         </>
     );

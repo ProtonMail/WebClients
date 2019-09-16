@@ -1,22 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormModal, Alert, useApi, useLoading, Loader, useNotifications } from 'react-components';
+import { FormModal, Alert, Loader, useNotifications, useLoading, useApi, useConfig } from 'react-components';
 import { c } from 'ttag';
 import tabSvg from 'design-system/assets/img/pm-images/tab.svg';
 
-import { process, toParams } from './paymentTokenHelper';
+import { toParams, process } from './paymentTokenHelper';
 
-const PaymentVerificationModal = ({ params, token, url, onSubmit, ...rest }) => {
+const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, ...rest }) => {
+    const [loading, withLoading] = useLoading();
     const api = useApi();
     const { createNotification } = useNotifications();
-    const [loading, withLoading] = useLoading();
     const title = loading ? c('Title').t`Payment verification in progress` : c('Title').t`Payment verification`;
+    const { SECURE_URL: secureURL } = useConfig();
 
     const handleSubmit = async () => {
-        const tab = window.open(url);
-
         try {
-            await process({ Token: token, api, tab });
+            await process({ Token: token, api, approvalURL, secureURL });
             onSubmit(toParams(params, token));
             rest.onClose();
         } catch (error) {
@@ -52,7 +51,7 @@ PaymentVerificationModal.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onClose: PropTypes.func.isRequired,
     token: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
+    approvalURL: PropTypes.string.isRequired,
     params: PropTypes.object
 };
 
