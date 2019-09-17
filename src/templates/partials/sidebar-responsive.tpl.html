@@ -17,13 +17,63 @@
         </button>
 
         <nav class="navigation mw100 flex flex-column flex-item-fluid js-navigation flex-nowrap">
-        <ul class="navigation__list unstyled">
+        <ul class="navigation__list unstyled mb0">
             <navigation-item
                 class="sidebarApp-item navigation__item"
                 data-key="{{::state}}"
                 ng-repeat="state in listStates track by $id(state)"></navigation-item>
+                <li class="sidebarApp-divider" aria-hidden="true"></li>
+                <li class="sidebarApp-item navigation__item" ng-class="{ active: ('secured.contacts.**' | includedByState) }">
+                    <a title="Contacts" ui-sref='secured.contacts' class="navigation__link w100">
+                        <span class="flex flex-nowrap">
+                            <icon data-name="contacts" fill="currentColor" class="navigation__icon mr0-5 mtauto mbauto"></icon>
+                            <span translate-context="Title" translate-comment="Folder name" translate>Contacts</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="sidebarApp-item navigation__item" ng-class="{ active: ('secured.dashboard.**' | includedByState) }" ng-if="isFree">
+                    <a title="Upgrade" ui-sref="secured.dashboard({scroll: true})" class="navigation__link w100">
+                        <span class="flex flex-nowrap">
+                            <icon data-name="upgrade-to-paid" fill="currentColor" class="navigation__icon mr0-5 mtauto mbauto"></icon>
+                            <span translate-context="Title" translate-comment="Folder name" translate>Upgrade</span>
+                        </span>
+                    </a>
+                </li>
+                <li  class="sidebarApp-item navigation__item" ng-class="{ active: ('secured.account.**' | includedByState) }">
+                    <a title="Settings" ui-sref='secured.account' class="navigation__link w100">
+                        <span class="flex flex-nowrap">
+                            <icon data-name="settings" fill="currentColor" class="navigation__icon mr0-5 mtauto mbauto"></icon>
+                            <span translate-context="Title" translate-comment="Folder name" translate>Settings</span>
+                        </span>
+                    </a>
+                </li>
+                <li  class="sidebarApp-item navigation__item">
+                    <a target="_blank" href="https://shop.protonmail.com" class="navigation__link w100">
+                        <span class="flex flex-nowrap">
+                            <icon data-name="shop" fill="currentColor" class="navigation__icon mr0-5 mtauto mbauto"></icon>
+                            <span translate translate-context="Action">ProtonMail Shop</span>
+                        </span>
+                    </a>
+                </li>
+                <li  class="sidebarApp-item navigation__item">
+                    <button type="button" ng-click="hideMobileSidebar();" class="newBugReport-container alignleft navigation__link w100 flex sidebarApp-link-report">
+                        <span class="flex flex-nowrap">
+                            <icon data-name="report-bug" fill="currentColor" class="navigation__icon mr0-5 mtauto mbauto"></icon>
+                            <span class="mtauto mbauto" translate-context="Action" translate>Report bug</span>
+                        </span>
+                    </button>
+                </li>
+                <li  class="sidebarApp-item navigation__item">
+                    <a ui-sref="login" class="navigation__link w100">
+                        <span class="flex flex-nowrap">
+                            <icon data-name="sign-out" fill="currentColor" class="navigation__icon mr0-5 mtauto mbauto"></icon>
+                            <span translate-context="Action"  translate>Log out</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="sidebarApp-divider" aria-hidden="true"></li>
         </ul>
-        <ul class="menu sidebarApp-menu unstyled " id="labelSettings">
+        <ul class="menu sidebarApp-menu unstyled mt0 mb2" id="labelSettings">
             <li class="navigation__item">
                 <a ui-sref="secured.labels" class="navigation__link w100">
                     <span class="inline-flex">

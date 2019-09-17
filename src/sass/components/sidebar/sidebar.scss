@@ -138,7 +138,7 @@
         height: 1px;
         line-height: 1px;
         margin: 10px 0;
-        background: rgba( $sidebar-color , .1);
+        background: $pm-global-border;
     }
 
     .sidebarResponsive-menu-label { margin: 0 }
@@ -162,6 +162,10 @@
 }
 .appConfigBody-is-mobile.appConfigBody-showSidebar #ptSidebar {
     transform: translateX(0);
+}
+
+.appConfigBody-is-mobile [id="sidebarLabels"] {
+    height: auto;
 }
 
 @media (max-height: 550px), (max-width: 35em) {
