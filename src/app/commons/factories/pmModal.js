@@ -92,7 +92,7 @@ function pmModal(
 
         function attach(html, locals) {
             element = angular.element(
-                `<div class="pm-modalOverlay"><div class="pm-modalContainer">${html}</div></div>`
+                `<div class="pm-modalOverlay reset4print"><div class="pm-modalContainer reset4print">${html}</div></div>`
             );
             if (!html || !element[0].children.length) {
                 throw new Error('The template contains no elements; you need to wrap text nodes');
