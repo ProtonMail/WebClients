@@ -11,7 +11,7 @@ function messageContacts(gettextCatalog, translator) {
         replace: true,
         scope: {
             model: '=',
-            messageId: '='
+            message: '='
         },
         link(scope, el, { list = 'To' }) {
             const $label = el[0].querySelector('.messageContacts-where');

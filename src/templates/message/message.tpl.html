@@ -24,7 +24,10 @@
                         ng-if="message.expand"></message-address-actions>
                     <encryption-status class="encryptionStatus"></encryption-status>
 
-                    <message-address-action-menu></message-address-action-menu>
+                    <message-address-action-menu
+                        data-message="message"
+                        data-email="message.Sender"
+                        ></message-address-action-menu>
                 </div>
             </div>
         </div>
@@ -114,7 +117,7 @@
                     ng-if="message.ToList.length"
                     data-model="toList"
                     data-list="To"
-                    data-message-id="message.ID"
+                    data-message="message"
                 ></message-contacts>
 
                 <message-contacts
@@ -122,7 +125,7 @@
                     ng-if="message.CCList.length"
                     data-model="ccList"
                     data-list="CC"
-                    data-message-id="message.ID"
+                    data-message="message"
                     ></message-contacts>
 
                 <message-contacts
@@ -130,7 +133,7 @@
                     ng-if="message.BCCList.length"
                     data-model="bccList"
                     data-list="BCC"
-                    data-message-id="message.ID"
+                    data-message="message"
                 ></message-contacts>
 
                 <div class="encrypted-subject" ng-if="message.encryptedSubject">
