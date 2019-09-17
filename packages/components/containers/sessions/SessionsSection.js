@@ -36,7 +36,8 @@ const getClientsI18N = () => ({
     macOSVPN: c('Badge').t`ProtonVPN for macOS`,
     iOSVPN: c('Badge').t`ProtonVPN for iOS`,
     AndroidVPN: c('Badge').t`ProtonVPN for Android`,
-    Admin: c('Badge').t`Admin`
+    Admin: c('Badge').t`Admin`,
+    WebVPNSettings: c('Badge').t`ProtonVPN settings for web`
 });
 
 const SessionsSection = () => {
