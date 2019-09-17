@@ -13,7 +13,7 @@
             <ul class="unstyled mt0-5 mb0-5">
                 <li class="dropDown-item pl1 pr1 messageAddressActionMenu-action-composer">
                    <button
-                       class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children"
+                       class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children messageAddressActionMenu-btn-compose-to"
                        data-action="compose-to">
                        <icon data-name="email-address" class="mt0-25 flex-item-noshrink"></icon>
                        <span
@@ -25,7 +25,7 @@
 
                 <li class="dropDown-item pl1 pr1 messageAddressActionMenu-action-copy">
                     <button
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children messageAddressActionMenu-btn-copy-address"
                         data-copy-item
                         data-value="email.Address">
                         <icon data-name="copy" class="mt0-25 flex-item-noshrink"></icon>
@@ -51,7 +51,7 @@
                 <li class="dropDown-item pl1 pr1 messageAddressActionMenu-action-trust">
                     <button
                         ng-if="message.isInternal() && !message.isSentByMe()"
-                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children messageAddressActionMenu-btn-pin-public"
                         data-action="advanced-settings">
                         <icon data-name="keys" class="mt0-25 flex-item-noshrink"></icon>
                         <span
