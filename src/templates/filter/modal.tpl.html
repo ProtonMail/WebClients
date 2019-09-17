@@ -186,10 +186,11 @@
                                     type="button"
                                     pt-tooltip-translate="Remove"
                                     pt-tooltip-translate-context="Action"
-                                    ng-hide="ctrl.filter.Simple.Conditions.length === 1"
+                                    ng-hide="true or ctrl.filter.Simple.Conditions.length === 1"
                                     ng-click="ctrl.removeCondition(condition)"
                                     class="pm_button white">
-                                    <i class="fa fa-trash"></i>
+                                    <icon data-name="trash" class="mauto"></icon>
+                                    <span class="sr-only" translate-context="action" translate>Remove</span>
                                 </button>
                             </div>
 
