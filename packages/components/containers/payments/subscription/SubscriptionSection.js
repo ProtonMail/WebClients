@@ -85,6 +85,7 @@ const SubscriptionSection = ({ permission }) => {
 
     const { mailPlan, vpnPlan } = formatPlans(Plans);
     const { Name: mailPlanName } = mailPlan || {};
+    const { Name: vpnPlanName } = vpnPlan || {};
     const canRemoveCoupon = CouponCode && CouponCode !== BUNDLE;
     const i18n = getCyclesi18n();
 
@@ -195,7 +196,7 @@ const SubscriptionSection = ({ permission }) => {
                         <div className="flex-autogrid onmobile-flex-column w100 mb1">
                             <div className="flex-autogrid-item">ProtonVPN plan</div>
                             <div className="flex-autogrid-item">
-                                <strong>{hasPaidVpn ? PLAN_NAMES[vpnPlan.Name] : c('Plan').t`Free`}</strong>
+                                <strong>{hasPaidVpn ? PLAN_NAMES[vpnPlanName] : c('Plan').t`Free`}</strong>
                             </div>
                             <div className="flex-autogrid-item">
                                 {bundleEligible &&
