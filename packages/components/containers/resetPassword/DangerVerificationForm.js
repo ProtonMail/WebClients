@@ -13,7 +13,12 @@ const DangerVerificationForm = ({ onSubmit }) => {
     const loginLink = <Href key="0" url="https://mail.protonmail.com/login">{c('Link').t`here`}</Href>;
 
     return (
-        <form onSubmit={onSubmit}>
+        <form
+            onSubmit={(e) => {
+                e.preventDefault();
+                onSubmit();
+            }}
+        >
             <Alert
                 type="warning"
                 learnMore="https://protonmail.com/support/knowledge-base/updating-your-login-password/"
