@@ -399,6 +399,10 @@
   color: $pm-global-warning;
 }
 
+.pm-button--whiteborder {
+  border: 1px solid $white;
+}
+
 /* other modifiers requested */
 .pm-button--noborder {
   border: 0;
