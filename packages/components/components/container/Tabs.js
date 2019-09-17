@@ -41,7 +41,7 @@ const Tabs = ({ tabs = [], selectedTab, updateSelectedTab }) => {
 Tabs.propTypes = {
     tabs: PropTypes.arrayOf(
         PropTypes.shape({
-            title: PropTypes.string,
+            title: PropTypes.node,
             content: PropTypes.node
         })
     ),

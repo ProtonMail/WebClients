@@ -97,7 +97,7 @@ const Autocomplete = ({
 };
 
 Autocomplete.propTypes = {
-    children: PropTypes.PropTypes.node,
+    children: PropTypes.node,
     list: PropTypes.arrayOf(PropTypes.any),
     placeholder: PropTypes.string,
     className: PropTypes.string,
