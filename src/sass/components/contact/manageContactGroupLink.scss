@@ -1,25 +1,7 @@
-.manageContactGroupLink-container {
-    border: 0;
-    padding: 0;
-    background: transparent;
-    color: rgba($sidebar-color, .8)
-}
-
-.manageContactGroupLink-container[data-mode="create"] div *:not([data-if="create"]),
-.manageContactGroupLink-container[data-mode] div *:not([data-if]),
+.manageContactGroupLink-container[data-mode="create"] *:not([data-if="create"]),
+.manageContactGroupLink-container[data-mode] *:not([data-if]),
 .manageContactGroupLink-container:not([data-mode]) [data-if] {
     display: none
 }
 
 .manageContactGroupLink-container:hover { color: $white; }
-
-.manageContactGroupLink-container div {
-    display: flex;
-    align-items: center;
-}
-
-.manageContactGroupLink-icon {
-    margin-right: .5em;
-    color: rgba(255, 255, 255, 0.5);
-    text-align: center;
-}
