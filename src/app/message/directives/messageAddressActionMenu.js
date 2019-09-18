@@ -9,7 +9,7 @@ function messageAddressActionMenu(
     messageSenderSettings,
     contactFilter
 ) {
-    const getContact = (Email) => _.find(contactEmails.get(), { Email });
+    const getContact = (Email) => _.find(contactEmails.get(), { Email }) || {};
 
     function link(scope, el) {
         const { dispatcher } = dispatchers(['composer.new']);
@@ -34,7 +34,7 @@ function messageAddressActionMenu(
             const { ContactID: id } = getContact(contactInfo.Address);
             if (id) {
                 // force reload url as we will load another app
-                window.location.href = $state.href('secured.contacts.details', { id });
+                window.location.href = `/contacts/${id}`;
             }
         };
 
