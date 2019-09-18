@@ -36,15 +36,15 @@ subsection: icons
   <p>These ones have their own styles, so they should be used as simple classic images. you may specify <code>width</code> attribute on <code>img</code> tag if you want to display them larger:</p>
 
   <ul class="unstyled flex flex-items-center">
-      {% assign listBankIcons = "amex#dankort#dinnersclub#discover#forbrugs#jcb#maestro#mastercard#paypal#unionpay#visa#visaelectron" | split: '#' %}
+      {% assign listBankIcons = "american-express#dankort#diners-club#discover#forbrugs#jcb#maestro#mastercard#paypal#unionpay#visa#visaelectron" | split: '#' %}
       {% assign listBankAlt = "American Express|Dankort|Dinners Club|Discover|Forbrugs|JCB|Maestro|Mastercard|Paypal|UnionPay|VISA|VISA Electron" | split: '|' %}
-        
+
       {% for icon in listBankIcons %}
       <li class="mr1"><img src="/assets/img/shared/bank-icons/cc-{{ icon }}.svg" alt="{{ listBankAlt[forloop.index0] }}" width="50" /></li>
       {% endfor %}
   </ul>
 
-  <h3>Other viewboxes</h3> 
+  <h3>Other viewboxes</h3>
 
   {% assign listIcons = "" | split: '#' %}
 
@@ -110,7 +110,7 @@ subsection: icons
   <div class="flex flex-spacebetween mb2 onmobile-flex-column">
     <div class="w49">
       <pre class=" language-markup"><code>&lt;p&gt;
-  we like 
+  we like
   &lt;svg viewBox="0 0 16 16" class="icon-25p" role="img" <strong>aria-hidden="true"</strong> focusable="false"&gt;
     &lt;use xlink:href="#shape-twitter"&gt;&lt;/use&gt;
   &lt;/svg&gt;
@@ -123,7 +123,7 @@ subsection: icons
         <span class="col alignmiddle pr0-5">We like</span>
         <svg viewBox="0 0 16 16" class="icon-25p col" role="img" aria-hidden="true" focusable="false">
         <use xlink:href="#shape-twitter"></use>
-        </svg> 
+        </svg>
         <span class="sr-only">Twitter</span>
       </p>
     </div>
@@ -291,7 +291,7 @@ subsection: icons
 </code></pre>
     </div>
   </div>
-  
+
 
 </div>
 
