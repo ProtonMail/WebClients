@@ -90,6 +90,9 @@ body {
   width: 148px;
   height: 48px;
 }
+.logo--withoutPlan {
+  height: 37px;
+}
 .logo g {
   fill: var(--fillcolor-logo, $pm-global-light);
 }
