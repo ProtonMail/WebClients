@@ -21,19 +21,15 @@ before_script:
  - git config --global user.name $GIT_CI_USERNAME
  - mkdir ~/.ssh 2> /dev/null
  - ssh-keyscan -t rsa ${CI_SERVER_HOST} > ~/.ssh/known_hosts
+ - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+ - git remote -v
+ - git clone "$CI_SCRIPTS_GIT" --depth 1 ci-scripts
+ - ls -l
 
 setup:
     stage: setup
     script:
-        - npm ci --no-audit
-        - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@${CONFIG_GIT} ${CI_PROJECT_DIR}/configApp
-        - cp ${CI_PROJECT_DIR}/configApp/.gitconfig ${CI_PROJECT_DIR}/.gitconfig
-        - cp ${CI_PROJECT_DIR}/configApp/Angular/appConfig.json ${CI_PROJECT_DIR}/env/env.json
-        - cat ${CI_PROJECT_DIR}/configApp/.env > ${CI_PROJECT_DIR}/env/.env
-        - echo >> ${CI_PROJECT_DIR}/env/.env
-        - cat ${CI_PROJECT_DIR}/configApp/Angular/.env >> ${CI_PROJECT_DIR}/env/.env
-        - cat ${CI_PROJECT_DIR}/env/{.env,env.json}
-        - npm run config
+        - ./ci-scripts/prepare-ci.sh install-app --remote "$APP_GIT"
     artifacts:
         expire_in: 1 days
         paths:
@@ -60,7 +56,7 @@ i18n-upgrade-app:
     tags:
         - heavy
     script:
-        - npm run i18n:getlatest
+        - ./ci-scripts/prepare-ci.sh i18n upgrade-app --limit "$I18N_APPROVED"
     when: manual
 
 i18n-to-crowdin:
@@ -68,7 +64,7 @@ i18n-to-crowdin:
     tags:
         - dind
     script:
-        - npm run i18n:upgrade -- --limit-i18n=${I18N_APPROVED}
+        - ./ci-scripts/prepare-ci.sh i18n to-crowdin
     when: manual
 
 deploy:
@@ -76,7 +72,8 @@ deploy:
     tags:
         - dind
     script:
-        - npm run deploy -- --branch=deploy-$BRANCH_DEPLOY --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
+        - ./ci-scripts/prepare-ci.sh install-app-remote
+        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY" --api "$API_DEPLOY"
     when: manual
 
 deploy-qa:
@@ -84,7 +81,8 @@ deploy-qa:
     tags:
         - dind
     script:
-        - npm run deploy -- --branch=deploy-alpha --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
+        - ./ci-scripts/prepare-ci.sh install-app-remote --update-lock
+        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY_QA" --api "$API_DEPLOY"
     when: manual
 
 deploy-v4:
@@ -92,7 +90,6 @@ deploy-v4:
     tags:
         - dind
     script:
-        - git checkout v4
-        - npm i --no-audit
-        - npm run deploy -- --branch=deploy-v4 --remote-pm-settings --remote-calendar --remote-contacts --fromCi --api=$API_DEPLOY
+        - ./ci-scripts/prepare-ci.sh install-app-remote --angular-v4
+        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY_QA" --api "$API_DEPLOY"
     when: manual
