@@ -13,6 +13,7 @@ function protonmailLogo(authentication, organizationModel, subscriptionModel, di
         link(scope, element) {
             const { on, unsubscribe } = dispatchers();
             const planText = element[0].querySelector('#plan');
+            const noPLanTextClass = 'logo--withoutPlan';
 
             on('organizationChange', updateLogo);
             on('updateUser', updateLogo);
@@ -37,6 +38,9 @@ function protonmailLogo(authentication, organizationModel, subscriptionModel, di
                     planName = '';
                 }
                 element.removeClass(PLANS_LIST).addClass(planName);
+                if (planName === '') {
+                    element.addClass(noPLanTextClass);
+                }
                 $planText.removeClass(PLANS_LIST_FILL).addClass(planClass);
                 planText.innerHTML = planName;
             }
