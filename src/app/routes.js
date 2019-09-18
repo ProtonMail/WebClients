@@ -1,8 +1,6 @@
 import _ from 'lodash';
 
 import {
-    PAID_ADMIN_ROLE,
-    PAID_MEMBER_ROLE,
     PRODUCT_TYPE,
     INVITE_URL,
     MAILBOX_IDENTIFIERS,
