@@ -8,6 +8,7 @@
     }
 }
 
+.messageAddressActionMenu-container:not(.messageAddressActionMenu-isContact) .messageAddressActionMenu-action-details,
 .messageAddressActionMenu-isGroup .messageAddressActionMenu-action-add,
 .messageAddressActionMenu-isGroup .messageAddressActionMenu-action-copy {
     display: none

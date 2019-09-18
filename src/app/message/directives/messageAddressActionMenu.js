@@ -32,7 +32,10 @@ function messageAddressActionMenu(
         const advancedSettings = () => messageSenderSettings.showSettings(scope);
         const showContact = () => {
             const { ContactID: id } = getContact(contactInfo.Address);
-            id && $state.go('secured.contacts.details', { id });
+            if (id) {
+                // force reload url as we will load another app
+                window.location.href = $state.href('secured.contacts.details', { id });
+            }
         };
 
         const composeTo = () => {

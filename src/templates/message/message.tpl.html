@@ -18,13 +18,10 @@
                         <em>{{ ::message.Sender | contact:'Address' }}</em>
                     </div>
 
-                    <message-address-actions
-                        data-message-id="message.ID"
-                        data-email="message.Sender"
-                        ng-if="message.expand"></message-address-actions>
                     <encryption-status class="encryptionStatus"></encryption-status>
 
                     <message-address-action-menu
+                        ng-if="message.expand"
                         data-message="message"
                         data-email="message.Sender"
                         ></message-address-action-menu>
