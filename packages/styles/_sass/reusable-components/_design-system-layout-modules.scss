@@ -178,6 +178,11 @@ svg {
   right: 0;
 }
 
+.top-right-centered {
+  top: 50%;
+  right: 0;
+}
+
 /* hardware-acceleration activation */
 .hardware-accelerated {
   @include vendor-prefix(transform, translateZ(0));
