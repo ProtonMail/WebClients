@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { classnames } from '../../helpers/component';
 
 const MailLogo = ({ planName = '', className = 'logo' }) => {
+    const logoClasses = classnames([planName === '' && 'logo--withoutPlan', className]);
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={className}
+            className={logoClasses}
             aria-labelledby="logo__title plan"
             width="148"
             height="36"

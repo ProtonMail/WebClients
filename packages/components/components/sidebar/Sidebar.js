@@ -7,7 +7,9 @@ import MainLogo from '../logo/MainLogo';
 const Sidebar = ({ expanded = false, list = [], url = '/account' }) => {
     return (
         <div className="sidebar flex flex-column noprint" data-expanded={expanded}>
-            <MainLogo url={url} className="nodesktop notablet" />
+            <div className="nodesktop notablet">
+                <MainLogo url={url} />
+            </div>
             <nav className="navigation mw100 flex-item-fluid scroll-if-needed mb1">
                 <NavMenu list={list} />
             </nav>
