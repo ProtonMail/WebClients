@@ -220,9 +220,9 @@ function main(argv) {
                     }
                 },
                 {
-                    title: 'Build the calendar application',
                     title: `Build the calendar application ${suffixRemote('calendar')}`,
                     skip() {
+                        return 'Not available for now';
                         if (argv.calendar === false) {
                             return 'Flag --no-calendar inside the command.';
                         }
