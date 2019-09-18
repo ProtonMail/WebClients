@@ -31,7 +31,6 @@ import protonSvgs from './directives/protonSvgs';
 import ptTooltip from './directives/ptTooltip';
 import readUnread from './directives/readUnread';
 import requestTimeout from './directives/requestTimeout';
-// import settingsMenu from './directives/settingsMenu';
 import slider from './directives/slider';
 // import timePicker from './directives/timePicker';
 import title from './directives/title';
@@ -113,7 +112,6 @@ export default angular
     .directive('ptTooltip', ptTooltip)
     .directive('readUnread', readUnread)
     .directive('requestTimeout', requestTimeout)
-    // .directive('settingsMenu', settingsMenu)
     .directive('slider', slider)
     // .directive('timePicker', timePicker)
     .directive('title', title)

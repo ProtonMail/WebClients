@@ -183,8 +183,6 @@ $breakpoint-small: 800;
 @import "components/sidebar/btnDisplayMobileSidebar";
 @import "components/sidebar/sidebarMobileHeader";
 @import "components/sidebar/navigationItem";
-@import "components/sidebar/settingsMenu";
-@import "components/sidebar/sidebarContact";
 
 //== Message
 @import "components/message/messageAddressActionMenu";
@@ -228,7 +226,6 @@ $breakpoint-small: 800;
 // @import "components/contact/contactViewItem";
 @import "components/contact/contactArrowsSort";
 @import "components/contact/actionContactGroup";
-@import "components/contact/manageContactGroupLink";
 @import "components/contact/manageContactGroupModal";
 @import "components/contact/autocompleteContacts";
 @import "components/contact/contactGroupModal";

@@ -1,7 +1,0 @@
-.manageContactGroupLink-container[data-mode="create"] *:not([data-if="create"]),
-.manageContactGroupLink-container[data-mode] *:not([data-if]),
-.manageContactGroupLink-container:not([data-mode]) [data-if] {
-    display: none
-}
-
-.manageContactGroupLink-container:hover { color: $white; }

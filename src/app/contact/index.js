@@ -73,7 +73,6 @@ import contactGroupModal from './modals/contactGroupModal';
 import autocompleteContacts from './directives/autocompleteContacts';
 import contactGroupModel from './factories/contactGroupModel';
 import manageContactGroupModal from './modals/manageContactGroupModal';
-import manageContactGroupLink from './directives/manageContactGroupLink';
 import actionContactGroup from './directives/actionContactGroup';
 import manageContactGroup from './services/manageContactGroup';
 import contactGroupsOverview from './directives/contactGroupsOverview';
@@ -99,7 +98,6 @@ export default angular
     .directive('contactGroupsOverview', contactGroupsOverview)
     .factory('manageContactGroup', manageContactGroup)
     .directive('actionContactGroup', actionContactGroup)
-    .directive('manageContactGroupLink', manageContactGroupLink)
     .factory('manageContactGroupModal', manageContactGroupModal)
     .factory('contactGroupModel', contactGroupModel)
     .directive('autocompleteContacts', autocompleteContacts)

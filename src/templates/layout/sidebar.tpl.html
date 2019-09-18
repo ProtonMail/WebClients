@@ -1,4 +1,2 @@
-<settings-menu ng-if="settingsSidebar && !(mobileMode && !showSidebar)"></settings-menu>
-<sidebar-contact ng-if="contactSidebar && !(mobileMode && !showSidebar)"></sidebar-contact>
-<sidebar id="pm_sidebar" ng-if="inboxSidebar && !mobileMode"></sidebar>
-<sidebar-mobile id="pm_sidebarMobile" ng-if="showSidebar && mobileMode && inboxSidebar"></sidebar-mobile>
+<sidebar id="pm_sidebar" ng-if="!mobileMode"></sidebar>
+<sidebar-mobile id="pm_sidebarMobile" ng-if="showSidebar && mobileMode"></sidebar-mobile>
