@@ -179,8 +179,9 @@ svg {
 }
 
 .right-icon {
-  top: .5em;
+  top: 0;
   right: .5em;
+  height: 3.5rem; // height of field
 }
 
 /* hardware-acceleration activation */
