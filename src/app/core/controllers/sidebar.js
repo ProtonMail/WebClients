@@ -7,7 +7,7 @@ function SidebarController($scope, AppModel, dispatchers) {
 
     on('AppModel', (e, { type, data = {} }) => {
         type === 'mobile' && bindAppValue('mobileMode', data);
-        if (test === 'showSidebar') {
+        if (type === 'showSidebar') {
             bindAppValue(type, data);
         }
     });
