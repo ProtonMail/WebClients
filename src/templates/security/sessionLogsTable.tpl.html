@@ -32,6 +32,9 @@
                     <span data-if="3"><i class="fa fa-times-circle text-red"></i>
                         <span translate translate-context="auth log entry">Login failure (two-factor)</span>
                     </span>
+                    <span data-if="4"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Login success (two-factor)</span>
+                    </span>
                 </td>
                 <td ng-if="model.doLogging == 2" class="text-right">
                     <kbd>{{ ::log.IP || '--' }}</kbd>
