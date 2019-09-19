@@ -29,11 +29,11 @@ const check = (card, key) => {
             break;
         case 'cvc': {
             const { number = '' } = card || {};
-            const [{ type = '' } = {}] = creditCardType(number) || [];
-            const isAmex = type === creditCardType.types.AMERICAN_EXPRESS;
+            const [{ code = {} } = {}] = creditCardType(number) || [];
+            const { name = 'CVC', size = 3 } = code;
 
-            if (!isCVV(value, isAmex ? 4 : 3)) {
-                return c('Error').t`Invalid CVC code`;
+            if (!isCVV(value, size)) {
+                return c('Error').t`Invalid ${name} code`;
             }
 
             break;
