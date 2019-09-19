@@ -22,9 +22,19 @@ const getBankSvg = (type = '') => {
 
 const isValidNumber = (v) => !v || isNumber(v);
 
-const CardNumberInput = ({ value, onChange, errors, ...rest }) => {
-    const [{ type = '', niceType = '' } = {}] = creditCardType(value) || [];
+const withGaps = (value = '', gaps = []) => {
+    return [...value].reduce((acc, digit, index) => {
+        if (gaps.includes(index)) {
+            return `${acc} ${digit}`;
+        }
+        return `${acc}${digit}`;
+    }, '');
+};
+
+const CardNumberInput = ({ value, onChange, errors = [], ...rest }) => {
+    const [{ type = '', niceType = '', gaps = [] } = {}] = creditCardType(value) || [];
     const bankIcon = getBankSvg(type);
+    const valueWithGaps = gaps.length ? withGaps(value, gaps) : value;
 
     const handleChange = ({ target }) => {
         const val = target.value.replace(/\s/g, '');
@@ -45,7 +55,7 @@ const CardNumberInput = ({ value, onChange, errors, ...rest }) => {
                 maxLength={23}
                 errors={errors}
                 onChange={handleChange}
-                value={(value.match(/.{1,4}/g) || []).join(' ')}
+                value={valueWithGaps}
                 {...rest}
             />
             <span className="right-icon absolute flex">
