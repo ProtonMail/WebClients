@@ -8,7 +8,7 @@ export const hasModulesSupport = () => {
     return 'noModule' in script;
 };
 
-export const isFileSaverSupported = () => 'download' in document.createElement('a') || navigator.msSaveOrOpenBlob;
+export const isFileSaverSupported = () => !!new Blob();
 
 export const textToClipboard = (text) => {
     const dummy = document.createElement('textarea');
