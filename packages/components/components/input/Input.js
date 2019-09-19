@@ -17,6 +17,8 @@ const Input = React.forwardRef(
             onPressEnter,
             loading = false,
             required = false,
+            id,
+            placeholder,
             value,
             ...rest
         },
@@ -28,13 +30,20 @@ const Input = React.forwardRef(
 
         return (
             <>
+                {id && placeholder ? (
+                    <label className="sr-only" htmlFor={id}>
+                        {placeholder}
+                    </label>
+                ) : null}
                 <input
                     className={`pm-field w100 ${className} ${statusClasses}`}
                     aria-invalid={errorZone && status.isDirty}
                     aria-describedby={uid}
+                    id={id}
                     ref={ref}
                     type={type}
                     value={value}
+                    placeholder={placeholder}
                     autoComplete={autoComplete}
                     disabled={loading || rest.disabled}
                     required={required}

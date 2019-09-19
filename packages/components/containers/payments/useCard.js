@@ -5,7 +5,7 @@ import getDefaultCard from './getDefaultCard';
 
 const useCard = (initialCard = getDefaultCard()) => {
     const [card, update] = useState(initialCard);
-    const updateCard = (key, value) => update({ ...card, [key]: value });
+    const updateCard = (key, value) => update((card) => ({ ...card, [key]: value }));
     const errors = getErrors(card);
     const isValid = !Object.keys(errors).length;
 
