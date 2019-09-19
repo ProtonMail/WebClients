@@ -35,7 +35,8 @@ input::-ms-reveal {
   background-color: $pm-input-background;
   border-radius: $global-border-radius;
   &:focus,
-  &.focus {
+  &.focus,
+  &:focus-within {
     background-color: $white;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
@@ -115,6 +116,7 @@ textarea[required].pm-field.field-pristine:invalid {
 // if focus is inside password-revealer-container => don't display error
 // general rule: if focus is on the field => don't display error yet
 .password-revealer-container:focus-within + .error-zone,
+.pm-field-icon-container:focus-within + .error-zone,
 .pm-field:focus + .error-zone {
   transform: scaleY(0);
   max-height: 0;
@@ -370,10 +372,20 @@ $width: 5.5em !default;
     border-bottom-right-radius: 0;
     border-right: 0;
     min-width: 0;
-    &:focus + .password-revealer {
-      background-color: $white;
-      box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, .06),4px -4px 8px 0 rgba(0, 0, 0, .06);
+    height: 3.5rem; // had to force to avoid some bugs ^^
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+      & + .password-revealer {
+        background-color: transparent;
+        box-shadow: 0;
+      }
     }
+  }
+
+  &:focus-within {
+    background-color: $white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
 }
 .password-revealer-container--invalid {
@@ -412,5 +424,29 @@ $width: 5.5em !default;
       border-left: 1px solid $pm-global-border;
       border-right: 0;
     }
+  }
+}
+
+
+/* field with icon */
+.pm-field-icon-container {
+  @extend .pm-field; // added focus-within inside on pm-field for this fake-field :)
+  padding: 0;
+  > .pm-field {
+    border: 0;
+    width: calc(100% - 1.5em);
+  }
+  &:focus-within {
+    > .pm-field {
+      background-color: transparent;
+      box-shadow: none;
+      outline: 0;
+    }
+  }
+}
+.pm-field-icon-container--invalid:not(:focus-within) {
+  border-color: $pm-global-warning;
+  > .pm-field {
+    border-color: $pm-global-warning;
   }
 }

@@ -177,11 +177,27 @@ svg {
   top: 0;
   right: 0;
 }
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .top-right {
+      left: 0;
+      right: auto;
+    }
+  }
+}
 
 .right-icon {
   top: 0;
   right: .5em;
   height: 3.5rem; // height of field
+}
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .right-icon {
+      left: .5em;
+      right: auto;
+    }
+  }
 }
 
 /* hardware-acceleration activation */

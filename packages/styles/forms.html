@@ -118,6 +118,36 @@ section: design
         <input type="search" id="id_field10" class="pm-field w100" placeholder="Search for something" value="" />
     </span>
 </div>
+
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field_card" class="pm-label">
+        A field with an icon
+    </label>
+    <span class="pm-field-container">
+        <span class="relative pm-field-icon-container w100">
+            <input type="text" id="id_field_card" class="pm-field w100" value="" />
+            <span class="right-icon absolute flex">
+                <img src="/assets/img/shared/bank-icons/cc-mastercard.svg" class="mauto" title="Mastercard" alt="Mastercard" width="20" />
+            </span>
+        </span>
+    </span>
+</div>
+<div class="flex flex-nowrap onmobile-flex-column mb1">
+    <label for="id_field_cardoops" class="pm-label">
+        A error field with an icon
+    </label>
+    <span class="pm-field-container">
+        <span class="relative pm-field-icon-container pm-field-icon-container--invalid w100">
+            <input type="text" id="id_field_cardoops" class="pm-field w100" value="" />
+            <span class="right-icon absolute flex">
+                <img src="/assets/img/shared/bank-icons/cc-mastercard.svg" class="mauto" title="Mastercard" alt="Mastercard" width="20" />
+            </span>
+        </span>
+        <div class="color-global-warning error-zone">No money? </div>
+    </span>
+</div>
+
+
 <div class="flex flex-nowrap onmobile-flex-column mb1">
     <label for="id_field_password_alone" class="pm-label">
         Password form alone
