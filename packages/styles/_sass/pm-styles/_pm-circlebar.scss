@@ -1,0 +1,26 @@
+.circle-chart__circle {
+  animation: circle-chart-fill 2s reverse;
+  transform: rotate(-90deg); 
+  transform-origin: center;
+}
+
+.circle-chart__background {
+    stroke: rgba($white,.2);
+    stroke-width: 3px;
+    fill: transparent;
+}
+.circle-chart__background--bigger {
+    stroke: rgba($pm-global-grey, .2);
+    opacity: .2;
+}
+
+.circle-chart__circle {
+    stroke: $pm-global-success;
+    stroke-width: 3px;
+    fill: transparent;
+}
+
+
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}

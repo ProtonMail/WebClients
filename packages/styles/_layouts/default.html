@@ -20,9 +20,9 @@
   <body>
     <div class="body flex flex-nowrap no-scroll">
 
-    <aside class="aside noprint" id="aside-bar">
+    <aside class="aside flex flex-column noprint" id="aside-bar">
 
-      <ul class="unstyled m0 aligncenter">
+      <ul class="unstyled flex flex-column flex-item-fluid m0 aligncenter">
         <li class="mb0-5 nodesktop notablet ">
           <button type="button" class="togglemenu w100 center color-global-light js-togglemenu aside-link" title="Navigation">
             <svg viewBox="0 0 16 16" class="aside-linkIcon fill-global-light" role="img" focusable="false" aria-hidden="true">
@@ -55,13 +55,14 @@
             <span class="sr-only">Calendar</span>
           </a>
         </li>
-        <li class="mb0-5">
-          <a class="center flex js-notyet aside-link" title="ProtonVPN settings">
-            <svg viewBox="0 0 16 16" class="aside-linkIcon mauto fill-global-light" role="img" focusable="false" aria-hidden="true">
-              <use xlink:href="#shape-protonvpn"></use>
+        <li class="mtauto">
+            <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+              <circle class="circle-chart__background" cx="16.91549431" cy="16.91549431" r="13" />
+              <circle class="circle-chart__circle" stroke-dasharray="30,100" stroke-linecap="butt" cx="16.91549431" cy="16.91549431" r="13" />
+              <g class="circle-chart__info">
+                  <text class="circle-chart__percent fill-white" x="16.91549431" y="21" alignment-baseline="central" text-anchor="middle"  >i</text>
+              </g>
             </svg>
-            <span class="sr-only">ProtonVPN settings</span>
-          </a>
         </li>
       </ul>
 
@@ -78,12 +79,9 @@
 
               {% include nav.html %}
 
-              <div class="flex-item-noshrink relative nomobile spacebar-container aligncenter">
+              <div class="flex-item-noshrink hidden relative nomobile spacebar-container aligncenter">
 
                 <meter class="spacebar inbl w100 alignleft" min="0" max="100" low="0" high="100" value="42" aria-describedby="sizeRemaining">
-                  <!-- <div class="spacebar-gauge inbl relative w100" aria-hidden="true">
-                    <span class="spacebar-percent inbl" style="width: 42%;"></span>
-                  </div> -->
                 </meter>
 
                 <span class="bl small m0 spacebar-size" id="sizeRemaining">4.2 GB / 10 GB</span>
