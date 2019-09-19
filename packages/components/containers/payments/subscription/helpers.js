@@ -64,7 +64,10 @@ export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
     if (containsSamePlans(plansMap, { vpnplus: 1 }) || containsSamePlans(plansMap, { vpnbasic: 1 })) {
         return {
             ...plansMap,
-            plus: currentPlansMap.plus
+            plus: currentPlansMap.plus,
+            [ADDON_NAMES.DOMAIN]: currentPlansMap[ADDON_NAMES.DOMAIN],
+            [ADDON_NAMES.ADDRESS]: currentPlansMap[ADDON_NAMES.ADDRESS],
+            [ADDON_NAMES.SPACE]: currentPlansMap[ADDON_NAMES.SPACE]
         };
     }
 
