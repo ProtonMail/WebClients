@@ -17,6 +17,7 @@ const Autocomplete = ({
     onOpen = noop,
     onClose = noop,
     onHighlight = noop,
+    minChars,
     ...rest
 }) => {
     const [awesomplete, setAwesomplete] = useState();
@@ -36,6 +37,12 @@ const Autocomplete = ({
         onSelect(text.value, text.label);
     };
 
+    const handleFocus = () => {
+        if (inputValue.length >= minChars && awesomplete) {
+            awesomplete.evaluate();
+        }
+    };
+
     const childrenCount = React.Children.count(children);
     const inputStyleModifier = childrenCount > 0 ? 'pm-field--tiny' : '';
     const dropdownListClasses = 'bg-white w100 bordered-container m0 p0';
@@ -43,6 +50,7 @@ const Autocomplete = ({
     useEffect(() => {
         const awesompleteInstance = new Awesomplete(inputRef.current, {
             container: () => containerRef.current,
+            minChars,
             ...rest
         });
 
@@ -67,7 +75,10 @@ const Autocomplete = ({
     useEffect(() => {
         if (awesomplete) {
             awesomplete.list = list;
-            awesomplete.evaluate();
+
+            if (awesomplete.isOpened) {
+                awesomplete.evaluate();
+            }
         }
     }, [awesomplete, list]);
 
@@ -88,6 +99,7 @@ const Autocomplete = ({
                         ref={inputRef}
                         onBlur={handleSubmit}
                         onKeyDown={onKeyDown}
+                        onFocus={handleFocus}
                     />
                 </div>
                 {/* <ul> injected here by awesomplete */}
