@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Portal from '../portal/Portal';
 import { classnames } from '../../helpers/component';
@@ -20,14 +20,29 @@ const Dialog = ({
     className: extraClassNames = '',
     ...rest
 }) => {
+    const isContainerClick = useRef(false);
+
     const handleAnimationEnd = ({ animationName }) => {
         if (animationName === CLASSES.MODAL_OUT && isClosing) {
             onExit && onExit();
         }
     };
 
-    const handleClick = ({ currentTarget, target }) => {
-        if (currentTarget === target) {
+    /**
+     * Handle click outside of the dialog by listening to mousedown and mouseup
+     * to solve the case where a user starts her click inside the dialog, and
+     * releases the click outside of the dialog. Since it's not possible to
+     * stop propagation in this case, ensure that mouseDown and mouseUp were
+     * both targeting outside of the container.
+     */
+    const handleMouseDown = (e) => {
+        isContainerClick.current = e.currentTarget === e.target;
+    };
+    const handleMouseUp = (e) => {
+        isContainerClick.current = isContainerClick.current && e.currentTarget === e.target;
+    };
+    const handleClick = () => {
+        if (isContainerClick.current) {
             return onClose();
         }
     };
@@ -35,6 +50,8 @@ const Dialog = ({
     return (
         <Portal>
             <div
+                onMouseDown={handleMouseDown}
+                onMouseUp={handleMouseUp}
                 onClick={handleClick}
                 className={classnames(['pm-modalContainer', isBehind && 'pm-modalContainer--inBackground'])}
             >
