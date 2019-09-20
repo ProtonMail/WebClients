@@ -40,8 +40,7 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
                             onSelect={onChangeCycle}
                             options={[
                                 { text: c('Billing cycle option').t`Monthly`, value: MONTHLY },
-                                { text: c('Billing cycle option').t`Annually SAVE 20%`, value: YEARLY },
-                                { text: c('Billing cycle option').t`Two-year SAVE 33%`, value: TWO_YEARS }
+                                { text: c('Billing cycle option').t`Annually SAVE 20%`, value: YEARLY }
                             ]}
                         />
                     </Field>
