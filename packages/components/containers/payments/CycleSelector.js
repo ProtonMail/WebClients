@@ -16,7 +16,7 @@ const CycleSelector = ({
     ],
     ...rest
 }) => {
-    const { Cycle } = subscription;
+    const { Cycle = DEFAULT_CYCLE } = subscription;
     const handleChange = ({ target }) => onSelect(+target.value);
 
     if (Cycle === TWO_YEARS) {
