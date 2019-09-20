@@ -43,7 +43,8 @@ const pull = async ({ timer = 0, Token, paymentApi }) => {
     throw new Error('Unknown payment token status');
 };
 
-export const process = ({ Token, paymentApi, tab }) => {
+export const process = ({ Token, paymentApi, ApprovalURL }) => {
+    const tab = window.open(ApprovalURL);
     return new Promise((resolve, reject) => {
         let listen = false;
 

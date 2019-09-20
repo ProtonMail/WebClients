@@ -20,8 +20,7 @@ function paymentVerificationModal(pmModal, Payment, gettextCatalog) {
             self.submit = async () => {
                 try {
                     $scope.$applyAsync(() => (self.loading = true));
-                    const tab = window.open(params.url);
-                    await process({ Token: params.token, paymentApi: Payment, tab });
+                    await process({ Token: params.token, paymentApi: Payment, ApprovalURL: params.url });
                     params.onSubmit(toParams(params.body, params.token));
                     $scope.$applyAsync(() => (self.loading = false));
                 } catch (error) {
