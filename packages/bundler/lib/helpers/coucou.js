@@ -34,13 +34,13 @@ const generateTplURL = (env, name, flowType) => {
         .join('\n');
 };
 
-async function send(data, { env, flowType }, { name } = {}) {
+async function send(data, { env, flowType, custom }, { name } = {}) {
     try {
         const text = dedent`
             ${process.env.DEPLOY_MESSAGE} *${name}*?
 
             _url(s)_:
-            ${generateTplURL(env, name, flowType)}
+            ${custom || generateTplURL(env, name, flowType)}
 
             Informations:
             ${data}

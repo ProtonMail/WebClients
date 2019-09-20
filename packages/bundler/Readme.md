@@ -39,6 +39,7 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--i18n> <--appMo
 - `--branch`: **Mandatory** ex: deploy-settings 
 - `--api`: Typeof branch to deploy (dev/beta/build/etc.)
 - `--flow`: Type of flow (_Usefull only for WebClient_)
+- `--custom`: Custom text to display when we call `log-commits` (_inside the message to send_)
 - `--localize`: To force the upgrade i18n task inside the app during any deploy (default only for prod/beta if not ci and not with --no-i18n)
 - `--no-lint`: Ignore lint task on deploy
 - `--no-i18n`: Ignore i18n tasks on deploy
