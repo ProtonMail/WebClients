@@ -33,19 +33,21 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--i18n> <--appMo
 
 - `hosts` : to create new deploy targets (branch) on a repository
 - `log-commits` : Send a message with log commits (arg: branch flow)
+- `changelog` : Generate a changelog based on a deploy-branch
 
 ### flags
 - `--remote`: Build the current app from master via a git clone
 - `--branch`: **Mandatory** ex: deploy-settings 
 - `--api`: Typeof branch to deploy (dev/beta/build/etc.)
 - `--flow`: Type of flow (_Usefull only for WebClient_)
-- `--custom`: Custom text to display when we call `log-commits` (_inside the message to send_)
+- `--custom`: Custom text to display when we call log-commits` (_inside the message to send_)
 - `--localize`: To force the upgrade i18n task inside the app during any deploy (default only for prod/beta if not ci and not with --no-i18n)
 - `--no-lint`: Ignore lint task on deploy
 - `--no-i18n`: Ignore i18n tasks on deploy
 - `--appMode`: Type of bundle for the app (ex: standalone is an option for protonmail-settings)
 - `--silentMessage`: No messages sent if dev/prod/beta dist
 - `--default-branch`: Default master, What's the default branch on your repository (usually master, usefull for the package-lock update)
+- `--issue-url`: URL for the issues inside the changelog. _Only for changelog_
 
 
 ## How to configure
