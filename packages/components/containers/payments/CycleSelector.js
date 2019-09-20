@@ -9,21 +9,27 @@ const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 const CycleSelector = ({
     cycle = DEFAULT_CYCLE,
     onSelect,
+    subscription = {},
     options = [
         { text: c('Billing cycle option').t`Monthly`, value: MONTHLY },
-        { text: c('Billing cycle option').t`Annually`, value: YEARLY },
-        { text: c('Billing cycle option').t`Two-year`, value: TWO_YEARS }
+        { text: c('Billing cycle option').t`Annually`, value: YEARLY }
     ],
     ...rest
 }) => {
+    const { Cycle } = subscription;
     const handleChange = ({ target }) => onSelect(+target.value);
+
+    if (Cycle === TWO_YEARS) {
+        options.push({ text: c('Billing cycle option').t`Two-year`, value: TWO_YEARS });
+    }
 
     return <Select value={cycle} options={options} onChange={handleChange} {...rest} />;
 };
 
 CycleSelector.propTypes = {
-    cycle: PropTypes.number,
+    cycle: PropTypes.oneOf([MONTHLY, YEARLY, TWO_YEARS]),
     onSelect: PropTypes.func.isRequired,
+    subscription: PropTypes.object,
     options: PropTypes.arrayOf(
         PropTypes.shape({
             text: PropTypes.string.isRequired,

@@ -95,7 +95,7 @@ const PlansTable = ({
                                     <CurrencySelector currency={currency} onSelect={updateCurrency} />
                                 </div>
                                 <div>
-                                    <CycleSelector cycle={cycle} onSelect={updateCycle} />
+                                    <CycleSelector cycle={cycle} onSelect={updateCycle} subscription={subscription} />
                                 </div>
                             </div>
                         )}
