@@ -2,16 +2,14 @@
 
     <p class="alert alert-info" translate-context="Info" translate>You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
 
-    <p class="alert alert-danger paypal-error-amount" ng-if="errorDetails" data-type="{{errorDetails.validator}}">
-        <span
-            class="paypal-error-max"
-            translate-context="Paypal error"
-            translate>Amount above the maximum.</span>
-        <span
-            class="paypal-error-min"
-            translate-context="Paypal error"
-            translate>Amount below minimum.</span> ({{ errorDetails.amount / 100 }} {{ currency }})
-    </p>
+    <div class="alert alert-danger paypal-error-amount" ng-if="errorDetails" data-type="{{errorDetails.validator}}">
+        <div class="margin-bottom">
+            <span class="paypal-error-max" translate-context="Paypal error" translate>Amount above the maximum.</span>
+            <span class="paypal-error-min" translate-context="Paypal error" translate>Amount below minimum.</span>
+            ({{ errorDetails.amount / 100 }} {{ currency }})
+        </div>
+        <button type="button" class="pm_button" ng-click="retry()" translate-context="Action" translate>Retry</button>
+    </div>
 
     <p class="text-center" ng-if="!errorDetails">
         <button
