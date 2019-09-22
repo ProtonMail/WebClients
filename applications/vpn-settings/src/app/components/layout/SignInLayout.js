@@ -6,6 +6,8 @@ import { Title } from 'react-components';
 import SupportDropdown from '../header/SupportDropdown';
 import PublicHeader from './PublicHeader';
 
+const year = new Date().getFullYear();
+
 const SignInLayout = ({ children, title }) => {
     useEffect(() => {
         document.title = `${title} - ProtonVPN`;
@@ -35,8 +37,10 @@ const SignInLayout = ({ children, title }) => {
                             .t`Don't have an account yet? Sign up for free!`}</Link>
                     </p>
                 </div>
-                <footer className="opacity-50 mtauto flex-item-noshrink aligncenter pb1">{c('Footer')
-                    .t`2019 ProtonVPN.com - Made globally, hosted in Switzerland.`}</footer>
+                <footer className="opacity-50 mtauto flex-item-noshrink aligncenter pb1">
+                    {year} <a href="https://protonvpn.com">ProtonVPN.com</a> -{' '}
+                    {c('Footer').t`Made globally, hosted in Switzerland.`}
+                </footer>
             </div>
         </div>
     );
