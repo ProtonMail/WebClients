@@ -67,7 +67,7 @@ function loadProject {
         cd "/tmp/$2";
 
         echo "[config.project] load from /tmp/$2" >> build.log;
-        /tmp/app-config install "/tmp/$2" --verbose
+        /tmp/app-config/install "/tmp/$2" --verbose
         echo "[config.project] loaded" >> build.log;
         cat "/tmp/$2/appConfig.json" >> build.log;
     else
