@@ -25,7 +25,7 @@ const Payment = ({
     onPay,
     fieldClassName
 }) => {
-    const { methods, options, loading } = usePaymentMethods({ amount, cycle, coupon, type });
+    const { methods, options, loading } = usePaymentMethods({ amount, coupon, type });
 
     const handleCard = ({ card, isValid }) => {
         onValidCard(isValid);
