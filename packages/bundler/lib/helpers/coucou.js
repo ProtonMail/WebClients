@@ -60,7 +60,7 @@ async function send(data, { env, flowType, custom, mode = 'deploy' }, { name } =
 
             const { pathname, host } = new URL(process.env.CHANGELOG_QA_HOOK);
             const text = dedent`
-                *Changelog* [${name}]: ${(env === 'dev' ? 'available in a few minutes' : '').trim()}
+                *Changelog* [${name}]: ${(env === 'dev' ? `_available in a few minutes on ${env}_` : '').trim()}
 
                 ${data}
             `.trim();
