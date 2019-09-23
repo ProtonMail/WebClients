@@ -23,14 +23,19 @@ const DELAY_LISTENING = 1000;
  * @param {Number} timer
  * @param {String} Token
  * @param {Object} api useApi
+ * @param {AbortSignal} signal instance
  * @returns {Promise}
  */
-const pull = async ({ timer = 0, Token, api }) => {
+const pull = async ({ timer = 0, Token, api, signal }) => {
+    if (signal.aborted) {
+        throw new Error(c('Error').t`Process aborted`);
+    }
+
     if (timer > DELAY_PULLING * 30) {
         throw new Error(c('Error').t`Payment process cancelled`);
     }
 
-    const { Status } = await api(getTokenStatus(Token));
+    const { Status } = await api({ ...getTokenStatus(Token), signal });
 
     if (Status === STATUS_FAILED) {
         throw new Error(c('Error').t`Payment process failed`);
@@ -62,9 +67,10 @@ const pull = async ({ timer = 0, Token, api }) => {
  * @param {Object} api useApi
  * @param {String} approvalURL
  * @param {String} secureURL
+ * @param {AbortSignal} signal instance
  * @returns {Promise}
  */
-export const process = ({ Token, api, approvalURL, secureURL }) => {
+export const process = ({ Token, api, approvalURL, secureURL, signal }) => {
     const tab = window.open(approvalURL);
 
     return new Promise((resolve, reject) => {
@@ -73,6 +79,7 @@ export const process = ({ Token, api, approvalURL, secureURL }) => {
         const reset = () => {
             listen = false;
             window.removeEventListener('message', onMessage, false);
+            signal.removeEventListener('abort', abort);
         };
 
         const listenTab = async () => {
@@ -82,7 +89,9 @@ export const process = ({ Token, api, approvalURL, secureURL }) => {
 
             if (tab.closed) {
                 reset();
-                return reject(new Error(c('Error').t`Tab closed`));
+                const error = new Error(c('Error').t`Tab closed`);
+                error.tryAgain = true;
+                return reject(error);
             }
 
             await wait(DELAY_LISTENING);
@@ -109,11 +118,18 @@ export const process = ({ Token, api, approvalURL, secureURL }) => {
                 return reject();
             }
 
-            pull({ Token, api })
+            pull({ Token, api, signal })
                 .then(resolve)
                 .catch(reject);
         };
 
+        const abort = () => {
+            reset();
+            tab.close();
+            reject(new Error(c('Error').t`Process aborted`));
+        };
+
+        signal.addEventListener('abort', abort);
         window.addEventListener('message', onMessage, false);
         listen = true;
         listenTab();

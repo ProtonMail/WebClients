@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Alert, Loader, SmallButton, Price, useApi, useLoading, PrimaryButton, useConfig } from 'react-components';
@@ -9,6 +9,7 @@ import { toParams, process } from './paymentTokenHelper';
 
 const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     const api = useApi();
+    const abortRef = useRef();
     const [loadingToken, withLoadingToken] = useLoading();
     const [loadingVerification, withLoadingVerification] = useLoading();
     const [error, setError] = useState();
@@ -16,9 +17,14 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     const [token, setToken] = useState();
     const { SECURE_URL: secureURL } = useConfig();
 
+    const handleCancel = () => {
+        abortRef.current && abortRef.current.abort();
+    };
+
     const handleClick = async () => {
         try {
-            await process({ Token: token, api, approvalURL, secureURL });
+            abortRef.current = new AbortController();
+            await process({ Token: token, api, approvalURL, secureURL, signal: abortRef.current.signal });
             onPay(toParams({ Amount, Currency }, token));
         } catch (error) {
             setError(error);
@@ -81,7 +87,12 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
             {loadingVerification ? (
                 <>
                     <Loader />
-                    <Alert>{c('Info').t`Please verify the payment in the new tab.`}</Alert>
+                    <Alert>
+                        <div className="mb0-5">{c('Info').t`Please verify the payment in the new tab.`}</div>
+                        <div>
+                            <SmallButton onClick={handleCancel}>{c('Action').t`Cancel`}</SmallButton>
+                        </div>
+                    </Alert>
                 </>
             ) : (
                 <Alert>{c('Info')
