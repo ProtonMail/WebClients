@@ -26,7 +26,7 @@ function printLine {
 
     # Fix issue from the current repository
     if [ -n "$issueID" ]; then
-        echo "- $msg ~ $issueURL$issueID";
+        echo "- $msg ~ $issueURL/$issueID";
         return 0;
     fi;
 

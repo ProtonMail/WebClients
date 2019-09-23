@@ -1,6 +1,6 @@
 const https = require('https');
 const dedent = require('dedent');
-const { error, success, debug } = require('./log')('proton-bundler');
+const { error, success, debug, warn } = require('./log')('proton-bundler');
 
 const URLS = {
     'protonmail-web': {
@@ -34,25 +34,53 @@ const generateTplURL = (env, name, flowType) => {
         .join('\n');
 };
 
-async function send(data, { env, flowType, custom }, { name } = {}) {
+async function send(data, { env, flowType, custom, mode = 'deploy' }, { name } = {}) {
+    const requests = {
+        deploy() {
+            if (!process.env.DEPLOY_MESSAGES_HOOK) {
+                return { warning: 'No deploy hook available' };
+            }
+
+            const { pathname, host } = new URL(process.env.DEPLOY_MESSAGES_HOOK);
+            const text = dedent`
+                ${process.env.DEPLOY_MESSAGE} *${name}*?
+
+                _url(s)_:
+                ${custom || generateTplURL(env, name, flowType)}
+
+                Informations:
+                ${data}
+            `.trim();
+            return { pathname, host, text };
+        },
+        changelog() {
+            if (!process.env.CHANGELOG_QA_HOOK) {
+                return { warning: 'No changelog hook available' };
+            }
+
+            const { pathname, host } = new URL(process.env.CHANGELOG_QA_HOOK);
+            const text = dedent`
+                *Changelog* [${name}]: ${(env === 'dev' ? 'available in a few minutes' : '').trim()}
+
+                ${data}
+            `.trim();
+            return { pathname, host, text };
+        }
+    };
+
     try {
-        const text = dedent`
-            ${process.env.DEPLOY_MESSAGE} *${name}*?
+        const { text, pathname, host, warning } = requests[mode]();
 
-            _url(s)_:
-            ${custom || generateTplURL(env, name, flowType)}
+        if (warning) {
+            return warn(warning);
+        }
 
-            Informations:
-            ${data}
-        `.trim();
+        debug(text, 'body message');
+
         const body = JSON.stringify({
             mrkdwn: true,
             text
         });
-
-        debug(text, 'body message');
-
-        const { pathname, host } = new URL(process.env.DEPLOY_MESSAGES_HOOK);
 
         const req = https.request(
             {

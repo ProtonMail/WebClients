@@ -22,14 +22,14 @@ module.exports = (scope) => {
         console.log();
     };
 
-    const json = (data, output) => {
+    const json = (data, output, noSpace) => {
         // only output for a command
         if (output) {
             return console.log(JSON.stringify(data, null, 2));
         }
-
-        console.log();
-        console.log(`[${scope}]`, JSON.stringify(data, null, 2));
+        !noSpace && console.log();
+        !noSpace && console.log(`[${scope}]`, JSON.stringify(data, null, 2));
+        noSpace && console.log(JSON.stringify(data, null, 2));
         console.log();
     };
 
@@ -46,7 +46,7 @@ module.exports = (scope) => {
         }
         if (Array.isArray(item) || typeof item === 'object') {
             console.log(`[${scope}]`, message);
-            return json(item);
+            return json(item, false, true);
         }
         console.log(`[${scope}] ${message} \n`, item);
     }

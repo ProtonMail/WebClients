@@ -74,9 +74,19 @@ async function logCommits(branch, flowType) {
     return script('logcommits.sh', [arg]).then(({ stdout }) => console.log(stdout) || stdout);
 }
 
+async function generateChangelog(branch, issueURL) {
+    if (/(prod|beta|old|tor)/.test(branch)) {
+        return;
+    }
+
+    const args = ['changelog', `--branch ${branch}`, `--issue-url ${issueURL}`];
+    return script('logcommits.sh', args).then(({ stdout }) => console.log(stdout) || stdout);
+}
+
 module.exports = {
     getConfig,
     logCommits,
+    generateChangelog,
     push,
     pull
 };

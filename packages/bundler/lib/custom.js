@@ -71,9 +71,12 @@ function loadCustomBundler(argv) {
 
         return fromUser(argv);
     } catch (e) {
-        debug({
-            'Error loading custom config': e
-        });
+        debug(
+            {
+                'Error loading custom config': e
+            },
+            'proton.bundler.js'
+        );
         if (e.code !== 'MODULE_NOT_FOUND') {
             throw e;
         }

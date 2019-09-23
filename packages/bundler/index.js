@@ -34,7 +34,7 @@ const {
     customBundler: { tasks: customTasks, config: customConfig },
     getCustomHooks
 } = require('./lib/custom');
-const { pull, push, getConfig, logCommits } = require('./lib/git');
+const { pull, push, getConfig, logCommits, generateChangelog } = require('./lib/git');
 const buildRemote = require('./lib/buildRemote');
 
 const PKG = require(path.join(process.cwd(), 'package.json'));
@@ -166,7 +166,7 @@ async function getAPIUrl() {
 
     const args = process.argv.slice(2);
     const { stdout } = await bash('npx proton-pack print-config', args);
-    debug(stdout);
+    debug(stdout, 'print-config output');
     const [, url] = stdout.match(/apiUrl": "(.+)"(,*?)/);
     return url;
 }
@@ -194,7 +194,7 @@ async function main() {
     const appMode = argv.appMode;
     const isRemoteBuild = argv.source === 'remote';
 
-    debug({ customConfig, argv });
+    debug({ customConfig, argv }, 'configuration deploy');
 
     if (!branch && !isCI) {
         throw new Error('You must define a branch name. --branch=XXX');
@@ -245,11 +245,26 @@ if (argv._.includes('hosts')) {
 
 if (argv._.includes('log-commits')) {
     const { branch, flow: flowType, custom } = argv;
-    debug(argv);
+    debug(argv, 'arguments');
     return logCommits(branch, flowType).then((data) => {
         if (/deploy-(beta|prod|old|tor|dev)/.test(branch)) {
             const [, env] = branch.match(/deploy-(beta|prod|old|tor|dev)/);
             coucou.send(data, { env, flowType, custom }, PKG);
+        }
+    });
+}
+
+if (argv._.includes('changelog')) {
+    const { branch } = argv;
+    debug({ argv, url: PKG.bugs.url }, 'arguments');
+
+    if (!['dev', process.env.QA_BRANCH].includes(branch)) {
+        return; // not available
+    }
+
+    return generateChangelog(branch, PKG.bugs.url).then((data) => {
+        if (data) {
+            coucou.send(data, { env: branch, mode: 'changelog' }, PKG);
         }
     });
 }
