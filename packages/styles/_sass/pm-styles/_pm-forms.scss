@@ -34,6 +34,7 @@ input::-ms-reveal {
   padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
   background-color: $pm-input-background;
   border-radius: $global-border-radius;
+  outline: 0;
   &:focus,
   &.focus,
   &:focus-within {
