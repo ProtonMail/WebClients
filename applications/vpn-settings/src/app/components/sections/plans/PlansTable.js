@@ -35,12 +35,12 @@ const PlansTable = ({
     updateCycle,
     currency = DEFAULT_CURRENCY,
     updateCurrency,
-    subscription,
+    subscription = {},
     expand = false
 }) => {
     const { state, toggle } = useToggle(expand);
     const mySubscriptionText = c('Title').t`My subscription`;
-    const { Plans = [] } = subscription || {};
+    const { Plans = [] } = subscription;
     const { Name = 'free' } = Plans.find(({ Services, Type }) => Type === PLAN && Services & VPN) || {};
     const [countries, countriesLoading] = useVPNCountries();
 
@@ -57,7 +57,7 @@ const PlansTable = ({
     return (
         <table
             className="pm-plans-table pm-table--highlight noborder"
-            data-plan-number={subscription !== null && PLAN_NUMBERS[Name]}
+            data-plan-number={Plans.length && PLAN_NUMBERS[Name]}
         >
             <thead>
                 <tr>

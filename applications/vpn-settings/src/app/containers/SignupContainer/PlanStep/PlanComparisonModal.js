@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { DialogModal, HeaderModal, InnerModal, usePlans } from 'react-components';
 import { c } from 'ttag';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+
 import PlansTable from '../../../components/sections/plans/PlansTable';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
@@ -21,7 +22,6 @@ const PlanComparisonModal = ({ modalTitleID = 'modalTitle', onClose, defaultCycl
                 <InnerModal>
                     <PlansTable
                         expand={true}
-                        subscription={null}
                         loading={loadingPlans}
                         currency={currency}
                         cycle={cycle}
