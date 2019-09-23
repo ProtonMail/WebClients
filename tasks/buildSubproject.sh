@@ -66,17 +66,10 @@ function loadProject {
         getRemote "$2";
         cd "/tmp/$2";
 
-        # We need the env to be able to deploy
-        if [ -d "$ROOT_DIR/$2" ]; then
-            # No, no, no, no, no, no, no, no, no, no, no, no there's no limit
-            # https://www.youtube.com/watch?v=qM5W7Xn7FiA
-            cp $ROOT_DIR/$2/{appConfig,env}.json . 2>/dev/null || :
-
-            echo "[config.project] write from  $ROOT_DIR/$2/{appConfig,env}.json" >> build.log;
-            echo "[config.project] write from  $(cat appConfig.json)" >> build.log;
-
-        fi
-
+        echo "[config.project] load from /tmp/$2" >> build.log;
+        /tmp/app-config install "/tmp/$2" --verbose
+        echo "[config.project] loaded" >> build.log;
+        cat "/tmp/$2/appConfig.json" >> build.log;
     else
         echo "[load.project] local $2" >> build.log;
         cd "$ROOT_DIR/$2";

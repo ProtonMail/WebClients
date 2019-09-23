@@ -181,6 +181,15 @@ function main(argv) {
                         await bash('./tasks/setupConfig.js ', process.argv.slice(2));
                         ctx.config = env.getConfig('dist');
                     }
+                },
+                {
+                    title: 'Prepare config sub-bundles',
+                    enabled: () => isCI,
+                    async task() {
+                        await bash(
+                            `rm -rf /tmp/app-config || echo 'nope' && git clone ${process.env.APP_CONFIG_REPOSITORY} --depth 1 /tmp/app-config`
+                        );
+                    }
                 }
             ],
             hookPreTasks: [
