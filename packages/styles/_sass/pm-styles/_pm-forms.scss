@@ -114,9 +114,8 @@ textarea[required].pm-field.field-pristine:invalid {
     transform: scaleY(0);
   }
 }
-// if focus is inside password-revealer-container => don't display error
+
 // general rule: if focus is on the field => don't display error yet
-.password-revealer-container:focus-within + .error-zone,
 .pm-field-icon-container:focus-within + .error-zone,
 .pm-field:focus + .error-zone {
   transform: scaleY(0);
@@ -356,76 +355,6 @@ $width: 5.5em !default;
 /* container address */
 .pm-field-container--address {
   margin-top: -1.6em;
-}
-
-
-
-/* Password revealer */
-.password-revealer-container {
-  display: flex;
-  flex-wrap: nowrap; 
-  @extend .flex-items-center;
-
-  > .pm-field {
-    width: calc(100% - 1.5em);
-    @extend .flex-item-fluid;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: 0;
-    min-width: 0;
-    height: 3.5rem; // had to force to avoid some bugs ^^
-    &:focus {
-      outline: 0;
-      box-shadow: none;
-      & + .password-revealer {
-        background-color: transparent;
-        box-shadow: 0;
-      }
-    }
-  }
-
-  &:focus-within {
-    background-color: $white;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
-  }
-}
-.password-revealer-container--invalid {
-  > .password-revealer {
-    border-color: $pm-global-warning;
-  }
-  &:focus-within {
-    > .password-revealer,
-    > .pm-field {
-      border-color: $pm-global-border;
-    }
-  }
-}
-.password-revealer {
-  border: $input-defaut-border;
-  border-left: 0;
-  background-color: $pm-input-background;
-  border-radius: 0 $global-border-radius $global-border-radius 0;
-  padding-left: .2em;
-  padding-right: .2em;
-  height: 3.5rem;
-}
-@if $rtl-option == true {
-  [dir="rtl"] {
-    .password-revealer-container > .pm-field {
-      border-radius: 0 $global-border-radius $global-border-radius 0;
-      border-left: 0;
-      border-right: 1px solid $pm-global-border;
-      &:focus + .password-revealer {
-        box-shadow: -4px -4px 8px 0 rgba(0, 0, 0, .06),-4px 4px 8px 0 rgba(0, 0, 0, .06);
-      }
-    }
-    .password-revealer {
-      border-radius: $global-border-radius 0 0 $global-border-radius;
-      border: $input-defaut-border;
-      border-left: 1px solid $pm-global-border;
-      border-right: 0;
-    }
-  }
 }
 
 
