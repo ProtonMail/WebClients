@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Input, Icon, classnames } from 'react-components';
+import { Input, Icon } from 'react-components';
 import creditCardType from 'credit-card-type';
 import { isNumber } from 'proton-shared/lib/helpers/validators';
 
@@ -42,30 +42,23 @@ const CardNumberInput = ({ value, onChange, errors = [], ...rest }) => {
     };
 
     return (
-        <div
-            className={classnames([
-                'relative pm-field-icon-container w100',
-                errors.length && 'pm-field-icon-container--invalid'
-            ])}
-        >
-            <Input
-                autoComplete="cc-number"
-                name="cardnumber"
-                placeholder={c('Placeholder').t`Card number`}
-                maxLength={23}
-                errors={errors}
-                onChange={handleChange}
-                value={valueWithGaps}
-                {...rest}
-            />
-            <span className="right-icon absolute flex">
-                {value && bankIcon ? (
+        <Input
+            autoComplete="cc-number"
+            name="cardnumber"
+            placeholder={c('Placeholder').t`Card number`}
+            maxLength={23}
+            errors={errors}
+            onChange={handleChange}
+            value={valueWithGaps}
+            icon={
+                value && bankIcon ? (
                     <img src={bankIcon} className="mauto" title={niceType} alt={niceType} width="20" />
                 ) : (
                     <Icon className="mauto" name="payments-type-card" />
-                )}
-            </span>
-        </div>
+                )
+            }
+            {...rest}
+        />
     );
 };
 

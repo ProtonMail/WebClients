@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { generateUID } from '../../helpers/component';
+import { generateUID, classnames } from '../../helpers/component';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 import { c } from 'ttag';
@@ -9,6 +9,7 @@ import { c } from 'ttag';
 const Input = React.forwardRef(
     (
         {
+            icon,
             error,
             errorZoneClassName,
             autoComplete = 'off',
@@ -28,6 +29,26 @@ const Input = React.forwardRef(
         const [uid] = useState(generateUID('input'));
         const errorZone = required && !value && !error ? c('Error').t`This field is required` : error;
 
+        const addIconWrapper = (child) => {
+            if (!icon) {
+                return child;
+            }
+
+            return (
+                <div
+                    className={classnames([
+                        'relative pm-field-icon-container w100',
+                        errorZone && 'pm-field-icon-container--invalid'
+                    ])}
+                >
+                    {child}
+                    {React.cloneElement(icon, {
+                        className: classnames([icon.props.className, 'right-icon absolute flex'])
+                    })}
+                </div>
+            );
+        };
+
         return (
             <>
                 {id && placeholder ? (
@@ -35,21 +56,23 @@ const Input = React.forwardRef(
                         {placeholder}
                     </label>
                 ) : null}
-                <input
-                    className={`pm-field w100 ${className} ${statusClasses}`}
-                    aria-invalid={errorZone && status.isDirty}
-                    aria-describedby={uid}
-                    id={id}
-                    ref={ref}
-                    type={type}
-                    value={value}
-                    placeholder={placeholder}
-                    autoComplete={autoComplete}
-                    disabled={loading || rest.disabled}
-                    required={required}
-                    {...rest}
-                    {...handlers}
-                />
+                {addIconWrapper(
+                    <input
+                        className={`pm-field w100 ${className} ${statusClasses}`}
+                        aria-invalid={errorZone && status.isDirty}
+                        aria-describedby={uid}
+                        id={id}
+                        ref={ref}
+                        type={type}
+                        value={value}
+                        placeholder={placeholder}
+                        autoComplete={autoComplete}
+                        disabled={loading || rest.disabled}
+                        required={required}
+                        {...rest}
+                        {...handlers}
+                    />
+                )}
                 <ErrorZone className={errorZoneClassName} id={uid}>
                     {errorZone && status.isDirty ? errorZone : ''}
                 </ErrorZone>
@@ -59,6 +82,7 @@ const Input = React.forwardRef(
 );
 
 Input.propTypes = {
+    icon: PropTypes.node,
     error: PropTypes.string,
     errorZoneClassName: PropTypes.string,
     autoComplete: PropTypes.string,

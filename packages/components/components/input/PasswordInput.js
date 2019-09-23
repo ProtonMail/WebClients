@@ -3,41 +3,23 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { Icon } from 'react-components';
 
-import { generateUID, classnames } from '../../helpers/component';
-import useInput from './useInput';
-import ErrorZone from '../text/ErrorZone';
+import Input from './Input';
 
-const PasswordInput = (props) => {
+const PasswordInput = ({ disabled, ...rest }) => {
     const [type, setType] = useState('password');
 
     const toggle = () => {
         setType(type === 'password' ? 'text' : 'password');
     };
 
-    const { className, disabled, error, ...rest } = props;
-    const { handlers, statusClasses, status } = useInput(props);
-    const [uid] = useState(generateUID('passwordInput'));
-    const isInvalid = error && status.isDirty;
-    const classNameContainer = classnames([
-        'relative password-revealer-container',
-        isInvalid && 'password-revealer-container--invalid'
-    ]);
-
     return (
-        <>
-            <span className={classNameContainer}>
-                <input
-                    className={`pm-field w100 ${className} ${statusClasses}`}
-                     aria-invalid={isInvalid}
-                    aria-describedby={uid}
-                    type={type}
-                    disabled={disabled}
-                    {...rest}
-                    {...handlers}
-                />
+        <Input
+            type={type}
+            disabled={disabled}
+            icon={
                 <button
                     title={type === 'password' ? c('Label').t`Reveal password` : c('Label').t`Hide password`}
-                    className="password-revealer inline-flex flex-item-noshrink"
+                    className="inline-flex flex-item-noshrink"
                     tabIndex="-1"
                     disabled={disabled}
                     type="button"
@@ -45,15 +27,13 @@ const PasswordInput = (props) => {
                 >
                     <Icon className="mauto" name={type === 'password' ? 'read' : 'unread'} />
                 </button>
-            </span>
-            <ErrorZone id={uid}>{error && status.isDirty ? error : ''}</ErrorZone>
-        </>
+            }
+            {...rest}
+        />
     );
 };
 
 PasswordInput.propTypes = {
-    className: PropTypes.string,
-    error: PropTypes.string,
     disabled: PropTypes.bool
 };
 
