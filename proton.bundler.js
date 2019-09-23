@@ -184,7 +184,7 @@ function main(argv) {
                 },
                 {
                     title: 'Prepare config sub-bundles',
-                    enabled: () => isCI,
+                    enabled: () => argv.fromCi,
                     async task() {
                         await bash(
                             `rm -rf /tmp/app-config || echo 'nope' && git clone ${process.env.APP_CONFIG_REPOSITORY} --depth 1 /tmp/app-config`
