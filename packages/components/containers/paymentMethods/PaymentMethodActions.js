@@ -14,16 +14,19 @@ import { deletePaymentMethod, orderPaymentMethods } from 'proton-shared/lib/api/
 import { isExpired } from 'proton-shared/lib/helpers/card';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
-const toCard = ({ Details = {} }) => {
-    return {
-        fullname: Details.Name,
-        month: Details.ExpMonth,
-        number: '',
-        year: Details.ExpYear.slice(-2),
-        cvc: '',
-        zip: Details.ZIP,
-        country: Details.Country
-    };
+const toCard = ({ Details = {}, Type }) => {
+    if (Type === 'card') {
+        return {
+            fullname: Details.Name,
+            month: Details.ExpMonth,
+            number: '',
+            year: Details.ExpYear.slice(-2),
+            cvc: '',
+            zip: Details.ZIP,
+            country: Details.Country
+        };
+    }
+    return Details;
 };
 
 const PaymentMethodActions = ({ method, onChange, methods, index }) => {
