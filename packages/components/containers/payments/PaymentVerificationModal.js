@@ -46,9 +46,10 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, ...res
     };
 
     const handleSubmit = async () => {
+        let timeoutID;
         try {
             setStep(STEPS.REDIRECTING);
-            setTimeout(() => {
+            timeoutID = setTimeout(() => {
                 setStep(STEPS.REDIRECTED);
             }, PROCESSING_DELAY);
             abortRef.current = new AbortController();
@@ -56,6 +57,7 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, ...res
             onSubmit(toParams(params, token));
             rest.onClose();
         } catch (error) {
+            clearTimeout(timeoutID);
             rest.onClose();
             setStep(STEPS.FAIL);
             setError(error);
