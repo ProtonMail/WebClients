@@ -80,7 +80,7 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, paymen
                 step === STEPS.REDIRECT ? (
                     <>
                         <ResetButton>{c('Action').t`Cancel`}</ResetButton>
-                        <PrimaryButton type="submit">{c('Action').t`Verify payment`}</PrimaryButton>
+                        <PrimaryButton type="submit">{c('Action').t`Verify`}</PrimaryButton>
                     </>
                 ) : null
             }
