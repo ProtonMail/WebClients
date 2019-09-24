@@ -255,11 +255,15 @@ if (argv._.includes('log-commits')) {
 }
 
 if (argv._.includes('changelog')) {
-    const { branch, url = PKG.bugs.url } = argv;
+    const { branch, url = (PKG.bugs || {}).url } = argv;
     debug({ argv }, 'arguments');
 
     if (!['dev', process.env.QA_BRANCH].includes(branch)) {
         return warn(`No changelog available for the branch ${branch}`); // not available
+    }
+
+    if (!url) {
+        return warn('No URL found for the issues');
     }
 
     return generateChangelog(branch, url).then((data) => {
