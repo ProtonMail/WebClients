@@ -255,7 +255,8 @@ if (argv._.includes('log-commits')) {
 }
 
 if (argv._.includes('changelog')) {
-    const { branch, url = (PKG.bugs || {}).url } = argv;
+    const { branch } = argv;
+    const url = argv.url || (PKG.bugs || {}).url;
     debug({ argv }, 'arguments');
 
     if (!['dev', process.env.QA_BRANCH].includes(branch)) {
