@@ -1,6 +1,5 @@
 const { script } = require('./helpers/cli');
 const { I18N_EXTRACT_DIR, I18N_JSON_DIR } = require('../config').getFiles();
-const { debug } = require('./helpers/log')('proton-i18n');
 
 /**
  * Commit translations inside the app
