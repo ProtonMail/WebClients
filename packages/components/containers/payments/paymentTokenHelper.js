@@ -171,6 +171,7 @@ export const handlePaymentToken = async ({ params, api, createModal }) => {
     return new Promise((resolve, reject) => {
         createModal(
             <PaymentVerificationModal
+                payment={Payment}
                 params={params}
                 approvalURL={ApprovalURL}
                 token={Token}

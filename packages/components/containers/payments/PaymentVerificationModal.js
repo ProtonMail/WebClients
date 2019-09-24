@@ -12,10 +12,10 @@ import {
     PrimaryButton
 } from 'react-components';
 import { c } from 'ttag';
-import tabSvg from 'design-system/assets/img/pm-images/tab.svg';
 import errorSvg from 'design-system/assets/img/pm-images/error.svg';
 
 import { toParams, process } from './paymentTokenHelper';
+import PaymentVerificationImage from './PaymentVerificationImage';
 
 const STEPS = {
     REDIRECT: 'redirect',
@@ -26,7 +26,7 @@ const STEPS = {
 
 const PROCESSING_DELAY = 5000;
 
-const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, ...rest }) => {
+const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, payment = {}, ...rest }) => {
     const TITLES = {
         [STEPS.REDIRECT]: c('Title').t`Card verification`,
         [STEPS.REDIRECTING]: c('Title').t`Processing...`,
@@ -34,11 +34,12 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, ...res
         [STEPS.FAILS]: c('Title').t`3-D secure payment verification failed`
     };
     const [step, setStep] = useState(STEPS.REDIRECT);
-    const [error, setError] = useState();
+    const [error, setError] = useState({});
     const api = useApi();
     const { createNotification } = useNotifications();
     const { SECURE_URL: secureURL } = useConfig();
     const abortRef = useRef();
+    const notCharged = <b key="not-charged">{c('Info').t`You will not be charged`}</b>;
 
     const handleCancel = () => {
         abortRef.current && abortRef.current.abort();
@@ -60,9 +61,9 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, ...res
             clearTimeout(timeoutID);
             rest.onClose();
             setStep(STEPS.FAIL);
-            setError(error);
             // if not coming from API error
             if (error.message && !error.config) {
+                setError(error);
                 createNotification({ text: error.message, type: 'error' });
             }
         }
@@ -92,10 +93,10 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, ...res
                             <p className="aligncenter">{c('Info')
                                 .t`Your bank requires 3-D Secure verification for security purposes.`}</p>
                             <p className="aligncenter">
-                                <img src={tabSvg} alt={c('Title').t`New tab`} />
+                                <PaymentVerificationImage payment={payment} />
                             </p>
                             <Alert>{c('Info')
-                                .t`Verification will open a new tab. Please disable any popup blockers. <b>You will not be charged</b>. Any amount used to verify your card will be refunded immediately.`}</Alert>
+                                .jt`Verification will open a new tab. Please disable any popup blockers. ${notCharged}. Any amount used to verify your card will be refunded immediately.`}</Alert>
                         </>
                     ),
                     [STEPS.REDIRECTING]: (
@@ -145,7 +146,8 @@ PaymentVerificationModal.propTypes = {
     onClose: PropTypes.func.isRequired,
     token: PropTypes.string.isRequired,
     approvalURL: PropTypes.string.isRequired,
-    params: PropTypes.object
+    params: PropTypes.object,
+    payment: PropTypes.object
 };
 
 export default PaymentVerificationModal;
