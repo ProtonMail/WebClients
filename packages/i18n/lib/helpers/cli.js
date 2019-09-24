@@ -4,8 +4,9 @@ const { debug } = require('./log')('proton-i18n');
 
 const bash = (cli, args = [], stdio) => {
     debug({ cli, args, stdio }, 'bash');
-    return execa.shell(`${cli} ${args.join(' ')}`, { shell: '/bin/bash', stdio });
+    return execa(cli, args, { shell: '/bin/bash' });
 };
+
 // 'inherit'
 const script = (cli, args = [], stdio) => {
     const cmd = path.resolve(__dirname, '..', '..', 'scripts', cli);
