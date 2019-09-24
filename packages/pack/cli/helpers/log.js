@@ -20,8 +20,8 @@ const success = (msg, { time, space = false } = {}) => {
     console.log(message);
 };
 
-const json = (data) => {
-    console.log();
+const json = (data, noSpace) => {
+    !noSpace && console.log();
     console.log(JSON.stringify(data, null, 2).trim());
     console.log();
 };
@@ -40,7 +40,7 @@ function debug(item, message = 'debug') {
     }
     if (Array.isArray(item) || typeof item === 'object') {
         console.log(`${SCOPE} ${message}`);
-        return json(item);
+        return json(item, true);
     }
 
     console.log(`${SCOPE} ${message}\n`, item);
