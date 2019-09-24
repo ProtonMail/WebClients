@@ -9,7 +9,7 @@ import mastercardSecurecodeSvg from 'design-system/assets/img/shared/bank-icons/
 import verifiedByVisaSvg from 'design-system/assets/img/shared/bank-icons/verified-by-visa.svg';
 
 const IMAGES = {
-    ['american-express']: americanExpressSafekeySvg,
+    'american-express': americanExpressSafekeySvg,
     discover: discoverProtectBuySvg,
     mastercard: mastercardSecurecodeSvg,
     visa: verifiedByVisaSvg

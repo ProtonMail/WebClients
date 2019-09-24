@@ -17,7 +17,6 @@ import {
     Label,
     Field,
     Row,
-    Wizard,
     useConfig,
     useModals
 } from 'react-components';
@@ -151,7 +150,6 @@ const SubscriptionModal = ({
         },
         {
             title: '',
-            noWizard: true,
             footer: null,
             className: 'thanks-modal-container',
             section: <Thanks onClose={onClose} />
@@ -241,7 +239,6 @@ const SubscriptionModal = ({
     const hasCancel = !step;
     const hasClose = step === STEPS.length - 1;
     const hasPrevious = !hasClose && step > 0;
-    const steps = STEPS.map(({ title }) => title);
 
     const close = (() => {
         if (hasCancel) {
@@ -277,7 +274,6 @@ const SubscriptionModal = ({
             submit={STEPS[step].submit}
             {...rest}
         >
-            {STEPS[step].noWizard ? null : <Wizard step={step} steps={steps} hideText={true} />}
             {STEPS[step].section}
         </FormModal>
     );
