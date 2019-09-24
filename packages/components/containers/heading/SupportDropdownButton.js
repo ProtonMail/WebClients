@@ -14,7 +14,7 @@ const SupportDropdownButton = ({ isOpen, buttonRef, ...rest }) => {
         >
             <Icon name="support1" className="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-white" />
             <span className="navigation-title topnav-linkText mr0-5">{c('Header').t`Support`}</span>
-            <DropdownCaret isOpen={isOpen} className="expand-caret mtauto mbauto" />
+            <DropdownCaret isOpen={isOpen} className="expand-caret topnav-icon mtauto mbauto" />
         </button>
     );
 };
