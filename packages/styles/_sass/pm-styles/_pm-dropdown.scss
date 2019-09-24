@@ -41,6 +41,7 @@ $dropDown-narrow-width: 8em !default;
   bottom: 0;
   top: auto;
   margin-left: 2em;
+  transform-origin: center left;
 }
 
 @if $rtl-option == true {
@@ -49,6 +50,7 @@ $dropDown-narrow-width: 8em !default;
       left: auto;
       right: 100%;
       margin-right: 2em;
+      transform-origin: center right;
     }
   }
 }
@@ -61,6 +63,9 @@ $dropDown-narrow-width: 8em !default;
   visibility: hidden;
   transform: scale(1,0);
   transition-delay: .15s, 0s, 0s;
+}
+[hidden].dropDown-content--rightbottom {
+  transform: scale(0,1);
 }
 
 .dropDown-contentInner {
