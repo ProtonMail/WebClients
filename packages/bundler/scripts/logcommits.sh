@@ -34,14 +34,43 @@ function printLine {
     echo "- $msg";
 }
 
-function extractDiffCommit {
-    local messageDeploy=$(git log --format=%b -n 1 "$(git rev-parse origin/deploy-$1)");
-    local hash="$(echo $messageDeploy | awk -F 'commit' '{print $2}' | xargs | awk '{print $1}')";
-
+##
+# Log commits for the changelog.
+# From the lastest build to the current one, what did we change ?
+# Arg 1 <String> hash of the commit to strart the revision
+# Arg 2 <String> URL of the repository to bind the issue URL with number
+function logCommits {
     # We ignore commits from the CI
-    for commit in $(git log "$hash"..HEAD --format=%H --invert-grep --grep="\[I18N@" --grep="Upgrade dependencies"); do
+    for commit in $(git log "$1"..HEAD --format=%H --invert-grep --grep="\[I18N@" --grep="Upgrade dependencies" --grep="Merge branch"); do
         printLine "$commit" "$2";
     done;
+}
+
+function getChangelogRepo {
+    # Body from message deploy contains the hash of the original commit
+    local messageDeploy=$(git log --format=%b -n 1 "$(git rev-parse origin/deploy-$1)");
+    local hash="$(echo $messageDeploy | awk -F 'commit' '{print $2}' | xargs | awk '{print $1}')";
+    logCommits "$hash" "$2";
+}
+
+function getChangelogReactComponents {
+    if [ -f 'package-lock.json' ]; then
+
+        # Create a copy with latest revision pre-deploy of the lockfile (contains the hash of dependencies)
+        git show HEAD~1:package-lock.json > /tmp/oldLock.json;
+
+        # Extract hash of the previous react-components version we used to have inside the app
+        local hash=$(node -e "console.log(require('/tmp/oldLock.json').dependencies['react-components'].version)" | awk -F '#' '{print $2}');
+
+        rm -rf /tmp/react-components || echo 'nope';
+        git clone "git@github.com:ProtonMail/react-components.git" --branch master /tmp/react-components;
+        cd /tmp/react-components;
+
+        # Get the issue URL inside the package.
+        local url=$(node -e "console.log(require('./package.json').bugs.url)");
+
+        logCommits "$hash" "$url";
+    fi;
 }
 
 
@@ -67,7 +96,8 @@ if [ "$1" = 'changelog' ]; then
         exit 1;
     fi;
 
-    extractDiffCommit $BRANCH $ISSUE_URL;
+    getChangelogRepo $BRANCH $ISSUE_URL;
+    getChangelogReactComponents
     exit;
 fi;
 

@@ -27,7 +27,7 @@ const argv = require('minimist')(process.argv.slice(2), {
 const ENV_FILE = fs.existsSync('.env') ? '.env' : 'env/.env';
 require('dotenv').config({ path: ENV_FILE });
 
-const { debug, success, error, about } = require('./lib/helpers/log')('proton-bundler');
+const { debug, success, error, about, warn } = require('./lib/helpers/log')('proton-bundler');
 const coucou = require('./lib/helpers/coucou');
 const { bash, script } = require('./lib/helpers/cli');
 const {
@@ -259,7 +259,7 @@ if (argv._.includes('changelog')) {
     debug({ argv, url: PKG.bugs.url }, 'arguments');
 
     if (!['dev', process.env.QA_BRANCH].includes(branch)) {
-        return; // not available
+        return warn(`No changelog available for the branch ${branch}`); // not available
     }
 
     return generateChangelog(branch, PKG.bugs.url).then((data) => {

@@ -75,10 +75,6 @@ async function logCommits(branch, flowType) {
 }
 
 async function generateChangelog(branch, issueURL) {
-    if (/(prod|beta|old|tor)/.test(branch)) {
-        return;
-    }
-
     const args = ['changelog', `--branch ${branch}`, `--issue-url ${issueURL}`];
     return script('logcommits.sh', args).then(({ stdout }) => console.log(stdout) || stdout);
 }
