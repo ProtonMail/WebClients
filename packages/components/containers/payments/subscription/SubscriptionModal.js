@@ -33,7 +33,7 @@ import Thanks from './Thanks';
 import { getCheckParams, toPlanMap, containsSamePlans } from './helpers';
 import { handlePaymentToken } from '../paymentTokenHelper';
 
-const { PROTONMAIL_SETTINGS, PROTONVPN_SETTINGS } = APPS;
+const { PROTONMAIL_SETTINGS } = APPS;
 const ORDER_SUMMARY_ID = 'order-summary';
 
 const SubscriptionModal = ({
@@ -213,14 +213,6 @@ const SubscriptionModal = ({
                         onValidCard={setCardValidity}
                         onPay={handleSubmit}
                     />
-                    <Alert
-                        type="warning"
-                        learnMore={
-                            APP_NAME === PROTONVPN_SETTINGS
-                                ? 'https://protonvpn.com/terms-and-conditions'
-                                : 'https://protonmail.com/terms-and-conditions'
-                        }
-                    >{c('Info').t`By clicking Upgrade, you agree to abide by Proton's terms and conditions.`}</Alert>
                 </>
             ),
             footer: (
