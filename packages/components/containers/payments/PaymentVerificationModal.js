@@ -31,7 +31,7 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, paymen
         [STEPS.REDIRECT]: c('Title').t`Card verification`,
         [STEPS.REDIRECTING]: c('Title').t`Processing...`,
         [STEPS.REDIRECTED]: c('Title').t`Payment verification in progress`,
-        [STEPS.FAILS]: c('Title').t`3-D secure payment verification failed`
+        [STEPS.FAIL]: c('Title').t`3-D Secure verification failed`
     };
     const [step, setStep] = useState(STEPS.REDIRECT);
     const [error, setError] = useState({});
