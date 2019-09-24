@@ -56,6 +56,11 @@ function getChangelogRepo {
 function getChangelogReactComponents {
     if [ -f 'package-lock.json' ]; then
 
+        # Ex: WebClient does need it yet
+        if ! grep -q 'react-components' package-lock.json; then
+            return 0;
+        fi
+
         # Create a copy with latest revision pre-deploy of the lockfile (contains the hash of dependencies)
         git show HEAD~1:package-lock.json > /tmp/oldLock.json;
 
@@ -63,7 +68,9 @@ function getChangelogReactComponents {
         local hash=$(node -e "console.log(require('/tmp/oldLock.json').dependencies['react-components'].version)" | awk -F '#' '{print $2}');
 
         rm -rf /tmp/react-components || echo 'nope';
-        git clone "git@github.com:ProtonMail/react-components.git" --branch master /tmp/react-components;
+
+        # Faster to clone
+        git clone "git@github.com:ProtonMail/react-components.git" --depth 30 --branch master /tmp/react-components;
         cd /tmp/react-components;
 
         # Get the issue URL inside the package.
