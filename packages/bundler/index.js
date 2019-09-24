@@ -78,7 +78,7 @@ const getTasks = (branch, { isCI, flowType = 'single', forceI18n, appMode, runI1
             title: 'Clear previous dist',
             async task() {
                 await del(['dist', 'distCurrent', 'distback'], { dryRun: false });
-                isCI && execa.shell('mkdir dist');
+                isCI && execa('mkdir dist');
             }
         },
         {
