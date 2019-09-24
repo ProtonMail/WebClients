@@ -4,7 +4,7 @@ const { debug } = require('./log')('proton-i18n');
 
 const bash = (cli, args = [], stdio) => {
     debug({ cli, args, stdio }, 'bash');
-    return execa(cli, args, { shell: '/bin/bash' });
+    return execa(cli, args, { shell: '/bin/bash', stdio });
 };
 
 // 'inherit'
