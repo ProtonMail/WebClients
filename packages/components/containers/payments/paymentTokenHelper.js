@@ -105,10 +105,6 @@ export const process = ({ Token, api, approvalURL, secureURL, signal }) => {
                 return;
             }
 
-            if (event.source !== tab) {
-                return;
-            }
-
             reset();
             tab.close();
 
