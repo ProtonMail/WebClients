@@ -28,7 +28,7 @@ const PROCESSING_DELAY = 5000;
 
 const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, payment = {}, ...rest }) => {
     const TITLES = {
-        [STEPS.REDIRECT]: c('Title').t`Card verification`,
+        [STEPS.REDIRECT]: c('Title').t`Payment verification`,
         [STEPS.REDIRECTING]: c('Title').t`Processing...`,
         [STEPS.REDIRECTED]: c('Title').t`Payment verification in progress`,
         [STEPS.FAIL]: c('Title').t`3-D Secure verification failed`
@@ -39,7 +39,6 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, paymen
     const { createNotification } = useNotifications();
     const { SECURE_URL: secureURL } = useConfig();
     const abortRef = useRef();
-    const notCharged = <b key="not-charged">{c('Info').t`You will not be charged`}</b>;
 
     const handleCancel = () => {
         abortRef.current && abortRef.current.abort();
@@ -95,7 +94,7 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, paymen
                                 <PaymentVerificationImage payment={payment} />
                             </p>
                             <Alert>{c('Info')
-                                .jt`Verification will open a new tab. Please disable any popup blockers. ${notCharged}. Any amount used to verify your card will be refunded immediately.`}</Alert>
+                                .t`Verification will open a new tab, please disable any popup blockers.`}</Alert>
                         </>
                     ),
                     [STEPS.REDIRECTING]: (
