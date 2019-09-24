@@ -36,6 +36,9 @@ h6,
 }
 
 /* other useful classes */
+.smallest {
+  @include flow-other($size-smaller);
+}
 .smaller {
   @include flow-other($size-smaller);
 }
