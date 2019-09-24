@@ -1,6 +1,6 @@
 const path = require('path');
 const { success, debug, spin } = require('./helpers/log')('proton-i18n');
-const { bash } = require('./helpers/cli')('proton-i18n');
+const { bash } = require('./helpers/cli');
 const { I18N_JSON_DIR, I18N_EXTRACT_DIR, CACHE_FILE } = require('../config').getFiles();
 
 const I18N_CACHE = path.join(process.cwd(), CACHE_FILE);

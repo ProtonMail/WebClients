@@ -3,7 +3,7 @@ const path = require('path');
 const _ = require('lodash');
 
 const { success, spin, debug } = require('./helpers/log')('proton-i18n');
-const { bash } = require('./helpers/cli')('proton-i18n');
+const { bash } = require('./helpers/cli');
 
 const isLint = process.argv.includes('--lint');
 
