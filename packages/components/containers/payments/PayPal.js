@@ -12,7 +12,7 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     const abortRef = useRef();
     const [loadingToken, withLoadingToken] = useLoading();
     const [loadingVerification, withLoadingVerification] = useLoading();
-    const [error, setError] = useState();
+    const [textError, setTextError] = useState('');
     const [approvalURL, setApprovalURL] = useState();
     const [token, setToken] = useState();
     const { SECURE_URL: secureURL } = useConfig();
@@ -27,7 +27,10 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
             await process({ Token: token, api, approvalURL, secureURL, signal: abortRef.current.signal });
             onPay(toParams({ Amount, Currency }, token));
         } catch (error) {
-            setError(error);
+            // if not coming from API error
+            if (error.message && !error.config) {
+                setTextError(error.message);
+            }
         }
     };
 
@@ -61,15 +64,15 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
         return <Alert type="error">{c('Error').t`Amount above the maximum.`}</Alert>;
     }
 
-    if (error) {
+    if (textError) {
         return (
             <Alert type="error">
-                <div className="mb0-5">{error.message}</div>
+                <div className="mb0-5">{textError}</div>
                 <div>
                     <SmallButton
                         loading={loadingToken}
                         onClick={() => {
-                            setError();
+                            setTextError('');
                             withLoadingToken(generateToken());
                         }}
                     >{c('Action').t`Try again`}</SmallButton>
