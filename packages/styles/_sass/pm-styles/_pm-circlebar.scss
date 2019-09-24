@@ -5,19 +5,22 @@
 }
 
 .circle-chart__background {
-    stroke: rgba($white,.2);
-    stroke-width: 3px;
-    fill: transparent;
+  stroke: var(--bgcolor-aside-link, rgba($white,.2));
+  stroke-width: 3px;
+  fill: transparent;
 }
 .circle-chart__background--bigger {
-    stroke: rgba($pm-global-grey, .2);
-    opacity: .4;
+  stroke: rgba($pm-global-grey, .2);
+  opacity: .4;
 }
 
 .circle-chart__circle {
-    stroke: $pm-global-success;
-    stroke-width: 3px;
-    fill: transparent;
+  stroke: $pm-global-success;
+  stroke-width: 3px;
+  fill: transparent;
+}
+.circle-chart__percent {
+  fill: var(--color-standard-text, $white);
 }
 
 

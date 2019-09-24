@@ -37,6 +37,7 @@ body {
 .aside-linkIcon {
   width: 17px;
   height: 17px;
+  fill: var(--fillcolor-icons, $pm-global-light);
 }
 
 .togglemenu {
@@ -137,7 +138,7 @@ body {
 }
 
 .navigation__icon {
-  fill: #6D7178;
+  fill:  var(--fillcolor-icons, #6D7178);
 }
 
 .navigation__link:focus,
@@ -146,7 +147,7 @@ body {
   color:  var(--color-nav-link, $pm-global-light);
   text-decoration: none;
   .navigation__icon {
-     fill: $white;
+    fill:  var(--fillcolor-icons, $white);
   }
 }
 [aria-current="page"].navigation__link {
@@ -203,7 +204,7 @@ body {
 
   &:hover {
     box-shadow: unset;
-    background-color: #505560;
+    background-color: var(--bgcolor-spacebar, #505560);
   }
   &[disabled] {
     background: unset;
@@ -214,7 +215,7 @@ body {
   &:not(div):active,
   [aria-expanded="true"] {
     background: unset;
-    background-color: #2F333E;
+    background-color: var(--bgcolor-spacebar, #2F333E);
   }
 }
 .toolbar-button--dropdown {
@@ -226,7 +227,7 @@ body {
 }
 .toolbar-separator {
   width: 2px;
-  background-image: linear-gradient(90deg, #4F5460 0, #4F5460 1px, #353A46 1px);
+  background-image: linear-gradient(90deg, var(--bgcolor-spacebar, #4F5460) 0, var(--bgcolor-spacebar, #4F5460) 1px, var(--bgcolor-spacebar, #353A46) 1px);
 }
 .toolbar button[aria-disabled="true"],
 .toolbar .toolbar-button[aria-disabled="true"] {
