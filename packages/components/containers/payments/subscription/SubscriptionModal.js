@@ -131,7 +131,7 @@ const SubscriptionModal = ({
             id: ORDER_SUMMARY_ID,
             checkCouponCode: true,
             closeIfSubscriptionChange: true,
-            submit: check.AmountDue ? c('Action').t`Next` : c('Action').t`Upgrade`,
+            submit: check.AmountDue ? c('Action').t`Next` : c('Action').t`Continue`,
             section: <OrderSummary plans={plans} model={model} check={check} onChange={handleChangeModel} />,
             async onSubmit() {
                 const checkResult = await callCheck(); // Use check result instead of state because it's not yet updated
@@ -229,7 +229,7 @@ const SubscriptionModal = ({
                 <>
                     <Button onClick={previous} disabled={loading}>{c('Action').t`Previous`}</Button>
                     <PrimaryButton type="submit" disabled={!canPay} loading={loading}>{c('Action')
-                        .t`Upgrade`}</PrimaryButton>
+                        .t`Continue`}</PrimaryButton>
                 </>
             ),
             onSubmit: () => {
