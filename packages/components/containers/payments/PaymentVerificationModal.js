@@ -59,7 +59,6 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, paymen
             rest.onClose();
         } catch (error) {
             clearTimeout(timeoutID);
-            rest.onClose();
             setStep(STEPS.FAIL);
             // if not coming from API error
             if (error.message && !error.config) {
