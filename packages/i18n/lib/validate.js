@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const execa = require('execa');
 const _ = require('lodash');
 
 const { success, spin, debug } = require('./helpers/log')('proton-i18n');
+const { bash } = require('./helpers/cli')('proton-i18n');
 
 const isLint = process.argv.includes('--lint');
 
@@ -29,10 +29,7 @@ function findNoContext(doc) {
 async function validateFunctionFormat(arg = '') {
     const cmd = path.resolve(__dirname, '..', 'scripts/lint.sh');
     try {
-        debug(cmd);
-        await execa.shell(`${cmd} ${arg}`, {
-            shell: '/bin/bash'
-        });
+        await bash(`${cmd} ${arg}`);
     } catch (e) {
         console.log(e.message);
         process.exit(1);

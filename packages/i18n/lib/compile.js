@@ -1,6 +1,6 @@
 const path = require('path');
-const execa = require('execa');
 const { success, debug, spin } = require('./helpers/log')('proton-i18n');
+const { bash } = require('./helpers/cli')('proton-i18n');
 const { I18N_JSON_DIR, I18N_EXTRACT_DIR, CACHE_FILE } = require('../config').getFiles();
 
 const I18N_CACHE = path.join(process.cwd(), CACHE_FILE);
@@ -17,17 +17,11 @@ async function run({ file, lang }) {
     const output = `${I18N_JSON_DIR}/${lang}.json`;
     if (process.env.APP_KEY === 'Angular') {
         const cmd = `npx angular-gettext-cli --files ${file} --dest ${output} --compile --format json`;
-        debug(cmd);
-        return execa.shell(cmd, {
-            shell: '/bin/bash'
-        });
+        return bash(cmd);
     }
 
     const cmd = `npx ttag po2json --format=compact ${file} > ${output}`;
-    debug(cmd);
-    return execa.shell(cmd, {
-        shell: '/bin/bash'
-    });
+    return bash(cmd);
 }
 
 async function main() {
