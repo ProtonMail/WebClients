@@ -30,7 +30,7 @@ const getCurrenciesI18N = () => ({
 
 const { PROTONVPN_SETTINGS } = APPS;
 
-const CreditsModal = ({ onClose, ...rest }) => {
+const CreditsModal = (props) => {
     const api = useApi();
     const { APP_NAME } = useConfig();
     const { call } = useEventManager();
@@ -52,19 +52,19 @@ const CreditsModal = ({ onClose, ...rest }) => {
         });
         await api(buyCredit(requestBody));
         await call();
-        onClose();
+        props.onClose();
         createNotification({ text: c('Success').t`Credits added` });
     };
 
     return (
         <FormModal
             type="small"
-            onClose={onClose}
             onSubmit={() => withLoading(handleSubmit())}
             loading={loading}
             submit={canPay && amount >= MIN_CREDIT_AMOUNT && c('Action').t`Top up`}
+            close={c('Action').t`Close`}
             title={c('Title').t`Add credits`}
-            {...rest}
+            {...props}
         >
             <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
             <Alert
