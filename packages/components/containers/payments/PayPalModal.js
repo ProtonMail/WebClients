@@ -20,24 +20,19 @@ const PayPalModal = ({ onChange, ...rest }) => {
     };
 
     return (
-        <FormModal
-            title={c('Title').t`Add PayPal payment method`}
-            small
-            loading={loading}
-            hasSubmit={false}
-            close={c('Action').t`Close`}
-            {...rest}
-        >
-            {loading ? (
-                <Loader />
-            ) : (
-                <PayPal
-                    amount={PAYMENT_AUTHORIZATION_AMOUNT}
-                    currency={PAYMENT_AUTHORIZATION_CURRENCY}
-                    onPay={(data) => withLoading(handleSubmit(data))}
-                    type="update"
-                />
-            )}
+        <FormModal title={c('Title').t`Add PayPal payment method`} small footer={null} {...rest}>
+            <div className="pb1">
+                {loading ? (
+                    <Loader />
+                ) : (
+                    <PayPal
+                        amount={PAYMENT_AUTHORIZATION_AMOUNT}
+                        currency={PAYMENT_AUTHORIZATION_CURRENCY}
+                        onPay={(data) => withLoading(handleSubmit(data))}
+                        type="update"
+                    />
+                )}
+            </div>
         </FormModal>
     );
 };
