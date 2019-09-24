@@ -38,7 +38,7 @@ const Input = React.forwardRef(
                 <div
                     className={classnames([
                         'relative pm-field-icon-container w100',
-                        errorZone && 'pm-field-icon-container--invalid'
+                        errorZone && status.isDirty && 'pm-field-icon-container--invalid'
                     ])}
                 >
                     {child}
