@@ -47,7 +47,7 @@ $ proton-bundler [action:optional] <--api> <--branch> <--flow> <--i18n> <--appMo
 - `--appMode`: Type of bundle for the app (ex: standalone is an option for protonmail-settings)
 - `--silentMessage`: No messages sent if dev/prod/beta dist
 - `--default-branch`: Default master, What's the default branch on your repository (usually master, usefull for the package-lock update)
-- `--issue-url`: URL for the issues inside the changelog. _Only for changelog_
+- `--url`: URL for the issues inside the changelog. _Only for changelog_ (default package.json bugs.url)
 
 
 ## How to configure
