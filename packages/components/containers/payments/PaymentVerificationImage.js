@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import creditCardType from 'credit-card-type';
-import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import treeDSecureSvg from 'design-system/assets/img/shared/bank-icons/3-d-secure.svg';
 import americanExpressSafekeySvg from 'design-system/assets/img/shared/bank-icons/american-express-safekey.svg';
 import discoverProtectBuySvg from 'design-system/assets/img/shared/bank-icons/discover-protectbuy.svg';
@@ -16,13 +15,9 @@ const IMAGES = {
 };
 
 const PaymentVerificationImage = ({ payment = {} }) => {
-    const { Details = {}, Type = '' } = payment;
-
-    if (Type !== PAYMENT_METHOD_TYPES.CARD) {
-        return null;
-    }
-
+    const { Details = {} } = payment;
     const [{ type = '', niceType = '' } = {}] = creditCardType(Details.Number) || [];
+
     return <img src={IMAGES[type] || treeDSecureSvg} alt={niceType} />;
 };
 
