@@ -6,7 +6,7 @@ const Upgrading = () => {
     return (
         <>
             <Alert>{c('Info').t`Your account is being upgraded, this may take up to 30 seconds.`}</Alert>
-            <Loader />
+            <Loader size="medium" />
         </>
     );
 };
