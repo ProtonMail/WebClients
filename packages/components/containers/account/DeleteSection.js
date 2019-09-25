@@ -34,7 +34,9 @@ const DeleteSection = () => {
 
     if (CLIENT_TYPE === VPN && addresses.length) {
         const loginLink = (
-            <Href key="0" url="https://mail.protonmail.com/login">{c('Link').t`mail.protonmail.com`}</Href>
+            <Href key="0" url="https://mail.protonmail.com/login">
+                mail.protonmail.com
+            </Href>
         );
 
         return (
