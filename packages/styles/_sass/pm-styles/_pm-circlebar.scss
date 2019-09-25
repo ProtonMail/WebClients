@@ -1,23 +1,28 @@
-.circle-chart__circle {
-  animation: circle-chart-fill 2s reverse;
-  transform: rotate(-90deg); 
-  transform-origin: center;
-}
+$stroke-width: 3px !default; // be careful to udpate SVG if you want to update this value
 
 .circle-chart__background {
   stroke: var(--bgcolor-aside-link, rgba($white,.2));
-  stroke-width: 3px;
+  stroke-width: $stroke-width;
   fill: transparent;
 }
-.circle-chart__background--bigger {
+.circle-chart__background--bigger .circle-chart__background {
   stroke: rgba($pm-global-grey, .2);
   opacity: .4;
 }
 
 .circle-chart__circle {
   stroke: $pm-global-success;
-  stroke-width: 3px;
+  stroke-width: $stroke-width;
   fill: transparent;
+  animation: circle-chart-fill 2s reverse;
+  transform: rotate(-90deg); 
+  transform-origin: center;
+}
+.circle-bar--global-attention .circle-chart__circle {
+   stroke: $pm-global-attention;
+}
+.circle-bar--global-warning .circle-chart__circle {
+  stroke: $pm-global-warning;
 }
 .circle-chart__percent {
   fill: var(--color-standard-text, $white);
