@@ -27,6 +27,9 @@ $stroke-width: 3px !default; // be careful to udpate SVG if you want to update t
 .circle-chart__percent {
   fill: var(--color-standard-text, $white);
 }
+.circle-chart-info {
+  color: var(--color-standard-text, $pm-global-light);
+}
 
 
 @keyframes circle-chart-fill {
