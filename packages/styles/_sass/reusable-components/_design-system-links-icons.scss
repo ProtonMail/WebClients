@@ -42,6 +42,9 @@ img {
     &.color-white {
       color: $white;
     }
+    &.primary-link {
+      color: $pm-primary;
+    }
   }
 }
 
