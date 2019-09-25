@@ -32,6 +32,7 @@ import OrderSummary from './OrderSummary';
 import Thanks from './Thanks';
 import { getCheckParams, toPlanMap, containsSamePlans } from './helpers';
 import { handlePaymentToken } from '../paymentTokenHelper';
+import Upgrading from './Upgrading';
 
 const { PROTONMAIL_SETTINGS } = APPS;
 const ORDER_SUMMARY_ID = 'order-summary';
@@ -102,6 +103,7 @@ const SubscriptionModal = ({
 
     const handleSubmit = async (params = parameters) => {
         try {
+            next(); // Upgrading
             setLoading(true);
             const checkParams = getCheckParams({ ...model, plans });
             const requestBody = await handlePaymentToken({
@@ -117,8 +119,9 @@ const SubscriptionModal = ({
             );
             await call();
             setLoading(false);
-            next();
+            next(); // Thanks
         } catch (error) {
+            previous();
             setLoading(false);
             throw error;
         }
@@ -147,6 +150,11 @@ const SubscriptionModal = ({
                 }
                 next();
             }
+        },
+        {
+            title: c('Title').t`Upgrading account`,
+            footer: null,
+            section: <Upgrading />
         },
         {
             title: '',
@@ -184,7 +192,7 @@ const SubscriptionModal = ({
 
     if (check.AmountDue > 0) {
         // Insert it before the last one
-        STEPS.splice(STEPS.length - 1, 0, {
+        STEPS.splice(STEPS.length - 2, 0, {
             title: c('Title').t`Payment details`,
             checkCouponCode: true,
             section: (
