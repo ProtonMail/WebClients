@@ -12,30 +12,33 @@ const StorageSpaceStatus = ({ children }) => {
     const usedPercent = Math.round(UsedSpace / MaxSpace);
     const maxSpaceFormatted = humanSize(MaxSpace);
     const usedSpaceFormatted = humanSize(UsedSpace);
-    const color = usedPercent < 60 ? 'global-success' : usedPercent < 80 ? 'global-attention' : 'global-warning';
+    const color =
+        usedPercent < 60
+            ? 'circle-bar--global-success'
+            : usedPercent < 80
+            ? 'circle-bar--global-attention'
+            : 'circle-bar--global-warning';
 
     return (
         <>
-            <CircularProgress
-                className="center"
-                progress={usedPercent}
-                aria-describedby={uid}
-                rootRef={anchorRef}
-                onClick={toggle}
-                color={color}
-            >
-                <text
-                    className="stroke-white"
-                    x="50%"
-                    y="50%"
-                    fontFamily="Constantia"
-                    textAnchor="middle"
-                    alignmentBaseline="middle"
-                >
-                    i
-                </text>
-            </CircularProgress>
-            <span className="center opacity-40 smaller storage">{usedSpaceFormatted}</span>
+            <button type="button" aria-describedby={uid} onClick={toggle} ref={anchorRef}>
+                <CircularProgress progress={usedPercent} className={color}>
+                    <text
+                        className="circle-chart__percent fill-white"
+                        x="16.91549431"
+                        y="21"
+                        fontFamily="Constantia"
+                        textAnchor="middle"
+                        alignmentBaseline="central"
+                    >
+                        i
+                    </text>
+                </CircularProgress>
+                <span className="smallest mt0 mb0-5 mlauto mrauto lh100 circle-chart-info opacity-40 bl">
+                    {usedSpaceFormatted}
+                </span>
+            </button>
+
             <Dropdown
                 id={uid}
                 isOpen={isOpen}
@@ -56,20 +59,19 @@ const StorageSpaceStatus = ({ children }) => {
                                 <CircularProgress
                                     progress={usedPercent}
                                     size={100}
-                                    backgroundColor="global-light"
-                                    color={color}
+                                    className={`circle-chart__background--bigger ${color}`}
                                 />
                                 <span className="centered-absolute">{usedPercent}%</span>
                             </div>
                         </div>
                         <div className="w150p">
-                            <div className="big mt0 mb0">{c('Title').t`Storage`}</div>
-                            <div className="small color-black mt0 mb0">
-                                {c('Info').jt`${usedSpaceFormatted} of ${maxSpaceFormatted} used`}
+                            <b className="flex">{c('Title').t`Storage`}</b>
+                            <small>{c('Info').jt`${usedSpaceFormatted} of ${maxSpaceFormatted} used`}</small>
+                            <div className="mb1">
+                                <span className="opacity-50 small">
+                                    {c('Info').t`Your storage space is shared across all Proton products.`}
+                                </span>
                             </div>
-                            <p className="smaller opacity-40 mt0 mb1">
-                                {c('Info').t`Your storage space is shared across all Proton products.`}
-                            </p>
                             {children}
                         </div>
                     </div>
