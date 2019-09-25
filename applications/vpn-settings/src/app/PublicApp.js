@@ -29,10 +29,14 @@ const PublicApp = ({ onLogin }) => {
                         render={({ history, match }) => <PreInviteContainer history={history} match={match} />}
                     />
                     <Route
-                        exact
-                        path="/signup"
-                        render={({ history }) => (
-                            <SignupContainer stopRedirect={stopRedirect} history={history} onLogin={onLogin} />
+                        path="/signup/:step?"
+                        render={({ history, match }) => (
+                            <SignupContainer
+                                stopRedirect={stopRedirect}
+                                history={history}
+                                match={match}
+                                onLogin={onLogin}
+                            />
                         )}
                     />
                     <Route

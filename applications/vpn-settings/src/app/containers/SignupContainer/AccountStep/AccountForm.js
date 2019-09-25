@@ -16,12 +16,12 @@ import {
 import { c } from 'ttag';
 import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
 
-const AccountForm = ({ onSubmit }) => {
+const AccountForm = ({ model, onSubmit }) => {
     const api = useApi();
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState(model.username);
+    const [password, setPassword] = useState(model.password);
+    const [confirmPassword, setConfirmPassword] = useState(model.password);
+    const [email, setEmail] = useState(model.email);
     const [usernameError, setUsernameError] = useState();
     const [loading, withLoading] = useLoading();
 
@@ -149,6 +149,7 @@ const AccountForm = ({ onSubmit }) => {
 };
 
 AccountForm.propTypes = {
+    model: PropTypes.object.isRequired,
     onSubmit: PropTypes.func.isRequired
 };
 

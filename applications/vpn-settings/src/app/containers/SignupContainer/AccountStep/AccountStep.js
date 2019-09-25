@@ -24,7 +24,7 @@ const AccountStep = ({ onContinue, model, children }) => {
             <SubTitle>{c('Title').t`Create an account`}</SubTitle>
             <Row>
                 <div>
-                    <AccountForm onSubmit={handleSubmit} />
+                    <AccountForm model={model} onSubmit={handleSubmit} />
                     <LoginPanel />
                 </div>
                 {children}
