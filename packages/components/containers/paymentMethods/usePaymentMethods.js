@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { useApi, useLoading, useAuthentication } from 'react-components';
 import { BLACK_FRIDAY, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { isIE11 } from 'proton-shared/lib/helpers/browser';
 import { isExpired } from 'proton-shared/lib/helpers/card';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
 
@@ -16,6 +15,7 @@ const usePaymentMethods = ({ amount, coupon, type }) => {
     const isPaypalAmountValid = amount >= 500;
     const isInvoice = type === 'invoice';
     const isSignup = type === 'signup';
+    const alreadyHavePayPal = methods.some(({ Type }) => Type === PAYMENT_METHOD_TYPES.PAYPAL);
 
     const getMethod = (type, { Brand = '', Last4 = '', Payer = '' }) => {
         switch (type) {
@@ -51,8 +51,7 @@ const usePaymentMethods = ({ amount, coupon, type }) => {
         );
     }
 
-    // Paypal doesn't work with IE11
-    if (!isIE11() && (isPaypalAmountValid || isInvoice)) {
+    if (!alreadyHavePayPal && (isPaypalAmountValid || isInvoice)) {
         options.push({
             text: c('Payment method option').t`Pay with PayPal`,
             value: PAYMENT_METHOD_TYPES.PAYPAL
