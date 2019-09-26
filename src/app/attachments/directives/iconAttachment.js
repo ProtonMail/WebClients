@@ -57,10 +57,10 @@ function iconAttachment(embedded) {
         replace: true,
         templateUrl: require('../../../templates/attachments/iconAttachment.tpl.html'),
         link(scope, el) {
-            //@todo we need to generate new icons.
-            const outerClassNames = []
-                .concat(getAttachmentType(scope.attachment))
-                .concat(getFileIconsType(scope.attachment));
+            // @todo we need to generate new icons.
+            // const outerClassNames = []
+            //     .concat(getAttachmentType(scope.attachment))
+            //     .concat(getFileIconsType(scope.attachment));
             const innerClassNames = getInnerFileIconTypes(scope.attachment);
             // const fileOuterIcon = el[0].querySelector('.file-outer-icon');
             const fileInnerIcon = el[0].querySelector('.file-inner-icon');
