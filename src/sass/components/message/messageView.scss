@@ -645,3 +645,18 @@ body.appConfigBody-is-mobile {
     min-width:595px;
 }
 #conversation-view .message.message-undisclosed .recipients-summary { display: block !important }
+
+
+
+.message-attachmentIcon .file-outer-icon:not(.single) {
+    fill: lighten($pm-global-altgrey, 40%)
+}
+
+
+.message-attachmentIcon .file-inner-icon {
+    position: absolute;
+    right: 15%;
+    top: 65%;
+    transform: translateY(-50%);
+    fill: $black
+}
