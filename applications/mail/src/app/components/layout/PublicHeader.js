@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Href, MainLogo } from 'react-components';
+import { Href, MailLogo } from 'react-components';
 import { c } from 'ttag';
 
 const PublicHeader = ({ action }) => (
@@ -15,7 +15,7 @@ const PublicHeader = ({ action }) => (
         </div>
         <div className="w150p center">
             <Href url="https://protonmail.com" target="_self">
-                <MainLogo className="fill-primary" />
+                <MailLogo className="fill-primary" />
             </Href>
         </div>
         <div className="nomobile flex-item-fluid alignright">{action}</div>

@@ -2,11 +2,9 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { Title } from 'react-components';
+import { Title, FooterDetails } from 'react-components';
 
 import PublicHeader from './PublicHeader';
-
-const year = new Date().getFullYear();
 
 const SignInLayout = ({ children, title }) => {
     useEffect(() => {
@@ -38,8 +36,7 @@ const SignInLayout = ({ children, title }) => {
                     </p>
                 </div>
                 <footer className="opacity-50 mtauto flex-item-noshrink aligncenter pb1">
-                    {year} <a href="https://protonmail.com">ProtonMail.com</a> -{' '}
-                    {c('Footer').t`Made globally, hosted in Switzerland.`}
+                    <FooterDetails link={<a href="https://protonmail.com">ProtonMail.com</a>} />
                 </footer>
             </div>
         </div>
