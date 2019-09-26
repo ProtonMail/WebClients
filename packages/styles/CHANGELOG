@@ -24,8 +24,9 @@
 - removed outline on `pm-field`s
 - removed password revealer code (same behaviour as `pm-field-icon-container`)
 - fixed navigation icon hover color (for blue theme)
-- fix color image `upgrade.svg`
-- fix `hover-same-color`/`primary-link` helpers
+- fixed color image `upgrade.svg`
+- fixed `hover-same-color`/`primary-link` helpers
+- fixed `navigation__counterItem` padding 
 
 
 # [1.7.4] - 2019-09-12

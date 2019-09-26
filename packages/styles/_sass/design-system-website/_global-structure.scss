@@ -163,7 +163,7 @@ body {
 .navigation__counterItem {
   background: rgba($white, 0.1);
   font-size: 1.1rem;
-  padding: .1em .1em .2em;
+  padding: .1em em(6, 11) .2em;
   font-weight: normal;
   &:empty {
       display: none; // removes a bug on Webkit
