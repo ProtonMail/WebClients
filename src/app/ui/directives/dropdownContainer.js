@@ -48,7 +48,6 @@ function dropdownContainer(dispatchers) {
             }
 
             function onClick(e) {
-                e.preventDefault();
                 e.stopPropagation();
                 const { target } = e;
                 if (target !== el[0] && !el[0].contains(target) && !isLocked) {
