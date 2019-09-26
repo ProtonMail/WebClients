@@ -1,27 +1,30 @@
 <section class="conversation-container">
-    <header id="conversationHeader" class="flex flex-nowrap conversationHeader-header relative pb1 ">
-        <h1 class="flex-item-fluid cut mb0">
-            <span ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-            <span>{{ conversation.Subject | unescape }}</span>
-        </h1>
-        <div
-            class="inline-flex flex-items-center flex-nowrap flex-justify-end conversationHeader-about"
-            ng-if="conversation">
+    <header id="conversationHeader" class="conversationHeader-header relative pb1 ">
+        <div class="flex flex-nowrap">
+            <h1 class="flex-item-fluid cut mb0">
+                <span ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+                <span>{{ conversation.Subject | unescape }}</span>
+            </h1>
+            <div
+                class="inline-flex flex-items-center flex-nowrap flex-justify-end conversationHeader-about"
+                ng-if="conversation">
 
-            <div class="labels message-summary-labels">
-                <labels-element
-                    data-button="remove"
-                    data-element="conversation"
-                    class="message-summary-labels-list flex-nowrap"></labels-element>
+                <div class="labels message-summary-labels">
+                    <labels-element
+                        data-button="remove"
+                        data-element="conversation"
+                        class="message-summary-labels-list flex-nowrap"></labels-element>
+                </div>
+
+                <pt-star
+                    data-model="conversation"
+                    class="singleStar ml0-5 flex-item-noshrink"
+                    data-pt-star-type="conversation"></pt-star>
             </div>
 
-            <pt-star
-                data-model="conversation"
-                class="singleStar ml0-5 flex-item-noshrink"
-                data-pt-star-type="conversation"></pt-star>
         </div>
 
-        <div ng-hide="'secured.search.**' | includedByState" class="containsMessage">
+        <div ng-hide="'secured.search.**' | includedByState" class="containsMessage flex flex-column">
             <p ng-if="showNotifier('trash')" class="bordered-container flex pt0-5 pb0-5 pl1 pr1">
                 <span ng-show="inTrash === false" translate translate-context="Info">This conversation contains trashed messages.</span>
                 <span ng-show="inTrash === true" translate translate-context="Info">This conversation contains non-trashed messages.</span>
