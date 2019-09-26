@@ -1,7 +1,0 @@
-$listEvents: 0 1 2 3 4;
-/* Hide items if they don't have the same event id defined inside data-logevent */
-@each $event in $listEvents {
-    .sessionLogsTable-row[data-logevent="#{$event}"] [data-if]:not([data-if="#{$event}"]) {
-        display: none;
-    }
-}

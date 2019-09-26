@@ -54,7 +54,6 @@ $breakpoint-small: 800;
 @import "_animations";
 
 //== Typography, Colors, Icons
-//@import "_typography";
 @import "_colors";
 @import "_icons";
 
@@ -98,7 +97,6 @@ $breakpoint-small: 800;
 
 //=== 👉 UI Components =====================//
 @import "components/core/signupIframe";
-//@import "ui/appVersion";
 @import "ui/appCopyright";
 @import "ui/atomLoader";
 @import "ui/protonLoader";
@@ -138,7 +136,6 @@ $breakpoint-small: 800;
 
 //===  Custom Components ================//
 
-
 // === User
 @import "components/user/generateModal";
 @import "components/user/identitySection";
@@ -148,7 +145,6 @@ $breakpoint-small: 800;
 @import "components/user/signupPayForm";
 @import "components/user/signupCreationProcess";
 @import "components/user/displayNameSignature";
-//@import "components/user/storageWarning";
 
 //== commandPalette
 @import "components/command/commandPalette";
@@ -219,12 +215,9 @@ $breakpoint-small: 800;
 @import "components/attachments/attendeeItem.scss";
 
 //== Contact
-// @import "components/contact/contactActionHeader";
 @import "components/contact/attachGroupContactEmailsModal";
 @import "components/contact/autocompleteContactGroup";
 @import "components/contact/advancedSettingsBtn";
-// @import "components/contact/contactGroupsOverview";
-// @import "components/contact/contactViewItem";
 @import "components/contact/contactArrowsSort";
 @import "components/contact/actionContactGroup";
 @import "components/contact/manageContactGroupModal";
@@ -232,24 +225,8 @@ $breakpoint-small: 800;
 @import "components/contact/contactGroupModal";
 @import "components/contact/dropdownGroups";
 @import "components/contact/contactGroupsDropdown";
-// @import "components/contact/contactViewDetail";
-// @import "components/contact/contactError";
-// @import "components/contact/importCardDropzone";
-// @import "components/contact/contactDetails";
 @import "components/contact/contactAddressInput";
 @import "components/contact/contactAskEncryption";
-// @import "components/contact/contactPhotoRow";
-// @import "components/contact/contactPhotoModal";
-// @import "components/contact/contactItem";
-// @import "components/contact/contactPgp";
-// @import "components/contact/contactList";
-// @import "components/contact/contactNoResult";
-// @import "components/contact/contactsToolbar";
-// @import "components/contact/contactPlaceholder";
-// @import "components/contact/contactDisplay";
-// @import "components/contact/contactMerger";
-// @import "components/contact/contactLoaderModal";
-// @import "components/contact/contactRightPanel";
 @import "components/contact/contactSelectorForm";
 
 //== Squire
@@ -274,11 +251,7 @@ $breakpoint-small: 800;
 @import "components/dropdowns/dropdownLabel";
 
 //== Filters
-//@import "components/filters/emailBlockList";
 @import "components/filters/filtersModal";
-
-//== Address
-//@import "components/address/addressKeysView";
 
 //== Toolbar
 @import "components/toolbar/toolbar";
@@ -287,59 +260,25 @@ $breakpoint-small: 800;
 @import "components/tour/tour";
 
 //== Payments
-//@import "components/payments/paymentPlanOverview";
-// @import "components/payments/payInvoiceModal";
-// @import "components/payments/featuresList";
 @import "components/payments/bitcoinView";
 @import "components/payments/donation";
-
-//== FeedBack
-// @import "components/feedback/feedback";
-
-
-//== Black Friday (to keep)
-// @import "components/blackFriday/navigationBlackFriday";
-// @import "components/blackFriday/blackFridayModal";
-// @import "components/blackFriday/blackFriday";
-
-//== VPN
-// @import "components/vpn/openVpnSection";
 
 //== Utils
 @import "components/utils/printMessage";
 @import "components/utils/printModal";
 
-//== Security
-// @import "components/security/logManager";
-// @import "components/security/sessionLogsTable";
-
-//== Invoices
-// @import "components/invoices/invoiceList";
-// @import "components/invoices/invoiceSection";
-
 //== Modals
 @import "components/modals/index";
 
 //=== 📄 Pages =============================//
-// @import "pages/autoresponder";
-// @import "pages/dashboard/_dashboard";
-// @import "pages/vpn/_vpn";
 @import "pages/login";
 @import "pages/pgp";
-// @import "pages/signatures";
-// @import "pages/contacts";
-// @import "pages/keysView";
-// @import "pages/settings";
 @import "pages/setup";
 @import "pages/signup";
 @import "pages/outside";
 @import "pages/loginForm";
 @import "pages/loginPasswordInput";
 @import "pages/unlockForm";
-// @import "pages/security";
-// @import "pages/members";
-// @import "pages/filters";
-// @import "pages/domains";
 
 
 //== 👉 Responsive override ==============================//
@@ -348,16 +287,6 @@ $breakpoint-small: 800;
 
 
 @import "_responsive";
-
-//=== i18n custom ========================//
-// @import "_lang";
-
-//=== 👻 Reset default behavior to facilitate users theming
-// @import "_theme";
-
-//=== 💣 Dangerous ========================//
-//@import "_dangerous";
-
 
 @import "~design-system/_sass/reusable-components/design-system-print";
 @import "~design-system/_sass/reusable-components/design-system-reduced-motion";
