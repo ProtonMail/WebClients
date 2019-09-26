@@ -1,20 +1,20 @@
 <div class="messageView-contaniner">
-    <header id="conversationHeader" class="flex conversationHeader-header relative">
-        <h1 class="cut">{{message.Subject}}</h1>
+    <header id="conversationHeader" class="flex flex-nowrap conversationHeader-header relative pb1">
+        <h1 class="cut flex-item-fluid mb0">{{message.Subject}}</h1>
         <div
-            class="inline-flex flex-items-center flex-justify-end conversationHeader-about"
+            class="inline-flex flex-item-noshrink flex-items-center flex-justify-end conversationHeader-about"
             ng-if="message">
 
             <div class="labels message-summary-labels">
                 <labels-element
                     data-button="remove"
                     data-element="message"
-                    class="message-summary-labels-list"></labels-element>
+                    class="message-summary-labels-list flex-nowrap"></labels-element>
             </div>
 
             <pt-star
                 data-model="message"
-                class="singleStar ml0-5"
+                class="singleStar ml0-5 flex-item-noshrink"
                 data-pt-star-type="message"></pt-star>
         </div>
     </header>

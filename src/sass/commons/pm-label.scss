@@ -1,8 +1,4 @@
 .pm_labels {
-    position: relative;
-    display: inline-flex;
-    flex-wrap: wrap;
-    max-width: 100%;
     background: inherit;
 
     [class*="-label"] {
@@ -30,8 +26,8 @@
         border-left-width: 0 !important;
         border-radius: 0 1em 1em 0;
         color: rgba(0,0,0,.35);
-        max-width: 1.5rem;
-        width: 1.5rem;
+        max-width: 2rem;
+        width: 2rem;
         text-align: center;
         background: rgba(0,0,0,.1);
         padding: 0;
@@ -51,13 +47,12 @@
 .pm_labels[data-format="stack"] {
 
     [class*="-label"]:not(:first-of-type) {
-        max-width: 1rem;
+        max-width: .8rem;
         padding-right: 0;
         overflow: hidden;
         border-left-width: 0 !important;
         border-radius: 0 1em 1em 0;
         background: transparent;
-        height: 1.65em;
         align-self: center;
     }
 
@@ -65,7 +60,6 @@
         border-left-width: 2px !important;
         border-radius: 1em;
         max-width: 15rem;
-        padding: 0 .4rem;
         background: currentColor;
         height: auto;
     }

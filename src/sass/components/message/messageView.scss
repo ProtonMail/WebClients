@@ -32,9 +32,10 @@
     padding-left: 6px;
 }
 
-.conversationHeader-header {
-    h1 {
-        flex: 1 0 calc(100% - 150px); // margin to have labels~stars
+.foldersMessage-container {
+    margin-left: .5em;
+    &:empty {
+        margin-left: 0;
     }
 }
 
@@ -43,12 +44,6 @@
     z-index: 8;
     right: 0.75em;
     top: 0;
-}
-
-.conversationHeader-about {
-    position: absolute;
-    right: 0;
-    bottom: calc(1em +  24px/4); // margin + vertical-align:  center line-height title
 }
 
 #conversation-view {
@@ -602,8 +597,6 @@ body.appConfigBody-is-mobile {
 
 .message-summary-labels-list {
     max-width: 100%;
-    height: 20px;
-    flex-wrap: nowrap;
 
     .labelsMessage-label {
         margin-top: 0;
