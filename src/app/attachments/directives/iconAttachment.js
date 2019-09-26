@@ -37,11 +37,19 @@ function iconAttachment($compile) {
         return INNER_MAP_CLASSNAME[key];
     };
 
-    const template = (outerIcon = 'file-image', single = true) => {
+    const template = (outerIcon = 'file-image', single = true, isEmbedded) => {
         const secondIcon = !single ? '<icon data-name="key" class="file-inner-icon"></icon>`' : '';
-        const singleClass = single ? 'single' : '';
+        const classNames = [single && 'single', isEmbedded && 'is-embedded'].filter(Boolean).join(' ');
 
-        return `<icon data-name="${outerIcon}" data-size="20" class="mauto file-outer-icon ${singleClass}"></icon>${secondIcon}`;
+        return `<icon data-name="${outerIcon}" data-size="20" class="mauto file-outer-icon ${classNames}"></icon>${secondIcon}`;
+    };
+
+    /*
+        embedded.isEmbedded doesn't work :/
+        As we have the header, it should be fine
+     */
+    const isEmbeddedLocal = ({ Headers: { 'content-disposition': disposition, embedded } = {} } = {}) => {
+        return disposition === 'inline' || embedded === 1;
     };
 
     return {
@@ -49,7 +57,11 @@ function iconAttachment($compile) {
         templateUrl: require('../../../templates/attachments/iconAttachment.tpl.html'),
         link(scope, el) {
             _rAF(() => {
-                const tpl = template(getFileIconsType(scope.attachment), !getInnerFileIconTypes(scope.attachment));
+                const tpl = template(
+                    getFileIconsType(scope.attachment),
+                    !getInnerFileIconTypes(scope.attachment),
+                    isEmbeddedLocal(scope.attachment)
+                );
                 el.append($compile(tpl)(scope));
             });
         }

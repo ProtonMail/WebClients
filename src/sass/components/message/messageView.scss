@@ -651,6 +651,9 @@ body.appConfigBody-is-mobile {
 .message-attachmentIcon .file-outer-icon:not(.single) {
     fill: lighten($pm-global-altgrey, 40%)
 }
+.message-attachmentIcon .file-outer-icon.is-embedded {
+    fill: $pm-blue
+}
 
 
 .message-attachmentIcon .file-inner-icon {
