@@ -61,6 +61,11 @@ function getRemote {
 }
 
 function loadProject {
+
+    if [ ! -d "/tmp/app-config" ]; then
+        git clone --depth 1 "$APP_CONFIG_REPOSITORY" /tmp/app-config
+    fi;
+
     if [[ "$ARGS" =~ "$1" ]]; then
         echo "[load.project] remote $2" >> build.log;
         getRemote "$2";
