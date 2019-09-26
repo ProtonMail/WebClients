@@ -60,7 +60,7 @@ async function getConfig() {
     }
 }
 
-async function logCommits(branch, flowType) {
+async function logCommits(branch, flowType, isWebsite) {
     const [, target] = branch.match(/-(prod|beta|dev|old|tor)/) || [];
 
     if (!target) {
@@ -69,9 +69,10 @@ async function logCommits(branch, flowType) {
 
     console.log('');
     title('Hash commits');
-    const arg = flowType === 'many' ? '' : target;
+    const args = [flowType === 'many' ? '' : target];
+    isWebsite && args.push('--website');
     // Keep log active.
-    return script('logcommits.sh', [arg]).then(({ stdout }) => console.log(stdout) || stdout);
+    return script('logcommits.sh', args).then(({ stdout }) => console.log(stdout) || stdout);
 }
 
 async function generateChangelog(branch, issueURL) {

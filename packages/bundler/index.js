@@ -12,6 +12,7 @@ const argv = require('minimist')(process.argv.slice(2), {
     string: ['appMode'],
     boolean: ['lint', 'i18n'],
     default: {
+        website: false,
         lint: true,
         fromCi: false,
         i18n: true,
@@ -244,11 +245,19 @@ if (argv._.includes('hosts')) {
 }
 
 if (argv._.includes('log-commits')) {
+    const parseEnv = (branch, website) => {
+        if (website && /deploy-(a|b)$/.test(branch)) {
+            return 'deploy-prod';
+        }
+        return branch;
+    };
+
     const { branch, flow: flowType, custom } = argv;
     debug(argv, 'arguments');
-    return logCommits(branch, flowType).then((data) => {
-        if (/deploy-(beta|prod|old|tor|dev)/.test(branch)) {
-            const [, env] = branch.match(/deploy-(beta|prod|old|tor|dev)/);
+    const branchName = parseEnv(branch, argv.website);
+    return logCommits(branchName, flowType, argv.website).then((data) => {
+        if (/deploy-(beta|prod|old|tor|dev)/.test(branchName)) {
+            const [, env] = branchName.match(/deploy-(beta|prod|old|tor|dev)/);
             coucou.send(data, { env, flowType, custom }, PKG);
         }
     });

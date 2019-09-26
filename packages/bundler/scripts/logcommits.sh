@@ -120,9 +120,24 @@ fi
 
 
 if [ "$1" = 'prod' ]; then
+
+    IS_WEBSITE=false;
+
+    while [ ! $# -eq 0 ]; do
+      case "$1" in
+        --website) IS_WEBSITE=true; ;;
+      esac
+      shift
+    done;
+
     for branch in $(git branch -a);
     do
-        if [[ ${branch} =~ origin/deploy-prod ]]; then
+        if [ $IS_WEBSITE = false ] && [[ ${branch} =~ origin/deploy-prod ]]; then
+            logCommit "$branch";
+        fi;
+
+        # ¯\_(ツ)_/¯ https://www.youtube.com/watch?v=d7RWIcOcHgg
+        if [ $IS_WEBSITE = true ] && [[ ${branch} =~ origin/deploy-(a|b|prod) ]]; then
             logCommit "$branch";
         fi;
     done;
