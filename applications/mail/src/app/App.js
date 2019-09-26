@@ -21,11 +21,9 @@ const Setup = () => {
 const App = () => {
     const storage = useInstance(() => createSecureSessionStorage([MAILBOX_PASSWORD_KEY, UID_KEY]));
     return (
-        <div className="App body mod--hidden content">
-            <ProtonApp config={config} storage={storage}>
-                <Setup />
-            </ProtonApp>
-        </div>
+        <ProtonApp config={config} storage={storage}>
+            <Setup />
+        </ProtonApp>
     );
 };
 
