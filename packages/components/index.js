@@ -182,6 +182,7 @@ export { default as Details } from './components/container/Details';
 export { default as Summary } from './components/container/Summary';
 export { default as AuthModal } from './containers/password/AuthModal';
 export { default as PasswordTotpInputs } from './containers/password/PasswordTotpInputs';
+export { default as FooterDetails } from './containers/login/FooterDetails';
 export { default as UnlockModal } from './containers/login/UnlockModal';
 export { default as NotificationsContainer } from './containers/notifications/Container';
 export { default as NotificationsProvider } from './containers/notifications/Provider';
