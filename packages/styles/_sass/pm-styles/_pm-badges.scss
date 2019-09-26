@@ -6,37 +6,47 @@
   @extend .color-white;
   @extend .inbl;
   font-size: rem(11); // to be sure this is the same height everywhere
-  padding: 0 em(6) em(2);
-  line-height: 1.4;
+  padding: 0 em(2) em(1);
+  line-height: 1;
   border-radius: $global-border-radius;
+  border-width: 2px;
+  border-style: solid; 
 }
 .badgeLabel-success {
   @extend .bg-global-success;
+  border-color: $pm-global-success;
 }
 .badgeLabel-blue {
   @extend .bg-pm-blue;
+  border-color: $pm-blue;
 }
 .badgeLabel-green {
   @extend .bg-pv-green;
+  border-color: $pv-green;
 }
 @if ($pm-primary == $pm-blue) {
   .badgeLabel-primary,
   .badgeLabel {
     @extend .bg-pm-blue;
+    border-color: $pm-blue;
   }
 }
 @else {
   .badgeLabel-primary,
   .badgeLabel {
     @extend .bg-pv-green;
+    border-color: $pv-green;
   }
 }
 .badgeLabel-grey {
   @extend .bg-global-grey;
+  border-color: $pm-global-grey;
 }
 .badgeLabel-warning {
   @extend .bg-global-attention;
+  border-color: $pm-global-attention;
 }
 .badgeLabel-error {
   @extend .bg-global-warning;
+  border-color: $pm-global-warning;
 }
