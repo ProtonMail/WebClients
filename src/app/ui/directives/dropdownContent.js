@@ -1,7 +1,8 @@
 /* @ngInject */
 function dropdownContent() {
     const CLASSNAME = {
-        wide: 'dropDown-content--wide'
+        wide: 'dropDown-content--wide',
+        rightbottom: 'dropDown-content--rightbottom'
     };
 
     return {

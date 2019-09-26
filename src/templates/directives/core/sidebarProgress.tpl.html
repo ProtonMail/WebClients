@@ -1,14 +1,40 @@
-<div class="storageProgress-container flex-item-noshrink relative nomobile spacebar-container aligncenter">
+<div class="storageProgress-container">
 
-    <meter class="spacebar inbl w100 alignleft" min="0" max="100" low="0" high="100" ng-value="percentageValue()" aria-describedby="sizeRemaining">
-    </meter>
+    <dropdown-container class="storageProgress-dropdown flex" data-position="leftBottom">
+        <dropdown-button class=" aligncenter">
+            <svg class="circle-chart mlauto mrauto" viewbox="0 0 35.83098862 35.83098862" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                <circle class="circle-chart__background" cx="17.91549431" cy="17.91549431" r="15.91549431" />
+                <circle class="circle-chart__circle" stroke-dasharray="{{percentageValue()}},100" stroke-linecap="butt" cx="17.91549431" cy="17.91549431" r="15.91549431" />
+                <g class="circle-chart__info">
+                    <text class="circle-chart__percent fill-white" x="16.91549431" y="21" alignment-baseline="central" text-anchor="middle"  >i</text>
+                </g>
+            </svg>
+            <span class="smallest mt0 mb0-5 lh100 mlauto mrauto color-white opacity-40 bl">{{ storageValue() }}</span>
+        </dropdown-button>
 
-    <span class="bl small m0 spacebar-size" id="sizeRemaining">{{ storageValue() }}</span>
-    <span class="bl small m0 spacebar-version opacity-30">ProtonMail <app-version class="version"></app-version></span>
+        <dropdown-content class="storageProgress-content" data-type="rightbottom">
+            <figure class="flex p1">
+                <div class="w33 pr1 flex flex-items-center">
+                    <div class="relative">
+                        <svg class="circle-chart circle-chart__background--bigger storageProgress-chart" viewbox="0 0 35.83098862 35.83098862" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="circle-chart__background" cx="17.91549431" cy="17.91549431" r="15.91549431" />
+                            <circle class="circle-chart__circle" stroke-dasharray="{{::percentageValue()}},100" stroke-linecap="butt" cx="17.91549431" cy="17.91549431" r="15.91549431" />
+                        </svg>
+                        <span class="centered-absolute">{{::percentageValue()}}%</span>
+                    </div>
+                </div>
 
-    <div class="link" hide-upgrade="space">
-        <a ui-sref="secured.dashboard({scroll: true})" class="small nodecoration color-white">
-            <span translate translate-context="Action">Upgrade storage</span>
-        </a>
-    </div>
+                <figurecaption class="w66 alignleft pl1">
+                    <b class="flex">Storage</b>
+                    <small>{{::storageValue()}} of {{::storageValue(true)}} used</small>
+
+                    <div class="mb1">
+                        <span class="opacity-50 small ">Your storage space is shared across all Proton products.</span>
+                    </div>
+
+                    <a href="/settings/subscription" class="pm-button pm-button--primary pm-button--small mt0-5">Upgrade</a>
+                </figurecaption>
+            </figure>
+        </dropdown-content>
+    </dropdown-container>
 </div>

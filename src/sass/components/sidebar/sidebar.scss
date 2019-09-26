@@ -175,3 +175,10 @@
         min-height: auto;
     }
 }
+
+
+.storageProgress-content { width: 350px; }
+.storageProgress-content.dropDown-content--rightbottom {
+    bottom: 1rem;
+    margin-left: 1em;
+}

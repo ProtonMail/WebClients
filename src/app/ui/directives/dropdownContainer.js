@@ -4,7 +4,8 @@ import { generateUID } from '../../../helpers/string';
 function dropdownContainer(dispatchers) {
     const CLASSNAMES = {
         left: 'dropDown--leftArrow',
-        right: 'dropDown--rightArrow'
+        right: 'dropDown--rightArrow',
+        leftBottom: 'dropDown--leftBottomArrow'
     };
 
     function link(scope, el, { position, mode }) {
