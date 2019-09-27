@@ -9,9 +9,33 @@
 
 }
 
-.navigationBlackFriday:not(.navigationBlackFriday-is-black-friday) { display: none }
+@include respond-to(1300) {
 
-@include respond-to(1400) {
+    .topnav-list--four-elements {
+        .navigation-title {
+        // equivalent of .sr-only, but impossible to extend in a breakpoint
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        }
+        .topnav-icon {
+            margin-right: 0;
+            &.expand-caret {
+                margin-left: .25em;
+            }
+        }
+    }
+
+
+}
+
+
+@include respond-to(1100) {
 
     .navigation-title {
         // equivalent of .sr-only, but impossible to extend in a breakpoint
@@ -29,6 +53,7 @@
     }
 
 }
+
 
 
 .navigation:not(.navigation-is-black-friday) .navigationBlackFriday,

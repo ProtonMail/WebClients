@@ -1,32 +1,33 @@
 <div class="topnav-container flex-item-centered-vert flex-item-fluid noprint">
-<ul class="topnav-list unstyled mt0 mb0 ml1 flex flex-items-center flex-nowrap" >
+<ul class="topnav-list unstyled mt0 mb0 ml1 flex flex-items-center flex-nowrap" ng-class="{ 'topnav-list--four-elements': isFree }"
+>
 
-    <li class="mr1 ">
-        <a class="topnav-link inline-flex flex-nowrap nodecoration rounded" aria-current="true">
-            <icon data-name="mailbox" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
+    <li class="mr1 flex-item-noshrink">
+        <a class="topnav-link inline-flex flex-nowrap nodecoration" aria-current="true">
+            <icon data-name="mailbox" class="topnav-icon mr0-5 flex-item-centered-vert"></icon>
             <span class="navigation-title topnav-linkText" translate translate-context="Action">Mailbox</span>
         </a>
     </li>
-    <li class="mr1 ">
+    <li class="mr1 flex-item-noshrink">
         <a
             href="/settings"
             id="tour-settings"
-            class="topnav-link inline-flex flex-nowrap nodecoration rounded">
-            <icon data-name="settings" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
+            class="topnav-link inline-flex flex-nowrap nodecoration">
+            <icon data-name="settings" class="topnav-icon mr0-5 flex-item-centered-vert"></icon>
             <span class="navigation-title topnav-linkText" translate translate-context="Action">Settings</span>
         </a>
     </li>
-    <li class="mr1">
+    <li class="mr1 flex-item-noshrink">
 
         <dropdown-container>
 
-            <dropdown-button class="topnav-link inline-flex flex-nowrap nodecoration rounded">
-                <icon data-name="support1" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
+            <dropdown-button class="topnav-link inline-flex flex-nowrap nodecoration">
+                <icon data-name="support1" class="topnav-icon mr0-5 flex-item-centered-vert"></icon>
                 <span class="navigation-title topnav-linkText" translate translate-context="Action">Support</span>
                 <icon
                     data-name="caret"
                     data-size="12"
-                    class="flex-item-noshrink topnav-icon ml0-5 mr0-5 expand-caret mtauto mbauto"></icon>
+                    class="flex-item-noshrink topnav-icon ml0-5 expand-caret mtauto mbauto"></icon>
             </dropdown-button>
 
             <dropdown-content>
@@ -53,11 +54,11 @@
         </dropdown-container>
 
     </li>
-    <li class="mr1 navigation-upgrade-item" ng-if="isFree">
+    <li class="mr1 flex-item-noshrink navigation-upgrade-item" ng-if="isFree">
         <a
-            class="topnav-link inline-flex flex-nowrap nodecoration rounded"
+            class="topnav-link inline-flex flex-nowrap nodecoration"
             href="/settings/subscription">
-            <icon data-name="upgrade-to-paid" class="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert "></icon>
+            <icon data-name="upgrade-to-paid" class="topnav-icon mr0-5 flex-item-centered-vert"></icon>
             <span class="navigation-title topnav-linkText" translate translate-context="Action">Upgrade</span>
         </a>
     </li>
