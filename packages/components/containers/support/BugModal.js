@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { reportBug } from 'proton-shared/lib/api/reports';
-import { APPS } from 'proton-shared/lib/constants';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import {
     FormModal,
@@ -26,10 +26,11 @@ import {
 import AttachScreenshot from './AttachScreenshot';
 import { collectInfo, getClient } from '../../helpers/report';
 
-const { PROTONVPN_SETTINGS } = APPS;
+const { VPN } = CLIENT_TYPES;
 
 const BugModal = ({ onClose, username: Username = '', location, addresses = [], ...rest }) => {
-    const { APP_NAME } = useConfig();
+    const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
+
     const mailTitles = [
         { value: 'Login problem', text: c('Bug category').t`Login problem` },
         { value: 'Sign up problem', text: c('Bug category').t`Sign up problem` },
@@ -59,13 +60,12 @@ const BugModal = ({ onClose, username: Username = '', location, addresses = [], 
         { value: 'Feature request', text: c('Bug category').t`Feature request` }
     ];
 
-    const titles = APP_NAME === PROTONVPN_SETTINGS ? vpnTitles : mailTitles;
-    const criticalEmail = APP_NAME === PROTONVPN_SETTINGS ? 'contact@protonvpn.com' : 'security@protonmail.com';
+    const titles = CLIENT_TYPE === VPN ? vpnTitles : mailTitles;
+    const criticalEmail = CLIENT_TYPE === VPN ? 'contact@protonvpn.com' : 'security@protonmail.com';
     const clearCacheLink =
-        APP_NAME === PROTONVPN_SETTINGS
+        CLIENT_TYPE === VPN
             ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
             : 'https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/';
-    const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
     const Client = getClient(CLIENT_ID);
     const { createNotification } = useNotifications();
     const [{ Email = '' } = {}] = addresses;

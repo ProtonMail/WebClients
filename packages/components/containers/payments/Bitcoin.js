@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Alert, Price, Button, Loader, useConfig, useApi, useLoading } from 'react-components';
 import { createBitcoinPayment } from 'proton-shared/lib/api/payments';
-import { MIN_BITCOIN_AMOUNT, BTC_DONATION_ADDRESS, APPS } from 'proton-shared/lib/constants';
+import { MIN_BITCOIN_AMOUNT, BTC_DONATION_ADDRESS, CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 import BitcoinQRCode from './BitcoinQRCode';
 import BitcoinDetails from './BitcoinDetails';
 
-const { PROTONVPN_SETTINGS } = APPS;
+const { VPN } = CLIENT_TYPES;
 
 const Bitcoin = ({ amount, currency, type }) => {
     const api = useApi();
-    const { APP_NAME } = useConfig();
+    const { CLIENT_TYPE } = useConfig();
     const [loading, withLoading] = useLoading();
     const [error, setError] = useState(false);
     const [amountBitcoin, setAmountBitcoin] = useState();
@@ -66,7 +66,7 @@ const Bitcoin = ({ amount, currency, type }) => {
             ) : (
                 <Alert
                     learnMore={
-                        APP_NAME === PROTONVPN_SETTINGS
+                        CLIENT_TYPE === VPN
                             ? 'https://protonvpn.com/support/vpn-bitcoin-payments/'
                             : 'https://protonmail.com/support/knowledge-base/paying-with-bitcoin'
                     }

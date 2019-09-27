@@ -1,40 +1,52 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
     Icon,
     Dropdown,
     useModals,
     AuthenticatedBugModal,
+    useAuthentication,
     usePopperAnchor,
     generateUID,
-    useConfig
+    useConfig,
+    BugModal
 } from 'react-components';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 import SupportDropdownButton from './SupportDropdownButton';
 
-const { PROTONVPN_SETTINGS } = APPS;
+const { VPN } = CLIENT_TYPES;
 
-const SupportDropdown = () => {
-    const { APP_NAME } = useConfig();
+const SupportDropdown = ({ className, content }) => {
+    const { UID } = useAuthentication();
+    const { CLIENT_TYPE } = useConfig();
     const { createModal } = useModals();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
+    const isAuthenticated = !!UID;
 
     const handleBugReportClick = () => {
-        createModal(<AuthenticatedBugModal />);
+        createModal(isAuthenticated ? <AuthenticatedBugModal /> : <BugModal />);
     };
 
     return (
         <>
-            <SupportDropdownButton aria-describedby={uid} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} />
+            <SupportDropdownButton
+                className={className}
+                content={content}
+                aria-describedby={uid}
+                buttonRef={anchorRef}
+                isOpen={isOpen}
+                onClick={toggle}
+            />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom">
                 <ul className="unstyled mt0-5 mb0-5">
                     <li className="dropDown-item pl1 pr1">
                         <a
                             className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
                             href={
-                                APP_NAME === PROTONVPN_SETTINGS
+                                CLIENT_TYPE === VPN
                                     ? 'https://protonvpn.com/support/'
                                     : 'https://protonmail.com/support/'
                             }
@@ -59,6 +71,11 @@ const SupportDropdown = () => {
             </Dropdown>
         </>
     );
+};
+
+SupportDropdown.propTypes = {
+    className: PropTypes.string,
+    content: PropTypes.string
 };
 
 export default SupportDropdown;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useSubscription, Href, useConfig } from 'react-components';
 import { Link } from 'react-router-dom';
 
-import { APPS, PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { APPS, PLAN_SERVICES, CLIENT_TYPES } from 'proton-shared/lib/constants';
 import { getPlanName } from 'proton-shared/lib/helpers/subscription';
 
 import CalendarLogo from './CalendarLogo';
@@ -20,10 +20,10 @@ const { PROTONMAIL, PROTONCONTACTS, PROTONDRIVE, PROTONCALENDAR, PROTONVPN_SETTI
  * @param {Boolean} external true for external link
  */
 const MainLogo = ({ url = '/inbox', external = false, className = '' }) => {
-    const { APP_NAME } = useConfig();
+    const { APP_NAME, CLIENT_TYPE } = useConfig();
     const [subscription] = useSubscription();
     const classNames = `logo-container nodecoration flex flex-item-centered-vert ${className}`;
-    const planName = getPlanName(subscription, APP_NAME === PROTONVPN_SETTINGS ? VPN : MAIL);
+    const planName = getPlanName(subscription, CLIENT_TYPE === CLIENT_TYPES.VPN ? VPN : MAIL);
 
     const logo = (() => {
         // we do not have the proper logos for all the products yet. Use mail logo in the meantime

@@ -126,6 +126,10 @@ export { default as OrderableTable } from './components/orderableTable/Orderable
 export { default as OrderableTableHeader } from './components/orderableTable/OrderableTableHeader';
 export { default as OrderableTableBody } from './components/orderableTable/OrderableTableBody';
 export { default as OrderableTableRow } from './components/orderableTable/OrderableTableRow';
+export { default as SignInLayout } from './containers/login/SignInLayout';
+export { default as PublicHeader } from './containers/login/PublicHeader';
+export { default as ResetPasswordContainer } from './containers/login/ResetPasswordContainer';
+export { default as ForgotUsernameContainer } from './containers/login/ForgotUsernameContainer';
 export { default as LoginForm } from './containers/login/LoginForm';
 export { default as ResetPasswordForm } from './containers/resetPassword/ResetPasswordForm';
 export { default as ForgotUsernameForm } from './containers/resetPassword/ForgotUsernameForm';

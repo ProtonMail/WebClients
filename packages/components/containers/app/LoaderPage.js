@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FullLoader, TextLoader, useConfig } from 'react-components';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 import './loaderPage.scss';
 
-const { PROTONVPN_SETTINGS } = APPS;
+const { VPN } = CLIENT_TYPES;
 
 const LoaderPage = ({ text, color = 'global-light' }) => {
-    const { APP_NAME } = useConfig();
-    const appName = APP_NAME === PROTONVPN_SETTINGS ? 'ProtonVPN' : 'ProtonMail';
+    const { CLIENT_TYPE } = useConfig();
+    const appName = CLIENT_TYPE === VPN ? 'ProtonVPN' : 'ProtonMail';
     return (
         <div className="centered-absolute aligncenter">
             <FullLoader color={color} size={200} />

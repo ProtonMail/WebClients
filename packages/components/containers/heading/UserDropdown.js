@@ -17,14 +17,15 @@ import {
     useConfig
 } from 'react-components';
 import { revoke } from 'proton-shared/lib/api/auth';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS, CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 import UserDropdownButton from './UserDropdownButton';
 
-const { PROTONMAIL_SETTINGS, PROTONVPN_SETTINGS } = APPS;
+const { PROTONMAIL_SETTINGS } = APPS;
+const { VPN } = CLIENT_TYPES;
 
 const UserDropdown = ({ ...rest }) => {
-    const { APP_NAME } = useConfig();
+    const { APP_NAME, CLIENT_TYPE } = useConfig();
     const api = useApi();
     const [user] = useUser();
     const { DisplayName, Email, Name } = user;
@@ -67,7 +68,7 @@ const UserDropdown = ({ ...rest }) => {
                             </span>
                         ) : null}
                     </li>
-                    {APP_NAME === PROTONVPN_SETTINGS ? null : (
+                    {CLIENT_TYPE === VPN ? null : (
                         <li className="dropDown-item pl1 pr1">
                             {APP_NAME === PROTONMAIL_SETTINGS ? (
                                 <Link
@@ -92,7 +93,7 @@ const UserDropdown = ({ ...rest }) => {
                         <a
                             className="w100 flex flex-nowrap color-global-grey nodecoration pt0-5 pb0-5"
                             href={
-                                APP_NAME === PROTONVPN_SETTINGS
+                                CLIENT_TYPE === VPN
                                     ? 'https://protonvpn.com/support/'
                                     : 'https://protonmail.com/support/'
                             }

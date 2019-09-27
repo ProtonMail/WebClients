@@ -12,16 +12,16 @@ import {
     useConfig
 } from 'react-components';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
-import { APPS } from 'proton-shared/lib/constants';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
 import EditCardModal from '../payments/EditCardModal';
 import PayPalModal from '../payments/PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
-const { PROTONVPN_SETTINGS } = APPS;
+const { VPN } = CLIENT_TYPES;
 
 const PaymentMethodsSection = () => {
-    const { APP_NAME } = useConfig();
+    const { CLIENT_TYPE } = useConfig();
     const [{ isManagedByMozilla } = {}] = useSubscription();
     const { createModal } = useModals();
     const { result = {}, loading, request } = useApiResult(queryPaymentMethods, []);
@@ -49,7 +49,7 @@ const PaymentMethodsSection = () => {
             <SubTitle>{c('Title').t`Payment methods`}</SubTitle>
             <Alert
                 learnMore={
-                    APP_NAME === PROTONVPN_SETTINGS
+                    CLIENT_TYPE === VPN
                         ? 'https://protonvpn.com/support/payment-options/'
                         : 'https://protonmail.com/support/knowledge-base/payment'
                 }

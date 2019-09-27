@@ -1,13 +1,13 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Alert, useConfig } from 'react-components';
-import { APPS } from 'proton-shared/lib/constants';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 
-const { PROTONVPN_SETTINGS } = APPS;
+const { VPN } = CLIENT_TYPES;
 
 const Cash = () => {
-    const { APP_NAME } = useConfig();
-    const email = APP_NAME === PROTONVPN_SETTINGS ? 'contact@protonvpn.com' : 'contact@protonmail.com';
+    const { CLIENT_TYPE } = useConfig();
+    const email = CLIENT_TYPE === VPN ? 'contact@protonvpn.com' : 'contact@protonmail.com';
 
     return (
         <Alert>{c('Info for cash payment method')

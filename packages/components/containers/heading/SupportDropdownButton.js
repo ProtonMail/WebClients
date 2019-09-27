@@ -3,23 +3,21 @@ import PropTypes from 'prop-types';
 import { Icon, DropdownCaret } from 'react-components';
 import { c } from 'ttag';
 
-const SupportDropdownButton = ({ isOpen, buttonRef, ...rest }) => {
+const SupportDropdownButton = ({ content = c('Header').t`Support`, isOpen, buttonRef, ...rest }) => {
     return (
-        <button
-            type="button"
-            className="topnav-link inline-flex flex-nowrap nodecoration rounded"
-            aria-expanded={isOpen}
-            ref={buttonRef}
-            {...rest}
-        >
-            <Icon name="support1" className="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-white" />
-            <span className="navigation-title topnav-linkText mr0-5">{c('Header').t`Support`}</span>
+        <button type="button" aria-expanded={isOpen} ref={buttonRef} {...rest}>
+            <Icon
+                name="support1"
+                className="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert fill-primary"
+            />
+            <span className="navigation-title topnav-linkText mr0-5">{content}</span>
             <DropdownCaret isOpen={isOpen} className="expand-caret topnav-icon mtauto mbauto" />
         </button>
     );
 };
 
 SupportDropdownButton.propTypes = {
+    content: PropTypes.string,
     isOpen: PropTypes.bool,
     buttonRef: PropTypes.object
 };

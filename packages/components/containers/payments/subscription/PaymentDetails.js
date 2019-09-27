@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Price, Info, useToggle, SmallButton, useConfig } from 'react-components';
-import { CYCLE, APPS } from 'proton-shared/lib/constants';
+import { CYCLE, CLIENT_TYPES } from 'proton-shared/lib/constants';
 import GiftCodeForm from './GiftCodeForm';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
-const { PROTONVPN_SETTINGS } = APPS;
+const { VPN } = CLIENT_TYPES;
 
 const getBillingCycleI18N = () => ({
     [MONTHLY]: c('Info').t`monthly billing`,
@@ -15,7 +15,7 @@ const getBillingCycleI18N = () => ({
 });
 
 const PaymentDetails = ({ check, model, onChange }) => {
-    const { APP_NAME } = useConfig();
+    const { CLIENT_TYPE } = useConfig();
     const { state, toggle } = useToggle();
     const i18n = getBillingCycleI18N();
 
@@ -46,7 +46,7 @@ const PaymentDetails = ({ check, model, onChange }) => {
                         <span className="mr0-5">{c('Label').t`Proration`}</span>
                         <Info
                             url={
-                                APP_NAME === PROTONVPN_SETTINGS
+                                CLIENT_TYPE === VPN
                                     ? 'https://protonvpn.com/support/vpn-credit-proration/'
                                     : 'https://protonmail.com/support/knowledge-base/credit-proration/'
                             }

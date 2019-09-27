@@ -15,7 +15,7 @@ import {
     useLoading
 } from 'react-components';
 import { buyCredit } from 'proton-shared/lib/api/payments';
-import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT, APPS, MIN_CREDIT_AMOUNT } from 'proton-shared/lib/constants';
+import { DEFAULT_CURRENCY, DEFAULT_CREDITS_AMOUNT, CLIENT_TYPES, MIN_CREDIT_AMOUNT } from 'proton-shared/lib/constants';
 
 import PaymentSelector from './PaymentSelector';
 import Payment from './Payment';
@@ -28,11 +28,11 @@ const getCurrenciesI18N = () => ({
     USD: c('Monetary unit').t`Dollar`
 });
 
-const { PROTONVPN_SETTINGS } = APPS;
+const { VPN } = CLIENT_TYPES;
 
 const CreditsModal = (props) => {
     const api = useApi();
-    const { APP_NAME } = useConfig();
+    const { CLIENT_TYPE } = useConfig();
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { method, setMethod, parameters, setParameters, canPay, setCardValidity } = usePayment();
@@ -69,7 +69,7 @@ const CreditsModal = (props) => {
             <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</Alert>
             <Alert
                 learnMore={
-                    APP_NAME === PROTONVPN_SETTINGS
+                    CLIENT_TYPE === VPN
                         ? 'https://protonvpn.com/support/vpn-credit-proration/'
                         : 'https://protonmail.com/support/knowledge-base/credit-proration/'
                 }

@@ -20,7 +20,7 @@ import {
     useConfig,
     useModals
 } from 'react-components';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, APPS } from 'proton-shared/lib/constants';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, CLIENT_TYPES } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { toPrice } from 'proton-shared/lib/helpers/string';
 import { getPlans } from 'proton-shared/lib/helpers/subscription';
@@ -34,7 +34,7 @@ import { getCheckParams, toPlanMap, containsSamePlans } from './helpers';
 import { handlePaymentToken } from '../paymentTokenHelper';
 import Upgrading from './Upgrading';
 
-const { PROTONMAIL_SETTINGS } = APPS;
+const { MAIL } = CLIENT_TYPES;
 const ORDER_SUMMARY_ID = 'order-summary';
 
 const SubscriptionModal = ({
@@ -47,7 +47,7 @@ const SubscriptionModal = ({
     step: initialStep = 0,
     ...rest
 }) => {
-    const { APP_NAME } = useConfig();
+    const { CLIENT_TYPE } = useConfig();
     const api = useApi();
     const { createModal } = useModals();
     const [loading, setLoading] = useState(false);
@@ -177,7 +177,7 @@ const SubscriptionModal = ({
         });
     }
 
-    if (APP_NAME === PROTONMAIL_SETTINGS && (plansMap.plus || plansMap.professional)) {
+    if (CLIENT_TYPE === MAIL && (plansMap.plus || plansMap.professional)) {
         STEPS.unshift({
             title: c('Title').t`Customization`,
             submit: c('Action').t`Next`,
