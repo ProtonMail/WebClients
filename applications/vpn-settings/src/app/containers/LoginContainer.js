@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { LoginForm, Href, SimpleDropdown, DropdownMenu } from 'react-components';
-
-import SignInLayout from '../components/layout/SignInLayout';
+import { LoginForm, Href, SimpleDropdown, DropdownMenu, SignInLayout } from 'react-components';
 
 const LoginContainer = ({ stopRedirect, history, onLogin }) => {
     const handleLogin = (...args) => {

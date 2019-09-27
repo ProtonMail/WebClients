@@ -11,7 +11,7 @@ const PrivateHeader = ({ expanded, onToggleExpand }) => {
             <div className="topnav-container flex-item-centered-vert flex-item-fluid">
                 <ul className="topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap">
                     <li className="mr1 nomobile">
-                        <SupportDropdown />
+                        <SupportDropdown className="topnav-link inline-flex flex-nowrap nodecoration rounded" />
                     </li>
                     <li className="mlauto mtauto mbauto relative flex-item-noshrink">
                         <UserDropdown />

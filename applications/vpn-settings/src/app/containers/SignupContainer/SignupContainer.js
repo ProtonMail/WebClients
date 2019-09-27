@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader } from 'react-components';
+import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, SupportDropdown } from 'react-components';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
 import useSignup from './useSignup';
@@ -8,7 +8,6 @@ import { c } from 'ttag';
 import VerificationStep from './VerificationStep/VerificationStep';
 import PaymentStep from './PaymentStep/PaymentStep';
 import { PLAN, VPN_PLANS, BEST_DEAL_PLANS } from './plans';
-import SupportDropdown from '../../components/header/SupportDropdown';
 import { CYCLE } from 'proton-shared/lib/constants';
 import PlanDetails from './SelectedPlan/PlanDetails';
 import PlanUpsell from './SelectedPlan/PlanUpsell';
