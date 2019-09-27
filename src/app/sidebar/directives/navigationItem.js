@@ -24,7 +24,7 @@ function navigationItem(
                 <span class="flex flex-nowrap">
                     <icon data-name="${icon}" class="mr0-5 flex-item-centered-vert navigation__icon"></icon>
                     <span class="navigationItem-title flex-item-fluid">${label}</span>
-                    <span class="navigationItem-aside flex">
+                    <span class="navigationItem-aside flex flex-items-center">
                         <button class="refresh navigationItem-btn-refresh">
                             <icon data-name="reload" fill="global-light" class="mr0-5"></icon>
                             <span class="sr-only" translate-context="Action" translate>refresh</span>
