@@ -1,17 +1,15 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 const FooterDetails = ({ link }) => {
-    const yearRef = useRef();
+    const currentYear = new Date().getFullYear();
 
-    useEffect(() => {
-        yearRef.current = new Date().getFullYear();
-    }, []);
-
-    return c('Footer').jt`${yearRef.current} ${React.cloneElement(link, {
-        key: 'static-link'
-    })} - Made globally, hosted in Switzerland.`;
+    return (
+        <>
+            {currentYear} {link} - {c('Footer').t`Made globally, hosted in Switzerland.`}
+        </>
+    );
 };
 
 FooterDetails.propTypes = {
