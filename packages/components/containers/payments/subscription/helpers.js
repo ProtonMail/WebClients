@@ -40,8 +40,10 @@ export const containsSamePlans = (a, b) => isEquivalent(pick(a, Object.keys(b)),
  * {}
  * { vpnplus: 1 }
  * { vpnbasic: 1 }
- * { plus: 1 }, { vpnplus: 1, plus: 1 }
- * { professional: 1 }, { vpnplus: 1, professional: 1 }
+ * { plus: 1 }
+ * { vpnplus: 1, plus: 1 }
+ * { professional: 1 }
+ * { vpnplus: 1, professional: 1 }
  * { visionary: 1 }
  * @param {Array} subscription.Plans
  * @returns {Object} plansMap
@@ -61,16 +63,6 @@ export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
 
     const currentPlansMap = toPlanNames(Plans);
 
-    if (containsSamePlans(plansMap, { vpnplus: 1 }) || containsSamePlans(plansMap, { vpnbasic: 1 })) {
-        return {
-            ...plansMap,
-            plus: currentPlansMap.plus,
-            [ADDON_NAMES.DOMAIN]: currentPlansMap[ADDON_NAMES.DOMAIN],
-            [ADDON_NAMES.ADDRESS]: currentPlansMap[ADDON_NAMES.ADDRESS],
-            [ADDON_NAMES.SPACE]: currentPlansMap[ADDON_NAMES.SPACE]
-        };
-    }
-
     if (containsSamePlans(plansMap, { vpnplus: 1, plus: 1 })) {
         return {
             ...plansMap,
@@ -87,6 +79,20 @@ export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
                 currentPlansMap[ADDON_NAMES.DOMAIN] > 1 ? currentPlansMap[ADDON_NAMES.DOMAIN] : undefined, // pro starts with 2 custom domain
             [ADDON_NAMES.MEMBER]: currentPlansMap[ADDON_NAMES.MEMBER],
             [ADDON_NAMES.VPN]: currentPlansMap[ADDON_NAMES.VPN] // Only possible with vpnplus and professional
+        };
+    }
+
+    // Only concern ProtonVPN dashboard
+    if (containsSamePlans(plansMap, { vpnplus: 1 }) || containsSamePlans(plansMap, { vpnbasic: 1 })) {
+        return {
+            ...plansMap,
+            plus: currentPlansMap.plus,
+            professional: currentPlansMap.professional,
+            [ADDON_NAMES.DOMAIN]: currentPlansMap[ADDON_NAMES.DOMAIN],
+            [ADDON_NAMES.ADDRESS]: currentPlansMap[ADDON_NAMES.ADDRESS],
+            [ADDON_NAMES.SPACE]: currentPlansMap[ADDON_NAMES.SPACE],
+            [ADDON_NAMES.MEMBER]: currentPlansMap[ADDON_NAMES.MEMBER],
+            [ADDON_NAMES.VPN]: currentPlansMap[ADDON_NAMES.VPN]
         };
     }
 
