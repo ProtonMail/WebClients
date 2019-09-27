@@ -1,0 +1,64 @@
+@include respond-to(910) {
+
+  .toolbar--full .toolbar-button {
+    padding-left: em(12, $base-font);
+    padding-right: em(12, $base-font);
+  }
+
+  .toolbar--full .toolbar-button--dropdown {
+    padding-left: em(10, $base-font);
+    padding-right: em(10, $base-font);
+  }
+
+}
+
+
+@include respond-to(910) {
+
+    .toolbar--full .toolbar-button {
+      padding-left: em(10, $base-font);
+      padding-right: em(10, $base-font);
+    }
+
+    .toolbar--full .toolbar-button--dropdown {
+      padding-left: em(8, $base-font);
+      padding-right: em(8, $base-font);
+    }
+
+}
+
+
+@include respond-to($breakpoint-small) {
+
+  .toolbar-button {
+    padding-left: em(16, $base-font);
+    padding-right: em(16, $base-font);
+  }
+  .toolbar-button--dropdown {
+    padding-left: em(12, $base-font);
+    padding-right: em(12, $base-font);
+  }
+
+}
+
+
+@include respond-to(400) {
+
+    .toolbar-button {
+      padding-left: em(8, $base-font);
+      padding-right: em(8, $base-font);
+    }
+    .toolbar-button--dropdown {
+      padding-left: em(6, $base-font);
+      padding-right: em(6, $base-font);
+    }
+
+}
+
+
+@include respond-to($breakpoint-tiny) {
+    .toolbar-button {
+        padding-left: em(4, $base-font);
+        padding-right: em(4, $base-font);
+    }
+}
