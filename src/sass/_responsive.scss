@@ -39,6 +39,11 @@
     padding-right: em(12, $base-font);
   }
 
+
+  .content-wrapper {
+    height: calc(100vh - #{$header-height} );
+  }
+
 }
 
 
@@ -62,3 +67,6 @@
         padding-right: em(4, $base-font);
     }
 }
+
+
+

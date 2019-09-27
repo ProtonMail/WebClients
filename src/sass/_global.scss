@@ -24,12 +24,6 @@
 			&.locked {
 				overflow: initial !important;
 			}
-			&.appConfigBody-showSidebar {
-				overflow: hidden !important;
-				#pm_main {
-					display: none;
-				}
-			}
 		}
 		&.appConfigBody-is-tablet,
 		&.appConfigBody-is-mobile {
