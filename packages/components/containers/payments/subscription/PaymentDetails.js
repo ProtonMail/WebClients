@@ -22,14 +22,18 @@ const PaymentDetails = ({ check, model, onChange }) => {
     return (
         <>
             <div className="uppercase bold small mb1">{c('Title').t`Payment details`}</div>
-            <div className="flex flex-spacebetween mb1 pb1 border-bottom">
-                <div className="bold">
-                    {c('Label').t`Total`} ({i18n[model.cycle]})
+            {check.Credit || check.Proration || check.Gift ? (
+                <div className="flex flex-spacebetween mb1 pb1 border-bottom">
+                    <div className="bold">
+                        {c('Label').t`Total`} ({i18n[model.cycle]})
+                    </div>
+                    <div className="bold">
+                        <Price currency={model.currency}>
+                            {check.AmountDue - (check.Credit + check.Proration + check.Gift)}
+                        </Price>
+                    </div>
                 </div>
-                <div className="bold">
-                    <Price currency={model.currency}>{check.Amount}</Price>
-                </div>
-            </div>
+            ) : null}
             {check.Credit ? (
                 <div className="flex flex-spacebetween mb1 pb1 border-bottom">
                     <div>{c('Label').t`Credits`}</div>
