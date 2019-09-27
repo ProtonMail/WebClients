@@ -1,46 +1,69 @@
-<div id="outsideMessageWrap" ng-if="message">
-    <div class="message-head">
-        <h1>
-            <span class="attachment" ng-show="message.Attachments.length > 0">
-                <i class="fa fa-paperclip"></i>
-            </span>
-            {{ message.Subject }}
-        </h1>
-        <div class="pull-right">
+<div class="messageView-contaniner mb1 mt1" ng-if="message">
+    <header id="conversationHeader" class="flex flex-nowrap conversationHeader-header relative pb1">
+
+        <icon
+            ng-if="message.Attachments.length"
+            data-name="attach"
+            data-fill="white"
+            class="mtauto mbauto mr1"></icon>
+
+        <h1 class="cut flex-item-fluid mb0">{{message.Subject}}</h1>
+        <div
+            class="inline-flex flex-item-noshrink flex-items-center flex-justify-end conversationHeader-about">
             <span ng-bind-html="ago"></span>
         </div>
-        <ul class="infos">
-            <li>
-                <strong translate-context="Title" translate>From</strong>:
-                <b>{{ message.Recipient }}</b>
-            </li>
-            <li>
-                <strong translate-context="Title" translate>To</strong>:
-                <b>{{message.Sender.Name}}</b> <em>&lt;{{ message.Sender.Address }}&gt;</em>
-            </li>
-        </ul>
+    </header>
+
+    <div id="pm_thread" class="no-outline bg-white p1 bordered-container color-global-grey">
+
+        <div class="summary-left bg-global-light p1 bordered-container">
+            <div class="meta">
+
+                <div class="contact message-contact">
+
+                    <div class="from message-contact-from mr0-5">
+                        <span translate translate-context="Message sender label" translate>From</span>: <b class="ml0-5">{{ message.Recipient }}</b>
+                    </div>
+                    <ul class="recipients-details unstyled m0">
+                        <li ng-if="message.ToList.length > 0">
+                            <span translate-comment="message metadata" translate translate-context="Title">To</span>:
+                            <span class="ml0-5">
+                                <b>{{message.Sender.Name}}</b> <em>&lt;{{ message.Sender.Address }}&gt;</em>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="outsideMessage" class="mt1">
+            <composer-outside class="eo-composerOutside"></composer-outside>
+        </div>
+
+        <p class="block-info-error" role="alert" ng-if="message.failedDecryption">
+            <strong translate-context="Error" translate>Decryption error</strong><br />
+            <span translate-context="Error" translate>Decryption of this message's encryption content failed.</span>
+        </p>
+
+        <list-attachments data-model="message"></list-attachments>
+
+        <footer class="flex">
+
+            <button
+                class="pm-button disabled-if-network-activity"
+                ng-click="cancel()"
+                translate-context="Action"
+                translate>Cancel</button>
+
+            <button
+                class="pm-button needsclick disabled-if-network-activity mlauto"
+                data-action-compose="::message"
+                data-action-compose-type="addFile"
+                pt-tooltip-translate-context="Tooltip"
+                pt-tooltip-translate="Attachments"><icon data-name="attach"></icon>
+            </button>
+            <button class="ml1 pm-button-blue disabled-if-network-activity" ng-click="send()" translate-context="Action" translate>Send</button>
+        </footer>
     </div>
-    <composer-outside></composer-outside>
-    <p class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
-        <strong translate-context="Error" translate>Decryption error</strong><br />
-        <span translate-context="Error" translate>Decryption of this message's encryption content failed.</span>
-    </p>
-    <list-attachments data-model="message"></list-attachments>
-    <footer class="alignright">
 
-        <button
-            class="pm_button pull-left disabled-if-network-activity"
-            ng-click="cancel()"
-            translate-context="Action"
-            translate>Cancel</button>
-
-        <button
-            class="pm_button needsclick disabled-if-network-activity"
-            data-action-compose="::message"
-            data-action-compose-type="addFile"
-            pt-tooltip-translate-context="Tooltip"
-            pt-tooltip-translate="Attachments"><i class="fa fa-paperclip"></i>
-        </button>
-        <button class="pm_button primary disabled-if-network-activity" ng-click="send()" translate-context="Action" translate>Send</button>
-    </footer>
 </div>

@@ -1,40 +1,80 @@
-<form method="post" id="pm_login" name="unlockForm" class="pm_panel pm_panel-outsideunlock alt pm_form" novalidate ng-keypress="keypress($event)" role="form" autocomplete="on" ng-submit="unlock()" ng-if="tokenError !== true">
+<form
+    method="post"
+    id="pm_loginUnlock"
+    name="unlockForm"
+    class="pm_panel pm_form alt loginFormUnlock-container pm_panel-login__inner bordered-container mauto"
+    novalidate
+    role="form"
+    ng-submit="unlock()"
+    ng-keypress="keypress($event)"
+    ng-if="tokenError !== true"
+    autocomplete="off">
 
-    <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
-    <h4 class="aligncenter">
-        <span class="fa fa-envelope title-icon"></span>
+    <div class="mb2 aligncenter">
+        <img src="assets/img/logo.svg" height="20" width="148" alt="ProtonMail" />
+    </div>
+
+    <h1 class="aligncenter h4 uppercase flex">
         <span translate-context="Title" translate>Decrypt message</span>
-    </h4>
+    </h1>
 
-    <p></p>
+    <div class="block-info-standard-error" id="error521" ng-if="error">{{ error.message }}</div>
 
-    <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
-    <label for="MessagePassword" class="sr-only" translate-context="Label" translate>Message password</label>
+    <label for="password" class="pb0-5 bl" translate-context="Label" translate>Message password</label>
     <password
-        class="margin unlock-input-password"
+        class="mb1 focus unlock-input-password"
         data-id="MessagePassword"
         data-name="MessagePassword"
         data-autofocus="true"
-        data-form="unlockForm"
         data-value="params.MessagePassword"
-        placeholder-translate-context="Tooltip"
+        data-form="unlockForm"
+        placeholder-translate-context="Placeholder"
         placeholder-translate="Message password"></password>
-
-    <p></p>
 
     <div class="loginForm-actions">
         <div class="loginForm-actions-column">
+            <button
+                id="unlock_btn"
+                class="loginForm-actions-main pm-button--large mb1 w100 aligncenter pm-button-blue disabled-if-network-activity"
+                type="submit"
+                translate-context="Action"
+                translate>Decrypt</button>
 
-            <button type="submit" class="loginForm-actions-main pm_button primary primary-white pull-right disabled-if-network-activity" translate-context="Action" translate>Decrypt</button>
-            <a href="https://protonmail.com/support" target="_blank" class="login-support pm_button link pull-left" translate-context="Action" translate-comment="link to support portal" translate>Need help?</a>
+
+            <div class="alignleft mt2 mb1 text-notransform loginForm-actions-help">
+                <span translate translate-context="Trouble logging in? Get help or try older version.">Trouble logging in? Get</span>
+                <button
+                    class="loginForm-btn-help alignbaseline color-white underline"
+                    data-action="help"
+                    type="button"
+                    translate-comment="Action"
+                    translate-context="Trouble logging in? Get help or try older version."
+                    translate>help</button>
+
+                <span translate translate-context="Trouble logging in? Get help or try older version.">or try</span>
+
+                <a
+                    class="loginForm-btn-oldversion white-link"
+                    href="https://old.protonmail.com/login"
+                    target="_self"
+                    translate-comment="Action"
+                    translate-context="Trouble logging in? Get help or try older version."
+                    translate>older version</a>.
+            </div>
+
         </div>
     </div>
-
 </form>
 
-<form method="post" id="pm_login" class="pm_panel alt pm_form error" ng-if="tokenError === true">
-    <h1 class="aligncenter" translate-context="Title" translate>Error</h1>
-    <p translate-context="Error" translate>Sorry, this message does not exist or has already expired</p>
-</form>
+
+<div class="w50 mauto"  ng-if="tokenError === true">
+    <h1 class="aligncenter mb1" translate-context="Title" translate>Error</h1>
+    <div class="shadow-container p2 bg-white">
+        <div
+            class="block-info-standard-error"
+            translate-context="Error"
+            translate>Sorry, this message does not exist or has already expired</div>
+    </div>
+</div>

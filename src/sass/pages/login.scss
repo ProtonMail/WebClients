@@ -26,14 +26,6 @@ body#eo-unlock {
   }
 }
 
-body#eo-unlock {
-  background: $dark;
-  .pm_panel.error {
-    height: initial;
-    padding: 2rem 2rem 1rem 2rem;
-  }
-}
-
 #pm_login,
 #pm_loginUnlock,
 #pm_loginTwoFactor,

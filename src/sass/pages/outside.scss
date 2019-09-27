@@ -1,27 +1,33 @@
 html.protonmail body.light { background-color: $light }
 html.protonmail body.blank { background-color: $white }
 
-body#eo-message {
-	overflow: initial;
-	background: $dark;
-	#pm_footer {
-		position: static;
-	}
-	#attachmentArea {
-		margin: 0;
-	}
-	.message-head {
-		padding-left: 35px;
-		padding-right: 35px;
-	}
+.eo-composerOutside iframe {
+    height: 50vh
 }
 
-body#eo-reply {
-	overflow: initial;
-	background: $dark;
-	#attachmentArea {
-		margin: 0;
-	}
+[id^="eo-"] {
+    overflow: initial;
+    [id="pm_footer"] {
+        position: static;
+        margin-top: 100%;
+    }
+}
+
+[id="eo-reply"] {
+    .message-attachment {
+        padding-right: 1.5rem
+    }
+
+    .listAttachments-list li { position: relative; }
+    .listAttachments-btn-action-remove {
+        position: absolute;
+        right: .5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+[id="eo-reply"] {
 
     .composer-outside-container {position: relative;}
 
@@ -50,73 +56,6 @@ body#eo-reply {
         padding: 1rem 25px;
     }
 
-	#pm_footer {
-		position: static;
-	}
-	.outside .message-head {
-		border-bottom: none;
-		& > div.pull-right {
-			font-size: .9rem;
-		}
-	}
-	h1 {
-		padding-bottom: 1rem;
-		display: block;
-	}
-	ul.infos {
-		font-size: .9rem;
-		display: block;
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-		color: #999;
-		font-weight: 400;
-		strong {
-			font-weight: 400;
-		}
-		b, em {
-			color: $primary;
-			font-style: italic;
-			font-weight: 400;
-		}
-		li {
-			display: block;
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-		}
-	}
-	#message-body {
-		margin: 0;
-		.squire-toolbar {
-			border-top: 1px solid $border;
-			border-bottom: 1px solid $border;
-			padding: 0 35px;
-			height: 42px;
-			line-height: 42px;
-			li {
-				height: 40px;
-				line-height: 40px;
-				-webkit-flex-grow: initial;
-				    -ms-flex-positive: initial;
-				        flex-grow: initial;
-				padding: 0 1rem;
-				a {
-					height: 40px;
-					line-height: 40px;
-				}
-				&.separator {
-					padding: 0;
-				}
-			}
-		}
-		iframe {
-			width: 100%;
-			min-height: 30rem;
-			height: 30rem;
-			padding: 1rem 25px;
-		}
-	}
 	#inputFile {
 		display: none;
 	}
@@ -124,10 +63,6 @@ body#eo-reply {
 		padding: 1rem 35px;
 		margin: 0;
 		border-top: 1px solid $border;
-		.pm_button {
-			text-transform: uppercase;
-			padding: 0 1rem;
-		}
 	}
 }
 
@@ -135,170 +70,4 @@ body#eo-reply {
 @keyframes nodeInserted {
     from { opacity: 0.99; }
     to { opacity: 1; }
-}
-
-
-.outside {
-	padding: 4rem 100px;
-	font-size: 1em;
-	line-height: 1.6em;
-	overflow: auto;
-	height: calc(100% - 8rem);
-	#outsideMessageWrap {
-		padding: 0;
-        background-color: $white;
-        max-height: 100%;
-        position: relative;
-	}
-	#outsideMessage {
-		padding: 35px;
-		overflow: auto;
-		-webkit-overflow-scrolling: touch;
-    }
-    .squireIframe {
-        height: 35vh;
-        max-height: 600px;
-    }
-	.message-head {
-		padding: 20px 35px;
-		border-bottom: 1px solid $border;
-		margin-bottom: 10px;
-		h1 {
-			line-height: 35px;
-			display: inline-block;
-			font-weight: 500;
-			.attachment {
-				float: left;
-				margin: 5px .5rem 0 0;
-			}
-		}
-	}
-	.bodyDecrypted {
-		animation: nodeInserted;
-		animation-duration: 0.001s;
-	}
-	#attachmentArea {
-		border-top: 1px solid $border;
-		border-bottom: none;
-		padding-left: 35px;
-		padding-right: 35px;
-	}
-	.message-metadata {
-		margin-bottom: 0;
-		padding-bottom: 1rem;
-		border-bottom: 1px solid $border;
-		position: relative;
-		padding-left: 35px;
-		padding-right: 35px;
-		text-align: right;
-
-		ul.infos {
-			overflow: auto;
-		}
-		ul.infos,
-		ul.infos li {
-			display: block;
-			text-align: left;
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			strong {
-				color: $default-color;
-				font-weight: normal;
-			}
-			b {
-				color: $primary;
-				font-weight: normal;
-				font-style: italic;
-			}
-		}
-	}
-}
-
-body.appConfigBody-is-mobile {
-	#pm_login.pm_panel,
-	#reset .pm_panel {
-		margin: 2rem auto;
-	}
-	.outside {
-		padding: 0;
-		#expirationMessage {
-			margin: 0;
-			border-radius: 0;
-		}
-		#outsideMessageWrap {
-			padding: 0;
-		}
-	}
-	body#eo-reply {
-		footer {
-		    padding: 1rem 25px;
-		    margin: 0;
-		}
-		.message-head {
-			padding-left: 25px;
-			padding-right: 25px;
-			margin: 0;
-		}
-		#attachmentArea {
-			margin: 0;
-			padding-left: 25px;
-			padding-right: 25px;
-		}
-		#message-body {
-			margin: 0;
-			padding: 1rem 0;
-			iframe {
-				padding: 1px 25px;
-				background: $white;
-			}
-			.squire-toolbar {
-				padding: 0;
-				li {
-					padding: 0;
-					-webkit-flex-grow: 1;
-				    -ms-flex-positive: 1;
-			        flex-grow: 1;
-					text-align: center;
-					&.separator {
-						min-width: 1px !important;
-						width: 1px !important;
-						flex-grow: initial !important;
-					}
-				}
-			}
-		}
-	}
-	body#eo-message {
-		.message-head,
-		#attachmentArea,
-		.message-metadata {
-			margin: 0;
-		}
-		.message-metadata {
-			padding-top: 1rem;
-		}
-		#outsideMessage {
-			padding-top: 1rem;
-			padding-bottom: 1rem;
-		}
-		.message-metadata,
-		#outsideMessage,
-		#attachmentArea {
-			padding-left: 25px;
-			padding-right: 25px;
-		}
-	}
-}
-
-
-body.appConfigBody-is-mobile {
-	.outside {
-		padding: 0;
-	}
-	body#eo-reply {
-		.outside {
-			padding: 0;
-		}
-	}
 }
