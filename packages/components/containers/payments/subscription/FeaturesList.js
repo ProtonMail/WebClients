@@ -7,15 +7,13 @@ const FeaturesList = ({ features = [] }) => {
         return null;
     }
     return (
-        <ul className="unstyled flex flex-nowrap flex-spacebetween">
+        <ul className="unstyled mt0-5 mb0-5 flex flex-nowrap flex-spacebetween">
             {features.map((text, index) => {
                 const key = `${index}`;
                 return (
-                    <li key={key} className="aligncenter pl0-5 pr0-5">
-                        <div>
-                            <Icon name="add" size={25} className="fill-pm-blue" />
-                        </div>
-                        {text}
+                    <li key={key} className="aligncenter flex-item-fluid pl1 pr1">
+                        <Icon name="check-circle" size={25} className="fill-primary" />
+                        <span className="bl">{text}</span>
                     </li>
                 );
             })}
