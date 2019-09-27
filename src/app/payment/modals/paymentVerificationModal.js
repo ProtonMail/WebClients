@@ -1,7 +1,8 @@
 import { toParams, process } from '../helpers/paymentToken';
 
 /* @ngInject */
-function paymentVerificationModal(pmModal, Payment, gettextCatalog) {
+function paymentVerificationModal(pmModal, Payment) {
+    const PROCESSING_DELAY = 5000;
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/payment/paymentVerificationModal.tpl.html'),
@@ -9,23 +10,36 @@ function paymentVerificationModal(pmModal, Payment, gettextCatalog) {
         controller: function(params, $scope) {
             const self = this;
 
-            self.title = self.loading
-                ? gettextCatalog.getString('Payment verification in progress', null, 'Title')
-                : gettextCatalog.getString('Payment verification', null, 'Title');
+            self.step = 'redirect';
+            self.payment = params.payment;
+            self.isAddCard = params.mode === 'add-card';
 
             self.cancel = () => {
-                params.onClose(new Error(gettextCatalog.getString('Payment verification modal closed', null, 'Error')));
+                const error = new Error('Cancel verification process');
+                error.noNotify = true;
+                params.onClose(error);
             };
 
             self.submit = async () => {
+                let timeoutID;
                 try {
-                    $scope.$applyAsync(() => (self.loading = true));
+                    $scope.$applyAsync(() => {
+                        self.tryAgain = false;
+                        self.step = 'redirecting';
+                    });
+                    timeoutID = setTimeout(() => {
+                        $scope.$applyAsync(() => (self.step = 'redirected'));
+                    }, PROCESSING_DELAY);
                     await process({ Token: params.token, paymentApi: Payment, ApprovalURL: params.url });
                     params.onSubmit(toParams(params.body, params.token));
-                    $scope.$applyAsync(() => (self.loading = false));
                 } catch (error) {
-                    $scope.$applyAsync(() => (self.loading = false));
-                    params.onClose(error);
+                    clearTimeout(timeoutID);
+                    $scope.$applyAsync(() => {
+                        self.step = 'fail';
+                        if (error.tryAgain) {
+                            self.tryAgain = true;
+                        }
+                    });
                 }
             };
         }
