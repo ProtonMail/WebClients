@@ -1,10 +1,19 @@
 /**
  * Extract host
  * @param {String} url
- * @returns {String}
+ * @returns {String} host
  */
 export const getHost = (url = '') => {
-    const link = document.createElement('a');
-    link.href = url;
-    return link.host;
+    const { host = '' } = new URL(url);
+    return host;
+};
+
+/**
+ * Extract hostname
+ * @param {String} url
+ * @returns {String} hostname
+ */
+export const getHostname = (url = '') => {
+    const { hostname = '' } = new URL(url);
+    return hostname;
 };
