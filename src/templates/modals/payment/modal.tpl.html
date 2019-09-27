@@ -59,7 +59,6 @@
                 ng-click="ctrl.cancel()"
                 translate
                 translate-context="Action">Cancel</button>
-
             <button
                 type="button"
                 class="pm_button modal-footer-button paymentsModal-btn-close"
@@ -68,9 +67,10 @@
                 translate-context="Action">Close</button>
             <button
                 type="submit"
-                class="pm_button primary modal-footer-button paymentsModal-btn-submit"
-                translate
-                translate-context="Action">Submit</button>
+                class="pm_button primary modal-footer-button paymentsModal-btn-submit">
+                <span ng-if="ctrl.method.value !== 'card'" translate-context="Action" translate>Submit</span>
+                <span ng-if="ctrl.method.value === 'card'" translate-context="Action" translate>Continue</span>
+            </button>
         </div>
 
     </div>

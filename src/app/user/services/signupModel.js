@@ -126,7 +126,7 @@ function signupModel(
                     set('temp.method', parameters.Payment);
                 });
             })
-            .catch((error) => {
+            .catch((error = {}) => {
                 const { data = {} } = error;
                 // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
                 if (data.Error) {

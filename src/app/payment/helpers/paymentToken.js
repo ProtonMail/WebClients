@@ -60,7 +60,9 @@ export const process = ({ Token, paymentApi, ApprovalURL }) => {
             }
 
             if (tab.closed) {
-                reject(new Error('Tab closed'));
+                const error = new Error('Tab closed');
+                error.tryAgain = true;
+                reject(error);
             }
 
             await wait(DELAY_LISTENING);
@@ -71,10 +73,6 @@ export const process = ({ Token, paymentApi, ApprovalURL }) => {
             const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
             if (origin !== 'https://secure.protonmail.com') {
-                return;
-            }
-
-            if (event.source !== tab) {
                 return;
             }
 
@@ -109,7 +107,7 @@ export const toParams = (params, Token) => {
     };
 };
 
-export const handlePaymentToken = async ({ params, paymentApi, paymentVerificationModal }) => {
+export const handlePaymentToken = async ({ params, paymentApi, paymentVerificationModal, mode }) => {
     const { Payment, Amount, Currency, PaymentMethodID } = params;
     const { Type } = Payment || {};
 
@@ -129,6 +127,9 @@ export const handlePaymentToken = async ({ params, paymentApi, paymentVerificati
                 body: params,
                 url: ApprovalURL,
                 token: Token,
+                payment: Payment,
+                paymentVerificationModal,
+                mode,
                 onSubmit(data) {
                     paymentVerificationModal.deactivate();
                     resolve(data);

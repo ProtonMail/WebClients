@@ -44,7 +44,7 @@ function activeSessionsModel(
             session.isCurrentSession = session.UID === currentUID;
             session.client = clients[session.ClientID];
             session.createTime = I18N.createTime($filter('readableTime')(session.CreateTime));
-            session.username = isAdmin ? members[session.MemberID].Name : authentication.user.Name;
+            session.username = isAdmin && session.MemberID ? members[session.MemberID].Name : authentication.user.Name;
 
             return session;
         });

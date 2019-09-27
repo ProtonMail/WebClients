@@ -48,7 +48,8 @@ function cardModal(
                             }
                         },
                         paymentApi: Payment,
-                        paymentVerificationModal
+                        paymentVerificationModal,
+                        mode: 'add-card'
                     });
                     const { data = {} } = await Payment.updateMethod(requestBody.Payment);
                     return data.PaymentMethod;
