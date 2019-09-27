@@ -13,80 +13,53 @@
 
     <span class="toolbar-separator" ng-if="displayPaginator()"></span>
 
-    <span class="pm_buttons flex" ng-class="{ disabled: isDisabled()}">
-        <button class="pm_trigger toolbar-button" dropdown ng-disabled="isDisabled()">
+
+    <dropdown-container class="toogleModeElementsDropdown-dropdown flex" ng-class="{ disabled: isDisabled()}">
+        <dropdown-button class="pm_trigger toolbar-button toolbar-button--dropdown" ng-disabled="isDisabled()">
             <icon data-name="unread" data-size="16" class="mauto no-pointer-events toolbar-icon"></icon>
             <icon data-name="caret" data-size="16" class="mauto toolbar-icon ml0-25"></icon>
             <span class="sr-only" translate-context="Action" translate>Mark as read/unread</span>
-        </button>
-        <span class="pm_dropdown wide">
-            <a ng-click="unread()">
-                <i class="fa fa-eye-slash"></i>
-                <span translate translate-context="Action">Mark as unread</span>
-            </a>
-            <a ng-click="read()">
-                <i class="fa fa-eye"></i>
-                <span translate translate-context="Action">Mark as read</span>
-            </a>
-        </span>
-    </span>
+        </dropdown-button>
 
-    <span class="pm_buttons flex" ng-class="{ disabled: isDisabled() }">
-        <button class="pm_trigger toolbar-button" dropdown ng-disabled="isDisabled()">
-            <icon data-name="trash" data-size="16" class="mauto no-pointer-events toolbar-icon"></icon>
-            <icon data-name="caret" data-size="16" class="mauto toolbar-icon ml0-25"></icon>
-            <span class="sr-only" translate-context="Action" translate>Move to</span>
-        </button>
-        <span class="pm_dropdown wide">
-            <button ng-click="move('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }">
-                <i class="fa fa-trash-o"></i>
-                <span translate translate-context="Action">Move to trash</span>
-            </button>
-            <button ng-click="move('inbox')" ng-hide="{{ ('secured.inbox.**' | includedByState) || ('secured.spam.**' | includedByState) }}" ng-class="{ disabled: numberElementSelected === 0 }">
-                <i class="fa fa-inbox"></i>
-                <span translate translate-context="Action">Move to inbox</span>
-            </button>
-            <button ng-click="move('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
-                <i class="fa fa-archive"></i>
-                <span translate translate-context="Action">Move to archive</span>
-            </button>
-            <button ng-click="move('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
-                <i class="fa fa-ban"></i>
-                <span translate translate-context="Action">Move to spam</span>
-            </button>
-            <button ng-click="delete()" ng-show="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allmail.**' | includedByState)" ng-class="{ disabled: isDisabled() }">
-                <i class="fa fa-times-circle-o"></i>
-                <span translate translate-context="Action">Delete</span>
-            </button>
-            <button ng-click="move('inbox')" ng-show="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
-                <i class="fa fa-check"></i>
-                <span translate translate-context="Action">Not spam</span>
-            </button>
-        </span>
-    </span>
+        <dropdown-content>
+            <ul class="unstyled mt0 mb0">
+                <li class="dropDown-item pl1 pr1">
+                    <button
+                        ng-click="unread()"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children">
+                            <icon data-name="unread" class="mt0-25 flex-item-noshrink"></icon>
+                            <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Mark as unread</span>
+                    </button>
+                </li>
+
+                <li class="dropDown-item pl1 pr1">
+                    <button
+                        ng-click="read()"
+                        class="w100 flex flex-nowrap pt0-5 pb0-5 alignleft no-pointer-events-children">
+                            <icon data-name="read" class="mt0-25 flex-item-noshrink"></icon>
+                            <span class="ml0-5 mtauto mbauto" translate translate-context="Action">Mark as read</span>
+                    </button>
+                </li>
+            </ul>
+        </dropdown-content>
+    </dropdown-container>
     <span class="toolbar-separator"></span>
-    <span class="pm_buttons flex">
-        <span class="pm_buttons flex" ng-class="{ disabled: isDisabled() }">
-            <button class="pm_trigger toolbar-button open-folder toolbarMobile-btn-select-folder" data-dropdown data-dropdown-no-auto-close="true" ng-class="{ disabled: isDisabled() }">
-                <icon data-name="folder" class="mtauto mbauto no-pointer-events folderSelectorDropdown-icon"></icon>
-                <icon data-name="caret" class="mtauto mbauto no-pointer-events folderSelectorDropdown-icon ml0-25"></icon>
-                <span class="sr-only" translate-context="Action toolbar" translate>Move to</span>
-            </button>
-            <span class="pm_dropdown wide right">
-                <dropdown-folders data-elements="getElements"></dropdown-folders>
-            </span>
-        </span>
-        <span class="pm_buttons flex" ng-class="{ disabled: isDisabled() }">
-            <button class="pm_trigger toolbar-button open-label" data-dropdown data-dropdown-no-auto-close="true" ng-class="{ disabled: isDisabled() }">
-                <icon data-name="label" class="mtauto mbauto labelSelectorDropdown-icon"></icon>
-                <icon data-name="caret" class="mtauto mbauto labelSelectorDropdown-icon ml0-25"></icon>
-                <span class="sr-only" translate-context="Action toolbar" translate>Label as</span>
-            </button>
-            <span class="pm_dropdown wide right">
-                <dropdown-labels messages="getElements" save="saveLabels"></dropdown-labels>
-            </span>
-        </span>
-    </span>
+
+    <div class="flex" ng-class="{ disabled: isDisabled() }">
+        <folder-selector-dropdown
+            id="tour-folder-dropdown"
+            data-mode="toolbar"
+            class="toolbarDesktop-select-label flex"
+            ng-class="{disabled: isDisabled()}"></folder-selector-dropdown>
+    </div>
+    <span class="toolbar-separator"></span>
+    <div class="flex">
+        <label-selector-dropdown
+            id="tour-label-dropdown"
+            data-mode="toolbar"
+            class="toolbarDesktop-select-label flex"
+            ng-class="{disabled: isDisabled()}"></label-selector-dropdown>
+    </div>
 
     <div class="mlauto flex">
         <nav-elements></nav-elements>
