@@ -27,11 +27,12 @@
   background-color: var(--bgcolor-searchbox-field, rgba($black, .3));
   background-image: none;
   border-color: var(--main-bg-color, $black);
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05);
   background-size: 2rem;
   padding-left: calc(2em + 2rem);
   padding-right: 4rem;
   color: var(--color-standard-text, $white);
+  border-width: 0;
 }
 .searchbox-search-button {
   position: absolute;
