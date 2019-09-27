@@ -12,7 +12,7 @@ import labels from './labels/index';
 import message from './message/index';
 import sidebar from './sidebar/index';
 import squire from './squire/index';
-// import vpn from './vpn/index';
+import vpn from './vpn/index';
 import wizard from './wizard/index';
 import blackFriday from './blackFriday/index';
 import contact from './contact/index';
@@ -38,7 +38,7 @@ export default angular.module('protonLazy', [
     wizard,
     blackFriday,
     // dashboard,
-    // vpn,
+    vpn,
     dnd,
     sidebar,
     elements,
