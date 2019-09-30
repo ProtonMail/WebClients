@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom';
 import Icon from '../icon/Icon';
 import NavMenu from './NavMenu';
 
-const NavItem = ({ type = 'link', link, isActive, text, onClick, icon, list = [], color, className = '' }) => {
+const NavItem = ({ type = 'link', link, isActive, text, aside, onClick, icon, list = [], color, className = '' }) => {
     const content = (
-        <span className="flex flex-nowrap flex-items-center">
+        <span className="flex flex-nowrap w100 flex-items-center">
             {icon && (
                 <Icon
                     name={icon}
@@ -15,7 +15,8 @@ const NavItem = ({ type = 'link', link, isActive, text, onClick, icon, list = []
                     className="flex-item-noshrink navigation__icon mr0-5 flex-item-centered-vert"
                 />
             )}
-            <span className="ellipsis mw100">{text}</span>
+            <span className="flex-item-fluid ellipsis mw100">{text}</span>
+            {aside && <span className="flex flex-items-center">{aside}</span>}
         </span>
     );
 
@@ -62,7 +63,8 @@ NavItem.propTypes = {
     onClick: PropTypes.func,
     type: PropTypes.oneOf(['link', 'button', 'text']),
     link: PropTypes.string,
-    text: PropTypes.string,
+    text: PropTypes.node,
+    aside: PropTypes.node,
     list: PropTypes.arrayOf(PropTypes.object),
     className: PropTypes.string
 };

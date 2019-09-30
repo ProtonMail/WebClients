@@ -8,7 +8,7 @@ const NavMenu = ({ className, list = [{}] }) => {
     return (
         <ul className={classnames(['navigation__list unstyled', className])}>
             {list.map((item, index) => (
-                <NavItem {...item} key={item.text + index} />
+                <NavItem {...item} key={`${index}`} />
             ))}
         </ul>
     );
