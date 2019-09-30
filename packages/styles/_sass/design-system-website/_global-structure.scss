@@ -141,6 +141,10 @@ body {
   fill:  var(--fillcolor-icons, #6D7178);
 }
 
+.navigation__refresh {
+  display: none;
+}
+
 .navigation__link:focus,
 .navigation__link:hover {
   background: rgba(255,255,255,.05);
@@ -159,6 +163,11 @@ body {
   .navigation__icon {
     fill: var(--color-nav-active, $pm-primary);
   }
+  
+  .navigation__refresh {
+    display: inline-flex;
+  }
+
 }
 .navigation__counterItem {
   background: rgba($white, 0.1);
