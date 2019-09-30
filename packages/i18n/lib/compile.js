@@ -13,14 +13,19 @@ async function getConfig() {
     }
 }
 
-async function run({ file, lang }) {
+async function run({ file, lang, key }) {
     const output = `${I18N_JSON_DIR}/${lang}.json`;
+
     if (process.env.APP_KEY === 'Angular') {
         const cmd = `npx angular-gettext-cli --files ${file} --dest ${output} --compile --format json`;
         return bash(cmd);
     }
-
-    const cmd = `npx ttag po2json --format=compact ${file} > ${output}`;
+    /*
+     * crowdin exports the language header as fr_FR, while ttag expects it as just the language
+     * https://github.com/ttag-org/plural-forms/blob/master/src/minimal-safe.js#L287
+     */
+    const [language] = key.split('-'); // cf pt-PT zh-CN zh-TW;
+    const cmd = `npx ttag po2json --format=compact ${file} | sed 's/"language":"${lang}"/"language":"${language}"/' > ${output}`;
     return bash(cmd);
 }
 
@@ -32,7 +37,7 @@ async function main() {
         const list = config
             .filter(({ key }) => key !== 'en')
             .map(({ key, lang }) => {
-                return run({ file: `${I18N_EXTRACT_DIR}/${key}.po`, lang }).then(() =>
+                return run({ file: `${I18N_EXTRACT_DIR}/${key}.po`, lang, key }).then(() =>
                     debug(`Compilation done for ${lang}`)
                 );
             });

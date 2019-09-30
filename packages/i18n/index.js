@@ -7,8 +7,6 @@ const { error, debug } = require('./lib/helpers/log')('proton-i18n');
 const renderHelp = require('./lib/helpers/help');
 const coucou = require('./lib/helpers/coucou');
 
-require('dotenv').config({ path: CONFIG.ENV_FILE });
-
 const is = (command) => argv._.includes(command);
 
 async function main() {

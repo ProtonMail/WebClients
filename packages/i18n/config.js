@@ -3,7 +3,9 @@ const path = require('path');
 const { error } = require('./lib/helpers/log')('proton-i18n');
 
 // Compat mode WebClient
-const ENV_FILE = fs.existsSync('.env') ? '.env' : 'env/.env';
+const ENV_FILE = process.env.TEST_ENV || (fs.existsSync('.env') ? '.env' : 'env/.env');
+require('dotenv').config({ path: ENV_FILE });
+
 const PROTON_DEPENDENCIES = {
     app: ['src/app'].concat(
         ['react-components/{co*,helpers}', 'proton-shared/lib'].map((name) => `node_modules/${name}`)
