@@ -32,18 +32,18 @@
 
 .atomLoader.primary {
     color: $primary;
-    .atomLoader-proton { background: $primary }
-    .atomLoader-item,
-    .atomLoader-item2,
-    .atomLoader-item3 { border-color: $primary }
+
+    .loadingAnimation-circle {
+        stroke: currentColor;
+    }
 }
 
 .atomLoader.dark {
     color: $secondary;
-    .atomLoader-proton { background: $secondary }
-    .atomLoader-item,
-    .atomLoader-item2,
-    .atomLoader-item3 { border-color: $secondary }
+
+    .loadingAnimation-circle {
+        stroke: currentColor;
+    }
 }
 
 

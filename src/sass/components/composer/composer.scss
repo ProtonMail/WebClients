@@ -347,19 +347,9 @@
           }
         }
 
-        // input, select {
-        //   font-size: 14px;
-        //   color: #333;
-
-        // }
-
         .meta {
             color: $default-color-light;
-            // input, select{
-            //     border:none;
-            //     padding:none; /* iOS */
-            // }
-        }
+             }
 
         &.expandRecipients {
             overflow: hidden;
@@ -395,7 +385,6 @@
 #pm_composer .composer, .squireEditor-loaded {
 
     .composer-footer {
-
         &.disabled {
 
             .pm_button {
@@ -406,7 +395,6 @@
                 pointer-events: none;
             }
         }
-
     }
 
 
@@ -418,22 +406,6 @@
         flex-direction: row;
 
         position: relative;
-        //padding: 0px 10px;
-
-        // label{
-        //     padding-right: 10px;
-        // }
-
-        // input,
-        // select{
-        //     height: $composerRowHeight;
-        //     line-height: $composerRowHeight;
-        // }
-
-        // select {
-        //     z-index: 2;
-        //     background:transparent;
-        // }
 
         .pm_button.link {
             position: absolute;

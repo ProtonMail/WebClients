@@ -4,14 +4,6 @@
 .composerAttachments-close .composerAttachments-loaders {display: none}
 
 .composerAttachments-header {
-    // display: flex;
-    // align-items: center;
-    // height: 32px;
-    // padding: 0 10px;
-    // border: 0;
-    // width: 100%;
-    // background-color: transparent;
-    // just to avoid some font differences in some browsers
     font: inherit;
     cursor: pointer;
 }
@@ -21,7 +13,6 @@
 .composerAttachments-loaders {
     display: flex;
     flex-wrap: wrap;
-    //max-height: 85px;
     overflow: auto;
     padding: 10px;
     border-top: 1px solid $border;
@@ -38,6 +29,4 @@
 .composerAttachments-loader:nth-child(even) { padding-left: 5px }
 .composerAttachments-loader:nth-child(odd) { padding-right: 5px }
 
-//.composerAttachments-size {margin-right: 1em}
-//.composerAttachments-action {margin-left: auto}
 [class*="composerAttachments-counter-"] { margin-right:1em; }

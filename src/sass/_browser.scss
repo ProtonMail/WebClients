@@ -74,32 +74,6 @@
     }
 }
 
-// All Firefox
-// .ua-firefox {
-// }
-
-// All Windows, Firefox
-// .ua-windows_nt.ua-firefox {
-//     &.ua-firefox {
-//     }
-// }
-
-// Windows 7, IE 11
-// .ua-windows_nt-6.ua-ie-11-0 {
-
-// }
-
-// .ua-firefox {
-// }
-
-// input:invalid,
-// input:-moz-ui-invalid {
-//     border:0;
-//     outline:none;
-//     box-shadow:none;
-//     -moz-box-shadow:none;
-//     -webkit-box-shadow:none;
-// }
 
 /* removes "clear button" on WebKit/Blink */
 .searchInput-noClearSearch::-webkit-search-cancel-button {
@@ -111,15 +85,6 @@
     #conversation-list-rows .conversation .subject .pm_labels,
     #conversation-view .message > div.summary .labels .pm_labels { top: 0 }
 }
-// IE11
-// .on-ie11-only { display: none !important; }
-// .ua-ie-11 {
-//     #conversation-list-rows .conversation .subject { display: inline-block }
-
-//     .on-ie11-only { display: block !important; }
-//     .not-on-ie11 { display: none !important; }
-// }
-
 
 #pm_slow { display: flex !important }
 #pm_slow2 { display: none !important }
