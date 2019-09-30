@@ -26,7 +26,9 @@ function sortViewDropdown($state) {
             };
 
             const onClick = ({ target }) => {
-                orderBy(target.getAttribute('data-action-arg'));
+                if (target.hasAttribute('data-action-arg')) {
+                    orderBy(target.getAttribute('data-action-arg'));
+                }
             };
 
             el.on('click', onClick);
