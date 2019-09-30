@@ -16,12 +16,13 @@ function atomLoader(dispatchers, gettextCatalog, translator) {
     return {
         replace: true,
         templateUrl: require('../../../templates/ui/atomLoader.tpl.html'),
-        link(scope, el, { translationKey, loaderTheme }) {
+        link(scope, el, { translationKey, loaderTheme, height }) {
             const { on, unsubscribe } = dispatchers();
             let currentContent;
             const $textLoader = el[0].querySelector('.atomLoader-text');
 
             loaderTheme && el[0].classList.add(loaderTheme);
+            height && (el[0].firstElementChild.style.height = height);
 
             if (translationKey) {
                 currentContent = translationKey;
