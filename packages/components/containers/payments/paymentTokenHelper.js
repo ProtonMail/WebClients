@@ -4,6 +4,7 @@ import { getTokenStatus, createToken } from 'proton-shared/lib/api/payments';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { c } from 'ttag';
 import { PaymentVerificationModal } from 'react-components';
+import { getHostname } from 'proton-shared/lib/helpers/url';
 
 const {
     STATUS_PENDING,
@@ -63,15 +64,15 @@ const pull = async ({ timer = 0, Token, api, signal }) => {
 
 /**
  * Initialize new tab and listen it
- * @param {String} String
+ * @param {String} Token from API
  * @param {Object} api useApi
- * @param {String} approvalURL
- * @param {String} secureURL
+ * @param {String} ApprovalURL from API
+ * @param {String} ReturnHost from API
  * @param {AbortSignal} signal instance
  * @returns {Promise}
  */
-export const process = ({ Token, api, approvalURL, secureURL, signal }) => {
-    const tab = window.open(approvalURL);
+export const process = ({ Token, api, ApprovalURL, ReturnHost, signal }) => {
+    const tab = window.open(ApprovalURL);
 
     return new Promise((resolve, reject) => {
         let listen = false;
@@ -101,7 +102,7 @@ export const process = ({ Token, api, approvalURL, secureURL, signal }) => {
         const onMessage = (event) => {
             const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
-            if (origin !== secureURL) {
+            if (getHostname(origin) !== getHostname(ReturnHost)) {
                 return;
             }
 
@@ -162,7 +163,14 @@ export const handlePaymentToken = async ({ params, api, createModal }) => {
         return params;
     }
 
-    const { Token, Status, ApprovalURL } = await api(createToken({ Payment, Amount, Currency, PaymentMethodID }));
+    const { Token, Status, ApprovalURL, ReturnHost } = await api(
+        createToken({
+            Payment,
+            Amount,
+            Currency,
+            PaymentMethodID
+        })
+    );
 
     if (Status === STATUS_CHARGEABLE) {
         return toParams(params, Token);
@@ -173,6 +181,7 @@ export const handlePaymentToken = async ({ params, api, createModal }) => {
             <PaymentVerificationModal
                 payment={Payment}
                 params={params}
+                returnHost={ReturnHost}
                 approvalURL={ApprovalURL}
                 token={Token}
                 onSubmit={resolve}

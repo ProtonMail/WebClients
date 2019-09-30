@@ -8,7 +8,6 @@ import {
     ResetButton,
     useNotifications,
     useApi,
-    useConfig,
     PrimaryButton
 } from 'react-components';
 import { c } from 'ttag';
@@ -26,7 +25,7 @@ const STEPS = {
 
 const PROCESSING_DELAY = 5000;
 
-const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, payment = {}, ...rest }) => {
+const PaymentVerificationModal = ({ params, token, approvalURL, returnHost, onSubmit, payment = {}, ...rest }) => {
     const TITLES = {
         [STEPS.REDIRECT]: c('Title').t`Payment verification`,
         [STEPS.REDIRECTING]: c('Title').t`Processing...`,
@@ -37,7 +36,6 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, paymen
     const [error, setError] = useState({});
     const api = useApi();
     const { createNotification } = useNotifications();
-    const { SECURE_URL: secureURL } = useConfig();
     const abortRef = useRef();
 
     const handleCancel = () => {
@@ -53,7 +51,13 @@ const PaymentVerificationModal = ({ params, token, approvalURL, onSubmit, paymen
                 setStep(STEPS.REDIRECTED);
             }, PROCESSING_DELAY);
             abortRef.current = new AbortController();
-            await process({ Token: token, api, approvalURL, secureURL, signal: abortRef.current.signal });
+            await process({
+                Token: token,
+                api,
+                ReturnHost: returnHost,
+                ApprovalURL: approvalURL,
+                signal: abortRef.current.signal
+            });
             onSubmit(toParams(params, token));
             rest.onClose();
         } catch (error) {
@@ -144,6 +148,7 @@ PaymentVerificationModal.propTypes = {
     onClose: PropTypes.func.isRequired,
     token: PropTypes.string.isRequired,
     approvalURL: PropTypes.string.isRequired,
+    returnHost: PropTypes.string.isRequired,
     params: PropTypes.object,
     payment: PropTypes.object
 };
