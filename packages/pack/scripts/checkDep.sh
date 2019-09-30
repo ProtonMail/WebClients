@@ -67,7 +67,7 @@ checkDep 'proton-bundler';
 checkDep 'proton-i18n';
 
 if [ -n "$ERRORS" ]; then
-    log "error"  "Version mismatch";
+    log "warn"  "Version mismatch";
     echo
     for ((i = 0; i < ${#ERRORS[@]}; i++))
     do
@@ -77,5 +77,4 @@ if [ -n "$ERRORS" ]; then
 
     log "info" "Please upgrade your dependencies."
     log "info" "You can run npm update <dependency> or rm package-lock.json and node_modules".
-    exit 1;
 fi;
