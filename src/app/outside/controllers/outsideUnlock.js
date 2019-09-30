@@ -8,8 +8,7 @@ function OutsideUnlockController(
     encryptedToken,
     networkActivityTracker,
     notification,
-    eoStore,
-    helpLoginModal
+    eoStore
 ) {
     $scope.params = {
         MessagePassword: ''
@@ -40,8 +39,6 @@ function OutsideUnlockController(
             notification.error('Wrong Mailbox Password.');
         }
     };
-
-    $scope.askForHelp = () => helpLoginModal.activate();
 }
 
 export default OutsideUnlockController;
