@@ -21,10 +21,27 @@ function toogleModeElementsDropdown(
         if (mode === 'columns' && ViewLayout === ROW_MODE) {
             return 0;
         }
+
+        return ViewLayout;
     };
 
-    const changeTo = async (mode) => {
+    const getLayoutRaw = (mode) => {
+        if (mode === 'rows') {
+            return ROW_MODE;
+        }
+
+        if (mode === 'col') {
+            return COLUMN_MODE;
+        }
+    };
+
+    const changeTo = async (mode, oldMode) => {
         const newLayout = getLayout(mode);
+        const oldLayout = getLayoutRaw(oldMode);
+
+        if (oldLayout === newLayout) {
+            return oldLayout;
+        }
 
         if (angular.isDefined(newLayout)) {
             const promise = settingsMailApi.updateViewLayout({ ViewLayout: newLayout }).then(() => {
@@ -52,7 +69,7 @@ function toogleModeElementsDropdown(
 
             const onClick = async ({ target }) => {
                 if (target.classList.contains('toogleModeElementsDropdown-btn-action')) {
-                    const newLayout = await changeTo(target.getAttribute('data-action'));
+                    const newLayout = await changeTo(target.getAttribute('data-action'), scope.layout);
                     scope.$applyAsync(() => {
                         scope.layout = setLayout(newLayout);
                     });
