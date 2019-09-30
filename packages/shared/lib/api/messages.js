@@ -48,7 +48,7 @@ export const queryMessageMetadata = ({
     }
 });
 
-export const queryGroupedMessageCount = (AddressID) => ({
+export const queryMessageCount = (AddressID) => ({
     method: 'get',
     url: 'messages/count',
     params: { AddressID }

@@ -1,6 +1,6 @@
 import { LABEL_TYPE } from '../constants';
 
-const { LABEL, CONTACT_GROUP } = LABEL_TYPE;
+const { MESSAGE_LABEL, CONTACT_GROUP } = LABEL_TYPE;
 
 export const get = (Type) => ({
     url: 'labels',
@@ -31,11 +31,11 @@ export const deleteLabel = (labelID) => ({
     url: `labels/${labelID}`
 });
 
-export const getLabels = () => get(LABEL);
+export const getLabels = () => get(MESSAGE_LABEL);
 export const getContactGroup = () => get(CONTACT_GROUP);
 
-export const orderLabels = (opt) => order({ ...opt, Type: LABEL });
+export const orderLabels = (opt) => order({ ...opt, Type: MESSAGE_LABEL });
 export const orderContactGroup = (opt) => order({ ...opt, Type: CONTACT_GROUP });
 
-export const createLabel = (opt) => create({ ...opt, Type: LABEL });
+export const createLabel = (opt) => create({ ...opt, Type: MESSAGE_LABEL });
 export const createContactGroup = (opt) => create({ ...opt, Type: CONTACT_GROUP });

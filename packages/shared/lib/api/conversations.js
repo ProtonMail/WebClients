@@ -54,7 +54,7 @@ export const getConversation = (conversationID, MessageID) => ({
     params: { MessageID }
 });
 
-export const queryGroupedConversationCount = (AddressID) => ({
+export const queryConversationCount = (AddressID) => ({
     method: 'get',
     url: 'conversations/count',
     params: { AddressID }

@@ -452,7 +452,7 @@ export const CONTACT_CARD_TYPE = {
 };
 
 export const LABEL_TYPE = {
-    MESSAGE: 1,
+    MESSAGE_LABEL: 1,
     CONTACT_GROUP: 2,
     MESSAGE_FOLDER: 3
 };
