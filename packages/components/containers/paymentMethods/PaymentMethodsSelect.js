@@ -10,7 +10,7 @@ const PaymentMethodsSelect = ({ method, methods, onChange, loading }) => {
         if (methods.length) {
             onChange(methods[0].value);
         }
-    }, [methods.length]);
+    }, [methods]);
 
     return <Select loading={loading} value={method} options={methods} onChange={handleChange} />;
 };
