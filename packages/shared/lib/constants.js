@@ -530,3 +530,16 @@ export const TOKEN_TYPES = {
     COUPON: 'coupon',
     PAYMENT: 'payment'
 };
+
+export const MAILBOX_LABEL_IDS = {
+    INBOX: '0',
+    ALL_DRAFTS: '1',
+    ALL_SENT: '2',
+    TRASH: '3',
+    SPAM: '4',
+    ALL_MAIL: '5',
+    STARRED: '10',
+    ARCHIVE: '6',
+    SENT: '7',
+    DRAFTS: '8'
+};
