@@ -7,11 +7,13 @@ function messageAddressActionMenu(
     $state,
     contactEmails,
     messageSenderSettings,
-    contactFilter
+    contactFilter,
+    ptClipboard
 ) {
     const getContact = (Email) => _.find(contactEmails.get(), { Email }) || {};
 
     function link(scope, el) {
+        const unsubscribe = [];
         const { dispatcher } = dispatchers(['composer.new']);
 
         const toggle = (node, className, value) => {
@@ -62,10 +64,18 @@ function messageAddressActionMenu(
             ACTIONS[action] && ACTIONS[action]();
         };
 
+        scope.$applyAsync(() => {
+            const copyButton = el[0].querySelector('.messageAddressActionMenu-btn-copy-address');
+            const { destroy } = ptClipboard(copyButton, () => scope.email.Address);
+            unsubscribe.push(destroy);
+        });
+
         el.on('click', onClick);
 
         scope.$on('$destroy', () => {
             el.off('click', onClick);
+            unsubscribe.forEach((cb) => cb());
+            unsubscribe.length = 0;
         });
     }
 
