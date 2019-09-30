@@ -1,33 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ErrorBoundary, StandardPrivateApp } from 'react-components';
-import { UserModel, MailSettingsModel, UserSettingsModel } from 'proton-shared/lib/models';
+import { StandardPrivateApp } from 'react-components';
+import {
+    UserModel,
+    MailSettingsModel,
+    UserSettingsModel,
+    SubscriptionModel,
+    OrganizationModel,
+    LabelsModel,
+    AddressesModel,
+    ConversationCountsModel,
+    MessageCountsModel
+} from 'proton-shared/lib/models';
 
-import Home from './containers/Home';
-import About from './containers/About';
-import PrivateLayout from './components/layout/PrivateLayout';
+import locales from './locales';
+import PrivateAppRoutes from './PrivateAppRoutes';
 
 const PrivateApp = ({ onLogout }) => {
     return (
         <StandardPrivateApp
             onLogout={onLogout}
+            locales={locales}
             preloadModels={[UserModel, UserSettingsModel]}
-            eventModels={[UserModel, MailSettingsModel]}
+            eventModels={[
+                UserModel,
+                AddressesModel,
+                ConversationCountsModel,
+                MessageCountsModel,
+                MailSettingsModel,
+                UserSettingsModel,
+                LabelsModel,
+                SubscriptionModel,
+                OrganizationModel
+            ]}
         >
-            <PrivateLayout>
-                <Route
-                    render={({ location }) => (
-                        <ErrorBoundary key={location.key}>
-                            <Switch>
-                                <Route path="/" exact component={Home} />
-                                <Route path="/about" exact component={About} />
-                                <Route component={NotFoundContainer} />
-                            </Switch>
-                        </ErrorBoundary>
-                    )}
-                />
-            </PrivateLayout>
+            <PrivateAppRoutes />
         </StandardPrivateApp>
     );
 };

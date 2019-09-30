@@ -1,38 +1,55 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Sidebar, Icons } from 'react-components';
+import { Route } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { AppsSidebar, StorageSpaceStatus, MainAreaContext, Href } from 'react-components';
 
-import Header from '../header/Header';
+import PrivateHeader from '../header/PrivateHeader';
+import PrivateSidebar from '../sidebar/PrivateSidebar';
 
-const getSidebar = () => {
-    return [
-        {
-            text: c('Link').t`Home`,
-            link: '/'
-        },
-        {
-            text: c('Link').t`About`,
-            link: '/about'
-        }
-    ];
-};
+const PrivateLayout = ({ children, location, labelID }) => {
+    const mainAreaRef = useRef();
+    const [expanded, setExpand] = useState(false);
 
-const PrivateLayout = ({ children }) => {
+    useEffect(() => {
+        setExpand(false);
+    }, [location.pathname]);
+
     return (
-        <>
-            <Header />
-            <div className="flex flex-nowrap">
-                <Sidebar list={getSidebar()} />
-                <main className="main flex-item-fluid main-area main-area-content">{children}</main>
+        <div className="flex flex-nowrap no-scroll">
+            <AppsSidebar
+                items={[
+                    <StorageSpaceStatus key="storage">
+                        <Href
+                            url="/settings/subscription"
+                            target="_self"
+                            className="pm-button pm-button--primary pm-button--small"
+                        >
+                            {c('Action').t`Upgrade`}
+                        </Href>
+                    </StorageSpaceStatus>
+                ]}
+            />
+            <div className="content flex-item-fluid reset4print">
+                <PrivateHeader expanded={expanded} onToggleExpand={() => setExpand(!expanded)} />
+                <div className="flex flex-nowrap">
+                    <Route path="/:path" render={() => <PrivateSidebar labelID={labelID} expanded={expanded} />} />
+                    <div className="main flex-item-fluid main-area scroll-smooth-touch" ref={mainAreaRef}>
+                        <div className="flex flex-reverse">
+                            <MainAreaContext.Provider value={mainAreaRef}>{children}</MainAreaContext.Provider>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <Icons />
-        </>
+        </div>
     );
 };
 
 PrivateLayout.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    location: PropTypes.object.isRequired,
+    labelID: PropTypes.string.isRequired
 };
 
-export default PrivateLayout;
+export default withRouter(PrivateLayout);
