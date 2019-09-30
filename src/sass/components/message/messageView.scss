@@ -46,6 +46,11 @@
     top: 0;
 }
 
+
+.recipients-summary-label + .recipients-summary-label::before {
+    content: ', ';
+}
+
 #conversation-view {
     header {
 
@@ -77,16 +82,6 @@
         //     overflow-x: hidden;
         border-left: 1px solid transparent;
 
-        //     .starbutton {
-        //         position: absolute;
-        //         right: 0;
-        //         top: 14px;
-        //     }
-        // }
-        // .containsMessage {
-        //     p {
-        //         margin: 0px 0px 13px 0px;
-        //     }
         }
     }
     .message {
@@ -382,21 +377,11 @@
                     border-right: 1px solid $border;
                 }
             }
-            .recipients-details {
-                //font-size: .9em;
-                //line-height: 20px;
-                //width: 100%;
-            }
             .recipients-summary {
                 display: block;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                //line-height: 20px;
-
-                .recipients-summary-label + .recipients-summary-label::before {
-                        content: ', ';
-                }
 
                 strong {
                     display: inline-block;
@@ -404,7 +389,6 @@
                     font-weight: normal;
                     display: inline-block;
                 }
-                font-size: .9em;
                 .from {
                     width: 3rem;
                     color: $default-color-medium;
