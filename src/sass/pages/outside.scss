@@ -7,10 +7,6 @@ html.protonmail body.blank { background-color: $white }
 
 [id^="eo-"] {
     overflow: initial;
-    [id="pm_footer"] {
-        position: static;
-        margin-top: 100%;
-    }
 }
 
 [id="eo-reply"] {

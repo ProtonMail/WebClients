@@ -18,6 +18,8 @@
     background: transparent;
     min-height: 100vh;
 }
+[id="signup"] [id="mainContainer"] { flex: 1; }
+
 [id="signup"] .content {
     min-height: 100vh;
 }
