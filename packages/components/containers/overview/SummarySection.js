@@ -57,6 +57,7 @@ const SummarySection = ({ subscription, user, userSettings }) => {
         [MEMBER_ROLE]: c('Role').t`Member`,
         [ADMIN_ROLE]: c('Role').t`Administrator`
     };
+
     return (
         <div className="flex-item-fluid rounded shadow-container mb1">
             <div className="p1">
@@ -67,9 +68,7 @@ const SummarySection = ({ subscription, user, userSettings }) => {
                 </div>
                 <div className="flex-autogrid onmobile-flex-column w100 mb1">
                     <div className="flex-autogrid-item">{c('Label').t`Recovery email`}</div>
-                    <div className="flex-autogrid-item bold">
-                        {userSettings.Email.Status ? c('Status').t`Active` : c('Status').t`Not set`}
-                    </div>
+                    <div className="flex-autogrid-item bold">{userSettings.Email.Value || c('Status').t`Not set`}</div>
                     <div className="flex-autogrid-item alignright">
                         <Link to="/settings/account">{c('Link').t`Edit`}</Link>
                     </div>
