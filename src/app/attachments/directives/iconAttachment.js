@@ -38,10 +38,10 @@ function iconAttachment($compile) {
     };
 
     const template = (outerIcon = 'file-image', single = true, isEmbedded) => {
-        const secondIcon = !single ? '<icon data-name="key" class="file-inner-icon"></icon>`' : '';
+        const secondIcon = !single ? '<icon data-name="key" class="file-inner-icon mauto"></icon>`' : '';
         const classNames = [single && 'single', isEmbedded && 'is-embedded'].filter(Boolean).join(' ');
 
-        return `<icon data-name="${outerIcon}" data-size="20" class="mauto file-outer-icon ${classNames}"></icon>${secondIcon}`;
+        return `<icon data-name="${outerIcon}" data-size="20" class="listAttachments-icon listAttachments-signature-icon mauto file-outer-icon ${classNames}"></icon>${secondIcon}`;
     };
 
     /*

@@ -6,9 +6,11 @@
         data-download-text="{{ 'Download' | translate:'Action' }}"
         title="{{ ::attachment.Name }} ({{ ::attachment.Size | humanSize }})">
 
-            <icon-attachment></icon-attachment>
-            <i class="fa fa-cog fa-spin listAttachments-icon-loader"></i>
-            <i class="fa fa-download listAttachments-icon-download listAttachments-signature-icon"></i>
+            <span class="flex flex-item-noshrink message-attachmentIcon relative flex">
+                <icon-attachment class="flex mauto"></icon-attachment>
+                <icon data-name="settings" data-size="20" class="listAttachments-icon-loader spinMe mauto"></icon>
+                <icon data-name="download" data-size="20" class="listAttachments-icon-download listAttachments-signature-icon mauto"></icon>
+            </span>
 
             <div
                 class="listAttachments-signature-warning"

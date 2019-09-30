@@ -2,8 +2,8 @@
 .listAttachments-icon-loader,
 .listAttachments-icon-download { display: none }
 
-.listAttachments-item-decrypt .listAttachments-icon-loader { display: inline-block }
-.listAttachments-item-download .listAttachments-icon-download { display: inline-block }
+.listAttachments-item-decrypt .listAttachments-icon-loader { display: inline-flex }
+.listAttachments-item-download .listAttachments-icon-download { display: inline-flex }
 
 
 .listAttachments-signature-warning, .listAttachments-signature-ok, .listAttachments-unencrypted-warning {
