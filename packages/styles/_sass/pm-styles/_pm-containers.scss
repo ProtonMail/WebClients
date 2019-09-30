@@ -85,6 +85,10 @@ $block-info-border-width: 3px !default;
 }
 // other colors might be added later
 
+[class*="block-info"].color-white {
+  color: $white;
+}
+
 /**
  * details/summary
  */
