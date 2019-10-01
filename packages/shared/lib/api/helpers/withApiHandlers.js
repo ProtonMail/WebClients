@@ -62,8 +62,33 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
     /**
      * Handle refresh token. Happens when the access token has expired.
      * Multiple calls can fail, so this ensures the refresh route is called once.
+     * Needs to re-handle errors here for that reason.
      */
-    const refreshHandler = createOnceHandler(() => call(setRefreshCookies()));
+    const refresh = (attempts, maxAttempts) =>
+        call(setRefreshCookies()).catch((e) => {
+            if (attempts >= maxAttempts) {
+                throw e;
+            }
+
+            const { status, name } = e;
+
+            if (name === 'OfflineError') {
+                return wait(OFFLINE_RETRY_DELAY).then(() => refresh(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX));
+            }
+
+            if (name === 'TimeoutError') {
+                return refresh(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX);
+            }
+
+            if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                return retryHandler(e).then(() => refresh(attempts + 1, RETRY_ATTEMPTS_MAX));
+            }
+
+            throw e;
+        });
+    const refreshHandler = createOnceHandler(() => {
+        return refresh(1, RETRY_ATTEMPTS_MAX);
+    });
     const unlockHandler = createOnceHandler(onUnlock);
 
     return (options) => {
@@ -96,9 +121,13 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                 if (hasSession && status === HTTP_ERROR_CODES.UNAUTHORIZED) {
                     return refreshHandler().then(
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
-                        () => {
-                            loggedOut = true;
-                            return onError(InactiveSessionError());
+                        (error) => {
+                            // Any 4xx and the session is no longer valid, 429 is already handled in the refreshHandler
+                            if ((error.status >= 400 && error.status <= 499) || error.name === 'RetryAfterError') {
+                                loggedOut = true;
+                                return onError(InactiveSessionError());
+                            }
+                            return onError(error);
                         }
                     );
                 }
