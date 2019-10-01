@@ -23,9 +23,9 @@ const PrivateAppRoutes = () => {
     return (
         <Switch>
             <Route
-                path="/:labelID/:conversationID?"
+                path="/:labelID/:elementID?"
                 render={({ match, location, history }) => {
-                    const { conversationID, labelID: currentLabelID } = match.params;
+                    const { elementID, labelID: currentLabelID } = match.params;
                     const labelID = LABEL_IDS[currentLabelID] || currentLabelID;
 
                     return (
@@ -33,7 +33,7 @@ const PrivateAppRoutes = () => {
                             <ErrorBoundary key={location.pathname}>
                                 <MailboxContainer
                                     labelID={labelID}
-                                    conversationID={conversationID}
+                                    elementID={elementID}
                                     location={location}
                                     history={history}
                                 />

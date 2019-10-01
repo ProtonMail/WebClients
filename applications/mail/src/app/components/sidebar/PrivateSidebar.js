@@ -7,7 +7,8 @@ import {
     useMailSettings,
     useLabels,
     useConversationCounts,
-    useMessageCounts
+    useMessageCounts,
+    PrimaryButton
 } from 'react-components';
 import { SHOW_MOVED, LABEL_TYPE, MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
 import { redirectTo } from 'proton-shared/lib/helpers/browser';
@@ -119,6 +120,9 @@ const PrivateSidebar = ({ expanded = false, labelID: currentLabelID }) => {
         <div className="sidebar flex flex-column noprint" data-expanded={expanded}>
             <div className="nodesktop notablet">
                 <MainLogo url="/inbox" />
+            </div>
+            <div className="pl1 pr1">
+                <PrimaryButton className="w100 bold">{c('Action').t`Compose`}</PrimaryButton>
             </div>
             <nav className="navigation mw100 flex-item-fluid scroll-if-needed mb1">
                 <NavMenu list={list} />
