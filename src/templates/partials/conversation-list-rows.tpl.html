@@ -12,29 +12,29 @@
 
             <select-box-element class="mr1"></select-box-element>
 
-            <div class="flex-item-fluid mauto">
+            <div class="w20 flex mauto pr1">
                 <span class="senders ellipsis">
                     <senders-name></senders-name>
                 </span>
             </div>
-            <div class="flex-item-fluid flex-item-grow-2 mauto">
-                <span class="flex" ng-attr-title="{{ conversation.Subject | unescape }}">
-                    <span class="flex-item-fluid flex">
+            <div class="flex-item-fluid flex mauto">
+                <span class="flex flex-items-center" ng-attr-title="{{ conversation.Subject | unescape }}">
+                    <span class="flex-item-fluid flex flex-nowrap">
                         <states-elements></states-elements>
                         <folders-element conversation="conversation"></folders-element>
                         <span class="subject-num-message flex-item-noshrink" ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-                        <span class="subject-text mw100 inbl ellipsis">{{ conversation.Subject  | unescape }}</span>
+                        <span class="subject-text flex-item-fluid ellipsis">{{ conversation.Subject  | unescape }}</span>
                     </span>
 
                     <labels-element element="conversation"></labels-element>
                     <icon
                         data-name="expiration"
                         data-fill="global-warning"
-                        class="mauto conversation-icon-expiration"></icon>
+                        class="mtauto mbauto conversation-icon-expiration ml0-5"></icon>
                     <icon
                         data-name="attach"
                         data-fill="global-success"
-                        class="mauto conversation-icon-attachment"></icon>
+                        class="mtauto mbauto conversation-icon-attachment ml0-5"></icon>
                 </span>
             </div>
             <span class="mtauto mbauto mr1 ml1">{{ size(conversation)| bytes }}</span>
